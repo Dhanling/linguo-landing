@@ -25,22 +25,21 @@ const FAQS = [
   {q:"Ada kelas lanjutan?",a:"Ada! Tersedia dari Basic hingga Advance."},
 ];
 
-function Navbar({lang,setLang}:{lang:string;setLang:(l:string)=>void}) {
+function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void}) {
   const [open, setOpen] = useState(false);
+  const [progOpen, setProgOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   const c = scrolled;
+
+  const scrollTo = (id:string, tab?:number) => {
+    if(tab!==undefined) onPricingTab(tab);
+    setTimeout(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'}), tab!==undefined?50:0);
+    setProgOpen(false);
+  };
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      {/* Announcement Bars */}
-      {!c && <>
-        <div className="bg-[#22c55e] text-white text-center py-2 text-xs sm:text-sm font-medium">
-          🎓 Penutupan Kelas Reguler Batch April — <a href="https://wa.me/6282116859493" target="_blank" className="underline font-bold">Daftar Sekarang!</a>
-        </div>
-        <div className="bg-[#eab308] text-white text-center py-2 text-xs sm:text-sm font-medium">
-          📝 Kelas IELTS / TOEFL Prep Class Batch April — <a href="https://wa.me/6282116859493" target="_blank" className="underline font-bold">Info Selengkapnya</a>
-        </div>
-      </>}
       {/* Main Nav */}
       <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -49,10 +48,41 @@ function Navbar({lang,setLang}:{lang:string;setLang:(l:string)=>void}) {
               <img src="/images/logo-white.png" alt="Linguo" className={`h-14 object-contain transition-all ${c?"brightness-0":""}`} />
             </a>
             <div className="hidden md:flex items-center gap-8">
-              {[["Our Program","#produk"],["Language","#bahasa"],["Career","#teacher"],["Blog","#faq"]].map(([l,h]) => (
-                <a key={l} onClick={()=>document.getElementById(h.slice(1))?.scrollIntoView({behavior:'smooth'})} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+              {/* Our Program dropdown */}
+              <div className="relative" onMouseEnter={()=>setProgOpen(true)} onMouseLeave={()=>setProgOpen(false)}>
+                <button className={`cursor-pointer relative text-sm font-medium py-1 flex items-center gap-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+                  Our Program
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${progOpen?"rotate-180":""}`}/>
+                  <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
+                </button>
+                <AnimatePresence>{progOpen&&(
+                  <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
+                    className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+                    {[
+                      {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"IELTS / TOEFL",tab:2},
+                    ].map((item)=>(
+                      <button key={item.label} onClick={()=>scrollTo("produk",item.tab)}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                        {item.label}
+                      </button>
+                    ))}
+                    <div className="border-t border-slate-100 my-1"/>
+                    <button onClick={()=>scrollTo("digital")}
+                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                      E-Learning & E-Book
+                    </button>
+                    <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank"
+                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                      Corporate Class ↗
+                    </a>
+                  </motion.div>
+                )}</AnimatePresence>
+              </div>
+              {/* Other nav links */}
+              {[["Language","bahasa"],["Career","teacher"],["Blog","faq"]].map(([l,h]) => (
+                <a key={l} onClick={()=>scrollTo(h)} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
-                  <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full ${c?"bg-[#fbbf24]":"bg-[#fbbf24]"}`}/>
+                  <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
               ))}
             </div>
@@ -67,7 +97,10 @@ function Navbar({lang,setLang}:{lang:string;setLang:(l:string)=>void}) {
         </div>
         <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
           <div className="px-6 py-4 flex flex-col gap-2">
-            {["Private Class","Career","Blog","Corporate"].map(n=>(<a key={n} href="#" className="text-sm py-2.5" onClick={()=>setOpen(false)}>{n}</a>))}
+            <button onClick={()=>{scrollTo("produk",0);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
+            <button onClick={()=>{scrollTo("produk",1);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
+            <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <button onClick={()=>{scrollTo("teacher");setOpen(false)}} className="text-sm py-2.5 text-left">Career</button>
             <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
           </div>
         </motion.div>)}</AnimatePresence>
@@ -345,8 +378,7 @@ const PRICING_TABS = [
   },
 ];
 
-function PricingSection() {
-  const [tab, setTab] = useState(0);
+function PricingSection({tab,setTab}:{tab:number;setTab:(t:number)=>void}) {
   const t = PRICING_TABS[tab];
   return (
     <section id="produk" className="py-24 bg-white">
@@ -393,7 +425,7 @@ function PricingSection() {
         </div>
 
         {/* Digital Products */}
-        <div className="mt-16 pt-12 border-t border-slate-100">
+        <div id="digital" className="mt-16 pt-12 border-t border-slate-100">
           <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">BELAJAR MANDIRI</p>
           <h3 className="text-xl font-bold mb-6">Mau belajar sendiri dulu?</h3>
           <div className="flex justify-center gap-5 flex-wrap">
@@ -422,10 +454,11 @@ function PricingSection() {
 export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
+  const [pricingTab, setPricingTab] = useState(0);
   useEffect(()=>{window.scrollTo(0,0);const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
 
   return (<>
-    <Navbar lang={lang} setLang={setLang}/>
+    <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
 
     {/* HERO */}
     <section className="bg-[#1A9E9E] min-h-screen flex items-center relative overflow-hidden pt-32">
@@ -624,7 +657,7 @@ export default function Home() {
     </section>
 
     {/* PRICING */}
-    <PricingSection/>
+    <PricingSection tab={pricingTab} setTab={setPricingTab}/>
 
     {/* CTA */}
     <section className="py-24 bg-white">
