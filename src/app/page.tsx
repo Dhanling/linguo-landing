@@ -229,9 +229,9 @@ export default function Home() {
             {[...Array(2)].flatMap((_, ri) =>
               LANGUAGES.map((l, i) => (
                 <a key={`lang-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                  className="flex items-center gap-3 bg-white px-6 py-3.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer shrink-0">
-                  <img src={`https://flagcdn.com/w40/${getFlagCode(l.name)}.png`} alt={l.name} className="h-7 w-7 rounded-full object-cover" onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}}/>
-                  <span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
+                  className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer shrink-0">
+                  <img src={`https://flagcdn.com/w40/${getFlagCode(l.name)}.png`} alt={l.name} className="h-5 w-5 rounded-full object-cover" onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}}/>
+                  <span className="text-xs font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
                 </a>
               ))
             )}
@@ -252,7 +252,7 @@ export default function Home() {
             {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*",note:"* S&K berlaku"}
           ].map((s,i)=>(<div key={i} className="flex items-start">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center w-[200px]">
-              <div className="h-[90px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} className="max-h-[90px] w-auto object-contain"/></div>
+              <div className="h-[70px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} className="max-h-[70px] w-auto object-contain"/></div>
               <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
               <h3 className="text-sm font-bold mb-2 leading-tight">{s.t}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
