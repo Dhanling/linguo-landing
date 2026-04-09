@@ -65,10 +65,8 @@ function Navbar({lang,setLang}:{lang:string;setLang:(l:string)=>void}) {
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button onClick={()=>setLang(lang==='id'?'en':'id')} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+            <button onClick={()=>setLang(lang==='id'?'en':'id')} className="hover:opacity-80 transition-opacity">
               <img src={lang==='id'?"/images/flag-id.png":"/images/flag-en.png"} alt={lang==='id'?"ID":"EN"} className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
-              <span className={`text-xs font-medium ${c?"text-slate-500":"text-white/70"}`}>{lang==='id'?'ID':'EN'}</span>
-              <ChevronDown className={`h-3.5 w-3.5 ${c?"text-slate-400":"text-white/70"}`}/>
             </button>
             <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
           </div>
@@ -226,12 +224,12 @@ export default function Home() {
         <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:300,behavior:'smooth'})}} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
           <ChevronRight className="h-5 w-5 text-slate-600"/>
         </button>
-        <div id="lang-row1" className="overflow-hidden">
-          <div className="animate-marquee-slow flex items-center gap-4 w-max py-2">
+        <div id="lang-row1" className="overflow-hidden group">
+          <div className="animate-marquee flex items-center gap-4 w-max py-2 group-hover:[animation-play-state:paused]" style={{animationDuration:'35s'}}>
             {[...Array(2)].flatMap((_, ri) =>
               LANGUAGES.map((l, i) => (
                 <a key={`lang-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                  className="flex items-center gap-3 bg-white px-6 py-3.5 rounded-full border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 transition-all cursor-pointer shrink-0">
+                  className="flex items-center gap-3 bg-white px-6 py-3.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer shrink-0">
                   <img src={`https://flagcdn.com/w40/${getFlagCode(l.name)}.png`} alt={l.name} className="h-7 w-7 rounded-full object-cover" onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}}/>
                   <span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
                 </a>
