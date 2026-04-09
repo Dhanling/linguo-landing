@@ -146,7 +146,7 @@ export default function Home() {
             { src: "/images/clients/kai.png", alt: "KAI" },
             { src: "/images/clients/groundprobe.png", alt: "GroundProbe" },
           ].map((logo, i) => (
-            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale" />
+            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[160px] w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale" />
           ))
         )}
       </div>
