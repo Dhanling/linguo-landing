@@ -51,17 +51,25 @@ function Navbar() {
       {/* Main Nav */}
       <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center">
-            <img src="/images/logo-white.png" alt="Linguo" className={`h-14 object-contain transition-all ${c?"brightness-0":""}`} />
-          </a>
-          <div className="hidden md:flex items-center gap-7">
-            {[["Private Class","#produk"],["Career","#teacher"],["Blog","#faq"],["Corporate","#bahasa"]].map(([l,h]) => (
-              <a key={l} href={h} className={`text-sm font-medium ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors`}>{l}</a>
-            ))}
-            <div className={`flex items-center gap-1.5 text-sm ${c?"text-slate-500":"text-white/70"}`}>
-              <span>Site Language:</span>
-              <span className="text-lg">🇬🇧</span>
+          <div className="flex items-center gap-10">
+            <a href="/" className="flex items-center">
+              <img src="/images/logo-white.png" alt="Linguo" className={`h-14 object-contain transition-all ${c?"brightness-0":""}`} />
+            </a>
+            <div className="hidden md:flex items-center gap-8">
+              {[["Our Program","#produk"],["Language","#bahasa"],["Career","#teacher"],["Blog","#faq"]].map(([l,h]) => (
+                <a key={l} onClick={()=>document.getElementById(h.slice(1))?.scrollIntoView({behavior:'smooth'})} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+                  {l}
+                  <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full ${c?"bg-[#fbbf24]":"bg-[#fbbf24]"}`}/>
+                </a>
+              ))}
             </div>
+          </div>
+          <div className="hidden md:flex items-center gap-4">
+            <button className={`flex items-center gap-1.5 text-sm ${c?"text-slate-500":"text-white/70"} hover:opacity-80 transition-opacity`}>
+              <span className="text-lg">🇬🇧</span>
+              <ChevronDown className="h-3.5 w-3.5"/>
+            </button>
+            <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
         </div>
@@ -99,8 +107,8 @@ export default function Home() {
     <Navbar/>
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] min-h-[92vh] flex items-center relative overflow-hidden pt-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.2fr] gap-4 items-center py-16 lg:py-0">
+    <section className="bg-[#1A9E9E] min-h-screen flex items-center relative overflow-hidden pt-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6">
             Belajar 55+<br/>bahasa online<br/>rasa offline!
@@ -112,16 +120,20 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
-          <div className="relative w-[640px] h-[640px]">
+          <div className="relative w-[750px] h-[750px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-8 right-4 w-[130px] h-[110px] flex items-center justify-center">
-              <img src="/images/bubble-pink.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-              <span className="relative z-10 font-extrabold text-slate-800 text-base -mt-4 -rotate-12">Hola!</span>
-            </motion.div>
-            <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-32 left-0 w-[120px] h-[100px] flex items-center justify-center">
-              <img src="/images/bubble-purple.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-              <span className="relative z-10 font-bold text-purple-900 text-xs -mt-2 rotate-6">こんにちは 🇯🇵</span>
-            </motion.div>
+            <div className="absolute top-4 right-2 -rotate-[15deg]">
+              <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="w-[150px] h-[130px] flex items-center justify-center">
+                <img src="/images/bubble-pink.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
+                <span className="relative z-10 font-extrabold text-slate-800 text-lg -mt-3">Hola!</span>
+              </motion.div>
+            </div>
+            <div className="absolute top-36 left-0 rotate-[8deg]">
+              <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="w-[130px] h-[110px] flex items-center justify-center">
+                <img src="/images/bubble-purple.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
+                <span className="relative z-10 font-bold text-purple-900 text-xs -mt-1">こんにちは 🇯🇵</span>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -138,7 +150,7 @@ export default function Home() {
 
     {/* OUR CLIENTS */}
     <section className="py-10 bg-white border-b border-slate-100 overflow-hidden group">
-      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]">
+      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'15s'}}>
         {[...Array(3)].flatMap((_, ri) =>
           [
             { src: "/images/clients/aiesec.png", alt: "AIESEC" },
