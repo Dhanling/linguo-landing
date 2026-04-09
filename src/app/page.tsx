@@ -340,6 +340,7 @@ export default function Home() {
             <a onClick={()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Mulai Belajar":"Start Learning"}</a>
             <a onClick={()=>document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Cek Jadwal":"Check Schedule"}</a>
           </div>
+          <img src="/images/google-review.png" alt="Google Reviews 4.9/5" className="h-8 mt-6 opacity-90"/>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
@@ -526,7 +527,7 @@ export default function Home() {
     {/* PRICING — KELAS PRIVATE */}
     <section id="produk" className="py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold italic mb-2">Choose a learning plan<br/>that speaks to you</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2">Choose a learning plan<br/>that speaks to you</h2>
         <p className="text-slate-500 mb-14">Kelas Private — fleksibel, personal, dan efektif.</p>
         <div className="overflow-x-auto"><table className="w-full text-sm">
           <thead><tr><th className="text-left py-4 px-4 w-[220px]"></th>
@@ -554,7 +555,7 @@ export default function Home() {
     {/* CTA */}
     <section className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold italic leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
         <p className="text-slate-500 mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
         <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
@@ -564,7 +565,7 @@ export default function Home() {
     <section id="faq" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
-        <h2 className="text-3xl font-bold text-center italic mb-3">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
         <p className="text-[#1A9E9E] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
         <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
       </div>
