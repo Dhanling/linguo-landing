@@ -203,6 +203,53 @@ function WhyCarousel() {
   );
 }
 
+const TEACHER_DATA = [
+  {name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es",
+    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar dari 2013, selain itu pernah menjadi ketua komunitas Polyglot Indonesia chapter Bandung."},
+  {name:"Nitalia Wijaya",role:"Korean & English Teacher",img:"/images/teachers/teacher-nitalia.png",f1:"kr",f2:"gb",
+    bio:"Lulusan Sastra Korea UNPAD. Memiliki sertifikasi TOPIK Level 5 dan pengalaman tinggal di Seoul selama 2 tahun."},
+  {name:"Angga",role:"Chinese & Korean Teacher",img:"/images/teachers/teacher-angga.png",f1:"cn",f2:"kr",
+    bio:"Lulusan Sastra China UNPAD dengan sertifikasi HSK 5. Berpengalaman mengajar Bahasa Mandarin dan Korea sejak 2018."},
+  {name:"Paramita Wulandari",role:"Japanese & Portuguese Teacher",img:"/images/teachers/teacher-paramita.png",f1:"jp",f2:"br",
+    bio:"Lulusan Sastra Jepang UI dengan sertifikasi JLPT N2. Pernah tinggal di Osaka selama 1 tahun sebagai exchange student."},
+  {name:"Thifal Syahla",role:"English & Persian Teacher",img:"/images/teachers/teacher-thifal.png",f1:"gb",f2:"ir",
+    bio:"Lulusan Sastra Inggris UPI. Memiliki sertifikasi IELTS 7.5 dan pengalaman mengajar Bahasa Inggris dan Persia sejak 2019."},
+  {name:"Yeremia Immanuel",role:"French & Swahili Teacher",img:"/images/teachers/teacher-yeremia.png",f1:"fr",f2:"ke",
+    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar Bahasa Prancis dan Swahili dengan pendekatan komunikatif sejak 2017."},
+];
+
+function TeacherGrid() {
+  const [selected, setSelected] = useState<number|null>(null);
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+      {TEACHER_DATA.map((t,i)=>(
+        <motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}>
+          <div onClick={()=>setSelected(selected===i?null:i)}
+            className={`bg-white rounded-2xl border-2 p-6 transition-all cursor-pointer ${selected===i?"border-[#1A9E9E] shadow-lg":"border-transparent hover:border-slate-200 hover:shadow-md"}`}>
+            <div className="relative h-24 w-24 mx-auto mb-4">
+              <img src={t.img} alt={t.name} className="h-24 w-24 rounded-full object-cover"/>
+              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex">
+                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
+                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white"/>
+              </div>
+            </div>
+            <p className="font-semibold text-sm">{t.name}</p>
+            <p className="text-xs text-slate-400 mb-1">{t.role}</p>
+          </div>
+          <AnimatePresence>{selected===i&&(
+            <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="overflow-hidden">
+              <div className="bg-white rounded-b-2xl border-2 border-t-0 border-[#1A9E9E] px-5 py-4 -mt-3 text-left">
+                <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-wider mb-1">{t.role}</p>
+                <p className="text-xs text-slate-500 leading-relaxed">{t.bio}</p>
+              </div>
+            </motion.div>
+          )}</AnimatePresence>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
@@ -266,7 +313,7 @@ export default function Home() {
             { src: "/images/clients/orica.png", alt: "Orica" },
             { src: "/images/clients/mondelez.png", alt: "Mondelez" },
           ].map((logo, i) => (
-            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[160px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[200px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           ))
         )}
       </div>
@@ -394,26 +441,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-3">Meet Our Teacher</h2>
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-          {[{name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es"},
-            {name:"Nitalia Wijaya",role:"Korean & English Teacher",img:"/images/teachers/teacher-nitalia.png",f1:"kr",f2:"gb"},
-            {name:"Angga",role:"Chinese & Korean Teacher",img:"/images/teachers/teacher-angga.png",f1:"cn",f2:"kr"},
-            {name:"Paramita Wulandari",role:"Japanese & Portuguese Teacher",img:"/images/teachers/teacher-paramita.png",f1:"jp",f2:"br"},
-            {name:"Thifal Syahla",role:"English & Persian Teacher",img:"/images/teachers/teacher-thifal.png",f1:"gb",f2:"ir"},
-            {name:"Yeremia Immanuel",role:"French & Swahili Teacher",img:"/images/teachers/teacher-yeremia.png",f1:"fr",f2:"ke"},
-          ].map((t,i)=>(<motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}
-            className="bg-white rounded-2xl border border-slate-100 p-6 hover:border-[#1A9E9E]/40 hover:shadow-lg transition-all cursor-pointer">
-            <div className="relative h-24 w-24 mx-auto mb-4">
-              <img src={t.img} alt={t.name} className="h-24 w-24 rounded-full object-cover"/>
-              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex">
-                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
-                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white"/>
-              </div>
-            </div>
-            <p className="font-semibold text-sm">{t.name}</p>
-            <p className="text-xs text-slate-400">{t.role}</p>
-          </motion.div>))}
-        </div>
+        <TeacherGrid/>
       </div>
     </section>
 
