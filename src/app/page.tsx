@@ -107,7 +107,7 @@ export default function Home() {
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md">Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)</p>
           <div className="flex flex-wrap gap-3">
-            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-6 w-6"/> Mulai Belajar</a>
+            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25">📕 Mulai Belajar</a>
             <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-6 w-6"/> Cek Jadwal</a>
           </div>
         </motion.div>
