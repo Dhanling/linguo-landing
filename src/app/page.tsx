@@ -149,7 +149,7 @@ const WHY_CARDS = [
 ];
 
 function WhyCarousel() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   const total = WHY_CARDS.length;
   const cardW = 300;
   const gap = 24;
@@ -206,7 +206,7 @@ function WhyCarousel() {
 export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
-  useEffect(()=>{const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
+  useEffect(()=>{window.scrollTo(0,0);const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
 
   return (<>
     <Navbar lang={lang} setLang={setLang}/>
