@@ -392,15 +392,26 @@ export default function Home() {
     {/* TEACHERS */}
     <section id="teacher" className="py-24 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold italic mb-3">Meet Our Teacher</h2>
+        <h2 className="text-3xl font-bold mb-3">Meet Our Teacher</h2>
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-          {TEACHERS.map((t,i)=>(<motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}
-            className="bg-white rounded-2xl border border-slate-100 p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all">
-            <div className="relative h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-2xl font-bold text-slate-500">
-              {t.name.split(" ").map(w=>w[0]).join("")}<span className="absolute -bottom-1 text-sm">{t.flags}</span>
+          {[{name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es"},
+            {name:"Nitalia Wijaya",role:"Korean & English Teacher",img:"/images/teachers/teacher-nitalia.png",f1:"kr",f2:"gb"},
+            {name:"Angga",role:"Chinese & Korean Teacher",img:"/images/teachers/teacher-angga.png",f1:"cn",f2:"kr"},
+            {name:"Paramita Wulandari",role:"Japanese & Portuguese Teacher",img:"/images/teachers/teacher-paramita.png",f1:"jp",f2:"br"},
+            {name:"Thifal Syahla",role:"English & Persian Teacher",img:"/images/teachers/teacher-thifal.png",f1:"gb",f2:"ir"},
+            {name:"Yeremia Immanuel",role:"French & Swahili Teacher",img:"/images/teachers/teacher-yeremia.png",f1:"fr",f2:"ke"},
+          ].map((t,i)=>(<motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}
+            className="bg-white rounded-2xl border border-slate-100 p-6 hover:border-[#1A9E9E]/40 hover:shadow-lg transition-all cursor-pointer">
+            <div className="relative h-24 w-24 mx-auto mb-4">
+              <img src={t.img} alt={t.name} className="h-24 w-24 rounded-full object-cover"/>
+              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex">
+                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
+                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white"/>
+              </div>
             </div>
-            <p className="font-semibold text-sm">{t.name}</p><p className="text-xs text-slate-400">{t.role} Teacher</p>
+            <p className="font-semibold text-sm">{t.name}</p>
+            <p className="text-xs text-slate-400">{t.role}</p>
           </motion.div>))}
         </div>
       </div>
