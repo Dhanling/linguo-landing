@@ -149,29 +149,45 @@ const WHY_CARDS = [
 ];
 
 function WhyCarousel() {
-  const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(WHY_CARDS.length / 3);
-  const prev = () => setPage(p => (p - 1 + totalPages) % totalPages);
-  const next = () => setPage(p => (p + 1) % totalPages);
-  const visible = WHY_CARDS.slice(page * 3, page * 3 + 3);
+  const [active, setActive] = useState(1);
+  const total = WHY_CARDS.length;
+  const prev = () => setActive(a => (a - 1 + total) % total);
+  const next = () => setActive(a => (a + 1) % total);
+
+  useEffect(() => {
+    const t = setInterval(next, 4000);
+    return () => clearInterval(t);
+  }, []);
+
+  const getIdx = (offset: number) => (active + offset + total) % total;
 
   return (
-    <div className="relative">
-      <div className="flex justify-end gap-2 mb-6">
+    <div className="relative px-6">
+      <div className="flex justify-end max-w-5xl mx-auto gap-2 mb-6">
         <button onClick={prev} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
         <button onClick={next} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {visible.map((src, i) => (
-          <motion.div key={`${page}-${i}`} initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:i*0.08}}
-            className={`rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 ${i===1?"lg:scale-105 shadow-lg border-[#1A9E9E]/20":""}`}>
-            <img src={src} alt="" className="w-full h-auto"/>
-          </motion.div>
-        ))}
+      <div className="flex items-center justify-center gap-6 max-w-5xl mx-auto">
+        {[-1, 0, 1].map(offset => {
+          const idx = getIdx(offset);
+          const isCenter = offset === 0;
+          return (
+            <motion.div
+              key={`${active}-${offset}`}
+              initial={{opacity:0, scale:0.9}}
+              animate={{opacity: isCenter ? 1 : 0.7, scale: isCenter ? 1.05 : 0.92}}
+              transition={{duration:0.5, ease:"easeInOut"}}
+              className={`rounded-2xl overflow-hidden bg-white transition-shadow duration-500 ${isCenter ? "shadow-2xl border-2 border-[#1A9E9E]/20 z-10" : "shadow-sm border border-slate-100"}`}
+              style={{width: isCenter ? '340px' : '280px', flexShrink:0}}
+            >
+              <img src={WHY_CARDS[idx]} alt="" className="w-full h-auto"/>
+            </motion.div>
+          );
+        })}
       </div>
       <div className="flex justify-center gap-2 mt-8">
-        {Array.from({length:totalPages}).map((_,i) => (
-          <button key={i} onClick={()=>setPage(i)} className={`transition-all duration-300 rounded-full ${i===page?"w-8 h-2.5 bg-[#1A9E9E]":"w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
+        {WHY_CARDS.map((_, i) => (
+          <button key={i} onClick={() => setActive(i)} className={`transition-all duration-300 rounded-full ${i === active ? "w-8 h-2.5 bg-[#1A9E9E]" : "w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
         ))}
       </div>
     </div>
@@ -315,19 +331,9 @@ export default function Home() {
     {/* WHY LINGUO */}
     <section className="py-24 bg-white relative overflow-hidden">
       <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-14">Why Linguo?</h2>
-        <div className="overflow-hidden group" style={{maskImage:'linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent)', WebkitMaskImage:'linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent)'}}>
-          <div className="animate-marquee flex gap-6 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'25s'}}>
-            {[...Array(3)].flatMap((_, ri) =>
-              ["/images/why-1.png","/images/why-2.png","/images/why-3.png","/images/why-4.png","/images/why-5.png","/images/why-6.png"].map((src, i) => (
-                <div key={`${ri}-${i}`} className="w-[280px] shrink-0 rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <img src={src} alt="" className="w-full h-auto"/>
-                </div>
-              ))
-            )}
-          </div>
-        </div>
+      <div className="relative z-10">
+        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
+        <WhyCarousel/>
       </div>
     </section>
 
