@@ -143,6 +143,41 @@ function TypingBubble() {
   );
 }
 
+const WHY_CARDS = [
+  "/images/why-1.png","/images/why-2.png","/images/why-3.png",
+  "/images/why-4.png","/images/why-5.png","/images/why-6.png",
+];
+
+function WhyCarousel() {
+  const [page, setPage] = useState(0);
+  const totalPages = Math.ceil(WHY_CARDS.length / 3);
+  const prev = () => setPage(p => (p - 1 + totalPages) % totalPages);
+  const next = () => setPage(p => (p + 1) % totalPages);
+  const visible = WHY_CARDS.slice(page * 3, page * 3 + 3);
+
+  return (
+    <div className="relative">
+      <div className="flex justify-end gap-2 mb-6">
+        <button onClick={prev} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
+        <button onClick={next} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {visible.map((src, i) => (
+          <motion.div key={`${page}-${i}`} initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:i*0.08}}
+            className={`rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 ${i===1?"lg:scale-105 shadow-lg border-[#1A9E9E]/20":""}`}>
+            <img src={src} alt="" className="w-full h-auto"/>
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-8">
+        {Array.from({length:totalPages}).map((_,i) => (
+          <button key={i} onClick={()=>setPage(i)} className={`transition-all duration-300 rounded-full ${i===page?"w-8 h-2.5 bg-[#1A9E9E]":"w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
@@ -278,18 +313,10 @@ export default function Home() {
     </section>
 
     {/* WHY LINGUO */}
-    <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center italic mb-14">Why Linguo?</h2>
-        <div className="grid sm:grid-cols-3 gap-6">
-          {[{i:"📚",t:"Bebas ikut 55+ pilihan bahasa!",d:"Linguo memiliki 55+ pilihan bahasa dan terus bertambah sesuai minat siswa."},
-            {i:"💰",t:"Harga mulai Rp 90.000 / sesi",d:"Kelas Private Linguo memiliki harga terjangkau dengan kualitas premium."},
-            {i:"🎬",t:"Level basic hingga advance",d:"Setiap bahasa memiliki opsi lanjutan: Basic, Upper Basic, Intermediate, Advance."}
-          ].map((c,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
-            className={`bg-white rounded-3xl border-2 p-8 text-center hover:shadow-xl transition-all ${i===1?"border-[#1A9E9E]/30 shadow-lg lg:scale-105":"border-slate-100"}`}>
-            <span className="text-5xl block mb-5">{c.i}</span><h3 className="text-lg font-bold mb-3">{c.t}</h3><p className="text-sm text-slate-500 leading-relaxed">{c.d}</p>
-          </motion.div>))}
-        </div>
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-14">Why Linguo?</h2>
+        <WhyCarousel/>
       </div>
     </section>
 
