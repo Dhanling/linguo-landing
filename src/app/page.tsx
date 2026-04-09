@@ -79,7 +79,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Language","bahasa"],["Career","teacher"],["Blog","faq"]].map(([l,h]) => (
+              {[["Career","teacher"],["FAQ","faq"]].map(([l,h]) => (
                 <a key={l} onClick={()=>scrollTo(h)} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
@@ -314,6 +314,64 @@ const TEACHER_DATA = [
     bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar Bahasa Prancis dan Swahili dengan pendekatan komunikatif sejak 2017."},
 ];
 
+const HERO_LANGUAGES = [
+  "English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish","Italian","Dutch",
+  "Portuguese","Russian","Thai","Vietnamese","Hindi","Turkish","Polish","Swedish","Norwegian","Danish",
+  "Finnish","Greek","Czech","Hungarian","Hebrew","Persian","Swahili","Tagalog","Malay","Georgian",
+  "Javanese","Sundanese","BIPA","Urdu","Bengali","Romanian",
+];
+
+function HeroFunnel({lang}:{lang:string}) {
+  const [selLang, setSelLang] = useState("");
+  const [dropOpen, setDropOpen] = useState(false);
+
+  const handleStart = () => {
+    if(selLang) {
+      window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${selLang}`, '_blank');
+    } else {
+      setDropOpen(true);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-3 max-w-md">
+      <div className="flex gap-2">
+        <div className="relative flex-1">
+          <button onClick={()=>setDropOpen(!dropOpen)}
+            className="w-full flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
+            {selLang ? (
+              <span className="flex items-center gap-2">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                {selLang}
+              </span>
+            ) : (
+              <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
+            )}
+            <ChevronDown className={`h-4 w-4 transition-transform ${dropOpen?"rotate-180":""}`}/>
+          </button>
+          <AnimatePresence>{dropOpen&&(
+            <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
+              className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 max-h-60 overflow-y-auto z-50">
+              {HERO_LANGUAGES.map(l=>(
+                <button key={l} onClick={()=>{setSelLang(l);setDropOpen(false)}}
+                  className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors text-left">
+                  <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                  {l}
+                </button>
+              ))}
+            </motion.div>
+          )}</AnimatePresence>
+        </div>
+        <button onClick={handleStart}
+          className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
+          {lang==="id"?"Mulai Belajar":"Start Learning"} →
+        </button>
+      </div>
+      <p className="text-white/50 text-xs">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
+    </div>
+  );
+}
+
 function TeacherGrid() {
   const [selected, setSelected] = useState<number|null>(null);
   return (
@@ -468,11 +526,8 @@ export default function Home() {
             Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md">{lang==="id"?"Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)":"Linguo will help you learn languages faster and easier :)"}</p>
-          <div className="flex flex-wrap gap-3">
-            <a onClick={()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Mulai Belajar":"Start Learning"}</a>
-            <a onClick={()=>document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Cek Jadwal":"Check Schedule"}</a>
-          </div>
-          <img src="/images/google-review.png" alt="Google Reviews 4.9/5" className="h-8 mt-6 opacity-90"/>
+          <HeroFunnel lang={lang}/>
+          <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-8 mt-6 opacity-90"/>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
@@ -499,6 +554,26 @@ export default function Home() {
       </div>
     </a>
 
+    {/* STATS COUNTER */}
+    <section className="bg-white py-10 border-b border-slate-100">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center justify-center gap-6 sm:gap-12 flex-wrap">
+          {[
+            {val:"10,000+",label:"Siswa"},
+            {val:"55+",label:"Bahasa"},
+            {val:"100+",label:"Pengajar"},
+            {val:"5.0 ⭐",label:"Google Review"},
+          ].map((s,i)=>(
+            <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
+              className="text-center">
+              <p className="text-2xl sm:text-3xl font-extrabold text-[#1A9E9E]">{s.val}</p>
+              <p className="text-xs sm:text-sm text-slate-500 mt-1">{s.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* OUR CLIENTS */}
     <section className="py-10 bg-white border-b border-slate-100 overflow-hidden group">
       <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'50s'}}>
@@ -519,35 +594,6 @@ export default function Home() {
             <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[200px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           ))
         )}
-      </div>
-    </section>
-
-    {/* LANGUAGE MARQUEE */}
-    <section id="bahasa" className="py-20 bg-[#e8f6f6]">
-      <div className="text-center mb-10 px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2">Become a Polyglot<br/>with Linguo</h2>
-        <p className="text-slate-500">Linguo helps you to become fluent in many language.</p>
-      </div>
-      <div className="relative overflow-hidden px-6">
-        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:-300,behavior:'smooth'})}} className="absolute left-10 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
-          <ChevronLeft className="h-5 w-5 text-slate-600"/>
-        </button>
-        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:300,behavior:'smooth'})}} className="absolute right-10 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
-          <ChevronRight className="h-5 w-5 text-slate-600"/>
-        </button>
-        <div id="lang-row1" className="overflow-hidden group mx-20" style={{maskImage:'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)', WebkitMaskImage:'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)'}}>
-          <div className="animate-marquee flex items-center gap-4 w-max py-2 group-hover:[animation-play-state:paused]" style={{animationDuration:'90s'}}>
-            {[...Array(2)].flatMap((_, ri) =>
-              LANGUAGES.map((l, i) => (
-                <a key={`lang-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                  className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:-translate-y-1 transition-all duration-300 cursor-pointer shrink-0">
-                  <img src={`https://flagcdn.com/w40/${getFlagCode(l.name)}.png`} alt={l.name} className="h-5 w-5 rounded-full object-cover" onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}}/>
-                  <span className="text-xs font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
-                </a>
-              ))
-            )}
-          </div>
-        </div>
       </div>
     </section>
 
@@ -585,15 +631,6 @@ export default function Home() {
             <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
           </motion.div>))}
         </div>
-      </div>
-    </section>
-
-    {/* WHY LINGUO */}
-    <section className="py-24 bg-white relative overflow-hidden">
-      <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
-      <div className="relative z-10">
-        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
-        <WhyCarousel/>
       </div>
     </section>
 
@@ -636,6 +673,15 @@ export default function Home() {
         <div className="text-center mt-10">
           <a href="https://wa.me/6282116859493?text=Halo, saya mau lihat kelas lainnya" target="_blank" className="inline-block border border-slate-300 text-slate-600 font-medium px-8 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors">Browse more</a>
         </div>
+      </div>
+    </section>
+
+    {/* WHY LINGUO */}
+    <section className="py-24 bg-white relative overflow-hidden">
+      <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
+      <div className="relative z-10">
+        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
+        <WhyCarousel/>
       </div>
     </section>
 
@@ -685,7 +731,7 @@ export default function Home() {
           <div><h4 className="font-bold mb-4">Learn a Language</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
               {["English","French","Spanish","Portuguese","German","Japanese","Korean","Arabic","Italian","Russian"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=Halo, saya mau kursus ${l}`} className="hover:text-white transition-colors">Learn {l}</a></li>))}
-              <li><a onClick={()=>{document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})}} className="cursor-pointer font-semibold text-white hover:underline">Learn More Languages</a></li>
+              <li><a onClick={()=>{window.scrollTo({top:0,behavior:'smooth'})}} className="cursor-pointer font-semibold text-white hover:underline">Learn More Languages</a></li>
             </ul>
           </div>
           <div><h4 className="font-bold mb-4">Level Option</h4>
