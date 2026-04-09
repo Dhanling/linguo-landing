@@ -132,8 +132,8 @@ export default function Home() {
     </a>
 
     {/* OUR CLIENTS */}
-    <section className="py-10 bg-white border-b border-slate-100 overflow-hidden">
-      <div className="animate-marquee flex items-center gap-16 w-max">
+    <section className="py-10 bg-white border-b border-slate-100 overflow-hidden group">
+      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]">
         {[...Array(3)].flatMap((_, ri) =>
           [
             { src: "/images/clients/aiesec.png", alt: "AIESEC" },
@@ -147,7 +147,7 @@ export default function Home() {
             { src: "/images/clients/kai.png", alt: "KAI" },
             { src: "/images/clients/orica.png", alt: "Orica" },
           ].map((logo, i) => (
-            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[160px] w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale" />
+            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 max-w-[160px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           ))
         )}
       </div>
