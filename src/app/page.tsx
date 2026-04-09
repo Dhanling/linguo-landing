@@ -301,17 +301,23 @@ function TestimonialCarousel() {
 
 const TEACHER_DATA = [
   {name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es",
-    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar dari 2013, selain itu pernah menjadi ketua komunitas Polyglot Indonesia chapter Bandung."},
+    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar dari 2013, selain itu pernah menjadi ketua komunitas Polyglot Indonesia chapter Bandung.",
+    lessons:850,rating:5.0,price:"Rp 90K"},
   {name:"Nitalia Wijaya",role:"Korean & English Teacher",img:"/images/teachers/teacher-nitalia.png",f1:"kr",f2:"gb",
-    bio:"Lulusan Sastra Korea UNPAD. Memiliki sertifikasi TOPIK Level 5 dan pengalaman tinggal di Seoul selama 2 tahun."},
+    bio:"Lulusan Sastra Korea UNPAD. Memiliki sertifikasi TOPIK Level 5 dan pengalaman tinggal di Seoul selama 2 tahun.",
+    lessons:1200,rating:5.0,price:"Rp 90K"},
   {name:"Angga",role:"Chinese & Korean Teacher",img:"/images/teachers/teacher-angga.png",f1:"cn",f2:"kr",
-    bio:"Lulusan Sastra China UNPAD dengan sertifikasi HSK 5. Berpengalaman mengajar Bahasa Mandarin dan Korea sejak 2018."},
+    bio:"Lulusan Sastra China UNPAD dengan sertifikasi HSK 5. Berpengalaman mengajar Bahasa Mandarin dan Korea sejak 2018.",
+    lessons:680,rating:4.9,price:"Rp 90K"},
   {name:"Paramita Wulandari",role:"Japanese & Portuguese Teacher",img:"/images/teachers/teacher-paramita.png",f1:"jp",f2:"br",
-    bio:"Lulusan Sastra Jepang UI dengan sertifikasi JLPT N2. Pernah tinggal di Osaka selama 1 tahun sebagai exchange student."},
+    bio:"Lulusan Sastra Jepang UI dengan sertifikasi JLPT N2. Pernah tinggal di Osaka selama 1 tahun sebagai exchange student.",
+    lessons:920,rating:5.0,price:"Rp 90K"},
   {name:"Thifal Syahla",role:"English & Persian Teacher",img:"/images/teachers/teacher-thifal.png",f1:"gb",f2:"ir",
-    bio:"Lulusan Sastra Inggris UPI. Memiliki sertifikasi IELTS 7.5 dan pengalaman mengajar Bahasa Inggris dan Persia sejak 2019."},
+    bio:"Lulusan Sastra Inggris UPI. Memiliki sertifikasi IELTS 7.5 dan pengalaman mengajar Bahasa Inggris dan Persia sejak 2019.",
+    lessons:1050,rating:5.0,price:"Rp 90K"},
   {name:"Yeremia Immanuel",role:"French & Swahili Teacher",img:"/images/teachers/teacher-yeremia.png",f1:"fr",f2:"ke",
-    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar Bahasa Prancis dan Swahili dengan pendekatan komunikatif sejak 2017."},
+    bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar Bahasa Prancis dan Swahili dengan pendekatan komunikatif sejak 2017.",
+    lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
 const HERO_LANGUAGES = [
@@ -379,16 +385,32 @@ function TeacherGrid() {
       {TEACHER_DATA.map((t,i)=>(
         <motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}>
           <div onClick={()=>setSelected(selected===i?null:i)}
-            className={`bg-white rounded-2xl border-2 p-6 transition-all cursor-pointer ${selected===i?"border-[#1A9E9E] shadow-lg":"border-transparent hover:border-slate-200 hover:shadow-md"}`}>
-            <div className="relative h-24 w-24 mx-auto mb-4">
-              <img src={t.img} alt={t.name} className="h-24 w-24 rounded-full object-cover"/>
+            className={`bg-white rounded-2xl border-2 p-5 transition-all cursor-pointer ${selected===i?"border-[#1A9E9E] shadow-lg":"border-transparent hover:border-slate-200 hover:shadow-md"}`}>
+            <div className="relative h-20 w-20 mx-auto mb-3">
+              <img src={t.img} alt={t.name} className="h-20 w-20 rounded-full object-cover"/>
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex">
-                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
-                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-6 w-6 rounded-full object-cover border-2 border-white"/>
+                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-5 w-5 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
+                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-5 w-5 rounded-full object-cover border-2 border-white"/>
               </div>
             </div>
             <p className="font-semibold text-sm">{t.name}</p>
-            <p className="text-xs text-slate-400 mb-1">{t.role}</p>
+            <p className="text-xs text-slate-400 mb-2">{t.role}</p>
+            {/* italki-style stats */}
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="flex items-center gap-0.5 text-xs">
+                <Star className="h-3 w-3 fill-amber-400 text-amber-400"/>{t.rating}
+              </span>
+              <span className="text-xs text-slate-400">{t.lessons.toLocaleString()} sesi</span>
+            </div>
+            <div className="flex items-center justify-between bg-slate-50 rounded-xl px-3 py-2">
+              <span className="text-xs text-slate-500">Mulai dari</span>
+              <span className="text-sm font-bold text-[#1A9E9E]">{t.price}/sesi</span>
+            </div>
+            <a href={`https://wa.me/6282116859493?text=Halo, saya mau book trial class dengan ${t.name}`} target="_blank"
+              onClick={(e)=>e.stopPropagation()}
+              className="block mt-3 text-center bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
+              Book Trial
+            </a>
           </div>
           <AnimatePresence>{selected===i&&(
             <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="overflow-hidden">
@@ -569,6 +591,27 @@ export default function Home() {
               <p className="text-2xl sm:text-3xl font-extrabold text-[#1A9E9E]">{s.val}</p>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">{s.label}</p>
             </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* PRODUCT ICON BAR */}
+    <section className="bg-white py-8 border-b border-slate-100">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
+          {[
+            {icon:"🎓",label:"Private Class",action:()=>{setPricingTab(0);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
+            {icon:"👥",label:"Reguler",action:()=>{setPricingTab(1);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
+            {icon:"📝",label:"IELTS/TOEFL",action:()=>{setPricingTab(2);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
+            {icon:"📱",label:"E-Learning",action:()=>document.getElementById('digital')?.scrollIntoView({behavior:'smooth'})},
+            {icon:"🏢",label:"Corporate",action:()=>window.open('https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo','_blank')},
+          ].map((p,i)=>(
+            <button key={i} onClick={p.action}
+              className="flex flex-col items-center gap-2 px-4 sm:px-6 py-3 rounded-2xl hover:bg-[#1A9E9E]/5 transition-all group cursor-pointer">
+              <span className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform">{p.icon}</span>
+              <span className="text-[11px] sm:text-xs font-medium text-slate-600 group-hover:text-[#1A9E9E] transition-colors whitespace-nowrap">{p.label}</span>
+            </button>
           ))}
         </div>
       </div>
