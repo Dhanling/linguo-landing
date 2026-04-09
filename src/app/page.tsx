@@ -350,23 +350,43 @@ export default function Home() {
     {/* POPULAR CLASS */}
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10">Most popular class</h2>
-        <div className="grid sm:grid-cols-3 gap-6">
-          {[{l:"ENGLISH",f:"🇬🇧",e:"🏙️",t:"Beginner English",n:"Thifal Syahla",lv:"BEGINNER"},
-            {l:"KOREA",f:"🇰🇷",e:"🏯",t:"Korean Conversation",n:"Nitalia Wijaya",lv:"INTERMEDIATE"},
-            {l:"JAPAN",f:"🇯🇵",e:"⛩️",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER"}
-          ].map((c,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="group cursor-pointer">
-            <div className="relative h-52 bg-gradient-to-br from-[#1A9E9E]/20 to-[#1A9E9E]/5 rounded-2xl flex items-center justify-center text-7xl mb-4 group-hover:shadow-lg transition-shadow overflow-hidden">
-              {c.e}<span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-[10px] font-bold px-3 py-1 rounded-full">{c.f} {c.l}</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="h-9 w-9 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">{c.n.split(" ").map(w=>w[0]).join("")}</div>
-                <div><p className="text-sm font-semibold">{c.t}</p><p className="text-xs text-slate-400">{c.n}</p></div>
-              </div>
-              <span className="text-[10px] font-bold text-[#1A9E9E] border border-[#1A9E9E] px-2.5 py-1 rounded-full">{c.lv}</span>
-            </div>
-          </motion.div>))}
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-3xl font-bold">Most popular class</h2>
+          <div className="flex gap-2">
+            <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:-400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
+            <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
+          </div>
+        </div>
+        <div id="class-scroll" className="overflow-hidden group">
+          <div className="animate-marquee flex gap-6 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'30s'}}>
+            {[...Array(2)].flatMap((_, ri) =>
+              [{l:"ENGLISH",fc:"gb",bg:"from-orange-200 via-pink-200 to-purple-300",t:"Beginner English",n:"Thifal Syahla",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+                {l:"KOREA",fc:"kr",bg:"from-blue-200 via-cyan-100 to-emerald-200",t:"Sweet and tone",n:"Nitalia Wijaya",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
+                {l:"JAPAN",fc:"jp",bg:"from-pink-200 via-rose-100 to-sky-200",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+                {l:"SPANISH",fc:"es",bg:"from-amber-200 via-orange-200 to-red-200",t:"Spanish Conversation",n:"Febri Darusman",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+                {l:"MANDARIN",fc:"cn",bg:"from-red-200 via-amber-100 to-yellow-200",t:"HSK Preparation",n:"Angga",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
+                {l:"FRENCH",fc:"fr",bg:"from-blue-200 via-indigo-100 to-violet-200",t:"French for Travel",n:"Yeremia Immanuel",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+              ].map((c, i) => (
+                <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[360px] shrink-0 group/card cursor-pointer">
+                  <div className={`relative h-56 bg-gradient-to-br ${c.bg} rounded-2xl mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow`}>
+                    <span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                      <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-500">{c.n.split(" ").map(w=>w[0]).join("")}</div>
+                      <div><p className="text-sm font-semibold">{c.t}</p><p className="text-xs text-slate-400">{c.n}</p></div>
+                    </div>
+                    <span className={`text-[10px] font-bold px-3 py-1 rounded border ${c.lc}`}>{c.lv}</span>
+                  </div>
+                </a>
+              ))
+            )}
+          </div>
+        </div>
+        <div className="text-center mt-10">
+          <a href="https://wa.me/6282116859493?text=Halo, saya mau lihat kelas lainnya" target="_blank" className="inline-block border border-slate-300 text-slate-600 font-medium px-8 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors">Browse more</a>
         </div>
       </div>
     </section>
