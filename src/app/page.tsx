@@ -131,11 +131,13 @@ export default function Home() {
     </a>
 
     {/* OUR CLIENTS */}
-    <section className="py-6 bg-white border-b border-slate-100 overflow-hidden">
+    <section className="py-8 bg-white border-b border-slate-100 overflow-hidden">
       <div className="animate-marquee flex items-center gap-0 w-max">
-        {[...Array(4)].map((_, i) => (
-          <img key={i} src="/images/client-logos.png" alt="Our Clients" className="h-10 object-contain opacity-50 mx-12" />
-        ))}
+        {[...Array(3)].flatMap((_, ri) =>
+          ["AIESEC","CIMSA","PRASETIYA MULYA","VAKSINDO","BANK OF INDIA","BINUS UNIVERSITY","BITGET","GOPLAY","POLBAN","KAI"].map((p, i) => (
+            <span key={`${ri}-${i}`} className="text-base font-bold tracking-widest uppercase text-slate-300 whitespace-nowrap px-10">{p}</span>
+          ))
+        )}
       </div>
     </section>
 
