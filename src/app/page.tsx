@@ -162,9 +162,12 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-8 right-4">
-              <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="bg-white/95 backdrop-blur-sm rounded-2xl px-7 py-4 shadow-xl">
-                <TypingBubble/>
+            <div className="absolute top-20 left-[35%]">
+              <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
+                <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
+                  <TypingBubble/>
+                  <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white rotate-45 shadow-xl"/>
+                </div>
               </motion.div>
             </div>
           </div>
