@@ -52,7 +52,7 @@ function Navbar() {
       <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src="/images/logo-white.png" alt="Linguo" className={`h-10 object-contain transition-all ${c?"brightness-0":""}`} />
+            <img src="/images/logo-white.png" alt="Linguo" className={`h-14 object-contain transition-all ${c?"brightness-0":""}`} />
           </a>
           <div className="hidden md:flex items-center gap-7">
             {[["Private Class","#produk"],["Career","#teacher"],["Blog","#faq"],["Corporate","#bahasa"]].map(([l,h]) => (
