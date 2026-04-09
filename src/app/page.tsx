@@ -65,9 +65,9 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button className={`flex items-center gap-1.5 text-sm ${c?"text-slate-500":"text-white/70"} hover:opacity-80 transition-opacity`}>
-              <img src="https://flagcdn.com/w40/gb.png" alt="EN" className="h-6 w-6 rounded-full object-cover border border-white/30"/>
-              <ChevronDown className="h-3.5 w-3.5"/>
+            <button onClick={()=>{const el=document.documentElement;el.lang=el.lang==='id'?'en':'id';window.location.reload()}} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+              <img src="/images/flag-en.png" alt="EN" className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
+              <ChevronDown className={`h-3.5 w-3.5 ${c?"text-slate-400":"text-white/70"}`}/>
             </button>
             <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
           </div>
@@ -104,6 +104,11 @@ const GREETINGS = [
   {text:"你好!",flag:"🇨🇳"},{text:"Bonjour!",flag:"🇫🇷"},{text:"Hallo!",flag:"🇩🇪"},{text:"Ciao!",flag:"🇮🇹"},
   {text:"مرحبا!",flag:"🇸🇦"},{text:"Olá!",flag:"🇧🇷"},{text:"Привет!",flag:"🇷🇺"},{text:"สวัสดี!",flag:"🇹🇭"},
 ];
+
+const FLAG_CODES: Record<string,string> = {
+  English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro"
+};
+function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 
 function TypingBubble() {
   const [idx, setIdx] = useState(0);
@@ -162,7 +167,7 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-20 left-[35%]">
+            <div className="absolute top-16 left-[15%]">
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
                 <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
                   <TypingBubble/>
@@ -207,33 +212,30 @@ export default function Home() {
     </section>
 
     {/* LANGUAGE MARQUEE */}
-    <section id="bahasa" className="py-20 bg-[#f0fafa]">
+    <section id="bahasa" className="py-20 bg-[#e8f6f6]">
       <div className="text-center mb-10 px-6">
         <h2 className="text-3xl sm:text-4xl font-bold mb-2">Become a Polyglot<br/>with Linguo</h2>
         <p className="text-slate-500">Linguo helps you to become fluent in many language.</p>
       </div>
-      <div className="overflow-hidden">
-        {/* Row 1 - left */}
-        <div className="animate-marquee-slow flex items-center gap-3 w-max mb-3">
-          {[...Array(2)].flatMap((_, ri) =>
-            LANGUAGES.slice(0, 18).map((l, i) => (
-              <a key={`r1-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
-                <span className="text-xl">{l.flag}</span><span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
-              </a>
-            ))
-          )}
-        </div>
-        {/* Row 2 - right (reverse direction via CSS) */}
-        <div className="animate-marquee-slow flex items-center gap-3 w-max" style={{animationDirection:"reverse"}}>
-          {[...Array(2)].flatMap((_, ri) =>
-            LANGUAGES.slice(18).map((l, i) => (
-              <a key={`r2-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
-                <span className="text-xl">{l.flag}</span><span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
-              </a>
-            ))
-          )}
+      <div className="relative overflow-hidden px-6">
+        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:-300,behavior:'smooth'})}} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
+          <ChevronLeft className="h-5 w-5 text-slate-600"/>
+        </button>
+        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:300,behavior:'smooth'})}} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
+          <ChevronRight className="h-5 w-5 text-slate-600"/>
+        </button>
+        <div id="lang-row1" className="overflow-hidden">
+          <div className="animate-marquee-slow flex items-center gap-4 w-max py-2">
+            {[...Array(2)].flatMap((_, ri) =>
+              LANGUAGES.map((l, i) => (
+                <a key={`lang-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
+                  className="flex items-center gap-3 bg-white px-6 py-3.5 rounded-full border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 transition-all cursor-pointer shrink-0">
+                  <img src={`https://flagcdn.com/w40/${getFlagCode(l.name)}.png`} alt={l.name} className="h-7 w-7 rounded-full object-cover" onError={(e)=>{(e.target as HTMLImageElement).style.display='none'}}/>
+                  <span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
+                </a>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </section>
