@@ -114,8 +114,14 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[640px] h-[640px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-12 right-8 bg-[#f5d0b0] backdrop-blur rounded-2xl px-5 py-2.5 shadow-lg text-base font-bold text-slate-800">Hola!</motion.div>
-            <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-28 left-4 bg-white/90 backdrop-blur rounded-2xl px-4 py-2 shadow-lg text-sm font-medium text-purple-700">こんにちは 🇯🇵</motion.div>
+            <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-8 right-4 w-[130px] h-[110px] flex items-center justify-center">
+              <img src="/images/bubble-pink.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
+              <span className="relative z-10 font-bold text-slate-800 text-base -mt-2">Hola!</span>
+            </motion.div>
+            <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-32 left-0 w-[120px] h-[100px] flex items-center justify-center">
+              <img src="/images/bubble-purple.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
+              <span className="relative z-10 font-medium text-purple-900 text-sm -mt-2">こんにちは 🇯🇵</span>
+            </motion.div>
           </div>
         </motion.div>
       </div>
