@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2ABFBF;
+  --color-brand-dark: #1fa8a8;
+  --color-brand-light: #e0f7f7;
+  --color-accent: #fbbf24;
+  --color-dark: #1a1a2e;
+  --font-sans: 'Poppins', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+::selection { background-color: #2ABFBF44; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 25s linear infinite; }
+.animate-marquee-slow { animation: marquee 40s linear infinite; }
+.animate-marquee:hover, .animate-marquee-slow:hover { animation-play-state: paused; }
