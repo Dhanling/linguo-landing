@@ -355,3 +355,4 @@ export default function Home() {
       className="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-[#1A9E9E] text-white shadow-lg flex items-center justify-center hover:bg-[#178888] z-50 active:scale-90"><ArrowUp className="h-5 w-5"/></motion.button>)}</AnimatePresence>
   </>);
 }
+
