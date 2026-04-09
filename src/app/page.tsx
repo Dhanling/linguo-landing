@@ -203,6 +203,76 @@ function WhyCarousel() {
   );
 }
 
+const TESTIMONIALS = [
+  {name:"Maria Dita",uni:"Universitas Indonesia",lang:"Dutch",color:"from-pink-300 to-rose-400",initials:"MD",
+    text:"Awalnya saya mengetahui Linguo dari Instagram dan kemudian saya tertarik karna melihat review dari para siswa Linguo yg ada di story IG, saya hubungi adminnya dan adminnya ramah sekali... Lalu saya tanya harga ternyata harganya cukup terjangkau dan akhirnya saya memutuskan untuk registrasi kursus bahasa Belanda. Daaaan pas mengikuti kelas nya sangatt asyik, materi nya jelas, gurunya enakkkk dan pinter, temen-temen nya juga enak alhasil saya ikut ke kelas lanjutan berikutnya... Pokoknya gak menyesal deh kursus di Linguo.. 💕💜😍"},
+  {name:"Rizky Ananda",uni:"ITB",lang:"Japanese",color:"from-blue-300 to-indigo-400",initials:"RA",
+    text:"Belajar Bahasa Jepang di Linguo bener-bener beda dari kursus lain. Gurunya sabar banget dan materinya terstruktur. Dalam 3 bulan saya sudah bisa percakapan dasar dan sekarang lanjut ke level intermediate. Recommended banget!"},
+  {name:"Siti Nurhaliza",uni:"UNPAD",lang:"Korean",color:"from-purple-300 to-violet-400",initials:"SN",
+    text:"Saya ambil kelas Korean di Linguo karena suka K-Drama. Ternyata belajarnya seru banget, gurunya native-like dan metodenya komunikatif. Sekarang sudah bisa nonton drama tanpa subtitle! Gomawo Linguo~ 🇰🇷"},
+  {name:"Ahmad Fauzi",uni:"UGM",lang:"Spanish",color:"from-amber-300 to-orange-400",initials:"AF",
+    text:"Kelas Spanish di Linguo worth it banget. Harganya terjangkau tapi kualitas gurunya premium. Saya ambil private class dan bisa request jadwal sesuai kemauan. Fleksibel dan efektif!"},
+  {name:"Dinda Pratiwi",uni:"UI",lang:"English",color:"from-emerald-300 to-teal-400",initials:"DP",
+    text:"Persiapan IELTS di Linguo membantu saya dapat score 7.5! Gurunya paham banget strategi test dan kasih banyak latihan. Materinya lengkap dan up-to-date. Thank you Linguo! 🎉"},
+];
+
+function TestimonialCarousel() {
+  const [active, setActive] = useState(0);
+  const total = TESTIMONIALS.length;
+
+  useEffect(() => {
+    const t = setInterval(() => setActive(a => (a + 1) % total), 6000);
+    return () => clearInterval(t);
+  }, []);
+
+  const cardW = 560;
+  const gap = 24;
+  const offset = -(active * (cardW + gap));
+
+  return (
+    <div className="relative">
+      <div className="flex items-center gap-4">
+        <button onClick={() => setActive(a => (a - 1 + total) % total)} className="hidden sm:flex h-10 w-10 shrink-0 rounded-full border border-slate-200 items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
+        <div className="flex-1 overflow-hidden">
+          <div className="flex gap-6" style={{
+            transform: `translateX(calc(50% - ${cardW/2}px + ${offset}px))`,
+            transition: 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}>
+            {TESTIMONIALS.map((t, i) => {
+              const isCurrent = i === active;
+              return (
+                <div key={i} className="shrink-0" style={{width:`${cardW}px`}} onClick={() => setActive(i)}>
+                  <div className={`flex gap-0 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${isCurrent ? "opacity-100 shadow-lg" : "opacity-40 scale-95"}`}>
+                    <div className={`w-[200px] shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center`}>
+                      <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white">{t.initials}</div>
+                    </div>
+                    <div className="flex-1 bg-slate-50 p-6 text-left">
+                      <div className="flex items-center justify-between mb-1">
+                        <div>
+                          <p className="font-bold text-sm">{t.name}</p>
+                          <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
+                        </div>
+                        <div className="flex gap-0.5">{[1,2,3,4,5].map(s=><Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400"/>)}</div>
+                      </div>
+                      <p className="text-xs text-slate-500 leading-relaxed mt-2 line-clamp-4">{t.text}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <button onClick={() => setActive(a => (a + 1) % total)} className="hidden sm:flex h-10 w-10 shrink-0 rounded-full border border-slate-200 items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
+      </div>
+      <div className="flex justify-center gap-2 mt-8">
+        {TESTIMONIALS.map((_, i) => (
+          <button key={i} onClick={() => setActive(i)} className={`transition-all duration-500 rounded-full ${i === active ? "w-8 h-2.5 bg-[#1A9E9E]" : "w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const TEACHER_DATA = [
   {name:"Febri Darusman",role:"Spanish & Thai Teacher",img:"/images/teachers/teacher-febri.png",f1:"th",f2:"es",
     bio:"Lulusan Sastra Prancis UGM. Berpengalaman mengajar dari 2013, selain itu pernah menjadi ketua komunitas Polyglot Indonesia chapter Bandung."},
@@ -448,22 +518,8 @@ export default function Home() {
     {/* TESTIMONIAL */}
     <section className="py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center italic mb-14">Story from our student</h2>
-        <div className="grid lg:grid-cols-5 gap-10 items-center">
-          <div className="lg:col-span-2 flex flex-col items-center text-center">
-            <div className="h-28 w-28 rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center text-4xl mb-4">👩</div>
-            <p className="font-bold">Maria Dita</p><p className="text-sm text-slate-400 mb-4">Universitas Indonesia</p>
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-bold">G</span><span className="text-xs text-slate-400">Google Reviews</span>
-              <div className="flex gap-0.5">{[1,2,3,4,5].map(s=><Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400"/>)}</div>
-              <span className="text-xs font-semibold">4.9/5</span>
-            </div>
-          </div>
-          <div className="lg:col-span-3">
-            <p className="text-slate-600 leading-relaxed mb-4">Awalnya saya mengetahui Linguo dari Instagram dan kemudian saya tertarik karna melihat review dari para siswa Linguo yg ada di story IG, saya hubungi adminnya dan adminnya ramah sekali... Lalu saya tanya harga ternyata harganya cukup terjangkau dan akhirnya saya memutuskan untuk registrasi kursus bahasa Belanda...</p>
-            <p className="text-slate-600 leading-relaxed">Daaaan pas mengikuti kelas nya sangatt asyik, materi nya jelas, gurunya enakkkk dan pinter, temen-temen nya juga enak alhasil saya ikut ke kelas lanjutan berikutnya... Pokoknya gak menyesal deh kursus di Linguo.. 💕💜😍</p>
-          </div>
-        </div>
+        <h2 className="text-3xl font-bold text-center mb-14">Story from our student</h2>
+        <TestimonialCarousel/>
       </div>
     </section>
 
