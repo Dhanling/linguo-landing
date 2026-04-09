@@ -245,7 +245,23 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-16">Linguo helps you to become fluent in many language.</p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="hidden lg:flex items-start justify-center gap-0">
+          {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
+            {img:"/images/step-2.png",s:"Step 2",t:"Choose the language level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)"},
+            {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
+            {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*"}
+          ].map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex items-start">
+            <div className="flex flex-col items-center w-[220px]">
+              <div className="h-[140px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} className="max-h-[140px] object-contain"/></div>
+              <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
+              <h3 className="text-sm font-bold mb-2">{s.t}</h3>
+              <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
+            </div>
+            {i<3&&<img src="/images/connect-line.png" alt="" className="w-[120px] mt-[70px] opacity-80 shrink-0"/>}
+          </motion.div>))}
+        </div>
+        {/* Mobile: simple grid */}
+        <div className="grid grid-cols-2 gap-8 lg:hidden">
           {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
             {img:"/images/step-2.png",s:"Step 2",t:"Choose the language level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)"},
             {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
