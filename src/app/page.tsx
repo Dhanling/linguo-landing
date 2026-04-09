@@ -218,14 +218,14 @@ export default function Home() {
         <p className="text-slate-500">Linguo helps you to become fluent in many language.</p>
       </div>
       <div className="relative overflow-hidden px-6">
-        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:-300,behavior:'smooth'})}} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:-300,behavior:'smooth'})}} className="absolute left-8 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
           <ChevronLeft className="h-5 w-5 text-slate-600"/>
         </button>
-        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:300,behavior:'smooth'})}} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <button onClick={()=>{const el=document.getElementById('lang-row1');if(el)el.scrollBy({left:300,behavior:'smooth'})}} className="absolute right-8 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full h-10 w-10 flex items-center justify-center hover:bg-slate-50 transition-colors">
           <ChevronRight className="h-5 w-5 text-slate-600"/>
         </button>
-        <div id="lang-row1" className="overflow-hidden group">
-          <div className="animate-marquee flex items-center gap-4 w-max py-2 group-hover:[animation-play-state:paused]" style={{animationDuration:'35s'}}>
+        <div id="lang-row1" className="overflow-hidden group mx-14" style={{maskImage:'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)', WebkitMaskImage:'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)'}}>
+          <div className="animate-marquee flex items-center gap-4 w-max py-2 group-hover:[animation-play-state:paused]" style={{animationDuration:'60s'}}>
             {[...Array(2)].flatMap((_, ri) =>
               LANGUAGES.map((l, i) => (
                 <a key={`lang-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
