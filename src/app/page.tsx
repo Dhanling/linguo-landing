@@ -36,7 +36,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
-  useEffect(() => { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); window.addEventListener('beforeunload', () => window.scrollTo(0, 0)); }, []);
+  useEffect(() => { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); setTimeout(() => window.scrollTo(0, 0), 0); setTimeout(() => window.scrollTo(0, 0), 50); }, []);
   const c = scrolled;
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
