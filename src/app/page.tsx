@@ -149,17 +149,15 @@ const WHY_CARDS = [
 ];
 
 function WhyCarousel() {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const total = WHY_CARDS.length;
   const prev = () => setActive(a => (a - 1 + total) % total);
   const next = () => setActive(a => (a + 1) % total);
 
   useEffect(() => {
-    const t = setInterval(next, 4000);
+    const t = setInterval(() => setActive(a => (a + 1) % total), 4000);
     return () => clearInterval(t);
   }, []);
-
-  const getIdx = (offset: number) => (active + offset + total) % total;
 
   return (
     <div className="relative px-6">
@@ -167,25 +165,35 @@ function WhyCarousel() {
         <button onClick={prev} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
         <button onClick={next} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
       </div>
-      <div className="flex items-center justify-center gap-6 max-w-5xl mx-auto">
-        {[-1, 0, 1].map(offset => {
-          const idx = getIdx(offset);
-          const isCenter = offset === 0;
+      <div className="flex items-center justify-center gap-6 max-w-5xl mx-auto overflow-hidden py-4">
+        {WHY_CARDS.map((src, i) => {
+          let diff = i - active;
+          if (diff > total / 2) diff -= total;
+          if (diff < -total / 2) diff += total;
+          const isCenter = diff === 0;
+          const isVisible = Math.abs(diff) <= 1;
           return (
-            <motion.div
-              key={`${active}-${offset}`}
-              initial={{opacity:0, scale:0.9}}
-              animate={{opacity: isCenter ? 1 : 0.7, scale: isCenter ? 1.05 : 0.92}}
-              transition={{duration:0.5, ease:"easeInOut"}}
-              className={`rounded-2xl overflow-hidden bg-white transition-shadow duration-500 ${isCenter ? "shadow-2xl border-2 border-[#1A9E9E]/20 z-10" : "shadow-sm border border-slate-100"}`}
-              style={{width: isCenter ? '340px' : '280px', flexShrink:0}}
+            <div
+              key={i}
+              className="shrink-0 rounded-2xl overflow-hidden bg-white"
+              style={{
+                width: isCenter ? '340px' : '280px',
+                transform: `translateX(${diff * 310}px) scale(${isCenter ? 1.02 : 0.92})`,
+                opacity: isVisible ? (isCenter ? 1 : 0.7) : 0,
+                boxShadow: isCenter ? '0 25px 50px -12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.06)',
+                border: isCenter ? '2px solid rgba(26,158,158,0.2)' : '1px solid #f1f5f9',
+                transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                position: isVisible ? 'relative' as const : 'absolute' as const,
+                zIndex: isCenter ? 10 : 1,
+                pointerEvents: isVisible ? 'auto' as const : 'none' as const,
+              }}
             >
-              <img src={WHY_CARDS[idx]} alt="" className="w-full h-auto"/>
-            </motion.div>
+              <img src={src} alt="" className="w-full h-auto"/>
+            </div>
           );
         })}
       </div>
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 mt-6">
         {WHY_CARDS.map((_, i) => (
           <button key={i} onClick={() => setActive(i)} className={`transition-all duration-300 rounded-full ${i === active ? "w-8 h-2.5 bg-[#1A9E9E]" : "w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
         ))}
