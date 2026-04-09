@@ -107,8 +107,8 @@ export default function Home() {
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md">Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)</p>
           <div className="flex flex-wrap gap-3">
-            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-6 w-6 "/> Mulai Belajar</a>
-            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-6 w-6"/> Cek Jadwal</a>
+            <a href="#produk" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> Mulai Belajar</a>
+            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
           </div>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
@@ -130,16 +130,12 @@ export default function Home() {
       </div>
     </a>
 
-    {/* OUR CLIENTS - Auto Scroll */}
-    <section className="py-8 bg-white border-b border-slate-100 overflow-hidden">
-      <div className="relative">
-        <div className="animate-marquee flex items-center gap-16 w-max">
-          {[...Array(2)].flatMap((_, ri) =>
-            ["AIESEC","CIMSA","PRASETIYA MULYA","VAKSINDO","BANK OF INDIA","BINUS UNIVERSITY","BITGET","GOPLAY","POLBAN","KAI"].map((p, i) => (
-              <span key={`${ri}-${i}`} className="text-sm font-bold tracking-wider uppercase text-slate-400 whitespace-nowrap shrink-0">{p}</span>
-            ))
-          )}
-        </div>
+    {/* OUR CLIENTS */}
+    <section className="py-6 bg-white border-b border-slate-100 overflow-hidden">
+      <div className="animate-marquee flex items-center gap-0 w-max">
+        {[...Array(4)].map((_, i) => (
+          <img key={i} src="/images/client-logos.png" alt="Our Clients" className="h-10 object-contain opacity-50 mx-12" />
+        ))}
       </div>
     </section>
 
@@ -355,4 +351,3 @@ export default function Home() {
       className="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-[#1A9E9E] text-white shadow-lg flex items-center justify-center hover:bg-[#178888] z-50 active:scale-90"><ArrowUp className="h-5 w-5"/></motion.button>)}</AnimatePresence>
   </>);
 }
-
