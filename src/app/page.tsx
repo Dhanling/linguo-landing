@@ -99,6 +99,46 @@ function FAQ({q,a}:{q:string;a:string}) {
   );
 }
 
+const GREETINGS = [
+  {text:"Hello!",flag:"🇬🇧"},{text:"Hola!",flag:"🇪🇸"},{text:"こんにちは",flag:"🇯🇵"},{text:"안녕하세요",flag:"🇰🇷"},
+  {text:"你好!",flag:"🇨🇳"},{text:"Bonjour!",flag:"🇫🇷"},{text:"Hallo!",flag:"🇩🇪"},{text:"Ciao!",flag:"🇮🇹"},
+  {text:"مرحبا!",flag:"🇸🇦"},{text:"Olá!",flag:"🇧🇷"},{text:"Привет!",flag:"🇷🇺"},{text:"สวัสดี!",flag:"🇹🇭"},
+];
+
+function TypingBubble() {
+  const [idx, setIdx] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [typing, setTyping] = useState(true);
+
+  useEffect(() => {
+    const greeting = GREETINGS[idx].text;
+    if (typing) {
+      if (displayed.length < greeting.length) {
+        const t = setTimeout(() => setDisplayed(greeting.slice(0, displayed.length + 1)), 80);
+        return () => clearTimeout(t);
+      } else {
+        const t = setTimeout(() => setTyping(false), 1500);
+        return () => clearTimeout(t);
+      }
+    } else {
+      if (displayed.length > 0) {
+        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
+        return () => clearTimeout(t);
+      } else {
+        setIdx((idx + 1) % GREETINGS.length);
+        setTyping(true);
+      }
+    }
+  }, [displayed, typing, idx]);
+
+  return (
+    <span className="font-bold text-[#1A9E9E] text-xl inline-flex items-center gap-2 min-w-[140px]">
+      <span className="text-2xl">{GREETINGS[idx].flag}</span>
+      {displayed}<span className="animate-pulse text-[#1A9E9E]/50">|</span>
+    </span>
+  );
+}
+
 export default function Home() {
   const [st, setSt] = useState(false);
   useEffect(()=>{const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
@@ -122,16 +162,9 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-4 right-2 rotate-[12deg]">
-              <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="w-[150px] h-[130px] flex items-center justify-center">
-                <img src="/images/bubble-pink.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-                <span className="relative z-10 font-extrabold text-slate-800 text-lg -mt-3">Hola!</span>
-              </motion.div>
-            </div>
-            <div className="absolute top-36 left-0 -rotate-[10deg]">
-              <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="w-[130px] h-[110px] flex items-center justify-center">
-                <img src="/images/bubble-purple.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
-                <span className="relative z-10 font-bold text-purple-900 text-xs -mt-1">こんにちは 🇯🇵</span>
+            <div className="absolute top-8 right-4">
+              <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="bg-white/95 backdrop-blur-sm rounded-2xl px-7 py-4 shadow-xl">
+                <TypingBubble/>
               </motion.div>
             </div>
           </div>
