@@ -313,10 +313,21 @@ export default function Home() {
     </section>
 
     {/* WHY LINGUO */}
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-white relative overflow-hidden">
+      <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-14">Why Linguo?</h2>
-        <WhyCarousel/>
+        <div className="overflow-hidden group" style={{maskImage:'linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent)', WebkitMaskImage:'linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent)'}}>
+          <div className="animate-marquee flex gap-6 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'25s'}}>
+            {[...Array(3)].flatMap((_, ri) =>
+              ["/images/why-1.png","/images/why-2.png","/images/why-3.png","/images/why-4.png","/images/why-5.png","/images/why-6.png"].map((src, i) => (
+                <div key={`${ri}-${i}`} className="w-[280px] shrink-0 rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <img src={src} alt="" className="w-full h-auto"/>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
       </div>
     </section>
 
