@@ -100,23 +100,22 @@ export default function Home() {
 
     {/* HERO */}
     <section className="bg-[#1A9E9E] min-h-[92vh] flex items-center relative overflow-hidden pt-32">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center py-16 lg:py-0">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.2fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6">
             Belajar 55+<br/>bahasa online<br/>rasa offline!
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md">Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)</p>
           <div className="flex flex-wrap gap-3">
-            <a href="#produk" className="inline-flex items-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25">📕 Mulai Belajar</a>
-            <a href="#bahasa" className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-slate-700 font-semibold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
+            <a href="#produk" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> Mulai Belajar</a>
+            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
           </div>
         </motion.div>
-        <motion.div initial={{opacity:0,x:30}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-12">
-          <div className="relative w-[520px] h-[520px]">
+        <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
+          <div className="relative w-[640px] h-[640px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            {/* Floating speech bubbles */}
-            <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-8 right-4 bg-[#f5d0b0] backdrop-blur rounded-2xl px-5 py-2.5 shadow-lg text-base font-bold text-slate-800">Hola!</motion.div>
-            <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-24 left-0 bg-white/90 backdrop-blur rounded-2xl px-4 py-2 shadow-lg text-sm font-medium text-purple-700">こんにちは 🇯🇵</motion.div>
+            <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-12 right-8 bg-[#f5d0b0] backdrop-blur rounded-2xl px-5 py-2.5 shadow-lg text-base font-bold text-slate-800">Hola!</motion.div>
+            <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-28 left-4 bg-white/90 backdrop-blur rounded-2xl px-4 py-2 shadow-lg text-sm font-medium text-purple-700">こんにちは 🇯🇵</motion.div>
           </div>
         </motion.div>
       </div>
