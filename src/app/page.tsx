@@ -360,15 +360,13 @@ export default function Home() {
         <div id="class-scroll" className="overflow-hidden group">
           <div className="animate-marquee flex gap-6 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'30s'}}>
             {[...Array(2)].flatMap((_, ri) =>
-              [{l:"ENGLISH",fc:"gb",bg:"from-orange-200 via-pink-200 to-purple-300",t:"Beginner English",n:"Thifal Syahla",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
-                {l:"KOREA",fc:"kr",bg:"from-blue-200 via-cyan-100 to-emerald-200",t:"Sweet and tone",n:"Nitalia Wijaya",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
-                {l:"JAPAN",fc:"jp",bg:"from-pink-200 via-rose-100 to-sky-200",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
-                {l:"SPANISH",fc:"es",bg:"from-amber-200 via-orange-200 to-red-200",t:"Spanish Conversation",n:"Febri Darusman",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
-                {l:"MANDARIN",fc:"cn",bg:"from-red-200 via-amber-100 to-yellow-200",t:"HSK Preparation",n:"Angga",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
-                {l:"FRENCH",fc:"fr",bg:"from-blue-200 via-indigo-100 to-violet-200",t:"French for Travel",n:"Yeremia Immanuel",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+              [{l:"ENGLISH",fc:"gb",img:"/images/classes/class-english.png",t:"Beginner English",n:"Thifal Syahla",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
+                {l:"KOREA",fc:"kr",img:"/images/classes/class-korea.png",t:"Sweet and tone",n:"Nitalia Wijaya",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
+                {l:"JAPAN",fc:"jp",img:"/images/classes/class-japan.png",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
               ].map((c, i) => (
                 <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[360px] shrink-0 group/card cursor-pointer">
-                  <div className={`relative h-56 bg-gradient-to-br ${c.bg} rounded-2xl mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow`}>
+                  <div className="relative h-56 rounded-2xl mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow">
+                    <img src={c.img} alt={c.l} className="w-full h-full object-cover"/>
                     <span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
                       <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
                     </span>
