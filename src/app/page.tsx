@@ -107,8 +107,8 @@ export default function Home() {
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md">Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)</p>
           <div className="flex flex-wrap gap-3">
-            <a href="#produk" className="inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> Mulai Belajar</a>
-            <a href="#bahasa" className="inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
+            <a onClick={()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> Mulai Belajar</a>
+            <a onClick={()=>document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
           </div>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
@@ -337,7 +337,7 @@ export default function Home() {
           <div><h4 className="font-bold mb-4">Learn a Language</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
               {["English","French","Spanish","Portuguese","German","Japanese","Korean","Arabic","Italian","Russian"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=Halo, saya mau kursus ${l}`} className="hover:text-white transition-colors">Learn {l}</a></li>))}
-              <li><a href="#bahasa" className="font-semibold text-white hover:underline">Learn More Languages</a></li>
+              <li><a onClick={()=>{document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})}} className="cursor-pointer font-semibold text-white hover:underline">Learn More Languages</a></li>
             </ul>
           </div>
           <div><h4 className="font-bold mb-4">Level Option</h4>
