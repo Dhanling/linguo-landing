@@ -66,7 +66,7 @@ function Navbar() {
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button className={`flex items-center gap-1.5 text-sm ${c?"text-slate-500":"text-white/70"} hover:opacity-80 transition-opacity`}>
-              <span className="text-lg">🇬🇧</span>
+              <img src="https://flagcdn.com/w40/gb.png" alt="EN" className="h-6 w-6 rounded-full object-cover border border-white/30"/>
               <ChevronDown className="h-3.5 w-3.5"/>
             </button>
             <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
@@ -122,13 +122,13 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
             <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-4 right-2 -rotate-[15deg]">
+            <div className="absolute top-4 right-2 rotate-[12deg]">
               <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="w-[150px] h-[130px] flex items-center justify-center">
                 <img src="/images/bubble-pink.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                 <span className="relative z-10 font-extrabold text-slate-800 text-lg -mt-3">Hola!</span>
               </motion.div>
             </div>
-            <div className="absolute top-36 left-0 rotate-[8deg]">
+            <div className="absolute top-36 left-0 -rotate-[10deg]">
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="w-[130px] h-[110px] flex items-center justify-center">
                 <img src="/images/bubble-purple.png" alt="" className="absolute inset-0 w-full h-full object-contain" />
                 <span className="relative z-10 font-bold text-purple-900 text-xs -mt-1">こんにちは 🇯🇵</span>
@@ -150,7 +150,7 @@ export default function Home() {
 
     {/* OUR CLIENTS */}
     <section className="py-10 bg-white border-b border-slate-100 overflow-hidden group">
-      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'15s'}}>
+      <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'35s'}}>
         {[...Array(3)].flatMap((_, ri) =>
           [
             { src: "/images/clients/aiesec.png", alt: "AIESEC" },
