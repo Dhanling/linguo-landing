@@ -131,11 +131,22 @@ export default function Home() {
     </a>
 
     {/* OUR CLIENTS */}
-    <section className="py-8 bg-white border-b border-slate-100 overflow-hidden">
-      <div className="animate-marquee flex items-center gap-0 w-max">
+    <section className="py-10 bg-white border-b border-slate-100 overflow-hidden">
+      <div className="animate-marquee flex items-center gap-16 w-max">
         {[...Array(3)].flatMap((_, ri) =>
-          ["AIESEC","CIMSA","PRASETIYA MULYA","VAKSINDO","BANK OF INDIA","BINUS UNIVERSITY","BITGET","GOPLAY","POLBAN","KAI"].map((p, i) => (
-            <span key={`${ri}-${i}`} className="text-base font-bold tracking-widest uppercase text-slate-300 whitespace-nowrap px-10">{p}</span>
+          [
+            { src: "/images/clients/aiesec.png", alt: "AIESEC" },
+            { src: "/images/clients/cimsa.png", alt: "CIMSA" },
+            { src: "/images/clients/prasetiya-mulya.png", alt: "Prasetiya Mulya" },
+            { src: "/images/clients/vaksindo.png", alt: "Vaksindo" },
+            { src: "/images/clients/binus.png", alt: "BINUS University" },
+            { src: "/images/clients/bitget.png", alt: "Bitget" },
+            { src: "/images/clients/gojek.png", alt: "Gojek" },
+            { src: "/images/clients/polban.png", alt: "POLBAN" },
+            { src: "/images/clients/kai.png", alt: "KAI" },
+            { src: "/images/clients/groundprobe.png", alt: "GroundProbe" },
+          ].map((logo, i) => (
+            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale" />
           ))
         )}
       </div>
