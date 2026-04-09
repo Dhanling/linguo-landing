@@ -16,13 +16,6 @@ const TEACHERS = [
   {name:"Angga",role:"Chinese & Korean",flags:"🇨🇳🇰🇷"},{name:"Paramita Wulandari",role:"Japanese & Portuguese",flags:"🇯🇵🇧🇷"},
   {name:"Thifal Syahla",role:"English & Persian",flags:"🇬🇧🇮🇷"},{name:"Yeremia Immanuel",role:"French & Swahili",flags:"🇫🇷🇰🇪"},
 ];
-const FEATURES = ["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 55+ Bahasa"];
-const PLANS = [
-  {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Rp 90.000",highlighted:true},
-  {name:"5 Sesi",desc:"Hemat buat rutin",price:"Rp 400.000",highlighted:false},
-  {name:"10 Sesi",desc:"Serius & lebih hemat",price:"Rp 750.000",highlighted:false},
-  {name:"20 Sesi",desc:"Best value",price:"Rp 1.400.000",highlighted:false},
-];
 const FAQS = [
   {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif."},
   {q:"Boleh ikut lebih dari 1 bahasa?",a:"Boleh banget! Kamu bisa daftar beberapa bahasa sekaligus."},
@@ -320,6 +313,112 @@ function TeacherGrid() {
   );
 }
 
+const PRICING_TABS = [
+  {
+    id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom.",
+    plans:[
+      {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Rp 90.000",highlighted:true,badge:"Recommended"},
+      {name:"5 Sesi",desc:"Hemat buat rutin",price:"Rp 400.000",highlighted:false},
+      {name:"10 Sesi",desc:"Serius & lebih hemat",price:"Rp 750.000",highlighted:false},
+      {name:"20 Sesi",desc:"Best value",price:"Rp 1.400.000",highlighted:false,badge:"BEST VALUE"},
+    ],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 55+ Bahasa"],
+    allCheck:true,wa:"Kelas Private",
+  },
+  {
+    id:"reguler",label:"Kelas Reguler",desc:"Grup class, jadwal tetap, harga terjangkau.",
+    plans:[
+      {name:"2 Bulan",desc:"8 sesi grup class",price:"Rp 150.000",highlighted:true,badge:"AFFORDABLE"},
+    ],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Jadwal Tetap (tidak bisa request)","Qualified Teacher","E-Certificate","Bahasa Terbatas (pilihan populer)"],
+    checks:[[true],[true],[true],[true],[true],[true],[true]],
+    wa:"Kelas Reguler",
+  },
+  {
+    id:"ielts",label:"IELTS / TOEFL",desc:"Persiapan tes bahasa Inggris intensif.",
+    plans:[
+      {name:"2 Bulan",desc:"16 sesi @90 menit",price:"Rp 300.000",highlighted:true,badge:"INTENSIVE"},
+    ],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Jadwal Tetap (batch system)","Qualified IELTS/TOEFL Tutor","E-Certificate","Mock Test & Feedback"],
+    checks:[[true],[true],[true],[true],[true],[true],[true]],
+    wa:"IELTS TOEFL Prep",
+  },
+];
+
+function PricingSection() {
+  const [tab, setTab] = useState(0);
+  const t = PRICING_TABS[tab];
+  return (
+    <section id="produk" className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2">Choose a learning plan<br/>that speaks to you</h2>
+        <p className="text-slate-500 mb-10">Mulai perjalanan bahasamu sekarang.</p>
+
+        {/* Tabs */}
+        <div className="inline-flex bg-slate-100 rounded-full p-1.5 mb-12">
+          {PRICING_TABS.map((pt,i)=>(
+            <button key={pt.id} onClick={()=>setTab(i)}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${tab===i?"bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/25":"text-slate-500 hover:text-slate-700"}`}>
+              {pt.label}
+            </button>
+          ))}
+        </div>
+
+        <p className="text-slate-500 text-sm mb-10">{t.desc}</p>
+
+        {/* Cards layout for plans */}
+        <div className={`flex justify-center gap-5 flex-wrap mb-6`}>
+          {t.plans.map((p,pi)=>(
+            <div key={pi} className={`relative w-[220px] rounded-2xl border-2 p-6 text-center transition-all duration-300 ${p.highlighted?"border-[#1A9E9E] shadow-xl bg-white scale-[1.03]":"border-slate-200 bg-white hover:border-slate-300"}`}>
+              {p.badge&&<span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap ${p.badge==="BEST VALUE"?"bg-[#fbbf24] text-slate-900":"bg-[#1A9E9E] text-white"}`}>{p.badge}</span>}
+              <p className="font-bold text-lg mt-2">{p.name}</p>
+              <p className="text-xs text-slate-400 mt-1 mb-4">{p.desc}</p>
+              <p className={`text-2xl font-bold mb-5 ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
+              <a href={`https://wa.me/6282116859493?text=Halo, saya tertarik ${t.wa} ${p.name}`} target="_blank"
+                className={`inline-block w-full px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Feature list */}
+        <div className="max-w-md mx-auto mt-10 text-left">
+          {t.features.map((f,fi)=>(
+            <div key={fi} className="flex items-center gap-3 py-2.5 border-b border-slate-100 last:border-0">
+              <Check className="h-4 w-4 text-[#1A9E9E] shrink-0"/>
+              <span className="text-sm text-slate-600">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Digital Products */}
+        <div className="mt-16 pt-12 border-t border-slate-100">
+          <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">BELAJAR MANDIRI</p>
+          <h3 className="text-xl font-bold mb-6">Mau belajar sendiri dulu?</h3>
+          <div className="flex justify-center gap-5 flex-wrap">
+            {[
+              {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000",icon:"📱"},
+              {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000",icon:"📚"},
+            ].map((d,i)=>(
+              <div key={i} className="w-[260px] bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center hover:border-[#1A9E9E]/40 hover:shadow-md transition-all">
+                <span className="text-3xl mb-3 block">{d.icon}</span>
+                <p className="font-bold">{d.name}</p>
+                <p className="text-xs text-slate-400 mt-1 mb-3">{d.desc}</p>
+                <p className="text-xl font-bold text-[#1A9E9E] mb-4">{d.price}</p>
+                <a href={`https://wa.me/6282116859493?text=Halo, saya tertarik ${d.name} Linguo`} target="_blank"
+                  className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95">
+                  Beli Sekarang
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
@@ -425,7 +524,7 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-16">Linguo helps you to become fluent in many language.</p>
         <div className="hidden lg:flex items-start justify-between max-w-5xl mx-auto">
-          {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih leibh dari satu bahasa sekaligus)"},
+          {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
             {img:"/images/step-2.png",s:"Step 2",t:"Choose The Language Level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)",note:"* untuk beberapa bahasa"},
             {img:"/images/step-3.png",s:"Step 3",t:"Learn & Practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
             {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*",note:"* S&K berlaku"}
@@ -524,33 +623,8 @@ export default function Home() {
       </div>
     </section>
 
-    {/* PRICING — KELAS PRIVATE */}
-    <section id="produk" className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2">Choose a learning plan<br/>that speaks to you</h2>
-        <p className="text-slate-500 mb-14">Kelas Private — fleksibel, personal, dan efektif.</p>
-        <div className="overflow-x-auto"><table className="w-full text-sm">
-          <thead><tr><th className="text-left py-4 px-4 w-[220px]"></th>
-            {PLANS.map((p,i)=>(<th key={i} className="py-4 px-3 text-center"><div className={`rounded-2xl p-5 ${p.highlighted?"bg-white shadow-xl border-2 border-[#1A9E9E]/30 -mt-4":""}`}>
-              <p className="font-bold">{p.name}</p><p className="text-xs text-slate-400 mt-1 mb-3">{p.desc}</p>
-              {p.highlighted&&<p className="text-xs text-[#1A9E9E] font-semibold mb-1 flex items-center justify-center gap-1"><Zap className="h-3 w-3"/>Recommended</p>}
-              <p className={`text-xl font-bold ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
-            </div></th>))}
-          </tr></thead>
-          <tbody>
-            {FEATURES.map((f,fi)=>(<tr key={fi} className="border-t border-slate-100"><td className="text-left py-4 px-4 font-medium text-slate-700">{f}</td>
-              {PLANS.map((_,pi)=>(<td key={pi} className="text-center py-4 px-3"><Check className="h-5 w-5 text-[#1A9E9E] mx-auto"/></td>))}
-            </tr>))}
-            <tr className="border-t border-slate-100"><td className="py-6 px-4"></td>
-              {PLANS.map((p,pi)=>(<td key={pi} className="text-center py-6 px-3">
-                <a href={`https://wa.me/6282116859493?text=Halo, saya tertarik Kelas Private ${p.name}`} target="_blank"
-                  className={`inline-block px-6 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>Get Started</a>
-              </td>))}
-            </tr>
-          </tbody>
-        </table></div>
-      </div>
-    </section>
+    {/* PRICING */}
+    <PricingSection/>
 
     {/* CTA */}
     <section className="py-24 bg-white">
@@ -572,7 +646,7 @@ export default function Home() {
     </section>
 
     {/* FOOTER */}
-    <footer className="bg-[#1A9E9E] text-white py-14">
+    <footer className="bg-[#14726E] text-white py-14">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-10 mb-10">
           <div><h4 className="font-bold mb-4">Learn a Language</h4>
