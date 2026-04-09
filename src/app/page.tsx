@@ -245,19 +245,20 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-16">Linguo helps you to become fluent in many language.</p>
-        <div className="hidden lg:flex items-start justify-center">
-          {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
-            {img:"/images/step-2.png",s:"Step 2",t:"Choose the language level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)"},
-            {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
-            {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*"}
+        <div className="hidden lg:flex items-start justify-between max-w-5xl mx-auto">
+          {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih leibh dari satu bahasa sekaligus)"},
+            {img:"/images/step-2.png",s:"Step 2",t:"Choose The Language Level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)",note:"* untuk beberapa bahasa"},
+            {img:"/images/step-3.png",s:"Step 3",t:"Learn & Practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
+            {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*",note:"* S&K berlaku"}
           ].map((s,i)=>(<div key={i} className="flex items-start">
-            <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center w-[220px]">
-              <div className="h-[120px] flex items-end justify-center mb-5"><img src={s.img} alt={s.t} className="max-h-[120px] object-contain"/></div>
+            <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center w-[200px]">
+              <div className="h-[90px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} className="max-h-[90px] w-auto object-contain"/></div>
               <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
-              <h3 className="text-sm font-bold mb-2">{s.t}</h3>
+              <h3 className="text-sm font-bold mb-2 leading-tight">{s.t}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
+              {s.note&&<p className="text-[10px] text-slate-400 mt-1">{s.note}</p>}
             </motion.div>
-            {i<3&&<div className="flex items-center mt-[60px] px-2"><div className="w-2 h-2 rounded-full border-2 border-[#1A9E9E]"/><div className="w-20 border-t-2 border-dashed border-[#1A9E9E]/50"/><div className="w-2 h-2 rounded-full border-2 border-[#1A9E9E]"/></div>}
+            {i<3&&<div className="flex items-center mt-[45px] mx-3 shrink-0"><div className="w-1.5 h-1.5 rounded-full border-[1.5px] border-[#1A9E9E]"/><div className="w-16 border-t-[1.5px] border-dashed border-[#1A9E9E]/40"/><div className="w-1.5 h-1.5 rounded-full border-[1.5px] border-[#1A9E9E]"/></div>}
           </div>))}
         </div>
         {/* Mobile: simple grid */}
