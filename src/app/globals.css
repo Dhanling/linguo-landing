@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #2ABFBF;
+  --color-brand: #1A9E9E;
   --color-brand-dark: #1fa8a8;
   --color-brand-light: #e0f7f7;
   --color-accent: #fbbf24;
@@ -11,7 +11,7 @@
 
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-::selection { background-color: #2ABFBF44; }
+::selection { background-color: #1A9E9E44; }
 
 @keyframes marquee {
   0% { transform: translateX(0); }

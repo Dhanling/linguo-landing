@@ -49,7 +49,7 @@ function Navbar() {
         </div>
       </>}
       {/* Main Nav */}
-      <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#2ABFBF]"}`}>
+      <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
             <img src="/images/logo-white.png" alt="Linguo" className={`h-10 object-contain transition-all ${c?"brightness-0":""}`} />
@@ -68,7 +68,7 @@ function Navbar() {
         <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
           <div className="px-6 py-4 flex flex-col gap-2">
             {["Private Class","Career","Blog","Corporate"].map(n=>(<a key={n} href="#" className="text-sm py-2.5" onClick={()=>setOpen(false)}>{n}</a>))}
-            <a href="https://wa.me/6282116859493" className="mt-2 bg-[#2ABFBF] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
+            <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
           </div>
         </motion.div>)}</AnimatePresence>
       </nav>
@@ -99,7 +99,7 @@ export default function Home() {
     <Navbar/>
 
     {/* HERO */}
-    <section className="bg-[#2ABFBF] min-h-[92vh] flex items-center relative overflow-hidden pt-32">
+    <section className="bg-[#1A9E9E] min-h-[92vh] flex items-center relative overflow-hidden pt-32">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-white leading-[1.1] mb-6">
@@ -111,9 +111,9 @@ export default function Home() {
             <a href="#bahasa" className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-slate-700 font-semibold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
           </div>
         </motion.div>
-        <motion.div initial={{opacity:0,x:30}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-center relative">
-          <div className="relative w-[420px] h-[420px]">
-            <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain mix-blend-screen" />
+        <motion.div initial={{opacity:0,x:30}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-12">
+          <div className="relative w-[520px] h-[520px]">
+            <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
             {/* Floating speech bubbles */}
             <motion.div animate={{y:[0,-10,0]}} transition={{duration:3,repeat:Infinity}} className="absolute top-8 right-4 bg-[#f5d0b0] backdrop-blur rounded-2xl px-5 py-2.5 shadow-lg text-base font-bold text-slate-800">Hola!</motion.div>
             <motion.div animate={{y:[0,-8,0]}} transition={{duration:2.5,repeat:Infinity,delay:0.5}} className="absolute top-24 left-0 bg-white/90 backdrop-blur rounded-2xl px-4 py-2 shadow-lg text-sm font-medium text-purple-700">こんにちは 🇯🇵</motion.div>
@@ -156,7 +156,7 @@ export default function Home() {
           {[...Array(2)].flatMap((_, ri) =>
             LANGUAGES.slice(0, 18).map((l, i) => (
               <a key={`r1-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#2ABFBF]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
+                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
                 <span className="text-xl">{l.flag}</span><span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
               </a>
             ))
@@ -167,7 +167,7 @@ export default function Home() {
           {[...Array(2)].flatMap((_, ri) =>
             LANGUAGES.slice(18).map((l, i) => (
               <a key={`r2-${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${l.name}`} target="_blank"
-                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#2ABFBF]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
+                className="flex items-center gap-2.5 bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#1A9E9E]/40 hover:scale-105 hover:-translate-y-1 transition-all cursor-pointer shrink-0">
                 <span className="text-xl">{l.flag}</span><span className="text-sm font-medium text-slate-700 whitespace-nowrap">{l.name}</span>
               </a>
             ))
@@ -179,7 +179,7 @@ export default function Home() {
     {/* HOW IT WORKS */}
     <section className="py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2ABFBF] italic mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] italic mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-16">Linguo helps you to become fluent in many language.</p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[{i:"🔍",s:"Step 1",t:"Select Language",d:"Pilih bahasa favoritmu (bisa lebih dari satu sekaligus)"},
@@ -188,7 +188,7 @@ export default function Home() {
             {i:"🎓",s:"Step 4",t:"Get certified",d:"Level up dan dapatkan e-sertifikat"}
           ].map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center">
             <span className="text-5xl mb-4">{s.i}</span>
-            <p className="text-xs text-[#2ABFBF] font-semibold italic mb-1">{s.s}</p>
+            <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
             <h3 className="text-sm font-bold mb-2">{s.t}</h3>
             <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
           </motion.div>))}
@@ -205,7 +205,7 @@ export default function Home() {
             {i:"💰",t:"Harga mulai Rp 90.000 / sesi",d:"Kelas Private Linguo memiliki harga terjangkau dengan kualitas premium."},
             {i:"🎬",t:"Level basic hingga advance",d:"Setiap bahasa memiliki opsi lanjutan: Basic, Upper Basic, Intermediate, Advance."}
           ].map((c,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
-            className={`bg-white rounded-3xl border-2 p-8 text-center hover:shadow-xl transition-all ${i===1?"border-[#2ABFBF]/30 shadow-lg lg:scale-105":"border-slate-100"}`}>
+            className={`bg-white rounded-3xl border-2 p-8 text-center hover:shadow-xl transition-all ${i===1?"border-[#1A9E9E]/30 shadow-lg lg:scale-105":"border-slate-100"}`}>
             <span className="text-5xl block mb-5">{c.i}</span><h3 className="text-lg font-bold mb-3">{c.t}</h3><p className="text-sm text-slate-500 leading-relaxed">{c.d}</p>
           </motion.div>))}
         </div>
@@ -221,15 +221,15 @@ export default function Home() {
             {l:"KOREA",f:"🇰🇷",e:"🏯",t:"Korean Conversation",n:"Nitalia Wijaya",lv:"INTERMEDIATE"},
             {l:"JAPAN",f:"🇯🇵",e:"⛩️",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER"}
           ].map((c,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="group cursor-pointer">
-            <div className="relative h-52 bg-gradient-to-br from-[#2ABFBF]/20 to-[#2ABFBF]/5 rounded-2xl flex items-center justify-center text-7xl mb-4 group-hover:shadow-lg transition-shadow overflow-hidden">
-              {c.e}<span className="absolute top-3 left-3 bg-[#2ABFBF] text-white text-[10px] font-bold px-3 py-1 rounded-full">{c.f} {c.l}</span>
+            <div className="relative h-52 bg-gradient-to-br from-[#1A9E9E]/20 to-[#1A9E9E]/5 rounded-2xl flex items-center justify-center text-7xl mb-4 group-hover:shadow-lg transition-shadow overflow-hidden">
+              {c.e}<span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-[10px] font-bold px-3 py-1 rounded-full">{c.f} {c.l}</span>
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="h-9 w-9 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600">{c.n.split(" ").map(w=>w[0]).join("")}</div>
                 <div><p className="text-sm font-semibold">{c.t}</p><p className="text-xs text-slate-400">{c.n}</p></div>
               </div>
-              <span className="text-[10px] font-bold text-[#2ABFBF] border border-[#2ABFBF] px-2.5 py-1 rounded-full">{c.lv}</span>
+              <span className="text-[10px] font-bold text-[#1A9E9E] border border-[#1A9E9E] px-2.5 py-1 rounded-full">{c.lv}</span>
             </div>
           </motion.div>))}
         </div>
@@ -243,7 +243,7 @@ export default function Home() {
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
           {TEACHERS.map((t,i)=>(<motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}
-            className="bg-white rounded-2xl border border-slate-100 p-6 hover:border-[#2ABFBF]/30 hover:shadow-lg transition-all">
+            className="bg-white rounded-2xl border border-slate-100 p-6 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all">
             <div className="relative h-20 w-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-2xl font-bold text-slate-500">
               {t.name.split(" ").map(w=>w[0]).join("")}<span className="absolute -bottom-1 text-sm">{t.flags}</span>
             </div>
@@ -282,20 +282,20 @@ export default function Home() {
         <p className="text-slate-500 mb-14">Kelas Private — fleksibel, personal, dan efektif.</p>
         <div className="overflow-x-auto"><table className="w-full text-sm">
           <thead><tr><th className="text-left py-4 px-4 w-[220px]"></th>
-            {PLANS.map((p,i)=>(<th key={i} className="py-4 px-3 text-center"><div className={`rounded-2xl p-5 ${p.highlighted?"bg-white shadow-xl border-2 border-[#2ABFBF]/30 -mt-4":""}`}>
+            {PLANS.map((p,i)=>(<th key={i} className="py-4 px-3 text-center"><div className={`rounded-2xl p-5 ${p.highlighted?"bg-white shadow-xl border-2 border-[#1A9E9E]/30 -mt-4":""}`}>
               <p className="font-bold">{p.name}</p><p className="text-xs text-slate-400 mt-1 mb-3">{p.desc}</p>
-              {p.highlighted&&<p className="text-xs text-[#2ABFBF] font-semibold mb-1 flex items-center justify-center gap-1"><Zap className="h-3 w-3"/>Recommended</p>}
-              <p className={`text-xl font-bold ${p.highlighted?"text-[#2ABFBF]":"text-slate-900"}`}>{p.price}</p>
+              {p.highlighted&&<p className="text-xs text-[#1A9E9E] font-semibold mb-1 flex items-center justify-center gap-1"><Zap className="h-3 w-3"/>Recommended</p>}
+              <p className={`text-xl font-bold ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
             </div></th>))}
           </tr></thead>
           <tbody>
             {FEATURES.map((f,fi)=>(<tr key={fi} className="border-t border-slate-100"><td className="text-left py-4 px-4 font-medium text-slate-700">{f}</td>
-              {PLANS.map((_,pi)=>(<td key={pi} className="text-center py-4 px-3"><Check className="h-5 w-5 text-[#2ABFBF] mx-auto"/></td>))}
+              {PLANS.map((_,pi)=>(<td key={pi} className="text-center py-4 px-3"><Check className="h-5 w-5 text-[#1A9E9E] mx-auto"/></td>))}
             </tr>))}
             <tr className="border-t border-slate-100"><td className="py-6 px-4"></td>
               {PLANS.map((p,pi)=>(<td key={pi} className="text-center py-6 px-3">
                 <a href={`https://wa.me/6282116859493?text=Halo, saya tertarik Kelas Private ${p.name}`} target="_blank"
-                  className={`inline-block px-6 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#2ABFBF] text-white hover:bg-[#1fa8a8] shadow-lg shadow-[#2ABFBF]/25":"border-2 border-[#2ABFBF] text-[#2ABFBF] hover:bg-[#2ABFBF] hover:text-white"}`}>Get Started</a>
+                  className={`inline-block px-6 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>Get Started</a>
               </td>))}
             </tr>
           </tbody>
@@ -308,22 +308,22 @@ export default function Home() {
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold italic leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
         <p className="text-slate-500 mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
-        <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#2ABFBF] hover:bg-[#1fa8a8] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#2ABFBF]/25">Mulai Belajar</a>
+        <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
     </section>
 
     {/* FAQ */}
     <section id="faq" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="text-xs font-bold text-[#2ABFBF] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
+        <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
         <h2 className="text-3xl font-bold text-center italic mb-3">Frequently Asked Questions</h2>
-        <p className="text-[#2ABFBF] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
+        <p className="text-[#1A9E9E] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
         <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
       </div>
     </section>
 
     {/* FOOTER */}
-    <footer className="bg-[#2ABFBF] text-white py-14">
+    <footer className="bg-[#1A9E9E] text-white py-14">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-10 mb-10">
           <div><h4 className="font-bold mb-4">Learn a Language</h4>
@@ -353,6 +353,6 @@ export default function Home() {
     {/* SCROLL TOP */}
     <AnimatePresence>{st&&(<motion.button initial={{opacity:0,scale:0.8}} animate={{opacity:1,scale:1}} exit={{opacity:0,scale:0.8}}
       onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}
-      className="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-[#2ABFBF] text-white shadow-lg flex items-center justify-center hover:bg-[#1fa8a8] z-50 active:scale-90"><ArrowUp className="h-5 w-5"/></motion.button>)}</AnimatePresence>
+      className="fixed bottom-6 right-6 h-12 w-12 rounded-full bg-[#1A9E9E] text-white shadow-lg flex items-center justify-center hover:bg-[#178888] z-50 active:scale-90"><ArrowUp className="h-5 w-5"/></motion.button>)}</AnimatePresence>
   </>);
 }
