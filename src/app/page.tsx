@@ -32,7 +32,7 @@ const FAQS = [
   {q:"Ada kelas lanjutan?",a:"Ada! Tersedia dari Basic hingga Advance."},
 ];
 
-function Navbar() {
+function Navbar({lang,setLang}:{lang:string;setLang:(l:string)=>void}) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
@@ -65,8 +65,9 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button onClick={()=>{const el=document.documentElement;el.lang=el.lang==='id'?'en':'id';window.location.reload()}} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-              <img src="/images/flag-en.png" alt="EN" className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
+            <button onClick={()=>setLang(lang==='id'?'en':'id')} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+              <img src={lang==='id'?"/images/flag-id.png":"/images/flag-en.png"} alt={lang==='id'?"ID":"EN"} className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
+              <span className={`text-xs font-medium ${c?"text-slate-500":"text-white/70"}`}>{lang==='id'?'ID':'EN'}</span>
               <ChevronDown className={`h-3.5 w-3.5 ${c?"text-slate-400":"text-white/70"}`}/>
             </button>
             <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
@@ -146,22 +147,23 @@ function TypingBubble() {
 
 export default function Home() {
   const [st, setSt] = useState(false);
+  const [lang, setLang] = useState("id");
   useEffect(()=>{const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
 
   return (<>
-    <Navbar/>
+    <Navbar lang={lang} setLang={setLang}/>
 
     {/* HERO */}
     <section className="bg-[#1A9E9E] min-h-screen flex items-center relative overflow-hidden pt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6">
-            Belajar 55+<br/>bahasa online<br/>rasa offline!
+            Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
           </h1>
-          <p className="text-white/80 text-lg mb-8 max-w-md">Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)</p>
+          <p className="text-white/80 text-lg mb-8 max-w-md">{lang==="id"?"Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)":"Linguo will help you learn languages faster and easier :)"}</p>
           <div className="flex flex-wrap gap-3">
-            <a onClick={()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> Mulai Belajar</a>
-            <a onClick={()=>document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> Cek Jadwal</a>
+            <a onClick={()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25"><img src="/images/flag-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Mulai Belajar":"Start Learning"}</a>
+            <a onClick={()=>document.getElementById('bahasa')?.scrollIntoView({behavior:'smooth'})} className="cursor-pointer inline-flex items-center gap-2.5 bg-white hover:bg-white/90 text-slate-700 font-semibold px-8 py-4 rounded-full text-sm transition-all active:scale-95"><img src="/images/calendar-icon.png" alt="" className="h-5 w-5"/> {lang==="id"?"Cek Jadwal":"Check Schedule"}</a>
           </div>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
@@ -171,7 +173,7 @@ export default function Home() {
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
                 <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
                   <TypingBubble/>
-                  <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white rotate-45 shadow-xl"/>
+                  <div className="absolute -bottom-2 right-12 w-4 h-4 bg-white rotate-45 shadow-xl"/>
                 </div>
               </motion.div>
             </div>
