@@ -92,8 +92,13 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Career","teacher"],["FAQ","faq"]].map(([l,h]) => (
-                <a key={l} onClick={()=>scrollTo(h)} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+              {[["Corporate","wa-corporate"],["Jadi Pengajar","wa-pengajar"],["FAQ","faq"]].map(([l,h]) => (
+                <a key={l} onClick={()=>{
+                  if(h.startsWith("wa-")){
+                    const msg = h==="wa-corporate"?"Halo, saya tertarik Corporate Class Linguo":"Halo, saya tertarik menjadi pengajar di Linguo";
+                    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`,'_blank');
+                  } else { scrollTo(h); }
+                }} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
@@ -113,7 +118,9 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{scrollTo("produk",0);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
             <button onClick={()=>{scrollTo("produk",1);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
-            <button onClick={()=>{scrollTo("teacher");setOpen(false)}} className="text-sm py-2.5 text-left">Career</button>
+            <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank" className="text-sm py-2.5">Corporate</a>
+            <a href="https://wa.me/6282116859493?text=Halo, saya tertarik menjadi pengajar di Linguo" target="_blank" className="text-sm py-2.5">Jadi Pengajar</a>
+            <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
             <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
           </div>
         </motion.div>)}</AnimatePresence>
@@ -390,16 +397,17 @@ function HeroFunnel({lang}:{lang:string}) {
   const [langModalOpen, setLangModalOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [waNumber, setWaNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
   const [saving, setSaving] = useState(false);
 
   const handleSubmit = async () => {
     if(!waNumber || waNumber.length < 8) return;
     setSaving(true);
-    const num = waNumber.startsWith("0") ? "62" + waNumber.slice(1) : waNumber.startsWith("62") ? waNumber : "62" + waNumber;
-    await saveLead(num, selLang);
+    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
+    await saveLead(fullNum, selLang);
     const msg = selLang 
-      ? `Halo, saya tertarik kursus bahasa ${selLang}. Nomor WA saya: ${waNumber}` 
-      : `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${waNumber}`;
+      ? `Halo, saya tertarik kursus bahasa ${selLang}. Nomor WA saya: ${countryCode}${waNumber}` 
+      : `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
     setSaving(false);
     setShowPopup(false);
@@ -452,8 +460,13 @@ function HeroFunnel({lang}:{lang:string}) {
                 <span className="text-sm font-medium text-[#1A9E9E]">Kursus {selLang}</span>
               </div>
             )}
-            <div className="flex gap-2 mb-4">
-              <span className="flex items-center bg-slate-100 rounded-l-xl px-4 text-sm font-medium text-slate-500 border border-r-0 border-slate-200">+62</span>
+            <div className="flex gap-0 mb-4">
+              <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
+                className="bg-slate-100 rounded-l-xl px-2 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[72px] text-center">
+                {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
               <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
                 className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
                 onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
