@@ -900,10 +900,9 @@ export default function Home() {
     <section className="bg-[#1A9E9E] min-h-screen flex items-center relative overflow-hidden pt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-8">
             Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
           </h1>
-          <p className="text-white/80 text-lg mb-8 max-w-md">{lang==="id"?"Linguo akan membantumu lebih cepat bisa cas cis cus dalam belajar bahasa :)":"Linguo will help you learn languages faster and easier :)"}</p>
           <HeroFunnel lang={lang}/>
           <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-8 mt-6 opacity-90"/>
         </motion.div>
