@@ -1,4 +1,6 @@
-"use client";
+import { writeFileSync } from "fs";
+
+const page = `"use client";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,7 +94,7 @@ export default function OnboardingPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`/api/onboarding?token=${token}`)
+    fetch(\`/api/onboarding?token=\${token}\`)
       .then((r) => { if (!r.ok) throw new Error("Not found"); return r.json(); })
       .then((d) => { setLead(d); if (d.onboarding_completed) setAlreadyDone(true); })
       .catch(() => setNotFound(true))
@@ -104,8 +106,8 @@ export default function OnboardingPage() {
   };
 
   const getDomicile = () => {
-    if (livesInIndonesia) return `${city}, ${province}, Indonesia`;
-    return `${cityAbroad}, ${country}`;
+    if (livesInIndonesia) return \`\${city}, \${province}, Indonesia\`;
+    return \`\${cityAbroad}, \${country}\`;
   };
 
   const handleSubmit = async () => {
@@ -193,7 +195,7 @@ export default function OnboardingPage() {
 
         <div className="flex gap-1.5 mb-8">
           {Array.from({ length: totalSteps }).map((_, i) => (
-            <div key={i} className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${i < step ? "bg-[#1A9E9E]" : "bg-slate-200"}`} />
+            <div key={i} className={\`h-1.5 flex-1 rounded-full transition-all duration-500 \${i < step ? "bg-[#1A9E9E]" : "bg-slate-200"}\`} />
           ))}
         </div>
 
@@ -215,12 +217,12 @@ export default function OnboardingPage() {
                 <label className="text-xs font-semibold text-slate-600 mb-2 block">Kamu tinggal di mana?</label>
                 <div className="flex gap-3">
                   <button onClick={() => { setLivesInIndonesia(true); setCountry(""); setCityAbroad(""); }}
-                    className={`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all ${livesInIndonesia === true ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}`}>
+                    className={\`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all \${livesInIndonesia === true ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}\`}>
                     <span className="text-2xl">🇮🇩</span>
                     Indonesia
                   </button>
                   <button onClick={() => { setLivesInIndonesia(false); setProvince(""); setCity(""); }}
-                    className={`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all ${livesInIndonesia === false ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}`}>
+                    className={\`flex-1 flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all \${livesInIndonesia === false ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}\`}>
                     <span className="text-2xl">🌍</span>
                     Luar Indonesia
                   </button>
@@ -286,7 +288,7 @@ export default function OnboardingPage() {
               <div className="space-y-2.5">
                 {EXPERIENCE_OPTIONS.map((opt) => (
                   <button key={opt.id} onClick={() => setExperience(opt.id)}
-                    className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 text-left text-sm transition-all ${experience === opt.id ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}`}>
+                    className={\`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl border-2 text-left text-sm transition-all \${experience === opt.id ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}\`}>
                     <span className="text-xl">{opt.icon}</span>
                     {opt.label}
                   </button>
@@ -309,7 +311,7 @@ export default function OnboardingPage() {
               <div className="grid grid-cols-2 gap-2.5">
                 {GOALS.map((g) => (
                   <button key={g.id} onClick={() => setGoal(g.id)}
-                    className={`flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all ${goal === g.id ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}`}>
+                    className={\`flex flex-col items-center gap-2 px-4 py-4 rounded-xl border-2 text-sm transition-all \${goal === g.id ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E] font-medium" : "border-slate-100 text-slate-600 hover:border-slate-200"}\`}>
                     <span className="text-2xl">{g.icon}</span>
                     {g.label}
                   </button>
@@ -338,11 +340,11 @@ export default function OnboardingPage() {
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1.5">{day}</p>
                     <div className="flex gap-2">
                       {SCHEDULES.filter((s) => s.startsWith(day)).map((s) => {
-                        const time = s.match(/\((.+)\)/)?.[1] || "";
+                        const time = s.match(/\\((.+)\\)/)?.[1] || "";
                         const label = s.includes("pagi") ? "Pagi" : s.includes("siang") ? "Siang" : "Malam";
                         return (
                           <button key={s} onClick={() => toggleSchedule(s)}
-                            className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium transition-all ${schedules.includes(s) ? "bg-[#1A9E9E] text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>
+                            className={\`flex-1 px-3 py-2 rounded-lg text-xs font-medium transition-all \${schedules.includes(s) ? "bg-[#1A9E9E] text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200"}\`}>
                             {label}<br /><span className="text-[10px] opacity-75">{time}</span>
                           </button>
                         );
@@ -363,4 +365,7 @@ export default function OnboardingPage() {
       </div>
     </div>
   );
-}
+}`;
+
+writeFileSync("src/app/onboarding/[token]/page.tsx", page);
+console.log("✅ Onboarding page updated with Indonesia/Luar Indonesia + Provinsi dropdown");
