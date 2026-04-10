@@ -344,9 +344,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
   const [step, setStep] = useState(1);
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
-  const [waNumber, setWaNumber] = useState("");
-  const [countryCode, setCountryCode] = useState("+62");
-  const [saving, setSaving] = useState(false);
+  const [selLevel, setSelLevel] = useState("");
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState("Populer");
 
@@ -354,19 +352,30 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
     ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i).filter(l=>l.toLowerCase().includes(search.toLowerCase()))
     : LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || [];
 
-  const handleSubmit = async () => {
-    if(!waNumber || waNumber.length < 8) return;
-    setSaving(true);
-    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
-    await saveLead(fullNum, selLang);
-    const msg = `Halo, saya tertarik ${selProgram||"kursus"} bahasa ${selLang||"di Linguo"}. Nomor WA saya: ${countryCode}${waNumber}`;
+  const isEnglish = selLang==="English";
+
+  const programs = [
+    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
+    {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
+    ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
+  ];
+
+  const levels = selProgram==="Kelas Reguler"
+    ? [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"}]
+    : [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"},
+       {id:"A2",label:"A2 — Elementary",desc:"Percakapan sederhana"},
+       {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
+       {id:"B2",label:"B2 — Upper Intermediate",desc:"Lancar & kompleks"}];
+
+  const handleFinal = () => {
+    const msg = `Halo, saya tertarik ${selProgram} bahasa ${selLang} level ${selLevel}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
-    setSaving(false);
-    onClose();
-    setStep(1); setSelLang(""); setSelProgram(""); setWaNumber("");
+    handleClose();
   };
 
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); };
+
+  const totalSteps = 4;
 
   return (
     <AnimatePresence>{open&&(
@@ -377,9 +386,8 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
           className="bg-white rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden max-h-[85vh] flex flex-col"
           onClick={(e)=>e.stopPropagation()}>
 
-          {/* Progress bar */}
           <div className="flex gap-1.5 px-6 pt-5">
-            {[1,2,3].map(s=>(
+            {[1,2,3,4].map(s=>(
               <div key={s} className={`h-1 flex-1 rounded-full transition-all duration-500 ${s<=step?"bg-[#1A9E9E]":"bg-slate-200"}`}/>
             ))}
           </div>
@@ -412,7 +420,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
                 <div className="grid grid-cols-2 gap-2">
                   {filtered.map(l=>(
                     <button key={l} onClick={()=>{setSelLang(l);setSearch("");setStep(2)}}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border ${selLang===l?"border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]":"border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30"}`}>
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
                       {l}
                     </button>
@@ -425,9 +433,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
           {/* STEP 2 — Pilih Program */}
           {step===2 && (
             <motion.div key="s2" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
-              <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">
-                ← Ganti bahasa
-              </button>
+              <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
               <div className="flex items-center gap-2 mb-4">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
                 <span className="font-bold">{selLang}</span>
@@ -435,11 +441,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
-                {[
-                  {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
-                  {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false},
-                  {id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false},
-                ].map(p=>(
+                {programs.map(p=>(
                   <button key={p.id} onClick={()=>{setSelProgram(p.id);setStep(3)}}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <span className="text-2xl mt-0.5">{p.icon}</span>
@@ -450,6 +452,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">{p.desc}</p>
                       <p className="text-sm font-bold text-[#1A9E9E] mt-2">{p.price}</p>
+                      {"note" in p && p.note && <p className="text-[10px] text-slate-400 mt-1">{p.note}</p>}
                     </div>
                     <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                   </button>
@@ -458,39 +461,64 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
             </motion.div>
           )}
 
-          {/* STEP 3 — Masukkan Nomor WA */}
+          {/* STEP 3 — Pilih Level */}
           {step===3 && (
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
-              <button onClick={()=>setStep(2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">
-                ← Ganti program
-              </button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-6">
+              <button onClick={()=>setStep(2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
+              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih level</h3>
+              <p className="text-sm text-slate-500 mb-6">Mulai dari mana?</p>
+              <div className="flex flex-col gap-3">
+                {levels.map(lv=>(
+                  <button key={lv.id} onClick={()=>{setSelLevel(lv.id);setStep(4)}}
+                    className="flex items-center gap-4 p-4 rounded-2xl border-2 border-slate-100 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md">
+                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{lv.id}</div>
+                    <div className="flex-1">
+                      <p className="font-bold text-sm">{lv.label}</p>
+                      <p className="text-xs text-slate-500 mt-0.5">{lv.desc}</p>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-slate-400 shrink-0"/>
+                  </button>
+                ))}
+              </div>
+              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
+            </motion.div>
+          )}
+
+          {/* STEP 4 — Konfirmasi & WA */}
+          {step===4 && (
+            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+              <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="text-center mb-6">
                 <span className="text-4xl mb-3 block">🎉</span>
-                <h3 className="text-xl font-bold text-slate-900">Dapatkan Diskon Spesial!</h3>
-                <p className="text-sm text-slate-500 mt-2">Masukkan nomor WhatsApp-mu</p>
+                <h3 className="text-xl font-bold text-slate-900">Pilihan kamu sudah lengkap!</h3>
               </div>
-              <div className="flex gap-0 mb-4">
-                <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-                  className="bg-slate-100 rounded-l-xl px-2 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[72px] text-center">
-                  {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
-                    <option key={c} value={c}>{c}</option>
-                  ))}
-                </select>
-                <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
-                  className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
-                  onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
+              <div className="bg-slate-50 rounded-2xl p-5 mb-6 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Bahasa</span>
+                  <span className="text-sm font-medium flex items-center gap-2">
+                    <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>{selLang}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Program</span>
+                  <span className="text-sm font-medium text-[#1A9E9E]">{selProgram}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Level</span>
+                  <span className="text-sm font-medium">{selLevel}</span>
+                </div>
               </div>
-              <button onClick={handleSubmit} disabled={saving}
-                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Menyimpan..." : "Dapatkan Diskon →"}
+              <button onClick={handleFinal}
+                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                Daftar via WhatsApp →
               </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi via WhatsApp</p>
+              <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi untuk konfirmasi jadwal & pembayaran</p>
             </motion.div>
           )}
         </motion.div>
@@ -501,11 +529,21 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
 
 function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
+  const [waNumber, setWaNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
+
+  const handleQuickSubmit = async () => {
+    if(!waNumber || waNumber.length < 8) return;
+    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
+    await saveLead(fullNum, "");
+    const msg = `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
+    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+  };
 
   return (
     <>
       <div className="max-w-lg">
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-5">
           <span className="text-white/90 text-sm font-medium whitespace-nowrap">{lang==="id"?"Aku mau belajar":"I want to learn"}</span>
           <button onClick={()=>setFunnelOpen(true)}
             className="flex items-center gap-2 bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-2.5 text-sm font-medium hover:bg-white/20 transition-all">
@@ -514,10 +552,22 @@ function HeroFunnel({lang}:{lang:string}) {
             <ChevronDown className="h-3.5 w-3.5"/>
           </button>
         </div>
-        <button onClick={()=>setFunnelOpen(true)}
-          className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25">
-          {lang==="id"?"Dapatkan Diskon Spesial 🎉":"Get Special Discount 🎉"}
-        </button>
+        {/* Inline WA input like Ruangguru */}
+        <div className="flex gap-0 max-w-md">
+          <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
+            className="bg-white/20 backdrop-blur-sm rounded-l-full px-3 text-sm font-medium text-white border-2 border-r-0 border-white/30 focus:outline-none cursor-pointer appearance-none w-[68px] text-center">
+            {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
+              <option key={c} value={c} className="text-slate-900">{c}</option>
+            ))}
+          </select>
+          <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
+            className="flex-1 px-4 py-3.5 bg-white/20 backdrop-blur-sm border-2 border-r-0 border-white/30 text-white placeholder-white/50 text-sm focus:outline-none focus:bg-white/25"
+            onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()}/>
+          <button onClick={handleQuickSubmit}
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-3.5 rounded-r-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
+            {lang==="id"?"Dapatkan Diskon":"Get Discount"} →
+          </button>
+        </div>
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)}/>
