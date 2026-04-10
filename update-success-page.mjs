@@ -1,4 +1,7 @@
-"use client";
+import { readFileSync, writeFileSync } from "fs";
+
+// Update payment success page to include onboarding link
+const successPage = `"use client";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
@@ -17,7 +20,7 @@ function SuccessContent() {
         <p className="text-gray-600 mb-6">Terima kasih sudah mendaftar di Linguo! Sekarang lengkapi data kamu supaya kami bisa siapkan kelas terbaik.</p>
         <p className="text-sm text-gray-400 mb-6">Order ID: {id}</p>
         <div className="flex flex-col gap-3">
-          <a href={`/onboarding/${id}`}
+          <a href={\`/onboarding/\${id}\`}
             className="bg-[#1A9E9E] text-white px-6 py-3.5 rounded-full font-bold hover:bg-[#178888] transition shadow-lg shadow-[#1A9E9E]/25 inline-block">
             Lengkapi Data Diri →
           </a>
@@ -31,4 +34,7 @@ function SuccessContent() {
 }
 export default function PaymentSuccess() {
   return (<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><SuccessContent /></Suspense>);
-}
+}`;
+
+writeFileSync("src/app/payment/success/page.tsx", successPage);
+console.log("✅ Payment success page updated with onboarding link");
