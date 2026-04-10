@@ -518,6 +518,75 @@ function TeacherGrid() {
   );
 }
 
+const PRODUCTS = [
+  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
+  {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
+  {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
+  {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Learning"},
+  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Book"},
+];
+
+function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
+  const [mouseX, setMouseX] = useState<number|null>(null);
+  const containerRef = useState<HTMLDivElement|null>(null);
+  const [refs] = useState<(HTMLDivElement|null)[]>([]);
+
+  const getScale = (idx:number) => {
+    if(mouseX===null) return 1;
+    const el = refs[idx];
+    if(!el) return 1;
+    const rect = el.getBoundingClientRect();
+    const center = rect.left + rect.width/2;
+    const dist = Math.abs(mouseX - center);
+    const maxDist = 250;
+    const scale = 1 + 0.12 * Math.max(0, 1 - dist/maxDist);
+    return scale;
+  };
+
+  return (
+    <div
+      className="flex justify-center gap-4 items-end py-4"
+      onMouseMove={(e)=>setMouseX(e.clientX)}
+      onMouseLeave={()=>setMouseX(null)}>
+      {PRODUCTS.map((p,i)=>{
+        const s = getScale(i);
+        return (
+          <div key={i} ref={(el)=>{refs[i]=el}}
+            className="flex flex-col bg-white border-2 border-slate-100 rounded-2xl p-5 w-[200px] cursor-pointer origin-bottom"
+            style={{
+              transform:`scale(${s})`,
+              transition:'transform 0.15s cubic-bezier(0.25,0.1,0.25,1)',
+              boxShadow: s > 1.05 ? '0 20px 50px -12px rgba(26,158,158,0.2)' : '0 1px 3px rgba(0,0,0,0.06)',
+              borderColor: s > 1.05 ? 'rgba(26,158,158,0.3)' : undefined,
+              zIndex: s > 1.05 ? 10 : 1,
+            }}>
+            <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
+            <h3 className="font-bold text-sm mb-1">{p.title}</h3>
+            <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
+            <div className="mb-3">
+              {p.priceOld && (
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
+                  {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
+                </div>
+              )}
+              <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
+              <span className="text-xs text-slate-400">{p.per}</span>
+            </div>
+            <button onClick={()=>{
+              if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
+              else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
+            }}
+              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
+              Beli Paket
+            </button>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 const PRICING_TABS = [
   {
     id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom.",
@@ -668,44 +737,12 @@ export default function Home() {
       </div>
     </a>
 
-    {/* PRODUCT CARDS — Ruangguru style */}
+    {/* PRODUCT CARDS — macOS Dock style */}
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-center mb-2">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {[
-            {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
-            {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
-            {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
-            {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Learning"},
-            {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Book"},
-          ].map((p,i)=>(
-            <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.05}}
-              className="bg-white border-2 border-slate-100 rounded-2xl p-5 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all flex flex-col">
-              <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
-              <h3 className="font-bold text-sm mb-1">{p.title}</h3>
-              <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
-              <div className="mb-3">
-                {p.priceOld && (
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
-                    {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
-                  </div>
-                )}
-                <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
-                <span className="text-xs text-slate-400">{p.per}</span>
-              </div>
-              <button onClick={()=>{
-                if(p.tab >= 0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
-                else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
-              }}
-                className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
-                Beli Paket
-              </button>
-            </motion.div>
-          ))}
-        </div>
+        <ProductDock setPricingTab={setPricingTab}/>
       </div>
     </section>
 
