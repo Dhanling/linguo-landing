@@ -1,16 +1,29 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign } from "lucide-react";
+import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 
-const LANGUAGES = [
-  {name:"English",flag:"🇬🇧"},{name:"Japanese",flag:"🇯🇵"},{name:"Korean",flag:"🇰🇷"},{name:"Mandarin",flag:"🇨🇳"},{name:"Arabic",flag:"🇸🇦"},{name:"French",flag:"🇫🇷"},
-  {name:"German",flag:"🇩🇪"},{name:"Spanish",flag:"🇪🇸"},{name:"Italian",flag:"🇮🇹"},{name:"Dutch",flag:"🇳🇱"},{name:"Portuguese",flag:"🇧🇷"},{name:"Russian",flag:"🇷🇺"},
-  {name:"Thai",flag:"🇹🇭"},{name:"Vietnamese",flag:"🇻🇳"},{name:"Hindi",flag:"🇮🇳"},{name:"Turkish",flag:"🇹🇷"},{name:"Polish",flag:"🇵🇱"},{name:"Swedish",flag:"🇸🇪"},
-  {name:"Norwegian",flag:"🇳🇴"},{name:"Danish",flag:"🇩🇰"},{name:"Finnish",flag:"🇫🇮"},{name:"Greek",flag:"🇬🇷"},{name:"Czech",flag:"🇨🇿"},{name:"Hungarian",flag:"🇭🇺"},
-  {name:"Hebrew",flag:"🇮🇱"},{name:"Persian",flag:"🇮🇷"},{name:"Swahili",flag:"🇰🇪"},{name:"Tagalog",flag:"🇵🇭"},{name:"Malay",flag:"🇲🇾"},{name:"Georgian",flag:"🇬🇪"},
-  {name:"Javanese",flag:"🌺"},{name:"Sundanese",flag:"🌺"},{name:"BIPA",flag:"🇮🇩"},{name:"Urdu",flag:"🇵🇰"},{name:"Bengali",flag:"🇧🇩"},{name:"Romanian",flag:"🇷🇴"},
+const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
+
+async function saveLead(waNumber: string, language: string) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
+      body: JSON.stringify({ wa_number: waNumber, language: language || null, source: "landing-page" }),
+    });
+  } catch (e) { console.error("Lead save failed:", e); }
+}
+
+const LANG_CATEGORIES = [
+  { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
+  { label: "Asia", langs: ["Japanese","Korean","Mandarin","Arabic","Thai","Vietnamese","Hindi","Turkish","Hebrew","Persian","Tagalog","Malay","Georgian","Urdu","Bengali"] },
+  { label: "Eropa", langs: ["English","French","German","Spanish","Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish","Finnish","Greek","Czech","Hungarian","Romanian"] },
+  { label: "Nusantara", langs: ["Javanese","Sundanese","BIPA"] },
+  { label: "Afrika", langs: ["Swahili"] },
 ];
+
 const TEACHERS = [
   {name:"Febri Darusman",role:"Spanish & Thai",flags:"🇪🇸🇹🇭"},{name:"Nitalia Wijaya",role:"Korean & English",flags:"🇰🇷🇬🇧"},
   {name:"Angga",role:"Chinese & Korean",flags:"🇨🇳🇰🇷"},{name:"Paramita Wulandari",role:"Japanese & Portuguese",flags:"🇯🇵🇧🇷"},
@@ -320,26 +333,75 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-const HERO_LANGUAGES = [
-  "English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish","Italian","Dutch",
-  "Portuguese","Russian","Thai","Vietnamese","Hindi","Turkish","Polish","Swedish","Norwegian","Danish",
-  "Finnish","Greek","Czech","Hungarian","Hebrew","Persian","Swahili","Tagalog","Malay","Georgian",
-  "Javanese","Sundanese","BIPA","Urdu","Bengali","Romanian",
-];
+function LanguageModal({open,onClose,onSelect}:{open:boolean;onClose:()=>void;onSelect:(l:string)=>void}) {
+  const [search, setSearch] = useState("");
+  const [activeTab, setActiveTab] = useState("Populer");
+  const filtered = search.trim()
+    ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i).filter(l=>l.toLowerCase().includes(search.toLowerCase()))
+    : LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || [];
+
+  return (
+    <AnimatePresence>{open&&(
+      <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
+        onClick={onClose}>
+        <motion.div initial={{scale:0.9,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.9,opacity:0}}
+          className="bg-white rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden max-h-[80vh] flex flex-col"
+          onClick={(e)=>e.stopPropagation()}>
+          <div className="p-6 pb-4">
+            <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X className="h-5 w-5"/></button>
+            <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih Bahasa</h3>
+            <p className="text-sm text-slate-500 mb-4">Mau belajar bahasa apa?</p>
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"/>
+              <input type="text" placeholder="Cari bahasa..." value={search} onChange={(e)=>setSearch(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+            </div>
+          </div>
+          {!search.trim() && (
+            <div className="px-6 flex gap-2 mb-3 overflow-x-auto pb-1">
+              {LANG_CATEGORIES.map(c=>(
+                <button key={c.label} onClick={()=>setActiveTab(c.label)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${activeTab===c.label?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          )}
+          <div className="px-6 pb-6 overflow-y-auto flex-1">
+            <div className="grid grid-cols-2 gap-2">
+              {filtered.map(l=>(
+                <button key={l} onClick={()=>{onSelect(l);onClose();setSearch("")}}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-all text-left border border-slate-100 hover:border-[#1A9E9E]/30">
+                  <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
+                  {l}
+                </button>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    )}</AnimatePresence>
+  );
+}
 
 function HeroFunnel({lang}:{lang:string}) {
   const [selLang, setSelLang] = useState("");
-  const [dropOpen, setDropOpen] = useState(false);
+  const [langModalOpen, setLangModalOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [waNumber, setWaNumber] = useState("");
+  const [saving, setSaving] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if(!waNumber || waNumber.length < 8) return;
+    setSaving(true);
     const num = waNumber.startsWith("0") ? "62" + waNumber.slice(1) : waNumber.startsWith("62") ? waNumber : "62" + waNumber;
+    await saveLead(num, selLang);
     const msg = selLang 
       ? `Halo, saya tertarik kursus bahasa ${selLang}. Nomor WA saya: ${waNumber}` 
       : `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${waNumber}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+    setSaving(false);
     setShowPopup(false);
   };
 
@@ -348,32 +410,18 @@ function HeroFunnel({lang}:{lang:string}) {
       <div className="flex flex-col gap-4 max-w-lg">
         <p className="text-white/90 text-sm font-medium">{lang==="id"?"Aku mau belajar...":"I want to learn..."}</p>
         <div className="flex gap-2">
-          <div className="relative flex-1">
-            <button onClick={()=>setDropOpen(!dropOpen)}
-              className="w-full flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
-              {selLang ? (
-                <span className="flex items-center gap-2">
-                  <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                  {selLang}
-                </span>
-              ) : (
-                <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
-              )}
-              <ChevronDown className={`h-4 w-4 transition-transform ${dropOpen?"rotate-180":""}`}/>
-            </button>
-            <AnimatePresence>{dropOpen&&(
-              <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
-                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 max-h-60 overflow-y-auto z-50">
-                {HERO_LANGUAGES.map(l=>(
-                  <button key={l} onClick={()=>{setSelLang(l);setDropOpen(false)}}
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors text-left">
-                    <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                    {l}
-                  </button>
-                ))}
-              </motion.div>
-            )}</AnimatePresence>
-          </div>
+          <button onClick={()=>setLangModalOpen(true)}
+            className="flex-1 flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
+            {selLang ? (
+              <span className="flex items-center gap-2">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                {selLang}
+              </span>
+            ) : (
+              <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
+            )}
+            <ChevronDown className="h-4 w-4"/>
+          </button>
           <button onClick={()=>setShowPopup(true)}
             className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
             {lang==="id"?"Dapatkan Diskon 🎉":"Get Discount 🎉"}
@@ -382,7 +430,9 @@ function HeroFunnel({lang}:{lang:string}) {
         <p className="text-white/50 text-xs">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
 
-      {/* POPUP */}
+      <LanguageModal open={langModalOpen} onClose={()=>setLangModalOpen(false)} onSelect={setSelLang}/>
+
+      {/* DISCOUNT POPUP */}
       <AnimatePresence>{showPopup&&(
         <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
@@ -408,9 +458,9 @@ function HeroFunnel({lang}:{lang:string}) {
                 className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
                 onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
             </div>
-            <button onClick={handleSubmit}
-              className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-              Dapatkan Diskon →
+            <button onClick={handleSubmit} disabled={saving}
+              className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+              {saving ? "Menyimpan..." : "Dapatkan Diskon →"}
             </button>
             <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi via WhatsApp</p>
           </motion.div>
