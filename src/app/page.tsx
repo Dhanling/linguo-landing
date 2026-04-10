@@ -645,10 +645,10 @@ function HeroFunnel({lang}:{lang:string}) {
   return (
     <>
       <div className="max-w-lg">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-white text-lg font-semibold">{lang==="id"?"Aku mau belajar bahasa":"I want to learn"}</span>
+        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <span className="text-white text-sm sm:text-lg font-semibold">{lang==="id"?"Aku mau belajar bahasa":"I want to learn"}</span>
           <button onClick={()=>setFunnelOpen(true)}
-            className="group h-11 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center gap-0 hover:gap-2 px-3 hover:px-5 hover:bg-white/30 transition-all duration-300 active:scale-95 overflow-hidden">
+            className="group h-9 sm:h-11 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center gap-0 hover:gap-2 px-3 hover:px-5 hover:bg-white/30 transition-all duration-300 active:scale-95 overflow-hidden">
             <Globe className="h-5 w-5 text-white shrink-0"/>
             <span className="text-white text-sm font-medium max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap transition-all duration-300 opacity-0 group-hover:opacity-100">Pilih Bahasa</span>
           </button>
@@ -915,15 +915,28 @@ export default function Home() {
     <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-24 lg:pt-32 pb-10 lg:pb-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
+    <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-4 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
-          <h1 className="text-3xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6 lg:mb-8">
-            Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
-          </h1>
+          <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
+            <div className="flex-1">
+              <h1 className="text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
+                Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
+              </h1>
+            </div>
+            <div className="lg:hidden shrink-0 relative">
+              <img src="/images/hero-character.png" alt="" className="w-24 sm:w-32 drop-shadow-xl"/>
+              <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8">
+                <div className="relative bg-white rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 shadow-lg">
+                  <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm flex items-center gap-1"><span>{GREETINGS[0].flag}</span> Hello!</span>
+                  <div className="absolute -bottom-1 right-3 w-2.5 h-2.5 bg-white rotate-45"/>
+                </div>
+              </motion.div>
+            </div>
+          </div>
           <HeroFunnel lang={lang}/>
-          <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-8 mt-6 opacity-90"/>
-          <img src="/images/hero-character.png" alt="" className="lg:hidden w-48 sm:w-56 mx-auto mt-6 drop-shadow-xl"/>
+          <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-7 sm:h-8 mt-4 sm:mt-6 opacity-90"/>
+          
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
@@ -945,7 +958,7 @@ export default function Home() {
     <a href="https://wa.me/6282116859493" target="_blank"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 group">
       <span className="bg-white text-slate-700 text-sm font-medium px-4 py-2.5 rounded-full shadow-lg border border-slate-200 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Need help? Chat with Us</span>
-      <div className="h-14 w-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform">
+      <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform">
         <MessageCircle className="h-6 w-6 text-white" />
       </div>
     </a>
@@ -953,7 +966,7 @@ export default function Home() {
     {/* PRODUCT CARDS — macOS Dock style */}
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-center mb-2">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab}/>
       </div>
@@ -983,10 +996,10 @@ export default function Home() {
     </section>
 
     {/* HOW IT WORKS */}
-    <section className="py-24 bg-slate-50">
+    <section className="py-14 lg:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
-        <p className="text-slate-500 mb-16">Linguo helps you to become fluent in many language.</p>
+        <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
+        <p className="text-slate-500 mb-8 lg:mb-16">Linguo helps you to become fluent in many language.</p>
         <div className="hidden lg:flex items-start justify-between max-w-5xl mx-auto">
           {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
             {img:"/images/step-2.png",s:"Step 2",t:"Choose The Language Level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)",note:"* untuk beberapa bahasa"},
@@ -1004,7 +1017,7 @@ export default function Home() {
           </div>))}
         </div>
         {/* Mobile: simple grid */}
-        <div className="grid grid-cols-2 gap-8 lg:hidden">
+        <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:hidden">
           {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
             {img:"/images/step-2.png",s:"Step 2",t:"Choose the language level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)"},
             {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
@@ -1020,10 +1033,10 @@ export default function Home() {
     </section>
 
     {/* POPULAR CLASS */}
-    <section className="py-24 bg-white">
+    <section className="py-14 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-3xl font-bold">Most popular class</h2>
+          <h2 className="text-xl sm:text-3xl font-bold">Most popular class</h2>
           <div className="flex gap-2">
             <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:-400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
             <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
@@ -1036,8 +1049,8 @@ export default function Home() {
                 {l:"KOREA",fc:"kr",img:"/images/classes/class-korea.png",t:"Sweet and tone",n:"Nitalia Wijaya",lv:"INTERMEDIATE",lc:"text-pink-500 border-pink-400"},
                 {l:"JAPAN",fc:"jp",img:"/images/classes/class-japan.png",t:"Japanese Basic",n:"Paramita Wulandari",lv:"BEGINNER",lc:"text-green-600 border-green-500"},
               ].map((c, i) => (
-                <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[360px] shrink-0 group/card cursor-pointer">
-                  <div className="relative h-56 rounded-2xl mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow">
+                <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[280px] sm:w-[360px] shrink-0 group/card cursor-pointer">
+                  <div className="relative h-44 sm:h-56 rounded-2xl mb-3 sm:mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow">
                     <img src={c.img} alt={c.l} className="w-full h-full object-cover"/>
                     <span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
                       <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
@@ -1073,7 +1086,7 @@ export default function Home() {
     {/* TEACHERS */}
     <section id="teacher" className="py-16 lg:py-24 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-3">Meet Our Teacher</h2>
+        <h2 className="text-xl sm:text-3xl font-bold mb-3">Meet Our Teacher</h2>
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
         <TeacherGrid/>
       </div>
@@ -1103,7 +1116,7 @@ export default function Home() {
     <section id="faq" className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
-        <h2 className="text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
+        <h2 className="text-xl sm:text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
         <p className="text-[#1A9E9E] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
         <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
       </div>
