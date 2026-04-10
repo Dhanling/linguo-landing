@@ -58,7 +58,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
-              <img src="/images/logo-white.png" alt="Linguo" className={`h-14 object-contain transition-all ${c?"brightness-0":""}`} />
+              <img src="/images/logo-white.png" alt="Linguo" className={`h-8 sm:h-14 object-contain transition-all ${c?"brightness-0":""}`} />
             </a>
             <div className="hidden md:flex items-center gap-8">
               {/* Our Program dropdown */}
@@ -738,9 +738,17 @@ const PRODUCTS = [
 function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [mouseX, setMouseX] = useState<number|null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const getScale = (el:HTMLDivElement|null) => {
-    if(mouseX===null || !el) return 1;
+    if(isMobile || mouseX===null || !el) return 1;
     const rect = el.getBoundingClientRect();
     const center = rect.left + rect.width/2;
     const dist = Math.abs(mouseX - center);
@@ -751,7 +759,7 @@ function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
 
   return (
     <div ref={containerRef}
-      className="flex lg:justify-center gap-4 items-end py-6 px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 -mx-2 lg:mx-0"
+      className="flex lg:justify-center gap-3 lg:gap-4 items-end py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0"
       onMouseMove={(e)=>setMouseX(e.clientX)}
       onMouseLeave={()=>setMouseX(null)}>
       {PRODUCTS.map((p,i)=>(
@@ -767,7 +775,7 @@ function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0]
 
   return (
     <div ref={ref}
-      className="flex flex-col bg-white border-2 rounded-2xl p-4 lg:p-5 w-[170px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
+      className="flex flex-col bg-white border-2 rounded-2xl p-3 lg:p-5 w-[150px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
       style={{
         transform:`scale(${scale})`,
         transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1)',
@@ -925,7 +933,7 @@ export default function Home() {
               </h1>
             </div>
             <div className="lg:hidden shrink-0 relative">
-              <img src="/images/hero-character.png" alt="" className="w-24 sm:w-32 drop-shadow-xl"/>
+              <img src="/images/hero-character.png" alt="" className="w-36 sm:w-44 drop-shadow-xl"/>
               <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8">
                 <div className="relative bg-white rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 shadow-lg">
                   <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm flex items-center gap-1"><span>{GREETINGS[0].flag}</span> Hello!</span>
@@ -966,7 +974,7 @@ export default function Home() {
     {/* PRODUCT CARDS — macOS Dock style */}
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-xl sm:text-2xl font-bold text-center mb-2">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab}/>
       </div>
