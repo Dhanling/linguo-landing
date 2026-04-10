@@ -340,52 +340,159 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function LanguageModal({open,onClose,onSelect}:{open:boolean;onClose:()=>void;onSelect:(l:string)=>void}) {
+function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
+  const [step, setStep] = useState(1);
+  const [selLang, setSelLang] = useState("");
+  const [selProgram, setSelProgram] = useState("");
+  const [waNumber, setWaNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
+  const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState("Populer");
+
   const filtered = search.trim()
     ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i).filter(l=>l.toLowerCase().includes(search.toLowerCase()))
     : LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || [];
+
+  const handleSubmit = async () => {
+    if(!waNumber || waNumber.length < 8) return;
+    setSaving(true);
+    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
+    await saveLead(fullNum, selLang);
+    const msg = `Halo, saya tertarik ${selProgram||"kursus"} bahasa ${selLang||"di Linguo"}. Nomor WA saya: ${countryCode}${waNumber}`;
+    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+    setSaving(false);
+    onClose();
+    setStep(1); setSelLang(""); setSelProgram(""); setWaNumber("");
+  };
+
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); };
 
   return (
     <AnimatePresence>{open&&(
       <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
-        onClick={onClose}>
+        onClick={handleClose}>
         <motion.div initial={{scale:0.9,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.9,opacity:0}}
-          className="bg-white rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden max-h-[80vh] flex flex-col"
+          className="bg-white rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden max-h-[85vh] flex flex-col"
           onClick={(e)=>e.stopPropagation()}>
-          <div className="p-6 pb-4">
-            <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X className="h-5 w-5"/></button>
-            <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih Bahasa</h3>
-            <p className="text-sm text-slate-500 mb-4">Mau belajar bahasa apa?</p>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"/>
-              <input type="text" placeholder="Cari bahasa..." value={search} onChange={(e)=>setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-            </div>
+
+          {/* Progress bar */}
+          <div className="flex gap-1.5 px-6 pt-5">
+            {[1,2,3].map(s=>(
+              <div key={s} className={`h-1 flex-1 rounded-full transition-all duration-500 ${s<=step?"bg-[#1A9E9E]":"bg-slate-200"}`}/>
+            ))}
           </div>
-          {!search.trim() && (
-            <div className="px-6 flex gap-2 mb-3 overflow-x-auto pb-1">
-              {LANG_CATEGORIES.map(c=>(
-                <button key={c.label} onClick={()=>setActiveTab(c.label)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${activeTab===c.label?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>
-                  {c.label}
-                </button>
-              ))}
-            </div>
+
+          <button onClick={handleClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"><X className="h-5 w-5"/></button>
+
+          {/* STEP 1 — Pilih Bahasa */}
+          {step===1 && (
+            <motion.div key="s1" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
+              <div className="p-6 pb-4">
+                <h3 className="text-xl font-bold text-slate-900 mb-1">Mau belajar bahasa apa?</h3>
+                <p className="text-sm text-slate-500 mb-4">Pilih bahasa yang kamu minati</p>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"/>
+                  <input type="text" placeholder="Cari bahasa..." value={search} onChange={(e)=>setSearch(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+                </div>
+              </div>
+              {!search.trim() && (
+                <div className="px-6 flex gap-2 mb-3 overflow-x-auto pb-1">
+                  {LANG_CATEGORIES.map(c=>(
+                    <button key={c.label} onClick={()=>setActiveTab(c.label)}
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${activeTab===c.label?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <div className="px-6 pb-6 overflow-y-auto flex-1">
+                <div className="grid grid-cols-2 gap-2">
+                  {filtered.map(l=>(
+                    <button key={l} onClick={()=>{setSelLang(l);setSearch("");setStep(2)}}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border ${selLang===l?"border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]":"border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30"}`}>
+                      <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
+                      {l}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           )}
-          <div className="px-6 pb-6 overflow-y-auto flex-1">
-            <div className="grid grid-cols-2 gap-2">
-              {filtered.map(l=>(
-                <button key={l} onClick={()=>{onSelect(l);onClose();setSearch("")}}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-all text-left border border-slate-100 hover:border-[#1A9E9E]/30">
-                  <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
-                  {l}
-                </button>
-              ))}
-            </div>
-          </div>
+
+          {/* STEP 2 — Pilih Program */}
+          {step===2 && (
+            <motion.div key="s2" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+              <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">
+                ← Ganti bahasa
+              </button>
+              <div className="flex items-center gap-2 mb-4">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
+                <span className="font-bold">{selLang}</span>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
+              <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
+              <div className="flex flex-col gap-3">
+                {[
+                  {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
+                  {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false},
+                  {id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false},
+                ].map(p=>(
+                  <button key={p.id} onClick={()=>{setSelProgram(p.id);setStep(3)}}
+                    className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
+                    <span className="text-2xl mt-0.5">{p.icon}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <p className="font-bold text-sm">{p.title}</p>
+                        {p.highlight && <span className="text-[10px] font-bold bg-[#1A9E9E] text-white px-2 py-0.5 rounded-full">POPULER</span>}
+                      </div>
+                      <p className="text-xs text-slate-500 mt-0.5">{p.desc}</p>
+                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">{p.price}</p>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* STEP 3 — Masukkan Nomor WA */}
+          {step===3 && (
+            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+              <button onClick={()=>setStep(2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">
+                ← Ganti program
+              </button>
+              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-6">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-slate-300">•</span>
+                <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
+              </div>
+              <div className="text-center mb-6">
+                <span className="text-4xl mb-3 block">🎉</span>
+                <h3 className="text-xl font-bold text-slate-900">Dapatkan Diskon Spesial!</h3>
+                <p className="text-sm text-slate-500 mt-2">Masukkan nomor WhatsApp-mu</p>
+              </div>
+              <div className="flex gap-0 mb-4">
+                <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
+                  className="bg-slate-100 rounded-l-xl px-2 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[72px] text-center">
+                  {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                </select>
+                <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
+                  className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
+                  onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
+              </div>
+              <button onClick={handleSubmit} disabled={saving}
+                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                {saving ? "Menyimpan..." : "Dapatkan Diskon →"}
+              </button>
+              <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi via WhatsApp</p>
+            </motion.div>
+          )}
         </motion.div>
       </motion.div>
     )}</AnimatePresence>
@@ -393,92 +500,27 @@ function LanguageModal({open,onClose,onSelect}:{open:boolean;onClose:()=>void;on
 }
 
 function HeroFunnel({lang}:{lang:string}) {
-  const [selLang, setSelLang] = useState("");
-  const [langModalOpen, setLangModalOpen] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [waNumber, setWaNumber] = useState("");
-  const [countryCode, setCountryCode] = useState("+62");
-  const [saving, setSaving] = useState(false);
-
-  const handleSubmit = async () => {
-    if(!waNumber || waNumber.length < 8) return;
-    setSaving(true);
-    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
-    await saveLead(fullNum, selLang);
-    const msg = selLang 
-      ? `Halo, saya tertarik kursus bahasa ${selLang}. Nomor WA saya: ${countryCode}${waNumber}` 
-      : `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
-    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
-    setSaving(false);
-    setShowPopup(false);
-  };
+  const [funnelOpen, setFunnelOpen] = useState(false);
 
   return (
     <>
-      <div className="flex flex-col gap-4 max-w-lg">
-        <p className="text-white/90 text-sm font-medium">{lang==="id"?"Aku mau belajar...":"I want to learn..."}</p>
-        <div className="flex gap-2">
-          <button onClick={()=>setLangModalOpen(true)}
-            className="flex-1 flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
-            {selLang ? (
-              <span className="flex items-center gap-2">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                {selLang}
-              </span>
-            ) : (
-              <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
-            )}
-            <ChevronDown className="h-4 w-4"/>
-          </button>
-          <button onClick={()=>setShowPopup(true)}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
-            {lang==="id"?"Dapatkan Diskon 🎉":"Get Discount 🎉"}
+      <div className="max-w-lg">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-white/90 text-sm font-medium whitespace-nowrap">{lang==="id"?"Aku mau belajar":"I want to learn"}</span>
+          <button onClick={()=>setFunnelOpen(true)}
+            className="flex items-center gap-2 bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-2.5 text-sm font-medium hover:bg-white/20 transition-all">
+            <Globe className="h-4 w-4 text-white/60"/>
+            <span className="text-white/70">{lang==="id"?"Pilih Bahasa":"Choose Language"}</span>
+            <ChevronDown className="h-3.5 w-3.5"/>
           </button>
         </div>
-        <p className="text-white/50 text-xs">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
+        <button onClick={()=>setFunnelOpen(true)}
+          className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25">
+          {lang==="id"?"Dapatkan Diskon Spesial 🎉":"Get Special Discount 🎉"}
+        </button>
+        <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-
-      <LanguageModal open={langModalOpen} onClose={()=>setLangModalOpen(false)} onSelect={setSelLang}/>
-
-      {/* DISCOUNT POPUP */}
-      <AnimatePresence>{showPopup&&(
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
-          onClick={()=>setShowPopup(false)}>
-          <motion.div initial={{scale:0.9,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.9,opacity:0}}
-            className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative"
-            onClick={(e)=>e.stopPropagation()}>
-            <button onClick={()=>setShowPopup(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X className="h-5 w-5"/></button>
-            <div className="text-center mb-6">
-              <span className="text-4xl mb-3 block">🎉</span>
-              <h3 className="text-xl font-bold text-slate-900">Dapatkan Diskon Spesial!</h3>
-              <p className="text-sm text-slate-500 mt-2">Masukkan nomor WhatsApp-mu dan dapatkan penawaran terbaik dari Linguo</p>
-            </div>
-            {selLang && (
-              <div className="flex items-center gap-2 bg-[#1A9E9E]/5 rounded-xl px-4 py-3 mb-4">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                <span className="text-sm font-medium text-[#1A9E9E]">Kursus {selLang}</span>
-              </div>
-            )}
-            <div className="flex gap-0 mb-4">
-              <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-                className="bg-slate-100 rounded-l-xl px-2 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[72px] text-center">
-                {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
-                  <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
-              <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
-                className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
-                onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
-            </div>
-            <button onClick={handleSubmit} disabled={saving}
-              className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-              {saving ? "Menyimpan..." : "Dapatkan Diskon →"}
-            </button>
-            <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi via WhatsApp</p>
-          </motion.div>
-        </motion.div>
-      )}</AnimatePresence>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)}/>
     </>
   );
 }
