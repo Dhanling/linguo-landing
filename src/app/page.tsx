@@ -682,7 +682,7 @@ function HeroFunnel({lang}:{lang:string}) {
 function TeacherGrid() {
   const [selected, setSelected] = useState<number|null>(null);
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
       {TEACHER_DATA.map((t,i)=>(
         <motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.08}}>
           <div onClick={()=>setSelected(selected===i?null:i)}
@@ -751,7 +751,7 @@ function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
 
   return (
     <div ref={containerRef}
-      className="flex justify-center gap-4 items-end py-6 px-4"
+      className="flex lg:justify-center gap-4 items-end py-6 px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 -mx-2 lg:mx-0"
       onMouseMove={(e)=>setMouseX(e.clientX)}
       onMouseLeave={()=>setMouseX(null)}>
       {PRODUCTS.map((p,i)=>(
@@ -767,7 +767,7 @@ function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0]
 
   return (
     <div ref={ref}
-      className="flex flex-col bg-white border-2 rounded-2xl p-5 w-[200px] cursor-pointer origin-bottom"
+      className="flex flex-col bg-white border-2 rounded-2xl p-4 lg:p-5 w-[170px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
       style={{
         transform:`scale(${scale})`,
         transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1)',
@@ -915,10 +915,10 @@ export default function Home() {
     <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] min-h-screen flex items-center relative overflow-hidden pt-32">
+    <section className="bg-[#1A9E9E] min-h-[60vh] lg:min-h-screen flex items-center relative overflow-hidden pt-24 lg:pt-32 pb-12 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-8">
+          <h1 className="text-3xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6 lg:mb-8">
             Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
           </h1>
           <HeroFunnel lang={lang}/>
@@ -1061,7 +1061,7 @@ export default function Home() {
     </section>
 
     {/* WHY LINGUO */}
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
       <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
         <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
@@ -1070,7 +1070,7 @@ export default function Home() {
     </section>
 
     {/* TEACHERS */}
-    <section id="teacher" className="py-24 bg-slate-50">
+    <section id="teacher" className="py-16 lg:py-24 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-3">Meet Our Teacher</h2>
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
@@ -1079,9 +1079,9 @@ export default function Home() {
     </section>
 
     {/* TESTIMONIAL */}
-    <section className="py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-14">Story from our student</h2>
+        <h2 className="text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-14">Story from our student</h2>
         <TestimonialCarousel/>
       </div>
     </section>
@@ -1090,16 +1090,16 @@ export default function Home() {
     <PricingSection tab={pricingTab} setTab={setPricingTab}/>
 
     {/* CTA */}
-    <section className="py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
         <p className="text-slate-500 mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
         <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
     </section>
 
     {/* FAQ */}
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
         <h2 className="text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
