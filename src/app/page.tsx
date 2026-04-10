@@ -655,7 +655,7 @@ function HeroFunnel({lang}:{lang:string}) {
         </div>
         {/* Inline WA input — compact */}
         <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
-        <div className="bg-white rounded-full flex items-center max-w-sm shadow-lg">
+        <div className="bg-white rounded-full flex items-center max-w-[340px] sm:max-w-sm shadow-lg">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
             className="bg-transparent pl-4 pr-0 py-3 text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
@@ -667,8 +667,8 @@ function HeroFunnel({lang}:{lang:string}) {
             className="flex-1 min-w-0 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
             onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()}/>
           <button onClick={handleQuickSubmit}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-4 py-2 text-xs transition-all active:scale-95 whitespace-nowrap rounded-full m-1 shrink-0">
-            Dapatkan Diskon →
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-3 sm:px-4 py-2 text-[10px] sm:text-xs transition-all active:scale-95 whitespace-nowrap rounded-full m-1 shrink-0">
+            <span className="hidden sm:inline">Dapatkan Diskon →</span><span className="sm:hidden">Diskon →</span>
           </button>
         </div>
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
@@ -915,7 +915,7 @@ export default function Home() {
     <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] min-h-[60vh] lg:min-h-screen flex items-center relative overflow-hidden pt-24 lg:pt-32 pb-12 lg:pb-0">
+    <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-24 lg:pt-32 pb-10 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-16 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <h1 className="text-3xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-white leading-[1.08] mb-6 lg:mb-8">
@@ -923,6 +923,7 @@ export default function Home() {
           </h1>
           <HeroFunnel lang={lang}/>
           <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-8 mt-6 opacity-90"/>
+          <img src="/images/hero-character.png" alt="" className="lg:hidden w-48 sm:w-56 mx-auto mt-6 drop-shadow-xl"/>
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
