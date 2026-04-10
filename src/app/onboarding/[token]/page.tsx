@@ -152,7 +152,7 @@ function SearchDropdown({ options, value, onChange, placeholder }: { options: st
 }
 
 
-function SearchDropdown({ options, value, onChange, placeholder }: { options: string[]; value: string; onChange: (v: string) => void; placeholder: string }) {
+: { options: string[]; value: string; onChange: (v: string) => void; placeholder: string }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const filtered = options.filter(o => o.toLowerCase().includes(search.toLowerCase()));
