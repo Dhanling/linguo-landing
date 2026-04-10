@@ -384,12 +384,30 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
 
   const handleFinal = async () => {
     setSaving(true);
-    const fullNum = countryCode.replace("+","") + formWa;
-    await saveLead({ wa_number: fullNum, language: selLang, name: formName, email: formEmail, program: selProgram, level: selLevel });
-    const msg = `Halo, saya ${formName}. Saya tertarik ${selProgram} bahasa ${selLang} level ${selLevel}.\nEmail: ${formEmail}\nWA: ${countryCode}${formWa}`;
-    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
-    setSaving(false);
-    handleClose();
+    try {
+      const fullNum = countryCode.replace("+","") + formWa;
+      let productKey = "";
+      if(selProgram==="Kelas Private") productKey = "private-" + selLevel.toLowerCase();
+      else if(selProgram==="Kelas Reguler") productKey = "reguler-" + selLevel.toLowerCase();
+      else if(selProgram==="IELTS/TOEFL Prep") productKey = "ielts-toefl";
+
+      const res = await fetch("/api/create-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: productKey.split("-")[0], level: selLevel, productKey }),
+      });
+      const data = await res.json();
+      if(data.invoice_url) {
+        window.location.href = data.invoice_url;
+      } else {
+        alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi"));
+        setSaving(false);
+      }
+    } catch(e) {
+      console.error("Payment error:", e);
+      alert("Terjadi kesalahan. Silakan coba lagi.");
+      setSaving(false);
+    }
   };
 
   const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); };
@@ -595,9 +613,9 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
               </div>
               <button onClick={handleFinal} disabled={saving}
                 className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Menyimpan..." : "Daftar Sekarang →"}
+                {saving ? "Memproses pembayaran..." : "Bayar Sekarang →"}
               </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Data akan disimpan & tim kami akan menghubungi via WhatsApp</p>
+              <p className="text-[11px] text-slate-400 text-center mt-3">Kamu akan diarahkan ke halaman pembayaran Xendit</p>
             </motion.div>
           )}
         </motion.div>
