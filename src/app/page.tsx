@@ -531,10 +531,15 @@ function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
   const [waNumber, setWaNumber] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
+  const [error, setError] = useState("");
 
   const handleQuickSubmit = async () => {
-    if(!waNumber || waNumber.length < 8) return;
-    const fullNum = countryCode.replace("+","") + (waNumber.startsWith("0") ? waNumber.slice(1) : waNumber);
+    if(!waNumber) { setError("Masukkan nomor WhatsApp-mu"); return; }
+    if(waNumber.length < 9) { setError("Nomor terlalu pendek, minimal 9 digit"); return; }
+    if(waNumber.length > 15) { setError("Nomor terlalu panjang"); return; }
+    if(countryCode==="+62" && !["8"].includes(waNumber[0])) { setError("Nomor Indonesia harus diawali angka 8 (contoh: 812...)"); return; }
+    setError("");
+    const fullNum = countryCode.replace("+","") + waNumber;
     await saveLead(fullNum, "");
     const msg = `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
@@ -552,22 +557,25 @@ function HeroFunnel({lang}:{lang:string}) {
             <ChevronDown className="h-3.5 w-3.5"/>
           </button>
         </div>
-        {/* Inline WA input like Ruangguru */}
-        <div className="flex gap-0 max-w-md">
+        {/* Inline WA input — Ruangguru style */}
+        <p className="text-white/70 text-sm mb-2">{lang==="id"?"Diskon spesial untukmu, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
+        <div className="bg-white rounded-full flex items-center max-w-md shadow-lg overflow-hidden">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-            className="bg-white/20 backdrop-blur-sm rounded-l-full px-3 text-sm font-medium text-white border-2 border-r-0 border-white/30 focus:outline-none cursor-pointer appearance-none w-[68px] text-center">
+            className="bg-transparent pl-5 pr-1 py-4 text-base font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
-              <option key={c} value={c} className="text-slate-900">{c}</option>
+              <option key={c} value={c}>{c}</option>
             ))}
           </select>
-          <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
-            className="flex-1 px-4 py-3.5 bg-white/20 backdrop-blur-sm border-2 border-r-0 border-white/30 text-white placeholder-white/50 text-sm focus:outline-none focus:bg-white/25"
+          <input type="tel" placeholder="812-3456-7890" value={waNumber}
+            onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
+            className="flex-1 py-4 text-base text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
             onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()}/>
           <button onClick={handleQuickSubmit}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-3.5 rounded-r-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-4 text-sm transition-all active:scale-95 whitespace-nowrap rounded-full mr-1">
             {lang==="id"?"Dapatkan Diskon":"Get Discount"} →
           </button>
         </div>
+        {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)}/>
