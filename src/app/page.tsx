@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 
@@ -527,62 +527,66 @@ const PRODUCTS = [
 ];
 
 function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const [mouseX, setMouseX] = useState<number|null>(null);
-  const containerRef = useState<HTMLDivElement|null>(null);
-  const [refs] = useState<(HTMLDivElement|null)[]>([]);
 
-  const getScale = (idx:number) => {
-    if(mouseX===null) return 1;
-    const el = refs[idx];
-    if(!el) return 1;
+  const getScale = (el:HTMLDivElement|null) => {
+    if(mouseX===null || !el) return 1;
     const rect = el.getBoundingClientRect();
     const center = rect.left + rect.width/2;
     const dist = Math.abs(mouseX - center);
-    const maxDist = 250;
-    const scale = 1 + 0.12 * Math.max(0, 1 - dist/maxDist);
-    return scale;
+    const maxDist = 300;
+    if(dist > maxDist) return 1;
+    return 1 + 0.1 * Math.pow(1 - dist/maxDist, 2);
   };
 
   return (
-    <div
-      className="flex justify-center gap-4 items-end py-4"
+    <div ref={containerRef}
+      className="flex justify-center gap-4 items-end py-6 px-4"
       onMouseMove={(e)=>setMouseX(e.clientX)}
       onMouseLeave={()=>setMouseX(null)}>
-      {PRODUCTS.map((p,i)=>{
-        const s = getScale(i);
-        return (
-          <div key={i} ref={(el)=>{refs[i]=el}}
-            className="flex flex-col bg-white border-2 border-slate-100 rounded-2xl p-5 w-[200px] cursor-pointer origin-bottom"
-            style={{
-              transform:`scale(${s})`,
-              transition:'transform 0.15s cubic-bezier(0.25,0.1,0.25,1)',
-              boxShadow: s > 1.05 ? '0 20px 50px -12px rgba(26,158,158,0.2)' : '0 1px 3px rgba(0,0,0,0.06)',
-              borderColor: s > 1.05 ? 'rgba(26,158,158,0.3)' : undefined,
-              zIndex: s > 1.05 ? 10 : 1,
-            }}>
-            <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
-            <h3 className="font-bold text-sm mb-1">{p.title}</h3>
-            <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
-            <div className="mb-3">
-              {p.priceOld && (
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
-                  {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
-                </div>
-              )}
-              <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
-              <span className="text-xs text-slate-400">{p.per}</span>
-            </div>
-            <button onClick={()=>{
-              if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
-              else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
-            }}
-              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
-              Beli Paket
-            </button>
+      {PRODUCTS.map((p,i)=>(
+        <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab}/>
+      ))}
+    </div>
+  );
+}
+
+function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0];getScale:(el:HTMLDivElement|null)=>number;setPricingTab:(t:number)=>void}) {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const scale = getScale(ref.current);
+
+  return (
+    <div ref={ref}
+      className="flex flex-col bg-white border-2 rounded-2xl p-5 w-[200px] cursor-pointer origin-bottom"
+      style={{
+        transform:`scale(${scale})`,
+        transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1)',
+        boxShadow: scale > 1.03 ? '0 20px 50px -12px rgba(26,158,158,0.25)' : '0 1px 3px rgba(0,0,0,0.06)',
+        borderColor: scale > 1.03 ? 'rgba(26,158,158,0.35)' : '#f1f5f9',
+        zIndex: scale > 1.03 ? 10 : 1,
+        position:'relative',
+      }}>
+      <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
+      <h3 className="font-bold text-sm mb-1">{p.title}</h3>
+      <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
+      <div className="mb-3">
+        {p.priceOld && (
+          <div className="flex items-center gap-2 mb-0.5">
+            <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
+            {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
           </div>
-        );
-      })}
+        )}
+        <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
+        <span className="text-xs text-slate-400">{p.per}</span>
+      </div>
+      <button onClick={()=>{
+        if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
+        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
+      }}
+        className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-colors active:scale-95">
+        Beli Paket
+      </button>
     </div>
   );
 }
