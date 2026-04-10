@@ -973,7 +973,7 @@ export default function Home() {
     </section>
 
     {/* OUR CLIENTS */}
-    <section className="py-10 bg-white border-b border-slate-100 overflow-hidden group">
+    <section className="py-5 sm:py-10 bg-white border-b border-slate-100 overflow-hidden group">
       <div className="animate-marquee flex items-center gap-16 w-max group-hover:[animation-play-state:paused]" style={{animationDuration:'50s'}}>
         {[...Array(3)].flatMap((_, ri) =>
           [
@@ -996,7 +996,7 @@ export default function Home() {
     </section>
 
     {/* HOW IT WORKS */}
-    <section className="py-14 lg:py-24 bg-slate-50">
+    <section className="py-8 lg:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-8 lg:mb-16">Linguo helps you to become fluent in many language.</p>
@@ -1033,7 +1033,7 @@ export default function Home() {
     </section>
 
     {/* POPULAR CLASS */}
-    <section className="py-14 lg:py-24 bg-white">
+    <section className="py-8 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-xl sm:text-3xl font-bold">Most popular class</h2>
@@ -1068,7 +1068,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <div className="text-center mt-10">
+        <div className="text-center mt-5 sm:mt-10">
           <a href="https://wa.me/6282116859493?text=Halo, saya mau lihat kelas lainnya" target="_blank" className="inline-block border border-slate-300 text-slate-600 font-medium px-8 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors">Browse more</a>
         </div>
       </div>
@@ -1078,7 +1078,7 @@ export default function Home() {
     <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
       <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
-        <h2 className="text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
+        <h2 className="text-xl sm:text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
         <WhyCarousel/>
       </div>
     </section>
@@ -1107,7 +1107,7 @@ export default function Home() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
-        <p className="text-slate-500 mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
+        <p className="text-slate-500 mb-4 sm:mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
         <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
     </section>
