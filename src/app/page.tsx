@@ -330,51 +330,93 @@ const HERO_LANGUAGES = [
 function HeroFunnel({lang}:{lang:string}) {
   const [selLang, setSelLang] = useState("");
   const [dropOpen, setDropOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [waNumber, setWaNumber] = useState("");
 
-  const handleStart = () => {
-    if(selLang) {
-      window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik kursus bahasa ${selLang}`, '_blank');
-    } else {
-      setDropOpen(true);
-    }
+  const handleSubmit = () => {
+    if(!waNumber || waNumber.length < 8) return;
+    const num = waNumber.startsWith("0") ? "62" + waNumber.slice(1) : waNumber.startsWith("62") ? waNumber : "62" + waNumber;
+    const msg = selLang 
+      ? `Halo, saya tertarik kursus bahasa ${selLang}. Nomor WA saya: ${waNumber}` 
+      : `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${waNumber}`;
+    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+    setShowPopup(false);
   };
 
   return (
-    <div className="flex flex-col gap-3 max-w-md">
-      <div className="flex gap-2">
-        <div className="relative flex-1">
-          <button onClick={()=>setDropOpen(!dropOpen)}
-            className="w-full flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
-            {selLang ? (
-              <span className="flex items-center gap-2">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                {selLang}
-              </span>
-            ) : (
-              <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
-            )}
-            <ChevronDown className={`h-4 w-4 transition-transform ${dropOpen?"rotate-180":""}`}/>
+    <>
+      <div className="flex flex-col gap-4 max-w-lg">
+        <p className="text-white/90 text-sm font-medium">{lang==="id"?"Aku mau belajar...":"I want to learn..."}</p>
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <button onClick={()=>setDropOpen(!dropOpen)}
+              className="w-full flex items-center justify-between bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-3.5 text-sm font-medium hover:bg-white/20 transition-all">
+              {selLang ? (
+                <span className="flex items-center gap-2">
+                  <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                  {selLang}
+                </span>
+              ) : (
+                <span className="text-white/70">{lang==="id"?"Pilih Bahasa...":"Choose Language..."}</span>
+              )}
+              <ChevronDown className={`h-4 w-4 transition-transform ${dropOpen?"rotate-180":""}`}/>
+            </button>
+            <AnimatePresence>{dropOpen&&(
+              <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
+                className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 max-h-60 overflow-y-auto z-50">
+                {HERO_LANGUAGES.map(l=>(
+                  <button key={l} onClick={()=>{setSelLang(l);setDropOpen(false)}}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors text-left">
+                    <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                    {l}
+                  </button>
+                ))}
+              </motion.div>
+            )}</AnimatePresence>
+          </div>
+          <button onClick={()=>setShowPopup(true)}
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
+            {lang==="id"?"Dapatkan Diskon 🎉":"Get Discount 🎉"}
           </button>
-          <AnimatePresence>{dropOpen&&(
-            <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
-              className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 max-h-60 overflow-y-auto z-50">
-              {HERO_LANGUAGES.map(l=>(
-                <button key={l} onClick={()=>{setSelLang(l);setDropOpen(false)}}
-                  className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors text-left">
-                  <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                  {l}
-                </button>
-              ))}
-            </motion.div>
-          )}</AnimatePresence>
         </div>
-        <button onClick={handleStart}
-          className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-7 py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-yellow-500/25 whitespace-nowrap">
-          {lang==="id"?"Mulai Belajar":"Start Learning"} →
-        </button>
+        <p className="text-white/50 text-xs">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <p className="text-white/50 text-xs">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
-    </div>
+
+      {/* POPUP */}
+      <AnimatePresence>{showPopup&&(
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
+          onClick={()=>setShowPopup(false)}>
+          <motion.div initial={{scale:0.9,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.9,opacity:0}}
+            className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative"
+            onClick={(e)=>e.stopPropagation()}>
+            <button onClick={()=>setShowPopup(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><X className="h-5 w-5"/></button>
+            <div className="text-center mb-6">
+              <span className="text-4xl mb-3 block">🎉</span>
+              <h3 className="text-xl font-bold text-slate-900">Dapatkan Diskon Spesial!</h3>
+              <p className="text-sm text-slate-500 mt-2">Masukkan nomor WhatsApp-mu dan dapatkan penawaran terbaik dari Linguo</p>
+            </div>
+            {selLang && (
+              <div className="flex items-center gap-2 bg-[#1A9E9E]/5 rounded-xl px-4 py-3 mb-4">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                <span className="text-sm font-medium text-[#1A9E9E]">Kursus {selLang}</span>
+              </div>
+            )}
+            <div className="flex gap-2 mb-4">
+              <span className="flex items-center bg-slate-100 rounded-l-xl px-4 text-sm font-medium text-slate-500 border border-r-0 border-slate-200">+62</span>
+              <input type="tel" placeholder="812-3456-7890" value={waNumber} onChange={(e)=>setWaNumber(e.target.value)}
+                className="flex-1 px-4 py-3.5 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"
+                onKeyDown={(e)=>e.key==='Enter'&&handleSubmit()}/>
+            </div>
+            <button onClick={handleSubmit}
+              className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+              Dapatkan Diskon →
+            </button>
+            <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi via WhatsApp</p>
+          </motion.div>
+        </motion.div>
+      )}</AnimatePresence>
+    </>
   );
 }
 
@@ -576,42 +618,42 @@ export default function Home() {
       </div>
     </a>
 
-    {/* STATS COUNTER */}
-    <section className="bg-white py-10 border-b border-slate-100">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex items-center justify-center gap-6 sm:gap-12 flex-wrap">
+    {/* PRODUCT CARDS — Ruangguru style */}
+    <section className="bg-white py-14 border-b border-slate-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-2xl font-bold text-center mb-2">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {[
-            {val:"10,000+",label:"Siswa"},
-            {val:"55+",label:"Bahasa"},
-            {val:"100+",label:"Pengajar"},
-            {val:"5.0 ⭐",label:"Google Review"},
-          ].map((s,i)=>(
-            <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
-              className="text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-[#1A9E9E]">{s.val}</p>
-              <p className="text-xs sm:text-sm text-slate-500 mt-1">{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* PRODUCT ICON BAR */}
-    <section className="bg-white py-8 border-b border-slate-100">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
-          {[
-            {icon:"🎓",label:"Private Class",action:()=>{setPricingTab(0);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
-            {icon:"👥",label:"Reguler",action:()=>{setPricingTab(1);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
-            {icon:"📝",label:"IELTS/TOEFL",action:()=>{setPricingTab(2);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}},
-            {icon:"📱",label:"E-Learning",action:()=>document.getElementById('digital')?.scrollIntoView({behavior:'smooth'})},
-            {icon:"🏢",label:"Corporate",action:()=>window.open('https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo','_blank')},
+            {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
+            {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
+            {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
+            {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Learning"},
+            {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Book"},
           ].map((p,i)=>(
-            <button key={i} onClick={p.action}
-              className="flex flex-col items-center gap-2 px-4 sm:px-6 py-3 rounded-2xl hover:bg-[#1A9E9E]/5 transition-all group cursor-pointer">
-              <span className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform">{p.icon}</span>
-              <span className="text-[11px] sm:text-xs font-medium text-slate-600 group-hover:text-[#1A9E9E] transition-colors whitespace-nowrap">{p.label}</span>
-            </button>
+            <motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.05}}
+              className="bg-white border-2 border-slate-100 rounded-2xl p-5 hover:border-[#1A9E9E]/30 hover:shadow-lg transition-all flex flex-col">
+              <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
+              <h3 className="font-bold text-sm mb-1">{p.title}</h3>
+              <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
+              <div className="mb-3">
+                {p.priceOld && (
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
+                    {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
+                  </div>
+                )}
+                <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
+                <span className="text-xs text-slate-400">{p.per}</span>
+              </div>
+              <button onClick={()=>{
+                if(p.tab >= 0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
+                else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
+              }}
+                className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
+                Beli Paket
+              </button>
+            </motion.div>
           ))}
         </div>
       </div>
