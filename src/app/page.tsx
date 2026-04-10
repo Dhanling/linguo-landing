@@ -6,12 +6,12 @@ import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Sta
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
-async function saveLead(waNumber: string, language: string) {
+async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string}) {
   try {
     await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
-      body: JSON.stringify({ wa_number: waNumber, language: language || null, source: "landing-page" }),
+      body: JSON.stringify({ ...data, source: "landing-page" }),
     });
   } catch (e) { console.error("Lead save failed:", e); }
 }
@@ -345,6 +345,12 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
   const [selLevel, setSelLevel] = useState("");
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  const [formWa, setFormWa] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
+  const [formError, setFormError] = useState("");
+  const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState("Populer");
 
@@ -367,15 +373,26 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
        {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
        {id:"B2",label:"B2 — Upper Intermediate",desc:"Lancar & kompleks"}];
 
-  const handleFinal = () => {
-    const msg = `Halo, saya tertarik ${selProgram} bahasa ${selLang} level ${selLevel}`;
+  const validateForm = () => {
+    if(!formName.trim()) { setFormError("Masukkan nama lengkap"); return false; }
+    if(!formEmail.trim() || !formEmail.includes("@")) { setFormError("Masukkan email yang valid"); return false; }
+    if(!formWa || formWa.length < 9) { setFormError("Masukkan nomor WhatsApp yang valid"); return false; }
+    if(countryCode==="+62" && formWa[0]!=="8") { setFormError("Nomor Indonesia harus diawali 8"); return false; }
+    setFormError("");
+    return true;
+  };
+
+  const handleFinal = async () => {
+    setSaving(true);
+    const fullNum = countryCode.replace("+","") + formWa;
+    await saveLead({ wa_number: fullNum, language: selLang, name: formName, email: formEmail, program: selProgram, level: selLevel });
+    const msg = `Halo, saya ${formName}. Saya tertarik ${selProgram} bahasa ${selLang} level ${selLevel}.\nEmail: ${formEmail}\nWA: ${countryCode}${formWa}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+    setSaving(false);
     handleClose();
   };
 
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); };
-
-  const totalSteps = 4;
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); };
 
   return (
     <AnimatePresence>{open&&(
@@ -387,7 +404,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
           onClick={(e)=>e.stopPropagation()}>
 
           <div className="flex gap-1.5 px-6 pt-5">
-            {[1,2,3,4].map(s=>(
+            {[1,2,3,4,5].map(s=>(
               <div key={s} className={`h-1 flex-1 rounded-full transition-all duration-500 ${s<=step?"bg-[#1A9E9E]":"bg-slate-200"}`}/>
             ))}
           </div>
@@ -490,15 +507,77 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
             </motion.div>
           )}
 
-          {/* STEP 4 — Konfirmasi & WA */}
+          {/* STEP 4 — Form Data Diri */}
           {step===4 && (
-            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
-              <div className="text-center mb-6">
-                <span className="text-4xl mb-3 block">🎉</span>
-                <h3 className="text-xl font-bold text-slate-900">Pilihan kamu sudah lengkap!</h3>
+              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
+                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>
+                <span className="font-medium">{selLang}</span>
+                <span className="text-slate-300">•</span>
+                <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
+                <span className="text-slate-300">•</span>
+                <span>{selLevel}</span>
               </div>
-              <div className="bg-slate-50 rounded-2xl p-5 mb-6 space-y-3">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Lengkapi data diri</h3>
+              <p className="text-sm text-slate-500 mb-5">Isi data di bawah agar tim kami bisa menghubungimu</p>
+              <div className="space-y-3">
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">Nama Lengkap</label>
+                  <input type="text" placeholder="John Doe" value={formName} onChange={(e)=>{setFormName(e.target.value);setFormError("")}}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">Email</label>
+                  <input type="email" placeholder="john@email.com" value={formEmail} onChange={(e)=>{setFormEmail(e.target.value);setFormError("")}}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">Nomor WhatsApp</label>
+                  <div className="flex gap-0">
+                    <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
+                      className="bg-slate-100 rounded-l-xl px-3 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[68px] text-center">
+                      {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </select>
+                    <input type="tel" placeholder="812-3456-7890" value={formWa}
+                      onChange={(e)=>{setFormWa(e.target.value.replace(/[^0-9]/g,"").replace(/^0/,""));setFormError("")}}
+                      className="flex-1 px-4 py-3 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+                  </div>
+                </div>
+              </div>
+              {formError && <p className="text-red-500 text-xs mt-2">{formError}</p>}
+              <button onClick={()=>{if(validateForm()) setStep(5)}}
+                className="w-full mt-5 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
+                Lanjut ke Konfirmasi →
+              </button>
+            </motion.div>
+          )}
+
+          {/* STEP 5 — Konfirmasi & Daftar */}
+          {step===5 && (
+            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+              <button onClick={()=>setStep(4)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Edit data</button>
+              <div className="text-center mb-5">
+                <span className="text-4xl mb-2 block">🎉</span>
+                <h3 className="text-xl font-bold text-slate-900">Konfirmasi Pendaftaran</h3>
+                <p className="text-sm text-slate-500 mt-1">Pastikan data di bawah sudah benar</p>
+              </div>
+              <div className="bg-slate-50 rounded-2xl p-5 mb-5 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Nama</span>
+                  <span className="text-sm font-medium">{formName}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">Email</span>
+                  <span className="text-sm font-medium">{formEmail}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-500">WhatsApp</span>
+                  <span className="text-sm font-medium">{countryCode}{formWa}</span>
+                </div>
+                <div className="border-t border-slate-200 pt-2.5 mt-2.5"/>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Bahasa</span>
                   <span className="text-sm font-medium flex items-center gap-2">
@@ -514,11 +593,11 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
               </div>
-              <button onClick={handleFinal}
-                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                Daftar via WhatsApp →
+              <button onClick={handleFinal} disabled={saving}
+                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                {saving ? "Menyimpan..." : "Daftar Sekarang →"}
               </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Tim kami akan menghubungi untuk konfirmasi jadwal & pembayaran</p>
+              <p className="text-[11px] text-slate-400 text-center mt-3">Data akan disimpan & tim kami akan menghubungi via WhatsApp</p>
             </motion.div>
           )}
         </motion.div>
@@ -540,7 +619,7 @@ function HeroFunnel({lang}:{lang:string}) {
     if(countryCode==="+62" && !["8"].includes(waNumber[0])) { setError("Nomor Indonesia harus diawali angka 8 (contoh: 812...)"); return; }
     setError("");
     const fullNum = countryCode.replace("+","") + waNumber;
-    await saveLead(fullNum, "");
+    await saveLead({wa_number: fullNum});
     const msg = `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
   };
