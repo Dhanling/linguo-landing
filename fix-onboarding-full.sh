@@ -1,3 +1,7 @@
+#!/bin/bash
+cd ~/linguo-landing
+
+cat > "src/app/onboarding/[token]/page.tsx" << 'ENDOFFILE'
 "use client";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
@@ -282,3 +286,6 @@ export default function OnboardingPage() {
     </div>
   );
 }
+ENDOFFILE
+
+echo "✅ Onboarding page completely rewritten!"
