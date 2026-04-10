@@ -549,17 +549,15 @@ function HeroFunnel({lang}:{lang:string}) {
     <>
       <div className="max-w-lg">
         <div className="flex items-center gap-3 mb-5">
-          <span className="text-white/90 text-sm font-medium whitespace-nowrap">{lang==="id"?"Aku mau belajar":"I want to learn"}</span>
+          <span className="text-white text-lg font-semibold">{lang==="id"?"Aku mau belajar bahasa":"I want to learn"}</span>
           <button onClick={()=>setFunnelOpen(true)}
-            className="flex items-center gap-2 bg-white/15 backdrop-blur-sm border-2 border-white/30 text-white rounded-full px-5 py-2.5 text-sm font-medium hover:bg-white/20 transition-all">
-            <Globe className="h-4 w-4 text-white/60"/>
-            <span className="text-white/70">{lang==="id"?"Pilih Bahasa":"Choose Language"}</span>
-            <ChevronDown className="h-3.5 w-3.5"/>
+            className="h-11 w-11 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center hover:bg-white/30 transition-all active:scale-95">
+            <Globe className="h-5 w-5 text-white"/>
           </button>
         </div>
         {/* Inline WA input — Ruangguru style */}
         <p className="text-white/70 text-sm mb-2">{lang==="id"?"Diskon spesial untukmu, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
-        <div className="bg-white rounded-full flex items-center max-w-md shadow-lg overflow-hidden">
+        <div className="bg-white rounded-full flex items-center max-w-lg shadow-lg">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
             className="bg-transparent pl-5 pr-1 py-4 text-base font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
@@ -568,11 +566,11 @@ function HeroFunnel({lang}:{lang:string}) {
           </select>
           <input type="tel" placeholder="812-3456-7890" value={waNumber}
             onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
-            className="flex-1 py-4 text-base text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
+            className="flex-1 min-w-0 py-4 text-base text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
             onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()}/>
           <button onClick={handleQuickSubmit}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-4 text-sm transition-all active:scale-95 whitespace-nowrap rounded-full mr-1">
-            {lang==="id"?"Dapatkan Diskon":"Get Discount"} →
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-5 sm:px-7 py-3 text-sm transition-all active:scale-95 whitespace-nowrap rounded-full m-1.5 shrink-0">
+            Dapatkan Diskon <span className="hidden sm:inline">→</span>
           </button>
         </div>
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
