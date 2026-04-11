@@ -802,7 +802,7 @@ function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0]
       </div>
       <button onClick={()=>{
         if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
-        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.wa||p.title} Linguo`,'_blank')}
+        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.href||p.title} Linguo`,'_blank')}
       }}
         className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-colors active:scale-95">
         Beli Paket
