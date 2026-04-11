@@ -21,7 +21,7 @@ export default function ProdukPage() {
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [wa, setWa] = useState("");
   const [loading, setLoading] = useState(false); const [error, setError] = useState("");
 
-  const buy = (id, nm, price) => { setProd({id,name:nm,price}); setOpen(true); setError(""); };
+  const buy = (id: string, nm: string, price: number) => { setProd({id,name:nm,price}); setOpen(true); setError(""); };
 
   const checkout = async () => {
     if (!name.trim()||!email.trim()||!wa.trim()) { setError("Lengkapi semua field"); return; }
@@ -114,7 +114,7 @@ export default function ProdukPage() {
               <div className="w-full md:w-80 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
                 <p className="text-sm font-semibold text-slate-900 mb-3">Pilih bahasa:</p>
                 <div className="grid grid-cols-2 gap-2 max-h-72 overflow-y-auto">
-                  {LANGS.map(l=>{const nm=l.slice(2).trim();return(
+                  {LANGS.map(l=>{const nm: string=l.slice(2).trim();return(
                     <button key={l} onClick={()=>setSel(sel===nm?null:nm)} className={`flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${sel===nm?"bg-indigo-500 text-white shadow-md":"bg-slate-50 text-slate-700 hover:bg-indigo-50"}`}>{l}</button>
                   );})}
                 </div>
