@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-const formatRp = (n) => `Rp ${n.toLocaleString("id-ID")}`;
+const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
 const PLANS = [
   { id:"e-learning", duration:"1 Bulan", price:29000, orig:99000, discount:70, features:["Akses 10+ bahasa","Video materi","Komunitas belajar"] },
