@@ -734,8 +734,8 @@ const PRODUCTS = [
   {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
   {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
   {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
-  {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Learning"},
-  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,wa:"E-Book"},
+  {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk"},
+  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk?tab=ebook"},
 ];
 
 function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
