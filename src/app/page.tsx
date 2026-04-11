@@ -6,12 +6,15 @@ import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Sta
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
-async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string}) {
+async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; referral_source?:string}) {
   try {
+    // Get referral from URL or localStorage
+    const ref = new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || undefined;
+    if (ref) localStorage.setItem("linguo_ref", ref);
     await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
-      body: JSON.stringify({ ...data, source: "landing-page" }),
+      body: JSON.stringify({ ...data, source: "landing-page", referral_source: data.referral_source || ref || null }),
     });
   } catch (e) { console.error("Lead save failed:", e); }
 }
@@ -394,7 +397,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
       const res = await fetch("/api/create-invoice", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: productKey.split("-")[0], level: selLevel, productKey }),
+        body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: productKey.split("-")[0], level: selLevel, productKey, referral_source: localStorage.getItem("linguo_ref") || undefined }),
       });
       const data = await res.json();
       if(data.invoice_url) {
@@ -917,7 +920,14 @@ export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
   const [pricingTab, setPricingTab] = useState(0);
-  useEffect(()=>{window.scrollTo(0,0);const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);return()=>window.removeEventListener("scroll",fn);},[]);
+  useEffect(()=>{
+    window.scrollTo(0,0);
+    const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);
+    // Save referral param
+    const ref = new URLSearchParams(window.location.search).get("ref");
+    if (ref) localStorage.setItem("linguo_ref", ref);
+    return()=>window.removeEventListener("scroll",fn);
+  },[]);
 
   return (<>
     <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
