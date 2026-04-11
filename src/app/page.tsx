@@ -903,7 +903,7 @@ function PricingSection({tab,setTab}:{tab:number;setTab:(t:number)=>void}) {
                 <p className="font-bold">{d.name}</p>
                 <p className="text-xs text-slate-400 mt-1 mb-3">{d.desc}</p>
                 <p className="text-xl font-bold text-[#1A9E9E] mb-4">{d.price}</p>
-                <a href={d.href || `/produk`}
+                <a href={(d as any).href || "/produk"}
                   className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95">
                   Beli Sekarang
                 </a>
