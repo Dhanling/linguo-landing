@@ -28,7 +28,7 @@ export default function ProdukPage() {
     setLoading(true); setError("");
     try {
       const res = await fetch("/api/create-invoice", { method:"POST", headers:{"Content-Type":"application/json"},
-        body: JSON.stringify({ name:name.trim(), email:email.trim(), wa_number:wa.trim(), program:"digital", productKey:prod.id }) });
+        body: JSON.stringify({ name:name.trim(), email:email.trim(), wa_number:wa.trim(), program:"digital", productKey:prod!.id }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error||"Gagal");
       window.location.href = data.invoice_url;
