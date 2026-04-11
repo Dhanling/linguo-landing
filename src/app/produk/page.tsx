@@ -32,7 +32,7 @@ export default function ProdukPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error||"Gagal");
       window.location.href = data.invoice_url;
-    } catch(e) { setError(e.message); setLoading(false); }
+    } catch(e:any) { setError(e.message); setLoading(false); }
   };
 
   return (
