@@ -15,9 +15,9 @@ const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵
 
 export default function ProdukPage() {
   const [tab, setTab] = useState("elearning");
-  const [sel, setSel] = useState(null);
+  const [sel, setSel] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
-  const [prod, setProd] = useState(null);
+  const [prod, setProd] = useState<{id:string;name:string;price:number}|null>(null);
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [wa, setWa] = useState("");
   const [loading, setLoading] = useState(false); const [error, setError] = useState("");
 
