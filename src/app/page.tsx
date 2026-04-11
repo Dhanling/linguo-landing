@@ -99,7 +99,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                 <a key={l} onClick={()=>{
                   if(h.startsWith("wa-")){
                     const msg = h==="wa-corporate"?"Halo, saya tertarik Corporate Class Linguo":"Halo, saya tertarik menjadi pengajar di Linguo";
-                    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`,'_blank');
+                    window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
                   } else { scrollTo(h); }
                 }} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
@@ -642,7 +642,7 @@ function HeroFunnel({lang}:{lang:string}) {
     const fullNum = countryCode.replace("+","") + waNumber;
     await saveLead({wa_number: fullNum});
     const msg = `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
-    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+    window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
   };
 
   return (
