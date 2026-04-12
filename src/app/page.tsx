@@ -664,7 +664,7 @@ function HeroFunnel({lang}:{lang:string}) {
         </div>
         {/* Inline WA input — compact */}
         <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
-        <div className="bg-white rounded-full flex items-center max-w-[360px] sm:max-w-md shadow-lg">
+        <div className="bg-white rounded-full flex items-center max-w-[400px] sm:max-w-lg shadow-lg">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
             className="bg-transparent pl-4 pr-0 py-3 text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
@@ -948,7 +948,7 @@ export default function Home() {
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
             <div className="flex-1">
               <h1 className="text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
-                Everyone Can<br/>Be a<br/>Polyglot
+                Everyone Can Be a<br/>Polyglot
               </h1>
             </div>
             <div className="lg:hidden shrink-0 relative">
