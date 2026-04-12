@@ -763,7 +763,7 @@ function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
 
   return (
     <div ref={containerRef}
-      className="flex lg:justify-center gap-3 lg:gap-4 items-end py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0"
+      className="flex lg:justify-center gap-3 lg:gap-4 items-stretch py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0"
       onMouseMove={(e)=>setMouseX(e.clientX)}
       onMouseLeave={()=>setMouseX(null)}>
       {PRODUCTS.map((p,i)=>(
@@ -1155,12 +1155,12 @@ export default function Home() {
             </ul>
           </div>
           <div><h4 className="font-bold mb-4">Level Option</h4>
-            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Basic","Upper Basic","Intermediate","Advance"].map(l=>(<li key={l}>{l}</li>))}</ul>
+            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Basic","Upper Basic","Intermediate","Advance"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya mau kursus level "+l)}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
             <h4 className="font-bold mt-6 mb-4">Program</h4>
-            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Regular Class","Private Class","IELTS Prep","TOEFL Prep"].map(l=>(<li key={l}>{l}</li>))}</ul>
+            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Regular Class","Private Class","IELTS Prep","TOEFL Prep"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya tertarik "+l+" Linguo")}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
           </div>
           <div><h4 className="font-bold mb-4">Teaching</h4>
-            <p className="text-sm text-white/80 mb-6">Become a Teacher</p>
+            <a href="https://wa.me/6282116859493?text=Halo%2C%20saya%20tertarik%20menjadi%20pengajar%20di%20Linguo" target="_blank" className="text-sm text-white/80 mb-6 block hover:text-white transition-colors">Become a Teacher</a>
             <div className="text-sm text-white/80 space-y-1">
               <p>Happy Creative Hub, Jl. Cisitu Indah III No.2,</p><p>Dago, Coblong, Bandung 40135</p>
               <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
