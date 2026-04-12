@@ -995,7 +995,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
-        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)}}/>
+        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
       </div>
     </section>
 
@@ -1128,7 +1128,7 @@ export default function Home() {
     </section>
 
     {/* PRICING */}
-    <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)}}/>
+    <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
 
     {/* CTA */}
     <section className="py-16 lg:py-24 bg-white">
