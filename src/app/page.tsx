@@ -346,10 +346,11 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
+function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>void;initialProgram?:string}) {
   const [step, setStep] = useState(1);
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
+  useEffect(() => { if (open && initialProgram) { setSelProgram(initialProgram); setStep(2); } if (!open) { setStep(1); setSelProgram(""); } }, [open, initialProgram]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -632,6 +633,7 @@ function FunnelModal({open,onClose}:{open:boolean;onClose:()=>void}) {
 
 function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
+  const [funnelProg, setFunnelProg] = useState("");
   const [waNumber, setWaNumber] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
   const [error, setError] = useState("");
@@ -680,7 +682,7 @@ function HeroFunnel({lang}:{lang:string}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg}/>
     </>
   );
 }
@@ -849,7 +851,7 @@ const PRICING_TABS = [
   },
 ];
 
-function PricingSection({tab,setTab}:{tab:number;setTab:(t:number)=>void}) {
+function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=>void;onGetStarted:(program:string)=>void}) {
   const t = PRICING_TABS[tab];
   return (
     <section id="produk" className="py-24 bg-white">
@@ -877,10 +879,10 @@ function PricingSection({tab,setTab}:{tab:number;setTab:(t:number)=>void}) {
               <p className="font-bold text-lg mt-2">{p.name}</p>
               <p className="text-xs text-slate-400 mt-1 mb-4">{p.desc}</p>
               <p className={`text-2xl font-bold mb-5 ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
-              <a href={`https://wa.me/6282116859493?text=Halo, saya tertarik ${t.wa} ${p.name}`} target="_blank"
+              <button onClick={()=>onGetStarted(t.label)}
                 className={`inline-block w-full px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>
                 Get Started
-              </a>
+              </button>
             </div>
           ))}
         </div>
@@ -1125,7 +1127,7 @@ export default function Home() {
     </section>
 
     {/* PRICING */}
-    <PricingSection tab={pricingTab} setTab={setPricingTab}/>
+    <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)}}/>
 
     {/* CTA */}
     <section className="py-16 lg:py-24 bg-white">
