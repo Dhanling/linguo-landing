@@ -77,7 +77,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                     {[
                       {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"IELTS / TOEFL",tab:2},
                     ].map((item)=>(
-                      <button key={item.label} onClick={()=>{setFunnelProg(item.label);setFunnelOpen(true);setProgOpen(false)}}
+                      <button key={item.label} onClick={()=>{(window as any).__openFunnel?.(item.label);setProgOpen(false)}}
                         className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                         {item.label}
                       </button>
@@ -120,9 +120,9 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
         </div>
         <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
           <div className="px-6 py-4 flex flex-col gap-2">
-            <button onClick={()=>{setFunnelProg("Kelas Private");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
-            <button onClick={()=>{setFunnelProg("Kelas Reguler");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
-            <button onClick={()=>{setFunnelProg("IELTS/TOEFL Prep");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
+            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
+            <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
@@ -634,6 +634,7 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
 function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
   const [funnelProg, setFunnelProg] = useState("");
+  if(typeof window!=="undefined")(window as any).__openFunnel=(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)};
   const [waNumber, setWaNumber] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
   const [error, setError] = useState("");
@@ -808,7 +809,7 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
         <span className="text-xs text-slate-400">{p.per}</span>
       </div>
       <button onClick={()=>{
-        if(p.tab>=0){onSelectProgram(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep"][p.tab]||"")}
+        if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep"][p.tab]||"")}
         else if((p).href){window.location.href=(p).href}
         else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
       }}
