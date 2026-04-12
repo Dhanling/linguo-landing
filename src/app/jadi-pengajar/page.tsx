@@ -48,7 +48,21 @@ export default function JadiPengajarPage() {
   const [exp, setExp] = useState("");
   const [note, setNote] = useState("");
 
-  const handleSubmit = () => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!name.trim() || !email.trim() || !phone.trim() || !lang.trim()) return;
+    setLoading(true);
+    try {
+      await fetch("/api/teacher-apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, languages: lang, level, experience: exp, note }),
+      });
+    } catch (e) { console.error(e); }
+    setLoading(false);
+    setSuccess(true);
     const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nBahasa: ${lang}\nLevel: ${level}\nPengalaman: ${exp}\nCatatan: ${note}`;
     window.open(waMsg(msg), "_blank");
   };
@@ -248,11 +262,11 @@ export default function JadiPengajarPage() {
               <textarea value={note} onChange={e => setNote(e.target.value)} rows={3} placeholder="Latar belakang pendidikan, sertifikasi bahasa, motivasi mengajar..."
                 className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors resize-none" />
             </div>
-            <button onClick={handleSubmit}
-              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-4 rounded-full transition-all active:scale-[0.98] text-sm">
-              Kirim Pendaftaran via WhatsApp →
+            <button onClick={handleSubmit} disabled={loading || success}
+              className={`w-full font-bold py-4 rounded-full transition-all active:scale-[0.98] text-sm ${success ? "bg-green-500 text-white" : "bg-[#1A9E9E] hover:bg-[#178888] text-white"} disabled:opacity-70`}>
+              {loading ? "Mengirim..." : success ? "✓ Terkirim!" : "Kirim Pendaftaran →"}
             </button>
-            <p className="text-center text-xs text-slate-400 mt-3">Kami akan menghubungi kamu dalam 1-3 hari kerja.</p>
+            <p className="text-center text-xs text-slate-400 mt-3">{success ? "Data tersimpan! WhatsApp terbuka untuk konfirmasi." : "Kami akan menghubungi kamu dalam 1-3 hari kerja."}</p>
           </motion.div>
         </div>
       </section>
