@@ -83,10 +83,10 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                       </button>
                     ))}
                     <div className="border-t border-slate-100 my-1"/>
-                    <button onClick={()=>scrollTo("digital")}
-                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                    <a href="/produk"
+                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       E-Learning & E-Book
-                    </button>
+                    </a>
                     <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       Corporate Class ↗
@@ -121,6 +121,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{scrollTo("produk",0);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
             <button onClick={()=>{scrollTo("produk",1);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank" className="text-sm py-2.5">Corporate</a>
             <a href="https://wa.me/6282116859493?text=Halo, saya tertarik menjadi pengajar di Linguo" target="_blank" className="text-sm py-2.5">Jadi Pengajar</a>
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
@@ -658,7 +659,7 @@ function HeroFunnel({lang}:{lang:string}) {
         </div>
         {/* Inline WA input — compact */}
         <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
-        <div className="bg-white rounded-full flex items-center max-w-[340px] sm:max-w-sm shadow-lg">
+        <div className="bg-white rounded-full flex items-center max-w-[360px] sm:max-w-md shadow-lg">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
             className="bg-transparent pl-4 pr-0 py-3 text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
@@ -790,19 +791,22 @@ function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0]
       <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
       <h3 className="font-bold text-sm mb-1">{p.title}</h3>
       <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
-      <div className="mb-3">
-        {p.priceOld && (
+      <div className="mb-3 min-h-[48px] flex flex-col justify-end">
+        {p.priceOld ? (
           <div className="flex items-center gap-2 mb-0.5">
             <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
             {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
           </div>
+        ) : (
+          <div className="mb-0.5 h-[18px]"/>
         )}
         <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
         <span className="text-xs text-slate-400">{p.per}</span>
       </div>
       <button onClick={()=>{
         if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
-        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.href||p.title} Linguo`,'_blank')}
+        else if((p).href){window.location.href=(p).href}
+        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
       }}
         className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-colors active:scale-95">
         Beli Paket
