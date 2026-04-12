@@ -114,7 +114,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>setLang(lang==='id'?'en':'id')} className="hover:opacity-80 transition-opacity">
               <img src={lang==='id'?"/images/flag-id.png":"/images/flag-en.png"} alt={lang==='id'?"ID":"EN"} className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
             </button>
-            <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Log in</a>
+            <button onClick={()=>(window as any).__openFunnel?.("")} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Mulai Belajar</button>
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
         </div>
@@ -127,7 +127,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
-            <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
+            <button onClick={()=>{(window as any).__openFunnel?.("");setOpen(false)}} className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Mulai Belajar</button>
           </div>
         </motion.div>)}</AnimatePresence>
       </nav>
