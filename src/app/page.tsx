@@ -95,7 +95,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Corporate","/corporate"],["Jadi Pengajar","wa-pengajar"],["FAQ","faq"]].map(([l,h]) => (
+              {[["Corporate","/corporate"],["Jadi Pengajar","/jadi-pengajar"],["FAQ","faq"]].map(([l,h]) => (
                 <a key={l} onClick={()=>{
                   if(h.startsWith("/")){
                     window.location.href = h;
@@ -125,7 +125,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
-            <a href="https://wa.me/6282116859493?text=Halo, saya tertarik menjadi pengajar di Linguo" target="_blank" className="text-sm py-2.5">Jadi Pengajar</a>
+            <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
             <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
           </div>
@@ -1162,7 +1162,7 @@ export default function Home() {
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Regular Class","Private Class","IELTS Prep","TOEFL Prep"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya tertarik "+l+" Linguo")}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
           </div>
           <div><h4 className="font-bold mb-4">Teaching</h4>
-            <a href="https://wa.me/6282116859493?text=Halo%2C%20saya%20tertarik%20menjadi%20pengajar%20di%20Linguo" target="_blank" className="text-sm text-white/80 mb-6 block hover:text-white transition-colors">Become a Teacher</a>
+            <a href="/jadi-pengajar" target="_blank" className="text-sm text-white/80 mb-6 block hover:text-white transition-colors">Become a Teacher</a>
             <div className="text-sm text-white/80 space-y-1">
               <p>Happy Creative Hub, Jl. Cisitu Indah III No.2,</p><p>Dago, Coblong, Bandung 40135</p>
               <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
