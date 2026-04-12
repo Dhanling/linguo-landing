@@ -2039,6 +2039,53 @@ window.addEventListener('scroll', function(){
   const btn = document.getElementById('scrollTopBtn');
   if(btn) btn.classList.toggle('visible', window.scrollY > 300);
 });
+
+// SHARE-FEATURE: read ?lang= parameter and add share button
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const langParam = params.get('lang');
+  if (langParam) {
+    const found = LANGUAGES.find(l => l.id === langParam || l.name.toLowerCase() === langParam.toLowerCase() || (l.label_id||'').toLowerCase() === langParam.toLowerCase());
+    if (found) {
+      curLangId = found.id;
+      curLevel = 'A1';
+      curSublevel = Object.keys(getCurriculum().levels['A1']||{})[0]||'A1.1';
+      curSession = null;
+      render();
+    }
+  }
+})();
+
+// Share button in header
+function getShareURL() {
+  return window.location.origin + '/silabus?lang=' + curLangId;
+}
+function copyShareLink() {
+  const url = getShareURL();
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('shareBtn');
+    btn.textContent = '✅ Link disalin!';
+    setTimeout(() => { btn.textContent = '🔗 Share Link'; }, 2000);
+  });
+}
+
+// Inject share button after render
+const origRender = render;
+render = function() {
+  origRender();
+  const topRight = document.querySelector('.topbar-right');
+  if (topRight && !document.getElementById('shareBtn')) {
+    const btn = document.createElement('button');
+    btn.id = 'shareBtn';
+    btn.className = 'btn-icon share-btn';
+    btn.textContent = '🔗 Share Link';
+    btn.onclick = copyShareLink;
+    btn.style.cssText = 'font-size:11px;padding:5px 10px;cursor:pointer';
+    topRight.insertBefore(btn, topRight.firstChild);
+  }
+};
+render();
+
 </script>
 </body>
 </html>
