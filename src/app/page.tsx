@@ -77,7 +77,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                     {[
                       {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"IELTS / TOEFL",tab:2},
                     ].map((item)=>(
-                      <button key={item.label} onClick={()=>scrollTo("produk",item.tab)}
+                      <button key={item.label} onClick={()=>{setFunnelProg(item.label);setFunnelOpen(true);setProgOpen(false)}}
                         className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                         {item.label}
                       </button>
@@ -120,9 +120,9 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
         </div>
         <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
           <div className="px-6 py-4 flex flex-col gap-2">
-            <button onClick={()=>{scrollTo("produk",0);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
-            <button onClick={()=>{scrollTo("produk",1);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
-            <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <button onClick={()=>{setFunnelProg("Kelas Private");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
+            <button onClick={()=>{setFunnelProg("Kelas Reguler");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
+            <button onClick={()=>{setFunnelProg("IELTS/TOEFL Prep");setFunnelOpen(true);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
@@ -743,7 +743,7 @@ const PRODUCTS = [
   {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk?tab=ebook"},
 ];
 
-function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
+function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [mouseX, setMouseX] = useState<number|null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -771,13 +771,13 @@ function ProductDock({setPricingTab}:{setPricingTab:(t:number)=>void}) {
       onMouseMove={(e)=>setMouseX(e.clientX)}
       onMouseLeave={()=>setMouseX(null)}>
       {PRODUCTS.map((p,i)=>(
-        <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab}/>
+        <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
       ))}
     </div>
   );
 }
 
-function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0];getScale:(el:HTMLDivElement|null)=>number;setPricingTab:(t:number)=>void}) {
+function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];getScale:(el:HTMLDivElement|null)=>number;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const ref = React.useRef<HTMLDivElement>(null);
   const scale = getScale(ref.current);
 
@@ -808,7 +808,7 @@ function DockCard({product:p,getScale,setPricingTab}:{product:typeof PRODUCTS[0]
         <span className="text-xs text-slate-400">{p.per}</span>
       </div>
       <button onClick={()=>{
-        if(p.tab>=0){setPricingTab(p.tab);setTimeout(()=>document.getElementById('produk')?.scrollIntoView({behavior:'smooth'}),50)}
+        if(p.tab>=0){onSelectProgram(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep"][p.tab]||"")}
         else if((p).href){window.location.href=(p).href}
         else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
       }}
@@ -994,7 +994,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
-        <ProductDock setPricingTab={setPricingTab}/>
+        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)}}/>
       </div>
     </section>
 
