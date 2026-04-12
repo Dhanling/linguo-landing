@@ -87,18 +87,20 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       E-Learning & E-Book
                     </a>
-                    <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank"
+                    <a href="/corporate"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      Corporate Class ↗
+                      Corporate Class
                     </a>
                   </motion.div>
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Corporate","wa-corporate"],["Jadi Pengajar","wa-pengajar"],["FAQ","faq"]].map(([l,h]) => (
+              {[["Corporate","/corporate"],["Jadi Pengajar","wa-pengajar"],["FAQ","faq"]].map(([l,h]) => (
                 <a key={l} onClick={()=>{
-                  if(h.startsWith("wa-")){
-                    const msg = h==="wa-corporate"?"Halo, saya tertarik Corporate Class Linguo":"Halo, saya tertarik menjadi pengajar di Linguo";
+                  if(h.startsWith("/")){
+                    window.location.href = h;
+                  } else if(h.startsWith("wa-")){
+                    const msg = "Halo, saya tertarik menjadi pengajar di Linguo";
                     window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
                   } else { scrollTo(h); }
                 }} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
@@ -122,7 +124,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{scrollTo("produk",1);setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <button onClick={()=>{scrollTo("produk",2);setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
-            <a href="https://wa.me/6282116859493?text=Halo, saya tertarik Corporate Class Linguo" target="_blank" className="text-sm py-2.5">Corporate</a>
+            <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="https://wa.me/6282116859493?text=Halo, saya tertarik menjadi pengajar di Linguo" target="_blank" className="text-sm py-2.5">Jadi Pengajar</a>
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
             <a href="https://wa.me/6282116859493" className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm">Daftar Sekarang</a>
