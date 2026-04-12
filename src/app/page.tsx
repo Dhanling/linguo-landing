@@ -948,7 +948,7 @@ export default function Home() {
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
             <div className="flex-1">
               <h1 className="text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
-                Belajar 55+<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
+                Everyone Can<br/>Be a<br/>{lang==="id"?"bahasa online":"languages online"}<br/>{lang==="id"?"rasa offline!":"feels offline!"}
               </h1>
             </div>
             <div className="lg:hidden shrink-0 relative">
