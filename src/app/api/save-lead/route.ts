@@ -3,123 +3,134 @@ import { NextRequest, NextResponse } from "next/server";
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
+async function supaFetch(path: string, options?: RequestInit) {
+  return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+      ...(options?.headers || {}),
+    },
+  });
+}
+
 export async function POST(req: NextRequest) {
-  const logs: string[] = [];
   try {
     const body = await req.json();
     const { name, email, program, language, level } = body;
-    logs.push("Input: " + JSON.stringify({ name, email, program, language, level }));
 
     if (!email) {
-      return NextResponse.json({ error: "Email is required", logs }, { status: 400 });
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
-    // Step 1: Check if student exists
-    const checkUrl = `${SUPABASE_URL}/rest/v1/students?email=eq.${encodeURIComponent(email)}&select=id`;
-    const checkRes = await fetch(checkUrl, {
-      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
-    });
-    const checkText = await checkRes.text();
-    logs.push("Check student: " + checkRes.status);
+    const cleanLang = language || "English";
+    const cleanProgram = program || "Kelas Private";
+    const cleanLevel = level || "A1";
 
+    // Step 1: Check if student exists
+    const checkRes = await supaFetch(`students?email=eq.${encodeURIComponent(email)}&select=id,student_token`);
+    const existing = checkRes.ok ? await checkRes.json() : [];
     let studentId: string | undefined;
-    
-    if (checkRes.ok) {
-      const existing = JSON.parse(checkText);
-      if (existing && existing.length > 0) {
-        studentId = existing[0].id;
-        logs.push("Existing student: " + studentId);
-      }
+    let studentToken: string | undefined;
+    let isExisting = false;
+
+    if (existing.length > 0) {
+      studentId = existing[0].id;
+      studentToken = existing[0].student_token;
+      isExisting = true;
     }
 
     // Step 2: Create student if not exists
     if (!studentId) {
-      const createRes = await fetch(`${SUPABASE_URL}/rest/v1/students`, {
+      const token = crypto.randomUUID().replace(/-/g, "").slice(0, 16);
+      const createRes = await supaFetch("students", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          Prefer: "return=representation",
-        },
-        body: JSON.stringify({ name: name || "Student", email, whatsapp: "" }),
+        headers: { Prefer: "return=representation" },
+        body: JSON.stringify({
+          name: name || "Student",
+          email,
+          whatsapp: "",
+          student_token: token,
+        }),
       });
-      const createText = await createRes.text();
-      logs.push("Create student: " + createRes.status);
-
-      if (createRes.ok) {
-        const created = JSON.parse(createText);
-        studentId = created?.[0]?.id;
-      } else {
-        return NextResponse.json({ error: "Failed to create student", detail: createText, logs }, { status: 500 });
+      if (!createRes.ok) {
+        const err = await createRes.text();
+        return NextResponse.json({ error: "Failed to create student", detail: err }, { status: 500 });
       }
+      const created = await createRes.json();
+      studentId = created?.[0]?.id;
+      studentToken = token;
     }
 
     if (!studentId) {
-      return NextResponse.json({ error: "No student ID", logs }, { status: 500 });
+      return NextResponse.json({ error: "No student ID" }, { status: 500 });
     }
 
-    // Step 3: Create registration — minimal fields only, let DB defaults handle the rest
-    const regBody = {
-      student_id: studentId,
-      product: program || "Kelas Private",
-      language: language || "English",
-      level: level || "A1",
-      status: "Menunggu Pembayaran",
-      pipeline_status: "New",
-      total_amount: 0,
-      notes: "Daftar via Google OAuth — menunggu pembayaran",
-    };
-    logs.push("Creating registration: " + JSON.stringify(regBody));
+    // Step 3: Check for DUPLICATE registration (same student + same language + pending/active)
+    const dupCheckRes = await supaFetch(
+      `registrations?student_id=eq.${studentId}&language=eq.${encodeURIComponent(cleanLang)}&status=in.(Aktif,Menunggu Pembayaran)&select=id,status`
+    );
+    const dupRegs = dupCheckRes.ok ? await dupCheckRes.json() : [];
 
-    const regRes = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
+    if (dupRegs.length > 0) {
+      // Already has this class — don't create duplicate
+      return NextResponse.json({
+        success: true,
+        studentId,
+        studentToken,
+        isExisting: true,
+        duplicate: true,
+        existingStatus: dupRegs[0].status,
+        message: `Kamu sudah terdaftar di kelas ${cleanLang} (${dupRegs[0].status})`,
+      });
+    }
+
+    // Step 4: Create registration with "Menunggu Pembayaran"
+    const regRes = await supaFetch("registrations", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        Prefer: "return=representation",
-      },
-      body: JSON.stringify(regBody),
+      headers: { Prefer: "return=representation" },
+      body: JSON.stringify({
+        student_id: studentId,
+        product: cleanProgram,
+        language: cleanLang,
+        level: cleanLevel,
+        status: "Menunggu Pembayaran",
+        pipeline_status: "New",
+        total_amount: 0,
+        notes: "Daftar via Google OAuth — menunggu pembayaran",
+      }),
     });
-    const regText = await regRes.text();
-    logs.push("Registration: " + regRes.status);
 
     if (!regRes.ok) {
-      // If still failing, try with absolute minimal fields
-      logs.push("First attempt failed: " + regText);
-      logs.push("Trying minimal insert...");
-      
-      const minBody = {
-        student_id: studentId,
-        product: program || "Kelas Private",
-        language: language || "English",
-        level: level || "A1",
-        status: "Menunggu Pembayaran",
-        notes: "Daftar via Google OAuth — menunggu pembayaran",
-      };
-      
-      const regRes2 = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
+      // Fallback: minimal insert
+      const regRes2 = await supaFetch("registrations", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          Prefer: "return=representation",
-        },
-        body: JSON.stringify(minBody),
+        headers: { Prefer: "return=representation" },
+        body: JSON.stringify({
+          student_id: studentId,
+          product: cleanProgram,
+          language: cleanLang,
+          level: cleanLevel,
+          status: "Menunggu Pembayaran",
+          notes: "Daftar via Google OAuth — menunggu pembayaran",
+        }),
       });
-      const regText2 = await regRes2.text();
-      logs.push("Minimal registration: " + regRes2.status);
-
       if (!regRes2.ok) {
-        return NextResponse.json({ error: "Failed to create registration", detail: regText2, logs }, { status: 500 });
+        const err = await regRes2.text();
+        return NextResponse.json({ error: "Failed to create registration", detail: err }, { status: 500 });
       }
     }
 
-    return NextResponse.json({ success: true, studentId, logs });
+    return NextResponse.json({
+      success: true,
+      studentId,
+      studentToken,
+      isExisting,
+      duplicate: false,
+    });
   } catch (e: any) {
     console.error("Save lead error:", e);
-    return NextResponse.json({ error: e.message, logs }, { status: 500 });
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
