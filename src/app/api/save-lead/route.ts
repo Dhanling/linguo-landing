@@ -65,10 +65,10 @@ export async function POST(req: NextRequest) {
       product: program || "Kelas Private",
       language: language || "English",
       level: level || "A1",
-      status: "Aktif",
+      status: "Menunggu Pembayaran",
       pipeline_status: "New",
       total_amount: 0,
-      notes: "Daftar via Google OAuth",
+      notes: "Daftar via Google OAuth — menunggu pembayaran",
     };
     logs.push("Creating registration: " + JSON.stringify(regBody));
 
@@ -95,7 +95,8 @@ export async function POST(req: NextRequest) {
         product: program || "Kelas Private",
         language: language || "English",
         level: level || "A1",
-        notes: "Daftar via Google OAuth",
+        status: "Menunggu Pembayaran",
+        notes: "Daftar via Google OAuth — menunggu pembayaran",
       };
       
       const regRes2 = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
