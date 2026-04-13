@@ -10,46 +10,50 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handle = async () => {
       try {
-        // Exchange code for session (PKCE flow)
-        const params = new URLSearchParams(window.location.search);
-        const authCode = params.get("code");
-
-        if (authCode) {
-          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
-          if (exchangeError) {
-            console.error("Code exchange error:", exchangeError);
-            // Try getSession as fallback
-          }
-        }
-
-        // Get user
-        const { data: { user }, error: userError } = await supabase.auth.getUser();
+        // With implicit flow, tokens are in the URL hash
+        // Supabase auto-detects them via detectSessionInUrl
+        // Just wait a moment then check session
         
-        if (userError || !user) {
-          console.error("User error:", userError);
-          setStatus("error");
+        // Give Supabase a moment to process the hash
+        await new Promise(r => setTimeout(r, 500));
+        
+        const { data: { session } } = await supabase.auth.getSession();
+        
+        if (!session) {
+          // Try onAuthStateChange as backup
+          const { data: { subscription } } = supabase.auth.onAuthStateChange((event, sess) => {
+            if (event === "SIGNED_IN" && sess) {
+              processUser(sess.user);
+              subscription.unsubscribe();
+            }
+          });
+          // Timeout after 5s
+          setTimeout(() => { setStatus("error"); subscription.unsubscribe(); }, 5000);
           return;
         }
 
-        const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
-        const email = user.email || "";
-        setUserName(name);
-
-        // Get funnel data
-        const funnelData = JSON.parse(localStorage.getItem("linguo_funnel") || "{}");
-        localStorage.removeItem("linguo_funnel");
-        setStatus("success");
-
-        // Open WA
-        setTimeout(() => {
-          const msg = "Halo, saya " + name + " (" + email + "). Saya baru mendaftar via Google di linguo.id.\nProgram: " + (funnelData.program||"-") + "\nBahasa: " + (funnelData.language||"-") + "\nLevel: " + (funnelData.level||"-");
-          window.open("https://wa.me/6282116859493?text=" + encodeURIComponent(msg), "_blank");
-        }, 2500);
+        processUser(session.user);
       } catch(e) {
         console.error("Callback error:", e);
         setStatus("error");
       }
     };
+
+    const processUser = (user: any) => {
+      const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
+      const email = user.email || "";
+      setUserName(name);
+
+      const funnelData = JSON.parse(localStorage.getItem("linguo_funnel") || "{}");
+      localStorage.removeItem("linguo_funnel");
+      setStatus("success");
+
+      setTimeout(() => {
+        const msg = "Halo, saya " + name + " (" + email + "). Saya baru mendaftar via Google di linguo.id.\nProgram: " + (funnelData.program||"-") + "\nBahasa: " + (funnelData.language||"-") + "\nLevel: " + (funnelData.level||"-");
+        window.open("https://wa.me/6282116859493?text=" + encodeURIComponent(msg), "_blank");
+      }, 2500);
+    };
+
     handle();
   }, []);
 
