@@ -419,15 +419,11 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
   };
 
   const handleGoogleSignIn = async () => {
-    // Encode funnel data in URL params (localStorage gets cleared during OAuth redirect)
-    const funnelParams = new URLSearchParams({
-      program: selProgram || "",
-      language: selLang || "",
-      level: selLevel || "",
-    }).toString();
+    // Save funnel data in cookie (survives OAuth redirect, unlike localStorage/URL params)
+    document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel })) + ";path=/;max-age=600;SameSite=Lax";
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.origin + "/auth/callback?" + funnelParams },
+      options: { redirectTo: window.location.origin + "/auth/callback" },
     });
   };
   const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); };

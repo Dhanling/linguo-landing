@@ -3,6 +3,15 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
 
+function getCookie(name: string): string {
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? decodeURIComponent(match[2]) : "";
+}
+
+function deleteCookie(name: string) {
+  document.cookie = name + "=;path=/;max-age=0";
+}
+
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
   const [userName, setUserName] = useState("");
@@ -10,13 +19,13 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handle = async () => {
       try {
-        // Read funnel data from URL params (persisted through OAuth redirect)
-        const urlParams = new URLSearchParams(window.location.search);
-        const funnelData = {
-          program: urlParams.get("program") || "",
-          language: urlParams.get("language") || "",
-          level: urlParams.get("level") || "",
-        };
+        // Read funnel data from cookie (set before OAuth redirect)
+        let funnelData = { program: "", language: "", level: "" };
+        const raw = getCookie("linguo_funnel");
+        if (raw) {
+          try { funnelData = JSON.parse(raw); } catch {}
+          deleteCookie("linguo_funnel");
+        }
 
         // With implicit flow, tokens are in the URL hash
         // Give Supabase a moment to process the hash
@@ -25,14 +34,12 @@ export default function AuthCallbackPage() {
         const { data: { session } } = await supabase.auth.getSession();
         
         if (!session) {
-          // Try onAuthStateChange as backup
           const { data: { subscription } } = supabase.auth.onAuthStateChange((event, sess) => {
             if (event === "SIGNED_IN" && sess) {
               processUser(sess.user, funnelData);
               subscription.unsubscribe();
             }
           });
-          // Timeout after 5s
           setTimeout(() => { setStatus("error"); subscription.unsubscribe(); }, 5000);
           return;
         }
@@ -62,8 +69,10 @@ export default function AuthCallbackPage() {
             level: funnelData.level || undefined,
           }),
         });
-        if (!res.ok) console.log("Lead save response:", await res.text());
-      } catch(e) { console.log("Lead save error:", e); }
+        const result = await res.json();
+        console.log("Save lead result:", result);
+        if (!res.ok) console.error("Lead save failed:", result);
+      } catch(e) { console.error("Lead save error:", e); }
 
       setStatus("success");
 
