@@ -36,7 +36,7 @@ export default function StudentLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/">
-            <img src="/images/logo-color.png" alt="Linguo.id" className="h-10 sm:h-12 mx-auto mb-4 object-contain" />
+            <img src="/images/logo-white.png" style={{filter:"brightness(0)"}}" alt="Linguo.id" className="h-10 sm:h-12 mx-auto mb-4 object-contain" />
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Selamat Datang!</h1>
           <p className="text-sm text-slate-500">Login ke Student Dashboard</p>

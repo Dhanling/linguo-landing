@@ -57,7 +57,7 @@ export default function StudentDashboardPage() {
       <header className="bg-white border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/">
-            <img src="/images/logo-color.png" alt="Linguo.id" className="h-8 object-contain" />
+            <img src="/images/logo-white.png" style={{filter:"brightness(0)"}}" alt="Linguo.id" className="h-8 object-contain" />
           </Link>
           <div className="flex items-center gap-4">
             <div className="text-right hidden sm:block">
