@@ -419,8 +419,16 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
   };
 
   const handleGoogleSignIn = async () => {
-    localStorage.setItem("linguo_funnel", JSON.stringify({ program: selProgram, language: selLang, level: selLevel }));
-    await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin + "/auth/callback" } });
+    // Encode funnel data in URL params (localStorage gets cleared during OAuth redirect)
+    const funnelParams = new URLSearchParams({
+      program: selProgram || "",
+      language: selLang || "",
+      level: selLevel || "",
+    }).toString();
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin + "/auth/callback?" + funnelParams },
+    });
   };
   const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); };
 

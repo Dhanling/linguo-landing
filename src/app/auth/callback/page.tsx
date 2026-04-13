@@ -10,10 +10,15 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handle = async () => {
       try {
+        // Read funnel data from URL params (persisted through OAuth redirect)
+        const urlParams = new URLSearchParams(window.location.search);
+        const funnelData = {
+          program: urlParams.get("program") || "",
+          language: urlParams.get("language") || "",
+          level: urlParams.get("level") || "",
+        };
+
         // With implicit flow, tokens are in the URL hash
-        // Supabase auto-detects them via detectSessionInUrl
-        // Just wait a moment then check session
-        
         // Give Supabase a moment to process the hash
         await new Promise(r => setTimeout(r, 500));
         
@@ -23,7 +28,7 @@ export default function AuthCallbackPage() {
           // Try onAuthStateChange as backup
           const { data: { subscription } } = supabase.auth.onAuthStateChange((event, sess) => {
             if (event === "SIGNED_IN" && sess) {
-              processUser(sess.user);
+              processUser(sess.user, funnelData);
               subscription.unsubscribe();
             }
           });
@@ -32,27 +37,30 @@ export default function AuthCallbackPage() {
           return;
         }
 
-        processUser(session.user);
+        processUser(session.user, funnelData);
       } catch(e) {
         console.error("Callback error:", e);
         setStatus("error");
       }
     };
 
-    const processUser = async (user: any) => {
+    const processUser = async (user: any, funnelData: { program: string; language: string; level: string }) => {
       const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
       const email = user.email || "";
       setUserName(name);
 
-      const funnelData = JSON.parse(localStorage.getItem("linguo_funnel") || "{}");
-      localStorage.removeItem("linguo_funnel");
-
-      // Save to leads table in Supabase
+      // Save to students + registrations in Supabase
       try {
         const res = await fetch("/api/save-lead", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, program: funnelData.program, language: funnelData.language, level: funnelData.level }),
+          body: JSON.stringify({
+            name,
+            email,
+            program: funnelData.program || undefined,
+            language: funnelData.language || undefined,
+            level: funnelData.level || undefined,
+          }),
         });
         if (!res.ok) console.log("Lead save response:", await res.text());
       } catch(e) { console.log("Lead save error:", e); }
@@ -60,7 +68,10 @@ export default function AuthCallbackPage() {
       setStatus("success");
 
       setTimeout(() => {
-        const msg = "Halo, saya " + name + " (" + email + "). Saya baru mendaftar via Google di linguo.id.\nProgram: " + (funnelData.program||"-") + "\nBahasa: " + (funnelData.language||"-") + "\nLevel: " + (funnelData.level||"-");
+        const msg = "Halo, saya " + name + " (" + email + "). Saya baru mendaftar via Google di linguo.id."
+          + "\nProgram: " + (funnelData.program || "-")
+          + "\nBahasa: " + (funnelData.language || "-")
+          + "\nLevel: " + (funnelData.level || "-");
         window.open("https://wa.me/6282116859493?text=" + encodeURIComponent(msg), "_blank");
       }, 2500);
     };
