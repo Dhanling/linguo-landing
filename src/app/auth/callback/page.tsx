@@ -46,6 +46,17 @@ export default function AuthCallbackPage() {
 
       const funnelData = JSON.parse(localStorage.getItem("linguo_funnel") || "{}");
       localStorage.removeItem("linguo_funnel");
+
+      // Save to leads table in Supabase
+      try {
+        const res = await fetch("/api/save-lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, program: funnelData.program, language: funnelData.language, level: funnelData.level }),
+        });
+        if (!res.ok) console.log("Lead save response:", await res.text());
+      } catch(e) { console.log("Lead save error:", e); }
+
       setStatus("success");
 
       setTimeout(() => {
