@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       const createRes = await fetch(`${SUPABASE_URL}/rest/v1/students`, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, Prefer: "return=representation" },
-        body: JSON.stringify({ name, email, phone: "", source: "google_oauth" }),
+        body: JSON.stringify({ name, email, whatsapp: "" }),
       });
       const created = await createRes.json();
       studentId = created?.[0]?.id;
