@@ -1,12 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
-);
 
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
@@ -15,7 +10,7 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handle = async () => {
       try {
-        // Step 1: Exchange code for session (PKCE flow)
+        // Exchange code for session (PKCE flow)
         const params = new URLSearchParams(window.location.search);
         const authCode = params.get("code");
 
@@ -23,12 +18,11 @@ export default function AuthCallbackPage() {
           const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
           if (exchangeError) {
             console.error("Code exchange error:", exchangeError);
-            setStatus("error");
-            return;
+            // Try getSession as fallback
           }
         }
 
-        // Step 2: Get user after exchange
+        // Get user
         const { data: { user }, error: userError } = await supabase.auth.getUser();
         
         if (userError || !user) {
@@ -41,32 +35,8 @@ export default function AuthCallbackPage() {
         const email = user.email || "";
         setUserName(name);
 
-        // Step 3: Get funnel data from localStorage
+        // Get funnel data
         const funnelData = JSON.parse(localStorage.getItem("linguo_funnel") || "{}");
-
-        // Step 4: Save lead via API
-        try {
-          const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-          const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-          await fetch(SUPABASE_URL + "/rest/v1/leads", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              apikey: SUPABASE_KEY,
-              Authorization: "Bearer " + SUPABASE_KEY,
-              Prefer: "return=minimal",
-            },
-            body: JSON.stringify({
-              name, email,
-              wa_number: "",
-              source: "google_oauth",
-              program: funnelData.program || null,
-              language: funnelData.language || null,
-              level: funnelData.level || null,
-            }),
-          });
-        } catch(e) { console.log("Lead save:", e); }
-
         localStorage.removeItem("linguo_funnel");
         setStatus("success");
 
