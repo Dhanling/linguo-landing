@@ -16,13 +16,11 @@ export async function POST(req: NextRequest) {
 
     // Step 1: Check if student exists
     const checkUrl = `${SUPABASE_URL}/rest/v1/students?email=eq.${encodeURIComponent(email)}&select=id`;
-    logs.push("Check URL: " + checkUrl);
-    
     const checkRes = await fetch(checkUrl, {
       headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
     });
     const checkText = await checkRes.text();
-    logs.push("Check response: " + checkRes.status + " " + checkText);
+    logs.push("Check student: " + checkRes.status);
 
     let studentId: string | undefined;
     
@@ -30,17 +28,12 @@ export async function POST(req: NextRequest) {
       const existing = JSON.parse(checkText);
       if (existing && existing.length > 0) {
         studentId = existing[0].id;
-        logs.push("Existing student found: " + studentId);
+        logs.push("Existing student: " + studentId);
       }
-    } else {
-      logs.push("Check student failed: " + checkRes.status);
     }
 
     // Step 2: Create student if not exists
     if (!studentId) {
-      const createBody = { name: name || "Student", email, whatsapp: "" };
-      logs.push("Creating student: " + JSON.stringify(createBody));
-      
       const createRes = await fetch(`${SUPABASE_URL}/rest/v1/students`, {
         method: "POST",
         headers: {
@@ -49,25 +42,24 @@ export async function POST(req: NextRequest) {
           Authorization: `Bearer ${SUPABASE_KEY}`,
           Prefer: "return=representation",
         },
-        body: JSON.stringify(createBody),
+        body: JSON.stringify({ name: name || "Student", email, whatsapp: "" }),
       });
       const createText = await createRes.text();
-      logs.push("Create response: " + createRes.status + " " + createText);
+      logs.push("Create student: " + createRes.status);
 
       if (createRes.ok) {
         const created = JSON.parse(createText);
         studentId = created?.[0]?.id;
-        logs.push("Created student ID: " + studentId);
       } else {
-        return NextResponse.json({ error: "Failed to create student", status: createRes.status, detail: createText, logs }, { status: 500 });
+        return NextResponse.json({ error: "Failed to create student", detail: createText, logs }, { status: 500 });
       }
     }
 
     if (!studentId) {
-      return NextResponse.json({ error: "No student ID available", logs }, { status: 500 });
+      return NextResponse.json({ error: "No student ID", logs }, { status: 500 });
     }
 
-    // Step 3: Create registration
+    // Step 3: Create registration — minimal fields only, let DB defaults handle the rest
     const regBody = {
       student_id: studentId,
       product: program || "Kelas Private",
@@ -75,7 +67,6 @@ export async function POST(req: NextRequest) {
       level: level || "A1",
       status: "Aktif",
       pipeline_status: "New",
-      payment_status: "Belum Bayar",
       total_amount: 0,
       notes: "Daftar via Google OAuth",
     };
@@ -92,10 +83,37 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(regBody),
     });
     const regText = await regRes.text();
-    logs.push("Registration response: " + regRes.status + " " + regText);
+    logs.push("Registration: " + regRes.status);
 
     if (!regRes.ok) {
-      return NextResponse.json({ error: "Failed to create registration", status: regRes.status, detail: regText, logs }, { status: 500 });
+      // If still failing, try with absolute minimal fields
+      logs.push("First attempt failed: " + regText);
+      logs.push("Trying minimal insert...");
+      
+      const minBody = {
+        student_id: studentId,
+        product: program || "Kelas Private",
+        language: language || "English",
+        level: level || "A1",
+        notes: "Daftar via Google OAuth",
+      };
+      
+      const regRes2 = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Prefer: "return=representation",
+        },
+        body: JSON.stringify(minBody),
+      });
+      const regText2 = await regRes2.text();
+      logs.push("Minimal registration: " + regRes2.status);
+
+      if (!regRes2.ok) {
+        return NextResponse.json({ error: "Failed to create registration", detail: regText2, logs }, { status: 500 });
+      }
     }
 
     return NextResponse.json({ success: true, studentId, logs });
