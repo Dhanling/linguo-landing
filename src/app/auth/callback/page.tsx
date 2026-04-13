@@ -39,7 +39,7 @@ export default function AuthCallbackPage() {
       }
     };
 
-    const processUser = (user: any) => {
+    const processUser = async (user: any) => {
       const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
       const email = user.email || "";
       setUserName(name);
