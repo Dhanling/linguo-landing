@@ -39,6 +39,14 @@ export async function POST(req: NextRequest) {
       studentId = existing[0].id;
       studentToken = existing[0].student_token;
       isExisting = true;
+      // Ensure token exists for old students
+      if (!studentToken) {
+        studentToken = crypto.randomUUID().replace(/-/g, "").slice(0, 16);
+        await supaFetch(`students?id=eq.${studentId}`, {
+          method: "PATCH",
+          body: JSON.stringify({ student_token: studentToken }),
+        });
+      }
     }
 
     // Step 2: Create student if not exists
