@@ -76,7 +76,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                   <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
                     className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
                     {[
-                      {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"IELTS / TOEFL",tab:2},
+                      {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"Kelas Kids",tab:3},{label:"IELTS / TOEFL",tab:2},
                     ].map((item)=>(
                       <button key={item.label} onClick={()=>{(window as any).__openFunnel?.(item.label);setProgOpen(false)}}
                         className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
@@ -125,6 +125,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Kids 🧒</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
@@ -373,11 +374,15 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
     {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
+    {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
   ];
 
   const levels = selProgram==="Kelas Reguler"
     ? [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"}]
+    : selProgram==="Kelas Kids"
+    ? [{id:"Little Learner",label:"🐣 Little Learner",desc:"Usia 5–8 tahun • 30 menit • Rp 75.000/sesi"},
+       {id:"Young Explorer",label:"🚀 Young Explorer",desc:"Usia 9–12 tahun • 45 menit • Rp 85.000/sesi"}]
     : [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"},
        {id:"A2",label:"A2 — Elementary",desc:"Percakapan sederhana"},
        {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
@@ -400,6 +405,7 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
       if(selProgram==="Kelas Private") productKey = "private-" + selLevel.toLowerCase();
       else if(selProgram==="Kelas Reguler") productKey = "reguler-" + selLevel.toLowerCase();
       else if(selProgram==="IELTS/TOEFL Prep") productKey = "ielts-toefl";
+      else if(selProgram==="Kelas Kids") productKey = "kids-" + selLevel.toLowerCase().replace(/ /g, "-");
 
       const res = await fetch("/api/create-invoice", {
         method: "POST",
@@ -524,13 +530,13 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih level</h3>
-              <p className="text-sm text-slate-500 mb-6">Mulai dari mana?</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">{selProgram==="Kelas Kids"?"Pilih jenis kelas":"Pilih level"}</h3>
+              <p className="text-sm text-slate-500 mb-6">{selProgram==="Kelas Kids"?"Sesuaikan dengan usia anak":"Mulai dari mana?"}</p>
               <div className="flex flex-col gap-3">
                 {levels.map(lv=>(
                   <button key={lv.id} onClick={()=>{setSelLevel(lv.id);setStep(4)}}
                     className="flex items-center gap-4 p-4 rounded-2xl border-2 border-slate-100 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md">
-                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{lv.id}</div>
+                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{selProgram==="Kelas Kids"?(lv.id==="Little Learner"?"🐣":"🚀"):lv.id}</div>
                     <div className="flex-1">
                       <p className="font-bold text-sm">{lv.label}</p>
                       <p className="text-xs text-slate-500 mt-0.5">{lv.desc}</p>
@@ -757,6 +763,7 @@ const PRODUCTS = [
   {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
   {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
   {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
+  {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3},
   {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk"},
   {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk?tab=ebook"},
 ];
@@ -826,7 +833,7 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
         <span className="text-xs text-slate-400">{p.per}</span>
       </div>
       <button onClick={()=>{
-        if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep"][p.tab]||"")}
+        if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
         else if((p).href){window.location.href=(p).href}
         else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
       }}
@@ -866,6 +873,16 @@ const PRICING_TABS = [
     features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Jadwal Tetap (batch system)","Qualified IELTS/TOEFL Tutor","E-Certificate","Mock Test & Feedback"],
     checks:[[true],[true],[true],[true],[true],[true],[true]],
     wa:"IELTS TOEFL Prep",
+  },
+  {
+    id:"kids",label:"Kelas Kids",desc:"Belajar bahasa untuk anak usia 5–12 tahun. Fun, interaktif, 1-on-1.",
+    plans:[
+      {name:"Little Learner",desc:"30 menit • usia 5-8 thn",price:"Rp 75.000",highlighted:true,badge:"🐣 USIA 5-8"},
+      {name:"Young Explorer",desc:"45 menit • usia 9-12 thn",price:"Rp 85.000",highlighted:false,badge:"🚀 USIA 9-12"},
+    ],
+    features:["Recording Class/sesi","Interactive Class via ZOOM","Materi Fun & Gamified","Request Jadwal","Qualified Kids Teacher","E-Certificate","55+ Bahasa Tersedia","Progress Report untuk Orang Tua"],
+    allCheck:true,
+    wa:"Kelas Kids",
   },
 ];
 
