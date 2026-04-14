@@ -15,6 +15,18 @@ function deleteCookie(name: string) {
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
   const [userName, setUserName] = useState("");
+  const [studentToken, setStudentToken] = useState<string | null>(null);
+  const [isDuplicate, setIsDuplicate] = useState(false);
+
+  // Auto-redirect to dashboard when token is available
+  useEffect(() => {
+    if (studentToken && status === "success") {
+      const timer = setTimeout(() => {
+        window.location.href = "https://dashboard.linguo.id/s/" + studentToken;
+      }, 3500);
+      return () => clearTimeout(timer);
+    }
+  }, [studentToken, status]);
 
   useEffect(() => {
     const handle = async () => {
@@ -71,18 +83,14 @@ export default function AuthCallbackPage() {
         });
         const result = await res.json();
         console.log("Save lead result:", result);
+        if (result.studentToken) setStudentToken(result.studentToken);
+        if (result.duplicate) setIsDuplicate(true);
         if (!res.ok) console.error("Lead save failed:", result);
       } catch(e) { console.error("Lead save error:", e); }
 
       setStatus("success");
 
-      setTimeout(() => {
-        const msg = "Halo, saya " + name + " (" + email + "). Saya baru mendaftar via Google di linguo.id."
-          + "\nProgram: " + (funnelData.program || "-")
-          + "\nBahasa: " + (funnelData.language || "-")
-          + "\nLevel: " + (funnelData.level || "-");
-        window.open("https://wa.me/6282116859493?text=" + encodeURIComponent(msg), "_blank");
-      }, 2500);
+      // Note: auto-redirect handled in component via useEffect on studentToken
     };
 
     handle();
@@ -102,9 +110,27 @@ export default function AuthCallbackPage() {
           <div>
             <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><span className="text-4xl">✓</span></div>
             <h2 className="text-2xl font-bold mb-3">Selamat datang, {userName}!</h2>
-            <p className="text-slate-500 text-sm mb-6">Pendaftaran berhasil! Tim kami akan menghubungi kamu via WhatsApp.</p>
-            <p className="text-xs text-slate-400 mb-8">WhatsApp terbuka otomatis...</p>
-            <Link href="/" className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-8 py-3 rounded-full text-sm transition-all">Kembali ke Beranda</Link>
+            {isDuplicate ? (
+              <p className="text-slate-500 text-sm mb-6">Kamu sudah terdaftar sebelumnya. Langsung masuk ke dashboard ya!</p>
+            ) : (
+              <p className="text-slate-500 text-sm mb-6">Pendaftaran berhasil! Lanjut ke dashboard untuk pilih paket & bayar.</p>
+            )}
+            <div className="flex flex-col gap-3 items-center">
+              {studentToken ? (
+                <a href={`https://dashboard.linguo.id/s/${studentToken}`}
+                  className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                  Masuk ke Dashboard Siswa →
+                </a>
+              ) : (
+                <Link href="/student/login"
+                  className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                  Login ke Dashboard →
+                </Link>
+              )}
+              <Link href="/" className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+                atau kembali ke beranda
+              </Link>
+            </div>
           </div>
         )}
         {status==="error" && (
