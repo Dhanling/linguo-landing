@@ -12,6 +12,8 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
   "private-b2": { amount: 1440000, description: "Kelas Private - Level B2 (16 sesi)" },
   "reguler-a1": { amount: 150000, description: "Kelas Reguler - Level A1 (2 bulan)" },
   "ielts-toefl": { amount: 300000, description: "IELTS/TOEFL Prep (16 sesi @90min)" },
+  "kids-little-learner": { amount: 900000, description: "Kelas Kids Little Learner (12 sesi @30min, usia 5-8 thn)" },
+  "kids-young-explorer": { amount: 1020000, description: "Kelas Kids Young Explorer (12 sesi @45min, usia 9-12 thn)" },
   "e-learning": { amount: 29000, description: "E-Learning 1 Bulan" },
     "e-learning-6": { amount: 99000, description: "E-Learning 6 Bulan" },
     "e-learning-12": { amount: 179000, description: "E-Learning 12 Bulan" },
