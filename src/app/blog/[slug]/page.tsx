@@ -38,10 +38,10 @@ async function getRelatedPosts(category: string, currentSlug: string) {
   }
 }
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = { params: { slug: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getPost(slug);
   if (!post) return { title: "Artikel tidak ditemukan | Linguo.id" };
   return {
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getPost(slug);
   if (!post) notFound();
   const related = await getRelatedPosts(post.category, slug);
