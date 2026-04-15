@@ -1,5 +1,5 @@
 "use client";
-import { Clock, ArrowLeft, MessageCircle, Share2, Facebook, Twitter } from "lucide-react";
+import { Clock, ArrowLeft, MessageCircle, Share2 } from "lucide-react";
 import Link from "next/link";
 
 interface BlogPost {
