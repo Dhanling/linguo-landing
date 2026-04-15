@@ -96,7 +96,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Corporate","/corporate"],["Jadi Pengajar","/jadi-pengajar"],["FAQ","faq"]].map(([l,h]) => (
+              {[["Corporate","/corporate"],["Jadi Pengajar","/jadi-pengajar"],["FAQ","faq"],["Blog","/blog"]].map(([l,h]) => (
                 <a key={l} onClick={()=>{
                   if(h.startsWith("/")){
                     window.location.href = h;
@@ -130,6 +130,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
             <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
+            <a href="/blog" onClick={()=>setOpen(false)} className="text-sm py-2.5">Blog</a>
             <a href="/student/login" className="mt-2 border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full block">Login</a>
             <button onClick={()=>{(window as any).__openFunnel?.("");setOpen(false)}} className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Mulai Belajar</button>
           </div>
