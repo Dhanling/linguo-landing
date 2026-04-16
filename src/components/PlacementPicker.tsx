@@ -1,0 +1,103 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+
+const LANGUAGES = [
+  { slug: "english", name: "Inggris", native: "English", flag: "\ud83c\uddec\ud83c\udde7", available: true },
+  { slug: "japanese", name: "Jepang", native: "\u65e5\u672c\u8a9e", flag: "\ud83c\uddef\ud83c\uddf5", available: false },
+  { slug: "korean", name: "Korea", native: "\ud55c\uad6d\uc5b4", flag: "\ud83c\uddf0\ud83c\uddf7", available: false },
+  { slug: "mandarin", name: "Mandarin", native: "\u4e2d\u6587", flag: "\ud83c\udde8\ud83c\uddf3", available: false },
+  { slug: "spanish", name: "Spanyol", native: "Espa\u00f1ol", flag: "\ud83c\uddea\ud83c\uddf8", available: false },
+  { slug: "french", name: "Prancis", native: "Fran\u00e7ais", flag: "\ud83c\uddeb\ud83c\uddf7", available: false },
+  { slug: "arabic", name: "Arab", native: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629", flag: "\ud83c\uddf8\ud83c\udde6", available: false },
+  { slug: "german", name: "Jerman", native: "Deutsch", flag: "\ud83c\udde9\ud83c\uddea", available: false },
+  { slug: "bipa", name: "BIPA", native: "Bahasa Indonesia", flag: "\ud83c\uddee\ud83c\udde9", available: false },
+];
+
+interface Props {
+  open: boolean;
+  onClose: () => void;
+}
+
+export default function PlacementPicker({ open, onClose }: Props) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="fixed z-[60] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden"
+          >
+            {/* Header */}
+            <div className="px-6 pt-6 pb-4 flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-2xl">\ud83c\udfaf</span>
+                  <h2 className="text-xl font-bold text-gray-900">Placement Test</h2>
+                </div>
+                <p className="text-sm text-gray-500">Pilih bahasa untuk tes level kamu</p>
+              </div>
+              <button onClick={onClose} className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-500">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+
+            {/* Language list */}
+            <div className="px-6 pb-6 space-y-2">
+              {LANGUAGES.map((lang) => {
+                if (lang.available) {
+                  return (
+                    <a
+                      key={lang.slug}
+                      href={"/silabus/" + lang.slug + "/coba"}
+                      className="flex items-center gap-3 p-3.5 rounded-2xl border-2 border-[#1A9E9E] bg-[#1A9E9E]/5 hover:bg-[#1A9E9E]/10 transition-colors group"
+                    >
+                      <span className="text-3xl">{lang.flag}</span>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">Bahasa {lang.name}</div>
+                        <div className="text-xs text-gray-500">{lang.native}</div>
+                      </div>
+                      <span className="text-xs font-semibold text-white bg-[#1A9E9E] px-3 py-1.5 rounded-full group-hover:bg-[#147a7a] transition-colors">Mulai Test</span>
+                    </a>
+                  );
+                }
+                return (
+                  <a
+                    key={lang.slug}
+                    href={"https://wa.me/6282116859493?text=Halo%20Linguo%2C%20saya%20mau%20placement%20test%20Bahasa%20" + encodeURIComponent(lang.name)}
+                    target="_blank"
+                    rel="noopener"
+                    className="flex items-center gap-3 p-3.5 rounded-2xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="text-3xl opacity-70">{lang.flag}</span>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-700">Bahasa {lang.name}</div>
+                      <div className="text-xs text-gray-400">{lang.native}</div>
+                    </div>
+                    <span className="text-[10px] font-semibold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span>
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Footer */}
+            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <p className="text-xs text-gray-500 text-center">
+                Bahasa lain?{" "}
+                <a href="https://wa.me/6282116859493?text=Halo%20Linguo%2C%20saya%20mau%20placement%20test" target="_blank" rel="noopener" className="text-[#1A9E9E] font-semibold hover:underline">Hubungi kami via WhatsApp</a>
+              </p>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}

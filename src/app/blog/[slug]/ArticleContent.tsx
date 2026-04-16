@@ -132,15 +132,20 @@ const ARTICLE_CSS = `
   background: #0f172a;
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
   position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
   aspect-ratio: 16 / 9;
+  height: auto;
 }
 .article-body figure.youtube-embed iframe {
-  width: 100% !important;
-  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
   display: block;
   border: none;
-  aspect-ratio: 16 / 9;
 }
 
 /* Audio Player */
@@ -182,6 +187,9 @@ const ARTICLE_CSS = `
     margin: 1.5rem -1rem;
     border-radius: 0;
   }
+  .article-body figure.youtube-embed iframe {
+    border-radius: 0;
+  }
   .article-body figure.audio-embed {
     margin: 1rem 0;
     padding: 0.75rem;
@@ -193,21 +201,27 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
   useEffect(() => {
-    const figures = document.querySelectorAll<HTMLElement>(".article-body figure.youtube-embed");
-    figures.forEach(fig => {
-      const id = fig.getAttribute("data-youtube-id");
-      if (!id) return;
-      if (fig.querySelector("iframe")) return;
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube.com/embed/" + id;
-      iframe.setAttribute("frameborder", "0");
-      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.setAttribute("loading", "lazy");
-      iframe.style.cssText = "width:100%;height:100%;aspect-ratio:16/9;border:none;border-radius:0.75rem;";
-      fig.innerHTML = "";
-      fig.appendChild(iframe);
-    });
+    // Hydrate YouTube embeds — rebuild iframes from data-youtube-id
+    const hydrateYouTube = () => {
+      const figures = document.querySelectorAll<HTMLElement>(".article-body figure.youtube-embed");
+      figures.forEach(fig => {
+        const id = fig.getAttribute("data-youtube-id");
+        if (!id) return;
+        const existing = fig.querySelector("iframe");
+        if (existing && existing.src.includes(id)) return;
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + id;
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("loading", "lazy");
+        iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+        iframe.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:1rem;";
+        fig.innerHTML = "";
+        fig.appendChild(iframe);
+      });
+    };
+    requestAnimationFrame(() => { requestAnimationFrame(hydrateYouTube); });
   }, [post?.content]);
 
   // Generate gradient cover based on slug
