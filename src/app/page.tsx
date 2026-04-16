@@ -122,6 +122,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
         </div>
         <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
           <div className="px-6 py-4 flex flex-col gap-2">
+            <a href="/silabus/english/coba" className="block py-2.5 text-sm text-[#1A9E9E] font-semibold hover:text-[#147a7a] border-b border-gray-100 mb-1 pb-3">🎯 Placement Test Gratis</a>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
@@ -749,6 +750,10 @@ function HeroFunnel({lang}:{lang:string}) {
         </div>
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
+              <a href="/silabus/english/coba" className="inline-flex items-center gap-1.5 text-xs mt-3 group">
+                <span className="text-white/40">{lang==="id"?"Bingung mulai dari mana?":"Not sure where to start?"}</span>
+                <span className="text-[#fbbf24] font-semibold group-hover:underline">{lang==="id"?"Tes level kamu dulu →":"Test your level first →"}</span>
+              </a>
       </div>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
     </>
