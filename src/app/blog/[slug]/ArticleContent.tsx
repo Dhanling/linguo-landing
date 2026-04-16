@@ -164,13 +164,25 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       </nav>
 
       {/* Cover Image / Hero */}
-      <div className={`relative w-full h-[280px] sm:h-[360px] bg-gradient-to-br ${grad} overflow-hidden`}>
+      <div className={`relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br ${grad} overflow-hidden`}>
         {post.cover_image ? (
-          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" />
+          <>
+            <img
+              src={post.cover_image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+              loading="eager"
+              // @ts-ignore - fetchpriority is valid HTML but not yet in React types
+              fetchpriority="high"
+            />
+            {/* Gradient overlays for better text legibility & aesthetic depth */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
+          </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-white/20 text-[120px] sm:text-[160px] font-black leading-none select-none">{langName?.[0] || "L"}</div>
+              <div className="text-white/20 text-[120px] sm:text-[160px] lg:text-[200px] font-black leading-none select-none">{langName?.[0] || "L"}</div>
             </div>
             {/* Decorative circles */}
             <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-white/10" />
@@ -179,8 +191,8 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           </div>
         )}
         {/* Category overlay */}
-        <div className="absolute top-6 left-6">
-          <span className="bg-white/90 backdrop-blur-sm text-slate-700 text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">
+        <div className="absolute top-6 left-6 z-10">
+          <span className="bg-white/95 backdrop-blur-sm text-slate-700 text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg">
             {post.category || "Artikel"}
           </span>
         </div>
