@@ -1,3 +1,35 @@
+#!/usr/bin/env node
+// Silabus refinement: primary CTA + sticky mobile + better framing (no "gembok")
+// Drop ke ~/linguo-landing, run: node silabus-cta-refinement.mjs
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = process.cwd();
+if (!fs.existsSync(path.join(ROOT, 'src/app/silabus'))) {
+  console.error('❌ Run dari ~/linguo-landing');
+  process.exit(1);
+}
+
+const viewerPath = path.join(ROOT, 'src/app/silabus/[lang]/CurriculumViewer.tsx');
+if (!fs.existsSync(viewerPath)) {
+  console.error('❌ CurriculumViewer.tsx tidak ada');
+  process.exit(1);
+}
+
+console.log('📝 Refactor CurriculumViewer: CTA + framing...\n');
+
+// ============================================================
+// REWRITE CurriculumViewer dengan:
+//  - Primary CTA hero: "Mulai Belajar Bahasa X Sekarang"
+//  - Sticky mobile floating CTA
+//  - Hapus 🔒 Lock icons, ganti jadi "Chapter Lanjutan" / "Materi Mendalam"
+//  - Lesson tanpa detail: "Detail topik dibahas di kelas"
+//  - Window bridge ke FunnelModal: window.__openFunnel?.(bahasa, source)
+// ============================================================
+const viewerCode = `
 "use client";
 
 import { useState, useEffect } from "react";
@@ -46,7 +78,7 @@ function openFunnel(langName: string, source: string) {
     }
   } else {
     // Homepage fallback with query
-    window.location.href = \`/?lang=\${encodeURIComponent(langName)}&from=\${source}\`;
+    window.location.href = \\\`/?lang=\\\${encodeURIComponent(langName)}&from=\\\${source}\\\`;
   }
 }
 
@@ -71,7 +103,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
   }, []);
 
   const handleStartLearning = () => {
-    openFunnel(\`Bahasa \${meta.name}\`, \`silabus-\${meta.slug}\`);
+    openFunnel(\\\`Bahasa \\\${meta.name}\\\`, \\\`silabus-\\\${meta.slug}\\\`);
   };
 
   return (
@@ -110,7 +142,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
               <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
-              href={\`/silabus/\${meta.slug}/coba\`}
+              href={\\\`/silabus/\\\${meta.slug}/coba\\\`}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 border-2 border-gray-200 text-gray-700 rounded-full font-semibold text-base hover:border-gray-900 hover:bg-gray-50 transition-colors"
             >
               <Icons.Target className="w-4 h-4" />
@@ -126,7 +158,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           <SocialStat icon="Users" value={MOCK_STATS.totalLearners.toLocaleString("id-ID")} label="sedang belajar" pulse />
           <SocialStat icon="GraduationCap" value={MOCK_STATS.alumni.toLocaleString("id-ID")} label="alumni" />
           <SocialStat icon="Star" value={MOCK_STATS.rating.toFixed(1)} label="rating Google" />
-          <SocialStat icon="Trophy" value={\`\${MOCK_STATS.completionRate}%\`} label="tingkat selesai" />
+          <SocialStat icon="Trophy" value={\\\`\\\${MOCK_STATS.completionRate}%\\\`} label="tingkat selesai" />
         </div>
       </section>
 
@@ -137,9 +169,9 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
             onClick={() => setDropdownOpen((o) => !o)}
             className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-gray-900 hover:opacity-70 transition-opacity"
           >
-            <span className={\`inline-block w-2 h-2 rounded-full \${theme.primaryCls}\`} />
+            <span className={\\\`inline-block w-2 h-2 rounded-full \\\${theme.primaryCls}\\\`} />
             {theme.label} {activeLevel.code}
-            <Icons.ChevronDown className={\`w-6 h-6 text-gray-400 transition-transform \${dropdownOpen ? "rotate-180" : ""}\`} />
+            <Icons.ChevronDown className={\\\`w-6 h-6 text-gray-400 transition-transform \\\${dropdownOpen ? "rotate-180" : ""}\\\`} />
           </button>
 
           <AnimatePresence>
@@ -157,9 +189,9 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
                     <button
                       key={lvl.code}
                       onClick={() => { setActiveLevelIdx(i); setDropdownOpen(false); }}
-                      className={\`w-full px-4 py-2.5 text-left hover:bg-gray-50 flex items-center gap-3 \${i === activeLevelIdx ? "bg-gray-50" : ""}\`}
+                      className={\\\`w-full px-4 py-2.5 text-left hover:bg-gray-50 flex items-center gap-3 \\\${i === activeLevelIdx ? "bg-gray-50" : ""}\\\`}
                     >
-                      <span className={\`w-2 h-2 rounded-full \${t.primaryCls}\`} />
+                      <span className={\\\`w-2 h-2 rounded-full \\\${t.primaryCls}\\\`} />
                       <div className="flex-1">
                         <div className="font-semibold text-sm text-gray-900">{t.label} {lvl.code}</div>
                         <div className="text-xs text-gray-500">{lvl.name} · {lvl.sublevels.length} chapter</div>
@@ -222,7 +254,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           <button
             onClick={() => setActiveLevelIdx((i) => Math.min(levels.length - 1, i + 1))}
             disabled={activeLevelIdx === levels.length - 1}
-            className={\`flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 \${theme.primaryCls} text-white rounded-full hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed\`}
+            className={\\\`flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 \\\${theme.primaryCls} text-white rounded-full hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed\\\`}
           >
             <span className="text-sm font-medium">Level selanjutnya</span>
             <Icons.ChevronRight className="w-4 h-4" />
@@ -307,7 +339,7 @@ function LevelProgressBar({ completion, color }: { completion: number; color: st
     <div className="relative h-3 bg-gray-100 rounded-full overflow-hidden">
       <motion.div
         initial={{ width: 0 }}
-        animate={{ width: \`\${completion}%\` }}
+        animate={{ width: \\\`\\\${completion}%\\\` }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute inset-y-0 left-0 rounded-full flex items-center justify-end pr-2"
         style={{ backgroundColor: color }}
@@ -330,7 +362,7 @@ function ChapterSection({
     <div>
       <div className="mb-6 flex items-baseline justify-between gap-3 flex-wrap">
         <div>
-          <p className={\`text-xs uppercase tracking-widest \${theme.text} font-semibold mb-1\`}>Chapter {chapterNum}</p>
+          <p className={\\\`text-xs uppercase tracking-widest \\\${theme.text} font-semibold mb-1\\\`}>Chapter {chapterNum}</p>
           <h2 className="text-xl md:text-2xl font-bold text-gray-900">{sublevel.name}</h2>
           <p className="text-sm text-gray-500 mt-1">{sublevel.sessions.length} sesi · {sublevel.code}</p>
         </div>
@@ -362,10 +394,10 @@ function ChapterSection({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className={\`mt-6 p-5 rounded-2xl \${theme.bgSoft} border border-gray-100\`}
+          className={\\\`mt-6 p-5 rounded-2xl \\\${theme.bgSoft} border border-gray-100\\\`}
         >
           <div className="flex items-start gap-3">
-            <div className={\`w-10 h-10 rounded-full \${theme.primaryCls} flex items-center justify-center flex-shrink-0\`}>
+            <div className={\\\`w-10 h-10 rounded-full \\\${theme.primaryCls} flex items-center justify-center flex-shrink-0\\\`}>
               <Icons.Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
@@ -373,7 +405,7 @@ function ChapterSection({
               <p className="text-sm text-gray-600 mt-1">Detail topik, latihan, dan praktik langsung dibahas di kelas — private atau reguler.</p>
               <button
                 onClick={onStartLearning}
-                className={\`mt-4 inline-flex items-center gap-1.5 px-5 py-2.5 \${theme.primaryCls} text-white rounded-full text-sm font-semibold hover:opacity-90 transition-opacity\`}
+                className={\\\`mt-4 inline-flex items-center gap-1.5 px-5 py-2.5 \\\${theme.primaryCls} text-white rounded-full text-sm font-semibold hover:opacity-90 transition-opacity\\\`}
               >
                 Mulai Belajar Sekarang
                 <Icons.ArrowRight className="w-3.5 h-3.5" />
@@ -409,8 +441,8 @@ function LessonRow({
       >
         {/* Icon circle */}
         <div className="relative flex-shrink-0">
-          <div className={\`relative w-16 h-16 md:w-20 md:h-20 rounded-full \${theme.bgSoft} ring-4 ring-white flex items-center justify-center transition-transform \${hasTopics ? "group-hover:scale-105" : ""}\`}>
-            <Icon className={\`w-7 h-7 md:w-8 md:h-8 \${theme.text}\`} strokeWidth={1.8} />
+          <div className={\\\`relative w-16 h-16 md:w-20 md:h-20 rounded-full \\\${theme.bgSoft} ring-4 ring-white flex items-center justify-center transition-transform \\\${hasTopics ? "group-hover:scale-105" : ""}\\\`}>
+            <Icon className={\\\`w-7 h-7 md:w-8 md:h-8 \\\${theme.text}\\\`} strokeWidth={1.8} />
           </div>
           {/* Number badge — replace old check/lock dot */}
           <div className="absolute -bottom-1 -right-1 min-w-[24px] h-6 px-1.5 rounded-full bg-white border border-gray-200 flex items-center justify-center">
@@ -433,7 +465,7 @@ function LessonRow({
               )}
             </div>
             {hasTopics && (
-              <Icons.ChevronDown className={\`w-4 h-4 text-gray-400 flex-shrink-0 mt-1 transition-transform \${expanded ? "rotate-180" : ""}\`} />
+              <Icons.ChevronDown className={\\\`w-4 h-4 text-gray-400 flex-shrink-0 mt-1 transition-transform \\\${expanded ? "rotate-180" : ""}\\\`} />
             )}
           </div>
 
@@ -448,7 +480,7 @@ function LessonRow({
               >
                 <div className="flex flex-wrap gap-1.5 mt-3 pb-2">
                   {topics!.map((t) => (
-                    <span key={t} className={\`text-xs \${theme.bgSoft} \${theme.text} px-2.5 py-1 rounded-full font-medium\`}>
+                    <span key={t} className={\\\`text-xs \\\${theme.bgSoft} \\\${theme.text} px-2.5 py-1 rounded-full font-medium\\\`}>
                       {t}
                     </span>
                   ))}
@@ -461,3 +493,25 @@ function LessonRow({
     </motion.li>
   );
 }
+`;
+
+fs.writeFileSync(viewerPath, viewerCode.trimStart(), 'utf8');
+console.log('  ✅ src/app/silabus/[lang]/CurriculumViewer.tsx');
+
+// ============================================================
+// Commit
+// ============================================================
+console.log('\n🚀 Git...\n');
+try {
+  execSync('git add -A', { stdio: 'inherit', cwd: ROOT });
+  execSync(
+    'git commit -m "feat(silabus): primary CTA + sticky mobile, remove gembok framing"',
+    { stdio: 'inherit', cwd: ROOT }
+  );
+  execSync('git push', { stdio: 'inherit', cwd: ROOT });
+  console.log('\n✅ Pushed\n');
+} catch (e) {
+  console.log('\n⚠️  Git:', e.message);
+}
+
+try { fs.unlinkSync(fileURLToPath(import.meta.url)); } catch {}
