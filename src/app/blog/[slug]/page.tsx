@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleContent from "./ArticleContent";
 
+// Safety net: revalidate every 60s even if webhook fails
+export const revalidate = 60;
+
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
