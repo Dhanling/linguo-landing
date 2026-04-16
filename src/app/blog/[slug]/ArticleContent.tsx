@@ -134,8 +134,7 @@ const ARTICLE_CSS = `
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  height: 0;
 }
 .article-body figure.youtube-embed iframe {
   position: absolute;
