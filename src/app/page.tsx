@@ -47,6 +47,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   const c = scrolled;
 
@@ -139,6 +140,8 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
           </div>
         </motion.div>)}</AnimatePresence>
       </nav>
+      <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
+
     </div>
   );
 }
@@ -684,7 +687,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
 function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
-  const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   const [funnelProg, setFunnelProg] = useState("");
   const [funnelLang, setFunnelLang] = useState("");
   const [funnelLevel, setFunnelLevel] = useState("");
@@ -753,8 +755,7 @@ function HeroFunnel({lang}:{lang:string}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
-            <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
     </>
   );
 }
