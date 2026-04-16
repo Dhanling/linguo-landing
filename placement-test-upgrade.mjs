@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// SAFE placement test deploy — ga sentuh CurriculumViewer
-// Cuma add files baru + verify existing file utuh
-// Run from ~/linguo-landing
+// Upgrade placement test:
+// 1. Auto-submit on click (multiple choice) + auto-advance timer
+// 2. Explanations rewritten to Indonesian with detail + tips
+// Drop ke ~/linguo-landing, run: node placement-test-upgrade.mjs
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,8 +10,8 @@ import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = process.cwd();
-if (!fs.existsSync(path.join(ROOT, 'src/app/silabus'))) {
-  console.error('❌ Run dari ~/linguo-landing');
+if (!fs.existsSync(path.join(ROOT, 'src/data/placement/english.ts'))) {
+  console.error('❌ src/data/placement/english.ts belum ada');
   process.exit(1);
 }
 
@@ -21,28 +22,10 @@ const write = (rel, content) => {
   console.log(`  ✅ ${rel}`);
 };
 
-// ============================================================
-// 0. Verify CurriculumViewer utuh — especially "use client"
-// ============================================================
-const viewerPath = path.join(ROOT, 'src/app/silabus/[lang]/CurriculumViewer.tsx');
-if (fs.existsSync(viewerPath)) {
-  const viewerContent = fs.readFileSync(viewerPath, 'utf8');
-  const firstLine = viewerContent.split('\n')[0].trim();
-  if (firstLine !== '"use client";') {
-    console.log('⚠️  CurriculumViewer tidak punya "use client"; di baris 1!');
-    console.log(`   Baris 1 saat ini: ${firstLine}`);
-    console.log('   Auto-fix: menambahkan "use client";\n');
-    fs.writeFileSync(viewerPath, '"use client";\n\n' + viewerContent, 'utf8');
-    console.log('  ✅ "use client"; ditambahkan ke CurriculumViewer.tsx\n');
-  } else {
-    console.log('✓ CurriculumViewer.tsx: "use client" ada\n');
-  }
-}
-
-console.log('📝 Deploy placement test (safe)...\n');
+console.log('📝 Upgrade placement test...\n');
 
 // ============================================================
-// 1. Placement test data (English)
+// 1. Re-write english.ts with detailed Indonesian explanations
 // ============================================================
 write('src/data/placement/english.ts', `
 export type QuestionType = "multiple" | "fill";
@@ -56,7 +39,8 @@ export interface Question {
   context?: string;
   options?: string[];
   correct: string | number;
-  explanation: string;
+  explanation: string;  // Indonesia, detail, dengan tips
+  tip?: string;          // optional extra tip
 }
 
 export const englishPlacementTest: Question[] = [
@@ -65,21 +49,24 @@ export const englishPlacementTest: Question[] = [
     question: "What is the correct greeting for the morning?",
     options: ["Good night", "Good morning", "Good evening", "Goodbye"],
     correct: 1,
-    explanation: "'Good morning' is used until about noon.",
+    explanation: "Jawaban benar: **Good morning**. Dipakai dari bangun tidur sampai sekitar siang (12:00). 'Good evening' dipakai setelah sore (setelah jam 17:00), 'Good night' dipakai ketika mau tidur atau perpisahan di malam hari, dan 'Goodbye' = perpisahan umum (tidak spesifik waktu).",
+    tip: "Urutan waktu dari pagi ke malam: Good morning → Good afternoon → Good evening → Good night.",
   },
   {
     id: "q2", difficulty: "A1", type: "multiple",
     question: "She ___ a student.",
     options: ["am", "is", "are", "be"],
     correct: 1,
-    explanation: "Subject 'she' uses 'is' in present tense of 'to be'.",
+    explanation: "Jawaban benar: **is**. Kata kerja 'to be' berubah sesuai subjek: 'I am', 'you/we/they are', 'he/she/it is'. Karena subjeknya 'She' (perempuan/tunggal), pakai 'is'.",
+    tip: "Hafalan cepat: I am · You/We/They are · He/She/It is.",
   },
   {
     id: "q3", difficulty: "A1", type: "fill",
     question: "Complete: 'I have ___ apple.'",
-    context: "Use 'a' or 'an'.",
+    context: "Gunakan artikel 'a' atau 'an'.",
     correct: "an",
-    explanation: "'Apple' starts with a vowel sound, so use 'an'.",
+    explanation: "Jawaban benar: **an**. Gunakan 'an' sebelum kata yang diawali bunyi vokal (a, e, i, o, u). 'Apple' diawali bunyi /æ/ (vokal), jadi pakai 'an'.",
+    tip: "Yang dihitung adalah BUNYI, bukan huruf. Contoh: 'an hour' (bunyi /aʊ/), 'a university' (bunyi /juː/).",
   },
   {
     id: "q4", difficulty: "A2", type: "multiple",
@@ -91,28 +78,32 @@ export const englishPlacementTest: Question[] = [
       "I will go to school tomorrow.",
     ],
     correct: 2,
-    explanation: "'Went' is the past simple form of 'go'.",
+    explanation: "Jawaban benar: **I went to school yesterday**. 'Went' adalah bentuk past simple dari 'go' (kata kerja tidak beraturan, bukan 'goed'). Kata kunci 'yesterday' menandakan peristiwa sudah lampau, jadi pakai past tense. Opsi A = present simple (kebiasaan), B = present continuous (sedang terjadi), D = future (akan terjadi).",
+    tip: "Kalau ada penanda waktu lampau (yesterday, last week, ago), pakai past simple.",
   },
   {
     id: "q5", difficulty: "A2", type: "multiple",
     question: "Choose the comparative: 'My house is ___ than yours.'",
     options: ["big", "bigger", "biggest", "more big"],
     correct: 1,
-    explanation: "Short adjectives take -er: big → bigger.",
+    explanation: "Jawaban benar: **bigger**. Untuk kata sifat pendek (1 suku kata), tambahkan '-er' untuk comparative. Karena 'big' diakhiri konsonan + vokal + konsonan, huruf terakhir di-double → 'bigger'. 'Biggest' = superlative (terbesar), bukan comparative. 'More big' salah karena kata sifat pendek tidak pakai 'more'.",
+    tip: "Aturan doubling: konsonan-vokal-konsonan → huruf akhir di-double (big → bigger, hot → hotter, fat → fatter).",
   },
   {
     id: "q6", difficulty: "A2", type: "multiple",
     question: "'You ___ see a doctor if you feel sick.'",
     options: ["must", "can", "should", "will"],
     correct: 2,
-    explanation: "'Should' is used for advice.",
+    explanation: "Jawaban benar: **should**. 'Should' dipakai untuk memberikan saran atau rekomendasi (tidak terlalu memaksa). 'Must' = keharusan/wajib (terlalu kuat untuk saran), 'can' = bisa/mampu, 'will' = akan (future).",
+    tip: "Tingkat kewajiban: must (wajib) > have to (harus) > should (sebaiknya) > could (bisa).",
   },
   {
     id: "q7", difficulty: "A2", type: "fill",
     question: "'I have lived here ___ five years.'",
-    context: "Use 'for' or 'since'.",
+    context: "Gunakan 'for' atau 'since'.",
     correct: "for",
-    explanation: "Use 'for' with a duration, 'since' with a point in time.",
+    explanation: "Jawaban benar: **for**. Gunakan 'for' untuk menyatakan DURASI/lamanya waktu ('for 5 years' = selama 5 tahun). 'Since' dipakai untuk TITIK waktu ('since 2020' = sejak 2020).",
+    tip: "For = lama (duration). Since = sejak (starting point). Misal: 'for 3 months' vs 'since January'.",
   },
   {
     id: "q8", difficulty: "B1", type: "multiple",
@@ -124,28 +115,32 @@ export const englishPlacementTest: Question[] = [
       "I am seeing that movie already.",
     ],
     correct: 2,
-    explanation: "Present Perfect with 'already' for recent past. Don't mix with specific past time markers.",
+    explanation: "Jawaban benar: **I have already seen that movie**. Present Perfect (have/has + V3) dipakai untuk peristiwa lampau yang masih terhubung dengan sekarang. 'Already' cocok dengan Present Perfect. Opsi A salah karena 'last week' adalah waktu lampau spesifik—tidak boleh campur dengan Present Perfect. Opsi B seharusnya pakai Present Perfect karena ada 'already'.",
+    tip: "Aturan emas: JANGAN campur Present Perfect dengan kata waktu spesifik seperti yesterday, last week, 2 days ago.",
   },
   {
     id: "q9", difficulty: "B1", type: "multiple",
     question: "Passive: 'The letter ___ yesterday.'",
     options: ["wrote", "was written", "has written", "is writing"],
     correct: 1,
-    explanation: "Passive past: was/were + past participle.",
+    explanation: "Jawaban benar: **was written**. Rumus kalimat pasif past simple: was/were + V3 (past participle). 'Write' → 'written' (bentuk ketiga). Karena subjek 'letter' (tunggal), pakai 'was'. Kalimat aktifnya: 'Someone wrote the letter yesterday' → pasif: 'The letter was written yesterday.'",
+    tip: "Rumus pasif: subject + to be (sesuai tenses) + V3. Contoh: is made, was made, will be made, has been made.",
   },
   {
     id: "q10", difficulty: "B1", type: "multiple",
     question: "Second conditional: 'If I ___ rich, I would travel.'",
     options: ["am", "was", "were", "will be"],
     correct: 2,
-    explanation: "Second conditional uses 'were' for all subjects in formal English.",
+    explanation: "Jawaban benar: **were**. Second conditional dipakai untuk situasi hipotetis/tidak nyata di masa sekarang. Rumus: If + past simple (were untuk semua subjek), would + V1. Dalam bahasa Inggris formal, 'were' dipakai untuk SEMUA subjek termasuk I/he/she/it — bukan 'was'. Ini disebut 'subjunctive mood'.",
+    tip: "Hafalan: 'If I WERE you...' (bukan was). Ini khas second conditional & idiom formal.",
   },
   {
     id: "q11", difficulty: "B1", type: "fill",
     question: "Reported: She said, 'I am tired.' = She said she ___ tired.",
-    context: "Shift tense.",
+    context: "Ubah ke reported speech (pergeseran tense).",
     correct: "was",
-    explanation: "Present simple 'am' shifts to past simple 'was'.",
+    explanation: "Jawaban benar: **was**. Dalam reported speech (kalimat tidak langsung), tense digeser satu langkah ke masa lalu. Present simple 'am' → past simple 'was'. Pronoun juga berubah: 'I' → 'she'. Jadi 'I am tired' → 'she was tired'.",
+    tip: "Pergeseran tense: present → past. am/is → was; are → were; do → did; will → would; can → could.",
   },
   {
     id: "q12", difficulty: "B2", type: "multiple",
@@ -157,7 +152,8 @@ export const englishPlacementTest: Question[] = [
       "If I would know, I had told you.",
     ],
     correct: 1,
-    explanation: "Third conditional: If + past perfect, would have + past participle.",
+    explanation: "Jawaban benar: **If I had known, I would have told you**. Third conditional dipakai untuk situasi tidak nyata di masa lampau (penyesalan). Rumus: If + past perfect (had + V3), would have + V3. Artinya: 'Kalau saja aku tahu (tapi kenyataannya tidak tahu), aku akan memberitahu kamu (tapi tidak).'",
+    tip: "First conditional = masa depan mungkin. Second = sekarang hipotetis. Third = masa lalu penyesalan.",
   },
   {
     id: "q13", difficulty: "B2", type: "multiple",
@@ -169,14 +165,16 @@ export const englishPlacementTest: Question[] = [
       "I never have seen such a view.",
     ],
     correct: 1,
-    explanation: "After negative adverbs like 'never', invert subject and auxiliary.",
+    explanation: "Jawaban benar: **Never have I seen such a view**. Ketika kalimat diawali kata keterangan negatif (never, rarely, seldom, hardly, no sooner), tata bahasa formal mewajibkan INVERSI—auxiliary verb pindah sebelum subjek, mirip struktur pertanyaan. Ini untuk efek dramatis/penekanan. Opsi C benar secara tata bahasa tapi TANPA penekanan.",
+    tip: "Pola inversi: [Kata negatif] + [auxiliary] + [subjek] + [verb]. Contoh: 'Rarely does he smile', 'Hardly had I arrived when...'.",
   },
   {
     id: "q14", difficulty: "B2", type: "multiple",
     question: "Which word means 'to make less intense'?",
     options: ["intensify", "amplify", "mitigate", "exacerbate"],
     correct: 2,
-    explanation: "'Mitigate' means to make less severe. 'Exacerbate' is opposite.",
+    explanation: "Jawaban benar: **mitigate** = meredakan/mengurangi intensitas. 'Intensify' = memperkuat (kebalikannya). 'Amplify' = memperbesar/memperkeras. 'Exacerbate' = memperparah (kebalikan persis dari mitigate). Kata 'mitigate' sering dipakai dalam konteks risiko, konflik, atau dampak negatif.",
+    tip: "Mitigate vs exacerbate = mengurangi vs memperparah. Ingat: 'mitigation strategy' = strategi mitigasi.",
   },
   {
     id: "q15", difficulty: "B2", type: "multiple",
@@ -188,7 +186,8 @@ export const englishPlacementTest: Question[] = [
       "Quickly, she decided.",
     ],
     correct: 1,
-    explanation: "Nominalization: 'decided' (verb) to 'decision' (noun).",
+    explanation: "Jawaban benar: **Her decision was quick**. Nominalisasi adalah mengubah kata kerja atau kata sifat menjadi kata benda. Dari 'decided' (verb) menjadi 'decision' (noun). Gaya ini khas tulisan formal/akademik karena membuat kalimat terasa lebih objektif dan padat.",
+    tip: "Contoh nominalisasi lain: analyze → analysis, explain → explanation, important → importance. Banyak dipakai dalam essay akademik & bisnis.",
   },
 ];
 
@@ -214,44 +213,9 @@ export function determineLevel(score: number): {
 `);
 
 // ============================================================
-// 2. Placement test route page
+// 2. PlacementTest.tsx — upgrade: auto-submit + auto-advance + markdown explanation
 // ============================================================
-write('src/app/silabus/[lang]/coba/page.tsx', `
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getCurriculum } from "@/data/curriculum";
-import PlacementTest from "./PlacementTest";
-import { englishPlacementTest } from "@/data/placement/english";
-
-type Props = { params: Promise<{ lang: string }> };
-
-export async function generateStaticParams() {
-  return [{ lang: "english" }];
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
-  const c = getCurriculum(lang);
-  const name = c?.meta.name || "Bahasa";
-  return {
-    title: "Placement Test Bahasa " + name + " Gratis | Linguo.id",
-    description: "Tes level Bahasa " + name + " kamu GRATIS. 15 soal, 2 menit. Hasil personal + rekomendasi chapter.",
-  };
-}
-
-export default async function Page({ params }: Props) {
-  const { lang } = await params;
-  const curriculum = getCurriculum(lang);
-  if (!curriculum || lang !== "english") notFound();
-  return <PlacementTest curriculum={curriculum} questions={englishPlacementTest} />;
-}
-`);
-
-// ============================================================
-// 3. PlacementTest client component
-// ============================================================
-// NOTE: pakai template literal + escaping yang aman via JSON.stringify untuk CSS class strings
-// dan ga pakai nested backtick di dalam backtick
+// Strategi: array-of-lines biar aman dari escaping
 write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '"use client";',
   '',
@@ -268,6 +232,17 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '}',
   '',
   'type Screen = "intro" | "quiz" | "result";',
+  '',
+  '// Render markdown-ish bold (**text**) sebagai <strong>',
+  'function renderRich(text: string) {',
+  '  const parts = text.split(/(\\*\\*[^*]+\\*\\*)/g);',
+  '  return parts.map((p, i) => {',
+  '    if (p.startsWith("**") && p.endsWith("**")) {',
+  '      return <strong key={i} className="font-bold text-gray-900">{p.slice(2, -2)}</strong>;',
+  '    }',
+  '    return <span key={i}>{p}</span>;',
+  '  });',
+  '}',
   '',
   'export default function PlacementTest({ curriculum, questions }: Props) {',
   '  const { meta } = curriculum;',
@@ -289,9 +264,11 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '    setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);',
   '  };',
   '',
-  '  const submitAnswer = () => {',
-  '    if (selected === null) return;',
-  '    if (selected === question.correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);',
+  '  // Handle answer submission — both for auto (click) and manual (fill)',
+  '  const submitAnswer = (value: string | number) => {',
+  '    if (showFeedback) return;',
+  '    setSelected(value);',
+  '    if (value === question.correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);',
   '    setShowFeedback(true);',
   '  };',
   '',
@@ -317,7 +294,6 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '            progress={progress}',
   '            selected={selected}',
   '            showFeedback={showFeedback}',
-  '            onSelect={setSelected}',
   '            onSubmit={submitAnswer}',
   '            onNext={nextQuestion}',
   '            langSlug={meta.slug}',
@@ -372,9 +348,9 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '            <div className="text-sm text-amber-900 leading-relaxed">',
   '              <p className="font-semibold mb-1">Tips supaya akurat:</p>',
   '              <ul className="list-disc list-inside space-y-0.5 text-amber-800">',
-  '                <li>Jawab yang kamu tau, tebak yang ragu</li>',
-  '                <li>Ga perlu sempurna \u2014 test ini buat tentuin level</li>',
-  '                <li>Hasil disimpan supaya pengajar tau level kamu</li>',
+  '                <li>Klik opsi = jawaban langsung tersubmit</li>',
+  '                <li>Baca penjelasan setelah jawab \u2014 itu pembelajaran intinya</li>',
+  '                <li>Jawab jujur, tebak kalau ragu \u2014 kami tentuin level-mu dari situ</li>',
   '              </ul>',
   '            </div>',
   '          </div>',
@@ -404,9 +380,9 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   'function QuizScreen(props: {',
   '  question: Question; currentQ: number; total: number; progress: number;',
   '  selected: string | number | null; showFeedback: boolean;',
-  '  onSelect: (v: string | number) => void; onSubmit: () => void; onNext: () => void; langSlug: string;',
+  '  onSubmit: (v: string | number) => void; onNext: () => void; langSlug: string;',
   '}) {',
-  '  const { question, currentQ, total, progress, selected, showFeedback, onSelect, onSubmit, onNext, langSlug } = props;',
+  '  const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onNext, langSlug } = props;',
   '  const [fillValue, setFillValue] = useState("");',
   '  useEffect(() => { setFillValue(""); }, [question.id]);',
   '  const isCorrect = selected === question.correct;',
@@ -446,15 +422,16 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '            {question.type === "multiple" && question.options && question.options.map((opt, i) => {',
   '              const isSelected = selected === i;',
   '              const isAnswerCorrect = question.correct === i;',
-  '              let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50";',
+  '              let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";',
   '              if (showFeedback && isAnswerCorrect) cls = "border-emerald-500 bg-emerald-50";',
   '              else if (showFeedback && isSelected && !isAnswerCorrect) cls = "border-rose-500 bg-rose-50";',
+  '              else if (showFeedback) cls = "border-gray-200 bg-white opacity-60";',
   '              else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/5";',
   '              return (',
-  '                <button key={i} onClick={() => !showFeedback && onSelect(i)} disabled={showFeedback}',
+  '                <button key={i} onClick={() => onSubmit(i)} disabled={showFeedback}',
   '                  className={"w-full text-left px-5 py-4 rounded-2xl border-2 transition-all " + cls}>',
   '                  <div className="flex items-center gap-3">',
-  '                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600")}>',
+  '                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + ((showFeedback && isAnswerCorrect) ? "bg-emerald-500 text-white" : (showFeedback && isSelected && !isAnswerCorrect) ? "bg-rose-500 text-white" : isSelected ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600")}>',
   '                      {String.fromCharCode(65 + i)}',
   '                    </span>',
   '                    <span className="text-gray-900">{opt}</span>',
@@ -466,29 +443,47 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '            })}',
   '',
   '            {question.type === "fill" && (',
-  '              <input type="text" value={fillValue}',
-  '                onChange={(e) => { setFillValue(e.target.value); onSelect(e.target.value.toLowerCase().trim()); }}',
-  '                disabled={showFeedback} placeholder="Ketik jawaban..."',
-  '                className={"w-full px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (showFeedback ? (selected === question.correct ? "border-emerald-500 bg-emerald-50" : "border-rose-500 bg-rose-50") : "border-gray-200 focus:border-[#1A9E9E]")}',
-  '              />',
+  '              <div className="flex gap-2">',
+  '                <input type="text" value={fillValue}',
+  '                  onChange={(e) => setFillValue(e.target.value)}',
+  '                  onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim() && !showFeedback) onSubmit(fillValue.toLowerCase().trim()); }}',
+  '                  disabled={showFeedback} placeholder="Ketik jawaban lalu Enter..."',
+  '                  className={"flex-1 px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (showFeedback ? (selected === question.correct ? "border-emerald-500 bg-emerald-50" : "border-rose-500 bg-rose-50") : "border-gray-200 focus:border-[#1A9E9E]")}',
+  '                />',
+  '                {!showFeedback && (',
+  '                  <button onClick={() => fillValue.trim() && onSubmit(fillValue.toLowerCase().trim())} disabled={!fillValue.trim()}',
+  '                    className="px-6 py-4 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed">',
+  '                    Jawab',
+  '                  </button>',
+  '                )}',
+  '              </div>',
   '            )}',
   '          </div>',
   '',
   '          <AnimatePresence>',
   '            {showFeedback && (',
   '              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">',
-  '                <div className={"mt-5 p-4 rounded-2xl flex items-start gap-3 " + (isCorrect ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900")}>',
-  '                  <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 " + (isCorrect ? "bg-emerald-500" : "bg-rose-500")}>',
-  '                    {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}',
+  '                <div className={"mt-5 p-5 rounded-2xl " + (isCorrect ? "bg-emerald-50" : "bg-rose-50")}>',
+  '                  <div className="flex items-start gap-3 mb-2">',
+  '                    <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 " + (isCorrect ? "bg-emerald-500" : "bg-rose-500")}>',
+  '                      {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}',
+  '                    </div>',
+  '                    <div className="flex-1">',
+  '                      <p className={"font-bold text-lg mb-0 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>',
+  '                        {isCorrect ? "Benar!" : "Kurang tepat"}',
+  '                      </p>',
+  '                    </div>',
   '                  </div>',
-  '                  <div className="flex-1">',
-  '                    <p className="font-bold mb-1">{isCorrect ? "Benar!" : "Kurang tepat."}</p>',
-  '                    <p className="text-sm">{question.explanation}</p>',
-  '                    {!isCorrect && question.type === "multiple" && question.options && (',
-  '                      <p className="text-sm mt-2"><span className="font-semibold">Jawaban benar:</span> {question.options[question.correct as number]}</p>',
-  '                    )}',
+  '                  <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>',
+  '                    <p className="mb-2">{renderRich(question.explanation)}</p>',
   '                    {!isCorrect && question.type === "fill" && (',
-  '                      <p className="text-sm mt-2"><span className="font-semibold">Jawaban benar:</span> {String(question.correct)}</p>',
+  '                      <p className="mt-2 text-xs italic">Jawabanmu: \u201c{String(selected)}\u201d \u2014 Jawaban benar: \u201c{String(question.correct)}\u201d</p>',
+  '                    )}',
+  '                    {question.tip && (',
+  '                      <div className="mt-3 flex items-start gap-2 p-3 rounded-xl bg-white/50 border border-gray-200/50">',
+  '                        <span className="text-base">\ud83d\udca1</span>',
+  '                        <p className="text-xs text-gray-700"><strong className="font-bold text-gray-900">Tips: </strong>{question.tip}</p>',
+  '                      </div>',
   '                    )}',
   '                  </div>',
   '                </div>',
@@ -497,20 +492,15 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '          </AnimatePresence>',
   '        </div>',
   '',
-  '        <div className="flex justify-end">',
-  '          {!showFeedback ? (',
-  '            <button onClick={onSubmit} disabled={selected === null || (typeof selected === "string" && !selected)}',
-  '              className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold hover:bg-[#147a7a] disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#1A9E9E]/20 transition-all">',
-  '              Jawab <Icons.ArrowRight className="w-5 h-5" />',
-  '            </button>',
-  '          ) : (',
+  '        {showFeedback && (',
+  '          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">',
   '            <button onClick={onNext}',
   '              className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-700 shadow-lg transition-all">',
   '              {currentQ + 1 < total ? "Soal berikutnya" : "Lihat hasil"}',
   '              <Icons.ArrowRight className="w-5 h-5" />',
   '            </button>',
-  '          )}',
-  '        </div>',
+  '          </motion.div>',
+  '        )}',
   '      </div>',
   '    </motion.section>',
   '  );',
@@ -548,10 +538,7 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '      method: "POST",',
   '      headers: { "Content-Type": "application/json" },',
   '      body: JSON.stringify({',
-  '        language: meta.name,',
-  '        level: result.sublevel,',
-  '        score,',
-  '        timeElapsedSec,',
+  '        language: meta.name, level: result.sublevel, score, timeElapsedSec,',
   '        source: "placement-test-" + meta.slug,',
   '      }),',
   '    }).catch(() => {});',
@@ -568,7 +555,6 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
   '            className={"inline-flex items-center justify-center w-24 h-24 rounded-full mb-5 " + lc.bg}>',
   '            <Icons.Award className={"w-12 h-12 " + lc.text} strokeWidth={2} />',
   '          </motion.div>',
-  '',
   '          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}',
   '            className="text-sm text-gray-500 uppercase tracking-widest mb-2">Hasil Placement Test</motion.p>',
   '          <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}',
@@ -640,77 +626,12 @@ write('src/app/silabus/[lang]/coba/PlacementTest.tsx', [
 ].join('\n'));
 
 // ============================================================
-// 4. API endpoint — POST /api/placement-result
-// ============================================================
-write('src/app/api/placement-result/route.ts', `
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { language, level, score, timeElapsedSec, source } = body;
-
-    const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
-      return NextResponse.json({ success: false, error: "Missing Supabase config" }, { status: 500 });
-    }
-
-    const res = await fetch(SUPABASE_URL + "/rest/v1/placement_results", {
-      method: "POST",
-      headers: {
-        "apikey": SUPABASE_KEY,
-        "Authorization": "Bearer " + SUPABASE_KEY,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify({ language, level, score, time_elapsed_sec: timeElapsedSec, source }),
-    });
-
-    if (!res.ok) {
-      const err = await res.text();
-      return NextResponse.json({ success: false, error: err }, { status: 500 });
-    }
-    return NextResponse.json({ success: true });
-  } catch (e: any) {
-    return NextResponse.json({ success: false, error: e.message }, { status: 500 });
-  }
-}
-`);
-
-// ============================================================
-// 5. SQL migration
-// ============================================================
-const sqlPath = '/tmp/placement-test-migration.sql';
-fs.writeFileSync(sqlPath, `-- Run di Supabase SQL Editor
-CREATE TABLE IF NOT EXISTS placement_results (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  language TEXT NOT NULL,
-  level TEXT NOT NULL,
-  score INTEGER NOT NULL,
-  time_elapsed_sec INTEGER,
-  source TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-CREATE INDEX IF NOT EXISTS idx_placement_language ON placement_results(language);
-CREATE INDEX IF NOT EXISTS idx_placement_level ON placement_results(level);
-
-ALTER TABLE placement_results ENABLE ROW LEVEL SECURITY;
-DROP POLICY IF EXISTS "allow anon insert placement" ON placement_results;
-CREATE POLICY "allow anon insert placement" ON placement_results FOR INSERT TO anon WITH CHECK (true);
-DROP POLICY IF EXISTS "allow authenticated read placement" ON placement_results;
-CREATE POLICY "allow authenticated read placement" ON placement_results FOR SELECT TO authenticated USING (true);
-`, 'utf8');
-console.log(`\n📄 SQL: ${sqlPath}`);
-
-// ============================================================
 // Git
 // ============================================================
 console.log('\n🚀 Git...\n');
 try {
   execSync('git add -A', { stdio: 'inherit', cwd: ROOT });
-  execSync('git commit -m "feat(silabus): placement test /coba with result + recommendation"', { stdio: 'inherit', cwd: ROOT });
+  execSync('git commit -m "feat(placement): auto-submit on click + detailed Indonesian explanations"', { stdio: 'inherit', cwd: ROOT });
   execSync('git push', { stdio: 'inherit', cwd: ROOT });
   console.log('\n✅ Pushed\n');
 } catch (e) {
@@ -718,8 +639,3 @@ try {
 }
 
 try { fs.unlinkSync(fileURLToPath(import.meta.url)); } catch {}
-
-console.log('═══════════════════════════════════════════════');
-console.log(`📋 Jalanin SQL di Supabase: cat ${sqlPath}`);
-console.log('   Test: linguo.id/silabus/english/coba');
-console.log('═══════════════════════════════════════════════\n');
