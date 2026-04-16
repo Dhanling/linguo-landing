@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { language, level, score, timeElapsedSec, source } = body;
+    const { language, level, score, timeElapsedSec, source, name, whatsapp } = body;
 
     const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -11,6 +11,14 @@ export async function POST(req: NextRequest) {
     if (!SUPABASE_URL || !SUPABASE_KEY) {
       return NextResponse.json({ success: false, error: "Missing Supabase config" }, { status: 500 });
     }
+
+    const payload: Record<string, any> = {
+      language, level, score,
+      time_elapsed_sec: timeElapsedSec,
+      source,
+    };
+    if (name) payload.name = name;
+    if (whatsapp) payload.whatsapp = whatsapp;
 
     const res = await fetch(SUPABASE_URL + "/rest/v1/placement_results", {
       method: "POST",
@@ -20,7 +28,7 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
         "Prefer": "return=minimal",
       },
-      body: JSON.stringify({ language, level, score, time_elapsed_sec: timeElapsedSec, source }),
+      body: JSON.stringify(payload),
     });
 
     if (!res.ok) {

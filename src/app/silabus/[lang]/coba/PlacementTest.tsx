@@ -14,6 +14,16 @@ interface Props {
 
 type Screen = "intro" | "quiz" | "result";
 
+function renderRich(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) => {
+    if (p.startsWith("**") && p.endsWith("**")) {
+      return <strong key={i} className="font-bold text-gray-900">{p.slice(2, -2)}</strong>;
+    }
+    return <span key={i}>{p}</span>;
+  });
+}
+
 export default function PlacementTest({ curriculum, questions }: Props) {
   const { meta } = curriculum;
   const [screen, setScreen] = useState<Screen>("intro");
@@ -34,9 +44,11 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);
   };
 
-  const submitAnswer = () => {
-    if (selected === null) return;
-    if (selected === question.correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
+  // Auto-submit on click (multiple) or explicit submit (fill)
+  const submitAnswer = (value: string | number) => {
+    if (showFeedback) return;
+    setSelected(value);
+    if (value === question.correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
     setShowFeedback(true);
   };
 
@@ -62,7 +74,6 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             progress={progress}
             selected={selected}
             showFeedback={showFeedback}
-            onSelect={setSelected}
             onSubmit={submitAnswer}
             onNext={nextQuestion}
             langSlug={meta.slug}
@@ -82,6 +93,9 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   );
 }
 
+// ================================================
+// INTRO
+// ================================================
 function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onStart: () => void }) {
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -117,9 +131,9 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
             <div className="text-sm text-amber-900 leading-relaxed">
               <p className="font-semibold mb-1">Tips supaya akurat:</p>
               <ul className="list-disc list-inside space-y-0.5 text-amber-800">
-                <li>Jawab yang kamu tau, tebak yang ragu</li>
-                <li>Ga perlu sempurna — test ini buat tentuin level</li>
-                <li>Hasil disimpan supaya pengajar tau level kamu</li>
+                <li>Klik opsi = jawaban langsung tersubmit (tanpa tombol)</li>
+                <li>Baca penjelasan setelah jawab — itu pembelajaran intinya</li>
+                <li>Jawab jujur, tebak kalau ragu</li>
               </ul>
             </div>
           </div>
@@ -146,12 +160,15 @@ function InfoCard({ icon, value, label }: { icon: string; value: string; label: 
   );
 }
 
+// ================================================
+// QUIZ (AUTO-SUBMIT on click)
+// ================================================
 function QuizScreen(props: {
   question: Question; currentQ: number; total: number; progress: number;
   selected: string | number | null; showFeedback: boolean;
-  onSelect: (v: string | number) => void; onSubmit: () => void; onNext: () => void; langSlug: string;
+  onSubmit: (v: string | number) => void; onNext: () => void; langSlug: string;
 }) {
-  const { question, currentQ, total, progress, selected, showFeedback, onSelect, onSubmit, onNext, langSlug } = props;
+  const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onNext, langSlug } = props;
   const [fillValue, setFillValue] = useState("");
   useEffect(() => { setFillValue(""); }, [question.id]);
   const isCorrect = selected === question.correct;
@@ -191,15 +208,16 @@ function QuizScreen(props: {
             {question.type === "multiple" && question.options && question.options.map((opt, i) => {
               const isSelected = selected === i;
               const isAnswerCorrect = question.correct === i;
-              let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50";
+              let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
               if (showFeedback && isAnswerCorrect) cls = "border-emerald-500 bg-emerald-50";
               else if (showFeedback && isSelected && !isAnswerCorrect) cls = "border-rose-500 bg-rose-50";
+              else if (showFeedback) cls = "border-gray-200 bg-white opacity-50";
               else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/5";
               return (
-                <button key={i} onClick={() => !showFeedback && onSelect(i)} disabled={showFeedback}
+                <button key={i} onClick={() => onSubmit(i)} disabled={showFeedback}
                   className={"w-full text-left px-5 py-4 rounded-2xl border-2 transition-all " + cls}>
                   <div className="flex items-center gap-3">
-                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600")}>
+                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + ((showFeedback && isAnswerCorrect) ? "bg-emerald-500 text-white" : (showFeedback && isSelected && !isAnswerCorrect) ? "bg-rose-500 text-white" : isSelected ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600")}>
                       {String.fromCharCode(65 + i)}
                     </span>
                     <span className="text-gray-900">{opt}</span>
@@ -211,29 +229,47 @@ function QuizScreen(props: {
             })}
 
             {question.type === "fill" && (
-              <input type="text" value={fillValue}
-                onChange={(e) => { setFillValue(e.target.value); onSelect(e.target.value.toLowerCase().trim()); }}
-                disabled={showFeedback} placeholder="Ketik jawaban..."
-                className={"w-full px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (showFeedback ? (selected === question.correct ? "border-emerald-500 bg-emerald-50" : "border-rose-500 bg-rose-50") : "border-gray-200 focus:border-[#1A9E9E]")}
-              />
+              <div className="flex gap-2">
+                <input type="text" value={fillValue}
+                  onChange={(e) => setFillValue(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim() && !showFeedback) onSubmit(fillValue.toLowerCase().trim()); }}
+                  disabled={showFeedback} placeholder="Ketik jawaban lalu Enter..."
+                  className={"flex-1 px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (showFeedback ? (selected === question.correct ? "border-emerald-500 bg-emerald-50" : "border-rose-500 bg-rose-50") : "border-gray-200 focus:border-[#1A9E9E]")}
+                />
+                {!showFeedback && (
+                  <button onClick={() => fillValue.trim() && onSubmit(fillValue.toLowerCase().trim())} disabled={!fillValue.trim()}
+                    className="px-6 py-4 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed">
+                    OK
+                  </button>
+                )}
+              </div>
             )}
           </div>
 
           <AnimatePresence>
             {showFeedback && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-                <div className={"mt-5 p-4 rounded-2xl flex items-start gap-3 " + (isCorrect ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900")}>
-                  <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 " + (isCorrect ? "bg-emerald-500" : "bg-rose-500")}>
-                    {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}
+                <div className={"mt-5 p-5 rounded-2xl " + (isCorrect ? "bg-emerald-50" : "bg-rose-50")}>
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 " + (isCorrect ? "bg-emerald-500" : "bg-rose-500")}>
+                      {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}
+                    </div>
+                    <div className="flex-1">
+                      <p className={"font-bold text-lg mb-0 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>
+                        {isCorrect ? "Benar!" : "Kurang tepat"}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-bold mb-1">{isCorrect ? "Benar!" : "Kurang tepat."}</p>
-                    <p className="text-sm">{question.explanation}</p>
-                    {!isCorrect && question.type === "multiple" && question.options && (
-                      <p className="text-sm mt-2"><span className="font-semibold">Jawaban benar:</span> {question.options[question.correct as number]}</p>
-                    )}
+                  <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>
+                    <p className="mb-2">{renderRich(question.explanation)}</p>
                     {!isCorrect && question.type === "fill" && (
-                      <p className="text-sm mt-2"><span className="font-semibold">Jawaban benar:</span> {String(question.correct)}</p>
+                      <p className="mt-2 text-xs italic">Jawabanmu: “{String(selected)}” — Jawaban benar: “{String(question.correct)}”</p>
+                    )}
+                    {question.tip && (
+                      <div className="mt-3 flex items-start gap-2 p-3 rounded-xl bg-white/50 border border-gray-200/50">
+                        <span className="text-base">💡</span>
+                        <p className="text-xs text-gray-700"><strong className="font-bold text-gray-900">Tips: </strong>{question.tip}</p>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -242,31 +278,35 @@ function QuizScreen(props: {
           </AnimatePresence>
         </div>
 
-        <div className="flex justify-end">
-          {!showFeedback ? (
-            <button onClick={onSubmit} disabled={selected === null || (typeof selected === "string" && !selected)}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold hover:bg-[#147a7a] disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#1A9E9E]/20 transition-all">
-              Jawab <Icons.ArrowRight className="w-5 h-5" />
-            </button>
-          ) : (
+        {showFeedback && (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
             <button onClick={onNext}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-700 shadow-lg transition-all">
               {currentQ + 1 < total ? "Soal berikutnya" : "Lihat hasil"}
               <Icons.ArrowRight className="w-5 h-5" />
             </button>
-          )}
-        </div>
+          </motion.div>
+        )}
       </div>
     </motion.section>
   );
 }
 
+// ================================================
+// RESULT (with Soft-gate WA)
+// ================================================
 function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
   score: number; meta: any; timeElapsedSec: number; onRetake: () => void;
 }) {
   const result = determineLevel(score);
   const maxScore = 39;
   const scorePercent = (score / maxScore) * 100;
+  const [unlocked, setUnlocked] = useState(false);
+  const [showGate, setShowGate] = useState(false);
+  const [waValue, setWaValue] = useState("");
+  const [nameValue, setNameValue] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [gateError, setGateError] = useState("");
 
   const levelColorMap: Record<string, { bg: string; text: string; soft: string; border: string }> = {
     A1: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200" },
@@ -283,33 +323,53 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
     if (typeof w.__openFunnel === "function") {
       try {
         w.__openFunnel({
-          language: langFull,
-          level: result.sublevel,
-          preferredProgram: "Kelas Private",
-          source: sourceTag,
+          language: langFull, level: result.sublevel,
+          preferredProgram: "Kelas Private", source: sourceTag,
         });
-      } catch {
-        w.__openFunnel(langFull);
-      }
+      } catch { w.__openFunnel(langFull); }
     } else {
-      window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel + "&program=Kelas+Private";
+      window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel;
     }
   };
 
+  // Auto-log result (anonymous) ke placement_results table
   useEffect(() => {
     fetch("/api/placement-result", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        language: meta.name,
-        level: result.sublevel,
-        score,
-        timeElapsedSec,
+        language: meta.name, level: result.sublevel, score, timeElapsedSec,
         source: "placement-test-" + meta.slug,
       }),
     }).catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const submitGate = async () => {
+    setGateError("");
+    // Validate WA: min 10 digit, Indonesia prefix
+    const wa = waValue.replace(/\D/g, "");
+    if (wa.length < 10) { setGateError("Nomor WhatsApp minimal 10 digit"); return; }
+    if (!nameValue.trim()) { setGateError("Masukkan nama dulu ya"); return; }
+    setSubmitting(true);
+    try {
+      await fetch("/api/placement-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language: meta.name, level: result.sublevel, score, timeElapsedSec,
+          source: "placement-test-" + meta.slug + "-unlocked",
+          name: nameValue.trim(), whatsapp: wa,
+        }),
+      });
+      setUnlocked(true);
+      setShowGate(false);
+    } catch (e) {
+      setGateError("Gagal simpan. Coba lagi ya.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
@@ -321,7 +381,6 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
             className={"inline-flex items-center justify-center w-24 h-24 rounded-full mb-5 " + lc.bg}>
             <Icons.Award className={"w-12 h-12 " + lc.text} strokeWidth={2} />
           </motion.div>
-
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
             className="text-sm text-gray-500 uppercase tracking-widest mb-2">Hasil Placement Test</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
@@ -332,6 +391,7 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
             className={"text-xl font-semibold mb-4 " + lc.text}>{result.label}</motion.p>
         </div>
 
+        {/* Score card */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
           className="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-sm mb-6">
           <div className="grid grid-cols-3 gap-4 mb-6">
@@ -351,25 +411,86 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
           <p className="text-gray-700 text-base leading-relaxed">{result.description}</p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
-          className={"rounded-3xl p-6 md:p-8 mb-6 border " + lc.soft + " " + lc.border}>
-          <div className="flex items-start gap-3 mb-4">
-            <Icons.Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
-            <div className="flex-1">
-              <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Kami</p>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Mulai dari {result.startChapter}</h3>
-              <p className="text-gray-700 text-sm md:text-base">
-                Estimasi selesai ke B2: <span className="font-bold">{result.estimationMonths} bulan</span> dengan kelas private intensif (3x/minggu).
-              </p>
+        {/* SOFT GATE: Basic recommendation always visible, detail unlocks with WA */}
+        {!unlocked ? (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+            className={"rounded-3xl p-6 md:p-8 mb-6 border " + lc.soft + " " + lc.border}>
+            <div className="flex items-start gap-3 mb-4">
+              <Icons.Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
+              <div className="flex-1">
+                <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Singkat</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Kamu siap mulai dari level {result.sublevel}</h3>
+                <p className="text-gray-700 text-sm md:text-base mb-4">
+                  Kami punya <strong>learning plan personal</strong> untuk kamu: chapter spesifik, estimasi durasi, dan saran program terbaik.
+                </p>
+              </div>
             </div>
-          </div>
-        </motion.div>
 
+            {!showGate ? (
+              <button onClick={() => setShowGate(true)}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors">
+                <Icons.Unlock className="w-4 h-4" />
+                Dapatkan Learning Plan Gratis
+              </button>
+            ) : (
+              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }}
+                className="bg-white rounded-2xl p-5 border border-gray-200 overflow-hidden">
+                <p className="text-sm font-semibold text-gray-900 mb-1">Simpan hasil test kamu</p>
+                <p className="text-xs text-gray-500 mb-4">Pengajar Linguo akan kirim learning plan personal via WhatsApp.</p>
+                <div className="space-y-3">
+                  <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)}
+                    placeholder="Nama kamu"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+                  <div className="flex">
+                    <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
+                    <input type="tel" value={waValue} onChange={(e) => setWaValue(e.target.value)}
+                      placeholder="812 xxxx xxxx" inputMode="numeric"
+                      className="flex-1 px-4 py-3 rounded-r-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+                  </div>
+                  {gateError && <p className="text-xs text-rose-600">{gateError}</p>}
+                  <button onClick={submitGate} disabled={submitting}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A9E9E] text-white rounded-xl font-semibold hover:bg-[#147a7a] disabled:opacity-50 transition-colors">
+                    {submitting ? "Menyimpan..." : "Simpan & Tampilkan Detail"}
+                    {!submitting && <Icons.ArrowRight className="w-4 h-4" />}
+                  </button>
+                  <button onClick={() => setShowGate(false)}
+                    className="w-full text-xs text-gray-500 hover:text-gray-700 py-1">
+                    Batal
+                  </button>
+                </div>
+                <p className="text-[10px] text-gray-400 mt-3 text-center">Data aman. Tidak spam.</p>
+              </motion.div>
+            )}
+          </motion.div>
+        ) : (
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
+            className={"rounded-3xl p-6 md:p-8 mb-6 border " + lc.soft + " " + lc.border}>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} />
+              </div>
+              <p className="text-sm font-semibold text-emerald-700">Learning plan tersimpan!</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Icons.Target className={"w-6 h-6 flex-shrink-0 mt-0.5 " + lc.text} />
+              <div className="flex-1">
+                <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Detail</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Mulai dari {result.startChapter}</h3>
+                <p className="text-gray-700 text-sm md:text-base mb-3">
+                  Estimasi selesai ke B2: <strong>{result.estimationMonths} bulan</strong> dengan kelas private intensif (3x/minggu).
+                </p>
+                <p className="text-xs text-gray-500">Pengajar Linguo akan hubungi kamu via WhatsApp dalam 1x24 jam untuk diskusi personal.</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* ACTION BUTTONS */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 }}
           className="flex flex-col gap-3">
           <button onClick={handleStartLearning}
             className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group">
-            Mulai Belajar dari {result.sublevel}
+            Langsung Daftar Kelas
             <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <div className="flex gap-3">
@@ -381,11 +502,6 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
             </button>
           </div>
         </motion.div>
-
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="text-center text-xs text-gray-400 mt-8">
-          Hasil tersimpan untuk membantu pengajar Linguo merekomendasikan kelas yang pas.
-        </motion.p>
       </div>
     </motion.section>
   );
