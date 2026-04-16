@@ -352,7 +352,7 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string}) {
+function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource="",initialName="",initialWa=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string;initialName?:string;initialWa?:string}) {
   const [step, setStep] = useState(1);
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
@@ -364,11 +364,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       // 3. language only → step 2 (pilih program)
       // 4. program only → step 1 (pilih bahasa)
       if (initialLang && initialLevel && initialPreferredProg) {
-        // From placement test — pre-fill lang & level, let user pick program (defaulted to Private)
         setSelLang(initialLang);
         setSelLevel(initialLevel);
         setSelProgram(initialPreferredProg);
-        setStep(2);  // program selection, with Private pre-highlighted
+        setStep(5); // Skip straight to data diri form (nama/email/WA already partially known)
       } else if (initialLang && initialProgram) {
         setSelLang(initialLang); setSelProgram(initialProgram); setStep(3);
       } else if (initialLang) {
@@ -376,9 +375,12 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       } else if (initialProgram) {
         setSelProgram(initialProgram); setStep(1);
       }
+      // Auto-fill form fields dari prefill (placement test flow)
+      if (initialName) setFormName(initialName);
+      if (initialWa) setFormWa(initialWa);
     }
     if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); }
-  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg]);
+  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -684,15 +686,19 @@ function HeroFunnel({lang}:{lang:string}) {
   const [funnelLang, setFunnelLang] = useState("");
   const [funnelLevel, setFunnelLevel] = useState("");
   const [funnelPreferredProg, setFunnelPreferredProg] = useState("");
+  const [funnelPrefillName, setFunnelPrefillName] = useState("");
+  const [funnelPrefillWa, setFunnelPrefillWa] = useState("");
   const [funnelSource, setFunnelSource] = useState("");
-  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string})=>{
-      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");}
+  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillWa?:string})=>{
+      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillWa("");}
       else{
         setFunnelProg(input.program||"");
         setFunnelLang(input.language||"");
         setFunnelLevel(input.level||"");
         setFunnelPreferredProg(input.preferredProgram||"");
         setFunnelSource(input.source||"");
+        setFunnelPrefillName(input.prefillName||"");
+        setFunnelPrefillWa(input.prefillWa||"");
       }
       setFunnelOpen(true);
     };
@@ -744,7 +750,7 @@ function HeroFunnel({lang}:{lang:string}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
     </>
   );
 }

@@ -320,11 +320,23 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
     const w = window as any;
     const langFull = "Bahasa " + meta.name;
     const sourceTag = "placement-test-" + meta.slug;
+    // Get prefill data from localStorage (set by soft-gate submit)
+    let prefillName = "";
+    let prefillWa = "";
+    try {
+      const stored = localStorage.getItem("linguo_prefill");
+      if (stored) {
+        const data = JSON.parse(stored);
+        prefillName = data.name || "";
+        prefillWa = data.whatsapp || "";
+      }
+    } catch {}
     if (typeof w.__openFunnel === "function") {
       try {
         w.__openFunnel({
           language: langFull, level: result.sublevel,
           preferredProgram: "Kelas Private", source: sourceTag,
+          prefillName, prefillWa,
         });
       } catch { w.__openFunnel(langFull); }
     } else {
@@ -362,6 +374,13 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
           name: nameValue.trim(), whatsapp: wa,
         }),
       });
+      // Simpan ke localStorage untuk prefill FunnelModal nanti
+      try {
+        localStorage.setItem("linguo_prefill", JSON.stringify({
+          name: nameValue.trim(),
+          whatsapp: wa,
+        }));
+      } catch {}
       setUnlocked(true);
       setShowGate(false);
     } catch (e) {
