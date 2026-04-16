@@ -37,20 +37,65 @@ export async function generateMetadata(props: any): Promise<Metadata> {
   const params = await props.params;
   const post = await getPost(params.slug);
   if (!post) return { title: "Artikel tidak ditemukan | Linguo.id" };
-  const desc = post.excerpt || (post.content?.replace(/<[^>]*>/g, "").slice(0, 160));
+
+  // SEO fields with smart fallbacks
+  const rawContent = post.content?.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim() || "";
+  const seoTitle = (post.seo_title || post.title).trim();
+  const seoDescription = (post.seo_description || post.excerpt || rawContent.slice(0, 160)).trim();
+  const shareImage = post.og_image || post.cover_image;
+  const keywords = [
+    post.focus_keyword,
+    ...(post.tags || []),
+    post.category,
+    "Linguo.id",
+    "belajar bahasa",
+  ].filter(Boolean) as string[];
+
+  // Title: use SEO title as-is if user set it, else append "| Linguo.id"
+  const fullTitle = post.seo_title ? seoTitle : `${seoTitle} | Linguo.id`;
+
   return {
-    title: post.title + " | Linguo.id",
-    description: desc,
+    title: fullTitle,
+    description: seoDescription,
+    keywords: keywords.length > 0 ? keywords.join(", ") : undefined,
+    authors: [{ name: "Linguo Team", url: "https://linguo.id" }],
     openGraph: {
-      title: post.title,
-      description: desc,
+      title: seoTitle,
+      description: seoDescription,
       url: `https://linguo.id/blog/${post.slug}`,
       siteName: "Linguo.id",
       type: "article",
       publishedTime: post.published_at,
-      ...(post.cover_image ? { images: [{ url: post.cover_image }] } : {}),
+      modifiedTime: post.updated_at || post.published_at,
+      authors: ["Linguo Team"],
+      tags: post.tags,
+      locale: "id_ID",
+      ...(shareImage ? {
+        images: [{
+          url: shareImage,
+          width: 1200,
+          height: 630,
+          alt: seoTitle,
+        }]
+      } : {}),
+    },
+    twitter: {
+      card: shareImage ? "summary_large_image" : "summary",
+      title: seoTitle,
+      description: seoDescription,
+      ...(shareImage ? { images: [shareImage] } : {}),
     },
     alternates: { canonical: `https://linguo.id/blog/${post.slug}` },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
