@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Clock, ArrowLeft, MessageCircle, Share2 } from "lucide-react";
 import Link from "next/link";
 
@@ -190,6 +191,24 @@ const ARTICLE_CSS = `
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  useEffect(() => {
+    const figures = document.querySelectorAll<HTMLElement>(".article-body figure.youtube-embed");
+    figures.forEach(fig => {
+      const id = fig.getAttribute("data-youtube-id");
+      if (!id) return;
+      if (fig.querySelector("iframe")) return;
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/" + id;
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.setAttribute("loading", "lazy");
+      iframe.style.cssText = "width:100%;height:100%;aspect-ratio:16/9;border:none;border-radius:0.75rem;";
+      fig.innerHTML = "";
+      fig.appendChild(iframe);
+    });
+  }, [post?.content]);
 
   // Generate gradient cover based on slug
   const gradients = [
