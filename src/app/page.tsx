@@ -352,11 +352,25 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>void;initialProgram?:string}) {
+function FunnelModal({open,onClose,initialProgram="",initialLang="",initialSource=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialSource?:string}) {
   const [step, setStep] = useState(1);
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
-  useEffect(() => { if (open && initialProgram) { setSelProgram(initialProgram); setStep(1); } if (!open) { setStep(1); setSelProgram(""); } }, [open, initialProgram]);
+  useEffect(() => {
+    if (open) {
+      // Priority: initialLang + initialProgram → skip to step 3 (pilih level)
+      // initialLang only → skip to step 2 (pilih program)
+      // initialProgram only → stay at step 1 (pilih bahasa)
+      if (initialLang && initialProgram) {
+        setSelLang(initialLang); setSelProgram(initialProgram); setStep(3);
+      } else if (initialLang) {
+        setSelLang(initialLang); setStep(2);
+      } else if (initialProgram) {
+        setSelProgram(initialProgram); setStep(1);
+      }
+    }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); }
+  }, [open, initialProgram, initialLang]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -659,7 +673,13 @@ function FunnelModal({open,onClose,initialProgram=""}:{open:boolean;onClose:()=>
 function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
   const [funnelProg, setFunnelProg] = useState("");
-  if(typeof window!=="undefined")(window as any).__openFunnel=(prog:string)=>{setFunnelProg(prog);setFunnelOpen(true)};
+  const [funnelLang, setFunnelLang] = useState("");
+  const [funnelSource, setFunnelSource] = useState("");
+  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;source?:string})=>{
+      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelSource("");}
+      else{setFunnelProg(input.program||"");setFunnelLang(input.language||"");setFunnelSource(input.source||"");}
+      setFunnelOpen(true);
+    };
   const [waNumber, setWaNumber] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
   const [error, setError] = useState("");
@@ -708,7 +728,7 @@ function HeroFunnel({lang}:{lang:string}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialSource={funnelSource}/>
     </>
   );
 }
