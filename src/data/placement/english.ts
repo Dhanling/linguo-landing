@@ -10,6 +10,7 @@ export interface Question {
   options?: string[];
   correct: string | number;
   explanation: string;
+  tip?: string;
 }
 
 export const englishPlacementTest: Question[] = [
