@@ -63,12 +63,12 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
             </h1>
 
             <p className="text-lg md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
-              192 sesi per bahasa. 4 level dari A1 sampai B2. Pilih bahasa — lihat silabus lengkap sebelum kamu daftar.
+              304 sesi per bahasa. 4 level dari A1 sampai B2. Pilih bahasa — lihat silabus lengkap sebelum kamu daftar.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-8 text-sm text-gray-500">
               <div><span className="block text-3xl font-bold text-gray-900">60+</span>Bahasa</div>
-              <div><span className="block text-3xl font-bold text-gray-900">192</span>Sesi per Bahasa</div>
+              <div><span className="block text-3xl font-bold text-gray-900">304</span>Sesi per Bahasa</div>
               <div><span className="block text-3xl font-bold text-gray-900">4</span>Level CEFR</div>
             </div>
           </motion.div>

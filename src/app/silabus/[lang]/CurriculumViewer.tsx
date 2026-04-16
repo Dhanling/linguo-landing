@@ -75,7 +75,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           <StatCard label="Sedang belajar" value={MOCK_STATS.learners.toLocaleString("id-ID")} hint="learner aktif" pulse />
           <StatCard label="Tingkat selesai" value={`${MOCK_STATS.completionRate}%`} hint="lulus B2" />
           <StatCard label="Rating" value={MOCK_STATS.avgRating.toFixed(1)} hint="⭐ di Google" />
-          <StatCard label="Total sesi" value="192" hint="A1 → B2" />
+          <StatCard label="Total sesi" value="304" hint="A1 → B2" />
         </div>
       </section>
 

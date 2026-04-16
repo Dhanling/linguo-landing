@@ -1,3 +1,30 @@
+#!/usr/bin/env node
+// Update English curriculum: 3 (A1) + 4 (A2) + 5 (B1) + 7 (B2) = 19 sublevels × 16 sesi = 304 sesi
+// A1.1-3 = existing preview content (detailed topics)
+// A2.1-4, B1.1-5, B2.1-7 = placeholder titles (preview-locked)
+// Run from ~/linguo-landing
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = process.cwd();
+if (!fs.existsSync(path.join(ROOT, 'src/data/curriculum'))) {
+  console.error('❌ Run dari ~/linguo-landing');
+  process.exit(1);
+}
+
+const write = (rel, content) => {
+  const full = path.join(ROOT, rel);
+  fs.mkdirSync(path.dirname(full), { recursive: true });
+  fs.writeFileSync(full, content.trimStart(), 'utf8');
+  console.log(`  ✅ ${rel}`);
+};
+
+console.log('📝 Update English curriculum ke 3/4/5/7 (19 sublevel × 16 sesi = 304 sesi)...\n');
+
+write('src/data/curriculum/data/english.ts', `
 import type { LanguageCurriculum, SessionPreview } from "../types";
 import { getLanguageBySlug } from "../languages";
 
@@ -294,3 +321,49 @@ const curriculum: LanguageCurriculum = {
 };
 
 export default curriculum;
+`);
+
+// Update /silabus hub page — stats angka harus ganti jadi "19 Chapter · 304 Sesi"
+// Dan /silabus/[lang] hero stats
+// Tapi lebih aman update di CurriculumViewer aja — karena hub page pakai static text
+// Cek apakah SilabusHub punya "192" hard-coded
+const hubPath = path.join(ROOT, 'src/app/silabus/SilabusHub.tsx');
+if (fs.existsSync(hubPath)) {
+  let content = fs.readFileSync(hubPath, 'utf8');
+  const before = content;
+  content = content.replace(/192 Sesi per Bahasa/g, '304 Sesi per Bahasa');
+  content = content.replace(/>192</g, '>304<');
+  content = content.replace(/192 sesi per bahasa/g, '304 sesi per bahasa');
+  content = content.replace(/192 sesi\./g, '304 sesi.');
+  if (content !== before) {
+    fs.writeFileSync(hubPath, content, 'utf8');
+    console.log('  ✅ Updated SilabusHub.tsx (192 → 304)');
+  }
+}
+
+// Update CurriculumViewer stats & dropdown completion % — untuk 4 level
+// Pastikan "192" references di viewer juga updated
+const viewerPath = path.join(ROOT, 'src/app/silabus/[lang]/CurriculumViewer.tsx');
+if (fs.existsSync(viewerPath)) {
+  let content = fs.readFileSync(viewerPath, 'utf8');
+  const before = content;
+  content = content.replace(/0\/192 sesi/g, '0/304 sesi');
+  content = content.replace(/"192"/g, '"304"');
+  content = content.replace(/>192</g, '>304<');
+  if (content !== before) {
+    fs.writeFileSync(viewerPath, content, 'utf8');
+    console.log('  ✅ Updated CurriculumViewer stats (192 → 304)');
+  }
+}
+
+console.log('\n🚀 Git...\n');
+try {
+  execSync('git add -A', { stdio: 'inherit', cwd: ROOT });
+  execSync('git commit -m "feat(silabus): real Linguo structure 3/4/5/7 sublevels, 304 sesi"', { stdio: 'inherit', cwd: ROOT });
+  execSync('git push', { stdio: 'inherit', cwd: ROOT });
+  console.log('\n✅ Pushed\n');
+} catch (e) {
+  console.log('\n⚠️  Git:', e.message);
+}
+
+try { fs.unlinkSync(fileURLToPath(import.meta.url)); } catch {}
