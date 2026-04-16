@@ -21,7 +21,10 @@ export default function ProdukPage() {
   const [name, setName] = useState(""); const [email, setEmail] = useState(""); const [wa, setWa] = useState("");
   const [loading, setLoading] = useState(false); const [error, setError] = useState("");
 
-  const buy = (id: string, nm: string, price: number) => { setProd({id,name:nm,price}); setOpen(true); setError(""); };
+  const buy = (id: string, nm: string, price: number) => {
+    const msg = `Halo Linguo.id! Saya tertarik membeli:\n\n📦 Produk: ${nm}\n💰 Harga: ${formatRp(price)}\n\nMohon info pembayaran. Terima kasih!`;
+    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, '_blank');
+  };
 
   const checkout = async () => {
     if (!name.trim()||!email.trim()||!wa.trim()) { setError("Lengkapi semua field"); return; }
