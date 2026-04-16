@@ -281,10 +281,18 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
     const langFull = "Bahasa " + meta.name;
     const sourceTag = "placement-test-" + meta.slug;
     if (typeof w.__openFunnel === "function") {
-      try { w.__openFunnel({ language: langFull, source: sourceTag }); }
-      catch { w.__openFunnel(langFull); }
+      try {
+        w.__openFunnel({
+          language: langFull,
+          level: result.sublevel,
+          preferredProgram: "Kelas Private",
+          source: sourceTag,
+        });
+      } catch {
+        w.__openFunnel(langFull);
+      }
     } else {
-      window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel;
+      window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel + "&program=Kelas+Private";
     }
   };
 
@@ -351,7 +359,7 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
               <p className={"text-xs uppercase tracking-widest font-semibold mb-1 " + lc.text}>Rekomendasi Kami</p>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Mulai dari {result.startChapter}</h3>
               <p className="text-gray-700 text-sm md:text-base">
-                Estimasi selesai ke level B2: <span className="font-bold">{result.estimationMonths} bulan</span> kalau ikut kelas reguler.
+                Estimasi selesai ke B2: <span className="font-bold">{result.estimationMonths} bulan</span> dengan kelas private intensif (3x/minggu).
               </p>
             </div>
           </div>

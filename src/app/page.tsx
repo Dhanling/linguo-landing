@@ -352,16 +352,24 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose,initialProgram="",initialLang="",initialSource=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialSource?:string}) {
+function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string}) {
   const [step, setStep] = useState(1);
   const [selLang, setSelLang] = useState("");
   const [selProgram, setSelProgram] = useState("");
   useEffect(() => {
     if (open) {
-      // Priority: initialLang + initialProgram → skip to step 3 (pilih level)
-      // initialLang only → skip to step 2 (pilih program)
-      // initialProgram only → stay at step 1 (pilih bahasa)
-      if (initialLang && initialProgram) {
+      // Priority logic:
+      // 1. Placement test flow: language + level + preferredProgram → step 2 (pilih program, pre-highlight preferredProgram)
+      // 2. language + program → step 3 (pilih level)
+      // 3. language only → step 2 (pilih program)
+      // 4. program only → step 1 (pilih bahasa)
+      if (initialLang && initialLevel && initialPreferredProg) {
+        // From placement test — pre-fill lang & level, let user pick program (defaulted to Private)
+        setSelLang(initialLang);
+        setSelLevel(initialLevel);
+        setSelProgram(initialPreferredProg);
+        setStep(2);  // program selection, with Private pre-highlighted
+      } else if (initialLang && initialProgram) {
         setSelLang(initialLang); setSelProgram(initialProgram); setStep(3);
       } else if (initialLang) {
         setSelLang(initialLang); setStep(2);
@@ -369,8 +377,8 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialSourc
         setSelProgram(initialProgram); setStep(1);
       }
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); }
-  }, [open, initialProgram, initialLang]);
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); }
+  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -674,10 +682,18 @@ function HeroFunnel({lang}:{lang:string}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
   const [funnelProg, setFunnelProg] = useState("");
   const [funnelLang, setFunnelLang] = useState("");
+  const [funnelLevel, setFunnelLevel] = useState("");
+  const [funnelPreferredProg, setFunnelPreferredProg] = useState("");
   const [funnelSource, setFunnelSource] = useState("");
-  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;source?:string})=>{
-      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelSource("");}
-      else{setFunnelProg(input.program||"");setFunnelLang(input.language||"");setFunnelSource(input.source||"");}
+  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string})=>{
+      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");}
+      else{
+        setFunnelProg(input.program||"");
+        setFunnelLang(input.language||"");
+        setFunnelLevel(input.level||"");
+        setFunnelPreferredProg(input.preferredProgram||"");
+        setFunnelSource(input.source||"");
+      }
       setFunnelOpen(true);
     };
   const [waNumber, setWaNumber] = useState("");
@@ -728,7 +744,7 @@ function HeroFunnel({lang}:{lang:string}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialSource={funnelSource}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource}/>
     </>
   );
 }
