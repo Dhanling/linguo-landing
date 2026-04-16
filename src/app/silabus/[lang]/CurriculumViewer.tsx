@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 import type { LanguageCurriculum, Level, Sublevel } from "@/data/curriculum";
 import { getIconForSession } from "@/data/curriculum/sessionIcons";
 
@@ -99,6 +100,10 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           </div>
 
           <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-7">{overview}</p>
+
+          <div className="mb-5">
+            <LanguageSwitcher currentSlug={meta.slug} currentName={\`Bahasa \${meta.name}\`} currentFlag={meta.flag} />
+          </div>
 
           {/* PRIMARY HERO CTA */}
           <div className="flex flex-col sm:flex-row gap-3">
