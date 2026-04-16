@@ -1,4 +1,18 @@
-"use client";
+#!/usr/bin/env node
+// Rebuild PlacementPicker: fix emoji, add search, categories
+// Run: cd ~/linguo-landing && node fix-placement-picker.mjs
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { execSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = process.cwd();
+const filePath = path.join(ROOT, 'src/components/PlacementPicker.tsx');
+
+console.log('📝 Rebuild PlacementPicker...\n');
+
+const code = `"use client";
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,27 +29,27 @@ interface Lang {
 }
 
 const LANGUAGES: Lang[] = [
-  { slug: "english",   name: "Inggris",  native: "English",    flag: "🇬🇧", available: true,  category: ["populer", "eropa"] },
-  { slug: "japanese",  name: "Jepang",   native: "日本語",     flag: "🇯🇵", available: false, category: ["populer", "asia"] },
-  { slug: "korean",    name: "Korea",    native: "한국어",     flag: "🇰🇷", available: false, category: ["populer", "asia"] },
-  { slug: "mandarin",  name: "Mandarin", native: "中文",           flag: "🇨🇳", available: false, category: ["populer", "asia"] },
-  { slug: "spanish",   name: "Spanyol",  native: "Español",           flag: "🇪🇸", available: false, category: ["populer", "eropa"] },
-  { slug: "french",    name: "Prancis",  native: "Français",          flag: "🇫🇷", available: false, category: ["populer", "eropa"] },
-  { slug: "arabic",    name: "Arab",     native: "العربية", flag: "🇸🇦", available: false, category: ["populer", "timur-tengah"] },
-  { slug: "german",    name: "Jerman",   native: "Deutsch",                flag: "🇩🇪", available: false, category: ["eropa"] },
-  { slug: "italian",   name: "Italia",   native: "Italiano",               flag: "🇮🇹", available: false, category: ["eropa"] },
-  { slug: "dutch",     name: "Belanda",  native: "Nederlands",             flag: "🇳🇱", available: false, category: ["eropa"] },
-  { slug: "russian",   name: "Rusia",    native: "Русский", flag: "🇷🇺", available: false, category: ["eropa"] },
-  { slug: "turkish",   name: "Turki",    native: "Türkçe",      flag: "🇹🇷", available: false, category: ["eropa"] },
-  { slug: "portuguese",name: "Portugis", native: "Português",         flag: "🇵🇹", available: false, category: ["eropa"] },
-  { slug: "thai",      name: "Thailand", native: "ภาษาไทย", flag: "🇹🇭", available: false, category: ["asia"] },
-  { slug: "vietnamese",name: "Vietnam",  native: "Tiếng Việt",   flag: "🇻🇳", available: false, category: ["asia"] },
-  { slug: "hindi",     name: "Hindi",    native: "हिन्दी", flag: "🇮🇳", available: false, category: ["asia"] },
-  { slug: "persian",   name: "Persia",   native: "فارسی", flag: "🇮🇷", available: false, category: ["timur-tengah"] },
-  { slug: "hebrew",    name: "Ibrani",   native: "עברית", flag: "🇮🇱", available: false, category: ["timur-tengah"] },
-  { slug: "javanese",  name: "Jawa",     native: "Basa Jawa",              flag: "🇮🇩", available: false, category: ["nusantara"] },
-  { slug: "sundanese", name: "Sunda",    native: "Basa Sunda",             flag: "🇮🇩", available: false, category: ["nusantara"] },
-  { slug: "bipa",      name: "BIPA",     native: "Bahasa Indonesia",       flag: "🇮🇩", available: false, category: ["nusantara"] },
+  { slug: "english",   name: "Inggris",  native: "English",    flag: "\uD83C\uDDEC\uD83C\uDDE7", available: true,  category: ["populer", "eropa"] },
+  { slug: "japanese",  name: "Jepang",   native: "\u65E5\u672C\u8A9E",     flag: "\uD83C\uDDEF\uD83C\uDDF5", available: false, category: ["populer", "asia"] },
+  { slug: "korean",    name: "Korea",    native: "\uD55C\uAD6D\uC5B4",     flag: "\uD83C\uDDF0\uD83C\uDDF7", available: false, category: ["populer", "asia"] },
+  { slug: "mandarin",  name: "Mandarin", native: "\u4E2D\u6587",           flag: "\uD83C\uDDE8\uD83C\uDDF3", available: false, category: ["populer", "asia"] },
+  { slug: "spanish",   name: "Spanyol",  native: "Espa\u00F1ol",           flag: "\uD83C\uDDEA\uD83C\uDDF8", available: false, category: ["populer", "eropa"] },
+  { slug: "french",    name: "Prancis",  native: "Fran\u00E7ais",          flag: "\uD83C\uDDEB\uD83C\uDDF7", available: false, category: ["populer", "eropa"] },
+  { slug: "arabic",    name: "Arab",     native: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629", flag: "\uD83C\uDDF8\uD83C\uDDE6", available: false, category: ["populer", "timur-tengah"] },
+  { slug: "german",    name: "Jerman",   native: "Deutsch",                flag: "\uD83C\uDDE9\uD83C\uDDEA", available: false, category: ["eropa"] },
+  { slug: "italian",   name: "Italia",   native: "Italiano",               flag: "\uD83C\uDDEE\uD83C\uDDF9", available: false, category: ["eropa"] },
+  { slug: "dutch",     name: "Belanda",  native: "Nederlands",             flag: "\uD83C\uDDF3\uD83C\uDDF1", available: false, category: ["eropa"] },
+  { slug: "russian",   name: "Rusia",    native: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439", flag: "\uD83C\uDDF7\uD83C\uDDFA", available: false, category: ["eropa"] },
+  { slug: "turkish",   name: "Turki",    native: "T\u00FCrk\u00E7e",      flag: "\uD83C\uDDF9\uD83C\uDDF7", available: false, category: ["eropa"] },
+  { slug: "portuguese",name: "Portugis", native: "Portugu\u00EAs",         flag: "\uD83C\uDDF5\uD83C\uDDF9", available: false, category: ["eropa"] },
+  { slug: "thai",      name: "Thailand", native: "\u0E20\u0E32\u0E29\u0E32\u0E44\u0E17\u0E22", flag: "\uD83C\uDDF9\uD83C\uDDED", available: false, category: ["asia"] },
+  { slug: "vietnamese",name: "Vietnam",  native: "Ti\u1EBFng Vi\u1EC7t",   flag: "\uD83C\uDDFB\uD83C\uDDF3", available: false, category: ["asia"] },
+  { slug: "hindi",     name: "Hindi",    native: "\u0939\u093F\u0928\u094D\u0926\u0940", flag: "\uD83C\uDDEE\uD83C\uDDF3", available: false, category: ["asia"] },
+  { slug: "persian",   name: "Persia",   native: "\u0641\u0627\u0631\u0633\u06CC", flag: "\uD83C\uDDEE\uD83C\uDDF7", available: false, category: ["timur-tengah"] },
+  { slug: "hebrew",    name: "Ibrani",   native: "\u05E2\u05D1\u05E8\u05D9\u05EA", flag: "\uD83C\uDDEE\uD83C\uDDF1", available: false, category: ["timur-tengah"] },
+  { slug: "javanese",  name: "Jawa",     native: "Basa Jawa",              flag: "\uD83C\uDDEE\uD83C\uDDE9", available: false, category: ["nusantara"] },
+  { slug: "sundanese", name: "Sunda",    native: "Basa Sunda",             flag: "\uD83C\uDDEE\uD83C\uDDE9", available: false, category: ["nusantara"] },
+  { slug: "bipa",      name: "BIPA",     native: "Bahasa Indonesia",       flag: "\uD83C\uDDEE\uD83C\uDDE9", available: false, category: ["nusantara"] },
 ];
 
 const CATEGORIES: { key: string; label: string }[] = [
@@ -189,3 +203,20 @@ export default function PlacementPicker({ open, onClose }: Props) {
     </AnimatePresence>
   );
 }
+`;
+
+fs.writeFileSync(filePath, code, 'utf8');
+console.log('  \u2705 PlacementPicker.tsx rebuilt\n');
+
+console.log('\uD83D\uDE80 Git commit + push...\n');
+try {
+  execSync('git add -A', { stdio: 'inherit', cwd: ROOT });
+  execSync('git commit -m "fix(picker): rebuild with search, categories, fixed emoji"', { stdio: 'inherit', cwd: ROOT });
+  execSync('git push', { stdio: 'inherit', cwd: ROOT });
+  console.log('\n\u2705 Pushed\n');
+} catch (e) {
+  console.log('\n\u26A0\uFE0F  Git error:', e.message);
+  console.log('Manual: cd ~/linguo-landing && git add -A && git commit -m "fix: picker" && git push');
+}
+
+try { fs.unlinkSync(fileURLToPath(import.meta.url)); } catch {}
