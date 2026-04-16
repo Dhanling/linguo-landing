@@ -203,6 +203,16 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   useEffect(() => {
     // Hydrate YouTube embeds — rebuild iframes from data-youtube-id
     const hydrateYouTube = () => {
+      // Also handle raw iframes from editor
+      const rawIframes = document.querySelectorAll<HTMLIFrameElement>(".article-body iframe[src*='youtube']");
+      rawIframes.forEach(iframe => {
+        const wrapper = document.createElement("div");
+        wrapper.style.cssText = "position:relative;width:100%;padding-bottom:56.25%;margin:1.5rem 0;border-radius:1rem;overflow:hidden;";
+        iframe.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:1rem;";
+        iframe.parentNode?.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+      });
+
       const figures = document.querySelectorAll<HTMLElement>(".article-body figure.youtube-embed");
       figures.forEach(fig => {
         const id = fig.getAttribute("data-youtube-id");
@@ -332,7 +342,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-16">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="article-body" dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         {/* Tags bottom */}
