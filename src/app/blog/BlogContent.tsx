@@ -10,7 +10,7 @@ interface BlogPost {
   title: string;
   content: string;
   excerpt?: string;
-  featured_image?: string;
+  cover_image?: string;
   category?: string;
   tags?: string[];
   author?: string;
@@ -58,8 +58,8 @@ function FeaturedCard({ post }: { post: BlogPost }) {
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-all duration-300">
         <div className="grid md:grid-cols-5 gap-0">
           <div className="md:col-span-3 relative overflow-hidden aspect-[16/10] md:aspect-auto">
-            {post.featured_image ? (
-              <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            {post.cover_image ? (
+              <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             ) : (
               <div className="w-full h-full min-h-[280px] bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center">
                 <span className="text-white/30 text-6xl font-bold">L</span>
@@ -95,8 +95,8 @@ function TerbaruCard({ post }: { post: BlogPost }) {
   return (
     <Link href={"/blog/" + post.slug} className="group flex gap-4 p-3 rounded-xl border border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md transition-all duration-300 bg-white">
       <div className="w-24 h-24 shrink-0 rounded-xl overflow-hidden">
-        {post.featured_image ? (
-          <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+        {post.cover_image ? (
+          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-violet-200 to-pink-200" />
         )}
@@ -149,8 +149,8 @@ function RekomendasiCard({ post }: { post: BlogPost }) {
   return (
     <Link href={"/blog/" + post.slug} className="group flex gap-4 items-center p-3 rounded-xl hover:bg-slate-50 transition-all duration-300">
       <div className="w-16 h-16 shrink-0 rounded-full overflow-hidden ring-2 ring-slate-100 group-hover:ring-[#1A9E9E]/30 transition-all">
-        {post.featured_image ? (
-          <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover" />
+        {post.cover_image ? (
+          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-cyan-200 to-emerald-200" />
         )}
@@ -410,8 +410,8 @@ export default function BlogContent({ initialPosts }: { initialPosts: BlogPost[]
                   {paged.map(post => (
                     <Link key={post.id} href={"/blog/" + post.slug} className="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:shadow-lg hover:border-[#1A9E9E]/20 transition-all duration-300">
                       <div className="aspect-[16/10] overflow-hidden">
-                        {post.featured_image ? (
-                          <img src={post.featured_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        {post.cover_image ? (
+                          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-[#1A9E9E]/20 to-[#2ABFBF]/20 flex items-center justify-center">
                             <span className="text-[#1A9E9E]/30 text-4xl font-bold">L</span>
