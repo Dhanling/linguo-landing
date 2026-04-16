@@ -4,17 +4,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
-  description: "Belajar 55+ bahasa asing online rasa offline! Silabus, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 29.000.",
-  openGraph: {
-    title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
-    description: "Belajar 55+ bahasa asing online rasa offline! Mulai dari Rp 29.000.",
-    url: "https://linguo.id",
-    siteName: "Linguo.id",
-    locale: "id_ID",
-    type: "website",
-  },
-export const metadata: Metadata = {
-  title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
   description: "Belajar 55+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 29.000.",
   openGraph: {
     title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",

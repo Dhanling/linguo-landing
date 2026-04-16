@@ -272,11 +272,6 @@ export default function KelasAnakPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Kelas Kids vs Silabus (Dewasa)</h2>
-      {/* Comparison with adult */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Kelas Kids vs Kelas Private (Dewasa)</h2>
             <p className="text-slate-500 text-sm">Lihat perbedaannya</p>
           </motion.div>

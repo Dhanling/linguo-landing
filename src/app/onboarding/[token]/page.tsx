@@ -92,8 +92,6 @@ const GOALS = [
 ];
 
 const PROGRAM_LABELS: Record<string, string> = {
-  "private": "Silabus", "reguler": "Kelas Reguler", "ielts-toefl": "IELTS/TOEFL Prep",
-const PROGRAM_LABELS: Record<string, string> = {
   "private": "Kelas Private", "reguler": "Kelas Reguler", "ielts-toefl": "IELTS/TOEFL Prep",
   "Kelas Private": "Kelas Private", "Kelas Reguler": "Kelas Reguler", "IELTS/TOEFL Prep": "IELTS/TOEFL Prep",
 };

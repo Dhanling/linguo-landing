@@ -36,7 +36,6 @@ const TEACHERS = [
 const FAQS = [
   {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif."},
   {q:"Boleh ikut lebih dari 1 bahasa?",a:"Boleh banget! Kamu bisa daftar beberapa bahasa sekaligus."},
-  {q:"Bagaimana format kelasnya?",a:"Silabus 1-on-1 via Zoom. Request jadwal & topik sesukamu. Dapat rekaman & materi."},
   {q:"Bagaimana format kelasnya?",a:"Kelas Private 1-on-1 via Zoom. Request jadwal & topik sesukamu. Dapat rekaman & materi."},
   {q:"Dapat sertifikat?",a:"Ya! Setiap siswa yang menyelesaikan kursus mendapat e-certificate."},
   {q:"Cara bayarnya?",a:"Transfer bank, QRIS, GoPay, OVO, dan lainnya. Konfirmasi otomatis."},
