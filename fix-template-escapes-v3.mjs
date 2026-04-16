@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Fix: remove invalid backslash-dollar in template literals causing Vercel build fail
+// Fix invalid escape sequences in template literals: \` and \${
 // Run from ~/linguo-landing root
 import fs from "fs";
 import path from "path";
@@ -11,21 +11,39 @@ if (!fs.existsSync(FILE)) {
   process.exit(1);
 }
 
+console.log("[INFO] Reading file...");
 let src = fs.readFileSync(FILE, "utf8");
+
+// Show current line 49 for debug
+const lines49 = src.split("\n");
+console.log("[DEBUG] Current line 49:");
+console.log("   " + (lines49[48] || "(not found)"));
+
 const before = src;
 
-// Replace literal `\${...}` with `${...}` inside template literals
+// Fix 1: Replace \` with ` (invalid backtick escape)
+src = src.replace(/\\`/g, "`");
+
+// Fix 2: Replace \${ with ${ (invalid dollar escape — just in case still lingering)
 src = src.replace(/\\\$\{/g, "${");
 
 if (src === before) {
-  console.log("OK  No backslash-dollar found in " + FILE);
-} else {
-  fs.writeFileSync(FILE, src, "utf8");
-  console.log("[OK] Fixed backslash-dollar in " + FILE);
+  console.log("\n[OK] No invalid escapes found — file may already be fixed");
+  console.log("[INFO] If build still failing, the issue is elsewhere. Check file content:");
+  console.log("       cat " + FILE + " | head -60");
+  process.exit(0);
 }
 
-// Scan other files for same issue
-console.log("\n[INFO] Scanning other files for same issue...");
+fs.writeFileSync(FILE, src, "utf8");
+console.log("\n[OK] Fixed invalid escapes in " + FILE);
+
+// Show fixed line 49
+const newLines = src.split("\n");
+console.log("[DEBUG] Fixed line 49:");
+console.log("   " + (newLines[48] || "(not found)"));
+
+// Scan other files
+console.log("\n[INFO] Scanning other files for same issues...");
 
 function scanDir(dir, results) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -36,7 +54,7 @@ function scanDir(dir, results) {
       scanDir(full, results);
     } else if (/\.(tsx?|jsx?|mjs)$/.test(e.name)) {
       const c = fs.readFileSync(full, "utf8");
-      if (/\\\$\{/.test(c)) results.push(full);
+      if (/\\`/.test(c) || /\\\$\{/.test(c)) results.push(full);
     }
   }
   return results;
@@ -51,11 +69,12 @@ try {
 }
 
 if (problemFiles.length > 0) {
-  console.log("[WARN] Found " + problemFiles.length + " other files with same issue:");
+  console.log("[WARN] Found " + problemFiles.length + " other files with invalid escapes:");
   for (const f of problemFiles) {
     console.log("   - " + f);
     const c = fs.readFileSync(f, "utf8");
-    fs.writeFileSync(f, c.replace(/\\\$\{/g, "${"), "utf8");
+    const fixed = c.replace(/\\`/g, "`").replace(/\\\$\{/g, "${");
+    fs.writeFileSync(f, fixed, "utf8");
     console.log("     [OK] Auto-fixed");
   }
 } else {
@@ -65,7 +84,7 @@ if (problemFiles.length > 0) {
 // Commit & push
 try {
   execSync("git add -A", { stdio: "inherit" });
-  execSync('git commit -m "fix(build): remove invalid backslash-dollar escape in template literals"', { stdio: "inherit" });
+  execSync('git commit -m "fix(build): remove invalid backtick and dollar escapes in template literals"', { stdio: "inherit" });
   execSync("git push", { stdio: "inherit" });
   console.log("\n[OK] Pushed to GitHub");
 } catch (e) {
@@ -79,13 +98,9 @@ try {
 
 console.log("");
 console.log("============================================================");
-console.log("BUILD FIX DEPLOYED");
+console.log("BUILD FIX v3 DEPLOYED");
 console.log("============================================================");
-console.log("");
-console.log("Tunggu ~1 menit buat Vercel rebuild, terus:");
-console.log("1. Cek https://vercel.com/dashboard -> linguo-landing");
-console.log("2. Deployment terbaru harusnya HIJAU (Ready)");
-console.log("3. Balik ke dashboard Blog -> klik Simpan artikel Uzbek");
-console.log("4. Error 'Load failed' harusnya HILANG");
-console.log("5. Video YouTube akan muncul di linguo.id/blog/belajar-bahasa-uzbek");
+console.log("Tunggu Vercel rebuild ~1 menit");
+console.log("Check https://vercel.com/dhanling/linguo-landing/deployments");
+console.log("Harusnya deployment BARU hijau Ready");
 console.log("============================================================");
