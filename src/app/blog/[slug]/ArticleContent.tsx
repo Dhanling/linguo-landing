@@ -180,6 +180,33 @@ const ARTICLE_CSS = `
   font-size: 0.875rem;
 }
 
+/* Video Player */
+.article-body figure.video-embed {
+  margin: 2rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+}
+.article-body figure.video-embed video {
+  width: 100%;
+  display: block;
+  border-radius: 1rem;
+}
+.article-body figure.video-embed figcaption {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.article-body figure.video-embed figcaption::before {
+  content: "🎬";
+  font-size: 0.875rem;
+}
+
 /* Responsive tweaks */
 @media (max-width: 640px) {
   .article-body figure.youtube-embed {
