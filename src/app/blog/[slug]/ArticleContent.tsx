@@ -671,7 +671,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
         {/* Tags bottom */}
         {post.tags && post.tags.length > 0 && (
-          <div className=`tag-bottom flex flex-wrap gap-2 pb-8 border-t pt-6 mb-8 ${darkMode ? "border-slate-700" : "border-slate-100"}`>
+          <div className={`tag-bottom flex flex-wrap gap-2 pb-8 border-t pt-6 mb-8 ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
             <span className="text-sm text-slate-400 mr-1 font-medium">Tags:</span>
             {post.tags.map(tag => (
               <span key={tag} className="text-xs bg-slate-50 border border-slate-200 text-slate-500 px-3 py-1.5 rounded-full hover:border-[#1A9E9E]/30 hover:text-[#1A9E9E] transition-colors cursor-default font-medium">#{tag}</span>
