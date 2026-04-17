@@ -336,6 +336,41 @@ const ARTICLE_CSS = `
   font-size: 1.0625rem;
   line-height: 1.75;
 }
+/* Tables */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+.article-body thead tr {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+.article-body th {
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  text-align: left;
+  color: #0f172a;
+  font-size: 0.875rem;
+  border-bottom: 2px solid #e2e8f0;
+  letter-spacing: -0.01em;
+}
+.article-body td {
+  padding: 0.75rem 1rem;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  line-height: 1.6;
+}
+.article-body tbody tr:hover {
+  background-color: #f8fafc;
+}
+.article-body tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .article-body img {
   border-radius: 1rem;
   margin: 2rem 0;
