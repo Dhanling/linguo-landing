@@ -1,4 +1,12 @@
-"use client";
+#!/usr/bin/env node
+// blog-redesign-landing.mjs — drag ke root linguo-landing, lalu: node blog-redesign-landing.mjs
+import fs from "fs";
+import { execSync } from "child_process";
+
+const FILE = "src/app/blog/[slug]/ArticleContent.tsx";
+if (!fs.existsSync(FILE)) { console.error("❌ Jalankan dari root linguo-landing"); process.exit(1); }
+
+const NEW_CODE = `"use client";
 import { useEffect, useState, useCallback } from "react";
 import { Clock, ArrowLeft, MessageCircle, Share2, ThumbsUp, Send, Facebook, Copy, Check, ChevronUp } from "lucide-react";
 import Link from "next/link";
@@ -28,21 +36,21 @@ function formatDate(dateStr: string) {
   if (!dateStr) return "";
   const d = new Date(dateStr);
   const months = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  return \`\${d.getDate()} \${months[d.getMonth()]} \${d.getFullYear()}\`;
 }
 
 function timeAgo(dateStr: string) {
   const diff = (Date.now() - new Date(dateStr).getTime()) / 1000;
   if (diff < 60) return "baru saja";
-  if (diff < 3600) return `${Math.floor(diff / 60)} menit lalu`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)} jam lalu`;
-  if (diff < 604800) return `${Math.floor(diff / 86400)} hari lalu`;
+  if (diff < 3600) return \`\${Math.floor(diff / 60)} menit lalu\`;
+  if (diff < 86400) return \`\${Math.floor(diff / 3600)} jam lalu\`;
+  if (diff < 604800) return \`\${Math.floor(diff / 86400)} hari lalu\`;
   return formatDate(dateStr);
 }
 
 function readTime(content: string) {
   const text = content?.replace(/<[^>]*>/g, "") || "";
-  const words = text.split(/\s+/).filter(Boolean).length;
+  const words = text.split(/\\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(words / 200));
 }
 
@@ -90,7 +98,7 @@ function ClapButton({ postId }: { postId: string }) {
   const [showCount, setShowCount] = useState(false);
 
   useEffect(() => {
-    fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count`, {
+    fetch(\`\${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.\${postId}&select=clap_count\`, {
       headers: { apikey: SUPABASE_KEY }
     }).then(r => r.json()).then(data => {
       const total = (data || []).reduce((s: number, c: any) => s + (c.clap_count || 0), 0);
@@ -108,11 +116,11 @@ function ClapButton({ postId }: { postId: string }) {
 
     try {
       const hash = getVisitorHash();
-      await fetch(`${SUPABASE_URL}/rest/v1/blog_claps`, {
+      await fetch(\`\${SUPABASE_URL}/rest/v1/blog_claps\`, {
         method: "POST",
         headers: {
           apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Authorization: \`Bearer \${SUPABASE_KEY}\`,
           "Content-Type": "application/json",
           Prefer: "resolution=merge-duplicates",
         },
@@ -131,14 +139,14 @@ function ClapButton({ postId }: { postId: string }) {
     <div className="flex items-center gap-2">
       <button
         onClick={doClap}
-        className={`relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-200 ${
+        className={\`relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-200 \${
           myClaps > 0
             ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]"
             : "border-slate-200 hover:border-[#1A9E9E] text-slate-400 hover:text-[#1A9E9E]"
-        } ${animating ? "scale-110" : "scale-100"}`}
+        } \${animating ? "scale-110" : "scale-100"}\`}
         title="Clap!"
       >
-        <span className={`text-xl transition-transform ${animating ? "scale-125" : ""}`}>👏</span>
+        <span className={\`text-xl transition-transform \${animating ? "scale-125" : ""}\`}>👏</span>
         {showCount && myClaps > 0 && (
           <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs font-bold px-2.5 py-1 rounded-full animate-bounce shadow-lg">
             +{myClaps}
@@ -164,24 +172,24 @@ function ShareButtons({ url, title }: { url: string; title: string }) {
 
   return (
     <div className="flex items-center gap-1.5">
-      <a href={`https://wa.me/?text=${encodedTitle}%20${encoded}`} target="_blank" rel="noopener noreferrer"
+      <a href={\`https://wa.me/?text=\${encodedTitle}%20\${encoded}\`} target="_blank" rel="noopener noreferrer"
         className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-green-50 text-slate-400 hover:text-green-600 transition-all" title="Share via WhatsApp">
         <MessageCircle className="w-[18px] h-[18px]" />
       </a>
-      <a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encoded}`} target="_blank" rel="noopener noreferrer"
+      <a href={\`https://twitter.com/intent/tweet?text=\${encodedTitle}&url=\${encoded}\`} target="_blank" rel="noopener noreferrer"
         className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-sky-50 text-slate-400 hover:text-sky-500 transition-all" title="Share via X">
         <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encoded}`} target="_blank" rel="noopener noreferrer"
+      <a href={\`https://www.facebook.com/sharer/sharer.php?u=\${encoded}\`} target="_blank" rel="noopener noreferrer"
         className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-blue-50 text-slate-400 hover:text-blue-600 transition-all" title="Share via Facebook">
         <Facebook className="w-[18px] h-[18px]" />
       </a>
-      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`} target="_blank" rel="noopener noreferrer"
+      <a href={\`https://www.linkedin.com/sharing/share-offsite/?url=\${encoded}\`} target="_blank" rel="noopener noreferrer"
         className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-blue-50 text-slate-400 hover:text-blue-700 transition-all" title="Share via LinkedIn">
         <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       </a>
       <button onClick={copyLink}
-        className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${copied ? "bg-emerald-50 text-emerald-600" : "hover:bg-slate-100 text-slate-400 hover:text-slate-600"}`} title="Copy link">
+        className={\`w-9 h-9 rounded-full flex items-center justify-center transition-all \${copied ? "bg-emerald-50 text-emerald-600" : "hover:bg-slate-100 text-slate-400 hover:text-slate-600"}\`} title="Copy link">
         {copied ? <Check className="w-[16px] h-[16px]" /> : <Copy className="w-[16px] h-[16px]" />}
       </button>
     </div>
@@ -197,7 +205,7 @@ function CommentsSection({ postId }: { postId: string }) {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    fetch(`${SUPABASE_URL}/rest/v1/blog_comments?post_id=eq.${postId}&is_approved=eq.true&order=created_at.desc&limit=20`, {
+    fetch(\`\${SUPABASE_URL}/rest/v1/blog_comments?post_id=eq.\${postId}&is_approved=eq.true&order=created_at.desc&limit=20\`, {
       headers: { apikey: SUPABASE_KEY }
     }).then(r => r.json()).then(data => setComments(data || [])).catch(() => {});
   }, [postId]);
@@ -206,11 +214,11 @@ function CommentsSection({ postId }: { postId: string }) {
     if (!name.trim() || !text.trim()) return;
     setSending(true);
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_comments`, {
+      const res = await fetch(\`\${SUPABASE_URL}/rest/v1/blog_comments\`, {
         method: "POST",
         headers: {
           apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
+          Authorization: \`Bearer \${SUPABASE_KEY}\`,
           "Content-Type": "application/json",
           Prefer: "return=representation",
         },
@@ -289,7 +297,7 @@ function CommentsSection({ postId }: { postId: string }) {
 }
 
 // ========== ARTICLE CSS ==========
-const ARTICLE_CSS = `
+const ARTICLE_CSS = \`
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
 
 .blog-page { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -411,10 +419,10 @@ const ARTICLE_CSS = `
   .article-body figure.video-embed { margin: 1.5rem -1.5rem; border-radius: 0; }
   .article-body figure.video-embed video { border-radius: 0; }
 }
-`;
+\`;
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
-  const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
+  const shareUrl = typeof window !== "undefined" ? window.location.href : \`https://linguo.id/blog/\${post.slug}\`;
 
   // YouTube hydration
   useEffect(() => {
@@ -454,7 +462,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const gradIdx = (post.slug || "").split("").reduce((a: number, c: string) => a + c.charCodeAt(0), 0) % gradients.length;
   const grad = gradients[gradIdx];
 
-  const langMatch = post.title?.match(/Bahasa\s+([^:]+)/);
+  const langMatch = post.title?.match(/Bahasa\\s+([^:]+)/);
   const langName = langMatch ? langMatch[1].trim() : "";
   const minutes = readTime(post.content);
 
@@ -477,7 +485,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       </nav>
 
       {/* Cover Image / Hero */}
-      <div className={`relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br ${grad} overflow-hidden`}>
+      <div className={\`relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br \${grad} overflow-hidden\`}>
         {post.cover_image ? (
           <>
             <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
@@ -636,3 +644,21 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
     </div>
   );
 }
+`;
+
+fs.writeFileSync(FILE, NEW_CODE);
+console.log("✅ ArticleContent.tsx fully redesigned");
+console.log("   — Plus Jakarta Sans font");
+console.log("   — Dark readable text");
+console.log("   — Medium-style Clap button");
+console.log("   — Share buttons (WA, X, FB, LinkedIn, Copy)");
+console.log("   — Comments section");
+console.log("   — Sticky social bar (desktop)");
+console.log("   — Video embed CSS");
+
+execSync("git add -A", { stdio: "inherit" });
+execSync('git commit -m "feat(blog): full redesign — Plus Jakarta Sans, claps, share, comments, dark text"', { stdio: "inherit" });
+execSync("git push", { stdio: "inherit" });
+console.log("\n🚀 Pushed!");
+fs.unlinkSync("blog-redesign-landing.mjs");
+console.log("🧹 Done.");
