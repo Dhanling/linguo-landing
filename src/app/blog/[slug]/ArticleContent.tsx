@@ -623,7 +623,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       <main className="max-w-3xl mx-auto px-6">
         {/* Article Meta Card */}
-        <div className="article-meta-card relative -mt-10 rounded-2xl shadow-sm border px-6 sm:px-10 py-8 mb-8">
+        <div className="article-meta-card relative -mt-10 rounded-2xl shadow-sm border border-slate-100 bg-white px-6 sm:px-10 py-8 mb-8">
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map(tag => (
