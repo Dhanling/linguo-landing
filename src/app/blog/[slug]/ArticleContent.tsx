@@ -82,6 +82,51 @@ function RelatedCard({ post }: { post: BlogPost }) {
   );
 }
 
+// ========== READING CONTROLS (font size + dark mode) ==========
+function ReadingControls({ fontSize, setFontSize, darkMode, setDarkMode }: {
+  fontSize: "s" | "m" | "l"; setFontSize: (s: "s" | "m" | "l") => void;
+  darkMode: boolean; setDarkMode: (b: boolean) => void;
+}) {
+  const sizes: { key: "s" | "m" | "l"; label: string }[] = [
+    { key: "s", label: "A" },
+    { key: "m", label: "A" },
+    { key: "l", label: "A" },
+  ];
+  return (
+    <div className="flex items-center gap-3">
+      {/* Font size */}
+      <div className={`flex items-center rounded-full p-0.5 ${darkMode ? "bg-slate-700" : "bg-slate-100"}`}>
+        {sizes.map((s, i) => (
+          <button key={s.key} onClick={() => setFontSize(s.key)}
+            className={`px-2.5 py-1 rounded-full text-center transition-all font-semibold leading-none ${
+              fontSize === s.key
+                ? darkMode ? "bg-slate-600 text-white shadow-sm" : "bg-white text-slate-900 shadow-sm"
+                : darkMode ? "text-slate-400 hover:text-slate-200" : "text-slate-400 hover:text-slate-600"
+            }`}
+            title={`Font ${s.key === "s" ? "kecil" : s.key === "m" ? "sedang" : "besar"}`}
+            style={{ fontSize: i === 0 ? "12px" : i === 1 ? "15px" : "18px" }}
+          >{s.label}</button>
+        ))}
+      </div>
+      {/* Dark/Light */}
+      <button onClick={() => setDarkMode(!darkMode)}
+        className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
+          darkMode
+            ? "bg-slate-700 text-amber-400 hover:bg-slate-600"
+            : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+        }`}
+        title={darkMode ? "Light mode" : "Dark mode"}
+      >
+        {darkMode ? (
+          <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        ) : (
+          <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
 // ========== CLAP BUTTON (Medium-style) ==========
 function ClapButton({ postId }: { postId: string }) {
   const [claps, setClaps] = useState(0);
@@ -227,13 +272,13 @@ function CommentsSection({ postId }: { postId: string }) {
   };
 
   return (
-    <div className="border-t border-slate-100 pt-10 mb-16">
+    <div className="comment-section border-t border-slate-100 pt-10 mb-16">
       <h3 className="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
         Komentar <span className="text-sm font-normal text-slate-400">({comments.length})</span>
       </h3>
 
       {/* Comment Form */}
-      <div className="bg-slate-50 rounded-2xl p-5 sm:p-6 mb-8">
+      <div className="comment-form bg-slate-50 rounded-2xl p-5 sm:p-6 mb-8">
         <input
           value={name}
           onChange={e => setName(e.target.value)}
@@ -436,6 +481,44 @@ const ARTICLE_CSS = `
 }
 .article-body figure.video-embed figcaption::before { content: "🎬"; font-size: 0.875rem; }
 
+/* Font size variants */
+.text-size-s .article-body p,
+.text-size-s .article-body li { font-size: 0.9375rem; line-height: 1.75; }
+.text-size-s .article-body h2 { font-size: 1.375rem; }
+.text-size-s .article-body h3 { font-size: 1.125rem; }
+
+.text-size-l .article-body p,
+.text-size-l .article-body li { font-size: 1.1875rem; line-height: 1.9; }
+.text-size-l .article-body h2 { font-size: 1.875rem; }
+.text-size-l .article-body h3 { font-size: 1.5rem; }
+
+/* Dark mode */
+.blog-dark { background-color: #0f172a; color: #e2e8f0; }
+.blog-dark nav { background: rgba(15,23,42,0.95) !important; border-color: #1e293b !important; }
+.blog-dark nav a, .blog-dark nav span { color: #94a3b8 !important; }
+.blog-dark nav a:hover { color: #e2e8f0 !important; }
+.blog-dark .article-meta-card { background: #1e293b; border-color: #334155; }
+.blog-dark .article-body h2 { color: #f1f5f9; border-color: #334155; }
+.blog-dark .article-body h3 { color: #f1f5f9; }
+.blog-dark .article-body p { color: #cbd5e1; }
+.blog-dark .article-body strong { color: #f1f5f9; }
+.blog-dark .article-body li { color: #cbd5e1; }
+.blog-dark .article-body a { color: #2dd4bf; }
+.blog-dark .article-body blockquote { background: #1e293b; border-color: #2dd4bf; color: #94a3b8; }
+.blog-dark .article-body table { border-color: #334155; }
+.blog-dark .article-body th { background: #1e293b; color: #e2e8f0; border-color: #334155; }
+.blog-dark .article-body td { color: #cbd5e1; border-color: #1e293b; }
+.blog-dark .article-body tbody tr:hover { background-color: #1e293b; }
+.blog-dark .comment-section { border-color: #334155; }
+.blog-dark .comment-form { background: #1e293b; }
+.blog-dark .comment-form input, .blog-dark .comment-form textarea {
+  background: #0f172a; border-color: #334155; color: #e2e8f0;
+}
+.blog-dark .social-bar { border-color: #334155; }
+.blog-dark .tag-bottom { border-color: #334155; }
+.blog-dark .related-card { background: #1e293b; border-color: #334155; }
+.blog-dark .related-card h3 { color: #e2e8f0; }
+
 /* Responsive */
 @media (max-width: 640px) {
   .article-body h2 { font-size: 1.375rem; }
@@ -494,7 +577,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const minutes = readTime(post.content);
 
   return (
-    <div className="blog-page min-h-screen bg-white">
+    <div className={`blog-page min-h-screen transition-colors duration-300 ${darkMode ? "blog-dark bg-[#0f172a]" : "bg-white"} ${fontClass}`}>
       <style dangerouslySetInnerHTML={{ __html: ARTICLE_CSS }} />
 
       {/* Navbar */}
@@ -537,7 +620,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       <main className="max-w-3xl mx-auto px-6">
         {/* Article Meta Card */}
-        <div className="relative -mt-10 bg-white rounded-2xl shadow-sm border border-slate-100 px-6 sm:px-10 py-8 mb-8">
+        <div className="article-meta-card relative -mt-10 rounded-2xl shadow-sm border px-6 sm:px-10 py-8 mb-8">
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map(tag => (
@@ -546,7 +629,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
             </div>
           )}
 
-          <h1 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">{post.title}</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold leading-tight mb-6 tracking-tight">{post.title}</h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
             <div className="flex items-center gap-2.5">
@@ -563,20 +646,26 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
 
 
+        {/* Reading Controls */}
+        <div className={`flex items-center justify-between py-3 px-1 mb-6 border-b ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
+          <span className={`text-xs font-medium ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{minutes} min read</span>
+          <ReadingControls fontSize={fontSize} setFontSize={setFontSize} darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         {/* Social Bar — Clap + Share */}
-        <div className="flex items-center justify-between py-5 px-1 mb-8 border-y border-slate-100">
+        <div className=`social-bar flex items-center justify-between py-5 px-1 mb-8 border-y ${darkMode ? "border-slate-700" : "border-slate-100"}`>
           <ClapButton postId={post.id} />
           <ShareButtons url={shareUrl} title={post.title} />
         </div>
 
         {/* Tags bottom */}
         {post.tags && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 pb-8 border-t border-slate-100 pt-6 mb-8">
+          <div className=`tag-bottom flex flex-wrap gap-2 pb-8 border-t pt-6 mb-8 ${darkMode ? "border-slate-700" : "border-slate-100"}`>
             <span className="text-sm text-slate-400 mr-1 font-medium">Tags:</span>
             {post.tags.map(tag => (
               <span key={tag} className="text-xs bg-slate-50 border border-slate-200 text-slate-500 px-3 py-1.5 rounded-full hover:border-[#1A9E9E]/30 hover:text-[#1A9E9E] transition-colors cursor-default font-medium">#{tag}</span>
