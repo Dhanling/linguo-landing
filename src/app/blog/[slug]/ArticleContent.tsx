@@ -572,6 +572,9 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const gradIdx = (post.slug || "").split("").reduce((a: number, c: string) => a + c.charCodeAt(0), 0) % gradients.length;
   const grad = gradients[gradIdx];
 
+  const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
+  const [darkMode, setDarkMode] = useState(false);
+  const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
   const langMatch = post.title?.match(/Bahasa\s+([^:]+)/);
   const langName = langMatch ? langMatch[1].trim() : "";
   const minutes = readTime(post.content);
