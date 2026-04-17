@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
-import { Clock, ArrowLeft, MessageCircle, Share2, ThumbsUp, Send, Facebook, Copy, Check, ChevronUp } from "lucide-react";
+import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check } from "lucide-react";
 import Link from "next/link";
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
