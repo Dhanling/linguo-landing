@@ -664,7 +664,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         </article>
 
         {/* Social Bar — Clap + Share */}
-        <div className=`social-bar flex items-center justify-between py-5 px-1 mb-8 border-y ${darkMode ? "border-slate-700" : "border-slate-100"}`>
+        <div className={`social-bar flex items-center justify-between py-5 px-1 mb-8 border-y ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
           <ClapButton postId={post.id} />
           <ShareButtons url={shareUrl} title={post.title} />
         </div>
