@@ -113,15 +113,15 @@ function FeedItem({post,onHide}:{post:BlogPost;onHide:()=>void}){
       <div className="flex items-center gap-2 mb-3">
         <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold shrink-0">L</div>
         <span className="text-[13px] text-slate-500">
-          <span className="font-medium text-slate-800">Linguo Team</span>
-          {post.category&&<> in <span className="font-medium text-slate-800">{post.category}</span></>}
+          <span className="font-semibold text-[#0f172a]">Linguo Team</span>
+          {post.category&&<> in <span className="font-semibold text-[#0f172a]">{post.category}</span></>}
         </span>
       </div>
       {/* Content row */}
       <Link href={"/blog/"+post.slug} className="group flex gap-6">
         <div className="flex-1 min-w-0">
-          <h2 className="text-[20px] font-extrabold text-slate-900 leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2">{post.title}</h2>
-          <p className="text-[15px] text-slate-500 leading-relaxed line-clamp-2 mb-0 hidden sm:block">{exc}</p>
+          <h2 className="text-[20px] font-extrabold text-[#0f172a] leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2">{post.title}</h2>
+          <p className="text-[15px] text-slate-600 leading-relaxed line-clamp-2 mb-0 hidden sm:block">{exc}</p>
         </div>
         <div className="w-28 h-28 sm:w-36 sm:h-32 shrink-0 rounded-lg overflow-hidden">
           <Cover post={post} sz="sm" cls="group-hover:scale-105 transition-transform duration-300"/>
@@ -151,7 +151,7 @@ function FeedItem({post,onHide}:{post:BlogPost;onHide:()=>void}){
 /* ===== SIDEBAR ===== */
 function StaffPicks({posts}:{posts:BlogPost[]}){return(
   <div className="mb-8">
-    <h3 className="text-[15px] font-extrabold text-slate-900 mb-4">Staff Picks</h3>
+    <h3 className="text-[15px] font-extrabold text-[#0f172a] mb-4">Staff Picks</h3>
     <div className="space-y-5">
       {posts.slice(0,3).map(p=>(
         <Link key={p.id} href={"/blog/"+p.slug} className="group block">
@@ -188,8 +188,8 @@ function GridCard({post}:{post:BlogPost}){
       <div className="aspect-[16/10] overflow-hidden"><Cover post={post} cls="group-hover:scale-105 transition-transform duration-500"/></div>
       <div className="p-5 flex flex-col flex-1">
         <Badge cat={post.category}/>
-        <h3 className="font-bold text-[15px] text-slate-900 leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
-        <p className="text-xs text-slate-400 line-clamp-2 mb-4 leading-relaxed flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
+        <h3 className="font-bold text-[15px] text-[#0f172a] leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
+        <p className="text-xs text-slate-600 line-clamp-2 mb-4 leading-relaxed flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
         <div className="flex items-center justify-between pt-3 border-t border-slate-50">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold">L</div>
@@ -303,7 +303,8 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
   const doHide=(slug:string)=>{setHiddenSlugs(prev=>{const n=new Set(prev);n.add(slug);return n})};
 
   return(
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{fontFamily:"'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif"}}>
+      <style dangerouslySetInnerHTML={{__html:`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');`}}/>
       {/* NAV */}
       <nav className="bg-white border-b border-slate-100 sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
