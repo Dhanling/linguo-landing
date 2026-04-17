@@ -120,7 +120,7 @@ function FeedItem({post,onHide}:{post:BlogPost;onHide:()=>void}){
       {/* Content row */}
       <Link href={"/blog/"+post.slug} className="group flex gap-6">
         <div className="flex-1 min-w-0">
-          <h2 className="text-[20px] font-extrabold text-[#0f172a] leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2">{post.title}</h2>
+          <h2 className="text-[22px] font-extrabold text-[#0f172a] leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2">{post.title}</h2>
           <p className="text-[15px] text-slate-600 leading-relaxed line-clamp-2 mb-0 hidden sm:block">{exc}</p>
         </div>
         <div className="w-28 h-28 sm:w-36 sm:h-32 shrink-0 rounded-lg overflow-hidden">
@@ -188,8 +188,8 @@ function GridCard({post}:{post:BlogPost}){
       <div className="aspect-[16/10] overflow-hidden"><Cover post={post} cls="group-hover:scale-105 transition-transform duration-500"/></div>
       <div className="p-5 flex flex-col flex-1">
         <Badge cat={post.category}/>
-        <h3 className="font-bold text-[15px] text-[#0f172a] leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
-        <p className="text-xs text-slate-600 line-clamp-2 mb-4 leading-relaxed flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
+        <h3 className="font-extrabold text-[17px] text-[#0f172a] leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
+        <p className="text-[13px] text-slate-600 leading-relaxed line-clamp-2 mb-4 leading-relaxed flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
         <div className="flex items-center justify-between pt-3 border-t border-slate-50">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold">L</div>
@@ -333,8 +333,9 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
         <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-6 overflow-x-auto">
           {CATEGORIES.map(c=>(
             <button key={c} onClick={()=>{setActiveCat(c);setPage(1)}}
-              className={`text-sm whitespace-nowrap py-3 border-b-2 transition-all ${activeCat===c?"border-[#1A9E9E] text-[#1A9E9E] font-semibold":"border-transparent text-slate-400 hover:text-slate-600"}`}>
+              className={`text-sm whitespace-nowrap py-3 transition-all relative font-semibold ${activeCat===c?"text-[#0f172a]":"text-slate-400 hover:text-slate-700"}`}>
               {c==="Semua"?"For you":c}
+              {activeCat===c&&<span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1A9E9E] rounded-full"/>}
             </button>
           ))}
         </div>
