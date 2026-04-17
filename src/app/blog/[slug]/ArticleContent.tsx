@@ -652,6 +652,12 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           <ReadingControls fontSize={fontSize} setFontSize={setFontSize} darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
 
+        {/* Reading Controls */}
+        <div className={`flex items-center justify-between py-3 px-1 mb-6 border-b ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
+          <span className={`text-xs font-medium ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{minutes} min read</span>
+          <ReadingControls fontSize={fontSize} setFontSize={setFontSize} darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
