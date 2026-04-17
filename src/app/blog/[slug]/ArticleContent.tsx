@@ -526,20 +526,15 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           </div>
         </div>
 
-        {/* Sticky Social Bar (desktop) */}
-        <div className="hidden lg:flex fixed left-[max(1rem,calc(50%-560px))] top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-40">
-          <ClapButton postId={post.id} />
-          <div className="w-px h-6 bg-slate-200" />
-          <ShareButtons url={shareUrl} title={post.title} />
-        </div>
+
 
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
-        {/* Mobile Social Bar */}
-        <div className="lg:hidden flex items-center justify-between py-4 px-2 mb-8 border-y border-slate-100">
+        {/* Social Bar — Clap + Share */}
+        <div className="flex items-center justify-between py-5 px-1 mb-8 border-y border-slate-100">
           <ClapButton postId={post.id} />
           <ShareButtons url={shareUrl} title={post.title} />
         </div>
