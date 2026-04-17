@@ -104,6 +104,10 @@ export default function AkunPage() {
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun">("beranda");
+  // Email/password login
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [showEmailLogin, setShowEmailLogin] = useState(false);
   // Enrollment wizard
   const [showEnroll, setShowEnroll] = useState(false);
   const [enrollStep, setEnrollStep] = useState(0);
@@ -136,6 +140,19 @@ export default function AkunPage() {
     await supabase.auth.signOut();
     setUser(null);
     setStudent(null);
+  };
+
+  const signInWithEmail = async () => {
+    if (!loginEmail || !loginPassword) return;
+    setIsSigningIn(true);
+    const { error } = await supabase.auth.signInWithPassword({
+      email: loginEmail,
+      password: loginPassword,
+    });
+    if (error) {
+      alert(error.message === "Invalid login credentials" ? "Email atau password salah." : error.message);
+    }
+    setIsSigningIn(false);
   };
 
   // ── Data Loading (fixed column names) ────────────────────────────
@@ -305,6 +322,9 @@ export default function AkunPage() {
                       <span className="text-gray-300">→</span>
                     </button>
                   ))}
+                  <a href="/silabus/english/coba" target="_blank" className="flex items-center justify-center gap-2 pt-2 text-xs text-teal-600 hover:underline font-medium">
+                    🎯 Belum tahu levelmu? Coba Placement Test dulu
+                  </a>
                 </motion.div>
               )}
 
@@ -432,6 +452,45 @@ export default function AkunPage() {
                 </>
               )}
             </button>
+
+            <div className="relative my-4">
+              <div className="absolute inset-0 flex items-center"><span className="w-full border-t" /></div>
+              <div className="relative flex justify-center text-xs uppercase"><span className="bg-white px-2 text-gray-400">atau</span></div>
+            </div>
+
+            {!showEmailLogin ? (
+              <button onClick={() => setShowEmailLogin(true)} className="flex h-10 w-full items-center justify-center rounded-xl border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
+                Masuk dengan Email & Password
+              </button>
+            ) : (
+              <div className="space-y-3">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={loginEmail}
+                  onChange={e => setLoginEmail(e.target.value)}
+                  onKeyDown={e => e.key === "Enter" && signInWithEmail()}
+                  className="flex h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+                  autoFocus
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={loginPassword}
+                  onChange={e => setLoginPassword(e.target.value)}
+                  onKeyDown={e => e.key === "Enter" && signInWithEmail()}
+                  className="flex h-10 w-full rounded-xl border border-gray-200 bg-white px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+                />
+                <button
+                  onClick={signInWithEmail}
+                  disabled={isSigningIn || !loginEmail || !loginPassword}
+                  className="flex h-11 w-full items-center justify-center rounded-xl bg-teal-600 text-sm font-semibold text-white hover:bg-teal-700 disabled:opacity-50 transition-colors"
+                >
+                  {isSigningIn ? <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> : "Masuk"}
+                </button>
+              </div>
+            )}
+
             <p className="text-center text-xs text-gray-400 mt-4">Gunakan email yang sama dengan saat mendaftar kelas</p>
           </div>
           <p className="text-center text-xs text-gray-400 mt-6">Belum punya akun? <a href="/" className="text-teal-600 font-medium hover:underline">Daftar kelas dulu</a></p>
@@ -693,6 +752,9 @@ export default function AkunPage() {
                   <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
                     <h3 className="text-sm font-semibold text-gray-700 mb-3">⚡ Aksi Cepat</h3>
                     <div className="space-y-2">
+                      <a href="/silabus/english/coba" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                        <span className="text-lg">🎯</span><span className="text-sm font-medium text-gray-700">Placement Test</span>
+                      </a>
                       <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                         <span className="text-lg">💬</span><span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
                       </a>
