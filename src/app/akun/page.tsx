@@ -1,0 +1,810 @@
+"use client";
+
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { createClient } from "@supabase/supabase-js";
+import { motion, AnimatePresence } from "framer-motion";
+
+// ── Supabase Client ──────────────────────────────────────────────────────
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+// ── Types ────────────────────────────────────────────────────────────────
+type StudentReg = {
+  id: string;
+  product?: string;
+  program?: string;
+  language: string;
+  level: string;
+  sub_level?: string;
+  pipeline_status?: string;
+  status?: string;
+  sessions_total: number;
+  sessions_used?: number;
+  sessions_completed?: number;
+  duration?: string | number;
+  total_amount?: number;
+  amount?: number;
+  payment_status: string;
+  registration_date?: string;
+  created_at?: string;
+  teacher_id?: string;
+  teachers?: { name: string; title?: string; whatsapp?: string } | null;
+};
+
+type StudentData = {
+  id: string;
+  name: string;
+  email?: string;
+  whatsapp?: string;
+  avatar_url?: string;
+  registrations: StudentReg[];
+};
+
+type Badge = {
+  id: string;
+  badge_key: string;
+  badge_icon: string;
+  badge_label: string;
+  earned_at: string;
+};
+
+type Schedule = {
+  id: string;
+  registration_id: string;
+  scheduled_at: string;
+  duration_minutes: number;
+  status: string;
+};
+
+// ── Constants ────────────────────────────────────────────────────────────
+const LANG_FLAGS: Record<string, string> = {
+  Arabic: "sa", Arab: "sa", Dutch: "nl", Belanda: "nl", English: "gb", Inggris: "gb",
+  Hebrew: "il", Ibrani: "il", Italian: "it", Italia: "it", Japanese: "jp", Jepang: "jp",
+  German: "de", Jerman: "de", Korean: "kr", Korea: "kr", Mandarin: "cn", Chinese: "cn",
+  French: "fr", Prancis: "fr", Russian: "ru", Rusia: "ru", Spanish: "es", Spanyol: "es",
+  Turkish: "tr", Turki: "tr", Thai: "th", Vietnamese: "vn", Hindi: "in",
+  Portuguese: "br", Portugis: "br", Danish: "dk", Swedish: "se", Finnish: "fi",
+  Polish: "pl", Czech: "cz", Greek: "gr", Yunani: "gr", Persian: "ir", Persia: "ir",
+  Georgian: "ge", Norwegian: "no", Javanese: "id", Jawa: "id", Sundanese: "id", Sunda: "id", BIPA: "id",
+};
+const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[lang] || "un"}.png`;
+
+const LEVEL_SEQUENCE = ["A1.1","A1.2","A1.3","A2.1","A2.2","A2.3","A2.4","B1.1","B1.2","B1.3","B1.4","B1.5","B2.1","B2.2","B2.3","B2.4","B2.5","B2.6","B2.7"];
+const LEVEL_MILESTONES = ["A1", "A2", "B1", "B2"];
+
+function getLevelKey(level: string, sub?: string) {
+  if (sub) return `${level}.${sub}`;
+  if (level.includes(".")) return level;
+  return level + ".1";
+}
+
+function getLevelProgress(level: string) {
+  const idx = LEVEL_SEQUENCE.indexOf(level);
+  return idx >= 0 ? ((idx + 1) / LEVEL_SEQUENCE.length) * 100 : 5;
+}
+
+function calculateXP(sessions: number, streak: number, badges: number) {
+  const xp = sessions * 100 + streak * 50 + badges * 200;
+  if (xp >= 5000) return { xp, rank: "Master", emoji: "👑", next: "", nextXP: 0 };
+  if (xp >= 3000) return { xp, rank: "Expert", emoji: "💎", next: "Master", nextXP: 5000 };
+  if (xp >= 1500) return { xp, rank: "Jagoan", emoji: "⚔️", next: "Expert", nextXP: 3000 };
+  if (xp >= 500) return { xp, rank: "Pejuang", emoji: "🛡️", next: "Jagoan", nextXP: 1500 };
+  return { xp, rank: "Pemula", emoji: "🌱", next: "Pejuang", nextXP: 500 };
+}
+
+function getGreeting() {
+  const h = new Date().getHours();
+  if (h < 12) return "Selamat pagi";
+  if (h < 17) return "Selamat siang";
+  if (h < 19) return "Selamat sore";
+  return "Selamat malam";
+}
+
+// ── Main Component ───────────────────────────────────────────────────────
+export default function AkunPage() {
+  // Auth state
+  const [user, setUser] = useState<any>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+
+  // Data state
+  const [student, setStudent] = useState<StudentData | null>(null);
+  const [badges, setBadges] = useState<Badge[]>([]);
+  const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
+  const [streak, setStreak] = useState(0);
+  const [dataLoading, setDataLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState<"beranda" | "jadwal" | "materi" | "akun">("beranda");
+
+  // ── Auth ──────────────────────────────────────────────────────────
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setAuthLoading(false);
+    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const signInWithGoogle = async () => {
+    setIsSigningIn(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: `${window.location.origin}/akun` },
+    });
+    if (error) setIsSigningIn(false);
+  };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    setStudent(null);
+  };
+
+  // ── Data Loading ─────────────────────────────────────────────────
+  useEffect(() => {
+    if (!user?.email) return;
+    loadStudentData(user.email);
+  }, [user?.email]);
+
+  async function loadStudentData(email: string) {
+    setDataLoading(true);
+    try {
+      // 1. Get student
+      const { data: studentData } = await supabase
+        .from("students")
+        .select("id, name, email, whatsapp, avatar_url")
+        .eq("email", email)
+        .maybeSingle();
+
+      if (!studentData) { setDataLoading(false); return; }
+
+      // 2. Get registrations — try both column name variants
+      const { data: regsData } = await supabase
+        .from("registrations")
+        .select(`
+          id, product, language, level, sub_level, pipeline_status, status,
+          sessions_total, sessions_used, sessions_completed,
+          duration, total_amount, amount, payment_status,
+          registration_date, created_at, teacher_id,
+          teachers(name, title, whatsapp)
+        `)
+        .eq("student_id", studentData.id)
+        .order("created_at", { ascending: false });
+
+      setStudent({ ...studentData, registrations: (regsData as any) || [] });
+
+      const regIds = (regsData || []).map((r: any) => r.id);
+
+      // 3. Upcoming schedules
+      if (regIds.length > 0) {
+        const { data: schedData } = await supabase
+          .from("schedules")
+          .select("id, registration_id, scheduled_at, duration_minutes, status")
+          .in("registration_id", regIds)
+          .in("status", ["scheduled", "pending"])
+          .gt("scheduled_at", new Date().toISOString())
+          .order("scheduled_at", { ascending: true });
+        setUpcomingSchedules(schedData || []);
+      }
+
+      // 4. Badges
+      const { data: badgeData } = await supabase
+        .from("student_badges")
+        .select("*")
+        .eq("student_id", studentData.id)
+        .order("earned_at", { ascending: false });
+      setBadges(badgeData || []);
+
+      // 5. Streak
+      if (regIds.length > 0) {
+        const { data: streakData } = await supabase
+          .from("schedules")
+          .select("scheduled_at")
+          .in("registration_id", regIds)
+          .eq("status", "completed")
+          .order("scheduled_at", { ascending: false });
+
+        if (streakData && streakData.length > 0) {
+          const getWeekNum = (d: Date) => {
+            const start = new Date(d.getFullYear(), 0, 1);
+            return Math.floor(((d.getTime() - start.getTime()) / 86400000 + start.getDay() + 1) / 7);
+          };
+          const weeks = new Set(streakData.map((s: any) => {
+            const d = new Date(s.scheduled_at);
+            return `${d.getFullYear()}-${getWeekNum(d)}`;
+          }));
+          let weekStreak = 0;
+          const now = new Date();
+          for (let i = 0; i <= 52; i++) {
+            const checkDate = new Date(now);
+            checkDate.setDate(checkDate.getDate() - i * 7);
+            const key = `${checkDate.getFullYear()}-${getWeekNum(checkDate)}`;
+            if (weeks.has(key)) weekStreak++;
+            else break;
+          }
+          setStreak(weekStreak);
+        }
+      }
+
+      // 6. Auto-populate badges
+      if (studentData && regsData) {
+        autoPopulateBadges(studentData.id, regsData as any[]);
+      }
+    } catch (err) {
+      console.error("Failed to load student data:", err);
+    }
+    setDataLoading(false);
+  }
+
+  async function autoPopulateBadges(studentId: string, regs: any[]) {
+    try {
+      const { data: existing } = await supabase.from("student_badges").select("badge_key").eq("student_id", studentId);
+      const existingKeys = new Set((existing || []).map((b: any) => b.badge_key));
+
+      const regIds = regs.map((r: any) => r.id);
+      const { count: completedCount } = await supabase.from("schedules")
+        .select("id", { count: "exact", head: true }).in("registration_id", regIds).eq("status", "completed");
+      const { count: ratedCount } = await supabase.from("session_ratings")
+        .select("id", { count: "exact", head: true }).eq("student_id", studentId);
+
+      const activeLanguages = new Set(regs.filter((r: any) => (r.pipeline_status || r.status) === "Aktif").map((r: any) => r.language));
+      const total = completedCount || 0;
+      const rated = ratedCount || 0;
+
+      const defs: [string, string, string, boolean][] = [
+        ["first_session", "🎯", "Sesi Pertama", total >= 1],
+        ["sessions_5", "📚", "5 Sesi", total >= 5],
+        ["sessions_10", "🏆", "10 Sesi", total >= 10],
+        ["sessions_25", "🌟", "25 Sesi", total >= 25],
+        ["reviewer", "⭐", "Reviewer", rated >= 3],
+        ["polyglot", "🌍", "Polyglot", activeLanguages.size >= 2],
+      ];
+
+      const newBadges = defs
+        .filter(([key, , , cond]) => cond && !existingKeys.has(key))
+        .map(([badge_key, badge_icon, badge_label]) => ({
+          student_id: studentId, badge_key, badge_icon, badge_label, earned_at: new Date().toISOString(),
+        }));
+
+      if (newBadges.length > 0) {
+        await supabase.from("student_badges").insert(newBadges);
+        const { data: fresh } = await supabase.from("student_badges").select("*").eq("student_id", studentId).order("earned_at", { ascending: false });
+        setBadges(fresh || []);
+      }
+    } catch (err) { console.error("Badge error:", err); }
+  }
+
+  // ── Derived Data ─────────────────────────────────────────────────
+  const getStatus = (r: StudentReg) => r.pipeline_status || r.status || "Aktif";
+  const getSessions = (r: StudentReg) => r.sessions_completed ?? r.sessions_used ?? 0;
+  const getAmount = (r: StudentReg) => r.total_amount ?? r.amount ?? 0;
+  const getProgram = (r: StudentReg) => r.product || r.program || "Kelas Private";
+
+  const activeRegs = useMemo(() => student?.registrations.filter(r => getStatus(r) === "Aktif") || [], [student]);
+  const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai", "Batal", "Non Aktif"].includes(getStatus(r))) || [], [student]);
+  const totalUsedSessions = useMemo(() => activeRegs.reduce((s, r) => s + getSessions(r), 0), [activeRegs]);
+  const xp = useMemo(() => calculateXP(totalUsedSessions, streak, badges.length), [totalUsedSessions, streak, badges]);
+
+  const displayName = student?.name || user?.user_metadata?.full_name || "Siswa";
+  const firstName = displayName.split(" ")[0];
+  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url;
+
+  // ═══════════════════════════════════════════════════════════════════
+  // LOGIN SCREEN
+  // ═══════════════════════════════════════════════════════════════════
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
+          </div>
+          <div className="h-4 w-4 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-sm"
+        >
+          <div className="text-center mb-8">
+            <div className="h-16 w-16 rounded-2xl bg-teal-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-teal-200">
+              <img src="/images/logo-white.png" alt="Linguo" className="h-10 w-10 object-contain" />
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900">Linguo.id</h1>
+            <p className="text-gray-500 mt-1">Masuk ke akun belajarmu</p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <button
+              onClick={signInWithGoogle}
+              disabled={isSigningIn}
+              className="flex h-12 w-full items-center justify-center gap-3 rounded-xl border-2 border-gray-200 bg-white px-4 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-300 disabled:opacity-50 transition-all"
+            >
+              {isSigningIn ? (
+                <div className="h-5 w-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <>
+                  <svg className="h-5 w-5" viewBox="0 0 24 24">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                  Masuk dengan Google
+                </>
+              )}
+            </button>
+
+            <p className="text-center text-xs text-gray-400 mt-4">
+              Gunakan email yang sama dengan saat mendaftar kelas
+            </p>
+          </div>
+
+          <div className="text-center mt-6">
+            <p className="text-xs text-gray-400">
+              Belum punya akun?{" "}
+              <a href="/" className="text-teal-600 font-medium hover:underline">Daftar kelas dulu</a>
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // LOADING DATA
+  // ═══════════════════════════════════════════════════════════════════
+  if (dataLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
+          </div>
+          <div className="h-4 w-4 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
+          <p className="text-sm text-gray-500">Memuat data belajarmu...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // NO STUDENT RECORD
+  // ═══════════════════════════════════════════════════════════════════
+  if (!student) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm text-center">
+          <div className="h-16 w-16 rounded-2xl bg-teal-600 flex items-center justify-center mx-auto mb-4">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-10 w-10 object-contain" />
+          </div>
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Halo, {firstName}!</h2>
+          <p className="text-gray-500 mb-6">Kamu belum terdaftar sebagai siswa. Daftar kelas pertamamu dan mulai belajar bahasa baru!</p>
+          <a
+            href="/"
+            className="inline-flex h-12 items-center gap-2 rounded-xl bg-teal-600 px-6 text-sm font-semibold text-white hover:bg-teal-700 transition-colors shadow-lg shadow-teal-200"
+          >
+            ✨ Daftar Kelas Pertama
+          </a>
+          <button onClick={signOut} className="block mx-auto mt-4 text-sm text-gray-400 hover:text-gray-600 transition-colors">
+            Keluar
+          </button>
+        </motion.div>
+      </div>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // DASHBOARD
+  // ═══════════════════════════════════════════════════════════════════
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20">
+
+      {/* ── Header ──────────────────────────────────────────────── */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div className="mx-auto flex h-14 max-w-lg items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+            <div className="h-7 w-7 rounded-lg bg-teal-600 flex items-center justify-center">
+              <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
+            </div>
+            <span className="font-bold text-gray-900">Linguo.id</span>
+          </div>
+          <div className="flex items-center gap-2">
+            {avatarUrl ? (
+              <img src={avatarUrl} alt="" className="h-8 w-8 rounded-full ring-2 ring-teal-100" referrerPolicy="no-referrer" />
+            ) : (
+              <div className="h-8 w-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-sm">
+                {firstName[0]?.toUpperCase()}
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
+
+      {/* ── Content ─────────────────────────────────────────────── */}
+      <main className="mx-auto max-w-lg px-4 pt-5 space-y-5">
+
+        <AnimatePresence mode="wait">
+          {activeTab === "beranda" && (
+            <motion.div key="beranda" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-5">
+
+              {/* Welcome + XP Card */}
+              <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 text-white shadow-lg shadow-teal-200">
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <p className="text-teal-100 text-sm">{getGreeting()}</p>
+                    <h1 className="text-xl font-bold">{firstName} {xp.emoji}</h1>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-2xl font-bold">{xp.xp}</p>
+                    <p className="text-teal-200 text-xs">XP · {xp.rank}</p>
+                  </div>
+                </div>
+                {/* XP Bar */}
+                {xp.nextXP > 0 && (
+                  <div>
+                    <div className="h-1.5 rounded-full bg-teal-800/50 overflow-hidden">
+                      <motion.div
+                        className="h-full rounded-full bg-white/80"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(xp.xp / xp.nextXP) * 100}%` }}
+                        transition={{ duration: 1, delay: 0.3 }}
+                      />
+                    </div>
+                    <p className="text-[10px] text-teal-200 mt-1">{xp.nextXP - xp.xp} XP lagi ke {xp.next}</p>
+                  </div>
+                )}
+                {/* Stats Row */}
+                <div className="flex gap-4 mt-4 pt-3 border-t border-teal-500/30">
+                  <div className="flex-1 text-center">
+                    <p className="text-lg font-bold">{activeRegs.length}</p>
+                    <p className="text-[10px] text-teal-200">Kelas Aktif</p>
+                  </div>
+                  <div className="flex-1 text-center">
+                    <p className="text-lg font-bold">{totalUsedSessions}</p>
+                    <p className="text-[10px] text-teal-200">Sesi Selesai</p>
+                  </div>
+                  <div className="flex-1 text-center">
+                    <p className="text-lg font-bold">{streak > 0 ? `🔥 ${streak}` : "0"}</p>
+                    <p className="text-[10px] text-teal-200">Streak Minggu</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Badges */}
+              {badges.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">🏅 Badges ({badges.length})</h3>
+                  <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                    {badges.map((b) => (
+                      <div key={b.id} className="flex-shrink-0 flex items-center gap-1.5 rounded-full bg-white border border-gray-100 shadow-sm px-3 py-1.5">
+                        <span className="text-base">{b.badge_icon}</span>
+                        <span className="text-xs font-medium text-gray-700 whitespace-nowrap">{b.badge_label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Upcoming Schedules */}
+              {upcomingSchedules.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">📅 Jadwal Mendatang</h3>
+                  <div className="space-y-2">
+                    {upcomingSchedules.slice(0, 3).map((s) => {
+                      const d = new Date(s.scheduled_at);
+                      const reg = student.registrations.find(r => r.id === s.registration_id);
+                      return (
+                        <div key={s.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 shadow-sm px-4 py-3">
+                          <div className="h-10 w-10 rounded-lg bg-teal-50 flex items-center justify-center">
+                            <img src={getFlagUrl(reg?.language || "")} alt="" className="h-5 w-5 object-contain" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold text-gray-900">{reg?.language}</p>
+                            <p className="text-xs text-gray-500">
+                              {d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB
+                            </p>
+                          </div>
+                          <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
+                            s.status === "pending" ? "bg-amber-50 text-amber-600" : "bg-teal-50 text-teal-600"
+                          }`}>
+                            {s.status === "pending" ? "Pending" : "Terjadwal"}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Active Classes */}
+              {activeRegs.length > 0 && (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-sm font-semibold text-gray-700">📚 Kelas Aktif</h3>
+                    <a href="/" className="text-xs font-medium text-teal-600 hover:underline">+ Tambah Bahasa</a>
+                  </div>
+                  <div className="space-y-3">
+                    {activeRegs.map((reg, i) => {
+                      const sessions = getSessions(reg);
+                      const total = reg.sessions_total || 1;
+                      const progress = Math.round((sessions / total) * 100);
+                      const levelKey = getLevelKey(reg.level, reg.sub_level);
+                      const levelProgress = getLevelProgress(levelKey);
+                      const currentMilestone = LEVEL_MILESTONES.indexOf(reg.level.replace(/\.\d+$/, ""));
+
+                      return (
+                        <motion.div
+                          key={reg.id}
+                          initial={{ opacity: 0, y: 12 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: i * 0.08 }}
+                          className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4"
+                        >
+                          {/* Header */}
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-11 w-11 rounded-xl bg-teal-50 flex items-center justify-center shadow-sm">
+                              <img src={getFlagUrl(reg.language)} alt="" className="h-6 w-6 object-contain" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold text-gray-900">{reg.language}</h4>
+                              <p className="text-xs text-gray-500">{getProgram(reg)}</p>
+                            </div>
+                            <span className="inline-flex items-center rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-700">
+                              {levelKey}
+                            </span>
+                          </div>
+
+                          {/* Teacher */}
+                          {reg.teachers && (
+                            <div className="flex items-center gap-1.5 mb-3 text-xs text-gray-500">
+                              <span>👩‍🏫</span>
+                              <span>{reg.teachers.title || ""} {reg.teachers.name}</span>
+                            </div>
+                          )}
+
+                          {/* Session Progress */}
+                          <div className="mb-1">
+                            <div className="flex justify-between text-xs mb-1">
+                              <span className="text-gray-500">Sesi</span>
+                              <span className="font-semibold text-gray-700">{sessions}/{total} ({progress}%)</span>
+                            </div>
+                            <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
+                              <motion.div
+                                className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600"
+                                initial={{ width: 0 }}
+                                animate={{ width: `${progress}%` }}
+                                transition={{ duration: 0.8, delay: i * 0.1 + 0.3 }}
+                              />
+                            </div>
+                          </div>
+
+                          {/* Level Progress Bar */}
+                          <div className="mt-3 pt-3 border-t border-gray-50">
+                            <div className="flex items-center justify-between mb-1.5">
+                              <p className="text-[10px] font-medium text-gray-400">Level Progress</p>
+                              <p className="text-xs font-bold text-teal-600">{levelKey}</p>
+                            </div>
+                            <div className="relative">
+                              <div className="h-1.5 w-full rounded-full bg-gray-100 overflow-hidden">
+                                <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600 transition-all duration-700" style={{ width: levelProgress + "%" }} />
+                              </div>
+                              <div className="flex justify-between mt-1">
+                                {LEVEL_MILESTONES.map((m, mi) => (
+                                  <div key={m} className="flex flex-col items-center" style={{ width: "25%" }}>
+                                    <div className={`h-1.5 w-1.5 rounded-full -mt-[6px] ${mi <= currentMilestone ? "bg-teal-600" : "bg-gray-300"}`} />
+                                    <span className={`text-[8px] mt-0.5 ${mi <= currentMilestone ? "text-teal-600 font-bold" : "text-gray-400"}`}>{m}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* No Active Classes */}
+              {activeRegs.length === 0 && (
+                <div className="rounded-2xl border-2 border-dashed border-gray-200 p-8 text-center">
+                  <p className="text-3xl mb-2">📖</p>
+                  <h3 className="font-semibold text-gray-700 mb-1">Belum ada kelas aktif</h3>
+                  <p className="text-sm text-gray-500 mb-4">Mulai belajar bahasa baru sekarang!</p>
+                  <a href="/" className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 transition-colors">
+                    ✨ Daftar Kelas
+                  </a>
+                </div>
+              )}
+
+              {/* Completed Classes */}
+              {completedRegs.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">🏆 Riwayat</h3>
+                  <div className="space-y-2">
+                    {completedRegs.map((reg) => (
+                      <div key={reg.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3">
+                        <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-gray-700">{reg.language} — {getLevelKey(reg.level, reg.sub_level)}</p>
+                          <p className="text-xs text-gray-400">{getProgram(reg)} · {getSessions(reg)}/{reg.sessions_total} sesi</p>
+                        </div>
+                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
+                          getStatus(reg) === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"
+                        }`}>
+                          {getStatus(reg)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {activeTab === "jadwal" && (
+            <motion.div key="jadwal" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-4">
+              <h2 className="text-lg font-bold text-gray-900">Jadwal Kelas</h2>
+              {upcomingSchedules.length === 0 ? (
+                <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
+                  <p className="text-3xl mb-2">📅</p>
+                  <p className="text-sm text-gray-500">Belum ada jadwal mendatang</p>
+                  <p className="text-xs text-gray-400 mt-1">Hubungi admin untuk atur jadwal kelasmu</p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {upcomingSchedules.map((s) => {
+                    const d = new Date(s.scheduled_at);
+                    const reg = student.registrations.find(r => r.id === s.registration_id);
+                    return (
+                      <div key={s.id} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="h-10 w-10 rounded-xl bg-teal-50 flex items-center justify-center">
+                            <img src={getFlagUrl(reg?.language || "")} alt="" className="h-5 w-5 object-contain" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-semibold text-gray-900">{reg?.language}</p>
+                            <p className="text-xs text-gray-500">{reg?.teachers?.name}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 text-xs text-gray-600 bg-gray-50 rounded-lg p-3">
+                          <span>📅 {d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span>
+                        </div>
+                        <div className="flex items-center gap-4 text-xs text-gray-600 mt-2">
+                          <span>🕐 {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB</span>
+                          <span>⏱️ {s.duration_minutes} menit</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {activeTab === "materi" && (
+            <motion.div key="materi" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-4">
+              <h2 className="text-lg font-bold text-gray-900">Materi Belajar</h2>
+              <div className="rounded-2xl bg-white border border-gray-100 p-6 text-center">
+                <p className="text-3xl mb-2">📖</p>
+                <p className="text-sm text-gray-500">Materi e-learning akan segera hadir!</p>
+                <p className="text-xs text-gray-400 mt-1">Sementara, lihat silabus lengkap di website</p>
+                <a href="/silabus" className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-teal-600 hover:underline">
+                  🔗 Lihat Silabus
+                </a>
+              </div>
+            </motion.div>
+          )}
+
+          {activeTab === "akun" && (
+            <motion.div key="akun" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-4">
+              <h2 className="text-lg font-bold text-gray-900">Akun Saya</h2>
+
+              {/* Profile Card */}
+              <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
+                <div className="flex items-center gap-4">
+                  {avatarUrl ? (
+                    <img src={avatarUrl} alt="" className="h-16 w-16 rounded-full ring-2 ring-teal-100" referrerPolicy="no-referrer" />
+                  ) : (
+                    <div className="h-16 w-16 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xl">
+                      {firstName[0]?.toUpperCase()}
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg">{displayName}</h3>
+                    <p className="text-sm text-gray-500">{user?.email}</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      <span className="text-sm">{xp.emoji}</span>
+                      <span className="text-xs font-medium text-teal-600">{xp.rank} · {xp.xp} XP</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 shadow-sm p-4 hover:shadow-md transition-all"
+                >
+                  <span className="text-xl">💬</span>
+                  <span className="text-xs font-medium text-gray-700">Hubungi Admin</span>
+                </a>
+                <a href="/silabus" className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 shadow-sm p-4 hover:shadow-md transition-all">
+                  <span className="text-xl">🌍</span>
+                  <span className="text-xs font-medium text-gray-700">Lihat Silabus</span>
+                </a>
+                <a href="/" className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 shadow-sm p-4 hover:shadow-md transition-all">
+                  <span className="text-xl">➕</span>
+                  <span className="text-xs font-medium text-gray-700">Tambah Kelas</span>
+                </a>
+                <button
+                  onClick={signOut}
+                  className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-100 shadow-sm p-4 hover:shadow-md transition-all"
+                >
+                  <span className="text-xl">🚪</span>
+                  <span className="text-xs font-medium text-gray-700">Keluar</span>
+                </button>
+              </div>
+
+              {/* All Badges */}
+              {badges.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">Semua Badges</h3>
+                  <div className="grid grid-cols-3 gap-2">
+                    {badges.map((b) => (
+                      <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl bg-white border border-gray-100 p-3">
+                        <span className="text-2xl">{b.badge_icon}</span>
+                        <span className="text-[10px] font-medium text-gray-600 text-center">{b.badge_label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+
+      {/* ── Bottom Tab Nav ───────────────────────────────────────── */}
+      <nav className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 safe-area-bottom">
+        <div className="mx-auto max-w-lg flex h-14">
+          {([
+            { key: "beranda", label: "Beranda", icon: "🏠" },
+            { key: "jadwal", label: "Jadwal", icon: "📅" },
+            { key: "materi", label: "Materi", icon: "📖" },
+            { key: "akun", label: "Akun", icon: "👤" },
+          ] as const).map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors ${
+                activeTab === tab.key ? "text-teal-600" : "text-gray-400"
+              }`}
+            >
+              <span className="text-lg">{tab.icon}</span>
+              <span className="text-[10px] font-medium">{tab.label}</span>
+              {activeTab === tab.key && (
+                <motion.div layoutId="bottomTab" className="absolute bottom-0 h-0.5 w-10 rounded-full bg-teal-600" />
+              )}
+            </button>
+          ))}
+        </div>
+      </nav>
+    </div>
+  );
+}
