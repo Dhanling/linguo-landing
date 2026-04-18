@@ -324,7 +324,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               <div className="space-y-3">
                 {[
                   { key: "beginner", emoji: "🌱", title: isTestPrep ? "Baru mau mulai persiapan" : "Pemula total", desc: isTestPrep ? "Belum tahu harus mulai dari mana" : "Belum pernah belajar sama sekali" },
-                  { key: "some", emoji: "📚", title: isTestPrep ? "Sudah pernah belajar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
+                  { key: "some", emoji: "📚", title: isTestPrep ? "Sudah pernah belajar" : "Sudah ada dasar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
                 ].map(opt => (
                   <button key={opt.key}
                     onClick={() => { setExp(opt.key as any); autoAdvance(4); }}
