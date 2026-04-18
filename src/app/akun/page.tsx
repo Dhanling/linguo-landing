@@ -397,12 +397,27 @@ export default function AkunPage() {
                   : "Pilih slot dulu"}
               </div>
               <button
-                onClick={submitBooking}
-                disabled={!selectedSlot || bookingSubmit}
-                className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0"
-              >
-                {bookingSubmit ? "Menyimpan..." : "Booking →"}
-              </button>
+                        key={s.iso}
+                        onClick={() => {
+                          if (s.past || s.booked) return;
+                          setSelectedSlots((prev) => {
+                            const next = new Set(prev);
+                            if (next.has(s.iso)) next.delete(s.iso);
+                            else next.add(s.iso);
+                            return next;
+                          });
+                        }}
+                        disabled={s.past || s.booked}
+                        className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
+                          selectedSlots.has(s.iso)
+                            ? 'bg-green-600 text-white border-green-600 ring-2 ring-green-300'
+                            : s.past || s.booked
+                            ? 'bg-gray-100 text-gray-400 line-through cursor-not-allowed border-gray-200'
+                            : 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
+                        }`}
+                      >
+                        {s.time}
+                      </button>
             </div>
           </motion.div>
         </div>
