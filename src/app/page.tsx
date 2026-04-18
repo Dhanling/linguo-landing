@@ -75,7 +75,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     try {
       await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: window.location.origin + "/auth/callback" },
+        options: { redirectTo: window.location.origin + "/akun" },
       });
     } catch { setError("Gagal login dengan Google."); setLoading(false); }
   };
@@ -97,7 +97,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     setLoading(true); setError("");
     const { error } = await supabase.auth.signUp({
       email, password,
-      options: { data: { full_name: name }, emailRedirectTo: window.location.origin + "/auth/callback" },
+      options: { data: { full_name: name }, emailRedirectTo: window.location.origin + "/akun" },
     });
     setLoading(false);
     if (error) { setError(error.message); }
@@ -756,7 +756,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
     document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel })) + ";path=/;max-age=600;SameSite=Lax";
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.origin + "/auth/callback" },
+      options: { redirectTo: window.location.origin + "/akun" },
     });
   };
   const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); };
