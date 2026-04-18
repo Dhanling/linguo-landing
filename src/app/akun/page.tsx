@@ -113,6 +113,7 @@ export default function AkunPage() {
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
+  const [bookingDuration, setBookingDuration] = useState<number>(60); // menit
   const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
@@ -263,6 +264,21 @@ export default function AkunPage() {
 
   // ── Derived Data ─────────────────────────────────────────────────
   // Booking helpers
+  // Check if a slot conflicts with existing bookings
+  function hasConflict(slotISO: string, durationMin: number, bookedSlotsSet: Set<string>): boolean {
+    const slotStart = new Date(slotISO).getTime();
+    const slotEnd = slotStart + durationMin * 60000;
+    for (const entry of bookedSlotsSet) {
+      const [existingISO, existingDurStr] = entry.split('|');
+      const existingStart = new Date(existingISO).getTime();
+      const existingDur = Number(existingDurStr) || 60;
+      const existingEnd = existingStart + existingDur * 60000;
+      // Overlap if: slotStart < existingEnd AND slotEnd > existingStart
+      if (slotStart < existingEnd && slotEnd > existingStart) return true;
+    }
+    return false;
+  }
+
   async function openBooking(reg: StudentReg) {
     if (!reg.teacher_id) {
       alert("Kelas ini belum punya pengajar ditugaskan. Hubungi admin.");
@@ -270,6 +286,7 @@ export default function AkunPage() {
     }
     setBookingReg(reg);
     setSelectedSlots(new Set());
+    setBookingDuration(Number(reg.duration) || 60);
     setLoadingSlots(true);
     // Fetch teacher_availability
     const { data: avail } = await supabase
@@ -281,12 +298,13 @@ export default function AkunPage() {
     const until = new Date(); until.setDate(until.getDate() + 14);
     const { data: booked } = await supabase
       .from("schedules")
-      .select("scheduled_at")
+      .select("scheduled_at, duration_minutes")
       .eq("teacher_id", reg.teacher_id)
       .gte("scheduled_at", new Date().toISOString())
       .lte("scheduled_at", until.toISOString())
       .neq("status", "cancelled");
-    setBookedSlots(new Set((booked || []).map((b: any) => new Date(b.scheduled_at).toISOString())));
+    // Store booked slots with duration for conflict detection
+    setBookedSlots(new Set((booked || []).map((b: any) => `${new Date(b.scheduled_at).toISOString()}|${b.duration_minutes || 60}`)));
     setLoadingSlots(false);
   }
 
@@ -299,7 +317,7 @@ export default function AkunPage() {
         teacher_id: bookingReg.teacher_id,
         student_id: student.id,
         scheduled_at: slot,
-        duration_minutes: Number(bookingReg.duration) || 60,
+        duration_minutes: bookingDuration,
         status: "pending",
         student_confirmed: true,
         student_confirmed_at: new Date().toISOString(),
@@ -1009,6 +1027,7 @@ export default function AkunPage() {
                             {daySlots.map(s => {
                               const disabled = s.isBooked || s.isPast;
                               const isSelected = selectedSlots.has(s.iso);
+                                const isConflict = !isSelected && !s.past && !s.booked && hasConflict(s.iso, bookingDuration, bookedSlots);
                               return (
                                 <button
                                   key={s.time}
