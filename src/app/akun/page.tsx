@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import StudentRealtimeNotifs from '@/components/StudentRealtimeNotifs';
+import OneSignalProvider from '@/components/OneSignalProvider';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -951,7 +952,7 @@ export default function AkunPage() {
       </nav>
 
       {/* Booking Modal */}
-      <StudentRealtimeNotifs />
+      <OneSignalProvider />
       {detailReg && <ClassDetailModal reg={detailReg} onClose={() => setDetailReg(null)} />}
       {bookingReg && (
         <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4" onClick={() => !bookingSubmit && setBookingReg(null)}>
