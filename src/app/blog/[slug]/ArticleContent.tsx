@@ -527,7 +527,7 @@ const ARTICLE_CSS = `
 .blog-dark .article-body blockquote { background: #1e293b; border-color: #2dd4bf; color: #94a3b8; }
 .blog-dark .article-body table { border-color: #334155; }
 .blog-dark .article-body th { background: #1e293b; color: #e2e8f0; border-color: #334155; }
-.blog-dark .article-body td { color: #cbd5e1; border-color: #1e293b; }
+.blog-dark .article-body td { color: #e2e8f0 !important; border-color: #334155; }
 .blog-dark .article-body tbody tr:hover { background-color: #1e293b; }
 .blog-dark .comment-section { border-color: #334155; }
 .blog-dark .comment-form { background: #1e293b; }
