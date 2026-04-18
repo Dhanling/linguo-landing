@@ -4,6 +4,7 @@ import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
 
 function getCookie(name: string): string {
+  if (typeof document === "undefined") return "";
   const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
   return match ? decodeURIComponent(match[2]) : "";
 }
@@ -15,18 +16,6 @@ function deleteCookie(name: string) {
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
   const [userName, setUserName] = useState("");
-  const [studentToken, setStudentToken] = useState<string | null>(null);
-  const [isDuplicate, setIsDuplicate] = useState(false);
-
-  // Auto-redirect to dashboard when token is available
-  useEffect(() => {
-    if (studentToken && status === "success") {
-      const timer = setTimeout(() => {
-        window.location.href = "https://dashboard.linguo.id/s/" + studentToken;
-      }, 3500);
-      return () => clearTimeout(timer);
-    }
-  }, [studentToken, status]);
 
   useEffect(() => {
     const handle = async () => {
@@ -39,111 +28,112 @@ export default function AuthCallbackPage() {
           deleteCookie("linguo_funnel");
         }
 
-        // With implicit flow, tokens are in the URL hash
-        // Give Supabase a moment to process the hash
-        await new Promise(r => setTimeout(r, 500));
-        
+        // Give Supabase a moment to process the hash (implicit flow)
+        await new Promise(r => setTimeout(r, 600));
+
         const { data: { session } } = await supabase.auth.getSession();
-        
-        if (!session) {
-          const { data: { subscription } } = supabase.auth.onAuthStateChange((event, sess) => {
-            if (event === "SIGNED_IN" && sess) {
-              processUser(sess.user, funnelData);
-              subscription.unsubscribe();
-            }
-          });
-          setTimeout(() => { setStatus("error"); subscription.unsubscribe(); }, 5000);
+
+        const processUser = async (user: any) => {
+          const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
+          const email = user.email || "";
+          setUserName(name);
+
+          // Save lead / funnel data — fire and forget, don't block redirect
+          if (funnelData.program || funnelData.language) {
+            fetch("/api/save-lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, program: funnelData.program || undefined, language: funnelData.language || undefined, level: funnelData.level || undefined }),
+            }).catch(e => console.warn("Lead save (non-fatal):", e));
+          }
+
+          setStatus("success");
+
+          // Redirect to student dashboard after short delay
+          setTimeout(() => {
+            window.location.href = "/akun";
+          }, 1800);
+        };
+
+        if (session?.user) {
+          await processUser(session.user);
           return;
         }
 
-        processUser(session.user, funnelData);
+        // Wait for auth state change (e.g. implicit flow with hash)
+        const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, sess) => {
+          if ((event === "SIGNED_IN" || event === "TOKEN_REFRESHED") && sess?.user) {
+            subscription.unsubscribe();
+            await processUser(sess.user);
+          }
+        });
+
+        // Timeout fallback — 8 seconds
+        setTimeout(() => {
+          subscription.unsubscribe();
+          if (status === "loading") setStatus("error");
+        }, 8000);
+
       } catch(e) {
         console.error("Callback error:", e);
         setStatus("error");
       }
     };
 
-    const processUser = async (user: any, funnelData: { program: string; language: string; level: string }) => {
-      const name = user.user_metadata?.full_name || user.email?.split("@")[0] || "Student";
-      const email = user.email || "";
-      setUserName(name);
-
-      // Save to students + registrations in Supabase
-      try {
-        const res = await fetch("/api/save-lead", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name,
-            email,
-            program: funnelData.program || undefined,
-            language: funnelData.language || undefined,
-            level: funnelData.level || undefined,
-          }),
-        });
-        const result = await res.json();
-        console.log("Save lead result:", result);
-        if (result.studentToken) setStudentToken(result.studentToken);
-        if (result.duplicate) setIsDuplicate(true);
-        if (!res.ok) console.error("Lead save failed:", result);
-      } catch(e) { console.error("Lead save error:", e); }
-
-      setStatus("success");
-
-      // Note: auto-redirect handled in component via useEffect on studentToken
-    };
-
     handle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center" style={{fontFamily:"Poppins,sans-serif"}}>
       <div className="max-w-md mx-auto px-6 text-center">
-        {status==="loading" && (
+
+        {status === "loading" && (
           <div>
             <div className="h-16 w-16 border-4 border-[#1A9E9E] border-t-transparent rounded-full animate-spin mx-auto mb-6"/>
-            <h2 className="text-xl font-bold mb-2">Memproses pendaftaran...</h2>
+            <h2 className="text-xl font-bold mb-2">Memproses login...</h2>
             <p className="text-sm text-slate-500">Mohon tunggu sebentar</p>
           </div>
         )}
-        {status==="success" && (
+
+        {status === "success" && (
           <div>
-            <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><span className="text-4xl">✓</span></div>
-            <h2 className="text-2xl font-bold mb-3">Selamat datang, {userName}!</h2>
-            {isDuplicate ? (
-              <p className="text-slate-500 text-sm mb-6">Kamu sudah terdaftar sebelumnya. Langsung masuk ke dashboard ya!</p>
-            ) : (
-              <p className="text-slate-500 text-sm mb-6">Pendaftaran berhasil! Lanjut ke dashboard untuk pilih paket & bayar.</p>
-            )}
+            <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl">✓</span>
+            </div>
+            <h2 className="text-2xl font-bold mb-3">Selamat datang, {userName}! 👋</h2>
+            <p className="text-slate-500 text-sm mb-6">Login berhasil! Mengarahkan ke dashboard...</p>
             <div className="flex flex-col gap-3 items-center">
-              {studentToken ? (
-                <a href={`https://dashboard.linguo.id/s/${studentToken}`}
-                  className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                  Masuk ke Dashboard Siswa →
-                </a>
-              ) : (
-                <Link href="/student/login"
-                  className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                  Login ke Dashboard →
-                </Link>
-              )}
+              <a href="/akun"
+                className="inline-block bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                Masuk ke Dashboard →
+              </a>
               <Link href="/" className="text-sm text-slate-400 hover:text-slate-600 transition-colors">
                 atau kembali ke beranda
               </Link>
             </div>
           </div>
         )}
-        {status==="error" && (
+
+        {status === "error" && (
           <div>
-            <div className="h-20 w-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6"><span className="text-4xl">✕</span></div>
+            <div className="h-20 w-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl">✕</span>
+            </div>
             <h2 className="text-xl font-bold mb-3">Oops, ada masalah</h2>
-            <p className="text-slate-500 text-sm mb-6">Pendaftaran gagal. Silakan coba lagi atau hubungi kami via WhatsApp.</p>
+            <p className="text-slate-500 text-sm mb-6">Login gagal. Coba lagi atau hubungi kami.</p>
             <div className="flex gap-3 justify-center">
-              <Link href="/" className="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-full text-sm transition-all">Kembali</Link>
-              <a href="https://wa.me/6282116859493" target="_blank" className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-6 py-3 rounded-full text-sm transition-all">WhatsApp</a>
+              <a href="/akun" className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-6 py-3 rounded-full text-sm transition-all">
+                Coba ke Dashboard
+              </a>
+              <a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer"
+                className="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-full text-sm transition-all">
+                WhatsApp
+              </a>
             </div>
           </div>
         )}
+
       </div>
     </div>
   );
