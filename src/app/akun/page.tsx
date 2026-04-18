@@ -325,6 +325,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
   );
 }
 
+// ═══════════════════════════════════════════════════════════════════════════
+// MAIN COMPONENT
+// ═══════════════════════════════════════════════════════════════════════════
+export default function AkunPage() {
 
   const [user, setUser] = useState<any>(null);
   const [authLoading, setAuthLoading] = useState(true);
