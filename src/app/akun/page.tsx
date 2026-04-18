@@ -726,7 +726,7 @@ export default function AkunPage() {
                               </div>
                               {/* Booking button — only for private classes with teacher */}
                               {reg.teacher_id && reg.product === "Kelas Private" && (
-                                <button
+                                <><button
                   onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
                   className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 mr-2"
                 >
@@ -737,7 +737,7 @@ export default function AkunPage() {
                                   className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
                                 >
                                   📅 Booking Sesi Berikutnya
-                                </button>
+                                </button></>
                               )}
                               {/* Level progress */}
                               <div className="mt-3 pt-3 border-t border-gray-50">
