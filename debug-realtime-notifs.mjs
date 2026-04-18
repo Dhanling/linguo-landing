@@ -1,4 +1,23 @@
-'use client';
+#!/usr/bin/env node
+// debug-realtime-notifs.mjs
+// Replace StudentRealtimeNotifs.tsx with a VERBOSE debug version:
+//   - Console logs at every step (studentId lookup, subscription, events)
+//   - Visual connection status dot on bell (grey/yellow/green/red)
+//   - Toast click = reload page (so user can see fresh data)
+//   - Optional DEBUG flag exposed on window.__linguoDebug
+//
+// Usage: drag ke ~/linguo-landing → cd ~/linguo-landing → node debug-realtime-notifs.mjs
+
+import fs from 'fs';
+import { execSync } from 'child_process';
+
+const FILE = 'src/components/StudentRealtimeNotifs.tsx';
+if (!fs.existsSync(FILE)) {
+  console.error('❌ Run di ~/linguo-landing');
+  process.exit(1);
+}
+
+const content = `'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
@@ -88,12 +107,12 @@ export default function StudentRealtimeNotifs() {
     LOG('🔌 Subscribing to channel student-notif-' + studentId);
     setConnState('connecting');
 
-    const channelName = `student-notif-${studentId}`;
+    const channelName = \`student-notif-\${studentId}\`;
     const channel = supabase
       .channel(channelName)
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'schedules', filter: `student_id=eq.${studentId}` },
+        { event: '*', schema: 'public', table: 'schedules', filter: \`student_id=eq.\${studentId}\` },
         (payload: any) => {
           LOG('📨 Event received:', payload.eventType, { old: payload.old, new: payload.new });
           setEventCount((c) => c + 1);
@@ -131,7 +150,7 @@ export default function StudentRealtimeNotifs() {
         return null;
       }
       const dt = n.scheduled_at ? new Date(n.scheduled_at).toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
-      return `📅 Sesi baru dijadwalkan pengajar${dt ? ' · ' + dt : ''}`;
+      return \`📅 Sesi baru dijadwalkan pengajar\${dt ? ' · ' + dt : ''}\`;
     }
 
     if (t === 'UPDATE') {
@@ -145,10 +164,10 @@ export default function StudentRealtimeNotifs() {
         return '✅ Jadwal di-update oleh pengajar (mungkin approve)';
       }
       if (n.status === 'cancelled' && n.cancelled_by === 'teacher') {
-        return `❌ Pengajar membatalkan sesi${n.cancel_reason ? ': ' + n.cancel_reason : ''}`;
+        return \`❌ Pengajar membatalkan sesi\${n.cancel_reason ? ': ' + n.cancel_reason : ''}\`;
       }
       if (n.status === 'cancelled' && n.cancelled_by === 'admin') {
-        return `❌ Admin membatalkan sesi${n.cancel_reason ? ': ' + n.cancel_reason : ''}`;
+        return \`❌ Admin membatalkan sesi\${n.cancel_reason ? ': ' + n.cancel_reason : ''}\`;
       }
       if (n.status === 'completed') {
         return '🎉 Sesi ditandai selesai — mantap!';
@@ -156,7 +175,7 @@ export default function StudentRealtimeNotifs() {
       if (o.scheduled_at && n.scheduled_at && o.scheduled_at !== n.scheduled_at && n.status !== 'cancelled') {
         if (n.notes?.includes('reschedule oleh siswa')) return null;
         const newDt = new Date(n.scheduled_at).toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-        return `🔄 Pengajar reschedule sesi ke ${newDt}`;
+        return \`🔄 Pengajar reschedule sesi ke \${newDt}\`;
       }
     }
 
@@ -258,14 +277,14 @@ export default function StudentRealtimeNotifs() {
       <div className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-40 flex flex-col items-end gap-1">
         <button
           onClick={requestPermission}
-          title={`Notif: ${notifPerm} · Realtime: ${connState} · Events: ${eventCount}`}
+          title={\`Notif: \${notifPerm} · Realtime: \${connState} · Events: \${eventCount}\`}
           disabled={notifPerm === 'denied' || notifPerm === 'unsupported'}
-          className={`relative w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all ${bellClass}`}
+          className={\`relative w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all \${bellClass}\`}
           aria-label="Notifikasi"
         >
           <span className="text-xl">{bellIcon}</span>
           {/* Connection indicator dot */}
-          <span className={`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full ring-2 ring-white ${dotColor}`} />
+          <span className={\`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full ring-2 ring-white \${dotColor}\`} />
           {eventCount > 0 && (
             <span className="absolute -top-2 -left-2 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
               {eventCount > 99 ? '99+' : eventCount}
@@ -286,12 +305,35 @@ export default function StudentRealtimeNotifs() {
         </div>
       )}
 
-      <style jsx global>{`
+      <style jsx global>{\`
         @keyframes slideDown {
           from { opacity: 0; transform: translate(-50%, -20px); }
           to { opacity: 1; transform: translate(-50%, 0); }
         }
-      `}</style>
+      \`}</style>
     </>
   );
+}
+`;
+
+fs.writeFileSync(FILE, content);
+console.log('✓ Rewrote', FILE, 'with verbose debug version');
+console.log('  • Console logs at every step');
+console.log('  • Connection status dot on bell (grey/yellow/green/red)');
+console.log('  • Event counter badge');
+console.log('  • window.__linguoDebug.getState() helper');
+console.log('  • Clickable toast to reload');
+
+try {
+  console.log('\n🔄 git add / commit / push...');
+  execSync('git add -A', { stdio: 'inherit' });
+  try {
+    execSync('git commit -m "debug(akun): verbose realtime notif component for diagnostic"', { stdio: 'inherit' });
+  } catch { console.log('ℹ️  Nothing to commit.'); }
+  execSync('git push', { stdio: 'inherit' });
+  console.log('\n✅ Pushed.');
+  fs.unlinkSync(process.argv[1]);
+  console.log('🗑️  Self-deleted.');
+} catch (e) {
+  console.error('\n❌ Git failed:', e.message);
 }
