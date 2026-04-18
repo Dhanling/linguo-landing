@@ -5,7 +5,6 @@ import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
-import StudentRealtimeNotifs from '@/components/StudentRealtimeNotifs';
 import OneSignalProvider from '@/components/OneSignalProvider';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
