@@ -639,7 +639,7 @@ export default function AkunPage() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            {studentId && <NotificationBell userId={studentId} userType="student" />}
+            {student?.id && <NotificationBell userId={student.id} userType="student" />}
               <button onClick={openEnrollWizard} className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700 transition-colors">
               + Tambah Kelas
             </button>
