@@ -112,7 +112,7 @@ export default function AkunPage() {
   const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
   const [loadingSlots, setLoadingSlots] = useState(false);
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
   const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
@@ -269,7 +269,7 @@ export default function AkunPage() {
       return;
     }
     setBookingReg(reg);
-    setSelectedSlot(null);
+    setSelectedSlots(new Set());
     setLoadingSlots(true);
     // Fetch teacher_availability
     const { data: avail } = await supabase
@@ -291,34 +291,27 @@ export default function AkunPage() {
   }
 
   async function submitBooking() {
-    if (!bookingReg || !selectedSlot || !student) return;
+    if (!bookingReg || selectedSlots.size === 0 || !student) return;
     setBookingSubmit(true);
     try {
-      const { error } = await supabase.from("schedules").insert({
+      const rows = Array.from(selectedSlots).map((slot) => ({
         registration_id: bookingReg.id,
         teacher_id: bookingReg.teacher_id,
         student_id: student.id,
-        scheduled_at: selectedSlot,
-        duration_minutes: 60,
+        scheduled_at: slot,
+        duration_minutes: Number(bookingReg.duration) || 60,
         status: "pending",
         student_confirmed: true,
         student_confirmed_at: new Date().toISOString(),
         notes: "Menunggu konfirmasi pengajar",
-      });
+      }));
+      const { error } = await supabase.from("schedules").insert(rows);
       if (error) throw error;
-      // Refresh upcoming schedules
-      const { data: schedData } = await supabase
-        .from("schedules")
-        .select("id, registration_id, scheduled_at, duration_minutes, status")
-        .in("registration_id", activeRegs.map(r => r.id))
-        .in("status", ["scheduled", "pending"])
-        .gt("scheduled_at", new Date().toISOString())
-        .order("scheduled_at", { ascending: true });
-      setUpcomingSchedules(schedData || []);
       setBookingReg(null);
-      alert("✅ Booking terkirim! Menunggu konfirmasi pengajar.");
+      setSelectedSlots(new Set());
+      alert(`✅ ${rows.length} sesi berhasil di-booking! Menunggu konfirmasi pengajar.`);
     } catch (e: any) {
-      alert("Gagal booking: " + (e.message || "unknown"));
+      alert("Gagal: " + e.message);
     }
     setBookingSubmit(false);
   }
@@ -1015,12 +1008,19 @@ export default function AkunPage() {
                           <div className="flex flex-wrap gap-1.5">
                             {daySlots.map(s => {
                               const disabled = s.isBooked || s.isPast;
-                              const isSelected = selectedSlot === s.iso;
+                              const isSelected = selectedSlots.has(s.iso);
                               return (
                                 <button
                                   key={s.time}
                                   disabled={disabled}
-                                  onClick={() => setSelectedSlot(s.iso)}
+                                  onClick={() => {
+                                  setSelectedSlots((prev) => {
+                                    const next = new Set(prev);
+                                    if (next.has(s.iso)) next.delete(s.iso);
+                                    else next.add(s.iso);
+                                    return next;
+                                  });
+                                }}
                                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                                     isSelected
                                       ? "bg-teal-600 text-white ring-2 ring-teal-300"
@@ -1044,16 +1044,16 @@ export default function AkunPage() {
 
             <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between gap-3 shrink-0">
               <div className="text-xs text-gray-500 min-w-0 truncate">
-                {selectedSlot
-                  ? `📌 ${new Date(selectedSlot).toLocaleString("id-ID", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} WIB`
+                {selectedSlots.size > 0
+                  ? `📌 ${selectedSlots.size} sesi dipilih`
                   : "Pilih slot dulu"}
               </div>
               <button
                 onClick={submitBooking}
-                disabled={!selectedSlot || bookingSubmit}
+                disabled={selectedSlots.size === 0 || bookingSubmit}
                 className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0"
               >
-                {bookingSubmit ? "Menyimpan..." : "Booking →"}
+                {bookingSubmit ? "Menyimpan..." : selectedSlots.size > 0 ? `Booking ${selectedSlots.size} Sesi →` : "Pilih slot dulu"}
               </button>
             </div>
           </motion.div>
