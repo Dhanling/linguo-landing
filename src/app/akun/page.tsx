@@ -95,9 +95,242 @@ const POPULAR_LANGUAGES = [
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════
-// MAIN COMPONENT
+// ONBOARDING WIZARD
 // ═══════════════════════════════════════════════════════════════════════════
-export default function AkunPage() {
+const LANG_FLAGS: Record<string, string> = {
+  "English":"🇬🇧","Japanese":"🇯🇵","Korean":"🇰🇷","Mandarin":"🇨🇳","French":"🇫🇷",
+  "Spanish":"🇪🇸","German":"🇩🇪","Arabic":"🇸🇦","Italian":"🇮🇹","Turkish":"🇹🇷",
+  "Russian":"🇷🇺","Thai":"🇹🇭","Portuguese":"🇵🇹","Dutch":"🇳🇱","Hindi":"🇮🇳",
+  "Vietnamese":"🇻🇳","Danish":"🇩🇰","Swedish":"🇸🇪","Finnish":"🇫🇮","Georgian":"🇬🇪",
+  "Persian":"🇮🇷","Hebrew":"🇮🇱","Polish":"🇵🇱","Greek":"🇬🇷","Norwegian":"🇳🇴",
+};
+
+function OnboardingWizard({ user, studentId, onDone }: {
+  user: any; studentId?: string; onDone: () => void;
+}) {
+  const [step, setStep] = useState(0);
+  const [lang, setLang] = useState("");
+  const [program, setProgram] = useState("");
+  const [exp, setExp] = useState<"beginner"|"some"|"">("");
+  const [search, setSearch] = useState("");
+  const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
+  const TOTAL = 4;
+
+  const finish = () => {
+    if (studentId) {
+      try { localStorage.setItem(`linguo_onboarded_${studentId}`, "1"); } catch {}
+    }
+    onDone();
+  };
+
+  const langs = POPULAR_LANGUAGES.filter(l =>
+    !search || l.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const waMsg = encodeURIComponent(
+    `Halo admin Linguo! Saya ${firstName}, mau daftar ${program} bahasa ${lang}` +
+    (exp === "beginner" ? " (pemula)" : exp === "some" ? " (sudah ada dasar)" : "") +
+    `. Mohon info jadwal dan biayanya ya. Terima kasih! 🙏`
+  );
+
+  return (
+    <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex items-center justify-center p-4">
+      {/* Progress bar */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-teal-100">
+        <motion.div className="h-full bg-teal-500 transition-all duration-500"
+          style={{ width: `${((step + 1) / TOTAL) * 100}%` }} />
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div key={step}
+          initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.25 }}
+          className="w-full max-w-md">
+
+          {/* ── Step 0: Welcome ── */}
+          {step === 0 && (
+            <div className="text-center">
+              <div className="text-6xl mb-4">🎉</div>
+              <h1 className="text-2xl font-extrabold text-gray-900 mb-2">Halo, {firstName}!</h1>
+              <p className="text-gray-500 mb-2">Selamat datang di <strong>Linguo.id</strong> — platform belajar 60+ bahasa asing.</p>
+              <p className="text-gray-400 text-sm mb-8">Yuk setup akun kamu dalam 1 menit. Kami bantu temukan kelas yang paling cocok! 🚀</p>
+              <div className="grid grid-cols-3 gap-3 mb-8 text-center">
+                {[["60+","Bahasa"],["200+","Siswa Aktif"],["1-on-1","Kelas Private"]].map(([v,l]) => (
+                  <div key={l} className="bg-white rounded-2xl p-3 shadow-sm border border-teal-100">
+                    <div className="text-xl font-extrabold text-teal-600">{v}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{l}</div>
+                  </div>
+                ))}
+              </div>
+              <button onClick={() => setStep(1)}
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98]">
+                Mulai Setup →
+              </button>
+            </div>
+          )}
+
+          {/* ── Step 1: Pilih Bahasa ── */}
+          {step === 1 && (
+            <div>
+              <div className="text-center mb-5">
+                <div className="text-4xl mb-2">🌍</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Bahasa apa yang ingin kamu pelajari?</h2>
+                <p className="text-gray-400 text-sm mt-1">Bisa pilih lebih dari satu nanti</p>
+              </div>
+              <div className="relative mb-3">
+                <input value={search} onChange={e => setSearch(e.target.value)}
+                  placeholder="Cari bahasa..."
+                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 pl-9" />
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 max-h-64 overflow-y-auto pb-1 pr-1">
+                {langs.map(l => (
+                  <button key={l} onClick={() => setLang(l)}
+                    className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
+                    <span className="text-xl">{LANG_FLAGS[l] || "🌐"}</span>
+                    {l}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-3 mt-4">
+                <button onClick={() => setStep(0)} className="flex-none px-4 py-3 text-sm text-gray-400 hover:text-gray-600 font-medium">← Kembali</button>
+                <button onClick={() => lang && setStep(2)} disabled={!lang}
+                  className="flex-1 bg-teal-600 hover:bg-teal-700 disabled:opacity-40 text-white font-bold py-3 rounded-2xl text-sm transition-all">
+                  {lang ? `Lanjut dengan ${lang} →` : "Pilih bahasa dulu"}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ── Step 2: Pengalaman ── */}
+          {step === 2 && (
+            <div>
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-2">{LANG_FLAGS[lang] || "🌐"}</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Pengalaman kamu dengan {lang}?</h2>
+                <p className="text-gray-400 text-sm mt-1">Ini bantu kami rekomendasikan level yang tepat</p>
+              </div>
+              <div className="space-y-3 mb-6">
+                {[
+                  { key: "beginner", emoji: "🌱", title: "Pemula total", desc: "Belum pernah belajar sama sekali" },
+                  { key: "some", emoji: "📚", title: "Sudah ada dasar", desc: "Pernah belajar sedikit, mau lanjutkan" },
+                ].map(opt => (
+                  <button key={opt.key} onClick={() => setExp(opt.key as any)}
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left ${exp === opt.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-200 bg-white"}`}>
+                    <span className="text-3xl">{opt.emoji}</span>
+                    <div>
+                      <div className={`font-bold text-sm ${exp === opt.key ? "text-teal-700" : "text-gray-800"}`}>{opt.title}</div>
+                      <div className="text-xs text-gray-400 mt-0.5">{opt.desc}</div>
+                    </div>
+                    {exp === opt.key && <span className="ml-auto text-teal-500">✓</span>}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-3">
+                <button onClick={() => setStep(1)} className="flex-none px-4 py-3 text-sm text-gray-400 hover:text-gray-600 font-medium">← Kembali</button>
+                <button onClick={() => exp && setStep(3)} disabled={!exp}
+                  className="flex-1 bg-teal-600 hover:bg-teal-700 disabled:opacity-40 text-white font-bold py-3 rounded-2xl text-sm transition-all">
+                  Lanjut →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ── Step 3: Pilih Program ── */}
+          {step === 3 && (
+            <div>
+              <div className="text-center mb-5">
+                <div className="text-4xl mb-2">🎯</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Pilih program belajarmu</h2>
+                <p className="text-gray-400 text-sm mt-1">Program bisa diganti kapan saja</p>
+              </div>
+              <div className="space-y-2.5 mb-5">
+                {PROGRAMS.map(p => (
+                  <button key={p.key} onClick={() => setProgram(p.key)}
+                    className={`w-full flex items-center gap-3 p-4 rounded-2xl border-2 transition-all text-left ${program === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-200 bg-white"}`}>
+                    <span className="text-2xl">{p.icon}</span>
+                    <div className="flex-1">
+                      <div className={`font-bold text-sm ${program === p.key ? "text-teal-700" : "text-gray-800"}`}>{p.label}</div>
+                      <div className="text-xs text-gray-400">{p.desc} · <span className="text-teal-600 font-medium">{p.price}</span></div>
+                    </div>
+                    {program === p.key && <span className="text-teal-500 font-bold">✓</span>}
+                  </button>
+                ))}
+              </div>
+              <div className="flex gap-3">
+                <button onClick={() => setStep(2)} className="flex-none px-4 py-3 text-sm text-gray-400 hover:text-gray-600 font-medium">← Kembali</button>
+                <button onClick={() => program && setStep(4)} disabled={!program}
+                  className="flex-1 bg-teal-600 hover:bg-teal-700 disabled:opacity-40 text-white font-bold py-3 rounded-2xl text-sm transition-all">
+                  Lanjut →
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* ── Step 4: Summary + CTA ── */}
+          {step === 4 && (
+            <div>
+              <div className="text-center mb-5">
+                <div className="text-5xl mb-3">🚀</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Siap belajar {lang}!</h2>
+                <p className="text-gray-400 text-sm mt-1">Ini rangkuman pilihanmu</p>
+              </div>
+              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-5 space-y-3">
+                {[
+                  ["🌍 Bahasa", lang],
+                  ["📚 Level", exp === "beginner" ? "Pemula (A1)" : "Akan dites dulu"],
+                  ["🎯 Program", PROGRAMS.find(p => p.key === program)?.label || program],
+                ].map(([label, value]) => (
+                  <div key={label as string} className="flex items-center justify-between text-sm">
+                    <span className="text-gray-400">{label}</span>
+                    <span className="font-semibold text-gray-800">{value}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* WhatsApp CTA */}
+              <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                onClick={finish}
+                className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl text-sm transition-all shadow-md shadow-green-100 active:scale-[0.98] mb-3">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
+                Daftar via WhatsApp
+              </a>
+
+              {/* Or take placement test */}
+              {exp === "some" && (
+                <a href="/silabus/english/coba" onClick={finish}
+                  className="w-full flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
+                  🎯 Ambil Placement Test dulu
+                </a>
+              )}
+
+              <button onClick={finish}
+                className="w-full text-sm text-gray-400 hover:text-gray-600 py-2 transition-colors">
+                Lihat dashboard dulu →
+              </button>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Skip button (from step 1+) */}
+      {step > 0 && step < 4 && (
+        <button onClick={finish} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">
+          Lewati
+        </button>
+      )}
+
+      {/* Step indicator */}
+      <div className="absolute bottom-6 flex items-center gap-1.5">
+        {Array.from({ length: TOTAL }).map((_, i) => (
+          <div key={i} className={`rounded-full transition-all ${i === step ? "w-5 h-1.5 bg-teal-500" : i < step ? "w-1.5 h-1.5 bg-teal-300" : "w-1.5 h-1.5 bg-gray-200"}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
   const [user, setUser] = useState<any>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
@@ -113,13 +346,18 @@ export default function AkunPage() {
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
-  const [bookingDuration, setBookingDuration] = useState<number>(60); // menit
   const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [showEmailLogin, setShowEmailLogin] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [onboardStep, setOnboardStep] = useState(0);
+  const [onboardLang, setOnboardLang] = useState("");
+  const [onboardProgram, setOnboardProgram] = useState("");
+  const [onboardExp, setOnboardExp] = useState<"beginner"|"intermediate"|"">("");
+  const [onboardLangSearch, setOnboardLangSearch] = useState("");
   // Enrollment wizard
   const [showEnroll, setShowEnroll] = useState(false);
   const [enrollStep, setEnrollStep] = useState(0);
@@ -199,6 +437,13 @@ export default function AkunPage() {
 
       setStudent({ ...studentData, registrations: (regsData as any) || [] });
 
+      // ── Onboarding: show for new users with no registrations ──
+      const regs = (regsData as any) || [];
+      const onboardKey = `linguo_onboarded_${studentData.id}`;
+      if (regs.length === 0 && !localStorage.getItem(onboardKey)) {
+        setShowOnboarding(true);
+      }
+
       const regIds = (regsData || []).map((r: any) => r.id);
 
       // Upcoming schedules
@@ -264,21 +509,6 @@ export default function AkunPage() {
 
   // ── Derived Data ─────────────────────────────────────────────────
   // Booking helpers
-  // Check if a slot conflicts with existing bookings
-  function hasConflict(slotISO: string, durationMin: number, bookedSlotsSet: Set<string>): boolean {
-    const slotStart = new Date(slotISO).getTime();
-    const slotEnd = slotStart + durationMin * 60000;
-    for (const entry of bookedSlotsSet) {
-      const [existingISO, existingDurStr] = entry.split('|');
-      const existingStart = new Date(existingISO).getTime();
-      const existingDur = Number(existingDurStr) || 60;
-      const existingEnd = existingStart + existingDur * 60000;
-      // Overlap if: slotStart < existingEnd AND slotEnd > existingStart
-      if (slotStart < existingEnd && slotEnd > existingStart) return true;
-    }
-    return false;
-  }
-
   async function openBooking(reg: StudentReg) {
     if (!reg.teacher_id) {
       alert("Kelas ini belum punya pengajar ditugaskan. Hubungi admin.");
@@ -286,7 +516,6 @@ export default function AkunPage() {
     }
     setBookingReg(reg);
     setSelectedSlots(new Set());
-    setBookingDuration(Number(reg.duration) || 60);
     setLoadingSlots(true);
     // Fetch teacher_availability
     const { data: avail } = await supabase
@@ -298,13 +527,12 @@ export default function AkunPage() {
     const until = new Date(); until.setDate(until.getDate() + 14);
     const { data: booked } = await supabase
       .from("schedules")
-      .select("scheduled_at, duration_minutes")
+      .select("scheduled_at")
       .eq("teacher_id", reg.teacher_id)
       .gte("scheduled_at", new Date().toISOString())
       .lte("scheduled_at", until.toISOString())
       .neq("status", "cancelled");
-    // Store booked slots with duration for conflict detection
-    setBookedSlots(new Set((booked || []).map((b: any) => `${new Date(b.scheduled_at).toISOString()}|${b.duration_minutes || 60}`)));
+    setBookedSlots(new Set((booked || []).map((b: any) => new Date(b.scheduled_at).toISOString())));
     setLoadingSlots(false);
   }
 
@@ -317,7 +545,7 @@ export default function AkunPage() {
         teacher_id: bookingReg.teacher_id,
         student_id: student.id,
         scheduled_at: slot,
-        duration_minutes: bookingDuration,
+        duration_minutes: Number(bookingReg.duration) || 60,
         status: "pending",
         student_confirmed: true,
         student_confirmed_at: new Date().toISOString(),
@@ -622,6 +850,15 @@ export default function AkunPage() {
   // ═══════════════════════════════════════════════════════════════════
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20 lg:pb-8">
+
+      {/* ── Onboarding Wizard (first-time users) ──────────────────── */}
+      {showOnboarding && (
+        <OnboardingWizard
+          user={user}
+          studentId={student?.id}
+          onDone={() => setShowOnboarding(false)}
+        />
+      )}
 
       {/* ── Header ──────────────────────────────────────────────── */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
@@ -1027,7 +1264,6 @@ export default function AkunPage() {
                             {daySlots.map(s => {
                               const disabled = s.isBooked || s.isPast;
                               const isSelected = selectedSlots.has(s.iso);
-                                const isConflict = !isSelected && !s.past && !s.booked && hasConflict(s.iso, bookingDuration, bookedSlots);
                               return (
                                 <button
                                   key={s.time}
