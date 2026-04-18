@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { createClient } from '@/lib/supabase-client';
+import { supabase } from '@/lib/supabase-client';
 
 interface Props {
   reg: any;
@@ -36,8 +36,6 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
 
   async function fetchData() {
     setLoading(true);
-    const supabase = createClient();
-
     // Teacher info
     if (reg.teacher_id) {
       const { data: t } = await supabase
@@ -61,8 +59,6 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
   async function openReschedule(sched: any) {
     setSelectedSlot(null);
     setRescheduleSched(sched);
-
-    const supabase = createClient();
     const [{ data: avail }, { data: booked }] = await Promise.all([
       supabase.from('teacher_availability').select('day_of_week, time_slot').eq('teacher_id', reg.teacher_id),
       supabase.from('schedules').select('scheduled_at, id').eq('teacher_id', reg.teacher_id).in('status', ['pending', 'scheduled']),
@@ -79,7 +75,6 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
   async function submitReschedule() {
     if (!rescheduleSched || !selectedSlot) return;
     setIsProcessing(true);
-    const supabase = createClient();
     const { error } = await supabase
       .from('schedules')
       .update({
@@ -111,7 +106,6 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
     const willBeHangus = hoursUntil <= 24;
 
     setIsProcessing(true);
-    const supabase = createClient();
     const { error } = await supabase
       .from('schedules')
       .update({
