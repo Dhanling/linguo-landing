@@ -1,7 +1,27 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
-import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check } from "lucide-react";
+import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check, ChevronUp } from "lucide-react";
 import Link from "next/link";
+
+// ========== SCROLL TO TOP ==========
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  if (!visible) return null;
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-[#1A9E9E] hover:bg-[#178585] text-white shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
+    >
+      <ChevronUp className="w-5 h-5" />
+    </button>
+  );
+}
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -592,7 +612,9 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           <div className="flex items-center gap-6">
             <a href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors hidden sm:block font-medium">Home</a>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Blog</Link>
-            <a href="/" className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">Mulai Belajar</a>
+            <a href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
+              {langName ? `Belajar Bahasa ${langName}` : "Mulai Belajar"}
+            </a>
           </div>
         </div>
       </nav>
@@ -681,15 +703,67 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         {/* Comments */}
         <CommentsSection postId={post.id} />
 
-        {/* CTA */}
-        <div className="bg-gradient-to-br from-[#1A9E9E] to-[#178585] rounded-2xl p-8 sm:p-10 text-center text-white mb-14 shadow-lg">
-          <h3 className="text-xl sm:text-2xl font-extrabold mb-2 tracking-tight">Tertarik belajar {langName || "bahasa baru"}?</h3>
-          <p className="text-white/80 text-sm mb-6 max-w-md mx-auto">Coba kelas private 1-on-1 dengan pengajar profesional. Jadwal fleksibel, materi disesuaikan.</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/" className="inline-block bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3 rounded-full text-sm transition-colors shadow-sm">Mulai Belajar Sekarang</a>
-            <a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors">
-              <MessageCircle className="w-4 h-4" /> Konsultasi Gratis
-            </a>
+        {/* CTA — Enhanced */}
+        <div className="mb-14">
+          {/* Main CTA Card */}
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#1A9E9E] via-[#17918f] to-[#0e7070] rounded-2xl p-8 sm:p-10 text-white shadow-xl">
+            {/* Decorative circles */}
+            <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/5 pointer-events-none" />
+            <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-white/5 pointer-events-none" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-semibold mb-4">
+                🎯 Kelas Private 1-on-1
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight leading-snug">
+                {langName
+                  ? <>Siap berbicara <span className="text-[#fbbf24]">Bahasa {langName}</span> dengan percaya diri?</>
+                  : <>Siap belajar <span className="text-[#fbbf24]">bahasa baru</span> dari nol?</>
+                }
+              </h3>
+              <p className="text-white/80 text-sm sm:text-base mb-6 max-w-lg leading-relaxed">
+                Linguo menyediakan kelas private 1-on-1 dengan pengajar berpengalaman.
+                Jadwal fleksibel, materi disesuaikan kebutuhan kamu — dari A1 sampai B2.
+              </p>
+
+              {/* Social proof row */}
+              <div className="flex flex-wrap gap-4 mb-7 text-sm">
+                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">👩‍🎓</span> 200+ pelajar aktif</div>
+                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">🌍</span> 60+ bahasa tersedia</div>
+                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">⭐</span> Jadwal fleksibel</div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"}
+                  className="inline-flex items-center justify-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
+                >
+                  🚀 {langName ? `Mulai Belajar Bahasa ${langName}` : "Mulai Belajar Sekarang"}
+                </a>
+                <a
+                  href="https://wa.me/6282116859493"
+                  target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-all border border-white/20 hover:border-white/30"
+                >
+                  <MessageCircle className="w-4 h-4" /> Konsultasi Gratis
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature chips below CTA */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+            {[
+              { icon: "📅", label: "Jadwal Fleksibel", sub: "Sesuaikan waktu kamu" },
+              { icon: "📚", label: "Materi Custom", sub: "Disesuaikan tujuanmu" },
+              { icon: "🎓", label: "Pengajar Berpengalaman", sub: "Terlatih & bersertifikat" },
+              { icon: "💬", label: "Fokus Speaking", sub: "Langsung praktek" },
+            ].map(f => (
+              <div key={f.label} className={`rounded-xl p-4 border text-center transition-colors ${darkMode ? "bg-[#1e293b] border-slate-700" : "bg-slate-50 border-slate-100 hover:border-[#1A9E9E]/20"}`}>
+                <div className="text-2xl mb-1">{f.icon}</div>
+                <div className={`text-xs font-semibold ${darkMode ? "text-slate-200" : "text-slate-800"}`}>{f.label}</div>
+                <div className={`text-[11px] mt-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{f.sub}</div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -711,6 +785,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         )}
       </main>
 
+      <ScrollToTop />
       {/* Footer */}
       <footer className="bg-[#1A9E9E] text-white">
         <div className="max-w-7xl mx-auto px-6 py-16">
