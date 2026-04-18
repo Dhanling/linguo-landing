@@ -44,110 +44,292 @@ const FAQS = [
 ];
 
 // ========== LOGIN MODAL ==========
-function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [loading, setLoading] = useState(false);
+type AuthView = "login" | "signup" | "forgot" | "forgot_sent" | "verify_phone";
 
+function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [view, setView] = useState<AuthView>("login");
+  const [tab, setTab] = useState<"email" | "phone">("email");
+
+  // Fields
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+62");
+  const [password, setPassword] = useState("");
+  const [showPass, setShowPass] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const reset = () => {
+    setError(""); setSuccess(""); setName(""); setEmail("");
+    setPhone(""); setPassword(""); setOtp(""); setShowPass(false);
+  };
+
+  const goTo = (v: AuthView) => { reset(); setView(v); };
+
+  // ── Google OAuth ──
   const handleGoogle = async () => {
-    setLoading(true);
+    setLoading(true); setError("");
     try {
       await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: window.location.origin + "/auth/callback" },
       });
-    } catch (e) {
-      console.error(e);
-      setLoading(false);
-    }
+    } catch { setError("Gagal login dengan Google."); setLoading(false); }
+  };
+
+  // ── Email Login ──
+  const handleEmailLogin = async () => {
+    if (!email || !password) { setError("Email dan password wajib diisi."); return; }
+    setLoading(true); setError("");
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    setLoading(false);
+    if (error) { setError(error.message === "Invalid login credentials" ? "Email atau password salah." : error.message); }
+    else { onClose(); window.location.href = "/akun"; }
+  };
+
+  // ── Email Sign Up ──
+  const handleSignUp = async () => {
+    if (!name || !email || !password) { setError("Semua field wajib diisi."); return; }
+    if (password.length < 6) { setError("Password minimal 6 karakter."); return; }
+    setLoading(true); setError("");
+    const { error } = await supabase.auth.signUp({
+      email, password,
+      options: { data: { full_name: name }, emailRedirectTo: window.location.origin + "/auth/callback" },
+    });
+    setLoading(false);
+    if (error) { setError(error.message); }
+    else { setSuccess("Cek email kamu untuk konfirmasi akun ya! 📧"); }
+  };
+
+  // ── Forgot Password ──
+  const handleForgot = async () => {
+    if (!email) { setError("Masukkan email kamu dulu."); return; }
+    setLoading(true); setError("");
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + "/auth/callback?type=recovery",
+    });
+    setLoading(false);
+    if (error) { setError(error.message); }
+    else { goTo("forgot_sent"); }
+  };
+
+  // ── Phone OTP Send ──
+  const handlePhoneSend = async () => {
+    if (!phone) { setError("Nomor HP wajib diisi."); return; }
+    setLoading(true); setError("");
+    const fullPhone = countryCode + phone.replace(/^0/, "");
+    const { error } = await supabase.auth.signInWithOtp({ phone: fullPhone });
+    setLoading(false);
+    if (error) { setError("Gagal kirim OTP: " + error.message); }
+    else { setSuccess("Kode OTP dikirim ke " + fullPhone); goTo("verify_phone"); }
+  };
+
+  // ── Phone OTP Verify ──
+  const handleOtpVerify = async () => {
+    if (!otp) { setError("Masukkan kode OTP."); return; }
+    setLoading(true); setError("");
+    const fullPhone = countryCode + phone.replace(/^0/, "");
+    const { error } = await supabase.auth.verifyOtp({ phone: fullPhone, token: otp, type: "sms" });
+    setLoading(false);
+    if (error) { setError("Kode OTP salah atau expired."); }
+    else { onClose(); window.location.href = "/akun"; }
   };
 
   if (!open) return null;
 
+  const inputCls = "w-full border border-slate-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/10 placeholder:text-slate-400 transition-all";
+
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
           className="fixed inset-0 z-[999] flex items-center justify-center p-4"
-          onClick={onClose}
-        >
-          {/* Backdrop */}
+          onClick={onClose}>
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-
-          {/* Modal card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 16 }}
-            transition={{ duration: 0.2 }}
+          <motion.div initial={{ opacity: 0, scale: 0.95, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 16 }} transition={{ duration: 0.2 }}
             onClick={e => e.stopPropagation()}
-            className="relative bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 z-10"
-          >
+            className="relative bg-white rounded-3xl shadow-2xl w-full max-w-sm z-10 overflow-hidden">
+
             {/* Close */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
-            >
+            <button onClick={onClose} className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors z-10">
               <X className="w-5 h-5" />
             </button>
 
-            {/* Logo */}
-            <div className="flex justify-center mb-6">
-              <img src="/images/logo-color.png" alt="Linguo" className="h-10 object-contain"
-                onError={e => { (e.target as HTMLImageElement).src = "/images/logo-white.png"; (e.target as HTMLImageElement).className = "h-10 object-contain brightness-0"; }} />
-            </div>
+            <div className="p-8">
 
-            {/* Headline */}
-            <h2 className="text-2xl font-extrabold text-slate-900 text-center mb-2 tracking-tight">
-              Selamat datang! 👋
-            </h2>
-            <p className="text-slate-500 text-sm text-center mb-8 leading-relaxed">
-              Masuk untuk mulai belajar bahasa impianmu bersama Linguo.
-            </p>
+              {/* ── FORGOT SENT ── */}
+              {view === "forgot_sent" ? (
+                <div className="text-center py-4">
+                  <div className="text-5xl mb-4">📧</div>
+                  <h2 className="text-xl font-extrabold text-slate-900 mb-2">Cek email kamu!</h2>
+                  <p className="text-slate-500 text-sm mb-6">Link reset password sudah dikirim ke <strong>{email}</strong>. Cek inbox atau folder spam ya.</p>
+                  <button onClick={() => goTo("login")} className="text-sm text-[#1A9E9E] font-semibold hover:underline">← Kembali ke Login</button>
+                </div>
 
-            {/* Google Button */}
-            <button
-              onClick={handleGoogle}
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-slate-300 text-slate-700 font-semibold px-6 py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] disabled:opacity-60 mb-4"
-            >
-              {loading ? (
-                <div className="w-5 h-5 border-2 border-slate-300 border-t-[#1A9E9E] rounded-full animate-spin" />
+              ) : view === "verify_phone" ? (
+              /* ── VERIFY PHONE OTP ── */
+                <div>
+                  <button onClick={() => goTo("login")} className="flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-4 transition-colors">
+                    <ChevronLeft className="w-4 h-4" /> Kembali
+                  </button>
+                  <h2 className="text-xl font-extrabold text-slate-900 mb-1">Masukkan kode OTP</h2>
+                  <p className="text-slate-500 text-sm mb-6">Kode 6 digit sudah dikirim ke <strong>{countryCode + phone}</strong></p>
+                  {error && <p className="text-red-500 text-xs mb-3 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
+                  <input value={otp} onChange={e => setOtp(e.target.value)} placeholder="_ _ _ _ _ _"
+                    className={inputCls + " text-center text-2xl tracking-[0.5em] font-bold mb-4"} maxLength={6} />
+                  <button onClick={handleOtpVerify} disabled={loading}
+                    className="w-full bg-[#1A9E9E] hover:bg-[#178585] text-white font-bold py-3.5 rounded-2xl text-sm transition-all disabled:opacity-60 flex items-center justify-center gap-2">
+                    {loading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                    Verifikasi
+                  </button>
+                </div>
+
               ) : (
-                <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
+              /* ── MAIN VIEWS: login / signup / forgot ── */
+                <>
+                  {/* Header */}
+                  <h2 className="text-2xl font-extrabold text-slate-900 mb-1 tracking-tight">
+                    {view === "signup" ? "Daftar Akun Baru" : view === "forgot" ? "Reset Password" : "Selamat datang! 👋"}
+                  </h2>
+                  <p className="text-slate-500 text-sm mb-6">
+                    {view === "signup" ? "Buat akun untuk mulai belajar bahasa impianmu." :
+                     view === "forgot" ? "Masukkan emailmu, kami kirim link reset password." :
+                     "Masuk untuk lanjut belajar bersama Linguo."}
+                  </p>
+
+                  {/* Error / Success */}
+                  {error && <p className="text-red-500 text-xs mb-4 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
+                  {success && <p className="text-emerald-600 text-xs mb-4 bg-emerald-50 px-3 py-2 rounded-lg">{success}</p>}
+
+                  {/* Google (not on forgot) */}
+                  {view !== "forgot" && (
+                    <>
+                      <button onClick={handleGoogle} disabled={loading}
+                        className="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] disabled:opacity-60 mb-4">
+                        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Lanjutkan dengan Google
+                      </button>
+
+                      {/* OR divider */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="flex-1 h-px bg-slate-100" />
+                        <span className="text-xs text-slate-400">atau</span>
+                        <div className="flex-1 h-px bg-slate-100" />
+                      </div>
+
+                      {/* Email / Phone tabs */}
+                      <div className="flex border-b border-slate-100 mb-4">
+                        {(["email", "phone"] as const).map(t => (
+                          <button key={t} onClick={() => { setTab(t); reset(); }}
+                            className={`flex-1 pb-2.5 text-sm font-semibold transition-all ${tab === t ? "text-slate-900 border-b-2 border-slate-900" : "text-slate-400 hover:text-slate-600"}`}>
+                            {t === "email" ? "Email" : "No. HP"}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {/* Name (signup only) */}
+                  {view === "signup" && (
+                    <input value={name} onChange={e => setName(e.target.value)} placeholder="Nama lengkap"
+                      className={inputCls + " mb-3"} />
+                  )}
+
+                  {/* Email tab fields */}
+                  {(tab === "email" || view === "forgot") && (
+                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email"
+                      className={inputCls + " mb-3"} />
+                  )}
+
+                  {/* Phone tab fields */}
+                  {tab === "phone" && view !== "forgot" && (
+                    <div className="flex gap-2 mb-3">
+                      <select value={countryCode} onChange={e => setCountryCode(e.target.value)}
+                        className="border border-slate-200 rounded-xl px-3 py-3 text-sm outline-none focus:border-[#1A9E9E] bg-white shrink-0">
+                        {["+62","+1","+44","+81","+82","+86","+60","+65","+63","+84","+66"].map(c => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
+                      </select>
+                      <input value={phone} onChange={e => setPhone(e.target.value)} placeholder="08xxxxxxxxxx" type="tel"
+                        className={inputCls} />
+                    </div>
+                  )}
+
+                  {/* Password (not on forgot, not phone) */}
+                  {view !== "forgot" && tab === "email" && (
+                    <div className="relative mb-1">
+                      <input value={password} onChange={e => setPassword(e.target.value)}
+                        placeholder="Password" type={showPass ? "text" : "password"}
+                        className={inputCls + " pr-12"}
+                        onKeyDown={e => e.key === "Enter" && (view === "login" ? handleEmailLogin() : handleSignUp())} />
+                      <button type="button" onClick={() => setShowPass(v => !v)}
+                        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors">
+                        {showPass ? (
+                          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                        ) : (
+                          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        )}
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Forgot password link (login only) */}
+                  {view === "login" && tab === "email" && (
+                    <div className="flex justify-end mb-4">
+                      <button onClick={() => goTo("forgot")} className="text-xs text-slate-400 hover:text-[#1A9E9E] transition-colors font-medium">
+                        Lupa password?
+                      </button>
+                    </div>
+                  )}
+
+                  {!success && <div className="mt-4" />}
+
+                  {/* Main CTA button */}
+                  {!success && (
+                    <button
+                      onClick={view === "forgot" ? handleForgot : view === "signup" ? handleSignUp : tab === "phone" ? handlePhoneSend : handleEmailLogin}
+                      disabled={loading}
+                      className="w-full bg-[#1A9E9E] hover:bg-[#178585] text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] disabled:opacity-60 flex items-center justify-center gap-2 mb-5">
+                      {loading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                      {view === "forgot" ? "Kirim Link Reset" : view === "signup" ? "Daftar Sekarang" : tab === "phone" ? "Kirim Kode OTP" : "Masuk"}
+                    </button>
+                  )}
+
+                  {/* Footer links */}
+                  <div className="text-center text-sm text-slate-500">
+                    {view === "login" ? (
+                      <>Belum punya akun?{" "}
+                        <button onClick={() => goTo("signup")} className="text-[#1A9E9E] font-semibold hover:underline">Daftar</button>
+                      </>
+                    ) : view === "signup" ? (
+                      <>Sudah punya akun?{" "}
+                        <button onClick={() => goTo("login")} className="text-[#1A9E9E] font-semibold hover:underline">Masuk</button>
+                      </>
+                    ) : (
+                      <button onClick={() => goTo("login")} className="text-[#1A9E9E] font-semibold hover:underline">← Kembali ke Login</button>
+                    )}
+                  </div>
+
+                  {/* Terms (login/signup only) */}
+                  {view !== "forgot" && (
+                    <p className="text-center text-[11px] text-slate-400 leading-relaxed mt-4">
+                      Dengan masuk, kamu menyetujui{" "}
+                      <a href="/privacy" className="underline hover:text-slate-600">Syarat & Ketentuan</a>{" "}
+                      Linguo.id
+                    </p>
+                  )}
+                </>
               )}
-              Lanjutkan dengan Google
-            </button>
-
-            {/* Divider */}
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex-1 h-px bg-slate-100" />
-              <span className="text-xs text-slate-400">atau</span>
-              <div className="flex-1 h-px bg-slate-100" />
             </div>
-
-            {/* Email fallback */}
-            <a
-              href="/akun"
-              className="w-full flex items-center justify-center gap-2 bg-[#1A9E9E] hover:bg-[#178585] text-white font-semibold px-6 py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] mb-6"
-            >
-              Masuk ke Dashboard Siswa
-            </a>
-
-            {/* Terms */}
-            <p className="text-center text-[11px] text-slate-400 leading-relaxed">
-              Dengan masuk, kamu menyetujui{" "}
-              <a href="/privacy" className="underline hover:text-slate-600">Kebijakan Privasi</a>{" "}
-              dan{" "}
-              <a href="/privacy" className="underline hover:text-slate-600">Syarat & Ketentuan</a>{" "}
-              Linguo.id
-            </p>
           </motion.div>
         </motion.div>
       )}
