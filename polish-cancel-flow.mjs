@@ -1,4 +1,23 @@
-'use client';
+#!/usr/bin/env node
+// polish-cancel-flow.mjs
+// Phase 3b polish:
+//   1. Pre-confirm step before cancel (with "Reschedule aja" option for >24hr sessions)
+//   2. Display cancel_reason + cancelled_by in history schedule cards
+//   3. Success feedback after cancel/reschedule
+//
+// Usage: drag ke ~/linguo-landing → cd ~/linguo-landing → node polish-cancel-flow.mjs
+
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
+
+const FILE = 'src/components/ClassDetailModal.tsx';
+if (!fs.existsSync(FILE)) {
+  console.error('❌ ' + FILE + ' ga ketemu. Run di folder ~/linguo-landing.');
+  process.exit(1);
+}
+
+const content = `'use client';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase-client';
@@ -46,7 +65,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
     setLoading(true);
     if (reg.teacher_id) {
       const { data: t } = await supabase.from('teachers').select('name, title').eq('id', reg.teacher_id).maybeSingle();
-      if (t) setTeacherName(`${t.title || 'Kak'} ${t.name}`);
+      if (t) setTeacherName(\`\${t.title || 'Kak'} \${t.name}\`);
     }
     const { data: s } = await supabase
       .from('schedules')
@@ -192,7 +211,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
               <button
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
-                className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${activeTab === t.id ? 'border-green-600 text-green-700' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
+                className={\`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors \${activeTab === t.id ? 'border-green-600 text-green-700' : 'border-transparent text-gray-500 hover:text-gray-800'}\`}
               >
                 <span className="mr-1.5">{t.icon}</span>{t.label}
               </button>
@@ -223,7 +242,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
                   <div className="text-sm font-bold text-green-600">{reg.sessions_used || 0} / {reg.sessions_total || 0}</div>
                 </div>
                 <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all" style={{ width: `${progress}%` }} />
+                  <div className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all" style={{ width: \`\${progress}%\` }} />
                 </div>
               </div>
 
@@ -335,12 +354,12 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
                         key={s.iso}
                         onClick={() => !disabled && setSelectedSlot(s.iso)}
                         disabled={disabled}
-                        className={`p-2 rounded-lg text-xs font-medium border transition-all ${
+                        className={\`p-2 rounded-lg text-xs font-medium border transition-all \${
                           selectedSlot === s.iso ? 'bg-green-600 text-white border-green-600'
                           : disabled ? 'bg-gray-100 text-gray-400 line-through cursor-not-allowed border-gray-200'
                           : s.isCurrent ? 'bg-yellow-50 text-yellow-800 border-yellow-300 border-dashed'
                           : 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
-                        }`}
+                        }\`}
                       >
                         {s.label}
                         {s.isCurrent && <div className="text-[10px] opacity-80">(sekarang)</div>}
@@ -462,7 +481,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
                     <button
                       onClick={submitCancel}
                       disabled={isProcessing || !cancelReason.trim()}
-                      className={`flex-1 py-3 rounded-xl font-bold text-white ${willBeHangus ? 'bg-red-600 hover:bg-red-700' : 'bg-green-600 hover:bg-green-700'} disabled:bg-gray-300`}
+                      className={\`flex-1 py-3 rounded-xl font-bold text-white \${willBeHangus ? 'bg-red-600 hover:bg-red-700' : 'bg-green-600 hover:bg-green-700'} disabled:bg-gray-300\`}
                     >
                       {isProcessing ? '…' : willBeHangus ? 'Batalkan (Hangus)' : 'Batalkan Sesi'}
                     </button>
@@ -504,14 +523,14 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
     <div className="bg-white border border-gray-200 rounded-2xl p-3.5">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <div className={`font-semibold ${isCancelledOrHangus ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
+          <div className={\`font-semibold \${isCancelledOrHangus ? 'text-gray-500 line-through' : 'text-gray-900'}\`}>
             {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}
           </div>
-          <div className={`text-sm ${isCancelledOrHangus ? 'text-gray-400' : 'text-gray-600'}`}>
+          <div className={\`text-sm \${isCancelledOrHangus ? 'text-gray-400' : 'text-gray-600'}\`}>
             {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB · {sched.duration_minutes || 60} menit
           </div>
         </div>
-        <span className={`text-xs font-semibold px-2 py-1 rounded-full shrink-0 ${st.color}`}>{st.label}</span>
+        <span className={\`text-xs font-semibold px-2 py-1 rounded-full shrink-0 \${st.color}\`}>{st.label}</span>
       </div>
 
       {sched.notes && !isCancelledOrHangus && <div className="text-xs text-gray-500 mt-2">{sched.notes}</div>}
@@ -527,7 +546,7 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
           )}
           {(sched.cancelled_by || sched.cancelled_at) && (
             <div className="text-[11px] text-gray-500">
-              {sched.cancelled_by && `Dibatalkan oleh ${cancelledByLabel[sched.cancelled_by] || sched.cancelled_by}`}
+              {sched.cancelled_by && \`Dibatalkan oleh \${cancelledByLabel[sched.cancelled_by] || sched.cancelled_by}\`}
               {sched.cancelled_by && sched.cancelled_at && ' · '}
               {sched.cancelled_at && new Date(sched.cancelled_at).toLocaleString('id-ID', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
             </div>
@@ -559,4 +578,29 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
       )}
     </div>
   );
+}
+`;
+
+fs.writeFileSync(FILE, content);
+console.log('✓ Rewrote', FILE);
+console.log('  • Pre-confirm step with "Reschedule aja" option (>24hr)');
+console.log('  • Cancel reason & cancelled_by displayed in history cards');
+console.log('  • Toast feedback after reschedule/cancel');
+
+// Git push
+try {
+  console.log('\n🔄 git add / commit / push...');
+  execSync('git add -A', { stdio: 'inherit' });
+  try {
+    execSync('git commit -m "polish(akun): 2-step cancel flow + display cancel reason in history"', { stdio: 'inherit' });
+  } catch {
+    console.log('ℹ️  Nothing to commit.');
+  }
+  execSync('git push', { stdio: 'inherit' });
+  console.log('\n✅ Pushed.');
+
+  fs.unlinkSync(process.argv[1]);
+  console.log('🗑️  Self-deleted.');
+} catch (e) {
+  console.error('\n❌ Git failed:', e.message);
 }
