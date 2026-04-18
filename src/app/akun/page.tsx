@@ -407,10 +407,10 @@ export default function AkunPage() {
   // ── Data Loading (fixed column names) ────────────────────────────
   useEffect(() => {
     if (!user?.email) return;
-    loadStudentData(user.email);
+    loadStudentData(user.email, user.id);
   }, [user?.email]);
 
-  async function loadStudentData(email: string) {
+  async function loadStudentData(email: string, userId?: string) {
     setDataLoading(true);
     try {
       const { data: studentData } = await supabase
@@ -419,7 +419,15 @@ export default function AkunPage() {
         .eq("email", email)
         .maybeSingle();
 
-      if (!studentData) { setDataLoading(false); return; }
+      if (!studentData) {
+        // New user — no student record yet, show onboarding
+        const onboardKey = `linguo_onboarded_${userId || email}`;
+        if (!localStorage.getItem(onboardKey)) {
+          setShowOnboarding(true);
+        }
+        setDataLoading(false);
+        return;
+      }
 
       // Only use columns that actually exist in the DB
       const { data: regsData } = await supabase
@@ -824,8 +832,20 @@ export default function AkunPage() {
     );
   }
 
-  // No student record
+  // No student record — show onboarding wizard or fallback
   if (!student) {
+    if (showOnboarding) {
+      return (
+        <OnboardingWizard
+          user={user}
+          studentId={undefined}
+          onDone={() => {
+            try { localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1"); } catch {}
+            setShowOnboarding(false);
+          }}
+        />
+      );
+    }
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm text-center">
@@ -834,8 +854,8 @@ export default function AkunPage() {
           </div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">Halo, {firstName}!</h2>
           <p className="text-gray-500 mb-6">Kamu belum terdaftar sebagai siswa. Daftar kelas pertamamu!</p>
-          <button onClick={openEnrollWizard} className="inline-flex h-12 items-center gap-2 rounded-xl bg-teal-600 px-6 text-sm font-semibold text-white hover:bg-teal-700 transition-colors shadow-lg shadow-teal-200">
-            ✨ Daftar Kelas Pertama
+          <button onClick={() => setShowOnboarding(true)} className="inline-flex h-12 items-center gap-2 rounded-xl bg-teal-600 px-6 text-sm font-semibold text-white hover:bg-teal-700 transition-colors shadow-lg shadow-teal-200">
+            ✨ Mulai Onboarding
           </button>
           <button onClick={signOut} className="block mx-auto mt-4 text-sm text-gray-400 hover:text-gray-600 transition-colors">Keluar</button>
         </motion.div>
