@@ -1,4 +1,103 @@
-'use client';
+#!/usr/bin/env node
+// webpush-client-setup.mjs
+// Setup Web Push notifications (client side):
+//   1. Service Worker at public/sw.js (handles push events)
+//   2. Upgrade StudentRealtimeNotifs.tsx: hybrid polling + web push
+//   3. Register SW + subscribe to push on bell click
+//   4. Save subscription to push_subscriptions table
+//
+// Precondition:
+//   - SQL ran (push_subscriptions table + pg_net)
+//   - Vercel env var NEXT_PUBLIC_VAPID_PUBLIC_KEY set + redeployed
+//
+// Usage: drag ke ~/linguo-landing → cd ~/linguo-landing → node webpush-client-setup.mjs
+
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
+
+const SW_PATH = 'public/sw.js';
+const COMP_PATH = 'src/components/StudentRealtimeNotifs.tsx';
+
+if (!fs.existsSync('src/app/akun/page.tsx')) { console.error('❌ Run di ~/linguo-landing'); process.exit(1); }
+
+// =========================================================================
+// STEP 1 — Service Worker
+// =========================================================================
+
+const swContent = `// Linguo.id Service Worker — handles push notifications
+// Registered from StudentRealtimeNotifs component.
+
+const VERSION = 'v1';
+console.log('[SW Linguo] loaded', VERSION);
+
+self.addEventListener('install', (event) => {
+  console.log('[SW Linguo] install');
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  console.log('[SW Linguo] activate');
+  event.waitUntil(self.clients.claim());
+});
+
+self.addEventListener('push', (event) => {
+  console.log('[SW Linguo] push received');
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch (e) {
+    data = { title: 'Linguo.id', body: event.data ? event.data.text() : 'Notifikasi baru' };
+  }
+
+  const title = data.title || 'Linguo.id';
+  const options = {
+    body: data.body || '',
+    icon: data.icon || '/favicon.ico',
+    badge: '/favicon.ico',
+    tag: data.tag || 'linguo',
+    data: { url: data.url || '/akun' },
+    requireInteraction: false,
+    vibrate: [100, 50, 100],
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  console.log('[SW Linguo] notification clicked');
+  event.notification.close();
+  const targetUrl = event.notification.data?.url || '/akun';
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((windowClients) => {
+      // If a window with matching origin exists, focus it
+      for (const client of windowClients) {
+        const clientUrl = new URL(client.url);
+        if (clientUrl.origin === self.location.origin) {
+          client.focus();
+          if ('navigate' in client && clientUrl.pathname !== targetUrl) {
+            client.navigate(targetUrl);
+          }
+          return;
+        }
+      }
+      // Otherwise open new window
+      if (clients.openWindow) return clients.openWindow(targetUrl);
+    })
+  );
+});
+`;
+
+fs.mkdirSync(path.dirname(SW_PATH), { recursive: true });
+fs.writeFileSync(SW_PATH, swContent);
+console.log('✓ Created', SW_PATH);
+
+// =========================================================================
+// STEP 2 — StudentRealtimeNotifs: hybrid polling + web push
+// =========================================================================
+
+const compContent = `'use client';
 
 import { useEffect, useRef, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
@@ -28,7 +127,7 @@ function ab2b64(buffer: ArrayBuffer | null): string {
   const bytes = new Uint8Array(buffer);
   let binary = '';
   for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
-  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  return btoa(binary).replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '');
 }
 
 export default function StudentRealtimeNotifs() {
@@ -170,20 +269,20 @@ export default function StudentRealtimeNotifs() {
   function buildInsertMsg(s: any): string | null {
     if (s.student_confirmed && !s.cancelled_by) return null;
     const dt = s.scheduled_at ? new Date(s.scheduled_at).toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
-    return `📅 Sesi baru dijadwalkan pengajar${dt ? ' · ' + dt : ''}`;
+    return \`📅 Sesi baru dijadwalkan pengajar\${dt ? ' · ' + dt : ''}\`;
   }
 
   function buildUpdateMsg(o: any, n: any): string | null {
     if (o.status !== n.status) {
       if (n.status === 'scheduled') return '✅ Pengajar meng-approve jadwal!';
-      if (n.status === 'cancelled' && n.cancelled_by === 'teacher') return `❌ Pengajar cancel sesi${n.cancel_reason ? ': ' + n.cancel_reason : ''}`;
-      if (n.status === 'cancelled' && n.cancelled_by === 'admin') return `❌ Admin cancel sesi${n.cancel_reason ? ': ' + n.cancel_reason : ''}`;
+      if (n.status === 'cancelled' && n.cancelled_by === 'teacher') return \`❌ Pengajar cancel sesi\${n.cancel_reason ? ': ' + n.cancel_reason : ''}\`;
+      if (n.status === 'cancelled' && n.cancelled_by === 'admin') return \`❌ Admin cancel sesi\${n.cancel_reason ? ': ' + n.cancel_reason : ''}\`;
       if (n.status === 'completed') return '🎉 Sesi selesai!';
     }
     if (o.scheduled_at !== n.scheduled_at && n.status !== 'cancelled' && n.status !== 'hangus') {
       if (n.notes?.includes('reschedule oleh siswa')) return null;
       const newDt = new Date(n.scheduled_at).toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-      return `🔄 Pengajar reschedule ke ${newDt}`;
+      return \`🔄 Pengajar reschedule ke \${newDt}\`;
     }
     return null;
   }
@@ -351,13 +450,13 @@ export default function StudentRealtimeNotifs() {
       <div className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-40 flex flex-col items-end gap-1">
         <button
           onClick={handleBellClick}
-          title={`Notif: ${notifPerm} · Push: ${pushState} · Poll: ${pollState} · Events: ${eventCount}`}
+          title={\`Notif: \${notifPerm} · Push: \${pushState} · Poll: \${pollState} · Events: \${eventCount}\`}
           disabled={notifPerm === 'denied' || notifPerm === 'unsupported'}
-          className={`relative w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all ${bellClass}`}
+          className={\`relative w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all \${bellClass}\`}
           aria-label="Notifikasi"
         >
           <span className="text-xl">{bellIcon}</span>
-          <span className={`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full ring-2 ring-white ${dotColor}`} />
+          <span className={\`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full ring-2 ring-white \${dotColor}\`} />
           {eventCount > 0 && (
             <span className="absolute -top-2 -left-2 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
               {eventCount > 99 ? '99+' : eventCount}
@@ -377,9 +476,30 @@ export default function StudentRealtimeNotifs() {
         </div>
       )}
 
-      <style jsx global>{`
+      <style jsx global>{\`
         @keyframes slideDown { from { opacity: 0; transform: translate(-50%, -20px); } to { opacity: 1; transform: translate(-50%, 0); } }
-      `}</style>
+      \`}</style>
     </>
   );
 }
+`;
+
+fs.writeFileSync(COMP_PATH, compContent);
+console.log('✓ Rewrote', COMP_PATH);
+console.log('  • Service worker registration');
+console.log('  • Push subscription flow on bell click');
+console.log('  • Saves subscription to push_subscriptions table');
+console.log('  • Polling fallback for in-tab instant updates');
+console.log('  • window.__linguoDebug.subscribe() / .unsubscribe() / .getState()');
+
+try {
+  console.log('\n🔄 git add / commit / push...');
+  execSync('git add -A', { stdio: 'inherit' });
+  try {
+    execSync('git commit -m "feat(akun): web push notifications — service worker + client subscribe"', { stdio: 'inherit' });
+  } catch { console.log('ℹ️  Nothing to commit.'); }
+  execSync('git push', { stdio: 'inherit' });
+  console.log('\n✅ Pushed.');
+  fs.unlinkSync(process.argv[1]);
+  console.log('🗑️  Self-deleted.');
+} catch (e) { console.error('\n❌ Git failed:', e.message); }
