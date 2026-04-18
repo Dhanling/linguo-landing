@@ -390,34 +390,26 @@ export default function AkunPage() {
               )}
             </div>
 
-            <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between gap-3 shrink-0">
-              <div className="text-xs text-gray-500 min-w-0 truncate">
-                {selectedSlot
-                  ? `📌 ${new Date(selectedSlot).toLocaleString("id-ID", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} WIB`
-                  : "Pilih slot dulu"}
-              </div>
+            <div className="border-t border-gray-100 px-5 py-4 shrink-0 space-y-2">
+              {selectedSlots.size > 0 && (
+                <div className="p-2.5 bg-green-50 rounded-xl text-xs text-green-800 space-y-1">
+                  <div className="font-semibold">📌 {selectedSlots.size} sesi dipilih:</div>
+                  {Array.from(selectedSlots).sort().map((iso) => (
+                    <div key={iso} className="flex items-center gap-1">
+                      <span>•</span>
+                      <span>{new Date(iso).toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })} WIB</span>
+                      <button onClick={() => setSelectedSlots((p) => { const n = new Set(p); n.delete(iso); return n; })} className="ml-auto text-red-400 hover:text-red-600 font-bold">✕</button>
+                    </div>
+                  ))}
+                </div>
+              )}
               <button
-                        key={s.iso}
-                        onClick={() => {
-                          if (s.past || s.booked) return;
-                          setSelectedSlots((prev) => {
-                            const next = new Set(prev);
-                            if (next.has(s.iso)) next.delete(s.iso);
-                            else next.add(s.iso);
-                            return next;
-                          });
-                        }}
-                        disabled={s.past || s.booked}
-                        className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
-                          selectedSlots.has(s.iso)
-                            ? 'bg-green-600 text-white border-green-600 ring-2 ring-green-300'
-                            : s.past || s.booked
-                            ? 'bg-gray-100 text-gray-400 line-through cursor-not-allowed border-gray-200'
-                            : 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
-                        }`}
-                      >
-                        {s.time}
-                      </button>
+                onClick={submitBooking}
+                disabled={selectedSlots.size === 0 || isSubmitting}
+                className="w-full py-3 rounded-xl bg-green-600 text-white font-bold hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              >
+                {isSubmitting ? 'Menyimpan…' : selectedSlots.size > 0 ? `Booking ${selectedSlots.size} Sesi →` : 'Pilih slot dulu'}
+              </button>
             </div>
           </motion.div>
         </div>
