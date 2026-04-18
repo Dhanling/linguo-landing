@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 
+import ClassDetailModal from '@/components/ClassDetailModal';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -109,7 +110,8 @@ export default function AkunPage() {
   const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
   const [loadingSlots, setLoadingSlots] = useState(false);
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null); // ISO string
+  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
+  const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
@@ -725,6 +727,12 @@ export default function AkunPage() {
                               {/* Booking button — only for private classes with teacher */}
                               {reg.teacher_id && reg.product === "Kelas Private" && (
                                 <button
+                  onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
+                  className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 mr-2"
+                >
+                  📋 Detail
+                </button>
+                <button
                                   onClick={() => openBooking(reg)}
                                   className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
                                 >
@@ -942,6 +950,7 @@ export default function AkunPage() {
       </nav>
 
       {/* Booking Modal */}
+      {detailReg && <ClassDetailModal reg={detailReg} onClose={() => setDetailReg(null)} />}
       {bookingReg && (
         <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4" onClick={() => !bookingSubmit && setBookingReg(null)}>
           <motion.div
