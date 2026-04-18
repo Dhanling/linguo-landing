@@ -104,6 +104,13 @@ export default function AkunPage() {
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun">("beranda");
+  // Booking Modal
+  const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
+  const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
+  const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [selectedSlot, setSelectedSlot] = useState<string | null>(null); // ISO string
+  const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -251,7 +258,68 @@ export default function AkunPage() {
   }
 
   // ── Derived Data ─────────────────────────────────────────────────
-  const activeRegs = useMemo(() => student?.registrations.filter(r => r.status === "Aktif") || [], [student]);
+  // Booking helpers
+  async function openBooking(reg: StudentReg) {
+    if (!reg.teacher_id) {
+      alert("Kelas ini belum punya pengajar ditugaskan. Hubungi admin.");
+      return;
+    }
+    setBookingReg(reg);
+    setSelectedSlot(null);
+    setLoadingSlots(true);
+    // Fetch teacher_availability
+    const { data: avail } = await supabase
+      .from("teacher_availability")
+      .select("day_of_week, time_slot")
+      .eq("teacher_id", reg.teacher_id);
+    setAvailSlots(new Set((avail || []).map((a: any) => `${a.day_of_week}-${a.time_slot}`)));
+    // Fetch already-booked schedules in next 14 days (to avoid conflicts)
+    const until = new Date(); until.setDate(until.getDate() + 14);
+    const { data: booked } = await supabase
+      .from("schedules")
+      .select("scheduled_at")
+      .eq("teacher_id", reg.teacher_id)
+      .gte("scheduled_at", new Date().toISOString())
+      .lte("scheduled_at", until.toISOString())
+      .neq("status", "cancelled");
+    setBookedSlots(new Set((booked || []).map((b: any) => new Date(b.scheduled_at).toISOString())));
+    setLoadingSlots(false);
+  }
+
+  async function submitBooking() {
+    if (!bookingReg || !selectedSlot || !student) return;
+    setBookingSubmit(true);
+    try {
+      const { error } = await supabase.from("schedules").insert({
+        registration_id: bookingReg.id,
+        teacher_id: bookingReg.teacher_id,
+        student_id: student.id,
+        scheduled_at: selectedSlot,
+        duration_minutes: 60,
+        status: "pending",
+        student_confirmed: true,
+        student_confirmed_at: new Date().toISOString(),
+        notes: "Menunggu konfirmasi pengajar",
+      });
+      if (error) throw error;
+      // Refresh upcoming schedules
+      const { data: schedData } = await supabase
+        .from("schedules")
+        .select("id, registration_id, scheduled_at, duration_minutes, status")
+        .in("registration_id", activeRegs.map(r => r.id))
+        .in("status", ["scheduled", "pending"])
+        .gt("scheduled_at", new Date().toISOString())
+        .order("scheduled_at", { ascending: true });
+      setUpcomingSchedules(schedData || []);
+      setBookingReg(null);
+      alert("✅ Booking terkirim! Menunggu konfirmasi pengajar.");
+    } catch (e: any) {
+      alert("Gagal booking: " + (e.message || "unknown"));
+    }
+    setBookingSubmit(false);
+  }
+
+    const activeRegs = useMemo(() => student?.registrations.filter(r => r.status === "Aktif") || [], [student]);
   const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai","Batal","Non Aktif"].includes(r.status)) || [], [student]);
   const totalUsedSessions = useMemo(() => activeRegs.reduce((s, r) => s + (r.sessions_used || 0), 0), [activeRegs]);
   const xp = useMemo(() => calculateXP(totalUsedSessions, streak, badges.length), [totalUsedSessions, streak, badges]);
@@ -654,6 +722,15 @@ export default function AkunPage() {
                                   <motion.div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.8, delay: i * 0.1 + 0.3 }} />
                                 </div>
                               </div>
+                              {/* Booking button — only for private classes with teacher */}
+                              {reg.teacher_id && reg.product === "Kelas Private" && (
+                                <button
+                                  onClick={() => openBooking(reg)}
+                                  className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
+                                >
+                                  📅 Booking Sesi Berikutnya
+                                </button>
+                              )}
                               {/* Level progress */}
                               <div className="mt-3 pt-3 border-t border-gray-50">
                                 <div className="flex justify-between mb-1.5">
