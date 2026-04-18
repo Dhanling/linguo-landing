@@ -97,14 +97,6 @@ const POPULAR_LANGUAGES = [
 // ═══════════════════════════════════════════════════════════════════════════
 // ONBOARDING WIZARD
 // ═══════════════════════════════════════════════════════════════════════════
-const LANG_FLAGS: Record<string, string> = {
-  "English":"🇬🇧","Japanese":"🇯🇵","Korean":"🇰🇷","Mandarin":"🇨🇳","French":"🇫🇷",
-  "Spanish":"🇪🇸","German":"🇩🇪","Arabic":"🇸🇦","Italian":"🇮🇹","Turkish":"🇹🇷",
-  "Russian":"🇷🇺","Thai":"🇹🇭","Portuguese":"🇵🇹","Dutch":"🇳🇱","Hindi":"🇮🇳",
-  "Vietnamese":"🇻🇳","Danish":"🇩🇰","Swedish":"🇸🇪","Finnish":"🇫🇮","Georgian":"🇬🇪",
-  "Persian":"🇮🇷","Hebrew":"🇮🇱","Polish":"🇵🇱","Greek":"🇬🇷","Norwegian":"🇳🇴",
-};
-
 function OnboardingWizard({ user, studentId, onDone }: {
   user: any; studentId?: string; onDone: () => void;
 }) {
@@ -187,7 +179,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 {langs.map(l => (
                   <button key={l} onClick={() => setLang(l)}
                     className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
-                    <span className="text-xl">{LANG_FLAGS[l] || "🌐"}</span>
+                    {LANG_FLAGS[l]
+                      ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" />
+                      : <span className="text-xl">🌐</span>
+                    }
                     {l}
                   </button>
                 ))}
@@ -206,7 +201,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 2 && (
             <div>
               <div className="text-center mb-6">
-                <div className="text-4xl mb-2">{LANG_FLAGS[lang] || "🌐"}</div>
+                <div className="text-4xl mb-2">{LANG_FLAGS[lang] ? <img src={`https://flagcdn.com/w80/${LANG_FLAGS[lang]}.png`} alt={lang} className="w-12 h-9 object-cover rounded-md mx-auto" /> : "🌐"}</div>
                 <h2 className="text-xl font-extrabold text-gray-900">Pengalaman kamu dengan {lang}?</h2>
                 <p className="text-gray-400 text-sm mt-1">Ini bantu kami rekomendasikan level yang tepat</p>
               </div>
