@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import OneSignalProvider from '@/components/OneSignalProvider';
+import NotificationBell from '@/components/NotificationBell';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -638,7 +639,8 @@ export default function AkunPage() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <button onClick={openEnrollWizard} className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700 transition-colors">
+            {studentId && <NotificationBell userId={studentId} userType="student" />}
+              <button onClick={openEnrollWizard} className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700 transition-colors">
               + Tambah Kelas
             </button>
             {avatarUrl ? (
