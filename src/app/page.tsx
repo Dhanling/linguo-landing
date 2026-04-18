@@ -43,7 +43,119 @@ const FAQS = [
   {q:"Ada kelas lanjutan?",a:"Ada! Tersedia dari Basic hingga Advance."},
 ];
 
-function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void}) {
+// ========== LOGIN MODAL ==========
+function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [loading, setLoading] = useState(false);
+
+  const handleGoogle = async () => {
+    setLoading(true);
+    try {
+      await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: window.location.origin + "/auth/callback" },
+      });
+    } catch (e) {
+      console.error(e);
+      setLoading(false);
+    }
+  };
+
+  if (!open) return null;
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+          onClick={onClose}
+        >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+          {/* Modal card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 16 }}
+            transition={{ duration: 0.2 }}
+            onClick={e => e.stopPropagation()}
+            className="relative bg-white rounded-3xl shadow-2xl w-full max-w-sm p-8 z-10"
+          >
+            {/* Close */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <img src="/images/logo-color.png" alt="Linguo" className="h-10 object-contain"
+                onError={e => { (e.target as HTMLImageElement).src = "/images/logo-white.png"; (e.target as HTMLImageElement).className = "h-10 object-contain brightness-0"; }} />
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-2xl font-extrabold text-slate-900 text-center mb-2 tracking-tight">
+              Selamat datang! 👋
+            </h2>
+            <p className="text-slate-500 text-sm text-center mb-8 leading-relaxed">
+              Masuk untuk mulai belajar bahasa impianmu bersama Linguo.
+            </p>
+
+            {/* Google Button */}
+            <button
+              onClick={handleGoogle}
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-3 bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-slate-300 text-slate-700 font-semibold px-6 py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] disabled:opacity-60 mb-4"
+            >
+              {loading ? (
+                <div className="w-5 h-5 border-2 border-slate-300 border-t-[#1A9E9E] rounded-full animate-spin" />
+              ) : (
+                <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+              )}
+              Lanjutkan dengan Google
+            </button>
+
+            {/* Divider */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex-1 h-px bg-slate-100" />
+              <span className="text-xs text-slate-400">atau</span>
+              <div className="flex-1 h-px bg-slate-100" />
+            </div>
+
+            {/* Email fallback */}
+            <a
+              href="/akun"
+              className="w-full flex items-center justify-center gap-2 bg-[#1A9E9E] hover:bg-[#178585] text-white font-semibold px-6 py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] mb-6"
+            >
+              Masuk ke Dashboard Siswa
+            </a>
+
+            {/* Terms */}
+            <p className="text-center text-[11px] text-slate-400 leading-relaxed">
+              Dengan masuk, kamu menyetujui{" "}
+              <a href="/privacy" className="underline hover:text-slate-600">Kebijakan Privasi</a>{" "}
+              dan{" "}
+              <a href="/privacy" className="underline hover:text-slate-600">Syarat & Ketentuan</a>{" "}
+              Linguo.id
+            </p>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void;onLoginOpen:()=>void}) {
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -117,7 +229,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>setLang(lang==='id'?'en':'id')} className="hover:opacity-80 transition-opacity">
               <img src={lang==='id'?"/images/flag-id.png":"/images/flag-en.png"} alt={lang==='id'?"ID":"EN"} className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
             </button>
-            <a href="/student/login" className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</a>
+            <button onClick={onLoginOpen} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
             <button onClick={()=>setPlacementPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Placement Test</button>
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
@@ -135,7 +247,7 @@ function Navbar({lang,setLang,onPricingTab}:{lang:string;setLang:(l:string)=>voi
             <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
             <a href="/silabus" onClick={()=>setOpen(false)} className="text-sm py-2.5">Silabus</a>
             <a href="/blog" onClick={()=>setOpen(false)} className="text-sm py-2.5">Blog</a>
-            <a href="/student/login" className="mt-2 border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full block">Login</a>
+            <button onClick={()=>{onLoginOpen();setOpen(false)}} className="mt-2 border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full block">Login</button>
             <button onClick={()=>{setPlacementPickerOpen(true);setOpen(false)}} className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Placement Test</button>
           </div>
         </motion.div>)}</AnimatePresence>
@@ -1012,6 +1124,7 @@ export default function Home() {
   const [st, setSt] = useState(false);
   const [lang, setLang] = useState("id");
   const [pricingTab, setPricingTab] = useState(0);
+  const [loginOpen, setLoginOpen] = useState(false);
   useEffect(()=>{
     window.scrollTo(0,0);
     const fn=()=>setSt(window.scrollY>400);window.addEventListener("scroll",fn);
@@ -1022,7 +1135,8 @@ export default function Home() {
   },[]);
 
   return (<>
-    <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab}/>
+    <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab} onLoginOpen={()=>setLoginOpen(true)}/>
+    <LoginModal open={loginOpen} onClose={()=>setLoginOpen(false)} />
 
     {/* HERO */}
     <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
