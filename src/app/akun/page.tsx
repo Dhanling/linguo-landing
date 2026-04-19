@@ -794,9 +794,9 @@ export default function AkunPage() {
     if (!showEnroll) return null;
 
     // Local state for new fields
-    const [enrollDuration, setEnrollDuration] = React.useState("60");
-    const [enrollDays, setEnrollDays] = React.useState<string[]>([]);
-    const [enrollTime, setEnrollTime] = React.useState("");
+    const [enrollDuration, setEnrollDuration] = useState("60");
+    const [enrollDays, setEnrollDays] = useState<string[]>([]);
+    const [enrollTime, setEnrollTime] = useState("");
     const isTestPrep = enrollProgram === "English Test Preparation";
 
     const DAYS = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
