@@ -829,8 +829,8 @@ export default function AkunPage() {
       `• Program: ${PROGRAMS.find(p => p.key === enrollProgram)?.label}\n` +
       (isTestPrep ? "" : `• Bahasa: ${enrollLang}\n`) +
       `• Durasi: ${enrollDuration} menit/sesi\n` +
-      `• Preferensi hari: ${enrollDays.join(", ") || "-"}\n` +
-      `• Preferensi jam: ${enrollTime || "-"} WIB\n` +
+      `• Preferensi hari: ${Object.keys(enrollSchedule).join(", ") || "-"}\n` +
+      `• Preferensi jam: ${Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + ts.join(", ")).join(" | ") || "-"}\n` +
       `Mohon info jadwal dan pembayarannya. Terima kasih!`
     );
 
