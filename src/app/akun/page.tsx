@@ -134,7 +134,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
     onDone({ program, lang, testType, exp });
-  });
+  };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
 
@@ -368,7 +368,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     } finally {
       setUploadingAvatar(false);
     }
-  });
+  };
 
   const handleSave = async () => {
     if (!student?.id) return;
@@ -383,7 +383,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     } finally {
       setSaving(false);
     }
-  });
+  };
 
   return (
     <div className="space-y-4">
@@ -880,13 +880,13 @@ export default function AkunPage() {
       options: { redirectTo: `${window.location.origin}/akun` },
     });
     if (error) setIsSigningIn(false);
-  });
+  };
 
   const signOut = async () => {
     await supabase.auth.signOut();
     setUser(null);
     setStudent(null);
-  });
+  };
 
   const signInWithEmail = async () => {
     if (!loginEmail || !loginPassword) return;
@@ -899,7 +899,7 @@ export default function AkunPage() {
       alert(error.message === "Invalid login credentials" ? "Email atau password salah." : error.message);
     }
     setIsSigningIn(false);
-  });
+  };
 
   // ── Data Loading (fixed column names) ────────────────────────────
   useEffect(() => {
@@ -1096,7 +1096,7 @@ export default function AkunPage() {
     setEnrollDuration("60");
     setEnrollSchedule({});
     setShowEnroll(true);
-  });
+  };
 
   // ═══════════════════════════════════════════════════════════════════
   // ENROLLMENT WIZARD MODAL — 5 Steps
