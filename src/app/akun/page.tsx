@@ -902,7 +902,40 @@ export default function AkunPage() {
                     href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo! Saya ${displayName} (${user?.email}), mau daftar ${PROGRAMS.find(p => p.key === enrollProgram)?.label} bahasa ${enrollLang}. Mohon info jadwal dan biayanya. Terima kasih!`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full h-12 rounded-xl bg-teal-600 text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-teal-700 transition-colors shadow-lg shadow-teal-200"
+                    onClick={async () => {
+                      // Save to leads table
+                      try {
+                        await supabase.from("leads").upsert({
+                          name: displayName,
+                          email: user?.email || "",
+                          program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
+                          language: enrollLang || null,
+                          source: "Tambah Kelas",
+                          notes: `Tambah kelas: ${enrollProgram} · ${enrollLang}`,
+                          status: "Baru",
+                          created_at: new Date().toISOString(),
+                        }, { onConflict: "email" });
+                      } catch (e) { console.warn("Lead save:", e); }
+                      // Inject pending reg card into dashboard
+                      const pendingReg = {
+                        id: `pending-${Date.now()}`,
+                        product: enrollProgram,
+                        language: enrollLang,
+                        level: "A1",
+                        status: "Menunggu Pembayaran",
+                        sessions_total: 0,
+                        sessions_used: 0,
+                        duration: "60",
+                        total_amount: 0,
+                        payment_status: "Belum Bayar",
+                        registration_date: new Date().toISOString(),
+                        teachers: null,
+                      };
+                      setStudent(s => s ? { ...s, registrations: [...s.registrations, pendingReg as any] } : s);
+                      setShowEnroll(false);
+                      setEnrollStep(0);
+                    }}
+                    className="block w-full h-12 rounded-xl bg-green-500 text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-green-600 transition-colors shadow-lg shadow-green-100"
                   >
                     💬 Hubungi Admin via WhatsApp
                   </a>
