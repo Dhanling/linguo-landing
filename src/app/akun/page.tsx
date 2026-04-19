@@ -1096,7 +1096,7 @@ export default function AkunPage() {
     setEnrollDuration("60");
     setEnrollSchedule({});
     setShowEnroll(true);
-  });
+  };
 
   // ═══════════════════════════════════════════════════════════════════
   // ENROLLMENT WIZARD MODAL — 5 Steps
