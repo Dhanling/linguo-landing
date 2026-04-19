@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
+import PaymentCard from '@/components/PaymentCard';
 import OneSignalProvider from '@/components/OneSignalProvider';
 import NotificationBell from '@/components/NotificationBell';
 // ── Supabase Client ──────────────────────────────────────────────────────
@@ -28,6 +29,10 @@ type StudentReg = {
   registration_date: string;
   teacher_id?: string;
   teachers?: { name: string; whatsapp?: string } | null;
+  payment_proof_url?: string | null;
+  payment_proof_uploaded_at?: string | null;
+  payment_verified_at?: string | null;
+  payment_rejection_reason?: string | null;
 };
 
 type StudentData = {
@@ -942,6 +947,8 @@ export default function AkunPage() {
           sessions_total, sessions_used,
           duration, total_amount, payment_status,
           registration_date, teacher_id,
+          payment_proof_url, payment_proof_uploaded_at,
+          payment_verified_at, payment_rejection_reason,
           teachers(name, whatsapp)
         `)
         .eq("student_id", studentData.id)
@@ -1446,12 +1453,13 @@ export default function AkunPage() {
                                   <motion.div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.8, delay: i * 0.1 + 0.3 }} />
                                 </div>
                               </div>
-                              {/* Pending — show WA button */}
-                              {reg.status === "Menunggu Pembayaran" && (
-                                <a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer"
-                                  className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-green-500 text-white text-sm font-semibold hover:bg-green-600 transition-colors">
-                                  💬 Konfirmasi via WhatsApp
-                                </a>
+                              {/* Pending payment — smart card with bank info + upload bukti */}
+                              {reg.status === "Menunggu Pembayaran" && user?.id && (
+                                <PaymentCard
+                                  registration={reg}
+                                  userId={user.id}
+                                  onUploadSuccess={() => window.location.reload()}
+                                />
                               )}
                               {/* Booking button — only for active private classes with teacher */}
                               {reg.status === "Aktif" && reg.teacher_id && reg.product === "Kelas Private" && (
