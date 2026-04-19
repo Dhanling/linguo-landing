@@ -726,6 +726,36 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
     setSaving(true);
     try {
       const fullNum = countryCode.replace("+","") + formWa;
+
+      // Step 1: Save lead to DB FIRST — always, regardless of Xendit/WA outcome.
+      // This ensures lead capture even if user drops off at WA step.
+      try {
+        await saveLead({
+          wa_number: fullNum,
+          name: formName,
+          email: formEmail,
+          language: selLang,
+          program: selProgram,
+          level: selLevel,
+        });
+      } catch (leadErr) {
+        console.error("Lead save failed (non-blocking):", leadErr);
+      }
+
+      // Step 2: Redirect to WhatsApp with pre-filled template.
+      // Xendit invoice path below is commented pending dokumen verification.
+      // TODO: when Xendit is live, restore create-invoice call and remove WA redirect.
+      const waMsg =
+        "Halo Admin Linguo, saya tertarik mendaftar:\n\n" +
+        "📚 Program: " + selProgram + "\n" +
+        "🌏 Bahasa: " + selLang + "\n" +
+        "📊 Level: " + selLevel + "\n" +
+        "🙋 Nama: " + formName + "\n" +
+        "📧 Email: " + formEmail + "\n\n" +
+        "Mohon info pembayaran & jadwalnya. Terima kasih!";
+      window.location.href = "https://wa.me/6282116859493?text=" + encodeURIComponent(waMsg);
+
+      /* === XENDIT PATH (disabled until dokumen approved) ===
       let productKey = "";
       if(selProgram==="Kelas Private") productKey = "private-" + selLevel.toLowerCase();
       else if(selProgram==="Kelas Reguler") productKey = "reguler-" + selLevel.toLowerCase();
@@ -738,14 +768,11 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
         body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: productKey.split("-")[0], level: selLevel, productKey, referral_source: localStorage.getItem("linguo_ref") || undefined }),
       });
       const data = await res.json();
-      if(data.invoice_url) {
-        window.location.href = data.invoice_url;
-      } else {
-        alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi"));
-        setSaving(false);
-      }
+      if(data.invoice_url) window.location.href = data.invoice_url;
+      else { alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi")); setSaving(false); }
+      */
     } catch(e) {
-      console.error("Payment error:", e);
+      console.error("Submit error:", e);
       alert("Terjadi kesalahan. Silakan coba lagi.");
       setSaving(false);
     }
