@@ -116,7 +116,7 @@ const TEST_TYPES = [
 ];
 
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: () => void;
+  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string}) => void;
 }) {
   const [step, setStep] = useState(0);
   const [program, setProgram] = useState("");
@@ -133,7 +133,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const finish = () => {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
-    onDone();
+    onDone({ program, lang, testType, exp });
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
@@ -358,6 +358,7 @@ export default function AkunPage() {
   const [showEmailLogin, setShowEmailLogin] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [wizardCompleted, setWizardCompleted] = useState(false);
+  const [wizardData, setWizardData] = useState<{program:string;lang:string;testType:string;exp:string}|null>(null);
   const [onboardStep, setOnboardStep] = useState(0);
   const [onboardLang, setOnboardLang] = useState("");
   const [onboardProgram, setOnboardProgram] = useState("");
@@ -839,8 +840,9 @@ export default function AkunPage() {
         <OnboardingWizard
           user={user}
           studentId={undefined}
-          onDone={() => {
+          onDone={(data) => {
             try { localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1"); } catch {}
+            setWizardData(data);
             setShowOnboarding(false);
             setWizardCompleted(true);
           }}
@@ -848,34 +850,88 @@ export default function AkunPage() {
       );
     }
 
-    // After wizard completed — show "pending admin" screen
-    if (wizardCompleted) {
+    // After wizard — show mini-dashboard with placeholder card
+    if (wizardCompleted && wizardData) {
+      const isTestPrep = wizardData.program === "English Test Preparation";
+      const programLabel = wizardData.testType
+        ? `${wizardData.testType} Prep`
+        : wizardData.program;
+      const subjLabel = wizardData.testType || wizardData.lang || "—";
+      const flagCode = LANG_FLAGS[wizardData.lang];
+      const waMsg = encodeURIComponent(
+        `Halo admin Linguo! Saya ${firstName}, mau daftar ${programLabel}${wizardData.lang ? " bahasa " + wizardData.lang : ""}` +
+        (wizardData.exp === "beginner" ? " (pemula)" : wizardData.exp === "some" ? " (sudah ada dasar)" : "") +
+        `. Mohon info jadwal dan biayanya ya. Terima kasih! 🙏`
+      );
       return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-sm text-center">
-            <div className="text-5xl mb-4">⏳</div>
-            <h2 className="text-xl font-bold text-gray-900 mb-2">Pendaftaran diterima!</h2>
-            <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-              Admin kami akan menghubungimu via WhatsApp untuk konfirmasi jadwal dan pembayaran.<br /><br />
-              <span className="text-teal-600 font-medium">Biasanya selesai dalam 1×24 jam</span> setelah pembayaran dikonfirmasi, akunmu akan aktif di sini.
-            </p>
-            <div className="bg-teal-50 border border-teal-100 rounded-2xl p-4 mb-6 text-left space-y-2">
-              {[
-                ["1️⃣", "Admin konfirmasi jadwal via WA"],
-                ["2️⃣", "Kamu bayar sesuai paket"],
-                ["3️⃣", "Akun aktif & kelas bisa dimulai"],
-              ].map(([num, text]) => (
-                <div key={num} className="flex items-center gap-3 text-sm text-gray-600">
-                  <span>{num}</span><span>{text}</span>
+        <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20">
+          {/* Header */}
+          <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+            <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
+              <div className="flex items-center gap-2">
+                <div className="h-7 w-7 rounded-lg bg-teal-600 flex items-center justify-center">
+                  <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
                 </div>
-              ))}
+                <span className="font-bold text-gray-900">Linguo.id</span>
+              </div>
+              <button onClick={signOut} className="text-xs text-gray-400 hover:text-gray-600">Keluar</button>
             </div>
-            <a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2 rounded-xl bg-green-500 hover:bg-green-600 px-6 text-sm font-semibold text-white transition-colors shadow-lg mb-3 w-full justify-center">
-              💬 Chat Admin WhatsApp
-            </a>
-            <button onClick={signOut} className="block mx-auto text-sm text-gray-400 hover:text-gray-600 transition-colors">Keluar</button>
-          </motion.div>
+          </header>
+
+          <div className="mx-auto max-w-2xl px-4 pt-8">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
+              {/* Welcome */}
+              <div className="mb-6">
+                <h1 className="text-2xl font-extrabold text-gray-900">Halo, {firstName}! 👋</h1>
+                <p className="text-gray-500 text-sm mt-1">Pendaftaranmu sedang diproses. Kelas akan aktif setelah konfirmasi admin.</p>
+              </div>
+
+              {/* Placeholder Class Card */}
+              <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-sm overflow-hidden mb-4">
+                <div className="bg-amber-50 px-4 py-2 flex items-center gap-2 border-b border-amber-100">
+                  <span className="text-amber-500 text-sm">🟡</span>
+                  <span className="text-amber-700 text-xs font-semibold">Menunggu Konfirmasi Admin</span>
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    {flagCode
+                      ? <img src={`https://flagcdn.com/w40/${flagCode}.png`} alt={wizardData.lang} className="w-10 h-7 object-cover rounded-md shadow-sm" />
+                      : <span className="text-3xl">{isTestPrep ? "📝" : "🌐"}</span>
+                    }
+                    <div>
+                      <div className="font-bold text-gray-900">{subjLabel}</div>
+                      <div className="text-xs text-gray-500">{programLabel}</div>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-400 bg-gray-50 rounded-xl px-3 py-2 mb-4">
+                    Admin akan menghubungimu via WhatsApp dalam <span className="text-teal-600 font-medium">1×24 jam</span> untuk konfirmasi jadwal & pembayaran.
+                  </div>
+                  <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
+                    Chat Admin WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              {/* Steps */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-4">
+                <p className="text-xs font-semibold text-gray-500 mb-3">LANGKAH SELANJUTNYA</p>
+                <div className="space-y-3">
+                  {[
+                    { n: "1", text: "Admin konfirmasi jadwal & harga via WA", done: false },
+                    { n: "2", text: "Kamu transfer/bayar sesuai paket", done: false },
+                    { n: "3", text: "Akun aktif & kelas pertama dijadwalkan", done: false },
+                  ].map(s => (
+                    <div key={s.n} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold shrink-0">{s.n}</div>
+                      <span className="text-sm text-gray-600">{s.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       );
     }
