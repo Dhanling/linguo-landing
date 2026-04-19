@@ -842,7 +842,7 @@ export default function AkunPage() {
           program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
           language: enrollLang || null,
           source: "Tambah Kelas",
-          notes: `${enrollProgram}${enrollLang ? " · " + enrollLang : ""} · ${enrollDuration}mnt · ${enrollDays.join(",")} ${enrollTime}`,
+          notes: `${enrollProgram}${enrollLang ? " · " + enrollLang : ""} · ${enrollDuration}mnt · ${Object.entries(enrollSchedule).map(([d,ts]) => d + " " + ts.join("+")).join(", ")}`,
           status: "Baru",
           created_at: new Date().toISOString(),
         }, { onConflict: "email" });
