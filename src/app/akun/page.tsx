@@ -721,7 +721,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                               const active = dayTimes.includes(t);
                               return (
                                 <button key={t} onClick={() => {
-                                  setEnrollSchedule(prev => ({
+                                  setEnrollSchedule((prev: Record<string,string[]>) => ({
                                     ...prev,
                                     [d]: active ? dayTimes.filter(x => x !== t) : [...dayTimes, t]
                                   }));
