@@ -788,84 +788,140 @@ export default function AkunPage() {
   };
 
   // ═══════════════════════════════════════════════════════════════════
-  // ENROLLMENT WIZARD MODAL
+  // ENROLLMENT WIZARD MODAL — 5 Steps
   // ═══════════════════════════════════════════════════════════════════
   const EnrollWizard = () => {
     if (!showEnroll) return null;
+
+    // Local state for new fields
+    const [enrollDuration, setEnrollDuration] = React.useState("60");
+    const [enrollDays, setEnrollDays] = React.useState<string[]>([]);
+    const [enrollTime, setEnrollTime] = React.useState("");
+    const isTestPrep = enrollProgram === "English Test Preparation";
+
+    const DAYS = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
+    const TIMES = ["07:00","08:00","09:00","10:00","11:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00"];
+
+    const DURATION_OPTIONS = enrollProgram === "Kelas Private"
+      ? [{ val:"30", label:"30 menit", note:"Trial / perkenalan" }, { val:"60", label:"60 menit", note:"Standar" }, { val:"90", label:"90 menit", note:"Intensif" }]
+      : [{ val:"90", label:"90 menit", note:"Standar kelas grup" }];
+
+    const pricePerSession: Record<string,Record<string,number>> = {
+      "Kelas Private": { "30":45000, "60":85000, "90":125000 },
+      "Kelas Reguler": { "90":18750 },
+      "Kelas Kids": { "30":75000, "45":85000 },
+      "English Test Preparation": { "90":18750 },
+    };
+
+    const price = pricePerSession[enrollProgram]?.[enrollDuration] || 0;
+
+    // Unpaid amount from existing regs
+    const unpaidTotal = student?.registrations
+      .filter((r: any) => r.status === "Menunggu Pembayaran" || r.payment_status === "Belum Bayar")
+      .reduce((s: number, r: any) => s + (r.total_amount || 0), 0) || 0;
+
     const filteredLangs = POPULAR_LANGUAGES.filter(l => l.toLowerCase().includes(langSearch.toLowerCase()));
+    const TOTAL_STEPS = isTestPrep ? 4 : 5;
+
+    const waMsg = encodeURIComponent(
+      `Halo admin Linguo! Saya ${displayName} (${user?.email}), mau daftar:\n` +
+      `• Program: ${PROGRAMS.find(p => p.key === enrollProgram)?.label}\n` +
+      (isTestPrep ? "" : `• Bahasa: ${enrollLang}\n`) +
+      `• Durasi: ${enrollDuration} menit/sesi\n` +
+      `• Preferensi hari: ${enrollDays.join(", ") || "-"}\n` +
+      `• Preferensi jam: ${enrollTime || "-"} WIB\n` +
+      `Mohon info jadwal dan pembayarannya. Terima kasih!`
+    );
+
+    const handleConfirm = async () => {
+      try {
+        await supabase.from("leads").upsert({
+          name: displayName,
+          email: user?.email || "",
+          program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
+          language: enrollLang || null,
+          source: "Tambah Kelas",
+          notes: `${enrollProgram}${enrollLang ? " · " + enrollLang : ""} · ${enrollDuration}mnt · ${enrollDays.join(",")} ${enrollTime}`,
+          status: "Baru",
+          created_at: new Date().toISOString(),
+        }, { onConflict: "email" });
+      } catch (e) { console.warn("Lead save:", e); }
+
+      const pendingReg = {
+        id: `pending-${Date.now()}`,
+        product: enrollProgram,
+        language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
+        level: "A1",
+        status: "Menunggu Pembayaran",
+        sessions_total: 0,
+        sessions_used: 0,
+        duration: enrollDuration,
+        total_amount: price * 8,
+        payment_status: "Belum Bayar",
+        registration_date: new Date().toISOString(),
+        teachers: null,
+      };
+      setStudent((s: any) => s ? { ...s, registrations: [...s.registrations, pendingReg] } : s);
+      setShowEnroll(false);
+      setEnrollStep(0);
+    };
 
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4" onClick={() => setShowEnroll(false)}>
+      <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4" onClick={() => setShowEnroll(false)}>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[85vh] overflow-hidden"
+          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
+          className="bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl w-full sm:max-w-md max-h-[92vh] overflow-hidden flex flex-col"
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b">
+          <div className="flex items-center justify-between px-5 py-4 border-b shrink-0">
             <div>
               <h2 className="text-lg font-bold text-gray-900">Daftar Kelas Baru</h2>
-              <p className="text-xs text-gray-500">Step {enrollStep + 1} dari 3</p>
+              <p className="text-xs text-gray-400">Step {enrollStep + 1} dari {TOTAL_STEPS}</p>
             </div>
-            <button onClick={() => setShowEnroll(false)} className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors">✕</button>
+            <button onClick={() => setShowEnroll(false)} className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200">✕</button>
           </div>
 
           {/* Progress */}
-          <div className="flex gap-1 px-4 pt-3">
-            {[0,1,2].map(i => (
-              <div key={i} className={`h-1 flex-1 rounded-full transition-colors ${i <= enrollStep ? "bg-teal-500" : "bg-gray-200"}`} />
+          <div className="flex gap-1 px-5 pt-3 shrink-0">
+            {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
+              <div key={i} className={`h-1 flex-1 rounded-full transition-all ${i <= enrollStep ? "bg-teal-500" : "bg-gray-100"}`} />
             ))}
           </div>
 
           {/* Content */}
-          <div className="p-4 overflow-y-auto max-h-[60vh]">
+          <div className="flex-1 overflow-y-auto px-5 py-4">
             <AnimatePresence mode="wait">
-              {/* Step 0: Pilih Program */}
+
+              {/* Step 0: Program */}
               {enrollStep === 0 && (
-                <motion.div key="step0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-3">
-                  <p className="text-sm font-medium text-gray-700 mb-3">Pilih jenis kelas:</p>
+                <motion.div key="s0" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-3">
+                  <p className="text-sm font-semibold text-gray-700 mb-3">Pilih jenis kelas:</p>
                   {PROGRAMS.map(p => (
-                    <button
-                      key={p.key}
-                      onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
-                      className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 text-left transition-all hover:border-teal-400 hover:shadow-sm ${enrollProgram === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100"}`}
-                    >
-                      <span className="text-3xl">{p.icon}</span>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-gray-900">{p.label}</p>
-                        <p className="text-xs text-gray-500">{p.desc}</p>
-                        <p className="text-xs font-medium text-teal-600 mt-0.5">{p.price}</p>
+                    <button key={p.key} onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
+                      className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
+                      <span className="text-2xl">{p.icon}</span>
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-900 text-sm">{p.label}</p>
+                        <p className="text-xs text-gray-400">{p.desc}</p>
+                        <p className="text-xs font-semibold text-teal-600 mt-0.5">{p.price}</p>
                       </div>
-                      <span className="text-gray-300">→</span>
+                      <span className="text-gray-300 text-sm">›</span>
                     </button>
                   ))}
-                  <a href="/silabus/english/coba" target="_blank" className="flex items-center justify-center gap-2 pt-2 text-xs text-teal-600 hover:underline font-medium">
-                    🎯 Belum tahu levelmu? Coba Placement Test dulu
-                  </a>
                 </motion.div>
               )}
 
-              {/* Step 1: Pilih Bahasa */}
-              {enrollStep === 1 && (
-                <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-3">
-                  <p className="text-sm font-medium text-gray-700 mb-1">Pilih bahasa yang ingin dipelajari:</p>
-                  <input
-                    type="text"
-                    placeholder="Cari bahasa..."
-                    value={langSearch}
-                    onChange={e => setLangSearch(e.target.value)}
-                    className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
-                    autoFocus
-                  />
-                  <div className="grid grid-cols-3 gap-2 max-h-[40vh] overflow-y-auto">
+              {/* Step 1: Bahasa (skip for test prep) */}
+              {enrollStep === 1 && !isTestPrep && (
+                <motion.div key="s1" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-3">
+                  <p className="text-sm font-semibold text-gray-700">Pilih bahasa:</p>
+                  <input type="text" placeholder="Cari bahasa..." value={langSearch} onChange={e => setLangSearch(e.target.value)} autoFocus
+                    className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400" />
+                  <div className="grid grid-cols-3 gap-2">
                     {filteredLangs.map(lang => (
-                      <button
-                        key={lang}
-                        onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
-                        className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all hover:border-teal-400 ${enrollLang === lang ? "border-teal-500 bg-teal-50" : "border-gray-100"}`}
-                      >
+                      <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
+                        className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${enrollLang === lang ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
                         <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 object-contain rounded-sm" />
                         <span className="text-xs font-medium text-gray-700">{lang}</span>
                       </button>
@@ -874,80 +930,131 @@ export default function AkunPage() {
                 </motion.div>
               )}
 
-              {/* Step 2: Konfirmasi */}
-              {enrollStep === 2 && (
-                <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
-                  <p className="text-sm font-medium text-gray-700">Konfirmasi pendaftaran:</p>
-                  <div className="rounded-xl bg-gray-50 p-4 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <img src={getFlagUrl(enrollLang)} alt="" className="h-8 w-8 object-contain rounded" />
-                      <div>
-                        <p className="font-bold text-gray-900 text-lg">{enrollLang}</p>
-                        <p className="text-sm text-gray-500">{PROGRAMS.find(p => p.key === enrollProgram)?.label}</p>
-                      </div>
-                    </div>
-                    <div className="border-t pt-3 space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Siswa</span>
-                        <span className="font-medium">{displayName}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-500">Email</span>
-                        <span className="font-medium">{user?.email}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-gray-400 text-center">Admin akan menghubungi kamu via WhatsApp untuk konfirmasi jadwal dan pembayaran</p>
-                  <a
-                    href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo! Saya ${displayName} (${user?.email}), mau daftar ${PROGRAMS.find(p => p.key === enrollProgram)?.label} bahasa ${enrollLang}. Mohon info jadwal dan biayanya. Terima kasih!`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={async () => {
-                      // Save to leads table
-                      try {
-                        await supabase.from("leads").upsert({
-                          name: displayName,
-                          email: user?.email || "",
-                          program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
-                          language: enrollLang || null,
-                          source: "Tambah Kelas",
-                          notes: `Tambah kelas: ${enrollProgram} · ${enrollLang}`,
-                          status: "Baru",
-                          created_at: new Date().toISOString(),
-                        }, { onConflict: "email" });
-                      } catch (e) { console.warn("Lead save:", e); }
-                      // Inject pending reg card into dashboard
-                      const pendingReg = {
-                        id: `pending-${Date.now()}`,
-                        product: enrollProgram,
-                        language: enrollLang,
-                        level: "A1",
-                        status: "Menunggu Pembayaran",
-                        sessions_total: 0,
-                        sessions_used: 0,
-                        duration: "60",
-                        total_amount: 0,
-                        payment_status: "Belum Bayar",
-                        registration_date: new Date().toISOString(),
-                        teachers: null,
-                      };
-                      setStudent(s => s ? { ...s, registrations: [...s.registrations, pendingReg as any] } : s);
-                      setShowEnroll(false);
-                      setEnrollStep(0);
-                    }}
-                    className="block w-full h-12 rounded-xl bg-green-500 text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-green-600 transition-colors shadow-lg shadow-green-100"
-                  >
-                    💬 Hubungi Admin via WhatsApp
-                  </a>
+              {/* Step 1 test prep: langsung ke durasi */}
+              {enrollStep === 1 && isTestPrep && (
+                <motion.div key="s1tp" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }}>
+                  {(() => { setTimeout(() => setEnrollStep(2), 0); return null; })()}
                 </motion.div>
               )}
+
+              {/* Step 2: Durasi */}
+              {enrollStep === 2 && (
+                <motion.div key="s2" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-3">
+                  <p className="text-sm font-semibold text-gray-700">Pilih durasi per sesi:</p>
+                  {DURATION_OPTIONS.map(d => (
+                    <button key={d.val} onClick={() => { setEnrollDuration(d.val); setEnrollStep(3); }}
+                      className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
+                      <div>
+                        <p className="font-semibold text-gray-900">{d.label}</p>
+                        <p className="text-xs text-gray-400">{d.note}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-bold text-teal-600 text-sm">Rp{(pricePerSession[enrollProgram]?.[d.val] || 0).toLocaleString("id-ID")}</p>
+                        <p className="text-[10px] text-gray-400">/sesi</p>
+                      </div>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+
+              {/* Step 3: Preferensi Jadwal */}
+              {enrollStep === 3 && (
+                <motion.div key="s3" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700 mb-2">Preferensi hari: <span className="text-gray-400 font-normal">(pilih beberapa)</span></p>
+                    <div className="flex flex-wrap gap-2">
+                      {DAYS.map(d => (
+                        <button key={d} onClick={() => setEnrollDays(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d])}
+                          className={`px-3 py-1.5 rounded-xl text-xs font-semibold border-2 transition-all ${enrollDays.includes(d) ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 text-gray-600 hover:border-teal-300"}`}>
+                          {d}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-700 mb-2">Preferensi jam mulai:</p>
+                    <div className="grid grid-cols-4 gap-2">
+                      {TIMES.map(t => (
+                        <button key={t} onClick={() => setEnrollTime(t)}
+                          className={`py-2 rounded-xl text-xs font-semibold border-2 transition-all ${enrollTime === t ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 text-gray-600 hover:border-teal-300"}`}>
+                          {t}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-400 bg-amber-50 rounded-xl px-3 py-2">
+                    💡 Admin akan mencocokkan preferensimu dengan jadwal pengajar yang tersedia. Jadwal final dikonfirmasi via WhatsApp.
+                  </p>
+                  <button onClick={() => setEnrollStep(4)} disabled={enrollDays.length === 0 || !enrollTime}
+                    className="w-full h-11 rounded-xl bg-teal-600 text-white font-semibold text-sm disabled:opacity-40 hover:bg-teal-700 transition-colors">
+                    Lanjut ke Ringkasan →
+                  </button>
+                </motion.div>
+              )}
+
+              {/* Step 4: Summary + Konfirmasi */}
+              {enrollStep === 4 && (
+                <motion.div key="s4" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-4">
+                  <p className="text-sm font-semibold text-gray-700">Ringkasan pendaftaran:</p>
+
+                  {/* Kelas baru */}
+                  <div className="rounded-2xl border border-teal-100 bg-teal-50/50 p-4 space-y-2">
+                    <div className="flex items-center gap-3 mb-2">
+                      {!isTestPrep && <img src={getFlagUrl(enrollLang)} alt="" className="h-8 w-8 object-contain rounded" />}
+                      <div>
+                        <p className="font-bold text-gray-900">{isTestPrep ? "IELTS/TOEFL Prep" : enrollLang}</p>
+                        <p className="text-xs text-gray-500">{PROGRAMS.find(p => p.key === enrollProgram)?.label} · {enrollDuration} mnt/sesi</p>
+                      </div>
+                    </div>
+                    {[
+                      ["Hari preferensi", enrollDays.join(", ")],
+                      ["Jam preferensi", enrollTime + " WIB"],
+                      ["Harga/sesi", `Rp${price.toLocaleString("id-ID")}`],
+                      ["Estimasi/bulan", `Rp${(price * 8).toLocaleString("id-ID")} (8 sesi)`],
+                    ].map(([k, v]) => (
+                      <div key={k} className="flex justify-between text-sm">
+                        <span className="text-gray-500">{k}</span>
+                        <span className="font-semibold text-gray-800">{v}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tagihan total (termasuk kelas lain yang belum bayar) */}
+                  {unpaidTotal > 0 && (
+                    <div className="rounded-xl bg-amber-50 border border-amber-100 p-3 text-sm">
+                      <p className="font-semibold text-amber-700 mb-1">⚠️ Tagihan belum lunas</p>
+                      <div className="flex justify-between text-amber-600">
+                        <span>Kelas sebelumnya</span>
+                        <span className="font-bold">Rp{unpaidTotal.toLocaleString("id-ID")}</span>
+                      </div>
+                      <div className="border-t border-amber-200 mt-2 pt-2 flex justify-between font-bold text-amber-800">
+                        <span>Total yang perlu dibayar</span>
+                        <span>Rp{(unpaidTotal + price * 8).toLocaleString("id-ID")}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* WA Button */}
+                  <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                    onClick={handleConfirm}
+                    className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
+                    Konfirmasi & Hubungi Admin WA
+                  </a>
+                  <button onClick={() => { handleConfirm(); setTimeout(openEnrollWizard, 300); }}
+                    className="w-full h-10 rounded-xl border-2 border-teal-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
+                    ➕ Selesai & Tambah Kelas Lain
+                  </button>
+                </motion.div>
+              )}
+
             </AnimatePresence>
           </div>
 
-          {/* Footer Nav */}
+          {/* Back button */}
           {enrollStep > 0 && (
-            <div className="p-4 border-t">
-              <button onClick={() => setEnrollStep(s => s - 1)} className="text-sm text-gray-500 hover:text-gray-700 font-medium">
+            <div className="px-5 py-3 border-t shrink-0">
+              <button onClick={() => setEnrollStep(s => isTestPrep && s === 2 ? 0 : s - 1)} className="text-sm text-gray-400 hover:text-gray-600 font-medium">
                 ← Kembali
               </button>
             </div>
