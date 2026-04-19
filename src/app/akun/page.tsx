@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -333,6 +333,187 @@ function OnboardingWizard({ user, studentId, onDone }: {
 
 // MAIN COMPONENT
 // ═══════════════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════════
+// AKUN TAB — Profile, Avatar Upload, Edit Info
+// ═══════════════════════════════════════════════════════════════════════════
+function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate }: {
+  user: any; student: any; avatarUrl?: string; displayName: string; firstName: string;
+  xp: any; badges: any[]; signOut: () => void; supabase: any; onAvatarUpdate: (url: string) => void;
+}) {
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editName, setEditName] = useState(student?.name || displayName);
+  const [editWa, setEditWa] = useState(student?.whatsapp || "");
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const avatarInputRef = useRef<HTMLInputElement>(null);
+
+  const handleAvatarChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file || !student?.id) return;
+    setUploadingAvatar(true);
+    try {
+      const ext = file.name.split(".").pop() || "jpg";
+      const path = `${student.id}/avatar.${ext}`;
+      const { error } = await supabase.storage.from("student-avatars").upload(path, file, { upsert: true, contentType: file.type });
+      if (error) throw error;
+      const { data } = supabase.storage.from("student-avatars").getPublicUrl(path);
+      const url = data.publicUrl + "?t=" + Date.now();
+      await supabase.from("students").update({ avatar_url: url }).eq("id", student.id);
+      onAvatarUpdate(url);
+    } catch (err) {
+      console.error("Avatar upload failed:", err);
+      alert("Upload gagal. Pastikan file JPG/PNG < 2MB.");
+    } finally {
+      setUploadingAvatar(false);
+    }
+  };
+
+  const handleSave = async () => {
+    if (!student?.id) return;
+    setSaving(true);
+    try {
+      await supabase.from("students").update({ name: editName, whatsapp: editWa }).eq("id", student.id);
+      setSaved(true);
+      setEditing(false);
+      setTimeout(() => setSaved(false), 3000);
+    } catch (err) {
+      alert("Gagal menyimpan.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="space-y-4">
+      {/* Profile Card */}
+      <div className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+        {/* Cover gradient */}
+        <div className="h-24 bg-gradient-to-r from-teal-500 to-teal-400" />
+        <div className="px-5 pb-5">
+          {/* Avatar */}
+          <div className="relative -mt-10 mb-3 inline-block">
+            <div className="relative">
+              {avatarUrl
+                ? <img src={avatarUrl} alt="" className="h-20 w-20 rounded-full ring-4 ring-white object-cover" referrerPolicy="no-referrer" />
+                : <div className="h-20 w-20 rounded-full ring-4 ring-white bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-2xl">{firstName[0]?.toUpperCase()}</div>
+              }
+              <button onClick={() => avatarInputRef.current?.click()}
+                disabled={uploadingAvatar}
+                className="absolute bottom-0 right-0 h-7 w-7 rounded-full bg-teal-600 flex items-center justify-center text-white shadow-lg hover:bg-teal-700 transition-colors">
+                {uploadingAvatar
+                  ? <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  : <span className="text-xs">📷</span>
+                }
+              </button>
+            </div>
+            <input ref={avatarInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleAvatarChange} />
+          </div>
+
+          {/* Name & rank */}
+          <div className="flex items-start justify-between">
+            <div>
+              <h3 className="font-bold text-gray-900 text-xl">{student?.name || displayName}</h3>
+              <p className="text-sm text-gray-400">{user?.email}</p>
+              <div className="flex items-center gap-1.5 mt-1">
+                <span className="text-base">{xp.emoji}</span>
+                <span className="text-xs font-semibold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-full">{xp.rank} · {xp.xp} XP</span>
+              </div>
+            </div>
+            <button onClick={() => setEditing(!editing)}
+              className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors ${editing ? "bg-gray-100 text-gray-600" : "bg-teal-50 text-teal-600 hover:bg-teal-100"}`}>
+              {editing ? "Batal" : "✏️ Edit"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Edit Form */}
+      {editing && (
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl bg-white border border-teal-100 shadow-sm p-5 space-y-4">
+          <h4 className="text-sm font-semibold text-gray-700">Edit Profil</h4>
+          <div>
+            <label className="text-xs text-gray-500 mb-1 block">Nama Lengkap</label>
+            <input value={editName} onChange={e => setEditName(e.target.value)}
+              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+          </div>
+          <div>
+            <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp</label>
+            <input value={editWa} onChange={e => setEditWa(e.target.value)} placeholder="628xxx"
+              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+          </div>
+          <button onClick={handleSave} disabled={saving}
+            className="w-full h-11 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 disabled:opacity-50 transition-colors">
+            {saving ? "Menyimpan..." : "Simpan Perubahan"}
+          </button>
+        </motion.div>
+      )}
+
+      {saved && (
+        <div className="rounded-xl bg-green-50 border border-green-100 px-4 py-3 text-sm text-green-700 font-medium text-center">
+          ✅ Profil berhasil disimpan!
+        </div>
+      )}
+
+      {/* Stats */}
+      <div className="grid grid-cols-3 gap-3">
+        {[
+          { label: "Total XP", value: xp.xp, icon: "⭐" },
+          { label: "Badges", value: badges.length, icon: "🏆" },
+          { label: "Kelas Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: "📚" },
+        ].map(s => (
+          <div key={s.label} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 text-center">
+            <div className="text-2xl mb-1">{s.icon}</div>
+            <div className="text-xl font-bold text-gray-900">{s.value}</div>
+            <div className="text-[10px] text-gray-400 mt-0.5">{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Badges */}
+      {badges.length > 0 && (
+        <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">🏆 Badges</h3>
+          <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+            {badges.map(b => (
+              <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl bg-amber-50 border border-amber-100 p-3">
+                <span className="text-2xl">{b.badge_icon}</span>
+                <span className="text-[10px] font-medium text-amber-700 text-center leading-tight">{b.badge_label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Settings */}
+      <div className="rounded-2xl bg-white border border-gray-100 shadow-sm divide-y divide-gray-50">
+        {[
+          { icon: "🎯", label: "Placement Test", href: "/silabus/english/coba" },
+          { icon: "🌍", label: "Lihat Silabus", href: "/silabus" },
+          { icon: "💬", label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
+          { icon: "📖", label: "Blog & Tips Belajar", href: "/blog" },
+        ].map(item => (
+          <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
+            className="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 transition-colors">
+            <span className="text-lg w-7 text-center">{item.icon}</span>
+            <span className="text-sm font-medium text-gray-700 flex-1">{item.label}</span>
+            <span className="text-gray-300 text-xs">›</span>
+          </a>
+        ))}
+      </div>
+
+      {/* Sign out */}
+      <button onClick={signOut}
+        className="w-full flex items-center justify-center gap-2 h-12 rounded-2xl border-2 border-red-100 text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
+        🚪 Keluar dari Akun
+      </button>
+
+      <p className="text-center text-[10px] text-gray-300">Linguo.id · v2.0 · {new Date().getFullYear()}</p>
+    </div>
+  );
+}
+
 export default function AkunPage() {
 
   const [user, setUser] = useState<any>(null);
@@ -429,7 +610,7 @@ export default function AkunPage() {
       if (!studentData) {
         // Check if wizard was previously completed (survives refresh)
         try {
-          const savedWizard = localStorage.getItem(`linguo_wizard_${user?.id || email}`);
+          const savedWizard = localStorage.getItem(`linguo_wizard_${userId || email}`);
           if (savedWizard) {
             const parsed = JSON.parse(savedWizard);
             setWizardData(parsed);
@@ -439,7 +620,7 @@ export default function AkunPage() {
           }
         } catch {}
         // No wizard data — show onboarding
-        const onboardKey = `linguo_onboarded_${user?.id || email}`;
+        const onboardKey = `linguo_onboarded_${userId || email}`;
         if (!localStorage.getItem(onboardKey)) {
           setShowOnboarding(true);
         }
@@ -461,7 +642,7 @@ export default function AkunPage() {
         .order("registration_date", { ascending: false });
 
       // Student is now active — clear wizard cache
-      try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
+      try { localStorage.removeItem(`linguo_wizard_${userId || email}`); } catch {}
       setStudent({ ...studentData, registrations: (regsData as any) || [] });
 
       // ── Onboarding: show for new users with no registrations ──
@@ -1268,27 +1449,19 @@ export default function AkunPage() {
           )}
 
           {activeTab === "akun" && (
-            <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto space-y-5">
-              <h2 className="text-lg font-bold text-gray-900">Akun Saya</h2>
-              <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
-                <div className="flex items-center gap-4">
-                  {avatarUrl ? (<img src={avatarUrl} alt="" className="h-16 w-16 rounded-full ring-2 ring-teal-100" referrerPolicy="no-referrer" />) : (<div className="h-16 w-16 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-xl">{firstName[0]?.toUpperCase()}</div>)}
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-lg">{displayName}</h3>
-                    <p className="text-sm text-gray-500">{user?.email}</p>
-                    <div className="flex items-center gap-1 mt-1"><span className="text-sm">{xp.emoji}</span><span className="text-xs font-medium text-teal-600">{xp.rank} · {xp.xp} XP</span></div>
-                  </div>
-                </div>
-              </div>
-              {badges.length > 0 && (
-                <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
-                  <h3 className="text-sm font-semibold text-gray-700 mb-3">Semua Badges</h3>
-                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                    {badges.map(b => (<div key={b.id} className="flex flex-col items-center gap-1 rounded-xl bg-gray-50 p-3"><span className="text-2xl">{b.badge_icon}</span><span className="text-[10px] font-medium text-gray-600 text-center">{b.badge_label}</span></div>))}
-                  </div>
-                </div>
-              )}
-              <button onClick={signOut} className="w-full flex items-center justify-center gap-2 h-11 rounded-xl border-2 border-red-100 text-red-600 font-medium text-sm hover:bg-red-50 transition-colors">🚪 Keluar dari Akun</button>
+            <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-2xl mx-auto space-y-4 pb-4">
+              <AkunTab
+                user={user}
+                student={student}
+                avatarUrl={avatarUrl}
+                displayName={displayName}
+                firstName={firstName}
+                xp={xp}
+                badges={badges}
+                signOut={signOut}
+                supabase={supabase}
+                onAvatarUpdate={(url) => setStudent(s => s ? { ...s, avatar_url: url } : s)}
+              />
             </motion.div>
           )}
         </AnimatePresence>
