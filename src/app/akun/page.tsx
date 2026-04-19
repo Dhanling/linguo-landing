@@ -426,7 +426,26 @@ export default function AkunPage() {
         .eq("email", email)
         .maybeSingle();
 
-      if (!studentData) { setDataLoading(false); return; }
+      if (!studentData) {
+        // Check if wizard was previously completed (survives refresh)
+        try {
+          const savedWizard = localStorage.getItem(`linguo_wizard_${userId || email}`);
+          if (savedWizard) {
+            const parsed = JSON.parse(savedWizard);
+            setWizardData(parsed);
+            setWizardCompleted(true);
+            setDataLoading(false);
+            return;
+          }
+        } catch {}
+        // No wizard data — show onboarding
+        const onboardKey = `linguo_onboarded_${userId || email}`;
+        if (!localStorage.getItem(onboardKey)) {
+          setShowOnboarding(true);
+        }
+        setDataLoading(false);
+        return;
+      }
 
       // Only use columns that actually exist in the DB
       const { data: regsData } = await supabase
@@ -441,6 +460,8 @@ export default function AkunPage() {
         .eq("student_id", studentData.id)
         .order("registration_date", { ascending: false });
 
+      // Student is now active — clear wizard cache
+      try { localStorage.removeItem(`linguo_wizard_${userId || email}`); } catch {}
       setStudent({ ...studentData, registrations: (regsData as any) || [] });
 
       // ── Onboarding: show for new users with no registrations ──
@@ -568,7 +589,7 @@ export default function AkunPage() {
     setBookingSubmit(false);
   }
 
-    const activeRegs = useMemo(() => student?.registrations.filter(r => r.status === "Aktif") || [], [student]);
+    const activeRegs = useMemo(() => student?.registrations.filter(r => r.status === "Aktif" || r.status === "Menunggu Pembayaran" || r.status === "Pending") || [], [student]);
   const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai","Batal","Non Aktif"].includes(r.status)) || [], [student]);
   const totalUsedSessions = useMemo(() => activeRegs.reduce((s, r) => s + (r.sessions_used || 0), 0), [activeRegs]);
   const xp = useMemo(() => calculateXP(totalUsedSessions, streak, badges.length), [totalUsedSessions, streak, badges]);
@@ -841,7 +862,10 @@ export default function AkunPage() {
           user={user}
           studentId={undefined}
           onDone={(data) => {
-            try { localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1"); } catch {}
+            try {
+              localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
+              localStorage.setItem(`linguo_wizard_${user?.id || user?.email}`, JSON.stringify(data));
+            } catch {}
             setWizardData(data);
             setShowOnboarding(false);
             setWizardCompleted(true);
@@ -850,90 +874,35 @@ export default function AkunPage() {
       );
     }
 
-    // After wizard — show mini-dashboard with placeholder card
+    // After wizard — inject mock student so full dashboard renders with pending card
     if (wizardCompleted && wizardData) {
       const isTestPrep = wizardData.program === "English Test Preparation";
-      const programLabel = wizardData.testType
-        ? `${wizardData.testType} Prep`
-        : wizardData.program;
-      const subjLabel = wizardData.testType || wizardData.lang || "—";
-      const flagCode = LANG_FLAGS[wizardData.lang];
-      const waMsg = encodeURIComponent(
-        `Halo admin Linguo! Saya ${firstName}, mau daftar ${programLabel}${wizardData.lang ? " bahasa " + wizardData.lang : ""}` +
-        (wizardData.exp === "beginner" ? " (pemula)" : wizardData.exp === "some" ? " (sudah ada dasar)" : "") +
-        `. Mohon info jadwal dan biayanya ya. Terima kasih! 🙏`
-      );
-      return (
-        <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20">
-          {/* Header */}
-          <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-            <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4">
-              <div className="flex items-center gap-2">
-                <div className="h-7 w-7 rounded-lg bg-teal-600 flex items-center justify-center">
-                  <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
-                </div>
-                <span className="font-bold text-gray-900">Linguo.id</span>
-              </div>
-              <button onClick={signOut} className="text-xs text-gray-400 hover:text-gray-600">Keluar</button>
-            </div>
-          </header>
-
-          <div className="mx-auto max-w-2xl px-4 pt-8">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-              {/* Welcome */}
-              <div className="mb-6">
-                <h1 className="text-2xl font-extrabold text-gray-900">Halo, {firstName}! 👋</h1>
-                <p className="text-gray-500 text-sm mt-1">Pendaftaranmu sedang diproses. Kelas akan aktif setelah konfirmasi admin.</p>
-              </div>
-
-              {/* Placeholder Class Card */}
-              <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-sm overflow-hidden mb-4">
-                <div className="bg-amber-50 px-4 py-2 flex items-center gap-2 border-b border-amber-100">
-                  <span className="text-amber-500 text-sm">🟡</span>
-                  <span className="text-amber-700 text-xs font-semibold">Menunggu Konfirmasi Admin</span>
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center gap-3 mb-3">
-                    {flagCode
-                      ? <img src={`https://flagcdn.com/w40/${flagCode}.png`} alt={wizardData.lang} className="w-10 h-7 object-cover rounded-md shadow-sm" />
-                      : <span className="text-3xl">{isTestPrep ? "📝" : "🌐"}</span>
-                    }
-                    <div>
-                      <div className="font-bold text-gray-900">{subjLabel}</div>
-                      <div className="text-xs text-gray-500">{programLabel}</div>
-                    </div>
-                  </div>
-                  <div className="text-xs text-gray-400 bg-gray-50 rounded-xl px-3 py-2 mb-4">
-                    Admin akan menghubungimu via WhatsApp dalam <span className="text-teal-600 font-medium">1×24 jam</span> untuk konfirmasi jadwal & pembayaran.
-                  </div>
-                  <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
-                    Chat Admin WhatsApp
-                  </a>
-                </div>
-              </div>
-
-              {/* Steps */}
-              <div className="bg-white rounded-2xl border border-gray-100 p-4">
-                <p className="text-xs font-semibold text-gray-500 mb-3">LANGKAH SELANJUTNYA</p>
-                <div className="space-y-3">
-                  {[
-                    { n: "1", text: "Admin konfirmasi jadwal & harga via WA", done: false },
-                    { n: "2", text: "Kamu transfer/bayar sesuai paket", done: false },
-                    { n: "3", text: "Akun aktif & kelas pertama dijadwalkan", done: false },
-                  ].map(s => (
-                    <div key={s.n} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold shrink-0">{s.n}</div>
-                      <span className="text-sm text-gray-600">{s.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      );
+      const mockReg: StudentReg = {
+        id: "pending",
+        product: wizardData.program,
+        language: wizardData.testType || wizardData.lang || "—",
+        level: wizardData.exp === "beginner" ? "A1" : "TBD",
+        status: "Menunggu Pembayaran",
+        sessions_total: 0,
+        sessions_used: 0,
+        duration: isTestPrep ? "90" : "60",
+        total_amount: 0,
+        payment_status: "Belum Bayar",
+        registration_date: new Date().toISOString(),
+        teachers: null,
+      };
+      const mockStudent: StudentData = {
+        id: user?.id || "pending",
+        name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
+        email: user?.email,
+        avatar_url: user?.user_metadata?.avatar_url,
+        registrations: [mockReg],
+      };
+      // Inject into state so the full dashboard renders
+      if (!student) {
+        setStudent(mockStudent);
+        return null; // triggers re-render with student set
+      }
     }
 
     // First time / default — show wizard trigger
@@ -1061,7 +1030,13 @@ export default function AkunPage() {
                           const levelProgress = getLevelProgress(reg.level || "A1.1");
                           const currentMilestone = LEVEL_MILESTONES.indexOf((reg.level || "A1").split(".")[0]);
                           return (
-                            <motion.div key={reg.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 hover:shadow-md transition-shadow">
+                            <motion.div key={reg.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className={`rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow ${reg.status === "Menunggu Pembayaran" ? "bg-amber-50 border-amber-200" : "bg-white border-gray-100"}`}>
+                              {reg.status === "Menunggu Pembayaran" && (
+                                <div className="flex items-center gap-2 mb-3 text-amber-700 bg-amber-100 rounded-xl px-3 py-1.5">
+                                  <span className="text-sm">🟡</span>
+                                  <span className="text-xs font-semibold">Menunggu Pembayaran</span>
+                                </div>
+                              )}
                               <div className="flex items-center gap-3 mb-3">
                                 <div className="h-11 w-11 rounded-xl bg-teal-50 flex items-center justify-center shadow-sm">
                                   <img src={getFlagUrl(reg.language)} alt="" className="h-6 w-6 object-contain" />
@@ -1084,8 +1059,15 @@ export default function AkunPage() {
                                   <motion.div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.8, delay: i * 0.1 + 0.3 }} />
                                 </div>
                               </div>
-                              {/* Booking button — only for private classes with teacher */}
-                              {reg.teacher_id && reg.product === "Kelas Private" && (
+                              {/* Pending — show WA button */}
+                              {reg.status === "Menunggu Pembayaran" && (
+                                <a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer"
+                                  className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-green-500 text-white text-sm font-semibold hover:bg-green-600 transition-colors">
+                                  💬 Konfirmasi via WhatsApp
+                                </a>
+                              )}
+                              {/* Booking button — only for active private classes with teacher */}
+                              {reg.status === "Aktif" && reg.teacher_id && reg.product === "Kelas Private" && (
                                 <><button
                   onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
                   className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 mr-2"
