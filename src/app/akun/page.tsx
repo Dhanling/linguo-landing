@@ -808,7 +808,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         {/* Back button */}
         {enrollStep > 0 && (
           <div className="px-5 py-3 border-t shrink-0">
-            <button onClick={() => setEnrollStep(s => isTestPrep && s === 2 ? 0 : s - 1)} className="text-sm text-gray-400 hover:text-gray-600 font-medium">
+            <button onClick={() => setEnrollStep((s: number) => isTestPrep && s === 2 ? 0 : s - 1)} className="text-sm text-gray-400 hover:text-gray-600 font-medium">
               ← Kembali
             </button>
           </div>
