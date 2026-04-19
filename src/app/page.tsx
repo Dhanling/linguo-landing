@@ -1006,7 +1006,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   );
 }
 
-function HeroFunnel({lang}:{lang:string}) {
+function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [funnelOpen, setFunnelOpen] = useState(false);
   const [funnelProg, setFunnelProg] = useState("");
   const [funnelLang, setFunnelLang] = useState("");
@@ -1075,6 +1075,21 @@ function HeroFunnel({lang}:{lang:string}) {
         </div>
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
+
+        {/* Divider "atau" */}
+        <div className="mt-5 flex items-center gap-3 max-w-[400px] sm:max-w-lg">
+          <div className="flex-1 h-px bg-white/20"></div>
+          <span className="text-white/60 text-xs">{lang==="id"?"atau":"or"}</span>
+          <div className="flex-1 h-px bg-white/20"></div>
+        </div>
+
+        {/* CTA 2 — Daftar Akun (Jalur B, self-serve) */}
+        <button onClick={onLoginOpen} type="button"
+          className="mt-4 w-full max-w-[400px] sm:max-w-lg bg-transparent border-2 border-white/40 hover:border-white/70 hover:bg-white/10 text-white font-semibold py-3 rounded-full text-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+          {lang==="id"?"Daftar Akun & Mulai Belajar":"Create Account & Start Learning"}
+          <ArrowRight className="h-4 w-4"/>
+        </button>
+        <p className="text-white/40 text-[11px] mt-2">{lang==="id"?"Langsung masuk dashboard, tanpa konsultasi dulu":"Go straight to dashboard, no consultation needed"}</p>
       </div>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
     </>
@@ -1367,7 +1382,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-          <HeroFunnel lang={lang}/>
+          <HeroFunnel lang={lang} onLoginOpen={()=>setLoginOpen(true)}/>
           <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-7 sm:h-8 mt-4 sm:mt-6 opacity-90"/>
           
         </motion.div>
