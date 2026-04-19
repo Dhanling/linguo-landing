@@ -429,7 +429,7 @@ export default function AkunPage() {
       if (!studentData) {
         // Check if wizard was previously completed (survives refresh)
         try {
-          const savedWizard = localStorage.getItem(`linguo_wizard_${user?.id || email}`);
+          const savedWizard = localStorage.getItem(`linguo_wizard_${userId || email}`);
           if (savedWizard) {
             const parsed = JSON.parse(savedWizard);
             setWizardData(parsed);
@@ -439,7 +439,7 @@ export default function AkunPage() {
           }
         } catch {}
         // No wizard data — show onboarding
-        const onboardKey = `linguo_onboarded_${user?.id || email}`;
+        const onboardKey = `linguo_onboarded_${userId || email}`;
         if (!localStorage.getItem(onboardKey)) {
           setShowOnboarding(true);
         }
@@ -461,7 +461,7 @@ export default function AkunPage() {
         .order("registration_date", { ascending: false });
 
       // Student is now active — clear wizard cache
-      try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
+      try { localStorage.removeItem(`linguo_wizard_${userId || email}`); } catch {}
       setStudent({ ...studentData, registrations: (regsData as any) || [] });
 
       // ── Onboarding: show for new users with no registrations ──
@@ -861,11 +861,31 @@ export default function AkunPage() {
         <OnboardingWizard
           user={user}
           studentId={undefined}
-          onDone={(data) => {
+          onDone={async (data) => {
             try {
               localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
               localStorage.setItem(`linguo_wizard_${user?.id || user?.email}`, JSON.stringify(data));
             } catch {}
+
+            // Auto-save to leads table so admin can see in CRM
+            try {
+              const isTestPrep = data.program === "English Test Preparation";
+              const subject = data.testType || data.lang || "";
+              const notes = `Program: ${data.program}${subject ? ` · ${subject}` : ""}${data.exp === "beginner" ? " · Pemula" : data.exp === "some" ? " · Sudah ada dasar" : ""}`;
+              await supabase.from("leads").upsert({
+                name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
+                email: user?.email || "",
+                program: data.program,
+                language: subject || null,
+                source: "Onboarding Wizard",
+                notes,
+                status: "Baru",
+                created_at: new Date().toISOString(),
+              }, { onConflict: "email" });
+            } catch (e) {
+              console.warn("Lead save non-fatal:", e);
+            }
+
             setWizardData(data);
             setShowOnboarding(false);
             setWizardCompleted(true);
