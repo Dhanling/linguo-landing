@@ -705,9 +705,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                         <button className="w-full flex items-center justify-between px-4 py-2.5"
                           onClick={() => {
                             if (selected) {
-                              setEnrollSchedule(prev => { const n = {...prev}; delete n[d]; return n; });
+                              setEnrollSchedule((prev: Record<string,string[]>) => { const n = {...prev}; delete n[d]; return n; });
                             } else {
-                              setEnrollSchedule(prev => ({ ...prev, [d]: [] }));
+                              setEnrollSchedule((prev: Record<string,string[]>) => ({ ...prev, [d]: [] }));
                             }
                           }}>
                           <span className={`text-sm font-semibold ${selected ? "text-teal-700" : "text-gray-600"}`}>{d}</span>
