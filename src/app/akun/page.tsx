@@ -610,7 +610,7 @@ export default function AkunPage() {
       if (!studentData) {
         // Check if wizard was previously completed (survives refresh)
         try {
-          const savedWizard = localStorage.getItem(`linguo_wizard_${userId || email}`);
+          const savedWizard = localStorage.getItem(`linguo_wizard_${user?.id || email}`);
           if (savedWizard) {
             const parsed = JSON.parse(savedWizard);
             setWizardData(parsed);
@@ -620,7 +620,7 @@ export default function AkunPage() {
           }
         } catch {}
         // No wizard data — show onboarding
-        const onboardKey = `linguo_onboarded_${userId || email}`;
+        const onboardKey = `linguo_onboarded_${user?.id || email}`;
         if (!localStorage.getItem(onboardKey)) {
           setShowOnboarding(true);
         }
@@ -642,7 +642,7 @@ export default function AkunPage() {
         .order("registration_date", { ascending: false });
 
       // Student is now active — clear wizard cache
-      try { localStorage.removeItem(`linguo_wizard_${userId || email}`); } catch {}
+      try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
       setStudent({ ...studentData, registrations: (regsData as any) || [] });
 
       // ── Onboarding: show for new users with no registrations ──
