@@ -439,7 +439,7 @@ export default function AkunPage() {
           }
         } catch {}
         // No wizard data — show onboarding
-        const onboardKey = `linguo_onboarded_${userId || email}`;
+        const onboardKey = `linguo_onboarded_${user?.id || email}`;
         if (!localStorage.getItem(onboardKey)) {
           setShowOnboarding(true);
         }
