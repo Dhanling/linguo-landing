@@ -803,11 +803,11 @@ export default function AkunPage() {
     const TIMES = ["07:00","08:00","09:00","10:00","11:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00"];
 
     const DURATION_OPTIONS = enrollProgram === "Kelas Private"
-      ? [{ val:"30", label:"30 menit", note:"Trial / perkenalan" }, { val:"60", label:"60 menit", note:"Standar" }, { val:"90", label:"90 menit", note:"Intensif" }]
+      ? [{ val:"30", label:"30 menit", note:"Trial / perkenalan" }, { val:"45", label:"45 menit", note:"Standar anak" }, { val:"60", label:"60 menit", note:"Standar" }, { val:"75", label:"75 menit", note:"Extended" }, { val:"90", label:"90 menit", note:"Intensif" }]
       : [{ val:"90", label:"90 menit", note:"Standar kelas grup" }];
 
     const pricePerSession: Record<string,Record<string,number>> = {
-      "Kelas Private": { "30":45000, "60":85000, "90":125000 },
+      "Kelas Private": { "30":45000, "45":65000, "60":85000, "75":105000, "90":125000 },
       "Kelas Reguler": { "90":18750 },
       "Kelas Kids": { "30":75000, "45":85000 },
       "English Test Preparation": { "90":18750 },
@@ -960,32 +960,47 @@ export default function AkunPage() {
               {/* Step 3: Preferensi Jadwal */}
               {enrollStep === 3 && (
                 <motion.div key="s3" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-4">
-                  <div>
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Preferensi hari: <span className="text-gray-400 font-normal">(pilih beberapa)</span></p>
-                    <div className="flex flex-wrap gap-2">
-                      {DAYS.map(d => (
-                        <button key={d} onClick={() => setEnrollDays(prev => prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d])}
-                          className={`px-3 py-1.5 rounded-xl text-xs font-semibold border-2 transition-all ${enrollDays.includes(d) ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 text-gray-600 hover:border-teal-300"}`}>
-                          {d}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Preferensi jam mulai:</p>
-                    <div className="grid grid-cols-4 gap-2">
-                      {TIMES.map(t => (
-                        <button key={t} onClick={() => setEnrollTime(t)}
-                          className={`py-2 rounded-xl text-xs font-semibold border-2 transition-all ${enrollTime === t ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 text-gray-600 hover:border-teal-300"}`}>
-                          {t}
-                        </button>
-                      ))}
-                    </div>
+                  <p className="text-sm font-semibold text-gray-700 mb-3">Pilih hari & jam per sesi:</p>
+                  {/* Per-day schedule builder */}
+                  <div className="space-y-2">
+                    {DAYS.map(d => {
+                      const selected = enrollDays.includes(d);
+                      const dayTime = enrollTime.split(",").find(s => s.startsWith(d + ":"))?.split(":")[1] || "";
+                      return (
+                        <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-teal-400 bg-teal-50/50" : "border-gray-100"}`}>
+                          <button className="w-full flex items-center justify-between px-4 py-2.5"
+                            onClick={() => {
+                              if (selected) {
+                                setEnrollDays(prev => prev.filter(x => x !== d));
+                                setEnrollTime(prev => prev.split(",").filter(s => !s.startsWith(d + ":")).join(","));
+                              } else {
+                                setEnrollDays(prev => [...prev, d]);
+                              }
+                            }}>
+                            <span className={`text-sm font-semibold ${selected ? "text-teal-700" : "text-gray-600"}`}>{d}</span>
+                            {selected ? <span className="text-teal-500 text-xs">✓ {dayTime || "pilih jam →"}</span> : <span className="text-gray-300 text-xs">+ Tambah</span>}
+                          </button>
+                          {selected && (
+                            <div className="px-4 pb-3 grid grid-cols-4 gap-1.5">
+                              {TIMES.map(t => (
+                                <button key={t} onClick={() => {
+                                  const parts = enrollTime.split(",").filter(s => s && !s.startsWith(d + ":"));
+                                  setEnrollTime([...parts, d + ":" + t].join(","));
+                                }}
+                                  className={`py-1.5 rounded-lg text-xs font-medium border transition-all ${dayTime === t ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 text-gray-600 hover:border-teal-300"}`}>
+                                  {t}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                   <p className="text-xs text-gray-400 bg-amber-50 rounded-xl px-3 py-2">
                     💡 Admin akan mencocokkan preferensimu dengan jadwal pengajar yang tersedia. Jadwal final dikonfirmasi via WhatsApp.
                   </p>
-                  <button onClick={() => setEnrollStep(4)} disabled={enrollDays.length === 0 || !enrollTime}
+                  <button onClick={() => setEnrollStep(4)} disabled={enrollDays.length === 0}
                     className="w-full h-11 rounded-xl bg-teal-600 text-white font-semibold text-sm disabled:opacity-40 hover:bg-teal-700 transition-colors">
                     Lanjut ke Ringkasan →
                   </button>
@@ -1007,8 +1022,7 @@ export default function AkunPage() {
                       </div>
                     </div>
                     {[
-                      ["Hari preferensi", enrollDays.join(", ")],
-                      ["Jam preferensi", enrollTime + " WIB"],
+                      ["Jadwal", enrollDays.map(d => { const t = enrollTime.split(",").find(s => s.startsWith(d+":"))?.split(":")[1] || "-"; return d + " " + t; }).join(", ")],
                       ["Harga/sesi", `Rp${price.toLocaleString("id-ID")}`],
                       ["Estimasi/bulan", `Rp${(price * 8).toLocaleString("id-ID")} (8 sesi)`],
                     ].map(([k, v]) => (
