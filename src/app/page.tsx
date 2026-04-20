@@ -631,19 +631,17 @@ function TestimonialCarousel() {
                   <div className={`flex gap-0 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${isCurrent ? "opacity-100 shadow-lg" : "opacity-40 scale-95"}`}>
                     <div className={`w-[200px] shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center relative overflow-hidden`}>
                       {t.photo ? (
+                        // Foto asli — full cover, tanpa overlay apapun
                         <img 
                           src={t.photo} 
                           alt={`Testimoni ${t.name} - Siswa Kelas ${t.lang} Linguo`}
                           loading="lazy"
                           className="absolute inset-0 w-full h-full object-cover"
-                          onError={(e)=>{
-                            // Fallback ke gradient+initials kalau foto gagal load
-                            (e.currentTarget as HTMLImageElement).style.display='none';
-                          }}
                         />
-                      ) : null}
-                      {/* Fallback initials — selalu render di belakang, kelihatan kalau foto error */}
-                      <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white z-0">{t.initials}</div>
+                      ) : (
+                        // Fallback initials — hanya muncul kalau photo field gak ada
+                        <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white">{t.initials}</div>
+                      )}
                     </div>
                     <div className="flex-1 bg-slate-50 p-6 text-left">
                       <div className="flex items-center justify-between mb-1">
