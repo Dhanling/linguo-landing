@@ -586,74 +586,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       }, { onConflict: "email" });
     } catch (e) { console.warn("Lead save:", e); }
 
-    // ── FIX: Save registrasi ke Supabase biar punya UUID valid ──
-    let studentId: string | null =
-      student?.id && student.id !== "pending" ? student.id : null;
-
-    // 1. Pastikan student record ada (upsert by email)
-    if (!studentId) {
-      try {
-        const { data: upserted, error: studentErr } = await supabase
-          .from("students")
-          .upsert(
-            {
-              email: user?.email || "",
-              name: displayName,
-              avatar_url: user?.user_metadata?.avatar_url,
-            },
-            { onConflict: "email" }
-          )
-          .select("id")
-          .single();
-        if (studentErr) throw studentErr;
-        studentId = upserted?.id ?? null;
-      } catch (e) {
-        console.error("Upsert student gagal:", e);
-      }
-    }
-
-    // 2. Insert registrasi ke DB + return row lengkap
-    let newReg: any = null;
-    if (studentId) {
-      try {
-        const { data: inserted, error: regErr } = await supabase
-          .from("registrations")
-          .insert({
-            student_id: studentId,
-            product: enrollProgram,
-            language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
-            level: "A1.1",
-            status: "Menunggu Pembayaran",
-            sessions_total: 0,
-            sessions_used: 0,
-            duration: enrollDuration,
-            total_amount: price * 8,
-            payment_status: "Belum Bayar",
-            registration_date: new Date().toISOString(),
-          })
-          .select(
-            "id, product, language, level, status, sessions_total, sessions_used, duration, total_amount, payment_status, registration_date, teacher_id, payment_proof_url, payment_proof_uploaded_at, payment_verified_at, payment_rejection_reason, teachers(name, whatsapp)"
-          )
-          .single();
-        if (regErr) throw regErr;
-        newReg = inserted;
-      } catch (e: any) {
-        console.error("Insert registrasi gagal:", e);
-        alert(
-          "Maaf, gagal menyimpan pendaftaran. Silakan hubungi admin via WhatsApp untuk bantuan."
-        );
-        setShowEnroll(false);
-        setEnrollStep(0);
-        return;
-      }
-    }
-
-    // 3. Update state — kalau DB save sukses pake row real, kalau gagal fallback mock
-    const pendingReg = newReg || {
+    const pendingReg = {
       id: `pending-${Date.now()}`,
       product: enrollProgram,
       language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
-      level: "A1.1",
+      level: "A1",
       status: "Menunggu Pembayaran",
       sessions_total: 0,
       sessions_used: 0,
@@ -663,19 +600,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       registration_date: new Date().toISOString(),
       teachers: null,
     };
-
-    // 4. Kalau student state-nya mock/belum ada, reload biar fetch fresh
-    if (!student || student.id === "pending" || !student.id) {
-      try {
-        localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`);
-      } catch {}
-      window.location.reload();
-      return;
-    }
-
-    setStudent((s: any) =>
-      s ? { ...s, registrations: [...s.registrations, pendingReg] } : s
-    );
+    setStudent((s: any) => s ? { ...s, registrations: [...s.registrations, pendingReg] } : s);
     setShowEnroll(false);
     setEnrollStep(0);
   };
