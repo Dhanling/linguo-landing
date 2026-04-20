@@ -112,12 +112,19 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ registrationId: reg.id, proofPath: path, userId }),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Update registrasi gagal");
+      const data = await res.json().catch(() => ({} as any));
+      if (!res.ok) {
+        // Show full server error for debugging (status + error + detail)
+        const parts: string[] = [];
+        parts.push("HTTP " + res.status);
+        if (data?.error) parts.push(data.error);
+        if (data?.detail) parts.push("Detail: " + (typeof data.detail === "string" ? data.detail : JSON.stringify(data.detail)));
+        throw new Error(parts.join(" | "));
+      }
 
       onUploadSuccess?.();
     } catch (err: any) {
-      console.error("Upload error:", err);
+      console.error("Upload error (full):", err);
       setError("Upload gagal: " + (err.message || "coba lagi"));
     } finally {
       setUploading(false);
@@ -189,7 +196,12 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
         </div>
       </div>
 
-      {error && <p className="text-xs text-red-600 mt-2">{error}</p>}
+      {error && (
+        <div className="mt-2 p-3 rounded-lg bg-red-50 border border-red-200">
+          <p className="text-xs font-semibold text-red-700 mb-1">⚠️ Error detail (kirim ke admin):</p>
+          <p className="text-[11px] font-mono text-red-800 break-all select-all">{error}</p>
+        </div>
+      )}
 
       <label className="mt-3 block cursor-pointer">
         <input
