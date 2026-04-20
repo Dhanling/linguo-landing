@@ -1302,32 +1302,87 @@ export default function AkunPage() {
           studentId={undefined}
           onDone={async (data) => {
             try {
-              localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
-              localStorage.setItem(`linguo_wizard_${user?.id || user?.email}`, JSON.stringify(data));
-            } catch {}
-
-            // Auto-save to leads table so admin can see in CRM
-            try {
-              const isTestPrep = data.program === "English Test Preparation";
-              const subject = data.testType || data.lang || "";
-              const notes = `Program: ${data.program}${subject ? ` · ${subject}` : ""}${data.exp === "beginner" ? " · Pemula" : data.exp === "some" ? " · Sudah ada dasar" : ""}`;
-              await supabase.from("leads").upsert({
+              // 1. Upsert student record (match by email)
+              const studentPayload = {
                 name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
-                email: user?.email || "",
-                program: data.program,
-                language: subject || null,
-                source: "Onboarding Wizard",
-                notes,
-                status: "Baru",
-                created_at: new Date().toISOString(),
-              }, { onConflict: "email" });
-            } catch (e) {
-              console.warn("Lead save non-fatal:", e);
-            }
+                email: user?.email,
+                avatar_url: user?.user_metadata?.avatar_url || null,
+              };
+              const { data: studentRow, error: studentError } = await supabase
+                .from("students")
+                .upsert(studentPayload, { onConflict: "email" })
+                .select()
+                .single();
+              if (studentError || !studentRow) {
+                throw new Error(studentError?.message || "Gagal menyimpan data siswa");
+              }
 
-            setWizardData(data);
-            setShowOnboarding(false);
-            setWizardCompleted(true);
+              // 2. Insert registration with safe defaults (admin will fill in price/sessions later)
+              const isTestPrep = data.program === "English Test Preparation";
+              const { data: regRow, error: regError } = await supabase
+                .from("registrations")
+                .insert({
+                  student_id: studentRow.id,
+                  product: data.program,
+                  language: data.testType || data.lang || null,
+                  level: data.exp === "beginner" ? "A1" : "TBD",
+                  status: "Aktif",
+                  payment_status: "Belum Bayar",
+                  pipeline_status: "Aktif",
+                  sessions_total: 0,
+                  sessions_used: 0,
+                  duration: isTestPrep ? "90" : "60",
+                  total_amount: 0,
+                  registration_date: new Date().toISOString(),
+                })
+                .select(`
+                  id, product, language, level, status,
+                  sessions_total, sessions_used,
+                  duration, total_amount, payment_status,
+                  registration_date, teacher_id,
+                  payment_proof_url, payment_proof_uploaded_at,
+                  payment_verified_at, payment_rejection_reason,
+                  teachers(name, whatsapp)
+                `)
+                .single();
+              if (regError || !regRow) {
+                throw new Error(regError?.message || "Gagal membuat registrasi");
+              }
+
+              // 3. Auto-save to leads table for CRM tracking (non-blocking)
+              try {
+                const subject = data.testType || data.lang || "";
+                const notes = `Program: ${data.program}${subject ? ` · ${subject}` : ""}${data.exp === "beginner" ? " · Pemula" : data.exp === "some" ? " · Sudah ada dasar" : ""}`;
+                await supabase.from("leads").upsert({
+                  name: studentPayload.name,
+                  email: user?.email || "",
+                  program: data.program,
+                  language: subject || null,
+                  source: "Onboarding Wizard",
+                  notes,
+                  status: "Baru",
+                  created_at: new Date().toISOString(),
+                }, { onConflict: "email" });
+              } catch (e) {
+                console.warn("Lead save non-fatal:", e);
+              }
+
+              // 4. Clear wizard cache, set real student state (skip mock card path)
+              try {
+                localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
+                localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`);
+              } catch {}
+
+              setStudent({ ...studentRow, registrations: [regRow as any] } as any);
+              setShowOnboarding(false);
+              setWizardCompleted(false);
+            } catch (err: any) {
+              console.error("Onboarding save failed:", err);
+              alert(
+                "Gagal menyimpan registrasi: " + (err?.message || "unknown") +
+                "\n\nSilakan coba lagi atau hubungi tim Linguo via WhatsApp."
+              );
+            }
           }}
         />
       );
