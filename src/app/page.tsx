@@ -588,16 +588,18 @@ function WhyCarousel() {
 }
 
 const TESTIMONIALS = [
-  {name:"Maria Dita",uni:"Universitas Indonesia",lang:"Dutch",color:"from-pink-300 to-rose-400",initials:"MD",
-    text:"Awalnya saya mengetahui Linguo dari Instagram dan kemudian saya tertarik karna melihat review dari para siswa Linguo yg ada di story IG, saya hubungi adminnya dan adminnya ramah sekali... Lalu saya tanya harga ternyata harganya cukup terjangkau dan akhirnya saya memutuskan untuk registrasi kursus bahasa Belanda. Daaaan pas mengikuti kelas nya sangatt asyik, materi nya jelas, gurunya enakkkk dan pinter, temen-temen nya juga enak alhasil saya ikut ke kelas lanjutan berikutnya... Pokoknya gak menyesal deh kursus di Linguo.. 💕💜😍"},
-  {name:"Rizky Ananda",uni:"ITB",lang:"Japanese",color:"from-blue-300 to-indigo-400",initials:"RA",
-    text:"Belajar Bahasa Jepang di Linguo bener-bener beda dari kursus lain. Gurunya sabar banget dan materinya terstruktur. Dalam 3 bulan saya sudah bisa percakapan dasar dan sekarang lanjut ke level intermediate. Recommended banget!"},
-  {name:"Siti Nurhaliza",uni:"UNPAD",lang:"Korean",color:"from-purple-300 to-violet-400",initials:"SN",
-    text:"Saya ambil kelas Korean di Linguo karena suka K-Drama. Ternyata belajarnya seru banget, gurunya native-like dan metodenya komunikatif. Sekarang sudah bisa nonton drama tanpa subtitle! Gomawo Linguo~ 🇰🇷"},
-  {name:"Ahmad Fauzi",uni:"UGM",lang:"Spanish",color:"from-amber-300 to-orange-400",initials:"AF",
-    text:"Kelas Spanish di Linguo worth it banget. Harganya terjangkau tapi kualitas gurunya premium. Saya ambil private class dan bisa request jadwal sesuai kemauan. Fleksibel dan efektif!"},
-  {name:"Dinda Pratiwi",uni:"UI",lang:"English",color:"from-emerald-300 to-teal-400",initials:"DP",
-    text:"Persiapan IELTS di Linguo membantu saya dapat score 7.5! Gurunya paham banget strategi test dan kasih banyak latihan. Materinya lengkap dan up-to-date. Thank you Linguo! 🎉"},
+  {name:"Suci Damaeyanti",lang:"Inggris",photo:"/images/testimoni/suci-damaeyanti.jpg",color:"from-pink-300 to-rose-400",initials:"SD",
+    text:"Belajar di Linguo sangat membantu meningkatkan kemampuan bahasa Inggris saya, terutama dalam speaking dan grammar yang awalnya benar-benar tidak saya ketahui. Sekarang, saya sudah mulai paham perlahan. Pengajarnya sabar, materinya mudah dipahami, suasana belajarnya oke, dan waktu les fleksibel."},
+  {name:"Arivania Shafa N",lang:"Turki",photo:"/images/testimoni/arivania-shafa-n.jpg",color:"from-blue-300 to-indigo-400",initials:"AS",
+    text:"Saya baru pertama kali ikut Kelas Bahasa Turki, awalnya kirain bakal boring dan susah, tapi ternyata gampang banget setelah diajarin tutor Linguo dan seru juga kelasnya, bisa bikin good mood."},
+  {name:"Astrid Setyowati",lang:"Korea",photo:"/images/testimoni/astrid-setyowati.jpg",color:"from-purple-300 to-violet-400",initials:"AS",
+    text:"Belajar di Linguo sangat membantu saya dalam belajar bahasa Korea. Cara mengajarnya mudah dipahami. Meskipun kelasnya online lewat Zoom, tapi kelasnya tetap terasa menyenangkan."},
+  {name:"Tasya Jehan",lang:"Jepang",photo:"/images/testimoni/tasya-jehan.jpg",color:"from-amber-300 to-orange-400",initials:"TJ",
+    text:"Kursus bahasa di Linguo ID sangat menyenangkan. Gurunya mengajar dengan baik serta menjelaskan materi secara lengkap dan detail. Saya mengambil kelas bahasa Jepang dan saat ini sudah melanjutkan hingga tahap ke-3."},
+  {name:"Cicie Prilianti",lang:"Rusia",photo:"/images/testimoni/cicie-prilianti.jpg",color:"from-emerald-300 to-teal-400",initials:"CP",
+    text:"Jadi, aku mengikuti dua kelas di Linguo: kelas Bahasa Jepang dan kelas Bahasa Rusia. Pengajarnya sangat semangat dan asyik saat mengajar."},
+  {name:"Grace Cynthia",lang:"Prancis",photo:"/images/testimoni/grace-cynthia.jpg",color:"from-cyan-300 to-sky-400",initials:"GC",
+    text:"ini pertama kalinya saya ikut kelas di Linguo ID. Saya ambil kelas Bahasa Prancis. Keren banget ternyata kelasnya karena bisa langsung praktik jadi proses belajarnya terasa nggak terlalu rumit."},
 ];
 
 function TestimonialCarousel() {
@@ -627,8 +629,21 @@ function TestimonialCarousel() {
               return (
                 <div key={i} className="shrink-0" style={{width:`${cardW}px`}} onClick={() => setActive(i)}>
                   <div className={`flex gap-0 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${isCurrent ? "opacity-100 shadow-lg" : "opacity-40 scale-95"}`}>
-                    <div className={`w-[200px] shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center`}>
-                      <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white">{t.initials}</div>
+                    <div className={`w-[200px] shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center relative overflow-hidden`}>
+                      {t.photo ? (
+                        <img 
+                          src={t.photo} 
+                          alt={`Testimoni ${t.name} - Siswa Kelas ${t.lang} Linguo`}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover"
+                          onError={(e)=>{
+                            // Fallback ke gradient+initials kalau foto gagal load
+                            (e.currentTarget as HTMLImageElement).style.display='none';
+                          }}
+                        />
+                      ) : null}
+                      {/* Fallback initials — selalu render di belakang, kelihatan kalau foto error */}
+                      <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white z-0">{t.initials}</div>
                     </div>
                     <div className="flex-1 bg-slate-50 p-6 text-left">
                       <div className="flex items-center justify-between mb-1">
