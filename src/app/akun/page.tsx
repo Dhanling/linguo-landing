@@ -466,7 +466,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
         {[
           { label: "Total XP", value: xp.xp, icon: "⭐" },
           { label: "Badges", value: badges.length, icon: "🏆" },
-          { label: "Kelas Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: "📚" },
+          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: "📚" },
         ].map(s => (
           <div key={s.label} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 text-center">
             <div className="text-2xl mb-1">{s.icon}</div>
@@ -1158,7 +1158,17 @@ export default function AkunPage() {
     setBookingSubmit(false);
   }
 
-    const activeRegs = useMemo(() => student?.registrations.filter(r => r.status === "Aktif" || r.status === "Menunggu Pembayaran" || r.status === "Pending") || [], [student]);
+    // Design B: "Kursus Aktif" = user udah commit (bayar atau udah upload bukti)
+  const activeRegs = useMemo(() => student?.registrations.filter(r =>
+    r.status === "Aktif" ||
+    (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi") ||
+    r.status === "Pending"
+  ) || [], [student]);
+  // "Menunggu Pembayaran" = user belum upload bukti transfer
+  const pendingPaymentRegs = useMemo(() => student?.registrations.filter(r =>
+    r.status === "Menunggu Pembayaran" &&
+    (r.payment_status === "Belum Bayar" || !r.payment_status)
+  ) || [], [student]);
   const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai","Batal","Non Aktif"].includes(r.status)) || [], [student]);
   const totalUsedSessions = useMemo(() => activeRegs.reduce((s, r) => s + (r.sessions_used || 0), 0), [activeRegs]);
   const xp = useMemo(() => calculateXP(totalUsedSessions, streak, badges.length), [totalUsedSessions, streak, badges]);
@@ -1555,7 +1565,7 @@ export default function AkunPage() {
                       </div>
                     )}
                     <div className="flex gap-4 mt-4 pt-3 border-t border-teal-500/30">
-                      <div className="flex-1 text-center"><p className="text-lg font-bold">{activeRegs.length}</p><p className="text-[10px] text-teal-200">Kelas Aktif</p></div>
+                      <div className="flex-1 text-center"><p className="text-lg font-bold">{activeRegs.length}</p><p className="text-[10px] text-teal-200">Kursus Aktif</p></div>
                       <div className="flex-1 text-center"><p className="text-lg font-bold">{totalUsedSessions}</p><p className="text-[10px] text-teal-200">Sesi Selesai</p></div>
                       <div className="flex-1 text-center"><p className="text-lg font-bold">{streak > 0 ? `🔥 ${streak}` : "0"}</p><p className="text-[10px] text-teal-200">Streak Minggu</p></div>
                     </div>
@@ -1565,7 +1575,7 @@ export default function AkunPage() {
                   {activeRegs.length > 0 ? (
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-base font-semibold text-gray-800">📚 Kelas Aktif</h3>
+                        <h3 className="text-base font-semibold text-gray-800">📚 Kursus Saya</h3>
                         <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
                       </div>
                       <div className="grid gap-4 sm:grid-cols-2">
@@ -1680,7 +1690,54 @@ export default function AkunPage() {
                 {/* Right Column — Sidebar (desktop only, mobile inline) */}
                 <div className="space-y-5">
                   {/* Upcoming Schedules */}
-                  {upcomingSchedules.length > 0 && (
+                  {/* Menunggu Pembayaran Section */}
+        {pendingPaymentRegs.length > 0 && (
+          <div className="mt-6">
+            <div className="flex items-center gap-2 mb-3">
+              <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
+              <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
+                {pendingPaymentRegs.length}
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {pendingPaymentRegs.map((reg: any, i: number) => (
+                <motion.div
+                  key={reg.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08 }}
+                  className="rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow bg-amber-50 border-amber-200"
+                >
+                  <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
+                    <span>🟡</span>
+                    <span>Belum Bayar</span>
+                  </div>
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="h-11 w-11 rounded-xl bg-white border flex items-center justify-center shrink-0">
+                        <img src={getFlagUrl(reg.language || "")} alt="" className="h-7 w-7 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-base font-bold text-gray-900 truncate">{reg.language || reg.product}</p>
+                        <p className="text-xs text-gray-500">{reg.product}</p>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-700">{reg.level}</span>
+                  </div>
+                  {user?.id && (
+                    <PaymentCard
+                      registration={reg}
+                      userId={user.id}
+                      onUploadSuccess={() => window.location.reload()}
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {upcomingSchedules.length > 0 && (
                     <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
                       <h3 className="text-sm font-semibold text-gray-700 mb-3">📅 Jadwal Mendatang</h3>
                       <div className="space-y-2">
