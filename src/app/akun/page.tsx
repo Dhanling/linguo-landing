@@ -1346,7 +1346,7 @@ export default function AkunPage() {
                   product: data.program,
                   language: data.testType || data.lang || null,
                   level: data.exp === "beginner" ? "A1" : "TBD",
-                  status: "Aktif",
+                  status: "Menunggu Pembayaran",
                   payment_status: "Belum Bayar",
                   pipeline_status: "Aktif",
                   sessions_total: 0,
