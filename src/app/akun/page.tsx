@@ -1302,19 +1302,39 @@ export default function AkunPage() {
           studentId={undefined}
           onDone={async (data) => {
             try {
-              // 1. Upsert student record (match by email)
+              // 1. Find-or-create student record (manual because email is not UNIQUE)
+              //    Legit use case: 1 parent email can have multiple children.
+              //    For /akun self-service: first match wins.
               const studentPayload = {
                 name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
                 email: user?.email,
                 avatar_url: user?.user_metadata?.avatar_url || null,
               };
-              const { data: studentRow, error: studentError } = await supabase
+              let studentRow: any = null;
+              const { data: existing, error: lookupError } = await supabase
                 .from("students")
-                .upsert(studentPayload, { onConflict: "email" })
-                .select()
-                .single();
-              if (studentError || !studentRow) {
-                throw new Error(studentError?.message || "Gagal menyimpan data siswa");
+                .select("*")
+                .eq("email", user?.email || "")
+                .limit(1)
+                .maybeSingle();
+              if (lookupError) {
+                throw new Error(lookupError.message || "Gagal mencari data siswa");
+              }
+              if (existing) {
+                studentRow = existing;
+              } else {
+                const { data: inserted, error: insertError } = await supabase
+                  .from("students")
+                  .insert(studentPayload)
+                  .select()
+                  .single();
+                if (insertError || !inserted) {
+                  throw new Error(insertError?.message || "Gagal menyimpan data siswa");
+                }
+                studentRow = inserted;
+              }
+              if (!studentRow) {
+                throw new Error("Gagal menyimpan data siswa");
               }
 
               // 2. Insert registration with safe defaults (admin will fill in price/sessions later)
