@@ -34,20 +34,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Update registration with payment proof info (service role bypasses RLS)
-    const updateRes = await supaFetch(
-      `registrations?id=eq.${encodeURIComponent(registrationId)}`,
-      {
-        method: "PATCH",
-        headers: { Prefer: "return=minimal" },
-        body: JSON.stringify({
-          payment_proof_url: proofPath,
-          payment_proof_uploaded_at: new Date().toISOString(),
-          payment_status: "Menunggu Verifikasi",
-          payment_rejection_reason: null,
-        }),
-      }
-    );
+    // Update via RPC function that bypasses triggers
+    // (activity log triggers fail with 'pending' UUID when no JWT user context)
+    const updateRes = await supaFetch("rpc/update_payment_proof", {
+      method: "POST",
+      body: JSON.stringify({
+        p_registration_id: registrationId,
+        p_proof_url: proofPath,
+        p_status: "Menunggu Verifikasi",
+      }),
+    });
 
     if (!updateRes.ok) {
       const errText = await updateRes.text();
@@ -58,7 +54,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ success: true });
+    const updateData = await updateRes.json().catch(() => ({}));
+    return NextResponse.json({ success: true, data: updateData });
   } catch (e: any) {
     console.error("upload-payment-proof error:", e);
     return NextResponse.json({ error: e.message || "Internal error" }, { status: 500 });
