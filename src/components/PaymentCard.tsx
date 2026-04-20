@@ -106,11 +106,18 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
         .upload(path, file, { upsert: false, contentType: file.type });
       if (uploadErr) throw new Error(uploadErr.message);
 
-      // Step 2: Update registration row via API (service role bypasses RLS)
+      // Step 2: Get current session access token (so backend can impersonate user)
+      const { data: { session } } = await supabase.auth.getSession();
+      const accessToken = session?.access_token;
+      if (!accessToken) {
+        throw new Error("Sesi login expired, refresh halaman dulu ya");
+      }
+
+      // Step 3: Update registration via API — passes user JWT so triggers see valid auth.uid()
       const res = await fetch("/api/upload-payment-proof", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ registrationId: reg.id, proofPath: path, userId }),
+        body: JSON.stringify({ registrationId: reg.id, proofPath: path, userId, accessToken }),
       });
       const data = await res.json().catch(() => ({} as any));
       if (!res.ok) {
