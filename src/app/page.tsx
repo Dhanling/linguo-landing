@@ -371,14 +371,40 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 <AnimatePresence>{progOpen&&(
                   <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
                     className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
-                    {[
-                      {label:"Kelas Private",tab:0},{label:"Kelas Reguler",tab:1},{label:"Kelas Kids",tab:3},{label:"IELTS / TOEFL",tab:2},
-                    ].map((item)=>(
-                      <button key={item.label} onClick={()=>{(window as any).__openFunnel?.(item.label);setProgOpen(false)}}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                        {item.label}
+                    {/* Kelas Private */}
+                    <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setProgOpen(false)}}
+                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                      Kelas Private
+                    </button>
+                    {/* Kelas Reguler + sub-item Jadwal */}
+                    <div className="group/sub relative">
+                      <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setProgOpen(false)}}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between">
+                        Kelas Reguler
+                        <ChevronDown className="h-3 w-3 -rotate-90 text-slate-300 group-hover/sub:text-[#1A9E9E]"/>
                       </button>
-                    ))}
+                      {/* Sub-menu: muncul saat hover Kelas Reguler */}
+                      <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 pointer-events-none group-hover/sub:pointer-events-auto">
+                        <a href="/jadwal-kelas-reguler" onClick={()=>setProgOpen(false)}
+                          className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                          📅 Jadwal Batch Terbaru
+                        </a>
+                        <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setProgOpen(false)}}
+                          className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                          ✍️ Daftar Kelas Reguler
+                        </button>
+                      </div>
+                    </div>
+                    {/* Kelas Kids */}
+                    <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setProgOpen(false)}}
+                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                      Kelas Kids
+                    </button>
+                    {/* IELTS / TOEFL */}
+                    <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setProgOpen(false)}}
+                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
+                      IELTS / TOEFL
+                    </button>
                     <div className="border-t border-slate-100 my-1"/>
                     <a href="/produk"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
@@ -421,6 +447,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             <a href="/silabus/english/coba" className="block py-2.5 text-sm text-[#1A9E9E] font-semibold hover:text-[#147a7a] border-b border-gray-100 mb-1 pb-3">🎯 Placement Test Gratis</a>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
+            <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
             <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Kids 🧒</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
@@ -1075,21 +1102,6 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
         </div>
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
-
-        {/* Divider "atau" */}
-        <div className="mt-5 flex items-center gap-3 max-w-[400px] sm:max-w-lg">
-          <div className="flex-1 h-px bg-white/20"></div>
-          <span className="text-white/60 text-xs">{lang==="id"?"atau":"or"}</span>
-          <div className="flex-1 h-px bg-white/20"></div>
-        </div>
-
-        {/* CTA 2 — Daftar Akun (Jalur B, self-serve) */}
-        <button onClick={onLoginOpen} type="button"
-          className="mt-4 w-full max-w-[400px] sm:max-w-lg bg-transparent border-2 border-white/40 hover:border-white/70 hover:bg-white/10 text-white font-semibold py-3 rounded-full text-sm transition-all active:scale-95 flex items-center justify-center gap-2">
-          {lang==="id"?"Daftar Akun & Mulai Belajar":"Create Account & Start Learning"}
-          <ArrowRight className="h-4 w-4"/>
-        </button>
-        <p className="text-white/40 text-[11px] mt-2">{lang==="id"?"Langsung masuk dashboard, tanpa konsultasi dulu":"Go straight to dashboard, no consultation needed"}</p>
       </div>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
     </>
@@ -1114,21 +1126,16 @@ function TeacherGrid() {
             <p className="font-semibold text-sm">{t.name}</p>
             <p className="text-xs text-slate-400 mb-2">{t.role}</p>
             {/* italki-style stats */}
-            <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="flex items-center justify-center gap-3 mb-1">
               <span className="flex items-center gap-0.5 text-xs">
                 <Star className="h-3 w-3 fill-amber-400 text-amber-400"/>{t.rating}
               </span>
               <span className="text-xs text-slate-400">{t.lessons.toLocaleString()} sesi</span>
             </div>
-            <div className="flex items-center justify-between bg-slate-50 rounded-xl px-3 py-2">
-              <span className="text-xs text-slate-500">Mulai dari</span>
-              <span className="text-sm font-bold text-[#1A9E9E]">{t.price}/sesi</span>
-            </div>
-            <a href={`https://wa.me/6282116859493?text=Halo, saya mau book trial class dengan ${t.name}`} target="_blank"
-              onClick={(e)=>e.stopPropagation()}
-              className="block mt-3 text-center bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-all active:scale-95">
-              Book Trial
-            </a>
+            {/* Subtle hint to click for bio */}
+            <p className="text-[10px] text-slate-300 text-center mt-2 italic">
+              {selected===i ? "Klik untuk tutup" : "Klik untuk lihat bio"}
+            </p>
           </div>
           <AnimatePresence>{selected===i&&(
             <motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="overflow-hidden">
