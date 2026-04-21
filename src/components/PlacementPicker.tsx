@@ -16,7 +16,7 @@ interface Lang {
 
 const LANGUAGES: Lang[] = [
   { slug: "english",   name: "Inggris",  native: "English",    flag: "🇬🇧", available: true,  category: ["populer", "eropa"] },
-  { slug: "japanese",  name: "Jepang",   native: "日本語",     flag: "🇯🇵", available: false, category: ["populer", "asia"] },
+  { slug: "japanese",  name: "Jepang",   native: "日本語",     flag: "🇯🇵", available: true,  category: ["populer", "asia"] },
   { slug: "korean",    name: "Korea",    native: "한국어",     flag: "🇰🇷", available: false, category: ["populer", "asia"] },
   { slug: "mandarin",  name: "Mandarin", native: "中文",           flag: "🇨🇳", available: false, category: ["populer", "asia"] },
   { slug: "spanish",   name: "Spanyol",  native: "Español",           flag: "🇪🇸", available: false, category: ["populer", "eropa"] },

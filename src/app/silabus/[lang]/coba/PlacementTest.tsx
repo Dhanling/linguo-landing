@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
 import type { LanguageCurriculum } from "@/data/curriculum";
-import { type Question, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
+import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 
 interface Props {
   curriculum: LanguageCurriculum;
@@ -28,7 +28,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   const { meta } = curriculum;
   const [screen, setScreen] = useState<Screen>("intro");
   const [currentQ, setCurrentQ] = useState(0);
-  const [selected, setSelected] = useState<string | number | null>(null);
+  const [selected, setSelected] = useState<string | number | boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
   const startTimeRef = useRef<number>(0);
@@ -44,11 +44,16 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);
   };
 
-  // Auto-submit on click (multiple) or explicit submit (fill)
-  const submitAnswer = (value: string | number) => {
+  // Auto-submit on click (multiple) or explicit submit (fill/dragDrop/missing/matching)
+  // For complex types (dragDrop, missing, matching) the renderer computes correctness
+  // and passes a boolean flag as `isCorrectOverride`
+  const submitAnswer = (value: string | number | boolean, isCorrectOverride?: boolean) => {
     if (showFeedback) return;
     setSelected(value);
-    if (value === question.correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
+    const correct = isCorrectOverride !== undefined
+      ? isCorrectOverride
+      : (question.type === "multiple" || question.type === "fill") && value === (question as any).correct;
+    if (correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
     setShowFeedback(true);
   };
 
@@ -165,13 +170,17 @@ function InfoCard({ icon, value, label }: { icon: string; value: string; label: 
 // ================================================
 function QuizScreen(props: {
   question: Question; currentQ: number; total: number; progress: number;
-  selected: string | number | null; showFeedback: boolean;
-  onSubmit: (v: string | number) => void; onNext: () => void; langSlug: string;
+  selected: string | number | boolean | null; showFeedback: boolean;
+  onSubmit: (v: string | number | boolean, isCorrectOverride?: boolean) => void;
+  onNext: () => void; langSlug: string;
 }) {
   const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onNext, langSlug } = props;
   const [fillValue, setFillValue] = useState("");
   useEffect(() => { setFillValue(""); }, [question.id]);
-  const isCorrect = selected === question.correct;
+  // isCorrect differs per type: simple equality for multiple/fill, stored as boolean for others
+  const isCorrect = question.type === "multiple" || question.type === "fill"
+    ? selected === (question as any).correct
+    : selected === true;
 
   const diffCls = question.difficulty === "A1" ? "bg-emerald-100 text-emerald-700" :
                    question.difficulty === "A2" ? "bg-sky-100 text-sky-700" :
@@ -199,13 +208,23 @@ function QuizScreen(props: {
         </div>
 
         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8 mb-6">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-3">{question.question}</h2>
-          {question.context && (
-            <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{question.context}</p>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-3">
+            {question.type === "dragDrop" || question.type === "matching"
+              ? (question as any).prompt
+              : (question as any).question}
+          </h2>
+          {question.type === "dragDrop" && (
+            <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
+              <span className="font-semibold text-[#1A9E9E] not-italic">Terjemahan: </span>
+              {(question as any).translation}
+            </p>
+          )}
+          {question.type === "fill" && (question as any).context && (
+            <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{(question as any).context}</p>
           )}
 
           <div className="space-y-2 mt-6">
-            {question.type === "multiple" && question.options && question.options.map((opt, i) => {
+            {question.type === "multiple" && question.options.map((opt, i) => {
               const isSelected = selected === i;
               const isAnswerCorrect = question.correct === i;
               let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
@@ -244,6 +263,18 @@ function QuizScreen(props: {
                 )}
               </div>
             )}
+
+            {question.type === "dragDrop" && (
+              <DragDropRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
+            )}
+
+            {question.type === "missing" && (
+              <MissingRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
+            )}
+
+            {question.type === "matching" && (
+              <MatchingRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
+            )}
           </div>
 
           <AnimatePresence>
@@ -263,7 +294,7 @@ function QuizScreen(props: {
                   <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>
                     <p className="mb-2">{renderRich(question.explanation)}</p>
                     {!isCorrect && question.type === "fill" && (
-                      <p className="mt-2 text-xs italic">Jawabanmu: “{String(selected)}” — Jawaban benar: “{String(question.correct)}”</p>
+                      <p className="mt-2 text-xs italic">Jawabanmu: “{String(selected)}” — Jawaban benar: “{(question as any).correct}”</p>
                     )}
                     {question.tip && (
                       <div className="mt-3 flex items-start gap-2 p-3 rounded-xl bg-white/50 border border-gray-200/50">
@@ -523,5 +554,380 @@ function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
         </motion.div>
       </div>
     </motion.section>
+  );
+}
+// ════════════════════════════════════════════════════════════════════════════
+// DragDrop Renderer — tap-to-select pattern (mobile-friendly)
+// ════════════════════════════════════════════════════════════════════════════
+function DragDropRenderer({ question, showFeedback, onSubmit }: {
+  question: DragDropQuestion;
+  showFeedback: boolean;
+  onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
+}) {
+  // Shuffle tokens once per question (stable within one question)
+  const [shuffled] = useState(() =>
+    [...question.tokens]
+      .map((t) => ({ t, k: Math.random() }))
+      .sort((a, b) => a.k - b.k)
+      .map((x) => x.t)
+  );
+  // User's current answer order (array of indices into shuffled)
+  const [answerIdx, setAnswerIdx] = useState<number[]>([]);
+  const answerTokens = answerIdx.map((i) => shuffled[i]);
+
+  // Reset when question changes
+  useEffect(() => {
+    setAnswerIdx([]);
+  }, [question.id]);
+
+  const pickToken = (i: number) => {
+    if (showFeedback) return;
+    if (answerIdx.includes(i)) return;
+    setAnswerIdx([...answerIdx, i]);
+  };
+  const unpickToken = (positionInAnswer: number) => {
+    if (showFeedback) return;
+    setAnswerIdx(answerIdx.filter((_, idx) => idx !== positionInAnswer));
+  };
+
+  const allPicked = answerIdx.length === shuffled.length;
+  const handleCheck = () => {
+    if (!allPicked || showFeedback) return;
+    const isCorrect = answerTokens.join(" ") === question.correct.join(" ");
+    onSubmit(answerTokens.join(" "), isCorrect);
+  };
+
+  return (
+    <div className="space-y-4">
+      {/* Answer slot — tokens yang sudah dipilih */}
+      <div className="min-h-[80px] p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200">
+        {answerTokens.length === 0 ? (
+          <p className="text-center text-sm text-slate-400 italic py-4">Tap kata di bawah untuk menyusun kalimat</p>
+        ) : (
+          <div className="flex flex-wrap gap-2 items-center">
+            {answerTokens.map((tok, i) => {
+              const correctToken = question.correct[i];
+              let cls = "bg-white border-slate-300 text-slate-900";
+              if (showFeedback) {
+                cls = tok === correctToken
+                  ? "bg-emerald-50 border-emerald-400 text-emerald-900"
+                  : "bg-rose-50 border-rose-400 text-rose-900";
+              }
+              return (
+                <button
+                  key={i}
+                  onClick={() => unpickToken(i)}
+                  disabled={showFeedback}
+                  className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " + cls + (!showFeedback ? " hover:border-slate-500 active:scale-95" : "")}
+                >
+                  {tok}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Token bank — sumber kata */}
+      <div className="flex flex-wrap gap-2">
+        {shuffled.map((tok, i) => {
+          const used = answerIdx.includes(i);
+          return (
+            <button
+              key={i}
+              onClick={() => pickToken(i)}
+              disabled={used || showFeedback}
+              className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
+                (used
+                  ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
+                  : "bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95 cursor-pointer")}
+            >
+              {tok}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Check button — muncul saat semua token sudah dipilih */}
+      {!showFeedback && (
+        <button
+          onClick={handleCheck}
+          disabled={!allPicked}
+          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+        >
+          Periksa Jawaban
+        </button>
+      )}
+
+      {/* Show correct answer when feedback + wrong */}
+      {showFeedback && answerTokens.join(" ") !== question.correct.join(" ") && (
+        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+          <p className="text-xs font-bold text-emerald-900 mb-1">Jawaban benar:</p>
+          <p className="text-sm text-emerald-900">{question.correct.join(" ")}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// Missing Renderer — fill blanks by tapping from word bank
+// ════════════════════════════════════════════════════════════════════════════
+function MissingRenderer({ question, showFeedback, onSubmit }: {
+  question: MissingQuestion;
+  showFeedback: boolean;
+  onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
+}) {
+  // Parse template: split by "___" to get parts; blanks are between parts
+  const parts = question.template.split("___");
+  // parts[i] is text, blanks[i] is between parts[i] and parts[i+1]
+  const numBlanks = question.blanks.length;
+
+  const [filled, setFilled] = useState<(string | null)[]>(() => Array(numBlanks).fill(null));
+  const [usedOptions, setUsedOptions] = useState<number[]>([]);
+
+  useEffect(() => {
+    setFilled(Array(numBlanks).fill(null));
+    setUsedOptions([]);
+  }, [question.id]);
+
+  const pickOption = (optIdx: number) => {
+    if (showFeedback) return;
+    // Find next empty blank
+    const nextEmpty = filled.findIndex((v) => v === null);
+    if (nextEmpty === -1) return;
+    const newFilled = [...filled];
+    newFilled[nextEmpty] = question.options[optIdx];
+    setFilled(newFilled);
+    setUsedOptions([...usedOptions, optIdx]);
+  };
+
+  const clearBlank = (blankIdx: number) => {
+    if (showFeedback) return;
+    const val = filled[blankIdx];
+    if (!val) return;
+    // Find which option matches this value (first unused-for-clearing occurrence)
+    const optIdx = question.options.findIndex((opt, i) => opt === val && usedOptions.includes(i));
+    const newFilled = [...filled];
+    newFilled[blankIdx] = null;
+    setFilled(newFilled);
+    if (optIdx !== -1) setUsedOptions(usedOptions.filter((i) => i !== optIdx));
+  };
+
+  const allFilled = filled.every((v) => v !== null);
+  const handleCheck = () => {
+    if (!allFilled || showFeedback) return;
+    const isCorrect = filled.every((v, i) => v === question.blanks[i]);
+    onSubmit(filled.join(","), isCorrect);
+  };
+
+  return (
+    <div className="space-y-4">
+      {/* Template dengan inline blanks */}
+      <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200">
+        <p className="text-base md:text-lg text-slate-900 leading-loose">
+          {parts.map((part, i) => (
+            <span key={i}>
+              {part}
+              {i < numBlanks && (
+                <button
+                  onClick={() => clearBlank(i)}
+                  disabled={showFeedback || !filled[i]}
+                  className={"inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] " +
+                    (filled[i]
+                      ? (showFeedback
+                          ? (filled[i] === question.blanks[i] ? "bg-emerald-50 border-emerald-400 text-emerald-900" : "bg-rose-50 border-rose-400 text-rose-900")
+                          : "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer")
+                      : "bg-white border-dashed border-slate-400 text-slate-300")}
+                >
+                  {filled[i] || "___"}
+                </button>
+              )}
+            </span>
+          ))}
+        </p>
+      </div>
+
+      {/* Word bank */}
+      <div className="flex flex-wrap gap-2">
+        {question.options.map((opt, i) => {
+          const used = usedOptions.includes(i);
+          return (
+            <button
+              key={i}
+              onClick={() => pickOption(i)}
+              disabled={used || showFeedback || allFilled}
+              className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
+                (used
+                  ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
+                  : allFilled
+                    ? "bg-white border-slate-200 text-slate-400 cursor-not-allowed"
+                    : "bg-white border-slate-300 text-slate-900 hover:border-[#1A9E9E] active:scale-95")}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+
+      {!showFeedback && (
+        <button
+          onClick={handleCheck}
+          disabled={!allFilled}
+          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+        >
+          Periksa Jawaban
+        </button>
+      )}
+
+      {showFeedback && filled.some((v, i) => v !== question.blanks[i]) && (
+        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+          <p className="text-xs font-bold text-emerald-900 mb-1">Jawaban benar:</p>
+          <p className="text-sm text-emerald-900">{question.blanks.join(" / ")}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// Matching Renderer — tap left card then right card to pair
+// ════════════════════════════════════════════════════════════════════════════
+function MatchingRenderer({ question, showFeedback, onSubmit }: {
+  question: MatchingQuestion;
+  showFeedback: boolean;
+  onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
+}) {
+  // Stable shuffle of right-side items (so they don't align 1:1 visually)
+  const [rightOrder] = useState(() =>
+    question.pairs
+      .map((p, i) => ({ i, k: Math.random() }))
+      .sort((a, b) => a.k - b.k)
+      .map((x) => x.i)
+  );
+
+  // pairing: left index (original) → right index (original) or null
+  const [pairing, setPairing] = useState<(number | null)[]>(() => Array(question.pairs.length).fill(null));
+  const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
+
+  useEffect(() => {
+    setPairing(Array(question.pairs.length).fill(null));
+    setSelectedLeft(null);
+  }, [question.id]);
+
+  const pickLeft = (leftIdx: number) => {
+    if (showFeedback) return;
+    if (pairing[leftIdx] !== null) {
+      // Unpair
+      const newPairing = [...pairing];
+      newPairing[leftIdx] = null;
+      setPairing(newPairing);
+      setSelectedLeft(null);
+      return;
+    }
+    setSelectedLeft(leftIdx);
+  };
+
+  const pickRight = (rightIdx: number) => {
+    if (showFeedback) return;
+    if (selectedLeft === null) return;
+    // Check: is this right already paired to another left? If yes, unpair that first
+    const newPairing = [...pairing];
+    const existingLeft = pairing.findIndex((r) => r === rightIdx);
+    if (existingLeft !== -1) newPairing[existingLeft] = null;
+    newPairing[selectedLeft] = rightIdx;
+    setPairing(newPairing);
+    setSelectedLeft(null);
+  };
+
+  const allPaired = pairing.every((p) => p !== null);
+  const handleCheck = () => {
+    if (!allPaired || showFeedback) return;
+    // Correct if every left i is paired to right i (since original pairs[i].left ↔ pairs[i].right)
+    const isCorrect = pairing.every((rightIdx, leftIdx) => rightIdx === leftIdx);
+    onSubmit(pairing.join(","), isCorrect);
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-3">
+        {/* LEFT column */}
+        <div className="space-y-2">
+          {question.pairs.map((pair, leftIdx) => {
+            const isSelected = selectedLeft === leftIdx;
+            const isPaired = pairing[leftIdx] !== null;
+            const pairedCorrect = showFeedback && pairing[leftIdx] === leftIdx;
+            const pairedWrong = showFeedback && isPaired && pairing[leftIdx] !== leftIdx;
+            let cls = "bg-white border-slate-300 text-slate-900";
+            if (pairedCorrect) cls = "bg-emerald-50 border-emerald-400 text-emerald-900";
+            else if (pairedWrong) cls = "bg-rose-50 border-rose-400 text-rose-900";
+            else if (isSelected) cls = "bg-[#1A9E9E]/10 border-[#1A9E9E] text-[#1A9E9E]";
+            else if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
+            return (
+              <button
+                key={leftIdx}
+                onClick={() => pickLeft(leftIdx)}
+                disabled={showFeedback}
+                className={"w-full px-3 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all " + cls + (!showFeedback ? " hover:border-[#1A9E9E] active:scale-95 cursor-pointer" : "")}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span>{pair.left}</span>
+                  {isPaired && <span className="text-xs text-slate-500">{String.fromCharCode(65 + rightOrder.indexOf(pairing[leftIdx]!))}</span>}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* RIGHT column (shuffled) */}
+        <div className="space-y-2">
+          {rightOrder.map((origRightIdx, displayIdx) => {
+            const isPairedTo = pairing.findIndex((r) => r === origRightIdx);
+            const isPaired = isPairedTo !== -1;
+            const pairedCorrect = showFeedback && isPaired && pairing[isPairedTo] === isPairedTo;
+            const pairedWrong = showFeedback && isPaired && pairing[isPairedTo] !== isPairedTo;
+            const canClick = selectedLeft !== null && !showFeedback;
+            let cls = "bg-white border-slate-300 text-slate-900";
+            if (pairedCorrect) cls = "bg-emerald-50 border-emerald-400 text-emerald-900";
+            else if (pairedWrong) cls = "bg-rose-50 border-rose-400 text-rose-900";
+            else if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
+            return (
+              <button
+                key={displayIdx}
+                onClick={() => pickRight(origRightIdx)}
+                disabled={showFeedback || !canClick}
+                className={"w-full px-3 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all " + cls + (canClick && !isPaired ? " hover:border-[#1A9E9E] active:scale-95 cursor-pointer" : "")}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs font-bold text-slate-500">{String.fromCharCode(65 + displayIdx)}</span>
+                  <span className="flex-1 text-right">{question.pairs[origRightIdx].right}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {!showFeedback && (
+        <button
+          onClick={handleCheck}
+          disabled={!allPaired}
+          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+        >
+          Periksa Jawaban
+        </button>
+      )}
+
+      {showFeedback && pairing.some((r, l) => r !== l) && (
+        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+          <p className="text-xs font-bold text-emerald-900 mb-2">Pasangan yang benar:</p>
+          <ul className="text-sm text-emerald-900 space-y-1">
+            {question.pairs.map((p, i) => (
+              <li key={i}>• {p.left} → {p.right}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
