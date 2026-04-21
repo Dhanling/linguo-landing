@@ -340,6 +340,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void;onLoginOpen:()=>void}) {
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
+  const [regulerSubOpen, setRegulerSubOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
@@ -376,24 +377,36 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       Kelas Private
                     </button>
-                    {/* Kelas Reguler + sub-item Jadwal */}
-                    <div className="group/sub relative">
-                      <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setProgOpen(false)}}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between">
+{/* Kelas Reguler + sub-item Jadwal */}
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setRegulerSubOpen(true)}
+                      onMouseLeave={() => setRegulerSubOpen(false)}
+                    >
+                      <button
+                        onClick={() => { (window as any).__openFunnel?.("Kelas Reguler"); setProgOpen(false); }}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
+                      >
                         Kelas Reguler
-                        <ChevronDown className="h-3 w-3 -rotate-90 text-slate-300 group-hover/sub:text-[#1A9E9E]"/>
+                        <ChevronDown className="h-3 w-3 -rotate-90 text-slate-300" />
                       </button>
-                      {/* Sub-menu: muncul saat hover Kelas Reguler */}
-                      <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 pointer-events-none group-hover/sub:pointer-events-auto">
-                        <a href="/jadwal-kelas-reguler" onClick={()=>setProgOpen(false)}
-                          className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                          📅 Jadwal Batch Terbaru
-                        </a>
-                        <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setProgOpen(false)}}
-                          className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                          ✍️ Daftar Kelas Reguler
-                        </button>
-                      </div>
+                      {regulerSubOpen && (
+                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
+                          <a
+                            href="/jadwal-kelas-reguler"
+                            onClick={() => { setProgOpen(false); setRegulerSubOpen(false); }}
+                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            📅 Cek Jadwal Reguler
+                          </a>
+                          <button
+                            onClick={() => { (window as any).__openFunnel?.("Kelas Reguler"); setProgOpen(false); setRegulerSubOpen(false); }}
+                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            📝 Daftar Kelas Reguler
+                          </button>
+                        </div>
+                      )}
                     </div>
                     {/* Kelas Kids */}
                     <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setProgOpen(false)}}
