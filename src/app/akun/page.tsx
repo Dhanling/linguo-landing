@@ -1687,55 +1687,142 @@ export default function AkunPage() {
                   )}
                 </div>
 
+                {/* Menunggu Pembayaran Section - main content area */}
+
+
+                {pendingPaymentRegs.length > 0 && (
+
+
+                  <div className="mt-6">
+
+
+                    <div className="flex items-center gap-2 mb-3">
+
+
+                      <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
+
+
+                      <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
+
+
+                        {pendingPaymentRegs.length}
+
+
+                      </span>
+
+
+                    </div>
+
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+
+
+                      {pendingPaymentRegs.map((reg: any, i: number) => (
+
+
+                        <motion.div
+
+
+                          key={reg.id}
+
+
+                          initial={{ opacity: 0, y: 12 }}
+
+
+                          animate={{ opacity: 1, y: 0 }}
+
+
+                          transition={{ delay: i * 0.08 }}
+
+
+                          className="rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow bg-amber-50 border-amber-200"
+
+
+                        >
+
+
+                          <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
+
+
+                            <span>🟡</span>
+
+
+                            <span>Belum Bayar</span>
+
+
+                          </div>
+
+
+                          <div className="flex items-center gap-3 mb-3">
+
+
+                            <div className="h-11 w-11 rounded-xl bg-white border flex items-center justify-center shrink-0">
+
+
+                              <img src={getFlagUrl(reg.language || "")} alt="" className="h-7 w-7 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+
+
+                            </div>
+
+
+                            <div className="flex-1 min-w-0">
+
+
+                              <h4 className="font-semibold text-gray-900 truncate">{reg.language || reg.product}</h4>
+
+
+                              <p className="text-xs text-gray-500 truncate">{reg.product}</p>
+
+
+                            </div>
+
+
+                            <span className="inline-flex items-center rounded-lg bg-teal-50 px-2 py-1 text-xs font-bold text-teal-700 shrink-0">{reg.level}</span>
+
+
+                          </div>
+
+
+                          {user?.id && (
+
+
+                            <PaymentCard
+
+
+                              registration={reg}
+
+
+                              userId={user.id}
+
+
+                              onUploadSuccess={() => window.location.reload()}
+
+
+                            />
+
+
+                          )}
+
+
+                        </motion.div>
+
+
+                      ))}
+
+
+                    </div>
+
+
+                  </div>
+
+
+                )}
+
+
+
                 {/* Right Column — Sidebar (desktop only, mobile inline) */}
                 <div className="space-y-5">
                   {/* Upcoming Schedules */}
-                  {/* Menunggu Pembayaran Section */}
-        {pendingPaymentRegs.length > 0 && (
-          <div className="mt-6">
-            <div className="flex items-center gap-2 mb-3">
-              <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
-              <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
-                {pendingPaymentRegs.length}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {pendingPaymentRegs.map((reg: any, i: number) => (
-                <motion.div
-                  key={reg.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                  className="rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow bg-amber-50 border-amber-200"
-                >
-                  <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
-                    <span>🟡</span>
-                    <span>Belum Bayar</span>
-                  </div>
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <div className="h-11 w-11 rounded-xl bg-white border flex items-center justify-center shrink-0">
-                        <img src={getFlagUrl(reg.language || "")} alt="" className="h-7 w-7 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-base font-bold text-gray-900 truncate">{reg.language || reg.product}</p>
-                        <p className="text-xs text-gray-500">{reg.product}</p>
-                      </div>
-                    </div>
-                    <span className="inline-flex items-center rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-700">{reg.level}</span>
-                  </div>
-                  {user?.id && (
-                    <PaymentCard
-                      registration={reg}
-                      userId={user.id}
-                      onUploadSuccess={() => window.location.reload()}
-                    />
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {upcomingSchedules.length > 0 && (
                     <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
