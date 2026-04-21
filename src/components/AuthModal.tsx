@@ -7,10 +7,8 @@ import { supabase } from "@/lib/supabase-client";
 interface Props {
   open: boolean;
   onClose: () => void;
-  /** Dipanggil setelah login/signup berhasil — parent bisa redirect */
   onSuccess: (userId: string) => void;
-  /** Konteks — ditampilkan di header modal */
-  intent?: string; // e.g. "Simpan hasil test & lanjut daftar kelas"
+  intent?: string;
 }
 
 type Mode = "choose" | "email-login" | "email-signup";
@@ -32,27 +30,21 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
 
   const handleClose = () => { reset(); onClose(); };
 
-  // ── Google OAuth ──────────────────────────────────────────────
   const handleGoogle = async () => {
     setLoading(true); setError("");
     try {
-      // Simpan intent ke cookie supaya callback bisa redirect ke wizard
       document.cookie = "linguo_auth_intent=placement;path=/;max-age=300";
       const { error: e } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: {
-          redirectTo: window.location.origin + "/auth/callback",
-        },
+        options: { redirectTo: window.location.origin + "/auth/callback" },
       });
       if (e) throw e;
-      // Browser akan redirect — tidak perlu setLoading(false)
     } catch (e: any) {
       setError(e?.message || "Gagal login dengan Google. Coba lagi.");
       setLoading(false);
     }
   };
 
-  // ── Email Login ───────────────────────────────────────────────
   const handleEmailLogin = async () => {
     if (!email || !password) { setError("Isi email dan password dulu ya."); return; }
     setLoading(true); setError("");
@@ -61,14 +53,11 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
       if (e) throw e;
       if (data.user) onSuccess(data.user.id);
     } catch (e: any) {
-      setError(e?.message === "Invalid login credentials"
-        ? "Email atau password salah."
-        : e?.message || "Gagal login. Coba lagi.");
+      setError(e?.message === "Invalid login credentials" ? "Email atau password salah." : e?.message || "Gagal login.");
       setLoading(false);
     }
   };
 
-  // ── Email Signup ──────────────────────────────────────────────
   const handleEmailSignup = async () => {
     if (!name.trim()) { setError("Masukkan nama kamu dulu ya."); return; }
     if (!email) { setError("Masukkan email kamu."); return; }
@@ -76,25 +65,20 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
     setLoading(true); setError("");
     try {
       const { data, error: e } = await supabase.auth.signUp({
-        email,
-        password,
+        email, password,
         options: { data: { full_name: name.trim() } },
       });
       if (e) throw e;
-      // Kalau ada session langsung (email confirm off) → sukses
       if (data.user && data.session) {
         onSuccess(data.user.id);
       } else {
-        // Email confirmation required — kasih tau user
         setError("✅ Cek email kamu untuk konfirmasi, lalu login.");
         setLoading(false);
         setMode("email-login");
       }
     } catch (e: any) {
       const msg = e?.message || "";
-      setError(msg.includes("already registered")
-        ? "Email ini sudah terdaftar. Coba login."
-        : msg || "Gagal daftar. Coba lagi.");
+      setError(msg.includes("already registered") ? "Email ini sudah terdaftar. Coba login." : msg || "Gagal daftar.");
       setLoading(false);
     }
   };
@@ -103,14 +87,11 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
     <AnimatePresence>
       {open && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={handleClose}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70]"
           />
-
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -118,11 +99,8 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
             transition={{ type: "spring", damping: 26, stiffness: 320 }}
             className="fixed z-[70] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden"
           >
-            {/* Top accent bar */}
             <div className="h-1 w-full bg-gradient-to-r from-[#1A9E9E] via-[#2ABFBF] to-[#1A9E9E]" />
-
             <div className="px-7 py-7">
-              {/* Header */}
               <div className="flex items-start justify-between mb-1">
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 leading-tight">
@@ -141,14 +119,10 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
               </div>
 
               <AnimatePresence mode="wait">
-
-                {/* ── CHOOSE MODE ── */}
                 {mode === "choose" && (
                   <motion.div key="choose"
                     initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
                     className="mt-6 space-y-3">
-
-                    {/* Google */}
                     <button onClick={handleGoogle} disabled={loading}
                       className="w-full flex items-center justify-center gap-3 px-5 py-3.5 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 rounded-2xl font-semibold text-gray-800 text-sm transition-all disabled:opacity-50 active:scale-[0.98]">
                       <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
@@ -159,15 +133,11 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
                       </svg>
                       {loading ? "Mengarahkan..." : "Lanjut dengan Google"}
                     </button>
-
-                    {/* Divider */}
                     <div className="flex items-center gap-3">
                       <div className="flex-1 h-px bg-gray-100" />
                       <span className="text-xs text-gray-400 font-medium">atau</span>
                       <div className="flex-1 h-px bg-gray-100" />
                     </div>
-
-                    {/* Email options */}
                     <div className="grid grid-cols-2 gap-2">
                       <button onClick={() => { setError(""); setMode("email-login"); }}
                         className="px-4 py-3 border-2 border-gray-200 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 rounded-2xl text-sm font-semibold text-gray-700 transition-all active:scale-[0.98]">
@@ -178,9 +148,7 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
                         Daftar
                       </button>
                     </div>
-
                     {error && <p className="text-xs text-rose-600 text-center pt-1">{error}</p>}
-
                     <p className="text-[10px] text-gray-400 text-center pt-1 leading-relaxed">
                       Dengan masuk, kamu setuju dengan{" "}
                       <a href="/ketentuan" className="underline hover:text-gray-600">Ketentuan Layanan</a>{" "}
@@ -189,13 +157,10 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
                   </motion.div>
                 )}
 
-                {/* ── EMAIL LOGIN / SIGNUP ── */}
                 {(mode === "email-login" || mode === "email-signup") && (
                   <motion.div key={mode}
                     initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
                     className="mt-5 space-y-3">
-
-                    {/* Back */}
                     <button onClick={() => { setError(""); setMode("choose"); }}
                       className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-800 transition-colors mb-1">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,29 +168,20 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
                       </svg>
                       Kembali
                     </button>
-
                     {mode === "email-signup" && (
-                      <input
-                        type="text" value={name} onChange={e => setName(e.target.value)}
+                      <input type="text" value={name} onChange={e => setName(e.target.value)}
                         placeholder="Nama lengkap"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm"
-                      />
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                     )}
-
-                    <input
-                      type="email" value={email} onChange={e => setEmail(e.target.value)}
+                    <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                       placeholder="Email"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm"
-                    />
-
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                     <div className="relative">
-                      <input
-                        type={showPass ? "text" : "password"}
+                      <input type={showPass ? "text" : "password"}
                         value={password} onChange={e => setPassword(e.target.value)}
                         placeholder="Password"
                         onKeyDown={e => e.key === "Enter" && (mode === "email-login" ? handleEmailLogin() : handleEmailSignup())}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm pr-11"
-                      />
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm pr-11" />
                       <button type="button" onClick={() => setShowPass(v => !v)}
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
                         {showPass
@@ -234,31 +190,25 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
                         }
                       </button>
                     </div>
-
                     {error && (
                       <p className={"text-xs text-center " + (error.startsWith("✅") ? "text-emerald-600" : "text-rose-600")}>
                         {error}
                       </p>
                     )}
-
-                    <button
-                      onClick={mode === "email-login" ? handleEmailLogin : handleEmailSignup}
+                    <button onClick={mode === "email-login" ? handleEmailLogin : handleEmailSignup}
                       disabled={loading}
                       className="w-full py-3.5 bg-[#1A9E9E] hover:bg-[#147a7a] disabled:opacity-50 text-white rounded-xl font-bold text-sm transition-all active:scale-[0.98]">
                       {loading ? "Memproses..." : mode === "email-login" ? "Masuk" : "Buat Akun & Lanjut"}
                     </button>
-
                     <p className="text-xs text-center text-gray-500">
                       {mode === "email-login" ? "Belum punya akun? " : "Sudah punya akun? "}
-                      <button
-                        onClick={() => { setError(""); setMode(mode === "email-login" ? "email-signup" : "email-login"); }}
+                      <button onClick={() => { setError(""); setMode(mode === "email-login" ? "email-signup" : "email-login"); }}
                         className="text-[#1A9E9E] font-semibold hover:underline">
                         {mode === "email-login" ? "Daftar gratis" : "Masuk"}
                       </button>
                     </p>
                   </motion.div>
                 )}
-
               </AnimatePresence>
             </div>
           </motion.div>
