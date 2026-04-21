@@ -7,11 +7,11 @@ type SessionTuple = [number, string, string[]];
 type TitleTuple = string;
 
 function toSessions(arr: SessionTuple[]) {
-  return arr.map(([session, title, topics]) => ({ session, title, topics }));
+  return arr.map(([session, title, topics]) => ({ number: session, title, topics }));
 }
 
 function titleOnly(arr: TitleTuple[]) {
-  return arr.map((title, i) => ({ session: i + 1, title, topics: [] }));
+  return arr.map((title, i) => ({ number: i + 1, title, topics: [] }));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
