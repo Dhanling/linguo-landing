@@ -489,7 +489,10 @@ const GREETINGS = [
 ];
 
 const FLAG_CODES: Record<string,string> = {
-  English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro"
+  // English names
+  English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",
+  // Indonesian names (Mandarin same in both languages — already covered above)
+  Inggris:"gb",Jepang:"jp",Korea:"kr",Arab:"sa",Prancis:"fr",Jerman:"de",Spanyol:"es",Italia:"it",Belanda:"nl",Portugis:"br",Rusia:"ru",Thailand:"th",Vietnam:"vn",Turki:"tr",Polandia:"pl",Swedia:"se",Norwegia:"no",Denmark:"dk",Finlandia:"fi",Yunani:"gr",Ceko:"cz",Hungaria:"hu",Ibrani:"il",Persia:"ir",Filipina:"ph",Melayu:"my",Georgia:"ge",Jawa:"id",Sunda:"id",Pakistan:"pk",Bangladesh:"bd",Rumania:"ro"
 };
 function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 
@@ -647,7 +650,10 @@ function TestimonialCarousel() {
                       <div className="flex items-center justify-between mb-1">
                         <div>
                           <p className="font-bold text-sm">{t.name}</p>
-                          <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
+                          <div className="flex items-center gap-1.5 mt-0.5">
+                            <img src={`https://flagcdn.com/w40/${getFlagCode(t.lang)}.png`} alt={`Bendera ${t.lang}`} className="h-3.5 w-3.5 rounded-full object-cover"/>
+                            <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
+                          </div>
                         </div>
                         <div className="flex gap-0.5">{[1,2,3,4,5].map(s=><Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400"/>)}</div>
                       </div>
