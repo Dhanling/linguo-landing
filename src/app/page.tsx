@@ -371,7 +371,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 </button>
                 <AnimatePresence>{progOpen&&(
                   <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
-                    className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-hidden">
+                    className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-visible">
                     {/* Kelas Private */}
                     <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setProgOpen(false)}}
                       className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
