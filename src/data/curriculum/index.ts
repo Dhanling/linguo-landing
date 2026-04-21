@@ -1,10 +1,10 @@
 import type { LanguageCurriculum } from "./types";
 import english from "./data/english";
-import japanese from "./data/japanese";
+// import japanese from "./data/japanese"; // TODO: restore curriculum data
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
-  japanese,
+  // japanese, // TODO: restore curriculum data
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {
