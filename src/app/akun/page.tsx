@@ -963,6 +963,8 @@ export default function AkunPage() {
     await supabase.auth.signOut();
     setUser(null);
     setStudent(null);
+    // Redirect ke page logout khusus (bukan langsung ke landing)
+    window.location.href = "/akun/logout";
   };
 
   const signInWithEmail = async () => {
