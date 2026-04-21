@@ -13,6 +13,17 @@ function deleteCookie(name: string) {
   document.cookie = name + "=;path=/;max-age=0";
 }
 
+function parsePlacementIntent(): { lang: string; langFull: string; level: string; source: string } | null {
+  try {
+    const raw = getCookie("linguo_placement_intent");
+    if (!raw) return null;
+    deleteCookie("linguo_placement_intent");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
   const [userName, setUserName] = useState("");
@@ -49,9 +60,17 @@ export default function AuthCallbackPage() {
 
           setStatus("success");
 
-          // Redirect to student dashboard after short delay
+          // Cek apakah ada placement intent → redirect ke wizard, bukan /akun
+          const placementIntent = parsePlacementIntent();
+          const redirectTarget = placementIntent
+            ? "/?lang=" + encodeURIComponent(placementIntent.langFull)
+              + "&level=" + encodeURIComponent(placementIntent.level)
+              + "&from=" + encodeURIComponent(placementIntent.source)
+              + "&openFunnel=1"
+            : "/akun";
+
           setTimeout(() => {
-            window.location.href = "/akun";
+            window.location.href = redirectTarget;
           }, 1800);
         };
 

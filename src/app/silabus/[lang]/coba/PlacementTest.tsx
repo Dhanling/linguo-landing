@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import AuthModal from "@/components/AuthModal";
+import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
@@ -389,6 +391,8 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   const [nameValue, setNameValue] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [gateError, setGateError] = useState("");
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [checkingSession, setCheckingSession] = useState(false);
 
   const levelColorMap: Record<string, { bg: string; text: string; soft: string; border: string }> = {
     A1: { bg: "bg-emerald-100", text: "text-emerald-600", soft: "bg-emerald-50", border: "border-emerald-200" },
@@ -398,11 +402,24 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   };
   const lc = levelColorMap[result.level];
 
-  const handleStartLearning = () => {
+  // Simpan intent placement ke cookie supaya /auth/callback bisa redirect ke wizard
+  const savePlacementIntent = () => {
+    try {
+      const intentData = JSON.stringify({
+        lang: meta.slug,
+        langFull: "Bahasa " + meta.name,
+        level: result.sublevel,
+        source: "placement-test-" + meta.slug,
+      });
+      document.cookie = "linguo_placement_intent=" + encodeURIComponent(intentData) + ";path=/;max-age=600";
+    } catch {}
+  };
+
+  // Buka wizard dengan bahasa + level pre-filled
+  const openWizardPrefilled = () => {
     const w = window as any;
     const langFull = "Bahasa " + meta.name;
     const sourceTag = "placement-test-" + meta.slug;
-    // Get prefill data from localStorage (set by soft-gate submit)
     let prefillName = "";
     let prefillWa = "";
     try {
@@ -424,6 +441,32 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
     } else {
       window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel;
     }
+  };
+
+  const handleStartLearning = async () => {
+    setCheckingSession(true);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        // Sudah login → langsung buka wizard
+        openWizardPrefilled();
+      } else {
+        // Belum login → simpan intent + buka AuthModal
+        savePlacementIntent();
+        setShowAuthModal(true);
+      }
+    } catch {
+      // Kalau gagal cek session, tetap buka wizard (graceful fallback)
+      openWizardPrefilled();
+    } finally {
+      setCheckingSession(false);
+    }
+  };
+
+  const handleAuthSuccess = (_userId: string) => {
+    setShowAuthModal(false);
+    // Setelah login berhasil → langsung buka wizard
+    openWizardPrefilled();
   };
 
   // Auto-log result (anonymous) ke placement_results table
@@ -589,10 +632,19 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
         {/* ACTION BUTTONS */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 }}
           className="flex flex-col gap-3">
-          <button onClick={handleStartLearning}
-            className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group">
-            Langsung Daftar Kelas
-            <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <button onClick={handleStartLearning} disabled={checkingSession}
+            className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-lg hover:bg-[#147a7a] shadow-xl shadow-[#1A9E9E]/20 transition-all group disabled:opacity-70 disabled:cursor-wait">
+            {checkingSession ? (
+              <>
+                <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                Memproses...
+              </>
+            ) : (
+              <>
+                Langsung Daftar Kelas
+                <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </>
+            )}
           </button>
           <div className="flex gap-3">
             <Link href={"/silabus/" + meta.slug} className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-colors">
@@ -604,6 +656,14 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
           </div>
         </motion.div>
       </div>
+
+      {/* Auth Gate Modal */}
+      <AuthModal
+        open={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        onSuccess={handleAuthSuccess}
+        intent={`Simpan hasil test ${meta.flag} & lanjut daftar kelas`}
+      />
     </motion.section>
   );
 }
