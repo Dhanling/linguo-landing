@@ -96,9 +96,9 @@ export default function LogoutPage() {
       {/* ───────────── Liquid Glass Center Card ───────────── */}
       <div className="relative z-10 w-full max-w-md px-6">
         <div className="liquid-glass relative rounded-[28px] p-8 md:p-10">
-          {/* Small goodbye icon tile (like hand wave) */}
+          {/* Small goodbye icon tile (animated hand wave) */}
           <div className="relative mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-[0_8px_24px_-4px_rgba(13,71,71,0.2)] ring-1 ring-slate-900/5">
-            <span className="text-2xl" role="img" aria-label="wave">👋</span>
+            <span className="wave-emoji text-2xl inline-block origin-[70%_70%]" role="img" aria-label="wave">👋</span>
           </div>
 
           {/* Rotating greeting heading */}
@@ -201,6 +201,20 @@ export default function LogoutPage() {
         }
         .greeting-fade {
           animation: greetIn 3.2s ease-in-out forwards;
+        }
+        /* Hand wave animation — rocks left-right like saying goodbye */
+        @keyframes wave {
+          0%   { transform: rotate(0deg); }
+          10%  { transform: rotate(-14deg); }
+          20%  { transform: rotate(12deg); }
+          30%  { transform: rotate(-10deg); }
+          40%  { transform: rotate(9deg); }
+          50%  { transform: rotate(0deg); }
+          100% { transform: rotate(0deg); }
+        }
+        .wave-emoji {
+          animation: wave 2.4s ease-in-out infinite;
+          transform-origin: 70% 70%;
         }
       `}</style>
     </div>

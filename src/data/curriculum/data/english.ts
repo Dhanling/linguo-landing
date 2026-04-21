@@ -1,296 +1,283 @@
-import type { LanguageCurriculum, SessionPreview } from "../types";
-import { getLanguageBySlug } from "../languages";
+// ─────────────────────────────────────────────────────────────────────────────
+// Extended placement test data types + English questions
+// v2: added dragDrop, missing, matching question types for gamification
+// ─────────────────────────────────────────────────────────────────────────────
 
-// Compact format: [number, title] or [number, title, topics[]]
-type Raw = [number, string, string[]?];
+export type QuestionType = "multiple" | "fill" | "fillChoice" | "dragDrop" | "missing" | "matching";
+export type Difficulty = "A1" | "A2" | "B1" | "B2";
 
-const toSessions = (raw: Raw[]): SessionPreview[] =>
-  raw.map(([number, title, topics]) => ({ number, title, ...(topics ? { topics } : {}) }));
+// ── Base interface (common fields) ──────────────────────────────────────────
+interface BaseQuestion {
+  id: string;
+  difficulty: Difficulty;
+  explanation: string;
+  tip?: string;
+}
 
-const titleOnly = (titles: string[]): SessionPreview[] =>
-  titles.map((title, i) => ({ number: i + 1, title }));
+// ── Multiple choice (existing) ──────────────────────────────────────────────
+export interface MultipleQuestion extends BaseQuestion {
+  type: "multiple";
+  question: string;
+  options: string[];
+  correct: number;
+}
 
-// ============ A1 — 3 sublevels, FULLY PREVIEWED ============
-const a1_1 = toSessions([
-  [1, "Alphabet & Pronunciation", ["26 huruf", "vokal", "konsonan", "silent letters"]],
-  [2, "Greetings & Goodbyes", ["hello / hi", "good morning", "see you"]],
-  [3, "Introducing Yourself", ["my name is", "nice to meet you", "nationality"]],
-  [4, "Numbers 0–20", ["counting", "phone numbers", "age"]],
-  [5, "Days & Months", ["7 hari", "12 bulan", "ordinal numbers"]],
-  [6, "Colors & Basic Adjectives", ["primary colors", "big / small", "old / new"]],
-  [7, "Family Members", ["mother, father", "siblings", "possessive 's"]],
-  [8, "Articles: a, an, the", ["kapan pakai a/an", "the definite"]],
-  [9, "Subject Pronouns", ["I, you, he, she", "we, they"]],
-  [10, "Verb 'to be' — Positive", ["am / is / are", "contractions"]],
-  [11, "Verb 'to be' — Negative & Questions", ["isn't / aren't", "Are you...?"]],
-  [12, "Numbers 20–100 & Prices", ["twenty → hundred", "how much"]],
-  [13, "Telling Time", ["o'clock", "half past", "quarter to"]],
-  [14, "Food & Drinks Basics", ["breakfast items", "common meals"]],
-  [15, "Classroom Language", ["pen, book, desk", "may I..."]],
-  [16, "Review & First Conversation", ["self-intro", "small talk starter"]],
-]);
+// ── Fill in the blank via typing (existing) ─────────────────────────────────
+export interface FillQuestion extends BaseQuestion {
+  type: "fill";
+  question: string;
+  context?: string;
+  correct: string;
+}
 
-const a1_2 = toSessions([
-  [1, "Present Simple — Affirmative", ["I work", "he works", "spelling -s"]],
-  [2, "Present Simple — Negative & Questions", ["don't / doesn't", "do / does"]],
-  [3, "My Home", ["rooms", "furniture", "there is / are"]],
-  [4, "Daily Routine", ["wake up", "go to work", "sequencing"]],
-  [5, "Possessive Adjectives", ["my, your, his, her, our, their"]],
-  [6, "Question Words", ["what, where, when, who, why, how"]],
-  [7, "Prepositions of Place", ["in, on, under, next to, behind"]],
-  [8, "Clothes & Outfits", ["items", "describing what someone wears"]],
-  [9, "Weather & Seasons", ["it's sunny", "cold / hot", "rainy days"]],
-  [10, "At the Market", ["fruits & vegetables", "some / any"]],
-  [11, "At a Restaurant", ["menu", "I'd like", "the bill please"]],
-  [12, "Can & Can't — Ability", ["I can swim", "I can't cook"]],
-  [13, "Adverbs of Frequency", ["always, usually, sometimes, never"]],
-  [14, "Hobbies & Free Time", ["I like / I don't like", "-ing as noun"]],
-  [15, "Likes & Dislikes", ["love, enjoy, hate", "what about you?"]],
-  [16, "Review & Role Play", ["restaurant scenario", "shopping scenario"]],
-]);
+// ── Fill in the blank via button options (NEW — like fill but click instead of type) ──
+export interface FillChoiceQuestion extends BaseQuestion {
+  type: "fillChoice";
+  question: string;
+  context?: string;
+  options: string[];   // the button options (includes correct + distractors)
+  correct: string;     // must match one of options
+}
 
-const a1_3 = toSessions([
-  [1, "Present Continuous", ["-ing form", "I am working now"]],
-  [2, "Present Simple vs Continuous", ["habit vs now", "spelling rules"]],
-  [3, "Object Pronouns", ["me, you, him, her, it, us, them"]],
-  [4, "Countable & Uncountable", ["a book / some water", "much / many"]],
-  [5, "At the Supermarket", ["quantities", "how many / how much"]],
-  [6, "Directions in Town", ["turn left", "go straight", "it's across from"]],
-  [7, "Transportation", ["by bus, by car", "take the train"]],
-  [8, "Shopping for Clothes", ["sizes", "try on", "too big / small"]],
-  [9, "Making Plans", ["let's...", "how about...", "accepting / declining"]],
-  [10, "On the Phone", ["this is...", "can I speak to...", "hold on"]],
-  [11, "Filling Out Forms", ["personal info", "address format"]],
-  [12, "Past Simple: 'to be'", ["was / were", "yesterday"]],
-  [13, "Past Simple: Regular Verbs", ["-ed endings", "pronunciation"]],
-  [14, "Past Simple: Irregular Verbs", ["went, had, saw, did"]],
-  [15, "My Last Weekend", ["storytelling", "first... then... finally"]],
-  [16, "Review & Storytelling Practice", ["3-minute personal story"]],
-]);
+// ── Drag-drop: susun token jadi kalimat benar (Duolingo-style) ──────────────
+export interface DragDropQuestion extends BaseQuestion {
+  type: "dragDrop";
+  prompt: string;               // instruksi untuk siswa
+  translation: string;          // kalimat dalam bahasa asal (misal Indonesia)
+  tokens: string[];             // token acak yang harus disusun (sudah di-shuffle di component)
+  correct: string[];            // urutan benar
+}
 
-// ============ A2 — 4 sublevels, preview-locked ============
-const a2_1 = titleOnly([
-  "Past Simple Review & Questions", "Past Simple Negative Forms",
-  "Time Expressions (Past)", "Comparative Adjectives", "Superlative Adjectives",
-  "Modal: Should (Advice)", "Modal: Must / Have to (Obligation)",
-  "Articles Review", "Describing People", "My Hometown",
-  "Travel Vocabulary", "At the Airport", "Hotel Check-in",
-  "Restaurant Advanced", "Asking for Help", "Review: Travel Role Play",
-]);
+// ── Missing: kalimat dengan multiple blanks, pilih dari word bank ───────────
+export interface MissingQuestion extends BaseQuestion {
+  type: "missing";
+  question: string;             // instruksi
+  template: string;             // kalimat dengan ___ sebagai placeholder tiap blank
+  blanks: string[];             // jawaban benar per blank, in order
+  options: string[];            // word bank (berisi blanks + distractors)
+}
 
-const a2_2 = titleOnly([
-  "Present Perfect: Introduction", "Present Perfect: Ever / Never",
-  "Present Perfect: Just / Already / Yet", "Future: 'Going to'",
-  "Future: 'Will'", "First Conditional", "Jobs & Occupations",
-  "Job Interview Basics", "Workplace Vocabulary", "Writing Emails",
-  "Describing Your Job", "Making Small Talk", "Talking About Experiences",
-  "News & Current Events", "Environment & Nature", "Review",
-]);
+// ── Matching: jodohkan kata dengan artinya ──────────────────────────────────
+export interface MatchingPair {
+  left: string;
+  right: string;
+}
+export interface MatchingQuestion extends BaseQuestion {
+  type: "matching";
+  prompt: string;
+  pairs: MatchingPair[];
+}
 
-const a2_3 = titleOnly([
-  "Past Continuous", "Past Continuous vs Past Simple",
-  "While / When / As", "Relative Clauses (who, which, that)",
-  "Adverbs of Manner", "So / Because / However",
-  "Expressing Opinions", "Agreeing & Disagreeing",
-  "Storytelling Structure", "Describing a Book or Movie",
-  "Health & Illness", "At the Doctor's",
-  "Sports & Fitness", "Music & Arts",
-  "Technology Vocabulary", "Review & Opinion Debate",
-]);
+// ── Discriminated union ─────────────────────────────────────────────────────
+export type Question =
+  | MultipleQuestion
+  | FillQuestion
+  | FillChoiceQuestion
+  | DragDropQuestion
+  | MissingQuestion
+  | MatchingQuestion;
 
-const a2_4 = titleOnly([
-  "Used To (Past Habits)", "Would for Past Habits",
-  "Reflexive Pronouns", "Both / Either / Neither",
-  "Too / Enough", "Quantifiers: A Few, A Little",
-  "Indefinite Pronouns: Someone, Anyone", "Expressing Preferences",
-  "Making Suggestions", "Offering & Accepting Help",
-  "Giving Instructions", "Describing Processes",
-  "Festivals & Celebrations", "Food Culture",
-  "Indonesian vs English Culture", "Review & Cultural Exchange",
-]);
 
-// ============ B1 — 5 sublevels, preview-locked ============
-const b1_1 = titleOnly([
-  "Present Perfect Continuous", "Past Perfect",
-  "Reported Speech: Statements", "Reported Speech: Questions",
-  "Passive Voice: Present & Past", "Second Conditional",
-  "Modal Verbs Review", "Phrasal Verbs: Daily Life",
-  "Phrasal Verbs: Travel", "Idioms: Time & Money",
-  "Formal vs Informal Register", "Writing Reviews",
-  "Advanced Description", "Cultural Differences",
-  "Discussing Movies & Books", "Review",
-]);
+// ─────────────────────────────────────────────────────────────────────────────
+// ENGLISH PLACEMENT TEST (v2 — 18 questions, mixed types)
+// A1: 4 soal · A2: 5 soal · B1: 5 soal · B2: 4 soal
+// ─────────────────────────────────────────────────────────────────────────────
+export const englishPlacementTest: Question[] = [
+  // ═══════════════════════ A1 ═══════════════════════
+  {
+    id: "q1", difficulty: "A1", type: "multiple",
+    question: "What is the correct greeting for the morning?",
+    options: ["Good night", "Good morning", "Good evening", "Goodbye"],
+    correct: 1,
+    explanation: "'Good morning' is used until about noon.",
+  },
+  {
+    id: "q2", difficulty: "A1", type: "matching",
+    prompt: "Match the words with their Indonesian meanings:",
+    pairs: [
+      { left: "happy", right: "bahagia" },
+      { left: "sad", right: "sedih" },
+      { left: "angry", right: "marah" },
+      { left: "tired", right: "lelah" },
+    ],
+    explanation: "Kosakata emosi dasar level A1 — paling penting untuk daily conversation.",
+  },
+  {
+    id: "q3", difficulty: "A1", type: "fillChoice",
+    question: "Complete: 'I have ___ apple.'",
+    context: "Pilih artikel yang tepat.",
+    options: ["a", "an", "the", "some"],
+    correct: "an",
+    explanation: "'Apple' starts with a vowel sound, so use 'an'.",
+  },
+  {
+    id: "q4", difficulty: "A1", type: "dragDrop",
+    prompt: "Susun menjadi kalimat lengkap:",
+    translation: "Dia adalah seorang guru.",
+    tokens: ["is", "She", "teacher", "a"],
+    correct: ["She", "is", "a", "teacher"],
+    explanation: "Struktur dasar: Subject + be (is/am/are) + a/an + noun.",
+  },
 
-const b1_2 = titleOnly([
-  "Third Conditional", "Mixed Conditionals",
-  "Defining vs Non-defining Relative Clauses", "Participle Clauses",
-  "Linking: Although, Despite, However", "News Vocabulary",
-  "Light Political Discussion", "Global Issues",
-  "Environment Debate", "Technology Impact",
-  "Social Media Discourse", "Career Discussions",
-  "Interview Skills", "Negotiation Basics",
-  "Presenting Ideas", "Review",
-]);
+  // ═══════════════════════ A2 ═══════════════════════
+  {
+    id: "q5", difficulty: "A2", type: "multiple",
+    question: "Which sentence is in the past tense?",
+    options: [
+      "I go to school every day.",
+      "I am going to school now.",
+      "I went to school yesterday.",
+      "I will go to school tomorrow.",
+    ],
+    correct: 2,
+    explanation: "'Went' is the past simple form of 'go'.",
+  },
+  {
+    id: "q6", difficulty: "A2", type: "dragDrop",
+    prompt: "Susun menjadi kalimat past simple:",
+    translation: "Kemarin saya pergi ke pasar.",
+    tokens: ["went", "market", "I", "yesterday", "the", "to"],
+    correct: ["I", "went", "to", "the", "market", "yesterday"],
+    explanation: "Past simple: Subject + verb-2 + object + time marker.",
+  },
+  {
+    id: "q7", difficulty: "A2", type: "missing",
+    question: "Lengkapi kalimat dengan kata yang tepat:",
+    template: "She ___ coffee every morning, but today she ___ tea.",
+    blanks: ["drinks", "is drinking"],
+    options: ["drinks", "drink", "drinking", "is drinking", "drank", "has drunk"],
+    explanation: "Present simple untuk rutinitas, present continuous untuk aktivitas sekarang.",
+  },
+  {
+    id: "q8", difficulty: "A2", type: "multiple",
+    question: "'You ___ see a doctor if you feel sick.'",
+    options: ["must", "can", "should", "will"],
+    correct: 2,
+    explanation: "'Should' is used for advice.",
+  },
+  {
+    id: "q9", difficulty: "A2", type: "fillChoice",
+    question: "'I have lived here ___ five years.'",
+    context: "Pilih preposisi yang tepat.",
+    options: ["for", "since", "from", "during"],
+    correct: "for",
+    explanation: "Use 'for' with a duration, 'since' with a point in time.",
+  },
 
-const b1_3 = titleOnly([
-  "Modal Perfects (must have, should have)", "Passive Voice Advanced",
-  "Nominalization", "Inversion for Emphasis",
-  "Advanced Linking", "Expressing Certainty & Doubt",
-  "Academic Writing Basics", "Essay Structure",
-  "Literature Discussion", "Art & Culture",
-  "History Topics", "Science & Discovery",
-  "Philosophy Light", "Business English Basics",
-  "Meetings & Decisions", "Review",
-]);
+  // ═══════════════════════ B1 ═══════════════════════
+  {
+    id: "q10", difficulty: "B1", type: "multiple",
+    question: "Which sentence uses Present Perfect correctly?",
+    options: [
+      "I have seen that movie last week.",
+      "I saw that movie already.",
+      "I have already seen that movie.",
+      "I am seeing that movie already.",
+    ],
+    correct: 2,
+    explanation: "Present Perfect with 'already' for recent past. Don't mix with specific past time markers.",
+  },
+  {
+    id: "q11", difficulty: "B1", type: "dragDrop",
+    prompt: "Susun kalimat passive voice:",
+    translation: "Surat itu ditulis kemarin.",
+    tokens: ["written", "was", "The", "yesterday", "letter"],
+    correct: ["The", "letter", "was", "written", "yesterday"],
+    explanation: "Passive past: The + object + was/were + past participle + time.",
+  },
+  {
+    id: "q12", difficulty: "B1", type: "matching",
+    prompt: "Jodohkan phrasal verb dengan artinya:",
+    pairs: [
+      { left: "give up", right: "menyerah" },
+      { left: "look after", right: "menjaga" },
+      { left: "run out of", right: "kehabisan" },
+      { left: "put off", right: "menunda" },
+    ],
+    explanation: "Phrasal verbs adalah ciri khas level B1. Sering tidak bisa diterjemahkan kata-per-kata.",
+  },
+  {
+    id: "q13", difficulty: "B1", type: "missing",
+    question: "Second conditional — lengkapi dengan kata yang tepat:",
+    template: "If I ___ rich, I ___ travel the world.",
+    blanks: ["were", "would"],
+    options: ["was", "were", "am", "would", "will", "had"],
+    explanation: "Second conditional: If + past simple (were untuk semua subjek di formal English), would + verb.",
+  },
+  {
+    id: "q14", difficulty: "B1", type: "fillChoice",
+    question: "Reported: She said, 'I am tired.' = She said she ___ tired.",
+    context: "Shift tense untuk reported speech.",
+    options: ["am", "was", "is", "were"],
+    correct: "was",
+    explanation: "Present simple 'am' shifts to past simple 'was' in reported speech.",
+  },
 
-const b1_4 = titleOnly([
-  "Gerunds & Infinitives", "Advanced Phrasal Verbs",
-  "Compound Adjectives", "Hyphenated Words",
-  "Emphasis with Do/Did", "Cleft Sentences Intro",
-  "Travel Writing", "Blog & Social Media Writing",
-  "Public Speaking Basics", "Debate Etiquette",
-  "Personal Essays", "Creative Description",
-  "Film & TV Analysis", "Music & Poetry",
-  "Global Etiquette", "Review",
-]);
+  // ═══════════════════════ B2 ═══════════════════════
+  {
+    id: "q15", difficulty: "B2", type: "multiple",
+    question: "Which is the correct third conditional?",
+    options: [
+      "If I knew, I would have told you.",
+      "If I had known, I would have told you.",
+      "If I have known, I would tell you.",
+      "If I would know, I had told you.",
+    ],
+    correct: 1,
+    explanation: "Third conditional: If + past perfect, would have + past participle.",
+  },
+  {
+    id: "q16", difficulty: "B2", type: "dragDrop",
+    prompt: "Susun kalimat dengan inversi formal (untuk penekanan):",
+    translation: "Belum pernah saya melihat pemandangan seperti itu.",
+    tokens: ["I", "seen", "a", "such", "Never", "have", "view"],
+    correct: ["Never", "have", "I", "seen", "such", "a", "view"],
+    explanation: "Setelah adverb negatif ('never') di awal kalimat, invert subject dan auxiliary verb.",
+  },
+  {
+    id: "q17", difficulty: "B2", type: "missing",
+    question: "Lengkapi kalimat dengan kata akademis yang tepat:",
+    template: "The new policy will ___ the impact, while the old one would only ___ it.",
+    blanks: ["mitigate", "exacerbate"],
+    options: ["intensify", "amplify", "mitigate", "exacerbate", "generate", "stabilize"],
+    explanation: "'Mitigate' = mengurangi. 'Exacerbate' = memperparah. Pair antonim penting di B2 academic English.",
+  },
+  {
+    id: "q18", difficulty: "B2", type: "multiple",
+    question: "Which demonstrates nominalization?",
+    options: [
+      "She decided quickly.",
+      "Her decision was quick.",
+      "She quickly made a choice.",
+      "Quickly, she decided.",
+    ],
+    correct: 1,
+    explanation: "Nominalization: verb 'decided' → noun 'decision'. Important for formal/academic writing.",
+  },
+];
 
-const b1_5 = titleOnly([
-  "Advanced Reported Speech", "Wish & If Only",
-  "Hypothetical Situations", "Mixed Tenses",
-  "Advanced Passive", "Causative Have & Get",
-  "Expressing Regret", "Expressing Hope & Wishes",
-  "Problem-Solving Vocabulary", "Decision Making",
-  "Crisis Management", "Leadership Basics",
-  "Team Communication", "Feedback & Critique",
-  "Time Management", "Review & Business Simulation",
-]);
 
-// ============ B2 — 7 sublevels, preview-locked ============
-const b2_1 = titleOnly([
-  "Complex Sentence Structures", "Subjunctive Mood",
-  "Emphatic Structures", "Cleft Sentences",
-  "Collocations", "Idiomatic Expressions",
-  "Metaphor & Simile", "Tone & Register Mastery",
-  "Debate Techniques", "Persuasive Writing",
-  "Formal Correspondence", "Academic Presentations",
-  "Critical Analysis", "Summarizing & Paraphrasing",
-  "Creative Writing", "Review",
-]);
-
-const b2_2 = titleOnly([
-  "Business Communication", "Report Writing",
-  "Project Management Vocabulary", "Leadership Language",
-  "Financial English", "Marketing Vocabulary",
-  "HR & Recruitment", "Legal Basics",
-  "IT & Tech Industry", "Client Relations",
-  "International Business Etiquette", "Cross-cultural Communication",
-  "Giving Presentations", "Chairing Meetings",
-  "Written Proposals", "Review",
-]);
-
-const b2_3 = titleOnly([
-  "Idiomatic Fluency", "Cultural Nuances",
-  "Humor & Sarcasm", "Slang & Colloquialisms",
-  "Regional Varieties (US / UK / AU)", "Advanced Listening Strategies",
-  "Fast Speech Comprehension", "Accents & Pronunciation",
-  "Academic Discourse", "Journalism & Media Analysis",
-  "Literature & Poetry", "Public Speaking",
-  "Storytelling Mastery", "Debate & Argumentation",
-  "Personal Brand in English", "Review",
-]);
-
-const b2_4 = titleOnly([
-  "Academic Reading Strategies", "Research Vocabulary",
-  "Thesis Writing Basics", "Citation & Referencing",
-  "Data Presentation", "Graphs & Charts Description",
-  "Scientific Method", "Experimental Reports",
-  "Peer Review Language", "Conference Presentations",
-  "Research Proposals", "Literature Review",
-  "Abstract Writing", "Hypothesis Formulation",
-  "Academic Debate", "Review",
-]);
-
-const b2_5 = titleOnly([
-  "Legal English Introduction", "Contract Vocabulary",
-  "Negotiation Mastery", "Arbitration & Mediation",
-  "Diplomatic Language", "Intercultural Dispute Resolution",
-  "Policy Writing", "Government Affairs",
-  "Public Speaking for Leaders", "TED Talk Style",
-  "Motivational Speaking", "Executive Presence",
-  "Crisis Communication", "Media Interviews",
-  "Press Conferences", "Review",
-]);
-
-const b2_6 = titleOnly([
-  "Literary Analysis", "Poetry Interpretation",
-  "Shakespearean English Basics", "Modern Literature",
-  "Short Story Crafting", "Novel Structure",
-  "Character Development", "Dialogue Writing",
-  "Screenplay Basics", "Song Lyric Writing",
-  "Translation Skills", "Subtitling Basics",
-  "Creative Non-fiction", "Memoir Writing",
-  "Travel Writing Mastery", "Review",
-]);
-
-const b2_7 = titleOnly([
-  "IELTS Writing Task 1", "IELTS Writing Task 2",
-  "IELTS Reading Strategies", "IELTS Listening",
-  "IELTS Speaking Part 1", "IELTS Speaking Part 2 & 3",
-  "TOEFL Integrated Writing", "TOEFL Independent Writing",
-  "TOEFL Reading", "TOEFL Listening",
-  "TOEFL Speaking", "Mock Tests Strategy",
-  "Time Management in Tests", "Common Pitfalls",
-  "Score Improvement Tactics", "Final Mock Test & Review",
-]);
-
-const curriculum: LanguageCurriculum = {
-  meta: getLanguageBySlug("english")!,
-  overview: "Program 304 sesi yang mengantar kamu dari benar-benar nol sampai percakapan near-native. Struktur Linguo: A1 (3 chapter), A2 (4 chapter), B1 (5 chapter), B2 (7 chapter). Setiap level dirancang untuk CEFR standard dan siap untuk IELTS/TOEFL di tahap B2.",
-  levels: [
-    {
-      code: "A1", name: "Elementary Foundation",
-      description: "Fondasi bahasa: alfabet, tata bahasa dasar, percakapan sederhana sehari-hari.",
-      sublevels: [
-        { code: "A1.1", name: "First Steps",   sessions: a1_1, preview: true },
-        { code: "A1.2", name: "Daily Life",    sessions: a1_2, preview: true },
-        { code: "A1.3", name: "Social Basics", sessions: a1_3, preview: true },
-      ],
-    },
-    {
-      code: "A2", name: "Pre-Intermediate",
-      description: "Beyond basics: past tense mastery, perjalanan, pekerjaan, ekspresi diri.",
-      sublevels: [
-        { code: "A2.1", name: "Beyond Basics",        sessions: a2_1, preview: false },
-        { code: "A2.2", name: "Travel & Work",        sessions: a2_2, preview: false },
-        { code: "A2.3", name: "Self-Expression",      sessions: a2_3, preview: false },
-        { code: "A2.4", name: "Cultural Foundations", sessions: a2_4, preview: false },
-      ],
-    },
-    {
-      code: "B1", name: "Intermediate",
-      description: "Fluency foundations: tenses kompleks, budaya, topik abstrak.",
-      sublevels: [
-        { code: "B1.1", name: "Fluency Foundations",   sessions: b1_1, preview: false },
-        { code: "B1.2", name: "Cultural Fluency",      sessions: b1_2, preview: false },
-        { code: "B1.3", name: "Complex Topics",        sessions: b1_3, preview: false },
-        { code: "B1.4", name: "Creative Expression",   sessions: b1_4, preview: false },
-        { code: "B1.5", name: "Professional Bridge",   sessions: b1_5, preview: false },
-      ],
-    },
-    {
-      code: "B2", name: "Upper Intermediate",
-      description: "Advanced expression: bisnis, akademik, near-native communication. IELTS / TOEFL ready.",
-      sublevels: [
-        { code: "B2.1", name: "Advanced Expression",       sessions: b2_1, preview: false },
-        { code: "B2.2", name: "Professional English",      sessions: b2_2, preview: false },
-        { code: "B2.3", name: "Near-Native Communication", sessions: b2_3, preview: false },
-        { code: "B2.4", name: "Academic Mastery",          sessions: b2_4, preview: false },
-        { code: "B2.5", name: "Leadership & Diplomacy",    sessions: b2_5, preview: false },
-        { code: "B2.6", name: "Creative & Literary",       sessions: b2_6, preview: false },
-        { code: "B2.7", name: "Test Prep (IELTS/TOEFL)",   sessions: b2_7, preview: false },
-      ],
-    },
-  ],
+// ─────────────────────────────────────────────────────────────────────────────
+// SCORING
+// ─────────────────────────────────────────────────────────────────────────────
+export const DIFFICULTY_POINTS: Record<Difficulty, number> = {
+  A1: 1, A2: 2, B1: 3, B2: 4,
 };
 
-export default curriculum;
+// Max score: 4×1 + 5×2 + 5×3 + 4×4 = 4 + 10 + 15 + 16 = 45
+
+export function determineLevel(score: number): {
+  level: string; sublevel: string; label: string;
+  description: string; startChapter: string; estimationMonths: number;
+} {
+  if (score <= 5)  return { level: "A1", sublevel: "A1.1", label: "Pemula Awal", description: "Kamu masih di tahap fondasi. Mulai dari dasar akan bangun trust-mu dengan Bahasa Inggris.", startChapter: "Chapter 1: First Steps", estimationMonths: 10 };
+  if (score <= 10) return { level: "A1", sublevel: "A1.2", label: "Pemula Berkembang", description: "Kamu sudah tau dasar. Siap lanjut ke daily life vocabulary.", startChapter: "Chapter 2: Daily Life", estimationMonths: 9 };
+  if (score <= 14) return { level: "A1", sublevel: "A1.3", label: "Pemula Lanjutan", description: "Fondasi A1 sudah baik. Tinggal polish ke percakapan sosial.", startChapter: "Chapter 3: Social Basics", estimationMonths: 8 };
+  if (score <= 19) return { level: "A2", sublevel: "A2.1", label: "Pra-Menengah Awal", description: "Kamu punya dasar kuat. Saatnya naik ke past tense.", startChapter: "A2 Chapter 1: Beyond Basics", estimationMonths: 7 };
+  if (score <= 23) return { level: "A2", sublevel: "A2.2", label: "Pra-Menengah Berkembang", description: "Past tense sudah lumayan. Fokus: travel, work, ekspresi diri.", startChapter: "A2 Chapter 2: Travel & Work", estimationMonths: 6 };
+  if (score <= 28) return { level: "B1", sublevel: "B1.1", label: "Menengah Awal", description: "Impressive! Kamu di ambang fluency.", startChapter: "B1 Chapter 1: Fluency Foundations", estimationMonths: 5 };
+  if (score <= 33) return { level: "B1", sublevel: "B1.2", label: "Menengah Berkembang", description: "Level B1 menengah. Tinggal polish akurasi.", startChapter: "B1 Chapter 2: Cultural Fluency", estimationMonths: 4 };
+  if (score <= 37) return { level: "B1", sublevel: "B1.5", label: "Menengah Mahir", description: "Nyaris upper intermediate.", startChapter: "B1 Chapter 5: Professional Bridge", estimationMonths: 3 };
+  if (score <= 42) return { level: "B2", sublevel: "B2.1", label: "Menengah Atas", description: "Upper intermediate. Fokus ke ekspresi advanced, academic, business.", startChapter: "B2 Chapter 1: Advanced Expression", estimationMonths: 3 };
+  return             { level: "B2", sublevel: "B2.7", label: "Menengah Atas Mahir", description: "Level mendekati C1! Langsung target score tinggi IELTS/TOEFL.", startChapter: "B2 Chapter 7: Test Prep (IELTS/TOEFL)", estimationMonths: 2 };
+}
