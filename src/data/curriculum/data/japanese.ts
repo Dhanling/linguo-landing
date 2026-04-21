@@ -395,7 +395,6 @@ const curriculum: LanguageCurriculum = {
   meta: {
     slug: "japanese",
     name: "Jepang",
-    nativeName: "日本語",
     flag: "🇯🇵",
     description: "Dari Hiragana hingga JLPT N1 — kurikulum Bahasa Jepang Linguo.id mencakup 304 sesi sistematis yang membawa kamu dari nol hingga near-native fluency.",
   },
