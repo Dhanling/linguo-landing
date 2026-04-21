@@ -3,7 +3,7 @@
 // v2: added dragDrop, missing, matching question types for gamification
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type QuestionType = "multiple" | "fill" | "dragDrop" | "missing" | "matching";
+export type QuestionType = "multiple" | "fill" | "fillChoice" | "dragDrop" | "missing" | "matching";
 export type Difficulty = "A1" | "A2" | "B1" | "B2";
 
 // ── Base interface (common fields) ──────────────────────────────────────────
@@ -27,6 +27,15 @@ export interface FillQuestion extends BaseQuestion {
   type: "fill";
   question: string;
   context?: string;
+  correct: string;
+}
+
+// ── Fill in the blank via button options (NEW — like fill but click instead of type) ──
+export interface FillChoiceQuestion extends BaseQuestion {
+  type: "fillChoice";
+  question: string;
+  context?: string;
+  options: string[];
   correct: string;
 }
 
@@ -63,6 +72,7 @@ export interface MatchingQuestion extends BaseQuestion {
 export type Question =
   | MultipleQuestion
   | FillQuestion
+  | FillChoiceQuestion
   | DragDropQuestion
   | MissingQuestion
   | MatchingQuestion;
@@ -93,9 +103,10 @@ export const englishPlacementTest: Question[] = [
     explanation: "Kosakata emosi dasar level A1 — paling penting untuk daily conversation.",
   },
   {
-    id: "q3", difficulty: "A1", type: "fill",
+    id: "q3", difficulty: "A1", type: "fillChoice",
     question: "Complete: 'I have ___ apple.'",
-    context: "Use 'a' or 'an'.",
+    context: "Pilih artikel yang tepat.",
+    options: ["a", "an", "the", "some"],
     correct: "an",
     explanation: "'Apple' starts with a vowel sound, so use 'an'.",
   },
@@ -145,9 +156,10 @@ export const englishPlacementTest: Question[] = [
     explanation: "'Should' is used for advice.",
   },
   {
-    id: "q9", difficulty: "A2", type: "fill",
+    id: "q9", difficulty: "A2", type: "fillChoice",
     question: "'I have lived here ___ five years.'",
-    context: "Use 'for' or 'since'.",
+    context: "Pilih preposisi yang tepat.",
+    options: ["for", "since", "from", "during"],
     correct: "for",
     explanation: "Use 'for' with a duration, 'since' with a point in time.",
   },
@@ -193,9 +205,10 @@ export const englishPlacementTest: Question[] = [
     explanation: "Second conditional: If + past simple (were untuk semua subjek di formal English), would + verb.",
   },
   {
-    id: "q14", difficulty: "B1", type: "fill",
+    id: "q14", difficulty: "B1", type: "fillChoice",
     question: "Reported: She said, 'I am tired.' = She said she ___ tired.",
-    context: "Shift tense.",
+    context: "Shift tense untuk reported speech.",
+    options: ["am", "was", "is", "were"],
     correct: "was",
     explanation: "Present simple 'am' shifts to past simple 'was' in reported speech.",
   },

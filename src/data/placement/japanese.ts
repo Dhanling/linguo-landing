@@ -31,9 +31,10 @@ export const japanesePlacementTest: Question[] = [
     explanation: "Angka dasar 1-10 adalah fondasi untuk country name, umur, tanggal.",
   },
   {
-    id: "q3", difficulty: "A1", type: "fill",
+    id: "q3", difficulty: "A1", type: "fillChoice",
     question: "Lengkapi: 'わたし ___ がくせい です。' (Saya adalah murid.)",
     context: "Partikel topic marker.",
+    options: ["は", "を", "に", "が"],
     correct: "は",
     explanation: "'は' (dibaca 'wa' saat jadi partikel) adalah topic marker. Struktur: [Topik] は [Info] です.",
   },
@@ -76,9 +77,10 @@ export const japanesePlacementTest: Question[] = [
     explanation: "'で' = partikel tempat aktivitas. 'を' = partikel objek langsung. Ingat: に = tujuan (statis), で = lokasi aktivitas.",
   },
   {
-    id: "q8", difficulty: "A2", type: "fill",
+    id: "q8", difficulty: "A2", type: "fillChoice",
     question: "Bentuk potensial: 'にほんご を ___ 。' (Saya bisa bahasa Jepang.)",
     context: "Bentuk potensial dari 'はなす' (berbicara).",
+    options: ["はなせます", "はなします", "はなれます", "はなります"],
     correct: "はなせます",
     explanation: "Verb group 1 (u-verb): -u → -eru. 'はなす' → 'はなせる' / polite 'はなせます'.",
   },
