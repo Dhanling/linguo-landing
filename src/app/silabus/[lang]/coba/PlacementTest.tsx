@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
 import type { LanguageCurriculum } from "@/data/curriculum";
-import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
+import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 
 interface Props {
   curriculum: LanguageCurriculum;
@@ -44,7 +44,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);
   };
 
-  // Auto-submit on click (multiple/fillChoice) or explicit submit (fill/dragDrop/missing/matching)
+  // Auto-submit on click (multiple) or explicit submit (fill/dragDrop/missing/matching)
   // For complex types (dragDrop, missing, matching) the renderer computes correctness
   // and passes a boolean flag as `isCorrectOverride`
   const submitAnswer = (value: string | number | boolean, isCorrectOverride?: boolean) => {
@@ -52,15 +52,8 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     setSelected(value);
     const correct = isCorrectOverride !== undefined
       ? isCorrectOverride
-      : (question.type === "multiple" || question.type === "fill" || question.type === "fillChoice") && value === (question as any).correct;
+      : (question.type === "multiple" || question.type === "fill") && value === (question as any).correct;
     if (correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
-    setShowFeedback(true);
-  };
-
-  // Pass / skip — mark wrong, show explanation, no score
-  const passAnswer = () => {
-    if (showFeedback) return;
-    setSelected("__PASSED__");
     setShowFeedback(true);
   };
 
@@ -87,7 +80,6 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             selected={selected}
             showFeedback={showFeedback}
             onSubmit={submitAnswer}
-            onPass={passAnswer}
             onNext={nextQuestion}
             langSlug={meta.slug}
           />
@@ -96,7 +88,6 @@ export default function PlacementTest({ curriculum, questions }: Props) {
           <ResultScreen
             key="result"
             score={score}
-            questions={questions}
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
             onRetake={startTest}
@@ -181,19 +172,15 @@ function QuizScreen(props: {
   question: Question; currentQ: number; total: number; progress: number;
   selected: string | number | boolean | null; showFeedback: boolean;
   onSubmit: (v: string | number | boolean, isCorrectOverride?: boolean) => void;
-  onPass: () => void;
   onNext: () => void; langSlug: string;
 }) {
-  const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onPass, onNext, langSlug } = props;
+  const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onNext, langSlug } = props;
   const [fillValue, setFillValue] = useState("");
   useEffect(() => { setFillValue(""); }, [question.id]);
-  const isPassed = selected === "__PASSED__";
-  // isCorrect differs per type: simple equality for multiple/fill/fillChoice, stored as boolean for others
-  const isCorrect = isPassed
-    ? false
-    : question.type === "multiple" || question.type === "fill" || question.type === "fillChoice"
-      ? selected === (question as any).correct
-      : selected === true;
+  // isCorrect differs per type: simple equality for multiple/fill, stored as boolean for others
+  const isCorrect = question.type === "multiple" || question.type === "fill"
+    ? selected === (question as any).correct
+    : selected === true;
 
   const diffCls = question.difficulty === "A1" ? "bg-emerald-100 text-emerald-700" :
                    question.difficulty === "A2" ? "bg-sky-100 text-sky-700" :
@@ -277,30 +264,6 @@ function QuizScreen(props: {
               </div>
             )}
 
-            {question.type === "fillChoice" && (
-              <div className="grid grid-cols-2 gap-2">
-                {question.options.map((opt, i) => {
-                  const isSelected = selected === opt;
-                  const isAnswerCorrect = question.correct === opt;
-                  let cls = "border-gray-200 bg-white hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer";
-                  if (showFeedback && isAnswerCorrect) cls = "border-emerald-500 bg-emerald-50";
-                  else if (showFeedback && isSelected && !isAnswerCorrect) cls = "border-rose-500 bg-rose-50";
-                  else if (showFeedback) cls = "border-gray-200 bg-white opacity-50";
-                  else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
-                  return (
-                    <button key={i} onClick={() => onSubmit(opt)} disabled={showFeedback}
-                      className={"w-full px-5 py-4 rounded-2xl border-2 text-center transition-all text-lg font-semibold " + cls}>
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-gray-900">{opt}</span>
-                        {showFeedback && isAnswerCorrect && <Icons.Check className="w-5 h-5 text-emerald-600" />}
-                        {showFeedback && isSelected && !isAnswerCorrect && <Icons.X className="w-5 h-5 text-rose-600" />}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-
             {question.type === "dragDrop" && (
               <DragDropRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
             )}
@@ -317,24 +280,21 @@ function QuizScreen(props: {
           <AnimatePresence>
             {showFeedback && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-                <div className={"mt-5 p-5 rounded-2xl " + (isCorrect ? "bg-emerald-50" : isPassed ? "bg-amber-50" : "bg-rose-50")}>
+                <div className={"mt-5 p-5 rounded-2xl " + (isCorrect ? "bg-emerald-50" : "bg-rose-50")}>
                   <div className="flex items-start gap-3 mb-2">
-                    <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 " + (isCorrect ? "bg-emerald-500" : isPassed ? "bg-amber-500" : "bg-rose-500")}>
-                      {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : isPassed ? <Icons.SkipForward className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}
+                    <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 " + (isCorrect ? "bg-emerald-500" : "bg-rose-500")}>
+                      {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}
                     </div>
                     <div className="flex-1">
-                      <p className={"font-bold text-lg mb-0 " + (isCorrect ? "text-emerald-900" : isPassed ? "text-amber-900" : "text-rose-900")}>
-                        {isCorrect ? "Benar!" : isPassed ? "Dilewati" : "Kurang tepat"}
+                      <p className={"font-bold text-lg mb-0 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>
+                        {isCorrect ? "Benar!" : "Kurang tepat"}
                       </p>
                     </div>
                   </div>
-                  <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : isPassed ? "text-amber-900" : "text-rose-900")}>
+                  <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : "text-rose-900")}>
                     <p className="mb-2">{renderRich(question.explanation)}</p>
-                    {!isCorrect && !isPassed && question.type === "fill" && (
+                    {!isCorrect && question.type === "fill" && (
                       <p className="mt-2 text-xs italic">Jawabanmu: “{String(selected)}” — Jawaban benar: “{(question as any).correct}”</p>
-                    )}
-                    {isPassed && (question.type === "fill" || question.type === "fillChoice") && (
-                      <p className="mt-2 text-xs italic">Jawaban benar: “{(question as any).correct}”</p>
                     )}
                     {question.tip && (
                       <div className="mt-3 flex items-start gap-2 p-3 rounded-xl bg-white/50 border border-gray-200/50">
@@ -348,16 +308,6 @@ function QuizScreen(props: {
             )}
           </AnimatePresence>
         </div>
-
-        {!showFeedback && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-center">
-            <button onClick={onPass}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
-              <Icons.SkipForward className="w-4 h-4" />
-              Tidak tahu, lewati soal
-            </button>
-          </motion.div>
-        )}
 
         {showFeedback && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
@@ -376,12 +326,11 @@ function QuizScreen(props: {
 // ================================================
 // RESULT (with Soft-gate WA)
 // ================================================
-function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
-  score: number; questions: Question[]; meta: any; timeElapsedSec: number; onRetake: () => void;
+function ResultScreen({ score, meta, timeElapsedSec, onRetake }: {
+  score: number; meta: any; timeElapsedSec: number; onRetake: () => void;
 }) {
   const result = determineLevel(score);
-  // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
-  const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
+  const maxScore = 39;
   const scorePercent = (score / maxScore) * 100;
   const [unlocked, setUnlocked] = useState(false);
   const [showGate, setShowGate] = useState(false);
