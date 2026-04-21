@@ -384,11 +384,11 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       onMouseLeave={() => setRegulerSubOpen(false)}
                     >
                       <button
-                        onClick={() => { (window as any).__openFunnel?.("Kelas Reguler"); setProgOpen(false); }}
+                        onClick={() => setRegulerSubOpen((v) => !v)}
                         className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
                       >
                         Kelas Reguler
-                        <ChevronDown className="h-3 w-3 -rotate-90 text-slate-300" />
+                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (regulerSubOpen ? "rotate-0" : "-rotate-90")} />
                       </button>
                       {regulerSubOpen && (
                         <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
