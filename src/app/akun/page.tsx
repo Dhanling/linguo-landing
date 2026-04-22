@@ -107,10 +107,10 @@ function getGreeting() {
 
 // ── Programs & Languages for Enrollment Wizard ───────────────────────────
 const PROGRAMS = [
-  { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar", icon: "👤", price: "Mulai Rp150k/sesi" },
-  { key: "Kelas Reguler", label: "Kelas Reguler", desc: "Belajar bersama 3-5 siswa", icon: "👥", price: "Mulai Rp75k/sesi" },
+  { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar, jadwal fleksibel", icon: "👤", price: "Mulai Rp45k/sesi (30 mnt)" },
+  { key: "Kelas Reguler", label: "Kelas Reguler", desc: "Belajar bersama 8–15 siswa, jadwal tetap", icon: "👥", price: "Rp150k / 2 bulan (8 sesi)" },
   { key: "Kelas Kids", label: "Kelas Kids", desc: "Untuk anak usia 5-12 tahun", icon: "🧒", price: "Mulai Rp75k/sesi" },
-  { key: "English Test Preparation", label: "IELTS/TOEFL Prep", desc: "Persiapan tes bahasa Inggris", icon: "📝", price: "Mulai Rp175k/sesi" },
+  { key: "English Test Preparation", label: "IELTS/TOEFL Prep", desc: "Persiapan tes bahasa Inggris", icon: "📝", price: "Rp300k / 2 bulan (16 sesi)" },
 ];
 
 const POPULAR_LANGUAGES = [
@@ -563,6 +563,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
 
   const DURATION_OPTIONS = enrollProgram === "Kelas Private"
     ? [{ val:"30", label:"30 menit", note:"Trial / perkenalan" }, { val:"45", label:"45 menit", note:"Standar anak" }, { val:"60", label:"60 menit", note:"Standar" }, { val:"75", label:"75 menit", note:"Extended" }, { val:"90", label:"90 menit", note:"Intensif" }]
+    : enrollProgram === "Kelas Kids"
+    ? [{ val:"30", label:"30 menit", note:"Little Learner (5–8 thn)" }, { val:"45", label:"45 menit", note:"Young Explorer (9–12 thn)" }]
     : [{ val:"90", label:"90 menit", note:"Standar kelas grup" }];
 
   const pricePerSession: Record<string,Record<string,number>> = {
@@ -572,6 +574,13 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     "English Test Preparation": { "90":18750 },
   };
 
+  // Reguler & Test Prep: flat price per 2 bulan, bukan per sesi
+  const isFixedPrice = enrollProgram === "Kelas Reguler" || enrollProgram === "English Test Preparation";
+  const flatPrice: Record<string, number> = {
+    "Kelas Reguler": 150000,
+    "English Test Preparation": 300000,
+  };
+
   const price = pricePerSession[enrollProgram]?.[enrollDuration] || 0;
 
   // Unpaid amount from existing regs
@@ -579,8 +588,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     .filter((r: any) => r.status === "Menunggu Pembayaran" || r.payment_status === "Belum Bayar")
     .reduce((s: number, r: any) => s + (r.total_amount || 0), 0) || 0;
 
-  const filteredLangs = POPULAR_LANGUAGES.filter(l => l.toLowerCase().includes(langSearch.toLowerCase()));
-  const TOTAL_STEPS = isTestPrep ? 4 : 5;
+  // Use LANGS_BY_PROGRAM for enrollment (not all languages)
+  const enrollAvailLangs = (LANGS_BY_PROGRAM[enrollProgram] || POPULAR_LANGUAGES).filter(l => l.toLowerCase().includes(langSearch.toLowerCase()));
+  const isRegulerEnroll = enrollProgram === "Kelas Reguler";
+  // Reguler & Test Prep skip jadwal step (jadwal fix per batch)
+  const TOTAL_STEPS = isTestPrep ? 4 : isRegulerEnroll ? 4 : 5;
 
   const waMsg = encodeURIComponent(
     `Halo admin Linguo! Saya ${displayName} (${user?.email}), mau daftar:\n` +
@@ -647,7 +659,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             sessions_total: 0,
             sessions_used: 0,
             duration: enrollDuration,
-            total_amount: price * 8,
+            total_amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
             payment_status: "Belum Bayar",
             registration_date: new Date().toISOString(),
           })
@@ -678,7 +690,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       sessions_total: 0,
       sessions_used: 0,
       duration: enrollDuration,
-      total_amount: price * 8,
+      total_amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
       payment_status: "Belum Bayar",
       registration_date: new Date().toISOString(),
       teachers: null,
@@ -753,7 +765,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <input type="text" placeholder="Cari bahasa..." value={langSearch} onChange={e => setLangSearch(e.target.value)} autoFocus
                   className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400" />
                 <div className="grid grid-cols-3 gap-2">
-                  {filteredLangs.map(lang => (
+                  {enrollAvailLangs.map(lang => (
                     <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
                       className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${enrollLang === lang ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
                       <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 object-contain rounded-sm" />
@@ -772,7 +784,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             )}
 
             {/* Step 2: Durasi */}
-            {enrollStep === 2 && (
+            {enrollStep === 2 && !isRegulerEnroll && (
               <motion.div key="s2" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-3">
                 <p className="text-sm font-semibold text-gray-700">Pilih durasi per sesi:</p>
                 {DURATION_OPTIONS.map(d => (
@@ -791,8 +803,15 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
               </motion.div>
             )}
 
-            {/* Step 3: Preferensi Jadwal */}
-            {enrollStep === 3 && (
+            {/* Step 2 Reguler: auto-skip to summary (jadwal fix per batch) */}
+            {enrollStep === 2 && isRegulerEnroll && (
+              <motion.div key="s2r" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }}>
+                {(() => { setTimeout(() => { setEnrollDuration("90"); setEnrollStep(3); }, 0); return null; })()}
+              </motion.div>
+            )}
+
+            {/* Step 3: Preferensi Jadwal (only for Private & Kids) */}
+            {enrollStep === 3 && !isRegulerEnroll && !isTestPrep && (
               <motion.div key="s3" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-4">
                 <p className="text-sm font-semibold text-gray-700 mb-3">Pilih hari & jam per sesi:</p>
                 {/* Per-day schedule builder */}
@@ -847,8 +866,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
               </motion.div>
             )}
 
-            {/* Step 4: Summary + Konfirmasi */}
-            {enrollStep === 4 && (
+            {/* Step 3 for Reguler/TestPrep, Step 4 for Private/Kids: Summary + Konfirmasi */}
+            {((enrollStep === 4 && !isRegulerEnroll) || (enrollStep === 3 && (isRegulerEnroll || isTestPrep))) && (
               <motion.div key="s4" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-4">
                 <p className="text-sm font-semibold text-gray-700">Ringkasan pendaftaran:</p>
 
@@ -858,20 +877,44 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     {!isTestPrep && <img src={getFlagUrl(enrollLang)} alt="" className="h-8 w-8 object-contain rounded" />}
                     <div>
                       <p className="font-bold text-gray-900">{isTestPrep ? "IELTS/TOEFL Prep" : enrollLang}</p>
-                      <p className="text-xs text-gray-500">{PROGRAMS.find(p => p.key === enrollProgram)?.label} · {enrollDuration} mnt/sesi</p>
+                      <p className="text-xs text-gray-500">{PROGRAMS.find(p => p.key === enrollProgram)?.label}{!isFixedPrice ? ` · ${enrollDuration} mnt/sesi` : ""}</p>
                     </div>
                   </div>
-                  {[
-                    ["Jadwal", Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + (ts.join(", ") || "-")).join(" | ")],
-                    ["Harga/sesi", `Rp${price.toLocaleString("id-ID")}`],
-                    ["Estimasi/bulan", `Rp${(price * 8).toLocaleString("id-ID")} (8 sesi)`],
-                  ].map(([k, v]) => (
-                    <div key={k} className="flex justify-between text-sm">
-                      <span className="text-gray-500">{k}</span>
-                      <span className="font-semibold text-gray-800">{v}</span>
-                    </div>
-                  ))}
+                  {isFixedPrice ? (
+                    <>
+                      {[
+                        ["Durasi", "2 bulan"],
+                        ["Total Harga", `Rp${(flatPrice[enrollProgram] || 0).toLocaleString("id-ID")}`],
+                        ...(isRegulerEnroll ? [["Jadwal", "Ditentukan per batch (dikonfirmasi admin)"]] : []),
+                      ].map(([k, v]) => (
+                        <div key={k} className="flex justify-between text-sm">
+                          <span className="text-gray-500">{k}</span>
+                          <span className="font-semibold text-gray-800">{v}</span>
+                        </div>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      {[
+                        ["Jadwal", Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + (ts.join(", ") || "-")).join(" | ") || "Belum dipilih"],
+                        ["Harga/sesi", `Rp${price.toLocaleString("id-ID")}`],
+                        ["Estimasi/bulan", `Rp${(price * 8).toLocaleString("id-ID")} (8 sesi)`],
+                      ].map(([k, v]) => (
+                        <div key={k} className="flex justify-between text-sm">
+                          <span className="text-gray-500">{k}</span>
+                          <span className="font-semibold text-gray-800">{v}</span>
+                        </div>
+                      ))}
+                    </>
+                  )}
                 </div>
+
+                {/* Info batch for Reguler */}
+                {isRegulerEnroll && (
+                  <div className="rounded-xl bg-blue-50 border border-blue-100 px-3 py-2.5 text-xs text-blue-700">
+                    📋 Jadwal kelas reguler mengikuti batch yang tersedia. Admin akan menghubungi kamu via WhatsApp untuk konfirmasi batch & jadwal.
+                  </div>
+                )}
 
                 {/* Tagihan total (termasuk kelas lain yang belum bayar) */}
                 {unpaidTotal > 0 && (
@@ -883,7 +926,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     </div>
                     <div className="border-t border-amber-200 mt-2 pt-2 flex justify-between font-bold text-amber-800">
                       <span>Total yang perlu dibayar</span>
-                      <span>Rp{(unpaidTotal + price * 8).toLocaleString("id-ID")}</span>
+                      <span>Rp{(unpaidTotal + (isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8)).toLocaleString("id-ID")}</span>
                     </div>
                   </div>
                 )}
@@ -908,7 +951,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         {/* Back button */}
         {enrollStep > 0 && (
           <div className="px-5 py-3 border-t shrink-0">
-            <button onClick={() => setEnrollStep((s: number) => isTestPrep && s === 2 ? 0 : s - 1)} className="text-sm text-gray-400 hover:text-gray-600 font-medium">
+            <button onClick={() => setEnrollStep((s: number) => {
+              if (isTestPrep && s === 2) return 0;
+              if (isRegulerEnroll && s === 3) return 1; // summary → back to language
+              return s - 1;
+            })} className="text-sm text-gray-400 hover:text-gray-600 font-medium">
               ← Kembali
             </button>
           </div>
