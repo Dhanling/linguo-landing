@@ -33,6 +33,26 @@ type StudentReg = {
   payment_proof_uploaded_at?: string | null;
   payment_verified_at?: string | null;
   payment_rejection_reason?: string | null;
+  // Batch data for Kelas Reguler
+  batch_id?: string | null;
+  batch?: {
+    id: string;
+    batch_code: string;
+    schedule_day: string;
+    schedule_time: string;
+    start_date: string;
+    end_date: string;
+    zoom_link?: string;
+    sessions_total: number;
+  } | null;
+};
+
+// ── Product Badges ──────────────────────────────────────────────────
+const PRODUCT_BADGE: Record<string, { label: string; icon: string; color: string; bg: string; border: string }> = {
+  "Kelas Private":              { label: "Private",      icon: "👤", color: "text-teal-700",  bg: "bg-teal-50",   border: "border-teal-200" },
+  "Kelas Reguler":              { label: "Reguler",      icon: "👥", color: "text-blue-700",  bg: "bg-blue-50",   border: "border-blue-200" },
+  "Kelas Kids":                 { label: "Kids",         icon: "🧒", color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
+  "English Test Preparation":   { label: "Test Prep",    icon: "📝", color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
 };
 
 type StudentData = {
@@ -1023,7 +1043,7 @@ export default function AkunPage() {
           id, product, language, level, status,
           sessions_total, sessions_used,
           duration, total_amount, payment_status,
-          registration_date, teacher_id,
+          registration_date, teacher_id, batch_id,
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
           teachers(name, whatsapp)
@@ -1031,18 +1051,38 @@ export default function AkunPage() {
         .eq("student_id", studentData.id)
         .order("registration_date", { ascending: false });
 
+      // Fetch batch data for reguler classes
+      const regsWithBatch = (regsData as any) || [];
+      const batchIds = regsWithBatch.filter((r: any) => r.batch_id).map((r: any) => r.batch_id);
+      let batchMap: Record<string, any> = {};
+      if (batchIds.length > 0) {
+        try {
+          const { data: batches } = await supabase
+            .from("regular_class_batches")
+            .select("id, batch_code, schedule_day, schedule_time, start_date, end_date, zoom_link, sessions_total")
+            .in("id", batchIds);
+          if (batches) {
+            batches.forEach((b: any) => { batchMap[b.id] = b; });
+          }
+        } catch (e) { /* batch table might not exist yet */ }
+      }
+      const enrichedRegs = regsWithBatch.map((r: any) => ({
+        ...r,
+        batch: r.batch_id ? batchMap[r.batch_id] || null : null,
+      }));
+
       // Student is now active — clear wizard cache
       try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
-      setStudent({ ...studentData, registrations: (regsData as any) || [] });
+      setStudent({ ...studentData, registrations: enrichedRegs });
 
       // ── Onboarding: show for new users with no registrations ──
-      const regs = (regsData as any) || [];
+      const regs = enrichedRegs;
       const onboardKey = `linguo_onboarded_${studentData.id}`;
       if (regs.length === 0 && !localStorage.getItem(onboardKey)) {
         setShowOnboarding(true);
       }
 
-      const regIds = (regsData || []).map((r: any) => r.id);
+      const regIds = enrichedRegs.map((r: any) => r.id);
 
       // Upcoming schedules
       if (regIds.length > 0) {
@@ -1585,36 +1625,119 @@ export default function AkunPage() {
                           const progress = reg.sessions_total > 0 ? Math.round((reg.sessions_used / reg.sessions_total) * 100) : 0;
                           const levelProgress = getLevelProgress(reg.level || "A1.1");
                           const currentMilestone = LEVEL_MILESTONES.indexOf((reg.level || "A1").split(".")[0]);
+                          const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                          const isReguler = reg.product === "Kelas Reguler";
+                          const isKids = reg.product === "Kelas Kids";
+                          const isTestPrep = reg.product === "English Test Preparation";
+                          const isPrivate = reg.product === "Kelas Private";
+
+                          // Next upcoming schedule for this reg
+                          const nextClass = upcomingSchedules.find(s => s.registration_id === reg.id);
+                          const nextClassDate = nextClass ? new Date(nextClass.scheduled_at) : null;
+
                           return (
                             <motion.div key={reg.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className={`rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow ${reg.status === "Menunggu Pembayaran" ? "bg-amber-50 border-amber-200" : "bg-white border-gray-100"}`}>
+                              {/* Payment status banner */}
                               {reg.status === "Menunggu Pembayaran" && (
                                 <div className="flex items-center gap-2 mb-3 text-amber-700 bg-amber-100 rounded-xl px-3 py-1.5">
                                   <span className="text-sm">🟡</span>
                                   <span className="text-xs font-semibold">Menunggu Pembayaran</span>
                                 </div>
                               )}
+
+                              {/* Header: Flag + Language + Product Badge */}
                               <div className="flex items-center gap-3 mb-3">
                                 <div className="h-11 w-11 rounded-xl bg-teal-50 flex items-center justify-center shadow-sm">
                                   <img src={getFlagUrl(reg.language)} alt="" className="h-6 w-6 object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <h4 className="font-semibold text-gray-900">{reg.language}</h4>
-                                  <p className="text-xs text-gray-500">{reg.product}</p>
+                                  <div className="flex items-center gap-1.5 mt-0.5">
+                                    <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>
+                                      {badge.icon} {badge.label}
+                                    </span>
+                                    {reg.duration && <span className="text-[10px] text-gray-400">{reg.duration} mnt/sesi</span>}
+                                  </div>
                                 </div>
                                 <span className="inline-flex items-center rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-teal-700">{reg.level}</span>
                               </div>
+
+                              {/* Teacher */}
                               {reg.teachers && (
                                 <div className="flex items-center gap-1.5 mb-3 text-xs text-gray-500"><span>👩‍🏫</span><span>{reg.teachers.name}</span></div>
                               )}
+
+                              {/* ── PRODUCT-SPECIFIC CONTENT ── */}
+
+                              {/* REGULER: Batch info + fixed schedule */}
+                              {isReguler && reg.batch && (
+                                <div className="mb-3 rounded-xl bg-blue-50/70 border border-blue-100 p-3 space-y-1.5">
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-wide">Jadwal Tetap</span>
+                                    <span className="text-[10px] text-blue-500 font-medium">{reg.batch.batch_code}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 text-xs text-blue-800">
+                                    <span>📅</span>
+                                    <span className="font-semibold">{reg.batch.schedule_day}, {reg.batch.schedule_time} WIB</span>
+                                  </div>
+                                  {reg.batch.start_date && reg.batch.end_date && (
+                                    <p className="text-[10px] text-blue-500">
+                                      Periode: {new Date(reg.batch.start_date).toLocaleDateString("id-ID", { day: "numeric", month: "short" })} — {new Date(reg.batch.end_date).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })}
+                                    </p>
+                                  )}
+                                  {reg.batch.zoom_link && (
+                                    <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 hover:text-blue-700 mt-1">
+                                      🔗 Buka Zoom
+                                    </a>
+                                  )}
+                                </div>
+                              )}
+
+                              {/* REGULER without batch: fallback */}
+                              {isReguler && !reg.batch && reg.status === "Aktif" && (
+                                <div className="mb-3 rounded-xl bg-blue-50/50 border border-blue-100 px-3 py-2 text-xs text-blue-600">
+                                  📋 Jadwal batch akan segera diinfokan admin via WhatsApp
+                                </div>
+                              )}
+
+                              {/* KIDS: Parent-friendly note */}
+                              {isKids && reg.status === "Aktif" && (
+                                <div className="mb-3 rounded-xl bg-purple-50/70 border border-purple-100 px-3 py-2 text-xs text-purple-700">
+                                  👨‍👩‍👧 Kelas disesuaikan untuk anak usia 5–12 tahun · {reg.duration === "30" ? "30 menit" : "45 menit"}/sesi
+                                </div>
+                              )}
+
+                              {/* TEST PREP: Target info */}
+                              {isTestPrep && reg.status === "Aktif" && (
+                                <div className="mb-3 rounded-xl bg-amber-50/70 border border-amber-100 px-3 py-2 text-xs text-amber-700">
+                                  🎯 Target: {reg.language} · {reg.sessions_total > 0 ? `${reg.sessions_total} sesi persiapan` : "Sesi diatur admin"}
+                                </div>
+                              )}
+
+                              {/* Next class countdown (all products) */}
+                              {nextClassDate && reg.status === "Aktif" && (
+                                <div className="mb-3 rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-2.5">
+                                  <div className="flex items-center gap-2 text-xs">
+                                    <span className="text-emerald-600 font-semibold">🟢 Kelas berikutnya:</span>
+                                    <span className="text-emerald-700 font-bold">
+                                      {nextClassDate.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {nextClassDate.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB
+                                    </span>
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Session progress (all products) */}
                               <div className="mb-1">
                                 <div className="flex justify-between text-xs mb-1">
-                                  <span className="text-gray-500">Sesi</span>
+                                  <span className="text-gray-500">{isReguler ? "Pertemuan" : "Sesi"}</span>
                                   <span className="font-semibold text-gray-700">{reg.sessions_used}/{reg.sessions_total} ({progress}%)</span>
                                 </div>
                                 <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
                                   <motion.div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" initial={{ width: 0 }} animate={{ width: `${progress}%` }} transition={{ duration: 0.8, delay: i * 0.1 + 0.3 }} />
                                 </div>
                               </div>
+
                               {/* Pending payment — smart card with bank info + upload bukti */}
                               {reg.status === "Menunggu Pembayaran" && user?.id && (
                                 <PaymentCard
@@ -1623,21 +1746,35 @@ export default function AkunPage() {
                                   onUploadSuccess={() => window.location.reload()}
                                 />
                               )}
-                              {/* Booking button — only for active private classes with teacher */}
-                              {reg.status === "Aktif" && reg.teacher_id && reg.product === "Kelas Private" && (
-                                <><button
-                  onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
-                  className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 mr-2"
-                >
-                  📋 Detail
-                </button>
-                <button
-                                  onClick={() => openBooking(reg)}
-                                  className="w-full mt-3 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
-                                >
-                                  📅 Booking Sesi Berikutnya
-                                </button></>
+
+                              {/* Booking button — only for active PRIVATE classes with teacher */}
+                              {reg.status === "Aktif" && reg.teacher_id && isPrivate && (
+                                <div className="flex items-center gap-2 mt-3">
+                                  <button
+                                    onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
+                                    className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                                  >
+                                    📋 Detail
+                                  </button>
+                                  <button
+                                    onClick={() => openBooking(reg)}
+                                    className="flex-1 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
+                                  >
+                                    📅 Booking Sesi
+                                  </button>
+                                </div>
                               )}
+
+                              {/* Detail button for Reguler/Kids/TestPrep active classes */}
+                              {reg.status === "Aktif" && !isPrivate && (
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); setDetailReg(reg); }}
+                                  className="w-full mt-3 inline-flex h-9 items-center justify-center gap-1.5 rounded-xl text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                                >
+                                  📋 Lihat Detail Kelas
+                                </button>
+                              )}
+
                               {/* Level progress */}
                               <div className="mt-3 pt-3 border-t border-gray-50">
                                 <div className="flex justify-between mb-1.5">
@@ -1677,13 +1814,22 @@ export default function AkunPage() {
                     <div>
                       <h3 className="text-base font-semibold text-gray-800 mb-3">🏆 Riwayat</h3>
                       <div className="space-y-2">
-                        {completedRegs.map(reg => (
-                          <div key={reg.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3">
-                            <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
-                            <div className="flex-1"><p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p><p className="text-xs text-gray-400">{reg.product} · {reg.sessions_used}/{reg.sessions_total} sesi</p></div>
-                            <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${reg.status === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"}`}>{reg.status}</span>
-                          </div>
-                        ))}
+                        {completedRegs.map(reg => {
+                          const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                          return (
+                            <div key={reg.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3">
+                              <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                              <div className="flex-1">
+                                <div className="flex items-center gap-1.5">
+                                  <p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p>
+                                  <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon}</span>
+                                </div>
+                                <p className="text-xs text-gray-400">{reg.sessions_used}/{reg.sessions_total} sesi</p>
+                              </div>
+                              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${reg.status === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"}`}>{reg.status}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -1773,7 +1919,11 @@ export default function AkunPage() {
                               <h4 className="font-semibold text-gray-900 truncate">{reg.language || reg.product}</h4>
 
 
-                              <p className="text-xs text-gray-500 truncate">{reg.product}</p>
+                              <div className="flex items-center gap-1.5 mt-0.5">
+                                {(() => { const b = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"]; return (
+                                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${b.bg} ${b.color}`}>{b.icon} {b.label}</span>
+                                ); })()}
+                              </div>
 
 
                             </div>
@@ -1895,6 +2045,73 @@ export default function AkunPage() {
           {activeTab === "jadwal" && (
             <motion.div key="jadwal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto space-y-4">
               <h2 className="text-lg font-bold text-gray-900">Jadwal Kelas</h2>
+
+              {/* Next class highlight */}
+              {upcomingSchedules.length > 0 && (() => {
+                const next = upcomingSchedules[0];
+                const d = new Date(next.scheduled_at);
+                const now = new Date();
+                const diffMs = d.getTime() - now.getTime();
+                const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+                const diffDays = Math.floor(diffHours / 24);
+                const remainHours = diffHours % 24;
+                const reg = student.registrations.find(r => r.id === next.registration_id);
+                const badge = PRODUCT_BADGE[reg?.product || ""] || PRODUCT_BADGE["Kelas Private"];
+                return (
+                  <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 text-white shadow-lg shadow-teal-200/50">
+                    <p className="text-teal-200 text-xs font-medium mb-1">KELAS BERIKUTNYA</p>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-12 w-12 rounded-xl bg-white/15 flex items-center justify-center">
+                        <img src={getFlagUrl(reg?.language || "")} alt="" className="h-7 w-7 object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold">{reg?.language}</h3>
+                        <p className="text-teal-200 text-xs">{reg?.teachers?.name || "Pengajar"} · {badge.icon} {badge.label}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 text-sm bg-white/10 rounded-xl px-4 py-3">
+                      <div className="flex-1">
+                        <p className="text-teal-200 text-[10px] uppercase tracking-wide">Tanggal</p>
+                        <p className="font-bold">{d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long" })}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-teal-200 text-[10px] uppercase tracking-wide">Jam</p>
+                        <p className="font-bold">{d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB</p>
+                      </div>
+                    </div>
+                    {diffMs > 0 && (
+                      <p className="text-center text-xs text-teal-200 mt-2">
+                        ⏳ {diffDays > 0 ? `${diffDays} hari ` : ""}{remainHours > 0 ? `${remainHours} jam` : "kurang dari 1 jam"} lagi
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
+
+              {/* Fixed schedules for Reguler classes */}
+              {activeRegs.filter(r => r.product === "Kelas Reguler" && r.batch).length > 0 && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">📋 Jadwal Tetap (Kelas Reguler)</h3>
+                  <div className="space-y-2">
+                    {activeRegs.filter(r => r.product === "Kelas Reguler" && r.batch).map(reg => (
+                      <div key={reg.id} className="rounded-xl bg-blue-50 border border-blue-100 p-3 flex items-center gap-3">
+                        <div className="h-9 w-9 rounded-lg bg-white flex items-center justify-center">
+                          <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold text-gray-900">{reg.language} · {reg.batch!.batch_code}</p>
+                          <p className="text-xs text-blue-600">Setiap {reg.batch!.schedule_day}, {reg.batch!.schedule_time} WIB</p>
+                        </div>
+                        {reg.batch?.zoom_link && (
+                          <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-blue-600 hover:text-blue-700">🔗 Zoom</a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Upcoming schedule list */}
               {upcomingSchedules.length === 0 ? (
                 <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
                   <p className="text-3xl mb-2">📅</p>
@@ -1902,26 +2119,33 @@ export default function AkunPage() {
                   <p className="text-xs text-gray-400 mt-1">Hubungi admin untuk atur jadwal kelasmu</p>
                 </div>
               ) : (
-                <div className="space-y-3">
-                  {upcomingSchedules.map(s => {
-                    const d = new Date(s.scheduled_at);
-                    const reg = student.registrations.find(r => r.id === s.registration_id);
-                    return (
-                      <div key={s.id} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="h-10 w-10 rounded-xl bg-teal-50 flex items-center justify-center">
-                            <img src={getFlagUrl(reg?.language || "")} alt="" className="h-5 w-5 object-contain" />
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">📅 Semua Jadwal Mendatang</h3>
+                  <div className="space-y-2">
+                    {upcomingSchedules.map(s => {
+                      const d = new Date(s.scheduled_at);
+                      const reg = student.registrations.find(r => r.id === s.registration_id);
+                      const badge = PRODUCT_BADGE[reg?.product || ""] || PRODUCT_BADGE["Kelas Private"];
+                      return (
+                        <div key={s.id} className="rounded-xl bg-white border border-gray-100 shadow-sm p-3.5 flex items-center gap-3">
+                          <div className="flex flex-col items-center justify-center bg-teal-50 rounded-xl w-14 h-14 shrink-0">
+                            <span className="text-xs font-bold text-teal-700">{d.toLocaleDateString("id-ID", { day: "numeric" })}</span>
+                            <span className="text-[10px] text-teal-500 uppercase">{d.toLocaleDateString("id-ID", { month: "short" })}</span>
                           </div>
-                          <div className="flex-1"><p className="font-semibold text-gray-900">{reg?.language}</p><p className="text-xs text-gray-500">{reg?.teachers?.name}</p></div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-1.5">
+                              <p className="font-semibold text-sm text-gray-900">{reg?.language}</p>
+                              <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon} {badge.label}</span>
+                            </div>
+                            <p className="text-xs text-gray-500 mt-0.5">
+                              {d.toLocaleDateString("id-ID", { weekday: "long" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB · {s.duration_minutes} mnt
+                            </p>
+                            {reg?.teachers?.name && <p className="text-[10px] text-gray-400 mt-0.5">👩‍🏫 {reg.teachers.name}</p>}
+                          </div>
                         </div>
-                        <div className="flex items-center gap-4 text-xs text-gray-600 bg-gray-50 rounded-lg p-3">
-                          <span>📅 {d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span>
-                          <span>🕐 {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB</span>
-                          <span>⏱️ {s.duration_minutes} menit</span>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </motion.div>
@@ -1930,10 +2154,61 @@ export default function AkunPage() {
           {activeTab === "materi" && (
             <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto space-y-4">
               <h2 className="text-lg font-bold text-gray-900">Materi Belajar</h2>
-              <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
-                <p className="text-3xl mb-2">📖</p>
-                <p className="text-sm text-gray-500">Materi e-learning akan segera hadir!</p>
-                <a href="/silabus" className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-teal-600 hover:underline">🔗 Lihat Silabus</a>
+
+              {/* Per-course silabus links */}
+              {activeRegs.filter(r => r.status === "Aktif").length > 0 ? (
+                <div className="space-y-3">
+                  {activeRegs.filter(r => r.status === "Aktif").map(reg => {
+                    const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                    const langSlug = reg.language?.toLowerCase().replace(/\s+/g, "-") || "english";
+                    return (
+                      <div key={reg.id} className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+                        <div className="flex items-center gap-3 p-4 border-b border-gray-50">
+                          <div className="h-10 w-10 rounded-xl bg-teal-50 flex items-center justify-center">
+                            <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-900">{reg.language}</h4>
+                            <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon} {badge.label} · Level {reg.level}</span>
+                          </div>
+                        </div>
+                        <div className="divide-y divide-gray-50">
+                          <a href={`/silabus/${langSlug}`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                            <span className="text-lg w-7 text-center">📖</span>
+                            <span className="text-sm font-medium text-gray-700 flex-1">Lihat Silabus {reg.language}</span>
+                            <span className="text-gray-300 text-xs">›</span>
+                          </a>
+                          {reg.product !== "English Test Preparation" && (
+                            <a href={`/silabus/${langSlug}/coba`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                              <span className="text-lg w-7 text-center">🎯</span>
+                              <span className="text-sm font-medium text-gray-700 flex-1">Placement Test {reg.language}</span>
+                              <span className="text-gray-300 text-xs">›</span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
+                  <p className="text-3xl mb-2">📖</p>
+                  <p className="text-sm text-gray-500">Belum ada kelas aktif</p>
+                  <p className="text-xs text-gray-400 mt-1">Daftar kelas dulu untuk akses materi</p>
+                </div>
+              )}
+
+              {/* General resources */}
+              <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
+                <h3 className="text-sm font-semibold text-gray-700 mb-3">🌐 Jelajahi Materi</h3>
+                <div className="space-y-1">
+                  <a href="/silabus" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                    <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700 flex-1">Semua Silabus (60+ Bahasa)</span><span className="text-gray-300 text-xs">›</span>
+                  </a>
+                  <a href="/blog" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                    <span className="text-lg">📝</span><span className="text-sm font-medium text-gray-700 flex-1">Blog & Tips Belajar</span><span className="text-gray-300 text-xs">›</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
