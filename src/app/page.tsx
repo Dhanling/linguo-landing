@@ -1074,6 +1074,25 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [funnelPrefillName, setFunnelPrefillName] = useState("");
   const [funnelPrefillWa, setFunnelPrefillWa] = useState("");
   const [funnelSource, setFunnelSource] = useState("");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("openFunnel") === "1") {
+      const lang = params.get("lang") || "";
+      const level = params.get("level") || "";
+      const from = params.get("from") || "";
+      window.history.replaceState({}, "", window.location.pathname);
+      setTimeout(() => {
+        if (lang) {
+          setFunnelLang(lang); setFunnelLevel(level);
+          setFunnelPreferredProg("Kelas Private");
+          setFunnelSource(from); setFunnelProg("");
+          setFunnelOpen(true);
+        }
+      }, 300);
+    }
+  }, []);
+
   if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillWa?:string})=>{
       if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillWa("");}
       else{
