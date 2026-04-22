@@ -553,6 +553,41 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   student: any; displayName: string; user: any; supabase: any;
   setStudent: (fn: any) => void; openEnrollWizard: () => void;
 }) {
+  // Available batches for Reguler (fetched when language selected)
+  const [availBatches, setAvailBatches] = useState<any[]>([]);
+  const [loadingBatches, setLoadingBatches] = useState(false);
+
+  // Fetch open batches when Reguler program + language selected
+  useEffect(() => {
+    if (enrollProgram !== "Kelas Reguler" || !enrollLang || !showEnroll) {
+      setAvailBatches([]);
+      return;
+    }
+    setLoadingBatches(true);
+    // Map English language name to possible Indonesian/alias
+    const langAliases: Record<string, string[]> = {
+      "English": ["English", "Inggris"],
+      "Japanese": ["Japanese", "Jepang"],
+      "Korean": ["Korean", "Korea"],
+      "Mandarin": ["Mandarin", "Chinese"],
+      "French": ["French", "Prancis", "Perancis"],
+      "Spanish": ["Spanish", "Spanyol"],
+      "German": ["German", "Jerman"],
+      "Arabic": ["Arabic", "Arab"],
+    };
+    const searchLangs = langAliases[enrollLang] || [enrollLang];
+    supabase
+      .from("regular_class_batches")
+      .select("id, batch_code, language, schedule_day, schedule_time, start_date, end_date, sessions_total, current_enrolled, max_students, status")
+      .in("language", searchLangs)
+      .eq("status", "open")
+      .order("start_date", { ascending: true })
+      .then(({ data }: any) => {
+        setAvailBatches(data || []);
+        setLoadingBatches(false);
+      });
+  }, [enrollProgram, enrollLang, showEnroll, supabase]);
+
   if (!showEnroll) return null;
 
   const isTestPrep = enrollProgram === "English Test Preparation";
@@ -909,10 +944,46 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   )}
                 </div>
 
-                {/* Info batch for Reguler */}
+                {/* Info batch for Reguler — show available batches from DB */}
                 {isRegulerEnroll && (
-                  <div className="rounded-xl bg-blue-50 border border-blue-100 px-3 py-2.5 text-xs text-blue-700">
-                    📋 Jadwal kelas reguler mengikuti batch yang tersedia. Admin akan menghubungi kamu via WhatsApp untuk konfirmasi batch & jadwal.
+                  <div className="rounded-xl bg-blue-50 border border-blue-100 p-3">
+                    {loadingBatches ? (
+                      <p className="text-xs text-blue-600">⏳ Memuat batch yang tersedia...</p>
+                    ) : availBatches.length > 0 ? (
+                      <>
+                        <p className="text-xs font-semibold text-blue-700 mb-2">📅 Batch {enrollLang} yang tersedia:</p>
+                        <div className="space-y-1.5">
+                          {availBatches.slice(0, 3).map((b: any) => {
+                            const seatsLeft = (b.max_students || 15) - (b.current_enrolled || 0);
+                            const startDate = b.start_date ? new Date(b.start_date).toLocaleDateString("id-ID", { day: "numeric", month: "short" }) : "-";
+                            return (
+                              <div key={b.id} className="bg-white rounded-lg px-3 py-2 text-xs border border-blue-100">
+                                <div className="flex items-center justify-between mb-0.5">
+                                  <span className="font-bold text-blue-800">{b.batch_code}</span>
+                                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${seatsLeft > 3 ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>
+                                    {seatsLeft > 0 ? `${seatsLeft} kursi tersisa` : "Penuh"}
+                                  </span>
+                                </div>
+                                <p className="text-gray-600">
+                                  {b.schedule_day}, {b.schedule_time} WIB · Mulai {startDate}
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {availBatches.length > 3 && (
+                          <a href="/jadwal-kelas-reguler" target="_blank" className="block mt-2 text-[11px] text-blue-600 hover:underline font-medium">
+                            + {availBatches.length - 3} batch lainnya — lihat semua →
+                          </a>
+                        )}
+                        <p className="text-[10px] text-blue-600 mt-2">💡 Admin akan mencocokkan kamu ke batch yang paling cocok via WhatsApp.</p>
+                      </>
+                    ) : (
+                      <p className="text-xs text-blue-700">
+                        📋 Belum ada batch {enrollLang} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
+                        <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">cek jadwal lengkap</a>.
+                      </p>
+                    )}
                   </div>
                 )}
 
@@ -1882,145 +1953,57 @@ export default function AkunPage() {
                   )}
                 </div>
 
-                {/* Menunggu Pembayaran Section - main content area */}
-
-
-                {pendingPaymentRegs.length > 0 && (
-
-
-                  <div className="mt-6">
-
-
-                    <div className="flex items-center gap-2 mb-3">
-
-
-                      <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
-
-
-                      <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
-
-
-                        {pendingPaymentRegs.length}
-
-
-                      </span>
-
-
-                    </div>
-
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-
-
-                      {pendingPaymentRegs.map((reg: any, i: number) => (
-
-
-                        <motion.div
-
-
-                          key={reg.id}
-
-
-                          initial={{ opacity: 0, y: 12 }}
-
-
-                          animate={{ opacity: 1, y: 0 }}
-
-
-                          transition={{ delay: i * 0.08 }}
-
-
-                          className="rounded-2xl border shadow-sm p-4 hover:shadow-md transition-shadow bg-amber-50 border-amber-200"
-
-
-                        >
-
-
-                          <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
-
-
-                            <span>🟡</span>
-
-
-                            <span>Belum Bayar</span>
-
-
-                          </div>
-
-
-                          <div className="flex items-center gap-3 mb-3">
-
-
-                            <div className="h-11 w-11 rounded-xl bg-white border flex items-center justify-center shrink-0">
-
-
-                              <img src={getFlagUrl(reg.language || "")} alt="" className="h-7 w-7 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-
-
-                            </div>
-
-
-                            <div className="flex-1 min-w-0">
-
-
-                              <h4 className="font-semibold text-gray-900 truncate">{reg.language || reg.product}</h4>
-
-
-                              <div className="flex items-center gap-1.5 mt-0.5">
-                                {(() => { const b = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"]; return (
-                                  <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${b.bg} ${b.color}`}>{b.icon} {b.label}</span>
-                                ); })()}
-                              </div>
-
-
-                            </div>
-
-
-                            <span className="inline-flex items-center rounded-lg bg-teal-50 px-2 py-1 text-xs font-bold text-teal-700 shrink-0">{reg.level}</span>
-
-
-                          </div>
-
-
-                          {user?.id && (
-
-
-                            <PaymentCard
-
-
-                              registration={reg}
-
-
-                              userId={user.id}
-
-
-                              onUploadSuccess={() => window.location.reload()}
-
-
-                            />
-
-
-                          )}
-
-
-                        </motion.div>
-
-
-                      ))}
-
-
-                    </div>
-
-
-                  </div>
-
-
-                )}
-
-
-
                 {/* Right Column — Sidebar (desktop only, mobile inline) */}
                 <div className="space-y-5">
+                  {/* Pending Payment — sidebar version (compact) */}
+                  {pendingPaymentRegs.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <h3 className="text-sm font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
+                        <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
+                          {pendingPaymentRegs.length}
+                        </span>
+                      </div>
+                      <div className="space-y-3">
+                        {pendingPaymentRegs.map((reg: any, i: number) => (
+                          <motion.div
+                            key={reg.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.08 }}
+                            className="rounded-2xl border shadow-sm p-4 bg-amber-50 border-amber-200"
+                          >
+                            <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
+                              <span>🟡</span>
+                              <span>Belum Bayar</span>
+                            </div>
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="h-10 w-10 rounded-xl bg-white border flex items-center justify-center shrink-0">
+                                <img src={getFlagUrl(reg.language || "")} alt="" className="h-6 w-6 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <h4 className="font-semibold text-gray-900 text-sm truncate">{reg.language || reg.product}</h4>
+                                <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                                  {(() => { const b = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"]; return (
+                                    <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${b.bg} ${b.color} whitespace-nowrap`}>{b.icon} {b.label}</span>
+                                  ); })()}
+                                  <span className="inline-flex items-center rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700">{reg.level}</span>
+                                </div>
+                              </div>
+                            </div>
+                            {user?.id && (
+                              <PaymentCard
+                                registration={reg}
+                                userId={user.id}
+                                onUploadSuccess={() => window.location.reload()}
+                              />
+                            )}
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Upcoming Schedules */}
 
         {upcomingSchedules.length > 0 && (
