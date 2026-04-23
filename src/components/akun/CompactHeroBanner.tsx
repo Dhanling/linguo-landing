@@ -34,7 +34,7 @@ export default function CompactHeroBanner({
             </span>
             {streak > 0 && (
               <span className="inline-flex items-center gap-0.5">
-                <span>\u{1F525}</span>
+                <span>{"🔥"}</span>
                 <span className="font-semibold text-white">{streak}</span>
                 <span>minggu</span>
               </span>
