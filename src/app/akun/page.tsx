@@ -1773,13 +1773,6 @@ export default function AkunPage() {
                             reg={reg}
                             index={i}
                             userId={user?.id}
-                            renderPayment={(r, uid) => (
-                              <PaymentCard
-                                registration={r as any}
-                                userId={uid}
-                                onUploadSuccess={() => window.location.reload()}
-                              />
-                            )}
                             variant="pending"
                           />
                         ))}
