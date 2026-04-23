@@ -375,38 +375,15 @@ const ARTICLE_CSS = `
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
+.article-body { max-width: 100%; overflow-wrap: break-word; word-break: break-word; }
 .article-body p {
   color: #1e293b;
   line-height: 1.85;
   margin-bottom: 1.5rem;
   font-size: 1.0625rem;
 }
-/* ── Rujukan / Referensi section ─────────────────────
-   Cara pakai: di CMS klik <> (source), cari <h2>Rujukan</h2>
-   Ganti dengan: <h2 class="ref">Rujukan</h2>
-   Semua p setelahnya otomatis kecil + abu-abu.
-─────────────────────────────────────────────────── */
-.article-body h2.ref {
-  font-size: 0.9375rem !important;
-  font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-.article-body h2.ref ~ p {
-  font-size: 0.8125rem !important;
-  line-height: 1.6;
-  color: #94a3b8;
-  margin-bottom: 0.625rem;
-}
-.article-body h2.ref ~ p a { font-size: 0.8125rem; word-break: break-all; }
-.blog-dark .article-body h2.ref { color: #475569; }
-.blog-dark .article-body h2.ref ~ p { color: #475569; }
-.blog-dark .article-body h2.ref ~ p a { color: #1A9E9E; }
 .article-body strong { color: #0f172a; font-weight: 700; }
-.article-body a { color: #1A9E9E; text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
+.article-body a { color: #1A9E9E; text-decoration: underline; text-underline-offset: 2px; font-weight: 500; word-break: break-word; overflow-wrap: break-word; }
 .article-body a:hover { color: #178585; }
 .article-body ul, .article-body ol {
   margin: 1.25rem 0;
