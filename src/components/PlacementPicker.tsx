@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { trackEvent } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Category = "populer" | "eropa" | "asia" | "timur-tengah" | "nusantara";
@@ -55,6 +56,10 @@ interface Props {
 export default function PlacementPicker({ open, onClose }: Props) {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState("all");
+
+  useEffect(() => {
+    if (open) trackEvent("placement_picker_opened", {});
+  }, [open]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -133,6 +138,7 @@ export default function PlacementPicker({ open, onClose }: Props) {
                       <a
                         key={lang.slug}
                         href={"/silabus/" + lang.slug + "/coba"}
+                        onClick={() => trackEvent("placement_test_started", { language: lang.name, language_slug: lang.slug })}
                         className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-[#1A9E9E] bg-[#1A9E9E]/5 hover:bg-[#1A9E9E]/10 transition-colors group"
                       >
                         <span className="text-2xl">{lang.flag}</span>
@@ -152,6 +158,7 @@ export default function PlacementPicker({ open, onClose }: Props) {
                       href={"https://wa.me/6282116859493?text=Halo%20Linguo%2C%20saya%20mau%20placement%20test%20Bahasa%20" + encodeURIComponent(lang.name)}
                       target="_blank"
                       rel="noopener"
+                      onClick={() => trackEvent("placement_test_intent", { language: lang.name, language_slug: lang.slug, status: "coming_soon" })}
                       className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-2xl opacity-60">{lang.flag}</span>

@@ -840,6 +840,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const handleGoogleSignIn = async () => {
     // Save funnel data in cookie (survives OAuth redirect, unlike localStorage/URL params)
     document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel })) + ";path=/;max-age=600;SameSite=Lax";
+    if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_form_submitted",{program:selProgram,language:selLang,level:selLevel});
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: window.location.origin + "/akun" },
@@ -1094,7 +1095,9 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   }, []);
 
   if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillWa?:string})=>{
-      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillWa("");}
+      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillWa("");
+        if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_opened",{program:input});
+      }
       else{
         setFunnelProg(input.program||"");
         setFunnelLang(input.language||"");

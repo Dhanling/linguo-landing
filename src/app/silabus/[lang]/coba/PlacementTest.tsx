@@ -14,6 +14,8 @@ interface Props {
   questions: Question[];
 }
 
+import { trackEvent } from "@/lib/tracking";
+
 type Screen = "intro" | "quiz" | "result";
 
 function renderRich(text: string) {
@@ -44,6 +46,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
 
   const startTest = () => {
     setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);
+    trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
   };
 
   // Auto-submit on click (multiple) or explicit submit (fill/dragDrop/missing/matching)
@@ -70,7 +73,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     setShowFeedback(false);
     setSelected(null);
     if (currentQ + 1 < questions.length) setCurrentQ((i) => i + 1);
-    else setScreen("result");
+    else { setScreen("result"); trackEvent("placement_test_completed", { language: meta?.name ?? "", score }); }
   };
 
   return (
