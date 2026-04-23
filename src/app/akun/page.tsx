@@ -1676,7 +1676,7 @@ export default function AkunPage() {
               <div className="lg:grid lg:grid-cols-[2fr_1fr] lg:gap-6 space-y-5 lg:space-y-0">
 
                 {/* Left Column — Main Content */}
-                <div className="lg:col-span-2 space-y-5">
+                <div className="space-y-5">
                   {/* Welcome + XP Banner */}
                   <CompactHeroBanner
                     firstName={firstName}
