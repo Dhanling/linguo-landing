@@ -134,7 +134,16 @@ export default function UnifiedCourseCard({
             </div>
           </div>
         </div>
-        {userId && renderPayment && renderPayment(reg, userId)}
+        {userId && (
+          <a
+            href={"https://wa.me/6282116859493?text=Halo%20Linguo%2C%20saya%20mau%20konfirmasi%20pembayaran%20untuk%20kelas%20" + encodeURIComponent(reg.language || reg.product || "")}
+            target="_blank"
+            rel="noopener"
+            className="mt-2 flex items-center justify-center gap-2 w-full py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold transition-colors"
+          >
+            💳 Konfirmasi Pembayaran via WA
+          </a>
+        )}
       </motion.div>
     );
   }
