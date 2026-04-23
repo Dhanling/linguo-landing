@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
-import { Search, Clock, ChevronRight, ChevronLeft, ArrowRight, LayoutGrid, List, MoreHorizontal, Bookmark, MessageCircle, X } from "lucide-react";
+import { Search, Clock, ChevronRight, ChevronLeft, ArrowRight, LayoutGrid, List, MoreHorizontal, Bookmark, MessageCircle, X, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 
 interface BlogPost {
@@ -90,7 +90,7 @@ function MoreMenu({slug,onHide}:{slug:string;onHide:()=>void}){
         <MoreHorizontal className="w-5 h-5"/>
       </button>
       {open&&(
-        <div className="absolute right-0 top-8 bg-white border border-slate-200 rounded-xl shadow-xl py-1 w-52 z-50">
+        <div className="dm-more absolute right-0 top-8 bg-white border border-slate-200 rounded-xl shadow-xl py-1 w-52 z-50">
           <button onClick={(e)=>{e.preventDefault();e.stopPropagation();hidePost(slug);onHide();setOpen(false)}} className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-2">
             <X className="w-4 h-4"/> Not interested
           </button>
@@ -107,8 +107,9 @@ function MoreMenu({slug,onHide}:{slug:string;onHide:()=>void}){
 function FeedItem({post,onHide}:{post:BlogPost;onHide:()=>void}){
   const mins=rt(post.content);
   const exc=post.excerpt||strip(post.content).slice(0,160);
+  const dmCls=typeof window!=="undefined"&&document.querySelector(".blog-dm")?"dm-active":"";
   return(
-    <article className="py-7 border-b border-slate-100 last:border-0">
+    <article className={`py-7 border-b last:border-0 dm-border border-slate-100`}>
       {/* Author line */}
       <div className="flex items-center gap-2 mb-3">
         <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold shrink-0">L</div>
@@ -120,7 +121,7 @@ function FeedItem({post,onHide}:{post:BlogPost;onHide:()=>void}){
       {/* Content row */}
       <Link href={"/blog/"+post.slug} className="group flex gap-6">
         <div className="flex-1 min-w-0">
-          <h2 className="text-[22px] font-extrabold text-[#0f172a] leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2">{post.title}</h2>
+          <h2 className="text-[22px] font-extrabold leading-snug mb-1 group-hover:text-[#1A9E9E] transition-colors line-clamp-2 dm-text-main text-[#0f172a]">{post.title}</h2>
           <p className="text-[15px] text-slate-600 leading-relaxed line-clamp-2 mb-0 hidden sm:block">{exc}</p>
         </div>
         <div className="w-28 h-28 sm:w-36 sm:h-32 shrink-0 rounded-lg overflow-hidden">
@@ -184,18 +185,21 @@ function RecTopics({active,onSelect}:{active:string;onSelect:(c:string)=>void}){
 function GridCard({post}:{post:BlogPost}){
   const mins=rt(post.content);
   return(
-    <Link href={"/blog/"+post.slug} className="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:shadow-xl hover:border-slate-200 transition-all duration-300 flex flex-col">
-      <div className="aspect-[16/10] overflow-hidden"><Cover post={post} cls="group-hover:scale-105 transition-transform duration-500"/></div>
+    <Link href={"/blog/"+post.slug} className="group dm-card bg-white rounded-xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:border-slate-200 hover:-translate-y-1 transition-all duration-300 flex flex-col">
+      <div className="aspect-[16/10] overflow-hidden relative">
+        <Cover post={post} cls="group-hover:scale-110 transition-transform duration-500 ease-out"/>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+      </div>
       <div className="p-5 flex flex-col flex-1">
         <Badge cat={post.category}/>
-        <h3 className="font-extrabold text-[17px] text-[#0f172a] leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
-        <p className="text-[13px] text-slate-600 leading-relaxed line-clamp-2 mb-4 leading-relaxed flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
-        <div className="flex items-center justify-between pt-3 border-t border-slate-50">
+        <h3 className="font-extrabold text-[17px] dm-text-main text-[#0f172a] leading-snug mt-2 mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
+        <p className="text-[13px] dm-text-muted text-slate-600 leading-relaxed line-clamp-2 mb-4 flex-1">{post.excerpt||strip(post.content).slice(0,100)}</p>
+        <div className="flex items-center justify-between pt-3 border-t dm-border border-slate-50">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold">L</div>
-            <div><div className="text-[10px] font-medium text-slate-600">Linguo Team</div><div className="text-[9px] text-slate-400">{fmtD(post.published_at)}</div></div>
+            <div><div className="text-[10px] font-medium dm-text-muted text-slate-600">Linguo Team</div><div className="text-[9px] dm-text-muted text-slate-400">{fmtD(post.published_at)}</div></div>
           </div>
-          <span className="text-xs text-slate-400 flex items-center gap-0.5"><Clock className="w-3 h-3"/>{mins} min</span>
+          <span className="text-xs dm-text-muted text-slate-400 flex items-center gap-0.5"><Clock className="w-3 h-3"/>{mins} min</span>
         </div>
       </div>
     </Link>
@@ -204,8 +208,8 @@ function GridCard({post}:{post:BlogPost}){
 
 /* ===== BOTTOM SECTIONS ===== */
 function SmCard({post}:{post:BlogPost}){return(
-  <Link href={"/blog/"+post.slug} className="group flex gap-3 p-2.5 rounded-xl border border-slate-100 hover:border-[#1A9E9E]/20 hover:shadow-md transition-all bg-white">
-    <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden"><Cover post={post} sz="sm"/></div>
+  <Link href={"/blog/"+post.slug} className="group flex gap-3 p-2.5 rounded-xl border border-slate-100 hover:border-[#1A9E9E]/20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 bg-white">
+    <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden"><Cover post={post} sz="sm" cls="group-hover:scale-110 transition-transform duration-300"/></div>
     <div className="flex flex-col justify-center min-w-0 flex-1">
       <Badge cat={post.category}/><h3 className="text-[12px] font-bold text-slate-900 leading-snug line-clamp-2 mt-1 group-hover:text-[#1A9E9E] transition-colors">{post.title}</h3>
       <span className="text-[10px] text-slate-400 mt-1">{fmtD(post.published_at)}</span>
@@ -268,6 +272,12 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
   const [feedN,setFeedN]=useState(FEED_BATCH);
   const [hiddenSlugs,setHiddenSlugs]=useState<Set<string>>(new Set());
   const loaderRef=useRef<HTMLDivElement>(null);
+  const [dm,setDm]=useState(false);
+  useEffect(()=>{
+    const saved=localStorage.getItem("blog_dm")==="1";
+    setDm(saved);
+  },[]);
+  const toggleDm=()=>{const next=!dm;setDm(next);localStorage.setItem("blog_dm",next?"1":"0")};
 
   // Load hidden posts from localStorage
   useEffect(()=>{
@@ -303,10 +313,23 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
   const doHide=(slug:string)=>{setHiddenSlugs(prev=>{const n=new Set(prev);n.add(slug);return n})};
 
   return(
-    <div className="min-h-screen bg-white" style={{fontFamily:"'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif"}}>
+    <div className={`min-h-screen transition-colors duration-300 ${dm?"bg-[#0f172a] blog-dm":"bg-white"}`} style={{fontFamily:"'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif"}}>
+      <style dangerouslySetInnerHTML={{__html:`
+        .blog-dm .dm-nav { background:#111827 !important; border-color:#1e293b !important; }
+        .blog-dm .dm-tab { background:#111827 !important; border-color:#1e293b !important; }
+        .blog-dm .dm-input { background:#1e293b !important; color:#e2e8f0 !important; }
+        .blog-dm .dm-card { background:#1e293b !important; border-color:#334155 !important; }
+        .blog-dm .dm-text-main { color:#f1f5f9 !important; }
+        .blog-dm .dm-text-muted { color:#94a3b8 !important; }
+        .blog-dm .dm-border { border-color:#334155 !important; }
+        .blog-dm .dm-sidebar { border-color:#1e293b !important; }
+        .blog-dm .dm-more { background:#1e293b !important; border-color:#334155 !important; }
+        .blog-dm .dm-more button { color:#cbd5e1 !important; }
+        .blog-dm .dm-more button:hover { background:#334155 !important; }
+      `}}/>
       <style dangerouslySetInnerHTML={{__html:`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');`}}/>
       {/* NAV */}
-      <nav className="bg-white border-b border-slate-100 sticky top-0 z-50">
+      <nav className="dm-nav bg-white border-b border-slate-100 sticky top-0 z-50 transition-colors duration-300">
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="/" className="flex items-center shrink-0">
@@ -323,17 +346,24 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
               <button onClick={()=>setView("feed")} className={`p-1.5 rounded-full transition-all ${view==="feed"?"bg-white shadow-sm text-[#1A9E9E]":"text-slate-400 hover:text-slate-600"}`} title="Feed"><List className="w-4 h-4"/></button>
               <button onClick={()=>setView("grid")} className={`p-1.5 rounded-full transition-all ${view==="grid"?"bg-white shadow-sm text-[#1A9E9E]":"text-slate-400 hover:text-slate-600"}`} title="Grid"><LayoutGrid className="w-4 h-4"/></button>
             </div>
+            <button
+              onClick={toggleDm}
+              title={dm?"Light mode":"Dark mode"}
+              className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${dm?"bg-slate-700 text-yellow-300 hover:bg-slate-600":"bg-slate-100 text-slate-500 hover:bg-slate-200"}`}
+            >
+              {dm?<Sun className="w-4 h-4"/>:<Moon className="w-4 h-4"/>}
+            </button>
             <a href="/" className="bg-[#1A9E9E] hover:bg-[#178585] text-white text-sm font-semibold px-4 py-1.5 rounded-full transition-colors hidden sm:block">Mulai Belajar</a>
           </div>
         </div>
       </nav>
 
       {/* TABS */}
-      <div className="border-b border-slate-100 bg-white">
+      <div className="dm-tab border-b border-slate-100 bg-white transition-colors duration-300">
         <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-6 overflow-x-auto">
           {CATEGORIES.map(c=>(
             <button key={c} onClick={()=>{setActiveCat(c);setPage(1)}}
-              className={`text-sm whitespace-nowrap py-3 transition-all relative font-semibold ${activeCat===c?"text-[#0f172a]":"text-slate-400 hover:text-slate-700"}`}>
+              className={`text-sm whitespace-nowrap py-3 transition-all relative font-semibold ${activeCat===c?(dm?"text-white":"text-[#0f172a]"):(dm?"text-slate-500 hover:text-slate-300":"text-slate-400 hover:text-slate-700")}`}>
               {c==="Semua"?"For you":c}
               {activeCat===c&&<span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1A9E9E] rounded-full"/>}
             </button>
@@ -378,7 +408,7 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
 
         {/* GRID VIEW */}
         {view==="grid"&&(
-          <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className={`max-w-7xl mx-auto px-6 py-6 min-h-screen transition-colors duration-300`}>
             {page===1&&!search&&(
               <div className="bg-gradient-to-r from-[#1A9E9E] via-[#2ABFBF] to-[#1A9E9E] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 shadow-sm">
                 <div><p className="text-white/70 text-xs font-semibold tracking-wider uppercase mb-1">Linguo.id Blog</p><h2 className="text-white text-xl sm:text-2xl font-extrabold">Everyone Can Be a Polyglot</h2><p className="text-white/80 text-sm mt-1">60+ bahasa tersedia dengan pengajar profesional</p></div>
