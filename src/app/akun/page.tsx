@@ -1673,7 +1673,7 @@ export default function AkunPage() {
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               {/* Desktop: 2 column layout */}
-              <div className="lg:grid lg:grid-cols-3 lg:gap-6 space-y-5 lg:space-y-0">
+              <div className="lg:grid lg:grid-cols-[1fr_340px] lg:gap-6 space-y-5 lg:space-y-0">
 
                 {/* Left Column — Main Content */}
                 <div className="lg:col-span-2 space-y-5">

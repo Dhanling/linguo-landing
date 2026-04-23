@@ -127,7 +127,7 @@ export default function UnifiedCourseCard({
             <img src={getFlagUrl(reg.language || "")} alt="" className="h-6 w-6 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="font-semibold text-gray-900 text-sm truncate">{reg.language || reg.product}</h4>
+            <h4 className="font-semibold text-gray-900 text-sm truncate" title={reg.language || reg.product}>{reg.language || reg.product}</h4>
             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
               <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color} whitespace-nowrap`}>{badge.icon} {badge.label}</span>
               <span className="inline-flex items-center rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700">{reg.level}</span>

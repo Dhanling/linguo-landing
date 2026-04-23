@@ -34,7 +34,7 @@ export default function PaymentInstructionSheet({
   existingProofUrl,
   onUploadSuccess,
 }: Props) {
-  const [expanded, setExpanded] = useState(!isVerifying);
+  const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState<string | null>(null);
 
   const copyToClipboard = (text: string, label: string) => {
