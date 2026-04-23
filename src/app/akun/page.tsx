@@ -10,6 +10,10 @@ import OneSignalProvider from '@/components/OneSignalProvider';
 import NotificationBell from '@/components/NotificationBell';
 import UnifiedCourseCard from '@/components/akun/UnifiedCourseCard';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
+import TopBarMinimal from '@/components/akun/TopBarMinimal';
+import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
+import MobileBottomNav from '@/components/akun/MobileBottomNav';
+import AttentionAlert from '@/components/akun/AttentionAlert';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -1654,47 +1658,14 @@ export default function AkunPage() {
         />
       )}
 
-      {/* ── Header ──────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
-        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-lg bg-teal-600 flex items-center justify-center">
-              <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
-            </div>
-            <span className="font-bold text-gray-900">Linguo.id</span>
-          </div>
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {([
-              { key: "beranda", label: "Beranda" },
-              { key: "jadwal", label: "Jadwal" },
-              { key: "materi", label: "Materi" },
-              { key: "akun", label: "Akun" },
-            ] as const).map(tab => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === tab.key ? "bg-teal-50 text-teal-700" : "text-gray-500 hover:text-gray-700 hover:bg-gray-50"}`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </nav>
-          <div className="flex items-center gap-3">
-            {student?.id && <NotificationBell userId={student.id} userType="student" />}
-              <button onClick={openEnrollWizard} className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700 transition-colors">
-              + Tambah Kelas
-            </button>
-            {avatarUrl ? (
-              <img src={avatarUrl} alt="" className="h-8 w-8 rounded-full ring-2 ring-teal-100" referrerPolicy="no-referrer" />
-            ) : (
-              <div className="h-8 w-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-sm">
-                {firstName[0]?.toUpperCase()}
-              </div>
-            )}
-          </div>
-        </div>
-      </header>
+      {/* ── Header ── */}
+      <TopBarMinimal
+        studentId={student?.id || ""}
+        avatarUrl={avatarUrl}
+        firstName={firstName}
+        onAvatarClick={() => setActiveTab("akun")}
+        onEnrollClick={openEnrollWizard}
+      />
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6">
@@ -1706,32 +1677,19 @@ export default function AkunPage() {
 
                 {/* Left Column — Main Content */}
                 <div className="lg:col-span-2 space-y-5">
-                  {/* Welcome + XP Card */}
-                  <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 sm:p-6 text-white shadow-lg shadow-teal-200/50">
-                    <div className="flex items-center justify-between mb-3">
-                      <div>
-                        <p className="text-teal-100 text-sm">{getGreeting()}</p>
-                        <h1 className="text-xl sm:text-2xl font-bold">{firstName} {xp.emoji}</h1>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl sm:text-3xl font-bold">{xp.xp}</p>
-                        <p className="text-teal-200 text-xs">XP · {xp.rank}</p>
-                      </div>
-                    </div>
-                    {xp.nextXP > 0 && (
-                      <div>
-                        <div className="h-1.5 rounded-full bg-teal-800/50 overflow-hidden">
-                          <motion.div className="h-full rounded-full bg-white/80" initial={{ width: 0 }} animate={{ width: `${Math.min((xp.xp / xp.nextXP) * 100, 100)}%` }} transition={{ duration: 1, delay: 0.3 }} />
-                        </div>
-                        <p className="text-[10px] text-teal-200 mt-1">{xp.nextXP - xp.xp} XP lagi ke {xp.next}</p>
-                      </div>
-                    )}
-                    <div className="flex gap-4 mt-4 pt-3 border-t border-teal-500/30">
-                      <div className="flex-1 text-center"><p className="text-lg font-bold">{activeRegs.length}</p><p className="text-[10px] text-teal-200">Kursus Aktif</p></div>
-                      <div className="flex-1 text-center"><p className="text-lg font-bold">{totalUsedSessions}</p><p className="text-[10px] text-teal-200">Sesi Selesai</p></div>
-                      <div className="flex-1 text-center"><p className="text-lg font-bold">{streak > 0 ? `🔥 ${streak}` : "0"}</p><p className="text-[10px] text-teal-200">Streak Minggu</p></div>
-                    </div>
-                  </div>
+                  {/* Welcome + XP Banner */}
+                  <CompactHeroBanner
+                    firstName={firstName}
+                    greeting={getGreeting()}
+                    rankEmoji={xp.emoji}
+                    rankLabel={xp.rank}
+                    streak={streak}
+                    activeCount={activeRegs.length}
+                    onEnrollClick={openEnrollWizard}
+                  />
+
+                  {/* Attention Alert */}
+                  <AttentionAlert count={pendingPaymentRegs.length} />
 
                   {/* Active Classes */}
                   {activeRegs.length > 0 ? (
@@ -2087,22 +2045,8 @@ export default function AkunPage() {
         </AnimatePresence>
       </main>
 
-      {/* ── Bottom Tab Nav (mobile only) ─────────────────────────── */}
-      <nav className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden">
-        <div className="mx-auto max-w-lg flex h-14">
-          {([
-            { key: "beranda", label: "Beranda", icon: "🏠" },
-            { key: "jadwal", label: "Jadwal", icon: "📅" },
-            { key: "materi", label: "Materi", icon: "📖" },
-            { key: "akun", label: "Akun", icon: "👤" },
-          ] as const).map(tab => (
-            <button key={tab.key} onClick={() => setActiveTab(tab.key)} className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors ${activeTab === tab.key ? "text-teal-600" : "text-gray-400"}`}>
-              <span className="text-lg">{tab.icon}</span>
-              <span className="text-[10px] font-medium">{tab.label}</span>
-            </button>
-          ))}
-        </div>
-      </nav>
+      {/* ── Bottom Tab Nav (mobile only) ── */}
+      <MobileBottomNav activeTab={activeTab} onChange={setActiveTab} />
 
       {/* Booking Modal */}
       <OneSignalProvider />
