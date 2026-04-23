@@ -117,7 +117,7 @@ export default function UnifiedCourseCard({
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.08 }}
-        className="rounded-2xl border shadow-sm p-4 bg-amber-50 border-amber-200"
+        className="rounded-2xl border shadow-sm p-4 bg-amber-50 border-amber-200 overflow-hidden"
       >
         <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-amber-800">
           <span>🟡</span><span>Belum Bayar</span>

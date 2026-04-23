@@ -123,7 +123,7 @@ export default function PaymentInstructionSheet({
                       {copied === acct.bank ? "✓ Tersalin" : "📋 Salin"}
                     </button>
                   </div>
-                  <p className="text-sm font-mono font-bold text-gray-900 tracking-wide">{acct.number}</p>
+                  <p className="text-xs font-mono font-bold text-gray-900 tracking-wide break-all">{acct.number}</p>
                   <p className="text-[11px] text-gray-500">a.n. {acct.name}</p>
                 </div>
               ))}

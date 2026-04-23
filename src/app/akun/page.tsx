@@ -1756,7 +1756,7 @@ export default function AkunPage() {
                 </div>
 
                 {/* Right Column — Sidebar (desktop only, mobile inline) */}
-                <div className="space-y-5">
+                <div className="space-y-5 overflow-hidden">
                   {/* Pending Payment — sidebar version (compact) */}
                   {pendingPaymentRegs.length > 0 && (
                     <div>
