@@ -1327,7 +1327,6 @@ export default function AkunPage() {
     // Design B: "Kursus Aktif" = user udah commit (bayar atau udah upload bukti)
   const activeRegs = useMemo(() => student?.registrations.filter(r =>
     r.status === "Aktif" ||
-    (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi") ||
     r.status === "Pending"
   ) || [], [student]);
   // "Menunggu Pembayaran" = user belum upload bukti transfer
@@ -1698,7 +1697,7 @@ export default function AkunPage() {
                         <h3 className="text-base font-semibold text-gray-800">📚 Kursus Saya</h3>
                         <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
                       </div>
-                      <div className="grid gap-4 sm:grid-cols-2">
+                      <div className="space-y-4">
                         {activeRegs.map((reg, i) => (
                           <UnifiedCourseCard
                             key={reg.id}
