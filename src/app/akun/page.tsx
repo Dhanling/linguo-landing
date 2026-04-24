@@ -2111,10 +2111,7 @@ export default function AkunPage() {
           )}
         </AnimatePresence>
       {/* Placement Test Language Picker */}
-      <PlacementPicker
-        open={showPlacementPicker}
-        onClose={() => setShowPlacementPicker(false)}
-      />
+      <PlacementPicker open={showPlacementPicker} onClose={() => setShowPlacementPicker(false)} studentId={student?.id} />
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}

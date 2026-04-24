@@ -51,9 +51,10 @@ const CATEGORIES: { key: string; label: string }[] = [
 interface Props {
   open: boolean;
   onClose: () => void;
+  studentId?: string;
 }
 
-export default function PlacementPicker({ open, onClose }: Props) {
+export default function PlacementPicker({ open, onClose, studentId }: Props) {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState("all");
 
@@ -137,7 +138,7 @@ export default function PlacementPicker({ open, onClose }: Props) {
                     return (
                       <a
                         key={lang.slug}
-                        href={"/silabus/" + lang.slug + "/coba"}
+                        href={`/silabus/${lang.slug}/coba${studentId ? `?ref=akun&sid=${studentId}` : ""}`}
                         onClick={() => trackEvent("placement_test_started", { language: lang.name, language_slug: lang.slug })}
                         className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-[#1A9E9E] bg-[#1A9E9E]/5 hover:bg-[#1A9E9E]/10 transition-colors group"
                       >

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import AuthModal from "@/components/AuthModal";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
@@ -472,15 +473,27 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
     openWizardPrefilled();
   };
 
-  // Auto-log result (anonymous) ke placement_results table
+  // Auto-log result ke placement_results table
+  // Kalau dari /akun (ref=akun + sid=studentId), link ke student
+  const searchParams = useSearchParams();
   useEffect(() => {
+    const ref = searchParams?.get("ref");
+    const sid = searchParams?.get("sid");
+    const fromAkun = ref === "akun" && !!sid;
+
+    const payload: Record<string, unknown> = {
+      language: meta.name,
+      level: result.sublevel,
+      score,
+      timeElapsedSec,
+      source: fromAkun ? "akun-dashboard" : ("placement-test-" + meta.slug),
+    };
+    if (fromAkun && sid) payload.student_id = sid;
+
     fetch("/api/placement-result", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        language: meta.name, level: result.sublevel, score, timeElapsedSec,
-        source: "placement-test-" + meta.slug,
-      }),
+      body: JSON.stringify(payload),
     }).catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { language, level, score, timeElapsedSec, source, name, whatsapp } = body;
+    const { language, level, score, timeElapsedSec, source, name, whatsapp, student_id } = body;
 
     const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
     };
     if (name) payload.name = name;
     if (whatsapp) payload.whatsapp = whatsapp;
+    if (student_id) payload.student_id = student_id;
 
     const res = await fetch(SUPABASE_URL + "/rest/v1/placement_results", {
       method: "POST",
