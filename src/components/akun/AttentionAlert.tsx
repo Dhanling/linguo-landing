@@ -18,7 +18,7 @@ export default function AttentionAlert({ count, onClick, label }: Props) {
       aria-label={text}
     >
       <span className="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-amber-700 text-base">
-        \u26A0\uFE0F
+        ⚠️
       </span>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold text-amber-900 truncate">{text}</p>
@@ -26,7 +26,7 @@ export default function AttentionAlert({ count, onClick, label }: Props) {
           {count === 1 ? "Lihat kartu dengan badge 'Belum Bayar'" : "Lihat kartu dengan badge kuning / merah"}
         </p>
       </div>
-      <span className="shrink-0 text-amber-600 group-hover:translate-x-0.5 transition-transform">\u203A</span>
+      <span className="shrink-0 text-amber-600 group-hover:translate-x-0.5 transition-transform">›</span>
     </button>
   );
 }

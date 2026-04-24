@@ -41,7 +41,7 @@ export default function CompactHeroBanner({
             )}
             {activeCount > 0 && (
               <span className="inline-flex items-center gap-1">
-                <span>\u00B7</span>
+                <span>·</span>
                 <span className="font-semibold text-white">{activeCount}</span>
                 <span>kursus aktif</span>
               </span>

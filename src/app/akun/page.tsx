@@ -1687,9 +1687,6 @@ export default function AkunPage() {
                     onEnrollClick={openEnrollWizard}
                   />
 
-                  {/* Attention Alert */}
-                  <AttentionAlert count={pendingPaymentRegs.length} />
-
                   {/* Active Classes */}
                   {activeRegs.length > 0 ? (
                     <div>
@@ -1752,15 +1749,12 @@ export default function AkunPage() {
                       </div>
                     </div>
                   )}
-                </div>
 
-                {/* Right Column — Sidebar (desktop only, mobile inline) */}
-                <div className="space-y-5 overflow-hidden">
-                  {/* Pending Payment — sidebar version (compact) */}
+                  {/* Pending Payment — di left column, di bawah Kursus Saya */}
                   {pendingPaymentRegs.length > 0 && (
                     <div>
                       <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-sm font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
+                        <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
                         <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
                           {pendingPaymentRegs.length}
                         </span>
@@ -1778,7 +1772,10 @@ export default function AkunPage() {
                       </div>
                     </div>
                   )}
+                </div>
 
+                {/* Right Column — Sidebar (desktop only, mobile inline) */}
+                <div className="space-y-5 overflow-hidden">
                   {/* Upcoming Schedules */}
 
         {upcomingSchedules.length > 0 && (
