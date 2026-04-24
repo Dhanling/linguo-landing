@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
+import PlacementPicker from '@/components/PlacementPicker';
 import OneSignalProvider from '@/components/OneSignalProvider';
 import NotificationBell from '@/components/NotificationBell';
 import UnifiedCourseCard from '@/components/akun/UnifiedCourseCard';
@@ -519,19 +520,33 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
       {/* Settings */}
       <div className="rounded-2xl bg-white border border-gray-100 shadow-sm divide-y divide-gray-50">
-        {[
+        {([
           { icon: "🎯", label: "Placement Test", href: "/silabus/english/coba" },
           { icon: "🌍", label: "Lihat Silabus", href: "/silabus" },
           { icon: "💬", label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
           { icon: "📖", label: "Blog & Tips Belajar", href: "/blog" },
-        ].map(item => (
-          <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer"
-            className="flex items-center gap-3 px-5 py-4 hover:bg-gray-50 transition-colors">
-            <span className="text-lg w-7 text-center">{item.icon}</span>
-            <span className="text-sm font-medium text-gray-700 flex-1">{item.label}</span>
-            <span className="text-gray-300 text-xs">›</span>
-          </a>
-        ))}
+        ] as Array<{ icon: string; label: string; href?: string; onClick?: () => void }>).map(item => {
+          const inner = (
+            <>
+              <span className="text-lg w-7 text-center">{item.icon}</span>
+              <span className="text-sm font-medium text-gray-700 flex-1">{item.label}</span>
+              <span className="text-gray-300 text-xs">›</span>
+            </>
+          );
+          const cls = "flex items-center gap-3 px-5 py-4 hover:bg-gray-50 transition-colors w-full text-left";
+          if (item.onClick) {
+            return (
+              <button key={item.label} onClick={item.onClick} className={cls}>
+                {inner}
+              </button>
+            );
+          }
+          return (
+            <a key={item.label} href={item.href} target={item.href!.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className={cls}>
+              {inner}
+            </a>
+          );
+        })}
       </div>
 
       {/* Sign out */}
@@ -1045,6 +1060,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
 export default function AkunPage() {
 
   const [user, setUser] = useState<any>(null);
+  const [showPlacementPicker, setShowPlacementPicker] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -1884,9 +1900,9 @@ export default function AkunPage() {
                   <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
                     <h3 className="text-sm font-semibold text-gray-700 mb-3">⚡ Aksi Cepat</h3>
                     <div className="space-y-2">
-                      <a href="/silabus/english/coba" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                      <button onClick={() => setShowPlacementPicker(true)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
                         <span className="text-lg">🎯</span><span className="text-sm font-medium text-gray-700">Placement Test</span>
-                      </a>
+                      </button>
                       <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                         <span className="text-lg">💬</span><span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
                       </a>
@@ -2094,6 +2110,11 @@ export default function AkunPage() {
             </motion.div>
           )}
         </AnimatePresence>
+      {/* Placement Test Language Picker */}
+      <PlacementPicker
+        open={showPlacementPicker}
+        onClose={() => setShowPlacementPicker(false)}
+      />
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
