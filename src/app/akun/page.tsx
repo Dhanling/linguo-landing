@@ -1336,6 +1336,22 @@ export default function AkunPage() {
     (r.payment_status === "Belum Bayar" || !r.payment_status)
   ) || [], [student]);
   const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai","Batal","Non Aktif"].includes(r.status)) || [], [student]);
+
+  // Group activeRegs by product, priority order: Private -> Reguler -> Kids -> Test Prep -> Other
+  const groupedActiveRegs = useMemo(() => {
+    const priority = ["Kelas Private", "Kelas Reguler", "Kelas Kids", "English Test Preparation"];
+    const groups: { product: string; regs: any[] }[] = [];
+    priority.forEach(p => {
+      const regs = activeRegs.filter((r: any) => r.product === p);
+      if (regs.length > 0) groups.push({ product: p, regs });
+    });
+    // Add any product not in priority list at the end
+    const otherRegs = activeRegs.filter((r: any) => !priority.includes(r.product));
+    if (otherRegs.length > 0) groups.push({ product: "Lainnya", regs: otherRegs });
+    return groups;
+  }, [activeRegs]);
+  const showProductGrouping = groupedActiveRegs.length >= 2;
+
   const totalUsedSessions = useMemo(() => activeRegs.reduce((s, r) => s + (r.sessions_used || 0), 0), [activeRegs]);
   const xp = useMemo(() => calculateXP(totalUsedSessions, streak, badges.length), [totalUsedSessions, streak, badges]);
 
@@ -1695,27 +1711,65 @@ export default function AkunPage() {
                         <h3 className="text-base font-semibold text-gray-800">📚 Kursus Saya</h3>
                         <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
                       </div>
-                      <div className="space-y-4">
-                        {activeRegs.map((reg, i) => (
-                          <UnifiedCourseCard
-                            key={reg.id}
-                            reg={reg as any}
-                            index={i}
-                            nextSchedule={upcomingSchedules.find(s => s.registration_id === reg.id)}
-                            userId={user?.id}
-                            onDetail={(r) => setDetailReg(r)}
-                            onBooking={(r) => openBooking(r as any)}
-                            renderPayment={(r, uid) => (
-                              <PaymentCard
-                                registration={r as any}
-                                userId={uid}
-                                onUploadSuccess={() => window.location.reload()}
-                              />
-                            )}
-                            variant="active"
-                          />
-                        ))}
-                      </div>
+                      {showProductGrouping ? (
+                        <div className="space-y-6">
+                          {groupedActiveRegs.map((group) => {
+                            const groupBadge = PRODUCT_BADGE[group.product] || PRODUCT_BADGE["Kelas Private"];
+                            return (
+                              <div key={group.product}>
+                                <h4 className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
+                                  <span>{groupBadge.icon}</span>
+                                  <span>{group.product}</span>
+                                  <span className="text-[10px] font-medium text-gray-400">({group.regs.length})</span>
+                                </h4>
+                                <div className="space-y-4">
+                                  {group.regs.map((reg: any, i: number) => (
+                                    <UnifiedCourseCard
+                                      key={reg.id}
+                                      reg={reg as any}
+                                      index={i}
+                                      nextSchedule={upcomingSchedules.find(s => s.registration_id === reg.id)}
+                                      userId={user?.id}
+                                      onDetail={(r) => setDetailReg(r)}
+                                      onBooking={(r) => openBooking(r as any)}
+                                      renderPayment={(r, uid) => (
+                                        <PaymentCard
+                                          registration={r as any}
+                                          userId={uid}
+                                          onUploadSuccess={() => window.location.reload()}
+                                        />
+                                      )}
+                                      variant="active"
+                                    />
+                                  ))}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="space-y-4">
+                          {activeRegs.map((reg, i) => (
+                            <UnifiedCourseCard
+                              key={reg.id}
+                              reg={reg as any}
+                              index={i}
+                              nextSchedule={upcomingSchedules.find(s => s.registration_id === reg.id)}
+                              userId={user?.id}
+                              onDetail={(r) => setDetailReg(r)}
+                              onBooking={(r) => openBooking(r as any)}
+                              renderPayment={(r, uid) => (
+                                <PaymentCard
+                                  registration={r as any}
+                                  userId={uid}
+                                  onUploadSuccess={() => window.location.reload()}
+                                />
+                              )}
+                              variant="active"
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="rounded-2xl border-2 border-dashed border-gray-200 p-8 text-center">
