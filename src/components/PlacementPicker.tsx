@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
+import { supabase } from "@/lib/supabase-client";
 
 type Category = "populer" | "eropa" | "asia" | "timur-tengah" | "nusantara";
 
@@ -138,8 +139,21 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                     return (
                       <a
                         key={lang.slug}
-                        href={`/silabus/${lang.slug}/coba${studentId ? `?ref=akun&sid=${studentId}` : ""}`}
-                        onClick={() => trackEvent("placement_test_started", { language: lang.name, language_slug: lang.slug })}
+                        href={`/silabus/${lang.slug}/coba`}
+                        onClick={async (e) => {
+                          e.preventDefault();
+                          trackEvent("placement_test_started", { language: lang.name, language_slug: lang.slug });
+                          // Ambil session fresh saat click (bukan saat render)
+                          let sid = studentId;
+                          if (!sid) {
+                            try {
+                              const { data } = await supabase.auth.getSession();
+                              sid = data.session?.user?.id;
+                            } catch {}
+                          }
+                          const url = `/silabus/${lang.slug}/coba${sid ? `?ref=akun&sid=${sid}` : ""}`;
+                          window.location.href = url;
+                        }}
                         className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-[#1A9E9E] bg-[#1A9E9E]/5 hover:bg-[#1A9E9E]/10 transition-colors group"
                       >
                         <span className="text-2xl">{lang.flag}</span>
