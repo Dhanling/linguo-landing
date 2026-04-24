@@ -1327,7 +1327,8 @@ export default function AkunPage() {
     // Design B: "Kursus Aktif" = user udah commit (bayar atau udah upload bukti)
   const activeRegs = useMemo(() => student?.registrations.filter(r =>
     r.status === "Aktif" ||
-    r.status === "Pending"
+    r.status === "Pending" ||
+    (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
   ) || [], [student]);
   // "Menunggu Pembayaran" = user belum upload bukti transfer
   const pendingPaymentRegs = useMemo(() => student?.registrations.filter(r =>
@@ -1767,6 +1768,13 @@ export default function AkunPage() {
                             index={i}
                             userId={user?.id}
                             variant="pending"
+                            renderPayment={(r, uid) => (
+                              <PaymentCard
+                                registration={r as any}
+                                userId={uid}
+                                onUploadSuccess={() => window.location.reload()}
+                              />
+                            )}
                           />
                         ))}
                       </div>
