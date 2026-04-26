@@ -555,32 +555,44 @@ const ARTICLE_CSS = `
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
-  // Track page view to Supabase
+  // ── Track page view (VERBOSE DEBUG MODE) ──
+  // TODO: ganti ke silent fire-and-forget setelah confirmed jalan
   useEffect(() => {
-    if (!post?.slug) return;
-    fetch(SUPABASE_URL + "/rest/v1/blog_page_views", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY },
-      body: JSON.stringify({ post_slug: post.slug, referrer: document.referrer || null, user_agent: navigator.userAgent || null }),
-    }).catch(function() {});
-  }, [post?.slug]);
+    if (!post?.slug) {
+      console.warn("[BlogTracker] skip: no post.slug");
+      return;
+    }
 
-  // ── Track page view ──
-  useEffect(() => {
-    if (!post?.slug) return;
-    fetch(`${SUPABASE_URL}/rest/v1/blog_page_views`, {
+    const endpoint = SUPABASE_URL + "/rest/v1/blog_page_views";
+    const payload = {
+      post_slug: post.slug,
+      referrer: document.referrer || null,
+      user_agent: navigator.userAgent || null,
+    };
+
+    console.log("[BlogTracker] sending →", endpoint, payload);
+
+    fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
+        Authorization: "Bearer " + SUPABASE_KEY,
+        Prefer: "return=minimal",
       },
-      body: JSON.stringify({
-        post_slug: post.slug,
-        referrer: document.referrer || null,
-        user_agent: navigator.userAgent || null,
-      }),
-    }).catch(() => {}); // fire and forget
+      body: JSON.stringify(payload),
+    })
+      .then(async (res) => {
+        if (res.ok) {
+          console.log("[BlogTracker] ✅ inserted", res.status, "for slug:", post.slug);
+        } else {
+          const body = await res.text().catch(() => "(no body)");
+          console.error("[BlogTracker] ❌ failed", res.status, res.statusText, "→", body);
+        }
+      })
+      .catch((err) => {
+        console.error("[BlogTracker] ❌ network error:", err);
+      });
   }, [post?.slug]);
 
   // YouTube hydration
