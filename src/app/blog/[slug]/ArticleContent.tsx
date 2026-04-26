@@ -555,6 +555,24 @@ const ARTICLE_CSS = `
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
+  // ── Track page view ──
+  useEffect(() => {
+    if (!post?.slug) return;
+    fetch(`${SUPABASE_URL}/rest/v1/blog_page_views`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+      body: JSON.stringify({
+        post_slug: post.slug,
+        referrer: document.referrer || null,
+        user_agent: navigator.userAgent || null,
+      }),
+    }).catch(() => {}); // fire and forget
+  }, [post?.slug]);
+
   // YouTube hydration
   useEffect(() => {
     const hydrateYouTube = () => {
