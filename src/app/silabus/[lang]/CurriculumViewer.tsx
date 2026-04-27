@@ -45,8 +45,8 @@ function openFunnel(langName: string, source: string) {
       w.__openFunnel(langName);
     }
   } else {
-    // Homepage fallback with query
-    window.location.href = `/?lang=${encodeURIComponent(langName)}&from=${source}`;
+    // Homepage fallback with query — openFunnel=1 triggers modal auto-open
+    window.location.href = `/?openFunnel=1&lang=${encodeURIComponent(langName)}&from=${source}`;
   }
 }
 
