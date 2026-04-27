@@ -1,464 +1,297 @@
 import type { LanguageCurriculum, SessionPreview } from "../types";
 import { getLanguageBySlug } from "../languages";
 
-// Compact format: [sessionNumber, title, topics?]
+// Compact format: [number, title] or [number, title, topics[]]
 type Raw = [number, string, string[]?];
 
-// Helper for A1 sublevels (preview: TRUE) — sessions with topics array
-const toSessions = (rows: Raw[]): SessionPreview[] =>
-  rows.map(([number, title, topics]) => ({
-    number,
-    title,
-    topics: topics ?? [],
-  }));
+const toSessions = (raw: Raw[]): SessionPreview[] =>
+  raw.map(([number, title, topics]) => ({ number, title, ...(topics ? { topics } : {}) }));
 
-// Helper for A2/B1/B2 sublevels (preview: FALSE) — title only
-const titleOnly = (count: number, prefix: string): SessionPreview[] =>
-  Array.from({ length: count }, (_, i) => ({
-    number: i + 1,
-    title: `${prefix} — Sesi ${i + 1}`,
-  }));
+const titleOnly = (titles: string[]): SessionPreview[] =>
+  titles.map((title, i) => ({ number: i + 1, title }));
 
-const meta = getLanguageBySlug("french")!;
+// ============ A1 — 3 sublevels, FULLY PREVIEWED ============
+const a1_1 = toSessions([
+  [1, "Alphabet Français & Accents", ["26 huruf + diacritics", "é, è, ê, à, ç", "huruf bisu (s, t, d, x)"]],
+  [2, "Voyelles Nasales", ["3 vokal nasal: an/in/on", "pain, vin, bon", "udara lewat hidung"]],
+  [3, "Liaison & Enchaînement", ["les amis [le-zami]", "liaison wajib vs terlarang", "enchaînement"]],
+  [4, "Salutations & Politesse", ["bonjour, bonsoir, salut", "comment allez-vous?", "etiket 'bonjour'"]],
+  [5, "Tu vs Vous", ["formal vs akrab", "tutoyer & vouvoyer", "kapan transisi"]],
+  [6, "Se Présenter", ["je m'appelle...", "enchanté(e)", "je viens d'Indonésie"]],
+  [7, "Verbe ÊTRE", ["je suis, tu es, il/elle est", "identitas, profesi, sifat"]],
+  [8, "Verbe AVOIR", ["j'ai, tu as, il a", "j'ai 25 ans!", "avoir faim, soif, peur"]],
+  [9, "Pronoms Personnels", ["je, tu, il, elle, on", "nous, vous, ils, elles", "on = nous informal"]],
+  [10, "Articles Définis & Indéfinis", ["le, la, l', les", "un, une, des", "elision: l'ami"]],
+  [11, "Genre des Noms", ["maskulin vs feminin", "akhiran -tion, -té (fem)", "akhiran -ment, -age (mask)"]],
+  [12, "Nombres 0–30", ["zéro, un, deux...", "11-16: onze, douze, treize"]],
+  [13, "La Famille", ["père, mère, frère, sœur", "mon/ma/mes, ton/ta/tes"]],
+  [14, "Nombres 31–100", ["soixante-dix (60+10)", "quatre-vingts (4×20)", "vigesimal"]],
+  [15, "Questions de Base", ["qu'est-ce que, qui, où", "3 cara: intonasi/est-ce que/inversion"]],
+  [16, "Révision & Dialogue Culturel", ["la bise (cipika-cipiki Prancis)", "small talk Prancis"]],
+]);
+
+const a1_2 = toSessions([
+  [1, "Jours, Mois, Saisons", ["lundi-dimanche (lowercase)", "janvier-décembre", "4 saisons"]],
+  [2, "L'Heure", ["quelle heure est-il?", "et demie, et quart", "sistem 24 jam Prancis"]],
+  [3, "Verbes en -ER", ["parler, étudier, habiter", "akhiran -e, -es, -e, -ons"]],
+  [4, "Verbes en -IR & -RE", ["finir, choisir, vendre", "3 grup verba", "prendre"]],
+  [5, "Professions", ["professeur, médecin, ingénieur", "je suis + métier (tanpa artikel)"]],
+  [6, "Cuisine Française & Boulangerie", ["baguette UNESCO", "fromages: camembert, brie", "vin & terroir"]],
+  [7, "Au Restaurant", ["je voudrais...", "l'addition s'il vous plaît", "service compris"]],
+  [8, "Articles Partitifs", ["du, de la, de l', des", "je mange du pain", "negasi → de"]],
+  [9, "Verbe ALLER & Lieux", ["je vais, tu vas...", "au, aux", "parc, école, gare"]],
+  [10, "Futur Proche", ["aller + infinitif", "je vais étudier demain"]],
+  [11, "Adjectifs Possessifs", ["mon/ma/mes, notre/nos", "trik: mon ami(e) untuk feminin awal vokal"]],
+  [12, "Démonstratifs", ["ce, cette, ces", "cet (sebelum vokal/h)"]],
+  [13, "Le Corps & La Santé", ["tête, yeux, mains, pieds", "j'ai mal à...", "Sécurité Sociale"]],
+  [14, "Vêtements & Couleurs", ["chemise, pantalon", "rouge, bleu, vert", "porter vs s'habiller"]],
+  [15, "Verbes Irréguliers Fréquents", ["faire, prendre, venir", "voir, savoir, pouvoir, vouloir"]],
+  [16, "Révision & Mini-Dialogues", ["di café", "di marché", "cultural: jam makan Prancis"]],
+]);
+
+const a1_3 = toSessions([
+  [1, "Ma Maison", ["salon, cuisine, chambre", "il y a (ada)", "préposisi: dans, sur, sous"]],
+  [2, "La Ville", ["rue, avenue, place", "banque, hôpital, musée"]],
+  [3, "Directions", ["à droite, à gauche", "tout droit", "comment aller à...?"]],
+  [4, "Transport", ["voiture, bus, métro, train", "TGV (kereta cepat)", "billet aller-retour"]],
+  [5, "Le Temps Qu'il Fait", ["il fait beau/froid/chaud", "il pleut, il neige", "vs Indonesia tropis"]],
+  [6, "Loisirs & Hobbies", ["j'aime + verb/noun", "moi aussi, moi non plus"]],
+  [7, "Les Sports", ["football, tennis, natation", "Tour de France, Roland-Garros"]],
+  [8, "Musique & Cinéma Français", ["Piaf, Stromae, Indila", "chanson française, rap"]],
+  [9, "Verbes Pronominaux", ["se lever, se doucher", "me, te, se, nous, vous, se"]],
+  [10, "Ma Routine Quotidienne", ["le matin, l'après-midi", "d'abord, puis, ensuite"]],
+  [11, "Comparaisons", ["plus/moins + adj + que", "aussi + adj + que", "meilleur, pire"]],
+  [12, "Superlatifs", ["le plus + adj + de", "le moins + adj + de"]],
+  [13, "Quantités", ["beaucoup, peu, assez, trop", "un kilo, une douzaine"]],
+  [14, "Impératifs de Base", ["parle, mange (tu)", "parlez, mangez (vous)", "parlons (nous)"]],
+  [15, "Pronoms COD", ["le, la, les", "je le vois, je la connais"]],
+  [16, "Le Passé Composé", ["avoir + participe passé", "être: DR & MRS VANDERTRAMP", "accord avec être"]],
+]);
+
+// ============ A2 — 4 sublevels, preview-locked ============
+const a2_1 = titleOnly([
+  "Passé Composé — Verbes Réguliers", "Passé Composé — Verbes Irréguliers",
+  "Marqueurs Temporels du Passé", "Comparatifs Avancés",
+  "Superlatifs Absolus", "Modal: Devoir (Conseil & Obligation)",
+  "Il Faut + Infinitif", "Révision des Articles",
+  "Décrire les Personnes", "Ma Ville Natale",
+  "Vocabulaire de Voyage", "À l'Aéroport",
+  "Check-in à l'Hôtel", "Restaurant Avancé",
+  "Demander de l'Aide dans la Rue", "Révision: Jeu de Rôle Voyage",
+]);
+
+const a2_2 = titleOnly([
+  "Imparfait: Introduction", "Imparfait vs Passé Composé",
+  "Narration au Passé", "Futur Simple",
+  "Futur: Prédictions", "Connecteurs Discursifs",
+  "Filler Words: euh, bah, ben, alors, voilà", "Conversation Naturelle",
+  "Professions Avancées", "Entretien d'Embauche Basique",
+  "Vocabulaire du Lieu de Travail", "Écrire des E-mails Formels",
+  "Décrire Votre Travail", "Small Talk à la Française",
+  "Parler d'Expériences", "Révision",
+]);
+
+const a2_3 = titleOnly([
+  "Être en Train de + Infinitif", "Passé vs Imparfait vs Continu",
+  "Pendant Que / Quand / En + Gérondif", "Pronoms Relatifs (qui, que, où)",
+  "Adverbes en -ment", "Donc / Parce que / Cependant",
+  "Exprimer des Opinions", "Être d'Accord / Pas d'Accord",
+  "Structure d'un Récit", "Critiquer Livres et Films",
+  "Santé et Maladie", "Chez le Médecin",
+  "Sports et Forme", "Musique et Arts",
+  "Vocabulaire Technologique", "Révision & Débat d'Opinion",
+]);
+
+const a2_4 = titleOnly([
+  "Avoir l'Habitude de", "Autrefois vs Maintenant",
+  "Pronoms Réfléchis Avancés", "Aussi / Non Plus",
+  "Trop / Assez", "Quantificateurs: Quelques, Peu",
+  "Pronoms Indéfinis: Quelqu'un, Personne", "Exprimer des Préférences",
+  "Faire des Suggestions", "Offrir et Accepter de l'Aide",
+  "Donner des Instructions", "Décrire des Processus",
+  "Festivals: 14 Juillet, Fête de la Musique", "Culture Gastronomique",
+  "Culture Indonésienne vs Française", "Révision & Échange Culturel",
+]);
+
+// ============ B1 — 5 sublevels, preview-locked ============
+const b1_1 = titleOnly([
+  "Plus-que-parfait", "Discours Indirect: Affirmations",
+  "Discours Indirect: Questions", "Voix Passive: Présent et Passé",
+  "Marqueurs Discursifs: en fait, du coup, quoi, genre", "Conversation Naturelle Avancée",
+  "Verbes Pronominaux Avancés", "Expressions Idiomatiques: Temps & Argent",
+  "Registre Formel vs Informel", "Écrire des Critiques",
+  "Description Avancée", "Différences Culturelles Françaises",
+  "Parler de Films et Livres", "Cinéma de Truffaut",
+  "Discussion Littéraire Légère", "Révision",
+]);
+
+const b1_2 = titleOnly([
+  "Subjonctif — Introduction", "Subjonctif: Désirs & Émotions",
+  "Subjonctif: Doute & Négation", "Il Faut Que + Subjonctif",
+  "Connecteurs: Bien Que, Malgré, Cependant", "Vocabulaire de l'Actualité",
+  "Discussion Politique Légère", "Sujets Mondiaux",
+  "Débat Environnemental", "Impact de la Technologie",
+  "Discours sur les Réseaux Sociaux", "Discussions de Carrière",
+  "Compétences d'Entretien", "Négociation de Base",
+  "Présenter des Idées", "Révision",
+]);
+
+const b1_3 = titleOnly([
+  "Subjonctif Avancé: Présent", "Subjonctif Passé",
+  "Pour Que + Subjonctif", "Subjonctif dans Propositions Relatives",
+  "Connecteurs Avancés", "Exprimer Certitude & Doute",
+  "Écriture Académique de Base", "Structure d'une Dissertation",
+  "Discussion Littéraire: Hugo, Camus", "Art et Culture Française",
+  "Sujets Historiques: Révolution, Guerres", "Science et Découverte",
+  "Philosophie Française Light", "Français des Affaires Basique",
+  "Réunions et Décisions", "Révision",
+]);
+
+const b1_4 = titleOnly([
+  "Gérondif vs Participe Présent", "Verbes avec Préposition Avancés",
+  "Adjectifs Composés", "Mots Tronqués (resto, ciné)",
+  "Mise en Relief: C'est... Que", "Phrases Clivées",
+  "Écriture de Voyage", "Blogs et Réseaux Sociaux",
+  "Parler en Public — Base", "Étiquette du Débat",
+  "Essais Personnels", "Description Créative",
+  "Analyse de Cinéma et TV", "Musique et Poésie Française",
+  "Étiquette Globale Française", "Révision",
+]);
+
+const b1_5 = titleOnly([
+  "Discours Indirect Avancé", "Si Seulement / J'Aimerais Que",
+  "Situations Hypothétiques", "Temps Mixtes",
+  "Voix Passive Avancée", "Faire / Laisser + Infinitif",
+  "Festivals: Cannes, Festival d'Avignon", "Tour de France, Roland-Garros",
+  "Vocabulaire de Résolution de Problèmes", "Prise de Décision",
+  "Gestion de Crise", "Leadership de Base",
+  "Communication d'Équipe", "Feedback et Critique",
+  "Gestion du Temps", "Révision & Simulation d'Affaires",
+]);
+
+// ============ B2 — 7 sublevels, preview-locked ============
+const b2_1 = titleOnly([
+  "Subjonctif Imparfait & Plus-que-parfait", "Conditionnel Présent",
+  "Conditionnel Passé", "Phrases Hypothétiques: Si Types 1, 2, 3",
+  "Structures Emphatiques", "Collocations Idiomatiques",
+  "Expressions Idiomatiques", "Métaphore & Comparaison",
+  "Ton & Registre", "Techniques de Débat",
+  "Écriture Persuasive", "Correspondance Formelle",
+  "Présentations Académiques", "Analyse Critique",
+  "Résumé & Paraphrase", "Révision",
+]);
+
+const b2_2 = titleOnly([
+  "Communication d'Entreprise", "Rédaction de Rapports",
+  "Vocabulaire de Gestion de Projet", "Langage du Leadership",
+  "Français Financier", "Vocabulaire Marketing",
+  "RH & Recrutement", "Concepts Légaux de Base",
+  "Industrie Tech & IT", "Relations Clients",
+  "Étiquette des Affaires Internationale", "Communication Interculturelle",
+  "Faire des Présentations", "Animer des Réunions",
+  "Propositions Écrites", "Révision",
+]);
+
+const b2_3 = titleOnly([
+  "Fluidité Idiomatique", "Nuances Culturelles",
+  "Humour & Sarcasme", "Argot & Langue Familière",
+  "Variantes Régionales: France vs Québec vs Belgique", "Stratégies d'Écoute Avancées",
+  "Compréhension de la Parole Rapide", "Accents: Parisien, Québécois, Belge, Africain",
+  "Discours Académique", "Analyse Journalistique",
+  "Littérature: Hugo, Camus, Sartre", "Parler en Public Avancé",
+  "Maîtrise Narrative", "Débat & Argumentation",
+  "Marque Personnelle en Français", "Révision",
+]);
+
+const b2_4 = titleOnly([
+  "Hugo & Le Romantisme", "Balzac & Le Réalisme",
+  "Camus, Sartre & l'Existentialisme", "Proust & La Recherche",
+  "Cinéma: Truffaut & La Nouvelle Vague", "Godard, Resnais, Varda",
+  "Cinéma Contemporain: Audiard, Sciamma, Ozon", "Cinéma d'Animation: Ghibli vs Astérix",
+  "Peinture: Impressionnisme (Monet, Renoir)", "Peinture: Cubisme (Picasso, Braque)",
+  "Poésie: Baudelaire, Rimbaud, Verlaine", "Théâtre: Molière, Racine",
+  "Bande Dessinée: Tintin, Astérix", "Chanson: Brel, Brassens, Aznavour",
+  "Critique de Films", "Révision",
+]);
+
+const b2_5 = titleOnly([
+  "Filler Words Natifs: tu vois, en gros, finalement", "Atténuation & Adoucir Opinions",
+  "Stratégies de Débat Natif", "Techniques Persuasives Avancées",
+  "Langage Diplomatique", "Résolution de Conflits Interculturels",
+  "Rédaction de Politiques", "Affaires Gouvernementales",
+  "Parler en Public pour Leaders", "Style TED Talk en Français",
+  "Discours Motivationnel", "Présence Exécutive",
+  "Communication de Crise", "Entretiens avec les Médias",
+  "Conférences de Presse", "Révision",
+]);
+
+const b2_6 = titleOnly([
+  "Variantes Régionales — France Métropolitaine", "Français du Sud vs Nord",
+  "Québécois: Particularités & Vocabulaire", "Joual & Argot Québécois",
+  "Belgique: Belgicismes (septante, nonante)", "Suisse Romande",
+  "Afrique Francophone: Sénégal, Côte d'Ivoire", "Maghreb: Maroc, Algérie, Tunisie",
+  "Créoles Francophones: Haïti, Antilles", "Différences de Vocabulaire par Pays",
+  "Verlan: Argot Inversé", "Argot Jeunesse Francophone",
+  "Comprendre Accents Divers", "Adapter au Contexte Régional",
+  "Culture par Région Francophone", "Révision",
+]);
+
+const b2_7 = titleOnly([
+  "French Mastery: Registre Formel Avancé", "Pragmatique: Implicatures & Politesse",
+  "Maîtrise du Discours Académique", "Analyse Littéraire Profonde",
+  "Débat Avancé: Structure & Réfutation", "Écriture Créative: Nouvelle",
+  "Français pour Professionnels — Santé", "Français pour Professionnels — Tech",
+  "Français pour Professionnels — Diplomatie", "Communication Cross-Culturelle Maîtrisée",
+  "Traduction Avancée Français-Indonésien", "Interprétation Consécutive",
+  "Capstone: Dissertation Longue en Français", "Capstone: Présentation Professionnelle 15 min",
+  "Capstone: Table Ronde Francophone", "Examen Final & Certification Linguo",
+]);
 
 const curriculum: LanguageCurriculum = {
-  meta,
+  meta: getLanguageBySlug("french")!,
+  overview: "Program 304 sesi yang mengantar kamu dari benar-benar nol sampai percakapan near-native dalam bahasa Prancis. Struktur Linguo: A1 (3 chapter), A2 (4 chapter), B1 (5 chapter), B2 (7 chapter). Setiap level CEFR-aligned dengan penekanan pada vokal nasal, liaison, modus subjonctif (milestone B1), dan variasi francophone dari Paris hingga Québec & Afrika.",
   levels: [
     {
-      code: "A1",
-      title: "A1 — Débutant (Pemula)",
-      description:
-        "Fondasi bahasa Prancis: alfabet dengan accent (é, è, ê, à, ç), 3 vokal nasal khas Prancis, liaison & enchaînement, perbedaan tu vs vous, dan struktur kalimat dasar. Cocok untuk yang belum pernah belajar Prancis sama sekali.",
+      code: "A1", name: "Fondations du Français",
+      description: "Fondasi bahasa Prancis: alfabet dengan accent (é, è, ê, à, ç), 3 vokal nasal, liaison & enchaînement, tu vs vous, dan struktur kalimat dasar.",
       sublevels: [
-        {
-          code: "A1.1",
-          title: "Fondations du Français (Fondasi Bahasa Prancis)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Bienvenue & Alphabet Français (Selamat Datang & Alfabet Prancis)", [
-              "Pengenalan bahasa Prancis: 320+ juta penutur di 5 benua",
-              "Alfabet Prancis: 26 huruf + diacritics",
-              "Accents: é (aigu), è (grave), ê (circonflexe), à, ç",
-              "Sejarah: la francophonie & posisi Prancis dalam diplomasi",
-            ]],
-            [2, "Les Sons Nasaux (Bunyi Nasal — Ciri Khas Prancis)", [
-              "Tiga vokal nasal: an/en, in/un, on",
-              "Latihan: pain, vin, bon, banc, mon",
-              "Perbedaan vokal nasal vs vokal biasa",
-              "Tip: udara keluar lewat hidung, bukan mulut",
-            ]],
-            [3, "Liaison & Enchaînement (Liaison & Penyambungan)", [
-              "Liaison: konsonan akhir kata terhubung ke vokal awal kata berikut",
-              "Contoh: les amis [le-zami], un homme [œ̃-nɔm]",
-              "Liaison wajib vs opsional vs terlarang",
-              "Enchaînement: konsonan terucap pindah suku kata berikutnya",
-            ]],
-            [4, "Salutations & Politesse (Sapaan & Kesopanan)", [
-              "Bonjour, bonsoir, salut, au revoir",
-              "Comment allez-vous? vs Comment ça va? — formal/informal",
-              "Réponses: bien, très bien, pas mal, comme ci comme ça",
-              "Etiket Prancis: pentingnya 'bonjour' sebelum apapun",
-            ]],
-            [5, "Tu vs Vous (Akrab vs Formal)", [
-              "Tu: keluarga, teman, anak, rekan dekat",
-              "Vous: orang asing, atasan, situasi formal, jamak",
-              "Tutoyer & vouvoyer — verba khusus untuk transisi",
-              "Cultural: kapan minta izin 'on peut se tutoyer?'",
-            ]],
-            [6, "Présentations Personnelles (Perkenalan Diri)", [
-              "Je m'appelle... / Mon nom est... / Je suis...",
-              "Comment tu t'appelles? / Comment vous appelez-vous?",
-              "Enchanté(e) — gender agreement bahkan di sini",
-              "Je viens d'Indonésie / Je suis indonésien(ne)",
-            ]],
-            [7, "Verbe ÊTRE (Kata Kerja ÊTRE/Menjadi)", [
-              "Konjugasi: je suis, tu es, il/elle est, nous sommes, vous êtes, ils/elles sont",
-              "Penggunaan: identitas, profesi, kebangsaan, sifat",
-              "Negasi: ne... pas (Je ne suis pas...)",
-              "Pengantar konsep verba paling penting bahasa Prancis",
-            ]],
-            [8, "Verbe AVOIR (Kata Kerja AVOIR/Memiliki)", [
-              "Konjugasi: j'ai, tu as, il/elle a, nous avons, vous avez, ils/elles ont",
-              "Penggunaan: kepemilikan, usia (J'ai 25 ans!)",
-              "Avoir faim, soif, chaud, froid, peur, sommeil",
-              "Avoir vs Être: 2 verba paling penting Prancis",
-            ]],
-            [9, "Pronoms Personnels (Kata Ganti Orang)", [
-              "Je, tu, il, elle, on",
-              "Nous, vous, ils, elles",
-              "On = nous (informal) — sangat sering dipakai",
-              "Pronoun gender wajib: il/elle untuk benda juga",
-            ]],
-            [10, "Articles Définis & Indéfinis (Artikel Definit & Indefinit)", [
-              "Définis: le, la, l', les",
-              "Indéfinis: un, une, des",
-              "Aturan elision: le ami → l'ami",
-              "Berbeda dari Inggris: artikel hampir selalu wajib",
-            ]],
-            [11, "Genre des Noms (Gender Kata Benda)", [
-              "Maskulin vs feminin — tidak selalu intuitif",
-              "Akhiran feminin umum: -tion, -ion, -té, -ée, -ence",
-              "Akhiran maskulin umum: -ment, -isme, -age, -eau",
-              "Pengecualian penting: le problème, la maison",
-            ]],
-            [12, "Nombres 0–30 (Angka 0–30)", [
-              "Zéro, un, deux, trois... trente",
-              "Pola unik 11-16: onze, douze, treize, quatorze, quinze, seize",
-              "21, 31: vingt-et-un, trente-et-un (dengan 'et')",
-              "Latihan: nomor telepon, usia, tanggal lahir",
-            ]],
-            [13, "La Famille (Keluarga)", [
-              "Père, mère, frère, sœur, fils, fille",
-              "Grand-père, grand-mère, oncle, tante, cousin(e)",
-              "Possessif: mon/ma/mes, ton/ta/tes, son/sa/ses",
-              "J'ai deux frères / Ma mère s'appelle...",
-            ]],
-            [14, "Nombres 31–100 & au-delà (Angka 31–100+)", [
-              "Trente, quarante, cinquante, soixante",
-              "Pola unik 70: soixante-dix (60+10)",
-              "Pola unik 80: quatre-vingts (4×20) — sistem vigesimal",
-              "Pola unik 90: quatre-vingt-dix (4×20+10)",
-            ]],
-            [15, "Questions de Base (Pertanyaan Dasar)", [
-              "Qu'est-ce que, qui, où, quand, comment, pourquoi, combien",
-              "Tiga cara bertanya: intonasi, est-ce que, inversion",
-              "Tu habites où? / Où est-ce que tu habites? / Où habites-tu?",
-              "Register: intonasi (informal) vs inversion (formal)",
-            ]],
-            [16, "Révision & Dialogue Culturel (Review & Dialog Budaya)", [
-              "Review komprehensif sesi 1–15",
-              "Dialog: bertemu orang Prancis di Indonesia",
-              "Cultural anchor: la bise (cipika-cipiki khas Prancis)",
-              "Self-assessment & persiapan A1.2",
-            ]],
-          ]),
-        },
-        {
-          code: "A1.2",
-          title: "La Vie Quotidienne (Kehidupan Sehari-hari)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Jours, Mois, Saisons (Hari, Bulan, Musim)", [
-              "Lundi, mardi, mercredi... dimanche (lowercase!)",
-              "Janvier, février... décembre",
-              "Quatre saisons: printemps, été, automne, hiver",
-              "Quel jour sommes-nous? / Nous sommes le 25 mars",
-            ]],
-            [2, "L'Heure (Waktu/Jam)", [
-              "Quelle heure est-il? — Il est une heure / Il est deux heures",
-              "Et demie, et quart, moins le quart",
-              "Du matin, de l'après-midi, du soir",
-              "Sistem 24 jam (umum di Prancis): quatorze heures = 2 PM",
-            ]],
-            [3, "Verbes en -ER (Kata Kerja Beraturan -ER)", [
-              "Pola konjugasi -ER: parler, étudier, travailler, habiter",
-              "Akhiran: -e, -es, -e, -ons, -ez, -ent",
-              "Verba sehari-hari: aimer, chanter, danser, écouter, regarder",
-              "Latihan: J'étudie le français tous les jours",
-            ]],
-            [4, "Verbes en -IR & -RE (Kata Kerja Beraturan -IR & -RE)", [
-              "Pola -IR: finir, choisir, réussir (akhiran -is, -is, -it, -issons, -issez, -issent)",
-              "Pola -RE: vendre, attendre, descendre (akhiran -s, -s, --, -ons, -ez, -ent)",
-              "Verba penting: prendre (irreguler tapi sering dipakai)",
-              "Tiga grup verba — pengantar klasifikasi",
-            ]],
-            [5, "Professions (Profesi)", [
-              "Professeur, médecin, ingénieur, avocat, infirmier(ière)",
-              "Gender: un boulanger / une boulangère",
-              "Tu fais quoi dans la vie? / Quel est votre métier?",
-              "Je travaille comme... / Je suis + profession (tanpa artikel)",
-            ]],
-            [6, "Cuisine Française & Boulangerie (Kuliner Prancis & Boulangerie)", [
-              "Pain, baguette, croissant, pain au chocolat, brioche",
-              "Fromages: camembert, brie, roquefort, comté",
-              "Vin: rouge, blanc, rosé — terroir & régions",
-              "Cultural: la baguette = warisan UNESCO 2022",
-            ]],
-            [7, "Au Restaurant (Di Restoran)", [
-              "Je voudrais... / J'aimerais... / Pour moi...",
-              "La carte, s'il vous plaît / L'addition, s'il vous plaît",
-              "Qu'est-ce que vous recommandez? / Le plat du jour?",
-              "Etiket: pourboire (tip) sudah termasuk service",
-            ]],
-            [8, "Articles Partitifs (Artikel Partitif)", [
-              "Du, de la, de l', des — untuk kuantitas tak tertentu",
-              "Je mange du pain / Je bois de l'eau / Je veux des frites",
-              "Negasi → de: Je ne mange pas de pain",
-              "Khas Prancis: tidak ada padanan langsung di Inggris/Indonesia",
-            ]],
-            [9, "Verbe ALLER & Lieux (Kata Kerja ALLER & Tempat)", [
-              "Konjugasi ALLER: vais, vas, va, allons, allez, vont (irreguler!)",
-              "Aller à + tempat: Je vais au supermarché",
-              "Kontraksi: à + le = au, à + les = aux",
-              "Tempat umum: parc, école, bureau, magasin, gare",
-            ]],
-            [10, "Futur Proche (Future Tense Dekat)", [
-              "Struktur: aller + infinitif",
-              "Je vais étudier demain / Nous allons voyager",
-              "Ekspresi waktu masa depan: demain, la semaine prochaine",
-              "Latihan: rencana akhir pekan",
-            ]],
-            [11, "Adjectifs Possessifs (Kata Sifat Possesif)", [
-              "Mon/ma/mes, ton/ta/tes, son/sa/ses",
-              "Notre/nos, votre/vos, leur/leurs",
-              "Aturan: mengikuti gender & jumlah benda yang dimiliki",
-              "Trik: mon ami(e) — pakai 'mon' bahkan untuk feminin yang awal vokal",
-            ]],
-            [12, "Démonstratifs: Ce, Cette, Ces (Demonstratif)", [
-              "Ce (mask) / Cette (fem) / Ces (jamak)",
-              "Cet sebelum vokal/h muet: cet ami, cet hôtel",
-              "Penggunaan: ce livre, cette maison, ces enfants",
-              "Tidak ada 'this/that' — tergantung konteks atau pakai -ci/-là",
-            ]],
-            [13, "Le Corps & La Santé (Tubuh & Kesehatan)", [
-              "Tête, yeux, bouche, nez, oreilles, mains, pieds",
-              "J'ai mal à la tête / J'ai mal au ventre",
-              "Chez le médecin / À la pharmacie",
-              "Sécurité Sociale — sistem kesehatan Prancis (cultural)",
-            ]],
-            [14, "Les Vêtements (Pakaian)", [
-              "Chemise, pantalon, jupe, chaussures, chapeau",
-              "Porter (mengenakan) vs s'habiller (berpakaian)",
-              "Couleurs: rouge, bleu, vert, jaune, noir, blanc",
-              "Faire les courses: Combien ça coûte? / Quelle taille?",
-            ]],
-            [15, "Verbes Irréguliers Fréquents (Verba Irreguler Sering)", [
-              "Faire (membuat/melakukan): fais, fais, fait, faisons, faites, font",
-              "Prendre (mengambil): prends, prends, prend, prenons, prenez, prennent",
-              "Venir (datang): viens, viens, vient, venons, venez, viennent",
-              "Voir, savoir, pouvoir, vouloir — preview B1",
-            ]],
-            [16, "Révision & Mini-Dialogues (Review & Dialog Mini)", [
-              "Review semua materi A1.2",
-              "Roleplay: di café, di marché, di pharmacie",
-              "Cultural: jam makan di Prancis vs Indonesia",
-              "Persiapan A1.3 — ekspansi verba & vokabuler",
-            ]],
-          ]),
-        },
-        {
-          code: "A1.3",
-          title: "Mon Univers (Duniaku)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Ma Maison (Rumahku)", [
-              "Pièces: salon, cuisine, chambre, salle de bain, salle à manger",
-              "Meubles: table, chaise, canapé, lit, armoire",
-              "Il y a (ada) — invariable: Il y a une table / Il y a trois chaises",
-              "Préposisi tempat: dans, sur, sous, à côté de, devant, derrière",
-            ]],
-            [2, "La Ville (Kota)", [
-              "Rue, avenue, boulevard, place, carrefour",
-              "Bâtiments: banque, hôpital, église, musée, bibliothèque",
-              "Directions: à droite, à gauche, tout droit",
-              "Comment aller à...? / Où se trouve...?",
-            ]],
-            [3, "Transport (Transportasi)", [
-              "Voiture, bus, métro, train, taxi, vélo, avion",
-              "Prendre le bus, en voiture, à pied, à vélo",
-              "Acheter un billet: aller simple, aller-retour",
-              "À la gare: quai, voie, retard, TGV (kereta cepat Prancis)",
-            ]],
-            [4, "Le Temps Qu'il Fait (Cuaca)", [
-              "Il fait beau, il fait froid, il fait chaud, il fait du vent",
-              "Il pleut, il neige, il y a du brouillard",
-              "Quel temps fait-il? / Comment est la météo?",
-              "Saisons di Prancis vs tropis Indonesia (cultural awareness)",
-            ]],
-            [5, "Loisirs & Hobbies (Waktu Luang & Hobi)", [
-              "J'aime + infinitif: J'aime lire",
-              "J'aime + sustantivo: J'aime le cinéma / J'aime les livres",
-              "Moi aussi, moi non plus — agreement",
-              "Hobbies: sport, musique, lecture, voyage, cuisine",
-            ]],
-            [6, "Les Sports (Olahraga)", [
-              "Football, basket, tennis, natation, cyclisme",
-              "Jouer à (sport ball) vs Faire de (other sports)",
-              "Équipes & événements: Tour de France, Roland-Garros, PSG",
-              "Cultural: l'esprit sportif & la fierté nationale",
-            ]],
-            [7, "Musique & Cinéma Français (Musik & Film Prancis)", [
-              "Chanteurs: Édith Piaf, Stromae, Aya Nakamura, Indila",
-              "Réalisateurs: Truffaut, Godard, Audiard, Sciamma",
-              "Genre: chanson française, rap français, électro",
-              "Vocab: chanson, film, album, concert",
-            ]],
-            [8, "Verbes Pronominaux (Verba Refleksif)", [
-              "Pengantar reflexive pronouns: me, te, se, nous, vous, se",
-              "Routine quotidienne: se lever, se doucher, s'habiller, se coucher",
-              "Posisi pronoun: sebelum verba terkonjugasi",
-              "Je me lève à 7 heures / Il se couche tard",
-            ]],
-            [9, "Ma Routine Quotidienne (Rutinitas Harianku)", [
-              "Le matin, l'après-midi, le soir",
-              "Connecteurs: d'abord, puis, ensuite, enfin",
-              "Fréquence: toujours, souvent, parfois, jamais",
-              "Cerita rutinitas pribadi (5 menit speaking)",
-            ]],
-            [10, "Comparaisons (Perbandingan)", [
-              "Plus + adj + que / Moins + adj + que",
-              "Aussi + adj + que (sama dengan)",
-              "Meilleur, pire — bentuk irreguler",
-              "Paris est plus grand que Yakarta — practice",
-            ]],
-            [11, "Superlatifs (Superlatif)", [
-              "Le/la plus + adj + de: le plus grand de la classe",
-              "Le/la moins + adj + de",
-              "Comparaison antar kota/negara francophone",
-              "Cultural: 'le meilleur fromage de France'",
-            ]],
-            [12, "Quantités & Mesures (Kuantitas & Ukuran)", [
-              "Beaucoup, peu, assez, trop",
-              "Un kilo, un demi-kilo, un litre, une douzaine",
-              "Numerals besar: cent, mille, un million",
-              "Mata uang: euro (€) — francophone Eropa & Afrika",
-            ]],
-            [13, "Impératifs de Base (Imperatif Dasar)", [
-              "Tu: parle, mange, finis, prends",
-              "Vous: parlez, mangez, finissez, prenez",
-              "Nous (let's): parlons, mangeons",
-              "Konteks: instruksi, resep, perintah",
-            ]],
-            [14, "Pronoms COD (Pronoun Objek Langsung)", [
-              "Le, la, les — menggantikan objek langsung",
-              "Posisi: sebelum verba terkonjugasi",
-              "Je le vois / Je la connais / Je les achète",
-              "Latihan transformasi kalimat",
-            ]],
-            [15, "Le Passé Composé (Past Tense Komposit)", [
-              "Auxiliaire AVOIR: j'ai, tu as, il a + participe passé",
-              "Auxiliaire ÊTRE: 14 verba (DR & MRS VANDERTRAMP)",
-              "Participe passé: -é (-er), -i (-ir), -u (-re)",
-              "J'ai mangé / Je suis allé(e) — accord avec être",
-            ]],
-            [16, "Révision A1 Complète (Review A1 Lengkap)", [
-              "Review semua A1.1, A1.2, A1.3 (48 sesi)",
-              "Mini-présentation 3 menit: 'Ma vie, ma famille, mes loisirs'",
-              "Cultural capstone: la Francophonie & Journée Internationale",
-              "Persiapan masuk A2 — ekspektasi level intermédiaire",
-            ]],
-          ]),
-        },
+        { code: "A1.1", name: "Premiers Pas",          sessions: a1_1, preview: true },
+        { code: "A1.2", name: "Vie Quotidienne",       sessions: a1_2, preview: true },
+        { code: "A1.3", name: "Mon Univers",           sessions: a1_3, preview: true },
       ],
     },
     {
-      code: "A2",
-      title: "A2 — Élémentaire (Dasar Lanjutan)",
-      description:
-        "Memperluas kemampuan komunikasi sehari-hari: bercerita tentang masa lalu (passé composé vs imparfait), menjelajah gastronomi Prancis, dan mulai menguasai filler words dasar (euh, bah, alors) agar percakapan kedengaran natural.",
+      code: "A2", name: "Pré-Intermédiaire",
+      description: "Bercerita masa lalu (passé composé vs imparfait), gastronomi Prancis, mulai filler words natural (euh, bah, alors, voilà).",
       sublevels: [
-        {
-          code: "A2.1",
-          title: "Routines & Loisirs (Rutinitas & Waktu Luang)",
-          preview: false,
-          sessions: titleOnly(16, "Routines & Loisirs"),
-        },
-        {
-          code: "A2.2",
-          title: "Gastronomie & Culture Française (Gastronomi & Budaya Prancis)",
-          preview: false,
-          sessions: titleOnly(16, "Gastronomie & Culture Française"),
-        },
-        {
-          code: "A2.3",
-          title: "Voyages & Transports (Perjalanan & Transportasi)",
-          preview: false,
-          sessions: titleOnly(16, "Voyages & Transports"),
-        },
-        {
-          code: "A2.4",
-          title: "Imparfait & Passé Composé (Bentuk Lampau Naratif)",
-          preview: false,
-          sessions: titleOnly(16, "Imparfait & Passé Composé"),
-        },
+        { code: "A2.1", name: "Au-delà des Bases",        sessions: a2_1, preview: false },
+        { code: "A2.2", name: "Travail & Conversation",   sessions: a2_2, preview: false },
+        { code: "A2.3", name: "Expression Personnelle",   sessions: a2_3, preview: false },
+        { code: "A2.4", name: "Fondements Culturels",     sessions: a2_4, preview: false },
       ],
     },
     {
-      code: "B1",
-      title: "B1 — Intermédiaire (Menengah)",
-      description:
-        "Mencapai kemandirian berbahasa: menguasai modus subjonctif (milestone besar bahasa Prancis), berdiskusi tentang isu sosial-budaya, dan menggunakan discourse markers (en fait, du coup, quoi) seperti penutur asli.",
+      code: "B1", name: "Intermédiaire",
+      description: "Modus subjonctif (milestone besar Prancis), discourse markers seperti penutur asli (en fait, du coup, quoi), diskusi sosial-budaya.",
       sublevels: [
-        {
-          code: "B1.1",
-          title: "Santé & Bien-être (Kesehatan & Kesejahteraan)",
-          preview: false,
-          sessions: titleOnly(16, "Santé & Bien-être"),
-        },
-        {
-          code: "B1.2",
-          title: "Travail & Études (Pekerjaan & Studi)",
-          preview: false,
-          sessions: titleOnly(16, "Travail & Études"),
-        },
-        {
-          code: "B1.3",
-          title: "Subjonctif: Introduction (Pengantar Modus Subjonctif)",
-          preview: false,
-          sessions: titleOnly(16, "Subjonctif: Introduction"),
-        },
-        {
-          code: "B1.4",
-          title: "Médias & Technologie (Media & Teknologi)",
-          preview: false,
-          sessions: titleOnly(16, "Médias & Technologie"),
-        },
-        {
-          code: "B1.5",
-          title: "Traditions & Festivals (Tradisi & Festival)",
-          preview: false,
-          sessions: titleOnly(16, "Traditions & Festivals"),
-        },
+        { code: "B1.1", name: "Fluidité Conversationnelle", sessions: b1_1, preview: false },
+        { code: "B1.2", name: "Subjonctif & Société",       sessions: b1_2, preview: false },
+        { code: "B1.3", name: "Sujets Complexes",           sessions: b1_3, preview: false },
+        { code: "B1.4", name: "Expression Créative",        sessions: b1_4, preview: false },
+        { code: "B1.5", name: "Pont Professionnel",         sessions: b1_5, preview: false },
       ],
     },
     {
-      code: "B2",
-      title: "B2 — Intermédiaire Avancé (Menengah Atas)",
-      description:
-        "Berkomunikasi dengan kelancaran dan presisi: subjonctif lanjutan, debat ala Prancis, analisis sastra & sinema (Hugo, Camus, Nouvelle Vague), serta memahami variasi regional dari Paris hingga Québec dan Afrika francophone.",
+      code: "B2", name: "Intermédiaire Avancé",
+      description: "Subjonctif lanjutan, debat ala Prancis, sastra (Hugo, Camus, Proust), sinema (Nouvelle Vague hingga Sciamma), variasi francophone Paris-Québec-Afrika.",
       sublevels: [
-        {
-          code: "B2.1",
-          title: "Subjonctif Avancé & Conditionnel (Subjonctif Lanjutan & Kondisional)",
-          preview: false,
-          sessions: titleOnly(16, "Subjonctif Avancé & Conditionnel"),
-        },
-        {
-          code: "B2.2",
-          title: "Monde Professionnel (Dunia Profesional)",
-          preview: false,
-          sessions: titleOnly(16, "Monde Professionnel"),
-        },
-        {
-          code: "B2.3",
-          title: "Société & Actualité (Masyarakat & Isu Terkini)",
-          preview: false,
-          sessions: titleOnly(16, "Société & Actualité"),
-        },
-        {
-          code: "B2.4",
-          title: "Art, Cinéma & Littérature (Seni, Sinema & Sastra)",
-          preview: false,
-          sessions: titleOnly(16, "Art, Cinéma & Littérature"),
-        },
-        {
-          code: "B2.5",
-          title: "Débat & Argumentation (Debat & Argumentasi)",
-          preview: false,
-          sessions: titleOnly(16, "Débat & Argumentation"),
-        },
-        {
-          code: "B2.6",
-          title: "Variétés Régionales (Variasi Regional Bahasa Prancis)",
-          preview: false,
-          sessions: titleOnly(16, "Variétés Régionales"),
-        },
-        {
-          code: "B2.7",
-          title: "French Mastery (Penguasaan Bahasa Prancis)",
-          preview: false,
-          sessions: titleOnly(16, "French Mastery"),
-        },
+        { code: "B2.1", name: "Expression Avancée",          sessions: b2_1, preview: false },
+        { code: "B2.2", name: "Français Professionnel",      sessions: b2_2, preview: false },
+        { code: "B2.3", name: "Communication Quasi-Native",  sessions: b2_3, preview: false },
+        { code: "B2.4", name: "Art, Cinéma & Littérature",   sessions: b2_4, preview: false },
+        { code: "B2.5", name: "Leadership & Diplomatie",     sessions: b2_5, preview: false },
+        { code: "B2.6", name: "Variantes Régionales",        sessions: b2_6, preview: false },
+        { code: "B2.7", name: "French Mastery (Capstone)",   sessions: b2_7, preview: false },
       ],
     },
   ],

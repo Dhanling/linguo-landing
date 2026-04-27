@@ -1,464 +1,297 @@
 import type { LanguageCurriculum, SessionPreview } from "../types";
 import { getLanguageBySlug } from "../languages";
 
-// Compact format: [sessionNumber, title, topics?]
+// Compact format: [number, title] or [number, title, topics[]]
 type Raw = [number, string, string[]?];
 
-// Helper for A1 sublevels (preview: TRUE) — sessions with topics array
-const toSessions = (rows: Raw[]): SessionPreview[] =>
-  rows.map(([number, title, topics]) => ({
-    number,
-    title,
-    topics: topics ?? [],
-  }));
+const toSessions = (raw: Raw[]): SessionPreview[] =>
+  raw.map(([number, title, topics]) => ({ number, title, ...(topics ? { topics } : {}) }));
 
-// Helper for A2/B1/B2 sublevels (preview: FALSE) — title only
-const titleOnly = (count: number, prefix: string): SessionPreview[] =>
-  Array.from({ length: count }, (_, i) => ({
-    number: i + 1,
-    title: `${prefix} — Sesi ${i + 1}`,
-  }));
+const titleOnly = (titles: string[]): SessionPreview[] =>
+  titles.map((title, i) => ({ number: i + 1, title }));
 
-const meta = getLanguageBySlug("german")!;
+// ============ A1 — 3 sublevels, FULLY PREVIEWED ============
+const a1_1 = toSessions([
+  [1, "Deutsches Alphabet & Aussprache", ["26 huruf + ä, ö, ü", "ß (Eszett)", "1 huruf = 1 bunyi"]],
+  [2, "Umlaute Mastery", ["ä: 'e' terbuka", "ö: bibir bulat", "ü: bibir bulat lidah depan"]],
+  [3, "Begrüßungen Regional", ["Hallo, Guten Tag", "Servus (Bayern), Moin (Nord)", "Tschüss"]],
+  [4, "Du vs Sie", ["formal vs akrab", "Sie selalu kapital!", "duzen — kapan transisi"]],
+  [5, "Sich Vorstellen", ["ich heiße...", "freut mich", "ich komme aus Indonesien"]],
+  [6, "Verb SEIN", ["ich bin, du bist, er/sie/es ist", "wir sind, ihr seid, sie sind"]],
+  [7, "Verb HABEN", ["ich habe, du hast, er hat", "ich BIN 25 (bukan habe!)", "Hunger, Durst, Angst"]],
+  [8, "Personalpronomen", ["ich, du, er, sie, es", "wir, ihr, sie, Sie", "Sie ambigu"]],
+  [9, "Drei Geschlechter: der/die/das", ["der Mann, die Frau, das Kind", "hafalkan ARTIKEL bersama noun"]],
+  [10, "Plural Bilden", ["+s, +e, +er, +en, Umlaut", "der Apfel → die Äpfel", "die untuk semua plural"]],
+  [11, "Zahlen 0–30", ["null, eins, zwei...", "elf, zwölf", "21+: einundzwanzig"]],
+  [12, "Die Familie", ["Vater, Mutter, Bruder, Schwester", "Opa, Oma, Onkel, Tante"]],
+  [13, "Zahlen 31–100", ["dreißig, vierzig...", "einundvierzig (1+40)", "baca dari belakang"]],
+  [14, "Nominativ & Akkusativ — Erste Fälle", ["NOM: subjek (der/die/das)", "AKK: objek (den/die/das)", "milestone Jerman!"]],
+  [15, "Fragen Stellen", ["W-Frage: was, wer, wo, wann, wie", "Ja/Nein-Frage: verba di awal", "doch (untuk pertanyaan negatif)"]],
+  [16, "Wiederholung & Kulturdialog", ["Pünktlichkeit (ketepatan waktu)", "small talk Jerman"]],
+]);
+
+const a1_2 = toSessions([
+  [1, "Wochentage, Monate, Jahreszeiten", ["Montag-Sonntag", "Januar-Dezember (kapital!)", "Frühling, Sommer, Herbst, Winter"]],
+  [2, "Die Uhrzeit", ["wie spät ist es?", "halb drei = 2:30 (BUKAN 3:30!)", "sistem 24 jam formal"]],
+  [3, "Regelmäßige Verben", ["Stamm + Endung", "lernen, arbeiten, wohnen", "-e, -st, -t, -en, -t, -en"]],
+  [4, "Unregelmäßige Verben", ["vokaländerung di du/er/sie", "fahren → fährst", "lesen → liest"]],
+  [5, "Berufe", ["Lehrer(in), Arzt/Ärztin", "ich bin + Beruf (TANPA artikel)"]],
+  [6, "Deutsches Essen & Kultur", ["300+ jenis Brot", "Wurst: Brat, Curry, Weiß", "Reinheitsgebot 1516"]],
+  [7, "Im Restaurant", ["ich hätte gern...", "die Rechnung bitte", "Trinkgeld 10%"]],
+  [8, "Modalverben", ["können, müssen, wollen", "dürfen, sollen, mögen", "modal di posisi 2, infinitif di akhir"]],
+  [9, "Trennbare Verben", ["aufstehen: Ich stehe um 7 auf", "einkaufen, anrufen, fernsehen"]],
+  [10, "Wortstellung: V2-Regel", ["verba terkonjugasi di posisi ke-2", "Heute LERNE ich Deutsch", "fondasi sintaks Jerman"]],
+  [11, "Possessivartikel", ["mein, dein, sein, ihr", "unser, euer, ihr, Ihr", "berubah dengan kasus"]],
+  [12, "Demonstrativa", ["dieser, diese, dieses", "der/die/das + tekanan"]],
+  [13, "Körper & Gesundheit", ["Kopf, Augen, Hände, Füße", "mir tut der Kopf weh", "Krankenversicherung"]],
+  [14, "Kleidung & Farben", ["Hemd, Hose, Schuhe", "rot, blau, grün, schwarz, weiß"]],
+  [15, "Komposita — Kata Majemuk", ["Haus + Tür = Haustür", "Auto + Bahn = Autobahn", "gender ikut kata terakhir"]],
+  [16, "Wiederholung & Mini-Dialoge", ["di Café, Supermarkt, Apotheke", "Sonntagsruhe (toko tutup Minggu)"]],
+]);
+
+const a1_3 = toSessions([
+  [1, "Mein Zuhause", ["Wohnzimmer, Küche, Schlafzimmer", "es gibt + Akkusativ", "Wechselpräpositionen pengantar"]],
+  [2, "Die Stadt", ["Straße, Platz, Ampel", "Bank, Krankenhaus, Bibliothek"]],
+  [3, "Wegbeschreibung", ["rechts, links, geradeaus", "wie komme ich zu...?"]],
+  [4, "Verkehr", ["Auto, Bus, U-Bahn, Zug", "mit dem Bus (Dativ!)", "ICE: kereta cepat Jerman"]],
+  [5, "Das Wetter", ["es ist sonnig/kalt/warm", "es regnet, es schneit", "vs Indonesia tropis"]],
+  [6, "Hobbys & Freizeit", ["ich mag + Akkusativ", "ich + verb + gern", "lieber, am liebsten"]],
+  [7, "Sport", ["Fußball, Tennis, Schwimmen", "Bundesliga, Bayern München", "Vereinskultur"]],
+  [8, "Deutsche Musik & Kino", ["Rammstein, Kraftwerk, Nena", "Wenders, Herzog, Tykwer"]],
+  [9, "Reflexive Verben", ["mich, dich, sich", "Akk vs Dat reflexive", "sich anziehen"]],
+  [10, "Tagesablauf", ["am Morgen, am Nachmittag", "zuerst, dann, danach", "immer, oft, nie"]],
+  [11, "Vergleiche", ["-er + als (Komparativ)", "Umlaut: alt → älter", "so + adj + wie"]],
+  [12, "Superlativ", ["am + adj + -sten", "der/die/das + adj + -ste", "gut → besser → am besten"]],
+  [13, "Mengen & Maße", ["viel, wenig, genug", "ein Kilo, ein Liter, ein Dutzend"]],
+  [14, "Imperativ", ["Komm! Iss! Lies! (du)", "Kommen Sie! (Sie)", "Kommt! (ihr)"]],
+  [15, "Dativ — Der Dritte Fall", ["dem/der/dem", "trigger: mit, von, zu, bei, nach", "ich helfe dem Mann"]],
+  [16, "Das Perfekt", ["haben/sein + Partizip II", "ge- + Stamm + -t/-en", "sein: pergerakan + perubahan"]],
+]);
+
+// ============ A2 — 4 sublevels, preview-locked ============
+const a2_1 = titleOnly([
+  "Perfekt — Vollständig", "Perfekt vs Präteritum: Wann?",
+  "Zeitausdrücke der Vergangenheit", "Komparativ Avanzados",
+  "Superlativ Absolut", "Modalverben Avanzado: müssen vs sollen",
+  "Brauchen + zu + Infinitiv", "Wiederholung der Artikel",
+  "Personen Beschreiben", "Meine Heimatstadt",
+  "Reisevokabular", "Am Flughafen",
+  "Hotel Check-in", "Restaurant Avanzado",
+  "Hilfe Suchen auf der Straße", "Wiederholung: Reise-Rollenspiel",
+]);
+
+const a2_2 = titleOnly([
+  "Dativ Vollständig — Verben mit Dativ", "Dativ vs Akkusativ: Praxis",
+  "Wechselpräpositionen Vollständig", "Futur I (werden + Infinitiv)",
+  "Futur: Vorhersagen", "Diskursmarker im Deutschen",
+  "Filler Words: also, naja, halt, mal, eben", "Natürliches Gespräch",
+  "Berufe Avanzados", "Bewerbungsgespräch",
+  "Vokabular am Arbeitsplatz", "Formelle E-Mails Schreiben",
+  "Beschreibe Deinen Job", "Small Talk auf Deutsch",
+  "Über Erfahrungen Sprechen", "Wiederholung",
+]);
+
+const a2_3 = titleOnly([
+  "Präsens Progressiv (am + Infinitiv)", "Perfekt vs Präteritum vs Progressiv",
+  "Während / Wenn / Als / Indem", "Relativsätze (der, die, das, was)",
+  "Adverbien", "Deshalb / Weil / Trotzdem",
+  "Meinungen Ausdrücken", "Zustimmen / Widersprechen",
+  "Erzählstruktur", "Bücher und Filme Rezensieren",
+  "Gesundheit und Krankheit", "Beim Arzt",
+  "Sport und Fitness", "Musik und Kunst",
+  "Technologievokabular", "Wiederholung & Meinungsdebatte",
+]);
+
+const a2_4 = titleOnly([
+  "Früher (Vergangene Gewohnheiten)", "Damals vs Heute",
+  "Reflexivpronomen Avanzados", "Auch / Auch Nicht",
+  "Zu + Adjektiv / Genug", "Quantifizierer: Einige, Wenige",
+  "Indefinitpronomen: Jemand, Niemand", "Vorlieben Ausdrücken",
+  "Vorschläge Machen", "Hilfe Anbieten und Annehmen",
+  "Anweisungen Geben", "Prozesse Beschreiben",
+  "Feste: Oktoberfest, Weihnachtsmärkte, Karneval", "Esskultur Deutsch",
+  "Kultur Indonesien vs Deutschland", "Wiederholung & Kulturaustausch",
+]);
+
+// ============ B1 — 5 sublevels, preview-locked ============
+const b1_1 = titleOnly([
+  "Plusquamperfekt", "Indirekte Rede: Aussagen",
+  "Indirekte Rede: Fragen", "Passiv: Präsens und Vergangenheit",
+  "Diskursmarker: eigentlich, sozusagen, irgendwie, quasi", "Natürliches Gespräch Avanzado",
+  "Verben mit Präposition", "Idiomatische Redewendungen: Zeit & Geld",
+  "Formelles vs Informelles Register", "Rezensionen Schreiben",
+  "Avanzado Beschreibung", "Kulturelle Unterschiede Deutsch",
+  "Über Filme und Bücher Sprechen", "Kino: Wenders, Fassbinder",
+  "Leichte Literaturdiskussion", "Wiederholung",
+]);
+
+const b1_2 = titleOnly([
+  "Konjunktiv II — Einführung", "Konjunktiv II: Wünsche & Höflichkeit",
+  "Wenn ... wäre / hätte", "An deiner Stelle würde ich...",
+  "Konnektoren: Obwohl, Trotz, Allerdings", "Nachrichtenvokabular",
+  "Politische Diskussion Light", "Globale Themen",
+  "Umweltdebatte (Klimawandel, Energiewende)", "Auswirkungen der Technologie",
+  "Diskurs in Sozialen Medien", "Karrierediskussionen",
+  "Bewerbungsfähigkeiten", "Verhandlung Grundlagen",
+  "Ideen Präsentieren", "Wiederholung",
+]);
+
+const b1_3 = titleOnly([
+  "Genitiv — Der Vierte Fall (Komplett)", "Genitivpräpositionen: wegen, trotz, während",
+  "Präteritum — Schriftliche Vergangenheit", "Präteritum vs Perfekt: Wann welches?",
+  "Avanzado Konnektoren", "Sicherheit & Zweifel Ausdrücken",
+  "Akademisches Schreiben Grundlagen", "Aufsatzstruktur",
+  "Literaturdiskussion: Goethe, Schiller", "Kunst und Kultur Deutsch",
+  "Historische Themen: Mauerfall, Weltkriege", "Wissenschaft und Entdeckung",
+  "Philosophie Light: Kant, Nietzsche", "Geschäftsdeutsch Grundlagen",
+  "Besprechungen und Entscheidungen", "Wiederholung",
+]);
+
+const b1_4 = titleOnly([
+  "Partizip I & II als Adjektiv", "Verben mit Präposition Avanzados",
+  "Zusammengesetzte Adjektive", "Lange Komposita Verstehen",
+  "Hervorhebung mit es-Konstruktionen", "Inversion zur Betonung",
+  "Reiseschreibung", "Blogs und Soziale Medien",
+  "Öffentliches Sprechen — Grundlagen", "Debattenetikette",
+  "Persönliche Essays", "Kreative Beschreibung",
+  "Film- und TV-Analyse", "Musik und Poesie Deutsch",
+  "Globale Etikette Deutsch", "Wiederholung",
+]);
+
+const b1_5 = titleOnly([
+  "Indirekte Rede Avanzados", "Wenn nur / Hätte ich nur",
+  "Hypothetische Situationen", "Gemischte Zeitformen",
+  "Avanzado Passiv", "Lassen + Infinitiv (Causative)",
+  "Feste: Oktoberfest Detail, Karneval Köln", "Tag der Deutschen Einheit, Weihnachten",
+  "Vokabular zur Problemlösung", "Entscheidungsfindung",
+  "Krisenmanagement", "Führung Grundlagen",
+  "Teamkommunikation", "Feedback und Kritik",
+  "Zeitmanagement", "Wiederholung & Geschäftssimulation",
+]);
+
+// ============ B2 — 7 sublevels, preview-locked ============
+const b2_1 = titleOnly([
+  "Konjunktiv I (Indirekte Rede Formell)", "Konjunktiv I: Pressesprache",
+  "Konjunktiv II Avanzados", "Konditionalsätze: Reale & Irreale",
+  "Hypothetische Sätze: Typ 1, 2, 3", "Komplexe Satzstrukturen",
+  "Idiomatische Kollokationen", "Idiomatische Ausdrücke",
+  "Metapher & Vergleich", "Ton & Register",
+  "Debatten-Techniken", "Persuasive Schreibung",
+  "Formelle Korrespondenz", "Akademische Präsentationen",
+  "Kritische Analyse", "Wiederholung",
+]);
+
+const b2_2 = titleOnly([
+  "Geschäftskommunikation", "Berichterstattung",
+  "Projektmanagement-Vokabular", "Führungssprache",
+  "Finanzdeutsch", "Marketingvokabular",
+  "HR & Rekrutierung", "Rechtsgrundlagen",
+  "Tech-Industrie & IT", "Kundenbeziehungen",
+  "Internationale Geschäftsetikette", "Interkulturelle Kommunikation",
+  "Präsentationen Halten", "Besprechungen Leiten",
+  "Schriftliche Vorschläge", "Wiederholung",
+]);
+
+const b2_3 = titleOnly([
+  "Idiomatische Flüssigkeit", "Kulturelle Nuancen",
+  "Humor & Sarkasmus", "Slang & Umgangssprache",
+  "Regionale Varianten: Hochdeutsch vs Bayerisch", "Avanzado Hörstrategien",
+  "Schnelles Sprechen Verstehen", "Akzente: Hochdeutsch, Bayerisch, Schweizerdeutsch",
+  "Akademischer Diskurs", "Journalismus-Analyse: Süddeutsche, Zeit",
+  "Literatur: Mann, Hesse, Brecht", "Öffentliches Sprechen Avanzado",
+  "Erzählmeisterschaft", "Debatte & Argumentation",
+  "Persönliche Marke auf Deutsch", "Wiederholung",
+]);
+
+const b2_4 = titleOnly([
+  "Goethe & Klassik", "Schiller & Sturm und Drang",
+  "Romantik: Heine, Brüder Grimm", "Realismus: Fontane",
+  "Kafka & Existentielle Literatur", "Thomas Mann & Buddenbrooks",
+  "Berthold Brecht & Episches Theater", "Modern: Grass, Böll, Walser",
+  "Kino: Weimarer Republik (Lang, Murnau)", "Neuer Deutscher Film: Fassbinder, Wenders, Herzog",
+  "Berlin School: Petzold, Hochhäusler", "Österreichisches Kino: Haneke, Seidl",
+  "Schweizer Kino", "Musik: Klassik (Bach, Beethoven, Wagner)",
+  "Filmkritik", "Wiederholung",
+]);
+
+const b2_5 = titleOnly([
+  "Modalpartikeln Mastery: doch, mal, ja, halt", "Modalpartikeln: eben, schon, aber, bloß",
+  "Avanzado Filler & Hedging", "Nativ-Debattenstrategien",
+  "Persuasive Avanzado", "Diplomatensprache",
+  "Interkulturelle Konfliktlösung", "Politik-Schreibung",
+  "Regierungsangelegenheiten", "Öffentliches Sprechen für Führungskräfte",
+  "TED-Talk-Stil auf Deutsch", "Motivationsrede",
+  "Krisenkommunikation", "Medieninterviews",
+  "Pressekonferenzen", "Wiederholung",
+]);
+
+const b2_6 = titleOnly([
+  "Hochdeutsch — Standard", "Norddeutsch (Hamburg, Bremen)",
+  "Bayerisch — Vokabular & Aussprache", "Berlinerisch — Hauptstadtdialekt",
+  "Sächsisch & Mitteldeutsch", "Schwäbisch (Stuttgart)",
+  "Österreichisches Deutsch", "Wiener Dialekt",
+  "Schweizerdeutsch — Schwyzerdütsch", "Liechtenstein & Luxemburg",
+  "Jugendsprache: Krass, Geil, Cringe", "Anglizismen vs Reines Deutsch",
+  "Verschiedene Akzente Verstehen", "Anpassung an Regionalkontext",
+  "Kultur nach Region", "Wiederholung",
+]);
+
+const b2_7 = titleOnly([
+  "German Mastery: Formelles Register Avanzados", "Pragmatik: Implikatur & Höflichkeit",
+  "Akademische Diskurs-Meisterschaft", "Tiefe Literaturanalyse",
+  "Avanzado Debatte: Struktur & Widerlegung", "Kreatives Schreiben: Kurzgeschichte",
+  "Deutsch für Profis — Medizin", "Deutsch für Profis — Tech & Engineering",
+  "Deutsch für Profis — Wissenschaft (Studium in Deutschland)", "Cross-Cultural Communication Mastery",
+  "Avanzado Übersetzung Deutsch-Indonesisch", "Konsekutivdolmetschen",
+  "Capstone: Lange Hausarbeit auf Deutsch", "Capstone: Professionelle Präsentation 15 Min",
+  "Capstone: Deutscher Stammtisch / Roundtable", "Abschlussprüfung & Linguo-Zertifizierung",
+]);
 
 const curriculum: LanguageCurriculum = {
-  meta,
+  meta: getLanguageBySlug("german")!,
+  overview: "Program 304 sesi yang mengantar kamu dari benar-benar nol sampai percakapan near-native dalam bahasa Jerman. Struktur Linguo: A1 (3 chapter), A2 (4 chapter), B1 (5 chapter), B2 (7 chapter). Setiap level CEFR-aligned dengan penekanan khusus pada 4 kasus (Nominativ → Akkusativ → Dativ → Genitiv), V2 word order, separable verbs, dan Modalpartikeln native (doch, mal, ja, halt). Ideal untuk persiapan studi di Jerman.",
   levels: [
     {
-      code: "A1",
-      title: "A1 — Anfänger (Pemula)",
-      description:
-        "Fondasi bahasa Jerman: alfabet dengan ä/ö/ü/ß, pelafalan konsisten ala Jerman, sapaan regional, perkenalan, dan pengantar kasus pertama (Nominativ & Akkusativ). Cocok untuk yang belum pernah belajar Jerman sama sekali.",
+      code: "A1", name: "Grundlagen des Deutschen",
+      description: "Fondasi bahasa Jerman: alfabet dengan ä/ö/ü/ß, sapaan regional, du vs Sie, 3 gender (der/die/das), pengantar kasus (Nominativ & Akkusativ).",
       sublevels: [
-        {
-          code: "A1.1",
-          title: "Grundlagen des Deutschen (Fondasi Bahasa Jerman)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Willkommen & Deutsches Alphabet (Selamat Datang & Alfabet Jerman)", [
-              "Pengenalan bahasa Jerman: 130+ juta penutur di Eropa Tengah",
-              "Alfabet Jerman: 26 huruf + Umlaute (ä, ö, ü) + ß (Eszett)",
-              "Pelafalan konsisten: 1 huruf = 1 bunyi (vs Inggris)",
-              "Sejarah & posisi: lingua franca akademik & industri",
-            ]],
-            [2, "Aussprache: Umlaute & Eszett (Pelafalan: Umlaut & Eszett)", [
-              "Ä: bunyi 'e' terbuka (Mädchen)",
-              "Ö: bibir bulat tapi lidah depan (schön)",
-              "Ü: bibir bulat, lidah lebih depan (für)",
-              "ß: pelafalan seperti 's' tegas (Straße)",
-            ]],
-            [3, "Begrüßungen Regional (Sapaan Regional)", [
-              "Hallo (umum), Guten Morgen, Guten Tag, Guten Abend",
-              "Variasi regional: Servus (Bayern), Moin (Norddeutschland), Grüß Gott (Süddeutschland/Österreich)",
-              "Tschüss, Auf Wiedersehen, Bis bald, Bis morgen",
-              "Wie geht's? — Gut, sehr gut, schlecht, na ja",
-            ]],
-            [4, "Du vs Sie (Akrab vs Formal)", [
-              "Du: keluarga, teman, anak, rekan dekat, sesama mahasiswa",
-              "Sie: orang asing, atasan, situasi formal — selalu kapital!",
-              "Konjugasi berbeda: du bist vs Sie sind",
-              "Cultural: kapan transisi 'duzen' — biasanya inisiatif yang lebih senior",
-            ]],
-            [5, "Sich Vorstellen (Memperkenalkan Diri)", [
-              "Ich heiße... / Ich bin... / Mein Name ist...",
-              "Wie heißt du? / Wie heißen Sie?",
-              "Freut mich / Sehr erfreut",
-              "Ich komme aus Indonesien / Ich bin Indonesier(in)",
-            ]],
-            [6, "Verb SEIN (Kata Kerja SEIN/Menjadi)", [
-              "Konjugasi: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind",
-              "Penggunaan: identitas, profesi, kebangsaan, sifat",
-              "Negasi: nicht (Ich bin nicht...)",
-              "Verba paling penting bahasa Jerman — wajib hafal",
-            ]],
-            [7, "Verb HABEN (Kata Kerja HABEN/Memiliki)", [
-              "Konjugasi: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben",
-              "Penggunaan: kepemilikan, usia (Ich bin 25 — bukan habe!)",
-              "Haben Hunger, Durst, Angst, Zeit",
-              "SEIN vs HABEN: 2 verba kunci untuk Perfekt nanti",
-            ]],
-            [8, "Personalpronomen (Kata Ganti Orang)", [
-              "Ich, du, er, sie (dia perempuan), es (netral)",
-              "Wir, ihr, sie (mereka), Sie (formal — selalu kapital)",
-              "Sie ambigu: feminine + plural + formal — konteks menentukan",
-              "Pronoun gender wajib mengikuti gender kata benda",
-            ]],
-            [9, "Drei Geschlechter: der/die/das (Tiga Gender)", [
-              "Maskulin: der (der Mann, der Tisch)",
-              "Feminin: die (die Frau, die Tür)",
-              "Netral: das (das Kind, das Buch)",
-              "Tip: hafalkan artikel BERSAMA kata benda — kunci sukses Jerman",
-            ]],
-            [10, "Plural Bilden (Membentuk Bentuk Jamak)", [
-              "Pola plural Jerman: kompleks, ada 5 pola utama",
-              "+s: das Auto → die Autos (kata serapan)",
-              "+e/+er/+en/Umlaut: der Apfel → die Äpfel",
-              "Artikel jamak SELALU 'die' (untuk semua gender)",
-            ]],
-            [11, "Zahlen 0–30 (Angka 0–30)", [
-              "Null, eins, zwei, drei... dreißig",
-              "Pola unik 11-12: elf, zwölf",
-              "21+: einundzwanzig, zweiundzwanzig (satuan + 'und' + puluhan)",
-              "Latihan: nomor telepon, usia, alamat",
-            ]],
-            [12, "Die Familie (Keluarga)", [
-              "Vater, Mutter, Bruder, Schwester, Sohn, Tochter",
-              "Großvater (Opa), Großmutter (Oma), Onkel, Tante, Cousin/e",
-              "Possessiv: mein/meine, dein/deine, sein/seine, ihr/ihre",
-              "Ich habe zwei Brüder / Meine Mutter heißt...",
-            ]],
-            [13, "Zahlen 31–100 (Angka 31–100)", [
-              "Dreißig, vierzig, fünfzig, sechzig... hundert",
-              "Pola: einundvierzig (1+40), zweiundsechzig (2+60)",
-              "Membaca angka: dari belakang — 'dua puluh tiga' = 'tiga-dua-puluh'",
-              "Aplikasi: usia, harga sederhana, tahun lahir",
-            ]],
-            [14, "Nominativ & Akkusativ — Erste Fälle (Kasus Pertama!)", [
-              "Nominativ: subjek (yang melakukan) — der/die/das",
-              "Akkusativ: objek langsung — den/die/das (hanya 'der' jadi 'den')",
-              "Der Mann sieht den Hund (Pria itu melihat anjing)",
-              "Pengantar konsep KASUS — *the* milestone bahasa Jerman",
-            ]],
-            [15, "Fragen Stellen (Mengajukan Pertanyaan)", [
-              "Was, wer, wo, wann, wie, warum, wie viel/viele",
-              "W-Frage: kata tanya di awal (Wo wohnst du?)",
-              "Ja/Nein-Frage: verba di awal (Wohnst du in Jakarta?)",
-              "Doch — jawaban 'ya' untuk pertanyaan negatif (khas Jerman)",
-            ]],
-            [16, "Wiederholung & Kulturdialog (Review & Dialog Budaya)", [
-              "Review komprehensif sesi 1–15",
-              "Dialog: bertemu orang Jerman/Austria di Indonesia",
-              "Cultural anchor: Pünktlichkeit (ketepatan waktu) sebagai nilai",
-              "Self-assessment & persiapan A1.2",
-            ]],
-          ]),
-        },
-        {
-          code: "A1.2",
-          title: "Alltag (Kehidupan Sehari-hari)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Wochentage, Monate, Jahreszeiten (Hari, Bulan, Musim)", [
-              "Montag, Dienstag, Mittwoch... Sonntag",
-              "Januar, Februar... Dezember (kapital!)",
-              "Vier Jahreszeiten: Frühling, Sommer, Herbst, Winter",
-              "Welcher Tag ist heute? / Heute ist der 25. März",
-            ]],
-            [2, "Die Uhrzeit (Waktu/Jam)", [
-              "Wie spät ist es? — Es ist eins / Es ist zwei Uhr",
-              "Halb (setengah-MINUS), Viertel vor/nach",
-              "Achtung: 'halb drei' = 2:30 (BUKAN 3:30!)",
-              "Sistem 24 jam (formal): 14 Uhr = 2 PM",
-            ]],
-            [3, "Regelmäßige Verben (Verba Beraturan)", [
-              "Pola konjugasi: Stamm + Endung",
-              "Akhiran: -e, -st, -t, -en, -t, -en",
-              "Verba sehari-hari: lernen, arbeiten, wohnen, spielen",
-              "Latihan: Ich lerne jeden Tag Deutsch",
-            ]],
-            [4, "Unregelmäßige Verben (Verba Tidak Beraturan)", [
-              "Vokaländerung di du/er/sie/es: fahren → fährst, fährt",
-              "lesen → liest, sehen → sieht, sprechen → sprichst",
-              "essen → isst, nehmen → nimmst",
-              "Wajib dihafal — list 30+ verba paling sering",
-            ]],
-            [5, "Berufe (Profesi)", [
-              "Lehrer(in), Arzt/Ärztin, Ingenieur(in), Anwalt/Anwältin",
-              "Gender: Lehrer (m) / Lehrerin (f)",
-              "Was machst du beruflich? / Was sind Sie von Beruf?",
-              "Ich bin + Beruf (TANPA artikel — beda dari Inggris)",
-            ]],
-            [6, "Deutsches Essen & Kultur (Makanan & Budaya Jerman)", [
-              "Brot (300+ jenis!), Brötchen, Brezel",
-              "Wurst: Bratwurst, Currywurst, Weißwurst",
-              "Bier & Reinheitsgebot — hukum kemurnian 1516",
-              "Cultural: Kaffee und Kuchen (jam 15:00 sosial)",
-            ]],
-            [7, "Im Restaurant (Di Restoran)", [
-              "Ich hätte gern... / Ich möchte... / Für mich bitte...",
-              "Die Speisekarte, bitte / Die Rechnung, bitte",
-              "Was empfehlen Sie? / Was ist das Tagesgericht?",
-              "Etiket: Trinkgeld (10%) — sebut total saat bayar",
-            ]],
-            [8, "Modalverben (Verba Modal)", [
-              "können (bisa), müssen (harus), wollen (mau)",
-              "dürfen (boleh), sollen (sebaiknya), mögen (suka)",
-              "Pola: modal di posisi 2, infinitif di akhir kalimat",
-              "Ich kann Deutsch sprechen / Ich muss heute arbeiten",
-            ]],
-            [9, "Trennbare Verben (Verba Terpisahkan)", [
-              "Konsep: prefix terpisah dan pindah ke akhir kalimat",
-              "Aufstehen: Ich stehe um 7 Uhr auf",
-              "Einkaufen, anrufen, fernsehen, mitkommen",
-              "Khas Jerman — perlu adaptasi pikiran",
-            ]],
-            [10, "Wortstellung: V2-Regel (Aturan Word Order V2)", [
-              "Verba TERKONJUGASI selalu di posisi ke-2",
-              "Heute lerne ich Deutsch (BUKAN Heute ich lerne)",
-              "Inversi subjek-verba kalau bukan subjek di awal",
-              "Dasar fondasi sintaks Jerman",
-            ]],
-            [11, "Possessivartikel (Artikel Possesif)", [
-              "Mein/meine/mein, dein/deine/dein, sein/seine/sein",
-              "Unser/unsere, euer/eure, ihr/ihre, Ihr/Ihre",
-              "Aturan: berperilaku seperti ein/eine — berubah dengan kasus",
-              "Mein Vater (Nom) → meinen Vater (Akk)",
-            ]],
-            [12, "Demonstrativa: dieser, jener (Demonstratif)", [
-              "Dieser/diese/dieses (yang ini)",
-              "Jener/jene/jenes (yang itu — agak literer)",
-              "Lebih sering: der/die/das + tekanan",
-              "Penggunaan: spesifikasi, kontras",
-            ]],
-            [13, "Körper & Gesundheit (Tubuh & Kesehatan)", [
-              "Kopf, Augen, Mund, Nase, Ohren, Hände, Füße",
-              "Mir tut der Kopf weh / Ich habe Kopfschmerzen",
-              "Beim Arzt / In der Apotheke",
-              "Krankenversicherung — sistem kesehatan Jerman (cultural)",
-            ]],
-            [14, "Kleidung (Pakaian)", [
-              "Hemd, Hose, Rock, Schuhe, Hut, Mantel",
-              "Tragen (mengenakan) vs anziehen (memakai)",
-              "Farben: rot, blau, grün, gelb, schwarz, weiß",
-              "Beim Einkaufen: Wie viel kostet das? / Welche Größe?",
-            ]],
-            [15, "Komposita (Kata Majemuk Jerman)", [
-              "Khas Jerman: gabungkan kata jadi kata baru",
-              "Haus + Tür = Haustür / Auto + Bahn = Autobahn",
-              "Kata terkenal: Donaudampfschifffahrtsgesellschaftskapitän",
-              "Gender mengikuti kata terakhir",
-            ]],
-            [16, "Wiederholung & Mini-Dialoge (Review & Dialog Mini)", [
-              "Review semua materi A1.2",
-              "Roleplay: di Café, Supermarkt, Apotheke",
-              "Cultural: Sonntagsruhe (toko tutup hari Minggu)",
-              "Persiapan A1.3 — modal verbs & kasus lanjutan",
-            ]],
-          ]),
-        },
-        {
-          code: "A1.3",
-          title: "Meine Welt (Duniaku)",
-          preview: true,
-          sessions: toSessions([
-            [1, "Mein Zuhause (Rumahku)", [
-              "Zimmer: Wohnzimmer, Küche, Schlafzimmer, Badezimmer, Esszimmer",
-              "Möbel: Tisch, Stuhl, Sofa, Bett, Schrank",
-              "Es gibt + Akkusativ: Es gibt einen Tisch",
-              "Wechselpräpositionen pengantar: in, auf, unter, neben",
-            ]],
-            [2, "Die Stadt (Kota)", [
-              "Straße, Allee, Platz, Ecke, Ampel",
-              "Gebäude: Bank, Krankenhaus, Kirche, Museum, Bibliothek",
-              "Wegbeschreibung: rechts, links, geradeaus",
-              "Wie komme ich zu...? / Wo ist...?",
-            ]],
-            [3, "Verkehr (Transportasi)", [
-              "Auto, Bus, U-Bahn, Zug, Taxi, Fahrrad, Flugzeug",
-              "Mit dem Bus, zu Fuß, mit dem Fahrrad (Dativ!)",
-              "Fahrkarte kaufen: Hin, Rückfahrt, Hin- und Rückfahrt",
-              "Am Bahnhof: Gleis, Bahnsteig, Verspätung, ICE",
-            ]],
-            [4, "Das Wetter (Cuaca)", [
-              "Es ist sonnig, kalt, warm, windig",
-              "Es regnet, es schneit, es ist neblig",
-              "Wie ist das Wetter? / Wie wird das Wetter morgen?",
-              "Jahreszeiten di Jerman vs tropis Indonesia",
-            ]],
-            [5, "Hobbys & Freizeit (Hobi & Waktu Luang)", [
-              "Ich mag + Akkusativ: Ich mag Lesen / Ich mag das Kino",
-              "Gern + verb: Ich lese gern / Ich spiele gern Fußball",
-              "Lieber, am liebsten — comparison preference",
-              "Hobbys: Sport, Musik, Lesen, Reisen, Kochen",
-            ]],
-            [6, "Sport (Olahraga)", [
-              "Fußball, Basketball, Tennis, Schwimmen, Radfahren",
-              "Spielen (sport ball) vs machen (lain)",
-              "Vereine & events: Bundesliga, Bayern München, Borussia",
-              "Cultural: Vereinskultur — klub olahraga sebagai komunitas",
-            ]],
-            [7, "Deutsche Musik & Kino (Musik & Film Jerman)", [
-              "Künstler: Rammstein, Kraftwerk, Nena, Helene Fischer",
-              "Regisseure: Wenders, Fassbinder, Herzog, Tom Tykwer",
-              "Genre: Schlager, Krautrock, Neue Deutsche Welle",
-              "Vocab: Lied, Film, Album, Konzert",
-            ]],
-            [8, "Reflexive Verben (Verba Refleksif)", [
-              "Reflexivpronomen: mich, dich, sich, uns, euch, sich",
-              "Akkusativ vs Dativ reflexive: sich waschen vs sich die Hände waschen",
-              "Routine: sich anziehen, sich ausziehen, sich erinnern",
-              "Ich ziehe mich um / Er erinnert sich daran",
-            ]],
-            [9, "Tagesablauf (Rutinitas Harian)", [
-              "Am Morgen, am Nachmittag, am Abend",
-              "Konnektoren: zuerst, dann, danach, schließlich",
-              "Häufigkeit: immer, oft, manchmal, nie",
-              "Cerita rutinitas pribadi (5 menit speaking)",
-            ]],
-            [10, "Vergleiche (Perbandingan)", [
-              "Komparativ: -er + als (größer als, kleiner als)",
-              "Umlaut di komparativ: alt → älter, jung → jünger",
-              "So + adj + wie (sama dengan)",
-              "Berlin ist größer als Jakarta — practice",
-            ]],
-            [11, "Superlativ (Superlatif)", [
-              "Am + adj + -sten: am größten, am schönsten",
-              "Der/die/das + adj + -ste: der größte Mann",
-              "Bentuk irreguler: gut → besser → am besten",
-              "Cultural: 'Das beste Bier Bayerns'",
-            ]],
-            [12, "Mengen & Maße (Kuantitas & Ukuran)", [
-              "Viel, wenig, genug, zu viel",
-              "Ein Kilo, ein halbes Kilo, ein Liter, ein Dutzend",
-              "Numerals besar: hundert, tausend, eine Million",
-              "Mata uang: Euro (€) — Eurozone & DACH (Deutschland-Austria-CH)",
-            ]],
-            [13, "Imperativ (Imperatif)", [
-              "Du-Form: Komm! Iss! Lies! Sprich!",
-              "Sie-Form: Kommen Sie! Essen Sie! Lesen Sie!",
-              "Ihr-Form (jamak informal): Kommt! Esst!",
-              "Konteks: instruksi, resep, perintah lalu lintas",
-            ]],
-            [14, "Dativ — Der Dritte Fall (Kasus Ke-3)", [
-              "Dativ: objek tidak langsung — dem/der/dem",
-              "Trigger: mit, von, zu, bei, nach, aus, seit, gegenüber",
-              "Ich helfe dem Mann / Ich gebe der Frau das Buch",
-              "Pengantar — kasus ke-3 dari 4 kasus Jerman",
-            ]],
-            [15, "Das Perfekt (Past Tense Perfekt)", [
-              "Hilfsverb HABEN/SEIN + Partizip II",
-              "Partizip II: ge- + Stamm + -t/-en (gemacht, gegangen)",
-              "SEIN dipakai untuk: pergerakan + perubahan kondisi",
-              "Ich habe gegessen / Ich bin gegangen",
-            ]],
-            [16, "A1-Komplettwiederholung (Review A1 Lengkap)", [
-              "Review semua A1.1, A1.2, A1.3 (48 sesi)",
-              "Mini-Präsentation 3 menit: 'Mein Leben, meine Familie, meine Hobbys'",
-              "Cultural capstone: Tag der Deutschen Einheit (3 Oktober)",
-              "Persiapan masuk A2 — Dativ & Perfekt mendalam",
-            ]],
-          ]),
-        },
+        { code: "A1.1", name: "Erste Schritte",            sessions: a1_1, preview: true },
+        { code: "A1.2", name: "Alltag",                    sessions: a1_2, preview: true },
+        { code: "A1.3", name: "Meine Welt & Erste Fälle",  sessions: a1_3, preview: true },
       ],
     },
     {
-      code: "A2",
-      title: "A2 — Grundlegend (Dasar Lanjutan)",
-      description:
-        "Memperluas kemampuan komunikasi: menguasai Dativ secara penuh dan Perfekt untuk bercerita masa lalu, memperdalam budaya kuliner Jerman (Brot, Wurst, Bier), dan menggunakan filler words dasar (also, naja, halt) agar percakapan natural.",
+      code: "A2", name: "Grundstufe",
+      description: "Dativ lengkap & Wechselpräpositionen, Perfekt untuk bercerita, modal verbs avanzados, filler words natural (also, naja, halt, mal).",
       sublevels: [
-        {
-          code: "A2.1",
-          title: "Tagesroutine & Freizeit (Rutinitas & Waktu Luang)",
-          preview: false,
-          sessions: titleOnly(16, "Tagesroutine & Freizeit"),
-        },
-        {
-          code: "A2.2",
-          title: "Essen & deutsche Kultur (Kuliner & Budaya Jerman)",
-          preview: false,
-          sessions: titleOnly(16, "Essen & deutsche Kultur"),
-        },
-        {
-          code: "A2.3",
-          title: "Reisen & Verkehr (Perjalanan & Transportasi)",
-          preview: false,
-          sessions: titleOnly(16, "Reisen & Verkehr"),
-        },
-        {
-          code: "A2.4",
-          title: "Dativ & Perfekt (Kasus Dativ & Past Perfect)",
-          preview: false,
-          sessions: titleOnly(16, "Dativ & Perfekt"),
-        },
+        { code: "A2.1", name: "Über die Basis Hinaus",       sessions: a2_1, preview: false },
+        { code: "A2.2", name: "Dativ & Konversation",        sessions: a2_2, preview: false },
+        { code: "A2.3", name: "Selbstausdruck",              sessions: a2_3, preview: false },
+        { code: "A2.4", name: "Kulturelle Grundlagen",       sessions: a2_4, preview: false },
       ],
     },
     {
-      code: "B1",
-      title: "B1 — Mittelstufe (Menengah)",
-      description:
-        "Mencapai kemandirian berbahasa: menguasai Genitiv (kasus ke-4) dan Präteritum, mendiskusikan studi & karir di Jerman, serta menggunakan discourse markers (eigentlich, sozusagen, irgendwie) seperti penutur asli.",
+      code: "B1", name: "Mittelstufe",
+      description: "Konjunktiv II untuk hypothetical, Genitiv (kasus ke-4), Präteritum tertulis, diskursmarker native (eigentlich, sozusagen), studi & karir di Jerman.",
       sublevels: [
-        {
-          code: "B1.1",
-          title: "Gesundheit & Wohlbefinden (Kesehatan & Kesejahteraan)",
-          preview: false,
-          sessions: titleOnly(16, "Gesundheit & Wohlbefinden"),
-        },
-        {
-          code: "B1.2",
-          title: "Arbeit & Studium (Pekerjaan & Studi di Jerman)",
-          preview: false,
-          sessions: titleOnly(16, "Arbeit & Studium"),
-        },
-        {
-          code: "B1.3",
-          title: "Genitiv & Präteritum (Kasus Genitiv & Simple Past)",
-          preview: false,
-          sessions: titleOnly(16, "Genitiv & Präteritum"),
-        },
-        {
-          code: "B1.4",
-          title: "Medien & Technologie (Media & Teknologi)",
-          preview: false,
-          sessions: titleOnly(16, "Medien & Technologie"),
-        },
-        {
-          code: "B1.5",
-          title: "Traditionen & Feste (Tradisi & Festival)",
-          preview: false,
-          sessions: titleOnly(16, "Traditionen & Feste"),
-        },
+        { code: "B1.1", name: "Konversationsflüssigkeit",  sessions: b1_1, preview: false },
+        { code: "B1.2", name: "Konjunktiv II & Gesellschaft", sessions: b1_2, preview: false },
+        { code: "B1.3", name: "Genitiv & Präteritum",      sessions: b1_3, preview: false },
+        { code: "B1.4", name: "Kreativer Ausdruck",        sessions: b1_4, preview: false },
+        { code: "B1.5", name: "Berufliche Brücke",         sessions: b1_5, preview: false },
       ],
     },
     {
-      code: "B2",
-      title: "B2 — Obere Mittelstufe (Menengah Atas)",
-      description:
-        "Berkomunikasi dengan kelancaran dan presisi: Konjunktiv I & II, debat, analisis sastra & sinema (Goethe, Kafka, Mann, Berlin School), Modalpartikeln native-like (doch, mal, ja, halt), serta variasi regional dari Hochdeutsch hingga Bayerisch & Schweizerdeutsch.",
+      code: "B2", name: "Obere Mittelstufe",
+      description: "Konjunktiv I (Pressesprache), debat, sastra (Goethe, Kafka, Mann), sinema (Berlin School, Wenders), Modalpartikeln native (doch, mal, halt), variasi Hochdeutsch-Bayerisch-Schweizerdeutsch.",
       sublevels: [
-        {
-          code: "B2.1",
-          title: "Konjunktiv I & II (Subjungtif Jerman)",
-          preview: false,
-          sessions: titleOnly(16, "Konjunktiv I & II"),
-        },
-        {
-          code: "B2.2",
-          title: "Berufswelt (Dunia Profesional)",
-          preview: false,
-          sessions: titleOnly(16, "Berufswelt"),
-        },
-        {
-          code: "B2.3",
-          title: "Gesellschaft & Aktuelles (Masyarakat & Isu Terkini)",
-          preview: false,
-          sessions: titleOnly(16, "Gesellschaft & Aktuelles"),
-        },
-        {
-          code: "B2.4",
-          title: "Kunst, Kino & Literatur (Seni, Sinema & Sastra)",
-          preview: false,
-          sessions: titleOnly(16, "Kunst, Kino & Literatur"),
-        },
-        {
-          code: "B2.5",
-          title: "Debatte & Argumentation (Debat & Argumentasi + Modalpartikeln)",
-          preview: false,
-          sessions: titleOnly(16, "Debatte & Argumentation"),
-        },
-        {
-          code: "B2.6",
-          title: "Regionale Varianten (Variasi Regional Bahasa Jerman)",
-          preview: false,
-          sessions: titleOnly(16, "Regionale Varianten"),
-        },
-        {
-          code: "B2.7",
-          title: "German Mastery (Penguasaan Bahasa Jerman)",
-          preview: false,
-          sessions: titleOnly(16, "German Mastery"),
-        },
+        { code: "B2.1", name: "Avanzado Ausdruck",            sessions: b2_1, preview: false },
+        { code: "B2.2", name: "Berufsdeutsch",                sessions: b2_2, preview: false },
+        { code: "B2.3", name: "Quasi-Native Kommunikation",   sessions: b2_3, preview: false },
+        { code: "B2.4", name: "Kunst, Kino & Literatur",      sessions: b2_4, preview: false },
+        { code: "B2.5", name: "Modalpartikeln & Diplomatie",  sessions: b2_5, preview: false },
+        { code: "B2.6", name: "Regionale Varianten",          sessions: b2_6, preview: false },
+        { code: "B2.7", name: "German Mastery (Capstone)",    sessions: b2_7, preview: false },
       ],
     },
   ],
