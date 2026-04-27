@@ -711,9 +711,16 @@ const TEACHER_DATA = [
 ];
 
 function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource="",initialName="",initialWa=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string;initialName?:string;initialWa?:string}) {
-  const [step, setStep] = useState(1);
-  const [selLang, setSelLang] = useState("");
-  const [selProgram, setSelProgram] = useState("");
+  // Detect initial step dari props biar gak flash step 1 dulu pas open
+  const initialStep = (() => {
+    if (initialLang && initialLevel && initialPreferredProg) return 5;
+    if (initialLang && initialProgram) return 3;
+    if (initialLang) return 2;
+    return 1;
+  })();
+  const [step, setStep] = useState(initialStep);
+  const [selLang, setSelLang] = useState(initialLang || "");
+  const [selProgram, setSelProgram] = useState(initialProgram || initialPreferredProg || "");
   useEffect(() => {
     if (open) {
       // Priority logic:
@@ -1083,14 +1090,12 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
       const level = params.get("level") || "";
       const from = params.get("from") || "";
       window.history.replaceState({}, "", window.location.pathname);
-      setTimeout(() => {
-        if (lang) {
-          setFunnelLang(lang); setFunnelLevel(level);
-          setFunnelPreferredProg("Kelas Private");
-          setFunnelSource(from); setFunnelProg("");
-          setFunnelOpen(true);
-        }
-      }, 300);
+      if (lang) {
+        setFunnelLang(lang); setFunnelLevel(level);
+        setFunnelPreferredProg("Kelas Private");
+        setFunnelSource(from); setFunnelProg("");
+        setFunnelOpen(true);
+      }
     }
   }, []);
 
