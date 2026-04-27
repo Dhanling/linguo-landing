@@ -4,41 +4,27 @@ import { useState, useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase-client";
+import { languages, type LanguageMeta, type Region } from "@/data/curriculum";
 
-type Category = "populer" | "eropa" | "asia" | "timur-tengah" | "nusantara";
+// Category = "populer" (featured) + region keys (Indonesia-friendly slugs)
+type Category = "populer" | "eropa" | "asia" | "timur-tengah" | "nusantara" | "afrika" | "lainnya";
 
-interface Lang {
-  slug: string;
-  name: string;
-  native: string;
-  flag: string;
-  available: boolean;
-  category: Category[];
+// Map region (LanguageMeta.region) → category slug used in this picker
+const REGION_TO_CATEGORY: Record<Region, Exclude<Category, "populer">> = {
+  european: "eropa",
+  asian: "asia",
+  "middle-eastern": "timur-tengah",
+  nusantara: "nusantara",
+  african: "afrika",
+  other: "lainnya",
+};
+
+// Derive picker entries from canonical languages.ts list
+function categoriesOf(lang: LanguageMeta): Category[] {
+  const cats: Category[] = [REGION_TO_CATEGORY[lang.region]];
+  if (lang.featured) cats.unshift("populer");
+  return cats;
 }
-
-const LANGUAGES: Lang[] = [
-  { slug: "english",   name: "Inggris",  native: "English",    flag: "🇬🇧", available: true,  category: ["populer", "eropa"] },
-  { slug: "japanese",  name: "Jepang",   native: "日本語",     flag: "🇯🇵", available: true,  category: ["populer", "asia"] },
-  { slug: "korean",    name: "Korea",    native: "한국어",     flag: "🇰🇷", available: false, category: ["populer", "asia"] },
-  { slug: "mandarin",  name: "Mandarin", native: "中文",           flag: "🇨🇳", available: false, category: ["populer", "asia"] },
-  { slug: "spanish",   name: "Spanyol",  native: "Español",           flag: "🇪🇸", available: false, category: ["populer", "eropa"] },
-  { slug: "french",    name: "Prancis",  native: "Français",          flag: "🇫🇷", available: false, category: ["populer", "eropa"] },
-  { slug: "arabic",    name: "Arab",     native: "العربية", flag: "🇸🇦", available: false, category: ["populer", "timur-tengah"] },
-  { slug: "german",    name: "Jerman",   native: "Deutsch",                flag: "🇩🇪", available: false, category: ["eropa"] },
-  { slug: "italian",   name: "Italia",   native: "Italiano",               flag: "🇮🇹", available: false, category: ["eropa"] },
-  { slug: "dutch",     name: "Belanda",  native: "Nederlands",             flag: "🇳🇱", available: false, category: ["eropa"] },
-  { slug: "russian",   name: "Rusia",    native: "Русский", flag: "🇷🇺", available: false, category: ["eropa"] },
-  { slug: "turkish",   name: "Turki",    native: "Türkçe",      flag: "🇹🇷", available: false, category: ["eropa"] },
-  { slug: "portuguese",name: "Portugis", native: "Português",         flag: "🇵🇹", available: false, category: ["eropa"] },
-  { slug: "thai",      name: "Thailand", native: "ภาษาไทย", flag: "🇹🇭", available: false, category: ["asia"] },
-  { slug: "vietnamese",name: "Vietnam",  native: "Tiếng Việt",   flag: "🇻🇳", available: false, category: ["asia"] },
-  { slug: "hindi",     name: "Hindi",    native: "हिन्दी", flag: "🇮🇳", available: false, category: ["asia"] },
-  { slug: "persian",   name: "Persia",   native: "فارسی", flag: "🇮🇷", available: false, category: ["timur-tengah"] },
-  { slug: "hebrew",    name: "Ibrani",   native: "עברית", flag: "🇮🇱", available: false, category: ["timur-tengah"] },
-  { slug: "javanese",  name: "Jawa",     native: "Basa Jawa",              flag: "🇮🇩", available: false, category: ["nusantara"] },
-  { slug: "sundanese", name: "Sunda",    native: "Basa Sunda",             flag: "🇮🇩", available: false, category: ["nusantara"] },
-  { slug: "bipa",      name: "BIPA",     native: "Bahasa Indonesia",       flag: "🇮🇩", available: false, category: ["nusantara"] },
-];
 
 const CATEGORIES: { key: string; label: string }[] = [
   { key: "all", label: "Semua" },
@@ -63,14 +49,32 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
     if (open) trackEvent("placement_picker_opened", {});
   }, [open]);
 
+  // Build the picker list from languages.ts
+  // - Featured languages always shown (regardless of region)
+  // - Non-featured languages also shown so users can request placement test for any language
+  // - Sort: available first, then featured, then alphabetical by Indonesian name
+  const pickerLanguages = useMemo(() => {
+    return [...languages].sort((a, b) => {
+      if (a.available !== b.available) return a.available ? -1 : 1;
+      const aFeat = a.featured ? 0 : 1;
+      const bFeat = b.featured ? 0 : 1;
+      if (aFeat !== bFeat) return aFeat - bFeat;
+      return a.name.localeCompare(b.name, "id");
+    });
+  }, []);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return LANGUAGES.filter((l) => {
-      const matchQ = !q || l.name.toLowerCase().includes(q) || l.native.toLowerCase().includes(q);
-      const matchCat = activeCat === "all" || l.category.includes(activeCat as Category);
+    return pickerLanguages.filter((l) => {
+      const matchQ =
+        !q ||
+        l.name.toLowerCase().includes(q) ||
+        l.nativeName.toLowerCase().includes(q) ||
+        l.slug.toLowerCase().includes(q);
+      const matchCat = activeCat === "all" || categoriesOf(l).includes(activeCat as Category);
       return matchQ && matchCat;
     });
-  }, [query, activeCat]);
+  }, [query, activeCat, pickerLanguages]);
 
   return (
     <AnimatePresence>
@@ -159,7 +163,7 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                         <span className="text-2xl">{lang.flag}</span>
                         <div className="flex-1 min-w-0">
                           <div className="font-bold text-sm text-gray-900">Bahasa {lang.name}</div>
-                          <div className="text-xs text-gray-500">{lang.native}</div>
+                          <div className="text-xs text-gray-500">{lang.nativeName}</div>
                         </div>
                         <span className="text-xs font-bold text-white bg-[#1A9E9E] px-3.5 py-1.5 rounded-full group-hover:bg-[#147a7a] transition-colors flex-shrink-0">
                           Mulai Test
@@ -179,7 +183,7 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                       <span className="text-2xl opacity-60">{lang.flag}</span>
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-sm text-gray-600">Bahasa {lang.name}</div>
-                        <div className="text-xs text-gray-400">{lang.native}</div>
+                        <div className="text-xs text-gray-400">{lang.nativeName}</div>
                       </div>
                       <span className="text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full uppercase tracking-wider flex-shrink-0">
                         Segera
