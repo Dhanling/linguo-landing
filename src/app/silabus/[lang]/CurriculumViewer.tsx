@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
 import type { LanguageCurriculum, Level, Sublevel } from "@/data/curriculum";
 import { getIconForSession } from "@/data/curriculum/sessionIcons";
+import FunnelModal from "@/components/FunnelModal";
 
 const MOCK_STATS = {
   totalLearners: 1247,
@@ -31,30 +32,24 @@ const LEVEL_THEMES: Record<string, LevelTheme> = {
 };
 
 // ============================================================
-// Trigger FunnelModal via window bridge — pre-fill bahasa
-// Fallback: kalau __openFunnel belum ready, redirect ke homepage
+// FunnelModal sekarang di-render in-place di halaman silabus.
+// Klik tombol CTA → buka modal langsung tanpa pindah page.
 // ============================================================
-function openFunnel(langName: string, source: string) {
-  const w = window as any;
-  if (typeof w.__openFunnel === "function") {
-    try {
-      // Try passing object first (new format)
-      w.__openFunnel({ language: langName, source });
-    } catch {
-      // Fallback to string (legacy format)
-      w.__openFunnel(langName);
-    }
-  } else {
-    // Homepage fallback with query — openFunnel=1 triggers modal auto-open
-    window.location.href = `/?openFunnel=1&lang=${encodeURIComponent(langName)}&from=${source}`;
-  }
-}
 
 export default function CurriculumViewer({ curriculum }: { curriculum: LanguageCurriculum }) {
   const { meta, overview, levels } = curriculum;
   const [activeLevelIdx, setActiveLevelIdx] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showStickyCta, setShowStickyCta] = useState(false);
+  // In-place funnel modal — buka langsung di halaman silabus tanpa redirect
+  const [funnelOpen, setFunnelOpen] = useState(false);
+  const [funnelSource, setFunnelSource] = useState("");
+
+  // Wrapper: panggil dari onClick. langName otomatis dari meta, source bedakan posisi tombol.
+  const openFunnel = (_langName: string, source: string) => {
+    setFunnelSource(source);
+    setFunnelOpen(true);
+  };
 
   const activeLevel = levels[activeLevelIdx];
   const theme = LEVEL_THEMES[activeLevel.code];
@@ -280,6 +275,15 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* In-place FunnelModal — kebuka langsung di halaman silabus, gak perlu pindah ke homepage */}
+      <FunnelModal
+        open={funnelOpen}
+        onClose={() => setFunnelOpen(false)}
+        initialLang={meta.slug.charAt(0).toUpperCase() + meta.slug.slice(1)}
+        initialPreferredProg="Kelas Private"
+        initialSource={funnelSource}
+      />
     </main>
   );
 }
