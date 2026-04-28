@@ -10,7 +10,13 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Prevent horizontal whitespace strip on Android (Chrome doesn't auto-clip overflow like Safari iOS does) */
+  overflow-x: hidden;
+  width: 100%;
+}
 ::selection { background-color: #1A9E9E44; }
 
 @keyframes marquee {
