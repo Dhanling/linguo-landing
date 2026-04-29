@@ -270,8 +270,9 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
           >
             {/* ── REGULER: Filter bar ── */}
             <section className="px-4 pb-6 max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
-                <div className="relative flex-1">
+              <div className="flex flex-col gap-3">
+                {/* Search bar — full width */}
+                <div className="relative">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
                   <input
                     type="text"
@@ -281,10 +282,11 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                     className="w-full h-11 pl-10 pr-4 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                   />
                 </div>
-                <div className="flex gap-2 flex-wrap md:flex-nowrap">
+                {/* Language chips — always wrap */}
+                <div className="flex gap-2 flex-wrap">
                   <button
                     onClick={() => setSelectedLang("all")}
-                    className={`h-11 px-4 rounded-xl text-sm font-medium transition-all ${
+                    className={`h-9 px-4 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                       selectedLang === "all"
                         ? "bg-teal-600 text-white shadow-sm"
                         : "bg-white border border-slate-200 text-slate-700 hover:border-teal-300"
@@ -296,7 +298,7 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                     <button
                       key={lang}
                       onClick={() => setSelectedLang(lang)}
-                      className={`h-11 px-4 rounded-xl text-sm font-medium transition-all whitespace-nowrap ${
+                      className={`h-9 px-4 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                         selectedLang === lang
                           ? "bg-teal-600 text-white shadow-sm"
                           : "bg-white border border-slate-200 text-slate-700 hover:border-teal-300"
