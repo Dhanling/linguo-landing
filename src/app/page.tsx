@@ -509,7 +509,7 @@ const FLAG_CODES: Record<string,string> = {
 };
 function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 
-function TypingBubble() {
+function TypingBubble({size="lg"}:{size?:"sm"|"lg"}={}) {
   const [idx, setIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
@@ -534,6 +534,15 @@ function TypingBubble() {
       }
     }
   }, [displayed, typing, idx]);
+
+  if (size === "sm") {
+    return (
+      <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm inline-flex items-center gap-1 min-w-[60px]">
+        <span className="text-sm">{GREETINGS[idx].flag}</span>
+        {displayed}<span className="animate-pulse text-[#1A9E9E]/50">|</span>
+      </span>
+    );
+  }
 
   return (
     <span className="font-bold text-[#1A9E9E] text-xl inline-flex items-center gap-2 min-w-[140px]">
@@ -1245,7 +1254,6 @@ const PRODUCTS = [
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const [mouseX, setMouseX] = useState<number|null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -1257,27 +1265,6 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Auto-scroll loop on mobile (paused on touch / hover)
-  useEffect(() => {
-    if (!isMobile) return;
-    const el = containerRef.current;
-    if (!el) return;
-    let raf = 0;
-    const tick = () => {
-      if (!paused && el) {
-        // smooth slow drift
-        el.scrollLeft += 0.4;
-        // loop back to start when reaching the end
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-          el.scrollLeft = 0;
-        }
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [isMobile, paused]);
-
   const getScale = (el:HTMLDivElement|null) => {
     if(isMobile || mouseX===null || !el) return 1;
     const rect = el.getBoundingClientRect();
@@ -1288,14 +1275,30 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return 1 + 0.1 * Math.pow(1 - dist/maxDist, 2);
   };
 
+  // Mobile: CSS marquee (duplicate content for seamless loop), pause on touch/tap.
+  // Desktop: original centered layout with hover scaling.
+  if (isMobile) {
+    return (
+      <div className="overflow-hidden -mx-2 px-2"
+        onTouchStart={()=>setPaused(true)}
+        onTouchEnd={()=>setTimeout(()=>setPaused(false),1500)}>
+        <div className="flex gap-2 items-stretch py-2 pb-3 w-max"
+          style={{
+            animation: 'productDockMarquee 35s linear infinite',
+            animationPlayState: paused ? 'paused' : 'running',
+          }}>
+          {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
+            <DockCard key={i} product={p} getScale={()=>1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div ref={containerRef}
-      className="flex lg:justify-center gap-2 lg:gap-4 items-stretch py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0 scrollbar-hide"
+    <div className="flex justify-center gap-4 items-stretch py-6 px-4"
       onMouseMove={(e)=>setMouseX(e.clientX)}
-      onMouseLeave={()=>{setMouseX(null);setPaused(false);}}
-      onMouseEnter={()=>setPaused(true)}
-      onTouchStart={()=>setPaused(true)}
-      onTouchEnd={()=>{setTimeout(()=>setPaused(false),2000);}}>
+      onMouseLeave={()=>setMouseX(null)}>
       {PRODUCTS.map((p,i)=>(
         <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
       ))}
@@ -1491,8 +1494,8 @@ export default function Home() {
             <div className="lg:hidden shrink-0 relative">
               <img src="/images/hero-character.png" alt="" className="w-36 sm:w-44 drop-shadow-xl"/>
               <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8">
-                <div className="relative bg-white rounded-xl px-2 py-1.5 sm:px-3 sm:py-2 shadow-lg">
-                  <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm flex items-center gap-1"><span>{GREETINGS[0].flag}</span> Hello!</span>
+                <div className="relative bg-white rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 shadow-lg">
+                  <TypingBubble size="sm"/>
                   <div className="absolute -bottom-1 right-3 w-2.5 h-2.5 bg-white rotate-45"/>
                 </div>
               </motion.div>
@@ -1707,7 +1710,19 @@ export default function Home() {
               <p>Happy Creative Hub, Jl. Cisitu Indah III No.2,</p><p>Dago, Coblong, Bandung 40135</p>
               <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
             </div>
-            <div className="flex gap-3 mt-4">{["ig","fb","tt","li","yt"].map(s=>(<a key={s} href={s==="ig"?"https://instagram.com/linguo.id":"#"} target="_blank" className="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition-colors"><AtSign className="h-3.5 w-3.5"/></a>))}</div>
+            <div className="flex gap-3 mt-4">
+              {[
+                {id:"ig",href:"https://instagram.com/linguo.id",label:"Instagram",svg:<svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>},
+                {id:"fb",href:"https://facebook.com/linguo.id",label:"Facebook",svg:<svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>},
+                {id:"tt",href:"https://tiktok.com/@linguo.id",label:"TikTok",svg:<svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.09z"/></svg>},
+                {id:"li",href:"https://linkedin.com/company/linguo-id",label:"LinkedIn",svg:<svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>},
+                {id:"yt",href:"https://youtube.com/@linguo.id",label:"YouTube",svg:<svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>},
+              ].map(s=>(
+                <a key={s.id} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="h-8 w-8 rounded-full bg-white/15 flex items-center justify-center hover:bg-white hover:text-[#1A9E9E] transition-all">
+                  {s.svg}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <div className="border-t border-white/20 pt-6 text-center text-sm text-white/60">© {new Date().getFullYear()} PT. Linguo Edu Indonesia</div>

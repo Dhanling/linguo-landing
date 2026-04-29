@@ -28,7 +28,7 @@ body {
 
 ::selection { background-color: #1A9E9E44; }
 
-/* Hide scrollbar utility (used by ProductDock auto-scroll) */
+/* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -44,3 +44,9 @@ body {
 .animate-marquee { animation: marquee 25s linear infinite; }
 .animate-marquee-slow { animation: marquee 40s linear infinite; }
 .animate-marquee:hover, .animate-marquee-slow:hover { animation-play-state: paused; }
+
+/* Mobile auto-scroll for ProductDock — duplicates content, translates -50% for seamless loop */
+@keyframes productDockMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
