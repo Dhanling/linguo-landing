@@ -1,4 +1,5 @@
-import { Metadata, Suspense } from "next";
+import { Metadata } from "next";
+import { Suspense } from "react";
 import { createClient } from "@supabase/supabase-js";
 import JadwalKelasRegulerClient from "./JadwalKelasRegulerClient";
 
