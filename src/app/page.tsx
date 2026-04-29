@@ -341,6 +341,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
   const [regulerSubOpen, setRegulerSubOpen] = useState(false);
+  const [etpSubOpen, setEtpSubOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
@@ -413,15 +414,37 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       Kelas Kids
                     </button>
-                    {/* IELTS / TOEFL */}
-                    <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setProgOpen(false)}}
-                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      IELTS / TOEFL
-                    </button>
-                    <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setProgOpen(false)}
-                      className="block px-4 py-2 text-xs text-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-colors pl-8 border-l-2 border-[#1A9E9E]/30 ml-4">
-                      └ 📅 Cek Jadwal ETP
-                    </a>
+                    {/* IELTS / TOEFL + sub-item Jadwal ETP */}
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setEtpSubOpen(true)}
+                      onMouseLeave={() => setEtpSubOpen(false)}
+                    >
+                      <button
+                        onClick={() => setEtpSubOpen((v) => !v)}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
+                      >
+                        IELTS / TOEFL
+                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (etpSubOpen ? "rotate-0" : "-rotate-90")} />
+                      </button>
+                      {etpSubOpen && (
+                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
+                          
+                            href="/jadwal-kelas-reguler?tab=etp"
+                            onClick={() => { setProgOpen(false); setEtpSubOpen(false); }}
+                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            📅 Cek Jadwal ETP
+                          </a>
+                          <button
+                            onClick={() => { (window as any).__openFunnel?.("IELTS/TOEFL Prep"); setProgOpen(false); setEtpSubOpen(false); }}
+                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            📝 Daftar IELTS / TOEFL
+                          </button>
+                        </div>
+                      )}
+                    </div>
                     <div className="border-t border-slate-100 my-1"/>
                     <a href="/produk"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
