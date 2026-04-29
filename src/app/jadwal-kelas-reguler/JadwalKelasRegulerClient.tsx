@@ -48,12 +48,16 @@ interface EtpProgram {
   days: string;
   time: string;
   startDate: string;
+  startDateISO: string; // untuk countdown
   duration: string;
   sessions: number;
   sessionMin: number;
   price: number;
   highlights: string[];
-  color: string; // teal | blue
+  syllabus: { week: string; topics: string[] }[];
+  maxCapacity: number;
+  currentEnrolled: number;
+  color: string;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -70,15 +74,24 @@ const ETP_PROGRAMS: EtpProgram[] = [
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
     startDate: "1 Juni 2026",
+    startDateISO: "2026-06-01",
     duration: "90 menit/sesi",
     sessions: 12,
     sessionMin: 90,
     price: 750000,
+    maxCapacity: 15,
+    currentEnrolled: 4,
     highlights: [
       "Latihan Listening, Structure, Reading intensif",
       "Bank soal TOEFL ITP & PBT terlengkap",
       "Simulasi ujian sebelum test hari H",
       "Target skor 500+ dalam 1 batch",
+    ],
+    syllabus: [
+      { week: "Minggu 1–2", topics: ["Pengenalan format TOEFL ITP", "Listening: short conversations & talks"] },
+      { week: "Minggu 3–4", topics: ["Structure: subject-verb agreement, parallel structure", "Error recognition"] },
+      { week: "Minggu 5–6", topics: ["Reading comprehension: main idea, inference", "Vocabulary in context"] },
+      { week: "Minggu 7–8", topics: ["Full mock test + review intensif", "Time management & test-taking strategy"] },
     ],
     color: "teal",
   },
@@ -91,15 +104,24 @@ const ETP_PROGRAMS: EtpProgram[] = [
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
     startDate: "2 Juni 2026",
+    startDateISO: "2026-06-02",
     duration: "90 menit/sesi",
     sessions: 12,
     sessionMin: 90,
     price: 850000,
+    maxCapacity: 15,
+    currentEnrolled: 7,
     highlights: [
       "4 skill: Listening, Reading, Writing, Speaking",
       "Latihan Task 1 & Task 2 Writing dengan feedback",
       "Mock speaking session 1-on-1",
       "Target band 6.5+ dalam 1 batch",
+    ],
+    syllabus: [
+      { week: "Minggu 1–2", topics: ["Listening: multiple choice, map labelling", "Reading: skimming & scanning"] },
+      { week: "Minggu 3–4", topics: ["Writing Task 1: grafik & diagram", "Writing Task 2: argumentative essay"] },
+      { week: "Minggu 5–6", topics: ["Speaking Part 1–3: fluency & coherence", "Vocabulary & grammar untuk band 6.5+"] },
+      { week: "Minggu 7–8", topics: ["Full Academic mock test", "Feedback individual + strategi hari H"] },
     ],
     color: "blue",
   },
@@ -197,6 +219,8 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
   const [search, setSearch] = useState("");
   const [selectedLang, setSelectedLang] = useState<string>("all");
   const [countdown, setCountdown] = useState("");
+  const [etpCountdown, setEtpCountdown] = useState("");
+  const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
 
   // Cari batch yang paling dekat mulainya (masih upcoming)
   const nearestBatch = useMemo(() => {
@@ -230,6 +254,33 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, [nearestBatch]);
+
+  // ETP countdown — batch TOEFL/IELTS terdekat
+  useEffect(() => {
+    const nearestEtp = ETP_PROGRAMS.slice().sort(
+      (a, b) => new Date(a.startDateISO).getTime() - new Date(b.startDateISO).getTime()
+    )[0];
+    const tick = () => {
+      const now = new Date().getTime();
+      const target = new Date(nearestEtp.startDateISO);
+      target.setHours(23, 59, 59, 0);
+      const diff = target.getTime() - now;
+      if (diff <= 0) { setEtpCountdown("Pendaftaran ditutup"); return; }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      const parts = [];
+      if (d > 0) parts.push(`${d} hari`);
+      parts.push(`${String(h).padStart(2,"0")} jam`);
+      parts.push(`${String(m).padStart(2,"0")} menit`);
+      parts.push(`${String(s).padStart(2,"0")} detik`);
+      setEtpCountdown(parts.join(" "));
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   const uniqueLanguages = useMemo(
     () => Array.from(new Set(batches.map((b) => b.language))).sort(),
@@ -625,17 +676,27 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
             transition={{ duration: 0.2 }}
           >
             {/* ETP Hero banner */}
-            <section className="px-4 pb-8 max-w-6xl mx-auto">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 text-white text-center">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-semibold mb-3">
-                  🎯 English Test Preparation
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                  Persiapan TOEFL & IELTS
-                </h2>
-                <p className="text-blue-100 text-sm md:text-base max-w-xl mx-auto">
-                  Batch Juni 2026 — Kelas intensif 2× seminggu dengan tutor berpengalaman. Raih skor target untuk studi & karir.
-                </p>
+            <section className="px-4 pb-4 max-w-6xl mx-auto">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 text-white">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-semibold mb-3">
+                      🎯 English Test Preparation
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-1">Persiapan TOEFL & IELTS</h2>
+                    <p className="text-blue-100 text-sm max-w-md">
+                      Batch Juni 2026 — Kelas intensif 2× seminggu dengan tutor berpengalaman.
+                    </p>
+                  </div>
+                  {/* ETP Countdown */}
+                  <div className="bg-white/10 rounded-xl px-5 py-4 text-center shrink-0">
+                    <div className="text-[11px] font-semibold text-blue-100 uppercase tracking-wide mb-1">⏳ Pendaftaran ditutup dalam</div>
+                    <div className="text-lg md:text-xl font-bold tabular-nums leading-tight">
+                      {etpCountdown || "Menghitung..."}
+                    </div>
+                    <div className="text-[11px] text-blue-200 mt-1">Batch TOEFL mulai 1 Juni 2026</div>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -645,6 +706,11 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                 {ETP_PROGRAMS.map((program) => {
                   const waLink = `https://wa.me/${WA_NUMBER}?text=${buildEtpWAMessage(program)}`;
                   const isTeal = program.color === "teal";
+                  const slotsLeft = program.maxCapacity - program.currentEnrolled;
+                  const slotPct = Math.round((program.currentEnrolled / program.maxCapacity) * 100);
+                  const slotColor = slotsLeft <= 3 ? "bg-red-500" : slotsLeft <= 6 ? "bg-amber-400" : isTeal ? "bg-teal-500" : "bg-blue-500";
+                  const slotTextColor = slotsLeft <= 3 ? "text-red-600" : slotsLeft <= 6 ? "text-amber-600" : isTeal ? "text-teal-700" : "text-blue-700";
+                  const isSylOpen = !!openSyllabus[program.id];
                   return (
                     <div
                       key={program.id}
@@ -677,6 +743,23 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                             </div>
                             <div className="text-[10px] text-slate-500">/siswa/batch</div>
                           </div>
+                        </div>
+
+                        {/* Kuota bar */}
+                        <div className="mt-4">
+                          <div className="flex items-center justify-between text-xs mb-1.5">
+                            <span className="text-slate-500">Kuota terisi</span>
+                            <span className={`font-semibold ${slotTextColor}`}>
+                              {slotsLeft <= 3 ? "⚠️ " : ""}{slotsLeft} slot tersisa dari {program.maxCapacity}
+                            </span>
+                          </div>
+                          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full rounded-full transition-all ${slotColor}`}
+                              style={{ width: `${slotPct}%` }}
+                            />
+                          </div>
+                          <div className="text-[10px] text-slate-400 mt-1">{program.currentEnrolled} dari {program.maxCapacity} siswa sudah mendaftar</div>
                         </div>
                       </div>
 
@@ -715,6 +798,35 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                               {h}
                             </div>
                           ))}
+                        </div>
+
+                        {/* Silabus accordion */}
+                        <div className={`rounded-xl border ${isTeal ? "border-teal-100" : "border-blue-100"}`}>
+                          <button
+                            onClick={() => setOpenSyllabus((prev) => ({ ...prev, [program.id]: !prev[program.id] }))}
+                            className={`w-full flex items-center justify-between px-4 py-3 text-sm font-semibold transition-colors rounded-xl ${
+                              isTeal ? "text-teal-700 hover:bg-teal-50" : "text-blue-700 hover:bg-blue-50"
+                            }`}
+                          >
+                            <span>📋 Lihat Silabus Lengkap</span>
+                            <ChevronRight className={`h-4 w-4 transition-transform ${isSylOpen ? "rotate-90" : ""}`} />
+                          </button>
+                          {isSylOpen && (
+                            <div className={`px-4 pb-4 space-y-3 border-t ${isTeal ? "border-teal-100" : "border-blue-100"}`}>
+                              {program.syllabus.map((s, i) => (
+                                <div key={i} className="pt-3">
+                                  <div className={`text-xs font-bold mb-1.5 ${isTeal ? "text-teal-700" : "text-blue-700"}`}>{s.week}</div>
+                                  <ul className="space-y-1">
+                                    {s.topics.map((t, j) => (
+                                      <li key={j} className="text-xs text-slate-600 flex items-start gap-1.5">
+                                        <span className="mt-0.5 text-slate-300">•</span>{t}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
 
                         {/* CTA */}
