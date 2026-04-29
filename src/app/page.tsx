@@ -429,7 +429,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       </button>
                       {etpSubOpen && (
                         <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
-                          
+                          <a
                             href="/jadwal-kelas-reguler?tab=etp"
                             onClick={() => { setProgOpen(false); setEtpSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
