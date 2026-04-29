@@ -37,13 +37,15 @@ export const metadata: Metadata = {
 
 export const revalidate = 60;
 
-async function getBatches() {
-  const supabase = createClient(
+function getSupabase() {
+  return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
+}
 
-  const { data, error } = await supabase
+async function getBatches() {
+  const { data, error } = await getSupabase()
     .from("v_regular_batches_summary")
     .select("*")
     .eq("is_published", true)
@@ -58,11 +60,26 @@ async function getBatches() {
   return (data || []).filter((b: any) => b.actual_enrolled < b.max_capacity);
 }
 
+async function getEtpBatches() {
+  const { data, error } = await getSupabase()
+    .from("etp_batches")
+    .select("*")
+    .eq("is_active", true)
+    .order("start_date", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching ETP batches:", error);
+    return [];
+  }
+
+  return data || [];
+}
+
 export default async function JadwalKelasRegulerPage() {
-  const batches = await getBatches();
+  const [batches, etpBatches] = await Promise.all([getBatches(), getEtpBatches()]);
   return (
     <Suspense fallback={<div className="min-h-screen" />}>
-      <JadwalKelasRegulerClient batches={batches} />
+      <JadwalKelasRegulerClient batches={batches} etpBatches={etpBatches} />
     </Suspense>
   );
 }

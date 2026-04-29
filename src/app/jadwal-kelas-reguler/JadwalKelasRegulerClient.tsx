@@ -39,6 +39,26 @@ interface Batch {
   capacity_hint: string;
 }
 
+// Raw row dari tabel etp_batches di Supabase
+export interface EtpBatchRow {
+  id: string;
+  title: string;
+  badge: string;
+  icon: string;
+  color: string;
+  days: string;
+  time: string;
+  start_date: string; // ISO date string
+  duration_min: number;
+  total_sessions: number;
+  price: number;
+  max_capacity: number;
+  current_enrolled: number;
+  syllabus: { week: string; topics: string[] }[];
+  highlights: string[];
+  is_active: boolean;
+}
+
 interface EtpProgram {
   id: string;
   title: string;
@@ -219,7 +239,13 @@ function buildEtpWAMessage(program: EtpProgram): string {
 
 type Tab = "reguler" | "etp";
 
-export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[] }) {
+export default function JadwalKelasRegulerClient({
+  batches,
+  etpBatches,
+}: {
+  batches: Batch[];
+  etpBatches: EtpBatchRow[];
+}) {
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<Tab>(
     searchParams.get("tab") === "etp" ? "etp" : "reguler"
@@ -229,6 +255,30 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
   const [countdown, setCountdown] = useState("");
   const [etpCountdown, setEtpCountdown] = useState("");
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
+
+  // Map DB rows → EtpProgram (tambah field display)
+  const etpPrograms: EtpProgram[] = useMemo(() =>
+    etpBatches.map((b) => ({
+      id: b.id,
+      title: b.title,
+      subtitle: `Batch ${new Date(b.start_date).toLocaleDateString("id-ID", { month: "long", year: "numeric" })}`,
+      icon: b.icon,
+      badge: b.badge,
+      days: b.days,
+      time: b.time,
+      startDate: formatDate(b.start_date),
+      startDateISO: b.start_date,
+      duration: `${b.duration_min} menit/sesi`,
+      sessions: b.total_sessions,
+      sessionMin: b.duration_min,
+      price: b.price,
+      maxCapacity: b.max_capacity,
+      currentEnrolled: b.current_enrolled,
+      highlights: b.highlights,
+      syllabus: b.syllabus,
+      color: b.color,
+    })),
+  [etpBatches]);
 
   // Cari batch yang paling dekat mulainya (masih upcoming)
   const nearestBatch = useMemo(() => {
@@ -265,9 +315,10 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
 
   // ETP countdown — batch TOEFL/IELTS terdekat
   useEffect(() => {
-    const nearestEtp = ETP_PROGRAMS.slice().sort(
-      (a, b) => new Date(a.startDateISO).getTime() - new Date(b.startDateISO).getTime()
-    )[0];
+    if (etpPrograms.length === 0) return;
+    const nearestEtp = etpPrograms
+      .slice()
+      .sort((a, b) => new Date(a.startDateISO).getTime() - new Date(b.startDateISO).getTime())[0];
     const tick = () => {
       const now = new Date().getTime();
       const target = new Date(nearestEtp.startDateISO);
@@ -288,7 +339,7 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [etpPrograms]);
 
   const uniqueLanguages = useMemo(
     () => Array.from(new Set(batches.map((b) => b.language))).sort(),
@@ -411,7 +462,7 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
             <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-medium ${
               activeTab === "etp" ? "bg-blue-100 text-blue-700" : "bg-slate-200 text-slate-600"
             }`}>
-              {ETP_PROGRAMS.length}
+              {etpPrograms.length}
             </span>
           </button>
         </div>
@@ -711,7 +762,7 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
             {/* ETP Cards */}
             <section className="px-4 pb-12 max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-6">
-                {ETP_PROGRAMS.map((program) => {
+                {etpPrograms.map((program) => {
                   const waLink = `https://wa.me/${WA_NUMBER}?text=${buildEtpWAMessage(program)}`;
                   const isTeal = program.color === "teal";
                   const slotsLeft = program.maxCapacity - program.currentEnrolled;
