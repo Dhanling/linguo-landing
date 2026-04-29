@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Calendar, Clock, Users, MessageCircle,
-  ChevronRight, BookOpen, Award,
+  ChevronRight, ChevronLeft, BookOpen, Award, Home,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -204,8 +204,19 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-teal-50/20 to-white">
 
+      {/* ── BACK TO HOME ── */}
+      <div className="px-4 pt-4 max-w-6xl mx-auto">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-teal-600 transition-colors"
+        >
+          <ChevronLeft className="h-4 w-4" />
+          Kembali ke Beranda
+        </Link>
+      </div>
+
       {/* ── HERO ── */}
-      <section className="relative px-4 pt-12 pb-8 md:pt-20 md:pb-12 max-w-6xl mx-auto">
+      <section className="relative px-4 pt-6 pb-8 md:pt-10 md:pb-12 max-w-6xl mx-auto">
         <div className="text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-semibold mb-4">
