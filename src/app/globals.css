@@ -10,13 +10,22 @@
 }
 
 html { scroll-behavior: smooth; }
+
+/* Prevent horizontal overflow on Android Chrome (white strip on right side).
+   Apply to BOTH html and body — body alone isn't enough because the
+   document element itself can still be horizontally scrollable. */
+html, body {
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+}
+
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  /* Prevent horizontal whitespace strip on Android (Chrome doesn't auto-clip overflow like Safari iOS does) */
-  overflow-x: hidden;
-  width: 100%;
 }
+
 ::selection { background-color: #1A9E9E44; }
 
 @keyframes marquee {
