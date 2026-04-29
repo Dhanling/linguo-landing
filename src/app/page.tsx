@@ -620,6 +620,7 @@ const TESTIMONIALS = [
 
 function TestimonialCarousel() {
   const [active, setActive] = useState(0);
+  const [cardW, setCardW] = useState(560);
   const total = TESTIMONIALS.length;
 
   useEffect(() => {
@@ -627,7 +628,18 @@ function TestimonialCarousel() {
     return () => clearInterval(t);
   }, []);
 
-  const cardW = 560;
+  // Responsive card width: ~90% viewport on mobile, fixed 560px on desktop
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 640) setCardW(Math.min(w - 48, 320));
+      else setCardW(560);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const gap = 24;
   const offset = -(active * (cardW + gap));
 
@@ -642,10 +654,11 @@ function TestimonialCarousel() {
           }}>
             {TESTIMONIALS.map((t, i) => {
               const isCurrent = i === active;
+              const photoW = cardW < 400 ? 90 : 200;
               return (
                 <div key={i} className="shrink-0" style={{width:`${cardW}px`}} onClick={() => setActive(i)}>
                   <div className={`flex gap-0 rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${isCurrent ? "opacity-100 shadow-lg" : "opacity-40 scale-95"}`}>
-                    <div className={`w-[200px] shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center relative overflow-hidden`}>
+                    <div className={`shrink-0 bg-gradient-to-br ${t.color} flex items-center justify-center relative overflow-hidden`} style={{width:`${photoW}px`}}>
                       {t.photo ? (
                         // Foto asli — full cover, tanpa overlay apapun
                         <img 
@@ -659,18 +672,18 @@ function TestimonialCarousel() {
                         <div className="h-24 w-24 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-2xl font-bold text-white">{t.initials}</div>
                       )}
                     </div>
-                    <div className="flex-1 bg-slate-50 p-6 text-left">
-                      <div className="flex items-center justify-between mb-1">
-                        <div>
-                          <p className="font-bold text-sm">{t.name}</p>
+                    <div className="flex-1 min-w-0 bg-slate-50 p-4 sm:p-6 text-left">
+                      <div className="flex items-center justify-between mb-1 gap-2">
+                        <div className="min-w-0">
+                          <p className="font-bold text-xs sm:text-sm truncate">{t.name}</p>
                           <div className="flex items-center gap-1.5 mt-0.5">
                             <img src={`https://flagcdn.com/w40/${getFlagCode(t.lang)}.png`} alt={`Bendera ${t.lang}`} className="h-3.5 w-3.5 rounded-full object-cover"/>
                             <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
                           </div>
                         </div>
-                        <div className="flex gap-0.5">{[1,2,3,4,5].map(s=><Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400"/>)}</div>
+                        <div className="flex gap-0.5 shrink-0">{[1,2,3,4,5].map(s=><Star key={s} className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-amber-400 text-amber-400"/>)}</div>
                       </div>
-                      <p className="text-xs text-slate-500 leading-relaxed mt-2 line-clamp-4">{t.text}</p>
+                      <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed mt-2 line-clamp-4">{t.text}</p>
                     </div>
                   </div>
                 </div>
@@ -1340,33 +1353,33 @@ const PRICING_TABS = [
 function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=>void;onGetStarted:(program:string)=>void}) {
   const t = PRICING_TABS[tab];
   return (
-    <section id="produk" className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2">Choose a learning plan<br/>that speaks to you</h2>
-        <p className="text-slate-500 mb-10">Mulai perjalanan bahasamu sekarang.</p>
+    <section id="produk" className="py-12 sm:py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-2 leading-tight">Choose a learning plan<br/>that speaks to you</h2>
+        <p className="text-slate-500 text-sm sm:text-base mb-6 sm:mb-10">Mulai perjalanan bahasamu sekarang.</p>
 
         {/* Tabs */}
-        <div className="inline-flex bg-slate-100 rounded-full p-1.5 mb-12">
+        <div className="inline-flex bg-slate-100 rounded-full p-1 sm:p-1.5 mb-6 sm:mb-12 max-w-full">
           {PRICING_TABS.map((pt,i)=>(
             <button key={pt.id} onClick={()=>setTab(i)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${tab===i?"bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/25":"text-slate-500 hover:text-slate-700"}`}>
+              className={`px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap ${tab===i?"bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/25":"text-slate-500 hover:text-slate-700"}`}>
               {pt.label}
             </button>
           ))}
         </div>
 
-        <p className="text-slate-500 text-sm mb-10">{t.desc}</p>
+        <p className="text-slate-500 text-xs sm:text-sm mb-6 sm:mb-10 px-2">{t.desc}</p>
 
         {/* Cards layout for plans */}
-        <div className={`flex justify-center gap-5 flex-wrap mb-6`}>
+        <div className={`flex justify-center gap-3 sm:gap-5 flex-wrap mb-6`}>
           {t.plans.map((p,pi)=>(
-            <div key={pi} className={`relative w-[220px] rounded-2xl border-2 p-6 text-center transition-all duration-300 ${p.highlighted?"border-[#1A9E9E] shadow-xl bg-white scale-[1.03]":"border-slate-200 bg-white hover:border-slate-300"}`}>
-              {p.badge&&<span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap ${p.badge==="BEST VALUE"?"bg-[#fbbf24] text-slate-900":"bg-[#1A9E9E] text-white"}`}>{p.badge}</span>}
-              <p className="font-bold text-lg mt-2">{p.name}</p>
-              <p className="text-xs text-slate-400 mt-1 mb-4">{p.desc}</p>
-              <p className={`text-2xl font-bold mb-5 ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
+            <div key={pi} className={`relative w-[150px] sm:w-[220px] rounded-2xl border-2 p-4 sm:p-6 text-center transition-all duration-300 ${p.highlighted?"border-[#1A9E9E] shadow-xl bg-white scale-[1.03]":"border-slate-200 bg-white hover:border-slate-300"}`}>
+              {p.badge&&<span className={`absolute -top-3 left-1/2 -translate-x-1/2 text-[9px] sm:text-[10px] font-bold px-2 sm:px-3 py-1 rounded-full whitespace-nowrap ${p.badge==="BEST VALUE"?"bg-[#fbbf24] text-slate-900":"bg-[#1A9E9E] text-white"}`}>{p.badge}</span>}
+              <p className="font-bold text-sm sm:text-lg mt-2">{p.name}</p>
+              <p className="text-[10px] sm:text-xs text-slate-400 mt-1 mb-3 sm:mb-4">{p.desc}</p>
+              <p className={`text-lg sm:text-2xl font-bold mb-3 sm:mb-5 ${p.highlighted?"text-[#1A9E9E]":"text-slate-900"}`}>{p.price}</p>
               <button onClick={()=>onGetStarted(t.label)}
-                className={`inline-block w-full px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>
+                className={`inline-block w-full px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95 ${p.highlighted?"bg-[#1A9E9E] text-white hover:bg-[#178888] shadow-lg shadow-[#1A9E9E]/25":"border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"}`}>
                 Get Started
               </button>
             </div>
@@ -1374,31 +1387,31 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
         </div>
 
         {/* Feature list */}
-        <div className="max-w-md mx-auto mt-10 text-left">
+        <div className="max-w-md mx-auto mt-8 sm:mt-10 text-left px-2">
           {t.features.map((f,fi)=>(
-            <div key={fi} className="flex items-center gap-3 py-2.5 border-b border-slate-100 last:border-0">
+            <div key={fi} className="flex items-center gap-2 sm:gap-3 py-2 sm:py-2.5 border-b border-slate-100 last:border-0">
               <Check className="h-4 w-4 text-[#1A9E9E] shrink-0"/>
-              <span className="text-sm text-slate-600">{f}</span>
+              <span className="text-xs sm:text-sm text-slate-600">{f}</span>
             </div>
           ))}
         </div>
 
         {/* Digital Products */}
-        <div id="digital" className="mt-16 pt-12 border-t border-slate-100">
-          <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">BELAJAR MANDIRI</p>
-          <h3 className="text-xl font-bold mb-6">Mau belajar sendiri dulu?</h3>
-          <div className="flex justify-center gap-5 flex-wrap">
+        <div id="digital" className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-slate-100">
+          <p className="text-[10px] sm:text-xs font-bold text-[#1A9E9E] uppercase tracking-widest mb-2">BELAJAR MANDIRI</p>
+          <h3 className="text-base sm:text-xl font-bold mb-4 sm:mb-6">Mau belajar sendiri dulu?</h3>
+          <div className="flex justify-center gap-3 sm:gap-5 flex-wrap">
             {[
               {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000",icon:"📱"},
               {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000",icon:"📚"},
             ].map((d,i)=>(
-              <div key={i} className="w-[260px] bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center hover:border-[#1A9E9E]/40 hover:shadow-md transition-all">
-                <span className="text-3xl mb-3 block">{d.icon}</span>
-                <p className="font-bold">{d.name}</p>
-                <p className="text-xs text-slate-400 mt-1 mb-3">{d.desc}</p>
-                <p className="text-xl font-bold text-[#1A9E9E] mb-4">{d.price}</p>
+              <div key={i} className="w-[160px] sm:w-[260px] bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 text-center hover:border-[#1A9E9E]/40 hover:shadow-md transition-all">
+                <span className="text-2xl sm:text-3xl mb-2 sm:mb-3 block">{d.icon}</span>
+                <p className="font-bold text-sm sm:text-base">{d.name}</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 mt-1 mb-2 sm:mb-3">{d.desc}</p>
+                <p className="text-base sm:text-xl font-bold text-[#1A9E9E] mb-3 sm:mb-4">{d.price}</p>
                 <a href={(d as any).href || "/produk"}
-                  className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95">
+                  className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95">
                   Beli Sekarang
                 </a>
               </div>
@@ -1469,7 +1482,7 @@ export default function Home() {
     </section>
 
     {/* WA CHAT WIDGET */}
-    <a href="https://wa.me/6282116859493" target="_blank"
+    <a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo Min Ling! 👋\n\nAku mau tanya-tanya soal kelas bahasa di Linguo dong. Boleh dibantu? 🙏")}`} target="_blank"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 group">
       <span className="bg-white text-slate-700 text-sm font-medium px-4 py-2.5 rounded-full shadow-lg border border-slate-200 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Need help? Chat with Us</span>
       <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform">
@@ -1531,16 +1544,16 @@ export default function Home() {
           </div>))}
         </div>
         {/* Mobile: simple grid */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:hidden">
+        <div className="grid grid-cols-2 gap-3 sm:gap-8 lg:hidden">
           {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
             {img:"/images/step-2.png",s:"Step 2",t:"Choose the language level",d:"Pilih level kemampuanmu (tersedia dari basic hingga advance*)"},
             {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
             {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*"}
-          ].map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center">
-            <img src={s.img} alt={s.t} className="h-20 object-contain mb-4"/>
-            <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
-            <h3 className="text-sm font-bold mb-2">{s.t}</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
+          ].map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center px-1">
+            <img src={s.img} alt={s.t} className="h-12 sm:h-20 object-contain mb-2 sm:mb-4"/>
+            <p className="text-[10px] sm:text-xs text-[#1A9E9E] font-semibold italic mb-0.5 sm:mb-1">{s.s}</p>
+            <h3 className="text-xs sm:text-sm font-bold mb-1 sm:mb-2 leading-tight">{s.t}</h3>
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">{s.d}</p>
           </motion.div>))}
         </div>
       </div>
