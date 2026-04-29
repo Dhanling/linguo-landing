@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Suspense } from "next";
 import { createClient } from "@supabase/supabase-js";
 import JadwalKelasRegulerClient from "./JadwalKelasRegulerClient";
 
@@ -59,5 +59,9 @@ async function getBatches() {
 
 export default async function JadwalKelasRegulerPage() {
   const batches = await getBatches();
-  return <JadwalKelasRegulerClient batches={batches} />;
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <JadwalKelasRegulerClient batches={batches} />
+    </Suspense>
+  );
 }
