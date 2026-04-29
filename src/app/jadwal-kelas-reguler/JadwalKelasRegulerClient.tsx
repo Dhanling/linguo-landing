@@ -196,6 +196,40 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
   );
   const [search, setSearch] = useState("");
   const [selectedLang, setSelectedLang] = useState<string>("all");
+  const [countdown, setCountdown] = useState("");
+
+  // Cari batch yang paling dekat mulainya (masih upcoming)
+  const nearestBatch = useMemo(() => {
+    const now = new Date();
+    return batches
+      .filter((b) => new Date(b.start_date) > now)
+      .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())[0] ?? null;
+  }, [batches]);
+
+  // Live countdown tick
+  useEffect(() => {
+    if (!nearestBatch) return;
+    const tick = () => {
+      const now = new Date().getTime();
+      const target = new Date(nearestBatch.start_date);
+      target.setHours(23, 59, 59, 0); // tutup akhir hari H
+      const diff = target.getTime() - now;
+      if (diff <= 0) { setCountdown("Pendaftaran ditutup"); return; }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+      const parts = [];
+      if (d > 0) parts.push(`${d} hari`);
+      parts.push(`${String(h).padStart(2,"0")} jam`);
+      parts.push(`${String(m).padStart(2,"0")} menit`);
+      parts.push(`${String(s).padStart(2,"0")} detik`);
+      setCountdown(parts.join(" "));
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [nearestBatch]);
 
   const uniqueLanguages = useMemo(
     () => Array.from(new Set(batches.map((b) => b.language))).sort(),
@@ -251,6 +285,40 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
           </motion.div>
         </div>
       </section>
+
+      {/* ── COUNTDOWN BANNER ── */}
+      {nearestBatch && (
+        <section className="px-4 pb-4 max-w-6xl mx-auto">
+          <div className="bg-gradient-to-r from-teal-600 to-teal-500 rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-white shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">⏳</span>
+              <div>
+                <div className="text-xs font-medium text-teal-100 uppercase tracking-wide">Pendaftaran Batch Terdekat Ditutup Dalam</div>
+                <div className="text-xl md:text-2xl font-bold tabular-nums leading-tight">
+                  {countdown || "Menghitung..."}
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 sm:text-right">
+              <div className="text-sm">
+                <div className="font-semibold">
+                  {LANGUAGE_FLAGS[nearestBatch.language] || "🌐"} {nearestBatch.language} {nearestBatch.level}
+                </div>
+                <div className="text-teal-100 text-xs">Mulai {formatDate(nearestBatch.start_date)}</div>
+              </div>
+              <a
+                href={`https://wa.me/${WA_NUMBER}?text=${buildWAMessage(nearestBatch)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-1.5 h-9 px-4 rounded-xl bg-white text-teal-700 text-sm font-bold hover:bg-teal-50 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Daftar
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── TAB SWITCHER ── */}
       <section className="px-4 pb-6 max-w-6xl mx-auto">
