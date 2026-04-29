@@ -141,6 +141,19 @@ function formatDate(dateStr: string): string {
   });
 }
 
+function getCountdown(dateStr: string): { label: string; color: string } {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const target = new Date(dateStr);
+  target.setHours(0, 0, 0, 0);
+  const diff = Math.round((target.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  if (diff < 0)  return { label: "Sudah dimulai", color: "text-slate-400" };
+  if (diff === 0) return { label: "Mulai hari ini!", color: "text-red-600 font-semibold" };
+  if (diff <= 3)  return { label: `⚠️ ${diff} hari lagi`, color: "text-red-500 font-semibold" };
+  if (diff <= 7)  return { label: `${diff} hari lagi`, color: "text-amber-500 font-medium" };
+  return { label: `${diff} hari lagi`, color: "text-slate-400" };
+}
+
 function buildWAMessage(batch: Batch): string {
   const text = [
     `Halo Linguo! Saya tertarik mendaftar Kelas Reguler:`,
@@ -190,15 +203,22 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
   );
 
   const filteredBatches = useMemo(() => {
-    return batches.filter((b) => {
-      const matchesSearch =
-        search === "" ||
-        b.language.toLowerCase().includes(search.toLowerCase()) ||
-        b.batch_code.toLowerCase().includes(search.toLowerCase()) ||
-        b.level.toLowerCase().includes(search.toLowerCase());
-      const matchesLang = selectedLang === "all" || b.language === selectedLang;
-      return matchesSearch && matchesLang;
-    });
+    return batches
+      .filter((b) => {
+        const matchesSearch =
+          search === "" ||
+          b.language.toLowerCase().includes(search.toLowerCase()) ||
+          b.batch_code.toLowerCase().includes(search.toLowerCase()) ||
+          b.level.toLowerCase().includes(search.toLowerCase());
+        const matchesLang = selectedLang === "all" || b.language === selectedLang;
+        return matchesSearch && matchesLang;
+      })
+      .sort((a, b) => {
+        const slotsA = a.max_capacity - a.actual_enrolled;
+        const slotsB = b.max_capacity - b.actual_enrolled;
+        if (slotsB !== slotsA) return slotsB - slotsA; // slot terbanyak dulu
+        return a.language.localeCompare(b.language, "id"); // alphabetical
+      });
   }, [batches, search, selectedLang]);
 
   return (
@@ -380,7 +400,12 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                                   {batch.session_end_time?.slice(0, 5)} WIB
                                 </div>
                               </td>
-                              <td className="py-4 px-4 text-slate-600 text-xs">{formatDate(batch.start_date)}</td>
+                              <td className="py-4 px-4 text-slate-600 text-xs">
+                                <div>{formatDate(batch.start_date)}</div>
+                                <div className={`text-[11px] mt-0.5 ${getCountdown(batch.start_date).color}`}>
+                                  {getCountdown(batch.start_date).label}
+                                </div>
+                              </td>
                               <td className="py-4 px-4 text-slate-600 text-xs">
                                 {batch.total_sessions} × {batch.session_duration_min} mnt
                               </td>
@@ -459,7 +484,12 @@ export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[]
                             </div>
                             <div className="flex items-start gap-1.5 text-slate-600 col-span-2">
                               <span className="text-[10px]">📆</span>
-                              <span>Mulai {formatDate(batch.start_date)}</span>
+                              <div>
+                                <span>Mulai {formatDate(batch.start_date)}</span>
+                                <span className={`ml-2 text-[11px] ${getCountdown(batch.start_date).color}`}>
+                                  · {getCountdown(batch.start_date).label}
+                                </span>
+                              </div>
                             </div>
                           </div>
                           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
