@@ -2,7 +2,8 @@
 // Client component: tab Kelas Reguler + ETP (TOEFL/IELTS)
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Calendar, Clock, Users, MessageCircle,
@@ -176,7 +177,10 @@ function buildEtpWAMessage(program: EtpProgram): string {
 type Tab = "reguler" | "etp";
 
 export default function JadwalKelasRegulerClient({ batches }: { batches: Batch[] }) {
-  const [activeTab, setActiveTab] = useState<Tab>("reguler");
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState<Tab>(
+    searchParams.get("tab") === "etp" ? "etp" : "reguler"
+  );
   const [search, setSearch] = useState("");
   const [selectedLang, setSelectedLang] = useState<string>("all");
 

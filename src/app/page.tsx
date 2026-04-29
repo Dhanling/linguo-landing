@@ -418,6 +418,10 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       IELTS / TOEFL
                     </button>
+                    <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setProgOpen(false)}
+                      className="block px-4 py-2 text-xs text-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-colors pl-8 border-l-2 border-[#1A9E9E]/30 ml-4">
+                      └ 📅 Cek Jadwal ETP
+                    </a>
                     <div className="border-t border-slate-100 my-1"/>
                     <a href="/produk"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
@@ -462,6 +466,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
             <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
             <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
+            <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Kids 🧒</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
             <a href="/corporate" className="text-sm py-2.5">Corporate</a>
