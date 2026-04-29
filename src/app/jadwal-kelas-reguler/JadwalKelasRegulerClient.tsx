@@ -76,9 +76,9 @@ const ETP_PROGRAMS: EtpProgram[] = [
     startDate: "1 Juni 2026",
     startDateISO: "2026-06-01",
     duration: "90 menit/sesi",
-    sessions: 12,
+    sessions: 16,
     sessionMin: 90,
-    price: 750000,
+    price: 300000,
     maxCapacity: 15,
     currentEnrolled: 4,
     highlights: [
@@ -106,9 +106,9 @@ const ETP_PROGRAMS: EtpProgram[] = [
     startDate: "2 Juni 2026",
     startDateISO: "2026-06-02",
     duration: "90 menit/sesi",
-    sessions: 12,
+    sessions: 16,
     sessionMin: 90,
-    price: 850000,
+    price: 300000,
     maxCapacity: 15,
     currentEnrolled: 7,
     highlights: [
