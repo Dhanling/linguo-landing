@@ -550,8 +550,8 @@ const WHY_CARDS = [
 
 function WhyCarousel() {
   const [active, setActive] = useState(1);
+  const [cardW, setCardW] = useState(300);
   const total = WHY_CARDS.length;
-  const cardW = 300;
   const gap = 24;
   const step = cardW + gap;
 
@@ -560,16 +560,28 @@ function WhyCarousel() {
     return () => clearInterval(t);
   }, []);
 
+  // Responsive card width — fit phones, normal on desktop
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 640) setCardW(Math.min(w - 80, 220));
+      else setCardW(300);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   // Center the active card: offset so active is in the middle
   const offset = -(active * step);
 
   return (
-    <div className="relative px-6">
-      <div className="flex justify-end max-w-5xl mx-auto gap-2 mb-6">
-        <button onClick={() => setActive(a => (a - 1 + total) % total)} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
-        <button onClick={() => setActive(a => (a + 1) % total)} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
+    <div className="relative px-4 sm:px-6">
+      <div className="flex justify-end max-w-5xl mx-auto gap-2 mb-3 sm:mb-6">
+        <button onClick={() => setActive(a => (a - 1 + total) % total)} className="h-8 w-8 sm:h-9 sm:w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-500"/></button>
+        <button onClick={() => setActive(a => (a + 1) % total)} className="h-8 w-8 sm:h-9 sm:w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-500"/></button>
       </div>
-      <div className="max-w-5xl mx-auto overflow-hidden py-6">
+      <div className="max-w-5xl mx-auto overflow-hidden py-4 sm:py-6">
         <div className="flex" style={{
           transform: `translateX(calc(50% - ${cardW/2}px + ${offset}px))`,
           transition: 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -594,9 +606,9 @@ function WhyCarousel() {
           })}
         </div>
       </div>
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-2 sm:mt-4">
         {WHY_CARDS.map((_, i) => (
-          <button key={i} onClick={() => setActive(i)} className={`transition-all duration-500 rounded-full ${i === active ? "w-8 h-2.5 bg-[#1A9E9E]" : "w-2.5 h-2.5 bg-[#1A9E9E]/30"}`}/>
+          <button key={i} onClick={() => setActive(i)} className={`transition-all duration-500 rounded-full ${i === active ? "w-7 sm:w-8 h-2 sm:h-2.5 bg-[#1A9E9E]" : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[#1A9E9E]/30"}`}/>
         ))}
       </div>
     </div>
@@ -1236,6 +1248,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [mouseX, setMouseX] = useState<number|null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -1243,6 +1256,27 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  // Auto-scroll loop on mobile (paused on touch / hover)
+  useEffect(() => {
+    if (!isMobile) return;
+    const el = containerRef.current;
+    if (!el) return;
+    let raf = 0;
+    const tick = () => {
+      if (!paused && el) {
+        // smooth slow drift
+        el.scrollLeft += 0.4;
+        // loop back to start when reaching the end
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+          el.scrollLeft = 0;
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [isMobile, paused]);
 
   const getScale = (el:HTMLDivElement|null) => {
     if(isMobile || mouseX===null || !el) return 1;
@@ -1256,9 +1290,12 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
   return (
     <div ref={containerRef}
-      className="flex lg:justify-center gap-3 lg:gap-4 items-stretch py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0"
+      className="flex lg:justify-center gap-2 lg:gap-4 items-stretch py-2 lg:py-6 px-2 lg:px-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-3 lg:pb-4 -mx-2 lg:mx-0 scrollbar-hide"
       onMouseMove={(e)=>setMouseX(e.clientX)}
-      onMouseLeave={()=>setMouseX(null)}>
+      onMouseLeave={()=>{setMouseX(null);setPaused(false);}}
+      onMouseEnter={()=>setPaused(true)}
+      onTouchStart={()=>setPaused(true)}
+      onTouchEnd={()=>{setTimeout(()=>setPaused(false),2000);}}>
       {PRODUCTS.map((p,i)=>(
         <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
       ))}
@@ -1272,7 +1309,7 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
 
   return (
     <div ref={ref}
-      className="flex flex-col bg-white border-2 rounded-2xl p-3 lg:p-5 w-[150px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
+      className="flex flex-col bg-white border-2 rounded-2xl p-2.5 lg:p-5 w-[125px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
       style={{
         transform:`scale(${scale})`,
         transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1)',
@@ -1281,27 +1318,27 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
         zIndex: scale > 1.03 ? 10 : 1,
         position:'relative',
       }}>
-      <span className={`inline-block text-[10px] font-bold px-3 py-1 rounded-full mb-3 self-start ${p.badgeColor}`}>{p.badge}</span>
-      <h3 className="font-bold text-sm mb-1">{p.title}</h3>
-      <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-1">{p.desc}</p>
-      <div className="mb-3 min-h-[48px] flex flex-col justify-end">
+      <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full mb-2 lg:mb-3 self-start whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
+      <h3 className="font-bold text-xs lg:text-sm mb-1">{p.title}</h3>
+      <p className="text-[10px] lg:text-xs text-slate-500 leading-snug mb-2 lg:mb-4 flex-1">{p.desc}</p>
+      <div className="mb-2 lg:mb-3 min-h-[40px] lg:min-h-[48px] flex flex-col justify-end">
         {p.priceOld ? (
-          <div className="flex items-center gap-2 mb-0.5">
-            <span className="text-xs text-slate-400 line-through">{p.priceOld}</span>
-            {p.discount && <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded">{p.discount}</span>}
+          <div className="flex items-center gap-1.5 lg:gap-2 mb-0.5 flex-wrap">
+            <span className="text-[10px] lg:text-xs text-slate-400 line-through">{p.priceOld}</span>
+            {p.discount && <span className="text-[9px] lg:text-[10px] font-bold text-red-500 bg-red-50 px-1 lg:px-1.5 py-0.5 rounded">{p.discount}</span>}
           </div>
         ) : (
-          <div className="mb-0.5 h-[18px]"/>
+          <div className="mb-0.5 h-[14px] lg:h-[18px]"/>
         )}
-        <span className="text-lg font-bold text-[#1A9E9E]">{p.price}</span>
-        <span className="text-xs text-slate-400">{p.per}</span>
+        <span className="text-sm lg:text-lg font-bold text-[#1A9E9E]">{p.price}</span>
+        <span className="text-[10px] lg:text-xs text-slate-400">{p.per}</span>
       </div>
       <button onClick={()=>{
         if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
         else if((p).href){window.location.href=(p).href}
         else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
       }}
-        className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-semibold py-2.5 rounded-full transition-colors active:scale-95">
+        className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-[11px] lg:text-xs font-semibold py-2 lg:py-2.5 rounded-full transition-colors active:scale-95">
         Beli Paket
       </button>
     </div>
@@ -1359,10 +1396,10 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
         <p className="text-slate-500 text-sm sm:text-base mb-6 sm:mb-10">Mulai perjalanan bahasamu sekarang.</p>
 
         {/* Tabs */}
-        <div className="inline-flex bg-slate-100 rounded-full p-1 sm:p-1.5 mb-6 sm:mb-12 max-w-full">
+        <div className="grid grid-cols-2 sm:inline-flex sm:flex-row gap-1 sm:gap-0 bg-slate-100 rounded-2xl sm:rounded-full p-1 sm:p-1.5 mb-6 sm:mb-12 max-w-full mx-auto">
           {PRICING_TABS.map((pt,i)=>(
             <button key={pt.id} onClick={()=>setTab(i)}
-              className={`px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap ${tab===i?"bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/25":"text-slate-500 hover:text-slate-700"}`}>
+              className={`px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap ${tab===i?"bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/25":"text-slate-500 hover:text-slate-700"}`}>
               {pt.label}
             </button>
           ))}
@@ -1602,10 +1639,10 @@ export default function Home() {
     </section>
 
     {/* WHY LINGUO */}
-    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+    <section className="py-8 sm:py-16 lg:py-24 bg-white relative overflow-hidden">
       <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
-        <h2 className="text-xl sm:text-3xl font-bold text-center text-[#1A9E9E] mb-4">Why Linguo?</h2>
+        <h2 className="text-base sm:text-3xl font-bold text-center text-[#1A9E9E] mb-2 sm:mb-4">Why Linguo?</h2>
         <WhyCarousel/>
       </div>
     </section>

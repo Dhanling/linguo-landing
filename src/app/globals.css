@@ -28,6 +28,15 @@ body {
 
 ::selection { background-color: #1A9E9E44; }
 
+/* Hide scrollbar utility (used by ProductDock auto-scroll) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
