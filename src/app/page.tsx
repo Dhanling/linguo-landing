@@ -1143,19 +1143,19 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
         </div>
         {/* Inline WA input — compact */}
         <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
-        <div className="bg-white rounded-full flex items-center max-w-full sm:max-w-lg shadow-lg">
+        <div className="bg-white rounded-full flex items-center w-full max-w-full sm:max-w-lg shadow-lg overflow-hidden">
           <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-            className="bg-transparent pl-3 sm:pl-4 pr-0 py-3 text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none">
+            className="bg-transparent pl-3 pr-0 py-3 text-xs sm:text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none w-[52px] sm:w-auto shrink-0">
             {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
           <input type="tel" placeholder="812 3456 7890" value={waNumber}
             onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
-            className="flex-1 min-w-0 px-2 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
+            className="flex-1 min-w-0 w-full px-1 sm:px-2 py-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
             onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()}/>
           <button onClick={handleQuickSubmit}
-            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-2.5 sm:px-4 py-2 text-[10px] sm:text-xs transition-all active:scale-95 whitespace-nowrap rounded-full m-1 shrink-0">
+            className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-2 sm:px-4 py-2 text-[10px] sm:text-xs transition-all active:scale-95 whitespace-nowrap rounded-full m-1 shrink-0">
             <span className="hidden sm:inline">Dapatkan Diskon →</span><span className="sm:hidden">Diskon →</span>
           </button>
         </div>
