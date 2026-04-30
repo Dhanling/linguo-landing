@@ -276,10 +276,7 @@
 
   <div class="form-group">
     <label>Nama Kamu <span class="req">*</span></label>
-    <div id="internSkeleton" class="skeleton"></div>
-    <select id="internId" style="display:none" required>
-      <option value="">— Pilih nama kamu —</option>
-    </select>
+    <input type="text" id="internName" placeholder="Tulis nama lengkap kamu" required>
   </div>
 
   <div class="divider"></div>
@@ -390,7 +387,7 @@ async function submitForm() {
   alert.className = "alert";
   alert.textContent = "";
 
-  const internId   = document.getElementById("internId").value.trim();
+  const internName = document.getElementById("internName").value.trim();
   const kolHandle  = document.getElementById("kolHandle").value.trim();
   const platform   = document.querySelector('input[name="platform"]:checked')?.value;
   const kolName    = document.getElementById("kolName").value.trim();
@@ -400,7 +397,7 @@ async function submitForm() {
   const reason     = document.getElementById("reason").value.trim();
 
   // Validation
-  if (!internId)              return showAlert("Pilih nama kamu dulu ya!");
+  if (!internName)            return showAlert("Tulis nama kamu dulu ya!");
   if (!kolHandle)             return showAlert("Handle KOL wajib diisi.");
   if (!kolHandle.startsWith("@")) return showAlert("Handle harus diawali '@', contoh: @bahasakini");
   if (!followers || followers < 1000) return showAlert("Masukkan jumlah followers (minimal 1.000).");
@@ -410,7 +407,7 @@ async function submitForm() {
   btn.textContent = "Mengirim...";
 
   const { error } = await sb.from("kol_prospects").insert({
-    intern_id:        internId,
+    notes:            `[Dari: ${internName}]`,
     kol_handle:       kolHandle,
     platform:         platform,
     kol_name:         kolName || null,
@@ -452,7 +449,7 @@ function resetForm() {
   document.querySelector('input[name="platform"][value="instagram"]').checked = true;
 }
 
-loadInterns();
+// intern name entered manually
 </script>
 </body>
 </html>
