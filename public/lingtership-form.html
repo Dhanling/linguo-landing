@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Prospect KOL — Lingtership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --teal-dark: #0f766e;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
+    padding: 32px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    bottom: -30px; left: -20px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header p {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Card */
+  .card {
+    background: var(--card);
+    margin: -16px 16px 0;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 24px 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--teal-light);
+  }
+
+  /* Form groups */
+  .form-group {
+    margin-bottom: 18px;
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  label .req { color: var(--teal); }
+  label .hint {
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
+    background: white;
+  }
+  textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+
+  /* Platform pills */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .platform-option { display: none; }
+  .platform-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .platform-label .icon { font-size: 18px; }
+  .platform-option:checked + .platform-label {
+    border-color: var(--teal);
+    background: var(--teal-light);
+    color: var(--teal-dark);
+  }
+
+  /* Divider */
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+  /* Submit */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0d9488, #0891b2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    margin-top: 8px;
+  }
+  .submit-btn:active { transform: scale(0.98); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  /* States */
+  .alert {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: none;
+  }
+  .alert.error   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; display: block; }
+  .alert.success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; display: block; }
+
+  /* Success screen */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .success-icon {
+    width: 72px; height: 72px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 16px;
+  }
+  .success-screen h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .success-screen p  { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .submit-another {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Loading skeleton */
+  .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; border-radius: 8px; height: 44px; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  /* Note box */
+  .note-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #92400e;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .note-box strong { display: block; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">🌟 Lingtership Program</div>
+  <h1>Submit Prospect KOL</h1>
+  <p>Temukan KOL potensial untuk kolaborasi Linguo.id</p>
+</div>
+
+<div class="card" id="formCard">
+  <div class="note-box">
+    <strong>📋 Sebelum submit, pastikan kamu sudah:</strong>
+    Cek profil IG/TikTok/YouTube-nya, lihat engagement rate, dan pastikan relevan dengan topik bahasa/edukasi.
+  </div>
+
+  <div id="alertBox" class="alert"></div>
+
+  <!-- IDENTITAS INTERN -->
+  <div class="section-label">👤 Identitas Kamu</div>
+
+  <div class="form-group">
+    <label>Nama Kamu <span class="req">*</span></label>
+    <div id="internSkeleton" class="skeleton"></div>
+    <select id="internId" style="display:none" required>
+      <option value="">— Pilih nama kamu —</option>
+    </select>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DATA KOL -->
+  <div class="section-label">🎯 Data KOL yang Diprospek</div>
+
+  <div class="form-group">
+    <label>Handle / Username <span class="req">*</span> <span class="hint">contoh: @bahasakini</span></label>
+    <input type="text" id="kolHandle" placeholder="@username" autocomplete="off" autocapitalize="none">
+  </div>
+
+  <div class="form-group">
+    <label>Platform <span class="req">*</span></label>
+    <div class="platform-grid">
+      <div>
+        <input type="radio" name="platform" id="p_ig" value="instagram" class="platform-option" checked>
+        <label for="p_ig" class="platform-label"><span class="icon">📸</span> Instagram</label>
+      </div>
+      <div>
+        <input type="radio" name="platform" id="p_tt" value="tiktok" class="platform-option">
+        <label for="p_tt" class="platform-label"><span class="icon">🎵</span> TikTok</label>
+      </div>
+      <div>
+        <input type="radio" name="platform" id="p_yt" value="youtube" class="platform-option">
+        <label for="p_yt" class="platform-label"><span class="icon">▶️</span> YouTube</label>
+      </div>
+      <div>
+        <input type="radio" name="platform" id="p_ot" value="other" class="platform-option">
+        <label for="p_ot" class="platform-label"><span class="icon">🌐</span> Lainnya</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Nama Lengkap / Brand <span class="hint">opsional</span></label>
+    <input type="text" id="kolName" placeholder="contoh: Bahasa Kini">
+  </div>
+
+  <div class="form-group">
+    <label>Jumlah Followers <span class="req">*</span></label>
+    <input type="number" id="followers" placeholder="contoh: 25000" min="0">
+  </div>
+
+  <div class="form-group">
+    <label>Niche / Kategori <span class="hint">opsional</span></label>
+    <input type="text" id="niche" placeholder="contoh: bahasa, edukasi, self-improvement">
+  </div>
+
+  <div class="form-group">
+    <label>Link Profil <span class="hint">opsional tapi disarankan</span></label>
+    <input type="url" id="profileUrl" placeholder="https://instagram.com/username">
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ALASAN -->
+  <div class="section-label">💡 Alasan & Analisis</div>
+
+  <div class="form-group">
+    <label>Kenapa KOL ini cocok untuk Linguo? <span class="req">*</span></label>
+    <textarea id="reason" placeholder="Jelaskan: audiensnya siapa, kontennya seperti apa, kenapa relevan untuk promosi kelas bahasa Linguo..."></textarea>
+  </div>
+
+  <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+    🚀 Submit Prospect
+  </button>
+</div>
+
+<!-- Success Screen -->
+<div class="card success-screen" id="successScreen">
+  <div class="success-icon">🎉</div>
+  <h2>Berhasil Disubmit!</h2>
+  <p>Prospect KOL kamu sudah masuk dan akan direview oleh Intan.<br>Kalau diapprove, kamu bisa langsung DM pakai template yang udah disiapkan.</p>
+  <button class="submit-another" onclick="resetForm()">+ Submit Prospect Lagi</button>
+</div>
+
+<script>
+// ── CONFIG — ganti dengan nilai dari Supabase project kamu ──────────────
+const SUPABASE_URL  = "https://XXXX.supabase.co";        // ← ganti
+const SUPABASE_ANON = "eyXXXXXXXXXX";                    // ← ganti
+// ────────────────────────────────────────────────────────────────────────
+
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+// Load active interns
+async function loadInterns() {
+  const { data, error } = await sb.from("interns").select("id, name").eq("status", "active").order("name");
+  const sel = document.getElementById("internId");
+  const skel = document.getElementById("internSkeleton");
+  skel.style.display = "none";
+  sel.style.display = "block";
+  if (error || !data?.length) {
+    sel.innerHTML = '<option value="">Hubungi Intan — data intern belum tersedia</option>';
+    return;
+  }
+  data.forEach(i => {
+    const opt = document.createElement("option");
+    opt.value = i.id;
+    opt.textContent = i.name;
+    sel.appendChild(opt);
+  });
+}
+
+async function submitForm() {
+  const alert  = document.getElementById("alertBox");
+  const btn    = document.getElementById("submitBtn");
+  alert.className = "alert";
+  alert.textContent = "";
+
+  const internId   = document.getElementById("internId").value.trim();
+  const kolHandle  = document.getElementById("kolHandle").value.trim();
+  const platform   = document.querySelector('input[name="platform"]:checked')?.value;
+  const kolName    = document.getElementById("kolName").value.trim();
+  const followers  = parseInt(document.getElementById("followers").value) || null;
+  const niche      = document.getElementById("niche").value.trim();
+  const profileUrl = document.getElementById("profileUrl").value.trim();
+  const reason     = document.getElementById("reason").value.trim();
+
+  // Validation
+  if (!internId)              return showAlert("Pilih nama kamu dulu ya!");
+  if (!kolHandle)             return showAlert("Handle KOL wajib diisi.");
+  if (!kolHandle.startsWith("@")) return showAlert("Handle harus diawali '@', contoh: @bahasakini");
+  if (!followers || followers < 1000) return showAlert("Masukkan jumlah followers (minimal 1.000).");
+  if (!reason || reason.length < 20)  return showAlert("Tuliskan alasan minimal 20 karakter ya.");
+
+  btn.disabled = true;
+  btn.textContent = "Mengirim...";
+
+  const { error } = await sb.from("kol_prospects").insert({
+    intern_id:        internId,
+    kol_handle:       kolHandle,
+    platform:         platform,
+    kol_name:         kolName || null,
+    followers:        followers,
+    niche:            niche || null,
+    profile_url:      profileUrl || null,
+    reason_to_target: reason,
+    status:           "pending_approval",
+  });
+
+  btn.disabled = false;
+  btn.textContent = "🚀 Submit Prospect";
+
+  if (error) {
+    if (error.code === "23505") return showAlert(`KOL "${kolHandle}" sudah pernah disubmit sebelumnya.`);
+    return showAlert("Terjadi error: " + error.message);
+  }
+
+  document.getElementById("formCard").style.display = "none";
+  document.getElementById("successScreen").style.display = "block";
+}
+
+function showAlert(msg) {
+  const a = document.getElementById("alertBox");
+  a.textContent = "⚠️ " + msg;
+  a.className = "alert error";
+  a.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function resetForm() {
+  document.getElementById("formCard").style.display = "block";
+  document.getElementById("successScreen").style.display = "none";
+  document.getElementById("kolHandle").value = "";
+  document.getElementById("kolName").value = "";
+  document.getElementById("followers").value = "";
+  document.getElementById("niche").value = "";
+  document.getElementById("profileUrl").value = "";
+  document.getElementById("reason").value = "";
+  document.querySelector('input[name="platform"][value="instagram"]').checked = true;
+}
+
+loadInterns();
+</script>
+</body>
+</html>
