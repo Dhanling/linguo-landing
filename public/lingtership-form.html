@@ -276,7 +276,10 @@
 
   <div class="form-group">
     <label>Nama Kamu <span class="req">*</span></label>
-    <input type="text" id="internName" placeholder="Tulis nama lengkap kamu" required>
+    <div id="internSkeleton" class="skeleton"></div>
+    <select id="internId" style="display:none" required>
+      <option value="">— Pilih nama kamu —</option>
+    </select>
   </div>
 
   <div class="divider"></div>
@@ -356,8 +359,8 @@
 
 <script>
 // ── CONFIG — ganti dengan nilai dari Supabase project kamu ──────────────
-const SUPABASE_URL  = "https://XXXX.supabase.co";        // ← ganti
-const SUPABASE_ANON = "eyXXXXXXXXXX";                    // ← ganti
+const SUPABASE_URL  = "https://jbtgciepdmqxxcjflrxz.supabase.co";
+const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 // ────────────────────────────────────────────────────────────────────────
 
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
@@ -387,7 +390,7 @@ async function submitForm() {
   alert.className = "alert";
   alert.textContent = "";
 
-  const internName = document.getElementById("internName").value.trim();
+  const internId   = document.getElementById("internId").value.trim();
   const kolHandle  = document.getElementById("kolHandle").value.trim();
   const platform   = document.querySelector('input[name="platform"]:checked')?.value;
   const kolName    = document.getElementById("kolName").value.trim();
@@ -397,7 +400,7 @@ async function submitForm() {
   const reason     = document.getElementById("reason").value.trim();
 
   // Validation
-  if (!internName)            return showAlert("Tulis nama kamu dulu ya!");
+  if (!internId)              return showAlert("Pilih nama kamu dulu ya!");
   if (!kolHandle)             return showAlert("Handle KOL wajib diisi.");
   if (!kolHandle.startsWith("@")) return showAlert("Handle harus diawali '@', contoh: @bahasakini");
   if (!followers || followers < 1000) return showAlert("Masukkan jumlah followers (minimal 1.000).");
@@ -407,7 +410,7 @@ async function submitForm() {
   btn.textContent = "Mengirim...";
 
   const { error } = await sb.from("kol_prospects").insert({
-    notes:            `[Dari: ${internName}]`,
+    intern_id:        internId,
     kol_handle:       kolHandle,
     platform:         platform,
     kol_name:         kolName || null,
@@ -449,7 +452,7 @@ function resetForm() {
   document.querySelector('input[name="platform"][value="instagram"]').checked = true;
 }
 
-// intern name entered manually
+loadInterns();
 </script>
 </body>
 </html>
