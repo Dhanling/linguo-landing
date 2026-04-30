@@ -258,7 +258,7 @@ export default function JadwalKelasRegulerClient({
 
   // Map DB rows → EtpProgram (tambah field display)
   const etpPrograms: EtpProgram[] = useMemo(() =>
-    etpBatches.map((b) => ({
+    ETP_PROGRAMS.map((b) => ({
       id: b.id,
       title: b.title,
       subtitle: `Batch ${new Date(b.start_date).toLocaleDateString("id-ID", { month: "long", year: "numeric" })}`,
@@ -278,7 +278,7 @@ export default function JadwalKelasRegulerClient({
       syllabus: b.syllabus,
       color: b.color,
     })),
-  [etpBatches]);
+  []);
 
   // Cari batch yang paling dekat mulainya (masih upcoming)
   const nearestBatch = useMemo(() => {
