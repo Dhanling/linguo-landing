@@ -256,29 +256,7 @@ export default function JadwalKelasRegulerClient({
   const [etpCountdown, setEtpCountdown] = useState("");
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
 
-  // Map DB rows → EtpProgram (tambah field display)
-  const etpPrograms: EtpProgram[] = useMemo(() =>
-    ETP_PROGRAMS.map((b) => ({
-      id: b.id,
-      title: b.title,
-      subtitle: `Batch ${new Date(b.start_date).toLocaleDateString("id-ID", { month: "long", year: "numeric" })}`,
-      icon: b.icon,
-      badge: b.badge,
-      days: b.days,
-      time: b.time,
-      startDate: formatDate(b.start_date),
-      startDateISO: b.start_date,
-      duration: `${b.duration_min} menit/sesi`,
-      sessions: b.total_sessions,
-      sessionMin: b.duration_min,
-      price: b.price,
-      maxCapacity: b.max_capacity,
-      currentEnrolled: b.current_enrolled,
-      highlights: b.highlights,
-      syllabus: b.syllabus,
-      color: b.color,
-    })),
-  []);
+  const etpPrograms: EtpProgram[] = ETP_PROGRAMS;
 
   // Cari batch yang paling dekat mulainya (masih upcoming)
   const nearestBatch = useMemo(() => {
