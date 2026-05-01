@@ -112,7 +112,7 @@ const curriculum: LanguageCurriculum = {
     "Program 64 sesi intensif (±96 jam) untuk meraih IELTS Band 6.5–7.0. Dirancang untuk siswa dengan kemampuan Inggris umum minimal B1. Mencakup semua komponen tes: Reading, Listening, Writing Task 1 & 2, dan Speaking Part 1–3. Setiap level diakhiri mock test dengan band scoring nyata.",
   levels: [
     {
-      code: "B1.1",
+      code: "B1",
       name: "Foundation",
       description:
         "Membangun fondasi 4 skills IELTS: memahami format tes, vocabulary akademik, dan strategi dasar tiap section.",
@@ -126,7 +126,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B1.2",
+      code: "B1",
       name: "Core Skills",
       description:
         "Drill intensif per skill dengan soal authentic. Target penguasaan Band 5.5–6.0 sebelum naik ke level advanced.",
@@ -140,7 +140,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B2.1",
+      code: "B2",
       name: "Advanced Skills",
       description:
         "Tingkatkan akurasi dan kompleksitas jawaban. Fokus pada kriteria Band 7 untuk Writing dan Speaking.",
@@ -154,7 +154,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B2.2",
+      code: "B2",
       name: "Exam Mastery",
       description:
         "Full mock test dalam kondisi ujian nyata. Error analysis mendalam dan strategi hari-H untuk meraih Band 7.0+.",

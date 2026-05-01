@@ -121,7 +121,7 @@ const curriculum: LanguageCurriculum = {
     "Program 64 sesi intensif (±96 jam) untuk meraih skor TOEFL ITP 500–550+. Dirancang untuk siswa dengan kemampuan Inggris umum minimal B1. Mencakup ketiga section tes: Listening Comprehension, Structure & Written Expression, dan Reading Comprehension. Setiap level diakhiri full mock test dengan skor aktual.",
   levels: [
     {
-      code: "B1.1",
+      code: "B1",
       name: "Foundation",
       description:
         "Memahami format TOEFL ITP dan membangun fondasi strategi untuk ketiga section. Termasuk baseline mock test untuk mengetahui starting score.",
@@ -135,7 +135,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B1.2",
+      code: "B1",
       name: "Core Skills",
       description:
         "Drill intensif per section dengan soal-soal authentic. Fokus pada pola soal yang paling sering muncul. Target skor 450.",
@@ -149,7 +149,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B2.1",
+      code: "B2",
       name: "Advanced Skills",
       description:
         "Tingkatkan akurasi dan kecepatan menjawab. Latihan soal-soal tingkat tinggi dan strategi eliminasi jawaban. Target skor 500.",
@@ -163,7 +163,7 @@ const curriculum: LanguageCurriculum = {
       ],
     },
     {
-      code: "B2.2",
+      code: "B2",
       name: "Exam Mastery",
       description:
         "Full mock test dalam kondisi ujian nyata. Analisis skor mendalam, eliminasi kelemahan, dan strategi hari-H untuk meraih 550+.",
