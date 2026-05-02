@@ -375,7 +375,7 @@ export default function JadwalKelasRegulerClient({
       </section>
 
       {/* ── COUNTDOWN BANNER ── */}
-      {nearestBatch && (
+      {activeTab === "reguler" && nearestBatch && (
         <section className="px-4 pb-4 max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-teal-600 to-teal-500 rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-white shadow-md">
             <div className="flex items-center gap-3">
