@@ -3,6 +3,8 @@ import type { LanguageMeta } from "./types";
 export const languages: LanguageMeta[] = [
   // === FEATURED / Priority ===
   { slug: "english",    name: "Inggris",   nativeName: "English",     flag: "🇬🇧", region: "european",       featured: true, available: true,  description: "Bahasa internasional — dari A1 sampai B2, TOEFL & IELTS ready." },
+  { slug: "ielts",      name: "IELTS",     nativeName: "IELTS",       flag: "🎓", region: "european",       featured: true, available: true,  description: "Persiapan IELTS Academic intensif — target Band 6.5–7.0 dalam 64 sesi." },
+  { slug: "toefl-itp",  name: "TOEFL ITP", nativeName: "TOEFL ITP",   flag: "📝", region: "european",       featured: true, available: true,  description: "Persiapan TOEFL ITP intensif — target skor 500–550+ dalam 64 sesi." },
   { slug: "japanese",   name: "Jepang",    nativeName: "日本語",       flag: "🇯🇵", region: "asian",          featured: true, available: false, description: "Hiragana, Katakana, Kanji — dari nol sampai JLPT." },
   { slug: "korean",     name: "Korea",     nativeName: "한국어",       flag: "🇰🇷", region: "asian",          featured: true, available: false, description: "Hangul, tata bahasa Korea, TOPIK ready." },
   { slug: "mandarin",   name: "Mandarin",  nativeName: "中文",         flag: "🇨🇳", region: "asian",          featured: true, available: false, description: "Pinyin, Hanzi, HSK — metode Linguo untuk pemula." },

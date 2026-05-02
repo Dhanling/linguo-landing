@@ -5,6 +5,8 @@ import greek from "./data/greek";
 import spanish from "./data/spanish";
 import french from "./data/french";
 import german from "./data/german";
+import ielts from "./data/ielts";
+import toeflItp from "./data/toefl-itp";
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
@@ -13,6 +15,8 @@ const registry: Record<string, LanguageCurriculum> = {
   spanish,
   french,
   german,
+  ielts,
+  "toefl-itp": toeflItp,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {
