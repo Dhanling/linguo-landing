@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, Award, BookOpen, CheckCircle2, ChevronRight,
   Clock, FileText, GraduationCap, Loader2, Sparkles, Target, X
