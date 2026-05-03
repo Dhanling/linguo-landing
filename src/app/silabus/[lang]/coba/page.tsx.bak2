@@ -303,14 +303,14 @@ export default function PlacementTestPage() {
 
     setSaving(true);
     setLeadErr("");
-    const { error } = await supabase.from("leads").insert({
+    const { error } = await supabase.from("leads").upsert({
       name: name.trim(),
       email: email.trim().toLowerCase(),
       whatsapp: wa.trim(),
       source: `placement-${testType}`,
       interest: testType,
       created_at: new Date().toISOString(),
-    });
+    }, { onConflict: 'email', ignoreDuplicates: false });
 
     setSaving(false);
     if (error) {
