@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
-import RegisterModal, { type PrefilledData } from "@/components/RegisterModal";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES & DATA
@@ -401,21 +400,6 @@ export default function PlacementTestPage() {
     </div>
   );
 
-  // ── Modal Daftar: state + data prefill ──
-  const [showRegisterModal, setShowRegisterModal] = useState(false);
-
-  const prefilledData: PrefilledData = {
-    name: name.trim(),
-    email: email.trim().toLowerCase(),
-    whatsapp: wa.trim(),
-    source: `placement-${testType}`,
-    testBand: result?.level,
-    testScore: result ? `${score}/${questions.length}` : undefined,
-    recommendedProgram: `Persiapan ${testLabel}`,
-    language: "english",
-    level: testType,
-  };
-
   // ─────────────────────────────────────────────────────────────────────────
   // RENDER: LEAD FORM
   // ─────────────────────────────────────────────────────────────────────────
@@ -630,22 +614,13 @@ export default function PlacementTestPage() {
             </div>
           </div>
 
-          {/* Primary CTA — Daftar Program */}
-          <button
-            onClick={() => setShowRegisterModal(true)}
-            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
-          >
-            Daftar Program Ini <ChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* Secondary CTA — Konsultasi via WA */}
           <a
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-3 border border-gray-200 text-gray-700 font-medium rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm"
+            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
           >
-            Konsultasi via WhatsApp <ChevronRight className="w-4 h-4" />
+            Konsultasi via WhatsApp <ChevronRight className="w-5 h-5" />
           </a>
 
           <Link href={`/silabus/${testType}`} className="block text-center text-sm text-gray-500 hover:text-gray-700">
@@ -653,12 +628,6 @@ export default function PlacementTestPage() {
           </Link>
         </div>
       </motion.div>
-
-      <RegisterModal
-        open={showRegisterModal}
-        onClose={() => setShowRegisterModal(false)}
-        data={prefilledData}
-      />
     </div>
   );
 
