@@ -1,141 +1,301 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
-import { motion, AnimatePresence } from "framer-motion";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { motion, AnimatePresence } from "motion/react";
+import {
+  ArrowLeft, Award, BookOpen, CheckCircle2, ChevronRight,
+  Clock, FileText, GraduationCap, Loader2, Sparkles, Target, X
+} from "lucide-react";
+import Link from "next/link";
+import { supabase } from "@/lib/supabase-client";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// TYPES
+// TYPES & DATA
 // ─────────────────────────────────────────────────────────────────────────────
-type Q = {
-  id: number;
-  text: string;
-  options: string[];
-  answer: number; // index of correct option
-  skill: "grammar" | "vocabulary" | "reading" | "structure";
-};
 
 type TestType = "ielts" | "toefl-itp";
+type Phase = "intro" | "lead" | "test" | "result";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// QUESTIONS — IELTS (20 soal: grammar, vocab, reading)
-// ─────────────────────────────────────────────────────────────────────────────
-const IELTS_QUESTIONS: Q[] = [
-  // Grammar (7 soal)
-  { id:1,  skill:"grammar",    text:"She ______ to London three times this year.", options:["went","has gone","goes","had gone"], answer:1 },
-  { id:2,  skill:"grammar",    text:"The report ______ by the team before the deadline.", options:["completed","was completed","has completed","completing"], answer:1 },
-  { id:3,  skill:"grammar",    text:"If I ______ more time, I would study abroad.", options:["have","had","will have","would have"], answer:1 },
-  { id:4,  skill:"grammar",    text:"Despite ______ hard, she didn't pass the exam.", options:["study","to study","studied","studying"], answer:3 },
-  { id:5,  skill:"grammar",    text:"The number of students ______ increased significantly.", options:["have","has","are","were"], answer:1 },
-  { id:6,  skill:"grammar",    text:"Not only ______ he arrive late, but he also forgot his passport.", options:["did","does","was","had"], answer:0 },
-  { id:7,  skill:"grammar",    text:"By the time the results are announced, the candidates ______ waiting for two weeks.", options:["will wait","have waited","will have been waiting","waited"], answer:2 },
-  // Vocabulary (7 soal)
-  { id:8,  skill:"vocabulary", text:"The government implemented policies to ______ unemployment.", options:["escalate","alleviate","aggravate","duplicate"], answer:1 },
-  { id:9,  skill:"vocabulary", text:"The scientist's findings were ______, overturning decades of research.", options:["redundant","ambiguous","groundbreaking","negligible"], answer:2 },
-  { id:10, skill:"vocabulary", text:"The new regulation will ______ small businesses more than large corporations.", options:["affect","effect","infect","reflect"], answer:0 },
-  { id:11, skill:"vocabulary", text:"Climate change poses a ______ threat to coastal communities.", options:["substantial","lenient","casual","trivial"], answer:0 },
-  { id:12, skill:"vocabulary", text:"The company's profits ______ sharply in the third quarter.", options:["deteriorated","fluctuated","plummeted","accelerated"], answer:2 },
-  { id:13, skill:"vocabulary", text:"Researchers must ______ their findings through multiple experiments.", options:["verify","modify","nullify","simplify"], answer:0 },
-  { id:14, skill:"vocabulary", text:"The treaty was signed to ______ diplomatic relations between the two nations.", options:["sever","restore","diminish","undermine"], answer:1 },
-  // Reading — short passage (6 soal)
-  { id:15, skill:"reading",    text:"PASSAGE: 'Urban farming is gaining traction as cities struggle with food security. By growing produce locally, cities can reduce transportation costs and carbon emissions while providing fresher food to residents.'\n\nWhat is the PRIMARY benefit of urban farming mentioned?", options:["Reducing city populations","Lowering food transport costs and emissions","Increasing city revenue","Providing employment for farmers"], answer:1 },
-  { id:16, skill:"reading",    text:"Based on the same passage, the word 'traction' most closely means:", options:["decline","resistance","momentum","controversy"], answer:2 },
-  { id:17, skill:"reading",    text:"PASSAGE: 'The digital divide refers to the gap between those who have reliable access to modern technology and those who do not. This disparity often correlates with socioeconomic status, geography, and education level.'\n\nAccording to the passage, the digital divide is MOST associated with:", options:["Age differences only","Cultural background","Socioeconomic and geographic factors","Language barriers"], answer:2 },
-  { id:18, skill:"reading",    text:"Based on the same passage, which statement is TRUE?", options:["Everyone has equal access to technology","Education level is unrelated to the digital divide","The gap exists between technology haves and have-nots","Geography has no impact on technology access"], answer:2 },
-  { id:19, skill:"reading",    text:"PASSAGE: 'Renewable energy sources such as solar and wind power have seen dramatic cost reductions over the past decade, making them increasingly competitive with fossil fuels. However, challenges related to energy storage and grid integration remain.'\n\nThe author's main point is that renewable energy is:", options:["More expensive than fossil fuels","Becoming cost-competitive but faces technical challenges","Already replacing fossil fuels entirely","Not yet viable for widespread use"], answer:1 },
-  { id:20, skill:"reading",    text:"Based on the same passage, what challenge does renewable energy STILL face?", options:["High production costs","Lack of government support","Energy storage and grid integration","Public opposition"], answer:2 },
+type Question = {
+  id: string;
+  category: "reading" | "listening" | "grammar" | "vocabulary";
+  question: string;
+  passage?: string;
+  options: string[];
+  answer: number;
+  explanation: string;
+};
+
+type ResultBand = {
+  level: string;
+  range: string;
+  description: string;
+  recommendation: string;
+};
+
+// ── IELTS Questions (10 mixed difficulty) ──
+const IELTS_QUESTIONS: Question[] = [
+  {
+    id: "i1",
+    category: "vocabulary",
+    question: "Choose the word closest in meaning to 'meticulous':",
+    options: ["Careless", "Thorough", "Quick", "Loud"],
+    answer: 1,
+    explanation: "'Meticulous' means showing great attention to detail; very careful and precise. 'Thorough' is the closest synonym.",
+  },
+  {
+    id: "i2",
+    category: "grammar",
+    question: "If I _____ more time, I would have finished the project.",
+    options: ["have", "had", "would have", "have had"],
+    answer: 1,
+    explanation: "This is a third conditional sentence (past unreal). The structure is: If + past perfect, would have + past participle. So 'had' is correct.",
+  },
+  {
+    id: "i3",
+    category: "reading",
+    passage: "Despite the recent advances in renewable energy technology, fossil fuels continue to dominate global energy production. Critics argue that government subsidies for traditional energy sources hinder the transition to cleaner alternatives.",
+    question: "According to the passage, what is the MAIN obstacle to renewable energy adoption?",
+    options: [
+      "Lack of technology",
+      "Government subsidies for fossil fuels",
+      "High costs of renewable energy",
+      "Public resistance",
+    ],
+    answer: 1,
+    explanation: "The passage explicitly states that critics blame 'government subsidies for traditional energy sources' as the obstacle.",
+  },
+  {
+    id: "i4",
+    category: "vocabulary",
+    question: "The 'ramifications' of the decision were unforeseen. 'Ramifications' means:",
+    options: ["Benefits", "Consequences", "Origins", "Costs"],
+    answer: 1,
+    explanation: "'Ramifications' refers to the complex consequences or results of an action or decision.",
+  },
+  {
+    id: "i5",
+    category: "grammar",
+    question: "The book, _____ I borrowed from the library, was fascinating.",
+    options: ["who", "whose", "which", "that's"],
+    answer: 2,
+    explanation: "'Which' introduces a non-defining relative clause for things (set off by commas). 'That' would be used without commas.",
+  },
+  {
+    id: "i6",
+    category: "reading",
+    passage: "Climate scientists have observed that Arctic sea ice is declining at an unprecedented rate. While natural variability plays a role, the overwhelming consensus attributes the trend primarily to anthropogenic factors.",
+    question: "The word 'anthropogenic' most likely means:",
+    options: ["Natural", "Human-caused", "Seasonal", "Temporary"],
+    answer: 1,
+    explanation: "'Anthropogenic' means originating from human activity. Context clues: it contrasts with 'natural variability'.",
+  },
+  {
+    id: "i7",
+    category: "vocabulary",
+    question: "Choose the word that best completes: 'Her _____ to detail made her an excellent editor.'",
+    options: ["attention", "intention", "tension", "extension"],
+    answer: 0,
+    explanation: "'Attention to detail' is a fixed collocation meaning careful focus on small things.",
+  },
+  {
+    id: "i8",
+    category: "grammar",
+    question: "By the time we arrived, the meeting _____.",
+    options: ["already started", "has already started", "had already started", "was already starting"],
+    answer: 2,
+    explanation: "Past perfect ('had started') describes an action completed before another past action ('arrived').",
+  },
+  {
+    id: "i9",
+    category: "vocabulary",
+    question: "The argument was 'cogent'. This means it was:",
+    options: ["Confusing", "Convincing", "Long", "Aggressive"],
+    answer: 1,
+    explanation: "'Cogent' means clear, logical, and convincing.",
+  },
+  {
+    id: "i10",
+    category: "reading",
+    passage: "The proliferation of digital media has fundamentally altered how news is consumed. Whereas previous generations relied on a handful of authoritative sources, today's audiences navigate a fragmented landscape of countless outlets, each with varying degrees of credibility.",
+    question: "What is the author's main point?",
+    options: [
+      "Digital media is better than traditional media",
+      "News consumption has become more complex",
+      "Old media sources were always reliable",
+      "People should avoid digital news",
+    ],
+    answer: 1,
+    explanation: "The author describes the shift from 'a handful of authoritative sources' to 'a fragmented landscape', emphasizing increased complexity.",
+  },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// QUESTIONS — TOEFL ITP (20 soal: structure, grammar, reading)
-// ─────────────────────────────────────────────────────────────────────────────
-const TOEFL_QUESTIONS: Q[] = [
-  // Structure & Written Expression (10 soal)
-  { id:1,  skill:"structure",  text:"______ the Amazon River is the largest river in the world by discharge volume.", options:["It is known that","Known that","That is known","Is it known that"], answer:0 },
-  { id:2,  skill:"structure",  text:"The committee has not yet reached ______ decision on the proposal.", options:["a","an","the","—"], answer:0 },
-  { id:3,  skill:"structure",  text:"Rarely ______ such dedication in a first-year student.", options:["we see","do we see","we have seen","see we"], answer:1 },
-  { id:4,  skill:"structure",  text:"The results of the experiment, ______ were published last month, surprised many scientists.", options:["that","which","who","what"], answer:1 },
-  { id:5,  skill:"structure",  text:"Neither the manager nor the employees ______ aware of the new policy.", options:["was","were","is","has been"], answer:1 },
-  { id:6,  skill:"structure",  text:"The data [A]shows [B]that global temperatures [C]have risen [D]significant over the past century.", options:["A","B","C","D — 'significant' should be 'significantly'"], answer:3 },
-  { id:7,  skill:"structure",  text:"Scientists [A]discovered that the virus [B]mutates [C]rapid, making vaccines [D]difficult to develop.", options:["A","B","C — 'rapid' should be 'rapidly'","D"], answer:2 },
-  { id:8,  skill:"structure",  text:"The government's [A]decision to [B]investing in renewable energy was [C]praised by [D]environmentalists.", options:["A","B — 'investing' should be 'invest'","C","D"], answer:1 },
-  { id:9,  skill:"structure",  text:"Participating in community service [A]teaches students [B]responsible, [C]empathy, and [D]leadership skills.", options:["A","B — 'responsible' should be 'responsibility'","C","D"], answer:1 },
-  { id:10, skill:"structure",  text:"The museum's [A]new exhibit [B]feature artifacts [C]dating back to [D]the Bronze Age.", options:["A","B — 'feature' should be 'features'","C","D"], answer:1 },
-  // Grammar (4 soal)
-  { id:11, skill:"grammar",    text:"By 1990, researchers ______ significant progress in genetic mapping.", options:["made","have made","had made","were making"], answer:2 },
-  { id:12, skill:"grammar",    text:"The book ______ I borrowed from the library is overdue.", options:["who","what","which","where"], answer:2 },
-  { id:13, skill:"grammar",    text:"It is essential that every student ______ the safety guidelines.", options:["follows","follow","followed","will follow"], answer:1 },
-  { id:14, skill:"grammar",    text:"______ she studied medicine, she became interested in public health.", options:["During","While","Despite","Although"], answer:1 },
-  // Reading (6 soal)
-  { id:15, skill:"reading",    text:"PASSAGE: 'The Industrial Revolution, beginning in Britain in the late 18th century, transformed manufacturing processes through mechanization. This period saw a shift from agrarian economies to industrial ones, dramatically changing social structures and urban populations.'\n\nWhat was the PRIMARY effect of the Industrial Revolution?", options:["Decline of British agriculture","Transformation from farming to industrial economies","Reduction in urban populations","Decrease in manufacturing output"], answer:1 },
-  { id:16, skill:"reading",    text:"Based on the passage, the word 'mechanization' refers to:", options:["manual labor practices","use of machines in production","agricultural techniques","social restructuring"], answer:1 },
-  { id:17, skill:"reading",    text:"PASSAGE: 'Cognitive load theory suggests that working memory has a limited capacity. When learners are presented with too much information simultaneously, their ability to process and retain knowledge decreases significantly.'\n\nAccording to the passage, what happens when too much information is given at once?", options:["Learning improves through challenge","Memory capacity expands","Knowledge retention decreases","Working memory becomes unlimited"], answer:2 },
-  { id:18, skill:"reading",    text:"The author's purpose in the cognitive load passage is to:", options:["Argue against modern education","Explain a theory about memory and learning","Promote a specific teaching method","Criticize traditional curricula"], answer:1 },
-  { id:19, skill:"reading",    text:"PASSAGE: 'Biodiversity hotspots are regions with exceptionally high concentrations of endemic species that are simultaneously threatened by human activity. Conservation efforts in these areas are considered high-priority given their ecological significance.'\n\nWhat makes a region a 'biodiversity hotspot'?", options:["Large geographic area only","High pollution levels","High endemic species concentration under threat","Government protection status"], answer:2 },
-  { id:20, skill:"reading",    text:"Based on the biodiversity passage, conservation in hotspots is prioritized because:", options:["They are the largest ecosystems","They have low human populations","They hold significant ecological value","They are easy to protect"], answer:2 },
+// ── TOEFL ITP Questions (10 mixed) ──
+const TOEFL_QUESTIONS: Question[] = [
+  {
+    id: "t1",
+    category: "grammar",
+    question: "The committee _____ its decision next week.",
+    options: ["announce", "announces", "will announce", "announcing"],
+    answer: 2,
+    explanation: "Future tense 'will announce' is correct because of 'next week'.",
+  },
+  {
+    id: "t2",
+    category: "vocabulary",
+    question: "'The data was inconclusive.' 'Inconclusive' means:",
+    options: ["Clear", "Not definitive", "Wrong", "Important"],
+    answer: 1,
+    explanation: "'Inconclusive' means not leading to a definite result or conclusion.",
+  },
+  {
+    id: "t3",
+    category: "grammar",
+    question: "Neither the manager nor the employees _____ satisfied with the new policy.",
+    options: ["is", "are", "was", "has been"],
+    answer: 1,
+    explanation: "With 'neither...nor', the verb agrees with the subject closer to it. 'Employees' is plural, so 'are' is correct.",
+  },
+  {
+    id: "t4",
+    category: "reading",
+    passage: "Photosynthesis is the process by which green plants and certain other organisms transform light energy into chemical energy. During photosynthesis, plants absorb carbon dioxide and water, producing glucose and oxygen as byproducts.",
+    question: "What are the byproducts of photosynthesis according to the passage?",
+    options: ["Carbon dioxide and water", "Glucose and oxygen", "Light and chemical energy", "Plants and organisms"],
+    answer: 1,
+    explanation: "The passage clearly states 'producing glucose and oxygen as byproducts'.",
+  },
+  {
+    id: "t5",
+    category: "grammar",
+    question: "She suggested that he _____ more carefully.",
+    options: ["drives", "drove", "drive", "would drive"],
+    answer: 2,
+    explanation: "After verbs of suggestion (suggest, recommend, insist), the subjunctive form (base form 'drive') is used.",
+  },
+  {
+    id: "t6",
+    category: "vocabulary",
+    question: "Choose the synonym for 'abundant':",
+    options: ["Scarce", "Plentiful", "Hidden", "Useless"],
+    answer: 1,
+    explanation: "'Abundant' means existing in large quantities; plentiful.",
+  },
+  {
+    id: "t7",
+    category: "grammar",
+    question: "The book _____ on the table belongs to Sarah.",
+    options: ["lying", "lays", "laid", "is lying"],
+    answer: 0,
+    explanation: "'Lying' is the present participle of 'lie' (to be in a horizontal position). It functions as a reduced relative clause: 'the book [which is] lying'.",
+  },
+  {
+    id: "t8",
+    category: "reading",
+    passage: "The Industrial Revolution, beginning in Britain in the late 18th century, marked a major turning point in history. Almost every aspect of daily life was influenced in some way. Average income and population began to exhibit unprecedented sustained growth.",
+    question: "What does the passage suggest about the Industrial Revolution?",
+    options: [
+      "It only affected Britain",
+      "It had widespread, lasting impact",
+      "It caused population decline",
+      "It was insignificant",
+    ],
+    answer: 1,
+    explanation: "The passage emphasizes 'major turning point' and 'unprecedented sustained growth' indicating widespread, lasting impact.",
+  },
+  {
+    id: "t9",
+    category: "vocabulary",
+    question: "'The professor was renowned for her research.' 'Renowned' means:",
+    options: ["Unknown", "Famous", "Tired", "Wealthy"],
+    answer: 1,
+    explanation: "'Renowned' means known or talked about by many people; famous.",
+  },
+  {
+    id: "t10",
+    category: "grammar",
+    question: "If I _____ you, I would accept the job offer.",
+    options: ["am", "was", "were", "be"],
+    answer: 2,
+    explanation: "In the second conditional (hypothetical present), 'were' is the correct subjunctive form for all subjects.",
+  },
 ];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SCORING → LEVEL RECOMMENDATION
-// ─────────────────────────────────────────────────────────────────────────────
-function getResult(score: number, total: number, type: TestType) {
-  const pct = (score / total) * 100;
-  if (type === "ielts") {
-    if (pct >= 85) return { level: "B2.2 — Exam Mastery",      band: "Estimasi Band 7.0+",  color: "text-teal-600",   bg: "bg-teal-50",   desc: "Kemampuanmu sudah sangat baik. Langsung masuk level Exam Mastery untuk fine-tuning dan full mock tests." };
-    if (pct >= 65) return { level: "B2.1 — Advanced Skills",   band: "Estimasi Band 6.5",   color: "text-blue-600",   bg: "bg-blue-50",   desc: "Kamu sudah punya fondasi kuat. Mulai dari Advanced Skills untuk memoles Writing dan Speaking ke standar Band 7." };
-    if (pct >= 45) return { level: "B1.2 — Core Skills",       band: "Estimasi Band 5.5–6.0", color: "text-indigo-600", bg: "bg-indigo-50", desc: "Dasarmu cukup solid. Mulai dari Core Skills Drill untuk memperkuat semua 4 section IELTS." };
-    return              { level: "B1.1 — Foundation",          band: "Estimasi Band 5.0–5.5", color: "text-amber-600",  bg: "bg-amber-50",  desc: "Kamu butuh fondasi IELTS yang kuat dulu. Foundation akan membangunnya dari bawah secara sistematis." };
-  } else {
-    if (pct >= 85) return { level: "B2.2 — Exam Mastery",      band: "Estimasi Skor 550+",  color: "text-teal-600",   bg: "bg-teal-50",   desc: "Kemampuanmu sangat baik. Langsung Exam Mastery untuk simulasi penuh dan maksimalkan skor." };
-    if (pct >= 65) return { level: "B2.1 — Advanced Skills",   band: "Estimasi Skor 500–530", color: "text-blue-600",   bg: "bg-blue-50",   desc: "Fondasi kuat. Advanced Skills akan meningkatkan akurasi dan kecepatan menjawab soal TOEFL." };
-    if (pct >= 45) return { level: "B1.2 — Core Skills",       band: "Estimasi Skor 450–480", color: "text-indigo-600", bg: "bg-indigo-50", desc: "Dasarmu cukup. Core Skills Drill akan memperkuat ketiga section TOEFL ITP secara sistematis." };
-    return              { level: "B1.1 — Foundation",          band: "Estimasi Skor 400–450", color: "text-amber-600",  bg: "bg-amber-50",  desc: "Mulai dari Foundation untuk memahami format TOEFL ITP dan membangun strategi yang tepat." };
-  }
+// ── Result Bands ──
+const IELTS_BANDS: ResultBand[] = [
+  { level: "Band 4-5", range: "0-3", description: "Modest user — basic command", recommendation: "Mulai dari Foundation IELTS untuk membangun fondasi yang kuat di semua skill." },
+  { level: "Band 5-6", range: "4-6", description: "Competent user — generally effective", recommendation: "Program IELTS Intermediate untuk menargetkan Band 6.5+ dalam 2-3 bulan." },
+  { level: "Band 6-7", range: "7-8", description: "Good user — operational command", recommendation: "Program IELTS Advanced untuk Band 7+ dengan fokus strategi & writing." },
+  { level: "Band 7+", range: "9-10", description: "Very good user — fully operational", recommendation: "Program IELTS Mastery untuk Band 8+ dengan teknik & mock tests." },
+];
+
+const TOEFL_BANDS: ResultBand[] = [
+  { level: "450-500", range: "0-3", description: "Beginner — basic understanding", recommendation: "Mulai dari TOEFL Foundation untuk meningkatkan grammar & vocabulary." },
+  { level: "500-550", range: "4-6", description: "Intermediate — functional", recommendation: "TOEFL Intermediate untuk menargetkan score 550+ dalam 2-3 bulan." },
+  { level: "550-600", range: "7-8", description: "Advanced — proficient", recommendation: "TOEFL Advanced untuk score 600+ dengan strategi & timed practice." },
+  { level: "600+", range: "9-10", description: "Expert — near-native", recommendation: "TOEFL Mastery untuk score 630+ dengan teknik test-taking lanjutan." },
+];
+
+function getResult(score: number, total: number, type: TestType): ResultBand | null {
+  const bands = type === "ielts" ? IELTS_BANDS : TOEFL_BANDS;
+  if (score <= 3) return bands[0];
+  if (score <= 6) return bands[1];
+  if (score <= 8) return bands[2];
+  return bands[3];
 }
 
+const CATEGORY_ICONS: Record<string, string> = {
+  reading: "📖",
+  listening: "🎧",
+  grammar: "📝",
+  vocabulary: "🔤",
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
-// MAIN PAGE COMPONENT
+// MAIN COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
-export default function TestPrepCobaPage() {
+
+export default function PlacementTestPage() {
   const params = useParams();
   const router = useRouter();
-  const lang = (params?.lang as string) || "ielts";
-  const isIELTS = lang === "ielts";
-  const testType: TestType = isIELTS ? "ielts" : "toefl-itp";
-  const questions = isIELTS ? IELTS_QUESTIONS : TOEFL_QUESTIONS;
-  const testLabel = isIELTS ? "IELTS Academic" : "TOEFL ITP";
-  const accentColor = isIELTS ? "teal" : "blue";
+  const lang = params?.lang as string;
 
-  // ── State ──
-  type Phase = "lead" | "test" | "result";
-  const [phase, setPhase] = useState<Phase>("lead");
+  const testType: TestType = lang === "ielts" ? "ielts" : "toefl-itp";
+  const testLabel = testType === "ielts" ? "IELTS" : "TOEFL ITP";
+  const questions = useMemo(
+    () => (testType === "ielts" ? IELTS_QUESTIONS : TOEFL_QUESTIONS),
+    [testType]
+  );
 
-  // Lead form
-  const [name, setName]     = useState("");
-  const [email, setEmail]   = useState("");
-  const [wa, setWa]         = useState("");
+  const [phase, setPhase] = useState<Phase>("intro");
+
+  // Lead form state
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [wa, setWa] = useState("");
   const [saving, setSaving] = useState(false);
   const [leadErr, setLeadErr] = useState("");
 
-  // Test
+  // Test state
   const [current, setCurrent] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [answers, setAnswers] = useState<Record<string, number>>({});
   const [selected, setSelected] = useState<number | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-
-  // Result
   const [score, setScore] = useState(0);
 
-  // ── Save Lead ──
-  async function saveLead() {
+  // Validate route
+  useEffect(() => {
+    if (lang !== "ielts" && lang !== "toefl-itp") {
+      router.push("/silabus");
+    }
+  }, [lang, router]);
+
+  // ── Submit lead form ──
+  async function submitLead(e: React.FormEvent) {
+    e.preventDefault();
     if (!name.trim() || !email.trim() || !wa.trim()) {
-      setLeadErr("Semua field wajib diisi ya!");
+      setLeadErr("Mohon lengkapi semua field.");
       return;
     }
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -143,17 +303,26 @@ export default function TestPrepCobaPage() {
 
     setSaving(true);
     setLeadErr("");
-    const { error } = await supabase.from("leads").upsert({
+    const { error } = await supabase.from("leads").insert({
       name: name.trim(),
       email: email.trim().toLowerCase(),
       whatsapp: wa.trim(),
       source: `placement-${testType}`,
       interest: testType,
       created_at: new Date().toISOString(),
-    }, { onConflict: "email" });
+    });
 
     setSaving(false);
-    if (error) { setLeadErr("Gagal menyimpan data. Coba lagi ya."); return; }
+    if (error) {
+      console.error("[leads insert]", {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+      });
+      setLeadErr("Gagal menyimpan data. Coba lagi ya.");
+      return;
+    }
     setPhase("test");
   }
 
@@ -188,6 +357,50 @@ export default function TestPrepCobaPage() {
   )}`;
 
   // ─────────────────────────────────────────────────────────────────────────
+  // RENDER: INTRO
+  // ─────────────────────────────────────────────────────────────────────────
+  if (phase === "intro") return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
+      >
+        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 p-8 text-white text-center">
+          <Award className="w-16 h-16 mx-auto mb-4 opacity-90" />
+          <h1 className="text-2xl font-bold mb-2">Placement Test {testLabel}</h1>
+          <p className="text-teal-50 text-sm">10 soal · 15 menit · Gratis</p>
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <Target className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+              <p className="text-sm text-gray-700">Dapatkan estimasi level {testLabel} kamu</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <BookOpen className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+              <p className="text-sm text-gray-700">Soal mencakup Reading, Grammar, & Vocabulary</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Sparkles className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+              <p className="text-sm text-gray-700">Rekomendasi program belajar yang sesuai</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setPhase("lead")}
+            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
+          >
+            Mulai Test <ChevronRight className="w-5 h-5" />
+          </button>
+          <Link href="/silabus" className="block text-center text-sm text-gray-500 hover:text-gray-700">
+            ← Kembali ke Silabus
+          </Link>
+        </div>
+      </motion.div>
+    </div>
+  );
+
+  // ─────────────────────────────────────────────────────────────────────────
   // RENDER: LEAD FORM
   // ─────────────────────────────────────────────────────────────────────────
   if (phase === "lead") return (
@@ -198,62 +411,70 @@ export default function TestPrepCobaPage() {
         className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
       >
         {/* Header */}
-        <div className={`px-7 pt-8 pb-6 bg-gradient-to-br ${isIELTS ? "from-teal-500 to-teal-700" : "from-blue-500 to-blue-700"} text-white`}>
-          <div className="text-3xl mb-2">{isIELTS ? "🎓" : "📝"}</div>
-          <h1 className="text-xl font-bold leading-tight">Placement Test {testLabel}</h1>
-          <p className="text-sm opacity-90 mt-1">20 soal · ~10 menit · Gratis</p>
-          <p className="text-xs opacity-75 mt-2">Isi data dulu supaya hasil test bisa kami kirimkan ke WhatsApp kamu.</p>
+        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 p-6 text-white">
+          <button
+            onClick={() => setPhase("intro")}
+            className="text-teal-50 hover:text-white text-sm flex items-center gap-1 mb-3"
+          >
+            <ArrowLeft className="w-4 h-4" /> Kembali
+          </button>
+          <h2 className="text-xl font-bold mb-1">Hampir mulai!</h2>
+          <p className="text-teal-50 text-sm">Isi data singkat untuk mulai placement test</p>
         </div>
 
         {/* Form */}
-        <div className="px-7 py-6 flex flex-col gap-4">
+        <form onSubmit={submitLead} className="p-6 space-y-4">
           <div>
-            <label className="text-xs font-semibold text-gray-500 mb-1 block">Nama Lengkap *</label>
+            <label className="text-xs font-medium text-gray-700 mb-1 block">Nama Lengkap *</label>
             <input
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
-              placeholder="Budi Santoso"
-              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+              placeholder="Nama kamu"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+              required
             />
           </div>
           <div>
-            <label className="text-xs font-semibold text-gray-500 mb-1 block">Email *</label>
+            <label className="text-xs font-medium text-gray-700 mb-1 block">Email *</label>
             <input
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder="budi@email.com"
-              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+              placeholder="email@contoh.com"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+              required
             />
           </div>
           <div>
-            <label className="text-xs font-semibold text-gray-500 mb-1 block">Nomor WhatsApp *</label>
+            <label className="text-xs font-medium text-gray-700 mb-1 block">WhatsApp *</label>
             <input
               type="tel"
               value={wa}
               onChange={e => setWa(e.target.value)}
-              placeholder="08123456789"
-              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+              placeholder="08xxxxxxxxxx"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm"
+              required
             />
           </div>
 
-          {leadErr && <p className="text-xs text-red-500 font-medium">{leadErr}</p>}
+          {leadErr && <p className="text-xs text-red-500">{leadErr}</p>}
 
           <button
-            onClick={saveLead}
+            type="submit"
             disabled={saving}
-            className={`w-full py-3 rounded-xl text-white font-semibold text-sm transition-all ${
-              isIELTS ? "bg-teal-600 hover:bg-teal-700" : "bg-blue-600 hover:bg-blue-700"
-            } disabled:opacity-50`}
+            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60"
           >
-            {saving ? "Menyimpan..." : `Mulai Placement Test →`}
+            {saving ? (
+              <><Loader2 className="w-5 h-5 animate-spin" /> Menyimpan...</>
+            ) : (
+              <>Lanjut ke Test <ChevronRight className="w-5 h-5" /></>
+            )}
           </button>
-
           <p className="text-[10px] text-gray-400 text-center">
-            Data kamu aman. Tidak akan disebarkan ke pihak ketiga.
+            Data kamu kami simpan untuk follow-up rekomendasi program belajar.
           </p>
-        </div>
+        </form>
       </motion.div>
     </div>
   );
@@ -262,108 +483,101 @@ export default function TestPrepCobaPage() {
   // RENDER: TEST
   // ─────────────────────────────────────────────────────────────────────────
   if (phase === "test") return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      {/* Progress bar */}
-      <div className="fixed top-0 inset-x-0 z-50">
-        <div className="h-1 bg-gray-200">
-          <motion.div
-            className={`h-full ${isIELTS ? "bg-teal-500" : "bg-blue-500"}`}
-            animate={{ width: `${progress}%` }}
-            transition={{ duration: 0.4 }}
-          />
-        </div>
-        <div className={`flex items-center justify-between px-5 py-3 bg-white border-b border-gray-100`}>
-          <div className="flex items-center gap-2">
-            <span className="text-lg">{isIELTS ? "🎓" : "📝"}</span>
-            <span className="text-sm font-semibold text-gray-700">{testLabel} Placement</span>
-          </div>
-          <span className="text-xs text-gray-500 font-medium">{current + 1} / {questions.length}</span>
-        </div>
-      </div>
-
-      {/* Question */}
-      <div className="flex-1 flex items-start justify-center pt-28 pb-10 px-4">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -30 }}
-            transition={{ duration: 0.25 }}
-            className="w-full max-w-xl"
-          >
-            {/* Skill badge */}
-            <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-3 ${
-              q.skill === "grammar"    ? "bg-purple-100 text-purple-600" :
-              q.skill === "vocabulary" ? "bg-amber-100 text-amber-600" :
-              q.skill === "structure"  ? "bg-blue-100 text-blue-600" :
-                                        "bg-green-100 text-green-600"
-            }`}>
-              {q.skill === "grammar" ? "Grammar" : q.skill === "vocabulary" ? "Vocabulary" : q.skill === "structure" ? "Structure" : "Reading"}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white p-4 flex items-center justify-center">
+      <div className="w-full max-w-2xl">
+        {/* Progress bar */}
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-medium text-gray-600">
+              {CATEGORY_ICONS[q.category]} {q.category.toUpperCase()} · Soal {current + 1}/{questions.length}
             </span>
+            <span className="text-xs text-gray-500">{Math.round(progress)}%</span>
+          </div>
+          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-gradient-to-r from-teal-500 to-emerald-600"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.4 }}
+            />
+          </div>
+        </div>
 
-            {/* Question text — handle passage */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 mb-4">
-              {q.text.includes("PASSAGE:") ? (
-                <>
-                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-4 text-sm text-gray-700 leading-relaxed italic">
-                    {q.text.split("\n\n")[0].replace("PASSAGE: ", "").replace(/'/g, "")}
-                  </div>
-                  <p className="text-base font-semibold text-gray-900 leading-snug">
-                    {q.text.split("\n\n")[1]}
-                  </p>
-                </>
-              ) : (
-                <p className="text-base font-semibold text-gray-900 leading-snug">{q.text}</p>
-              )}
-            </div>
+        <motion.div
+          key={q.id}
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
+        >
+          <div className="p-6 md:p-8 space-y-5">
+            {q.passage && (
+              <div className="bg-slate-50 border-l-4 border-teal-500 p-4 rounded-r-lg text-sm text-gray-700 leading-relaxed">
+                {q.passage}
+              </div>
+            )}
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 leading-relaxed">
+              {q.question}
+            </h3>
 
-            {/* Options */}
-            <div className="flex flex-col gap-2.5">
+            <div className="space-y-2">
               {q.options.map((opt, idx) => {
+                const isSelected = selected === idx;
                 const isCorrect = idx === q.answer;
-                const isSelected = idx === selected;
-                let cls = "border border-gray-200 bg-white text-gray-800 hover:border-gray-400";
-                if (showFeedback) {
-                  if (isCorrect) cls = "border-2 border-teal-500 bg-teal-50 text-teal-800";
-                  else if (isSelected && !isCorrect) cls = "border-2 border-red-400 bg-red-50 text-red-800";
-                  else cls = "border border-gray-100 bg-gray-50 text-gray-400";
-                }
+                const showCorrect = showFeedback && isCorrect;
+                const showWrong = showFeedback && isSelected && !isCorrect;
+
                 return (
                   <button
                     key={idx}
                     onClick={() => selectAnswer(idx)}
                     disabled={showFeedback}
-                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${cls}`}
+                    className={`w-full p-3.5 text-left rounded-xl border-2 transition-all text-sm ${
+                      showCorrect
+                        ? "border-emerald-500 bg-emerald-50 text-emerald-900"
+                        : showWrong
+                          ? "border-red-500 bg-red-50 text-red-900"
+                          : isSelected
+                            ? "border-teal-500 bg-teal-50"
+                            : "border-gray-200 hover:border-teal-300 hover:bg-slate-50"
+                    } ${showFeedback ? "cursor-default" : "cursor-pointer"}`}
                   >
-                    <span className="font-bold mr-2">{String.fromCharCode(65 + idx)}.</span>
+                    <span className="font-medium mr-2">{String.fromCharCode(65 + idx)}.</span>
                     {opt}
                   </button>
                 );
               })}
             </div>
 
-            {/* Feedback + Next */}
             <AnimatePresence>
               {showFeedback && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-900"
                 >
-                  <button
-                    onClick={nextQuestion}
-                    className={`w-full py-3.5 rounded-xl text-white font-semibold text-sm transition-all ${
-                      isIELTS ? "bg-teal-600 hover:bg-teal-700" : "bg-blue-600 hover:bg-blue-700"
-                    }`}
-                  >
-                    {current < questions.length - 1 ? "Soal Berikutnya →" : "Lihat Hasil Test →"}
-                  </button>
+                  <p className="font-semibold mb-1 flex items-center gap-2">
+                    {selected === q.answer ? (
+                      <><CheckCircle2 className="w-4 h-4 text-emerald-600" /> Benar!</>
+                    ) : (
+                      <><X className="w-4 h-4 text-red-600" /> Belum tepat</>
+                    )}
+                  </p>
+                  <p className="text-xs leading-relaxed">{q.explanation}</p>
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.div>
-        </AnimatePresence>
+
+            {showFeedback && (
+              <button
+                onClick={nextQuestion}
+                className="w-full py-3 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
+              >
+                {current < questions.length - 1 ? "Soal Berikutnya" : "Lihat Hasil"}
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -371,86 +585,56 @@ export default function TestPrepCobaPage() {
   // ─────────────────────────────────────────────────────────────────────────
   // RENDER: RESULT
   // ─────────────────────────────────────────────────────────────────────────
-  return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+  if (phase === "result" && result) return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-md"
+        className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
       >
-        {/* Score card */}
-        <div className={`rounded-3xl overflow-hidden shadow-xl border border-gray-100`}>
-          <div className={`px-7 pt-8 pb-6 bg-gradient-to-br ${isIELTS ? "from-teal-500 to-teal-700" : "from-blue-500 to-blue-700"} text-white text-center`}>
-            <p className="text-sm opacity-80 mb-1">Hasil Placement Test</p>
-            <div className="text-6xl font-extrabold">{score}<span className="text-2xl font-normal opacity-75">/{questions.length}</span></div>
-            <p className="text-sm opacity-90 mt-1">{Math.round((score / questions.length) * 100)}% benar</p>
+        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 p-8 text-white text-center">
+          <GraduationCap className="w-16 h-16 mx-auto mb-3 opacity-90" />
+          <p className="text-teal-50 text-xs uppercase tracking-wider mb-2">Estimasi Level {testLabel}</p>
+          <h2 className="text-3xl font-bold mb-2">{result.level}</h2>
+          <p className="text-teal-50 text-sm">{result.description}</p>
+        </div>
+
+        <div className="p-6 space-y-5">
+          <div className="bg-slate-50 rounded-xl p-4 text-center">
+            <p className="text-xs text-gray-500 mb-1">Skor kamu</p>
+            <p className="text-2xl font-bold text-gray-900">{score} / {questions.length}</p>
           </div>
 
-          <div className="bg-white px-7 py-6">
-            {/* Recommendation */}
-            <div className={`${result.bg} rounded-2xl p-4 mb-5`}>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1">Rekomendasi Level</p>
-              <p className={`text-lg font-extrabold ${result.color} mb-1`}>{result.level}</p>
-              <p className={`text-sm font-semibold ${result.color} mb-2`}>{result.band}</p>
-              <p className="text-xs text-gray-600 leading-relaxed">{result.desc}</p>
-            </div>
-
-            {/* Score breakdown */}
-            <div className="mb-5">
-              <p className="text-xs font-semibold text-gray-500 mb-3">Breakdown per Skill</p>
-              <div className="flex flex-col gap-2">
-                {(["grammar","vocabulary","reading","structure"] as const).map(skill => {
-                  const skillQs = questions.filter(q => q.skill === skill);
-                  if (skillQs.length === 0) return null;
-                  const skillScore = skillQs.filter(q => answers[q.id] === q.answer).length;
-                  const skillPct = Math.round((skillScore / skillQs.length) * 100);
-                  const skillLabel = skill === "grammar" ? "Grammar" : skill === "vocabulary" ? "Vocabulary" : skill === "structure" ? "Structure" : "Reading";
-                  return (
-                    <div key={skill}>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-gray-600 font-medium">{skillLabel}</span>
-                        <span className="font-semibold text-gray-700">{skillScore}/{skillQs.length}</span>
-                      </div>
-                      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                        <motion.div
-                          className={`h-full rounded-full ${isIELTS ? "bg-teal-500" : "bg-blue-500"}`}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skillPct}%` }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col gap-2.5">
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full py-3 rounded-xl text-white font-semibold text-sm text-center transition-all ${
-                  isIELTS ? "bg-teal-600 hover:bg-teal-700" : "bg-blue-600 hover:bg-blue-700"
-                }`}
-              >
-                💬 Konsultasi & Daftar Sekarang
-              </a>
-              <button
-                onClick={() => router.push(`/silabus/${lang}`)}
-                className="w-full py-3 rounded-xl border border-gray-200 text-gray-700 font-semibold text-sm hover:bg-gray-50 transition-all"
-              >
-                Lihat Silabus {testLabel}
-              </button>
-            </div>
-
-            <p className="text-[10px] text-gray-400 text-center mt-4">
-              Tim Linguo akan menghubungi kamu di WhatsApp dalam 1×24 jam.
+          <div className="space-y-3">
+            <p className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
+              Rekomendasi Program
             </p>
+            <div className="bg-teal-50 border border-teal-100 rounded-xl p-4">
+              <p className="text-sm text-gray-800 leading-relaxed">{result.recommendation}</p>
+            </div>
           </div>
+
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
+          >
+            Konsultasi via WhatsApp <ChevronRight className="w-5 h-5" />
+          </a>
+
+          <Link href={`/silabus/${testType}`} className="block text-center text-sm text-gray-500 hover:text-gray-700">
+            Lihat Silabus Lengkap →
+          </Link>
         </div>
       </motion.div>
+    </div>
+  );
+
+  // Fallback
+  return (
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <Loader2 className="w-8 h-8 animate-spin text-teal-500" />
     </div>
   );
 }
