@@ -437,6 +437,68 @@ const ARTICLE_CSS = `
   border-bottom: none;
 }
 
+/* ── TTS Annotation ── */
+.linguo-tts {
+  background: rgba(26,158,158,0.10);
+  border: 1.5px dashed rgba(26,158,158,0.45);
+  border-radius: 4px;
+  padding: 1px 6px;
+  cursor: pointer;
+  display: inline;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.linguo-tts:hover {
+  background: rgba(26,158,158,0.22);
+  border-color: rgba(26,158,158,0.8);
+}
+.linguo-tts.speaking {
+  background: rgba(26,158,158,0.30);
+  border-style: solid;
+  border-color: #1A9E9E;
+  animation: tts-pulse 0.8s ease-in-out infinite alternate;
+}
+@keyframes tts-pulse {
+  from { box-shadow: 0 0 0 0 rgba(26,158,158,0.4); }
+  to   { box-shadow: 0 0 0 4px rgba(26,158,158,0); }
+}
+
+/* ── Dialog Block ── */
+.linguo-dialog {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.linguo-dialog .dialog-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+}
+.linguo-dialog .dialog-a {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.linguo-dialog .dialog-b {
+  background: white;
+}
+.blog-dark .linguo-dialog {
+  border-color: #334155;
+}
+.blog-dark .linguo-dialog .dialog-a {
+  background: #1e293b;
+  border-bottom-color: #334155;
+}
+.blog-dark .linguo-dialog .dialog-b {
+  background: #0f172a;
+}
+.blog-dark .linguo-tts {
+  background: rgba(26,158,158,0.15);
+  border-color: rgba(26,158,158,0.4);
+}
+
 .article-body img {
   border-radius: 1rem;
   margin: 2rem 0;
@@ -552,6 +614,17 @@ const ARTICLE_CSS = `
 }
 `;
 
+// ── TTS language → locale mapping ────────────────────────────────────────────
+function langToLocale(lang: string): string {
+  const map: Record<string, string> = {
+    id: "id-ID", en: "en-US", es: "es-ES", fr: "fr-FR", de: "de-DE",
+    ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", ar: "ar-SA", ru: "ru-RU",
+    it: "it-IT", pt: "pt-BR", nl: "nl-NL", sv: "sv-SE", pl: "pl-PL",
+    tr: "tr-TR", vi: "vi-VN", th: "th-TH", hi: "hi-IN",
+  };
+  return map[lang] ?? lang;
+}
+
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
@@ -618,6 +691,60 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
     };
     requestAnimationFrame(() => { requestAnimationFrame(hydrateYouTube); });
   }, [post?.content]);
+
+  // ── TTS click handler ─────────────────────────────────────────────────────
+  useEffect(() => {
+    let currentUtterance: SpeechSynthesisUtterance | null = null;
+
+    const handleTTSClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const ttsEl = target.closest(".linguo-tts") as HTMLElement | null;
+      if (!ttsEl) return;
+
+      e.stopPropagation();
+
+      // Toggle: klik lagi saat speaking → stop
+      if (ttsEl.classList.contains("speaking")) {
+        window.speechSynthesis.cancel();
+        ttsEl.classList.remove("speaking");
+        return;
+      }
+
+      // Cancel previous
+      window.speechSynthesis.cancel();
+      document.querySelectorAll(".linguo-tts.speaking").forEach(el => el.classList.remove("speaking"));
+
+      const lang = ttsEl.getAttribute("data-lang") || "id";
+      const text = (ttsEl.getAttribute("data-text") || ttsEl.innerText || "")
+        .replace(/^🔊\s*/, "")
+        .trim();
+
+      if (!text) return;
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = langToLocale(lang);
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+
+      // Try to pick a voice matching the language
+      const voices = window.speechSynthesis.getVoices();
+      const match = voices.find(v => v.lang.startsWith(utterance.lang.split("-")[0]));
+      if (match) utterance.voice = match;
+
+      ttsEl.classList.add("speaking");
+      utterance.onend = () => ttsEl.classList.remove("speaking");
+      utterance.onerror = () => ttsEl.classList.remove("speaking");
+
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    };
+
+    document.addEventListener("click", handleTTSClick);
+    return () => {
+      document.removeEventListener("click", handleTTSClick);
+      window.speechSynthesis.cancel();
+    };
+  }, []);
 
   // Gradients for cover fallback
   const gradients = [
