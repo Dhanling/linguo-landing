@@ -156,8 +156,6 @@ function ClapButton({ postId }: { postId: string }) {
   const [showCount, setShowCount] = useState(false);
 
   // Use refs to avoid race conditions on rapid clicks
-  const myClapsRef = useRef(0);
-  const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count`, {
@@ -185,6 +183,7 @@ function ClapButton({ postId }: { postId: string }) {
       }),
     }).catch(() => {});
   }, [postId]);
+
 
   const myClapsRef = useRef(0);
   const writeTimerRef = useRef(null);
