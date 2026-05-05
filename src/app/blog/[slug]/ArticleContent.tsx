@@ -76,7 +76,7 @@ function slugify(t: string) {
 
 function extractHeadings(html: string): TocItem[] {
   const items: TocItem[] = [];
-  const re = /<h([23])[^>]*>(.*?)</h[23]>/gi;
+  const re = new RegExp("<h([23])[^>]*(.*?)</h[23]>", "gi");
   const cnt: Record<string, number> = {};
   let m;
   while ((m = re.exec(html)) !== null) {
@@ -93,7 +93,7 @@ function extractHeadings(html: string): TocItem[] {
 
 function addHeadingIds(html: string): string {
   const cnt: Record<string, number> = {};
-  return html.replace(/<h([23])([^>]*)>(.*?)</h[23]>/gi, (_, lv, attrs, inner) => {
+  return html.replace(new RegExp("<h([23])([^>]*)(.*?)</h[23]>", "gi"), (_, lv, attrs, inner) => {
     const base = slugify(inner.replace(/<[^>]*>/g, "").trim());
     cnt[base] = (cnt[base] || 0) + 1;
     const id = cnt[base] > 1 ? base + "-" + cnt[base] : base;
