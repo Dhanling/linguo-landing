@@ -817,8 +817,24 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
   const [darkMode, setDarkMode] = useState(false);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
-  const langMatch = post.title?.match(/Bahasa\s+([^:]+)/);
-  const langName = langMatch ? langMatch[1].trim() : "";
+  const LANG_NAMES = {
+    korea:'Korea',korean:'Korea',hangul:'Korea',
+    jepang:'Jepang',japanese:'Jepang',hiragana:'Jepang',katakana:'Jepang',
+    prancis:'Prancis',french:'Prancis',
+    jerman:'Jerman',german:'Jerman',
+    spanyol:'Spanyol',spanish:'Spanyol',
+    mandarin:'Mandarin',chinese:'Mandarin',cina:'Mandarin',
+    arab:'Arab',arabic:'Arab',
+    rusia:'Rusia',russian:'Rusia',
+    italia:'Italia',italian:'Italia',
+    portugis:'Portugis',portuguese:'Portugis',
+    vietnam:'Vietnam',vietnamese:'Vietnam',
+    inggris:'Inggris',english:'Inggris',ielts:'Inggris',toefl:'Inggris',
+    thai:'Thai',swedia:'Swedia',polandia:'Polandia',
+    hindi:'Hindi',turki:'Turki',belanda:'Belanda',
+  };
+  const _hay = [...(post.tags||[]),post.slug||'',post.title||''].join(' ').toLowerCase();
+  const langName = Object.entries(LANG_NAMES).find(([k])=>_hay.includes(k))?.[1]??'';
   const minutes = readTime(post.content);
 
   return (
