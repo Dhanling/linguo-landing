@@ -656,6 +656,132 @@ const ARTICLE_CSS = `
 .blog-dark .feature-chip .chip-label { color: #e2e8f0 !important; }
 .blog-dark .feature-chip .chip-sub { color: #64748b !important; }
 
+
+/* ── Table of Contents ── */
+.toc-sidebar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: max(1rem, calc(50vw - 44rem));
+  width: 200px;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 40;
+  display: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(26,158,158,0.2) transparent;
+}
+@media (min-width: 1280px) {
+  .toc-sidebar { display: block; }
+}
+.toc-sidebar::-webkit-scrollbar { width: 3px; }
+.toc-sidebar::-webkit-scrollbar-track { background: transparent; }
+.toc-sidebar::-webkit-scrollbar-thumb { background: rgba(26,158,158,0.25); border-radius: 9px; }
+
+.toc-sidebar .toc-inner {
+  padding: 0.875rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+}
+.blog-dark .toc-sidebar .toc-inner {
+  background: rgba(15,23,42,0.92);
+  border-color: #1e293b;
+}
+.toc-sidebar .toc-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 0.625rem;
+}
+.toc-sidebar a {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: #64748b;
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+  word-break: break-word;
+}
+.toc-sidebar a:hover { color: #1A9E9E; background: rgba(26,158,158,0.06); }
+.toc-sidebar a.toc-active {
+  color: #1A9E9E;
+  font-weight: 600;
+  border-left-color: #1A9E9E;
+  background: rgba(26,158,158,0.08);
+}
+.blog-dark .toc-sidebar a { color: #64748b; }
+.blog-dark .toc-sidebar a:hover { color: #2dd4bf; background: rgba(45,212,191,0.08); }
+.blog-dark .toc-sidebar a.toc-active { color: #2dd4bf; border-left-color: #2dd4bf; background: rgba(45,212,191,0.08); }
+.toc-sidebar .toc-h3 { padding-left: 1rem; }
+
+/* Mobile: floating ToC button */
+.toc-mobile-btn {
+  position: fixed;
+  bottom: 88px;
+  right: 1.25rem;
+  z-index: 50;
+  display: flex;
+}
+@media (min-width: 1280px) { .toc-mobile-btn { display: none; } }
+.toc-mobile-btn button {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: #1A9E9E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(26,158,158,0.35);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  font-size: 18px;
+  line-height: 1;
+}
+.toc-mobile-btn button:hover { background: #178585; transform: scale(1.05); }
+.toc-mobile-popup {
+  position: fixed;
+  bottom: 148px;
+  right: 1.25rem;
+  z-index: 50;
+  width: 260px;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  padding: 0.875rem 1rem;
+}
+.blog-dark .toc-mobile-popup {
+  background: rgba(15,23,42,0.97);
+  border-color: #1e293b;
+}
+.toc-mobile-popup a {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #334155;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s;
+}
+.blog-dark .toc-mobile-popup a { color: #94a3b8; }
+.toc-mobile-popup a:hover, .blog-dark .toc-mobile-popup a:hover { color: #1A9E9E; background: rgba(26,158,158,0.08); }
+.toc-mobile-popup .toc-h3 { padding-left: 1rem; font-size: 0.75rem; }
+.toc-mobile-popup .toc-title {
+  font-size: 0.6875rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: #94a3b8; margin-bottom: 0.5rem;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .article-body h2 { font-size: 1.375rem; }
@@ -677,6 +803,97 @@ function langToLocale(lang: string): string {
     tr: "tr-TR", vi: "vi-VN", th: "th-TH", hi: "hi-IN",
   };
   return map[lang] ?? lang;
+}
+
+
+// ========== TABLE OF CONTENTS ==========
+function TableOfContents({ darkMode }: { darkMode: boolean }) {
+  const [headings, setHeadings] = useState<{ id: string; text: string; level: number }[]>([]);
+  const [activeId, setActiveId] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Extract headings from article body and inject IDs
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const els = document.querySelectorAll(".article-body h2, .article-body h3");
+      const items = Array.from(els).map((el, i) => {
+        if (!el.id) {
+          el.id = "toc-" + (el.textContent || "").toLowerCase()
+            .replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-").slice(0, 40) + "-" + i;
+        }
+        return { id: el.id, text: el.textContent || "", level: el.tagName === "H2" ? 2 : 3 };
+      });
+      setHeadings(items);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Highlight active section on scroll
+  useEffect(() => {
+    if (headings.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) setActiveId(visible[0].target.id);
+      },
+      { rootMargin: "-80px 0px -55% 0px", threshold: 0 }
+    );
+    headings.forEach((h) => {
+      const el = document.getElementById(h.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [headings]);
+
+  const handleClick = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+    setMobileOpen(false);
+  };
+
+  if (headings.length < 2) return null;
+
+  const TocLinks = ({ className = "" }: { className?: string }) => (
+    <>
+      <div className="toc-title">Daftar Isi</div>
+      {headings.map((h) => (
+        <a
+          key={h.id}
+          href={"#" + h.id}
+          onClick={(e) => { e.preventDefault(); handleClick(h.id); }}
+          className={(h.level === 3 ? "toc-h3 " : "") + (activeId === h.id ? "toc-active" : "")}
+        >
+          {h.text}
+        </a>
+      ))}
+    </>
+  );
+
+  return (
+    <>
+      {/* Desktop sticky sidebar */}
+      <div className="toc-sidebar">
+        <div className="toc-inner">
+          <TocLinks />
+        </div>
+      </div>
+
+      {/* Mobile floating button + popup */}
+      <div className="toc-mobile-btn">
+        <button onClick={() => setMobileOpen(!mobileOpen)} title="Daftar Isi" aria-label="Daftar Isi">
+          ☰
+        </button>
+      </div>
+      {mobileOpen && (
+        <div className="toc-mobile-popup">
+          <TocLinks />
+        </div>
+      )}
+    </>
+  );
 }
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
@@ -824,6 +1041,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   return (
     <div className={`blog-page min-h-screen transition-colors duration-300 ${darkMode ? "blog-dark bg-[#0f172a]" : "bg-white"} ${fontClass}`}>
       <style dangerouslySetInnerHTML={{ __html: ARTICLE_CSS }} />
+      <TableOfContents darkMode={darkMode} />
 
       {/* Navbar */}
       <nav className="bg-white border-b border-slate-100 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
