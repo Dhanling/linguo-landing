@@ -186,97 +186,35 @@ function ClapButton({ postId }: { postId: string }) {
     }).catch(() => {});
   }, [postId]);
 
+  const myClapsRef = useRef(0);
+  const writeTimerRef = useRef(null);
+
   const doClap = useCallback(() => {
     if (myClapsRef.current >= 50) return;
     myClapsRef.current += 1;
-    const count = myClapsRef.current;
-
+    setMyClaps(myClapsRef.current);
+    setClaps(prev => prev + 1);
     setAnimating(true);
     setShowCount(true);
-    setMyClaps(count);
-    setClaps(prev => prev + 1);
     setTimeout(() => setAnimating(false), 300);
     setTimeout(() => setShowCount(false), 2000);
 
-    // Cancel any pending write and schedule a fresh one
     if (writeTimerRef.current) clearTimeout(writeTimerRef.current);
-    const hash = getVisitorHash();
-    writeTimerRef.current = setTimeout(() => flushClaps(hash), 800);
-  }, [flushClaps]);
-
-  return (
-    <div className="flex items-center gap-2">
-      <button
-        onClick={doClap}
-        className={`relative flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-200 ${
-          myClaps > 0
-            ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]"
-            : "border-slate-200 hover:border-[#1A9E9E] text-slate-400 hover:text-[#1A9E9E]"
-        } ${animating ? "scale-110" : "scale-100"}`}
-        title="Clap!"
-      >
-        <span className={`text-xl transition-transform ${animating ? "scale-125" : ""}`}>👏</span>
-        {showCount && myClaps > 0 && (
-          <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs font-bold px-2.5 py-1 rounded-full animate-bounce shadow-lg">
-            +{myClaps}
-          </span>
-        )}
-      </button>
-      <span className="text-sm font-semibold text-slate-500">{claps > 0 ? claps : ""}</span>
-    </div>
-  );
-}
-
-// ========== SHARE BUTTONS ==========
-function ShareButtons({ url, title }: { url: string; title: string }) {
-  const [copied, setCopied] = useState(false);
-  const encoded = encodeURIComponent(url);
-  const encodedTitle = encodeURIComponent(title);
-
-  const copyLink = () => {
-    navigator.clipboard?.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="flex items-center gap-1.5">
-      <a href={`https://wa.me/?text=${encodedTitle}%20${encoded}`} target="_blank" rel="noopener noreferrer"
-        className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-green-50 text-slate-400 hover:text-green-600 transition-all" title="Share via WhatsApp">
-        <MessageCircle className="w-[18px] h-[18px]" />
-      </a>
-      <a href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encoded}`} target="_blank" rel="noopener noreferrer"
-        className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-sky-50 text-slate-400 hover:text-sky-500 transition-all" title="Share via X">
-        <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encoded}`} target="_blank" rel="noopener noreferrer"
-        className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-blue-50 text-slate-400 hover:text-blue-600 transition-all" title="Share via Facebook">
-        <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`} target="_blank" rel="noopener noreferrer"
-        className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-blue-50 text-slate-400 hover:text-blue-700 transition-all" title="Share via LinkedIn">
-        <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <button onClick={copyLink}
-        className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${copied ? "bg-emerald-50 text-emerald-600" : "hover:bg-slate-100 text-slate-400 hover:text-slate-600"}`} title="Copy link">
-        {copied ? <Check className="w-[16px] h-[16px]" /> : <Copy className="w-[16px] h-[16px]" />}
-      </button>
-    </div>
-  );
-}
-
-// ========== COMMENTS SECTION ==========
-function CommentsSection({ postId }: { postId: string }) {
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
-
-  useEffect(() => {
-    fetch(`${SUPABASE_URL}/rest/v1/blog_comments?post_id=eq.${postId}&is_approved=eq.true&order=created_at.desc&limit=20`, {
-      headers: { apikey: SUPABASE_KEY }
-    }).then(r => r.json()).then(data => setComments(data || [])).catch(() => {});
+    writeTimerRef.current = setTimeout(async () => {
+      try {
+        const hash = getVisitorHash();
+        await fetch(SUPABASE_URL + "/rest/v1/blog_claps", {
+          method: "POST",
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: "Bearer " + SUPABASE_KEY,
+            "Content-Type": "application/json",
+            Prefer: "resolution=merge-duplicates",
+          },
+          body: JSON.stringify({ post_id: postId, visitor_hash: hash, clap_count: myClapsRef.current }),
+        });
+      } catch {}
+    }, 800);
   }, [postId]);
 
   const submit = async () => {
@@ -818,6 +756,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const [darkMode, setDarkMode] = useState(false);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
   const LANG_NAMES = {
+    belanda:'Belanda',dutch:'Belanda',
     korea:'Korea',korean:'Korea',hangul:'Korea',
     jepang:'Jepang',japanese:'Jepang',hiragana:'Jepang',katakana:'Jepang',
     prancis:'Prancis',french:'Prancis',
@@ -831,10 +770,14 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
     vietnam:'Vietnam',vietnamese:'Vietnam',
     inggris:'Inggris',english:'Inggris',ielts:'Inggris',toefl:'Inggris',
     thai:'Thai',swedia:'Swedia',polandia:'Polandia',
-    hindi:'Hindi',turki:'Turki',belanda:'Belanda',
+    hindi:'Hindi',turki:'Turki',finlandia:'Finlandia',georgia:'Georgia',ukraina:'Ukraina',
   };
-  const _hay = [...(post.tags||[]),post.slug||'',post.title||''].join(' ').toLowerCase();
-  const langName = Object.entries(LANG_NAMES).find(([k])=>_hay.includes(k))?.[1]??'';
+  const _words = [
+    ...(post.tags||[]).flatMap((t) => t.toLowerCase().replace(/[#_]/g,'').split(/[s-]+/)),
+    ...(post.slug||'').split('-'),
+    ...(post.title||'').toLowerCase().split(/s+/).map((w) => w.replace(/[^a-z]/g,'')),
+  ];
+  const langName = _words.reduce((found, word) => found || LANG_NAMES[word] || '', '');
   const minutes = readTime(post.content);
 
   return (
@@ -851,7 +794,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
             <a href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors hidden sm:block font-medium">Home</a>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Blog</Link>
             <a href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
-              {langName ? `Belajar Bahasa ${langName}` : "Mulai Belajar"}
+              {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
             </a>
           </div>
         </div>
@@ -975,7 +918,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
                   href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"}
                   className="inline-flex items-center justify-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
                 >
-                  🚀 {langName ? `Mulai Belajar Bahasa ${langName}` : "Mulai Belajar Sekarang"}
+                  🚀 {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
                 </a>
                 <a
                   href="https://wa.me/6282116859493"
