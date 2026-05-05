@@ -657,71 +657,136 @@ const ARTICLE_CSS = `
 .blog-dark .feature-chip .chip-sub { color: #64748b !important; }
 
 
-/* ── Table of Contents ── */
+/* ── Table of Contents (Path Style) ── */
 .toc-sidebar {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   left: max(1rem, calc(50vw - 44rem));
-  width: 200px;
-  max-height: 70vh;
+  width: 188px;
+  max-height: 72vh;
   overflow-y: auto;
   z-index: 40;
   display: none;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(26,158,158,0.2) transparent;
+  scrollbar-width: none;
 }
-@media (min-width: 1280px) {
-  .toc-sidebar { display: block; }
-}
-.toc-sidebar::-webkit-scrollbar { width: 3px; }
-.toc-sidebar::-webkit-scrollbar-track { background: transparent; }
-.toc-sidebar::-webkit-scrollbar-thumb { background: rgba(26,158,158,0.25); border-radius: 9px; }
+.toc-sidebar::-webkit-scrollbar { display: none; }
+@media (min-width: 1280px) { .toc-sidebar { display: block; } }
 
-.toc-sidebar .toc-inner {
-  padding: 0.875rem 1rem;
-  border-radius: 1rem;
+.toc-inner {
+  padding: 1rem 0.75rem 1rem 0.5rem;
+  border-radius: 1.125rem;
   border: 1px solid #e2e8f0;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
-.blog-dark .toc-sidebar .toc-inner {
-  background: rgba(15,23,42,0.92);
+.blog-dark .toc-inner {
+  background: rgba(15,23,42,0.94);
   border-color: #1e293b;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
 }
-.toc-sidebar .toc-title {
-  font-size: 0.6875rem;
-  font-weight: 700;
+.toc-label {
+  font-size: 0.625rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: #94a3b8;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
 }
-.toc-sidebar a {
+
+/* Path list */
+.toc-list { list-style: none; margin: 0; padding: 0; position: relative; }
+.toc-list::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, #e2e8f0 0%, #e2e8f0 100%);
+  border-radius: 2px;
+}
+.blog-dark .toc-list::before { background: #1e293b; }
+
+.toc-item {
+  position: relative;
+  padding: 0.15rem 0 0.15rem 1.75rem;
+  cursor: pointer;
+}
+
+/* Dot */
+.toc-item::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: white;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1;
+}
+.blog-dark .toc-item::before { background: #0f172a; border-color: #334155; }
+
+/* Past items */
+.toc-item.toc-past::before {
+  background: #1A9E9E;
+  border-color: #1A9E9E;
+}
+
+/* Active item */
+.toc-item.toc-active::before {
+  background: #1A9E9E;
+  border-color: #1A9E9E;
+  box-shadow: 0 0 0 3px rgba(26,158,158,0.2);
+  animation: toc-dot-pulse 1.8s ease-in-out infinite;
+}
+@keyframes toc-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(26,158,158,0.2); }
+  50%       { box-shadow: 0 0 0 5px rgba(26,158,158,0.08); }
+}
+
+.toc-link {
   display: block;
   font-size: 0.75rem;
-  line-height: 1.45;
-  color: #64748b;
+  line-height: 1.4;
+  color: #94a3b8;
   text-decoration: none;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.25rem;
   border-radius: 0.375rem;
-  transition: all 0.15s;
-  border-left: 2px solid transparent;
+  transition: color 0.18s, background 0.18s;
   word-break: break-word;
 }
-.toc-sidebar a:hover { color: #1A9E9E; background: rgba(26,158,158,0.06); }
-.toc-sidebar a.toc-active {
+.blog-dark .toc-link { color: #475569; }
+.toc-item:hover .toc-link { color: #1A9E9E; background: rgba(26,158,158,0.06); }
+.toc-item.toc-active .toc-link {
   color: #1A9E9E;
-  font-weight: 600;
-  border-left-color: #1A9E9E;
-  background: rgba(26,158,158,0.08);
+  font-weight: 700;
+  background: rgba(26,158,158,0.07);
 }
-.blog-dark .toc-sidebar a { color: #64748b; }
-.blog-dark .toc-sidebar a:hover { color: #2dd4bf; background: rgba(45,212,191,0.08); }
-.blog-dark .toc-sidebar a.toc-active { color: #2dd4bf; border-left-color: #2dd4bf; background: rgba(45,212,191,0.08); }
-.toc-sidebar .toc-h3 { padding-left: 1rem; }
+.toc-item.toc-past .toc-link { color: #64748b; }
+.blog-dark .toc-item.toc-active .toc-link { color: #2dd4bf; background: rgba(45,212,191,0.08); }
+.blog-dark .toc-item.toc-past .toc-link { color: #475569; }
+.blog-dark .toc-item:hover .toc-link { color: #2dd4bf; }
 
-/* Mobile: floating ToC button */
+/* Progress line fill */
+.toc-progress-line {
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, #1A9E9E, #2ABFBF);
+  border-radius: 2px;
+  transition: height 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index: 0;
+}
+
+/* Mobile floating button */
 .toc-mobile-btn {
   position: fixed;
   bottom: 88px;
@@ -731,56 +796,219 @@ const ARTICLE_CSS = `
 }
 @media (min-width: 1280px) { .toc-mobile-btn { display: none; } }
 .toc-mobile-btn button {
-  width: 44px; height: 44px;
+  width: 42px; height: 42px;
   border-radius: 50%;
   background: #1A9E9E;
   color: white;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(26,158,158,0.35);
+  box-shadow: 0 4px 14px rgba(26,158,158,0.4);
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 16px;
 }
-.toc-mobile-btn button:hover { background: #178585; transform: scale(1.05); }
+.toc-mobile-btn button:hover { background: #178585; transform: scale(1.06); }
 .toc-mobile-popup {
   position: fixed;
   bottom: 148px;
   right: 1.25rem;
   z-index: 50;
-  width: 260px;
-  max-height: 60vh;
+  width: 248px;
+  max-height: 58vh;
   overflow-y: auto;
-  border-radius: 1rem;
+  border-radius: 1.125rem;
   border: 1px solid #e2e8f0;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  padding: 0.875rem 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 0.875rem 0.875rem 0.875rem 0.625rem;
+  animation: toc-popup-in 0.18s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes toc-popup-in {
+  from { opacity:0; transform: translateY(8px) scale(0.97); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
 }
 .blog-dark .toc-mobile-popup {
   background: rgba(15,23,42,0.97);
   border-color: #1e293b;
 }
-.toc-mobile-popup a {
+.toc-mobile-popup .toc-link { font-size: 0.8125rem; color: #334155; }
+.blog-dark .toc-mobile-popup .toc-link { color: #94a3b8; }
+.toc-mobile-popup .toc-active .toc-link { color: #1A9E9E; font-weight: 700; }
+.toc-mobile-popup .toc-item::before { background: white; }
+.blog-dark .toc-mobile-popup .toc-item::before { background: #0f172a; }
+
+
+/* ── Interactive Quiz ── */
+.linguo-quiz {
+  margin: 2rem 0;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  font-size: 0.9375rem;
+}
+.linguo-quiz .quiz-header {
+  background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.linguo-quiz .quiz-header .quiz-badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #1A9E9E;
+  color: white;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+}
+.linguo-quiz .quiz-header .quiz-title {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.9375rem;
+}
+.linguo-quiz .quiz-body { padding: 1.125rem 1.25rem; }
+
+/* Multiple Choice */
+.linguo-quiz .quiz-opts { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+.linguo-quiz .quiz-opt {
   display: block;
-  font-size: 0.8125rem;
-  line-height: 1.45;
+  width: 100%;
+  text-align: left;
+  padding: 0.625rem 1rem;
+  border-radius: 0.625rem;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
   color: #334155;
-  text-decoration: none;
-  padding: 0.35rem 0.5rem;
-  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  cursor: pointer;
   transition: all 0.15s;
+  font-family: inherit;
 }
-.blog-dark .toc-mobile-popup a { color: #94a3b8; }
-.toc-mobile-popup a:hover, .blog-dark .toc-mobile-popup a:hover { color: #1A9E9E; background: rgba(26,158,158,0.08); }
-.toc-mobile-popup .toc-h3 { padding-left: 1rem; font-size: 0.75rem; }
-.toc-mobile-popup .toc-title {
-  font-size: 0.6875rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: #94a3b8; margin-bottom: 0.5rem;
+.linguo-quiz .quiz-opt:hover:not([disabled]) {
+  border-color: #1A9E9E;
+  background: rgba(26,158,158,0.05);
+  color: #0f172a;
 }
+.linguo-quiz .quiz-opt.correct {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+  font-weight: 600;
+}
+.linguo-quiz .quiz-opt.wrong {
+  border-color: #f87171;
+  background: #fef2f2;
+  color: #991b1b;
+}
+.linguo-quiz .quiz-opt.reveal {
+  border-color: #10b981;
+  background: #f0fdf4;
+  color: #065f46;
+}
+.linguo-quiz .quiz-feedback {
+  margin-top: 0.75rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: none;
+}
+.linguo-quiz .quiz-feedback.show { display: block; }
+.linguo-quiz .quiz-feedback.ok { background: #ecfdf5; color: #065f46; }
+.linguo-quiz .quiz-feedback.no { background: #fef2f2; color: #991b1b; }
+.linguo-quiz .quiz-reset {
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  color: #1A9E9E;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Matching */
+.linguo-quiz .match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.linguo-quiz .match-item {
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.625rem;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+  text-align: center;
+  font-weight: 500;
+}
+.linguo-quiz .match-item:hover:not([disabled]) { border-color: #1A9E9E; background: rgba(26,158,158,0.05); }
+.linguo-quiz .match-item.selected { border-color: #1A9E9E; background: rgba(26,158,158,0.1); color: #1A9E9E; }
+.linguo-quiz .match-item.matched { border-color: #10b981; background: #ecfdf5; color: #065f46; font-weight: 600; cursor: default; }
+.linguo-quiz .match-item.wrong-match { border-color: #f87171; background: #fef2f2; animation: shake 0.35s; }
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-4px); }
+  75%      { transform: translateX(4px); }
+}
+
+/* Ordering */
+.linguo-quiz .sort-list { margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.linguo-quiz .sort-item {
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.625rem;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.9rem;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s;
+  user-select: none;
+}
+.linguo-quiz .sort-item:active { cursor: grabbing; }
+.linguo-quiz .sort-item .drag-handle { color: #cbd5e1; font-size: 1rem; }
+.linguo-quiz .sort-item.dragging { opacity: 0.5; }
+.linguo-quiz .sort-item.drag-over { border-color: #1A9E9E; background: rgba(26,158,158,0.07); }
+.linguo-quiz .sort-item.correct-pos { border-color: #10b981; background: #ecfdf5; color: #065f46; }
+.linguo-quiz .sort-item.wrong-pos   { border-color: #f87171; background: #fef2f2; color: #991b1b; }
+.linguo-quiz .check-btn {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.625rem;
+  background: #1A9E9E;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.linguo-quiz .check-btn:hover { background: #178585; }
+
+/* Dark mode quiz */
+.blog-dark .linguo-quiz { border-color: #1e293b; }
+.blog-dark .linguo-quiz .quiz-header { background: #1e293b; border-bottom-color: #334155; }
+.blog-dark .linguo-quiz .quiz-header .quiz-title { color: #e2e8f0; }
+.blog-dark .linguo-quiz .quiz-opt { background: #1e293b; border-color: #334155; color: #cbd5e1; }
+.blog-dark .linguo-quiz .match-item,
+.blog-dark .linguo-quiz .sort-item { background: #1e293b; border-color: #334155; color: #cbd5e1; }
+.blog-dark .linguo-quiz .quiz-opt:hover:not([disabled]),
+.blog-dark .linguo-quiz .match-item:hover:not([disabled]) { border-color: #2dd4bf; background: rgba(45,212,191,0.08); }
+
 
 /* Responsive */
 @media (max-width: 640px) {
@@ -806,37 +1034,43 @@ function langToLocale(lang: string): string {
 }
 
 
-// ========== TABLE OF CONTENTS ==========
-function TableOfContents({ darkMode }: { darkMode: boolean }) {
-  const [headings, setHeadings] = useState<{ id: string; text: string; level: number }[]>([]);
-  const [activeId, setActiveId] = useState("");
-  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Extract headings from article body and inject IDs
+// ========== TABLE OF CONTENTS (Path Style) ==========
+function TableOfContents({ darkMode }: { darkMode: boolean }) {
+  const [headings, setHeadings] = useState<{ id: string; text: string }[]>([]);
+  const [activeIdx, setActiveIdx] = useState(-1);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  // Extract only h2 headings and inject IDs
   useEffect(() => {
     const timer = setTimeout(() => {
-      const els = document.querySelectorAll(".article-body h2, .article-body h3");
+      const els = document.querySelectorAll(".article-body h2");
       const items = Array.from(els).map((el, i) => {
         if (!el.id) {
           el.id = "toc-" + (el.textContent || "").toLowerCase()
             .replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-").slice(0, 40) + "-" + i;
         }
-        return { id: el.id, text: el.textContent || "", level: el.tagName === "H2" ? 2 : 3 };
+        return { id: el.id, text: el.textContent || "" };
       });
       setHeadings(items);
-    }, 300);
+    }, 400);
     return () => clearTimeout(timer);
   }, []);
 
-  // Highlight active section on scroll
+  // Track active heading via IntersectionObserver
   useEffect(() => {
     if (headings.length === 0) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) setActiveId(visible[0].target.id);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = headings.findIndex((h) => h.id === entry.target.id);
+            if (idx !== -1) setActiveIdx(idx);
+          }
+        });
       },
-      { rootMargin: "-80px 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-80px 0px -50% 0px", threshold: 0 }
     );
     headings.forEach((h) => {
       const el = document.getElementById(h.id);
@@ -845,43 +1079,54 @@ function TableOfContents({ darkMode }: { darkMode: boolean }) {
     return () => observer.disconnect();
   }, [headings]);
 
+  // Animate progress line height
+  useEffect(() => {
+    if (!progressRef.current || headings.length === 0) return;
+    const pct = activeIdx < 0 ? 0 : ((activeIdx + 0.5) / headings.length) * 100;
+    progressRef.current.style.height = pct + "%";
+  }, [activeIdx, headings.length]);
+
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 92, behavior: "smooth" });
     setMobileOpen(false);
   };
 
   if (headings.length < 2) return null;
 
-  const TocLinks = ({ className = "" }: { className?: string }) => (
+  const TocItems = ({ mini = false }: { mini?: boolean }) => (
     <>
-      <div className="toc-title">Daftar Isi</div>
-      {headings.map((h) => (
-        <a
-          key={h.id}
-          href={"#" + h.id}
-          onClick={(e) => { e.preventDefault(); handleClick(h.id); }}
-          className={(h.level === 3 ? "toc-h3 " : "") + (activeId === h.id ? "toc-active" : "")}
-        >
-          {h.text}
-        </a>
-      ))}
+      <div className="toc-label">Daftar Isi</div>
+      <ul className="toc-list">
+        {!mini && <div ref={progressRef} className="toc-progress-line" style={{ height: "0%" }} />}
+        {headings.map((h, i) => (
+          <li
+            key={h.id}
+            className={"toc-item" + (i === activeIdx ? " toc-active" : i < activeIdx ? " toc-past" : "")}
+          >
+            <a
+              href={"#" + h.id}
+              className="toc-link"
+              onClick={(e) => { e.preventDefault(); handleClick(h.id); }}
+            >
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ul>
     </>
   );
 
   return (
     <>
-      {/* Desktop sticky sidebar */}
+      {/* Desktop sidebar */}
       <div className="toc-sidebar">
         <div className="toc-inner">
-          <TocLinks />
+          <TocItems />
         </div>
       </div>
 
-      {/* Mobile floating button + popup */}
+      {/* Mobile floating button */}
       <div className="toc-mobile-btn">
         <button onClick={() => setMobileOpen(!mobileOpen)} title="Daftar Isi" aria-label="Daftar Isi">
           ☰
@@ -889,12 +1134,123 @@ function TableOfContents({ darkMode }: { darkMode: boolean }) {
       </div>
       {mobileOpen && (
         <div className="toc-mobile-popup">
-          <TocLinks />
+          <TocItems mini />
         </div>
       )}
     </>
   );
 }
+
+// ========== QUIZ INITIALIZER ==========
+function useQuizInit() {
+  useEffect(() => {
+    // Multiple choice handler
+    (window as any).lqMC = (btn: HTMLElement) => {
+      const quiz = btn.closest(".linguo-quiz") as HTMLElement;
+      if (!quiz || quiz.dataset.answered) return;
+      quiz.dataset.answered = "1";
+      const isCorrect = btn.dataset.ans === "correct";
+      const opts = quiz.querySelectorAll<HTMLElement>(".quiz-opt");
+      opts.forEach(o => {
+        (o as HTMLButtonElement).disabled = true;
+        if (o.dataset.ans === "correct") o.classList.add("reveal");
+      });
+      btn.classList.add(isCorrect ? "correct" : "wrong");
+      const fb = quiz.querySelector<HTMLElement>(".quiz-feedback");
+      if (fb) {
+        fb.textContent = isCorrect ? "✓ Benar! Bagus sekali 🎉" : "✗ Belum tepat. Jawaban yang benar sudah ditandai.";
+        fb.className = "quiz-feedback show " + (isCorrect ? "ok" : "no");
+      }
+    };
+
+    // Matching handler
+    (window as any).lqMatch = (btn: HTMLElement) => {
+      const quiz = btn.closest(".linguo-quiz") as HTMLElement;
+      if (!quiz) return;
+      const selected = quiz.querySelector<HTMLElement>(".match-item.selected");
+      if (!selected) {
+        if (btn.classList.contains("matched")) return;
+        quiz.querySelectorAll(".match-item").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        return;
+      }
+      if (selected === btn) { btn.classList.remove("selected"); return; }
+      const pairA = selected.dataset.pair;
+      const pairB = btn.dataset.pair;
+      if (pairA === pairB) {
+        [selected, btn].forEach(b => { b.classList.remove("selected"); b.classList.add("matched"); (b as HTMLButtonElement).disabled = true; });
+        const remaining = quiz.querySelectorAll(".match-item:not(.matched)");
+        if (remaining.length === 0) {
+          const fb = quiz.querySelector<HTMLElement>(".quiz-feedback");
+          if (fb) { fb.textContent = "✓ Semua pasangan benar! 🎉"; fb.className = "quiz-feedback show ok"; }
+        }
+      } else {
+        [selected, btn].forEach(b => { b.classList.remove("selected"); b.classList.add("wrong-match"); setTimeout(() => b.classList.remove("wrong-match"), 400); });
+      }
+    };
+
+    // Ordering check handler
+    (window as any).lqCheckOrder = (btn: HTMLElement) => {
+      const quiz = btn.closest(".linguo-quiz") as HTMLElement;
+      if (!quiz) return;
+      const items = quiz.querySelectorAll<HTMLElement>(".sort-item");
+      let allCorrect = true;
+      items.forEach((item, i) => {
+        const correct = item.dataset.order === String(i + 1);
+        item.classList.remove("correct-pos", "wrong-pos");
+        item.classList.add(correct ? "correct-pos" : "wrong-pos");
+        if (!correct) allCorrect = false;
+      });
+      const fb = quiz.querySelector<HTMLElement>(".quiz-feedback");
+      if (fb) {
+        fb.textContent = allCorrect ? "✓ Urutan benar! 🎉" : "✗ Belum tepat. Coba susun ulang.";
+        fb.className = "quiz-feedback show " + (allCorrect ? "ok" : "no");
+        if (!allCorrect) setTimeout(() => {
+          if (fb) fb.className = "quiz-feedback";
+          items.forEach(item => item.classList.remove("correct-pos","wrong-pos"));
+        }, 1500);
+      }
+    };
+
+    // Drag-to-reorder for sort quizzes
+    let dragSrc: HTMLElement | null = null;
+    const handleDragStart = (e: DragEvent) => { dragSrc = e.currentTarget as HTMLElement; dragSrc.classList.add("dragging"); };
+    const handleDragOver = (e: DragEvent) => { e.preventDefault(); const t = (e.currentTarget as HTMLElement); t.classList.add("drag-over"); };
+    const handleDragLeave = (e: DragEvent) => { (e.currentTarget as HTMLElement).classList.remove("drag-over"); };
+    const handleDrop = (e: DragEvent) => {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLElement;
+      target.classList.remove("drag-over");
+      if (!dragSrc || dragSrc === target) return;
+      const parent = target.parentNode as HTMLElement;
+      const items = Array.from(parent.children);
+      const srcIdx = items.indexOf(dragSrc);
+      const tgtIdx = items.indexOf(target);
+      if (srcIdx < tgtIdx) parent.insertBefore(dragSrc, target.nextSibling);
+      else parent.insertBefore(dragSrc, target);
+    };
+    const handleDragEnd = (e: DragEvent) => { (e.currentTarget as HTMLElement).classList.remove("dragging"); };
+
+    const attachDrag = () => {
+      document.querySelectorAll<HTMLElement>(".sort-item").forEach(item => {
+        item.draggable = true;
+        item.addEventListener("dragstart", handleDragStart);
+        item.addEventListener("dragover", handleDragOver);
+        item.addEventListener("dragleave", handleDragLeave);
+        item.addEventListener("drop", handleDrop);
+        item.addEventListener("dragend", handleDragEnd);
+      });
+    };
+    setTimeout(attachDrag, 600);
+
+    return () => {
+      delete (window as any).lqMC;
+      delete (window as any).lqMatch;
+      delete (window as any).lqCheckOrder;
+    };
+  }, []);
+}
+
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
