@@ -1343,6 +1343,44 @@ function useQuizInit() {
 }
 
 
+
+// ── Detect language from post tags/slug → short CTA ──
+function getCtaLabel(post: BlogPost): string {
+  const LANG_MAP: Record<string, string> = {
+    korea: "bahasa Korea", korean: "bahasa Korea", hangul: "bahasa Korea",
+    jepang: "bahasa Jepang", japanese: "bahasa Jepang", hiragana: "bahasa Jepang", katakana: "bahasa Jepang",
+    prancis: "bahasa Prancis", french: "bahasa Prancis", français: "bahasa Prancis",
+    jerman: "bahasa Jerman", german: "bahasa Jerman", deutsch: "bahasa Jerman",
+    spanyol: "bahasa Spanyol", spanish: "bahasa Spanyol", español: "bahasa Spanyol",
+    mandarin: "bahasa Mandarin", chinese: "bahasa Mandarin", cina: "bahasa Mandarin",
+    arab: "bahasa Arab", arabic: "bahasa Arab",
+    rusia: "bahasa Rusia", russian: "bahasa Rusia",
+    italia: "bahasa Italia", italian: "bahasa Italia",
+    portugis: "bahasa Portugis", portuguese: "bahasa Portugis",
+    belanda: "bahasa Belanda", dutch: "bahasa Belanda",
+    turki: "bahasa Turki", turkish: "bahasa Turki",
+    vietnam: "bahasa Vietnam", vietnamese: "bahasa Vietnam",
+    thai: "bahasa Thai", thailand: "bahasa Thailand",
+    hindi: "bahasa Hindi",
+    inggris: "bahasa Inggris", english: "bahasa Inggris", ielts: "bahasa Inggris", toefl: "bahasa Inggris",
+    swedia: "bahasa Swedia", swedish: "bahasa Swedia",
+    polandia: "bahasa Polandia", polish: "bahasa Polandia",
+    georgia: "bahasa Georgia", georgian: "bahasa Georgia",
+    finlandia: "bahasa Finlandia", finnish: "bahasa Finlandia",
+    ukraina: "bahasa Ukraina", ukrainian: "bahasa Ukraina",
+  };
+
+  // Check tags first (most reliable)
+  const tagText = (post.tags || []).join(" ").toLowerCase();
+  // Check slug + title
+  const haystack = (tagText + " " + (post.slug || "") + " " + (post.title || "")).toLowerCase();
+
+  for (const [key, label] of Object.entries(LANG_MAP)) {
+    if (haystack.includes(key)) return "Daftar " + label;
+  }
+  return "Mulai Belajar";
+}
+
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
