@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check, ChevronUp } from "lucide-react";
 import Link from "next/link";
 
@@ -35,6 +35,7 @@ interface BlogPost {
 
 interface Comment {
   id: string; author_name: string; content: string; created_at: string;
+  admin_reply?: string; admin_reply_at?: string;
 }
 
 const CATEGORY_COLORS: Record<string, { bg: string; text: string }> = {
@@ -154,6 +155,10 @@ function ClapButton({ postId }: { postId: string }) {
   const [animating, setAnimating] = useState(false);
   const [showCount, setShowCount] = useState(false);
 
+  // Use refs to avoid race conditions on rapid clicks
+  const myClapsRef = useRef(0);
+  const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
     fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count`, {
       headers: { apikey: SUPABASE_KEY }
@@ -163,34 +168,41 @@ function ClapButton({ postId }: { postId: string }) {
     }).catch(() => {});
   }, [postId]);
 
-  const doClap = useCallback(async () => {
-    if (myClaps >= 50) return;
+  // Debounced flush: writes the final accumulated count in one request
+  const flushClaps = useCallback((hash: string) => {
+    fetch(`${SUPABASE_URL}/rest/v1/blog_claps`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=merge-duplicates",
+      },
+      body: JSON.stringify({
+        post_id: postId,
+        visitor_hash: hash,
+        clap_count: myClapsRef.current,
+      }),
+    }).catch(() => {});
+  }, [postId]);
+
+  const doClap = useCallback(() => {
+    if (myClapsRef.current >= 50) return;
+    myClapsRef.current += 1;
+    const count = myClapsRef.current;
+
     setAnimating(true);
     setShowCount(true);
-    setMyClaps(prev => prev + 1);
+    setMyClaps(count);
     setClaps(prev => prev + 1);
     setTimeout(() => setAnimating(false), 300);
-
-    try {
-      const hash = getVisitorHash();
-      await fetch(`${SUPABASE_URL}/rest/v1/blog_claps`, {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json",
-          Prefer: "resolution=merge-duplicates",
-        },
-        body: JSON.stringify({
-          post_id: postId,
-          visitor_hash: hash,
-          clap_count: myClaps + 1,
-        }),
-      });
-    } catch {}
-
     setTimeout(() => setShowCount(false), 2000);
-  }, [postId, myClaps]);
+
+    // Cancel any pending write and schedule a fresh one
+    if (writeTimerRef.current) clearTimeout(writeTimerRef.current);
+    const hash = getVisitorHash();
+    writeTimerRef.current = setTimeout(() => flushClaps(hash), 800);
+  }, [flushClaps]);
 
   return (
     <div className="flex items-center gap-2">
@@ -336,10 +348,22 @@ function CommentsSection({ postId }: { postId: string }) {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-bold text-slate-900">{c.author_name}</span>
-                  <span className="text-xs text-slate-400">{timeAgo(c.created_at)}</span>
+                  <span className="comment-author-name text-sm font-bold text-slate-900">{c.author_name}</span>
+                  <span className="comment-timestamp text-xs text-slate-400">{timeAgo(c.created_at)}</span>
                 </div>
-                <p className="text-sm text-slate-600 mt-1 leading-relaxed whitespace-pre-line">{c.content}</p>
+                <p className="comment-content text-sm text-slate-600 mt-1 leading-relaxed whitespace-pre-line">{c.content}</p>
+                {c.admin_reply && (
+                  <div className="mt-3 pl-3 border-l-2 border-[#1A9E9E]/40">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <div className="w-5 h-5 rounded-full bg-[#1A9E9E] flex items-center justify-center flex-shrink-0">
+                        <span className="text-white text-[8px] font-bold">L</span>
+                      </div>
+                      <span className="admin-reply-name text-xs font-bold text-[#1A9E9E]">Linguo Team</span>
+                      {c.admin_reply_at && <span className="comment-timestamp text-xs text-slate-400">{timeAgo(c.admin_reply_at)}</span>}
+                    </div>
+                    <p className="admin-reply-content text-sm text-slate-500 leading-relaxed whitespace-pre-line">{c.admin_reply}</p>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -347,7 +371,7 @@ function CommentsSection({ postId }: { postId: string }) {
       )}
 
       {comments.length === 0 && (
-        <p className="text-sm text-slate-400 text-center py-6">Belum ada komentar. Jadi yang pertama!</p>
+      <p className="no-comments-text text-sm text-slate-400 text-center py-6">Belum ada komentar. Jadi yang pertama!</p>
       )}
     </div>
   );
@@ -602,6 +626,36 @@ const ARTICLE_CSS = `
 .blog-dark .related-card { background: #1e293b; border-color: #334155; }
 .blog-dark .related-card h3 { color: #e2e8f0; }
 
+/* ── Dark mode: article meta card ── */
+.blog-dark .article-meta-card { color: #e2e8f0; }
+.blog-dark .article-meta-card h1 { color: #f1f5f9; }
+.blog-dark .article-meta-card span,
+.blog-dark .article-meta-card div { color: #94a3b8; }
+.blog-dark .article-meta-card .author-block-name { color: #f1f5f9 !important; }
+
+/* ── Dark mode: comment section text ── */
+.blog-dark .comment-section > h3 { color: #f1f5f9 !important; }
+.blog-dark .comment-section .comment-author-name { color: #f1f5f9 !important; }
+.blog-dark .comment-section .comment-timestamp { color: #64748b !important; }
+.blog-dark .comment-section .comment-content { color: #cbd5e1 !important; }
+.blog-dark .comment-section .no-comments-text { color: #475569 !important; }
+.blog-dark .comment-section .admin-reply-name { color: #2dd4bf !important; }
+.blog-dark .comment-section .admin-reply-content { color: #94a3b8 !important; }
+
+/* ── Dark mode: tags bottom ── */
+.blog-dark .tag-bottom .tags-label { color: #64748b !important; }
+.blog-dark .tag-bottom .tag-chip {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+.blog-dark .tag-bottom .tag-chip:hover { color: #2dd4bf !important; border-color: #2dd4bf !important; }
+
+/* ── Dark mode: feature chips below CTA ── */
+.blog-dark .feature-chip { background: #1e293b !important; border-color: #334155 !important; }
+.blog-dark .feature-chip .chip-label { color: #e2e8f0 !important; }
+.blog-dark .feature-chip .chip-sub { color: #64748b !important; }
+
 /* Responsive */
 @media (max-width: 640px) {
   .article-body h2 { font-size: 1.375rem; }
@@ -828,7 +882,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
             <div className="flex items-center gap-2.5">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white font-bold text-sm shadow-sm">L</div>
               <div>
-                <div className="font-semibold text-slate-900 text-sm">Linguo Team</div>
+                <div className="author-block-name font-semibold text-slate-900 text-sm">Linguo Team</div>
                 <div className="text-xs text-slate-400">{formatDate(post.published_at)}</div>
               </div>
             </div>
@@ -861,9 +915,9 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         {/* Tags bottom */}
         {post.tags && post.tags.length > 0 && (
           <div className={`tag-bottom flex flex-wrap gap-2 pb-8 border-t pt-6 mb-8 ${darkMode ? "border-slate-700" : "border-slate-100"}`}>
-            <span className="text-sm text-slate-400 mr-1 font-medium">Tags:</span>
+            <span className="tags-label text-sm text-slate-400 mr-1 font-medium">Tags:</span>
             {post.tags.map(tag => (
-              <span key={tag} className="text-xs bg-slate-50 border border-slate-200 text-slate-500 px-3 py-1.5 rounded-full hover:border-[#1A9E9E]/30 hover:text-[#1A9E9E] transition-colors cursor-default font-medium">#{tag}</span>
+              <span key={tag} className="tag-chip text-xs bg-slate-50 border border-slate-200 text-slate-500 px-3 py-1.5 rounded-full hover:border-[#1A9E9E]/30 hover:text-[#1A9E9E] transition-colors cursor-default font-medium">#{tag}</span>
             ))}
           </div>
         )}
@@ -926,10 +980,10 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
               { icon: "🎓", label: "Pengajar Berpengalaman", sub: "Terlatih & bersertifikat" },
               { icon: "💬", label: "Fokus Speaking", sub: "Langsung praktek" },
             ].map(f => (
-              <div key={f.label} className={`rounded-xl p-4 border text-center transition-colors ${darkMode ? "bg-[#1e293b] border-slate-700" : "bg-slate-50 border-slate-100 hover:border-[#1A9E9E]/20"}`}>
+              <div key={f.label} className={`feature-chip rounded-xl p-4 border text-center transition-colors ${darkMode ? "bg-[#1e293b] border-slate-700" : "bg-slate-50 border-slate-100 hover:border-[#1A9E9E]/20"}`}>
                 <div className="text-2xl mb-1">{f.icon}</div>
-                <div className={`text-xs font-semibold ${darkMode ? "text-slate-200" : "text-slate-800"}`}>{f.label}</div>
-                <div className={`text-[11px] mt-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{f.sub}</div>
+                <div className={`chip-label text-xs font-semibold ${darkMode ? "text-slate-200" : "text-slate-800"}`}>{f.label}</div>
+                <div className={`chip-sub text-[11px] mt-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{f.sub}</div>
               </div>
             ))}
           </div>
