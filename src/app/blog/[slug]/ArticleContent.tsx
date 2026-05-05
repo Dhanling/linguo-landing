@@ -755,23 +755,23 @@ const ARTICLE_CSS = `
   display: block;
   font-size: 0.75rem;
   line-height: 1.4;
-  color: #94a3b8;
+  color: #475569;
   text-decoration: none;
   padding: 0.3rem 0.25rem;
   border-radius: 0.375rem;
   transition: color 0.18s, background 0.18s;
   word-break: break-word;
 }
-.blog-dark .toc-link { color: #475569; }
+.blog-dark .toc-link { color: #94a3b8; }
 .toc-item:hover .toc-link { color: #1A9E9E; background: rgba(26,158,158,0.06); }
 .toc-item.toc-active .toc-link {
   color: #1A9E9E;
   font-weight: 700;
   background: rgba(26,158,158,0.07);
 }
-.toc-item.toc-past .toc-link { color: #64748b; }
+.toc-item.toc-past .toc-link { color: #334155; }
 .blog-dark .toc-item.toc-active .toc-link { color: #2dd4bf; background: rgba(45,212,191,0.08); }
-.blog-dark .toc-item.toc-past .toc-link { color: #475569; }
+.blog-dark .toc-item.toc-past .toc-link { color: #64748b; }
 .blog-dark .toc-item:hover .toc-link { color: #2dd4bf; }
 
 /* Progress line fill */
@@ -832,7 +832,7 @@ const ARTICLE_CSS = `
   background: rgba(15,23,42,0.97);
   border-color: #1e293b;
 }
-.toc-mobile-popup .toc-link { font-size: 0.8125rem; color: #334155; }
+.toc-mobile-popup .toc-link { font-size: 0.8125rem; color: #1e293b; font-weight: 500; }
 .blog-dark .toc-mobile-popup .toc-link { color: #94a3b8; }
 .toc-mobile-popup .toc-active .toc-link { color: #1A9E9E; font-weight: 700; }
 .toc-mobile-popup .toc-item::before { background: white; }
@@ -911,11 +911,12 @@ const ARTICLE_CSS = `
 }
 .linguo-quiz .quiz-feedback {
   margin-top: 0.75rem;
-  padding: 0.625rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.625rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   display: none;
+  line-height: 1.6;
 }
 .linguo-quiz .quiz-feedback.show { display: block; }
 .linguo-quiz .quiz-feedback.ok { background: #ecfdf5; color: #065f46; }
@@ -1009,6 +1010,90 @@ const ARTICLE_CSS = `
 .blog-dark .linguo-quiz .quiz-opt:hover:not([disabled]),
 .blog-dark .linguo-quiz .match-item:hover:not([disabled]) { border-color: #2dd4bf; background: rgba(45,212,191,0.08); }
 
+
+
+/* ── Example Sentence Card ── */
+.linguo-example {
+  margin: 1.25rem 0;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.linguo-example .ex-main {
+  background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.linguo-example .ex-sentence {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.linguo-example .ex-romanji {
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.linguo-example .ex-translation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1A9E9E;
+  background: rgba(26,158,158,0.08);
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+}
+.linguo-example .ex-breakdown {
+  width: 100%;
+  border-collapse: collapse;
+}
+.linguo-example .ex-breakdown tr:last-child td { border-bottom: none; }
+.linguo-example .ex-breakdown td {
+  padding: 0.5rem 1.125rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.linguo-example .ex-breakdown td:first-child {
+  font-weight: 700;
+  color: #0f172a;
+  width: 35%;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.linguo-example .ex-breakdown td:nth-child(2) {
+  color: #334155;
+}
+.linguo-example .ex-breakdown .role-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  margin-right: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.linguo-example .ex-breakdown .role-s { background: #dbeafe; color: #1d4ed8; }
+.linguo-example .ex-breakdown .role-o { background: #fce7f3; color: #be185d; }
+.linguo-example .ex-breakdown .role-v { background: #dcfce7; color: #166534; }
+.linguo-example .ex-breakdown .role-p { background: #fef9c3; color: #854d0e; }
+
+/* Dark mode */
+.blog-dark .linguo-example { border-color: #1e293b; }
+.blog-dark .linguo-example .ex-main { background: #1e293b; border-bottom-color: #334155; }
+.blog-dark .linguo-example .ex-sentence { color: #f1f5f9; }
+.blog-dark .linguo-example .ex-romanji { color: #64748b; }
+.blog-dark .linguo-example .ex-breakdown td { border-bottom-color: #1e293b; }
+.blog-dark .linguo-example .ex-breakdown td:first-child { color: #e2e8f0; }
+.blog-dark .linguo-example .ex-breakdown td:nth-child(2) { color: #94a3b8; }
 
 /* Responsive */
 @media (max-width: 640px) {
@@ -1144,12 +1229,13 @@ function TableOfContents({ darkMode }: { darkMode: boolean }) {
 // ========== QUIZ INITIALIZER ==========
 function useQuizInit() {
   useEffect(() => {
-    // Multiple choice handler
+    // Multiple choice handler — show explanation
     (window as any).lqMC = (btn: HTMLElement) => {
       const quiz = btn.closest(".linguo-quiz") as HTMLElement;
       if (!quiz || quiz.dataset.answered) return;
       quiz.dataset.answered = "1";
       const isCorrect = btn.dataset.ans === "correct";
+      const explain = btn.dataset.explain || "";
       const opts = quiz.querySelectorAll<HTMLElement>(".quiz-opt");
       opts.forEach(o => {
         (o as HTMLButtonElement).disabled = true;
@@ -1158,7 +1244,12 @@ function useQuizInit() {
       btn.classList.add(isCorrect ? "correct" : "wrong");
       const fb = quiz.querySelector<HTMLElement>(".quiz-feedback");
       if (fb) {
-        fb.textContent = isCorrect ? "✓ Benar! Bagus sekali 🎉" : "✗ Belum tepat. Jawaban yang benar sudah ditandai.";
+        const correctOpt = quiz.querySelector<HTMLElement>('[data-ans="correct"]');
+        const correctExplain = correctOpt?.dataset.explain || "";
+        const mainMsg = isCorrect
+          ? "✓ Benar! " + (explain || "Bagus sekali 🎉")
+          : "✗ Belum tepat. " + (correctExplain || "Jawaban yang benar sudah ditandai.");
+        fb.innerHTML = mainMsg;
         fb.className = "quiz-feedback show " + (isCorrect ? "ok" : "no");
       }
     };
