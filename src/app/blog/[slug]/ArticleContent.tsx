@@ -186,7 +186,7 @@ function ClapButton({ postId }: { postId: string }) {
 
 
   const myClapsRef = useRef(0);
-  const writeTimerRef = useRef(null);
+  const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const doClap = useCallback(() => {
     if (myClapsRef.current >= 50) return;
