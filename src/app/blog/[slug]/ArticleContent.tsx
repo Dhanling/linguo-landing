@@ -226,6 +226,17 @@ function ClapButton({ postId }: { postId: string }) {
   const [animating, setAnimating] = useState(false);
   const [showCount, setShowCount] = useState(false);
 
+  // Comment form state
+  const [name, setName] = useState('');
+  const [text, setText] = useState('');
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [comments, setComments] = useState<Array<{
+    id: string; post_id: string; author_name: string; content: string;
+    created_at: string; approved: boolean;
+    admin_reply?: string | null; admin_reply_at?: string | null;
+  }>>([]);
+
   // Use refs to avoid race conditions on rapid clicks
 
   useEffect(() => {
@@ -687,6 +698,22 @@ function langToLocale(lang: string): string {
   return map[lang] ?? lang;
 }
 
+
+function ShareButtons({ post }: { post: { title?: string; slug?: string } }) {
+  const url = typeof window !== 'undefined' ? window.location.href : '';
+  const title = post.title || '';
+  return (
+    <div className="flex items-center gap-3">
+      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">Twitter</a>
+      <a href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">WhatsApp</a>
+    </div>
+  );
+}
+
+
+function CommentsSection({ postId, darkMode }: { postId: string; darkMode: boolean }) {
+  return <div className={`comments-section py-8 ${darkMode ? 'text-white' : ''}`} data-post-id={postId} />;
+}
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
@@ -825,7 +852,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
   const [darkMode, setDarkMode] = useState(false);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
-  const LANG_NAMES = {
+  const LANG_NAMES: Record<string, string> = {
     belanda:'Belanda',dutch:'Belanda',
     korea:'Korea',korean:'Korea',hangul:'Korea',
     jepang:'Jepang',japanese:'Jepang',hiragana:'Jepang',katakana:'Jepang',
