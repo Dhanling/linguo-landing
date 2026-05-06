@@ -52,7 +52,7 @@ export default function HargaKorporatPage() {
   const filtered = filter === "all" ? PRICE_DATA : PRICE_DATA.filter((p) => p.cat === filter);
 
   function copyLink() {
-    navigator.clipboard.writeText("https://linguo.id/harga-korporat").then(() => {
+    navigator.clipboard.writeText("https://linguo.id/corporate-pricelist").then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
