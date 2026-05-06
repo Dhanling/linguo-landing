@@ -1040,6 +1040,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       <ScrollToTop />
       {/* Footer */}
+    </div>
       <footer className="bg-[#1A9E9E] text-white">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
