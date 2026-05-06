@@ -2,7 +2,7 @@
 // Konten landing page per bahasa untuk /kelas/bahasa-[lang]
 // Keyed by URL slug (lowercase Indonesian name) — match existing blog CTA convention.
 
-import { languages } from "./languages";
+import { languages } from "./curriculum/languages";
 
 // ============================================================================
 // TYPES
