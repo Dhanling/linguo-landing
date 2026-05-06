@@ -217,7 +217,7 @@ function ClapButton({ postId }: { postId: string }) {
   }, [postId]);
 
   const submit = async () => {
-    if (!String(name || '').trim() || !String(text || '').trim()) return;
+    const _name = (name as unknown) as string; const _text = (text as unknown) as string; if (!_name?.trim() || !_text?.trim()) return;
     setSending(true);
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_comments`, {
