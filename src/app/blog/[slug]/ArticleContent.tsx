@@ -616,8 +616,71 @@ function langToLocale(lang: string): string {
   return map[lang] ?? lang;
 }
 
+
+// ========== TABLE OF CONTENTS ==========
+interface TocItem { id: string; text: string; level: number; }
+
+function parseToc(html: string): TocItem[] {
+  const matches = [...html.matchAll(/<h([23])[^>]*>(.*?)<\/h[23]>/gi)];
+  return matches.map((m, i) => ({
+    id: `toc-heading-${i}`,
+    text: m[2].replace(/<[^>]+>/g, "").trim(),
+    level: parseInt(m[1]),
+  }));
+}
+
+function injectHeadingIds(html: string): string {
+  let i = 0;
+  return html.replace(/<h([23])([^>]*)>/gi, (_: string, level: string, attrs: string) =>
+    `<h${level}${attrs} id="toc-heading-${i++}">`
+  );
+}
+
+function TableOfContents({ items, activeId }: { items: TocItem[]; activeId: string }) {
+  if (items.length < 2) return null;
+  return (
+    <nav
+      className="hidden xl:block"
+      style={{ position: "fixed", left: "max(8px, calc(50vw - 560px))", top: "120px", width: "192px" }}
+    >
+      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Daftar Isi</p>
+      <ul className="border-l-2 border-slate-100 pl-3 space-y-0.5">
+        {items.map(item => (
+          <li key={item.id}>
+            
+              href={`#${item.id}`}
+              className={`block leading-relaxed py-0.5 transition-colors ${
+                item.level === 3 ? "pl-3 text-[11px]" : "text-xs"
+              } ${
+                activeId === item.id
+                  ? "text-[#1A9E9E] font-semibold border-l-2 border-[#1A9E9E] -ml-[14px] pl-[13px]"
+                  : "text-slate-400 hover:text-slate-700"
+              }`}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
+  const [tocItems] = useState<TocItem[]>(() => parseToc(post.content));
+  const [activeId, setActiveId] = useState("");
+  const contentWithIds = injectHeadingIds(post.content);
+
+  useEffect(() => {
+    if (tocItems.length < 2) return;
+    const observer = new IntersectionObserver(
+      entries => { entries.forEach(e => { if (e.isIntersecting) setActiveId(e.target.id); }); },
+      { rootMargin: "-20% 0% -70% 0%" }
+    );
+    tocItems.forEach(item => { const el = document.getElementById(item.id); if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, [tocItems]);
 
   // ── Track page view (VERBOSE DEBUG MODE) ──
   // TODO: ganti ke silent fire-and-forget setelah confirmed jalan
@@ -782,6 +845,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   return (
     <div className={`blog-page min-h-screen transition-colors duration-300 ${darkMode ? "blog-dark bg-[#0f172a]" : "bg-white"} ${fontClass}`}>
       <style dangerouslySetInnerHTML={{ __html: ARTICLE_CSS }} />
+      <TableOfContents items={tocItems} activeId={activeId} />
 
       {/* Navbar */}
       <nav className="bg-white border-b border-slate-100 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
@@ -861,7 +925,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div dangerouslySetInnerHTML={{ __html: contentWithIds }} />
         </article>
 
         {/* Social Bar — Clap + Share */}
