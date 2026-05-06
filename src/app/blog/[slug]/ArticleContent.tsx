@@ -700,12 +700,12 @@ function langToLocale(lang: string): string {
 
 
 function ShareButtons({ post, url, title }: { post?: { title?: string; slug?: string }; url?: string; title?: string }) {
-  const url = typeof window !== 'undefined' ? window.location.href : '';
-  const title = post.title || '';
+  const _url = url || (typeof window !== 'undefined' ? window.location.href : '');
+  const _title = title || (post && post.title) || '';
   return (
     <div className="flex items-center gap-3">
-      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">Twitter</a>
-      <a href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">WhatsApp</a>
+      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(_title)}&url=${encodeURIComponent(_url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">Twitter</a>
+      <a href={`https://wa.me/?text=${encodeURIComponent(_title + ' ' + _url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">WhatsApp</a>
     </div>
   );
 }
