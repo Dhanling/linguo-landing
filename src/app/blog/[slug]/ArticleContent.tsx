@@ -699,7 +699,7 @@ function langToLocale(lang: string): string {
 }
 
 
-function ShareButtons({ post }: { post: { title?: string; slug?: string } }) {
+function ShareButtons({ post, url, title }: { post?: { title?: string; slug?: string }; url?: string; title?: string }) {
   const url = typeof window !== 'undefined' ? window.location.href : '';
   const title = post.title || '';
   return (
@@ -711,7 +711,7 @@ function ShareButtons({ post }: { post: { title?: string; slug?: string } }) {
 }
 
 
-function CommentsSection({ postId, darkMode }: { postId: string; darkMode: boolean }) {
+function CommentsSection({ postId, darkMode }: { postId: string; darkMode?: boolean }) {
   return <div className={`comments-section py-8 ${darkMode ? 'text-white' : ''}`} data-post-id={postId} />;
 }
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
