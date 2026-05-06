@@ -67,77 +67,6 @@ function readTime(content: string) {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-// ========== TABLE OF CONTENTS ==========
-interface TocItem { id: string; text: string; level: 2 | 3 }
-
-function slugify(t: string) {
-  return t.toLowerCase().replace(/<[^>]*>/g, "").replace(/[^a-z0-9s]/g, "").trim().replace(/s+/g, "-").slice(0, 60);
-}
-
-function extractHeadings(html: string): TocItem[] {
-  const items: TocItem[] = [];
-  const re = new RegExp("<h([23])[^>]*(.*?)</h[23]>", "gi");
-  const cnt: Record<string, number> = {};
-  let m;
-  while ((m = re.exec(html)) !== null) {
-    const level = parseInt(m[1]) as 2 | 3;
-    const text = m[2].replace(/<[^>]*>/g, "").trim();
-    if (!text) continue;
-    const base = slugify(text);
-    cnt[base] = (cnt[base] || 0) + 1;
-    const id = cnt[base] > 1 ? base + "-" + cnt[base] : base;
-    items.push({ id, text, level });
-  }
-  return items;
-}
-
-function addHeadingIds(html: string): string {
-  const cnt: Record<string, number> = {};
-  return html.replace(new RegExp("<h([23])([^>]*)(.*?)</h[23]>", "gi"), (_, lv, attrs, inner) => {
-    const base = slugify(inner.replace(/<[^>]*>/g, "").trim());
-    cnt[base] = (cnt[base] || 0) + 1;
-    const id = cnt[base] > 1 ? base + "-" + cnt[base] : base;
-    return "<h" + lv + attrs + ' id="' + id + '">' + inner + "</h" + lv + ">";
-  });
-}
-
-function TableOfContents({ items, darkMode }: { items: TocItem[]; darkMode: boolean }) {
-  const [active, setActive] = useState("");
-  useEffect(() => {
-    if (!items.length) return;
-    const els = items.map(i => document.getElementById(i.id)).filter(Boolean) as HTMLElement[];
-    const obs = new IntersectionObserver(
-      entries => { const v = entries.filter(e => e.isIntersecting); if (v.length) setActive(v[0].target.id); },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
-    );
-    els.forEach(el => obs.observe(el));
-    return () => obs.disconnect();
-  }, [items]);
-  if (items.length < 2) return null;
-  return (
-    <aside className="hidden lg:block w-52 shrink-0 self-start sticky top-24">
-      <div className={darkMode ? "rounded-xl border border-slate-700 bg-[#1e293b] p-4" : "rounded-xl border border-slate-100 bg-slate-50 p-4"}>
-        <p className="text-[11px] font-bold uppercase tracking-widest mb-3 text-slate-400">Daftar Isi</p>
-        <nav className="flex flex-col gap-0.5">
-          {items.map(item => (
-            <a key={item.id} href={"#" + item.id}
-              onClick={e => { e.preventDefault(); document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" }); setActive(item.id); }}
-              className={[
-                "block text-[12px] leading-snug py-1 px-2 rounded-md transition-all",
-                item.level === 3 ? "pl-4" : "",
-                active === item.id ? "text-[#1A9E9E] bg-[#1A9E9E]/10 font-semibold"
-                  : darkMode ? "text-slate-400 hover:text-slate-200 hover:bg-slate-700"
-                  : "text-slate-500 hover:text-slate-800 hover:bg-slate-100",
-              ].join(" ")}>
-              {item.text}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </aside>
-  );
-}
-
 // Generate visitor hash (simple, no PII)
 function getVisitorHash(): string {
   let hash = localStorage.getItem("linguo_visitor");
@@ -226,17 +155,6 @@ function ClapButton({ postId }: { postId: string }) {
   const [animating, setAnimating] = useState(false);
   const [showCount, setShowCount] = useState(false);
 
-  // Comment form state
-  const [name, setName] = useState('');
-  const [text, setText] = useState('');
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [comments, setComments] = useState<Array<{
-    id: string; post_id: string; author_name: string; content: string;
-    created_at: string; approved: boolean;
-    admin_reply?: string | null; admin_reply_at?: string | null;
-  }>>([]);
-
   // Use refs to avoid race conditions on rapid clicks
 
   useEffect(() => {
@@ -299,7 +217,7 @@ function ClapButton({ postId }: { postId: string }) {
   }, [postId]);
 
   const submit = async () => {
-    if (!String(name ?? '').trim() || !String(text ?? '').trim()) return;
+    if (!String(name || '').trim() || !String(text || '').trim()) return;
     setSending(true);
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_comments`, {
@@ -698,22 +616,6 @@ function langToLocale(lang: string): string {
   return map[lang] ?? lang;
 }
 
-
-function ShareButtons({ post, url, title }: { post?: { title?: string; slug?: string }; url?: string; title?: string }) {
-  const _url = url || (typeof window !== 'undefined' ? window.location.href : '');
-  const _title = title || (post && post.title) || '';
-  return (
-    <div className="flex items-center gap-3">
-      <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(_title)}&url=${encodeURIComponent(_url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">Twitter</a>
-      <a href={`https://wa.me/?text=${encodeURIComponent(_title + ' ' + _url)}`} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#1A9E9E] transition-colors text-sm">WhatsApp</a>
-    </div>
-  );
-}
-
-
-function CommentsSection({ postId, darkMode }: { postId: string; darkMode?: boolean }) {
-  return <div className={`comments-section py-8 ${darkMode ? 'text-white' : ''}`} data-post-id={postId} />;
-}
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
 
@@ -852,7 +754,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
   const [darkMode, setDarkMode] = useState(false);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
-  const LANG_NAMES: Record<string, string> = {
+  const LANG_NAMES = {
     belanda:'Belanda',dutch:'Belanda',
     korea:'Korea',korean:'Korea',hangul:'Korea',
     jepang:'Jepang',japanese:'Jepang',hiragana:'Jepang',katakana:'Jepang',
@@ -890,7 +792,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           <div className="flex items-center gap-6">
             <a href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors hidden sm:block font-medium">Home</a>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Blog</Link>
-            <a href={langName ? `//kelas/bahasa-${langName.toLowerCase().replace(/\s+/g, "-")}` : "/"} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
+            <a href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"} className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors">
               {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
             </a>
           </div>
@@ -921,9 +823,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 flex gap-8 items-start">
-        <TableOfContents items={extractHeadings(post.content)} darkMode={darkMode} />
-        <main className="flex-1 min-w-0 max-w-3xl mx-auto">
+      <main className="max-w-3xl mx-auto px-6">
         {/* Article Meta Card */}
         <div className="article-meta-card relative -mt-10 rounded-2xl shadow-sm border border-slate-100 bg-white px-6 sm:px-10 py-8 mb-8">
           {post.tags && post.tags.length > 0 && (
@@ -961,7 +861,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
-          <div dangerouslySetInnerHTML={{ __html: addHeadingIds(post.content) }} />
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         {/* Social Bar — Clap + Share */}
@@ -1014,13 +914,13 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={langName ? `//kelas/bahasa-${langName.toLowerCase().replace(/\s+/g, "-")}` : "/"}
+                  href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"}
                   className="inline-flex items-center justify-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
                 >
                   🚀 {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
                 </a>
                 <a
-                  href={`https://wa.me/6282116859493?text=${encodeURIComponent(langName ? `Halo Linguo! Saya melihat artikel di blog linguo.id tentang Bahasa ${langName} dan tertarik daftar kelas. Boleh info lebih lanjut?` : "Halo Linguo! Saya melihat artikel di blog linguo.id dan tertarik daftar kelas. Boleh info lebih lanjut?")}`}
+                  href="https://wa.me/6282116859493"
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-all border border-white/20 hover:border-white/30"
                 >
@@ -1067,7 +967,6 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       <ScrollToTop />
       {/* Footer */}
-    </div>
       <footer className="bg-[#1A9E9E] text-white">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
