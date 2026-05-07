@@ -154,11 +154,6 @@ function ClapButton({ postId }: { postId: string }) {
   const [myClaps, setMyClaps] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [showCount, setShowCount] = useState(false);
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [name, setName] = useState("");
-  const [text, setText] = useState("");
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
   const myClapsRef = useRef(0);
   const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -265,6 +260,11 @@ function ShareButtons({ url, title }: { url: string; title: string }) {
 
 // ========== COMMENTS SECTION ==========
 function CommentsSection({ postId }: { postId: string }) {
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   useEffect(() => {
     fetch(
