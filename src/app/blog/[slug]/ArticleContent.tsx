@@ -775,7 +775,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
   const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
   const [darkMode, setDarkMode] = useState(false);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
-  const LANG_NAMES = {
+  const LANG_NAMES: Record<string, string> = {
     belanda:'Belanda',dutch:'Belanda',
     korea:'Korea',korean:'Korea',hangul:'Korea',
     jepang:'Jepang',japanese:'Jepang',hiragana:'Jepang',katakana:'Jepang',
