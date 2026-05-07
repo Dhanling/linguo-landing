@@ -717,6 +717,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             duration: enrollDuration,
             total_amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
             payment_status: "Belum Bayar",
+            enrollment_source: "self_service",
             registration_date: new Date().toISOString(),
           })
           .select(
@@ -766,6 +767,51 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     );
     setShowEnroll(false);
     setEnrollStep(0);
+    return pendingReg;
+  };
+
+  const handleXenditCheckout = async () => {
+    try {
+      const newReg = await handleConfirm();
+      if (!newReg?.id) {
+        alert("Gagal menyimpan pendaftaran. Silakan coba lagi atau hubungi admin via WA.");
+        return;
+      }
+      const totalAmount = isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8;
+      const programLabel = PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram;
+      const langLabel = isTestPrep ? "IELTS/TOEFL" : enrollLang;
+      const desc = `${programLabel} — ${langLabel} (${enrollDuration} min/sesi)`;
+
+      const res = await fetch(
+        "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            registration_id: newReg.id,
+            amount: totalAmount,
+            description: desc,
+            payer_name: displayName,
+            payer_email: user?.email || "",
+            success_redirect_url: "https://linguo.id/akun/success",
+            failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+          }),
+        }
+      );
+      const data = await res.json();
+      if (data?.success && data?.invoice_url) {
+        window.location.href = data.invoice_url;
+      } else {
+        console.error("Xendit error:", data);
+        alert("Gagal membuat invoice. Silakan coba lagi atau hubungi admin via WA.");
+      }
+    } catch (e) {
+      console.error("Xendit checkout error:", e);
+      alert("Terjadi kesalahan koneksi. Silakan coba lagi atau hubungi admin via WA.");
+    }
   };
 
   return (
@@ -1023,12 +1069,22 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   </div>
                 )}
 
+                {/* Xendit Checkout Button — primary CTA */}
+                <button
+                  onClick={handleXenditCheckout}
+                  className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors shadow-lg shadow-teal-100 mb-2"
+                >
+                  💳 Bayar Otomatis (Xendit)
+                </button>
+                <p className="text-[10px] text-center text-gray-500 -mt-1 mb-3">
+                  VA, QRIS, e-wallet · Konfirmasi otomatis &lt;1 menit
+                </p>
                 {/* WA Button */}
                 <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
                   onClick={handleConfirm}
                   className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
-                  Konfirmasi & Hubungi Admin WA
+                  Bayar via Transfer (Hubungi Admin WA)
                 </a>
                 <button onClick={() => { handleConfirm(); setTimeout(openEnrollWizard, 300); }}
                   className="w-full h-10 rounded-xl border-2 border-teal-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
