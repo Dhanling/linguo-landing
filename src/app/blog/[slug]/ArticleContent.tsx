@@ -165,7 +165,7 @@ function ClapButton({ postId }: { postId: string }) {
       const rows = data || [];
       const total = rows.reduce((sum: number, c: any) => sum + (c.clap_count || 0), 0);
       setClaps(total);
-      // Restore clap count sesi sebelumnya dari visitor ini
+      // Restore clap count dari kunjungan sebelumnya agar upsert tidak overwrite ke nilai kecil
       const myRow = rows.find((c: any) => c.visitor_hash === hash);
       if (myRow?.clap_count) {
         myClapsRef.current = myRow.clap_count;
