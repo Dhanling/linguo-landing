@@ -158,11 +158,19 @@ function ClapButton({ postId }: { postId: string }) {
   const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count`, {
+    const hash = getVisitorHash();
+    fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count,visitor_hash`, {
       headers: { apikey: SUPABASE_KEY }
-    }).then(r => r.json()).then(data => {
-      const total = (data || []).reduce((s: number, c: any) => s + (c.clap_count || 0), 0);
+    }).then(r => r.json()).then((data: any[]) => {
+      const rows = data || [];
+      const total = rows.reduce((sum: number, c: any) => sum + (c.clap_count || 0), 0);
       setClaps(total);
+      // Restore clap count sesi sebelumnya dari visitor ini
+      const myRow = rows.find((c: any) => c.visitor_hash === hash);
+      if (myRow?.clap_count) {
+        myClapsRef.current = myRow.clap_count;
+        setMyClaps(myRow.clap_count);
+      }
     }).catch(() => {});
   }, [postId]);
 
