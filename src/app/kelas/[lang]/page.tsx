@@ -1,4 +1,4 @@
-// src/app/kelas/bahasa-[lang]/page.tsx
+// src/app/kelas/[lang]/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
@@ -12,11 +12,23 @@ import {
 } from "../../../data/languages-detail";
 
 // ============================================================================
+// PARAM PARSING
+// URL pattern is /kelas/bahasa-{slug} which matches [lang] folder.
+// params.lang will contain the FULL segment (e.g. "bahasa-korea"),
+// so we strip the "bahasa-" prefix before looking up detail data.
+// ============================================================================
+
+function parseBahasaSlug(lang: string): string | null {
+  if (!lang.startsWith("bahasa-")) return null;
+  return lang.slice("bahasa-".length);
+}
+
+// ============================================================================
 // STATIC PARAMS — generates 1 static page per bahasa at build time
 // ============================================================================
 
 export async function generateStaticParams() {
-  return getAllLanguageDetailSlugs().map((lang) => ({ lang }));
+  return getAllLanguageDetailSlugs().map((slug) => ({ lang: `bahasa-${slug}` }));
 }
 
 // ============================================================================
@@ -29,7 +41,14 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang } = await params;
-  const detail = getLanguageDetailBySlug(lang);
+  const slug = parseBahasaSlug(lang);
+  if (!slug) {
+    return {
+      title: "Bahasa tidak ditemukan | Linguo.id",
+      robots: { index: false, follow: false },
+    };
+  }
+  const detail = getLanguageDetailBySlug(slug);
   if (!detail) {
     return {
       title: "Bahasa tidak ditemukan | Linguo.id",
@@ -37,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://linguo.id/kelas/bahasa-${detail.urlSlug}`;
+  const url = `https://linguo.id/kelas/${lang}`;
 
   return {
     title: detail.metaTitle,
@@ -73,7 +92,7 @@ const formatRupiah = (n: number) =>
   }).format(n);
 
 const buildWaLink = (langName: string) => {
-  // EDIT: ganti nomor WA Linguo di .env atau langsung di sini
+  // Linguo official WA number
   const number = "6282217866789";
   const text = encodeURIComponent(
     `Halo Linguo, saya tertarik mendaftar Kursus Bahasa ${langName}. Bisa info jadwal & promo terbaru?`,
@@ -87,7 +106,9 @@ const buildWaLink = (langName: string) => {
 
 export default async function BahasaLandingPage({ params }: PageProps) {
   const { lang } = await params;
-  const detail = getLanguageDetailBySlug(lang);
+  const slug = parseBahasaSlug(lang);
+  if (!slug) notFound();
+  const detail = getLanguageDetailBySlug(slug);
   if (!detail) notFound();
 
   const meta = getLanguageMetaForDetail(detail);
