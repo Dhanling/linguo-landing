@@ -217,6 +217,47 @@ function ClapButton({ postId }: { postId: string }) {
   );
 }
 
+
+// ========== SHARE BUTTONS ==========
+function ShareButtons({ url, title }: { url: string; title: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  const shareX = () => window.open(
+    `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+    "_blank"
+  );
+
+  const shareWa = () => window.open(
+    `https://wa.me/?text=${encodeURIComponent(title + " " + url)}`,
+    "_blank"
+  );
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-slate-400 mr-1 hidden sm:block">Bagikan:</span>
+      <button onClick={shareWa} title="Bagikan ke WhatsApp"
+        className="w-9 h-9 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-600 flex items-center justify-center transition-colors">
+        <Share2 className="w-4 h-4" />
+      </button>
+      <button onClick={shareX} title="Bagikan ke X/Twitter"
+        className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors">
+        <MessageCircle className="w-4 h-4" />
+      </button>
+      <button onClick={copyLink} title="Salin link"
+        className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors">
+        {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+      </button>
+    </div>
+  );
+}
+
 // ========== COMMENTS SECTION ==========
 function CommentsSection({ postId }: { postId: string }) {
   const [comments, setComments] = useState<Comment[]>([]);
