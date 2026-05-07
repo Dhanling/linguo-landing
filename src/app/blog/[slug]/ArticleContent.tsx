@@ -923,7 +923,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
         {/* Article Body */}
         <article className="article-body px-0 sm:px-4 mb-8">
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div data-article-body dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
 
         {/* Social Bar — Clap + Share */}

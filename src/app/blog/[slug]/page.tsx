@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ArticleContent from "./ArticleContent";
+import TableOfContents from "./TableOfContents";
 
 // Safety net: revalidate every 60s even if webhook fails
 export const revalidate = 60;
@@ -223,6 +224,7 @@ export default async function ArticlePage(props: any) {
       </nav>
 
       <ArticleContent post={post} relatedPosts={related} />
+      <TableOfContents />
     </>
   );
 }
