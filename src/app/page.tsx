@@ -1206,7 +1206,7 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
             ))}
           </select>
           <input type="tel" placeholder="812 3456 7890" value={waNumber}
-            onChange={(e)= required>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
+            onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
             className="flex-1 min-w-0 w-full px-1 sm:px-2 py-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
             onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()} required />
           <button onClick={handleQuickSubmit}
