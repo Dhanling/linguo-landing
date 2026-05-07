@@ -154,8 +154,8 @@ function ClapButton({ postId }: { postId: string }) {
   const [myClaps, setMyClaps] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [showCount, setShowCount] = useState(false);
-
-  // Use refs to avoid race conditions on rapid clicks
+  const myClapsRef = useRef(0);
+  const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count`, {
@@ -165,28 +165,6 @@ function ClapButton({ postId }: { postId: string }) {
       setClaps(total);
     }).catch(() => {});
   }, [postId]);
-
-  // Debounced flush: writes the final accumulated count in one request
-  const flushClaps = useCallback((hash: string) => {
-    fetch(`${SUPABASE_URL}/rest/v1/blog_claps`, {
-      method: "POST",
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-        "Content-Type": "application/json",
-        Prefer: "resolution=merge-duplicates",
-      },
-      body: JSON.stringify({
-        post_id: postId,
-        visitor_hash: hash,
-        clap_count: myClapsRef.current,
-      }),
-    }).catch(() => {});
-  }, [postId]);
-
-
-  const myClapsRef = useRef(0);
-  const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const doClap = useCallback(() => {
     if (myClapsRef.current >= 50) return;
@@ -216,9 +194,49 @@ function ClapButton({ postId }: { postId: string }) {
     }, 800);
   }, [postId]);
 
+  return (
+    <button
+      onClick={doClap}
+      aria-label={`Clap — ${claps} claps`}
+      className={`relative flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 select-none ${
+        myClaps > 0
+          ? "border-[#1A9E9E] bg-[#1A9E9E]/5 text-[#1A9E9E]"
+          : "border-slate-200 bg-white text-slate-500 hover:border-[#1A9E9E]/40 hover:text-[#1A9E9E]"
+      }`}
+    >
+      <span className={`text-xl transition-transform duration-150 ${animating ? "scale-125" : "scale-100"}`}>
+        👏
+      </span>
+      <span className="text-sm font-semibold tabular-nums">{claps}</span>
+      {showCount && myClaps > 0 && (
+        <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-[#1A9E9E] animate-bounce pointer-events-none">
+          +{myClaps}
+        </span>
+      )}
+    </button>
+  );
+}
+
+// ========== COMMENTS SECTION ==========
+function CommentsSection({ postId }: { postId: string }) {
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    fetch(
+      `${SUPABASE_URL}/rest/v1/blog_comments?post_id=eq.${postId}&order=created_at.desc&select=*`,
+      { headers: { apikey: SUPABASE_KEY } }
+    )
+      .then(r => r.json())
+      .then(data => setComments(data || []))
+      .catch(() => {});
+  }, [postId]);
+
   const submit = async () => {
-    // @ts-ignore
-    if (!(name as any)?.trim?.() || !(text as any)?.trim?.()) return;
+    if (!name.trim() || !text.trim()) return;
     setSending(true);
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_comments`, {
@@ -309,7 +327,7 @@ function ClapButton({ postId }: { postId: string }) {
       )}
 
       {comments.length === 0 && (
-      <p className="no-comments-text text-sm text-slate-400 text-center py-6">Belum ada komentar. Jadi yang pertama!</p>
+        <p className="no-comments-text text-sm text-slate-400 text-center py-6">Belum ada komentar. Jadi yang pertama!</p>
       )}
     </div>
   );
