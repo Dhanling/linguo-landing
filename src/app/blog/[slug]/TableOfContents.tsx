@@ -1,299 +1,188 @@
 "use client";
-
-// src/app/blog/[slug]/TableOfContents.tsx
-//
-// Client-side TOC component for blog articles.
-// — Scans DOM after render (no parsing of post.content) for robustness
-// — Auto-adds anchor IDs to H2/H3 headings if missing
-// — Sticky sidebar on desktop (xl: ≥1280px), drawer on mobile/tablet
-// — Intersection Observer for scroll spy (highlight active section)
-// — Hides if article has fewer than 3 headings (TOC not useful)
-
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 interface Heading {
   id: string;
   text: string;
-  level: number; // 2 or 3
+  level: number;
 }
-
-// ============================================================================
-// HELPERS
-// ============================================================================
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // strip accents
-    .replace(/[^\w\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .slice(0, 60);
-}
-
-function findArticleContainer(): Element | null {
-  // Priority order — first match wins
-  return (
-    document.querySelector("[data-article-body]") ||
-    document.querySelector("article") ||
-    document.querySelector(".prose") ||
-    document.querySelector("main") ||
-    null
-  );
-}
-
-// ============================================================================
-// COMPONENT
-// ============================================================================
 
 export default function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [open, setOpen] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  // ─── Scan headings from DOM after mount ────────────────────────────────────
+  // Scan DOM for H2 headings only
   useEffect(() => {
-    const scan = () => {
-      const article = findArticleContainer();
-      if (!article) return;
+    const container = document.querySelector("[data-article-body]");
+    if (!container) return;
 
-      const elements = Array.from(article.querySelectorAll("h2, h3"));
-      const seenIds = new Set<string>();
-      const items: Heading[] = [];
+    const els = Array.from(container.querySelectorAll("h2"));
+    if (els.length < 2) return;
 
-      elements.forEach((el, idx) => {
-        const text = (el.textContent || "").trim();
-        if (!text) return;
-
-        // Auto-add ID if missing
-        let id = el.id || slugify(text) || `section-${idx}`;
-
-        // Ensure uniqueness (in case of duplicate headings)
-        let uniqueId = id;
-        let counter = 1;
-        while (seenIds.has(uniqueId)) {
-          uniqueId = `${id}-${counter++}`;
-        }
-        seenIds.add(uniqueId);
-
-        el.id = uniqueId;
-
-        // Add scroll margin so headings don't hide under sticky header
-        (el as HTMLElement).style.scrollMarginTop = "100px";
-
-        items.push({
-          id: uniqueId,
-          text,
-          level: el.tagName === "H2" ? 2 : 3,
-        });
-      });
-
-      setHeadings(items);
-    };
-
-    // Wait briefly for content (especially Supabase-rendered HTML) to settle
-    const t = setTimeout(scan, 150);
-    return () => clearTimeout(t);
-  }, []);
-
-  // ─── Intersection Observer for scroll spy ─────────────────────────────────
-  useEffect(() => {
-    if (headings.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-        if (visible.length > 0) {
-          setActiveId(visible[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-20% 0px -70% 0px",
-        threshold: 0,
-      }
-    );
-
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+    const items: Heading[] = els.map((el, i) => {
+      if (!el.id) el.id = `heading-${i}-${el.textContent?.slice(0, 20).replace(/\s+/g, "-").toLowerCase() ?? i}`;
+      return { id: el.id, text: el.textContent?.trim() ?? "", level: 2 };
     });
 
-    return () => observer.disconnect();
-  }, [headings]);
-
-  // ─── Click handler: smooth scroll + update URL hash ────────────────────────
-  const handleClick = useCallback((e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 100;
-    window.scrollTo({ top, behavior: "smooth" });
-    history.pushState(null, "", `#${id}`);
-    setMobileOpen(false);
+    setHeadings(items);
+    if (items.length > 0) setActiveId(items[0].id);
   }, []);
 
-  // ─── Hide TOC if article has too few headings (not useful) ────────────────
-  if (headings.length < 3) return null;
+  // Scroll progress + active heading tracker
+  const handleScroll = useCallback(() => {
+    const article = document.querySelector("[data-article-body]") as HTMLElement | null;
+    if (!article) return;
+
+    const rect = article.getBoundingClientRect();
+    const total = article.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    setProgress(Math.min(100, (scrolled / total) * 100));
+
+    // Find active heading
+    let current = "";
+    for (const h of headings) {
+      const el = document.getElementById(h.id);
+      if (el) {
+        const top = el.getBoundingClientRect().top;
+        if (top <= 120) current = h.id;
+      }
+    }
+    if (current) setActiveId(current);
+  }, [headings]);
+
+  useEffect(() => {
+    if (headings.length === 0) return;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [headings, handleScroll]);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 90;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    setOpen(false);
+  };
+
+  if (headings.length < 2) return null;
+
+  const activeIndex = headings.findIndex((h) => h.id === activeId);
 
   return (
     <>
-      {/* ====================================================================== */}
-      {/* DESKTOP (xl: ≥1280px): Fixed sidebar on right edge of viewport */}
-      {/* ====================================================================== */}
-      <aside
-        className="
-          hidden xl:block
-          fixed top-24 right-6
-          w-60
-          max-h-[calc(100vh-8rem)]
-          overflow-y-auto
-          z-20
-          pr-2
-        "
-        aria-label="Daftar Isi"
-      >
-        <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">
-          Daftar Isi
+      {/* ── Desktop: fixed left sidebar ─────────────────────────── */}
+      <aside className="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col items-start w-56 max-h-[70vh]">
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-4 px-1">
+          <div className="w-5 h-5 rounded-full bg-[#1A9E9E] flex items-center justify-center flex-shrink-0">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M1 2h8M1 5h5M1 8h7" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Daftar Isi</span>
         </div>
-        <nav>
-          <ul className="space-y-1 border-l-2 border-slate-200">
-            {headings.map((h) => {
-              const isActive = activeId === h.id;
+
+        {/* Progress bar */}
+        <div className="w-full h-0.5 bg-slate-100 rounded-full mb-4 mx-1 overflow-hidden">
+          <div
+            className="h-full bg-[#1A9E9E] rounded-full transition-all duration-300 ease-out"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        {/* Timeline */}
+        <div className="relative w-full overflow-y-auto pr-1" style={{ maxHeight: "calc(70vh - 80px)" }}>
+          {/* Vertical track */}
+          <div className="absolute left-[9px] top-2 bottom-2 w-px bg-slate-100" />
+          {/* Active fill */}
+          <div
+            className="absolute left-[9px] top-2 w-px bg-[#1A9E9E] transition-all duration-500 ease-out origin-top"
+            style={{
+              height: activeIndex >= 0
+                ? `${((activeIndex) / Math.max(headings.length - 1, 1)) * 100}%`
+                : "0%",
+            }}
+          />
+
+          <ul className="space-y-1">
+            {headings.map((h, i) => {
+              const isActive = h.id === activeId;
+              const isPast = i < activeIndex;
               return (
                 <li key={h.id}>
-                  <a
-                    href={`#${h.id}`}
-                    onClick={(e) => handleClick(e, h.id)}
-                    className={`
-                      block py-1 text-sm leading-snug transition-colors
-                      ${h.level === 3 ? "pl-7" : "pl-3"}
-                      ${
-                        isActive
-                          ? "border-l-2 -ml-[2px] border-[#1A9E9E] text-[#1A9E9E] font-medium"
-                          : "text-slate-600 hover:text-slate-900"
-                      }
-                    `}
+                  <button
+                    onClick={() => scrollTo(h.id)}
+                    className={`group w-full flex items-start gap-3 py-1.5 text-left transition-all duration-200 rounded-lg px-1 hover:bg-slate-50 ${
+                      isActive ? "opacity-100" : "opacity-60 hover:opacity-90"
+                    }`}
                   >
-                    {h.text}
-                  </a>
+                    {/* Milestone dot */}
+                    <span className="relative flex-shrink-0 mt-0.5">
+                      <span
+                        className={`block w-[9px] h-[9px] rounded-full border-2 transition-all duration-300 ${
+                          isActive
+                            ? "border-[#1A9E9E] bg-[#1A9E9E] scale-[1.4] shadow-[0_0_0_3px_rgba(26,158,158,0.15)]"
+                            : isPast
+                            ? "border-[#1A9E9E] bg-[#1A9E9E]"
+                            : "border-slate-300 bg-white"
+                        }`}
+                      />
+                    </span>
+
+                    {/* Label */}
+                    <span
+                      className={`text-xs leading-snug font-medium transition-colors duration-200 line-clamp-2 ${
+                        isActive ? "text-[#1A9E9E]" : "text-slate-500 group-hover:text-slate-700"
+                      }`}
+                    >
+                      {h.text}
+                    </span>
+                  </button>
                 </li>
               );
             })}
           </ul>
-        </nav>
+        </div>
       </aside>
 
-      {/* ====================================================================== */}
-      {/* MOBILE/TABLET (< xl): Floating button + slide-up bottom sheet */}
-      {/* ====================================================================== */}
-      <div className="xl:hidden">
-        {/* Floating toggle button — bottom right, above any other FAB */}
+      {/* ── Mobile: floating pill button ────────────────────────── */}
+      <div className="xl:hidden fixed bottom-20 left-4 z-40">
         <button
-          onClick={() => setMobileOpen(true)}
-          aria-label="Buka Daftar Isi"
-          className="
-            fixed bottom-20 right-6
-            z-30
-            w-12 h-12
-            rounded-full
-            bg-white shadow-lg ring-1 ring-slate-200
-            flex items-center justify-center
-            text-slate-700
-            transition-all duration-200
-            hover:shadow-xl hover:-translate-y-0.5
-            active:scale-95
-          "
+          onClick={() => setOpen((v) => !v)}
+          className="flex items-center gap-2 bg-white border border-slate-200 shadow-lg rounded-full px-3 py-2 text-xs font-semibold text-slate-600 hover:border-[#1A9E9E] hover:text-[#1A9E9E] transition-all active:scale-95"
+          aria-label="Daftar Isi"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h10M4 18h7"
-            />
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 3h10M2 7h6M2 11h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
+          Isi
         </button>
 
-        {/* Backdrop */}
-        {mobileOpen && (
-          <div
-            onClick={() => setMobileOpen(false)}
-            className="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm"
-            aria-hidden="true"
-          />
-        )}
-
-        {/* Bottom sheet panel */}
-        <div
-          role="dialog"
-          aria-label="Daftar Isi"
-          className={`
-            fixed inset-x-0 bottom-0 z-50
-            bg-white rounded-t-2xl shadow-2xl
-            max-h-[80vh] flex flex-col
-            transition-transform duration-300 ease-out
-            ${mobileOpen ? "translate-y-0" : "translate-y-full"}
-          `}
-        >
-          {/* Drag handle */}
-          <div className="flex justify-center py-3">
-            <div className="w-10 h-1 rounded-full bg-slate-300" />
-          </div>
-
-          {/* Header */}
-          <div className="px-5 pb-3 flex items-center justify-between border-b border-slate-100">
-            <h3 className="text-base font-bold text-slate-900">Daftar Isi</h3>
-            <button
-              onClick={() => setMobileOpen(false)}
-              aria-label="Tutup"
-              className="text-slate-400 hover:text-slate-700 p-1"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* List */}
-          <nav className="flex-1 overflow-y-auto px-5 py-3">
-            <ul className="space-y-1">
-              {headings.map((h) => {
-                const isActive = activeId === h.id;
-                return (
-                  <li key={h.id}>
-                    <a
-                      href={`#${h.id}`}
-                      onClick={(e) => handleClick(e, h.id)}
-                      className={`
-                        block py-2 text-sm leading-snug transition-colors
-                        ${h.level === 3 ? "pl-5" : ""}
-                        ${
-                          isActive
-                            ? "text-[#1A9E9E] font-semibold"
-                            : "text-slate-700"
-                        }
-                      `}
-                    >
-                      {h.text}
-                    </a>
-                  </li>
-                );
-              })}
+        {/* Drawer */}
+        {open && (
+          <div className="absolute bottom-12 left-0 w-64 bg-white border border-slate-200 rounded-2xl shadow-xl p-4 animate-in fade-in slide-in-from-bottom-2 duration-200">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Daftar Isi</p>
+            <ul className="space-y-0.5">
+              {headings.map((h) => (
+                <li key={h.id}>
+                  <button
+                    onClick={() => scrollTo(h.id)}
+                    className={`w-full text-left text-xs py-1.5 px-2 rounded-lg transition-colors ${
+                      h.id === activeId
+                        ? "bg-[#1A9E9E]/10 text-[#1A9E9E] font-semibold"
+                        : "text-slate-600 hover:bg-slate-50"
+                    }`}
+                  >
+                    {h.text}
+                  </button>
+                </li>
+              ))}
             </ul>
-          </nav>
-
-          {/* Bottom safe area for iOS */}
-          <div className="h-4" />
-        </div>
+          </div>
+        )}
       </div>
     </>
   );
