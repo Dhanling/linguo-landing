@@ -156,10 +156,11 @@ function ClapButton({ postId }: { postId: string }) {
   const [showCount, setShowCount] = useState(false);
   const myClapsRef = useRef(0);
   const writeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const myRowIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     const hash = getVisitorHash();
-    fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=clap_count,visitor_hash`, {
+    fetch(`${SUPABASE_URL}/rest/v1/blog_claps?post_id=eq.${postId}&select=id,clap_count,visitor_hash`, {
       headers: { apikey: SUPABASE_KEY }
     }).then(r => r.json()).then((data: any[]) => {
       const rows = data || [];
@@ -169,6 +170,7 @@ function ClapButton({ postId }: { postId: string }) {
       const myRow = rows.find((c: any) => c.visitor_hash === hash);
       if (myRow?.clap_count) {
         myClapsRef.current = myRow.clap_count;
+        myRowIdRef.current = myRow.id ?? null;
         setMyClaps(myRow.clap_count);
       }
     }).catch(() => {});
@@ -188,16 +190,32 @@ function ClapButton({ postId }: { postId: string }) {
     writeTimerRef.current = setTimeout(async () => {
       try {
         const hash = getVisitorHash();
-        await fetch(SUPABASE_URL + "/rest/v1/blog_claps", {
-          method: "POST",
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: "Bearer " + SUPABASE_KEY,
-            "Content-Type": "application/json",
-            Prefer: "resolution=merge-duplicates",
-          },
-          body: JSON.stringify({ post_id: postId, visitor_hash: hash, clap_count: myClapsRef.current }),
-        });
+        if (myRowIdRef.current) {
+          // Row sudah ada → PATCH (update in-place, tidak perlu conflict resolution)
+          await fetch(`${SUPABASE_URL}/rest/v1/blog_claps?id=eq.${myRowIdRef.current}`, {
+            method: "PATCH",
+            headers: {
+              apikey: SUPABASE_KEY,
+              Authorization: "Bearer " + SUPABASE_KEY,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ clap_count: myClapsRef.current }),
+          });
+        } else {
+          // Row belum ada → POST baru, simpan ID untuk update berikutnya
+          const res = await fetch(SUPABASE_URL + "/rest/v1/blog_claps", {
+            method: "POST",
+            headers: {
+              apikey: SUPABASE_KEY,
+              Authorization: "Bearer " + SUPABASE_KEY,
+              "Content-Type": "application/json",
+              Prefer: "return=representation",
+            },
+            body: JSON.stringify({ post_id: postId, visitor_hash: hash, clap_count: myClapsRef.current }),
+          });
+          const rows = await res.json().catch(() => []);
+          if (rows?.[0]?.id) myRowIdRef.current = rows[0].id;
+        }
       } catch {}
     }, 800);
   }, [postId]);
