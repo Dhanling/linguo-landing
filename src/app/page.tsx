@@ -458,15 +458,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Corporate","/corporate"],["Jadi Pengajar","/jadi-pengajar"],["FAQ","faq"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
-                <a key={l} onClick={()=>{
-                  if(h.startsWith("/")){
-                    window.location.href = h;
-                  } else if(h.startsWith("wa-")){
-                    const msg = "Halo, saya tertarik menjadi pengajar di Linguo";
-                    window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
-                  } else { scrollTo(h); }
-                }} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+              {[["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+                <a key={l} href={h} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
@@ -474,9 +467,6 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button onClick={()=>setLang(lang==='id'?'en':'id')} className="hover:opacity-80 transition-opacity">
-              <img src={lang==='id'?"/images/flag-id.png":"/images/flag-en.png"} alt={lang==='id'?"ID":"EN"} className="h-8 w-8 rounded-full object-cover border-2 border-white/40"/>
-            </button>
             <button onClick={onLoginOpen} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
             <button onClick={()=>setPlacementPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Placement Test</button>
           </div>
@@ -492,9 +482,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
             <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Kids 🧒</button>
             <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
-            <a href="/corporate" className="text-sm py-2.5">Corporate</a>
-            <a href="/jadi-pengajar" className="text-sm py-2.5">Jadi Pengajar</a>
-            <button onClick={()=>{scrollTo("faq");setOpen(false)}} className="text-sm py-2.5 text-left">FAQ</button>
+            <a href="/harga" onClick={()=>setOpen(false)} className="text-sm py-2.5">Harga</a>
             <a href="/silabus" onClick={()=>setOpen(false)} className="text-sm py-2.5">Silabus</a>
             <a href="/blog" onClick={()=>setOpen(false)} className="text-sm py-2.5">Blog</a>
             <button onClick={()=>{onLoginOpen();setOpen(false)}} className="mt-2 border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full block">Login</button>
@@ -1732,8 +1720,22 @@ export default function Home() {
             <h4 className="font-bold mt-6 mb-4">Program</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Regular Class","Private Class","IELTS Prep","TOEFL Prep"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya tertarik "+l+" Linguo")}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
           </div>
-          <div><h4 className="font-bold mb-4">Teaching</h4>
-            <a href="/jadi-pengajar" target="_blank" className="text-sm text-white/80 mb-6 block hover:text-white transition-colors">Become a Teacher</a>
+          <div>
+            <h4 className="font-bold mb-4">Info</h4>
+            <ul className="flex flex-col gap-1.5 text-sm text-white/80">
+              <li><a href="/harga" className="hover:text-white transition-colors">Harga Kelas</a></li>
+              <li><a href="/silabus" className="hover:text-white transition-colors">Silabus & Kurikulum</a></li>
+              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/corporate" className="hover:text-white transition-colors">Corporate Class</a></li>
+              <li><a href="/jadi-pengajar" className="hover:text-white transition-colors">Jadi Pengajar</a></li>
+            </ul>
+            <h4 className="font-bold mt-6 mb-2">Bantuan</h4>
+            <ul className="flex flex-col gap-1.5 text-sm text-white/80">
+              <li><a href="/#faq" className="hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="https://wa.me/6282116859493" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Hubungi Kami</a></li>
+            </ul>
+          </div>
+          <div><h4 className="font-bold mb-4">Kontak</h4>
             <div className="text-sm text-white/80 space-y-1">
               <p>Happy Creative Hub, Jl. Cisitu Indah III No.2,</p><p>Dago, Coblong, Bandung 40135</p>
               <p className="mt-3">Tel: (022) 85942550</p><p>Email: official.linguo@gmail.com</p>
