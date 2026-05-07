@@ -9,10 +9,6 @@ const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
 async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; referral_source?:string}) {
-  if (!formData.wa_number && !waNumber && !form.wa_number) {
-    toast.error('Nomor WhatsApp * wajib diisi');
-    return;
-  }
 
   try {
     // Get referral from URL or localStorage
