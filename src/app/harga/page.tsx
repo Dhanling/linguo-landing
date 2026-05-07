@@ -105,6 +105,7 @@ export default function HargaPage() {
   const [showAll, setShowAll] = useState(false);
 
   const filtered = useMemo(() => {
+    setShowAll(false);
     if (!search.trim()) return LANGUAGES;
     const q = search.toLowerCase();
     return LANGUAGES.filter(l => l.name.toLowerCase().includes(q));
