@@ -926,7 +926,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white font-bold text-sm shadow-sm">L</div>
+              <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-10 h-10 rounded-full object-cover shadow-sm" />
               <div>
                 <div className="author-block-name font-semibold text-slate-900 text-sm">Linguo Team</div>
                 <div className="text-xs text-slate-400">{formatDate(post.published_at)}</div>

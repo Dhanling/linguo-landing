@@ -105,7 +105,7 @@ function FeedItem({post,onHide,dm}:{post:BlogPost;onHide:()=>void;dm:boolean}){
   return(
     <article className={`py-7 border-b last:border-0 ${dm?"border-slate-800":"border-slate-100"}`}>
       <div className="flex items-center gap-2 mb-3">
-        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold shrink-0">L</div>
+        <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-6 h-6 rounded-full object-cover shrink-0" />
         <span className={`text-[13px] ${dm?"text-slate-400":"text-slate-500"}`}>
           <span className={`font-semibold ${dm?"text-slate-200":"text-[#0f172a]"}`}>Linguo Team</span>
           {post.category&&<> in <span className={`font-semibold ${dm?"text-slate-200":"text-[#0f172a]"}`}>{post.category}</span></>}
@@ -147,7 +147,7 @@ function StaffPicks({posts,dm}:{posts:BlogPost[];dm:boolean}){return(
       {posts.slice(0,3).map(p=>(
         <Link key={p.id} href={"/blog/"+p.slug} className="group block">
           <div className="flex items-center gap-2 mb-1.5">
-            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[8px] font-bold shrink-0">L</div>
+            <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-5 h-5 rounded-full object-cover shrink-0" />
             <span className={`text-[11px] font-medium ${dm?"text-slate-400":"text-slate-500"}`}>Linguo Team</span>
           </div>
           <h4 className={`text-[14px] font-bold leading-snug line-clamp-2 group-hover:text-[#1A9E9E] transition-colors ${dm?"text-slate-200":"text-slate-900"}`}>{p.title}</h4>
@@ -190,7 +190,7 @@ function GridCard({post,dm}:{post:BlogPost;dm:boolean}){
         <p className={`text-[13px] leading-relaxed line-clamp-2 mb-4 flex-1 ${dm?"text-slate-400":"text-slate-600"}`}>{post.excerpt||strip(post.content).slice(0,100)}</p>
         <div className={`flex items-center justify-between pt-3 border-t ${dm?"border-slate-700":"border-slate-50"}`}>
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#1A9E9E] to-[#2ABFBF] flex items-center justify-center text-white text-[9px] font-bold">L</div>
+            <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-6 h-6 rounded-full object-cover" />
             <div>
               <div className={`text-[10px] font-medium ${dm?"text-slate-300":"text-slate-600"}`}>Linguo Team</div>
               <div className={`text-[9px] ${dm?"text-slate-500":"text-slate-400"}`}>{fmtD(post.published_at)}</div>
