@@ -14,7 +14,7 @@ export default function TableOfContents() {
   useEffect(() => {
     const container = document.querySelector("[data-article-body]");
     if (!container) return;
-    const els = Array.from(container.querySelectorAll("h2"));
+    const els = Array.from(container.querySelectorAll("h2, h3"));
     if (els.length < 2) return;
     const items: Heading[] = els.map((el, i) => {
       if (!el.id) el.id = `toc-${i}-${(el.textContent ?? "").slice(0, 20).replace(/\s+/g, "-").toLowerCase()}`;
