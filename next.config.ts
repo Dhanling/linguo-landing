@@ -1,7 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/produk',
+        destination: '/toko/paket-elearning',
+        permanent: true,
+      },
+      {
+        source: '/produk/:path*',
+        destination: '/toko/paket-elearning',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
