@@ -69,7 +69,10 @@ export default function PaketElearningClient({
 }: {
   product: ElearningProduct;
 }) {
-  const [loadingTier, setLoadingTier] = useState<number | null>(null);
+  const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', phone: '' });
+  const [error, setError] = useState<string | null>(null);
 
   const tiers = useMemo(
     () =>
@@ -79,37 +82,58 @@ export default function PaketElearningClient({
     [product]
   );
 
-  // Baseline: harga per-bulan dari tier terpendek (biasanya 1 bulan)
   const monthlyBaseline = tiers[0] ? perMonth(tiers[0]) : 0;
 
-  async function handleCheckout(tier: PricingTier, idx: number) {
-    setLoadingTier(idx);
+  function openCheckout(tier: PricingTier) {
+    setSelectedTier(tier);
+    setError(null);
+  }
+
+  function closeCheckout() {
+    if (submitting) return;
+    setSelectedTier(null);
+    setError(null);
+  }
+
+  async function handleCheckout(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+
+    if (!form.name || !form.email) {
+      setError('Nama dan email wajib diisi');
+      return;
+    }
+    if (!selectedTier) return;
+
+    setSubmitting(true);
     try {
-      // NOTE: sesuaikan endpoint ini dengan API checkout digital lo
-      // (kalau di /toko/[slug] lo udah ada handler, samain pattern-nya)
-      const res = await fetch('/api/checkout/digital', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          product_id: product.id,
-          product_slug: product.slug,
-          pricing_sort_order: tier.sort_order,
-          duration_days: tier.duration_days,
-          amount: tier.price,
-        }),
-      });
-      if (!res.ok) throw new Error('Checkout failed');
-      const data = await res.json();
-      if (data?.invoice_url) {
-        window.location.href = data.invoice_url;
-      } else {
-        alert('Gagal membuat invoice. Coba lagi atau hubungi WA.');
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/xendit-create-digital-invoice`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            pricing_id: selectedTier.id,
+            buyer_email: form.email,
+            buyer_name: form.name,
+            buyer_phone: form.phone || null,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok || !data.invoice_url) {
+        throw new Error(data.error ?? 'Gagal bikin invoice');
       }
+
+      window.location.href = data.invoice_url;
     } catch (err) {
-      console.error(err);
-      alert('Terjadi kesalahan saat checkout. Coba lagi.');
-    } finally {
-      setLoadingTier(null);
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan');
+      setSubmitting(false);
     }
   }
 
@@ -165,10 +189,10 @@ export default function PaketElearningClient({
               monthlyBaseline > 0 && m > 1
                 ? Math.round(((monthlyBaseline - pm) / monthlyBaseline) * 100)
                 : 0;
-            const isMid = i === 1; // middle card highlighted
+            const isMid = i === 1;
 
             return (
-              <div key={i} className={`relative ${isMid ? 'md:-mt-4' : ''}`}>
+              <div key={tier.id} className={`relative ${isMid ? 'md:-mt-4' : ''}`}>
                 {isMid && (
                   <div className="absolute left-1/2 -translate-x-1/2 -top-3.5 z-10">
                     <div className="rounded-full bg-yellow-400 px-4 py-1.5 text-sm font-bold text-slate-900 shadow-md">
@@ -260,24 +284,17 @@ export default function PaketElearningClient({
 
                   <button
                     type="button"
-                    onClick={() => handleCheckout(tier, i)}
-                    disabled={loadingTier !== null}
-                    className={`mt-auto pt-7`}
+                    onClick={() => openCheckout(tier)}
+                    className="mt-auto pt-7"
                   >
                     <span
                       className={`block w-full rounded-xl py-3 font-semibold transition-all ${
                         isMid
                           ? 'bg-white text-teal-700 hover:bg-yellow-50 shadow-md'
                           : 'bg-teal-600 text-white hover:bg-teal-700 shadow-md shadow-teal-600/20'
-                      } ${
-                        loadingTier === i ? 'opacity-70 cursor-wait' : ''
-                      } ${
-                        loadingTier !== null && loadingTier !== i
-                          ? 'opacity-50 cursor-not-allowed'
-                          : ''
                       }`}
                     >
-                      {loadingTier === i ? 'Memproses…' : meta.cta}
+                      {meta.cta}
                     </span>
                   </button>
                 </article>
@@ -360,6 +377,115 @@ export default function PaketElearningClient({
           </div>
         </div>
       </section>
+
+      {/* CHECKOUT MODAL */}
+      {selectedTier && (
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4"
+          onClick={closeCheckout}
+        >
+          <div
+            className="w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-br from-teal-600 to-teal-700 text-white p-5">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <div className="text-xs text-teal-100">Berlangganan</div>
+                  <div className="text-xl font-bold">
+                    {selectedTier.display_label}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeCheckout}
+                  disabled={submitting}
+                  className="text-white/80 hover:text-white text-2xl leading-none disabled:opacity-50"
+                  aria-label="Tutup"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="mt-3 text-3xl font-bold">
+                {formatRupiah(selectedTier.price)}
+              </div>
+              {months(selectedTier) > 1 && (
+                <div className="mt-1 text-sm text-teal-100">
+                  ≈ {formatRupiah(perMonth(selectedTier))}/bulan
+                </div>
+              )}
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleCheckout} className="p-5 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Nama Lengkap <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  disabled={submitting}
+                  required
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 disabled:bg-slate-50"
+                  placeholder="Contoh: Andi Pratama"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  disabled={submitting}
+                  required
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 disabled:bg-slate-50"
+                  placeholder="andi@example.com"
+                />
+                <p className="mt-1 text-xs text-slate-500">
+                  Kami kirim akses materi & invoice ke email ini
+                </p>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Nomor WhatsApp{' '}
+                  <span className="text-slate-400 font-normal">(opsional)</span>
+                </label>
+                <input
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  disabled={submitting}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 disabled:bg-slate-50"
+                  placeholder="08123456789"
+                />
+              </div>
+
+              {error && (
+                <div className="rounded-lg bg-red-50 border border-red-200 px-3 py-2 text-sm text-red-700">
+                  {error}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 text-white font-semibold py-3 transition-colors shadow-md shadow-teal-600/20"
+              >
+                {submitting ? 'Memproses…' : 'Lanjut ke Pembayaran'}
+              </button>
+
+              <p className="text-center text-xs text-slate-500">
+                Pembayaran aman via Xendit. QRIS, e-wallet, transfer bank.
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
 
       <style jsx global>{`
         @keyframes blob {
