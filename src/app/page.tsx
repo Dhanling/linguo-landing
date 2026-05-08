@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
 
+import TokoCTA from "@/components/TokoCTA";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
@@ -1759,5 +1760,7 @@ export default function Home() {
         <div className="border-t border-white/20 pt-6 text-center text-sm text-white/60">© {new Date().getFullYear()} PT. Linguo Edu Indonesia</div>
       </div>
     </footer>
-  </>);
+    <TokoCTA />
+    </>
+  );
 }
