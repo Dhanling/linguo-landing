@@ -1,253 +1,299 @@
-"use client";
+'use client';
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
+import { useMemo, useState } from 'react';
+import Link from 'next/link';
+import type { Product } from './page';
 
-const LANG_FLAGS: Record<string, string> = {
-  english: "🇬🇧", korean: "🇰🇷", japanese: "🇯🇵",
-  mandarin: "🇨🇳", italian: "🇮🇹", turkish: "🇹🇷",
-  spanish: "🇪🇸", french: "🇫🇷", german: "🇩🇪",
-  arabic: "🇸🇦", multilingual: "🌐",
+const FLAG_MAP: Record<string, string> = {
+  english: '🇬🇧',
+  korean: '🇰🇷',
+  japanese: '🇯🇵',
+  mandarin: '🇨🇳',
+  italian: '🇮🇹',
+  turkish: '🇹🇷',
+  spanish: '🇪🇸',
+  french: '🇫🇷',
+  german: '🇩🇪',
+  arabic: '🇸🇦',
+  multilingual: '🌐',
 };
 
-interface PricingTier {
-  price: number;
-  display_label: string;
-  sort_order: number;
-  duration_days: number | null;
+function flagFor(language: string | null): string {
+  if (!language) return '📖';
+  return FLAG_MAP[language.toLowerCase()] ?? '📖';
 }
 
-interface Product {
-  id: string;
-  type: "ebook" | "elearning";
-  title: string;
-  slug: string;
-  description: string;
-  language: string | null;
-  level: string | null;
-  category: string | null;
-  is_featured: boolean;
-  digital_product_pricing: PricingTier[];
+function formatRupiah(price: number): string {
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+  }).format(price);
 }
 
-type FilterType = "all" | "ebook" | "elearning";
+function getDisplayPrice(product: Product): { price: number; label: string } {
+  const tiers = [...(product.digital_product_pricing ?? [])].sort(
+    (a, b) => a.sort_order - b.sort_order
+  );
+  if (tiers.length === 0) return { price: 0, label: '' };
+  const cheapest = tiers[0];
+  return {
+    price: cheapest.price,
+    label: tiers.length > 1 ? `mulai ${cheapest.display_label}` : cheapest.display_label,
+  };
+}
+
+type FilterKey = 'all' | 'ebook' | 'elearning';
 
 export default function TokoClient({ products }: { products: Product[] }) {
-  const [filter, setFilter] = useState<FilterType>("all");
-  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState<FilterKey>('all');
+  const [search, setSearch] = useState('');
 
   const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
     return products.filter((p) => {
-      if (filter !== "all" && p.type !== filter) return false;
-      if (query.trim()) {
-        const q = query.toLowerCase();
-        return (
-          p.title.toLowerCase().includes(q) ||
-          (p.description ?? "").toLowerCase().includes(q) ||
-          (p.language ?? "").toLowerCase().includes(q)
-        );
+      if (filter !== 'all' && p.type !== filter) return false;
+      if (q) {
+        const haystack = [p.title, p.language, p.description, p.category]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
+        if (!haystack.includes(q)) return false;
       }
       return true;
     });
-  }, [products, filter, query]);
+  }, [products, filter, search]);
 
   const counts = useMemo(
     () => ({
       all: products.length,
-      ebook: products.filter((p) => p.type === "ebook").length,
-      elearning: products.filter((p) => p.type === "elearning").length,
+      ebook: products.filter((p) => p.type === 'ebook').length,
+      elearning: products.filter((p) => p.type === 'elearning').length,
     }),
     [products]
   );
 
+  const tabs: { key: FilterKey; label: string; emoji: string }[] = [
+    { key: 'all', label: 'Semua', emoji: '✨' },
+    { key: 'ebook', label: 'E-Book', emoji: '📚' },
+    { key: 'elearning', label: 'E-Learning', emoji: '🎬' },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#fafaf7]">
+    <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="absolute -top-20 left-[20%] w-[480px] h-[480px] bg-[#1A9E9E] opacity-[0.15] blur-[100px] rounded-full" />
-          <div className="absolute -bottom-32 right-[15%] w-[420px] h-[420px] bg-[#F5C842] opacity-[0.18] blur-[100px] rounded-full" />
-          <div
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, #000 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
+      <section className="relative overflow-hidden pt-20 pb-14 md:pt-28 md:pb-20">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute top-10 left-1/4 h-72 w-72 rounded-full bg-teal-300/30 blur-3xl animate-blob" />
+          <div className="absolute top-20 right-1/4 h-72 w-72 rounded-full bg-yellow-300/30 blur-3xl animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-8 left-1/3 h-72 w-72 rounded-full bg-teal-200/30 blur-3xl animate-blob animation-delay-4000" />
         </div>
-        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-          <div className="text-[11px] uppercase tracking-[0.3em] text-[#1A9E9E] font-bold mb-5 animate-[fadeUp_0.6s_ease-out_both]">
-            🛍️ Toko Digital
+
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-teal-200">
+            🛍️ Toko Linguo
           </div>
-          <h1
-            className="text-5xl md:text-7xl font-black text-zinc-900 leading-[0.95] tracking-tight mb-6 animate-[fadeUp_0.6s_ease-out_both]"
-            style={{ animationDelay: "100ms" }}
-          >
-            Belajar bahasa
-            <br />
-            <span className="italic font-serif text-[#1A9E9E] font-medium">di waktu luangmu</span>
-            <span className="text-[#F5C842]">.</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">
+            Belajar bahasa{' '}
+            <span className="font-serif italic text-teal-600">di waktu luangmu</span>
           </h1>
-          <p
-            className="text-lg md:text-xl text-zinc-600 max-w-2xl leading-relaxed animate-[fadeUp_0.6s_ease-out_both]"
-            style={{ animationDelay: "200ms" }}
-          >
-            E-Books premium & recording class lengkap. Akses sekali, manfaat seumur hidup.{" "}
-            <span className="font-semibold text-zinc-900">{counts.all} produk</span> siap dipelajari.
+          <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+            E-Book ringkas & E-Learning interaktif. Akses kapan saja, dari mana saja, dalam 10+ bahasa.
           </p>
         </div>
       </section>
 
-      {/* FILTER */}
-      <section className="sticky top-0 z-20 backdrop-blur-xl bg-[#fafaf7]/85 border-y border-zinc-200/80">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-2.5">
-          <FilterPill active={filter === "all"} onClick={() => setFilter("all")} count={counts.all}>
-            Semua
-          </FilterPill>
-          <FilterPill active={filter === "ebook"} onClick={() => setFilter("ebook")} count={counts.ebook}>
-            <span className="mr-1.5">📚</span>E-Book
-          </FilterPill>
-          <FilterPill active={filter === "elearning"} onClick={() => setFilter("elearning")} count={counts.elearning}>
-            <span className="mr-1.5">🎬</span>E-Learning
-          </FilterPill>
-          <div className="ml-auto relative w-full md:w-64">
-            <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+      {/* STICKY FILTER */}
+      <div className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+        <div className="mx-auto max-w-7xl px-4 py-3 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+          <div className="flex flex-wrap gap-2">
+            {tabs.map((tab) => {
+              const active = filter === tab.key;
+              return (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => setFilter(tab.key)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    active
+                      ? 'bg-teal-600 text-white shadow-md shadow-teal-600/30'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                >
+                  <span className="mr-1.5">{tab.emoji}</span>
+                  {tab.label}
+                  <span
+                    className={`ml-2 text-xs ${
+                      active ? 'text-teal-100' : 'text-slate-500'
+                    }`}
+                  >
+                    {counts[tab.key]}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="relative w-full sm:w-64">
             <input
               type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Cari bahasa..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-full border border-zinc-200 bg-white focus:outline-none focus:border-[#1A9E9E] focus:ring-4 focus:ring-[#1A9E9E]/10 text-sm transition-all"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Cari bahasa…"
+              className="w-full pl-9 pr-3 py-2 rounded-full border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
             />
+            <svg
+              className="absolute left-3 top-2.5 h-4 w-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+              />
+            </svg>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* GRID */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="mx-auto max-w-7xl px-4 py-10">
         {filtered.length === 0 ? (
-          <EmptyState />
+          <div className="py-20 text-center">
+            <div className="text-5xl mb-4">🔍</div>
+            <p className="text-slate-600 text-lg">
+              Tidak ada produk yang cocok.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setFilter('all');
+                setSearch('');
+              }}
+              className="mt-4 text-sm text-teal-600 hover:text-teal-700 font-medium"
+            >
+              Reset filter
+            </button>
+          </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" key={filter}>
-            {filtered.map((product, idx) => (
-              <ProductCard key={product.id} product={product} index={idx} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {filtered.map((product, i) => {
+              const { price, label } = getDisplayPrice(product);
+              const isEbook = product.type === 'ebook';
+              const headerGradient = isEbook
+                ? 'from-teal-500 to-teal-700'
+                : 'from-amber-400 to-orange-500';
+
+              return (
+                <Link
+                  key={product.id}
+                  href={`/toko/${product.slug}`}
+                  className="group relative block opacity-0 animate-fadeUp"
+                  style={{
+                    animationDelay: `${i * 50}ms`,
+                    animationFillMode: 'forwards',
+                  }}
+                >
+                  <article
+                    className={`relative h-full rounded-2xl overflow-hidden bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                      product.is_featured
+                        ? 'ring-2 ring-yellow-400 shadow-lg shadow-yellow-400/20'
+                        : 'shadow-sm'
+                    }`}
+                  >
+                    {product.is_featured && (
+                      <div className="absolute top-3 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-xs font-bold text-slate-900 shadow">
+                        ⭐ Featured
+                      </div>
+                    )}
+
+                    <div
+                      className={`relative h-40 bg-gradient-to-br ${headerGradient} flex items-center justify-center overflow-hidden`}
+                    >
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
+                      <span
+                        className="relative text-7xl drop-shadow-lg"
+                        role="img"
+                        aria-label={product.language ?? ''}
+                      >
+                        {flagFor(product.language)}
+                      </span>
+                      <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
+                        {isEbook ? '📚 E-Book' : '🎬 E-Learning'}
+                      </div>
+                    </div>
+
+                    <div className="p-4">
+                      <h3 className="font-semibold text-slate-900 line-clamp-2 group-hover:text-teal-700 transition-colors">
+                        {product.title}
+                      </h3>
+                      {product.description && (
+                        <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
+                          {product.description}
+                        </p>
+                      )}
+                      <div className="mt-3 flex items-end justify-between gap-2">
+                        <div>
+                          <div className="text-xs text-slate-500">
+                            {label || 'Harga'}
+                          </div>
+                          <div className="font-bold text-slate-900 text-lg leading-none">
+                            {formatRupiah(price)}
+                          </div>
+                        </div>
+                        <span className="text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                          Lihat →
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
           </div>
         )}
       </section>
 
-      <style jsx global>{\`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to { opacity: 1; transform: translateY(0); }
+      <style jsx global>{`
+        @keyframes blob {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
         }
-      \`}</style>
-    </div>
-  );
-}
-
-function FilterPill({ active, onClick, count, children }: {
-  active: boolean; onClick: () => void; count: number; children: React.ReactNode;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={\`group relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 \${
-        active
-          ? "bg-zinc-900 text-white shadow-lg shadow-zinc-900/20 scale-[1.02]"
-          : "bg-white text-zinc-700 hover:bg-zinc-50 border border-zinc-200 hover:border-zinc-300"
-      }\`}
-    >
-      {children}
-      <span className={\`ml-2 text-xs font-medium tabular-nums \${active ? "text-white/60" : "text-zinc-400"}\`}>
-        {count}
-      </span>
-    </button>
-  );
-}
-
-function ProductCard({ product, index }: { product: Product; index: number }) {
-  const minPrice = product.digital_product_pricing.length > 0
-    ? Math.min(...product.digital_product_pricing.map((p) => p.price))
-    : 0;
-  const flag = LANG_FLAGS[product.language ?? "multilingual"] ?? "🌐";
-  const isEbook = product.type === "ebook";
-
-  return (
-    <Link
-      href={\`/toko/\${product.slug}\`}
-      className="group block animate-[fadeUp_0.55s_cubic-bezier(0.22,0.61,0.36,1)_both]"
-      style={{ animationDelay: \`\${Math.min(index * 50, 600)}ms\` }}
-    >
-      <article
-        className={\`relative bg-white rounded-2xl overflow-hidden border transition-all duration-300 group-hover:-translate-y-1.5 \${
-          product.is_featured
-            ? "border-[#F5C842] shadow-[0_4px_24px_-8px_rgba(245,200,66,0.4)] group-hover:shadow-[0_24px_48px_-12px_rgba(245,200,66,0.5)]"
-            : "border-zinc-200 group-hover:border-zinc-300 group-hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)]"
-        }\`}
-      >
-        <div
-          className={\`relative aspect-[5/4] overflow-hidden \${
-            isEbook
-              ? "bg-gradient-to-br from-[#1A9E9E] via-[#0d7474] to-[#0a4f4f]"
-              : "bg-gradient-to-br from-[#F5C842] via-[#e0a93c] to-[#a87810]"
-          }\`}
-        >
-          <div
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1.5px, transparent 0)", backgroundSize: "24px 24px" }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center text-[88px] group-hover:scale-110 transition-transform duration-700 ease-out">
-            <span className="drop-shadow-2xl">{flag}</span>
-          </div>
-          <div className="absolute top-3 left-3 flex gap-1.5">
-            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/40 text-white backdrop-blur-md">
-              {isEbook ? "📚 E-Book" : "🎬 Course"}
-            </span>
-            {product.level && (
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/25 text-white backdrop-blur-md">
-                {product.level}
-              </span>
-            )}
-          </div>
-          {product.is_featured && (
-            <div className="absolute top-3 right-3">
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#F5C842] text-zinc-900 shadow-lg flex items-center gap-1">
-                ⭐ Featured
-              </span>
-            </div>
-          )}
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
-        </div>
-        <div className="p-5">
-          <h3 className="font-bold text-zinc-900 text-base leading-snug mb-2 line-clamp-2 group-hover:text-[#1A9E9E] transition-colors duration-200">
-            {product.title}
-          </h3>
-          <p className="text-sm text-zinc-500 line-clamp-2 mb-5 leading-relaxed">{product.description}</p>
-          <div className="flex items-end justify-between pt-4 border-t border-zinc-100">
-            <div>
-              <div className="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold mb-1">Mulai dari</div>
-              <div className="text-xl font-black text-zinc-900 tabular-nums">Rp {minPrice.toLocaleString("id-ID")}</div>
-            </div>
-            <div className="flex items-center gap-1.5 text-zinc-400 group-hover:text-[#1A9E9E] transition-colors">
-              <span className="text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">Lihat</span>
-              <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </Link>
-  );
-}
-
-function EmptyState() {
-  return (
-    <div className="text-center py-24 animate-[fadeUp_0.5s_ease-out_both]">
-      <div className="text-7xl mb-6 opacity-20">🔍</div>
-      <h3 className="text-xl font-bold text-zinc-700 mb-2">Gak ada yang cocok</h3>
-      <p className="text-zinc-500">Coba ubah filter atau search keyword lain.</p>
-    </div>
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-blob {
+          animation: blob 12s ease-in-out infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        .animate-fadeUp {
+          animation: fadeUp 0.5s ease-out;
+        }
+      `}</style>
+    </main>
   );
 }
