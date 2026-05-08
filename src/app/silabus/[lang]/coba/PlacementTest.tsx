@@ -393,6 +393,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   const [showGate, setShowGate] = useState(false);
   const [waValue, setWaValue] = useState("");
   const [nameValue, setNameValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [gateError, setGateError] = useState("");
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -504,6 +505,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
     const wa = waValue.replace(/\D/g, "");
     if (wa.length < 10) { setGateError("Nomor WhatsApp minimal 10 digit"); return; }
     if (!nameValue.trim()) { setGateError("Masukkan nama dulu ya"); return; }
+    if (!emailValue.trim() || !emailValue.includes("@")) { setGateError("Masukkan email yang valid"); return; }
     setSubmitting(true);
     try {
       await fetch("/api/placement-result", {
@@ -512,13 +514,14 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
         body: JSON.stringify({
           language: meta.name, level: result.sublevel, score, timeElapsedSec,
           source: "placement-test-" + meta.slug + "-unlocked",
-          name: nameValue.trim(), whatsapp: wa,
+          name: nameValue.trim(), email: emailValue.trim(), whatsapp: wa,
         }),
       });
       // Simpan ke localStorage untuk prefill FunnelModal nanti
       try {
         localStorage.setItem("linguo_prefill", JSON.stringify({
           name: nameValue.trim(),
+          email: emailValue.trim(),
           whatsapp: wa,
         }));
       } catch {}
@@ -600,6 +603,9 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
                 <div className="space-y-3">
                   <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)}
                     placeholder="Nama kamu"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+                  <input type="email" value={emailValue} onChange={(e) => setEmailValue(e.target.value)}
+                    placeholder="Email kamu"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                   <div className="flex">
                     <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>

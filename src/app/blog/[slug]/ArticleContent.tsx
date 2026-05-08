@@ -1008,7 +1008,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
                   🚀 {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
                 </a>
                 <a
-                  href="https://wa.me/6282116859493"
+                  href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo Min Ling! Saya lihat dari blog Linguo berjudul ${post.title}. Saya tertarik daftar kelas ${langName || "bahasa"}. Bisa info lebih lanjut?`)}`}
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-all border border-white/20 hover:border-white/30"
                 >
@@ -1082,7 +1082,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
               <p className="text-sm text-white/80 leading-relaxed mb-6">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p>
               <h4 className="font-bold text-lg mb-4">Customer Service</h4>
               <div className="space-y-1.5 text-sm text-white/80">
-                <p>WA : <a href="https://wa.me/6282116859493" className="hover:text-white">6282116859493</a></p>
+                <p>WA : <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo Min Ling! Saya lihat dari blog Linguo berjudul ${post.title}. Saya tertarik daftar kelas ${langName || "bahasa"}. Bisa info lebih lanjut?`)}`} className="hover:text-white">6282116859493</a></p>
                 <p>Telepon : (022) 85942550</p>
                 <p>Email : <a href="mailto:info@linguo.id" className="hover:text-white">info@linguo.id</a></p>
               </div>
