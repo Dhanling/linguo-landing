@@ -15,6 +15,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import AttentionAlert from '@/components/akun/AttentionAlert';
+import PerpustakaanSaya from '@/components/PerpustakaanSaya';
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -2133,6 +2134,12 @@ export default function AkunPage() {
                   <p className="text-xs text-gray-400 mt-1">Daftar kelas dulu untuk akses materi</p>
                 </div>
               )}
+
+              {/* Perpustakaan Saya — produk digital yang udah dibeli */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 px-1">📚 Perpustakaan Saya</h3>
+                {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
+              </div>
 
               {/* General resources */}
               <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">

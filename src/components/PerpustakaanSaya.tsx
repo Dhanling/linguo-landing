@@ -25,18 +25,18 @@ interface PurchaseItem {
 }
 
 interface Props {
-  userEmail: string;
+  userId: string;
   supabase: SupabaseClient;
 }
 
-export default function PerpustakaanSaya({ userEmail, supabase }: Props) {
+export default function PerpustakaanSaya({ userId, supabase }: Props) {
   const [purchases, setPurchases] = useState<PurchaseItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState<string | null>(null);
 
   useEffect(() => {
     fetchPurchases();
-  }, [userEmail]);
+  }, [userId]);
 
   async function fetchPurchases() {
     setLoading(true);
@@ -52,7 +52,7 @@ export default function PerpustakaanSaya({ userEmail, supabase }: Props) {
           display_label, duration_days
         )
       `)
-      .eq("buyer_email", userEmail)
+      .eq("auth_user_id", userId)
       .eq("payment_status", "Lunas")
       .order("created_at", { ascending: false });
 
