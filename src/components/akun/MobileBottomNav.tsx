@@ -17,7 +17,7 @@ const TABS: { key: TabKey; label: string; icon: string }[] = [
 export default function MobileBottomNav({ activeTab, onChange }: Props) {
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
+      className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="Navigation utama"
     >
