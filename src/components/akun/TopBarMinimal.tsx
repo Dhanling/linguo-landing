@@ -22,7 +22,7 @@ export default function TopBarMinimal({
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="/" className="flex items-center gap-2 group">
+        <a href="/akun" className="flex items-center gap-2 group">
           <div className="h-7 w-7 rounded-lg bg-[#1A9E9E] flex items-center justify-center group-hover:bg-[#2ABFBF] transition-colors">
             <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
           </div>
