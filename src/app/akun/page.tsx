@@ -1206,11 +1206,53 @@ export default function AkunPage() {
   async function loadStudentData(email: string) {
     setDataLoading(true);
     try {
-      const { data: studentData } = await supabase
+      let { data: studentData } = await supabase
         .from("students")
         .select("id, name, email, whatsapp, avatar_url")
         .eq("email", email)
         .maybeSingle();
+
+      // ─────────────────────────────────────────────────────────────────
+      // SKIP-ONBOARDING FOR DIGITAL CUSTOMERS
+      // Kalau user belum ada di `students` tapi udah punya digital_purchases
+      // (e-learning / e-book / IELTS sim) yang Lunas, auto-create student row
+      // dan skip onboarding. Mereka udah commit ke produk — gak perlu nudge lagi.
+      // ─────────────────────────────────────────────────────────────────
+      if (!studentData && user?.id) {
+        const { data: digitalPurchases } = await supabase
+          .from("digital_purchases")
+          .select("id")
+          .eq("auth_user_id", user.id)
+          .eq("payment_status", "Lunas")
+          .limit(1);
+
+        if (digitalPurchases && digitalPurchases.length > 0) {
+          // Auto-create student row using same pattern as OnboardingWizard.onDone
+          const studentPayload = {
+            name:
+              user?.user_metadata?.full_name ||
+              user?.email?.split("@")[0] ||
+              "Siswa",
+            email: user?.email,
+            avatar_url: user?.user_metadata?.avatar_url || null,
+          };
+          const { data: inserted } = await supabase
+            .from("students")
+            .insert(studentPayload)
+            .select("id, name, email, whatsapp, avatar_url")
+            .single();
+          if (inserted) {
+            studentData = inserted;
+            // Set onboarded flag so we don't accidentally show wizard later
+            try {
+              localStorage.setItem(
+                `linguo_onboarded_${user?.id || email}`,
+                "true"
+              );
+            } catch {}
+          }
+        }
+      }
 
       if (!studentData) {
         // Check if wizard was previously completed (survives refresh)
