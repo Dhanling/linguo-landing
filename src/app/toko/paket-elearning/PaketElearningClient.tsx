@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { ElearningProduct, PricingTier } from './page';
+import { validatePhone } from '../../../lib/phone';
 
 type TierMeta = {
   tagline: string;
@@ -71,7 +72,8 @@ export default function PaketElearningClient({
 }) {
   const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '+62 ' });
+  const [phoneError, setPhoneError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const tiers = useMemo(
@@ -84,25 +86,58 @@ export default function PaketElearningClient({
 
   const monthlyBaseline = tiers[0] ? perMonth(tiers[0]) : 0;
 
+  // Reactive form validity check — drives submit button disabled state.
+  const isFormValid = useMemo(() => {
+    return (
+      form.name.trim().length > 0 &&
+      form.email.trim().length > 0 &&
+      validatePhone(form.phone).valid
+    );
+  }, [form]);
+
   function openCheckout(tier: PricingTier) {
     setSelectedTier(tier);
     setError(null);
+    setPhoneError(null);
   }
 
   function closeCheckout() {
     if (submitting) return;
     setSelectedTier(null);
     setError(null);
+    setPhoneError(null);
+  }
+
+  function handlePhoneChange(value: string) {
+    setForm({ ...form, phone: value });
+    // Clear inline error as user retypes — re-validate on blur or submit
+    if (phoneError) setPhoneError(null);
+  }
+
+  function handlePhoneBlur() {
+    // Only show error if user has typed digits beyond just prefix
+    const digitsOnly = form.phone.replace(/\D/g, '');
+    if (digitsOnly.length < 4) return; // mostly empty — don't nag yet
+    const result = validatePhone(form.phone);
+    setPhoneError(result.valid ? null : result.error);
   }
 
   async function handleCheckout(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
 
-    if (!form.name || !form.email) {
+    if (!form.name.trim() || !form.email.trim()) {
       setError('Nama dan email wajib diisi');
       return;
     }
+
+    // Phone now required — validate before submit
+    const phoneResult = validatePhone(form.phone);
+    if (!phoneResult.valid) {
+      setPhoneError(phoneResult.error);
+      return;
+    }
+
     if (!selectedTier) return;
 
     setSubmitting(true);
@@ -117,9 +152,9 @@ export default function PaketElearningClient({
           },
           body: JSON.stringify({
             pricing_id: selectedTier.id,
-            buyer_email: form.email,
-            buyer_name: form.name,
-            buyer_phone: form.phone || null,
+            buyer_email: form.email.trim(),
+            buyer_name: form.name.trim(),
+            buyer_phone: phoneResult.e164, // canonical E.164
           }),
         }
       );
@@ -452,17 +487,29 @@ export default function PaketElearningClient({
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
-                  Nomor WhatsApp{' '}
-                  <span className="text-slate-400 font-normal">(opsional)</span>
+                  Nomor WhatsApp <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="tel"
                   value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  onChange={(e) => handlePhoneChange(e.target.value)}
+                  onBlur={handlePhoneBlur}
                   disabled={submitting}
-                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 disabled:bg-slate-50"
-                  placeholder="08123456789"
+                  required
+                  className={`w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 disabled:bg-slate-50 ${
+                    phoneError
+                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
+                      : 'border-slate-300 focus:ring-teal-500 focus:border-teal-500'
+                  }`}
+                  placeholder="+62 812 3456 7890"
                 />
+                {phoneError ? (
+                  <p className="mt-1 text-xs text-red-600">{phoneError}</p>
+                ) : (
+                  <p className="mt-1 text-xs text-slate-500">
+                    Default Indonesia (+62). Diaspora? Ganti prefix sesuai negara.
+                  </p>
+                )}
               </div>
 
               {error && (
@@ -473,8 +520,8 @@ export default function PaketElearningClient({
 
               <button
                 type="submit"
-                disabled={submitting}
-                className="w-full rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 text-white font-semibold py-3 transition-colors shadow-md shadow-teal-600/20"
+                disabled={submitting || !isFormValid}
+                className="w-full rounded-xl bg-teal-600 hover:bg-teal-700 disabled:bg-teal-400 disabled:cursor-not-allowed text-white font-semibold py-3 transition-colors shadow-md shadow-teal-600/20"
               >
                 {submitting ? 'Memproses…' : 'Lanjut ke Pembayaran'}
               </button>
