@@ -2224,7 +2224,7 @@ export default function AkunPage() {
         <>
           <button
             onClick={() => setShowQuickActions(true)}
-            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-30 h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+            className="fixed bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             aria-label="Aksi Cepat"
           >
             <span className="text-2xl">⚡</span>
@@ -2237,14 +2237,14 @@ export default function AkunPage() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onClick={() => setShowQuickActions(false)}
-                  className="fixed inset-0 bg-black/30 z-40"
+                  className="fixed inset-0 bg-black/30 z-[55]"
                 />
                 <motion.div
                   initial={{ opacity: 0, y: 16, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 16, scale: 0.95 }}
                   transition={{ duration: 0.18 }}
-                  className="fixed bottom-36 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl border border-gray-100 p-4"
+                  className="fixed bottom-44 right-4 sm:right-6 z-[60] w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl border border-gray-100 p-4"
                 >
                   <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-1.5">
                     <span>⚡</span> Aksi Cepat
