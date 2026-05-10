@@ -1,9 +1,14 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import type { CountryCode } from 'libphonenumber-js';
 import type { ElearningProduct, PricingTier } from './page';
-import { validatePhone } from '../../../lib/phone';
+import {
+  COUNTRIES,
+  findCountry,
+  validatePhoneWithCountry,
+} from '../../../lib/phone';
 
 type TierMeta = {
   tagline: string;
@@ -72,9 +77,17 @@ export default function PaketElearningClient({
 }) {
   const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', phone: '+62 ' });
+  const [form, setForm] = useState({ name: '', email: '' });
+
+  // Phone state — split: country (for dropdown) + national number (for input)
+  const [phoneCountry, setPhoneCountry] = useState<CountryCode>('ID');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+
   const [error, setError] = useState<string | null>(null);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const tiers = useMemo(
     () =>
@@ -86,14 +99,28 @@ export default function PaketElearningClient({
 
   const monthlyBaseline = tiers[0] ? perMonth(tiers[0]) : 0;
 
-  // Reactive form validity check — drives submit button disabled state.
+  const selectedCountry = findCountry(phoneCountry);
+
+  // Reactive form validity — drives submit button disabled state.
   const isFormValid = useMemo(() => {
     return (
       form.name.trim().length > 0 &&
       form.email.trim().length > 0 &&
-      validatePhone(form.phone).valid
+      validatePhoneWithCountry(phoneNumber, phoneCountry).valid
     );
-  }, [form]);
+  }, [form, phoneNumber, phoneCountry]);
+
+  // Click outside to close country dropdown
+  useEffect(() => {
+    if (!countryDropdownOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setCountryDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [countryDropdownOpen]);
 
   function openCheckout(tier: PricingTier) {
     setSelectedTier(tier);
@@ -106,20 +133,25 @@ export default function PaketElearningClient({
     setSelectedTier(null);
     setError(null);
     setPhoneError(null);
+    setCountryDropdownOpen(false);
   }
 
-  function handlePhoneChange(value: string) {
-    setForm({ ...form, phone: value });
-    // Clear inline error as user retypes — re-validate on blur or submit
+  function handleNumberChange(value: string) {
+    setPhoneNumber(value);
     if (phoneError) setPhoneError(null);
   }
 
-  function handlePhoneBlur() {
-    // Only show error if user has typed digits beyond just prefix
-    const digitsOnly = form.phone.replace(/\D/g, '');
-    if (digitsOnly.length < 4) return; // mostly empty — don't nag yet
-    const result = validatePhone(form.phone);
+  function handleNumberBlur() {
+    const digitsOnly = phoneNumber.replace(/\D/g, '');
+    if (digitsOnly.length < 4) return; // mostly empty — don't nag
+    const result = validatePhoneWithCountry(phoneNumber, phoneCountry);
     setPhoneError(result.valid ? null : result.error);
+  }
+
+  function selectCountry(code: CountryCode) {
+    setPhoneCountry(code);
+    setCountryDropdownOpen(false);
+    if (phoneError) setPhoneError(null); // re-validate next blur/submit
   }
 
   async function handleCheckout(e: React.FormEvent) {
@@ -131,8 +163,7 @@ export default function PaketElearningClient({
       return;
     }
 
-    // Phone now required — validate before submit
-    const phoneResult = validatePhone(form.phone);
+    const phoneResult = validatePhoneWithCountry(phoneNumber, phoneCountry);
     if (!phoneResult.valid) {
       setPhoneError(phoneResult.error);
       return;
@@ -468,6 +499,7 @@ export default function PaketElearningClient({
                   placeholder="Contoh: Andi Pratama"
                 />
               </div>
+
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
                   Email <span className="text-red-500">*</span>
@@ -485,29 +517,108 @@ export default function PaketElearningClient({
                   Kami kirim akses materi & invoice ke email ini
                 </p>
               </div>
-              <div>
+
+              {/* Phone field — split: country dropdown + national number */}
+              <div ref={dropdownRef}>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
                   Nomor WhatsApp <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => handlePhoneChange(e.target.value)}
-                  onBlur={handlePhoneBlur}
-                  disabled={submitting}
-                  required
-                  className={`w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 disabled:bg-slate-50 ${
-                    phoneError
-                      ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
-                      : 'border-slate-300 focus:ring-teal-500 focus:border-teal-500'
-                  }`}
-                  placeholder="+62 812 3456 7890"
-                />
+
+                <div className="relative">
+                  <div className="flex">
+                    {/* Country prefix selector */}
+                    <button
+                      type="button"
+                      onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
+                      disabled={submitting}
+                      className={`flex items-center gap-1.5 px-3 py-2 border border-r-0 rounded-l-lg text-sm bg-slate-50 hover:bg-slate-100 transition-colors disabled:bg-slate-100 disabled:cursor-not-allowed ${
+                        phoneError ? 'border-red-300' : 'border-slate-300'
+                      }`}
+                      aria-label="Pilih negara"
+                      aria-expanded={countryDropdownOpen}
+                    >
+                      <span className="text-base leading-none" aria-hidden>
+                        {selectedCountry.flag}
+                      </span>
+                      <span className="font-medium text-slate-700">
+                        +{selectedCountry.dialCode}
+                      </span>
+                      <svg
+                        className={`w-3 h-3 text-slate-500 transition-transform ${
+                          countryDropdownOpen ? 'rotate-180' : ''
+                        }`}
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        aria-hidden
+                      >
+                        <path
+                          d="M3 4.5L6 7.5L9 4.5"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* National number input */}
+                    <input
+                      type="tel"
+                      value={phoneNumber}
+                      onChange={(e) => handleNumberChange(e.target.value)}
+                      onBlur={handleNumberBlur}
+                      disabled={submitting}
+                      required
+                      className={`flex-1 min-w-0 px-3 py-2 border rounded-r-lg text-sm focus:outline-none focus:ring-2 disabled:bg-slate-50 ${
+                        phoneError
+                          ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
+                          : 'border-slate-300 focus:ring-teal-500 focus:border-teal-500'
+                      }`}
+                      placeholder={selectedCountry.examplePhone}
+                    />
+                  </div>
+
+                  {/* Country list dropdown */}
+                  {countryDropdownOpen && (
+                    <ul
+                      className="absolute left-0 right-0 z-20 mt-1 max-h-64 overflow-auto bg-white border border-slate-200 rounded-lg shadow-lg py-1"
+                      role="listbox"
+                    >
+                      {COUNTRIES.map((c) => {
+                        const active = c.code === phoneCountry;
+                        return (
+                          <li key={c.code}>
+                            <button
+                              type="button"
+                              onClick={() => selectCountry(c.code)}
+                              className={`w-full flex items-center gap-3 px-3 py-2 text-left text-sm transition-colors ${
+                                active
+                                  ? 'bg-teal-50 text-teal-700'
+                                  : 'hover:bg-slate-50 text-slate-700'
+                              }`}
+                              role="option"
+                              aria-selected={active}
+                            >
+                              <span className="text-base leading-none" aria-hidden>
+                                {c.flag}
+                              </span>
+                              <span className="flex-1">{c.name}</span>
+                              <span className="text-slate-500 font-mono text-xs">
+                                +{c.dialCode}
+                              </span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </div>
+
                 {phoneError ? (
                   <p className="mt-1 text-xs text-red-600">{phoneError}</p>
                 ) : (
                   <p className="mt-1 text-xs text-slate-500">
-                    Default Indonesia (+62). Diaspora? Ganti prefix sesuai negara.
+                    Default Indonesia. Diaspora? Pilih negara di sebelah kiri.
                   </p>
                 )}
               </div>
