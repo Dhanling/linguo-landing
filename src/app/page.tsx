@@ -347,6 +347,14 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
+  // Lock body scroll when mobile drawer open (so background gak ikut ke-scroll)
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [open]);
   const c = scrolled;
 
   const scrollTo = (id:string, tab?:number) => {
@@ -474,23 +482,50 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
         </div>
-        <AnimatePresence>{open&&(<motion.div initial={{height:0}} animate={{height:"auto"}} exit={{height:0}} className="md:hidden bg-white border-t overflow-hidden">
-          <div className="px-6 py-4 flex flex-col gap-2">
-            <a href="/silabus/english/coba" className="block py-2.5 text-sm text-[#1A9E9E] font-semibold hover:text-[#147a7a] border-b border-gray-100 mb-1 pb-3">🎯 Placement Test Gratis</a>
-            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Private</button>
-            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Reguler</button>
-            <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
-            <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-sm py-2.5 text-left">IELTS / TOEFL</button>
-            <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
-            <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-sm py-2.5 text-left">Kelas Kids 🧒</button>
-            <a href="/produk" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left">E-Learning & E-Book</a>
-            <a href="/harga" onClick={()=>setOpen(false)} className="text-sm py-2.5">Harga</a>
-            <a href="/silabus" onClick={()=>setOpen(false)} className="text-sm py-2.5">Silabus</a>
-            <a href="/blog" onClick={()=>setOpen(false)} className="text-sm py-2.5">Blog</a>
-            <button onClick={()=>{onLoginOpen();setOpen(false)}} className="mt-2 border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full block">Login</button>
-            <button onClick={()=>{setPlacementPickerOpen(true);setOpen(false)}} className="mt-2 bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Placement Test</button>
-          </div>
-        </motion.div>)}</AnimatePresence>
+        <AnimatePresence>{open&&(
+          <motion.div
+            initial={{x:"100%"}}
+            animate={{x:0}}
+            exit={{x:"100%"}}
+            transition={{type:"tween", duration:0.25}}
+            className="md:hidden fixed inset-0 z-[70] bg-white flex flex-col"
+          >
+            {/* Sticky header — logo teal + close X */}
+            <div className="bg-[#1A9E9E] h-16 px-6 flex items-center justify-between shrink-0">
+              <a href="/" onClick={()=>setOpen(false)} className="flex items-center">
+                <img src="/images/logo-white.png" alt="Linguo" className="h-8 sm:h-10 object-contain" />
+              </a>
+              <button
+                onClick={()=>setOpen(false)}
+                aria-label="Tutup menu"
+                className="text-white p-1"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Scrollable nav items */}
+            <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-1">
+              <a href="/silabus/english/coba" onClick={()=>setOpen(false)} className="block py-3 text-base text-[#1A9E9E] font-semibold border-b border-gray-100 mb-2 pb-4">🎯 Placement Test Gratis</a>
+              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-base py-3 text-left">Kelas Private</button>
+              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-base py-3 text-left">Kelas Reguler</button>
+              <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
+              <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
+              <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
+              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids 🧒</button>
+              <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning & E-Book</a>
+              <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
+              <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
+              <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
+            </div>
+
+            {/* Sticky footer — Login + Placement Test (always visible) */}
+            <div className="border-t border-gray-100 p-4 flex flex-col gap-2 shrink-0 bg-white">
+              <button onClick={()=>{onLoginOpen();setOpen(false)}} className="border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full">Login</button>
+              <button onClick={()=>{setPlacementPickerOpen(true);setOpen(false)}} className="bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Placement Test</button>
+            </div>
+          </motion.div>
+        )}</AnimatePresence>
       </nav>
       <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
 
