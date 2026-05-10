@@ -18,7 +18,7 @@ async function supaFetch(path: string, options?: RequestInit) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, program, language, level } = body;
+    const { name, email, program, language, level, wa } = body;
 
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({
           name: name || "Student",
           email,
-          whatsapp: "",
+          whatsapp: wa || "",
           student_token: token,
         }),
       });

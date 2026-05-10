@@ -933,7 +933,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
   const handleGoogleSignIn = async () => {
     // Save funnel data in cookie (survives OAuth redirect, unlike localStorage/URL params)
-    document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel })) + ";path=/;max-age=600;SameSite=Lax";
+    document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel, wa: formWa, name: formName })) + ";path=/;max-age=600;SameSite=Lax";
     if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_form_submitted",{program:selProgram,language:selLang,level:selLevel});
     await supabase.auth.signInWithOAuth({
       provider: "google",

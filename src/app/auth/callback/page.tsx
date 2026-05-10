@@ -32,7 +32,7 @@ export default function AuthCallbackPage() {
     const handle = async () => {
       try {
         // Read funnel data from cookie (set before OAuth redirect)
-        let funnelData = { program: "", language: "", level: "" };
+        let funnelData: { program: string; language: string; level: string; wa?: string; name?: string } = { program: "", language: "", level: "" };
         const raw = getCookie("linguo_funnel");
         if (raw) {
           try { funnelData = JSON.parse(raw); } catch {}
@@ -54,7 +54,8 @@ export default function AuthCallbackPage() {
             fetch("/api/save-lead", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name, email, program: funnelData.program || undefined, language: funnelData.language || undefined, level: funnelData.level || undefined }),
+              body: JSON.stringify({ name: funnelData.name || name, email, program: funnelData.program || undefined, language: funnelData.language || undefined, level: funnelData.level || undefined, wa: funnelData.wa || undefined }),
+              keepalive: true,
             }).catch(e => console.warn("Lead save (non-fatal):", e));
           }
 
@@ -71,7 +72,7 @@ export default function AuthCallbackPage() {
 
           setTimeout(() => {
             window.location.href = redirectTarget;
-          }, 1800);
+          }, 2500);
         };
 
         if (session?.user) {
