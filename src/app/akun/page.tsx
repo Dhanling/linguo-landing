@@ -1118,6 +1118,7 @@ export default function AkunPage() {
 
   const [user, setUser] = useState<any>(null);
   const [showPlacementPicker, setShowPlacementPicker] = useState(false);
+  const [showQuickActions, setShowQuickActions] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -1822,7 +1823,7 @@ export default function AkunPage() {
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               {/* Desktop: 2 column layout */}
-              <div className="lg:grid lg:grid-cols-[2fr_1fr] lg:gap-6 space-y-5 lg:space-y-0">
+              <div className="max-w-3xl mx-auto space-y-5">
 
                 {/* Left Column — Main Content */}
                 <div className="space-y-5">
@@ -2012,27 +2013,6 @@ export default function AkunPage() {
                     </div>
                   )}
 
-                  {/* Quick Actions */}
-                  <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                    <h3 className="text-sm font-semibold text-gray-700 mb-3">⚡ Aksi Cepat</h3>
-                    <div className="space-y-2">
-                      <button onClick={() => setShowPlacementPicker(true)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
-                        <span className="text-lg">🎯</span><span className="text-sm font-medium text-gray-700">Placement Test</span>
-                      </button>
-                      <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                        <span className="text-lg">💬</span><span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
-                      </a>
-                      <a href="/silabus" className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                        <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700">Lihat Silabus</span>
-                      </a>
-                      <button onClick={openEnrollWizard} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
-                        <span className="text-lg">➕</span><span className="text-sm font-medium text-gray-700">Tambah Kelas Baru</span>
-                      </button>
-                      <button onClick={signOut} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
-                        <span className="text-lg">🚪</span><span className="text-sm font-medium text-red-600">Keluar</span>
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>
@@ -2238,6 +2218,60 @@ export default function AkunPage() {
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
       <MobileBottomNav activeTab={activeTab} onChange={setActiveTab} />
+
+      {/* Floating Quick Actions FAB */}
+      {student && (
+        <>
+          <button
+            onClick={() => setShowQuickActions(true)}
+            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-30 h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+            aria-label="Aksi Cepat"
+          >
+            <span className="text-2xl">⚡</span>
+          </button>
+          <AnimatePresence>
+            {showQuickActions && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setShowQuickActions(false)}
+                  className="fixed inset-0 bg-black/30 z-40"
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 16, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 16, scale: 0.95 }}
+                  transition={{ duration: 0.18 }}
+                  className="fixed bottom-36 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl border border-gray-100 p-4"
+                >
+                  <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-1.5">
+                    <span>⚡</span> Aksi Cepat
+                  </h3>
+                  <div className="space-y-1">
+                    <button onClick={() => { setShowQuickActions(false); setShowPlacementPicker(true); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
+                      <span className="text-lg">🎯</span><span className="text-sm font-medium text-gray-700">Placement Test</span>
+                    </button>
+                    <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`} target="_blank" rel="noopener noreferrer" onClick={() => setShowQuickActions(false)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                      <span className="text-lg">💬</span><span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
+                    </a>
+                    <a href="/silabus" onClick={() => setShowQuickActions(false)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
+                      <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700">Lihat Silabus</span>
+                    </a>
+                    <button onClick={() => { setShowQuickActions(false); openEnrollWizard(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
+                      <span className="text-lg">➕</span><span className="text-sm font-medium text-gray-700">Tambah Kelas Baru</span>
+                    </button>
+                    <button onClick={() => { setShowQuickActions(false); signOut(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
+                      <span className="text-lg">🚪</span><span className="text-sm font-medium text-red-600">Keluar</span>
+                    </button>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </>
+      )}
 
       {/* Booking Modal */}
       <OneSignalProvider />
