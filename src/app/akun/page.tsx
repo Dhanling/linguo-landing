@@ -1834,7 +1834,6 @@ export default function AkunPage() {
                     rankLabel={xp.rank}
                     streak={streak}
                     activeCount={activeRegs.length}
-                    onEnrollClick={openEnrollWizard}
                   />
 
                   {/* Active Classes */}

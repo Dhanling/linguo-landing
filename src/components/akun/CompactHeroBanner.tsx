@@ -7,7 +7,6 @@ type Props = {
   rankLabel: string;
   streak: number;
   activeCount: number;
-  onEnrollClick?: () => void;
 };
 
 export default function CompactHeroBanner({
@@ -17,7 +16,6 @@ export default function CompactHeroBanner({
   rankLabel,
   streak,
   activeCount,
-  onEnrollClick,
 }: Props) {
   return (
     <div className="rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] px-4 py-3.5 sm:px-5 sm:py-4 text-white shadow-md shadow-teal-200/40">
@@ -48,16 +46,6 @@ export default function CompactHeroBanner({
             )}
           </div>
         </div>
-
-        {onEnrollClick && (
-          <button
-            onClick={onEnrollClick}
-            className="shrink-0 inline-flex items-center gap-1 rounded-lg bg-white text-[#0F6E56] px-3 py-2 text-xs font-bold hover:bg-teal-50 transition-colors shadow-sm"
-          >
-            <span className="hidden sm:inline">+ Tambah</span>
-            <span className="sm:hidden">+ Kelas</span>
-          </button>
-        )}
       </div>
     </div>
   );
