@@ -46,15 +46,24 @@ type Props = {
     payment_proof_uploaded_at?: string | null;
     payment_verified_at?: string | null;
     payment_rejection_reason?: string | null;
+    xendit_invoice_url?: string | null;
   };
   userId: string;
   onUploadSuccess?: () => void;
+  onRegenerateXendit?: () => Promise<string | null>;
 };
 
-export default function PaymentCard({ registration: reg, userId, onUploadSuccess }: Props) {
+export default function PaymentCard({
+  registration: reg,
+  userId,
+  onUploadSuccess,
+  onRegenerateXendit,
+}: Props) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [copied, setCopied] = useState("");
+  const [regenerating, setRegenerating] = useState(false);
+  const [showManual, setShowManual] = useState(false);
 
   const amount =
     reg.total_amount > 0 ? reg.total_amount : calculateDefaultAmount(reg.product, reg.level);
@@ -79,6 +88,29 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
     } catch {}
   };
 
+  // ── Xendit pay handler — pakai URL existing kalau ada, atau regenerate ──
+  const handleXenditPay = async () => {
+    if (reg.xendit_invoice_url) {
+      window.location.href = reg.xendit_invoice_url;
+      return;
+    }
+    if (!onRegenerateXendit) {
+      alert("Link pembayaran tidak tersedia. Silakan hubungi admin via WhatsApp.");
+      return;
+    }
+    setRegenerating(true);
+    try {
+      const url = await onRegenerateXendit();
+      if (url) {
+        window.location.href = url;
+      } else {
+        alert("Gagal generate link pembayaran. Coba lagi atau hubungi admin via WhatsApp.");
+      }
+    } finally {
+      setRegenerating(false);
+    }
+  };
+
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -100,20 +132,17 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
       const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
       const path = userId + "/" + reg.id + "-" + Date.now() + "." + ext;
 
-      // Step 1: Upload to Supabase Storage
       const { error: uploadErr } = await supabase.storage
         .from("payment-proofs")
         .upload(path, file, { upsert: false, contentType: file.type });
       if (uploadErr) throw new Error(uploadErr.message);
 
-      // Step 2: Get current session access token (so backend can impersonate user)
       const { data: { session } } = await supabase.auth.getSession();
       const accessToken = session?.access_token;
       if (!accessToken) {
         throw new Error("Sesi login expired, refresh halaman dulu ya");
       }
 
-      // Step 3: Update registration via API — passes user JWT so triggers see valid auth.uid()
       const res = await fetch("/api/upload-payment-proof", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -121,7 +150,6 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
       });
       const data = await res.json().catch(() => ({} as any));
       if (!res.ok) {
-        // Show full server error for debugging (status + error + detail)
         const parts: string[] = [];
         parts.push("HTTP " + res.status);
         if (data?.error) parts.push(data.error);
@@ -161,7 +189,7 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
     );
   }
 
-  // ─── State B: Need upload (first time OR rejected re-upload) ─────────
+  // ─── State B: Belum bayar (atau rejected) — Xendit primary + manual collapsible ─
   return (
     <div className="mt-3 bg-white/70 rounded-xl p-3 border border-amber-300">
       {isRejected && (
@@ -171,77 +199,118 @@ export default function PaymentCard({ registration: reg, userId, onUploadSuccess
         </div>
       )}
 
-      <p className="text-xs font-semibold text-amber-900 mb-2">💳 Transfer ke rekening:</p>
-      <div className="bg-amber-50/60 rounded-lg p-3 space-y-1.5 text-sm">
-        <div className="flex justify-between items-center">
-          <span className="text-xs text-gray-600">Bank</span>
-          <span className="font-semibold">{BANK_NAME}</span>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-xs text-gray-600">Nomor Rekening</span>
-          <button
-            onClick={() => copy(ACCOUNT_NUMBER, "no")}
-            className="flex items-center gap-1.5 hover:text-teal-700"
-          >
-            <span className="font-mono font-semibold">{ACCOUNT_NUMBER}</span>
-            <span className="text-[10px] opacity-70">{copied === "no" ? "✓" : "📋"}</span>
-          </button>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="text-xs text-gray-600">Atas Nama</span>
-          <span className="font-semibold text-right text-xs">{ACCOUNT_NAME}</span>
-        </div>
-        <div className="flex justify-between items-center pt-2 border-t border-amber-200/70">
-          <span className="text-xs text-gray-700 font-semibold">Jumlah Transfer</span>
-          <button
-            onClick={() => copy(String(amount), "amount")}
-            className="flex items-center gap-1.5 hover:text-teal-700"
-          >
-            <span className="text-base font-bold text-amber-900">{formatRupiah(amount)}</span>
-            <span className="text-[10px] opacity-70">{copied === "amount" ? "✓" : "📋"}</span>
-          </button>
-        </div>
+      {/* Total summary */}
+      <div className="flex items-center justify-between mb-3 pb-3 border-b border-amber-200/70">
+        <span className="text-xs text-gray-700">Total Pembayaran</span>
+        <span className="text-base font-bold text-amber-900">{formatRupiah(amount)}</span>
       </div>
 
-      {error && (
-        <div className="mt-2 p-3 rounded-lg bg-red-50 border border-red-200">
-          <p className="text-xs font-semibold text-red-700 mb-1">⚠️ Error detail (kirim ke admin):</p>
-          <p className="text-[11px] font-mono text-red-800 break-all select-all">{error}</p>
-        </div>
-      )}
+      {/* PRIMARY: Xendit */}
+      <button
+        onClick={handleXenditPay}
+        disabled={regenerating}
+        className={
+          "inline-flex w-full items-center justify-center gap-2 h-11 rounded-xl text-sm font-bold transition-all shadow-sm " +
+          (regenerating
+            ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+            : "bg-gradient-to-r from-teal-600 to-teal-500 text-white hover:from-teal-700 hover:to-teal-600")
+        }
+      >
+        {regenerating ? "Mempersiapkan link..." : "💳 Lanjutkan Pembayaran"}
+      </button>
+      <p className="text-[10px] text-gray-500 mt-1.5 text-center">
+        Bayar via VA, QRIS, atau e-wallet · konfirmasi otomatis &lt;1 menit
+      </p>
 
-      <label className="mt-3 block cursor-pointer">
-        <input
-          type="file"
-          accept="image/jpeg,image/png,image/webp,application/pdf"
-          onChange={handleFileUpload}
-          disabled={uploading}
-          className="hidden"
-        />
-        <div
-          className={
-            "inline-flex w-full items-center justify-center gap-2 h-10 rounded-xl text-sm font-semibold transition-colors " +
-            (uploading
-              ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-              : "bg-teal-600 text-white hover:bg-teal-700 cursor-pointer")
-          }
-        >
-          {uploading
-            ? "Mengunggah..."
-            : isRejected
-            ? "📤 Upload Ulang Bukti Transfer"
-            : "📤 Upload Bukti Transfer"}
-        </div>
-      </label>
-
+      {/* WA fallback link */}
       <a
         href={"https://wa.me/" + WA_ADMIN + "?text=" + encodeURIComponent(waMsg)}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-2 inline-flex w-full items-center justify-center gap-2 h-9 rounded-xl bg-green-50 text-green-700 text-xs font-semibold hover:bg-green-100 transition-colors border border-green-200"
+        className="mt-3 inline-flex w-full items-center justify-center gap-2 h-9 rounded-xl text-xs font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 transition-colors"
       >
-        💬 atau Konfirmasi via WhatsApp
+        💬 atau hubungi admin via WhatsApp →
       </a>
+
+      {/* COLLAPSIBLE: Manual bank transfer */}
+      <button
+        onClick={() => setShowManual(!showManual)}
+        className="mt-2 w-full flex items-center justify-between py-2 px-3 rounded-lg hover:bg-gray-50 transition-colors text-xs font-medium text-gray-600"
+        aria-expanded={showManual}
+      >
+        <span className="inline-flex items-center gap-1.5">
+          <span>🏦</span>
+          <span>Bayar manual via transfer bank</span>
+        </span>
+        <span className={"transition-transform inline-block " + (showManual ? "rotate-180" : "")}>▼</span>
+      </button>
+
+      {showManual && (
+        <div className="mt-2 space-y-3">
+          <p className="text-xs font-semibold text-amber-900">💳 Transfer ke rekening:</p>
+          <div className="bg-amber-50/60 rounded-lg p-3 space-y-1.5 text-sm">
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-gray-600">Bank</span>
+              <span className="font-semibold">{BANK_NAME}</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-gray-600">Nomor Rekening</span>
+              <button
+                onClick={() => copy(ACCOUNT_NUMBER, "no")}
+                className="flex items-center gap-1.5 hover:text-teal-700"
+              >
+                <span className="font-mono font-semibold">{ACCOUNT_NUMBER}</span>
+                <span className="text-[10px] opacity-70">{copied === "no" ? "✓" : "📋"}</span>
+              </button>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-xs text-gray-600">Atas Nama</span>
+              <span className="font-semibold text-right text-xs">{ACCOUNT_NAME}</span>
+            </div>
+            <div className="flex justify-between items-center pt-2 border-t border-amber-200/70">
+              <span className="text-xs text-gray-700 font-semibold">Jumlah Transfer</span>
+              <button
+                onClick={() => copy(String(amount), "amount")}
+                className="flex items-center gap-1.5 hover:text-teal-700"
+              >
+                <span className="text-base font-bold text-amber-900">{formatRupiah(amount)}</span>
+                <span className="text-[10px] opacity-70">{copied === "amount" ? "✓" : "📋"}</span>
+              </button>
+            </div>
+          </div>
+
+          {error && (
+            <div className="p-3 rounded-lg bg-red-50 border border-red-200">
+              <p className="text-xs font-semibold text-red-700 mb-1">⚠️ Error detail (kirim ke admin):</p>
+              <p className="text-[11px] font-mono text-red-800 break-all select-all">{error}</p>
+            </div>
+          )}
+
+          <label className="block cursor-pointer">
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp,application/pdf"
+              onChange={handleFileUpload}
+              disabled={uploading}
+              className="hidden"
+            />
+            <div
+              className={
+                "inline-flex w-full items-center justify-center gap-2 h-10 rounded-xl text-sm font-semibold transition-colors " +
+                (uploading
+                  ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                  : "bg-teal-600 text-white hover:bg-teal-700 cursor-pointer")
+              }
+            >
+              {uploading
+                ? "Mengunggah..."
+                : isRejected
+                ? "📤 Upload Ulang Bukti Transfer"
+                : "📤 Upload Bukti Transfer"}
+            </div>
+          </label>
+        </div>
+      )}
     </div>
   );
 }

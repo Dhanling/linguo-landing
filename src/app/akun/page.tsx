@@ -804,6 +804,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       );
       const data = await res.json();
       if (data?.success && data?.invoice_url) {
+        // Save URL ke DB supaya user bisa lanjutin pembayaran kalau keluar tanpa bayar
+        await supabase
+          .from("registrations")
+          .update({ xendit_invoice_url: data.invoice_url })
+          .eq("id", newReg.id);
         window.location.href = data.invoice_url;
       } else {
         console.error("Xendit error:", data);
@@ -1959,6 +1964,41 @@ export default function AkunPage() {
                                 registration={r as any}
                                 userId={uid}
                                 onUploadSuccess={() => window.location.reload()}
+                                onRegenerateXendit={async () => {
+                                  try {
+                                    const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
+                                    const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
+                                    const desc = `${programLabel} — ${langLabel}`;
+                                    const res = await fetch(
+                                      "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
+                                      {
+                                        method: "POST",
+                                        headers: {
+                                          "Content-Type": "application/json",
+                                          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+                                        },
+                                        body: JSON.stringify({
+                                          registration_id: r.id,
+                                          amount: r.total_amount || 0,
+                                          description: desc,
+                                          payer_name: displayName,
+                                          payer_email: user?.email || "",
+                                          success_redirect_url: "https://linguo.id/akun/success",
+                                          failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+                                        }),
+                                      }
+                                    );
+                                    const data = await res.json();
+                                    if (data?.success && data?.invoice_url) {
+                                      await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
+                                      return data.invoice_url as string;
+                                    }
+                                    return null;
+                                  } catch (e) {
+                                    console.error("Regenerate Xendit error:", e);
+                                    return null;
+                                  }
+                                }}
                               />
                             )}
                           />
