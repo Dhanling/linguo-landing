@@ -688,7 +688,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             {
               email: user?.email || "",
               name: displayName,
-              avatar_url: user?.user_metadata?.avatar_url,
+              avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
             },
             { onConflict: "email" }
           )
@@ -1234,7 +1234,7 @@ export default function AkunPage() {
               user?.email?.split("@")[0] ||
               "Siswa",
             email: user?.email,
-            avatar_url: user?.user_metadata?.avatar_url || null,
+            avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
           };
           const { data: inserted } = await supabase
             .from("students")
@@ -1251,6 +1251,24 @@ export default function AkunPage() {
               );
             } catch {}
           }
+        }
+      }
+
+      // Auto-sync avatar dari OAuth metadata kalo student udah ada tapi avatar_url null
+      // (cover existing user yang dibuat sebelum patch fallback chain)
+      if (studentData && !studentData.avatar_url) {
+        const oauthAvatar =
+          user?.user_metadata?.avatar_url ??
+          user?.user_metadata?.picture ??
+          null;
+        if (oauthAvatar) {
+          const { data: synced } = await supabase
+            .from("students")
+            .update({ avatar_url: oauthAvatar })
+            .eq("id", studentData.id)
+            .select("id, name, email, whatsapp, avatar_url")
+            .single();
+          if (synced) studentData = synced;
         }
       }
 
@@ -1472,7 +1490,7 @@ export default function AkunPage() {
 
   const displayName = student?.name || user?.user_metadata?.full_name || "Siswa";
   const firstName = displayName.split(" ")[0];
-  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url;
+  const avatarUrl = student?.avatar_url || user?.user_metadata?.avatar_url || user?.user_metadata?.picture;
 
   const openEnrollWizard = () => {
     setEnrollStep(0);
@@ -1615,7 +1633,7 @@ export default function AkunPage() {
               const studentPayload = {
                 name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
                 email: user?.email,
-                avatar_url: user?.user_metadata?.avatar_url || null,
+                avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
               };
               let studentRow: any = null;
               const { data: existing, error: lookupError } = await supabase
@@ -1736,7 +1754,7 @@ export default function AkunPage() {
         id: user?.id || "pending",
         name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
         email: user?.email,
-        avatar_url: user?.user_metadata?.avatar_url,
+        avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture,
         registrations: [mockReg],
       };
       // Inject into state so the full dashboard renders
