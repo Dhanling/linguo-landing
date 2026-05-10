@@ -7,7 +7,6 @@ type Props = {
   avatarUrl?: string;
   firstName: string;
   onAvatarClick?: () => void;
-  onEnrollClick?: () => void;
 };
 
 export default function TopBarMinimal({
@@ -15,7 +14,6 @@ export default function TopBarMinimal({
   avatarUrl,
   firstName,
   onAvatarClick,
-  onEnrollClick,
 }: Props) {
   const initial = firstName?.[0]?.toUpperCase() || "?";
 
@@ -30,15 +28,6 @@ export default function TopBarMinimal({
         </a>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          {onEnrollClick && (
-            <button
-              onClick={onEnrollClick}
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-[#1A9E9E] px-4 py-2 text-xs font-semibold text-white hover:bg-[#0F6E56] transition-colors"
-            >
-              + Tambah Kelas
-            </button>
-          )}
-
           {studentId && <NotificationBell userId={studentId} userType="student" />}
 
           <button onClick={onAvatarClick} className="shrink-0" aria-label="Buka akun">

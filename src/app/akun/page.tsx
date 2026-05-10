@@ -1814,7 +1814,6 @@ export default function AkunPage() {
         avatarUrl={avatarUrl}
         firstName={firstName}
         onAvatarClick={() => setActiveTab("akun")}
-        onEnrollClick={openEnrollWizard}
       />
 
       {/* ── Content ─────────────────────────────────────────────── */}
