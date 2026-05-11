@@ -12,6 +12,8 @@ async function getJob(slug: string) {
     .from("job_openings")
     .select("*")
     .or(`slug.eq.${slug},slug.eq./${slug}`)
+    .eq("is_published", true)
+    .is("archived_at", null)
     .maybeSingle();
 
   if (error || !data) return null;
@@ -65,10 +67,10 @@ export default async function KarirDetailPage({ params }: Props) {
                 {job.department}
               </span>
             )}
-            {job.type && (
+            {job.employment_type && (
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-gray-400" />
-                {job.type}
+                {job.employment_type}
               </span>
             )}
             {job.location && (

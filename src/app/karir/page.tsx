@@ -15,10 +15,11 @@ type JobOpening = {
   title: string;
   slug: string;
   department: string | null;
-  type: string | null;
+  employment_type: string | null;
   location: string | null;
   slots: number | null;
-  status: string;
+  is_published: boolean;
+  archived_at: string | null;
   description: string | null;
   created_at: string;
 };
@@ -27,9 +28,10 @@ async function getOpenings(): Promise<JobOpening[]> {
   const { data, error } = await supabase
     .from("job_openings")
     .select(
-      "id, title, slug, department, type, location, slots, status, description, created_at"
+      "id, title, slug, department, employment_type, location, slots, is_published, archived_at, description, created_at"
     )
-    .eq("status", "Live")
+    .eq("is_published", true)
+    .is("archived_at", null)
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -105,10 +107,10 @@ export default async function KarirPage() {
                             {job.department}
                           </span>
                         )}
-                        {job.type && (
+                        {job.employment_type && (
                           <span className="inline-flex items-center gap-1">
                             <Clock className="h-3.5 w-3.5 text-gray-400" />
-                            {job.type}
+                            {job.employment_type}
                           </span>
                         )}
                         {job.location && (
