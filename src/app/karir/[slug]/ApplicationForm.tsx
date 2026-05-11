@@ -74,7 +74,7 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
         education: form.education.trim() || null,
         experience_summary: form.experience_summary.trim(),
         cover_letter: form.cover_letter.trim() || null,
-        status: "new",
+        status: "screening",
       };
 
       const { error: insertError } = await supabase
