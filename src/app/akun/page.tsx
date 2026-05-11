@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -1946,7 +1947,10 @@ export default function AkunPage() {
                   {pendingPaymentRegs.length > 0 && (
                     <div>
                       <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-base font-semibold text-gray-800">⏳ Menunggu Pembayaran</h3>
+                        <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-amber-600" strokeWidth={2.5} />
+                          Menunggu Pembayaran
+                        </h3>
                         <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
                           {pendingPaymentRegs.length}
                         </span>
@@ -2014,7 +2018,10 @@ export default function AkunPage() {
 
         {upcomingSchedules.length > 0 && (
                     <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3">📅 Jadwal Mendatang</h3>
+                      <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
+                        <Calendar className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
+                        Jadwal Mendatang
+                      </h3>
                       <div className="space-y-2">
                         {upcomingSchedules.slice(0, 5).map(s => {
                           const d = new Date(s.scheduled_at);
@@ -2040,7 +2047,10 @@ export default function AkunPage() {
                   {/* Badges */}
                   {badges.length > 0 && (
                     <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3">🏅 Badges ({badges.length})</h3>
+                      <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
+                        <Award className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
+                        Badges ({badges.length})
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {badges.map(b => (
                           <div key={b.id} className="flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5">
@@ -2266,7 +2276,12 @@ export default function AkunPage() {
             className="fixed bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             aria-label="Aksi Cepat"
           >
-            <span className="text-2xl">⚡</span>
+            <motion.span
+              animate={{ scale: [1, 1.6, 1.6], opacity: [0.5, 0, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+              className="absolute inset-0 rounded-full bg-teal-400 pointer-events-none"
+            />
+            <Zap className="w-6 h-6 relative" strokeWidth={2.5} fill="currentColor" />
           </button>
           <AnimatePresence>
             {showQuickActions && (
@@ -2286,23 +2301,29 @@ export default function AkunPage() {
                   className="fixed bottom-44 right-4 sm:right-6 z-[60] w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl border border-gray-100 p-4"
                 >
                   <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-1.5">
-                    <span>⚡</span> Aksi Cepat
+                    <Zap className="w-4 h-4 text-teal-600" strokeWidth={2.5} fill="currentColor" />
+                    Aksi Cepat
                   </h3>
                   <div className="space-y-1">
                     <button onClick={() => { setShowQuickActions(false); setShowPlacementPicker(true); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
-                      <span className="text-lg">🎯</span><span className="text-sm font-medium text-gray-700">Placement Test</span>
+                      <Target className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} />
+                      <span className="text-sm font-medium text-gray-700">Placement Test</span>
                     </button>
                     <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${student.name}. `)}`} target="_blank" rel="noopener noreferrer" onClick={() => setShowQuickActions(false)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                      <span className="text-lg">💬</span><span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
+                      <MessageCircle className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} />
+                      <span className="text-sm font-medium text-gray-700">Hubungi Admin</span>
                     </a>
                     <a href="/silabus" onClick={() => setShowQuickActions(false)} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                      <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700">Lihat Silabus</span>
+                      <Globe className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} />
+                      <span className="text-sm font-medium text-gray-700">Lihat Silabus</span>
                     </a>
                     <button onClick={() => { setShowQuickActions(false); openEnrollWizard(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
-                      <span className="text-lg">➕</span><span className="text-sm font-medium text-gray-700">Tambah Kelas Baru</span>
+                      <Plus className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} />
+                      <span className="text-sm font-medium text-gray-700">Tambah Kelas Baru</span>
                     </button>
                     <button onClick={() => { setShowQuickActions(false); signOut(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
-                      <span className="text-lg">🚪</span><span className="text-sm font-medium text-red-600">Keluar</span>
+                      <LogOut className="w-4 h-4 text-red-500 shrink-0" strokeWidth={2} />
+                      <span className="text-sm font-medium text-red-600">Keluar</span>
                     </button>
                   </div>
                 </motion.div>
