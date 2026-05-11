@@ -24,7 +24,7 @@ function QuestionHeader({ question }: { question: Question }) {
       <label className="block text-base font-medium text-gray-900 leading-snug">
         <span className="text-gray-500 mr-2">Q{question.number}.</span>
         {question.text}
-        {question.required && <span className="text-red-500 ml-1">*</span>}
+        {!question.required && <span className="text-gray-400 font-normal text-sm ml-1.5">(opsional)</span>}
       </label>
       {question.helpText && (
         <p className="text-sm text-gray-500 mt-1">{question.helpText}</p>

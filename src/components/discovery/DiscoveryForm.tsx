@@ -179,12 +179,25 @@ export function DiscoveryForm({ kuesioner }: DiscoveryFormProps) {
     setSubmitting(true);
     setSubmitError(null);
 
+    // Helper: ekstrak pesan error dari Supabase (PostgrestError) atau Error standar.
+    // Supabase error adalah plain object, jadi 'err instanceof Error' returns false.
+    // Tanpa helper ini, message ke-suppress dan user cuma liat "Unknown error".
+    function extractError(err: unknown): string {
+      if (!err) return 'Unknown error';
+      if (typeof err === 'string') return err;
+      if (typeof err !== 'object') return String(err);
+      const e = err as Record<string, unknown>;
+      const parts: string[] = [];
+      if (e.message) parts.push(String(e.message));
+      if (e.details) parts.push('(' + String(e.details) + ')');
+      if (e.hint) parts.push('Hint: ' + String(e.hint));
+      if (e.code) parts.push('[code: ' + String(e.code) + ']');
+      return parts.length ? parts.join(' ') : 'Unknown error';
+    }
+
     try {
       const utm = getUtmParams();
-
-      // NOTE: Sesuaikan column name kalau schema 'discovery_responses' lo beda.
-      // Asumsi schema: { id, persona, responses (jsonb), submitted_at, user_agent, utm_source, utm_medium, utm_campaign, referrer }
-      const payload = {
+      const fullPayload = {
         persona: kuesioner.id,
         responses: responses,
         submitted_at: new Date().toISOString(),
@@ -195,9 +208,42 @@ export function DiscoveryForm({ kuesioner }: DiscoveryFormProps) {
         referrer: utm.referrer,
       };
 
-      const { error } = await supabase
+      // First attempt: full payload (assumes table has all columns).
+      let { error } = await supabase
         .from('discovery_responses')
-        .insert(payload);
+        .insert(fullPayload);
+
+      // Fallback: kalau gagal karena column mismatch (42703 = "column does not exist",
+      // PGRST204 = PostgREST schema cache miss), retry dengan minimal payload.
+      // Ini handle case dimana table cuma punya 'persona' + 'responses' JSONB.
+      if (error) {
+        const code = String((error as { code?: string }).code || '');
+        const msg = String((error as { message?: string }).message || '').toLowerCase();
+        const isColumnError =
+          code === '42703' ||
+          code === 'PGRST204' ||
+          msg.includes('column') ||
+          msg.includes('schema cache');
+
+        if (isColumnError) {
+          console.warn('[discovery] Full payload rejected — retrying with minimal payload. Original error:', error);
+          const minimal = { persona: kuesioner.id, responses };
+          const retry = await supabase.from('discovery_responses').insert(minimal);
+          error = retry.error;
+
+          // Last-ditch: kalau kolom 'persona' juga gak ada, coba dengan 'responses' aja.
+          if (error) {
+            const retryCode = String((error as { code?: string }).code || '');
+            const retryMsg = String((error as { message?: string }).message || '').toLowerCase();
+            if (retryCode === '42703' || retryCode === 'PGRST204' || retryMsg.includes('column')) {
+              console.warn('[discovery] Minimal payload rejected — retrying responses-only. Error:', error);
+              const responsesOnly = { responses: { ...responses, _persona: kuesioner.id } };
+              const retry2 = await supabase.from('discovery_responses').insert(responsesOnly);
+              error = retry2.error;
+            }
+          }
+        }
+      }
 
       if (error) throw error;
 
@@ -205,9 +251,10 @@ export function DiscoveryForm({ kuesioner }: DiscoveryFormProps) {
       localStorage.removeItem(getDraftKey(kuesioner.id));
       router.push('/riset/' + kuesioner.slug + '/terima-kasih');
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Unknown error';
+      console.error('[discovery] Submit failed. Full error object:', err);
+      const msg = extractError(err);
       setSubmitError(
-        'Gagal mengirim jawaban: ' + msg + '. Mohon coba lagi, atau hubungi hello@linguo.id kalau tetap error.'
+        'Gagal mengirim jawaban: ' + msg + '. Mohon screenshot pesan ini dan kirim ke hello@linguo.id, atau buka Developer Tools (F12) → Console untuk detail.'
       );
       setSubmitting(false);
     }
