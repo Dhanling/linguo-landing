@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -457,7 +457,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
             </div>
             <button onClick={() => setEditing(!editing)}
               className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors ${editing ? "bg-gray-100 text-gray-600" : "bg-teal-50 text-teal-600 hover:bg-teal-100"}`}>
-              {editing ? "Batal" : "✏️ Edit"}
+              {editing ? "Batal" : <span className="inline-flex items-center gap-1"><Pencil className="w-3 h-3" strokeWidth={2.5} />Edit</span>}
             </button>
           </div>
         </div>
@@ -486,19 +486,19 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
       {saved && (
         <div className="rounded-xl bg-green-50 border border-green-100 px-4 py-3 text-sm text-green-700 font-medium text-center">
-          ✅ Profil berhasil disimpan!
+          Profil berhasil disimpan!
         </div>
       )}
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
-        {[
-          { label: "Total XP", value: xp.xp, icon: "⭐" },
-          { label: "Badges", value: badges.length, icon: "🏆" },
-          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: "📚" },
-        ].map(s => (
+        {([
+          { label: "Total XP", value: xp.xp, icon: <Star className="w-6 h-6 text-amber-500" strokeWidth={2} fill="currentColor" /> },
+          { label: "Badges", value: badges.length, icon: <Trophy className="w-6 h-6 text-amber-500" strokeWidth={2} /> },
+          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: <BookOpen className="w-6 h-6 text-teal-600" strokeWidth={2} /> },
+        ] as Array<{ label: string; value: number; icon: React.ReactNode }>).map(s => (
           <div key={s.label} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 text-center">
-            <div className="text-2xl mb-1">{s.icon}</div>
+            <div className="flex justify-center mb-1">{s.icon}</div>
             <div className="text-xl font-bold text-gray-900">{s.value}</div>
             <div className="text-[10px] text-gray-400 mt-0.5">{s.label}</div>
           </div>
@@ -508,7 +508,10 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       {/* Badges */}
       {badges.length > 0 && (
         <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3">🏆 Badges</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
+            <Trophy className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
+            Badges
+          </h3>
           <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
             {badges.map(b => (
               <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl bg-amber-50 border border-amber-100 p-3">
@@ -523,14 +526,14 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       {/* Settings */}
       <div className="rounded-2xl bg-white border border-gray-100 shadow-sm divide-y divide-gray-50">
         {([
-          { icon: "🎯", label: "Placement Test", href: "/silabus/english/coba" },
-          { icon: "🌍", label: "Lihat Silabus", href: "/silabus" },
-          { icon: "💬", label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
-          { icon: "📖", label: "Blog & Tips Belajar", href: "/blog" },
-        ] as Array<{ icon: string; label: string; href?: string; onClick?: () => void }>).map(item => {
+          { icon: <Target className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Placement Test", href: "/silabus/english/coba" },
+          { icon: <Globe className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Lihat Silabus", href: "/silabus" },
+          { icon: <MessageCircle className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
+          { icon: <Newspaper className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Blog & Tips Belajar", href: "/blog" },
+        ] as Array<{ icon: React.ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
           const inner = (
             <>
-              <span className="text-lg w-7 text-center">{item.icon}</span>
+              <span className="w-7 flex justify-center">{item.icon}</span>
               <span className="text-sm font-medium text-gray-700 flex-1">{item.label}</span>
               <span className="text-gray-300 text-xs">›</span>
             </>
@@ -554,7 +557,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       {/* Sign out */}
       <button onClick={signOut}
         className="w-full flex items-center justify-center gap-2 h-12 rounded-2xl border-2 border-red-100 text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
-        🚪 Keluar dari Akun
+        <LogOut className="w-4 h-4" strokeWidth={2.5} /> Keluar dari Akun
       </button>
 
       <p className="text-center text-[10px] text-gray-300">Linguo.id · v2.0 · {new Date().getFullYear()}</p>
@@ -1846,7 +1849,10 @@ export default function AkunPage() {
                   {activeRegs.length > 0 ? (
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-base font-semibold text-gray-800">📚 Kursus Saya</h3>
+                        <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
+                          <BookOpen className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
+                          Kursus Saya
+                        </h3>
                         <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
                       </div>
                       {showProductGrouping ? (
@@ -1921,7 +1927,10 @@ export default function AkunPage() {
                   {/* Completed */}
                   {completedRegs.length > 0 && (
                     <div>
-                      <h3 className="text-base font-semibold text-gray-800 mb-3">🏆 Riwayat</h3>
+                      <h3 className="text-base font-semibold text-gray-800 mb-3 inline-flex items-center gap-2">
+                        <Trophy className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
+                        Riwayat
+                      </h3>
                       <div className="space-y-2">
                         {completedRegs.map(reg => {
                           const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
@@ -2225,7 +2234,10 @@ export default function AkunPage() {
 
               {/* Perpustakaan Saya — produk digital yang udah dibeli */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-700 mb-3 px-1">📚 Perpustakaan Saya</h3>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 px-1 inline-flex items-center gap-1.5">
+                  <BookMarked className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
+                  Perpustakaan Saya
+                </h3>
                 {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
               </div>
 
@@ -2237,7 +2249,7 @@ export default function AkunPage() {
                     <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700 flex-1">Semua Silabus (60+ Bahasa)</span><span className="text-gray-300 text-xs">›</span>
                   </a>
                   <a href="/blog" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                    <span className="text-lg">📝</span><span className="text-sm font-medium text-gray-700 flex-1">Blog & Tips Belajar</span><span className="text-gray-300 text-xs">›</span>
+                    <Newspaper className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} /><span className="text-sm font-medium text-gray-700 flex-1">Blog & Tips Belajar</span><span className="text-gray-300 text-xs">›</span>
                   </a>
                 </div>
               </div>
