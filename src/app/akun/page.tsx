@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -57,11 +57,11 @@ type StudentReg = {
 };
 
 // ── Product Badges ──────────────────────────────────────────────────
-const PRODUCT_BADGE: Record<string, { label: string; icon: string; color: string; bg: string; border: string }> = {
-  "Kelas Private":              { label: "Private",      icon: "👤", color: "text-teal-700",  bg: "bg-teal-50",   border: "border-teal-200" },
-  "Kelas Reguler":              { label: "Reguler",      icon: "👥", color: "text-blue-700",  bg: "bg-blue-50",   border: "border-blue-200" },
-  "Kelas Kids":                 { label: "Kids",         icon: "🧒", color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
-  "English Test Preparation":   { label: "Test Prep",    icon: "📝", color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
+const PRODUCT_BADGE: Record<string, { label: string; icon: LucideIcon; color: string; bg: string; border: string }> = {
+  "Kelas Private":              { label: "Private",      icon: User,          color: "text-teal-700",  bg: "bg-teal-50",   border: "border-teal-200" },
+  "Kelas Reguler":              { label: "Reguler",      icon: Users,         color: "text-blue-700",  bg: "bg-blue-50",   border: "border-blue-200" },
+  "Kelas Kids":                 { label: "Kids",         icon: Baby,          color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
+  "English Test Preparation":   { label: "Test Prep",    icon: ClipboardList, color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
 };
 
 type StudentData = {
@@ -438,7 +438,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                 className="absolute bottom-0 right-0 h-7 w-7 rounded-full bg-teal-600 flex items-center justify-center text-white shadow-lg hover:bg-teal-700 transition-colors">
                 {uploadingAvatar
                   ? <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  : <span className="text-xs">📷</span>
+                  : <Camera className="w-3.5 h-3.5" strokeWidth={2.5} />
                 }
               </button>
             </div>
@@ -1859,10 +1859,11 @@ export default function AkunPage() {
                         <div className="space-y-6">
                           {groupedActiveRegs.map((group) => {
                             const groupBadge = PRODUCT_BADGE[group.product] || PRODUCT_BADGE["Kelas Private"];
+                            const GroupIcon = groupBadge.icon;
                             return (
                               <div key={group.product}>
                                 <h4 className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                                  <span>{groupBadge.icon}</span>
+                                  <GroupIcon className="w-4 h-4 text-gray-600" strokeWidth={2.5} />
                                   <span>{group.product}</span>
                                   <span className="text-[10px] font-medium text-gray-400">({group.regs.length})</span>
                                 </h4>
@@ -1917,7 +1918,7 @@ export default function AkunPage() {
                     </div>
                   ) : (
                     <div className="rounded-2xl border-2 border-dashed border-gray-200 p-8 text-center">
-                      <p className="text-3xl mb-2">📖</p>
+                      <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-2" strokeWidth={1.5} />
                       <h3 className="font-semibold text-gray-700 mb-1">Belum ada kelas aktif</h3>
                       <p className="text-sm text-gray-500 mb-4">Mulai belajar bahasa baru sekarang!</p>
                       <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 transition-colors">✨ Daftar Kelas</button>
@@ -1934,13 +1935,14 @@ export default function AkunPage() {
                       <div className="space-y-2">
                         {completedRegs.map(reg => {
                           const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                          const BadgeIcon = badge.icon;
                           return (
                             <div key={reg.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3">
                               <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
                               <div className="flex-1">
                                 <div className="flex items-center gap-1.5">
                                   <p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p>
-                                  <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon}</span>
+                                  <span className={`inline-flex items-center text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}><BadgeIcon className="w-2.5 h-2.5" strokeWidth={2.5} /></span>
                                 </div>
                                 <p className="text-xs text-gray-400">{reg.sessions_used}/{reg.sessions_total} sesi</p>
                               </div>
@@ -2125,7 +2127,7 @@ export default function AkunPage() {
               {/* Fixed schedules for Reguler classes */}
               {activeRegs.filter(r => r.product === "Kelas Reguler" && r.batch).length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-700 mb-2">📋 Jadwal Tetap (Kelas Reguler)</h3>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2 inline-flex items-center gap-1.5"><ClipboardList className="w-4 h-4 text-blue-600" strokeWidth={2.5} />Jadwal Tetap (Kelas Reguler)</h3>
                   <div className="space-y-2">
                     {activeRegs.filter(r => r.product === "Kelas Reguler" && r.batch).map(reg => (
                       <div key={reg.id} className="rounded-xl bg-blue-50 border border-blue-100 p-3 flex items-center gap-3">
@@ -2137,7 +2139,7 @@ export default function AkunPage() {
                           <p className="text-xs text-blue-600">Setiap {reg.batch!.schedule_day}, {reg.batch!.schedule_time} WIB</p>
                         </div>
                         {reg.batch?.zoom_link && (
-                          <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-blue-600 hover:text-blue-700">🔗 Zoom</a>
+                          <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-700"><Video className="w-3.5 h-3.5" strokeWidth={2.5} />Zoom</a>
                         )}
                       </div>
                     ))}
@@ -2148,18 +2150,19 @@ export default function AkunPage() {
               {/* Upcoming schedule list */}
               {upcomingSchedules.length === 0 ? (
                 <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
-                  <p className="text-3xl mb-2">📅</p>
+                  <Calendar className="w-12 h-12 text-gray-300 mx-auto mb-2" strokeWidth={1.5} />
                   <p className="text-sm text-gray-500">Belum ada jadwal mendatang</p>
                   <p className="text-xs text-gray-400 mt-1">Hubungi admin untuk atur jadwal kelasmu</p>
                 </div>
               ) : (
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-700 mb-2">📅 Semua Jadwal Mendatang</h3>
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2 inline-flex items-center gap-1.5"><Calendar className="w-4 h-4 text-teal-600" strokeWidth={2.5} />Semua Jadwal Mendatang</h3>
                   <div className="space-y-2">
                     {upcomingSchedules.map(s => {
                       const d = new Date(s.scheduled_at);
                       const reg = student.registrations.find(r => r.id === s.registration_id);
                       const badge = PRODUCT_BADGE[reg?.product || ""] || PRODUCT_BADGE["Kelas Private"];
+                      const BadgeIcon = badge.icon;
                       return (
                         <div key={s.id} className="rounded-xl bg-white border border-gray-100 shadow-sm p-3.5 flex items-center gap-3">
                           <div className="flex flex-col items-center justify-center bg-teal-50 rounded-xl w-14 h-14 shrink-0">
@@ -2169,12 +2172,12 @@ export default function AkunPage() {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-1.5">
                               <p className="font-semibold text-sm text-gray-900">{reg?.language}</p>
-                              <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon} {badge.label}</span>
+                              <span className={`inline-flex items-center gap-1 text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}><BadgeIcon className="w-2.5 h-2.5" strokeWidth={2.5} /> {badge.label}</span>
                             </div>
                             <p className="text-xs text-gray-500 mt-0.5">
                               {d.toLocaleDateString("id-ID", { weekday: "long" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB · {s.duration_minutes} mnt
                             </p>
-                            {reg?.teachers?.name && <p className="text-[10px] text-gray-400 mt-0.5">👩‍🏫 {reg.teachers.name}</p>}
+                            {reg?.teachers?.name && <p className="text-[10px] text-gray-400 mt-0.5 inline-flex items-center gap-1"><GraduationCap className="w-3 h-3" strokeWidth={2} />{reg.teachers.name}</p>}
                           </div>
                         </div>
                       );
@@ -2194,6 +2197,7 @@ export default function AkunPage() {
                 <div className="space-y-3">
                   {activeRegs.filter(r => r.status === "Aktif").map(reg => {
                     const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                    const BadgeIcon = badge.icon;
                     const langSlug = reg.language?.toLowerCase().replace(/\s+/g, "-") || "english";
                     return (
                       <div key={reg.id} className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
@@ -2203,18 +2207,18 @@ export default function AkunPage() {
                           </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-gray-900">{reg.language}</h4>
-                            <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>{badge.icon} {badge.label} · Level {reg.level}</span>
+                            <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}><BadgeIcon className="w-2.5 h-2.5" strokeWidth={2.5} /> {badge.label} · Level {reg.level}</span>
                           </div>
                         </div>
                         <div className="divide-y divide-gray-50">
                           <a href={`/silabus/${langSlug}`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                            <span className="text-lg w-7 text-center">📖</span>
+                            <span className="w-7 flex justify-center"><BookOpen className="w-5 h-5 text-teal-600" strokeWidth={2} /></span>
                             <span className="text-sm font-medium text-gray-700 flex-1">Lihat Silabus {reg.language}</span>
                             <span className="text-gray-300 text-xs">›</span>
                           </a>
                           {reg.product !== "English Test Preparation" && (
                             <a href={`/silabus/${langSlug}/coba`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                              <span className="text-lg w-7 text-center">🎯</span>
+                              <span className="w-7 flex justify-center"><Target className="w-5 h-5 text-teal-600" strokeWidth={2} /></span>
                               <span className="text-sm font-medium text-gray-700 flex-1">Placement Test {reg.language}</span>
                               <span className="text-gray-300 text-xs">›</span>
                             </a>
@@ -2226,7 +2230,7 @@ export default function AkunPage() {
                 </div>
               ) : (
                 <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
-                  <p className="text-3xl mb-2">📖</p>
+                  <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-2" strokeWidth={1.5} />
                   <p className="text-sm text-gray-500">Belum ada kelas aktif</p>
                   <p className="text-xs text-gray-400 mt-1">Daftar kelas dulu untuk akses materi</p>
                 </div>
@@ -2243,10 +2247,10 @@ export default function AkunPage() {
 
               {/* General resources */}
               <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                <h3 className="text-sm font-semibold text-gray-700 mb-3">🌐 Jelajahi Materi</h3>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5"><Globe className="w-4 h-4 text-teal-600" strokeWidth={2.5} />Jelajahi Materi</h3>
                 <div className="space-y-1">
                   <a href="/silabus" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                    <span className="text-lg">🌍</span><span className="text-sm font-medium text-gray-700 flex-1">Semua Silabus (60+ Bahasa)</span><span className="text-gray-300 text-xs">›</span>
+                    <Globe className="w-5 h-5 text-teal-600 shrink-0" strokeWidth={2} /><span className="text-sm font-medium text-gray-700 flex-1">Semua Silabus (60+ Bahasa)</span><span className="text-gray-300 text-xs">›</span>
                   </a>
                   <a href="/blog" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                     <Newspaper className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} /><span className="text-sm font-medium text-gray-700 flex-1">Blog & Tips Belajar</span><span className="text-gray-300 text-xs">›</span>

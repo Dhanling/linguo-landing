@@ -1,6 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  User,
+  Users,
+  Baby,
+  ClipboardList,
+  MessageCircle,
+  Clock,
+  GraduationCap,
+  Calendar,
+  Video,
+  Info,
+  Heart,
+  Target,
+  FileText,
+  type LucideIcon,
+} from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────
 export type CourseReg = {
@@ -43,11 +59,11 @@ type ScheduleItem = {
 };
 
 // ── Product badge config ──────────────────────────────────────────
-const PRODUCT_BADGE: Record<string, { label: string; icon: string; color: string; bg: string }> = {
-  "Kelas Private":            { label: "Private",  icon: "👤", color: "text-teal-700",   bg: "bg-teal-50" },
-  "Kelas Reguler":            { label: "Reguler",  icon: "👥", color: "text-blue-700",   bg: "bg-blue-50" },
-  "Kelas Kids":               { label: "Kids",     icon: "🧒", color: "text-purple-700", bg: "bg-purple-50" },
-  "English Test Preparation": { label: "Test Prep", icon: "📝", color: "text-amber-700",  bg: "bg-amber-50" },
+const PRODUCT_BADGE: Record<string, { label: string; icon: LucideIcon; color: string; bg: string }> = {
+  "Kelas Private":            { label: "Private",   icon: User,          color: "text-teal-700",   bg: "bg-teal-50" },
+  "Kelas Reguler":            { label: "Reguler",   icon: Users,         color: "text-blue-700",   bg: "bg-blue-50" },
+  "Kelas Kids":               { label: "Kids",      icon: Baby,          color: "text-purple-700", bg: "bg-purple-50" },
+  "English Test Preparation": { label: "Test Prep", icon: ClipboardList, color: "text-amber-700",  bg: "bg-amber-50" },
 };
 
 // ── Helpers ────────────────────────────────────────────────────────
@@ -99,6 +115,7 @@ export default function UnifiedCourseCard({
   variant = "active",
 }: Props) {
   const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+  const BadgeIcon = badge.icon;
   const isReguler = reg.product === "Kelas Reguler";
   const isKids = reg.product === "Kelas Kids";
   const isTestPrep = reg.product === "English Test Preparation";
@@ -127,7 +144,10 @@ export default function UnifiedCourseCard({
           <div className="flex-1 min-w-0">
             <h4 className="font-semibold text-gray-900 truncate" title={reg.language || reg.product}>{reg.language || reg.product}</h4>
             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
-              <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color} whitespace-nowrap`}>{badge.icon} {badge.label}</span>
+              <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color} whitespace-nowrap`}>
+                <BadgeIcon className="w-3 h-3" strokeWidth={2.5} />
+                {badge.label}
+              </span>
               <span className="inline-flex items-center rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold text-teal-700">{reg.level}</span>
             </div>
           </div>
@@ -148,7 +168,8 @@ export default function UnifiedCourseCard({
             rel="noopener"
             className="flex items-center justify-center gap-1.5 w-full py-1.5 rounded-lg border border-teal-200 bg-white hover:bg-teal-50 text-teal-700 text-[11px] font-medium transition-colors"
           >
-            💬 Atau konfirmasi via WhatsApp
+            <MessageCircle className="w-3 h-3" strokeWidth={2.5} />
+            Atau konfirmasi via WhatsApp
           </a>
         )}
       </motion.div>
@@ -168,7 +189,7 @@ export default function UnifiedCourseCard({
       {/* Payment status banner */}
       {isPendingPayment && (
         <div className="flex items-center gap-2 mb-3 text-amber-700 bg-amber-100 rounded-xl px-3 py-1.5">
-          <span className="text-sm">🟡</span>
+          <Clock className="w-3.5 h-3.5" strokeWidth={2.5} />
           <span className="text-xs font-semibold">Menunggu Pembayaran</span>
         </div>
       )}
@@ -182,7 +203,8 @@ export default function UnifiedCourseCard({
           <h4 className="font-semibold text-gray-900">{reg.language}</h4>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>
-              {badge.icon} {badge.label}
+              <BadgeIcon className="w-3 h-3" strokeWidth={2.5} />
+              {badge.label}
             </span>
             {reg.duration && <span className="text-[10px] text-gray-400">{reg.duration} mnt/sesi</span>}
           </div>
@@ -193,7 +215,8 @@ export default function UnifiedCourseCard({
       {/* Teacher */}
       {reg.teachers && (
         <div className="flex items-center gap-1.5 mb-3 text-xs text-gray-500">
-          <span>👩‍🏫</span><span>{reg.teachers.name}</span>
+          <GraduationCap className="w-3.5 h-3.5" strokeWidth={2} />
+          <span>{reg.teachers.name}</span>
         </div>
       )}
 
@@ -207,7 +230,7 @@ export default function UnifiedCourseCard({
             <span className="text-[10px] text-blue-500 font-medium">{reg.batch.batch_code}</span>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-blue-800">
-            <span>📅</span>
+            <Calendar className="w-3.5 h-3.5" strokeWidth={2.5} />
             <span className="font-semibold">{reg.batch.schedule_day}, {reg.batch.schedule_time} WIB</span>
           </div>
           {reg.batch.start_date && reg.batch.end_date && (
@@ -218,7 +241,8 @@ export default function UnifiedCourseCard({
           {reg.batch.zoom_link && (
             <a href={reg.batch.zoom_link} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-blue-600 hover:text-blue-700 mt-1">
-              🔗 Buka Zoom
+              <Video className="w-3.5 h-3.5" strokeWidth={2.5} />
+              Buka Zoom
             </a>
           )}
         </div>
@@ -226,22 +250,25 @@ export default function UnifiedCourseCard({
 
       {/* REGULER without batch: fallback */}
       {isReguler && !reg.batch && isActive && (
-        <div className="mb-3 rounded-xl bg-blue-50/50 border border-blue-100 px-3 py-2 text-xs text-blue-600">
-          📋 Jadwal batch akan segera diinfokan admin via WhatsApp
+        <div className="mb-3 rounded-xl bg-blue-50/50 border border-blue-100 px-3 py-2 text-xs text-blue-600 flex items-start gap-1.5">
+          <Info className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2} />
+          <span>Jadwal batch akan segera diinfokan admin via WhatsApp</span>
         </div>
       )}
 
       {/* KIDS: Parent-friendly note */}
       {isKids && isActive && (
-        <div className="mb-3 rounded-xl bg-purple-50/70 border border-purple-100 px-3 py-2 text-xs text-purple-700">
-          👨‍👩‍👧 Kelas disesuaikan untuk anak usia 5–12 tahun · {reg.duration === "30" ? "30 menit" : "45 menit"}/sesi
+        <div className="mb-3 rounded-xl bg-purple-50/70 border border-purple-100 px-3 py-2 text-xs text-purple-700 flex items-start gap-1.5">
+          <Heart className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2.5} fill="currentColor" />
+          <span>Kelas disesuaikan untuk anak usia 5–12 tahun · {reg.duration === "30" ? "30 menit" : "45 menit"}/sesi</span>
         </div>
       )}
 
       {/* TEST PREP: Target info */}
       {isTestPrep && isActive && (
-        <div className="mb-3 rounded-xl bg-amber-50/70 border border-amber-100 px-3 py-2 text-xs text-amber-700">
-          🎯 Target: {reg.language} · {reg.sessions_total > 0 ? `${reg.sessions_total} sesi persiapan` : "Sesi diatur admin"}
+        <div className="mb-3 rounded-xl bg-amber-50/70 border border-amber-100 px-3 py-2 text-xs text-amber-700 flex items-start gap-1.5">
+          <Target className="w-3.5 h-3.5 shrink-0 mt-0.5" strokeWidth={2.5} />
+          <span>Target: {reg.language} · {reg.sessions_total > 0 ? `${reg.sessions_total} sesi persiapan` : "Sesi diatur admin"}</span>
         </div>
       )}
 
@@ -249,7 +276,10 @@ export default function UnifiedCourseCard({
       {nextClassDate && isActive && (
         <div className="mb-3 rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-2.5">
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-emerald-600 font-semibold">🟢 Kelas berikutnya:</span>
+            <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold">
+              <Calendar className="w-3.5 h-3.5" strokeWidth={2.5} />
+              Kelas berikutnya:
+            </span>
             <span className="text-emerald-700 font-bold">
               {nextClassDate.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {nextClassDate.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })} WIB
             </span>
@@ -281,15 +311,17 @@ export default function UnifiedCourseCard({
         <div className="flex items-center gap-2 mt-3">
           <button
             onClick={(e) => { e.stopPropagation(); onDetail?.(reg); }}
-            className="px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+            className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
           >
-            📋 Detail
+            <FileText className="w-3.5 h-3.5" strokeWidth={2.5} />
+            Detail
           </button>
           <button
             onClick={() => onBooking?.(reg)}
             className="flex-1 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors shadow-sm"
           >
-            📅 Booking Sesi
+            <Calendar className="w-4 h-4" strokeWidth={2.5} />
+            Booking Sesi
           </button>
         </div>
       )}
@@ -300,7 +332,8 @@ export default function UnifiedCourseCard({
           onClick={(e) => { e.stopPropagation(); onDetail?.(reg); }}
           className="w-full mt-3 inline-flex h-9 items-center justify-center gap-1.5 rounded-xl text-xs font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
         >
-          📋 Lihat Detail Kelas
+          <FileText className="w-3.5 h-3.5" strokeWidth={2.5} />
+          Lihat Detail Kelas
         </button>
       )}
 
