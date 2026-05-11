@@ -83,12 +83,24 @@ export default function JadiPengajarPage() {
     };
 
     try {
-      await fetch("/api/teacher-apply", {
+      const res = await fetch("/api/teacher-apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-    } catch (e) { console.error(e); }
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        console.error("Submit failed:", res.status, errData);
+        alert(errData.error || "Gagal mengirim pendaftaran. Silakan coba lagi atau hubungi kami langsung via WhatsApp.");
+        setLoading(false);
+        return;
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Koneksi terputus. Cek internet kamu dan coba lagi.");
+      setLoading(false);
+      return;
+    }
 
     setLoading(false);
     setSuccess(true);

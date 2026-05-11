@@ -29,14 +29,17 @@ export async function POST(req: NextRequest) {
         level: level || null,
         experience: experience || null,
         note: note || null,
-        status: "submitted",
+        status: "screening",  // initial workflow state (valid CHECK value)
       }),
     });
 
     if (!res.ok) {
       const err = await res.text();
-      console.error("Supabase error:", err);
-      return NextResponse.json({ error: "Gagal menyimpan data" }, { status: 500 });
+      console.error("Supabase error:", res.status, err);
+      return NextResponse.json(
+        { error: `DB error (${res.status}): ${err.slice(0, 200)}` },
+        { status: 500 }
+      );
     }
 
     const data = await res.json();
