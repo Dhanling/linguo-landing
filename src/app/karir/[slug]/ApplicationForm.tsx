@@ -3,19 +3,25 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
-import { Upload, Loader2, CheckCircle } from "lucide-react";
+import { Loader2, CheckCircle, Linkedin, Link2, GraduationCap, FileText } from "lucide-react";
 
 type Props = {
   openingId: string;
   openingTitle: string;
 };
 
-const ALLOWED_MIME = [
-  "application/pdf",
-  "application/msword",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-];
-const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+const LINKEDIN_PATTERN = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_\-%.]+\/?(\?.*)?$/i;
+
+function validateLinkedIn(url: string): boolean {
+  return LINKEDIN_PATTERN.test(url.trim());
+}
+
+function normalizeUrl(url: string): string {
+  const trimmed = url.trim();
+  if (!trimmed) return "";
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+  return "https://" + trimmed;
+}
 
 export default function ApplicationForm({ openingId, openingTitle }: Props) {
   const router = useRouter();
@@ -27,29 +33,12 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
     name: "",
     email: "",
     phone: "",
+    linkedin_url: "",
+    portfolio_url: "",
+    education: "",
+    experience_summary: "",
     cover_letter: "",
   });
-  const [cvFile, setCvFile] = useState<File | null>(null);
-
-  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0];
-    if (!f) return;
-
-    if (f.size > MAX_SIZE) {
-      setError("Ukuran file maksimal 5MB.");
-      setCvFile(null);
-      return;
-    }
-
-    if (!ALLOWED_MIME.includes(f.type)) {
-      setError("Format file harus PDF atau DOC/DOCX.");
-      setCvFile(null);
-      return;
-    }
-
-    setError(null);
-    setCvFile(f);
-  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -59,51 +48,46 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
       setError("Nama, email, dan nomor WhatsApp wajib diisi.");
       return;
     }
-    if (!cvFile) {
-      setError("CV wajib diupload.");
+    if (!form.linkedin_url.trim()) {
+      setError("LinkedIn profile wajib diisi.");
+      return;
+    }
+    if (!validateLinkedIn(form.linkedin_url)) {
+      setError("Format LinkedIn salah. Contoh: linkedin.com/in/nama-lo");
+      return;
+    }
+    if (form.experience_summary.trim().length < 20) {
+      setError("Ceritain pengalaman lo minimal 20 karakter.");
       return;
     }
 
     setSubmitting(true);
 
     try {
-      // 1. Upload CV ke private bucket
-      const ext = cvFile.name.split(".").pop() || "pdf";
-      const safeEmail = form.email.replace(/[^a-z0-9]/gi, "_");
-      const cvPath = `${openingId}/${Date.now()}-${safeEmail}.${ext}`;
+      const payload = {
+        opening_id: openingId,
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        linkedin_url: normalizeUrl(form.linkedin_url),
+        portfolio_url: form.portfolio_url.trim() ? normalizeUrl(form.portfolio_url) : null,
+        education: form.education.trim() || null,
+        experience_summary: form.experience_summary.trim(),
+        cover_letter: form.cover_letter.trim() || null,
+        status: "new",
+      };
 
-      const { error: uploadError } = await supabase.storage
-        .from("job-cvs")
-        .upload(cvPath, cvFile, {
-          contentType: cvFile.type,
-          upsert: false,
-        });
-
-      if (uploadError) {
-        throw new Error(`Upload CV gagal: ${uploadError.message}`);
-      }
-
-      // 2. Insert ke job_applications
       const { error: insertError } = await supabase
         .from("job_applications")
-        .insert({
-          opening_id: openingId,
-          name: form.name.trim(),
-          email: form.email.trim(),
-          phone: form.phone.trim(),
-          cover_letter: form.cover_letter.trim() || null,
-          cv_url: cvPath,
-          status: "new",
-        });
+        .insert(payload);
 
       if (insertError) {
-        throw new Error(`Submit lamaran gagal: ${insertError.message}`);
+        throw new Error("Submit lamaran gagal: " + insertError.message);
       }
 
       setDone(true);
     } catch (err: unknown) {
-      const msg =
-        err instanceof Error ? err.message : "Terjadi kesalahan. Coba lagi.";
+      const msg = err instanceof Error ? err.message : "Terjadi kesalahan. Coba lagi.";
       setError(msg);
     } finally {
       setSubmitting(false);
@@ -179,37 +163,79 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
       </div>
 
       <div>
-        <label className="block text-xs font-medium text-gray-700 mb-1.5">
-          Cover Letter / Pesan Singkat
+        <label className="text-xs font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+          <Linkedin className="h-3.5 w-3.5 text-[#0a66c2]" />
+          LinkedIn Profile <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="text"
+          required
+          value={form.linkedin_url}
+          onChange={(e) => setForm({ ...form, linkedin_url: e.target.value })}
+          className="w-full px-3 py-2 text-sm border rounded-lg focus:border-[#1A9E9E] focus:ring-1 focus:ring-[#1A9E9E] outline-none"
+          placeholder="linkedin.com/in/nama-lo"
+        />
+        <p className="text-[10px] text-gray-500 mt-1">
+          Pastikan profile public — kalau di-private, tim HR gak bisa review.
+        </p>
+      </div>
+
+      <div>
+        <label className="text-xs font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+          <Link2 className="h-3.5 w-3.5 text-gray-500" />
+          Portfolio / Karya (opsional)
+        </label>
+        <input
+          type="text"
+          value={form.portfolio_url}
+          onChange={(e) => setForm({ ...form, portfolio_url: e.target.value })}
+          className="w-full px-3 py-2 text-sm border rounded-lg focus:border-[#1A9E9E] focus:ring-1 focus:ring-[#1A9E9E] outline-none"
+          placeholder="instagram.com/handle, behance.net/nama, website pribadi"
+        />
+      </div>
+
+      <div>
+        <label className="text-xs font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+          <GraduationCap className="h-3.5 w-3.5 text-gray-500" />
+          Pendidikan Terakhir (opsional)
+        </label>
+        <input
+          type="text"
+          value={form.education}
+          onChange={(e) => setForm({ ...form, education: e.target.value })}
+          className="w-full px-3 py-2 text-sm border rounded-lg focus:border-[#1A9E9E] focus:ring-1 focus:ring-[#1A9E9E] outline-none"
+          placeholder="Contoh: S1 Pendidikan Bahasa Inggris UPI 2022"
+        />
+      </div>
+
+      <div>
+        <label className="text-xs font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+          <FileText className="h-3.5 w-3.5 text-gray-500" />
+          Pengalaman Relevan <span className="text-red-500">*</span>
         </label>
         <textarea
           rows={4}
-          value={form.cover_letter}
-          onChange={(e) =>
-            setForm({ ...form, cover_letter: e.target.value })
-          }
+          required
+          value={form.experience_summary}
+          onChange={(e) => setForm({ ...form, experience_summary: e.target.value })}
           className="w-full px-3 py-2 text-sm border rounded-lg focus:border-[#1A9E9E] focus:ring-1 focus:ring-[#1A9E9E] outline-none resize-none"
-          placeholder="Kenapa Anda cocok untuk posisi ini? (opsional)"
+          placeholder="Ceritain singkat pengalaman lo terkait posisi ini — kerja sebelumnya, project, sertifikat, dll. Minimal 20 karakter."
         />
       </div>
 
       <div>
         <label className="block text-xs font-medium text-gray-700 mb-1.5">
-          Upload CV (PDF/DOC, maks 5MB){" "}
-          <span className="text-red-500">*</span>
+          Cover Letter / Pesan Singkat (opsional)
         </label>
-        <label className="flex items-center justify-center gap-2 w-full px-3 py-4 border-2 border-dashed rounded-lg cursor-pointer hover:border-[#1A9E9E] hover:bg-teal-50 transition-colors">
-          <Upload className="h-4 w-4 text-gray-400" />
-          <span className="text-sm text-gray-600 truncate">
-            {cvFile ? cvFile.name : "Klik untuk pilih file CV"}
-          </span>
-          <input
-            type="file"
-            accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            onChange={handleFileChange}
-            className="hidden"
-          />
-        </label>
+        <textarea
+          rows={3}
+          value={form.cover_letter}
+          onChange={(e) =>
+            setForm({ ...form, cover_letter: e.target.value })
+          }
+          className="w-full px-3 py-2 text-sm border rounded-lg focus:border-[#1A9E9E] focus:ring-1 focus:ring-[#1A9E9E] outline-none resize-none"
+          placeholder="Kenapa lo cocok untuk posisi ini?"
+        />
       </div>
 
       {error && (
