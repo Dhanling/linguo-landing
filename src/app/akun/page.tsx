@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked } from "lucide-react";
@@ -496,7 +496,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
           { label: "Total XP", value: xp.xp, icon: <Star className="w-6 h-6 text-amber-500" strokeWidth={2} fill="currentColor" /> },
           { label: "Badges", value: badges.length, icon: <Trophy className="w-6 h-6 text-amber-500" strokeWidth={2} /> },
           { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: <BookOpen className="w-6 h-6 text-teal-600" strokeWidth={2} /> },
-        ] as Array<{ label: string; value: number; icon: React.ReactNode }>).map(s => (
+        ] as Array<{ label: string; value: number; icon: ReactNode }>).map(s => (
           <div key={s.label} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 text-center">
             <div className="flex justify-center mb-1">{s.icon}</div>
             <div className="text-xl font-bold text-gray-900">{s.value}</div>
@@ -530,7 +530,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
           { icon: <Globe className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Lihat Silabus", href: "/silabus" },
           { icon: <MessageCircle className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
           { icon: <Newspaper className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Blog & Tips Belajar", href: "/blog" },
-        ] as Array<{ icon: React.ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
+        ] as Array<{ icon: ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
           const inner = (
             <>
               <span className="w-7 flex justify-center">{item.icon}</span>
