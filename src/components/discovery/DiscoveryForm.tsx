@@ -207,7 +207,7 @@ export function DiscoveryForm({ kuesioner }: DiscoveryFormProps) {
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Unknown error';
       setSubmitError(
-        'Gagal mengirim jawaban: ' + msg + '. Mohon coba lagi, atau hubungi dhani@linguo.id kalau tetap error.'
+        'Gagal mengirim jawaban: ' + msg + '. Mohon coba lagi, atau hubungi hello@linguo.id kalau tetap error.'
       );
       setSubmitting(false);
     }
@@ -353,8 +353,8 @@ export function DiscoveryForm({ kuesioner }: DiscoveryFormProps) {
         <p>
           Riset Lingcore for Schools • PT Linguo Edu Indonesia •
           {' '}
-          <a href="mailto:dhani@linguo.id" className="text-teal-700 hover:underline">
-            dhani@linguo.id
+          <a href="mailto:hello@linguo.id" className="text-teal-700 hover:underline">
+            hello@linguo.id
           </a>
         </p>
       </div>

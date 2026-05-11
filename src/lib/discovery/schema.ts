@@ -1,4 +1,4 @@
-// Auto-generated dari 4 file .md kuesioner.
+// Auto-generated dari 4 file .md kuesioner — v2 (barter TOEFL).
 // Single source of truth untuk Discovery Sprint forms.
 // Edit di sini, JANGAN edit di file .md (file .md tidak lagi jadi source of truth).
 
@@ -54,10 +54,10 @@ export const KEPSEK_KUESIONER: Kuesioner = {
   shortTitle: "Kepala Sekolah",
   audienceLabel: "Kepala Sekolah / Yayasan / Direktur Akademik",
   estimatedMinutes: "10–12 menit",
-  voucherAmount: "Executive Summary Riset Agregat (digital)",
+  voucherAmount: "Akses gratis Simulasi TOEFL Linguo untuk sekolah Anda",
   accentColor: "teal",
-  intro: "Bapak/Ibu Yth.,\n\nTerima kasih atas waktu Bapak/Ibu. Kuesioner ini disusun oleh PT. Linguo Edu Indonesia (linguo.id) — penyedia kursus 60+ bahasa asing online sejak 2020 — untuk riset kebutuhan program bahasa di sekolah.\n\nHasil riset ini akan kami gunakan untuk mengembangkan platform LMS khusus pembelajaran bahasa yang lebih sesuai kebutuhan sekolah Indonesia.\n\nKerahasiaan: Data dijaga ketat. Tidak akan ada informasi spesifik per sekolah yang dipublikasikan tanpa izin.\n\nApresiasi: Sebagai bentuk terima kasih, Bapak/Ibu akan menerima Executive Summary Riset Agregat (digital, anonim) — bisa Bapak/Ibu pakai sebagai benchmark internal.\n\nEstimasi waktu: 10–12 menit.",
-  closing: "Terima kasih, Bapak/Ibu. Hasil riset agregat akan dikirim dalam 4–6 minggu setelah pengumpulan data selesai.\n\nJika tertarik diskusi lanjutan tentang program pengembangan bahasa di sekolah Bapak/Ibu, silakan hubungi:\n\nMuhamad Lutfi Ramadhani — Founder, PT Linguo Edu Indonesia\nEmail: dhani@linguo.id | WA: [WA-NUMBER]",
+  intro: "Bapak/Ibu Yth.,\n\nTerima kasih atas waktu Bapak/Ibu. Kuesioner ini disusun oleh PT. Linguo Edu Indonesia (linguo.id) — penyedia kursus 60+ bahasa asing online sejak 2020 — untuk riset kebutuhan program bahasa di sekolah.\n\nHasil riset ini akan kami gunakan untuk mengembangkan platform LMS khusus pembelajaran bahasa yang lebih sesuai kebutuhan sekolah Indonesia.\n\nKerahasiaan: Data dijaga ketat. Tidak akan ada informasi spesifik per sekolah yang dipublikasikan tanpa izin.\n\nApresiasi: Sebagai timbal balik partisipasi, sekolah Bapak/Ibu akan menerima akses gratis Simulasi TOEFL Linguo untuk siswa, plus Executive Summary Riset Agregat (digital, anonim) sebagai benchmark internal.\n\nEstimasi waktu: 10–12 menit.",
+  closing: "Terima kasih, Bapak/Ibu. Akses Simulasi TOEFL Linguo dan Executive Summary Riset akan dikirim dalam 3–7 hari kerja setelah cukup peserta dari sekolah Anda mengisi kuesioner.\n\nJika tertarik diskusi lanjutan tentang program pengembangan bahasa di sekolah Bapak/Ibu, silakan hubungi:\n\nPT Linguo Edu Indonesia\nEmail: hello@linguo.id",
   sections: [
   {
     title: "Section A: Profil Sekolah",
@@ -119,10 +119,10 @@ export const KOORDINATOR_KUESIONER: Kuesioner = {
   shortTitle: "Koordinator Kurikulum",
   audienceLabel: "Wakasek Kurikulum / Koordinator Bahasa",
   estimatedMinutes: "15–18 menit",
-  voucherAmount: "Voucher Rp 200.000 + Executive Summary",
+  voucherAmount: "Akses gratis Simulasi TOEFL Linguo untuk sekolah Anda",
   accentColor: "emerald",
-  intro: "Bapak/Ibu Yth.,\n\nTerima kasih sudah menerima undangan ini. Sebagai operator harian program bahasa di sekolah, suara Bapak/Ibu paling penting dalam riset kami.\n\nKami sedang mengembangkan Lingcore for Schools — platform LMS khusus pembelajaran bahasa. Sebelum membangun, kami ingin memahami pain harian Bapak/Ibu agar produk yang kami buat benar-benar membantu.\n\nApresiasi: Voucher GoTo / Tokopedia Rp 200.000 + Executive Summary Riset.\n\nEstimasi waktu: 15–18 menit. Mohon isi sesuai kondisi nyata di lapangan — tidak ada jawaban salah.",
-  closing: "Terima kasih banyak. Insight Bapak/Ibu sangat berharga.\n\nVoucher Rp 200.000 akan dikirim via WA dalam 3 hari kerja setelah submit, ke nomor yang Bapak/Ibu cantumkan di Q35 atau Email/WA di Kepala Sekolah.\n\nMuhamad Lutfi Ramadhani — Founder, Linguo\ndhani@linguo.id",
+  intro: "Bapak/Ibu Yth.,\n\nTerima kasih sudah menerima undangan ini. Sebagai operator harian program bahasa di sekolah, suara Bapak/Ibu paling penting dalam riset kami.\n\nKami sedang mengembangkan Lingcore for Schools — platform LMS khusus pembelajaran bahasa. Sebelum membangun, kami ingin memahami pain harian Bapak/Ibu agar produk yang kami buat benar-benar membantu.\n\nApresiasi: Sekolah Anda akan menerima akses gratis Simulasi TOEFL Linguo untuk siswa, plus Executive Summary Riset Agregat sebagai timbal balik partisipasi.\n\nEstimasi waktu: 15–18 menit. Mohon isi sesuai kondisi nyata di lapangan — tidak ada jawaban salah.",
+  closing: "Terima kasih banyak. Insight Bapak/Ibu sangat berharga.\n\nAkses Simulasi TOEFL Linguo dan Executive Summary akan dikirim dalam 3–7 hari kerja setelah cukup peserta dari sekolah Anda mengisi kuesioner.\n\nPT Linguo Edu Indonesia\nEmail: hello@linguo.id",
   sections: [
   {
     title: "Section A: Profil & Konteks Kerja",
@@ -186,7 +186,7 @@ export const KOORDINATOR_KUESIONER: Kuesioner = {
     title: "Section F: Closing",
     questions: [
       { number: 34, text: "Setelah baca konsep di intro, apa pendapat Anda tentang Lingcore for Schools — platform LMS spesifik bahasa dengan kurikulum 60+ bahasa, dashboard guru-admin-siswa terintegrasi, dan native speaker pool dari Linguo?", tag: "LONGTEXT", required: false },
-      { number: 35, text: "Bersediakah Anda interview lanjutan 60 menit (online, dapat kompensasi tambahan Rp 500rb)?", tag: "SINGLE", required: false, options: ["Ya, sangat tertarik","Mungkin, tergantung schedule","Tidak"] }
+      { number: 35, text: "Bersediakah Anda interview lanjutan 60 menit (online, sebagai timbal balik tambahan kami sediakan akses Simulasi TOEFL Linguo paket sekolah + bonus e-learning)?", tag: "SINGLE", required: false, options: ["Ya, sangat tertarik","Mungkin, tergantung schedule","Tidak"] }
     ],
   }
   ],
@@ -199,10 +199,10 @@ export const GURU_KUESIONER: Kuesioner = {
   shortTitle: "Guru Bahasa",
   audienceLabel: "Guru Bahasa Asing",
   estimatedMinutes: "12–15 menit",
-  voucherAmount: "Voucher Rp 100.000",
+  voucherAmount: "Akses gratis Simulasi TOEFL Linguo untuk sekolah Anda",
   accentColor: "cyan",
-  intro: "Bapak/Ibu Guru Yth.,\n\nTerima kasih sudah menerima undangan ini. Sebagai guru bahasa di sekolah, pendapat Bapak/Ibu paling penting untuk kami yang sedang merancang platform LMS khusus pembelajaran bahasa.\n\nTujuan kami: membuat tools yang bener-bener bantu guru mengajar lebih efektif tanpa nambah beban admin.\n\nApresiasi: Voucher Rp 100.000 + Executive Summary Riset.\n\nEstimasi waktu: 12–15 menit. Mohon jujur — kami butuh kondisi nyata, bukan kondisi ideal.",
-  closing: "Terima kasih banyak, Bapak/Ibu Guru. Insight Bapak/Ibu sangat berharga untuk kami yang ingin membuat tools yang bener-bener bantu guru, bukan menambah beban.\n\nVoucher Rp 100.000 akan dikirim via WA dalam 3–5 hari kerja setelah submit.\n\nLinguo Team\ndhani@linguo.id",
+  intro: "Bapak/Ibu Guru Yth.,\n\nTerima kasih sudah menerima undangan ini. Sebagai guru bahasa di sekolah, pendapat Bapak/Ibu paling penting untuk kami yang sedang merancang platform LMS khusus pembelajaran bahasa.\n\nTujuan kami: membuat tools yang bener-bener bantu guru mengajar lebih efektif tanpa nambah beban admin.\n\nApresiasi: Sekolah Bapak/Ibu akan menerima akses gratis Simulasi TOEFL Linguo untuk siswa sebagai timbal balik partisipasi.\n\nEstimasi waktu: 12–15 menit. Mohon jujur — kami butuh kondisi nyata, bukan kondisi ideal.",
+  closing: "Terima kasih banyak, Bapak/Ibu Guru. Insight Bapak/Ibu sangat berharga untuk kami yang ingin membuat tools yang bener-bener bantu guru, bukan menambah beban.\n\nPT Linguo Edu Indonesia\nEmail: hello@linguo.id",
   sections: [
   {
     title: "Section A: Profil",
@@ -255,7 +255,7 @@ export const GURU_KUESIONER: Kuesioner = {
   {
     title: "Section E: Closing",
     questions: [
-      { number: 29, text: "Bersediakah Anda interview lanjutan 60 menit (online, kompensasi tambahan Rp 300rb)?", tag: "YESNO", required: false },
+      { number: 29, text: "Bersediakah Anda interview lanjutan 60 menit (online, sebagai timbal balik kami sediakan akses Simulasi TOEFL Linguo + e-book bahasa pilihan)?", tag: "YESNO", required: false },
       { number: 30, text: "Email atau WA untuk follow-up / kirim insentif", tag: "TEXT", required: false }
     ],
   }
@@ -269,10 +269,10 @@ export const SISWA_KUESIONER: Kuesioner = {
   shortTitle: "Siswa",
   audienceLabel: "Siswa SMP / SMA / Mahasiswa",
   estimatedMinutes: "5–7 menit",
-  voucherAmount: "Voucher Tokopedia / Shopee / pulsa Rp 25.000",
+  voucherAmount: "Akses gratis Simulasi TOEFL Linguo untuk sekolah Anda",
   accentColor: "sky",
-  intro: "Hai! 👋\n\nKami dari Linguo lagi bikin app belajar bahasa baru buat sekolah, dan kami pengen tau kamu lebih suka belajar bahasa kayak gimana.\n\nIni bukan tugas, bukan ujian. Jujur aja gimana pengalaman kamu — gak ada jawaban salah!\n\nHadiah: Voucher Tokopedia / Shopee / pulsa Rp 25.000 ✨\n\nWaktu: cuma 5–7 menit. Bisa diisi via HP. Yuk mulai!",
-  closing: "Makasih banget udah luangin waktu! 🙌\n\nVoucher Rp 25.000 bakal dikirim via WA / email dalam 5–7 hari kerja setelah kamu submit.\n\nMau tau update Linguo? Follow @linguo.id di Instagram & TikTok.\n\n— Tim Linguo",
+  intro: "Hai! 👋\n\nKami dari Linguo lagi bikin app belajar bahasa baru buat sekolah, dan kami pengen tau kamu lebih suka belajar bahasa kayak gimana.\n\nIni bukan tugas, bukan ujian. Jujur aja gimana pengalaman kamu — gak ada jawaban salah!\n\nBonus: Sekolahmu bakal dapet akses gratis Simulasi TOEFL Linguo (kamu juga bisa pakai!) kalau cukup banyak siswa di sekolah kamu yang isi kuesioner ini.\n\nWaktu: cuma 5–7 menit. Bisa diisi via HP. Yuk mulai!",
+  closing: "Makasih banget udah luangin waktu! 🙌\n\nSekolahmu akan dapet akses Simulasi TOEFL Linguo dalam 3–7 hari kerja setelah cukup banyak siswa partisipasi.\n\nMau tau update Linguo? Follow @linguo.id di Instagram & TikTok.\n\nKalau ada pertanyaan: hello@linguo.id\n\n— Tim Linguo",
   sections: [
   {
     title: "Section A: Profil Singkat",
@@ -316,7 +316,7 @@ export const SISWA_KUESIONER: Kuesioner = {
     title: "Section E: Closing",
     questions: [
       { number: 19, text: "Boleh kasih usulan / kritik untuk sekolah lo soal pelajaran bahasa? (anonim)", tag: "LONGTEXT", required: false },
-      { number: 20, text: "Nama panggilan + email/WA buat kirim voucher hadiah", tag: "TEXT", required: true }
+      { number: 20, text: "Nama panggilan + email/WA untuk follow-up dan info akses Simulasi TOEFL", tag: "TEXT", required: true }
     ],
   }
   ],
