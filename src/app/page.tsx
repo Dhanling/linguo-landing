@@ -1765,6 +1765,7 @@ export default function Home() {
               <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
               <li><a href="/corporate" className="hover:text-white transition-colors">Corporate Class</a></li>
               <li><a href="/jadi-pengajar" className="hover:text-white transition-colors">Jadi Pengajar</a></li>
+              <li><a href="/karir" className="hover:text-white transition-colors">Karir</a></li>
             </ul>
             <h4 className="font-bold mt-6 mb-2">Bantuan</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
