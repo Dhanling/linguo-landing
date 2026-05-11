@@ -6,10 +6,10 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, languages, level, experience, note } = body;
+    const { name, email, phone, province, city, languages, level, experience, note } = body;
 
-    if (!name?.trim() || !email?.trim() || !phone?.trim() || !languages?.trim()) {
-      return NextResponse.json({ error: "Nama, email, telepon, dan bahasa wajib diisi" }, { status: 400 });
+    if (!name?.trim() || !email?.trim() || !phone?.trim() || !province?.trim() || !city?.trim() || !languages?.trim()) {
+      return NextResponse.json({ error: "Nama, email, telepon, provinsi, kab/kota, dan bahasa wajib diisi" }, { status: 400 });
     }
 
     // Insert into Supabase
@@ -25,6 +25,8 @@ export async function POST(req: NextRequest) {
         name: name.trim(),
         email: email.trim(),
         phone: phone.trim(),
+        province: province.trim(),
+        city: city.trim(),
         languages: languages.trim(),
         level: level || null,
         experience: experience || null,

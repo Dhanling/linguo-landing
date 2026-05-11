@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { WILAYAH_ID } from "@/lib/wilayah-id";
 
 const WA = "https://wa.me/6282130113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -44,6 +45,7 @@ export default function JadiPengajarPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
 
   // Step 2: Bahasa & Kualifikasi
   const [langs, setLangs] = useState<string[]>([]);
@@ -61,7 +63,7 @@ export default function JadiPengajarPage() {
   };
 
   const canNext = (s: number) => {
-    if (s === 1) return name.trim() && email.trim() && phone.trim();
+    if (s === 1) return name.trim() && email.trim() && phone.trim() && province && city;
     if (s === 2) return langs.length > 0 && level && tier;
     if (s === 3) return exp;
     return true;
@@ -70,10 +72,11 @@ export default function JadiPengajarPage() {
   const handleSubmit = async () => {
     setLoading(true);
     const payload = {
-      name, email, phone,
+      name, email, phone, province, city,
       languages: langs.join(", "),
       level, experience: exp,
       note: [
+        province && `Provinsi: ${province}`,
         city && `Kota: ${city}`,
         tier && `Tier: ${tier}`,
         certInfo && `Sertifikat: ${certInfo}`,
@@ -105,7 +108,7 @@ export default function JadiPengajarPage() {
     setLoading(false);
     setSuccess(true);
 
-    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nKota: ${city}\nBahasa: ${langs.join(", ")}\nLevel: ${level}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
+    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${langs.join(", ")}\nLevel: ${level}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
     setTimeout(() => window.open(waMsg(msg), "_blank"), 1000);
   };
 
@@ -371,9 +374,20 @@ export default function JadiPengajarPage() {
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                   </div>
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Kota Domisili</label>
-                    <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="Contoh: Bandung"
-                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Provinsi *</label>
+                    <select value={province} onChange={e => { setProvince(e.target.value); setCity(""); }}
+                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                      <option value="">Pilih provinsi...</option>
+                      {WILAYAH_ID.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Kab/Kota Domisili *</label>
+                    <select value={city} onChange={e => setCity(e.target.value)} disabled={!province}
+                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed">
+                      <option value="">{province ? "Pilih kab/kota..." : "Pilih provinsi dulu"}</option>
+                      {(WILAYAH_ID.find(p => p.name === province)?.cities ?? []).map(c => <option key={c} value={c}>{c}</option>)}
+                    </select>
                   </div>
                 </div>
               </motion.div>
@@ -477,7 +491,7 @@ export default function JadiPengajarPage() {
                     { label: "Nama", value: name },
                     { label: "Email", value: email },
                     { label: "WhatsApp", value: phone },
-                    { label: "Kota", value: city || "-" },
+                    { label: "Provinsi", value: province || "-" }, { label: "Kota", value: city || "-" },
                     { label: "Bahasa", value: langs.join(", ") },
                     { label: "Level", value: level },
                     { label: "Jalur", value: tier === "professional" ? "🎓 Pengajar Profesional" : "🗣️ Pengajar Komunitas" },
