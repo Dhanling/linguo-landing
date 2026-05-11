@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase-client";
-import { Loader2, CheckCircle, Linkedin, Link2, GraduationCap, FileText } from "lucide-react";
+import { Loader2, CheckCircle, Briefcase, Link2, GraduationCap, FileText } from "lucide-react";
 
 type Props = {
   openingId: string;
@@ -164,7 +164,7 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
 
       <div>
         <label className="text-xs font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
-          <Linkedin className="h-3.5 w-3.5 text-[#0a66c2]" />
+          <Briefcase className="h-3.5 w-3.5 text-[#0a66c2]" />
           LinkedIn Profile <span className="text-red-500">*</span>
         </label>
         <input
