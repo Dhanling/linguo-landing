@@ -1,5 +1,7 @@
 "use client";
 
+import { Home, Calendar, BookOpen, User, type LucideIcon } from "lucide-react";
+
 type TabKey = "beranda" | "jadwal" | "materi" | "akun";
 
 type Props = {
@@ -7,11 +9,11 @@ type Props = {
   onChange: (tab: TabKey) => void;
 };
 
-const TABS: { key: TabKey; label: string; icon: string }[] = [
-  { key: "beranda", label: "Beranda", icon: "\u{1F3E0}" },
-  { key: "jadwal", label: "Jadwal", icon: "\u{1F4C5}" },
-  { key: "materi", label: "Materi", icon: "\u{1F4D6}" },
-  { key: "akun", label: "Akun", icon: "\u{1F464}" },
+const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
+  { key: "beranda", label: "Beranda", icon: Home },
+  { key: "jadwal",  label: "Jadwal",  icon: Calendar },
+  { key: "materi",  label: "Materi",  icon: BookOpen },
+  { key: "akun",    label: "Akun",    icon: User },
 ];
 
 export default function MobileBottomNav({ activeTab, onChange }: Props) {
@@ -22,7 +24,7 @@ export default function MobileBottomNav({ activeTab, onChange }: Props) {
       aria-label="Navigation utama"
     >
       <div className="mx-auto max-w-lg grid grid-cols-4 h-14">
-        {TABS.map(({ key, label, icon }) => {
+        {TABS.map(({ key, label, icon: Icon }) => {
           const isActive = activeTab === key;
           return (
             <button
@@ -36,7 +38,10 @@ export default function MobileBottomNav({ activeTab, onChange }: Props) {
               {isActive && (
                 <span className="absolute top-0 left-1/2 -translate-x-1/2 h-0.5 w-8 rounded-full bg-[#1A9E9E]" />
               )}
-              <span className={`text-lg leading-none ${isActive ? "scale-110" : ""} transition-transform`}>{icon}</span>
+              <Icon
+                className={`w-5 h-5 transition-transform ${isActive ? "scale-110" : ""}`}
+                strokeWidth={isActive ? 2.5 : 2}
+              />
               <span className="text-[10px] font-medium">{label}</span>
             </button>
           );
