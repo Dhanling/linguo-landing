@@ -2093,6 +2093,7 @@ export default function AkunPage() {
                 const remainHours = diffHours % 24;
                 const reg = student.registrations.find(r => r.id === next.registration_id);
                 const badge = PRODUCT_BADGE[reg?.product || ""] || PRODUCT_BADGE["Kelas Private"];
+                const BadgeIcon = badge.icon;
                 return (
                   <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-5 text-white shadow-lg shadow-teal-200/50">
                     <p className="text-teal-200 text-xs font-medium mb-1">KELAS BERIKUTNYA</p>
@@ -2102,7 +2103,7 @@ export default function AkunPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold">{reg?.language}</h3>
-                        <p className="text-teal-200 text-xs">{reg?.teachers?.name || "Pengajar"} · {badge.icon} {badge.label}</p>
+                        <p className="text-teal-200 text-xs">{reg?.teachers?.name || "Pengajar"} · <BadgeIcon className="inline w-3 h-3" strokeWidth={2.5} /> {badge.label}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 text-sm bg-white/10 rounded-xl px-4 py-3">
