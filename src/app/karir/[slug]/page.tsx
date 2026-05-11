@@ -112,16 +112,35 @@ export default async function KarirDetailPage({ params }: Props) {
           </div>
         )}
 
-        {/* Apply form */}
-        <div className="bg-white rounded-2xl border p-6 md:p-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-1">
-            Lamar Sekarang
-          </h2>
-          <p className="text-sm text-gray-500 mb-6">
-            Isi form di bawah dan upload CV (PDF/DOC, maks 5MB).
-          </p>
-          <ApplicationForm openingId={job.id} openingTitle={job.title} />
-        </div>
+        {/* Apply CTA — conditional */}
+        {(job.slug || "").replace(/^\//, "").startsWith("pengajar-") ? (
+          <div className="bg-white rounded-2xl border p-6 md:p-8">
+            <h2 className="text-lg font-semibold text-gray-900 mb-2">
+              Lamar Jadi Pengajar
+            </h2>
+            <p className="text-sm text-gray-500 mb-6">
+              Proses lamar pengajar menggunakan wizard khusus — kami akan tanya
+              bahasa yang Anda ajar, level CEFR, sertifikasi (kalau ada), dan
+              minta video demo singkat. Lebih dari sekedar upload CV.
+            </p>
+            <Link
+              href="/jadi-pengajar"
+              className="inline-flex items-center justify-center gap-2 bg-[#1A9E9E] hover:bg-[#178585] text-white font-medium px-6 py-2.5 rounded-lg transition-colors"
+            >
+              Lamar Jadi Pengajar →
+            </Link>
+          </div>
+        ) : (
+          <div className="bg-white rounded-2xl border p-6 md:p-8">
+            <h2 className="text-lg font-semibold text-gray-900 mb-1">
+              Lamar Sekarang
+            </h2>
+            <p className="text-sm text-gray-500 mb-6">
+              Isi form di bawah dan upload CV (PDF/DOC, maks 5MB).
+            </p>
+            <ApplicationForm openingId={job.id} openingTitle={job.title} />
+          </div>
+        )}
       </div>
     </div>
   );
