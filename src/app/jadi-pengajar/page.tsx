@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { WILAYAH_ID } from "@/lib/wilayah-id";
-import { languages, regionLabels } from "@/lib/languages";
+import { languages, regionLabels } from "@/data/curriculum/languages";
 
 const WA = "https://wa.me/6282130113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
