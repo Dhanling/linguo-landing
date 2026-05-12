@@ -49,6 +49,39 @@ const LEVEL_OPTIONS = [
 
 const langNameBySlug = (slug: string) => languages.find(l => l.slug === slug)?.name ?? slug;
 
+// ---- Dup detection helpers ----
+type DupStatus = "idle" | "checking" | "ok" | "blocking";
+type DupCheck = { status: DupStatus; appStatus?: string };
+
+// Pesan personalized per status existing application
+const STATUS_MESSAGES: Record<string, string> = {
+  submitted: "Pendaftaran kamu sedang menunggu review. Tim kami akan menghubungi via WhatsApp dalam 1–3 hari kerja.",
+  reviewed: "Pendaftaran sudah direview tim. Tunggu kabar selanjutnya via WhatsApp.",
+  interview: "Kamu sudah masuk tahap interview. Cek WhatsApp untuk jadwal interview.",
+  accepted: "Kamu sudah diterima! Tunggu info onboarding via WhatsApp.",
+  onboarded: "Kamu sudah jadi pengajar Linguo. Login ke dashboard pengajar untuk mulai mengajar.",
+};
+
+function normalizePhone(raw: string): string {
+  const digits = (raw || "").replace(/\D/g, "");
+  if (digits.startsWith("62")) return digits;
+  if (digits.startsWith("0")) return "62" + digits.slice(1);
+  return digits;
+}
+
+// ---- Tier kids ----
+const KIDS_TIERS = [
+  { value: "little_learner", label: "Little Learner", age: "4–6 tahun", icon: "🧒" },
+  { value: "young_explorer", label: "Young Explorer", age: "7–12 tahun", icon: "👦" },
+] as const;
+
+// ---- Mode mengajar ----
+const TEACHING_MODES = [
+  { value: "online", label: "Online", desc: "Via Zoom", icon: "💻" },
+  { value: "offline", label: "Offline", desc: "Tatap muka", icon: "🏫" },
+  { value: "both", label: "Keduanya", desc: "Online & offline", icon: "🔄" },
+] as const;
+
 export default function JadiPengajarPage() {
   const [step, setStep] = useState(0); // 0 = landing, 1-4 = wizard steps
   const [loading, setLoading] = useState(false);
@@ -61,10 +94,19 @@ export default function JadiPengajarPage() {
   const [city, setCity] = useState("");
   const [province, setProvince] = useState("");
 
+  // Step 1: Dup check states
+  const [emailCheck, setEmailCheck] = useState<DupCheck>({ status: "idle" });
+  const [phoneCheck, setPhoneCheck] = useState<DupCheck>({ status: "idle" });
+  const [lastCheckedEmail, setLastCheckedEmail] = useState("");
+  const [lastCheckedPhone, setLastCheckedPhone] = useState("");
+
   // Step 2: Bahasa & Kualifikasi
   const [langSkills, setLangSkills] = useState<{ lang: string; level: string }[]>([{ lang: "", level: "" }]);
   const [tier, setTier] = useState("");
   const [certInfo, setCertInfo] = useState("");
+  const [teachingMode, setTeachingMode] = useState<"" | "online" | "offline" | "both">("");
+  const [canTeachKids, setCanTeachKids] = useState<null | boolean>(null);
+  const [kidsTiers, setKidsTiers] = useState<string[]>([]);
 
   // Step 3: Pengalaman
   const [exp, setExp] = useState("");
@@ -83,10 +125,87 @@ export default function JadiPengajarPage() {
   const validSkills = langSkills.filter(s => s.lang && s.level);
   const hasIncompleteSkill = langSkills.some(s => (s.lang && !s.level) || (!s.lang && s.level));
 
+  const toggleKidsTier = (tier: string) => {
+    setKidsTiers(kidsTiers.includes(tier)
+      ? kidsTiers.filter(t => t !== tier)
+      : [...kidsTiers, tier]
+    );
+  };
+
+  // ---- Dup check API ----
+  async function checkDuplicate(field: "email" | "phone", rawValue: string) {
+    const value = field === "email" ? rawValue.trim().toLowerCase() : rawValue;
+    const param = field === "email"
+      ? `email=${encodeURIComponent(value)}`
+      : `phone=${encodeURIComponent(value)}`;
+    try {
+      const res = await fetch(`/api/teacher-apply?${param}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data[field] as { exists: boolean; status: string; blocking: boolean } | null;
+    } catch {
+      return null;
+    }
+  }
+
+  const handleEmailBlur = async () => {
+    const trimmed = email.trim().toLowerCase();
+    if (!trimmed) return;
+    // Basic shape validation — gak perlu check kalau jelas-jelas bukan email
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) return;
+    if (trimmed === lastCheckedEmail) return;
+    setEmailCheck({ status: "checking" });
+    setLastCheckedEmail(trimmed);
+    const result = await checkDuplicate("email", trimmed);
+    if (result?.blocking) {
+      setEmailCheck({ status: "blocking", appStatus: result.status });
+    } else {
+      setEmailCheck({ status: "ok" });
+    }
+  };
+
+  const handlePhoneBlur = async () => {
+    const normalized = normalizePhone(phone);
+    if (!normalized || normalized.length < 9) return;
+    if (normalized === lastCheckedPhone) return;
+    setPhoneCheck({ status: "checking" });
+    setLastCheckedPhone(normalized);
+    const result = await checkDuplicate("phone", phone);
+    if (result?.blocking) {
+      setPhoneCheck({ status: "blocking", appStatus: result.status });
+    } else {
+      setPhoneCheck({ status: "ok" });
+    }
+  };
+
+  // Reset check status saat field di-edit
+  const onEmailChange = (v: string) => {
+    setEmail(v);
+    if (emailCheck.status !== "idle") setEmailCheck({ status: "idle" });
+  };
+  const onPhoneChange = (v: string) => {
+    setPhone(v);
+    if (phoneCheck.status !== "idle") setPhoneCheck({ status: "idle" });
+  };
+
   const canNext = (s: number) => {
-    if (s === 1) return name.trim() && email.trim() && phone.trim() && province && city;
-    if (s === 2) return validSkills.length >= 1 && !hasIncompleteSkill && tier;
-    if (s === 3) return exp;
+    if (s === 1) {
+      return !!(name.trim() && email.trim() && phone.trim() && province && city)
+        && emailCheck.status !== "blocking"
+        && phoneCheck.status !== "blocking"
+        && emailCheck.status !== "checking"
+        && phoneCheck.status !== "checking";
+    }
+    if (s === 2) {
+      const kidsOk = canTeachKids === false || (canTeachKids === true && kidsTiers.length > 0);
+      return validSkills.length >= 1
+        && !hasIncompleteSkill
+        && !!tier
+        && !!teachingMode
+        && canTeachKids !== null
+        && kidsOk;
+    }
+    if (s === 3) return !!exp;
     return true;
   };
 
@@ -105,6 +224,9 @@ export default function JadiPengajarPage() {
         videoLink && `Video: ${videoLink}`,
         motivation && `Motivasi: ${motivation}`,
       ].filter(Boolean).join("\n"),
+      teaching_mode: teachingMode || null,
+      can_teach_kids: canTeachKids === true,
+      kids_tiers: canTeachKids === true ? kidsTiers : null,
     };
 
     try {
@@ -116,6 +238,16 @@ export default function JadiPengajarPage() {
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         console.error("Submit failed:", res.status, errData);
+        // Dup detected by server-side guard — bounce balik ke Step 1
+        if (res.status === 409 && errData.error === "duplicate") {
+          const msg = STATUS_MESSAGES[errData.status] || "Email atau WhatsApp kamu sudah terdaftar.";
+          alert(`${msg}\n\nKamu akan diarahkan ke Step 1 untuk mengganti kontak atau hubungi admin via WA.`);
+          setStep(1);
+          if (errData.field === "email") setEmailCheck({ status: "blocking", appStatus: errData.status });
+          if (errData.field === "phone") setPhoneCheck({ status: "blocking", appStatus: errData.status });
+          setLoading(false);
+          return;
+        }
         alert(errData.error || "Gagal mengirim pendaftaran. Silakan coba lagi atau hubungi kami langsung via WhatsApp.");
         setLoading(false);
         return;
@@ -131,7 +263,11 @@ export default function JadiPengajarPage() {
     setSuccess(true);
 
     const skillsText = validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ");
-    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${skillsText}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
+    const modeLabel = TEACHING_MODES.find(m => m.value === teachingMode)?.label ?? "-";
+    const kidsLabel = canTeachKids
+      ? kidsTiers.map(t => KIDS_TIERS.find(k => k.value === t)?.label).filter(Boolean).join(", ") || "Ya"
+      : "Tidak";
+    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${skillsText}\nMode: ${modeLabel}\nMengajar Kids: ${kidsLabel}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
     setTimeout(() => window.open(waMsg(msg), "_blank"), 1000);
   };
 
@@ -388,13 +524,77 @@ export default function JadiPengajarPage() {
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Email *</label>
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="email@example.com"
-                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    <input type="email" value={email}
+                      onChange={e => onEmailChange(e.target.value)}
+                      onBlur={handleEmailBlur}
+                      placeholder="email@example.com"
+                      className={`w-full border-2 rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors ${
+                        emailCheck.status === "blocking"
+                          ? "border-red-300 focus:border-red-500 bg-red-50/30"
+                          : emailCheck.status === "ok"
+                          ? "border-green-300 focus:border-green-500"
+                          : "border-slate-200 focus:border-[#1A9E9E]"
+                      }`} />
+                    {emailCheck.status === "checking" && (
+                      <p className="text-xs text-slate-400 mt-1.5 flex items-center gap-1.5">
+                        <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                        Mengecek email...
+                      </p>
+                    )}
+                    {emailCheck.status === "ok" && (
+                      <p className="text-xs text-green-600 mt-1.5">✓ Email belum terdaftar</p>
+                    )}
+                    {emailCheck.status === "blocking" && (
+                      <div className="mt-1.5 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-xs text-red-700 leading-relaxed">
+                          {STATUS_MESSAGES[emailCheck.appStatus!] || "Email ini sudah terdaftar di sistem kami."}
+                        </p>
+                        <a href={waMsg(`Halo, saya cek pendaftaran pengajar dengan email ${email}`)} target="_blank"
+                          className="inline-block mt-2 text-xs font-semibold text-red-700 underline hover:text-red-800">
+                          Tanya admin via WhatsApp →
+                        </a>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">No. WhatsApp *</label>
-                    <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="0812-3456-7890"
-                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                    <input type="tel" value={phone}
+                      onChange={e => onPhoneChange(e.target.value)}
+                      onBlur={handlePhoneBlur}
+                      placeholder="0812-3456-7890"
+                      className={`w-full border-2 rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors ${
+                        phoneCheck.status === "blocking"
+                          ? "border-red-300 focus:border-red-500 bg-red-50/30"
+                          : phoneCheck.status === "ok"
+                          ? "border-green-300 focus:border-green-500"
+                          : "border-slate-200 focus:border-[#1A9E9E]"
+                      }`} />
+                    {phoneCheck.status === "checking" && (
+                      <p className="text-xs text-slate-400 mt-1.5 flex items-center gap-1.5">
+                        <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                        Mengecek nomor WhatsApp...
+                      </p>
+                    )}
+                    {phoneCheck.status === "ok" && (
+                      <p className="text-xs text-green-600 mt-1.5">✓ Nomor belum terdaftar</p>
+                    )}
+                    {phoneCheck.status === "blocking" && (
+                      <div className="mt-1.5 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-xs text-red-700 leading-relaxed">
+                          {STATUS_MESSAGES[phoneCheck.appStatus!] || "Nomor WhatsApp ini sudah terdaftar di sistem kami."}
+                        </p>
+                        <a href={waMsg(`Halo, saya cek pendaftaran pengajar dengan WA ${phone}`)} target="_blank"
+                          className="inline-block mt-2 text-xs font-semibold text-red-700 underline hover:text-red-800">
+                          Tanya admin via WhatsApp →
+                        </a>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Provinsi *</label>
@@ -476,6 +676,22 @@ export default function JadiPengajarPage() {
                   </div>
                 </div>
 
+                {/* MODE MENGAJAR */}
+                <div>
+                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Mode Mengajar *</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {TEACHING_MODES.map(m => (
+                      <button key={m.value} type="button" onClick={() => setTeachingMode(m.value)}
+                        className={`text-center p-3 rounded-xl border-2 transition-all ${teachingMode === m.value ? "bg-[#1A9E9E]/5 border-[#1A9E9E]" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                        <span className="text-xl mb-1 block">{m.icon}</span>
+                        <p className="font-semibold text-xs">{m.label}</p>
+                        <p className="text-[10px] text-slate-400 mt-0.5">{m.desc}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* TIER PROFESIONAL / KOMUNITAS */}
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-2 block">Pilih Jalur *</label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -501,6 +717,46 @@ export default function JadiPengajarPage() {
                       className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
                   </div>
                 )}
+
+                {/* BISA NGAJAR KIDS */}
+                <div>
+                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Bisa Mengajar Anak-anak? *</label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button type="button" onClick={() => { setCanTeachKids(true); }}
+                      className={`text-center p-3 rounded-xl border-2 transition-all ${canTeachKids === true ? "bg-amber-50 border-amber-400" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                      <span className="text-xl mb-1 block">👶</span>
+                      <p className="font-semibold text-sm">Ya, bisa</p>
+                    </button>
+                    <button type="button" onClick={() => { setCanTeachKids(false); setKidsTiers([]); }}
+                      className={`text-center p-3 rounded-xl border-2 transition-all ${canTeachKids === false ? "bg-slate-100 border-slate-400" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                      <span className="text-xl mb-1 block">🚫</span>
+                      <p className="font-semibold text-sm">Tidak / Hanya dewasa</p>
+                    </button>
+                  </div>
+
+                  {canTeachKids === true && (
+                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}
+                      className="mt-3 p-4 bg-amber-50/50 border-2 border-amber-100 rounded-xl">
+                      <label className="text-xs font-semibold text-amber-700 mb-2 block">Pilih kelompok usia yang bisa kamu ajar * (boleh pilih keduanya)</label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {KIDS_TIERS.map(k => {
+                          const selected = kidsTiers.includes(k.value);
+                          return (
+                            <button key={k.value} type="button" onClick={() => toggleKidsTier(k.value)}
+                              className={`text-left p-3 rounded-xl border-2 transition-all flex items-start gap-2 ${selected ? "bg-white border-amber-400 ring-2 ring-amber-200" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                              <span className="text-xl">{k.icon}</span>
+                              <div className="flex-1">
+                                <p className="font-semibold text-sm">{k.label}</p>
+                                <p className="text-xs text-slate-500">{k.age}</p>
+                              </div>
+                              {selected && <span className="text-amber-500 font-bold">✓</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
               </motion.div>
             )}
 
@@ -547,8 +803,14 @@ export default function JadiPengajarPage() {
                     { label: "WhatsApp", value: phone },
                     { label: "Provinsi", value: province || "-" }, { label: "Kota", value: city || "-" },
                     { label: "Bahasa", value: validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ") || "-" },
+                    { label: "Mode Mengajar", value: TEACHING_MODES.find(m => m.value === teachingMode) ? `${TEACHING_MODES.find(m => m.value === teachingMode)!.icon} ${TEACHING_MODES.find(m => m.value === teachingMode)!.label}` : "-" },
                     { label: "Jalur", value: tier === "professional" ? "🎓 Pengajar Profesional" : "🗣️ Pengajar Komunitas" },
                     { label: "Sertifikat", value: certInfo || "-" },
+                    { label: "Mengajar Kids", value: canTeachKids === true
+                        ? (kidsTiers.length > 0
+                          ? kidsTiers.map(t => KIDS_TIERS.find(k => k.value === t)?.label ?? t).join(", ")
+                          : "Ya")
+                        : "Tidak" },
                     { label: "Pengalaman", value: exp },
                     { label: "Video", value: videoLink || "-" },
                   ].map((r, i) => (
