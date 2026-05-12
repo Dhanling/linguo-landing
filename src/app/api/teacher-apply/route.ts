@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
         level: level || null,
         experience: experience || null,
         note: note || null,
-        status: "screening",  // initial workflow state (valid CHECK value)
+        status: "submitted",  // initial state — valid per teacher_applications_status_check
       }),
     });
 
