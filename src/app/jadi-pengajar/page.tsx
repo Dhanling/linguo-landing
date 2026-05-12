@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { WILAYAH_ID } from "@/lib/wilayah-id";
+import { languages, regionLabels } from "@/lib/languages";
 
 const WA = "https://wa.me/6282130113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -22,18 +23,28 @@ const TEACHERS_TESTIMONIALS = [
   { name: "Angga", role: "Chinese & Korean Teacher", img: "/images/teachers/teacher-angga.png", quote: "Platform yang profesional dan supportive. Tim Linguo selalu bantu kalau ada kendala. Recommended!", sessions: "680 sesi" },
 ];
 
-const LANG_OPTIONS = [
-  "English", "French", "Spanish", "German", "Japanese", "Korean", "Mandarin", "Arabic",
-  "Italian", "Russian", "Portuguese", "Turkish", "Thai", "Vietnamese", "Dutch",
-  "Swedish", "Danish", "Finnish", "Polish", "Hungarian", "Georgian", "Hindi", "Bengali", "Lainnya",
-];
-
 const STEPS = [
   { num: 1, title: "Data Diri", desc: "Info kontak kamu" },
   { num: 2, title: "Bahasa & Kualifikasi", desc: "Keahlian bahasa" },
   { num: 3, title: "Pengalaman", desc: "Latar belakang" },
   { num: 4, title: "Review & Kirim", desc: "Periksa data" },
 ];
+
+const LANG_REGION_ORDER = ["european", "asian", "middle-eastern", "nusantara", "african", "other"] as const;
+const LANGS_BY_REGION = LANG_REGION_ORDER.map(region => ({
+  region,
+  label: regionLabels[region],
+  items: languages.filter(l => l.region === region).sort((a, b) => a.name.localeCompare(b.name, "id")),
+})).filter(g => g.items.length > 0);
+
+const LEVEL_OPTIONS = [
+  { value: "B2", label: "B2 (Upper Intermediate)" },
+  { value: "C1", label: "C1 (Advanced)" },
+  { value: "C2", label: "C2 (Proficient)" },
+  { value: "Native", label: "Native Speaker" },
+];
+
+const langNameBySlug = (slug: string) => languages.find(l => l.slug === slug)?.name ?? slug;
 
 export default function JadiPengajarPage() {
   const [step, setStep] = useState(0); // 0 = landing, 1-4 = wizard steps
@@ -48,8 +59,7 @@ export default function JadiPengajarPage() {
   const [province, setProvince] = useState("");
 
   // Step 2: Bahasa & Kualifikasi
-  const [langs, setLangs] = useState<string[]>([]);
-  const [level, setLevel] = useState("");
+  const [langSkills, setLangSkills] = useState<{ lang: string; level: string }[]>([{ lang: "", level: "" }]);
   const [tier, setTier] = useState("");
   const [certInfo, setCertInfo] = useState("");
 
@@ -58,13 +68,21 @@ export default function JadiPengajarPage() {
   const [videoLink, setVideoLink] = useState("");
   const [motivation, setMotivation] = useState("");
 
-  const toggleLang = (l: string) => {
-    setLangs(prev => prev.includes(l) ? prev.filter(x => x !== l) : [...prev, l]);
+  const addLangSlot = () => {
+    if (langSkills.length < 5) setLangSkills([...langSkills, { lang: "", level: "" }]);
   };
+  const removeLangSlot = (idx: number) => {
+    setLangSkills(langSkills.filter((_, i) => i !== idx));
+  };
+  const updateLangSlot = (idx: number, field: "lang" | "level", value: string) => {
+    setLangSkills(langSkills.map((s, i) => i === idx ? { ...s, [field]: value } : s));
+  };
+  const validSkills = langSkills.filter(s => s.lang && s.level);
+  const hasIncompleteSkill = langSkills.some(s => (s.lang && !s.level) || (!s.lang && s.level));
 
   const canNext = (s: number) => {
     if (s === 1) return name.trim() && email.trim() && phone.trim() && province && city;
-    if (s === 2) return langs.length > 0 && level && tier;
+    if (s === 2) return validSkills.length >= 1 && !hasIncompleteSkill && tier;
     if (s === 3) return exp;
     return true;
   };
@@ -73,8 +91,9 @@ export default function JadiPengajarPage() {
     setLoading(true);
     const payload = {
       name, email, phone, province, city,
-      languages: langs.join(", "),
-      level, experience: exp,
+      languages: validSkills.map(s => `${s.lang}|${s.level}`).join(", "),
+      level: validSkills[0]?.level ?? "",
+      experience: exp,
       note: [
         province && `Provinsi: ${province}`,
         city && `Kota: ${city}`,
@@ -108,7 +127,8 @@ export default function JadiPengajarPage() {
     setLoading(false);
     setSuccess(true);
 
-    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${langs.join(", ")}\nLevel: ${level}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
+    const skillsText = validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ");
+    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${skillsText}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
     setTimeout(() => window.open(waMsg(msg), "_blank"), 1000);
   };
 
@@ -399,26 +419,57 @@ export default function JadiPengajarPage() {
                 <div><h2 className="text-xl font-bold mb-1">Bahasa & Kualifikasi</h2><p className="text-sm text-slate-500">Pilih bahasa yang ingin kamu ajarkan</p></div>
 
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dikuasai * (bisa pilih lebih dari 1)</label>
-                  <div className="flex flex-wrap gap-2">
-                    {LANG_OPTIONS.map(l => (
-                      <button key={l} onClick={() => toggleLang(l)}
-                        className={`text-sm px-3.5 py-2 rounded-full border-2 transition-all ${langs.includes(l) ? "bg-[#1A9E9E] text-white border-[#1A9E9E]" : "bg-white text-slate-600 border-slate-200 hover:border-[#1A9E9E]/40"}`}>
-                        {l}
+                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dikuasai * (urutkan dari paling mahir, max 5)</label>
+                  <div className="space-y-3">
+                    {langSkills.map((skill, idx) => {
+                      const usedLangs = langSkills.filter((_, i) => i !== idx).map(s => s.lang).filter(Boolean);
+                      return (
+                        <div key={idx} className="flex gap-2 items-start">
+                          <div className="flex-1 grid grid-cols-2 gap-2">
+                            <div>
+                              <label className="text-[10px] font-semibold text-slate-400 mb-1 block uppercase tracking-wide">
+                                Bahasa #{idx + 1}{idx === 0 ? " (paling mahir)" : ""}
+                              </label>
+                              <select value={skill.lang} onChange={e => updateLangSlot(idx, "lang", e.target.value)}
+                                className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
+                                <option value="">Pilih bahasa...</option>
+                                {LANGS_BY_REGION.map(group => (
+                                  <optgroup key={group.region} label={group.label}>
+                                    {group.items.map(l => (
+                                      <option key={l.slug} value={l.slug} disabled={usedLangs.includes(l.slug)}>
+                                        {l.flag} {l.name}
+                                      </option>
+                                    ))}
+                                  </optgroup>
+                                ))}
+                              </select>
+                            </div>
+                            <div>
+                              <label className="text-[10px] font-semibold text-slate-400 mb-1 block uppercase tracking-wide">Level</label>
+                              <select value={skill.level} onChange={e => updateLangSlot(idx, "level", e.target.value)} disabled={!skill.lang}
+                                className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed">
+                                <option value="">Pilih level...</option>
+                                {LEVEL_OPTIONS.map(lv => (
+                                  <option key={lv.value} value={lv.value}>{lv.label}</option>
+                                ))}
+                              </select>
+                            </div>
+                          </div>
+                          {idx > 0 && (
+                            <button type="button" onClick={() => removeLangSlot(idx)} aria-label="Hapus bahasa"
+                              className="mt-6 h-10 w-10 flex-shrink-0 flex items-center justify-center rounded-xl text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors text-xl leading-none">
+                              ×
+                            </button>
+                          )}
+                        </div>
+                      );
+                    })}
+                    {langSkills.length < 5 && (
+                      <button type="button" onClick={addLangSlot}
+                        className="text-sm text-[#1A9E9E] font-semibold hover:bg-[#1A9E9E]/5 px-4 py-2 rounded-lg transition-colors">
+                        + Tambah bahasa
                       </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Level Kemampuan *</label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {["B2 (Upper Intermediate)", "C1 (Advanced)", "C2 (Proficient)", "Native Speaker"].map(l => (
-                      <button key={l} onClick={() => setLevel(l)}
-                        className={`text-sm px-4 py-3 rounded-xl border-2 transition-all text-left ${level === l ? "bg-[#1A9E9E]/5 border-[#1A9E9E] text-[#1A9E9E] font-semibold" : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"}`}>
-                        {l}
-                      </button>
-                    ))}
+                    )}
                   </div>
                 </div>
 
@@ -492,8 +543,7 @@ export default function JadiPengajarPage() {
                     { label: "Email", value: email },
                     { label: "WhatsApp", value: phone },
                     { label: "Provinsi", value: province || "-" }, { label: "Kota", value: city || "-" },
-                    { label: "Bahasa", value: langs.join(", ") },
-                    { label: "Level", value: level },
+                    { label: "Bahasa", value: validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ") || "-" },
                     { label: "Jalur", value: tier === "professional" ? "🎓 Pengajar Profesional" : "🗣️ Pengajar Komunitas" },
                     { label: "Sertifikat", value: certInfo || "-" },
                     { label: "Pengalaman", value: exp },
