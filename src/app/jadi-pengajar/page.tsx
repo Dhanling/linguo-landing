@@ -4,6 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { WILAYAH_ID } from "@/lib/wilayah-id";
 import { languages, regionLabels } from "@/data/curriculum/languages";
+import {
+  Video, Users, Repeat,
+  Smile, Ban, Baby, Backpack,
+  GraduationCap, Award, Link2, AlertCircle,
+  X, Loader2, CheckCircle2,
+} from "lucide-react";
 
 const WA = "https://wa.me/6282130113243";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -53,7 +59,6 @@ const langNameBySlug = (slug: string) => languages.find(l => l.slug === slug)?.n
 type DupStatus = "idle" | "checking" | "ok" | "blocking";
 type DupCheck = { status: DupStatus; appStatus?: string };
 
-// Pesan personalized per status existing application
 const STATUS_MESSAGES: Record<string, string> = {
   submitted: "Pendaftaran kamu sedang menunggu review. Tim kami akan menghubungi via WhatsApp dalam 1–3 hari kerja.",
   reviewed: "Pendaftaran sudah direview tim. Tunggu kabar selanjutnya via WhatsApp.",
@@ -71,15 +76,15 @@ function normalizePhone(raw: string): string {
 
 // ---- Tier kids ----
 const KIDS_TIERS = [
-  { value: "little_learner", label: "Little Learner", age: "4–6 tahun", icon: "🧒" },
-  { value: "young_explorer", label: "Young Explorer", age: "7–12 tahun", icon: "👦" },
+  { value: "little_learner", label: "Little Learner", age: "4–6 tahun", Icon: Baby },
+  { value: "young_explorer", label: "Young Explorer", age: "7–12 tahun", Icon: Backpack },
 ] as const;
 
 // ---- Mode mengajar ----
 const TEACHING_MODES = [
-  { value: "online", label: "Online", desc: "Via Zoom", icon: "💻" },
-  { value: "offline", label: "Offline", desc: "Tatap muka", icon: "🏫" },
-  { value: "both", label: "Keduanya", desc: "Online & offline", icon: "🔄" },
+  { value: "online", label: "Online", desc: "Via Zoom", Icon: Video },
+  { value: "offline", label: "Offline", desc: "Tatap muka", Icon: Users },
+  { value: "both", label: "Keduanya", desc: "Online & offline", Icon: Repeat },
 ] as const;
 
 export default function JadiPengajarPage() {
@@ -102,9 +107,8 @@ export default function JadiPengajarPage() {
 
   // Step 2: Bahasa & Kualifikasi
   const [langSkills, setLangSkills] = useState<{ lang: string; level: string }[]>([{ lang: "", level: "" }]);
-  const [tier, setTier] = useState("");
-  const [certInfo, setCertInfo] = useState("");
   const [teachingMode, setTeachingMode] = useState<"" | "online" | "offline" | "both">("");
+  const [certificates, setCertificates] = useState<{ name: string; link: string }[]>([{ name: "", link: "" }]);
   const [canTeachKids, setCanTeachKids] = useState<null | boolean>(null);
   const [kidsTiers, setKidsTiers] = useState<string[]>([]);
 
@@ -113,6 +117,7 @@ export default function JadiPengajarPage() {
   const [videoLink, setVideoLink] = useState("");
   const [motivation, setMotivation] = useState("");
 
+  // ---- Lang skills helpers ----
   const addLangSlot = () => {
     if (langSkills.length < 5) setLangSkills([...langSkills, { lang: "", level: "" }]);
   };
@@ -125,10 +130,28 @@ export default function JadiPengajarPage() {
   const validSkills = langSkills.filter(s => s.lang && s.level);
   const hasIncompleteSkill = langSkills.some(s => (s.lang && !s.level) || (!s.lang && s.level));
 
-  const toggleKidsTier = (tier: string) => {
-    setKidsTiers(kidsTiers.includes(tier)
-      ? kidsTiers.filter(t => t !== tier)
-      : [...kidsTiers, tier]
+  // ---- Certificate helpers ----
+  const addCert = () => {
+    if (certificates.length < 5) setCertificates([...certificates, { name: "", link: "" }]);
+  };
+  const removeCert = (idx: number) => {
+    setCertificates(certificates.filter((_, i) => i !== idx));
+  };
+  const updateCert = (idx: number, field: "name" | "link", value: string) => {
+    setCertificates(certificates.map((c, i) => i === idx ? { ...c, [field]: value } : c));
+  };
+  const validCerts = certificates.filter(c => c.name.trim() && c.link.trim());
+  const hasIncompleteCert = certificates.some(c => {
+    const hasName = !!c.name.trim();
+    const hasLink = !!c.link.trim();
+    return (hasName && !hasLink) || (!hasName && hasLink);
+  });
+
+  // ---- Kids tier helper ----
+  const toggleKidsTier = (t: string) => {
+    setKidsTiers(kidsTiers.includes(t)
+      ? kidsTiers.filter(x => x !== t)
+      : [...kidsTiers, t]
     );
   };
 
@@ -151,7 +174,6 @@ export default function JadiPengajarPage() {
   const handleEmailBlur = async () => {
     const trimmed = email.trim().toLowerCase();
     if (!trimmed) return;
-    // Basic shape validation — gak perlu check kalau jelas-jelas bukan email
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) return;
     if (trimmed === lastCheckedEmail) return;
     setEmailCheck({ status: "checking" });
@@ -178,7 +200,6 @@ export default function JadiPengajarPage() {
     }
   };
 
-  // Reset check status saat field di-edit
   const onEmailChange = (v: string) => {
     setEmail(v);
     if (emailCheck.status !== "idle") setEmailCheck({ status: "idle" });
@@ -200,8 +221,8 @@ export default function JadiPengajarPage() {
       const kidsOk = canTeachKids === false || (canTeachKids === true && kidsTiers.length > 0);
       return validSkills.length >= 1
         && !hasIncompleteSkill
-        && !!tier
         && !!teachingMode
+        && !hasIncompleteCert
         && canTeachKids !== null
         && kidsOk;
     }
@@ -211,6 +232,9 @@ export default function JadiPengajarPage() {
 
   const handleSubmit = async () => {
     setLoading(true);
+    const certsBlock = validCerts.length > 0
+      ? `Sertifikat:\n${validCerts.map(c => `- ${c.name} (${c.link})`).join("\n")}`
+      : null;
     const payload = {
       name, email, phone, province, city,
       languages: validSkills.map(s => `${s.lang}|${s.level}`).join(", "),
@@ -219,8 +243,7 @@ export default function JadiPengajarPage() {
       note: [
         province && `Provinsi: ${province}`,
         city && `Kota: ${city}`,
-        tier && `Tier: ${tier}`,
-        certInfo && `Sertifikat: ${certInfo}`,
+        certsBlock,
         videoLink && `Video: ${videoLink}`,
         motivation && `Motivasi: ${motivation}`,
       ].filter(Boolean).join("\n"),
@@ -238,7 +261,6 @@ export default function JadiPengajarPage() {
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         console.error("Submit failed:", res.status, errData);
-        // Dup detected by server-side guard — bounce balik ke Step 1
         if (res.status === 409 && errData.error === "duplicate") {
           const msg = STATUS_MESSAGES[errData.status] || "Email atau WhatsApp kamu sudah terdaftar.";
           alert(`${msg}\n\nKamu akan diarahkan ke Step 1 untuk mengganti kontak atau hubungi admin via WA.`);
@@ -267,7 +289,10 @@ export default function JadiPengajarPage() {
     const kidsLabel = canTeachKids
       ? kidsTiers.map(t => KIDS_TIERS.find(k => k.value === t)?.label).filter(Boolean).join(", ") || "Ya"
       : "Tidak";
-    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${skillsText}\nMode: ${modeLabel}\nMengajar Kids: ${kidsLabel}\nTier: ${tier}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
+    const certsText = validCerts.length > 0
+      ? validCerts.map(c => `${c.name}: ${c.link}`).join("\n")
+      : "-";
+    const msg = `Halo, saya ${name} dan tertarik menjadi pengajar di Linguo.\n\nEmail: ${email}\nTelp: ${phone}\nProvinsi: ${province}\nKota: ${city}\nBahasa: ${skillsText}\nMode: ${modeLabel}\nMengajar Kids: ${kidsLabel}\nSertifikat:\n${certsText}\nPengalaman: ${exp}\nVideo: ${videoLink}\nMotivasi: ${motivation}`;
     setTimeout(() => window.open(waMsg(msg), "_blank"), 1000);
   };
 
@@ -537,20 +562,21 @@ export default function JadiPengajarPage() {
                       }`} />
                     {emailCheck.status === "checking" && (
                       <p className="text-xs text-slate-400 mt-1.5 flex items-center gap-1.5">
-                        <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
-                        </svg>
+                        <Loader2 className="animate-spin h-3 w-3" />
                         Mengecek email...
                       </p>
                     )}
                     {emailCheck.status === "ok" && (
-                      <p className="text-xs text-green-600 mt-1.5">✓ Email belum terdaftar</p>
+                      <p className="text-xs text-green-600 mt-1.5 flex items-center gap-1.5">
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        Email belum terdaftar
+                      </p>
                     )}
                     {emailCheck.status === "blocking" && (
                       <div className="mt-1.5 p-3 bg-red-50 border border-red-200 rounded-lg">
-                        <p className="text-xs text-red-700 leading-relaxed">
-                          {STATUS_MESSAGES[emailCheck.appStatus!] || "Email ini sudah terdaftar di sistem kami."}
+                        <p className="text-xs text-red-700 leading-relaxed flex items-start gap-2">
+                          <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                          <span>{STATUS_MESSAGES[emailCheck.appStatus!] || "Email ini sudah terdaftar di sistem kami."}</span>
                         </p>
                         <a href={waMsg(`Halo, saya cek pendaftaran pengajar dengan email ${email}`)} target="_blank"
                           className="inline-block mt-2 text-xs font-semibold text-red-700 underline hover:text-red-800">
@@ -574,20 +600,21 @@ export default function JadiPengajarPage() {
                       }`} />
                     {phoneCheck.status === "checking" && (
                       <p className="text-xs text-slate-400 mt-1.5 flex items-center gap-1.5">
-                        <svg className="animate-spin h-3 w-3" viewBox="0 0 24 24" fill="none">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
-                        </svg>
+                        <Loader2 className="animate-spin h-3 w-3" />
                         Mengecek nomor WhatsApp...
                       </p>
                     )}
                     {phoneCheck.status === "ok" && (
-                      <p className="text-xs text-green-600 mt-1.5">✓ Nomor belum terdaftar</p>
+                      <p className="text-xs text-green-600 mt-1.5 flex items-center gap-1.5">
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        Nomor belum terdaftar
+                      </p>
                     )}
                     {phoneCheck.status === "blocking" && (
                       <div className="mt-1.5 p-3 bg-red-50 border border-red-200 rounded-lg">
-                        <p className="text-xs text-red-700 leading-relaxed">
-                          {STATUS_MESSAGES[phoneCheck.appStatus!] || "Nomor WhatsApp ini sudah terdaftar di sistem kami."}
+                        <p className="text-xs text-red-700 leading-relaxed flex items-start gap-2">
+                          <AlertCircle className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                          <span>{STATUS_MESSAGES[phoneCheck.appStatus!] || "Nomor WhatsApp ini sudah terdaftar di sistem kami."}</span>
                         </p>
                         <a href={waMsg(`Halo, saya cek pendaftaran pengajar dengan WA ${phone}`)} target="_blank"
                           className="inline-block mt-2 text-xs font-semibold text-red-700 underline hover:text-red-800">
@@ -621,6 +648,7 @@ export default function JadiPengajarPage() {
               <motion.div key="step2" {...slideIn} className="space-y-6">
                 <div><h2 className="text-xl font-bold mb-1">Bahasa & Kualifikasi</h2><p className="text-sm text-slate-500">Pilih bahasa yang ingin kamu ajarkan</p></div>
 
+                {/* BAHASA */}
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-2 block">Bahasa yang Dikuasai * (urutkan dari paling mahir, max 5)</label>
                   <div className="space-y-3">
@@ -660,8 +688,8 @@ export default function JadiPengajarPage() {
                           </div>
                           {idx > 0 && (
                             <button type="button" onClick={() => removeLangSlot(idx)} aria-label="Hapus bahasa"
-                              className="mt-6 h-10 w-10 flex-shrink-0 flex items-center justify-center rounded-xl text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors text-xl leading-none">
-                              ×
+                              className="mt-6 h-10 w-10 flex-shrink-0 flex items-center justify-center rounded-xl text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors">
+                              <X size={16} />
                             </button>
                           )}
                         </div>
@@ -680,43 +708,68 @@ export default function JadiPengajarPage() {
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-2 block">Mode Mengajar *</label>
                   <div className="grid grid-cols-3 gap-2">
-                    {TEACHING_MODES.map(m => (
-                      <button key={m.value} type="button" onClick={() => setTeachingMode(m.value)}
-                        className={`text-center p-3 rounded-xl border-2 transition-all ${teachingMode === m.value ? "bg-[#1A9E9E]/5 border-[#1A9E9E]" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                        <span className="text-xl mb-1 block">{m.icon}</span>
-                        <p className="font-semibold text-xs">{m.label}</p>
-                        <p className="text-[10px] text-slate-400 mt-0.5">{m.desc}</p>
-                      </button>
-                    ))}
+                    {TEACHING_MODES.map(m => {
+                      const selected = teachingMode === m.value;
+                      const Icon = m.Icon;
+                      return (
+                        <button key={m.value} type="button" onClick={() => setTeachingMode(m.value)}
+                          className={`text-center p-3 rounded-xl border-2 transition-all ${selected ? "bg-[#1A9E9E]/5 border-[#1A9E9E]" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                          <Icon strokeWidth={1.75} className={`h-7 w-7 mb-1.5 mx-auto ${selected ? "text-[#1A9E9E]" : "text-slate-500"}`} />
+                          <p className="font-semibold text-xs">{m.label}</p>
+                          <p className="text-[10px] text-slate-400 mt-0.5">{m.desc}</p>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
-                {/* TIER PROFESIONAL / KOMUNITAS */}
+                {/* SERTIFIKAT BAHASA — multi-add, optional */}
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 mb-2 block">Pilih Jalur *</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button onClick={() => setTier("professional")}
-                      className={`text-left p-4 rounded-xl border-2 transition-all ${tier === "professional" ? "bg-[#1A9E9E]/5 border-[#1A9E9E]" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                      <span className="text-lg mb-1 block">🎓</span>
-                      <p className="font-semibold text-sm">Pengajar Profesional</p>
-                      <p className="text-xs text-slate-400 mt-1">S1 Bahasa + sertifikat</p>
-                    </button>
-                    <button onClick={() => setTier("community")}
-                      className={`text-left p-4 rounded-xl border-2 transition-all ${tier === "community" ? "bg-blue-50 border-blue-400" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                      <span className="text-lg mb-1 block">🗣️</span>
-                      <p className="font-semibold text-sm">Pengajar Komunitas</p>
-                      <p className="text-xs text-slate-400 mt-1">Fasih B2+, bisa upgrade</p>
-                    </button>
+                  <label className="text-xs font-semibold text-slate-500 mb-2 flex items-center gap-1.5">
+                    <GraduationCap className="h-4 w-4" />
+                    Sertifikat Bahasa <span className="font-normal text-slate-400">(opsional)</span>
+                  </label>
+                  <div className="mb-3 p-3 bg-amber-50/60 border border-amber-200 rounded-lg flex items-start gap-2">
+                    <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-amber-800 leading-relaxed">
+                      Lampirkan link Google Drive untuk tiap sertifikat. Pastikan akses-nya di-set <strong>"Anyone with the link can view"</strong> — jangan private/gembok, biar tim kami bisa langsung buka tanpa request access.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    {certificates.map((cert, idx) => (
+                      <div key={idx} className="flex gap-2 items-start">
+                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-5 gap-2">
+                          <div className="sm:col-span-2">
+                            <label className="text-[10px] font-semibold text-slate-400 mb-1 flex items-center gap-1 uppercase tracking-wide">
+                              <Award className="h-3 w-3" /> Sertifikat #{idx + 1}
+                            </label>
+                            <input type="text" value={cert.name} onChange={e => updateCert(idx, "name", e.target.value)} placeholder="Contoh: JLPT N2"
+                              className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                          </div>
+                          <div className="sm:col-span-3">
+                            <label className="text-[10px] font-semibold text-slate-400 mb-1 flex items-center gap-1 uppercase tracking-wide">
+                              <Link2 className="h-3 w-3" /> Link Google Drive
+                            </label>
+                            <input type="url" value={cert.link} onChange={e => updateCert(idx, "link", e.target.value)} placeholder="https://drive.google.com/..."
+                              className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+                          </div>
+                        </div>
+                        {idx > 0 && (
+                          <button type="button" onClick={() => removeCert(idx)} aria-label="Hapus sertifikat"
+                            className="mt-6 h-10 w-10 flex-shrink-0 flex items-center justify-center rounded-xl text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors">
+                            <X size={16} />
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                    {certificates.length < 5 && (
+                      <button type="button" onClick={addCert}
+                        className="text-sm text-[#1A9E9E] font-semibold hover:bg-[#1A9E9E]/5 px-4 py-2 rounded-lg transition-colors">
+                        + Tambah sertifikat
+                      </button>
+                    )}
                   </div>
                 </div>
-
-                {tier === "professional" && (
-                  <div>
-                    <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Sertifikat/Ijazah yang Dimiliki</label>
-                    <input type="text" value={certInfo} onChange={e => setCertInfo(e.target.value)} placeholder="Contoh: S1 Sastra Jepang, JLPT N2, TOPIK Level 5"
-                      className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
-                  </div>
-                )}
 
                 {/* BISA NGAJAR KIDS */}
                 <div>
@@ -724,12 +777,12 @@ export default function JadiPengajarPage() {
                   <div className="grid grid-cols-2 gap-2">
                     <button type="button" onClick={() => { setCanTeachKids(true); }}
                       className={`text-center p-3 rounded-xl border-2 transition-all ${canTeachKids === true ? "bg-amber-50 border-amber-400" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                      <span className="text-xl mb-1 block">👶</span>
+                      <Smile strokeWidth={1.75} className={`h-7 w-7 mb-1.5 mx-auto ${canTeachKids === true ? "text-amber-500" : "text-slate-500"}`} />
                       <p className="font-semibold text-sm">Ya, bisa</p>
                     </button>
                     <button type="button" onClick={() => { setCanTeachKids(false); setKidsTiers([]); }}
                       className={`text-center p-3 rounded-xl border-2 transition-all ${canTeachKids === false ? "bg-slate-100 border-slate-400" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                      <span className="text-xl mb-1 block">🚫</span>
+                      <Ban strokeWidth={1.75} className={`h-7 w-7 mb-1.5 mx-auto ${canTeachKids === false ? "text-slate-600" : "text-slate-500"}`} />
                       <p className="font-semibold text-sm">Tidak / Hanya dewasa</p>
                     </button>
                   </div>
@@ -741,15 +794,16 @@ export default function JadiPengajarPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {KIDS_TIERS.map(k => {
                           const selected = kidsTiers.includes(k.value);
+                          const Icon = k.Icon;
                           return (
                             <button key={k.value} type="button" onClick={() => toggleKidsTier(k.value)}
-                              className={`text-left p-3 rounded-xl border-2 transition-all flex items-start gap-2 ${selected ? "bg-white border-amber-400 ring-2 ring-amber-200" : "bg-white border-slate-200 hover:border-slate-300"}`}>
-                              <span className="text-xl">{k.icon}</span>
+                              className={`text-left p-3 rounded-xl border-2 transition-all flex items-start gap-2.5 ${selected ? "bg-white border-amber-400 ring-2 ring-amber-200" : "bg-white border-slate-200 hover:border-slate-300"}`}>
+                              <Icon strokeWidth={1.75} className={`h-7 w-7 flex-shrink-0 ${selected ? "text-amber-500" : "text-slate-500"}`} />
                               <div className="flex-1">
                                 <p className="font-semibold text-sm">{k.label}</p>
                                 <p className="text-xs text-slate-500">{k.age}</p>
                               </div>
-                              {selected && <span className="text-amber-500 font-bold">✓</span>}
+                              {selected && <CheckCircle2 className="h-5 w-5 text-amber-500 flex-shrink-0" />}
                             </button>
                           );
                         })}
@@ -801,11 +855,11 @@ export default function JadiPengajarPage() {
                     { label: "Nama", value: name },
                     { label: "Email", value: email },
                     { label: "WhatsApp", value: phone },
-                    { label: "Provinsi", value: province || "-" }, { label: "Kota", value: city || "-" },
+                    { label: "Provinsi", value: province || "-" },
+                    { label: "Kota", value: city || "-" },
                     { label: "Bahasa", value: validSkills.map(s => `${langNameBySlug(s.lang)} (${s.level})`).join(", ") || "-" },
-                    { label: "Mode Mengajar", value: TEACHING_MODES.find(m => m.value === teachingMode) ? `${TEACHING_MODES.find(m => m.value === teachingMode)!.icon} ${TEACHING_MODES.find(m => m.value === teachingMode)!.label}` : "-" },
-                    { label: "Jalur", value: tier === "professional" ? "🎓 Pengajar Profesional" : "🗣️ Pengajar Komunitas" },
-                    { label: "Sertifikat", value: certInfo || "-" },
+                    { label: "Mode Mengajar", value: TEACHING_MODES.find(m => m.value === teachingMode)?.label ?? "-" },
+                    { label: "Sertifikat", value: validCerts.length > 0 ? validCerts.map(c => c.name).join(", ") : "-" },
                     { label: "Mengajar Kids", value: canTeachKids === true
                         ? (kidsTiers.length > 0
                           ? kidsTiers.map(t => KIDS_TIERS.find(k => k.value === t)?.label ?? t).join(", ")
@@ -833,7 +887,7 @@ export default function JadiPengajarPage() {
             {success && (
               <motion.div key="success" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-12">
                 <div className="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-4xl">✓</span>
+                  <CheckCircle2 className="h-12 w-12 text-green-600" strokeWidth={2} />
                 </div>
                 <h2 className="text-2xl font-bold mb-3">Pendaftaran Terkirim!</h2>
                 <p className="text-slate-500 text-sm mb-8 max-w-md mx-auto">Data kamu sudah tersimpan. Tim kami akan menghubungi kamu via WhatsApp dalam 1-3 hari kerja untuk proses selanjutnya.</p>
@@ -858,7 +912,8 @@ export default function JadiPengajarPage() {
               </button>
             ) : (
               <button onClick={handleSubmit} disabled={loading}
-                className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-8 py-3 rounded-full text-sm transition-all active:scale-95 disabled:opacity-70">
+                className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-8 py-3 rounded-full text-sm transition-all active:scale-95 disabled:opacity-70 flex items-center gap-2">
+                {loading && <Loader2 className="animate-spin h-4 w-4" />}
                 {loading ? "Mengirim..." : "Kirim Pendaftaran →"}
               </button>
             )}
