@@ -38,9 +38,12 @@ const LANGS_BY_REGION = LANG_REGION_ORDER.map(region => ({
 })).filter(g => g.items.length > 0);
 
 const LEVEL_OPTIONS = [
-  { value: "B2", label: "B2 (Upper Intermediate)" },
-  { value: "C1", label: "C1 (Advanced)" },
-  { value: "C2", label: "C2 (Proficient)" },
+  { value: "A1", label: "A1 (Pemula)" },
+  { value: "A2", label: "A2 (Dasar)" },
+  { value: "B1", label: "B1 (Menengah)" },
+  { value: "B2", label: "B2 (Menengah Atas)" },
+  { value: "C1", label: "C1 (Mahir)" },
+  { value: "C2", label: "C2 (Sangat Mahir)" },
   { value: "Native", label: "Native Speaker" },
 ];
 
