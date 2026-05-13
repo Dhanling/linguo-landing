@@ -1,0 +1,596 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import {
+  Languages, Mic, Users, MessageCircleMore, CheckCircle2, Building2,
+  Stethoscope, Scale, GraduationCap, Globe, Briefcase, Calendar,
+  Clock, MapPin, FileText, Phone, Mail, Loader2, ChevronDown,
+} from "lucide-react";
+import { toast } from "sonner";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { supabase } from "@/lib/supabase-client";
+import {
+  LANGUAGES, INDUSTRIES, MODES, LOCATION_TYPES, ONLINE_PLATFORMS, BUDGET_RANGES,
+} from "@/components/interpreter/constants";
+
+// ---------------------------------------------------------------------------
+// FAQ data
+// ---------------------------------------------------------------------------
+const FAQ = [
+  {
+    q: "Berapa lama lead time minimum buat book interpreter?",
+    a: "Idealnya 5-7 hari kerja sebelum event biar kami bisa match interpreter dengan domain expertise yang tepat. Urgent booking <48 jam tetap bisa dilayani dengan availability subject to interpreter pool.",
+  },
+  {
+    q: "Equipment buat simultaneous interpreting siapa yang sediain?",
+    a: "Default-nya kami sediakan booth + headset (rental partner Jakarta/Bandung/Surabaya). Kalau venue lo udah punya, kita bisa quote service-only.",
+  },
+  {
+    q: "Bisa NDA?",
+    a: "Bisa. Untuk topik sensitif (M&A, litigasi, R&D), kami sign NDA per-engagement. Interpreter kami semua sign master NDA dengan Linguo.",
+  },
+  {
+    q: "Bahasa yang gak ada di list, available gak?",
+    a: "60+ bahasa di pool kami. Ketik di field 'Lainnya' pas isi form, tim kami konfirmasi availability dalam 24 jam.",
+  },
+  {
+    q: "Pricing model gimana?",
+    a: "Per jam, per hari, atau per project rate (untuk event multi-day). Quote dikirim WhatsApp/email dalam 24 jam setelah inquiry masuk.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Industry icons (display only)
+// ---------------------------------------------------------------------------
+const INDUSTRY_BADGES = [
+  { icon: Briefcase,    label: "Finance" },
+  { icon: Stethoscope,  label: "Healthcare" },
+  { icon: Scale,        label: "Legal" },
+  { icon: GraduationCap,label: "Education" },
+  { icon: Building2,    label: "Government" },
+  { icon: Globe,        label: "Hospitality" },
+];
+
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
+type FormState = {
+  // Section 1
+  event_title: string;
+  event_date: string;
+  is_multi_day: boolean;
+  event_end_date: string;
+  event_start_time: string;
+  event_end_time: string;
+  participant_count: string;
+  topic: string;
+  // Section 2
+  industry: string;
+  source_language: string;
+  source_language_other: string;
+  target_language: string;
+  target_language_other: string;
+  bidirectional: boolean;
+  mode: string;
+  interpreter_count: number;
+  // Section 3
+  location_type: string;
+  venue_address: string;
+  venue_city: string;
+  online_platform: string;
+  prep_materials_url: string;
+  client_notes: string;
+  // Section 4
+  company_name: string;
+  contact_name: string;
+  contact_email: string;
+  contact_phone: string;
+  budget_range: string;
+};
+
+const initialForm: FormState = {
+  event_title: "",
+  event_date: "",
+  is_multi_day: false,
+  event_end_date: "",
+  event_start_time: "",
+  event_end_time: "",
+  participant_count: "",
+  topic: "",
+  industry: "",
+  source_language: "Indonesia",
+  source_language_other: "",
+  target_language: "",
+  target_language_other: "",
+  bidirectional: true,
+  mode: "",
+  interpreter_count: 1,
+  location_type: "",
+  venue_address: "",
+  venue_city: "",
+  online_platform: "",
+  prep_materials_url: "",
+  client_notes: "",
+  company_name: "",
+  contact_name: "",
+  contact_email: "",
+  contact_phone: "",
+  budget_range: "",
+};
+
+export default function InterpreterPage() {
+  const [form, setForm] = useState<FormState>(initialForm);
+  const [submitting, setSubmitting] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const isOnsiteOrHybrid = form.location_type === "onsite" || form.location_type === "hybrid";
+  const isOnlineOrHybrid = form.location_type === "online" || form.location_type === "hybrid";
+
+  function set<K extends keyof FormState>(key: K, val: FormState[K]) {
+    setForm((f) => ({ ...f, [key]: val }));
+  }
+
+  function resolveLanguage(value: string, other: string): string {
+    return value === "Lainnya" ? other.trim() : value;
+  }
+
+  async function handleSubmit() {
+    // ----- Validation -----
+    const required: [keyof FormState, string][] = [
+      ["event_title", "Judul event"],
+      ["event_date", "Tanggal event"],
+      ["mode", "Mode interpretasi"],
+      ["location_type", "Tipe lokasi"],
+      ["company_name", "Nama perusahaan"],
+      ["contact_name", "Nama PIC"],
+      ["contact_email", "Email"],
+      ["contact_phone", "WhatsApp"],
+    ];
+    for (const [k, label] of required) {
+      if (!form[k] || (typeof form[k] === "string" && !(form[k] as string).trim())) {
+        toast.error(`${label} wajib diisi`);
+        return;
+      }
+    }
+    const srcLang = resolveLanguage(form.source_language, form.source_language_other);
+    const tgtLang = resolveLanguage(form.target_language, form.target_language_other);
+    if (!srcLang) { toast.error("Bahasa sumber wajib diisi"); return; }
+    if (!tgtLang) { toast.error("Bahasa target wajib diisi"); return; }
+    if (srcLang === tgtLang) { toast.error("Bahasa sumber dan target ga boleh sama"); return; }
+
+    if (isOnsiteOrHybrid && !form.venue_city.trim()) {
+      toast.error("Kota venue wajib diisi untuk event onsite/hybrid");
+      return;
+    }
+    if (isOnlineOrHybrid && !form.online_platform.trim()) {
+      toast.error("Platform online wajib diisi untuk event online/hybrid");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.contact_email)) {
+      toast.error("Format email tidak valid");
+      return;
+    }
+    const phoneParsed = parsePhoneNumberFromString(form.contact_phone, "ID");
+    if (!phoneParsed || !phoneParsed.isValid()) {
+      toast.error("Nomor WhatsApp tidak valid. Format: +62812... atau 0812...");
+      return;
+    }
+
+    // ----- Submit -----
+    setSubmitting(true);
+    const payload = {
+      company_name: form.company_name.trim(),
+      contact_name: form.contact_name.trim(),
+      contact_email: form.contact_email.trim().toLowerCase(),
+      contact_phone: phoneParsed.number,
+      event_title: form.event_title.trim(),
+      event_date: form.event_date,
+      event_end_date: form.is_multi_day && form.event_end_date ? form.event_end_date : null,
+      event_start_time: form.event_start_time || null,
+      event_end_time: form.event_end_time || null,
+      is_multi_day: form.is_multi_day,
+      participant_count: form.participant_count ? Number(form.participant_count) : null,
+      topic: form.topic.trim() || null,
+      industry: form.industry || null,
+      source_language: srcLang,
+      target_language: tgtLang,
+      bidirectional: form.bidirectional,
+      mode: form.mode,
+      interpreter_count: form.interpreter_count,
+      location_type: form.location_type,
+      venue_address: isOnsiteOrHybrid ? form.venue_address.trim() || null : null,
+      venue_city: isOnsiteOrHybrid ? form.venue_city.trim() || null : null,
+      online_platform: isOnlineOrHybrid ? form.online_platform || null : null,
+      prep_materials_url: form.prep_materials_url.trim() || null,
+      client_notes: form.client_notes.trim() || null,
+      budget_range: form.budget_range || null,
+      status: "new",
+    };
+
+    const { error } = await supabase.from("interpreter_requests").insert(payload);
+    setSubmitting(false);
+
+    if (error) {
+      console.error("[interpreter_requests insert]", error);
+      toast.error("Gagal kirim inquiry. Coba lagi atau hubungi kami via WhatsApp.");
+      return;
+    }
+    toast.success("Inquiry kamu masuk! Tim Linguo akan reply via WhatsApp/email dalam 24 jam.");
+    setForm(initialForm);
+    // Scroll to top
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  return (
+    <main className="min-h-screen bg-white">
+      {/* ----- HERO ----- */}
+      <section className="bg-gradient-to-b from-blue-50 via-white to-white pt-20 pb-12 sm:pt-28 sm:pb-16">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-700 mb-4">
+            <Languages className="h-4 w-4" /> Layanan Interpreter Linguo.id
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
+            Interpreter Profesional buat Event B2B Lo
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Conference, investor pitch, technical training, atau on-site visit — kami match interpreter dengan domain expertise yang tepat. 60+ bahasa, sertifikasi HPI & AIIC, pool teruji dari engagement enterprise.
+          </p>
+          <div className="mt-8 flex justify-center gap-3">
+            <a href="#form" className="rounded-lg bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-blue-700 transition">
+              Kirim Inquiry
+            </a>
+            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+               className="rounded-lg border border-gray-300 px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50 transition inline-flex items-center gap-2">
+              <MessageCircleMore className="h-4 w-4" /> WhatsApp langsung
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ----- MODE CARDS ----- */}
+      <section className="py-12 sm:py-16 border-y border-gray-100">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-2">
+            Pilih Mode yang Cocok
+          </h2>
+          <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            Bingung consecutive vs simultaneous? Singkat aja:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {MODES.map((m, i) => {
+              const Icon = [Users, Mic, MessageCircleMore][i];
+              return (
+                <div key={m.value} className="rounded-2xl border border-gray-200 p-6 hover:border-blue-300 hover:shadow-md transition">
+                  <Icon className="h-8 w-8 text-blue-600 mb-3" />
+                  <h3 className="font-semibold text-lg text-gray-900">{m.label}</h3>
+                  <p className="text-sm text-gray-600 mt-1 font-medium">{m.short}</p>
+                  <p className="text-sm text-gray-500 mt-3">{m.long}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ----- KENAPA LINGUO ----- */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
+            Kenapa Linguo.id?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              { t: "60+ bahasa, native speakers", d: "Bukan cuma English. Mandarin, Jepang, Arab, Vietnamese (Alfamart case), Korean, Spanyol — semua native atau near-native." },
+              { t: "Sertifikasi HPI, AIIC, ATA", d: "Pool interpreter kami punya kredensial industri standar — bukan agency markup ke freelancer random." },
+              { t: "Enterprise track record", d: "Trusted by Alfamart (Vietnamese program 40 sesi), GroundProbe Indonesia (English A1–B1), dan B2B lainnya." },
+              { t: "Quote dalam 24 jam", d: "Inquiry masuk → tim Linguo reply via WhatsApp/email dengan quote transparan. No ghosting." },
+            ].map((b, i) => (
+              <div key={i} className="flex gap-4">
+                <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">{b.t}</h3>
+                  <p className="text-sm text-gray-600 mt-1">{b.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ----- INDUSTRIES ----- */}
+      <section className="py-12 bg-gray-50">
+        <div className="mx-auto max-w-6xl px-4 text-center">
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-8">
+            Industri yang sering kami support
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {INDUSTRY_BADGES.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <div key={i} className="flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-2 text-sm text-gray-700">
+                  <Icon className="h-4 w-4 text-blue-600" /> {b.label}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ----- FAQ ----- */}
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
+            FAQ
+          </h2>
+          <div className="space-y-3">
+            {FAQ.map((f, i) => (
+              <div key={i} className="rounded-xl border border-gray-200">
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="flex w-full items-center justify-between px-5 py-4 text-left font-medium text-gray-900 hover:bg-gray-50 rounded-xl"
+                >
+                  <span>{f.q}</span>
+                  <ChevronDown className={`h-5 w-5 text-gray-400 transition ${openFaq === i ? "rotate-180" : ""}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-4 text-sm text-gray-600">{f.a}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ----- FORM ----- */}
+      <section id="form" className="py-12 sm:py-16 bg-gradient-to-b from-white to-blue-50">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-2">
+            Kirim Inquiry
+          </h2>
+          <p className="text-gray-600 text-center mb-8">
+            Tim Linguo akan reply via WhatsApp/email dalam 24 jam.
+          </p>
+
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 space-y-8">
+            {/* SECTION 1: Event */}
+            <FormSection icon={Calendar} title="1. Tentang Event">
+              <Field label="Judul event" required>
+                <input type="text" value={form.event_title} onChange={(e) => set("event_title", e.target.value)}
+                  placeholder="Investor Pitch Q3 2026" className={inputCls} />
+              </Field>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Field label="Tanggal event" required>
+                  <input type="date" value={form.event_date} onChange={(e) => set("event_date", e.target.value)} className={inputCls} />
+                </Field>
+                <Field label="Multi-day?">
+                  <label className="flex items-center gap-2 h-[42px] px-3">
+                    <input type="checkbox" checked={form.is_multi_day}
+                      onChange={(e) => set("is_multi_day", e.target.checked)}
+                      className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+                    <span className="text-sm text-gray-700">Event lebih dari 1 hari</span>
+                  </label>
+                </Field>
+              </div>
+              {form.is_multi_day && (
+                <Field label="Tanggal akhir">
+                  <input type="date" value={form.event_end_date}
+                    onChange={(e) => set("event_end_date", e.target.value)} className={inputCls} />
+                </Field>
+              )}
+              <div className="grid grid-cols-2 gap-4">
+                <Field label="Jam mulai">
+                  <input type="time" value={form.event_start_time}
+                    onChange={(e) => set("event_start_time", e.target.value)} className={inputCls} />
+                </Field>
+                <Field label="Jam selesai">
+                  <input type="time" value={form.event_end_time}
+                    onChange={(e) => set("event_end_time", e.target.value)} className={inputCls} />
+                </Field>
+              </div>
+              <Field label="Jumlah peserta (opsional)">
+                <input type="number" min={1} value={form.participant_count}
+                  onChange={(e) => set("participant_count", e.target.value)}
+                  placeholder="Perkiraan boleh" className={inputCls} />
+              </Field>
+              <Field label="Topik / konteks (opsional)">
+                <input type="text" value={form.topic} onChange={(e) => set("topic", e.target.value)}
+                  placeholder="Diskusi M&A keuangan, demo produk SaaS, training safety" className={inputCls} />
+              </Field>
+            </FormSection>
+
+            {/* SECTION 2: Industry & Language */}
+            <FormSection icon={Globe} title="2. Industri & Bahasa">
+              <Field label="Industri (opsional)">
+                <select value={form.industry} onChange={(e) => set("industry", e.target.value)} className={inputCls}>
+                  <option value="">Pilih industri</option>
+                  {INDUSTRIES.map((i) => <option key={i} value={i}>{i}</option>)}
+                </select>
+              </Field>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Field label="Bahasa sumber" required>
+                  <select value={form.source_language} onChange={(e) => set("source_language", e.target.value)} className={inputCls}>
+                    {LANGUAGES.map((l) => <option key={l} value={l}>{l}</option>)}
+                    <option value="Lainnya">Lainnya (ketik)</option>
+                  </select>
+                  {form.source_language === "Lainnya" && (
+                    <input type="text" value={form.source_language_other}
+                      onChange={(e) => set("source_language_other", e.target.value)}
+                      placeholder="Misalnya: Hindi, Turki, Polandia" className={`${inputCls} mt-2`} />
+                  )}
+                </Field>
+                <Field label="Bahasa target" required>
+                  <select value={form.target_language} onChange={(e) => set("target_language", e.target.value)} className={inputCls}>
+                    <option value="">Pilih bahasa</option>
+                    {LANGUAGES.map((l) => <option key={l} value={l}>{l}</option>)}
+                    <option value="Lainnya">Lainnya (ketik)</option>
+                  </select>
+                  {form.target_language === "Lainnya" && (
+                    <input type="text" value={form.target_language_other}
+                      onChange={(e) => set("target_language_other", e.target.value)}
+                      placeholder="Misalnya: Hindi, Turki, Polandia" className={`${inputCls} mt-2`} />
+                  )}
+                </Field>
+              </div>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" checked={form.bidirectional}
+                  onChange={(e) => set("bidirectional", e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+                <span className="text-sm text-gray-700">
+                  Interpreter harus translate 2 arah (sumber → target dan sebaliknya)
+                </span>
+              </label>
+
+              <Field label="Mode interpretasi" required>
+                <div className="space-y-2">
+                  {MODES.map((m) => (
+                    <label key={m.value}
+                      className={`flex gap-3 p-3 rounded-lg border cursor-pointer transition ${form.mode === m.value ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:border-gray-300"}`}>
+                      <input type="radio" name="mode" value={m.value} checked={form.mode === m.value}
+                        onChange={(e) => set("mode", e.target.value)}
+                        className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500" />
+                      <div>
+                        <div className="font-medium text-gray-900">{m.label}</div>
+                        <div className="text-xs text-gray-600 mt-0.5">{m.long}</div>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </Field>
+
+              <Field label="Jumlah interpreter">
+                <input type="number" min={1} max={10} value={form.interpreter_count}
+                  onChange={(e) => set("interpreter_count", Math.max(1, Number(e.target.value) || 1))}
+                  className={inputCls} />
+                <p className="text-xs text-gray-500 mt-1">
+                  Event panjang (&gt;2 jam) biasanya butuh 2 interpreter rotate, terutama simultaneous.
+                </p>
+              </Field>
+            </FormSection>
+
+            {/* SECTION 3: Location */}
+            <FormSection icon={MapPin} title="3. Lokasi & Materi">
+              <Field label="Tipe lokasi" required>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {LOCATION_TYPES.map((lt) => (
+                    <label key={lt.value}
+                      className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer text-sm transition ${form.location_type === lt.value ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
+                      <input type="radio" name="location_type" value={lt.value}
+                        checked={form.location_type === lt.value}
+                        onChange={(e) => set("location_type", e.target.value)}
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500" />
+                      {lt.label}
+                    </label>
+                  ))}
+                </div>
+              </Field>
+              {isOnsiteOrHybrid && (
+                <>
+                  <Field label="Alamat venue">
+                    <input type="text" value={form.venue_address}
+                      onChange={(e) => set("venue_address", e.target.value)}
+                      placeholder="Hotel Indonesia Kempinski, Jl. M.H. Thamrin No.1" className={inputCls} />
+                  </Field>
+                  <Field label="Kota" required>
+                    <input type="text" value={form.venue_city}
+                      onChange={(e) => set("venue_city", e.target.value)}
+                      placeholder="Jakarta" className={inputCls} />
+                  </Field>
+                </>
+              )}
+              {isOnlineOrHybrid && (
+                <Field label="Platform online" required>
+                  <select value={form.online_platform}
+                    onChange={(e) => set("online_platform", e.target.value)} className={inputCls}>
+                    <option value="">Pilih platform</option>
+                    {ONLINE_PLATFORMS.map((p) => <option key={p} value={p}>{p}</option>)}
+                  </select>
+                </Field>
+              )}
+              <Field label="Link materi prep (opsional)">
+                <input type="url" value={form.prep_materials_url}
+                  onChange={(e) => set("prep_materials_url", e.target.value)}
+                  placeholder="Google Drive slide/script (kalau udah ada)" className={inputCls} />
+              </Field>
+              <Field label="Catatan tambahan (opsional)">
+                <textarea value={form.client_notes} onChange={(e) => set("client_notes", e.target.value)}
+                  rows={3} placeholder="Hal yang interpreter perlu tahu sebelumnya"
+                  className={inputCls} />
+              </Field>
+            </FormSection>
+
+            {/* SECTION 4: Contact */}
+            <FormSection icon={Phone} title="4. Kontak">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Field label="Nama perusahaan" required>
+                  <input type="text" value={form.company_name}
+                    onChange={(e) => set("company_name", e.target.value)} className={inputCls} />
+                </Field>
+                <Field label="Nama PIC" required>
+                  <input type="text" value={form.contact_name}
+                    onChange={(e) => set("contact_name", e.target.value)} className={inputCls} />
+                </Field>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Field label="Email" required>
+                  <input type="email" value={form.contact_email}
+                    onChange={(e) => set("contact_email", e.target.value)}
+                    placeholder="nama@perusahaan.com" className={inputCls} />
+                </Field>
+                <Field label="WhatsApp" required>
+                  <input type="tel" value={form.contact_phone}
+                    onChange={(e) => set("contact_phone", e.target.value)}
+                    placeholder="+62812..." className={inputCls} />
+                </Field>
+              </div>
+              <Field label="Budget range (opsional)">
+                <select value={form.budget_range} onChange={(e) => set("budget_range", e.target.value)} className={inputCls}>
+                  <option value="">Pilih range</option>
+                  {BUDGET_RANGES.map((b) => <option key={b} value={b}>{b}</option>)}
+                </select>
+              </Field>
+            </FormSection>
+
+            <button onClick={handleSubmit} disabled={submitting}
+              className="w-full rounded-lg bg-blue-600 px-6 py-3.5 text-white font-semibold hover:bg-blue-700 transition disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+              {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
+              {submitting ? "Mengirim..." : "Kirim Inquiry"}
+            </button>
+            <p className="text-xs text-gray-500 text-center">
+              Dengan kirim form, lo setuju Linguo akan kontak via WhatsApp/email untuk follow-up.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// UI helpers
+// ---------------------------------------------------------------------------
+const inputCls = "w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition";
+
+function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1.5">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function FormSection({ icon: Icon, title, children }: { icon: any; title: string; children: React.ReactNode }) {
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-2 pb-2 border-b border-gray-100">
+        <Icon className="h-5 w-5 text-blue-600" />
+        <h3 className="font-semibold text-gray-900">{title}</h3>
+      </div>
+      <div className="space-y-4">{children}</div>
+    </div>
+  );
+}
