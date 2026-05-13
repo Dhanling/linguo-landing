@@ -469,7 +469,7 @@ function LingfluencerPage() {
           </button>
 
           <p className="text-xs text-slate-400 text-center leading-relaxed">
-            Setelah submit, tim Linguo akan WhatsApp kamu dalam 1-2 hari kerja
+            Setelah submit, tim Linguo akan WhatsApp kamu dalam 1-7 hari
             untuk konfirmasi & kirim paket e-learning + kode affiliate kamu.
           </p>
         </div>
@@ -601,7 +601,7 @@ function SuccessView({ name }: { name: string }) {
           <p className="text-slate-600 leading-relaxed mb-8">
             Hi <span className="font-semibold text-slate-900">{firstName}</span>
             , makasih udah join Lingfluencer. Tim Linguo akan WhatsApp kamu
-            dalam <span className="font-semibold">1-2 hari kerja</span> untuk
+            dalam <span className="font-semibold">1-7 hari</span> untuk
             konfirmasi kolaborasi, kirim paket e-learning, dan kasih kode
             affiliate kamu.
           </p>
@@ -614,7 +614,7 @@ function SuccessView({ name }: { name: string }) {
               </p>
             </div>
             <p className="text-sm text-slate-700 leading-relaxed">
-              Pastikan WhatsApp kamu aktif. Kalau dalam 2 hari kerja belum ada
+              Pastikan WhatsApp kamu aktif. Kalau dalam 7 hari belum ada
               kontak dari tim Linguo, kamu bisa follow up ke{" "}
               <a
                 href="https://wa.me/6281234567890"
