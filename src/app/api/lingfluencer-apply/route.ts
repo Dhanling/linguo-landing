@@ -207,6 +207,7 @@ export async function POST(req: NextRequest) {
         status: "registered", // valid per CHECK constraint (default new submission)
         type: "e_learning",   // valid per CHECK constraint (e_learning | private)
         followers: 0,         // belum tau, Intan isi belakangan via dashboard
+        pic_outreach: pic_name.trim(), // ALSO write to dedicated column (filterable di dashboard)
         notes: buildNotes({
           pic_name: pic_name.trim(),
           content_platforms,
