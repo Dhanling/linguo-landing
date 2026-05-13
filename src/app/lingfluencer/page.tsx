@@ -7,8 +7,9 @@ import {
   Sparkles,
   Gift,
   Percent,
-  Instagram,
-  Music2,
+  Music,
+  Video,
+  Camera,
   Image as ImageIcon,
   CheckCircle2,
   AlertCircle,
@@ -38,11 +39,11 @@ function XLogo({ size = 18, className }: { size?: number; className?: string }) 
 // ---------- constants ----------
 
 const PLATFORMS = [
-  { id: "ig_reels", label: "IG Reels", icon: Instagram },
-  { id: "ig_story", label: "IG Story", subLabel: "min. 5 story", icon: Instagram },
+  { id: "ig_reels", label: "IG Reels", icon: Video },
+  { id: "ig_story", label: "IG Story", subLabel: "min. 5 story", icon: Camera },
   { id: "ig_feeds", label: "IG Feeds", icon: ImageIcon },
   { id: "twitter", label: "X (Twitter)", subLabel: "berupa Thread", icon: XLogo },
-  { id: "tiktok", label: "TikTok", icon: Music2 },
+  { id: "tiktok", label: "TikTok", icon: Music },
 ] as const;
 
 // ---------- helpers ----------
