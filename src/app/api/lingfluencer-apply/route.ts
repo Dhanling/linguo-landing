@@ -5,6 +5,14 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 const VALID_PLATFORMS = ["ig_reels", "ig_story", "ig_feeds", "twitter", "tiktok"] as const;
 
+const PLATFORM_LABELS: Record<string, string> = {
+  ig_reels: "IG Reels",
+  ig_story: "IG Story (min. 5 story)",
+  ig_feeds: "IG Feeds",
+  twitter: "X (Twitter) Thread",
+  tiktok: "TikTok",
+};
+
 async function supaFetch(path: string, options?: RequestInit) {
   return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
     ...options,
@@ -19,8 +27,7 @@ async function supaFetch(path: string, options?: RequestInit) {
 
 /**
  * Normalize WhatsApp input to Indonesia format `628xxxxxxxxxx` (no + prefix).
- * Accepts: `628xxx`, `+628xxx`, `08xxx`, `8xxx`. Strips all non-digits first.
- * Returns null if input doesn't yield a valid 11-15 digit Indonesia number.
+ * Accepts: `628xxx`, `+628xxx`, `08xxx`, `8xxx`.
  */
 function normalizeWhatsApp(input: string): string | null {
   const digits = input.replace(/\D/g, "");
@@ -35,45 +42,68 @@ function normalizeWhatsApp(input: string): string | null {
 }
 
 /**
- * Generate referral code: `LING-XXXXXX` where X is alphanumeric excluding
- * easily-confused chars (0/O, 1/I/L). 6 chars from 32-char alphabet = ~10^9 combos.
+ * Pick primary `platform` value (singular text column in lingfluencers).
+ * Priority: IG > TikTok > Twitter. Matches existing dashboard data convention.
  */
-function generateReferralCode(): string {
-  const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
-  let code = "";
-  for (let i = 0; i < 6; i++) {
-    code += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return `LING-${code}`;
+function pickPrimaryPlatform(platforms: string[]): string {
+  if (platforms.some((p) => p.startsWith("ig_"))) return "instagram";
+  if (platforms.includes("tiktok")) return "tiktok";
+  if (platforms.includes("twitter")) return "twitter";
+  return "instagram";
 }
 
-// ---------- GET: proactive dup check (called from form onBlur of Gmail field) ----------
+/**
+ * Build structured `notes` content — captures data yang gak punya kolom dedicated
+ * (PIC, consents, full platform list).
+ */
+function buildNotes(opts: {
+  pic_name: string;
+  content_platforms: string[];
+  socmed_username: string;
+  socmed_review_consent: boolean;
+  gbusiness_review_consent: boolean;
+}): string {
+  const labels = opts.content_platforms
+    .map((p) => PLATFORM_LABELS[p] || p)
+    .join(", ");
+  const today = new Date().toISOString().slice(0, 10);
+  return [
+    `[Auto] Daftar via form publik linguo.id/lingfluencer (${today})`,
+    `PIC outreach: ${opts.pic_name}`,
+    `Platforms terpilih: ${labels}`,
+    `Username sosmed (raw): ${opts.socmed_username}`,
+    `Setuju review sosmed (max 14h): ${opts.socmed_review_consent ? "Ya" : "Tidak"}`,
+    `Setuju review Google Business (max 14h): ${opts.gbusiness_review_consent ? "Ya" : "Tidak"}`,
+  ].join("\n");
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// GET — proactive dup check by gmail
+// ─────────────────────────────────────────────────────────────────────
 export async function GET(req: NextRequest) {
   const url = new URL(req.url);
   const gmail = url.searchParams.get("gmail")?.toLowerCase().trim();
-
   if (!gmail) {
     return NextResponse.json({ error: "gmail param required" }, { status: 400 });
   }
-
   const res = await supaFetch(
-    `linguo_influencers?gmail=eq.${encodeURIComponent(gmail)}&select=id,status,created_at`
+    `lingfluencers?email=eq.${encodeURIComponent(gmail)}&select=id,status,created_at`
   );
   const rows = res.ok ? await res.json() : [];
-
   return NextResponse.json({
     exists: rows.length > 0,
     status: rows[0]?.status || null,
   });
 }
 
-// ---------- POST: submit form ----------
+// ─────────────────────────────────────────────────────────────────────
+// POST — submit form
+// ─────────────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const {
       name,
-      contact_email,
       whatsapp,
       gmail,
       content_platforms,
@@ -83,10 +113,9 @@ export async function POST(req: NextRequest) {
       gbusiness_review_consent,
     } = body;
 
-    // ----- Required fields -----
+    // ── Required field checks ────────────────────────────────────────
     if (
       !name?.trim() ||
-      !contact_email?.trim() ||
       !whatsapp?.trim() ||
       !gmail?.trim() ||
       !socmed_username?.trim() ||
@@ -98,25 +127,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ----- Gmail must be @gmail.com -----
+    // ── Gmail validation (@gmail.com required) ───────────────────────
     const gmailLower = gmail.trim().toLowerCase();
     if (!gmailLower.endsWith("@gmail.com") || !gmailLower.includes("@")) {
       return NextResponse.json(
-        { error: "Field Gmail wajib menggunakan alamat @gmail.com" },
+        { error: "Email wajib menggunakan alamat @gmail.com (buat akses paket e-learning)" },
         { status: 400 }
       );
     }
 
-    // ----- Contact email basic format -----
-    const contactEmailLower = contact_email.trim().toLowerCase();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmailLower)) {
-      return NextResponse.json(
-        { error: "Format email kontak tidak valid" },
-        { status: 400 }
-      );
-    }
-
-    // ----- Content platforms -----
+    // ── Content platforms validation ─────────────────────────────────
     if (!Array.isArray(content_platforms) || content_platforms.length === 0) {
       return NextResponse.json(
         { error: "Pilih minimal 1 platform untuk konten review" },
@@ -133,7 +153,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ----- WhatsApp normalize & validate -----
+    // ── WhatsApp normalize & validate ────────────────────────────────
     const normalizedWA = normalizeWhatsApp(whatsapp);
     if (!normalizedWA) {
       return NextResponse.json(
@@ -142,7 +162,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ----- Consent boolean -----
+    // ── Consent boolean ──────────────────────────────────────────────
     if (socmed_review_consent !== true || gbusiness_review_consent !== true) {
       return NextResponse.json(
         {
@@ -153,9 +173,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ----- Dup check on Gmail (friendly error before DB unique violation) -----
+    // ── Dup check on email (lingfluencers.email = our gmail) ─────────
     const dupRes = await supaFetch(
-      `linguo_influencers?gmail=eq.${encodeURIComponent(gmailLower)}&select=id,status`
+      `lingfluencers?email=eq.${encodeURIComponent(gmailLower)}&select=id,status`
     );
     const dupRows = dupRes.ok ? await dupRes.json() : [];
     if (dupRows.length > 0) {
@@ -168,41 +188,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ----- Generate unique referral code (retry on collision, max 5 attempts) -----
-    let referralCode = "";
-    for (let i = 0; i < 5; i++) {
-      const candidate = generateReferralCode();
-      const codeRes = await supaFetch(
-        `linguo_influencers?referral_code=eq.${candidate}&select=id`
-      );
-      const exists = codeRes.ok ? await codeRes.json() : [];
-      if (exists.length === 0) {
-        referralCode = candidate;
-        break;
-      }
-    }
-    if (!referralCode) {
-      // Statistical fallback (1B+ combos make this near-impossible, but be safe)
-      referralCode = `LING-${Date.now().toString(36).toUpperCase().slice(-6)}`;
-    }
+    // ── Build payload sesuai schema `lingfluencers` ──────────────────
+    const username = socmed_username.trim().replace(/^@/, "");
+    const usesIg = content_platforms.some((p: string) => p.startsWith("ig_"));
+    const usesTiktok = content_platforms.includes("tiktok");
+    const primaryPlatform = pickPrimaryPlatform(content_platforms);
 
-    // ----- Insert -----
-    const insertRes = await supaFetch("linguo_influencers", {
+    const insertRes = await supaFetch("lingfluencers", {
       method: "POST",
       headers: { Prefer: "return=representation" },
       body: JSON.stringify({
         name: name.trim(),
-        contact_email: contactEmailLower,
+        email: gmailLower,
         whatsapp: normalizedWA,
-        gmail: gmailLower,
-        content_platforms,
-        socmed_username: socmed_username.trim().replace(/^@/, ""),
-        pic_name: pic_name.trim(),
-        socmed_review_consent: true,
-        gbusiness_review_consent: true,
-        status: "submitted",
-        referral_code: referralCode,
-        source: "website_form",
+        ig_handle: usesIg ? username : null,
+        tiktok_handle: usesTiktok ? username : null,
+        platform: primaryPlatform,
+        status: "registered", // valid per CHECK constraint (default new submission)
+        type: "e_learning",   // valid per CHECK constraint (e_learning | private)
+        followers: 0,         // belum tau, Intan isi belakangan via dashboard
+        notes: buildNotes({
+          pic_name: pic_name.trim(),
+          content_platforms,
+          socmed_username: username,
+          socmed_review_consent,
+          gbusiness_review_consent,
+        }),
       }),
     });
 
@@ -210,10 +221,9 @@ export async function POST(req: NextRequest) {
       const err = await insertRes.text();
       console.error("Lingfluencer insert error:", insertRes.status, err);
 
-      // Race-condition fallback for unique violation
       if (insertRes.status === 409 || err.toLowerCase().includes("duplicate")) {
         return NextResponse.json(
-          { error: "Gmail ini sudah terdaftar." },
+          { error: "Email ini sudah terdaftar." },
           { status: 409 }
         );
       }
@@ -225,11 +235,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await insertRes.json();
-    return NextResponse.json({
-      success: true,
-      id: data[0]?.id,
-      referral_code: referralCode,
-    });
+    return NextResponse.json({ success: true, id: data[0]?.id });
   } catch (e: any) {
     console.error("Lingfluencer apply error:", e);
     return NextResponse.json({ error: e.message }, { status: 500 });

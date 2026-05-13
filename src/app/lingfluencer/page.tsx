@@ -14,12 +14,13 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
-  Copy,
   ExternalLink,
   Users,
 } from "lucide-react";
 
-// ---------- inline X icon (lucide-react dropped Twitter export) ----------
+// ────────────────────────────────────────────────────────────────────
+// inline X icon (lucide-react dropped Twitter export)
+// ────────────────────────────────────────────────────────────────────
 
 function XLogo({ size = 18, className }: { size?: number; className?: string }) {
   return (
@@ -36,7 +37,9 @@ function XLogo({ size = 18, className }: { size?: number; className?: string }) 
   );
 }
 
-// ---------- constants ----------
+// ────────────────────────────────────────────────────────────────────
+// constants
+// ────────────────────────────────────────────────────────────────────
 
 const PLATFORMS = [
   { id: "ig_reels", label: "IG Reels", icon: Video },
@@ -46,7 +49,9 @@ const PLATFORMS = [
   { id: "tiktok", label: "TikTok", icon: Music },
 ] as const;
 
-// ---------- helpers ----------
+// ────────────────────────────────────────────────────────────────────
+// helpers
+// ────────────────────────────────────────────────────────────────────
 
 function normalizeWaInput(input: string): string {
   const digits = input.replace(/\D/g, "");
@@ -67,7 +72,9 @@ const inputClass = (hasError: boolean) =>
       : "border-slate-200 focus:border-[#1A9E9E]"
   }`;
 
-// ---------- main wrapper (Suspense for useSearchParams in Next 16) ----------
+// ────────────────────────────────────────────────────────────────────
+// main wrapper (Suspense for useSearchParams in Next 16)
+// ────────────────────────────────────────────────────────────────────
 
 export default function LingfluencerPageWrapper() {
   return (
@@ -83,7 +90,9 @@ export default function LingfluencerPageWrapper() {
   );
 }
 
-// ---------- page ----------
+// ────────────────────────────────────────────────────────────────────
+// page
+// ────────────────────────────────────────────────────────────────────
 
 function LingfluencerPage() {
   const searchParams = useSearchParams();
@@ -91,7 +100,6 @@ function LingfluencerPage() {
 
   const [form, setForm] = useState({
     name: "",
-    contact_email: "",
     whatsapp: "",
     gmail: "",
     content_platforms: [] as string[],
@@ -104,7 +112,6 @@ function LingfluencerPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [referralCode, setReferralCode] = useState("");
   const [submitError, setSubmitError] = useState("");
 
   const togglePlatform = (id: string) => {
@@ -128,11 +135,6 @@ function LingfluencerPage() {
     const e: Record<string, string> = {};
 
     if (!form.name.trim()) e.name = "Nama wajib diisi";
-
-    const contactEmail = form.contact_email.trim();
-    if (!contactEmail) e.contact_email = "Email kontak wajib diisi";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail))
-      e.contact_email = "Format email tidak valid";
 
     const normalizedWa = normalizeWaInput(form.whatsapp);
     if (!form.whatsapp.trim()) e.whatsapp = "Nomor WhatsApp wajib diisi";
@@ -164,7 +166,6 @@ function LingfluencerPage() {
   const handleSubmit = async () => {
     setSubmitError("");
     if (!validate()) {
-      // Scroll to first error
       const firstError = document.querySelector("[data-error='true']");
       firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
@@ -179,7 +180,6 @@ function LingfluencerPage() {
           ...form,
           whatsapp: normalizeWaInput(form.whatsapp),
           gmail: form.gmail.trim().toLowerCase(),
-          contact_email: form.contact_email.trim().toLowerCase(),
         }),
       });
       const data = await res.json();
@@ -187,7 +187,6 @@ function LingfluencerPage() {
         setSubmitError(data.error || "Gagal submit, coba lagi sebentar.");
         return;
       }
-      setReferralCode(data.referral_code || "");
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err: any) {
@@ -198,7 +197,7 @@ function LingfluencerPage() {
   };
 
   if (submitted) {
-    return <SuccessView referralCode={referralCode} name={form.name} />;
+    return <SuccessView name={form.name} />;
   }
 
   return (
@@ -276,20 +275,20 @@ function LingfluencerPage() {
             />
           </Field>
 
-          {/* Email kontak */}
+          {/* Gmail (unified email — buat kontak + akses e-learning) */}
           <Field
-            label="Email Kontak"
+            label="Gmail"
             required
-            error={errors.contact_email}
-            hint="Email aktif yang sering kamu cek (boleh email apa aja, bukan harus Gmail)"
+            error={errors.gmail}
+            hint="Wajib @gmail.com — dipakai buat kontak & akses paket e-learning Linguo"
           >
             <input
               type="email"
-              value={form.contact_email}
-              onChange={(e) => updateField("contact_email", e.target.value)}
-              className={inputClass(!!errors.contact_email)}
-              placeholder="nadia@example.com"
-              data-error={!!errors.contact_email}
+              value={form.gmail}
+              onChange={(e) => updateField("gmail", e.target.value)}
+              className={inputClass(!!errors.gmail)}
+              placeholder="nadia.belajar@gmail.com"
+              data-error={!!errors.gmail}
             />
           </Field>
 
@@ -318,23 +317,6 @@ function LingfluencerPage() {
             )}
           </Field>
 
-          {/* Gmail */}
-          <Field
-            label="Gmail (Wajib @gmail.com)"
-            required
-            error={errors.gmail}
-            hint="Dipakai untuk akses paket e-learning Linguo — wajib Gmail aktif"
-          >
-            <input
-              type="email"
-              value={form.gmail}
-              onChange={(e) => updateField("gmail", e.target.value)}
-              className={inputClass(!!errors.gmail)}
-              placeholder="nadia.belajar@gmail.com"
-              data-error={!!errors.gmail}
-            />
-          </Field>
-
           {/* Platforms */}
           <Field
             label="Konten review akan dipost di mana?"
@@ -342,7 +324,10 @@ function LingfluencerPage() {
             error={errors.content_platforms}
             hint="Pilih satu atau lebih platform"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2" data-error={!!errors.content_platforms}>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+              data-error={!!errors.content_platforms}
+            >
               {PLATFORMS.map((p) => {
                 const Icon = p.icon;
                 const checked = form.content_platforms.includes(p.id);
@@ -362,15 +347,22 @@ function LingfluencerPage() {
                       className={checked ? "text-[#1A9E9E]" : "text-slate-400"}
                     />
                     <div className="flex-1">
-                      <div className={`font-semibold ${checked ? "text-[#1A9E9E]" : ""}`}>
+                      <div
+                        className={`font-semibold ${checked ? "text-[#1A9E9E]" : ""}`}
+                      >
                         {p.label}
                       </div>
                       {"subLabel" in p && p.subLabel && (
-                        <div className="text-xs text-slate-500">{p.subLabel}</div>
+                        <div className="text-xs text-slate-500">
+                          {p.subLabel}
+                        </div>
                       )}
                     </div>
                     {checked && (
-                      <CheckCircle2 size={18} className="text-[#1A9E9E] flex-shrink-0" />
+                      <CheckCircle2
+                        size={18}
+                        className="text-[#1A9E9E] flex-shrink-0"
+                      />
                     )}
                   </button>
                 );
@@ -383,7 +375,7 @@ function LingfluencerPage() {
             label="Username sosmed untuk posting konten"
             required
             error={errors.socmed_username}
-            hint="Tanpa @ — boleh 1 username utama atau pisahkan dengan koma"
+            hint="Tanpa @. Kalau pake beberapa platform dengan handle berbeda, pisahkan dengan koma"
           >
             <input
               type="text"
@@ -426,7 +418,10 @@ function LingfluencerPage() {
             <ConsentBox
               checked={form.socmed_review_consent}
               onToggle={() =>
-                updateField("socmed_review_consent", !form.socmed_review_consent)
+                updateField(
+                  "socmed_review_consent",
+                  !form.socmed_review_consent
+                )
               }
               error={errors.socmed_review_consent}
               label="Saya bersedia memberikan honest review di sosmed maksimal 14 hari setelah e-learning dikirim"
@@ -475,7 +470,7 @@ function LingfluencerPage() {
 
           <p className="text-xs text-slate-400 text-center leading-relaxed">
             Setelah submit, tim Linguo akan WhatsApp kamu dalam 1-2 hari kerja
-            untuk konfirmasi & kirim paket e-learning.
+            untuk konfirmasi & kirim paket e-learning + kode affiliate kamu.
           </p>
         </div>
       </motion.section>
@@ -483,7 +478,9 @@ function LingfluencerPage() {
   );
 }
 
-// ---------- reusable Field ----------
+// ────────────────────────────────────────────────────────────────────
+// reusable Field
+// ────────────────────────────────────────────────────────────────────
 
 function Field({
   label,
@@ -517,7 +514,9 @@ function Field({
   );
 }
 
-// ---------- ConsentBox ----------
+// ────────────────────────────────────────────────────────────────────
+// ConsentBox
+// ────────────────────────────────────────────────────────────────────
 
 function ConsentBox({
   checked,
@@ -571,30 +570,12 @@ function ConsentBox({
   );
 }
 
-// ---------- SuccessView ----------
+// ────────────────────────────────────────────────────────────────────
+// SuccessView
+// ────────────────────────────────────────────────────────────────────
 
-function SuccessView({
-  referralCode,
-  name,
-}: {
-  referralCode: string;
-  name: string;
-}) {
-  const [copied, setCopied] = useState<"code" | "url" | null>(null);
+function SuccessView({ name }: { name: string }) {
   const firstName = name.trim().split(" ")[0] || "kamu";
-  const baseUrl =
-    typeof window !== "undefined" ? window.location.origin : "https://linguo.id";
-  const referralUrl = referralCode ? `${baseUrl}/?ref=${referralCode}` : "";
-
-  const copyText = async (text: string, which: "code" | "url") => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(which);
-      setTimeout(() => setCopied(null), 2000);
-    } catch {
-      // no-op
-    }
-  };
 
   return (
     <motion.div
@@ -613,65 +594,40 @@ function SuccessView({
           <CheckCircle2 size={40} className="text-white" strokeWidth={2.5} />
         </motion.div>
 
-        <div className="text-center mb-8">
+        <div className="text-center">
           <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
             Yay, kamu udah daftar! 🎉
           </h1>
-          <p className="text-slate-600 leading-relaxed">
+          <p className="text-slate-600 leading-relaxed mb-8">
             Hi <span className="font-semibold text-slate-900">{firstName}</span>
             , makasih udah join Lingfluencer. Tim Linguo akan WhatsApp kamu
             dalam <span className="font-semibold">1-2 hari kerja</span> untuk
-            konfirmasi & kirim paket e-learning.
+            konfirmasi kolaborasi, kirim paket e-learning, dan kasih kode
+            affiliate kamu.
           </p>
-        </div>
 
-        {referralCode && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-            className="bg-white border-2 border-[#1A9E9E] rounded-2xl p-6 mb-6 shadow-sm"
-          >
-            <div className="flex items-center gap-2 mb-3">
+          <div className="bg-[#1A9E9E]/5 border border-[#1A9E9E]/20 rounded-2xl p-5 mb-6 text-left">
+            <div className="flex items-center gap-2 mb-2">
               <Sparkles size={14} className="text-[#1A9E9E]" />
               <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-wider">
-                Kode Referral Kamu
+                Next Step
               </p>
             </div>
-
-            <div className="flex items-center justify-between gap-2 mb-4">
-              <code className="text-2xl font-bold text-slate-900 font-mono tracking-wider">
-                {referralCode}
-              </code>
-              <button
-                onClick={() => copyText(referralCode, "code")}
-                className="flex-shrink-0 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 transition-colors flex items-center gap-1"
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Pastikan WhatsApp kamu aktif. Kalau dalam 2 hari kerja belum ada
+              kontak dari tim Linguo, kamu bisa follow up ke{" "}
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1A9E9E] font-semibold hover:underline"
               >
-                <Copy size={14} />
-                {copied === "code" ? "Disalin!" : "Salin"}
-              </button>
-            </div>
-
-            <p className="text-xs text-slate-500 leading-relaxed mb-3">
-              Share link di bawah ke audience kamu. Tiap pembelian e-learning
-              via link ini = komisi 10% buat kamu.
+                CS Linguo
+              </a>
+              .
             </p>
+          </div>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 flex items-center justify-between gap-2">
-              <code className="text-xs font-mono text-slate-700 break-all flex-1">
-                {referralUrl}
-              </code>
-              <button
-                onClick={() => copyText(referralUrl, "url")}
-                className="flex-shrink-0 text-[#1A9E9E] hover:text-[#157d7d] text-xs font-semibold transition-colors"
-              >
-                {copied === "url" ? "Disalin!" : "Salin link"}
-              </button>
-            </div>
-          </motion.div>
-        )}
-
-        <div className="text-center">
           <a
             href="https://linguo.id"
             className="inline-flex items-center gap-2 text-[#1A9E9E] font-semibold hover:underline"
