@@ -2,7 +2,7 @@
 
 import { useState, Fragment } from "react";
 import {
-  Languages, BadgeCheck, Wallet, Clock, Upload, Loader2, User, Briefcase, DollarSign,
+  Languages, BadgeCheck, Wallet, Clock, AlertCircle, Link2, Loader2, User, Briefcase, DollarSign,
   FileText, ChevronLeft, ChevronRight, Check, CheckCircle2, MessageCircleMore, Sparkles,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -29,7 +29,7 @@ type FormState = {
   modes: string[];
   rate_per_hour: string; rate_per_day: string;
   rate_negotiable: boolean; availability_notes: string;
-  portfolio_link: string; referral_source: string;
+  portfolio_link: string; referral_source: string; cv_url: string;
 };
 
 const initialForm: FormState = {
@@ -41,12 +41,12 @@ const initialForm: FormState = {
   modes: [],
   rate_per_hour: "", rate_per_day: "", rate_negotiable: false,
   availability_notes: "",
-  portfolio_link: "", referral_source: "",
+  cv_url: "", portfolio_link: "", referral_source: "",
 };
 
 export default function JadiInterpreterPage() {
   const [form, setForm] = useState<FormState>(initialForm);
-  const [cvFile, setCvFile] = useState<File | null>(null);
+  // cvFile state removed (CV now stored as URL in form.cv_url)
   const [step, setStep] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -67,13 +67,7 @@ export default function JadiInterpreterPage() {
     }
   }
 
-  function handleCvChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    if (file.type !== "application/pdf") { toast.error("CV harus format PDF"); return; }
-    if (file.size > 5 * 1024 * 1024) { toast.error("CV max 5 MB"); return; }
-    setCvFile(file);
-  }
+  // handleCvChange removed — CV input is now URL field
 
   function validateStep(s: number): string | null {
     if (s === 0) {
@@ -97,7 +91,9 @@ export default function JadiInterpreterPage() {
       if (form.rate_per_day && Number(form.rate_per_day) < 0) return "Rate per hari ga boleh negatif";
     }
     if (s === 3) {
-      if (!cvFile) return "Upload CV wajib (PDF, max 5 MB)";
+      const url = form.cv_url.trim();
+      if (!url) return "Link CV wajib diisi";
+      if (!/^https?:\/\/.+\..+/.test(url)) return "Link CV harus URL valid (mulai https://...)";
     }
     return null;
   }
@@ -127,21 +123,7 @@ export default function JadiInterpreterPage() {
     }
 
     setSubmitting(true);
-
-    const tempId = typeof crypto !== "undefined" && crypto.randomUUID
-      ? crypto.randomUUID()
-      : Date.now().toString();
-    const safeName = cvFile!.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const cvPath = `${tempId}/${safeName}`;
-
-    const { error: upErr } = await supabase.storage
-      .from("interpreter-cvs")
-      .upload(cvPath, cvFile!, { contentType: "application/pdf", upsert: false });
-    if (upErr) {
-      console.error("[interpreter-cvs upload]", upErr);
-      setSubmitting(false);
-      return toast.error("Gagal upload CV. Coba lagi.");
-    }
+    // CV upload removed — using URL field instead
 
     const certs = [...form.certifications];
     if (form.certification_other.trim()) certs.push(form.certification_other.trim());
@@ -169,7 +151,7 @@ export default function JadiInterpreterPage() {
       rate_per_day: form.rate_per_day ? Number(form.rate_per_day) : null,
       rate_negotiable: form.rate_negotiable,
       availability_notes: form.availability_notes.trim() || null,
-      cv_url: cvPath,
+      cv_url: form.cv_url.trim(),
       portfolio_link: form.portfolio_link.trim() || null,
       referral_source: form.referral_source || null,
       status: "screening",
@@ -190,8 +172,8 @@ export default function JadiInterpreterPage() {
   }
 
   function handleReset() {
+    // reset CV via form state (cv_url cleared with initialForm)
     setForm(initialForm);
-    setCvFile(null);
     setStep(0);
     setSubmitted(false);
   }
@@ -275,7 +257,7 @@ export default function JadiInterpreterPage() {
                   {step === 0 && <Step1Profile form={form} set={set} />}
                   {step === 1 && <Step2Profession form={form} set={set} toggleArray={toggleArray} />}
                   {step === 2 && <Step3Rate form={form} set={set} />}
-                  {step === 3 && <Step4Portfolio form={form} set={set} cvFile={cvFile} handleCvChange={handleCvChange} />}
+                  {step === 3 && <Step4Portfolio form={form} set={set} />}
                 </div>
 
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
@@ -520,17 +502,26 @@ function Step3Rate({ form, set }: any) {
 // ===========================================================================
 // Step 4: Portfolio
 // ===========================================================================
-function Step4Portfolio({ form, set, cvFile, handleCvChange }: any) {
+function Step4Portfolio({ form, set }: any) {
   return (
     <>
-      <Field label="Upload CV (PDF, max 5 MB)" required>
-        <label className="flex items-center justify-center gap-2 p-6 rounded-lg border-2 border-dashed border-gray-300 cursor-pointer hover:border-emerald-400 hover:bg-emerald-50/30 transition">
-          <Upload className="h-5 w-5 text-gray-400" />
-          <span className="text-sm text-gray-600">
-            {cvFile ? cvFile.name : "Klik untuk pilih CV (.pdf)"}
-          </span>
-          <input type="file" accept="application/pdf" onChange={handleCvChange} className="hidden" />
-        </label>
+      <Field label="Link CV (Google Drive / Dropbox / OneDrive)" required>
+        <div className="relative">
+          <Link2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+          <input type="url" value={form.cv_url}
+            onChange={(e) => set("cv_url", e.target.value)}
+            placeholder="https://drive.google.com/file/d/..."
+            className={`${inputCls} pl-9`} />
+        </div>
+        <div className="mt-2 flex items-start gap-2 p-3 rounded-lg bg-amber-50 border border-amber-200">
+          <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-amber-900 leading-relaxed">
+            <strong>Penting:</strong> Pastikan link CV bisa diakses publik.
+            Di Google Drive: klik kanan file → <strong>Share</strong> → <strong>General access</strong> →
+            ganti "Restricted" jadi <strong>"Anyone with the link"</strong> → Viewer.
+            Kalau link masih kekunci, tim review gak bisa buka CV-nya.
+          </p>
+        </div>
       </Field>
       <Field label="Link portfolio / LinkedIn (opsional)">
         <input type="url" value={form.portfolio_link}
