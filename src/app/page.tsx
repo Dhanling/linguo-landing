@@ -344,6 +344,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [progOpen, setProgOpen] = useState(false);
   const [regulerSubOpen, setRegulerSubOpen] = useState(false);
   const [etpSubOpen, setEtpSubOpen] = useState(false);
+  const [corpSubOpen, setCorpSubOpen] = useState(false); // __PATCH_NAV_CORPORATE_SUBMENU__
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
@@ -460,10 +461,38 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
                       E-Learning & E-Book
                     </a>
-                    <a href="/corporate"
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      Corporate Class
-                    </a>
+                    {/* Corporate Class + sub-items */}
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setCorpSubOpen(true)}
+                      onMouseLeave={() => setCorpSubOpen(false)}
+                    >
+                      <button
+                        onClick={() => setCorpSubOpen((v) => !v)}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
+                      >
+                        Corporate Class
+                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (corpSubOpen ? "rotate-0" : "-rotate-90")} />
+                      </button>
+                      {corpSubOpen && (
+                        <div className="absolute left-full top-0 ml-0 w-60 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
+                          <a
+                            href="/corporate"
+                            onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
+                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            📚 Language Training
+                          </a>
+                          <a
+                            href="/interpreter"
+                            onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
+                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            🎤 Interpreter Service
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </motion.div>
                 )}</AnimatePresence>
               </div>
