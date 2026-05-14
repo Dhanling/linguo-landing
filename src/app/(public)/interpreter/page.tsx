@@ -225,29 +225,60 @@ export default function InterpreterPage() {
   const StepIcon = STEPS[step].icon;
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "Poppins, sans-serif" }}>
+      {/* HEADER (sticky) */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-2 text-slate-800 hover:text-[#1A9E9E] transition-colors">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
+          </a>
+          <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20Interpreter%20Service%20Linguo" target="_blank" rel="noopener noreferrer"
+            className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95">
+            Hubungi Kami
+          </a>
+        </div>
+      </header>
       {/* HERO */}
-      <section className="bg-gradient-to-b from-blue-50 via-white to-white pt-20 pb-12 sm:pt-28 sm:pb-16">
-        <div className="mx-auto max-w-5xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-700 mb-4">
-            <Languages className="h-4 w-4" /> Layanan Interpreter Linguo.id
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0d4f4f] via-[#1A9E9E] to-[#24b8b8]" />
+        <div className="relative max-w-6xl mx-auto px-4 py-20 sm:py-28 lg:py-32">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">
+              <Languages className="h-3.5 w-3.5" /> Layanan Interpreter B2B
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              <span className="text-[#fbbf24]">Interpreter Profesional</span><br />buat Event B2B Lo
+            </h1>
+            <p className="text-white/80 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
+              Conference, investor pitch, technical training, atau on-site visit &mdash; kami match interpreter dengan domain expertise yang tepat. 60+ bahasa, sertifikasi HPI &amp; AIIC, pool teruji dari engagement enterprise.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button onClick={scrollToForm}
+                className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full transition-all active:scale-95 text-sm">
+                Kirim Inquiry
+              </button>
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
+                className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-all active:scale-95 text-sm backdrop-blur-sm border border-white/20 inline-flex items-center gap-2">
+                <MessageCircleMore className="h-4 w-4" /> Chat via WhatsApp
+              </a>
+            </div>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
-            Interpreter Profesional buat Event B2B Lo
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Conference, investor pitch, technical training, atau on-site visit — kami match interpreter dengan domain expertise yang tepat. 60+ bahasa, sertifikasi HPI &amp; AIIC, pool teruji dari engagement enterprise.
-          </p>
-          <div className="mt-8 flex justify-center gap-3 flex-wrap">
-            <button onClick={scrollToForm}
-              className="rounded-lg bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-              Kirim Inquiry
-            </button>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
-               className="rounded-lg border border-gray-300 px-6 py-3 text-gray-700 font-semibold hover:bg-gray-50 transition inline-flex items-center gap-2">
-              <MessageCircleMore className="h-4 w-4" /> WhatsApp langsung
-            </a>
-          </div>
+        </div>
+      </section>
+
+      {/* CLIENTS (logo wall) */}
+      <section className="py-10 border-b border-slate-100 bg-slate-50">
+        <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6">Dipercaya oleh perusahaan &amp; institusi terkemuka</p>
+        <div className="flex items-center justify-center flex-wrap gap-8 sm:gap-12 px-6 max-w-5xl mx-auto">
+          {[
+            { name: "AIESEC",   img: "/images/clients/aiesec.png" },
+            { name: "BINUS",    img: "/images/clients/binus.png" },
+            { name: "Gojek",    img: "/images/clients/gojek.png" },
+            { name: "KAI",      img: "/images/clients/kai.png" },
+            { name: "Mondelez", img: "/images/clients/mondelez.png" },
+          ].map((c) => (
+            <img key={c.name} src={c.img} alt={c.name} className="h-8 sm:h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" />
+          ))}
         </div>
       </section>
 
@@ -415,6 +446,19 @@ export default function InterpreterPage() {
         }
         :global(.animate-fadeSlide) { animation: fadeSlide 0.3s ease-out; }
       `}</style>
+      {/* FOOTER */}
+      <footer className="bg-[#14726E] text-white py-10">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <a href="/" className="inline-block mb-4">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-10 mx-auto" />
+          </a>
+          <p className="text-white/60 text-sm mb-2">PT. Linguo Edu Indonesia</p>
+          <p className="text-white/40 text-xs">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p>
+          <div className="border-t border-white/20 mt-6 pt-6 text-xs text-white/40">© {new Date().getFullYear()} Linguo.id</div>
+        </div>
+      </footer>
+
+      {/* sentinel: __PATCH_INTERPRETER_REDESIGN_A_CHROME__ */}
     </main>
   );
 }
