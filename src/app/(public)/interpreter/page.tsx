@@ -65,6 +65,7 @@ type FormState = {
   contact_phone: string; budget_range: string;
 };
 
+// __PATCH_INTERPRETER_REDESIGN_B_COLORS__
 const initialForm: FormState = {
   event_title: "", event_date: "", is_multi_day: false,
   event_end_date: "", event_start_time: "", event_end_time: "",
@@ -295,8 +296,8 @@ export default function InterpreterPage() {
             {MODES.map((m, i) => {
               const Icon = [Users, Mic, MessageCircleMore][i];
               return (
-                <div key={m.value} className="rounded-2xl border border-gray-200 p-6 hover:border-blue-300 hover:shadow-md transition">
-                  <Icon className="h-8 w-8 text-blue-600 mb-3" />
+                <div key={m.value} className="rounded-2xl border border-gray-200 p-6 hover:border-[#1A9E9E]/40 hover:shadow-md transition">
+                  <Icon className="h-8 w-8 text-[#1A9E9E] mb-3" />
                   <h3 className="font-semibold text-lg text-gray-900">{m.label}</h3>
                   <p className="text-sm text-gray-600 mt-1 font-medium">{m.short}</p>
                   <p className="text-sm text-gray-500 mt-3">{m.long}</p>
@@ -321,7 +322,7 @@ export default function InterpreterPage() {
               { t: "Quote dalam 24 jam",          d: "Inquiry masuk → tim Linguo reply via WhatsApp/email dengan quote transparan. No ghosting." },
             ].map((b, i) => (
               <div key={i} className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                <CheckCircle2 className="h-6 w-6 text-[#1A9E9E] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">{b.t}</h3>
                   <p className="text-sm text-gray-600 mt-1">{b.d}</p>
@@ -343,7 +344,7 @@ export default function InterpreterPage() {
               const Icon = b.icon;
               return (
                 <div key={i} className="flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-2 text-sm text-gray-700">
-                  <Icon className="h-4 w-4 text-blue-600" /> {b.label}
+                  <Icon className="h-4 w-4 text-[#1A9E9E]" /> {b.label}
                 </div>
               );
             })}
@@ -371,16 +372,16 @@ export default function InterpreterPage() {
       </section>
 
       {/* FORM (WIZARD) */}
-      <section id="form" className="py-12 sm:py-16 bg-gradient-to-b from-white to-blue-50">
+      <section id="form" className="py-16 sm:py-24 bg-gradient-to-br from-[#0d4f4f] via-[#1A9E9E] to-[#24b8b8] relative overflow-hidden">
         <div className="mx-auto max-w-3xl px-4">
           {submitted ? (
             <SuccessCard onReset={handleReset} />
           ) : (
             <>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-2">
                 Kirim Inquiry
               </h2>
-              <p className="text-gray-600 text-center mb-8">
+              <p className="text-white/70 text-center mb-8">
                 4 langkah singkat — tim Linguo reply dalam 24 jam.
               </p>
 
@@ -388,10 +389,10 @@ export default function InterpreterPage() {
               <StepIndicator step={step} jumpTo={jumpTo} />
 
               {/* Wizard card */}
-              <div id="wizard-card" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm">
+              <div id="wizard-card" className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
                 {/* Step header */}
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-                  <div className="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <div className="h-11 w-11 rounded-xl bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center">
                     <StepIcon className="h-5 w-5" />
                   </div>
                   <div>
@@ -417,12 +418,12 @@ export default function InterpreterPage() {
                   </button>
                   {step < STEPS.length - 1 ? (
                     <button type="button" onClick={handleNext}
-                      className="px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 flex items-center gap-1.5 transition shadow-lg shadow-blue-600/20">
+                      className="px-6 py-2.5 rounded-lg bg-[#1A9E9E] text-white font-semibold hover:bg-[#178888] flex items-center gap-1.5 transition shadow-lg shadow-[#1A9E9E]/20">
                       Lanjut <ChevronRight className="h-4 w-4" />
                     </button>
                   ) : (
                     <button type="button" onClick={handleSubmit} disabled={submitting}
-                      className="px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:opacity-60 flex items-center gap-1.5 transition shadow-lg shadow-blue-600/20">
+                      className="px-6 py-2.5 rounded-lg bg-[#1A9E9E] text-white font-semibold hover:bg-[#178888] disabled:opacity-60 flex items-center gap-1.5 transition shadow-lg shadow-[#1A9E9E]/20">
                       {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
                       {submitting ? "Mengirim..." : "Kirim Inquiry"}
                     </button>
@@ -430,7 +431,7 @@ export default function InterpreterPage() {
                 </div>
               </div>
 
-              <p className="text-xs text-gray-500 text-center mt-6">
+              <p className="text-xs text-white/60 text-center mt-6">
                 Dengan kirim form, lo setuju Linguo akan kontak via WhatsApp/email untuk follow-up.
               </p>
             </>
@@ -472,11 +473,11 @@ function StepIndicator({ step, jumpTo }: { step: number; jumpTo: (s: number) => 
       {/* Mobile: compact bar */}
       <div className="sm:hidden">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold text-blue-600">Step {step + 1} / {STEPS.length}</span>
+          <span className="text-xs font-semibold text-[#1A9E9E]">Step {step + 1} / {STEPS.length}</span>
           <span className="text-xs text-gray-500">{STEPS[step].title}</span>
         </div>
         <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300"
+          <div className="h-full bg-gradient-to-r from-[#1A9E9E] to-[#24b8b8] transition-all duration-300"
             style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
         </div>
       </div>
@@ -489,15 +490,15 @@ function StepIndicator({ step, jumpTo }: { step: number; jumpTo: (s: number) => 
               disabled={i > step}
               className={`group flex flex-col items-center gap-2 ${i < step ? "cursor-pointer" : i === step ? "cursor-default" : "cursor-not-allowed opacity-60"}`}>
               <div className={`h-10 w-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-200
-                ${i < step ? "bg-blue-600 text-white shadow-md shadow-blue-600/30" :
-                  i === step ? "bg-blue-600 text-white ring-4 ring-blue-100 shadow-lg shadow-blue-600/30" :
+                ${i < step ? "bg-[#1A9E9E] text-white shadow-md shadow-[#1A9E9E]/30" :
+                  i === step ? "bg-[#1A9E9E] text-white ring-4 ring-[#1A9E9E]/20 shadow-lg shadow-[#1A9E9E]/30" :
                   "bg-gray-100 text-gray-400"}`}>
                 {i < step ? <Check className="h-5 w-5" /> : i + 1}
               </div>
               <span className={`text-xs font-medium ${i <= step ? "text-gray-900" : "text-gray-400"}`}>{s.short}</span>
             </button>
             {i < STEPS.length - 1 && (
-              <div className={`h-0.5 flex-1 mx-3 mb-6 transition-all duration-300 ${i < step ? "bg-blue-600" : "bg-gray-200"}`} />
+              <div className={`h-0.5 flex-1 mx-3 mb-6 transition-all duration-300 ${i < step ? "bg-[#1A9E9E]" : "bg-gray-200"}`} />
             )}
           </Fragment>
         ))}
@@ -534,7 +535,7 @@ function Step1Event({ form, set }: any) {
           <label className="flex items-center gap-2 h-[42px] px-3 cursor-pointer">
             <input type="checkbox" checked={form.is_multi_day}
               onChange={(e) => set("is_multi_day", e.target.checked)}
-              className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+              className="h-4 w-4 rounded border-gray-300 text-[#1A9E9E] focus:ring-[#1A9E9E]" />
             <span className="text-sm text-gray-700">Event lebih dari 1 hari</span>
           </label>
         </Field>
@@ -635,7 +636,7 @@ function Step2LangMode({ form, set }: any) {
       <label className="flex items-center gap-2 cursor-pointer">
         <input type="checkbox" checked={form.bidirectional}
           onChange={(e) => set("bidirectional", e.target.checked)}
-          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+          className="h-4 w-4 rounded border-gray-300 text-[#1A9E9E] focus:ring-[#1A9E9E]" />
         <span className="text-sm text-gray-700">
           Interpreter harus translate 2 arah (sumber → target dan sebaliknya)
         </span>
@@ -644,10 +645,10 @@ function Step2LangMode({ form, set }: any) {
         <div className="space-y-2">
           {MODES.map((m) => (
             <label key={m.value}
-              className={`flex gap-3 p-3 rounded-lg border cursor-pointer transition ${form.mode === m.value ? "border-blue-500 bg-blue-50" : "border-gray-200 hover:border-gray-300"}`}>
+              className={`flex gap-3 p-3 rounded-lg border cursor-pointer transition ${form.mode === m.value ? "border-[#1A9E9E] bg-[#1A9E9E]/10" : "border-gray-200 hover:border-gray-300"}`}>
               <input type="radio" name="mode" value={m.value} checked={form.mode === m.value}
                 onChange={(e) => set("mode", e.target.value)}
-                className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500" />
+                className="mt-1 h-4 w-4 text-[#1A9E9E] focus:ring-[#1A9E9E]" />
               <div>
                 <div className="font-medium text-gray-900">{m.label}</div>
                 <div className="text-xs text-gray-600 mt-0.5">{m.long}</div>
@@ -683,11 +684,11 @@ function Step3Location({ form, set, isOnsiteOrHybrid, isOnlineOrHybrid }: any) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {LOCATION_TYPES.map((lt) => (
             <label key={lt.value}
-              className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer text-sm transition ${form.location_type === lt.value ? "border-blue-500 bg-blue-50 text-blue-700" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
+              className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer text-sm transition ${form.location_type === lt.value ? "border-[#1A9E9E] bg-[#1A9E9E]/10 text-[#1A9E9E]" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
               <input type="radio" name="location_type" value={lt.value}
                 checked={form.location_type === lt.value}
                 onChange={(e) => set("location_type", e.target.value)}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500" />
+                className="h-4 w-4 text-[#1A9E9E] focus:ring-[#1A9E9E]" />
               {lt.label}
             </label>
           ))}
@@ -777,7 +778,7 @@ function Step4Contact({ form, set }: any) {
 // ===========================================================================
 function SuccessCard({ onReset }: { onReset: () => void }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-8 sm:p-12 text-center shadow-sm">
+    <div className="bg-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl">
       <div className="mx-auto h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mb-5">
         <CheckCircle2 className="h-9 w-9 text-green-600" />
       </div>
@@ -786,12 +787,12 @@ function SuccessCard({ onReset }: { onReset: () => void }) {
         Tim Linguo akan reply via WhatsApp/email dalam <strong>24 jam</strong> dengan quote transparan.
         Cek inbox &amp; folder spam ya 😉
       </p>
-      <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm">
+      <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A9E9E]/10 text-[#1A9E9E] text-sm">
         <Sparkles className="h-4 w-4" /> Reference id udah masuk system kami
       </div>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <button onClick={onReset}
-          className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+          className="px-5 py-2.5 rounded-lg bg-[#1A9E9E] text-white font-medium hover:bg-[#178888] transition">
           Kirim Inquiry Lagi
         </button>
         <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"
@@ -829,7 +830,7 @@ function QuickChips({ options, onSelect, isActive }: {
           <button type="button" key={i} onClick={() => onSelect(val)}
             className={`px-2.5 py-1 rounded-full text-xs border transition ${
               active
-                ? "bg-blue-100 text-blue-700 border-blue-300 font-medium"
+                ? "bg-[#1A9E9E]/10 text-[#1A9E9E] border-[#1A9E9E]/40 font-medium"
                 : "bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:border-gray-300"
             }`}>
             {label}
@@ -843,7 +844,7 @@ function QuickChips({ options, onSelect, isActive }: {
 // ===========================================================================
 // UI helpers
 // ===========================================================================
-const inputCls = "w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition";
+const inputCls = "w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none transition";
 
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
