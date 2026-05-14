@@ -8,9 +8,13 @@ import {
 import { toast } from "sonner";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { supabase } from "@/lib/supabase-client";
+import Link from "next/link";
 import {
   SPECIALIZATIONS, CERTIFICATIONS, LANGUAGE_PAIRS_DEFAULT, REFERRAL_SOURCES, GENDERS, MODES,
 } from "@/components/interpreter/constants";
+
+const WA = "https://wa.me/6282130113243";
+const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
 
 const STEPS = [
   { title: "Data Diri",         short: "Profil",    icon: User },
@@ -181,44 +185,99 @@ export default function JadiInterpreterPage() {
   const StepIcon = STEPS[step].icon;
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white" style={{ fontFamily: "Poppins, sans-serif" }}>
+      {/* HEADER */}
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
+          </Link>
+          <a
+            href={waMsg("Halo, saya tertarik gabung pool interpreter Linguo.id")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95"
+          >
+            Hubungi Kami
+          </a>
+        </div>
+      </header>
+
       {/* HERO */}
-      <section className="bg-gradient-to-b from-emerald-50 via-white to-white pt-20 pb-12 sm:pt-28">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-medium text-emerald-700 mb-4">
-            <Languages className="h-4 w-4" /> Gabung Pool Interpreter Linguo.id
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">
-            Jadi Freelance Interpreter di Linguo
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Kerja remote/onsite, project B2B dari client enterprise, rate transparan.
-            Domain expertise lo (legal, medical, conference) match dengan project yang tepat.
-          </p>
-          <div className="mt-8">
-            <button onClick={scrollToForm}
-              className="rounded-lg bg-emerald-600 px-6 py-3 text-white font-semibold hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/20">
-              Daftar Sekarang
-            </button>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-emerald-700 to-emerald-500" />
+        {/* subtle radial accent */}
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, rgba(251,191,36,0.25), transparent 50%)" }} />
+        <div className="relative max-w-6xl mx-auto px-4 py-20 sm:py-28 lg:py-32">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">
+              <Languages className="h-3.5 w-3.5" /> Pool Interpreter Profesional
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              Jadi Freelance Interpreter<br />
+              di <span className="text-[#fbbf24]">Linguo.id</span>
+            </h1>
+            <p className="text-white/80 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
+              Project B2B dari klien enterprise. Rate transparan, domain matching otomatis, pembayaran tepat waktu — tanpa agency markup.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={scrollToForm}
+                className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full transition-all active:scale-95 text-sm shadow-lg shadow-amber-500/20"
+              >
+                Daftar Sekarang →
+              </button>
+              <a
+                href={waMsg("Halo, saya mau tanya dulu tentang pool interpreter Linguo.id")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-all active:scale-95 text-sm backdrop-blur-sm border border-white/20"
+              >
+                <MessageCircleMore className="h-4 w-4" /> Tanya via WA
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* STATS */}
+      <section className="py-10 border-b border-slate-100 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          {[
+            { num: "10+",      label: "Bahasa Aktif" },
+            { num: "4",        label: "Domain Spesialisasi" },
+            { num: "Rp 200K+", label: "Rate / Jam" },
+            { num: "H+7",      label: "Payout Cycle" },
+          ].map((s, i) => (
+            <div key={i}>
+              <p className="text-2xl sm:text-3xl font-bold text-emerald-600">{s.num}</p>
+              <p className="text-xs text-slate-500 mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* BENEFITS */}
-      <section className="py-12">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">Kenapa Linguo?</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Designed for Freelancers</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: Wallet,     t: "Rate kompetitif", d: "Project-based atau hourly. Quote transparan dari klien, no agency markup berlebihan." },
-              { icon: BadgeCheck, t: "Pool eksklusif",  d: "Match algorithm prioritize sertifikasi & pengalaman domain." },
-              { icon: Clock,      t: "Fleksibel",       d: "Pilih project sesuai availability. No long-term commitment, no in-house pressure." },
+              { icon: Wallet,     t: "Rate Kompetitif", d: "Project-based atau hourly. Quote transparan dari klien, no agency markup berlebihan." },
+              { icon: BadgeCheck, t: "Pool Eksklusif",  d: "Match algorithm prioritize sertifikasi & pengalaman domain — bukan lowest bidder." },
+              { icon: Clock,      t: "Fleksibel Penuh", d: "Pilih project sesuai availability. No long-term commitment, no in-house pressure." },
             ].map((b, i) => {
               const Icon = b.icon;
               return (
-                <div key={i} className="rounded-2xl border border-gray-200 p-6 hover:border-emerald-300 hover:shadow-md transition">
-                  <Icon className="h-8 w-8 text-emerald-600 mb-3" />
-                  <h3 className="font-semibold text-lg text-gray-900">{b.t}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{b.d}</p>
+                <div key={i} className="group rounded-2xl border-2 border-slate-100 bg-white p-6 hover:border-emerald-200 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 mb-4 group-hover:bg-emerald-100 transition">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-bold text-lg text-slate-900 mb-2">{b.t}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{b.d}</p>
                 </div>
               );
             })}
