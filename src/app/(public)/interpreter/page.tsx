@@ -475,6 +475,16 @@ function Step1Event({ form, set }: any) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Tanggal event" required>
           <input type="date" value={form.event_date} onChange={(e) => set("event_date", e.target.value)} className={inputCls} />
+          <QuickChips
+            options={[
+              { label: "Besok", val: addDays(1) },
+              { label: "Minggu depan", val: addDays(7) },
+              { label: "2 minggu lagi", val: addDays(14) },
+              { label: "Bulan depan", val: addDays(30) },
+            ]}
+            onSelect={(v) => set("event_date", v)}
+            isActive={(v) => form.event_date === v}
+          />
         </Field>
         <Field label="Multi-day?">
           <label className="flex items-center gap-2 h-[42px] px-3 cursor-pointer">
@@ -495,20 +505,47 @@ function Step1Event({ form, set }: any) {
         <Field label="Jam mulai">
           <input type="time" value={form.event_start_time}
             onChange={(e) => set("event_start_time", e.target.value)} className={inputCls} />
+          <QuickChips
+            options={["08:00", "09:00", "10:00", "13:00", "14:00"]}
+            onSelect={(v) => set("event_start_time", v)}
+            isActive={(v) => form.event_start_time === v}
+          />
         </Field>
         <Field label="Jam selesai">
           <input type="time" value={form.event_end_time}
             onChange={(e) => set("event_end_time", e.target.value)} className={inputCls} />
+          <QuickChips
+            options={["11:00", "12:00", "16:00", "17:00", "18:00"]}
+            onSelect={(v) => set("event_end_time", v)}
+            isActive={(v) => form.event_end_time === v}
+          />
         </Field>
       </div>
       <Field label="Jumlah peserta (opsional)">
         <input type="number" min={1} value={form.participant_count}
           onChange={(e) => set("participant_count", e.target.value)}
           placeholder="Perkiraan boleh" className={inputCls} />
+        <QuickChips
+          options={[
+            { label: "<10", val: "5" },
+            { label: "10–30", val: "20" },
+            { label: "30–50", val: "40" },
+            { label: "50–100", val: "75" },
+            { label: "100–300", val: "200" },
+            { label: ">300", val: "500" },
+          ]}
+          onSelect={(v) => set("participant_count", v)}
+          isActive={(v) => form.participant_count === v}
+        />
       </Field>
       <Field label="Topik / konteks (opsional)">
         <input type="text" value={form.topic} onChange={(e) => set("topic", e.target.value)}
           placeholder="Diskusi M&A keuangan, demo produk SaaS, training safety" className={inputCls} />
+        <QuickChips
+          options={["Investor Pitch", "Product Launch", "Training", "Conference", "Board Meeting", "Site Visit", "Workshop", "Negotiation"]}
+          onSelect={(v) => set("topic", v)}
+          isActive={(v) => form.topic === v}
+        />
       </Field>
     </>
   );
@@ -579,6 +616,11 @@ function Step2LangMode({ form, set }: any) {
         <input type="number" min={1} max={10} value={form.interpreter_count}
           onChange={(e) => set("interpreter_count", Math.max(1, Number(e.target.value) || 1))}
           className={inputCls} />
+        <QuickChips
+          options={[1, 2, 3, 4]}
+          onSelect={(v) => set("interpreter_count", v)}
+          isActive={(v) => form.interpreter_count === v}
+        />
         <p className="text-xs text-gray-500 mt-1">
           Event panjang (&gt;2 jam) biasanya butuh 2 interpreter rotate, terutama simultaneous.
         </p>
@@ -618,6 +660,11 @@ function Step3Location({ form, set, isOnsiteOrHybrid, isOnlineOrHybrid }: any) {
             <input type="text" value={form.venue_city}
               onChange={(e) => set("venue_city", e.target.value)}
               placeholder="Jakarta" className={inputCls} />
+            <QuickChips
+              options={["Jakarta", "Bandung", "Surabaya", "Bali", "Yogyakarta", "Medan", "Semarang"]}
+              onSelect={(v) => set("venue_city", v)}
+              isActive={(v) => form.venue_city === v}
+            />
           </Field>
         </>
       )}
@@ -708,6 +755,43 @@ function SuccessCard({ onReset }: { onReset: () => void }) {
           <MessageCircleMore className="h-4 w-4" /> WhatsApp Linguo
         </a>
       </div>
+    </div>
+  );
+}
+
+// ===========================================================================
+// QuickChips + date helper
+// ===========================================================================
+function addDays(days: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return d.toISOString().split("T")[0];
+}
+
+type ChipOpt = string | number | { label: string; val: any };
+function QuickChips({ options, onSelect, isActive }: {
+  options: ChipOpt[];
+  onSelect: (val: any) => void;
+  isActive?: (val: any) => boolean;
+}) {
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-2">
+      {options.map((opt, i) => {
+        const isObj = typeof opt === "object" && opt !== null && "label" in (opt as any);
+        const label = isObj ? (opt as any).label : String(opt);
+        const val = isObj ? (opt as any).val : opt;
+        const active = isActive ? isActive(val) : false;
+        return (
+          <button type="button" key={i} onClick={() => onSelect(val)}
+            className={`px-2.5 py-1 rounded-full text-xs border transition ${
+              active
+                ? "bg-blue-100 text-blue-700 border-blue-300 font-medium"
+                : "bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:border-gray-300"
+            }`}>
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }

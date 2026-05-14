@@ -377,6 +377,11 @@ function Step1Profile({ form, set }: any) {
         <Field label="Kota domisili" required>
           <input type="text" value={form.city}
             onChange={(e) => set("city", e.target.value)} placeholder="Jakarta" className={inputCls} />
+          <QuickChips
+            options={["Jakarta", "Bandung", "Surabaya", "Bali", "Yogyakarta", "Medan", "Semarang"]}
+            onSelect={(v) => set("city", v)}
+            isActive={(v) => form.city === v}
+          />
         </Field>
         <Field label="Tahun lahir (opsional)">
           <input type="number" min={1940} max={2015} value={form.birth_year}
@@ -568,6 +573,37 @@ function SuccessCard({ onReset }: { onReset: () => void }) {
           Kembali ke Beranda
         </a>
       </div>
+    </div>
+  );
+}
+
+// ===========================================================================
+// QuickChips
+// ===========================================================================
+type ChipOpt = string | number | { label: string; val: any };
+function QuickChips({ options, onSelect, isActive }: {
+  options: ChipOpt[];
+  onSelect: (val: any) => void;
+  isActive?: (val: any) => boolean;
+}) {
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-2">
+      {options.map((opt, i) => {
+        const isObj = typeof opt === "object" && opt !== null && "label" in (opt as any);
+        const label = isObj ? (opt as any).label : String(opt);
+        const val = isObj ? (opt as any).val : opt;
+        const active = isActive ? isActive(val) : false;
+        return (
+          <button type="button" key={i} onClick={() => onSelect(val)}
+            className={`px-2.5 py-1 rounded-full text-xs border transition ${
+              active
+                ? "bg-emerald-100 text-emerald-700 border-emerald-300 font-medium"
+                : "bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100 hover:border-gray-300"
+            }`}>
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }
