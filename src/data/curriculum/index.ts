@@ -5,6 +5,7 @@ import greek from "./data/greek";
 import spanish from "./data/spanish";
 import french from "./data/french";
 import german from "./data/german";
+import danish from "./data/danish"; // __PATCH_DANISH_REGISTRY__
 import ielts from "./data/ielts";
 import toeflItp from "./data/toefl-itp";
 
@@ -15,6 +16,7 @@ const registry: Record<string, LanguageCurriculum> = {
   spanish,
   french,
   german,
+  danish,
   ielts,
   "toefl-itp": toeflItp,
 };
