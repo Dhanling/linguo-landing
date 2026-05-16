@@ -8,6 +8,7 @@ import german from "./data/german";
 import danish from "./data/danish"; // __PATCH_DANISH_REGISTRY__
 import ielts from "./data/ielts";
 import toeflItp from "./data/toefl-itp";
+import norwegian from "./data/norwegian"; // __PATCH_NORWEGIAN_BUNDLE__
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
@@ -19,6 +20,7 @@ const registry: Record<string, LanguageCurriculum> = {
   danish,
   ielts,
   "toefl-itp": toeflItp,
+  norwegian,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {

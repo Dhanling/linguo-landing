@@ -26,7 +26,7 @@ export const languages: LanguageMeta[] = [
   { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: false },
   { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: false },
   { slug: "swedish",    name: "Swedia",    nativeName: "Svenska",     flag: "🇸🇪", region: "european", available: false },
-  { slug: "norwegian",  name: "Norwegia",  nativeName: "Norsk",       flag: "🇳🇴", region: "european", available: false },
+  { slug: "norwegian",  name: "Norwegia",  nativeName: "Norsk",       flag: "🇳🇴", region: "european", available: true,  description: "Bahasa Skandinavia (Bokmål) — pitch accent Tone 1/2, decimal counting, tata bahasa mirip Denmark dengan ortografi lebih intuitif. Norskprøven & Bergenstest ready." }, // __PATCH_NORWEGIAN_BUNDLE__
   { slug: "danish",     name: "Denmark",   nativeName: "Dansk",       flag: "🇩🇰", region: "european", available: true,  description: "Dari nol sampai Prøve i Dansk 3 — alfabet 29 huruf (æ ø å), stød, hygge & janteloven." }, // __PATCH_DANISH_AVAILABLE__
   { slug: "finnish",    name: "Finlandia", nativeName: "Suomi",       flag: "🇫🇮", region: "european", available: false },
   { slug: "polish",     name: "Polandia",  nativeName: "Polski",      flag: "🇵🇱", region: "european", available: false },
