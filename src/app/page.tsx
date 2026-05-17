@@ -1430,14 +1430,15 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
   );
 }
 
+// FLAT_PRICING_V1
 const PRICING_TABS = [
   {
     id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom.",
     plans:[
       {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Rp 90.000",highlighted:true,badge:"Recommended"},
-      {name:"5 Sesi",desc:"Hemat buat rutin",price:"Rp 400.000",highlighted:false},
-      {name:"10 Sesi",desc:"Serius & lebih hemat",price:"Rp 750.000",highlighted:false},
-      {name:"20 Sesi",desc:"Best value",price:"Rp 1.400.000",highlighted:false,badge:"BEST VALUE"},
+      {name:"5 Sesi",desc:"5× sesi 60 menit",price:"Rp 450.000",highlighted:false},
+      {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Rp 900.000",highlighted:false},
+      {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Rp 1.800.000",highlighted:false},
     ],
     features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 55+ Bahasa"],
     allCheck:true,wa:"Kelas Private",
