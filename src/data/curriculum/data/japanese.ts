@@ -298,7 +298,7 @@ const b2_3 = toSessions([
   [229, "Sensitivitas agama", ["Shinto + Buddhist syncretism (~85% Japanese)", "New religions (Soka Gakkai etc) — handle carefully", "Christianity ~1% — minority", "Cult issues (Aum Shinrikyo legacy) — sensitive"]],
   [230, "Humor decoded", ["Manzai — boke (fool) + tsukkomi (straight man) duo", "Word play (dajare) — beloved", "Self-deprecating + situational", "Sarcasm subtle — high context dependent"]],
   [231, "Politik conversation", ["Avoid in workplace/with strangers", "Among friends — careful", "Japanese politics — less polarized than West", "Older generations more political, younger apolitical"]],
-  [232, "Dinamika keluarga", ["Filial piety inheritance Confucian", "Mother — center of household", "Father — provider role traditional", "Hierarchical age-respect")]],
+  [232, "Dinamika keluarga", ["Filial piety inheritance Confucian", "Mother — center of household", "Father — provider role traditional", "Hierarchical age-respect"]],
   [233, "Friendship Japanese", ["友達 (tomodachi) vs 親友 (shinyuu=close friend)", "Slow to deepen but lasting", "Drinking culture builds bonds (nomikai)", "Formality between friends — uniquely Japanese"]],
   [234, "Romance language", ["愛してる (aishiteru=I love you) — POWERFUL, rarely said!", "好き (suki) = like/love (broader use)", "大好き (daisuki) = really love", "Confessions (kokuhaku 告白) — relationship-initiating ritual"]],
   [235, "Resolusi konflik", ["Indirect — avoid direct confrontation", "Apology even if not at fault — frequent", "Mediator (chukaisha) role", "Surface harmony (wa) preserved"]],
