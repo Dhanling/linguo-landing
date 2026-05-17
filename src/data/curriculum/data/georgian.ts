@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Belanja, Uang & Angka Lanjutan",
+          preview: false,
           sessions: [
             { number: 1, title: "Angka 100–10.000" },
             { number: 2, title: "Lari & Tetri — Mata Uang" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Rutinitas, Opini, Cuaca",
+          preview: false,
           sessions: [
             { number: 1, title: "Daily Routine Verbs" },
             { number: 2, title: "Frequency Adverbs" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Conditional & Hipotetis",
+          preview: false,
           sessions: [
             { number: 1, title: "Conditional Form" },
             { number: 2, title: "Hypothetical If-Clauses" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Vepkhistq'aosani — Rustaveli Bertahap",
+          preview: false,
           sessions: [
             { number: 1, title: "Rustaveli Konteks Sejarah Abad-12" },
             { number: 2, title: "Vepkhistq'aosani Prolog" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Sastra Modern Kartuli",
+          preview: false,
           sessions: [
             { number: 1, title: "Aleksandre Qazbegi Pengantar" },
             { number: 2, title: "'Elguja' Reading I" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Sastra Klasik & Polifoni Lirik",
+          preview: false,
           sessions: [
             { number: 1, title: "Polyphony — UNESCO Heritage" },
             { number: 2, title: "Krimanchuli Vocal Style" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "TIL B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "TIL Format Overview" },
             { number: 2, title: "Reading Section Strategy" },

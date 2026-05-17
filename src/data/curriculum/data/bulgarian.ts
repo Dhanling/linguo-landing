@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Пазаруване — Belanja & Servis",
+          preview: false,
           sessions: [
             { number: 1, title: "Числа Detaillu & Лев" },
             { number: 2, title: "Магазин — Билла, Кауфланд" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Future, Modal & Comparison",
+          preview: false,
           sessions: [
             { number: 1, title: "Future 'Ще' + Verb" },
             { number: 2, title: "Future Aspect Choice" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Passive, Reflexive & Idiomatic",
+          preview: false,
           sessions: [
             { number: 1, title: "Passive — Се Reflexive Style" },
             { number: 2, title: "Passive — Past Participle" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Hristo Botev — Революционен Поет",
+          preview: false,
           sessions: [
             { number: 1, title: "Hristo Botev Biografi (1848–1876)" },
             { number: 2, title: "Българско Възраждане Konteks" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Vazov, Yovkov & Модерна Литература",
+          preview: false,
           sessions: [
             { number: 1, title: "Ivan Vazov — Патриарх" },
             { number: 2, title: "'Под Игото' Reading I" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Български Култура — Cyril, Folklore, Cinema",
+          preview: false,
           sessions: [
             { number: 1, title: "Cyril & Methodius — Светите Братя" },
             { number: 2, title: "24 Май Празник на Българската Култура" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "ALTE Bulgarian B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "ALTE Bulgarian Format Overview" },
             { number: 2, title: "Четене Strategy" },

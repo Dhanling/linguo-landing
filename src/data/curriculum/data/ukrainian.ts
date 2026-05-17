@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Числа, Гроші & Покупки",
+          preview: false,
           sessions: [
             { number: 1, title: "Числа Detaillu & Гривня" },
             { number: 2, title: "Магазин — АТБ, Сільпо" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Future, Comparison & Subjunctive Hint",
+          preview: false,
           sessions: [
             { number: 1, title: "Future Imperfective — Буду + Infinitive" },
             { number: 2, title: "Future Perfective — Conjugated" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Passive, Reflexive & Idiomatic",
+          preview: false,
           sessions: [
             { number: 1, title: "Passive — Reflexive '-ся'" },
             { number: 2, title: "Passive — Past Participle" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Taras Shevchenko — Кобзар",
+          preview: false,
           sessions: [
             { number: 1, title: "Taras Shevchenko Biografi (1814–1861)" },
             { number: 2, title: "Шевченко — Народний Геній" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Lesya Ukrainka, Franko & Modern Lit",
+          preview: false,
           sessions: [
             { number: 1, title: "Lesya Ukrainka — Феміністка-Драматург" },
             { number: 2, title: "'Лісова Пісня' Reading I" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Українська Культура — Vyshyvanka, Pysanka, Borscht",
+          preview: false,
           sessions: [
             { number: 1, title: "Вишиванка — Embroidered Heritage" },
             { number: 2, title: "Регіональні Узори Вишивки" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "TUKRI B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "TUKRI Format Overview" },
             { number: 2, title: "Читання Strategy" },

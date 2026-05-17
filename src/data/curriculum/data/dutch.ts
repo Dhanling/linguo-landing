@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Eten, Winkelen & Diensten",
+          preview: false,
           sessions: [
             { number: 1, title: "Supermarkt — Albert Heijn & Jumbo" },
             { number: 2, title: "Markt — Versmarkt Tradisional" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Imperfectum & Er-Construction",
+          preview: false,
           sessions: [
             { number: 1, title: "Imperfectum Pengantar" },
             { number: 2, title: "Reguler Imperfectum -de/-te" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Wonen, Leven & Complex Prepositions",
+          preview: false,
           sessions: [
             { number: 1, title: "Wonen vs Leven Distinction" },
             { number: 2, title: "Complex Prepositions" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Anne Frank & Multatuli — Sastra Kolonial",
+          preview: false,
           sessions: [
             { number: 1, title: "Anne Frank Achtergrond" },
             { number: 2, title: "Het Achterhuis — Reading I" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Sastra Modern Belanda",
+          preview: false,
           sessions: [
             { number: 1, title: "Gerard Reve — De Avonden" },
             { number: 2, title: "W.F. Hermans — Donkere Kamer" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Poetry & Cabaret Tradition",
+          preview: false,
           sessions: [
             { number: 1, title: "Dutch Poetry — 80ers Movement" },
             { number: 2, title: "Gorter, Kloos, Boutens" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "NT2 Programma II Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "NT2 Programma II Format" },
             { number: 2, title: "Lezen Strategy" },

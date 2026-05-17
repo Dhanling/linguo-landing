@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Cumpărături & Servicii",
+          preview: false,
           sessions: [
             { number: 1, title: "Numere & Leu Detaliu" },
             { number: 2, title: "Magazin — Mega Image, Carrefour" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Future, Comparative & Subjunctive Hint",
+          preview: false,
           sessions: [
             { number: 1, title: "Future Compus — Voi + Infinitive" },
             { number: 2, title: "Alternate Future — Am Să" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Passive, Reflexive & Idiomatic",
+          preview: false,
           sessions: [
             { number: 1, title: "Passive — 'A Fi' + Participle" },
             { number: 2, title: "Reflexive Verbs '-Se'" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Mihai Eminescu — Poet Național",
+          preview: false,
           sessions: [
             { number: 1, title: "Mihai Eminescu Biografi (1850–1889)" },
             { number: 2, title: "Romantismul Românesc Konteks" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Caragiale, Sadoveanu & Literatură Modernă",
+          preview: false,
           sessions: [
             { number: 1, title: "Ion Luca Caragiale — Dramaturg" },
             { number: 2, title: "'O Scrisoare Pierdută'" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Cultură — Brâncuși, Enescu & Cinema",
+          preview: false,
           sessions: [
             { number: 1, title: "Constantin Brâncuși — Pemahat Dunia" },
             { number: 2, title: "'Coloana Infinitului' Târgu-Jiu" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "ECL Romanian B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "ECL Format Overview" },
             { number: 2, title: "Citire Strategy" },

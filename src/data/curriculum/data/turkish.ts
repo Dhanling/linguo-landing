@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Sayılar, Para & Alışveriş",
+          preview: false,
           sessions: [
             { number: 1, title: "Angka 20–1000 & Lira" },
             { number: 2, title: "Alışveriş — Pazar & AVM" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Future '-ecek/-acak' & Plans",
+          preview: false,
           sessions: [
             { number: 1, title: "Future '-ecek/-acak' Pengantar" },
             { number: 2, title: "Future Conjugation Full" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Causative & Passive Voice",
+          preview: false,
           sessions: [
             { number: 1, title: "Causative '-dir/-tir' Pengantar" },
             { number: 2, title: "Causative Chain '-tir-t'" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Yunus Emre — Tasavvuf Şiiri",
+          preview: false,
           sessions: [
             { number: 1, title: "Yunus Emre — 13. Yüzyıl Konteks" },
             { number: 2, title: "Tasavvuf & Sufi Tradition" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Orhan Pamuk & Modern Edebiyat",
+          preview: false,
           sessions: [
             { number: 1, title: "Orhan Pamuk Biografi & Nobel 2006" },
             { number: 2, title: "'Kar' Reading I" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Türk Sineması & Dizi Kültürü",
+          preview: false,
           sessions: [
             { number: 1, title: "Türk Sineması Tarihi" },
             { number: 2, title: "Yeşilçam Klasikleri" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "TÖMER B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "TÖMER Format Overview" },
             { number: 2, title: "Okuma Strategy" },

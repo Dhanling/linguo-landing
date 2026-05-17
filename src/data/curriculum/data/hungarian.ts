@@ -86,6 +86,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A1.4",
           name: "Számok, Pénz & Vásárlás",
+          preview: false,
           sessions: [
             { number: 1, title: "Számok 20–1000 & Forint" },
             { number: 2, title: "Vásárlás — Spar, Tesco" },
@@ -185,6 +186,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "A2.4",
           name: "Imperative, Politeness & Compound Verbs",
+          preview: false,
           sessions: [
             { number: 1, title: "Imperative Pengantar" },
             { number: 2, title: "Felszólító Mood Conjugation" },
@@ -284,6 +286,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B1.4",
           name: "Passive, Causative & Reflexive",
+          preview: false,
           sessions: [
             { number: 1, title: "Passive Construction" },
             { number: 2, title: "Causative '-tat/-tet'" },
@@ -383,6 +386,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.4",
           name: "Petőfi Sándor — Költő Nasional",
+          preview: false,
           sessions: [
             { number: 1, title: "Petőfi Sándor Biografi (1823–1849)" },
             { number: 2, title: "1848 Forradalom Konteks" },
@@ -405,6 +409,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.5",
           name: "Esterházy, Kertész & Modern Próza",
+          preview: false,
           sessions: [
             { number: 1, title: "Esterházy Péter — Posztmodern" },
             { number: 2, title: "'Harmonia Caelestis' Excerpts" },
@@ -427,6 +432,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.6",
           name: "Magyar Kultúra — Bartók, Liszt, Cinema",
+          preview: false,
           sessions: [
             { number: 1, title: "Bartók Béla — Etnomuzikológus" },
             { number: 2, title: "Kodály Zoltán Method" },
@@ -449,6 +455,7 @@ const curriculum: LanguageCurriculum = {
         {
           code: "B2.7",
           name: "ECL / Origó B2 Certification Sprint",
+          preview: false,
           sessions: [
             { number: 1, title: "ECL & Origó Format Overview" },
             { number: 2, title: "Olvasás Strategy" },
