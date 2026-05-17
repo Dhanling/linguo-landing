@@ -15,8 +15,8 @@ export const languages: LanguageMeta[] = [
   { slug: "french",     name: "Prancis",   nativeName: "Français",    flag: "🇫🇷", region: "european",       featured: true, available: true,  description: "DELF/DALF prep, budaya Prancis, percakapan sehari-hari." },
   { slug: "german",     name: "Jerman",    nativeName: "Deutsch",     flag: "🇩🇪", region: "european",       featured: true, available: true,  description: "Goethe A1–B2, persiapan studi di Jerman." },
   { slug: "italian",    name: "Italia",    nativeName: "Italiano",    flag: "🇮🇹", region: "european",       featured: true, available: true, description: "Dari ciao sampai conversazione — CILS ready." }, // __PATCH_ITALIAN_BUNDLE__
-  { slug: "arabic",     name: "Arab",      nativeName: "العربية",      flag: "🇸🇦", region: "middle-eastern", featured: true, available: false, description: "Fusha & Ammiyah, untuk agama, studi, atau karier." },
-  { slug: "hebrew",     name: "Ibrani",    nativeName: "עברית",        flag: "🇮🇱", region: "middle-eastern", featured: true, available: false, description: "Modern Hebrew dengan fokus percakapan & literasi." },
+  { slug: "arabic",     name: "Arab",      nativeName: "العربية",      flag: "🇸🇦", region: "middle-eastern", featured: true, available: true,  description: "Fusha & Ammiyah, untuk agama, studi, atau karier." },
+  { slug: "hebrew",     name: "Ibrani",    nativeName: "עברית",        flag: "🇮🇱", region: "middle-eastern", featured: true, available: true,  description: "Modern Hebrew dengan fokus percakapan & literasi." },
   { slug: "persian",    name: "Persia",    nativeName: "فارسی",        flag: "🇮🇷", region: "middle-eastern", featured: true, available: true,  description: "Farsi — bahasa sastra Rumi, puisi klasik & modern." },
   { slug: "javanese",   name: "Jawa",      nativeName: "Basa Jawa",   flag: "🇮🇩", region: "nusantara",      featured: true, available: false, description: "Ngoko, Krama, Krama Inggil — filosofi Jawa lengkap." },
   { slug: "sundanese",  name: "Sunda",     nativeName: "Basa Sunda",  flag: "🇮🇩", region: "nusantara",      featured: true, available: false, description: "Loma, Lemes — bahasa Pasundan autentik." },
