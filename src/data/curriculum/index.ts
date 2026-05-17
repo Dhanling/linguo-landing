@@ -8,6 +8,7 @@ import german from "./data/german";
 import danish from "./data/danish"; // __PATCH_DANISH_REGISTRY__
 import ielts from "./data/ielts";
 import toeflItp from "./data/toefl-itp";
+import italian from "./data/italian"; // __PATCH_ITALIAN_BUNDLE__
 import icelandic from "./data/icelandic"; // __PATCH_ICELANDIC_BUNDLE__
 import finnish from "./data/finnish"; // __PATCH_FINNISH_BUNDLE__
 import swedish from "./data/swedish"; // __PATCH_SWEDISH_BUNDLE__
@@ -23,6 +24,7 @@ const registry: Record<string, LanguageCurriculum> = {
   danish,
   ielts,
   "toefl-itp": toeflItp,
+  italian,
   icelandic,
   finnish,
   swedish,
