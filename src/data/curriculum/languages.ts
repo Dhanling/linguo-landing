@@ -18,9 +18,9 @@ export const languages: LanguageMeta[] = [
   { slug: "arabic",     name: "Arab",      nativeName: "العربية",      flag: "🇸🇦", region: "middle-eastern", featured: true, available: true,  description: "Fusha & Ammiyah, untuk agama, studi, atau karier." },
   { slug: "hebrew",     name: "Ibrani",    nativeName: "עברית",        flag: "🇮🇱", region: "middle-eastern", featured: true, available: true,  description: "Modern Hebrew dengan fokus percakapan & literasi." },
   { slug: "persian",    name: "Persia",    nativeName: "فارسی",        flag: "🇮🇷", region: "middle-eastern", featured: true, available: true,  description: "Farsi — bahasa sastra Rumi, puisi klasik & modern." },
-  { slug: "javanese",   name: "Jawa",      nativeName: "Basa Jawa",   flag: "🇮🇩", region: "nusantara",      featured: true, available: false, description: "Ngoko, Krama, Krama Inggil — filosofi Jawa lengkap." },
-  { slug: "sundanese",  name: "Sunda",     nativeName: "Basa Sunda",  flag: "🇮🇩", region: "nusantara",      featured: true, available: false, description: "Loma, Lemes — bahasa Pasundan autentik." },
-  { slug: "bipa",       name: "BIPA",      nativeName: "Bahasa Indonesia", flag: "🇮🇩", region: "nusantara", featured: true, available: false, description: "Bahasa Indonesia untuk Penutur Asing — BIPA resmi." },
+  { slug: "javanese",   name: "Jawa",      nativeName: "Basa Jawa",   flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Ngoko, Krama, Krama Inggil — filosofi Jawa lengkap." },
+  { slug: "sundanese",  name: "Sunda",     nativeName: "Basa Sunda",  flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Loma, Lemes — bahasa Pasundan autentik." },
+  { slug: "bipa",       name: "BIPA",      nativeName: "Bahasa Indonesia", flag: "🇮🇩", region: "nusantara", featured: true, available: true, description: "Bahasa Indonesia untuk Penutur Asing — BIPA resmi." },
   { slug: "georgian",   name: "Georgia",   nativeName: "ქართული",      flag: "🇬🇪", region: "other",          featured: true, available: false, description: "Kartuli — bahasa unik dengan aksara sendiri." },
   { slug: "greek",      name: "Yunani",    nativeName: "Ελληνικά",     flag: "🇬🇷", region: "european",       featured: true, available: true,  description: "Aksara Yunani 24 huruf, dari nol sampai sastra Καβάφης & filsafat klasik." },
 

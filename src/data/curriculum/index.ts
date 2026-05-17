@@ -17,6 +17,9 @@ import filipino from "./data/filipino";
 import russian from "./data/russian";
 import polish from "./data/polish";
 import czech from "./data/czech";
+import javanese from "./data/javanese";
+import sundanese from "./data/sundanese";
+import bipa from "./data/bipa";
 import korean from "./data/korean"; // __PATCH_KOREAN_BUNDLE__
 import mandarin from "./data/mandarin"; // __PATCH_MANDARIN_BUNDLE__
 import portuguesePt from "./data/portuguese-pt"; // __PATCH_PORTUGUESE_PT_BUNDLE__
@@ -55,6 +58,9 @@ const registry: Record<string, LanguageCurriculum> = {
   russian,
   polish,
   czech,
+  javanese,
+  sundanese,
+  bipa,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {
