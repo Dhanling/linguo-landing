@@ -22,7 +22,7 @@ export const languages: LanguageMeta[] = [
   { slug: "greek",      name: "Yunani",    nativeName: "Ελληνικά",     flag: "🇬🇷", region: "european",       featured: true, available: true,  description: "Aksara Yunani 24 huruf, dari nol sampai sastra Καβάφης & filsafat klasik." },
 
   // === European ===
-  { slug: "portuguese", name: "Portugis",  nativeName: "Português",   flag: "🇵🇹", region: "european", available: false },
+  { slug: "portuguese-pt", name: "Portugis (Portugal)", nativeName: "Português Europeu", flag: "🇵🇹", region: "european", available: true, description: "Fado, Lisboa, Camões, Pessoa, Saramago — Português Europeu com CAPLE prep (DIPLE B2 / DAPLE C1)." }, // __PATCH_PORTUGUESE_PT_BUNDLE__
   { slug: "portuguese-br", name: "Portugis (Brasil)", nativeName: "Português Brasileiro", flag: "🇧🇷", region: "european", available: true, description: "Bossa nova, samba, futebol, telenovela — Português brasileiro com Celpe-Bras ready." }, // __PATCH_PORTUGUESE_BR_BUNDLE__
   { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: false },
   { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: false },
