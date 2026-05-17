@@ -1,3 +1,4 @@
+// __PATCH_KOREAN_BUNDLE__
 // __PATCH_MANDARIN_BUNDLE__
 // __PATCH_JAPANESE_BUNDLE__
 import type { LanguageMeta } from "./types";
@@ -8,7 +9,7 @@ export const languages: LanguageMeta[] = [
   { slug: "ielts",      name: "IELTS",     nativeName: "IELTS",       flag: "🎓", region: "european",       featured: true, available: true,  description: "Persiapan IELTS Academic intensif — target Band 6.5–7.0 dalam 64 sesi." },
   { slug: "toefl-itp",  name: "TOEFL ITP", nativeName: "TOEFL ITP",   flag: "📝", region: "european",       featured: true, available: true,  description: "Persiapan TOEFL ITP intensif — target skor 500–550+ dalam 64 sesi." },
   { slug: "japanese",   name: "Jepang",    nativeName: "日本語",       flag: "🇯🇵", region: "asian",          featured: true, available: true, description: "Hiragana, Katakana, Kanji — dari nol sampai JLPT." },
-  { slug: "korean",     name: "Korea",     nativeName: "한국어",       flag: "🇰🇷", region: "asian",          featured: true, available: false, description: "Hangul, tata bahasa Korea, TOPIK ready." },
+  { slug: "korean",     name: "Korea",     nativeName: "한국어",       flag: "🇰🇷", region: "asian",          featured: true, available: true, description: "Hangul, tata bahasa Korea, TOPIK ready." },
   { slug: "mandarin",   name: "Mandarin",  nativeName: "中文",         flag: "🇨🇳", region: "asian",          featured: true, available: true, description: "Pinyin, Hanzi, HSK — metode Linguo untuk pemula." },
   { slug: "spanish",    name: "Spanyol",   nativeName: "Español",     flag: "🇪🇸", region: "european",       featured: true, available: true,  description: "Bahasa 500 juta penutur di Eropa & Amerika Latin." },
   { slug: "french",     name: "Prancis",   nativeName: "Français",    flag: "🇫🇷", region: "european",       featured: true, available: true,  description: "DELF/DALF prep, budaya Prancis, percakapan sehari-hari." },
