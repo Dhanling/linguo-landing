@@ -14,9 +14,6 @@ import hebrew from "./data/hebrew";
 import vietnamese from "./data/vietnamese";
 import thai from "./data/thai";
 import filipino from "./data/filipino";
-import russian from "./data/russian";
-import polish from "./data/polish";
-import czech from "./data/czech";
 import korean from "./data/korean"; // __PATCH_KOREAN_BUNDLE__
 import mandarin from "./data/mandarin"; // __PATCH_MANDARIN_BUNDLE__
 import portuguesePt from "./data/portuguese-pt"; // __PATCH_PORTUGUESE_PT_BUNDLE__
@@ -41,9 +38,6 @@ const registry: Record<string, LanguageCurriculum> = {
   arabic,
   hebrew,
   vietnamese,
-  czech
-  polish
-  russian
   thai,
   filipino,
   korean,

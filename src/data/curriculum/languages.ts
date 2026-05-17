@@ -28,13 +28,13 @@ export const languages: LanguageMeta[] = [
   { slug: "portuguese-pt", name: "Portugis (Portugal)", nativeName: "Português Europeu", flag: "🇵🇹", region: "european", available: true, description: "Fado, Lisboa, Camões, Pessoa, Saramago — Português Europeu com CAPLE prep (DIPLE B2 / DAPLE C1)." }, // __PATCH_PORTUGUESE_PT_BUNDLE__
   { slug: "portuguese-br", name: "Portugis (Brasil)", nativeName: "Português Brasileiro", flag: "🇧🇷", region: "european", available: true, description: "Bossa nova, samba, futebol, telenovela — Português brasileiro com Celpe-Bras ready." }, // __PATCH_PORTUGUESE_BR_BUNDLE__
   { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: false },
-  { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: true },
+  { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: false },
   { slug: "swedish",    name: "Swedia",    nativeName: "Svenska",     flag: "🇸🇪", region: "european", available: true,  description: "Bahasa Skandinavia (Svenska) — alfabet å ä ö, notorious sj-sound, pitch accent, hen pronoun (resmi 2015), 2 gender en/ett, supinum unik. Tisus, SFI A-D, Swedex ready." }, // __PATCH_SWEDISH_BUNDLE__
   { slug: "norwegian",  name: "Norwegia",  nativeName: "Norsk",       flag: "🇳🇴", region: "european", available: true,  description: "Bahasa Skandinavia (Bokmål) — pitch accent Tone 1/2, decimal counting, tata bahasa mirip Denmark dengan ortografi lebih intuitif. Norskprøven & Bergenstest ready." }, // __PATCH_NORWEGIAN_BUNDLE__
   { slug: "danish",     name: "Denmark",   nativeName: "Dansk",       flag: "🇩🇰", region: "european", available: true,  description: "Dari nol sampai Prøve i Dansk 3 — alfabet 29 huruf (æ ø å), stød, hygge & janteloven." }, // __PATCH_DANISH_AVAILABLE__
   { slug: "finnish",    name: "Finlandia", nativeName: "Suomi",       flag: "🇫🇮", region: "european", available: true,  description: "Bahasa Uralic (Finno-Ugric) — BUKAN Indo-European! 15 grammatical cases, vowel harmony, agglutinative morphology, no articles, no gender pronouns (hän = he/she). YKI levels 1-6, level 3 = kewarganegaraan." }, // __PATCH_FINNISH_BUNDLE__
-  { slug: "polish",     name: "Polandia",  nativeName: "Polski",      flag: "🇵🇱", region: "european", available: true },
-  { slug: "czech",      name: "Ceko",      nativeName: "Čeština",     flag: "🇨🇿", region: "european", available: true },
+  { slug: "polish",     name: "Polandia",  nativeName: "Polski",      flag: "🇵🇱", region: "european", available: false },
+  { slug: "czech",      name: "Ceko",      nativeName: "Čeština",     flag: "🇨🇿", region: "european", available: false },
   { slug: "hungarian",  name: "Hungaria",  nativeName: "Magyar",      flag: "🇭🇺", region: "european", available: false },
   { slug: "romanian",   name: "Rumania",   nativeName: "Română",      flag: "🇷🇴", region: "european", available: false },
   { slug: "turkish",    name: "Turki",     nativeName: "Türkçe",      flag: "🇹🇷", region: "european", available: false },
