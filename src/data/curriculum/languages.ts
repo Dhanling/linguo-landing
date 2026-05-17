@@ -23,6 +23,7 @@ export const languages: LanguageMeta[] = [
 
   // === European ===
   { slug: "portuguese", name: "Portugis",  nativeName: "Português",   flag: "🇵🇹", region: "european", available: false },
+  { slug: "portuguese-br", name: "Portugis (Brasil)", nativeName: "Português Brasileiro", flag: "🇧🇷", region: "european", available: true, description: "Bossa nova, samba, futebol, telenovela — Português brasileiro com Celpe-Bras ready." }, // __PATCH_PORTUGUESE_BR_BUNDLE__
   { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: false },
   { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: false },
   { slug: "swedish",    name: "Swedia",    nativeName: "Svenska",     flag: "🇸🇪", region: "european", available: true,  description: "Bahasa Skandinavia (Svenska) — alfabet å ä ö, notorious sj-sound, pitch accent, hen pronoun (resmi 2015), 2 gender en/ett, supinum unik. Tisus, SFI A-D, Swedex ready." }, // __PATCH_SWEDISH_BUNDLE__
