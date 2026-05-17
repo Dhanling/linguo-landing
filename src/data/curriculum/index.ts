@@ -28,7 +28,14 @@ import italian from "./data/italian"; // __PATCH_ITALIAN_BUNDLE__
 import icelandic from "./data/icelandic"; // __PATCH_ICELANDIC_BUNDLE__
 import finnish from "./data/finnish"; // __PATCH_FINNISH_BUNDLE__
 import swedish from "./data/swedish"; // __PATCH_SWEDISH_BUNDLE__
-import norwegian from "./data/norwegian"; // __PATCH_NORWEGIAN_BUNDLE__
+import norwegian from "./data/norwegian";
+import georgian from './data/georgian';
+import dutch from './data/dutch';
+import turkish from './data/turkish';
+import hungarian from './data/hungarian';
+import romanian from './data/romanian';
+import bulgarian from './data/bulgarian';
+import ukrainian from './data/ukrainian'; // __PATCH_NORWEGIAN_BUNDLE__
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
@@ -61,6 +68,13 @@ const registry: Record<string, LanguageCurriculum> = {
   javanese,
   sundanese,
   bipa,
+  georgian,
+  dutch,
+  turkish,
+  hungarian,
+  romanian,
+  bulgarian,
+  ukrainian,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {

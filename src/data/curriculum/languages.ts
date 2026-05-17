@@ -21,13 +21,13 @@ export const languages: LanguageMeta[] = [
   { slug: "javanese",   name: "Jawa",      nativeName: "Basa Jawa",   flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Ngoko, Krama, Krama Inggil — filosofi Jawa lengkap." },
   { slug: "sundanese",  name: "Sunda",     nativeName: "Basa Sunda",  flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Loma, Lemes — bahasa Pasundan autentik." },
   { slug: "bipa",       name: "BIPA",      nativeName: "Bahasa Indonesia", flag: "🇮🇩", region: "nusantara", featured: true, available: true, description: "Bahasa Indonesia untuk Penutur Asing — BIPA resmi." },
-  { slug: "georgian",   name: "Georgia",   nativeName: "ქართული",      flag: "🇬🇪", region: "other",          featured: true, available: false, description: "Kartuli — bahasa unik dengan aksara sendiri." },
+  { slug: "georgian",   name: "Georgia",   nativeName: "ქართული",      flag: "🇬🇪", region: "other",          featured: true, available: true, description: "Kartuli — bahasa unik dengan aksara sendiri." },
   { slug: "greek",      name: "Yunani",    nativeName: "Ελληνικά",     flag: "🇬🇷", region: "european",       featured: true, available: true,  description: "Aksara Yunani 24 huruf, dari nol sampai sastra Καβάφης & filsafat klasik." },
 
   // === European ===
   { slug: "portuguese-pt", name: "Portugis (Portugal)", nativeName: "Português Europeu", flag: "🇵🇹", region: "european", available: true, description: "Fado, Lisboa, Camões, Pessoa, Saramago — Português Europeu com CAPLE prep (DIPLE B2 / DAPLE C1)." }, // __PATCH_PORTUGUESE_PT_BUNDLE__
   { slug: "portuguese-br", name: "Portugis (Brasil)", nativeName: "Português Brasileiro", flag: "🇧🇷", region: "european", available: true, description: "Bossa nova, samba, futebol, telenovela — Português brasileiro com Celpe-Bras ready." }, // __PATCH_PORTUGUESE_BR_BUNDLE__
-  { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: false },
+  { slug: "dutch",      name: "Belanda",   nativeName: "Nederlands",  flag: "🇳🇱", region: "european", available: true },
   { slug: "russian",    name: "Rusia",     nativeName: "Русский",     flag: "🇷🇺", region: "european", available: true },
   { slug: "swedish",    name: "Swedia",    nativeName: "Svenska",     flag: "🇸🇪", region: "european", available: true,  description: "Bahasa Skandinavia (Svenska) — alfabet å ä ö, notorious sj-sound, pitch accent, hen pronoun (resmi 2015), 2 gender en/ett, supinum unik. Tisus, SFI A-D, Swedex ready." }, // __PATCH_SWEDISH_BUNDLE__
   { slug: "norwegian",  name: "Norwegia",  nativeName: "Norsk",       flag: "🇳🇴", region: "european", available: true,  description: "Bahasa Skandinavia (Bokmål) — pitch accent Tone 1/2, decimal counting, tata bahasa mirip Denmark dengan ortografi lebih intuitif. Norskprøven & Bergenstest ready." }, // __PATCH_NORWEGIAN_BUNDLE__
@@ -35,11 +35,11 @@ export const languages: LanguageMeta[] = [
   { slug: "finnish",    name: "Finlandia", nativeName: "Suomi",       flag: "🇫🇮", region: "european", available: true,  description: "Bahasa Uralic (Finno-Ugric) — BUKAN Indo-European! 15 grammatical cases, vowel harmony, agglutinative morphology, no articles, no gender pronouns (hän = he/she). YKI levels 1-6, level 3 = kewarganegaraan." }, // __PATCH_FINNISH_BUNDLE__
   { slug: "polish",     name: "Polandia",  nativeName: "Polski",      flag: "🇵🇱", region: "european", available: true },
   { slug: "czech",      name: "Ceko",      nativeName: "Čeština",     flag: "🇨🇿", region: "european", available: true },
-  { slug: "hungarian",  name: "Hungaria",  nativeName: "Magyar",      flag: "🇭🇺", region: "european", available: false },
-  { slug: "romanian",   name: "Rumania",   nativeName: "Română",      flag: "🇷🇴", region: "european", available: false },
-  { slug: "turkish",    name: "Turki",     nativeName: "Türkçe",      flag: "🇹🇷", region: "european", available: false },
-  { slug: "bulgarian",  name: "Bulgaria",  nativeName: "Български",   flag: "🇧🇬", region: "european", available: false },
-  { slug: "ukrainian",  name: "Ukraina",   nativeName: "Українська",  flag: "🇺🇦", region: "european", available: false },
+  { slug: "hungarian",  name: "Hungaria",  nativeName: "Magyar",      flag: "🇭🇺", region: "european", available: true },
+  { slug: "romanian",   name: "Rumania",   nativeName: "Română",      flag: "🇷🇴", region: "european", available: true },
+  { slug: "turkish",    name: "Turki",     nativeName: "Türkçe",      flag: "🇹🇷", region: "european", available: true },
+  { slug: "bulgarian",  name: "Bulgaria",  nativeName: "Български",   flag: "🇧🇬", region: "european", available: true },
+  { slug: "ukrainian",  name: "Ukraina",   nativeName: "Українська",  flag: "🇺🇦", region: "european", available: true },
   { slug: "icelandic",  name: "Islandia",  nativeName: "Íslenska",    flag: "🇮🇸", region: "european", available: true,  description: "Bahasa Skandinavia paling archaic — preserve Old Norse paling lengkap (native bisa BACA Sagas abad ke-13!). 32 huruf incl þ thorn + ð eth, 4 cases, 3 genders, subjunctive preserved, patronymic naming (no surnames), language purism aggressive. Próf í íslensku + citizenship track ready." }, // __PATCH_ICELANDIC_BUNDLE__
 
   // === Asian ===
