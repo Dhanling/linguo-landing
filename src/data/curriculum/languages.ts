@@ -36,7 +36,7 @@ export const languages: LanguageMeta[] = [
   { slug: "turkish",    name: "Turki",     nativeName: "Türkçe",      flag: "🇹🇷", region: "european", available: false },
   { slug: "bulgarian",  name: "Bulgaria",  nativeName: "Български",   flag: "🇧🇬", region: "european", available: false },
   { slug: "ukrainian",  name: "Ukraina",   nativeName: "Українська",  flag: "🇺🇦", region: "european", available: false },
-  { slug: "icelandic",  name: "Islandia",  nativeName: "Íslenska",    flag: "🇮🇸", region: "european", available: false },
+  { slug: "icelandic",  name: "Islandia",  nativeName: "Íslenska",    flag: "🇮🇸", region: "european", available: true,  description: "Bahasa Skandinavia paling archaic — preserve Old Norse paling lengkap (native bisa BACA Sagas abad ke-13!). 32 huruf incl þ thorn + ð eth, 4 cases, 3 genders, subjunctive preserved, patronymic naming (no surnames), language purism aggressive. Próf í íslensku + citizenship track ready." }, // __PATCH_ICELANDIC_BUNDLE__
 
   // === Asian ===
   { slug: "cantonese",  name: "Kanton",    nativeName: "廣東話",       flag: "🇭🇰", region: "asian", available: false },
