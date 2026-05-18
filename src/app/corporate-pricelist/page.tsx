@@ -73,7 +73,7 @@ export default function HargaKorporatPage() {
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div>
               <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-2">
-                Corporate Class Program
+                Corporate Program
               </p>
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">
                 Daftar Harga B2B

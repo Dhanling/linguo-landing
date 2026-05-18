@@ -97,7 +97,7 @@ export default function CorporatePage() {
           <Link href="/" className="flex items-center gap-2 text-slate-800 hover:text-teal-600 transition-colors">
             <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
           </Link>
-          <a href={waMsg("Halo, saya tertarik Corporate Class Linguo")} target="_blank"
+          <a href={waMsg("Halo, saya tertarik Corporate Linguo")} target="_blank"
             className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95">
             Hubungi Kami
           </a>
@@ -122,7 +122,7 @@ export default function CorporatePage() {
               <a href="#form" className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-4 rounded-full transition-all active:scale-95 text-sm">
                 Minta Proposal Gratis
               </a>
-              <a href={waMsg("Halo, saya mau konsultasi tentang Corporate Class Linguo")} target="_blank"
+              <a href={waMsg("Halo, saya mau konsultasi tentang Corporate Linguo")} target="_blank"
                 className="bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full transition-all active:scale-95 text-sm backdrop-blur-sm border border-white/20">
                 Chat via WhatsApp
               </a>
