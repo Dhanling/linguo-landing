@@ -43,15 +43,15 @@ export const languages: LanguageMeta[] = [
   { slug: "icelandic",  name: "Islandia",  nativeName: "Íslenska",    flag: "🇮🇸", region: "european", available: true,  description: "Bahasa Skandinavia paling archaic — preserve Old Norse paling lengkap (native bisa BACA Sagas abad ke-13!). 32 huruf incl þ thorn + ð eth, 4 cases, 3 genders, subjunctive preserved, patronymic naming (no surnames), language purism aggressive. Próf í íslensku + citizenship track ready." }, // __PATCH_ICELANDIC_BUNDLE__
 
   // === Asian ===
-  { slug: "cantonese",  name: "Kanton",    nativeName: "廣東話",       flag: "🇭🇰", region: "asian", available: false },
+  { slug: "cantonese",  name: "Kanton",    nativeName: "廣東話",       flag: "🇭🇰", region: "asian", available: true },
   { slug: "vietnamese", name: "Vietnam",   nativeName: "Tiếng Việt",  flag: "🇻🇳", region: "asian", available: true },
   { slug: "thai",       name: "Thailand",  nativeName: "ภาษาไทย",     flag: "🇹🇭", region: "asian", available: true },
   { slug: "filipino",   name: "Filipina",  nativeName: "Tagalog",     flag: "🇵🇭", region: "asian", available: true },
   { slug: "khmer",      name: "Khmer",     nativeName: "ខ្មែរ",         flag: "🇰🇭", region: "asian", available: true },
   { slug: "lao",        name: "Laos",      nativeName: "ລາວ",          flag: "🇱🇦", region: "asian", available: true },
   { slug: "burmese",    name: "Myanmar",   nativeName: "မြန်မာ",        flag: "🇲🇲", region: "asian", available: true },
-  { slug: "hindi",      name: "Hindi",     nativeName: "हिन्दी",         flag: "🇮🇳", region: "asian", available: false },
-  { slug: "urdu",       name: "Urdu",      nativeName: "اردو",         flag: "🇵🇰", region: "asian", available: false },
+  { slug: "hindi",      name: "Hindi",     nativeName: "हिन्दी",         flag: "🇮🇳", region: "asian", available: true },
+  { slug: "urdu",       name: "Urdu",      nativeName: "اردو",         flag: "🇵🇰", region: "asian", available: true },
   { slug: "bengali",    name: "Bengali",   nativeName: "বাংলা",         flag: "🇧🇩", region: "asian", available: false },
   { slug: "tamil",      name: "Tamil",     nativeName: "தமிழ்",         flag: "🇮🇳", region: "asian", available: false },
   { slug: "punjabi",    name: "Punjabi",   nativeName: "ਪੰਜਾਬੀ",        flag: "🇮🇳", region: "asian", available: false },

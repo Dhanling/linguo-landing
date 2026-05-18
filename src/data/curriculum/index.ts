@@ -38,6 +38,9 @@ import bulgarian from './data/bulgarian';
 import khmer from './data/khmer';
 import lao from './data/lao';
 import burmese from './data/burmese';
+import cantonese from './data/cantonese';
+import hindi from './data/hindi';
+import urdu from './data/urdu';
 import ukrainian from './data/ukrainian'; // __PATCH_NORWEGIAN_BUNDLE__
 
 const registry: Record<string, LanguageCurriculum> = {
@@ -81,6 +84,9 @@ const registry: Record<string, LanguageCurriculum> = {
   khmer,
   lao,
   burmese,
+  cantonese,
+  hindi,
+  urdu,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {
