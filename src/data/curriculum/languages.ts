@@ -62,13 +62,13 @@ export const languages: LanguageMeta[] = [
   { slug: "kurdish",    name: "Kurdi",     nativeName: "Kurdî",       flag: "☀️", region: "middle-eastern", available: false },
 
   // === Nusantara ===
-  { slug: "balinese",    name: "Bali",      nativeName: "Basa Bali",   flag: "🇮🇩", region: "nusantara", available: false },
+  { slug: "balinese",    name: "Bali",      nativeName: "Basa Bali",   flag: "🇮🇩", region: "nusantara", available: true },
   { slug: "minangkabau", name: "Minang",    nativeName: "Minangkabau", flag: "🇮🇩", region: "nusantara", available: false },
-  { slug: "batak",       name: "Batak",     nativeName: "Hata Batak",  flag: "🇮🇩", region: "nusantara", available: false },
-  { slug: "bugis",       name: "Bugis",     nativeName: "Ugi",         flag: "🇮🇩", region: "nusantara", available: false },
+  { slug: "batak",       name: "Batak",     nativeName: "Hata Batak",  flag: "🇮🇩", region: "nusantara", available: true },
+  { slug: "bugis",       name: "Bugis",     nativeName: "Ugi",         flag: "🇮🇩", region: "nusantara", available: true },
   { slug: "acehnese",    name: "Aceh",      nativeName: "Bahsa Acèh",  flag: "🇮🇩", region: "nusantara", available: false },
   { slug: "banjar",      name: "Banjar",    nativeName: "Bahasa Banjar", flag: "🇮🇩", region: "nusantara", available: false },
-  { slug: "madurese",    name: "Madura",    nativeName: "Bhâsa Madhurâ", flag: "🇮🇩", region: "nusantara", available: false },
+  { slug: "madurese",    name: "Madura",    nativeName: "Bhâsa Madhurâ", flag: "🇮🇩", region: "nusantara", available: true },
   { slug: "betawi",      name: "Betawi",    nativeName: "Bahasa Betawi", flag: "🇮🇩", region: "nusantara", available: false },
 
   // === African ===

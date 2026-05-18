@@ -41,10 +41,18 @@ import burmese from './data/burmese';
 import cantonese from './data/cantonese';
 import hindi from './data/hindi';
 import urdu from './data/urdu';
-import ukrainian from './data/ukrainian'; // __PATCH_NORWEGIAN_BUNDLE__
+import ukrainian from './data/ukrainian';
+import balinese from './data/balinese';
+import batak from './data/batak';
+import bugis from './data/bugis';
+import madurese from './data/madurese'; // __PATCH_NORWEGIAN_BUNDLE__
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
+  balinese,
+  batak,
+  bugis,
+  madurese,
   japanese,
   greek,
   spanish,
