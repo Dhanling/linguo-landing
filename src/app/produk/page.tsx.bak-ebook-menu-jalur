@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
@@ -15,11 +15,6 @@ const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵
 
 export default function ProdukPage() {
   const [tab, setTab] = useState("elearning");
-  // ── ebook-menu-jalur-v1: buka tab dari ?tab= URL (mis. /produk?tab=ebook) ──
-  useEffect(() => {
-    const t = new URLSearchParams(window.location.search).get("tab");
-    if (t === "ebook" || t === "elearning") setTab(t);
-  }, []);
   const [sel, setSel] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [prod, setProd] = useState<{id:string;name:string;price:number}|null>(null);
