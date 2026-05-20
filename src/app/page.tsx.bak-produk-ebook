@@ -459,12 +459,12 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                     <div className="border-t border-slate-100 my-1"/>
                     <a href="/produk"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      E-Learning
+                      🎬 E-Learning
                     </a>
-                    <a href="/produk/ebook"
+                    <a href="/produk?tab=ebook"
                       className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      E-Book
-                    </a>{/* produk-ebook-page-v1 */}
+                      📚 E-Book
+                    </a>{/* ebook-menu-jalur-v1 */}
                     {/* Corporate + sub-items */}
                     <div
                       className="relative"
@@ -553,8 +553,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
               <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids 🧒</button>
-              <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
-              <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
+              <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">🎬 E-Learning</a>
+              <a href="/produk?tab=ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">📚 E-Book</a>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
               <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
               <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
@@ -1344,7 +1344,7 @@ const PRODUCTS = [
   {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
   {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3},
   {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk"},
-  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook"},
+  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk?tab=ebook"},
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
