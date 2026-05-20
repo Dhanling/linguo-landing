@@ -628,48 +628,6 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     ? [{ val:"30", label:"30 menit", note:"Little Learner (5–8 thn)" }, { val:"45", label:"45 menit", note:"Young Explorer (9–12 thn)" }]
     : [{ val:"90", label:"90 menit", note:"Standar kelas grup" }];
 
-  // ── akun-private-price-v1: harga Kelas Private by kategori bahasa ──────────
-  // Mirror src/app/harga/page.tsx PRICE_TABLE (source of truth). Wizard /akun
-  // ga nangkep level, jadi harga Private default ke tier A1 (idx 0) — konsisten
-  // sama framing "Mulai Rp..." di homepage.
-  const PRIVATE_PRICE_TABLE: Record<string, number[]> = {
-    A: [120000, 130000, 140000, 150000],
-    B: [110000, 120000, 130000, 140000],
-    C: [100000, 105000, 110000, 120000],
-    D: [90000, 95000, 100000, 110000],
-    E: [150000, 160000, 170000, 180000],
-  };
-  const PRIVATE_LANG_CAT: Record<string, "A" | "B" | "C" | "D" | "E"> = {
-    Swahili: "A", Greek: "A", Hindi: "A", Turkish: "A", Norwegian: "A", Tagalog: "A",
-    Vietnamese: "A", Swedish: "A", Urdu: "A", Kurdish: "A", Hebrew: "A", Polish: "A",
-    Portuguese: "A", Finnish: "A", Czech: "A", "Traditional Chinese": "A", Hungarian: "A",
-    Esperanto: "A", Farsi: "A", "English British": "A", Romanian: "A", Khmer: "A",
-    Danish: "A", Uzbek: "A", Serbian: "A", Estonian: "A", Latin: "A",
-    "Ancient Egyptian": "A", Georgian: "A", Irish: "A",
-    Russian: "B", Dutch: "B", Italian: "B", Spanish: "B", Thai: "B", "Sign Language": "B",
-    Arabic: "C", English: "C", Japanese: "C", German: "C", Korean: "C", Mandarin: "C", French: "C",
-    Javanese: "D", Sundanese: "D", Madurese: "D", Batak: "D", Banjar: "D",
-    Balinese: "D", Malay: "D", Bugis: "D",
-    BIPA: "E",
-  };
-  // Resolve nama bahasa ke kategori harga. Ga ketemu → "C" (median).
-  const privateCatOf = (lang: string): "A" | "B" | "C" | "D" | "E" => {
-    if (!lang) return "C";
-    if (PRIVATE_LANG_CAT[lang]) return PRIVATE_LANG_CAT[lang];
-    const hit = Object.keys(PRIVATE_LANG_CAT).find(
-      (k) =>
-        lang.toLowerCase().includes(k.toLowerCase()) ||
-        k.toLowerCase().includes(lang.toLowerCase())
-    );
-    return hit ? PRIVATE_LANG_CAT[hit] : "C";
-  };
-  // Harga per sesi Kelas Private = base(60mnt, A1) × (durasi / 60).
-  const privatePerSession = (lang: string, durationMin: string | number): number => {
-    const base60 = PRIVATE_PRICE_TABLE[privateCatOf(lang)][0];
-    const dur = parseInt(String(durationMin), 10) || 60;
-    return Math.round((base60 * dur) / 60);
-  };
-
   const pricePerSession: Record<string,Record<string,number>> = {
     "Kelas Private": { "30":45000, "45":65000, "60":85000, "75":105000, "90":125000 },
     "Kelas Reguler": { "90":18750 },
@@ -684,9 +642,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     "English Test Preparation": 300000,
   };
 
-  const price = enrollProgram === "Kelas Private" /* akun-private-price-v1 */
-    ? privatePerSession(enrollLang, enrollDuration)
-    : (pricePerSession[enrollProgram]?.[enrollDuration] || 0);
+  const price = pricePerSession[enrollProgram]?.[enrollDuration] || 0;
 
   // Unpaid amount from existing regs
   const unpaidTotal = student?.registrations
@@ -951,7 +907,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                       <p className="text-xs text-gray-400">{d.note}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-teal-600 text-sm">Rp{(enrollProgram === "Kelas Private" ? privatePerSession(enrollLang, d.val) : (pricePerSession[enrollProgram]?.[d.val] || 0)).toLocaleString("id-ID")}{/* akun-private-price-v1 */}</p>
+                      <p className="font-bold text-teal-600 text-sm">Rp{(pricePerSession[enrollProgram]?.[d.val] || 0).toLocaleString("id-ID")}</p>
                       <p className="text-[10px] text-gray-400">/sesi</p>
                     </div>
                   </button>
