@@ -717,8 +717,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
         language: enrollLang || null,
         source: "Tambah Kelas",
-        // [linguo-patch:lead-akun-schema-fix-v1] kolom valid leads only; jadwal chip-friendly
-        schedule_preference: Object.entries(enrollSchedule).flatMap(([d, ts]) => ts.map((t) => `${d} ${t}`)).join(", ") || null,
+        // [linguo-patch:lead-schedule-pref-v1] preferensi jadwal -> kolom terstruktur
+        schedule_preference: Object.entries(enrollSchedule).map(([d, ts]) => `${d}: ${ts.join(", ")}`).join(" | ") || null,
+        notes: `${enrollProgram}${enrollLang ? " · " + enrollLang : ""} · ${enrollDuration}mnt · ${Object.entries(enrollSchedule).map(([d,ts]) => d + " " + ts.join("+")).join(", ")}`,
+        status: "Baru",
+        created_at: new Date().toISOString(),
       }, { onConflict: "email" });
     } catch (e) { console.warn("Lead save:", e); }
 
@@ -1750,13 +1753,16 @@ export default function AkunPage() {
               // 3. Auto-save to leads table for CRM tracking (non-blocking)
               try {
                 const subject = data.testType || data.lang || "";
+                const notes = `Program: ${data.program}${subject ? ` · ${subject}` : ""}${data.exp === "beginner" ? " · Pemula" : data.exp === "some" ? " · Sudah ada dasar" : ""}`;
                 await supabase.from("leads").upsert({
                   name: studentPayload.name,
                   email: user?.email || "",
                   program: data.program,
                   language: subject || null,
                   source: "Onboarding Wizard",
-                  experience: data.exp || null,
+                  notes,
+                  status: "Baru",
+                  created_at: new Date().toISOString(),
                 }, { onConflict: "email" });
               } catch (e) {
                 console.warn("Lead save non-fatal:", e);
