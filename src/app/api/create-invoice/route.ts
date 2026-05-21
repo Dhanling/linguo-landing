@@ -33,6 +33,39 @@ export async function POST(req: NextRequest) {
 
     const externalId = `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
+    // ── affiliate-attribution-v1 ─────────────────────────────────────────
+    // Last-touch referral: middleware drops a `linguo_ref` cookie when a
+    // visitor lands with ?ref=CODE. Resolve it to an affiliate_id here so the
+    // lead carries attribution into the xendit-webhook commission engine.
+    // Non-fatal: a missing cookie or unknown code just means no attribution.
+    let affiliateRefCode: string | null = null;
+    let affiliateId: string | null = null;
+    const refCookie = req.cookies.get("linguo_ref")?.value;
+    if (refCookie) {
+      try {
+        const affRes = await fetch(
+          `${SUPABASE_URL}/rest/v1/affiliates?referral_code=eq.${encodeURIComponent(
+            refCookie
+          )}&select=id&limit=1`,
+          {
+            headers: {
+              apikey: SUPABASE_KEY,
+              Authorization: `Bearer ${SUPABASE_KEY}`,
+            },
+          }
+        );
+        if (affRes.ok) {
+          const rows = await affRes.json();
+          if (Array.isArray(rows) && rows[0]?.id) {
+            affiliateRefCode = refCookie;
+            affiliateId = rows[0].id as string;
+          }
+        }
+      } catch (e) {
+        console.warn("Affiliate lookup failed (non-fatal):", e);
+      }
+    }
+
     const leadRes = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
       method: "POST",
       headers: {
@@ -47,6 +80,8 @@ export async function POST(req: NextRequest) {
         payment_status: "PENDING",
         xendit_external_id: externalId,
         amount: product.amount,
+        affiliate_ref_code: affiliateRefCode,
+        affiliate_id: affiliateId,
       }),
     });
 
