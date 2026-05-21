@@ -63,6 +63,11 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
           },
           body: JSON.stringify({
             pricing_id: selectedTier.id,
+            // affiliate-ref-capture-v1 — Phase 2B: forward linguo_ref cookie
+            referral_code:
+              typeof document !== "undefined"
+                ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
+                : null,
             buyer_email: form.email,
             buyer_name: form.name,
             buyer_phone: form.phone || null,

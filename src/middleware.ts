@@ -36,7 +36,7 @@ export function middleware(req: NextRequest, event: NextFetchEvent) {
   // 1. Store / refresh the attribution cookie (last-touch wins).
   res.cookies.set(REF_COOKIE, code, {
     maxAge: COOKIE_MAX_AGE,
-    httpOnly: true,
+    httpOnly: false, // Phase 2B: checkout reads linguo_ref via document.cookie
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
     path: "/",
