@@ -712,7 +712,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   const handleConfirm = async () => {
     try {
       // [linguo-patch:lead-debug-v1] DIAGNOSTIC — tangkap error upsert (supabase ga throw utk error DB)
-      const { error: __leadDbgErr } = await supabase.from("leads").upsert({
+      // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — tabel leads ga punya unique constraint di email
+      const { error: __leadDbgErr } = await supabase.from("leads").insert({
         name: displayName,
         email: user?.email || "",
         program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
@@ -720,7 +721,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         source: "Tambah Kelas",
         // [linguo-patch:lead-akun-schema-fix-v1] kolom valid leads only; jadwal chip-friendly
         schedule_preference: Object.entries(enrollSchedule).flatMap(([d, ts]) => ts.map((t) => `${d} ${t}`)).join(", ") || null,
-      }, { onConflict: "email" });
+      });
       if (__leadDbgErr) {
         console.warn("Lead save error:", __leadDbgErr);
         alert("DEBUG lead upsert GAGAL\n\ncode: " + (__leadDbgErr.code || "-") + "\nmessage: " + (__leadDbgErr.message || "-") + "\ndetails: " + (__leadDbgErr.details || "-") + "\nhint: " + (__leadDbgErr.hint || "-"));
@@ -1757,14 +1758,15 @@ export default function AkunPage() {
               // 3. Auto-save to leads table for CRM tracking (non-blocking)
               try {
                 const subject = data.testType || data.lang || "";
-                await supabase.from("leads").upsert({
+                // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — leads.email ga unique
+                await supabase.from("leads").insert({
                   name: studentPayload.name,
                   email: user?.email || "",
                   program: data.program,
                   language: subject || null,
                   source: "Onboarding Wizard",
                   experience: data.exp || null,
-                }, { onConflict: "email" });
+                });
               } catch (e) {
                 console.warn("Lead save non-fatal:", e);
               }
