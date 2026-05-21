@@ -1,55 +1,132 @@
+// ============================================================================
+// API: /api/affiliate/me
+// Affiliate Program — Phase 2A
+// ----------------------------------------------------------------------------
+// Returns the logged-in user's affiliate profile + aggregate stats.
+//
+// WHY SERVICE ROLE (not client SDK + RLS):
+//   - The 20 affiliates migrated from `lingfluencers` have user_id = NULL, so
+//     the RLS policy `user_id = auth.uid()` would block them entirely.
+//   - The seed affiliate HAS a user_id but its email differs from the
+//     Google-login email.
+//   => We match on BOTH: user_id = authUserId  OR  email = authEmail.
+//
+// SECURITY:
+//   - The user is identified ONLY from a cryptographically verified access
+//     token (admin.auth.getUser(token)). The client's claimed id/email are
+//     NEVER trusted.
+// ============================================================================
+
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
-const XENDIT_WEBHOOK_TOKEN = process.env.XENDIT_WEBHOOK_TOKEN!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
-    const callbackToken = req.headers.get("x-callback-token");
-    if (callbackToken !== XENDIT_WEBHOOK_TOKEN) {
-      console.error("Invalid webhook token");
+    // ── 1. Verify the caller's access token ──────────────────────────────
+    const authHeader = req.headers.get("authorization") || "";
+    const token = authHeader.replace(/^Bearer\s+/i, "").trim();
+    if (!token) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const body = await req.json();
-    const { id, external_id, status, paid_amount, paid_at, payment_method, payment_channel } = body;
-    console.log(`Webhook received: ${external_id} -> ${status}`);
+    const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, {
+      auth: { autoRefreshToken: false, persistSession: false },
+    });
 
-    const updateData: Record<string, unknown> = {
-      payment_status: status,
-      xendit_invoice_id: id,
+    const { data: userData, error: userErr } = await admin.auth.getUser(token);
+    if (userErr || !userData?.user) {
+      return NextResponse.json({ error: "Invalid session" }, { status: 401 });
+    }
+    const authUserId = userData.user.id;
+    const authEmail = (userData.user.email || "").toLowerCase();
+
+    // ── 2. Find the affiliate row (match user_id, fallback to email) ─────
+    type AffRow = {
+      id: string;
+      referral_code: string;
+      tier: string;
+      status: string;
+      name: string;
     };
+    let aff: AffRow | null = null;
 
-    if (status === "PAID") {
-      updateData.paid_at = paid_at;
-      updateData.paid_amount = paid_amount;
-      updateData.payment_method = payment_method;
-      updateData.payment_channel = payment_channel;
-    }
-
-    const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${external_id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-        },
-        body: JSON.stringify(updateData),
+    {
+      const { data, error } = await admin
+        .from("affiliates")
+        .select("id, referral_code, tier, status, name")
+        .eq("user_id", authUserId)
+        .limit(1);
+      if (error) {
+        console.error("affiliate lookup (user_id) error:", error);
+        return NextResponse.json({ error: "Lookup failed" }, { status: 500 });
       }
-    );
-
-    if (!res.ok) {
-      const err = await res.text();
-      console.error("Supabase update error:", err);
-      return NextResponse.json({ error: "Failed to update" }, { status: 500 });
+      if (data && data.length) aff = data[0] as AffRow;
     }
 
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Webhook error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    // Fallback: migrated affiliates have user_id = NULL → match by email.
+    if (!aff && authEmail) {
+      const { data, error } = await admin
+        .from("affiliates")
+        .select("id, referral_code, tier, status, name")
+        .ilike("email", authEmail)
+        .limit(1);
+      if (error) {
+        console.error("affiliate lookup (email) error:", error);
+        return NextResponse.json({ error: "Lookup failed" }, { status: 500 });
+      }
+      if (data && data.length) aff = data[0] as AffRow;
+    }
+
+    if (!aff) {
+      // Logged-in user is simply not an affiliate yet — not an error.
+      return NextResponse.json({ affiliate: null }, { status: 200 });
+    }
+
+    // ── 3. Click count ───────────────────────────────────────────────────
+    const { count: clickCount } = await admin
+      .from("affiliate_clicks")
+      .select("id", { count: "exact", head: true })
+      .eq("affiliate_id", aff.id);
+
+    // ── 4. Conversions + commission sums per status ──────────────────────
+    const { data: convData } = await admin
+      .from("affiliate_conversions")
+      .select(
+        "id, product, language, level, gross_amount, commission_amount, status, created_at"
+      )
+      .eq("affiliate_id", aff.id)
+      .order("created_at", { ascending: false });
+
+    const conversions = convData || [];
+    const sumByStatus = (s: string) =>
+      conversions
+        .filter((c) => c.status === s)
+        .reduce((t, c) => t + Number(c.commission_amount || 0), 0);
+
+    return NextResponse.json({
+      affiliate: {
+        referral_code: aff.referral_code,
+        tier: aff.tier,
+        status: aff.status,
+        name: aff.name,
+      },
+      stats: {
+        clicks: clickCount || 0,
+        conversions_total: conversions.length,
+        commission_pending: sumByStatus("pending"),
+        commission_approved: sumByStatus("approved"),
+        commission_paid: sumByStatus("paid"),
+      },
+      conversions: conversions.slice(0, 20),
+    });
+  } catch (err) {
+    console.error("affiliate/me error:", err);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
