@@ -711,7 +711,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
 
   const handleConfirm = async () => {
     try {
-      await supabase.from("leads").upsert({
+      // [linguo-patch:lead-debug-v1] DIAGNOSTIC — tangkap error upsert (supabase ga throw utk error DB)
+      const { error: __leadDbgErr } = await supabase.from("leads").upsert({
         name: displayName,
         email: user?.email || "",
         program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
@@ -720,7 +721,13 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         // [linguo-patch:lead-akun-schema-fix-v1] kolom valid leads only; jadwal chip-friendly
         schedule_preference: Object.entries(enrollSchedule).flatMap(([d, ts]) => ts.map((t) => `${d} ${t}`)).join(", ") || null,
       }, { onConflict: "email" });
-    } catch (e) { console.warn("Lead save:", e); }
+      if (__leadDbgErr) {
+        console.warn("Lead save error:", __leadDbgErr);
+        alert("DEBUG lead upsert GAGAL\n\ncode: " + (__leadDbgErr.code || "-") + "\nmessage: " + (__leadDbgErr.message || "-") + "\ndetails: " + (__leadDbgErr.details || "-") + "\nhint: " + (__leadDbgErr.hint || "-"));
+      } else {
+        alert("DEBUG lead upsert OK \u2014 row tersimpan ke tabel leads.");
+      }
+    } catch (e: any) { console.warn("Lead save:", e); alert("DEBUG lead upsert THREW (network?):\n" + (e?.message || JSON.stringify(e))); }
 
     // ── FIX: Save registrasi ke Supabase biar punya UUID valid ──
     let studentId: string | null =
