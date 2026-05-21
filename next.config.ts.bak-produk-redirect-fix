@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: '/toko/paket-elearning',
         permanent: true,
       },
+      {
+        source: '/produk/:path*',
+        destination: '/toko/paket-elearning',
+        permanent: true,
+      },
     ];
   },
 };
