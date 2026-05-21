@@ -1,18 +1,70 @@
 "use client";
+// ebook-bundle-v2 — edisi toggle (English / Bahasa Indonesia) + paket bundle + multi-select kuota
 import { useState } from "react";
 import Link from "next/link";
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
-const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇫🇷 Prancis","🇰🇷 Korea","🇸🇦 Arab","🇳🇱 Belanda","🇮🇹 Italia","🇵🇭 Tagalog","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇩🇰 Denmark","🇫🇮 Finlandia"];
+const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇳🇱 Belanda","🇸🇦 Arab","🇫🇷 Prancis","🇰🇷 Korea","🇵🇭 Tagalog","🇮🇹 Italia","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇩🇰 Denmark","🇫🇮 Finlandia"];
 
 const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
 
-export default function EbookPage() {
-  const [sel, setSel] = useState<string | null>(null);
+type EditionId = "id" | "en";
+const EDITIONS: { id: EditionId; label: string; hint: number }[] = [
+  { id: "id", label: "Bahasa Indonesia", hint: 99000 },
+  { id: "en", label: "English", hint: 79000 },
+];
 
-  const buy = (nm: string, price: number) => {
-    const msg = `Halo Linguo.id! Saya tertarik membeli:\n\n📦 Produk: ${nm}\n💰 Harga: ${formatRp(price)}\n\nMohon info pembayaran. Terima kasih!`;
+type Paket = { id: string; label: string; qty: number; hemat: number };
+const PAKETS: Paket[] = [
+  { id: "satuan",  label: "Satuan",         qty: 1,  hemat: 0 },
+  { id: "hemat",   label: "Bundle Hemat",   qty: 3,  hemat: 20 },
+  { id: "populer", label: "Bundle Populer", qty: 5,  hemat: 29 },
+  { id: "all",     label: "All-Access",     qty: 20, hemat: 62 },
+];
+
+const PRICES: Record<EditionId, Record<string, number>> = {
+  id: { satuan: 99000, hemat: 239000, populer: 349000, all: 749000 },
+  en: { satuan: 79000, hemat: 189000, populer: 279000, all: 599000 },
+};
+
+export default function EbookPage() {
+  const [edition, setEdition] = useState<EditionId>("id");
+  const [paketId, setPaketId] = useState("satuan");
+  const [picked, setPicked] = useState<string[]>([]);
+
+  const paket = PAKETS.find((p) => p.id === paketId) ?? PAKETS[0];
+  const isAll = paket.id === "all";
+  const quota = paket.qty;
+  const price = PRICES[edition][paket.id];
+  const editionLabel = EDITIONS.find((e) => e.id === edition)?.label ?? "Bahasa Indonesia";
+  const selected = isAll ? LANGS.map((l) => l.slice(2).trim()) : picked;
+  const ready = isAll || picked.length === quota;
+  const remaining = quota - picked.length;
+
+  const choosePaket = (id: string) => {
+    const p = PAKETS.find((x) => x.id === id) ?? PAKETS[0];
+    setPaketId(id);
+    setPicked((prev) => prev.slice(0, p.qty));
+  };
+
+  const toggleLang = (nm: string) => {
+    if (isAll) return;
+    setPicked((prev) => {
+      if (prev.includes(nm)) return prev.filter((x) => x !== nm);
+      if (prev.length >= quota) return prev;
+      return [...prev, nm];
+    });
+  };
+
+  const buy = () => {
+    const msg =
+      `Halo Linguo.id! Saya mau beli e-book:\n\n` +
+      `📦 Paket: ${paket.label} (${quota} bahasa)\n` +
+      `📖 Edisi: ${editionLabel}\n` +
+      `🗣️ Bahasa: ${selected.join(", ")}\n` +
+      `💰 Harga: ${formatRp(price)}\n\n` +
+      `Mohon info pembayaran. Terima kasih!`;
     window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
@@ -41,12 +93,71 @@ export default function EbookPage() {
             E-Book Belajar Bahasa
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-teal-500">
-              Mulai dari Rp 29.000
+              Mulai dari Rp 79.000
             </span>
           </h1>
           <p className="text-lg text-slate-500 max-w-xl mx-auto">
             Modul lengkap dari basic hingga intermediate. Kosakata praktis, contoh percakapan, dan latihan soal — bisa dipelajari kapan saja.
           </p>
+        </div>
+      </section>
+
+      {/* Edition selector */}
+      <section className="max-w-6xl mx-auto px-4 pt-8 pb-2">
+        <h2 className="text-xl font-bold text-slate-900 text-center mb-1">Pilih Edisi E-Book</h2>
+        <p className="text-sm text-slate-500 text-center mb-5">Edisi menentukan bahasa pengantar materi.</p>
+        <div className="flex gap-3 max-w-md mx-auto">
+          {EDITIONS.map((e) => {
+            const active = e.id === edition;
+            return (
+              <button
+                key={e.id}
+                onClick={() => setEdition(e.id)}
+                className={`flex-1 rounded-2xl border-2 p-4 text-center transition-all ${
+                  active ? "border-indigo-500 bg-indigo-50" : "border-slate-200 bg-white hover:border-indigo-200"
+                }`}
+              >
+                <p className="text-sm font-semibold text-slate-900">{e.label}</p>
+                <p className="text-xs text-slate-400 mt-1">mulai {formatRp(e.hint)}</p>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Paket selector */}
+      <section className="max-w-6xl mx-auto px-4 pt-6 pb-4">
+        <h2 className="text-xl font-bold text-slate-900 text-center mb-1">Pilih Paket</h2>
+        <p className="text-sm text-slate-500 text-center mb-6">Makin banyak bahasa, makin hemat per e-book.</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {PAKETS.map((p) => {
+            const active = p.id === paketId;
+            const pPrice = PRICES[edition][p.id];
+            return (
+              <button
+                key={p.id}
+                onClick={() => choosePaket(p.id)}
+                className={`relative text-left rounded-2xl border-2 p-4 transition-all ${
+                  active ? "border-indigo-500 bg-indigo-50" : "border-slate-200 bg-white hover:border-indigo-200"
+                }`}
+              >
+                {p.id === "populer" && (
+                  <span className="absolute -top-2.5 left-4 bg-indigo-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    Paling laku
+                  </span>
+                )}
+                <p className="text-sm font-semibold text-slate-900">{p.label}</p>
+                <p className="text-xs text-slate-400 mb-2">{p.qty} bahasa</p>
+                <p className="text-lg font-extrabold text-slate-900">{formatRp(pPrice)}</p>
+                <p className="text-[11px] text-slate-400">{formatRp(Math.round(pPrice / p.qty))} / e-book</p>
+                {p.hemat > 0 && (
+                  <span className="inline-block mt-2 text-[10px] font-bold text-emerald-700 bg-emerald-100 rounded-full px-2 py-0.5">
+                    Hemat {p.hemat}%
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
       </section>
 
@@ -56,15 +167,17 @@ export default function EbookPage() {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="flex-1">
               <span className="inline-flex items-center gap-2 bg-indigo-100 rounded-full px-3 py-1 mb-4 text-xs font-semibold text-indigo-700">
-                E-Book Digital
+                {paket.label} · Edisi {editionLabel}
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">Satu E-Book, Satu Bahasa</h2>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
+                {isAll ? "Semua Bahasa, Sekali Beli" : `Pilih ${quota} Bahasa Favoritmu`}
+              </h2>
               <p className="text-slate-500 mb-4">
-                Pilih bahasa yang mau kamu kuasai. Setiap e-book disusun rapi oleh tim kurikulum Linguo.
+                Rakit paketmu sendiri. Setiap e-book disusun rapi oleh tim kurikulum Linguo — format PDF, akses selamanya.
               </p>
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-4xl font-extrabold text-slate-900">Rp 29.000</span>
-                <span className="text-sm text-slate-400">/e-book</span>
+                <span className="text-4xl font-extrabold text-slate-900">{formatRp(price)}</span>
+                <span className="text-sm text-slate-400">/ {quota} bahasa</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {FEATURES.map((f) => (
@@ -76,17 +189,30 @@ export default function EbookPage() {
               </div>
             </div>
             <div className="w-full md:w-80 bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-900 mb-3">Pilih bahasa:</p>
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-sm font-semibold text-slate-900">Pilih bahasa</p>
+                <span className={`text-xs font-bold ${ready ? "text-emerald-600" : "text-indigo-600"}`}>
+                  {selected.length}/{quota}
+                </span>
+              </div>
+              {isAll && (
+                <p className="text-xs text-slate-400 mb-3">All-Access — semua 20 bahasa sudah termasuk.</p>
+              )}
               <div className="grid grid-cols-2 gap-2 max-h-72 overflow-y-auto">
                 {LANGS.map((l) => {
                   const nm: string = l.slice(2).trim();
+                  const on = selected.includes(nm);
+                  const locked = !on && !isAll && picked.length >= quota;
                   return (
                     <button
                       key={l}
-                      onClick={() => setSel(sel === nm ? null : nm)}
+                      onClick={() => toggleLang(nm)}
+                      disabled={isAll || locked}
                       className={`flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
-                        sel === nm
+                        on
                           ? "bg-indigo-500 text-white shadow-md"
+                          : locked
+                          ? "bg-slate-50 text-slate-300 cursor-not-allowed"
                           : "bg-slate-50 text-slate-700 hover:bg-indigo-50"
                       }`}
                     >
@@ -96,11 +222,11 @@ export default function EbookPage() {
                 })}
               </div>
               <button
-                disabled={!sel}
-                onClick={() => sel && buy(`E-Book ${sel}`, 29000)}
+                disabled={!ready}
+                onClick={buy}
                 className="w-full mt-4 py-3 rounded-2xl font-bold text-sm bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-40 transition-all"
               >
-                {sel ? `Beli E-Book ${sel}` : "Pilih bahasa dulu"}
+                {ready ? `Beli ${paket.label} — ${formatRp(price)}` : `Pilih ${remaining} bahasa lagi`}
               </button>
             </div>
           </div>
@@ -128,9 +254,9 @@ export default function EbookPage() {
         <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Apa Kata Mereka?</h2>
         <div className="grid md:grid-cols-3 gap-4">
           {[
-            { n: "Budi S.", t: "E-book materinya lengkap. Worth it banget cuma 29rb!" },
-            { n: "Lia P.", t: "Contoh percakapannya kepake banget buat latihan sehari-hari." },
-            { n: "Andi W.", t: "Format PDF-nya rapi, gampang dibaca di HP pas lagi senggang." },
+            { n: "Budi S.", t: "E-book materinya lengkap dan rapi, jelas banget penjelasannya." },
+            { n: "Lia P.", t: "Ambil bundle 3 bahasa, hemat lumayan buat belajar bareng temen." },
+            { n: "Andi W.", t: "Format PDF-nya enak dibaca di HP pas lagi senggang." },
           ].map((t, i) => (
             <div key={i} className="bg-slate-50 rounded-2xl p-6">
               <div className="flex gap-1 mb-3">
