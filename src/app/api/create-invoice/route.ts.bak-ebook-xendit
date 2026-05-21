@@ -18,15 +18,6 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
     "e-learning-6": { amount: 99000, description: "E-Learning 6 Bulan" },
     "e-learning-12": { amount: 179000, description: "E-Learning 12 Bulan" },
   "e-book": { amount: 29000, description: "E-Book Digital" },
-  // ── ebook-xendit-v3: SKU bundle e-book per-edisi (id=Bahasa Indonesia, en=English) ──
-  "ebook-satuan-id":  { amount: 99000,  description: "E-Book Satuan - 1 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-hemat-id":   { amount: 239000, description: "E-Book Bundle Hemat - 3 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-populer-id": { amount: 349000, description: "E-Book Bundle Populer - 5 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-all-id":     { amount: 749000, description: "E-Book All-Access - 20 bahasa (Edisi Bahasa Indonesia)" },
-  "ebook-satuan-en":  { amount: 79000,  description: "E-Book Satuan - 1 bahasa (Edisi English)" },
-  "ebook-hemat-en":   { amount: 189000, description: "E-Book Bundle Hemat - 3 bahasa (Edisi English)" },
-  "ebook-populer-en": { amount: 279000, description: "E-Book Bundle Populer - 5 bahasa (Edisi English)" },
-  "ebook-all-en":     { amount: 599000, description: "E-Book All-Access - 20 bahasa (Edisi English)" },
 };
 
 export async function POST(req: NextRequest) {

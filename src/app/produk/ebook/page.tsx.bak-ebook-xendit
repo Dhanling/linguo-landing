@@ -1,5 +1,5 @@
 "use client";
-// ebook-xendit-v3 — edisi toggle + paket bundle + multi-select kuota + checkout Xendit otomatis
+// ebook-bundle-v2 — edisi toggle (English / Bahasa Indonesia) + paket bundle + multi-select kuota
 import { useState } from "react";
 import Link from "next/link";
 
@@ -33,14 +33,6 @@ export default function EbookPage() {
   const [paketId, setPaketId] = useState("satuan");
   const [picked, setPicked] = useState<string[]>([]);
 
-  // ── checkout Xendit ──
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [wa, setWa] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
   const paket = PAKETS.find((p) => p.id === paketId) ?? PAKETS[0];
   const isAll = paket.id === "all";
   const quota = paket.qty;
@@ -49,7 +41,6 @@ export default function EbookPage() {
   const selected = isAll ? LANGS.map((l) => l.slice(2).trim()) : picked;
   const ready = isAll || picked.length === quota;
   const remaining = quota - picked.length;
-  const langLabel = isAll ? "Semua 20 bahasa" : selected.join(", ");
 
   const choosePaket = (id: string) => {
     const p = PAKETS.find((x) => x.id === id) ?? PAKETS[0];
@@ -66,38 +57,15 @@ export default function EbookPage() {
     });
   };
 
-  const checkout = async () => {
-    if (!name.trim() || !email.trim() || !wa.trim()) {
-      setError("Lengkapi nama, email, dan WhatsApp.");
-      return;
-    }
-    if (!email.includes("@")) {
-      setError("Email belum valid.");
-      return;
-    }
-    setLoading(true);
-    setError("");
-    try {
-      const cleanWa = wa.replace(/\D/g, "").replace(/^0/, "");
-      const res = await fetch("/api/create-invoice", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          wa_number: cleanWa,
-          language: langLabel,
-          program: "digital",
-          productKey: `ebook-${paket.id}-${edition}`,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Gagal membuat invoice");
-      window.location.href = data.invoice_url;
-    } catch (e: any) {
-      setError(e.message || "Terjadi kesalahan. Coba lagi.");
-      setLoading(false);
-    }
+  const buy = () => {
+    const msg =
+      `Halo Linguo.id! Saya mau beli e-book:\n\n` +
+      `📦 Paket: ${paket.label} (${quota} bahasa)\n` +
+      `📖 Edisi: ${editionLabel}\n` +
+      `🗣️ Bahasa: ${selected.join(", ")}\n` +
+      `💰 Harga: ${formatRp(price)}\n\n` +
+      `Mohon info pembayaran. Terima kasih!`;
+    window.open(`https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -255,23 +223,11 @@ export default function EbookPage() {
               </div>
               <button
                 disabled={!ready}
-                onClick={() => {
-                  setError("");
-                  setOpen(true);
-                }}
+                onClick={buy}
                 className="w-full mt-4 py-3 rounded-2xl font-bold text-sm bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-40 transition-all"
               >
                 {ready ? `Beli ${paket.label} — ${formatRp(price)}` : `Pilih ${remaining} bahasa lagi`}
               </button>
-              <a
-                href={`https://wa.me/6282116859493?text=${encodeURIComponent(
-                  `Halo Linguo.id! Saya mau tanya soal e-book ${paket.label} (Edisi ${editionLabel}).`
-                )}`}
-                target="_blank"
-                className="block text-center text-xs text-slate-400 hover:text-indigo-500 mt-2.5"
-              >
-                atau tanya dulu via WhatsApp
-              </a>
             </div>
           </div>
         </div>
@@ -335,87 +291,6 @@ export default function EbookPage() {
           </div>
         </div>
       </footer>
-
-      {/* Checkout modal — Xendit */}
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/40 backdrop-blur-sm p-4"
-          onClick={() => !loading && setOpen(false)}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl"
-          >
-            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-5 text-white">
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-indigo-100 text-xs">Checkout E-Book</p>
-                  <h3 className="text-lg font-bold">
-                    {paket.label} · {editionLabel}
-                  </h3>
-                </div>
-                <button
-                  onClick={() => !loading && setOpen(false)}
-                  className="h-8 w-8 flex items-center justify-center rounded-full bg-white/20 shrink-0"
-                >
-                  ✕
-                </button>
-              </div>
-              <p className="text-2xl font-extrabold mt-2">{formatRp(price)}</p>
-            </div>
-            <div className="p-6 space-y-4">
-              <div className="bg-indigo-50 rounded-xl px-4 py-3 text-xs text-slate-600">
-                <span className="font-semibold text-slate-800">Bahasa:</span> {langLabel}
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Nama Lengkap</label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Nama"
-                  disabled={loading}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-slate-500 mb-1.5 block">Email</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="email@contoh.com"
-                  disabled={loading}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-                />
-                <p className="text-[11px] text-slate-400 mt-1">E-book dikirim ke email ini setelah pembayaran.</p>
-              </div>
-              <div>
-                <label className="text-xs font-semibold text-slate-500 mb-1.5 block">WhatsApp</label>
-                <input
-                  type="tel"
-                  value={wa}
-                  onChange={(e) => setWa(e.target.value)}
-                  placeholder="0821xxxxxxxx"
-                  disabled={loading}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-                />
-              </div>
-              {error && <p className="text-sm text-red-500 bg-red-50 rounded-xl px-4 py-2">{error}</p>}
-              <button
-                onClick={checkout}
-                disabled={loading}
-                className="w-full py-3.5 rounded-2xl bg-indigo-500 text-white font-bold text-sm hover:bg-indigo-600 disabled:opacity-60 flex items-center justify-center gap-2 shadow-lg shadow-indigo-100"
-              >
-                {loading ? "Memproses..." : `Bayar ${formatRp(price)}`}
-              </button>
-              <p className="text-[11px] text-slate-400 text-center">
-                Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
