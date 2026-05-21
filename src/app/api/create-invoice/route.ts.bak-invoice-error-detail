@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
     if (!leadRes.ok) {
       const err = await leadRes.text();
       console.error("Supabase error:", err);
-      return NextResponse.json({ error: `Gagal menyimpan data: ${err}` }, { status: 500 });
+      return NextResponse.json({ error: "Gagal menyimpan data" }, { status: 500 });
     }
 
     const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
@@ -127,9 +127,7 @@ export async function POST(req: NextRequest) {
     if (!xenditRes.ok) {
       const err = await xenditRes.text();
       console.error("Xendit error:", err);
-      let xfDetail = err; // invoice-error-detail-v1
-      try { const xj = JSON.parse(err); xfDetail = xj.message || xj.error_code || err; } catch {}
-      return NextResponse.json({ error: `Gagal membuat invoice: ${xfDetail}` }, { status: 500 });
+      return NextResponse.json({ error: "Gagal membuat invoice" }, { status: 500 });
     }
 
     const invoice = await xenditRes.json();
