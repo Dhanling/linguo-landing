@@ -8,8 +8,8 @@
 // (migrated affiliates have user_id = NULL). Charts + promo materials are
 // deferred to Phase 2C.
 //
-// afiliator-login-v1: logged-out state is now a real inline login form
-// (Google + email/password) instead of a redirect-to-/akun card. Auth uses
+// afiliator-login-v2: logged-out state is a modern, fully-centered inline
+// login card (Google + email/password). No top-left back button. Auth uses
 // onAuthStateChange so login transitions straight into the dashboard.
 // ============================================================================
 
@@ -17,13 +17,14 @@ import { useEffect, useState, type ReactNode } from "react";
 import { supabase } from "@/lib/supabase-client";
 import type { Session } from "@supabase/supabase-js";
 import {
-  ArrowLeft,
   Copy,
   Check,
   Share2,
   MousePointerClick,
   ShoppingBag,
   Wallet,
+  Mail,
+  Lock,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -171,40 +172,42 @@ export default function AfiliatorPage() {
     }
   }
 
-  const showSkeleton = authLoading || (session && dataLoading);
+  // ── Initial auth check ─────────────────────────────────────────────────
+  if (authLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-slate-50">
+        <span className="h-7 w-7 animate-spin rounded-full border-[3px] border-[#1A9E9E] border-t-transparent" />
+      </div>
+    );
+  }
 
+  // ── Logged out → centered login card ───────────────────────────────────
+  if (!session) {
+    return <AfiliatorLogin />;
+  }
+
+  // ── Logged in → dashboard ──────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-slate-50">
-      <div className="mx-auto max-w-2xl px-4 py-6">
-        {/* Top bar */}
-        <div className="mb-6 flex items-center gap-3">
-          <a
-            href="/akun"
-            aria-label="Kembali"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:bg-slate-100"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </a>
-          <h1 className="text-lg font-bold text-slate-800">Program Afiliator</h1>
-        </div>
+      <div className="mx-auto max-w-2xl px-4 py-7">
+        <h1 className="mb-6 text-xl font-bold text-slate-800">
+          Program Afiliator
+        </h1>
 
-        {showSkeleton && <SkeletonBlock />}
+        {dataLoading && <SkeletonBlock />}
 
-        {/* Logged out → inline login form */}
-        {!authLoading && !session && <AfiliatorLogin />}
-
-        {!showSkeleton && session && error && (
+        {!dataLoading && error && (
           <CenteredCard title="Ada kendala" desc={error} />
         )}
 
-        {!showSkeleton && session && !error && !aff && (
+        {!dataLoading && !error && !aff && (
           <CenteredCard
             title="Kamu belum jadi afiliator"
             desc="Akun ini belum terdaftar di Program Afiliator Linguo. Hubungi tim Linguo kalau kamu ingin bergabung."
           />
         )}
 
-        {!showSkeleton && session && !error && aff && (
+        {!dataLoading && !error && aff && (
           <Dashboard
             aff={aff}
             stats={data!.stats!}
@@ -220,7 +223,7 @@ export default function AfiliatorPage() {
   );
 }
 
-// ── Login (inline) ─────────────────────────────────────────────────────────
+// ── Login (inline, centered) ───────────────────────────────────────────────
 function AfiliatorLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -261,26 +264,31 @@ function AfiliatorLogin() {
     // on success: parent's onAuthStateChange takes over and renders the dashboard
   }
 
+  const inputCls =
+    "h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#1A9E9E] focus:bg-white focus:ring-2 focus:ring-[#1A9E9E]/20";
+
   return (
-    <div className="mx-auto max-w-sm">
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        {/* Branded header */}
-        <div className="bg-gradient-to-br from-[#1A9E9E] to-[#147878] px-6 py-7 text-center text-white">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
-            <Wallet className="h-6 w-6" />
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-teal-50/70 via-white to-slate-50 px-4 py-10">
+      <div className="w-full max-w-sm">
+        {/* Card */}
+        <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-[0_12px_48px_-16px_rgba(20,120,120,0.22)]">
+          {/* Icon badge */}
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#147878] shadow-lg shadow-[#1A9E9E]/25">
+            <Wallet className="h-7 w-7 text-white" strokeWidth={2} />
           </div>
-          <h2 className="text-lg font-bold">Dashboard Afiliator</h2>
-          <p className="mt-1 text-sm text-white/75">
+
+          <h1 className="mt-4 text-center text-xl font-bold text-slate-800">
+            Dashboard Afiliator
+          </h1>
+          <p className="mt-1.5 text-center text-sm text-slate-500">
             Masuk untuk lihat komisi &amp; link referral kamu
           </p>
-        </div>
 
-        {/* Form */}
-        <div className="px-6 py-6">
+          {/* Google */}
           <button
             onClick={loginGoogle}
             disabled={googleBusy || busy}
-            className="flex h-11 w-full items-center justify-center gap-2.5 rounded-xl border-2 border-slate-200 bg-white text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-50"
+            className="mt-6 flex h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 disabled:opacity-50"
           >
             {googleBusy ? (
               <span className="h-5 w-5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
@@ -309,34 +317,39 @@ function AfiliatorLogin() {
             )}
           </button>
 
-          <div className="relative my-4">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-slate-200" />
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-2 text-xs uppercase tracking-wide text-slate-400">
-                atau
-              </span>
-            </div>
+          {/* Divider */}
+          <div className="my-5 flex items-center gap-3">
+            <span className="h-px flex-1 bg-slate-200" />
+            <span className="text-xs font-medium uppercase tracking-wider text-slate-400">
+              atau
+            </span>
+            <span className="h-px flex-1 bg-slate-200" />
           </div>
 
-          <div className="space-y-2.5">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && loginEmail()}
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-transparent focus:ring-2 focus:ring-[#1A9E9E]"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && loginEmail()}
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-transparent focus:ring-2 focus:ring-[#1A9E9E]"
-            />
+          {/* Email / password */}
+          <div className="space-y-3">
+            <div className="relative">
+              <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && loginEmail()}
+                className={inputCls}
+              />
+            </div>
+            <div className="relative">
+              <Lock className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && loginEmail()}
+                className={inputCls}
+              />
+            </div>
 
             {err && (
               <p className="rounded-lg bg-rose-50 px-3 py-2 text-xs font-medium text-rose-600">
@@ -347,7 +360,7 @@ function AfiliatorLogin() {
             <button
               onClick={loginEmail}
               disabled={busy || googleBusy || !email || !password}
-              className="flex h-11 w-full items-center justify-center rounded-xl bg-[#1A9E9E] text-sm font-semibold text-white transition hover:bg-[#147878] disabled:opacity-50"
+              className="flex h-12 w-full items-center justify-center rounded-xl bg-[#1A9E9E] text-sm font-semibold text-white shadow-lg shadow-[#1A9E9E]/25 transition hover:bg-[#147878] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
             >
               {busy ? (
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -357,10 +370,20 @@ function AfiliatorLogin() {
             </button>
           </div>
 
-          <p className="mt-4 text-center text-xs text-slate-400">
+          <p className="mt-5 text-center text-xs text-slate-400">
             Gunakan email yang terdaftar sebagai afiliator Linguo.
           </p>
         </div>
+
+        {/* Subtle escape hatch */}
+        <p className="mt-6 text-center">
+          <a
+            href="/"
+            className="text-xs text-slate-400 transition hover:text-slate-600"
+          >
+            Kembali ke Linguo.id
+          </a>
+        </p>
       </div>
     </div>
   );
