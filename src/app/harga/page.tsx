@@ -1,10 +1,12 @@
 "use client";
+/* linguo-patch:harga-native-toggle-v1 */
 import { useState, useMemo } from "react";
 import Link from "next/link";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 type LangEntry = { flag: string; name: string; cat: "A" | "B" | "C" | "D" | "E" };
+type TeacherType = "lokal" | "native";
 
 // Sorted by demand (most popular first)
 const LANGUAGES: LangEntry[] = [
@@ -76,6 +78,10 @@ const PRICE_TABLE: Record<string, number[]> = {
   E: [150000, 160000, 170000, 180000],
 };
 
+// Pengajar native speaker = 2x tarif pengajar lokal.
+// Ubah konstanta ini kalau markup native mau disesuaikan.
+const NATIVE_MULTIPLIER = 2;
+
 const LEVELS = [
   { key: 0, label: "A1", sub: "Pemula" },
   { key: 1, label: "A2", sub: "Dasar" },
@@ -91,8 +97,25 @@ function formatRp(v: number) {
   }).format(v);
 }
 
-function buildWaLink(lang: string, level: string, sessions: number, price: number) {
-  const msg = `Halo Min Ling! Saya tertarik daftar Kelas Private ${lang} level ${level} (${sessions} sesi = ${formatRp(price)}). Bisa info lebih lanjut?`;
+// Harga per sesi sesuai kategori, level, dan tipe pengajar.
+// Native dibulatkan ke ribuan terdekat biar rapi.
+function priceFor(cat: string, levelIdx: number, teacherType: TeacherType) {
+  const base = PRICE_TABLE[cat][levelIdx];
+  if (teacherType === "native") {
+    return Math.round((base * NATIVE_MULTIPLIER) / 1000) * 1000;
+  }
+  return base;
+}
+
+function buildWaLink(
+  lang: string,
+  level: string,
+  sessions: number,
+  price: number,
+  teacherType: TeacherType,
+) {
+  const tt = teacherType === "native" ? "Pengajar Native" : "Pengajar Lokal";
+  const msg = `Halo Min Ling! Saya tertarik daftar Kelas Private ${lang} (${tt}) level ${level} (${sessions} sesi = ${formatRp(price)}). Bisa info lebih lanjut?`;
   return `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
 }
 
@@ -103,6 +126,7 @@ export default function HargaPage() {
   const [sessions, setSessions] = useState(16);
   const [search, setSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
+  const [teacherType, setTeacherType] = useState<TeacherType>("lokal");
 
   const filtered = useMemo(() => {
     setShowAll(false);
@@ -112,6 +136,7 @@ export default function HargaPage() {
   }, [search]);
 
   const currentLevel = LEVELS[levelIdx];
+  const isNative = teacherType === "native";
 
   return (
     <div className="min-h-screen bg-[#f8fafa] font-sans">
@@ -192,6 +217,30 @@ export default function HargaPage() {
                 className="w-5 h-5 flex items-center justify-center text-slate-500 hover:text-slate-900 font-bold text-sm">+</button>
             </div>
           </div>
+
+          <div className="hidden sm:block h-5 w-px bg-slate-200 mx-1" />
+
+          {/* Teacher type */}
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-semibold text-slate-400 mr-1 hidden sm:block">Pengajar:</span>
+            <div className="inline-flex bg-slate-100 rounded-full p-0.5">
+              {([
+                { value: "lokal", label: "Lokal" },
+                { value: "native", label: "Native" },
+              ] as const).map(t => (
+                <button key={t.value} onClick={() => setTeacherType(t.value)}
+                  className={`px-3.5 py-1 rounded-full text-xs font-bold transition-all ${
+                    teacherType === t.value
+                      ? t.value === "native"
+                        ? "bg-[#fbbf24] text-slate-900 shadow-sm"
+                        : "bg-[#1A9E9E] text-white shadow-sm"
+                      : "text-slate-500 hover:text-slate-800"
+                  }`}>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -212,6 +261,16 @@ export default function HargaPage() {
           />
         </div>
 
+        {/* Native price note */}
+        {isNative && (
+          <div className="-mt-4 mb-7 flex items-start gap-2 text-xs bg-amber-50 border border-amber-100 rounded-xl px-3.5 py-2.5 max-w-md">
+            <span className="font-extrabold text-amber-700 shrink-0">Native speaker</span>
+            <span className="text-amber-600 leading-relaxed">
+              — tarif {NATIVE_MULTIPLIER}× pengajar lokal. Imersi penuh & pelafalan autentik langsung dari penutur asli.
+            </span>
+          </div>
+        )}
+
         {/* Language Grid */}
         {filtered.length === 0 ? (
           <div className="text-center py-16 text-slate-400">
@@ -222,16 +281,21 @@ export default function HargaPage() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {(showAll ? filtered : filtered.slice(0, 12)).map(lang => {
-                const price = PRICE_TABLE[lang.cat][levelIdx];
+                const price = priceFor(lang.cat, levelIdx, teacherType);
                 const total = price * sessions;
-                const waLink = buildWaLink(lang.name, currentLevel.label, sessions, total);
+                const waLink = buildWaLink(lang.name, currentLevel.label, sessions, total, teacherType);
                 return (
                   <div key={lang.name}
                     className="group bg-white rounded-2xl border border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md transition-all duration-200 p-4 flex flex-col gap-3">
                     <div className="flex items-center gap-3">
                       <span className="text-3xl leading-none">{lang.flag}</span>
                       <div className="flex-1 min-w-0">
-                        <p className="font-bold text-slate-900 text-sm truncate">{lang.name}</p>
+                        <div className="flex items-center gap-1.5">
+                          <p className="font-bold text-slate-900 text-sm truncate">{lang.name}</p>
+                          {isNative && (
+                            <span className="shrink-0 text-[9px] font-extrabold bg-[#fbbf24] text-slate-900 px-1.5 py-0.5 rounded-full uppercase tracking-wide">Native</span>
+                          )}
+                        </div>
                         <p className="text-xs text-slate-400 mt-0.5">{currentLevel.label} · {currentLevel.sub}</p>
                       </div>
                     </div>
@@ -280,7 +344,9 @@ export default function HargaPage() {
               "Recording setiap sesi",
               "Soft file materi pembelajaran",
               "Request topik & jadwal sesukamu",
-              "Pengajar berpengalaman & bersertifikat",
+              isNative
+                ? "Pengajar native speaker — imersi & pelafalan autentik"
+                : "Pengajar lokal berpengalaman & bersertifikat",
               "E-Certificate setelah selesai paket",
             ].map(item => (
               <div key={item} className="flex items-center gap-2.5 text-sm text-slate-600">
