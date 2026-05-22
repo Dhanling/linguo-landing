@@ -223,6 +223,8 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
             setProgram(p.id);
             if (p.id === "private") setKidsType("");
             if (p.id === "kids") setDuration(60);
+            setError(""); // linguo-patch:start-picker-v1 — klik kartu langsung lanjut ke step 2
+            setStep(2);
           }}
           className={selectCard(program === p.id)}
         >
@@ -476,7 +478,8 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer — linguo-patch:start-picker-v1: disembunyiin di step 1 (kecuali ada error) */}
+      {(step > 1 || error) && (
       <div className="px-5 sm:px-6 py-4 border-t border-gray-100 shrink-0 bg-white">
         {error && (
           <div className="mb-3 rounded-lg bg-red-50 border border-red-200 px-3.5 py-2.5 text-sm text-red-700">
@@ -509,7 +512,7 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
               </>
             )}
           </div>
-          {step < TOTAL ? (
+          {step === 1 ? null : step < TOTAL ? (
             <button
               type="button"
               onClick={next}
@@ -535,6 +538,7 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
           )}
         </div>
       </div>
+      )}
 
       <style>{`
         @keyframes trialSlide {

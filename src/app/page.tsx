@@ -347,6 +347,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [corpSubOpen, setCorpSubOpen] = useState(false); // __PATCH_NAV_CORPORATE_SUBMENU__
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
+  const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 80); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   // Lock body scroll when mobile drawer open (so background gak ikut ke-scroll)
   useEffect(() => {
@@ -518,9 +519,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
           </div>
           <div className="hidden md:flex items-center gap-4">
             <button onClick={onLoginOpen} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
-            <button onClick={()=>setPlacementPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Placement Test</button>
-            {/* linguo-patch:trial-wizard-v1 */}
-            <button onClick={()=>(window as any).__openTrialWizard?.()} className={`font-bold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95 ${c ? "bg-[#1A9E9E] text-white hover:bg-[#178a8a]" : "bg-white text-[#1A9E9E] hover:bg-white/90"}`}>Coba Trial</button>
+            {/* linguo-patch:start-picker-v1 — Placement Test + Coba Trial digabung jadi 1 tombol */}
+            <button onClick={()=>setStartPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Mulai Belajar</button>
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
         </div>
@@ -572,6 +572,60 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
           </motion.div>
         )}</AnimatePresence>
       </nav>
+      {/* linguo-patch:start-picker-v1 — popup pilih Placement Test / Trial Class */}
+      <AnimatePresence>
+        {startPickerOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={()=>setStartPickerOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed z-[60] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden"
+            >
+              <div className="px-6 pt-6 pb-2 flex items-start justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">Mau mulai dari mana?</h2>
+                  <p className="text-sm text-gray-500 mt-0.5">Pilih cara kamu kenalan sama Linguo.</p>
+                </div>
+                <button onClick={()=>setStartPickerOpen(false)} aria-label="Tutup" className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+              </div>
+              <div className="px-6 pb-6 pt-2 space-y-3">
+                <button
+                  onClick={()=>{ setStartPickerOpen(false); setPlacementPickerOpen(true); }}
+                  className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
+                >
+                  <div className="text-3xl leading-none">🎯</div>
+                  <div>
+                    <div className="font-bold text-gray-900 flex items-center gap-2">
+                      Placement Test
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wide">Gratis</span>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-0.5">Cek level bahasa kamu dulu — cuma ~10 menit, langsung dapet hasil.</div>
+                  </div>
+                </button>
+                <button
+                  onClick={()=>{ setStartPickerOpen(false); (window as any).__openTrialWizard?.(); }}
+                  className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
+                >
+                  <div className="text-3xl leading-none">✨</div>
+                  <div>
+                    <div className="font-bold text-gray-900">Trial Class</div>
+                    <div className="text-xs text-gray-500 mt-0.5">Coba 1 sesi kelas beneran bareng pengajar (Private / Kids).</div>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
       <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
 
     </div>
