@@ -206,7 +206,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <div className="px-6 pb-6 overflow-y-auto flex-1">
                 <div className="grid grid-cols-2 gap-2">
                   {filtered.map(l=>(
-                    <button key={l} onClick={()=>{setSelLang(l);setSearch("");setStep(selProgram?3:2)}}
+                    <button key={l} onClick={()=>{setSelLang(l);setSearch("");if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
                       {l}
