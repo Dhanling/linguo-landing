@@ -80,13 +80,16 @@ export async function GET(req: NextRequest) {
       tier: string;
       status: string;
       name: string;
+      bank_name: string | null;
+      bank_account_no: string | null;
+      bank_account_name: string | null;
     };
     let aff: AffRow | null = null;
 
     {
       const { data, error } = await admin
         .from("affiliates")
-        .select("id, referral_code, tier, status, name")
+        .select("id, referral_code, tier, status, name, bank_name, bank_account_no, bank_account_name")
         .eq("user_id", authUserId)
         .limit(1);
       if (error) {
@@ -100,7 +103,7 @@ export async function GET(req: NextRequest) {
     if (!aff && authEmail) {
       const { data, error } = await admin
         .from("affiliates")
-        .select("id, referral_code, tier, status, name")
+        .select("id, referral_code, tier, status, name, bank_name, bank_account_no, bank_account_name")
         .ilike("email", authEmail)
         .limit(1);
       if (error) {
@@ -173,6 +176,9 @@ export async function GET(req: NextRequest) {
         tier: aff.tier,
         status: aff.status,
         name: aff.name,
+        bank_name: aff.bank_name,
+        bank_account_no: aff.bank_account_no,
+        bank_account_name: aff.bank_account_name,
       },
       stats: {
         clicks: clickCount || 0,

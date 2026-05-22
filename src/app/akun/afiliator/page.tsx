@@ -20,6 +20,7 @@
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { supabase } from "@/lib/supabase-client";
+import RekeningForm from "./RekeningForm";
 import type { Session } from "@supabase/supabase-js";
 import {
   Copy,
@@ -63,6 +64,9 @@ type ApiResponse = {
     tier: string;
     status: string;
     name: string;
+    bank_name: string | null;
+    bank_account_no: string | null;
+    bank_account_name: string | null;
   } | null;
   stats?: {
     clicks: number;
@@ -794,6 +798,11 @@ function Dashboard({
       {/* Materi promosi */}
       <div className="aff-reveal" style={{ animationDelay: "510ms" }}>
         <MateriPromosi code={aff.referral_code} />
+      </div>
+
+      {/* Rekening pencairan */}
+      <div className="aff-reveal" style={{ animationDelay: "540ms" }}>
+        <RekeningForm aff={aff} />
       </div>
 
       {/* Conversions */}
