@@ -2,18 +2,21 @@
 
 // ============================================================================
 // /akun/afiliator — Affiliate Dashboard
-// Affiliate Program — Phase 2A
+// Affiliate Program — Phase 2A · Phase 2C (activity chart added)
 // ----------------------------------------------------------------------------
 // Reads /api/affiliate/me (service-role). See that route for the RLS gotcha
-// (migrated affiliates have user_id = NULL). Charts + promo materials are
-// deferred to Phase 2C.
+// (migrated affiliates have user_id = NULL).
 //
 // afiliator-login-v2: logged-out state is a modern, fully-centered inline
 // login card (Google + email/password). No top-left back button. Auth uses
 // onAuthStateChange so login transitions straight into the dashboard.
+//
+// Phase 2C: ActivityChart renders the daily[] time-series returned by the API
+// as an overlaid bar chart (clicks + conversions), with a harian/mingguan
+// toggle. Pure SVG/div — no charting dependency.
 // ============================================================================
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { supabase } from "@/lib/supabase-client";
 import type { Session } from "@supabase/supabase-js";
 import {
@@ -25,6 +28,7 @@ import {
   Wallet,
   Mail,
   Lock,
+  BarChart3,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -37,6 +41,12 @@ type Conversion = {
   commission_amount: number;
   status: string;
   created_at: string;
+};
+
+type DailyPoint = {
+  date: string; // 'YYYY-MM-DD' (WIB)
+  clicks: number;
+  conversions: number;
 };
 
 type ApiResponse = {
@@ -53,6 +63,7 @@ type ApiResponse = {
     commission_approved: number;
     commission_paid: number;
   };
+  daily?: DailyPoint[];
   conversions?: Conversion[];
 };
 
@@ -81,6 +92,11 @@ const PRODUCT_LABEL: Record<string, string> = {
   b2b: "Corporate B2B",
 };
 
+const MONTH_ID = [
+  "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+  "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
+];
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 const rupiah = (n: number) => "Rp " + Math.round(n || 0).toLocaleString("id-ID");
 
@@ -90,6 +106,22 @@ const fmtDate = (iso: string) =>
     month: "short",
     year: "numeric",
   });
+
+// Parse 'YYYY-MM-DD' into parts without any timezone surprises.
+function parseYmd(ymd: string) {
+  const [y, m, d] = ymd.split("-").map(Number);
+  return { y, m: m - 1, d };
+}
+function shortLabel(ymd: string) {
+  const { m, d } = parseYmd(ymd);
+  return `${d} ${MONTH_ID[m] ?? "?"}`;
+}
+// Round a max value up to a "nice" axis ceiling.
+function niceCeil(n: number) {
+  const steps = [5, 10, 20, 30, 50, 80, 100, 150, 200, 300, 500];
+  for (const s of steps) if (n <= s) return s;
+  return Math.ceil(n / 500) * 500;
+}
 
 // ── Page ───────────────────────────────────────────────────────────────────
 export default function AfiliatorPage() {
@@ -101,8 +133,6 @@ export default function AfiliatorPage() {
   const [copied, setCopied] = useState(false);
 
   // ── Auth: initial getSession + live onAuthStateChange ──────────────────
-  // Don't rely on a single getSession() — subscribe so a login (or token
-  // refresh) flows straight into the dashboard without a manual refresh.
   useEffect(() => {
     let mounted = true;
 
@@ -212,6 +242,7 @@ export default function AfiliatorPage() {
             aff={aff}
             stats={data!.stats!}
             conversions={data!.conversions ?? []}
+            daily={data!.daily ?? []}
             refLink={refLink}
             waUrl={waUrl}
             copied={copied}
@@ -394,6 +425,7 @@ function Dashboard({
   aff,
   stats,
   conversions,
+  daily,
   refLink,
   waUrl,
   copied,
@@ -402,6 +434,7 @@ function Dashboard({
   aff: NonNullable<ApiResponse["affiliate"]>;
   stats: NonNullable<ApiResponse["stats"]>;
   conversions: Conversion[];
+  daily: DailyPoint[];
   refLink: string;
   waUrl: string;
   copied: boolean;
@@ -502,6 +535,9 @@ function Dashboard({
         />
       </div>
 
+      {/* Activity chart */}
+      <ActivityChart daily={daily} />
+
       {/* Conversions */}
       <div>
         <h2 className="mb-2 text-sm font-bold text-slate-700">
@@ -558,6 +594,207 @@ function Dashboard({
         Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap
         tanggal 25, minimal Rp 100.000.
       </p>
+    </div>
+  );
+}
+
+// ── Activity chart (overlaid bars: clicks + conversions) ───────────────────
+type ChartBar = {
+  label: string; // x-axis label
+  fullLabel: string; // detail-strip label
+  clicks: number;
+  conversions: number;
+};
+
+function ActivityChart({ daily }: { daily: DailyPoint[] }) {
+  const [mode, setMode] = useState<"harian" | "mingguan">("harian");
+  const [sel, setSel] = useState<number | null>(null);
+
+  // Build bars from the daily series depending on the chosen mode.
+  const bars: ChartBar[] = useMemo(() => {
+    if (!daily.length) return [];
+
+    if (mode === "harian") {
+      // Last 14 days, one bar per day.
+      return daily.slice(-14).map((p) => ({
+        label: String(parseYmd(p.date).d),
+        fullLabel: shortLabel(p.date),
+        clicks: p.clicks,
+        conversions: p.conversions,
+      }));
+    }
+
+    // Mingguan: last 28 days → 4 clean 7-day buckets.
+    const last28 = daily.slice(-28);
+    const out: ChartBar[] = [];
+    for (let i = 0; i < last28.length; i += 7) {
+      const chunk = last28.slice(i, i + 7);
+      if (!chunk.length) continue;
+      const first = chunk[0].date;
+      const last = chunk[chunk.length - 1].date;
+      const fp = parseYmd(first);
+      const lp = parseYmd(last);
+      out.push({
+        label: `${fp.d}–${lp.d} ${MONTH_ID[lp.m] ?? ""}`,
+        fullLabel: `${shortLabel(first)} – ${shortLabel(last)}`,
+        clicks: chunk.reduce((t, c) => t + c.clicks, 0),
+        conversions: chunk.reduce((t, c) => t + c.conversions, 0),
+      });
+    }
+    return out;
+  }, [daily, mode]);
+
+  // Nothing to render if the API didn't return a series.
+  if (!daily.length) return null;
+
+  const peak = Math.max(1, ...bars.map((b) => Math.max(b.clicks, b.conversions)));
+  const ceil = niceCeil(peak);
+  const pct = (v: number) => `${Math.min(100, (v / ceil) * 100)}%`;
+
+  const totalClicks = bars.reduce((t, b) => t + b.clicks, 0);
+  const totalConv = bars.reduce((t, b) => t + b.conversions, 0);
+
+  const active = sel !== null && sel >= 0 && sel < bars.length ? bars[sel] : null;
+  const ctxLabel = active
+    ? active.fullLabel
+    : mode === "harian"
+    ? "14 hari terakhir"
+    : "4 minggu terakhir";
+  const ctxClicks = active ? active.clicks : totalClicks;
+  const ctxConv = active ? active.conversions : totalConv;
+
+  function switchMode(m: "harian" | "mingguan") {
+    setMode(m);
+    setSel(null);
+  }
+
+  const tabCls = (on: boolean) =>
+    `rounded-md px-2.5 py-1 font-semibold transition ${
+      on ? "bg-[#1A9E9E] text-white" : "text-slate-500 hover:text-slate-700"
+    }`;
+
+  return (
+    <div>
+      {/* Header + mode toggle */}
+      <div className="mb-2 flex items-center justify-between">
+        <h2 className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <BarChart3 className="h-4 w-4 text-slate-400" />
+          Grafik Aktivitas
+        </h2>
+        <div className="flex rounded-lg border border-slate-200 bg-white p-0.5 text-xs">
+          <button onClick={() => switchMode("harian")} className={tabCls(mode === "harian")}>
+            Harian
+          </button>
+          <button
+            onClick={() => switchMode("mingguan")}
+            className={tabCls(mode === "mingguan")}
+          >
+            Mingguan
+          </button>
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-slate-200 bg-white p-4">
+        {/* Legend */}
+        <div className="mb-3 flex items-center gap-4 text-xs text-slate-500">
+          <span className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-sm bg-[#1A9E9E]" />
+            Klik
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-sm bg-[#EAB308]" />
+            Konversi
+          </span>
+        </div>
+
+        {/* Plot */}
+        <div className="flex gap-2">
+          {/* Y-axis */}
+          <div className="flex h-[132px] w-5 flex-col justify-between text-right text-[9px] leading-none text-slate-300">
+            <span>{ceil}</span>
+            <span>{ceil / 2}</span>
+            <span>0</span>
+          </div>
+
+          {/* Plot area */}
+          <div className="min-w-0 flex-1">
+            <div className="relative h-[132px]">
+              {/* Gridlines */}
+              <div className="absolute inset-x-0 top-0 border-t border-slate-100" />
+              <div className="absolute inset-x-0 top-1/2 border-t border-slate-100" />
+              <div className="absolute inset-x-0 bottom-0 border-t border-slate-200" />
+
+              {/* Bars */}
+              <div className="absolute inset-0 flex items-end gap-[3px]">
+                {bars.map((b, i) => {
+                  const dim = sel !== null && sel !== i;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setSel(sel === i ? null : i)}
+                      className="group relative flex h-full flex-1 items-end justify-center"
+                      aria-label={`${b.fullLabel}: ${b.clicks} klik, ${b.conversions} konversi`}
+                    >
+                      {/* Clicks (teal, wide) */}
+                      <div
+                        className={`absolute bottom-0 w-[58%] rounded-t-[3px] bg-[#1A9E9E] transition-opacity ${
+                          dim ? "opacity-30" : "opacity-100"
+                        }`}
+                        style={{
+                          height: pct(b.clicks),
+                          minHeight: b.clicks > 0 ? 3 : 0,
+                        }}
+                      />
+                      {/* Conversions (amber, narrow, in front) */}
+                      <div
+                        className={`absolute bottom-0 w-[26%] rounded-t-[3px] bg-[#EAB308] transition-opacity ${
+                          dim ? "opacity-30" : "opacity-100"
+                        }`}
+                        style={{
+                          height: pct(b.conversions),
+                          minHeight: b.conversions > 0 ? 3 : 0,
+                        }}
+                      />
+                      {/* Selected marker */}
+                      {sel === i && (
+                        <div className="absolute -top-1 h-1 w-1 rounded-full bg-slate-400" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* X-axis labels */}
+            <div className="mt-1.5 flex gap-[3px]">
+              {bars.map((b, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 truncate text-center text-[9px] leading-tight ${
+                    sel === i ? "font-bold text-slate-600" : "text-slate-400"
+                  }`}
+                >
+                  {b.label}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Detail strip */}
+        <div className="mt-3 flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
+          <span className="text-xs font-semibold text-slate-600">{ctxLabel}</span>
+          <span className="flex items-center gap-3 text-xs">
+            <span className="font-bold text-[#147878]">{ctxClicks} klik</span>
+            <span className="font-bold text-amber-600">{ctxConv} konversi</span>
+          </span>
+        </div>
+
+        <p className="mt-2 text-center text-[11px] text-slate-400">
+          Ketuk batang untuk lihat detail tanggalnya.
+        </p>
+      </div>
     </div>
   );
 }
