@@ -2,18 +2,20 @@
 
 // ============================================================================
 // /akun/afiliator — Affiliate Dashboard
-// Affiliate Program — Phase 2A · Phase 2C (activity chart added)
+// Affiliate Program — Phase 2A · 2C
 // ----------------------------------------------------------------------------
 // Reads /api/affiliate/me (service-role). See that route for the RLS gotcha
 // (migrated affiliates have user_id = NULL).
 //
-// afiliator-login-v2: logged-out state is a modern, fully-centered inline
-// login card (Google + email/password). No top-left back button. Auth uses
-// onAuthStateChange so login transitions straight into the dashboard.
+// Phase 2C step 3a — dashboard redesign:
+//   - Header with greeting + Logout button (supabase.auth.signOut()).
+//   - Orchestrated page-load: staggered reveal animations (CSS-only).
+//   - Count-up numbers on the stat cards & commission breakdown.
+//   - Activity chart bars grow in from zero on mount.
+//   - Refined depth: layered shadows, atmospheric background glow.
+// No new dependencies — motion is pure CSS via styled-jsx.
 //
-// Phase 2C: ActivityChart renders the daily[] time-series returned by the API
-// as an overlaid bar chart (clicks + conversions), with a harian/mingguan
-// toggle. Pure SVG/div — no charting dependency.
+// The logged-out login card is intentionally left as-is (afiliator-login-v2).
 // ============================================================================
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
@@ -29,6 +31,8 @@ import {
   Mail,
   Lock,
   BarChart3,
+  LogOut,
+  Link2,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -107,7 +111,6 @@ const fmtDate = (iso: string) =>
     year: "numeric",
   });
 
-// Parse 'YYYY-MM-DD' into parts without any timezone surprises.
 function parseYmd(ymd: string) {
   const [y, m, d] = ymd.split("-").map(Number);
   return { y, m: m - 1, d };
@@ -116,11 +119,33 @@ function shortLabel(ymd: string) {
   const { m, d } = parseYmd(ymd);
   return `${d} ${MONTH_ID[m] ?? "?"}`;
 }
-// Round a max value up to a "nice" axis ceiling.
 function niceCeil(n: number) {
   const steps = [5, 10, 20, 30, 50, 80, 100, 150, 200, 300, 500];
   for (const s of steps) if (n <= s) return s;
   return Math.ceil(n / 500) * 500;
+}
+
+// Count a number up from 0 → target with an easeOutCubic curve.
+function useCountUp(target: number, durationMs = 950) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!target || target <= 0) {
+      setVal(0);
+      return;
+    }
+    let raf = 0;
+    const t0 = performance.now();
+    const loop = (now: number) => {
+      const p = Math.min(1, (now - t0) / durationMs);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setVal(target * eased);
+      if (p < 1) raf = requestAnimationFrame(loop);
+      else setVal(target);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, [target, durationMs]);
+  return val;
 }
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -131,6 +156,7 @@ export default function AfiliatorPage() {
   const [dataLoading, setDataLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
 
   // ── Auth: initial getSession + live onAuthStateChange ──────────────────
   useEffect(() => {
@@ -202,6 +228,12 @@ export default function AfiliatorPage() {
     }
   }
 
+  async function logout() {
+    setLoggingOut(true);
+    await supabase.auth.signOut();
+    // onAuthStateChange flips session → null → AfiliatorLogin renders.
+  }
+
   // ── Initial auth check ─────────────────────────────────────────────────
   if (authLoading) {
     return (
@@ -218,11 +250,16 @@ export default function AfiliatorPage() {
 
   // ── Logged in → dashboard ──────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="relative min-h-screen overflow-hidden bg-[#F5F7F8]">
+      {/* Atmospheric background glow */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute -top-40 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[#1A9E9E]/12 blur-3xl" />
+        <div className="absolute top-48 -right-24 h-72 w-72 rounded-full bg-amber-300/12 blur-3xl" />
+        <div className="absolute bottom-0 -left-24 h-72 w-72 rounded-full bg-emerald-300/10 blur-3xl" />
+      </div>
+
       <div className="mx-auto max-w-2xl px-4 py-7">
-        <h1 className="mb-6 text-xl font-bold text-slate-800">
-          Program Afiliator
-        </h1>
+        <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} />
 
         {dataLoading && <SkeletonBlock />}
 
@@ -250,11 +287,94 @@ export default function AfiliatorPage() {
           />
         )}
       </div>
+
+      {/* ── Motion: page-load reveals + hero shimmer (CSS only) ──────────── */}
+      <style jsx global>{`
+        @keyframes affReveal {
+          from {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .aff-reveal {
+          opacity: 0;
+          animation: affReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        @keyframes affSweep {
+          to {
+            transform: translateX(130%);
+          }
+        }
+        .aff-shimmer {
+          transform: translateX(-130%);
+          background: linear-gradient(
+            110deg,
+            transparent 38%,
+            rgba(255, 255, 255, 0.22) 50%,
+            transparent 62%
+          );
+          animation: affSweep 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s 1 forwards;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .aff-reveal {
+            animation: none;
+            opacity: 1;
+          }
+          .aff-shimmer {
+            animation: none;
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }
 
-// ── Login (inline, centered) ───────────────────────────────────────────────
+// ── Header (greeting + logout) ─────────────────────────────────────────────
+function Header({
+  name,
+  onLogout,
+  loggingOut,
+}: {
+  name?: string;
+  onLogout: () => void;
+  loggingOut: boolean;
+}) {
+  const first = (name || "").trim().split(/\s+/)[0];
+  return (
+    <header
+      className="aff-reveal mb-6 flex items-start justify-between gap-3"
+      style={{ animationDelay: "40ms" }}
+    >
+      <div>
+        <h1 className="text-xl font-bold tracking-tight text-slate-800">
+          Program Afiliator
+        </h1>
+        <p className="mt-0.5 text-sm text-slate-500">
+          {first ? `Hai, ${first} 👋 Senang kamu kembali.` : "Pantau performa & komisimu."}
+        </p>
+      </div>
+      <button
+        onClick={onLogout}
+        disabled={loggingOut}
+        className="flex shrink-0 items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 backdrop-blur transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50"
+      >
+        {loggingOut ? (
+          <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
+        ) : (
+          <LogOut className="h-3.5 w-3.5" />
+        )}
+        Keluar
+      </button>
+    </header>
+  );
+}
+
+// ── Login (inline, centered) — unchanged ───────────────────────────────────
 function AfiliatorLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -273,7 +393,6 @@ function AfiliatorLogin() {
       setErr(error.message);
       setGoogleBusy(false);
     }
-    // on success the browser redirects to Google
   }
 
   async function loginEmail() {
@@ -292,7 +411,6 @@ function AfiliatorLogin() {
       );
       setBusy(false);
     }
-    // on success: parent's onAuthStateChange takes over and renders the dashboard
   }
 
   const inputCls =
@@ -301,9 +419,7 @@ function AfiliatorLogin() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-teal-50/70 via-white to-slate-50 px-4 py-10">
       <div className="w-full max-w-sm">
-        {/* Card */}
         <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-[0_12px_48px_-16px_rgba(20,120,120,0.22)]">
-          {/* Icon badge */}
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#147878] shadow-lg shadow-[#1A9E9E]/25">
             <Wallet className="h-7 w-7 text-white" strokeWidth={2} />
           </div>
@@ -315,7 +431,6 @@ function AfiliatorLogin() {
             Masuk untuk lihat komisi &amp; link referral kamu
           </p>
 
-          {/* Google */}
           <button
             onClick={loginGoogle}
             disabled={googleBusy || busy}
@@ -348,7 +463,6 @@ function AfiliatorLogin() {
             )}
           </button>
 
-          {/* Divider */}
           <div className="my-5 flex items-center gap-3">
             <span className="h-px flex-1 bg-slate-200" />
             <span className="text-xs font-medium uppercase tracking-wider text-slate-400">
@@ -357,7 +471,6 @@ function AfiliatorLogin() {
             <span className="h-px flex-1 bg-slate-200" />
           </div>
 
-          {/* Email / password */}
           <div className="space-y-3">
             <div className="relative">
               <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -406,7 +519,6 @@ function AfiliatorLogin() {
           </p>
         </div>
 
-        {/* Subtle escape hatch */}
         <p className="mt-6 text-center">
           <a
             href="/"
@@ -447,52 +559,70 @@ function Dashboard({
     <div className="space-y-5">
       {/* Status notice if not active */}
       {aff.status !== "active" && (
-        <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        <div
+          className="aff-reveal rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800"
+          style={{ animationDelay: "90ms" }}
+        >
           Status akun afiliator kamu:{" "}
           <b>
-            {aff.status === "pending_review"
-              ? "menunggu review"
-              : aff.status}
+            {aff.status === "pending_review" ? "menunggu review" : aff.status}
           </b>
           . Komisi tetap tercatat, tapi pencairan baru bisa setelah akun aktif.
         </div>
       )}
 
       {/* Referral hero */}
-      <div className="rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#147878] p-5 text-white shadow-sm">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-medium uppercase tracking-wide text-white/70">
-            Kode Referral
-          </span>
-          <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-xs font-semibold">
-            Tier {TIER_LABEL[aff.tier] ?? aff.tier}
-          </span>
-        </div>
-        <div className="mt-1 font-mono text-3xl font-bold tracking-[0.15em]">
-          {aff.referral_code}
-        </div>
+      <div
+        className="aff-reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] p-6 text-white shadow-[0_22px_55px_-22px_rgba(15,107,107,0.7)]"
+        style={{ animationDelay: "110ms" }}
+      >
+        {/* decorative blooms */}
+        <div className="pointer-events-none absolute -right-12 -top-14 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-emerald-300/15 blur-2xl" />
+        {/* one-time shine on load */}
+        <div className="aff-shimmer pointer-events-none absolute inset-0" />
 
-        <div className="mt-4 break-all rounded-lg bg-white/10 px-3 py-2 text-sm text-white/90">
-          {refLink}
-        </div>
+        <div className="relative">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+              Kode Referral
+            </span>
+            <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold ring-1 ring-white/20 backdrop-blur">
+              ★ Tier {TIER_LABEL[aff.tier] ?? aff.tier}
+            </span>
+          </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-2">
-          <button
-            onClick={onCopy}
-            className="flex items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 text-sm font-semibold text-[#147878] transition hover:bg-white/90"
-          >
-            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            {copied ? "Tersalin" : "Salin Link"}
-          </button>
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-lg bg-emerald-500 px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600"
-          >
-            <Share2 className="h-4 w-4" />
-            Share WhatsApp
-          </a>
+          <div className="mt-2 font-mono text-[2rem] font-extrabold leading-none tracking-[0.16em]">
+            {aff.referral_code}
+          </div>
+
+          <div className="mt-4 flex items-center gap-2 rounded-xl bg-black/15 px-3 py-2.5 ring-1 ring-white/10">
+            <Link2 className="h-4 w-4 shrink-0 text-white/55" />
+            <span className="truncate text-sm text-white/90">{refLink}</span>
+          </div>
+
+          <div className="mt-3 grid grid-cols-2 gap-2.5">
+            <button
+              onClick={onCopy}
+              className="flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2.5 text-sm font-bold text-[#147878] shadow-sm transition hover:bg-white/90 active:scale-[0.98]"
+            >
+              {copied ? (
+                <Check className="h-4 w-4" />
+              ) : (
+                <Copy className="h-4 w-4" />
+              )}
+              {copied ? "Tersalin!" : "Salin Link"}
+            </button>
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-3 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-emerald-600 active:scale-[0.98]"
+            >
+              <Share2 className="h-4 w-4" />
+              Share WA
+            </a>
+          </div>
         </div>
       </div>
 
@@ -501,52 +631,71 @@ function Dashboard({
         <StatCard
           icon={<MousePointerClick className="h-4 w-4" />}
           label="Klik"
-          value={String(stats.clicks)}
+          value={stats.clicks}
+          tone="teal"
+          delay="180ms"
         />
         <StatCard
           icon={<ShoppingBag className="h-4 w-4" />}
           label="Konversi"
-          value={String(stats.conversions_total)}
+          value={stats.conversions_total}
+          tone="amber"
+          delay="235ms"
         />
         <StatCard
           icon={<Wallet className="h-4 w-4" />}
           label="Total Komisi"
-          value={rupiah(totalKomisi)}
-          small
+          value={totalKomisi}
+          tone="indigo"
+          money
+          delay="290ms"
         />
       </div>
 
       {/* Commission breakdown */}
-      <div className="grid grid-cols-3 gap-2">
-        <KomisiPill
+      <div
+        className="aff-reveal grid grid-cols-3 divide-x divide-slate-100 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
+        style={{ animationDelay: "345ms" }}
+      >
+        <KomisiCol
+          dot="bg-amber-400"
           label="Menunggu"
           amount={stats.commission_pending}
-          cls="text-amber-700"
+          tone="text-amber-700"
         />
-        <KomisiPill
+        <KomisiCol
+          dot="bg-blue-400"
           label="Disetujui"
           amount={stats.commission_approved}
-          cls="text-blue-700"
+          tone="text-blue-700"
         />
-        <KomisiPill
+        <KomisiCol
+          dot="bg-emerald-400"
           label="Dibayar"
           amount={stats.commission_paid}
-          cls="text-emerald-700"
+          tone="text-emerald-700"
         />
       </div>
 
       {/* Activity chart */}
-      <ActivityChart daily={daily} />
+      <div className="aff-reveal" style={{ animationDelay: "400ms" }}>
+        <ActivityChart daily={daily} />
+      </div>
 
       {/* Conversions */}
-      <div>
+      <div className="aff-reveal" style={{ animationDelay: "460ms" }}>
         <h2 className="mb-2 text-sm font-bold text-slate-700">
           Riwayat Konversi
         </h2>
         {conversions.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-slate-300 bg-white px-4 py-8 text-center text-sm text-slate-500">
-            Belum ada konversi. Sebarkan link referral kamu untuk mulai dapat
-            komisi.
+          <div className="rounded-2xl border border-dashed border-slate-300 bg-white/70 px-4 py-9 text-center">
+            <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-slate-100">
+              <ShoppingBag className="h-5 w-5 text-slate-400" />
+            </div>
+            <p className="mx-auto mt-3 max-w-xs text-sm text-slate-500">
+              Belum ada konversi. Sebarkan link referral kamu untuk mulai dapat
+              komisi.
+            </p>
           </div>
         ) : (
           <div className="space-y-2">
@@ -558,7 +707,7 @@ function Dashboard({
               return (
                 <div
                   key={c.id}
-                  className="rounded-xl border border-slate-200 bg-white p-3"
+                  className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -577,7 +726,7 @@ function Dashboard({
                       {st.label}
                     </span>
                   </div>
-                  <div className="mt-2 flex items-center justify-between border-t border-slate-100 pt-2 text-sm">
+                  <div className="mt-2.5 flex items-center justify-between border-t border-slate-100 pt-2.5 text-sm">
                     <span className="text-slate-500">Komisi</span>
                     <span className="font-bold text-[#147878]">
                       {rupiah(c.commission_amount)}
@@ -590,7 +739,10 @@ function Dashboard({
         )}
       </div>
 
-      <p className="pt-2 text-center text-xs text-slate-400">
+      <p
+        className="aff-reveal pt-2 text-center text-xs text-slate-400"
+        style={{ animationDelay: "520ms" }}
+      >
         Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap
         tanggal 25, minimal Rp 100.000.
       </p>
@@ -600,8 +752,8 @@ function Dashboard({
 
 // ── Activity chart (overlaid bars: clicks + conversions) ───────────────────
 type ChartBar = {
-  label: string; // x-axis label
-  fullLabel: string; // detail-strip label
+  label: string;
+  fullLabel: string;
   clicks: number;
   conversions: number;
 };
@@ -609,13 +761,18 @@ type ChartBar = {
 function ActivityChart({ daily }: { daily: DailyPoint[] }) {
   const [mode, setMode] = useState<"harian" | "mingguan">("harian");
   const [sel, setSel] = useState<number | null>(null);
+  const [grown, setGrown] = useState(false);
 
-  // Build bars from the daily series depending on the chosen mode.
+  // Trigger the bar grow-in once, just after mount.
+  useEffect(() => {
+    const t = setTimeout(() => setGrown(true), 80);
+    return () => clearTimeout(t);
+  }, []);
+
   const bars: ChartBar[] = useMemo(() => {
     if (!daily.length) return [];
 
     if (mode === "harian") {
-      // Last 14 days, one bar per day.
       return daily.slice(-14).map((p) => ({
         label: String(parseYmd(p.date).d),
         fullLabel: shortLabel(p.date),
@@ -624,7 +781,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
       }));
     }
 
-    // Mingguan: last 28 days → 4 clean 7-day buckets.
     const last28 = daily.slice(-28);
     const out: ChartBar[] = [];
     for (let i = 0; i < last28.length; i += 7) {
@@ -644,7 +800,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
     return out;
   }, [daily, mode]);
 
-  // Nothing to render if the API didn't return a series.
   if (!daily.length) return null;
 
   const peak = Math.max(1, ...bars.map((b) => Math.max(b.clicks, b.conversions)));
@@ -668,11 +823,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
     setSel(null);
   }
 
-  const tabCls = (on: boolean) =>
-    `rounded-md px-2.5 py-1 font-semibold transition ${
-      on ? "bg-[#1A9E9E] text-white" : "text-slate-500 hover:text-slate-700"
-    }`;
-
   return (
     <div>
       {/* Header + mode toggle */}
@@ -681,20 +831,31 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
           <BarChart3 className="h-4 w-4 text-slate-400" />
           Grafik Aktivitas
         </h2>
-        <div className="flex rounded-lg border border-slate-200 bg-white p-0.5 text-xs">
-          <button onClick={() => switchMode("harian")} className={tabCls(mode === "harian")}>
+        <div className="inline-flex rounded-xl bg-slate-100 p-1 text-xs">
+          <button
+            onClick={() => switchMode("harian")}
+            className={
+              mode === "harian"
+                ? "rounded-lg bg-white px-3 py-1 font-bold text-[#147878] shadow-sm"
+                : "rounded-lg px-3 py-1 font-medium text-slate-500 transition hover:text-slate-700"
+            }
+          >
             Harian
           </button>
           <button
             onClick={() => switchMode("mingguan")}
-            className={tabCls(mode === "mingguan")}
+            className={
+              mode === "mingguan"
+                ? "rounded-lg bg-white px-3 py-1 font-bold text-[#147878] shadow-sm"
+                : "rounded-lg px-3 py-1 font-medium text-slate-500 transition hover:text-slate-700"
+            }
           >
             Mingguan
           </button>
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-4">
+      <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
         {/* Legend */}
         <div className="mb-3 flex items-center gap-4 text-xs text-slate-500">
           <span className="flex items-center gap-1.5">
@@ -728,6 +889,7 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
               <div className="absolute inset-0 flex items-end gap-[3px]">
                 {bars.map((b, i) => {
                   const dim = sel !== null && sel !== i;
+                  const grow = "height 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease";
                   return (
                     <button
                       key={i}
@@ -738,25 +900,28 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
                     >
                       {/* Clicks (teal, wide) */}
                       <div
-                        className={`absolute bottom-0 w-[58%] rounded-t-[3px] bg-[#1A9E9E] transition-opacity ${
+                        className={`absolute bottom-0 w-[58%] rounded-t-[3px] bg-[#1A9E9E] ${
                           dim ? "opacity-30" : "opacity-100"
                         }`}
                         style={{
-                          height: pct(b.clicks),
-                          minHeight: b.clicks > 0 ? 3 : 0,
+                          height: grown ? pct(b.clicks) : "0%",
+                          minHeight: grown && b.clicks > 0 ? 3 : 0,
+                          transition: grow,
+                          transitionDelay: `${i * 26}ms`,
                         }}
                       />
                       {/* Conversions (amber, narrow, in front) */}
                       <div
-                        className={`absolute bottom-0 w-[26%] rounded-t-[3px] bg-[#EAB308] transition-opacity ${
+                        className={`absolute bottom-0 w-[26%] rounded-t-[3px] bg-[#EAB308] ${
                           dim ? "opacity-30" : "opacity-100"
                         }`}
                         style={{
-                          height: pct(b.conversions),
-                          minHeight: b.conversions > 0 ? 3 : 0,
+                          height: grown ? pct(b.conversions) : "0%",
+                          minHeight: grown && b.conversions > 0 ? 3 : 0,
+                          transition: grow,
+                          transitionDelay: `${i * 26 + 60}ms`,
                         }}
                       />
-                      {/* Selected marker */}
                       {sel === i && (
                         <div className="absolute -top-1 h-1 w-1 rounded-full bg-slate-400" />
                       )}
@@ -783,8 +948,10 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
         </div>
 
         {/* Detail strip */}
-        <div className="mt-3 flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
-          <span className="text-xs font-semibold text-slate-600">{ctxLabel}</span>
+        <div className="mt-3 flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2.5">
+          <span className="text-xs font-semibold text-slate-600">
+            {ctxLabel}
+          </span>
           <span className="flex items-center gap-3 text-xs">
             <span className="font-bold text-[#147878]">{ctxClicks} klik</span>
             <span className="font-bold text-amber-600">{ctxConv} konversi</span>
@@ -800,49 +967,79 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
 }
 
 // ── Small components ───────────────────────────────────────────────────────
+const STAT_TONE: Record<string, string> = {
+  teal: "bg-[#1A9E9E]/12 text-[#1A9E9E]",
+  amber: "bg-amber-100 text-amber-600",
+  indigo: "bg-indigo-100 text-indigo-600",
+};
+
 function StatCard({
   icon,
   label,
   value,
-  small,
+  tone,
+  money,
+  delay,
 }: {
   icon: ReactNode;
   label: string;
-  value: string;
-  small?: boolean;
+  value: number;
+  tone: "teal" | "amber" | "indigo";
+  money?: boolean;
+  delay: string;
 }) {
+  const animated = useCountUp(value);
+  const display = money
+    ? rupiah(animated)
+    : Math.round(animated).toLocaleString("id-ID");
+
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-3">
-      <div className="flex items-center gap-1.5 text-slate-400">
+    <div
+      className="aff-reveal group rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+      style={{ animationDelay: delay }}
+    >
+      <div
+        className={`flex h-8 w-8 items-center justify-center rounded-lg ${STAT_TONE[tone]}`}
+      >
         {icon}
-        <span className="text-[11px] font-medium">{label}</span>
+      </div>
+      <div className="mt-2.5 text-[11px] font-medium uppercase tracking-wide text-slate-400">
+        {label}
       </div>
       <div
-        className={`mt-1 font-bold text-slate-800 ${
-          small ? "text-base" : "text-xl"
+        className={`mt-0.5 font-extrabold tabular-nums text-slate-800 ${
+          money ? "text-[15px]" : "text-xl"
         }`}
       >
-        {value}
+        {display}
       </div>
     </div>
   );
 }
 
-function KomisiPill({
+function KomisiCol({
+  dot,
   label,
   amount,
-  cls,
+  tone,
 }: {
+  dot: string;
   label: string;
   amount: number;
-  cls: string;
+  tone: string;
 }) {
+  const animated = useCountUp(amount);
   return (
-    <div className="rounded-lg border border-slate-200 bg-white px-2 py-2 text-center">
-      <div className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
-        {label}
+    <div className="px-2.5 py-3 text-center">
+      <div className="flex items-center justify-center gap-1.5">
+        <span className={`h-1.5 w-1.5 rounded-full ${dot}`} />
+        <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+          {label}
+        </span>
       </div>
-      <div className={`mt-0.5 text-xs font-bold ${cls}`}>{rupiah(amount)}</div>
+      <div className={`mt-1 text-xs font-bold tabular-nums ${tone}`}>
+        {rupiah(animated)}
+      </div>
     </div>
   );
 }
@@ -850,13 +1047,14 @@ function KomisiPill({
 function SkeletonBlock() {
   return (
     <div className="space-y-4">
-      <div className="h-44 animate-pulse rounded-2xl bg-slate-200" />
+      <div className="h-48 animate-pulse rounded-3xl bg-slate-200" />
       <div className="grid grid-cols-3 gap-3">
-        <div className="h-20 animate-pulse rounded-xl bg-slate-200" />
-        <div className="h-20 animate-pulse rounded-xl bg-slate-200" />
-        <div className="h-20 animate-pulse rounded-xl bg-slate-200" />
+        <div className="h-24 animate-pulse rounded-2xl bg-slate-200" />
+        <div className="h-24 animate-pulse rounded-2xl bg-slate-200" />
+        <div className="h-24 animate-pulse rounded-2xl bg-slate-200" />
       </div>
-      <div className="h-32 animate-pulse rounded-xl bg-slate-200" />
+      <div className="h-16 animate-pulse rounded-2xl bg-slate-200" />
+      <div className="h-56 animate-pulse rounded-2xl bg-slate-200" />
     </div>
   );
 }
@@ -873,7 +1071,7 @@ function CenteredCard({
   actionHref?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white px-6 py-12 text-center">
+    <div className="aff-reveal rounded-3xl border border-slate-200/80 bg-white px-6 py-12 text-center shadow-sm">
       <h2 className="text-base font-bold text-slate-800">{title}</h2>
       <p className="mx-auto mt-2 max-w-sm text-sm text-slate-500">{desc}</p>
       {actionLabel && actionHref && (
