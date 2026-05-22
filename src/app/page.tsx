@@ -519,6 +519,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
           <div className="hidden md:flex items-center gap-4">
             <button onClick={onLoginOpen} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
             <button onClick={()=>setPlacementPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Placement Test</button>
+            {/* linguo-patch:trial-wizard-v1 */}
+            <button onClick={()=>(window as any).__openTrialWizard?.()} className={`font-bold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95 ${c ? "bg-[#1A9E9E] text-white hover:bg-[#178a8a]" : "bg-white text-[#1A9E9E] hover:bg-white/90"}`}>Coba Trial</button>
           </div>
           <button className="md:hidden" onClick={()=>setOpen(!open)}>{open?<X className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>:<Menu className={`h-5 w-5 ${c?"text-slate-900":"text-white"}`}/>}</button>
         </div>
@@ -564,6 +566,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             <div className="border-t border-gray-100 p-4 flex flex-col gap-2 shrink-0 bg-white">
               <button onClick={()=>{onLoginOpen();setOpen(false)}} className="border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full">Login</button>
               <button onClick={()=>{setPlacementPickerOpen(true);setOpen(false)}} className="bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Placement Test</button>
+              {/* linguo-patch:trial-wizard-v1 */}
+              <button onClick={()=>{(window as any).__openTrialWizard?.();setOpen(false)}} className="bg-[#fbbf24] text-slate-900 text-center py-3 rounded-full font-semibold text-sm w-full">Coba Kelas Trial</button>
             </div>
           </motion.div>
         )}</AnimatePresence>

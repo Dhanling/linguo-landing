@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "sonner";
+import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:trial-wizard-v1
 
 export const metadata: Metadata = {
   title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-slate-900 antialiased">
         {children}
         <Toaster richColors position="top-center" closeButton />
+        <TrialWizardModal />{/* linguo-patch:trial-wizard-v1 */}
 
       </body>
     </html>
