@@ -7,15 +7,15 @@
 // Reads /api/affiliate/me (service-role). See that route for the RLS gotcha
 // (migrated affiliates have user_id = NULL).
 //
-// Phase 2C step 3a — dashboard redesign:
-//   - Header with greeting + Logout button (supabase.auth.signOut()).
-//   - Orchestrated page-load: staggered reveal animations (CSS-only).
-//   - Count-up numbers on the stat cards & commission breakdown.
-//   - Activity chart bars grow in from zero on mount.
-//   - Refined depth: layered shadows, atmospheric background glow.
-// No new dependencies — motion is pure CSS via styled-jsx.
+// Phase 2C step 3a — dashboard redesign (logout, reveals, count-up, chart grow).
+// Phase 2C step 3b — Link Generator + Materi Promosi sections.
+//   - Link Generator: one referral code → many destination links. ?ref= is
+//     captured by middleware on ALL content routes, so any path works.
+//   - Materi Promosi: ready-to-paste promo copy with the ref link embedded.
+//   Both are pure-frontend (build strings from referral_code) — no API/DB.
 //
-// The logged-out login card is intentionally left as-is (afiliator-login-v2).
+// ELEARNING_PATH is the single source of truth for the e-learning landing
+// page; if that route ever changes, edit it in ONE place.
 // ============================================================================
 
 import { useEffect, useMemo, useState, type ReactNode } from "react";
@@ -33,6 +33,10 @@ import {
   BarChart3,
   LogOut,
   Link2,
+  Megaphone,
+  MessageCircle,
+  Instagram,
+  Sparkles,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -101,6 +105,78 @@ const MONTH_ID = [
   "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
 ];
 
+// ── Promo config ───────────────────────────────────────────────────────────
+// Single source of truth for the e-learning landing route.
+const ELEARNING_PATH = "/toko/paket-elearning";
+
+// Link Generator preset destinations.
+const DESTINATIONS: {
+  key: string;
+  label: string;
+  desc: string;
+  path: string;
+  earns?: boolean;
+}[] = [
+  {
+    key: "elearning",
+    label: "Halaman E-Learning",
+    desc: "Paket belajar 12+ bahasa — halaman yang menghasilkan komisi.",
+    path: ELEARNING_PATH,
+    earns: true,
+  },
+  {
+    key: "home",
+    label: "Beranda Linguo",
+    desc: "Halaman utama linguo.id — cocok untuk pengenalan umum.",
+    path: "/",
+  },
+  {
+    key: "toko",
+    label: "Toko Linguo",
+    desc: "Etalase semua produk digital Linguo.",
+    path: "/toko",
+  },
+];
+
+// Materi Promosi templates. {{LINK}} is replaced with the affiliate's ref link.
+const PROMO: {
+  key: string;
+  title: string;
+  icon: typeof MessageCircle;
+  text: string;
+}[] = [
+  {
+    key: "wa",
+    title: "Pesan WhatsApp (japri)",
+    icon: MessageCircle,
+    text: `Halo! 👋 Aku lagi belajar bahasa di Linguo.id — ada 60+ bahasa, materinya berupa video terstruktur, jadi bisa belajar kapan aja sesuai ritme sendiri.
+
+Paket E-Learning-nya mulai Rp29.000 aja udah bisa akses 12+ bahasa sekaligus. Kalau kamu mau coba, daftar lewat link aku ya 🌏
+
+{{LINK}}`,
+  },
+  {
+    key: "ig",
+    title: "Caption Instagram",
+    icon: Instagram,
+    text: `Belajar bahasa baru nggak harus mahal & ribet ✨🎬
+
+Di Linguo.id ada 60+ bahasa dengan materi video terstruktur level A1–B2 — belajar fleksibel kapan pun kamu mau.
+
+Paket E-Learning mulai Rp29.000 → akses 12+ bahasa sekaligus.
+Cobain lewat link ini yuk 👇
+{{LINK}}
+
+#belajarbahasa #linguoid #kursusbahasaonline #belajarbahasaasing`,
+  },
+  {
+    key: "status",
+    title: "Status Singkat (WA / Story)",
+    icon: Sparkles,
+    text: `Lagi seru belajar bahasa di Linguo.id 🌏 60+ bahasa, materi video, mulai Rp29.000 aja. Cobain juga yuk 👉 {{LINK}}`,
+  },
+];
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 const rupiah = (n: number) => "Rp " + Math.round(n || 0).toLocaleString("id-ID");
 
@@ -125,6 +201,17 @@ function niceCeil(n: number) {
   return Math.ceil(n / 500) * 500;
 }
 
+// Build a referral link from a code + a path. Tolerates a pasted full URL or
+// a path missing its leading slash, and strips any existing query/hash.
+function buildLink(code: string, rawPath: string) {
+  let p = (rawPath || "").trim();
+  p = p.replace(/^https?:\/\/[^/]+/i, ""); // drop domain if a full URL was pasted
+  p = p.split(/[?#]/)[0]; // drop existing query/hash
+  if (!p.startsWith("/")) p = "/" + p;
+  if (p === "/") return `https://linguo.id/?ref=${code}`;
+  return `https://linguo.id${p}?ref=${code}`;
+}
+
 // Count a number up from 0 → target with an easeOutCubic curve.
 function useCountUp(target: number, durationMs = 950) {
   const [val, setVal] = useState(0);
@@ -146,6 +233,25 @@ function useCountUp(target: number, durationMs = 950) {
     return () => cancelAnimationFrame(raf);
   }, [target, durationMs]);
   return val;
+}
+
+// Clipboard copy with a transient "copied" flag, keyed so multiple buttons can
+// share one hook instance.
+function useCopy() {
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  async function copy(key: string, text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedKey(key);
+      setTimeout(
+        () => setCopiedKey((k) => (k === key ? null : k)),
+        1800
+      );
+    } catch {
+      /* clipboard unavailable — ignore */
+    }
+  }
+  return { copiedKey, copy };
 }
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -576,10 +682,8 @@ function Dashboard({
         className="aff-reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] p-6 text-white shadow-[0_22px_55px_-22px_rgba(15,107,107,0.7)]"
         style={{ animationDelay: "110ms" }}
       >
-        {/* decorative blooms */}
         <div className="pointer-events-none absolute -right-12 -top-14 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
         <div className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-emerald-300/15 blur-2xl" />
-        {/* one-time shine on load */}
         <div className="aff-shimmer pointer-events-none absolute inset-0" />
 
         <div className="relative">
@@ -677,13 +781,23 @@ function Dashboard({
         />
       </div>
 
-      {/* Activity chart */}
+      {/* Link generator */}
       <div className="aff-reveal" style={{ animationDelay: "400ms" }}>
+        <LinkGenerator code={aff.referral_code} />
+      </div>
+
+      {/* Materi promosi */}
+      <div className="aff-reveal" style={{ animationDelay: "455ms" }}>
+        <MateriPromosi code={aff.referral_code} />
+      </div>
+
+      {/* Activity chart */}
+      <div className="aff-reveal" style={{ animationDelay: "510ms" }}>
         <ActivityChart daily={daily} />
       </div>
 
       {/* Conversions */}
-      <div className="aff-reveal" style={{ animationDelay: "460ms" }}>
+      <div className="aff-reveal" style={{ animationDelay: "565ms" }}>
         <h2 className="mb-2 text-sm font-bold text-slate-700">
           Riwayat Konversi
         </h2>
@@ -741,11 +855,175 @@ function Dashboard({
 
       <p
         className="aff-reveal pt-2 text-center text-xs text-slate-400"
-        style={{ animationDelay: "520ms" }}
+        style={{ animationDelay: "620ms" }}
       >
         Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap
         tanggal 25, minimal Rp 100.000.
       </p>
+    </div>
+  );
+}
+
+// ── Link Generator ─────────────────────────────────────────────────────────
+function LinkGenerator({ code }: { code: string }) {
+  const { copiedKey, copy } = useCopy();
+  const [customPath, setCustomPath] = useState("");
+
+  const customLink = customPath.trim() ? buildLink(code, customPath) : "";
+
+  return (
+    <div>
+      <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+        <Link2 className="h-4 w-4 text-slate-400" />
+        Link Generator
+      </h2>
+      <div className="space-y-2.5 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+        <p className="text-xs text-slate-500">
+          Satu kode{" "}
+          <span className="font-mono font-semibold text-slate-700">{code}</span>
+          , banyak link tujuan. Pilih halaman, salin, lalu sebarkan.
+        </p>
+
+        {DESTINATIONS.map((d) => {
+          const link = buildLink(code, d.path);
+          const isCopied = copiedKey === d.key;
+          return (
+            <div key={d.key} className="rounded-xl border border-slate-200 p-3">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold text-slate-800">
+                  {d.label}
+                </span>
+                {d.earns && (
+                  <span className="rounded-full bg-[#1A9E9E]/10 px-2 py-0.5 text-[10px] font-bold text-[#147878]">
+                    ★ Paling Cuan
+                  </span>
+                )}
+              </div>
+              <p className="mt-0.5 text-xs text-slate-500">{d.desc}</p>
+              <div className="mt-2 flex items-center gap-2">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="min-w-0 flex-1 truncate rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-600 ring-1 ring-slate-100 transition hover:text-[#147878]"
+                >
+                  {link}
+                </a>
+                <button
+                  onClick={() => copy(d.key, link)}
+                  className="flex shrink-0 items-center gap-1 rounded-lg bg-[#1A9E9E] px-2.5 py-1.5 text-xs font-bold text-white transition hover:bg-[#147878] active:scale-95"
+                >
+                  {isCopied ? (
+                    <Check className="h-3.5 w-3.5" />
+                  ) : (
+                    <Copy className="h-3.5 w-3.5" />
+                  )}
+                  {isCopied ? "Tersalin" : "Salin"}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Custom path */}
+        <div className="rounded-xl border border-dashed border-slate-300 p-3">
+          <span className="text-sm font-semibold text-slate-700">
+            Halaman lain
+          </span>
+          <p className="mt-0.5 text-xs text-slate-500">
+            Tempel path halaman linguo.id mana pun — contoh:{" "}
+            <span className="font-mono">/silabus</span>.
+          </p>
+          <div className="mt-2 flex items-center gap-2">
+            <input
+              value={customPath}
+              onChange={(e) => setCustomPath(e.target.value)}
+              placeholder="/silabus"
+              className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs text-slate-700 outline-none transition focus:border-[#1A9E9E] focus:bg-white"
+            />
+            <button
+              onClick={() => customLink && copy("custom", customLink)}
+              disabled={!customLink}
+              className="flex shrink-0 items-center gap-1 rounded-lg bg-[#1A9E9E] px-2.5 py-1.5 text-xs font-bold text-white transition hover:bg-[#147878] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              {copiedKey === "custom" ? (
+                <Check className="h-3.5 w-3.5" />
+              ) : (
+                <Copy className="h-3.5 w-3.5" />
+              )}
+              {copiedKey === "custom" ? "Tersalin" : "Salin"}
+            </button>
+          </div>
+          {customLink && (
+            <a
+              href={customLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block truncate rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-600 ring-1 ring-slate-100 transition hover:text-[#147878]"
+            >
+              {customLink}
+            </a>
+          )}
+        </div>
+
+        <p className="text-[11px] leading-relaxed text-slate-400">
+          💡 Komisi dihitung saat pengunjung dari link kamu membeli paket
+          E-Learning. Cookie referral berlaku 60 hari sejak link diklik.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ── Materi Promosi ─────────────────────────────────────────────────────────
+function MateriPromosi({ code }: { code: string }) {
+  const { copiedKey, copy } = useCopy();
+  const link = buildLink(code, ELEARNING_PATH);
+
+  return (
+    <div>
+      <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+        <Megaphone className="h-4 w-4 text-slate-400" />
+        Materi Promosi
+      </h2>
+      <div className="space-y-2.5 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+        <p className="text-xs text-slate-500">
+          Teks siap pakai — tinggal salin &amp; tempel. Link referral kamu sudah
+          otomatis ada di dalamnya.
+        </p>
+
+        {PROMO.map((p) => {
+          const Icon = p.icon;
+          const text = p.text.replace(/\{\{LINK\}\}/g, link);
+          const isCopied = copiedKey === p.key;
+          return (
+            <div key={p.key} className="rounded-xl border border-slate-200 p-3">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5">
+                  <Icon className="h-4 w-4 text-[#1A9E9E]" />
+                  <span className="text-sm font-semibold text-slate-800">
+                    {p.title}
+                  </span>
+                </div>
+                <button
+                  onClick={() => copy(p.key, text)}
+                  className="flex shrink-0 items-center gap-1 rounded-lg bg-[#1A9E9E] px-2.5 py-1.5 text-xs font-bold text-white transition hover:bg-[#147878] active:scale-95"
+                >
+                  {isCopied ? (
+                    <Check className="h-3.5 w-3.5" />
+                  ) : (
+                    <Copy className="h-3.5 w-3.5" />
+                  )}
+                  {isCopied ? "Tersalin" : "Salin"}
+                </button>
+              </div>
+              <div className="mt-2 whitespace-pre-line rounded-lg bg-slate-50 p-2.5 text-xs leading-relaxed text-slate-600 ring-1 ring-slate-100">
+                {text}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -763,7 +1041,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
   const [sel, setSel] = useState<number | null>(null);
   const [grown, setGrown] = useState(false);
 
-  // Trigger the bar grow-in once, just after mount.
   useEffect(() => {
     const t = setTimeout(() => setGrown(true), 80);
     return () => clearTimeout(t);
@@ -825,7 +1102,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
 
   return (
     <div>
-      {/* Header + mode toggle */}
       <div className="mb-2 flex items-center justify-between">
         <h2 className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
           <BarChart3 className="h-4 w-4 text-slate-400" />
@@ -856,7 +1132,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
       </div>
 
       <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
-        {/* Legend */}
         <div className="mb-3 flex items-center gap-4 text-xs text-slate-500">
           <span className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-sm bg-[#1A9E9E]" />
@@ -868,28 +1143,24 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
           </span>
         </div>
 
-        {/* Plot */}
         <div className="flex gap-2">
-          {/* Y-axis */}
           <div className="flex h-[132px] w-5 flex-col justify-between text-right text-[9px] leading-none text-slate-300">
             <span>{ceil}</span>
             <span>{ceil / 2}</span>
             <span>0</span>
           </div>
 
-          {/* Plot area */}
           <div className="min-w-0 flex-1">
             <div className="relative h-[132px]">
-              {/* Gridlines */}
               <div className="absolute inset-x-0 top-0 border-t border-slate-100" />
               <div className="absolute inset-x-0 top-1/2 border-t border-slate-100" />
               <div className="absolute inset-x-0 bottom-0 border-t border-slate-200" />
 
-              {/* Bars */}
               <div className="absolute inset-0 flex items-end gap-[3px]">
                 {bars.map((b, i) => {
                   const dim = sel !== null && sel !== i;
-                  const grow = "height 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease";
+                  const grow =
+                    "height 0.7s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease";
                   return (
                     <button
                       key={i}
@@ -898,7 +1169,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
                       className="group relative flex h-full flex-1 items-end justify-center"
                       aria-label={`${b.fullLabel}: ${b.clicks} klik, ${b.conversions} konversi`}
                     >
-                      {/* Clicks (teal, wide) */}
                       <div
                         className={`absolute bottom-0 w-[58%] rounded-t-[3px] bg-[#1A9E9E] ${
                           dim ? "opacity-30" : "opacity-100"
@@ -910,7 +1180,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
                           transitionDelay: `${i * 26}ms`,
                         }}
                       />
-                      {/* Conversions (amber, narrow, in front) */}
                       <div
                         className={`absolute bottom-0 w-[26%] rounded-t-[3px] bg-[#EAB308] ${
                           dim ? "opacity-30" : "opacity-100"
@@ -931,7 +1200,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
               </div>
             </div>
 
-            {/* X-axis labels */}
             <div className="mt-1.5 flex gap-[3px]">
               {bars.map((b, i) => (
                 <div
@@ -947,7 +1215,6 @@ function ActivityChart({ daily }: { daily: DailyPoint[] }) {
           </div>
         </div>
 
-        {/* Detail strip */}
         <div className="mt-3 flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2.5">
           <span className="text-xs font-semibold text-slate-600">
             {ctxLabel}
