@@ -711,7 +711,6 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
 
   const handleConfirm = async () => {
     try {
-      // [linguo-patch:lead-debug-v1] DIAGNOSTIC — tangkap error upsert (supabase ga throw utk error DB)
       // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — tabel leads ga punya unique constraint di email
       const { error: __leadDbgErr } = await supabase.from("leads").insert({
         name: displayName,
@@ -722,13 +721,12 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         // [linguo-patch:lead-akun-schema-fix-v1] kolom valid leads only; jadwal chip-friendly
         schedule_preference: Object.entries(enrollSchedule).flatMap(([d, ts]) => ts.map((t) => `${d} ${t}`)).join(", ") || null,
       });
-      if (__leadDbgErr) {
-        console.warn("Lead save error:", __leadDbgErr);
-        alert("DEBUG lead upsert GAGAL\n\ncode: " + (__leadDbgErr.code || "-") + "\nmessage: " + (__leadDbgErr.message || "-") + "\ndetails: " + (__leadDbgErr.details || "-") + "\nhint: " + (__leadDbgErr.hint || "-"));
-      } else {
-        alert("DEBUG lead upsert OK \u2014 row tersimpan ke tabel leads.");
-      }
-    } catch (e: any) { console.warn("Lead save:", e); alert("DEBUG lead upsert THREW (network?):\n" + (e?.message || JSON.stringify(e))); }
+      // lead = CRM inquiry log; kalau gagal, registrasi siswa di bawah tetap jalan
+      // — cukup log ke console, jangan ganggu siswa dgn popup.
+      if (__leadDbgErr) console.warn("Lead save error:", __leadDbgErr);
+    } catch (e: any) {
+      console.warn("Lead save threw:", e);
+    }
 
     // ── FIX: Save registrasi ke Supabase biar punya UUID valid ──
     let studentId: string | null =
