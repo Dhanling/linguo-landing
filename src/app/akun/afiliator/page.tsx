@@ -35,7 +35,7 @@ import {
   Link2,
   Megaphone,
   MessageCircle,
-  Instagram,
+  Camera,
   Sparkles,
 } from "lucide-react";
 
@@ -158,7 +158,7 @@ Paket E-Learning-nya mulai Rp29.000 aja udah bisa akses 12+ bahasa sekaligus. Ka
   {
     key: "ig",
     title: "Caption Instagram",
-    icon: Instagram,
+    icon: Camera,
     text: `Belajar bahasa baru nggak harus mahal & ribet ✨🎬
 
 Di Linguo.id ada 60+ bahasa dengan materi video terstruktur level A1–B2 — belajar fleksibel kapan pun kamu mau.
