@@ -781,19 +781,19 @@ function Dashboard({
         />
       </div>
 
-      {/* Link generator */}
+      {/* Activity chart */}
       <div className="aff-reveal" style={{ animationDelay: "400ms" }}>
+        <ActivityChart daily={daily} />
+      </div>
+
+      {/* Link generator */}
+      <div className="aff-reveal" style={{ animationDelay: "455ms" }}>
         <LinkGenerator code={aff.referral_code} />
       </div>
 
       {/* Materi promosi */}
-      <div className="aff-reveal" style={{ animationDelay: "455ms" }}>
-        <MateriPromosi code={aff.referral_code} />
-      </div>
-
-      {/* Activity chart */}
       <div className="aff-reveal" style={{ animationDelay: "510ms" }}>
-        <ActivityChart daily={daily} />
+        <MateriPromosi code={aff.referral_code} />
       </div>
 
       {/* Conversions */}
