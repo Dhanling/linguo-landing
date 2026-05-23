@@ -1944,6 +1944,7 @@ export default function Home() {
               <li><a href="/corporate" className="hover:text-white transition-colors">Corporate</a></li>
               <li><a href="/jadi-pengajar" className="hover:text-white transition-colors">Jadi Pengajar</a></li>
               <li><a href="/jadi-interpreter" className="hover:text-white transition-colors">Jadi Interpreter</a></li>
+              <li><a href="/afiliator" className="hover:text-white transition-colors">Jadi Afiliator</a></li>
               <li><a href="/karir" className="hover:text-white transition-colors">Karir</a></li>
               <li><a href="/interpreter" className="hover:text-white transition-colors">Layanan Interpreter</a></li>
             </ul>
