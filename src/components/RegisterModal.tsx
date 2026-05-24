@@ -110,24 +110,24 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   async function submitPrivate() {
     setSubmitting(true);
     setError("");
-    const { error: err } = await supabase.from("program_registrations").insert({
+    const { error: err } = await supabase.from("leads").insert({
       name: data.name.trim(),
       email: data.email.trim().toLowerCase(),
-      whatsapp: data.whatsapp.trim(),
-      format: "private",
+      wa_number: data.whatsapp.trim(),
       language: data.language,
       level: data.level ?? null,
-      recommended_program: data.recommendedProgram,
-      preferred_time: preferredTime || null,
-      frequency: frequency || null,
-      preferred_start_date: preferredStartDate || null,
-      source: data.source,
-      test_score: data.testScore ?? null,
-      test_band: data.testBand ?? null,
+      program: data.recommendedProgram,
+      source: `${data.source} · private`,
+      schedule_preference: [preferredTime, frequency].filter(Boolean).join(" · ") || null,
+      reason: [
+        preferredStartDate ? `Mulai: ${preferredStartDate}` : null,
+        data.testBand ? `Band: ${data.testBand}` : null,
+        data.testScore ? `Skor: ${data.testScore}` : null,
+      ].filter(Boolean).join(" | ") || null,
     });
     setSubmitting(false);
     if (err) {
-      console.error("[program_registrations insert]", err);
+      console.error("[leads insert]", err);
       setError("Gagal menyimpan data. Coba lagi ya.");
       return;
     }
@@ -138,22 +138,23 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   async function submitReguler(batchId: string) {
     setSubmitting(true);
     setError("");
-    const { error: err } = await supabase.from("program_registrations").insert({
+    const { error: err } = await supabase.from("leads").insert({
       name: data.name.trim(),
       email: data.email.trim().toLowerCase(),
-      whatsapp: data.whatsapp.trim(),
-      format: "reguler",
+      wa_number: data.whatsapp.trim(),
       language: data.language,
       level: data.level ?? null,
-      recommended_program: data.recommendedProgram,
-      batch_id: batchId,
-      source: data.source,
-      test_score: data.testScore ?? null,
-      test_band: data.testBand ?? null,
+      program: data.recommendedProgram,
+      source: `${data.source} · reguler`,
+      reason: [
+        `Batch: ${batchId}`,
+        data.testBand ? `Band: ${data.testBand}` : null,
+        data.testScore ? `Skor: ${data.testScore}` : null,
+      ].filter(Boolean).join(" | ") || null,
     });
     setSubmitting(false);
     if (err) {
-      console.error("[program_registrations insert]", err);
+      console.error("[leads insert]", err);
       setError("Gagal menyimpan data. Coba lagi ya.");
       return;
     }
@@ -164,19 +165,22 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   async function submitWaitlist() {
     setSubmitting(true);
     setError("");
-    const { error: err } = await supabase.from("waitlist").insert({
+    const { error: err } = await supabase.from("leads").insert({
       name: data.name.trim(),
       email: data.email.trim().toLowerCase(),
-      whatsapp: data.whatsapp.trim(),
+      wa_number: data.whatsapp.trim(),
       language: data.language,
       level: data.level ?? "unspecified",
-      recommended_program: data.recommendedProgram,
-      source: data.source,
-      test_band: data.testBand ?? null,
+      program: data.recommendedProgram,
+      source: `${data.source} · waitlist`,
+      reason: [
+        "Waitlist — batch reguler penuh",
+        data.testBand ? `Band: ${data.testBand}` : null,
+      ].filter(Boolean).join(" | ") || null,
     });
     setSubmitting(false);
     if (err) {
-      console.error("[waitlist insert]", err);
+      console.error("[leads insert]", err);
       setError("Gagal menyimpan data. Coba lagi ya.");
       return;
     }
