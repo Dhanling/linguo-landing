@@ -307,7 +307,7 @@ export default function PlacementTestPage() {
     const { error } = await supabase.from("leads").insert({
       name: name.trim(),
       email: email.trim().toLowerCase(),
-      whatsapp: wa.trim(),
+      wa_number: wa.trim(),
       source: `placement-${testType}`,
       interest: testType,
       created_at: new Date().toISOString(),
