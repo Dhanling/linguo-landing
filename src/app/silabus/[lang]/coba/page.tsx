@@ -308,6 +308,7 @@ export default function PlacementTestPage() {
       name: name.trim(),
       email: email.trim().toLowerCase(),
       wa_number: wa.trim(),
+      language: `${testLabel} Prep`, // ielts-lead-language-v1: tampil di kolom Bahasa dashboard
       source: `placement-${testType}`,
       interest: testType,
       created_at: new Date().toISOString(),
