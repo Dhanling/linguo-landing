@@ -567,9 +567,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             {/* Sticky footer — Login + Placement Test (always visible) */}
             <div className="border-t border-gray-100 p-4 flex flex-col gap-2 shrink-0 bg-white">
               <button onClick={()=>{onLoginOpen();setOpen(false)}} className="border-2 border-[#1A9E9E] text-[#1A9E9E] text-center py-3 rounded-full font-semibold text-sm w-full">Login</button>
-              <button onClick={()=>{setPlacementPickerOpen(true);setOpen(false)}} className="bg-[#1A9E9E] text-white text-center py-3 rounded-full font-semibold text-sm w-full">Placement Test</button>
-              {/* linguo-patch:trial-wizard-v1 */}
-              <button onClick={()=>{(window as any).__openTrialWizard?.();setOpen(false)}} className="bg-[#fbbf24] text-slate-900 text-center py-3 rounded-full font-semibold text-sm w-full">Coba Kelas Trial</button>
+              {/* linguo-patch:drawer-start-picker-v1 — Placement Test + Coba Trial digabung jadi 1 tombol Mulai Belajar */}
+              <button onClick={()=>{setStartPickerOpen(true);setOpen(false)}} className="bg-[#fbbf24] text-slate-900 text-center py-3 rounded-full font-semibold text-sm w-full">Mulai Belajar</button>
             </div>
           </motion.div>
         )}</AnimatePresence>
