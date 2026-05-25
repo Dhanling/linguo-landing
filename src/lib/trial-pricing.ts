@@ -18,6 +18,11 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     "Esperanto", "Farsi", "English British", "Romanian", "Khmer", "Danish",
     "Uzbek", "Serbian", "Estonian", "Latin", "Ancient Egyptian", "Georgian",
     "Irish",
+    // linguo-patch:private-pricing-v1 — nama bahasa di funnel landing tidak
+    // 100% sama dgn pricelist: "Persian" (= Farsi, sudah ada di atas) dan
+    // "Bengali" sebelumnya tidak ketemu kategori → harga jatuh ke fallback.
+    // Bengali diasumsikan kategori A (setara Hindi/Urdu) — koreksi bila salah.
+    "Persian", "Bengali",
   ],
   B: ["Russian", "Dutch", "Italian", "Spanish", "Thai", "Sign Language"],
   C: ["Arabic", "English", "Japanese", "German", "Korean", "Mandarin", "French"],

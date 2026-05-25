@@ -4,6 +4,9 @@ import { supabase } from "@/lib/supabase-client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, X, Search } from "lucide-react";
+// linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
+// (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
+import { getLanguageCategory, PRICE_A1_60MIN } from "@/lib/trial-pricing";
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -87,12 +90,16 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   // Native = NATIVE_MULTIPLIER x tarif lokal (konsisten dgn /harga).
   const NATIVE_AVAILABLE_LANGS = ["English","Tagalog","Spanish","Arabic"];
   const NATIVE_MULTIPLIER = 2;
-  const PRIVATE_BASE_PRICE = 90000;
+  // linguo-patch:private-pricing-v1 — harga per sesi 60 menit, level A1, sesuai
+  // kategori bahasa yg dipilih siswa. Level dipilih SETELAH langkah ini, jadi
+  // angka ini adalah harga "Mulai dari". Fallback "C" (Rp100rb) bila bahasa
+  // belum dikenal — JANGAN fallback ke D (Rp90rb), itu sumber bug-nya.
+  const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
 
   const programs = [
-    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
+    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
     {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
@@ -267,7 +274,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <div className="flex-1">
                     <p className="font-bold text-sm">Pengajar Lokal</p>
                     <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
-                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">{fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
+                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                 </button>
@@ -283,7 +290,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">Diajar langsung oleh penutur asli bersertifikat</p>
                       <p className="text-[11px] text-slate-400 italic leading-relaxed mt-1.5">Native speaker classes are conducted fully in your target language by a certified native teacher — full immersion for authentic pronunciation and fluency.</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">{fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
+                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
                     </div>
                     <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                   </button>

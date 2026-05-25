@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
+// linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
+import { getLanguageCategory, PRICE_A1_60MIN } from "@/lib/trial-pricing";
 
 import TokoCTA from "@/components/TokoCTA";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
@@ -955,12 +957,15 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   // Native = NATIVE_MULTIPLIER x tarif lokal (konsisten dgn /harga).
   const NATIVE_AVAILABLE_LANGS = ["English","Tagalog","Spanish","Arabic"];
   const NATIVE_MULTIPLIER = 2;
-  const PRIVATE_BASE_PRICE = 90000;
+  // linguo-patch:private-pricing-v1 — harga per sesi 60 menit, level A1, sesuai
+  // kategori bahasa. Level dipilih SETELAH langkah ini → angka ini "Mulai dari".
+  // Fallback "C" (Rp100rb) bila bahasa belum dikenal, JANGAN D (Rp90rb).
+  const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
 
   const programs = [
-    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Rp 90.000/sesi",highlight:true},
+    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
     {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
@@ -1161,7 +1166,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <div className="flex-1">
                     <p className="font-bold text-sm">Pengajar Lokal</p>
                     <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
-                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">{fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
+                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                 </button>
@@ -1177,7 +1182,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">Diajar langsung oleh penutur asli bersertifikat</p>
                       <p className="text-[11px] text-slate-400 italic leading-relaxed mt-1.5">Native speaker classes are conducted fully in your target language by a certified native teacher — full immersion for authentic pronunciation and fluency.</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">{fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
+                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
                     </div>
                     <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                   </button>
@@ -1475,7 +1480,10 @@ function TeacherGrid() {
 }
 
 const PRODUCTS = [
-  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:"Rp 100.000",price:"Rp 90.000",per:"/sesi",discount:"10%",tab:0},
+  // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
+  // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
+  // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
+  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0},
   {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
   {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
   {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3},
@@ -1581,12 +1589,14 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
 // FLAT_PRICING_V1
 const PRICING_TABS = [
   {
-    id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom.",
+    // linguo-patch:private-pricing-v1 — harga Private variabel per bahasa & level.
+    // Angka di bawah = harga terendah (bahasa daerah, level A1) → diberi "Mulai".
+    id:"private",label:"Kelas Private",desc:"Fleksibel, personal, dan efektif. 1-on-1 via Zoom. Harga mulai Rp90.000/sesi — bervariasi per bahasa & level (bahasa lain Rp100rb–120rb/sesi).",
     plans:[
-      {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Rp 90.000",highlighted:true,badge:"Recommended"},
-      {name:"5 Sesi",desc:"5× sesi 60 menit",price:"Rp 450.000",highlighted:false},
-      {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Rp 900.000",highlighted:false},
-      {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Rp 1.800.000",highlighted:false},
+      {name:"Per Sesi",desc:"Coba dulu 1 sesi",price:"Mulai Rp 90.000",highlighted:true,badge:"Recommended"},
+      {name:"5 Sesi",desc:"5× sesi 60 menit",price:"Mulai Rp 450.000",highlighted:false},
+      {name:"10 Sesi",desc:"10× sesi 60 menit",price:"Mulai Rp 900.000",highlighted:false},
+      {name:"20 Sesi",desc:"20× sesi 60 menit",price:"Mulai Rp 1.800.000",highlighted:false},
     ],
     features:["Recording Class/sesi","Interactive Class via ZOOM","Soft file Materi Pembelajaran","Request Jadwal & Topik","Qualified Teacher","E-Certificate","Bebas Pilih 55+ Bahasa"],
     allCheck:true,wa:"Kelas Private",
