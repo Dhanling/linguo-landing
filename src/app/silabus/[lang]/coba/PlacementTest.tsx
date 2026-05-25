@@ -483,6 +483,13 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
     const sid = searchParams?.get("sid");
     const fromAkun = ref === "akun" && !!sid;
 
+    // Hard gate: cuma siswa /akun (udah login) yang auto-unlock + auto-log.
+    // Non-akun WAJIB isi WA dulu — baris placement_results dibuat pas submitGate.
+    if (!fromAkun) {
+      return;
+    }
+    setUnlocked(true);
+
     const payload: Record<string, unknown> = {
       language: meta.name,
       level: result.sublevel,
@@ -554,6 +561,46 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   };
 
   return (
+    !unlocked ? (
+      /* ─── HARD GATE: wajib isi WA sebelum liat hasil (non-akun) ─── */
+      <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+        className="min-h-screen py-16 px-6 flex items-center">
+        <div className="max-w-md w-full mx-auto">
+          <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }}
+            transition={{ type: "spring", stiffness: 180, damping: 12, delay: 0.1 }}
+            className={"inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 " + lc.bg}>
+            <Icons.Award className={"w-10 h-10 " + lc.text} strokeWidth={2} />
+          </motion.div>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-gray-900">
+            Test kamu selesai!
+          </h1>
+          <p className="text-gray-600 text-base mb-8">
+            Hasil level &amp; <strong>learning plan personal</strong> kamu udah siap. Isi data di bawah buat lihat hasilnya.
+          </p>
+          <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm space-y-3">
+            <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)}
+              placeholder="Nama kamu"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+            <input type="email" value={emailValue} onChange={(e) => setEmailValue(e.target.value)}
+              placeholder="Email kamu"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+            <div className="flex">
+              <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
+              <input type="tel" value={waValue} onChange={(e) => setWaValue(e.target.value)}
+                placeholder="812 xxxx xxxx" inputMode="numeric"
+                className="flex-1 px-4 py-3 rounded-r-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
+            </div>
+            {gateError && <p className="text-xs text-rose-600">{gateError}</p>}
+            <button onClick={submitGate} disabled={submitting}
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#1A9E9E] text-white rounded-xl font-bold hover:bg-[#147a7a] disabled:opacity-50 transition-colors">
+              {submitting ? "Menyimpan..." : "Lihat Hasil Saya"}
+              {!submitting && <Icons.ArrowRight className="w-4 h-4" />}
+            </button>
+            <p className="text-[10px] text-gray-400 text-center pt-1">Data aman. Pengajar Linguo bakal kirim learning plan via WhatsApp. Tidak spam.</p>
+          </div>
+        </div>
+      </motion.section>
+    ) : (
     <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
       className="min-h-screen py-16 px-6">
       <div className="max-w-2xl mx-auto">
@@ -706,6 +753,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
         intent={`Simpan hasil test ${meta.flag} & lanjut daftar kelas`}
       />
     </motion.section>
+    )
   );
 }
 // ════════════════════════════════════════════════════════════════════════════
