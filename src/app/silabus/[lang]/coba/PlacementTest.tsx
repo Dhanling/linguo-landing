@@ -477,6 +477,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   // Auto-log result ke placement_results table
   // Kalau dari /akun (ref=akun + sid=studentId), link ke student
   const searchParams = useSearchParams();
+  const resultRowIdRef = useRef<string | null>(null);
   useEffect(() => {
     const ref = searchParams?.get("ref");
     const sid = searchParams?.get("sid");
@@ -495,7 +496,10 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    }).catch(() => {});
+    })
+      .then((r) => r.json())
+      .then((d) => { if (d?.id) resultRowIdRef.current = d.id; })
+      .catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -508,14 +512,29 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
     if (!emailValue.trim() || !emailValue.includes("@")) { setGateError("Masukkan email yang valid"); return; }
     setSubmitting(true);
     try {
+      const rowId = resultRowIdRef.current;
       await fetch("/api/placement-result", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          language: meta.name, level: result.sublevel, score, timeElapsedSec,
-          source: "placement-test-" + meta.slug + "-unlocked",
-          name: nameValue.trim(), email: emailValue.trim(), whatsapp: wa,
-        }),
+        body: JSON.stringify(
+          rowId
+            ? {
+                id: rowId,
+                name: nameValue.trim(),
+                email: emailValue.trim(),
+                whatsapp: wa,
+              }
+            : {
+                language: meta.name,
+                level: result.sublevel,
+                score,
+                timeElapsedSec,
+                source: "placement-test-" + meta.slug + "-unlocked",
+                name: nameValue.trim(),
+                email: emailValue.trim(),
+                whatsapp: wa,
+              }
+        ),
       });
       // Simpan ke localStorage untuk prefill FunnelModal nanti
       try {
