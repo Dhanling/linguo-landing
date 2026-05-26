@@ -86,6 +86,10 @@ const LANG_FLAGS: Record<string, string> = {
   Portuguese:"br",Danish:"dk",Swedish:"se",Finnish:"fi",Polish:"pl",Czech:"cz",
   Greek:"gr",Yunani:"gr",Persian:"ir",Persia:"ir",Georgian:"ge",Norwegian:"no",
   Javanese:"id",Jawa:"id",Sundanese:"id",Sunda:"id",BIPA:"id",
+  // [linguo-patch:onboarding-lang-catalog-v1] flag bahasa tambahan (lengkapi katalog Kelas Private)
+  Hungarian:"hu",Romanian:"ro",Bulgarian:"bg",Ukrainian:"ua",Icelandic:"is",
+  Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
+  Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
 };
 const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[lang] || "un"}.png`;
 
@@ -138,8 +142,16 @@ const WIZARD_PROGRAMS = [
   { key: "Kelas Kids", label: "Kelas Kids", icon: "🧒", desc: "Untuk anak usia 5–12 tahun", price: "Mulai Rp75k/sesi" },
   { key: "English Test Preparation", label: "IELTS / TOEFL Prep", icon: "📝", desc: "Persiapan tes bahasa Inggris bersertifikat", price: "Rp300k/2 bulan (16 sesi @90 mnt)" },
 ];
+// [linguo-patch:onboarding-lang-catalog-v1] katalog bahasa Kelas Private — lengkap, dikelompokkan per region
+const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
+  { region: "Eropa", langs: ["English","French","German","Spanish","Italian","Portuguese","Dutch","Russian","Polish","Czech","Hungarian","Romanian","Bulgarian","Ukrainian","Greek","Turkish","Danish","Swedish","Norwegian","Finnish","Icelandic"] },
+  { region: "Asia", langs: ["Japanese","Korean","Mandarin","Cantonese","Thai","Vietnamese","Filipino","Khmer","Lao","Burmese","Hindi","Urdu"] },
+  { region: "Timur Tengah", langs: ["Arabic","Hebrew","Persian"] },
+  { region: "Nusantara", langs: ["Javanese","Sundanese","Balinese","Batak","Bugis","Madurese","BIPA"] },
+  { region: "Lainnya", langs: ["Georgian"] },
+];
 const LANGS_BY_PROGRAM: Record<string, string[]> = {
-  "Kelas Private": ["English","Japanese","Korean","Mandarin","French","Spanish","German","Arabic","Italian","Turkish","Russian","Thai","Portuguese","Dutch","Hindi","Vietnamese","Danish","Swedish","Finnish","Georgian","Persian","Hebrew","Polish","Czech","Greek","Norwegian","Javanese","Sundanese","BIPA"],
+  "Kelas Private": PRIVATE_LANG_GROUPS.flatMap(g => g.langs), // [linguo-patch:onboarding-lang-catalog-v1]
   "Kelas Reguler": ["English","Japanese","Korean","Mandarin","French","Spanish","German","Arabic"],
   "Kelas Kids": ["English","Japanese","Korean","Mandarin","French","Spanish"],
   "English Test Preparation": [],
@@ -167,6 +179,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
   const availLangs = (LANGS_BY_PROGRAM[program] || []).filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
+  // [linguo-patch:onboarding-lang-catalog-v1] tampilan bahasa dikelompokkan per region (khusus Kelas Private)
+  const langGroups = program === "Kelas Private"
+    ? PRIVATE_LANG_GROUPS
+        .map(g => ({ region: g.region, langs: g.langs.filter(l => !search || l.toLowerCase().includes(search.toLowerCase())) }))
+        .filter(g => g.langs.length > 0)
+    : [{ region: "", langs: availLangs }];
+  const langNoResults = langGroups.every(g => g.langs.length === 0);
   const stepCount = 6;
 
   const finish = () => {
@@ -278,14 +297,23 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 pl-9" />
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
               </div>
-              <div className="grid grid-cols-3 gap-2 max-h-64 overflow-y-auto pb-1">
-                {availLangs.map(l => (
-                  <button key={l} onClick={() => { setLang(l); go(3, 200); }}
-                    className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
-                    {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
-                    {l}
-                  </button>
+              {/* [linguo-patch:onboarding-lang-catalog-v1] grid bahasa dikelompokkan per region */}
+              <div className="max-h-72 overflow-y-auto pb-1 space-y-3">
+                {langGroups.map(g => (
+                  <div key={g.region || "all"}>
+                    {g.region && <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wide mb-1.5 px-0.5">{g.region}</div>}
+                    <div className="grid grid-cols-3 gap-2">
+                      {g.langs.map(l => (
+                        <button key={l} onClick={() => { setLang(l); go(3, 200); }}
+                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
+                          {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
+                          {l}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 ))}
+                {langNoResults && <div className="text-center text-sm text-gray-400 py-6">Nggak ada bahasa yang cocok 😶</div>}
               </div>
               <button onClick={() => setStep(1)} className="mt-4 text-sm text-gray-400 hover:text-gray-600">← Ganti program</button>
             </div>
