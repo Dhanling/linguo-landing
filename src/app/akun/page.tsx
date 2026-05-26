@@ -150,7 +150,7 @@ const TEST_TYPES = [
 ];
 
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string}) => void;
+  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string}) => void;
 }) {
   const [step, setStep] = useState(0);
   const [program, setProgram] = useState("");
@@ -158,16 +158,21 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const [lang, setLang] = useState("");
   const [exp, setExp] = useState<"beginner"|"some"|"">("");
   const [search, setSearch] = useState("");
+  // [linguo-patch:onboarding-wa-step-v1] nomor WA wajib
+  const [wa, setWa] = useState("");
+  const waDigits = wa.replace(/\D/g, "");
+  const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
+  const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
 
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
   const availLangs = (LANGS_BY_PROGRAM[program] || []).filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
-  const stepCount = 5;
+  const stepCount = 6;
 
   const finish = () => {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
-    onDone({ program, lang, testType, exp });
+    onDone({ program, lang, testType, exp, wa: waNorm });
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
@@ -314,8 +319,40 @@ function OnboardingWizard({ user, studentId, onDone }: {
             </div>
           )}
 
-          {/* Step 4: Summary + CTA */}
+          {/* Step 4: Nomor WhatsApp (wajib) — [linguo-patch:onboarding-wa-step-v1] */}
           {step === 4 && (
+            <div>
+              <div className="text-center mb-5">
+                <div className="text-5xl mb-3">📱</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Nomor WhatsApp kamu</h2>
+                <p className="text-gray-400 text-sm mt-1">Tim Linguo akan menghubungimu lewat WhatsApp</p>
+              </div>
+              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3">
+                <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
+                <input
+                  value={wa}
+                  onChange={e => setWa(e.target.value)}
+                  inputMode="numeric"
+                  placeholder="08xxxxxxxxxx"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                />
+                {wa.length > 0 && !waValid && (
+                  <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+                )}
+              </div>
+              <button
+                onClick={() => waValid && setStep(5)}
+                disabled={!waValid}
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Lanjut
+              </button>
+              <button onClick={() => setStep(3)} className="mt-4 w-full text-sm text-gray-400 hover:text-gray-600 transition-colors">← Kembali</button>
+            </div>
+          )}
+
+          {/* Step 5: Summary + CTA */}
+          {step === 5 && (
             <div>
               <div className="text-center mb-5">
                 <div className="text-5xl mb-3">🚀</div>
@@ -1692,6 +1729,7 @@ export default function AkunPage() {
               const studentPayload = {
                 name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
                 email: user?.email,
+                whatsapp: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
                 avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
               };
               let studentRow: any = null;
@@ -1760,6 +1798,7 @@ export default function AkunPage() {
                 await supabase.from("leads").insert({
                   name: studentPayload.name,
                   email: user?.email || "",
+                  wa_number: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
                   program: data.program,
                   language: subject || null,
                   source: "Onboarding Wizard",
