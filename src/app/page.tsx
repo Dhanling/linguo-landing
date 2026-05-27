@@ -1522,20 +1522,16 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return 1 + 0.1 * Math.pow(1 - dist/maxDist, 2);
   };
 
-  // Mobile: CSS marquee (duplicate content for seamless loop), pause on touch/tap.
-  // Desktop: original centered layout with hover scaling.
+  // Mobile: free-scroll horizontal snap, no autoplay. product-dock-free-scroll-v1
   if (isMobile) {
     return (
-      <div className="overflow-hidden -mx-2 px-2"
-        onTouchStart={()=>setPaused(true)}
-        onTouchEnd={()=>setTimeout(()=>setPaused(false),1500)}>
-        <div className="flex gap-2 items-stretch py-2 pb-3 w-max"
-          style={{
-            animation: 'productDockMarquee 35s linear infinite',
-            animationPlayState: paused ? 'paused' : 'running',
-          }}>
-          {[...PRODUCTS, ...PRODUCTS].map((p,i)=>(
-            <DockCard key={i} product={p} getScale={()=>1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+      <div className="overflow-x-auto -mx-2 px-2 pb-1"
+        style={{WebkitOverflowScrolling:'touch' as React.CSSProperties['WebkitOverflowScrolling'],scrollSnapType:'x mandatory'}}>
+        <div className="flex gap-2 items-stretch py-2 pb-3 w-max">
+          {PRODUCTS.map((p,i)=>(
+            <div key={i} style={{scrollSnapAlign:'start'}}>
+              <DockCard product={p} getScale={()=>1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+            </div>
           ))}
         </div>
       </div>
