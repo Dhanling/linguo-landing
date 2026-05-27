@@ -727,10 +727,8 @@ function WhyCarousel() {
   const gap = 24;
   const step = cardW + gap;
 
-  useEffect(() => {
-    const t = setInterval(() => setActive(a => (a + 1) % total), 4000);
-    return () => clearInterval(t);
-  }, []);
+  // linguo-patch:disable-autoscroll-v1
+  // Auto-scroll disabled — user can navigate manually via arrows/dots
 
   // Responsive card width — fit phones, normal on desktop
   useEffect(() => {
@@ -807,10 +805,8 @@ function TestimonialCarousel() {
   const [cardW, setCardW] = useState(560);
   const total = TESTIMONIALS.length;
 
-  useEffect(() => {
-    const t = setInterval(() => setActive(a => (a + 1) % total), 6000);
-    return () => clearInterval(t);
-  }, []);
+  // linguo-patch:disable-autoscroll-v1
+  // Auto-scroll disabled — user can navigate manually via arrows/dots
 
   // Responsive card width: ~90% viewport on mobile, fixed 560px on desktop
   useEffect(() => {
