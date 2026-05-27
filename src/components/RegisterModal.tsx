@@ -1,3 +1,4 @@
+/* linguo-patch:register-modal-brace-fix-v1 — restore '{' pembuka RegisterModal */
 /* linguo-patch:register-modal-required-v1 — validasi nama/bahasa/program wajib sebelum submit lead */
 "use client";
 
@@ -67,7 +68,7 @@ function missingRequired(d: PrefilledData): string {
 }
 
 
-export default function RegisterModal({ open, onClose, data }: RegisterModalProps) 
+export default function RegisterModal({ open, onClose, data }: RegisterModalProps) {
   const [step, setStep] = useState<Step>("choose");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
