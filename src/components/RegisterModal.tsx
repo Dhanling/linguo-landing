@@ -1,3 +1,4 @@
+/* linguo-patch:register-modal-required-v1 — validasi nama/bahasa/program wajib sebelum submit lead */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -52,9 +53,21 @@ type Step = "choose" | "private" | "reguler" | "waitlist" | "success";
 
 // ─────────────────────────────────────────────────────────
 // MAIN COMPONENT
-// ─────────────────────────────────────────────────────────
+// ────────────────────────────────────────────────────────
 
-export default function RegisterModal({ open, onClose, data }: RegisterModalProps) {
+// ─────────────────────────────────────────────────────────
+// VALIDASI FIELD WAJIB — linguo-patch:register-modal-required-v1
+// ─────────────────────────────────────────────────────────
+// Nama, bahasa, dan program wajib terisi sebelum lead di-submit.
+function missingRequired(d: PrefilledData): string {
+  if (!d.name?.trim()) return "Nama belum lengkap. Mohon ulangi pendaftaran dari awal.";
+  if (!d.language?.trim()) return "Bahasa belum dipilih. Mohon ulangi pendaftaran dari awal.";
+  if (!d.recommendedProgram?.trim()) return "Program belum dipilih. Mohon ulangi pendaftaran dari awal.";
+  return "";
+}
+
+
+export default function RegisterModal({ open, onClose, data }: RegisterModalProps) 
   const [step, setStep] = useState<Step>("choose");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -108,6 +121,8 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
 
   // ── Submit Private ──
   async function submitPrivate() {
+    const __miss = missingRequired(data);
+    if (__miss) { setError(__miss); return; }
     setSubmitting(true);
     setError("");
     const { error: err } = await supabase.from("leads").insert({
@@ -136,6 +151,8 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
 
   // ── Submit Reguler (pick batch) ──
   async function submitReguler(batchId: string) {
+    const __miss = missingRequired(data);
+    if (__miss) { setError(__miss); return; }
     setSubmitting(true);
     setError("");
     const { error: err } = await supabase.from("leads").insert({
@@ -163,6 +180,8 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
 
   // ── Submit Waitlist ──
   async function submitWaitlist() {
+    const __miss = missingRequired(data);
+    if (__miss) { setError(__miss); return; }
     setSubmitting(true);
     setError("");
     const { error: err } = await supabase.from("leads").insert({
