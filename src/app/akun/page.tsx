@@ -419,7 +419,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
       </AnimatePresence>
 
       {step > 0 && step < 4 && (
-        <button onClick={finish} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">Lewati</button>
+        <button onClick={() => setStep(4)} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">Lewati</button>
       )}
       <div className="absolute bottom-6 flex items-center gap-1.5">
         {Array.from({ length: stepCount }).map((_, i) => (
@@ -780,6 +780,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       const { error: __leadDbgErr } = await supabase.from("leads").insert({
         name: displayName,
         email: user?.email || "",
+        wa_number: student?.whatsapp || null, // [linguo-patch:akun-onboarding-wa-required-v1]
         program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
         language: enrollLang || null,
         source: "Tambah Kelas",
