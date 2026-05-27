@@ -1,3 +1,4 @@
+/* linguo-patch:akun-onboarding-gate-v1 — Lewati gating + WaGate profile completion */
 "use client";
 
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
@@ -418,7 +419,9 @@ function OnboardingWizard({ user, studentId, onDone }: {
         </motion.div>
       </AnimatePresence>
 
-      {step > 0 && step < 4 && (
+      {/* linguo-patch:onboarding-required-fields-v1 — "Lewati" hanya boleh
+          setelah program & bahasa/tes dipilih (step 3). Step 1 & 2 wajib diisi. */}
+      {step === 3 && program && (isTestPrep ? testType : lang) && (
         <button onClick={() => setStep(4)} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">Lewati</button>
       )}
       <div className="absolute bottom-6 flex items-center gap-1.5">
@@ -431,27 +434,49 @@ function OnboardingWizard({ user, studentId, onDone }: {
 }
 
 // [linguo-patch:akun-wa-gate-existing-v1] WA-gate untuk user lama tanpa nomor WA
+// linguo-patch:akun-profile-gate-v1 — gate kelengkapan profil dasar (nama + WhatsApp)
+// untuk siswa lama yang datanya belum lengkap. Bahasa & program TIDAK termasuk
+// karena keduanya attribute per-registrasi, bukan profil siswa.
+function isPlaceholderName(name: any): boolean {
+  const n = String(name || "").trim();
+  return n.length < 2 || n.toLowerCase() === "siswa";
+}
+function gateNeedsProfile(student: any): boolean {
+  return !student?.whatsapp || isPlaceholderName(student?.name);
+}
+
 function WaGate({ user, student, supabase, onSaved }: {
-  user: any; student: any; supabase: any; onSaved: (wa: string, avatar: string | null) => void;
+  user: any; student: any; supabase: any; onSaved: (wa: string, avatar: string | null, name: string) => void;
 }) {
+  const needName = isPlaceholderName(student?.name);
+  const needWa = !student?.whatsapp;
+  const [name, setName] = useState(needName ? "" : (student?.name || ""));
   const [wa, setWa] = useState("");
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState("");
   const waDigits = wa.replace(/\D/g, "");
   const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
   const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
-  const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
+  const nameValid = name.trim().length >= 2;
+  const formValid = (!needWa || waValid) && (!needName || nameValid);
+  const firstName = (student?.name && !isPlaceholderName(student.name) ? student.name : user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const googleAvatar = user?.user_metadata?.avatar_url || user?.user_metadata?.picture || null;
 
   const save = async () => {
-    if (!waValid || saving) return;
+    if (!formValid || saving) return;
     setSaving(true); setErr("");
-    const patch: any = { whatsapp: waNorm };
+    const patch: any = {};
+    if (needWa) patch.whatsapp = waNorm;
+    if (needName) patch.name = name.trim();
     if (!student?.avatar_url && googleAvatar) patch.avatar_url = googleAvatar;
     const { error } = await supabase.from("students").update(patch).eq("id", student.id);
     setSaving(false);
     if (error) { setErr("Gagal menyimpan. Coba lagi ya."); return; }
-    onSaved(waNorm, patch.avatar_url ?? student?.avatar_url ?? null);
+    onSaved(
+      patch.whatsapp ?? student?.whatsapp ?? "",
+      patch.avatar_url ?? student?.avatar_url ?? null,
+      patch.name ?? student?.name ?? ""
+    );
   };
 
   return (
@@ -462,22 +487,36 @@ function WaGate({ user, student, supabase, onSaved }: {
             ? <img src={googleAvatar} alt={firstName} referrerPolicy="no-referrer" className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-white shadow-md" />
             : <div className="w-20 h-20 rounded-full mx-auto bg-teal-100 flex items-center justify-center text-2xl font-extrabold text-teal-600 border-4 border-white shadow-md">{firstName.charAt(0).toUpperCase()}</div>}
           <h2 className="text-xl font-extrabold text-gray-900 mt-4">Hai, {firstName}! 👋</h2>
-          <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">Sebelum lanjut, lengkapi nomor WhatsApp kamu dulu ya. Tim Linguo butuh ini buat menghubungimu soal jadwal &amp; kelas.</p>
+          <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">Sebelum lanjut, lengkapi data profil kamu dulu ya. Tim Linguo butuh ini buat menghubungimu soal jadwal &amp; kelas.</p>
         </div>
-        <div className="bg-white rounded-2xl border border-teal-100 p-4 shadow-sm">
-          <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
-          <input value={wa} onChange={e => setWa(e.target.value)} inputMode="numeric" placeholder="08xxxxxxxxxx"
-            className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
-          {wa.length > 0 && !waValid && (
-            <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+        <div className="bg-white rounded-2xl border border-teal-100 p-4 shadow-sm space-y-3">
+          {needName && (
+            <div>
+              <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
+              <input value={name} onChange={e => setName(e.target.value)} placeholder="Nama lengkap kamu"
+                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+              {name.length > 0 && !nameValid && (
+                <p className="text-[11px] text-red-500 mt-1.5">Masukkan nama lengkap kamu</p>
+              )}
+            </div>
           )}
-          {err && <p className="text-[11px] text-red-500 mt-1.5">{err}</p>}
-          <button onClick={save} disabled={!waValid || saving}
-            className="mt-3 w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed">
+          {needWa && (
+            <div>
+              <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
+              <input value={wa} onChange={e => setWa(e.target.value)} inputMode="numeric" placeholder="08xxxxxxxxxx"
+                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+              {wa.length > 0 && !waValid && (
+                <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+              )}
+            </div>
+          )}
+          {err && <p className="text-[11px] text-red-500">{err}</p>}
+          <button onClick={save} disabled={!formValid || saving}
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed">
             {saving ? "Menyimpan..." : "Simpan & Lanjutkan"}
           </button>
         </div>
-        <p className="text-center text-[11px] text-gray-400 mt-3">Nomor kamu aman & cuma dipakai tim Linguo.</p>
+        <p className="text-center text-[11px] text-gray-400 mt-3">Data kamu aman & cuma dipakai tim Linguo.</p>
       </div>
     </div>
   );
@@ -1977,9 +2016,9 @@ export default function AkunPage() {
     <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20 lg:pb-8">
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
-      {student && student.id && student.id !== "pending" && student.id !== user?.id && !student.whatsapp && (
+      {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
         <WaGate user={user} student={student} supabase={supabase}
-          onSaved={(wa, avatar) => setStudent({ ...student, whatsapp: wa, avatar_url: avatar ?? student.avatar_url } as any)} />
+          onSaved={(wa, avatar, name) => setStudent({ ...student, whatsapp: wa || student.whatsapp, name: name || student.name, avatar_url: avatar ?? student.avatar_url } as any)} />
       )}
 
       {/* ── Onboarding Wizard (first-time users) ──────────────────── */}
