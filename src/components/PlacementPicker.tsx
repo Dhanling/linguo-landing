@@ -35,6 +35,12 @@ const CATEGORIES: { key: string; label: string }[] = [
   { key: "nusantara", label: "Nusantara" },
 ];
 
+// linguo-patch:placement-live-whitelist-v1 — cuma bahasa dgn placement test LIVE yg dpt tombol "Mulai Test".
+// Route /silabus/[lang]/coba (page.tsx) cuma serve IELTS (lang==="ielts") & TOEFL ITP (else),
+// dua-duanya tes Inggris. Bahasa lain klik "Mulai Test" -> nyasar ke TOEFL ITP. Jadi gate-nya
+// pake whitelist slug yg beneran punya tes sesuai, BUKAN lang.available (itu flag katalog silabus).
+const PLACEMENT_LIVE = new Set(["ielts", "toefl-itp"]);
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -139,7 +145,7 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
             <div className="flex-1 overflow-y-auto px-6 pb-4">
               <div className="space-y-1.5 pt-2">
                 {filtered.map((lang) => {
-                  if (lang.available) {
+                  if (PLACEMENT_LIVE.has(lang.slug)) {
                     return (
                       <a
                         key={lang.slug}
