@@ -10,6 +10,11 @@ import {
 import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import RegisterModal from "@/components/RegisterModal";
+// linguo-patch:placement-cefr-wire-v1
+import PlacementTest from "./PlacementTest";
+import { getCurriculum } from "@/data/curriculum";
+import { englishPlacementTest } from "@/data/placement/english";
+import { japanesePlacementTest } from "@/data/placement/japanese";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES & DATA
@@ -257,7 +262,23 @@ const CATEGORY_ICONS: Record<string, string> = {
 // MAIN COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
 
+// linguo-patch:placement-cefr-wire-v1 — dispatch CEFR (English/Japanese) -> <PlacementTest/>, sisanya flow IELTS/TOEFL
+const CEFR_PLACEMENT = new Set(["english", "japanese"]);
+
 export default function PlacementTestPage() {
+  const params = useParams();
+  const lang = params?.lang as string;
+  if (CEFR_PLACEMENT.has(lang)) {
+    const curriculum = getCurriculum(lang);
+    if (curriculum) {
+      const questions = lang === "english" ? englishPlacementTest : japanesePlacementTest;
+      return <PlacementTest curriculum={curriculum} questions={questions} />;
+    }
+  }
+  return <IeltsToeflPlacement />;
+}
+
+function IeltsToeflPlacement() {
   const params = useParams();
   const router = useRouter();
   const lang = params?.lang as string;
