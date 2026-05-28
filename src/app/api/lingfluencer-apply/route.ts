@@ -78,21 +78,61 @@ function buildNotes(opts: {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// GET — proactive dup check by gmail
+// GET — proactive dup check by gmail dan/atau whatsapp
+//   Query params (salah satu atau dua-duanya):
+//     ?gmail=...        → cek email
+//     ?whatsapp=...     → cek nomor WA (di-normalize dulu)
+//   Response:
+//     { exists, status,            ← backwards-compat (= email)
+//       emailExists, emailStatus,
+//       waExists, waStatus }
 // ─────────────────────────────────────────────────────────────────────
 export async function GET(req: NextRequest) {
   const url = new URL(req.url);
   const gmail = url.searchParams.get("gmail")?.toLowerCase().trim();
-  if (!gmail) {
-    return NextResponse.json({ error: "gmail param required" }, { status: 400 });
+  const waRaw = url.searchParams.get("whatsapp")?.trim();
+
+  if (!gmail && !waRaw) {
+    return NextResponse.json(
+      { error: "gmail or whatsapp param required" },
+      { status: 400 }
+    );
   }
-  const res = await supaFetch(
-    `lingfluencers?email=eq.${encodeURIComponent(gmail)}&select=id,status,created_at`
-  );
-  const rows = res.ok ? await res.json() : [];
+
+  let emailExists = false;
+  let emailStatus: string | null = null;
+  if (gmail) {
+    const res = await supaFetch(
+      `lingfluencers?email=eq.${encodeURIComponent(gmail)}&select=id,status,created_at`
+    );
+    const rows = res.ok ? await res.json() : [];
+    emailExists = rows.length > 0;
+    emailStatus = rows[0]?.status || null;
+  }
+
+  let waExists = false;
+  let waStatus: string | null = null;
+  if (waRaw) {
+    const normalizedWA = normalizeWhatsApp(waRaw);
+    if (normalizedWA) {
+      const res = await supaFetch(
+        `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}&select=id,status,created_at`
+      );
+      const rows = res.ok ? await res.json() : [];
+      waExists = rows.length > 0;
+      waStatus = rows[0]?.status || null;
+    }
+  }
+
   return NextResponse.json({
-    exists: rows.length > 0,
-    status: rows[0]?.status || null,
+    // backwards-compat (existing callers expect exists/status = email)
+    exists: emailExists,
+    status: emailStatus,
+    // explicit per-field
+    emailExists,
+    emailStatus,
+    waExists,
+    waStatus,
   });
 }
 
@@ -183,6 +223,23 @@ export async function POST(req: NextRequest) {
         {
           error: `Gmail ini sudah pernah daftar Lingfluencer (status: ${dupRows[0].status}). Hubungi tim Linguo via WhatsApp kalau ada pertanyaan.`,
           duplicate: true,
+          field: "gmail",
+        },
+        { status: 409 }
+      );
+    }
+
+    // ── Dup check on WhatsApp ────────────────────────────────────────
+    const waDupRes = await supaFetch(
+      `lingfluencers?whatsapp=eq.${encodeURIComponent(normalizedWA)}&select=id,status`
+    );
+    const waDupRows = waDupRes.ok ? await waDupRes.json() : [];
+    if (waDupRows.length > 0) {
+      return NextResponse.json(
+        {
+          error: `Nomor WhatsApp ini sudah pernah daftar Lingfluencer (status: ${waDupRows[0].status}). Hubungi tim Linguo kalau ada pertanyaan.`,
+          duplicate: true,
+          field: "whatsapp",
         },
         { status: 409 }
       );
@@ -223,8 +280,16 @@ export async function POST(req: NextRequest) {
       console.error("Lingfluencer insert error:", insertRes.status, err);
 
       if (insertRes.status === 409 || err.toLowerCase().includes("duplicate")) {
+        // DB-level unique constraint hit — tebak field dari isi error
+        const isWa = err.toLowerCase().includes("whatsapp");
         return NextResponse.json(
-          { error: "Email ini sudah terdaftar." },
+          {
+            error: isWa
+              ? "Nomor WhatsApp ini sudah terdaftar."
+              : "Email ini sudah terdaftar.",
+            duplicate: true,
+            field: isWa ? "whatsapp" : "gmail",
+          },
           { status: 409 }
         );
       }

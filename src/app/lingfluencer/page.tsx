@@ -132,6 +132,7 @@ function LingfluencerPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
+  const [checkingDup, setCheckingDup] = useState(false);
 
   const togglePlatform = (id: string) => {
     setForm((p) => ({
@@ -165,7 +166,7 @@ function LingfluencerPage() {
       const normalizedWa = normalizeWaInput(form.whatsapp);
       if (!form.whatsapp.trim()) e.whatsapp = "Nomor WhatsApp wajib diisi";
       else if (!isValidIndoWa(normalizedWa))
-        e.whatsapp = "Format: 628xxxxxxxxxx (10-14 digit setelah 628)";
+        e.whatsapp = "Nomor tidak valid. Ketik tanpa 0 di depan, contoh: 81234567890";
     } else if (step === 2) {
       if (form.content_platforms.length === 0)
         e.content_platforms = "Pilih minimal 1 platform";
@@ -188,7 +189,7 @@ function LingfluencerPage() {
     }
   };
 
-  const goNext = () => {
+  const goNext = async () => {
     setSubmitError("");
 
     // Step 4 = submit
@@ -203,6 +204,43 @@ function LingfluencerPage() {
       const firstError = document.querySelector("[data-error='true']");
       firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
       return;
+    }
+
+    // Step 1: proactive duplicate check (email + WhatsApp)
+    if (currentStep === 1) {
+      setCheckingDup(true);
+      try {
+        const gmail = form.gmail.trim().toLowerCase();
+        const wa = normalizeWaInput(form.whatsapp);
+        const res = await fetch(
+          `/api/lingfluencer-apply?gmail=${encodeURIComponent(
+            gmail
+          )}&whatsapp=${encodeURIComponent(wa)}`
+        );
+        const data = await res.json();
+        const dupErrors: Record<string, string> = {};
+        if (data.emailExists) {
+          dupErrors.gmail = `Gmail ini udah pernah daftar${
+            data.emailStatus ? ` (status: ${data.emailStatus})` : ""
+          }. Hubungi tim Linguo via WhatsApp kalau ada pertanyaan.`;
+        }
+        if (data.waExists) {
+          dupErrors.whatsapp = `Nomor WhatsApp ini udah pernah daftar${
+            data.waStatus ? ` (status: ${data.waStatus})` : ""
+          }.`;
+        }
+        if (Object.keys(dupErrors).length > 0) {
+          setErrors(dupErrors);
+          setCheckingDup(false);
+          const firstError = document.querySelector("[data-error='true']");
+          firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+      } catch (err) {
+        // Network error saat cek — lanjut aja; POST submit punya dup guard sendiri
+        console.warn("Duplicate check skipped:", err);
+      }
+      setCheckingDup(false);
     }
 
     setErrors({});
@@ -254,6 +292,17 @@ function LingfluencerPage() {
       });
       const data = await res.json();
       if (!res.ok) {
+        // Duplicate detected at submit (race: someone registered between check & submit)
+        if (res.status === 409 && data.duplicate) {
+          const fieldKey = data.field === "whatsapp" ? "whatsapp" : "gmail";
+          setErrors({ [fieldKey]: data.error });
+          setCurrentStep(1);
+          setTimeout(() => {
+            const firstError = document.querySelector("[data-error='true']");
+            firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 100);
+          return;
+        }
         setSubmitError(data.error || "Gagal submit, coba lagi sebentar.");
         return;
       }
@@ -389,7 +438,7 @@ function LingfluencerPage() {
             <button
               type="button"
               onClick={goBack}
-              disabled={currentStep === 1 || loading}
+              disabled={currentStep === 1 || loading || checkingDup}
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 disabled:opacity-0 disabled:pointer-events-none transition-colors"
             >
               <ArrowLeft size={16} /> Kembali
@@ -400,13 +449,18 @@ function LingfluencerPage() {
             <button
               type="button"
               onClick={goNext}
-              disabled={loading}
+              disabled={loading || checkingDup}
               className="flex items-center gap-1.5 bg-[#1A9E9E] hover:bg-[#157d7d] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-5 py-3 rounded-xl transition-colors text-sm"
             >
               {loading ? (
                 <>
                   <Loader2 size={18} className="animate-spin" />
                   Mengirim...
+                </>
+              ) : checkingDup ? (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  Mengecek...
                 </>
               ) : currentStep === STEPS.length ? (
                 <>
@@ -534,16 +588,33 @@ function Step1Profil({
         label="No. WhatsApp"
         required
         error={errors.whatsapp}
-        hint="Format akhir: 628xxxxxxxxxx — boleh tulis 08xxx, otomatis di-convert"
+        hint="Ketik tanpa 0 di depan — contoh: 81234567890 (prefix +62 otomatis)"
       >
-        <input
-          type="tel"
-          value={form.whatsapp}
-          onChange={(e) => updateField("whatsapp", e.target.value)}
-          className={inputClass(!!errors.whatsapp)}
-          placeholder="081234567890"
+        <div
+          className={`flex items-stretch rounded-xl border-2 bg-white transition-colors ${
+            errors.whatsapp
+              ? "border-rose-300 focus-within:border-rose-500"
+              : "border-slate-200 focus-within:border-[#1A9E9E]"
+          }`}
           data-error={!!errors.whatsapp}
-        />
+        >
+          <span className="flex items-center px-4 text-slate-500 font-semibold border-r-2 border-slate-100 select-none">
+            +62
+          </span>
+          <input
+            type="tel"
+            inputMode="numeric"
+            value={form.whatsapp}
+            onChange={(e) => {
+              let d = e.target.value.replace(/\D/g, "");
+              if (d.startsWith("62")) d = d.slice(2);
+              if (d.startsWith("0")) d = d.slice(1);
+              updateField("whatsapp", d);
+            }}
+            className="flex-1 px-4 py-3 bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none rounded-r-xl"
+            placeholder="81234567890"
+          />
+        </div>
         {form.whatsapp && !errors.whatsapp && (
           <p className="text-xs text-slate-400 mt-1">
             Tersimpan sebagai:{" "}
