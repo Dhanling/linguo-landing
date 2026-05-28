@@ -24,6 +24,21 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+// [linguo-patch:akun-affiliate-capture-v1]
+// Baca cookie linguo_ref (di-set middleware dari ?ref=KODE, httpOnly:false).
+// Cukup return KODE referral; affiliate_id diisi DB trigger resolve_affiliate_id.
+function getRefCodeFromCookie(): string | null {
+  try {
+    if (typeof document === "undefined") return null;
+    const m = document.cookie.match(/(?:^|;\s*)linguo_ref=([^;]+)/);
+    if (!m) return null;
+    const code = decodeURIComponent(m[1]).trim();
+    return code || null;
+  } catch {
+    return null;
+  }
+}
+
 // ── Types ────────────────────────────────────────────────────────────────
 type StudentReg = {
   id: string;
@@ -920,6 +935,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
           .from("registrations")
           .insert({
             student_id: studentId,
+            affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
             product: enrollProgram,
             language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
             level: "A1.1",
@@ -1886,6 +1902,7 @@ export default function AkunPage() {
                 .from("registrations")
                 .insert({
                   student_id: studentRow.id,
+                  affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
                   product: data.program,
                   language: data.testType || data.lang || null,
                   level: data.exp === "beginner" ? "A1" : "TBD",
