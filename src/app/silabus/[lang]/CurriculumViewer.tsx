@@ -109,7 +109,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
               className="inline-flex items-center justify-center gap-2 px-7 py-4 border-2 border-gray-200 text-gray-700 rounded-full font-semibold text-base hover:border-gray-900 hover:bg-gray-50 transition-colors"
             >
               <Icons.Target className="w-4 h-4" />
-              Coba Sample Gratis
+              Placement Test
             </Link>
           </div>
         </div>

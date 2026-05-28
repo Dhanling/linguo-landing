@@ -19,6 +19,14 @@ import { trackEvent } from "@/lib/tracking";
 
 type Screen = "intro" | "quiz" | "result";
 
+// linguo-patch:placement-leadform-polish-v1 — normalisasi nomor WA (digit-only, buang prefix 62/0, cap 13 digit)
+function cleanWa(raw: string): string {
+  let d = (raw || "").replace(/\D/g, "");
+  if (d.startsWith("62")) d = d.slice(2);
+  d = d.replace(/^0+/, "");
+  return d.slice(0, 13);
+}
+
 function renderRich(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((p, i) => {
@@ -513,8 +521,9 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
   const submitGate = async () => {
     setGateError("");
     // Validate WA: min 10 digit, Indonesia prefix
-    const wa = waValue.replace(/\D/g, "");
-    if (wa.length < 10) { setGateError("Nomor WhatsApp minimal 10 digit"); return; }
+    const wa = cleanWa(waValue);
+    if (wa.length < 9) { setGateError("Nomor WhatsApp minimal 9 digit"); return; }
+    if (!wa.startsWith("8")) { setGateError("Nomor HP harus diawali 8 (tanpa 0 / +62)"); return; }
     if (!nameValue.trim()) { setGateError("Masukkan nama dulu ya"); return; }
     if (!emailValue.trim() || !emailValue.includes("@")) { setGateError("Masukkan email yang valid"); return; }
     setSubmitting(true);
@@ -586,7 +595,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
             <div className="flex">
               <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
-              <input type="tel" value={waValue} onChange={(e) => setWaValue(e.target.value)}
+              <input type="tel" value={waValue} onChange={(e) => setWaValue(cleanWa(e.target.value))}
                 placeholder="812 xxxx xxxx" inputMode="numeric"
                 className="flex-1 px-4 py-3 rounded-r-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
             </div>
@@ -675,7 +684,7 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                   <div className="flex">
                     <span className="px-3 py-3 border border-r-0 border-gray-200 rounded-l-xl bg-gray-50 text-sm text-gray-600 font-mono">+62</span>
-                    <input type="tel" value={waValue} onChange={(e) => setWaValue(e.target.value)}
+                    <input type="tel" value={waValue} onChange={(e) => setWaValue(cleanWa(e.target.value))}
                       placeholder="812 xxxx xxxx" inputMode="numeric"
                       className="flex-1 px-4 py-3 rounded-r-xl border border-gray-200 focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20 outline-none text-sm" />
                   </div>
