@@ -5,356 +5,373 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Submit Prospect KOL — Lingtership</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root {
-    --teal: #0d9488;
-    --teal-light: #ccfbf1;
-    --teal-dark: #0f766e;
-    --ink: #0f172a;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --radius: 14px;
+    --teal:       #1A9E9E;
+    --teal-deep:  #0E6E6E;
+    --teal-dark:  #0a5252;
+    --teal-tint:  #E6F6F6;
+    --teal-soft:  #d3eeee;
+    --aqua:       #2BC4C4;
+    --amber:      #f59e0b;
+    --ink:        #0c2b2b;
+    --muted:      #5b7a7a;
+    --border:     #d8e9e9;
+    --card:       #ffffff;
+    --radius:     22px;
+    --shadow:     0 30px 70px -28px rgba(10,82,82,.45);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
 
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--bg);
     color: var(--ink);
     min-height: 100vh;
-    padding: 0 0 60px;
+    padding: 40px 18px 70px;
+    position: relative;
+    overflow-x: hidden;
+    background:
+      radial-gradient(120% 80% at 8% -5%, rgba(43,196,196,.22), transparent 55%),
+      radial-gradient(110% 75% at 100% 0%, rgba(26,158,158,.20), transparent 50%),
+      radial-gradient(90% 70% at 90% 110%, rgba(14,110,110,.14), transparent 55%),
+      #f3faf9;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* faint grain for depth */
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* Header */
-  .header {
-    background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%);
-    padding: 32px 20px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  /* floating decorative orbs */
+  .orb { position: fixed; border-radius: 50%; filter: blur(2px); pointer-events: none; z-index: 0; }
+  .orb.a { width: 14px; height: 14px; background: var(--aqua); top: 14%; left: 12%; opacity:.5; animation: float 7s ease-in-out infinite; }
+  .orb.b { width: 9px;  height: 9px;  background: var(--teal); top: 26%; right: 14%; opacity:.6; animation: float 9s ease-in-out infinite .8s; }
+  .orb.c { width: 18px; height: 18px; border: 2px solid var(--teal); background: transparent; bottom: 18%; left: 9%; opacity:.4; animation: float 8s ease-in-out infinite .4s; }
+  @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-16px) } }
+
+  .shell { max-width: 540px; margin: 0 auto; position: relative; z-index: 1; }
+
+  /* Hero */
+  .hero { text-align: center; margin-bottom: 22px; animation: rise .6s cubic-bezier(.2,.8,.2,1) both; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--teal-soft);
+    color: var(--teal-deep);
+    font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+    padding: 7px 14px; border-radius: 999px; margin-bottom: 16px;
+    box-shadow: 0 6px 18px -10px rgba(14,110,110,.5);
   }
-  .header::before {
-    content: "";
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px rgba(26,158,158,.18); }
+  .hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800; font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.02; letter-spacing: -.02em;
+    background: linear-gradient(120deg, var(--teal-dark), var(--teal) 60%, var(--aqua));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 8px;
   }
-  .header::after {
-    content: "";
-    position: absolute;
-    bottom: -30px; left: -20px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-  }
-  .header-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-  }
-  .header h1 {
-    color: white;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 6px;
-    position: relative;
-    z-index: 1;
-  }
-  .header p {
-    color: rgba(255,255,255,0.8);
-    font-size: 14px;
-    position: relative;
-    z-index: 1;
-  }
+  .hero p { color: var(--muted); font-size: 15px; max-width: 360px; margin: 0 auto; line-height: 1.5; }
 
   /* Card */
   .card {
     background: var(--card);
-    margin: -16px 16px 0;
+    border: 1px solid rgba(255,255,255,.9);
     border-radius: var(--radius);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    padding: 28px 24px 26px;
     position: relative;
-    z-index: 2;
+    animation: rise .7s cubic-bezier(.2,.8,.2,1) .08s both;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: linear-gradient(90deg, var(--teal), var(--aqua), var(--teal-deep));
   }
 
-  /* Section label */
-  .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--teal-light);
+  /* tip */
+  .tip {
+    display: flex; gap: 11px; align-items: flex-start;
+    background: linear-gradient(180deg, #fffdf5, #fff8e8);
+    border: 1px solid #fde9b8; border-radius: 14px;
+    padding: 13px 15px; margin-bottom: 24px;
+    font-size: 12.5px; color: #8a5a05; line-height: 1.5;
   }
+  .tip .ico { font-size: 17px; line-height: 1; flex-shrink: 0; }
+  .tip strong { display: block; color: #6b4503; margin-bottom: 2px; }
 
-  /* Form groups */
-  .form-group {
-    margin-bottom: 18px;
+  /* section heading */
+  .sec { display: flex; align-items: center; gap: 9px; margin: 4px 0 16px; }
+  .sec .num {
+    width: 26px; height: 26px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--teal-tint); color: var(--teal-deep);
+    border-radius: 9px; font-weight: 800; font-size: 13px;
+    font-family: 'Bricolage Grotesque', sans-serif;
   }
-  label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-  label .req { color: var(--teal); }
-  label .hint {
-    font-weight: 400;
-    font-size: 11px;
-    color: var(--muted);
-    margin-left: 4px;
-  }
+  .sec h3 { font-size: 13px; font-weight: 700; letter-spacing: .3px; text-transform: uppercase; color: var(--ink); }
+
+  .group { margin-bottom: 17px; animation: rise .5s ease both; }
+  label { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 7px; }
+  label .req  { color: var(--teal); margin-left: 1px; }
+  label .hint { font-weight: 500; font-size: 11px; color: var(--muted); margin-left: 5px; }
 
   input, select, textarea {
     width: 100%;
-    padding: 11px 14px;
+    padding: 13px 15px;
     border: 1.5px solid var(--border);
-    border-radius: 10px;
+    border-radius: 13px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    color: var(--ink);
-    background: var(--bg);
-    transition: border-color 0.2s, box-shadow 0.2s;
-    appearance: none;
-    -webkit-appearance: none;
+    font-size: 14.5px; color: var(--ink);
+    background: #f7fbfb;
+    transition: border-color .18s, box-shadow .18s, background .18s;
+    appearance: none; -webkit-appearance: none;
   }
+  input::placeholder, textarea::placeholder { color: #9bb3b3; }
   input:focus, select:focus, textarea:focus {
-    outline: none;
+    outline: none; border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(26,158,158,.14);
+    background: #fff;
+  }
+  textarea { resize: vertical; min-height: 96px; line-height: 1.55; }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231A9E9E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer;
+  }
+  .echo { font-size: 11.5px; color: var(--teal-deep); font-weight: 600; margin-top: 6px; min-height: 14px; }
+
+  /* platform pills */
+  .plat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .plat input { display: none; }
+  .plat label {
+    display: flex; align-items: center; gap: 9px; margin: 0;
+    padding: 13px 14px; border: 1.5px solid var(--border); border-radius: 13px;
+    cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--muted);
+    background: #f7fbfb; transition: all .15s; user-select: none;
+  }
+  .plat label svg { width: 19px; height: 19px; flex-shrink: 0; opacity: .7; transition: opacity .15s; }
+  .plat label:hover { border-color: var(--teal-soft); }
+  .plat input:checked + label {
     border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
-    background: white;
-  }
-  textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
-  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
-
-  /* Platform pills */
-  .platform-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  .platform-option { display: none; }
-  .platform-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--muted);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .platform-label .icon { font-size: 18px; }
-  .platform-option:checked + .platform-label {
-    border-color: var(--teal);
-    background: var(--teal-light);
+    background: linear-gradient(180deg, var(--teal-tint), #fff);
     color: var(--teal-dark);
+    box-shadow: 0 8px 20px -12px rgba(26,158,158,.6);
   }
+  .plat input:checked + label svg { opacity: 1; }
 
-  /* Divider */
-  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 26px 0; }
 
-  /* Submit */
-  .submit-btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #0d9488, #0891b2);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.1s;
-    margin-top: 8px;
+  /* submit */
+  .submit {
+    width: 100%; padding: 16px; margin-top: 6px;
+    background: linear-gradient(120deg, var(--teal), var(--aqua));
+    color: #fff; border: none; border-radius: 15px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 16px; font-weight: 700; letter-spacing: .2px;
+    cursor: pointer; position: relative; overflow: hidden;
+    box-shadow: 0 16px 34px -14px rgba(26,158,158,.85);
+    transition: transform .12s, box-shadow .2s;
   }
-  .submit-btn:active { transform: scale(0.98); }
-  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .submit:hover:not(:disabled) { box-shadow: 0 20px 40px -14px rgba(26,158,158,.95); }
+  .submit:active:not(:disabled) { transform: scale(.985); }
+  .submit:disabled { opacity: .65; cursor: not-allowed; }
+  .submit .shine { position: absolute; top: 0; left: -120%; width: 60%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); transform: skewX(-18deg); animation: sweep 3.4s ease-in-out infinite; }
+  @keyframes sweep { 0%,55%{ left:-120% } 80%,100%{ left:160% } }
 
-  /* States */
-  .alert {
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 16px;
-    display: none;
+  /* toast (errors) */
+  .toast {
+    position: fixed; top: 18px; left: 50%; transform: translate(-50%,-130%);
+    z-index: 60; max-width: 92vw; width: 420px;
+    display: flex; align-items: center; gap: 11px;
+    background: #fff; border: 1px solid #fbd5d5; border-left: 4px solid #ef4444;
+    color: #b91c1c; font-size: 13.5px; font-weight: 600; line-height: 1.4;
+    padding: 14px 16px; border-radius: 14px;
+    box-shadow: 0 22px 50px -18px rgba(185,28,28,.45);
+    transition: transform .42s cubic-bezier(.18,.9,.25,1.2);
   }
-  .alert.error   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; display: block; }
-  .alert.success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; display: block; }
+  .toast.show { transform: translate(-50%, 0); }
+  .toast .ico { font-size: 17px; }
 
-  /* Success screen */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 32px 20px;
+  /* success modal */
+  .overlay {
+    position: fixed; inset: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: center; padding: 22px;
+    background: rgba(10,60,60,.42); backdrop-filter: blur(7px);
+    opacity: 0; visibility: hidden; transition: opacity .3s;
   }
-  .success-icon {
-    width: 72px; height: 72px;
-    background: var(--teal-light);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 16px;
+  .overlay.open { opacity: 1; visibility: visible; }
+  .modal {
+    background: #fff; border-radius: 26px; padding: 38px 30px 30px;
+    width: 100%; max-width: 380px; text-align: center; position: relative; overflow: hidden;
+    box-shadow: 0 40px 90px -24px rgba(10,82,82,.55);
+    transform: translateY(24px) scale(.94); opacity: 0;
+    transition: transform .45s cubic-bezier(.18,.9,.25,1.25), opacity .35s;
   }
-  .success-screen h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-  .success-screen p  { font-size: 14px; color: var(--muted); line-height: 1.6; }
-  .submit-another {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 24px;
-    background: var(--teal-light);
-    color: var(--teal-dark);
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
+  .overlay.open .modal { transform: translateY(0) scale(1); opacity: 1; }
+  .modal::before { content:""; position:absolute; inset:0 0 auto 0; height:6px; background: linear-gradient(90deg, var(--teal), var(--aqua), var(--teal-deep)); }
 
-  /* Loading skeleton */
-  .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; border-radius: 8px; height: 44px; }
-  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .check-wrap { width: 92px; height: 92px; margin: 4px auto 20px; position: relative; }
+  .check-wrap .ring { position:absolute; inset:0; border-radius:50%; background: var(--teal-tint); animation: pop .5s cubic-bezier(.18,.9,.25,1.4) both; }
+  .check-wrap svg { position: relative; width: 92px; height: 92px; }
+  .check-wrap circle { stroke: var(--teal); stroke-width: 4; fill: none; stroke-dasharray: 251; stroke-dashoffset: 251; animation: draw .6s ease forwards .15s; }
+  .check-wrap path { stroke: var(--teal); stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .4s ease forwards .55s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pop { 0%{ transform: scale(0); } 70%{ transform: scale(1.08); } 100%{ transform: scale(1); } }
 
-  /* Note box */
-  .note-box {
-    background: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 12px;
-    color: #92400e;
-    line-height: 1.5;
-    margin-bottom: 20px;
+  .modal h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; font-weight: 800; margin-bottom: 9px; color: var(--ink); }
+  .modal p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .modal .again {
+    padding: 12px 26px; background: var(--teal-tint); color: var(--teal-dark);
+    border: none; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px; font-weight: 700; cursor: pointer; transition: background .15s;
   }
-  .note-box strong { display: block; margin-bottom: 2px; }
+  .modal .again:hover { background: var(--teal-soft); }
+
+  /* confetti */
+  .confetti { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+  .confetti i { position: absolute; top: -12px; width: 8px; height: 8px; opacity: 0; border-radius: 2px; }
+  .overlay.open .confetti i { animation: fall 1.1s ease-out forwards; }
+  @keyframes fall { 0%{ transform: translateY(-10px) rotate(0); opacity: 1; } 100%{ transform: translateY(420px) rotate(420deg); opacity: 0; } }
+
+  /* skeleton */
+  .skeleton { background: linear-gradient(90deg, #eef5f5 25%, #dfeeee 50%, #eef5f5 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; border-radius: 13px; height: 48px; }
+  @keyframes shimmer { 0%{ background-position: 200% 0; } 100%{ background-position: -200% 0; } }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .g1{ animation-delay:.14s } .g2{ animation-delay:.20s } .g3{ animation-delay:.26s }
+  .g4{ animation-delay:.32s } .g5{ animation-delay:.38s } .g6{ animation-delay:.44s } .g7{ animation-delay:.50s }
+
+  @media (max-width: 420px) {
+    .card { padding: 24px 18px; }
+    .plat { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-badge">🌟 Lingtership Program</div>
-  <h1>Submit Prospect KOL</h1>
-  <p>Temukan KOL potensial untuk kolaborasi Linguo.id</p>
-</div>
+<div class="orb a"></div>
+<div class="orb b"></div>
+<div class="orb c"></div>
 
-<div class="card" id="formCard">
-  <div class="note-box">
-    <strong>📋 Sebelum submit, pastikan kamu sudah:</strong>
-    Cek profil IG/TikTok/YouTube-nya, lihat engagement rate, dan pastikan relevan dengan topik bahasa/edukasi.
+<div class="shell">
+  <div class="hero">
+    <span class="badge"><span class="dot"></span> Lingtership Program</span>
+    <h1>Submit Prospect KOL</h1>
+    <p>Temukan KOL potensial untuk kolaborasi Linguo.id 🚀</p>
   </div>
 
-  <div id="alertBox" class="alert"></div>
+  <section class="card" id="formCard">
+    <div class="tip">
+      <span class="ico">📋</span>
+      <span><strong>Sebelum submit, pastikan:</strong>Kamu udah cek profil IG/TikTok/YouTube-nya, lihat engagement rate, dan yakin relevan sama topik bahasa/edukasi.</span>
+    </div>
 
-  <!-- IDENTITAS INTERN -->
-  <div class="section-label">👤 Identitas Kamu</div>
+    <!-- IDENTITAS -->
+    <div class="sec"><span class="num">1</span><h3>Identitas Kamu</h3></div>
+    <div class="group g1">
+      <label>Nama Kamu <span class="req">*</span></label>
+      <div id="internSkeleton" class="skeleton"></div>
+      <select id="internId" style="display:none">
+        <option value="">— Pilih nama kamu —</option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label>Nama Kamu <span class="req">*</span></label>
-    <div id="internSkeleton" class="skeleton"></div>
-    <select id="internId" style="display:none" required>
-      <option value="">— Pilih nama kamu —</option>
-    </select>
-  </div>
+    <div class="divider"></div>
 
-  <div class="divider"></div>
+    <!-- DATA KOL -->
+    <div class="sec"><span class="num">2</span><h3>Data KOL yang Diprospek</h3></div>
 
-  <!-- DATA KOL -->
-  <div class="section-label">🎯 Data KOL yang Diprospek</div>
+    <div class="group g2">
+      <label>Handle / Username <span class="req">*</span> <span class="hint">contoh: @bahasakini</span></label>
+      <input type="text" id="kolHandle" placeholder="@username" autocomplete="off" autocapitalize="none">
+    </div>
 
-  <div class="form-group">
-    <label>Handle / Username <span class="req">*</span> <span class="hint">contoh: @bahasakini</span></label>
-    <input type="text" id="kolHandle" placeholder="@username" autocomplete="off" autocapitalize="none">
-  </div>
-
-  <div class="form-group">
-    <label>Platform <span class="req">*</span></label>
-    <div class="platform-grid">
-      <div>
-        <input type="radio" name="platform" id="p_ig" value="instagram" class="platform-option" checked>
-        <label for="p_ig" class="platform-label"><span class="icon">📸</span> Instagram</label>
-      </div>
-      <div>
-        <input type="radio" name="platform" id="p_tt" value="tiktok" class="platform-option">
-        <label for="p_tt" class="platform-label"><span class="icon">🎵</span> TikTok</label>
-      </div>
-      <div>
-        <input type="radio" name="platform" id="p_yt" value="youtube" class="platform-option">
-        <label for="p_yt" class="platform-label"><span class="icon">▶️</span> YouTube</label>
-      </div>
-      <div>
-        <input type="radio" name="platform" id="p_ot" value="other" class="platform-option">
-        <label for="p_ot" class="platform-label"><span class="icon">🌐</span> Lainnya</label>
+    <div class="group g3">
+      <label>Platform <span class="req">*</span></label>
+      <div class="plat">
+        <span>
+          <input type="radio" name="platform" id="p_ig" value="instagram" checked>
+          <label for="p_ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram</label>
+        </span>
+        <span>
+          <input type="radio" name="platform" id="p_tt" value="tiktok">
+          <label for="p_tt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4c.7 2 2.2 3.4 4.5 3.6"/></svg> TikTok</label>
+        </span>
+        <span>
+          <input type="radio" name="platform" id="p_yt" value="youtube">
+          <label for="p_yt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg> YouTube</label>
+        </span>
+        <span>
+          <input type="radio" name="platform" id="p_ot" value="other">
+          <label for="p_ot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg> Lainnya</label>
+        </span>
       </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label>Nama Lengkap / Brand <span class="hint">opsional</span></label>
-    <input type="text" id="kolName" placeholder="contoh: Bahasa Kini">
-  </div>
+    <div class="group g4">
+      <label>Nama Lengkap / Brand <span class="hint">opsional</span></label>
+      <input type="text" id="kolName" placeholder="contoh: Bahasa Kini">
+    </div>
 
-  <div class="form-group">
-    <label>Jumlah Followers <span class="req">*</span></label>
-    <input type="number" id="followers" placeholder="contoh: 25000" min="0">
-  </div>
+    <div class="group g5">
+      <label>Jumlah Followers <span class="req">*</span></label>
+      <input type="number" id="followers" placeholder="contoh: 25000" min="0" inputmode="numeric">
+      <div class="echo" id="followersEcho"></div>
+    </div>
 
-  <div class="form-group">
-    <label>Niche / Kategori <span class="hint">opsional</span></label>
-    <input type="text" id="niche" placeholder="contoh: bahasa, edukasi, self-improvement">
-  </div>
+    <div class="group g6">
+      <label>Niche / Kategori <span class="hint">opsional</span></label>
+      <input type="text" id="niche" placeholder="contoh: bahasa, edukasi, self-improvement">
+    </div>
 
-  <div class="form-group">
-    <label>Link Profil <span class="hint">opsional tapi disarankan</span></label>
-    <input type="url" id="profileUrl" placeholder="https://instagram.com/username">
-  </div>
+    <div class="group g7">
+      <label>Link Profil <span class="hint">opsional tapi disarankan</span></label>
+      <input type="url" id="profileUrl" placeholder="https://instagram.com/username">
+    </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <!-- ALASAN -->
-  <div class="section-label">💡 Alasan & Analisis</div>
+    <!-- ALASAN -->
+    <div class="sec"><span class="num">3</span><h3>Alasan &amp; Analisis</h3></div>
+    <div class="group">
+      <label>Kenapa KOL ini cocok untuk Linguo? <span class="req">*</span></label>
+      <textarea id="reason" placeholder="Jelaskan: audiensnya siapa, kontennya seperti apa, kenapa relevan untuk promosi kelas bahasa Linguo..."></textarea>
+    </div>
 
-  <div class="form-group">
-    <label>Kenapa KOL ini cocok untuk Linguo? <span class="req">*</span></label>
-    <textarea id="reason" placeholder="Jelaskan: audiensnya siapa, kontennya seperti apa, kenapa relevan untuk promosi kelas bahasa Linguo..."></textarea>
-  </div>
-
-  <button class="submit-btn" id="submitBtn" onclick="submitForm()">
-    🚀 Submit Prospect
-  </button>
+    <button class="submit" id="submitBtn" onclick="submitForm()">
+      <span class="shine"></span>🚀 Submit Prospect
+    </button>
+  </section>
 </div>
 
-<!-- Success Screen -->
-<div class="card success-screen" id="successScreen">
-  <div class="success-icon">🎉</div>
-  <h2>Berhasil Disubmit!</h2>
-  <p>Prospect KOL kamu sudah masuk dan akan direview oleh Intan.<br>Kalau diapprove, kamu bisa langsung DM pakai template yang udah disiapkan.</p>
-  <button class="submit-another" onclick="resetForm()">+ Submit Prospect Lagi</button>
+<!-- Error toast -->
+<div id="toast" class="toast"><span class="ico">⚠️</span><span id="toastMsg"></span></div>
+
+<!-- Success modal -->
+<div class="overlay" id="successModal">
+  <div class="modal">
+    <div class="confetti" id="confetti"></div>
+    <div class="check-wrap">
+      <div class="ring"></div>
+      <svg viewBox="0 0 92 92"><circle cx="46" cy="46" r="40"/><path d="M30 47l11 11 21-23"/></svg>
+    </div>
+    <h2>Berhasil Disubmit! 🎉</h2>
+    <p>Prospect KOL kamu udah masuk dan bakal direview Intan. Kalau diapprove, kamu bisa langsung DM pakai template yang udah disiapkan.</p>
+    <button class="again" onclick="resetForm()">+ Submit Prospect Lagi</button>
+  </div>
 </div>
 
 <script>
@@ -384,11 +401,16 @@ async function loadInterns() {
   });
 }
 
+// Live followers formatter (id-ID thousands separator)
+const fEl = document.getElementById("followers");
+fEl.addEventListener("input", () => {
+  const n = parseInt(fEl.value);
+  const echo = document.getElementById("followersEcho");
+  echo.textContent = (n && n > 0) ? "≈ " + n.toLocaleString("id-ID") + " followers" : "";
+});
+
 async function submitForm() {
-  const alert  = document.getElementById("alertBox");
-  const btn    = document.getElementById("submitBtn");
-  alert.className = "alert";
-  alert.textContent = "";
+  const btn = document.getElementById("submitBtn");
 
   const internId   = document.getElementById("internId").value.trim();
   const kolHandle  = document.getElementById("kolHandle").value.trim();
@@ -407,7 +429,7 @@ async function submitForm() {
   if (!reason || reason.length < 20)  return showAlert("Tuliskan alasan minimal 20 karakter ya.");
 
   btn.disabled = true;
-  btn.textContent = "Mengirim...";
+  btn.innerHTML = "Mengirim...";
 
   const { error } = await sb.from("kol_prospects").insert({
     intern_id:        internId,
@@ -422,34 +444,57 @@ async function submitForm() {
   });
 
   btn.disabled = false;
-  btn.textContent = "🚀 Submit Prospect";
+  btn.innerHTML = '<span class="shine"></span>🚀 Submit Prospect';
 
   if (error) {
     if (error.code === "23505") return showAlert(`KOL "${kolHandle}" sudah pernah disubmit sebelumnya.`);
     return showAlert("Terjadi error: " + error.message);
   }
 
-  document.getElementById("formCard").style.display = "none";
-  document.getElementById("successScreen").style.display = "block";
+  openSuccess();
 }
 
+// ── Toast (error) ──
+let toastTimer;
 function showAlert(msg) {
-  const a = document.getElementById("alertBox");
-  a.textContent = "⚠️ " + msg;
-  a.className = "alert error";
-  a.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  const t = document.getElementById("toast");
+  document.getElementById("toastMsg").textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 4200);
+}
+
+// ── Success modal + confetti ──
+function openSuccess() {
+  spawnConfetti();
+  document.getElementById("successModal").classList.add("open");
+}
+function spawnConfetti() {
+  const wrap = document.getElementById("confetti");
+  wrap.innerHTML = "";
+  const colors = ["#1A9E9E", "#2BC4C4", "#f59e0b", "#0E6E6E", "#ffd166"];
+  for (let i = 0; i < 26; i++) {
+    const c = document.createElement("i");
+    c.style.left = Math.random() * 100 + "%";
+    c.style.background = colors[i % colors.length];
+    c.style.animationDelay = (Math.random() * 0.35) + "s";
+    c.style.transform = "scale(" + (0.6 + Math.random()) + ")";
+    if (i % 3 === 0) c.style.borderRadius = "50%";
+    wrap.appendChild(c);
+  }
 }
 
 function resetForm() {
-  document.getElementById("formCard").style.display = "block";
-  document.getElementById("successScreen").style.display = "none";
+  document.getElementById("successModal").classList.remove("open");
   document.getElementById("kolHandle").value = "";
   document.getElementById("kolName").value = "";
   document.getElementById("followers").value = "";
+  document.getElementById("followersEcho").textContent = "";
   document.getElementById("niche").value = "";
   document.getElementById("profileUrl").value = "";
   document.getElementById("reason").value = "";
   document.querySelector('input[name="platform"][value="instagram"]').checked = true;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 loadInterns();
