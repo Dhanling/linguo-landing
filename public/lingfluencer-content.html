@@ -96,9 +96,6 @@
           <label class="q" for="picSelect">Nama PIC yang menghubungi di awal / mengajak kerjasama<span class="req">*</span></label>
           <select id="picSelect">
             <option value="">— Pilih PIC —</option>
-            <option value="Intan">Intan</option>
-            <option value="Dhani">Dhani</option>
-            <option value="Faujiah">Faujiah</option>
             <option value="__other__">Lainnya…</option>
           </select>
           <input type="text" id="picOther" placeholder="Tulis nama PIC" style="display:none;margin-top:8px;" />
@@ -145,6 +142,25 @@
       $("picOther").style.display = isOther ? "block" : "none";
       if (!isOther) $("picOther").value = "";
     });
+
+    // linguo-patch:lingfluencer-pic-dynamic-v2 — isi dropdown PIC dari intern lingtership (v_lingtership_interns, anon-readable)
+    (async function loadPicOptions() {
+      try {
+        var r = await sb.from("v_lingtership_interns").select("name").order("name", { ascending: true });
+        if (r.error) throw r.error;
+        var sel = $("picSelect");
+        var otherOpt = sel.querySelector('option[value="__other__"]');
+        (r.data || []).forEach(function (row) {
+          if (!row.name) return;
+          var o = document.createElement("option");
+          o.value = row.name;
+          o.textContent = row.name;
+          sel.insertBefore(o, otherOpt);
+        });
+      } catch (e) {
+        console.warn("gagal load daftar PIC:", e && e.message ? e.message : e);
+      }
+    })();
 
     function clearErrors() {
       Array.prototype.forEach.call(document.querySelectorAll(".err"), function (e) { e.classList.remove("show"); });
