@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
       const { data, error } = await admin
         .from("affiliates")
         .select("id")
-        .ilike("email", email)
+        .ilike("email", email.replace(/[%_]/g, "\\$&"))
         .limit(1);
       if (error) {
         console.error("affiliate signup dup-check error:", error);

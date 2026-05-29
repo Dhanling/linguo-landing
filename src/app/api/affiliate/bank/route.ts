@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
       const { data, error } = await admin
         .from("affiliates")
         .select("id")
-        .ilike("email", authEmail)
+        .ilike("email", authEmail.replace(/[%_]/g, "\\$&"))
         .limit(1);
       if (error) {
         console.error("affiliate bank lookup (email) error:", error);

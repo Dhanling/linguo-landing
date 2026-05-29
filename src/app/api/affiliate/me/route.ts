@@ -104,7 +104,7 @@ export async function GET(req: NextRequest) {
       const { data, error } = await admin
         .from("affiliates")
         .select("id, referral_code, tier, status, name, bank_name, bank_account_no, bank_account_name")
-        .ilike("email", authEmail)
+        .ilike("email", authEmail.replace(/[%_]/g, "\\$&"))
         .limit(1);
       if (error) {
         console.error("affiliate lookup (email) error:", error);
