@@ -334,11 +334,27 @@
 
     <div class="group g6">
       <label>Niche / Kategori <span class="hint">opsional</span></label>
-      <input type="text" id="niche" placeholder="contoh: bahasa, edukasi, self-improvement">
+      <select id="niche">
+        <option value="">— Pilih niche —</option>
+        <option value="Bahasa &amp; Linguistik">Bahasa &amp; Linguistik</option>
+        <option value="Edukasi &amp; Belajar">Edukasi &amp; Belajar</option>
+        <option value="Mahasiswa &amp; Kampus">Mahasiswa &amp; Kampus</option>
+        <option value="Self-improvement &amp; Produktivitas">Self-improvement &amp; Produktivitas</option>
+        <option value="Karier &amp; Profesional">Karier &amp; Profesional</option>
+        <option value="Travel &amp; Budaya">Travel &amp; Budaya</option>
+        <option value="Study Abroad &amp; Beasiswa">Study Abroad &amp; Beasiswa</option>
+        <option value="Parenting &amp; Anak">Parenting &amp; Anak</option>
+        <option value="Lifestyle">Lifestyle</option>
+        <option value="Beauty &amp; Fashion">Beauty &amp; Fashion</option>
+        <option value="Food &amp; Kuliner">Food &amp; Kuliner</option>
+        <option value="Tech &amp; Gadget">Tech &amp; Gadget</option>
+        <option value="Hiburan &amp; Komedi">Hiburan &amp; Komedi</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
     </div>
 
     <div class="group g7">
-      <label>Link Profil <span class="hint">opsional tapi disarankan</span></label>
+      <label>Link Profil <span class="req">*</span></label>
       <input type="url" id="profileUrl" placeholder="https://instagram.com/username">
     </div>
 
@@ -426,6 +442,10 @@ async function submitForm() {
   if (!kolHandle)             return showAlert("Handle KOL wajib diisi.");
   if (!kolHandle.startsWith("@")) return showAlert("Handle harus diawali '@', contoh: @bahasakini");
   if (!followers || followers < 1000) return showAlert("Masukkan jumlah followers (minimal 1.000).");
+  if (!profileUrl) return showAlert("Link profil wajib diisi ya.");
+  let profileUrlFixed = profileUrl;
+  if (!/^https?:\/\//i.test(profileUrlFixed)) profileUrlFixed = "https://" + profileUrlFixed;
+  if (!/^https?:\/\/.+\..+/i.test(profileUrlFixed)) return showAlert("Link profil-nya kayaknya belum valid. Contoh: https://instagram.com/username");
   if (!reason || reason.length < 20)  return showAlert("Tuliskan alasan minimal 20 karakter ya.");
 
   btn.disabled = true;
@@ -438,7 +458,7 @@ async function submitForm() {
     kol_name:         kolName || null,
     followers:        followers,
     niche:            niche || null,
-    profile_url:      profileUrl || null,
+    profile_url:      profileUrlFixed,
     reason_to_target: reason,
     status:           "pending_approval",
   });
