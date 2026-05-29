@@ -159,20 +159,43 @@ const ETP_PROGRAMS: EtpProgram[] = [
 // Constants
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Flag per bahasa. Keyed by nama Inggris (canonical di DB regular_batches.language)
+// + alias Indonesia. Lookup via getFlag() yang dinormalisasi (lowercase, buang
+// non-huruf) supaya "English Conversation" / "english-conversation" sama-sama match.
 const LANGUAGE_FLAGS: Record<string, string> = {
-  "English Conversation": "🇬🇧",
-  "Spanyol": "🇪🇸",
-  "Jerman": "🇩🇪",
-  "Bahasa Isyarat": "🤟",
-  "Belanda": "🇳🇱",
-  "Italia": "🇮🇹",
-  "Jepang": "🇯🇵",
-  "Korea": "🇰🇷",
-  "Prancis": "🇫🇷",
-  "Mandarin": "🇨🇳",
-  "Arab": "🇸🇦",
-  "Tagalog": "🇵🇭",
+  // English (DB canonical)
+  "english conversation": "🇬🇧",
+  "spanish": "🇪🇸",
+  "german": "🇩🇪",
+  "sign language": "🤟",
+  "dutch": "🇳🇱",
+  "italian": "🇮🇹",
+  "japanese": "🇯🇵",
+  "korean": "🇰🇷",
+  "french": "🇫🇷",
+  "mandarin": "🇨🇳",
+  "arabic": "🇸🇦",
+  "tagalog": "🇵🇭",
+  // Alias Indonesia (jaga-jaga kalau ada batch pake nama ID)
+  "spanyol": "🇪🇸",
+  "jerman": "🇩🇪",
+  "bahasa isyarat": "🤟",
+  "belanda": "🇳🇱",
+  "italia": "🇮🇹",
+  "jepang": "🇯🇵",
+  "korea": "🇰🇷",
+  "prancis": "🇫🇷",
+  "arab": "🇸🇦",
 };
+
+// Normalisasi: lowercase + buang semua selain a-z (handle spasi/strip/case).
+const _normLang = (s: string): string => (s || "").toLowerCase().replace(/[^a-z]/g, "");
+const _FLAG_BY_NORM: Record<string, string> = Object.fromEntries(
+  Object.entries(LANGUAGE_FLAGS).map(([k, v]) => [_normLang(k), v])
+);
+function getFlag(lang: string): string {
+  return _FLAG_BY_NORM[_normLang(lang)] || "🌐";
+}
 
 const WA_NUMBER = "6282116859493";
 
@@ -390,7 +413,7 @@ export default function JadwalKelasRegulerClient({
             <div className="flex items-center gap-3 sm:text-right">
               <div className="text-sm">
                 <div className="font-semibold">
-                  {LANGUAGE_FLAGS[nearestBatch.language] || "🌐"} {nearestBatch.language} {nearestBatch.level}
+                  {getFlag(nearestBatch.language)} {nearestBatch.language} {nearestBatch.level}
                 </div>
                 <div className="text-teal-100 text-xs">Mulai {formatDate(nearestBatch.start_date)}</div>
               </div>
@@ -491,7 +514,7 @@ export default function JadwalKelasRegulerClient({
                           : "bg-white border border-slate-200 text-slate-700 hover:border-teal-300"
                       }`}
                     >
-                      {LANGUAGE_FLAGS[lang] || "🌐"} {lang}
+                      {getFlag(lang)} {lang}
                     </button>
                   ))}
                 </div>
@@ -544,7 +567,7 @@ export default function JadwalKelasRegulerClient({
                             >
                               <td className="py-4 px-4">
                                 <div className="flex items-center gap-2">
-                                  <span className="text-xl">{LANGUAGE_FLAGS[batch.language] || "🌐"}</span>
+                                  <span className="text-xl">{getFlag(batch.language)}</span>
                                   <span className="font-semibold text-slate-900">{batch.language}</span>
                                 </div>
                               </td>
@@ -607,7 +630,7 @@ export default function JadwalKelasRegulerClient({
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{LANGUAGE_FLAGS[batch.language] || "🌐"}</span>
+                              <span className="text-2xl">{getFlag(batch.language)}</span>
                               <div>
                                 <div className="font-bold text-slate-900">{batch.language}</div>
                                 <div className="text-xs text-slate-500">Level {batch.level}</div>
