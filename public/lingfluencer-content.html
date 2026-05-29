@@ -25,11 +25,12 @@
     label.q { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
     label.q .req { color: var(--rose); margin-left: 2px; }
     .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
-    input[type="text"], input[type="url"] {
+    input[type="text"], input[type="url"], select {
       width: 100%; padding: 11px 13px; font-size: 15px; border: 1px solid var(--line);
       border-radius: 10px; outline: none; transition: border-color .15s, box-shadow .15s; background: #fff; color: var(--ink);
     }
-    input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
+    select { -webkit-appearance: none; appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+    input:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
     .checks { display: flex; flex-direction: column; gap: 8px; }
     .check {
       display: flex; align-items: center; gap: 10px; padding: 11px 13px; border: 1px solid var(--line);
@@ -90,9 +91,17 @@
           <div class="err" id="err-postedOn">Pilih minimal satu.</div>
         </div>
 
+        <!-- linguo-patch:lingfluencer-pic-dropdown-v1 -->
         <div class="field">
-          <label class="q" for="pic">Nama PIC yang menghubungi di awal / mengajak kerjasama<span class="req">*</span></label>
-          <input type="text" id="pic" placeholder="Nama PIC Linguo" />
+          <label class="q" for="picSelect">Nama PIC yang menghubungi di awal / mengajak kerjasama<span class="req">*</span></label>
+          <select id="picSelect">
+            <option value="">— Pilih PIC —</option>
+            <option value="Intan">Intan</option>
+            <option value="Dhani">Dhani</option>
+            <option value="Faujiah">Faujiah</option>
+            <option value="__other__">Lainnya…</option>
+          </select>
+          <input type="text" id="picOther" placeholder="Tulis nama PIC" style="display:none;margin-top:8px;" />
           <div class="err" id="err-pic">Wajib diisi.</div>
         </div>
 
@@ -130,6 +139,13 @@
       });
     });
 
+    // toggle input "Lainnya" buat PIC
+    $("picSelect").addEventListener("change", function () {
+      var isOther = $("picSelect").value === "__other__";
+      $("picOther").style.display = isOther ? "block" : "none";
+      if (!isOther) $("picOther").value = "";
+    });
+
     function clearErrors() {
       Array.prototype.forEach.call(document.querySelectorAll(".err"), function (e) { e.classList.remove("show"); });
       $("err-global").textContent = "";
@@ -151,7 +167,8 @@
       var name = $("name").value.trim();
       var waRaw = $("whatsapp").value.trim();
       var wa = normalizeWa(waRaw);
-      var pic = $("pic").value.trim();
+      var picSel = $("picSelect").value;
+      var pic = picSel === "__other__" ? $("picOther").value.trim() : picSel.trim();
       var link = $("link").value.trim();
       var posted = getChecked();
 
