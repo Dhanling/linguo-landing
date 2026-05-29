@@ -68,6 +68,110 @@ const PROGRAMS = [
   },
 ];
 
+// =============================================================================
+// linguo-patch:trial-lang-picker-v1 — ganti <select> bahasa jadi picker ala
+// FunnelModal (search + chips region + grid bendera). SUMBER bahasa tetap
+// TRIAL_LANGUAGES (string identik) → harga via computePrivateTrialPrice aman.
+// Tiap bahasa di TRIAL_LANGUAGES wajib punya entri di LANG_META; yg tak terpetakan
+// jatuh ke fallback (bendera "un", region "lainnya") supaya tetap muncul & bisa dipilih.
+// =============================================================================
+type LangRegion =
+  | "eropa"
+  | "asia"
+  | "timur-tengah"
+  | "nusantara"
+  | "afrika"
+  | "lainnya";
+
+const LANG_FEATURED = new Set<string>([
+  "English",
+  "Japanese",
+  "Korean",
+  "Mandarin",
+  "Arabic",
+  "French",
+  "German",
+  "Spanish",
+]);
+
+// flag = kode ISO buat flagcdn (w40 png), region = grup chip.
+const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
+  // Kategori C (populer inti)
+  Arabic: { flag: "sa", region: "timur-tengah" },
+  English: { flag: "gb", region: "eropa" },
+  Japanese: { flag: "jp", region: "asia" },
+  German: { flag: "de", region: "eropa" },
+  Korean: { flag: "kr", region: "asia" },
+  Mandarin: { flag: "cn", region: "asia" },
+  French: { flag: "fr", region: "eropa" },
+  // Kategori B
+  Russian: { flag: "ru", region: "eropa" },
+  Dutch: { flag: "nl", region: "eropa" },
+  Italian: { flag: "it", region: "eropa" },
+  Spanish: { flag: "es", region: "eropa" },
+  Thai: { flag: "th", region: "asia" },
+  "Sign Language": { flag: "un", region: "lainnya" },
+  // Kategori A
+  Swahili: { flag: "ke", region: "afrika" },
+  Greek: { flag: "gr", region: "eropa" },
+  Hindi: { flag: "in", region: "asia" },
+  Turkish: { flag: "tr", region: "asia" },
+  Norwegian: { flag: "no", region: "eropa" },
+  Tagalog: { flag: "ph", region: "asia" },
+  Vietnamese: { flag: "vn", region: "asia" },
+  Swedish: { flag: "se", region: "eropa" },
+  Urdu: { flag: "pk", region: "asia" },
+  Kurdish: { flag: "un", region: "timur-tengah" },
+  Hebrew: { flag: "il", region: "timur-tengah" },
+  Polish: { flag: "pl", region: "eropa" },
+  Portuguese: { flag: "pt", region: "eropa" },
+  Finnish: { flag: "fi", region: "eropa" },
+  Czech: { flag: "cz", region: "eropa" },
+  "Traditional Chinese": { flag: "tw", region: "asia" },
+  Hungarian: { flag: "hu", region: "eropa" },
+  Esperanto: { flag: "un", region: "lainnya" },
+  Farsi: { flag: "ir", region: "timur-tengah" },
+  "English British": { flag: "gb", region: "eropa" },
+  Romanian: { flag: "ro", region: "eropa" },
+  Khmer: { flag: "kh", region: "asia" },
+  Danish: { flag: "dk", region: "eropa" },
+  Uzbek: { flag: "uz", region: "asia" },
+  Serbian: { flag: "rs", region: "eropa" },
+  Estonian: { flag: "ee", region: "eropa" },
+  Latin: { flag: "un", region: "lainnya" },
+  "Ancient Egyptian": { flag: "eg", region: "lainnya" },
+  Georgian: { flag: "ge", region: "asia" },
+  Irish: { flag: "ie", region: "eropa" },
+  Persian: { flag: "ir", region: "timur-tengah" },
+  Bengali: { flag: "bd", region: "asia" },
+  // Kategori D (Nusantara)
+  Javanese: { flag: "id", region: "nusantara" },
+  Sundanese: { flag: "id", region: "nusantara" },
+  Madurese: { flag: "id", region: "nusantara" },
+  Batak: { flag: "id", region: "nusantara" },
+  Banjar: { flag: "id", region: "nusantara" },
+  Balinese: { flag: "id", region: "nusantara" },
+  Malay: { flag: "my", region: "nusantara" },
+  Bugis: { flag: "id", region: "nusantara" },
+  // Kategori E
+  BIPA: { flag: "id", region: "nusantara" },
+};
+
+const langFlag = (name: string): string => LANG_META[name]?.flag || "un";
+const langRegion = (name: string): LangRegion =>
+  LANG_META[name]?.region || "lainnya";
+
+const LANG_CHIPS: { key: string; label: string }[] = [
+  { key: "all", label: "Semua" },
+  { key: "populer", label: "Populer" },
+  { key: "eropa", label: "Eropa" },
+  { key: "asia", label: "Asia" },
+  { key: "timur-tengah", label: "Timur Tengah" },
+  { key: "nusantara", label: "Nusantara" },
+  { key: "afrika", label: "Afrika" },
+  { key: "lainnya", label: "Lainnya" },
+];
+
 export default function TrialWizard({ onClose }: { onClose?: () => void }) {
   const [step, setStep] = useState(1);
   const [program, setProgram] = useState<"" | "private" | "kids">("");
@@ -84,6 +188,9 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
   const [times, setTimes] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  // linguo-patch:trial-lang-picker-v1 — state picker bahasa
+  const [langQuery, setLangQuery] = useState("");
+  const [langCat, setLangCat] = useState("all");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -101,6 +208,27 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
     }
     return null;
   }, [program, language, duration, kidsType]);
+
+  // linguo-patch:trial-lang-picker-v1 — daftar bahasa terfilter (search + chip)
+  const filteredLangs = useMemo(() => {
+    const q = langQuery.trim().toLowerCase();
+    return TRIAL_LANGUAGES.filter((l) => {
+      if (q) return l.toLowerCase().includes(q); // pas search, abaikan kategori
+      if (langCat === "all") return true;
+      if (langCat === "populer") return LANG_FEATURED.has(l);
+      return langRegion(l) === langCat;
+    });
+  }, [langQuery, langCat]);
+
+  // Chip cuma tampil kalau region-nya punya isi (Semua & Populer selalu ada)
+  const visibleChips = useMemo(
+    () =>
+      LANG_CHIPS.filter((c) => {
+        if (c.key === "all" || c.key === "populer") return true;
+        return TRIAL_LANGUAGES.some((l) => langRegion(l) === c.key);
+      }),
+    []
+  );
 
   const toggle = (
     arr: string[],
@@ -186,6 +314,9 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
     }
   };
 
+  // linguo-patch:trial-lang-picker-v1 — gate tombol Bayar: wajib nama+WA+email valid
+  const step4Invalid = stepError(4) !== "";
+
   // ── Style helpers ─────────────────────────────────────────────────────
   const inputCls =
     "w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-teal-500 focus:ring-2 focus:ring-teal-100";
@@ -208,6 +339,8 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
       ✓
     </span>
   );
+
+  const reqStar = <span className="text-red-500">*</span>;
 
   // ── Step renderers ────────────────────────────────────────────────────
   const renderStep1 = () => (
@@ -269,22 +402,92 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
         </div>
       )}
 
+      {/* linguo-patch:trial-lang-picker-v1 — picker bahasa ala FunnelModal */}
       <div>
-        <div className="text-sm font-semibold text-gray-800 mb-1.5">
-          Bahasa
+        <div className="text-sm font-semibold text-gray-800 mb-1.5">Bahasa</div>
+
+        {/* Search */}
+        <div className="relative mb-2.5">
+          <svg
+            className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            value={langQuery}
+            onChange={(e) => setLangQuery(e.target.value)}
+            placeholder="Cari bahasa..."
+            className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 text-sm outline-none transition-colors focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+          />
         </div>
-        <select
-          className={inputCls}
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-        >
-          <option value="">— Pilih bahasa —</option>
-          {TRIAL_LANGUAGES.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
-        </select>
+
+        {/* Chips region — disembunyiin pas lagi search */}
+        {!langQuery.trim() && (
+          <div className="flex gap-1.5 overflow-x-auto pb-1 mb-2.5 -mx-1 px-1">
+            {visibleChips.map((c) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => setLangCat(c.key)}
+                className={
+                  "px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors " +
+                  (langCat === c.key
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200")
+                }
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Grid bahasa (bisa scroll biar durasi & harga tetap kejangkau) */}
+        <div className="max-h-[300px] overflow-y-auto pr-0.5">
+          <div className="grid grid-cols-2 gap-2">
+            {filteredLangs.map((l) => {
+              const active = language === l;
+              return (
+                <button
+                  key={l}
+                  type="button"
+                  onClick={() => {
+                    setLanguage(l);
+                    setError("");
+                  }}
+                  className={
+                    "flex items-center gap-2.5 px-3 py-2.5 rounded-xl border text-left text-sm transition-all active:scale-[0.98] " +
+                    (active
+                      ? "border-teal-500 bg-teal-50 text-teal-700 font-semibold"
+                      : "border-gray-100 text-gray-700 hover:border-teal-300 hover:bg-teal-50/40")
+                  }
+                >
+                  <img
+                    src={`https://flagcdn.com/w40/${langFlag(l)}.png`}
+                    alt=""
+                    loading="lazy"
+                    className="h-5 w-5 rounded-full object-cover shrink-0"
+                  />
+                  <span className="truncate">{l}</span>
+                </button>
+              );
+            })}
+            {filteredLangs.length === 0 && (
+              <div className="col-span-2 text-center py-6 text-sm text-gray-400">
+                Bahasa tidak ditemukan
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       {program === "private" && (
@@ -367,40 +570,56 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
         : ` · ${duration} menit`);
     return (
       <div className="space-y-4">
+        {/* linguo-patch:trial-lang-picker-v1 — nama/WA/email wajib (label + bintang) */}
         <div className="space-y-3">
-          <input
-            className={inputCls}
-            placeholder="Nama lengkap"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <div className="flex gap-2">
-            <select
-              className="rounded-xl border border-gray-200 px-2 py-3 text-sm outline-none focus:border-teal-500 bg-white"
-              value={country}
-              onChange={(e) => setCountry(e.target.value as CountryCode)}
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c.code} value={c.code}>
-                  {c.flag} +{c.dialCode}
-                </option>
-              ))}
-            </select>
+          <div>
+            <label className="text-xs font-medium text-gray-600 mb-1 block">
+              Nama lengkap {reqStar}
+            </label>
             <input
               className={inputCls}
-              placeholder="Nomor WhatsApp"
-              inputMode="numeric"
-              value={waNational}
-              onChange={(e) => setWaNational(e.target.value)}
+              placeholder="Nama lengkap"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <input
-            className={inputCls}
-            type="email"
-            placeholder="Email aktif (untuk invoice & konfirmasi)"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <div>
+            <label className="text-xs font-medium text-gray-600 mb-1 block">
+              Nomor WhatsApp {reqStar}
+            </label>
+            <div className="flex gap-2">
+              <select
+                className="rounded-xl border border-gray-200 px-2 py-3 text-sm outline-none focus:border-teal-500 bg-white"
+                value={country}
+                onChange={(e) => setCountry(e.target.value as CountryCode)}
+              >
+                {COUNTRIES.map((c) => (
+                  <option key={c.code} value={c.code}>
+                    {c.flag} +{c.dialCode}
+                  </option>
+                ))}
+              </select>
+              <input
+                className={inputCls}
+                placeholder="Nomor WhatsApp"
+                inputMode="numeric"
+                value={waNational}
+                onChange={(e) => setWaNational(e.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <label className="text-xs font-medium text-gray-600 mb-1 block">
+              Email {reqStar}
+            </label>
+            <input
+              className={inputCls}
+              type="email"
+              placeholder="Email aktif (untuk invoice & konfirmasi)"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
         </div>
 
         {/* Ringkasan */}
@@ -486,6 +705,13 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
             {error}
           </div>
         )}
+        {/* linguo-patch:trial-lang-picker-v1 — hint kenapa tombol Bayar nonaktif */}
+        {step === TOTAL && !submitting && !error && step4Invalid && (
+          <p className="mb-2.5 text-[11px] text-gray-400">
+            Lengkapi nama, nomor WhatsApp & email yang valid dulu untuk lanjut
+            bayar.
+          </p>
+        )}
         <div className="flex items-center gap-3">
           {step > 1 && (
             <button
@@ -525,8 +751,8 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
             <button
               type="button"
               onClick={submit}
-              disabled={submitting}
-              className="rounded-xl px-6 py-3 text-sm font-bold text-white transition-opacity active:scale-95 disabled:opacity-60"
+              disabled={submitting || step4Invalid}
+              className="rounded-xl px-6 py-3 text-sm font-bold text-white transition-opacity active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
               style={{ background: TEAL }}
             >
               {submitting
