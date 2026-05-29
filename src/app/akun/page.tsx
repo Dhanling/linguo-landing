@@ -4,7 +4,7 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -1371,6 +1371,7 @@ export default function AkunPage() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [showEmailLogin, setShowEmailLogin] = useState(true);
+  const [otpSent, setOtpSent] = useState(false); // linguo-patch:akun-otp-login-v1
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [wizardCompleted, setWizardCompleted] = useState(false);
   const [wizardData, setWizardData] = useState<{program:string;lang:string;testType:string;exp:string}|null>(null);
@@ -1428,6 +1429,25 @@ export default function AkunPage() {
       alert(error.message === "Invalid login credentials" ? "Email atau password salah." : error.message);
     }
     setIsSigningIn(false);
+  };
+
+  // linguo-patch:akun-otp-login-v1 — passwordless magic-link login (any email, incl. affiliates w/ no password)
+  const signInWithMagicLink = async () => {
+    if (!loginEmail) return;
+    setIsSigningIn(true);
+    const { error } = await supabase.auth.signInWithOtp({
+      email: loginEmail,
+      options: {
+        emailRedirectTo: window.location.origin + "/akun",
+        shouldCreateUser: true,
+      },
+    });
+    setIsSigningIn(false);
+    if (error) {
+      alert(error.message);
+      return;
+    }
+    setOtpSent(true);
   };
 
   // ── Data Loading (fixed column names) ────────────────────────────
@@ -1797,6 +1817,19 @@ export default function AkunPage() {
               <button onClick={() => setShowEmailLogin(true)} className="flex h-10 w-full items-center justify-center rounded-xl border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors">
                 Masuk dengan Email & Password
               </button>
+            ) : otpSent ? (
+              <div className="space-y-3 text-center"> {/* linguo-patch:akun-otp-login-v1 */}
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-teal-600">
+                  <Mail className="h-6 w-6" />
+                </div>
+                <p className="text-sm font-semibold text-gray-800">Link login terkirim!</p>
+                <p className="text-xs leading-relaxed text-gray-500">
+                  Kami kirim link masuk ke <span className="font-medium text-gray-700">{loginEmail}</span>. Buka email, klik link-nya, kamu langsung masuk. Cek juga folder spam ya.
+                </p>
+                <button onClick={() => setOtpSent(false)} className="text-xs font-medium text-teal-600 hover:underline">
+                  Ganti email / kirim ulang
+                </button>
+              </div>
             ) : (
               <div className="space-y-3">
                 <input
@@ -1823,6 +1856,21 @@ export default function AkunPage() {
                 >
                   {isSigningIn ? <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> : "Masuk"}
                 </button>
+
+                <div className="relative py-1">
+                  <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-gray-100" /></div>
+                  <div className="relative flex justify-center text-[10px] uppercase"><span className="bg-white px-2 text-gray-300">atau</span></div>
+                </div>
+
+                <button
+                  onClick={signInWithMagicLink}
+                  disabled={isSigningIn || !loginEmail}
+                  className="flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-teal-200 bg-teal-50/60 text-sm font-semibold text-teal-700 hover:bg-teal-50 disabled:opacity-50 transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  Kirim link login ke email
+                </button>
+                <p className="text-center text-[11px] leading-relaxed text-gray-400">Nggak punya / lupa password? Pakai link login, tanpa password.</p>
               </div>
             )}
 
