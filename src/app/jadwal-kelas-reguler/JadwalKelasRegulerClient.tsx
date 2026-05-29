@@ -10,6 +10,7 @@ import {
   ChevronRight, ChevronLeft, BookOpen, Award, Home,
 } from "lucide-react";
 import Link from "next/link";
+import RegisterRegulerModal from "@/components/RegisterRegulerModal";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -278,6 +279,7 @@ export default function JadwalKelasRegulerClient({
   const [countdown, setCountdown] = useState("");
   const [etpCountdown, setEtpCountdown] = useState("");
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
+  const [registerBatch, setRegisterBatch] = useState<Batch | null>(null);
 
   const etpPrograms: EtpProgram[] = ETP_PROGRAMS;
 
@@ -417,15 +419,14 @@ export default function JadwalKelasRegulerClient({
                 </div>
                 <div className="text-teal-100 text-xs">Mulai {formatDate(nearestBatch.start_date)}</div>
               </div>
-              <a
-                href={`https://wa.me/${WA_NUMBER}?text=${buildWAMessage(nearestBatch)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setRegisterBatch(nearestBatch)}
                 className="shrink-0 inline-flex items-center gap-1.5 h-9 px-4 rounded-xl bg-white text-teal-700 text-sm font-bold hover:bg-teal-50 transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
                 Daftar
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -600,15 +601,14 @@ export default function JadwalKelasRegulerClient({
                                 </span>
                               </td>
                               <td className="py-4 px-4 text-right">
-                                <a
-                                  href={waLink}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                                <button
+                                  type="button"
+                                  onClick={() => setRegisterBatch(batch)}
                                   className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition-colors"
                                 >
                                   <MessageCircle className="h-3.5 w-3.5" />
                                   Daftar
-                                </a>
+                                </button>
                               </td>
                             </tr>
                           );
@@ -678,15 +678,14 @@ export default function JadwalKelasRegulerClient({
                               </div>
                               <div className="text-[10px] text-slate-500">/siswa/batch</div>
                             </div>
-                            <a
-                              href={waLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                            <button
+                              type="button"
+                              onClick={() => setRegisterBatch(batch)}
                               className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors"
                             >
                               <MessageCircle className="h-4 w-4" />
-                              Daftar via WA
-                            </a>
+                              Daftar
+                            </button>
                           </div>
                         </div>
                       );
@@ -942,6 +941,11 @@ export default function JadwalKelasRegulerClient({
           </motion.div>
         )}
       </AnimatePresence>
+
+      <RegisterRegulerModal
+        batch={registerBatch}
+        onClose={() => setRegisterBatch(null)}
+      />
     </div>
   );
 }
