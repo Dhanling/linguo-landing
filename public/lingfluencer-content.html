@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Pengumpulan Konten Lingfluencer — Linguo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root { --teal: #0d9488; --teal-dark: #0f766e; --ink: #0f172a; --muted: #64748b; --line: #e2e8f0; --bg: #f1f5f9; --rose: #e11d48; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; padding: 24px 16px;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 1px 3px rgba(15,23,42,.06); overflow: hidden; }
+    .head { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff; padding: 28px 24px; }
+    .head .brand { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; font-weight: 600; }
+    .head h1 { margin: 6px 0 0; font-size: 22px; line-height: 1.25; }
+    .head p { margin: 12px 0 0; font-size: 14px; line-height: 1.5; opacity: .95; }
+    .body { padding: 24px; }
+    .field { margin-bottom: 20px; }
+    label.q { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+    label.q .req { color: var(--rose); margin-left: 2px; }
+    .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+    input[type="text"], input[type="url"] {
+      width: 100%; padding: 11px 13px; font-size: 15px; border: 1px solid var(--line);
+      border-radius: 10px; outline: none; transition: border-color .15s, box-shadow .15s; background: #fff; color: var(--ink);
+    }
+    input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
+    .checks { display: flex; flex-direction: column; gap: 8px; }
+    .check {
+      display: flex; align-items: center; gap: 10px; padding: 11px 13px; border: 1px solid var(--line);
+      border-radius: 10px; cursor: pointer; transition: border-color .15s, background .15s; font-size: 15px;
+    }
+    .check:hover { border-color: #cbd5e1; }
+    .check input { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
+    .check.on { border-color: var(--teal); background: rgba(13,148,136,.06); }
+    button.submit {
+      width: 100%; padding: 13px; font-size: 16px; font-weight: 600; color: #fff; background: var(--teal);
+      border: none; border-radius: 10px; cursor: pointer; transition: background .15s, transform .05s;
+    }
+    button.submit:hover { background: var(--teal-dark); }
+    button.submit:active { transform: scale(.99); }
+    button.submit:disabled { background: #94a3b8; cursor: not-allowed; }
+    .err { color: var(--rose); font-size: 13px; margin-top: 6px; display: none; }
+    .err.show { display: block; }
+    .success { text-align: center; padding: 40px 24px; }
+    .success .tick { width: 64px; height: 64px; border-radius: 50%; background: rgba(13,148,136,.12); color: var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 34px; }
+    .success h2 { margin: 0 0 8px; font-size: 20px; }
+    .success p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+    .foot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="head">
+        <div class="brand">Linguo &times; Lingfluencer</div>
+        <h1>Pengumpulan Konten Lingfluencer E-Learning</h1>
+        <p>Terima kasih banyak telah berkolaborasi dan memposting konten kerja sama dengan kami! Agar kami bisa mencatat &amp; memantau seluruh konten yang telah dipublikasikan, mohon kirim link konten yang sudah di-posting lewat form ini. 💚</p>
+      </div>
+
+      <div class="body" id="formBody">
+        <div class="field">
+          <label class="q" for="name">Nama Lengkap<span class="req">*</span></label>
+          <input type="text" id="name" autocomplete="name" placeholder="Nama lengkap kamu" />
+          <div class="err" id="err-name">Wajib diisi.</div>
+        </div>
+
+        <div class="field">
+          <label class="q" for="whatsapp">No WhatsApp<span class="req">*</span></label>
+          <p class="hint">Wajib format <b>628</b>, contoh: <b>6283157164771</b></p>
+          <input type="text" id="whatsapp" inputmode="numeric" placeholder="628xxxxxxxxxx" />
+          <div class="err" id="err-whatsapp">Pakai format 628 (contoh 6283157164771).</div>
+        </div>
+
+        <div class="field">
+          <label class="q">Konten review dipost di mana?<span class="req">*</span></label>
+          <p class="hint">Bisa pilih lebih dari satu.</p>
+          <div class="checks" id="postedOn">
+            <label class="check"><input type="checkbox" value="IG Reels" /> IG Reels</label>
+            <label class="check"><input type="checkbox" value="IG Story (minimal 5 story)" /> IG Story (minimal 5 story)</label>
+            <label class="check"><input type="checkbox" value="IG Feeds" /> IG Feeds</label>
+            <label class="check"><input type="checkbox" value="Twitter (Berupa Thread)" /> Twitter (Berupa Thread)</label>
+            <label class="check"><input type="checkbox" value="TikTok" /> TikTok</label>
+          </div>
+          <div class="err" id="err-postedOn">Pilih minimal satu.</div>
+        </div>
+
+        <div class="field">
+          <label class="q" for="pic">Nama PIC yang menghubungi di awal / mengajak kerjasama<span class="req">*</span></label>
+          <input type="text" id="pic" placeholder="Nama PIC Linguo" />
+          <div class="err" id="err-pic">Wajib diisi.</div>
+        </div>
+
+        <div class="field">
+          <label class="q" for="link">Link konten<span class="req">*</span></label>
+          <p class="hint">Tempel URL konten yang sudah kamu post.</p>
+          <input type="url" id="link" placeholder="https://..." />
+          <div class="err" id="err-link">Masukkan link yang valid (diawali http).</div>
+        </div>
+
+        <button class="submit" id="submitBtn" type="button">Kirim</button>
+        <div class="err" id="err-global" style="margin-top:12px;text-align:center;"></div>
+      </div>
+
+      <div class="body success" id="successBox" style="display:none;">
+        <div class="tick">✓</div>
+        <h2>Terima kasih! 🎉</h2>
+        <p>Konten kamu sudah kami terima dan tercatat. Kami menantikan kolaborasi yang lebih sukses di masa depan!</p>
+      </div>
+    </div>
+    <div class="foot">Linguo — linguo.id</div>
+  </div>
+
+  <script>
+    var SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
+    var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    var $ = function (id) { return document.getElementById(id); };
+
+    // toggle .on styling on checkbox parents
+    Array.prototype.forEach.call(document.querySelectorAll("#postedOn input"), function (cb) {
+      cb.addEventListener("change", function () {
+        cb.closest(".check").classList.toggle("on", cb.checked);
+      });
+    });
+
+    function clearErrors() {
+      Array.prototype.forEach.call(document.querySelectorAll(".err"), function (e) { e.classList.remove("show"); });
+      $("err-global").textContent = "";
+    }
+
+    function normalizeWa(raw) {
+      var d = (raw || "").replace(/\D/g, "");
+      if (d.charAt(0) === "0") d = "62" + d.slice(1);
+      return d;
+    }
+
+    function getChecked() {
+      return Array.prototype.slice.call(document.querySelectorAll("#postedOn input:checked")).map(function (c) { return c.value; });
+    }
+
+    function validate() {
+      clearErrors();
+      var ok = true;
+      var name = $("name").value.trim();
+      var waRaw = $("whatsapp").value.trim();
+      var wa = normalizeWa(waRaw);
+      var pic = $("pic").value.trim();
+      var link = $("link").value.trim();
+      var posted = getChecked();
+
+      if (!name) { $("err-name").classList.add("show"); ok = false; }
+      if (!(wa.indexOf("62") === 0 && wa.length >= 10 && wa.length <= 15)) { $("err-whatsapp").classList.add("show"); ok = false; }
+      if (posted.length === 0) { $("err-postedOn").classList.add("show"); ok = false; }
+      if (!pic) { $("err-pic").classList.add("show"); ok = false; }
+      if (!/^https?:\/\/.+/i.test(link)) { $("err-link").classList.add("show"); ok = false; }
+
+      return ok ? { name: name, whatsapp: wa, posted_on: posted, pic_name: pic, content_url: link } : null;
+    }
+
+    $("submitBtn").addEventListener("click", async function () {
+      var payload = validate();
+      if (!payload) return;
+
+      var btn = $("submitBtn");
+      btn.disabled = true;
+      btn.textContent = "Mengirim...";
+
+      try {
+        var res = await sb.from("lingfluencer_content").insert([payload]);
+        if (res.error) throw res.error;
+        $("formBody").style.display = "none";
+        $("successBox").style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = "Kirim";
+        $("err-global").textContent = "Gagal mengirim: " + (e && e.message ? e.message : "coba lagi atau hubungi admin.");
+      }
+    });
+  </script>
+</body>
+</html>
