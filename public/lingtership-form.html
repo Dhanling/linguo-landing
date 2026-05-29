@@ -51,13 +51,6 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* floating decorative orbs */
-  .orb { position: fixed; border-radius: 50%; filter: blur(2px); pointer-events: none; z-index: 0; }
-  .orb.a { width: 14px; height: 14px; background: var(--aqua); top: 14%; left: 12%; opacity:.5; animation: float 7s ease-in-out infinite; }
-  .orb.b { width: 9px;  height: 9px;  background: var(--teal); top: 26%; right: 14%; opacity:.6; animation: float 9s ease-in-out infinite .8s; }
-  .orb.c { width: 18px; height: 18px; border: 2px solid var(--teal); background: transparent; bottom: 18%; left: 9%; opacity:.4; animation: float 8s ease-in-out infinite .4s; }
-  @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-16px) } }
-
   .shell { max-width: 540px; margin: 0 auto; position: relative; z-index: 1; }
 
   /* Hero */
@@ -160,7 +153,8 @@
     background: #f7fbfb; transition: all .15s; user-select: none;
   }
   .plat label svg { width: 19px; height: 19px; flex-shrink: 0; opacity: .7; transition: opacity .15s; }
-  .plat label:hover { border-color: var(--teal-soft); }
+  .plat label { transition: transform .2s cubic-bezier(.2,.8,.2,1), border-color .15s, background .15s, box-shadow .2s; }
+  .plat label:hover { border-color: var(--teal); transform: scale(1.04); box-shadow: 0 12px 26px -14px rgba(26,158,158,.55); }
   .plat input:checked + label {
     border-color: var(--teal);
     background: linear-gradient(180deg, var(--teal-tint), #fff);
@@ -261,10 +255,6 @@
 </style>
 </head>
 <body>
-
-<div class="orb a"></div>
-<div class="orb b"></div>
-<div class="orb c"></div>
 
 <div class="shell">
   <div class="hero">
