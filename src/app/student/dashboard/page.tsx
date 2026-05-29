@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
+import { Spinner } from "@/components/Spinner";
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -64,7 +65,7 @@ export default function StudentDashboardPage() {
 
         {status === "loading" && (
           <div>
-            <div className="h-14 w-14 border-4 border-[#1A9E9E] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
+            <Spinner size={64} className="mx-auto mb-6" />
             <h2 className="text-xl font-bold text-slate-900 mb-2">Memproses login...</h2>
             <p className="text-sm text-slate-500">Mohon tunggu sebentar</p>
           </div>

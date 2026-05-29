@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
+import { Spinner } from "@/components/Spinner";
 
 function getCookie(name: string): string {
   if (typeof document === "undefined") return "";
@@ -110,7 +111,7 @@ export default function AuthCallbackPage() {
 
         {status === "loading" && (
           <div>
-            <div className="h-16 w-16 border-4 border-[#1A9E9E] border-t-transparent rounded-full animate-spin mx-auto mb-6"/>
+            <Spinner size={72} className="mx-auto mb-6" />
             <h2 className="text-xl font-bold mb-2">Memproses login...</h2>
             <p className="text-sm text-slate-500">Mohon tunggu sebentar</p>
           </div>

@@ -18,6 +18,7 @@ import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import PerpustakaanSaya from '@/components/PerpustakaanSaya';
+import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -1770,7 +1771,7 @@ export default function AkunPage() {
           <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
             <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
           </div>
-          <div className="h-4 w-4 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
+          <Spinner size={48} />
         </div>
       </div>
     );
@@ -1891,7 +1892,7 @@ export default function AkunPage() {
           <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
             <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
           </div>
-          <div className="h-4 w-4 border-2 border-teal-600 border-t-transparent rounded-full animate-spin" />
+          <Spinner size={48} />
           <p className="text-sm text-gray-500">Memuat data belajarmu...</p>
         </div>
       </div>
