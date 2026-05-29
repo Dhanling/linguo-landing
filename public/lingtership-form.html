@@ -367,7 +367,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
 // Load active interns
 async function loadInterns() {
-  const { data, error } = await sb.from("interns").select("id, name").eq("status", "active").order("name");
+  const { data, error } = await sb.from("v_lingtership_interns").select("id, name").order("name"); // __PATCH_LINGTERSHIP_INTERNS_VIEW_v1__ — view aman (id+name intern aktif), RLS interns tetap terkunci
   const sel = document.getElementById("internId");
   const skel = document.getElementById("internSkeleton");
   skel.style.display = "none";
