@@ -6,117 +6,223 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Pengumpulan Konten Lingfluencer — Linguo</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root { --teal: #0d9488; --teal-dark: #0f766e; --ink: #0f172a; --muted: #64748b; --line: #e2e8f0; --bg: #f1f5f9; --rose: #e11d48; }
-    * { box-sizing: border-box; }
+    :root {
+      --teal: #0d9488; --teal-dark: #0f766e; --teal-bright: #14b8a6; --teal-glow: #2dd4bf;
+      --mint: #ccfbf1; --mint-soft: #e9fbf6;
+      --ink: #0c2926; --muted: #5a7c78; --line: #d8ebe7;
+      --rose: #e11d48; --rose-bg: #fff1f3;
+      --shadow: 0 24px 60px -20px rgba(13,80,72,.32);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; padding: 24px 16px;
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 20% 18%, #e6fbf4 0%, #f3fbf9 38%, #eef6f5 100%);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      padding: 28px 16px;
+      overflow-x: hidden;
     }
-    .wrap { max-width: 560px; margin: 0 auto; }
-    .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 1px 3px rgba(15,23,42,.06); overflow: hidden; }
-    .head { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff; padding: 28px 24px; }
-    .head .brand { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; font-weight: 600; }
-    .head h1 { margin: 6px 0 0; font-size: 22px; line-height: 1.25; }
-    .head p { margin: 12px 0 0; font-size: 14px; line-height: 1.5; opacity: .95; }
-    .body { padding: 24px; }
-    .field { margin-bottom: 20px; }
-    label.q { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
-    label.q .req { color: var(--rose); margin-left: 2px; }
-    .hint { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+
+    .blob { position: fixed; border-radius: 50%; filter: blur(60px); opacity: .55; z-index: 0; pointer-events: none; }
+    .blob-1 { width: 380px; height: 380px; top: -120px; left: -90px; background: radial-gradient(circle, var(--teal-glow), transparent 70%); animation: drift1 18s ease-in-out infinite; }
+    .blob-2 { width: 320px; height: 320px; bottom: -110px; right: -80px; background: radial-gradient(circle, #5eead4, transparent 70%); animation: drift2 22s ease-in-out infinite; }
+    .blob-3 { width: 220px; height: 220px; top: 40%; right: 8%; background: radial-gradient(circle, #99f6e4, transparent 70%); opacity: .4; animation: drift1 26s ease-in-out infinite reverse; }
+    @keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1);} 50% { transform: translate(40px,30px) scale(1.12);} }
+    @keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1);} 50% { transform: translate(-36px,-26px) scale(1.1);} }
+
+    .wrap { position: relative; z-index: 1; width: 100%; max-width: 480px; }
+
+    .card {
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 26px; box-shadow: var(--shadow); overflow: hidden;
+      opacity: 0; transform: translateY(18px) scale(.965);
+      animation: cardPop .7s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes cardPop { to { opacity: 1; transform: none; } }
+
+    .head { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); color: #fff; padding: 26px 26px 22px; position: relative; overflow: hidden; }
+    .head::after { content: ""; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(255,255,255,.18), transparent 70%); border-radius: 50%; }
+    .brand { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 7px; position: relative; z-index: 1;
+      opacity: 0; animation: riseFull .6s .15s ease forwards; }
+    .brand .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-glow); box-shadow: 0 0 10px var(--teal-glow); }
+    .head h1 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 23px; line-height: 1.18; margin-top: 9px; letter-spacing: -.01em; position: relative; z-index: 1;
+      opacity: 0; animation: rise .6s .25s ease forwards; }
+    .head p { font-size: 13.5px; line-height: 1.5; margin-top: 7px; max-width: 90%; position: relative; z-index: 1;
+      opacity: 0; animation: rise .6s .35s ease forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px);} to { opacity: .94; transform: none;} }
+    @keyframes riseFull { from {opacity:0; transform:translateY(8px);} to {opacity:.85; transform:none;} }
+
+    .progress { display: flex; gap: 6px; margin-top: 18px; position: relative; z-index: 1; }
+    .seg { flex: 1; height: 5px; border-radius: 99px; background: rgba(255,255,255,.28); overflow: hidden; }
+    .seg i { display: block; height: 100%; width: 0; background: #fff; border-radius: 99px; transition: width .5s cubic-bezier(.16,1,.3,1); box-shadow: 0 0 8px rgba(255,255,255,.6); }
+    .seg.done i, .seg.active i { width: 100%; }
+
+    .body { padding: 24px 26px 26px; }
+    .stepsWrap { position: relative; transition: height .42s cubic-bezier(.16,1,.3,1); }
+    .step { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transform: translateX(26px); pointer-events: none; transition: opacity .38s ease, transform .42s cubic-bezier(.16,1,.3,1); }
+    .step.active { opacity: 1; transform: none; pointer-events: auto; }
+
+    .field { margin-bottom: 17px; }
+    label.q { display: block; font-weight: 600; font-size: 14px; margin-bottom: 7px; color: var(--ink); }
+    label.q .req { color: var(--teal); margin-left: 3px; }
+    .hint { font-size: 12.5px; color: var(--muted); margin: -3px 0 9px; }
+    .hint b { color: var(--teal-dark); }
+
     input[type="text"], input[type="url"], select {
-      width: 100%; padding: 11px 13px; font-size: 15px; border: 1px solid var(--line);
-      border-radius: 10px; outline: none; transition: border-color .15s, box-shadow .15s; background: #fff; color: var(--ink);
+      width: 100%; padding: 13px 14px; font-size: 15px; font-family: inherit;
+      border: 1.5px solid var(--line); border-radius: 13px; outline: none; background: rgba(255,255,255,.7);
+      color: var(--ink); transition: border-color .18s, box-shadow .18s, background .18s;
     }
-    select { -webkit-appearance: none; appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
-    input:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
-    .checks { display: flex; flex-direction: column; gap: 8px; }
-    .check {
-      display: flex; align-items: center; gap: 10px; padding: 11px 13px; border: 1px solid var(--line);
-      border-radius: 10px; cursor: pointer; transition: border-color .15s, background .15s; font-size: 15px;
-    }
-    .check:hover { border-color: #cbd5e1; }
-    .check input { width: 18px; height: 18px; accent-color: var(--teal); cursor: pointer; }
-    .check.on { border-color: var(--teal); background: rgba(13,148,136,.06); }
-    button.submit {
-      width: 100%; padding: 13px; font-size: 16px; font-weight: 600; color: #fff; background: var(--teal);
-      border: none; border-radius: 10px; cursor: pointer; transition: background .15s, transform .05s;
-    }
-    button.submit:hover { background: var(--teal-dark); }
-    button.submit:active { transform: scale(.99); }
-    button.submit:disabled { background: #94a3b8; cursor: not-allowed; }
-    .err { color: var(--rose); font-size: 13px; margin-top: 6px; display: none; }
-    .err.show { display: block; }
-    .success { text-align: center; padding: 40px 24px; }
-    .success .tick { width: 64px; height: 64px; border-radius: 50%; background: rgba(13,148,136,.12); color: var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 34px; }
-    .success h2 { margin: 0 0 8px; font-size: 20px; }
-    .success p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
-    .foot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; }
+    input::placeholder { color: #9fb8b4; }
+    input:focus, select:focus { border-color: var(--teal); background: #fff; box-shadow: 0 0 0 4px rgba(13,148,136,.13); }
+    select { -webkit-appearance: none; appearance: none; cursor: pointer; padding-right: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%230f766e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 15px center; background-color: rgba(255,255,255,.7); }
+
+    .opts { display: flex; flex-direction: column; gap: 9px; }
+    .opt { position: relative; display: flex; align-items: center; gap: 12px; padding: 13px 14px; border: 1.5px solid var(--line);
+      border-radius: 13px; cursor: pointer; background: rgba(255,255,255,.55); transition: border-color .18s, background .18s, transform .12s; font-size: 14.5px; font-weight: 500; }
+    .opt:hover { border-color: #9bd5cd; }
+    .opt:active { transform: scale(.99); }
+    .opt input { position: absolute; opacity: 0; pointer-events: none; }
+    .opt .box { width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color .18s, background .18s; background: #fff; color: #fff; }
+    .opt .box svg { width: 13px; height: 13px; stroke-width: 3.4; opacity: 0; transform: scale(.4); transition: opacity .18s, transform .25s cubic-bezier(.34,1.56,.64,1); }
+    .opt:has(input:checked) { border-color: var(--teal); background: var(--mint-soft); }
+    .opt:has(input:checked) .box { background: var(--teal); border-color: var(--teal); }
+    .opt:has(input:checked) .box svg { opacity: 1; transform: scale(1); }
+
+    .recap { background: var(--mint-soft); border: 1px solid var(--line); border-radius: 14px; padding: 14px 15px; margin-bottom: 4px; }
+    .recap-row { display: flex; gap: 10px; font-size: 13px; padding: 4px 0; }
+    .recap-row .k { color: var(--muted); min-width: 78px; flex-shrink: 0; font-weight: 500; }
+    .recap-row .v { color: var(--ink); font-weight: 600; word-break: break-word; }
+
+    .err { color: var(--rose); font-size: 12.5px; margin-top: 6px; display: none; }
+    .err.show { display: block; animation: rise .25s ease; }
+    .shake { animation: shake .42s cubic-bezier(.36,.07,.19,.97); }
+    @keyframes shake { 10%,90%{transform:translateX(-1px);} 20%,80%{transform:translateX(2px);} 30%,50%,70%{transform:translateX(-5px);} 40%,60%{transform:translateX(5px);} }
+
+    .nav { display: flex; gap: 10px; margin-top: 22px; align-items: center; }
+    .btn { flex: 1; padding: 14px; font-size: 15.5px; font-weight: 700; font-family: inherit; color: #fff; cursor: pointer;
+      background: linear-gradient(135deg, var(--teal-bright), var(--teal-dark)); border: none; border-radius: 13px;
+      box-shadow: 0 10px 22px -8px rgba(13,148,136,.6); transition: transform .12s, box-shadow .18s, opacity .18s; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -8px rgba(13,148,136,.7); }
+    .btn:active { transform: translateY(0) scale(.99); }
+    .btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .btn-ghost { padding: 14px 18px; font-size: 14.5px; font-weight: 600; font-family: inherit; color: var(--teal-dark); cursor: pointer;
+      background: transparent; border: none; border-radius: 13px; transition: background .15s; display: none; }
+    .btn-ghost:hover { background: rgba(13,148,136,.08); }
+    .btn-ghost.show { display: inline-flex; }
+
+    .err-global { color: var(--rose); font-size: 13px; margin-top: 13px; text-align: center; background: var(--rose-bg); border-radius: 10px; padding: 9px; display: none; }
+    .err-global.show { display: block; }
+
+    .success { display: none; padding: 46px 28px 40px; text-align: center; }
+    .success.show { display: block; }
+    .check-c { width: 88px; height: 88px; margin: 0 auto 20px; }
+    .check-c circle { fill: none; stroke: var(--teal); stroke-width: 3; stroke-dasharray: 295; stroke-dashoffset: 295; animation: draw .7s .1s ease forwards; }
+    .check-c path { fill: none; stroke: var(--teal); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .45s .65s ease forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .success h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: 24px; font-weight: 700; opacity: 0; animation: rise .5s .75s ease forwards; }
+    .success p { color: var(--muted); font-size: 14.5px; line-height: 1.55; margin-top: 9px; max-width: 320px; margin-left: auto; margin-right: auto; opacity: 0; animation: rise .5s .9s ease forwards; }
+
+    .foot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; opacity: 0; animation: rise .6s .5s ease forwards; }
   </style>
 </head>
 <body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
   <div class="wrap">
     <div class="card">
       <div class="head">
-        <div class="brand">Linguo &times; Lingfluencer</div>
-        <h1>Pengumpulan Konten Lingfluencer E-Learning</h1>
-        <p>Terima kasih banyak telah berkolaborasi dan memposting konten kerja sama dengan kami! Agar kami bisa mencatat &amp; memantau seluruh konten yang telah dipublikasikan, mohon kirim link konten yang sudah di-posting lewat form ini. 💚</p>
+        <div class="brand"><span class="dot"></span> Linguo &times; Lingfluencer</div>
+        <h1 id="headTitle">Kenalan dulu yuk 👋</h1>
+        <p id="headSub">Makasih udah kolaborasi sama Linguo! Isi data kamu sebentar ya.</p>
+        <div class="progress">
+          <span class="seg" data-seg="1"><i></i></span>
+          <span class="seg" data-seg="2"><i></i></span>
+          <span class="seg" data-seg="3"><i></i></span>
+        </div>
       </div>
 
       <div class="body" id="formBody">
-        <div class="field">
-          <label class="q" for="name">Nama Lengkap<span class="req">*</span></label>
-          <input type="text" id="name" autocomplete="name" placeholder="Nama lengkap kamu" />
-          <div class="err" id="err-name">Wajib diisi.</div>
+        <div class="stepsWrap" id="stepsWrap">
+
+          <section class="step active" data-step="1">
+            <div class="field">
+              <label class="q" for="name">Nama Lengkap<span class="req">*</span></label>
+              <input type="text" id="name" autocomplete="name" placeholder="Nama lengkap kamu" />
+              <div class="err" id="err-name">Wajib diisi.</div>
+            </div>
+            <div class="field" style="margin-bottom:2px;">
+              <label class="q" for="whatsapp">No WhatsApp<span class="req">*</span></label>
+              <p class="hint">Wajib format <b>628</b>, contoh: <b>6283157164771</b></p>
+              <input type="text" id="whatsapp" inputmode="numeric" placeholder="628xxxxxxxxxx" />
+              <div class="err" id="err-whatsapp">Pakai format 628 (contoh 6283157164771).</div>
+            </div>
+          </section>
+
+          <section class="step" data-step="2">
+            <div class="field">
+              <label class="q">Konten review dipost di mana?<span class="req">*</span></label>
+              <p class="hint">Bisa pilih lebih dari satu.</p>
+              <div class="opts" id="postedOn">
+                <label class="opt"><input type="checkbox" value="IG Reels" /><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg></span><span>IG Reels</span></label>
+                <label class="opt"><input type="checkbox" value="IG Story (minimal 5 story)" /><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg></span><span>IG Story (minimal 5 story)</span></label>
+                <label class="opt"><input type="checkbox" value="IG Feeds" /><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg></span><span>IG Feeds</span></label>
+                <label class="opt"><input type="checkbox" value="Twitter (Berupa Thread)" /><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg></span><span>Twitter (Berupa Thread)</span></label>
+                <label class="opt"><input type="checkbox" value="TikTok" /><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor"/></svg></span><span>TikTok</span></label>
+              </div>
+              <div class="err" id="err-postedOn">Pilih minimal satu.</div>
+            </div>
+            <div class="field" style="margin-bottom:2px;">
+              <label class="q" for="link">Link konten<span class="req">*</span></label>
+              <p class="hint">Tempel URL konten yang sudah kamu post.</p>
+              <input type="url" id="link" placeholder="https://..." />
+              <div class="err" id="err-link">Masukkan link yang valid (diawali http).</div>
+            </div>
+          </section>
+
+          <section class="step" data-step="3">
+            <div class="field">
+              <label class="q" for="picSelect">Nama PIC yang mengajak kerjasama<span class="req">*</span></label>
+              <p class="hint">Pilih dari daftar, atau "Lainnya…" kalau gak ada.</p>
+              <select id="picSelect">
+                <option value="">— Pilih PIC —</option>
+                <option value="__other__">Lainnya…</option>
+              </select>
+              <input type="text" id="picOther" placeholder="Tulis nama PIC" style="display:none;margin-top:9px;" />
+              <div class="err" id="err-pic">Wajib diisi.</div>
+            </div>
+            <div class="recap" id="recap"></div>
+          </section>
+
         </div>
 
-        <div class="field">
-          <label class="q" for="whatsapp">No WhatsApp<span class="req">*</span></label>
-          <p class="hint">Wajib format <b>628</b>, contoh: <b>6283157164771</b></p>
-          <input type="text" id="whatsapp" inputmode="numeric" placeholder="628xxxxxxxxxx" />
-          <div class="err" id="err-whatsapp">Pakai format 628 (contoh 6283157164771).</div>
+        <div class="nav">
+          <button class="btn-ghost" id="backBtn" type="button">← Kembali</button>
+          <button class="btn" id="nextBtn" type="button">Lanjut</button>
         </div>
-
-        <div class="field">
-          <label class="q">Konten review dipost di mana?<span class="req">*</span></label>
-          <p class="hint">Bisa pilih lebih dari satu.</p>
-          <div class="checks" id="postedOn">
-            <label class="check"><input type="checkbox" value="IG Reels" /> IG Reels</label>
-            <label class="check"><input type="checkbox" value="IG Story (minimal 5 story)" /> IG Story (minimal 5 story)</label>
-            <label class="check"><input type="checkbox" value="IG Feeds" /> IG Feeds</label>
-            <label class="check"><input type="checkbox" value="Twitter (Berupa Thread)" /> Twitter (Berupa Thread)</label>
-            <label class="check"><input type="checkbox" value="TikTok" /> TikTok</label>
-          </div>
-          <div class="err" id="err-postedOn">Pilih minimal satu.</div>
-        </div>
-
-        <!-- linguo-patch:lingfluencer-pic-dropdown-v1 -->
-        <div class="field">
-          <label class="q" for="picSelect">Nama PIC yang menghubungi di awal / mengajak kerjasama<span class="req">*</span></label>
-          <select id="picSelect">
-            <option value="">— Pilih PIC —</option>
-            <option value="__other__">Lainnya…</option>
-          </select>
-          <input type="text" id="picOther" placeholder="Tulis nama PIC" style="display:none;margin-top:8px;" />
-          <div class="err" id="err-pic">Wajib diisi.</div>
-        </div>
-
-        <div class="field">
-          <label class="q" for="link">Link konten<span class="req">*</span></label>
-          <p class="hint">Tempel URL konten yang sudah kamu post.</p>
-          <input type="url" id="link" placeholder="https://..." />
-          <div class="err" id="err-link">Masukkan link yang valid (diawali http).</div>
-        </div>
-
-        <button class="submit" id="submitBtn" type="button">Kirim</button>
-        <div class="err" id="err-global" style="margin-top:12px;text-align:center;"></div>
+        <div class="err-global" id="err-global"></div>
       </div>
 
-      <div class="body success" id="successBox" style="display:none;">
-        <div class="tick">✓</div>
-        <h2>Terima kasih! 🎉</h2>
-        <p>Konten kamu sudah kami terima dan tercatat. Kami menantikan kolaborasi yang lebih sukses di masa depan!</p>
+      <div class="success" id="successBox">
+        <svg class="check-c" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="47" />
+          <path d="M30 52 L44 66 L72 36" />
+        </svg>
+        <h2>Terkirim! 🎉</h2>
+        <p>Konten kamu sudah kami catat. Makasih banyak — sampai ketemu di kolaborasi berikutnya! 💚</p>
       </div>
     </div>
     <div class="foot">Linguo — linguo.id</div>
@@ -129,21 +235,112 @@
 
     var $ = function (id) { return document.getElementById(id); };
 
-    // toggle .on styling on checkbox parents
-    Array.prototype.forEach.call(document.querySelectorAll("#postedOn input"), function (cb) {
-      cb.addEventListener("change", function () {
-        cb.closest(".check").classList.toggle("on", cb.checked);
-      });
-    });
+    var HEADS = {
+      1: { t: "Kenalan dulu yuk 👋", s: "Makasih udah kolaborasi sama Linguo! Isi data kamu sebentar ya." },
+      2: { t: "Konten kamu 🎬", s: "Di mana kamu posting & link kontennya?" },
+      3: { t: "Langkah terakhir 🎯", s: "Pilih PIC dan cek ringkasan sebelum kirim." }
+    };
+    var TOTAL = 3;
+    var step = 1;
 
-    // toggle input "Lainnya" buat PIC
+    var wrap = $("stepsWrap");
+    function sectionOf(n) { return wrap.querySelector('.step[data-step="' + n + '"]'); }
+    function setHeight() { var a = wrap.querySelector(".step.active"); if (a) wrap.style.height = a.offsetHeight + "px"; }
+
+    function updateProgress() {
+      for (var i = 1; i <= TOTAL; i++) {
+        var seg = document.querySelector('.seg[data-seg="' + i + '"]');
+        if (!seg) continue;
+        seg.classList.toggle("done", i < step);
+        seg.classList.toggle("active", i === step);
+      }
+    }
+    function updateHead() { $("headTitle").textContent = HEADS[step].t; $("headSub").textContent = HEADS[step].s; }
+    function updateNav() {
+      $("backBtn").classList.toggle("show", step > 1);
+      $("nextBtn").textContent = step === TOTAL ? "Kirim 🚀" : "Lanjut";
+    }
+
+    function go(to, dir) {
+      var cur = wrap.querySelector(".step.active");
+      var next = sectionOf(to);
+      if (!next || next === cur) return;
+      cur.style.transform = "translateX(" + (dir > 0 ? -26 : 26) + "px)";
+      cur.style.opacity = "0";
+      cur.classList.remove("active");
+      next.style.transition = "none";
+      next.style.transform = "translateX(" + (dir > 0 ? 26 : -26) + "px)";
+      next.style.opacity = "0";
+      void next.offsetWidth;
+      next.style.transition = "";
+      next.classList.add("active");
+      next.style.transform = "";
+      next.style.opacity = "";
+      step = to;
+      updateProgress(); updateHead(); updateNav(); buildRecap();
+      setTimeout(setHeight, 10);
+    }
+
+    function showErr(errId, fieldEl) {
+      $(errId).classList.add("show");
+      if (fieldEl) { fieldEl.classList.remove("shake"); void fieldEl.offsetWidth; fieldEl.classList.add("shake"); }
+      setTimeout(setHeight, 0);
+    }
+    function clearErr() {
+      Array.prototype.forEach.call(document.querySelectorAll(".err"), function (e) { e.classList.remove("show"); });
+      $("err-global").classList.remove("show");
+    }
+
+    function normalizeWa(raw) {
+      var d = (raw || "").replace(/\D/g, "");
+      if (d.charAt(0) === "0") d = "62" + d.slice(1);
+      return d;
+    }
+    function getChecked() {
+      return Array.prototype.slice.call(document.querySelectorAll("#postedOn input:checked")).map(function (c) { return c.value; });
+    }
+    function getPic() {
+      var v = $("picSelect").value;
+      return v === "__other__" ? $("picOther").value.trim() : v.trim();
+    }
+
+    function validateStep(n) {
+      clearErr();
+      var ok = true;
+      if (n === 1) {
+        if (!$("name").value.trim()) { showErr("err-name", $("name")); ok = false; }
+        var wa = normalizeWa($("whatsapp").value.trim());
+        if (!(wa.indexOf("62") === 0 && wa.length >= 10 && wa.length <= 15)) { showErr("err-whatsapp", $("whatsapp")); ok = false; }
+      } else if (n === 2) {
+        if (getChecked().length === 0) { showErr("err-postedOn", $("postedOn")); ok = false; }
+        if (!/^https?:\/\/.+/i.test($("link").value.trim())) { showErr("err-link", $("link")); ok = false; }
+      } else if (n === 3) {
+        if (!getPic()) { showErr("err-pic", $("picSelect")); ok = false; }
+      }
+      return ok;
+    }
+
+    function buildRecap() {
+      if (step !== 3) return;
+      var plats = getChecked();
+      var rows = [
+        ["Nama", $("name").value.trim() || "—"],
+        ["WhatsApp", normalizeWa($("whatsapp").value.trim()) || "—"],
+        ["Platform", plats.length ? plats.join(", ") : "—"],
+        ["Link", $("link").value.trim() || "—"]
+      ];
+      $("recap").innerHTML = rows.map(function (r) {
+        return '<div class="recap-row"><span class="k">' + r[0] + '</span><span class="v">' + String(r[1]).replace(/</g, "&lt;") + "</span></div>";
+      }).join("");
+    }
+
     $("picSelect").addEventListener("change", function () {
       var isOther = $("picSelect").value === "__other__";
       $("picOther").style.display = isOther ? "block" : "none";
       if (!isOther) $("picOther").value = "";
+      setHeight();
     });
 
-    // linguo-patch:lingfluencer-pic-dynamic-v2 — isi dropdown PIC dari intern lingtership (v_lingtership_interns, anon-readable)
     (async function loadPicOptions() {
       try {
         var r = await sb.from("v_lingtership_interns").select("name").order("name", { ascending: true });
@@ -153,70 +350,49 @@
         (r.data || []).forEach(function (row) {
           if (!row.name) return;
           var o = document.createElement("option");
-          o.value = row.name;
-          o.textContent = row.name;
+          o.value = row.name; o.textContent = row.name;
           sel.insertBefore(o, otherOpt);
         });
-      } catch (e) {
-        console.warn("gagal load daftar PIC:", e && e.message ? e.message : e);
-      }
+      } catch (e) { console.warn("gagal load daftar PIC:", e && e.message ? e.message : e); }
     })();
 
-    function clearErrors() {
-      Array.prototype.forEach.call(document.querySelectorAll(".err"), function (e) { e.classList.remove("show"); });
-      $("err-global").textContent = "";
-    }
+    $("nextBtn").addEventListener("click", function () {
+      if (!validateStep(step)) return;
+      if (step < TOTAL) { go(step + 1, 1); } else { submit(); }
+    });
+    $("backBtn").addEventListener("click", function () { if (step > 1) go(step - 1, -1); });
 
-    function normalizeWa(raw) {
-      var d = (raw || "").replace(/\D/g, "");
-      if (d.charAt(0) === "0") d = "62" + d.slice(1);
-      return d;
-    }
+    Array.prototype.forEach.call(document.querySelectorAll('input[type="text"], input[type="url"]'), function (inp) {
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); $("nextBtn").click(); } });
+    });
 
-    function getChecked() {
-      return Array.prototype.slice.call(document.querySelectorAll("#postedOn input:checked")).map(function (c) { return c.value; });
-    }
-
-    function validate() {
-      clearErrors();
-      var ok = true;
-      var name = $("name").value.trim();
-      var waRaw = $("whatsapp").value.trim();
-      var wa = normalizeWa(waRaw);
-      var picSel = $("picSelect").value;
-      var pic = picSel === "__other__" ? $("picOther").value.trim() : picSel.trim();
-      var link = $("link").value.trim();
-      var posted = getChecked();
-
-      if (!name) { $("err-name").classList.add("show"); ok = false; }
-      if (!(wa.indexOf("62") === 0 && wa.length >= 10 && wa.length <= 15)) { $("err-whatsapp").classList.add("show"); ok = false; }
-      if (posted.length === 0) { $("err-postedOn").classList.add("show"); ok = false; }
-      if (!pic) { $("err-pic").classList.add("show"); ok = false; }
-      if (!/^https?:\/\/.+/i.test(link)) { $("err-link").classList.add("show"); ok = false; }
-
-      return ok ? { name: name, whatsapp: wa, posted_on: posted, pic_name: pic, content_url: link } : null;
-    }
-
-    $("submitBtn").addEventListener("click", async function () {
-      var payload = validate();
-      if (!payload) return;
-
-      var btn = $("submitBtn");
-      btn.disabled = true;
-      btn.textContent = "Mengirim...";
-
+    async function submit() {
+      var payload = {
+        name: $("name").value.trim(),
+        whatsapp: normalizeWa($("whatsapp").value.trim()),
+        posted_on: getChecked(),
+        pic_name: getPic(),
+        content_url: $("link").value.trim()
+      };
+      var btn = $("nextBtn");
+      btn.disabled = true; btn.textContent = "Mengirim…";
       try {
         var res = await sb.from("lingfluencer_content").insert([payload]);
         if (res.error) throw res.error;
         $("formBody").style.display = "none";
-        $("successBox").style.display = "block";
+        $("successBox").classList.add("show");
         window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (e) {
-        btn.disabled = false;
-        btn.textContent = "Kirim";
+        btn.disabled = false; btn.textContent = "Kirim 🚀";
         $("err-global").textContent = "Gagal mengirim: " + (e && e.message ? e.message : "coba lagi atau hubungi admin.");
+        $("err-global").classList.add("show");
       }
-    });
+    }
+
+    updateProgress(); updateHead(); updateNav();
+    window.addEventListener("load", setHeight);
+    window.addEventListener("resize", setHeight);
+    setTimeout(setHeight, 60);
   </script>
 </body>
 </html>
