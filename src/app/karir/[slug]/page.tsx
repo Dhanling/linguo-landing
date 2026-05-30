@@ -133,10 +133,11 @@ export default async function KarirDetailPage({ params }: Props) {
         ) : (
           <div className="bg-white rounded-2xl border p-6 md:p-8">
             <h2 className="text-lg font-semibold text-gray-900 mb-1">
-              Lamar Sekarang
+              Tertarik dengan posisi ini?
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Isi form di bawah dan upload CV (PDF/DOC, maks 5MB).
+              Lamar lewat form singkat — beberapa langkah aja. Siapin link CV
+              (Google Drive) kamu ya.
             </p>
             <ApplicationForm openingId={job.id} openingTitle={job.title} />
           </div>
