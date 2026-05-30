@@ -172,7 +172,13 @@ const LANG_CHIPS: { key: string; label: string }[] = [
   { key: "lainnya", label: "Lainnya" },
 ];
 
-export default function TrialWizard({ onClose }: { onClose?: () => void }) {
+export default function TrialWizard({
+  onClose,
+  onDirtyChange,
+}: {
+  onClose?: () => void;
+  onDirtyChange?: (dirty: boolean) => void;
+}) {
   const [step, setStep] = useState(1);
   const [program, setProgram] = useState<"" | "private" | "kids">("");
   const [name, setName] = useState("");
@@ -229,6 +235,20 @@ export default function TrialWizard({ onClose }: { onClose?: () => void }) {
       }),
     []
   );
+
+  // linguo-patch:trial-discard-guard-v1 — lapor status "dirty" ke modal pembungkus.
+  // Cuma field bermakna yg dihitung; program & durasi (gampang diulang) diabaikan.
+  const dirty =
+    language !== "" ||
+    kidsType !== "" ||
+    name.trim() !== "" ||
+    email.trim() !== "" ||
+    waNational.trim() !== "" ||
+    days.length > 0 ||
+    times.length > 0;
+  useEffect(() => {
+    onDirtyChange?.(dirty);
+  }, [dirty, onDirtyChange]);
 
   const toggle = (
     arr: string[],
