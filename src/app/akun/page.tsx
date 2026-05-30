@@ -1767,12 +1767,7 @@ export default function AkunPage() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
-          </div>
-          <Spinner size={48} />
-        </div>
+        <Spinner size={160} />
       </div>
     );
   }
@@ -1888,13 +1883,7 @@ export default function AkunPage() {
   if (dataLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-teal-600 flex items-center justify-center">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
-          </div>
-          <Spinner size={48} />
-          <p className="text-sm text-gray-500">Memuat data belajarmu...</p>
-        </div>
+        <Spinner size={160} />
       </div>
     );
   }
