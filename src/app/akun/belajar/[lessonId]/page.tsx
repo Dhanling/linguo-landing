@@ -14,6 +14,8 @@ import {
   ChevronRight,
   Lock,
 } from "lucide-react";
+import TopBarMinimal from "@/components/akun/TopBarMinimal";
+import MobileBottomNav from "@/components/akun/MobileBottomNav";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -62,6 +64,8 @@ export default function LessonPlayerPage() {
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
+  const [firstName, setFirstName] = useState("Siswa");
+  const [avatarUrl, setAvatarUrl] = useState<string | undefined>(undefined);
   const [lesson, setLesson] = useState<any>(null);
   const [mod, setMod] = useState<any>(null);
   const [blocks, setBlocks] = useState<any[]>([]);
@@ -82,6 +86,31 @@ export default function LessonPlayerPage() {
         setLoading(false);
         return;
       }
+
+      const meta: any = (user as any).user_metadata || {};
+      let prof: any = {};
+      try {
+        const { data } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", user.id)
+          .maybeSingle();
+        prof = data || {};
+      } catch {
+        prof = {};
+      }
+      const display =
+        meta.full_name ||
+        meta.name ||
+        prof.full_name ||
+        prof.name ||
+        prof.first_name ||
+        (user.email ? user.email.split("@")[0] : "") ||
+        "Siswa";
+      setFirstName(String(display).trim().split(/\s+/)[0] || "Siswa");
+      setAvatarUrl(
+        meta.avatar_url || prof.avatar_url || prof.avatar || undefined
+      );
 
       const { data: les } = await supabase
         .from("lms_lessons")
@@ -129,6 +158,11 @@ export default function LessonPlayerPage() {
       setLoading(false);
     })();
   }, [lessonId]);
+
+  function goTab(tab: "beranda" | "jadwal" | "materi" | "akun") {
+    if (tab === "materi") window.location.href = "/akun/belajar";
+    else window.location.href = "/akun";
+  }
 
   function answerQuiz(q: any, choice: string) {
     if (answers[q.id]) return;
@@ -202,225 +236,239 @@ export default function LessonPlayerPage() {
   const next = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8">
-      <a
-        href="/akun/belajar"
-        className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
-      >
-        <ArrowLeft className="h-4 w-4" /> Semua materi
-      </a>
+    <div className="min-h-screen bg-slate-50">
+      <TopBarMinimal
+        firstName={firstName}
+        avatarUrl={avatarUrl}
+        onAvatarClick={() => {
+          window.location.href = "/akun";
+        }}
+      />
 
-      {mod ? (
-        <div
-          className="mb-1 text-xs font-semibold uppercase tracking-wide"
-          style={{ color: TEAL }}
+      <main className="mx-auto max-w-2xl px-4 py-5 pb-24">
+        <a
+          href="/akun/belajar"
+          className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
         >
-          {mod.cefr_label} · {mod.title}
-        </div>
-      ) : null}
-      <h1 className="text-2xl font-bold text-slate-900">
-        {lesson.sort_order}. {lesson.title}
-      </h1>
-      {lesson.est_minutes ? (
-        <p className="mt-1 text-sm text-slate-500">± {lesson.est_minutes} menit</p>
-      ) : null}
+          <ArrowLeft className="h-4 w-4" /> Semua materi
+        </a>
 
-      {blocks.length === 0 ? (
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-center">
-          {lesson.is_preview === false ? (
-            <>
-              <Lock className="mx-auto h-7 w-7 text-slate-400" />
-              <p className="mt-3 text-sm text-slate-700">
-                Materi ini bagian dari paket berlangganan.
+        {mod ? (
+          <div
+            className="mb-1 text-xs font-semibold uppercase tracking-wide"
+            style={{ color: TEAL }}
+          >
+            {mod.cefr_label} · {mod.title}
+          </div>
+        ) : null}
+        <h1 className="text-2xl font-bold text-slate-900">
+          {lesson.sort_order}. {lesson.title}
+        </h1>
+        {lesson.est_minutes ? (
+          <p className="mt-1 text-sm text-slate-500">± {lesson.est_minutes} menit</p>
+        ) : null}
+
+        {blocks.length === 0 ? (
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-center">
+            {lesson.is_preview === false ? (
+              <>
+                <Lock className="mx-auto h-7 w-7 text-slate-400" />
+                <p className="mt-3 text-sm text-slate-700">
+                  Materi ini bagian dari paket berlangganan.
+                </p>
+                <a
+                  href="/toko"
+                  className="mt-4 inline-block rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
+                  style={{ background: TEAL }}
+                >
+                  Lihat paket
+                </a>
+              </>
+            ) : (
+              <p className="text-sm text-slate-500">
+                Materi sesi ini lagi disusun. Cek lagi nanti ya.
               </p>
-              <a
-                href="/toko"
-                className="mt-4 inline-block rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
+            )}
+          </div>
+        ) : (
+          <div className="mt-6 space-y-4">
+            {blocks.map((b: any) => {
+              const meta = BLOCK_META[b.type] || { icon: BookOpen, label: b.type };
+              const Icon = meta.icon;
+              return (
+                <div
+                  key={b.id}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                >
+                  <div className="mb-3 flex items-center gap-2">
+                    <span
+                      className="flex h-7 w-7 items-center justify-center rounded-full"
+                      style={{ background: "rgba(26,158,158,0.12)", color: TEAL }}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-semibold text-slate-700">
+                      {meta.label}
+                    </span>
+                  </div>
+
+                  {b.type === "audio" && (
+                    <div>
+                      <p className="mb-2 text-sm text-slate-500">
+                        {b.content?.instruction}
+                      </p>
+                      <audio controls src={b.media_url} className="w-full" />
+                      <p className="mt-1 text-xs text-slate-400">
+                        (audio placeholder — aktif setelah R2 dipasang)
+                      </p>
+                      {!shownText[b.id] ? (
+                        <button
+                          onClick={() =>
+                            setShownText((prev) => ({ ...prev, [b.id]: true }))
+                          }
+                          className="mt-3 text-sm font-medium underline"
+                          style={{ color: TEAL }}
+                        >
+                          Tampilkan teks
+                        </button>
+                      ) : (
+                        <div className="mt-3 rounded-lg bg-slate-50 p-3">
+                          <div className="text-lg font-semibold text-slate-900">
+                            {b.content?.transcript}
+                          </div>
+                          <div className="text-sm text-slate-500">
+                            {b.content?.gloss}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {b.type === "logic" && (
+                    <div className="space-y-1 text-[15px] leading-relaxed">
+                      {renderMarkdown(b.content?.markdown || "")}
+                    </div>
+                  )}
+
+                  {b.type === "vocab" && (
+                    <ul className="divide-y divide-slate-100">
+                      {(b.content?.items || []).map((it: any, i: number) => (
+                        <li
+                          key={i}
+                          className="flex items-center justify-between py-2"
+                        >
+                          <span className="font-medium text-slate-900">
+                            {it.vi}
+                          </span>
+                          <span className="text-sm text-slate-500">{it.id}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {b.type === "quiz" && (
+                    <div>
+                      {b.content?.instruction ? (
+                        <p className="mb-3 text-sm text-slate-500">
+                          {b.content.instruction}
+                        </p>
+                      ) : null}
+                      {((b.lms_quiz_questions || []) as any[])
+                        .sort((qa: any, qb: any) => qa.sort_order - qb.sort_order)
+                        .map((q: any) => {
+                          const chosen = answers[q.id];
+                          return (
+                            <div key={q.id} className="mb-4 last:mb-0">
+                              <div className="mb-2 font-medium text-slate-900">
+                                {q.prompt}
+                              </div>
+                              <div className="flex flex-col gap-2">
+                                {(q.options || []).map((opt: string) => {
+                                  const isChosen = chosen === opt;
+                                  const isCorrect = opt === q.answer;
+                                  let cls =
+                                    "border-slate-200 text-slate-700 hover:border-slate-300";
+                                  if (chosen) {
+                                    if (isCorrect)
+                                      cls =
+                                        "border-emerald-400 bg-emerald-50 text-emerald-700";
+                                    else if (isChosen)
+                                      cls =
+                                        "border-rose-400 bg-rose-50 text-rose-700";
+                                    else cls = "border-slate-200 text-slate-400";
+                                  }
+                                  return (
+                                    <button
+                                      key={opt}
+                                      disabled={!!chosen}
+                                      onClick={() => answerQuiz(q, opt)}
+                                      className={`rounded-lg border px-4 py-2 text-left text-sm transition ${cls}`}
+                                    >
+                                      {opt}
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {blocks.length > 0 ? (
+          <div className="mt-8">
+            {done ? (
+              <div className="flex items-center justify-center gap-2 rounded-xl bg-emerald-50 py-3 text-sm font-semibold text-emerald-700">
+                <CheckCircle2 className="h-5 w-5" /> Sesi selesai
+              </div>
+            ) : (
+              <button
+                onClick={markComplete}
+                disabled={saving}
+                className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-white disabled:opacity-60"
                 style={{ background: TEAL }}
               >
-                Lihat paket
-              </a>
-            </>
-          ) : (
-            <p className="text-sm text-slate-500">
-              Materi sesi ini lagi disusun. Cek lagi nanti ya.
-            </p>
-          )}
-        </div>
-      ) : (
-        <div className="mt-6 space-y-4">
-          {blocks.map((b: any) => {
-            const meta = BLOCK_META[b.type] || { icon: BookOpen, label: b.type };
-            const Icon = meta.icon;
-            return (
-              <div
-                key={b.id}
-                className="rounded-2xl border border-slate-200 bg-white p-5"
+                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                Tandai selesai
+              </button>
+            )}
+          </div>
+        ) : null}
+
+        {prev || next ? (
+          <div className="mt-6 flex items-stretch justify-between gap-3">
+            {prev ? (
+              <a
+                href={`/akun/belajar/${prev.id}`}
+                className="flex flex-1 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 hover:border-slate-300"
               >
-                <div className="mb-3 flex items-center gap-2">
-                  <span
-                    className="flex h-7 w-7 items-center justify-center rounded-full"
-                    style={{ background: "rgba(26,158,158,0.12)", color: TEAL }}
-                  >
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <span className="text-sm font-semibold text-slate-700">
-                    {meta.label}
-                  </span>
-                </div>
+                <ChevronLeft className="h-4 w-4 shrink-0" />
+                <span className="line-clamp-1">Sesi {prev.sort_order}</span>
+              </a>
+            ) : (
+              <div className="flex-1" />
+            )}
+            {next ? (
+              <a
+                href={`/akun/belajar/${next.id}`}
+                className="flex flex-1 items-center justify-end gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 hover:border-slate-300"
+              >
+                <span className="line-clamp-1">Sesi {next.sort_order}</span>
+                <ChevronRight className="h-4 w-4 shrink-0" />
+              </a>
+            ) : (
+              <div className="flex-1" />
+            )}
+          </div>
+        ) : null}
+      </main>
 
-                {b.type === "audio" && (
-                  <div>
-                    <p className="mb-2 text-sm text-slate-500">
-                      {b.content?.instruction}
-                    </p>
-                    <audio controls src={b.media_url} className="w-full" />
-                    <p className="mt-1 text-xs text-slate-400">
-                      (audio placeholder — aktif setelah R2 dipasang)
-                    </p>
-                    {!shownText[b.id] ? (
-                      <button
-                        onClick={() =>
-                          setShownText((prev) => ({ ...prev, [b.id]: true }))
-                        }
-                        className="mt-3 text-sm font-medium underline"
-                        style={{ color: TEAL }}
-                      >
-                        Tampilkan teks
-                      </button>
-                    ) : (
-                      <div className="mt-3 rounded-lg bg-slate-50 p-3">
-                        <div className="text-lg font-semibold text-slate-900">
-                          {b.content?.transcript}
-                        </div>
-                        <div className="text-sm text-slate-500">
-                          {b.content?.gloss}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {b.type === "logic" && (
-                  <div className="space-y-1 text-[15px] leading-relaxed">
-                    {renderMarkdown(b.content?.markdown || "")}
-                  </div>
-                )}
-
-                {b.type === "vocab" && (
-                  <ul className="divide-y divide-slate-100">
-                    {(b.content?.items || []).map((it: any, i: number) => (
-                      <li
-                        key={i}
-                        className="flex items-center justify-between py-2"
-                      >
-                        <span className="font-medium text-slate-900">{it.vi}</span>
-                        <span className="text-sm text-slate-500">{it.id}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {b.type === "quiz" && (
-                  <div>
-                    {b.content?.instruction ? (
-                      <p className="mb-3 text-sm text-slate-500">
-                        {b.content.instruction}
-                      </p>
-                    ) : null}
-                    {((b.lms_quiz_questions || []) as any[])
-                      .sort((qa: any, qb: any) => qa.sort_order - qb.sort_order)
-                      .map((q: any) => {
-                        const chosen = answers[q.id];
-                        return (
-                          <div key={q.id} className="mb-4 last:mb-0">
-                            <div className="mb-2 font-medium text-slate-900">
-                              {q.prompt}
-                            </div>
-                            <div className="flex flex-col gap-2">
-                              {(q.options || []).map((opt: string) => {
-                                const isChosen = chosen === opt;
-                                const isCorrect = opt === q.answer;
-                                let cls =
-                                  "border-slate-200 text-slate-700 hover:border-slate-300";
-                                if (chosen) {
-                                  if (isCorrect)
-                                    cls =
-                                      "border-emerald-400 bg-emerald-50 text-emerald-700";
-                                  else if (isChosen)
-                                    cls =
-                                      "border-rose-400 bg-rose-50 text-rose-700";
-                                  else cls = "border-slate-200 text-slate-400";
-                                }
-                                return (
-                                  <button
-                                    key={opt}
-                                    disabled={!!chosen}
-                                    onClick={() => answerQuiz(q, opt)}
-                                    className={`rounded-lg border px-4 py-2 text-left text-sm transition ${cls}`}
-                                  >
-                                    {opt}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        );
-                      })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {blocks.length > 0 ? (
-        <div className="mt-8">
-          {done ? (
-            <div className="flex items-center justify-center gap-2 rounded-xl bg-emerald-50 py-3 text-sm font-semibold text-emerald-700">
-              <CheckCircle2 className="h-5 w-5" /> Sesi selesai
-            </div>
-          ) : (
-            <button
-              onClick={markComplete}
-              disabled={saving}
-              className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-white disabled:opacity-60"
-              style={{ background: TEAL }}
-            >
-              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-              Tandai selesai
-            </button>
-          )}
-        </div>
-      ) : null}
-
-      {prev || next ? (
-        <div className="mt-6 flex items-stretch justify-between gap-3">
-          {prev ? (
-            <a
-              href={`/akun/belajar/${prev.id}`}
-              className="flex flex-1 items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-600 hover:border-slate-300"
-            >
-              <ChevronLeft className="h-4 w-4 shrink-0" />
-              <span className="line-clamp-1">Sesi {prev.sort_order}</span>
-            </a>
-          ) : (
-            <div className="flex-1" />
-          )}
-          {next ? (
-            <a
-              href={`/akun/belajar/${next.id}`}
-              className="flex flex-1 items-center justify-end gap-1.5 rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-600 hover:border-slate-300"
-            >
-              <span className="line-clamp-1">Sesi {next.sort_order}</span>
-              <ChevronRight className="h-4 w-4 shrink-0" />
-            </a>
-          ) : (
-            <div className="flex-1" />
-          )}
-        </div>
-      ) : null}
+      <MobileBottomNav activeTab="materi" onChange={goTab} />
     </div>
   );
 }

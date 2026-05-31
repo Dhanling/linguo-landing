@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import {
-  ArrowLeft,
   ChevronDown,
   ChevronRight,
   CheckCircle2,
@@ -11,6 +10,8 @@ import {
   CircleDot,
   Loader2,
 } from "lucide-react";
+import TopBarMinimal from "@/components/akun/TopBarMinimal";
+import MobileBottomNav from "@/components/akun/MobileBottomNav";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -33,6 +34,8 @@ function levelOf(cefr: string) {
 export default function BelajarCatalogPage() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
+  const [firstName, setFirstName] = useState("Siswa");
+  const [avatarUrl, setAvatarUrl] = useState<string | undefined>(undefined);
   const [modules, setModules] = useState<any[]>([]);
   const [lessonsByModule, setLessonsByModule] = useState<Record<string, any[]>>(
     {}
@@ -50,6 +53,31 @@ export default function BelajarCatalogPage() {
         setLoading(false);
         return;
       }
+
+      const meta: any = (user as any).user_metadata || {};
+      let prof: any = {};
+      try {
+        const { data } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", user.id)
+          .maybeSingle();
+        prof = data || {};
+      } catch {
+        prof = {};
+      }
+      const display =
+        meta.full_name ||
+        meta.name ||
+        prof.full_name ||
+        prof.name ||
+        prof.first_name ||
+        (user.email ? user.email.split("@")[0] : "") ||
+        "Siswa";
+      setFirstName(String(display).trim().split(/\s+/)[0] || "Siswa");
+      setAvatarUrl(
+        meta.avatar_url || prof.avatar_url || prof.avatar || undefined
+      );
 
       const { data: mods } = await supabase
         .from("lms_modules")
@@ -87,6 +115,10 @@ export default function BelajarCatalogPage() {
       setLoading(false);
     })();
   }, []);
+
+  function goTab(tab: "beranda" | "jadwal" | "materi" | "akun") {
+    if (tab !== "materi") window.location.href = "/akun";
+  }
 
   if (loading) {
     return (
@@ -132,151 +164,153 @@ export default function BelajarCatalogPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8">
-      <a
-        href="/akun"
-        className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
-      >
-        <ArrowLeft className="h-4 w-4" /> Akun
-      </a>
+    <div className="min-h-screen bg-slate-50">
+      <TopBarMinimal
+        firstName={firstName}
+        avatarUrl={avatarUrl}
+        onAvatarClick={() => {
+          window.location.href = "/akun";
+        }}
+      />
 
-      <h1 className="text-2xl font-bold text-slate-900">Bahasa Vietnam</h1>
-      <p className="mt-1 text-sm text-slate-500">
-        Tiếng Việt · 19 sublevel · A1.1–B2.7
-      </p>
-
-      <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
-        <div className="flex items-center justify-between text-sm">
-          <span className="font-medium text-slate-700">Progres kamu</span>
-          <span className="text-slate-500">
-            {totalDone}/{allLessons.length} sesi · {totalPct}%
-          </span>
+      <main className="mx-auto max-w-2xl px-4 py-5 pb-24">
+        <div className="rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] px-5 py-4 text-white shadow-md shadow-teal-200/40">
+          <p className="text-[11px] text-teal-100">Materi e-learning</p>
+          <h1 className="mt-0.5 text-lg font-bold">Bahasa Vietnam</h1>
+          <p className="mt-0.5 text-[11px] text-teal-100">
+            Tiếng Việt · 19 sublevel · A1.1–B2.7
+          </p>
+          <div className="mt-3 flex items-center justify-between text-[11px] text-teal-100">
+            <span>
+              {totalDone}/{allLessons.length} sesi
+            </span>
+            <span>{totalPct}%</span>
+          </div>
+          <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white/25">
+            <div className="h-full bg-white" style={{ width: `${totalPct}%` }} />
+          </div>
         </div>
-        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-          <div
-            className="h-full rounded-full"
-            style={{ width: `${totalPct}%`, background: TEAL }}
-          />
-        </div>
-      </div>
 
-      {levelKeys.map((lv) => (
-        <section key={lv} className="mt-8">
-          <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-slate-400">
-            {lv}
-            {LEVEL_NAME[lv] ? ` · ${LEVEL_NAME[lv]}` : ""}
-          </h2>
+        {levelKeys.map((lv) => (
+          <section key={lv} className="mt-7">
+            <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-slate-400">
+              {lv}
+              {LEVEL_NAME[lv] ? ` · ${LEVEL_NAME[lv]}` : ""}
+            </h2>
 
-          <div className="space-y-3">
-            {groups[lv].map((m: any) => {
-              const lessons = lessonsByModule[m.id] || [];
-              const doneCount = lessons.filter(
-                (l: any) => progress[l.id] === "completed"
-              ).length;
-              const pct = lessons.length
-                ? Math.round((doneCount / lessons.length) * 100)
-                : 0;
-              const isOpen = !!open[m.id];
-              const preview =
-                lessons.length > 0 && lessons.every((l: any) => l.is_preview);
+            <div className="space-y-3">
+              {groups[lv].map((m: any) => {
+                const lessons = lessonsByModule[m.id] || [];
+                const doneCount = lessons.filter(
+                  (l: any) => progress[l.id] === "completed"
+                ).length;
+                const pct = lessons.length
+                  ? Math.round((doneCount / lessons.length) * 100)
+                  : 0;
+                const isOpen = !!open[m.id];
+                const preview =
+                  lessons.length > 0 && lessons.every((l: any) => l.is_preview);
 
-              return (
-                <div
-                  key={m.id}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
-                >
-                  <button
-                    onClick={() =>
-                      setOpen((p) => ({ ...p, [m.id]: !p[m.id] }))
-                    }
-                    className="flex w-full items-center gap-3 px-4 py-3 text-left"
+                return (
+                  <div
+                    key={m.id}
+                    className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
                   >
-                    <span
-                      className="shrink-0 rounded-lg px-2 py-1 text-xs font-bold"
-                      style={{
-                        background: "rgba(26,158,158,0.12)",
-                        color: TEAL,
-                      }}
+                    <button
+                      onClick={() =>
+                        setOpen((p) => ({ ...p, [m.id]: !p[m.id] }))
+                      }
+                      className="flex w-full items-center gap-3 px-4 py-3 text-left"
                     >
-                      {m.cefr_label}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-semibold text-slate-900">
-                        {m.title}
-                      </span>
-                      <span className="text-xs text-slate-400">
-                        {doneCount}/{lessons.length} sesi selesai
-                      </span>
-                    </span>
-                    {preview ? (
                       <span
-                        className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                        className="shrink-0 rounded-lg px-2 py-1 text-xs font-bold"
                         style={{
                           background: "rgba(26,158,158,0.12)",
                           color: TEAL,
                         }}
                       >
-                        Preview
+                        {m.cefr_label}
                       </span>
-                    ) : null}
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-sm font-semibold text-slate-900">
+                          {m.title}
+                        </span>
+                        <span className="text-xs text-slate-400">
+                          {doneCount}/{lessons.length} sesi selesai
+                        </span>
+                      </span>
+                      {preview ? (
+                        <span
+                          className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                          style={{
+                            background: "rgba(26,158,158,0.12)",
+                            color: TEAL,
+                          }}
+                        >
+                          Preview
+                        </span>
+                      ) : null}
+                      {isOpen ? (
+                        <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+                      )}
+                    </button>
+
+                    <div className="h-1 w-full bg-slate-100">
+                      <div
+                        className="h-full"
+                        style={{ width: `${pct}%`, background: TEAL }}
+                      />
+                    </div>
+
                     {isOpen ? (
-                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
-                    ) : (
-                      <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
-                    )}
-                  </button>
-
-                  <div className="h-1 w-full bg-slate-100">
-                    <div
-                      className="h-full"
-                      style={{ width: `${pct}%`, background: TEAL }}
-                    />
+                      <ul className="divide-y divide-slate-100">
+                        {lessons.map((l: any) => {
+                          const st = progress[l.id];
+                          const Icon =
+                            st === "completed"
+                              ? CheckCircle2
+                              : st === "in_progress"
+                              ? CircleDot
+                              : Circle;
+                          const iconColor =
+                            st === "completed"
+                              ? "#10b981"
+                              : st === "in_progress"
+                              ? TEAL
+                              : "#cbd5e1";
+                          return (
+                            <li key={l.id}>
+                              <a
+                                href={`/akun/belajar/${l.id}`}
+                                className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50"
+                              >
+                                <Icon
+                                  className="h-4 w-4 shrink-0"
+                                  style={{ color: iconColor }}
+                                />
+                                <span className="text-sm text-slate-700">
+                                  <span className="text-slate-400">
+                                    {l.sort_order}.
+                                  </span>{" "}
+                                  {l.title}
+                                </span>
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    ) : null}
                   </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </main>
 
-                  {isOpen ? (
-                    <ul className="divide-y divide-slate-100">
-                      {lessons.map((l: any) => {
-                        const st = progress[l.id];
-                        const Icon =
-                          st === "completed"
-                            ? CheckCircle2
-                            : st === "in_progress"
-                            ? CircleDot
-                            : Circle;
-                        const iconColor =
-                          st === "completed"
-                            ? "#10b981"
-                            : st === "in_progress"
-                            ? TEAL
-                            : "#cbd5e1";
-                        return (
-                          <li key={l.id}>
-                            <a
-                              href={`/akun/belajar/${l.id}`}
-                              className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50"
-                            >
-                              <Icon
-                                className="h-4 w-4 shrink-0"
-                                style={{ color: iconColor }}
-                              />
-                              <span className="text-sm text-slate-700">
-                                <span className="text-slate-400">
-                                  {l.sort_order}.
-                                </span>{" "}
-                                {l.title}
-                              </span>
-                            </a>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      ))}
+      <MobileBottomNav activeTab="materi" onChange={goTab} />
     </div>
   );
 }
