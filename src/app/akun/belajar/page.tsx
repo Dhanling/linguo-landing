@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { Volume2, Languages, BookOpen, CheckCircle2, Loader2, ArrowLeft } from "lucide-react";
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronRight,
+  CheckCircle2,
+  Circle,
+  CircleDot,
+  Loader2,
+} from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -11,49 +19,26 @@ const supabase = createClient(
 
 const TEAL = "#1A9E9E";
 
-const BLOCK_META: Record<string, { icon: any; label: string }> = {
-  audio: { icon: Volume2, label: "Dengar & Ucapkan" },
-  logic: { icon: Languages, label: "Logika Bahasa" },
-  vocab: { icon: BookOpen, label: "Kosakata" },
-  quiz: { icon: CheckCircle2, label: "Kuis" },
+const LEVELS = ["A1", "A2", "B1", "B2"];
+const LEVEL_NAME: Record<string, string> = {
+  A1: "Pemula",
+  A2: "Pra-Menengah",
+  B1: "Menengah",
+  B2: "Menengah Atas",
 };
-
-function stripBold(s: string) {
-  return s.replace(/\*\*/g, "");
+function levelOf(cefr: string) {
+  return (cefr || "").split(".")[0];
 }
 
-function renderMarkdown(md: string) {
-  return md.split("\n").map((line: string, i: number) => {
-    if (line.startsWith("## "))
-      return (
-        <h3 key={i} className="mt-1 text-base font-semibold text-slate-900">
-          {line.slice(3)}
-        </h3>
-      );
-    if (line.startsWith("- "))
-      return (
-        <li key={i} className="ml-5 list-disc text-slate-700">
-          {stripBold(line.slice(2))}
-        </li>
-      );
-    if (line.trim() === "") return <div key={i} className="h-2" />;
-    return (
-      <p key={i} className="text-slate-700">
-        {stripBold(line)}
-      </p>
-    );
-  });
-}
-
-export default function BelajarPage() {
+export default function BelajarCatalogPage() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
-  const [lesson, setLesson] = useState<any>(null);
-  const [blocks, setBlocks] = useState<any[]>([]);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [showText, setShowText] = useState(false);
-  const [done, setDone] = useState(false);
-  const [saving, setSaving] = useState(false);
+  const [modules, setModules] = useState<any[]>([]);
+  const [lessonsByModule, setLessonsByModule] = useState<Record<string, any[]>>(
+    {}
+  );
+  const [progress, setProgress] = useState<Record<string, string>>({});
+  const [open, setOpen] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     (async () => {
@@ -66,81 +51,42 @@ export default function BelajarPage() {
         return;
       }
 
-      const { data: mod } = await supabase
+      const { data: mods } = await supabase
         .from("lms_modules")
-        .select("id,title")
+        .select("id,cefr_label,title,sort_order")
         .eq("language", "Vietnamese")
-        .eq("cefr_label", "A1.1")
-        .order("sort_order")
-        .limit(1)
-        .maybeSingle();
-      if (!mod) {
-        setLoading(false);
-        return;
-      }
-
-      const { data: les } = await supabase
-        .from("lms_lessons")
-        .select("id,title,est_minutes")
-        .eq("module_id", mod.id)
-        .order("sort_order")
-        .limit(1)
-        .maybeSingle();
-      if (!les) {
-        setLoading(false);
-        return;
-      }
-      setLesson(les);
-
-      const { data: blks } = await supabase
-        .from("lms_blocks")
-        .select(
-          "id,type,content,media_url,sort_order, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
-        )
-        .eq("lesson_id", les.id)
         .order("sort_order");
-      setBlocks(blks || []);
+      const mlist = mods || [];
+      setModules(mlist);
+      if (mlist.length) setOpen({ [mlist[0].id]: true });
+
+      const ids = mlist.map((m: any) => m.id);
+      const byMod: Record<string, any[]> = {};
+      if (ids.length) {
+        const { data: les } = await supabase
+          .from("lms_lessons")
+          .select("id,module_id,title,sort_order,is_preview")
+          .in("module_id", ids)
+          .order("sort_order");
+        (les || []).forEach((l: any) => {
+          (byMod[l.module_id] = byMod[l.module_id] || []).push(l);
+        });
+      }
+      setLessonsByModule(byMod);
 
       const { data: prog } = await supabase
         .from("lms_progress")
-        .select("status")
-        .eq("user_id", user.id)
-        .eq("lesson_id", les.id)
-        .maybeSingle();
-      if (prog && prog.status === "completed") setDone(true);
+        .select("lesson_id,status")
+        .eq("user_id", user.id);
+      const pmap: Record<string, string> = {};
+      (prog || []).forEach((p: any) => {
+        pmap[p.lesson_id] = p.status;
+      });
+      setProgress(pmap);
 
       setLoading(false);
     })();
   }, []);
-
-  function answerQuiz(q: any, choice: string) {
-    if (answers[q.id]) return;
-    setAnswers((prev) => ({ ...prev, [q.id]: choice }));
-    if (user) {
-      supabase.from("lms_quiz_attempts").insert({
-        user_id: user.id,
-        question_id: q.id,
-        response: choice,
-        is_correct: choice === q.answer,
-      });
-    }
-  }
-
-  async function markComplete() {
-    if (!user || !lesson) return;
-    setSaving(true);
-    const { error } = await supabase.from("lms_progress").upsert(
-      {
-        user_id: user.id,
-        lesson_id: lesson.id,
-        status: "completed",
-        completed_at: new Date().toISOString(),
-      },
-      { onConflict: "user_id,lesson_id" }
-    );
-    setSaving(false);
-    if (!error) setDone(true);
-  }
 
   if (loading) {
     return (
@@ -153,7 +99,9 @@ export default function BelajarPage() {
   if (!user) {
     return (
       <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
-        <p className="text-slate-700">Kamu perlu masuk dulu untuk mulai belajar.</p>
+        <p className="text-slate-700">
+          Kamu perlu masuk dulu untuk mulai belajar.
+        </p>
         <a
           href="/akun"
           className="mt-4 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
@@ -165,149 +113,170 @@ export default function BelajarPage() {
     );
   }
 
-  if (!lesson) {
-    return (
-      <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
-        <p className="text-slate-700">Materi belum tersedia.</p>
-        <a href="/akun" className="mt-4 text-sm font-medium underline" style={{ color: TEAL }}>
-          Kembali ke akun
-        </a>
-      </div>
-    );
-  }
+  const allLessons = Object.values(lessonsByModule).flat();
+  const totalDone = allLessons.filter(
+    (l: any) => progress[l.id] === "completed"
+  ).length;
+  const totalPct = allLessons.length
+    ? Math.round((totalDone / allLessons.length) * 100)
+    : 0;
+
+  const groups: Record<string, any[]> = {};
+  modules.forEach((m: any) => {
+    const lv = levelOf(m.cefr_label);
+    (groups[lv] = groups[lv] || []).push(m);
+  });
+  const levelKeys = [
+    ...LEVELS.filter((l) => groups[l]),
+    ...Object.keys(groups).filter((l) => !LEVELS.includes(l)),
+  ];
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8">
       <a
         href="/akun"
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
+        className="mb-5 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
       >
-        <ArrowLeft className="h-4 w-4" /> Kembali
+        <ArrowLeft className="h-4 w-4" /> Akun
       </a>
 
-      <h1 className="text-2xl font-bold text-slate-900">{lesson.title}</h1>
-      {lesson.est_minutes ? (
-        <p className="mt-1 text-sm text-slate-500">± {lesson.est_minutes} menit</p>
-      ) : null}
+      <h1 className="text-2xl font-bold text-slate-900">Bahasa Vietnam</h1>
+      <p className="mt-1 text-sm text-slate-500">
+        Tiếng Việt · 19 sublevel · A1.1–B2.7
+      </p>
 
-      <div className="mt-6 space-y-4">
-        {blocks.map((b: any) => {
-          const meta = BLOCK_META[b.type] || { icon: BookOpen, label: b.type };
-          const Icon = meta.icon;
-          return (
-            <div key={b.id} className="rounded-2xl border border-slate-200 bg-white p-5">
-              <div className="mb-3 flex items-center gap-2">
-                <span
-                  className="flex h-7 w-7 items-center justify-center rounded-full"
-                  style={{ background: "rgba(26,158,158,0.12)", color: TEAL }}
+      <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
+        <div className="flex items-center justify-between text-sm">
+          <span className="font-medium text-slate-700">Progres kamu</span>
+          <span className="text-slate-500">
+            {totalDone}/{allLessons.length} sesi · {totalPct}%
+          </span>
+        </div>
+        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+          <div
+            className="h-full rounded-full"
+            style={{ width: `${totalPct}%`, background: TEAL }}
+          />
+        </div>
+      </div>
+
+      {levelKeys.map((lv) => (
+        <section key={lv} className="mt-8">
+          <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-slate-400">
+            {lv}
+            {LEVEL_NAME[lv] ? ` · ${LEVEL_NAME[lv]}` : ""}
+          </h2>
+
+          <div className="space-y-3">
+            {groups[lv].map((m: any) => {
+              const lessons = lessonsByModule[m.id] || [];
+              const doneCount = lessons.filter(
+                (l: any) => progress[l.id] === "completed"
+              ).length;
+              const pct = lessons.length
+                ? Math.round((doneCount / lessons.length) * 100)
+                : 0;
+              const isOpen = !!open[m.id];
+              const preview =
+                lessons.length > 0 && lessons.every((l: any) => l.is_preview);
+
+              return (
+                <div
+                  key={m.id}
+                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
                 >
-                  <Icon className="h-4 w-4" />
-                </span>
-                <span className="text-sm font-semibold text-slate-700">{meta.label}</span>
-              </div>
-
-              {b.type === "audio" && (
-                <div>
-                  <p className="mb-2 text-sm text-slate-500">{b.content?.instruction}</p>
-                  <audio controls src={b.media_url} className="w-full" />
-                  <p className="mt-1 text-xs text-slate-400">
-                    (audio placeholder — aktif setelah R2 dipasang)
-                  </p>
-                  {!showText ? (
-                    <button
-                      onClick={() => setShowText(true)}
-                      className="mt-3 text-sm font-medium underline"
-                      style={{ color: TEAL }}
+                  <button
+                    onClick={() =>
+                      setOpen((p) => ({ ...p, [m.id]: !p[m.id] }))
+                    }
+                    className="flex w-full items-center gap-3 px-4 py-3 text-left"
+                  >
+                    <span
+                      className="shrink-0 rounded-lg px-2 py-1 text-xs font-bold"
+                      style={{
+                        background: "rgba(26,158,158,0.12)",
+                        color: TEAL,
+                      }}
                     >
-                      Tampilkan teks
-                    </button>
-                  ) : (
-                    <div className="mt-3 rounded-lg bg-slate-50 p-3">
-                      <div className="text-lg font-semibold text-slate-900">{b.content?.transcript}</div>
-                      <div className="text-sm text-slate-500">{b.content?.gloss}</div>
-                    </div>
-                  )}
-                </div>
-              )}
+                      {m.cefr_label}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-sm font-semibold text-slate-900">
+                        {m.title}
+                      </span>
+                      <span className="text-xs text-slate-400">
+                        {doneCount}/{lessons.length} sesi selesai
+                      </span>
+                    </span>
+                    {preview ? (
+                      <span
+                        className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                        style={{
+                          background: "rgba(26,158,158,0.12)",
+                          color: TEAL,
+                        }}
+                      >
+                        Preview
+                      </span>
+                    ) : null}
+                    {isOpen ? (
+                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+                    )}
+                  </button>
 
-              {b.type === "logic" && (
-                <div className="space-y-1 text-[15px] leading-relaxed">
-                  {renderMarkdown(b.content?.markdown || "")}
-                </div>
-              )}
+                  <div className="h-1 w-full bg-slate-100">
+                    <div
+                      className="h-full"
+                      style={{ width: `${pct}%`, background: TEAL }}
+                    />
+                  </div>
 
-              {b.type === "vocab" && (
-                <ul className="divide-y divide-slate-100">
-                  {(b.content?.items || []).map((it: any, i: number) => (
-                    <li key={i} className="flex items-center justify-between py-2">
-                      <span className="font-medium text-slate-900">{it.vi}</span>
-                      <span className="text-sm text-slate-500">{it.id}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {b.type === "quiz" && (
-                <div>
-                  {b.content?.instruction ? (
-                    <p className="mb-3 text-sm text-slate-500">{b.content.instruction}</p>
+                  {isOpen ? (
+                    <ul className="divide-y divide-slate-100">
+                      {lessons.map((l: any) => {
+                        const st = progress[l.id];
+                        const Icon =
+                          st === "completed"
+                            ? CheckCircle2
+                            : st === "in_progress"
+                            ? CircleDot
+                            : Circle;
+                        const iconColor =
+                          st === "completed"
+                            ? "#10b981"
+                            : st === "in_progress"
+                            ? TEAL
+                            : "#cbd5e1";
+                        return (
+                          <li key={l.id}>
+                            <a
+                              href={`/akun/belajar/${l.id}`}
+                              className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50"
+                            >
+                              <Icon
+                                className="h-4 w-4 shrink-0"
+                                style={{ color: iconColor }}
+                              />
+                              <span className="text-sm text-slate-700">
+                                <span className="text-slate-400">
+                                  {l.sort_order}.
+                                </span>{" "}
+                                {l.title}
+                              </span>
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   ) : null}
-                  {((b.lms_quiz_questions || []) as any[])
-                    .sort((qa: any, qb: any) => qa.sort_order - qb.sort_order)
-                    .map((q: any) => {
-                      const chosen = answers[q.id];
-                      return (
-                        <div key={q.id} className="mb-4 last:mb-0">
-                          <div className="mb-2 font-medium text-slate-900">{q.prompt}</div>
-                          <div className="flex flex-col gap-2">
-                            {(q.options || []).map((opt: string) => {
-                              const isChosen = chosen === opt;
-                              const isCorrect = opt === q.answer;
-                              let cls = "border-slate-200 text-slate-700 hover:border-slate-300";
-                              if (chosen) {
-                                if (isCorrect) cls = "border-emerald-400 bg-emerald-50 text-emerald-700";
-                                else if (isChosen) cls = "border-rose-400 bg-rose-50 text-rose-700";
-                                else cls = "border-slate-200 text-slate-400";
-                              }
-                              return (
-                                <button
-                                  key={opt}
-                                  disabled={!!chosen}
-                                  onClick={() => answerQuiz(q, opt)}
-                                  className={`rounded-lg border px-4 py-2 text-left text-sm transition ${cls}`}
-                                >
-                                  {opt}
-                                </button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      );
-                    })}
                 </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="mt-8">
-        {done ? (
-          <div className="flex items-center justify-center gap-2 rounded-xl bg-emerald-50 py-3 text-sm font-semibold text-emerald-700">
-            <CheckCircle2 className="h-5 w-5" /> Sesi selesai
+              );
+            })}
           </div>
-        ) : (
-          <button
-            onClick={markComplete}
-            disabled={saving}
-            className="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-white disabled:opacity-60"
-            style={{ background: TEAL }}
-          >
-            {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-            Tandai selesai
-          </button>
-        )}
-      </div>
+        </section>
+      ))}
     </div>
   );
 }
