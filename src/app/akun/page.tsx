@@ -4,7 +4,7 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -1734,7 +1734,6 @@ export default function AkunPage() {
     r.status === "Menunggu Pembayaran" &&
     (r.payment_status === "Belum Bayar" || !r.payment_status)
   ) || [], [student]);
-  const completedRegs = useMemo(() => student?.registrations.filter(r => ["Selesai","Batal","Non Aktif"].includes(r.status)) || [], [student]);
 
   // Group activeRegs by product, priority order: Private -> Reguler -> Kids -> Test Prep -> Other
   const groupedActiveRegs = useMemo(() => {
@@ -2110,289 +2109,299 @@ export default function AkunPage() {
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              {/* Desktop: 2 column layout */}
-              <div className="grid gap-5 lg:grid-cols-[300px_1fr] lg:items-start">
+              {(() => {
+                // ── derived khusus port frame ──
+                const langGlyph = (lang: string): string => {
+                  const g: Record<string, string> = {
+                    Jepang: "あ", Japanese: "あ", Korea: "한", Korean: "한",
+                    Mandarin: "中", Chinese: "中", Arab: "ع", Arabic: "ع",
+                    Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
+                    Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
+                  };
+                  return g[lang] || "Aa";
+                };
+                const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
+                const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
+                const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
+                const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
+                const teacherMap = new Map<string, { name: string; count: number; langs: Set<string> }>();
+                activeRegs.forEach((r: any) => {
+                  const tn = r?.teachers?.name;
+                  if (!tn) return;
+                  if (!teacherMap.has(tn)) teacherMap.set(tn, { name: tn, count: 0, langs: new Set() });
+                  const t = teacherMap.get(tn)!;
+                  t.count += 1;
+                  t.langs.add(r.language);
+                });
+                const teacherList = Array.from(teacherMap.values());
+                const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 
-                {/* ════ KOLOM UTAMA (kanan) ════ */}
-                <div className="flex flex-col gap-5 lg:order-2">
-                  {/* Greeting — teks polos */}
-                  <div>
-                    <p className="text-sm text-gray-500">{getGreeting()},</p>
-                    <h2 className="mt-0.5 text-2xl font-bold text-gray-800">{firstName} 👋</h2>
-                    <p className="mt-1 text-sm text-gray-500">Yuk lanjut belajar bahasa hari ini!</p>
-                  </div>
+                return (
+                  <div className="flex flex-col overflow-hidden rounded-[26px] border border-slate-100 bg-white shadow-sm lg:grid lg:grid-cols-[330px_minmax(0,1fr)]">
 
-                  {/* Lanjutkan Belajar (pintu masuk LMS) */}
-                  <button
-                    onClick={() => setActiveTab("materi")}
-                    className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#0F6E56] to-[#1A9E9E] p-5 text-left shadow-sm transition-transform active:scale-[0.99]"
-                  >
-                    <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-[#FFC93C]/20" />
-                    <div className="absolute right-10 bottom-2 h-16 w-16 rounded-full bg-white/5" />
-                    <div className="relative flex items-center gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFC93C] text-[#0F6E56]">
-                        <GraduationCap className="h-6 w-6" strokeWidth={2.5} />
+                    {/* ════ KOLOM PROFIL (kiri di desktop) ════ */}
+                    <aside className="order-2 flex flex-col lg:order-1 lg:border-r lg:border-slate-100">
+                      {/* header teal + ornamen kuning (overflow-hidden cuma di header ini) */}
+                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
+                        <div className="absolute -top-6 left-6 h-16 w-16 rotate-12 rounded-[14px] bg-[#F2CB05]/90" />
+                        <div className="absolute left-24 top-8 h-10 w-10 rounded-full bg-[#F2CB05] opacity-90" />
+                        <div className="absolute -top-4 right-10 h-20 w-20 rotate-[18deg] rounded-[18px] border-[10px] border-[#F2CB05] opacity-80" />
+                        <div className="absolute right-28 top-12 h-9 w-9 rotate-45 rounded-[6px] bg-[#F2CB05] opacity-80" />
+                        <div className="absolute bottom-3 right-6 h-12 w-12 rounded-full border-[7px] border-[#F2CB05]/80" />
                       </div>
-                      <div className="min-w-0 flex-1">
-                        <span className="text-[10px] font-semibold uppercase tracking-wide text-[#FFC93C]">Belajar Mandiri</span>
-                        <h3 className="text-base font-bold text-white">Lanjutkan Belajar</h3>
-                        <p className="mt-0.5 text-xs text-white/80">Akses materi self-paced — audio, kosakata & kuis interaktif.</p>
-                      </div>
-                      <span className="hidden shrink-0 items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#0F6E56] transition-transform group-hover:translate-x-0.5 sm:inline-flex">
-                        Buka Materi →
-                      </span>
-                    </div>
-                  </button>
 
-                  {/* Perlu Perhatian — Menunggu Pembayaran (conditional, logika Xendit utuh) */}
-                  {pendingPaymentRegs.length > 0 && (
-                    <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-base font-semibold text-amber-800 inline-flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-amber-600" strokeWidth={2.5} />
-                          Perlu Perhatian
-                        </h3>
-                        <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-200 text-amber-800 text-[10px] font-bold">
-                          {pendingPaymentRegs.length}
-                        </span>
-                      </div>
-                      <div className="space-y-3">
-                        {pendingPaymentRegs.map((reg: any, i: number) => (
-                          <UnifiedCourseCard
-                            key={reg.id}
-                            reg={reg}
-                            index={i}
-                            userId={user?.id}
-                            variant="pending"
-                            renderPayment={(r, uid) => (
-                              <PaymentCard
-                                registration={r as any}
-                                userId={uid}
-                                onUploadSuccess={() => window.location.reload()}
-                                onRegenerateXendit={async () => {
-                                  try {
-                                    const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
-                                    const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
-                                    const desc = `${programLabel} — ${langLabel}`;
-                                    const res = await fetch(
-                                      "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
-                                      {
-                                        method: "POST",
-                                        headers: {
-                                          "Content-Type": "application/json",
-                                          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-                                        },
-                                        body: JSON.stringify({
-                                          registration_id: r.id,
-                                          amount: r.total_amount || 0,
-                                          description: desc,
-                                          payer_name: displayName,
-                                          payer_email: user?.email || "",
-                                          success_redirect_url: "https://linguo.id/akun/success",
-                                          failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
-                                        }),
-                                      }
-                                    );
-                                    const data = await res.json();
-                                    if (data?.success && data?.invoice_url) {
-                                      await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
-                                      return data.invoice_url as string;
-                                    }
-                                    return null;
-                                  } catch (e) {
-                                    console.error("Regenerate Xendit error:", e);
-                                    return null;
-                                  }
-                                }}
-                              />
-                            )}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Kelas Saya (course cards, klik -> ClassDetailModal) */}
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
-                        <BookOpen className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
-                        Kelas Saya
-                      </h3>
-                      {activeRegs.length > 0 && (
-                        <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline">+ Tambah</button>
-                      )}
-                    </div>
-                    {activeRegs.length > 0 ? (
-                      <div className="grid grid-cols-2 gap-3 xl:grid-cols-3">
-                        {activeRegs.map((reg: any) => {
-                          const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
-                          const BadgeIcon = badge.icon;
-                          const total = reg.sessions_total || 0;
-                          const used = reg.sessions_used || 0;
-                          const pct = total > 0 ? Math.round((used / total) * 100) : 0;
-                          return (
-                            <button
-                              key={reg.id}
-                              onClick={() => setDetailReg(reg)}
-                              className="overflow-hidden rounded-2xl border border-gray-100 bg-white text-left shadow-sm transition-shadow hover:shadow-md"
-                            >
-                              <div className="flex h-16 items-center justify-center bg-teal-50">
-                                <span className="inline-flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1 shadow-sm">
-                                  <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 object-contain" />
-                                  <span className="text-xs font-semibold text-gray-700">{reg.language}</span>
-                                </span>
-                              </div>
-                              <div className="p-3">
-                                <p className="truncate text-sm font-semibold text-gray-800">{reg.language} — {reg.level || "TBD"}</p>
-                                <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-gray-500">
-                                  <BadgeIcon className="h-3 w-3" strokeWidth={2.5} /> {reg.product}
-                                </p>
-                                <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100">
-                                  <div className="h-full rounded-full bg-teal-500" style={{ width: `${pct}%` }} />
-                                </div>
-                                <div className="mt-1 flex justify-between text-[10px] text-gray-400">
-                                  <span>Selesai {pct}%</span>
-                                  <span>{used}/{total} sesi</span>
-                                </div>
-                              </div>
-                            </button>
-                          );
-                        })}
-                        <button
-                          onClick={openEnrollWizard}
-                          className="flex min-h-[140px] flex-col items-center justify-center gap-1.5 rounded-2xl border-2 border-dashed border-gray-200 p-4 text-gray-400 transition-colors hover:border-teal-300 hover:text-teal-500"
-                        >
-                          <Plus className="h-6 w-6" strokeWidth={2} />
-                          <span className="text-xs font-medium">Tambah Kelas</span>
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="rounded-2xl border-2 border-dashed border-gray-200 p-8 text-center">
-                        <BookOpen className="mx-auto mb-2 h-12 w-12 text-gray-300" strokeWidth={1.5} />
-                        <h3 className="mb-1 font-semibold text-gray-700">Belum ada kelas aktif</h3>
-                        <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
-                        <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-teal-700">✨ Daftar Kelas</button>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Riwayat (conditional) */}
-                  {completedRegs.length > 0 && (
-                    <div>
-                      <h3 className="mb-3 inline-flex items-center gap-2 text-base font-semibold text-gray-800">
-                        <Trophy className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
-                        Riwayat
-                      </h3>
-                      <div className="space-y-2">
-                        {completedRegs.map(reg => {
-                          const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
-                          const BadgeIcon = badge.icon;
-                          return (
-                            <div key={reg.id} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3">
-                              <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
-                              <div className="flex-1">
-                                <div className="flex items-center gap-1.5">
-                                  <p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p>
-                                  <span className={`inline-flex items-center rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${badge.bg} ${badge.color}`}><BadgeIcon className="h-2.5 w-2.5" strokeWidth={2.5} /></span>
-                                </div>
-                                <p className="text-xs text-gray-400">{reg.sessions_used}/{reg.sessions_total} sesi</p>
-                              </div>
-                              <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${reg.status === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"}`}>{reg.status}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* ════ KOLOM PROFIL (kiri) ════ */}
-                <div className="flex flex-col gap-4 lg:order-1">
-                  {/* Kartu profil — header dekoratif + avatar square overlap */}
-                  <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
-                    <div className="relative h-20 bg-gradient-to-br from-[#0F6E56] to-[#1A9E9E]">
-                      <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-[#FFC93C]/25" />
-                      <div className="absolute right-9 bottom-2 h-7 w-7 rounded-full bg-white/10" />
-                    </div>
-                    <div className="px-4 pb-4">
-                      <div className="-mt-10 mb-2">
+                      {/* body — JANGAN overflow-hidden, avatar overlap aman */}
+                      <div className="-mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
                         {avatarUrl ? (
-                          <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-16 w-16 rounded-2xl object-cover ring-4 ring-white" />
+                          <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-28 w-28 rounded-3xl object-cover shadow-lg ring-4 ring-white" />
                         ) : (
-                          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-100 text-2xl font-bold text-teal-700 ring-4 ring-white">
+                          <div className="flex h-28 w-28 items-center justify-center rounded-3xl bg-[#16796E]/10 text-4xl font-extrabold text-[#16796E] shadow-lg ring-4 ring-white">
                             {firstName?.[0]?.toUpperCase() || "S"}
                           </div>
                         )}
-                      </div>
-                      <p className="text-base font-bold text-gray-800">{firstName}</p>
-                      <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
-                        <span>{xp.emoji}</span> {xp.rank}
-                      </span>
-                      <div className="mt-3 grid grid-cols-2 gap-2">
-                        <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3 text-center">
-                          <BookOpen className="mx-auto h-4 w-4 text-teal-600" strokeWidth={2.5} />
-                          <div className="mt-1 text-xl font-bold leading-none text-gray-800">{activeRegs.length}</div>
-                          <div className="mt-1 text-[10px] text-gray-400">Kursus Aktif</div>
-                        </div>
-                        <div className="rounded-xl border border-gray-100 bg-gray-50/70 p-3 text-center">
-                          <GraduationCap className="mx-auto h-4 w-4 text-amber-500" strokeWidth={2.5} />
-                          <div className="mt-1 text-xl font-bold leading-none text-gray-800">{totalUsedSessions}</div>
-                          <div className="mt-1 text-[10px] text-gray-400">Sesi Selesai</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Jadwal Mendatang */}
-                  {upcomingSchedules.length > 0 && (
-                    <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
-                      <h3 className="mb-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-700">
-                        <Calendar className="h-4 w-4 text-teal-600" strokeWidth={2.5} />
-                        Jadwal Mendatang
-                      </h3>
-                      <div className="space-y-2">
-                        {upcomingSchedules.slice(0, 5).map(s => {
-                          const d = new Date(s.scheduled_at);
-                          const reg = student?.registrations?.find(r => r.id === s.registration_id);
-                          return (
-                            <div key={s.id} className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-gray-50">
-                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50">
-                                <img src={getFlagUrl(reg?.language || "")} alt="" className="h-4 w-4 object-contain" />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <p className="truncate text-sm font-medium text-gray-900">{reg?.language}</p>
-                                <p className="text-[10px] text-gray-500">
-                                  {d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
-                                </p>
-                              </div>
+                        <h2 className="mt-4 text-[22px] font-extrabold leading-tight text-[#12172B]">{firstName}</h2>
+                        <span className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#F2CB05]/20 px-2.5 py-1 text-xs font-bold text-[#B9890A]">
+                          <span>{xp.emoji}</span> {xp.rank}
+                        </span>
+
+                        {/* stats: Bahasa Aktif + Sertifikat CEFR */}
+                        <div className="mt-5 grid grid-cols-2 gap-3">
+                          <div className="rounded-2xl border border-slate-100 p-4 shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)]">
+                            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
+                              <Languages className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Badges (conditional) */}
-                  {badges.length > 0 && (
-                    <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
-                      <h3 className="mb-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-700">
-                        <Award className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
-                        Badges ({badges.length})
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {badges.map(b => (
-                          <div key={b.id} className="flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5">
-                            <span className="text-base">{b.badge_icon}</span>
-                            <span className="text-xs font-medium text-gray-700">{b.badge_label}</span>
+                            <div className="text-2xl font-extrabold leading-none text-[#12172B]">{activeLangCount}</div>
+                            <div className="mt-1.5 text-[12px] font-medium text-gray-500">Bahasa Aktif</div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                          <div className="rounded-2xl border border-slate-100 p-4 shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)]">
+                            <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2CB05]/20 text-[#B9890A]">
+                              <Award className="h-[18px] w-[18px]" strokeWidth={2.2} />
+                            </div>
+                            <span className="inline-flex items-center rounded-md bg-[#F2CB05]/20 px-2 py-0.5 text-[11px] font-bold text-[#B9890A]">Segera</span>
+                            <div className="mt-1.5 text-[12px] font-medium text-gray-500">Sertifikat CEFR</div>
+                          </div>
+                        </div>
 
-              </div>
+                        {/* jadwal mendatang */}
+                        <div className="mt-7 flex items-center justify-between">
+                          <h3 className="text-[16px] font-extrabold text-[#12172B]">Jadwal Mendatang</h3>
+                          <button onClick={() => setActiveTab("jadwal")} className="text-[12px] font-bold text-[#16796E] hover:text-[#0F5A52]">Lihat Semua</button>
+                        </div>
+
+                        {upcomingSchedules.length > 0 ? (
+                          <div className="mt-3 flex flex-col gap-3 overflow-y-auto pb-2 pr-1" style={{ maxHeight: 320 }}>
+                            {upcomingSchedules.slice(0, 5).map((s) => {
+                              const d = new Date(s.scheduled_at);
+                              const reg = student?.registrations?.find((r) => r.id === s.registration_id);
+                              const lang = reg?.language || "";
+                              return (
+                                <button
+                                  key={s.id}
+                                  onClick={() => setActiveTab("jadwal")}
+                                  className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left shadow-[0_10px_30px_-20px_rgba(18,23,43,0.5)] transition-shadow hover:shadow-[0_16px_36px_-18px_rgba(18,23,43,0.5)]"
+                                >
+                                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="block truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
+                                    <span className="block text-[12px] font-medium text-gray-500">
+                                      {d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
+                                    </span>
+                                  </span>
+                                  <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
+                                </button>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <div className="mt-3 rounded-2xl border border-dashed border-slate-200 p-5 text-center">
+                            <Calendar className="mx-auto mb-1.5 h-7 w-7 text-slate-300" strokeWidth={1.6} />
+                            <p className="text-[13px] font-medium text-gray-500">Belum ada jadwal mendatang</p>
+                          </div>
+                        )}
+                      </div>
+                    </aside>
+
+                    {/* ════ KOLOM UTAMA (kanan di desktop) ════ */}
+                    <section className="order-1 flex min-w-0 flex-col gap-7 bg-[#F5F6F8] p-6 lg:order-2 lg:p-8">
+
+                      {/* top bar: greeting + search (search = stub, lihat catatan) */}
+                      <div className="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                          <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <span>👋</span></h1>
+                          <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
+                        </div>
+                        <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
+                          <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
+                          <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
+                        </label>
+                      </div>
+
+                      {/* promo banner */}
+                      <div className="relative overflow-hidden rounded-[2rem] bg-[#16796E] px-7 py-8 text-white sm:px-9 sm:py-9">
+                        <div className="relative z-10 max-w-[60%]">
+                          <h2 className="text-[22px] font-extrabold leading-snug sm:text-[26px]">Pilihan Tepat untuk Naik Level</h2>
+                          <p className="mt-2 max-w-[420px] text-[14px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
+                          <button onClick={openEnrollWizard} className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
+                            Lihat Kelas <ArrowRight className="h-4 w-4" />
+                          </button>
+                        </div>
+                        <div className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 items-center gap-3 opacity-95 sm:flex">
+                          <div className="h-28 w-28 rotate-[8deg] bg-[#F2CB05]" style={{ clipPath: HEXA }} />
+                          <div className="-ml-10 mt-8 h-36 w-36 -rotate-[10deg] bg-[#F2CB05]/70" style={{ clipPath: HEXA }} />
+                          <div className="-ml-6 -mt-16 h-20 w-20 bg-[#F2CB05]" style={{ clipPath: HEXA }} />
+                        </div>
+                      </div>
+
+                      {/* Perlu Perhatian — Menunggu Pembayaran (Xendit utuh, copy verbatim dari blok lama) */}
+                      {pendingPaymentRegs.length > 0 && (
+                        <div className="rounded-[2rem] border border-amber-200 bg-amber-50/60 p-5">
+                          <div className="mb-3 flex items-center gap-2">
+                            <h3 className="inline-flex items-center gap-2 text-base font-semibold text-amber-800">
+                              <Clock className="h-4 w-4 text-amber-600" strokeWidth={2.5} />
+                              Perlu Perhatian
+                            </h3>
+                            <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-amber-200 px-1.5 text-[10px] font-bold text-amber-800">
+                              {pendingPaymentRegs.length}
+                            </span>
+                          </div>
+                          <div className="space-y-3">
+                            {pendingPaymentRegs.map((reg: any, i: number) => (
+                              <UnifiedCourseCard
+                                key={reg.id}
+                                reg={reg}
+                                index={i}
+                                userId={user?.id}
+                                variant="pending"
+                                renderPayment={(r, uid) => (
+                                  <PaymentCard
+                                    registration={r as any}
+                                    userId={uid}
+                                    onUploadSuccess={() => window.location.reload()}
+                                    onRegenerateXendit={async () => {
+                                      try {
+                                        const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
+                                        const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
+                                        const desc = `${programLabel} — ${langLabel}`;
+                                        const res = await fetch(
+                                          "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
+                                          {
+                                            method: "POST",
+                                            headers: {
+                                              "Content-Type": "application/json",
+                                              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+                                            },
+                                            body: JSON.stringify({
+                                              registration_id: r.id,
+                                              amount: r.total_amount || 0,
+                                              description: desc,
+                                              payer_name: displayName,
+                                              payer_email: user?.email || "",
+                                              success_redirect_url: "https://linguo.id/akun/success",
+                                              failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+                                            }),
+                                          }
+                                        );
+                                        const data = await res.json();
+                                        if (data?.success && data?.invoice_url) {
+                                          await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
+                                          return data.invoice_url as string;
+                                        }
+                                        return null;
+                                      } catch (e) {
+                                        console.error("Regenerate Xendit error:", e);
+                                        return null;
+                                      }
+                                    }}
+                                  />
+                                )}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Kelas Kamu (cards + progress, klik -> ClassDetailModal) */}
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
+                          {activeRegs.length > 0 && (
+                            <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
+                          )}
+                        </div>
+
+                        {activeRegs.length > 0 ? (
+                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                            {activeRegs.map((reg: any, idx: number) => {
+                              const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                              const total = reg.sessions_total || 0;
+                              const used = reg.sessions_used || 0;
+                              const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
+                              const bg = CARD_BG[idx % CARD_BG.length];
+                              return (
+                                <button
+                                  key={reg.id}
+                                  onClick={() => setDetailReg(reg)}
+                                  className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] transition-transform hover:-translate-y-1"
+                                >
+                                  <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg}`}>
+                                    <span className="text-[64px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
+                                    <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                  </div>
+                                  <div className="px-2 pb-2 pt-4">
+                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                    <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
+                                    <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                      <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
+                                    </div>
+                                    <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+                                      <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{pct}%</span></span>
+                                      <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
+                                    </div>
+                                  </div>
+                                </button>
+                              );
+                            })}
+                            <button
+                              onClick={openEnrollWizard}
+                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-slate-200 p-4 text-gray-400 transition-colors hover:border-[#16796E]/40 hover:text-[#16796E]"
+                            >
+                              <Plus className="h-7 w-7" strokeWidth={2} />
+                              <span className="text-[13px] font-semibold">Tambah Kelas</span>
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                            <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas aktif</h3>
+                            <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
+                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]">✨ Daftar Kelas</button>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
+                      {teacherList.length > 0 && (
+                        <div>
+                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Pengajar Kamu</h2>
+                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
+                            {teacherList.map((t, i) => (
+                              <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4 shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)]">
+                                <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${ICON_TINT[i % ICON_TINT.length]}`}>{initials(t.name)}</span>
+                                <span className="min-w-0 flex-1">
+                                  <span className="block truncate text-[16px] font-extrabold text-[#12172B]">{t.name}</span>
+                                  <span className="block truncate text-[13px] font-medium text-gray-500">{t.count} Kelas · {Array.from(t.langs).join(", ")}</span>
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                    </section>
+                  </div>
+                );
+              })()}
             </motion.div>
           )}
 
