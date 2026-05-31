@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
-const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇳🇱 Belanda","🇸🇦 Arab","🇫🇷 Prancis","🇰🇷 Korea","🇵🇭 Tagalog","🇮🇹 Italia","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇩🇰 Denmark","🇫🇮 Finlandia"];
+const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇳🇱 Belanda","🇸🇦 Arab","🇫🇷 Prancis","🇰🇷 Korea","🇵🇭 Tagalog","🇮🇹 Italia","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇳🇴 Norwegia","🇫🇮 Finlandia"];
 
 const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
 
