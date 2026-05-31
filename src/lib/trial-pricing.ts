@@ -91,64 +91,6 @@ export function computeKidsTrialPrice(kidsType: string): number | null {
   return typeof p === "number" ? p : null;
 }
 
-// =============================================================================
-// linguo-patch:semi-private-pricing-v1
-// Pricing Semi Private (grup kecil 2–10 orang). Sumber kebenaran =
-// SEMI_PRIVATE_PRICE_BASIC dari admin Registrations.tsx. Index [cat][classSize-1]
-// (index 0 = 1 siswa, index 1 = 2 siswa, ... index 9 = 10 siswa). Angka =
-// TOTAL GRUP per sesi 60 menit, level BASIC. Kategori bahasa reuse
-// getLanguageCategory() di atas (huruf A–E identik dgn PRICE_CATEGORIES admin).
-// =============================================================================
-
-/** Total grup per sesi 60mnt, level BASIC, per kategori. index = classSize - 1. */
-export const SEMI_PRIVATE_PRICE_BASIC: Record<string, number[]> = {
-  A: [120000, 210000, 291000, 340000, 375000, 402000, 420000, 432000, 441000, 450000],
-  B: [110000, 190000, 260000, 300000, 325000, 342000, 350000, 352000, 351000, 350000],
-  C: [100000, 160000, 230000, 260000, 275000, 282000, 280000, 272000, 261000, 250000],
-  D: [ 90000, 150000, 200000, 220000, 225000, 222000, 210000, 192000, 171000, 150000],
-  E: [150000, 270000, 381000, 460000, 525000, 582000, 630000, 672000, 711000, 750000],
-};
-
-/** Multiplier level: A1 / A2 / B1-B2 / C1-C2. */
-export const LEVEL_MULTIPLIER: number[] = [1.0, 1.15, 1.3, 1.45];
-
-/** Level (string) -> tier index untuk LEVEL_MULTIPLIER. A1->0, A2->1, B1|B2->2, C1|C2->3. */
-export function getLevelTier(level: string): number {
-  const l = (level || "A1").toUpperCase();
-  if (l.startsWith("A1")) return 0;
-  if (l.startsWith("A2")) return 1;
-  if (l.startsWith("B1") || l.startsWith("B2")) return 2;
-  if (l.startsWith("C1") || l.startsWith("C2")) return 3;
-  return 0;
-}
-
-export interface SemiPrivatePrice {
-  totalGroup: number;
-  perStudent: number;
-}
-
-/**
- * Harga Semi Private per sesi. classSize 2–10. duration default 60 menit.
- * Return {0,0} kalau invalid / bahasa tak dikenal.
- */
-export function getSemiPrivatePrice(
-  language: string,
-  level: string,
-  classSize: number,
-  duration: number = 60
-): SemiPrivatePrice {
-  if (!language || classSize < 2 || classSize > 10) return { totalGroup: 0, perStudent: 0 };
-  const cat = getLanguageCategory(language);
-  if (!cat || !SEMI_PRIVATE_PRICE_BASIC[cat]) return { totalGroup: 0, perStudent: 0 };
-  const tier = getLevelTier(level || "A1");
-  const baseTotal60 = SEMI_PRIVATE_PRICE_BASIC[cat][classSize - 1];
-  const adjusted60 = baseTotal60 * LEVEL_MULTIPLIER[tier];
-  const dur = Number(duration) || 60;
-  const totalGroup = Math.round((adjusted60 * dur) / 60);
-  const perStudent = Math.round(totalGroup / classSize);
-  return { totalGroup, perStudent };
-}
-
 /** Format angka -> "Rp 100.000" */
 export function formatRupiah(n: number): string {
   return "Rp " + Math.round(n).toLocaleString("id-ID");

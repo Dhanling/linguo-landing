@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1
+import { getLanguageCategory, PRICE_A1_60MIN } from "@/lib/trial-pricing";
 
 import TokoCTA from "@/components/TokoCTA";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
@@ -965,7 +965,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       if (initialName) setFormName(initialName);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
@@ -978,7 +978,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [activeTab, setActiveTab] = useState("Populer");
   const [selTeacherType, setSelTeacherType] = useState<"lokal"|"native">("lokal");
   const [teacherPick, setTeacherPick] = useState(false);
-  const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
 
   const filtered = search.trim()
     ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i).filter(l=>l.toLowerCase().includes(search.toLowerCase()))
@@ -996,12 +995,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
-  // linguo-patch:funnel-semi-private-calc-v1 — harga semi private per sesi 60mnt (live)
-  const semiPrice = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, 60) : null;
 
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
-    {id:"Semi Private",icon:"🤝",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
+    {id:"Semi Private",icon:"🤝",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price:"Patungan grup — hemat per orang",highlight:false}, // linguo-patch:nav-semi-private-v1
     {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
@@ -1053,17 +1050,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       const teacherLine = selProgram==="Kelas Private"
         ? "👨‍🏫 Pengajar: " + (selTeacherType==="native"?"Native Speaker":"Lokal") + "\n"
         : "";
-      // linguo-patch:funnel-semi-private-calc-v1
-      const sp = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, 60) : null;
-      const semiLine = sp && sp.totalGroup>0
-        ? "👥 Jumlah peserta: " + classSize + " orang\n" +
-          "💰 Estimasi: " + fmtRp(sp.totalGroup) + "/sesi grup (" + fmtRp(sp.perStudent) + "/orang)\n"
-        : "";
       const waMsg =
         "Halo Admin Linguo, saya tertarik mendaftar:\n\n" +
         "📚 Program: " + selProgram + "\n" +
         teacherLine +
-        semiLine +
         "🌏 Bahasa: " + selLang + "\n" +
         "📊 Level: " + selLevel + "\n" +
         "🙋 Nama: " + formName + "\n" +
@@ -1246,7 +1236,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           )}
 
           {/* STEP 3 — Pilih Level */}
-          {step===3 && selProgram!=="Semi Private" && (
+          {step===3 && (
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
               <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
@@ -1271,61 +1261,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 ))}
               </div>
               {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
-            </motion.div>
-          )}
-
-          {/* STEP 3 (Semi Private) — Jumlah Orang + Level + Harga — linguo-patch:funnel-semi-private-calc-v1 */}
-          {step===3 && selProgram==="Semi Private" && (
-            <motion.div key="s3sp" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
-              <button onClick={()=>setStep(2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                <span className="text-sm font-medium">{selLang}</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">🤝 Semi Private</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Berapa orang dalam grup?</h3>
-              <p className="text-sm text-slate-500 mb-4">Makin banyak peserta, makin hemat per orang</p>
-              <div className="grid grid-cols-5 gap-2 mb-6">
-                {[2,3,4,5,6,7,8,9,10].map(n=>(
-                  <button key={n} onClick={()=>setClassSize(n)}
-                    className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${classSize===n?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                    {n}
-                  </button>
-                ))}
-              </div>
-
-              <h3 className="text-base font-bold text-slate-900 mb-1">Pilih level</h3>
-              <p className="text-sm text-slate-500 mb-3">Mulai dari mana?</p>
-              <div className="grid grid-cols-2 gap-2 mb-5">
-                {levels.map(lv=>(
-                  <button key={lv.id} onClick={()=>setSelLevel(lv.id)}
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border-2 text-left transition-all ${selLevel===lv.id?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
-                    <div className={`h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${selLevel===lv.id?"bg-[#1A9E9E] text-white":"bg-[#1A9E9E]/10 text-[#1A9E9E]"}`}>{lv.id}</div>
-                    <span className="text-xs font-bold leading-tight">{lv.label}</span>
-                  </button>
-                ))}
-              </div>
-
-              {selLevel && semiPrice && semiPrice.totalGroup>0 && (
-                <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-5">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs text-slate-500">Harga grup / sesi (60 menit)</span>
-                    <span className="text-sm font-bold text-slate-700">{fmtRp(semiPrice.totalGroup)}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Per orang ({classSize} peserta)</span>
-                    <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(semiPrice.perStudent)}<span className="text-xs font-medium text-slate-400">/orang</span></span>
-                  </div>
-                  <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Estimasi per sesi, total dibagi rata ke {classSize} peserta. Daftar bareng teman makin hemat 🎉</p>
-                </motion.div>
-              )}
-
-              <button disabled={!selLevel} onClick={()=>{if(selLevel)setStep(4)}}
-                className="w-full bg-[#1A9E9E] hover:bg-[#178888] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                {selLevel ? "Lanjut ke Data Diri →" : "Pilih level dulu"}
-              </button>
             </motion.div>
           )}
 
@@ -1421,20 +1356,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                     <span className="text-xs text-slate-500">Pengajar</span>
                     <span className="text-sm font-medium">{selTeacherType==="native"?"Native Speaker":"Lokal"}</span>
                   </div>
-                )}
-                {selProgram==="Semi Private" && (
-                  <>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-500">Jumlah peserta</span>
-                      <span className="text-sm font-medium">{classSize} orang</span>
-                    </div>
-                    {semiPrice && semiPrice.totalGroup>0 && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-slate-500">Estimasi / orang</span>
-                        <span className="text-sm font-bold text-[#1A9E9E]">{fmtRp(semiPrice.perStudent)}/sesi</span>
-                      </div>
-                    )}
-                  </>
                 )}
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Level</span>
