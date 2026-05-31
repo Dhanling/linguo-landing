@@ -347,6 +347,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [regulerSubOpen, setRegulerSubOpen] = useState(false);
   const [etpSubOpen, setEtpSubOpen] = useState(false);
   const [corpSubOpen, setCorpSubOpen] = useState(false); // __PATCH_NAV_CORPORATE_SUBMENU__
+  const [privateSubOpen, setPrivateSubOpen] = useState(false); // linguo-patch:nav-semi-private-v1
   const [scrolled, setScrolled] = useState(false);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
@@ -387,11 +388,36 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 <AnimatePresence>{progOpen&&(
                   <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
                     className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-visible">
-                    {/* Kelas Private */}
-                    <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setProgOpen(false)}}
-                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      Kelas Private
-                    </button>
+                    {/* Kelas Private — flyout submenu 1-on-1 / Semi Private — linguo-patch:nav-semi-private-v1 */}
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setPrivateSubOpen(true)}
+                      onMouseLeave={() => setPrivateSubOpen(false)}
+                    >
+                      <button
+                        onClick={() => setPrivateSubOpen((v) => !v)}
+                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
+                      >
+                        Kelas Private
+                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (privateSubOpen ? "rotate-0" : "-rotate-90")} />
+                      </button>
+                      {privateSubOpen && (
+                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
+                          <button
+                            onClick={() => { (window as any).__openFunnel?.("Kelas Private"); setProgOpen(false); setPrivateSubOpen(false); }}
+                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            🎓 Private 1-on-1
+                          </button>
+                          <button
+                            onClick={() => { (window as any).__openFunnel?.("Semi Private"); setProgOpen(false); setPrivateSubOpen(false); }}
+                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
+                          >
+                            🤝 Semi Private
+                          </button>
+                        </div>
+                      )}
+                    </div>
 {/* Kelas Reguler + sub-item Jadwal */}
                     <div
                       className="relative"
@@ -551,7 +577,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             {/* Scrollable nav items */}
             <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-1">
               <a href="/silabus/english/coba" onClick={()=>setOpen(false)} className="block py-3 text-base text-[#1A9E9E] font-semibold border-b border-gray-100 mb-2 pb-4">🎯 Placement Test Gratis</a>
-              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-base py-3 text-left">Kelas Private</button>
+              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-base py-3 text-left">Kelas Private 1-on-1</button>{/* linguo-patch:nav-semi-private-v1 */}
+              <button onClick={()=>{(window as any).__openFunnel?.("Semi Private");setOpen(false)}} className="text-base py-3 text-left">Semi Private</button>{/* linguo-patch:nav-semi-private-v1 */}
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-base py-3 text-left">Kelas Reguler</button>
               <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
               <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
@@ -971,6 +998,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
+    {id:"Semi Private",icon:"🤝",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price:"Patungan grup — hemat per orang",highlight:false}, // linguo-patch:nav-semi-private-v1
     {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
