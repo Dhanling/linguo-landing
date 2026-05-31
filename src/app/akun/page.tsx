@@ -2125,13 +2125,52 @@ export default function AkunPage() {
                     activeCount={activeRegs.length}
                   />
 
-                  {/* Active Classes */}
+                  {/* Stat chips — ringkasan progres */}
+                  <div className="grid grid-cols-3 gap-2.5">
+                    {[
+                      { Icon: BookOpen, label: "Kursus Aktif", value: activeRegs.length, color: "text-teal-600" },
+                      { Icon: GraduationCap, label: "Sesi Selesai", value: totalUsedSessions, color: "text-amber-500" },
+                      { Icon: Award, label: "Sertifikat", value: "Segera", color: "text-slate-400" },
+                    ].map((s, i) => (
+                      <div key={i} className="flex flex-col items-center gap-1 rounded-2xl border border-gray-100 bg-white px-3 py-3.5 text-center shadow-sm">
+                        <s.Icon className={`h-4 w-4 ${s.color}`} strokeWidth={2.5} />
+                        <span className="text-lg font-bold leading-none text-gray-800">{s.value}</span>
+                        <span className="text-[10px] font-medium leading-tight text-gray-400">{s.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Lanjutkan Belajar — pintu masuk LMS / belajar mandiri */}
+                  <button
+                    onClick={() => setActiveTab("materi")}
+                    className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#0F6E56] to-[#1A9E9E] p-5 text-left shadow-sm transition-transform active:scale-[0.99]"
+                  >
+                    <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#FFC93C]/20" />
+                    <div className="absolute -right-2 bottom-2 h-16 w-16 rounded-full bg-white/5" />
+                    <div className="relative flex items-start gap-3">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FFC93C] text-[#0F6E56]">
+                        <GraduationCap className="h-6 w-6" strokeWidth={2.5} />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#FFC93C]">
+                          Belajar Mandiri
+                        </span>
+                        <h3 className="mt-1.5 text-base font-bold text-white">Lanjutkan Belajar</h3>
+                        <p className="mt-0.5 text-xs text-white/80">Akses materi self-paced kamu — audio, kosakata, & kuis interaktif.</p>
+                        <span className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#0F6E56] transition-transform group-hover:translate-x-0.5">
+                          Buka Materi →
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Kelas Live Saya */}
                   {activeRegs.length > 0 ? (
                     <div>
                       <div className="flex items-center justify-between mb-3">
                         <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
                           <BookOpen className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
-                          Kursus Saya
+                          Kelas Live Saya
                         </h3>
                         <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
                       </div>
