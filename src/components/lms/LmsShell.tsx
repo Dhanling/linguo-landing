@@ -20,18 +20,15 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+// Brand palette — teal + yellow
 const TEAL = "#1A9E9E";
+const TEAL_DEEP = "#0F6E56";
+const YELLOW = "#FFC93C";
 
 export type Segment = "b2c" | "b2b";
 type ActiveKey = "dashboard" | "path" | "bahasa" | "sertifikat" | "pengaturan";
 
-type NavItem = {
-  key: ActiveKey;
-  label: string;
-  icon: any;
-  href?: string;
-  soon?: boolean;
-};
+type NavItem = { key: ActiveKey; label: string; icon: any; href?: string; soon?: boolean };
 
 const NAV: NavItem[] = [
   { key: "dashboard", label: "Dashboard", icon: LayoutDashboard, href: "/akun/belajar" },
@@ -48,7 +45,7 @@ export default function LmsShell({
   active: ActiveKey;
   children: ReactNode;
 }) {
-  const [open, setOpen] = useState(false); // mobile drawer
+  const [open, setOpen] = useState(false);
   const [name, setName] = useState<string>("");
   const [avatar, setAvatar] = useState<string>("");
   const [segment, setSegment] = useState<Segment>("b2c");
@@ -60,7 +57,6 @@ export default function LmsShell({
       } = await supabase.auth.getUser();
       if (!user) return;
 
-      // Defensive name/avatar resolution (profiles -> user_metadata -> email)
       let display = "";
       let pic = "";
       try {
@@ -84,34 +80,26 @@ export default function LmsShell({
       setName(display);
       setAvatar(pic);
 
-      // Segment resolution — default B2C.
-      // ?seg=b2b lets you preview the corporate view before the data path exists.
       const sp =
-        typeof window !== "undefined"
-          ? new URLSearchParams(window.location.search)
-          : null;
+        typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
       if (sp?.get("seg") === "b2b") {
         setSegment("b2b");
         return;
       }
-      // TODO(b2b): auto-detect corporate enrollment via corporate_class_participants
-      // once the link column / schema is confirmed, then setSegment("b2b").
+      // TODO(b2b): auto-detect via corporate_class_participants once schema confirmed.
     })();
   }, []);
 
   const initial = name?.[0]?.toUpperCase() || "S";
 
   const SidebarInner = (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col text-white">
       {/* Brand */}
-      <a href="/akun/belajar" className="flex items-center gap-2 px-5 py-5">
-        <span
-          className="flex h-9 w-9 items-center justify-center rounded-xl"
-          style={{ background: TEAL }}
-        >
+      <a href="/akun/belajar" className="flex items-center gap-2.5 px-5 py-5">
+        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
           <img src="/images/logo-white.png" alt="" className="h-5 w-5 object-contain" />
         </span>
-        <span className="text-[15px] font-bold text-slate-900">Linguo LMS</span>
+        <span className="text-[15px] font-bold">Linguo</span>
       </a>
 
       {/* Nav */}
@@ -125,12 +113,12 @@ export default function LmsShell({
             return (
               <div
                 key={item.key}
-                className={`${base} cursor-default text-slate-300`}
+                className={`${base} cursor-default text-white/35`}
                 title="Segera hadir"
               >
                 <Icon className="h-[18px] w-[18px]" />
                 <span className="flex-1">{item.label}</span>
-                <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-400">
+                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold text-white/55">
                   Segera
                 </span>
               </div>
@@ -142,11 +130,9 @@ export default function LmsShell({
               href={item.href}
               onClick={() => setOpen(false)}
               className={`${base} ${
-                isActive
-                  ? "text-white"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                isActive ? "font-semibold" : "text-white/75 hover:bg-white/10 hover:text-white"
               }`}
-              style={isActive ? { background: TEAL } : undefined}
+              style={isActive ? { background: YELLOW, color: TEAL_DEEP } : undefined}
             >
               <Icon className="h-[18px] w-[18px]" />
               {item.label}
@@ -155,34 +141,32 @@ export default function LmsShell({
         })}
       </nav>
 
-      {/* Profile + segment badge + logout */}
-      <div className="border-t border-slate-100 p-3">
+      {/* Profile + logout */}
+      <div className="border-t border-white/10 p-3">
         <div className="flex items-center gap-3 rounded-xl px-2 py-2">
           {avatar ? (
             <img
               src={avatar}
               alt=""
               referrerPolicy="no-referrer"
-              className="h-9 w-9 rounded-full object-cover ring-2 ring-teal-100"
+              className="h-9 w-9 rounded-full object-cover ring-2"
+              style={{ boxShadow: `0 0 0 2px ${YELLOW}` }}
             />
           ) : (
             <span
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-100 text-sm font-bold"
-              style={{ color: TEAL }}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold"
+              style={{ background: YELLOW, color: TEAL_DEEP }}
             >
               {initial}
             </span>
           )}
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-semibold text-slate-900">
-              {name || "Siswa"}
-            </p>
+            <p className="truncate text-sm font-semibold text-white">{name || "Siswa"}</p>
             <span
               className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
-                segment === "b2b"
-                  ? "bg-amber-100 text-amber-700"
-                  : "bg-teal-50 text-teal-700"
+                segment === "b2b" ? "" : "bg-white/15 text-white"
               }`}
+              style={segment === "b2b" ? { background: YELLOW, color: TEAL_DEEP } : undefined}
             >
               {segment === "b2b" ? (
                 <>
@@ -199,7 +183,7 @@ export default function LmsShell({
             await supabase.auth.signOut();
             window.location.href = "/akun";
           }}
-          className="mt-1 flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-500 hover:bg-rose-50 hover:text-rose-600"
+          className="mt-1 flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/10 hover:text-white"
         >
           <LogOut className="h-[18px] w-[18px]" /> Keluar
         </button>
@@ -210,23 +194,26 @@ export default function LmsShell({
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Desktop sidebar */}
-      <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-slate-200 bg-white lg:block">
+      <aside
+        className="fixed inset-y-0 left-0 hidden w-64 lg:block"
+        style={{ background: TEAL_DEEP }}
+      >
         {SidebarInner}
       </aside>
 
       {/* Mobile top bar */}
-      <header className="sticky top-0 z-40 flex h-14 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur lg:hidden">
-        <button onClick={() => setOpen(true)} aria-label="Buka menu" className="text-slate-600">
+      <header
+        className="sticky top-0 z-40 flex h-14 items-center gap-3 px-4 lg:hidden"
+        style={{ background: TEAL_DEEP }}
+      >
+        <button onClick={() => setOpen(true)} aria-label="Buka menu" className="text-white">
           <Menu className="h-6 w-6" />
         </button>
-        <span className="flex items-center gap-2">
-          <span
-            className="flex h-7 w-7 items-center justify-center rounded-lg"
-            style={{ background: TEAL }}
-          >
+        <span className="flex items-center gap-2 text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/15">
             <img src="/images/logo-white.png" alt="" className="h-4 w-4 object-contain" />
           </span>
-          <span className="font-bold text-slate-900">Linguo LMS</span>
+          <span className="font-bold">Linguo</span>
         </span>
       </header>
 
@@ -234,11 +221,11 @@ export default function LmsShell({
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-slate-900/40" onClick={() => setOpen(false)} />
-          <div className="absolute inset-y-0 left-0 w-72 bg-white shadow-xl">
+          <div className="absolute inset-y-0 left-0 w-72 shadow-xl" style={{ background: TEAL_DEEP }}>
             <button
               onClick={() => setOpen(false)}
               aria-label="Tutup menu"
-              className="absolute right-3 top-4 text-slate-400"
+              className="absolute right-3 top-4 text-white/70"
             >
               <X className="h-5 w-5" />
             </button>

@@ -11,6 +11,8 @@ const supabase = createClient(
 );
 
 const TEAL = "#1A9E9E";
+const TEAL_DEEP = "#0F6E56";
+const YELLOW = "#FFC93C";
 const LANGUAGE = "Vietnamese";
 
 type Module = {
@@ -159,28 +161,38 @@ export default function BelajarPage() {
   return (
     <LmsShell active="dashboard">
       {/* Hero */}
-      <div className="rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] p-5 text-white shadow-md shadow-teal-200/40 sm:p-6">
-        <p className="text-[12px] text-teal-100">Bahasa Vietnam · CEFR A1–B2</p>
-        <h1 className="mt-1 text-xl font-bold sm:text-2xl">Tiếng Việt</h1>
-        <p className="mt-1 text-sm text-teal-50">
-          {totalDone} dari {totalLessons} sesi selesai
-        </p>
-        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-white/25">
-          <div
-            className="h-full rounded-full bg-white transition-all"
-            style={{ width: `${overallPct}%` }}
-          />
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] p-5 text-white shadow-md shadow-teal-200/40 sm:p-6">
+        <div
+          className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rotate-12 rounded-3xl"
+          style={{ background: YELLOW, opacity: 0.9 }}
+        />
+        <div
+          className="pointer-events-none absolute right-20 top-12 h-16 w-16 rotate-12 rounded-2xl"
+          style={{ background: YELLOW, opacity: 0.35 }}
+        />
+        <div className="relative">
+          <p className="text-[12px] text-teal-100">Bahasa Vietnam · CEFR A1–B2</p>
+          <h1 className="mt-1 text-xl font-bold sm:text-2xl">Tiếng Việt</h1>
+          <p className="mt-1 text-sm text-teal-50">
+            {totalDone} dari {totalLessons} sesi selesai
+          </p>
+          <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-white/25">
+            <div
+              className="h-full rounded-full transition-all"
+              style={{ width: `${overallPct}%`, background: YELLOW }}
+            />
+          </div>
+          {resume && (
+            <a
+              href={`/akun/belajar/${resume.id}`}
+              className="mt-4 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold"
+              style={{ background: YELLOW, color: TEAL_DEEP }}
+            >
+              <PlayCircle className="h-4 w-4" />
+              {totalDone === 0 ? "Mulai belajar" : "Lanjutkan"} — {resume.title}
+            </a>
+          )}
         </div>
-        {resume && (
-          <a
-            href={`/akun/belajar/${resume.id}`}
-            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold"
-            style={{ color: TEAL }}
-          >
-            <PlayCircle className="h-4 w-4" />
-            {totalDone === 0 ? "Mulai belajar" : "Lanjutkan"} — {resume.title}
-          </a>
-        )}
       </div>
 
       {/* Catalog */}
