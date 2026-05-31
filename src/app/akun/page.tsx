@@ -16,6 +16,9 @@ import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
+import StudentShell from '@/components/akun/StudentShell';
+import LmsKatalog from '@/components/lms/LmsKatalog';
+import LmsLesson from '@/components/lms/LmsLesson';
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import PerpustakaanSaya from '@/components/PerpustakaanSaya';
 import { Spinner } from "@/components/Spinner";
@@ -1360,6 +1363,15 @@ export default function AkunPage() {
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun">("beranda");
+  const [lmsSesi, setLmsSesi] = useState<string | null>(null);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const sp = new URLSearchParams(window.location.search);
+    const menu = sp.get("menu");
+    if (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun") setActiveTab(menu);
+    const sesi = sp.get("sesi");
+    if (sesi) { setActiveTab("materi"); setLmsSesi(sesi); }
+  }, []);
   // Booking Modal
   const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
   const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
@@ -2068,7 +2080,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20 lg:pb-8">
+    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl}>
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
       {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
@@ -2459,6 +2471,13 @@ export default function AkunPage() {
 
           {activeTab === "materi" && (
             <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto space-y-4">
+              <LmsKatalog
+                onOpen={(id) => {
+                  setLmsSesi(id);
+                  if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
+                }}
+              />
+
               <h2 className="text-lg font-bold text-gray-900">Materi Belajar</h2>
 
               {/* Per-course silabus links */}
@@ -2748,6 +2767,16 @@ export default function AkunPage() {
 
       {/* Footer (desktop) */}
       <div className="hidden lg:block text-center py-8 text-xs text-gray-400">© 2026 Linguo.id — Everyone Can Be a Polyglot</div>
-    </div>
+
+      {lmsSesi && (
+        <div className="fixed inset-0 z-[60] overflow-y-auto bg-slate-50">
+          <LmsLesson
+            lessonId={lmsSesi}
+            onClose={() => { setLmsSesi(null); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi"); }}
+            onNavigate={(id) => { setLmsSesi(id); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`); }}
+          />
+        </div>
+      )}
+    </StudentShell>
   );
 }
