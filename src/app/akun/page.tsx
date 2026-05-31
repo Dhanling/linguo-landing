@@ -2111,288 +2111,276 @@ export default function AkunPage() {
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               {/* Desktop: 2 column layout */}
-              <div className="max-w-3xl mx-auto space-y-5">
+              <div className="max-w-3xl mx-auto flex flex-col gap-6">
+                {/* Greeting — teks polos (bukan blok) */}
+                <div>
+                  <p className="text-sm text-gray-500">{getGreeting()},</p>
+                  <h2 className="mt-0.5 text-2xl font-bold text-gray-800">{firstName} 👋</h2>
+                  <p className="mt-1 text-sm text-gray-500">Yuk lanjut belajar bahasa hari ini!</p>
+                </div>
 
-                {/* Left Column — Main Content */}
-                <div className="space-y-5">
-                  {/* Welcome + XP Banner */}
-                  <CompactHeroBanner
-                    firstName={firstName}
-                    greeting={getGreeting()}
-                    rankEmoji={xp.emoji}
-                    rankLabel={xp.rank}
-                    streak={streak}
-                    activeCount={activeRegs.length}
-                  />
-
-                  {/* Stat chips — ringkasan progres */}
-                  <div className="grid grid-cols-3 gap-2.5">
+                {/* Profile strip — avatar square-rounded + nama + rank | stat chips */}
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center gap-3">
+                    {avatarUrl ? (
+                      <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-14 w-14 rounded-2xl object-cover ring-1 ring-gray-100" />
+                    ) : (
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-100 text-xl font-bold text-teal-700">
+                        {firstName?.[0]?.toUpperCase() || "S"}
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-base font-bold text-gray-800">{firstName}</p>
+                      <span className="mt-0.5 inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
+                        <span>{xp.emoji}</span> {xp.rank}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2.5 sm:flex">
                     {[
                       { Icon: BookOpen, label: "Kursus Aktif", value: activeRegs.length, color: "text-teal-600" },
                       { Icon: GraduationCap, label: "Sesi Selesai", value: totalUsedSessions, color: "text-amber-500" },
                       { Icon: Award, label: "Sertifikat", value: "Segera", color: "text-slate-400" },
                     ].map((s, i) => (
-                      <div key={i} className="flex flex-col items-center gap-1 rounded-2xl border border-gray-100 bg-white px-3 py-3.5 text-center shadow-sm">
+                      <div key={i} className="flex min-w-[78px] flex-col items-center gap-1 rounded-2xl border border-gray-100 bg-white px-3 py-3 text-center shadow-sm">
                         <s.Icon className={`h-4 w-4 ${s.color}`} strokeWidth={2.5} />
                         <span className="text-lg font-bold leading-none text-gray-800">{s.value}</span>
                         <span className="text-[10px] font-medium leading-tight text-gray-400">{s.label}</span>
                       </div>
                     ))}
                   </div>
+                </div>
 
-                  {/* Lanjutkan Belajar — pintu masuk LMS / belajar mandiri */}
-                  <button
-                    onClick={() => setActiveTab("materi")}
-                    className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#0F6E56] to-[#1A9E9E] p-5 text-left shadow-sm transition-transform active:scale-[0.99]"
-                  >
-                    <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#FFC93C]/20" />
-                    <div className="absolute -right-2 bottom-2 h-16 w-16 rounded-full bg-white/5" />
-                    <div className="relative flex items-start gap-3">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FFC93C] text-[#0F6E56]">
-                        <GraduationCap className="h-6 w-6" strokeWidth={2.5} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#FFC93C]">
-                          Belajar Mandiri
-                        </span>
-                        <h3 className="mt-1.5 text-base font-bold text-white">Lanjutkan Belajar</h3>
-                        <p className="mt-0.5 text-xs text-white/80">Akses materi self-paced kamu — audio, kosakata, & kuis interaktif.</p>
-                        <span className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#0F6E56] transition-transform group-hover:translate-x-0.5">
-                          Buka Materi →
-                        </span>
-                      </div>
+                {/* Section 1 — Lanjutkan Belajar (pintu masuk LMS) */}
+                <button
+                  onClick={() => setActiveTab("materi")}
+                  className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#0F6E56] to-[#1A9E9E] p-5 text-left shadow-sm transition-transform active:scale-[0.99]"
+                >
+                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#FFC93C]/20" />
+                  <div className="absolute -right-2 bottom-2 h-16 w-16 rounded-full bg-white/5" />
+                  <div className="relative flex items-center gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFC93C] text-[#0F6E56]">
+                      <GraduationCap className="h-6 w-6" strokeWidth={2.5} />
                     </div>
-                  </button>
+                    <div className="min-w-0 flex-1">
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-[#FFC93C]">Belajar Mandiri</span>
+                      <h3 className="text-base font-bold text-white">Lanjutkan Belajar</h3>
+                      <p className="mt-0.5 text-xs text-white/80">Akses materi self-paced — audio, kosakata & kuis interaktif.</p>
+                    </div>
+                    <span className="hidden shrink-0 items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-semibold text-[#0F6E56] transition-transform group-hover:translate-x-0.5 sm:inline-flex">
+                      Buka Materi →
+                    </span>
+                  </div>
+                </button>
 
-                  {/* Kelas Live Saya */}
-                  {activeRegs.length > 0 ? (
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
-                          <BookOpen className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
-                          Kelas Live Saya
-                        </h3>
-                        <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline sm:hidden">+ Tambah</button>
-                      </div>
-                      {showProductGrouping ? (
-                        <div className="space-y-6">
-                          {groupedActiveRegs.map((group) => {
-                            const groupBadge = PRODUCT_BADGE[group.product] || PRODUCT_BADGE["Kelas Private"];
-                            const GroupIcon = groupBadge.icon;
-                            return (
-                              <div key={group.product}>
-                                <h4 className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                                  <GroupIcon className="w-4 h-4 text-gray-600" strokeWidth={2.5} />
-                                  <span>{group.product}</span>
-                                  <span className="text-[10px] font-medium text-gray-400">({group.regs.length})</span>
-                                </h4>
-                                <div className="space-y-4">
-                                  {group.regs.map((reg: any, i: number) => (
-                                    <UnifiedCourseCard
-                                      key={reg.id}
-                                      reg={reg as any}
-                                      index={i}
-                                      nextSchedule={upcomingSchedules.find(s => s.registration_id === reg.id)}
-                                      userId={user?.id}
-                                      onDetail={(r) => setDetailReg(r)}
-                                      onBooking={(r) => openBooking(r as any)}
-                                      renderPayment={(r, uid) => (
-                                        <PaymentCard
-                                          registration={r as any}
-                                          userId={uid}
-                                          onUploadSuccess={() => window.location.reload()}
-                                        />
-                                      )}
-                                      variant="active"
-                                    />
-                                  ))}
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ) : (
-                        <div className="space-y-4">
-                          {activeRegs.map((reg, i) => (
-                            <UnifiedCourseCard
-                              key={reg.id}
-                              reg={reg as any}
-                              index={i}
-                              nextSchedule={upcomingSchedules.find(s => s.registration_id === reg.id)}
-                              userId={user?.id}
-                              onDetail={(r) => setDetailReg(r)}
-                              onBooking={(r) => openBooking(r as any)}
-                              renderPayment={(r, uid) => (
-                                <PaymentCard
-                                  registration={r as any}
-                                  userId={uid}
-                                  onUploadSuccess={() => window.location.reload()}
-                                />
-                              )}
-                              variant="active"
+                {/* Perlu Perhatian — Menunggu Pembayaran (conditional, logika Xendit utuh) */}
+                {pendingPaymentRegs.length > 0 && (
+                  <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-base font-semibold text-amber-800 inline-flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-amber-600" strokeWidth={2.5} />
+                        Perlu Perhatian
+                      </h3>
+                      <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-200 text-amber-800 text-[10px] font-bold">
+                        {pendingPaymentRegs.length}
+                      </span>
+                    </div>
+                    <div className="space-y-3">
+                      {pendingPaymentRegs.map((reg: any, i: number) => (
+                        <UnifiedCourseCard
+                          key={reg.id}
+                          reg={reg}
+                          index={i}
+                          userId={user?.id}
+                          variant="pending"
+                          renderPayment={(r, uid) => (
+                            <PaymentCard
+                              registration={r as any}
+                              userId={uid}
+                              onUploadSuccess={() => window.location.reload()}
+                              onRegenerateXendit={async () => {
+                                try {
+                                  const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
+                                  const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
+                                  const desc = `${programLabel} — ${langLabel}`;
+                                  const res = await fetch(
+                                    "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
+                                    {
+                                      method: "POST",
+                                      headers: {
+                                        "Content-Type": "application/json",
+                                        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+                                      },
+                                      body: JSON.stringify({
+                                        registration_id: r.id,
+                                        amount: r.total_amount || 0,
+                                        description: desc,
+                                        payer_name: displayName,
+                                        payer_email: user?.email || "",
+                                        success_redirect_url: "https://linguo.id/akun/success",
+                                        failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+                                      }),
+                                    }
+                                  );
+                                  const data = await res.json();
+                                  if (data?.success && data?.invoice_url) {
+                                    await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
+                                    return data.invoice_url as string;
+                                  }
+                                  return null;
+                                } catch (e) {
+                                  console.error("Regenerate Xendit error:", e);
+                                  return null;
+                                }
+                              }}
                             />
-                          ))}
-                        </div>
-                      )}
+                          )}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Section 2 — Kelas Saya (course cards, klik -> ClassDetailModal) */}
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
+                      Kelas Saya
+                    </h3>
+                    {activeRegs.length > 0 && (
+                      <button onClick={openEnrollWizard} className="text-xs font-medium text-teal-600 hover:underline">+ Tambah</button>
+                    )}
+                  </div>
+                  {activeRegs.length > 0 ? (
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                      {activeRegs.map((reg: any) => {
+                        const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                        const BadgeIcon = badge.icon;
+                        const total = reg.sessions_total || 0;
+                        const used = reg.sessions_used || 0;
+                        const pct = total > 0 ? Math.round((used / total) * 100) : 0;
+                        return (
+                          <button
+                            key={reg.id}
+                            onClick={() => setDetailReg(reg)}
+                            className="overflow-hidden rounded-2xl border border-gray-100 bg-white text-left shadow-sm transition-shadow hover:shadow-md"
+                          >
+                            <div className="flex h-16 items-center justify-center bg-teal-50">
+                              <span className="inline-flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1 shadow-sm">
+                                <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 object-contain" />
+                                <span className="text-xs font-semibold text-gray-700">{reg.language}</span>
+                              </span>
+                            </div>
+                            <div className="p-3">
+                              <p className="truncate text-sm font-semibold text-gray-800">{reg.language} — {reg.level || "TBD"}</p>
+                              <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-gray-500">
+                                <BadgeIcon className="h-3 w-3" strokeWidth={2.5} /> {reg.product}
+                              </p>
+                              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100">
+                                <div className="h-full rounded-full bg-teal-500" style={{ width: `${pct}%` }} />
+                              </div>
+                              <div className="mt-1 flex justify-between text-[10px] text-gray-400">
+                                <span>Selesai {pct}%</span>
+                                <span>{used}/{total} sesi</span>
+                              </div>
+                            </div>
+                          </button>
+                        );
+                      })}
+                      <button
+                        onClick={openEnrollWizard}
+                        className="flex min-h-[140px] flex-col items-center justify-center gap-1.5 rounded-2xl border-2 border-dashed border-gray-200 p-4 text-gray-400 transition-colors hover:border-teal-300 hover:text-teal-500"
+                      >
+                        <Plus className="h-6 w-6" strokeWidth={2} />
+                        <span className="text-xs font-medium">Tambah Kelas</span>
+                      </button>
                     </div>
                   ) : (
                     <div className="rounded-2xl border-2 border-dashed border-gray-200 p-8 text-center">
-                      <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-2" strokeWidth={1.5} />
-                      <h3 className="font-semibold text-gray-700 mb-1">Belum ada kelas aktif</h3>
-                      <p className="text-sm text-gray-500 mb-4">Mulai belajar bahasa baru sekarang!</p>
-                      <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white hover:bg-teal-700 transition-colors">✨ Daftar Kelas</button>
-                    </div>
-                  )}
-
-                  {/* Completed */}
-                  {completedRegs.length > 0 && (
-                    <div>
-                      <h3 className="text-base font-semibold text-gray-800 mb-3 inline-flex items-center gap-2">
-                        <Trophy className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
-                        Riwayat
-                      </h3>
-                      <div className="space-y-2">
-                        {completedRegs.map(reg => {
-                          const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
-                          const BadgeIcon = badge.icon;
-                          return (
-                            <div key={reg.id} className="flex items-center gap-3 rounded-xl bg-white border border-gray-100 px-4 py-3">
-                              <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
-                              <div className="flex-1">
-                                <div className="flex items-center gap-1.5">
-                                  <p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p>
-                                  <span className={`inline-flex items-center text-[9px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}><BadgeIcon className="w-2.5 h-2.5" strokeWidth={2.5} /></span>
-                                </div>
-                                <p className="text-xs text-gray-400">{reg.sessions_used}/{reg.sessions_total} sesi</p>
-                              </div>
-                              <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${reg.status === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"}`}>{reg.status}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Pending Payment — di left column, di bawah Kursus Saya */}
-                  {pendingPaymentRegs.length > 0 && (
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <h3 className="text-base font-semibold text-gray-800 inline-flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-amber-600" strokeWidth={2.5} />
-                          Menunggu Pembayaran
-                        </h3>
-                        <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-amber-100 text-amber-700 text-[10px] font-bold">
-                          {pendingPaymentRegs.length}
-                        </span>
-                      </div>
-                      <div className="space-y-3">
-                        {pendingPaymentRegs.map((reg: any, i: number) => (
-                          <UnifiedCourseCard
-                            key={reg.id}
-                            reg={reg}
-                            index={i}
-                            userId={user?.id}
-                            variant="pending"
-                            renderPayment={(r, uid) => (
-                              <PaymentCard
-                                registration={r as any}
-                                userId={uid}
-                                onUploadSuccess={() => window.location.reload()}
-                                onRegenerateXendit={async () => {
-                                  try {
-                                    const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
-                                    const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
-                                    const desc = `${programLabel} — ${langLabel}`;
-                                    const res = await fetch(
-                                      "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
-                                      {
-                                        method: "POST",
-                                        headers: {
-                                          "Content-Type": "application/json",
-                                          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-                                        },
-                                        body: JSON.stringify({
-                                          registration_id: r.id,
-                                          amount: r.total_amount || 0,
-                                          description: desc,
-                                          payer_name: displayName,
-                                          payer_email: user?.email || "",
-                                          success_redirect_url: "https://linguo.id/akun/success",
-                                          failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
-                                        }),
-                                      }
-                                    );
-                                    const data = await res.json();
-                                    if (data?.success && data?.invoice_url) {
-                                      await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
-                                      return data.invoice_url as string;
-                                    }
-                                    return null;
-                                  } catch (e) {
-                                    console.error("Regenerate Xendit error:", e);
-                                    return null;
-                                  }
-                                }}
-                              />
-                            )}
-                          />
-                        ))}
-                      </div>
+                      <BookOpen className="mx-auto mb-2 h-12 w-12 text-gray-300" strokeWidth={1.5} />
+                      <h3 className="mb-1 font-semibold text-gray-700">Belum ada kelas aktif</h3>
+                      <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
+                      <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-teal-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-teal-700">✨ Daftar Kelas</button>
                     </div>
                   )}
                 </div>
 
-                {/* Right Column — Sidebar (desktop only, mobile inline) */}
-                <div className="space-y-5 overflow-hidden">
-                  {/* Upcoming Schedules */}
-
-        {upcomingSchedules.length > 0 && (
-                    <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
-                        <Calendar className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
-                        Jadwal Mendatang
-                      </h3>
-                      <div className="space-y-2">
-                        {upcomingSchedules.slice(0, 5).map(s => {
-                          const d = new Date(s.scheduled_at);
-                          const reg = student.registrations.find(r => r.id === s.registration_id);
-                          return (
-                            <div key={s.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                              <div className="h-8 w-8 rounded-lg bg-teal-50 flex items-center justify-center shrink-0">
-                                <img src={getFlagUrl(reg?.language || "")} alt="" className="h-4 w-4 object-contain" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate">{reg?.language}</p>
-                                <p className="text-[10px] text-gray-500">
-                                  {d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
-                                </p>
-                              </div>
+                {/* Section 3 — Jadwal Mendatang */}
+                {upcomingSchedules.length > 0 && (
+                  <div>
+                    <h3 className="mb-3 inline-flex items-center gap-2 text-base font-semibold text-gray-800">
+                      <Calendar className="h-4 w-4 text-teal-600" strokeWidth={2.5} />
+                      Jadwal Mendatang
+                    </h3>
+                    <div className="space-y-2">
+                      {upcomingSchedules.slice(0, 5).map(s => {
+                        const d = new Date(s.scheduled_at);
+                        const reg = student?.registrations?.find(r => r.id === s.registration_id);
+                        return (
+                          <div key={s.id} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50">
+                              <img src={getFlagUrl(reg?.language || "")} alt="" className="h-4 w-4 object-contain" />
                             </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Badges */}
-                  {badges.length > 0 && (
-                    <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
-                        <Award className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
-                        Badges ({badges.length})
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {badges.map(b => (
-                          <div key={b.id} className="flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5">
-                            <span className="text-base">{b.badge_icon}</span>
-                            <span className="text-xs font-medium text-gray-700">{b.badge_label}</span>
+                            <div className="min-w-0 flex-1">
+                              <p className="truncate text-sm font-medium text-gray-900">{reg?.language}{reg?.product ? ` · ${reg.product}` : ""}</p>
+                              <p className="text-[11px] text-gray-500">
+                                {d.toLocaleDateString("id-ID", { weekday: "short", day: "numeric", month: "short" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
+                              </p>
+                            </div>
                           </div>
-                        ))}
-                      </div>
+                        );
+                      })}
                     </div>
-                  )}
+                  </div>
+                )}
 
-                </div>
+                {/* Riwayat (conditional) */}
+                {completedRegs.length > 0 && (
+                  <div>
+                    <h3 className="mb-3 inline-flex items-center gap-2 text-base font-semibold text-gray-800">
+                      <Trophy className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
+                      Riwayat
+                    </h3>
+                    <div className="space-y-2">
+                      {completedRegs.map(reg => {
+                        const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                        const BadgeIcon = badge.icon;
+                        return (
+                          <div key={reg.id} className="flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3">
+                            <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                            <div className="flex-1">
+                              <div className="flex items-center gap-1.5">
+                                <p className="text-sm font-medium text-gray-700">{reg.language} — {reg.level}</p>
+                                <span className={`inline-flex items-center rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${badge.bg} ${badge.color}`}><BadgeIcon className="h-2.5 w-2.5" strokeWidth={2.5} /></span>
+                              </div>
+                              <p className="text-xs text-gray-400">{reg.sessions_used}/{reg.sessions_total} sesi</p>
+                            </div>
+                            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${reg.status === "Selesai" ? "bg-emerald-50 text-emerald-600" : "bg-gray-100 text-gray-500"}`}>{reg.status}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Badges (conditional) */}
+                {badges.length > 0 && (
+                  <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                    <h3 className="mb-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gray-700">
+                      <Award className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
+                      Badges ({badges.length})
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {badges.map(b => (
+                        <div key={b.id} className="flex items-center gap-1.5 rounded-full bg-gray-50 px-3 py-1.5">
+                          <span className="text-base">{b.badge_icon}</span>
+                          <span className="text-xs font-medium text-gray-700">{b.badge_label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}

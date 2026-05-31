@@ -30,7 +30,6 @@ export default function StudentShell({
   active,
   onTabChange,
   firstName,
-  avatarUrl,
   segment = "b2c",
   children,
 }: {
@@ -41,8 +40,6 @@ export default function StudentShell({
   segment?: "b2c" | "b2b";
   children: ReactNode;
 }) {
-  const initial = firstName?.[0]?.toUpperCase() || "S";
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20 lg:pb-8">
       {/* Desktop sidebar (hidden on mobile — mobile keeps the existing bottom-nav) */}
@@ -50,11 +47,8 @@ export default function StudentShell({
         className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col text-white lg:flex"
         style={{ background: TEAL_DEEP }}
       >
-        <div className="flex items-center gap-2.5 px-5 py-5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
-            <img src="/images/logo-white.png" alt="" className="h-5 w-5 object-contain" />
-          </span>
-          <span className="text-[15px] font-bold">Linguo</span>
+        <div className="flex items-center px-5 py-5">
+          <img src="/images/logo-linguo-white-full.png" alt="Linguo" className="h-8 w-auto" />
         </div>
 
         <nav className="flex-1 space-y-1 px-3">
@@ -95,22 +89,6 @@ export default function StudentShell({
             onClick={() => onTabChange("akun")}
             className="flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left"
           >
-            {avatarUrl ? (
-              <img
-                src={avatarUrl}
-                alt=""
-                referrerPolicy="no-referrer"
-                className="h-9 w-9 rounded-full object-cover"
-                style={{ boxShadow: `0 0 0 2px ${YELLOW}` }}
-              />
-            ) : (
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold"
-                style={{ background: YELLOW, color: TEAL_DEEP }}
-              >
-                {initial}
-              </span>
-            )}
             <span className="min-w-0 flex-1">
               <span className="block truncate text-sm font-semibold text-white">
                 {firstName || "Siswa"}
