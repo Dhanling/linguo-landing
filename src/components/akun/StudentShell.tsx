@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { LayoutGrid, BookOpen, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
+import NotificationBell from "@/components/NotificationBell";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -34,6 +35,7 @@ function Tip({ label }: { label: string }) {
 export default function StudentShell({
   active,
   onTabChange,
+  studentId,
   children,
 }: {
   active: AkunTab;
@@ -41,6 +43,7 @@ export default function StudentShell({
   firstName?: string;
   avatarUrl?: string;
   segment?: "b2c" | "b2b";
+  studentId?: string;
   children: ReactNode;
 }) {
   const signOut = async () => {
@@ -49,14 +52,14 @@ export default function StudentShell({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:justify-center lg:p-6">
-      <div className="w-full lg:flex lg:max-w-[1320px] lg:rounded-[40px] lg:bg-[#16796E] lg:p-3 lg:shadow-[0_40px_80px_-30px_rgba(10,70,63,0.45)]">
+    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0">
+      <div className="w-full lg:flex lg:bg-[#16796E] lg:py-3 lg:pl-0 lg:pr-3 lg:shadow-[0_40px_80px_-30px_rgba(10,70,63,0.45)]">
 
         {/* ICON RAIL — desktop only */}
         <aside className="hidden w-[96px] shrink-0 flex-col items-center py-7 lg:flex">
-          {/* logo */}
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
+          {/* logo — white bubble langsung di atas teal, tanpa kotak putih */}
+          <div className="flex h-12 w-12 items-center justify-center">
+            <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
           </div>
 
           {/* nav */}
@@ -91,6 +94,11 @@ export default function StudentShell({
                 </button>
               );
             })}
+
+            {/* Notifikasi — controllable bell, dropdown buka ke kanan rail */}
+            {studentId && (
+              <NotificationBell variant="rail" userId={studentId} userType="student" />
+            )}
           </nav>
 
           {/* logout */}
@@ -104,7 +112,7 @@ export default function StudentShell({
         </aside>
 
         {/* WHITE PANEL — semua konten tab masuk sini */}
-        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col bg-white pb-20 lg:min-h-0 lg:rounded-[26px] lg:pb-0">
+        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col bg-white pb-20 lg:min-h-0 lg:rounded-l-[26px] lg:pb-0">
           {children}
         </div>
       </div>

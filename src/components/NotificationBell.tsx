@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { Bell } from 'lucide-react';
 import { supabase } from '@/lib/supabase-client';
 
 interface Notification {
@@ -15,9 +16,12 @@ interface Notification {
 interface Props {
   userId: string;
   userType: 'student' | 'teacher';
+  /** "bell" = floating emoji bell (default, dropdown opens left/down).
+   *  "rail" = icon-rail button (teal sidebar), dropdown opens to the right. */
+  variant?: 'bell' | 'rail';
 }
 
-export default function NotificationBell({ userId, userType }: Props) {
+export default function NotificationBell({ userId, userType, variant = 'bell' }: Props) {
   const [notifs, setNotifs] = useState<Notification[]>([]);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -25,6 +29,7 @@ export default function NotificationBell({ userId, userType }: Props) {
   const pollRef = useRef<NodeJS.Timeout | null>(null);
 
   const unreadCount = notifs.filter((n) => !n.is_read).length;
+  const isRail = variant === 'rail';
 
   useEffect(() => {
     if (!userId) return;
@@ -90,25 +95,51 @@ export default function NotificationBell({ userId, userType }: Props) {
     if (notif.url) window.location.href = notif.url;
   }
 
+  const dropdownPos = isRail
+    ? 'absolute left-[calc(100%+12px)] top-0 w-80'
+    : 'absolute right-0 top-11 w-80';
+
   return (
-    <div className="relative" ref={dropdownRef}>
-      {/* Bell button */}
-      <button
-        onClick={() => { setOpen(!open); if (!open && unreadCount > 0) markAllRead(); }}
-        className="relative w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
-        aria-label="Notifikasi"
-      >
-        <span className="text-xl">🔔</span>
-        {unreadCount > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-[16px] px-1 flex items-center justify-center ring-2 ring-white">
-            {unreadCount > 9 ? '9+' : unreadCount}
-          </span>
-        )}
-      </button>
+    <div className={isRail ? 'group relative' : 'relative'} ref={dropdownRef}>
+      {/* Trigger */}
+      {isRail ? (
+        <button
+          onClick={() => { setOpen(!open); if (!open && unreadCount > 0) markAllRead(); }}
+          className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
+            open
+              ? 'bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]'
+              : 'text-white/70 hover:bg-white/10 hover:text-white'
+          }`}
+          aria-label="Notifikasi"
+        >
+          <Bell className="h-[22px] w-[22px]" />
+          {unreadCount > 0 && (
+            <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-[#16796E]" />
+          )}
+          {!open && (
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">
+              Notifikasi
+            </span>
+          )}
+        </button>
+      ) : (
+        <button
+          onClick={() => { setOpen(!open); if (!open && unreadCount > 0) markAllRead(); }}
+          className="relative w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+          aria-label="Notifikasi"
+        >
+          <span className="text-xl">🔔</span>
+          {unreadCount > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-[16px] px-1 flex items-center justify-center ring-2 ring-white">
+              {unreadCount > 9 ? '9+' : unreadCount}
+            </span>
+          )}
+        </button>
+      )}
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 top-11 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden">
+        <div className={`${dropdownPos} bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden`}>
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
             <span className="font-semibold text-gray-900">Notifikasi</span>

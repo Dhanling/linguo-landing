@@ -10,8 +10,7 @@ import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
 import PlacementPicker from '@/components/PlacementPicker';
 import OneSignalProvider from '@/components/OneSignalProvider';
-import NotificationBell from '@/components/NotificationBell';
-import UnifiedCourseCard from '@/components/akun/UnifiedCourseCard';
+import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
@@ -1379,6 +1378,7 @@ export default function AkunPage() {
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
   const [detailReg, setDetailReg] = useState<any>(null); // ISO string
+  const [pendingModalReg, setPendingModalReg] = useState<any>(null); // pending-payment popup
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
@@ -2079,7 +2079,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl}>
+    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id}>
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
       {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
@@ -2150,8 +2150,8 @@ export default function AkunPage() {
                         <div className="absolute bottom-3 right-6 h-12 w-12 rounded-full border-[7px] border-[#F2CB05]/80" />
                       </div>
 
-                      {/* body — JANGAN overflow-hidden, avatar overlap aman */}
-                      <div className="-mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
+                      {/* body — relative z-10 biar avatar naik di atas header teal (full keliatan) */}
+                      <div className="relative z-10 -mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
                         {avatarUrl ? (
                           <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-28 w-28 rounded-3xl object-cover shadow-lg ring-4 ring-white" />
                         ) : (
@@ -2253,69 +2253,41 @@ export default function AkunPage() {
                         </div>
                       </div>
 
-                      {/* Perlu Perhatian — Menunggu Pembayaran (Xendit utuh, copy verbatim dari blok lama) */}
+                      {/* Perlu Perhatian — card kecil (glyph + status), klik -> PaymentDetailModal */}
                       {pendingPaymentRegs.length > 0 && (
-                        <div className="rounded-[2rem] border border-amber-200 bg-amber-50/60 p-5">
-                          <div className="mb-3 flex items-center gap-2">
-                            <h3 className="inline-flex items-center gap-2 text-base font-semibold text-amber-800">
-                              <Clock className="h-4 w-4 text-amber-600" strokeWidth={2.5} />
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <h2 className="inline-flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]">
+                              <Clock className="h-5 w-5 text-amber-500" strokeWidth={2.5} />
                               Perlu Perhatian
-                            </h3>
-                            <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-amber-200 px-1.5 text-[10px] font-bold text-amber-800">
+                            </h2>
+                            <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-amber-100 px-1.5 text-[11px] font-bold text-amber-700">
                               {pendingPaymentRegs.length}
                             </span>
                           </div>
-                          <div className="space-y-3">
-                            {pendingPaymentRegs.map((reg: any, i: number) => (
-                              <UnifiedCourseCard
+                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                            {pendingPaymentRegs.map((reg: any) => (
+                              <button
                                 key={reg.id}
-                                reg={reg}
-                                index={i}
-                                userId={user?.id}
-                                variant="pending"
-                                renderPayment={(r, uid) => (
-                                  <PaymentCard
-                                    registration={r as any}
-                                    userId={uid}
-                                    onUploadSuccess={() => window.location.reload()}
-                                    onRegenerateXendit={async () => {
-                                      try {
-                                        const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
-                                        const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
-                                        const desc = `${programLabel} — ${langLabel}`;
-                                        const res = await fetch(
-                                          "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
-                                          {
-                                            method: "POST",
-                                            headers: {
-                                              "Content-Type": "application/json",
-                                              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-                                            },
-                                            body: JSON.stringify({
-                                              registration_id: r.id,
-                                              amount: r.total_amount || 0,
-                                              description: desc,
-                                              payer_name: displayName,
-                                              payer_email: user?.email || "",
-                                              success_redirect_url: "https://linguo.id/akun/success",
-                                              failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
-                                            }),
-                                          }
-                                        );
-                                        const data = await res.json();
-                                        if (data?.success && data?.invoice_url) {
-                                          await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
-                                          return data.invoice_url as string;
-                                        }
-                                        return null;
-                                      } catch (e) {
-                                        console.error("Regenerate Xendit error:", e);
-                                        return null;
-                                      }
-                                    }}
-                                  />
-                                )}
-                              />
+                                onClick={() => setPendingModalReg(reg)}
+                                className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
+                              >
+                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
+                                  <span className="text-[64px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
+                                  <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700">
+                                    <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum Bayar
+                                  </span>
+                                </div>
+                                <div className="px-2 pb-2 pt-4">
+                                  <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{PRODUCT_BADGE[reg.product]?.label || reg.product}</p>
+                                  <div className="mt-4 flex items-center justify-between">
+                                    <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
+                                    <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">Bayar <ChevronRight className="h-3.5 w-3.5" /></span>
+                                  </div>
+                                </div>
+                              </button>
                             ))}
                           </div>
                         </div>
@@ -2687,6 +2659,57 @@ export default function AkunPage() {
       {/* Booking Modal */}
       <OneSignalProvider />
       {detailReg && <ClassDetailModal reg={detailReg} onClose={() => setDetailReg(null)} />}
+
+      {/* Popup detail pembayaran (card kecil "Perlu Perhatian" -> klik) */}
+      {pendingModalReg && (
+        <PaymentDetailModal
+          reg={pendingModalReg}
+          userId={user?.id || ""}
+          onClose={() => setPendingModalReg(null)}
+          renderPayment={(r: any, uid: string) => (
+            <PaymentCard
+              registration={r as any}
+              userId={uid}
+              onUploadSuccess={() => window.location.reload()}
+              onRegenerateXendit={async () => {
+                try {
+                  const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
+                  const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
+                  const desc = `${programLabel} — ${langLabel}`;
+                  const res = await fetch(
+                    "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+                      },
+                      body: JSON.stringify({
+                        registration_id: r.id,
+                        amount: r.total_amount || 0,
+                        description: desc,
+                        payer_name: displayName,
+                        payer_email: user?.email || "",
+                        success_redirect_url: "https://linguo.id/akun/success",
+                        failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+                      }),
+                    }
+                  );
+                  const data = await res.json();
+                  if (data?.success && data?.invoice_url) {
+                    await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
+                    return data.invoice_url as string;
+                  }
+                  return null;
+                } catch (e) {
+                  console.error("Regenerate Xendit error:", e);
+                  return null;
+                }
+              }}
+            />
+          )}
+        />
+      )}
       {bookingReg && (
         <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4" onClick={() => !bookingSubmit && setBookingReg(null)}>
           <motion.div
