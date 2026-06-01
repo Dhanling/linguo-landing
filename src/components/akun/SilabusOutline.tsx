@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };
@@ -21,11 +27,17 @@ type Props = {
 
 type OpenSession = { s: Session; subCode: string; levelName: string };
 
+type LessonState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "none" }
+  | { status: "found"; lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean };
+
 function ContentSlot({ icon: Icon, label, hint }: { icon: any; label: string; hint: string }) {
   return (
     <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-[#F5F6F8]/60 px-3.5 py-3">
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-slate-400 ring-1 ring-slate-100">
-        <Icon className="h-4.5 w-4.5" strokeWidth={2} />
+        <Icon className="h-4 w-4" strokeWidth={2} />
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-[13px] font-bold text-[#12172B]">{label}</span>
@@ -47,6 +59,7 @@ export default function SilabusOutline({
   const [openLevel, setOpenLevel] = useState<string | null>(null);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [openSession, setOpenSession] = useState<OpenSession | null>(null);
+  const [lessonState, setLessonState] = useState<LessonState>({ status: "idle" });
 
   useEffect(() => {
     let alive = true;
@@ -75,6 +88,59 @@ export default function SilabusOutline({
       alive = false;
     };
   }, [slug, currentLevel]);
+
+  // cari lms_lesson yg match (bahasa + sublevel + nomor sesi) saat modal kebuka
+  useEffect(() => {
+    if (!openSession) {
+      setLessonState({ status: "idle" });
+      return;
+    }
+    let alive = true;
+    setLessonState({ status: "loading" });
+    (async () => {
+      try {
+        const { data: mod } = await supabase
+          .from("lms_modules")
+          .select("id")
+          .ilike("language", slug)
+          .eq("cefr_label", openSession.subCode)
+          .order("sort_order")
+          .limit(1)
+          .maybeSingle();
+        if (!alive) return;
+        if (!mod) {
+          setLessonState({ status: "none" });
+          return;
+        }
+        const { data: lessons } = await supabase
+          .from("lms_lessons")
+          .select("id")
+          .eq("module_id", (mod as any).id)
+          .order("sort_order");
+        if (!alive) return;
+        const lesson = (lessons as any[] | null)?.[openSession.s.number - 1];
+        if (!lesson) {
+          setLessonState({ status: "none" });
+          return;
+        }
+        const { data: blocks } = await supabase
+          .from("lms_blocks")
+          .select("type, lms_quiz_questions(id)")
+          .eq("lesson_id", lesson.id);
+        if (!alive) return;
+        const bl = (blocks as any[]) || [];
+        const quizCount = bl.reduce((a, b) => a + ((b.lms_quiz_questions || []).length), 0);
+        const hasAudio = bl.some((b) => b.type === "audio");
+        const hasMateri = bl.some((b) => b.type === "logic" || b.type === "vocab");
+        setLessonState({ status: "found", lessonId: lesson.id, quizCount, hasAudio, hasMateri });
+      } catch {
+        if (alive) setLessonState({ status: "none" });
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [openSession, slug]);
 
   if (state === "loading") {
     return (
@@ -252,11 +318,46 @@ export default function SilabusOutline({
               </div>
             ) : null}
 
-            <div className="mt-5 space-y-2">
-              <ContentSlot icon={Video} label="Rekaman / video sesi" hint="Link Google Drive / Zoom recording" />
-              <ContentSlot icon={FileText} label="File materi" hint="PDF / slide — berupa link" />
-              <ContentSlot icon={ClipboardList} label="Latihan & kuis" hint="Pilihan ganda + isian rumpang" />
-            </div>
+            {lessonState.status === "loading" ? (
+              <div className="mt-5 flex items-center justify-center rounded-xl border border-slate-100 bg-[#F5F6F8]/60 py-6">
+                <Loader2 className="h-5 w-5 animate-spin text-slate-300" />
+              </div>
+            ) : lessonState.status === "found" ? (
+              <div className="mt-5 rounded-2xl border border-[#16796E]/20 bg-[#16796E]/5 p-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#16796E] text-white">
+                    <BookOpen className="h-4 w-4" strokeWidth={2.2} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[13px] font-extrabold text-[#0F5A52]">Pelajaran interaktif tersedia</p>
+                    <p className="text-[11.5px] font-medium text-[#16796E]">
+                      {[
+                        lessonState.hasAudio ? "Audio" : null,
+                        lessonState.hasMateri ? "Materi" : null,
+                        lessonState.quizCount ? `${lessonState.quizCount} soal kuis` : null,
+                      ]
+                        .filter(Boolean)
+                        .join(" · ") || "Materi belajar"}
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={`/akun/belajar/${lessonState.lessonId}`}
+                  className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
+                >
+                  Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                </a>
+              </div>
+            ) : (
+              <div className="mt-5 space-y-2">
+                <ContentSlot icon={Video} label="Rekaman / video sesi" hint="Link Google Drive / Zoom recording" />
+                <ContentSlot icon={FileText} label="File materi" hint="PDF / slide — berupa link" />
+                <ContentSlot icon={ClipboardList} label="Latihan & kuis" hint="Pilihan ganda + isian rumpang" />
+                <p className="px-1 pt-1 text-[11.5px] font-medium leading-snug text-gray-400">
+                  Buat kelas live, rekaman &amp; materi sesi nyata ada di tab <span className="font-bold text-gray-500">Sesi &amp; Rekaman</span>.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       ) : null}
