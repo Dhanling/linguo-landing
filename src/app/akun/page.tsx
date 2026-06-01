@@ -1369,6 +1369,9 @@ export default function AkunPage() {
   const [materiSel, setMateriSel] = useState<string | null>(null);
   const [materiTab, setMateriTab] = useState<"sesi" | "materi">("sesi");
   const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
+  const [materiView, setMateriView] = useState<"live" | "mandiri" | "jelajahi">("live");
+  const [materiLang, setMateriLang] = useState<string | null>(null);
+  const [materiSearch, setMateriSearch] = useState("");
   useEffect(() => {
     if (typeof window === "undefined") return;
     const sp = new URLSearchParams(window.location.search);
@@ -1376,6 +1379,8 @@ export default function AkunPage() {
     if (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun") setActiveTab(menu);
     const sesi = sp.get("sesi");
     if (sesi) { setActiveTab("materi"); setLmsSesi(sesi); }
+    const view = sp.get("view");
+    if (view === "live" || view === "mandiri" || view === "jelajahi") { setActiveTab("materi"); setMateriView(view); }
   }, []);
   // Booking Modal
   const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
@@ -2562,6 +2567,32 @@ export default function AkunPage() {
                   { color: "#7C3AED", tintBg: "bg-violet-50", tintText: "text-violet-500" },
                 ];
                 const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
+                const LANGS = [
+                  { name: "English", slug: "english", glyph: "EN" },
+                  { name: "German", slug: "german", glyph: "DE" },
+                  { name: "Spanish", slug: "spanish", glyph: "ES" },
+                  { name: "French", slug: "french", glyph: "FR" },
+                  { name: "Japanese", slug: "japanese", glyph: "あ" },
+                  { name: "Korean", slug: "korean", glyph: "한" },
+                  { name: "Mandarin", slug: "mandarin", glyph: "中" },
+                  { name: "Arabic", slug: "arabic", glyph: "ع" },
+                  { name: "Russian", slug: "russian", glyph: "Я" },
+                  { name: "Dutch", slug: "dutch", glyph: "NL" },
+                  { name: "Italian", slug: "italian", glyph: "IT" },
+                  { name: "Turkish", slug: "turkish", glyph: "TR" },
+                  { name: "Portuguese", slug: "portuguese", glyph: "PT" },
+                  { name: "Thai", slug: "thai", glyph: "ก" },
+                  { name: "Hindi", slug: "hindi", glyph: "ह" },
+                  { name: "Polish", slug: "polish", glyph: "PL" },
+                  { name: "Vietnamese", slug: "vietnamese", glyph: "Vi" },
+                  { name: "Greek", slug: "greek", glyph: "Ω" },
+                ];
+                const LANGPAL = [
+                  { bg: "#EEEDFE", tx: "#3C3489" }, { bg: "#FAECE7", tx: "#993C1D" },
+                  { bg: "#E6F1FB", tx: "#0C447C" }, { bg: "#FBEAF0", tx: "#72243E" },
+                  { bg: "#E1F5EE", tx: "#085041" }, { bg: "#FAEEDA", tx: "#633806" },
+                  { bg: "#EAF3DE", tx: "#27500A" }, { bg: "#FCEBEB", tx: "#791F1F" },
+                ];
                 const liveClasses = activeRegs.filter((r: any) => r.status === "Aktif");
                 const pctOf = (r: any) => {
                   const t = r.sessions_total || 0; const u = r.sessions_used || 0;
@@ -2596,15 +2627,22 @@ export default function AkunPage() {
                 };
 
                 return (
-                  <div className="flex flex-col gap-8 p-6 lg:p-8">
+                  <div className="flex flex-col gap-6 p-6 lg:p-8">
                     {/* page title */}
                     <div>
                       <h1 className="text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Kelas &amp; Materi</h1>
                       <p className="mt-1 text-[13px] font-medium text-gray-500">{liveClasses.length} kelas live · semua materi belajar kamu di satu tempat</p>
                     </div>
 
-                    {/* ════ MASTER-DETAIL kelas live ════ */}
-                    {liveClasses.length > 0 && selected ? (
+                    {/* ════ SUB-TAB ════ */}
+                    <div className="inline-flex gap-1 self-start rounded-2xl bg-[#EEF1F4] p-1">
+                      {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"], ["jelajahi", "Jelajahi Bahasa"]] as const).map(([k, label]) => (
+                        <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-4 py-2 text-[13px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white shadow-sm" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                      ))}
+                    </div>
+
+                    {/* ════ VIEW: KELAS LIVE ════ */}
+                    {materiView === "live" && (liveClasses.length > 0 && selected ? (
                       <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:h-[560px]">
 
                         {/* LEFT list — desktop */}
@@ -2749,39 +2787,96 @@ export default function AkunPage() {
                       <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
                         <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                         <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
-                        <p className="mt-1 text-[12px] font-medium text-gray-400">Daftar kelas dulu untuk akses sesi &amp; materi · atau mulai belajar mandiri di bawah</p>
+                        <p className="mt-1 text-[12px] font-medium text-gray-400">Daftar kelas dulu untuk akses sesi &amp; materi · atau cek tab Jelajahi Bahasa</p>
+                        <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
+                      </div>
+                    ))}
+
+                    {/* ════ VIEW: BELAJAR MANDIRI ════ */}
+                    {materiView === "mandiri" && (
+                      <div className="flex flex-col gap-7">
+                        <div>
+                          <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><GraduationCap className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Belajar Mandiri</h2>
+                          <LmsKatalog
+                            onOpen={(id) => {
+                              setLmsSesi(id);
+                              if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><BookMarked className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Perpustakaan Saya</h2>
+                          {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
+                        </div>
                       </div>
                     )}
 
-                    {/* ════ BELAJAR MANDIRI (self-study) ════ */}
-                    <div>
-                      <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><GraduationCap className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Belajar Mandiri</h2>
-                      <LmsKatalog
-                        onOpen={(id) => {
-                          setLmsSesi(id);
-                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                        }}
-                      />
-                    </div>
+                    {/* ════ VIEW: JELAJAHI BAHASA ════ */}
+                    {materiView === "jelajahi" && (() => {
+                      const q = materiSearch.trim().toLowerCase();
+                      const filtered = q ? LANGS.filter((l) => l.name.toLowerCase().includes(q)) : LANGS;
+                      const selLang = LANGS.find((l) => l.slug === materiLang) || LANGS[0];
+                      const selPal = LANGPAL[LANGS.indexOf(selLang) % LANGPAL.length];
+                      const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
+                      return (
+                        <div className="flex flex-col gap-5">
+                          <div>
+                            <h2 className="text-[18px] font-extrabold text-[#12172B]">Jelajahi Bahasa</h2>
+                            <p className="mt-0.5 text-[13px] font-medium text-gray-500">60+ bahasa · CEFR A1–B2 · pilih, lihat silabus, langsung daftar</p>
+                          </div>
+                          <div className="relative">
+                            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-400" strokeWidth={2} />
+                            <input value={materiSearch} onChange={(e) => setMateriSearch(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/20" />
+                          </div>
+                          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4">
+                            {filtered.map((l) => {
+                              const pal = LANGPAL[LANGS.indexOf(l) % LANGPAL.length];
+                              const isSel = l.slug === selLang.slug;
+                              return (
+                                <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-transparent shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)] ring-2 ring-[#16796E]" : "border-slate-100 hover:border-[#16796E]/30"}`}>
+                                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[16px] font-extrabold" style={{ background: pal.bg, color: pal.tx }}>{l.glyph}</span>
+                                  <span className="min-w-0 flex-1">
+                                    <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
+                                    <span className="block text-[12px] font-medium text-gray-500">CEFR A1–B2</span>
+                                  </span>
+                                  <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" />
+                                </button>
+                              );
+                            })}
+                            {filtered.length === 0 && (
+                              <p className="col-span-full rounded-2xl border border-dashed border-slate-200 px-4 py-8 text-center text-[13px] font-medium text-gray-400">Bahasa "{materiSearch}" ga ketemu · cek Semua Silabus di bawah</p>
+                            )}
+                          </div>
 
-                    {/* ════ PERPUSTAKAAN SAYA ════ */}
-                    <div>
-                      <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><BookMarked className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Perpustakaan Saya</h2>
-                      {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
-                    </div>
+                          {/* detail bahasa kepilih */}
+                          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                            <div className="flex items-center gap-3">
+                              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[18px] font-extrabold" style={{ background: selPal.bg, color: selPal.tx }}>{selLang.glyph}</span>
+                              <div className="min-w-0">
+                                <p className="text-[15px] font-extrabold text-[#12172B]">{selLang.name} — CEFR A1–B2</p>
+                                <p className="text-[12px] font-medium text-gray-500">8 sublevel · A1.1 sampai B2.2</p>
+                              </div>
+                            </div>
+                            <div className="mt-4 flex flex-wrap gap-1.5">
+                              {CEFR.map((c) => (
+                                <span key={c} className="rounded-lg bg-[#F5F6F8] px-2.5 py-1 text-[12px] font-bold text-gray-500">{c}</span>
+                              ))}
+                            </div>
+                            <div className="mt-4 flex flex-wrap gap-2">
+                              <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
+                              <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
+                              <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
+                            </div>
+                          </div>
 
-                    {/* ════ JELAJAHI MATERI ════ */}
-                    <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-                      <h3 className="mb-3 inline-flex items-center gap-1.5 text-[14px] font-bold text-gray-700"><Globe className="h-4 w-4 text-[#16796E]" strokeWidth={2.5} />Jelajahi Materi</h3>
-                      <div className="space-y-1">
-                        <a href="/silabus" className="flex items-center gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-gray-50">
-                          <Globe className="h-5 w-5 shrink-0 text-[#16796E]" strokeWidth={2} /><span className="flex-1 text-sm font-medium text-gray-700">Semua Silabus (60+ Bahasa)</span><span className="text-xs text-gray-300">›</span>
-                        </a>
-                        <a href="/blog" className="flex items-center gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-gray-50">
-                          <Newspaper className="h-4 w-4 shrink-0 text-[#16796E]" strokeWidth={2} /><span className="flex-1 text-sm font-medium text-gray-700">Blog &amp; Tips Belajar</span><span className="text-xs text-gray-300">›</span>
-                        </a>
-                      </div>
-                    </div>
+                          {/* footer resources */}
+                          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-[13px] font-medium text-gray-500">
+                            <a href="/silabus" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Globe className="h-4 w-4" strokeWidth={2} />Semua Silabus (60+ Bahasa)</a>
+                            <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />Blog &amp; Tips Belajar</a>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </div>
                 );
               })()}
