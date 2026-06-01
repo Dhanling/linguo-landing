@@ -1031,6 +1031,31 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
     try {
       const fullNum = countryCode.replace("+","") + formWa;
 
+      // ── reguler-xendit-v1: Kelas Reguler checks out directly via Xendit. ──
+      // Other programs keep the WhatsApp redirect below (unchanged). The
+      // /api/create-invoice route inserts its own lead row (payment status +
+      // affiliate attribution from the linguo_ref cookie), so we skip saveLead
+      // here for Reguler to avoid a duplicate lead.
+      if (selProgram === "Kelas Reguler") {
+        const productKey = "reguler-" + selLevel.toLowerCase();
+        try {
+          const res = await fetch("/api/create-invoice", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, referral_source: localStorage.getItem("linguo_ref") || undefined }),
+          });
+          const data = await res.json();
+          if (data.invoice_url) { window.location.href = data.invoice_url; return; }
+          alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi"));
+          setSaving(false);
+        } catch (xErr) {
+          console.error("Xendit invoice error:", xErr);
+          alert("Terjadi kesalahan saat membuat pembayaran. Silakan coba lagi.");
+          setSaving(false);
+        }
+        return;
+      }
+
       // Step 1: Save lead to DB FIRST — always, regardless of Xendit/WA outcome.
       // This ensures lead capture even if user drops off at WA step.
       try {
@@ -1047,9 +1072,8 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
         console.error("Lead save failed (non-blocking):", leadErr);
       }
 
-      // Step 2: Redirect to WhatsApp with pre-filled template.
-      // Xendit invoice path below is commented pending dokumen verification.
-      // TODO: when Xendit is live, restore create-invoice call and remove WA redirect.
+      // Step 2: Non-Reguler programs redirect to WhatsApp with a pre-filled
+      // template (Reguler is handled above via Xendit — reguler-xendit-v1).
       const teacherLine = selProgram==="Kelas Private"
         ? "👨‍🏫 Pengajar: " + (selTeacherType==="native"?"Native Speaker":"Lokal") + "\n"
         : "";
@@ -1070,23 +1094,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
         "📧 Email: " + formEmail + "\n\n" +
         "Mohon info pembayaran & jadwalnya. Terima kasih!";
       window.location.href = "https://wa.me/6282116859493?text=" + encodeURIComponent(waMsg);
-
-      /* === XENDIT PATH (disabled until dokumen approved) ===
-      let productKey = "";
-      if(selProgram==="Kelas Private") productKey = "private-" + selLevel.toLowerCase();
-      else if(selProgram==="Kelas Reguler") productKey = "reguler-" + selLevel.toLowerCase();
-      else if(selProgram==="IELTS/TOEFL Prep") productKey = "ielts-toefl";
-      else if(selProgram==="Kelas Kids") productKey = "kids-" + selLevel.toLowerCase().replace(/ /g, "-");
-
-      const res = await fetch("/api/create-invoice", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: productKey.split("-")[0], level: selLevel, productKey, referral_source: localStorage.getItem("linguo_ref") || undefined }),
-      });
-      const data = await res.json();
-      if(data.invoice_url) window.location.href = data.invoice_url;
-      else { alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi")); setSaving(false); }
-      */
     } catch(e) {
       console.error("Submit error:", e);
       alert("Terjadi kesalahan. Silakan coba lagi.");
@@ -1270,6 +1277,20 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   </button>
                 ))}
               </div>
+              {/* reguler-xendit-v1: harga flat ditampilkan di step level */}
+              {selProgram==="Kelas Reguler" && (
+                <div className="mt-4 rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-slate-600">Biaya kelas</span>
+                    <div className="text-right">
+                      <span className="text-xs text-slate-400 line-through mr-1.5">Rp 200.000</span>
+                      <span className="text-lg font-extrabold text-[#1A9E9E]">Rp 150.000</span>
+                      <span className="text-xs font-medium text-slate-400">/2 bulan</span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-slate-400 mt-1.5">8 sesi grup class • dibuka minimal 8 peserta</p>
+                </div>
+              )}
               {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
             </motion.div>
           )}
@@ -1440,12 +1461,20 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-xs text-slate-500">Level</span>
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
+                {/* reguler-xendit-v1: baris harga Reguler di konfirmasi */}
+                {selProgram==="Kelas Reguler" && (
+                  <div className="flex items-center justify-between border-t border-slate-200 pt-2.5 mt-2.5">
+                    <span className="text-xs text-slate-500">Biaya</span>
+                    <span className="text-sm font-bold text-[#1A9E9E]">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
+                  </div>
+                )}
               </div>
+              {/* reguler-xendit-v1: CTA + subtext kondisional — Reguler ke Xendit, lainnya ke WA */}
               <button onClick={handleFinal} disabled={saving}
                 className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Memproses pembayaran..." : "Bayar Sekarang →"}
+                {saving ? "Memproses..." : (selProgram==="Kelas Reguler" ? "Bayar Sekarang →" : "Lanjut via WhatsApp →")}
               </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Kamu akan diarahkan ke halaman pembayaran Xendit</p>
+              <p className="text-[11px] text-slate-400 text-center mt-3">{selProgram==="Kelas Reguler" ? "Kamu akan diarahkan ke halaman pembayaran Xendit" : "Kamu akan diarahkan ke WhatsApp Admin untuk info pembayaran & jadwal"}</p>
             </motion.div>
           )}
         </motion.div>
