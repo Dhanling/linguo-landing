@@ -19,6 +19,7 @@ import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
 import SilabusOutline from '@/components/akun/SilabusOutline';
+import JadwalCalendar from '@/components/akun/JadwalCalendar'; // linguo-patch:akun-jadwal-tab-v1
 import LmsKatalog from '@/components/lms/LmsKatalog';
 import LmsLesson from '@/components/lms/LmsLesson';
 import AttentionAlert from '@/components/akun/AttentionAlert';
@@ -2439,10 +2440,10 @@ export default function AkunPage() {
 
           {activeTab === "jadwal" && (
             <motion.div key="jadwal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
-              {/* akun-jadwal-tab-v1 — kalender LMS, data dari upcomingSchedules + reguler batch */}
+              {/* linguo-patch:akun-jadwal-tab-v1 — kalender LMS, data real dari upcomingSchedules */}
               {(() => {
                 const jadwalSessions = upcomingSchedules.map((s: any) => {
-                  const reg = (student?.registrations || []).find((r: any) => r.id === s.registration_id);
+                  const reg = student?.registrations.find((r: any) => r.id === s.registration_id);
                   return {
                     id: s.id,
                     scheduledAt: s.scheduled_at,
@@ -2453,7 +2454,7 @@ export default function AkunPage() {
                     teacher: reg?.teachers?.name || "",
                   };
                 });
-                const jadwalReguler = activeRegs
+                const jadwalRegulerBatches = activeRegs
                   .filter((r: any) => r.product === "Kelas Reguler" && r.batch)
                   .map((r: any) => ({
                     id: r.id,
@@ -2463,7 +2464,7 @@ export default function AkunPage() {
                     scheduleTime: r.batch.schedule_time,
                     zoomLink: r.batch.zoom_link || null,
                   }));
-                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalReguler} />;
+                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} />;
               })()}
             </motion.div>
           )}
