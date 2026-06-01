@@ -18,6 +18,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
+import SilabusOutline from '@/components/akun/SilabusOutline';
 import LmsKatalog from '@/components/lms/LmsKatalog';
 import LmsLesson from '@/components/lms/LmsLesson';
 import AttentionAlert from '@/components/akun/AttentionAlert';
@@ -2753,32 +2754,12 @@ export default function AkunPage() {
                                 );
                               })()
                             ) : (
-                              (() => {
-                                const langSlug = selected.language?.toLowerCase().replace(/\s+/g, "-") || "english";
-                                const rows: { icon: any; title: string; meta: string; href: string }[] = [
-                                  { icon: BookOpen, title: `Lihat Silabus ${selected.language}`, meta: "Kurikulum CEFR · semua sublevel", href: `/silabus/${langSlug}` },
-                                ];
-                                if (selected.product !== "English Test Preparation") {
-                                  rows.push({ icon: Target, title: `Placement Test ${selected.language}`, meta: "Cek level kamu sekarang", href: `/silabus/${langSlug}/coba` });
-                                }
-                                return (
-                                  <div className="flex flex-col gap-3">
-                                    {rows.map((m, i) => {
-                                      const MIcon = m.icon;
-                                      return (
-                                        <a key={i} href={m.href} className="group flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20 hover:shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)]">
-                                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F2CB05]/15 text-[#B9890A]"><MIcon className="h-5 w-5" strokeWidth={2} /></span>
-                                          <span className="min-w-0 flex-1">
-                                            <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{m.title}</span>
-                                            <span className="block text-[12px] font-medium text-gray-500">{m.meta}</span>
-                                          </span>
-                                          <ChevronRight className="h-5 w-5 text-slate-300 transition group-hover:text-[#16796E]" />
-                                        </a>
-                                      );
-                                    })}
-                                  </div>
-                                );
-                              })()
+                              <SilabusOutline
+                                slug={selected.language?.toLowerCase().replace(/\s+/g, "-") || "english"}
+                                languageLabel={selected.language || ""}
+                                currentLevel={selected.level}
+                                showPlacementTest={selected.product !== "English Test Preparation"}
+                              />
                             )}
                           </div>
                         </main>
