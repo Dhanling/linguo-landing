@@ -23,6 +23,8 @@ type Props = {
   currentLevel?: string;
   /** sembunyikan tombol Placement Test (mis. utk Test Prep) */
   showPlacementTest?: boolean;
+  /** konteks render: "live" (kelas live, default) atau "selfpaced" (Belajar Mandiri) — ngubah copy empty-state modal */
+  mode?: "live" | "selfpaced";
 };
 
 type OpenSession = { s: Session; subCode: string; levelName: string };
@@ -53,6 +55,7 @@ export default function SilabusOutline({
   languageLabel = "",
   currentLevel,
   showPlacementTest = true,
+  mode = "live",
 }: Props) {
   const [data, setData] = useState<Curriculum | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
@@ -347,6 +350,15 @@ export default function SilabusOutline({
                 >
                   Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
                 </a>
+              </div>
+            ) : mode === "selfpaced" ? (
+              <div className="mt-5 space-y-2">
+                <ContentSlot icon={Video} label="Video pelajaran" hint="Materi interaktif sesi ini" />
+                <ContentSlot icon={FileText} label="Materi &amp; kosakata" hint="Bacaan, gloss, contoh kalimat" />
+                <ContentSlot icon={ClipboardList} label="Latihan &amp; kuis" hint="Pilihan ganda + isian rumpang" />
+                <p className="px-1 pt-1 text-[11.5px] font-medium leading-snug text-gray-400">
+                  Pelajaran interaktif buat sesi ini lagi disiapin — pantau terus, ya.
+                </p>
               </div>
             ) : (
               <div className="mt-5 space-y-2">
