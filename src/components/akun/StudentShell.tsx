@@ -69,7 +69,7 @@ export default function StudentShell({
                     key={item.key}
                     className="group relative flex h-12 w-12 cursor-default items-center justify-center rounded-2xl text-white/35"
                   >
-                    <Icon className="h-[22px] w-[22px]" />
+                    <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
                     <Tip label={item.label} />
                   </div>
                 );
@@ -86,7 +86,7 @@ export default function StudentShell({
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  <Icon className="h-[22px] w-[22px]" />
+                  <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
                   <Tip label={item.label} />
                 </button>
               );
@@ -98,7 +98,7 @@ export default function StudentShell({
             onClick={signOut}
             className="group relative mt-auto flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
           >
-            <LogOut className="h-[22px] w-[22px]" />
+            <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
             <Tip label="Keluar" />
           </button>
         </aside>

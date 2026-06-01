@@ -2124,6 +2124,11 @@ export default function AkunPage() {
                   };
                   return g[lang] || "Aa";
                 };
+                const DUMMY_UPCOMING = [
+                  { lang: "German", title: "German — A1.1", date: "8 Sep 2026", tint: "bg-rose-50 text-rose-500" },
+                  { lang: "Spanish", title: "Spanish — A1.1", date: "12 Sep 2026", tint: "bg-indigo-50 text-indigo-500" },
+                  { lang: "Arabic", title: "Arabic — A1.1", date: "20 Sep 2026", tint: "bg-amber-50 text-amber-600" },
+                ];
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
@@ -2218,9 +2223,21 @@ export default function AkunPage() {
                             })}
                           </div>
                         ) : (
-                          <div className="mt-3 rounded-2xl border border-dashed border-slate-200 p-5 text-center">
-                            <Calendar className="mx-auto mb-1.5 h-7 w-7 text-slate-300" strokeWidth={1.6} />
-                            <p className="text-[13px] font-medium text-gray-500">Belum ada jadwal mendatang</p>
+                          <div className="mt-3 flex flex-col gap-3 overflow-y-auto pb-2 pr-1" style={{ maxHeight: 320 }}>
+                            {DUMMY_UPCOMING.map((s, i) => (
+                              <button
+                                key={i}
+                                onClick={() => setActiveTab("jadwal")}
+                                className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left shadow-[0_10px_30px_-20px_rgba(18,23,43,0.5)] transition-shadow hover:shadow-[0_16px_36px_-18px_rgba(18,23,43,0.5)]"
+                              >
+                                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-lg font-extrabold ${s.tint}`}>{langGlyph(s.lang)}</span>
+                                <span className="min-w-0 flex-1">
+                                  <span className="block truncate text-[14px] font-bold text-[#12172B]">{s.title}</span>
+                                  <span className="block text-[12px] font-medium text-gray-500">{s.date}</span>
+                                </span>
+                                <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
+                              </button>
+                            ))}
                           </div>
                         )}
                       </div>
@@ -2286,17 +2303,17 @@ export default function AkunPage() {
                               <button
                                 key={reg.id}
                                 onClick={() => setPendingModalReg(reg)}
-                                className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
+                                className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
                                 <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
                                   {photo ? (
                                     <>
-                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover" />
+                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
                                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                                     </>
                                   ) : (
                                     <>
-                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
+                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                       <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                     </>
                                   )}
@@ -2305,7 +2322,10 @@ export default function AkunPage() {
                                   </span>
                                 </div>
                                 <div className="px-2 pb-2 pt-4">
-                                  <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                  <div className="flex items-center gap-2">
+                                    <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                  </div>
                                   <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{PRODUCT_BADGE[reg.product]?.label || reg.product}</p>
                                   <div className="mt-4 flex items-center justify-between">
                                     <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
@@ -2340,14 +2360,17 @@ export default function AkunPage() {
                                 <button
                                   key={reg.id}
                                   onClick={() => setDetailReg(reg)}
-                                  className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] transition-transform hover:-translate-y-1"
+                                  className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] transition-transform hover:-translate-y-1"
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg}`}>
-                                    <span className="text-[64px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
+                                    <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                     <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                   </div>
                                   <div className="px-2 pb-2 pt-4">
-                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                    <div className="flex items-center gap-2">
+                                      <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                      <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                    </div>
                                     <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
                                     <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
                                       <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
