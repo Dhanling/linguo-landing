@@ -1288,7 +1288,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       <span className="text-xs font-medium text-slate-400">/2 bulan</span>
                     </div>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-1.5">8 sesi grup class • dibuka minimal 8 peserta</p>
+                  <p className="text-[11px] text-slate-400 mt-1.5">8 sesi grup class • 90 menit/sesi • dibuka minimal 8 peserta</p>
                 </div>
               )}
               {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
@@ -1461,12 +1461,18 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-xs text-slate-500">Level</span>
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
-                {/* reguler-xendit-v1: baris harga Reguler di konfirmasi */}
+                {/* reguler-xendit-v1: durasi + harga Reguler di konfirmasi */}
                 {selProgram==="Kelas Reguler" && (
-                  <div className="flex items-center justify-between border-t border-slate-200 pt-2.5 mt-2.5">
-                    <span className="text-xs text-slate-500">Biaya</span>
-                    <span className="text-sm font-bold text-[#1A9E9E]">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
-                  </div>
+                  <>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-slate-500">Durasi</span>
+                      <span className="text-sm font-medium">8 sesi @ 90 menit</span>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-slate-200 pt-2.5 mt-2.5">
+                      <span className="text-xs text-slate-500">Biaya</span>
+                      <span className="text-sm font-bold text-[#1A9E9E]">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
+                    </div>
+                  </>
                 )}
               </div>
               {/* reguler-xendit-v1: CTA + subtext kondisional — Reguler ke Xendit, lainnya ke WA */}
