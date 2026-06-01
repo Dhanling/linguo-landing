@@ -1,6 +1,12 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import successAnim from "./success-anim.json";
+
+// payment-success-lottie-v1: render Lottie client-only (ssr:false) so the
+// success page never risks an SSR/hydration error after a real payment.
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 function SuccessContent() {
   const params = useSearchParams();
@@ -8,10 +14,9 @@ function SuccessContent() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 to-white px-4">
       <div className="text-center max-w-md">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-10 h-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
+        {/* payment-success-lottie-v1: ceklis hijau, main sekali (ga loop) */}
+        <div className="w-40 h-40 mx-auto mb-2">
+          <Lottie animationData={successAnim} loop={false} />
         </div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Pembayaran Berhasil!</h1>
         <p className="text-gray-600 mb-6">Terima kasih sudah mendaftar di Linguo! Sekarang lengkapi data kamu supaya kami bisa siapkan kelas terbaik.</p>
