@@ -2,123 +2,112 @@
 
 import type { ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutDashboard, Calendar, BookOpen, Award, Settings, LogOut } from "lucide-react";
+import { LayoutGrid, BookOpen, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-const TEAL_DEEP = "#0F6E56";
-const YELLOW = "#FFC93C";
-
 export type AkunTab = "beranda" | "jadwal" | "materi" | "akun";
 
-type Item =
-  | { key: AkunTab; label: string; icon: any; soon?: false }
-  | { key: string; label: string; icon: any; soon: true };
+type NavItem =
+  | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
+  | { key: string; label: string; icon: LucideIcon; soon: true };
 
-const NAV: Item[] = [
-  { key: "beranda", label: "Beranda", icon: LayoutDashboard },
-  { key: "jadwal", label: "Jadwal", icon: Calendar },
-  { key: "materi", label: "Materi", icon: BookOpen },
-  { key: "sertifikat", label: "Sertifikat", icon: Award, soon: true },
-  { key: "akun", label: "Akun", icon: Settings },
+const NAV: NavItem[] = [
+  { key: "beranda", label: "Beranda", icon: LayoutGrid },
+  { key: "materi", label: "Kelas & Materi", icon: BookOpen },
+  { key: "jadwal", label: "Jadwal", icon: CalendarDays },
+  { key: "sertifikat", label: "Sertifikat · Segera", icon: Star, soon: true },
+  { key: "akun", label: "Pengaturan", icon: Settings },
 ];
+
+function Tip({ label }: { label: string }) {
+  return (
+    <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">
+      {label}
+    </span>
+  );
+}
 
 export default function StudentShell({
   active,
   onTabChange,
-  firstName,
-  segment = "b2c",
   children,
 }: {
   active: AkunTab;
   onTabChange: (t: AkunTab) => void;
-  firstName: string;
+  firstName?: string;
   avatarUrl?: string;
   segment?: "b2c" | "b2b";
   children: ReactNode;
 }) {
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    window.location.href = "/";
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50/80 to-white pb-20 lg:pb-8">
-      {/* Desktop sidebar (hidden on mobile — mobile keeps the existing bottom-nav) */}
-      <aside
-        className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col text-white lg:flex"
-        style={{ background: TEAL_DEEP }}
-      >
-        <div className="flex items-center px-5 py-5">
-          <img src="/images/logo-linguo-white-full.png" alt="Linguo" className="h-8 w-auto" />
-        </div>
+    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:justify-center lg:p-6">
+      <div className="w-full lg:flex lg:max-w-[1320px] lg:rounded-[40px] lg:bg-[#16796E] lg:p-3 lg:shadow-[0_40px_80px_-30px_rgba(10,70,63,0.45)]">
 
-        <nav className="flex-1 space-y-1 px-3">
-          {NAV.map((item) => {
-            const Icon = item.icon;
-            const base =
-              "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition text-left";
-            if (item.soon) {
+        {/* ICON RAIL — desktop only */}
+        <aside className="hidden w-[96px] shrink-0 flex-col items-center py-7 lg:flex">
+          {/* logo */}
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm">
+            <img src="/images/logo-white.png" alt="Linguo" className="h-6 w-6 object-contain" />
+          </div>
+
+          {/* nav */}
+          <nav className="mt-12 flex flex-col items-center gap-3">
+            {NAV.map((item) => {
+              const Icon = item.icon;
+              if (item.soon) {
+                return (
+                  <div
+                    key={item.key}
+                    className="group relative flex h-12 w-12 cursor-default items-center justify-center rounded-2xl text-white/35"
+                  >
+                    <Icon className="h-[22px] w-[22px]" />
+                    <Tip label={item.label} />
+                  </div>
+                );
+              }
+              const isActive = item.key === active;
               return (
-                <div key={item.key} className={`${base} cursor-default text-white/35`} title="Segera hadir">
-                  <Icon className="h-[18px] w-[18px]" />
-                  <span className="flex-1">{item.label}</span>
-                  <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold text-white/55">
-                    Segera
-                  </span>
-                </div>
+                <button
+                  key={item.key}
+                  onClick={() => onTabChange(item.key as AkunTab)}
+                  className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
+                    isActive
+                      ? "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <Icon className="h-[22px] w-[22px]" />
+                  <Tip label={item.label} />
+                </button>
               );
-            }
-            const isActive = item.key === active;
-            return (
-              <button
-                key={item.key}
-                onClick={() => onTabChange(item.key as AkunTab)}
-                className={`${base} ${
-                  isActive ? "font-semibold" : "text-white/75 hover:bg-white/10 hover:text-white"
-                }`}
-                style={isActive ? { background: YELLOW, color: TEAL_DEEP } : undefined}
-              >
-                <Icon className="h-[18px] w-[18px]" />
-                {item.label}
-              </button>
-            );
-          })}
-        </nav>
+            })}
+          </nav>
 
-        <div className="border-t border-white/10 p-3">
+          {/* logout */}
           <button
-            onClick={() => onTabChange("akun")}
-            className="flex w-full items-center gap-3 rounded-xl px-2 py-2 text-left"
+            onClick={signOut}
+            className="group relative mt-auto flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
           >
-            <span className="min-w-0 flex-1">
-              <span className="block truncate text-sm font-semibold text-white">
-                {firstName || "Siswa"}
-              </span>
-              <span
-                className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold"
-                style={
-                  segment === "b2b"
-                    ? { background: YELLOW, color: TEAL_DEEP }
-                    : { background: "rgba(255,255,255,0.15)", color: "#fff" }
-                }
-              >
-                {segment === "b2b" ? "Program Korporat" : "Akun Pribadi"}
-              </span>
-            </span>
+            <LogOut className="h-[22px] w-[22px]" />
+            <Tip label="Keluar" />
           </button>
-          <button
-            onClick={async () => {
-              await supabase.auth.signOut();
-              window.location.href = "/";
-            }}
-            className="mt-1 flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/10 hover:text-white"
-          >
-            <LogOut className="h-[18px] w-[18px]" /> Keluar
-          </button>
+        </aside>
+
+        {/* WHITE PANEL — semua konten tab masuk sini */}
+        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col bg-white pb-20 lg:min-h-0 lg:rounded-[26px] lg:pb-0">
+          {children}
         </div>
-      </aside>
-
-      {/* Content (offset only on desktop; mobile = original full-width layout) */}
-      <div className="lg:pl-64">{children}</div>
+      </div>
     </div>
   );
 }
