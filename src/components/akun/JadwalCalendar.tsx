@@ -5,6 +5,8 @@
 // Port dari Claude Design frame (Jadwal.html) -> React, disambung ke data real
 // `upcomingSchedules` (kolom `scheduled_at` + resolve bahasa/level/teacher dari registrasi).
 // Warna config-independent (hex inline). Palet match shell: teal #16796E.
+// + jadwal-compact-v1: tinggi sel dikecilin (92->56) + panel kiri ditipisin (300->268)
+//   biar kalender ga ke-strech pas di-wrap width sempit di tab /akun.
 
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays } from "lucide-react";
@@ -165,7 +167,7 @@ export default function JadwalCalendar({
       {/* Kalender panel */}
       <div className="bg-white rounded-[26px] overflow-hidden flex flex-col-reverse lg:flex-row min-w-0 shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] border border-slate-100">
         {/* LEFT: sesi mendatang + legend */}
-        <section className="w-full lg:w-[300px] shrink-0 border-t lg:border-t-0 lg:border-r border-slate-100 flex flex-col bg-white">
+        <section className="w-full lg:w-[268px] shrink-0 border-t lg:border-t-0 lg:border-r border-slate-100 flex flex-col bg-white">
           <div className="px-5 pt-6 pb-3 flex items-center justify-between">
             <div>
               <h2 className="text-[17px] font-extrabold text-[#12172B]">
@@ -240,7 +242,7 @@ export default function JadwalCalendar({
                       tabIndex={evs.length ? 0 : -1}
                       aria-label={`${cell.d} ${MONTHS[view.m]}${evs.length ? `, ${evs.length} sesi` : ""}`}
                       className={[
-                        "text-left rounded-xl p-1.5 sm:p-2 min-h-[68px] sm:min-h-[92px] flex flex-col gap-1 transition",
+                        "text-left rounded-xl p-1.5 sm:p-2 min-h-[44px] sm:min-h-[56px] flex flex-col gap-1 transition",
                         evs.length ? "cursor-pointer hover:bg-white" : "cursor-default",
                         dow >= 5 ? "bg-[#F5F6F8]/60" : "bg-[#F5F6F8]",
                       ].join(" ")}
