@@ -1365,6 +1365,10 @@ export default function AkunPage() {
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun">("beranda");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
+  // Kelas & Materi master-detail UI state
+  const [materiSel, setMateriSel] = useState<string | null>(null);
+  const [materiTab, setMateriTab] = useState<"sesi" | "materi">("sesi");
+  const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
   useEffect(() => {
     if (typeof window === "undefined") return;
     const sp = new URLSearchParams(window.location.search);
@@ -2109,7 +2113,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" ? "w-full" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -2538,81 +2542,249 @@ export default function AkunPage() {
           )}
 
           {activeTab === "materi" && (
-            <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-3xl mx-auto space-y-4">
-              <LmsKatalog
-                onOpen={(id) => {
-                  setLmsSesi(id);
-                  if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                }}
-              />
+            <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
+              {(() => {
+                const mlangGlyph = (lang: string): string => {
+                  const g: Record<string, string> = {
+                    Jepang: "あ", Japanese: "あ", Korea: "한", Korean: "한",
+                    Mandarin: "中", Chinese: "中", Arab: "ع", Arabic: "ع",
+                    Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
+                    Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
+                  };
+                  return g[lang] || "Aa";
+                };
+                const PAL = [
+                  { color: "#16796E", tintBg: "bg-[#16796E]/10", tintText: "text-[#16796E]" },
+                  { color: "#E11D48", tintBg: "bg-rose-50", tintText: "text-rose-500" },
+                  { color: "#4F46E5", tintBg: "bg-indigo-50", tintText: "text-indigo-500" },
+                  { color: "#D97706", tintBg: "bg-amber-50", tintText: "text-amber-600" },
+                  { color: "#0891B2", tintBg: "bg-cyan-50", tintText: "text-cyan-600" },
+                  { color: "#7C3AED", tintBg: "bg-violet-50", tintText: "text-violet-500" },
+                ];
+                const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
+                const liveClasses = activeRegs.filter((r: any) => r.status === "Aktif");
+                const pctOf = (r: any) => {
+                  const t = r.sessions_total || 0; const u = r.sessions_used || 0;
+                  return t > 0 ? Math.min(100, Math.max(0, Math.round((u / t) * 100))) : 0;
+                };
+                const shown = liveClasses.filter((r: any) => {
+                  if (materiFilter === "run") return pctOf(r) < 100;
+                  if (materiFilter === "done") return pctOf(r) >= 100;
+                  return true;
+                });
+                const selected = shown.find((r: any) => r.id === materiSel) || shown[0] || liveClasses[0];
+                const palOf = (r: any) => PAL[Math.max(0, liveClasses.findIndex((x: any) => x.id === r.id)) % PAL.length];
 
-              <h2 className="text-lg font-bold text-gray-900">Materi Belajar</h2>
+                const ClassItem = ({ r, mobile }: { r: any; mobile?: boolean }) => {
+                  const pal = palOf(r); const pct = pctOf(r); const isSel = selected && r.id === selected.id;
+                  return (
+                    <button
+                      onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
+                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-white shadow-[0_16px_36px_-22px_rgba(18,23,43,0.55)] ring-2 ring-[#16796E]" : "hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 border border-slate-100 bg-white" : "w-full"}`}
+                    >
+                      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl font-extrabold ${pal.tintBg} ${pal.tintText}`}>{mlangGlyph(r.language)}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{r.language} — {r.level || "TBD"}</span>
+                        <span className="block truncate text-[12px] font-medium text-gray-500">{r?.teachers?.name || (PRODUCT_BADGE[r.product]?.label || r.product)}</span>
+                        <span className="mt-2 flex items-center gap-2">
+                          <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} /></span>
+                          <span className="text-[11px] font-bold text-gray-500">{pct}%</span>
+                        </span>
+                      </span>
+                    </button>
+                  );
+                };
 
-              {/* Per-course silabus links */}
-              {activeRegs.filter(r => r.status === "Aktif").length > 0 ? (
-                <div className="space-y-3">
-                  {activeRegs.filter(r => r.status === "Aktif").map(reg => {
-                    const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
-                    const BadgeIcon = badge.icon;
-                    const langSlug = reg.language?.toLowerCase().replace(/\s+/g, "-") || "english";
-                    return (
-                      <div key={reg.id} className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
-                        <div className="flex items-center gap-3 p-4 border-b border-gray-50">
-                          <div className="h-10 w-10 rounded-xl bg-teal-50 flex items-center justify-center">
-                            <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 object-contain" />
+                return (
+                  <div className="flex flex-col gap-8 p-6 lg:p-8">
+                    {/* page title */}
+                    <div>
+                      <h1 className="text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Kelas &amp; Materi</h1>
+                      <p className="mt-1 text-[13px] font-medium text-gray-500">{liveClasses.length} kelas live · semua materi belajar kamu di satu tempat</p>
+                    </div>
+
+                    {/* ════ MASTER-DETAIL kelas live ════ */}
+                    {liveClasses.length > 0 && selected ? (
+                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:h-[560px]">
+
+                        {/* LEFT list — desktop */}
+                        <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
+                          <div className="shrink-0 px-6 pb-4 pt-7">
+                            <h2 className="text-[18px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
+                            <p className="mt-0.5 text-[12px] font-medium text-gray-500">{liveClasses.length} kelas aktif</p>
+                            <div className="mt-4 flex gap-2">
+                              {([["all", "Semua"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
+                                <button key={k} onClick={() => setMateriFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${materiFilter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                              ))}
+                            </div>
                           </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-gray-900">{reg.language}</h4>
-                            <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}><BadgeIcon className="w-2.5 h-2.5" strokeWidth={2.5} /> {badge.label} · Level {reg.level}</span>
+                          <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
+                            {shown.length > 0 ? shown.map((r: any) => <ClassItem key={r.id} r={r} />) : (
+                              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">Tidak ada kelas di filter ini</p>
+                            )}
                           </div>
-                        </div>
-                        <div className="divide-y divide-gray-50">
-                          <a href={`/silabus/${langSlug}`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                            <span className="w-7 flex justify-center"><BookOpen className="w-5 h-5 text-teal-600" strokeWidth={2} /></span>
-                            <span className="text-sm font-medium text-gray-700 flex-1">Lihat Silabus {reg.language}</span>
-                            <span className="text-gray-300 text-xs">›</span>
-                          </a>
-                          {reg.product !== "English Test Preparation" && (
-                            <a href={`/silabus/${langSlug}/coba`} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
-                              <span className="w-7 flex justify-center"><Target className="w-5 h-5 text-teal-600" strokeWidth={2} /></span>
-                              <span className="text-sm font-medium text-gray-700 flex-1">Placement Test {reg.language}</span>
-                              <span className="text-gray-300 text-xs">›</span>
-                            </a>
-                          )}
-                        </div>
+                        </aside>
+
+                        {/* RIGHT detail (+ mobile pills) */}
+                        <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:overflow-y-auto">
+                          <div className="flex gap-2.5 overflow-x-auto px-5 pt-5 lg:hidden">
+                            {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
+                          </div>
+
+                          <div className="flex flex-col gap-6 p-5 lg:p-7">
+                            {/* hero */}
+                            {(() => {
+                              const pal = palOf(selected); const pct = pctOf(selected);
+                              const badge = PRODUCT_BADGE[selected.product] || PRODUCT_BADGE["Kelas Private"];
+                              const nextSched = upcomingSchedules.find((s) => s.registration_id === selected.id);
+                              const nextLabel = nextSched
+                                ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
+                                : "Belum terjadwal";
+                              return (
+                                <div className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                                  <div className="relative flex items-center gap-5 px-6 py-6 sm:px-7" style={{ background: pal.color }}>
+                                    <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-[44px] font-extrabold leading-none text-white">{mlangGlyph(selected.language)}</span>
+                                    <div className="min-w-0 flex-1 text-white">
+                                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{badge.label}</span>
+                                      <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{selected.language} — {selected.level || "TBD"}</h2>
+                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {selected?.teachers?.name || "Belum ditentukan"}</p>
+                                    </div>
+                                    <div className="pointer-events-none ml-2 hidden shrink-0 opacity-90 md:flex">
+                                      <div className="h-16 w-16 rotate-6 bg-[#F2CB05]/80" style={{ clipPath: HEXA, borderRadius: 8 }} />
+                                      <div className="-ml-6 mt-5 h-20 w-20 bg-[#F2CB05]/60" style={{ clipPath: HEXA, borderRadius: 8 }} />
+                                    </div>
+                                  </div>
+                                  <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
+                                    <div>
+                                      <p className="text-[12px] font-semibold text-gray-500">Progress</p>
+                                      <div className="mt-2 flex items-center gap-2">
+                                        <span className="h-2 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} /></span>
+                                        <span className="text-[13px] font-extrabold text-[#12172B]">{pct}%</span>
+                                      </div>
+                                    </div>
+                                    <div className="border-l border-slate-100 pl-4">
+                                      <p className="text-[12px] font-semibold text-gray-500">Sesi Selesai</p>
+                                      <p className="mt-1 text-[18px] font-extrabold text-[#12172B]">{selected.sessions_used || 0}<span className="text-[14px] font-bold text-gray-400">/{selected.sessions_total || 0}</span></p>
+                                    </div>
+                                    <div className="border-l border-slate-100 pl-4">
+                                      <p className="text-[12px] font-semibold text-gray-500">Sesi Berikutnya</p>
+                                      <p className="mt-1.5 text-[13px] font-bold leading-tight text-[#12172B]">{nextLabel}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })()}
+
+                            {/* tabs */}
+                            <div className="flex items-center gap-2">
+                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />Sesi &amp; Rekaman</button>
+                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />Materi</button>
+                            </div>
+
+                            {/* body */}
+                            {materiTab === "sesi" ? (
+                              (() => {
+                                const sessions = upcomingSchedules.filter((s) => s.registration_id === selected.id);
+                                if (sessions.length === 0) return (
+                                  <div className="rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
+                                    <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
+                                    <p className="text-[13px] font-semibold text-gray-500">Belum ada sesi mendatang terjadwal</p>
+                                    <p className="mt-1 text-[12px] font-medium text-gray-400">Riwayat sesi &amp; rekaman akan tampil di sini</p>
+                                  </div>
+                                );
+                                return (
+                                  <div className="flex flex-col gap-3">
+                                    {sessions.map((s, i) => {
+                                      const d = new Date(s.scheduled_at);
+                                      const n = (selected.sessions_used || 0) + i + 1;
+                                      return (
+                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20 hover:shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)]">
+                                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-[13px] font-extrabold text-[#12172B]">{String(n).padStart(2, "0")}</span>
+                                          <div className="min-w-0 flex-1">
+                                            <div className="flex flex-wrap items-center gap-2">
+                                              <p className="truncate text-[14px] font-extrabold text-[#12172B]">Sesi {n}</p>
+                                              <span className="rounded-full bg-[#16796E]/10 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">Mendatang</span>
+                                            </div>
+                                            <p className="mt-0.5 flex items-center gap-1.5 text-[12px] font-medium text-gray-500"><Calendar className="h-3.5 w-3.5" />{d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}</p>
+                                          </div>
+                                          <span className="inline-flex h-9 shrink-0 items-center gap-1.5 px-3 text-[12px] font-bold text-gray-500"><Clock className="h-3.5 w-3.5" />Belum mulai</span>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })()
+                            ) : (
+                              (() => {
+                                const langSlug = selected.language?.toLowerCase().replace(/\s+/g, "-") || "english";
+                                const rows: { icon: any; title: string; meta: string; href: string }[] = [
+                                  { icon: BookOpen, title: `Lihat Silabus ${selected.language}`, meta: "Kurikulum CEFR · semua sublevel", href: `/silabus/${langSlug}` },
+                                ];
+                                if (selected.product !== "English Test Preparation") {
+                                  rows.push({ icon: Target, title: `Placement Test ${selected.language}`, meta: "Cek level kamu sekarang", href: `/silabus/${langSlug}/coba` });
+                                }
+                                return (
+                                  <div className="flex flex-col gap-3">
+                                    {rows.map((m, i) => {
+                                      const MIcon = m.icon;
+                                      return (
+                                        <a key={i} href={m.href} className="group flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20 hover:shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)]">
+                                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F2CB05]/15 text-[#B9890A]"><MIcon className="h-5 w-5" strokeWidth={2} /></span>
+                                          <span className="min-w-0 flex-1">
+                                            <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{m.title}</span>
+                                            <span className="block text-[12px] font-medium text-gray-500">{m.meta}</span>
+                                          </span>
+                                          <ChevronRight className="h-5 w-5 text-slate-300 transition group-hover:text-[#16796E]" />
+                                        </a>
+                                      );
+                                    })}
+                                  </div>
+                                );
+                              })()
+                            )}
+                          </div>
+                        </main>
                       </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="rounded-2xl bg-white border border-gray-100 p-8 text-center">
-                  <BookOpen className="w-12 h-12 text-gray-300 mx-auto mb-2" strokeWidth={1.5} />
-                  <p className="text-sm text-gray-500">Belum ada kelas aktif</p>
-                  <p className="text-xs text-gray-400 mt-1">Daftar kelas dulu untuk akses materi</p>
-                </div>
-              )}
+                    ) : (
+                      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                        <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                        <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
+                        <p className="mt-1 text-[12px] font-medium text-gray-400">Daftar kelas dulu untuk akses sesi &amp; materi · atau mulai belajar mandiri di bawah</p>
+                      </div>
+                    )}
 
-              {/* Perpustakaan Saya — produk digital yang udah dibeli */}
-              <div>
-                <h3 className="text-sm font-semibold text-gray-700 mb-3 px-1 inline-flex items-center gap-1.5">
-                  <BookMarked className="w-4 h-4 text-teal-600" strokeWidth={2.5} />
-                  Perpustakaan Saya
-                </h3>
-                {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
-              </div>
+                    {/* ════ BELAJAR MANDIRI (self-study) ════ */}
+                    <div>
+                      <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><GraduationCap className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Belajar Mandiri</h2>
+                      <LmsKatalog
+                        onOpen={(id) => {
+                          setLmsSesi(id);
+                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
+                        }}
+                      />
+                    </div>
 
-              {/* General resources */}
-              <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4">
-                <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5"><Globe className="w-4 h-4 text-teal-600" strokeWidth={2.5} />Jelajahi Materi</h3>
-                <div className="space-y-1">
-                  <a href="/silabus" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                    <Globe className="w-5 h-5 text-teal-600 shrink-0" strokeWidth={2} /><span className="text-sm font-medium text-gray-700 flex-1">Semua Silabus (60+ Bahasa)</span><span className="text-gray-300 text-xs">›</span>
-                  </a>
-                  <a href="/blog" className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                    <Newspaper className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} /><span className="text-sm font-medium text-gray-700 flex-1">Blog & Tips Belajar</span><span className="text-gray-300 text-xs">›</span>
-                  </a>
-                </div>
-              </div>
+                    {/* ════ PERPUSTAKAAN SAYA ════ */}
+                    <div>
+                      <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><BookMarked className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Perpustakaan Saya</h2>
+                      {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
+                    </div>
+
+                    {/* ════ JELAJAHI MATERI ════ */}
+                    <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                      <h3 className="mb-3 inline-flex items-center gap-1.5 text-[14px] font-bold text-gray-700"><Globe className="h-4 w-4 text-[#16796E]" strokeWidth={2.5} />Jelajahi Materi</h3>
+                      <div className="space-y-1">
+                        <a href="/silabus" className="flex items-center gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-gray-50">
+                          <Globe className="h-5 w-5 shrink-0 text-[#16796E]" strokeWidth={2} /><span className="flex-1 text-sm font-medium text-gray-700">Semua Silabus (60+ Bahasa)</span><span className="text-xs text-gray-300">›</span>
+                        </a>
+                        <a href="/blog" className="flex items-center gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-gray-50">
+                          <Newspaper className="h-4 w-4 shrink-0 text-[#16796E]" strokeWidth={2} /><span className="flex-1 text-sm font-medium text-gray-700">Blog &amp; Tips Belajar</span><span className="text-xs text-gray-300">›</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </motion.div>
           )}
 
