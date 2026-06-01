@@ -185,7 +185,7 @@ const TEST_TYPES = [
 ];
 
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string}) => void;
+  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string}) => void;
 }) {
   const [step, setStep] = useState(0);
   const [program, setProgram] = useState("");
@@ -195,9 +195,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const [search, setSearch] = useState("");
   // [linguo-patch:onboarding-wa-step-v1] nomor WA wajib
   const [wa, setWa] = useState("");
+  const [name, setName] = useState(user?.user_metadata?.full_name || "");
+  const [birthdate, setBirthdate] = useState("");
+  const [domicile, setDomicile] = useState("");
   const waDigits = wa.replace(/\D/g, "");
   const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
   const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
+  const profileValid = name.trim().length >= 2 && waValid && !!birthdate && domicile.trim().length >= 2;
 
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
@@ -214,7 +218,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const finish = () => {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
-    onDone({ program, lang, testType, exp, wa: waNorm });
+    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicile.trim() });
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
@@ -370,30 +374,62 @@ function OnboardingWizard({ user, studentId, onDone }: {
             </div>
           )}
 
-          {/* Step 4: Nomor WhatsApp (wajib) — [linguo-patch:onboarding-wa-step-v1] */}
+          {/* Step 4: Lengkapi data (nama, WA, tgl lahir, domisili) — wajib — [linguo-patch:onboarding-profile-fields-v1] */}
           {step === 4 && (
             <div>
               <div className="text-center mb-5">
-                <div className="text-5xl mb-3">📱</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Nomor WhatsApp kamu</h2>
-                <p className="text-gray-400 text-sm mt-1">Tim Linguo akan menghubungimu lewat WhatsApp</p>
+                <div className="text-5xl mb-3">📝</div>
+                <h2 className="text-xl font-extrabold text-gray-900">Lengkapi data kamu</h2>
+                <p className="text-gray-400 text-sm mt-1">Biar tim Linguo bisa siapin kelas yang pas buat kamu</p>
               </div>
-              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3">
-                <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
-                <input
-                  value={wa}
-                  onChange={e => setWa(e.target.value)}
-                  inputMode="numeric"
-                  placeholder="08xxxxxxxxxx"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                />
-                {wa.length > 0 && !waValid && (
-                  <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
-                )}
+              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3 space-y-3">
+                <div>
+                  <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
+                  <input
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    placeholder="Nama lengkap kamu"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
+                  <input
+                    value={wa}
+                    onChange={e => setWa(e.target.value)}
+                    inputMode="numeric"
+                    placeholder="08xxxxxxxxxx"
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                  />
+                  {wa.length > 0 && !waValid && (
+                    <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-xs text-gray-500 mb-1 block">Tanggal lahir</label>
+                    <input
+                      type="date"
+                      value={birthdate}
+                      onChange={e => setBirthdate(e.target.value)}
+                      max={new Date().toISOString().split("T")[0]}
+                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-500 mb-1 block">Domisili (kota)</label>
+                    <input
+                      value={domicile}
+                      onChange={e => setDomicile(e.target.value)}
+                      placeholder="mis. Jakarta"
+                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                    />
+                  </div>
+                </div>
               </div>
               <button
-                onClick={() => waValid && setStep(5)}
-                disabled={!waValid}
+                onClick={() => profileValid && setStep(5)}
+                disabled={!profileValid}
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Lanjut
@@ -1926,9 +1962,11 @@ export default function AkunPage() {
               //    Legit use case: 1 parent email can have multiple children.
               //    For /akun self-service: first match wins.
               const studentPayload = {
-                name: user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
+                name: data.name || user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
                 email: user?.email,
                 whatsapp: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
+                birth_date: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
+                domicile: data.domicile || null,     // [linguo-patch:onboarding-profile-fields-v1]
                 avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
               };
               let studentRow: any = null;
@@ -1942,7 +1980,19 @@ export default function AkunPage() {
                 throw new Error(lookupError.message || "Gagal mencari data siswa");
               }
               if (existing) {
-                studentRow = existing;
+                // [linguo-patch:onboarding-profile-fields-v1] isi field profil yg masih kosong
+                const { data: updated } = await supabase
+                  .from("students")
+                  .update({
+                    name: !isPlaceholderName(existing.name) ? existing.name : studentPayload.name,
+                    whatsapp: existing.whatsapp || studentPayload.whatsapp,
+                    birth_date: existing.birth_date || studentPayload.birth_date,
+                    domicile: existing.domicile || studentPayload.domicile,
+                  })
+                  .eq("id", existing.id)
+                  .select()
+                  .single();
+                studentRow = updated || existing;
               } else {
                 const { data: inserted, error: insertError } = await supabase
                   .from("students")
@@ -2003,6 +2053,8 @@ export default function AkunPage() {
                   language: subject || null,
                   source: "Onboarding Wizard",
                   experience: data.exp || null,
+                  birthdate: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
+                  domicile: data.domicile || null,   // [linguo-patch:onboarding-profile-fields-v1]
                 });
               } catch (e) {
                 console.warn("Lead save non-fatal:", e);
@@ -2135,11 +2187,6 @@ export default function AkunPage() {
                   };
                   return g[lang] || "Aa";
                 };
-                const DUMMY_UPCOMING = [
-                  { lang: "German", title: "German — A1.1", date: "8 Sep 2026", tint: "bg-rose-50 text-rose-500" },
-                  { lang: "Spanish", title: "Spanish — A1.1", date: "12 Sep 2026", tint: "bg-indigo-50 text-indigo-500" },
-                  { lang: "Arabic", title: "Arabic — A1.1", date: "20 Sep 2026", tint: "bg-amber-50 text-amber-600" },
-                ];
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
@@ -2181,9 +2228,6 @@ export default function AkunPage() {
                         />
 
                         <h2 className="mt-4 text-[22px] font-extrabold leading-tight text-[#12172B]">{firstName}</h2>
-                        <span className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#F2CB05]/20 px-2.5 py-1 text-xs font-bold text-[#B9890A]">
-                          <span>{xp.emoji}</span> {xp.rank}
-                        </span>
 
                         {/* stats: Bahasa Aktif + Sertifikat CEFR */}
                         <div className="mt-5 grid grid-cols-2 gap-3">
@@ -2234,21 +2278,10 @@ export default function AkunPage() {
                             })}
                           </div>
                         ) : (
-                          <div className="mt-3 flex flex-col gap-3 overflow-y-auto pb-2 pr-1" style={{ maxHeight: 320 }}>
-                            {DUMMY_UPCOMING.map((s, i) => (
-                              <button
-                                key={i}
-                                onClick={() => setActiveTab("jadwal")}
-                                className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left shadow-[0_10px_30px_-20px_rgba(18,23,43,0.5)] transition-shadow hover:shadow-[0_16px_36px_-18px_rgba(18,23,43,0.5)]"
-                              >
-                                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-lg font-extrabold ${s.tint}`}>{langGlyph(s.lang)}</span>
-                                <span className="min-w-0 flex-1">
-                                  <span className="block truncate text-[14px] font-bold text-[#12172B]">{s.title}</span>
-                                  <span className="block text-[12px] font-medium text-gray-500">{s.date}</span>
-                                </span>
-                                <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
-                              </button>
-                            ))}
+                          <div className="mt-3 rounded-2xl border border-dashed border-slate-200 bg-white/60 px-4 py-6 text-center">
+                            <Calendar className="mx-auto mb-2 h-7 w-7 text-slate-300" strokeWidth={1.8} />
+                            <p className="text-[13px] font-semibold text-gray-500">Belum ada jadwal mendatang</p>
+                            <p className="mt-0.5 text-[12px] font-medium text-gray-400">Jadwal kelas kamu bakal muncul di sini.</p>
                           </div>
                         )}
                       </div>
@@ -2814,7 +2847,7 @@ export default function AkunPage() {
         <>
           <button
             onClick={() => setShowQuickActions(true)}
-            className="fixed bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+            className="fixed lg:hidden bottom-24 right-4 sm:right-6 z-[45] h-14 w-14 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
             aria-label="Aksi Cepat"
           >
             <motion.span
@@ -2861,10 +2894,6 @@ export default function AkunPage() {
                     <button onClick={() => { setShowQuickActions(false); openEnrollWizard(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors w-full text-left">
                       <Plus className="w-4 h-4 text-teal-600 shrink-0" strokeWidth={2} />
                       <span className="text-sm font-medium text-gray-700">Tambah Kelas Baru</span>
-                    </button>
-                    <button onClick={() => { setShowQuickActions(false); signOut(); }} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
-                      <LogOut className="w-4 h-4 text-red-500 shrink-0" strokeWidth={2} />
-                      <span className="text-sm font-medium text-red-600">Keluar</span>
                     </button>
                   </div>
                 </motion.div>
