@@ -24,7 +24,6 @@ import LmsKatalog from '@/components/lms/LmsKatalog';
 import LmsLesson from '@/components/lms/LmsLesson';
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import PerpustakaanSaya from '@/components/PerpustakaanSaya';
-import JadwalCalendar from '@/components/akun/JadwalCalendar'; // akun-jadwal-tab-v1
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
 const supabase = createClient(
