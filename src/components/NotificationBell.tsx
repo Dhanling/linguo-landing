@@ -16,9 +16,9 @@ interface Notification {
 interface Props {
   userId: string;
   userType: 'student' | 'teacher';
-  /** "bell" = floating emoji bell (default, dropdown opens left/down).
-   *  "rail" = icon-rail button (teal sidebar), dropdown opens to the right. */
-  variant?: 'bell' | 'rail';
+  /** "bell"  = floating emoji bell (default, dropdown opens left/down).
+   *  "topbar" = white rounded button next to search (dropdown opens down-right). */
+  variant?: 'bell' | 'topbar';
 }
 
 export default function NotificationBell({ userId, userType, variant = 'bell' }: Props) {
@@ -29,7 +29,7 @@ export default function NotificationBell({ userId, userType, variant = 'bell' }:
   const pollRef = useRef<NodeJS.Timeout | null>(null);
 
   const unreadCount = notifs.filter((n) => !n.is_read).length;
-  const isRail = variant === 'rail';
+  const isTopbar = variant === 'topbar';
 
   useEffect(() => {
     if (!userId) return;
@@ -95,31 +95,18 @@ export default function NotificationBell({ userId, userType, variant = 'bell' }:
     if (notif.url) window.location.href = notif.url;
   }
 
-  const dropdownPos = isRail
-    ? 'absolute left-[calc(100%+12px)] top-0 w-80'
-    : 'absolute right-0 top-11 w-80';
-
   return (
-    <div className={isRail ? 'group relative' : 'relative'} ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       {/* Trigger */}
-      {isRail ? (
+      {isTopbar ? (
         <button
           onClick={() => { setOpen(!open); if (!open && unreadCount > 0) markAllRead(); }}
-          className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
-            open
-              ? 'bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]'
-              : 'text-white/70 hover:bg-white/10 hover:text-white'
-          }`}
+          className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#12172B] shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:text-[#16796E]"
           aria-label="Notifikasi"
         >
-          <Bell className="h-[22px] w-[22px]" />
+          <Bell className="h-[20px] w-[20px]" strokeWidth={2.2} />
           {unreadCount > 0 && (
-            <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-[#16796E]" />
-          )}
-          {!open && (
-            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">
-              Notifikasi
-            </span>
+            <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white" />
           )}
         </button>
       ) : (
@@ -139,7 +126,7 @@ export default function NotificationBell({ userId, userType, variant = 'bell' }:
 
       {/* Dropdown */}
       {open && (
-        <div className={`${dropdownPos} bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden`}>
+        <div className="absolute right-0 top-[calc(100%+8px)] w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
             <span className="font-semibold text-gray-900">Notifikasi</span>

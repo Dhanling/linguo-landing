@@ -10,7 +10,9 @@ import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
 import PlacementPicker from '@/components/PlacementPicker';
 import OneSignalProvider from '@/components/OneSignalProvider';
+import NotificationBell from '@/components/NotificationBell';
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
+import AvatarUploader from '@/components/akun/AvatarUploader';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
 import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
@@ -2079,7 +2081,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id}>
+    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl}>
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
       {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
@@ -2096,16 +2098,18 @@ export default function AkunPage() {
         />
       )}
 
-      {/* ── Header ── */}
-      <TopBarMinimal
-        studentId={student?.id || ""}
-        avatarUrl={avatarUrl}
-        firstName={firstName}
-        onAvatarClick={() => setActiveTab("akun")}
-      />
+      {/* ── Header (mobile only — desktop pakai sidebar + bell di samping search) ── */}
+      <div className="lg:hidden">
+        <TopBarMinimal
+          studentId={student?.id || ""}
+          avatarUrl={avatarUrl}
+          firstName={firstName}
+          onAvatarClick={() => setActiveTab("akun")}
+        />
+      </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6">
+      <main className={activeTab === "beranda" ? "w-full" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -2137,12 +2141,12 @@ export default function AkunPage() {
                 const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 
                 return (
-                  <div className="flex flex-col overflow-hidden rounded-[26px] border border-slate-100 bg-white shadow-sm lg:grid lg:grid-cols-[330px_minmax(0,1fr)]">
+                  <div className="flex min-h-[calc(100vh-2rem)] flex-col bg-white lg:grid lg:grid-cols-[330px_minmax(0,1fr)]">
 
                     {/* ════ KOLOM PROFIL (kiri di desktop) ════ */}
                     <aside className="order-2 flex flex-col lg:order-1 lg:border-r lg:border-slate-100">
                       {/* header teal + ornamen kuning (overflow-hidden cuma di header ini) */}
-                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
+                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E] lg:rounded-tl-[26px]">
                         <div className="absolute -top-6 left-6 h-16 w-16 rotate-12 rounded-[14px] bg-[#F2CB05]/90" />
                         <div className="absolute left-24 top-8 h-10 w-10 rounded-full bg-[#F2CB05] opacity-90" />
                         <div className="absolute -top-4 right-10 h-20 w-20 rotate-[18deg] rounded-[18px] border-[10px] border-[#F2CB05] opacity-80" />
@@ -2152,13 +2156,13 @@ export default function AkunPage() {
 
                       {/* body — relative z-10 biar avatar naik di atas header teal (full keliatan) */}
                       <div className="relative z-10 -mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
-                        {avatarUrl ? (
-                          <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-28 w-28 rounded-3xl object-cover shadow-lg ring-4 ring-white" />
-                        ) : (
-                          <div className="flex h-28 w-28 items-center justify-center rounded-3xl bg-[#16796E]/10 text-4xl font-extrabold text-[#16796E] shadow-lg ring-4 ring-white">
-                            {firstName?.[0]?.toUpperCase() || "S"}
-                          </div>
-                        )}
+                        <AvatarUploader
+                          avatarUrl={avatarUrl}
+                          firstName={firstName}
+                          studentId={student?.id}
+                          supabase={supabase}
+                          onUploaded={(url) => setStudent((s: any) => (s ? { ...s, avatar_url: url } : s))}
+                        />
 
                         <h2 className="mt-4 text-[22px] font-extrabold leading-tight text-[#12172B]">{firstName}</h2>
                         <span className="mt-2 inline-flex w-fit items-center gap-1.5 rounded-full bg-[#F2CB05]/20 px-2.5 py-1 text-xs font-bold text-[#B9890A]">
@@ -2231,25 +2235,32 @@ export default function AkunPage() {
                           <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <span>👋</span></h1>
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
-                        <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
-                          <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
-                          <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
-                        </label>
+                        <div className="flex items-center gap-3">
+                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
+                            <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
+                            <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
+                          </label>
+                          {student?.id && (
+                            <div className="hidden lg:block">
+                              <NotificationBell variant="topbar" userId={student.id} userType="student" />
+                            </div>
+                          )}
+                        </div>
                       </div>
 
-                      {/* promo banner */}
-                      <div className="relative overflow-hidden rounded-[2rem] bg-[#16796E] px-7 py-8 text-white sm:px-9 sm:py-9">
+                      {/* promo banner — lebih pendek */}
+                      <div className="relative overflow-hidden rounded-[1.5rem] bg-[#16796E] px-7 py-5 text-white sm:px-9 sm:py-6">
                         <div className="relative z-10 max-w-[60%]">
-                          <h2 className="text-[22px] font-extrabold leading-snug sm:text-[26px]">Pilihan Tepat untuk Naik Level</h2>
-                          <p className="mt-2 max-w-[420px] text-[14px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
-                          <button onClick={openEnrollWizard} className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
+                          <h2 className="text-[19px] font-extrabold leading-snug sm:text-[22px]">Pilihan Tepat untuk Naik Level</h2>
+                          <p className="mt-1.5 max-w-[420px] text-[13px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
+                          <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-white px-5 text-[13px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
                             Lihat Kelas <ArrowRight className="h-4 w-4" />
                           </button>
                         </div>
                         <div className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 items-center gap-3 opacity-95 sm:flex">
-                          <div className="h-28 w-28 rotate-[8deg] bg-[#F2CB05]" style={{ clipPath: HEXA }} />
-                          <div className="-ml-10 mt-8 h-36 w-36 -rotate-[10deg] bg-[#F2CB05]/70" style={{ clipPath: HEXA }} />
-                          <div className="-ml-6 -mt-16 h-20 w-20 bg-[#F2CB05]" style={{ clipPath: HEXA }} />
+                          <div className="h-20 w-20 rotate-[8deg] bg-[#F2CB05]" style={{ clipPath: HEXA }} />
+                          <div className="-ml-8 mt-6 h-28 w-28 -rotate-[10deg] bg-[#F2CB05]/70" style={{ clipPath: HEXA }} />
+                          <div className="-ml-4 -mt-12 h-16 w-16 bg-[#F2CB05]" style={{ clipPath: HEXA }} />
                         </div>
                       </div>
 
@@ -2266,16 +2277,30 @@ export default function AkunPage() {
                             </span>
                           </div>
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {pendingPaymentRegs.map((reg: any) => (
+                            {pendingPaymentRegs.map((reg: any) => {
+                              const photo = ({
+                                German: "/images/lang/german.jpg", Jerman: "/images/lang/german.jpg",
+                                Spanish: "/images/lang/spanish.jpg", Spanyol: "/images/lang/spanish.jpg",
+                              } as Record<string, string>)[reg.language];
+                              return (
                               <button
                                 key={reg.id}
                                 onClick={() => setPendingModalReg(reg)}
                                 className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
-                                  <span className="text-[64px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
-                                  <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
-                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700">
+                                <div className="relative flex h-28 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
+                                  {photo ? (
+                                    <>
+                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover" />
+                                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                    </>
+                                  ) : (
+                                    <>
+                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95">{langGlyph(reg.language)}</span>
+                                      <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                    </>
+                                  )}
+                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700 shadow-sm">
                                     <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum Bayar
                                   </span>
                                 </div>
@@ -2288,7 +2313,8 @@ export default function AkunPage() {
                                   </div>
                                 </div>
                               </button>
-                            ))}
+                              );
+                            })}
                           </div>
                         </div>
                       )}

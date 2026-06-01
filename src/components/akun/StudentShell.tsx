@@ -3,7 +3,6 @@
 import type { ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { LayoutGrid, BookOpen, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
-import NotificationBell from "@/components/NotificationBell";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -35,7 +34,6 @@ function Tip({ label }: { label: string }) {
 export default function StudentShell({
   active,
   onTabChange,
-  studentId,
   children,
 }: {
   active: AkunTab;
@@ -43,7 +41,6 @@ export default function StudentShell({
   firstName?: string;
   avatarUrl?: string;
   segment?: "b2c" | "b2b";
-  studentId?: string;
   children: ReactNode;
 }) {
   const signOut = async () => {
@@ -94,11 +91,6 @@ export default function StudentShell({
                 </button>
               );
             })}
-
-            {/* Notifikasi — controllable bell, dropdown buka ke kanan rail */}
-            {studentId && (
-              <NotificationBell variant="rail" userId={studentId} userType="student" />
-            )}
           </nav>
 
           {/* logout */}
