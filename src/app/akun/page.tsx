@@ -2146,7 +2146,7 @@ export default function AkunPage() {
                     {/* ════ KOLOM PROFIL (kiri di desktop) ════ */}
                     <aside className="order-2 flex flex-col lg:order-1 lg:border-r lg:border-slate-100">
                       {/* header teal + ornamen kuning (overflow-hidden cuma di header ini) */}
-                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E] lg:rounded-tl-[26px]">
+                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
                         <div className="absolute -top-6 left-6 h-16 w-16 rotate-12 rounded-[14px] bg-[#F2CB05]/90" />
                         <div className="absolute left-24 top-8 h-10 w-10 rounded-full bg-[#F2CB05] opacity-90" />
                         <div className="absolute -top-4 right-10 h-20 w-20 rotate-[18deg] rounded-[18px] border-[10px] border-[#F2CB05] opacity-80" />
@@ -2232,7 +2232,7 @@ export default function AkunPage() {
                       {/* top bar: greeting + search (search = stub, lihat catatan) */}
                       <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
-                          <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <span>👋</span></h1>
+                          <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <motion.span style={{ display: "inline-block", transformOrigin: "75% 75%" }} animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}>👋</motion.span></h1>
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
                         <div className="flex items-center gap-3">
@@ -2288,7 +2288,7 @@ export default function AkunPage() {
                                 onClick={() => setPendingModalReg(reg)}
                                 className="rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative flex h-28 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
+                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
                                   {photo ? (
                                     <>
                                       <img src={photo} alt={reg.language} className="h-full w-full object-cover" />

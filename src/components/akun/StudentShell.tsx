@@ -104,7 +104,7 @@ export default function StudentShell({
         </aside>
 
         {/* WHITE PANEL — semua konten tab masuk sini */}
-        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col bg-white pb-20 lg:min-h-0 lg:rounded-l-[26px] lg:pb-0">
+        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col bg-white pb-20 lg:min-h-0 lg:pb-0">
           {children}
         </div>
       </div>
