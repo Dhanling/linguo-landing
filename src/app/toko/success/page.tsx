@@ -1,20 +1,20 @@
 import Link from "next/link";
+// toko-success-lottie-v1 — ceklis sukses pakai Lottie (lihat ./SuccessCheck).
+import SuccessCheck from "./SuccessCheck";
 
 export const metadata = { title: "Pembayaran Berhasil — Linguo.id" };
 
-export default async function SuccessPage({ 
-  searchParams 
-}: { 
-  searchParams: Promise<{ purchase_id?: string }> 
+export default async function SuccessPage({
+  searchParams
+}: {
+  searchParams: Promise<{ purchase_id?: string }>
 }) {
   const { purchase_id } = await searchParams;
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-sm max-w-lg w-full p-8 text-center">
-        <div className="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 text-5xl">
-          🎉
-        </div>
+        <SuccessCheck />
         <h1 className="text-2xl font-bold text-gray-900 mb-2">
           Pembayaran Berhasil!
         </h1>
