@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BookOpen, ChevronDown, Target, Loader2, ArrowRight } from "lucide-react";
+import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };
@@ -19,6 +19,23 @@ type Props = {
   showPlacementTest?: boolean;
 };
 
+type OpenSession = { s: Session; subCode: string; levelName: string };
+
+function ContentSlot({ icon: Icon, label, hint }: { icon: any; label: string; hint: string }) {
+  return (
+    <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-[#F5F6F8]/60 px-3.5 py-3">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-slate-400 ring-1 ring-slate-100">
+        <Icon className="h-4.5 w-4.5" strokeWidth={2} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-[13px] font-bold text-[#12172B]">{label}</span>
+        <span className="block text-[11.5px] font-medium text-gray-400">{hint}</span>
+      </span>
+      <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-gray-400">Belum ditautkan</span>
+    </div>
+  );
+}
+
 export default function SilabusOutline({
   slug,
   languageLabel = "",
@@ -29,6 +46,7 @@ export default function SilabusOutline({
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [openLevel, setOpenLevel] = useState<string | null>(null);
   const [openSub, setOpenSub] = useState<string | null>(null);
+  const [openSession, setOpenSession] = useState<OpenSession | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -147,20 +165,19 @@ export default function SilabusOutline({
                         />
                       </button>
                       {subOpen ? (
-                        <ol className="border-t border-slate-100 bg-[#F5F6F8]/50 px-3.5 py-1.5">
+                        <ol className="border-t border-slate-100 bg-[#F5F6F8]/50 px-2 py-1.5">
                           {(sub.sessions || []).map((s) => (
-                            <li key={s.number} className="flex gap-3 py-2">
-                              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-[#16796E] ring-1 ring-[#16796E]/15">
-                                {s.number}
-                              </span>
-                              <span className="min-w-0 flex-1">
-                                <span className="block text-[13px] font-bold leading-snug text-[#12172B]">{s.title}</span>
-                                {s.topics && s.topics.length ? (
-                                  <span className="mt-0.5 block text-[11.5px] font-medium leading-snug text-gray-500 line-clamp-2">
-                                    {s.topics.join(" · ")}
-                                  </span>
-                                ) : null}
-                              </span>
+                            <li key={s.number}>
+                              <button
+                                onClick={() => setOpenSession({ s, subCode: sub.code, levelName: lvl.name })}
+                                className="group flex w-full items-center gap-3 rounded-lg px-1.5 py-2 text-left transition hover:bg-white"
+                              >
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-[#16796E] ring-1 ring-[#16796E]/15">
+                                  {s.number}
+                                </span>
+                                <span className="min-w-0 flex-1 truncate text-[13px] font-bold text-[#12172B]">{s.title}</span>
+                                <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" strokeWidth={2} />
+                              </button>
                             </li>
                           ))}
                         </ol>
@@ -192,6 +209,57 @@ export default function SilabusOutline({
           </a>
         ) : null}
       </div>
+
+      {openSession ? (
+        <div
+          onClick={() => setOpenSession(null)}
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-[#12172B]/40 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white p-5 shadow-[0_24px_60px_-20px_rgba(18,23,43,0.5)] sm:rounded-3xl sm:p-6"
+          >
+            <div className="flex items-start gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[13px] font-extrabold text-[#16796E]">
+                {openSession.s.number}
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400">
+                  {openSession.levelName} · Sesi {openSession.s.number} · {openSession.subCode}
+                </p>
+                <h3 className="mt-0.5 text-[16px] font-extrabold leading-snug text-[#12172B]">{openSession.s.title}</h3>
+              </div>
+              <button
+                onClick={() => setOpenSession(null)}
+                aria-label="Tutup"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition hover:bg-slate-100 hover:text-[#12172B]"
+              >
+                <X className="h-5 w-5" strokeWidth={2} />
+              </button>
+            </div>
+
+            {openSession.s.topics && openSession.s.topics.length ? (
+              <div className="mt-4">
+                <p className="text-[11px] font-bold uppercase tracking-wide text-gray-400">Yang dipelajari</p>
+                <ul className="mt-2 space-y-1.5">
+                  {openSession.s.topics.map((t, i) => (
+                    <li key={i} className="flex gap-2.5 text-[13px] font-medium leading-snug text-gray-700">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#16796E]" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            <div className="mt-5 space-y-2">
+              <ContentSlot icon={Video} label="Rekaman / video sesi" hint="Link Google Drive / Zoom recording" />
+              <ContentSlot icon={FileText} label="File materi" hint="PDF / slide — berupa link" />
+              <ContentSlot icon={ClipboardList} label="Latihan & kuis" hint="Pilihan ganda + isian rumpang" />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
