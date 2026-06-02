@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -926,17 +926,98 @@ function WaGate({ user, student, supabase, onSaved }: {
 // ═══════════════════════════════════════════════════════════════════════════
 // AKUN TAB — Profile, Avatar Upload, Edit Info
 // ═══════════════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════
+// SETTINGS / PENGATURAN — frame Claude Design [linguo-patch:akun-settings-design-v2]
+// Real: avatar, nama, whatsapp, email, status Google, ganti sandi, logout.
+// Lokal/visual (belum ada backend): bio/kota/zona, toggle notif & preferensi.
+// DUMMY (sesuai permintaan): seluruh tab Tagihan & Paket — belum ada backend billing.
+// ═══════════════════════════════════════════════════════════════════
+type SetPane = "profil" | "akun" | "notif" | "preferensi" | "tagihan";
+
+const SETTINGS_NAV: Array<{ id: SetPane; icon: LucideIcon; label: string; sub: string }> = [
+  { id: "profil",     icon: User,              label: "Profil",             sub: "Nama, foto, bio" },
+  { id: "akun",       icon: Shield,            label: "Akun & Keamanan",    sub: "Email, kata sandi" },
+  { id: "notif",      icon: Bell,              label: "Notifikasi",         sub: "Email, WhatsApp, push" },
+  { id: "preferensi", icon: SlidersHorizontal, label: "Preferensi Belajar", sub: "Bahasa, pengingat" },
+  { id: "tagihan",    icon: Wallet,            label: "Tagihan & Paket",    sub: "Langganan, cicilan" },
+];
+
+function SetToggle({ on, onClick }: { on: boolean; onClick: () => void }) {
+  return (
+    <button type="button" onClick={onClick} aria-pressed={on}
+      className="relative h-[26px] w-[44px] shrink-0 rounded-full transition-colors"
+      style={{ background: on ? "#16796E" : "#D7DAE0" }}>
+      <span className="absolute top-[3px] h-5 w-5 rounded-full bg-white shadow transition-all"
+        style={{ left: on ? "21px" : "3px" }} />
+    </button>
+  );
+}
+
+function SetCard({ title, children, footer }: { title?: string; children: ReactNode; footer?: ReactNode }) {
+  return (
+    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-36px_rgba(18,23,43,0.5)]">
+      {title ? <div className="px-6 pb-3 pt-5"><h3 className="text-[16px] font-extrabold text-[#12172B]">{title}</h3></div> : null}
+      <div className="px-6 pb-5">{children}</div>
+      {footer ? <div className="flex justify-end gap-3 border-t border-slate-100 bg-[#F5F6F8] px-6 py-4">{footer}</div> : null}
+    </section>
+  );
+}
+
+function SetFieldBox({ children }: { children: ReactNode }) {
+  return (
+    <div className="mt-1.5 flex h-12 items-center rounded-xl border border-slate-200 px-4 transition focus-within:border-[#16796E] focus-within:shadow-[0_0_0_4px_rgba(22,121,110,0.12)]">
+      {children}
+    </div>
+  );
+}
+
+function SetToggleRow({ label, desc, on, onClick }: { label: string; desc: string; on: boolean; onClick: () => void }) {
+  return (
+    <div className="flex items-center justify-between gap-4 border-b border-slate-100 py-3.5 last:border-0">
+      <div className="min-w-0">
+        <p className="text-[14px] font-bold text-[#12172B]">{label}</p>
+        <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{desc}</p>
+      </div>
+      <SetToggle on={on} onClick={onClick} />
+    </div>
+  );
+}
+
 function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate }: {
   user: any; student: any; avatarUrl?: string; displayName: string; firstName: string;
   xp: any; badges: any[]; signOut: () => void; supabase: any; onAvatarUpdate: (url: string) => void;
 }) {
+  const [pane, setPane] = useState<SetPane>("profil");
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
-  const [editing, setEditing] = useState(false);
+  const avatarInputRef = useRef<HTMLInputElement>(null);
+
+  // Profil — Nama & WhatsApp REAL (students.name / students.whatsapp); sisanya lokal (belum ada kolom)
   const [editName, setEditName] = useState(student?.name || displayName);
   const [editWa, setEditWa] = useState(student?.whatsapp || "");
+  const [nick, setNick] = useState("");
+  const [kota, setKota] = useState("");
+  const [tz, setTz] = useState("WIB (GMT+7)");
+  const [bio, setBio] = useState("");
   const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const avatarInputRef = useRef<HTMLInputElement>(null);
+  const [notice, setNotice] = useState("");
+
+  // Akun & Keamanan
+  const [newPass, setNewPass] = useState("");
+  const [confPass, setConfPass] = useState("");
+
+  // Notif & Preferensi — lokal/visual (belum ada tabel)
+  const [notif, setNotif] = useState({ email_jadwal: true, email_materi: true, wa_pengingat: true, wa_promo: false, push_sesi: true, push_promo: false });
+  const [pref, setPref] = useState({ reminder: true, autoplay: false, subtitle: true, weekly_report: true, twofa: false });
+  const [uiLang, setUiLang] = useState<"id" | "en">("id");
+
+  const flash = (msg: string) => { setNotice(msg); setTimeout(() => setNotice(""), 3000); };
+
+  const isGoogle = (() => {
+    const am = user?.app_metadata || {};
+    const provs = am.providers || (am.provider ? [am.provider] : []);
+    return Array.isArray(provs) ? provs.includes("google") : false;
+  })();
+  const emailVerified = !!(user?.email_confirmed_at || user?.confirmed_at);
 
   const handleAvatarChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -945,10 +1026,10 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     setUploadingAvatar(true);
     try {
       const ext = file.name.split(".").pop() || "jpg";
-      const path = `${student.id}/avatar.${ext}`;
-      const { error } = await supabase.storage.from("student-avatars").upload(path, file, { upsert: true, contentType: file.type });
+      const filePath = student.id + "/avatar." + ext;
+      const { error } = await supabase.storage.from("student-avatars").upload(filePath, file, { upsert: true, contentType: file.type });
       if (error) throw error;
-      const { data } = supabase.storage.from("student-avatars").getPublicUrl(path);
+      const { data } = supabase.storage.from("student-avatars").getPublicUrl(filePath);
       const url = data.publicUrl + "?t=" + Date.now();
       await supabase.from("students").update({ avatar_url: url }).eq("id", student.id);
       onAvatarUpdate(url);
@@ -960,168 +1041,325 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     }
   };
 
-  const handleSave = async () => {
+  const handleRemoveAvatar = async () => {
+    if (!student?.id || !avatarUrl) return;
+    try {
+      await supabase.from("students").update({ avatar_url: null }).eq("id", student.id);
+      onAvatarUpdate("");
+      flash("Foto profil dihapus.");
+    } catch { alert("Gagal menghapus foto."); }
+  };
+
+  const handleSaveProfil = async () => {
     if (!student?.id) return;
     setSaving(true);
     try {
       await supabase.from("students").update({ name: editName, whatsapp: editWa }).eq("id", student.id);
-      setSaved(true);
-      setEditing(false);
-      setTimeout(() => setSaved(false), 3000);
-    } catch (err) {
-      alert("Gagal menyimpan.");
-    } finally {
-      setSaving(false);
-    }
+      flash("Profil berhasil disimpan.");
+    } catch { alert("Gagal menyimpan."); }
+    finally { setSaving(false); }
   };
 
+  const handleUpdatePassword = async () => {
+    if (newPass.length < 8) { alert("Kata sandi minimal 8 karakter."); return; }
+    if (newPass !== confPass) { alert("Konfirmasi sandi tidak cocok."); return; }
+    try {
+      const { error } = await supabase.auth.updateUser({ password: newPass });
+      if (error) throw error;
+      setNewPass(""); setConfPass("");
+      flash("Kata sandi berhasil diperbarui.");
+    } catch (e: any) { alert("Gagal memperbarui sandi: " + (e?.message || "")); }
+  };
+
+  const title = SETTINGS_NAV.find((n) => n.id === pane)?.label || "Pengaturan";
+
   return (
-    <div className="space-y-4">
-      {/* linguo-patch:akun-settings-lms-frame-v1 — Settings nyamain frame LMS (LmsShell) */}
+    <div className="overflow-hidden rounded-[26px] bg-white shadow-[0_28px_60px_-44px_rgba(18,23,43,0.45)] lg:flex">
+      {/* linguo-patch:akun-settings-design-v2 — frame Claude Design (sub-nav + panel) */}
 
-      {/* Profile hero — gradient teal + aksen kuning, gaya LMS */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] p-5 text-white shadow-md shadow-teal-200/40 sm:p-6">
-        <div className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rotate-12 rounded-3xl" style={{ background: "#FFC93C", opacity: 0.9 }} />
-        <div className="pointer-events-none absolute right-20 top-12 h-16 w-16 rotate-12 rounded-2xl" style={{ background: "#FFC93C", opacity: 0.35 }} />
-        <div className="relative flex items-start gap-4">
-          {/* Avatar */}
-          <div className="relative shrink-0">
-            {avatarUrl
-              ? <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-20 w-20 rounded-full object-cover ring-4 ring-white/30" />
-              : <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/20 text-2xl font-bold text-white ring-4 ring-white/30">{firstName[0]?.toUpperCase()}</div>
-            }
-            <button onClick={() => avatarInputRef.current?.click()} disabled={uploadingAvatar}
-              className="absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full text-[#0F6E56] shadow-lg transition hover:brightness-95"
-              style={{ background: "#FFC93C" }}>
-              {uploadingAvatar
-                ? <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-[#0F6E56] border-t-transparent" />
-                : <Camera className="h-3.5 w-3.5" strokeWidth={2.5} />
-              }
-            </button>
-            <input ref={avatarInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleAvatarChange} />
-          </div>
-
-          {/* Name + rank */}
-          <div className="min-w-0 flex-1">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <h3 className="truncate text-xl font-bold text-white">{student?.name || displayName}</h3>
-                <p className="truncate text-sm text-teal-50">{user?.email}</p>
-              </div>
-              <button onClick={() => setEditing(!editing)}
-                className="shrink-0 rounded-lg bg-white/15 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/25">
-                {editing ? "Batal" : <span className="inline-flex items-center gap-1"><Pencil className="h-3 w-3" strokeWidth={2.5} />Edit</span>}
-              </button>
-            </div>
-            <span className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-[#0F6E56]" style={{ background: "#FFC93C" }}>
-              <span className="text-sm">{xp.emoji}</span>{xp.rank} · {xp.xp} XP
-            </span>
-          </div>
+      {/* LEFT: settings sub-nav */}
+      <aside className="shrink-0 border-b border-slate-100 lg:flex lg:w-[260px] lg:flex-col lg:border-b-0 lg:border-r">
+        <div className="px-6 pb-3 pt-6">
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">Pengaturan</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Kelola akun & preferensimu</p>
         </div>
-      </div>
-
-      {/* Edit Form */}
-      {editing && (
-        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h4 className="text-sm font-semibold text-slate-700">Edit Profil</h4>
-          <div>
-            <label className="mb-1 block text-xs text-slate-500">Nama Lengkap</label>
-            <input value={editName} onChange={e => setEditName(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-[#1A9E9E] focus:ring-2 focus:ring-teal-100" />
-          </div>
-          <div>
-            <label className="mb-1 block text-xs text-slate-500">Nomor WhatsApp</label>
-            <input value={editWa} onChange={e => setEditWa(e.target.value)} placeholder="628xxx"
-              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-[#1A9E9E] focus:ring-2 focus:ring-teal-100" />
-          </div>
-          <button onClick={handleSave} disabled={saving}
-            className="h-11 w-full rounded-xl text-sm font-semibold text-white transition hover:brightness-95 disabled:opacity-50"
-            style={{ background: "#1A9E9E" }}>
-            {saving ? "Menyimpan..." : "Simpan Perubahan"}
-          </button>
-        </motion.div>
-      )}
-
-      {saved && (
-        <div className="rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-center text-sm font-medium text-emerald-700">
-          Profil berhasil disimpan!
-        </div>
-      )}
-
-      {/* Stats */}
-      <div className="grid grid-cols-3 gap-3">
-        {([
-          { label: "Total XP", value: xp.xp, icon: <Star className="h-6 w-6 text-amber-500" strokeWidth={2} fill="currentColor" /> },
-          { label: "Badges", value: badges.length, icon: <Trophy className="h-6 w-6 text-amber-500" strokeWidth={2} /> },
-          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: <BookOpen className="h-6 w-6 text-teal-600" strokeWidth={2} /> },
-        ] as Array<{ label: string; value: number; icon: ReactNode }>).map(s => (
-          <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-4 text-center">
-            <div className="mb-1 flex justify-center">{s.icon}</div>
-            <div className="text-2xl font-bold text-slate-900">{s.value}</div>
-            <div className="mt-0.5 text-[11px] font-medium text-slate-400">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Badges */}
-      {badges.length > 0 && (
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 className="mb-3 inline-flex items-center gap-1.5 text-sm font-bold text-slate-900">
-            <Trophy className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
-            Badges
-          </h3>
-          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6">
-            {badges.map(b => (
-              <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl border border-amber-100 bg-amber-50 p-3">
-                <span className="text-2xl">{b.badge_icon}</span>
-                <span className="text-center text-[10px] font-medium leading-tight text-amber-700">{b.badge_label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Menu */}
-      <div>
-        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Menu</p>
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          {([
-            { icon: <Target className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Placement Test", href: "/silabus/english/coba" },
-            { icon: <Globe className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Lihat Silabus", href: "/silabus" },
-            { icon: <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
-            { icon: <Newspaper className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Blog & Tips Belajar", href: "/blog" },
-          ] as Array<{ icon: ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
-            const inner = (
-              <>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl" style={{ background: "rgba(26,158,158,0.12)", color: "#1A9E9E" }}>{item.icon}</span>
-                <span className="flex-1 text-sm font-medium text-slate-700">{item.label}</span>
-                <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
-              </>
-            );
-            const cls = "flex w-full items-center gap-3 border-t border-slate-100 px-4 py-3 text-left transition first:border-0 hover:bg-slate-50";
-            if (item.onClick) {
-              return (
-                <button key={item.label} onClick={item.onClick} className={cls}>
-                  {inner}
-                </button>
-              );
-            }
+        <nav className="flex gap-1.5 overflow-x-auto px-4 pb-4 lg:flex-1 lg:flex-col lg:overflow-visible">
+          {SETTINGS_NAV.map((n) => {
+            const Icon = n.icon;
+            const on = n.id === pane;
             return (
-              <a key={item.label} href={item.href} target={item.href!.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className={cls}>
-                {inner}
-              </a>
+              <button key={n.id} onClick={() => setPane(n.id)}
+                className={`flex shrink-0 items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition ${on ? "bg-white shadow-[0_12px_30px_-22px_rgba(18,23,43,0.5)]" : "hover:bg-[#F5F6F8]"}`}>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition"
+                  style={on ? { background: "#16796E", color: "#fff" } : { background: "#F5F6F8", color: "#6B7280" }}>
+                  <Icon className="h-[18px] w-[18px]" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[14px] font-bold leading-tight" style={{ color: on ? "#16796E" : "#12172B" }}>{n.label}</span>
+                  <span className="hidden truncate text-[12px] font-medium text-[#6B7280] lg:block">{n.sub}</span>
+                </span>
+              </button>
             );
           })}
+        </nav>
+        <div className="hidden px-4 pb-5 lg:block">
+          <button onClick={signOut} className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-[14px] font-bold text-rose-500 transition hover:bg-rose-50">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50"><LogOut className="h-[18px] w-[18px]" /></span>
+            Keluar dari Akun
+          </button>
         </div>
-      </div>
+      </aside>
 
-      {/* Sign out */}
-      <button onClick={signOut}
-        className="flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-red-200 text-sm font-semibold text-red-600 transition hover:bg-red-50">
-        <LogOut className="h-4 w-4" strokeWidth={2.5} /> Keluar dari Akun
-      </button>
+      {/* RIGHT: panel */}
+      <main className="min-w-0 flex-1 bg-[#F5F6F8]">
+        <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
+          <div>
+            <p className="flex items-center gap-1.5 text-[12px] font-bold text-[#6B7280]">
+              Dashboard <ChevronRight className="h-3.5 w-3.5" /> <span className="text-[#16796E]">Pengaturan</span>
+            </p>
+            <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{title}</h1>
+          </div>
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)]">
+            <Bell className="h-[19px] w-[19px] text-[#12172B]" />
+          </span>
+        </div>
 
-      <p className="text-center text-[10px] text-slate-300">Linguo.id · v2.0 · {new Date().getFullYear()}</p>
+        {notice && (
+          <div className="mx-6 mt-4 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-center text-sm font-semibold text-emerald-700 lg:mx-8">
+            {notice}
+          </div>
+        )}
+
+        <div className="space-y-5 p-6 pt-6 lg:p-8">
+          {pane === "profil" && (
+            <>
+              <SetCard title="Foto Profil">
+                <div className="flex items-center gap-5">
+                  {avatarUrl
+                    ? <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-24 w-24 rounded-2xl object-cover shadow ring-4 ring-white" />
+                    : <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-slate-100 text-3xl font-extrabold text-[#16796E] ring-4 ring-white">{firstName[0]?.toUpperCase()}</div>}
+                  <div className="flex flex-col gap-2.5">
+                    <div className="flex gap-2.5">
+                      <button onClick={() => avatarInputRef.current?.click()} disabled={uploadingAvatar}
+                        className="flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold text-[#16796E] transition hover:brightness-95 disabled:opacity-50"
+                        style={{ background: "rgba(22,121,110,0.1)" }}>
+                        {uploadingAvatar ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /> : <Upload className="h-4 w-4" />}
+                        Ganti foto
+                      </button>
+                      <button onClick={handleRemoveAvatar} className="h-10 rounded-xl px-4 text-[13px] font-bold text-[#6B7280] transition hover:text-rose-500">Hapus</button>
+                    </div>
+                    <span className="text-[12px] font-medium text-[#6B7280]">JPG atau PNG, maksimal 2MB.</span>
+                  </div>
+                </div>
+              </SetCard>
+
+              <SetCard title="Informasi Pribadi" footer={
+                <>
+                  <button onClick={() => { setEditName(student?.name || displayName); setEditWa(student?.whatsapp || ""); }} className="h-11 rounded-xl px-5 text-[14px] font-bold text-[#6B7280] transition hover:text-[#12172B]">Batal</button>
+                  <button onClick={handleSaveProfil} disabled={saving} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:opacity-50" style={{ background: "#16796E" }}>{saving ? "Menyimpan..." : "Simpan Perubahan"}</button>
+                </>
+              }>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="text-[13px] font-bold text-[#12172B]">Nama Lengkap</label>
+                    <SetFieldBox><input value={editName} onChange={(e) => setEditName(e.target.value)} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                  <div>
+                    <label className="text-[13px] font-bold text-[#12172B]">Nomor WhatsApp</label>
+                    <SetFieldBox><input value={editWa} onChange={(e) => setEditWa(e.target.value)} placeholder="628xxx" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                  <div>
+                    <label className="text-[13px] font-bold text-[#12172B]">Nama Panggilan</label>
+                    <SetFieldBox><input value={nick} onChange={(e) => setNick(e.target.value)} placeholder="Panggilan" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                  <div>
+                    <label className="text-[13px] font-bold text-[#12172B]">Kota</label>
+                    <SetFieldBox><input value={kota} onChange={(e) => setKota(e.target.value)} placeholder="Kota" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                  <div>
+                    <label className="text-[13px] font-bold text-[#12172B]">Zona Waktu</label>
+                    <SetFieldBox><select value={tz} onChange={(e) => setTz(e.target.value)} className="w-full bg-transparent text-[14px] font-medium outline-none"><option>WIB (GMT+7)</option><option>WITA (GMT+8)</option><option>WIT (GMT+9)</option></select></SetFieldBox>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="text-[13px] font-bold text-[#12172B]">Bio singkat</label>
+                    <div className="mt-1.5 rounded-xl border border-slate-200 px-4 py-3 transition focus-within:border-[#16796E] focus-within:shadow-[0_0_0_4px_rgba(22,121,110,0.12)]">
+                      <textarea rows={3} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Ceritakan sedikit tentang dirimu & tujuan belajarmu..." className="w-full resize-none bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
+                    </div>
+                  </div>
+                </div>
+              </SetCard>
+            </>
+          )}
+
+          {pane === "akun" && (
+            <>
+              <SetCard title="Email & Login">
+                <div className="flex items-center justify-between gap-4 py-2">
+                  <div><p className="text-[14px] font-bold text-[#12172B]">Email</p><p className="mt-0.5 text-[13px] font-medium text-[#6B7280]">{user?.email || "-"}</p></div>
+                  {emailVerified
+                    ? <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold text-emerald-600"><BadgeCheck className="h-3.5 w-3.5" />Terverifikasi</span>
+                    : <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-600">Belum verifikasi</span>}
+                </div>
+                {isGoogle && (
+                  <div className="mt-1 flex items-center gap-3 border-t border-slate-100 py-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[15px] font-extrabold" style={{ color: "#4285F4" }}>G</span>
+                    <div><p className="text-[14px] font-bold text-[#12172B]">Google</p><p className="text-[12px] font-medium text-[#6B7280]">Terhubung{user?.email ? " · " + user.email : ""}</p></div>
+                  </div>
+                )}
+              </SetCard>
+
+              <SetCard title="Ubah Kata Sandi" footer={
+                <button onClick={handleUpdatePassword} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Perbarui Sandi</button>
+              }>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="sm:col-span-2">
+                    <label className="text-[13px] font-bold text-[#12172B]">Kata sandi baru</label>
+                    <SetFieldBox><input type="password" value={newPass} onChange={(e) => setNewPass(e.target.value)} placeholder="Minimal 8 karakter" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="text-[13px] font-bold text-[#12172B]">Konfirmasi sandi baru</label>
+                    <SetFieldBox><input type="password" value={confPass} onChange={(e) => setConfPass(e.target.value)} placeholder="Ulangi sandi baru" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                  </div>
+                </div>
+              </SetCard>
+
+              <SetCard title="Keamanan">
+                <SetToggleRow label="Verifikasi 2 langkah (2FA)" desc="Tambahkan lapisan keamanan ekstra saat login." on={pref.twofa} onClick={() => setPref((p) => ({ ...p, twofa: !p.twofa }))} />
+                <div className="flex items-center justify-between gap-4 py-3.5">
+                  <div><p className="text-[14px] font-bold text-[#12172B]">Perangkat aktif</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Sesi login kamu saat ini.</p></div>
+                  <span className="text-[13px] font-bold text-[#16796E]">Aktif sekarang</span>
+                </div>
+              </SetCard>
+
+              <SetCard>
+                <div className="flex items-center justify-between gap-4">
+                  <div><p className="text-[14px] font-extrabold text-rose-500">Hapus Akun</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Tindakan permanen. Hubungi admin untuk memproses penghapusan.</p></div>
+                  <a href="https://wa.me/6282116859493?text=Halo%20admin%2C%20saya%20ingin%20menghapus%20akun%20Linguo%20saya." target="_blank" rel="noopener noreferrer" className="h-10 whitespace-nowrap rounded-xl border border-rose-200 px-4 text-[13px] font-bold leading-10 text-rose-500 transition hover:bg-rose-50">Hubungi Admin</a>
+                </div>
+              </SetCard>
+            </>
+          )}
+
+          {pane === "notif" && (
+            <>
+              <SetCard title="Email">
+                <SetToggleRow label="Pengingat jadwal sesi" desc="Email H-1 sebelum sesi live dimulai." on={notif.email_jadwal} onClick={() => setNotif((s) => ({ ...s, email_jadwal: !s.email_jadwal }))} />
+                <SetToggleRow label="Materi & rekaman baru" desc="Saat pengajar mengunggah materi atau rekaman." on={notif.email_materi} onClick={() => setNotif((s) => ({ ...s, email_materi: !s.email_materi }))} />
+              </SetCard>
+              <SetCard title="WhatsApp">
+                <SetToggleRow label="Pengingat sesi via WA" desc="Notifikasi ke nomor WhatsApp kamu." on={notif.wa_pengingat} onClick={() => setNotif((s) => ({ ...s, wa_pengingat: !s.wa_pengingat }))} />
+                <SetToggleRow label="Promo & info kelas baru" desc="Penawaran paket dan bahasa baru." on={notif.wa_promo} onClick={() => setNotif((s) => ({ ...s, wa_promo: !s.wa_promo }))} />
+              </SetCard>
+              <SetCard title="Push (Aplikasi)" footer={
+                <button onClick={() => flash("Preferensi notifikasi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Simpan Perubahan</button>
+              }>
+                <SetToggleRow label="Sesi akan dimulai" desc="Push 15 menit sebelum sesi." on={notif.push_sesi} onClick={() => setNotif((s) => ({ ...s, push_sesi: !s.push_sesi }))} />
+                <SetToggleRow label="Tips & tantangan harian" desc="Dorongan belajar setiap hari." on={notif.push_promo} onClick={() => setNotif((s) => ({ ...s, push_promo: !s.push_promo }))} />
+              </SetCard>
+            </>
+          )}
+
+          {pane === "preferensi" && (
+            <>
+              <SetCard title="Bahasa Antarmuka">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {([["id", "🇮🇩", "Indonesia"], ["en", "🇬🇧", "English"]] as Array<[("id" | "en"), string, string]>).map(([code, flag, label]) => (
+                    <button key={code} onClick={() => setUiLang(code)}
+                      className="flex items-center gap-2.5 rounded-xl border-2 px-4 py-3 text-left transition"
+                      style={uiLang === code ? { borderColor: "#16796E", background: "rgba(22,121,110,0.06)" } : { borderColor: "#E2E8F0" }}>
+                      <span className="text-xl">{flag}</span><span className="text-[14px] font-bold text-[#12172B]">{label}</span>
+                    </button>
+                  ))}
+                </div>
+              </SetCard>
+              <SetCard title="Pengingat Belajar">
+                <SetToggleRow label="Pengingat harian" desc="Ingatkan aku untuk belajar setiap hari." on={pref.reminder} onClick={() => setPref((p) => ({ ...p, reminder: !p.reminder }))} />
+                <div className="flex items-center justify-between gap-4 border-b border-slate-100 py-3.5">
+                  <div><p className="text-[14px] font-bold text-[#12172B]">Waktu pengingat sesi</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Seberapa awal sebelum sesi live.</p></div>
+                  <div className="flex h-11 items-center rounded-xl border border-slate-200 px-3"><select className="bg-transparent text-[14px] font-semibold text-[#12172B] outline-none"><option>15 menit</option><option>1 jam</option><option>3 jam</option><option>1 hari</option></select></div>
+                </div>
+                <SetToggleRow label="Laporan mingguan" desc="Ringkasan progres belajar tiap Minggu." on={pref.weekly_report} onClick={() => setPref((p) => ({ ...p, weekly_report: !p.weekly_report }))} />
+              </SetCard>
+              <SetCard title="Pemutaran Rekaman" footer={
+                <button onClick={() => flash("Preferensi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Simpan Perubahan</button>
+              }>
+                <SetToggleRow label="Putar otomatis" desc="Lanjut ke rekaman berikutnya secara otomatis." on={pref.autoplay} onClick={() => setPref((p) => ({ ...p, autoplay: !p.autoplay }))} />
+                <SetToggleRow label="Tampilkan subtitle" desc="Aktifkan subtitle bawaan saat memutar rekaman." on={pref.subtitle} onClick={() => setPref((p) => ({ ...p, subtitle: !p.subtitle }))} />
+              </SetCard>
+            </>
+          )}
+
+          {pane === "tagihan" && (
+            <>
+              {/* CATATAN: seluruh data Tagihan di bawah ini DUMMY/placeholder — belum ada backend subscription/billing. */}
+              <SetCard>
+                <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 text-white" style={{ background: "#16796E" }}>
+                  <div>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">Paket Aktif</span>
+                    <p className="mt-2 text-[20px] font-extrabold">E-Learning 3 Bahasa</p>
+                    <p className="mt-0.5 text-[13px] font-medium text-white/80">Inggris · Jepang · Korea · diperpanjang otomatis</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[24px] font-extrabold leading-none">Rp 1,2jt<span className="text-[13px] font-bold text-white/80">/bln</span></p>
+                    <p className="mt-1.5 text-[12px] font-medium text-white/80">Perpanjang berikutnya 12 Jun 2026</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <button className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Upgrade Paket</button>
+                  <button className="h-11 rounded-xl border border-slate-200 px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Kelola Langganan</button>
+                </div>
+              </SetCard>
+
+              <SetCard title="Cicilan Berjalan">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <p className="text-[14px] font-bold text-[#12172B]">Cicilan 2 dari 3</p>
+                    <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Jatuh tempo 12 Jun 2026 · Rp 400rb</p>
+                    <div className="mt-2 h-2 w-48 overflow-hidden rounded-full" style={{ background: "#E8EAEE" }}><div className="h-full rounded-full" style={{ width: "66%", background: "#16796E" }} /></div>
+                  </div>
+                  <button className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>Bayar Sekarang</button>
+                </div>
+              </SetCard>
+
+              <SetCard title="Metode Pembayaran">
+                <div className="flex items-center justify-between gap-4 py-2">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-11 items-center justify-center rounded-lg border border-slate-200" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
+                    <div><p className="text-[14px] font-bold text-[#12172B]">VISA •••• 4821</p><p className="text-[12px] font-medium text-[#6B7280]">Kedaluwarsa 08/27</p></div>
+                  </div>
+                  <button className="text-[13px] font-bold text-[#16796E]">Ubah</button>
+                </div>
+              </SetCard>
+
+              <SetCard title="Riwayat Tagihan">
+                <div className="flex flex-col">
+                  {([["12 Mei 2026", "Langganan bulanan", "Rp 1,2jt"], ["12 Apr 2026", "Langganan bulanan", "Rp 1,2jt"], ["14 Feb 2026", "Cicilan 1 dari 3", "Rp 400rb"]] as Array<[string, string, string]>).map((r, i) => (
+                    <div key={i} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><Check className="h-4 w-4" /></span>
+                        <div><p className="text-[14px] font-bold text-[#12172B]">{r[1]}</p><p className="text-[12px] font-medium text-[#6B7280]">{r[0]}</p></div>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <span className="text-[14px] font-extrabold text-[#12172B]">{r[2]}</span>
+                        <button className="text-[#6B7280] transition hover:text-[#16796E]"><Download className="h-[18px] w-[18px]" /></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SetCard>
+            </>
+          )}
+        </div>
+
+        {/* mobile signout */}
+        <div className="px-6 pb-6 lg:hidden">
+          <button onClick={signOut} className="flex w-full items-center justify-center gap-2 rounded-2xl border border-rose-200 py-3 text-[14px] font-bold text-rose-500 transition hover:bg-rose-50">
+            <LogOut className="h-4 w-4" /> Keluar dari Akun
+          </button>
+        </div>
+      </main>
+
+      <input ref={avatarInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleAvatarChange} />
     </div>
   );
 }
@@ -3258,7 +3496,7 @@ export default function AkunPage() {
           )}
 
           {activeTab === "akun" && (
-            <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-2xl mx-auto space-y-4 pb-4">
+            <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="mx-auto w-full max-w-5xl pb-4">
               <AkunTab
                 user={user}
                 student={student}
