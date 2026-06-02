@@ -9,7 +9,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export type AkunTab = "beranda" | "jadwal" | "materi" | "akun";
+export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun";
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
@@ -19,7 +19,7 @@ const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
-  { key: "sertifikat", label: "Sertifikat · Segera", icon: Star, soon: true },
+  { key: "sertifikat", label: "Sertifikat", icon: Star },
   { key: "akun", label: "Pengaturan", icon: Settings },
 ];
 

@@ -7,11 +7,41 @@
 // Fallback dummy kalau `certs` kosong -> otomatis nyerah ke data real.
 // Palet inline (config-independent): teal #16796E, accent #F2CB05, ink #12172B.
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   Award, BadgeCheck, Lock, Download, Share2, ExternalLink, ShieldCheck,
-  Flag, Play, CalendarDays, Info, ChevronRight, GraduationCap,
+  Flag, Play, CalendarDays, Info, ChevronRight, GraduationCap, X, Loader2,
 } from "lucide-react";
+
+// lazy-load script dari CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman.
+function loadScript(src: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (typeof document === "undefined") return reject(new Error("no document"));
+    const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null;
+    if (existing) {
+      if (existing.dataset.loaded === "1") return resolve();
+      existing.addEventListener("load", () => resolve());
+      existing.addEventListener("error", () => reject(new Error(`gagal load ${src}`)));
+      return;
+    }
+    const s = document.createElement("script");
+    s.src = src;
+    s.async = true;
+    s.onload = () => { s.dataset.loaded = "1"; resolve(); };
+    s.onerror = () => reject(new Error(`gagal load ${src}`));
+    document.head.appendChild(s);
+  });
+}
+const H2C_URL = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+const JSPDF_URL = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+
+type Html2Canvas = (el: HTMLElement, opt?: Record<string, unknown>) => Promise<HTMLCanvasElement>;
+type JsPdfDoc = {
+  addImage: (data: string, fmt: string, x: number, y: number, w: number, h: number) => void;
+  save: (name: string) => void;
+  internal: { pageSize: { getWidth: () => number; getHeight: () => number } };
+};
+type JsPdfCtor = new (o?: Record<string, unknown>) => JsPdfDoc;
 
 export type Cert = {
   id: string;
@@ -148,6 +178,59 @@ export default function SertifikatTab({
 
 function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
   const col = colorOf(ct.language);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [pdfLoading, setPdfLoading] = useState(false);
+  const [verifyOpen, setVerifyOpen] = useState(false);
+
+  const handleDownloadPdf = async () => {
+    if (!cardRef.current || pdfLoading) return;
+    setPdfLoading(true);
+    try {
+      await loadScript(H2C_URL);
+      await loadScript(JSPDF_URL);
+      const w = window as typeof window & { html2canvas?: Html2Canvas; jspdf?: { jsPDF: JsPdfCtor } };
+      const h2c = w.html2canvas;
+      const JsPDF = w.jspdf?.jsPDF;
+      if (!h2c || !JsPDF) throw new Error("lib belum siap");
+      const canvas = await h2c(cardRef.current, { scale: 2, backgroundColor: "#ffffff", useCORS: true, logging: false });
+      const img = canvas.toDataURL("image/png");
+      const pdf = new JsPDF({ orientation: canvas.width > canvas.height ? "landscape" : "portrait", unit: "px", format: [canvas.width, canvas.height] });
+      const pw = pdf.internal.pageSize.getWidth();
+      const ph = pdf.internal.pageSize.getHeight();
+      pdf.addImage(img, "PNG", 0, 0, pw, ph);
+      pdf.save(`Sertifikat-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
+    } catch (e) {
+      console.error(e);
+      alert("Gagal membuat PDF. Cek koneksi lalu coba lagi ya.");
+    } finally {
+      setPdfLoading(false);
+    }
+  };
+
+  const handleShare = async () => {
+    const text = `Aku baru menuntaskan ${ct.language} CEFR ${ct.level} di Linguo! 🎉${ct.idNo ? ` (No. ${ct.idNo})` : ""}`;
+    const url = "https://linguo.id";
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: "Sertifikat Linguo", text, url });
+      } else {
+        await navigator.clipboard.writeText(`${text} ${url}`);
+        alert("Teks sertifikat disalin ke clipboard ✓");
+      }
+    } catch {
+      /* user batal share -> abaikan */
+    }
+  };
+
+  const handleLinkedIn = () => {
+    const certName = `Bahasa ${ct.language} — CEFR ${ct.level}${ct.title ? ` (${ct.title})` : ""}`;
+    const params = new URLSearchParams({ startTask: "CERTIFICATION_NAME", name: certName, organizationName: "Linguo" });
+    if (ct.idNo) params.set("certId", ct.idNo);
+    const yr = ct.date ? /\b(20\d{2})\b/.exec(ct.date) : null;
+    if (yr) params.set("issueYear", yr[1]);
+    window.open(`https://www.linkedin.com/profile/add?${params.toString()}`, "_blank", "noopener,noreferrer");
+  };
+
   const stats = [
     ct.score != null ? { k: "Nilai Akhir", v: `${ct.score}/100` } : null,
     ct.hours != null ? { k: "Jam Belajar", v: `${ct.hours} jam` } : null,
@@ -156,6 +239,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
   return (
     <>
       <div
+        ref={cardRef}
         className="relative overflow-hidden rounded-2xl bg-white"
         style={{
           border: "1px solid #ECECEC",
@@ -200,11 +284,75 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <button className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Download className="h-[18px] w-[18px]" />Unduh PDF</button>
-        <button className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
-        <button className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
-        <button className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
+        <button
+          onClick={handleDownloadPdf}
+          disabled={pdfLoading}
+          className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
+          {pdfLoading ? "Membuat PDF…" : "Unduh PDF"}
+        </button>
+        <button onClick={handleShare} className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
+        <button onClick={handleLinkedIn} className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
+        <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
       </div>
+
+      {verifyOpen && (
+        <div
+          className="fixed inset-0 z-[120] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          onClick={() => setVerifyOpen(false)}
+        >
+          <div
+            className="w-full max-w-[400px] overflow-hidden rounded-[24px] bg-white shadow-[0_40px_90px_-30px_rgba(18,23,43,.6)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative flex flex-col items-center px-7 py-8 text-center text-white" style={{ background: col.accent }}>
+              <button
+                onClick={() => setVerifyOpen(false)}
+                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30"
+                aria-label="Tutup"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20"><ShieldCheck className="h-7 w-7" /></span>
+              <p className="mt-3 text-[16px] font-extrabold">Sertifikat Terverifikasi</p>
+              <p className="mt-1 inline-flex items-center gap-1 text-[12px] font-semibold text-white/90"><BadgeCheck className="h-4 w-4" />Asli &amp; diterbitkan oleh Linguo</p>
+            </div>
+            <div className="px-7 py-6">
+              <dl className="space-y-3 text-[13px]">
+                <div className="flex items-start justify-between gap-4">
+                  <dt className="font-medium text-[#6B7280]">Diberikan kepada</dt>
+                  <dd className="text-right font-extrabold text-[#12172B]">{studentName}</dd>
+                </div>
+                <div className="flex items-start justify-between gap-4">
+                  <dt className="font-medium text-[#6B7280]">Program</dt>
+                  <dd className="text-right font-extrabold text-[#12172B]">Bahasa {ct.language} — CEFR {ct.level}</dd>
+                </div>
+                <div className="flex items-start justify-between gap-4">
+                  <dt className="font-medium text-[#6B7280]">Pengajar</dt>
+                  <dd className="text-right font-extrabold text-[#12172B]">{ct.teacher}</dd>
+                </div>
+                {ct.date && (
+                  <div className="flex items-start justify-between gap-4">
+                    <dt className="font-medium text-[#6B7280]">Tanggal terbit</dt>
+                    <dd className="text-right font-extrabold text-[#12172B]">{ct.date}</dd>
+                  </div>
+                )}
+                {ct.idNo && (
+                  <div className="flex items-start justify-between gap-4">
+                    <dt className="font-medium text-[#6B7280]">No. Sertifikat</dt>
+                    <dd className="text-right font-mono text-[12px] font-bold text-[#12172B]">{ct.idNo}</dd>
+                  </div>
+                )}
+              </dl>
+              <p className="mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">
+                <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" />
+                Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
