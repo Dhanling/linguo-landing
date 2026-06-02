@@ -1985,7 +1985,7 @@ export default function AkunPage() {
   const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat">("beranda");
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka">("beranda"); // [linguo-patch:akun-pustaka-tab-v1]
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -2000,14 +2000,14 @@ export default function AkunPage() {
     const menu = sp.get("menu");
     const sesi = sp.get("sesi");
     const view = sp.get("view");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | null = null;
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; }
     if (view === "live" || view === "mandiri" || view === "jelajahi") { setMateriView(view); resolved = "materi"; }
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka")) resolved = menu;
     if (!resolved) {
       try {
         const saved = localStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -2826,7 +2826,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -3410,20 +3410,15 @@ export default function AkunPage() {
                     ))}
 
                     {/* ════ VIEW: BELAJAR MANDIRI ════ */}
+                    {/* [linguo-patch:akun-pustaka-tab-v1] Perpustakaan dipindah ke tab top-level "pustaka" → mandiri = kartu LmsKatalog aja (no trailing empty space) */}
                     {materiView === "mandiri" && (
-                      <div className="flex flex-col gap-7">
-                        <LmsKatalog
-                            topBar={MateriTopBar}
-                            onOpen={(id) => {
-                              setLmsSesi(id);
-                              if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                            }}
-                          />
-                        <div>
-                          <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><BookMarked className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Perpustakaan Saya</h2>
-                          {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
-                        </div>
-                      </div>
+                      <LmsKatalog
+                        topBar={MateriTopBar}
+                        onOpen={(id) => {
+                          setLmsSesi(id);
+                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
+                        }}
+                      />
                     )}
 
                     {/* ════ VIEW: JELAJAHI BAHASA ════ */}
@@ -3526,13 +3521,32 @@ export default function AkunPage() {
               />
             </motion.div>
           )}
+
+          {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning (digital_purchases) */}
+          {activeTab === "pustaka" && (
+            <motion.div key="pustaka" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
+                  <div>
+                    <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Perpustakaan Saya</span></p>
+                    <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">Perpustakaan Saya</h1>
+                    <p className="mt-1 text-[13px] font-medium text-gray-500">E-Book &amp; E-Learning yang udah kamu beli · akses selamanya</p>
+                  </div>
+                  <span className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-[#16796E] sm:flex"><BookMarked className="h-6 w-6" strokeWidth={2} /></span>
+                </div>
+                <div className="px-6 pb-6 pt-5 lg:px-8 lg:pb-8">
+                  {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
+                </div>
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
       {/* Placement Test Language Picker */}
       <PlacementPicker open={showPlacementPicker} onClose={() => setShowPlacementPicker(false)} studentId={student?.id} />
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
-      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : activeTab} onChange={(t) => setActiveTab(t)} />
+      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : activeTab === "pustaka" ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} />
 
       {/* Floating Quick Actions FAB */}
       {student && (

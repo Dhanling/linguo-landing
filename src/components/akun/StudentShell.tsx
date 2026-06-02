@@ -2,14 +2,14 @@
 
 import type { ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutGrid, BookOpen, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun";
+export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka"; // [linguo-patch:shell-pustaka-nav-v1]
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
@@ -18,6 +18,7 @@ type NavItem =
 const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
+  { key: "pustaka", label: "Perpustakaan", icon: Library },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
   { key: "sertifikat", label: "Sertifikat", icon: Star },
   { key: "akun", label: "Pengaturan", icon: Settings },
