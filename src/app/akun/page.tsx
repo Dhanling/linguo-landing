@@ -215,8 +215,98 @@ const TEST_TYPES = [
   { key: "TOEFL", label: "TOEFL", desc: "Test of English as a Foreign Language", icon: "📋" },
 ];
 
+// ═══════════════════════════════════════════════════════════════════════════
+// [linguo-patch:onboarding-fix-v1] Data domisili (38 provinsi + kota) & negara
+// ═══════════════════════════════════════════════════════════════════════════
+const ID_PROVINCES: string[] = [
+  "Aceh","Sumatera Utara","Sumatera Barat","Riau","Kepulauan Riau","Jambi","Bengkulu",
+  "Sumatera Selatan","Kepulauan Bangka Belitung","Lampung","Banten","DKI Jakarta","Jawa Barat",
+  "Jawa Tengah","DI Yogyakarta","Jawa Timur","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur",
+  "Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara",
+  "Sulawesi Utara","Gorontalo","Sulawesi Tengah","Sulawesi Barat","Sulawesi Selatan","Sulawesi Tenggara",
+  "Maluku","Maluku Utara","Papua","Papua Barat","Papua Selatan","Papua Tengah","Papua Pegunungan","Papua Barat Daya",
+];
+
+const ID_CITIES: Record<string, string[]> = {
+  "Aceh": ["Banda Aceh","Lhokseumawe","Langsa","Sabang","Meulaboh","Bireuen","Takengon","Sigli"],
+  "Sumatera Utara": ["Medan","Binjai","Pematangsiantar","Tebing Tinggi","Tanjungbalai","Sibolga","Padang Sidempuan","Gunungsitoli","Deli Serdang","Kabanjahe"],
+  "Sumatera Barat": ["Padang","Bukittinggi","Padang Panjang","Payakumbuh","Pariaman","Sawahlunto","Solok","Batusangkar"],
+  "Riau": ["Pekanbaru","Dumai","Bengkalis","Bagansiapiapi","Rengat","Bangkinang","Siak"],
+  "Kepulauan Riau": ["Batam","Tanjungpinang","Tanjung Balai Karimun","Ranai","Daik Lingga"],
+  "Jambi": ["Jambi","Sungai Penuh","Muara Bulian","Bangko","Kuala Tungkal","Sarolangun"],
+  "Bengkulu": ["Bengkulu","Curup","Manna","Arga Makmur","Mukomuko"],
+  "Sumatera Selatan": ["Palembang","Prabumulih","Lubuklinggau","Pagar Alam","Baturaja","Lahat","Sekayu"],
+  "Kepulauan Bangka Belitung": ["Pangkalpinang","Tanjung Pandan","Sungailiat","Manggar","Mentok","Koba"],
+  "Lampung": ["Bandar Lampung","Metro","Kotabumi","Liwa","Kalianda","Pringsewu","Gunung Sugih"],
+  "Banten": ["Serang","Tangerang","Tangerang Selatan","Cilegon","Pandeglang","Rangkasbitung"],
+  "DKI Jakarta": ["Jakarta Pusat","Jakarta Utara","Jakarta Barat","Jakarta Selatan","Jakarta Timur","Kepulauan Seribu"],
+  "Jawa Barat": ["Bandung","Bekasi","Bogor","Depok","Cimahi","Sukabumi","Cirebon","Tasikmalaya","Garut","Karawang","Cianjur","Purwakarta","Subang","Indramayu","Kuningan","Majalengka","Sumedang","Banjar"],
+  "Jawa Tengah": ["Semarang","Surakarta (Solo)","Salatiga","Magelang","Pekalongan","Tegal","Purwokerto","Kudus","Cilacap","Klaten","Boyolali","Sukoharjo","Jepara","Demak","Kebumen","Wonosobo","Brebes"],
+  "DI Yogyakarta": ["Yogyakarta","Sleman","Bantul","Kulon Progo","Gunungkidul","Wates","Wonosari"],
+  "Jawa Timur": ["Surabaya","Malang","Sidoarjo","Gresik","Mojokerto","Kediri","Madiun","Blitar","Pasuruan","Probolinggo","Jember","Banyuwangi","Tulungagung","Lamongan","Bojonegoro","Tuban","Batu","Ponorogo"],
+  "Bali": ["Denpasar","Badung","Gianyar","Tabanan","Singaraja","Klungkung","Bangli","Karangasem","Negara","Ubud"],
+  "Nusa Tenggara Barat": ["Mataram","Bima","Sumbawa Besar","Dompu","Praya","Selong","Tanjung","Gerung"],
+  "Nusa Tenggara Timur": ["Kupang","Ende","Maumere","Ruteng","Waingapu","Atambua","Labuan Bajo","Bajawa","Larantuka"],
+  "Kalimantan Barat": ["Pontianak","Singkawang","Sambas","Ketapang","Sintang","Sanggau","Mempawah"],
+  "Kalimantan Tengah": ["Palangka Raya","Sampit","Pangkalan Bun","Kuala Kapuas","Buntok","Muara Teweh"],
+  "Kalimantan Selatan": ["Banjarmasin","Banjarbaru","Martapura","Kandangan","Barabai","Amuntai","Pelaihari","Kotabaru"],
+  "Kalimantan Timur": ["Samarinda","Balikpapan","Bontang","Tenggarong","Sangatta","Tanjung Redeb","Penajam"],
+  "Kalimantan Utara": ["Tarakan","Tanjung Selor","Nunukan","Malinau","Tideng Pale"],
+  "Sulawesi Utara": ["Manado","Bitung","Tomohon","Kotamobagu","Tondano","Airmadidi","Amurang"],
+  "Gorontalo": ["Gorontalo","Limboto","Marisa","Tilamuta","Kwandang","Suwawa"],
+  "Sulawesi Tengah": ["Palu","Poso","Luwuk","Toli-Toli","Donggala","Parigi","Ampana","Banggai"],
+  "Sulawesi Barat": ["Mamuju","Majene","Polewali","Pasangkayu","Mamasa"],
+  "Sulawesi Selatan": ["Makassar","Parepare","Palopo","Watampone (Bone)","Sungguminasa","Maros","Sengkang","Bulukumba","Pangkajene","Sidrap","Pinrang","Bantaeng"],
+  "Sulawesi Tenggara": ["Kendari","Baubau","Unaaha","Raha","Kolaka","Wangi-Wangi","Lasusua","Andoolo"],
+  "Maluku": ["Ambon","Tual","Masohi","Namlea","Saumlaki","Dobo","Piru"],
+  "Maluku Utara": ["Ternate","Tidore","Sofifi","Tobelo","Labuha","Sanana","Jailolo"],
+  "Papua": ["Jayapura","Sentani","Sarmi","Wamena (lama)","Genyem"],
+  "Papua Barat": ["Manokwari","Sorong (lama)","Bintuni","Fakfak","Kaimana"],
+  "Papua Selatan": ["Merauke","Tanah Merah","Kepi","Bade"],
+  "Papua Tengah": ["Nabire","Timika","Enarotali","Sugapa","Ilaga"],
+  "Papua Pegunungan": ["Wamena","Dekai","Oksibil","Tiom","Kenyam"],
+  "Papua Barat Daya": ["Sorong","Aimas","Teminabuan","Waisai","Ayamaru"],
+};
+
+const WORLD_COUNTRIES: string[] = [
+  "Malaysia","Singapura","Australia","Jepang","Korea Selatan","Tiongkok","Hong Kong","Taiwan","Thailand",
+  "Vietnam","Filipina","Brunei","Kamboja","Laos","Myanmar","India","Pakistan","Bangladesh","Sri Lanka","Nepal",
+  "Amerika Serikat","Kanada","Inggris","Irlandia","Belanda","Jerman","Prancis","Belgia","Swiss","Austria",
+  "Italia","Spanyol","Portugal","Yunani","Swedia","Norwegia","Denmark","Finlandia","Polandia","Ceko","Hungaria",
+  "Rumania","Bulgaria","Ukraina","Rusia","Turki","Yordania","Arab Saudi","Uni Emirat Arab","Qatar","Kuwait",
+  "Bahrain","Oman","Mesir","Maroko","Tunisia","Afrika Selatan","Nigeria","Kenya","Selandia Baru","Brasil",
+  "Argentina","Meksiko","Chili","Kolombia","Peru","Lainnya",
+];
+
+// ═══════════════════════════════════════════════════════════════════════════
+// [linguo-patch:onboarding-fix7-v1] Progress milestone (ganti progress bar tipis)
+// ═══════════════════════════════════════════════════════════════════════════
+const ONB_MILESTONES = ["Program", "Bahasa", "Level", "Data Diri", "Selesai"];
+function OnbMilestoneBar({ step }: { step: number }) {
+  const active = step - 1; // step 1..5 → milestone 0..4
+  const total = ONB_MILESTONES.length;
+  return (
+    <div className="mx-auto w-full max-w-lg px-5 pt-5 pb-2">
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-xs font-bold text-teal-700">{ONB_MILESTONES[active] || ""}</span>
+        <span className="text-[11px] font-medium text-gray-400">Langkah {active + 1} dari {total}</span>
+      </div>
+      <div className="flex items-center gap-1.5">
+        {ONB_MILESTONES.map((label, i) => (
+          <div key={label} className={`flex items-center gap-1.5 ${i < total - 1 ? "flex-1" : "flex-none"}`}>
+            <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold transition-all ${i < active ? "bg-teal-500 text-white" : i === active ? "bg-teal-600 text-white ring-4 ring-teal-100" : "bg-gray-100 text-gray-400"}`}>
+              {i < active ? "✓" : i + 1}
+            </div>
+            {i < total - 1 && <div className={`h-1 flex-1 rounded-full transition-all ${i < active ? "bg-teal-400" : "bg-gray-100"}`} />}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string}) => void;
+  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; avatarFile?: File | null}) => void;
 }) {
   const [step, setStep] = useState(0);
   const [program, setProgram] = useState("");
@@ -228,11 +318,37 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const [wa, setWa] = useState("");
   const [name, setName] = useState(user?.user_metadata?.full_name || "");
   const [birthdate, setBirthdate] = useState("");
-  const [domicile, setDomicile] = useState("");
+  // [linguo-patch:onboarding-fix-v1] domisili terstruktur + avatar + date popover + hint
+  const [isLN, setIsLN] = useState(false);
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+  const [manualCity, setManualCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [lnCity, setLnCity] = useState("");
+  const cityOptions = province ? (ID_CITIES[province] || []) : [];
+  const idCityName = city === "__manual__" ? manualCity.trim() : city;
+  const domicileStr = isLN
+    ? (country ? (lnCity.trim() ? `${lnCity.trim()}, ${country} (LN)` : `${country} (LN)`) : "")
+    : (province && idCityName ? `${idCityName}, ${province}` : "");
+  const domicileValid = isLN ? !!country : (!!province && !!idCityName);
+  const [avatarFile, setAvatarFile] = useState<File | null>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string>("");
+  const avatarInputRef = useRef<HTMLInputElement>(null);
+  const googleAvatar = user?.user_metadata?.avatar_url || user?.user_metadata?.picture || "";
+  const today = new Date();
+  const [calY, setCalY] = useState(today.getFullYear() - 20);
+  const [calM, setCalM] = useState(0);
+  const [dateOpen, setDateOpen] = useState(false);
+  const [triedNext, setTriedNext] = useState(false);
   const waDigits = wa.replace(/\D/g, "");
   const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
   const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
-  const profileValid = name.trim().length >= 2 && waValid && !!birthdate && domicile.trim().length >= 2;
+  const profileValid = name.trim().length >= 2 && waValid && !!birthdate && domicileValid;
+  const missing: string[] = [];
+  if (name.trim().length < 2) missing.push("Nama lengkap");
+  if (!waValid) missing.push("Nomor WhatsApp");
+  if (!birthdate) missing.push("Tanggal lahir");
+  if (!domicileValid) missing.push("Domisili");
 
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
@@ -249,7 +365,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const finish = () => {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
-    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicile.trim() });
+    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicileStr, avatarFile });
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
@@ -262,9 +378,11 @@ function OnboardingWizard({ user, studentId, onDone }: {
 
   return (
     <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-teal-100">
-        <div className="h-full bg-teal-500 transition-all duration-500" style={{ width: `${((step + 1) / stepCount) * 100}%` }} />
-      </div>
+      {step >= 1 && (
+        <div className="absolute top-0 left-0 right-0">
+          <OnbMilestoneBar step={step} />
+        </div>
+      )}
 
       <AnimatePresence mode="wait">
         <motion.div key={step} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.22 }} className="w-full max-w-lg py-8">
@@ -405,63 +523,203 @@ function OnboardingWizard({ user, studentId, onDone }: {
             </div>
           )}
 
-          {/* Step 4: Lengkapi data (nama, WA, tgl lahir, domisili) — wajib — [linguo-patch:onboarding-profile-fields-v1] */}
+          {/* Step 4: Lengkapi data — [linguo-patch:onboarding-fix-v1] avatar + email + WA prefix + datepicker + domisili cascading + hint */}
           {step === 4 && (
             <div>
-              <div className="text-center mb-5">
-                <div className="text-5xl mb-3">📝</div>
+              <div className="text-center mb-4">
+                {/* Avatar — upload on-hover (file ditahan, di-upload di save handler setelah student.id ada) */}
+                <div className="relative mx-auto mb-3 h-20 w-20">
+                  <input
+                    ref={avatarInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) { setAvatarFile(f); setAvatarPreview(URL.createObjectURL(f)); }
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => avatarInputRef.current?.click()}
+                    className="group relative h-20 w-20 overflow-hidden rounded-full border-4 border-white bg-teal-100 shadow-md ring-1 ring-teal-200"
+                  >
+                    {(avatarPreview || googleAvatar) ? (
+                      <img src={avatarPreview || googleAvatar} alt="" className="h-full w-full object-cover" />
+                    ) : (
+                      <span className="flex h-full w-full items-center justify-center text-2xl font-extrabold text-teal-600">
+                        {firstName.charAt(0).toUpperCase()}
+                      </span>
+                    )}
+                    <span className="absolute inset-0 flex flex-col items-center justify-center gap-0.5 bg-black/45 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      <span className="text-[10px] font-semibold">Ganti</span>
+                    </span>
+                  </button>
+                </div>
                 <h2 className="text-xl font-extrabold text-gray-900">Lengkapi data kamu</h2>
                 <p className="text-gray-400 text-sm mt-1">Biar tim Linguo bisa siapin kelas yang pas buat kamu</p>
               </div>
+
               <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3 space-y-3">
+                {/* Email — otomatis dari Google, read-only */}
+                <div>
+                  <label className="text-xs text-gray-500 mb-1 block">Email</label>
+                  <div className="flex items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-4 py-2.5">
+                    <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                    <span className="truncate text-sm text-gray-500">{user?.email || "—"}</span>
+                    <span className="ml-auto shrink-0 rounded-full bg-gray-200 px-2 py-0.5 text-[10px] font-semibold text-gray-500">Google</span>
+                  </div>
+                </div>
+
+                {/* Nama lengkap */}
                 <div>
                   <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
                   <input
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="Nama lengkap kamu"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
+                    className={`w-full rounded-xl border px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 ${triedNext && name.trim().length < 2 ? "border-red-300" : "border-gray-200"}`}
                   />
                 </div>
+
+                {/* Nomor WhatsApp — prefix bendera + +62 (inline sebaris) */}
                 <div>
                   <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
-                  <input
-                    value={wa}
-                    onChange={e => setWa(e.target.value)}
-                    inputMode="numeric"
-                    placeholder="08xxxxxxxxxx"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                  />
+                  <div className={`flex items-stretch overflow-hidden rounded-xl border bg-white focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-100 ${triedNext && !waValid ? "border-red-300" : "border-gray-200"}`}>
+                    <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-gray-200 bg-gray-50 px-3 text-sm font-semibold text-gray-600">
+                      <span className="text-base leading-none">🇮🇩</span> +62
+                    </span>
+                    <input
+                      value={wa}
+                      onChange={e => setWa(e.target.value)}
+                      inputMode="numeric"
+                      placeholder="812 3456 7890"
+                      className="w-full bg-white px-4 py-2.5 text-sm outline-none"
+                    />
+                  </div>
                   {wa.length > 0 && !waValid && (
-                    <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+                    <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (tanpa 0 di depan)</p>
                   )}
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-xs text-gray-500 mb-1 block">Tanggal lahir</label>
-                    <input
-                      type="date"
-                      value={birthdate}
-                      onChange={e => setBirthdate(e.target.value)}
-                      max={new Date().toISOString().split("T")[0]}
-                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                    />
+
+                {/* Tanggal lahir — date picker popover custom */}
+                <div className="relative">
+                  <label className="text-xs text-gray-500 mb-1 block">Tanggal lahir</label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (birthdate) { const d = new Date(birthdate); setCalY(d.getFullYear()); setCalM(d.getMonth()); }
+                      setDateOpen(o => !o);
+                    }}
+                    className={`flex w-full items-center gap-2 rounded-xl border px-4 py-2.5 text-left text-sm outline-none focus:border-teal-500 ${triedNext && !birthdate ? "border-red-300" : "border-gray-200"} ${birthdate ? "text-gray-800" : "text-gray-400"}`}
+                  >
+                    <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    {birthdate
+                      ? (() => { const d = new Date(birthdate); const mm = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]; return `${d.getDate()} ${mm[d.getMonth()]} ${d.getFullYear()}`; })()
+                      : "Pilih tanggal lahir"}
+                  </button>
+                  {dateOpen && (() => {
+                    const mLabels = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+                    const dows = ["Min","Sen","Sel","Rab","Kam","Jum","Sab"];
+                    const firstDow = new Date(calY, calM, 1).getDay();
+                    const daysInMonth = new Date(calY, calM + 1, 0).getDate();
+                    const cells: (number | null)[] = [];
+                    for (let i = 0; i < firstDow; i++) cells.push(null);
+                    for (let d = 1; d <= daysInMonth; d++) cells.push(d);
+                    const pad = (n: number) => String(n).padStart(2, "0");
+                    const isoOf = (d: number) => `${calY}-${pad(calM + 1)}-${pad(d)}`;
+                    const maxIso = today.toISOString().split("T")[0];
+                    const years: number[] = [];
+                    for (let y = today.getFullYear(); y >= today.getFullYear() - 100; y--) years.push(y);
+                    return (
+                      <div className="absolute left-0 right-0 z-30 mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-xl">
+                        <div className="mb-2 flex items-center gap-2">
+                          <select value={calM} onChange={e => setCalM(Number(e.target.value))} className="flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-teal-500">
+                            {mLabels.map((m, i) => <option key={m} value={i}>{m}</option>)}
+                          </select>
+                          <select value={calY} onChange={e => setCalY(Number(e.target.value))} className="w-24 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-teal-500">
+                            {years.map(y => <option key={y} value={y}>{y}</option>)}
+                          </select>
+                        </div>
+                        <div className="mb-1 grid grid-cols-7 gap-1 text-center text-[10px] font-semibold text-gray-400">
+                          {dows.map((d, i) => <div key={i}>{d}</div>)}
+                        </div>
+                        <div className="grid grid-cols-7 gap-1">
+                          {cells.map((d, i) => {
+                            if (d === null) return <div key={i} />;
+                            const val = isoOf(d);
+                            const disabled = val > maxIso;
+                            const selected = birthdate === val;
+                            return (
+                              <button key={i} type="button" disabled={disabled}
+                                onClick={() => { setBirthdate(val); setDateOpen(false); }}
+                                className={`h-8 rounded-lg text-xs font-medium transition-colors ${selected ? "bg-teal-600 text-white" : disabled ? "text-gray-200" : "text-gray-700 hover:bg-teal-50"}`}>
+                                {d}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* Domisili — cascading: Indonesia (provinsi→kota) / luar negeri (negara) */}
+                <div>
+                  <div className="mb-1 flex items-center justify-between">
+                    <label className="text-xs text-gray-500">Domisili</label>
+                    <label className="flex cursor-pointer items-center gap-1.5 text-[11px] font-medium text-gray-500">
+                      <input type="checkbox" checked={isLN} onChange={e => setIsLN(e.target.checked)} className="h-3.5 w-3.5 accent-teal-600" />
+                      Tinggal di luar negeri
+                    </label>
                   </div>
-                  <div>
-                    <label className="text-xs text-gray-500 mb-1 block">Domisili (kota)</label>
-                    <input
-                      value={domicile}
-                      onChange={e => setDomicile(e.target.value)}
-                      placeholder="mis. Jakarta"
-                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                    />
-                  </div>
+                  {!isLN ? (
+                    <div className="space-y-2">
+                      <select value={province} onChange={e => { setProvince(e.target.value); setCity(""); setManualCity(""); }}
+                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !province ? "border-red-300" : "border-gray-200"} ${province ? "text-gray-800" : "text-gray-400"}`}>
+                        <option value="">Pilih provinsi…</option>
+                        {ID_PROVINCES.map(p => <option key={p} value={p}>{p}</option>)}
+                      </select>
+                      {province && (
+                        <select value={city} onChange={e => setCity(e.target.value)}
+                          className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !idCityName ? "border-red-300" : "border-gray-200"} ${city ? "text-gray-800" : "text-gray-400"}`}>
+                          <option value="">Pilih kota/kabupaten…</option>
+                          {cityOptions.map(c => <option key={c} value={c}>{c}</option>)}
+                          <option value="__manual__">Lainnya (ketik manual)…</option>
+                        </select>
+                      )}
+                      {city === "__manual__" && (
+                        <input value={manualCity} onChange={e => setManualCity(e.target.value)} placeholder="Ketik nama kota/kabupaten"
+                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                      )}
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <select value={country} onChange={e => setCountry(e.target.value)}
+                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !country ? "border-red-300" : "border-gray-200"} ${country ? "text-gray-800" : "text-gray-400"}`}>
+                        <option value="">Pilih negara…</option>
+                        {WORLD_COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                      <input value={lnCity} onChange={e => setLnCity(e.target.value)} placeholder="Kota (opsional), mis. Tokyo"
+                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                    </div>
+                  )}
                 </div>
               </div>
+
+              {/* Indikasi field yang masih kurang — muncul setelah klik Lanjut (#6) */}
+              {triedNext && !profileValid && missing.length > 0 && (
+                <div className="mb-3 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-[12px] text-amber-700">
+                  <svg className="mt-0.5 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                  <span>Masih perlu diisi: <strong>{missing.join(", ")}</strong></span>
+                </div>
+              )}
+
               <button
-                onClick={() => profileValid && setStep(5)}
-                disabled={!profileValid}
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
+                onClick={() => { if (profileValid) { setStep(5); } else { setTriedNext(true); } }}
+                aria-disabled={!profileValid}
+                className={`w-full rounded-2xl py-4 text-base font-bold transition-all active:scale-[0.98] ${profileValid ? "bg-teal-600 text-white shadow-md shadow-teal-200 hover:bg-teal-700" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
               >
                 Lanjut
               </button>
@@ -513,11 +771,6 @@ function OnboardingWizard({ user, studentId, onDone }: {
       {step === 3 && program && (isTestPrep ? testType : lang) && (
         <button onClick={() => setStep(4)} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">Lewati</button>
       )}
-      <div className="absolute bottom-6 flex items-center gap-1.5">
-        {Array.from({ length: stepCount }).map((_, i) => (
-          <div key={i} className={`rounded-full transition-all ${i === step ? "w-5 h-1.5 bg-teal-500" : i < step ? "w-1.5 h-1.5 bg-teal-300" : "w-1.5 h-1.5 bg-gray-200"}`} />
-        ))}
-      </div>
     </div>
   );
 }
@@ -2083,6 +2336,25 @@ export default function AkunPage() {
               }
               if (!studentRow) {
                 throw new Error("Gagal menyimpan data siswa");
+              }
+
+              // [linguo-patch:onboarding-avatar-upload-v1] upload foto custom kalau ada (butuh student.id)
+              if (data.avatarFile && studentRow?.id) {
+                try {
+                  const ext = (data.avatarFile.name.split(".").pop() || "jpg").toLowerCase();
+                  const path = `${studentRow.id}/avatar.${ext}`;
+                  const { error: upErr } = await supabase.storage
+                    .from("student-avatars")
+                    .upload(path, data.avatarFile, { upsert: true, cacheControl: "3600", contentType: data.avatarFile.type || "image/jpeg" });
+                  if (!upErr) {
+                    const { data: pub } = supabase.storage.from("student-avatars").getPublicUrl(path);
+                    const publicUrl = pub?.publicUrl ? `${pub.publicUrl}?t=${Date.now()}` : null;
+                    if (publicUrl) {
+                      await supabase.from("students").update({ avatar_url: publicUrl }).eq("id", studentRow.id);
+                      studentRow = { ...studentRow, avatar_url: publicUrl };
+                    }
+                  }
+                } catch (e) { console.warn("Avatar upload non-fatal:", e); }
               }
 
               // 2. Insert registration with safe defaults (admin will fill in price/sessions later)
