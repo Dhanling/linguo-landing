@@ -977,71 +977,73 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
   return (
     <div className="space-y-4">
-      {/* Profile Card */}
-      <div className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
-        {/* Cover gradient */}
-        <div className="h-24 bg-gradient-to-r from-teal-500 to-teal-400" />
-        <div className="px-5 pb-5">
+      {/* linguo-patch:akun-settings-lms-frame-v1 — Settings nyamain frame LMS (LmsShell) */}
+
+      {/* Profile hero — gradient teal + aksen kuning, gaya LMS */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1A9E9E] to-[#0F6E56] p-5 text-white shadow-md shadow-teal-200/40 sm:p-6">
+        <div className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rotate-12 rounded-3xl" style={{ background: "#FFC93C", opacity: 0.9 }} />
+        <div className="pointer-events-none absolute right-20 top-12 h-16 w-16 rotate-12 rounded-2xl" style={{ background: "#FFC93C", opacity: 0.35 }} />
+        <div className="relative flex items-start gap-4">
           {/* Avatar */}
-          <div className="relative -mt-10 mb-3 inline-block">
-            <div className="relative">
-              {avatarUrl
-                ? <img src={avatarUrl} alt="" className="h-20 w-20 rounded-full ring-4 ring-white object-cover" referrerPolicy="no-referrer" />
-                : <div className="h-20 w-20 rounded-full ring-4 ring-white bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-2xl">{firstName[0]?.toUpperCase()}</div>
+          <div className="relative shrink-0">
+            {avatarUrl
+              ? <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-20 w-20 rounded-full object-cover ring-4 ring-white/30" />
+              : <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/20 text-2xl font-bold text-white ring-4 ring-white/30">{firstName[0]?.toUpperCase()}</div>
+            }
+            <button onClick={() => avatarInputRef.current?.click()} disabled={uploadingAvatar}
+              className="absolute bottom-0 right-0 flex h-7 w-7 items-center justify-center rounded-full text-[#0F6E56] shadow-lg transition hover:brightness-95"
+              style={{ background: "#FFC93C" }}>
+              {uploadingAvatar
+                ? <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-[#0F6E56] border-t-transparent" />
+                : <Camera className="h-3.5 w-3.5" strokeWidth={2.5} />
               }
-              <button onClick={() => avatarInputRef.current?.click()}
-                disabled={uploadingAvatar}
-                className="absolute bottom-0 right-0 h-7 w-7 rounded-full bg-teal-600 flex items-center justify-center text-white shadow-lg hover:bg-teal-700 transition-colors">
-                {uploadingAvatar
-                  ? <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  : <Camera className="w-3.5 h-3.5" strokeWidth={2.5} />
-                }
-              </button>
-            </div>
+            </button>
             <input ref={avatarInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleAvatarChange} />
           </div>
 
-          {/* Name & rank */}
-          <div className="flex items-start justify-between">
-            <div>
-              <h3 className="font-bold text-gray-900 text-xl">{student?.name || displayName}</h3>
-              <p className="text-sm text-gray-400">{user?.email}</p>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="text-base">{xp.emoji}</span>
-                <span className="text-xs font-semibold text-teal-600 bg-teal-50 px-2 py-0.5 rounded-full">{xp.rank} · {xp.xp} XP</span>
+          {/* Name + rank */}
+          <div className="min-w-0 flex-1">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h3 className="truncate text-xl font-bold text-white">{student?.name || displayName}</h3>
+                <p className="truncate text-sm text-teal-50">{user?.email}</p>
               </div>
+              <button onClick={() => setEditing(!editing)}
+                className="shrink-0 rounded-lg bg-white/15 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-white/25">
+                {editing ? "Batal" : <span className="inline-flex items-center gap-1"><Pencil className="h-3 w-3" strokeWidth={2.5} />Edit</span>}
+              </button>
             </div>
-            <button onClick={() => setEditing(!editing)}
-              className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors ${editing ? "bg-gray-100 text-gray-600" : "bg-teal-50 text-teal-600 hover:bg-teal-100"}`}>
-              {editing ? "Batal" : <span className="inline-flex items-center gap-1"><Pencil className="w-3 h-3" strokeWidth={2.5} />Edit</span>}
-            </button>
+            <span className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold text-[#0F6E56]" style={{ background: "#FFC93C" }}>
+              <span className="text-sm">{xp.emoji}</span>{xp.rank} · {xp.xp} XP
+            </span>
           </div>
         </div>
       </div>
 
       {/* Edit Form */}
       {editing && (
-        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl bg-white border border-teal-100 shadow-sm p-5 space-y-4">
-          <h4 className="text-sm font-semibold text-gray-700">Edit Profil</h4>
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <h4 className="text-sm font-semibold text-slate-700">Edit Profil</h4>
           <div>
-            <label className="text-xs text-gray-500 mb-1 block">Nama Lengkap</label>
+            <label className="mb-1 block text-xs text-slate-500">Nama Lengkap</label>
             <input value={editName} onChange={e => setEditName(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-[#1A9E9E] focus:ring-2 focus:ring-teal-100" />
           </div>
           <div>
-            <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp</label>
+            <label className="mb-1 block text-xs text-slate-500">Nomor WhatsApp</label>
             <input value={editWa} onChange={e => setEditWa(e.target.value)} placeholder="628xxx"
-              className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+              className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-[#1A9E9E] focus:ring-2 focus:ring-teal-100" />
           </div>
           <button onClick={handleSave} disabled={saving}
-            className="w-full h-11 rounded-xl bg-teal-600 text-white font-semibold text-sm hover:bg-teal-700 disabled:opacity-50 transition-colors">
+            className="h-11 w-full rounded-xl text-sm font-semibold text-white transition hover:brightness-95 disabled:opacity-50"
+            style={{ background: "#1A9E9E" }}>
             {saving ? "Menyimpan..." : "Simpan Perubahan"}
           </button>
         </motion.div>
       )}
 
       {saved && (
-        <div className="rounded-xl bg-green-50 border border-green-100 px-4 py-3 text-sm text-green-700 font-medium text-center">
+        <div className="rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-center text-sm font-medium text-emerald-700">
           Profil berhasil disimpan!
         </div>
       )}
@@ -1049,74 +1051,77 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
         {([
-          { label: "Total XP", value: xp.xp, icon: <Star className="w-6 h-6 text-amber-500" strokeWidth={2} fill="currentColor" /> },
-          { label: "Badges", value: badges.length, icon: <Trophy className="w-6 h-6 text-amber-500" strokeWidth={2} /> },
-          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: <BookOpen className="w-6 h-6 text-teal-600" strokeWidth={2} /> },
+          { label: "Total XP", value: xp.xp, icon: <Star className="h-6 w-6 text-amber-500" strokeWidth={2} fill="currentColor" /> },
+          { label: "Badges", value: badges.length, icon: <Trophy className="h-6 w-6 text-amber-500" strokeWidth={2} /> },
+          { label: "Kursus Aktif", value: student?.registrations?.filter((r: any) => r.status === "Aktif").length || 0, icon: <BookOpen className="h-6 w-6 text-teal-600" strokeWidth={2} /> },
         ] as Array<{ label: string; value: number; icon: ReactNode }>).map(s => (
-          <div key={s.label} className="rounded-2xl bg-white border border-gray-100 shadow-sm p-4 text-center">
-            <div className="flex justify-center mb-1">{s.icon}</div>
-            <div className="text-xl font-bold text-gray-900">{s.value}</div>
-            <div className="text-[10px] text-gray-400 mt-0.5">{s.label}</div>
+          <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+            <div className="mb-1 flex justify-center">{s.icon}</div>
+            <div className="text-2xl font-bold text-slate-900">{s.value}</div>
+            <div className="mt-0.5 text-[11px] font-medium text-slate-400">{s.label}</div>
           </div>
         ))}
       </div>
 
       {/* Badges */}
       {badges.length > 0 && (
-        <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3 inline-flex items-center gap-1.5">
-            <Trophy className="w-4 h-4 text-amber-500" strokeWidth={2.5} />
+        <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 className="mb-3 inline-flex items-center gap-1.5 text-sm font-bold text-slate-900">
+            <Trophy className="h-4 w-4 text-amber-500" strokeWidth={2.5} />
             Badges
           </h3>
-          <div className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6">
             {badges.map(b => (
-              <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl bg-amber-50 border border-amber-100 p-3">
+              <div key={b.id} className="flex flex-col items-center gap-1 rounded-xl border border-amber-100 bg-amber-50 p-3">
                 <span className="text-2xl">{b.badge_icon}</span>
-                <span className="text-[10px] font-medium text-amber-700 text-center leading-tight">{b.badge_label}</span>
+                <span className="text-center text-[10px] font-medium leading-tight text-amber-700">{b.badge_label}</span>
               </div>
             ))}
           </div>
         </div>
       )}
 
-      {/* Settings */}
-      <div className="rounded-2xl bg-white border border-gray-100 shadow-sm divide-y divide-gray-50">
-        {([
-          { icon: <Target className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Placement Test", href: "/silabus/english/coba" },
-          { icon: <Globe className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Lihat Silabus", href: "/silabus" },
-          { icon: <MessageCircle className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
-          { icon: <Newspaper className="w-4 h-4 text-teal-600" strokeWidth={2} />, label: "Blog & Tips Belajar", href: "/blog" },
-        ] as Array<{ icon: ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
-          const inner = (
-            <>
-              <span className="w-7 flex justify-center">{item.icon}</span>
-              <span className="text-sm font-medium text-gray-700 flex-1">{item.label}</span>
-              <span className="text-gray-300 text-xs">›</span>
-            </>
-          );
-          const cls = "flex items-center gap-3 px-5 py-4 hover:bg-gray-50 transition-colors w-full text-left";
-          if (item.onClick) {
-            return (
-              <button key={item.label} onClick={item.onClick} className={cls}>
-                {inner}
-              </button>
+      {/* Menu */}
+      <div>
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Menu</p>
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          {([
+            { icon: <Target className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Placement Test", href: "/silabus/english/coba" },
+            { icon: <Globe className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Lihat Silabus", href: "/silabus" },
+            { icon: <MessageCircle className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Hubungi Admin", href: "https://wa.me/6282116859493" },
+            { icon: <Newspaper className="h-[18px] w-[18px]" strokeWidth={2} />, label: "Blog & Tips Belajar", href: "/blog" },
+          ] as Array<{ icon: ReactNode; label: string; href?: string; onClick?: () => void }>).map(item => {
+            const inner = (
+              <>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl" style={{ background: "rgba(26,158,158,0.12)", color: "#1A9E9E" }}>{item.icon}</span>
+                <span className="flex-1 text-sm font-medium text-slate-700">{item.label}</span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
+              </>
             );
-          }
-          return (
-            <a key={item.label} href={item.href} target={item.href!.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className={cls}>
-              {inner}
-            </a>
-          );
-        })}
+            const cls = "flex w-full items-center gap-3 border-t border-slate-100 px-4 py-3 text-left transition first:border-0 hover:bg-slate-50";
+            if (item.onClick) {
+              return (
+                <button key={item.label} onClick={item.onClick} className={cls}>
+                  {inner}
+                </button>
+              );
+            }
+            return (
+              <a key={item.label} href={item.href} target={item.href!.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className={cls}>
+                {inner}
+              </a>
+            );
+          })}
+        </div>
       </div>
 
       {/* Sign out */}
       <button onClick={signOut}
-        className="w-full flex items-center justify-center gap-2 h-12 rounded-2xl border-2 border-red-100 text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
-        <LogOut className="w-4 h-4" strokeWidth={2.5} /> Keluar dari Akun
+        className="flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-red-200 text-sm font-semibold text-red-600 transition hover:bg-red-50">
+        <LogOut className="h-4 w-4" strokeWidth={2.5} /> Keluar dari Akun
       </button>
 
-      <p className="text-center text-[10px] text-gray-300">Linguo.id · v2.0 · {new Date().getFullYear()}</p>
+      <p className="text-center text-[10px] text-slate-300">Linguo.id · v2.0 · {new Date().getFullYear()}</p>
     </div>
   );
 }
@@ -2154,7 +2159,6 @@ export default function AkunPage() {
       const base = lvl.split(".")[0].toUpperCase();
       return {
         id: String(r.id),
-        product: r.product,
         language: r.language,
         level: lvl,
         title: CEFR_TITLE[base] || "Program",
