@@ -4,7 +4,7 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Check, ArrowLeft, ShieldCheck, Briefcase, Plane, Home, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -184,308 +184,250 @@ const TEST_TYPES = [
   { key: "TOEFL", label: "TOEFL", desc: "Test of English as a Foreign Language", icon: "📋" },
 ];
 
+// ── Onboarding data (frame-based wizard) ──────────────────────────────
+const ONB_LANGS = [
+  { id: "English",  label: "Inggris",  glyph: "Aa", tintBg: "bg-[#16796E]/10", tintText: "text-[#16796E]" },
+  { id: "Japanese", label: "Jepang",   glyph: "\u3042", tintBg: "bg-rose-50",   tintText: "text-rose-500" },
+  { id: "Korean",   label: "Korea",    glyph: "\ud55c", tintBg: "bg-indigo-50", tintText: "text-indigo-500" },
+  { id: "Mandarin", label: "Mandarin", glyph: "\u4e2d", tintBg: "bg-red-50",    tintText: "text-red-600" },
+  { id: "German",   label: "Jerman",   glyph: "\u00df", tintBg: "bg-cyan-50",   tintText: "text-cyan-700" },
+  { id: "French",   label: "Prancis",  glyph: "\u00c7", tintBg: "bg-blue-50",   tintText: "text-blue-600" },
+  { id: "Spanish",  label: "Spanyol",  glyph: "\u00f1", tintBg: "bg-amber-50",  tintText: "text-amber-600" },
+  { id: "Arabic",   label: "Arab",     glyph: "\u0639", tintBg: "bg-emerald-50",tintText: "text-emerald-600" },
+  { id: "Dutch",    label: "Belanda",  glyph: "Nl", tintBg: "bg-orange-50",     tintText: "text-orange-600" },
+];
+const ONB_LEVELS = [
+  { id: "belum", label: "Belum tahu", sub: "Ikut tes penempatan" },
+  { id: "A1", label: "A1 \u00b7 Pemula", sub: "Baru mulai dari nol" },
+  { id: "A2", label: "A2 \u00b7 Dasar", sub: "Bisa kalimat sederhana" },
+  { id: "B1", label: "B1 \u00b7 Menengah", sub: "Bisa percakapan umum" },
+  { id: "B2", label: "B2 \u00b7 Mahir", sub: "Lancar berdiskusi" },
+];
+const ONB_GOALS: { id: string; icon: LucideIcon }[] = [
+  { id: "Karier", icon: Briefcase },
+  { id: "Akademik", icon: GraduationCap },
+  { id: "Travel", icon: Plane },
+  { id: "Budaya & Hobi", icon: Star },
+  { id: "Persiapan Ujian", icon: ClipboardList },
+  { id: "Tinggal di LN", icon: Home },
+];
+const ONB_INTENS = [
+  { id: "1x", label: "Santai", sub: "1\u00d7 / minggu" },
+  { id: "2x", label: "Standar", sub: "2\u00d7 / minggu" },
+  { id: "3x", label: "Intensif", sub: "3\u00d7+ / minggu" },
+];
+
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string}) => void;
+  user: any; studentId?: string;
+  onDone: (data: { name: string; phone: string; city: string; birthdate: string; lang: string; level: string; goals: string[]; mode: string; intensity: string }) => void;
 }) {
-  const [step, setStep] = useState(0);
-  const [program, setProgram] = useState("");
-  const [testType, setTestType] = useState("");
-  const [lang, setLang] = useState("");
-  const [exp, setExp] = useState<"beginner"|"some"|"">("");
-  const [search, setSearch] = useState("");
-  // [linguo-patch:onboarding-wa-step-v1] nomor WA wajib
-  const [wa, setWa] = useState("");
+  const [step, setStep] = useState(1);
   const [name, setName] = useState(user?.user_metadata?.full_name || "");
+  const [city, setCity] = useState("");
   const [birthdate, setBirthdate] = useState("");
-  const [domicile, setDomicile] = useState("");
-  const waDigits = wa.replace(/\D/g, "");
-  const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
-  const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
-  const profileValid = name.trim().length >= 2 && waValid && !!birthdate && domicile.trim().length >= 2;
+  const [phone, setPhone] = useState("");
+  const [lang, setLang] = useState("");
+  const [level, setLevel] = useState("");
+  const [goals, setGoals] = useState<string[]>([]);
+  const [mode, setMode] = useState("");
+  const [intensity, setIntensity] = useState("2x");
+  const [saving, setSaving] = useState(false);
 
-  const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
-  const isTestPrep = program === "English Test Preparation";
-  const availLangs = (LANGS_BY_PROGRAM[program] || []).filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
-  // [linguo-patch:onboarding-lang-catalog-v1] tampilan bahasa dikelompokkan per region (khusus Kelas Private)
-  const langGroups = program === "Kelas Private"
-    ? PRIVATE_LANG_GROUPS
-        .map(g => ({ region: g.region, langs: g.langs.filter(l => !search || l.toLowerCase().includes(search.toLowerCase())) }))
-        .filter(g => g.langs.length > 0)
-    : [{ region: "", langs: availLangs }];
-  const langNoResults = langGroups.every(g => g.langs.length === 0);
-  const stepCount = 6;
+  const phoneDigits = phone.replace(/\D/g, "");
+  const phoneNorm = phoneDigits.startsWith("0") ? "62" + phoneDigits.slice(1) : phoneDigits.startsWith("62") ? phoneDigits : phoneDigits.startsWith("8") ? "62" + phoneDigits : phoneDigits;
+  const phoneValid = phoneNorm.startsWith("62") && phoneNorm.length >= 10 && phoneNorm.length <= 15;
+  const googleAvatar = user?.user_metadata?.avatar_url || user?.user_metadata?.picture || null;
 
-  const finish = () => {
-    const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
-    try { localStorage.setItem(key, "1"); } catch {}
-    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicile.trim() });
+  const step1Valid = name.trim().length >= 2 && phoneValid && city.trim().length >= 2 && !!birthdate;
+  const step2Valid = !!lang && !!level && goals.length > 0;
+  const step3Valid = !!mode;
+  const canNext = step === 1 ? step1Valid : step === 2 ? step2Valid : step3Valid;
+
+  const STEPS = ["Data Diri", "Bahasa & Tujuan", "Mode Belajar"];
+  const toggleGoal = (g: string) => setGoals((p) => (p.includes(g) ? p.filter((x) => x !== g) : [...p, g]));
+
+  const handleNext = () => {
+    if (!canNext || saving) return;
+    if (step < 3) { setStep(step + 1); return; }
+    setSaving(true);
+    try { localStorage.setItem(`linguo_onboarded_${studentId || user?.id || user?.email}`, "1"); } catch {}
+    onDone({ name: name.trim(), phone: phoneNorm, city: city.trim(), birthdate, lang, level, goals, mode, intensity });
   };
 
-  const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
-
-  const waMsg = encodeURIComponent(
-    `Halo admin Linguo! Saya ${firstName}, mau daftar ${isTestPrep ? (testType ? testType + " Prep" : "IELTS/TOEFL Prep") : program + (lang ? " bahasa " + lang : "")}` +
-    (exp === "beginner" ? " (pemula)" : exp === "some" ? " (sudah ada dasar)" : "") +
-    `. Mohon info jadwal dan biayanya ya. Terima kasih! 🙏`
-  );
-
   return (
-    <div className="fixed inset-0 z-[100] bg-gradient-to-br from-teal-50 via-white to-teal-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-teal-100">
-        <div className="h-full bg-teal-500 transition-all duration-500" style={{ width: `${((step + 1) / stepCount) * 100}%` }} />
-      </div>
-
-      <AnimatePresence mode="wait">
-        <motion.div key={step} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.22 }} className="w-full max-w-lg py-8">
-
-          {/* Step 0: Welcome */}
-          {step === 0 && (
-            <div className="text-center">
-              <div className="text-6xl mb-4">🎉</div>
-              <h1 className="text-2xl font-extrabold text-gray-900 mb-2">Halo, {firstName}!</h1>
-              <p className="text-gray-500 mb-2">Selamat datang di <strong>Linguo.id</strong> — platform belajar 60+ bahasa asing.</p>
-              <p className="text-gray-400 text-sm mb-8">Yuk setup akun kamu dalam 1 menit. Kami bantu temukan kelas yang paling cocok! 🚀</p>
-              <div className="grid grid-cols-3 gap-3 mb-8 text-center">
-                {[["60+","Bahasa"],["200+","Siswa Aktif"],["1-on-1","Kelas Private"]].map(([v,l]) => (
-                  <div key={l} className="bg-white rounded-2xl p-3 shadow-sm border border-teal-100">
-                    <div className="text-xl font-extrabold text-teal-600">{v}</div>
-                    <div className="text-xs text-gray-400 mt-0.5">{l}</div>
-                  </div>
-                ))}
-              </div>
-              <button onClick={() => setStep(1)} className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98]">
-                Mulai Setup →
-              </button>
-            </div>
-          )}
-
-          {/* Step 1: Program (auto-advance) */}
-          {step === 1 && (
-            <div>
-              <div className="text-center mb-6">
-                <div className="text-4xl mb-2">🎯</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Program apa yang kamu inginkan?</h2>
-                <p className="text-gray-400 text-sm mt-1">Pilih satu — langsung lanjut otomatis</p>
-              </div>
-              <div className="space-y-3">
-                {WIZARD_PROGRAMS.map(p => (
-                  <button key={p.key} onClick={() => { setProgram(p.key); setLang(""); setTestType(""); setExp(""); go(2); }}
-                    className={`w-full flex items-start gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${program === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white hover:bg-teal-50/30"}`}>
-                    <span className="text-2xl mt-0.5 shrink-0">{p.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-sm text-gray-800">{p.label}</span>
-                        {p.badge && <span className="text-[10px] bg-teal-100 text-teal-700 px-1.5 py-0.5 rounded-full font-semibold">{p.badge}</span>}
-                      </div>
-                      <div className="text-xs text-gray-400 mt-0.5">{p.desc}</div>
-                      <div className="text-xs text-teal-600 font-semibold mt-1">{p.price}</div>
-                    </div>
-                    {program === p.key && <span className="text-teal-500 font-bold shrink-0 mt-0.5">✓</span>}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Step 2a: Test type for IELTS/TOEFL */}
-          {step === 2 && isTestPrep && (
-            <div>
-              <div className="text-center mb-6">
-                <div className="text-4xl mb-2">📝</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Mau persiapan tes apa?</h2>
-              </div>
-              <div className="space-y-3 mb-5">
-                {TEST_TYPES.map(t => (
-                  <button key={t.key} onClick={() => { setTestType(t.key); go(3); }}
-                    className={`w-full flex items-center gap-4 p-5 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${testType === t.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white"}`}>
-                    <span className="text-3xl">{t.icon}</span>
-                    <div>
-                      <div className="font-bold text-gray-800">{t.label}</div>
-                      <div className="text-xs text-gray-400 mt-0.5">{t.desc}</div>
-                    </div>
-                    {testType === t.key && <span className="ml-auto text-teal-500 font-bold">✓</span>}
-                  </button>
-                ))}
-              </div>
-              <button onClick={() => setStep(1)} className="text-sm text-gray-400 hover:text-gray-600">← Ganti program</button>
-            </div>
-          )}
-
-          {/* Step 2b: Language (auto-advance on click) */}
-          {step === 2 && !isTestPrep && (
-            <div>
-              <div className="text-center mb-4">
-                <div className="text-4xl mb-2">🌍</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Bahasa apa yang ingin kamu pelajari?</h2>
-                <p className="text-gray-400 text-sm mt-1">Klik → langsung lanjut</p>
-              </div>
-              <div className="relative mb-3">
-                <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari bahasa..."
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 pl-9" />
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
-              </div>
-              {/* [linguo-patch:onboarding-lang-catalog-v1] grid bahasa dikelompokkan per region */}
-              <div className="max-h-72 overflow-y-auto pb-1 space-y-3">
-                {langGroups.map(g => (
-                  <div key={g.region || "all"}>
-                    {g.region && <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wide mb-1.5 px-0.5">{g.region}</div>}
-                    <div className="grid grid-cols-3 gap-2">
-                      {g.langs.map(l => (
-                        <button key={l} onClick={() => { setLang(l); go(3, 200); }}
-                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
-                          {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
-                          {l}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                {langNoResults && <div className="text-center text-sm text-gray-400 py-6">Nggak ada bahasa yang cocok 😶</div>}
-              </div>
-              <button onClick={() => setStep(1)} className="mt-4 text-sm text-gray-400 hover:text-gray-600">← Ganti program</button>
-            </div>
-          )}
-
-          {/* Step 3: Experience (auto-advance) */}
-          {step === 3 && (
-            <div>
-              <div className="text-center mb-6">
-                <div className="text-4xl mb-2">{!isTestPrep && lang && LANG_FLAGS[lang] ? <img src={`https://flagcdn.com/w80/${LANG_FLAGS[lang]}.png`} alt={lang} className="w-14 h-10 object-cover rounded-md mx-auto" /> : "📚"}</div>
-                <h2 className="text-xl font-extrabold text-gray-900">{isTestPrep ? `Seberapa siap kamu untuk ${testType}?` : `Pengalaman kamu dengan ${lang}?`}</h2>
-                <p className="text-gray-400 text-sm mt-1">Ini bantu kami rekomendasikan level yang tepat</p>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { key: "beginner", emoji: "🌱", title: isTestPrep ? "Baru mau mulai persiapan" : "Pemula total", desc: isTestPrep ? "Belum tahu harus mulai dari mana" : "Belum pernah belajar sama sekali" },
-                  { key: "some", emoji: "📚", title: isTestPrep ? "Sudah pernah belajar" : "Sudah ada dasar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
-                ].map(opt => (
-                  <button key={opt.key} onClick={() => { setExp(opt.key as any); go(4); }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${exp === opt.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white"}`}>
-                    <span className="text-3xl">{opt.emoji}</span>
-                    <div>
-                      <div className={`font-bold text-sm ${exp === opt.key ? "text-teal-700" : "text-gray-800"}`}>{opt.title}</div>
-                      <div className="text-xs text-gray-400 mt-0.5">{opt.desc}</div>
-                    </div>
-                    {exp === opt.key && <span className="ml-auto text-teal-500 font-bold">✓</span>}
-                  </button>
-                ))}
-              </div>
-              <button onClick={() => setStep(2)} className="mt-4 text-sm text-gray-400 hover:text-gray-600">← Kembali</button>
-            </div>
-          )}
-
-          {/* Step 4: Lengkapi data (nama, WA, tgl lahir, domisili) — wajib — [linguo-patch:onboarding-profile-fields-v1] */}
-          {step === 4 && (
-            <div>
-              <div className="text-center mb-5">
-                <div className="text-5xl mb-3">📝</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Lengkapi data kamu</h2>
-                <p className="text-gray-400 text-sm mt-1">Biar tim Linguo bisa siapin kelas yang pas buat kamu</p>
-              </div>
-              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3 space-y-3">
+    <div className="fixed inset-0 z-[100] overflow-y-auto bg-[#E8EDEC] p-3 sm:p-6">
+      <div className="mx-auto flex min-h-[640px] w-full max-w-[1180px] overflow-hidden rounded-[28px] bg-white shadow-[0_40px_90px_-40px_rgba(10,70,63,0.45)]">
+        {/* LEFT BRAND PANEL */}
+        <aside className="relative hidden w-[340px] shrink-0 flex-col overflow-hidden p-9 lg:flex" style={{ background: "linear-gradient(165deg,#0F5A52 0%, #16796E 55%, #1c8f81 100%)" }}>
+          <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rotate-12 rounded-[14px] bg-[#F2CB05]/15" />
+          <div className="pointer-events-none absolute -right-10 top-24 h-24 w-24 rotate-12 rounded-[12px] bg-[#F2CB05]/10" />
+          <div className="relative flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white"><span className="text-lg font-extrabold text-[#16796E]">L</span></div>
+            <span className="text-[22px] font-extrabold tracking-tight text-white">Linguo</span>
+          </div>
+          <div className="relative mt-12 flex flex-col gap-8">
+            {[
+              { icon: Target, t: "Tentukan Tujuan", d: "Pilih bahasa & level CEFR sesuai targetmu \u2014 karier, akademik, atau jalan-jalan." },
+              { icon: MessageCircle, t: "Belajar Fleksibel", d: "Live class bareng pengajar atau self-paced sesuai ritmemu sendiri." },
+              { icon: Award, t: "Raih Sertifikat", d: "Selesaikan sublevel dan dapatkan sertifikat CEFR resmi dari Linguo." },
+            ].map((v) => (
+              <div key={v.t} className="flex gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#F2CB05]"><v.icon className="h-5 w-5" /></span>
                 <div>
-                  <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
-                  <input
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    placeholder="Nama lengkap kamu"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                  />
+                  <p className="text-[16px] font-extrabold text-white">{v.t}</p>
+                  <p className="mt-1 text-[13px] font-medium leading-relaxed text-white/70">{v.d}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+          <div className="relative mt-auto pt-8">
+            <div className="rounded-2xl bg-white/10 p-5 backdrop-blur">
+              <div className="mb-2 flex gap-0.5 text-[#F2CB05]">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
+              <p className="text-[13px] font-medium leading-relaxed text-white/90">&quot;Dalam 3 bulan aku lancar ngobrol pakai bahasa Jepang. Pengajarnya sabar banget!&quot;</p>
+              <p className="mt-2 text-[12px] font-semibold text-white/60">\u2014 Dimas R., siswa Jepang A2</p>
+            </div>
+          </div>
+        </aside>
+
+        {/* RIGHT FORM */}
+        <main className="flex min-w-0 flex-1 flex-col">
+          <div className="px-6 pt-7 sm:px-10">
+            <div className="flex items-center gap-3 sm:gap-5">
+              {STEPS.map((label, i) => {
+                const n = i + 1, done = step > n, active = step === n;
+                return (
+                  <div key={label} className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className={`flex h-7 w-7 items-center justify-center rounded-full text-[13px] font-extrabold ${done || active ? "bg-[#16796E] text-white" : "bg-slate-100 text-gray-400"}`}>{done ? <Check className="h-4 w-4" /> : n}</span>
+                      <span className={`hidden text-[13px] font-bold sm:inline ${active || done ? "text-[#12172B]" : "text-gray-400"}`}>{label}</span>
+                    </div>
+                    {i < STEPS.length - 1 && <span className="h-px w-5 bg-slate-200 sm:w-8" />}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-[#16796E] transition-all duration-500" style={{ width: `${(step / 3) * 100}%` }} /></div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-6 py-7 sm:px-10">
+            <div className="mx-auto max-w-[620px]">
+              {step === 1 && (
                 <div>
-                  <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
-                  <input
-                    value={wa}
-                    onChange={e => setWa(e.target.value)}
-                    inputMode="numeric"
-                    placeholder="08xxxxxxxxxx"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                  />
-                  {wa.length > 0 && !waValid && (
-                    <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
+                  <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Halo! Kenalan dulu, yuk \ud83d\udc4b</h1>
+                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Lengkapi data dirimu supaya kami bisa menyiapkan pengalaman belajar yang pas.</p>
+                  <div className="mt-7 flex items-center gap-5">
+                    {googleAvatar
+                      ? <img src={googleAvatar} alt="" referrerPolicy="no-referrer" className="h-[72px] w-[72px] rounded-full object-cover shadow ring-4 ring-white" />
+                      : <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#16796E]/10 text-2xl font-extrabold text-[#16796E]">{(name || "?").charAt(0).toUpperCase()}</span>}
+                    <p className="text-[12px] font-medium text-gray-400">{googleAvatar ? "Foto dari akun Google kamu \u2014 bisa diganti nanti di Pengaturan." : "Foto bisa kamu unggah nanti di Pengaturan."}</p>
+                  </div>
+                  <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                      <label className="text-[13px] font-bold text-[#12172B]">Nama Lengkap</label>
+                      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="cth. Sasha Pratama" className="mt-1.5 h-12 w-full rounded-xl border border-slate-200 px-4 text-[14px] font-medium outline-none focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/15" />
+                    </div>
+                    <div>
+                      <label className="text-[13px] font-bold text-[#12172B]">Kota / Domisili</label>
+                      <input value={city} onChange={(e) => setCity(e.target.value)} placeholder="cth. Bandung" className="mt-1.5 h-12 w-full rounded-xl border border-slate-200 px-4 text-[14px] font-medium outline-none focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/15" />
+                    </div>
+                  </div>
+                  <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                      <label className="text-[13px] font-bold text-[#12172B]">Tanggal Lahir</label>
+                      <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)} max={new Date().toISOString().split("T")[0]} className="mt-1.5 h-12 w-full rounded-xl border border-slate-200 px-4 text-[14px] font-medium outline-none focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/15" />
+                    </div>
+                    <div>
+                      <label className="text-[13px] font-bold text-[#12172B]">Nomor WhatsApp</label>
+                      <div className="mt-1.5 flex h-12 items-center overflow-hidden rounded-xl border border-slate-200 focus-within:border-[#16796E] focus-within:ring-2 focus-within:ring-[#16796E]/15">
+                        <span className="flex h-full items-center gap-1.5 border-r border-slate-200 px-3 text-[14px] font-semibold">\ud83c\uddee\ud83c\udde9 +62</span>
+                        <input value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="numeric" placeholder="812 3456 7890" className="h-full w-full bg-transparent px-4 text-[14px] font-medium outline-none" />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="mt-3 flex items-center gap-1.5 text-[12px] font-medium text-gray-400"><ShieldCheck className="h-4 w-4 text-[#16796E]" />Dipakai untuk pengingat jadwal & info kelas. Tidak dibagikan ke pihak lain.</p>
+                </div>
+              )}
+
+              {step === 2 && (
+                <div>
+                  <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Mau belajar bahasa apa?</h1>
+                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Pilih satu untuk mulai \u2014 kamu bisa menambah bahasa lain kapan saja.</p>
+                  <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {ONB_LANGS.map((l) => (
+                      <button key={l.id} onClick={() => setLang(l.id)} className={`relative rounded-2xl border-2 p-4 text-left transition ${lang === l.id ? "border-[#16796E] bg-[#16796E]/5" : "border-slate-200 bg-white hover:border-[#16796E]/30"}`}>
+                        {lang === l.id && <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full bg-[#16796E] text-white"><Check className="h-3 w-3" /></span>}
+                        <span className={`flex h-11 w-11 items-center justify-center rounded-xl text-xl font-extrabold ${l.tintBg} ${l.tintText}`}>{l.glyph}</span>
+                        <span className="mt-2.5 block text-[15px] font-extrabold text-[#12172B]">{l.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <h2 className="mt-8 text-[16px] font-extrabold text-[#12172B]">Sejauh mana kemampuanmu sekarang?</h2>
+                  <div className="mt-3 flex flex-col gap-2.5">
+                    {ONB_LEVELS.map((lv) => (
+                      <button key={lv.id} onClick={() => setLevel(lv.id)} className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition ${level === lv.id ? "border-[#16796E] bg-[#16796E]/5" : "border-slate-200 bg-white hover:border-[#16796E]/30"}`}>
+                        <span className="min-w-0 flex-1"><span className="block text-[14px] font-extrabold text-[#12172B]">{lv.label}</span><span className="block text-[12px] font-medium text-gray-500">{lv.sub}</span></span>
+                        {level === lv.id && <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#16796E] text-white"><Check className="h-3 w-3" /></span>}
+                      </button>
+                    ))}
+                  </div>
+                  <h2 className="mt-8 text-[16px] font-extrabold text-[#12172B]">Apa tujuan utamamu? <span className="text-[13px] font-semibold text-gray-400">(boleh lebih dari satu)</span></h2>
+                  <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                    {ONB_GOALS.map((g) => (
+                      <button key={g.id} onClick={() => toggleGoal(g.id)} className={`flex items-center gap-2.5 rounded-xl border-2 px-3 py-3 text-left transition ${goals.includes(g.id) ? "border-[#16796E] bg-[#16796E]/5" : "border-slate-200 bg-white hover:border-[#16796E]/30"}`}>
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#16796E]/10 text-[#16796E]"><g.icon className="h-4 w-4" /></span>
+                        <span className="text-[13px] font-bold leading-tight text-[#12172B]">{g.id}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {step === 3 && (
+                <div>
+                  <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Pilih gaya belajarmu</h1>
+                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Bisa diubah nanti \u2014 pilih yang paling cocok untuk memulai.</p>
+                  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {[
+                      { id: "live", icon: Users, t: "Live Class", d: "Belajar terjadwal bareng pengajar & teman sekelas lewat video.", feats: ["Sesi terjadwal + rekaman", "Koreksi langsung dari pengajar", "Sertifikat CEFR"] },
+                      { id: "self", icon: Video, t: "Self-Paced", d: "Belajar mandiri dari modul & video kapan pun kamu mau.", feats: ["Akses materi 24/7", "Latihan & kuis interaktif", "Upgrade ke live kapan saja"] },
+                    ].map((m) => (
+                      <button key={m.id} onClick={() => setMode(m.id)} className={`relative rounded-3xl border-2 p-6 text-left transition ${mode === m.id ? "border-[#16796E] shadow-[0_24px_50px_-30px_rgba(22,121,110,.55)]" : "border-slate-200 hover:border-[#16796E]/30"}`}>
+                        <span className={`absolute right-5 top-5 flex h-6 w-6 items-center justify-center rounded-full border-2 ${mode === m.id ? "border-[#16796E] bg-[#16796E] text-white" : "border-slate-300 text-transparent"}`}><Check className="h-3.5 w-3.5" /></span>
+                        <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${m.id === "live" ? "bg-[#16796E]/10 text-[#16796E]" : "bg-[#F2CB05]/20 text-[#9a7400]"}`}><m.icon className="h-6 w-6" /></span>
+                        <p className="mt-4 text-[18px] font-extrabold text-[#12172B]">{m.t}</p>
+                        <p className="mt-1 text-[13px] font-medium leading-relaxed text-gray-500">{m.d}</p>
+                        <div className="mt-4 flex flex-col gap-1.5 text-[12px] font-semibold text-[#12172B]/70">{m.feats.map((f) => <span key={f} className="flex items-center gap-2"><Check className="h-4 w-4 text-[#16796E]" />{f}</span>)}</div>
+                      </button>
+                    ))}
+                  </div>
+                  {mode && (
+                    <div className="mt-7">
+                      <h2 className="text-[16px] font-extrabold text-[#12172B]">{mode === "self" ? "Target belajarmu" : "Seberapa sering kamu mau kelas?"}</h2>
+                      <div className="mt-3 grid grid-cols-3 gap-2.5">
+                        {ONB_INTENS.map((it) => (
+                          <button key={it.id} onClick={() => setIntensity(it.id)} className={`rounded-xl border-2 px-3 py-3 text-center transition ${intensity === it.id ? "border-[#16796E] bg-[#16796E]/5" : "border-slate-200 bg-white hover:border-[#16796E]/30"}`}>
+                            <span className="block text-[14px] font-extrabold text-[#12172B]">{it.label}</span>
+                            <span className="mt-0.5 block text-[12px] font-medium text-gray-500">{it.sub}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-xs text-gray-500 mb-1 block">Tanggal lahir</label>
-                    <input
-                      type="date"
-                      value={birthdate}
-                      onChange={e => setBirthdate(e.target.value)}
-                      max={new Date().toISOString().split("T")[0]}
-                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-500 mb-1 block">Domisili (kota)</label>
-                    <input
-                      value={domicile}
-                      onChange={e => setDomicile(e.target.value)}
-                      placeholder="mis. Jakarta"
-                      className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100"
-                    />
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={() => profileValid && setStep(5)}
-                disabled={!profileValid}
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md shadow-teal-200 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                Lanjut
-              </button>
-              <button onClick={() => setStep(3)} className="mt-4 w-full text-sm text-gray-400 hover:text-gray-600 transition-colors">← Kembali</button>
-            </div>
-          )}
-
-          {/* Step 5: Summary + CTA */}
-          {step === 5 && (
-            <div>
-              <div className="text-center mb-5">
-                <div className="text-5xl mb-3">🚀</div>
-                <h2 className="text-xl font-extrabold text-gray-900">Siap mulai belajar!</h2>
-                <p className="text-gray-400 text-sm mt-1">Ini rangkuman pilihanmu</p>
-              </div>
-              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-5 space-y-3">
-                {[
-                  ["🎯 Program", WIZARD_PROGRAMS.find(p => p.key === program)?.label || program],
-                  ...(isTestPrep ? [["📝 Tes", testType]] : [["🌍 Bahasa", lang]]),
-                  ["📚 Level", exp === "beginner" ? "Pemula (A1)" : "Akan dites dulu"],
-                ].map(([label, value]) => (
-                  <div key={label} className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">{label}</span>
-                    <span className="font-semibold text-gray-800">{value}</span>
-                  </div>
-                ))}
-              </div>
-              <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer" onClick={finish}
-                className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl text-sm transition-all shadow-md shadow-green-100 active:scale-[0.98] mb-3">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
-                Daftar via WhatsApp
-              </a>
-              {exp === "some" && !isTestPrep && (
-                <a href="/silabus/english/coba" onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
-                  🎯 Ambil Placement Test dulu
-                </a>
               )}
-              <button onClick={finish} className="w-full text-sm text-gray-400 hover:text-gray-600 py-2 transition-colors">
-                Lihat dashboard dulu →
-              </button>
+
+              <div className="mt-9 flex items-center justify-between gap-4">
+                {step > 1
+                  ? <button onClick={() => setStep(step - 1)} className="flex h-12 items-center gap-2 rounded-2xl border border-[#16796E]/30 px-5 text-[14px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5"><ArrowLeft className="h-4 w-4" />Sebelumnya</button>
+                  : <span />}
+                <button onClick={handleNext} disabled={!canNext || saving} className={`flex h-12 items-center gap-2 rounded-2xl px-7 text-[14px] font-extrabold text-white transition ${canNext && !saving ? "bg-[#16796E] hover:bg-[#0F5A52]" : "cursor-not-allowed bg-slate-300"}`}>
+                  {saving ? "Menyimpan\u2026" : step === 3 ? "Selesai & Masuk" : "Lanjut"}
+                  {!saving && (step === 3 ? <Check className="h-[18px] w-[18px]" /> : <ArrowRight className="h-[18px] w-[18px]" />)}
+                </button>
+              </div>
             </div>
-          )}
-
-        </motion.div>
-      </AnimatePresence>
-
-      {/* linguo-patch:onboarding-required-fields-v1 — "Lewati" hanya boleh
-          setelah program & bahasa/tes dipilih (step 3). Step 1 & 2 wajib diisi. */}
-      {step === 3 && program && (isTestPrep ? testType : lang) && (
-        <button onClick={() => setStep(4)} className="absolute top-4 right-4 text-xs text-gray-400 hover:text-gray-600 transition-colors">Lewati</button>
-      )}
-      <div className="absolute bottom-6 flex items-center gap-1.5">
-        {Array.from({ length: stepCount }).map((_, i) => (
-          <div key={i} className={`rounded-full transition-all ${i === step ? "w-5 h-1.5 bg-teal-500" : i < step ? "w-1.5 h-1.5 bg-teal-300" : "w-1.5 h-1.5 bg-gray-200"}`} />
-        ))}
+          </div>
+        </main>
       </div>
     </div>
   );
@@ -1958,29 +1900,21 @@ export default function AkunPage() {
           studentId={undefined}
           onDone={async (data) => {
             try {
-              // 1. Find-or-create student record (manual because email is not UNIQUE)
-              //    Legit use case: 1 parent email can have multiple children.
-              //    For /akun self-service: first match wins.
+              const isLive = data.mode === "live";
               const studentPayload = {
                 name: data.name || user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
                 email: user?.email,
-                whatsapp: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
-                birth_date: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
-                domicile: data.domicile || null,     // [linguo-patch:onboarding-profile-fields-v1]
+                whatsapp: data.phone || null,
+                birth_date: data.birthdate || null,
+                domicile: data.city || null,
+                learning_objective: data.goals?.length ? data.goals.join(", ") : null,
                 avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
               };
               let studentRow: any = null;
               const { data: existing, error: lookupError } = await supabase
-                .from("students")
-                .select("*")
-                .eq("email", user?.email || "")
-                .limit(1)
-                .maybeSingle();
-              if (lookupError) {
-                throw new Error(lookupError.message || "Gagal mencari data siswa");
-              }
+                .from("students").select("*").eq("email", user?.email || "").limit(1).maybeSingle();
+              if (lookupError) throw new Error(lookupError.message || "Gagal mencari data siswa");
               if (existing) {
-                // [linguo-patch:onboarding-profile-fields-v1] isi field profil yg masih kosong
                 const { data: updated } = await supabase
                   .from("students")
                   .update({
@@ -1988,93 +1922,77 @@ export default function AkunPage() {
                     whatsapp: existing.whatsapp || studentPayload.whatsapp,
                     birth_date: existing.birth_date || studentPayload.birth_date,
                     domicile: existing.domicile || studentPayload.domicile,
+                    learning_objective: existing.learning_objective || studentPayload.learning_objective,
                   })
-                  .eq("id", existing.id)
-                  .select()
-                  .single();
+                  .eq("id", existing.id).select().single();
                 studentRow = updated || existing;
               } else {
                 const { data: inserted, error: insertError } = await supabase
-                  .from("students")
-                  .insert(studentPayload)
-                  .select()
-                  .single();
-                if (insertError || !inserted) {
-                  throw new Error(insertError?.message || "Gagal menyimpan data siswa");
-                }
+                  .from("students").insert(studentPayload).select().single();
+                if (insertError || !inserted) throw new Error(insertError?.message || "Gagal menyimpan data siswa");
                 studentRow = inserted;
               }
-              if (!studentRow) {
-                throw new Error("Gagal menyimpan data siswa");
+              if (!studentRow) throw new Error("Gagal menyimpan data siswa");
+
+              // Registration cuma buat Live Class (self-paced ga bikin reg pending)
+              let regRow: any = null;
+              if (isLive) {
+                const { data: r, error: regError } = await supabase
+                  .from("registrations")
+                  .insert({
+                    student_id: studentRow.id,
+                    affiliate_ref_code: getRefCodeFromCookie(),
+                    product: "Kelas Private",
+                    language: data.lang || null,
+                    level: data.level && data.level !== "belum" ? data.level : "TBD",
+                    status: "Menunggu Pembayaran",
+                    payment_status: "Belum Bayar",
+                    pipeline_status: "Aktif",
+                    sessions_total: 0,
+                    sessions_used: 0,
+                    duration: "60",
+                    total_amount: 0,
+                    registration_date: new Date().toISOString(),
+                  })
+                  .select(`
+                    id, product, language, level, status,
+                    sessions_total, sessions_used,
+                    duration, total_amount, payment_status,
+                    registration_date, teacher_id,
+                    payment_proof_url, payment_proof_uploaded_at,
+                    payment_verified_at, payment_rejection_reason,
+                    teachers(name, whatsapp)
+                  `).single();
+                if (regError) throw new Error(regError?.message || "Gagal membuat registrasi");
+                regRow = r;
               }
 
-              // 2. Insert registration with safe defaults (admin will fill in price/sessions later)
-              const isTestPrep = data.program === "English Test Preparation";
-              const { data: regRow, error: regError } = await supabase
-                .from("registrations")
-                .insert({
-                  student_id: studentRow.id,
-                  affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
-                  product: data.program,
-                  language: data.testType || data.lang || null,
-                  level: data.exp === "beginner" ? "A1" : "TBD",
-                  status: "Menunggu Pembayaran",
-                  payment_status: "Belum Bayar",
-                  pipeline_status: "Aktif",
-                  sessions_total: 0,
-                  sessions_used: 0,
-                  duration: isTestPrep ? "90" : "60",
-                  total_amount: 0,
-                  registration_date: new Date().toISOString(),
-                })
-                .select(`
-                  id, product, language, level, status,
-                  sessions_total, sessions_used,
-                  duration, total_amount, payment_status,
-                  registration_date, teacher_id,
-                  payment_proof_url, payment_proof_uploaded_at,
-                  payment_verified_at, payment_rejection_reason,
-                  teachers(name, whatsapp)
-                `)
-                .single();
-              if (regError || !regRow) {
-                throw new Error(regError?.message || "Gagal membuat registrasi");
-              }
-
-              // 3. Auto-save to leads table for CRM tracking (non-blocking)
+              // leads (CRM) — non-blocking
               try {
-                const subject = data.testType || data.lang || "";
-                // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — leads.email ga unique
                 await supabase.from("leads").insert({
                   name: studentPayload.name,
                   email: user?.email || "",
-                  wa_number: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
-                  program: data.program,
-                  language: subject || null,
+                  wa_number: data.phone || null,
+                  program: isLive ? "Kelas Private (Live)" : "Self-paced / E-Learning",
+                  language: data.lang || null,
                   source: "Onboarding Wizard",
-                  experience: data.exp || null,
-                  birthdate: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
-                  domicile: data.domicile || null,   // [linguo-patch:onboarding-profile-fields-v1]
+                  experience: data.level || null,
+                  birthdate: data.birthdate || null,
+                  domicile: data.city || null,
                 });
-              } catch (e) {
-                console.warn("Lead save non-fatal:", e);
-              }
+              } catch (e) { console.warn("Lead save non-fatal:", e); }
 
-              // 4. Clear wizard cache, set real student state (skip mock card path)
               try {
                 localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
                 localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`);
               } catch {}
 
-              setStudent({ ...studentRow, registrations: [regRow as any] } as any);
+              setStudent({ ...studentRow, registrations: regRow ? [regRow as any] : [] } as any);
               setShowOnboarding(false);
               setWizardCompleted(false);
             } catch (err: any) {
               console.error("Onboarding save failed:", err);
-              alert(
-                "Gagal menyimpan registrasi: " + (err?.message || "unknown") +
-                "\n\nSilakan coba lagi atau hubungi tim Linguo via WhatsApp."
-              );
+              alert("Gagal menyimpan data: " + (err?.message || "unknown") + "\n\nCoba lagi atau hubungi tim Linguo via WhatsApp.");
             }
           }}
         />
@@ -2172,7 +2090,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : activeTab === "jadwal" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
