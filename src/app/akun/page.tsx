@@ -2172,7 +2172,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : activeTab === "jadwal" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

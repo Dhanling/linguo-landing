@@ -5,8 +5,10 @@
 // Port dari Claude Design frame (Jadwal.html) -> React, disambung ke data real
 // `upcomingSchedules` (kolom `scheduled_at` + resolve bahasa/level/teacher dari registrasi).
 // Warna config-independent (hex inline). Palet match shell: teal #16796E.
-// + jadwal-compact-v1: tinggi sel dikecilin (92->56) + panel kiri ditipisin (300->268)
-//   biar kalender ga ke-strech pas di-wrap width sempit di tab /akun.
+// + jadwal-compact-v1: tinggi sel diatur (92->56->78) + panel kiri ditipisin (300->268)
+//   biar kalender proporsional, ga ke-strech & ga ceper.
+// + jadwal-dummy-fill-v1: fallback sesi dummy kalau akun kosong + lepas max-w
+//   (lebar dikontrol wrapper di page.tsx) biar ga banyak space mubazir.
 
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays } from "lucide-react";
@@ -72,9 +74,33 @@ export default function JadwalCalendar({
   const today = useMemo(() => new Date(), []);
   const todayIso = ymd(today);
 
+  // dummy-fallback-v1: kalau akun belum punya sesi real, tampilin contoh biar
+  // kalender + "Sesi Mendatang" ga melompong. Otomatis nyerah ke data real
+  // begitu prop `sessions` keisi. Mau matiin dummy? hapus DUMMY_SESSIONS +
+  // baseSessions, balikin items pakai `sessions`.
+  const DUMMY_SESSIONS = useMemo<JadwalSession[]>(() => {
+    const mk = (addDays: number, h: number, mi: number, language: string, level: string, product: string, teacher: string, dur: number): JadwalSession => {
+      const d = new Date(today);
+      d.setDate(d.getDate() + addDays);
+      return {
+        id: `dummy-${addDays}-${language}`,
+        scheduledAt: `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(h)}:${pad(mi)}:00`,
+        durationMinutes: dur, language, level, product, teacher,
+      };
+    };
+    return [
+      mk(1, 10, 0, "Inggris", "B1", "Kelas Private", "Kak Sarah", 60),
+      mk(3, 19, 0, "Jepang", "A2", "Kelas Private", "Kak Kenji", 60),
+      mk(5, 16, 30, "Spanyol", "A1", "Semi Private", "Kak Maria", 45),
+      mk(8, 20, 0, "Korea", "A1", "Kelas Private", "Kak Min", 60),
+      mk(12, 17, 0, "Prancis", "A2", "Kelas Private", "Kak Lucas", 60),
+    ];
+  }, [today]);
+  const baseSessions = sessions.length ? sessions : DUMMY_SESSIONS;
+
   const items = useMemo<NormSession[]>(
     () =>
-      sessions
+      baseSessions
         .filter((s) => s.scheduledAt)
         .map((s) => {
           const d = new Date(s.scheduledAt);
@@ -88,7 +114,7 @@ export default function JadwalCalendar({
             _weekday: d.toLocaleDateString("id-ID", { weekday: "long" }),
           };
         }),
-    [sessions]
+    [baseSessions]
   );
 
   const [view, setView] = useState<{ y: number; m: number }>({ y: today.getFullYear(), m: today.getMonth() });
@@ -129,7 +155,7 @@ export default function JadwalCalendar({
   const goToday = () => { setSelected(null); setView({ y: today.getFullYear(), m: today.getMonth() }); };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-4">
+    <div className="w-full space-y-4">
       {/* Jadwal Tetap (Kelas Reguler) — recurring batch + Zoom */}
       {regularBatches.length > 0 && (
         <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
@@ -242,7 +268,7 @@ export default function JadwalCalendar({
                       tabIndex={evs.length ? 0 : -1}
                       aria-label={`${cell.d} ${MONTHS[view.m]}${evs.length ? `, ${evs.length} sesi` : ""}`}
                       className={[
-                        "text-left rounded-xl p-1.5 sm:p-2 min-h-[44px] sm:min-h-[56px] flex flex-col gap-1 transition",
+                        "text-left rounded-xl p-1.5 sm:p-2 min-h-[44px] sm:min-h-[78px] flex flex-col gap-1 transition",
                         evs.length ? "cursor-pointer hover:bg-white" : "cursor-default",
                         dow >= 5 ? "bg-[#F5F6F8]/60" : "bg-[#F5F6F8]",
                       ].join(" ")}
