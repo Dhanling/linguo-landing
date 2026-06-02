@@ -4,6 +4,8 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+import successAnim from "../payment/success/success-anim.json";
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
@@ -18,6 +20,25 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
+
+// [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
+// File ini "use client" → dynamic ssr:false aman dipasang langsung (hindari SSR lottie-web).
+const OnbSuccessLottie = dynamic(() => import("lottie-react"), { ssr: false });
+function OnboardingSuccess({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    const t = setTimeout(onClose, 2400);
+    return () => clearTimeout(t);
+  }, [onClose]);
+  return (
+    <div className="fixed inset-0 z-[110] flex flex-col items-center justify-center bg-gradient-to-br from-teal-50 via-white to-teal-50 px-6 text-center">
+      <div className="h-40 w-40">
+        <OnbSuccessLottie animationData={successAnim} loop={false} />
+      </div>
+      <h1 className="mt-2 text-2xl font-extrabold text-gray-900">Selamat datang di Linguo! 🎉</h1>
+      <p className="mt-1 text-sm text-gray-500">Akun kamu udah siap — lagi nyiapin dashboard kamu…</p>
+    </div>
+  );
+}
 import SertifikatTab from '@/components/akun/SertifikatTab';
 import type { Cert } from '@/components/akun/SertifikatTab';
 import SilabusOutline from '@/components/akun/SilabusOutline';
@@ -1740,6 +1761,7 @@ export default function AkunPage() {
   const [showEmailLogin, setShowEmailLogin] = useState(true);
   const [otpSent, setOtpSent] = useState(false); // linguo-patch:akun-otp-login-v1
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const [showSuccessAnim, setShowSuccessAnim] = useState(false); // [linguo-patch:onboarding-success-lottie-v1]
   const [wizardCompleted, setWizardCompleted] = useState(false);
   const [wizardData, setWizardData] = useState<{program:string;lang:string;testType:string;exp:string}|null>(null);
   const [onboardStep, setOnboardStep] = useState(0);
@@ -2418,6 +2440,7 @@ export default function AkunPage() {
               setStudent({ ...studentRow, registrations: [regRow as any] } as any);
               setShowOnboarding(false);
               setWizardCompleted(false);
+              setShowSuccessAnim(true); // [linguo-patch:onboarding-success-lottie-v1]
             } catch (err: any) {
               console.error("Onboarding save failed:", err);
               alert(
@@ -2509,6 +2532,9 @@ export default function AkunPage() {
           onDone={() => setShowOnboarding(false)}
         />
       )}
+
+      {/* ── Sukses onboarding: Lottie ceklis sebelum dashboard — [linguo-patch:onboarding-success-lottie-v1] ── */}
+      {showSuccessAnim && <OnboardingSuccess onClose={() => setShowSuccessAnim(false)} />}
 
       {/* ── Header (mobile only — desktop pakai sidebar + bell di samping search) ── */}
       <div className="lg:hidden">
