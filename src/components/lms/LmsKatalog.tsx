@@ -149,7 +149,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center rounded-3xl border border-slate-100 bg-white py-16">
+      <div className="flex items-center justify-center rounded-3xl border border-slate-100 bg-white py-16 lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0">
         <Loader2 className="h-6 w-6 animate-spin text-slate-300" />
       </div>
     );
@@ -157,7 +157,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
 
   if (courses.length === 0) {
     return (
-      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:rounded-none lg:border-0 lg:shadow-none">
         <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
         <p className="text-[14px] font-semibold text-gray-600">Materi mandiri belum tersedia</p>
         <p className="mt-1 text-[12px] font-medium text-gray-400">Konten Belajar Mandiri lagi disiapin. Cek tab Jelajahi Bahasa dulu ya.</p>
@@ -219,7 +219,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
     ) : null;
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:h-[560px]">
+    <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
       {/* LEFT list — desktop */}
       <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
@@ -240,7 +240,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
       </aside>
 
       {/* RIGHT detail (+ mobile pills) */}
-      <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:overflow-y-auto">
+      <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
         {topBar}
         <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
           {shown.map((c) => <CourseItem key={c.slug} c={c} mobile />)}

@@ -2826,7 +2826,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -3163,7 +3163,7 @@ export default function AkunPage() {
           )}
 
           {activeTab === "materi" && (
-            <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
+            <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
               {(() => {
                 const mlangGlyph = (lang: string): string => {
                   const g: Record<string, string> = {
@@ -3268,12 +3268,12 @@ export default function AkunPage() {
                 );
 
                 return (
-                  <div className="flex flex-col gap-5 p-4 lg:p-6">
-                    {/* [linguo-patch:materi-compact-v1] padding dirapetin → card meluk frame */}
+                  <div className="flex flex-col gap-5 p-4 lg:min-h-0 lg:flex-1 lg:gap-0 lg:p-0">
+                    {/* [linguo-patch:materi-frame-ref-v1] wrapper isi penuh canvas (no padding di lg) */}
                     {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (
-                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:h-[560px]">
+                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
                         <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
@@ -3294,7 +3294,7 @@ export default function AkunPage() {
                         </aside>
 
                         {/* RIGHT detail (+ mobile pills) */}
-                        <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:overflow-y-auto">
+                        <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
                           {MateriTopBar}
                           <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
                             {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
@@ -3402,7 +3402,7 @@ export default function AkunPage() {
                         </main>
                       </div>
                     ) : (
-                      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:rounded-none lg:border-0 lg:shadow-none">
                         <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                         <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
                         <p className="mt-1 text-[12px] font-medium text-gray-400">Daftar kelas dulu untuk akses sesi &amp; materi · atau cek tab Jelajahi Bahasa</p>
@@ -3430,9 +3430,9 @@ export default function AkunPage() {
                       const selPal = LANGPAL[LANGS.indexOf(selLang) % LANGPAL.length];
                       const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
                       return (
-                        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:rounded-none lg:border-0 lg:shadow-none">
                           {MateriTopBar}
-                          <div className="flex flex-col gap-5 px-6 pb-6 pt-4 lg:px-8 lg:pb-8">
+                          <div className="flex flex-col gap-5 px-6 pb-6 pt-4 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:px-8 lg:pb-8">
                           <div>
                             <h2 className="text-[18px] font-extrabold text-[#12172B]">Jelajahi Bahasa</h2>
                             <p className="mt-0.5 text-[13px] font-medium text-gray-500">60+ bahasa · CEFR A1–B2 · pilih, lihat silabus, langsung daftar</p>
