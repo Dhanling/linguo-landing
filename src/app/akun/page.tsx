@@ -2154,6 +2154,7 @@ export default function AkunPage() {
       const base = lvl.split(".")[0].toUpperCase();
       return {
         id: String(r.id),
+        product: r.product,
         language: r.language,
         level: lvl,
         title: CEFR_TITLE[base] || "Program",
