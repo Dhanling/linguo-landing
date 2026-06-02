@@ -18,7 +18,7 @@
 // page; if that route ever changes, edit it in ONE place.
 // ============================================================================
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { supabase } from "@/lib/supabase-client";
 import RekeningForm from "./RekeningForm";
 import type { Session } from "@supabase/supabase-js";
@@ -33,6 +33,7 @@ import {
   Lock,
   BarChart3,
   LogOut,
+  RefreshCw,
   Link2,
   Megaphone,
   MessageCircle,
@@ -264,6 +265,7 @@ export default function AfiliatorPage() {
   const [session, setSession] = useState<Session | null>(null);
   const [data, setData] = useState<ApiResponse | null>(null);
   const [dataLoading, setDataLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
@@ -292,36 +294,61 @@ export default function AfiliatorPage() {
     };
   }, []);
 
-  // ── Data: fetch /api/affiliate/me whenever we have a session ───────────
-  useEffect(() => {
-    if (!session) {
-      setData(null);
-      return;
-    }
-    let cancelled = false;
-    setDataLoading(true);
-    setError(null);
-
-    (async () => {
+  // ── Data: fetch /api/affiliate/me ──────────────────────────────────────
+  // Load awal pakai skeleton; refetch latar (focus / interval / tombol
+  // Refresh) jalan "silent" — update angka tanpa nge-flash skeleton, dan
+  // kalau gagal JANGAN timpa data lama dengan layar error.
+  // (Dulu cuma fetch sekali pas token berubah → data bisa stale kalau
+  //  conversion masuk pas tab udah kebuka. Ini yang bikin Intan liat 0.)
+  const loadData = useCallback(
+    async (opts?: { silent?: boolean }) => {
+      const token = session?.access_token;
+      if (!token) {
+        setData(null);
+        return;
+      }
+      if (opts?.silent) setRefreshing(true);
+      else setDataLoading(true);
+      setError(null);
       try {
         const res = await fetch("/api/affiliate/me", {
-          headers: { Authorization: `Bearer ${session.access_token}` },
+          headers: { Authorization: `Bearer ${token}` },
+          cache: "no-store",
         });
         if (!res.ok) throw new Error(`status ${res.status}`);
         const json: ApiResponse = await res.json();
-        if (!cancelled) setData(json);
+        setData(json);
       } catch {
-        if (!cancelled)
+        if (!opts?.silent)
           setError("Gagal memuat data afiliator. Coba refresh halaman.");
       } finally {
-        if (!cancelled) setDataLoading(false);
+        if (opts?.silent) setRefreshing(false);
+        else setDataLoading(false);
       }
-    })();
+    },
+    [session?.access_token]
+  );
 
-    return () => {
-      cancelled = true;
+  // Load awal + tiap token berubah (skeleton).
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  // Jaga tetap fresh: refetch pas tab di-focus/visible + poll ringan 45 dtk.
+  useEffect(() => {
+    if (!session?.access_token) return;
+    const refetch = () => {
+      if (document.visibilityState === "visible") loadData({ silent: true });
     };
-  }, [session?.access_token]);
+    window.addEventListener("focus", refetch);
+    document.addEventListener("visibilitychange", refetch);
+    const iv = window.setInterval(refetch, 45000);
+    return () => {
+      window.removeEventListener("focus", refetch);
+      document.removeEventListener("visibilitychange", refetch);
+      window.clearInterval(iv);
+    };
+  }, [loadData, session?.access_token]);
 
   const aff = data?.affiliate ?? null;
   const refLink = aff ? `https://linguo.id/?ref=${aff.referral_code}` : "";
@@ -369,7 +396,7 @@ export default function AfiliatorPage() {
       </div>
 
       <div className="mx-auto max-w-2xl px-4 py-7">
-        <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} />
+        <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
 
         {dataLoading && <SkeletonBlock />}
 
@@ -449,10 +476,14 @@ function Header({
   name,
   onLogout,
   loggingOut,
+  onRefresh,
+  refreshing,
 }: {
   name?: string;
   onLogout: () => void;
   loggingOut: boolean;
+  onRefresh: () => void;
+  refreshing: boolean;
 }) {
   const first = (name || "").trim().split(/\s+/)[0];
   return (
@@ -468,18 +499,29 @@ function Header({
           {first ? `Hai, ${first} 👋 Senang kamu kembali.` : "Pantau performa & komisimu."}
         </p>
       </div>
-      <button
-        onClick={onLogout}
-        disabled={loggingOut}
-        className="flex shrink-0 items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 backdrop-blur transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50"
-      >
-        {loggingOut ? (
-          <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
-        ) : (
-          <LogOut className="h-3.5 w-3.5" />
-        )}
-        Keluar
-      </button>
+      <div className="flex shrink-0 items-center gap-2">
+        <button
+          onClick={onRefresh}
+          disabled={refreshing}
+          className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 backdrop-blur transition hover:border-[#1A9E9E]/40 hover:bg-teal-50 hover:text-[#147878] disabled:opacity-50"
+          aria-label="Perbarui data"
+        >
+          <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin" : ""}`} />
+          Refresh
+        </button>
+        <button
+          onClick={onLogout}
+          disabled={loggingOut}
+          className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 backdrop-blur transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50"
+        >
+          {loggingOut ? (
+            <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
+          ) : (
+            <LogOut className="h-3.5 w-3.5" />
+          )}
+          Keluar
+        </button>
+      </div>
     </header>
   );
 }
