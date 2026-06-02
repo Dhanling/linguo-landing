@@ -10,7 +10,7 @@
 import { useMemo, useRef, useState } from "react";
 import {
   Award, BadgeCheck, Lock, Download, Share2, ExternalLink, ShieldCheck,
-  Flag, Play, CalendarDays, Info, ChevronRight, GraduationCap, X, Loader2,
+  Flag, Play, CalendarDays, Info, ChevronRight, X, Loader2,
 } from "lucide-react";
 
 // lazy-load script dari CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman.
@@ -32,7 +32,7 @@ function loadScript(src: string): Promise<void> {
     document.head.appendChild(s);
   });
 }
-const H2C_URL = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+const H2C_URL = "https://cdn.jsdelivr.net/npm/html2canvas-pro@2.0.4/dist/html2canvas-pro.min.js";
 const JSPDF_URL = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
 
 type Html2Canvas = (el: HTMLElement, opt?: Record<string, unknown>) => Promise<HTMLCanvasElement>;
@@ -200,8 +200,8 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
       pdf.addImage(img, "PNG", 0, 0, pw, ph);
       pdf.save(`Sertifikat-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
     } catch (e) {
-      console.error(e);
-      alert("Gagal membuat PDF. Cek koneksi lalu coba lagi ya.");
+      console.error("[Sertifikat] gagal membuat PDF:", e);
+      alert("Gagal membuat PDF. Coba lagi sebentar ya.");
     } finally {
       setPdfLoading(false);
     }
@@ -250,9 +250,8 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
         <div className="pointer-events-none absolute inset-0 m-3 rounded-xl" style={{ border: `2px solid ${col.accent}1f` }} />
         <div className="pointer-events-none absolute inset-0 m-[18px] rounded-lg" style={{ border: `1px solid ${col.accent}40` }} />
         <div className="relative px-6 py-9 text-center sm:px-10">
-          <div className="flex items-center justify-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl" style={{ background: col.accent }}><GraduationCap className="h-5 w-5 text-white" /></span>
-            <span className="text-[15px] font-extrabold tracking-tight text-[#12172B]">Linguo</span>
+          <div className="flex items-center justify-center">
+            <img src="/images/full-logo-linguo-hijau.png" alt="Linguo" className="h-10 w-auto object-contain" />
           </div>
           <p className="mt-6 text-[12px] font-bold uppercase tracking-[0.25em] text-[#6B7280]">Sertifikat Penyelesaian</p>
           <p className="mt-5 text-[13px] font-medium text-[#6B7280]">Diberikan kepada</p>
