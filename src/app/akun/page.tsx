@@ -18,6 +18,8 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
+import SertifikatTab from '@/components/akun/SertifikatTab';
+import type { Cert } from '@/components/akun/SertifikatTab';
 import SilabusOutline from '@/components/akun/SilabusOutline';
 import JadwalCalendar from '@/components/akun/JadwalCalendar'; // linguo-patch:akun-jadwal-tab-v1
 import LmsKatalog from '@/components/lms/LmsKatalog';
@@ -1430,7 +1432,7 @@ export default function AkunPage() {
   const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun">("beranda");
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat">("beranda");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -1445,14 +1447,14 @@ export default function AkunPage() {
     const menu = sp.get("menu");
     const sesi = sp.get("sesi");
     const view = sp.get("view");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | null = null;
     if (sesi) { setLmsSesi(sesi); resolved = "materi"; }
     if (view === "live" || view === "mandiri" || view === "jelajahi") { setMateriView(view); resolved = "materi"; }
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat")) resolved = menu;
     if (!resolved) {
       try {
         const saved = localStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -1828,6 +1830,31 @@ export default function AkunPage() {
     r.status === "Pending" ||
     (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
   ) || [], [student]);
+
+  // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
+  const certs = useMemo<Cert[]>(() => {
+    const CEFR_TITLE: Record<string, string> = { A1: "Pemula", A2: "Dasar", B1: "Menengah", B2: "Menengah Atas", C1: "Mahir", C2: "Penutur Ahli" };
+    return (activeRegs as any[]).map((r: any) => {
+      const total = r.sessions_total || 0;
+      const used = r.sessions_used || 0;
+      const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
+      const issued = total > 0 && used >= total;
+      const lvl = String(r.level || "A1");
+      const base = lvl.split(".")[0].toUpperCase();
+      return {
+        id: String(r.id),
+        language: r.language,
+        level: lvl,
+        title: CEFR_TITLE[base] || "Program",
+        teacher: r?.teachers?.name || "Pengajar Linguo",
+        status: issued ? "issued" : "progress",
+        pct, used, total,
+        date: issued ? new Date().toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
+        hours: issued ? total : undefined,
+        idNo: issued ? `LING-${String(r.language || "XX").slice(0, 2).toUpperCase()}-${base}-${String(r.id).replace(/\D/g, "").slice(0, 6).padStart(6, "0")}` : undefined,
+      };
+    });
+  }, [activeRegs]);
   // "Menunggu Pembayaran" = user belum upload bukti transfer
   const pendingPaymentRegs = useMemo(() => student?.registrations.filter(r =>
     r.status === "Menunggu Pembayaran" &&
@@ -2194,7 +2221,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={setActiveTab} firstName={firstName} avatarUrl={avatarUrl}>
+    <StudentShell active={activeTab === "sertifikat" ? "akun" : activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl}>
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
       {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
@@ -2222,7 +2249,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : activeTab === "jadwal" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "beranda" || activeTab === "materi" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -2288,13 +2315,13 @@ export default function AkunPage() {
                             <div className="text-2xl font-extrabold leading-none text-[#12172B]">{activeLangCount}</div>
                             <div className="mt-1.5 text-[12px] font-medium text-gray-500">Bahasa Aktif</div>
                           </div>
-                          <div className="rounded-2xl border border-slate-100 p-4 shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)]">
+                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl border border-slate-100 p-4 text-left shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)] transition hover:-translate-y-0.5 hover:border-[#F2CB05]/60">
                             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2CB05]/20 text-[#B9890A]">
                               <Award className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
-                            <span className="inline-flex items-center rounded-md bg-[#F2CB05]/20 px-2 py-0.5 text-[11px] font-bold text-[#B9890A]">Segera</span>
+                            <span className="inline-flex items-center gap-0.5 rounded-md bg-[#F2CB05]/20 px-2 py-0.5 text-[11px] font-bold text-[#B9890A]">Lihat <ChevronRight className="h-3 w-3" /></span>
                             <div className="mt-1.5 text-[12px] font-medium text-gray-500">Sertifikat CEFR</div>
-                          </div>
+                          </button>
                         </div>
 
                         {/* jadwal mendatang */}
@@ -2389,10 +2416,7 @@ export default function AkunPage() {
                           </div>
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
                             {pendingPaymentRegs.map((reg: any) => {
-                              const photo = ({
-                                German: "/images/lang/german.jpg", Jerman: "/images/lang/german.jpg",
-                                Spanish: "/images/lang/spanish.jpg", Spanyol: "/images/lang/spanish.jpg",
-                              } as Record<string, string>)[reg.language];
+                              const photo = getLangPhoto(reg.language);
                               return (
                               <button
                                 key={reg.id}
@@ -2450,6 +2474,7 @@ export default function AkunPage() {
                               const used = reg.sessions_used || 0;
                               const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
                               const bg = CARD_BG[idx % CARD_BG.length];
+                              const photo = getLangPhoto(reg.language);
                               return (
                                 <button
                                   key={reg.id}
@@ -2457,8 +2482,17 @@ export default function AkunPage() {
                                   className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] transition-transform hover:-translate-y-1"
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg}`}>
-                                    <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
-                                    <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                    {photo ? (
+                                      <>
+                                        <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                      </>
+                                    ) : (
+                                      <>
+                                        <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                        <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                      </>
+                                    )}
                                   </div>
                                   <div className="px-2 pb-2 pt-4">
                                     <div className="flex items-center gap-2">
@@ -2875,6 +2909,15 @@ export default function AkunPage() {
             </motion.div>
           )}
 
+          {activeTab === "sertifikat" && (
+            <SertifikatTab
+              studentName={displayName}
+              certs={certs}
+              onContinue={() => setActiveTab("materi")}
+              onSchedule={() => setActiveTab("jadwal")}
+            />
+          )}
+
           {activeTab === "akun" && (
             <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="max-w-2xl mx-auto space-y-4 pb-4">
               <AkunTab
@@ -2897,7 +2940,7 @@ export default function AkunPage() {
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
-      <MobileBottomNav activeTab={activeTab} onChange={setActiveTab} />
+      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : activeTab} onChange={(t) => setActiveTab(t)} />
 
       {/* Floating Quick Actions FAB */}
       {student && (
