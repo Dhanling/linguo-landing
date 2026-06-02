@@ -3268,7 +3268,8 @@ export default function AkunPage() {
                 );
 
                 return (
-                  <div className="flex flex-col gap-6 p-6 lg:p-8">
+                  <div className="flex flex-col gap-5 p-4 lg:p-6">
+                    {/* [linguo-patch:materi-compact-v1] padding dirapetin → card meluk frame */}
                     {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (

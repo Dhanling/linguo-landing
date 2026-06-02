@@ -56,18 +56,61 @@ type Course = {
   resume: { id: string; title: string } | null;
 };
 
+// [linguo-patch:lms-katalog-perf-v1] cache modul-level → switch balik ke Belajar Mandiri = instan (stale-while-revalidate, ga refetch dari nol)
+let _lmsCache: { courses: Course[] } | null = null;
+
+function buildCourses(
+  modList: { id: string; language: string; sort_order: number }[],
+  lessons: { id: string; module_id: string; title: string; sort_order: number }[],
+  done: Set<string>
+): Course[] {
+  const langByModule: Record<string, string> = {};
+  modList.forEach((m) => { langByModule[m.id] = m.language; });
+  const moduleOrder: Record<string, number> = {};
+  modList.forEach((m, i) => { moduleOrder[m.id] = m.sort_order ?? i; });
+  const byLang: Record<string, { id: string; module_id: string; sort_order: number; title: string }[]> = {};
+  lessons.forEach((l) => {
+    const lang = langByModule[l.module_id];
+    if (!lang) return;
+    (byLang[lang] = byLang[lang] || []).push(l);
+  });
+  const langOrder: string[] = [];
+  modList.forEach((m) => { if (!langOrder.includes(m.language)) langOrder.push(m.language); });
+  return langOrder.map((language) => {
+    const mt = meta(language);
+    const ls = (byLang[language] || []).slice().sort((a, b) => {
+      const mo = (moduleOrder[a.module_id] ?? 0) - (moduleOrder[b.module_id] ?? 0);
+      return mo !== 0 ? mo : a.sort_order - b.sort_order;
+    });
+    const total = ls.length;
+    const dcount = ls.filter((l) => done.has(l.id)).length;
+    const next = ls.find((l) => !done.has(l.id));
+    return {
+      language,
+      slug: mt.slug,
+      native: mt.native,
+      idLabel: mt.id,
+      glyph: mt.glyph,
+      total,
+      done: dcount,
+      pct: total ? Math.round((dcount / total) * 100) : 0,
+      resume: next ? { id: next.id, title: next.title } : null,
+    };
+  });
+}
+
 export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: string) => void; topBar?: ReactNode }) {
-  const [loading, setLoading] = useState(true);
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [sel, setSel] = useState<string>(""); // selected slug
+  const [loading, setLoading] = useState(() => !_lmsCache);
+  const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
+  const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
   const [filter, setFilter] = useState<"all" | "run" | "done">("all");
 
   useEffect(() => {
     let alive = true;
     (async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      // [linguo-patch:lms-katalog-perf-v1] getSession() baca session lokal (no network round-trip kaya getUser)
+      const { data: { session } } = await supabase.auth.getSession();
+      const uid = session?.user?.id;
 
       // module (id -> language) + urutan
       const { data: mods } = await supabase
@@ -76,73 +119,29 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
         .order("sort_order");
       const modList = (mods || []) as { id: string; language: string; sort_order: number }[];
       if (modList.length === 0) {
+        _lmsCache = { courses: [] };
         if (alive) { setCourses([]); setLoading(false); }
         return;
       }
-
-      const langByModule: Record<string, string> = {};
-      modList.forEach((m) => { langByModule[m.id] = m.language; });
       const moduleIds = modList.map((m) => m.id);
 
-      const { data: less } = await supabase
-        .from("lms_lessons")
-        .select("id,module_id,title,sort_order")
-        .in("module_id", moduleIds)
-        .order("sort_order");
-      const lessons = (less || []) as { id: string; module_id: string; title: string; sort_order: number }[];
+      // lessons + progress PARALEL (sebelumnya 2x sequential await)
+      const [lessRes, progRes] = await Promise.all([
+        supabase.from("lms_lessons").select("id,module_id,title,sort_order").in("module_id", moduleIds).order("sort_order"),
+        uid
+          ? supabase.from("lms_progress").select("lesson_id,status").eq("user_id", uid)
+          : Promise.resolve({ data: [] as { lesson_id: string; status: string }[] }),
+      ]);
+      const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number }[];
+      const done = new Set<string>(
+        ((progRes.data as any[]) || []).filter((p: any) => p.status === "completed").map((p: any) => p.lesson_id)
+      );
 
-      let done = new Set<string>();
-      if (user) {
-        const { data: prog } = await supabase
-          .from("lms_progress")
-          .select("lesson_id,status")
-          .eq("user_id", user.id);
-        done = new Set<string>(
-          (prog || []).filter((p: any) => p.status === "completed").map((p: any) => p.lesson_id)
-        );
-      }
-
-      // urutan module utk resume: pakai sort_order module lalu lesson
-      const moduleOrder: Record<string, number> = {};
-      modList.forEach((m, i) => { moduleOrder[m.id] = m.sort_order ?? i; });
-
-      // group lessons per language
-      const byLang: Record<string, { id: string; module_id: string; sort_order: number; title: string }[]> = {};
-      lessons.forEach((l) => {
-        const lang = langByModule[l.module_id];
-        if (!lang) return;
-        (byLang[lang] = byLang[lang] || []).push(l);
-      });
-
-      // urutan bahasa = urutan kemunculan pertama di modList
-      const langOrder: string[] = [];
-      modList.forEach((m) => { if (!langOrder.includes(m.language)) langOrder.push(m.language); });
-
-      const built: Course[] = langOrder.map((language) => {
-        const mt = meta(language);
-        const ls = (byLang[language] || []).slice().sort((a, b) => {
-          const mo = (moduleOrder[a.module_id] ?? 0) - (moduleOrder[b.module_id] ?? 0);
-          return mo !== 0 ? mo : a.sort_order - b.sort_order;
-        });
-        const total = ls.length;
-        const dcount = ls.filter((l) => done.has(l.id)).length;
-        const next = ls.find((l) => !done.has(l.id));
-        return {
-          language,
-          slug: mt.slug,
-          native: mt.native,
-          idLabel: mt.id,
-          glyph: mt.glyph,
-          total,
-          done: dcount,
-          pct: total ? Math.round((dcount / total) * 100) : 0,
-          resume: next ? { id: next.id, title: next.title } : null,
-        };
-      });
-
+      const built = buildCourses(modList, lessons, done);
+      _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);
-      setSel(built[0]?.slug || "");
+      setSel((s) => s || built[0]?.slug || "");
       setLoading(false);
     })();
     return () => { alive = false; };

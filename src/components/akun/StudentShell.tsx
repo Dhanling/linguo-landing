@@ -50,7 +50,8 @@ export default function StudentShell({
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0">
+    /* [linguo-patch:shell-compact-v1] items-start → frame meluk tinggi konten (ilangin dead-space 100vh) */
+    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:items-start lg:p-0">
       <div className="w-full lg:flex lg:bg-[#16796E] lg:py-3 lg:pl-0 lg:pr-3 lg:shadow-[0_40px_80px_-30px_rgba(10,70,63,0.45)]">
 
         {/* ICON RAIL — desktop only */}
