@@ -185,6 +185,12 @@ Cobain lewat link ini yuk 👇
 // ── Helpers ────────────────────────────────────────────────────────────────
 const rupiah = (n: number) => "Rp " + Math.round(n || 0).toLocaleString("id-ID");
 
+// Pencairan
+const MIN_PAYOUT = 100_000; // saldo minimal sebelum boleh ajukan pencairan
+// ↓↓↓ ISI nomor WA admin/finance Linguo (format 62…, cth "628123456789").
+//     Kalau dikosongin, tombol tetap jalan tapi WhatsApp minta pilih kontak manual.
+const ADMIN_PAYOUT_WA = "";
+
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("id-ID", {
     day: "numeric",
@@ -707,6 +713,25 @@ function Dashboard({
   const totalKomisi =
     stats.commission_pending + stats.commission_approved + stats.commission_paid;
 
+  // ── Pencairan: cuma komisi "Disetujui" (approved) yang bisa ditarik ──
+  const available = stats.commission_approved;
+  const hasRekening = !!(aff.bank_account_no && aff.bank_account_name);
+  const canRequest =
+    aff.status === "active" && available >= MIN_PAYOUT && hasRekening;
+  const kurang = Math.max(0, MIN_PAYOUT - available);
+  const payoutWaUrl =
+    `https://wa.me/${ADMIN_PAYOUT_WA}?text=` +
+    encodeURIComponent(
+      [
+        "Halo admin Linguo, saya mau ajukan pencairan komisi afiliasi.",
+        "",
+        `Nama: ${aff.name}`,
+        `Kode: ${aff.referral_code}`,
+        `Jumlah: ${rupiah(available)}`,
+        `Rekening: ${aff.bank_name ?? "-"} · ${aff.bank_account_no ?? "-"} (a.n. ${aff.bank_account_name ?? "-"})`,
+      ].join("\n")
+    );
+
   return (
     <div className="space-y-5">
       {/* Status notice if not active */}
@@ -825,6 +850,83 @@ function Dashboard({
           amount={stats.commission_paid}
           tone="text-emerald-700"
         />
+      </div>
+
+      {/* Pencairan komisi */}
+      <div
+        className="aff-reveal overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm"
+        style={{ animationDelay: "370ms" }}
+      >
+        <div className="bg-gradient-to-br from-[#1A9E9E] to-[#0F6B6B] px-5 py-4 text-white">
+          <div className="flex items-center gap-2 text-xs font-medium text-teal-50/90">
+            <Wallet className="h-4 w-4" /> Saldo siap dicairkan
+          </div>
+          <div className="mt-1 text-2xl font-extrabold tracking-tight">
+            {rupiah(available)}
+          </div>
+          {stats.commission_pending > 0 && (
+            <div className="mt-1 text-[11px] text-teal-50/80">
+              +{rupiah(stats.commission_pending)} masih menunggu disetujui
+            </div>
+          )}
+        </div>
+
+        <div className="space-y-3 px-5 py-4">
+          {aff.status !== "active" ? (
+            <p className="text-xs text-slate-500">
+              Pencairan aktif setelah akun afiliator kamu disetujui.
+            </p>
+          ) : !hasRekening ? (
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+              Lengkapi data rekening dulu di bagian{" "}
+              <b>Rekening Pencairan</b> (bawah) sebelum mengajukan pencairan.
+            </div>
+          ) : available < MIN_PAYOUT ? (
+            <>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                <div
+                  className="h-full rounded-full bg-[#1A9E9E] transition-all"
+                  style={{
+                    width: `${Math.min(100, (available / MIN_PAYOUT) * 100)}%`,
+                  }}
+                />
+              </div>
+              <p className="text-xs text-slate-500">
+                Minimal pencairan <b>{rupiah(MIN_PAYOUT)}</b>. Kurang{" "}
+                <b className="text-slate-700">{rupiah(kurang)}</b> lagi.
+              </p>
+            </>
+          ) : (
+            <p className="text-xs text-slate-500">
+              Saldo kamu udah cukup. Klik tombol di bawah buat ajukan pencairan
+              ke admin.
+            </p>
+          )}
+
+          {canRequest ? (
+            <a
+              href={payoutWaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] py-2.5 text-sm font-semibold text-white transition hover:bg-[#147878]"
+            >
+              <MessageCircle className="h-4 w-4" /> Ajukan Pencairan{" "}
+              {rupiah(available)}
+            </a>
+          ) : (
+            <button
+              disabled
+              className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-400"
+            >
+              <Wallet className="h-4 w-4" /> Ajukan Pencairan
+            </button>
+          )}
+
+          <p className="text-center text-[11px] text-slate-400">
+            Pencairan diproses tiap tanggal 25. Komisi disetujui otomatis 14
+            hari setelah pembayaran.
+          </p>
+        </div>
       </div>
 
       {/* Activity chart */}
