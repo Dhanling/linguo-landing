@@ -9,7 +9,7 @@
 
 import { useMemo, useState } from "react";
 import {
-  Award, BadgeCheck, Lock, Download, Share2, Linkedin, ShieldCheck,
+  Award, BadgeCheck, Lock, Download, Share2, ExternalLink, ShieldCheck,
   Flag, Play, CalendarDays, Info, ChevronRight, GraduationCap,
 } from "lucide-react";
 
@@ -202,7 +202,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
       <div className="flex flex-wrap items-center gap-3">
         <button className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Download className="h-[18px] w-[18px]" />Unduh PDF</button>
         <button className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
-        <button className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Linkedin className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
+        <button className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
         <button className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
       </div>
     </>
