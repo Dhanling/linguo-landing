@@ -187,21 +187,21 @@ const TEST_TYPES = [
 // ── Onboarding data (frame-based wizard) ──────────────────────────────
 const ONB_LANGS = [
   { id: "English",  label: "Inggris",  glyph: "Aa", tintBg: "bg-[#16796E]/10", tintText: "text-[#16796E]" },
-  { id: "Japanese", label: "Jepang",   glyph: "\u3042", tintBg: "bg-rose-50",   tintText: "text-rose-500" },
-  { id: "Korean",   label: "Korea",    glyph: "\ud55c", tintBg: "bg-indigo-50", tintText: "text-indigo-500" },
-  { id: "Mandarin", label: "Mandarin", glyph: "\u4e2d", tintBg: "bg-red-50",    tintText: "text-red-600" },
-  { id: "German",   label: "Jerman",   glyph: "\u00df", tintBg: "bg-cyan-50",   tintText: "text-cyan-700" },
-  { id: "French",   label: "Prancis",  glyph: "\u00c7", tintBg: "bg-blue-50",   tintText: "text-blue-600" },
-  { id: "Spanish",  label: "Spanyol",  glyph: "\u00f1", tintBg: "bg-amber-50",  tintText: "text-amber-600" },
-  { id: "Arabic",   label: "Arab",     glyph: "\u0639", tintBg: "bg-emerald-50",tintText: "text-emerald-600" },
+  { id: "Japanese", label: "Jepang",   glyph: "あ", tintBg: "bg-rose-50",   tintText: "text-rose-500" },
+  { id: "Korean",   label: "Korea",    glyph: "한", tintBg: "bg-indigo-50", tintText: "text-indigo-500" },
+  { id: "Mandarin", label: "Mandarin", glyph: "中", tintBg: "bg-red-50",    tintText: "text-red-600" },
+  { id: "German",   label: "Jerman",   glyph: "ß", tintBg: "bg-cyan-50",   tintText: "text-cyan-700" },
+  { id: "French",   label: "Prancis",  glyph: "Ç", tintBg: "bg-blue-50",   tintText: "text-blue-600" },
+  { id: "Spanish",  label: "Spanyol",  glyph: "ñ", tintBg: "bg-amber-50",  tintText: "text-amber-600" },
+  { id: "Arabic",   label: "Arab",     glyph: "ع", tintBg: "bg-emerald-50",tintText: "text-emerald-600" },
   { id: "Dutch",    label: "Belanda",  glyph: "Nl", tintBg: "bg-orange-50",     tintText: "text-orange-600" },
 ];
 const ONB_LEVELS = [
   { id: "belum", label: "Belum tahu", sub: "Ikut tes penempatan" },
-  { id: "A1", label: "A1 \u00b7 Pemula", sub: "Baru mulai dari nol" },
-  { id: "A2", label: "A2 \u00b7 Dasar", sub: "Bisa kalimat sederhana" },
-  { id: "B1", label: "B1 \u00b7 Menengah", sub: "Bisa percakapan umum" },
-  { id: "B2", label: "B2 \u00b7 Mahir", sub: "Lancar berdiskusi" },
+  { id: "A1", label: "A1 · Pemula", sub: "Baru mulai dari nol" },
+  { id: "A2", label: "A2 · Dasar", sub: "Bisa kalimat sederhana" },
+  { id: "B1", label: "B1 · Menengah", sub: "Bisa percakapan umum" },
+  { id: "B2", label: "B2 · Mahir", sub: "Lancar berdiskusi" },
 ];
 const ONB_GOALS: { id: string; icon: LucideIcon }[] = [
   { id: "Karier", icon: Briefcase },
@@ -212,9 +212,9 @@ const ONB_GOALS: { id: string; icon: LucideIcon }[] = [
   { id: "Tinggal di LN", icon: Home },
 ];
 const ONB_INTENS = [
-  { id: "1x", label: "Santai", sub: "1\u00d7 / minggu" },
-  { id: "2x", label: "Standar", sub: "2\u00d7 / minggu" },
-  { id: "3x", label: "Intensif", sub: "3\u00d7+ / minggu" },
+  { id: "1x", label: "Santai", sub: "1× / minggu" },
+  { id: "2x", label: "Standar", sub: "2× / minggu" },
+  { id: "3x", label: "Intensif", sub: "3×+ / minggu" },
 ];
 
 function OnboardingWizard({ user, studentId, onDone }: {
@@ -255,8 +255,8 @@ function OnboardingWizard({ user, studentId, onDone }: {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] overflow-y-auto bg-[#E8EDEC] p-3 sm:p-6">
-      <div className="mx-auto flex min-h-[640px] w-full max-w-[1180px] overflow-hidden rounded-[28px] bg-white shadow-[0_40px_90px_-40px_rgba(10,70,63,0.45)]">
+    <div className="fixed inset-0 z-[100] bg-white">
+      <div className="flex h-full w-full overflow-hidden bg-white">
         {/* LEFT BRAND PANEL */}
         <aside className="relative hidden w-[340px] shrink-0 flex-col overflow-hidden p-9 lg:flex" style={{ background: "linear-gradient(165deg,#0F5A52 0%, #16796E 55%, #1c8f81 100%)" }}>
           <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rotate-12 rounded-[14px] bg-[#F2CB05]/15" />
@@ -267,7 +267,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
           </div>
           <div className="relative mt-12 flex flex-col gap-8">
             {[
-              { icon: Target, t: "Tentukan Tujuan", d: "Pilih bahasa & level CEFR sesuai targetmu \u2014 karier, akademik, atau jalan-jalan." },
+              { icon: Target, t: "Tentukan Tujuan", d: "Pilih bahasa & level CEFR sesuai targetmu — karier, akademik, atau jalan-jalan." },
               { icon: MessageCircle, t: "Belajar Fleksibel", d: "Live class bareng pengajar atau self-paced sesuai ritmemu sendiri." },
               { icon: Award, t: "Raih Sertifikat", d: "Selesaikan sublevel dan dapatkan sertifikat CEFR resmi dari Linguo." },
             ].map((v) => (
@@ -284,7 +284,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
             <div className="rounded-2xl bg-white/10 p-5 backdrop-blur">
               <div className="mb-2 flex gap-0.5 text-[#F2CB05]">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
               <p className="text-[13px] font-medium leading-relaxed text-white/90">&quot;Dalam 3 bulan aku lancar ngobrol pakai bahasa Jepang. Pengajarnya sabar banget!&quot;</p>
-              <p className="mt-2 text-[12px] font-semibold text-white/60">\u2014 Dimas R., siswa Jepang A2</p>
+              <p className="mt-2 text-[12px] font-semibold text-white/60">— Dimas R., siswa Jepang A2</p>
             </div>
           </div>
         </aside>
@@ -313,13 +313,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
             <div className="mx-auto max-w-[620px]">
               {step === 1 && (
                 <div>
-                  <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Halo! Kenalan dulu, yuk \ud83d\udc4b</h1>
+                  <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Halo! Kenalan dulu, yuk 👋</h1>
                   <p className="mt-1.5 text-[15px] font-medium text-gray-500">Lengkapi data dirimu supaya kami bisa menyiapkan pengalaman belajar yang pas.</p>
                   <div className="mt-7 flex items-center gap-5">
                     {googleAvatar
                       ? <img src={googleAvatar} alt="" referrerPolicy="no-referrer" className="h-[72px] w-[72px] rounded-full object-cover shadow ring-4 ring-white" />
                       : <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-[#16796E]/10 text-2xl font-extrabold text-[#16796E]">{(name || "?").charAt(0).toUpperCase()}</span>}
-                    <p className="text-[12px] font-medium text-gray-400">{googleAvatar ? "Foto dari akun Google kamu \u2014 bisa diganti nanti di Pengaturan." : "Foto bisa kamu unggah nanti di Pengaturan."}</p>
+                    <p className="text-[12px] font-medium text-gray-400">{googleAvatar ? "Foto dari akun Google kamu — bisa diganti nanti di Pengaturan." : "Foto bisa kamu unggah nanti di Pengaturan."}</p>
                   </div>
                   <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
@@ -339,7 +339,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     <div>
                       <label className="text-[13px] font-bold text-[#12172B]">Nomor WhatsApp</label>
                       <div className="mt-1.5 flex h-12 items-center overflow-hidden rounded-xl border border-slate-200 focus-within:border-[#16796E] focus-within:ring-2 focus-within:ring-[#16796E]/15">
-                        <span className="flex h-full items-center gap-1.5 border-r border-slate-200 px-3 text-[14px] font-semibold">\ud83c\uddee\ud83c\udde9 +62</span>
+                        <span className="flex h-full items-center gap-1.5 border-r border-slate-200 px-3 text-[14px] font-semibold">🇮🇩 +62</span>
                         <input value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="numeric" placeholder="812 3456 7890" className="h-full w-full bg-transparent px-4 text-[14px] font-medium outline-none" />
                       </div>
                     </div>
@@ -351,7 +351,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               {step === 2 && (
                 <div>
                   <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Mau belajar bahasa apa?</h1>
-                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Pilih satu untuk mulai \u2014 kamu bisa menambah bahasa lain kapan saja.</p>
+                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Pilih satu untuk mulai — kamu bisa menambah bahasa lain kapan saja.</p>
                   <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
                     {ONB_LANGS.map((l) => (
                       <button key={l.id} onClick={() => setLang(l.id)} className={`relative rounded-2xl border-2 p-4 text-left transition ${lang === l.id ? "border-[#16796E] bg-[#16796E]/5" : "border-slate-200 bg-white hover:border-[#16796E]/30"}`}>
@@ -385,7 +385,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               {step === 3 && (
                 <div>
                   <h1 className="text-[28px] font-extrabold leading-tight text-[#12172B]">Pilih gaya belajarmu</h1>
-                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Bisa diubah nanti \u2014 pilih yang paling cocok untuk memulai.</p>
+                  <p className="mt-1.5 text-[15px] font-medium text-gray-500">Bisa diubah nanti — pilih yang paling cocok untuk memulai.</p>
                   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {[
                       { id: "live", icon: Users, t: "Live Class", d: "Belajar terjadwal bareng pengajar & teman sekelas lewat video.", feats: ["Sesi terjadwal + rekaman", "Koreksi langsung dari pengajar", "Sertifikat CEFR"] },
@@ -421,7 +421,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   ? <button onClick={() => setStep(step - 1)} className="flex h-12 items-center gap-2 rounded-2xl border border-[#16796E]/30 px-5 text-[14px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5"><ArrowLeft className="h-4 w-4" />Sebelumnya</button>
                   : <span />}
                 <button onClick={handleNext} disabled={!canNext || saving} className={`flex h-12 items-center gap-2 rounded-2xl px-7 text-[14px] font-extrabold text-white transition ${canNext && !saving ? "bg-[#16796E] hover:bg-[#0F5A52]" : "cursor-not-allowed bg-slate-300"}`}>
-                  {saving ? "Menyimpan\u2026" : step === 3 ? "Selesai & Masuk" : "Lanjut"}
+                  {saving ? "Menyimpan…" : step === 3 ? "Selesai & Masuk" : "Lanjut"}
                   {!saving && (step === 3 ? <Check className="h-[18px] w-[18px]" /> : <ArrowRight className="h-[18px] w-[18px]" />)}
                 </button>
               </div>
