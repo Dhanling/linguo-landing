@@ -236,6 +236,17 @@ const TEST_TYPES = [
   { key: "TOEFL", label: "TOEFL", desc: "Test of English as a Foreign Language", icon: "📋" },
 ];
 
+// [linguo-patch:onboarding-level-placement-v1] Bahasa yang PUNYA placement test (/silabus/{slug}/coba).
+// Diselaraskan dgn katalog placement existing. Nambah/ngurang bahasa? Edit map ini aja.
+const PLACEMENT_TEST_LANGS: Record<string, string> = {
+  English: "english", German: "german", Spanish: "spanish", French: "french",
+  Japanese: "japanese", Korean: "korean", Mandarin: "mandarin", Arabic: "arabic",
+  Russian: "russian", Dutch: "dutch", Italian: "italian", Turkish: "turkish",
+  Portuguese: "portuguese", Thai: "thai", Hindi: "hindi", Polish: "polish",
+  Vietnamese: "vietnamese", Greek: "greek",
+};
+const placementSlug = (lang: string): string | null => PLACEMENT_TEST_LANGS[lang] || null;
+
 // ═══════════════════════════════════════════════════════════════════════════
 // [linguo-patch:onboarding-fix-v1] Data domisili (38 provinsi + kota) & negara
 // ═══════════════════════════════════════════════════════════════════════════
@@ -327,13 +338,14 @@ function OnbMilestoneBar({ step }: { step: number }) {
 }
 
 function OnboardingWizard({ user, studentId, onDone }: {
-  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; avatarFile?: File | null}) => void;
+  user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; level: string; avatarFile?: File | null}) => void;
 }) {
   const [step, setStep] = useState(0);
   const [program, setProgram] = useState("");
   const [testType, setTestType] = useState("");
   const [lang, setLang] = useState("");
   const [exp, setExp] = useState<"beginner"|"some"|"">("");
+  const [level, setLevel] = useState(""); // [linguo-patch:onboarding-level-placement-v1]
   const [search, setSearch] = useState("");
   // [linguo-patch:onboarding-wa-step-v1] nomor WA wajib
   const [wa, setWa] = useState("");
@@ -386,7 +398,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const finish = () => {
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
-    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicileStr, avatarFile });
+    onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicileStr, level, avatarFile });
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
@@ -529,7 +541,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   { key: "beginner", emoji: "🌱", title: isTestPrep ? "Baru mau mulai persiapan" : "Pemula total", desc: isTestPrep ? "Belum tahu harus mulai dari mana" : "Belum pernah belajar sama sekali" },
                   { key: "some", emoji: "📚", title: isTestPrep ? "Sudah pernah belajar" : "Sudah ada dasar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
                 ].map(opt => (
-                  <button key={opt.key} onClick={() => { setExp(opt.key as any); go(4); }}
+                  <button key={opt.key} onClick={() => {
+                      if (opt.key === "beginner") { setExp("beginner"); setLevel(isTestPrep ? "" : "A1.1"); go(4); }
+                      else { setExp("some"); if (isTestPrep) { go(4); } else { setLevel(""); } }
+                    }}
                     className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${exp === opt.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white"}`}>
                     <span className="text-3xl">{opt.emoji}</span>
                     <div>
@@ -540,6 +555,27 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   </button>
                 ))}
               </div>
+
+              {/* Level sub-picker — [linguo-patch:onboarding-level-placement-v1] muncul kalau "Sudah ada dasar" & bukan test prep */}
+              {exp === "some" && !isTestPrep && (
+                <div className="mt-5 rounded-2xl border-2 border-teal-100 bg-teal-50/40 p-4">
+                  <p className="text-sm font-bold text-gray-800">Kamu tau level kamu sekarang?</p>
+                  <p className="text-xs text-gray-400 mb-3">Pilih kalau yakin, atau ikut placement test kalau ragu.</p>
+                  <div className="grid grid-cols-4 gap-2 mb-2">
+                    {["A1","A2","B1","B2"].map(lv => (
+                      <button key={lv} onClick={() => { setLevel(lv); go(4); }}
+                        className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all active:scale-95 ${level === lv ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 bg-white text-gray-700 hover:border-teal-300"}`}>
+                        {lv}
+                      </button>
+                    ))}
+                  </div>
+                  <button onClick={() => { setLevel("TBD"); go(4); }}
+                    className="w-full flex items-center justify-center gap-2 rounded-xl border-2 border-dashed border-teal-300 bg-white py-2.5 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
+                    {placementSlug(lang) ? "🎯 Belum yakin — ikut Placement Test" : "🤔 Belum yakin (pengajar bantu cek)"}
+                  </button>
+                </div>
+              )}
+
               <button onClick={() => setStep(2)} className="mt-4 text-sm text-gray-400 hover:text-gray-600">← Kembali</button>
             </div>
           )}
@@ -760,7 +796,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 {[
                   ["🎯 Program", WIZARD_PROGRAMS.find(p => p.key === program)?.label || program],
                   ...(isTestPrep ? [["📝 Tes", testType]] : [["🌍 Bahasa", lang]]),
-                  ["📚 Level", exp === "beginner" ? "Pemula (A1)" : "Akan dites dulu"],
+                  ["📚 Level", level === "A1.1" ? "Pemula (A1.1)" : level === "TBD" ? "Akan dites dulu" : level ? `Level ${level}` : "Akan dites dulu"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex items-center justify-between text-sm">
                     <span className="text-gray-400">{label}</span>
@@ -773,8 +809,8 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
                 Daftar via WhatsApp
               </a>
-              {exp === "some" && !isTestPrep && (
-                <a href="/silabus/english/coba" onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
+              {level === "TBD" && !isTestPrep && placementSlug(lang) && (
+                <a href={`/silabus/${placementSlug(lang)}/coba`} onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
                   🎯 Ambil Placement Test dulu
                 </a>
               )}
@@ -2388,7 +2424,7 @@ export default function AkunPage() {
                   affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
                   product: data.program,
                   language: data.testType || data.lang || null,
-                  level: data.exp === "beginner" ? "A1" : "TBD",
+                  level: data.level || (data.exp === "beginner" ? "A1.1" : "TBD"),
                   status: "Menunggu Pembayaran",
                   payment_status: "Belum Bayar",
                   pipeline_status: "Aktif",
@@ -2460,7 +2496,7 @@ export default function AkunPage() {
         id: "pending",
         product: wizardData.program,
         language: wizardData.testType || wizardData.lang || "—",
-        level: wizardData.exp === "beginner" ? "A1" : "TBD",
+        level: wizardData.exp === "beginner" ? "A1.1" : "TBD",
         status: "Menunggu Pembayaran",
         sessions_total: 0,
         sessions_used: 0,
