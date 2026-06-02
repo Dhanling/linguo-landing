@@ -1,11 +1,11 @@
 "use client";
 
-// [linguo-patch:lms-katalog-masterdetail-v1]
+// [linguo-patch:lms-katalog-masterdetail-v2]
 // Belajar Mandiri jadi 2-partisi (master-detail) nyamain frame "Kelas Live":
 // KIRI = daftar bahasa self-study yg ke-seed di lms_modules (chip Semua/Berjalan/Selesai)
 // KANAN = detail bahasa kepilih (hero foto + progress + resume) + SilabusOutline (selfpaced)
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Loader2, PlayCircle, GraduationCap } from "lucide-react";
 import SilabusOutline from "@/components/akun/SilabusOutline";
@@ -56,7 +56,7 @@ type Course = {
   resume: { id: string; title: string } | null;
 };
 
-export default function LmsKatalog({ onOpen }: { onOpen?: (lessonId: string) => void }) {
+export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: string) => void; topBar?: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState<Course[]>([]);
   const [sel, setSel] = useState<string>(""); // selected slug
@@ -242,11 +242,12 @@ export default function LmsKatalog({ onOpen }: { onOpen?: (lessonId: string) => 
 
       {/* RIGHT detail (+ mobile pills) */}
       <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:overflow-y-auto">
-        <div className="flex gap-2.5 overflow-x-auto px-5 pt-5 lg:hidden">
+        {topBar}
+        <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
           {shown.map((c) => <CourseItem key={c.slug} c={c} mobile />)}
         </div>
 
-        <div className="flex flex-col gap-6 p-5 lg:p-7">
+        <div className="flex flex-col gap-6 px-5 pb-5 pt-4 lg:px-7 lg:pb-7">
           {/* hero */}
           <div className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
             <div className="relative flex items-center gap-5 overflow-hidden px-6 py-6 sm:px-7" style={{ background: TEAL }}>

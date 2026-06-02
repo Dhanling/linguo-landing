@@ -3242,21 +3242,34 @@ export default function AkunPage() {
                   );
                 };
 
+                /* linguo-patch:materi-frame-design-v1 */
+                const MateriTopBar = (
+                  <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
+                    <div>
+                      <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Kelas &amp; Materi</span></p>
+                      <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">Kelas &amp; Materi</h1>
+                      <div className="mt-3 inline-flex gap-1 rounded-2xl bg-[#EEF1F4] p-1">
+                        {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"], ["jelajahi", "Jelajahi Bahasa"]] as const).map(([k, label]) => (
+                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white shadow-sm" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30">
+                        <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
+                        <input value={materiSearch} onChange={(e) => setMateriSearch(e.target.value)} placeholder="Cari sesi atau materi…" className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400" />
+                      </label>
+                      <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:bg-slate-50">
+                        <Bell className="h-[19px] w-[19px] text-[#12172B]" />
+                        <span className="absolute right-2.5 top-2.5 h-2.5 w-2.5 rounded-full bg-rose-500 ring-2 ring-white" />
+                      </button>
+                    </div>
+                  </div>
+                );
+
                 return (
                   <div className="flex flex-col gap-6 p-6 lg:p-8">
-                    {/* page title */}
-                    <div>
-                      <h1 className="text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Kelas &amp; Materi</h1>
-                      <p className="mt-1 text-[13px] font-medium text-gray-500">{liveClasses.length} kelas live · semua materi belajar kamu di satu tempat</p>
-                    </div>
-
                     {/* ════ SUB-TAB ════ */}
-                    <div className="inline-flex gap-1 self-start rounded-2xl bg-[#EEF1F4] p-1">
-                      {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"], ["jelajahi", "Jelajahi Bahasa"]] as const).map(([k, label]) => (
-                        <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-4 py-2 text-[13px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white shadow-sm" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
-                      ))}
-                    </div>
-
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (
                       <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:h-[560px]">
@@ -3281,11 +3294,12 @@ export default function AkunPage() {
 
                         {/* RIGHT detail (+ mobile pills) */}
                         <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:overflow-y-auto">
-                          <div className="flex gap-2.5 overflow-x-auto px-5 pt-5 lg:hidden">
+                          {MateriTopBar}
+                          <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
                             {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
                           </div>
 
-                          <div className="flex flex-col gap-6 p-5 lg:p-7">
+                          <div className="flex flex-col gap-6 px-5 pb-5 pt-4 lg:px-7 lg:pb-7">
                             {/* hero */}
                             {(() => {
                               const pal = palOf(selected); const pct = pctOf(selected);
@@ -3398,15 +3412,13 @@ export default function AkunPage() {
                     {/* ════ VIEW: BELAJAR MANDIRI ════ */}
                     {materiView === "mandiri" && (
                       <div className="flex flex-col gap-7">
-                        <div>
-                          <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><GraduationCap className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Belajar Mandiri</h2>
-                          <LmsKatalog
+                        <LmsKatalog
+                            topBar={MateriTopBar}
                             onOpen={(id) => {
                               setLmsSesi(id);
                               if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
                             }}
                           />
-                        </div>
                         <div>
                           <h2 className="mb-3 flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><BookMarked className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />Perpustakaan Saya</h2>
                           {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
@@ -3422,7 +3434,9 @@ export default function AkunPage() {
                       const selPal = LANGPAL[LANGS.indexOf(selLang) % LANGPAL.length];
                       const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
                       return (
-                        <div className="flex flex-col gap-5">
+                        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                          {MateriTopBar}
+                          <div className="flex flex-col gap-5 px-6 pb-6 pt-4 lg:px-8 lg:pb-8">
                           <div>
                             <h2 className="text-[18px] font-extrabold text-[#12172B]">Jelajahi Bahasa</h2>
                             <p className="mt-0.5 text-[13px] font-medium text-gray-500">60+ bahasa · CEFR A1–B2 · pilih, lihat silabus, langsung daftar</p>
@@ -3478,6 +3492,7 @@ export default function AkunPage() {
                             <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />Blog &amp; Tips Belajar</a>
                           </div>
                         </div>
+                      </div>
                       );
                     })()}
                   </div>
