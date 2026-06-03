@@ -33,6 +33,9 @@ const LANG_CATEGORIES = [
   { label: "Afrika", langs: ["Swahili"] },
 ];
 
+// linguo-patch:reguler-lang-gate — bahasa yg punya jadwal Kelas Reguler (regular_batches). Kalau nambah bahasa reguler baru, update list ini + /jadwal-kelas-reguler.
+const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
+
 const TEACHERS = [
   {name:"Febri Darusman",role:"Spanish & Thai",flags:"🇪🇸🇹🇭"},{name:"Nitalia Wijaya",role:"Korean & English",flags:"🇰🇷🇬🇧"},
   {name:"Angga",role:"Chinese & Korean",flags:"🇨🇳🇰🇷"},{name:"Paramita Wulandari",role:"Japanese & Portuguese",flags:"🇯🇵🇧🇷"},
@@ -980,13 +983,18 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [teacherPick, setTeacherPick] = useState(false);
   const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
 
+  // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
+  const isRegulerFlow = selProgram==="Kelas Reguler";
+  const pool = isRegulerFlow
+    ? REGULER_LANGS
+    : (search.trim()
+        ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i)
+        : (LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || []));
   const filtered = search.trim()
-    ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i).filter(l=>l.toLowerCase().includes(search.toLowerCase()))
-    : LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || [];
+    ? pool.filter(l=>l.toLowerCase().includes(search.toLowerCase()))
+    : pool;
 
   const isEnglish = selLang==="English";
-  // linguo-patch:reguler-lang-gate-v2 (inline funnel) — Kelas Reguler cuma utk bahasa yg punya jadwal reguler (regular_batches)
-  const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
   const isReguler = REGULER_LANGS.includes(selLang);
 
   // Pengajar native: terbatas ke bahasa yang sudah punya native teacher.
@@ -1137,14 +1145,14 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s1" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
               <div className="p-6 pb-4">
                 <h3 className="text-xl font-bold text-slate-900 mb-1">Mau belajar bahasa apa?</h3>
-                <p className="text-sm text-slate-500 mb-4">Pilih bahasa yang kamu minati</p>
+                <p className="text-sm text-slate-500 mb-4">{isRegulerFlow ? "Bahasa yang punya jadwal Kelas Reguler" : "Pilih bahasa yang kamu minati"}</p>
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"/>
                   <input type="text" placeholder="Cari bahasa..." value={search} onChange={(e)=>setSearch(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
                 </div>
               </div>
-              {!search.trim() && (
+              {!search.trim() && !isRegulerFlow && (
                 <div className="px-6 flex gap-2 mb-3 overflow-x-auto pb-1">
                   {LANG_CATEGORIES.map(c=>(
                     <button key={c.label} onClick={()=>setActiveTab(c.label)}
