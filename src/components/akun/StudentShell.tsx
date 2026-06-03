@@ -50,9 +50,9 @@ export default function StudentShell({
   };
 
   return (
-    /* [linguo-patch:shell-frame-ref-v1] frame referensi: center horizontal + fill tinggi viewport (no grey gap) */
-    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:items-start lg:justify-center lg:p-6">
-      <div className="w-full lg:flex lg:max-w-[1320px] lg:rounded-[40px] lg:bg-[#16796E] lg:p-3 lg:shadow-[0_40px_80px_-30px_rgba(10,70,63,0.45)] lg:h-[calc(100vh-3rem)] lg:min-h-[600px]">
+    /* [linguo-patch:shell-frame-ref-v2] full-bleed: teal isi penuh viewport (no outer grey), white canvas float di dalem */
+    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0">
+      <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
         {/* ICON RAIL — desktop only */}
         <aside className="hidden w-[96px] shrink-0 flex-col items-center py-7 lg:flex">
