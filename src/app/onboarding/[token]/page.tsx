@@ -155,6 +155,8 @@ export default function OnboardingPage() {
   const [saving, setSaving] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
+  // [reguler-schedule-gate-v1] Kelas Reguler: jadwal fix per batch (ditentukan Linguo) -> skip step pilih jadwal
+  const isReguler = lead?.program === "reguler" || lead?.program === "Kelas Reguler";
 
   useEffect(() => {
     fetch(`/api/onboarding?token=${token}`)
@@ -168,12 +170,12 @@ export default function OnboardingPage() {
   const getDomicile = () => livesInIndonesia ? `${city}, ${province}, Indonesia` : `${cityAbroad}, ${country}`;
 
   const handleSubmit = async () => {
-    if (schedules.length === 0) { setError("Pilih minimal 1 jadwal"); return; }
+    if (!isReguler && schedules.length === 0) { setError("Pilih minimal 1 jadwal"); return; }
     setError(""); setSaving(true);
     try {
       const res = await fetch("/api/onboarding", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, birthdate, domicile: getDomicile(), reason: goal, experience, schedule_preference: schedules.join(", "), learning_goal: goal }),
+        body: JSON.stringify({ token, birthdate, domicile: getDomicile(), reason: goal, experience, schedule_preference: isReguler ? "Ditentukan per batch (Kelas Reguler)" : schedules.join(", "), learning_goal: goal }),
       });
       if (res.ok) setDone(true); else setError("Gagal menyimpan. Coba lagi.");
     } catch { setError("Terjadi kesalahan. Coba lagi."); }
@@ -274,11 +276,17 @@ export default function OnboardingPage() {
             <motion.div key="s4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-5">
               <div>
                 <button onClick={() => setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-2 hover:underline">{"\u{2190}"} Kembali</button>
-                <h2 className="text-lg font-bold text-slate-900 mb-1">Preferensi Jadwal</h2>
-                <p className="text-sm text-slate-500">Pilih waktu yang kamu mau (boleh lebih dari 1)</p>
-                {livesInIndonesia === false && <p className="text-xs text-amber-600 bg-amber-50 rounded-lg px-3 py-2 mt-2">Jadwal di bawah menggunakan zona waktu WIB (GMT+7)</p>}
+                <h2 className="text-lg font-bold text-slate-900 mb-1">{isReguler ? "Selesaikan Pendaftaran" : "Preferensi Jadwal"}</h2>
+                <p className="text-sm text-slate-500">{isReguler ? "Satu langkah lagi sebelum kelas kamu dimulai" : "Pilih waktu yang kamu mau (boleh lebih dari 1)"}</p>
+                {!isReguler && livesInIndonesia === false && <p className="text-xs text-amber-600 bg-amber-50 rounded-lg px-3 py-2 mt-2">Jadwal di bawah menggunakan zona waktu WIB (GMT+7)</p>}
               </div>
-              <div className="space-y-1">
+              {isReguler ? (
+                <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-4 space-y-2">
+                  <div className="flex items-center gap-2"><span className="text-lg">{"\u{1F4C5}"}</span><p className="font-bold text-slate-800 text-sm">Jadwal ditentukan per batch</p></div>
+                  <p className="text-sm text-slate-600 leading-relaxed">Kelas Reguler punya jadwal tetap yang sudah diatur per batch oleh Linguo, jadi kamu nggak perlu memilih jadwal. Tim kami akan mengonfirmasi jadwal batch kamu via WhatsApp.</p>
+                </div>
+              ) : (
+                <div className="space-y-1">
                 {["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"].map((day) => (
                   <div key={day}>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1.5">{day}</p>
@@ -292,6 +300,7 @@ export default function OnboardingPage() {
                   </div>
                 ))}
               </div>
+              )}
               <button onClick={handleSubmit} disabled={saving} className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg mt-4">{saving ? "Menyimpan..." : "Kirim Data \u{2192}"}</button>
             </motion.div>
           )}
