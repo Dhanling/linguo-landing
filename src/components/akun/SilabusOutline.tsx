@@ -63,6 +63,7 @@ export default function SilabusOutline({
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [openSession, setOpenSession] = useState<OpenSession | null>(null);
   const [lessonState, setLessonState] = useState<LessonState>({ status: "idle" });
+  const [showOverview, setShowOverview] = useState(false); // [linguo-patch:silabus-overview-modal-v1]
 
   useEffect(() => {
     let alive = true;
@@ -76,11 +77,9 @@ export default function SilabusOutline({
           setState("error");
           return;
         }
-        const base = currentLevel ? currentLevel.toUpperCase().replace(/\..*$/, "") : "";
-        const lvl =
-          cur.levels.find((l) => l.code.toUpperCase() === base) || cur.levels[0];
-        setOpenLevel(lvl?.code ?? null);
-        setOpenSub(lvl?.sublevels?.[0]?.code ?? null);
+        // [linguo-patch:silabus-collapse-default-v1] semua level collapsed by default — user expand manual (no auto-open dari currentLevel)
+        setOpenLevel(null);
+        setOpenSub(null);
         setData(cur);
         setState("ready");
       })
@@ -90,7 +89,7 @@ export default function SilabusOutline({
     return () => {
       alive = false;
     };
-  }, [slug, currentLevel]);
+  }, [slug]);
 
   // cari lms_lesson yg match (bahasa + sublevel + nomor sesi) saat modal kebuka
   useEffect(() => {
@@ -171,9 +170,19 @@ export default function SilabusOutline({
   return (
     <div className="flex flex-col gap-4">
       {data.overview ? (
-        <p className="rounded-2xl bg-[#16796E]/5 px-4 py-3 text-[12.5px] font-medium leading-relaxed text-gray-600 line-clamp-3">
-          {data.overview}
-        </p>
+        <div className="rounded-2xl bg-[#16796E]/5 px-4 py-3">{/* [linguo-patch:silabus-overview-modal-v1] */}
+          <p className="text-[12.5px] font-medium leading-relaxed text-gray-600 line-clamp-3">
+            {data.overview}
+          </p>
+          {data.overview.length > 170 ? (
+            <button
+              onClick={() => setShowOverview(true)}
+              className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E] transition hover:text-[#0F5A52] hover:underline"
+            >
+              Selengkapnya <ChevronRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+            </button>
+          ) : null}
+        </div>
       ) : null}
 
       {data.levels.map((lvl) => {
@@ -370,6 +379,40 @@ export default function SilabusOutline({
                 </p>
               </div>
             )}
+          </div>
+        </div>
+      ) : null}
+
+      {showOverview && data.overview ? (
+        <div
+          onClick={() => setShowOverview(false)}
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-[#12172B]/40 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white p-5 shadow-[0_24px_60px_-20px_rgba(18,23,43,0.5)] sm:rounded-3xl sm:p-6"
+          >
+            <div className="flex items-start gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
+                <BookOpen className="h-4 w-4" strokeWidth={2.2} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[10px] font-bold uppercase tracking-wide text-gray-400">Tentang bahasa ini</p>
+                <h3 className="mt-0.5 text-[16px] font-extrabold leading-snug text-[#12172B]">
+                  {languageLabel || "Deskripsi bahasa"}
+                </h3>
+              </div>
+              <button
+                onClick={() => setShowOverview(false)}
+                aria-label="Tutup"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition hover:bg-slate-100 hover:text-[#12172B]"
+              >
+                <X className="h-5 w-5" strokeWidth={2} />
+              </button>
+            </div>
+            <p className="mt-4 whitespace-pre-line text-[13.5px] font-medium leading-relaxed text-gray-700">
+              {data.overview}
+            </p>
           </div>
         </div>
       ) : null}
