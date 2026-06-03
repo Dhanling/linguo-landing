@@ -985,6 +985,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
     : LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || [];
 
   const isEnglish = selLang==="English";
+  // linguo-patch:reguler-lang-gate-v2 (inline funnel) — Kelas Reguler cuma utk bahasa yg punya jadwal reguler (regular_batches)
+  const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
+  const isReguler = REGULER_LANGS.includes(selLang);
 
   // Pengajar native: terbatas ke bahasa yang sudah punya native teacher.
   // Native = NATIVE_MULTIPLIER x tarif lokal (konsisten dgn /harga).
@@ -1002,7 +1005,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
     {id:"Semi Private",icon:"🤝",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
-    {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
+    ...(isReguler?[{id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
   ];
@@ -1154,7 +1157,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <div className="px-6 pb-6 overflow-y-auto flex-1">
                 <div className="grid grid-cols-2 gap-2">
                   {filtered.map(l=>(
-                    <button key={l} onClick={()=>{setSelLang(l);setSearch("");if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
+                    <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
                       {l}
