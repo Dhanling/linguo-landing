@@ -195,8 +195,13 @@ export default function LessonPlayer({
           else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
           else st.push({ kind: "logic", block: b, label: "Materi" });
         });
-        st.push({ kind: "done", label: "Selesai" });
-        setSteps(st);
+        // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai (cegah confetti palsu)
+        if (st.length > 0) {
+          st.push({ kind: "done", label: "Selesai" });
+          setSteps(st);
+        } else {
+          setSteps([]);
+        }
       } else {
         setSteps([]);
       }
@@ -304,6 +309,22 @@ export default function LessonPlayer({
         >
           Lihat akses
         </a>
+      </Centered>
+    );
+  }
+
+  // [linguo-patch:lms-lesson-frame-v2] sesi belum ada konten — tampilkan placeholder, bukan langsung confetti
+  if (steps.length === 0) {
+    return (
+      <Centered>
+        <BookOpen className="h-8 w-8 text-slate-300" />
+        <h1 className="mt-3 text-lg font-bold text-slate-900">{lesson.title}</h1>
+        <p className="mt-2 max-w-sm text-sm text-slate-500">
+          Materi sesi ini belum tersedia — lagi disiapkan ya.
+        </p>
+        <button onClick={onBack} className="mt-4 text-sm font-semibold" style={{ color: TEAL }}>
+          ← Kembali
+        </button>
       </Centered>
     );
   }
