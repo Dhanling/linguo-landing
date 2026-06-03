@@ -44,7 +44,7 @@ import type { Cert } from '@/components/akun/SertifikatTab';
 import SilabusOutline from '@/components/akun/SilabusOutline';
 import JadwalCalendar from '@/components/akun/JadwalCalendar'; // linguo-patch:akun-jadwal-tab-v1
 import LmsKatalog from '@/components/lms/LmsKatalog';
-import LmsLesson from '@/components/lms/LmsLesson';
+import LessonPlayer from '@/components/akun/LessonPlayer'; // [linguo-patch:akun-inplace-lessonplayer-v1] ganti LmsLesson (master-detail superseded) → immersive player tunggal
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import PerpustakaanSaya from '@/components/PerpustakaanSaya';
 import { Spinner } from "@/components/Spinner";
@@ -2001,7 +2001,7 @@ export default function AkunPage() {
     const sesi = sp.get("sesi");
     const view = sp.get("view");
     let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | null = null;
-    if (sesi) { setLmsSesi(sesi); resolved = "materi"; }
+    if (sesi) { setLmsSesi(sesi); setMateriView("mandiri"); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → balik ke sub-tab mandiri pas player ditutup
     if (view === "live" || view === "mandiri" || view === "jelajahi") { setMateriView(view); resolved = "materi"; }
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka")) resolved = menu;
     if (!resolved) {
@@ -3792,12 +3792,12 @@ export default function AkunPage() {
       {/* Footer (desktop) */}
       <div className="hidden lg:block text-center py-8 text-xs text-gray-400">© 2026 Linguo.id — Everyone Can Be a Polyglot</div>
 
+      {/* [linguo-patch:akun-inplace-lessonplayer-v1] overlay immersive: satu LessonPlayer dipake route & in-place (LmsLesson lama dibuang) */}
       {lmsSesi && (
-        <div className="fixed inset-0 z-[60] overflow-y-auto bg-slate-50">
-          <LmsLesson
+        <div className="fixed inset-0 z-[60] overflow-y-auto bg-[#F5F6F8]">
+          <LessonPlayer
             lessonId={lmsSesi}
-            onClose={() => { setLmsSesi(null); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi"); }}
-            onNavigate={(id) => { setLmsSesi(id); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`); }}
+            onBack={() => { setLmsSesi(null); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi&view=mandiri"); }}
           />
         </div>
       )}
