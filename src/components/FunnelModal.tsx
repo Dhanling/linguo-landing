@@ -31,6 +31,10 @@ const LANG_CATEGORIES = [
   { label: "Afrika", langs: ["Swahili"] },
 ];
 
+// linguo-patch:reguler-lang-gate-v1 — Kelas Reguler cuma dibuka utk bahasa yg ada di jadwal reguler
+// (samain dgn tabel regular_batches). Bahasa Isyarat ga masuk picker funnel ini → daftarnya lewat /jadwal-kelas-reguler.
+const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
+
 const FLAG_CODES: Record<string,string> = {
   English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",
   Inggris:"gb",Jepang:"jp",Korea:"kr",Arab:"sa",Prancis:"fr",Jerman:"de",Spanyol:"es",Italia:"it",Belanda:"nl",Portugis:"br",Rusia:"ru",Thailand:"th",Vietnam:"vn",Turki:"tr",Polandia:"pl",Swedia:"se",Norwegia:"no",Denmark:"dk",Finlandia:"fi",Yunani:"gr",Ceko:"cz",Hungaria:"hu",Ibrani:"il",Persia:"ir",Filipina:"ph",Melayu:"my",Georgia:"ge",Jawa:"id",Sunda:"id",Pakistan:"pk",Bangladesh:"bd",Rumania:"ro"
@@ -98,9 +102,10 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
 
+  const isReguler = REGULER_LANGS.includes(selLang); // bahasa ini punya Kelas Reguler?
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
-    {id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"},
+    ...(isReguler?[{id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
     {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
   ];
@@ -213,7 +218,14 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <div className="px-6 pb-6 overflow-y-auto flex-1">
                 <div className="grid grid-cols-2 gap-2">
                   {filtered.map(l=>(
-                    <button key={l} onClick={()=>{setSelLang(l);setSearch("");if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
+                    <button key={l} onClick={()=>{
+                      setSelLang(l); setSearch("");
+                      // kalau program udah ke-preset "Kelas Reguler" tapi bahasa ini ga ada kelas regulernya,
+                      // batalin presetnya & arahin ke step pilih program (Reguler ga akan muncul di sana).
+                      const prog = (selProgram==="Kelas Reguler" && !REGULER_LANGS.includes(l)) ? "" : selProgram;
+                      if(prog!==selProgram) setSelProgram(prog);
+                      if(prog==="Kelas Private"){setTeacherPick(true);setStep(2)} else {setStep(prog?3:2)}
+                    }}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
                       {l}
