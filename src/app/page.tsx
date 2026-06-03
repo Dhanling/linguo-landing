@@ -968,7 +968,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       if (initialName) setFormName(initialName);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setAddAddon(false); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
@@ -982,6 +982,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [selTeacherType, setSelTeacherType] = useState<"lokal"|"native">("lokal");
   const [teacherPick, setTeacherPick] = useState(false);
   const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
+  const [addAddon, setAddAddon] = useState(false); // addon-ebook-recording-v1 — toggle E-Book + Recording bundle (Reguler only)
 
   // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
   const isRegulerFlow = selProgram==="Kelas Reguler";
@@ -1053,7 +1054,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           const res = await fetch("/api/create-invoice", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, referral_source: localStorage.getItem("linguo_ref") || undefined }),
+            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined }),
           });
           const data = await res.json();
           if (data.invoice_url) { window.location.href = data.invoice_url; return; }
@@ -1121,7 +1122,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       options: { redirectTo: window.location.origin + "/akun" },
     });
   };
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setAddAddon(false); };
 
   return (
     <AnimatePresence>{open&&(
@@ -1472,7 +1473,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-xs text-slate-500">Level</span>
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
-                {/* reguler-xendit-v1: durasi + harga Reguler di konfirmasi */}
+                {/* reguler-xendit-v1: durasi + harga · addon-ebook-recording-v1: toggle add-on + total live */}
                 {selProgram==="Kelas Reguler" && (
                   <>
                     <div className="flex items-center justify-between">
@@ -1480,8 +1481,26 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       <span className="text-sm font-medium">8 sesi @ 90 menit</span>
                     </div>
                     <div className="flex items-center justify-between border-t border-slate-200 pt-2.5 mt-2.5">
-                      <span className="text-xs text-slate-500">Biaya</span>
-                      <span className="text-sm font-bold text-[#1A9E9E]">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
+                      <span className="text-xs text-slate-500">Biaya kelas</span>
+                      <span className="text-sm font-medium">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
+                    </div>
+                    {/* addon-ebook-recording-v1: cross-sell toggle (Reguler only) */}
+                    <button type="button" onClick={()=>setAddAddon(v=>!v)}
+                      className="w-full flex items-center justify-between gap-3 border-t border-slate-200 pt-3 mt-1 text-left group">
+                      <span className="flex items-start gap-2.5">
+                        <span className={"mt-0.5 h-[18px] w-[18px] shrink-0 rounded-md border-2 flex items-center justify-center transition-all " + (addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50")}>
+                          {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                        </span>
+                        <span>
+                          <span className="block text-sm font-medium text-slate-700">📚 Tambah E-Book + Recording Kelas</span>
+                          <span className="block text-[11px] text-slate-400 leading-snug mt-0.5">Materi lengkap + rekaman semua sesi · akses selamanya</span>
+                        </span>
+                      </span>
+                      <span className={"text-sm font-semibold whitespace-nowrap transition-colors " + (addAddon ? "text-[#1A9E9E]" : "text-slate-400")}>+Rp150.000</span>
+                    </button>
+                    <div className="flex items-center justify-between border-t-2 border-slate-200 pt-3 mt-1">
+                      <span className="text-sm font-bold text-slate-800">Total</span>
+                      <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(150000 + (addAddon ? 150000 : 0))}</span>
                     </div>
                   </>
                 )}
