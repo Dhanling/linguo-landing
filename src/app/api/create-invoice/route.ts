@@ -32,7 +32,7 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, wa_number, language, program, level, productKey: directKey } = body;
+    const { name, email, wa_number, language, program, level, productKey: directKey, addon } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
@@ -41,6 +41,12 @@ export async function POST(req: NextRequest) {
     }
 
     const externalId = `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+
+    // ── addon-ebook-recording-v1: cross-sell bundle e-book + recording (Reguler) ──
+    const ADDON_PRICE = 150000;
+    const ADDON_DESC = "Bundle E-Book + Recording Kelas (akses selamanya)";
+    const wantsAddon = addon === true;
+    const totalAmount = product.amount + (wantsAddon ? ADDON_PRICE : 0);
 
     // ── affiliate-attribution-v1 ─────────────────────────────────────────
     // Last-touch referral: middleware drops a `linguo_ref` cookie when a
@@ -88,9 +94,13 @@ export async function POST(req: NextRequest) {
         source: "landing-page",
         payment_status: "PENDING",
         xendit_external_id: externalId,
-        amount: product.amount,
+        amount: totalAmount,
         affiliate_ref_code: affiliateRefCode,
         affiliate_id: affiliateId,
+        // addon fields cuma dikirim kalau opt-in -> pendaftaran normal ga nyentuh kolom baru
+        ...(wantsAddon
+          ? { addon_ebook_recording: true, addon_amount: ADDON_PRICE, addon_type: "reguler_bundle" }
+          : {}),
       }),
     });
 
@@ -108,9 +118,9 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         external_id: externalId,
-        amount: product.amount,
+        amount: totalAmount,
         payer_email: email,
-        description: `${product.description}${language ? ` — ${language}` : ""}`,
+        description: `${product.description}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
         currency: "IDR",
         invoice_duration: 86400,
         customer: {
@@ -120,7 +130,10 @@ export async function POST(req: NextRequest) {
         },
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
-        items: [{ name: product.description, quantity: 1, price: product.amount }],
+        items: [
+          { name: product.description, quantity: 1, price: product.amount },
+          ...(wantsAddon ? [{ name: ADDON_DESC, quantity: 1, price: ADDON_PRICE }] : []),
+        ],
       }),
     });
 

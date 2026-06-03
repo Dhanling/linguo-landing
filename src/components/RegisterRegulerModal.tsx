@@ -6,10 +6,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Loader2, MessageCircle, Calendar, Clock } from "lucide-react";
+import { X, Loader2, MessageCircle, Calendar, Clock, Check } from "lucide-react";
 
 const WA_NUMBER = "6282116859493";
 const TEAL = "#1A9E9E";
+const ADDON_PRICE = 150000; // bundle e-book + recording, akses selamanya
 
 // Minimal shape — cukup field yang dipakai modal (sinkron dgn Batch di page).
 export interface RegulerBatchLite {
@@ -65,6 +66,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [addAddon, setAddAddon] = useState(false);
 
   // Reset form tiap kali batch berubah (modal dibuka untuk batch baru).
   useEffect(() => {
@@ -74,6 +76,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
       setEmail("");
       setError(null);
       setSubmitting(false);
+      setAddAddon(false);
     }
   }, [batch]);
 
@@ -90,6 +93,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
   if (!batch) return null;
 
   const price = batch.current_price_per_student || batch.price_regular;
+  const total = price + (addAddon ? ADDON_PRICE : 0);
   const waMsg = encodeURIComponent(
     `Halo Linguo! Saya mau tanya soal Kelas Reguler ${batch.language} ${batch.level} (${batch.batch_code}).`
   );
@@ -113,6 +117,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
           email: email.trim(),
           wa_number: e164,
           language: `${batch!.language} ${batch!.level} (${batch!.batch_code})`,
+          addon: addAddon,
         }),
       });
       const data = await res.json();
@@ -189,6 +194,40 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
               <span className="text-[10px] font-normal text-slate-400">/batch</span>
             </span>
           </div>
+
+          {/* addon-ebook-recording-v1: cross-sell bundle */}
+          <button
+            type="button"
+            onClick={() => setAddAddon((v) => !v)}
+            disabled={submitting}
+            className={`mt-3 w-full text-left rounded-xl border p-3 transition-colors ${
+              addAddon ? "border-[#1A9E9E] bg-teal-50" : "border-slate-200 hover:border-slate-300"
+            }`}
+          >
+            <div className="flex items-start gap-2.5">
+              <span
+                className={`mt-0.5 h-5 w-5 shrink-0 rounded-md border flex items-center justify-center ${
+                  addAddon ? "border-[#1A9E9E]" : "border-slate-300"
+                }`}
+                style={addAddon ? { backgroundColor: TEAL } : undefined}
+              >
+                {addAddon && <Check className="h-3.5 w-3.5 text-white" />}
+              </span>
+              <span className="flex-1">
+                <span className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-semibold text-slate-800">
+                    Tambah E-Book + Recording Kelas
+                  </span>
+                  <span className="text-sm font-bold whitespace-nowrap" style={{ color: TEAL }}>
+                    +{formatIDR(ADDON_PRICE)}
+                  </span>
+                </span>
+                <span className="block text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                  Materi e-book lengkap + rekaman semua sesi. Akses selamanya, dikirim ke email kamu.
+                </span>
+              </span>
+            </div>
+          </button>
         </div>
 
         {/* Form */}
@@ -250,7 +289,7 @@ export default function RegisterRegulerModal({ batch, onClose }: Props) {
                 Memproses...
               </>
             ) : (
-              <>Lanjut ke Pembayaran · {formatIDR(price)}</>
+              <>Lanjut ke Pembayaran · {formatIDR(total)}</>
             )}
           </button>
 
