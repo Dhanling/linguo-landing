@@ -304,6 +304,13 @@ export default function AfiliatorPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0 });
   }, []);
 
+  // ── SWR cache key (per-user) ───────────────────────────────────────────
+  // Scoped to the user id so a shared device never crosses caches. Bump the
+  // version suffix if the payload shape changes (invalidates old entries).
+  const cacheKey = session?.user?.id
+    ? `aff_cache_v1_${session.user.id}`
+    : null;
+
   // ── Auth: initial getSession + live onAuthStateChange ──────────────────
   useEffect(() => {
     let mounted = true;
@@ -341,7 +348,28 @@ export default function AfiliatorPage() {
         setData(null);
         return;
       }
-      if (opts?.silent) setRefreshing(true);
+
+      // SWR: on a foreground load, paint the last cached payload INSTANTLY so
+      // a hard refresh never shows the skeleton when we have something to
+      // show. The fetch below then revalidates in the background. The skeleton
+      // only appears on a first-ever load (no cache yet).
+      let paintedFromCache = false;
+      if (!opts?.silent && cacheKey && typeof window !== "undefined") {
+        try {
+          const raw = window.localStorage.getItem(cacheKey);
+          if (raw) {
+            setData(JSON.parse(raw) as ApiResponse);
+            paintedFromCache = true;
+          }
+        } catch {
+          /* corrupt/blocked cache — ignore, fall back to skeleton */
+        }
+      }
+
+      // If we already have something on screen (cache or prior data), the
+      // revalidation is silent. Only a true cold load flashes the skeleton.
+      const silent = opts?.silent || paintedFromCache;
+      if (silent) setRefreshing(true);
       else setDataLoading(true);
       setError(null);
       try {
@@ -352,15 +380,22 @@ export default function AfiliatorPage() {
         if (!res.ok) throw new Error(`status ${res.status}`);
         const json: ApiResponse = await res.json();
         setData(json);
+        if (cacheKey && typeof window !== "undefined") {
+          try {
+            window.localStorage.setItem(cacheKey, JSON.stringify(json));
+          } catch {
+            /* quota/private mode — caching is best-effort */
+          }
+        }
       } catch {
-        if (!opts?.silent)
+        if (!silent)
           setError("Gagal memuat data afiliator. Coba refresh halaman.");
       } finally {
-        if (opts?.silent) setRefreshing(false);
+        if (silent) setRefreshing(false);
         else setDataLoading(false);
       }
     },
-    [session?.access_token]
+    [session?.access_token, cacheKey]
   );
 
   // Load awal + tiap token berubah (skeleton).
@@ -401,6 +436,15 @@ export default function AfiliatorPage() {
 
   async function logout() {
     setLoggingOut(true);
+    // Drop the cached payload (holds unmasked customer emails) before the
+    // session goes away, so nothing personal lingers on a shared device.
+    if (cacheKey && typeof window !== "undefined") {
+      try {
+        window.localStorage.removeItem(cacheKey);
+      } catch {
+        /* ignore */
+      }
+    }
     await supabase.auth.signOut();
     // onAuthStateChange flips session → null → AfiliatorLogin renders.
   }
