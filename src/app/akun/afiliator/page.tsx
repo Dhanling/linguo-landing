@@ -280,6 +280,15 @@ export default function AfiliatorPage() {
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  // Active dashboard view. The sidebar (desktop) and MobileNav (mobile) both
+  // drive this single piece of state; the data is fetched ONCE and kept in
+  // memory, so switching views is instant — no refetch, no skeleton.
+  const [view, setView] = useState("sec-ringkasan");
+
+  const goView = useCallback((id: string) => {
+    setView(id);
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, []);
 
   // ── Auth: initial getSession + live onAuthStateChange ──────────────────
   useEffect(() => {
@@ -326,15 +335,12 @@ export default function AfiliatorPage() {
           headers: { Authorization: `Bearer ${token}` },
           cache: "no-store",
         });
-        if (!res.ok) {
-          const body = await res.text().catch(() => "");
-          throw new Error(`HTTP ${res.status} · ${body.slice(0, 400)}`);
-        }
+        if (!res.ok) throw new Error(`status ${res.status}`);
         const json: ApiResponse = await res.json();
         setData(json);
-      } catch (e) {
+      } catch {
         if (!opts?.silent)
-          setError("DEBUG: " + (e instanceof Error ? e.message : String(e)));
+          setError("Gagal memuat data afiliator. Coba refresh halaman.");
       } finally {
         if (opts?.silent) setRefreshing(false);
         else setDataLoading(false);
@@ -410,7 +416,7 @@ export default function AfiliatorPage() {
       </div>
 
       <div className="flex min-h-screen">
-        <Sidebar onLogout={logout} loggingOut={loggingOut} />
+        <Sidebar active={view} onNavigate={goView} onLogout={logout} loggingOut={loggingOut} />
         <main className="min-w-0 flex-1">
           <div className="mx-auto max-w-[1080px] px-4 py-6 lg:px-8 lg:py-8">
             <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
@@ -429,16 +435,20 @@ export default function AfiliatorPage() {
         )}
 
         {!dataLoading && !error && aff && (
-          <Dashboard
-            aff={aff}
-            stats={data!.stats!}
-            conversions={data!.conversions ?? []}
-            daily={data!.daily ?? []}
-            refLink={refLink}
-            waUrl={waUrl}
-            copied={copied}
-            onCopy={copyLink}
-          />
+          <>
+            <MobileNav active={view} onNavigate={goView} />
+            <Dashboard
+              view={view}
+              aff={aff}
+              stats={data!.stats!}
+              conversions={data!.conversions ?? []}
+              daily={data!.daily ?? []}
+              refLink={refLink}
+              waUrl={waUrl}
+              copied={copied}
+              onCopy={copyLink}
+            />
+          </>
         )}
           </div>
         </main>
@@ -475,6 +485,18 @@ export default function AfiliatorPage() {
           );
           animation: affSweep 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s 1 forwards;
         }
+        /* View switching: the dashboard shows ONE view at a time now. The old
+           per-element load stagger (large animation-delays) was tuned for a
+           single long scroll, so inside a view we disable it and instead fade
+           each view in as a whole on switch — snappy, no "nothing then pop". */
+        .aff-views .aff-reveal {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+        .aff-viewfade {
+          animation: affReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
         @media (prefers-reduced-motion: reduce) {
           .aff-reveal {
             animation: none;
@@ -483,6 +505,9 @@ export default function AfiliatorPage() {
           .aff-shimmer {
             animation: none;
             display: none;
+          }
+          .aff-viewfade {
+            animation: none;
           }
         }
       `}</style>
@@ -705,6 +730,7 @@ function AfiliatorLogin() {
 
 // ── Dashboard ──────────────────────────────────────────────────────────────
 function Dashboard({
+  view,
   aff,
   stats,
   conversions,
@@ -714,6 +740,7 @@ function Dashboard({
   copied,
   onCopy,
 }: {
+  view: string;
   aff: NonNullable<ApiResponse["affiliate"]>;
   stats: NonNullable<ApiResponse["stats"]>;
   conversions: Conversion[];
@@ -753,7 +780,7 @@ function Dashboard({
   const komisiSpark = last14.map((d) => (_cum += d.conversions));
 
   return (
-    <div className="space-y-6">
+    <div className="aff-views space-y-6">
       {/* Status notice if not active */}
       {aff.status !== "active" && (
         <div
@@ -766,6 +793,9 @@ function Dashboard({
         </div>
       )}
 
+      <div key={view} className="aff-viewfade space-y-6">
+      {view === "sec-ringkasan" && (
+      <>
       {/* RINGKASAN: hero + tier */}
       <section id="sec-ringkasan" className="grid grid-cols-1 gap-4 lg:grid-cols-12">
         <div
@@ -832,6 +862,10 @@ function Dashboard({
         <KomisiCol dot="bg-emerald-400" label="Dibayar" amount={stats.commission_paid} tone="text-emerald-700" />
       </div>
 
+      </>
+      )}
+      {view === "sec-performa" && (
+      <>
       {/* PERFORMA: chart + donut */}
       <section id="sec-performa" className="grid grid-cols-1 gap-4 lg:grid-cols-12">
         <div className="aff-reveal lg:col-span-8" style={{ animationDelay: "400ms" }}>
@@ -842,6 +876,10 @@ function Dashboard({
         </div>
       </section>
 
+      </>
+      )}
+      {view === "sec-pencairan" && (
+      <>
       {/* PENCAIRAN: payout + rekening */}
       <section id="sec-pencairan">
         <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
@@ -907,6 +945,10 @@ function Dashboard({
         </div>
       </section>
 
+      </>
+      )}
+      {view === "sec-promosi" && (
+      <>
       {/* PROMOSI: link generator + materi */}
       <section id="sec-promosi">
         <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
@@ -923,6 +965,10 @@ function Dashboard({
         </div>
       </section>
 
+      </>
+      )}
+      {view === "sec-aktivitas" && (
+      <>
       {/* AKTIVITAS: riwayat konversi (table) */}
       <section id="sec-aktivitas" className="aff-reveal" style={{ animationDelay: "620ms" }}>
         <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
@@ -983,7 +1029,11 @@ function Dashboard({
         )}
       </section>
 
-      <p className="aff-reveal pt-1 text-center text-xs text-slate-400" style={{ animationDelay: "660ms" }}>
+      </>
+      )}
+      </div>
+
+      <p className="pt-1 text-center text-xs text-slate-400">
         Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap tanggal 25, minimal Rp 100.000.
       </p>
     </div>
@@ -1526,25 +1576,16 @@ const NAV: { id: string; label: string; icon: typeof LayoutGrid }[] = [
 ];
 
 function Sidebar({
+  active,
+  onNavigate,
   onLogout,
   loggingOut,
 }: {
+  active: string;
+  onNavigate: (id: string) => void;
   onLogout: () => void;
   loggingOut: boolean;
 }) {
-  const [active, setActive] = useState("sec-ringkasan");
-
-  const go = (id: string) => {
-    setActive(id);
-    const t = document.getElementById(id);
-    if (t)
-      window.scrollTo({
-        top: t.getBoundingClientRect().top + window.scrollY - 18,
-        behavior: "smooth",
-      });
-    else window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <aside className="sticky top-0 hidden h-screen w-[72px] shrink-0 flex-col items-center gap-2 border-r border-slate-200/70 bg-white/70 py-5 backdrop-blur lg:flex">
       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1FB3B3] to-[#0F6B6B] font-extrabold text-white shadow-lg shadow-[#1A9E9E]/30">
@@ -1555,7 +1596,7 @@ function Sidebar({
         return (
           <button
             key={id}
-            onClick={() => go(id)}
+            onClick={() => onNavigate(id)}
             title={label}
             aria-label={label}
             className={`grid h-11 w-11 place-items-center rounded-xl transition ${
@@ -1582,6 +1623,37 @@ function Sidebar({
         )}
       </button>
     </aside>
+  );
+}
+
+// ── Mobile nav (horizontal tabs; replaces the desktop rail on small screens) ─
+function MobileNav({
+  active,
+  onNavigate,
+}: {
+  active: string;
+  onNavigate: (id: string) => void;
+}) {
+  return (
+    <nav className="mb-5 flex gap-1.5 overflow-x-auto pb-1 lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {NAV.map(({ id, label, icon: Icon }) => {
+        const on = active === id;
+        return (
+          <button
+            key={id}
+            onClick={() => onNavigate(id)}
+            className={`flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold transition ${
+              on
+                ? "bg-[#1A9E9E] text-white shadow-sm shadow-[#1A9E9E]/30"
+                : "border border-slate-200 bg-white text-slate-600"
+            }`}
+          >
+            <Icon className="h-3.5 w-3.5" />
+            {label}
+          </button>
+        );
+      })}
+    </nav>
   );
 }
 
