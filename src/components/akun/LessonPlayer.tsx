@@ -19,6 +19,7 @@ import {
   Lightbulb,
   ListChecks,
   RotateCcw,
+  Volume2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -30,6 +31,20 @@ const supabase = createClient(
 // [linguo-patch:lms-lesson-frame-v1] immersive step-flow player (inner frame, no yellow outer)
 const TEAL = "#16796E";
 const YELLOW = "#F2CB05";
+
+// [linguo-patch:lms-vocab-audio-v1] tombol play per-kata di kartu Kosakata (baca item.audio)
+let _lpAudio: HTMLAudioElement | null = null;
+function playWordAudio(url?: string | null) {
+  if (!url || typeof window === "undefined") return;
+  try {
+    if (_lpAudio) {
+      _lpAudio.pause();
+      _lpAudio.currentTime = 0;
+    }
+    _lpAudio = new Audio(url);
+    _lpAudio.play().catch(() => {});
+  } catch {}
+}
 
 function stripBold(s: string) {
   return s.replace(/\*\*/g, "");
@@ -509,10 +524,11 @@ function StepView({
           </p>
         ) : null}
         <div className="mt-6 rounded-3xl border border-slate-100 bg-[#F5F6F8] p-5">
-          <audio controls src={b.media_url || undefined} className="w-full" />
-          <p className="mt-2 text-xs text-slate-400">
-            (audio placeholder — aktif setelah R2 dipasang)
-          </p>
+          {b.media_url ? (
+            <audio controls src={b.media_url} className="w-full" />
+          ) : (
+            <p className="text-sm text-slate-400">Audio belum tersedia untuk sesi ini.</p>
+          )}
           {!showText[b.id] ? (
             <button
               onClick={() => onToggleText(b.id)}
@@ -553,9 +569,25 @@ function StepView({
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {items.map((it: any, i: number) => (
-            <div key={i} className="rounded-2xl border border-slate-100 bg-white p-4">
-              <div className="text-[18px] font-extrabold text-slate-900">{it.vi}</div>
-              <div className="text-sm text-slate-500">{it.id}</div>
+            <div
+              key={i}
+              className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white p-4"
+            >
+              <div className="min-w-0">
+                <div className="text-[18px] font-extrabold text-slate-900">{it.vi}</div>
+                <div className="text-sm text-slate-500">{it.id}</div>
+              </div>
+              {it.audio ? (
+                <button
+                  onClick={() => playWordAudio(it.audio)}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition hover:opacity-90 active:scale-95"
+                  style={{ background: TEAL }}
+                  title="Putar audio"
+                  aria-label={`Putar audio ${it.vi}`}
+                >
+                  <Volume2 className="h-5 w-5" />
+                </button>
+              ) : null}
             </div>
           ))}
         </div>
