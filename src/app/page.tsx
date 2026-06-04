@@ -1419,7 +1419,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
           {/* STEP 5 — Konfirmasi & Daftar */}
           {step===5 && (
-            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 min-h-0 overflow-y-auto">
               <button onClick={()=>setStep(4)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Edit data</button>
               <div className="text-center mb-5">
                 <span className="text-4xl mb-2 block">🎉</span>
