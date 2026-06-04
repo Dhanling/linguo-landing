@@ -968,7 +968,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       if (initialName) setFormName(initialName);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setAddAddon(false); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setAddAddon(false); setAgreeTerms(false); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
@@ -983,6 +983,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [teacherPick, setTeacherPick] = useState(false);
   const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
   const [addAddon, setAddAddon] = useState(false); // addon-ebook-recording-v1 — toggle E-Book + Recording bundle (Reguler only)
+  const [agreeTerms, setAgreeTerms] = useState(false); // terms-agreement-v1 — gating "Bayar Sekarang" (Reguler only)
 
   // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
   const isRegulerFlow = selProgram==="Kelas Reguler";
@@ -1122,7 +1123,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       options: { redirectTo: window.location.origin + "/akun" },
     });
   };
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setAddAddon(false); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setAddAddon(false); setAgreeTerms(false); };
 
   return (
     <AnimatePresence>{open&&(
@@ -1502,12 +1503,30 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       <span className="text-sm font-bold text-slate-800">Total</span>
                       <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(150000 + (addAddon ? 150000 : 0))}</span>
                     </div>
+                    {/* reguler-policy-v1: min-peserta + kebijakan refund bersyarat */}
+                    <div className="mt-3 rounded-xl bg-amber-50 border border-amber-100 p-3 space-y-1.5">
+                      <p className="text-[11px] leading-relaxed text-amber-900">
+                        <b>ℹ️ Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
+                      </p>
+                      <p className="text-[11px] leading-relaxed text-amber-900">
+                        <b>💳 Kebijakan pembayaran:</b> Setelah kelas berjalan, pembayaran tidak dapat di-refund. Namun saldo bisa dialihkan ke Kelas Private atau produk lain.
+                      </p>
+                    </div>
                   </>
                 )}
               </div>
+              {/* terms-agreement-v1: checkbox persetujuan sebelum Bayar (Reguler only) */}
+              {selProgram==="Kelas Reguler" && (
+                <button type="button" onClick={()=>setAgreeTerms(v=>!v)} className="w-full flex items-start gap-2.5 mb-3 text-left group">
+                  <span className={"mt-0.5 h-[18px] w-[18px] shrink-0 rounded-md border-2 flex items-center justify-center transition-all " + (agreeTerms ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50")}>
+                    {agreeTerms && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
+                  </span>
+                  <span className="text-[12px] leading-snug text-slate-500">Dengan ini saya menyetujui <b className="text-slate-700">syarat pembukaan kelas & kebijakan pembayaran</b> Linguo yang tertera di atas.</span>
+                </button>
+              )}
               {/* reguler-xendit-v1: CTA + subtext kondisional — Reguler ke Xendit, lainnya ke WA */}
-              <button onClick={handleFinal} disabled={saving}
-                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+              <button onClick={handleFinal} disabled={saving || (selProgram==="Kelas Reguler" && !agreeTerms)}
+                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
                 {saving ? "Memproses..." : (selProgram==="Kelas Reguler" ? "Bayar Sekarang →" : "Lanjut via WhatsApp →")}
               </button>
               <p className="text-[11px] text-slate-400 text-center mt-3">{selProgram==="Kelas Reguler" ? "Kamu akan diarahkan ke halaman pembayaran Xendit" : "Kamu akan diarahkan ke WhatsApp Admin untuk info pembayaran & jadwal"}</p>
