@@ -118,7 +118,11 @@ export default function PreTestVietnamPage() {
     });
     setSubmitting(false);
     if (error) {
-      setSubmitError("Gagal mengirim. Cek koneksi lalu coba lagi ya.");
+      if ((error as { code?: string }).code === "23505") {
+        setSubmitError("Nama ini sudah pernah mengisi pre-test. Satu peserta hanya bisa mengisi sekali. Kalau ini keliru, hubungi admin Linguo ya.");
+      } else {
+        setSubmitError("Gagal mengirim. Cek koneksi lalu coba lagi ya.");
+      }
       return;
     }
     next();
