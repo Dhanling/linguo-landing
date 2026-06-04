@@ -3798,6 +3798,7 @@ export default function AkunPage() {
           <LessonPlayer
             lessonId={lmsSesi}
             onBack={() => { setLmsSesi(null); if (typeof window !== "undefined") window.history.replaceState(null, "", "/akun?menu=materi&view=mandiri"); }}
+            onOpenLesson={(id) => setLmsSesi(id)}
           />
         </div>
       )}
