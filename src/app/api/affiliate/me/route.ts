@@ -151,7 +151,7 @@ export async function GET(req: NextRequest) {
       admin
         .from("affiliate_conversions")
         .select(
-          "id, product, language, level, gross_amount, commission_amount, status, created_at"
+          "id, product, language, level, gross_amount, commission_amount, status, created_at, digital_purchase_id, lead_id, registration_id"
         )
         .eq("affiliate_id", aff.id)
         .order("created_at", { ascending: false }),
@@ -184,6 +184,69 @@ export async function GET(req: NextRequest) {
       conversions: convByDay[date] || 0,
     }));
 
+    // ── 8. Resolve the referred customer (name + email) for displayed rows ─
+    // affiliate_conversions only stores a reference to the source row, so we
+    // look the identity up by primary key in the source table:
+    //   digital_purchase_id → digital_purchases (buyer_name, buyer_email)
+    //   lead_id             → leads (name, email)
+    //   registration_id     → registrations (identity columns TBD → "—")
+    // We resolve ONLY the top 20 rows that are actually shown, batched by id
+    // (PK lookup = instant) and in parallel. Source rows may have been deleted
+    // → null falls back to "—" in the UI.
+    const top = conversions.slice(0, 20);
+    const uniq = (xs: (string | null | undefined)[]) =>
+      [...new Set(xs.filter((x): x is string => !!x))];
+    const dpIds = uniq(top.map((c) => c.digital_purchase_id));
+    const leadIds = uniq(top.map((c) => c.lead_id));
+
+    const [dpRes, leadRes] = await Promise.all([
+      dpIds.length
+        ? admin
+            .from("digital_purchases")
+            .select("id, buyer_name, buyer_email")
+            .in("id", dpIds)
+        : Promise.resolve({ data: [] as any[] }),
+      leadIds.length
+        ? admin.from("leads").select("id, name, email").in("id", leadIds)
+        : Promise.resolve({ data: [] as any[] }),
+    ]);
+
+    const dpMap = new Map(
+      (dpRes.data || []).map((r: any) => [
+        r.id,
+        { name: r.buyer_name ?? null, email: r.buyer_email ?? null },
+      ])
+    );
+    const leadMap = new Map(
+      (leadRes.data || []).map((r: any) => [
+        r.id,
+        { name: r.name ?? null, email: r.email ?? null },
+      ])
+    );
+
+    const resolveCustomer = (c: any): { name: string | null; email: string | null } => {
+      if (c.digital_purchase_id && dpMap.has(c.digital_purchase_id))
+        return dpMap.get(c.digital_purchase_id)!;
+      if (c.lead_id && leadMap.has(c.lead_id)) return leadMap.get(c.lead_id)!;
+      return { name: null, email: null };
+    };
+
+    const conversionsOut = top.map((c) => {
+      const cust = resolveCustomer(c);
+      return {
+        id: c.id,
+        product: c.product,
+        language: c.language,
+        level: c.level,
+        gross_amount: c.gross_amount,
+        commission_amount: c.commission_amount,
+        status: c.status,
+        created_at: c.created_at,
+        customer_name: cust.name,
+        customer_email: cust.email,
+      };
+    });
+
     return NextResponse.json({
       affiliate: {
         referral_code: aff.referral_code,
@@ -202,7 +265,7 @@ export async function GET(req: NextRequest) {
         commission_paid: sumByStatus("paid"),
       },
       daily,
-      conversions: conversions.slice(0, 20),
+      conversions: conversionsOut,
     });
   } catch (err) {
     console.error("affiliate/me error:", err);

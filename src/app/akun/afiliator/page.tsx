@@ -56,6 +56,8 @@ type Conversion = {
   commission_amount: number;
   status: string;
   created_at: string;
+  customer_name: string | null;
+  customer_email: string | null;
 };
 
 type DailyPoint = {
@@ -202,6 +204,18 @@ const fmtDate = (iso: string) =>
     month: "short",
     year: "numeric",
   });
+
+// Mask an email for privacy: keep first char + domain → "a***@gmail.com".
+// Short/edge inputs degrade gracefully; null/empty → null.
+function maskEmail(email: string | null): string | null {
+  if (!email) return null;
+  const at = email.indexOf("@");
+  if (at < 1) return "***";
+  const local = email.slice(0, at);
+  const domain = email.slice(at); // includes "@"
+  const head = local[0];
+  return `${head}${"*".repeat(Math.max(2, local.length - 1))}${domain}`;
+}
 
 function parseYmd(ymd: string) {
   const [y, m, d] = ymd.split("-").map(Number);
@@ -987,11 +1001,12 @@ function Dashboard({
         ) : (
           <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[460px] text-sm">
+              <table className="w-full min-w-[580px] text-sm">
                 <thead>
                   <tr className="border-b border-slate-100 text-left text-[11px] uppercase tracking-wide text-slate-400">
                     <th className="px-4 py-2.5 font-semibold">Tanggal</th>
                     <th className="px-4 py-2.5 font-semibold">Produk</th>
+                    <th className="px-4 py-2.5 font-semibold">Diajak</th>
                     <th className="px-4 py-2.5 font-semibold">Status</th>
                     <th className="px-4 py-2.5 text-right font-semibold">Komisi</th>
                   </tr>
@@ -1009,6 +1024,22 @@ function Dashboard({
                           {PRODUCT_LABEL[c.product] ?? c.product}
                           {c.language ? ` · ${c.language}` : ""}
                           {c.level ? ` ${c.level}` : ""}
+                        </td>
+                        <td className="px-4 py-3">
+                          {c.customer_name || c.customer_email ? (
+                            <div className="leading-tight">
+                              <div className="font-medium text-slate-700">
+                                {c.customer_name ?? "—"}
+                              </div>
+                              {c.customer_email && (
+                                <div className="text-[11px] text-slate-400">
+                                  {maskEmail(c.customer_email)}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <span className="text-slate-300">—</span>
+                          )}
                         </td>
                         <td className="px-4 py-3">
                           <span className={`inline-block rounded-full border px-2 py-0.5 text-[11px] font-medium ${st.cls}`}>
