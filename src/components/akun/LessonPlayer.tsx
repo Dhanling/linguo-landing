@@ -435,28 +435,12 @@ export default function LessonPlayer({
       </Centered>
     );
   }
-  if (locked) {
-    return (
-      <Centered>
-        <Lock className="h-8 w-8 text-slate-300" />
-        <h1 className="mt-3 text-lg font-bold text-slate-900">{lesson.title}</h1>
-        <p className="mt-2 max-w-sm text-sm text-slate-500">
-          Sesi ini terkunci. Aktifkan akses paket untuk membuka seluruh materi.
-        </p>
-        <a
-          href="/akun"
-          className="mt-4 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
-          style={{ background: TEAL }}
-        >
-          Lihat akses
-        </a>
-      </Centered>
-    );
-  }
+  // [linguo-patch:lms-locked-in-frame-v1] layar lock DULU full-screen (sidebar ilang). Sekarang dirender di dalam STAGE (bareng switching/emptyContent) biar index sesi tetap nempel di kiri. Guard early-return dihapus.
 
   // [linguo-patch:lms-lesson-switch-v1] placeholder "belum ada konten" & spinner switch dipindah ke dalam STAGE (sidebar tetap render)
   const switching = loading; // booted=true di sini, jadi ini pasti switch (bukan first boot)
-  const emptyContent = !switching && steps.length === 0;
+  // [linguo-patch:lms-locked-in-frame-v1] locked punya branch sendiri → jangan ke-treat sebagai "belum ada konten"
+  const emptyContent = !switching && !locked && steps.length === 0;
   // judul instan dari siblings (ga nunggu fetch) — fallback ke lesson.title
   const curTitle = siblings.find((s) => s.id === lessonId)?.title || lesson.title;
 
@@ -546,7 +530,7 @@ export default function LessonPlayer({
       </header>
 
       {/* STEPPER */}
-      {!switching && !emptyContent && (
+      {!switching && !locked && !emptyContent && (
       <div className="bg-[#F5F6F8]/60 px-5 py-4 lg:px-8">
         <div className="mx-auto flex max-w-[760px] items-center gap-2">
           {steps.map((s, i) => {
@@ -593,6 +577,22 @@ export default function LessonPlayer({
           // [linguo-patch:lms-lesson-switch-v1] spinner di stage doang pas ganti sesi — sidebar & top bar tetap render
           <Centered>
             <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
+          </Centered>
+        ) : locked ? (
+          // [linguo-patch:lms-locked-in-frame-v1] sesi terkunci — di dalam frame, index sesi kiri tetap kelihatan
+          <Centered>
+            <Lock className="h-8 w-8 text-slate-300" />
+            <h1 className="mt-3 text-lg font-bold text-slate-900">{curTitle}</h1>
+            <p className="mt-2 max-w-sm text-sm text-slate-500">
+              Sesi ini terkunci. Aktifkan akses paket untuk membuka seluruh materi.
+            </p>
+            <a
+              href="/akun"
+              className="mt-4 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
+              style={{ background: TEAL }}
+            >
+              Lihat akses
+            </a>
           </Centered>
         ) : emptyContent ? (
           // [linguo-patch:lms-lesson-frame-v2] sesi belum ada konten — placeholder di dalam frame (sidebar tetap kelihatan)
