@@ -21,6 +21,11 @@
 // TIMEZONE:
 //   - Daily buckets use the WIB (UTC+7) calendar day, not UTC, so a click at
 //     06:00 WIB lands on the correct local date.
+//
+// PERF (2026-06-04):
+//   - The three affiliate-scoped queries (click count, windowed clicks,
+//     conversions) depend only on aff.id and not on each other, so they now
+//     run in PARALLEL via Promise.all instead of three sequential awaits.
 // ============================================================================
 
 import { NextRequest, NextResponse } from "next/server";
@@ -125,27 +130,36 @@ export async function GET(req: NextRequest) {
       days[0] + "T00:00:00+07:00"
     ).toISOString();
 
-    // ── 4. Click count (all-time) ────────────────────────────────────────
-    const { count: clickCount } = await admin
-      .from("affiliate_clicks")
-      .select("id", { count: "exact", head: true })
-      .eq("affiliate_id", aff.id);
+    // ── 4–6. Affiliate-scoped queries, run in PARALLEL ───────────────────
+    // These three depend only on aff.id (computed above) and nothing on each
+    // other. Awaiting them sequentially wasted ~2 extra round-trips against a
+    // DB that's already under load; Promise.all collapses them into one
+    // round-trip's worth of latency.
+    const [clickCountRes, clickRowsRes, convRes] = await Promise.all([
+      // 4. Click count (all-time)
+      admin
+        .from("affiliate_clicks")
+        .select("id", { count: "exact", head: true })
+        .eq("affiliate_id", aff.id),
+      // 5. Clicks within the daily window (timestamps only)
+      admin
+        .from("affiliate_clicks")
+        .select("created_at")
+        .eq("affiliate_id", aff.id)
+        .gte("created_at", windowStartIso),
+      // 6. Conversions + commission sums per status
+      admin
+        .from("affiliate_conversions")
+        .select(
+          "id, product, language, level, gross_amount, commission_amount, status, created_at"
+        )
+        .eq("affiliate_id", aff.id)
+        .order("created_at", { ascending: false }),
+    ]);
 
-    // ── 5. Clicks within the daily window (timestamps only) ──────────────
-    const { data: clickRows } = await admin
-      .from("affiliate_clicks")
-      .select("created_at")
-      .eq("affiliate_id", aff.id)
-      .gte("created_at", windowStartIso);
-
-    // ── 6. Conversions + commission sums per status ──────────────────────
-    const { data: convData } = await admin
-      .from("affiliate_conversions")
-      .select(
-        "id, product, language, level, gross_amount, commission_amount, status, created_at"
-      )
-      .eq("affiliate_id", aff.id)
-      .order("created_at", { ascending: false });
+    const clickCount = clickCountRes.count;
+    const clickRows = clickRowsRes.data;
+    const convData = convRes.data;
 
     const conversions = convData || [];
     const sumByStatus = (s: string) =>
