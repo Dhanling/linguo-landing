@@ -128,19 +128,6 @@ export default function PreTestVietnamPage() {
     next();
   }
 
-  const Shell = ({ children, pill, icon: Icon, sub }: any) => (
-    <div className="ptw-fade">
-      {pill && (
-        <span className="inline-flex h-8 items-center gap-2 rounded-full px-3 text-[12px] font-bold"
-          style={{ background: "rgba(22,121,110,0.10)", color: TEAL }}>
-          <Icon className="h-4 w-4" />{pill}
-        </span>
-      )}
-      {sub && <h2 className="mt-3 text-[22px] font-extrabold leading-tight text-slate-900">{sub}</h2>}
-      {children}
-    </div>
-  );
-
   return (
     <div className="min-h-screen w-full bg-slate-50 px-4 py-6 antialiased">
       <style>{`
@@ -222,7 +209,7 @@ export default function PreTestVietnamPage() {
           {step >= 0 && step <= 4 && (() => {
             const item = A[step];
             return (
-              <Shell pill={`Bagian A · Kosakata · Soal ${step + 1}/5`} icon={BookOpen} sub={item.q}>
+              <Shell key={`a-${step}`} pill={`Bagian A · Kosakata · Soal ${step + 1}/5`} icon={BookOpen} sub={item.q}>
                 <div className="mt-5 flex flex-col gap-3">
                   {item.opts.map((o, i) => {
                     const L = LETTERS[i];
@@ -255,7 +242,7 @@ export default function PreTestVietnamPage() {
             const setCur = (patch: Partial<BAns>) => setBans((p) => ({ ...p, [item.id]: { ...cur, ...patch } }));
             const filled = cur.dk || cur.text.trim().length > 0;
             return (
-              <Shell pill={`Bagian B · Pemahaman · Soal ${step - 4}/5`} icon={MessageSquare} sub={item.q}>
+              <Shell key={`b-${step}`} pill={`Bagian B · Pemahaman · Soal ${step - 4}/5`} icon={MessageSquare} sub={item.q}>
                 <p className="mt-1.5 text-[13px] font-medium text-slate-500">Tulis artinya dalam Bahasa Indonesia.</p>
                 <textarea rows={3} value={cur.text} disabled={cur.dk}
                   onChange={(e) => setCur({ text: e.target.value })}
@@ -377,6 +364,21 @@ export default function PreTestVietnamPage() {
           linguo.id · Dokumen internal program — bersifat rahasia
         </p>
       </div>
+    </div>
+  );
+}
+
+function Shell({ children, pill, icon: Icon, sub }: any) {
+  return (
+    <div className="ptw-fade">
+      {pill && (
+        <span className="inline-flex h-8 items-center gap-2 rounded-full px-3 text-[12px] font-bold"
+          style={{ background: "rgba(22,121,110,0.10)", color: TEAL }}>
+          <Icon className="h-4 w-4" />{pill}
+        </span>
+      )}
+      {sub && <h2 className="mt-3 text-[22px] font-extrabold leading-tight text-slate-900">{sub}</h2>}
+      {children}
     </div>
   );
 }
