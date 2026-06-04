@@ -326,12 +326,15 @@ export default function AfiliatorPage() {
           headers: { Authorization: `Bearer ${token}` },
           cache: "no-store",
         });
-        if (!res.ok) throw new Error(`status ${res.status}`);
+        if (!res.ok) {
+          const body = await res.text().catch(() => "");
+          throw new Error(`HTTP ${res.status} · ${body.slice(0, 400)}`);
+        }
         const json: ApiResponse = await res.json();
         setData(json);
-      } catch {
+      } catch (e) {
         if (!opts?.silent)
-          setError("Gagal memuat data afiliator. Coba refresh halaman.");
+          setError("DEBUG: " + (e instanceof Error ? e.message : String(e)));
       } finally {
         if (opts?.silent) setRefreshing(false);
         else setDataLoading(false);
