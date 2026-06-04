@@ -337,6 +337,29 @@ function OnbMilestoneBar({ step }: { step: number }) {
   );
 }
 
+// [linguo-patch:reguler-terms-v1] Ketentuan Kelas Reguler — reusable, tampil sebelum bayar.
+function RegulerTermsBox({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-left">
+      <p className="text-sm font-bold text-amber-800 mb-2">📋 Ketentuan Kelas Reguler</p>
+      <ul className="space-y-2 text-[12px] leading-relaxed text-amber-900/90">
+        <li>1. Kelas Reguler dibuka jika peserta memenuhi <b>minimal 8 siswa</b>.</li>
+        <li>2. Jika kuota minimum belum terpenuhi, kelas <b>tidak dibuka</b> pada periode tersebut. Kamu bisa memilih: menunggu periode berikutnya, memindahkan pembayaran ke program/bahasa lain, atau beralih ke kelas <b>Private / Semi-Private</b> (dengan penyesuaian biaya).</li>
+        <li>3. Jika kelas tidak dibuka, kamu berhak atas <b>pengembalian dana penuh</b>. Selain refund, tersedia opsi: simpan sebagai <b>deposit / saldo</b> untuk batch berikutnya, alihkan ke kelas <b>Private</b> (penyesuaian biaya), atau tukar dengan <b>produk digital (e-learning)</b>.</li>
+      </ul>
+      <label className="mt-3 flex items-start gap-2.5 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(e) => onChange(e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-amber-400 accent-teal-600 focus:ring-teal-500"
+        />
+        <span className="text-[12px] font-semibold text-amber-900">Saya sudah membaca &amp; menyetujui ketentuan Kelas Reguler di atas.</span>
+      </label>
+    </div>
+  );
+}
+
 function OnboardingWizard({ user, studentId, onDone }: {
   user: any; studentId?: string; onDone: (data: {program: string; lang: string; testType: string; exp: string; wa: string; name: string; birthdate: string; domicile: string; level: string; avatarFile?: File | null}) => void;
 }) {
@@ -373,6 +396,8 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const [calM, setCalM] = useState(0);
   const [dateOpen, setDateOpen] = useState(false);
   const [triedNext, setTriedNext] = useState(false);
+  // [linguo-patch:reguler-terms-v1] persetujuan ketentuan Kelas Reguler (gate tombol daftar)
+  const [agreeReguler, setAgreeReguler] = useState(false);
   const waDigits = wa.replace(/\D/g, "");
   const waNorm = waDigits.startsWith("0") ? "62" + waDigits.slice(1) : waDigits.startsWith("8") ? "62" + waDigits : waDigits;
   const waValid = waNorm.startsWith("62") && waNorm.length >= 10 && waNorm.length <= 15;
@@ -385,6 +410,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
 
   const firstName = (user?.user_metadata?.full_name || user?.email || "Kamu").split(" ")[0];
   const isTestPrep = program === "English Test Preparation";
+  const isReguler = program === "Kelas Reguler";
   const availLangs = (LANGS_BY_PROGRAM[program] || []).filter(l => !search || l.toLowerCase().includes(search.toLowerCase()));
   // [linguo-patch:onboarding-lang-catalog-v1] tampilan bahasa dikelompokkan per region (khusus Kelas Private)
   const langGroups = program === "Kelas Private"
@@ -402,6 +428,8 @@ function OnboardingWizard({ user, studentId, onDone }: {
   };
 
   const go = (n: number, delay = 220) => setTimeout(() => setStep(n), delay);
+  // [linguo-patch:reguler-terms-v1] reset checkbox tiap ganti program/bahasa
+  useEffect(() => { setAgreeReguler(false); }, [program, lang]);
 
   const waMsg = encodeURIComponent(
     `Halo admin Linguo! Saya ${firstName}, mau daftar ${isTestPrep ? (testType ? testType + " Prep" : "IELTS/TOEFL Prep") : program + (lang ? " bahasa " + lang : "")}` +
@@ -804,8 +832,12 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   </div>
                 ))}
               </div>
-              <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer" onClick={finish}
-                className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl text-sm transition-all shadow-md shadow-green-100 active:scale-[0.98] mb-3">
+              {isReguler && (
+                <div className="mb-4"><RegulerTermsBox checked={agreeReguler} onChange={setAgreeReguler} /></div>
+              )}
+              <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
+                onClick={(e) => { if (isReguler && !agreeReguler) { e.preventDefault(); return; } finish(); }}
+                className={`w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl text-sm transition-all shadow-md shadow-green-100 active:scale-[0.98] mb-3 ${isReguler && !agreeReguler ? "opacity-40 pointer-events-none" : ""}`}>
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
                 Daftar via WhatsApp
               </a>
@@ -1381,6 +1413,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   // Available batches for Reguler (fetched when language selected)
   const [availBatches, setAvailBatches] = useState<any[]>([]);
   const [loadingBatches, setLoadingBatches] = useState(false);
+  // [linguo-patch:reguler-terms-v1] persetujuan ketentuan Kelas Reguler (gate tombol bayar)
+  const [agreeReguler, setAgreeReguler] = useState(false);
 
   // Fetch open batches when Reguler program + language selected
   useEffect(() => {
@@ -1412,6 +1446,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         setLoadingBatches(false);
       });
   }, [enrollProgram, enrollLang, showEnroll, supabase]);
+  // [linguo-patch:reguler-terms-v1] reset checkbox tiap ganti pilihan / buka-tutup modal
+  useEffect(() => { setAgreeReguler(false); }, [enrollProgram, enrollLang, showEnroll]);
 
   if (!showEnroll) return null;
 
@@ -1929,10 +1965,14 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   </div>
                 )}
 
+                {isRegulerEnroll && (
+                  <div className="mb-1"><RegulerTermsBox checked={agreeReguler} onChange={setAgreeReguler} /></div>
+                )}
                 {/* Xendit Checkout Button — primary CTA */}
                 <button
                   onClick={handleXenditCheckout}
-                  className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors shadow-lg shadow-teal-100 mb-2"
+                  disabled={isRegulerEnroll && !agreeReguler}
+                  className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors shadow-lg shadow-teal-100 mb-2 disabled:opacity-40 disabled:pointer-events-none"
                 >
                   💳 Bayar Otomatis (Xendit)
                 </button>
@@ -1941,8 +1981,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 </p>
                 {/* WA Button */}
                 <a href={`https://wa.me/6282116859493?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
-                  onClick={handleConfirm}
-                  className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100">
+                  onClick={(e) => { if (isRegulerEnroll && !agreeReguler) { e.preventDefault(); return; } handleConfirm(); }}
+                  className={`flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm transition-colors shadow-lg shadow-green-100 ${isRegulerEnroll && !agreeReguler ? "opacity-40 pointer-events-none" : ""}`}>
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.824L0 24l6.349-1.499A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.001-1.372l-.36-.214-3.726.879.896-3.628-.235-.374A9.78 9.78 0 012.182 12C2.182 6.545 6.545 2.182 12 2.182c5.455 0 9.818 4.363 9.818 9.818 0 5.454-4.363 9.818-9.818 9.818z"/></svg>
                   Bayar via Transfer (Hubungi Admin WA)
                 </a>
