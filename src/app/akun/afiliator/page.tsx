@@ -39,6 +39,11 @@ import {
   MessageCircle,
   Camera,
   Sparkles,
+  LayoutGrid,
+  Trophy,
+  Coins,
+  Clock,
+  History,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -401,8 +406,11 @@ export default function AfiliatorPage() {
         <div className="absolute bottom-0 -left-24 h-72 w-72 rounded-full bg-emerald-300/10 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-2xl px-4 py-7">
-        <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
+      <div className="flex min-h-screen">
+        <Sidebar onLogout={logout} loggingOut={loggingOut} />
+        <main className="min-w-0 flex-1">
+          <div className="mx-auto max-w-[1080px] px-4 py-6 lg:px-8 lg:py-8">
+            <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
 
         {dataLoading && <SkeletonBlock />}
 
@@ -429,6 +437,8 @@ export default function AfiliatorPage() {
             onCopy={copyLink}
           />
         )}
+          </div>
+        </main>
       </div>
 
       {/* ── Motion: page-load reveals + hero shimmer (CSS only) ──────────── */}
@@ -732,8 +742,15 @@ function Dashboard({
       ].join("\n")
     );
 
+  // Sparkline trends derived from the real daily series (last 14 WIB days).
+  const last14 = daily.slice(-14);
+  const klikSpark = last14.map((d) => d.clicks);
+  const konvSpark = last14.map((d) => d.conversions);
+  let _cum = 0;
+  const komisiSpark = last14.map((d) => (_cum += d.conversions));
+
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       {/* Status notice if not active */}
       {aff.status !== "active" && (
         <div
@@ -741,217 +758,172 @@ function Dashboard({
           style={{ animationDelay: "90ms" }}
         >
           Status akun afiliator kamu:{" "}
-          <b>
-            {aff.status === "pending_review" ? "menunggu review" : aff.status}
-          </b>
+          <b>{aff.status === "pending_review" ? "menunggu review" : aff.status}</b>
           . Komisi tetap tercatat, tapi pencairan baru bisa setelah akun aktif.
         </div>
       )}
 
-      {/* Referral hero */}
-      <div
-        className="aff-reveal relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] p-6 text-white shadow-[0_22px_55px_-22px_rgba(15,107,107,0.7)]"
-        style={{ animationDelay: "110ms" }}
-      >
-        <div className="pointer-events-none absolute -right-12 -top-14 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
-        <div className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-emerald-300/15 blur-2xl" />
-        <div className="aff-shimmer pointer-events-none absolute inset-0" />
-
-        <div className="relative">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-              Kode Referral
-            </span>
-            <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold ring-1 ring-white/20 backdrop-blur">
-              ★ Tier {TIER_LABEL[aff.tier] ?? aff.tier}
-            </span>
-          </div>
-
-          <div className="mt-2 font-mono text-[2rem] font-extrabold leading-none tracking-[0.16em]">
-            {aff.referral_code}
-          </div>
-
-          <div className="mt-4 flex items-center gap-2 rounded-xl bg-black/15 px-3 py-2.5 ring-1 ring-white/10">
-            <Link2 className="h-4 w-4 shrink-0 text-white/55" />
-            <span className="truncate text-sm text-white/90">{refLink}</span>
-          </div>
-
-          <div className="mt-3 grid grid-cols-2 gap-2.5">
-            <button
-              onClick={onCopy}
-              className="flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2.5 text-sm font-bold text-[#147878] shadow-sm transition hover:bg-white/90 active:scale-[0.98]"
-            >
-              {copied ? (
-                <Check className="h-4 w-4" />
-              ) : (
-                <Copy className="h-4 w-4" />
-              )}
-              {copied ? "Tersalin!" : "Salin Link"}
-            </button>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-3 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-emerald-600 active:scale-[0.98]"
-            >
-              <Share2 className="h-4 w-4" />
-              Share WA
-            </a>
+      {/* RINGKASAN: hero + tier */}
+      <section id="sec-ringkasan" className="grid grid-cols-1 gap-4 lg:grid-cols-12">
+        <div
+          className="aff-reveal relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] p-6 text-white shadow-[0_22px_55px_-22px_rgba(15,107,107,0.7)] lg:col-span-7"
+          style={{ animationDelay: "110ms" }}
+        >
+          <div className="pointer-events-none absolute -right-12 -top-14 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-emerald-300/15 blur-2xl" />
+          <div className="aff-shimmer pointer-events-none absolute inset-0" />
+          <div className="relative">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                Kode Referral
+              </span>
+              <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold ring-1 ring-white/20 backdrop-blur">
+                ★ Tier {TIER_LABEL[aff.tier] ?? aff.tier}
+              </span>
+            </div>
+            <div className="mt-2 font-mono text-[2rem] font-extrabold leading-none tracking-[0.16em]">
+              {aff.referral_code}
+            </div>
+            <div className="mt-4 flex items-center gap-2 rounded-xl bg-black/15 px-3 py-2.5 ring-1 ring-white/10">
+              <Link2 className="h-4 w-4 shrink-0 text-white/55" />
+              <span className="truncate text-sm text-white/90">{refLink}</span>
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-2.5">
+              <button
+                onClick={onCopy}
+                className="flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2.5 text-sm font-bold text-[#147878] shadow-sm transition hover:bg-white/90 active:scale-[0.98]"
+              >
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                {copied ? "Tersalin!" : "Salin Link"}
+              </button>
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-3 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-emerald-600 active:scale-[0.98]"
+              >
+                <Share2 className="h-4 w-4" />
+                Share WA
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Stat cards */}
-      <div className="grid grid-cols-3 gap-3">
-        <StatCard
-          icon={<MousePointerClick className="h-4 w-4" />}
-          label="Klik"
-          value={stats.clicks}
-          tone="teal"
-          delay="180ms"
-        />
-        <StatCard
-          icon={<ShoppingBag className="h-4 w-4" />}
-          label="Konversi"
-          value={stats.conversions_total}
-          tone="amber"
-          delay="235ms"
-        />
-        <StatCard
-          icon={<Wallet className="h-4 w-4" />}
-          label="Total Komisi"
-          value={totalKomisi}
-          tone="indigo"
-          money
-          delay="290ms"
-        />
-      </div>
-
-      {/* Commission breakdown */}
-      <div
-        className="aff-reveal grid grid-cols-3 divide-x divide-slate-100 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
-        style={{ animationDelay: "345ms" }}
-      >
-        <KomisiCol
-          dot="bg-amber-400"
-          label="Menunggu"
-          amount={stats.commission_pending}
-          tone="text-amber-700"
-        />
-        <KomisiCol
-          dot="bg-blue-400"
-          label="Disetujui"
-          amount={stats.commission_approved}
-          tone="text-blue-700"
-        />
-        <KomisiCol
-          dot="bg-emerald-400"
-          label="Dibayar"
-          amount={stats.commission_paid}
-          tone="text-emerald-700"
-        />
-      </div>
-
-      {/* Pencairan komisi */}
-      <div
-        className="aff-reveal overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm"
-        style={{ animationDelay: "370ms" }}
-      >
-        <div className="bg-gradient-to-br from-[#1A9E9E] to-[#0F6B6B] px-5 py-4 text-white">
-          <div className="flex items-center gap-2 text-xs font-medium text-teal-50/90">
-            <Wallet className="h-4 w-4" /> Saldo siap dicairkan
-          </div>
-          <div className="mt-1 text-2xl font-extrabold tracking-tight">
-            {rupiah(available)}
-          </div>
-          {stats.commission_pending > 0 && (
-            <div className="mt-1 text-[11px] text-teal-50/80">
-              +{rupiah(stats.commission_pending)} masih menunggu disetujui
-            </div>
-          )}
+        <div className="lg:col-span-5">
+          <TierCard tier={aff.tier} />
         </div>
+      </section>
 
-        <div className="space-y-3 px-5 py-4">
-          {aff.status !== "active" ? (
-            <p className="text-xs text-slate-500">
-              Pencairan aktif setelah akun afiliator kamu disetujui.
-            </p>
-          ) : !hasRekening ? (
-            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
-              Lengkapi data rekening dulu di bagian{" "}
-              <b>Rekening Pencairan</b> (bawah) sebelum mengajukan pencairan.
-            </div>
-          ) : available < MIN_PAYOUT ? (
-            <>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-[#1A9E9E] transition-all"
-                  style={{
-                    width: `${Math.min(100, (available / MIN_PAYOUT) * 100)}%`,
-                  }}
-                />
+      {/* KPI */}
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <StatCard icon={<MousePointerClick className="h-4 w-4" />} label="Klik" value={stats.clicks} tone="teal" spark={klikSpark} sparkColor="#1A9E9E" delay="180ms" />
+        <StatCard icon={<ShoppingBag className="h-4 w-4" />} label="Konversi" value={stats.conversions_total} tone="amber" spark={konvSpark} sparkColor="#EAB308" delay="225ms" />
+        <StatCard icon={<Wallet className="h-4 w-4" />} label="Total Komisi" value={totalKomisi} tone="indigo" money spark={komisiSpark} sparkColor="#6366F1" delay="270ms" />
+        <StatCard icon={<Coins className="h-4 w-4" />} label="Saldo Siap Cair" value={available} tone="emerald" money spark={komisiSpark} sparkColor="#10B981" delay="315ms" />
+      </div>
+
+      {/* Status segmented */}
+      <div className="aff-reveal grid grid-cols-3 divide-x divide-slate-100 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm" style={{ animationDelay: "345ms" }}>
+        <KomisiCol dot="bg-amber-400" label="Menunggu" amount={stats.commission_pending} tone="text-amber-700" />
+        <KomisiCol dot="bg-blue-400" label="Disetujui" amount={stats.commission_approved} tone="text-blue-700" />
+        <KomisiCol dot="bg-emerald-400" label="Dibayar" amount={stats.commission_paid} tone="text-emerald-700" />
+      </div>
+
+      {/* PERFORMA: chart + donut */}
+      <section id="sec-performa" className="grid grid-cols-1 gap-4 lg:grid-cols-12">
+        <div className="aff-reveal lg:col-span-8" style={{ animationDelay: "400ms" }}>
+          <ActivityChart daily={daily} />
+        </div>
+        <div className="aff-reveal lg:col-span-4" style={{ animationDelay: "430ms" }}>
+          <Donut pending={stats.commission_pending} approved={stats.commission_approved} paid={stats.commission_paid} total={totalKomisi} />
+        </div>
+      </section>
+
+      {/* PENCAIRAN: payout + rekening */}
+      <section id="sec-pencairan">
+        <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <span className="h-4 w-1 rounded bg-[#1A9E9E]" />
+          Pencairan
+        </h2>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <div className="aff-reveal overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm lg:col-span-5" style={{ animationDelay: "460ms" }}>
+            <div className="bg-gradient-to-br from-[#1A9E9E] to-[#0F6B6B] px-5 py-4 text-white">
+              <div className="flex items-center gap-2 text-xs font-medium text-teal-50/90">
+                <Wallet className="h-4 w-4" /> Saldo siap dicairkan
               </div>
-              <p className="text-xs text-slate-500">
-                Minimal pencairan <b>{rupiah(MIN_PAYOUT)}</b>. Kurang{" "}
-                <b className="text-slate-700">{rupiah(kurang)}</b> lagi.
+              <div className="mt-1 text-2xl font-extrabold tracking-tight">{rupiah(available)}</div>
+              {stats.commission_pending > 0 && (
+                <div className="mt-1 text-[11px] text-teal-50/80">
+                  +{rupiah(stats.commission_pending)} masih menunggu disetujui
+                </div>
+              )}
+            </div>
+            <div className="space-y-3 px-5 py-4">
+              {aff.status !== "active" ? (
+                <p className="text-xs text-slate-500">
+                  Pencairan aktif setelah akun afiliator kamu disetujui.
+                </p>
+              ) : !hasRekening ? (
+                <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                  Lengkapi data rekening dulu di bagian <b>Rekening Pencairan</b> (samping) sebelum mengajukan pencairan.
+                </div>
+              ) : available < MIN_PAYOUT ? (
+                <>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div className="h-full rounded-full bg-[#1A9E9E] transition-all" style={{ width: `${Math.min(100, (available / MIN_PAYOUT) * 100)}%` }} />
+                  </div>
+                  <p className="text-xs text-slate-500">
+                    Minimal pencairan <b>{rupiah(MIN_PAYOUT)}</b>. Kurang <b className="text-slate-700">{rupiah(kurang)}</b> lagi.
+                  </p>
+                </>
+              ) : (
+                <p className="text-xs text-slate-500">
+                  Saldo kamu udah cukup. Klik tombol di bawah buat ajukan pencairan ke admin.
+                </p>
+              )}
+
+              {canRequest ? (
+                <a href={payoutWaUrl} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] py-2.5 text-sm font-semibold text-white transition hover:bg-[#147878]">
+                  <MessageCircle className="h-4 w-4" /> Ajukan Pencairan {rupiah(available)}
+                </a>
+              ) : (
+                <button disabled className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-400">
+                  <Wallet className="h-4 w-4" /> Ajukan Pencairan
+                </button>
+              )}
+
+              <p className="text-center text-[11px] text-slate-400">
+                Pencairan diproses tiap tanggal 25. Komisi disetujui otomatis 14 hari setelah pembayaran.
               </p>
-            </>
-          ) : (
-            <p className="text-xs text-slate-500">
-              Saldo kamu udah cukup. Klik tombol di bawah buat ajukan pencairan
-              ke admin.
-            </p>
-          )}
+            </div>
+          </div>
 
-          {canRequest ? (
-            <a
-              href={payoutWaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] py-2.5 text-sm font-semibold text-white transition hover:bg-[#147878]"
-            >
-              <MessageCircle className="h-4 w-4" /> Ajukan Pencairan{" "}
-              {rupiah(available)}
-            </a>
-          ) : (
-            <button
-              disabled
-              className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-400"
-            >
-              <Wallet className="h-4 w-4" /> Ajukan Pencairan
-            </button>
-          )}
-
-          <p className="text-center text-[11px] text-slate-400">
-            Pencairan diproses tiap tanggal 25. Komisi disetujui otomatis 14
-            hari setelah pembayaran.
-          </p>
+          <div className="aff-reveal lg:col-span-7" style={{ animationDelay: "500ms" }}>
+            <RekeningForm aff={aff} />
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Activity chart */}
-      <div className="aff-reveal" style={{ animationDelay: "400ms" }}>
-        <ActivityChart daily={daily} />
-      </div>
+      {/* PROMOSI: link generator + materi */}
+      <section id="sec-promosi">
+        <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <span className="h-4 w-1 rounded bg-[#1A9E9E]" />
+          Alat Promosi
+        </h2>
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="aff-reveal" style={{ animationDelay: "540ms" }}>
+            <LinkGenerator code={aff.referral_code} />
+          </div>
+          <div className="aff-reveal" style={{ animationDelay: "580ms" }}>
+            <MateriPromosi code={aff.referral_code} />
+          </div>
+        </div>
+      </section>
 
-      {/* Link generator */}
-      <div className="aff-reveal" style={{ animationDelay: "455ms" }}>
-        <LinkGenerator code={aff.referral_code} />
-      </div>
-
-      {/* Materi promosi */}
-      <div className="aff-reveal" style={{ animationDelay: "510ms" }}>
-        <MateriPromosi code={aff.referral_code} />
-      </div>
-
-      {/* Rekening pencairan */}
-      <div className="aff-reveal" style={{ animationDelay: "540ms" }}>
-        <RekeningForm aff={aff} />
-      </div>
-
-      {/* Conversions */}
-      <div className="aff-reveal" style={{ animationDelay: "565ms" }}>
-        <h2 className="mb-2 text-sm font-bold text-slate-700">
+      {/* AKTIVITAS: riwayat konversi (table) */}
+      <section id="sec-aktivitas" className="aff-reveal" style={{ animationDelay: "620ms" }}>
+        <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <History className="h-4 w-4 text-slate-400" />
           Riwayat Konversi
         </h2>
         {conversions.length === 0 ? (
@@ -960,58 +932,56 @@ function Dashboard({
               <ShoppingBag className="h-5 w-5 text-slate-400" />
             </div>
             <p className="mx-auto mt-3 max-w-xs text-sm text-slate-500">
-              Belum ada konversi. Sebarkan link referral kamu untuk mulai dapat
-              komisi.
+              Belum ada konversi. Sebarkan link referral kamu untuk mulai dapat komisi.
             </p>
           </div>
         ) : (
-          <div className="space-y-2">
-            {conversions.map((c) => {
-              const st = STATUS_STYLE[c.status] ?? {
-                label: c.status,
-                cls: "bg-slate-50 text-slate-600 border-slate-200",
-              };
-              return (
-                <div
-                  key={c.id}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <div className="truncate text-sm font-semibold text-slate-800">
-                        {PRODUCT_LABEL[c.product] ?? c.product}
-                        {c.language ? ` · ${c.language}` : ""}
-                        {c.level ? ` ${c.level}` : ""}
-                      </div>
-                      <div className="mt-0.5 text-xs text-slate-500">
-                        {fmtDate(c.created_at)}
-                      </div>
-                    </div>
-                    <span
-                      className={`shrink-0 rounded-full border px-2 py-0.5 text-[11px] font-medium ${st.cls}`}
-                    >
-                      {st.label}
-                    </span>
-                  </div>
-                  <div className="mt-2.5 flex items-center justify-between border-t border-slate-100 pt-2.5 text-sm">
-                    <span className="text-slate-500">Komisi</span>
-                    <span className="font-bold text-[#147878]">
-                      {rupiah(c.commission_amount)}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[460px] text-sm">
+                <thead>
+                  <tr className="border-b border-slate-100 text-left text-[11px] uppercase tracking-wide text-slate-400">
+                    <th className="px-4 py-2.5 font-semibold">Tanggal</th>
+                    <th className="px-4 py-2.5 font-semibold">Produk</th>
+                    <th className="px-4 py-2.5 font-semibold">Status</th>
+                    <th className="px-4 py-2.5 text-right font-semibold">Komisi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {conversions.map((c) => {
+                    const st = STATUS_STYLE[c.status] ?? {
+                      label: c.status,
+                      cls: "bg-slate-50 text-slate-600 border-slate-200",
+                    };
+                    return (
+                      <tr key={c.id} className="border-b border-slate-50 transition last:border-0 hover:bg-slate-50/60">
+                        <td className="whitespace-nowrap px-4 py-3 tabular-nums text-slate-500">{fmtDate(c.created_at)}</td>
+                        <td className="px-4 py-3 font-semibold text-slate-800">
+                          {PRODUCT_LABEL[c.product] ?? c.product}
+                          {c.language ? ` · ${c.language}` : ""}
+                          {c.level ? ` ${c.level}` : ""}
+                        </td>
+                        <td className="px-4 py-3">
+                          <span className={`inline-block rounded-full border px-2 py-0.5 text-[11px] font-medium ${st.cls}`}>
+                            {st.label}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-right font-bold tabular-nums text-[#147878]">{rupiah(c.commission_amount)}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <p className="border-t border-slate-50 px-4 py-2.5 text-center text-[11px] text-slate-400">
+              Hanya konversi yang dicatat per-baris. Klik dihitung agregat (lihat grafik di atas).
+            </p>
           </div>
         )}
-      </div>
+      </section>
 
-      <p
-        className="aff-reveal pt-2 text-center text-xs text-slate-400"
-        style={{ animationDelay: "620ms" }}
-      >
-        Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap
-        tanggal 25, minimal Rp 100.000.
+      <p className="aff-reveal pt-1 text-center text-xs text-slate-400" style={{ animationDelay: "660ms" }}>
+        Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap tanggal 25, minimal Rp 100.000.
       </p>
     </div>
   );
@@ -1391,6 +1361,7 @@ const STAT_TONE: Record<string, string> = {
   teal: "bg-[#1A9E9E]/12 text-[#1A9E9E]",
   amber: "bg-amber-100 text-amber-600",
   indigo: "bg-indigo-100 text-indigo-600",
+  emerald: "bg-emerald-100 text-emerald-600",
 };
 
 function StatCard({
@@ -1400,13 +1371,17 @@ function StatCard({
   tone,
   money,
   delay,
+  spark,
+  sparkColor = "#1A9E9E",
 }: {
   icon: ReactNode;
   label: string;
   value: number;
-  tone: "teal" | "amber" | "indigo";
+  tone: "teal" | "amber" | "indigo" | "emerald";
   money?: boolean;
   delay: string;
+  spark?: number[];
+  sparkColor?: string;
 }) {
   const animated = useCountUp(value);
   const display = money
@@ -1415,7 +1390,7 @@ function StatCard({
 
   return (
     <div
-      className="aff-reveal group rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+      className="aff-reveal group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
       style={{ animationDelay: delay }}
     >
       <div
@@ -1423,6 +1398,11 @@ function StatCard({
       >
         {icon}
       </div>
+      {spark && spark.length > 1 && (
+        <div className="absolute right-3 top-3 h-7 w-16 opacity-50">
+          <Sparkline data={spark} color={sparkColor} />
+        </div>
+      )}
       <div className="mt-2.5 text-[11px] font-medium uppercase tracking-wide text-slate-400">
         {label}
       </div>
@@ -1434,6 +1414,33 @@ function StatCard({
         {display}
       </div>
     </div>
+  );
+}
+
+// ── Sparkline (tiny SVG trend line) ────────────────────────────────────────
+function Sparkline({ data, color }: { data: number[]; color: string }) {
+  const W = 64;
+  const H = 28;
+  const max = Math.max(1, ...data);
+  const step = data.length > 1 ? W / (data.length - 1) : W;
+  const pts = data
+    .map((v, i) => `${i * step},${H - (v / max) * (H - 4) - 2}`)
+    .join(" ");
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      preserveAspectRatio="none"
+      className="h-full w-full"
+    >
+      <polyline
+        points={pts}
+        fill="none"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
@@ -1502,6 +1509,183 @@ function CenteredCard({
           {actionLabel}
         </a>
       )}
+    </div>
+  );
+}
+
+// ── Sidebar rail (desktop only; mobile keeps single column) ────────────────
+const NAV: { id: string; label: string; icon: typeof LayoutGrid }[] = [
+  { id: "sec-ringkasan", label: "Ringkasan", icon: LayoutGrid },
+  { id: "sec-performa", label: "Performa", icon: BarChart3 },
+  { id: "sec-pencairan", label: "Pencairan", icon: Wallet },
+  { id: "sec-promosi", label: "Promosi", icon: Megaphone },
+  { id: "sec-aktivitas", label: "Aktivitas", icon: History },
+];
+
+function Sidebar({
+  onLogout,
+  loggingOut,
+}: {
+  onLogout: () => void;
+  loggingOut: boolean;
+}) {
+  const [active, setActive] = useState("sec-ringkasan");
+
+  const go = (id: string) => {
+    setActive(id);
+    const t = document.getElementById(id);
+    if (t)
+      window.scrollTo({
+        top: t.getBoundingClientRect().top + window.scrollY - 18,
+        behavior: "smooth",
+      });
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <aside className="sticky top-0 hidden h-screen w-[72px] shrink-0 flex-col items-center gap-2 border-r border-slate-200/70 bg-white/70 py-5 backdrop-blur lg:flex">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1FB3B3] to-[#0F6B6B] font-extrabold text-white shadow-lg shadow-[#1A9E9E]/30">
+        L
+      </div>
+      {NAV.map(({ id, label, icon: Icon }) => {
+        const on = active === id;
+        return (
+          <button
+            key={id}
+            onClick={() => go(id)}
+            title={label}
+            aria-label={label}
+            className={`grid h-11 w-11 place-items-center rounded-xl transition ${
+              on
+                ? "bg-[#1A9E9E] text-white shadow-lg shadow-[#1A9E9E]/40"
+                : "text-slate-500 hover:bg-slate-100"
+            }`}
+          >
+            <Icon className="h-5 w-5" />
+          </button>
+        );
+      })}
+      <button
+        onClick={onLogout}
+        disabled={loggingOut}
+        title="Keluar"
+        aria-label="Keluar"
+        className="mt-auto grid h-11 w-11 place-items-center rounded-xl text-slate-400 transition hover:bg-rose-50 hover:text-rose-500 disabled:opacity-50"
+      >
+        {loggingOut ? (
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
+        ) : (
+          <LogOut className="h-5 w-5" />
+        )}
+      </button>
+    </aside>
+  );
+}
+
+// ── Tier card (honest: real tier + real facts, no fabricated threshold) ────
+function TierCard({ tier }: { tier: string }) {
+  const label = TIER_LABEL[tier] ?? tier;
+  const perks: { icon: typeof Coins; t: string; s: string }[] = [
+    { icon: Coins, t: "Komisi per konversi E-Learning", s: "otomatis tercatat tiap pembelian" },
+    { icon: Wallet, t: "Min. cair Rp 100.000", s: "diproses tiap tanggal 25" },
+    { icon: Clock, t: "Cookie referral 60 hari", s: "komisi tetap kehitung walau beli nanti" },
+  ];
+  return (
+    <div
+      className="aff-reveal flex h-full flex-col rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm"
+      style={{ animationDelay: "150ms" }}
+    >
+      <div className="flex items-center gap-3">
+        <div className="grid h-11 w-11 place-items-center rounded-xl bg-amber-100 text-amber-600">
+          <Trophy className="h-5 w-5" />
+        </div>
+        <div>
+          <div className="text-sm font-extrabold text-slate-800">Tier {label}</div>
+          <div className="text-xs text-slate-500">Status diatur tim Linguo</div>
+        </div>
+      </div>
+      <div className="mt-4 space-y-2.5">
+        {perks.map((p, i) => {
+          const Icon = p.icon;
+          return (
+            <div key={i} className="flex items-center gap-2.5">
+              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#1A9E9E]/10 text-[#147878]">
+                <Icon className="h-4 w-4" />
+              </span>
+              <div className="min-w-0">
+                <div className="text-[13px] font-bold text-slate-700">{p.t}</div>
+                <div className="text-[11px] text-slate-400">{p.s}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ── Donut (commission status breakdown) ────────────────────────────────────
+function Donut({
+  pending,
+  approved,
+  paid,
+  total,
+}: {
+  pending: number;
+  approved: number;
+  paid: number;
+  total: number;
+}) {
+  const segs = [
+    { value: pending, color: "#FBBF24", label: "Menunggu", text: "text-amber-700" },
+    { value: approved, color: "#1A9E9E", label: "Disetujui", text: "text-[#147878]" },
+    { value: paid, color: "#34D399", label: "Dibayar", text: "text-emerald-700" },
+  ];
+  let acc = 0;
+  return (
+    <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+      <div className="mb-1 text-sm font-bold text-slate-700">Status Komisi</div>
+      <div className="flex items-center gap-3">
+        <div className="relative shrink-0">
+          <svg width="104" height="104" viewBox="0 0 42 42">
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#EEF2F1" strokeWidth="6" />
+            {total > 0 &&
+              segs.map((s, i) => {
+                const len = (s.value / total) * 100;
+                if (len <= 0) return null;
+                const off = 25 - acc;
+                acc += len;
+                return (
+                  <circle
+                    key={i}
+                    cx="21"
+                    cy="21"
+                    r="15.9155"
+                    fill="none"
+                    stroke={s.color}
+                    strokeWidth="6"
+                    strokeDasharray={`${len} ${100 - len}`}
+                    strokeDashoffset={off}
+                    strokeLinecap="butt"
+                  />
+                );
+              })}
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className="text-[9px] uppercase tracking-wide text-slate-400">Total</div>
+            <div className="text-[13px] font-extrabold text-slate-800">{rupiah(total)}</div>
+          </div>
+        </div>
+        <div className="flex-1 space-y-2 text-xs">
+          {segs.map((s, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-sm" style={{ background: s.color }} />
+              <span className="flex-1 text-slate-500">{s.label}</span>
+              <span className={`font-bold tabular-nums ${s.text}`}>{rupiah(s.value)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
