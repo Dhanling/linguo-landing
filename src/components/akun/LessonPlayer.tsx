@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import {
   ArrowLeft,
@@ -138,127 +138,143 @@ export default function LessonPlayer({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [siblings, setSiblings] = useState<{ id: string; title: string; sort_order: number }[]>([]);
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
+  // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
+  const bootedRef = useRef(false);
 
   useEffect(() => {
+    // [linguo-patch:lms-lesson-switch-v1] cancellation guard: fetch sesi lama jangan nimpa state sesi baru kalau user klik cepet
+    let cancelled = false;
     (async () => {
       setLoading(true);
       setStepIdx(0);
       setAnswers({});
       setShowText({});
       setDrawerOpen(false);
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      setUser(user);
-      if (!user || !lessonId) {
-        setLoading(false);
-        return;
-      }
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (cancelled) return;
+        setUser(user);
+        if (!user || !lessonId) return;
 
-      const { data: les } = await supabase
-        .from("lms_lessons")
-        .select("id,title,est_minutes,is_preview,module_id,sort_order")
-        .eq("id", lessonId)
-        .maybeSingle();
-      if (!les) {
-        setLesson(null);
-        setLoading(false);
-        return;
-      }
-      setLesson(les);
+        const { data: les } = await supabase
+          .from("lms_lessons")
+          .select("id,title,est_minutes,is_preview,module_id,sort_order")
+          .eq("id", lessonId)
+          .maybeSingle();
+        if (cancelled) return;
+        if (!les) {
+          setLesson(null);
+          return;
+        }
+        setLesson(les);
 
-      const { data: m } = await supabase
-        .from("lms_modules")
-        .select("id,title,cefr_label,course_id,language")
-        .eq("id", les.module_id)
-        .maybeSingle();
-      setMod(m);
+        const { data: m } = await supabase
+          .from("lms_modules")
+          .select("id,title,cefr_label,course_id,language")
+          .eq("id", les.module_id)
+          .maybeSingle();
+        if (cancelled) return;
+        setMod(m);
 
-      let ent = false;
-      if (m?.course_id) {
-        try {
-          const { data: e } = await supabase.rpc("lms_is_entitled", {
-            p_course_id: m.course_id,
+        let ent = false;
+        if (m?.course_id) {
+          try {
+            const { data: e } = await supabase.rpc("lms_is_entitled", {
+              p_course_id: m.course_id,
+            });
+            ent = !!e;
+          } catch {}
+        }
+        if (cancelled) return;
+        const isLocked = !les.is_preview && !ent;
+        setLocked(isLocked);
+
+        if (!isLocked) {
+          const { data: blks } = await supabase
+            .from("lms_blocks")
+            .select(
+              "id,type,content,media_url,sort_order, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
+            )
+            .eq("lesson_id", les.id)
+            .order("sort_order");
+          if (cancelled) return;
+          const blocks = (blks || []) as Block[];
+
+          // tiap block -> 1 step. quiz dipecah per-soal.
+          const st: Step[] = [];
+          blocks.forEach((b) => {
+            if (b.type === "quiz") {
+              const qs = (b.lms_quiz_questions || [])
+                .slice()
+                .sort((a, c) => a.sort_order - c.sort_order);
+              qs.forEach((q, i) =>
+                st.push({
+                  kind: "quiz",
+                  block: b,
+                  q,
+                  qIdx: i,
+                  qTotal: qs.length,
+                  label: `Kuis ${i + 1}`,
+                })
+              );
+            } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
+            else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
+            else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
+            else st.push({ kind: "logic", block: b, label: "Materi" });
           });
-          ent = !!e;
-        } catch {}
-      }
-      const isLocked = !les.is_preview && !ent;
-      setLocked(isLocked);
-
-      if (!isLocked) {
-        const { data: blks } = await supabase
-          .from("lms_blocks")
-          .select(
-            "id,type,content,media_url,sort_order, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
-          )
-          .eq("lesson_id", les.id)
-          .order("sort_order");
-        const blocks = (blks || []) as Block[];
-
-        // tiap block -> 1 step. quiz dipecah per-soal.
-        const st: Step[] = [];
-        blocks.forEach((b) => {
-          if (b.type === "quiz") {
-            const qs = (b.lms_quiz_questions || [])
-              .slice()
-              .sort((a, c) => a.sort_order - c.sort_order);
-            qs.forEach((q, i) =>
-              st.push({
-                kind: "quiz",
-                block: b,
-                q,
-                qIdx: i,
-                qTotal: qs.length,
-                label: `Kuis ${i + 1}`,
-              })
-            );
-          } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
-          else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
-          else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
-          else st.push({ kind: "logic", block: b, label: "Materi" });
-        });
-        // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai (cegah confetti palsu)
-        if (st.length > 0) {
-          st.push({ kind: "done", label: "Selesai" });
-          setSteps(st);
+          // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai (cegah confetti palsu)
+          if (st.length > 0) {
+            st.push({ kind: "done", label: "Selesai" });
+            setSteps(st);
+          } else {
+            setSteps([]);
+          }
         } else {
           setSteps([]);
         }
-      } else {
-        setSteps([]);
+
+        // [linguo-patch:lms-lesson-sidenav-v1] daftar sesi tetangga (1 modul) + progress batch
+        const { data: sibs } = await supabase
+          .from("lms_lessons")
+          .select("id,title,sort_order")
+          .eq("module_id", les.module_id)
+          .order("sort_order");
+        if (cancelled) return;
+        const sibList = ((sibs as any[] | null) || []) as {
+          id: string;
+          title: string;
+          sort_order: number;
+        }[];
+        setSiblings(sibList);
+
+        const pm: Record<string, string> = {};
+        const sibIds = sibList.map((s) => s.id);
+        if (sibIds.length) {
+          const { data: progs } = await supabase
+            .from("lms_progress")
+            .select("lesson_id,status")
+            .eq("user_id", user.id)
+            .in("lesson_id", sibIds);
+          if (cancelled) return;
+          (progs as any[] | null)?.forEach((p) => {
+            if (p?.lesson_id) pm[p.lesson_id] = p.status;
+          });
+        }
+        setProgressMap(pm);
+        setCompleted(pm[les.id] === "completed");
+      } finally {
+        // [linguo-patch:lms-lesson-switch-v1] selalu matiin loading + tandai udah pernah boot (kecuali fetch ke-cancel)
+        if (!cancelled) {
+          setLoading(false);
+          bootedRef.current = true;
+        }
       }
-
-      // [linguo-patch:lms-lesson-sidenav-v1] daftar sesi tetangga (1 modul) + progress batch
-      const { data: sibs } = await supabase
-        .from("lms_lessons")
-        .select("id,title,sort_order")
-        .eq("module_id", les.module_id)
-        .order("sort_order");
-      const sibList = ((sibs as any[] | null) || []) as {
-        id: string;
-        title: string;
-        sort_order: number;
-      }[];
-      setSiblings(sibList);
-
-      const pm: Record<string, string> = {};
-      const sibIds = sibList.map((s) => s.id);
-      if (sibIds.length) {
-        const { data: progs } = await supabase
-          .from("lms_progress")
-          .select("lesson_id,status")
-          .eq("user_id", user.id)
-          .in("lesson_id", sibIds);
-        (progs as any[] | null)?.forEach((p) => {
-          if (p?.lesson_id) pm[p.lesson_id] = p.status;
-        });
-      }
-      setProgressMap(pm);
-      setCompleted(pm[les.id] === "completed");
-
-      setLoading(false);
     })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
 
@@ -321,7 +337,8 @@ export default function LessonPlayer({
   const prev = () => setStepIdx((i) => Math.max(i - 1, 0));
 
   // ---------- guard states ----------
-  if (loading) {
+  // [linguo-patch:lms-lesson-switch-v1] full-screen spinner CUMA pas boot pertama; switch sesi pakai spinner di stage (sidebar tetap render)
+  if (loading && !bootedRef.current) {
     return (
       <Centered>
         <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
@@ -371,21 +388,11 @@ export default function LessonPlayer({
     );
   }
 
-  // [linguo-patch:lms-lesson-frame-v2] sesi belum ada konten — tampilkan placeholder, bukan langsung confetti
-  if (steps.length === 0) {
-    return (
-      <Centered>
-        <BookOpen className="h-8 w-8 text-slate-300" />
-        <h1 className="mt-3 text-lg font-bold text-slate-900">{lesson.title}</h1>
-        <p className="mt-2 max-w-sm text-sm text-slate-500">
-          Materi sesi ini belum tersedia — lagi disiapkan ya.
-        </p>
-        <button onClick={onBack} className="mt-4 text-sm font-semibold" style={{ color: TEAL }}>
-          ← Kembali
-        </button>
-      </Centered>
-    );
-  }
+  // [linguo-patch:lms-lesson-switch-v1] placeholder "belum ada konten" & spinner switch dipindah ke dalam STAGE (sidebar tetap render)
+  const switching = loading; // booted=true di sini, jadi ini pasti switch (bukan first boot)
+  const emptyContent = !switching && steps.length === 0;
+  // judul instan dari siblings (ga nunggu fetch) — fallback ke lesson.title
+  const curTitle = siblings.find((s) => s.id === lessonId)?.title || lesson.title;
 
   // ---------- main frame (inner) ----------
   return (
@@ -450,7 +457,7 @@ export default function LessonPlayer({
             <span className="text-slate-700">Sesi belajar</span>
           </p>
           <h1 className="mt-0.5 truncate text-[19px] font-extrabold leading-tight text-slate-900">
-            {lesson.title}
+            {curTitle}
           </h1>
         </div>
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
@@ -471,6 +478,7 @@ export default function LessonPlayer({
       </header>
 
       {/* STEPPER */}
+      {!switching && !emptyContent && (
       <div className="bg-[#F5F6F8]/60 px-5 py-4 lg:px-8">
         <div className="mx-auto flex max-w-[760px] items-center gap-2">
           {steps.map((s, i) => {
@@ -509,27 +517,53 @@ export default function LessonPlayer({
           })}
         </div>
       </div>
+      )}
 
       {/* STAGE */}
       <main className="flex-1 px-5 py-7 lg:min-h-0 lg:overflow-y-auto lg:px-10">
-        <StepView
-          key={stepIdx}
-          step={cur}
-          lesson={lesson}
-          steps={steps}
-          answers={answers}
-          showText={showText}
-          onAnswer={answerQuiz}
-          onToggleText={(id) => setShowText((p) => ({ ...p, [id]: true }))}
-          onBack={onBack}
-          onRestart={() => setStepIdx(0)}
-          nextLesson={nextLesson}
-          onOpenLesson={onOpenLesson}
-        />
+        {switching ? (
+          // [linguo-patch:lms-lesson-switch-v1] spinner di stage doang pas ganti sesi — sidebar & top bar tetap render
+          <Centered>
+            <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
+          </Centered>
+        ) : emptyContent ? (
+          // [linguo-patch:lms-lesson-frame-v2] sesi belum ada konten — placeholder di dalam frame (sidebar tetap kelihatan)
+          <Centered>
+            <BookOpen className="h-8 w-8 text-slate-300" />
+            <h1 className="mt-3 text-lg font-bold text-slate-900">{curTitle}</h1>
+            <p className="mt-2 max-w-sm text-sm text-slate-500">
+              Materi sesi ini belum tersedia — lagi disiapkan ya.
+            </p>
+            {nextLesson && (
+              <button
+                onClick={() => onOpenLesson(nextLesson.id)}
+                className="mt-4 inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold text-white"
+                style={{ background: TEAL }}
+              >
+                Sesi berikutnya <ArrowRight className="h-4 w-4" />
+              </button>
+            )}
+          </Centered>
+        ) : (
+          <StepView
+            key={stepIdx}
+            step={cur}
+            lesson={lesson}
+            steps={steps}
+            answers={answers}
+            showText={showText}
+            onAnswer={answerQuiz}
+            onToggleText={(id) => setShowText((p) => ({ ...p, [id]: true }))}
+            onBack={onBack}
+            onRestart={() => setStepIdx(0)}
+            nextLesson={nextLesson}
+            onOpenLesson={onOpenLesson}
+          />
+        )}
       </main>
 
       {/* FOOTER */}
-      {!atDone && (
+      {!atDone && !switching && !emptyContent && (
         <footer className="flex items-center justify-between gap-4 border-t border-slate-100 px-5 py-4 lg:px-8">
           <button
             onClick={prev}
