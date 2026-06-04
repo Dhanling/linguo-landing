@@ -1037,6 +1037,38 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const [newPass, setNewPass] = useState("");
   const [confPass, setConfPass] = useState("");
 
+  // [linguo-patch:akun-self-delete-v1] Hapus akun mandiri
+  const [delOpen, setDelOpen] = useState(false);
+  const [delConfirm, setDelConfirm] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [delError, setDelError] = useState("");
+
+  async function handleDeleteAccount() {
+    if (delConfirm.trim().toUpperCase() !== "HAPUS") return;
+    setDeleting(true);
+    setDelError("");
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Sesi tidak ditemukan. Silakan login ulang.");
+      const res = await fetch("/api/account/delete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body?.error || `Gagal menghapus akun (${res.status})`);
+      // Sukses → keluar & arahkan ke halaman logout
+      await supabase.auth.signOut();
+      window.location.href = "/akun/logout";
+    } catch (e: any) {
+      setDelError(e?.message || "Terjadi kesalahan saat menghapus akun.");
+      setDeleting(false);
+    }
+  }
+
   // Notif & Preferensi — lokal/visual (belum ada tabel)
   const [notif, setNotif] = useState({ email_jadwal: true, email_materi: true, wa_pengingat: true, wa_promo: false, push_sesi: true, push_promo: false });
   const [pref, setPref] = useState({ reminder: true, autoplay: false, subtitle: true, weekly_report: true, twofa: false });
@@ -1265,8 +1297,8 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
               <SetCard>
                 <div className="flex items-center justify-between gap-4">
-                  <div><p className="text-[14px] font-extrabold text-rose-500">Hapus Akun</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Tindakan permanen. Hubungi admin untuk memproses penghapusan.</p></div>
-                  <a href="https://wa.me/6282116859493?text=Halo%20admin%2C%20saya%20ingin%20menghapus%20akun%20Linguo%20saya." target="_blank" rel="noopener noreferrer" className="h-10 whitespace-nowrap rounded-xl border border-rose-200 px-4 text-[13px] font-bold leading-10 text-rose-500 transition hover:bg-rose-50">Hubungi Admin</a>
+                  <div><p className="text-[14px] font-extrabold text-rose-500">Hapus Akun</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Tindakan permanen. Akun &amp; data pribadimu dihapus dan tidak bisa dikembalikan.</p></div>
+                  <button onClick={() => { setDelConfirm(""); setDelError(""); setDelOpen(true); }} className="h-10 whitespace-nowrap rounded-xl border border-rose-200 px-4 text-[13px] font-bold text-rose-500 transition hover:bg-rose-50">Hapus Akun Saya</button>
                 </div>
               </SetCard>
             </>
@@ -1392,6 +1424,59 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       </main>
 
       <input ref={avatarInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleAvatarChange} />
+
+      {/* [linguo-patch:akun-self-delete-v1] Modal konfirmasi hapus akun */}
+      {delOpen && (
+        <div
+          className="fixed inset-0 z-[120] flex items-center justify-center bg-black/50 p-4"
+          onClick={() => { if (!deleting) setDelOpen(false); }}
+        >
+          <div
+            className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-rose-500"><Shield className="h-5 w-5" /></span>
+              <h3 className="text-[17px] font-extrabold text-[#12172B]">Hapus Akun Permanen</h3>
+            </div>
+            <p className="mt-3 text-[13px] font-medium leading-relaxed text-[#6B7280]">
+              Tindakan ini <b className="text-[#12172B]">tidak bisa dibatalkan</b>. Kamu akan
+              kehilangan akses ke seluruh materi e-learning/ebook yang sudah dibeli, dan data
+              pribadimu (nama, email, WhatsApp) akan dihapus.
+            </p>
+            <p className="mt-2 text-[13px] font-medium leading-relaxed text-[#6B7280]">
+              Ketik <b className="text-rose-500">HAPUS</b> untuk konfirmasi.
+            </p>
+            <input
+              value={delConfirm}
+              onChange={(e) => setDelConfirm(e.target.value)}
+              placeholder="HAPUS"
+              autoFocus
+              disabled={deleting}
+              className="mt-3 w-full rounded-xl border border-slate-200 px-4 py-3 text-[14px] font-bold tracking-wide outline-none transition focus:border-rose-300 focus:shadow-[0_0_0_4px_rgba(244,63,94,0.12)]"
+            />
+            {delError && (
+              <p className="mt-2 text-[13px] font-semibold text-rose-500">{delError}</p>
+            )}
+            <div className="mt-5 flex gap-3">
+              <button
+                onClick={() => setDelOpen(false)}
+                disabled={deleting}
+                className="h-11 flex-1 rounded-xl border border-slate-200 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50 disabled:opacity-50"
+              >
+                Batal
+              </button>
+              <button
+                onClick={handleDeleteAccount}
+                disabled={deleting || delConfirm.trim().toUpperCase() !== "HAPUS"}
+                className="h-11 flex-1 rounded-xl bg-rose-500 text-[14px] font-extrabold text-white transition hover:bg-rose-600 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {deleting ? "Menghapus…" : "Hapus Akun Saya"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -2009,121 +2094,6 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
           </div>
         )}
       </motion.div>
-    </div>
-  );
-}
-
-// [linguo-patch:beranda-mandiri-resume-v1] Kartu "Lanjut Belajar Mandiri" di Beranda.
-// Shortcut 1-klik ke sesi self-study yg lagi jalan → buka OVERLAY via onOpen (BUKAN route, jadi instan).
-// Cuma muncul kalau user PUNYA progress di salah satu course self-study (kalau ga ada, return null = card ga nongol).
-const MANDIRI_NATIVE: Record<string, { native: string; label: string }> = {
-  vietnamese: { native: "Tiếng Việt", label: "Bahasa Vietnam" },
-  english: { native: "English", label: "Bahasa Inggris" },
-  japanese: { native: "日本語", label: "Bahasa Jepang" },
-  korean: { native: "한국어", label: "Bahasa Korea" },
-  mandarin: { native: "中文", label: "Bahasa Mandarin" },
-};
-
-function MandiriResumeCard({ onOpen }: { onOpen: (lessonId: string) => void }) {
-  const [c, setC] = useState<null | {
-    native: string; label: string; photo: string | null;
-    total: number; done: number; pct: number;
-    resumeId: string; resumeTitle: string; fresh: boolean;
-  }>(null);
-
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        const uid = session?.user?.id;
-        if (!uid) return;
-        const { data: mods } = await supabase
-          .from("lms_modules")
-          .select("id,language,sort_order")
-          .order("sort_order");
-        const modList = (mods || []) as { id: string; language: string; sort_order: number }[];
-        if (!modList.length) return;
-        const moduleIds = modList.map((m) => m.id);
-        const [lessRes, progRes] = await Promise.all([
-          supabase.from("lms_lessons").select("id,module_id,title,sort_order").in("module_id", moduleIds).order("sort_order"),
-          supabase.from("lms_progress").select("lesson_id,status").eq("user_id", uid),
-        ]);
-        const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number }[];
-        const done = new Set<string>(
-          ((progRes.data as any[]) || []).filter((p) => p?.status === "completed").map((p) => p.lesson_id)
-        );
-        const langByModule: Record<string, string> = {};
-        const modOrder: Record<string, number> = {};
-        modList.forEach((m, i) => { langByModule[m.id] = m.language; modOrder[m.id] = m.sort_order ?? i; });
-        const byLang: Record<string, typeof lessons> = {};
-        lessons.forEach((l) => { const lg = langByModule[l.module_id]; if (lg) (byLang[lg] = byLang[lg] || []).push(l); });
-
-        // pilih bahasa dengan sesi-selesai terbanyak (= yang "lagi jalan")
-        let bestLang = ""; let bestArr: typeof lessons = []; let bestDone = -1;
-        Object.keys(byLang).forEach((language) => {
-          const arr = byLang[language].slice().sort((a, b) => (modOrder[a.module_id] - modOrder[b.module_id]) || (a.sort_order - b.sort_order));
-          const dc = arr.filter((l) => done.has(l.id)).length;
-          if (dc > 0 && dc > bestDone) { bestLang = language; bestArr = arr; bestDone = dc; }
-        });
-        if (!bestLang || !alive) return;
-
-        const total = bestArr.length;
-        const next = bestArr.find((l) => !done.has(l.id)) || bestArr[bestArr.length - 1];
-        const slug = bestLang.toLowerCase().replace(/\s+/g, "-");
-        const m = MANDIRI_NATIVE[slug];
-        setC({
-          native: m?.native || bestLang,
-          label: m?.label || `Bahasa ${bestLang}`,
-          photo: getLangPhoto(bestLang),
-          total,
-          done: bestDone,
-          pct: total ? Math.round((bestDone / total) * 100) : 0,
-          resumeId: next.id,
-          resumeTitle: next.title,
-          fresh: !done.has(next.id),
-        });
-      } catch {
-        /* best-effort — kartu opsional, jangan ganggu Beranda kalau gagal */
-      }
-    })();
-    return () => { alive = false; };
-  }, []);
-
-  if (!c) return null;
-
-  return (
-    <div>
-      <h2 className="inline-flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]">
-        <GraduationCap className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />
-        Lanjut Belajar Mandiri
-      </h2>
-      <button
-        onClick={() => onOpen(c.resumeId)}
-        className="group mt-4 flex w-full items-stretch overflow-hidden rounded-3xl bg-white text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
-      >
-        <div className="relative hidden w-44 shrink-0 overflow-hidden sm:block" style={{ background: "#16796E" }}>
-          {c.photo && (
-            <img src={c.photo} alt="" aria-hidden className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-          )}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,90,82,0.85), rgba(22,121,110,0.35))" }} />
-          <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold text-white">Belajar Mandiri</span>
-        </div>
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 p-5">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-[#16796E]/10 px-2.5 py-1 text-[11px] font-bold text-[#16796E] sm:hidden">Belajar Mandiri</span>
-            <h3 className="truncate text-[17px] font-extrabold leading-tight text-[#12172B]">{c.native} <span className="font-bold text-gray-400">· {c.label}</span></h3>
-          </div>
-          <p className="truncate text-[13px] font-medium text-gray-500">{c.fresh ? "Lanjut" : "Ulangi"}: {c.resumeTitle}</p>
-          <div className="mt-1 flex items-center gap-3">
-            <span className="h-2 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${c.pct}%` }} /></span>
-            <span className="shrink-0 text-[12px] font-bold text-gray-500">{c.done}/{c.total} · {c.pct}%</span>
-          </div>
-          <span className="mt-1 inline-flex items-center gap-1.5 text-[13px] font-extrabold text-[#16796E]">
-            Lanjutkan <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </div>
-      </button>
     </div>
   );
 }
@@ -3133,15 +3103,6 @@ export default function AkunPage() {
                           <div className="-ml-4 -mt-12 h-16 w-16 bg-[#F2CB05]" style={{ clipPath: HEXA }} />
                         </div>
                       </div>
-
-                      {/* [linguo-patch:beranda-mandiri-resume-v1] Lanjut Belajar Mandiri — shortcut 1-klik ke sesi self-study (overlay) */}
-                      <MandiriResumeCard
-                        onOpen={(id) => {
-                          setLmsSesi(id);
-                          setMateriView("mandiri");
-                          if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
-                        }}
-                      />
 
                       {/* Perlu Perhatian — card kecil (glyph + status), klik -> PaymentDetailModal */}
                       {pendingPaymentRegs.length > 0 && (
