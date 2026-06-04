@@ -160,52 +160,45 @@ export default function LessonPlayer({
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
-  // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi + prefetch tetangga → switch instan
+  // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan
   const contentCacheRef = useRef<Map<string, { les: any; steps: Step[]; locked: boolean }>>(new Map());
-  const prefetchingRef = useRef<Set<string>>(new Set());
   const sibRef = useRef<{ id: string; title: string; sort_order: number }[]>([]);
   const entRef = useRef(false);
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 
-  // [linguo-patch:lms-switch-prefetch-all-v1] warm SEMUA sesi 1 modul ke cache (background) → klik sesi mana pun instan, ga cuma tetangga (modul kecil ≤~16 sesi). Guard has()/prefetchingRef bikin pemanggilan ulang nyaris no-op.
-  function prefetchNeighbors(
-    sibList: { id: string; title: string; sort_order: number }[],
-    curId: string,
-    ent: boolean
-  ) {
-    sibList.forEach((sib) => {
-      if (!sib || sib.id === curId) return;
-      if (contentCacheRef.current.has(sib.id) || prefetchingRef.current.has(sib.id)) return;
-      prefetchingRef.current.add(sib.id);
-      (async () => {
-        try {
-          const { data: les } = await supabase
-            .from("lms_lessons")
-            .select("id,title,est_minutes,is_preview,module_id,sort_order")
-            .eq("id", sib.id)
-            .maybeSingle();
-          if (!les) return;
-          const isLocked = !les.is_preview && !ent;
-          let steps: Step[] = [];
-          if (!isLocked) {
-            const { data: blks } = await supabase
-              .from("lms_blocks")
-              .select(
-                "id,type,content,media_url,sort_order, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
-              )
-              .eq("lesson_id", les.id)
-              .order("sort_order");
-            steps = buildSteps((blks || []) as Block[]);
-          }
-          contentCacheRef.current.set(sib.id, { les, steps, locked: isLocked });
-        } catch {
-          /* prefetch best-effort */
-        } finally {
-          prefetchingRef.current.delete(sib.id);
-        }
-      })();
-    });
+  // [linguo-patch:lms-switch-warm-module-v1] warm SEMUA sesi 1 modul ke cache dalam 2 query (1 lessons + 1 blocks batched pakai .in) → race window kecil banget, switch instan. Idempotent: skip sesi yg udah ke-cache. Ganti prefetch per-lesson lama (~22 request) jadi 2 request.
+  async function warmModule(moduleId: string | null | undefined, ent: boolean) {
+    if (!moduleId) return;
+    try {
+      const { data: lessons } = await supabase
+        .from("lms_lessons")
+        .select("id,title,est_minutes,is_preview,module_id,sort_order")
+        .eq("module_id", moduleId)
+        .order("sort_order");
+      const ls = ((lessons as any[] | null) || []);
+      const ids = ls.map((l) => l.id).filter((id: string) => !contentCacheRef.current.has(id));
+      if (!ids.length) return;
+      const { data: blks } = await supabase
+        .from("lms_blocks")
+        .select(
+          "id,type,content,media_url,sort_order,lesson_id, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
+        )
+        .in("lesson_id", ids)
+        .order("sort_order");
+      const byLesson: Record<string, Block[]> = {};
+      ((blks as any[] | null) || []).forEach((b) => {
+        (byLesson[b.lesson_id] ||= []).push(b as Block);
+      });
+      ls.forEach((l) => {
+        if (contentCacheRef.current.has(l.id)) return;
+        const isLocked = !l.is_preview && !ent;
+        const steps = isLocked ? [] : buildSteps(byLesson[l.id] || []);
+        contentCacheRef.current.set(l.id, { les: l, steps, locked: isLocked });
+      });
+    } catch {
+      /* warm best-effort */
+    }
   }
 
   useEffect(() => {
@@ -224,7 +217,7 @@ export default function LessonPlayer({
       setCompleted(progressMap[cached.les.id] === "completed");
       setLoading(false);
       bootedRef.current = true;
-      prefetchNeighbors(sibRef.current, lessonId, entRef.current);
+      warmModule(cached.les?.module_id, entRef.current);
       return;
     }
     (async () => {
@@ -329,7 +322,7 @@ export default function LessonPlayer({
         setProgressMap(pm);
         setCompleted(pm[les.id] === "completed");
         // [linguo-patch:lms-switch-perf-v1] warm-up sesi tetangga di background → klik "Lanjut"/sesi sebelah instan
-        if (!cancelled) prefetchNeighbors(sibList, les.id, ent);
+        if (!cancelled) warmModule(les.module_id, ent);
       } finally {
         // [linguo-patch:lms-lesson-switch-v1] selalu matiin loading + tandai udah pernah boot (kecuali fetch ke-cancel)
         if (!cancelled) {
