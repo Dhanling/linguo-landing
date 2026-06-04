@@ -1,12 +1,13 @@
 "use client";
 
-// [linguo-patch:pretest-vietnam-v1] Halaman publik pre-test cohort Alfamart × Vietnam Class
+// [linguo-patch:pretest-vietnam-v2] Halaman publik pre-test cohort Alfamart × Vietnam Class
+// v2: hapus field Jabatan + Bagian C (lisan/tutor) · tombol pilihan transisi halus (no flicker)
 // Taruh di: src/app/pretest/vietnam/page.tsx — auto-route ke linguo.id/pretest/vietnam
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import {
   ArrowLeft, ArrowRight, Check, HelpCircle, BookOpen, MessageSquare,
-  Mic, Sparkles, PartyPopper, CircleCheck, User, Briefcase, Loader2, ChevronDown,
+  Sparkles, PartyPopper, CircleCheck, User, Loader2, ChevronDown,
 } from "lucide-react";
 
 const supabase = createClient(
@@ -66,16 +67,15 @@ const NAMES = [
 type BAns = { text: string; dk: boolean };
 
 export default function PreTestVietnamPage() {
-  const [step, setStep] = useState(-1); // -1 intro · 0..4 A · 5..9 B · 10 info C · 11 D · 12 review · 13 done
+  const [step, setStep] = useState(-1); // -1 intro · 0..4 A · 5..9 B · 10 D · 11 review · 12 done
   const [nama, setNama] = useState("");
-  const [jabatan, setJabatan] = useState("");
   const [aAns, setAans] = useState<Record<number, string>>({});
   const [bAns, setBans] = useState<Record<number, BAns>>({});
   const [dRate, setDrate] = useState<Record<number, number>>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const TOTAL = 13;
+  const TOTAL = 12;
   const pct = Math.max(0, Math.min(100, Math.round(((step + 1) / TOTAL) * 100)));
   const scoreA = A.reduce((n, it) => n + (aAns[it.id] === KEY_A[it.id] ? 5 : 0), 0);
   const scoreD = Object.values(dRate).reduce((n, v) => n + (v || 0), 0);
@@ -95,7 +95,6 @@ export default function PreTestVietnamPage() {
     const data = {
       cohort: COHORT,
       nama,
-      jabatan,
       submitted_at: new Date().toISOString(),
       bagian_a: {
         answers: A.map((it) => ({ no: it.id, choice: aAns[it.id] || null, correct: aAns[it.id] === KEY_A[it.id] })),
@@ -105,7 +104,6 @@ export default function PreTestVietnamPage() {
         answers: B.map((it) => ({ no: it.id, text: bAns[it.id]?.dk ? null : (bAns[it.id]?.text || ""), dont_know: !!bAns[it.id]?.dk })),
         score: null, max: 25, auto: false,
       },
-      bagian_c: { score: null, max: 25, auto: false },
       bagian_d: { ratings: D_SKILLS.map((s, i) => ({ skill: s, value: dRate[i] || null })), score: scoreD, max: 25, auto: true },
       total_auto: scoreA + scoreD,
       status: "menunggu_penilaian",
@@ -113,7 +111,6 @@ export default function PreTestVietnamPage() {
     const { error } = await supabase.from("pretest_submissions").insert({
       cohort: COHORT,
       nama,
-      jabatan,
       answers: data,
       score_a: scoreA,
       score_d: scoreD,
@@ -149,6 +146,7 @@ export default function PreTestVietnamPage() {
         .ptw-fade{animation:ptw-fade .32s ease both}
         .ptw-pop{animation:ptw-pop .5s cubic-bezier(.2,.8,.2,1) both}
         .ptw-cf{position:absolute;width:8px;height:13px;border-radius:2px;top:-16px;animation:ptw-fall linear forwards}
+        button{-webkit-tap-highlight-color:transparent}
       `}</style>
 
       <div className="mx-auto max-w-[560px]">
@@ -159,7 +157,7 @@ export default function PreTestVietnamPage() {
           <span className="ml-auto text-[11px] font-bold text-slate-400">Vietnam Class · Basic</span>
         </div>
 
-        {step >= 0 && step <= 12 && (
+        {step >= 0 && step <= 11 && (
           <div className="mb-5 flex items-center gap-3">
             <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
               <div className="h-full rounded-full transition-all duration-300" style={{ width: `${pct}%`, background: TEAL }} />
@@ -202,14 +200,9 @@ export default function PreTestVietnamPage() {
                     <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                   </div>
                 </div>
-                <label className="block">
-                  <span className="mb-1 flex items-center gap-1.5 text-[12px] font-bold text-slate-500"><Briefcase className="h-3.5 w-3.5" /> Jabatan</span>
-                  <input value={jabatan} onChange={(e) => setJabatan(e.target.value)} placeholder="mis. Staf Toko"
-                    className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-[14px] font-semibold text-slate-800 outline-none focus:border-[#16796E]" />
-                </label>
               </div>
               <button onClick={() => go(0)} disabled={!nama.trim()}
-                className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white transition disabled:opacity-40"
+                className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white outline-none transition-colors disabled:opacity-40"
                 style={{ background: TEAL }}>
                 Mulai tes <ArrowRight className="h-4 w-4" />
               </button>
@@ -226,7 +219,7 @@ export default function PreTestVietnamPage() {
                     const chosen = aAns[item.id] === L;
                     return (
                       <button key={i} onClick={() => pickA(item, L)}
-                        className="flex h-14 items-center gap-3 rounded-2xl border-2 px-4 text-left transition hover:border-[#16796E] hover:bg-[#F0FAF8]"
+                        className="flex h-14 items-center gap-3 rounded-2xl border-2 px-4 text-left outline-none transition-colors hover:border-[#16796E] hover:bg-[#F0FAF8]"
                         style={chosen ? { borderColor: TEAL, background: "#F0FAF8" } : { borderColor: "#e2e8f0" }}>
                         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-[12px] font-extrabold text-slate-500">{L}</span>
                         <span className="text-[14px] font-bold text-slate-800">{o}</span>
@@ -235,7 +228,7 @@ export default function PreTestVietnamPage() {
                     );
                   })}
                   <button onClick={() => pickA(item, "E")}
-                    className="flex h-14 items-center gap-3 rounded-2xl border-2 border-dashed px-4 text-left transition"
+                    className="flex h-14 items-center gap-3 rounded-2xl border-2 border-dashed px-4 text-left outline-none transition-colors"
                     style={aAns[item.id] === "E" ? { borderColor: TEAL, background: "rgba(22,121,110,.08)" } : { borderColor: "#cbd5e1", background: "#f8fafc" }}>
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-extrabold text-white" style={{ background: "#94a3b8" }}>E</span>
                     <span className="text-[14px] font-bold" style={{ color: TEAL }}>Tidak tahu</span>
@@ -259,7 +252,7 @@ export default function PreTestVietnamPage() {
                   placeholder="Ketik arti kalimat di sini…"
                   className="mt-3 w-full resize-none rounded-2xl border-2 border-slate-200 px-4 py-3 text-[14px] font-semibold text-slate-800 outline-none focus:border-[#16796E] disabled:bg-slate-50 disabled:text-slate-400" />
                 <button onClick={() => setCur({ dk: !cur.dk, text: "" })}
-                  className="mt-3 flex w-full items-center gap-2 rounded-2xl border-2 border-dashed px-4 py-3 transition"
+                  className="mt-3 flex w-full items-center gap-2 rounded-2xl border-2 border-dashed px-4 py-3 outline-none transition-colors"
                   style={cur.dk ? { borderColor: TEAL, background: "rgba(22,121,110,.08)" } : { borderColor: "#cbd5e1", background: "#f8fafc" }}>
                   <span className="flex h-5 w-5 items-center justify-center rounded border-2" style={{ borderColor: cur.dk ? TEAL : "#94a3b8", background: cur.dk ? TEAL : "transparent" }}>
                     {cur.dk && <Check className="h-3.5 w-3.5 text-white" />}
@@ -267,11 +260,11 @@ export default function PreTestVietnamPage() {
                   <span className="text-[13px] font-bold" style={{ color: cur.dk ? TEAL : "#64748b" }}>Tidak tahu / belum bisa</span>
                 </button>
                 <div className="mt-5 flex items-center gap-3">
-                  <button onClick={back} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 hover:bg-slate-100">
+                  <button onClick={back} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 outline-none transition-colors hover:bg-slate-100">
                     <ArrowLeft className="h-4 w-4" /> Kembali
                   </button>
                   <button onClick={next} disabled={!filled}
-                    className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white transition disabled:opacity-40"
+                    className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white outline-none transition-colors disabled:opacity-40"
                     style={{ background: TEAL }}>
                     Lanjut <ArrowRight className="h-4 w-4" />
                   </button>
@@ -281,23 +274,6 @@ export default function PreTestVietnamPage() {
           })()}
 
           {step === 10 && (
-            <Shell pill="Bagian C · Percakapan Lisan" icon={Mic} sub="Bagian ini dinilai langsung oleh tutor">
-              <p className="mt-2 text-[14px] leading-relaxed text-slate-500">
-                Saat sesi pertama, tutor akan minta kamu memperkenalkan diri, menyapa, dan menyebutkan beberapa
-                kosakata toko dalam Bahasa Vietnam. Nggak perlu diisi di sini — santai aja. 🙂
-              </p>
-              <div className="mt-5 flex items-center gap-3">
-                <button onClick={back} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 hover:bg-slate-100">
-                  <ArrowLeft className="h-4 w-4" /> Kembali
-                </button>
-                <button onClick={next} className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white" style={{ background: TEAL }}>
-                  Lanjut <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </Shell>
-          )}
-
-          {step === 11 && (
             <Shell pill="Bagian D · Self-Assessment" icon={Sparkles} sub="Seberapa bisa kamu sekarang?">
               <p className="mt-1.5 text-[13px] font-medium text-slate-500">1 = belum bisa · 5 = sangat bisa</p>
               <div className="mt-4 space-y-4">
@@ -309,7 +285,7 @@ export default function PreTestVietnamPage() {
                         const on = dRate[i] === v;
                         return (
                           <button key={v} onClick={() => setDrate((p) => ({ ...p, [i]: v }))}
-                            className="flex h-11 flex-1 items-center justify-center rounded-xl border-2 text-[14px] font-extrabold transition"
+                            className="flex h-11 flex-1 items-center justify-center rounded-xl border-2 text-[14px] font-extrabold outline-none transition-colors"
                             style={on ? { borderColor: TEAL, background: TEAL, color: "#fff" } : { borderColor: "#e2e8f0", color: "#94a3b8" }}>
                             {v}
                           </button>
@@ -320,11 +296,11 @@ export default function PreTestVietnamPage() {
                 ))}
               </div>
               <div className="mt-6 flex items-center gap-3">
-                <button onClick={back} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 hover:bg-slate-100">
+                <button onClick={back} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 outline-none transition-colors hover:bg-slate-100">
                   <ArrowLeft className="h-4 w-4" /> Kembali
                 </button>
                 <button onClick={next} disabled={Object.keys(dRate).length < D_SKILLS.length}
-                  className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white transition disabled:opacity-40"
+                  className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white outline-none transition-colors disabled:opacity-40"
                   style={{ background: TEAL }}>
                   Lihat ringkasan <ArrowRight className="h-4 w-4" />
                 </button>
@@ -332,34 +308,33 @@ export default function PreTestVietnamPage() {
             </Shell>
           )}
 
-          {step === 12 && (
+          {step === 11 && (
             <Shell pill="Ringkasan" icon={CircleCheck} sub="Cek dulu sebelum kirim">
               <div className="mt-4 space-y-2.5 text-[13px]">
                 <Row k="Nama" v={nama || "—"} />
-                <Row k="Jabatan" v={jabatan || "—"} />
                 <Row k="Bagian A · Kosakata" v={`${A.filter((it) => aAns[it.id]).length}/5 dijawab`} />
                 <Row k="Bagian B · Pemahaman" v={`${B.filter((it) => bAns[it.id] && (bAns[it.id].dk || bAns[it.id].text.trim())).length}/5 dijawab`} />
                 <Row k="Bagian D · Self-assessment" v={`${Object.keys(dRate).length}/5 dinilai`} />
               </div>
               <p className="mt-4 rounded-xl bg-slate-50 px-3 py-2.5 text-[12px] font-medium leading-relaxed text-slate-500">
-                Skor Bagian A &amp; D dihitung otomatis. Bagian B &amp; C dinilai tutor untuk dapat total akhir /100.
+                Skor Bagian A &amp; D dihitung otomatis. Bagian B dinilai tutor untuk dapat total akhir.
               </p>
               {submitError && (
                 <p className="mt-3 rounded-xl bg-rose-50 px-3 py-2.5 text-[12px] font-bold text-rose-600">{submitError}</p>
               )}
               <div className="mt-5 flex items-center gap-3">
-                <button onClick={back} disabled={submitting} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 hover:bg-slate-100 disabled:opacity-40">
+                <button onClick={back} disabled={submitting} className="inline-flex h-12 items-center gap-2 rounded-2xl px-4 text-[14px] font-bold text-slate-500 outline-none transition-colors hover:bg-slate-100 disabled:opacity-40">
                   <ArrowLeft className="h-4 w-4" /> Kembali
                 </button>
                 <button onClick={submit} disabled={submitting}
-                  className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white transition disabled:opacity-60" style={{ background: TEAL }}>
+                  className="ml-auto inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl text-[15px] font-extrabold text-white outline-none transition-colors disabled:opacity-60" style={{ background: TEAL }}>
                   {submitting ? (<><Loader2 className="h-4 w-4 animate-spin" /> Mengirim…</>) : (<>Kirim jawaban <Check className="h-4 w-4" /></>)}
                 </button>
               </div>
             </Shell>
           )}
 
-          {step === 13 && (
+          {step === 12 && (
             <div className="ptw-fade relative text-center">
               <div className="pointer-events-none absolute inset-x-0 top-0 h-1">
                 {Array.from({ length: 16 }).map((_, i) => (
@@ -375,7 +350,7 @@ export default function PreTestVietnamPage() {
               </div>
               <h2 className="mt-5 text-[24px] font-extrabold text-slate-900">Selesai, makasih {nama.split(" ")[0] || ""}! 🎉</h2>
               <p className="mx-auto mt-2 max-w-[380px] text-[14px] leading-relaxed text-slate-500">
-                Jawaban kamu udah kekirim. Tutor akan melengkapi penilaian Bagian B &amp; C, lalu materi disesuaikan dengan levelmu.
+                Jawaban kamu udah kekirim. Tutor akan melengkapi penilaian Bagian B, lalu materi disesuaikan dengan levelmu.
               </p>
               <div className="mx-auto mt-5 grid max-w-[320px] grid-cols-2 gap-3">
                 <ScoreCard label="Bagian A · Kosakata" val={`${scoreA}/25`} />
