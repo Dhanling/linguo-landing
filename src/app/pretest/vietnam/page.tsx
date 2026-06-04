@@ -174,10 +174,16 @@ export default function PreTestVietnamPage() {
 
           {step === -1 && (
             <Shell>
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl text-white" style={{ background: TEAL }}>
-                <Sparkles className="h-7 w-7" />
+              <div className="mb-4 h-14 w-14 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
+                <svg viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" className="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bendera Vietnam">
+                  <rect width="60" height="40" fill="#DA251D" />
+                  <polygon points="30,9 32.59,16.44 40.46,16.6 34.18,21.36 36.47,28.9 30,24.4 23.53,28.9 25.82,21.36 19.54,16.6 27.41,16.44" fill="#FFFF00" />
+                </svg>
               </div>
               <h1 className="text-[24px] font-extrabold leading-tight text-slate-900">Pre-Test Bahasa Vietnam</h1>
+              <p className="mt-1.5 text-[12px] font-bold leading-snug" style={{ color: TEAL }}>
+                Program pelatihan bahasa Linguo.id × PT Sumber Alfaria Trijaya (Alfamart)
+              </p>
               <p className="mt-2 text-[14px] leading-relaxed text-slate-500">
                 Tes ini buat ngukur kemampuan awal kamu sebelum program. Jawab apa adanya ya — tidak ada
                 benar/salah yang memengaruhi keikutsertaan. Hasilnya dipakai buat nyesuain materi.
