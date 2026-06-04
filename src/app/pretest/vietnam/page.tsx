@@ -69,7 +69,6 @@ export default function PreTestVietnamPage() {
   const [step, setStep] = useState(-1); // -1 intro · 0..4 A · 5..9 B · 10 info C · 11 D · 12 review · 13 done
   const [nama, setNama] = useState("");
   const [jabatan, setJabatan] = useState("");
-  const [nameOpen, setNameOpen] = useState(false);
   const [aAns, setAans] = useState<Record<number, string>>({});
   const [bAns, setBans] = useState<Record<number, BAns>>({});
   const [dRate, setDrate] = useState<Record<number, number>>({});
@@ -154,9 +153,7 @@ export default function PreTestVietnamPage() {
 
       <div className="mx-auto max-w-[560px]">
         <div className="mb-4 flex items-center gap-3">
-          <div className="flex items-baseline gap-1 text-[17px] font-extrabold">
-            <span style={{ color: TEAL }}>linguo</span><span className="text-slate-900">.id</span>
-          </div>
+          <img src="/FULL_LOGO_LINGUO_HIJAU.png" alt="Linguo" className="h-7 w-auto" />
           <span className="ml-1 rounded-md px-2 py-0.5 text-[10px] font-bold"
             style={{ background: "rgba(242,203,5,0.18)", color: "#9a7a06" }}>PRE-TEST</span>
           <span className="ml-auto text-[11px] font-bold text-slate-400">Vietnam Class · Basic</span>
@@ -191,29 +188,19 @@ export default function PreTestVietnamPage() {
                 </p>
               </div>
               <div className="mt-5 space-y-3">
-                <div className="relative">
+                <div>
                   <span className="mb-1 flex items-center gap-1.5 text-[12px] font-bold text-slate-500"><User className="h-3.5 w-3.5" /> Nama</span>
-                  <button type="button" onClick={() => setNameOpen((o) => !o)}
-                    className="flex w-full items-center justify-between gap-2 rounded-xl border px-3.5 py-2.5 text-left text-[14px] font-semibold outline-none transition"
-                    style={{ borderColor: nameOpen ? TEAL : "#e2e8f0" }}>
-                    <span className={nama ? "text-slate-800" : "text-slate-400"}>{nama || "Pilih nama kamu"}</span>
-                    <ChevronDown className="h-4 w-4 shrink-0 text-slate-400 transition" style={{ transform: nameOpen ? "rotate(180deg)" : "none" }} />
-                  </button>
-                  {nameOpen && (
-                    <>
-                      <div className="fixed inset-0 z-10" onClick={() => setNameOpen(false)} />
-                      <div className="absolute z-20 mt-1.5 max-h-60 w-full overflow-y-auto rounded-xl border border-slate-200 bg-white py-1 shadow-[0_18px_40px_-16px_rgba(15,23,42,0.35)]">
-                        {NAMES.map((n) => (
-                          <button key={n} type="button" onClick={() => { setNama(n); setNameOpen(false); }}
-                            className="flex w-full items-center gap-2 px-3.5 py-2.5 text-left text-[13px] font-semibold text-slate-700 hover:bg-[#F0FAF8]"
-                            style={nama === n ? { background: "rgba(22,121,110,.08)", color: "#0F5A52" } : undefined}>
-                            <span className="flex-1">{n}</span>
-                            {nama === n && <Check className="h-4 w-4 shrink-0" style={{ color: TEAL }} />}
-                          </button>
-                        ))}
-                      </div>
-                    </>
-                  )}
+                  <div className="relative">
+                    <select value={nama} onChange={(e) => setNama(e.target.value)}
+                      className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 pr-10 text-[14px] font-semibold outline-none focus:border-[#16796E]"
+                      style={{ color: nama ? "#1e293b" : "#94a3b8" }}>
+                      <option value="" disabled>Pilih nama kamu</option>
+                      {NAMES.map((n) => (
+                        <option key={n} value={n} style={{ color: "#1e293b" }}>{n}</option>
+                      ))}
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                  </div>
                 </div>
                 <label className="block">
                   <span className="mb-1 flex items-center gap-1.5 text-[12px] font-bold text-slate-500"><Briefcase className="h-3.5 w-3.5" /> Jabatan</span>
