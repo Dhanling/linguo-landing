@@ -168,16 +168,14 @@ export default function LessonPlayer({
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 
-  // [linguo-patch:lms-switch-perf-v1] prefetch sesi sebelum/sesudah (1 modul) ke cache, background
+  // [linguo-patch:lms-switch-prefetch-all-v1] warm SEMUA sesi 1 modul ke cache (background) → klik sesi mana pun instan, ga cuma tetangga (modul kecil ≤~16 sesi). Guard has()/prefetchingRef bikin pemanggilan ulang nyaris no-op.
   function prefetchNeighbors(
     sibList: { id: string; title: string; sort_order: number }[],
     curId: string,
     ent: boolean
   ) {
-    const idx = sibList.findIndex((s) => s.id === curId);
-    if (idx < 0) return;
-    [sibList[idx + 1], sibList[idx - 1]].forEach((sib) => {
-      if (!sib) return;
+    sibList.forEach((sib) => {
+      if (!sib || sib.id === curId) return;
       if (contentCacheRef.current.has(sib.id) || prefetchingRef.current.has(sib.id)) return;
       prefetchingRef.current.add(sib.id);
       (async () => {
