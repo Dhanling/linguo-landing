@@ -18,7 +18,7 @@
 // page; if that route ever changes, edit it in ONE place.
 // ============================================================================
 
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { supabase } from "@/lib/supabase-client";
 import RekeningForm from "./RekeningForm";
 import type { Session } from "@supabase/supabase-js";
@@ -421,6 +421,18 @@ export default function AfiliatorPage() {
 
   const aff = data?.affiliate ?? null;
   const refLink = aff ? `https://linguo.id/?ref=${aff.referral_code}` : "";
+
+  // Avatar source: only present for Google-login users. Supabase stores the
+  // provider photo under `avatar_url` (and Google also sends `picture`) — try
+  // both. Email/password accounts (e.g. Intan) have neither → Header falls
+  // back to an initial.
+  const userMeta = (session?.user?.user_metadata ?? {}) as Record<string, unknown>;
+  const avatarUrl =
+    (typeof userMeta.avatar_url === "string" && userMeta.avatar_url) ||
+    (typeof userMeta.picture === "string" && userMeta.picture) ||
+    "";
+  const userEmail = session?.user?.email ?? "";
+
   const waText = `Yuk belajar bahasa di Linguo.id! 🌏 60+ bahasa, kelas online bareng pengajar berpengalaman. Daftar lewat link aku ini ya: ${refLink}`;
   const waUrl = `https://wa.me/?text=${encodeURIComponent(waText)}`;
 
@@ -477,7 +489,7 @@ export default function AfiliatorPage() {
         <Sidebar active={view} onNavigate={goView} onLogout={logout} loggingOut={loggingOut} />
         <main className="min-w-0 flex-1">
           <div className="mx-auto max-w-[1080px] px-4 py-6 lg:px-8 lg:py-8">
-            <Header name={aff?.name} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
+            <Header name={aff?.name} email={userEmail} avatarUrl={avatarUrl} onLogout={logout} loggingOut={loggingOut} onRefresh={() => loadData({ silent: true })} refreshing={refreshing} />
 
         {dataLoading && <SkeletonBlock />}
 
@@ -576,18 +588,47 @@ export default function AfiliatorPage() {
 // ── Header (greeting + logout) ─────────────────────────────────────────────
 function Header({
   name,
+  email,
+  avatarUrl,
   onLogout,
   loggingOut,
   onRefresh,
   refreshing,
 }: {
   name?: string;
+  email?: string;
+  avatarUrl?: string;
   onLogout: () => void;
   loggingOut: boolean;
   onRefresh: () => void;
   refreshing: boolean;
 }) {
   const first = (name || "").trim().split(/\s+/)[0];
+  const initial = (first || email || "?").charAt(0).toUpperCase();
+
+  // Account menu (avatar dropdown). Logout lives here now.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const showImg = !!avatarUrl && !imgError;
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node))
+        setMenuOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
+
   return (
     <header
       className="aff-reveal mb-6 flex items-start justify-between gap-3"
@@ -611,18 +652,65 @@ function Header({
           <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin" : ""}`} />
           Refresh
         </button>
-        <button
-          onClick={onLogout}
-          disabled={loggingOut}
-          className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-600 backdrop-blur transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50"
-        >
-          {loggingOut ? (
-            <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
-          ) : (
-            <LogOut className="h-3.5 w-3.5" />
+
+        {/* Account avatar → dropdown (logout inside) */}
+        <div className="relative" ref={menuRef}>
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white/80 backdrop-blur transition hover:border-[#1A9E9E]/40 hover:ring-2 hover:ring-[#1A9E9E]/20"
+            aria-label="Menu akun"
+            aria-haspopup="menu"
+            aria-expanded={menuOpen}
+          >
+            {showImg ? (
+              // Plain <img> (not next/image) to avoid domain whitelist config.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={avatarUrl}
+                alt=""
+                referrerPolicy="no-referrer"
+                onError={() => setImgError(true)}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <span className="flex h-full w-full items-center justify-center bg-[#1A9E9E] text-sm font-bold text-white">
+                {initial}
+              </span>
+            )}
+          </button>
+
+          {menuOpen && (
+            <div
+              role="menu"
+              className="absolute right-0 top-12 z-30 w-52 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5"
+            >
+              <div className="border-b border-slate-100 px-3.5 py-2.5">
+                <div className="truncate text-xs font-semibold text-slate-700">
+                  {name || "Afiliator"}
+                </div>
+                {email && (
+                  <div className="truncate text-[11px] text-slate-400">{email}</div>
+                )}
+              </div>
+              <button
+                role="menuitem"
+                onClick={() => {
+                  setMenuOpen(false);
+                  onLogout();
+                }}
+                disabled={loggingOut}
+                className="flex w-full items-center gap-2 px-3.5 py-2.5 text-left text-xs font-semibold text-slate-600 transition hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50"
+              >
+                {loggingOut ? (
+                  <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-slate-400 border-t-transparent" />
+                ) : (
+                  <LogOut className="h-3.5 w-3.5" />
+                )}
+                Keluar
+              </button>
+            </div>
           )}
-          Keluar
-        </button>
+        </div>
       </div>
     </header>
   );
