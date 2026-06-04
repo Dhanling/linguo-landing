@@ -7,6 +7,7 @@ import {
   ArrowRight,
   X,
   ChevronRight,
+  ChevronDown,
   Check,
   Loader2,
   Lock,
@@ -113,6 +114,25 @@ function Centered({ children }: { children: ReactNode }) {
   );
 }
 
+// [linguo-patch:lms-switch-perf-v1] block → step (dipakai fetch utama & prefetch)
+function buildSteps(blocks: Block[]): Step[] {
+  const st: Step[] = [];
+  blocks.forEach((b) => {
+    if (b.type === "quiz") {
+      const qs = (b.lms_quiz_questions || []).slice().sort((a, c) => a.sort_order - c.sort_order);
+      qs.forEach((q, i) =>
+        st.push({ kind: "quiz", block: b, q, qIdx: i, qTotal: qs.length, label: `Kuis ${i + 1}` })
+      );
+    } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
+    else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
+    else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
+    else st.push({ kind: "logic", block: b, label: "Materi" });
+  });
+  // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai
+  if (st.length > 0) st.push({ kind: "done", label: "Selesai" });
+  return st;
+}
+
 export default function LessonPlayer({
   lessonId,
   onBack,
@@ -140,16 +160,77 @@ export default function LessonPlayer({
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
+  // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi + prefetch tetangga → switch instan
+  const contentCacheRef = useRef<Map<string, { les: any; steps: Step[]; locked: boolean }>>(new Map());
+  const prefetchingRef = useRef<Set<string>>(new Set());
+  const sibRef = useRef<{ id: string; title: string; sort_order: number }[]>([]);
+  const entRef = useRef(false);
+  // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
+  const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
+
+  // [linguo-patch:lms-switch-perf-v1] prefetch sesi sebelum/sesudah (1 modul) ke cache, background
+  function prefetchNeighbors(
+    sibList: { id: string; title: string; sort_order: number }[],
+    curId: string,
+    ent: boolean
+  ) {
+    const idx = sibList.findIndex((s) => s.id === curId);
+    if (idx < 0) return;
+    [sibList[idx + 1], sibList[idx - 1]].forEach((sib) => {
+      if (!sib) return;
+      if (contentCacheRef.current.has(sib.id) || prefetchingRef.current.has(sib.id)) return;
+      prefetchingRef.current.add(sib.id);
+      (async () => {
+        try {
+          const { data: les } = await supabase
+            .from("lms_lessons")
+            .select("id,title,est_minutes,is_preview,module_id,sort_order")
+            .eq("id", sib.id)
+            .maybeSingle();
+          if (!les) return;
+          const isLocked = !les.is_preview && !ent;
+          let steps: Step[] = [];
+          if (!isLocked) {
+            const { data: blks } = await supabase
+              .from("lms_blocks")
+              .select(
+                "id,type,content,media_url,sort_order, lms_quiz_questions(id,type,prompt,options,answer,sort_order)"
+              )
+              .eq("lesson_id", les.id)
+              .order("sort_order");
+            steps = buildSteps((blks || []) as Block[]);
+          }
+          contentCacheRef.current.set(sib.id, { les, steps, locked: isLocked });
+        } catch {
+          /* prefetch best-effort */
+        } finally {
+          prefetchingRef.current.delete(sib.id);
+        }
+      })();
+    });
+  }
 
   useEffect(() => {
     // [linguo-patch:lms-lesson-switch-v1] cancellation guard: fetch sesi lama jangan nimpa state sesi baru kalau user klik cepet
     let cancelled = false;
+    setStepIdx(0);
+    setAnswers({});
+    setShowText({});
+    setDrawerOpen(false);
+    // [linguo-patch:lms-switch-perf-v1] cache hit (sesi yg udah di-prefetch / dibuka) → tampil instan, tanpa spinner & tanpa re-fetch
+    const cached = contentCacheRef.current.get(lessonId);
+    if (cached && cached.les?.module_id === mod?.id) {
+      setLesson(cached.les);
+      setLocked(cached.locked);
+      setSteps(cached.steps);
+      setCompleted(progressMap[cached.les.id] === "completed");
+      setLoading(false);
+      bootedRef.current = true;
+      prefetchNeighbors(sibRef.current, lessonId, entRef.current);
+      return;
+    }
     (async () => {
       setLoading(true);
-      setStepIdx(0);
-      setAnswers({});
-      setShowText({});
-      setDrawerOpen(false);
       try {
         const {
           data: { user },
@@ -178,6 +259,17 @@ export default function LessonPlayer({
         if (cancelled) return;
         setMod(m);
 
+        // [linguo-patch:lms-switch-level-v1] ambil semua modul dalam course (buat ganti level di header sidebar)
+        if (m?.course_id) {
+          const { data: mods } = await supabase
+            .from("lms_modules")
+            .select("id,cefr_label,title")
+            .eq("course_id", m.course_id)
+            .order("cefr_label");
+          if (cancelled) return;
+          setModules(((mods as any[] | null) || []) as { id: string; cefr_label: string; title: string }[]);
+        }
+
         let ent = false;
         if (m?.course_id) {
           try {
@@ -190,7 +282,9 @@ export default function LessonPlayer({
         if (cancelled) return;
         const isLocked = !les.is_preview && !ent;
         setLocked(isLocked);
+        entRef.current = ent; // [linguo-patch:lms-switch-perf-v1] dipakai prefetch untuk hitung lock tetangga
 
+        let computedSteps: Step[] = [];
         if (!isLocked) {
           const { data: blks } = await supabase
             .from("lms_blocks")
@@ -200,40 +294,11 @@ export default function LessonPlayer({
             .eq("lesson_id", les.id)
             .order("sort_order");
           if (cancelled) return;
-          const blocks = (blks || []) as Block[];
-
-          // tiap block -> 1 step. quiz dipecah per-soal.
-          const st: Step[] = [];
-          blocks.forEach((b) => {
-            if (b.type === "quiz") {
-              const qs = (b.lms_quiz_questions || [])
-                .slice()
-                .sort((a, c) => a.sort_order - c.sort_order);
-              qs.forEach((q, i) =>
-                st.push({
-                  kind: "quiz",
-                  block: b,
-                  q,
-                  qIdx: i,
-                  qTotal: qs.length,
-                  label: `Kuis ${i + 1}`,
-                })
-              );
-            } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
-            else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
-            else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
-            else st.push({ kind: "logic", block: b, label: "Materi" });
-          });
-          // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai (cegah confetti palsu)
-          if (st.length > 0) {
-            st.push({ kind: "done", label: "Selesai" });
-            setSteps(st);
-          } else {
-            setSteps([]);
-          }
-        } else {
-          setSteps([]);
+          computedSteps = buildSteps((blks || []) as Block[]);
         }
+        setSteps(computedSteps);
+        // [linguo-patch:lms-switch-perf-v1] simpan konten ke cache → re-visit / balik sesi instan
+        contentCacheRef.current.set(les.id, { les, steps: computedSteps, locked: isLocked });
 
         // [linguo-patch:lms-lesson-sidenav-v1] daftar sesi tetangga (1 modul) + progress batch
         const { data: sibs } = await supabase
@@ -248,6 +313,7 @@ export default function LessonPlayer({
           sort_order: number;
         }[];
         setSiblings(sibList);
+        sibRef.current = sibList; // [linguo-patch:lms-switch-perf-v1]
 
         const pm: Record<string, string> = {};
         const sibIds = sibList.map((s) => s.id);
@@ -264,6 +330,8 @@ export default function LessonPlayer({
         }
         setProgressMap(pm);
         setCompleted(pm[les.id] === "completed");
+        // [linguo-patch:lms-switch-perf-v1] warm-up sesi tetangga di background → klik "Lanjut"/sesi sebelah instan
+        if (!cancelled) prefetchNeighbors(sibList, les.id, ent);
       } finally {
         // [linguo-patch:lms-lesson-switch-v1] selalu matiin loading + tandai udah pernah boot (kecuali fetch ke-cancel)
         if (!cancelled) {
@@ -418,6 +486,8 @@ export default function LessonPlayer({
           progressMap={progressMap}
           modTitle={mod?.title || "Materi"}
           cefr={mod?.cefr_label || "A1"}
+          modules={modules}
+          currentModuleId={mod?.id}
           onOpen={onOpenLesson}
           onCollapse={() => setNavOpen(false)}
         />
@@ -606,6 +676,8 @@ export default function LessonPlayer({
               progressMap={progressMap}
               modTitle={mod?.title || "Materi"}
               cefr={mod?.cefr_label || "A1"}
+              modules={modules}
+              currentModuleId={mod?.id}
               onOpen={onOpenLesson}
               onCollapse={() => setDrawerOpen(false)}
               isDrawer
@@ -900,6 +972,8 @@ function SessionIndex({
   progressMap,
   modTitle,
   cefr,
+  modules,
+  currentModuleId,
   onOpen,
   onCollapse,
   isDrawer = false,
@@ -909,27 +983,110 @@ function SessionIndex({
   progressMap: Record<string, string>;
   modTitle: string;
   cefr: string;
+  modules?: { id: string; cefr_label: string; title: string }[];
+  currentModuleId?: string | null;
   onOpen: (id: string) => void;
   onCollapse: () => void;
   isDrawer?: boolean;
 }) {
+  // [linguo-patch:lms-switch-level-v1] dropdown ganti level (modul lain dalam course yang sama)
+  const [levelOpen, setLevelOpen] = useState(false);
+  const [switchingMod, setSwitchingMod] = useState(false);
+  const mods = modules || [];
+  const canSwitch = mods.length > 0;
+
+  async function pickModule(mId: string) {
+    if (mId === currentModuleId) {
+      setLevelOpen(false);
+      return;
+    }
+    setSwitchingMod(true);
+    try {
+      const { data: first } = await supabase
+        .from("lms_lessons")
+        .select("id")
+        .eq("module_id", mId)
+        .order("sort_order")
+        .limit(1)
+        .maybeSingle();
+      if (first?.id) onOpen(first.id);
+    } catch {
+      /* noop */
+    } finally {
+      setSwitchingMod(false);
+      setLevelOpen(false);
+    }
+  }
+
   return (
     <div className="flex h-full w-72 flex-col bg-white">
-      <div className="flex items-start justify-between gap-2 border-b border-slate-100 px-4 py-4">
-        <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
-            {cefr} · Daftar sesi
-          </p>
-          <p className="mt-0.5 truncate text-[13px] font-extrabold text-slate-900">{modTitle}</p>
+      <div className="relative border-b border-slate-100 px-4 py-4">
+        <div className="flex items-start justify-between gap-2">
+          <button
+            type="button"
+            onClick={() => canSwitch && setLevelOpen((o) => !o)}
+            className={`min-w-0 flex-1 text-left ${canSwitch ? "cursor-pointer" : "cursor-default"}`}
+            aria-label="Ganti level"
+          >
+            <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+              {cefr} · Daftar sesi
+            </p>
+            <p className="mt-0.5 flex items-center gap-1 text-[13px] font-extrabold text-slate-900">
+              <span className="truncate">{modTitle}</span>
+              {canSwitch && (
+                <ChevronDown
+                  className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${levelOpen ? "rotate-180" : ""}`}
+                />
+              )}
+            </p>
+          </button>
+          <button
+            onClick={onCollapse}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+            title={isDrawer ? "Tutup" : "Sembunyikan"}
+            aria-label={isDrawer ? "Tutup daftar sesi" : "Sembunyikan daftar sesi"}
+          >
+            {isDrawer ? <X className="h-5 w-5" /> : <ArrowLeft className="h-4 w-4" />}
+          </button>
         </div>
-        <button
-          onClick={onCollapse}
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
-          title={isDrawer ? "Tutup" : "Sembunyikan"}
-          aria-label={isDrawer ? "Tutup daftar sesi" : "Sembunyikan daftar sesi"}
-        >
-          {isDrawer ? <X className="h-5 w-5" /> : <ArrowLeft className="h-4 w-4" />}
-        </button>
+
+        {levelOpen && canSwitch && (
+          <div className="absolute left-3 right-3 top-full z-30 mt-1 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_50px_-18px_rgba(18,23,43,0.45)]">
+            <p className="px-3 pb-1 pt-3 text-[10px] font-bold uppercase tracking-wide text-slate-400">
+              Pilih level
+            </p>
+            <div className="max-h-[50vh] overflow-y-auto pb-1">
+              {mods.map((m) => {
+                const active = m.id === currentModuleId;
+                return (
+                  <button
+                    key={m.id}
+                    disabled={switchingMod}
+                    onClick={() => pickModule(m.id)}
+                    className={`flex w-full items-center gap-2 px-3 py-2.5 text-left transition disabled:opacity-60 ${
+                      active ? "bg-[#16796E]/10" : "hover:bg-[#F5F6F8]"
+                    }`}
+                  >
+                    <span
+                      className="inline-flex h-6 shrink-0 items-center justify-center rounded-md px-1.5 text-[10px] font-extrabold"
+                      style={active ? { background: TEAL, color: "#fff" } : { background: "rgba(22,121,110,0.10)", color: TEAL }}
+                    >
+                      {m.cefr_label}
+                    </span>
+                    <span
+                      className={`min-w-0 flex-1 truncate text-[12.5px] font-bold ${
+                        active ? "text-[#0F5A52]" : "text-slate-700"
+                      }`}
+                    >
+                      {m.title}
+                    </span>
+                    {active && <Check className="h-4 w-4 shrink-0" style={{ color: TEAL }} />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
       <div className="flex-1 overflow-y-auto px-2 py-3">
         {siblings.length === 0 ? (
