@@ -15,7 +15,11 @@ export default function LessonPage() {
 
   return (
     <StudentShell active="materi" onTabChange={goTab}>
-      <LessonPlayer lessonId={lessonId} onBack={() => router.push("/akun?menu=materi")} />
+      <LessonPlayer
+        lessonId={lessonId}
+        onBack={() => router.push("/akun?menu=materi")}
+        onOpenLesson={(id) => router.push(`/akun/belajar/${id}`)}
+      />
     </StudentShell>
   );
 }
