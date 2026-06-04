@@ -317,26 +317,11 @@
     <div class="divider"></div>
 
     <!-- POSISI -->
-    <div class="sec"><span class="num">3</span><h3>Posisi &amp; Ketersediaan</h3></div>
+    <div class="sec"><span class="num">3</span><h3>Posisi</h3></div>
     <div class="group">
       <label>Divisi yang Dilamar <span class="req">*</span></label>
       <select id="position">
         <option value="">&mdash; Pilih divisi &mdash;</option>
-      </select>
-    </div>
-    <div class="group">
-      <label>Kapan Bisa Mulai <span class="hint">opsional</span></label>
-      <input type="date" id="startDate">
-    </div>
-    <div class="group">
-      <label>Ketersediaan Waktu <span class="hint">opsional</span></label>
-      <select id="commitment">
-        <option value="">&mdash; Pilih &mdash;</option>
-        <option value="Full-time (WFO)">Full-time (WFO)</option>
-        <option value="Full-time (Remote)">Full-time (Remote)</option>
-        <option value="Part-time (WFO)">Part-time (WFO)</option>
-        <option value="Part-time (Remote)">Part-time (Remote)</option>
-        <option value="Fleksibel">Fleksibel</option>
       </select>
     </div>
 
@@ -411,7 +396,7 @@ const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 const BATCH_LABEL = "Intern Batch Juli 2026";
 // EDIT divisi yang dibuka batch ini:
 const POSITIONS = [
-  "Social Media & KOL Outreach",
+  "KOL Specialist",
   "Content Creator / Desain",
   "Kurikulum & Akademik",
   "Admin & Operasional",
@@ -445,8 +430,6 @@ async function submitForm() {
   const eduStatus    = v("eduStatus");
   const semester     = v("semester");
   const position     = v("position");
-  const startDate    = v("startDate");
-  const commitment   = v("commitment");
   let   cvUrl        = v("cvUrl");
   let   portfolioUrl = v("portfolioUrl");
   const motivation   = v("motivation");
@@ -478,8 +461,6 @@ async function submitForm() {
     edu_status:    eduStatus || null,
     semester:      semester || null,
     position:      position,
-    start_date:    startDate || null,
-    commitment:    commitment || null,
     cv_url:        cvUrl,
     portfolio_url: portfolioUrl || null,
     motivation:    motivation,
@@ -528,9 +509,9 @@ function spawnConfetti() {
 
 function resetForm() {
   document.getElementById("successModal").classList.remove("open");
-  ["fullName","email","whatsapp","domicile","university","major","semester","startDate","cvUrl","portfolioUrl","motivation","experience"]
+  ["fullName","email","whatsapp","domicile","university","major","semester","cvUrl","portfolioUrl","motivation","experience"]
     .forEach((id) => { document.getElementById(id).value = ""; });
-  ["eduStatus","position","commitment","source"]
+  ["eduStatus","position","source"]
     .forEach((id) => { document.getElementById(id).selectedIndex = 0; });
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
