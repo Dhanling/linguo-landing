@@ -3402,11 +3402,17 @@ export default function AkunPage() {
                         </main>
                       </div>
                     ) : (
-                      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:rounded-none lg:border-0 lg:shadow-none">
-                        <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                        <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
-                        <p className="mt-1 text-[12px] font-medium text-gray-400">Daftar kelas dulu untuk akses sesi &amp; materi · atau cek tab Jelajahi Bahasa</p>
-                        <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
+                      /* [linguo-patch:materi-empty-subtabs-v1] empty Kelas Live wajib tetep render MateriTopBar — kalau ngga, sub-tab (Belajar Mandiri / Jelajahi Bahasa) ilang & user e-learning ke-trap di layar kosong */
+                      <div className="flex flex-col lg:min-h-0 lg:flex-1">
+                        {MateriTopBar}
+                        <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
+                          <div className="w-full max-w-md rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:border-0 lg:bg-transparent lg:shadow-none">
+                            <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                            <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
+                            <p className="mt-1 text-[12px] font-medium text-gray-400">Punya paket e-learning? Buka tab <strong>Belajar Mandiri</strong> di atas. Atau daftar kelas live di bawah.</p>
+                            <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
+                          </div>
+                        </div>
                       </div>
                     ))}
 
