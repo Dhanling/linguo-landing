@@ -4,6 +4,65 @@ const XENDIT_WEBHOOK_TOKEN = process.env.XENDIT_WEBHOOK_TOKEN!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
+// ── lms-subscription-v1: aktivasi access-pass saat invoice PAID ──────────────
+// Dipanggil hanya saat status === "PAID". Match by invoice id (subscription
+// tidak punya row di `leads`). Non-fatal: kalau invoice ini bukan subscription
+// (mis. lead biasa), lookup balik kosong → skip diam-diam.
+async function activateLmsSubscription(invoiceId: string): Promise<void> {
+  try {
+    // Ambil row pending buat tau plan-nya (durasi dihitung dari plan).
+    const getRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/lms_subscriptions?xendit_invoice_id=eq.${invoiceId}&status=eq.pending&select=id,plan&limit=1`,
+      {
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
+      }
+    );
+    if (!getRes.ok) {
+      console.error("Sub lookup failed:", await getRes.text());
+      return;
+    }
+    const rows = await getRes.json();
+    const sub = Array.isArray(rows) ? rows[0] : null;
+    if (!sub?.id) return; // bukan invoice subscription — skip
+
+    const now = new Date();
+    const addMonths = (m: number) => {
+      const d = new Date(now);
+      d.setMonth(d.getMonth() + m);
+      return d.toISOString();
+    };
+    let expiresAt: string | null = null;
+    if (sub.plan === "1m") expiresAt = addMonths(1);
+    else if (sub.plan === "6m") expiresAt = addMonths(6);
+    else if (sub.plan === "12m") expiresAt = addMonths(12);
+    else if (sub.plan === "lifetime") expiresAt = null; // akses selamanya
+
+    const patchRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/lms_subscriptions?id=eq.${sub.id}&status=eq.pending`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+        body: JSON.stringify({
+          status: "active",
+          started_at: now.toISOString(),
+          expires_at: expiresAt,
+        }),
+      }
+    );
+    if (!patchRes.ok) {
+      console.error("Sub activation failed:", await patchRes.text());
+    } else {
+      console.log(`LMS subscription activated: ${sub.id} (plan=${sub.plan})`);
+    }
+  } catch (e) {
+    console.error("activateLmsSubscription error (non-fatal):", e);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Verify webhook token
@@ -18,7 +77,7 @@ export async function POST(req: NextRequest) {
 
     console.log(`Webhook received: ${external_id} → ${status}`);
 
-    // 2. Update lead in Supabase
+    // 2. Update lead in Supabase (subscription tidak punya lead → 0 rows, aman)
     const updateData: Record<string, unknown> = {
       payment_status: status, // PAID, EXPIRED, etc.
       xendit_invoice_id: id,
@@ -50,8 +109,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to update" }, { status: 500 });
     }
 
+    // 2b. [SUBSCRIPTION] Aktivasi access-pass LMS kalau invoice ini subscription.
+    if (status === "PAID") {
+      await activateLmsSubscription(id);
+    }
+
     // 3. TODO: Send confirmation email (Resend) — next session
-    // 4. TODO [SUBSCRIPTION]: di sini nanti tambahin aktivasi lms_subscriptions (lihat desain handoff)
 
     return NextResponse.json({ success: true });
   } catch (error) {

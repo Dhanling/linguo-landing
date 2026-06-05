@@ -587,9 +587,38 @@ export default function LessonPlayer({
           // [linguo-patch:lms-unlock-panel-v1] sesi terkunci → panel Unlock full access (kartu harga); index sesi kiri tetap kelihatan
           <UnlockFullAccess
             language={mod?.language || undefined}
-            onSelectPlan={() => {
-              // TODO[lms-unlock-panel-v1]: ganti ke checkout Xendit setelah SKU per-bahasa dikonfirmasi
-              window.location.href = "/akun";
+            onSelectPlan={async (plan) => {
+              // [linguo-patch:lms-checkout-v1] checkout Xendit subscription single_language (harga server-side, anti-tamper)
+              try {
+                const {
+                  data: { user },
+                } = await supabase.auth.getUser();
+                if (!user) {
+                  window.location.href = "/akun";
+                  return;
+                }
+                const res = await fetch("/api/create-invoice", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    kind: "lms_subscription",
+                    scope: "single_language",
+                    language: mod?.language,
+                    plan,
+                    user_id: user.id,
+                    email: user.email,
+                  }),
+                });
+                const data = await res.json();
+                if (res.ok && data?.invoice_url) {
+                  window.location.href = data.invoice_url;
+                } else {
+                  alert(data?.error || "Gagal membuat invoice. Coba lagi ya.");
+                }
+              } catch (e) {
+                console.error("LMS checkout error:", e);
+                alert("Terjadi kesalahan saat membuat invoice. Coba lagi ya.");
+              }
             }}
           />
         ) : emptyContent ? (

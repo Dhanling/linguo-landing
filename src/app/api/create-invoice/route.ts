@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -29,9 +30,144 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
   "ebook-all-en":     { amount: 599000, description: "E-Book All-Access - 20 bahasa (Edisi English)" },
 };
 
+// ── lms-subscription-v1 ──────────────────────────────────────────────────
+// Checkout akses LMS (access-pass sekali bayar). SKU GENERIK: 1 endpoint, tanpa
+// row produk per kombinasi bahasa×plan. Harga DIHITUNG server-side dari
+// lms-pricing.ts → client tidak boleh kirim `amount` (anti-tamper).
+// Scope: SAAT INI hanya `single_language`. `all_access` belum dijual (harga
+// belum diputuskan di lms-pricing.ts) → ditolak 400. Untuk mengaktifkan nanti:
+// tambah harga all_access di lms-pricing.ts lalu lepas guard scope di bawah.
+async function handleLmsSubscription(body: Record<string, unknown>): Promise<NextResponse> {
+  const scope = body.scope as string | undefined;
+  const language = (body.language as string | undefined) ?? null;
+  const planRaw = body.plan as string | undefined;
+  const userId = body.user_id as string | undefined;
+  const email = (body.email as string | undefined) || undefined;
+
+  if (!userId) {
+    return NextResponse.json({ error: "user_id wajib (harus login)" }, { status: 400 });
+  }
+
+  // GUARD: all_access belum tersedia — hanya single_language.
+  if (scope !== "single_language") {
+    return NextResponse.json(
+      { error: "Saat ini hanya tersedia akses per-bahasa." },
+      { status: 400 }
+    );
+  }
+  if (!language) {
+    return NextResponse.json(
+      { error: "language wajib untuk akses per-bahasa." },
+      { status: 400 }
+    );
+  }
+
+  const plan = getPlan(planRaw as LmsPlanId);
+  if (!plan) {
+    return NextResponse.json({ error: "Paket tidak valid." }, { status: 400 });
+  }
+
+  // Harga final dihitung server-side (anti-tamper).
+  const amount = hargaFinal(plan);
+
+  const externalId = `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+
+  // 1. INSERT lms_subscriptions status=pending (started_at/expires_at NULL dulu;
+  //    diisi saat webhook PAID).
+  const subRes = await fetch(`${SUPABASE_URL}/rest/v1/lms_subscriptions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+      Prefer: "return=representation",
+    },
+    body: JSON.stringify({
+      user_id: userId,
+      scope: "single_language",
+      language,
+      plan: plan.plan,
+      amount,
+      status: "pending",
+    }),
+  });
+
+  if (!subRes.ok) {
+    const err = await subRes.text();
+    console.error("Subscription insert error:", err);
+    return NextResponse.json({ error: `Gagal membuat langganan: ${err}` }, { status: 500 });
+  }
+
+  const subRows = await subRes.json();
+  const subId = Array.isArray(subRows) ? subRows[0]?.id : subRows?.id;
+  if (!subId) {
+    return NextResponse.json({ error: "Gagal membaca id langganan." }, { status: 500 });
+  }
+
+  // 2. Buat invoice Xendit.
+  const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${Buffer.from(XENDIT_SECRET_KEY + ":").toString("base64")}`,
+    },
+    body: JSON.stringify({
+      external_id: externalId,
+      amount,
+      ...(email ? { payer_email: email } : {}),
+      description: `Linguo LMS — Akses ${plan.label} (Bahasa ${language})`,
+      currency: "IDR",
+      invoice_duration: 86400,
+      success_redirect_url: `${BASE_URL}/akun`,
+      failure_redirect_url: `${BASE_URL}/akun`,
+      items: [
+        { name: `Akses LMS ${plan.label} — Bahasa ${language}`, quantity: 1, price: amount },
+      ],
+    }),
+  });
+
+  if (!xenditRes.ok) {
+    const err = await xenditRes.text();
+    console.error("Xendit error (subscription):", err);
+    let xfDetail = err;
+    try { const xj = JSON.parse(err); xfDetail = xj.message || xj.error_code || err; } catch {}
+    // Rollback row pending biar ga nyangkut tanpa invoice.
+    await fetch(`${SUPABASE_URL}/rest/v1/lms_subscriptions?id=eq.${subId}`, {
+      method: "DELETE",
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
+    });
+    return NextResponse.json({ error: `Gagal membuat invoice: ${xfDetail}` }, { status: 500 });
+  }
+
+  const invoice = await xenditRes.json();
+
+  // 3. Simpan invoice id ke row subscription. Webhook nanti match by xendit_invoice_id.
+  await fetch(`${SUPABASE_URL}/rest/v1/lms_subscriptions?id=eq.${subId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+    body: JSON.stringify({ xendit_invoice_id: invoice.id }),
+  });
+
+  return NextResponse.json({
+    invoice_url: invoice.invoice_url,
+    invoice_id: invoice.id,
+    external_id: externalId,
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // ── lms-subscription-v1: branch checkout akses LMS (sebelum PRODUCT_PRICES) ──
+    if (body?.kind === "lms_subscription") {
+      return await handleLmsSubscription(body);
+    }
+
     const { name, email, wa_number, language, program, level, productKey: directKey, addon } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
