@@ -10,6 +10,7 @@ import {
   ChevronDown,
   Check,
   Loader2,
+  Lock,
   BookOpen,
   Headphones,
   HelpCircle,
@@ -36,6 +37,11 @@ const YELLOW = "#F2CB05";
 // [linguo-patch:lms-a1-free-v1] semua level A1 (A1.1, A1.2, dst) gratis; gembok cuma A2-B2
 function isFreeLevel(cefrLabel?: string | null) {
   return (cefrLabel || "").toUpperCase().startsWith("A1");
+}
+
+// [linguo-patch:lms-level-tree-v1] major level dari cefr_label: "A1.2" -> "A1"
+function majorOf(cefrLabel?: string | null) {
+  return (cefrLabel || "").toUpperCase().split(".")[0];
 }
 
 // [linguo-patch:lms-vocab-audio-v1] tombol play per-kata di kartu Kosakata (baca item.audio)
@@ -152,6 +158,7 @@ export default function LessonPlayer({
   const [lesson, setLesson] = useState<any>(null);
   const [mod, setMod] = useState<any>(null);
   const [locked, setLocked] = useState(false);
+  const [entitled, setEntitled] = useState(false); // [linguo-patch:lms-level-tree-v1] buat badge gembok di dropdown level
   const [steps, setSteps] = useState<Step[]>([]);
   const [stepIdx, setStepIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -282,6 +289,7 @@ export default function LessonPlayer({
         if (cancelled) return;
         const isLocked = !isFreeLevel(m?.cefr_label) && !les.is_preview && !ent;
         setLocked(isLocked);
+        setEntitled(ent); // [linguo-patch:lms-level-tree-v1]
         entRef.current = ent; // [linguo-patch:lms-switch-perf-v1] dipakai prefetch untuk hitung lock tetangga
 
         let computedSteps: Step[] = [];
@@ -472,6 +480,7 @@ export default function LessonPlayer({
           cefr={mod?.cefr_label || "A1"}
           modules={modules}
           currentModuleId={mod?.id}
+          entitled={entitled}
           onOpen={onOpenLesson}
           onCollapse={() => setNavOpen(false)}
         />
@@ -665,6 +674,7 @@ export default function LessonPlayer({
               cefr={mod?.cefr_label || "A1"}
               modules={modules}
               currentModuleId={mod?.id}
+              entitled={entitled}
               onOpen={onOpenLesson}
               onCollapse={() => setDrawerOpen(false)}
               isDrawer
@@ -961,6 +971,7 @@ function SessionIndex({
   cefr,
   modules,
   currentModuleId,
+  entitled = false,
   onOpen,
   onCollapse,
   isDrawer = false,
@@ -972,6 +983,7 @@ function SessionIndex({
   cefr: string;
   modules?: { id: string; cefr_label: string; title: string }[];
   currentModuleId?: string | null;
+  entitled?: boolean;
   onOpen: (id: string) => void;
   onCollapse: () => void;
   isDrawer?: boolean;
@@ -981,6 +993,17 @@ function SessionIndex({
   const [switchingMod, setSwitchingMod] = useState(false);
   const mods = modules || [];
   const canSwitch = mods.length > 0;
+
+  // [linguo-patch:lms-level-tree-v1] dropdown 2 tingkat: major (A1/A2/B1/B2) -> sub-level (A1.1, A1.2, ...)
+  const majors: string[] = [];
+  mods.forEach((m) => {
+    const mj = majorOf(m.cefr_label);
+    if (mj && !majors.includes(mj)) majors.push(mj);
+  });
+  const [expandedMajor, setExpandedMajor] = useState<string | null>(majorOf(cefr));
+  useEffect(() => {
+    setExpandedMajor(majorOf(cefr));
+  }, [cefr]);
 
   async function pickModule(mId: string) {
     if (mId === currentModuleId) {
@@ -1043,32 +1066,89 @@ function SessionIndex({
               Pilih level
             </p>
             <div className="max-h-[50vh] overflow-y-auto pb-1">
-              {mods.map((m) => {
-                const active = m.id === currentModuleId;
+              {majors.map((maj) => {
+                const subs = mods.filter((m) => majorOf(m.cefr_label) === maj);
+                const majLocked = !isFreeLevel(maj) && !entitled;
+                const expanded = expandedMajor === maj;
                 return (
-                  <button
-                    key={m.id}
-                    disabled={switchingMod}
-                    onClick={() => pickModule(m.id)}
-                    className={`flex w-full items-center gap-2 px-3 py-2.5 text-left transition disabled:opacity-60 ${
-                      active ? "bg-[#16796E]/10" : "hover:bg-[#F5F6F8]"
-                    }`}
-                  >
-                    <span
-                      className="inline-flex h-6 shrink-0 items-center justify-center rounded-md px-1.5 text-[10px] font-extrabold"
-                      style={active ? { background: TEAL, color: "#fff" } : { background: "rgba(22,121,110,0.10)", color: TEAL }}
+                  <div key={maj}>
+                    <button
+                      type="button"
+                      onClick={() => setExpandedMajor(expanded ? null : maj)}
+                      className="flex w-full items-center gap-2 px-3 py-2.5 text-left transition hover:bg-[#F5F6F8]"
                     >
-                      {m.cefr_label}
-                    </span>
-                    <span
-                      className={`min-w-0 flex-1 truncate text-[12.5px] font-bold ${
-                        active ? "text-[#0F5A52]" : "text-slate-700"
-                      }`}
-                    >
-                      {m.title}
-                    </span>
-                    {active && <Check className="h-4 w-4 shrink-0" style={{ color: TEAL }} />}
-                  </button>
+                      <span
+                        className="inline-flex h-6 shrink-0 items-center justify-center rounded-md px-1.5 text-[10px] font-extrabold"
+                        style={
+                          majLocked
+                            ? { background: "#EEF0F3", color: "#9AA1AE" }
+                            : { background: "rgba(22,121,110,0.10)", color: TEAL }
+                        }
+                      >
+                        {maj}
+                      </span>
+                      <span
+                        className={`min-w-0 flex-1 text-[12.5px] font-bold ${
+                          majLocked ? "text-slate-400" : "text-slate-700"
+                        }`}
+                      >
+                        {subs.length} sub-level
+                      </span>
+                      {majLocked && <Lock className="h-3.5 w-3.5 shrink-0 text-slate-400" />}
+                      <ChevronDown
+                        className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${
+                          expanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {expanded &&
+                      subs.map((m) => {
+                        const active = m.id === currentModuleId;
+                        const subLocked = !isFreeLevel(m.cefr_label) && !entitled;
+                        return (
+                          <button
+                            key={m.id}
+                            disabled={switchingMod}
+                            onClick={() => pickModule(m.id)}
+                            className={`flex w-full items-center gap-2 py-2.5 pl-7 pr-3 text-left transition disabled:opacity-60 ${
+                              active ? "bg-[#16796E]/10" : "hover:bg-[#F5F6F8]"
+                            }`}
+                          >
+                            <span
+                              className={`inline-flex h-6 shrink-0 items-center justify-center rounded-md px-1.5 text-[10px] font-extrabold ${
+                                subLocked ? "grayscale" : ""
+                              }`}
+                              style={
+                                active
+                                  ? { background: TEAL, color: "#fff" }
+                                  : subLocked
+                                    ? { background: "#EEF0F3", color: "#9AA1AE" }
+                                    : { background: "rgba(22,121,110,0.10)", color: TEAL }
+                              }
+                            >
+                              {m.cefr_label}
+                            </span>
+                            <span
+                              className={`min-w-0 flex-1 truncate text-[12.5px] font-bold ${
+                                active
+                                  ? "text-[#0F5A52]"
+                                  : subLocked
+                                    ? "text-slate-400"
+                                    : "text-slate-700"
+                              }`}
+                            >
+                              {m.title}
+                            </span>
+                            {subLocked ? (
+                              <Lock className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                            ) : active ? (
+                              <Check className="h-4 w-4 shrink-0" style={{ color: TEAL }} />
+                            ) : null}
+                          </button>
+                        );
+                      })}
+                  </div>
                 );
               })}
             </div>
