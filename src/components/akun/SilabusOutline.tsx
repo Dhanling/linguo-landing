@@ -25,6 +25,8 @@ type Props = {
   showPlacementTest?: boolean;
   /** konteks render: "live" (kelas live, default) atau "selfpaced" (Belajar Mandiri) — ngubah copy empty-state modal */
   mode?: "live" | "selfpaced";
+  /** kalau ada → "Mulai belajar" buka overlay player (instan) lewat callback; kalau ngga → fallback navigate ke /akun/belajar/{id} */
+  onOpen?: (lessonId: string) => void;
 };
 
 type OpenSession = { s: Session; subCode: string; levelName: string };
@@ -56,13 +58,17 @@ export default function SilabusOutline({
   currentLevel,
   showPlacementTest = true,
   mode = "live",
+  onOpen,
 }: Props) {
   const [data, setData] = useState<Curriculum | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [openLevel, setOpenLevel] = useState<string | null>(null);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const [openSession, setOpenSession] = useState<OpenSession | null>(null);
-  const [lessonState, setLessonState] = useState<LessonState>({ status: "idle" });
+  // [linguo-patch:silabus-prefetch-lessons-v1] map sublevel→sesi (lessonId + meta) di-prefetch SEKALI → klik sesi = instan, no spinner per-klik
+  const [bySub, setBySub] = useState<
+    Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean }[]> | null
+  >(null);
   const [showOverview, setShowOverview] = useState(false); // [linguo-patch:silabus-overview-modal-v1]
 
   useEffect(() => {
@@ -91,58 +97,77 @@ export default function SilabusOutline({
     };
   }, [slug]);
 
-  // cari lms_lesson yg match (bahasa + sublevel + nomor sesi) saat modal kebuka
+  // [linguo-patch:silabus-prefetch-lessons-v1] prefetch SEKALI per slug (3 query di-batch) → resolve sesi instan dari map, ilangin spinner tiap klik
   useEffect(() => {
-    if (!openSession) {
-      setLessonState({ status: "idle" });
-      return;
-    }
     let alive = true;
-    setLessonState({ status: "loading" });
+    setBySub(null);
     (async () => {
       try {
-        const { data: mod } = await supabase
+        const { data: mods } = await supabase
           .from("lms_modules")
-          .select("id")
+          .select("id, cefr_label, sort_order")
           .ilike("language", slug)
-          .eq("cefr_label", openSession.subCode)
-          .order("sort_order")
-          .limit(1)
-          .maybeSingle();
-        if (!alive) return;
-        if (!mod) {
-          setLessonState({ status: "none" });
-          return;
-        }
-        const { data: lessons } = await supabase
-          .from("lms_lessons")
-          .select("id")
-          .eq("module_id", (mod as any).id)
           .order("sort_order");
         if (!alive) return;
-        const lesson = (lessons as any[] | null)?.[openSession.s.number - 1];
-        if (!lesson) {
-          setLessonState({ status: "none" });
+        const modList = (mods as any[]) || [];
+        if (modList.length === 0) {
+          setBySub({});
           return;
         }
-        const { data: blocks } = await supabase
-          .from("lms_blocks")
-          .select("type, lms_quiz_questions(id)")
-          .eq("lesson_id", lesson.id);
+
+        // modul pertama (sort_order terkecil) per cefr_label — samain perilaku query lama (.limit(1))
+        const modBySub: Record<string, string> = {};
+        modList.forEach((m: any) => {
+          if (!(m.cefr_label in modBySub)) modBySub[m.cefr_label] = m.id;
+        });
+        const subByModule: Record<string, string> = {};
+        Object.entries(modBySub).forEach(([sub, id]) => {
+          subByModule[id] = sub;
+        });
+        const moduleIds = Object.values(modBySub);
+
+        const { data: lessons } = await supabase
+          .from("lms_lessons")
+          .select("id, module_id, sort_order")
+          .in("module_id", moduleIds)
+          .order("sort_order");
         if (!alive) return;
-        const bl = (blocks as any[]) || [];
-        const quizCount = bl.reduce((a, b) => a + ((b.lms_quiz_questions || []).length), 0);
-        const hasAudio = bl.some((b) => b.type === "audio");
-        const hasMateri = bl.some((b) => b.type === "logic" || b.type === "vocab");
-        setLessonState({ status: "found", lessonId: lesson.id, quizCount, hasAudio, hasMateri });
+        const lessList = ((lessons as any[]) || []).slice().sort((a: any, b: any) => a.sort_order - b.sort_order);
+
+        // meta konten (quiz/audio/materi) di-batch SEKALI buat semua lesson
+        const allIds = lessList.map((l: any) => l.id);
+        const metaByLesson: Record<string, { quizCount: number; hasAudio: boolean; hasMateri: boolean }> = {};
+        if (allIds.length) {
+          const { data: blocks } = await supabase
+            .from("lms_blocks")
+            .select("lesson_id, type, lms_quiz_questions(id)")
+            .in("lesson_id", allIds);
+          if (!alive) return;
+          ((blocks as any[]) || []).forEach((b: any) => {
+            const e = (metaByLesson[b.lesson_id] =
+              metaByLesson[b.lesson_id] || { quizCount: 0, hasAudio: false, hasMateri: false });
+            e.quizCount += (b.lms_quiz_questions || []).length;
+            if (b.type === "audio") e.hasAudio = true;
+            if (b.type === "logic" || b.type === "vocab") e.hasMateri = true;
+          });
+        }
+
+        const map: Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean }[]> = {};
+        lessList.forEach((l: any) => {
+          const sub = subByModule[l.module_id];
+          if (!sub) return;
+          const m = metaByLesson[l.id] || { quizCount: 0, hasAudio: false, hasMateri: false };
+          (map[sub] = map[sub] || []).push({ lessonId: l.id, ...m });
+        });
+        if (alive) setBySub(map);
       } catch {
-        if (alive) setLessonState({ status: "none" });
+        if (alive) setBySub({});
       }
     })();
     return () => {
       alive = false;
     };
-  }, [openSession, slug]);
+  }, [slug]);
 
   if (state === "loading") {
     return (
@@ -166,6 +191,18 @@ export default function SilabusOutline({
       </div>
     );
   }
+
+  // [linguo-patch:silabus-prefetch-lessons-v1] resolve sesi dari map (sinkron, instan); cuma "loading" pas prefetch awal belum kelar
+  const lessonState: LessonState = !openSession
+    ? { status: "idle" }
+    : bySub == null
+    ? { status: "loading" }
+    : (() => {
+        const e = bySub[openSession.subCode]?.[openSession.s.number - 1];
+        return e
+          ? { status: "found", lessonId: e.lessonId, quizCount: e.quizCount, hasAudio: e.hasAudio, hasMateri: e.hasMateri }
+          : { status: "none" };
+      })();
 
   return (
     <div className="flex flex-col gap-4">
@@ -353,12 +390,21 @@ export default function SilabusOutline({
                     </p>
                   </div>
                 </div>
-                <a
-                  href={`/akun/belajar/${lessonState.lessonId}`}
-                  className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
-                >
-                  Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-                </a>
+                {onOpen ? (
+                  <button
+                    onClick={() => onOpen(lessonState.lessonId)}
+                    className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
+                  >
+                    Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                  </button>
+                ) : (
+                  <a
+                    href={`/akun/belajar/${lessonState.lessonId}`}
+                    className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#16796E] text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"
+                  >
+                    Mulai belajar <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+                  </a>
+                )}
               </div>
             ) : mode === "selfpaced" ? (
               <div className="mt-5 space-y-2">

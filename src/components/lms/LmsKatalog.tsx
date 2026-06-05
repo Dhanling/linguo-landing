@@ -291,6 +291,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
             languageLabel={selected.language}
             currentLevel="A1"
             mode="selfpaced"
+            onOpen={onOpen}
           />
         </div>
       </main>
