@@ -10,7 +10,6 @@ import {
   ChevronDown,
   Check,
   Loader2,
-  Lock,
   BookOpen,
   Headphones,
   HelpCircle,
@@ -23,6 +22,7 @@ import {
   Volume2,
   type LucideIcon,
 } from "lucide-react";
+import UnlockFullAccess from "./UnlockFullAccess";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -506,12 +506,6 @@ export default function LessonPlayer({
           </h1>
         </div>
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
-          <span
-            className="inline-flex h-9 items-center gap-1.5 rounded-full px-3 text-[12px] font-bold"
-            style={{ background: "rgba(242,203,5,0.16)", color: "#B9890A" }}
-          >
-            ★ +20 XP
-          </span>
           <button
             onClick={onBack}
             className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F5F6F8] hover:text-slate-700"
@@ -572,21 +566,14 @@ export default function LessonPlayer({
             <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
           </Centered>
         ) : locked ? (
-          // [linguo-patch:lms-locked-in-frame-v1] sesi terkunci — di dalam frame, index sesi kiri tetap kelihatan
-          <Centered>
-            <Lock className="h-8 w-8 text-slate-300" />
-            <h1 className="mt-3 text-lg font-bold text-slate-900">{curTitle}</h1>
-            <p className="mt-2 max-w-sm text-sm text-slate-500">
-              Sesi ini terkunci. Aktifkan akses paket untuk membuka seluruh materi.
-            </p>
-            <a
-              href="/akun"
-              className="mt-4 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
-              style={{ background: TEAL }}
-            >
-              Lihat akses
-            </a>
-          </Centered>
+          // [linguo-patch:lms-unlock-panel-v1] sesi terkunci → panel Unlock full access (kartu harga); index sesi kiri tetap kelihatan
+          <UnlockFullAccess
+            language={mod?.language || undefined}
+            onSelectPlan={() => {
+              // TODO[lms-unlock-panel-v1]: ganti ke checkout Xendit setelah SKU per-bahasa dikonfirmasi
+              window.location.href = "/akun";
+            }}
+          />
         ) : emptyContent ? (
           // [linguo-patch:lms-lesson-frame-v2] sesi belum ada konten — placeholder di dalam frame (sidebar tetap kelihatan)
           <Centered>
