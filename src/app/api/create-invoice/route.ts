@@ -70,8 +70,6 @@ async function handleLmsSubscription(body: Record<string, unknown>): Promise<Nex
   // Harga final dihitung server-side (anti-tamper).
   const amount = hargaFinal(plan);
 
-  const externalId = `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-
   // 1. INSERT lms_subscriptions status=pending (started_at/expires_at NULL dulu;
   //    diisi saat webhook PAID).
   const subRes = await fetch(`${SUPABASE_URL}/rest/v1/lms_subscriptions`, {
@@ -103,6 +101,11 @@ async function handleLmsSubscription(body: Record<string, unknown>): Promise<Nex
   if (!subId) {
     return NextResponse.json({ error: "Gagal membaca id langganan." }, { status: 500 });
   }
+
+  // external_id LOWERCASE + embed subId — supaya Edge Function webhook bisa route
+  // ke handleLmsSubscription (regex /^linguo-sub-([a-f0-9-]{36})-\d+$/).
+  // WAJIB dibuat SETELAH subId ada (dipakai sbg sumber id-nya).
+  const externalId = `linguo-sub-${subId}-${Date.now()}`;
 
   // 2. Buat invoice Xendit.
   const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
