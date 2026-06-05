@@ -523,6 +523,8 @@ export default function LessonPlayer({
             {curTitle}
           </h1>
         </div>
+        {/* [linguo-patch:lms-locked-hide-nav-v1] tombol close X disembunyiin saat layar locked (panah ← kiri-atas tetap ada sebagai jalan keluar) */}
+        {!locked && (
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
           <button
             onClick={onBack}
@@ -532,6 +534,7 @@ export default function LessonPlayer({
             <X className="h-5 w-5" />
           </button>
         </div>
+        )}
       </header>
 
       {/* STEPPER */}
@@ -658,7 +661,8 @@ export default function LessonPlayer({
       </main>
 
       {/* FOOTER */}
-      {!atDone && !switching && !emptyContent && (
+      {/* [linguo-patch:lms-locked-hide-nav-v1] footer nav (Sebelumnya/Lanjut/"Langkah") disembunyiin saat locked — ga ada step di layar pricing */}
+      {!locked && !atDone && !switching && !emptyContent && (
         <footer className="flex items-center justify-between gap-4 border-t border-slate-100 px-5 py-4 lg:px-8">
           <button
             onClick={prev}
