@@ -33,6 +33,11 @@ const supabase = createClient(
 const TEAL = "#16796E";
 const YELLOW = "#F2CB05";
 
+// [linguo-patch:lms-a1-free-v1] semua level A1 (A1.1, A1.2, dst) gratis; gembok cuma A2-B2
+function isFreeLevel(cefrLabel?: string | null) {
+  return (cefrLabel || "").toUpperCase().startsWith("A1");
+}
+
 // [linguo-patch:lms-vocab-audio-v1] tombol play per-kata di kartu Kosakata (baca item.audio)
 let _lpAudio: HTMLAudioElement | null = null;
 function playWordAudio(url?: string | null) {
@@ -168,7 +173,11 @@ export default function LessonPlayer({
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 
   // [linguo-patch:lms-switch-warm-module-v1] warm SEMUA sesi 1 modul ke cache dalam 2 query (1 lessons + 1 blocks batched pakai .in) → race window kecil banget, switch instan. Idempotent: skip sesi yg udah ke-cache. Ganti prefetch per-lesson lama (~22 request) jadi 2 request.
-  async function warmModule(moduleId: string | null | undefined, ent: boolean) {
+  async function warmModule(
+    moduleId: string | null | undefined,
+    ent: boolean,
+    cefrLabel?: string | null
+  ) {
     if (!moduleId) return;
     try {
       const { data: lessons } = await supabase
@@ -192,7 +201,7 @@ export default function LessonPlayer({
       });
       ls.forEach((l) => {
         if (contentCacheRef.current.has(l.id)) return;
-        const isLocked = !l.is_preview && !ent;
+        const isLocked = !isFreeLevel(cefrLabel) && !l.is_preview && !ent;
         const steps = isLocked ? [] : buildSteps(byLesson[l.id] || []);
         contentCacheRef.current.set(l.id, { les: l, steps, locked: isLocked });
       });
@@ -217,7 +226,7 @@ export default function LessonPlayer({
       setCompleted(progressMap[cached.les.id] === "completed");
       setLoading(false);
       bootedRef.current = true;
-      warmModule(cached.les?.module_id, entRef.current);
+      warmModule(cached.les?.module_id, entRef.current, mod?.cefr_label);
       return;
     }
     (async () => {
@@ -271,7 +280,7 @@ export default function LessonPlayer({
           } catch {}
         }
         if (cancelled) return;
-        const isLocked = !les.is_preview && !ent;
+        const isLocked = !isFreeLevel(m?.cefr_label) && !les.is_preview && !ent;
         setLocked(isLocked);
         entRef.current = ent; // [linguo-patch:lms-switch-perf-v1] dipakai prefetch untuk hitung lock tetangga
 
@@ -322,7 +331,7 @@ export default function LessonPlayer({
         setProgressMap(pm);
         setCompleted(pm[les.id] === "completed");
         // [linguo-patch:lms-switch-perf-v1] warm-up sesi tetangga di background → klik "Lanjut"/sesi sebelah instan
-        if (!cancelled) warmModule(les.module_id, ent);
+        if (!cancelled) warmModule(les.module_id, ent, m?.cefr_label);
       } finally {
         // [linguo-patch:lms-lesson-switch-v1] selalu matiin loading + tandai udah pernah boot (kecuali fetch ke-cancel)
         if (!cancelled) {
