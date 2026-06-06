@@ -2,8 +2,8 @@
 // linguo-patch:chat-widget-ai-wa-v1
 // linguo-patch:ling-polish-v2
 // linguo-patch:ling-chat-v3  — session id + nomor tiket + polling balasan admin (live take-over)
-// linguo-patch:ling-lesson-reposition-v1  — geser launcher ke atas di /akun/belajar biar ga nutupin tombol Selesaikan (di-fold-in ke v4)
 // linguo-patch:ling-chat-v4-redesign  — drawer UI: gradient header, avatar spin, WA strip, typing dots, composer pill, scrim blur. Semua wiring fungsional dipertahanin.
+// linguo-patch:ling-lesson-reposition-v2  — angkat launcher bubble di /akun/belajar biar ga nutupin tombol Selesaikan/Lanjut (panel drawer samping ga diutak-atik)
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -146,6 +146,10 @@ const CSS = `
 .lingw-powered b{color:var(--teal-deep);font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;}
 
 @media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}}
+
+/* [ling-lesson-reposition-v2] di player LMS footer ada tombol Selesaikan/Lanjut di pojok kanan bawah → angkat launcher biar ga ketutup. Panel drawer samping ga diubah. */
+.lingw-lesson .lingw-launcher{bottom:108px;}
+@media (max-width:560px){.lingw-lesson .lingw-launcher{bottom:100px;}}
 `;
 
 export default function ChatWidget() {
@@ -161,8 +165,7 @@ export default function ChatWidget() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const adminCursor = useRef(0);
 
-  // [ling-lesson-reposition-v1] di /akun/belajar ada tombol "Selesaikan" di pojok kanan bawah.
-  // Angkat launcher ke atas cuma di route itu biar ga ketutup. Panel drawer full-height ga kena.
+  // [ling-lesson-reposition-v2] cuma di route player LMS, naikin launcher biar clear tombol Selesaikan/Lanjut
   const pathname = usePathname();
   const onLesson = pathname === "/akun/belajar";
 
@@ -313,14 +316,13 @@ export default function ChatWidget() {
   const lastIsAssistant = messages[messages.length - 1]?.role === "assistant";
 
   return (
-    <div className="lingw">
+    <div className={"lingw" + (onLesson ? " lingw-lesson" : "")}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       <button
         aria-label="Buka chat Linguo"
         onClick={() => setOpen(true)}
         className={"lingw-launcher" + (open ? " hidden" : "")}
-        style={onLesson ? { bottom: 96 } : undefined}
       >
         <span className="ping" />
         {IcChat}
