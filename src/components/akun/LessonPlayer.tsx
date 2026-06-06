@@ -200,6 +200,8 @@ export default function LessonPlayer({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [siblings, setSiblings] = useState<{ id: string; title: string; sort_order: number }[]>([]);
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
+  // [linguo-patch:lms-rail-accordion-v1] grup mana yg lagi kebuka di accordion langkah (Materi/Kuis/Selesai)
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
   // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan
@@ -447,6 +449,12 @@ export default function LessonPlayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [atDone]);
 
+  // [linguo-patch:lms-rail-accordion-v1] tiap pindah langkah, auto-buka grup langkah aktif
+  useEffect(() => {
+    const c = steps[stepIdx];
+    if (c) setOpenGroup(railGroupKey(c.kind));
+  }, [stepIdx, steps]);
+
   const next = () => setStepIdx((i) => Math.min(i + 1, steps.length - 1));
   const prev = () => setStepIdx((i) => Math.max(i - 1, 0));
 
@@ -576,85 +584,127 @@ export default function LessonPlayer({
       </header>
 
       {/* STEPPER */}
-      {/* [linguo-patch:lms-rail-group-v1] rail langkah dikelompokin: 📖 Materi | 📝 Kuis | 🎉 Selesai */}
+      {/* [linguo-patch:lms-rail-accordion-v1] langkah dipisah jadi accordion: 📖 Materi / 📝 Kuis / 🎉 Selesai (bisa di-collapse, gak nyampur) */}
       {!switching && !locked && !emptyContent && (
       <div className="bg-[#F5F6F8]/60 px-5 py-4 lg:px-8">
-        <div className="mx-auto flex max-w-[760px] flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-3">
+        <div className="mx-auto flex max-w-[760px] flex-col gap-2">
           {railGroups.map((g, gi2) => {
             const meta = RAIL_GROUP_META[g.key];
             const GroupIcon =
               g.key === "kuis" ? HelpCircle : g.key === "done" ? PartyPopper : BookOpen;
+            const total = g.items.length;
+            const doneCount = g.items.filter(({ gi }) => gi < stepIdx).length;
             const groupActive = g.items.some(({ gi }) => gi === stepIdx);
-            const groupDone = g.items.every(({ gi }) => gi < stepIdx);
+            const groupDone = doneCount === total;
             const lit = groupActive || groupDone;
+            const open = openGroup === g.key;
+            // grup "done" (Selesai) gak punya isi buat di-expand → header doang
+            const collapsible = g.key !== "done";
             return (
               <div
                 key={gi2}
-                className={`flex min-w-0 flex-col gap-1.5 ${
-                  g.key === "done" ? "shrink-0" : "flex-1"
-                }`}
+                className="overflow-hidden rounded-2xl border bg-white"
+                style={{
+                  borderColor: groupActive ? hexA(meta.color, 0.35) : "#EAECEF",
+                }}
               >
-                {/* label section */}
-                <div className="flex items-center gap-1.5 px-0.5">
-                  <GroupIcon
-                    className="h-3.5 w-3.5 shrink-0"
-                    style={{ color: lit ? meta.color : "#94a3b8" }}
-                  />
+                {/* header grup (klik buat buka/tutup) */}
+                <button
+                  type="button"
+                  onClick={() => collapsible && setOpenGroup(open ? null : g.key)}
+                  className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-left ${
+                    collapsible ? "transition hover:bg-[#F8F9FB]" : "cursor-default"
+                  }`}
+                >
                   <span
-                    className="text-[11px] font-extrabold uppercase tracking-wide"
-                    style={{ color: lit ? meta.color : "#94a3b8" }}
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
+                    style={{
+                      background: lit ? hexA(meta.color, 0.12) : "#F1F3F5",
+                      color: lit ? meta.color : "#94a3b8",
+                    }}
+                  >
+                    <GroupIcon className="h-4 w-4" />
+                  </span>
+                  <span
+                    className="text-[13px] font-extrabold uppercase tracking-wide"
+                    style={{ color: lit ? meta.color : "#64748b" }}
                   >
                     {meta.label}
                   </span>
-                  {g.key !== "done" && (
-                    <span className="text-[10px] font-bold text-slate-400">
-                      · {g.items.length}
+                  {collapsible && (
+                    <span className="text-[12px] font-bold text-slate-400">
+                      {doneCount}/{total}
                     </span>
                   )}
-                </div>
-                {/* baris lingkaran langkah */}
-                <div className="flex items-center gap-2">
-                  {g.items.map(({ s, gi }, j) => {
-                    const done = gi < stepIdx;
-                    const active = gi === stepIdx;
-                    return (
-                      <div
-                        key={gi}
-                        className={`flex items-center gap-2 ${
-                          j < g.items.length - 1 ? "flex-1" : ""
-                        }`}
-                      >
+                  <span className="flex-1" />
+                  {/* mini progress bar */}
+                  {collapsible && (
+                    <span className="hidden h-1.5 w-24 overflow-hidden rounded-full bg-[#EEF0F2] sm:block">
+                      <span
+                        className="block h-full rounded-full transition-all"
+                        style={{
+                          width: `${total ? (doneCount / total) * 100 : 0}%`,
+                          background: meta.color,
+                        }}
+                      />
+                    </span>
+                  )}
+                  {collapsible &&
+                    (open ? (
+                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+                    ))}
+                  {!collapsible && groupActive && (
+                    <Check className="h-4 w-4 shrink-0" style={{ color: meta.color }} />
+                  )}
+                </button>
+
+                {/* isi grup: chip langkah (wrap, gak overflow) */}
+                {collapsible && open && (
+                  <div className="flex flex-wrap gap-2 border-t border-slate-100 px-3.5 py-3">
+                    {g.items.map(({ s, gi }) => {
+                      const dn = gi < stepIdx;
+                      const ac = gi === stepIdx;
+                      const reachable = gi <= stepIdx;
+                      return (
                         <button
-                          onClick={() => {
-                            if (gi <= stepIdx) setStepIdx(gi);
-                          }}
-                          disabled={gi > stepIdx}
-                          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[12px] font-extrabold transition"
-                          style={
-                            active
-                              ? {
-                                  background: meta.color,
-                                  color: "#fff",
-                                  boxShadow: `0 0 0 4px ${hexA(meta.color, 0.15)}`,
-                                }
-                              : done
-                              ? { background: hexA(meta.color, 0.15), color: meta.color }
-                              : { background: "#F5F6F8", color: "#94a3b8" }
-                          }
+                          key={gi}
+                          onClick={() => reachable && setStepIdx(gi)}
+                          disabled={!reachable}
                           title={s.label}
+                          className="inline-flex items-center gap-2 rounded-xl px-2.5 py-1.5 text-left transition disabled:cursor-not-allowed"
+                          style={
+                            ac
+                              ? { background: hexA(meta.color, 0.12) }
+                              : reachable
+                              ? { background: "#F5F6F8" }
+                              : { background: "#FAFBFC", opacity: 0.55 }
+                          }
                         >
-                          {done ? <Check className="h-4 w-4" /> : gi + 1}
-                        </button>
-                        {j < g.items.length - 1 && (
                           <span
-                            className="h-1.5 flex-1 rounded-full"
-                            style={{ background: done ? meta.color : "#E8EAEE" }}
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+                            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold"
+                            style={
+                              ac
+                                ? { background: meta.color, color: "#fff" }
+                                : dn
+                                ? { background: hexA(meta.color, 0.18), color: meta.color }
+                                : { background: "#E8EAEE", color: "#94a3b8" }
+                            }
+                          >
+                            {dn ? <Check className="h-3.5 w-3.5" /> : gi + 1}
+                          </span>
+                          <span
+                            className="text-[12px] font-bold"
+                            style={{ color: ac ? meta.color : "#475569" }}
+                          >
+                            {s.label}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             );
           })}
