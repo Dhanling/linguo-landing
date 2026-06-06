@@ -1,6 +1,7 @@
 "use client";
 // linguo-patch:chat-widget-ai-wa-v1
-// linguo-patch:ling-polish-v2  — Plus Jakarta Sans (panel-only), follow-up chips, render markdown ringan
+// linguo-patch:ling-polish-v2
+// linguo-patch:ling-chat-v3  — session id + nomor tiket + polling balasan admin (live take-over)
 import { useState, useRef, useEffect } from "react";
 
 const TEAL = "#1A9E9E";
@@ -10,9 +11,9 @@ const GREETING =
   "Halo! 👋 Aku Ling, asisten Linguo.id. Mau tanya soal kelas bahasa, harga, jadwal, atau cara daftar? Tanya aja di sini 😊";
 const CHIPS = ["Lihat harga kelas", "Jadwal kelas reguler", "Coba trial gratis"];
 
-type Msg = { role: "user" | "assistant"; content: string };
+type Msg = { role: "user" | "assistant" | "admin"; content: string };
 
-// Render ringan: **tebal** -> <strong>, dan buang sisa tanda '*' (bullet/italic) biar ga muncul mentah
+// Render ringan: **tebal** -> <strong>, dan buang sisa tanda '*' (bullet/italic)
 function renderRich(text: string) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => {
     const m = /^\*\*([^*]+)\*\*$/.exec(part);
@@ -28,9 +29,31 @@ export default function ChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sessionId, setSessionId] = useState("");
+  const [ticket, setTicket] = useState<string | null>(null);
+  const [humanMode, setHumanMode] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const adminCursor = useRef(0);
 
-  // Task C: muat Plus Jakarta Sans sekali aja (khusus panel chat; ga ngubah font situs)
+  // session id persisten (per browser) — biar tiket nyambung kalau visitor balik lagi
+  useEffect(() => {
+    try {
+      const k = "linguo_chat_session";
+      let v = localStorage.getItem(k);
+      if (!v) {
+        v =
+          (typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : String(Date.now()) + Math.random().toString(16).slice(2));
+        localStorage.setItem(k, v);
+      }
+      setSessionId(v);
+    } catch {
+      /* localStorage diblok: jalan tanpa logging */
+    }
+  }, []);
+
+  // muat Plus Jakarta Sans sekali (panel-only)
   useEffect(() => {
     const id = "linguo-chat-font-pjs";
     if (typeof document === "undefined" || document.getElementById(id)) return;
@@ -42,11 +65,52 @@ export default function ChatWidget() {
     document.head.appendChild(link);
   }, []);
 
+  // auto-scroll
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, loading, open]);
+
+  // polling: ambil balasan admin + status (cuma jalan pas panel kebuka)
+  useEffect(() => {
+    if (!open || !sessionId) return;
+    let alive = true;
+    async function poll() {
+      try {
+        const res = await fetch("/api/chat/poll", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sessionId, afterId: adminCursor.current }),
+        });
+        const data = await res.json();
+        if (!alive) return;
+        if (data?.status === "human") setHumanMode(true);
+        else if (data?.status === "bot") setHumanMode(false);
+        const arr: Array<{ id: number; content: string }> = Array.isArray(data?.messages)
+          ? data.messages
+          : [];
+        if (arr.length) {
+          adminCursor.current = Math.max(
+            adminCursor.current,
+            ...arr.map((x) => x.id)
+          );
+          setMessages((m) => [
+            ...m,
+            ...arr.map((x) => ({ role: "admin" as const, content: x.content })),
+          ]);
+        }
+      } catch {
+        /* abaikan, coba lagi interval berikutnya */
+      }
+    }
+    poll();
+    const t = setInterval(poll, 5000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
+  }, [open, sessionId]);
 
   function waHandoff() {
     const transcript = messages
@@ -54,8 +118,10 @@ export default function ChatWidget() {
       .slice(-3)
       .map((m) => m.content)
       .join(" | ");
+    const tiket = ticket ? ` (Tiket ${ticket})` : "";
     const text =
       "Halo Admin Linguo, saya dari chat website." +
+      tiket +
       (transcript ? ` Pertanyaan saya: ${transcript}` : "");
     window.open(
       `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`,
@@ -74,13 +140,19 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next }),
+        body: JSON.stringify({
+          messages: next.filter((m) => m.role === "user" || m.role === "assistant"),
+          sessionId,
+          page: typeof window !== "undefined" ? window.location.pathname : null,
+        }),
       });
       const data = await res.json();
-      const reply =
-        (data && data.reply) ||
-        "Maaf, lagi ada gangguan. Coba klik tombol WhatsApp di atas untuk ngobrol langsung sama admin ya 🙏";
-      setMessages((m) => [...m, { role: "assistant", content: reply }]);
+      if (data?.ticket_no) setTicket(data.ticket_no);
+      if (data?.status === "human") setHumanMode(true);
+      const reply = data && data.reply;
+      if (reply) {
+        setMessages((m) => [...m, { role: "assistant", content: reply }]);
+      }
     } catch {
       setMessages((m) => [
         ...m,
@@ -119,7 +191,7 @@ export default function ChatWidget() {
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 font-bold">L</div>
               <div className="leading-tight">
                 <div className="text-sm font-semibold">Ling • Linguo.id</div>
-                <div className="text-[11px] opacity-90">Asisten kursus bahasa</div>
+                <div className="text-[11px] opacity-90">{ticket ? `Tiket ${ticket}` : "Asisten kursus bahasa"}</div>
               </div>
             </div>
             <button aria-label="Tutup chat" onClick={() => setOpen(false)} className="rounded-full p-1 hover:bg-white/20">
@@ -132,23 +204,45 @@ export default function ChatWidget() {
             Ngobrol langsung sama admin (WhatsApp)
           </button>
 
+          {humanMode && (
+            <div className="flex items-center justify-center gap-1.5 bg-emerald-50 py-1.5 text-[11px] font-medium text-emerald-700">
+              <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+              Kamu sekarang terhubung langsung sama Admin Linguo
+            </div>
+          )}
+
           <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-3 py-3">
-            {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div
-                  style={m.role === "user" ? { backgroundColor: TEAL } : {}}
-                  className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm ${m.role === "user" ? "text-white" : "bg-slate-100 text-slate-800"}`}
-                >
-                  {m.role === "assistant" ? renderRich(m.content) : m.content}
+            {messages.map((m, i) => {
+              const mine = m.role === "user";
+              const admin = m.role === "admin";
+              return (
+                <div key={i} className={`flex ${mine ? "justify-end" : "justify-start"}`}>
+                  <div className="max-w-[80%]">
+                    {admin && (
+                      <div className="mb-0.5 pl-1 text-[10px] font-semibold text-emerald-600">Admin Linguo</div>
+                    )}
+                    <div
+                      style={mine ? { backgroundColor: TEAL } : {}}
+                      className={`whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm ${
+                        mine
+                          ? "text-white"
+                          : admin
+                          ? "bg-emerald-100 text-emerald-900"
+                          : "bg-slate-100 text-slate-800"
+                      }`}
+                    >
+                      {m.role === "assistant" ? renderRich(m.content) : m.content}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {loading && (
               <div className="flex justify-start">
                 <div className="rounded-2xl bg-slate-100 px-3 py-2 text-sm text-slate-400">Ling lagi ngetik…</div>
               </div>
             )}
-            {!loading && lastIsAssistant && (
+            {!loading && !humanMode && lastIsAssistant && (
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {CHIPS.map((c) => (
                   <button
@@ -174,7 +268,7 @@ export default function ChatWidget() {
                   send();
                 }
               }}
-              placeholder="Tulis pertanyaan…"
+              placeholder={humanMode ? "Tulis pesan ke admin…" : "Tulis pertanyaan…"}
               style={{ fontFamily: FONT }}
               className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-slate-300"
             />

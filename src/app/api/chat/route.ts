@@ -1,6 +1,8 @@
 // linguo-patch:chat-widget-ai-wa-v1
-// linguo-patch:ling-polish-v2  — instruksi plain-text (anti markdown mentah)
+// linguo-patch:ling-polish-v2
+// linguo-patch:ling-chat-v3  — logging Supabase, nomor tiket, status human-aware
 import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -35,20 +37,27 @@ ATURAN PENTING:
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
 
+function sb() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json({
-        reply:
-          "Maaf, asisten AI lagi belum aktif. Silakan klik tombol WhatsApp di atas untuk ngobrol langsung sama admin ya 🙏",
-      });
-    }
 
-    const body = await req.json().catch(() => ({} as Record<string, unknown>));
-    const rawList = Array.isArray((body as { messages?: unknown }).messages)
-      ? ((body as { messages: unknown[] }).messages as unknown[])
-      : [];
+    const body = (await req.json().catch(() => ({}))) as {
+      messages?: unknown;
+      sessionId?: unknown;
+      page?: unknown;
+    };
+    const sessionId =
+      typeof body.sessionId === "string" && body.sessionId ? body.sessionId : null;
+    const page =
+      typeof body.page === "string" ? body.page.slice(0, 300) : null;
+    const rawList = Array.isArray(body.messages) ? (body.messages as unknown[]) : [];
 
     const msgs: ChatMsg[] = rawList
       .filter((m): m is ChatMsg => {
@@ -62,9 +71,54 @@ export async function POST(req: Request) {
       .slice(-12)
       .map((m) => ({ role: m.role, content: String(m.content).slice(0, 2000) }));
 
+    // --- Logging + ambil status/tiket (best-effort, ga boleh ngerusak chat) ---
+    let ticket_no: string | null = null;
+    let status = "bot";
+    const db = sb();
+    if (db && sessionId) {
+      try {
+        await db
+          .from("chat_sessions")
+          .upsert({ id: sessionId, page }, { onConflict: "id", ignoreDuplicates: true });
+        const { data: s } = await db
+          .from("chat_sessions")
+          .select("ticket_no,status")
+          .eq("id", sessionId)
+          .maybeSingle();
+        if (s) {
+          ticket_no = (s as { ticket_no: string | null }).ticket_no;
+          status = (s as { status: string }).status || "bot";
+        }
+        const last = msgs[msgs.length - 1];
+        if (last && last.role === "user") {
+          await db
+            .from("chat_messages")
+            .insert({ session_id: sessionId, role: "user", content: last.content });
+        }
+      } catch {
+        /* logging gagal: lanjut aja, chat ga boleh putus */
+      }
+    }
+
+    // Mode human: admin yang pegang, AI berhenti jawab otomatis
+    if (status === "human") {
+      return NextResponse.json({ reply: "", ticket_no, status });
+    }
+
+    if (!apiKey) {
+      return NextResponse.json({
+        reply:
+          "Maaf, asisten AI lagi belum aktif. Silakan klik tombol WhatsApp di atas untuk ngobrol langsung sama admin ya 🙏",
+        ticket_no,
+        status,
+      });
+    }
+
     if (msgs.length === 0 || msgs[msgs.length - 1].role !== "user") {
       return NextResponse.json({
         reply: "Halo! Ada yang bisa Ling bantu soal kelas bahasa di Linguo? 😊",
+        ticket_no,
+        status,
       });
     }
 
@@ -87,6 +141,8 @@ export async function POST(req: Request) {
       return NextResponse.json({
         reply:
           "Maaf, Ling lagi ada gangguan. Coba klik tombol WhatsApp di atas untuk ngobrol sama admin ya 🙏",
+        ticket_no,
+        status,
       });
     }
 
@@ -101,15 +157,27 @@ export async function POST(req: Request) {
           .trim()
       : "";
 
-    return NextResponse.json({
-      reply:
-        reply ||
-        "Maaf, Ling belum bisa jawab itu. Klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏",
-    });
+    const finalReply =
+      reply ||
+      "Maaf, Ling belum bisa jawab itu. Klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏";
+
+    if (db && sessionId && reply) {
+      try {
+        await db
+          .from("chat_messages")
+          .insert({ session_id: sessionId, role: "assistant", content: finalReply });
+      } catch {
+        /* abaikan */
+      }
+    }
+
+    return NextResponse.json({ reply: finalReply, ticket_no, status });
   } catch {
     return NextResponse.json({
       reply:
         "Maaf, lagi ada gangguan. Klik tombol WhatsApp di atas untuk ngobrol sama admin ya 🙏",
+      ticket_no: null,
+      status: "bot",
     });
   }
 }
