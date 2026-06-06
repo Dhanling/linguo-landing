@@ -22,6 +22,7 @@ import {
   ListChecks,
   RotateCcw,
   Volume2,
+  VolumeX,
   Sparkles,
   Target,
   Bird,
@@ -312,6 +313,9 @@ export default function LessonPlayer({
   const contentCacheRef = useRef<Map<string, { les: any; steps: Step[]; locked: boolean }>>(new Map());
   const sibRef = useRef<{ id: string; title: string; sort_order: number }[]>([]);
   const entRef = useRef(false);
+  // [linguo-patch:lms-quiz-sfx-v1] audio context buat chime benar/salah (synth, no file)
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const [sfxOn, setSfxOn] = useState(true);
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 
@@ -490,10 +494,49 @@ export default function LessonPlayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
 
+  // [linguo-patch:lms-quiz-sfx-v1] chime benar/salah pakai Web Audio (synth, no asset). Di-trigger dari klik opsi → lolos autoplay policy.
+  function playSfx(correct: boolean) {
+    if (!sfxOn || typeof window === "undefined") return;
+    try {
+      if (!audioCtxRef.current) {
+        const AC = window.AudioContext || (window as any).webkitAudioContext;
+        if (!AC) return;
+        audioCtxRef.current = new AC();
+      }
+      const ctx = audioCtxRef.current;
+      if (!ctx) return;
+      if (ctx.state === "suspended") ctx.resume();
+      const t0 = ctx.currentTime;
+      const tone = (freq: number, start: number, dur: number, type: OscillatorType, peak: number) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, t0 + start);
+        gain.gain.setValueAtTime(0.0001, t0 + start);
+        gain.gain.exponentialRampToValueAtTime(peak, t0 + start + 0.015);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t0 + start + dur);
+        osc.connect(gain).connect(ctx.destination);
+        osc.start(t0 + start);
+        osc.stop(t0 + start + dur + 0.03);
+      };
+      if (correct) {
+        // arpeggio naik C5-E5-G5 (ceria, gaya Duolingo)
+        tone(523.25, 0.0, 0.13, "triangle", 0.16);
+        tone(659.25, 0.09, 0.13, "triangle", 0.16);
+        tone(783.99, 0.18, 0.22, "triangle", 0.18);
+      } else {
+        // dua nada turun lembut (gak bikin kaget)
+        tone(196.0, 0.0, 0.16, "sine", 0.13);
+        tone(155.56, 0.12, 0.24, "sine", 0.13);
+      }
+    } catch {}
+  }
+
   // [linguo-patch:lms-stage-redesign-v1] boleh ganti jawaban: cuma no-op kalau klik opsi yang sama. tiap ganti tetap di-log sebagai attempt baru.
   function answerQuiz(q: Quiz, choice: string) {
     if (answers[q.id] === choice) return;
     setAnswers((p) => ({ ...p, [q.id]: choice }));
+    playSfx(choice === q.answer); // [linguo-patch:lms-quiz-sfx-v1]
     if (user) {
       supabase.from("lms_quiz_attempts").insert({
         user_id: user.id,
@@ -712,6 +755,19 @@ export default function LessonPlayer({
           title="Kembali"
         >
           <ArrowLeft className="h-5 w-5 text-slate-700" />
+        </button>
+        {/* [linguo-patch:lms-quiz-sfx-v1] toggle suara benar/salah */}
+        <button
+          onClick={() => setSfxOn((v) => !v)}
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
+          title={sfxOn ? "Suara: nyala" : "Suara: mati"}
+          aria-label={sfxOn ? "Matikan suara" : "Nyalakan suara"}
+        >
+          {sfxOn ? (
+            <Volume2 className="h-5 w-5 text-slate-700" />
+          ) : (
+            <VolumeX className="h-5 w-5 text-slate-400" />
+          )}
         </button>
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-1.5 truncate text-[11px] font-bold text-slate-400">
