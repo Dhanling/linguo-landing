@@ -11,7 +11,7 @@ import TokoCTA from "@/components/TokoCTA";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
-async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; teacher_type?:string|null; referral_source?:string}) {
+async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; teacher_type?:string|null; referral_source?:string; source?:string}) {
 
   try {
     // Get referral from URL or localStorage
@@ -20,7 +20,7 @@ async function saveLead(data: {wa_number:string; language?:string; name?:string;
     await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
-      body: JSON.stringify({ ...data, source: "landing-page", referral_source: data.referral_source || ref || null }),
+      body: JSON.stringify({ ...data, source: data.source || "landing-page", referral_source: data.referral_source || ref || null }),
     });
   } catch (e) { console.error("Lead save failed:", e); }
 }
@@ -1583,14 +1583,17 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [countryCode, setCountryCode] = useState("+62");
   const [error, setError] = useState("");
 
+  const quickSavingRef = React.useRef(false);
   const handleQuickSubmit = async () => {
+    if(quickSavingRef.current) return; // wa-quick-guard-v1: anti double-fire
     if(!waNumber) { setError("Masukkan nomor WhatsApp-mu"); return; }
     if(waNumber.length < 9) { setError("Nomor terlalu pendek, minimal 9 digit"); return; }
     if(waNumber.length > 15) { setError("Nomor terlalu panjang"); return; }
     if(countryCode==="+62" && !["8"].includes(waNumber[0])) { setError("Nomor Indonesia harus diawali angka 8 (contoh: 812...)"); return; }
     setError("");
     const fullNum = countryCode.replace("+","") + waNumber;
-    await saveLead({wa_number: fullNum});
+    quickSavingRef.current = true; // wa-quick-guard-v1
+    await saveLead({wa_number: fullNum, source: "wa-quick"});
     const msg = `Halo, saya tertarik kursus di Linguo. Nomor WA saya: ${countryCode}${waNumber}`;
     window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
   };
