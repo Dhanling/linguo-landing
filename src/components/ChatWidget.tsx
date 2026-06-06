@@ -1,13 +1,25 @@
 "use client";
 // linguo-patch:chat-widget-ai-wa-v1
+// linguo-patch:ling-polish-v2  — Plus Jakarta Sans (panel-only), follow-up chips, render markdown ringan
 import { useState, useRef, useEffect } from "react";
 
 const TEAL = "#1A9E9E";
 const WA_NUMBER = "6282116859493"; // admin handoff
+const FONT = "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif";
 const GREETING =
   "Halo! 👋 Aku Ling, asisten Linguo.id. Mau tanya soal kelas bahasa, harga, jadwal, atau cara daftar? Tanya aja di sini 😊";
+const CHIPS = ["Lihat harga kelas", "Jadwal kelas reguler", "Coba trial gratis"];
 
 type Msg = { role: "user" | "assistant"; content: string };
+
+// Render ringan: **tebal** -> <strong>, dan buang sisa tanda '*' (bullet/italic) biar ga muncul mentah
+function renderRich(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) => {
+    const m = /^\*\*([^*]+)\*\*$/.exec(part);
+    if (m) return <strong key={i}>{m[1]}</strong>;
+    return <span key={i}>{part.replace(/\*/g, "")}</span>;
+  });
+}
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -17,6 +29,18 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Task C: muat Plus Jakarta Sans sekali aja (khusus panel chat; ga ngubah font situs)
+  useEffect(() => {
+    const id = "linguo-chat-font-pjs";
+    if (typeof document === "undefined" || document.getElementById(id)) return;
+    const link = document.createElement("link");
+    link.id = id;
+    link.rel = "stylesheet";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap";
+    document.head.appendChild(link);
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -39,8 +63,8 @@ export default function ChatWidget() {
     );
   }
 
-  async function send() {
-    const text = input.trim();
+  async function send(forced?: string) {
+    const text = (forced ?? input).trim();
     if (!text || loading) return;
     const next: Msg[] = [...messages, { role: "user", content: text }];
     setMessages(next);
@@ -71,6 +95,8 @@ export default function ChatWidget() {
     }
   }
 
+  const lastIsAssistant = messages[messages.length - 1]?.role === "assistant";
+
   return (
     <>
       {!open && (
@@ -87,7 +113,7 @@ export default function ChatWidget() {
       )}
 
       {open && (
-        <div className="fixed bottom-5 right-5 z-[9999] flex h-[70vh] max-h-[560px] w-[92vw] max-w-[380px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/10">
+        <div style={{ fontFamily: FONT }} className="fixed bottom-5 right-5 z-[9999] flex h-[70vh] max-h-[560px] w-[92vw] max-w-[380px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/10">
           <div style={{ backgroundColor: TEAL }} className="flex items-center justify-between px-4 py-3 text-white">
             <div className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 font-bold">L</div>
@@ -113,13 +139,27 @@ export default function ChatWidget() {
                   style={m.role === "user" ? { backgroundColor: TEAL } : {}}
                   className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm ${m.role === "user" ? "text-white" : "bg-slate-100 text-slate-800"}`}
                 >
-                  {m.content}
+                  {m.role === "assistant" ? renderRich(m.content) : m.content}
                 </div>
               </div>
             ))}
             {loading && (
               <div className="flex justify-start">
                 <div className="rounded-2xl bg-slate-100 px-3 py-2 text-sm text-slate-400">Ling lagi ngetik…</div>
+              </div>
+            )}
+            {!loading && lastIsAssistant && (
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {CHIPS.map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => send(c)}
+                    style={{ borderColor: TEAL, color: TEAL }}
+                    className="rounded-full border bg-white px-3 py-1 text-xs font-medium transition-colors hover:bg-teal-50"
+                  >
+                    {c}
+                  </button>
+                ))}
               </div>
             )}
           </div>
@@ -135,10 +175,11 @@ export default function ChatWidget() {
                 }
               }}
               placeholder="Tulis pertanyaan…"
+              style={{ fontFamily: FONT }}
               className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm outline-none focus:border-slate-300"
             />
             <button
-              onClick={send}
+              onClick={() => send()}
               disabled={loading || !input.trim()}
               aria-label="Kirim"
               style={{ backgroundColor: TEAL }}

@@ -1,4 +1,5 @@
 // linguo-patch:chat-widget-ai-wa-v1
+// linguo-patch:ling-polish-v2  — instruksi plain-text (anti markdown mentah)
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -12,6 +13,7 @@ const SYSTEM = `Kamu adalah "Ling", asisten virtual resmi Linguo.id — kursus b
 GAYA:
 - Ramah, hangat, ringkas (2-4 kalimat). Pakai bahasa yang dipakai user (Indonesia/Inggris/dll). Boleh emoji secukupnya.
 - Jangan bertele-tele. Jawab to the point lalu tawarkan langkah lanjut.
+- Tulis dalam TEKS BIASA (plain text). JANGAN pakai format markdown: jangan pakai **tebal**, *miring*, tanda pagar #, atau bullet dengan tanda * / -. Kalau perlu menyebut beberapa poin, tulis dengan kalimat biasa atau pisahkan per baris.
 
 YANG KAMU TAU SOAL LINGUO:
 - 55+ bahasa asing, level CEFR A1-B2.

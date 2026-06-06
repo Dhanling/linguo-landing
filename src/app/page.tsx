@@ -2,7 +2,7 @@
 import { supabase } from "@/lib/supabase-client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, ChevronDown, ChevronLeft, ChevronRight, MessageCircle, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
+import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1
@@ -657,16 +657,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
           </>
         )}
       </AnimatePresence>
-      {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget; sembunyi saat drawer (open) / start-picker (startPickerOpen) buka */}
-      {!open && !startPickerOpen && (
-        <a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo Min Ling! 👋\n\nAku mau tanya-tanya soal kelas bahasa di Linguo dong. Boleh dibantu? 🙏")}`} target="_blank"
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 group">
-          <span className="bg-white text-slate-700 text-sm font-medium px-4 py-2.5 rounded-full shadow-lg border border-slate-200 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Need help? Chat with Us</span>
-          <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition-transform">
-            <MessageCircle className="h-6 w-6 text-white" />
-          </div>
-        </a>
-      )}
+      {/* linguo-patch:old-wa-float-removed-v2 — tombol WA float lama dihapus; diganti ChatWidget Ling */}
       <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
 
     </div>
