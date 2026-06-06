@@ -8,6 +8,7 @@ import {
   X,
   ChevronRight,
   ChevronDown,
+  ChevronsUpDown,
   Check,
   Loader2,
   Lock,
@@ -123,9 +124,6 @@ function renderMarkdown(md: string): ReactNode {
       out.push(
         <div key={key++} className="mt-4 flex flex-col gap-2.5">
           {items.map((it, j) => {
-            const parts = it.split(/\s*[—:-]\s*/);
-            const head = parts.length > 1 ? parts.shift()! : null;
-            const body = parts.join(" — ");
             return (
               <div
                 key={j}
@@ -138,10 +136,7 @@ function renderMarkdown(md: string): ReactNode {
                   <Check className="h-4 w-4" />
                 </span>
                 <p className="text-[14px] leading-relaxed text-slate-600">
-                  {head ? (
-                    <span className="font-extrabold text-slate-900">{inlineBold(head)}. </span>
-                  ) : null}
-                  {inlineBold(body)}
+                  {inlineBold(it)}
                 </p>
               </div>
             );
@@ -303,8 +298,8 @@ export default function LessonPlayer({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [siblings, setSiblings] = useState<{ id: string; title: string; sort_order: number }[]>([]);
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
-  // [linguo-patch:lms-rail-accordion-v1] grup mana yg lagi kebuka di accordion langkah (Materi/Kuis/Selesai)
-  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  // [linguo-patch:lms-stage-redesign-v1] konfirmasi sebelum keluar sesi
+  const [confirmExit, setConfirmExit] = useState(false);
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
   // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan
@@ -489,8 +484,9 @@ export default function LessonPlayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
 
+  // [linguo-patch:lms-stage-redesign-v1] boleh ganti jawaban: cuma no-op kalau klik opsi yang sama. tiap ganti tetap di-log sebagai attempt baru.
   function answerQuiz(q: Quiz, choice: string) {
-    if (answers[q.id]) return;
+    if (answers[q.id] === choice) return;
     setAnswers((p) => ({ ...p, [q.id]: choice }));
     if (user) {
       supabase.from("lms_quiz_attempts").insert({
@@ -523,14 +519,6 @@ export default function LessonPlayer({
   }
 
   const cur = steps[stepIdx];
-  // [linguo-patch:lms-rail-group-v1] kelompokin step jadi segmen kontigu per grup tipe (Materi/Kuis/Selesai)
-  const railGroups: { key: string; items: { s: Step; gi: number }[] }[] = [];
-  steps.forEach((s, gi) => {
-    const k = railGroupKey(s.kind);
-    const last = railGroups[railGroups.length - 1];
-    if (last && last.key === k) last.items.push({ s, gi });
-    else railGroups.push({ key: k, items: [{ s, gi }] });
-  });
   const isQuizStep = cur?.kind === "quiz";
   const quizAnswered = isQuizStep ? !!answers[(cur as any).q.id] : true;
   const atDone = cur?.kind === "done";
@@ -552,14 +540,13 @@ export default function LessonPlayer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [atDone]);
 
-  // [linguo-patch:lms-rail-accordion-v1] tiap pindah langkah, auto-buka grup langkah aktif
-  useEffect(() => {
-    const c = steps[stepIdx];
-    if (c) setOpenGroup(railGroupKey(c.kind));
-  }, [stepIdx, steps]);
-
   const next = () => setStepIdx((i) => Math.min(i + 1, steps.length - 1));
   const prev = () => setStepIdx((i) => Math.max(i - 1, 0));
+  // [linguo-patch:lms-stage-redesign-v1] keluar sesi: minta konfirmasi kalau udah ada progress, kalau belum langsung keluar
+  const requestExit = () => {
+    if (locked || (stepIdx === 0 && Object.keys(answers).length === 0)) onBack();
+    else setConfirmExit(true);
+  };
 
   // ---------- guard states ----------
   // [linguo-patch:lms-lesson-switch-v1] full-screen spinner CUMA pas boot pertama; switch sesi pakai spinner di stage (sidebar tetap render)
@@ -632,6 +619,10 @@ export default function LessonPlayer({
           modules={modules}
           currentModuleId={mod?.id}
           entitled={entitled}
+          steps={steps}
+          stepIdx={stepIdx}
+          onJump={(gi: number) => setStepIdx(gi)}
+          avatarText={(mod?.language || mod?.title || mod?.cefr_label || "Vi").slice(0, 2)}
           onOpen={onOpenLesson}
           onCollapse={() => setNavOpen(false)}
         />
@@ -650,7 +641,7 @@ export default function LessonPlayer({
           <ListChecks className="h-5 w-5 text-slate-700" />
         </button>
         <button
-          onClick={onBack}
+          onClick={requestExit}
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
           title="Kembali"
         >
@@ -678,7 +669,7 @@ export default function LessonPlayer({
         {!locked && (
         <div className="hidden shrink-0 items-center gap-2 sm:flex">
           <button
-            onClick={onBack}
+            onClick={requestExit}
             className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F5F6F8] hover:text-slate-700"
             title="Tutup"
           >
@@ -688,127 +679,67 @@ export default function LessonPlayer({
         )}
       </header>
 
-      {/* STEPPER */}
-      {/* [linguo-patch:lms-rail-accordion-v1] langkah dipisah jadi accordion: 📖 Materi / 📝 Kuis / 🎉 Selesai (bisa di-collapse, gak nyampur) */}
+      {/* PHASE BAR */}
+      {/* [linguo-patch:lms-stage-redesign-v1] progress fase horizontal (Materi · Kuis · Selesai) gaya frame — ganti accordion, navigasi langkah pindah ke sidebar kiri */}
       {!switching && !locked && !emptyContent && (
-      <div className="bg-[#F5F6F8]/60 px-5 py-4 lg:px-8">
-        <div className="mx-auto flex max-w-[760px] flex-col gap-2">
-          {railGroups.map((g, gi2) => {
-            const meta = RAIL_GROUP_META[g.key];
-            const GroupIcon =
-              g.key === "kuis" ? HelpCircle : g.key === "done" ? PartyPopper : BookOpen;
-            const total = g.items.length;
-            const doneCount = g.items.filter(({ gi }) => gi < stepIdx).length;
-            const groupActive = g.items.some(({ gi }) => gi === stepIdx);
-            const groupDone = doneCount === total;
-            const lit = groupActive || groupDone;
-            const open = openGroup === g.key;
-            // grup "done" (Selesai) gak punya isi buat di-expand → header doang
-            const collapsible = g.key !== "done";
+      <div className="border-b border-slate-100 bg-white px-5 py-3.5 lg:px-8">
+        <div className="mx-auto flex max-w-[760px] items-center gap-2">
+          {([
+            { key: "materi", label: "Materi", Icon: BookOpen, color: TEAL },
+            { key: "kuis", label: "Kuis", Icon: HelpCircle, color: KUIS },
+            { key: "selesai", label: "Selesai", Icon: PartyPopper, color: "#0F5A52" },
+          ] as const).map((p, idx, defs) => {
+            const items = steps
+              .map((s, gi) => ({ s, gi }))
+              .filter(({ s }) => railGroupKey(s.kind) === p.key);
+            const total = p.key === "selesai" ? 1 : items.length;
+            const done =
+              p.key === "selesai" ? (atDone ? 1 : 0) : items.filter(({ gi }) => gi < stepIdx).length;
+            const active = p.key === (cur ? railGroupKey(cur.kind) : "materi");
+            const complete = total > 0 && done >= total;
+            const lit = active || complete;
+            const pct = total ? Math.round((done / total) * 100) : 0;
+            const Icon = p.Icon;
             return (
               <div
-                key={gi2}
-                className="overflow-hidden rounded-2xl border bg-white"
-                style={{
-                  borderColor: groupActive ? hexA(meta.color, 0.35) : "#EAECEF",
-                }}
+                key={p.key}
+                className={`flex items-center gap-2 ${idx < defs.length - 1 ? "flex-1" : ""}`}
               >
-                {/* header grup (klik buat buka/tutup) */}
-                <button
-                  type="button"
-                  onClick={() => collapsible && setOpenGroup(open ? null : g.key)}
-                  className={`flex w-full items-center gap-2.5 px-3.5 py-2.5 text-left ${
-                    collapsible ? "transition hover:bg-[#F8F9FB]" : "cursor-default"
-                  }`}
-                >
+                <div className="flex shrink-0 items-center gap-2">
                   <span
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      background: lit ? hexA(meta.color, 0.12) : "#F1F3F5",
-                      color: lit ? meta.color : "#94a3b8",
-                    }}
+                    className="flex h-7 w-7 items-center justify-center rounded-lg"
+                    style={
+                      complete
+                        ? { background: p.color, color: "#fff" }
+                        : active
+                        ? { background: hexA(p.color, 0.15), color: p.color }
+                        : { background: "#F1F3F5", color: "#94a3b8" }
+                    }
                   >
-                    <GroupIcon className="h-4 w-4" />
+                    {complete ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
                   </span>
                   <span
-                    className="text-[13px] font-extrabold uppercase tracking-wide"
-                    style={{ color: lit ? meta.color : "#64748b" }}
+                    className="text-[12.5px] font-extrabold"
+                    style={{ color: lit ? "#12172B" : "#94a3b8" }}
                   >
-                    {meta.label}
+                    {p.label}
                   </span>
-                  {collapsible && (
-                    <span className="text-[12px] font-bold text-slate-400">
-                      {doneCount}/{total}
+                  {total > 1 && (
+                    <span
+                      className="text-[11px] font-bold"
+                      style={{ color: lit ? p.color : "#cbd5e1" }}
+                    >
+                      {done}/{total}
                     </span>
                   )}
-                  <span className="flex-1" />
-                  {/* mini progress bar */}
-                  {collapsible && (
-                    <span className="hidden h-1.5 w-24 overflow-hidden rounded-full bg-[#EEF0F2] sm:block">
-                      <span
-                        className="block h-full rounded-full transition-all"
-                        style={{
-                          width: `${total ? (doneCount / total) * 100 : 0}%`,
-                          background: meta.color,
-                        }}
-                      />
-                    </span>
-                  )}
-                  {collapsible &&
-                    (open ? (
-                      <ChevronDown className="h-4 w-4 shrink-0 text-slate-400" />
-                    ) : (
-                      <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
-                    ))}
-                  {!collapsible && groupActive && (
-                    <Check className="h-4 w-4 shrink-0" style={{ color: meta.color }} />
-                  )}
-                </button>
-
-                {/* isi grup: chip langkah (wrap, gak overflow) */}
-                {collapsible && open && (
-                  <div className="flex flex-wrap gap-2 border-t border-slate-100 px-3.5 py-3">
-                    {g.items.map(({ s, gi }) => {
-                      const dn = gi < stepIdx;
-                      const ac = gi === stepIdx;
-                      const reachable = gi <= stepIdx;
-                      return (
-                        <button
-                          key={gi}
-                          onClick={() => reachable && setStepIdx(gi)}
-                          disabled={!reachable}
-                          title={s.label}
-                          className="inline-flex items-center gap-2 rounded-xl px-2.5 py-1.5 text-left transition disabled:cursor-not-allowed"
-                          style={
-                            ac
-                              ? { background: hexA(meta.color, 0.12) }
-                              : reachable
-                              ? { background: "#F5F6F8" }
-                              : { background: "#FAFBFC", opacity: 0.55 }
-                          }
-                        >
-                          <span
-                            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold"
-                            style={
-                              ac
-                                ? { background: meta.color, color: "#fff" }
-                                : dn
-                                ? { background: hexA(meta.color, 0.18), color: meta.color }
-                                : { background: "#E8EAEE", color: "#94a3b8" }
-                            }
-                          >
-                            {dn ? <Check className="h-3.5 w-3.5" /> : gi + 1}
-                          </span>
-                          <span
-                            className="text-[12px] font-bold"
-                            style={{ color: ac ? meta.color : "#475569" }}
-                          >
-                            {s.label}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
+                </div>
+                {idx < defs.length - 1 && (
+                  <span className="block h-1.5 min-w-[20px] flex-1 overflow-hidden rounded-full bg-[#E8EAEE]">
+                    <span
+                      className="block h-full rounded-full transition-all"
+                      style={{ width: `${pct}%`, background: p.color }}
+                    />
+                  </span>
                 )}
               </div>
             );
@@ -946,6 +877,13 @@ export default function LessonPlayer({
               modules={modules}
               currentModuleId={mod?.id}
               entitled={entitled}
+              steps={steps}
+              stepIdx={stepIdx}
+              onJump={(gi: number) => {
+                setStepIdx(gi);
+                setDrawerOpen(false);
+              }}
+              avatarText={(mod?.language || mod?.title || mod?.cefr_label || "Vi").slice(0, 2)}
               onOpen={onOpenLesson}
               onCollapse={() => setDrawerOpen(false)}
               isDrawer
@@ -953,11 +891,52 @@ export default function LessonPlayer({
           </div>
         </div>
       ) : null}
+
+      {/* [linguo-patch:lms-stage-redesign-v1] modal konfirmasi keluar sesi */}
+      {confirmExit ? (
+        <div
+          onClick={() => setConfirmExit(false)}
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#12172B]/40 p-4 backdrop-blur-sm"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-[400px] rounded-3xl bg-white p-6 shadow-[0_24px_60px_-20px_rgba(18,23,43,0.5)]"
+          >
+            <div
+              className="flex h-12 w-12 items-center justify-center rounded-2xl"
+              style={{ background: hexA(YELLOW, 0.2), color: "#9a7400" }}
+            >
+              <ArrowLeft className="h-6 w-6" />
+            </div>
+            <h3 className="mt-4 text-[18px] font-extrabold text-slate-900">Keluar dari sesi ini?</h3>
+            <p className="mt-1.5 text-[13.5px] font-medium leading-relaxed text-slate-500">
+              Tenang, progres yang udah kamu kerjain tetap kesimpan. Kamu bisa lanjut lagi kapan aja
+              dari daftar sesi.
+            </p>
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row-reverse">
+              <button
+                onClick={() => {
+                  setConfirmExit(false);
+                  onBack();
+                }}
+                className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-2xl px-5 text-[14px] font-extrabold text-white"
+                style={{ background: TEAL }}
+              >
+                Ya, keluar
+              </button>
+              <button
+                onClick={() => setConfirmExit(false)}
+                className="inline-flex h-11 flex-1 items-center justify-center rounded-2xl px-5 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8]"
+              >
+                Lanjut belajar
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
-
-/* ============== STEP CONTENT ============== */
 function StepView({
   step,
   lesson,
@@ -1132,11 +1111,8 @@ function StepView({
             return (
               <button
                 key={opt}
-                disabled={answered}
                 onClick={() => onAnswer(q, opt)}
-                className={`flex h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${textCls} ${
-                  answered ? "cursor-default" : "hover:border-[#16796E] hover:bg-[#F0FAF8]"
-                }`}
+                className={`flex h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 text-left transition hover:border-[#16796E] hover:bg-[#F0FAF8] ${textCls}`}
                 style={st}
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#F5F6F8] text-[12px] font-extrabold text-slate-500">
@@ -1153,6 +1129,12 @@ function StepView({
             );
           })}
         </div>
+
+        {answered && (
+          <p className="mt-2.5 text-[12px] font-semibold text-slate-400">
+            Ketuk opsi lain kalau mau ganti jawaban.
+          </p>
+        )}
 
         {answered && (
           <div
@@ -1317,6 +1299,10 @@ function SessionIndex({
   modules,
   currentModuleId,
   entitled = false,
+  steps = [],
+  stepIdx = 0,
+  onJump,
+  avatarText = "Vi",
   onOpen,
   onCollapse,
   isDrawer = false,
@@ -1329,6 +1315,10 @@ function SessionIndex({
   modules?: { id: string; cefr_label: string; title: string }[];
   currentModuleId?: string | null;
   entitled?: boolean;
+  steps?: Step[];
+  stepIdx?: number;
+  onJump?: (gi: number) => void;
+  avatarText?: string;
   onOpen: (id: string) => void;
   onCollapse: () => void;
   isDrawer?: boolean;
@@ -1373,28 +1363,27 @@ function SessionIndex({
     }
   }
 
+  // [linguo-patch:lms-stage-redesign-v1] progress bab = sesi selesai / total sesi
+  const totalSess = siblings.length;
+  const doneSess = siblings.filter((s) => progressMap[s.id] === "completed").length;
+  const chapPct = totalSess ? Math.round((doneSess / totalSess) * 100) : 0;
+  // substep grup buat sesi aktif (expand di list, gaya frame)
+  const subGroups = (["materi", "kuis", "done"] as const)
+    .map((k) => ({
+      key: k,
+      items: steps
+        .map((s, gi) => ({ s, gi }))
+        .filter(({ s }) => railGroupKey(s.kind) === k),
+    }))
+    .filter((g) => g.items.length > 0);
+
   return (
     <div className="flex h-full w-72 flex-col bg-white">
-      <div className="relative border-b border-slate-100 px-4 py-4">
-        <div className="flex items-start justify-between gap-2">
-          <button
-            type="button"
-            onClick={() => canSwitch && setLevelOpen((o) => !o)}
-            className={`min-w-0 flex-1 text-left ${canSwitch ? "cursor-pointer" : "cursor-default"}`}
-            aria-label="Ganti level"
-          >
-            <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
-              {cefr} · Daftar sesi
-            </p>
-            <p className="mt-0.5 flex items-center gap-1 text-[13px] font-extrabold text-slate-900">
-              <span className="truncate">{modTitle}</span>
-              {canSwitch && (
-                <ChevronDown
-                  className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${levelOpen ? "rotate-180" : ""}`}
-                />
-              )}
-            </p>
-          </button>
+      <div className="relative border-b border-slate-100 px-4 pb-4 pt-4">
+        <div className="flex items-center justify-between">
+          <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+            {cefr} · Daftar sesi
+          </p>
           <button
             onClick={onCollapse}
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
@@ -1403,6 +1392,43 @@ function SessionIndex({
           >
             {isDrawer ? <X className="h-5 w-5" /> : <ArrowLeft className="h-4 w-4" />}
           </button>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => canSwitch && setLevelOpen((o) => !o)}
+          className={`mt-2.5 flex w-full items-center gap-2.5 rounded-2xl bg-[#F5F6F8] px-3 py-2.5 text-left transition ${
+            canSwitch ? "hover:bg-slate-100" : "cursor-default"
+          }`}
+          aria-label="Ganti level"
+        >
+          <span
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[14px] font-extrabold"
+            style={{ background: hexA(TEAL, 0.1), color: TEAL }}
+          >
+            {avatarText}
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-[13px] font-extrabold leading-tight text-slate-900">
+              {modTitle}
+            </span>
+            <span className="block truncate text-[11px] font-semibold text-slate-400">
+              Level {cefr}
+            </span>
+          </span>
+          {canSwitch && (
+            <ChevronsUpDown className="h-4 w-4 shrink-0 text-slate-400" />
+          )}
+        </button>
+
+        <div className="mt-3 flex items-center gap-2">
+          <span className="block h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]">
+            <span
+              className="block h-full rounded-full transition-all"
+              style={{ width: `${chapPct}%`, background: TEAL }}
+            />
+          </span>
+          <span className="text-[11px] font-bold text-slate-400">{chapPct}%</span>
         </div>
 
         {levelOpen && canSwitch && (
@@ -1507,34 +1533,146 @@ function SessionIndex({
           siblings.map((s, i) => {
             const isCurrent = s.id === currentId;
             const done = progressMap[s.id] === "completed";
+            const expanded = isCurrent && subGroups.length > 0;
             return (
-              <button
+              <div
                 key={s.id}
-                onClick={() => onOpen(s.id)}
-                className={`mb-1 flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition ${
-                  isCurrent ? "bg-[#16796E]/10" : "hover:bg-[#F5F6F8]"
-                }`}
+                className={`mb-1 rounded-2xl ${expanded ? "border border-[#16796E]/15" : ""}`}
               >
-                <span
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold"
-                  style={
-                    isCurrent
-                      ? { background: TEAL, color: "#fff" }
-                      : done
-                      ? { background: "rgba(22,121,110,.15)", color: TEAL }
-                      : { background: "#F5F6F8", color: "#94a3b8" }
-                  }
-                >
-                  {done && !isCurrent ? <Check className="h-3.5 w-3.5" /> : i + 1}
-                </span>
-                <span
-                  className={`min-w-0 flex-1 truncate text-[12.5px] font-bold ${
-                    isCurrent ? "text-[#0F5A52]" : "text-slate-700"
+                <button
+                  onClick={() => onOpen(s.id)}
+                  className={`flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition ${
+                    isCurrent ? "bg-[#16796E]/10" : "hover:bg-[#F5F6F8]"
                   }`}
                 >
-                  {s.title}
-                </span>
-              </button>
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold"
+                    style={
+                      isCurrent
+                        ? { background: TEAL, color: "#fff" }
+                        : done
+                        ? { background: "rgba(22,121,110,.15)", color: TEAL }
+                        : { background: "#F5F6F8", color: "#94a3b8" }
+                    }
+                  >
+                    {done && !isCurrent ? <Check className="h-3.5 w-3.5" /> : i + 1}
+                  </span>
+                  <span
+                    className={`min-w-0 flex-1 truncate text-[12.5px] font-bold ${
+                      isCurrent ? "text-[#0F5A52]" : "text-slate-700"
+                    }`}
+                  >
+                    {s.title}
+                  </span>
+                </button>
+
+                {/* [linguo-patch:lms-stage-redesign-v1] sesi aktif → expand substep (Materi/Kuis/Selesai) gaya frame */}
+                {expanded && (
+                  <div className="px-1.5 pb-2 pt-1">
+                    {subGroups.map((g) => {
+                      const meta = RAIL_GROUP_META[g.key];
+                      const total = g.items.length;
+                      const doneCount = g.items.filter(({ gi }) => gi < stepIdx).length;
+                      if (g.key === "done") {
+                        const { gi } = g.items[0];
+                        const ac = gi === stepIdx;
+                        const reachable = gi <= stepIdx;
+                        return (
+                          <button
+                            key="done"
+                            disabled={!reachable}
+                            onClick={() => reachable && onJump?.(gi)}
+                            className="mt-1.5 flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left transition disabled:opacity-50"
+                            style={ac ? { background: meta.color } : undefined}
+                          >
+                            <span
+                              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
+                              style={
+                                ac
+                                  ? { background: "rgba(255,255,255,.2)", color: "#fff" }
+                                  : { background: hexA(YELLOW, 0.2), color: "#9a7400" }
+                              }
+                            >
+                              <PartyPopper className="h-3.5 w-3.5" />
+                            </span>
+                            <span
+                              className="text-[12.5px] font-extrabold"
+                              style={{ color: ac ? "#fff" : "#12172B" }}
+                            >
+                              Selesai &amp; Rangkuman
+                            </span>
+                          </button>
+                        );
+                      }
+                      return (
+                        <div key={g.key} className="mt-1">
+                          <div className="flex items-center gap-2 px-2.5 pb-1 pt-2">
+                            {g.key === "kuis" ? (
+                              <HelpCircle className="h-3.5 w-3.5 text-slate-400" />
+                            ) : (
+                              <BookOpen className="h-3.5 w-3.5 text-slate-400" />
+                            )}
+                            <span className="text-[11px] font-extrabold uppercase tracking-wide text-slate-400">
+                              {meta.label}
+                            </span>
+                            <span className="text-[11px] font-bold text-slate-300">
+                              {doneCount}/{total}
+                            </span>
+                          </div>
+                          <div className="flex flex-col">
+                            {g.items.map(({ s: st, gi }) => {
+                              const ac = gi === stepIdx;
+                              const dn = gi < stepIdx;
+                              const reachable = gi <= stepIdx;
+                              const StepIcon =
+                                st.kind === "audio"
+                                  ? Headphones
+                                  : st.kind === "vocab"
+                                  ? ListChecks
+                                  : st.kind === "quiz"
+                                  ? HelpCircle
+                                  : BookOpen;
+                              return (
+                                <button
+                                  key={gi}
+                                  disabled={!reachable}
+                                  onClick={() => reachable && onJump?.(gi)}
+                                  className="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left transition hover:bg-[#F5F6F8] disabled:cursor-not-allowed disabled:opacity-50"
+                                  style={ac ? { background: meta.color } : undefined}
+                                >
+                                  <span
+                                    className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
+                                    style={
+                                      ac
+                                        ? { background: "rgba(255,255,255,.2)", color: "#fff" }
+                                        : dn
+                                        ? { background: hexA(meta.color, 0.12), color: meta.color }
+                                        : { background: "#F5F6F8", color: "#94a3b8" }
+                                    }
+                                  >
+                                    {dn ? (
+                                      <Check className="h-3.5 w-3.5" />
+                                    ) : (
+                                      <StepIcon className="h-3.5 w-3.5" />
+                                    )}
+                                  </span>
+                                  <span
+                                    className="min-w-0 flex-1 truncate text-[12.5px] font-semibold"
+                                    style={{ color: ac ? "#fff" : "#475569" }}
+                                  >
+                                    {st.label}
+                                  </span>
+                                  {ac && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             );
           })
         )}
