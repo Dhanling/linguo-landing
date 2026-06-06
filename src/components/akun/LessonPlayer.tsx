@@ -610,7 +610,7 @@ export default function LessonPlayer({
         .lp-lift:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(18,23,43,.55)}
       `}</style>
 
-      {/* [linguo-patch:lms-icon-rail-v1] rail ikon ijo (Beranda dst) biar navigasi tetap ada pas buka materi/kuis — match frame. Desktop only; mobile pakai drawer. */}
+      {/* [linguo-patch:lms-icon-rail-v1][lms-icon-rail-route-v1] rail ikon ijo (Beranda dst) biar navigasi tetap ada pas buka materi/kuis — match frame. Desktop only; mobile pakai drawer. Link deep-link ke /akun?menu=<tab> (reader di akun/page.tsx). */}
       <aside className="hidden w-[72px] shrink-0 flex-col items-center bg-[#0F5A52] py-6 md:flex">
         <a
           href="/akun"
@@ -621,7 +621,7 @@ export default function LessonPlayer({
         </a>
         <nav className="mt-10 flex flex-col items-center gap-2">
           <a
-            href="/akun"
+            href="/akun?menu=beranda"
             title="Beranda"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
@@ -635,21 +635,21 @@ export default function LessonPlayer({
             <BookOpen className="h-[22px] w-[22px]" />
           </span>
           <a
-            href="/akun"
+            href="/akun?menu=jadwal"
             title="Jadwal"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
             <CalendarDays className="h-[22px] w-[22px]" />
           </a>
           <a
-            href="/akun"
+            href="/akun?menu=sertifikat"
             title="Sertifikat"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
             <Star className="h-[22px] w-[22px]" />
           </a>
           <a
-            href="/akun"
+            href="/akun?menu=akun"
             title="Pengaturan"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
