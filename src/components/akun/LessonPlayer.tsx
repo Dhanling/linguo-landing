@@ -21,6 +21,8 @@ import {
   ListChecks,
   RotateCcw,
   Volume2,
+  Sparkles,
+  Target,
   type LucideIcon,
 } from "lucide-react";
 import UnlockFullAccess from "./UnlockFullAccess";
@@ -80,30 +82,131 @@ function playWordAudio(url?: string | null) {
   } catch {}
 }
 
-function stripBold(s: string) {
-  return s.replace(/\*\*/g, "");
+// [linguo-patch:lms-stage-redesign-v1] inline **bold** → <strong> (frame pakai bold buat penekanan)
+function inlineBold(text: string): ReactNode[] {
+  return text.split("**").map((seg, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-extrabold text-slate-900">
+        {seg}
+      </strong>
+    ) : (
+      <span key={i}>{seg}</span>
+    )
+  );
 }
-function renderMarkdown(md: string) {
-  return md.split("\n").map((line: string, i: number) => {
-    if (line.startsWith("## "))
-      return (
-        <h3 key={i} className="mt-4 text-lg font-extrabold text-slate-900">
-          {line.slice(3)}
+
+// [linguo-patch:lms-stage-redesign-v1] markdown materi gaya frame:
+//   "## "  → hero heading      "### " → sub-heading
+//   "- "   → kartu bullet (check chip teal)   "> " → callout aksen kuning
+//   sisanya → paragraf relaxed.  Bullet & callout berurutan dikelompokin.
+function renderMarkdown(md: string): ReactNode {
+  const lines = (md || "").split("\n");
+  const out: ReactNode[] = [];
+  let i = 0;
+  let key = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    const t = line.trim();
+
+    if (t === "") {
+      i++;
+      continue;
+    }
+
+    // grup bullet → kartu-kartu
+    if (t.startsWith("- ")) {
+      const items: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("- ")) {
+        items.push(lines[i].trim().slice(2));
+        i++;
+      }
+      out.push(
+        <div key={key++} className="mt-4 flex flex-col gap-2.5">
+          {items.map((it, j) => {
+            const parts = it.split(/\s*[—:-]\s*/);
+            const head = parts.length > 1 ? parts.shift()! : null;
+            const body = parts.join(" — ");
+            return (
+              <div
+                key={j}
+                className="flex items-start gap-3 rounded-2xl border border-slate-100 bg-white p-3.5"
+              >
+                <span
+                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg"
+                  style={{ background: hexA(TEAL, 0.1), color: TEAL }}
+                >
+                  <Check className="h-4 w-4" />
+                </span>
+                <p className="text-[14px] leading-relaxed text-slate-600">
+                  {head ? (
+                    <span className="font-extrabold text-slate-900">{inlineBold(head)}. </span>
+                  ) : null}
+                  {inlineBold(body)}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      );
+      continue;
+    }
+
+    // grup callout (blockquote) → kotak aksen kuning
+    if (t.startsWith("> ")) {
+      const buf: string[] = [];
+      while (i < lines.length && lines[i].trim().startsWith("> ")) {
+        buf.push(lines[i].trim().slice(2));
+        i++;
+      }
+      out.push(
+        <div
+          key={key++}
+          className="mt-5 flex items-start gap-3 rounded-2xl border p-4"
+          style={{ background: hexA(YELLOW, 0.1), borderColor: hexA(YELLOW, 0.35) }}
+        >
+          <span
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
+            style={{ background: hexA(YELLOW, 0.3), color: "#9a7400" }}
+          >
+            <Lightbulb className="h-5 w-5" />
+          </span>
+          <p className="text-[13.5px] font-semibold leading-relaxed text-slate-700">
+            {inlineBold(buf.join(" "))}
+          </p>
+        </div>
+      );
+      continue;
+    }
+
+    if (t.startsWith("### ")) {
+      out.push(
+        <h3 key={key++} className="mt-5 text-[17px] font-extrabold leading-tight text-slate-900">
+          {inlineBold(t.slice(4))}
         </h3>
       );
-    if (line.startsWith("- "))
-      return (
-        <li key={i} className="ml-5 list-disc text-[15px] leading-relaxed text-slate-700">
-          {stripBold(line.slice(2))}
-        </li>
+      i++;
+      continue;
+    }
+
+    if (t.startsWith("## ")) {
+      out.push(
+        <h2 key={key++} className="mt-5 text-[24px] font-extrabold leading-tight text-slate-900">
+          {inlineBold(t.slice(3))}
+        </h2>
       );
-    if (line.trim() === "") return <div key={i} className="h-2" />;
-    return (
-      <p key={i} className="text-[15px] leading-relaxed text-slate-700">
-        {stripBold(line)}
+      i++;
+      continue;
+    }
+
+    // paragraf
+    out.push(
+      <p key={key++} className="mt-3 text-[14.5px] font-medium leading-relaxed text-slate-600">
+        {inlineBold(t)}
       </p>
     );
-  });
+    i++;
+  }
+  return <div>{out}</div>;
 }
 
 type Quiz = {
@@ -510,6 +613,8 @@ export default function LessonPlayer({
         .lp-pop{animation:lp-pop .5s cubic-bezier(.2,.8,.2,1) both}
         .lp-fade{animation:lp-fade .35s ease both}
         .lp-confetti{position:absolute;width:9px;height:14px;border-radius:2px;top:-20px;animation:lp-fall linear forwards}
+        .lp-lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+        .lp-lift:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(18,23,43,.55)}
       `}</style>
 
       {/* [linguo-patch:lms-lesson-sidenav-v1] LEFT INDEX (desktop) */}
@@ -884,8 +989,8 @@ function StepView({
     const b = step.block;
     return (
       <div className="lp-fade mx-auto max-w-[860px]">
-        <Pill icon={Headphones} text="Audio · Dengarkan" />
-        <h2 className="mt-3 text-[24px] font-extrabold leading-tight text-slate-900">
+        <Pill icon={Headphones} text="Materi · Dengarkan" />
+        <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
           {lesson.title}
         </h2>
         {b.content?.instruction ? (
@@ -893,24 +998,40 @@ function StepView({
             {b.content.instruction}
           </p>
         ) : null}
-        <div className="mt-6 rounded-3xl border border-slate-100 bg-[#F5F6F8] p-5">
-          {b.media_url ? (
-            <audio controls src={b.media_url} className="w-full" />
-          ) : (
-            <p className="text-sm text-slate-400">Audio belum tersedia untuk sesi ini.</p>
-          )}
+        <div className="mt-6 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_18px_40px_-34px_rgba(18,23,43,.5)]">
+          <div className="flex items-center gap-3">
+            <span
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
+              style={{ background: hexA(TEAL, 0.1), color: TEAL }}
+            >
+              <Volume2 className="h-5 w-5" />
+            </span>
+            {b.media_url ? (
+              <audio controls src={b.media_url} className="w-full" />
+            ) : (
+              <p className="text-sm text-slate-400">Audio belum tersedia untuk sesi ini.</p>
+            )}
+          </div>
           {!showText[b.id] ? (
             <button
               onClick={() => onToggleText(b.id)}
-              className="mt-3 text-sm font-semibold underline"
+              className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-bold transition hover:opacity-80"
               style={{ color: TEAL }}
             >
-              Tampilkan teks
+              <BookOpen className="h-4 w-4" /> Tampilkan teks
             </button>
           ) : (
-            <div className="mt-3 rounded-2xl border border-slate-100 bg-white p-4">
-              <div className="text-lg font-bold text-slate-900">{b.content?.transcript}</div>
-              <div className="text-sm text-slate-500">{b.content?.gloss}</div>
+            <div className="mt-4 rounded-2xl border border-slate-100 bg-[#F5F6F8] p-4">
+              {b.content?.transcript ? (
+                <div className="text-[18px] font-extrabold leading-snug text-slate-900">
+                  {b.content.transcript}
+                </div>
+              ) : null}
+              {b.content?.gloss ? (
+                <div className="mt-1 text-[13.5px] font-semibold text-slate-500">
+                  {b.content.gloss}
+                </div>
+              ) : null}
             </div>
           )}
         </div>
@@ -921,9 +1042,9 @@ function StepView({
   if (step.kind === "logic") {
     const b = step.block;
     return (
-      <div className="lp-fade mx-auto max-w-[860px]">
+      <div className="lp-fade mx-auto max-w-[760px]">
         <Pill icon={BookOpen} text="Materi" />
-        <div className="mt-4 space-y-1">{renderMarkdown(b.content?.markdown || "")}</div>
+        <div className="mt-3">{renderMarkdown(b.content?.markdown || "")}</div>
       </div>
     );
   }
@@ -933,31 +1054,42 @@ function StepView({
     const items: any[] = b.content?.items || [];
     return (
       <div className="lp-fade mx-auto max-w-[860px]">
-        <Pill icon={ListChecks} text="Kosakata" />
-        <h2 className="mt-3 text-[24px] font-extrabold leading-tight text-slate-900">
+        <Pill icon={ListChecks} text="Materi · Kosakata" />
+        <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
           Kosakata baru
         </h2>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <p className="mt-2 max-w-[640px] text-[14px] font-medium leading-relaxed text-slate-500">
+          Ketuk tombol putar untuk mendengar pelafalannya, lalu ulangi dengan suara.
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it: any, i: number) => (
             <div
               key={i}
-              className="flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-white p-4"
+              className="lp-lift rounded-2xl border-2 border-slate-100 bg-white p-4"
             >
-              <div className="min-w-0">
-                <div className="text-[18px] font-extrabold text-slate-900">{it.vi}</div>
-                <div className="text-sm text-slate-500">{it.id}</div>
-              </div>
-              {it.audio ? (
-                <button
-                  onClick={() => playWordAudio(it.audio)}
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition hover:opacity-90 active:scale-95"
-                  style={{ background: TEAL }}
-                  title="Putar audio"
-                  aria-label={`Putar audio ${it.vi}`}
+              <div className="flex items-start justify-between gap-3">
+                <span
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-extrabold"
+                  style={{ background: hexA(TEAL, 0.1), color: TEAL }}
                 >
-                  <Volume2 className="h-5 w-5" />
-                </button>
-              ) : null}
+                  {i + 1}
+                </span>
+                {it.audio ? (
+                  <button
+                    onClick={() => playWordAudio(it.audio)}
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition hover:opacity-90 active:scale-95"
+                    style={{ background: TEAL }}
+                    title="Putar audio"
+                    aria-label={`Putar audio ${it.vi}`}
+                  >
+                    <Volume2 className="h-5 w-5" />
+                  </button>
+                ) : null}
+              </div>
+              <div className="mt-3 text-[24px] font-extrabold leading-none text-slate-900">
+                {it.vi}
+              </div>
+              <div className="mt-1.5 text-[13px] font-semibold text-slate-500">{it.id}</div>
             </div>
           ))}
         </div>
@@ -1060,6 +1192,7 @@ function StepView({
     0
   );
   const total = quizSteps.length;
+  const nLangkah = Math.max(0, steps.length - 1); // exclude "done"
   return (
     <div className="lp-fade relative mx-auto max-w-[640px] text-center">
       <div className="pointer-events-none absolute inset-x-0 top-0">
@@ -1082,44 +1215,90 @@ function StepView({
       >
         <PartyPopper className="h-12 w-12" />
       </div>
-      <h2 className="mt-6 text-[26px] font-extrabold leading-tight text-slate-900">
+      <h2 className="mt-6 text-[28px] font-extrabold leading-tight text-slate-900">
         Sesi selesai! 🎉
       </h2>
       <p className="mx-auto mt-2 max-w-[440px] text-[14px] font-medium leading-relaxed text-slate-500">
         {lesson.title} kelar. Progress kamu udah kesimpan — lanjut ke sesi berikutnya kapan aja.
       </p>
-      {total > 0 && (
-        <div
-          className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-bold"
-          style={{ background: "rgba(22,121,110,.10)", color: TEAL }}
-        >
-          <CheckCircle2 className="h-4 w-4" /> Skor kuis: {correctCount}/{total}
+
+      {/* [linguo-patch:lms-stage-redesign-v1] kartu statistik (data asli, no XP palsu) */}
+      <div className={`mt-7 grid gap-3 text-left ${total > 0 ? "grid-cols-2" : "grid-cols-1"}`}>
+        {total > 0 && (
+          <div className="rounded-2xl border border-slate-100 bg-white p-4">
+            <span
+              className="flex h-9 w-9 items-center justify-center rounded-xl"
+              style={{ background: hexA(TEAL, 0.1), color: TEAL }}
+            >
+              <Target className="h-5 w-5" />
+            </span>
+            <p className="mt-2 text-[20px] font-extrabold leading-none text-slate-900">
+              {correctCount}
+              <span className="text-[14px] font-bold text-slate-400">/{total}</span>
+            </p>
+            <p className="mt-1 text-[12px] font-semibold text-slate-500">Skor kuis</p>
+          </div>
+        )}
+        <div className="rounded-2xl border border-slate-100 bg-white p-4">
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-xl"
+            style={{ background: hexA(YELLOW, 0.2), color: "#9a7400" }}
+          >
+            <Sparkles className="h-5 w-5" />
+          </span>
+          <p className="mt-2 text-[20px] font-extrabold leading-none text-slate-900">
+            {nLangkah}
+          </p>
+          <p className="mt-1 text-[12px] font-semibold text-slate-500">Langkah selesai</p>
         </div>
-      )}
+      </div>
+
+      {/* kartu sesi berikutnya */}
+      {nextLesson ? (
+        <button
+          onClick={() => onOpenLesson(nextLesson.id)}
+          className="lp-lift mt-4 flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 text-left"
+        >
+          <span
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[13px] font-extrabold"
+            style={{ background: "#F5F6F8", color: TEAL }}
+          >
+            <ArrowRight className="h-5 w-5" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
+              Sesi berikutnya
+            </p>
+            <p className="truncate text-[15px] font-extrabold text-slate-900">{nextLesson.title}</p>
+          </div>
+          <ChevronRight className="h-5 w-5 shrink-0 text-slate-400" />
+        </button>
+      ) : null}
+
       <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
         {nextLesson ? (
           <button
             onClick={() => onOpenLesson(nextLesson.id)}
-            className="inline-flex h-12 items-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white sm:w-auto"
             style={{ background: TEAL, boxShadow: "0 14px 30px -14px rgba(22,121,110,.9)" }}
           >
-            Sesi berikutnya <ArrowRight className="h-4 w-4" />
+            Lanjut sesi berikutnya <ArrowRight className="h-4 w-4" />
           </button>
         ) : null}
         <button
           onClick={onBack}
           className={
             nextLesson
-              ? "inline-flex h-12 items-center gap-2 rounded-2xl px-6 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8]"
-              : "inline-flex h-12 items-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white"
+              ? "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8] sm:w-auto"
+              : "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white sm:w-auto"
           }
           style={nextLesson ? undefined : { background: TEAL }}
         >
-          Kembali ke materi
+          <ListChecks className="h-4 w-4" /> Kembali ke daftar sesi
         </button>
         <button
           onClick={onRestart}
-          className="inline-flex h-12 items-center gap-2 rounded-2xl px-6 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8]"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8] sm:w-auto"
         >
           <RotateCcw className="h-4 w-4" /> Ulangi sesi
         </button>
