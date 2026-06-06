@@ -34,6 +34,28 @@ const supabase = createClient(
 const TEAL = "#16796E";
 const YELLOW = "#F2CB05";
 
+// [linguo-patch:lms-rail-group-v1] pisah Materi vs Kuis di rail langkah (grouping otomatis per grup tipe)
+const KUIS = "#C2410C"; // orange-700, beda jelas dari teal materi
+function hexA(hex: string, a: number) {
+  const h = hex.replace("#", "");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+// step.kind -> grup rail: quiz=Kuis, done=Selesai, sisanya (logic/vocab/audio)=Materi
+function railGroupKey(kind: string) {
+  return kind === "quiz" ? "kuis" : kind === "done" ? "done" : "materi";
+}
+const RAIL_GROUP_META: Record<
+  string,
+  { label: string; color: string }
+> = {
+  materi: { label: "Materi", color: TEAL },
+  kuis: { label: "Kuis", color: KUIS },
+  done: { label: "Selesai", color: "#0F5A52" },
+};
+
 // [linguo-patch:lms-a1-free-v1] semua level A1 (A1.1, A1.2, dst) gratis; gembok cuma A2-B2
 function isFreeLevel(cefrLabel?: string | null) {
   return (cefrLabel || "").toUpperCase().startsWith("A1");
@@ -105,11 +127,19 @@ type Step =
   | { kind: "quiz"; block: Block; q: Quiz; qIdx: number; qTotal: number; label: string }
   | { kind: "done"; label: string };
 
-function Pill({ icon: Icon, text }: { icon: LucideIcon; text: string }) {
+function Pill({
+  icon: Icon,
+  text,
+  color = TEAL,
+}: {
+  icon: LucideIcon;
+  text: string;
+  color?: string;
+}) {
   return (
     <span
       className="inline-flex h-8 items-center gap-2 rounded-full px-3 text-[12px] font-bold"
-      style={{ background: "rgba(22,121,110,0.10)", color: TEAL }}
+      style={{ background: hexA(color, 0.1), color }}
     >
       <Icon className="h-4 w-4" />
       {text}
@@ -388,6 +418,14 @@ export default function LessonPlayer({
   }
 
   const cur = steps[stepIdx];
+  // [linguo-patch:lms-rail-group-v1] kelompokin step jadi segmen kontigu per grup tipe (Materi/Kuis/Selesai)
+  const railGroups: { key: string; items: { s: Step; gi: number }[] }[] = [];
+  steps.forEach((s, gi) => {
+    const k = railGroupKey(s.kind);
+    const last = railGroups[railGroups.length - 1];
+    if (last && last.key === k) last.items.push({ s, gi });
+    else railGroups.push({ key: k, items: [{ s, gi }] });
+  });
   const isQuizStep = cur?.kind === "quiz";
   const quizAnswered = isQuizStep ? !!answers[(cur as any).q.id] : true;
   const atDone = cur?.kind === "done";
@@ -538,40 +576,85 @@ export default function LessonPlayer({
       </header>
 
       {/* STEPPER */}
+      {/* [linguo-patch:lms-rail-group-v1] rail langkah dikelompokin: 📖 Materi | 📝 Kuis | 🎉 Selesai */}
       {!switching && !locked && !emptyContent && (
       <div className="bg-[#F5F6F8]/60 px-5 py-4 lg:px-8">
-        <div className="mx-auto flex max-w-[760px] items-center gap-2">
-          {steps.map((s, i) => {
-            const done = i < stepIdx;
-            const active = i === stepIdx;
+        <div className="mx-auto flex max-w-[760px] flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-3">
+          {railGroups.map((g, gi2) => {
+            const meta = RAIL_GROUP_META[g.key];
+            const GroupIcon =
+              g.key === "kuis" ? HelpCircle : g.key === "done" ? PartyPopper : BookOpen;
+            const groupActive = g.items.some(({ gi }) => gi === stepIdx);
+            const groupDone = g.items.every(({ gi }) => gi < stepIdx);
+            const lit = groupActive || groupDone;
             return (
               <div
-                key={i}
-                className={`flex items-center gap-2 ${i < steps.length - 1 ? "flex-1" : ""}`}
+                key={gi2}
+                className={`flex min-w-0 flex-col gap-1.5 ${
+                  g.key === "done" ? "shrink-0" : "flex-1"
+                }`}
               >
-                <button
-                  onClick={() => {
-                    if (i <= stepIdx) setStepIdx(i);
-                  }}
-                  disabled={i > stepIdx}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[12px] font-extrabold transition"
-                  style={
-                    active
-                      ? { background: TEAL, color: "#fff", boxShadow: "0 0 0 4px rgba(22,121,110,.15)" }
-                      : done
-                      ? { background: "rgba(22,121,110,.15)", color: TEAL }
-                      : { background: "#F5F6F8", color: "#94a3b8" }
-                  }
-                  title={s.label}
-                >
-                  {done ? <Check className="h-4 w-4" /> : i + 1}
-                </button>
-                {i < steps.length - 1 && (
-                  <span
-                    className="h-1.5 flex-1 rounded-full"
-                    style={{ background: i < stepIdx ? TEAL : "#E8EAEE" }}
+                {/* label section */}
+                <div className="flex items-center gap-1.5 px-0.5">
+                  <GroupIcon
+                    className="h-3.5 w-3.5 shrink-0"
+                    style={{ color: lit ? meta.color : "#94a3b8" }}
                   />
-                )}
+                  <span
+                    className="text-[11px] font-extrabold uppercase tracking-wide"
+                    style={{ color: lit ? meta.color : "#94a3b8" }}
+                  >
+                    {meta.label}
+                  </span>
+                  {g.key !== "done" && (
+                    <span className="text-[10px] font-bold text-slate-400">
+                      · {g.items.length}
+                    </span>
+                  )}
+                </div>
+                {/* baris lingkaran langkah */}
+                <div className="flex items-center gap-2">
+                  {g.items.map(({ s, gi }, j) => {
+                    const done = gi < stepIdx;
+                    const active = gi === stepIdx;
+                    return (
+                      <div
+                        key={gi}
+                        className={`flex items-center gap-2 ${
+                          j < g.items.length - 1 ? "flex-1" : ""
+                        }`}
+                      >
+                        <button
+                          onClick={() => {
+                            if (gi <= stepIdx) setStepIdx(gi);
+                          }}
+                          disabled={gi > stepIdx}
+                          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[12px] font-extrabold transition"
+                          style={
+                            active
+                              ? {
+                                  background: meta.color,
+                                  color: "#fff",
+                                  boxShadow: `0 0 0 4px ${hexA(meta.color, 0.15)}`,
+                                }
+                              : done
+                              ? { background: hexA(meta.color, 0.15), color: meta.color }
+                              : { background: "#F5F6F8", color: "#94a3b8" }
+                          }
+                          title={s.label}
+                        >
+                          {done ? <Check className="h-4 w-4" /> : gi + 1}
+                        </button>
+                        {j < g.items.length - 1 && (
+                          <span
+                            className="h-1.5 flex-1 rounded-full"
+                            style={{ background: done ? meta.color : "#E8EAEE" }}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
@@ -839,7 +922,7 @@ function StepView({
     const correct = ans === q.answer;
     return (
       <div className="lp-fade mx-auto max-w-[720px]">
-        <Pill icon={HelpCircle} text={`Kuis · Soal ${step.qIdx + 1} dari ${step.qTotal}`} />
+        <Pill icon={HelpCircle} text={`Kuis · Soal ${step.qIdx + 1} dari ${step.qTotal}`} color={KUIS} />
         <h2 className="mt-3 text-[22px] font-extrabold leading-tight text-slate-900">{q.prompt}</h2>
         {step.block.content?.instruction ? (
           <p className="mt-1.5 text-[13px] font-medium text-slate-500">
