@@ -24,6 +24,12 @@ import {
   Volume2,
   Sparkles,
   Target,
+  Bird,
+  LayoutGrid,
+  CalendarDays,
+  Star,
+  Settings,
+  LogOut,
   type LucideIcon,
 } from "lucide-react";
 import UnlockFullAccess from "./UnlockFullAccess";
@@ -603,6 +609,66 @@ export default function LessonPlayer({
         .lp-lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
         .lp-lift:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(18,23,43,.55)}
       `}</style>
+
+      {/* [linguo-patch:lms-icon-rail-v1] rail ikon ijo (Beranda dst) biar navigasi tetap ada pas buka materi/kuis — match frame. Desktop only; mobile pakai drawer. */}
+      <aside className="hidden w-[72px] shrink-0 flex-col items-center bg-[#0F5A52] py-6 md:flex">
+        <a
+          href="/akun"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white"
+          title="Beranda"
+        >
+          <Bird className="h-6 w-6" style={{ color: TEAL }} />
+        </a>
+        <nav className="mt-10 flex flex-col items-center gap-2">
+          <a
+            href="/akun"
+            title="Beranda"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            <LayoutGrid className="h-[22px] w-[22px]" />
+          </a>
+          <span
+            title="Kelas & Materi"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white"
+            style={{ background: "#16796E" }}
+          >
+            <BookOpen className="h-[22px] w-[22px]" />
+          </span>
+          <a
+            href="/akun"
+            title="Jadwal"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            <CalendarDays className="h-[22px] w-[22px]" />
+          </a>
+          <a
+            href="/akun"
+            title="Sertifikat"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            <Star className="h-[22px] w-[22px]" />
+          </a>
+          <a
+            href="/akun"
+            title="Pengaturan"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            <Settings className="h-[22px] w-[22px]" />
+          </a>
+        </nav>
+        <button
+          onClick={async () => {
+            try {
+              await supabase.auth.signOut();
+            } catch {}
+            window.location.href = "/";
+          }}
+          title="Keluar"
+          className="mt-auto flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+        >
+          <LogOut className="h-[22px] w-[22px]" />
+        </button>
+      </aside>
 
       {/* [linguo-patch:lms-lesson-sidenav-v1] LEFT INDEX (desktop) */}
       <aside
@@ -1326,6 +1392,8 @@ function SessionIndex({
   // [linguo-patch:lms-switch-level-v1] dropdown ganti level (modul lain dalam course yang sama)
   const [levelOpen, setLevelOpen] = useState(false);
   const [switchingMod, setSwitchingMod] = useState(false);
+  // [linguo-patch:lms-stage-redesign-v1] grup substep (Materi/Kuis) bisa di-collapse; default kebuka
+  const [closedSub, setClosedSub] = useState<Record<string, boolean>>({});
   const mods = modules || [];
   const canSwitch = mods.length > 0;
 
@@ -1604,9 +1672,16 @@ function SessionIndex({
                           </button>
                         );
                       }
+                      const groupOpen = !closedSub[g.key];
                       return (
                         <div key={g.key} className="mt-1">
-                          <div className="flex items-center gap-2 px-2.5 pb-1 pt-2">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setClosedSub((p) => ({ ...p, [g.key]: !p[g.key] }))
+                            }
+                            className="flex w-full items-center gap-2 rounded-lg px-2.5 pb-1 pt-2 text-left transition hover:bg-[#F5F6F8]"
+                          >
                             {g.key === "kuis" ? (
                               <HelpCircle className="h-3.5 w-3.5 text-slate-400" />
                             ) : (
@@ -1618,7 +1693,14 @@ function SessionIndex({
                             <span className="text-[11px] font-bold text-slate-300">
                               {doneCount}/{total}
                             </span>
-                          </div>
+                            <span className="flex-1" />
+                            {groupOpen ? (
+                              <ChevronDown className="h-3.5 w-3.5 text-slate-400" />
+                            ) : (
+                              <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+                            )}
+                          </button>
+                          {groupOpen && (
                           <div className="flex flex-col">
                             {g.items.map(({ s: st, gi }) => {
                               const ac = gi === stepIdx;
@@ -1667,6 +1749,7 @@ function SessionIndex({
                               );
                             })}
                           </div>
+                          )}
                         </div>
                       );
                     })}
