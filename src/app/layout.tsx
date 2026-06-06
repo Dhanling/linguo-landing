@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "sonner";
 import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:trial-wizard-v1
+import ChatWidget from "@/components/ChatWidget"; // linguo-patch:chat-widget-ai-wa-v1
 
 export const metadata: Metadata = {
   title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Toaster richColors position="top-center" closeButton />
         <TrialWizardModal />{/* linguo-patch:trial-wizard-v1 */}
+        <ChatWidget />{/* linguo-patch:chat-widget-ai-wa-v1 */}
 
       </body>
     </html>
