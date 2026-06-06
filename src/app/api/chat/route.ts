@@ -1,6 +1,7 @@
 // linguo-patch:chat-widget-ai-wa-v1
 // linguo-patch:ling-polish-v2
 // linguo-patch:ling-chat-v3  — logging Supabase, nomor tiket, status human-aware
+// linguo-patch:ling-chat-v3-1  — tabel rename ling_chat_* (anti-bentrok WA Inbox dll)
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -78,10 +79,10 @@ export async function POST(req: Request) {
     if (db && sessionId) {
       try {
         await db
-          .from("chat_sessions")
+          .from("ling_chat_sessions")
           .upsert({ id: sessionId, page }, { onConflict: "id", ignoreDuplicates: true });
         const { data: s } = await db
-          .from("chat_sessions")
+          .from("ling_chat_sessions")
           .select("ticket_no,status")
           .eq("id", sessionId)
           .maybeSingle();
@@ -92,7 +93,7 @@ export async function POST(req: Request) {
         const last = msgs[msgs.length - 1];
         if (last && last.role === "user") {
           await db
-            .from("chat_messages")
+            .from("ling_chat_messages")
             .insert({ session_id: sessionId, role: "user", content: last.content });
         }
       } catch {
@@ -164,7 +165,7 @@ export async function POST(req: Request) {
     if (db && sessionId && reply) {
       try {
         await db
-          .from("chat_messages")
+          .from("ling_chat_messages")
           .insert({ session_id: sessionId, role: "assistant", content: finalReply });
       } catch {
         /* abaikan */

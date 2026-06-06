@@ -1,4 +1,5 @@
 // linguo-patch:ling-chat-v3  — endpoint poll: widget ambil balasan admin + status sesi
+// linguo-patch:ling-chat-v3-1  — tabel rename ling_chat_*
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -31,13 +32,13 @@ export async function POST(req: Request) {
     if (!db) return NextResponse.json({ status: "bot", messages: [] });
 
     const { data: s } = await db
-      .from("chat_sessions")
+      .from("ling_chat_sessions")
       .select("status")
       .eq("id", sessionId)
       .maybeSingle();
 
     const { data: m } = await db
-      .from("chat_messages")
+      .from("ling_chat_messages")
       .select("id,content,created_at")
       .eq("session_id", sessionId)
       .eq("role", "admin")
