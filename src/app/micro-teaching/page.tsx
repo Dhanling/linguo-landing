@@ -25,7 +25,7 @@ function isDriveUrl(raw: string): boolean {
   }
 }
 
-function fmtDeadline(iso: string | null): string {
+function fmtDeadline(iso: string | null | undefined): string {
   if (!iso) return "-";
   try {
     return new Date(iso).toLocaleDateString("id-ID", {
