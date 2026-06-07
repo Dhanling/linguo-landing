@@ -88,6 +88,9 @@ type StudentReg = {
   payment_proof_uploaded_at?: string | null;
   payment_verified_at?: string | null;
   payment_rejection_reason?: string | null;
+  // [linguo-patch:akun-hide-cancelled-typefix-v1] kolom lifecycle dari cron/admin
+  pipeline_status?: string | null;
+  archived_at?: string | null;
   // Batch data for Kelas Reguler
   batch_id?: string | null;
   batch?: {
