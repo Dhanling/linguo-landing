@@ -25,8 +25,8 @@ import {
   VolumeX,
   Sparkles,
   Target,
-  Bird,
   LayoutGrid,
+  Library,
   CalendarDays,
   Star,
   Settings,
@@ -316,13 +316,6 @@ export default function LessonPlayer({
   // [linguo-patch:lms-quiz-sfx-v1] audio context buat chime benar/salah (synth, no file)
   const audioCtxRef = useRef<AudioContext | null>(null);
   const [sfxOn, setSfxOn] = useState(true);
-
-  // [linguo-patch:ling-lesson-reposition-v3] tandai <body> selama player ke-mount → ChatWidget angkat launcher Ling (URL-agnostic, ga peduli pathname)
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.body.classList.add("ling-on-lesson");
-    return () => document.body.classList.remove("ling-on-lesson");
-  }, []);
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 
@@ -660,52 +653,55 @@ export default function LessonPlayer({
         .lp-lift:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(18,23,43,.55)}
       `}</style>
 
-      {/* [linguo-patch:lms-icon-rail-v1][lms-icon-rail-route-v1] rail ikon ijo (Beranda dst) biar navigasi tetap ada pas buka materi/kuis — match frame. Desktop only; mobile pakai drawer. Link deep-link ke /akun?menu=<tab> (reader di akun/page.tsx). */}
-      <aside className="hidden w-[72px] shrink-0 flex-col items-center bg-[#0F5A52] py-6 md:flex">
-        <a
-          href="/akun"
-          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white"
-          title="Beranda"
-        >
-          <Bird className="h-6 w-6" style={{ color: TEAL }} />
+      {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
+      <aside className="hidden w-[96px] shrink-0 flex-col items-center bg-[#16796E] py-7 lg:flex">
+        {/* logo — img Linguo langsung di atas teal, tanpa kotak putih (match StudentShell) */}
+        <a href="/akun" title="Beranda" className="flex h-12 w-12 items-center justify-center">
+          <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
         </a>
-        <nav className="mt-10 flex flex-col items-center gap-2">
+
+        <nav className="mt-12 flex flex-col items-center gap-3">
           <a
             href="/akun?menu=beranda"
-            title="Beranda"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
-            <LayoutGrid className="h-[22px] w-[22px]" />
+            <LayoutGrid className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Beranda</span>
           </a>
-          <span
-            title="Kelas & Materi"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white"
-            style={{ background: "#16796E" }}
-          >
-            <BookOpen className="h-[22px] w-[22px]" />
+          <span className="group relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
+            <BookOpen className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Kelas &amp; Materi</span>
           </span>
           <a
-            href="/akun?menu=jadwal"
-            title="Jadwal"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+            href="/akun?menu=pustaka"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
-            <CalendarDays className="h-[22px] w-[22px]" />
+            <Library className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Perpustakaan</span>
+          </a>
+          <a
+            href="/akun?menu=jadwal"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          >
+            <CalendarDays className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Jadwal</span>
           </a>
           <a
             href="/akun?menu=sertifikat"
-            title="Sertifikat"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
-            <Star className="h-[22px] w-[22px]" />
+            <Star className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Sertifikat</span>
           </a>
           <a
             href="/akun?menu=akun"
-            title="Pengaturan"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+            className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
           >
-            <Settings className="h-[22px] w-[22px]" />
+            <Settings className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Pengaturan</span>
           </a>
         </nav>
+
         <button
           onClick={async () => {
             try {
@@ -713,10 +709,10 @@ export default function LessonPlayer({
             } catch {}
             window.location.href = "/";
           }}
-          title="Keluar"
-          className="mt-auto flex h-11 w-11 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+          className="group relative mt-auto flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
         >
-          <LogOut className="h-[22px] w-[22px]" />
+          <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+          <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Keluar</span>
         </button>
       </aside>
 
