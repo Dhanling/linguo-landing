@@ -1,14 +1,18 @@
 // ============================================================================
 // API: /api/affiliate/bank
 // Affiliate Program — Phase 3B (B1 — payout bank details)
+// linguo-patch:afiliator-bank-dropdown-v1  (+ persist bank_code)
 // ----------------------------------------------------------------------------
 // Lets a logged-in affiliate save/update their payout bank account:
-// affiliates.bank_name / bank_account_no / bank_account_name.
+// affiliates.bank_code / bank_name / bank_account_no / bank_account_name.
 //
 // Auth + affiliate-matching logic mirrors /api/affiliate/me:
 //   - identify the user from a cryptographically verified access token,
 //   - match the affiliate row by user_id OR (fallback) email — the migrated
 //     affiliates have user_id = NULL.
+//
+// bank_code = Xendit payout channel_code (mis. ID_BCA, ID_JAGO). Dipakai
+// route /api/affiliate/payout pas manggil Xendit /v2/payouts.
 // ============================================================================
 
 import { NextRequest, NextResponse } from "next/server";
@@ -42,10 +46,18 @@ export async function POST(req: NextRequest) {
     if (!body || typeof body !== "object") {
       return NextResponse.json({ error: "Data tidak valid." }, { status: 400 });
     }
+    const bankCode = String(body.bank_code || "").trim().toUpperCase();
     const bankName = String(body.bank_name || "").trim();
     const accountName = String(body.bank_account_name || "").trim();
     const accountNo = String(body.bank_account_no || "").replace(/[\s-]/g, "");
 
+    // bank_code wajib & harus format channel Xendit (mis. ID_BCA, ID_JAGO)
+    if (!/^[A-Z]{2}_[A-Z0-9_]+$/.test(bankCode)) {
+      return NextResponse.json(
+        { error: "Pilih bank dari daftar." },
+        { status: 400 }
+      );
+    }
     if (bankName.length < 2) {
       return NextResponse.json(
         { error: "Nama bank wajib diisi." },
@@ -102,6 +114,7 @@ export async function POST(req: NextRequest) {
     const { error: updErr } = await admin
       .from("affiliates")
       .update({
+        bank_code: bankCode,
         bank_name: bankName,
         bank_account_no: accountNo,
         bank_account_name: accountName,
@@ -120,6 +133,7 @@ export async function POST(req: NextRequest) {
       {
         ok: true,
         bank: {
+          bank_code: bankCode,
           bank_name: bankName,
           bank_account_no: accountNo,
           bank_account_name: accountName,
