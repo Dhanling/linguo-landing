@@ -194,9 +194,7 @@ const rupiah = (n: number) => "Rp " + Math.round(n || 0).toLocaleString("id-ID")
 
 // Pencairan
 const MIN_PAYOUT = 10_000; // saldo minimal sebelum boleh ajukan pencairan
-// ↓↓↓ ISI nomor WA admin/finance Linguo (format 62…, cth "628123456789").
-//     Kalau dikosongin, tombol tetap jalan tapi WhatsApp minta pilih kontak manual.
-const ADMIN_PAYOUT_WA = "";
+const PAYOUT_FEE = 2500; // biaya admin disbursement, ditanggung afiliator
 
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("id-ID", {
@@ -517,6 +515,7 @@ export default function AfiliatorPage() {
               waUrl={waUrl}
               copied={copied}
               onCopy={copyLink}
+              onRefresh={() => loadData({ silent: true })}
             />
           </>
         )}
@@ -875,6 +874,173 @@ function AfiliatorLogin() {
 }
 
 // ── Dashboard ──────────────────────────────────────────────────────────────
+// linguo-patch:afiliator-payout-modal-v1
+// ── PayoutModal ─ self-service "Cairkan Semua" (Xendit disbursement) ─────
+// Calls POST /api/affiliate/payout with the caller's access token. v1 cairkan
+// SELURUH saldo (no partial). Fee Rp2.500 ditanggung afiliator -> kirim = saldo
+// - fee. onDone() me-refresh saldo di latar; modal tetap buka nampilin sukses.
+function PayoutModal({
+  aff,
+  available,
+  onClose,
+  onDone,
+}: {
+  aff: NonNullable<ApiResponse["affiliate"]>;
+  available: number;
+  onClose: () => void;
+  onDone: () => void;
+}) {
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<{ diterima: number } | null>(null);
+
+  const diterima = Math.max(0, available - PAYOUT_FEE);
+
+  async function submit() {
+    setError(null);
+    setSubmitting(true);
+    try {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) {
+        setError("Sesi habis. Coba refresh halaman.");
+        setSubmitting(false);
+        return;
+      }
+      const res = await fetch("/api/affiliate/payout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json?.ok) {
+        setError(json?.error || "Gagal mengajukan pencairan. Coba lagi.");
+        setSubmitting(false);
+        return;
+      }
+      setResult({ diterima: typeof json.diterima === "number" ? json.diterima : diterima });
+      setSubmitting(false);
+      onDone();
+    } catch {
+      setError("Gagal terhubung ke server. Coba lagi.");
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={() => !submitting && onClose()}
+    >
+      <div
+        className="w-full max-w-md overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between bg-gradient-to-br from-[#1A9E9E] to-[#0F6B6B] px-5 py-4 text-white">
+          <div className="flex items-center gap-2 text-sm font-bold">
+            <Wallet className="h-4 w-4" /> Cairkan Komisi
+          </div>
+          <button
+            onClick={onClose}
+            disabled={submitting}
+            aria-label="Tutup"
+            className="rounded-full px-2 py-0.5 text-white/80 transition hover:bg-white/15 hover:text-white disabled:opacity-40"
+          >
+            ✕
+          </button>
+        </div>
+
+        {result ? (
+          <div className="space-y-3 px-5 py-6 text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <Check className="h-6 w-6" />
+            </div>
+            <div className="text-base font-bold text-slate-800">Pencairan diproses!</div>
+            <p className="text-sm leading-relaxed text-slate-500">
+              {rupiah(result.diterima)} lagi diproses ke rekening kamu. Biasanya
+              masuk dalam beberapa menit sampai 1 hari kerja. Status bisa dipantau
+              di halaman ini.
+            </p>
+            <button
+              onClick={onClose}
+              className="mt-2 h-11 w-full rounded-xl bg-[#1A9E9E] text-sm font-bold text-white transition hover:bg-[#147878]"
+            >
+              Selesai
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-4 px-5 py-5">
+            <div>
+              <span className="mb-1 block text-xs font-semibold text-slate-500">
+                Jumlah dicairkan
+              </span>
+              <input
+                readOnly
+                value={rupiah(available)}
+                className="h-12 w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-50 px-3.5 text-lg font-extrabold text-slate-800 outline-none"
+              />
+              <p className="mt-1 text-[11px] text-slate-400">
+                Untuk sekarang pencairan menarik seluruh saldo yang tersedia.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-slate-200/80 bg-slate-50 px-4 py-3 text-sm">
+              <div className="flex items-center justify-between text-slate-500">
+                <span>Saldo</span>
+                <span className="font-semibold text-slate-700">{rupiah(available)}</span>
+              </div>
+              <div className="mt-1 flex items-center justify-between text-slate-500">
+                <span>Biaya admin</span>
+                <span className="font-semibold text-slate-700">− {rupiah(PAYOUT_FEE)}</span>
+              </div>
+              <div className="mt-2 flex items-center justify-between border-t border-slate-200 pt-2">
+                <span className="font-semibold text-slate-700">Kamu terima</span>
+                <span className="text-base font-extrabold text-[#1A9E9E]">{rupiah(diterima)}</span>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-xs text-slate-500">
+              Ke rekening <b className="text-slate-700">{aff.bank_name ?? "-"}</b>{" "}
+              {aff.bank_account_no ?? "-"}{" "}
+              <span className="text-slate-400">(a.n. {aff.bank_account_name ?? "-"})</span>
+            </div>
+
+            {error && (
+              <div className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-700">
+                {error}
+              </div>
+            )}
+
+            <button
+              onClick={submit}
+              disabled={submitting || available < MIN_PAYOUT}
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] text-sm font-bold text-white shadow-sm transition hover:bg-[#147878] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {submitting ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                  Memproses…
+                </>
+              ) : (
+                <>
+                  <Wallet className="h-4 w-4" /> Cairkan Semua {rupiah(available)}
+                </>
+              )}
+            </button>
+            <p className="text-center text-[11px] text-slate-400">
+              Dengan klik Cairkan, kamu setuju biaya admin {rupiah(PAYOUT_FEE)} dipotong dari saldo.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function Dashboard({
   view,
   aff,
@@ -885,6 +1051,7 @@ function Dashboard({
   waUrl,
   copied,
   onCopy,
+  onRefresh,
 }: {
   view: string;
   aff: NonNullable<ApiResponse["affiliate"]>;
@@ -895,6 +1062,7 @@ function Dashboard({
   waUrl: string;
   copied: boolean;
   onCopy: () => void;
+  onRefresh: () => void;
 }) {
   const totalKomisi =
     stats.commission_pending + stats.commission_approved + stats.commission_paid;
@@ -905,18 +1073,6 @@ function Dashboard({
   const canRequest =
     aff.status === "active" && available >= MIN_PAYOUT && hasRekening;
   const kurang = Math.max(0, MIN_PAYOUT - available);
-  const payoutWaUrl =
-    `https://wa.me/${ADMIN_PAYOUT_WA}?text=` +
-    encodeURIComponent(
-      [
-        "Halo admin Linguo, saya mau ajukan pencairan komisi afiliasi.",
-        "",
-        `Nama: ${aff.name}`,
-        `Kode: ${aff.referral_code}`,
-        `Jumlah: ${rupiah(available)}`,
-        `Rekening: ${aff.bank_name ?? "-"} · ${aff.bank_account_no ?? "-"} (a.n. ${aff.bank_account_name ?? "-"})`,
-      ].join("\n")
-    );
 
   // Sparkline trends derived from the real daily series (last 14 WIB days).
   const last14 = daily.slice(-14);
@@ -924,6 +1080,8 @@ function Dashboard({
   const konvSpark = last14.map((d) => d.conversions);
   let _cum = 0;
   const komisiSpark = last14.map((d) => (_cum += d.conversions));
+
+  const [payoutOpen, setPayoutOpen] = useState(false);
 
   return (
     <div className="aff-views space-y-6">
@@ -1070,12 +1228,12 @@ function Dashboard({
               )}
 
               {canRequest ? (
-                <a href={payoutWaUrl} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] py-2.5 text-sm font-semibold text-white transition hover:bg-[#147878]">
-                  <MessageCircle className="h-4 w-4" /> Ajukan Pencairan {rupiah(available)}
-                </a>
+                <button onClick={() => setPayoutOpen(true)} className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] py-2.5 text-sm font-semibold text-white transition hover:bg-[#147878]">
+                  <Wallet className="h-4 w-4" /> Cairkan {rupiah(available)}
+                </button>
               ) : (
                 <button disabled className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-400">
-                  <Wallet className="h-4 w-4" /> Ajukan Pencairan
+                  <Wallet className="h-4 w-4" /> Cairkan Komisi
                 </button>
               )}
 
@@ -1090,6 +1248,15 @@ function Dashboard({
           </div>
         </div>
       </section>
+
+      {payoutOpen && (
+        <PayoutModal
+          aff={aff}
+          available={available}
+          onClose={() => setPayoutOpen(false)}
+          onDone={onRefresh}
+        />
+      )}
 
       </>
       )}
