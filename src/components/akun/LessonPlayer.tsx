@@ -316,6 +316,13 @@ export default function LessonPlayer({
   // [linguo-patch:lms-quiz-sfx-v1] audio context buat chime benar/salah (synth, no file)
   const audioCtxRef = useRef<AudioContext | null>(null);
   const [sfxOn, setSfxOn] = useState(true);
+
+  // [linguo-patch:ling-lesson-reposition-v3] tandai <body> selama player ke-mount → ChatWidget angkat launcher Ling (URL-agnostic, ga peduli pathname)
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.classList.add("ling-on-lesson");
+    return () => document.body.classList.remove("ling-on-lesson");
+  }, []);
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
 

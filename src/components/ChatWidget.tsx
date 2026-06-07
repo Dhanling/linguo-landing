@@ -150,6 +150,10 @@ const CSS = `
 /* [ling-lesson-reposition-v2] di player LMS footer ada tombol Selesaikan/Lanjut di pojok kanan bawah → angkat launcher biar ga ketutup. Panel drawer samping ga diubah. */
 .lingw-lesson .lingw-launcher{bottom:108px;}
 @media (max-width:560px){.lingw-lesson .lingw-launcher{bottom:100px;}}
+
+/* [ling-lesson-reposition-v3] URL-agnostic: LessonPlayer nge-toggle body.ling-on-lesson pas mount/unmount. Specificity body.ling-on-lesson .lingw-launcher (0,0,2,1) > base .lingw-launcher → menang, ga peduli pathname. */
+body.ling-on-lesson .lingw-launcher{bottom:108px;}
+@media (max-width:560px){body.ling-on-lesson .lingw-launcher{bottom:100px;}}
 `;
 
 export default function ChatWidget() {
