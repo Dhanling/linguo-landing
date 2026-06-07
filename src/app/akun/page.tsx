@@ -2344,6 +2344,7 @@ export default function AkunPage() {
           registration_date, teacher_id, batch_id,
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
+          pipeline_status, archived_at,
           teachers(name, whatsapp)
         `)
         .eq("student_id", studentData.id)
@@ -2500,9 +2501,12 @@ export default function AkunPage() {
 
     // Design B: "Kursus Aktif" = user udah commit (bayar atau udah upload bukti)
   const activeRegs = useMemo(() => student?.registrations.filter(r =>
-    r.status === "Aktif" ||
-    r.status === "Pending" ||
-    (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
+    // [linguo-patch:akun-hide-cancelled-v1] buang reg yang di-Batal-in admin/cron & yang udah diarsip
+    r.pipeline_status !== "Batal" && !r.archived_at && (
+      r.status === "Aktif" ||
+      r.status === "Pending" ||
+      (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
+    )
   ) || [], [student]);
 
   // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
@@ -2531,6 +2535,8 @@ export default function AkunPage() {
   }, [activeRegs]);
   // "Menunggu Pembayaran" = user belum upload bukti transfer
   const pendingPaymentRegs = useMemo(() => student?.registrations.filter(r =>
+    // [linguo-patch:akun-hide-cancelled-v1] guard sama — jangan tampilin yang dibatalkan/diarsip
+    r.pipeline_status !== "Batal" && !r.archived_at &&
     r.status === "Menunggu Pembayaran" &&
     (r.payment_status === "Belum Bayar" || !r.payment_status)
   ) || [], [student]);
@@ -3115,10 +3121,13 @@ export default function AkunPage() {
                             {pendingPaymentRegs.map((reg: any) => {
                               const photo = getLangPhoto(reg.language);
                               return (
-                              <button
+                              <div
                                 key={reg.id}
+                                role="button"
+                                tabIndex={0}
                                 onClick={() => setPendingModalReg(reg)}
-                                className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
+                                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPendingModalReg(reg); } }}
+                                className="group cursor-pointer rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
                                 <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
                                   {photo ? (
@@ -3146,8 +3155,23 @@ export default function AkunPage() {
                                     <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
                                     <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">Bayar <ChevronRight className="h-3.5 w-3.5" /></span>
                                   </div>
+                                  {/* [linguo-patch:akun-self-cancel-v1] siswa batalin sendiri — CUMA yang belum bayar (soft-cancel, no hard-delete) */}
+                                  <button
+                                    type="button"
+                                    onClick={async (e) => {
+                                      e.stopPropagation();
+                                      if (!confirm("Batalkan pendaftaran ini? Pendaftaran yang belum dibayar akan hilang dari daftar kamu.")) return;
+                                      const { error } = await supabase.from("registrations").update({ pipeline_status: "Batal" }).eq("id", reg.id);
+                                      if (error) { alert("Gagal membatalkan. Coba lagi atau hubungi admin."); return; }
+                                      setStudent((prev: any) => prev ? { ...prev, registrations: (prev.registrations || []).map((x: any) => x.id === reg.id ? { ...x, pipeline_status: "Batal" } : x) } : prev);
+                                      setPendingModalReg((cur: any) => (cur && cur.id === reg.id ? null : cur));
+                                    }}
+                                    className="mt-3 w-full rounded-xl border border-gray-200 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+                                  >
+                                    Batalkan pendaftaran
+                                  </button>
                                 </div>
-                              </button>
+                              </div>
                               );
                             })}
                           </div>
