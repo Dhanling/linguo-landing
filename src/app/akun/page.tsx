@@ -2039,6 +2039,9 @@ export default function AkunPage() {
     total: number; done: number; pct: number; resumeId: string; resumeTitle: string; fresh: boolean;
   }>(null);
 
+  // [linguo-patch:beranda-mandiri-refresh-v1] bump tiap balik ke Beranda → recompute progress (fix: kartu resume basi pas balik dari player)
+  const [resumeNonce, setResumeNonce] = useState(0);
+
   useEffect(() => {
     const uid = user?.id;
     if (!uid) { setMandiri(null); return; }
@@ -2047,9 +2050,9 @@ export default function AkunPage() {
       try {
         const { data: mods } = await supabase
           .from("lms_modules")
-          .select("id,language,sort_order")
+          .select("id,language,sort_order,cefr_label")
           .order("sort_order");
-        const modList = (mods || []) as { id: string; language: string; sort_order: number }[];
+        const modList = (mods || []) as { id: string; language: string; sort_order: number; cefr_label: string | null }[];
         if (!modList.length) { if (alive) setMandiri(null); return; }
         const moduleIds = modList.map((m) => m.id);
         const [lessRes, progRes] = await Promise.all([
@@ -2061,15 +2064,15 @@ export default function AkunPage() {
           ((progRes.data as any[]) || []).filter((p) => p?.status === "completed").map((p) => p.lesson_id)
         );
         const langByModule: Record<string, string> = {};
-        const modOrder: Record<string, number> = {};
-        modList.forEach((m, i) => { langByModule[m.id] = m.language; modOrder[m.id] = m.sort_order ?? i; });
+        const cefrByModule: Record<string, string> = {}; // [linguo-patch:beranda-mandiri-resume-v3] urut modul by CEFR (A1.1<A1.2<...), bukan sort_order (yg di DB A1.1 malah paling akhir)
+        modList.forEach((m, i) => { langByModule[m.id] = m.language; cefrByModule[m.id] = m.cefr_label || `Z${i}`; });
         const byLang: Record<string, typeof lessons> = {};
         lessons.forEach((l) => { const lg = langByModule[l.module_id]; if (lg) (byLang[lg] = byLang[lg] || []).push(l); });
 
         // pilih bahasa dengan sesi-selesai terbanyak (= yang "lagi jalan")
         let bestLang = ""; let bestArr: typeof lessons = []; let bestDone = -1;
         Object.keys(byLang).forEach((language) => {
-          const arr = byLang[language].slice().sort((a, b) => (modOrder[a.module_id] - modOrder[b.module_id]) || (a.sort_order - b.sort_order));
+          const arr = byLang[language].slice().sort((a, b) => (cefrByModule[a.module_id] || "").localeCompare(cefrByModule[b.module_id] || "") || (a.sort_order - b.sort_order));
           const dc = arr.filter((l) => done.has(l.id)).length;
           if (dc > 0 && dc > bestDone) { bestLang = language; bestArr = arr; bestDone = dc; }
         });
@@ -2097,7 +2100,7 @@ export default function AkunPage() {
       }
     })();
     return () => { alive = false; };
-  }, [user?.id]);
+  }, [user?.id, resumeNonce]);
 
   const [showPlacementPicker, setShowPlacementPicker] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(false);
@@ -2147,6 +2150,10 @@ export default function AkunPage() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
+  }, [activeTab]);
+  // [linguo-patch:beranda-mandiri-refresh-v1] tiap masuk Beranda → recompute kartu resume (progress fresh setelah selesai sesi)
+  useEffect(() => {
+    if (activeTab === "beranda") setResumeNonce((n) => n + 1);
   }, [activeTab]);
   // Booking Modal
   const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
