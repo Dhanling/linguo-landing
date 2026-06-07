@@ -18,7 +18,11 @@ import { createClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
-const XENDIT_SECRET = process.env.XENDIT_SECRET_KEY as string;
+// linguo-patch:afiliator-payout-key-split-v1
+// Pakai key KHUSUS payout (Money-out, least privilege). Kalau env
+// XENDIT_PAYOUT_SECRET_KEY belum diisi, fallback ke key invoice biar ga break.
+const XENDIT_SECRET = (process.env.XENDIT_PAYOUT_SECRET_KEY ||
+  process.env.XENDIT_SECRET_KEY) as string;
 
 const FEE = 2500;          // biaya admin, ditanggung afiliator
 const MIN_PAYOUT = 10000;  // minimal pencairan Rp10.000
