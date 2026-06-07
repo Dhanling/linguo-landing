@@ -193,7 +193,7 @@ Cobain lewat link ini yuk 👇
 const rupiah = (n: number) => "Rp " + Math.round(n || 0).toLocaleString("id-ID");
 
 // Pencairan
-const MIN_PAYOUT = 100_000; // saldo minimal sebelum boleh ajukan pencairan
+const MIN_PAYOUT = 10_000; // saldo minimal sebelum boleh ajukan pencairan
 // ↓↓↓ ISI nomor WA admin/finance Linguo (format 62…, cth "628123456789").
 //     Kalau dikosongin, tombol tetap jalan tapi WhatsApp minta pilih kontak manual.
 const ADMIN_PAYOUT_WA = "";
@@ -1080,7 +1080,7 @@ function Dashboard({
               )}
 
               <p className="text-center text-[11px] text-slate-400">
-                Pencairan diproses tiap tanggal 25. Komisi disetujui otomatis 14 hari setelah pembayaran.
+                Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan bisa kapan saja, minimal Rp 10.000.
               </p>
             </div>
           </div>
@@ -1197,7 +1197,7 @@ function Dashboard({
       </div>
 
       <p className="pt-1 text-center text-xs text-slate-400">
-        Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan tiap tanggal 25, minimal Rp 100.000.
+        Komisi disetujui otomatis 14 hari setelah pembayaran. Pencairan bisa kapan saja, minimal Rp 10.000.
       </p>
     </div>
   );
@@ -1825,7 +1825,7 @@ function TierCard({ tier }: { tier: string }) {
   const label = TIER_LABEL[tier] ?? tier;
   const perks: { icon: typeof Coins; t: string; s: string }[] = [
     { icon: Coins, t: "Komisi per konversi E-Learning", s: "otomatis tercatat tiap pembelian" },
-    { icon: Wallet, t: "Min. cair Rp 100.000", s: "diproses tiap tanggal 25" },
+    { icon: Wallet, t: "Min. cair Rp 10.000", s: "cair kapan saja, otomatis" },
     { icon: Clock, t: "Cookie referral 60 hari", s: "komisi tetap kehitung walau beli nanti" },
   ];
   return (

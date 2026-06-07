@@ -94,8 +94,8 @@ export default function RekeningForm({ aff }: { aff: Aff }) {
       </h2>
       <div className="space-y-3 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
         <p className="text-xs leading-relaxed text-slate-500">
-          Komisi yang sudah disetujui dicairkan ke rekening ini tiap tanggal 25
-          (minimal Rp 100.000). Pastikan datanya benar dan atas nama kamu
+          Komisi yang sudah disetujui bisa dicairkan ke rekening ini kapan saja
+          (minimal Rp 10.000). Pastikan datanya benar dan atas nama kamu
           sendiri.
         </p>
 
