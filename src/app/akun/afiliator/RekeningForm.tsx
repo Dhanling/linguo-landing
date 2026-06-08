@@ -2,21 +2,21 @@
 
 // ============================================================================
 // RekeningForm — Affiliate payout bank-account form
-// Affiliate Program — Phase 3B (B1) + dropdown bank/channel_code
+// Affiliate Program — Phase 3B + searchable bank picker
 // linguo-patch:afiliator-bank-dropdown-v1
+// linguo-patch:afiliator-bank-search-v1
 // ----------------------------------------------------------------------------
-// Rendered inside the /akun/afiliator dashboard. Lets an affiliate save the
-// bank account their commission is paid out to. Saves via POST
-// /api/affiliate/bank (service-role update on affiliates.bank_*).
+// Bank dipilih lewat modal full-screen (di-portal ke <body>) yang punya kotak
+// SEARCH. Backdrop gelap + blur nutup SELURUH layar (bukan cuma kartu), karena
+// modal-nya pakai createPortal langsung ke document.body.
 //
-// Pilihan bank diambil LIVE dari Xendit Get Payout Channels lewat
-// /api/affiliate/payout-channels, jadi channel_code yang kesimpen selalu yang
-// Xendit dukung (bukan tebakan). Ada fallback daftar bank besar kalau API
-// gagal / lagi kosong.
+// Daftar bank live dari /api/affiliate/payout-channels (fallback ke daftar bank
+// besar kalau API gagal/kosong). channel_code yang kesimpen = yang Xendit dukung.
 // ============================================================================
 
-import { useEffect, useState } from "react";
-import { Wallet, Check, ChevronDown } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
+import { Wallet, Check, ChevronDown, Search, X } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 
 type Aff = {
@@ -52,6 +52,12 @@ export default function RekeningForm({ aff }: { aff: Aff }) {
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // --- state modal picker ---
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const hasBank = Boolean(
     aff.bank_code && aff.bank_account_no && aff.bank_account_name
   );
@@ -84,6 +90,47 @@ export default function RekeningForm({ aff }: { aff: Aff }) {
       alive = false;
     };
   }, [aff.bank_code, aff.bank_name]);
+
+  // Lock scroll + tutup pakai ESC selama modal kebuka.
+  useEffect(() => {
+    if (!pickerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPickerOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [pickerOpen]);
+
+  const selectedName = useMemo(() => {
+    const found = banks.find((b) => b.code === bankCode)?.name;
+    if (found) return found;
+    return bankCode ? aff.bank_name || bankCode : "";
+  }, [banks, bankCode, aff.bank_name]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return banks;
+    return banks.filter(
+      (b) =>
+        b.name.toLowerCase().includes(q) || b.code.toLowerCase().includes(q)
+    );
+  }, [banks, query]);
+
+  function openPicker() {
+    setQuery("");
+    setPickerOpen(true);
+  }
+
+  function chooseBank(code: string) {
+    setBankCode(code);
+    setPickerOpen(false);
+    setQuery("");
+  }
 
   async function save() {
     setError(null);
@@ -156,27 +203,21 @@ export default function RekeningForm({ aff }: { aff: Aff }) {
           sendiri.
         </p>
 
+        {/* === Pemilih bank: tombol yang buka modal search === */}
         <label className="block">
           <span className="mb-1 block text-xs font-semibold text-slate-600">
             Bank
           </span>
-          <div className="relative">
-            <select
-              className={`${inputCls} appearance-none pr-9`}
-              value={bankCode}
-              onChange={(e) => setBankCode(e.target.value)}
-            >
-              <option value="" disabled>
-                Pilih bank…
-              </option>
-              {banks.map((b) => (
-                <option key={b.code} value={b.code}>
-                  {b.name}
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-          </div>
+          <button
+            type="button"
+            onClick={openPicker}
+            className={`${inputCls} flex items-center justify-between text-left ${
+              selectedName ? "text-slate-800" : "text-slate-400"
+            }`}
+          >
+            <span className="truncate">{selectedName || "Pilih bank…"}</span>
+            <ChevronDown className="ml-2 h-4 w-4 shrink-0 text-slate-400" />
+          </button>
         </label>
 
         <label className="block">
@@ -231,6 +272,81 @@ export default function RekeningForm({ aff }: { aff: Aff }) {
           )}
         </button>
       </div>
+
+      {/* === MODAL PILIH BANK (portal ke <body> -> blur full-screen) === */}
+      {mounted &&
+        pickerOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center"
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* backdrop gelap + blur, nutup seluruh layar */}
+            <div
+              className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+              onClick={() => setPickerOpen(false)}
+            />
+
+            {/* kartu modal */}
+            <div className="relative z-10 flex max-h-[80vh] w-full max-w-md flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:rounded-2xl">
+              <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                <h3 className="text-sm font-bold text-slate-700">Pilih Bank</h3>
+                <button
+                  type="button"
+                  onClick={() => setPickerOpen(false)}
+                  className="rounded-lg p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+                  aria-label="Tutup"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="border-b border-slate-100 p-3">
+                <div className="relative">
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                  <input
+                    autoFocus
+                    className={`${inputCls} pl-9`}
+                    placeholder="Cari bank… (mis. Jago, BCA)"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="flex-1 overflow-y-auto py-1">
+                {filtered.length === 0 ? (
+                  <p className="px-4 py-8 text-center text-sm text-slate-400">
+                    Bank “{query}” tidak ditemukan.
+                  </p>
+                ) : (
+                  filtered.map((b) => {
+                    const active = b.code === bankCode;
+                    return (
+                      <button
+                        key={b.code}
+                        type="button"
+                        onClick={() => chooseBank(b.code)}
+                        className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-sm transition hover:bg-slate-50 ${
+                          active
+                            ? "font-semibold text-[#1A9E9E]"
+                            : "text-slate-700"
+                        }`}
+                      >
+                        <span className="truncate">{b.name}</span>
+                        {active && (
+                          <Check className="ml-2 h-4 w-4 shrink-0 text-[#1A9E9E]" />
+                        )}
+                      </button>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
