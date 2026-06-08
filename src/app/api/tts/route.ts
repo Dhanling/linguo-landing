@@ -121,15 +121,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
     }
     const j = await res.json();
-    const audio = Buffer.from(j.audioContent, "base64");
-    return new NextResponse(audio, {
-      status: 200,
-      headers: {
-        "Content-Type": "audio/mpeg",
-        // boleh di-cache CDN/browser; teks opsi sama → audio sama
-        "Cache-Control": "public, max-age=86400",
-      },
-    });
+    // [ling-lms-quiz-tts-v2] balikin base64 apa adanya dari Google → client decode (atob→Uint8Array→Blob).
+    // Lebih robust dari body biner di Next route handler, dan match pola decode di client.
+    return NextResponse.json(
+      { audioContent: j.audioContent },
+      { headers: { "Cache-Control": "public, max-age=86400" } }
+    );
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
   }

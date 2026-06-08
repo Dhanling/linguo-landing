@@ -92,33 +92,39 @@ function playWordAudio(url?: string | null) {
   } catch {}
 }
 
-// [ling-lms-quiz-tts-v1] TTS untuk teks opsi kuis via Google Cloud TTS (route /api/tts, key server-side).
-// Opsi kuis cuma string tanpa URL audio → di-synth on-demand. Hasil di-cache blob URL per sesi
-// (Map text→Promise<objectURL>) biar tap berulang ga re-fetch. Voice sama dgn audio vocab (vi-VN Chirp3-HD).
-const _ttsCache = new Map<string, Promise<string>>();
-function fetchTtsUrl(text: string): Promise<string> {
-  let p = _ttsCache.get(text);
-  if (!p) {
-    p = fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("tts failed");
-        return res.blob();
-      })
-      .then((blob) => URL.createObjectURL(blob));
-    p.catch(() => _ttsCache.delete(text)); // jangan cache kegagalan → tap lagi bisa retry
-    _ttsCache.set(text, p);
-  }
-  return p;
-}
-function speakText(text?: string | null) {
+// [ling-lms-quiz-tts-v2] TTS teks opsi kuis via Google Cloud TTS (route /api/tts, key server-side).
+// Opsi kuis cuma string tanpa URL audio → di-synth on-demand: POST /api/tts → { audioContent } base64
+// → atob → Uint8Array → Blob → objectURL → Audio.play(). Hasil di-cache per sesi (Map text→objectURL)
+// biar tap berulang ga re-fetch. Voice sama dgn audio vocab (vi-VN Chirp3-HD). DILARANG Web Speech API.
+// Fire-and-forget: caller ga perlu await (TTS bunyi barengan visual select, ga nge-block UX).
+const _ttsCache = new Map<string, string>(); // text -> objectURL
+let _ttsSeq = 0;
+async function playTTS(text?: string | null) {
   if (!text || typeof window === "undefined") return;
-  fetchTtsUrl(String(text))
-    .then((url) => playWordAudio(url))
-    .catch(() => {});
+  const seq = ++_ttsSeq;
+  // cancel audio yang lagi jalan (tap cepat / pindah opsi) — pakai elemen audio bareng playWordAudio
+  if (_lpAudio) {
+    try { _lpAudio.pause(); _lpAudio.currentTime = 0; } catch {}
+  }
+  try {
+    let url = _ttsCache.get(text);
+    if (!url) {
+      const res = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      if (!res.ok) return;
+      const { audioContent } = await res.json();
+      if (!audioContent) return;
+      const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
+      url = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
+      _ttsCache.set(text, url);
+    }
+    if (seq !== _ttsSeq) return; // udah ke-supersede tap lain → jangan ikut bunyi
+    _lpAudio = new Audio(url);
+    _lpAudio.play().catch(() => {});
+  } catch {}
 }
 
 // [linguo-patch:lms-stage-redesign-v1] inline **bold** → <strong> (frame pakai bold buat penekanan)
@@ -1342,25 +1348,26 @@ function StepView({
               textCls = "text-slate-900";
             }
             return (
-              // [ling-lms-quiz-duo-v1] klik kartu = SELECT saja (ga submit). Submit lewat tombol "Periksa".
+              // [ling-lms-quiz-tts-v2] klik kartu di mana saja → putar TTS (fire-and-forget) + SELECT (kalau belum di-commit).
+              // Submit tetap lewat tombol "Periksa". Setelah answered: klik kartu tetap bunyi TTS (cuma ga ganti pilihan).
               <div
                 key={opt}
                 role="button"
-                tabIndex={answered ? -1 : 0}
+                tabIndex={0}
                 aria-pressed={isSel}
-                onClick={answered ? undefined : () => onSelect(q, opt)}
-                onKeyDown={
-                  answered
-                    ? undefined
-                    : (e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          onSelect(q, opt);
-                        }
-                      }
-                }
-                className={`flex h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${
-                  answered ? "" : "cursor-pointer hover:border-[#16796E] hover:bg-[#F0FAF8]"
+                onClick={() => {
+                  playTTS(opt);
+                  if (!answered) onSelect(q, opt);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    playTTS(opt);
+                    if (!answered) onSelect(q, opt);
+                  }
+                }}
+                className={`flex h-14 w-full cursor-pointer items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${
+                  answered ? "" : "hover:border-[#16796E] hover:bg-[#F0FAF8]"
                 } ${textCls}`}
                 style={st}
               >
@@ -1368,12 +1375,12 @@ function StepView({
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span className="text-[14px] font-bold">{opt}</span>
-                {/* [ling-lms-quiz-duo-v1] tombol TTS per opsi — stopPropagation biar ga ikut nyeleksi kartu */}
+                {/* [ling-lms-quiz-tts-v2] speaker = visual indicator; stopPropagation biar ga double-trigger select kartu */}
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    speakText(opt);
+                    playTTS(opt);
                   }}
                   className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F0FAF8] hover:text-[#16796E] active:scale-95"
                   title="Dengar pelafalan"
