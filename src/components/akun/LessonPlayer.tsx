@@ -25,6 +25,8 @@ import {
   VolumeX,
   Maximize2,
   Minimize2,
+  Moon,
+  Sun,
   Sparkles,
   Target,
   LayoutGrid,
@@ -99,32 +101,41 @@ function playWordAudio(url?: string | null) {
 // Fire-and-forget: caller ga perlu await (TTS bunyi barengan visual select, ga nge-block UX).
 const _ttsCache = new Map<string, string>(); // text -> objectURL
 let _ttsSeq = 0;
-async function playTTS(text?: string | null) {
-  if (!text || typeof window === "undefined") return;
-  const seq = ++_ttsSeq;
-  // cancel audio yang lagi jalan (tap cepat / pindah opsi) — pakai elemen audio bareng playWordAudio
+function _playUrl(url: string) {
   if (_lpAudio) {
     try { _lpAudio.pause(); _lpAudio.currentTime = 0; } catch {}
   }
+  _lpAudio = new Audio(url);
+  _lpAudio.play().catch((e) => console.warn("[TTS] play() blocked:", e?.message || e));
+}
+async function playTTS(text?: string | null) {
+  if (!text || typeof window === "undefined") return;
+  console.log("TTS triggered:", text); // sementara — verifikasi onClick benar-benar manggil playTTS
+  const seq = ++_ttsSeq;
+  // cancel audio yang lagi jalan (tap cepat / pindah opsi)
+  if (_lpAudio) {
+    try { _lpAudio.pause(); _lpAudio.currentTime = 0; } catch {}
+  }
+  // sudah di-cache → play SINKRON dalam gesture klik (hindari autoplay-block setelah await di Safari/iOS)
+  const cached = _ttsCache.get(text);
+  if (cached) { _playUrl(cached); return; }
   try {
-    let url = _ttsCache.get(text);
-    if (!url) {
-      const res = await fetch("/api/tts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      });
-      if (!res.ok) return;
-      const { audioContent } = await res.json();
-      if (!audioContent) return;
-      const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
-      url = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
-      _ttsCache.set(text, url);
-    }
+    const res = await fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+    if (!res.ok) { console.warn("[TTS] /api/tts status", res.status); return; }
+    const { audioContent } = await res.json();
+    if (!audioContent) { console.warn("[TTS] no audioContent in response"); return; }
+    const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
+    const url = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
+    _ttsCache.set(text, url);
     if (seq !== _ttsSeq) return; // udah ke-supersede tap lain → jangan ikut bunyi
-    _lpAudio = new Audio(url);
-    _lpAudio.play().catch(() => {});
-  } catch {}
+    _playUrl(url);
+  } catch (e: any) {
+    console.warn("[TTS] error:", e?.message || e);
+  }
 }
 
 // [linguo-patch:lms-stage-redesign-v1] inline **bold** → <strong> (frame pakai bold buat penekanan)
@@ -388,6 +399,17 @@ export default function LessonPlayer({
       document.exitFullscreen?.().catch(() => {});
     }
   };
+  // [ling-lms-dark-v1] dark mode toggle, persist di localStorage "lms-dark-mode"
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    try { setIsDark(localStorage.getItem("lms-dark-mode") === "1"); } catch {}
+  }, []);
+  const toggleDark = () =>
+    setIsDark((v) => {
+      const nv = !v;
+      try { localStorage.setItem("lms-dark-mode", nv ? "1" : "0"); } catch {}
+      return nv;
+    });
   // [ling-lms-hide-fab-v2] tandai <body> selama player aktif → ChatWidget sembunyiin FAB.
   // URL-agnostic: jalan untuk route /akun/belajar/[id] DAN overlay in-place di /akun.
   useEffect(() => {
@@ -740,7 +762,7 @@ export default function LessonPlayer({
 
   // ---------- main frame (inner) ----------
   return (
-    <div className="flex min-h-full lg:h-full lg:min-h-0">
+    <div className={`flex min-h-full lg:h-full lg:min-h-0 ${isDark ? "lp-dark" : ""}`}>
       <style>{`
         @keyframes lp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
         @keyframes lp-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -750,6 +772,17 @@ export default function LessonPlayer({
         .lp-confetti{position:absolute;width:9px;height:14px;border-radius:2px;top:-20px;animation:lp-fall linear forwards}
         .lp-lift{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
         .lp-lift:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(18,23,43,.55)}
+        /* [ling-lms-fullscreen-v3] konten fullscreen ngisi layar: lebih lebar, center (margin auto biar tetap bisa scroll kalau panjang), padding lega */
+        .lp-stage-fs{display:flex;flex-direction:column;padding-left:max(2rem,5vw);padding-right:max(2rem,5vw);}
+        .lp-stage-fs > div{max-width:64rem;width:100%;margin:auto;}
+        /* [ling-lms-dark-v1] dark mode class-based & scoped — CSS unlayered menang atas utility Tailwind v4 (pakai !important biar pasti) */
+        .lp-dark{background:#0b1220;}
+        .lp-dark .bg-white{background-color:#111827 !important;}
+        .lp-dark .bg-\\[\\#F5F6F8\\]{background-color:#1f2937 !important;}
+        .lp-dark .text-slate-900,.lp-dark .text-slate-800,.lp-dark .text-slate-700,.lp-dark .text-slate-600{color:#e5e7eb !important;}
+        .lp-dark .text-slate-500,.lp-dark .text-slate-400{color:#9aa6b2 !important;}
+        .lp-dark .border-slate-100,.lp-dark .border-slate-200{border-color:#1f2937 !important;}
+        .lp-dark .border-slate-300{border-color:#374151 !important;}
       `}</style>
 
       {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
@@ -886,6 +919,19 @@ export default function LessonPlayer({
             <Maximize2 className="h-5 w-5 text-slate-700" />
           )}
         </button>
+        {/* [ling-lms-dark-v1] toggle dark mode */}
+        <button
+          onClick={toggleDark}
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
+          title={isDark ? "Mode terang" : "Mode gelap"}
+          aria-label={isDark ? "Mode terang" : "Mode gelap"}
+        >
+          {isDark ? (
+            <Sun className="h-5 w-5 text-amber-400" />
+          ) : (
+            <Moon className="h-5 w-5 text-slate-700" />
+          )}
+        </button>
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-1.5 truncate text-[11px] font-bold text-slate-400">
             <span className="inline-flex items-center gap-1.5" style={{ color: TEAL }}>
@@ -1002,7 +1048,7 @@ export default function LessonPlayer({
       )}
 
       {/* STAGE */}
-      <main className="flex-1 px-5 py-7 lg:min-h-0 lg:overflow-y-auto lg:px-10">
+      <main className={`flex-1 px-5 py-7 lg:min-h-0 lg:overflow-y-auto lg:px-10 ${isFullscreen ? "lp-stage-fs" : ""}`}>
         {switching ? (
           // [linguo-patch:lms-lesson-switch-v1] spinner di stage doang pas ganti sesi — sidebar & top bar tetap render
           <Centered>
@@ -1072,6 +1118,7 @@ export default function LessonPlayer({
             steps={steps}
             answers={answers}
             selected={selected}
+            isDark={isDark}
             showText={showText}
             onAnswer={answerQuiz}
             onSelect={selectQuiz}
@@ -1208,6 +1255,7 @@ function StepView({
   steps,
   answers,
   selected,
+  isDark,
   showText,
   onAnswer,
   onSelect,
@@ -1222,6 +1270,7 @@ function StepView({
   steps: Step[];
   answers: Record<string, string>;
   selected: Record<string, string>;
+  isDark: boolean;
   showText: Record<string, boolean>;
   onAnswer: (q: Quiz, choice: string) => void;
   onSelect: (q: Quiz, choice: string) => void;
@@ -1373,7 +1422,9 @@ function StepView({
             const isCorrect = opt === q.answer;
             // [ling-lms-quiz-duo-v1] highlight pilihan tentatif (belum di-Periksa)
             const isSel = !answered && selected[q.id] === opt;
-            let st: any = { borderColor: "#e2e8f0", background: "#fff" };
+            let st: any = isDark
+              ? { borderColor: "#334155", background: "#1e293b" }
+              : { borderColor: "#e2e8f0", background: "#fff" };
             let textCls = "text-slate-800";
             if (answered) {
               if (isCorrect) {
@@ -1386,7 +1437,9 @@ function StepView({
                 textCls = "text-slate-400";
               }
             } else if (isSel) {
-              st = { borderColor: TEAL, background: "#F0FAF8" };
+              st = isDark
+                ? { borderColor: TEAL, background: "rgba(22,121,110,0.22)" }
+                : { borderColor: TEAL, background: "#F0FAF8" };
               textCls = "text-slate-900";
             }
             return (
@@ -1398,6 +1451,7 @@ function StepView({
                 tabIndex={0}
                 aria-pressed={isSel}
                 onClick={() => {
+                  console.log("TTS triggered:", opt); // sementara — verifikasi klik kartu memicu TTS
                   playTTS(opt);
                   if (!answered) onSelect(q, opt);
                 }}
