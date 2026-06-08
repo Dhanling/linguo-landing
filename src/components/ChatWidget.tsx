@@ -319,6 +319,10 @@ export default function ChatWidget() {
 
   const lastIsAssistant = messages[messages.length - 1]?.role === "assistant";
 
+  // [ling-lms-hide-fab-v1] sembunyiin FAB chat di route player LMS (/akun/belajar/*)
+  // biar ga nutupin tombol "Lanjut". Komponen tetap dirender global di layout — cuma di-suppress di sini.
+  if (pathname?.startsWith("/akun/belajar")) return null;
+
   return (
     <div className={"lingw" + (onLesson ? " lingw-lesson" : "")}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />

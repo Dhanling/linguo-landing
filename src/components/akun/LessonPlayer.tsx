@@ -23,6 +23,8 @@ import {
   RotateCcw,
   Volume2,
   VolumeX,
+  Maximize2,
+  Minimize2,
   Sparkles,
   Target,
   LayoutGrid,
@@ -307,6 +309,22 @@ export default function LessonPlayer({
   const [progressMap, setProgressMap] = useState<Record<string, string>>({});
   // [linguo-patch:lms-stage-redesign-v1] konfirmasi sebelum keluar sesi
   const [confirmExit, setConfirmExit] = useState(false);
+  // [ling-lms-fullscreen-v1] mode layar penuh via Fullscreen API
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const onFsChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onFsChange);
+    return () => document.removeEventListener("fullscreenchange", onFsChange);
+  }, []);
+  const toggleFullscreen = () => {
+    if (typeof document === "undefined") return;
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.().catch(() => {});
+    } else {
+      document.exitFullscreen?.().catch(() => {});
+    }
+  };
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
   // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan
@@ -772,6 +790,19 @@ export default function LessonPlayer({
             <VolumeX className="h-5 w-5 text-slate-400" />
           )}
         </button>
+        {/* [ling-lms-fullscreen-v1] toggle layar penuh */}
+        <button
+          onClick={toggleFullscreen}
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
+          title={isFullscreen ? "Keluar layar penuh" : "Layar penuh"}
+          aria-label={isFullscreen ? "Keluar layar penuh" : "Layar penuh"}
+        >
+          {isFullscreen ? (
+            <Minimize2 className="h-5 w-5 text-slate-700" />
+          ) : (
+            <Maximize2 className="h-5 w-5 text-slate-700" />
+          )}
+        </button>
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-1.5 truncate text-[11px] font-bold text-slate-400">
             <span className="inline-flex items-center gap-1.5" style={{ color: TEAL }}>
@@ -1169,7 +1200,14 @@ function StepView({
           {items.map((it: any, i: number) => (
             <div
               key={i}
-              className="lp-lift rounded-2xl border-2 border-slate-100 bg-white p-4"
+              onClick={it.audio ? () => playWordAudio(it.audio) : undefined}
+              role={it.audio ? "button" : undefined}
+              aria-label={it.audio ? `Putar audio ${it.vi}` : undefined}
+              title={it.audio ? "Putar audio" : undefined}
+              className={
+                "lp-lift rounded-2xl border-2 border-slate-100 bg-white p-4" +
+                (it.audio ? " cursor-pointer" : "")
+              }
             >
               <div className="flex items-start justify-between gap-3">
                 <span
@@ -1180,7 +1218,7 @@ function StepView({
                 </span>
                 {it.audio ? (
                   <button
-                    onClick={() => playWordAudio(it.audio)}
+                    onClick={(e) => { e.stopPropagation(); playWordAudio(it.audio); }}
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition hover:opacity-90 active:scale-95"
                     style={{ background: TEAL }}
                     title="Putar audio"
