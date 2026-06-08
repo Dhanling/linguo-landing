@@ -1,0 +1,136 @@
+// [ling-lms-quiz-tts-v1] Google Cloud TTS on-demand untuk teks opsi kuis.
+// Server-side biar service-account key ga ke-expose ke client. Voice config disamain
+// dengan audio vocab (gen-vietnam-audio.mjs): vi-VN, Chirp3-HD (auto-pick / TTS_VOICE), MP3.
+//
+// Kredensial (urut prioritas):
+//   1. process.env.GOOGLE_TTS_CREDENTIALS_JSON  — isi JSON service account (buat deploy/Vercel)
+//   2. process.env.GOOGLE_APPLICATION_CREDENTIALS — path ke file JSON
+//   3. ~/linguo-audio-gen/linguo-tts-key.json     — fallback dev lokal
+import { NextRequest, NextResponse } from "next/server";
+import crypto from "node:crypto";
+import { readFileSync } from "node:fs";
+import os from "node:os";
+import path from "node:path";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+const LANG_CODE = "vi-VN";
+const ENCODING = "MP3";
+const TOKEN_URI = "https://oauth2.googleapis.com/token";
+
+type SA = { client_email: string; private_key: string; token_uri?: string };
+
+let _sa: SA | null = null;
+function loadCreds(): SA {
+  if (_sa) return _sa;
+  let raw: string | null = null;
+  if (process.env.GOOGLE_TTS_CREDENTIALS_JSON) {
+    raw = process.env.GOOGLE_TTS_CREDENTIALS_JSON;
+  } else {
+    const p =
+      process.env.GOOGLE_APPLICATION_CREDENTIALS ||
+      path.join(os.homedir(), "linguo-audio-gen", "linguo-tts-key.json");
+    raw = readFileSync(p, "utf8");
+  }
+  const j = JSON.parse(raw);
+  // private_key dari env bisa punya "\n" literal — normalisasi ke newline asli
+  _sa = { client_email: j.client_email, private_key: String(j.private_key).replace(/\\n/g, "\n"), token_uri: j.token_uri };
+  return _sa;
+}
+
+// ---- OAuth access token via JWT bearer (di-cache sampai mendekati expiry) ----
+let _token: { value: string; exp: number } | null = null;
+async function getAccessToken(): Promise<string> {
+  const now = Math.floor(Date.now() / 1000);
+  if (_token && _token.exp - 60 > now) return _token.value;
+  const sa = loadCreds();
+  const b64 = (o: object) => Buffer.from(JSON.stringify(o)).toString("base64url");
+  const header = b64({ alg: "RS256", typ: "JWT" });
+  const claim = b64({
+    iss: sa.client_email,
+    scope: "https://www.googleapis.com/auth/cloud-platform",
+    aud: sa.token_uri || TOKEN_URI,
+    iat: now,
+    exp: now + 3600,
+  });
+  const signer = crypto.createSign("RSA-SHA256");
+  signer.update(`${header}.${claim}`);
+  const sig = signer.sign(sa.private_key).toString("base64url");
+  const assertion = `${header}.${claim}.${sig}`;
+
+  const res = await fetch(sa.token_uri || TOKEN_URI, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+      assertion,
+    }),
+  });
+  if (!res.ok) throw new Error(`token exchange failed: ${res.status}`);
+  const j = await res.json();
+  _token = { value: j.access_token, exp: now + (j.expires_in || 3600) };
+  return _token.value;
+}
+
+// ---- resolve voice sekali (TTS_VOICE override, atau auto-pick Chirp3-HD pertama) ----
+let _voice: string | null = null;
+async function resolveVoice(token: string): Promise<string> {
+  if (_voice) return _voice;
+  if (process.env.TTS_VOICE) {
+    _voice = process.env.TTS_VOICE;
+    return _voice;
+  }
+  const res = await fetch(
+    `https://texttospeech.googleapis.com/v1/voices?languageCode=${LANG_CODE}`,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+  const j = await res.json().catch(() => ({}));
+  const voices: any[] = j.voices || [];
+  const chirp = voices.find((v) => /Chirp3-HD/i.test(v.name || ""));
+  const name: string = (chirp || voices[0])?.name || "vi-VN-Wavenet-A";
+  _voice = name;
+  return name;
+}
+
+// sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·"
+function cleanText(s: string) {
+  return String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json().catch(() => ({}));
+    const text = cleanText(body?.text || "").slice(0, 400);
+    if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });
+
+    const token = await getAccessToken();
+    const voice = await resolveVoice(token);
+
+    const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: { text },
+        voice: { languageCode: LANG_CODE, name: voice },
+        audioConfig: { audioEncoding: ENCODING },
+      }),
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      return NextResponse.json({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
+    }
+    const j = await res.json();
+    const audio = Buffer.from(j.audioContent, "base64");
+    return new NextResponse(audio, {
+      status: 200,
+      headers: {
+        "Content-Type": "audio/mpeg",
+        // boleh di-cache CDN/browser; teks opsi sama → audio sama
+        "Cache-Control": "public, max-age=86400",
+      },
+    });
+  } catch (e: any) {
+    return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
+  }
+}

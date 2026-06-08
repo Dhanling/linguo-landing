@@ -151,9 +151,8 @@ const CSS = `
 .lingw-lesson .lingw-launcher{bottom:108px;}
 @media (max-width:560px){.lingw-lesson .lingw-launcher{bottom:100px;}}
 
-/* [ling-lesson-reposition-v3] URL-agnostic: LessonPlayer nge-toggle body.ling-on-lesson pas mount/unmount. Specificity body.ling-on-lesson .lingw-launcher (0,0,2,1) > base .lingw-launcher → menang, ga peduli pathname. */
-body.ling-on-lesson .lingw-launcher{bottom:108px;}
-@media (max-width:560px){body.ling-on-lesson .lingw-launcher{bottom:100px;}}
+/* [ling-lms-hide-fab-v2] URL-agnostic: LessonPlayer nambahin body.ling-on-lesson pas mount → sembunyiin FAB chat sepenuhnya. Nutup dua jalur render player: route /akun/belajar/[id] DAN overlay in-place di /akun (pathname /akun, jadi cek pathname aja ga cukup). */
+body.ling-on-lesson .lingw{display:none !important;}
 `;
 
 export default function ChatWidget() {

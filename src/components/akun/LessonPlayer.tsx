@@ -92,6 +92,35 @@ function playWordAudio(url?: string | null) {
   } catch {}
 }
 
+// [ling-lms-quiz-tts-v1] TTS untuk teks opsi kuis via Google Cloud TTS (route /api/tts, key server-side).
+// Opsi kuis cuma string tanpa URL audio → di-synth on-demand. Hasil di-cache blob URL per sesi
+// (Map text→Promise<objectURL>) biar tap berulang ga re-fetch. Voice sama dgn audio vocab (vi-VN Chirp3-HD).
+const _ttsCache = new Map<string, Promise<string>>();
+function fetchTtsUrl(text: string): Promise<string> {
+  let p = _ttsCache.get(text);
+  if (!p) {
+    p = fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("tts failed");
+        return res.blob();
+      })
+      .then((blob) => URL.createObjectURL(blob));
+    p.catch(() => _ttsCache.delete(text)); // jangan cache kegagalan → tap lagi bisa retry
+    _ttsCache.set(text, p);
+  }
+  return p;
+}
+function speakText(text?: string | null) {
+  if (!text || typeof window === "undefined") return;
+  fetchTtsUrl(String(text))
+    .then((url) => playWordAudio(url))
+    .catch(() => {});
+}
+
 // [linguo-patch:lms-stage-redesign-v1] inline **bold** → <strong> (frame pakai bold buat penekanan)
 function inlineBold(text: string): ReactNode[] {
   return text.split("**").map((seg, i) =>
@@ -299,6 +328,8 @@ export default function LessonPlayer({
   const [steps, setSteps] = useState<Step[]>([]);
   const [stepIdx, setStepIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  // [ling-lms-quiz-duo-v1] pilihan tentatif (belum di-commit) — flow 2 langkah: pilih → Periksa
+  const [selected, setSelected] = useState<Record<string, string>>({});
   const [showText, setShowText] = useState<Record<string, boolean>>({});
   const [completed, setCompleted] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -325,6 +356,13 @@ export default function LessonPlayer({
       document.exitFullscreen?.().catch(() => {});
     }
   };
+  // [ling-lms-hide-fab-v2] tandai <body> selama player aktif → ChatWidget sembunyiin FAB.
+  // URL-agnostic: jalan untuk route /akun/belajar/[id] DAN overlay in-place di /akun.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.classList.add("ling-on-lesson");
+    return () => document.body.classList.remove("ling-on-lesson");
+  }, []);
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
   // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan
@@ -550,7 +588,14 @@ export default function LessonPlayer({
     } catch {}
   }
 
+  // [ling-lms-quiz-duo-v1] langkah 1: cuma pilih (highlight), belum submit. Ga bisa ganti kalau udah di-commit.
+  function selectQuiz(q: Quiz, choice: string) {
+    if (answers[q.id] != null) return;
+    setSelected((p) => ({ ...p, [q.id]: choice }));
+  }
+
   // [linguo-patch:lms-stage-redesign-v1] boleh ganti jawaban: cuma no-op kalau klik opsi yang sama. tiap ganti tetap di-log sebagai attempt baru.
+  // [ling-lms-quiz-duo-v1] langkah 2: commit jawaban (dipanggil tombol "Periksa") → log attempt + sfx + reveal.
   function answerQuiz(q: Quiz, choice: string) {
     if (answers[q.id] === choice) return;
     setAnswers((p) => ({ ...p, [q.id]: choice }));
@@ -587,7 +632,11 @@ export default function LessonPlayer({
 
   const cur = steps[stepIdx];
   const isQuizStep = cur?.kind === "quiz";
-  const quizAnswered = isQuizStep ? !!answers[(cur as any).q.id] : true;
+  // [ling-lms-quiz-duo-v1] flow 2 langkah: pilih (selected) → Periksa (commit ke answers) → Lanjut
+  const curQuizId: string | null = isQuizStep ? (cur as any).q.id : null;
+  const quizCommitted = isQuizStep ? !!answers[curQuizId as string] : false;
+  const quizHasSelection = isQuizStep ? !!selected[curQuizId as string] : false;
+  const quizNeedsCheck = isQuizStep && !quizCommitted; // tombol footer jadi "Periksa"
   const atDone = cur?.kind === "done";
 
   // [linguo-patch:lms-lesson-sidenav-v1] sesi berikutnya + toggle panel index
@@ -974,8 +1023,10 @@ export default function LessonPlayer({
             lesson={lesson}
             steps={steps}
             answers={answers}
+            selected={selected}
             showText={showText}
             onAnswer={answerQuiz}
+            onSelect={selectQuiz}
             onToggleText={(id) => setShowText((p) => ({ ...p, [id]: true }))}
             onBack={onBack}
             onRestart={() => setStepIdx(0)}
@@ -997,18 +1048,28 @@ export default function LessonPlayer({
             <ArrowLeft className="h-4 w-4" /> Sebelumnya
           </button>
           <div className="hidden text-[12px] font-semibold text-slate-400 sm:block">
-            {isQuizStep && !quizAnswered
-              ? "Pilih satu jawaban dulu"
+            {quizNeedsCheck
+              ? quizHasSelection
+                ? "Tekan Periksa untuk cek jawaban"
+                : "Pilih satu jawaban dulu"
               : `Langkah ${stepIdx + 1} dari ${steps.length}`}
           </div>
           <button
-            onClick={next}
-            disabled={isQuizStep && !quizAnswered}
+            onClick={
+              quizNeedsCheck
+                ? () => answerQuiz((cur as any).q, selected[curQuizId as string])
+                : next
+            }
+            disabled={quizNeedsCheck && !quizHasSelection}
             className="inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white transition disabled:cursor-not-allowed disabled:opacity-40"
             style={{ background: TEAL, boxShadow: "0 14px 30px -14px rgba(22,121,110,.9)" }}
           >
-            {stepIdx === steps.length - 2 ? "Selesaikan" : "Lanjut"}
-            <ArrowRight className="h-4 w-4" />
+            {quizNeedsCheck
+              ? "Periksa"
+              : stepIdx === steps.length - 2
+              ? "Selesaikan"
+              : "Lanjut"}
+            {quizNeedsCheck ? <Check className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
           </button>
         </footer>
       )}
@@ -1098,8 +1159,10 @@ function StepView({
   lesson,
   steps,
   answers,
+  selected,
   showText,
   onAnswer,
+  onSelect,
   onToggleText,
   onBack,
   onRestart,
@@ -1110,8 +1173,10 @@ function StepView({
   lesson: any;
   steps: Step[];
   answers: Record<string, string>;
+  selected: Record<string, string>;
   showText: Record<string, boolean>;
   onAnswer: (q: Quiz, choice: string) => void;
+  onSelect: (q: Quiz, choice: string) => void;
   onToggleText: (id: string) => void;
   onBack: () => void;
   onRestart: () => void;
@@ -1258,6 +1323,8 @@ function StepView({
           {(q.options || []).map((opt: string, i: number) => {
             const isChosen = ans === opt;
             const isCorrect = opt === q.answer;
+            // [ling-lms-quiz-duo-v1] highlight pilihan tentatif (belum di-Periksa)
+            const isSel = !answered && selected[q.id] === opt;
             let st: any = { borderColor: "#e2e8f0", background: "#fff" };
             let textCls = "text-slate-800";
             if (answered) {
@@ -1270,34 +1337,60 @@ function StepView({
               } else {
                 textCls = "text-slate-400";
               }
+            } else if (isSel) {
+              st = { borderColor: TEAL, background: "#F0FAF8" };
+              textCls = "text-slate-900";
             }
             return (
-              <button
+              // [ling-lms-quiz-duo-v1] klik kartu = SELECT saja (ga submit). Submit lewat tombol "Periksa".
+              <div
                 key={opt}
-                onClick={() => onAnswer(q, opt)}
-                className={`flex h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 text-left transition hover:border-[#16796E] hover:bg-[#F0FAF8] ${textCls}`}
+                role="button"
+                tabIndex={answered ? -1 : 0}
+                aria-pressed={isSel}
+                onClick={answered ? undefined : () => onSelect(q, opt)}
+                onKeyDown={
+                  answered
+                    ? undefined
+                    : (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          onSelect(q, opt);
+                        }
+                      }
+                }
+                className={`flex h-14 w-full items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${
+                  answered ? "" : "cursor-pointer hover:border-[#16796E] hover:bg-[#F0FAF8]"
+                } ${textCls}`}
                 style={st}
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#F5F6F8] text-[12px] font-extrabold text-slate-500">
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span className="text-[14px] font-bold">{opt}</span>
+                {/* [ling-lms-quiz-duo-v1] tombol TTS per opsi — stopPropagation biar ga ikut nyeleksi kartu */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    speakText(opt);
+                  }}
+                  className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F0FAF8] hover:text-[#16796E] active:scale-95"
+                  title="Dengar pelafalan"
+                  aria-label={`Dengar pelafalan ${opt}`}
+                >
+                  <Volume2 className="h-4 w-4" />
+                </button>
                 {answered && isCorrect && (
-                  <CheckCircle2 className="ml-auto h-5 w-5 text-emerald-600" />
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                 )}
                 {answered && isChosen && !isCorrect && (
-                  <XCircle className="ml-auto h-5 w-5 text-rose-500" />
+                  <XCircle className="h-5 w-5 text-rose-500" />
                 )}
-              </button>
+              </div>
             );
           })}
         </div>
-
-        {answered && (
-          <p className="mt-2.5 text-[12px] font-semibold text-slate-400">
-            Ketuk opsi lain kalau mau ganti jawaban.
-          </p>
-        )}
 
         {answered && (
           <div
