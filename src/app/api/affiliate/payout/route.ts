@@ -26,7 +26,7 @@ const XENDIT_SECRET = (process.env.XENDIT_PAYOUT_SECRET_KEY ||
 
 const FEE = 2500;          // biaya admin, ditanggung afiliator
 const MIN_PAYOUT = 10000;  // minimal pencairan Rp10.000
-const BUFFER_DAYS = 0;     // <-- 0 BUAT TES. Balikin ke 3 buat PRODUKSI.
+const BUFFER_DAYS = 3;     // produksi: tahan 3 hari sebelum komisi eligible dicairkan
 
 export async function POST(req: Request) {
   try {
