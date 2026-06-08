@@ -106,7 +106,7 @@ export default function AuthCallbackPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center" style={{fontFamily:"Poppins,sans-serif"}}>
+    <div className="min-h-screen bg-white flex items-center justify-center" style={{fontFamily:"'Plus Jakarta Sans', sans-serif"}}>
       <div className="max-w-md mx-auto px-6 text-center">
 
         {status === "loading" && (

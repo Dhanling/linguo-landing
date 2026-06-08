@@ -25,7 +25,7 @@ export default function StudentLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0fdfa] via-white to-[#f0f9ff] flex items-center justify-center px-4" style={{ fontFamily: "Poppins, sans-serif" }}>
+    <div className="min-h-screen bg-gradient-to-br from-[#f0fdfa] via-white to-[#f0f9ff] flex items-center justify-center px-4" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#1A9E9E]/5 rounded-full blur-3xl" />

@@ -205,7 +205,7 @@ export default function TranslatorB2BPage() {
   return (
     <div
       className="min-h-screen bg-white"
-      style={{ fontFamily: "Poppins, sans-serif" }}
+      style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
     >
       {/* HEADER */}
       <header className="bg-white border-b border-slate-100 sticky top-0 z-40 backdrop-blur-md bg-white/90">

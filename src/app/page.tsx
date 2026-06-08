@@ -1822,7 +1822,7 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
   return (
     <section id="produk" className="py-12 sm:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-2 leading-tight">Choose a learning plan<br/>that speaks to you</h2>
+        <h2 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold mb-2 leading-tight">Choose a learning plan<br/>that speaks to you</h2>
         <p className="text-slate-500 text-sm sm:text-base mb-6 sm:mb-10">Mulai perjalanan bahasamu sekarang.</p>
 
         {/* Tabs */}
@@ -1914,7 +1914,7 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
             <div className="flex-1">
-              <h1 className="text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
+              <h1 className="font-heading text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
                 Everyone Can<br/>Be a Polyglot
               </h1>
             </div>
@@ -1953,7 +1953,7 @@ export default function Home() {
     {/* PRODUCT CARDS — macOS Dock style */}
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <h2 className="font-heading text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
       </div>
@@ -1985,7 +1985,7 @@ export default function Home() {
     {/* HOW IT WORKS */}
     <section className="py-8 lg:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-lg sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
+        <h2 className="font-heading text-lg sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
         <p className="text-slate-500 mb-8 lg:mb-16">Linguo helps you to become fluent in many language.</p>
         <div className="hidden lg:flex items-start justify-between max-w-5xl mx-auto">
           {[{img:"/images/step-1.png",s:"Step 1",t:"Select Language",d:"Pilih bahasa yang kamu sukai (bisa memilih lebih dari satu bahasa sekaligus)"},
@@ -2023,7 +2023,7 @@ export default function Home() {
     <section className="py-8 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
-          <h2 className="text-xl sm:text-3xl font-bold">Most popular class</h2>
+          <h2 className="font-heading text-xl sm:text-3xl font-bold">Most popular class</h2>
           <div className="flex gap-2">
             <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:-400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-4 w-4 text-slate-500"/></button>
             <button onClick={()=>{const el=document.getElementById('class-scroll');if(el)el.scrollBy({left:400,behavior:'smooth'})}} className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-4 w-4 text-slate-500"/></button>
@@ -2065,7 +2065,7 @@ export default function Home() {
     <section className="py-8 sm:py-16 lg:py-24 bg-white relative overflow-hidden">
       <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
-        <h2 className="text-base sm:text-3xl font-bold text-center text-[#1A9E9E] mb-2 sm:mb-4">Why Linguo?</h2>
+        <h2 className="font-heading text-base sm:text-3xl font-bold text-center text-[#1A9E9E] mb-2 sm:mb-4">Why Linguo?</h2>
         <WhyCarousel/>
       </div>
     </section>
@@ -2073,7 +2073,7 @@ export default function Home() {
     {/* TEACHERS */}
     <section id="teacher" className="py-16 lg:py-24 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-xl sm:text-3xl font-bold mb-3">Meet Our Teacher</h2>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold mb-3">Meet Our Teacher</h2>
         <p className="text-slate-500 mb-14">Linguo helps you to become fluent in many language.</p>
         <TeacherGrid/>
       </div>
@@ -2082,7 +2082,7 @@ export default function Home() {
     {/* TESTIMONIAL */}
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-14">Story from our student</h2>
+        <h2 className="font-heading text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-14">Story from our student</h2>
         <TestimonialCarousel/>
       </div>
     </section>
@@ -2093,7 +2093,7 @@ export default function Home() {
     {/* CTA */}
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
+        <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
         <p className="text-slate-500 mb-4 sm:mb-8 max-w-lg mx-auto">Linguo helps you to become fluent in many language through interactive classes that always prioritizes practice.</p>
         <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
@@ -2103,7 +2103,7 @@ export default function Home() {
     <section id="faq" className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
-        <h2 className="text-xl sm:text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
         <p className="text-[#1A9E9E] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
         <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
       </div>

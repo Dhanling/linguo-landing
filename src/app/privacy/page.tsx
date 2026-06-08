@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "Poppins, sans-serif" }}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <header className="bg-[#1A9E9E] py-4">
         <div className="max-w-3xl mx-auto px-6">
           <Link href="/">

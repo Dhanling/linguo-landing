@@ -90,7 +90,7 @@ export default function CorporatePage() {
   const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "Poppins, sans-serif" }}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* HEADER */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
