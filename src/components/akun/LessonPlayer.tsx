@@ -297,15 +297,41 @@ function Centered({ children }: { children: ReactNode }) {
   );
 }
 
+// [ling-lms-quiz-shuffle-v1] Fisher-Yates dgn PRNG ber-seed (mulberry32) → urutan opsi deterministik per seed.
+// Deterministik = stabil lintas re-render & prefetch (ga loncat-loncat), tapi beda per soal (id beda → urutan beda).
+function seededShuffle<T>(arr: T[], seed: string): T[] {
+  let h = 1779033703 ^ seed.length;
+  for (let i = 0; i < seed.length; i++) {
+    h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
+    h = (h << 13) | (h >>> 19);
+  }
+  let a = h >>> 0;
+  const rand = () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const out = arr.slice();
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
 // [linguo-patch:lms-switch-perf-v1] block → step (dipakai fetch utama & prefetch)
 function buildSteps(blocks: Block[]): Step[] {
   const st: Step[] = [];
   blocks.forEach((b) => {
     if (b.type === "quiz") {
       const qs = (b.lms_quiz_questions || []).slice().sort((a, c) => a.sort_order - c.sort_order);
-      qs.forEach((q, i) =>
-        st.push({ kind: "quiz", block: b, q, qIdx: i, qTotal: qs.length, label: `Kuis ${i + 1}` })
-      );
+      qs.forEach((q, i) => {
+        // [ling-lms-quiz-shuffle-v1] acak posisi opsi (stabil per id soal) biar jawaban benar ga selalu di A.
+        // correctness dicek by TEXT (opt === q.answer), jadi shuffle aman — ga perlu update index jawaban.
+        const opts = Array.isArray(q.options) ? seededShuffle(q.options, q.id) : q.options;
+        st.push({ kind: "quiz", block: b, q: { ...q, options: opts }, qIdx: i, qTotal: qs.length, label: `Kuis ${i + 1}` });
+      });
     } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
     else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
     else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
@@ -727,7 +753,7 @@ export default function LessonPlayer({
       `}</style>
 
       {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
-      <aside className="hidden w-[96px] shrink-0 flex-col items-center bg-[#16796E] py-7 lg:flex">
+      <aside className={`hidden shrink-0 flex-col items-center overflow-hidden bg-[#16796E] py-7 transition-[width] duration-300 lg:flex ${isFullscreen ? "lg:w-0" : "lg:w-[96px]"}`}>
         {/* logo — img Linguo langsung di atas teal, tanpa kotak putih (match StudentShell) */}
         <a href="/akun" title="Beranda" className="flex h-12 w-12 items-center justify-center">
           <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
@@ -791,8 +817,8 @@ export default function LessonPlayer({
 
       {/* [linguo-patch:lms-lesson-sidenav-v1] LEFT INDEX (desktop) */}
       <aside
-        className={`hidden shrink-0 overflow-hidden border-r border-slate-100 transition-[width] duration-200 lg:flex lg:flex-col ${
-          navOpen ? "lg:w-72" : "lg:w-0"
+        className={`hidden shrink-0 overflow-hidden border-r border-slate-100 transition-[width] duration-300 lg:flex lg:flex-col ${
+          isFullscreen ? "lg:w-0" : navOpen ? "lg:w-72" : "lg:w-0"
         }`}
       >
         <SessionIndex
@@ -815,7 +841,9 @@ export default function LessonPlayer({
 
       {/* MAIN COLUMN */}
       <div className="flex min-h-full flex-1 flex-col lg:h-full lg:min-h-0 lg:overflow-hidden">
-        {/* TOP BAR */}
+        {/* TOP BAR — [ling-lms-fullscreen-v2] collapse halus saat fullscreen (grid-rows 1fr→0fr) */}
+        <div className={`grid overflow-hidden transition-all duration-300 ${isFullscreen ? "grid-rows-[0fr] opacity-0 pointer-events-none" : "grid-rows-[1fr] opacity-100"}`}>
+        <div className="min-h-0 overflow-hidden">
         <header className="flex items-center gap-4 border-b border-slate-100 px-5 pb-4 pt-5 lg:px-8 lg:pt-6">
         <button
           onClick={toggleNav}
@@ -889,6 +917,20 @@ export default function LessonPlayer({
         </div>
         )}
       </header>
+        </div>
+        </div>
+
+        {/* [ling-lms-fullscreen-v2] tombol keluar fullscreen melayang (header disembunyiin saat fullscreen; Esc juga bisa) */}
+        {isFullscreen && (
+          <button
+            onClick={toggleFullscreen}
+            className="fixed right-4 top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 shadow-lg ring-1 ring-slate-200 backdrop-blur transition hover:bg-white"
+            title="Keluar layar penuh"
+            aria-label="Keluar layar penuh"
+          >
+            <Minimize2 className="h-5 w-5 text-slate-700" />
+          </button>
+        )}
 
       {/* PHASE BAR */}
       {/* [linguo-patch:lms-stage-redesign-v1] progress fase horizontal (Materi · Kuis · Selesai) gaya frame — ganti accordion, navigasi langkah pindah ke sidebar kiri */}
