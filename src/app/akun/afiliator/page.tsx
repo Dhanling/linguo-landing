@@ -19,6 +19,7 @@
 // ============================================================================
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom"; // linguo-patch:afiliator-payout-modal-portal-v1
 import { supabase } from "@/lib/supabase-client";
 import RekeningForm from "./RekeningForm";
 import type { Session } from "@supabase/supabase-js";
@@ -893,6 +894,8 @@ function PayoutModal({
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<{ diterima: number } | null>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const diterima = Math.max(0, available - PAYOUT_FEE);
 
@@ -931,9 +934,10 @@ function PayoutModal({
     }
   }
 
-  return (
+  if (!mounted) return null;
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 backdrop-blur-sm sm:items-center sm:p-4"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-slate-900/50 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={() => !submitting && onClose()}
     >
       <div
@@ -1037,7 +1041,8 @@ function PayoutModal({
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
