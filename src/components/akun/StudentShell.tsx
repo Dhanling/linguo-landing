@@ -1,8 +1,8 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -49,9 +49,32 @@ export default function StudentShell({
     window.location.href = "/";
   };
 
+  // [ling-lms-dark-v1] dark mode dashboard — state sync dgn LessonPlayer via localStorage "lms-dark-mode"
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    try { setIsDark(localStorage.getItem("lms-dark-mode") === "1"); } catch {}
+  }, []);
+  const toggleDark = () =>
+    setIsDark((v) => {
+      const nv = !v;
+      try { localStorage.setItem("lms-dark-mode", nv ? "1" : "0"); } catch {}
+      return nv;
+    });
+
   return (
     /* [linguo-patch:shell-frame-ref-v2] full-bleed: teal isi penuh viewport (no outer grey), white canvas float di dalem */
-    <div className="min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0">
+    <div className={`min-h-screen w-full bg-[#EEF1F4] lg:flex lg:p-0 ${isDark ? "lms-dark" : ""}`}>
+      {/* [ling-lms-dark-v1] dark mode scoped & class-based — !important biar menang atas utility Tailwind */}
+      <style>{`
+        .lms-dark{background:#0b1220;}
+        .lms-dark .bg-\\[\\#EEF1F4\\]{background-color:#0b1220 !important;}
+        .lms-dark .bg-white{background-color:#111827 !important;}
+        .lms-dark .bg-\\[\\#F5F6F8\\]{background-color:#1f2937 !important;}
+        .lms-dark .text-slate-900,.lms-dark .text-slate-800,.lms-dark .text-slate-700,.lms-dark .text-slate-600{color:#f8fafc !important;}
+        .lms-dark .text-slate-500,.lms-dark .text-slate-400{color:#cbd5e1 !important;}
+        .lms-dark .border-slate-100,.lms-dark .border-slate-200{border-color:#1f2937 !important;}
+        .lms-dark .border-slate-300{border-color:#374151 !important;}
+      `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
         {/* ICON RAIL — desktop only */}
@@ -95,14 +118,30 @@ export default function StudentShell({
             })}
           </nav>
 
-          {/* logout */}
-          <button
-            onClick={signOut}
-            className="group relative mt-auto flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
-          >
-            <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-            <Tip label="Keluar" />
-          </button>
+          {/* bottom group: dark toggle + logout */}
+          <div className="mt-auto flex flex-col items-center gap-3">
+            {/* [ling-lms-dark-v1] toggle dark mode (state sync ke lesson player) */}
+            <button
+              onClick={toggleDark}
+              className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
+              aria-label={isDark ? "Mode terang" : "Mode gelap"}
+            >
+              {isDark ? (
+                <Sun className="h-[22px] w-[22px] text-amber-300 transition-transform duration-500 group-hover:rotate-[360deg]" />
+              ) : (
+                <Moon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+              )}
+              <Tip label={isDark ? "Mode terang" : "Mode gelap"} />
+            </button>
+            {/* logout */}
+            <button
+              onClick={signOut}
+              className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
+            >
+              <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+              <Tip label="Keluar" />
+            </button>
+          </div>
         </aside>
 
         {/* WHITE PANEL — semua konten tab masuk sini */}

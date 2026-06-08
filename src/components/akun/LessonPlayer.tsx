@@ -425,6 +425,8 @@ export default function LessonPlayer({
   const entRef = useRef(false);
   // [linguo-patch:lms-quiz-sfx-v1] audio context buat chime benar/salah (synth, no file)
   const audioCtxRef = useRef<AudioContext | null>(null);
+  // [ling-lms-correct-sfx-file-v1] suara "benar" pakai file /sounds/correct.mp3 (bukan synth lagi)
+  const correctAudioRef = useRef<HTMLAudioElement | null>(null);
   const [sfxOn, setSfxOn] = useState(true);
   // [linguo-patch:lms-switch-level-v1] modul lain dalam course yang sama (buat ganti level)
   const [modules, setModules] = useState<{ id: string; cefr_label: string; title: string }[]>([]);
@@ -607,6 +609,20 @@ export default function LessonPlayer({
   // [linguo-patch:lms-quiz-sfx-v1] chime benar/salah pakai Web Audio (synth, no asset). Di-trigger dari klik opsi → lolos autoplay policy.
   function playSfx(correct: boolean) {
     if (!sfxOn || typeof window === "undefined") return;
+    // [ling-lms-correct-sfx-file-v1] jawaban benar → putar file /sounds/correct.mp3. Sukses → return; gagal → fallback synth di bawah.
+    if (correct) {
+      try {
+        if (!correctAudioRef.current) {
+          correctAudioRef.current = new Audio("/sounds/correct.mp3");
+          correctAudioRef.current.preload = "auto";
+        }
+        const a = correctAudioRef.current;
+        a.currentTime = 0;
+        a.volume = 0.7;
+        void a.play();
+        return;
+      } catch {}
+    }
     try {
       if (!audioCtxRef.current) {
         const AC = window.AudioContext || (window as any).webkitAudioContext;
@@ -779,10 +795,22 @@ export default function LessonPlayer({
         .lp-dark{background:#0b1220;}
         .lp-dark .bg-white{background-color:#111827 !important;}
         .lp-dark .bg-\\[\\#F5F6F8\\]{background-color:#1f2937 !important;}
-        .lp-dark .text-slate-900,.lp-dark .text-slate-800,.lp-dark .text-slate-700,.lp-dark .text-slate-600{color:#e5e7eb !important;}
-        .lp-dark .text-slate-500,.lp-dark .text-slate-400{color:#9aa6b2 !important;}
+        /* [ling-lms-dark-contrast-v1] teks dark mode = PUTIH (bukan abu) */
+        .lp-dark .text-slate-900,.lp-dark .text-slate-800,.lp-dark .text-slate-700,.lp-dark .text-slate-600{color:#ffffff !important;}
+        .lp-dark .text-slate-500,.lp-dark .text-slate-400,.lp-dark .text-slate-300{color:#e2e8f0 !important;}
         .lp-dark .border-slate-100,.lp-dark .border-slate-200{border-color:#1f2937 !important;}
         .lp-dark .border-slate-300{border-color:#374151 !important;}
+        /* [ling-lms-dark-contrast-v1] chip/connector bg netral → gelap; teal aktif dibikin lebih terang biar kebaca */
+        .lp-dark .bg-\\[\\#E8EAEE\\],.lp-dark .bg-\\[\\#F1F3F5\\]{background-color:#243042 !important;}
+        .lp-dark .text-\\[\\#0F5A52\\]{color:#2dd4bf !important;}
+        /* [ling-lms-dark-contrast-v1] hover state index sesi lebih kelihatan */
+        .lp-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#243042 !important;}
+        .lp-dark .hover\\:bg-slate-100:hover{background-color:#243042 !important;}
+        .lp-dark .hover\\:bg-\\[\\#F0FAF8\\]:hover{background-color:rgba(22,121,110,0.20) !important;}
+        /* [ling-lms-dark-duo-v1] answer card Duolingo-style: bg/border via custom-prop, blend dgn background, cuma border yg beda. Hover override-able. */
+        .lp-ans{background:var(--lp-bg);border-color:var(--lp-bd);}
+        .lp-ans[data-state="idle"]:hover{background:#F0FAF8;border-color:#16796E;}
+        .lp-dark .lp-ans[data-state="idle"]:hover{background:rgba(255,255,255,0.06);border-color:#3f5563;}
       `}</style>
 
       {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
@@ -857,6 +885,7 @@ export default function LessonPlayer({
         <SessionIndex
           siblings={siblings}
           currentId={lessonId}
+          isDark={isDark}
           progressMap={progressMap}
           modTitle={mod?.title || "Materi"}
           cefr={mod?.cefr_label || "A1"}
@@ -1012,6 +1041,8 @@ export default function LessonPlayer({
                         ? { background: p.color, color: "#fff" }
                         : active
                         ? { background: hexA(p.color, 0.15), color: p.color }
+                        : isDark
+                        ? { background: "#243042", color: "#cbd5e1" }
                         : { background: "#F1F3F5", color: "#94a3b8" }
                     }
                   >
@@ -1019,7 +1050,7 @@ export default function LessonPlayer({
                   </span>
                   <span
                     className="text-[12.5px] font-extrabold"
-                    style={{ color: lit ? "#12172B" : "#94a3b8" }}
+                    style={{ color: lit ? (isDark ? "#ffffff" : "#12172B") : (isDark ? "#64748b" : "#94a3b8") }}
                   >
                     {p.label}
                   </span>
@@ -1183,6 +1214,7 @@ export default function LessonPlayer({
             <SessionIndex
               siblings={siblings}
               currentId={lessonId}
+              isDark={isDark}
               progressMap={progressMap}
               modTitle={mod?.title || "Materi"}
               cefr={mod?.cefr_label || "A1"}
@@ -1422,26 +1454,33 @@ function StepView({
             const isCorrect = opt === q.answer;
             // [ling-lms-quiz-duo-v1] highlight pilihan tentatif (belum di-Periksa)
             const isSel = !answered && selected[q.id] === opt;
-            let st: any = isDark
-              ? { borderColor: "#334155", background: "#1e293b" }
-              : { borderColor: "#e2e8f0", background: "#fff" };
-            let textCls = "text-slate-800";
+            // [ling-lms-dark-duo-v1] Duolingo-style: dark mode → card blend dgn background (transparent), beda di border.
+            let state: "idle" | "sel" | "correct" | "wrong" | "dim" = "idle";
+            let bd = isDark ? "#1f2937" : "#e2e8f0";
+            let bg = isDark ? "transparent" : "#ffffff";
+            let textCls = isDark ? "text-white" : "text-slate-800";
             if (answered) {
               if (isCorrect) {
-                st = { borderColor: "#16A34A", background: "#F0FDF4" };
-                textCls = "text-emerald-700";
+                state = "correct";
+                bd = "#16A34A";
+                bg = isDark ? "rgba(22,163,74,0.12)" : "#F0FDF4";
+                textCls = isDark ? "text-white" : "text-emerald-700";
               } else if (isChosen) {
-                st = { borderColor: "#E11D48", background: "#FFF1F3" };
-                textCls = "text-rose-700";
+                state = "wrong";
+                bd = "#E11D48";
+                bg = isDark ? "rgba(225,29,72,0.12)" : "#FFF1F3";
+                textCls = isDark ? "text-white" : "text-rose-700";
               } else {
+                state = "dim";
                 textCls = "text-slate-400";
               }
             } else if (isSel) {
-              st = isDark
-                ? { borderColor: TEAL, background: "rgba(22,121,110,0.22)" }
-                : { borderColor: TEAL, background: "#F0FAF8" };
-              textCls = "text-slate-900";
+              state = "sel";
+              bd = TEAL;
+              bg = isDark ? "rgba(22,121,110,0.18)" : "#F0FAF8";
+              textCls = isDark ? "text-white" : "text-slate-900";
             }
+            const st = { ["--lp-bg"]: bg, ["--lp-bd"]: bd } as any;
             return (
               // [ling-lms-quiz-tts-v2] klik kartu di mana saja → putar TTS (fire-and-forget) + SELECT (kalau belum di-commit).
               // Submit tetap lewat tombol "Periksa". Setelah answered: klik kartu tetap bunyi TTS (cuma ga ganti pilihan).
@@ -1462,9 +1501,8 @@ function StepView({
                     if (!answered) onSelect(q, opt);
                   }
                 }}
-                className={`flex h-14 w-full cursor-pointer items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${
-                  answered ? "" : "hover:border-[#16796E] hover:bg-[#F0FAF8]"
-                } ${textCls}`}
+                data-state={state}
+                className={`lp-ans flex h-14 w-full cursor-pointer items-center gap-3 rounded-2xl border-2 px-4 text-left transition ${textCls}`}
                 style={st}
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#F5F6F8] text-[12px] font-extrabold text-slate-500">
@@ -1498,12 +1536,16 @@ function StepView({
         {answered && (
           <div
             className={`mt-5 flex items-start gap-3 rounded-2xl border p-4 ${
-              correct ? "border-emerald-200 bg-emerald-50" : "border-rose-200 bg-rose-50"
+              correct
+                ? isDark ? "border-emerald-700/50 bg-emerald-500/10" : "border-emerald-200 bg-emerald-50"
+                : isDark ? "border-rose-700/50 bg-rose-500/10" : "border-rose-200 bg-rose-50"
             }`}
           >
             <span
               className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
-                correct ? "bg-emerald-100 text-emerald-600" : "bg-rose-100 text-rose-500"
+                correct
+                  ? isDark ? "bg-emerald-500/15 text-emerald-300" : "bg-emerald-100 text-emerald-600"
+                  : isDark ? "bg-rose-500/15 text-rose-300" : "bg-rose-100 text-rose-500"
               }`}
             >
               {correct ? <Check className="h-5 w-5" /> : <Lightbulb className="h-5 w-5" />}
@@ -1511,7 +1553,9 @@ function StepView({
             <div>
               <p
                 className={`text-[13px] font-extrabold ${
-                  correct ? "text-emerald-700" : "text-rose-600"
+                  correct
+                    ? isDark ? "text-emerald-300" : "text-emerald-700"
+                    : isDark ? "text-rose-300" : "text-rose-600"
                 }`}
               >
                 {correct ? "Benar!" : "Hampir!"}
@@ -1652,6 +1696,7 @@ function StepView({
 function SessionIndex({
   siblings,
   currentId,
+  isDark = false,
   progressMap,
   modTitle,
   cefr,
@@ -1668,6 +1713,7 @@ function SessionIndex({
 }: {
   siblings: { id: string; title: string; sort_order: number }[];
   currentId: string;
+  isDark?: boolean;
   progressMap: Record<string, string>;
   modTitle: string;
   cefr: string;
@@ -1689,6 +1735,10 @@ function SessionIndex({
   const [closedSub, setClosedSub] = useState<Record<string, boolean>>({});
   const mods = modules || [];
   const canSwitch = mods.length > 0;
+  // [ling-lms-dark-contrast-v1] chip ikon flat (state idle) di dark mode: bg gelap + ikon terang biar kontras
+  const chipIdle = isDark
+    ? { background: "#243042", color: "#cbd5e1" }
+    : { background: "#F5F6F8", color: "#94a3b8" };
 
   // [linguo-patch:lms-level-tree-v1] dropdown 2 tingkat: major (A1/A2/B1/B2) -> sub-level (A1.1, A1.2, ...)
   const majors: string[] = [];
@@ -1913,7 +1963,7 @@ function SessionIndex({
                         ? { background: TEAL, color: "#fff" }
                         : done
                         ? { background: "rgba(22,121,110,.15)", color: TEAL }
-                        : { background: "#F5F6F8", color: "#94a3b8" }
+                        : chipIdle
                     }
                   >
                     {done && !isCurrent ? <Check className="h-3.5 w-3.5" /> : i + 1}
@@ -1951,6 +2001,8 @@ function SessionIndex({
                               style={
                                 ac
                                   ? { background: "rgba(255,255,255,.2)", color: "#fff" }
+                                  : isDark
+                                  ? { background: "rgba(234,179,8,0.22)", color: "#fde047" }
                                   : { background: hexA(YELLOW, 0.2), color: "#9a7400" }
                               }
                             >
@@ -1958,7 +2010,7 @@ function SessionIndex({
                             </span>
                             <span
                               className="text-[12.5px] font-extrabold"
-                              style={{ color: ac ? "#fff" : "#12172B" }}
+                              style={{ color: ac ? "#fff" : isDark ? "#f8fafc" : "#12172B" }}
                             >
                               Selesai &amp; Rangkuman
                             </span>
@@ -2022,7 +2074,7 @@ function SessionIndex({
                                         ? { background: "rgba(255,255,255,.2)", color: "#fff" }
                                         : dn
                                         ? { background: hexA(meta.color, 0.12), color: meta.color }
-                                        : { background: "#F5F6F8", color: "#94a3b8" }
+                                        : chipIdle
                                     }
                                   >
                                     {dn ? (
@@ -2033,7 +2085,7 @@ function SessionIndex({
                                   </span>
                                   <span
                                     className="min-w-0 flex-1 truncate text-[12.5px] font-semibold"
-                                    style={{ color: ac ? "#fff" : "#475569" }}
+                                    style={{ color: ac ? "#fff" : isDark ? "#cbd5e1" : "#475569" }}
                                   >
                                     {st.label}
                                   </span>
