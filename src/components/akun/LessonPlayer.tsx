@@ -108,9 +108,20 @@ function _playUrl(url: string) {
   _lpAudio = new Audio(url);
   _lpAudio.play().catch((e) => console.warn("[TTS] play() blocked:", e?.message || e));
 }
+// [ling-lms-tts-skip-id-v1] jangan TTS-kan teks Bahasa Indonesia.
+// - kalau bahasa sesi Indonesia → skip semua.
+// - selain itu: cuma bunyikan kalau teks punya karakter non-ASCII (Vietnam/Arab/Jepang/dsb).
+//   Teks ASCII-only dianggap Indonesia/romanisasi → skip (TTS vi-VN salah lafal).
+function shouldSpeakTTS(text?: string | null, lang?: string | null): boolean {
+  if (!text) return false;
+  const l = (lang || "").trim().toLowerCase();
+  if (l === "id" || l === "indonesian" || l === "indonesia" || l === "bahasa indonesia" || l === "bahasa") {
+    return false;
+  }
+  return /[^\x00-\x7F]/.test(text); // ada karakter non-ASCII → bahasa target → bunyikan
+}
 async function playTTS(text?: string | null) {
   if (!text || typeof window === "undefined") return;
-  console.log("TTS triggered:", text); // sementara — verifikasi onClick benar-benar manggil playTTS
   const seq = ++_ttsSeq;
   // cancel audio yang lagi jalan (tap cepat / pindah opsi)
   if (_lpAudio) {
@@ -797,7 +808,7 @@ export default function LessonPlayer({
         .lp-dark .bg-\\[\\#F5F6F8\\]{background-color:#1f2937 !important;}
         /* [ling-lms-dark-contrast-v1] teks dark mode = PUTIH (bukan abu) */
         .lp-dark .text-slate-900,.lp-dark .text-slate-800,.lp-dark .text-slate-700,.lp-dark .text-slate-600{color:#ffffff !important;}
-        .lp-dark .text-slate-500,.lp-dark .text-slate-400,.lp-dark .text-slate-300{color:#e2e8f0 !important;}
+        .lp-dark .text-slate-500,.lp-dark .text-slate-400,.lp-dark .text-slate-300{color:#f1f5f9 !important;}
         .lp-dark .border-slate-100,.lp-dark .border-slate-200{border-color:#1f2937 !important;}
         .lp-dark .border-slate-300{border-color:#374151 !important;}
         /* [ling-lms-dark-contrast-v1] chip/connector bg netral → gelap; teal aktif dibikin lebih terang biar kebaca */
@@ -1150,6 +1161,7 @@ export default function LessonPlayer({
             answers={answers}
             selected={selected}
             isDark={isDark}
+            lang={mod?.language}
             showText={showText}
             onAnswer={answerQuiz}
             onSelect={selectQuiz}
@@ -1288,6 +1300,7 @@ function StepView({
   answers,
   selected,
   isDark,
+  lang,
   showText,
   onAnswer,
   onSelect,
@@ -1303,6 +1316,7 @@ function StepView({
   answers: Record<string, string>;
   selected: Record<string, string>;
   isDark: boolean;
+  lang?: string | null;
   showText: Record<string, boolean>;
   onAnswer: (q: Quiz, choice: string) => void;
   onSelect: (q: Quiz, choice: string) => void;
@@ -1491,14 +1505,13 @@ function StepView({
                 tabIndex={0}
                 aria-pressed={isSel}
                 onClick={() => {
-                  console.log("TTS triggered:", opt); // sementara — verifikasi klik kartu memicu TTS
-                  playTTS(opt);
+                  if (shouldSpeakTTS(opt, lang)) playTTS(opt); // [ling-lms-tts-skip-id-v1] skip kalau teks Indonesia
                   if (!answered) onSelect(q, opt);
                 }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    playTTS(opt);
+                    if (shouldSpeakTTS(opt, lang)) playTTS(opt);
                     if (!answered) onSelect(q, opt);
                   }
                 }}
@@ -1515,7 +1528,7 @@ function StepView({
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    playTTS(opt);
+                    if (shouldSpeakTTS(opt, lang)) playTTS(opt); // [ling-lms-tts-skip-id-v1]
                   }}
                   className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F0FAF8] hover:text-[#16796E] active:scale-95"
                   title="Dengar pelafalan"
