@@ -146,13 +146,6 @@ const CSS = `
 .lingw-powered b{color:var(--teal-deep);font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;}
 
 @media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}}
-
-/* [ling-lesson-reposition-v2] di player LMS footer ada tombol Selesaikan/Lanjut di pojok kanan bawah → angkat launcher biar ga ketutup. Panel drawer samping ga diubah. */
-.lingw-lesson .lingw-launcher{bottom:108px;}
-@media (max-width:560px){.lingw-lesson .lingw-launcher{bottom:100px;}}
-
-/* [ling-lms-hide-fab-v2] URL-agnostic: LessonPlayer nambahin body.ling-on-lesson pas mount → sembunyiin FAB chat sepenuhnya. Nutup dua jalur render player: route /akun/belajar/[id] DAN overlay in-place di /akun (pathname /akun, jadi cek pathname aja ga cukup). */
-body.ling-on-lesson .lingw{display:none !important;}
 `;
 
 export default function ChatWidget() {
@@ -168,9 +161,7 @@ export default function ChatWidget() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const adminCursor = useRef(0);
 
-  // [ling-lesson-reposition-v2] cuma di route player LMS, naikin launcher biar clear tombol Selesaikan/Lanjut
   const pathname = usePathname();
-  const onLesson = pathname === "/akun/belajar";
 
   // session id persisten (per browser) — biar tiket nyambung kalau visitor balik lagi
   useEffect(() => {
@@ -318,12 +309,13 @@ export default function ChatWidget() {
 
   const lastIsAssistant = messages[messages.length - 1]?.role === "assistant";
 
-  // [ling-lms-hide-fab-v1] sembunyiin FAB chat di route player LMS (/akun/belajar/*)
-  // biar ga nutupin tombol "Lanjut". Komponen tetap dirender global di layout — cuma di-suppress di sini.
-  if (pathname?.startsWith("/akun/belajar")) return null;
+  // [ling-hide-fab-akun-v1] Ling itu chat sales/support buat calon murid — sembunyiin di
+  // SELURUH app student (/akun/*: dashboard + player lesson). Tetap render global di layout,
+  // cuma di-suppress di sini. FAB tetap tampil di halaman marketing publik.
+  if (pathname?.startsWith("/akun")) return null;
 
   return (
-    <div className={"lingw" + (onLesson ? " lingw-lesson" : "")}>
+    <div className="lingw">
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       <button

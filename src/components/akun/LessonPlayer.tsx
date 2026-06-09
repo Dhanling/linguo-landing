@@ -421,13 +421,6 @@ export default function LessonPlayer({
       try { localStorage.setItem("lms-dark-mode", nv ? "1" : "0"); } catch {}
       return nv;
     });
-  // [ling-lms-hide-fab-v2] tandai <body> selama player aktif → ChatWidget sembunyiin FAB.
-  // URL-agnostic: jalan untuk route /akun/belajar/[id] DAN overlay in-place di /akun.
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.body.classList.add("ling-on-lesson");
-    return () => document.body.classList.remove("ling-on-lesson");
-  }, []);
   // [linguo-patch:lms-lesson-switch-v1] bedain first-boot (full-screen spinner) vs switch sesi (spinner di stage doang)
   const bootedRef = useRef(false);
   // [linguo-patch:lms-switch-perf-v1] cache konten per-sesi → switch instan

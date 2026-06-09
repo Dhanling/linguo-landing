@@ -2151,6 +2151,11 @@ export default function AkunPage() {
     if (typeof window === "undefined") return;
     try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
   }, [activeTab]);
+  // [linguo-patch:pustaka-page-v1] menu "Perpustakaan" sekarang punya halaman sendiri → redirect ke /akun/perpustakaan
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (activeTab === "pustaka") window.location.replace("/akun/perpustakaan");
+  }, [activeTab]);
   // [linguo-patch:beranda-mandiri-refresh-v1] tiap masuk Beranda → recompute kartu resume (progress fresh setelah selesai sesi)
   useEffect(() => {
     if (activeTab === "beranda") setResumeNonce((n) => n + 1);
