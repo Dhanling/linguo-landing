@@ -1,6 +1,6 @@
 "use client";
 import { supabase } from "@/lib/supabase-client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
@@ -51,20 +51,31 @@ const FAQS = [
 ];
 
 // ========== LOGIN MODAL ==========
-type AuthView = "login" | "signup" | "forgot" | "forgot_sent" | "verify_phone";
+type AuthView = "login" | "signup" | "forgot" | "reset_otp" | "forgot_sent" | "verify_phone";
 
 // Email format validation (client-side, before hitting Supabase)
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Map Supabase reset-password error messages to Bahasa Indonesia
+// Map Supabase reset-password / OTP-send error messages to Bahasa Indonesia
 function mapResetError(msg: string): string {
   const m = (msg || "").toLowerCase();
   if (m.includes("unable to validate email address") || m.includes("invalid format"))
     return "Format email tidak valid, pastikan ada '@' dan domain yang benar";
-  if (m.includes("user not found")) return "Email ini belum terdaftar di Linguo";
+  if (m.includes("user not found") || m.includes("signups not allowed"))
+    return "Email ini belum terdaftar di Linguo";
   if (m.includes("rate limit") || m.includes("too many"))
     return "Terlalu banyak percobaan, coba lagi beberapa menit lagi";
   return "Terjadi kesalahan, silakan coba lagi";
+}
+
+// Map Supabase verifyOtp error messages to Bahasa Indonesia
+function mapOtpError(msg: string): string {
+  const m = (msg || "").toLowerCase();
+  if (m.includes("expired")) return "Kode sudah kedaluwarsa, silakan kirim ulang";
+  if (m.includes("user not found")) return "Email ini belum terdaftar di Linguo";
+  if (m.includes("rate limit") || m.includes("too many"))
+    return "Terlalu banyak percobaan, coba lagi beberapa menit lagi";
+  return "Kode tidak valid atau sudah expired, coba kirim ulang";
 }
 
 function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -83,12 +94,27 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  // Email reset OTP (6-digit) state
+  const [otpDigits, setOtpDigits] = useState<string[]>(["", "", "", "", "", ""]);
+  const [otpSecondsLeft, setOtpSecondsLeft] = useState(0);
+  const otpRefs = useRef<Array<HTMLInputElement | null>>([]);
+
   const reset = () => {
     setError(""); setSuccess(""); setName(""); setEmail("");
     setPhone(""); setPassword(""); setOtp(""); setShowPass(false);
+    setOtpDigits(["", "", "", "", "", ""]); setOtpSecondsLeft(0);
   };
 
   const goTo = (v: AuthView) => { reset(); setView(v); };
+
+  // Countdown timer for the email reset OTP (10 minutes)
+  useEffect(() => {
+    if (view !== "reset_otp") return;
+    const t = setInterval(() => setOtpSecondsLeft(s => (s <= 1 ? 0 : s - 1)), 1000);
+    return () => clearInterval(t);
+  }, [view]);
+
+  const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
   // ── Google OAuth ──
   const handleGoogle = async () => {
@@ -125,7 +151,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     else { setSuccess("Cek email kamu untuk konfirmasi akun ya! 📧"); }
   };
 
-  // ── Forgot Password ──
+  // ── Forgot Password — send 6-digit OTP code to email ──
   const handleForgot = async () => {
     if (!email) { setError("Masukkan email kamu dulu."); return; }
     if (!email.includes("@") || !EMAIL_REGEX.test(email)) {
@@ -133,12 +159,76 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
       return;
     }
     setLoading(true); setError("");
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + "/auth/callback?type=recovery",
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: { shouldCreateUser: false },
     });
     setLoading(false);
-    if (error) { setError(mapResetError(error.message)); }
-    else { goTo("forgot_sent"); }
+    if (error) { setError(mapResetError(error.message)); return; }
+    setOtpDigits(["", "", "", "", "", ""]);
+    setOtpSecondsLeft(600);
+    setError(""); setSuccess("");
+    setView("reset_otp");
+    setTimeout(() => otpRefs.current[0]?.focus(), 50);
+  };
+
+  // ── Resend reset OTP (only after timer expires) ──
+  const handleResendResetOtp = async () => {
+    if (otpSecondsLeft > 0 || loading) return;
+    setLoading(true); setError(""); setSuccess("");
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: { shouldCreateUser: false },
+    });
+    setLoading(false);
+    if (error) { setError(mapResetError(error.message)); return; }
+    setOtpDigits(["", "", "", "", "", ""]);
+    setOtpSecondsLeft(600);
+    setSuccess("Kode baru sudah dikirim ke email kamu.");
+    otpRefs.current[0]?.focus();
+  };
+
+  // ── Verify reset OTP → go to update-password page ──
+  const handleVerifyResetOtp = async (codeArg?: string) => {
+    const code = codeArg ?? otpDigits.join("");
+    if (code.length !== 6) { setError("Masukkan 6 digit kode."); return; }
+    setLoading(true); setError("");
+    const { error } = await supabase.auth.verifyOtp({ email, token: code, type: "email" });
+    setLoading(false);
+    if (error) { setError(mapOtpError(error.message)); return; }
+    onClose();
+    window.location.href = "/auth/update-password";
+  };
+
+  // ── OTP box input handlers ──
+  const handleOtpBoxChange = (i: number, val: string) => {
+    const digit = val.replace(/\D/g, "").slice(-1);
+    const next = [...otpDigits];
+    next[i] = digit;
+    setOtpDigits(next);
+    if (error) setError("");
+    if (digit && i < 5) otpRefs.current[i + 1]?.focus();
+    if (digit && i === 5) {
+      const code = next.join("");
+      if (code.length === 6) handleVerifyResetOtp(code);
+    }
+  };
+
+  const handleOtpKeyDown = (i: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !otpDigits[i] && i > 0) {
+      otpRefs.current[i - 1]?.focus();
+    }
+  };
+
+  const handleOtpPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    if (!pasted) return;
+    const next = ["", "", "", "", "", ""];
+    for (let j = 0; j < pasted.length; j++) next[j] = pasted[j];
+    setOtpDigits(next);
+    otpRefs.current[Math.min(pasted.length, 5)]?.focus();
+    if (pasted.length === 6) handleVerifyResetOtp(pasted);
   };
 
   // ── Phone OTP Send ──
@@ -186,8 +276,55 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             <div className="p-8">
 
-              {/* ── FORGOT SENT ── */}
-              {view === "forgot_sent" ? (
+              {/* ── RESET OTP (6-digit code) ── */}
+              {view === "reset_otp" ? (
+                <div>
+                  <button onClick={() => goTo("forgot")} className="flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 mb-4 transition-colors">
+                    <ChevronLeft className="w-4 h-4" /> Kembali
+                  </button>
+                  <h2 className="text-xl font-extrabold text-slate-900 mb-1">Masukkan kode reset</h2>
+                  <p className="text-slate-500 text-sm mb-6">Kami kirim kode 6 digit ke <strong>{email}</strong>. Cek inbox & folder spam ya.</p>
+
+                  {error && <p className="text-red-500 text-xs mb-3 bg-red-50 px-3 py-2 rounded-lg">{error}</p>}
+                  {success && <p className="text-emerald-600 text-xs mb-3 bg-emerald-50 px-3 py-2 rounded-lg">{success}</p>}
+
+                  <div className="flex justify-between gap-2 mb-4">
+                    {otpDigits.map((d, i) => (
+                      <input
+                        key={i}
+                        ref={el => { otpRefs.current[i] = el; }}
+                        value={d}
+                        onChange={e => handleOtpBoxChange(i, e.target.value)}
+                        onKeyDown={e => handleOtpKeyDown(i, e)}
+                        onPaste={i === 0 ? handleOtpPaste : undefined}
+                        inputMode="numeric"
+                        autoComplete="one-time-code"
+                        maxLength={1}
+                        className="w-11 h-14 text-center text-2xl font-bold border border-slate-200 rounded-xl outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/10 transition-all"
+                      />
+                    ))}
+                  </div>
+
+                  <button onClick={() => handleVerifyResetOtp()} disabled={loading}
+                    className="w-full bg-[#1A9E9E] hover:bg-[#178585] text-white font-bold py-3.5 rounded-2xl text-sm transition-all disabled:opacity-60 flex items-center justify-center gap-2 mb-4">
+                    {loading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                    Verifikasi Kode
+                  </button>
+
+                  <div className="text-center text-sm text-slate-500">
+                    {otpSecondsLeft > 0 ? (
+                      <span>Kode berlaku selama <strong>{fmtTime(otpSecondsLeft)}</strong></span>
+                    ) : (
+                      <button onClick={handleResendResetOtp} disabled={loading}
+                        className="text-[#1A9E9E] font-semibold hover:underline disabled:opacity-60">
+                        Kirim ulang kode
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+              ) : view === "forgot_sent" ? (
+                /* ── FORGOT SENT (legacy magic-link view) ── */
                 <div className="text-center py-4">
                   <div className="text-5xl mb-4">📧</div>
                   <h2 className="text-xl font-extrabold text-slate-900 mb-2">Cek email kamu!</h2>
@@ -222,7 +359,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                   </h2>
                   <p className="text-slate-500 text-sm mb-6">
                     {view === "signup" ? "Buat akun untuk mulai belajar bahasa impianmu." :
-                     view === "forgot" ? "Masukkan emailmu, kami kirim link reset password." :
+                     view === "forgot" ? "Masukkan emailmu, kami kirim kode reset 6 digit." :
                      "Masuk untuk lanjut belajar bersama Linguo."}
                   </p>
 
@@ -325,7 +462,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                       disabled={loading}
                       className="w-full bg-[#1A9E9E] hover:bg-[#178585] text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-sm hover:shadow-md active:scale-[0.98] disabled:opacity-60 flex items-center justify-center gap-2 mb-5">
                       {loading && <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
-                      {view === "forgot" ? "Kirim Link Reset" : view === "signup" ? "Daftar Sekarang" : tab === "phone" ? "Kirim Kode OTP" : "Masuk"}
+                      {view === "forgot" ? "Kirim Kode" : view === "signup" ? "Daftar Sekarang" : tab === "phone" ? "Kirim Kode OTP" : "Masuk"}
                     </button>
                   )}
 
