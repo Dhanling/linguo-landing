@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
 import {
-  LayoutDashboard,
   Route,
-  Languages,
   Award,
   Settings,
   LogOut,
@@ -31,9 +29,7 @@ type ActiveKey = "dashboard" | "path" | "bahasa" | "sertifikat" | "pengaturan";
 type NavItem = { key: ActiveKey; label: string; icon: any; href?: string; soon?: boolean };
 
 const NAV: NavItem[] = [
-  { key: "dashboard", label: "Dashboard", icon: LayoutDashboard, href: "/akun/belajar" },
   { key: "path", label: "Learning Path", icon: Route, soon: true },
-  { key: "bahasa", label: "Bahasa", icon: Languages, href: "/akun/belajar#kursus" },
   { key: "sertifikat", label: "Sertifikat", icon: Award, soon: true },
   { key: "pengaturan", label: "Pengaturan", icon: Settings, href: "/akun" },
 ];
@@ -95,7 +91,7 @@ export default function LmsShell({
   const SidebarInner = (
     <div className="flex h-full flex-col text-white">
       {/* Brand */}
-      <a href="/akun/belajar" className="flex items-center gap-2.5 px-5 py-5">
+      <a href="/akun" className="flex items-center gap-2.5 px-5 py-5">
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
           <img src="/images/logo-white.png" alt="" className="h-5 w-5 object-contain" />
         </span>
