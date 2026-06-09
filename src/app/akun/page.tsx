@@ -2968,7 +2968,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
