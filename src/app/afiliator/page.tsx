@@ -136,7 +136,7 @@ const TIER_META: Record<
 const FAQS: { q: string; a: string }[] = [
   {
     q: "Kapan komisi dicairkan?",
-    a: "Setiap tanggal 25, dengan minimum saldo Rp100.000.",
+    a: "Komisi bisa dicairkan kapan saja selama saldo minimal Rp10.000. Biaya admin penarikan Rp2.500 ditanggung afiliator.",
   },
   {
     q: "Apa bedanya tier Standard, Bronze, Silver, Gold?",
@@ -144,7 +144,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Bagaimana cara kerja link referral?",
-    a: "Setiap afiliator punya kode unik (contoh: linguo.id?ref=KODEKAMU). Siapapun yang mengklik link kamu dan membeli dalam 60 hari akan tercatat sebagai referral kamu.",
+    a: "Setiap afiliator punya kode unik (contoh: linguo.id?ref=KODEKAMU). Siapapun yang mengklik link kamu dan membeli dalam 60 hari akan tercatat sebagai referral kamu. Link/kode afiliasi kamu berlaku selama 1 tahun sejak tanggal pendaftaran. Mendekati 1 tahun, kamu akan menerima email konfirmasi untuk memperpanjang status afiliator.",
   },
   {
     q: "Produk apa saja yang menghasilkan komisi?",
