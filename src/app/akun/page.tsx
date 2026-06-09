@@ -2540,6 +2540,7 @@ export default function AkunPage() {
         level: lvl,
         title: CEFR_TITLE[base] || "Program",
         teacher: r?.teachers?.name || "Pengajar Linguo",
+        product: r.product || undefined, // [pustaka/sertifikat-filter-v1] dipakai filter Kelas Live vs Belajar Mandiri
         status: issued ? "issued" : "progress",
         pct, used, total,
         date: issued ? new Date().toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : undefined,
@@ -2936,7 +2937,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab === "sertifikat" ? "akun" : activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl}>
+    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl}>
 
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
       {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
@@ -2967,7 +2968,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : (activeTab === "jadwal" || activeTab === "sertifikat" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

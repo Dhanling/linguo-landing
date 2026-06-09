@@ -204,6 +204,14 @@ function productKindOf(p?: string): Kind {
   return "default";
 }
 const showsSkills = (k: Kind) => k === "private" || k === "reguler";
+
+// ── Kategori sertifikat: Kelas Live (Private/Reguler/Kids/Test Prep) vs Belajar Mandiri (LMS/e-learning) ──
+type CertCat = "live" | "mandiri";
+function certCategory(c: Cert): CertCat {
+  const p = (c.product || "").toLowerCase();
+  if (/e-?learning|mandiri|lms|self[\s-]?paced/.test(p)) return "mandiri";
+  return "live"; // private / reguler / kids / testprep = kelas dengan pengajar
+}
 const COPY: Record<Kind, { eyebrow: string; body: (lang: string) => string }> = {
   private: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program privat Bahasa ${l}` },
   reguler: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program reguler Bahasa ${l}` },
@@ -305,10 +313,25 @@ export default function SertifikatTab({
   const issuedCount = list.filter((c) => c.status === "issued").length;
   const lockedCount = list.filter((c) => c.status === "progress").length;
 
-  const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
-  const selected = list.find((c) => c.id === selectedId) || list[0];
+  // ── Filter kategori (Semua / Kelas Live / Belajar Mandiri) ──
+  const [filter, setFilter] = useState<"all" | CertCat>("all");
+  const liveCount = useMemo(() => list.filter((c) => certCategory(c) === "live").length, [list]);
+  const mandiriCount = useMemo(() => list.filter((c) => certCategory(c) === "mandiri").length, [list]);
+  const filtered = useMemo(
+    () => (filter === "all" ? list : list.filter((c) => certCategory(c) === filter)),
+    [list, filter]
+  );
+  const FILTERS: { key: "all" | CertCat; label: string; count: number }[] = [
+    { key: "all", label: "Semua", count: list.length },
+    { key: "live", label: "Kelas Live", count: liveCount },
+    { key: "mandiri", label: "Belajar Mandiri", count: mandiriCount },
+  ];
 
-  if (!selected) {
+  const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
+  // detail mengikuti list yang sedang difilter; fallback ke item pertama kategori aktif
+  const selected = filtered.find((c) => c.id === selectedId) || filtered[0] || null;
+
+  if (!list.length) {
     return (
       <div className="w-full">
         <div className="rounded-[26px] border border-slate-100 bg-white p-12 text-center shadow-[0_24px_60px_-40px_rgba(18,23,43,.45)]">
@@ -329,9 +352,34 @@ export default function SertifikatTab({
             <h2 className="text-[18px] font-extrabold text-[#12172B]">Sertifikat</h2>
             <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{issuedCount} terbit · {lockedCount} dalam proses</p>
           </div>
+          {/* filter kategori */}
+          <div className="flex flex-wrap gap-1.5 px-4 pb-3">
+            {FILTERS.map((f) => {
+              const on = filter === f.key;
+              return (
+                <button
+                  key={f.key}
+                  onClick={() => setFilter(f.key)}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition ${
+                    on ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-[#6B7280] hover:bg-[#EAEDF0]"
+                  }`}
+                >
+                  {f.label}
+                  <span className={`rounded-full px-1.5 text-[11px] ${on ? "bg-white/25 text-white" : "bg-white text-[#6B7280]"}`}>{f.count}</span>
+                </button>
+              );
+            })}
+          </div>
           <div className="flex max-h-[360px] flex-1 flex-col gap-2.5 overflow-y-auto px-4 pb-4 lg:max-h-none">
-            {list.map((ct) => {
-              const active = ct.id === selected.id;
+            {filtered.length === 0 && (
+              <div className="flex flex-col items-center justify-center gap-1 px-4 py-10 text-center">
+                <Award className="h-8 w-8 text-slate-300" strokeWidth={1.6} />
+                <p className="text-[13px] font-bold text-[#12172B]">Belum ada di kategori ini</p>
+                <p className="text-[12px] font-medium text-[#6B7280]">Coba pilih kategori lain di atas.</p>
+              </div>
+            )}
+            {filtered.map((ct) => {
+              const active = ct.id === selected?.id;
               return (
                 <button
                   key={ct.id}
@@ -363,10 +411,18 @@ export default function SertifikatTab({
 
         {/* RIGHT: detail */}
         <main className="min-w-0 flex-1 bg-[#F5F6F8]">
-          <div className="flex flex-col gap-6 p-6 lg:p-8">
-            {selected.status === "issued"
-              ? <IssuedDetail ct={selected} studentName={studentName} />
-              : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />}
+          <div className="flex flex-col gap-6 p-4 sm:p-5 lg:p-6">
+            {selected ? (
+              selected.status === "issued"
+                ? <IssuedDetail ct={selected} studentName={studentName} />
+                : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />
+            ) : (
+              <div className="rounded-2xl border border-slate-100 bg-white p-12 text-center">
+                <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
+                <p className="text-[15px] font-extrabold text-[#12172B]">Pilih sertifikat</p>
+                <p className="mt-1 text-[13px] text-[#6B7280]">Belum ada sertifikat di kategori ini.</p>
+              </div>
+            )}
           </div>
         </main>
       </div>
