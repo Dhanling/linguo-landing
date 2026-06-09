@@ -810,7 +810,7 @@ export default function LessonPlayer({
         /* [ling-lms-dark-duo-v1] answer card Duolingo-style: bg/border via custom-prop, blend dgn background, cuma border yg beda. Hover override-able. */
         .lp-ans{background:var(--lp-bg);border-color:var(--lp-bd);}
         .lp-ans[data-state="idle"]:hover{background:#F0FAF8;border-color:#16796E;}
-        .lp-dark .lp-ans[data-state="idle"]:hover{background:rgba(255,255,255,0.06);border-color:#3f5563;}
+        .lp-dark .lp-ans[data-state="idle"]:hover{background:#374151;border-color:rgba(255,255,255,0.25);}
       `}</style>
 
       {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
@@ -1455,30 +1455,31 @@ function StepView({
             // [ling-lms-quiz-duo-v1] highlight pilihan tentatif (belum di-Periksa)
             const isSel = !answered && selected[q.id] === opt;
             // [ling-lms-dark-duo-v1] Duolingo-style: dark mode → card blend dgn background (transparent), beda di border.
+            // [ling-lms-dark-duo-v2] palet dark answer card sesuai spec Duolingo (default blend #2d3748, border tipis, state pakai *-900/40 + *-400 + *-200)
             let state: "idle" | "sel" | "correct" | "wrong" | "dim" = "idle";
-            let bd = isDark ? "#1f2937" : "#e2e8f0";
-            let bg = isDark ? "transparent" : "#ffffff";
+            let bd = isDark ? "rgba(255,255,255,0.10)" : "#e2e8f0";
+            let bg = isDark ? "#2d3748" : "#ffffff";
             let textCls = isDark ? "text-white" : "text-slate-800";
             if (answered) {
               if (isCorrect) {
                 state = "correct";
-                bd = "#16A34A";
-                bg = isDark ? "rgba(22,163,74,0.12)" : "#F0FDF4";
-                textCls = isDark ? "text-white" : "text-emerald-700";
+                bd = isDark ? "#4ade80" : "#16A34A"; // green-400
+                bg = isDark ? "rgba(20,83,45,0.40)" : "#F0FDF4"; // green-900/40
+                textCls = isDark ? "text-green-200" : "text-emerald-700";
               } else if (isChosen) {
                 state = "wrong";
-                bd = "#E11D48";
-                bg = isDark ? "rgba(225,29,72,0.12)" : "#FFF1F3";
-                textCls = isDark ? "text-white" : "text-rose-700";
+                bd = isDark ? "#f87171" : "#E11D48"; // red-400
+                bg = isDark ? "rgba(127,29,29,0.40)" : "#FFF1F3"; // red-900/40
+                textCls = isDark ? "text-red-200" : "text-rose-700";
               } else {
                 state = "dim";
-                textCls = "text-slate-400";
+                textCls = "text-slate-400"; // dark: → #e2e8f0 via scoped CSS (tetap terang, bukan abu gelap)
               }
             } else if (isSel) {
               state = "sel";
-              bd = TEAL;
-              bg = isDark ? "rgba(22,121,110,0.18)" : "#F0FAF8";
-              textCls = isDark ? "text-white" : "text-slate-900";
+              bd = isDark ? "#2dd4bf" : TEAL; // teal-400
+              bg = isDark ? "rgba(19,78,74,0.40)" : "#F0FAF8"; // teal-900/40
+              textCls = isDark ? "text-teal-200" : "text-slate-900";
             }
             const st = { ["--lp-bg"]: bg, ["--lp-bd"]: bd } as any;
             return (
