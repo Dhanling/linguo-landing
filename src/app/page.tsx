@@ -107,7 +107,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 
   const goTo = (v: AuthView) => { reset(); setView(v); };
 
-  // Countdown timer for the email reset OTP (10 minutes)
+  // Countdown timer for the email reset OTP (1 minute)
   useEffect(() => {
     if (view !== "reset_otp") return;
     const t = setInterval(() => setOtpSecondsLeft(s => (s <= 1 ? 0 : s - 1)), 1000);
@@ -166,7 +166,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     setLoading(false);
     if (error) { setError(mapResetError(error.message)); return; }
     setOtpDigits(["", "", "", "", "", ""]);
-    setOtpSecondsLeft(600);
+    setOtpSecondsLeft(60);
     setError(""); setSuccess("");
     setView("reset_otp");
     setTimeout(() => otpRefs.current[0]?.focus(), 50);
@@ -183,7 +183,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     setLoading(false);
     if (error) { setError(mapResetError(error.message)); return; }
     setOtpDigits(["", "", "", "", "", ""]);
-    setOtpSecondsLeft(600);
+    setOtpSecondsLeft(60);
     setSuccess("Kode baru sudah dikirim ke email kamu.");
     otpRefs.current[0]?.focus();
   };
