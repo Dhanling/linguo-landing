@@ -53,6 +53,20 @@ const FAQS = [
 // ========== LOGIN MODAL ==========
 type AuthView = "login" | "signup" | "forgot" | "forgot_sent" | "verify_phone";
 
+// Email format validation (client-side, before hitting Supabase)
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Map Supabase reset-password error messages to Bahasa Indonesia
+function mapResetError(msg: string): string {
+  const m = (msg || "").toLowerCase();
+  if (m.includes("unable to validate email address") || m.includes("invalid format"))
+    return "Format email tidak valid, pastikan ada '@' dan domain yang benar";
+  if (m.includes("user not found")) return "Email ini belum terdaftar di Linguo";
+  if (m.includes("rate limit") || m.includes("too many"))
+    return "Terlalu banyak percobaan, coba lagi beberapa menit lagi";
+  return "Terjadi kesalahan, silakan coba lagi";
+}
+
 function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [view, setView] = useState<AuthView>("login");
   const [tab, setTab] = useState<"email" | "phone">("email");
@@ -114,12 +128,16 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   // ── Forgot Password ──
   const handleForgot = async () => {
     if (!email) { setError("Masukkan email kamu dulu."); return; }
+    if (!email.includes("@") || !EMAIL_REGEX.test(email)) {
+      setError("Format email tidak valid, pastikan ada '@' dan domain yang benar");
+      return;
+    }
     setLoading(true); setError("");
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: window.location.origin + "/auth/callback?type=recovery",
     });
     setLoading(false);
-    if (error) { setError(error.message); }
+    if (error) { setError(mapResetError(error.message)); }
     else { goTo("forgot_sent"); }
   };
 
@@ -173,7 +191,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                 <div className="text-center py-4">
                   <div className="text-5xl mb-4">📧</div>
                   <h2 className="text-xl font-extrabold text-slate-900 mb-2">Cek email kamu!</h2>
-                  <p className="text-slate-500 text-sm mb-6">Link reset password sudah dikirim ke <strong>{email}</strong>. Cek inbox atau folder spam ya.</p>
+                  <p className="text-slate-500 text-sm mb-6">Link reset sudah dikirim! Cek inbox email kamu, termasuk folder spam.</p>
                   <button onClick={() => goTo("login")} className="text-sm text-[#1A9E9E] font-semibold hover:underline">← Kembali ke Login</button>
                 </div>
 
