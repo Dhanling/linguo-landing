@@ -39,6 +39,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
+import KomisiKalkulator from "@/components/afiliator/KomisiKalkulator";
 
 type FormState = {
   name: string;
@@ -284,6 +285,16 @@ export default function AfiliatorSignupPage() {
             );
           })}
         </div>
+
+        {/* Kalkulator Komisi */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
+          className="mt-7"
+        >
+          <KomisiKalkulator />
+        </motion.div>
 
         {/* CTA card */}
         <motion.div

@@ -22,6 +22,8 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { createPortal } from "react-dom"; // linguo-patch:afiliator-payout-modal-portal-v1
 import { supabase } from "@/lib/supabase-client";
 import RekeningForm from "./RekeningForm";
+import KomisiKalkulator from "@/components/afiliator/KomisiKalkulator";
+import { tierKeyFromDb } from "@/lib/affiliate-komisi";
 import type { Session } from "@supabase/supabase-js";
 import {
   Copy,
@@ -108,6 +110,7 @@ const PRODUCT_LABEL: Record<string, string> = {
   reguler: "Kelas Reguler",
   kids: "Kelas Kids",
   elearning: "E-Learning",
+  ebook: "E-Book",
   toefl: "TOEFL Prep",
   ielts: "IELTS Prep",
   b2b: "Corporate B2B",
@@ -1170,6 +1173,15 @@ function Dashboard({
         <KomisiCol dot="bg-blue-400" label="Disetujui" amount={stats.commission_approved} tone="text-blue-700" />
         <KomisiCol dot="bg-emerald-400" label="Dibayar" amount={stats.commission_paid} tone="text-emerald-700" />
       </div>
+
+      {/* SIMULASI POTENSI: kalkulator komisi terkunci ke tier user */}
+      <section className="aff-reveal" style={{ animationDelay: "375ms" }}>
+        <h2 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <span className="h-4 w-1 rounded bg-[#1A9E9E]" />
+          Simulasi Potensi
+        </h2>
+        <KomisiKalkulator lockedTier={tierKeyFromDb(aff.tier)} />
+      </section>
 
       </>
       )}
