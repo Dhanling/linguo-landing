@@ -1,30 +1,24 @@
-// linguo-patch:afiliator-wizard-modal-v1 — Redesign form jadi wizard 3-step di modal (refined, flat icon, teal #1A9E9E, sonner)
+// linguo-patch:afiliator-page-redesign-v1 — Full landing redesign (hero, stats, how-it-works, tier table, kalkulator, FAQ, CTA). Signup wizard modal + /api/affiliate/signup contract UNCHANGED. teal #1A9E9E, sonner.
 "use client";
 
 // ============================================================================
-// /afiliator — Public Affiliate Signup
+// /afiliator — Public Affiliate Recruitment Landing
 // Affiliate Program — Phase 3A
 // ----------------------------------------------------------------------------
-// Public self-signup form. Phase 1–2 were invite-only; this page opens the
-// program to the public. Submits to POST /api/affiliate/signup which inserts
-// an `affiliates` row with status='pending_review' for the team to review.
+// Public self-signup. Visitors are typically logged out; user_id stays NULL and
+// /api/affiliate/me later matches them by email at login.
 //
-// Not an authed page — visitors are typically logged out. user_id stays NULL;
-// /api/affiliate/me later matches the person by email when they log in.
-//
-// REDESIGN (afiliator-wizard-modal-v1): hero + benefits stay on the page; the
-// form is now a 3-step wizard inside a modal (Identitas → Sosial Media →
-// Motivasi). The /api/affiliate/signup contract is UNCHANGED — same 7 fields,
-// none of the server-set fields (status/tier/source/user_id/referral_code) are
-// ever sent from the client.
+// REDESIGN (afiliator-page-redesign-v1): full marketing landing built to
+// convert cold visitors — Hero → Stats → How it works → Tier system (+ full
+// commission table) → Kalkulator → FAQ → Final CTA. The 3-step signup wizard
+// lives in a modal opened by every "Daftar" CTA; its /api/affiliate/signup
+// contract (7 fields, no server-set fields ever sent) is UNCHANGED. The tier
+// rates render from @/lib/affiliate-komisi so they never drift from the engine.
 // ============================================================================
 
 import { useState, useEffect, type ReactNode } from "react";
 import {
-  Wallet,
   Megaphone,
-  Sparkles,
-  Link2,
   Check,
   Loader2,
   Camera,
@@ -36,10 +30,24 @@ import {
   ArrowLeft,
   X,
   ShieldCheck,
+  Globe,
+  Percent,
+  CalendarDays,
+  Users,
+  UserPlus,
+  Coins,
+  ChevronDown,
+  Medal,
+  Award,
+  Trophy,
+  Crown,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import KomisiKalkulator from "@/components/afiliator/KomisiKalkulator";
+import { PRODUCTS, TIERS } from "@/lib/affiliate-komisi";
+
+const DASHBOARD_URL = "/akun/afiliator";
 
 type FormState = {
   name: string;
@@ -61,21 +69,102 @@ const EMPTY: FormState = {
   motivation: "",
 };
 
-const BENEFITS: { icon: typeof Wallet; title: string; desc: string }[] = [
+// ── Content config ───────────────────────────────────────────────────────────
+const STATS: { icon: typeof Globe; value: string; label: string }[] = [
+  { icon: Globe, value: "60+", label: "Bahasa diajarkan" },
+  { icon: Percent, value: "30%", label: "Komisi hingga" },
+  { icon: CalendarDays, value: "Tiap 25", label: "Pencairan bulanan" },
+  { icon: Users, value: "500+", label: "Pelajar aktif" },
+];
+
+const HOW_STEPS: { icon: typeof UserPlus; title: string; desc: string }[] = [
   {
-    icon: Wallet,
-    title: "Komisi hingga 30%",
-    desc: "Dapat komisi dari tiap pembelian yang masuk lewat link referral kamu.",
+    icon: UserPlus,
+    title: "Daftar & dapat link unik",
+    desc: "Isi data singkat, tim Linguo tinjau, lalu kamu dapat kode referral sendiri.",
   },
   {
-    icon: Link2,
-    title: "Satu link, banyak tujuan",
-    desc: "Link referral kamu bisa diarahkan ke halaman mana pun di linguo.id.",
+    icon: Share2,
+    title: "Bagikan ke audiens kamu",
+    desc: "Sebarkan link di Instagram, TikTok, WhatsApp, atau di mana pun audiensmu berada.",
   },
   {
-    icon: Sparkles,
-    title: "Materi promosi siap pakai",
-    desc: "Caption & pesan promosi tinggal salin-tempel — nggak usah mikir copy.",
+    icon: Coins,
+    title: "Dapat komisi tiap ada yang beli",
+    desc: "Setiap pembelian lewat linkmu otomatis tercatat — komisi langsung masuk saldo.",
+  },
+];
+
+// Per-tier visual treatment. Rates/labels come from @/lib/affiliate-komisi.
+const TIER_META: Record<
+  string,
+  {
+    icon: typeof Medal;
+    badge: string;
+    iconWrap: string;
+    perks: string[];
+    highlight?: boolean;
+  }
+> = {
+  standard: {
+    icon: Medal,
+    badge: "bg-slate-100 text-slate-600 ring-slate-200",
+    iconWrap: "bg-slate-100 text-slate-500",
+    perks: ["Tier awal semua afiliator baru", "Komisi langsung aktif tanpa syarat"],
+  },
+  bronze: {
+    icon: Award,
+    badge: "bg-amber-100 text-amber-800 ring-amber-200",
+    iconWrap: "bg-amber-100 text-amber-700",
+    perks: ["Komisi naik di semua produk", "Untuk afiliator yang mulai aktif"],
+  },
+  silver: {
+    icon: Trophy,
+    badge: "bg-slate-200 text-slate-700 ring-slate-300",
+    iconWrap: "bg-slate-200 text-slate-600",
+    perks: ["Komisi lebih besar di tiap penjualan", "Untuk performa yang konsisten"],
+  },
+  gold: {
+    icon: Crown,
+    badge: "bg-gradient-to-br from-amber-400 to-amber-500 text-white ring-amber-300",
+    iconWrap: "bg-gradient-to-br from-amber-400 to-amber-500 text-white",
+    perks: ["Komisi tertinggi — sampai 30%", "Untuk top affiliator Linguo"],
+    highlight: true,
+  },
+};
+
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: "Kapan komisi dicairkan?",
+    a: "Setiap tanggal 25, dengan minimum saldo Rp100.000.",
+  },
+  {
+    q: "Apa bedanya tier Standard, Bronze, Silver, Gold?",
+    a: "Tier menentukan persentase komisi kamu. Semakin tinggi tier, semakin besar komisi per penjualan. Tier ditentukan oleh tim Linguo berdasarkan performa dan kontribusi afiliator.",
+  },
+  {
+    q: "Bagaimana cara kerja link referral?",
+    a: "Setiap afiliator punya kode unik (contoh: linguo.id?ref=KODEKAMU). Siapapun yang mengklik link kamu dan membeli dalam 60 hari akan tercatat sebagai referral kamu.",
+  },
+  {
+    q: "Produk apa saja yang menghasilkan komisi?",
+    a: "Semua produk Linguo — Private, Reguler, Kids, IELTS/TOEFL, E-Learning, dan E-Book.",
+  },
+  {
+    q: "Apakah saya bisa membeli produk Linguo lewat link sendiri?",
+    a: "Tidak, sistem kami mendeteksi self-referral dan tidak akan mencatat komisi jika kamu membeli lewat link sendiri.",
+  },
+  {
+    q: "Apakah ada biaya untuk bergabung?",
+    a: "Gratis sepenuhnya. Tidak ada biaya pendaftaran atau biaya bulanan.",
+  },
+  {
+    q: "Bagaimana cara saya tahu sudah ada penjualan?",
+    a: "Login ke dashboard afiliator di linguo.id/akun/afiliator — kamu bisa lihat klik, konversi, dan saldo komisi secara real-time.",
+  },
+  {
+    q: "Apakah komisi dipotong pajak?",
+    a: "Ya, berlaku pemotongan PPh 21 sebesar 5% sesuai ketentuan perpajakan Indonesia.",
   },
 ];
 
@@ -87,6 +176,16 @@ const STEPS: { key: string; label: string; icon: typeof User }[] = [
 
 const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
+const pct = (rate: number) => `${Math.round(rate * 100)}%`;
+
+// Commission span across all products for a tier index → "8–15%".
+function tierRange(tierIdx: number): string {
+  const rates = PRODUCTS.map((p) => p.rates[tierIdx]);
+  return `${Math.round(Math.min(...rates) * 100)}–${Math.round(
+    Math.max(...rates) * 100
+  )}%`;
+}
+
 const inputCls =
   "h-12 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#1A9E9E] focus:bg-white focus:ring-2 focus:ring-[#1A9E9E]/20";
 
@@ -94,6 +193,14 @@ const stepVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? 28 : -28, opacity: 0 }),
   center: { x: 0, opacity: 1 },
   exit: (dir: number) => ({ x: dir > 0 ? -28 : 28, opacity: 0 }),
+};
+
+// Shared scroll-reveal props for below-the-fold sections.
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.5, ease: "easeOut" as const },
 };
 
 export default function AfiliatorSignupPage() {
@@ -239,95 +346,288 @@ export default function AfiliatorSignupPage() {
         <div className="absolute bottom-0 -right-24 h-72 w-72 rounded-full bg-amber-300/12 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-xl px-4 py-12 sm:py-16">
-        {/* Hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-          className="text-center"
-        >
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1A9E9E]/20 bg-[#1A9E9E]/10 px-3 py-1 text-xs font-bold text-[#147878]">
-            <Megaphone className="h-3.5 w-3.5" />
-            Program Afiliator Linguo
-          </span>
-          <h1 className="mt-4 text-2xl font-extrabold leading-tight tracking-tight text-slate-800 sm:text-3xl">
-            Bagikan Linguo, Dapat Komisi
-          </h1>
-          <p className="mx-auto mt-2.5 max-w-md text-sm leading-relaxed text-slate-500">
-            Punya audiens yang suka belajar bahasa? Gabung jadi afiliator —
-            sebarkan link referral kamu, dapat komisi dari tiap penjualan.
-          </p>
-        </motion.div>
+      {/* ── 1. HERO ─────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        {/* Subtle teal gradient + dotted grid backdrop */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#1A9E9E]/[0.07] via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#1A9E9E_1px,transparent_1px)] opacity-[0.06] [background-size:22px_22px]" />
 
-        {/* Benefits */}
-        <div className="mt-8 grid gap-3 sm:grid-cols-3">
-          {BENEFITS.map((b, i) => {
-            const Icon = b.icon;
+        <div className="mx-auto max-w-3xl px-4 pb-14 pt-16 text-center sm:pt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1A9E9E]/20 bg-[#1A9E9E]/10 px-3.5 py-1.5 text-xs font-bold text-[#147878]">
+              <Megaphone className="h-3.5 w-3.5" />
+              Program Afiliator Linguo
+            </span>
+            <h1 className="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-800 sm:text-5xl">
+              Rekomendasikan Linguo.{" "}
+              <span className="text-[#1A9E9E]">Dapat Komisi.</span>
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg">
+              Punya audiens yang suka belajar bahasa? Bagikan link referral kamu
+              dan dapat komisi hingga 30% dari tiap penjualan yang masuk.
+            </p>
+
+            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <button
+                onClick={openModal}
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] px-8 text-sm font-bold text-white shadow-lg shadow-[#1A9E9E]/25 transition hover:bg-[#147878] active:scale-[0.99] sm:w-auto"
+              >
+                Daftar Jadi Afiliator
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <a
+                href={DASHBOARD_URL}
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-8 text-sm font-bold text-slate-700 backdrop-blur transition hover:border-[#1A9E9E]/40 hover:text-[#147878] sm:w-auto"
+              >
+                Masuk ke Dashboard
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── 2. STATS BAR (social proof) ─────────────────────────────────── */}
+      <section className="mx-auto max-w-5xl px-4">
+        <motion.div
+          {...reveal}
+          className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] p-6 shadow-[0_22px_55px_-22px_rgba(15,107,107,0.6)] sm:p-8"
+        >
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            {STATS.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div key={s.label} className="text-center text-white">
+                  <Icon className="mx-auto h-6 w-6 text-white/70" />
+                  <div className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                    {s.value}
+                  </div>
+                  <div className="mt-0.5 text-xs font-medium text-white/75">
+                    {s.label}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── 3. CARA KERJA ───────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-5xl px-4 pt-16">
+        <motion.div {...reveal} className="text-center">
+          <SectionHeading
+            eyebrow="Cara Kerja"
+            title="Mulai dapat komisi dalam 3 langkah"
+          />
+        </motion.div>
+        <div className="mt-9 grid gap-4 md:grid-cols-3">
+          {HOW_STEPS.map((s, i) => {
+            const Icon = s.icon;
             return (
               <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 + i * 0.08 }}
-                className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm"
+                key={s.title}
+                {...reveal}
+                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
+                className="relative rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#1A9E9E]/12 text-[#1A9E9E]">
-                  <Icon className="h-4 w-4" />
+                <span className="absolute right-5 top-5 text-3xl font-extrabold text-slate-100">
+                  {i + 1}
+                </span>
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1A9E9E]/12 text-[#1A9E9E]">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-2.5 text-sm font-bold text-slate-800">
-                  {b.title}
+                <h3 className="mt-4 text-base font-bold text-slate-800">
+                  {s.title}
                 </h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                  {b.desc}
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+                  {s.desc}
                 </p>
               </motion.div>
             );
           })}
         </div>
+      </section>
 
-        {/* Kalkulator Komisi */}
+      {/* ── 4. TIER SYSTEM ──────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-5xl px-4 pt-16">
+        <motion.div {...reveal} className="text-center">
+          <SectionHeading
+            eyebrow="Sistem Tier"
+            title="Semakin Aktif, Semakin Besar Komisimu"
+            desc="Tier menentukan persentase komisimu di setiap produk. Naik tier, naik komisi."
+          />
+        </motion.div>
+
+        {/* Tier cards */}
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {TIERS.map((t, i) => {
+            const meta = TIER_META[t.key];
+            const Icon = meta.icon;
+            return (
+              <motion.div
+                key={t.key}
+                {...reveal}
+                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.08 }}
+                className={
+                  "relative flex flex-col rounded-2xl bg-white p-5 shadow-sm transition " +
+                  (meta.highlight
+                    ? "border-2 border-[#1A9E9E] shadow-[0_18px_45px_-20px_rgba(20,120,120,0.45)]"
+                    : "border border-slate-200/80")
+                }
+              >
+                {meta.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#1A9E9E] px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
+                    Paling Cuan
+                  </span>
+                )}
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl ${meta.iconWrap}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span
+                    className={`rounded-full px-2.5 py-1 text-[11px] font-bold ring-1 ${meta.badge}`}
+                  >
+                    {t.label}
+                  </span>
+                </div>
+                <div className="mt-4 text-2xl font-extrabold tracking-tight text-slate-800">
+                  {tierRange(i)}
+                </div>
+                <div className="text-xs font-medium text-slate-400">
+                  rentang komisi
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {meta.perks.map((p) => (
+                    <li key={p} className="flex items-start gap-2 text-xs text-slate-600">
+                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#1A9E9E]" />
+                      <span className="leading-relaxed">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Full commission table — products × tiers */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
-          className="mt-7"
+          {...reveal}
+          className="mt-7 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm"
         >
+          <div className="border-b border-slate-100 px-5 py-4">
+            <h3 className="text-sm font-bold text-slate-800">
+              Komisi lengkap per produk
+            </h3>
+            <p className="mt-0.5 text-xs text-slate-500">
+              Persentase komisi yang kamu dapat untuk tiap produk di setiap tier.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[520px] text-sm">
+              <thead>
+                <tr className="border-b border-slate-100 text-left text-[11px] uppercase tracking-wide text-slate-400">
+                  <th className="px-5 py-3 font-semibold">Produk</th>
+                  {TIERS.map((t) => (
+                    <th
+                      key={t.key}
+                      className={
+                        "px-4 py-3 text-center font-semibold " +
+                        (TIER_META[t.key].highlight
+                          ? "bg-[#1A9E9E]/5 text-[#147878]"
+                          : "")
+                      }
+                    >
+                      {t.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {PRODUCTS.map((p) => (
+                  <tr
+                    key={p.key}
+                    className="border-b border-slate-50 last:border-0 hover:bg-slate-50/60"
+                  >
+                    <td className="px-5 py-3 font-semibold text-slate-700">
+                      {p.label}
+                    </td>
+                    {p.rates.map((rate, ti) => (
+                      <td
+                        key={ti}
+                        className={
+                          "px-4 py-3 text-center tabular-nums " +
+                          (TIER_META[TIERS[ti].key].highlight
+                            ? "bg-[#1A9E9E]/5 font-bold text-[#147878]"
+                            : "font-medium text-slate-600")
+                        }
+                      >
+                        {pct(rate)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── 5. KALKULATOR KOMISI ────────────────────────────────────────── */}
+      <section className="mx-auto max-w-2xl px-4 pt-16">
+        <motion.div {...reveal} className="text-center">
+          <SectionHeading
+            eyebrow="Simulasi"
+            title="Hitung Potensi Komisimu"
+            desc="Pilih produk & tier, lalu lihat perkiraan komisi yang bisa kamu kumpulkan tiap bulan."
+          />
+        </motion.div>
+        <motion.div {...reveal} className="mt-8">
           <KomisiKalkulator />
         </motion.div>
+      </section>
 
-        {/* CTA card */}
+      {/* ── 6. FAQ ──────────────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-2xl px-4 pt-16">
+        <motion.div {...reveal} className="text-center">
+          <SectionHeading eyebrow="FAQ" title="Pertanyaan Umum" />
+        </motion.div>
+        <motion.div {...reveal} className="mt-8">
+          <FaqAccordion items={FAQS} />
+        </motion.div>
+      </section>
+
+      {/* ── 7. FINAL CTA ────────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-5xl px-4 pb-16 pt-16">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.34 }}
-          className="mt-7 overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-sm sm:p-8"
+          {...reveal}
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1FB3B3] via-[#1A9E9E] to-[#0F6B6B] px-6 py-12 text-center shadow-[0_22px_55px_-22px_rgba(15,107,107,0.6)] sm:px-10 sm:py-14"
         >
-          <h2 className="text-base font-bold text-slate-800 sm:text-lg">
-            Siap mulai? Daftar dalam 3 langkah singkat.
-          </h2>
-          <p className="mx-auto mt-1.5 max-w-sm text-xs leading-relaxed text-slate-500">
-            Cukup isi data dasar — tim Linguo akan meninjau & menghubungi kamu.
-          </p>
-          <button
-            onClick={openModal}
-            className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#1A9E9E] text-sm font-bold text-white shadow-sm shadow-[#1A9E9E]/20 transition hover:bg-[#147878] active:scale-[0.99] sm:w-auto sm:px-8"
-          >
-            Daftar Jadi Afiliator
-            <ArrowRight className="h-4 w-4" />
-          </button>
-          <p className="mt-4 text-[11px] leading-relaxed text-slate-400">
-            Sudah jadi afiliator?{" "}
-            <a
-              href="/akun/afiliator"
-              className="font-semibold text-[#147878] hover:underline"
+          <div className="pointer-events-none absolute -right-12 -top-14 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-emerald-300/15 blur-2xl" />
+          <div className="relative">
+            <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+              Siap mulai dapat komisi?
+            </h2>
+            <p className="mx-auto mt-2.5 max-w-md text-sm leading-relaxed text-white/80">
+              Daftar gratis dalam beberapa menit. Tim Linguo akan meninjau &amp;
+              menghubungi kamu.
+            </p>
+            <button
+              onClick={openModal}
+              className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-8 text-sm font-bold text-[#147878] shadow-lg transition hover:bg-white/90 active:scale-[0.99]"
             >
-              Masuk ke dashboard
-            </a>
-          </p>
+              Daftar Sekarang
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
         </motion.div>
 
-        <p className="mt-6 text-center">
+        <p className="mt-8 text-center">
           <a
             href="/"
             className="text-xs text-slate-400 transition hover:text-slate-600"
@@ -335,7 +635,7 @@ export default function AfiliatorSignupPage() {
             Kembali ke Linguo.id
           </a>
         </p>
-      </div>
+      </section>
 
       {/* ── Wizard modal ──────────────────────────────────────────────── */}
       <AnimatePresence>
@@ -645,6 +945,84 @@ export default function AfiliatorSignupPage() {
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+// ── Section heading ──────────────────────────────────────────────────────────
+function SectionHeading({
+  eyebrow,
+  title,
+  desc,
+}: {
+  eyebrow: string;
+  title: string;
+  desc?: string;
+}) {
+  return (
+    <>
+      <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#1A9E9E]">
+        {eyebrow}
+      </span>
+      <h2 className="mx-auto mt-2 max-w-2xl text-2xl font-extrabold tracking-tight text-slate-800 sm:text-3xl">
+        {title}
+      </h2>
+      {desc && (
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-500">
+          {desc}
+        </p>
+      )}
+    </>
+  );
+}
+
+// ── FAQ accordion (inline, no library) ───────────────────────────────────────
+function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  return (
+    <div className="space-y-3">
+      {items.map((item, i) => {
+        const isOpen = openIdx === i;
+        return (
+          <div
+            key={i}
+            className={
+              "overflow-hidden rounded-2xl border bg-white shadow-sm transition-colors " +
+              (isOpen ? "border-[#1A9E9E]/40" : "border-slate-200/80")
+            }
+          >
+            <button
+              onClick={() => setOpenIdx(isOpen ? null : i)}
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
+            >
+              <span className="text-sm font-bold text-slate-800">{item.q}</span>
+              <ChevronDown
+                className={
+                  "h-4 w-4 shrink-0 text-[#1A9E9E] transition-transform duration-300 " +
+                  (isOpen ? "rotate-180" : "")
+                }
+              />
+            </button>
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="overflow-hidden"
+                >
+                  <p className="px-5 pb-4 text-sm leading-relaxed text-slate-500">
+                    {item.a}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
     </div>
   );
 }
