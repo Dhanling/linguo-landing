@@ -20,6 +20,26 @@ function isDriveUrl(raw: string): boolean {
   }
 }
 
+async function notifyRiniWA(applicantName: string) {
+  const token = process.env.FONNTE_TOKEN;
+  if (!token) return;
+  const msg =
+    "📹 *Video Micro-teaching Masuk*\n\n" +
+    `Pelamar *${applicantName}* baru saja mengumpulkan video micro-teaching.\n\n` +
+    "Cek & nilai di:\nhttps://dashboard.linguo.id → menu Rekrutmen";
+  try {
+    await fetch("https://api.fonnte.com/send", {
+      method: "POST",
+      headers: { Authorization: token },
+      body: JSON.stringify({
+        target: "6281320113243",
+        message: msg,
+        countryCode: "62",
+      }),
+    });
+  } catch (_) {}
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -40,7 +60,7 @@ export async function POST(req: NextRequest) {
     // sudah dinilai (passed/failed). Selama sent/submitted → boleh ganti link.
     const lookup = await fetch(
       `${SUPABASE_URL}/rest/v1/teacher_applications` +
-        `?microteaching_token=eq.${token}&select=id,microteaching_status&limit=1`,
+        `?microteaching_token=eq.${token}&select=id,name,microteaching_status&limit=1`,
       {
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
         cache: "no-store",
@@ -87,6 +107,8 @@ export async function POST(req: NextRequest) {
       console.error("micro-teaching submit patch error:", err);
       return NextResponse.json({ error: "Gagal menyimpan link." }, { status: 500 });
     }
+
+    notifyRiniWA(a.name).catch(() => {});
 
     return NextResponse.json({ ok: true });
   } catch (e) {
