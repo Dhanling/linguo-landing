@@ -1931,6 +1931,81 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
   );
 }
 
+// ========== LANGUAGE FLAG STRIP ==========
+const LANGUAGES = [
+  {flag:"us", name:"English",    teachers:"4306"},
+  {flag:"jp", name:"Japanese",   teachers:"1149"},
+  {flag:"es", name:"Spanish",    teachers:"2405"},
+  {flag:"cn", name:"Chinese",    teachers:"1059"},
+  {flag:"fr", name:"French",     teachers:"1212"},
+  {flag:"it", name:"Italian",    teachers:"873"},
+  {flag:"de", name:"German",     teachers:"1487"},
+  {flag:"kr", name:"Korean",     teachers:"1320"},
+  {flag:"sa", name:"Arabic",     teachers:"764"},
+  {flag:"ru", name:"Russian",    teachers:"918"},
+  {flag:"pt", name:"Portuguese", teachers:"602"},
+  {flag:"nl", name:"Dutch",      teachers:"431"},
+];
+
+function LanguageStrip() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const id = setInterval(() => {
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+        el.scrollLeft = 0;
+      } else {
+        el.scrollLeft += 1;
+      }
+    }, 30);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  const scrollBy = (delta: number) => {
+    scrollRef.current?.scrollBy({ left: delta, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative max-w-5xl mx-auto">
+      {/* Edge fades */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-[5]" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-[5]" />
+
+      {/* Prev button */}
+      <button onClick={() => scrollBy(-300)} aria-label="Sebelumnya"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <ChevronLeft className="w-4 h-4 text-slate-600" />
+      </button>
+
+      {/* Scroll track */}
+      <div ref={scrollRef}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
+        {LANGUAGES.map((lang, i) => (
+          <div key={i} className="flex items-center gap-2.5 shrink-0 cursor-pointer hover:opacity-80 transition-opacity group">
+            <img src={`https://flagcdn.com/w40/${lang.flag}.png`} alt={lang.name} className="w-8 h-8 rounded-md object-cover shadow-sm" />
+            <div>
+              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang.name}</p>
+              <p className="text-xs text-slate-400">{lang.teachers} Pengajar</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Next button */}
+      <button onClick={() => scrollBy(300)} aria-label="Berikutnya"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <ChevronRight className="w-4 h-4 text-slate-600" />
+      </button>
+    </div>
+  );
+}
+
 // FLAT_PRICING_V1
 const PRICING_TABS = [
   {
@@ -2115,6 +2190,13 @@ export default function Home() {
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
+      </div>
+    </section>
+
+    {/* LANGUAGE FLAG STRIP */}
+    <section className="py-6 bg-white border-b border-slate-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <LanguageStrip />
       </div>
     </section>
 
