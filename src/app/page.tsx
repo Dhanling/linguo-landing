@@ -1828,12 +1828,12 @@ const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
-  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0},
-  {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1},
-  {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2},
-  {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3},
-  {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk"},
-  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook"},
+  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"🎓"},
+  {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"👥"},
+  {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"📝"},
+  {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"🧒"},
+  {badge:"📱 Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"📱"},
+  {badge:"📚 Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"📚"},
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
@@ -1889,20 +1889,26 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
   const ref = React.useRef<HTMLDivElement>(null);
   const scale = getScale(ref.current);
 
+  const hovered = scale > 1.03;
+
   return (
     <div ref={ref}
-      className="flex flex-col bg-white border-2 rounded-2xl p-2.5 lg:p-5 w-[125px] lg:w-[200px] shrink-0 snap-center cursor-pointer origin-bottom"
+      className="flex flex-col bg-white border-2 rounded-3xl p-3 lg:p-4 w-[155px] lg:w-[210px] shrink-0 snap-center cursor-pointer origin-bottom transition-all duration-300"
       style={{
         transform:`scale(${scale})`,
-        transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1)',
-        boxShadow: scale > 1.03 ? '0 20px 50px -12px rgba(26,158,158,0.25)' : '0 1px 3px rgba(0,0,0,0.06)',
-        borderColor: scale > 1.03 ? 'rgba(26,158,158,0.35)' : '#f1f5f9',
-        zIndex: scale > 1.03 ? 10 : 1,
+        transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s ease, border-color 0.3s ease',
+        boxShadow: hovered ? '0 20px 50px -12px rgba(26,158,158,0.30)' : '0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.06)',
+        borderColor: hovered ? 'rgba(26,158,158,0.45)' : 'transparent',
+        zIndex: hovered ? 10 : 1,
         position:'relative',
       }}>
-      <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full mb-2 lg:mb-3 self-start whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
-      <h3 className="font-bold text-xs lg:text-sm mb-1">{p.title}</h3>
-      <p className="text-[10px] lg:text-xs text-slate-500 leading-snug mb-2 lg:mb-4 flex-1">{p.desc}</p>
+      {/* Image placeholder area (colored bg + emoji until real images are added) */}
+      <div className="rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-3" style={{backgroundColor:p.bgColor}}>
+        <span className="text-5xl">{p.imageEmoji}</span>
+      </div>
+      <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full mb-2 self-start whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
+      <h3 className="font-bold text-sm lg:text-base mb-1">{p.title}</h3>
+      <p className="text-xs text-slate-500 leading-snug mb-3 flex-1">{p.desc}</p>
       <div className="mb-2 lg:mb-3 min-h-[40px] lg:min-h-[48px] flex flex-col justify-end">
         {p.priceOld ? (
           <div className="flex items-center gap-1.5 lg:gap-2 mb-0.5 flex-wrap">
