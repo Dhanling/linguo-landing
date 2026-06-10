@@ -1837,9 +1837,7 @@ const PRODUCTS = [
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
-  const [mouseX, setMouseX] = useState<number|null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -1848,25 +1846,15 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  const getScale = (el:HTMLDivElement|null) => {
-    if(isMobile || mouseX===null || !el) return 1;
-    const rect = el.getBoundingClientRect();
-    const center = rect.left + rect.width/2;
-    const dist = Math.abs(mouseX - center);
-    const maxDist = 300;
-    if(dist > maxDist) return 1;
-    return 1 + 0.1 * Math.pow(1 - dist/maxDist, 2);
-  };
-
-  // Mobile: free-scroll horizontal snap, no autoplay. product-dock-free-scroll-v1
+  // Mobile: free-scroll horizontal snap. product-dock-free-scroll-v1
   if (isMobile) {
     return (
       <div className="overflow-x-auto -mx-2 px-2 pb-1"
         style={{WebkitOverflowScrolling:'touch' as React.CSSProperties['WebkitOverflowScrolling'],scrollSnapType:'x mandatory'}}>
-        <div className="flex gap-2 items-stretch py-2 pb-3 w-max">
+        <div className="flex gap-3 items-stretch py-2 pb-3 w-max">
           {PRODUCTS.map((p,i)=>(
             <div key={i} style={{scrollSnapAlign:'start'}}>
-              <DockCard product={p} getScale={()=>1} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+              <DockCard product={p} mobile setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
             </div>
           ))}
         </div>
@@ -1875,68 +1863,60 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
   }
 
   return (
-    <div className="flex justify-center gap-4 items-stretch py-6 px-4"
-      onMouseMove={(e)=>setMouseX(e.clientX)}
-      onMouseLeave={()=>setMouseX(null)}>
+    <div className="flex flex-wrap justify-center gap-4 py-6 px-4">
       {PRODUCTS.map((p,i)=>(
-        <DockCard key={i} product={p} getScale={getScale} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+        <DockCard key={i} product={p} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
       ))}
     </div>
   );
 }
 
-function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];getScale:(el:HTMLDivElement|null)=>number;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const scale = getScale(ref.current);
-
-  const hovered = scale > 1.03;
+function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
+  const sizeCls = mobile ? "w-[160px] h-[160px]" : "w-[200px] h-[200px] lg:w-[280px] lg:h-[280px]";
 
   return (
-    <div ref={ref}
-      className="group flex flex-col bg-white border-2 rounded-3xl p-3 lg:p-4 w-[155px] lg:w-[210px] shrink-0 snap-center cursor-pointer origin-bottom transition-all duration-300"
-      style={{
-        transform:`scale(${scale})`,
-        transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s ease, border-color 0.3s ease',
-        boxShadow: hovered ? '0 20px 50px -12px rgba(26,158,158,0.30)' : '0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.06)',
-        borderColor: hovered ? 'rgba(26,158,158,0.45)' : 'transparent',
-        zIndex: hovered ? 10 : 1,
-        position:'relative',
-      }}>
-      {/* Image area: hover-swap between img1/img2; fall back to emoji placeholder */}
-      <div className="relative rounded-2xl h-32 lg:h-40 overflow-hidden flex items-center justify-center mb-3" style={{backgroundColor:p.bgColor}}>
+    <div className={`group relative rounded-3xl overflow-hidden shrink-0 snap-center cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 ${sizeCls}`}>
+      {/* Image area (top 55%): hover-swap img1/img2, else bgColor + emoji */}
+      <div className="absolute inset-0 h-[55%] overflow-hidden" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <img src={card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0" />
             <img src={card.img2 || card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </>
         ) : (
-          <span className="text-5xl">{p.imageEmoji}</span>
+          <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
       </div>
-      <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full mb-2 self-start whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
-      <h3 className="font-bold text-sm lg:text-base mb-1">{p.title}</h3>
-      <p className="text-xs text-slate-500 leading-snug mb-3 flex-1">{p.desc}</p>
-      <div className="mb-2 lg:mb-3 min-h-[40px] lg:min-h-[48px] flex flex-col justify-end">
-        {p.priceOld ? (
-          <div className="flex items-center gap-1.5 lg:gap-2 mb-0.5 flex-wrap">
-            <span className="text-[10px] lg:text-xs text-slate-400 line-through">{p.priceOld}</span>
-            {p.discount && <span className="text-[9px] lg:text-[10px] font-bold text-red-500 bg-red-50 px-1 lg:px-1.5 py-0.5 rounded">{p.discount}</span>}
+
+      {/* Info panel (bottom 45%) */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-b from-white/80 to-white backdrop-blur-sm px-3 py-3 lg:px-4 lg:py-4">
+        <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 py-0.5 rounded-full mb-1 whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
+        <h3 className="font-bold text-sm lg:text-base text-slate-900 leading-tight mb-0.5">{p.title}</h3>
+        <p className="text-[10px] lg:text-xs text-slate-500 leading-snug mb-2 line-clamp-2">{p.desc}</p>
+        <div className="flex items-end justify-between gap-2">
+          <div className="flex flex-col min-w-0">
+            {p.priceOld && (
+              <div className="flex items-center gap-1 mb-0.5">
+                <span className="text-[9px] lg:text-[10px] text-slate-400 line-through">{p.priceOld}</span>
+                {p.discount && <span className="text-[8px] lg:text-[9px] font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded">{p.discount}</span>}
+              </div>
+            )}
+            <div className="flex items-baseline gap-0.5">
+              <span className="text-sm lg:text-base font-bold text-[#1A9E9E] whitespace-nowrap">{p.price}</span>
+              {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
+            </div>
           </div>
-        ) : (
-          <div className="mb-0.5 h-[14px] lg:h-[18px]"/>
-        )}
-        <span className="text-sm lg:text-lg font-bold text-[#1A9E9E]">{p.price}</span>
-        <span className="text-[10px] lg:text-xs text-slate-400">{p.per}</span>
+          <button onClick={()=>{
+            if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
+            else if((p).href){window.location.href=(p).href}
+            else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
+          }}
+            className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-[10px] lg:text-xs font-bold px-3 py-2 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
+            Beli →
+          </button>
+        </div>
       </div>
-      <button onClick={()=>{
-        if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
-        else if((p).href){window.location.href=(p).href}
-        else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
-      }}
-        className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-[11px] lg:text-xs font-semibold py-2 lg:py-2.5 rounded-full transition-colors active:scale-95">
-        Beli Paket
-      </button>
     </div>
   );
 }
