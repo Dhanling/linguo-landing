@@ -1947,7 +1947,7 @@ const LANGUAGES = [
   {flag:"nl", name:"Dutch",      teachers:"431"},
 ];
 
-function LanguageStrip() {
+function LanguageStrip({className=""}:{className?:string}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
 
@@ -1970,7 +1970,7 @@ function LanguageStrip() {
   };
 
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div className={`relative max-w-5xl mx-auto ${className}`}>
       {/* Edge fades */}
       <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-[5]" />
       <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-[5]" />
@@ -2143,7 +2143,7 @@ export default function Home() {
     <LoginModal open={loginOpen} onClose={()=>setLoginOpen(false)} />
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
+    <section className="bg-[#1A9E9E] lg:min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-4 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
@@ -2180,6 +2180,7 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
+      <LanguageStrip className="mt-6"/>
     </section>
 
     {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget dipindah ke <Navbar/> (lihat dekat <PlacementPicker/>) */}
@@ -2190,13 +2191,6 @@ export default function Home() {
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
-      </div>
-    </section>
-
-    {/* LANGUAGE FLAG STRIP */}
-    <section className="py-6 bg-white border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-6">
-        <LanguageStrip />
       </div>
     </section>
 
