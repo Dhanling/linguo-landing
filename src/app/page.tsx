@@ -1886,9 +1886,9 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 
   return (
     <div onClick={handleClick}
-      className={`group relative rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
+      className={`group relative rounded-3xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
       {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
-      <div className="relative rounded-2xl overflow-hidden w-full h-36 lg:h-44" style={{backgroundColor:p.bgColor}}>
+      <div className="relative rounded-2xl overflow-hidden w-full h-40 lg:h-48 mb-0" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <img src={card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0" />
@@ -1899,12 +1899,14 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
         )}
         {/* Badge overlaid on image */}
         <span className={`absolute top-3 left-3 z-10 inline-block text-[9px] lg:text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
+        {/* Frosted bottom blend into info panel */}
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/60 to-transparent" />
       </div>
 
       {/* Info panel below image */}
-      <div className="pt-3 px-1 pb-1">
-        <h3 className="font-bold text-sm lg:text-base text-slate-900 leading-tight mb-0.5">{p.title}</h3>
-        <p className="text-[10px] lg:text-xs text-slate-500 leading-snug mb-2 line-clamp-2">{p.desc}</p>
+      <div className="pt-3 pb-1">
+        <h3 className="font-bold text-sm lg:text-[15px] text-slate-900 mb-0.5">{p.title}</h3>
+        <p className="text-[10px] lg:text-xs text-slate-400 leading-snug mb-3 line-clamp-2">{p.desc}</p>
         <div className="flex items-end justify-between gap-2">
           <div className="flex flex-col min-w-0">
             {p.priceOld && (
@@ -1913,14 +1915,14 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
                 {p.discount && <span className="text-[8px] lg:text-[9px] font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded">{p.discount}</span>}
               </div>
             )}
+            {priceMulai && <span className="text-[10px] text-slate-400 leading-none">Mulai</span>}
             <div className="flex items-baseline gap-0.5">
-              {priceMulai && <span className="text-[10px] lg:text-xs text-slate-500">Mulai</span>}
-              <span className="text-sm lg:text-base text-slate-900 font-bold whitespace-nowrap">{priceMain}</span>
-              {p.per && <span className="text-[10px] text-slate-500">{p.per}</span>}
+              <span className="text-sm lg:text-base font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
+              {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
             </div>
           </div>
           <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
-            className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-[10px] lg:text-xs font-bold px-3 py-2 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
+            className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
             Beli →
           </button>
         </div>
