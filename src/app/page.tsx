@@ -1874,7 +1874,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
   const sizeCls = mobile ? "w-[160px]" : "w-[200px] lg:w-[280px]";
-  const objPos = p.title === "E-Book" ? "object-top" : "object-center";
+  const objPos = "object-center";
 
   const handleClick = () => {
     if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
@@ -1889,7 +1889,7 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
     <div onClick={handleClick}
       className={`group relative rounded-3xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
       {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
-      <div className="relative rounded-2xl overflow-hidden w-full h-48 lg:h-52 mb-0" style={{backgroundColor:p.bgColor}}>
+      <div className="relative rounded-2xl overflow-hidden w-full h-52 lg:h-56 mb-0" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <img src={card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
@@ -1945,6 +1945,7 @@ const LANGUAGES = [
 function LanguageStrip({className=""}:{className?:string}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number|null>(null);
 
   useEffect(() => {
     if (paused) return;
@@ -1981,12 +1982,20 @@ function LanguageStrip({className=""}:{className?:string}) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
-        {LANGUAGES.map((lang, i) => (
-          <div key={i} className="flex items-center gap-2.5 shrink-0 cursor-pointer hover:opacity-80 transition-opacity group">
-            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
-            <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
-          </div>
-        ))}
+        {LANGUAGES.map((lang, i) => {
+          const dist = hoveredIdx === null ? 99 : Math.abs(hoveredIdx - i);
+          const scaleCls = dist === 0 ? "scale-150" : dist === 1 ? "scale-125" : "scale-100";
+          return (
+            <div key={i}
+              onMouseEnter={() => setHoveredIdx(i)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
+              className={`flex items-center gap-2.5 shrink-0 cursor-pointer origin-center transition-transform duration-150 ${scaleCls}`}>
+              <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
+              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
+            </div>
+          );
+        })}
       </div>
 
       {/* Next button */}
@@ -2174,9 +2183,10 @@ export default function Home() {
       </div>
     </section>
 
-    {/* LANGUAGE FLAG STRIP — white card on white bg */}
+    {/* LANGUAGE FLAG STRIP — flat white, seamless */}
     <section className="bg-white pt-8 pb-2">
-      <div className="bg-white rounded-2xl shadow-lg mx-6 lg:mx-12 overflow-hidden"><LanguageStrip /></div>
+      <h2 className="font-heading text-xl sm:text-2xl font-bold text-center mb-4">Tersedia <span className="text-[#1A9E9E]">60+ Bahasa</span></h2>
+      <div className="bg-white mx-6 lg:mx-12 overflow-hidden"><LanguageStrip /></div>
     </section>
 
     {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget dipindah ke <Navbar/> (lihat dekat <PlacementPicker/>) */}
