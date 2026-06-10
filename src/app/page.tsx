@@ -1846,18 +1846,13 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Mobile: free-scroll horizontal snap. product-dock-free-scroll-v1
+  // Mobile: compact 2-column grid (Ruangguru-style). product-dock-mobile-grid-v1
   if (isMobile) {
     return (
-      <div className="overflow-x-auto -mx-2 px-2 pb-1"
-        style={{WebkitOverflowScrolling:'touch' as React.CSSProperties['WebkitOverflowScrolling'],scrollSnapType:'x mandatory'}}>
-        <div className="flex gap-3 items-stretch py-2 pb-3 w-max">
-          {PRODUCTS.map((p,i)=>(
-            <div key={i} style={{scrollSnapAlign:'start'}}>
-              <DockCard product={p} mobile setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-3 px-4 py-4 items-stretch">
+        {PRODUCTS.map((p,i)=>(
+          <DockCard key={i} product={p} mobile setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
+        ))}
       </div>
     );
   }
@@ -1873,7 +1868,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
-  const sizeCls = mobile ? "w-[80vw] max-w-[320px]" : "w-[200px] lg:w-[280px]";
+  const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-[200px] lg:w-[280px] rounded-3xl shrink-0 snap-center";
   const objPos = "object-center";
 
   const handleClick = () => {
@@ -1889,23 +1884,23 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
     <div className="flex flex-col min-w-0">
       {p.priceOld && (
         <div className="flex items-center gap-1 mb-0.5">
-          <span className="text-[9px] lg:text-[10px] text-slate-400 line-through">{p.priceOld}</span>
-          {p.discount && <span className="text-[8px] lg:text-[9px] font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded">{p.discount}</span>}
+          <span className={`${mobile?"text-xs":"text-[9px] lg:text-[10px]"} text-slate-400 line-through`}>{p.priceOld}</span>
+          {p.discount && <span className={`${mobile?"text-xs":"text-[8px] lg:text-[9px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
         </div>
       )}
-      {priceMulai && <span className="text-[10px] text-slate-400 leading-none">Mulai</span>}
+      {priceMulai && <span className={`${mobile?"text-xs text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
       <div className="flex items-baseline gap-0.5">
         <span className="text-sm lg:text-base font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
-        {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
+        {p.per && <span className={`${mobile?"text-xs":"text-[10px]"} text-slate-400`}>{p.per}</span>}
       </div>
     </div>
   );
 
   return (
     <div onClick={handleClick}
-      className={`group relative rounded-3xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
+      className={`group relative flex flex-col bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 ${sizeCls}`}>
       {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
-      <div className="relative rounded-2xl overflow-hidden w-full h-52 lg:h-56 mb-0" style={{backgroundColor:p.bgColor}}>
+      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px] rounded-lg" : "h-52 lg:h-56 rounded-2xl"}`} style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <img src={card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
@@ -1915,21 +1910,21 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
         {/* Badge overlaid on image */}
-        <span className={`absolute top-3 left-3 z-10 inline-flex items-center gap-1 text-[9px] lg:text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+        <span className={`absolute top-2 left-2 lg:top-3 lg:left-3 z-10 inline-flex items-center gap-1 ${mobile?"text-xs px-2 py-0.5":"text-[9px] lg:text-[10px] px-2.5 py-1"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
         {/* Frosted bottom blend into info panel */}
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/60 to-transparent" />
       </div>
 
       {/* Info panel below image */}
-      <div className="pt-3 pb-1 flex flex-col">
+      <div className="pt-3 pb-1 flex flex-col flex-1">
         <h3 className="font-bold text-sm lg:text-[15px] text-slate-900 mb-0.5">{p.title}</h3>
-        <p className="text-[10px] lg:text-xs text-slate-400 leading-snug mb-3 line-clamp-2">{p.desc}</p>
+        <p className={`${mobile?"text-xs":"text-[10px] lg:text-xs"} text-slate-400 leading-snug mb-3 line-clamp-2`}>{p.desc}</p>
         {mobile ? (
           /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
-          <div className="flex flex-col gap-3 mt-auto">
+          <div className="flex flex-col gap-2 mt-auto">
             {priceBlock}
             <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
-              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-3 rounded-xl transition-colors active:scale-95">
+              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors active:scale-95">
               Beli →
             </button>
           </div>
