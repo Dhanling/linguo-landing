@@ -1874,7 +1874,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
   const sizeCls = mobile ? "w-[160px]" : "w-[200px] lg:w-[280px]";
-  const objPos = p.title === "E-Book" ? "object-bottom" : "object-center";
+  const objPos = p.title === "E-Book" ? "object-top" : "object-center";
 
   const handleClick = () => {
     if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
@@ -1933,19 +1933,13 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 }
 
 // ========== LANGUAGE FLAG STRIP ==========
+// Flag codes resolved via getFlagCode(name) — see FLAG_CODES map above.
 const LANGUAGES = [
-  {flag:"us", name:"English",    teachers:"4306"},
-  {flag:"jp", name:"Japanese",   teachers:"1149"},
-  {flag:"es", name:"Spanish",    teachers:"2405"},
-  {flag:"cn", name:"Chinese",    teachers:"1059"},
-  {flag:"fr", name:"French",     teachers:"1212"},
-  {flag:"it", name:"Italian",    teachers:"873"},
-  {flag:"de", name:"German",     teachers:"1487"},
-  {flag:"kr", name:"Korean",     teachers:"1320"},
-  {flag:"sa", name:"Arabic",     teachers:"764"},
-  {flag:"ru", name:"Russian",    teachers:"918"},
-  {flag:"pt", name:"Portuguese", teachers:"602"},
-  {flag:"nl", name:"Dutch",      teachers:"431"},
+  "English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish",
+  "Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish",
+  "Finnish","Greek","Czech","Hungarian","Romanian","Thai","Vietnamese","Hindi",
+  "Turkish","Hebrew","Persian","Tagalog","Malay","Swahili","Javanese","Sundanese",
+  "BIPA","Georgian","Urdu","Bengali",
 ];
 
 function LanguageStrip({className=""}:{className?:string}) {
@@ -1989,11 +1983,8 @@ function LanguageStrip({className=""}:{className?:string}) {
         className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
         {LANGUAGES.map((lang, i) => (
           <div key={i} className="flex items-center gap-2.5 shrink-0 cursor-pointer hover:opacity-80 transition-opacity group">
-            <img src={`https://flagcdn.com/w40/${lang.flag}.png`} alt={lang.name} className="w-8 h-8 rounded-md object-cover shadow-sm" />
-            <div>
-              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang.name}</p>
-              <p className="text-xs text-slate-400">{lang.teachers} Pengajar</p>
-            </div>
+            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
+            <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
           </div>
         ))}
       </div>
@@ -2144,7 +2135,7 @@ export default function Home() {
     <LoginModal open={loginOpen} onClose={()=>setLoginOpen(false)} />
 
     {/* HERO */}
-    <section className="bg-[#1A9E9E] lg:min-h-screen flex flex-col justify-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
+    <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[1fr_1.3fr] gap-4 items-center py-4 lg:py-0">
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
@@ -2181,7 +2172,11 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-      <div className="bg-white rounded-2xl shadow-lg mx-6 lg:mx-12 mb-6 overflow-hidden"><LanguageStrip /></div>
+    </section>
+
+    {/* LANGUAGE FLAG STRIP — white card on white bg */}
+    <section className="bg-white pt-8 pb-2">
+      <div className="bg-white rounded-2xl shadow-lg mx-6 lg:mx-12 overflow-hidden"><LanguageStrip /></div>
     </section>
 
     {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget dipindah ke <Navbar/> (lihat dekat <PlacementPicker/>) */}
