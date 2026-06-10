@@ -1874,6 +1874,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
   const sizeCls = mobile ? "w-[160px]" : "w-[200px] lg:w-[280px]";
+  const objPos = p.title === "E-Book" ? "object-bottom" : "object-center";
 
   const handleClick = () => {
     if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
@@ -1888,11 +1889,11 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
     <div onClick={handleClick}
       className={`group relative rounded-3xl bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
       {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
-      <div className="relative rounded-2xl overflow-hidden w-full h-40 lg:h-48 mb-0" style={{backgroundColor:p.bgColor}}>
+      <div className="relative rounded-2xl overflow-hidden w-full h-48 lg:h-52 mb-0" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
-            <img src={card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 group-hover:opacity-0" />
-            <img src={card.img2 || card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover object-top opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <img src={card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
+            <img src={card.img2 || card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
           </>
         ) : (
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
