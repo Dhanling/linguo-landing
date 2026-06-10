@@ -1828,7 +1828,7 @@ const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
-  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"🎓"},
+  {badge:"🎓 Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"🎓",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
   {badge:"👥 Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"👥"},
   {badge:"📝 Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"📝"},
   {badge:"🧒 Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"🧒"},
@@ -1890,10 +1890,11 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
   const scale = getScale(ref.current);
 
   const hovered = scale > 1.03;
+  const card = p as typeof p & { img1?: string; img2?: string };
 
   return (
     <div ref={ref}
-      className="flex flex-col bg-white border-2 rounded-3xl p-3 lg:p-4 w-[155px] lg:w-[210px] shrink-0 snap-center cursor-pointer origin-bottom transition-all duration-300"
+      className="group flex flex-col bg-white border-2 rounded-3xl p-3 lg:p-4 w-[155px] lg:w-[210px] shrink-0 snap-center cursor-pointer origin-bottom transition-all duration-300"
       style={{
         transform:`scale(${scale})`,
         transition: 'transform 0.2s cubic-bezier(0.33,1,0.68,1), box-shadow 0.3s ease, border-color 0.3s ease',
@@ -1902,9 +1903,16 @@ function DockCard({product:p,getScale,setPricingTab,onSelectProgram}:{product:ty
         zIndex: hovered ? 10 : 1,
         position:'relative',
       }}>
-      {/* Image placeholder area (colored bg + emoji until real images are added) */}
-      <div className="rounded-2xl h-32 lg:h-40 flex items-center justify-center mb-3" style={{backgroundColor:p.bgColor}}>
-        <span className="text-5xl">{p.imageEmoji}</span>
+      {/* Image area: hover-swap between img1/img2; fall back to emoji placeholder */}
+      <div className="relative rounded-2xl h-32 lg:h-40 overflow-hidden flex items-center justify-center mb-3" style={{backgroundColor:p.bgColor}}>
+        {card.img1 ? (
+          <>
+            <img src={card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0" />
+            <img src={card.img2 || card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </>
+        ) : (
+          <span className="text-5xl">{p.imageEmoji}</span>
+        )}
       </div>
       <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full mb-2 self-start whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
       <h3 className="font-bold text-sm lg:text-base mb-1">{p.title}</h3>
