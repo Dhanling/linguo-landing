@@ -1945,7 +1945,6 @@ const LANGUAGES = [
 function LanguageStrip({className=""}:{className?:string}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
-  const [hoveredIdx, setHoveredIdx] = useState<number|null>(null);
 
   useEffect(() => {
     if (paused) return;
@@ -1982,20 +1981,14 @@ function LanguageStrip({className=""}:{className?:string}) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
-        {LANGUAGES.map((lang, i) => {
-          const dist = hoveredIdx === null ? 99 : Math.abs(hoveredIdx - i);
-          const scaleCls = dist === 0 ? "scale-150" : dist === 1 ? "scale-125" : "scale-100";
-          return (
-            <div key={i}
-              onMouseEnter={() => setHoveredIdx(i)}
-              onMouseLeave={() => setHoveredIdx(null)}
-              onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
-              className={`flex items-center gap-2.5 shrink-0 cursor-pointer origin-center transition-transform duration-150 ${scaleCls}`}>
-              <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
-              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
-            </div>
-          );
-        })}
+        {LANGUAGES.map((lang, i) => (
+          <div key={i}
+            onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
+            className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
+            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
+            <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
+          </div>
+        ))}
       </div>
 
       {/* Next button */}
