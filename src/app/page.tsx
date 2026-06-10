@@ -1873,12 +1873,22 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
-  const sizeCls = mobile ? "w-[160px] h-[160px]" : "w-[200px] h-[200px] lg:w-[280px] lg:h-[280px]";
+  const sizeCls = mobile ? "w-[160px]" : "w-[200px] lg:w-[280px]";
+
+  const handleClick = () => {
+    if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
+    else if((p).href){window.location.href=(p).href}
+    else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
+  };
+
+  const priceMulai = p.price.startsWith("Mulai ");
+  const priceMain = priceMulai ? p.price.slice(6) : p.price;
 
   return (
-    <div className={`group relative rounded-3xl overflow-hidden shrink-0 snap-center cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 ${sizeCls}`}>
-      {/* Image area (top 55%): hover-swap img1/img2, else bgColor + emoji */}
-      <div className="absolute inset-0 h-[55%] overflow-hidden" style={{backgroundColor:p.bgColor}}>
+    <div onClick={handleClick}
+      className={`group relative rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden p-3 shrink-0 snap-center ${sizeCls}`}>
+      {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
+      <div className="relative rounded-2xl overflow-hidden w-full h-36 lg:h-44" style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <img src={card.img1} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0" />
@@ -1887,11 +1897,12 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
         ) : (
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
+        {/* Badge overlaid on image */}
+        <span className={`absolute top-3 left-3 z-10 inline-block text-[9px] lg:text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
       </div>
 
-      {/* Info panel (bottom 45%) */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-b from-white/80 to-white backdrop-blur-sm px-3 py-3 lg:px-4 lg:py-4">
-        <span className={`inline-block text-[9px] lg:text-[10px] font-bold px-2 py-0.5 rounded-full mb-1 whitespace-nowrap ${p.badgeColor}`}>{p.badge}</span>
+      {/* Info panel below image */}
+      <div className="pt-3 px-1 pb-1">
         <h3 className="font-bold text-sm lg:text-base text-slate-900 leading-tight mb-0.5">{p.title}</h3>
         <p className="text-[10px] lg:text-xs text-slate-500 leading-snug mb-2 line-clamp-2">{p.desc}</p>
         <div className="flex items-end justify-between gap-2">
@@ -1903,15 +1914,12 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
               </div>
             )}
             <div className="flex items-baseline gap-0.5">
-              <span className="text-sm lg:text-base font-bold text-[#1A9E9E] whitespace-nowrap">{p.price}</span>
-              {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
+              {priceMulai && <span className="text-[10px] lg:text-xs text-slate-500">Mulai</span>}
+              <span className="text-sm lg:text-base text-slate-900 font-bold whitespace-nowrap">{priceMain}</span>
+              {p.per && <span className="text-[10px] text-slate-500">{p.per}</span>}
             </div>
           </div>
-          <button onClick={()=>{
-            if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
-            else if((p).href){window.location.href=(p).href}
-            else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
-          }}
+          <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
             className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-[10px] lg:text-xs font-bold px-3 py-2 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
             Beli →
           </button>
@@ -2102,7 +2110,7 @@ export default function Home() {
     {/* PRODUCT CARDS — macOS Dock style */}
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="font-heading text-lg sm:text-2xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
       </div>
