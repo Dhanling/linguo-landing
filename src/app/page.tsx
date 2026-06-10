@@ -1873,7 +1873,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
-  const sizeCls = mobile ? "w-[160px]" : "w-[200px] lg:w-[280px]";
+  const sizeCls = mobile ? "w-[80vw] max-w-[320px]" : "w-[200px] lg:w-[280px]";
   const objPos = "object-center";
 
   const handleClick = () => {
@@ -1884,6 +1884,22 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 
   const priceMulai = p.price.startsWith("Mulai ");
   const priceMain = priceMulai ? p.price.slice(6) : p.price;
+
+  const priceBlock = (
+    <div className="flex flex-col min-w-0">
+      {p.priceOld && (
+        <div className="flex items-center gap-1 mb-0.5">
+          <span className="text-[9px] lg:text-[10px] text-slate-400 line-through">{p.priceOld}</span>
+          {p.discount && <span className="text-[8px] lg:text-[9px] font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded">{p.discount}</span>}
+        </div>
+      )}
+      {priceMulai && <span className="text-[10px] text-slate-400 leading-none">Mulai</span>}
+      <div className="flex items-baseline gap-0.5">
+        <span className="text-sm lg:text-base font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
+        {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
+      </div>
+    </div>
+  );
 
   return (
     <div onClick={handleClick}
@@ -1905,28 +1921,27 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
       </div>
 
       {/* Info panel below image */}
-      <div className="pt-3 pb-1">
+      <div className="pt-3 pb-1 flex flex-col">
         <h3 className="font-bold text-sm lg:text-[15px] text-slate-900 mb-0.5">{p.title}</h3>
         <p className="text-[10px] lg:text-xs text-slate-400 leading-snug mb-3 line-clamp-2">{p.desc}</p>
-        <div className="flex items-end justify-between gap-2">
-          <div className="flex flex-col min-w-0">
-            {p.priceOld && (
-              <div className="flex items-center gap-1 mb-0.5">
-                <span className="text-[9px] lg:text-[10px] text-slate-400 line-through">{p.priceOld}</span>
-                {p.discount && <span className="text-[8px] lg:text-[9px] font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded">{p.discount}</span>}
-              </div>
-            )}
-            {priceMulai && <span className="text-[10px] text-slate-400 leading-none">Mulai</span>}
-            <div className="flex items-baseline gap-0.5">
-              <span className="text-sm lg:text-base font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
-              {p.per && <span className="text-[10px] text-slate-400">{p.per}</span>}
-            </div>
+        {mobile ? (
+          /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
+          <div className="flex flex-col gap-3 mt-auto">
+            {priceBlock}
+            <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
+              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-3 rounded-xl transition-colors active:scale-95">
+              Beli →
+            </button>
           </div>
-          <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
-            className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
-            Beli →
-          </button>
-        </div>
+        ) : (
+          <div className="flex items-end justify-between gap-2">
+            {priceBlock}
+            <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
+              className="shrink-0 bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors active:scale-95 whitespace-nowrap">
+              Beli →
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
