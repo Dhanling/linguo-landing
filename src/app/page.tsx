@@ -1971,14 +1971,14 @@ function LanguageStrip({className=""}:{className?:string}) {
 
   return (
     <div className={`relative max-w-5xl mx-auto ${className}`}>
-      {/* Edge fades */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-[5]" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-[5]" />
+      {/* Edge fades (teal to match Hero bg) */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#1A9E9E] to-transparent pointer-events-none z-[5]" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#1A9E9E] to-transparent pointer-events-none z-[5]" />
 
       {/* Prev button */}
       <button onClick={() => scrollBy(-300)} aria-label="Sebelumnya"
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors">
-        <ChevronLeft className="w-4 h-4 text-slate-600" />
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <ChevronLeft className="w-4 h-4 text-[#1A9E9E]" />
       </button>
 
       {/* Scroll track */}
@@ -1990,8 +1990,8 @@ function LanguageStrip({className=""}:{className?:string}) {
           <div key={i} className="flex items-center gap-2.5 shrink-0 cursor-pointer hover:opacity-80 transition-opacity group">
             <img src={`https://flagcdn.com/w40/${lang.flag}.png`} alt={lang.name} className="w-8 h-8 rounded-md object-cover shadow-sm" />
             <div>
-              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang.name}</p>
-              <p className="text-xs text-slate-400">{lang.teachers} Pengajar</p>
+              <p className="text-sm font-semibold text-white whitespace-nowrap">{lang.name}</p>
+              <p className="text-xs text-white/70">{lang.teachers} Pengajar</p>
             </div>
           </div>
         ))}
@@ -1999,8 +1999,8 @@ function LanguageStrip({className=""}:{className?:string}) {
 
       {/* Next button */}
       <button onClick={() => scrollBy(300)} aria-label="Berikutnya"
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition-colors">
-        <ChevronRight className="w-4 h-4 text-slate-600" />
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-slate-50 transition-colors">
+        <ChevronRight className="w-4 h-4 text-[#1A9E9E]" />
       </button>
     </div>
   );
