@@ -128,6 +128,7 @@ const LANG_META: Record<string, { flag: string; region: LangRegion }> = {
   Finnish: { flag: "fi", region: "eropa" },
   Czech: { flag: "cz", region: "eropa" },
   "Traditional Chinese": { flag: "tw", region: "asia" },
+  Cantonese: { flag: "hk", region: "asia" },
   Hungarian: { flag: "hu", region: "eropa" },
   Esperanto: { flag: "un", region: "lainnya" },
   Farsi: { flag: "ir", region: "timur-tengah" },

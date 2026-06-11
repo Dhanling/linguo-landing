@@ -14,7 +14,7 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
   A: [
     "Swahili", "Greek", "Hindi", "Turkish", "Norwegian", "Tagalog",
     "Vietnamese", "Swedish", "Urdu", "Kurdish", "Hebrew", "Polish",
-    "Portuguese", "Finnish", "Czech", "Traditional Chinese", "Hungarian",
+    "Portuguese", "Finnish", "Czech", "Traditional Chinese", "Cantonese", "Hungarian",
     "Esperanto", "Farsi", "English British", "Romanian", "Khmer", "Danish",
     "Uzbek", "Serbian", "Estonian", "Latin", "Ancient Egyptian", "Georgian",
     "Irish",
