@@ -198,6 +198,49 @@ export default function TrialWizard({
   const [langQuery, setLangQuery] = useState("");
   const [langCat, setLangCat] = useState("all");
 
+  // ── referral-code-trial-v1 — kode referral affiliate (opsional) ──
+  const [refCode, setRefCode] = useState("");
+  const [refChecking, setRefChecking] = useState(false);
+  const [refAffiliate, setRefAffiliate] = useState<{
+    id: string;
+    name: string | null;
+  } | null>(null);
+  const [refError, setRefError] = useState("");
+
+  // Validasi kode referral lewat /api/affiliate/validate. Tabel `affiliates`
+  // ditutup RLS untuk anon (lihat /api/affiliate/me), jadi lookup harus lewat
+  // server route ber-service-role, bukan supabase client di browser.
+  const validateRefCode = async () => {
+    const code = refCode.trim();
+    if (!code) {
+      setRefAffiliate(null);
+      setRefError("");
+      return;
+    }
+    // Sudah tervalidasi untuk kode yang sama → jangan query ulang.
+    if (refAffiliate) return;
+    setRefChecking(true);
+    setRefError("");
+    try {
+      const res = await fetch(
+        `/api/affiliate/validate?code=${encodeURIComponent(code)}`
+      );
+      const data = await res.json();
+      if (res.ok && data?.valid) {
+        setRefAffiliate({ id: data.id, name: data.name ?? null });
+        setRefError("");
+      } else {
+        setRefAffiliate(null);
+        setRefError("Kode referral tidak ditemukan");
+      }
+    } catch {
+      setRefAffiliate(null);
+      setRefError("Gagal memvalidasi kode. Coba lagi.");
+    } finally {
+      setRefChecking(false);
+    }
+  };
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (new URLSearchParams(window.location.search).get("gagal")) {
@@ -319,6 +362,8 @@ export default function TrialWizard({
               ? KIDS_DURATION[kidsType as string]
               : duration,
           preferred_schedule,
+          // referral-code-trial-v1 — affiliate_id hasil validasi (null kalau tanpa kode)
+          affiliate_id: refAffiliate?.id ?? null,
         }),
       });
       const data = await res.json();
@@ -639,6 +684,48 @@ export default function TrialWizard({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </div>
+
+          {/* referral-code-trial-v1 — kode referral affiliate (opsional) */}
+          <div>
+            <label className="text-xs font-medium text-gray-600 mb-1 block">
+              Kode Referral (opsional)
+            </label>
+            <div className="flex gap-2">
+              <input
+                className={inputCls}
+                placeholder="Punya kode dari teman/afiliator?"
+                value={refCode}
+                onChange={(e) => {
+                  setRefCode(e.target.value);
+                  setRefError("");
+                  // Kode berubah → attribusi lama tidak berlaku lagi.
+                  setRefAffiliate(null);
+                }}
+                onBlur={validateRefCode}
+              />
+              <button
+                type="button"
+                onClick={validateRefCode}
+                disabled={refChecking || !refCode.trim()}
+                className="shrink-0 rounded-xl px-4 py-3 text-sm font-semibold text-white transition-colors disabled:opacity-50"
+                style={{ backgroundColor: TEAL }}
+              >
+                {refChecking ? (
+                  <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" />
+                ) : (
+                  "Pakai"
+                )}
+              </button>
+            </div>
+            {refAffiliate && (
+              <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-lg bg-green-50 border border-green-200 px-3 py-1.5 text-xs font-medium text-green-700">
+                ✓ Referral {refAffiliate.name || "afiliator"} berhasil dipakai
+              </div>
+            )}
+            {refError && (
+              <p className="mt-1.5 text-xs text-red-500">{refError}</p>
+            )}
           </div>
         </div>
 
