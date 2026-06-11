@@ -121,6 +121,14 @@ async function handleLmsSubscription(body: Record<string, unknown>): Promise<Nex
       description: `Linguo LMS — Akses ${plan.label} (Bahasa ${language})`,
       currency: "IDR",
       invoice_duration: 86400,
+      // invoice-email-notif-v1 — kirim email invoice ke customer (WA hanya
+      // jika mobile_number tersedia; LMS branch hanya punya email).
+      should_send_email: true,
+      customer_notification_preference: {
+        invoice_created: ["email", "whatsapp"],
+        invoice_reminder: ["email", "whatsapp"],
+        invoice_paid: ["email", "whatsapp"],
+      },
       success_redirect_url: `${BASE_URL}/akun`,
       failure_redirect_url: `${BASE_URL}/akun`,
       items: [
@@ -152,7 +160,8 @@ async function handleLmsSubscription(body: Record<string, unknown>): Promise<Nex
       apikey: SUPABASE_KEY,
       Authorization: `Bearer ${SUPABASE_KEY}`,
     },
-    body: JSON.stringify({ xendit_invoice_id: invoice.id }),
+    // invoice-payment-deadline-v1 — simpan batas bayar 24 jam dari Xendit
+    body: JSON.stringify({ xendit_invoice_id: invoice.id, payment_deadline: invoice.expiry_date }),
   });
 
   return NextResponse.json({
@@ -266,6 +275,14 @@ export async function POST(req: NextRequest) {
         description: `${product.description}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
         currency: "IDR",
         invoice_duration: 86400,
+        // invoice-email-notif-v1 — set notifikasi eksplisit supaya Xendit
+        // mengirim email/WA invoice ke customer saat invoice dibuat.
+        should_send_email: true,
+        customer_notification_preference: {
+          invoice_created: ["email", "whatsapp"],
+          invoice_reminder: ["email", "whatsapp"],
+          invoice_paid: ["email", "whatsapp"],
+        },
         customer: {
           given_names: name,
           email: email,
@@ -302,6 +319,8 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({
           xendit_invoice_id: invoice.id,
           xendit_invoice_url: invoice.invoice_url,
+          // invoice-payment-deadline-v1 — simpan batas bayar 24 jam dari Xendit
+          payment_deadline: invoice.expiry_date,
         }),
       }
     );

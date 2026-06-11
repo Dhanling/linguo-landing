@@ -233,6 +233,14 @@ export async function POST(req: NextRequest) {
         description: desc,
         currency: "IDR",
         invoice_duration: 86400,
+        // invoice-email-notif-v1 — Xendit baru kirim email/WA invoice kalau
+        // notifikasi di-set eksplisit. Tanpa ini customer tidak menerima invoice.
+        should_send_email: true,
+        customer_notification_preference: {
+          invoice_created: ["email", "whatsapp"],
+          invoice_reminder: ["email", "whatsapp"],
+          invoice_paid: ["email", "whatsapp"],
+        },
         customer: {
           given_names: name,
           email,
@@ -272,6 +280,8 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify({
               xendit_invoice_id: invoice.id,
               xendit_invoice_url: invoice.invoice_url,
+              // invoice-payment-deadline-v1 — simpan batas bayar 24 jam dari Xendit
+              payment_deadline: invoice.expiry_date,
               lead_id: leadId,
             }),
           }
