@@ -364,6 +364,7 @@ export default function TrialWizard({
           preferred_schedule,
           // referral-code-trial-v1 — affiliate_id hasil validasi (null kalau tanpa kode)
           affiliate_id: refAffiliate?.id ?? null,
+          affiliate_ref_code: refAffiliate ? refCode.trim() || null : null,
         }),
       });
       const data = await res.json();

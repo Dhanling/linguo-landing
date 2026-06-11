@@ -37,6 +37,7 @@ export async function POST(req: NextRequest) {
       duration_minutes,
       preferred_schedule,
       affiliate_id, // referral-code-trial-v1 — hasil validasi di client (opsional)
+      affiliate_ref_code, // kode referral mentah, disimpan untuk audit (opsional)
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
@@ -151,6 +152,10 @@ export async function POST(req: NextRequest) {
           amount,
           xendit_external_id: externalId,
           source: "landing-kelas-trial",
+          // referral-code-trial-v1 — simpan attribusi di row trial supaya bertahan
+          // setelah redirect. Komisi dicatat saat PAID (lihat verify-trial-payment).
+          affiliate_id: affiliate_id || null,
+          affiliate_ref_code: affiliate_ref_code || null,
         }),
       }
     );
@@ -167,69 +172,10 @@ export async function POST(req: NextRequest) {
     const trialId: string | null =
       Array.isArray(trialRows) && trialRows[0]?.id ? trialRows[0].id : null;
 
-    // ── 4b. Catat konversi affiliate (referral-code-trial-v1) — non-fatal ──
-    // Kalau pendaftar pakai kode referral valid, simpan baris konversi
-    // berstatus 'pending'. Tidak ada diskon / perubahan harga — komisi
-    // ditanggung internal. Re-validasi affiliate_id (harus ada & active) biar
-    // client tidak bisa attribusi ke affiliate sembarangan.
-    if (affiliate_id && trialId) {
-      try {
-        const affRes = await fetch(
-          `${SUPABASE_URL}/rest/v1/affiliates` +
-            `?id=eq.${encodeURIComponent(String(affiliate_id))}` +
-            `&status=eq.active&select=id&limit=1`,
-          { headers: supaHeaders }
-        );
-        const affRows = affRes.ok ? await affRes.json() : [];
-        if (Array.isArray(affRows) && affRows[0]?.id) {
-          const baseRow = {
-            affiliate_id: affRows[0].id,
-            registration_id: trialId,
-            status: "pending",
-          };
-          let convRes = await fetch(
-            `${SUPABASE_URL}/rest/v1/affiliate_conversions`,
-            {
-              method: "POST",
-              headers: supaHeaders,
-              body: JSON.stringify({ ...baseRow, source: "trial_class" }),
-            }
-          );
-          // Fallback: kalau kolom `source` belum ada di schema, ulangi tanpa
-          // kolom itu supaya attribusi inti (affiliate + registrasi) tetap ada.
-          if (!convRes.ok) {
-            const errTxt = await convRes.text();
-            if (/source/i.test(errTxt)) {
-              console.warn(
-                "affiliate_conversions: retry tanpa kolom 'source':",
-                errTxt
-              );
-              convRes = await fetch(
-                `${SUPABASE_URL}/rest/v1/affiliate_conversions`,
-                {
-                  method: "POST",
-                  headers: supaHeaders,
-                  body: JSON.stringify(baseRow),
-                }
-              );
-            }
-            if (!convRes.ok) {
-              console.warn(
-                "affiliate_conversions insert non-fatal error:",
-                await convRes.text()
-              );
-            }
-          }
-        } else {
-          console.warn(
-            "affiliate_conversions skip: affiliate_id tidak valid/active:",
-            affiliate_id
-          );
-        }
-      } catch (e) {
-        console.warn("affiliate_conversions insert threw (non-fatal):", e);
-      }
-    }
+    // ── 4b. Konversi affiliate dicatat saat pembayaran LUNAS ───────────────
+    // Bukan di sini: trial belum dibayar, dan affiliate_conversions butuh
+    // gross/komisi yang final. Lihat /api/verify-trial-payment yang memanggil
+    // recordTrialConversion() begitu invoice PAID (idempoten, anti self-referral).
 
     // ── 5. Insert ke leads juga (CRM funnel) — non-fatal ───────────────────
     let leadId: string | null = null;

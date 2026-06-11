@@ -18,6 +18,136 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 // Status invoice Xendit yang dianggap lunas.
 const PAID_STATUSES = ["PAID", "SETTLED"];
 
+// Skema komisi per tier — selaras dgn ELEARNING_RATES di edge function
+// xendit-webhook. standard/bronze/silver/gold = 15/20/25/30%.
+const ELEARNING_RATES: Record<string, number> = {
+  standard: 0.15,
+  lingfluencer_bronze: 0.2,
+  lingfluencer_silver: 0.25,
+  lingfluencer_gold: 0.3,
+};
+
+type SupaHeaders = Record<string, string>;
+
+// Normalisasi nomor HP Indonesia ke bentuk "08xxxx" supaya 08xx/+62xx/62xx
+// dibandingkan sama. Null kalau kosong.
+function normalizePhone(raw: string | null | undefined): string | null {
+  if (!raw) return null;
+  let digits = String(raw).replace(/\D/g, "");
+  if (!digits) return null;
+  if (digits.startsWith("62")) digits = "0" + digits.slice(2);
+  else if (digits.startsWith("8")) digits = "0" + digits;
+  return digits;
+}
+
+type TrialRow = {
+  id: string;
+  payment_status: string | null;
+  affiliate_id?: string | null;
+  amount?: number | string | null;
+  wa_number?: string | null;
+  language?: string | null;
+  program?: string | null;
+};
+
+// Catat komisi affiliate untuk trial yang LUNAS. TIDAK PERNAH throw — semua
+// error di-log saja supaya verifikasi pembayaran tetap sukses. Idempoten:
+// dedup via trial_registration_id, jadi aman dipanggil berkali-kali.
+async function recordTrialConversion(
+  trial: TrialRow,
+  supaHeaders: SupaHeaders
+): Promise<void> {
+  try {
+    if (!trial.affiliate_id) return; // tanpa kode referral — skip
+
+    // 1. Dedup — verify bisa dipanggil berkali-kali (polling/refresh)
+    const dedupRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/affiliate_conversions` +
+        `?trial_registration_id=eq.${trial.id}&select=id&limit=1`,
+      { headers: supaHeaders }
+    );
+    if (dedupRes.ok) {
+      const existing = await dedupRes.json();
+      if (Array.isArray(existing) && existing.length > 0) return;
+    }
+
+    // 2. Lookup affiliate (re-validasi active + ambil tier & whatsapp)
+    const affRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/affiliates` +
+        `?id=eq.${encodeURIComponent(String(trial.affiliate_id))}` +
+        `&status=eq.active&select=id,tier,whatsapp&limit=1`,
+      { headers: supaHeaders }
+    );
+    const affRows = affRes.ok ? await affRes.json() : [];
+    const affiliate =
+      Array.isArray(affRows) && affRows[0]?.id ? affRows[0] : null;
+    if (!affiliate) {
+      console.warn(
+        "Trial commission skip: affiliate tidak valid/active:",
+        trial.affiliate_id
+      );
+      return;
+    }
+
+    // 3. Self-referral check — cocokkan WhatsApp (bukan email)
+    const studentPhone = normalizePhone(trial.wa_number);
+    const affPhone = normalizePhone(affiliate.whatsapp);
+    if (studentPhone && affPhone && studentPhone === affPhone) {
+      console.warn(
+        "Trial commission skip: self-referral (phone match) trial",
+        trial.id
+      );
+      return;
+    }
+
+    // 4. Hitung komisi by tier
+    const rate = ELEARNING_RATES[affiliate.tier] ?? ELEARNING_RATES.standard;
+    const gross = Number(trial.amount) || 0;
+    if (gross <= 0) {
+      console.warn("Trial commission skip: gross invalid for trial", trial.id);
+      return;
+    }
+    const commissionAmount = Math.round(gross * rate);
+
+    // 5. Insert konversi (pending) — semua kolom NOT NULL terisi
+    const insRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/affiliate_conversions`,
+      {
+        method: "POST",
+        headers: supaHeaders,
+        body: JSON.stringify({
+          // product harus lolos check constraint (private/kids/...). Trial
+          // dibedakan dari kelas asli lewat kolom `source`='trial_class'.
+          affiliate_id: affiliate.id,
+          trial_registration_id: trial.id,
+          product: trial.program === "kids" ? "kids" : "private",
+          language: trial.language || null,
+          gross_amount: gross,
+          commission_rate: rate,
+          commission_amount: commissionAmount,
+          status: "pending",
+          attribution_type: "cookie",
+          billing_period_number: 1,
+          source: "trial_class",
+        }),
+      }
+    );
+    if (!insRes.ok) {
+      console.warn(
+        "Trial commission insert non-fatal error:",
+        await insRes.text()
+      );
+      return;
+    }
+    console.log(
+      `Trial commission recorded: affiliate=${affiliate.id} trial=${trial.id} ` +
+        `gross=${gross} rate=${rate} commission=${commissionAmount}`
+    );
+  } catch (e) {
+    console.warn("recordTrialConversion threw (non-fatal):", e);
+  }
+}
+
 type VerifyResult = {
   status: number;
   body: Record<string, unknown>;
@@ -38,20 +168,21 @@ async function verify(externalId: string): Promise<VerifyResult> {
   const trialRes = await fetch(
     `${SUPABASE_URL}/rest/v1/trial_registrations` +
       `?xendit_external_id=eq.${encodeURIComponent(externalId)}` +
-      `&select=id,payment_status&limit=1`,
+      `&select=id,payment_status,affiliate_id,amount,wa_number,language,program&limit=1`,
     { headers: supaHeaders }
   );
   if (!trialRes.ok) {
     return { status: 500, body: { error: "Gagal mengambil data trial." } };
   }
   const trialRows = await trialRes.json();
-  const trial = Array.isArray(trialRows) ? trialRows[0] : null;
+  const trial: TrialRow | null = Array.isArray(trialRows) ? trialRows[0] : null;
   if (!trial) {
     return { status: 404, body: { error: "Data trial tidak ditemukan." } };
   }
 
-  // Sudah PAID dari sebelumnya -> langsung balikin
+  // Sudah PAID dari sebelumnya -> pastikan komisi tercatat (idempoten), balikin
   if (trial.payment_status === "PAID") {
+    await recordTrialConversion(trial, supaHeaders);
     return { status: 200, body: { paid: true, payment_status: "PAID" } };
   }
 
@@ -111,6 +242,8 @@ async function verify(externalId: string): Promise<VerifyResult> {
     } catch (e) {
       console.warn("verify-trial-payment patch non-fatal:", e);
     }
+    // Catat komisi affiliate sekarang invoice LUNAS (non-fatal, idempoten)
+    await recordTrialConversion(trial, supaHeaders);
     return { status: 200, body: { paid: true, payment_status: "PAID" } };
   }
 
