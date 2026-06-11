@@ -4,8 +4,9 @@
 // linguo-patch:ling-chat-v3  — session id + nomor tiket + polling balasan admin (live take-over)
 // linguo-patch:ling-chat-v4-redesign  — drawer UI: gradient header, avatar spin, WA strip, typing dots, composer pill, scrim blur. Semua wiring fungsional dipertahanin.
 // linguo-patch:ling-lesson-reposition-v2  — angkat launcher bubble di /akun/belajar biar ga nutupin tombol Selesaikan/Lanjut (panel drawer samping ga diutak-atik)
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
+import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
 
 const WA_NUMBER = "6282116859493"; // admin handoff
 const GREETING =
@@ -162,6 +163,12 @@ export default function ChatWidget() {
   const adminCursor = useRef(0);
 
   const pathname = usePathname();
+
+  // [ling-hide-fab-overlay-v1] Sembunyiin launcher FAB selama ada modal/overlay
+  // full-screen lain yang kebuka (Trial Wizard, FunnelModal, Auth/Register, dst).
+  // Pakai store global supaya ga numpuk di atas modal. SSR fallback → 0.
+  const overlayOpen =
+    useSyncExternalStore(subscribeOverlay, getOverlayCount, () => 0) > 0;
 
   // session id persisten (per browser) — biar tiket nyambung kalau visitor balik lagi
   useEffect(() => {
@@ -321,7 +328,7 @@ export default function ChatWidget() {
       <button
         aria-label="Buka chat Linguo"
         onClick={() => setOpen(true)}
-        className={"lingw-launcher" + (open ? " hidden" : "")}
+        className={"lingw-launcher" + (open || overlayOpen ? " hidden" : "")}
       >
         <span className="ping" />
         {IcChat}

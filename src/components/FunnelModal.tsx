@@ -7,6 +7,7 @@ import { ChevronRight, X, Search } from "lucide-react";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 // (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
 import { getLanguageCategory, PRICE_A1_60MIN } from "@/lib/trial-pricing";
+import { useOverlayLock } from "@/lib/overlayStore";
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -69,6 +70,9 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const [activeTab, setActiveTab] = useState("Populer");
   const [selTeacherType, setSelTeacherType] = useState<"lokal"|"native">("lokal");
   const [teacherPick, setTeacherPick] = useState(false);
+
+  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
+  useOverlayLock(open);
 
   useEffect(() => {
     if (open) {

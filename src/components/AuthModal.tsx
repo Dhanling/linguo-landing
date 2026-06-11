@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase-client";
+import { useOverlayLock } from "@/lib/overlayStore";
 
 interface Props {
   open: boolean;
@@ -21,6 +22,9 @@ export default function AuthModal({ open, onClose, onSuccess, intent }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
+
+  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
+  useOverlayLock(open);
 
   const reset = () => {
     setMode("choose");

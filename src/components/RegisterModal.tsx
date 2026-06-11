@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
+import { useOverlayLock } from "@/lib/overlayStore";
 
 // ─────────────────────────────────────────────────────────
 // TYPES
@@ -82,6 +83,9 @@ export default function RegisterModal({ open, onClose, data }: RegisterModalProp
   const [batchesLoading, setBatchesLoading] = useState(false);
   const [batches, setBatches] = useState<ClassBatch[]>([]);
   const [selectedBatchId, setSelectedBatchId] = useState<string | null>(null);
+
+  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
+  useOverlayLock(open);
 
   // Reset on open
   useEffect(() => {

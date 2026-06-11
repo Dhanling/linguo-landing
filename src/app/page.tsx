@@ -8,6 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1
 
 import TokoCTA from "@/components/TokoCTA";
+import { useOverlayLock } from "@/lib/overlayStore";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
@@ -1091,6 +1092,8 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [step, setStep] = useState(initialStep);
   const [selLang, setSelLang] = useState(initialLang || "");
   const [selProgram, setSelProgram] = useState(initialProgram || initialPreferredProg || "");
+  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
+  useOverlayLock(open);
   useEffect(() => {
     if (open) {
       // Priority logic:
