@@ -29,6 +29,15 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param,
+  // cookie linguo_ref (di-set middleware), atau localStorage.
+  const [refCode, setRefCode] = useState(() => {
+    if (typeof window === "undefined") return "";
+    const p = new URLSearchParams(window.location.search).get("ref");
+    if (p) return p;
+    const c = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0];
+    return c || localStorage.getItem("linguo_ref") || "";
+  });
   const [error, setError] = useState<string | null>(null);
 
   if (!selectedTier) {
@@ -63,11 +72,12 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
           },
           body: JSON.stringify({
             pricing_id: selectedTier.id,
-            // affiliate-ref-capture-v1 — Phase 2B: forward linguo_ref cookie
+            // referral-code-field-v1 — manual input menang; fallback ke linguo_ref cookie (affiliate-ref-capture-v1)
             referral_code:
-              typeof document !== "undefined"
+              refCode.trim() ||
+              (typeof document !== "undefined"
                 ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
-                : null,
+                : null),
             buyer_email: form.email,
             buyer_name: form.name,
             buyer_phone: form.phone || null,
@@ -204,6 +214,24 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
                   placeholder="08xxx"
                   disabled={submitting}
                 />
+              </div>
+
+              {/* referral-code-field-v1 — optional, sama seperti funnel kelas */}
+              <div>
+                <label className="text-sm font-medium text-gray-700 block mb-1">
+                  Kode Referral (opsional)
+                </label>
+                <input
+                  type="text"
+                  value={refCode}
+                  onChange={(e) => setRefCode(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-teal-500 outline-none"
+                  placeholder="Masukkan kode referral jika ada"
+                  disabled={submitting}
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  Dapatkan dari teman atau afiliator Linguo
+                </p>
               </div>
 
               {error && (

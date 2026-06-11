@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number, language, program, level, productKey: directKey, addon } = body;
+    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
@@ -192,14 +192,18 @@ export async function POST(req: NextRequest) {
     // visitor lands with ?ref=CODE. Resolve it to an affiliate_id here so the
     // lead carries attribution into the xendit-webhook commission engine.
     // Non-fatal: a missing cookie or unknown code just means no attribution.
+    // referral-code-field-v1 — a code the user typed into the funnel/checkout
+    // form wins over the cookie (explicit intent > last-touch). TODO: ensure
+    // ref_code column exists in leads table if you want to persist the raw code.
     let affiliateRefCode: string | null = null;
     let affiliateId: string | null = null;
     const refCookie = req.cookies.get("linguo_ref")?.value;
-    if (refCookie) {
+    const refValue = (typeof ref_code === "string" && ref_code.trim()) || refCookie || null;
+    if (refValue) {
       try {
         const affRes = await fetch(
           `${SUPABASE_URL}/rest/v1/affiliates?referral_code=eq.${encodeURIComponent(
-            refCookie
+            refValue
           )}&select=id&limit=1`,
           {
             headers: {
@@ -211,7 +215,7 @@ export async function POST(req: NextRequest) {
         if (affRes.ok) {
           const rows = await affRes.json();
           if (Array.isArray(rows) && rows[0]?.id) {
-            affiliateRefCode = refCookie;
+            affiliateRefCode = refValue;
             affiliateId = rows[0].id as string;
           }
         }

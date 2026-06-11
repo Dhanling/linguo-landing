@@ -11,7 +11,7 @@ import TokoCTA from "@/components/TokoCTA";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
-async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; teacher_type?:string|null; referral_source?:string; source?:string}) {
+async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; teacher_type?:string|null; referral_source?:string; source?:string; ref_code?:string}) {
 
   try {
     // Get referral from URL or localStorage
@@ -1121,6 +1121,12 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [formEmail, setFormEmail] = useState("");
   const [formWa, setFormWa] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
+  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param
+  // (atau linguo_ref yg sudah tersimpan di localStorage saat halaman dibuka).
+  const [refCode, setRefCode] = useState(() => {
+    if (typeof window === "undefined") return "";
+    return new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "";
+  });
   const [formError, setFormError] = useState("");
   const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
@@ -1201,7 +1207,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           const res = await fetch("/api/create-invoice", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined }),
+            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined, ref_code: refCode.trim() || undefined }),
           });
           const data = await res.json();
           if (data.invoice_url) { window.location.href = data.invoice_url; return; }
@@ -1226,6 +1232,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           program: selProgram,
           level: selLevel,
           teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
+          ref_code: refCode.trim() || undefined, // referral-code-field-v1 — TODO: ensure ref_code column exists in leads table
         });
       } catch (leadErr) {
         console.error("Lead save failed (non-blocking):", leadErr);
@@ -1553,6 +1560,14 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       onChange={(e)=>{setFormWa(e.target.value.replace(/[^0-9]/g,"").replace(/^0/,""));setFormError("")}}
                       className="flex-1 px-4 py-3 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
                   </div>
+                </div>
+                {/* referral-code-field-v1 — optional, muncul di semua program (step data diri shared) */}
+                <div>
+                  <label className="text-xs font-medium text-slate-600 mb-1 block">Kode Referral (opsional)</label>
+                  <input type="text" placeholder="Masukkan kode referral jika ada" value={refCode}
+                    onChange={(e)=>setRefCode(e.target.value)}
+                    className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E]"/>
+                  <p className="text-xs text-slate-400 mt-1">Dapatkan dari teman atau afiliator Linguo</p>
                 </div>
               </div>
               {formError && <p className="text-red-500 text-xs mt-2">{formError}</p>}

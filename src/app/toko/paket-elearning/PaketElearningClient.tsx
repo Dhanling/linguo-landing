@@ -78,6 +78,15 @@ export default function PaketElearningClient({
   const [selectedTier, setSelectedTier] = useState<PricingTier | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: '', email: '' });
+  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param,
+  // cookie linguo_ref (di-set middleware), atau localStorage.
+  const [refCode, setRefCode] = useState(() => {
+    if (typeof window === "undefined") return "";
+    const p = new URLSearchParams(window.location.search).get("ref");
+    if (p) return p;
+    const c = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0];
+    return c || localStorage.getItem("linguo_ref") || "";
+  });
 
   // Phone state — split: country (for dropdown) + national number (for input)
   const [phoneCountry, setPhoneCountry] = useState<CountryCode>('ID');
@@ -183,11 +192,12 @@ export default function PaketElearningClient({
           },
           body: JSON.stringify({
             pricing_id: selectedTier.id,
-            // affiliate-ref-capture-v1 — Phase 2B: forward linguo_ref cookie
+            // referral-code-field-v1 — manual input menang; fallback ke linguo_ref cookie (affiliate-ref-capture-v1)
             referral_code:
-              typeof document !== "undefined"
+              refCode.trim() ||
+              (typeof document !== "undefined"
                 ? ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null
-                : null,
+                : null),
             buyer_email: form.email.trim(),
             buyer_name: form.name.trim(),
             buyer_phone: phoneResult.e164, // canonical E.164
@@ -626,6 +636,24 @@ export default function PaketElearningClient({
                     Default Indonesia. Diaspora? Pilih negara di sebelah kiri.
                   </p>
                 )}
+              </div>
+
+              {/* referral-code-field-v1 — optional, sama seperti funnel kelas */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Kode Referral (opsional)
+                </label>
+                <input
+                  type="text"
+                  value={refCode}
+                  onChange={(e) => setRefCode(e.target.value)}
+                  disabled={submitting}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 disabled:bg-slate-50"
+                  placeholder="Masukkan kode referral jika ada"
+                />
+                <p className="mt-1 text-xs text-slate-500">
+                  Dapatkan dari teman atau afiliator Linguo
+                </p>
               </div>
 
               {error && (
