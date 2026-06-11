@@ -4,7 +4,7 @@
 // 4-step wizard form. Preserves all existing fields, validation, submit API,
 // helper components (Field, ConsentBox, SuccessView), and ?pic= URL auto-fill.
 
-import { useState, Suspense } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -23,6 +23,8 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
+  ChevronDown,
+  Search,
 } from "lucide-react";
 
 // ────────────────────────────────────────────────────────────────────
@@ -67,20 +69,73 @@ const PLATFORM_BY_ID: Record<string, string> = Object.fromEntries(
   PLATFORMS.map((p) => [p.id, p.label])
 );
 
+// Country dial codes for the WhatsApp selector. `dial` is stored WITHOUT the +
+// (matches existing lingfluencers.whatsapp convention: 628…, 447…). Indonesia
+// stays the default. Searchable by country name or dial code.
+const COUNTRY_CODES = [
+  { iso: "ID", dial: "62", name: "Indonesia", flag: "🇮🇩" },
+  { iso: "MY", dial: "60", name: "Malaysia", flag: "🇲🇾" },
+  { iso: "SG", dial: "65", name: "Singapore", flag: "🇸🇬" },
+  { iso: "PH", dial: "63", name: "Philippines", flag: "🇵🇭" },
+  { iso: "TH", dial: "66", name: "Thailand", flag: "🇹🇭" },
+  { iso: "VN", dial: "84", name: "Vietnam", flag: "🇻🇳" },
+  { iso: "KH", dial: "855", name: "Cambodia", flag: "🇰🇭" },
+  { iso: "LA", dial: "856", name: "Laos", flag: "🇱🇦" },
+  { iso: "MM", dial: "95", name: "Myanmar", flag: "🇲🇲" },
+  { iso: "BN", dial: "673", name: "Brunei", flag: "🇧🇳" },
+  { iso: "GB", dial: "44", name: "United Kingdom", flag: "🇬🇧" },
+  { iso: "US", dial: "1", name: "United States", flag: "🇺🇸" },
+  { iso: "AU", dial: "61", name: "Australia", flag: "🇦🇺" },
+  { iso: "JP", dial: "81", name: "Japan", flag: "🇯🇵" },
+  { iso: "KR", dial: "82", name: "Korea", flag: "🇰🇷" },
+  { iso: "CN", dial: "86", name: "China", flag: "🇨🇳" },
+  { iso: "IN", dial: "91", name: "India", flag: "🇮🇳" },
+  { iso: "DE", dial: "49", name: "Germany", flag: "🇩🇪" },
+  { iso: "FR", dial: "33", name: "France", flag: "🇫🇷" },
+  { iso: "ES", dial: "34", name: "Spain", flag: "🇪🇸" },
+  { iso: "IT", dial: "39", name: "Italy", flag: "🇮🇹" },
+  { iso: "NL", dial: "31", name: "Netherlands", flag: "🇳🇱" },
+  { iso: "SE", dial: "46", name: "Sweden", flag: "🇸🇪" },
+  { iso: "NO", dial: "47", name: "Norway", flag: "🇳🇴" },
+  { iso: "DK", dial: "45", name: "Denmark", flag: "🇩🇰" },
+  { iso: "CH", dial: "41", name: "Switzerland", flag: "🇨🇭" },
+  { iso: "AT", dial: "43", name: "Austria", flag: "🇦🇹" },
+  { iso: "PL", dial: "48", name: "Poland", flag: "🇵🇱" },
+  { iso: "RU", dial: "7", name: "Russia", flag: "🇷🇺" },
+  { iso: "BR", dial: "55", name: "Brazil", flag: "🇧🇷" },
+  { iso: "MX", dial: "52", name: "Mexico", flag: "🇲🇽" },
+  { iso: "AE", dial: "971", name: "UAE", flag: "🇦🇪" },
+  { iso: "SA", dial: "966", name: "Saudi Arabia", flag: "🇸🇦" },
+  { iso: "QA", dial: "974", name: "Qatar", flag: "🇶🇦" },
+  { iso: "BH", dial: "973", name: "Bahrain", flag: "🇧🇭" },
+  { iso: "KW", dial: "965", name: "Kuwait", flag: "🇰🇼" },
+] as const;
+
+const DEFAULT_DIAL = "62";
+
 // ────────────────────────────────────────────────────────────────────
 // helpers
 // ────────────────────────────────────────────────────────────────────
 
-function normalizeWaInput(input: string): string {
-  const digits = input.replace(/\D/g, "");
-  if (digits.startsWith("62")) return digits;
-  if (digits.startsWith("08")) return "62" + digits.slice(1);
-  if (digits.startsWith("8")) return "62" + digits;
-  return digits;
+// Combine the selected dial code + local subscriber number into the full
+// international value stored in Supabase (digits only, NO + prefix), e.g.
+// "6281234567890" or "447911123456". For Indonesia we also drop a redundant
+// 62/leading-0; for other countries we drop a leading trunk-0 (common in UK/AU
+// national formats) so the international number is clean.
+function buildFullWa(dial: string, local: string): string {
+  let digits = local.replace(/\D/g, "");
+  if (digits.startsWith(dial)) digits = digits.slice(dial.length);
+  if (digits.startsWith("0")) digits = digits.slice(1);
+  return digits ? dial + digits : "";
 }
 
-function isValidIndoWa(normalized: string): boolean {
-  return /^628\d{8,12}$/.test(normalized);
+// Indonesia keeps the strict mobile rule (628 + 8–12 digits). Other country
+// codes only require a non-empty numeric local part within E.164 length (≤15).
+function isValidWa(dial: string, local: string): boolean {
+  const full = buildFullWa(dial, local);
+  if (!full) return false;
+  if (dial === "62") return /^628\d{8,12}$/.test(full);
+  return /^\d+$/.test(full) && full.length >= 7 && full.length <= 15;
 }
 
 const inputClass = (hasError: boolean) =>
@@ -89,6 +144,118 @@ const inputClass = (hasError: boolean) =>
       ? "border-rose-300 focus:border-rose-500"
       : "border-slate-200 focus:border-[#1A9E9E]"
   }`;
+
+// ────────────────────────────────────────────────────────────────────
+// Compact, searchable country dial-code selector (flag + dial code)
+// ────────────────────────────────────────────────────────────────────
+
+function CountryCodeSelect({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (dial: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const selected =
+    COUNTRY_CODES.find((c) => c.dial === value) || COUNTRY_CODES[0];
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+        setQuery("");
+      }
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [open]);
+
+  // Auto-focus search when opened
+  useEffect(() => {
+    if (open) inputRef.current?.focus();
+  }, [open]);
+
+  const q = query.trim().toLowerCase().replace(/^\+/, "");
+  const filtered = q
+    ? COUNTRY_CODES.filter(
+        (c) => c.name.toLowerCase().includes(q) || c.dial.includes(q)
+      )
+    : COUNTRY_CODES;
+
+  return (
+    <div className="relative flex" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-label="Pilih kode negara"
+        className="flex items-center gap-1.5 px-3 text-slate-700 font-semibold border-r-2 border-slate-100 select-none hover:bg-slate-50 rounded-l-[10px] transition-colors"
+      >
+        <span className="text-base leading-none">{selected.flag}</span>
+        <span className="text-sm whitespace-nowrap">+{selected.dial}</span>
+        <ChevronDown
+          size={14}
+          className={`text-slate-400 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute z-30 top-full left-0 mt-2 w-72 max-w-[80vw] bg-white border-2 border-slate-200 rounded-xl shadow-lg overflow-hidden">
+          <div className="p-2 border-b border-slate-100">
+            <div className="relative">
+              <Search
+                size={14}
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+              />
+              <input
+                ref={inputRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Cari negara / kode…"
+                className="w-full pl-8 pr-3 py-2 text-sm rounded-lg border border-slate-200 focus:outline-none focus:border-[#1A9E9E]"
+              />
+            </div>
+          </div>
+          <ul className="max-h-56 overflow-y-auto py-1">
+            {filtered.length === 0 && (
+              <li className="px-3 py-2 text-sm text-slate-400">
+                Tidak ditemukan
+              </li>
+            )}
+            {filtered.map((c) => (
+              <li key={c.iso}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange(c.dial);
+                    setOpen(false);
+                    setQuery("");
+                  }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm text-left hover:bg-slate-50 transition-colors ${
+                    c.dial === value
+                      ? "bg-[#1A9E9E]/5 text-[#1A9E9E] font-semibold"
+                      : "text-slate-700"
+                  }`}
+                >
+                  <span className="text-base leading-none">{c.flag}</span>
+                  <span className="flex-1 truncate">{c.name}</span>
+                  <span className="text-slate-400 font-medium">+{c.dial}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
 
 // ────────────────────────────────────────────────────────────────────
 // main wrapper (Suspense for useSearchParams in Next 16)
@@ -119,6 +286,7 @@ function LingfluencerPage() {
   const [form, setForm] = useState({
     name: "",
     whatsapp: "",
+    whatsapp_cc: DEFAULT_DIAL,
     gmail: "",
     content_platforms: [] as string[],
     socmed_username: "",
@@ -151,6 +319,13 @@ function LingfluencerPage() {
     if (errors[key]) setErrors((e) => ({ ...e, [key]: "" }));
   };
 
+  // Changing the country code re-frames the WhatsApp validation, so clear any
+  // existing whatsapp error too.
+  const changeCc = (dial: string) => {
+    setForm((p) => ({ ...p, whatsapp_cc: dial }));
+    if (errors.whatsapp) setErrors((e) => ({ ...e, whatsapp: "" }));
+  };
+
   // Per-step validation — returns errors for that step only
   const validateStep = (step: number): Record<string, string> => {
     const e: Record<string, string> = {};
@@ -163,10 +338,12 @@ function LingfluencerPage() {
       else if (!gmail.endsWith("@gmail.com"))
         e.gmail = "Wajib pakai alamat @gmail.com";
 
-      const normalizedWa = normalizeWaInput(form.whatsapp);
       if (!form.whatsapp.trim()) e.whatsapp = "Nomor WhatsApp wajib diisi";
-      else if (!isValidIndoWa(normalizedWa))
-        e.whatsapp = "Nomor tidak valid. Ketik tanpa 0 di depan, contoh: 81234567890";
+      else if (!isValidWa(form.whatsapp_cc, form.whatsapp))
+        e.whatsapp =
+          form.whatsapp_cc === "62"
+            ? "Nomor tidak valid. Ketik tanpa 0 di depan, contoh: 81234567890"
+            : "Nomor WhatsApp tidak valid — masukkan angka saja, tanpa kode negara.";
     } else if (step === 2) {
       if (form.content_platforms.length === 0)
         e.content_platforms = "Pilih minimal 1 platform";
@@ -211,7 +388,7 @@ function LingfluencerPage() {
       setCheckingDup(true);
       try {
         const gmail = form.gmail.trim().toLowerCase();
-        const wa = normalizeWaInput(form.whatsapp);
+        const wa = buildFullWa(form.whatsapp_cc, form.whatsapp);
         const res = await fetch(
           `/api/lingfluencer-apply?gmail=${encodeURIComponent(
             gmail
@@ -286,7 +463,7 @@ function LingfluencerPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          whatsapp: normalizeWaInput(form.whatsapp),
+          whatsapp: buildFullWa(form.whatsapp_cc, form.whatsapp),
           gmail: form.gmail.trim().toLowerCase(),
         }),
       });
@@ -400,6 +577,7 @@ function LingfluencerPage() {
                   form={form}
                   errors={errors}
                   updateField={updateField}
+                  changeCc={changeCc}
                 />
               )}
               {currentStep === 2 && (
@@ -545,11 +723,14 @@ function Step1Profil({
   form,
   errors,
   updateField,
+  changeCc,
 }: {
   form: any;
   errors: Record<string, string>;
   updateField: (key: any, value: any) => void;
+  changeCc: (dial: string) => void;
 }) {
+  const fullWa = buildFullWa(form.whatsapp_cc, form.whatsapp);
   return (
     <>
       <div>
@@ -588,7 +769,11 @@ function Step1Profil({
         label="No. WhatsApp"
         required
         error={errors.whatsapp}
-        hint="Ketik tanpa 0 di depan — contoh: 81234567890 (prefix +62 otomatis)"
+        hint={
+          form.whatsapp_cc === "62"
+            ? "Pilih kode negara, lalu ketik nomor tanpa 0 di depan — contoh: 81234567890"
+            : "Pilih kode negara, lalu ketik nomor (angka saja) tanpa kode negara"
+        }
       >
         <div
           className={`flex items-stretch rounded-xl border-2 bg-white transition-colors ${
@@ -598,28 +783,26 @@ function Step1Profil({
           }`}
           data-error={!!errors.whatsapp}
         >
-          <span className="flex items-center px-4 text-slate-500 font-semibold border-r-2 border-slate-100 select-none">
-            +62
-          </span>
+          <CountryCodeSelect value={form.whatsapp_cc} onChange={changeCc} />
           <input
             type="tel"
             inputMode="numeric"
             value={form.whatsapp}
             onChange={(e) => {
               let d = e.target.value.replace(/\D/g, "");
-              if (d.startsWith("62")) d = d.slice(2);
+              if (d.startsWith(form.whatsapp_cc)) d = d.slice(form.whatsapp_cc.length);
               if (d.startsWith("0")) d = d.slice(1);
               updateField("whatsapp", d);
             }}
-            className="flex-1 px-4 py-3 bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none rounded-r-xl"
-            placeholder="81234567890"
+            className="flex-1 min-w-0 px-4 py-3 bg-transparent text-slate-900 placeholder:text-slate-400 focus:outline-none rounded-r-xl"
+            placeholder={form.whatsapp_cc === "62" ? "81234567890" : "812345678"}
           />
         </div>
         {form.whatsapp && !errors.whatsapp && (
           <p className="text-xs text-slate-400 mt-1">
             Tersimpan sebagai:{" "}
             <span className="font-mono text-slate-700">
-              {normalizeWaInput(form.whatsapp) || "—"}
+              {fullWa ? "+" + fullWa : "—"}
             </span>
           </p>
         )}
@@ -803,7 +986,9 @@ function Step4Review({ form }: { form: any }) {
     { key: "Gmail", value: form.gmail || "—" },
     {
       key: "WhatsApp",
-      value: form.whatsapp ? normalizeWaInput(form.whatsapp) : "—",
+      value: form.whatsapp
+        ? "+" + buildFullWa(form.whatsapp_cc, form.whatsapp)
+        : "—",
     },
     { key: "Platform konten", value: platformLabels || "—" },
     { key: "Username sosmed", value: form.socmed_username || "—" },

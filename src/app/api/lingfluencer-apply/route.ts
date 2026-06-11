@@ -26,19 +26,24 @@ async function supaFetch(path: string, options?: RequestInit) {
 }
 
 /**
- * Normalize WhatsApp input to Indonesia format `628xxxxxxxxxx` (no + prefix).
- * Accepts: `628xxx`, `+628xxx`, `08xxx`, `8xxx`.
+ * Normalize a WhatsApp number to full international digits (no + prefix), e.g.
+ * `6281234567890` or `447911123456` — matching the stored lingfluencers.whatsapp
+ * convention.
+ *
+ * The client now submits the country code already prefixed (dial + local). We
+ * therefore treat the input as international by default, and only special-case
+ * legacy Indonesia-local formats:
+ *   - `08xxx` / `8xxx`  → assume Indonesia → `628xxx`
+ *   - `+447xxx` / `447xxx` / `6281xxx` → already international → digits as-is
  */
 function normalizeWhatsApp(input: string): string | null {
-  const digits = input.replace(/\D/g, "");
+  let digits = input.replace(/\D/g, "");
   if (!digits) return null;
-  let normalized: string;
-  if (digits.startsWith("62")) normalized = digits;
-  else if (digits.startsWith("08")) normalized = "62" + digits.slice(1);
-  else if (digits.startsWith("8")) normalized = "62" + digits;
-  else return null;
-  if (normalized.length < 11 || normalized.length > 15) return null;
-  return normalized;
+  // Legacy Indonesia local format (leading trunk 0) → prepend 62.
+  if (digits.startsWith("0")) digits = "62" + digits.slice(1);
+  // E.164 allows up to 15 digits; minimum sanity floor for a real number.
+  if (digits.length < 8 || digits.length > 15) return null;
+  return digits;
 }
 
 /**
@@ -197,7 +202,10 @@ export async function POST(req: NextRequest) {
     const normalizedWA = normalizeWhatsApp(whatsapp);
     if (!normalizedWA) {
       return NextResponse.json(
-        { error: "Format WhatsApp tidak valid. Gunakan format 628xxxxxxxxxx" },
+        {
+          error:
+            "Format WhatsApp tidak valid. Sertakan kode negara, contoh: 6281234567890 atau 447911123456",
+        },
         { status: 400 }
       );
     }
