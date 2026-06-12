@@ -14,6 +14,7 @@
 
 import { useEffect, useState } from "react";
 import TrialWizard from "@/components/TrialWizard";
+import { useOverlayLock } from "@/lib/overlayStore";
 
 const TEAL = "#1A9E9E";
 
@@ -41,6 +42,9 @@ export default function TrialWizardModal() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
+  useOverlayLock(open);
 
   // Tutup beneran + reset state guard
   const doClose = () => {
