@@ -146,7 +146,10 @@ const CSS = `
 .lingw-powered{text-align:center;font-size:11px;color:#B6C8C4;margin-top:9px;font-weight:600;}
 .lingw-powered b{color:var(--teal-deep);font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;}
 
-@media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}}
+/* [ling-hide-fab-overlay-v1] FAB cuma disembunyiin pas ada modal kebuka di tampilan HP —
+   di desktop modal ke-center & ga nutupin FAB, jadi tetap tampil. */
+.lingw-launcher.ovhide{opacity:1;pointer-events:auto;transform:none;}
+@media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}.lingw-launcher.ovhide{opacity:0;pointer-events:none;transform:scale(.6);}}
 `;
 
 export default function ChatWidget() {
@@ -328,7 +331,7 @@ export default function ChatWidget() {
       <button
         aria-label="Buka chat Linguo"
         onClick={() => setOpen(true)}
-        className={"lingw-launcher" + (open || overlayOpen ? " hidden" : "")}
+        className={"lingw-launcher" + (open ? " hidden" : "") + (overlayOpen ? " ovhide" : "")}
       >
         <span className="ping" />
         {IcChat}
