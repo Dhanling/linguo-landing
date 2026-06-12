@@ -26,7 +26,16 @@ const XENDIT_SECRET = (process.env.XENDIT_PAYOUT_SECRET_KEY ||
 
 const FEE = 2500;          // biaya admin, ditanggung afiliator
 const MIN_PAYOUT = 10000;  // minimal pencairan Rp10.000
-const BUFFER_DAYS = 3;     // produksi: tahan 3 hari sebelum komisi eligible dicairkan
+// [linguo-fix:afiliator-payout-buffer-mismatch]
+// Buffer harus 0 biar eligibility pencairan == saldo yang ditampilkan dashboard.
+// Dashboard (/api/affiliate/me) ngitung saldo "siap dicairkan" = SEMUA konversi
+// status 'approved' TANPA buffer, dan UI janji "bisa dicairkan kapan saja". Tapi
+// RPC request_affiliate_payout nahan komisi 3 hari (approved_at <= now()-3d),
+// jadi komisi yg baru di-approve <3 hari muncul di saldo tapi DITOLAK pas dicairin
+// ("Tidak ada komisi yang siap dicairkan"). Set 0 supaya keduanya konsisten.
+// Catatan: 'approved' itu sendiri sudah hasil review admin (approve_affiliate_conversions),
+// jadi gate vetting tetap ada — yang dihapus cuma hold ekstra yg ga pernah di-disclose ke user.
+const BUFFER_DAYS = 0;
 
 export async function POST(req: Request) {
   try {
