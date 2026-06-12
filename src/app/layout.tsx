@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Baloo_2, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+
+// Self-hosted via next/font: no render-blocking request to fonts.googleapis.com,
+// preloaded + size-adjusted (no layout shift). Replaces the old <link> stylesheet.
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+const baloo = Baloo_2({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-baloo",
+  display: "swap",
+});
 import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:trial-wizard-v1
 import ChatWidget from "@/components/ChatWidget"; // linguo-patch:chat-widget-ai-wa-v1
 
@@ -26,11 +42,11 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
+    <html lang="id" className={`${jakarta.variable} ${baloo.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        {/* Warm up the connection to the flag-image CDN used across the page */}
+        <link rel="preconnect" href="https://flagcdn.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://flagcdn.com" />
 
         {/* Google Analytics (GA4) */}
         {GA_ID && (

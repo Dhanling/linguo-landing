@@ -534,7 +534,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
-              <img src="/images/logo-white.png" alt="Linguo" className={`h-8 sm:h-14 object-contain transition-all ${c?"brightness-0":""}`} />
+              <img src="/images/logo-white.png" alt="Linguo" loading="eager" decoding="async" className={`h-8 sm:h-14 object-contain transition-all ${c?"brightness-0":""}`} />
             </a>
             <div className="hidden md:flex items-center gap-8">
               {/* Our Program dropdown */}
@@ -722,7 +722,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             {/* Sticky header — logo teal + close X */}
             <div className="bg-[#1A9E9E] h-16 px-6 flex items-center justify-between shrink-0">
               <a href="/" onClick={()=>setOpen(false)} className="flex items-center">
-                <img src="/images/logo-white.png" alt="Linguo" className="h-8 sm:h-10 object-contain" />
+                <img src="/images/logo-white.png" alt="Linguo" loading="lazy" decoding="async" className="h-8 sm:h-10 object-contain" />
               </a>
               <button
                 onClick={()=>setOpen(false)}
@@ -946,7 +946,7 @@ function WhyCarousel() {
                   border: isCenter ? '2px solid rgba(26,158,158,0.25)' : '1px solid #f1f5f9',
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}>
-                  <img src={src} alt="" className="w-full h-auto"/>
+                  <img src={src} alt="" loading="lazy" decoding="async" className="w-full h-auto"/>
                 </div>
               </div>
             );
@@ -1034,7 +1034,7 @@ function TestimonialCarousel() {
                         <div className="min-w-0">
                           <p className="font-bold text-xs sm:text-sm truncate">{t.name}</p>
                           <div className="flex items-center gap-1.5 mt-0.5">
-                            <img src={`https://flagcdn.com/w40/${getFlagCode(t.lang)}.png`} alt={`Bendera ${t.lang}`} className="h-3.5 w-3.5 rounded-full object-cover"/>
+                            <img src={`https://flagcdn.com/w40/${getFlagCode(t.lang)}.png`} alt={`Bendera ${t.lang}`} loading="lazy" decoding="async" className="h-3.5 w-3.5 rounded-full object-cover"/>
                             <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
                           </div>
                         </div>
@@ -1808,10 +1808,10 @@ function TeacherGrid() {
           <div onClick={()=>setSelected(selected===i?null:i)}
             className={`bg-white rounded-2xl border-2 p-5 transition-all cursor-pointer ${selected===i?"border-[#1A9E9E] shadow-lg":"border-transparent hover:border-slate-200 hover:shadow-md"}`}>
             <div className="relative h-20 w-20 mx-auto mb-3">
-              <img src={t.img} alt={t.name} className="h-20 w-20 rounded-full object-cover"/>
+              <img src={t.img} alt={t.name} loading="lazy" decoding="async" className="h-20 w-20 rounded-full object-cover"/>
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex">
-                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" className="h-5 w-5 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
-                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" className="h-5 w-5 rounded-full object-cover border-2 border-white"/>
+                <img src={`https://flagcdn.com/w40/${t.f1}.png`} alt="" loading="lazy" decoding="async" className="h-5 w-5 rounded-full object-cover border-2 border-white -mr-1 relative z-10"/>
+                <img src={`https://flagcdn.com/w40/${t.f2}.png`} alt="" loading="lazy" decoding="async" className="h-5 w-5 rounded-full object-cover border-2 border-white"/>
               </div>
             </div>
             <p className="font-semibold text-sm">{t.name}</p>
@@ -1921,8 +1921,8 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
       <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px] rounded-lg" : "h-52 lg:h-56 rounded-2xl"}`} style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
-            <img src={card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
-            <img src={card.img2 || card.img1} alt={p.title} className={`absolute inset-0 w-full h-full object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
+            <img src={card.img1} alt={p.title} loading="lazy" decoding="async" className={`absolute inset-0 w-full h-full object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
+            <img src={card.img2 || card.img1} alt={p.title} loading="lazy" decoding="async" className={`absolute inset-0 w-full h-full object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
           </>
         ) : (
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
@@ -2013,7 +2013,7 @@ function LanguageStrip({className=""}:{className?:string}) {
           <div key={i}
             onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
             className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
-            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} className="w-8 h-8 rounded-md object-cover shadow-sm" />
+            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} loading="lazy" decoding="async" className="w-8 h-8 rounded-md object-cover shadow-sm" />
             <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
           </div>
         ))}
@@ -2175,7 +2175,7 @@ export default function Home() {
               </h1>
             </div>
             <div className="lg:hidden shrink-0 relative">
-              <img src="/images/hero-character.png" alt="" className="w-36 sm:w-44 drop-shadow-xl"/>
+              <img src="/images/hero-character.png" alt="" loading="eager" fetchPriority="high" decoding="async" className="w-36 sm:w-44 drop-shadow-xl"/>
               <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8">
                 <div className="relative bg-white rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 shadow-lg">
                   <TypingBubble size="sm"/>
@@ -2185,12 +2185,12 @@ export default function Home() {
             </div>
           </div>
           <HeroFunnel lang={lang} onLoginOpen={()=>setLoginOpen(true)}/>
-          <img src="/images/google-review.png" alt="Google Reviews 5.0/5" className="h-7 sm:h-8 mt-4 sm:mt-6 opacity-90"/>
+          <img src="/images/google-review.png" alt="Google Reviews 5.0/5" loading="eager" decoding="async" className="h-7 sm:h-8 mt-4 sm:mt-6 opacity-90"/>
           
         </motion.div>
         <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
           <div className="relative w-[750px] h-[750px]">
-            <img src="/images/hero-character.png" alt="Learn languages with Linguo" className="w-full h-full object-contain drop-shadow-2xl" />
+            <img src="/images/hero-character.png" alt="Learn languages with Linguo" loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-contain drop-shadow-2xl" />
             <div className="absolute top-16 left-[15%]">
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
                 <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
@@ -2238,7 +2238,7 @@ export default function Home() {
             { src: "/images/clients/orica.png", alt: "Orica" },
             { src: "/images/clients/mondelez.png", alt: "Mondelez" },
           ].map((logo, i) => (
-            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} className="h-7 sm:h-10 max-w-[120px] sm:max-w-[200px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+            <img key={`${ri}-${i}`} src={logo.src} alt={logo.alt} loading="lazy" decoding="async" className="h-7 sm:h-10 max-w-[120px] sm:max-w-[200px] w-auto object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           ))
         )}
       </div>
@@ -2256,7 +2256,7 @@ export default function Home() {
             {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*",note:"* S&K berlaku"}
           ].map((s,i)=>(<div key={i} className="flex items-start">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center w-[200px]">
-              <div className="h-[70px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} className="max-h-[70px] w-auto object-contain"/></div>
+              <div className="h-[70px] flex items-end justify-center mb-4"><img src={s.img} alt={s.t} loading="lazy" decoding="async" className="max-h-[70px] w-auto object-contain"/></div>
               <p className="text-xs text-[#1A9E9E] font-semibold italic mb-1">{s.s}</p>
               <h3 className="text-sm font-bold mb-2 leading-tight">{s.t}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{s.d}</p>
@@ -2272,7 +2272,7 @@ export default function Home() {
             {img:"/images/step-3.png",s:"Step 3",t:"Learn & practice with Linguo",d:"Setelah menyelesaikan pembayaran kamu bisa mulai belajar sesuai jadwal belajar"},
             {img:"/images/step-4.png",s:"Step 4",t:"Level up & Get certified",d:"Setelah delapan sesi, kamu bisa ikut kelas lanjutan hingga mendapatkan e-sertifikat*"}
           ].map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}} className="flex flex-col items-center px-1">
-            <img src={s.img} alt={s.t} className="h-12 sm:h-20 object-contain mb-2 sm:mb-4"/>
+            <img src={s.img} alt={s.t} loading="lazy" decoding="async" className="h-12 sm:h-20 object-contain mb-2 sm:mb-4"/>
             <p className="text-[10px] sm:text-xs text-[#1A9E9E] font-semibold italic mb-0.5 sm:mb-1">{s.s}</p>
             <h3 className="text-xs sm:text-sm font-bold mb-1 sm:mb-2 leading-tight">{s.t}</h3>
             <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">{s.d}</p>
@@ -2300,9 +2300,9 @@ export default function Home() {
               ].map((c, i) => (
                 <a key={`${ri}-${i}`} href={`https://wa.me/6282116859493?text=Halo, saya tertarik kelas ${c.t}`} target="_blank" className="w-[280px] sm:w-[360px] shrink-0 group/card cursor-pointer">
                   <div className="relative h-44 sm:h-56 rounded-2xl mb-3 sm:mb-4 overflow-hidden group-hover/card:shadow-lg transition-shadow">
-                    <img src={c.img} alt={c.l} className="w-full h-full object-cover"/>
+                    <img src={c.img} alt={c.l} loading="lazy" decoding="async" className="w-full h-full object-cover"/>
                     <span className="absolute top-3 left-3 bg-[#1A9E9E] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                      <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
+                      <img src={`https://flagcdn.com/w20/${c.fc}.png`} alt="" loading="lazy" decoding="async" className="h-3.5 w-3.5 rounded-full object-cover"/> {c.l}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
@@ -2325,7 +2325,7 @@ export default function Home() {
 
     {/* WHY LINGUO */}
     <section className="py-8 sm:py-16 lg:py-24 bg-white relative overflow-hidden">
-      <img src="/images/wave-line.png" alt="" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
+      <img src="/images/wave-line.png" alt="" loading="lazy" decoding="async" className="absolute top-1/2 left-0 w-full -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
         <h2 className="font-heading text-base sm:text-3xl font-bold text-center text-[#1A9E9E] mb-2 sm:mb-4">Why Linguo?</h2>
         <WhyCarousel/>
