@@ -120,9 +120,11 @@ export async function POST(req: NextRequest) {
     const regMatch = /^LINGUO-REG-([0-9a-fA-F-]{36})-/.exec(external_id || "");
     if (regMatch) {
       const regId = regMatch[1];
+      // registrations.status punya CHECK constraint — JANGAN set status di sini.
+      // Cukup update payment_status: 'Lunas' saat PAID, else status mentah webhook.
       const regUpdate: Record<string, unknown> =
         status === "PAID"
-          ? { status: "Lunas", payment_status: "Lunas" }
+          ? { payment_status: "Lunas" }
           : { payment_status: status }; // EXPIRED / dll
       try {
         await fetch(`${SUPABASE_URL}/rest/v1/registrations?id=eq.${regId}`, {

@@ -2464,7 +2464,11 @@ export default function AkunPage() {
       r.status === "Aktif" ||
       r.status === "Pending" ||
       r.status === "Lunas" || // [enrollment-server-flow-v1] paid via Xendit webhook (LINGUO-REG-) → tetap tampil di Kelas Live
-      (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
+      (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi") ||
+      // [enrollment-server-flow-v1] pending countdown card — tampil di Kelas Live langsung
+      // setelah enroll (belum bayar, < 24 jam). Setelah 24 jam di-expire cron/effect di atas.
+      (r.status === "Menunggu Pembayaran" && r.payment_status === "Belum Bayar" &&
+        (Date.now() - new Date((r as any).created_at || r.registration_date || Date.now()).getTime()) < 24 * 60 * 60 * 1000)
     )
   ) || [], [student]);
 
