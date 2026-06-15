@@ -2,7 +2,8 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabase-client";
+import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
@@ -49,10 +50,8 @@ import AttentionAlert from '@/components/akun/AttentionAlert';
 import PerpustakaanSaya from '@/components/PerpustakaanSaya';
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// [akun-batalkan-hard-delete-v1] pakai client anon kanonik dari @/lib/supabase-client
+// (bukan service-role) — session-aware (persistSession) biar RLS jalan benar.
 
 // [linguo-patch:akun-affiliate-capture-v1]
 // Baca cookie linguo_ref (di-set middleware dari ?ref=KODE, httpOnly:false).
@@ -3148,15 +3147,22 @@ export default function AkunPage() {
                                     <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
                                     <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">Bayar <ChevronRight className="h-3.5 w-3.5" /></span>
                                   </div>
-                                  {/* [linguo-patch:akun-self-cancel-v1] siswa batalin sendiri — CUMA yang belum bayar (soft-cancel, no hard-delete) */}
+                                  {/* [akun-batalkan-hard-delete-v1] siswa batalin sendiri — CUMA yang belum bayar.
+                                      DELETE row dari Supabase dulu (persist) baru remove dari state. */}
                                   <button
                                     type="button"
                                     onClick={async (e) => {
                                       e.stopPropagation();
                                       if (!confirm("Batalkan pendaftaran ini? Pendaftaran yang belum dibayar akan hilang dari daftar kamu.")) return;
-                                      const { error } = await supabase.from("registrations").update({ pipeline_status: "Batal" }).eq("id", reg.id);
-                                      if (error) { alert("Gagal membatalkan. Coba lagi atau hubungi admin."); return; }
-                                      setStudent((prev: any) => prev ? { ...prev, registrations: (prev.registrations || []).map((x: any) => x.id === reg.id ? { ...x, pipeline_status: "Batal" } : x) } : prev);
+                                      const { error } = await supabase
+                                        .from("registrations")
+                                        .delete()
+                                        .eq("id", reg.id);
+                                      if (error) {
+                                        toast.error("Gagal membatalkan pendaftaran");
+                                        return;
+                                      }
+                                      setStudent((prev: any) => prev ? { ...prev, registrations: (prev.registrations || []).filter((x: any) => x.id !== reg.id) } : prev);
                                       setPendingModalReg((cur: any) => (cur && cur.id === reg.id ? null : cur));
                                     }}
                                     className="mt-3 w-full rounded-xl border border-gray-200 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
