@@ -122,7 +122,7 @@ export async function POST(req: NextRequest) {
       const regId = regMatch[1];
       const regUpdate: Record<string, unknown> =
         status === "PAID"
-          ? { status: "Aktif", payment_status: "Lunas" }
+          ? { status: "Lunas", payment_status: "Lunas" }
           : { payment_status: status }; // EXPIRED / dll
       try {
         await fetch(`${SUPABASE_URL}/rest/v1/registrations?id=eq.${regId}`, {

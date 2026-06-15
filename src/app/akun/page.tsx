@@ -2463,6 +2463,7 @@ export default function AkunPage() {
     r.pipeline_status !== "Batal" && !r.archived_at && (
       r.status === "Aktif" ||
       r.status === "Pending" ||
+      r.status === "Lunas" || // [enrollment-server-flow-v1] paid via Xendit webhook (LINGUO-REG-) → tetap tampil di Kelas Live
       (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi")
     )
   ) || [], [student]);
