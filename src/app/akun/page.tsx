@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -2127,6 +2127,36 @@ export default function AkunPage() {
   const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
   const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [pendingModalReg, setPendingModalReg] = useState<any>(null); // pending-payment popup
+  // [akun-cancel-enrollment-v1] target kartu yang lagi dikonfirmasi pembatalannya + flag in-flight
+  const [cancelTarget, setCancelTarget] = useState<any>(null);
+  const [cancelling, setCancelling] = useState(false);
+  // [akun-cancel-enrollment-v1] batalkan lewat /api/cancel-enrollment (service role:
+  // catat lead + delete row), baru buang dari state. Ganti hard-delete client lama
+  // yang ketolak RLS & ga nyatet lead.
+  const confirmCancelEnrollment = async () => {
+    if (!cancelTarget) return;
+    const reg = cancelTarget;
+    setCancelling(true);
+    try {
+      const res = await fetch("/api/cancel-enrollment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ registrationId: reg.id }),
+      });
+      if (!res.ok) {
+        toast.error("Gagal membatalkan pendaftaran");
+        return;
+      }
+      toast.success("Pendaftaran berhasil dibatalkan");
+      setStudent((prev: any) => prev ? { ...prev, registrations: (prev.registrations || []).filter((x: any) => x.id !== reg.id) } : prev);
+      setPendingModalReg((cur: any) => (cur && cur.id === reg.id ? null : cur));
+      setCancelTarget(null);
+    } catch {
+      toast.error("Gagal membatalkan pendaftaran");
+    } finally {
+      setCancelling(false);
+    }
+  };
   const [bookingSubmit, setBookingSubmit] = useState(false);
   // Email/password login
   const [loginEmail, setLoginEmail] = useState("");
@@ -3147,24 +3177,11 @@ export default function AkunPage() {
                                     <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
                                     <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">Bayar <ChevronRight className="h-3.5 w-3.5" /></span>
                                   </div>
-                                  {/* [akun-batalkan-hard-delete-v1] siswa batalin sendiri — CUMA yang belum bayar.
-                                      DELETE row dari Supabase dulu (persist) baru remove dari state. */}
+                                  {/* [akun-cancel-enrollment-v1] siswa batalin sendiri — CUMA yang belum bayar.
+                                      Buka overlay konfirmasi → /api/cancel-enrollment (lead + delete via service role). */}
                                   <button
                                     type="button"
-                                    onClick={async (e) => {
-                                      e.stopPropagation();
-                                      if (!confirm("Batalkan pendaftaran ini? Pendaftaran yang belum dibayar akan hilang dari daftar kamu.")) return;
-                                      const { error } = await supabase
-                                        .from("registrations")
-                                        .delete()
-                                        .eq("id", reg.id);
-                                      if (error) {
-                                        toast.error("Gagal membatalkan pendaftaran");
-                                        return;
-                                      }
-                                      setStudent((prev: any) => prev ? { ...prev, registrations: (prev.registrations || []).filter((x: any) => x.id !== reg.id) } : prev);
-                                      setPendingModalReg((cur: any) => (cur && cur.id === reg.id ? null : cur));
-                                    }}
+                                    onClick={(e) => { e.stopPropagation(); setCancelTarget(reg); }}
                                     className="mt-3 w-full rounded-xl border border-gray-200 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
                                   >
                                     Batalkan pendaftaran
@@ -3858,6 +3875,51 @@ export default function AkunPage() {
           )}
         />
       )}
+
+      {/* [akun-cancel-enrollment-v1] overlay konfirmasi pembatalan pendaftaran */}
+      {cancelTarget && (
+        <div
+          className="fixed inset-0 z-[120] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => !cancelling && setCancelTarget(null)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.18 }}
+            className="w-full max-w-sm rounded-3xl bg-white p-6 text-center shadow-2xl"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-50">
+              <XCircle className="h-6 w-6 text-red-500" strokeWidth={2.5} />
+            </div>
+            <h3 className="text-lg font-extrabold text-gray-900">Batalkan pendaftaran?</h3>
+            <p className="mt-1.5 text-sm text-gray-500">
+              Yakin ingin membatalkan pendaftaran{" "}
+              <strong className="text-gray-700">{cancelTarget.language} {cancelTarget.level || "TBD"}</strong>?
+              Pendaftaran yang belum dibayar akan hilang dari daftar kamu.
+            </p>
+            <div className="mt-5 flex gap-2.5">
+              <button
+                type="button"
+                onClick={() => setCancelTarget(null)}
+                disabled={cancelling}
+                className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-bold text-gray-600 transition-colors hover:bg-gray-50 disabled:opacity-50"
+              >
+                Tidak
+              </button>
+              <button
+                type="button"
+                onClick={confirmCancelEnrollment}
+                disabled={cancelling}
+                className="flex-1 rounded-xl bg-red-500 py-2.5 text-sm font-bold text-white transition-colors hover:bg-red-600 disabled:opacity-50"
+              >
+                {cancelling ? "Membatalkan…" : "Ya, batalkan"}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       {bookingReg && (
         <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4" onClick={() => !bookingSubmit && setBookingReg(null)}>
           <motion.div
