@@ -13,8 +13,12 @@
 // =============================================================================
 
 import { useEffect, useState } from "react";
-import TrialWizard from "@/components/TrialWizard";
+import dynamic from "next/dynamic";
 import { useOverlayLock } from "@/lib/overlayStore";
+
+// Lazy: the heavy wizard (form + libphonenumber-js + supabase) only downloads
+// when the modal is actually opened, not on every page's initial load.
+const TrialWizard = dynamic(() => import("@/components/TrialWizard"), { ssr: false });
 
 const TEAL = "#1A9E9E";
 

@@ -312,8 +312,8 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
   const doHide=(slug:string)=>{setHiddenSlugs(prev=>{const n=new Set(prev);n.add(slug);return n})};
 
   return(
-    <div className={`min-h-screen transition-colors duration-300 ${dm?"bg-[#0f172a]":"bg-white"}`} style={{fontFamily:"'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif"}}>
-      <style dangerouslySetInnerHTML={{__html:`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');`}}/>
+    <div className={`min-h-screen transition-colors duration-300 ${dm?"bg-[#0f172a]":"bg-white"}`} style={{fontFamily:"var(--font-jakarta),-apple-system,BlinkMacSystemFont,sans-serif"}}>
+      {/* Font self-hosted via next/font in root layout — no render-blocking @import. */}
 
       {/* NAV */}
       <nav className={`border-b sticky top-0 z-50 transition-colors duration-300 ${dm?"bg-[#111827] border-slate-800":"bg-white border-slate-100"}`}>

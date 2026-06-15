@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase-client';
+import { Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, type LucideIcon } from 'lucide-react';
 
 interface Props {
   reg: any;
@@ -165,12 +166,12 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
   const upcoming = schedules.filter((s: any) => ['pending', 'scheduled'].includes(s.status) && new Date(s.scheduled_at).getTime() > Date.now() - 3600_000);
   const history = schedules.filter((s: any) => !upcoming.includes(s));
 
-  const tabs: { id: Tab; label: string; icon: string }[] = [
-    { id: 'overview', label: 'Overview', icon: '📋' },
-    { id: 'jadwal', label: 'Jadwal', icon: '📅' },
-    { id: 'progress', label: 'Progress', icon: '🎯' },
-    { id: 'materi', label: 'Materi', icon: '📚' },
-    { id: 'rapor', label: 'Rapor', icon: '📊' },
+  const tabs: { id: Tab; label: string; icon: LucideIcon }[] = [
+    { id: 'overview', label: 'Overview', icon: ClipboardList },
+    { id: 'jadwal', label: 'Jadwal', icon: Calendar },
+    { id: 'progress', label: 'Progress', icon: TrendingUp },
+    { id: 'materi', label: 'Materi', icon: BookOpen },
+    { id: 'rapor', label: 'Rapor', icon: BarChart2 },
   ];
 
   return (
@@ -188,15 +189,18 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
         {/* Tabs */}
         <div className="border-b border-gray-200 overflow-x-auto shrink-0">
           <div className="flex min-w-max px-2">
-            {tabs.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setActiveTab(t.id)}
-                className={`px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${activeTab === t.id ? 'border-green-600 text-green-700' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
-              >
-                <span className="mr-1.5">{t.icon}</span>{t.label}
-              </button>
-            ))}
+            {tabs.map((t) => {
+              const Icon = t.icon;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setActiveTab(t.id)}
+                  className={`inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${activeTab === t.id ? 'border-green-600 text-green-700' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
+                >
+                  <Icon className="h-4 w-4" strokeWidth={2} />{t.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -208,7 +212,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
             <div className="space-y-5">
               {teacherName ? (
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-100">
-                  <div className="text-xs text-green-700 font-semibold uppercase tracking-wider">Pengajar</div>
+                  <div className="flex items-center gap-1.5 text-xs text-green-700 font-semibold uppercase tracking-wider"><User className="h-3.5 w-3.5" strokeWidth={2.5} />Pengajar</div>
                   <div className="text-lg font-bold text-gray-900 mt-1">{teacherName}</div>
                 </div>
               ) : (
@@ -229,21 +233,21 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white border border-gray-200 rounded-2xl p-3">
-                  <div className="text-xs text-gray-500">Durasi/Sesi</div>
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500"><Clock className="h-3.5 w-3.5" strokeWidth={2} />Durasi/Sesi</div>
                   <div className="text-base font-bold text-gray-900 mt-1">{reg.duration || '-'} menit</div>
                 </div>
                 <div className="bg-white border border-gray-200 rounded-2xl p-3">
-                  <div className="text-xs text-gray-500">Total Pembayaran</div>
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500"><CreditCard className="h-3.5 w-3.5" strokeWidth={2} />Total Pembayaran</div>
                   <div className="text-base font-bold text-gray-900 mt-1">Rp{(reg.total_amount || 0).toLocaleString('id-ID')}</div>
                 </div>
               </div>
 
               <div className="flex gap-2 pt-2">
-                <button onClick={() => setActiveTab('jadwal')} className="flex-1 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700">
-                  📅 Lihat Jadwal
+                <button onClick={() => setActiveTab('jadwal')} className="flex-1 inline-flex items-center justify-center gap-1.5 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700">
+                  <Calendar className="h-4 w-4" strokeWidth={2.5} /> Lihat Jadwal
                 </button>
-                <a href="https://wa.me/6282116859493" target="_blank" rel="noreferrer" className="flex-1 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-800 text-center">
-                  💬 Chat Admin
+                <a href="https://wa.me/6282116859493" target="_blank" rel="noreferrer" className="flex-1 inline-flex items-center justify-center gap-1.5 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-800 text-center">
+                  <MessageCircle className="h-4 w-4" strokeWidth={2.5} /> Chat Admin
                 </a>
               </div>
             </div>
@@ -276,7 +280,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
 
           {!loading && activeTab === 'progress' && (
             <div className="text-center py-10 text-gray-400">
-              <div className="text-4xl mb-2">🎯</div>
+              <TrendingUp className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
               <div className="text-sm">Timeline progress A1→B2</div>
               <div className="text-xs mt-1">Coming in Phase 3c</div>
             </div>
@@ -284,7 +288,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
 
           {!loading && activeTab === 'materi' && (
             <div className="text-center py-10 text-gray-400">
-              <div className="text-4xl mb-2">📚</div>
+              <BookOpen className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
               <div className="text-sm">Materi pembelajaran per sesi</div>
               <div className="text-xs mt-1">Coming Soon</div>
             </div>
@@ -292,7 +296,7 @@ export default function ClassDetailModal({ reg, onClose }: Props) {
 
           {!loading && activeTab === 'rapor' && (
             <div className="text-center py-10 text-gray-400">
-              <div className="text-4xl mb-2">📊</div>
+              <BarChart2 className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
               <div className="text-sm">Rapor & Sertifikat</div>
               <div className="text-xs mt-1">Coming Soon</div>
             </div>

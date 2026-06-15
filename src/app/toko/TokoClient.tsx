@@ -192,6 +192,7 @@ export default function TokoClient({ products }: { products: Product[] }) {
                 <Link
                   key={product.id}
                   href={`/toko/${product.slug}`}
+                  prefetch={true}
                   className="group relative block opacity-0 animate-fadeUp"
                   style={{
                     animationDelay: `${i * 50}ms`,

@@ -3194,54 +3194,18 @@ export default function AkunPage() {
                         </div>
                       )}
 
-                      {/* Kelas Kamu (cards + progress, klik -> ClassDetailModal) */}
+                      {/* [linguo-patch:beranda-split-live-mandiri-v1] Kelas Kamu dipecah: Kelas Live (cards live → ClassDetailModal) vs Belajar Mandiri (e-learning/LMS) */}
+                      {/* ── Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
                       <div>
                         <div className="flex items-center justify-between">
-                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
-                          {(activeRegs.length > 0 || mandiri) && (
+                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Kelas Live</h2>
+                          {activeRegs.length > 0 && (
                             <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
                           )}
                         </div>
 
-                        {(activeRegs.length > 0 || mandiri) ? (
+                        {activeRegs.length > 0 ? (
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study (Belajar Mandiri) — klik buka sesi via OVERLAY (instan) */}
-                            {mandiri && (
-                              <button
-                                key="mandiri-resume"
-                                onClick={() => {
-                                  setLmsSesi(mandiri.resumeId);
-                                  setMateriView("mandiri");
-                                  if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
-                                }}
-                                className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
-                              >
-                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
-                                  {mandiri.photo ? (
-                                    <>
-                                      <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                                    </>
-                                  ) : (
-                                    <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
-                                  )}
-                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E] shadow-sm">
-                                    <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
-                                  </span>
-                                </div>
-                                <div className="px-2 pb-2 pt-4">
-                                  <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-400">· {mandiri.label}</span></h3>
-                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
-                                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
-                                    <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
-                                  </div>
-                                  <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
-                                    <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
-                                    <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
-                                  </div>
-                                </div>
-                              </button>
-                            )}
                             {activeRegs.map((reg: any, idx: number) => {
                               const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
                               const total = reg.sessions_total || 0;
@@ -3296,12 +3260,56 @@ export default function AkunPage() {
                         ) : (
                           <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas aktif</h3>
+                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
                             <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]">✨ Daftar Kelas</button>
                           </div>
                         )}
                       </div>
+
+                      {/* ── Belajar Mandiri (e-learning / LMS) ── [linguo-patch:beranda-split-live-mandiri-v1] */}
+                      {mandiri && (
+                        <div>
+                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Belajar Mandiri</h2>
+                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                            {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
+                            <button
+                              key="mandiri-resume"
+                              onClick={() => {
+                                setLmsSesi(mandiri.resumeId);
+                                setMateriView("mandiri");
+                                if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
+                              }}
+                              className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
+                            >
+                              <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
+                                {mandiri.photo ? (
+                                  <>
+                                    <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                                  </>
+                                ) : (
+                                  <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
+                                )}
+                                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E] shadow-sm">
+                                  <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
+                                </span>
+                              </div>
+                              <div className="px-2 pb-2 pt-4">
+                                <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-400">· {mandiri.label}</span></h3>
+                                <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
+                                <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                  <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
+                                </div>
+                                <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+                                  <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
+                                  <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
+                                </div>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      )}
 
                       {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
                       {teacherList.length > 0 && (

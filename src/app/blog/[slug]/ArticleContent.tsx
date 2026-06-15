@@ -402,9 +402,9 @@ function CommentsSection({ postId }: { postId: string }) {
 
 // ========== ARTICLE CSS ==========
 const ARTICLE_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
-
-.blog-page { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+/* Reuse the self-hosted Plus Jakarta Sans from the root layout (next/font) —
+   no render-blocking @import to fonts.googleapis.com. */
+.blog-page { font-family: var(--font-jakarta), -apple-system, BlinkMacSystemFont, sans-serif; }
 
 .article-body h2 {
   font-size: 1.625rem;

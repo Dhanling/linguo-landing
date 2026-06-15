@@ -19,7 +19,7 @@ const baloo = Baloo_2({
   display: "swap",
 });
 import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:trial-wizard-v1
-import ChatWidget from "@/components/ChatWidget"; // linguo-patch:chat-widget-ai-wa-v1
+import ChatWidgetLazy from "@/components/ChatWidgetLazy"; // linguo-patch:chat-widget-ai-wa-v1 — code-split out of initial bundle
 
 export const metadata: Metadata = {
   title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Toaster richColors position="top-center" closeButton />
         <TrialWizardModal />{/* linguo-patch:trial-wizard-v1 */}
-        <ChatWidget />{/* linguo-patch:chat-widget-ai-wa-v1 */}
+        <ChatWidgetLazy />{/* linguo-patch:chat-widget-ai-wa-v1 */}
 
       </body>
     </html>

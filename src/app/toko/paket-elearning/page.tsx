@@ -2,7 +2,11 @@ import { supabase } from '@/lib/supabase-client';
 import { notFound } from 'next/navigation';
 import PaketElearningClient from './PaketElearningClient';
 
-export const dynamic = 'force-dynamic';
+// Product/pricing data changes rarely, so cache the rendered page and
+// revalidate hourly (ISR). This makes navigation from /toko instant — the
+// page is served from cache and can be prefetched by <Link> — instead of
+// re-running a Supabase query on every click (the old force-dynamic behavior).
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Paket E-Learning Linguo — Akses 10+ Bahasa Mulai Rp 29.000',

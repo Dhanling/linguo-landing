@@ -1,7 +1,9 @@
-import { supabase } from '@/lib/supabase-client';
+import { createServerClient } from '@/lib/supabase-server';
 import TokoClient from './TokoClient';
 
-export const dynamic = 'force-dynamic';
+// ISR: halaman di-render sekali lalu di-cache 1 jam. Tidak lagi query Supabase
+// di tiap request (sebelumnya `force-dynamic` bikin tiap refresh terasa lambat).
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Toko Digital — Linguo.id',
@@ -30,6 +32,7 @@ export type Product = {
 };
 
 export default async function TokoPage() {
+  const supabase = createServerClient(revalidate);
   const { data: products, error } = await supabase
     .from('digital_products')
     .select(
