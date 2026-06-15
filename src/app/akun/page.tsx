@@ -3862,7 +3862,9 @@ export default function AkunPage() {
                   );
                   const data = await res.json();
                   if (data?.success && data?.invoice_url) {
-                    await supabase.from("registrations").update({ xendit_invoice_url: data.invoice_url }).eq("id", r.id);
+                    // [akun-cancel-enrollment-v1] JANGAN update registrations dari client (RLS 403).
+                    // Edge function xendit-create-invoice sudah punya registration_id + service role,
+                    // jadi persist xendit_invoice_url dikerjain di server. Client cukup pakai URL-nya buat redirect.
                     return data.invoice_url as string;
                   }
                   return null;
