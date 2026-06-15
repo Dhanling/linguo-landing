@@ -2474,19 +2474,15 @@ export default function AkunPage() {
     setBookingSubmit(false);
   }
 
-    // Design B: "Kursus Aktif" = user udah commit (bayar atau udah upload bukti)
+  // [akun-split-pending-active-v1] activeRegs = HANYA yang sudah dibayar
+  // (payment_status 'Lunas' atau 'Cicilan'). Ini yang masuk "Kelas Live" /
+  // UnifiedCourseCard. Yang belum bayar TIDAK pernah masuk sini — mereka ada di
+  // pendingRegs (Perlu Perhatian). NB: webhook Xendit cuma set payment_status
+  // (bukan status, krn CHECK constraint), makanya filter pakai payment_status.
   const activeRegs = useMemo(() => student?.registrations.filter(r =>
     // [linguo-patch:akun-hide-cancelled-v1] buang reg yang di-Batal-in admin/cron & yang udah diarsip
-    r.pipeline_status !== "Batal" && !r.archived_at && (
-      r.status === "Aktif" ||
-      r.status === "Pending" ||
-      r.status === "Lunas" || // [enrollment-server-flow-v1] paid via Xendit webhook (LINGUO-REG-) → tetap tampil di Kelas Live
-      (r.status === "Menunggu Pembayaran" && r.payment_status === "Menunggu Verifikasi") ||
-      // [enrollment-server-flow-v1] pending countdown card — tampil di Kelas Live langsung
-      // setelah enroll (belum bayar, < 24 jam). Setelah 24 jam di-expire cron/effect di atas.
-      (r.status === "Menunggu Pembayaran" && r.payment_status === "Belum Bayar" &&
-        (Date.now() - new Date((r as any).created_at || r.registration_date || Date.now()).getTime()) < 24 * 60 * 60 * 1000)
-    )
+    r.pipeline_status !== "Batal" && !r.archived_at &&
+    (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
   ) || [], [student]);
 
   // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
@@ -2514,12 +2510,16 @@ export default function AkunPage() {
       };
     });
   }, [activeRegs]);
-  // "Menunggu Pembayaran" = user belum upload bukti transfer
-  const pendingPaymentRegs = useMemo(() => student?.registrations.filter(r =>
+  // [akun-split-pending-active-v1] pendingRegs = belum bayar & masih dalam window
+  // 24 jam sejak enroll. INI yang dirender di "Perlu Perhatian" (badge Belum Bayar
+  // + tombol Bayar + Batalkan). Lewat 24 jam → di-expire effect/cron, hilang dari
+  // sini. Tidak pernah bocor ke activeRegs/Kelas Live.
+  const pendingRegs = useMemo(() => student?.registrations.filter(r =>
     // [linguo-patch:akun-hide-cancelled-v1] guard sama — jangan tampilin yang dibatalkan/diarsip
     r.pipeline_status !== "Batal" && !r.archived_at &&
     r.status === "Menunggu Pembayaran" &&
-    (r.payment_status === "Belum Bayar" || !r.payment_status)
+    (r.payment_status === "Belum Bayar" || !r.payment_status) &&
+    (Date.now() - new Date((r as any).created_at || r.registration_date || Date.now()).getTime()) < 24 * 60 * 60 * 1000
   ) || [], [student]);
 
   // Group activeRegs by product, priority order: Private -> Reguler -> Kids -> Test Prep -> Other
@@ -2954,13 +2954,11 @@ export default function AkunPage() {
                   const v = (lang || "").trim().toLowerCase();
                   return v !== "" && v !== "all languages" && v !== "tbd";
                 };
-                // [enrollment-24h-autoexpire-v1] reg "Menunggu Pembayaran" punya batas bayar 24 jam.
-                const regCreatedMs = (r: any) => new Date(r.created_at || r.registration_date || Date.now()).getTime();
-                const msUntilExpiry = (r: any) => regCreatedMs(r) + 24 * 60 * 60 * 1000 - Date.now();
-                const isPendingPayment = (r: any) => r.status === "Menunggu Pembayaran";
-                const isExpiredPending = (r: any) => isPendingPayment(r) && msUntilExpiry(r) <= 0;
+                // [akun-split-pending-active-v1] Kelas Live = activeRegs (Lunas/Cicilan) saja.
+                // Reg pending (belum bayar) sudah tidak masuk activeRegs, jadi tak perlu lagi
+                // filter/countdown pending di sini — cukup buang bahasa yang invalid/placeholder.
                 const liveRegs = activeRegs.filter(
-                  (r: any) => isValidLiveLang(r.language) && !isExpiredPending(r)
+                  (r: any) => isValidLiveLang(r.language)
                 );
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
@@ -3101,7 +3099,7 @@ export default function AkunPage() {
                       </div>
 
                       {/* Perlu Perhatian — card kecil (glyph + status), klik -> PaymentDetailModal */}
-                      {pendingPaymentRegs.length > 0 && (
+                      {pendingRegs.length > 0 && (
                         <div>
                           <div className="flex items-center gap-2">
                             <h2 className="inline-flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]">
@@ -3109,11 +3107,11 @@ export default function AkunPage() {
                               Perlu Perhatian
                             </h2>
                             <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-amber-100 px-1.5 text-[11px] font-bold text-amber-700">
-                              {pendingPaymentRegs.length}
+                              {pendingRegs.length}
                             </span>
                           </div>
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {pendingPaymentRegs.map((reg: any) => {
+                            {pendingRegs.map((reg: any) => {
                               const photo = getLangPhoto(reg.language);
                               return (
                               <div
@@ -3192,12 +3190,6 @@ export default function AkunPage() {
                               const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
                               const bg = CARD_BG[idx % CARD_BG.length];
                               const photo = getLangPhoto(reg.language);
-                              // [enrollment-24h-autoexpire-v1] badge hitung mundur batas bayar 24 jam
-                              const pendingPay = isPendingPayment(reg);
-                              const msLeft = msUntilExpiry(reg);
-                              const hLeft = Math.floor(msLeft / 3_600_000);
-                              const mLeft = Math.floor((msLeft % 3_600_000) / 60_000);
-                              const countdownLabel = hLeft >= 1 ? `${hLeft} jam lagi` : `${Math.max(0, mLeft)} mnt lagi`;
                               return (
                                 <button
                                   key={reg.id}
@@ -3215,11 +3207,6 @@ export default function AkunPage() {
                                         <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                         <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                       </>
-                                    )}
-                                    {pendingPay && (
-                                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700 shadow-sm">
-                                        <Clock className="h-3 w-3" strokeWidth={2.5} /> Bayar dalam {countdownLabel}
-                                      </span>
                                     )}
                                   </div>
                                   <div className="px-2 pb-2 pt-4">
