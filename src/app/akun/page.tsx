@@ -2983,6 +2983,13 @@ export default function AkunPage() {
                   };
                   return g[lang] || "Aa";
                 };
+                // [linguo-patch:beranda-live-hide-empty-lang-v1] sembunyiin kartu live yang language-nya null/kosong/placeholder
+                // (registrasi Private incomplete) — cuma dipakai di seksi "Kelas Live" Beranda, ga ngubah activeRegs global.
+                const isValidLiveLang = (lang?: string | null): boolean => {
+                  const v = (lang || "").trim().toLowerCase();
+                  return v !== "" && v !== "all languages" && v !== "tbd";
+                };
+                const liveRegs = activeRegs.filter((r: any) => isValidLiveLang(r.language));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
@@ -3199,14 +3206,14 @@ export default function AkunPage() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h2 className="text-[20px] font-extrabold text-[#12172B]">Kelas Live</h2>
-                          {activeRegs.length > 0 && (
+                          {liveRegs.length > 0 && (
                             <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
                           )}
                         </div>
 
-                        {activeRegs.length > 0 ? (
+                        {liveRegs.length > 0 ? (
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {activeRegs.map((reg: any, idx: number) => {
+                            {liveRegs.map((reg: any, idx: number) => {
                               const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
                               const total = reg.sessions_total || 0;
                               const used = reg.sessions_used || 0;
