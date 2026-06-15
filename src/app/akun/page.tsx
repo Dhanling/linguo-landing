@@ -1547,166 +1547,71 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     `Mohon info jadwal dan pembayarannya. Terima kasih!`
   );
 
+  // [enrollment-server-flow-v1] insert student+registration dipindah ke /api/enroll
+  // (service role → bypass RLS yang sebelumnya nolak insert authenticated client).
+  const buildEnrollPayload = (withInvoice: boolean) => ({
+    email: user?.email || "",
+    name: displayName,
+    wa_number: student?.whatsapp || null,
+    avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
+    product: enrollProgram,
+    language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
+    level: "A1.1",
+    duration: enrollDuration,
+    amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
+    ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
+    with_invoice: withInvoice,
+  });
+
   const handleConfirm = async () => {
     try {
-      // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — tabel leads ga punya unique constraint di email
-      const { error: __leadDbgErr } = await supabase.from("leads").insert({
-        name: displayName,
-        email: user?.email || "",
-        wa_number: student?.whatsapp || null, // [linguo-patch:akun-onboarding-wa-required-v1]
-        program: PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram,
-        language: enrollLang || null,
-        source: "Tambah Kelas",
-        // [linguo-patch:lead-akun-schema-fix-v1] kolom valid leads only; jadwal chip-friendly
-        schedule_preference: Object.entries(enrollSchedule).flatMap(([d, ts]) => ts.map((t) => `${d} ${t}`)).join(", ") || null,
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(buildEnrollPayload(false)),
       });
-      // lead = CRM inquiry log; kalau gagal, registrasi siswa di bawah tetap jalan
-      // — cukup log ke console, jangan ganggu siswa dgn popup.
-      if (__leadDbgErr) console.warn("Lead save error:", __leadDbgErr);
-    } catch (e: any) {
-      console.warn("Lead save threw:", e);
-    }
-
-    // ── FIX: Save registrasi ke Supabase biar punya UUID valid ──
-    let studentId: string | null =
-      student?.id && student.id !== "pending" ? student.id : null;
-
-    // 1. Pastikan student record ada (upsert by email)
-    if (!studentId) {
-      try {
-        const { data: upserted, error: studentErr } = await supabase
-          .from("students")
-          .upsert(
-            {
-              email: user?.email || "",
-              name: displayName,
-              avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
-            },
-            { onConflict: "email" }
-          )
-          .select("id")
-          .single();
-        if (studentErr) throw studentErr;
-        studentId = upserted?.id ?? null;
-      } catch (e) {
-        console.error("Upsert student gagal:", e);
-      }
-    }
-
-    // 2. Insert registrasi ke DB + return row lengkap
-    let newReg: any = null;
-    if (studentId) {
-      try {
-        const { data: inserted, error: regErr } = await supabase
-          .from("registrations")
-          .insert({
-            student_id: studentId,
-            affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
-            product: enrollProgram,
-            language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
-            level: "A1.1",
-            status: "Menunggu Pembayaran",
-            sessions_total: 0,
-            sessions_used: 0,
-            duration: enrollDuration,
-            total_amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
-            payment_status: "Belum Bayar",
-            enrollment_source: "self_service",
-            registration_date: new Date().toISOString(),
-          })
-          .select(
-            "id, product, language, level, status, sessions_total, sessions_used, duration, total_amount, payment_status, registration_date, teacher_id, payment_proof_url, payment_proof_uploaded_at, payment_verified_at, payment_rejection_reason, teachers(name, whatsapp)"
-          )
-          .single();
-        if (regErr) throw regErr;
-        newReg = inserted;
-      } catch (e: any) {
-        console.error("Insert registrasi gagal:", e);
-        alert(
-          "Maaf, gagal menyimpan pendaftaran. Silakan hubungi admin via WhatsApp untuk bantuan."
-        );
+      const data = await res.json();
+      if (!res.ok || !data?.registration?.id) {
+        console.error("Enroll failed:", data);
+        alert("Maaf, gagal menyimpan pendaftaran. Silakan hubungi admin via WhatsApp untuk bantuan.");
         setShowEnroll(false);
         setEnrollStep(0);
         return;
       }
-    }
+      const newReg = data.registration;
 
-    // 3. Update state — kalau DB save sukses pake row real, kalau gagal fallback mock
-    const pendingReg = newReg || {
-      id: `pending-${Date.now()}`,
-      product: enrollProgram,
-      language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
-      level: "A1.1",
-      status: "Menunggu Pembayaran",
-      sessions_total: 0,
-      sessions_used: 0,
-      duration: enrollDuration,
-      total_amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
-      payment_status: "Belum Bayar",
-      registration_date: new Date().toISOString(),
-      teachers: null,
-    };
+      // Kalau student state-nya mock/belum ada, reload biar fetch fresh
+      if (!student || student.id === "pending" || !student.id) {
+        try { localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`); } catch {}
+        window.location.reload();
+        return;
+      }
 
-    // 4. Kalau student state-nya mock/belum ada, reload biar fetch fresh
-    if (!student || student.id === "pending" || !student.id) {
-      try {
-        localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`);
-      } catch {}
-      window.location.reload();
+      setStudent((s: any) => (s ? { ...s, registrations: [...s.registrations, newReg] } : s));
+      setShowEnroll(false);
+      setEnrollStep(0);
+      return newReg;
+    } catch (e) {
+      console.error("Enroll threw:", e);
+      alert("Terjadi kesalahan koneksi. Silakan coba lagi atau hubungi admin via WA.");
       return;
     }
-
-    setStudent((s: any) =>
-      s ? { ...s, registrations: [...s.registrations, pendingReg] } : s
-    );
-    setShowEnroll(false);
-    setEnrollStep(0);
-    return pendingReg;
   };
 
   const handleXenditCheckout = async () => {
     try {
-      const newReg = await handleConfirm();
-      if (!newReg?.id) {
-        alert("Gagal menyimpan pendaftaran. Silakan coba lagi atau hubungi admin via WA.");
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(buildEnrollPayload(true)),
+      });
+      const data = await res.json();
+      if (data?.invoice_url) {
+        window.location.href = data.invoice_url;
         return;
       }
-      const totalAmount = isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8;
-      const programLabel = PROGRAMS.find(p => p.key === enrollProgram)?.label || enrollProgram;
-      const langLabel = isTestPrep ? "IELTS/TOEFL" : enrollLang;
-      const desc = `${programLabel} — ${langLabel} (${enrollDuration} min/sesi)`;
-
-      const res = await fetch(
-        "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
-          },
-          body: JSON.stringify({
-            registration_id: newReg.id,
-            amount: totalAmount,
-            description: desc,
-            payer_name: displayName,
-            payer_email: user?.email || "",
-            success_redirect_url: "https://linguo.id/akun/success",
-            failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
-          }),
-        }
-      );
-      const data = await res.json();
-      if (data?.success && data?.invoice_url) {
-        // Save URL ke DB supaya user bisa lanjutin pembayaran kalau keluar tanpa bayar
-        await supabase
-          .from("registrations")
-          .update({ xendit_invoice_url: data.invoice_url })
-          .eq("id", newReg.id);
-        window.location.href = data.invoice_url;
-      } else {
-        console.error("Xendit error:", data);
-        alert("Gagal membuat invoice. Silakan coba lagi atau hubungi admin via WA.");
-      }
+      console.error("Enroll/Xendit error:", data);
+      alert(data?.error ? `Gagal: ${data.error}` : "Gagal membuat invoice. Silakan coba lagi atau hubungi admin via WA.");
     } catch (e) {
       console.error("Xendit checkout error:", e);
       alert("Terjadi kesalahan koneksi. Silakan coba lagi atau hubungi admin via WA.");
@@ -2160,6 +2065,44 @@ export default function AkunPage() {
   useEffect(() => {
     if (activeTab === "beranda") setResumeNonce((n) => n + 1);
   }, [activeTab]);
+
+  // [enrollment-24h-autoexpire-v1] saat dashboard load: registrasi "Menunggu Pembayaran"
+  // yang umurnya > 24 jam → server capture jadi lead follow-up lalu hapus barisnya.
+  useEffect(() => {
+    const regs = student?.registrations;
+    if (!regs || !regs.length) return;
+    const DAY = 24 * 60 * 60 * 1000;
+    const stale = regs.filter((r: any) => {
+      if (r.status !== "Menunggu Pembayaran") return false;
+      const created = new Date(r.created_at || r.registration_date || Date.now()).getTime();
+      return Date.now() - created >= DAY;
+    });
+    if (!stale.length) return;
+    let alive = true;
+    (async () => {
+      const expiredIds: string[] = [];
+      for (const r of stale) {
+        try {
+          const res = await fetch("/api/expire-enrollment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ registration_id: r.id }),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (data?.expired) expiredIds.push(r.id);
+        } catch (e) {
+          console.warn("auto-expire enrollment failed (non-fatal):", e);
+        }
+      }
+      if (alive && expiredIds.length) {
+        setStudent((s: any) =>
+          s ? { ...s, registrations: s.registrations.filter((x: any) => !expiredIds.includes(x.id)) } : s
+        );
+      }
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [student?.id]);
   // Booking Modal
   const [bookingReg, setBookingReg] = useState<StudentReg | null>(null);
   const [availSlots, setAvailSlots] = useState<Set<string>>(new Set()); // "day_of_week-HH:MM"
@@ -2989,7 +2932,14 @@ export default function AkunPage() {
                   const v = (lang || "").trim().toLowerCase();
                   return v !== "" && v !== "all languages" && v !== "tbd";
                 };
-                const liveRegs = activeRegs.filter((r: any) => isValidLiveLang(r.language));
+                // [enrollment-24h-autoexpire-v1] reg "Menunggu Pembayaran" punya batas bayar 24 jam.
+                const regCreatedMs = (r: any) => new Date(r.created_at || r.registration_date || Date.now()).getTime();
+                const msUntilExpiry = (r: any) => regCreatedMs(r) + 24 * 60 * 60 * 1000 - Date.now();
+                const isPendingPayment = (r: any) => r.status === "Menunggu Pembayaran";
+                const isExpiredPending = (r: any) => isPendingPayment(r) && msUntilExpiry(r) <= 0;
+                const liveRegs = activeRegs.filter(
+                  (r: any) => isValidLiveLang(r.language) && !isExpiredPending(r)
+                );
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
@@ -3220,6 +3170,12 @@ export default function AkunPage() {
                               const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
                               const bg = CARD_BG[idx % CARD_BG.length];
                               const photo = getLangPhoto(reg.language);
+                              // [enrollment-24h-autoexpire-v1] badge hitung mundur batas bayar 24 jam
+                              const pendingPay = isPendingPayment(reg);
+                              const msLeft = msUntilExpiry(reg);
+                              const hLeft = Math.floor(msLeft / 3_600_000);
+                              const mLeft = Math.floor((msLeft % 3_600_000) / 60_000);
+                              const countdownLabel = hLeft >= 1 ? `${hLeft} jam lagi` : `${Math.max(0, mLeft)} mnt lagi`;
                               return (
                                 <button
                                   key={reg.id}
@@ -3237,6 +3193,11 @@ export default function AkunPage() {
                                         <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                         <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                       </>
+                                    )}
+                                    {pendingPay && (
+                                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700 shadow-sm">
+                                        <Clock className="h-3 w-3" strokeWidth={2.5} /> Bayar dalam {countdownLabel}
+                                      </span>
                                     )}
                                   </div>
                                   <div className="px-2 pb-2 pt-4">

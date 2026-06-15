@@ -114,6 +114,31 @@ export async function POST(req: NextRequest) {
       await activateLmsSubscription(id);
     }
 
+    // 2c. [REGISTRATION] enrollment-server-flow-v1 — invoice dari /api/enroll
+    //     punya external_id `LINGUO-REG-<registration_id>-<ts>`. Rekonsiliasi
+    //     balik ke baris registrations. Non-fatal (invoice lain → no match).
+    const regMatch = /^LINGUO-REG-([0-9a-fA-F-]{36})-/.exec(external_id || "");
+    if (regMatch) {
+      const regId = regMatch[1];
+      const regUpdate: Record<string, unknown> =
+        status === "PAID"
+          ? { status: "Aktif", payment_status: "Lunas" }
+          : { payment_status: status }; // EXPIRED / dll
+      try {
+        await fetch(`${SUPABASE_URL}/rest/v1/registrations?id=eq.${regId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+          },
+          body: JSON.stringify(regUpdate),
+        });
+      } catch (e) {
+        console.error("Webhook registration update error (non-fatal):", e);
+      }
+    }
+
     // 3. TODO: Send confirmation email (Resend) — next session
 
     return NextResponse.json({ success: true });
