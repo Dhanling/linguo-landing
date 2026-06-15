@@ -1598,6 +1598,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     }
   };
 
+  // [enroll-async-invoice-v1] "Bayar Otomatis (Xendit)" — TIDAK lagi nunggu invoice
+  // Xendit (yang lambat ±1-3 dtk) sebelum redirect. /api/enroll balikin sukses
+  // seketika setelah INSERT registrations; invoice dibuat di background & url-nya
+  // di-PATCH ke baris reg async. Di sini cukup tampilin kartu pending di Kelas Live
+  // & tutup modal — user lanjut bayar lewat tombol "Lanjutkan Pembayaran" di kartu.
   const handleXenditCheckout = async () => {
     try {
       const res = await fetch("/api/enroll", {
@@ -1606,12 +1611,24 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
         body: JSON.stringify(buildEnrollPayload(true)),
       });
       const data = await res.json();
-      if (data?.invoice_url) {
-        window.location.href = data.invoice_url;
+      if (!res.ok || !data?.registration?.id) {
+        console.error("Enroll/Xendit error:", data);
+        alert(data?.error ? `Gagal: ${data.error}` : "Gagal menyimpan pendaftaran. Silakan coba lagi atau hubungi admin via WA.");
         return;
       }
-      console.error("Enroll/Xendit error:", data);
-      alert(data?.error ? `Gagal: ${data.error}` : "Gagal membuat invoice. Silakan coba lagi atau hubungi admin via WA.");
+      const newReg = data.registration;
+
+      // Student state mock/belum ada → reload biar fetch fresh.
+      if (!student || student.id === "pending" || !student.id) {
+        try { localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`); } catch {}
+        window.location.reload();
+        return;
+      }
+
+      // Tampilin kartu pending di Kelas Live seketika (invoice_url menyusul async).
+      setStudent((s: any) => (s ? { ...s, registrations: [...s.registrations, newReg] } : s));
+      setShowEnroll(false);
+      setEnrollStep(0);
     } catch (e) {
       console.error("Xendit checkout error:", e);
       alert("Terjadi kesalahan koneksi. Silakan coba lagi atau hubungi admin via WA.");

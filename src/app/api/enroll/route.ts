@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 
 // ── enrollment-server-flow-v1 ────────────────────────────────────────────
 // Pendaftaran "Daftar Kelas Baru" (akun dashboard) dipindah ke server route.
@@ -9,6 +9,14 @@ import { NextRequest, NextResponse } from "next/server";
 //
 // external_id invoice = `LINGUO-REG-<registration_id>-<ts>` → dipakai
 // /api/xendit-webhook buat rekonsiliasi balik ke baris registrations saat PAID.
+//
+// [enroll-async-invoice-v1] Pembuatan invoice Xendit (lambat ±1-3 dtk) TIDAK
+// di-await di jalur response. Begitu INSERT registrations sukses, route langsung
+// balikin { registration, registrationId } biar client bisa nutup modal & nampilin
+// kartu pending seketika (tanpa spinner). Invoice Xendit + lead CRM dikerjain di
+// background via `after()` (tetap jalan setelah response terkirim), lalu URL invoice
+// di-PATCH ke baris registrations secara async. PaymentCard ("Lanjutkan Pembayaran")
+// yang nantinya redirect ke invoice_url begitu kolomnya terisi.
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -20,6 +28,88 @@ const sbHeaders = {
   apikey: SUPABASE_KEY,
   Authorization: `Bearer ${SUPABASE_KEY}`,
 };
+
+// [enroll-async-invoice-v1] Catat CRM lead. Non-fatal — dipanggil di background.
+async function captureLead(p: {
+  email: string; name?: string; wa_number?: string | null;
+  product: string; language?: string | null; level?: string | null; amount?: number;
+}): Promise<void> {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      method: "POST",
+      headers: sbHeaders,
+      body: JSON.stringify({
+        name: p.name || p.email,
+        email: p.email,
+        wa_number: p.wa_number || null,
+        program: p.product,
+        language: p.language || null,
+        level: p.level || null,
+        source: "self-register",
+        amount: p.amount || 0,
+      }),
+    });
+  } catch (e) {
+    console.warn("enroll: lead insert threw (non-fatal):", e);
+  }
+}
+
+// [enroll-async-invoice-v1] Buat invoice Xendit lalu PATCH url-nya ke registrations.
+// Dijalanin di background (after) — gagal di sini tidak mempengaruhi response client;
+// user tetap bisa retry lewat tombol "Lanjutkan Pembayaran" (regenerate invoice).
+async function createXenditInvoiceAndSave(p: {
+  registrationId: string; email: string; name?: string; wa_number?: string | null;
+  product: string; language?: string | null; duration?: string | null; amount?: number;
+}): Promise<void> {
+  try {
+    const externalId = `LINGUO-REG-${p.registrationId}-${Date.now()}`;
+    const desc = `${p.product}${p.language ? ` — ${p.language}` : ""}${p.duration ? ` (${p.duration} min/sesi)` : ""}`;
+    const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${Buffer.from(XENDIT_SECRET_KEY + ":").toString("base64")}`,
+      },
+      body: JSON.stringify({
+        external_id: externalId,
+        amount: p.amount || 0,
+        payer_email: p.email,
+        description: desc,
+        currency: "IDR",
+        invoice_duration: 86400, // 24 jam
+        should_send_email: true,
+        customer_notification_preference: {
+          invoice_created: ["email", "whatsapp"],
+          invoice_reminder: ["email", "whatsapp"],
+          invoice_paid: ["email", "whatsapp"],
+        },
+        customer: {
+          given_names: p.name || p.email,
+          email: p.email,
+          ...(p.wa_number ? { mobile_number: p.wa_number.startsWith("+") ? p.wa_number : `+62${p.wa_number.replace(/^0/, "")}` } : {}),
+        },
+        success_redirect_url: `${BASE_URL}/akun/success`,
+        failure_redirect_url: `${BASE_URL}/akun?xendit_failed=1`,
+        items: [{ name: desc, quantity: 1, price: p.amount || 0 }],
+      }),
+    });
+
+    if (!xenditRes.ok) {
+      console.error("enroll(bg): Xendit error:", await xenditRes.text());
+      return;
+    }
+    const invoice = await xenditRes.json();
+
+    await fetch(`${SUPABASE_URL}/rest/v1/registrations?id=eq.${p.registrationId}`, {
+      method: "PATCH",
+      headers: sbHeaders,
+      body: JSON.stringify({ xendit_invoice_url: invoice.invoice_url }),
+    });
+    console.log(`enroll(bg): invoice ready for ${p.registrationId}`);
+  } catch (e) {
+    console.error("enroll(bg): createXenditInvoiceAndSave threw (non-fatal):", e);
+  }
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -127,88 +217,28 @@ export async function POST(req: NextRequest) {
     const regRows = await regRes.json();
     const registration = Array.isArray(regRows) ? regRows[0] : regRows;
 
-    // 2b. Catat CRM lead (non-fatal). Tabel leads ga punya kolom notes → note
-    //     dititipkan di `source`.
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-        method: "POST",
-        headers: sbHeaders,
-        body: JSON.stringify({
-          name: name || email,
-          email,
-          wa_number: wa_number || null,
-          program: product,
-          language: language || null,
-          level: level || null,
-          source: "self-register",
-          amount: amount || 0,
-        }),
-      });
-    } catch (e) {
-      console.warn("enroll: lead insert threw (non-fatal):", e);
-    }
-
-    // 3. Kalau ga minta invoice (jalur WA / simpan dulu) → selesai.
-    if (!with_invoice) {
-      return NextResponse.json({ registration });
-    }
-
-    // 4. Buat invoice Xendit (server-side secret key).
-    const externalId = `LINGUO-REG-${registration.id}-${Date.now()}`;
-    const desc = `${product}${language ? ` — ${language}` : ""}${duration ? ` (${duration} min/sesi)` : ""}`;
-    const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${Buffer.from(XENDIT_SECRET_KEY + ":").toString("base64")}`,
-      },
-      body: JSON.stringify({
-        external_id: externalId,
-        amount: amount || 0,
-        payer_email: email,
-        description: desc,
-        currency: "IDR",
-        invoice_duration: 86400, // 24 jam
-        should_send_email: true,
-        customer_notification_preference: {
-          invoice_created: ["email", "whatsapp"],
-          invoice_reminder: ["email", "whatsapp"],
-          invoice_paid: ["email", "whatsapp"],
-        },
-        customer: {
-          given_names: name || email,
-          email,
-          ...(wa_number ? { mobile_number: wa_number.startsWith("+") ? wa_number : `+62${wa_number.replace(/^0/, "")}` } : {}),
-        },
-        success_redirect_url: `${BASE_URL}/akun/success`,
-        failure_redirect_url: `${BASE_URL}/akun?xendit_failed=1`,
-        items: [{ name: desc, quantity: 1, price: amount || 0 }],
-      }),
+    // 3. [enroll-async-invoice-v1] Kerjaan lambat (lead CRM + invoice Xendit)
+    //    dipindah ke background lewat `after()` — jalan SETELAH response terkirim,
+    //    jadi client dapat balasan seketika (tanpa nunggu Xendit ±1-3 dtk).
+    after(async () => {
+      // Lead CRM (non-fatal). Tabel leads ga punya kolom notes → note di `source`.
+      await captureLead({ email, name, wa_number, product, language, level, amount });
+      // Invoice Xendit hanya kalau diminta (jalur "Bayar Otomatis"). Url di-PATCH
+      // ke baris registrations begitu jadi; PaymentCard yang redirect-in.
+      if (with_invoice) {
+        await createXenditInvoiceAndSave({
+          registrationId: registration.id, email, name, wa_number, product, language, duration, amount,
+        });
+      }
     });
 
-    if (!xenditRes.ok) {
-      const err = await xenditRes.text();
-      console.error("enroll: Xendit error:", err);
-      let xfDetail = err;
-      try { const xj = JSON.parse(err); xfDetail = xj.message || xj.error_code || err; } catch {}
-      // registration tetap ada (status Menunggu Pembayaran) — user bisa retry / bayar manual.
-      return NextResponse.json({ registration, error: `Gagal membuat invoice: ${xfDetail}` }, { status: 502 });
-    }
-
-    const invoice = await xenditRes.json();
-
-    // 5. Simpan invoice url + external id ke registration.
-    await fetch(`${SUPABASE_URL}/rest/v1/registrations?id=eq.${registration.id}`, {
-      method: "PATCH",
-      headers: sbHeaders,
-      body: JSON.stringify({ xendit_invoice_url: invoice.invoice_url }),
-    });
-
+    // 4. Balikin cepat — client langsung nutup modal & nampilin kartu pending.
+    //    invoice_url menyusul async di kolom xendit_invoice_url.
     return NextResponse.json({
-      registration: { ...registration, xendit_invoice_url: invoice.invoice_url },
-      invoice_url: invoice.invoice_url,
-      invoice_id: invoice.id,
-      external_id: externalId,
+      success: true,
+      registration,
+      registrationId: registration.id,
+      invoice_pending: !!with_invoice, // true → url Xendit lagi disiapin di background
     });
   } catch (error) {
     console.error("enroll route error:", error);

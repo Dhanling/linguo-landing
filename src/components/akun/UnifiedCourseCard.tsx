@@ -6,7 +6,6 @@ import {
   Users,
   Baby,
   ClipboardList,
-  MessageCircle,
   Clock,
   GraduationCap,
   Calendar,
@@ -153,24 +152,12 @@ export default function UnifiedCourseCard({
           </div>
         </div>
 
-        {/* PaymentCard penuh — info bank + upload bukti */}
+        {/* [enroll-remove-manual-transfer-v1] PaymentCard — Xendit (otomatis) + kontak admin via WA.
+            WA fallback sekunder duplikat dihapus (PaymentCard sudah punya link WA sendiri). */}
         {renderPayment && userId && (
-          <div className="mb-3">
+          <div>
             {renderPayment(reg, userId)}
           </div>
-        )}
-
-        {/* WA fallback sekunder */}
-        {userId && (
-          <a
-            href={"https://wa.me/6282116859493?text=Halo%20Linguo%2C%20saya%20mau%20konfirmasi%20pembayaran%20untuk%20kelas%20" + encodeURIComponent(reg.language || reg.product || "")}
-            target="_blank"
-            rel="noopener"
-            className="flex items-center justify-center gap-1.5 w-full py-1.5 rounded-lg border border-teal-200 bg-white hover:bg-teal-50 text-teal-700 text-[11px] font-medium transition-colors"
-          >
-            <MessageCircle className="w-3 h-3" strokeWidth={2.5} />
-            Atau konfirmasi via WhatsApp
-          </a>
         )}
       </motion.div>
     );
