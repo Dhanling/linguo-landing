@@ -42,24 +42,59 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "email & product wajib." }, { status: 400 });
     }
 
-    // 1. Upsert student by email (service role → bypass RLS).
-    const studentRes = await fetch(`${SUPABASE_URL}/rest/v1/students?on_conflict=email`, {
-      method: "POST",
-      headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=representation" },
-      body: JSON.stringify({
-        email,
-        name: name || email,
-        ...(wa_number ? { whatsapp: wa_number } : {}),
-        ...(avatar_url ? { avatar_url } : {}),
-      }),
-    });
-    if (!studentRes.ok) {
-      const err = await studentRes.text();
-      console.error("enroll: student upsert error:", err);
-      return NextResponse.json({ error: `Gagal menyimpan data siswa: ${err}` }, { status: 500 });
+    // 1. Select-or-insert student by email (service role → bypass RLS).
+    //    NB: tabel students TIDAK punya unique constraint di `email`, jadi
+    //    upsert ON CONFLICT=email gagal dgn 42P10. Pakai SELECT dulu, baru
+    //    INSERT kalau belum ada. Update data (nama/wa/avatar) saat sudah ada
+    //    biar tetap fresh tanpa butuh constraint.
+    let studentId: string | undefined;
+    const findRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/students?email=eq.${encodeURIComponent(email)}&select=id&limit=1`,
+      { headers: sbHeaders }
+    );
+    if (!findRes.ok) {
+      const err = await findRes.text();
+      console.error("enroll: student lookup error:", err);
+      return NextResponse.json({ error: `Gagal mencari data siswa: ${err}` }, { status: 500 });
     }
-    const studentRows = await studentRes.json();
-    const studentId = Array.isArray(studentRows) ? studentRows[0]?.id : studentRows?.id;
+    const foundRows = await findRes.json();
+    studentId = Array.isArray(foundRows) ? foundRows[0]?.id : undefined;
+
+    if (studentId) {
+      // Sudah ada — refresh nama/wa/avatar (non-fatal kalau gagal).
+      try {
+        await fetch(`${SUPABASE_URL}/rest/v1/students?id=eq.${studentId}`, {
+          method: "PATCH",
+          headers: sbHeaders,
+          body: JSON.stringify({
+            name: name || email,
+            ...(wa_number ? { whatsapp: wa_number } : {}),
+            ...(avatar_url ? { avatar_url } : {}),
+          }),
+        });
+      } catch (e) {
+        console.warn("enroll: student update threw (non-fatal):", e);
+      }
+    } else {
+      // Belum ada — INSERT & ambil id baru.
+      const insRes = await fetch(`${SUPABASE_URL}/rest/v1/students`, {
+        method: "POST",
+        headers: { ...sbHeaders, Prefer: "return=representation" },
+        body: JSON.stringify({
+          email,
+          name: name || email,
+          ...(wa_number ? { whatsapp: wa_number } : {}),
+          ...(avatar_url ? { avatar_url } : {}),
+        }),
+      });
+      if (!insRes.ok) {
+        const err = await insRes.text();
+        console.error("enroll: student insert error:", err);
+        return NextResponse.json({ error: `Gagal menyimpan data siswa: ${err}` }, { status: 500 });
+      }
+      const insRows = await insRes.json();
+      studentId = Array.isArray(insRows) ? insRows[0]?.id : insRows?.id;
+    }
     if (!studentId) {
       return NextResponse.json({ error: "Gagal membaca id siswa." }, { status: 500 });
     }
