@@ -1417,6 +1417,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   const [loadingBatches, setLoadingBatches] = useState(false);
   // [linguo-patch:reguler-terms-v1] persetujuan ketentuan Kelas Reguler (gate tombol bayar)
   const [agreeReguler, setAgreeReguler] = useState(false);
+  // [enroll-exit-confirm-v1] konfirmasi sebelum keluar (click backdrop / tombol ✕)
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   // Fetch open batches when Reguler program + language selected
   useEffect(() => {
@@ -1450,6 +1452,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   }, [enrollProgram, enrollLang, showEnroll, supabase]);
   // [linguo-patch:reguler-terms-v1] reset checkbox tiap ganti pilihan / buka-tutup modal
   useEffect(() => { setAgreeReguler(false); }, [enrollProgram, enrollLang, showEnroll]);
+  // [enroll-exit-confirm-v1] reset dialog konfirmasi tiap buka-tutup modal
+  useEffect(() => { setShowExitConfirm(false); }, [showEnroll]);
 
   if (!showEnroll) return null;
 
@@ -1635,7 +1639,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4" onClick={() => setShowEnroll(false)}>
+    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/60 p-0 sm:p-4" onClick={() => setShowExitConfirm(true)}>
       <motion.div
         initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 40 }}
         className="bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl w-full sm:max-w-md max-h-[92vh] overflow-hidden flex flex-col"
@@ -1647,7 +1651,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             <h2 className="text-lg font-bold text-gray-900">Daftar Kelas Baru</h2>
             <p className="text-xs text-gray-400">Step {enrollStep + 1} dari {TOTAL_STEPS}</p>
           </div>
-          <button onClick={() => setShowEnroll(false)} className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200">✕</button>
+          <button onClick={() => setShowExitConfirm(true)} className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200">✕</button>
         </div>
 
         {/* Progress */}
@@ -1685,6 +1689,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
               <motion.div key="s1" initial={{ opacity:0,x:20 }} animate={{ opacity:1,x:0 }} exit={{ opacity:0,x:-20 }} className="space-y-3">
                 <p className="text-sm font-semibold text-gray-700">Pilih bahasa:</p>
                 <input type="text" placeholder="Cari bahasa..." value={langSearch} onChange={e => setLangSearch(e.target.value)} autoFocus
+                  onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}
                   className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400" />
                 <div className="grid grid-cols-3 gap-2">
                   {enrollAvailLangs.map(lang => (
@@ -1933,6 +1938,36 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
           </div>
         )}
       </motion.div>
+
+      {/* [enroll-exit-confirm-v1] Konfirmasi keluar — backdrop & tombol ✕ ga langsung nutup */}
+      {showExitConfirm && (
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/40 p-4"
+          onClick={(e) => { e.stopPropagation(); setShowExitConfirm(false); }}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-xs p-5 text-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-base font-bold text-gray-900">Batalkan pendaftaran?</h3>
+            <p className="mt-1.5 text-sm text-gray-500">Progres kamu akan hilang jika keluar sekarang.</p>
+            <div className="mt-5 space-y-2">
+              <button
+                onClick={() => setShowExitConfirm(false)}
+                className="w-full h-11 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors"
+              >
+                Lanjutkan Daftar
+              </button>
+              <button
+                onClick={() => { setShowExitConfirm(false); setShowEnroll(false); }}
+                className="w-full h-11 rounded-xl border border-red-200 text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors"
+              >
+                Keluar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
