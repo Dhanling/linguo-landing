@@ -8,7 +8,7 @@ import {
   Video, Users, Repeat,
   Smile, Ban, Baby, Backpack,
   GraduationCap, Award, Link2, AlertCircle,
-  X, Loader2, CheckCircle2,
+  X, Loader2, CheckCircle2, Search, Check, ChevronDown,
 } from "lucide-react";
 
 const WA = "https://wa.me/6282130113243";
@@ -37,11 +37,30 @@ const STEPS = [
 ];
 
 const LANG_REGION_ORDER = ["european", "asian", "middle-eastern", "nusantara", "african", "other"] as const;
-const LANGS_BY_REGION = LANG_REGION_ORDER.map(region => ({
-  region,
-  label: regionLabels[region],
-  items: languages.filter(l => l.region === region).sort((a, b) => a.name.localeCompare(b.name, "id")),
-})).filter(g => g.items.length > 0);
+
+type PickerLang = { slug: string; name: string; flag: string; nativeName?: string };
+
+// Bahasa isyarat — bukan bagian dari katalog `languages`, jadi didefinisikan terpisah.
+const SIGN_LANGUAGES: PickerLang[] = [
+  { slug: "bisindo", name: "BISINDO", flag: "🤟", nativeName: "Bahasa Isyarat Indonesia" },
+  { slug: "asl", name: "ASL", flag: "🤟", nativeName: "American Sign Language" },
+  { slug: "sign-both", name: "Keduanya (BISINDO & ASL)", flag: "🤟" },
+];
+
+const LANG_GROUPS: { region: string; label: string; items: PickerLang[] }[] = [
+  ...LANG_REGION_ORDER.map(region => ({
+    region,
+    label: regionLabels[region],
+    items: languages
+      .filter(l => l.region === region)
+      .sort((a, b) => a.name.localeCompare(b.name, "id"))
+      .map(l => ({ slug: l.slug, name: l.name, flag: l.flag, nativeName: l.nativeName })),
+  })).filter(g => g.items.length > 0),
+  { region: "sign", label: "Bahasa Isyarat", items: SIGN_LANGUAGES },
+];
+
+const findLangMeta = (slug: string): PickerLang | null =>
+  LANG_GROUPS.flatMap(g => g.items).find(l => l.slug === slug) ?? null;
 
 const LEVEL_OPTIONS = [
   { value: "A1", label: "A1 (Pemula)" },
@@ -53,7 +72,88 @@ const LEVEL_OPTIONS = [
   { value: "Native", label: "Native Speaker" },
 ];
 
-const langNameBySlug = (slug: string) => languages.find(l => l.slug === slug)?.name ?? slug;
+const langNameBySlug = (slug: string) => findLangMeta(slug)?.name ?? slug;
+
+// ---- Language picker modal (search + grouped per region) ----
+function LangPicker({ value, usedLangs, onSelect }: {
+  value: string;
+  usedLangs: string[];
+  onSelect: (slug: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [q, setQ] = useState("");
+  const selected = value ? findLangMeta(value) : null;
+  const close = () => { setOpen(false); setQ(""); };
+
+  const norm = q.trim().toLowerCase();
+  const groups = LANG_GROUPS.map(g => ({
+    ...g,
+    items: g.items.filter(l =>
+      !norm ||
+      l.name.toLowerCase().includes(norm) ||
+      (l.nativeName?.toLowerCase().includes(norm) ?? false)
+    ),
+  })).filter(g => g.items.length > 0);
+
+  return (
+    <>
+      <button type="button" onClick={() => setOpen(true)}
+        className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm text-left focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white flex items-center justify-between gap-2">
+        <span className={selected ? "truncate" : "text-slate-400"}>
+          {selected ? `${selected.flag} ${selected.name}` : "Pilih bahasa..."}
+        </span>
+        <ChevronDown className="h-4 w-4 text-slate-400 flex-shrink-0" />
+      </button>
+
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
+          <div className="absolute inset-0 bg-black/40" onClick={close} />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }}
+            className="relative bg-white w-full sm:max-w-md sm:rounded-2xl rounded-t-2xl shadow-xl max-h-[80vh] flex flex-col">
+            <div className="p-4 border-b border-slate-100">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-bold text-base">Pilih Bahasa</h3>
+                <button type="button" onClick={close} aria-label="Tutup"
+                  className="h-8 w-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100 transition-colors">
+                  <X size={18} />
+                </button>
+              </div>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                <input autoFocus value={q} onChange={e => setQ(e.target.value)}
+                  placeholder="Cari bahasa..."
+                  className="w-full border-2 border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
+              </div>
+            </div>
+            <div className="overflow-y-auto p-2">
+              {groups.length === 0 ? (
+                <p className="text-center text-sm text-slate-400 py-10">Bahasa tidak ditemukan</p>
+              ) : groups.map(g => (
+                <div key={g.region} className="mb-2">
+                  <p className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-slate-400">{g.label}</p>
+                  {g.items.map(l => {
+                    const isSel = l.slug === value;
+                    const used = !isSel && usedLangs.includes(l.slug);
+                    return (
+                      <button key={l.slug} type="button" disabled={used}
+                        onClick={() => { onSelect(l.slug); close(); }}
+                        className={`w-full text-left px-3 py-2.5 rounded-lg text-sm flex items-center justify-between gap-2 transition-colors ${used ? "opacity-40 cursor-not-allowed" : "hover:bg-[#1A9E9E]/5"} ${isSel ? "bg-[#1A9E9E]/10 text-[#1A9E9E] font-semibold" : ""}`}>
+                        <span className="truncate">{l.flag} {l.name}</span>
+                        {isSel && <Check className="h-4 w-4 flex-shrink-0" />}
+                        {used && <span className="text-[10px] text-slate-400 flex-shrink-0">dipakai</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </>
+  );
+}
 
 // ---- Dup detection helpers ----
 type DupStatus = "idle" | "checking" | "ok" | "blocking";
@@ -661,19 +761,11 @@ export default function JadiPengajarPage() {
                               <label className="text-[10px] font-semibold text-slate-400 mb-1 block uppercase tracking-wide">
                                 Bahasa #{idx + 1}{idx === 0 ? " (paling mahir)" : ""}
                               </label>
-                              <select value={skill.lang} onChange={e => updateLangSlot(idx, "lang", e.target.value)}
-                                className="w-full border-2 border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors bg-white">
-                                <option value="">Pilih bahasa...</option>
-                                {LANGS_BY_REGION.map(group => (
-                                  <optgroup key={group.region} label={group.label}>
-                                    {group.items.map(l => (
-                                      <option key={l.slug} value={l.slug} disabled={usedLangs.includes(l.slug)}>
-                                        {l.flag} {l.name}
-                                      </option>
-                                    ))}
-                                  </optgroup>
-                                ))}
-                              </select>
+                              <LangPicker
+                                value={skill.lang}
+                                usedLangs={usedLangs}
+                                onSelect={slug => updateLangSlot(idx, "lang", slug)}
+                              />
                             </div>
                             <div>
                               <label className="text-[10px] font-semibold text-slate-400 mb-1 block uppercase tracking-wide">Level</label>
