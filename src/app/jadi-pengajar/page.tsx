@@ -8,7 +8,7 @@ import {
   Video, Users, Repeat,
   Smile, Ban, Baby, Backpack,
   GraduationCap, Award, Link2, AlertCircle,
-  X, Loader2, CheckCircle2, Search, Check, ChevronDown,
+  X, Loader2, CheckCircle2, Search, Check, ChevronDown, ChevronLeft, ChevronRight,
 } from "lucide-react";
 
 const WA = "https://wa.me/6282130113243";
@@ -47,6 +47,11 @@ const SIGN_LANGUAGES: PickerLang[] = [
   { slug: "sign-both", name: "Keduanya (BISINDO & ASL)", flag: "🤟" },
 ];
 
+// Slug penanda "induk" bahasa isyarat di list utama — bukan nilai yang disimpan,
+// klik item ini akan membuka sub-pilihan (BISINDO / ASL / Keduanya).
+const SIGN_PARENT_SLUG = "__sign__";
+const SIGN_PARENT: PickerLang = { slug: SIGN_PARENT_SLUG, name: "Bahasa Isyarat", flag: "🤟" };
+
 const LANG_GROUPS: { region: string; label: string; items: PickerLang[] }[] = [
   ...LANG_REGION_ORDER.map(region => ({
     region,
@@ -56,11 +61,15 @@ const LANG_GROUPS: { region: string; label: string; items: PickerLang[] }[] = [
       .sort((a, b) => a.name.localeCompare(b.name, "id"))
       .map(l => ({ slug: l.slug, name: l.name, flag: l.flag, nativeName: l.nativeName })),
   })).filter(g => g.items.length > 0),
-  { region: "sign", label: "Bahasa Isyarat", items: SIGN_LANGUAGES },
+  // Di list utama bahasa isyarat tampil sebagai SATU item, bukan 3.
+  { region: "sign", label: "Bahasa Isyarat", items: [SIGN_PARENT] },
 ];
 
+// Resolusi nama: cari di katalog utama + 3 opsi bahasa isyarat yang sebenarnya.
 const findLangMeta = (slug: string): PickerLang | null =>
-  LANG_GROUPS.flatMap(g => g.items).find(l => l.slug === slug) ?? null;
+  LANG_GROUPS.flatMap(g => g.items).find(l => l.slug === slug)
+  ?? SIGN_LANGUAGES.find(l => l.slug === slug)
+  ?? null;
 
 const LEVEL_OPTIONS = [
   { value: "A1", label: "A1 (Pemula)" },
@@ -82,18 +91,22 @@ function LangPicker({ value, usedLangs, onSelect }: {
 }) {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
+  const [showSignSub, setShowSignSub] = useState(false);
   const selected = value ? findLangMeta(value) : null;
-  const close = () => { setOpen(false); setQ(""); };
+  const close = () => { setOpen(false); setQ(""); setShowSignSub(false); };
 
   const norm = q.trim().toLowerCase();
+  const matches = (l: PickerLang) =>
+    !norm ||
+    l.name.toLowerCase().includes(norm) ||
+    (l.nativeName?.toLowerCase().includes(norm) ?? false);
+
   const groups = LANG_GROUPS.map(g => ({
     ...g,
-    items: g.items.filter(l =>
-      !norm ||
-      l.name.toLowerCase().includes(norm) ||
-      (l.nativeName?.toLowerCase().includes(norm) ?? false)
-    ),
+    items: g.items.filter(matches),
   })).filter(g => g.items.length > 0);
+
+  const signOptions = SIGN_LANGUAGES.filter(matches);
 
   return (
     <>
@@ -113,35 +126,74 @@ function LangPicker({ value, usedLangs, onSelect }: {
             className="relative bg-white w-full sm:max-w-md sm:rounded-2xl rounded-t-2xl shadow-xl max-h-[80vh] flex flex-col">
             <div className="p-4 border-b border-slate-100">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-bold text-base">Pilih Bahasa</h3>
+                <div className="flex items-center gap-1.5 min-w-0">
+                  {showSignSub && (
+                    <button type="button" onClick={() => setShowSignSub(false)} aria-label="Kembali"
+                      className="h-8 w-8 flex-shrink-0 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 transition-colors">
+                      <ChevronLeft size={18} />
+                    </button>
+                  )}
+                  <h3 className="font-bold text-base truncate">{showSignSub ? "Bahasa Isyarat" : "Pilih Bahasa"}</h3>
+                </div>
                 <button type="button" onClick={close} aria-label="Tutup"
-                  className="h-8 w-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100 transition-colors">
+                  className="h-8 w-8 flex-shrink-0 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100 transition-colors">
                   <X size={18} />
                 </button>
               </div>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input autoFocus value={q} onChange={e => setQ(e.target.value)}
-                  placeholder="Cari bahasa..."
+                  placeholder={showSignSub ? "Cari jenis bahasa isyarat..." : "Cari bahasa..."}
                   className="w-full border-2 border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-sm focus:outline-none focus:border-[#1A9E9E] transition-colors" />
               </div>
             </div>
             <div className="overflow-y-auto p-2">
-              {groups.length === 0 ? (
+              {showSignSub ? (
+                signOptions.length === 0 ? (
+                  <p className="text-center text-sm text-slate-400 py-10">Tidak ditemukan</p>
+                ) : signOptions.map(l => {
+                  const isSel = l.slug === value;
+                  const used = !isSel && usedLangs.includes(l.slug);
+                  return (
+                    <button key={l.slug} type="button" disabled={used}
+                      onClick={() => { onSelect(l.slug); close(); }}
+                      className={`w-full text-left px-3 py-2.5 rounded-lg text-sm flex items-center justify-between gap-2 transition-colors ${used ? "opacity-40 cursor-not-allowed" : "hover:bg-[#1A9E9E]/5"} ${isSel ? "bg-[#1A9E9E]/10 text-[#1A9E9E] font-semibold" : ""}`}>
+                      <span className="truncate">{l.flag} {l.name}</span>
+                      {isSel && <Check className="h-4 w-4 flex-shrink-0" />}
+                      {used && <span className="text-[10px] text-slate-400 flex-shrink-0">dipakai</span>}
+                    </button>
+                  );
+                })
+              ) : groups.length === 0 ? (
                 <p className="text-center text-sm text-slate-400 py-10">Bahasa tidak ditemukan</p>
               ) : groups.map(g => (
                 <div key={g.region} className="mb-2">
                   <p className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-slate-400">{g.label}</p>
                   {g.items.map(l => {
-                    const isSel = l.slug === value;
-                    const used = !isSel && usedLangs.includes(l.slug);
+                    const isSignParent = l.slug === SIGN_PARENT_SLUG;
+                    // Item bahasa isyarat terpilih bila value adalah salah satu dari 3 opsi.
+                    const isSel = isSignParent
+                      ? SIGN_LANGUAGES.some(s => s.slug === value)
+                      : l.slug === value;
+                    const used = !isSel && !isSignParent && usedLangs.includes(l.slug);
+                    const onClick = isSignParent
+                      ? () => { setShowSignSub(true); setQ(""); }
+                      : () => { onSelect(l.slug); close(); };
                     return (
-                      <button key={l.slug} type="button" disabled={used}
-                        onClick={() => { onSelect(l.slug); close(); }}
+                      <button key={l.slug} type="button" disabled={used} onClick={onClick}
                         className={`w-full text-left px-3 py-2.5 rounded-lg text-sm flex items-center justify-between gap-2 transition-colors ${used ? "opacity-40 cursor-not-allowed" : "hover:bg-[#1A9E9E]/5"} ${isSel ? "bg-[#1A9E9E]/10 text-[#1A9E9E] font-semibold" : ""}`}>
-                        <span className="truncate">{l.flag} {l.name}</span>
-                        {isSel && <Check className="h-4 w-4 flex-shrink-0" />}
-                        {used && <span className="text-[10px] text-slate-400 flex-shrink-0">dipakai</span>}
+                        <span className="truncate">
+                          {l.flag} {l.name}
+                          {isSignParent && isSel && (
+                            <span className="font-normal text-[#1A9E9E]/70"> · {findLangMeta(value)?.name}</span>
+                          )}
+                        </span>
+                        {isSignParent
+                          ? <ChevronRight className="h-4 w-4 flex-shrink-0 text-slate-400" />
+                          : <>
+                              {isSel && <Check className="h-4 w-4 flex-shrink-0" />}
+                              {used && <span className="text-[10px] text-slate-400 flex-shrink-0">dipakai</span>}
+                            </>}
                       </button>
                     );
                   })}
