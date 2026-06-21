@@ -2265,7 +2265,7 @@ export default function Home() {
             { src: "/images/clients/orica.png", alt: "Orica", w: 123, h: 120 },
             { src: "/images/clients/mondelez.png", alt: "Mondelez", w: 1982, h: 474 },
             { src: "/images/clients/alfamart.png", alt: "Alfamart", w: 750, h: 240 },
-            { src: "/images/clients/dua-kelinci.png", alt: "Dua Kelinci", w: 494, h: 300 },
+            { src: "/images/clients/dua-kelinci-v2.png", alt: "Dua Kelinci", w: 494, h: 300 },
           ].map((logo, i) => (
             // Marquee repeats the list 3× for the infinite scroll; only the first
             // copy is exposed to assistive tech, the rest are decorative duplicates.
