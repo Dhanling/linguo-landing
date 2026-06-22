@@ -861,12 +861,18 @@ const FLAG_CODES: Record<string,string> = {
 };
 function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 
-// Bendera rounded-rectangle (blade-flags, varian default). Aspect ratio asli
-// dijaga: cukup set tinggi via className (mis. "h-6"), lebar mengikuti otomatis.
-function RectFlag({code,className=""}:{code:string;className?:string}){
+// Bendera rounded-rectangle (blade-flags, varian default). SVG inline tanpa
+// width/height bawaan -> defaultnya ~150px & bikin layout berantakan. Jadi kita
+// hitung dimensi eksplisit dari viewBox (aspect ratio asli dijaga) dan set ke
+// SVG + wrapper. Tinggi diatur lewat prop `h` (px).
+function RectFlag({code,h=24,className=""}:{code:string;h?:number;className?:string}){
   const svg=resolveFlag(defaultFlags,code,"country");
-  if(!svg) return <span aria-hidden className={`inline-flex items-center justify-center ${className}`}>🌐</span>;
-  return <span aria-hidden className={`inline-flex items-center justify-center overflow-hidden rounded-[4px] shrink-0 [&>svg]:h-full [&>svg]:w-auto [&>svg]:block ${className}`} dangerouslySetInnerHTML={{__html:svg}}/>;
+  if(!svg) return <span aria-hidden style={{height:h,width:h}} className={`inline-flex items-center justify-center ${className}`}>🌐</span>;
+  const m=svg.match(/viewBox="([\d.\s-]+)"/);
+  let w=Math.round(h*36/26);
+  if(m){const p=m[1].trim().split(/\s+/).map(Number);if(p.length===4&&p[3])w=Math.round(h*p[2]/p[3]);}
+  const sized=svg.replace(/<svg /,`<svg width="${w}" height="${h}" preserveAspectRatio="xMidYMid meet" style="display:block" `);
+  return <span aria-hidden style={{height:h,width:w}} className={`inline-flex overflow-hidden rounded-[4px] shrink-0 ${className}`} dangerouslySetInnerHTML={{__html:sized}}/>;
 }
 
 function TypingBubble({size="lg"}:{size?:"sm"|"lg"}={}) {
@@ -1347,7 +1353,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   {filtered.map(l=>(
                     <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
-                      <RectFlag code={getFlagCode(l)} className="h-6"/>
+                      <RectFlag code={getFlagCode(l)} h={24}/>
                       {l}
                     </button>
                   ))}
@@ -1361,7 +1367,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s2" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
               <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
               <div className="flex items-center gap-2 mb-4">
-                <RectFlag code={getFlagCode(selLang)} className="h-6"/>
+                <RectFlag code={getFlagCode(selLang)} h={24}/>
                 <span className="font-bold">{selLang}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
@@ -1392,7 +1398,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s2b" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
+                <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">Kelas Private</span>
@@ -1448,7 +1454,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
               <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
+                <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
@@ -1491,7 +1497,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s3sp" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setStep(initialProgram ? 1 : 2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← {initialProgram ? "Ganti bahasa" : "Ganti program"}</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
+                <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">🤝 Semi Private</span>
@@ -1546,7 +1552,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
-                <RectFlag code={getFlagCode(selLang)} className="h-4"/>
+                <RectFlag code={getFlagCode(selLang)} h={16}/>
                 <span className="font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
@@ -1629,7 +1635,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Bahasa</span>
                   <span className="text-sm font-medium flex items-center gap-2">
-                    <RectFlag code={getFlagCode(selLang)} className="h-4"/>{selLang}
+                    <RectFlag code={getFlagCode(selLang)} h={16}/>{selLang}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -2048,7 +2054,7 @@ function LanguageStrip({className=""}:{className?:string}) {
           <div key={i}
             onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
             className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
-            <RectFlag code={getFlagCode(lang)} className="h-7 shadow-sm" />
+            <RectFlag code={getFlagCode(lang)} h={28} className="shadow-sm" />
             <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
           </div>
         ))}
