@@ -14,7 +14,7 @@ const GREETING =
 const CHIPS = [
   "Lihat harga kelas",
   "Jadwal kelas reguler",
-  "Coba trial gratis",
+  "Daftar kelas trial",
   "Bahasa apa aja?",
 ];
 
