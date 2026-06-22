@@ -5,6 +5,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
+import { resolveFlag } from "@blade-flags/core";
+import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1
 
@@ -859,6 +861,14 @@ const FLAG_CODES: Record<string,string> = {
 };
 function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 
+// Bendera rounded-rectangle (blade-flags, varian default). Aspect ratio asli
+// dijaga: cukup set tinggi via className (mis. "h-6"), lebar mengikuti otomatis.
+function RectFlag({code,className=""}:{code:string;className?:string}){
+  const svg=resolveFlag(defaultFlags,code,"country");
+  if(!svg) return <span aria-hidden className={`inline-flex items-center justify-center ${className}`}>🌐</span>;
+  return <span aria-hidden className={`inline-flex items-center justify-center overflow-hidden rounded-[4px] shrink-0 [&>svg]:h-full [&>svg]:w-auto [&>svg]:block ${className}`} dangerouslySetInnerHTML={{__html:svg}}/>;
+}
+
 function TypingBubble({size="lg"}:{size?:"sm"|"lg"}={}) {
   const [idx, setIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -1337,7 +1347,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   {filtered.map(l=>(
                     <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
-                      <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
+                      <RectFlag code={getFlagCode(l)} className="h-6"/>
                       {l}
                     </button>
                   ))}
@@ -1351,7 +1361,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s2" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
               <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
               <div className="flex items-center gap-2 mb-4">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
+                <RectFlag code={getFlagCode(selLang)} className="h-6"/>
                 <span className="font-bold">{selLang}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
@@ -1382,7 +1392,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s2b" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">Kelas Private</span>
@@ -1438,7 +1448,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
               <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
@@ -1481,7 +1491,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s3sp" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setStep(initialProgram ? 1 : 2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← {initialProgram ? "Ganti bahasa" : "Ganti program"}</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
+                <RectFlag code={getFlagCode(selLang)} className="h-5"/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">🤝 Semi Private</span>
@@ -1536,7 +1546,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
-                <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>
+                <RectFlag code={getFlagCode(selLang)} className="h-4"/>
                 <span className="font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
@@ -1619,7 +1629,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Bahasa</span>
                   <span className="text-sm font-medium flex items-center gap-2">
-                    <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>{selLang}
+                    <RectFlag code={getFlagCode(selLang)} className="h-4"/>{selLang}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -2038,7 +2048,7 @@ function LanguageStrip({className=""}:{className?:string}) {
           <div key={i}
             onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
             className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
-            <img src={`https://flagcdn.com/w40/${getFlagCode(lang)}.png`} alt={lang} loading="lazy" decoding="async" className="w-8 h-8 rounded-md object-cover shadow-sm" />
+            <RectFlag code={getFlagCode(lang)} className="h-7 shadow-sm" />
             <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
           </div>
         ))}
