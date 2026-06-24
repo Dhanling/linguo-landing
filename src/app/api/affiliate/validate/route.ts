@@ -24,7 +24,9 @@ export async function GET(req: NextRequest) {
   try {
     const res = await fetch(
       `${SUPABASE_URL}/rest/v1/affiliates` +
-        `?referral_code=eq.${encodeURIComponent(code)}` +
+        // ilike (bukan eq) → pencocokan kode case-insensitive, mis. kode
+        // bermerek "LinguoTroy" tetap kena walau diketik "LINGUOTROY"/"linguotroy".
+        `?referral_code=ilike.${encodeURIComponent(code)}` +
         `&status=eq.active&select=id,name&limit=1`,
       {
         headers: {

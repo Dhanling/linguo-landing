@@ -211,7 +211,10 @@ export async function POST(req: NextRequest) {
     if (refValue) {
       try {
         const affRes = await fetch(
-          `${SUPABASE_URL}/rest/v1/affiliates?referral_code=eq.${encodeURIComponent(
+          // ilike (bukan eq) → pencocokan kode case-insensitive. Cookie
+          // `linguo_ref` di-uppercase oleh middleware, sedangkan kode di DB
+          // bisa bermerek mixed-case (mis. "LinguoTroy") — ilike menjembatani.
+          `${SUPABASE_URL}/rest/v1/affiliates?referral_code=ilike.${encodeURIComponent(
             refValue
           )}&select=id&limit=1`,
           {
