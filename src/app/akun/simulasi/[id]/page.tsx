@@ -12,7 +12,7 @@ import {
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
-  Clock,
+  Clock, X,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -36,6 +36,7 @@ export default function SimulasiRunnerPage() {
   const [info, setInfo] = useState<StudentInfo | null>(null);
   const [attemptId, setAttemptId] = useState<string | null>(null);
   const [secIdx, setSecIdx] = useState(0);
+  const [maxSecIdx, setMaxSecIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, AnswerState>>({});
   const [results, setResults] = useState<ResultItem[]>([]);
   const [totals, setTotals] = useState({ score: 0, max_score: 0, auto_score: 0, ai_score: 0 });
@@ -58,6 +59,10 @@ export default function SimulasiRunnerPage() {
       setPhase("intro");
     })();
   }, [id]);
+
+  // Catat bagian terjauh yang pernah dibuka — soal di bagian yang sudah dilewati
+  // namun belum dijawab dianggap "dilewati" (ditandai merah di navigasi).
+  useEffect(() => { setMaxSecIdx((m) => Math.max(m, secIdx)); }, [secIdx]);
 
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
@@ -259,6 +264,7 @@ export default function SimulasiRunnerPage() {
         questions={questions}
         answers={answers}
         currentSecIdx={secIdx}
+        maxVisitedSecIdx={maxSecIdx}
         onJump={goToQuestion}
       />
 
@@ -360,20 +366,43 @@ function isAnswered(q: Question, s?: AnswerState) {
   return s.text.trim().length > 0;
 }
 
-// ── Navigasi soal: blok nomor + status terjawab/belum ───────────────────────
-function QuestionNavigator({ sections, questions, answers, currentSecIdx, onJump }: {
+// ── Navigasi soal mengambang: blok nomor + status terjawab/belum/dilewati ────
+type NavStatus = "answered" | "skipped" | "todo";
+
+function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump }: {
   sections: Section[]; questions: Question[]; answers: Record<string, AnswerState>;
-  currentSecIdx: number; onJump: (secIdx: number, qid: string) => void;
+  currentSecIdx: number; maxVisitedSecIdx: number; onJump: (secIdx: number, qid: string) => void;
 }) {
-  const answeredCount = questions.filter((q) => isAnswered(q, answers[q.id])).length;
-  return (
-    <div className="mb-4 rounded-2xl border border-slate-200 bg-white p-4">
+  const [open, setOpen] = useState(false);
+
+  const statusOf = (q: Question, si: number): NavStatus => {
+    if (isAnswered(q, answers[q.id])) return "answered";
+    return si < maxVisitedSecIdx ? "skipped" : "todo"; // dilewati vs belum dibuka
+  };
+
+  let answeredCount = 0, skippedCount = 0;
+  sections.forEach((s, si) => questions.filter((q) => q.section_id === s.id).forEach((q) => {
+    const st = statusOf(q, si);
+    if (st === "answered") answeredCount++;
+    else if (st === "skipped") skippedCount++;
+  }));
+
+  const handleJump = (si: number, qid: string) => { onJump(si, qid); setOpen(false); };
+
+  const body = (
+    <>
       <div className="mb-3 flex items-center justify-between">
         <p className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
           <ListChecks className="h-4 w-4 text-teal-600" />Navigasi Soal
         </p>
         <span className="text-xs font-medium text-slate-500">{answeredCount}/{questions.length} terjawab</span>
       </div>
+
+      {skippedCount > 0 && (
+        <p className="mb-3 flex items-center gap-1.5 rounded-lg bg-red-50 px-2.5 py-1.5 text-[11px] font-medium text-red-600">
+          <AlertCircle className="h-3.5 w-3.5" />{skippedCount} soal terlewati belum dijawab
+        </p>
+      )}
 
       <div className="space-y-3">
         {sections.map((s, si) => {
@@ -382,7 +411,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, onJump
           const Icon = SKILL_ICON[s.skill];
           return (
             <div key={s.id}>
-              <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+              <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-xs font-semibold text-slate-500">
                 <Icon className="h-3.5 w-3.5" />{SKILL_LABEL[s.skill]}
                 {si === currentSecIdx && (
                   <span className="rounded-full bg-teal-50 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">sedang dikerjakan</span>
@@ -390,19 +419,20 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, onJump
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {secQs.map((q, qi) => {
-                  const answered = isAnswered(q, answers[q.id]);
+                  const st = statusOf(q, si);
+                  const cls =
+                    st === "answered" ? "text-white"
+                    : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
+                    : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
+                  const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
                   return (
                     <button
                       key={q.id}
                       type="button"
-                      onClick={() => onJump(si, q.id)}
-                      title={`Soal ${qi + 1} · ${answered ? "sudah dijawab" : "belum dijawab"}`}
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${
-                        answered
-                          ? "text-white"
-                          : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700"
-                      }`}
-                      style={answered ? { background: TEAL } : undefined}
+                      onClick={() => handleJump(si, q.id)}
+                      title={`Soal ${qi + 1} · ${label}`}
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${cls}`}
+                      style={st === "answered" ? { background: TEAL } : undefined}
                     >
                       {qi + 1}
                     </button>
@@ -414,15 +444,47 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, onJump
         })}
       </div>
 
-      <div className="mt-3 flex items-center gap-3 text-[11px] text-slate-400">
-        <span className="flex items-center gap-1">
-          <span className="h-3 w-3 rounded" style={{ background: TEAL }} />Terjawab
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="h-3 w-3 rounded border border-slate-300 bg-white" />Belum
-        </span>
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-400">
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded" style={{ background: TEAL }} />Terjawab</span>
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded border border-red-300 bg-red-50" />Dilewati</span>
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded border border-slate-300 bg-white" />Belum</span>
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {/* Panel mengambang — layar lebar (xl+) */}
+      <aside className="fixed right-4 top-24 z-30 hidden max-h-[calc(100vh-7rem)] w-56 flex-col overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-lg xl:flex">
+        {body}
+      </aside>
+
+      {/* Tombol mengambang — layar kecil/sedang */}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg xl:hidden"
+        style={{ background: TEAL }}
+      >
+        <ListChecks className="h-5 w-5" />
+        {answeredCount}/{questions.length}
+        {skippedCount > 0 && <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[11px]">{skippedCount}</span>}
+      </button>
+
+      {/* Slide-over — layar kecil/sedang */}
+      {open && (
+        <div className="fixed inset-0 z-40 flex justify-end bg-black/30 xl:hidden" onClick={() => setOpen(false)}>
+          <div className="h-full w-72 max-w-[85vw] overflow-y-auto bg-white p-4 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-2 flex justify-end">
+              <button type="button" onClick={() => setOpen(false)} className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            {body}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
