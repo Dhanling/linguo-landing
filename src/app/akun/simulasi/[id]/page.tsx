@@ -62,6 +62,17 @@ export default function SimulasiRunnerPage() {
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
 
+  // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
+  function goToQuestion(targetSecIdx: number, qid: string) {
+    setSecIdx(targetSecIdx);
+    requestAnimationFrame(() => setTimeout(() => {
+      const el = document.getElementById(`q-${qid}`);
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      el?.classList.add("ring-2", "ring-teal-400");
+      setTimeout(() => el?.classList.remove("ring-2", "ring-teal-400"), 1200);
+    }, 60));
+  }
+
   async function start() {
     if (!sim || !info) return;
     const aid = await createAttempt(sim.id, info);
@@ -243,6 +254,14 @@ export default function SimulasiRunnerPage() {
         ))}
       </div>
 
+      <QuestionNavigator
+        sections={sections}
+        questions={questions}
+        answers={answers}
+        currentSecIdx={secIdx}
+        onJump={goToQuestion}
+      />
+
       <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
         <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
           <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
@@ -332,6 +351,81 @@ function TimerPill({ seconds }: { seconds: number }) {
   );
 }
 
+// Apakah sebuah soal sudah dijawab (sesuai tipenya)?
+function isAnswered(q: Question, s?: AnswerState) {
+  if (!s) return false;
+  if (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng")
+    return s.selected_index != null;
+  if (q.type === "speaking_task") return !!(s.audioBlob || s.audioUrl);
+  return s.text.trim().length > 0;
+}
+
+// ── Navigasi soal: blok nomor + status terjawab/belum ───────────────────────
+function QuestionNavigator({ sections, questions, answers, currentSecIdx, onJump }: {
+  sections: Section[]; questions: Question[]; answers: Record<string, AnswerState>;
+  currentSecIdx: number; onJump: (secIdx: number, qid: string) => void;
+}) {
+  const answeredCount = questions.filter((q) => isAnswered(q, answers[q.id])).length;
+  return (
+    <div className="mb-4 rounded-2xl border border-slate-200 bg-white p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <p className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
+          <ListChecks className="h-4 w-4 text-teal-600" />Navigasi Soal
+        </p>
+        <span className="text-xs font-medium text-slate-500">{answeredCount}/{questions.length} terjawab</span>
+      </div>
+
+      <div className="space-y-3">
+        {sections.map((s, si) => {
+          const secQs = questions.filter((q) => q.section_id === s.id);
+          if (secQs.length === 0) return null;
+          const Icon = SKILL_ICON[s.skill];
+          return (
+            <div key={s.id}>
+              <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                <Icon className="h-3.5 w-3.5" />{SKILL_LABEL[s.skill]}
+                {si === currentSecIdx && (
+                  <span className="rounded-full bg-teal-50 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">sedang dikerjakan</span>
+                )}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {secQs.map((q, qi) => {
+                  const answered = isAnswered(q, answers[q.id]);
+                  return (
+                    <button
+                      key={q.id}
+                      type="button"
+                      onClick={() => onJump(si, q.id)}
+                      title={`Soal ${qi + 1} · ${answered ? "sudah dijawab" : "belum dijawab"}`}
+                      className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${
+                        answered
+                          ? "text-white"
+                          : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700"
+                      }`}
+                      style={answered ? { background: TEAL } : undefined}
+                    >
+                      {qi + 1}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-3 flex items-center gap-3 text-[11px] text-slate-400">
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded" style={{ background: TEAL }} />Terjawab
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="h-3 w-3 rounded border border-slate-300 bg-white" />Belum
+        </span>
+      </div>
+    </div>
+  );
+}
+
 // ── Per-question input ──────────────────────────────────────────────────────
 const TFNG = ["True", "False", "Not Given"];
 
@@ -340,7 +434,7 @@ function QuestionBlock({ index, q, state, onChange }: {
 }) {
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
   return (
-    <div className="rounded-xl border border-slate-100 p-4">
+    <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{q.prompt}</p>
 
       {(q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
