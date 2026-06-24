@@ -12,6 +12,7 @@ import {
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
+  Clock,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -39,6 +40,9 @@ export default function SimulasiRunnerPage() {
   const [results, setResults] = useState<ResultItem[]>([]);
   const [totals, setTotals] = useState({ score: 0, max_score: 0, auto_score: 0, ai_score: 0 });
   const [gradingMsg, setGradingMsg] = useState("");
+  const [deadline, setDeadline] = useState<number | null>(null);
+  const [remaining, setRemaining] = useState<number | null>(null);
+  const submittingRef = useRef(false);
 
   useEffect(() => {
     (async () => {
@@ -63,11 +67,32 @@ export default function SimulasiRunnerPage() {
     const aid = await createAttempt(sim.id, info);
     if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
     setAttemptId(aid);
+    if (sim.duration_minutes > 0) {
+      const dl = Date.now() + sim.duration_minutes * 60_000;
+      setDeadline(dl);
+      setRemaining(sim.duration_minutes * 60);
+    }
     setPhase("running");
   }
 
+  // Countdown timer — auto-submit saat waktu habis.
+  useEffect(() => {
+    if (phase !== "running" || !deadline) return;
+    const tick = () => {
+      const secs = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+      setRemaining(secs);
+      if (secs <= 0) submit();
+    };
+    tick();
+    const t = setInterval(tick, 1000);
+    return () => clearInterval(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, deadline]);
+
   async function submit() {
     if (!sim || !attemptId) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setPhase("grading");
 
     const payloads: AnswerPayload[] = [];
@@ -183,7 +208,7 @@ export default function SimulasiRunnerPage() {
         {sim.description && <p className="mt-1 text-sm text-slate-600">{sim.description}</p>}
         <div className="mt-4 grid gap-2 text-sm text-slate-600">
           <div className="flex items-center gap-2"><ListChecks className="h-4 w-4 text-teal-600" />{questions.length} soal dalam {sections.length} bagian</div>
-          {sim.duration_minutes > 0 && <div className="flex items-center gap-2"><Trophy className="h-4 w-4 text-teal-600" />Estimasi {sim.duration_minutes} menit</div>}
+          {sim.duration_minutes > 0 && <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-teal-600" />Batas waktu {sim.duration_minutes} menit — otomatis dikumpulkan saat habis</div>}
           <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-violet-600" />Writing &amp; Speaking dinilai otomatis oleh AI</div>
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -210,7 +235,7 @@ export default function SimulasiRunnerPage() {
   const SkillIcon = SKILL_ICON[section.skill];
 
   return (
-    <Shell sim={sim}>
+    <Shell sim={sim} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       {/* progress */}
       <div className="mb-4 flex items-center gap-1.5">
         {sections.map((s, i) => (
@@ -269,7 +294,7 @@ function Centered({ children }: { children: React.ReactNode }) {
   return <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">{children}</div>;
 }
 
-function Shell({ sim, children }: { sim: Simulation; children: React.ReactNode }) {
+function Shell({ sim, children, headerRight }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
@@ -280,14 +305,30 @@ function Shell({ sim, children }: { sim: Simulation; children: React.ReactNode }
           <span className="flex h-9 w-9 items-center justify-center rounded-lg text-white" style={{ background: TEAL_DEEP }}>
             <ClipboardCheck className="h-5 w-5" />
           </span>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-slate-900">{sim.title}</p>
             <p className="text-xs text-slate-500">{TEST_TYPE_LABEL[sim.test_type]}</p>
           </div>
+          {headerRight}
         </div>
       </header>
       <main className="mx-auto max-w-3xl px-4 py-6 sm:px-6">{children}</main>
     </div>
+  );
+}
+
+// Timer pill — merah saat <= 60 detik tersisa.
+function TimerPill({ seconds }: { seconds: number }) {
+  const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const ss = String(seconds % 60).padStart(2, "0");
+  const danger = seconds <= 60;
+  return (
+    <span
+      className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold tabular-nums ${danger ? "animate-pulse bg-red-50 text-red-600" : "bg-slate-100 text-slate-700"}`}
+      title="Sisa waktu — otomatis dikumpulkan saat habis"
+    >
+      <Clock className="h-4 w-4" />{mm}:{ss}
+    </span>
   );
 }
 
