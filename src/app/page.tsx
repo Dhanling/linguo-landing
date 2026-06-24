@@ -708,7 +708,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+              {[["Simulasi","/simulasi"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
                 <a key={l} href={h} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
@@ -754,6 +754,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
               <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
               <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
+              <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">🎯 Simulasi TOEFL/IELTS</a>
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids 🧒</button>
               <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
