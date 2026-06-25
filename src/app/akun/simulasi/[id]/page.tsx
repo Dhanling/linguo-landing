@@ -7,12 +7,13 @@ import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
   AUTO_GRADED, SKILL_LABEL, TEST_TYPE_LABEL,
+  TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo,
 } from "@/lib/simulations";
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
-  Clock, X,
+  Clock, X, Info,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -216,33 +217,74 @@ export default function SimulasiRunnerPage() {
     <ResultView sim={sim} totals={totals} results={results} />
   );
 
-  // intro
-  if (phase === "intro") return (
-    <Shell sim={sim}>
-      <div className="rounded-2xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
-        {sim.description && <p className="mt-1 text-sm text-slate-600">{sim.description}</p>}
-        <div className="mt-4 grid gap-2 text-sm text-slate-600">
-          <div className="flex items-center gap-2"><ListChecks className="h-4 w-4 text-teal-600" />{questions.length} soal dalam {sections.length} bagian</div>
-          {sim.duration_minutes > 0 && <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-teal-600" />Batas waktu {sim.duration_minutes} menit — otomatis dikumpulkan saat habis</div>}
-          <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-violet-600" />Writing &amp; Speaking dinilai otomatis oleh AI</div>
+  // intro — petunjuk pengerjaan (template default)
+  if (phase === "intro") {
+    const rules = GENERAL_RULES.filter((r) => !r.timed || sim.duration_minutes > 0);
+    return (
+      <Shell sim={sim}>
+        {/* Ringkasan */}
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
+          <p className="mt-1 text-sm text-slate-600">{sim.description || TEST_OVERVIEW[sim.test_type]}</p>
+
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
+            <Stat icon={BookOpen} label="Jumlah Bagian" value={`${sections.length} bagian`} />
+            <Stat icon={Clock} label="Durasi" value={sim.duration_minutes > 0 ? `${sim.duration_minutes} menit` : "Tanpa batas"} />
+          </div>
+
+          <div className="mt-3 flex items-center gap-2 rounded-lg bg-violet-50 px-3 py-2 text-sm text-violet-700">
+            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis oleh AI.
+          </div>
         </div>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {sections.map((s) => {
-            const Icon = SKILL_ICON[s.skill];
-            return (
-              <span key={s.id} className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700">
-                <Icon className="h-3.5 w-3.5" />{s.title}
-              </span>
-            );
-          })}
+
+        {/* Petunjuk pengerjaan */}
+        <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
+            <Info className="h-4 w-4 text-teal-600" />Petunjuk Pengerjaan
+          </h3>
+          <ul className="mt-3 space-y-2">
+            {rules.map((r, i) => (
+              <li key={i} className="flex gap-2 text-sm text-slate-600">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{r.text}
+              </li>
+            ))}
+          </ul>
         </div>
-        <button onClick={start} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white sm:w-auto sm:px-8" style={{ background: TEAL }}>
-          Mulai Simulasi <ArrowRight className="h-4 w-4" />
+
+        {/* Rincian bagian */}
+        <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 className="text-sm font-bold text-slate-900">Rincian Bagian</h3>
+          <ol className="mt-3 space-y-3">
+            {sections.map((s, i) => {
+              const Icon = SKILL_ICON[s.skill];
+              const count = questions.filter((q) => q.section_id === s.id).length;
+              return (
+                <li key={s.id} className="flex gap-3 rounded-xl border border-slate-100 p-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-slate-900">
+                      <span className="mr-1 text-slate-400">Bagian {i + 1}.</span>{s.title}
+                    </p>
+                    <p className="mt-0.5 text-xs font-medium text-teal-700">
+                      {SKILL_LABEL[s.skill]} · {count} soal{s.duration_minutes > 0 ? ` · ${s.duration_minutes} menit` : ""}
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-500">{s.instructions || SKILL_HOWTO[s.skill]}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+
+        <button onClick={start} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold text-white sm:w-auto sm:px-8" style={{ background: TEAL }}>
+          Saya Mengerti, Mulai Simulasi <ArrowRight className="h-4 w-4" />
         </button>
-      </div>
-    </Shell>
-  );
+      </Shell>
+    );
+  }
 
   // running
   const section = sections[secIdx];
@@ -315,6 +357,17 @@ export default function SimulasiRunnerPage() {
 }
 
 // ── Layout helpers ────────────────────────────────────────────────────────────
+function Stat({ icon: Icon, label, value }: { icon: any; label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
+      <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
+        <Icon className="h-3.5 w-3.5 text-teal-600" />{label}
+      </div>
+      <p className="mt-0.5 text-sm font-bold text-slate-900">{value}</p>
+    </div>
+  );
+}
+
 function Centered({ children }: { children: React.ReactNode }) {
   return <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">{children}</div>;
 }

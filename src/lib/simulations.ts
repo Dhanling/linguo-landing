@@ -55,6 +55,35 @@ export const AUTO_GRADED: QuestionType[] = [
   "multiple_choice", "true_false_ng", "fill_blank", "short_answer", "matching",
 ];
 
+// ── Petunjuk default (template) untuk layar intro simulasi ───────────────────
+// Dipakai bila admin tidak menulis instruksi sendiri pada bagian/soal.
+export const TEST_OVERVIEW: Record<TestType, string> = {
+  ielts:
+    "IELTS mengukur kemampuan bahasa Inggris melalui empat keterampilan: Listening, Reading, Writing, dan Speaking. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  toefl:
+    "TOEFL iBT mengukur kemampuan bahasa Inggris akademik melalui empat keterampilan: Reading, Listening, Speaking, dan Writing. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+};
+
+// Cara menjawab per keterampilan — jadi instruksi default tiap bagian.
+export const SKILL_HOWTO: Record<Skill, string> = {
+  reading:
+    "Baca teks dengan teliti, lalu jawab pertanyaan pilihan ganda / True–False–Not Given / isian sesuai informasi pada teks.",
+  listening:
+    "Putar audio dan simak baik-baik (boleh diputar ulang), lalu jawab pertanyaannya. Tulis jawaban singkat sesuai yang kamu dengar.",
+  writing:
+    "Tulis esai sesuai instruksi dan jumlah kata minimal. Jawaban dinilai otomatis oleh AI sesuai kriteria penilaian.",
+  speaking:
+    "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas; rekaman akan ditranskrip dan dinilai oleh AI.",
+};
+
+// Tata tertib umum. Item bertanda { timed: true } hanya tampil bila ada batas waktu.
+export const GENERAL_RULES: { text: string; timed?: boolean }[] = [
+  { text: "Kerjakan setiap bagian secara berurutan. Gunakan panel Navigasi Soal untuk berpindah dan memantau soal yang belum dijawab." },
+  { text: "Pastikan semua soal sudah dijawab sebelum mengirim — soal yang terlewati ditandai merah pada navigasi." },
+  { text: "Untuk bagian Speaking, izinkan akses mikrofon di browser saat diminta." },
+  { text: "Jawaban otomatis dikumpulkan ketika waktu habis, jadi pantau terus sisa waktu di pojok atas.", timed: true },
+];
+
 // ── Fetch katalog simulasi published (+ jumlah section & soal) ────────────────
 export async function fetchPublishedSimulations(): Promise<Simulation[]> {
   const { data, error } = await supabase
