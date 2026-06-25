@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
@@ -13,7 +13,7 @@ import {
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
-  Clock, X, Info,
+  Clock, X, Info, ChevronDown,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -29,6 +29,8 @@ type ResultItem = { question: Question; skill: string; correct: boolean | null; 
 export default function SimulasiRunnerPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id as string;
+  const searchParams = useSearchParams();
+  const preview = searchParams?.get("preview") === "1"; // POV siswa untuk admin/curriculum
 
   const [phase, setPhase] = useState<Phase>("loading");
   const [sim, setSim] = useState<Simulation | null>(null);
@@ -48,10 +50,13 @@ export default function SimulasiRunnerPage() {
 
   useEffect(() => {
     (async () => {
-      const studentInfo = await getStudentInfo();
-      if (!studentInfo) { setPhase("noauth"); return; }
+      let studentInfo = await getStudentInfo();
+      if (!studentInfo) {
+        if (!preview) { setPhase("noauth"); return; }
+        studentInfo = { name: "Preview", email: "preview@linguo.id" } as StudentInfo; // dummy, tak disimpan
+      }
       setInfo(studentInfo);
-      const { simulation, sections: secs, questions: qs } = await fetchSimulation(id);
+      const { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
       if (!simulation) { setPhase("notfound"); return; }
       setSim(simulation); setSections(secs); setQuestions(qs);
       const init: Record<string, AnswerState> = {};
@@ -59,7 +64,8 @@ export default function SimulasiRunnerPage() {
       setAnswers(init);
       setPhase("intro");
     })();
-  }, [id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, preview]);
 
   // Catat bagian terjauh yang pernah dibuka — soal di bagian yang sudah dilewati
   // namun belum dijawab dianggap "dilewati" (ditandai merah di navigasi).
@@ -81,9 +87,13 @@ export default function SimulasiRunnerPage() {
 
   async function start() {
     if (!sim || !info) return;
-    const aid = await createAttempt(sim.id, info);
-    if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
-    setAttemptId(aid);
+    if (preview) {
+      setAttemptId("preview"); // tak menyimpan attempt sungguhan
+    } else {
+      const aid = await createAttempt(sim.id, info);
+      if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
+      setAttemptId(aid);
+    }
     if (sim.duration_minutes > 0) {
       const dl = Date.now() + sim.duration_minutes * 60_000;
       setDeadline(dl);
@@ -98,7 +108,7 @@ export default function SimulasiRunnerPage() {
     const tick = () => {
       const secs = Math.max(0, Math.round((deadline - Date.now()) / 1000));
       setRemaining(secs);
-      if (secs <= 0) submit();
+      if (secs <= 0) submit(true); // waktu habis → kirim paksa walau belum lengkap
     };
     tick();
     const t = setInterval(tick, 1000);
@@ -106,9 +116,19 @@ export default function SimulasiRunnerPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, deadline]);
 
-  async function submit() {
+  async function submit(force = false) {
     if (!sim || !attemptId) return;
     if (submittingRef.current) return;
+
+    // Blokir submit manual bila masih ada soal yang belum dijawab (kecuali waktu habis).
+    if (!force) {
+      const unanswered = questions.filter((q) => !isAnswered(q, answers[q.id]));
+      if (unanswered.length > 0) {
+        alert(`Masih ada ${unanswered.length} soal yang belum dijawab. Lengkapi semua soal dulu sebelum mengirim — cek panel Navigasi Soal (tanda merah = terlewati).`);
+        return;
+      }
+    }
+
     submittingRef.current = true;
     setPhase("grading");
 
@@ -136,6 +156,9 @@ export default function SimulasiRunnerPage() {
           is_correct: correct, points_earned: points, ai_score: null, ai_feedback: null,
         });
         resultItems.push({ question: q, skill, correct, points, ai_score: null, ai_feedback: null });
+      } else if (preview) {
+        // Mode preview — tidak memanggil AI (hemat biaya), tampilkan placeholder.
+        resultItems.push({ question: q, skill, correct: null, points: 0, ai_score: null, ai_feedback: "Mode preview — Writing/Speaking tidak dinilai AI." });
       } else {
         // Writing / Speaking → AI
         aiDone++;
@@ -166,10 +189,12 @@ export default function SimulasiRunnerPage() {
       }
     }
 
-    await saveAnswers(attemptId, payloads);
     const score = autoScore + aiScore;
     const t = { score, max_score: maxScore, auto_score: autoScore, ai_score: aiScore };
-    await finalizeAttempt(attemptId, t);
+    if (!preview) { // mode preview tidak menyimpan attempt/jawaban ke database
+      await saveAnswers(attemptId, payloads);
+      await finalizeAttempt(attemptId, t);
+    }
     setTotals(t);
     setResults(resultItems);
     setPhase("result");
@@ -221,7 +246,7 @@ export default function SimulasiRunnerPage() {
   if (phase === "intro") {
     const rules = GENERAL_RULES.filter((r) => !r.timed || sim.duration_minutes > 0);
     return (
-      <Shell sim={sim}>
+      <Shell sim={sim} preview={preview}>
         {/* Ringkasan */}
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
           <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
@@ -293,7 +318,7 @@ export default function SimulasiRunnerPage() {
   const SkillIcon = SKILL_ICON[section.skill];
 
   return (
-    <Shell sim={sim} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+    <Shell sim={sim} preview={preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       {/* progress */}
       <div className="mb-4 flex items-center gap-1.5">
         {sections.map((s, i) => (
@@ -342,7 +367,7 @@ export default function SimulasiRunnerPage() {
             <ArrowLeft className="h-4 w-4" />Sebelumnya
           </button>
           {isLast ? (
-            <button onClick={submit} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
+            <button onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
               <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
             </button>
           ) : (
@@ -372,9 +397,14 @@ function Centered({ children }: { children: React.ReactNode }) {
   return <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">{children}</div>;
 }
 
-function Shell({ sim, children, headerRight }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode }) {
+function Shell({ sim, children, headerRight, preview }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean }) {
   return (
     <div className="min-h-screen bg-slate-50">
+      {preview && (
+        <div className="bg-amber-400 px-4 py-1.5 text-center text-xs font-semibold text-amber-950">
+          Mode Preview — tampilan POV siswa. Jawaban & nilai tidak disimpan.
+        </div>
+      )}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3.5 sm:px-6">
           <Link href="/akun/simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
@@ -427,6 +457,9 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
   currentSecIdx: number; maxVisitedSecIdx: number; onJump: (secIdx: number, qid: string) => void;
 }) {
   const [open, setOpen] = useState(false);
+  // Accordion: hanya bagian aktif yang terbuka, lainnya otomatis ter-collapse.
+  const [openSec, setOpenSec] = useState(currentSecIdx);
+  useEffect(() => { setOpenSec(currentSecIdx); }, [currentSecIdx]);
 
   const statusOf = (q: Question, si: number): NavStatus => {
     if (isAnswered(q, answers[q.id])) return "answered";
@@ -457,41 +490,52 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
         </p>
       )}
 
-      <div className="space-y-3">
+      <div className="space-y-2">
         {sections.map((s, si) => {
           const secQs = questions.filter((q) => q.section_id === s.id);
           if (secQs.length === 0) return null;
           const Icon = SKILL_ICON[s.skill];
+          const isOpen = openSec === si;
+          const ansInSec = secQs.filter((q) => isAnswered(q, answers[q.id])).length;
+          const skipInSec = secQs.filter((q) => statusOf(q, si) === "skipped").length;
           return (
-            <div key={s.id}>
-              <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-xs font-semibold text-slate-500">
-                <Icon className="h-3.5 w-3.5" />{SKILL_LABEL[s.skill]}
-                {si === currentSecIdx && (
-                  <span className="rounded-full bg-teal-50 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">sedang dikerjakan</span>
-                )}
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {secQs.map((q, qi) => {
-                  const st = statusOf(q, si);
-                  const cls =
-                    st === "answered" ? "text-white"
-                    : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
-                    : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
-                  const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
-                  return (
-                    <button
-                      key={q.id}
-                      type="button"
-                      onClick={() => handleJump(si, q.id)}
-                      title={`Soal ${qi + 1} · ${label}`}
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${cls}`}
-                      style={st === "answered" ? { background: TEAL } : undefined}
-                    >
-                      {qi + 1}
-                    </button>
-                  );
-                })}
-              </div>
+            <div key={s.id} className="overflow-hidden rounded-xl border border-slate-100">
+              <button
+                type="button"
+                onClick={() => setOpenSec(isOpen ? -1 : si)}
+                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${si === currentSecIdx ? "bg-teal-50/60 text-teal-800" : "text-slate-600 hover:bg-slate-50"}`}
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+                <span className="flex-1 truncate text-left">{SKILL_LABEL[s.skill]}</span>
+                {si === currentSecIdx && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">aktif</span>}
+                {skipInSec > 0 && <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] text-white">{skipInSec}</span>}
+                <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInSec}/{secQs.length}</span>
+                <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+              </button>
+              {isOpen && (
+                <div className="flex flex-wrap gap-1.5 px-2.5 pb-2.5 pt-0.5">
+                  {secQs.map((q, qi) => {
+                    const st = statusOf(q, si);
+                    const cls =
+                      st === "answered" ? "text-white"
+                      : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
+                      : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
+                    const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
+                    return (
+                      <button
+                        key={q.id}
+                        type="button"
+                        onClick={() => handleJump(si, q.id)}
+                        title={`Soal ${qi + 1} · ${label}`}
+                        className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${cls}`}
+                        style={st === "answered" ? { background: TEAL } : undefined}
+                      >
+                        {qi + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         })}

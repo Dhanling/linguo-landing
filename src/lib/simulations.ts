@@ -115,11 +115,12 @@ export async function fetchPublishedSimulations(): Promise<Simulation[]> {
   }));
 }
 
-export async function fetchSimulation(id: string): Promise<{
+export async function fetchSimulation(id: string, preview = false): Promise<{
   simulation: Simulation | null; sections: Section[]; questions: Question[];
 }> {
-  const { data: sim } = await supabase
-    .from("test_simulations").select("*").eq("id", id).eq("is_published", true).maybeSingle();
+  let q = supabase.from("test_simulations").select("*").eq("id", id);
+  if (!preview) q = q.eq("is_published", true); // preview boleh lihat yang belum dipublish
+  const { data: sim } = await q.maybeSingle();
   if (!sim) return { simulation: null, sections: [], questions: [] };
 
   const { data: secs } = await supabase
