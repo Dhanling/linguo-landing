@@ -118,9 +118,22 @@ export async function fetchPublishedSimulations(): Promise<Simulation[]> {
 export async function fetchSimulation(id: string, preview = false): Promise<{
   simulation: Simulation | null; sections: Section[]; questions: Question[];
 }> {
-  let q = supabase.from("test_simulations").select("*").eq("id", id);
-  if (!preview) q = q.eq("is_published", true); // preview boleh lihat yang belum dipublish
-  const { data: sim } = await q.maybeSingle();
+  // Mode preview (POV siswa untuk admin/curriculum): admin sering belum login di
+  // domain landing → request anon. RLS test_simulation* hanya `to authenticated`,
+  // jadi select biasa selalu kosong. Pakai RPC SECURITY DEFINER get_simulation_exam
+  // (grant ke anon) yang ambil 1 simulasi by-id, termasuk yang belum dipublikasikan.
+  if (preview) {
+    const { data, error } = await supabase.rpc("get_simulation_exam", { p_sim_id: id });
+    if (error || !data || !data.simulation) return { simulation: null, sections: [], questions: [] };
+    return {
+      simulation: data.simulation as Simulation,
+      sections: (data.sections as Section[]) || [],
+      questions: (data.questions as Question[]) || [],
+    };
+  }
+
+  const { data: sim } = await supabase
+    .from("test_simulations").select("*").eq("id", id).eq("is_published", true).maybeSingle();
   if (!sim) return { simulation: null, sections: [], questions: [] };
 
   const { data: secs } = await supabase
