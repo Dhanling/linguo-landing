@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check, ChevronUp } from "lucide-react";
+import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check, ChevronUp, Volume2, Target, GraduationCap, Globe, Star, Rocket, CalendarDays, BookOpen, Hand } from "lucide-react";
 import Link from "next/link";
 
 // ========== SCROLL TO TOP ==========
@@ -230,8 +230,8 @@ function ClapButton({ postId }: { postId: string }) {
           : "border-slate-200 bg-white text-slate-500 hover:border-[#1A9E9E]/40 hover:text-[#1A9E9E]"
       }`}
     >
-      <span className={`text-xl transition-transform duration-150 ${animating ? "scale-125" : "scale-100"}`}>
-        👏
+      <span className={`flex transition-transform duration-150 ${animating ? "scale-125" : "scale-100"}`}>
+        <Hand className="w-5 h-5" />
       </span>
       <span className="text-sm font-semibold tabular-nums">{claps}</span>
       {showCount && myClaps > 0 && (
@@ -348,7 +348,7 @@ function CommentsSection({ postId }: { postId: string }) {
           className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 placeholder:text-slate-400 outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/10 resize-y mb-3"
         />
         <div className="flex items-center justify-between">
-          {sent && <span className="text-xs text-emerald-600 font-medium">Komentar terkirim! ✓</span>}
+          {sent && <span className="text-xs text-emerald-600 font-medium inline-flex items-center gap-1">Komentar terkirim! <Check className="w-3.5 h-3.5" /></span>}
           {!sent && <span />}
           <button
             onClick={submit}
@@ -509,6 +509,51 @@ const ARTICLE_CSS = `
   from { box-shadow: 0 0 0 0 rgba(26,158,158,0.4); }
   to   { box-shadow: 0 0 0 4px rgba(26,158,158,0); }
 }
+/* Ikon speaker (Lucide, di-inject via JS menggantikan emoji 🔊) */
+.linguo-tts .tts-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: -0.15em;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  color: #1A9E9E;
+  flex-shrink: 0;
+}
+.linguo-tts .tts-ico svg { width: 100%; height: 100%; }
+.blog-dark .linguo-tts .tts-ico { color: #5eead4; }
+.linguo-tts.speaking .tts-ico { animation: tts-ico-bounce 0.7s ease-in-out infinite; }
+@keyframes tts-ico-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+/* Loading: spinner menggantikan ikon saat audio Gemini sedang digenerate */
+.linguo-tts.loading .tts-ico svg { display: none; }
+.linguo-tts.loading .tts-ico::after {
+  content: "";
+  width: 0.85em;
+  height: 0.85em;
+  border: 2px solid rgba(26,158,158,0.3);
+  border-top-color: #1A9E9E;
+  border-radius: 50%;
+  animation: tts-spin 0.6s linear infinite;
+}
+@keyframes tts-spin { to { transform: rotate(360deg); } }
+/* Karaoke: tiap kata jadi span, di-highlight sinkron dgn audio */
+.linguo-tts .tts-word {
+  transition: color 0.12s ease, background 0.12s ease;
+  border-radius: 3px;
+  padding: 0 0.5px;
+}
+.linguo-tts .tts-word.done { color: #0f766e; }
+.linguo-tts .tts-word.active {
+  background: #1A9E9E;
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(26,158,158,0.25);
+}
+.blog-dark .linguo-tts .tts-word.done { color: #5eead4; }
+.blog-dark .linguo-tts .tts-word.active { background: #2dd4bf; color: #042f2e; }
 
 /* ── Dialog Block ── */
 .linguo-dialog {
@@ -594,7 +639,11 @@ const ARTICLE_CSS = `
   font-size: 0.8125rem; color: #0f766e; margin-top: 0.625rem;
   font-weight: 500; display: flex; align-items: center; gap: 0.375rem;
 }
-.article-body figure.audio-embed figcaption::before { content: "🔊"; font-size: 0.875rem; }
+.article-body figure.audio-embed figcaption::before {
+  content: ""; display: inline-block; width: 0.95rem; height: 0.95rem; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/><path d='M15.54 8.46a5 5 0 0 1 0 7.07'/><path d='M19.07 4.93a10 10 0 0 1 0 14.14'/></svg>") center/contain no-repeat;
+  mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/><path d='M15.54 8.46a5 5 0 0 1 0 7.07'/><path d='M19.07 4.93a10 10 0 0 1 0 14.14'/></svg>") center/contain no-repeat;
+}
 
 /* Video Player */
 .article-body figure.video-embed {
@@ -609,7 +658,11 @@ const ARTICLE_CSS = `
   font-size: 0.8125rem; color: #94a3b8; padding: 0.625rem 1rem;
   font-weight: 500; display: flex; align-items: center; gap: 0.375rem;
 }
-.article-body figure.video-embed figcaption::before { content: "🎬"; font-size: 0.875rem; }
+.article-body figure.video-embed figcaption::before {
+  content: ""; display: inline-block; width: 0.95rem; height: 0.95rem; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='2'/><path d='M7 3v18'/><path d='M3 7.5h4'/><path d='M3 12h18'/><path d='M3 16.5h4'/><path d='M17 3v18'/><path d='M17 7.5h4'/><path d='M17 16.5h4'/></svg>") center/contain no-repeat;
+  mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='3' rx='2'/><path d='M7 3v18'/><path d='M3 7.5h4'/><path d='M3 12h18'/><path d='M3 16.5h4'/><path d='M17 3v18'/><path d='M17 16.5h4'/></svg>") center/contain no-repeat;
+}
 
 /* Font size variants */
 .text-size-s .article-body p,
@@ -715,6 +768,11 @@ const TTS_VOICES: { id: string; label: string }[] = [
   { id: "Orus", label: "Orus · mantap" },
 ];
 
+// Ikon speaker (Lucide Volume2) sbg SVG mentah — di-inject ke anotasi .linguo-tts
+// menggantikan emoji 🔊. currentColor mengikuti warna .tts-ico (teal).
+const VOLUME_ICON_SVG =
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>`;
+
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
@@ -787,20 +845,95 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
     requestAnimationFrame(() => { requestAnimationFrame(hydrateYouTube); });
   }, [post?.content]);
 
+  // ── Enhance anotasi TTS: ganti emoji 🔊 dgn ikon Lucide + bungkus tiap kata ──
+  // jadi <span class="tts-word"> supaya bisa di-highlight karaoke saat audio jalan.
+  useEffect(() => {
+    const enhance = () => {
+      document.querySelectorAll<HTMLElement>(".article-body .linguo-tts").forEach(el => {
+        if (el.dataset.enhanced) return;
+        const raw = (el.getAttribute("data-text") || el.textContent || "").replace(/^\s*🔊\s*/, "").trim();
+        if (!raw) { el.dataset.enhanced = "1"; return; }
+        if (!el.getAttribute("data-text")) el.setAttribute("data-text", raw);
+        const frag = document.createDocumentFragment();
+        const ico = document.createElement("span");
+        ico.className = "tts-ico";
+        ico.setAttribute("aria-hidden", "true");
+        ico.innerHTML = VOLUME_ICON_SVG;
+        frag.appendChild(ico);
+        let wi = 0;
+        // Pisah jadi token kata + spasi; spasi dipertahankan sbg text node.
+        raw.split(/(\s+)/).forEach(tok => {
+          if (tok === "") return;
+          if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); return; }
+          const w = document.createElement("span");
+          w.className = "tts-word";
+          w.setAttribute("data-wi", String(wi++));
+          w.textContent = tok;
+          frag.appendChild(w);
+        });
+        el.innerHTML = "";
+        el.appendChild(frag);
+        el.dataset.enhanced = "1";
+      });
+    };
+    requestAnimationFrame(() => { requestAnimationFrame(enhance); });
+  }, [post?.content]);
+
   // ── TTS click handler ─────────────────────────────────────────────────────
   useEffect(() => {
     // Audio realistis via Gemini 2.5 Flash TTS (/api/blog-tts). Hasil di-cache per teks
     // biar klik berulang ga nembak API lagi. Fallback ke Web Speech API kalau gagal.
     let currentAudio: HTMLAudioElement | null = null;
+    let karaokeRaf = 0;
     const audioCache = new Map<string, string>(); // text → object URL (WAV)
+
+    // ── Karaoke: highlight kata per kata sinkron dgn audio ──
+    const getWords = (el: HTMLElement) => Array.from(el.querySelectorAll<HTMLElement>(".tts-word"));
+    const clearWords = (el: HTMLElement) =>
+      el.querySelectorAll(".tts-word.active, .tts-word.done").forEach(w => w.classList.remove("active", "done"));
+    const setWord = (words: HTMLElement[], idx: number) => {
+      words.forEach((w, i) => {
+        w.classList.toggle("done", i < idx);
+        w.classList.toggle("active", i === idx);
+      });
+    };
+    const stopKaraoke = () => { if (karaokeRaf) cancelAnimationFrame(karaokeRaf); karaokeRaf = 0; };
+
+    // Gemini TTS tdk balikin timestamp, jadi durasi audio dibagi proporsional ke tiap
+    // kata (bobot = jumlah huruf/angka). Cukup akurat utk efek karaoke.
+    const runAudioKaraoke = (el: HTMLElement, audio: HTMLAudioElement) => {
+      stopKaraoke();
+      const words = getWords(el);
+      if (!words.length) return;
+      const weights = words.map(w => Math.max(1, (w.textContent || "").replace(/[^\p{L}\p{N}]/gu, "").length));
+      const total = weights.reduce((a, b) => a + b, 0) || 1;
+      const starts: number[] = [];
+      let acc = 0;
+      for (const wt of weights) { starts.push(acc / total); acc += wt; }
+      const tick = () => {
+        const d = audio.duration;
+        if (d && isFinite(d) && d > 0) {
+          const frac = Math.min(1, audio.currentTime / d);
+          let idx = 0;
+          for (let i = 0; i < starts.length; i++) { if (frac >= starts[i]) idx = i; else break; }
+          setWord(words, idx);
+        }
+        if (!audio.paused && !audio.ended) karaokeRaf = requestAnimationFrame(tick);
+      };
+      karaokeRaf = requestAnimationFrame(tick);
+    };
 
     const stopCurrent = () => {
       window.speechSynthesis.cancel();
+      stopKaraoke();
       if (currentAudio) {
         currentAudio.pause();
         currentAudio = null;
       }
-      document.querySelectorAll(".linguo-tts.speaking").forEach(el => el.classList.remove("speaking"));
+      document.querySelectorAll<HTMLElement>(".linguo-tts.speaking, .linguo-tts.loading").forEach(el => {
+        el.classList.remove("speaking", "loading");
+        clearWords(el);
+      });
     };
 
     const speakFallback = (ttsEl: HTMLElement, text: string, lang: string) => {
@@ -812,9 +945,26 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       const voices = window.speechSynthesis.getVoices();
       const match = voices.find(v => v.lang.startsWith(utterance.lang.split("-")[0]));
       if (match) utterance.voice = match;
+      // Web Speech kasih event boundary → sinkron kata akurat (bukan estimasi).
+      const words = getWords(ttsEl);
+      let cursor = 0;
+      const offsets = words.map(w => {
+        const t = w.textContent || "";
+        const i = text.indexOf(t, cursor);
+        const at = i >= 0 ? i : cursor;
+        cursor = at + t.length;
+        return at;
+      });
       ttsEl.classList.add("speaking");
-      utterance.onend = () => ttsEl.classList.remove("speaking");
-      utterance.onerror = () => ttsEl.classList.remove("speaking");
+      utterance.onboundary = (ev) => {
+        if (!words.length || ev.charIndex == null) return;
+        let idx = 0;
+        for (let i = 0; i < offsets.length; i++) { if (ev.charIndex >= offsets[i]) idx = i; else break; }
+        setWord(words, idx);
+      };
+      const done = () => { ttsEl.classList.remove("speaking"); clearWords(ttsEl); };
+      utterance.onend = done;
+      utterance.onerror = done;
       window.speechSynthesis.speak(utterance);
     };
 
@@ -824,6 +974,8 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       ttsEl.classList.add("speaking");
       const clear = () => {
         ttsEl.classList.remove("speaking");
+        stopKaraoke();
+        clearWords(ttsEl);
         if (currentAudio === audio) currentAudio = null;
       };
       audio.onended = clear;
@@ -831,10 +983,12 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         clear();
         speakFallback(ttsEl, text, lang); // file korup / browser ga bisa play → fallback
       };
-      audio.play().catch(() => {
-        clear();
-        speakFallback(ttsEl, text, lang);
-      });
+      audio.play()
+        .then(() => runAudioKaraoke(ttsEl, audio))
+        .catch(() => {
+          clear();
+          speakFallback(ttsEl, text, lang);
+        });
     };
 
     const handleTTSClick = async (e: MouseEvent) => {
@@ -844,8 +998,8 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       e.stopPropagation();
 
-      // Toggle: klik lagi saat speaking → stop
-      if (ttsEl.classList.contains("speaking")) {
+      // Toggle: klik lagi saat speaking/loading → stop
+      if (ttsEl.classList.contains("speaking") || ttsEl.classList.contains("loading")) {
         stopCurrent();
         return;
       }
@@ -867,8 +1021,8 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         return;
       }
 
-      // Loading state sementara nunggu Gemini generate audio
-      ttsEl.classList.add("speaking");
+      // Loading state (spinner) sementara nunggu Gemini generate audio
+      ttsEl.classList.add("loading");
       try {
         const res = await fetch("/api/blog-tts", {
           method: "POST",
@@ -886,10 +1040,10 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
         const url = URL.createObjectURL(new Blob([bytes], { type: j.mimeType || "audio/wav" }));
         audioCache.set(cacheKey, url);
 
-        ttsEl.classList.remove("speaking");
+        ttsEl.classList.remove("loading");
         playUrl(ttsEl, url, text, lang);
       } catch {
-        ttsEl.classList.remove("speaking");
+        ttsEl.classList.remove("loading");
         speakFallback(ttsEl, text, lang); // Gemini gagal → Web Speech API
       }
     };
@@ -1038,7 +1192,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
               title="Pilih suara pembaca (TTS)"
               className={`flex items-center gap-1 rounded-full pl-2 pr-1 py-1 border text-xs font-medium ${darkMode ? "bg-slate-800 border-slate-700" : "bg-slate-50 border-slate-200"}`}
             >
-              <span className="text-sm leading-none">🔊</span>
+              <Volume2 className={`w-3.5 h-3.5 shrink-0 ${darkMode ? "text-slate-300" : "text-[#1A9E9E]"}`} />
               <select
                 value={voice}
                 onChange={(e) => setVoice(e.target.value)}
@@ -1089,7 +1243,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
             <div className="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-white/5 pointer-events-none" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-3 py-1 text-xs font-semibold mb-4">
-                🎯 Kelas Private 1-on-1
+                <Target className="w-3.5 h-3.5" /> Kelas Private 1-on-1
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 tracking-tight leading-snug">
                 {langName
@@ -1104,9 +1258,9 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
               {/* Social proof row */}
               <div className="flex flex-wrap gap-4 mb-7 text-sm">
-                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">👩‍🎓</span> 200+ pelajar aktif</div>
-                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">🌍</span> 60+ bahasa tersedia</div>
-                <div className="flex items-center gap-1.5 text-white/70"><span className="text-base">⭐</span> Jadwal fleksibel</div>
+                <div className="flex items-center gap-1.5 text-white/70"><GraduationCap className="w-4 h-4" /> 200+ pelajar aktif</div>
+                <div className="flex items-center gap-1.5 text-white/70"><Globe className="w-4 h-4" /> 60+ bahasa tersedia</div>
+                <div className="flex items-center gap-1.5 text-white/70"><Star className="w-4 h-4" /> Jadwal fleksibel</div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -1114,7 +1268,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
                   href={langName ? `/?lang=${encodeURIComponent(langName.toLowerCase())}&program=private` : "/"}
                   className="inline-flex items-center justify-center gap-2 bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
                 >
-                  🚀 {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
+                  <Rocket className="w-4 h-4" /> {langName ? `Daftar Bahasa ${langName} Sekarang` : "Daftar Sekarang"}
                 </a>
                 <a
                   href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo Min Ling! Saya lihat dari blog Linguo berjudul ${post.title}. Saya tertarik daftar kelas ${langName || "bahasa"}. Bisa info lebih lanjut?`)}`}
@@ -1130,13 +1284,13 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
           {/* Feature chips below CTA */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
             {[
-              { icon: "📅", label: "Jadwal Fleksibel", sub: "Sesuaikan waktu kamu" },
-              { icon: "📚", label: "Materi Custom", sub: "Disesuaikan tujuanmu" },
-              { icon: "🎓", label: "Pengajar Berpengalaman", sub: "Terlatih & bersertifikat" },
-              { icon: "💬", label: "Fokus Speaking", sub: "Langsung praktek" },
+              { Icon: CalendarDays, label: "Jadwal Fleksibel", sub: "Sesuaikan waktu kamu" },
+              { Icon: BookOpen, label: "Materi Custom", sub: "Disesuaikan tujuanmu" },
+              { Icon: GraduationCap, label: "Pengajar Berpengalaman", sub: "Terlatih & bersertifikat" },
+              { Icon: MessageCircle, label: "Fokus Speaking", sub: "Langsung praktek" },
             ].map(f => (
               <div key={f.label} className={`feature-chip rounded-xl p-4 border text-center transition-colors ${darkMode ? "bg-[#1e293b] border-slate-700" : "bg-slate-50 border-slate-100 hover:border-[#1A9E9E]/20"}`}>
-                <div className="text-2xl mb-1">{f.icon}</div>
+                <div className="flex justify-center mb-1.5"><f.Icon className="w-6 h-6 text-[#1A9E9E]" /></div>
                 <div className={`chip-label text-xs font-semibold ${darkMode ? "text-slate-200" : "text-slate-800"}`}>{f.label}</div>
                 <div className={`chip-sub text-[11px] mt-0.5 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{f.sub}</div>
               </div>
