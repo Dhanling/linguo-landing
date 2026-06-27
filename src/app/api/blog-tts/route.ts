@@ -12,6 +12,20 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+// CORS: endpoint ini juga dipanggil dari CMS admin (domain berbeda) buat preview suara
+// di editor blog. Tidak ada data sensitif/auth, jadi origin "*" aman.
+const CORS_HEADERS: Record<string, string> = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+const jsonCors = (data: unknown, init?: ResponseInit) =>
+  NextResponse.json(data, { ...init, headers: { ...CORS_HEADERS, ...(init?.headers || {}) } });
+
+export function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
 const API_KEY = process.env.GEMINI_API_KEY || "";
 const MODEL = process.env.GEMINI_TTS_MODEL || "gemini-2.5-flash-preview-tts";
 // Voice multilingual yang natural & netral. Daftar lengkap: Kore, Puck, Zephyr, Charon,
@@ -44,12 +58,12 @@ function pcmToWav(pcm: Buffer, sampleRate: number): Buffer {
 export async function POST(req: NextRequest) {
   try {
     if (!API_KEY) {
-      return NextResponse.json({ error: "GEMINI_API_KEY belum diset" }, { status: 500 });
+      return jsonCors({ error: "GEMINI_API_KEY belum diset" }, { status: 500 });
     }
 
     const body = await req.json().catch(() => ({}));
     const text = String(body?.text || "").trim().slice(0, 600);
-    if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });
+    if (!text) return jsonCors({ error: "text kosong" }, { status: 400 });
 
     const voice = String(body?.voice || VOICE);
 
@@ -74,14 +88,14 @@ export async function POST(req: NextRequest) {
 
     if (!res.ok) {
       const detail = await res.text().catch(() => "");
-      return NextResponse.json({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
+      return jsonCors({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
     }
 
     const j = await res.json();
     const part = j?.candidates?.[0]?.content?.parts?.find((p: any) => p?.inlineData?.data);
     const b64: string | undefined = part?.inlineData?.data;
     if (!b64) {
-      return NextResponse.json({ error: "no audio in response" }, { status: 502 });
+      return jsonCors({ error: "no audio in response" }, { status: 502 });
     }
 
     // mimeType contoh: "audio/L16;codec=pcm;rate=24000" → ambil sample rate-nya.
@@ -92,11 +106,11 @@ export async function POST(req: NextRequest) {
     const pcm = Buffer.from(b64, "base64");
     const wav = pcmToWav(pcm, sampleRate);
 
-    return NextResponse.json(
+    return jsonCors(
       { audioContent: wav.toString("base64"), mimeType: "audio/wav" },
       { headers: { "Cache-Control": "public, max-age=86400" } }
     );
   } catch (e: any) {
-    return NextResponse.json({ error: e?.message || "internal error" }, { status: 500 });
+    return jsonCors({ error: e?.message || "internal error" }, { status: 500 });
   }
 }
