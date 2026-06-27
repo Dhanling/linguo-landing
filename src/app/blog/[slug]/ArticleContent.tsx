@@ -702,9 +702,25 @@ function langToLocale(lang: string): string {
   return map[lang] ?? lang;
 }
 
+// Pilihan suara Gemini TTS (prebuilt voices). Semua multilingual — autodetect bahasa dari teks.
+// Daftar lengkap: https://ai.google.dev/gemini-api/docs/speech-generation
+const TTS_VOICES: { id: string; label: string }[] = [
+  { id: "Aoede", label: "Aoede · lembut" },
+  { id: "Kore", label: "Kore · tegas" },
+  { id: "Puck", label: "Puck · ceria" },
+  { id: "Zephyr", label: "Zephyr · cerah" },
+  { id: "Charon", label: "Charon · informatif" },
+  { id: "Fenrir", label: "Fenrir · bersemangat" },
+  { id: "Leda", label: "Leda · muda" },
+  { id: "Orus", label: "Orus · mantap" },
+];
+
 
 export default function ArticleContent({ post, relatedPosts }: { post: BlogPost; relatedPosts: BlogPost[] }) {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://linguo.id/blog/${post.slug}`;
+
+  // Voice TTS terpilih. Dibaca di dalam handler click via ref karena handler dipasang sekali (deps []).
+  const voiceRef = useRef<string>("Aoede");
 
 
   // ── Track page view (VERBOSE DEBUG MODE) ──
@@ -773,9 +789,55 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
   // ── TTS click handler ─────────────────────────────────────────────────────
   useEffect(() => {
-    let currentUtterance: SpeechSynthesisUtterance | null = null;
+    // Audio realistis via Gemini 2.5 Flash TTS (/api/blog-tts). Hasil di-cache per teks
+    // biar klik berulang ga nembak API lagi. Fallback ke Web Speech API kalau gagal.
+    let currentAudio: HTMLAudioElement | null = null;
+    const audioCache = new Map<string, string>(); // text → object URL (WAV)
 
-    const handleTTSClick = (e: MouseEvent) => {
+    const stopCurrent = () => {
+      window.speechSynthesis.cancel();
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+      document.querySelectorAll(".linguo-tts.speaking").forEach(el => el.classList.remove("speaking"));
+    };
+
+    const speakFallback = (ttsEl: HTMLElement, text: string, lang: string) => {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = langToLocale(lang);
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      const voices = window.speechSynthesis.getVoices();
+      const match = voices.find(v => v.lang.startsWith(utterance.lang.split("-")[0]));
+      if (match) utterance.voice = match;
+      ttsEl.classList.add("speaking");
+      utterance.onend = () => ttsEl.classList.remove("speaking");
+      utterance.onerror = () => ttsEl.classList.remove("speaking");
+      window.speechSynthesis.speak(utterance);
+    };
+
+    const playUrl = (ttsEl: HTMLElement, url: string, text: string, lang: string) => {
+      const audio = new Audio(url);
+      currentAudio = audio;
+      ttsEl.classList.add("speaking");
+      const clear = () => {
+        ttsEl.classList.remove("speaking");
+        if (currentAudio === audio) currentAudio = null;
+      };
+      audio.onended = clear;
+      audio.onerror = () => {
+        clear();
+        speakFallback(ttsEl, text, lang); // file korup / browser ga bisa play → fallback
+      };
+      audio.play().catch(() => {
+        clear();
+        speakFallback(ttsEl, text, lang);
+      });
+    };
+
+    const handleTTSClick = async (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const ttsEl = target.closest(".linguo-tts") as HTMLElement | null;
       if (!ttsEl) return;
@@ -784,44 +846,59 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
       // Toggle: klik lagi saat speaking → stop
       if (ttsEl.classList.contains("speaking")) {
-        window.speechSynthesis.cancel();
-        ttsEl.classList.remove("speaking");
+        stopCurrent();
         return;
       }
 
-      // Cancel previous
-      window.speechSynthesis.cancel();
-      document.querySelectorAll(".linguo-tts.speaking").forEach(el => el.classList.remove("speaking"));
+      stopCurrent();
 
       const lang = ttsEl.getAttribute("data-lang") || "id";
+      const voice = voiceRef.current;
       const text = (ttsEl.getAttribute("data-text") || ttsEl.innerText || "")
         .replace(/^🔊\s*/, "")
         .trim();
-
       if (!text) return;
 
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = langToLocale(lang);
-      utterance.rate = 0.9;
-      utterance.pitch = 1;
+      // Voice ikut jadi kunci cache: ganti speaker → audio digenerate ulang, bukan ambil yg lama.
+      const cacheKey = `${voice}::${lang}::${text}`;
+      const cached = audioCache.get(cacheKey);
+      if (cached) {
+        playUrl(ttsEl, cached, text, lang);
+        return;
+      }
 
-      // Try to pick a voice matching the language
-      const voices = window.speechSynthesis.getVoices();
-      const match = voices.find(v => v.lang.startsWith(utterance.lang.split("-")[0]));
-      if (match) utterance.voice = match;
-
+      // Loading state sementara nunggu Gemini generate audio
       ttsEl.classList.add("speaking");
-      utterance.onend = () => ttsEl.classList.remove("speaking");
-      utterance.onerror = () => ttsEl.classList.remove("speaking");
+      try {
+        const res = await fetch("/api/blog-tts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text, lang, voice }),
+        });
+        if (!res.ok) throw new Error(`tts ${res.status}`);
+        const j = await res.json();
+        if (!j?.audioContent) throw new Error("no audio");
 
-      currentUtterance = utterance;
-      window.speechSynthesis.speak(utterance);
+        // base64 WAV → Blob → object URL (cache utk klik berikutnya)
+        const bin = atob(j.audioContent);
+        const bytes = new Uint8Array(bin.length);
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        const url = URL.createObjectURL(new Blob([bytes], { type: j.mimeType || "audio/wav" }));
+        audioCache.set(cacheKey, url);
+
+        ttsEl.classList.remove("speaking");
+        playUrl(ttsEl, url, text, lang);
+      } catch {
+        ttsEl.classList.remove("speaking");
+        speakFallback(ttsEl, text, lang); // Gemini gagal → Web Speech API
+      }
     };
 
     document.addEventListener("click", handleTTSClick);
     return () => {
       document.removeEventListener("click", handleTTSClick);
-      window.speechSynthesis.cancel();
+      stopCurrent();
+      audioCache.forEach(url => URL.revokeObjectURL(url));
     };
   }, []);
 
@@ -841,6 +918,19 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
   const [fontSize, setFontSize] = useState<"s" | "m" | "l">("m");
   const [darkMode, setDarkMode] = useState(false);
+  const [voice, setVoice] = useState<string>("Aoede");
+  // Sinkronkan pilihan voice ke ref (dibaca handler TTS) + simpan preferensi pembaca.
+  useEffect(() => {
+    voiceRef.current = voice;
+    try { localStorage.setItem("linguo_tts_voice", voice); } catch {}
+  }, [voice]);
+  // Restore voice pilihan dari kunjungan sebelumnya.
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("linguo_tts_voice");
+      if (saved && TTS_VOICES.some(v => v.id === saved)) setVoice(saved);
+    } catch {}
+  }, []);
   const fontClass = fontSize === "s" ? "text-size-s" : fontSize === "l" ? "text-size-l" : "";
   const LANG_NAMES: Record<string, string> = {
     belanda:'Belanda',dutch:'Belanda',
@@ -940,8 +1030,27 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
 
         {/* Reading Controls */}
-        <div className={`sticky top-16 z-30 flex items-center justify-between py-3 px-2 mb-6 border-b backdrop-blur-xl ${darkMode ? "border-slate-700 bg-[#0f172a]/95" : "border-slate-100 bg-white/95"}`}>
-          <span className={`text-xs font-medium ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{minutes} min read</span>
+        <div className={`sticky top-16 z-30 flex items-center justify-between gap-2 py-3 px-2 mb-6 border-b backdrop-blur-xl ${darkMode ? "border-slate-700 bg-[#0f172a]/95" : "border-slate-100 bg-white/95"}`}>
+          <div className="flex items-center gap-2 min-w-0">
+            <span className={`text-xs font-medium whitespace-nowrap hidden sm:inline ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{minutes} min read</span>
+            {/* Pilih suara pembaca (Gemini TTS) — berlaku untuk semua anotasi 🔊 di artikel */}
+            <label
+              title="Pilih suara pembaca (TTS)"
+              className={`flex items-center gap-1 rounded-full pl-2 pr-1 py-1 border text-xs font-medium ${darkMode ? "bg-slate-800 border-slate-700" : "bg-slate-50 border-slate-200"}`}
+            >
+              <span className="text-sm leading-none">🔊</span>
+              <select
+                value={voice}
+                onChange={(e) => setVoice(e.target.value)}
+                aria-label="Pilih suara pembaca"
+                className={`bg-transparent outline-none cursor-pointer ${darkMode ? "text-slate-200" : "text-slate-700"}`}
+              >
+                {TTS_VOICES.map((v) => (
+                  <option key={v.id} value={v.id} className="text-slate-900">{v.label}</option>
+                ))}
+              </select>
+            </label>
+          </div>
           <ReadingControls fontSize={fontSize} setFontSize={setFontSize} darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
 
