@@ -42,6 +42,7 @@ export interface Question {
   prompt: string;
   options: string[] | null;
   answer: any;
+  image_url: string | null; // visual soal (mis. chart IELTS Writing Task 1)
   explanation: string | null;
   points: number;
   sort_order: number;
@@ -216,6 +217,7 @@ export function gradeObjective(q: Question, selectedIndex: number | null, text: 
 export async function gradeWithAI(input: {
   test_type: TestType; skill: "writing" | "speaking";
   prompt: string; rubric?: string; response_text?: string; audio_url?: string;
+  image_url?: string; // visual Writing Task 1 — dinilai via model vision
 }): Promise<{ score: number; feedback: string; transcript?: string } | null> {
   try {
     const { data: { session } } = await supabase.auth.getSession();

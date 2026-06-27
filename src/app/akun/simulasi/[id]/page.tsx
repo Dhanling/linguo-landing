@@ -174,6 +174,7 @@ export default function SimulasiRunnerPage() {
           rubric: q.explanation || undefined,
           response_text: a.text || undefined,
           audio_url: audioUrl || undefined,
+          image_url: q.image_url || undefined,
         });
         const ai = graded?.score ?? null;
         const earned = ai != null ? (q.points * ai) / 100 : 0;
@@ -596,6 +597,15 @@ function QuestionBlock({ index, q, state, onChange }: {
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{q.prompt}</p>
 
+      {q.image_url && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={q.image_url}
+          alt="Visual soal"
+          className="mt-3 max-h-96 w-full rounded-lg border border-slate-200 object-contain bg-slate-50"
+        />
+      )}
+
       {(q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
         <div className="mt-3 space-y-2">
           {opts.map((opt, i) => (
@@ -723,6 +733,10 @@ function ResultView({ sim, totals, results }: { sim: Simulation; totals: { score
           {results.map((r, i) => (
             <li key={r.question.id} className="rounded-xl border border-slate-200 bg-white p-4">
               <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{i + 1}.</span>{r.question.prompt}</p>
+              {r.question.image_url && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={r.question.image_url} alt="Visual soal" className="mt-2 max-h-72 w-full rounded-lg border border-slate-200 object-contain bg-slate-50" />
+              )}
               <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
                 <span className="rounded-full bg-slate-100 px-2 py-0.5 font-medium text-slate-600">{SKILL_LABEL[r.skill as keyof typeof SKILL_LABEL] ?? r.skill}</span>
                 {r.correct === true && <span className="inline-flex items-center gap-1 font-semibold text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />Benar</span>}
