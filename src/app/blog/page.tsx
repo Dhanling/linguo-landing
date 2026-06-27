@@ -19,8 +19,11 @@ export const metadata: Metadata = {
 
 async function getPosts() {
   try {
+    // Time-gate: sembunyikan post terjadwal (published_at di masa depan).
+    // `now` di-recompute tiap revalidasi ISR (≤60s) → post tayang otomatis saat waktunya tiba.
+    const now = new Date().toISOString();
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&order=published_at.desc`,
+      `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&order=published_at.desc`,
       {
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
         next: { revalidate: 60 },

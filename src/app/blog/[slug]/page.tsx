@@ -12,8 +12,10 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 async function getPost(slug: string) {
   try {
+    // Time-gate: post terjadwal (published_at masa depan) → 404 sampai waktunya tiba.
+    const now = new Date().toISOString();
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${slug}&status=eq.published&limit=1`,
+      `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${slug}&status=eq.published&published_at=lte.${now}&limit=1`,
       { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, next: { revalidate: 60 } }
     );
     if (!res.ok) return null;
@@ -24,9 +26,10 @@ async function getPost(slug: string) {
 
 async function getRelatedPosts(category: string, currentSlug: string) {
   try {
+    const now = new Date().toISOString();
     const url = category
-      ? `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&category=eq.${encodeURIComponent(category)}&slug=neq.${currentSlug}&order=published_at.desc&limit=3`
-      : `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&slug=neq.${currentSlug}&order=published_at.desc&limit=3`;
+      ? `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&category=eq.${encodeURIComponent(category)}&slug=neq.${currentSlug}&order=published_at.desc&limit=3`
+      : `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&slug=neq.${currentSlug}&order=published_at.desc&limit=3`;
     const res = await fetch(url, {
       headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, next: { revalidate: 60 }
     });
