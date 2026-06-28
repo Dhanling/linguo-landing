@@ -102,8 +102,10 @@ export default function SimulasiPaketPage() {
         </div>
       </section>
 
-      {/* Paket cards */}
-      <section className="mx-auto -mt-10 max-w-4xl px-5 pb-16">
+      {/* Paket cards — `relative z-10` wajib: section Hero di atas pakai
+          position:relative, jadi tanpa ini kartu (yang ditarik naik -mt-10)
+          ketutupan/overlap oleh hero. */}
+      <section className="relative z-10 mx-auto -mt-10 max-w-4xl px-5 pb-16">
         <div className="grid gap-5 sm:grid-cols-2">
           {PAKET.map((p) => (
             <div key={p.id} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
