@@ -8,7 +8,7 @@ import {
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
   AUTO_GRADED, SKILL_LABEL, TEST_TYPE_LABEL,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
-  type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo,
+  type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill,
 } from "@/lib/simulations";
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
@@ -473,9 +473,29 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
   qNumber: Record<string, number>;
 }) {
   const [open, setOpen] = useState(false);
-  // Accordion: hanya bagian aktif yang terbuka, lainnya otomatis ter-collapse.
-  const [openSec, setOpenSec] = useState(currentSecIdx);
-  useEffect(() => { setOpenSec(currentSecIdx); }, [currentSecIdx]);
+
+  // Kelompokkan section menurut skill → maksimal 4 tab (Reading/Listening/Speaking/Writing).
+  // Tiap skill berisi satu/lebih "part" (bagian). Accordion 2 tingkat: skill → part → soal.
+  const groups = useMemo(() => {
+    const map: { skill: Skill; parts: { section: Section; si: number; qs: Question[] }[] }[] = [];
+    sections.forEach((s, si) => {
+      const qs = questions.filter((q) => q.section_id === s.id);
+      if (qs.length === 0) return;
+      let g = map.find((x) => x.skill === s.skill);
+      if (!g) { g = { skill: s.skill, parts: [] }; map.push(g); }
+      g.parts.push({ section: s, si, qs });
+    });
+    return map;
+  }, [sections, questions]);
+
+  const currentSkill = sections[currentSecIdx]?.skill ?? null;
+  // Accordion: hanya skill & part yang aktif yang terbuka, lainnya otomatis ter-collapse.
+  const [openSkill, setOpenSkill] = useState<Skill | null>(currentSkill);
+  const [openPart, setOpenPart] = useState(currentSecIdx);
+  useEffect(() => {
+    setOpenSkill(sections[currentSecIdx]?.skill ?? null);
+    setOpenPart(currentSecIdx);
+  }, [currentSecIdx, sections]);
 
   const statusOf = (q: Question, si: number): NavStatus => {
     if (isAnswered(q, answers[q.id])) return "answered";
@@ -507,51 +527,88 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
       )}
 
       <div className="space-y-2">
-        {sections.map((s, si) => {
-          const secQs = questions.filter((q) => q.section_id === s.id);
-          if (secQs.length === 0) return null;
-          const Icon = SKILL_ICON[s.skill];
-          const isOpen = openSec === si;
-          const ansInSec = secQs.filter((q) => isAnswered(q, answers[q.id])).length;
-          const skipInSec = secQs.filter((q) => statusOf(q, si) === "skipped").length;
+        {groups.map((g) => {
+          const Icon = SKILL_ICON[g.skill];
+          const isSkillOpen = openSkill === g.skill;
+          const allQs = g.parts.flatMap((p) => p.qs);
+          const ansInSkill = allQs.filter((q) => isAnswered(q, answers[q.id])).length;
+          const skipInSkill = g.parts.reduce((n, p) => n + p.qs.filter((q) => statusOf(q, p.si) === "skipped").length, 0);
+          const isActiveSkill = g.skill === currentSkill;
+          const multiPart = g.parts.length > 1;
+
+          // Grid nomor soal untuk satu part.
+          const qGrid = (qs: Question[], si: number) => (
+            <div className="flex flex-wrap gap-1.5">
+              {qs.map((q) => {
+                const st = statusOf(q, si);
+                const num = qNumber[q.id];
+                const cls =
+                  st === "answered" ? "text-white"
+                  : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
+                  : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
+                const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
+                return (
+                  <button
+                    key={q.id}
+                    type="button"
+                    onClick={() => handleJump(si, q.id)}
+                    title={`Soal ${num} · ${label}`}
+                    className={`flex h-9 min-w-9 items-center justify-center rounded-lg px-1.5 text-xs font-semibold tabular-nums transition ${cls}`}
+                    style={st === "answered" ? { background: TEAL } : undefined}
+                  >
+                    {num}
+                  </button>
+                );
+              })}
+            </div>
+          );
+
           return (
-            <div key={s.id} className="overflow-hidden rounded-xl border border-slate-100">
+            <div key={g.skill} className="overflow-hidden rounded-xl border border-slate-100">
               <button
                 type="button"
-                onClick={() => setOpenSec(isOpen ? -1 : si)}
-                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${si === currentSecIdx ? "bg-teal-50/60 text-teal-800" : "text-slate-600 hover:bg-slate-50"}`}
+                onClick={() => setOpenSkill(isSkillOpen ? null : g.skill)}
+                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${isActiveSkill ? "bg-teal-50/60 text-teal-800" : "text-slate-600 hover:bg-slate-50"}`}
               >
                 <Icon className="h-3.5 w-3.5 shrink-0 text-slate-400" />
-                <span className="flex-1 truncate text-left">{SKILL_LABEL[s.skill]}</span>
-                {si === currentSecIdx && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">aktif</span>}
-                {skipInSec > 0 && <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] text-white">{skipInSec}</span>}
-                <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInSec}/{secQs.length}</span>
-                <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                <span className="flex-1 truncate text-left">{SKILL_LABEL[g.skill]}</span>
+                {isActiveSkill && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">aktif</span>}
+                {skipInSkill > 0 && <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] text-white">{skipInSkill}</span>}
+                <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInSkill}/{allQs.length}</span>
+                <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform ${isSkillOpen ? "rotate-180" : ""}`} />
               </button>
-              {isOpen && (
-                <div className="flex flex-wrap gap-1.5 px-2.5 pb-2.5 pt-0.5">
-                  {secQs.map((q) => {
-                    const st = statusOf(q, si);
-                    const num = qNumber[q.id];
-                    const cls =
-                      st === "answered" ? "text-white"
-                      : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
-                      : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
-                    const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
-                    return (
-                      <button
-                        key={q.id}
-                        type="button"
-                        onClick={() => handleJump(si, q.id)}
-                        title={`Soal ${num} · ${label}`}
-                        className={`flex h-9 min-w-9 items-center justify-center rounded-lg px-1.5 text-xs font-semibold tabular-nums transition ${cls}`}
-                        style={st === "answered" ? { background: TEAL } : undefined}
-                      >
-                        {num}
-                      </button>
-                    );
-                  })}
-                </div>
+
+              {isSkillOpen && (
+                multiPart ? (
+                  // >1 bagian → tampilkan accordion "Part 1 / Part 2 / …".
+                  <div className="space-y-1.5 px-2 pb-2.5 pt-1">
+                    {g.parts.map((p, pi) => {
+                      const isPartOpen = openPart === p.si;
+                      const ansInPart = p.qs.filter((q) => isAnswered(q, answers[q.id])).length;
+                      const skipInPart = p.qs.filter((q) => statusOf(q, p.si) === "skipped").length;
+                      const isActivePart = p.si === currentSecIdx;
+                      return (
+                        <div key={p.section.id} className="overflow-hidden rounded-lg border border-slate-100">
+                          <button
+                            type="button"
+                            onClick={() => setOpenPart(isPartOpen ? -1 : p.si)}
+                            className={`flex w-full items-center gap-1.5 px-2 py-1.5 text-[11px] font-semibold ${isActivePart ? "bg-teal-50/60 text-teal-800" : "text-slate-500 hover:bg-slate-50"}`}
+                          >
+                            <span className="flex-1 truncate text-left">Part {pi + 1}</span>
+                            {isActivePart && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[9px] font-semibold text-teal-700">aktif</span>}
+                            {skipInPart > 0 && <span className="flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] text-white">{skipInPart}</span>}
+                            <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInPart}/{p.qs.length}</span>
+                            <ChevronDown className={`h-3 w-3 shrink-0 text-slate-400 transition-transform ${isPartOpen ? "rotate-180" : ""}`} />
+                          </button>
+                          {isPartOpen && <div className="px-2 pb-2 pt-1.5">{qGrid(p.qs, p.si)}</div>}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  // 1 bagian → langsung grid nomor, tanpa label "Part".
+                  <div className="px-2.5 pb-2.5 pt-0.5">{qGrid(g.parts[0].qs, g.parts[0].si)}</div>
+                )
               )}
             </div>
           );
