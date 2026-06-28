@@ -13,7 +13,7 @@ import {
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
-  Clock, X, Info, ChevronDown,
+  Clock, X, Info, ChevronDown, Check,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -256,71 +256,11 @@ export default function SimulasiRunnerPage() {
     <ResultView sim={sim} totals={totals} results={results} />
   );
 
-  // intro — petunjuk pengerjaan (template default)
+  // intro — onboarding wizard 3 langkah sebelum mulai mengerjakan
   if (phase === "intro") {
-    const rules = GENERAL_RULES.filter((r) => !r.timed || sim.duration_minutes > 0);
     return (
       <Shell sim={sim} preview={preview}>
-        {/* Ringkasan */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
-          <p className="mt-1 text-sm text-slate-600">{sim.description || TEST_OVERVIEW[sim.test_type]}</p>
-
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
-            <Stat icon={BookOpen} label="Jumlah Bagian" value={`${sections.length} bagian`} />
-            <Stat icon={Clock} label="Durasi" value={sim.duration_minutes > 0 ? `${sim.duration_minutes} menit` : "Tanpa batas"} />
-          </div>
-
-          <div className="mt-3 flex items-center gap-2 rounded-lg bg-violet-50 px-3 py-2 text-sm text-violet-700">
-            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis oleh AI.
-          </div>
-        </div>
-
-        {/* Petunjuk pengerjaan */}
-        <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
-            <Info className="h-4 w-4 text-teal-600" />Petunjuk Pengerjaan
-          </h3>
-          <ul className="mt-3 space-y-2">
-            {rules.map((r, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-600">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{r.text}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Rincian bagian */}
-        <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-sm font-bold text-slate-900">Rincian Bagian</h3>
-          <ol className="mt-3 space-y-3">
-            {sections.map((s, i) => {
-              const Icon = SKILL_ICON[s.skill];
-              const count = questions.filter((q) => q.section_id === s.id).length;
-              return (
-                <li key={s.id} className="flex gap-3 rounded-xl border border-slate-100 p-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700">
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-slate-900">
-                      <span className="mr-1 text-slate-400">Bagian {i + 1}.</span>{s.title}
-                    </p>
-                    <p className="mt-0.5 text-xs font-medium text-teal-700">
-                      {SKILL_LABEL[s.skill]} · {count} soal{s.duration_minutes > 0 ? ` · ${s.duration_minutes} menit` : ""}
-                    </p>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-500">{s.instructions || SKILL_HOWTO[s.skill]}</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-
-        <button onClick={start} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold text-white sm:w-auto sm:px-8" style={{ background: TEAL }}>
-          Saya Mengerti, Mulai Simulasi <ArrowRight className="h-4 w-4" />
-        </button>
+        <IntroWizard sim={sim} sections={sections} questions={questions} onStart={start} />
       </Shell>
     );
   }
@@ -410,6 +350,240 @@ function Stat({ icon: Icon, label, value }: { icon: any; label: string; value: s
 
 function Centered({ children }: { children: React.ReactNode }) {
   return <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">{children}</div>;
+}
+
+// ── Onboarding wizard: Ikhtisar → Petunjuk & cek mic → Rincian bagian ─────────
+const INTRO_STEPS = ["Ikhtisar", "Petunjuk", "Rincian"] as const;
+
+function IntroWizard({ sim, sections, questions, onStart }: {
+  sim: Simulation; sections: Section[]; questions: Question[]; onStart: () => void;
+}) {
+  const [step, setStep] = useState(0);
+  const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
+  const rules = GENERAL_RULES.filter((r) => !r.timed || sim.duration_minutes > 0);
+
+  // Kelompokkan bagian per skill → accordion biar daftar yang panjang (mis. 13
+  // bagian) tidak membanjiri layar. Default skill pertama yang terbuka.
+  const groups = useMemo(() => {
+    const map: { skill: Skill; parts: { section: Section; idx: number; count: number }[] }[] = [];
+    sections.forEach((s, i) => {
+      const count = questions.filter((q) => q.section_id === s.id).length;
+      let g = map.find((x) => x.skill === s.skill);
+      if (!g) { g = { skill: s.skill, parts: [] }; map.push(g); }
+      g.parts.push({ section: s, idx: i, count });
+    });
+    return map;
+  }, [sections, questions]);
+  const [openSkill, setOpenSkill] = useState<Skill | null>(sections[0]?.skill ?? null);
+
+  const isLast = step === INTRO_STEPS.length - 1;
+
+  return (
+    <div>
+      {/* Stepper */}
+      <div className="mb-5 flex items-center">
+        {INTRO_STEPS.map((label, i) => (
+          <div key={label} className="flex items-center last:flex-none [&:not(:last-child)]:flex-1">
+            <div className="flex shrink-0 items-center gap-2">
+              <span
+                className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${i <= step ? "text-white" : "bg-slate-100 text-slate-400"}`}
+                style={i <= step ? { background: TEAL } : undefined}
+              >
+                {i < step ? <Check className="h-4 w-4" /> : i + 1}
+              </span>
+              <span className={`hidden text-xs font-semibold sm:inline ${i === step ? "text-slate-900" : "text-slate-400"}`}>{label}</span>
+            </div>
+            {i < INTRO_STEPS.length - 1 && (
+              <div className="mx-2 h-0.5 flex-1 rounded" style={{ background: i < step ? TEAL : "#e2e8f0" }} />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Step 0 — Ikhtisar */}
+      {step === 0 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
+          <p className="mt-1 text-sm text-slate-600">{sim.description || TEST_OVERVIEW[sim.test_type]}</p>
+
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
+            <Stat icon={BookOpen} label="Jumlah Bagian" value={`${sections.length} bagian`} />
+            <Stat icon={Clock} label="Durasi" value={sim.duration_minutes > 0 ? `${sim.duration_minutes} menit` : "Tanpa batas"} />
+          </div>
+
+          <div className="mt-3 flex items-center gap-2 rounded-lg bg-violet-50 px-3 py-2 text-sm text-violet-700">
+            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis oleh AI.
+          </div>
+        </div>
+      )}
+
+      {/* Step 1 — Petunjuk & cek perangkat */}
+      {step === 1 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
+            <Info className="h-4 w-4 text-teal-600" />Petunjuk Pengerjaan
+          </h3>
+          <ul className="mt-3 space-y-2">
+            {rules.map((r, i) => (
+              <li key={i} className="flex gap-2 text-sm text-slate-600">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{r.text}
+              </li>
+            ))}
+          </ul>
+
+          {hasSpeaking && (
+            <div className="mt-5 border-t border-slate-100 pt-5">
+              <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
+                <Mic className="h-4 w-4 text-teal-600" />Cek Mikrofon
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">Tes ini ada bagian Speaking. Pastikan mikrofon berfungsi sebelum mulai.</p>
+              <MicCheck />
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Step 2 — Rincian bagian (accordion per skill) */}
+      {step === 2 && (
+        <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 className="text-sm font-bold text-slate-900">Rincian Bagian</h3>
+          <p className="mt-1 text-xs text-slate-500">Kerjakan tiap bagian secara berurutan.</p>
+          <div className="mt-3 space-y-2">
+            {groups.map((g) => {
+              const Icon = SKILL_ICON[g.skill];
+              const isOpen = openSkill === g.skill;
+              const totalQ = g.parts.reduce((n, p) => n + p.count, 0);
+              return (
+                <div key={g.skill} className="overflow-hidden rounded-xl border border-slate-100">
+                  <button
+                    type="button"
+                    onClick={() => setOpenSkill(isOpen ? null : g.skill)}
+                    className="flex w-full items-center gap-2.5 px-3 py-2.5 text-left hover:bg-slate-50"
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-700">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="flex-1 text-sm font-semibold text-slate-900">{SKILL_LABEL[g.skill]}</span>
+                    <span className="text-xs font-medium text-slate-400 tabular-nums">{g.parts.length} bagian · {totalQ} soal</span>
+                    <ChevronDown className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {isOpen && (
+                    <ol className="space-y-2 border-t border-slate-100 px-3 py-2.5">
+                      {g.parts.map((p) => (
+                        <li key={p.section.id} className="text-sm">
+                          <p className="font-semibold text-slate-900">
+                            <span className="mr-1 text-slate-400">Bagian {p.idx + 1}.</span>{p.section.title}
+                          </p>
+                          <p className="mt-0.5 text-xs font-medium text-teal-700">
+                            {p.count} soal{p.section.duration_minutes > 0 ? ` · ${p.section.duration_minutes} menit` : ""}
+                          </p>
+                          <p className="mt-1 text-xs leading-relaxed text-slate-500">{p.section.instructions || SKILL_HOWTO[g.skill]}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Navigasi wizard */}
+      <div className="mt-5 flex items-center justify-between gap-3">
+        <button
+          disabled={step === 0}
+          onClick={() => setStep((s) => Math.max(0, s - 1))}
+          className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
+        >
+          <ArrowLeft className="h-4 w-4" />Kembali
+        </button>
+        {isLast ? (
+          <button onClick={onStart} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
+            <CheckCircle2 className="h-4 w-4" />Saya Mengerti, Mulai Simulasi
+          </button>
+        ) : (
+          <button onClick={() => setStep((s) => s + 1)} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+            Lanjut <ArrowRight className="h-4 w-4" />
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Cek mikrofon — minta izin lalu tampilkan level meter sebagai bukti mic aktif.
+function MicCheck() {
+  const [status, setStatus] = useState<"idle" | "checking" | "ok" | "error">("idle");
+  const [level, setLevel] = useState(0);
+  const streamRef = useRef<MediaStream | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const ctxRef = useRef<AudioContext | null>(null);
+
+  function stop() {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    ctxRef.current?.close().catch(() => {});
+    streamRef.current?.getTracks().forEach((t) => t.stop());
+    streamRef.current = null;
+  }
+  useEffect(() => stop, []);
+
+  async function check() {
+    setStatus("checking");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
+      const Ctx = window.AudioContext || (window as any).webkitAudioContext;
+      const ctx = new Ctx();
+      ctxRef.current = ctx;
+      const analyser = ctx.createAnalyser();
+      analyser.fftSize = 256;
+      ctx.createMediaStreamSource(stream).connect(analyser);
+      const data = new Uint8Array(analyser.frequencyBinCount);
+      setStatus("ok");
+      const loop = () => {
+        analyser.getByteTimeDomainData(data);
+        let peak = 0;
+        for (let i = 0; i < data.length; i++) { const v = Math.abs(data[i] - 128); if (v > peak) peak = v; }
+        setLevel(Math.min(100, Math.round((peak / 128) * 200)));
+        rafRef.current = requestAnimationFrame(loop);
+      };
+      loop();
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+      {status === "idle" && (
+        <button onClick={check} className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: TEAL }}>
+          <Mic className="h-4 w-4" />Tes mikrofon
+        </button>
+      )}
+      {status === "checking" && (
+        <p className="flex items-center gap-2 text-sm text-slate-500"><Loader2 className="h-4 w-4 animate-spin" />Meminta izin mikrofon…</p>
+      )}
+      {status === "ok" && (
+        <div>
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600"><CheckCircle2 className="h-4 w-4" />Mikrofon aktif — coba bicara, bar akan bergerak.</p>
+          <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
+            <div className="h-full rounded-full transition-[width] duration-75" style={{ width: `${level}%`, background: TEAL }} />
+          </div>
+        </div>
+      )}
+      {status === "error" && (
+        <div>
+          <p className="flex items-center gap-1.5 text-sm font-medium text-red-500"><AlertCircle className="h-4 w-4" />Tidak bisa mengakses mikrofon. Izinkan akses di browser lalu coba lagi.</p>
+          <button onClick={check} className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600">
+            <Mic className="h-4 w-4" />Coba lagi
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 function Shell({ sim, children, headerRight, preview }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean }) {
