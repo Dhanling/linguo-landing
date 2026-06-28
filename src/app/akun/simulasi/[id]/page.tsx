@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import {
@@ -73,6 +73,14 @@ export default function SimulasiRunnerPage() {
 
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
+
+  // Penomoran soal berlanjut lintas-bagian (1..N untuk seluruh tes), bukan reset
+  // ke 1 tiap section. `questions` sudah terurut per section dari fetchSimulation.
+  const qNumber = useMemo(() => {
+    const m: Record<string, number> = {};
+    questions.forEach((q, i) => { m[q.id] = i + 1; });
+    return m;
+  }, [questions]);
 
   // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
   function goToQuestion(targetSecIdx: number, qid: string) {
@@ -334,6 +342,7 @@ export default function SimulasiRunnerPage() {
         currentSecIdx={secIdx}
         maxVisitedSecIdx={maxSecIdx}
         onJump={goToQuestion}
+        qNumber={qNumber}
       />
 
       <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
@@ -353,8 +362,8 @@ export default function SimulasiRunnerPage() {
         )}
 
         <div className="mt-5 space-y-5">
-          {secQs.map((q, i) => (
-            <QuestionBlock key={q.id} index={i + 1} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
+          {secQs.map((q) => (
+            <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
           ))}
           {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
         </div>
@@ -453,9 +462,10 @@ function isAnswered(q: Question, s?: AnswerState) {
 // ── Navigasi soal mengambang: blok nomor + status terjawab/belum/dilewati ────
 type NavStatus = "answered" | "skipped" | "todo";
 
-function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump }: {
+function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump, qNumber }: {
   sections: Section[]; questions: Question[]; answers: Record<string, AnswerState>;
   currentSecIdx: number; maxVisitedSecIdx: number; onJump: (secIdx: number, qid: string) => void;
+  qNumber: Record<string, number>;
 }) {
   const [open, setOpen] = useState(false);
   // Accordion: hanya bagian aktif yang terbuka, lainnya otomatis ter-collapse.
@@ -515,8 +525,9 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
               </button>
               {isOpen && (
                 <div className="flex flex-wrap gap-1.5 px-2.5 pb-2.5 pt-0.5">
-                  {secQs.map((q, qi) => {
+                  {secQs.map((q) => {
                     const st = statusOf(q, si);
+                    const num = qNumber[q.id];
                     const cls =
                       st === "answered" ? "text-white"
                       : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
@@ -527,11 +538,11 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
                         key={q.id}
                         type="button"
                         onClick={() => handleJump(si, q.id)}
-                        title={`Soal ${qi + 1} · ${label}`}
-                        className={`flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${cls}`}
+                        title={`Soal ${num} · ${label}`}
+                        className={`flex h-9 min-w-9 items-center justify-center rounded-lg px-1.5 text-xs font-semibold tabular-nums transition ${cls}`}
                         style={st === "answered" ? { background: TEAL } : undefined}
                       >
-                        {qi + 1}
+                        {num}
                       </button>
                     );
                   })}

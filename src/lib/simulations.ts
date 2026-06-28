@@ -126,10 +126,11 @@ export async function fetchSimulation(id: string, preview = false): Promise<{
   if (preview) {
     const { data, error } = await supabase.rpc("get_simulation_exam", { p_sim_id: id });
     if (error || !data || !data.simulation) return { simulation: null, sections: [], questions: [] };
+    const secs = (data.sections as Section[]) || [];
     return {
       simulation: data.simulation as Simulation,
-      sections: (data.sections as Section[]) || [],
-      questions: (data.questions as Question[]) || [],
+      sections: secs,
+      questions: orderQuestions(secs, (data.questions as Question[]) || []),
     };
   }
 
@@ -148,7 +149,21 @@ export async function fetchSimulation(id: string, preview = false): Promise<{
       .order("sort_order", { ascending: true });
     qs = (qData as Question[]) || [];
   }
-  return { simulation: sim as Simulation, sections: (secs as Section[]) || [], questions: qs };
+  return { simulation: sim as Simulation, sections: (secs as Section[]) || [], questions: orderQuestions((secs as Section[]) || [], qs) };
+}
+
+// Urutkan soal mengikuti urutan SECTION dulu, baru sort_order dalam tiap section.
+// Tanpa ini, query `.order("sort_order")` mengurutkan lintas-section (semua soal
+// sort_order 0 dulu, lalu semua sort_order 1, dst) sehingga array `questions`
+// teracak antar-section — bikin daftar hasil & navigasi soal jadi tidak urut.
+function orderQuestions(sections: Section[], questions: Question[]): Question[] {
+  const rank: Record<string, number> = {};
+  sections.forEach((s, i) => { rank[s.id] = i; });
+  return [...questions].sort(
+    (a, b) =>
+      (rank[a.section_id] ?? 0) - (rank[b.section_id] ?? 0) ||
+      a.sort_order - b.sort_order,
+  );
 }
 
 // ── Attempt lifecycle ────────────────────────────────────────────────────────
