@@ -12,9 +12,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   try {
+    // Time-gate: jangan bocorkan URL post terjadwal (published_at masa depan) ke
+    // Google sebelum tayang — selaras dgn /blog & /blog/[slug].
+    const now = new Date().toISOString();
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&select=slug,published_at&order=published_at.desc`,
-      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, next: { revalidate: 3600 } }
+      `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&select=slug,published_at&order=published_at.desc`,
+      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, cache: "no-store" }
     );
     if (res.ok) {
       const posts = await res.json();

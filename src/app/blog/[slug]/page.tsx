@@ -4,8 +4,12 @@ import Link from "next/link";
 import ArticleContent from "./ArticleContent";
 import TableOfContents from "./TableOfContents";
 
-// Safety net: revalidate every 60s even if webhook fails
-export const revalidate = 60;
+// Render per-request: time-gate post terjadwal harus dievaluasi dgn `now` yang
+// selalu segar. Dgn ISR, halaman detail post terjadwal yg sempat ter-generate
+// bisa nyangkut 200 (bocor) walau published_at masih di masa depan, karena cron
+// revalidasi cuma menyentuh /blog (bukan /blog/[slug]). force-dynamic menjamin
+// getPost selalu menjalankan filter `published_at<=now` → 404 sampai waktunya tiba.
+export const dynamic = "force-dynamic";
 
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -16,7 +20,7 @@ async function getPost(slug: string) {
     const now = new Date().toISOString();
     const res = await fetch(
       `${SUPABASE_URL}/rest/v1/blog_posts?slug=eq.${slug}&status=eq.published&published_at=lte.${now}&limit=1`,
-      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, next: { revalidate: 60 } }
+      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, cache: "no-store" }
     );
     if (!res.ok) return null;
     const data = await res.json();
@@ -31,7 +35,7 @@ async function getRelatedPosts(category: string, currentSlug: string) {
       ? `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&category=eq.${encodeURIComponent(category)}&slug=neq.${currentSlug}&order=published_at.desc&limit=3`
       : `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now}&slug=neq.${currentSlug}&order=published_at.desc&limit=3`;
     const res = await fetch(url, {
-      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, next: { revalidate: 60 }
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, cache: "no-store"
     });
     if (!res.ok) return [];
     return res.json();
