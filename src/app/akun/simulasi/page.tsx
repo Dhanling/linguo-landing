@@ -3,18 +3,22 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  fetchPublishedSimulations, getStudentInfo,
-  TEST_TYPE_LABEL, type Simulation,
+  fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo,
+  TEST_TYPE_LABEL, type Simulation, type TestType,
 } from "@/lib/simulations";
 import {
-  ClipboardCheck, ArrowLeft, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2,
+  ClipboardCheck, ArrowLeft, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
+const PRICE = 79000;
+const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
+const ALL_TYPES: TestType[] = ["toefl", "ielts"];
 
 export default function SimulasiKatalogPage() {
   const [sims, setSims] = useState<Simulation[]>([]);
+  const [owned, setOwned] = useState<TestType[]>([]);
   const [loading, setLoading] = useState(true);
   const [authed, setAuthed] = useState<boolean | null>(null);
 
@@ -22,11 +26,18 @@ export default function SimulasiKatalogPage() {
     (async () => {
       const info = await getStudentInfo();
       setAuthed(!!info);
-      const data = await fetchPublishedSimulations();
+      const [data, ents] = await Promise.all([
+        fetchPublishedSimulations(),
+        fetchMyEntitlements(),
+      ]);
       setSims(data);
+      setOwned(ents);
       setLoading(false);
     })();
   }, []);
+
+  // Jenis tes yang belum dimiliki → tampilkan kartu teaser terkunci.
+  const lockedTypes = ALL_TYPES.filter((t) => !owned.includes(t));
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -58,13 +69,27 @@ export default function SimulasiKatalogPage() {
               Masuk / Daftar <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        ) : sims.length === 0 ? (
-          <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center text-slate-500">
-            <ClipboardCheck className="mx-auto mb-3 h-8 w-8 opacity-50" />
-            <p className="text-sm">Belum ada simulasi yang tersedia. Cek lagi nanti ya!</p>
-          </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2">
+            {/* Paket terkunci (belum dibeli) → CTA ke halaman checkout */}
+            {lockedTypes.map((t) => (
+              <div key={`lock-${t}`} className="flex flex-col rounded-2xl border border-dashed border-slate-300 bg-white p-5">
+                <div className="mb-3 flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-500">
+                    <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
+                  </span>
+                </div>
+                <h2 className="font-bold text-slate-900">Simulasi {TEST_TYPE_LABEL[t]}</h2>
+                <p className="mt-1 text-sm text-slate-500">4 skill lengkap, Writing &amp; Speaking dinilai AI. Beli sekali, akses selamanya.</p>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+                  <span className="text-xs text-slate-400">/ sekali bayar</span>
+                </div>
+                <Link href="/simulasi/paket" className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95" style={{ background: TEAL }}>
+                  <Sparkles className="h-4 w-4" /> Beli Paket
+                </Link>
+              </div>
+            ))}
             {sims.map((s) => (
               <Link
                 key={s.id}
@@ -92,6 +117,12 @@ export default function SimulasiKatalogPage() {
                 </span>
               </Link>
             ))}
+            {sims.length === 0 && lockedTypes.length === 0 && (
+              <div className="sm:col-span-2 rounded-2xl border border-slate-200 bg-white p-10 text-center text-slate-500">
+                <ClipboardCheck className="mx-auto mb-3 h-8 w-8 opacity-50" />
+                <p className="text-sm">Belum ada simulasi yang tersedia. Cek lagi nanti ya!</p>
+              </div>
+            )}
           </div>
         )}
       </main>

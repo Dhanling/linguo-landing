@@ -19,6 +19,9 @@ const PRODUCT_PRICES: Record<string, { amount: number; description: string }> = 
     "e-learning-6": { amount: 99000, description: "E-Learning 6 Bulan" },
     "e-learning-12": { amount: 179000, description: "E-Learning 12 Bulan" },
   "e-book": { amount: 29000, description: "E-Book Digital" },
+  // ── simulasi-paywall-v1: produk simulasi tes berbayar (akses lifetime, dinilai AI) ──
+  "simulasi-toefl": { amount: 79000, description: "Simulasi TOEFL iBT — penilaian AI (akses lifetime)" },
+  "simulasi-ielts": { amount: 79000, description: "Simulasi IELTS — penilaian AI (akses lifetime)" },
   // ── ebook-xendit-v3: SKU bundle e-book per-edisi (id=Bahasa Indonesia, en=English) ──
   "ebook-satuan-id":  { amount: 99000,  description: "E-Book Satuan - 1 bahasa (Edisi Bahasa Indonesia)" },
   "ebook-hemat-id":   { amount: 239000, description: "E-Book Bundle Hemat - 3 bahasa (Edisi Bahasa Indonesia)" },
@@ -188,7 +191,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
     }
 
-    const externalId = `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    // simulasi-paywall-v1: external_id khusus simulasi (LINGUO-SIM-<test_type>-<ts>)
+    // supaya xendit-webhook bisa deteksi & grant simulation_entitlements saat PAID.
+    const simMatch = /^simulasi-(toefl|ielts)$/.exec(productKey || "");
+    const externalId = simMatch
+      ? `LINGUO-SIM-${simMatch[1]}-${Date.now()}`
+      : `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
     // ── addon-ebook-recording-v1: cross-sell bundle e-book + recording (Reguler) ──
     const ADDON_PRICE = 150000;

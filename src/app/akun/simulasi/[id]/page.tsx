@@ -227,10 +227,15 @@ export default function SimulasiRunnerPage() {
     <Centered>
       <div className="text-center">
         <AlertCircle className="mx-auto h-8 w-8 text-slate-400" />
-        <p className="mt-2 text-sm text-slate-600">Simulasi tidak ditemukan atau belum dipublikasikan.</p>
-        <Link href="/akun/simulasi" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
-          <ArrowLeft className="h-4 w-4" />Kembali ke daftar
-        </Link>
+        <p className="mt-2 text-sm text-slate-600">Simulasi tidak tersedia. Mungkin belum dipublikasikan, atau kamu belum punya akses paketnya.</p>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
+            Beli Paket <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/akun/simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
+            <ArrowLeft className="h-4 w-4" />Kembali ke daftar
+          </Link>
+        </div>
       </div>
     </Centered>
   );

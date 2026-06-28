@@ -186,6 +186,19 @@ export async function getStudentInfo(): Promise<StudentInfo | null> {
   return { user_id: user.id, name, email: user.email ?? null, whatsapp };
 }
 
+// ── Entitlement (simulasi-paywall-v1) ────────────────────────────────────────
+// Jenis tes yang sudah dibeli user saat ini. RLS "Self read entitlement" sudah
+// memfilter ke baris milik user (by uid/email), jadi tak perlu filter manual.
+export async function fetchMyEntitlements(): Promise<TestType[]> {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return [];
+  const { data } = await supabase
+    .from("simulation_entitlements")
+    .select("test_type")
+    .eq("status", "active");
+  return Array.from(new Set((data || []).map((r: any) => r.test_type))) as TestType[];
+}
+
 export async function createAttempt(simulationId: string, info: StudentInfo): Promise<string | null> {
   const { data, error } = await supabase
     .from("simulation_attempts")

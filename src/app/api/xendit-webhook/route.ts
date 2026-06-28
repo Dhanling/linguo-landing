@@ -63,6 +63,61 @@ async function activateLmsSubscription(invoiceId: string): Promise<void> {
   }
 }
 
+// ── simulasi-paywall-v1: grant akses simulasi saat invoice PAID ──────────────
+// Invoice simulasi punya external_id `LINGUO-SIM-<toefl|ielts>-<ts>`. Email
+// pembeli diambil dari row lead (sudah di-update di handler utama). Idempoten:
+// cek dulu apakah entitlement aktif sudah ada (juga dijaga unique index DB).
+async function grantSimulationEntitlement(externalId: string): Promise<void> {
+  try {
+    const m = /^LINGUO-SIM-(toefl|ielts)-/.exec(externalId || "");
+    if (!m) return; // bukan invoice simulasi — skip
+    const testType = m[1];
+
+    // Ambil email + amount dari lead.
+    const leadRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${externalId}&select=email,amount&limit=1`,
+      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+    );
+    if (!leadRes.ok) { console.error("Sim lead lookup failed:", await leadRes.text()); return; }
+    const leadRows = await leadRes.json();
+    const email = Array.isArray(leadRows) ? leadRows[0]?.email : null;
+    if (!email) { console.error("Sim entitlement: email tidak ditemukan utk", externalId); return; }
+
+    // Idempotensi: skip kalau sudah ada entitlement aktif utk email+test_type.
+    const existRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/simulation_entitlements?email=ilike.${encodeURIComponent(email)}&test_type=eq.${testType}&status=eq.active&select=id&limit=1`,
+      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+    );
+    if (existRes.ok) {
+      const exist = await existRes.json();
+      if (Array.isArray(exist) && exist[0]?.id) {
+        console.log(`Sim entitlement sudah ada: ${email} (${testType}) — skip`);
+        return;
+      }
+    }
+
+    const insRes = await fetch(`${SUPABASE_URL}/rest/v1/simulation_entitlements`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+      body: JSON.stringify({
+        email,
+        test_type: testType,
+        status: "active",
+        source_external_id: externalId,
+        amount: Array.isArray(leadRows) ? leadRows[0]?.amount ?? null : null,
+      }),
+    });
+    if (!insRes.ok) console.error("Sim entitlement insert failed:", await insRes.text());
+    else console.log(`Sim entitlement granted: ${email} (${testType})`);
+  } catch (e) {
+    console.error("grantSimulationEntitlement error (non-fatal):", e);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Verify webhook token
@@ -112,6 +167,8 @@ export async function POST(req: NextRequest) {
     // 2b. [SUBSCRIPTION] Aktivasi access-pass LMS kalau invoice ini subscription.
     if (status === "PAID") {
       await activateLmsSubscription(id);
+      // simulasi-paywall-v1: grant entitlement simulasi (external_id LINGUO-SIM-*).
+      await grantSimulationEntitlement(external_id);
     }
 
     // 2c. [REGISTRATION] enrollment-server-flow-v1 — invoice dari /api/enroll

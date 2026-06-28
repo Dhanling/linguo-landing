@@ -2,7 +2,7 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -13,11 +13,14 @@ export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | 
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
-  | { key: string; label: string; icon: LucideIcon; soon: true };
+  | { key: string; label: string; icon: LucideIcon; soon: true }
+  // simulasi-paywall-v1 — item link ke route terpisah (/akun/simulasi), bukan tab.
+  | { key: string; label: string; icon: LucideIcon; href: string };
 
 const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
+  { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck, href: "/akun/simulasi" },
   { key: "pustaka", label: "Perpustakaan", icon: Library },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
   { key: "sertifikat", label: "Sertifikat", icon: Star },
@@ -88,6 +91,18 @@ export default function StudentShell({
           <nav className="mt-12 flex flex-col items-center gap-3">
             {NAV.map((item) => {
               const Icon = item.icon;
+              if ("href" in item) {
+                return (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+                  >
+                    <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+                    <Tip label={item.label} />
+                  </a>
+                );
+              }
               if (item.soon) {
                 return (
                   <div
