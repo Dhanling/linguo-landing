@@ -29,7 +29,7 @@ const SKILLS = [
 ];
 const FEATURES = [
   "4 skill lengkap dalam satu sesi",
-  "Writing & Speaking dinilai AI + feedback",
+  "Writing & Speaking dinilai otomatis + feedback",
   "Skor & pembahasan langsung keluar",
   "Akses selamanya (sekali bayar)",
 ];
@@ -93,11 +93,11 @@ export default function SimulasiPaketPage() {
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
         <div className="mx-auto max-w-5xl px-5 py-14 text-center text-white sm:py-20">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold backdrop-blur">
-            <Sparkles className="h-4 w-4" /> Dinilai AI
+            <Sparkles className="h-4 w-4" /> Feedback Lengkap
           </span>
           <h1 className="mt-4 text-3xl font-extrabold sm:text-4xl">Pilih Paket Simulasi</h1>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
-            Latihan tes lengkap 4 skill dengan penilaian AI. Pilih jenis tes yang ingin kamu kuasai.
+            Latihan tes lengkap 4 skill dengan penilaian instan + feedback. Pilih jenis tes yang ingin kamu kuasai.
           </p>
         </div>
       </section>

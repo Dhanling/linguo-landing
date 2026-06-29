@@ -72,9 +72,9 @@ export const SKILL_HOWTO: Record<Skill, string> = {
   listening:
     "Putar audio dan simak baik-baik (boleh diputar ulang), lalu jawab pertanyaannya. Tulis jawaban singkat sesuai yang kamu dengar.",
   writing:
-    "Tulis esai sesuai instruksi dan jumlah kata minimal. Jawaban dinilai otomatis oleh AI sesuai kriteria penilaian.",
+    "Tulis esai sesuai instruksi dan jumlah kata minimal. Jawaban dinilai otomatis sesuai kriteria penilaian.",
   speaking:
-    "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas; rekaman akan ditranskrip dan dinilai oleh AI.",
+    "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas; rekaman akan ditranskrip dan dinilai otomatis.",
 };
 
 // Tata tertib umum. Item bertanda { timed: true } hanya tampil bila ada batas waktu.

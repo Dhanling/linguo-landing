@@ -166,11 +166,11 @@ export default function SimulasiRunnerPage() {
         resultItems.push({ question: q, skill, correct, points, ai_score: null, ai_feedback: null });
       } else if (preview) {
         // Mode preview — tidak memanggil AI (hemat biaya), tampilkan placeholder.
-        resultItems.push({ question: q, skill, correct: null, points: 0, ai_score: null, ai_feedback: "Mode preview — Writing/Speaking tidak dinilai AI." });
+        resultItems.push({ question: q, skill, correct: null, points: 0, ai_score: null, ai_feedback: "Mode preview — Writing/Speaking tidak dinilai." });
       } else {
         // Writing / Speaking → AI
         aiDone++;
-        setGradingMsg(`Menilai jawaban ${q.type === "speaking_task" ? "speaking" : "writing"} (${aiDone}/${aiCount}) dengan AI…`);
+        setGradingMsg(`Menilai jawaban ${q.type === "speaking_task" ? "speaking" : "writing"} (${aiDone}/${aiCount}) secara otomatis…`);
         let audioUrl: string | null = a.audioUrl;
         if (q.type === "speaking_task" && a.audioBlob && !audioUrl) {
           audioUrl = await uploadRecording(attemptId, q.id, a.audioBlob);
@@ -413,7 +413,7 @@ function IntroWizard({ sim, sections, questions, onStart }: {
           </div>
 
           <div className="mt-3 flex items-center gap-2 rounded-lg bg-violet-50 px-3 py-2 text-sm text-violet-700">
-            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis oleh AI.
+            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis dengan feedback.
           </div>
         </div>
       )}
@@ -877,7 +877,7 @@ function QuestionBlock({ index, q, state, onChange }: {
         <textarea
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
-          placeholder="Tulis esai kamu di sini… (akan dinilai AI)"
+          placeholder="Tulis esai kamu di sini… (akan dinilai otomatis)"
           className="mt-3 min-h-[160px] w-full resize-y rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-400"
         />
       )}
@@ -936,7 +936,7 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 
   return (
     <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
-      <p className="mb-3 text-xs text-slate-500">🎤 Rekam jawabanmu. Hasil rekaman ditranskrip &amp; dinilai AI.</p>
+      <p className="mb-3 text-xs text-slate-500">🎤 Rekam jawabanmu. Hasil rekaman ditranskrip &amp; dinilai otomatis.</p>
       <div className="flex items-center gap-3">
         {recording ? (
           <button onClick={stopRec} className="inline-flex items-center gap-2 rounded-full bg-red-500 px-4 py-2 text-sm font-semibold text-white">
@@ -972,7 +972,7 @@ function ResultView({ sim, totals, results }: { sim: Simulation; totals: { score
             <span className="text-4xl font-extrabold" style={{ color: TEAL_DEEP }}>{Math.round(totals.score)}</span>
             <span className="text-lg font-semibold text-slate-400">/ {Math.round(totals.max_score)}</span>
           </div>
-          <p className="text-sm font-medium text-slate-600">{pct}% · objektif {Math.round(totals.auto_score)} + AI {Math.round(totals.ai_score)}</p>
+          <p className="text-sm font-medium text-slate-600">{pct}% · objektif {Math.round(totals.auto_score)} + penilaian {Math.round(totals.ai_score)}</p>
         </div>
 
         <h2 className="mt-6 mb-3 text-sm font-bold text-slate-700">Rincian jawaban</h2>
@@ -988,7 +988,7 @@ function ResultView({ sim, totals, results }: { sim: Simulation; totals: { score
                 <span className="rounded-full bg-slate-100 px-2 py-0.5 font-medium text-slate-600">{SKILL_LABEL[r.skill as keyof typeof SKILL_LABEL] ?? r.skill}</span>
                 {r.correct === true && <span className="inline-flex items-center gap-1 font-semibold text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />Benar</span>}
                 {r.correct === false && <span className="font-semibold text-red-500">Kurang tepat</span>}
-                {r.ai_score != null && <span className="inline-flex items-center gap-1 font-semibold text-violet-600"><Sparkles className="h-3.5 w-3.5" />Skor AI {r.ai_score}/100</span>}
+                {r.ai_score != null && <span className="inline-flex items-center gap-1 font-semibold text-violet-600"><Sparkles className="h-3.5 w-3.5" />Skor {r.ai_score}/100</span>}
               </div>
               {r.correct === false && r.question.explanation && (
                 <p className="mt-2 rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-600">💡 {r.question.explanation}</p>
