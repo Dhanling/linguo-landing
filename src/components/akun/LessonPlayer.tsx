@@ -38,6 +38,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import UnlockFullAccess from "./UnlockFullAccess";
+import { isFreeLevel, majorOf } from "@/lib/lmsAccess";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -70,15 +71,7 @@ const RAIL_GROUP_META: Record<
   done: { label: "Selesai", color: "#0F5A52" },
 };
 
-// [linguo-patch:lms-a1-free-v1] semua level A1 (A1.1, A1.2, dst) gratis; gembok cuma A2-B2
-function isFreeLevel(cefrLabel?: string | null) {
-  return (cefrLabel || "").toUpperCase().startsWith("A1");
-}
-
-// [linguo-patch:lms-level-tree-v1] major level dari cefr_label: "A1.2" -> "A1"
-function majorOf(cefrLabel?: string | null) {
-  return (cefrLabel || "").toUpperCase().split(".")[0];
-}
+// [linguo-patch:lms-access-rule-shared-v1] isFreeLevel & majorOf pindah ke @/lib/lmsAccess (sumber tunggal)
 
 // [linguo-patch:lms-vocab-audio-v1] tombol play per-kata di kartu Kosakata (baca item.audio)
 let _lpAudio: HTMLAudioElement | null = null;

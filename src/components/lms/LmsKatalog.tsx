@@ -7,8 +7,9 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { Loader2, PlayCircle, GraduationCap } from "lucide-react";
+import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight } from "lucide-react";
 import SilabusOutline from "@/components/akun/SilabusOutline";
+import { isFreeLevel } from "@/lib/lmsAccess"; // [linguo-patch:lms-katalog-upgrade-cta-v1] sumber tunggal aturan A1-gratis
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -54,21 +55,34 @@ type Course = {
   done: number;
   pct: number;
   resume: { id: string; title: string } | null;
+  // [linguo-patch:lms-katalog-entitlement-v1] true = sudah dibeli (akses penuh A1–B2); false = gratis A1 doang
+  owned: boolean;
+  // [linguo-patch:lms-katalog-upgrade-cta-v1] lesson terkunci pertama (A2+) buat deep-link ke panel checkout; null kalau owned / cuma ada A1
+  upgrade: string | null;
 };
 
 // [linguo-patch:lms-katalog-perf-v1] cache modul-level → switch balik ke Belajar Mandiri = instan (stale-while-revalidate, ga refetch dari nol)
 let _lmsCache: { courses: Course[] } | null = null;
 
 function buildCourses(
-  modList: { id: string; language: string; sort_order: number }[],
-  lessons: { id: string; module_id: string; title: string; sort_order: number }[],
-  done: Set<string>
+  modList: { id: string; language: string; sort_order: number; course_id: string | null; cefr_label: string | null }[],
+  lessons: { id: string; module_id: string; title: string; sort_order: number; is_preview: boolean }[],
+  done: Set<string>,
+  ownedCourses: Set<string> // [linguo-patch:lms-katalog-entitlement-v1] course_id yg sudah dientitle
 ): Course[] {
   const langByModule: Record<string, string> = {};
   modList.forEach((m) => { langByModule[m.id] = m.language; });
   const moduleOrder: Record<string, number> = {};
   modList.forEach((m, i) => { moduleOrder[m.id] = m.sort_order ?? i; });
-  const byLang: Record<string, { id: string; module_id: string; sort_order: number; title: string }[]> = {};
+  // [linguo-patch:lms-katalog-upgrade-cta-v1] cefr per modul → tahu lesson mana yg A2+ (terkunci kalau belum dibeli)
+  const cefrByModule: Record<string, string | null> = {};
+  modList.forEach((m) => { cefrByModule[m.id] = m.cefr_label; });
+  // [linguo-patch:lms-katalog-entitlement-v1] bahasa = owned kalau salah satu course_id-nya dientitle
+  const ownedByLang: Record<string, boolean> = {};
+  modList.forEach((m) => {
+    if (m.course_id && ownedCourses.has(m.course_id)) ownedByLang[m.language] = true;
+  });
+  const byLang: Record<string, { id: string; module_id: string; sort_order: number; title: string; is_preview: boolean }[]> = {};
   lessons.forEach((l) => {
     const lang = langByModule[l.module_id];
     if (!lang) return;
@@ -85,6 +99,12 @@ function buildCourses(
     const total = ls.length;
     const dcount = ls.filter((l) => done.has(l.id)).length;
     const next = ls.find((l) => !done.has(l.id));
+    const owned = !!ownedByLang[language];
+    // [linguo-patch:lms-katalog-upgrade-cta-v1] target upgrade = lesson terkunci pertama (level A2+, bukan preview).
+    // Sama aturannya dgn LessonPlayer (isFreeLevel). Dipakai cuma kalau belum owned & emang ada konten berbayar.
+    const upgrade = owned
+      ? null
+      : ls.find((l) => !isFreeLevel(cefrByModule[l.module_id]) && !l.is_preview)?.id ?? null;
     return {
       language,
       slug: mt.slug,
@@ -95,6 +115,8 @@ function buildCourses(
       done: dcount,
       pct: total ? Math.round((dcount / total) * 100) : 0,
       resume: next ? { id: next.id, title: next.title } : null,
+      owned,
+      upgrade,
     };
   });
 }
@@ -103,7 +125,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
   const [loading, setLoading] = useState(() => !_lmsCache);
   const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
   const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
-  const [filter, setFilter] = useState<"all" | "run" | "done">("all");
+  const [filter, setFilter] = useState<"all" | "owned" | "run" | "done">("all");
 
   useEffect(() => {
     let alive = true;
@@ -112,12 +134,12 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
       const { data: { session } } = await supabase.auth.getSession();
       const uid = session?.user?.id;
 
-      // module (id -> language) + urutan
+      // module (id -> language) + urutan + course_id (buat cek entitlement)
       const { data: mods } = await supabase
         .from("lms_modules")
-        .select("id,language,sort_order")
+        .select("id,language,sort_order,course_id,cefr_label")
         .order("sort_order");
-      const modList = (mods || []) as { id: string; language: string; sort_order: number }[];
+      const modList = (mods || []) as { id: string; language: string; sort_order: number; course_id: string | null; cefr_label: string | null }[];
       if (modList.length === 0) {
         _lmsCache = { courses: [] };
         if (alive) { setCourses([]); setLoading(false); }
@@ -127,17 +149,34 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
 
       // lessons + progress PARALEL (sebelumnya 2x sequential await)
       const [lessRes, progRes] = await Promise.all([
-        supabase.from("lms_lessons").select("id,module_id,title,sort_order").in("module_id", moduleIds).order("sort_order"),
+        supabase.from("lms_lessons").select("id,module_id,title,sort_order,is_preview").in("module_id", moduleIds).order("sort_order"),
         uid
           ? supabase.from("lms_progress").select("lesson_id,status").eq("user_id", uid)
           : Promise.resolve({ data: [] as { lesson_id: string; status: string }[] }),
       ]);
-      const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number }[];
+      const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number; is_preview: boolean }[];
       const done = new Set<string>(
         ((progRes.data as any[]) || []).filter((p: any) => p.status === "completed").map((p: any) => p.lesson_id)
       );
 
-      const built = buildCourses(modList, lessons, done);
+      // [linguo-patch:lms-katalog-entitlement-v1] cek kepemilikan per course (paralel), sama RPC yg dipakai LessonPlayer
+      const courseIds = Array.from(new Set(modList.map((m) => m.course_id).filter((c): c is string => !!c)));
+      const ownedCourses = new Set<string>();
+      if (uid && courseIds.length) {
+        const ents = await Promise.all(
+          courseIds.map(async (cid): Promise<{ cid: string; ok: boolean }> => {
+            try {
+              const { data } = await supabase.rpc("lms_is_entitled", { p_course_id: cid });
+              return { cid, ok: !!data };
+            } catch {
+              return { cid, ok: false };
+            }
+          })
+        );
+        ents.forEach(({ cid, ok }) => { if (ok) ownedCourses.add(cid); });
+      }
+
+      const built = buildCourses(modList, lessons, done, ownedCourses);
       _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);
@@ -166,6 +205,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
   }
 
   const shown = courses.filter((c) => {
+    if (filter === "owned") return c.owned;
     if (filter === "run") return c.pct < 100;
     if (filter === "done") return c.pct >= 100;
     return true;
@@ -179,10 +219,22 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
         onClick={() => setSel(c.slug)}
         className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-white shadow-[0_16px_36px_-22px_rgba(18,23,43,0.55)] ring-2 ring-[#16796E]" : "hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 border border-slate-100 bg-white" : "w-full"}`}
       >
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-xl font-extrabold text-[#16796E]">{c.glyph}</span>
+        <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-xl font-extrabold text-[#16796E]">
+          {c.glyph}
+          {/* [linguo-patch:lms-katalog-entitlement-v1] mahkota = sudah dibeli, gembok = gratis A1 doang */}
+          {c.owned ? (
+            <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#F2CB05] ring-2 ring-white" title="Akses penuh">
+              <Crown className="h-3 w-3" style={{ color: TEAL_DEEP }} strokeWidth={2.5} />
+            </span>
+          ) : (
+            <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-slate-200 ring-2 ring-white" title="Gratis A1 · A2–B2 terkunci">
+              <Lock className="h-2.5 w-2.5 text-slate-500" strokeWidth={2.5} />
+            </span>
+          )}
+        </span>
         <span className="min-w-0 flex-1">
           <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{c.native}</span>
-          <span className="block truncate text-[12px] font-medium text-gray-500">{c.idLabel} · self-paced</span>
+          <span className="block truncate text-[12px] font-medium text-gray-500">{c.owned ? "Akses penuh · self-paced" : "Gratis A1 · self-paced"}</span>
           <span className="mt-2 flex items-center gap-2">
             <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${c.pct}%` }} /></span>
             <span className="text-[11px] font-bold text-gray-500">{c.pct}%</span>
@@ -218,6 +270,31 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
       )
     ) : null;
 
+  // [linguo-patch:lms-katalog-upgrade-cta-v1] CTA buka akses penuh utk bahasa belum dibeli.
+  // Deep-link ke lesson terkunci pertama → panel checkout UnlockFullAccess di player muncul (nol kode bayar baru).
+  const UpgradeBtn = ({ block }: { block?: boolean }) =>
+    !selected.owned && selected.upgrade ? (
+      onOpen ? (
+        <button
+          onClick={() => onOpen(selected.upgrade!)}
+          className={`inline-flex items-center justify-center gap-1.5 rounded-xl border border-[#16796E]/25 px-4 py-2.5 text-[13px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5 ${block ? "w-full" : ""}`}
+        >
+          <Crown className="h-4 w-4" />
+          Buka akses penuh
+          <ArrowRight className="h-3.5 w-3.5" />
+        </button>
+      ) : (
+        <a
+          href={`/akun/belajar/${selected.upgrade}`}
+          className={`inline-flex items-center justify-center gap-1.5 rounded-xl border border-[#16796E]/25 px-4 py-2.5 text-[13px] font-bold text-[#16796E] transition hover:bg-[#16796E]/5 ${block ? "w-full" : ""}`}
+        >
+          <Crown className="h-4 w-4" />
+          Buka akses penuh
+          <ArrowRight className="h-3.5 w-3.5" />
+        </a>
+      )
+    ) : null;
+
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
@@ -227,7 +304,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
           <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
           <p className="mt-0.5 text-[12px] font-medium text-gray-500">{courses.length} bahasa · belajar mandiri</p>
           <div className="mt-4 flex gap-2">
-            {([["all", "Semua"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
+            {([["all", "Semua"], ["owned", "Dimiliki"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
               <button key={k} onClick={() => setFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${filter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
             ))}
           </div>
@@ -276,9 +353,31 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
               </div>
               <div className="border-l border-slate-100 pl-4">
                 <p className="text-[12px] font-semibold text-gray-500">Akses</p>
-                <p className="mt-1.5 text-[13px] font-bold leading-tight text-[#12172B]">Selamanya · kapan aja</p>
+                {/* [linguo-patch:lms-katalog-entitlement-v1] jujur soal kepemilikan — jgn klaim "selamanya" utk bahasa yg belum dibeli */}
+                {selected.owned ? (
+                  <p className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-bold leading-tight text-[#12172B]">
+                    <Crown className="h-3.5 w-3.5" style={{ color: YELLOW }} strokeWidth={2.5} />
+                    Selamanya · kapan aja
+                  </p>
+                ) : (
+                  <p className="mt-1.5 inline-flex items-center gap-1 text-[13px] font-bold leading-tight text-[#12172B]">
+                    <Lock className="h-3.5 w-3.5 text-slate-400" strokeWidth={2.5} />
+                    Gratis A1 · A2–B2 terkunci
+                  </p>
+                )}
               </div>
             </div>
+            {/* [linguo-patch:lms-katalog-upgrade-cta-v1] strip upsell — cuma muncul utk bahasa belum dibeli yg punya konten A2+ */}
+            {!selected.owned && selected.upgrade && (
+              <div className="flex flex-col gap-3 border-t border-slate-100 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+                <p className="text-[12.5px] font-medium leading-snug text-gray-500">
+                  Kamu lagi pakai versi gratis (level A1). Buka <span className="font-bold text-[#12172B]">A2–B2</span> buat lanjut sampai mahir.
+                </p>
+                <div className="shrink-0">
+                  <UpgradeBtn />
+                </div>
+              </div>
+            )}
             {/* resume — mobile (banner btn ke-hide di < sm) */}
             <div className="px-6 pb-5 sm:hidden">
               <ResumeBtn block />
