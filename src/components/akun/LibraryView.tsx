@@ -10,8 +10,9 @@ import { toast } from "sonner";
 import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, Download, ChevronRight,
-  Flame, Loader2, ShoppingBag, GraduationCap,
+  Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink,
 } from "lucide-react";
+import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -261,22 +262,33 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
     const prod = p.digital_products;
     if (accessInfo(p).kind === "expired") { toast.error("Akses produk ini sudah berakhir."); return; }
 
-    if (prod.type === "elearning") {
-      if (prod.video_playlist_url) {
-        toast.success(`Membuka ${prod.title}`);
-        window.open(prod.video_playlist_url, "_blank");
-      } else {
-        toast("Membuka materi belajar…");
-        window.location.href = "/akun?menu=materi";
+    // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
+    const link = externalLinkFor(prod);
+    if (link) {
+      if (prod.type === "ebook") {
+        // catat akses (best-effort, tak memblokir buka link)
+        supabase
+          .from("digital_purchases")
+          .update({ download_count: (p.download_count || 0) + 1, last_downloaded_at: new Date().toISOString() })
+          .eq("id", p.id)
+          .then(() => setTimeout(fetchAll, 800));
       }
+      toast.success(`Membuka ${prod.title}…`);
+      window.open(link, "_blank", "noopener,noreferrer");
       return;
     }
 
-    // ebook → signed PDF url
-    if (!prod.file_url) { toast.error("File e-book belum tersedia."); return; }
+    if (prod.type === "elearning") {
+      toast("Membuka materi belajar…");
+      window.location.href = "/akun?menu=materi";
+      return;
+    }
+
+    // ebook tanpa link eksternal → file di storage (signed PDF url, perilaku lama)
+    if (!isStoragePath(prod.file_url)) { toast.error("File e-book belum tersedia."); return; }
     setBusy(p.id);
     try {
-      const { data, error } = await supabase.storage.from("ebook-files").createSignedUrl(prod.file_url, 7 * 24 * 60 * 60);
+      const { data, error } = await supabase.storage.from("ebook-files").createSignedUrl(prod.file_url!, 7 * 24 * 60 * 60);
       if (error || !data) { toast.error("Gagal membuat link unduhan."); return; }
       await supabase
         .from("digital_purchases")
@@ -558,6 +570,10 @@ function ProductCard({
   const prod = p.digital_products;
   const a = accessInfo(p);
   const expired = a.kind === "expired";
+  const isExternal = !!externalLinkFor(prod);
+  const verb = accessVerb(prod);
+  const label = prod.type === "elearning" && prog && prog.pct > 0 ? "Lanjut" : verb;
+  const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
 
   return (
     <div className={`group flex flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}>
@@ -608,8 +624,8 @@ function ProductCard({
               disabled={busy}
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98] disabled:opacity-50"
             >
-              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : prod.type === "ebook" ? <Download className="h-4 w-4" /> : <Play className="h-4 w-4" fill="currentColor" />}
-              {prod.type === "ebook" ? "Download" : prog && prog.pct > 0 ? "Lanjut" : "Mulai"}
+              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
+              {label}
             </button>
           )}
         </div>
@@ -627,6 +643,9 @@ function ProductRow({
   const prod = p.digital_products;
   const a = accessInfo(p);
   const expired = a.kind === "expired";
+  const isExternal = !!externalLinkFor(prod);
+  const verb = accessVerb(prod);
+  const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
   return (
     <div className={`flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-3 transition hover:border-[#12A37E]/30 ${expired ? "opacity-70" : ""}`}>
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>
@@ -656,8 +675,8 @@ function ProductRow({
         <a href="/toko" className="shrink-0 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600">Perpanjang</a>
       ) : (
         <button onClick={onOpen} disabled={busy} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] disabled:opacity-50">
-          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : prod.type === "ebook" ? <Download className="h-4 w-4" /> : <Play className="h-4 w-4" fill="currentColor" />}
-          {prod.type === "ebook" ? "Download" : "Buka"}
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
+          {verb}
         </button>
       )}
     </div>

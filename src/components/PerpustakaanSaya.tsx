@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
 
 interface PurchaseItem {
   id: string;
@@ -66,21 +67,32 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
 
   async function handleAccess(purchase: PurchaseItem) {
     const product = purchase.digital_products;
-    
-    // For elearning, langsung buka YouTube playlist
-    if (product.type === "elearning" && product.video_playlist_url) {
-      window.open(product.video_playlist_url, "_blank");
+
+    // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
+    const link = externalLinkFor(product);
+    if (link) {
+      if (product.type === "ebook") {
+        supabase
+          .from("digital_purchases")
+          .update({
+            download_count: purchase.download_count + 1,
+            last_downloaded_at: new Date().toISOString(),
+          })
+          .eq("id", purchase.id)
+          .then(() => setTimeout(() => fetchPurchases(), 1000));
+      }
+      window.open(link, "_blank", "noopener,noreferrer");
       return;
     }
 
-    // For ebook, generate fresh signed URL via storage API
-    if (product.type === "ebook" && product.file_url) {
+    // e-book tanpa link eksternal → file di storage (signed URL, perilaku lama)
+    if (product.type === "ebook" && isStoragePath(product.file_url)) {
       setDownloading(purchase.id);
       try {
         const { data, error } = await supabase
           .storage
           .from("ebook-files")
-          .createSignedUrl(product.file_url, 7 * 24 * 60 * 60);
+          .createSignedUrl(product.file_url!, 7 * 24 * 60 * 60);
 
         if (error || !data) {
           alert("Gagal generate link download. Coba lagi atau hubungi admin.");
@@ -206,11 +218,12 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
                     disabled={downloading === p.id || !p.access_granted}
                     className="bg-teal-600 hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors"
                   >
-                    {downloading === p.id 
-                      ? "..." 
-                      : product.type === "ebook" 
-                        ? "📥 Download" 
-                        : "▶️ Tonton"}
+                    {downloading === p.id
+                      ? "..."
+                      : (() => {
+                          const v = accessVerb(product);
+                          return v === "Tonton" ? "▶️ Tonton" : v === "Buka" ? "🔗 Buka" : "📥 Download";
+                        })()}
                   </button>
                 )}
               </div>
