@@ -22,6 +22,12 @@ const YELLOW = "#FFC93C";
 
 const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic };
 
+// audio_url bisa berupa file mp3 (storage) atau link YouTube (disematkan admin).
+function youtubeEmbedId(url: string): string | null {
+  const m = (url || "").match(/(?:youtube\.com\/watch\?[^#]*\bv=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
 type Phase = "loading" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
@@ -298,7 +304,19 @@ export default function SimulasiRunnerPage() {
         {section.instructions && <p className="mt-1 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>}
 
         {section.audio_url && (
-          <audio controls src={section.audio_url} className="mt-3 w-full" />
+          youtubeEmbedId(section.audio_url) ? (
+            <div className="mt-3 aspect-video w-full overflow-hidden rounded-lg border border-slate-200">
+              <iframe
+                className="h-full w-full"
+                src={`https://www.youtube.com/embed/${youtubeEmbedId(section.audio_url)}`}
+                title="Audio listening"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <audio controls src={section.audio_url} className="mt-3 w-full" />
+          )
         )}
         {section.passage && (
           <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700">
