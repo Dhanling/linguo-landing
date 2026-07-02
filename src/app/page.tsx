@@ -647,12 +647,6 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                           >
                             📅 Cek Jadwal ETP
                           </a>
-                          <button
-                            onClick={() => { (window as any).__openFunnel?.("IELTS/TOEFL Prep"); setProgOpen(false); setEtpSubOpen(false); }}
-                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            📝 Daftar IELTS / TOEFL
-                          </button>
                         </div>
                       )}
                     </div>
