@@ -2231,10 +2231,10 @@ export default function Home() {
           <Image src="/images/google-review.png" alt="Google Reviews 5.0/5" width={146} height={31} sizes="146px" className="h-7 sm:h-8 w-auto mt-4 sm:mt-6 opacity-90"/>
           
         </motion.div>
-        <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-20">
-          <div className="relative w-[750px] h-[750px]">
-            <Image src="/images/hero-character.png" alt="Learn languages with Linguo" width={750} height={607} priority sizes="(min-width: 1024px) 750px, 0px" className="w-full h-full object-contain drop-shadow-2xl" />
-            <div className="absolute top-16 left-[15%]">
+        <motion.div initial={{opacity:0,x:40}} animate={{opacity:1,x:0}} transition={{delay:0.3}} className="hidden lg:flex justify-end relative -mr-28">
+          <div className="relative w-[810px] h-[810px]">
+            <Image src="/images/hero-character.png" alt="Learn languages with Linguo" width={810} height={656} priority sizes="(min-width: 1024px) 810px, 0px" className="w-full h-full object-contain drop-shadow-2xl" />
+            <div className="absolute top-16 left-[27%]">
               <motion.div animate={{y:[0,-8,0]}} transition={{duration:3,repeat:Infinity}}>
                 <div className="relative bg-white rounded-2xl px-7 py-4 shadow-xl">
                   <TypingBubble/>
