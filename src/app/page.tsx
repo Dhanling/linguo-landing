@@ -11,6 +11,7 @@ import { defaultFlags } from "@blade-flags/core/flags/default";
 import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1
 
 import TokoCTA from "@/components/TokoCTA";
+import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -511,6 +512,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   const [corpSubOpen, setCorpSubOpen] = useState(false); // __PATCH_NAV_CORPORATE_SUBMENU__
   const [privateSubOpen, setPrivateSubOpen] = useState(false); // linguo-patch:nav-semi-private-v1
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false); // linguo-patch:nav-hide-on-scroll-v1
+  const lastY = useRef(0);
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
   useEffect(() => {
@@ -518,7 +521,14 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
     const fn = () => {
       if (ticking) return;
       ticking = true;
-      requestAnimationFrame(() => { setScrolled(window.scrollY > 80); ticking = false; });
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 80);
+        // Hide when scrolling down past the hero, reveal on any upward scroll.
+        setHidden(y > 140 && y > lastY.current);
+        lastY.current = y;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
@@ -540,7 +550,11 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <motion.div
+      className="fixed top-0 left-0 right-0 z-50"
+      animate={{ y: hidden && !open ? "-100%" : 0 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+    >
       {/* Main Nav */}
       <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -827,7 +841,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
       {/* linguo-patch:old-wa-float-removed-v2 — tombol WA float lama dihapus; diganti ChatWidget Ling */}
       <PlacementPicker open={placementPickerOpen} onClose={()=>setPlacementPickerOpen(false)} />
 
-    </div>
+    </motion.div>
   );
 }
 
@@ -2248,14 +2262,17 @@ export default function Home() {
     </section>
 
     {/* LANGUAGE FLAG STRIP — flat white, seamless */}
+    <Reveal>
     <section className="bg-white pt-8 pb-2">
       <h2 className="font-heading text-xl sm:text-2xl font-bold text-center mb-4">Tersedia <span className="text-[#1A9E9E]">60+ Bahasa</span></h2>
       <div className="bg-white mx-6 lg:mx-12 overflow-hidden"><LanguageStrip /></div>
     </section>
+    </Reveal>
 
     {/* linguo-patch:chat-widget-drawer-aware-v1 — chat widget dipindah ke <Navbar/> (lihat dekat <PlacementPicker/>) */}
 
     {/* PRODUCT CARDS — macOS Dock style */}
+    <Reveal>
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
@@ -2263,6 +2280,7 @@ export default function Home() {
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
       </div>
     </section>
+    </Reveal>
 
     {/* OUR CLIENTS */}
     <section className="py-5 sm:py-10 bg-white border-b border-slate-100 overflow-hidden group">
@@ -2292,6 +2310,7 @@ export default function Home() {
     </section>
 
     {/* HOW IT WORKS */}
+    <Reveal>
     <section className="py-8 lg:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="font-heading text-lg sm:text-3xl lg:text-4xl font-bold text-[#1A9E9E] mb-3">Learning new language is complicated<br/>but we can make it easy for you</h2>
@@ -2327,8 +2346,10 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </Reveal>
 
     {/* POPULAR CLASS */}
+    <Reveal>
     <section className="py-8 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
@@ -2369,8 +2390,10 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </Reveal>
 
     {/* WHY LINGUO */}
+    <Reveal>
     <section className="py-8 sm:py-16 lg:py-24 bg-white relative overflow-hidden">
       <Image src="/images/wave-line.png" alt="" aria-hidden width={2000} height={642} loading="lazy" sizes="100vw" className="absolute top-1/2 left-0 w-full h-auto -translate-y-1/2 pointer-events-none opacity-60"/>
       <div className="relative z-10">
@@ -2378,8 +2401,10 @@ export default function Home() {
         <WhyCarousel/>
       </div>
     </section>
+    </Reveal>
 
     {/* TEACHERS */}
+    <Reveal>
     <section id="teacher" className="py-16 lg:py-24 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="font-heading text-xl sm:text-3xl font-bold mb-3">Meet Our Teacher</h2>
@@ -2387,19 +2412,25 @@ export default function Home() {
         <TeacherGrid/>
       </div>
     </section>
+    </Reveal>
 
     {/* TESTIMONIAL */}
+    <Reveal>
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="font-heading text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-14">Story from our student</h2>
         <TestimonialCarousel/>
       </div>
     </section>
+    </Reveal>
 
     {/* PRICING */}
+    <Reveal>
     <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
+    </Reveal>
 
     {/* CTA */}
+    <Reveal>
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Learning is journey<br/>Start now & Grow up with Linguo</h2>
@@ -2407,8 +2438,10 @@ export default function Home() {
         <a href="https://wa.me/6282116859493" target="_blank" className="inline-flex items-center gap-2 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">Mulai Belajar</a>
       </div>
     </section>
+    </Reveal>
 
     {/* FAQ */}
+    <Reveal>
     <section id="faq" className="py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
@@ -2417,6 +2450,7 @@ export default function Home() {
         <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
       </div>
     </section>
+    </Reveal>
 
     {/* FOOTER */}
     <footer className="bg-[#14726E] text-white py-14">

@@ -46,6 +46,42 @@ body {
 .animate-marquee-slow { animation: marquee 40s linear infinite; }
 .animate-marquee:hover, .animate-marquee-slow:hover { animation-play-state: paused; }
 
+/* linguo-patch:page-enter-v1 — subtle whole-page fade-in on load (CSS only, no JS). */
+@keyframes pageEnter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body { animation: pageEnter 0.5s ease-out both; }
+
+/* linguo-patch:btn-micro-v1 — hover micro-interaction (scale + glow) on brand CTAs.
+   Scoped to <a>/<button> carrying the teal/amber CTA background so badges & chips
+   are untouched. Hover-capable pointers only, so touch taps don't get a stuck state. */
+@media (hover: hover) {
+  a.bg-\[\#1A9E9E\], button.bg-\[\#1A9E9E\],
+  a.bg-\[\#fbbf24\], button.bg-\[\#fbbf24\] {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    will-change: transform;
+  }
+  a.bg-\[\#1A9E9E\]:hover, button.bg-\[\#1A9E9E\]:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px -8px rgba(26, 158, 158, 0.55);
+  }
+  a.bg-\[\#fbbf24\]:hover, button.bg-\[\#fbbf24\]:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 28px -8px rgba(251, 191, 36, 0.55);
+  }
+}
+
+/* Honour reduced-motion: kill page fade + CTA transforms for users who opt out.
+   (Framer Motion reveals are handled in-component via useReducedMotion.) */
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+  a[class*="bg-[#"]:hover, button[class*="bg-[#"]:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 /* Mobile auto-scroll for ProductDock — duplicates content, translates -50% for seamless loop */
 @keyframes productDockMarquee {
   0% { transform: translateX(0); }
