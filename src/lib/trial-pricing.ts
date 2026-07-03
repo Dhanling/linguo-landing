@@ -27,7 +27,7 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
   B: ["Russian", "Dutch", "Italian", "Spanish", "Thai", "Sign Language"],
   C: ["Arabic", "English", "Japanese", "German", "Korean", "Mandarin", "French"],
   D: [
-    "Javanese", "Sundanese", "Madurese", "Batak", "Banjar", "Balinese",
+    "Javanese", "Sundanese", "Betawi", "Madurese", "Batak", "Banjar", "Balinese",
     "Malay", "Bugis",
   ],
   E: ["BIPA"],

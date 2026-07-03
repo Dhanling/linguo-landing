@@ -20,6 +20,7 @@ export const languages: LanguageMeta[] = [
   { slug: "persian",    name: "Persia",    nativeName: "فارسی",        flag: "🇮🇷", region: "middle-eastern", featured: true, available: true,  description: "Farsi — bahasa sastra Rumi, puisi klasik & modern." },
   { slug: "javanese",   name: "Jawa",      nativeName: "Basa Jawa",   flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Ngoko, Krama, Krama Inggil — filosofi Jawa lengkap." },
   { slug: "sundanese",  name: "Sunda",     nativeName: "Basa Sunda",  flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Loma, Lemes — bahasa Pasundan autentik." },
+  { slug: "betawi",     name: "Betawi",    nativeName: "Basa Betawi", flag: "🇮🇩", region: "nusantara",      featured: true, available: true, description: "Dialek Jakarta autentik — logat, kosakata & budaya Betawi." },
   { slug: "bipa",       name: "BIPA",      nativeName: "Bahasa Indonesia", flag: "🇮🇩", region: "nusantara", featured: true, available: true, description: "Bahasa Indonesia untuk Penutur Asing — BIPA resmi." },
   { slug: "georgian",   name: "Georgia",   nativeName: "ქართული",      flag: "🇬🇪", region: "other",          featured: true, available: true, description: "Kartuli — bahasa unik dengan aksara sendiri." },
   { slug: "greek",      name: "Yunani",    nativeName: "Ελληνικά",     flag: "🇬🇷", region: "european",       featured: true, available: true,  description: "Aksara Yunani 24 huruf, dari nol sampai sastra Καβάφης & filsafat klasik." },

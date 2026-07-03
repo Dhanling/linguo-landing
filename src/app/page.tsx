@@ -34,7 +34,7 @@ const LANG_CATEGORIES = [
   { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
   { label: "Asia", langs: ["Japanese","Korean","Mandarin","Arabic","Thai","Vietnamese","Hindi","Turkish","Hebrew","Persian","Tagalog","Malay","Georgian","Urdu","Bengali"] },
   { label: "Eropa", langs: ["English","French","German","Spanish","Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish","Finnish","Greek","Czech","Hungarian","Romanian"] },
-  { label: "Nusantara", langs: ["Javanese","Sundanese","BIPA"] },
+  { label: "Nusantara", langs: ["Javanese","Sundanese","Betawi","BIPA"] },
   { label: "Afrika", langs: ["Swahili"] },
 ];
 
@@ -860,7 +860,7 @@ const GREETINGS = [
 
 const FLAG_CODES: Record<string,string> = {
   // English names
-  English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",
+  English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",Betawi:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",
   // Indonesian names (Mandarin same in both languages — already covered above)
   Inggris:"gb",Jepang:"jp",Korea:"kr",Arab:"sa",Prancis:"fr",Jerman:"de",Spanyol:"es",Italia:"it",Belanda:"nl",Portugis:"br",Rusia:"ru",Thailand:"th",Vietnam:"vn",Turki:"tr",Polandia:"pl",Swedia:"se",Norwegia:"no",Denmark:"dk",Finlandia:"fi",Yunani:"gr",Ceko:"cz",Hungaria:"hu",Ibrani:"il",Persia:"ir",Filipina:"ph",Melayu:"my",Georgia:"ge",Jawa:"id",Sunda:"id",Pakistan:"pk",Bangladesh:"bd",Rumania:"ro"
 };
@@ -1996,7 +1996,7 @@ const LANGUAGES = [
   "Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish",
   "Finnish","Greek","Czech","Hungarian","Romanian","Thai","Vietnamese","Hindi",
   "Turkish","Hebrew","Persian","Tagalog","Malay","Swahili","Javanese","Sundanese",
-  "BIPA","Georgian","Urdu","Bengali",
+  "Betawi","BIPA","Georgian","Urdu","Bengali",
 ];
 
 function LanguageStrip({className=""}:{className?:string}) {
