@@ -243,6 +243,36 @@ function buildWAMessage(batch: Batch): string {
   return encodeURIComponent(text);
 }
 
+// Map baris DB (etp_batches) → bentuk yang dirender kartu ETP.
+// Dipakai supaya perubahan jadwal dari admin dashboard langsung tampil.
+function mapEtpRow(row: EtpBatchRow): EtpProgram {
+  const startISO = row.start_date;
+  const monthYear = new Date(startISO).toLocaleDateString("id-ID", {
+    month: "long",
+    year: "numeric",
+  });
+  return {
+    id: row.id,
+    title: row.title,
+    subtitle: `Batch ${monthYear}`,
+    icon: row.icon,
+    badge: row.badge,
+    days: row.days,
+    time: row.time,
+    startDate: formatDate(startISO),
+    startDateISO: startISO,
+    duration: `${row.duration_min} menit/sesi`,
+    sessions: row.total_sessions,
+    sessionMin: row.duration_min,
+    price: row.price,
+    highlights: row.highlights ?? [],
+    syllabus: row.syllabus ?? [],
+    maxCapacity: row.max_capacity,
+    currentEnrolled: row.current_enrolled,
+    color: row.color,
+  };
+}
+
 function buildEtpWAMessage(program: EtpProgram): string {
   const text = [
     `Halo Linguo! Saya tertarik mendaftar program ETP:`,
@@ -281,7 +311,30 @@ export default function JadwalKelasRegulerClient({
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
   const [registerBatch, setRegisterBatch] = useState<Batch | null>(null);
 
-  const etpPrograms: EtpProgram[] = ETP_PROGRAMS;
+  // Sumber data ETP: pakai baris DB (etp_batches) kalau ada, kalau kosong
+  // fallback ke data statik. Ini yang bikin publish dari admin dashboard tampil.
+  const etpPrograms: EtpProgram[] = useMemo(
+    () =>
+      etpBatches && etpBatches.length > 0
+        ? etpBatches.map(mapEtpRow)
+        : ETP_PROGRAMS,
+    [etpBatches]
+  );
+
+  // Batch ETP terdekat (buat label hero + countdown)
+  const nearestEtp = useMemo(
+    () =>
+      etpPrograms.length > 0
+        ? etpPrograms
+            .slice()
+            .sort(
+              (a, b) =>
+                new Date(a.startDateISO).getTime() -
+                new Date(b.startDateISO).getTime()
+            )[0]
+        : null,
+    [etpPrograms]
+  );
 
   // Cari batch yang paling dekat mulainya (masih upcoming)
   const nearestBatch = useMemo(() => {
@@ -318,10 +371,7 @@ export default function JadwalKelasRegulerClient({
 
   // ETP countdown — batch TOEFL/IELTS terdekat
   useEffect(() => {
-    if (etpPrograms.length === 0) return;
-    const nearestEtp = etpPrograms
-      .slice()
-      .sort((a, b) => new Date(a.startDateISO).getTime() - new Date(b.startDateISO).getTime())[0];
+    if (!nearestEtp) return;
     const tick = () => {
       const now = new Date().getTime();
       const target = new Date(nearestEtp.startDateISO);
@@ -342,7 +392,7 @@ export default function JadwalKelasRegulerClient({
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [etpPrograms]);
+  }, [nearestEtp]);
 
   const uniqueLanguages = useMemo(
     () => Array.from(new Set(batches.map((b) => b.language))).sort(),
@@ -744,7 +794,7 @@ export default function JadwalKelasRegulerClient({
                     </span>
                     <h2 className="text-2xl md:text-3xl font-bold mb-1">Persiapan TOEFL & IELTS</h2>
                     <p className="text-blue-100 text-sm max-w-md">
-                      Batch Juni 2026 — Kelas intensif 2× seminggu dengan tutor berpengalaman.
+                      {nearestEtp ? `${nearestEtp.subtitle} — ` : ""}Kelas intensif 2× seminggu dengan tutor berpengalaman.
                     </p>
                   </div>
                   {/* ETP Countdown */}
@@ -753,7 +803,9 @@ export default function JadwalKelasRegulerClient({
                     <div className="text-lg md:text-xl font-bold tabular-nums leading-tight">
                       {etpCountdown || "Menghitung..."}
                     </div>
-                    <div className="text-[11px] text-blue-200 mt-1">Batch TOEFL mulai 1 Juni 2026</div>
+                    <div className="text-[11px] text-blue-200 mt-1">
+                      {nearestEtp ? `Batch ${nearestEtp.title} mulai ${nearestEtp.startDate}` : "Batch terdekat"}
+                    </div>
                   </div>
                 </div>
               </div>
