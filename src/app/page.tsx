@@ -2217,9 +2217,9 @@ export default function Home() {
                 Everyone Can<br/>Be a Polyglot
               </h1>
             </div>
-            <div className="lg:hidden shrink-0 relative">
-              <Image src="/images/hero-character.png" alt="" width={176} height={142} priority sizes="(min-width: 1024px) 0px, 176px" className="w-36 sm:w-44 h-auto drop-shadow-xl"/>
-              <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8">
+            <div className="lg:hidden shrink-0 relative translate-x-2 sm:translate-x-3">
+              <Image src="/images/hero-character.png" alt="" width={176} height={142} priority sizes="(min-width: 1024px) 0px, 176px" className="w-40 sm:w-48 h-auto drop-shadow-xl"/>
+              <motion.div animate={{y:[0,-5,0]}} transition={{duration:3,repeat:Infinity}} className="absolute -top-6 -left-1 sm:-top-8 sm:-left-2">
                 <div className="relative bg-white rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 shadow-lg">
                   <TypingBubble size="sm"/>
                   <div className="absolute -bottom-1 right-3 w-2.5 h-2.5 bg-white rotate-45"/>
