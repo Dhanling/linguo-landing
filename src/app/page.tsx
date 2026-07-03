@@ -153,7 +153,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     });
     setLoading(false);
     if (error) { setError(error.message); }
-    else { setSuccess("Cek email kamu untuk konfirmasi akun ya! 📧"); }
+    else { setSuccess("Cek email kamu untuk konfirmasi akun ya!"); }
   };
 
   // ── Forgot Password — send 6-digit OTP code to email ──
@@ -331,7 +331,6 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
               ) : view === "forgot_sent" ? (
                 /* ── FORGOT SENT (legacy magic-link view) ── */
                 <div className="text-center py-4">
-                  <div className="text-5xl mb-4">📧</div>
                   <h2 className="text-xl font-extrabold text-slate-900 mb-2">Cek email kamu!</h2>
                   <p className="text-slate-500 text-sm mb-6">Link reset sudah dikirim! Cek inbox email kamu, termasuk folder spam.</p>
                   <button onClick={() => goTo("login")} className="text-sm text-[#1A9E9E] font-semibold hover:underline">← Kembali ke Login</button>
@@ -360,7 +359,7 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
                 <>
                   {/* Header */}
                   <h2 className="text-2xl font-extrabold text-slate-900 mb-1 tracking-tight">
-                    {view === "signup" ? "Daftar Akun Baru" : view === "forgot" ? "Reset Password" : "Selamat datang! 👋"}
+                    {view === "signup" ? "Daftar Akun Baru" : view === "forgot" ? "Reset Password" : "Selamat datang!"}
                   </h2>
                   <p className="text-slate-500 text-sm mb-6">
                     {view === "signup" ? "Buat akun untuk mulai belajar bahasa impianmu." :
@@ -592,13 +591,13 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                             onClick={() => { (window as any).__openFunnel?.("Kelas Private"); setProgOpen(false); setPrivateSubOpen(false); }}
                             className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            🎓 Private 1-on-1
+                            Private 1-on-1
                           </button>
                           <button
                             onClick={() => { (window as any).__openFunnel?.("Semi Private"); setProgOpen(false); setPrivateSubOpen(false); }}
                             className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            🤝 Semi Private
+                            Semi Private
                           </button>
                         </div>
                       )}
@@ -623,13 +622,13 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                             onClick={() => { setProgOpen(false); setRegulerSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            📅 Cek Jadwal Reguler
+                            Cek Jadwal Reguler
                           </a>
                           <button
                             onClick={() => { (window as any).__openFunnel?.("Kelas Reguler"); setProgOpen(false); setRegulerSubOpen(false); }}
                             className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            📝 Daftar Kelas Reguler
+                            Daftar Kelas Reguler
                           </button>
                         </div>
                       )}
@@ -659,7 +658,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                             onClick={() => { setProgOpen(false); setEtpSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            📅 Cek Jadwal ETP
+                            Cek Jadwal ETP
                           </a>
                         </div>
                       )}
@@ -697,21 +696,21 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                             onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            📚 Language Training
+                            Language Training
                           </a>
                           <a
                             href="/interpreter"
                             onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            🎤 Interpreter Service
+                            Interpreter Service
                           </a>
                           <a
                             href="/translator"
                             onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
                             className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
                           >
-                            📜 Sworn Translator
+                            Sworn Translator
                           </a>
                         </div>
                       )}
@@ -759,15 +758,15 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
 
             {/* Scrollable nav items */}
             <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-1">
-              <a href="/silabus/english/coba" onClick={()=>setOpen(false)} className="block py-3 text-base text-[#1A9E9E] font-semibold border-b border-gray-100 mb-2 pb-4">🎯 Placement Test Gratis</a>
+              <a href="/silabus/english/coba" onClick={()=>setOpen(false)} className="block py-3 text-base text-[#1A9E9E] font-semibold border-b border-gray-100 mb-2 pb-4">Placement Test Gratis</a>
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-base py-3 text-left">Kelas Private 1-on-1</button>{/* linguo-patch:nav-semi-private-v1 */}
               <button onClick={()=>{(window as any).__openFunnel?.("Semi Private");setOpen(false)}} className="text-base py-3 text-left">Semi Private</button>{/* linguo-patch:nav-semi-private-v1 */}
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-base py-3 text-left">Kelas Reguler</button>
-              <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Jadwal Batch Terbaru</a>
+              <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Jadwal Batch Terbaru</a>
               <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
-              <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ 📅 Cek Jadwal ETP</a>
-              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids 🧒</button>
-              <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">🎯 Simulasi Tes TOEFL/IELTS</a>
+              <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Cek Jadwal ETP</a>
+              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids</button>
+              <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
               <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
@@ -814,7 +813,6 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                   onClick={()=>{ setStartPickerOpen(false); setPlacementPickerOpen(true); }}
                   className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
                 >
-                  <div className="text-3xl leading-none">🎯</div>
                   <div>
                     <div className="font-bold text-gray-900 flex items-center gap-2">
                       Placement Test
@@ -827,7 +825,6 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                   onClick={()=>{ setStartPickerOpen(false); (window as any).__openTrialWizard?.(); }}
                   className="w-full text-left rounded-2xl border-2 border-gray-200 bg-white p-4 hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-all active:scale-[0.99] flex items-start gap-3"
                 >
-                  <div className="text-3xl leading-none">✨</div>
                   <div>
                     <div className="font-bold text-gray-900">Trial Class</div>
                     <div className="text-xs text-gray-500 mt-0.5">Coba 1 sesi kelas beneran bareng pengajar (Private / Kids).</div>
@@ -861,9 +858,9 @@ function FAQ({q,a}:{q:string;a:string}) {
 }
 
 const GREETINGS = [
-  {text:"Hello!",flag:"🇬🇧"},{text:"Hola!",flag:"🇪🇸"},{text:"こんにちは",flag:"🇯🇵"},{text:"안녕하세요",flag:"🇰🇷"},
-  {text:"你好!",flag:"🇨🇳"},{text:"Bonjour!",flag:"🇫🇷"},{text:"Hallo!",flag:"🇩🇪"},{text:"Ciao!",flag:"🇮🇹"},
-  {text:"مرحبا!",flag:"🇸🇦"},{text:"Olá!",flag:"🇧🇷"},{text:"Привет!",flag:"🇷🇺"},{text:"สวัสดี!",flag:"🇹🇭"},
+  {text:"Hello!",code:"gb"},{text:"Hola!",code:"es"},{text:"こんにちは",code:"jp"},{text:"안녕하세요",code:"kr"},
+  {text:"你好!",code:"cn"},{text:"Bonjour!",code:"fr"},{text:"Hallo!",code:"de"},{text:"Ciao!",code:"it"},
+  {text:"مرحبا!",code:"sa"},{text:"Olá!",code:"br"},{text:"Привет!",code:"ru"},{text:"สวัสดี!",code:"th"},
 ];
 
 const FLAG_CODES: Record<string,string> = {
@@ -916,8 +913,8 @@ function TypingBubble({size="lg"}:{size?:"sm"|"lg"}={}) {
 
   if (size === "sm") {
     return (
-      <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm inline-flex items-center gap-1 min-w-[60px]">
-        <span className="text-sm">{GREETINGS[idx].flag}</span>
+      <span className="font-bold text-[#1A9E9E] text-xs sm:text-sm inline-flex items-center gap-1.5 min-w-[60px]">
+        <RectFlag code={GREETINGS[idx].code} h={14}/>
         {displayed}<span className="animate-pulse text-[#1A9E9E]/50">|</span>
       </span>
     );
@@ -925,7 +922,7 @@ function TypingBubble({size="lg"}:{size?:"sm"|"lg"}={}) {
 
   return (
     <span className="font-bold text-[#1A9E9E] text-xl inline-flex items-center gap-2 min-w-[140px]">
-      <span className="text-2xl">{GREETINGS[idx].flag}</span>
+      <RectFlag code={GREETINGS[idx].code} h={22}/>
       {displayed}<span className="animate-pulse text-[#1A9E9E]/50">|</span>
     </span>
   );
@@ -1209,18 +1206,18 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const semiPrice = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, 60) : null;
 
   const programs = [
-    {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
-    {id:"Semi Private",icon:"🤝",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
-    ...(isReguler?[{id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
-    {id:"Kelas Kids",icon:"🧒",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
-    ...(isEnglish?[{id:"IELTS/TOEFL Prep",icon:"📝",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
+    {id:"Kelas Private",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
+    {id:"Semi Private",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
+    ...(isReguler?[{id:"Kelas Reguler",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
+    {id:"Kelas Kids",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
+    ...(isEnglish?[{id:"IELTS/TOEFL Prep",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
   ];
 
   const levels = selProgram==="Kelas Reguler"
     ? [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"}]
     : selProgram==="Kelas Kids"
-    ? [{id:"Little Learner",label:"🐣 Little Learner",desc:"Usia 5–8 tahun • 30 menit • Rp 75.000/sesi"},
-       {id:"Young Explorer",label:"🚀 Young Explorer",desc:"Usia 9–12 tahun • 45 menit • Rp 85.000/sesi"}]
+    ? [{id:"Little Learner",label:"Little Learner",desc:"Usia 5–8 tahun • 30 menit • Rp 75.000/sesi"},
+       {id:"Young Explorer",label:"Young Explorer",desc:"Usia 9–12 tahun • 45 menit • Rp 85.000/sesi"}]
     : [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"},
        {id:"A2",label:"A2 — Elementary",desc:"Percakapan sederhana"},
        {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
@@ -1389,7 +1386,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 {programs.map(p=>(
                   <button key={p.id} onClick={()=>{ if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
-                    <span className="text-2xl mt-0.5">{p.icon}</span>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <p className="font-bold text-sm">{p.title}</p>
@@ -1422,7 +1418,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 {/* Lokal */}
                 <button onClick={()=>{setSelTeacherType("lokal");setTeacherPick(false);setStep(3)}}
                   className="flex items-start gap-4 p-4 rounded-2xl border-2 border-slate-100 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md">
-                  <span className="text-2xl mt-0.5">👩‍🏫</span>
                   <div className="flex-1">
                     <p className="font-bold text-sm">Pengajar Lokal</p>
                     <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
@@ -1434,7 +1429,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 {nativeAvailable ? (
                   <button onClick={()=>{setSelTeacherType("native");setTeacherPick(false);setStep(3)}}
                     className="flex items-start gap-4 p-4 rounded-2xl border-2 border-[#fbbf24]/50 bg-[#fbbf24]/[0.04] text-left transition-all hover:border-[#fbbf24] hover:shadow-md">
-                    <span className="text-2xl mt-0.5">🌏</span>
                     <div className="flex-1">
                       <div className="flex items-center justify-between gap-2">
                         <p className="font-bold text-sm">Pengajar Native</p>
@@ -1448,7 +1442,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   </button>
                 ) : (
                   <div className="flex items-start gap-4 p-4 rounded-2xl border-2 border-slate-100 bg-slate-50 text-left opacity-70 cursor-not-allowed">
-                    <span className="text-2xl mt-0.5 grayscale">🌏</span>
                     <div className="flex-1">
                       <div className="flex items-center justify-between gap-2">
                         <p className="font-bold text-sm text-slate-500">Pengajar Native</p>
@@ -1478,7 +1471,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 {levels.map(lv=>(
                   <button key={lv.id} onClick={()=>{setSelLevel(lv.id);setStep(4)}}
                     className="flex items-center gap-4 p-4 rounded-2xl border-2 border-slate-100 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md">
-                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{selProgram==="Kelas Kids"?(lv.id==="Little Learner"?"🐣":"🚀"):lv.id}</div>
+                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{selProgram==="Kelas Kids"?(lv.id==="Little Learner"?"LL":"YE"):lv.id}</div>
                     <div className="flex-1">
                       <p className="font-bold text-sm">{lv.label}</p>
                       <p className="text-xs text-slate-500 mt-0.5">{lv.desc}</p>
@@ -1513,7 +1506,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">🤝 Semi Private</span>
+                <span className="text-sm text-[#1A9E9E] font-medium">Semi Private</span>
               </div>
 
               <h3 className="text-xl font-bold text-slate-900 mb-1">Berapa orang dalam grup?</h3>
@@ -1549,7 +1542,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                     <span className="text-xs text-slate-500">Per orang ({classSize} peserta)</span>
                     <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(semiPrice.perStudent)}<span className="text-xs font-medium text-slate-400">/orang</span></span>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Estimasi per sesi, total dibagi rata ke {classSize} peserta. Daftar bareng teman makin hemat 🎉</p>
+                  <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Estimasi per sesi, total dibagi rata ke {classSize} peserta. Daftar bareng teman makin hemat.</p>
                 </motion.div>
               )}
 
@@ -1627,7 +1620,6 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 min-h-0 overflow-y-auto">
               <button onClick={()=>setStep(4)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Edit data</button>
               <div className="text-center mb-5">
-                <span className="text-4xl mb-2 block">🎉</span>
                 <h3 className="text-xl font-bold text-slate-900">Konfirmasi Pendaftaran</h3>
                 <p className="text-sm text-slate-500 mt-1">Pastikan data di bawah sudah benar</p>
               </div>
@@ -1698,7 +1690,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                           {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
                         </span>
                         <span>
-                          <span className="block text-sm font-medium text-slate-700">📚 Tambah E-Book + Recording Kelas</span>
+                          <span className="block text-sm font-medium text-slate-700">Tambah E-Book + Recording Kelas</span>
                           <span className="block text-[11px] text-slate-400 leading-snug mt-0.5">Materi lengkap + rekaman semua sesi · akses selamanya</span>
                         </span>
                       </span>
@@ -1711,10 +1703,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                     {/* reguler-policy-v1: min-peserta + kebijakan refund bersyarat */}
                     <div className="mt-3 rounded-xl bg-amber-50 border border-amber-100 p-3 space-y-1.5">
                       <p className="text-[11px] leading-relaxed text-amber-900">
-                        <b>ℹ️ Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
+                        <b>Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
                       </p>
                       <p className="text-[11px] leading-relaxed text-amber-900">
-                        <b>💳 Kebijakan pembayaran:</b> Setelah kelas berjalan, pembayaran tidak dapat di-refund. Namun saldo bisa dialihkan ke Kelas Private atau produk lain.
+                        <b>Kebijakan pembayaran:</b> Setelah kelas berjalan, pembayaran tidak dapat di-refund. Namun saldo bisa dialihkan ke Kelas Private atau produk lain.
                       </p>
                     </div>
                   </>
@@ -1887,13 +1879,13 @@ const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"🎓",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"👥",img1:"/images/programs/reguler-1.jpg",img2:"/images/programs/reguler-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"📝",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
-  {badgeIcon:<Sparkles className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Dinilai AI",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill, Writing & Speaking dinilai AI + feedback",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:"🎯"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"🧒",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"📱",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"📚",img1:"/images/programs/ebook-1.jpg",img2:"/images/programs/ebook-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",img1:"/images/programs/reguler-1.jpg",img2:"/images/programs/reguler-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
+  {badgeIcon:<Sparkles className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Dinilai AI",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill, Writing & Speaking dinilai AI + feedback",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:""},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"",img1:"/images/programs/ebook-1.jpg",img2:"/images/programs/ebook-2.jpg"},
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
@@ -2119,8 +2111,8 @@ const PRICING_TABS = [
   {
     id:"kids",label:"Kelas Kids",desc:"Belajar bahasa untuk anak usia 5–12 tahun. Fun, interaktif, 1-on-1.",
     plans:[
-      {name:"Little Learner",desc:"30 menit • usia 5-8 thn",price:"Rp 75.000",highlighted:true,badge:"🐣 USIA 5-8"},
-      {name:"Young Explorer",desc:"45 menit • usia 9-12 thn",price:"Rp 85.000",highlighted:false,badge:"🚀 USIA 9-12"},
+      {name:"Little Learner",desc:"30 menit • usia 5-8 thn",price:"Rp 75.000",highlighted:true,badge:"USIA 5-8"},
+      {name:"Young Explorer",desc:"45 menit • usia 9-12 thn",price:"Rp 85.000",highlighted:false,badge:"USIA 9-12"},
     ],
     features:["Recording Class/sesi","Interactive Class via ZOOM","Materi Fun & Gamified","Request Jadwal","Qualified Kids Teacher","E-Certificate","55+ Bahasa Tersedia","Progress Report untuk Orang Tua"],
     allCheck:true,
@@ -2180,11 +2172,10 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
           <h3 className="text-base sm:text-xl font-bold mb-4 sm:mb-6">Mau belajar sendiri dulu?</h3>
           <div className="flex justify-center gap-3 sm:gap-5 flex-wrap">
             {[
-              {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000",icon:"📱"},
-              {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000",icon:"📚"},
+              {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000"},
+              {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000"},
             ].map((d,i)=>(
               <div key={i} className="w-[160px] sm:w-[260px] bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 text-center hover:border-[#1A9E9E]/40 hover:shadow-md transition-all">
-                <span className="text-2xl sm:text-3xl mb-2 sm:mb-3 block">{d.icon}</span>
                 <p className="font-bold text-sm sm:text-base">{d.name}</p>
                 <p className="text-[10px] sm:text-xs text-slate-400 mt-1 mb-2 sm:mb-3">{d.desc}</p>
                 <p className="text-base sm:text-xl font-bold text-[#1A9E9E] mb-3 sm:mb-4">{d.price}</p>
