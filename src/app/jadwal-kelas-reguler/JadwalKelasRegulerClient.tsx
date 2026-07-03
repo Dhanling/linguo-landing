@@ -82,26 +82,26 @@ interface EtpProgram {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Static ETP data (TOEFL & IELTS Juni 2026)
+// Static ETP data (TOEFL & IELTS Agustus 2026) — sinkron dgn dashboard test_prep_batches
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ETP_PROGRAMS: EtpProgram[] = [
   {
-    id: "toefl-jun26",
+    id: "toefl-agu26",
     title: "TOEFL Preparation",
-    subtitle: "Batch Juni 2026",
+    subtitle: "Batch Agustus 2026",
     icon: "📝",
     badge: "TOEFL",
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
-    startDate: "1 Juni 2026",
-    startDateISO: "2026-06-01",
+    startDate: "3 Agustus 2026",
+    startDateISO: "2026-08-03",
     duration: "90 menit/sesi",
     sessions: 16,
     sessionMin: 90,
     price: 300000,
     maxCapacity: 15,
-    currentEnrolled: 4,
+    currentEnrolled: 0,
     highlights: [
       "Latihan Listening, Structure, Reading intensif",
       "Bank soal TOEFL ITP & PBT terlengkap",
@@ -121,21 +121,21 @@ const ETP_PROGRAMS: EtpProgram[] = [
     color: "teal",
   },
   {
-    id: "ielts-jun26",
+    id: "ielts-agu26",
     title: "IELTS Preparation",
-    subtitle: "Batch Juni 2026",
+    subtitle: "Batch Agustus 2026",
     icon: "🎓",
     badge: "IELTS",
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
-    startDate: "2 Juni 2026",
-    startDateISO: "2026-06-02",
+    startDate: "4 Agustus 2026",
+    startDateISO: "2026-08-04",
     duration: "90 menit/sesi",
     sessions: 16,
     sessionMin: 90,
     price: 300000,
     maxCapacity: 15,
-    currentEnrolled: 7,
+    currentEnrolled: 0,
     highlights: [
       "4 skill: Listening, Reading, Writing, Speaking",
       "Latihan Task 1 & Task 2 Writing dengan feedback",
