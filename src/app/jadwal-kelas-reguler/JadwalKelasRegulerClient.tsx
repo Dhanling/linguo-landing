@@ -8,7 +8,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Calendar, Clock, Users, MessageCircle,
   ChevronRight, ChevronLeft, BookOpen, Award, Home,
+  Hourglass, CalendarDays, CalendarCheck, Lightbulb, Wallet,
+  Target, AlertTriangle, Check, ClipboardList, GraduationCap,
+  Trophy, BarChart3, FileText, Globe,
 } from "lucide-react";
+import { resolveFlag } from "@blade-flags/core";
+import { defaultFlags } from "@blade-flags/core/flags/default";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
 
@@ -90,7 +95,7 @@ const ETP_PROGRAMS: EtpProgram[] = [
     id: "toefl-agu26",
     title: "TOEFL Preparation",
     subtitle: "Batch Agustus 2026",
-    icon: "📝",
+    icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
     badge: "TOEFL",
     days: "Senin & Rabu",
     time: "19.30 – 21.00 WIB",
@@ -124,7 +129,7 @@ const ETP_PROGRAMS: EtpProgram[] = [
     id: "ielts-agu26",
     title: "IELTS Preparation",
     subtitle: "Batch Agustus 2026",
-    icon: "🎓",
+    icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
     badge: "IELTS",
     days: "Selasa & Kamis",
     time: "19.30 – 21.00 WIB",
@@ -160,42 +165,65 @@ const ETP_PROGRAMS: EtpProgram[] = [
 // Constants
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Flag per bahasa. Keyed by nama Inggris (canonical di DB regular_batches.language)
-// + alias Indonesia. Lookup via getFlag() yang dinormalisasi (lowercase, buang
-// non-huruf) supaya "English Conversation" / "english-conversation" sama-sama match.
-const LANGUAGE_FLAGS: Record<string, string> = {
+// Kode bendera (ISO 3166-1 alpha-2) per bahasa. Keyed by nama Inggris (canonical
+// di DB regular_batches.language) + alias Indonesia. Lookup via getFlagCode() yang
+// dinormalisasi (lowercase, buang non-huruf) supaya "English Conversation" /
+// "english-conversation" sama-sama match. Bendera dirender pakai SVG blade-flags
+// (komponen RectFlag) — konsisten dgn landing, bukan emoji lagi.
+const LANGUAGE_CODES: Record<string, string> = {
   // English (DB canonical)
-  "english conversation": "🇬🇧",
-  "spanish": "🇪🇸",
-  "german": "🇩🇪",
-  "sign language": "🤟",
-  "dutch": "🇳🇱",
-  "italian": "🇮🇹",
-  "japanese": "🇯🇵",
-  "korean": "🇰🇷",
-  "french": "🇫🇷",
-  "mandarin": "🇨🇳",
-  "arabic": "🇸🇦",
-  "tagalog": "🇵🇭",
+  "english conversation": "gb",
+  "english": "gb",
+  "spanish": "es",
+  "german": "de",
+  "sign language": "", // bahasa isyarat: ga ada bendera negara → fallback Globe
+  "dutch": "nl",
+  "italian": "it",
+  "japanese": "jp",
+  "korean": "kr",
+  "french": "fr",
+  "mandarin": "cn",
+  "arabic": "sa",
+  "tagalog": "ph",
   // Alias Indonesia (jaga-jaga kalau ada batch pake nama ID)
-  "spanyol": "🇪🇸",
-  "jerman": "🇩🇪",
-  "bahasa isyarat": "🤟",
-  "belanda": "🇳🇱",
-  "italia": "🇮🇹",
-  "jepang": "🇯🇵",
-  "korea": "🇰🇷",
-  "prancis": "🇫🇷",
-  "arab": "🇸🇦",
+  "spanyol": "es",
+  "jerman": "de",
+  "bahasa isyarat": "",
+  "belanda": "nl",
+  "italia": "it",
+  "jepang": "jp",
+  "korea": "kr",
+  "prancis": "fr",
+  "arab": "sa",
 };
 
 // Normalisasi: lowercase + buang semua selain a-z (handle spasi/strip/case).
 const _normLang = (s: string): string => (s || "").toLowerCase().replace(/[^a-z]/g, "");
-const _FLAG_BY_NORM: Record<string, string> = Object.fromEntries(
-  Object.entries(LANGUAGE_FLAGS).map(([k, v]) => [_normLang(k), v])
+const _CODE_BY_NORM: Record<string, string> = Object.fromEntries(
+  Object.entries(LANGUAGE_CODES).map(([k, v]) => [_normLang(k), v])
 );
-function getFlag(lang: string): string {
-  return _FLAG_BY_NORM[_normLang(lang)] || "🌐";
+function getFlagCode(lang: string): string {
+  return _CODE_BY_NORM[_normLang(lang)] ?? "";
+}
+
+// Bendera rounded-rectangle (blade-flags). SVG inline tanpa width/height bawaan →
+// hitung dimensi eksplisit dari viewBox (aspect ratio dijaga). Tinggi lewat prop `h`.
+// Kalau kode kosong / bendera ga ketemu → fallback ikon Globe (bukan emoji).
+function RectFlag({ code, h = 20, className = "" }: { code: string; h?: number; className?: string }) {
+  const svg = code ? resolveFlag(defaultFlags, code, "country") : null;
+  if (!svg) return <Globe aria-hidden style={{ height: h, width: h }} className={`text-slate-400 shrink-0 ${className}`} />;
+  const m = svg.match(/viewBox="([\d.\s-]+)"/);
+  let w = Math.round((h * 36) / 26);
+  if (m) { const p = m[1].trim().split(/\s+/).map(Number); if (p.length === 4 && p[3]) w = Math.round((h * p[2]) / p[3]); }
+  const sized = svg.replace(/<svg /, `<svg width="${w}" height="${h}" preserveAspectRatio="xMidYMid meet" style="display:block" `);
+  return <span aria-hidden style={{ height: h, width: w }} className={`inline-flex overflow-hidden rounded-[4px] shrink-0 ${className}`} dangerouslySetInnerHTML={{ __html: sized }} />;
+}
+
+// Ikon program ETP berdasarkan badge (TOEFL/IELTS) — ganti emoji icon dari DB.
+function EtpIcon({ program, className = "" }: { program: EtpProgram; className?: string }) {
+  const badge = (program.badge || "").toUpperCase();
+  if (badge.includes("IELTS")) return <GraduationCap className={className} />;
+  return <FileText className={className} />; // TOEFL & default
 }
 
 const WA_NUMBER = "6282116859493";
@@ -223,7 +251,7 @@ function getCountdown(dateStr: string): { label: string; color: string } {
   const diff = Math.round((target.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
   if (diff < 0)  return { label: "Sudah dimulai", color: "text-slate-400" };
   if (diff === 0) return { label: "Mulai hari ini!", color: "text-red-600 font-semibold" };
-  if (diff <= 3)  return { label: `⚠️ ${diff} hari lagi`, color: "text-red-500 font-semibold" };
+  if (diff <= 3)  return { label: `${diff} hari lagi`, color: "text-red-500 font-semibold" };
   if (diff <= 7)  return { label: `${diff} hari lagi`, color: "text-amber-500 font-medium" };
   return { label: `${diff} hari lagi`, color: "text-slate-400" };
 }
@@ -436,8 +464,9 @@ export default function JadwalKelasRegulerClient({
       <section className="relative px-4 pt-6 pb-8 md:pt-10 md:pb-12 max-w-6xl mx-auto">
         <div className="text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-block px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-semibold mb-4">
-              📅 Jadwal Kelas Linguo
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-semibold mb-4">
+              <Calendar className="h-3.5 w-3.5" />
+              Jadwal Kelas Linguo
             </span>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
               Jadwal <span className="text-teal-600">Kelas & Program</span>
@@ -454,7 +483,7 @@ export default function JadwalKelasRegulerClient({
         <section className="px-4 pb-4 max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-teal-600 to-teal-500 rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-white shadow-md">
             <div className="flex items-center gap-3">
-              <span className="text-2xl">⏳</span>
+              <Hourglass className="h-6 w-6 shrink-0" />
               <div>
                 <div className="text-xs font-medium text-teal-100 uppercase tracking-wide">Pendaftaran Batch Terdekat Ditutup Dalam</div>
                 <div className="text-xl md:text-2xl font-bold tabular-nums leading-tight">
@@ -464,8 +493,9 @@ export default function JadwalKelasRegulerClient({
             </div>
             <div className="flex items-center gap-3 sm:text-right">
               <div className="text-sm">
-                <div className="font-semibold">
-                  {getFlag(nearestBatch.language)} {nearestBatch.language} {nearestBatch.level}
+                <div className="font-semibold inline-flex items-center gap-1.5">
+                  <RectFlag code={getFlagCode(nearestBatch.language)} h={16} />
+                  {nearestBatch.language} {nearestBatch.level}
                 </div>
                 <div className="text-teal-100 text-xs">Mulai {formatDate(nearestBatch.start_date)}</div>
               </div>
@@ -559,13 +589,14 @@ export default function JadwalKelasRegulerClient({
                     <button
                       key={lang}
                       onClick={() => setSelectedLang(lang)}
-                      className={`h-9 px-4 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                      className={`h-9 px-4 rounded-full text-sm font-medium transition-all whitespace-nowrap inline-flex items-center gap-1.5 ${
                         selectedLang === lang
                           ? "bg-teal-600 text-white shadow-sm"
                           : "bg-white border border-slate-200 text-slate-700 hover:border-teal-300"
                       }`}
                     >
-                      {getFlag(lang)} {lang}
+                      <RectFlag code={getFlagCode(lang)} h={14} />
+                      {lang}
                     </button>
                   ))}
                 </div>
@@ -618,7 +649,7 @@ export default function JadwalKelasRegulerClient({
                             >
                               <td className="py-4 px-4">
                                 <div className="flex items-center gap-2">
-                                  <span className="text-xl">{getFlag(batch.language)}</span>
+                                  <RectFlag code={getFlagCode(batch.language)} h={20} />
                                   <span className="font-semibold text-slate-900">{batch.language}</span>
                                 </div>
                               </td>
@@ -680,7 +711,7 @@ export default function JadwalKelasRegulerClient({
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl">{getFlag(batch.language)}</span>
+                              <RectFlag code={getFlagCode(batch.language)} h={24} />
                               <div>
                                 <div className="font-bold text-slate-900">{batch.language}</div>
                                 <div className="text-xs text-slate-500">Level {batch.level}</div>
@@ -712,7 +743,7 @@ export default function JadwalKelasRegulerClient({
                               </span>
                             </div>
                             <div className="flex items-start gap-1.5 text-slate-600 col-span-2">
-                              <span className="text-[10px]">📆</span>
+                              <CalendarDays className="h-3.5 w-3.5 mt-0.5 shrink-0" />
                               <div>
                                 <span>Mulai {formatDate(batch.start_date)}</span>
                                 <span className={`ml-2 text-[11px] ${getCountdown(batch.start_date).color}`}>
@@ -748,18 +779,30 @@ export default function JadwalKelasRegulerClient({
             {/* ── REGULER: Info footer ── */}
             <section className="px-4 pb-16 max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-2xl p-6 md:p-8 border border-teal-200">
-                <h2 className="text-xl font-bold text-slate-900 mb-3">💡 Kenapa Kelas Reguler?</h2>
+                <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 text-teal-600" />
+                  Kenapa Kelas Reguler?
+                </h2>
                 <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                   <div>
-                    <div className="font-semibold mb-1">💰 Lebih Hemat</div>
+                    <div className="font-semibold mb-1 flex items-center gap-1.5">
+                      <Wallet className="h-4 w-4 text-teal-600" />
+                      Lebih Hemat
+                    </div>
                     <p className="text-xs text-slate-600">Harga sampai 50% lebih murah dari kelas Private. Cocok untuk yang baru mulai belajar.</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">👥 Belajar Bareng</div>
+                    <div className="font-semibold mb-1 flex items-center gap-1.5">
+                      <Users className="h-4 w-4 text-teal-600" />
+                      Belajar Bareng
+                    </div>
                     <p className="text-xs text-slate-600">Motivasi lebih tinggi dengan teman kelas. Diskusi & praktik langsung jadi seru!</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">📅 Jadwal Pasti</div>
+                    <div className="font-semibold mb-1 flex items-center gap-1.5">
+                      <CalendarCheck className="h-4 w-4 text-teal-600" />
+                      Jadwal Pasti
+                    </div>
                     <p className="text-xs text-slate-600">Jadwal rutin tiap minggu. Ga bingung ngatur waktu, tinggal masuk Zoom sesuai jam.</p>
                   </div>
                 </div>
@@ -789,8 +832,9 @@ export default function JadwalKelasRegulerClient({
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 md:p-8 text-white">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-semibold mb-3">
-                      🎯 English Test Preparation
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-xs font-semibold mb-3">
+                      <Target className="h-3.5 w-3.5" />
+                      English Test Preparation
                     </span>
                     <h2 className="text-2xl md:text-3xl font-bold mb-1">Persiapan TOEFL & IELTS</h2>
                     <p className="text-blue-100 text-sm max-w-md">
@@ -799,7 +843,7 @@ export default function JadwalKelasRegulerClient({
                   </div>
                   {/* ETP Countdown */}
                   <div className="bg-white/10 rounded-xl px-5 py-4 text-center shrink-0">
-                    <div className="text-[11px] font-semibold text-blue-100 uppercase tracking-wide mb-1">⏳ Pendaftaran ditutup dalam</div>
+                    <div className="text-[11px] font-semibold text-blue-100 uppercase tracking-wide mb-1 flex items-center justify-center gap-1"><Hourglass className="h-3 w-3" /> Pendaftaran ditutup dalam</div>
                     <div className="text-lg md:text-xl font-bold tabular-nums leading-tight">
                       {etpCountdown || "Menghitung..."}
                     </div>
@@ -833,7 +877,7 @@ export default function JadwalKelasRegulerClient({
                       <div className={`px-6 py-5 ${isTeal ? "bg-teal-50" : "bg-blue-50"}`}>
                         <div className="flex items-start justify-between">
                           <div className="flex items-center gap-3">
-                            <span className="text-3xl">{program.icon}</span>
+                            <EtpIcon program={program} className={`h-8 w-8 shrink-0 ${isTeal ? "text-teal-600" : "text-blue-600"}`} />
                             <div>
                               <div className="flex items-center gap-2">
                                 <h3 className="text-lg font-bold text-slate-900">{program.title}</h3>
@@ -860,8 +904,9 @@ export default function JadwalKelasRegulerClient({
                         <div className="mt-4">
                           <div className="flex items-center justify-between text-xs mb-1.5">
                             <span className="text-slate-500">Kuota terisi</span>
-                            <span className={`font-semibold ${slotTextColor}`}>
-                              {slotsLeft <= 3 ? "⚠️ " : ""}{slotsLeft} slot tersisa dari {program.maxCapacity}
+                            <span className={`font-semibold inline-flex items-center gap-1 ${slotTextColor}`}>
+                              {slotsLeft <= 3 && <AlertTriangle className="h-3.5 w-3.5" />}
+                              {slotsLeft} slot tersisa dari {program.maxCapacity}
                             </span>
                           </div>
                           <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -893,7 +938,7 @@ export default function JadwalKelasRegulerClient({
                             </div>
                           </div>
                           <div className="flex items-start gap-2 text-slate-600 col-span-2">
-                            <span className="text-base">📆</span>
+                            <CalendarDays className="h-4 w-4 mt-0.5 shrink-0 text-slate-400" />
                             <div>
                               <span className="font-medium text-slate-800">Mulai: </span>
                               {program.startDate}
@@ -905,7 +950,7 @@ export default function JadwalKelasRegulerClient({
                         <div className="space-y-1.5">
                           {program.highlights.map((h, i) => (
                             <div key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                              <span className={`mt-0.5 text-xs font-bold ${isTeal ? "text-teal-500" : "text-blue-500"}`}>✓</span>
+                              <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isTeal ? "text-teal-500" : "text-blue-500"}`} />
                               {h}
                             </div>
                           ))}
@@ -919,7 +964,7 @@ export default function JadwalKelasRegulerClient({
                               isTeal ? "text-teal-700 hover:bg-teal-50" : "text-blue-700 hover:bg-blue-50"
                             }`}
                           >
-                            <span>📋 Lihat Silabus Lengkap</span>
+                            <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-4 w-4" /> Lihat Silabus Lengkap</span>
                             <ChevronRight className={`h-4 w-4 transition-transform ${isSylOpen ? "rotate-90" : ""}`} />
                           </button>
                           {isSylOpen && (
@@ -964,18 +1009,30 @@ export default function JadwalKelasRegulerClient({
             {/* ETP FAQ/Info */}
             <section className="px-4 pb-16 max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 md:p-8 border border-blue-200">
-                <h2 className="text-xl font-bold text-slate-900 mb-3">🎓 Kenapa Pilih ETP Linguo?</h2>
+                <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5 text-blue-600" />
+                  Kenapa Pilih ETP Linguo?
+                </h2>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
-                    <div className="font-semibold mb-1 text-sm">🏆 Tutor Bersertifikat</div>
+                    <div className="font-semibold mb-1 text-sm flex items-center gap-1.5">
+                      <Trophy className="h-4 w-4 text-blue-600" />
+                      Tutor Bersertifikat
+                    </div>
                     <p className="text-xs text-slate-600">Diajar langsung oleh pengajar dengan skor TOEFL 600+ dan IELTS 8.0+.</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1 text-sm">📊 Materi Terstruktur</div>
+                    <div className="font-semibold mb-1 text-sm flex items-center gap-1.5">
+                      <BarChart3 className="h-4 w-4 text-blue-600" />
+                      Materi Terstruktur
+                    </div>
                     <p className="text-xs text-slate-600">Silabus dari materi dasar hingga trik menjawab soal dalam waktu terbatas.</p>
                   </div>
                   <div>
-                    <div className="font-semibold mb-1 text-sm">📝 Simulasi Ujian</div>
+                    <div className="font-semibold mb-1 text-sm flex items-center gap-1.5">
+                      <FileText className="h-4 w-4 text-blue-600" />
+                      Simulasi Ujian
+                    </div>
                     <p className="text-xs text-slate-600">Mock test sebelum hari H agar siswa tahu kondisi nyata ujian.</p>
                   </div>
                 </div>

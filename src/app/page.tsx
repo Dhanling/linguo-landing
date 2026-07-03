@@ -41,11 +41,6 @@ const LANG_CATEGORIES = [
 // linguo-patch:reguler-lang-gate — bahasa yg punya jadwal Kelas Reguler (regular_batches). Kalau nambah bahasa reguler baru, update list ini + /jadwal-kelas-reguler.
 const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
 
-const TEACHERS = [
-  {name:"Febri Darusman",role:"Spanish & Thai",flags:"🇪🇸🇹🇭"},{name:"Nitalia Wijaya",role:"Korean & English",flags:"🇰🇷🇬🇧"},
-  {name:"Angga",role:"Chinese & Korean",flags:"🇨🇳🇰🇷"},{name:"Paramita Wulandari",role:"Japanese & Portuguese",flags:"🇯🇵🇧🇷"},
-  {name:"Thifal Syahla",role:"English & Persian",flags:"🇬🇧🇮🇷"},{name:"Yeremia Immanuel",role:"French & Swahili",flags:"🇫🇷🇰🇪"},
-];
 const FAQS = [
   {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif."},
   {q:"Boleh ikut lebih dari 1 bahasa?",a:"Boleh banget! Kamu bisa daftar beberapa bahasa sekaligus."},
@@ -877,7 +872,7 @@ function getFlagCode(name:string){return FLAG_CODES[name]||"un"}
 // SVG + wrapper. Tinggi diatur lewat prop `h` (px).
 function RectFlag({code,h=24,className=""}:{code:string;h?:number;className?:string}){
   const svg=resolveFlag(defaultFlags,code,"country");
-  if(!svg) return <span aria-hidden style={{height:h,width:h}} className={`inline-flex items-center justify-center ${className}`}>🌐</span>;
+  if(!svg) return <Globe aria-hidden style={{height:h,width:h}} className={`text-slate-400 shrink-0 ${className}`}/>;
   const m=svg.match(/viewBox="([\d.\s-]+)"/);
   let w=Math.round(h*36/26);
   if(m){const p=m[1].trim().split(/\s+/).map(Number);if(p.length===4&&p[3])w=Math.round(h*p[2]/p[3]);}
