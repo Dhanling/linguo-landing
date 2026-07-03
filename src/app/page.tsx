@@ -843,9 +843,15 @@ function FAQ({q,a}:{q:string;a:string}) {
     <div className="border-b border-slate-200">
       <button onClick={()=>setOpen(!open)} className="flex items-center justify-between w-full py-6 text-left">
         <span className="text-base font-semibold pr-4">{q}</span>
-        <ChevronDown className={`h-4 w-4 text-slate-400 shrink-0 transition-transform ${open?"rotate-180":""}`}/>
+        <ChevronDown className={`h-4 w-4 text-slate-400 shrink-0 transition-transform duration-200 ease-out ${open?"rotate-180":""}`}/>
       </button>
-      <AnimatePresence>{open&&(<motion.div initial={{height:0,opacity:0}} animate={{height:"auto",opacity:1}} exit={{height:0,opacity:0}} className="overflow-hidden">
+      <AnimatePresence initial={false}>{open&&(<motion.div
+        initial={{height:0,opacity:0}}
+        animate={{height:"auto",opacity:1}}
+        exit={{height:0,opacity:0}}
+        transition={{height:{duration:0.24,ease:[0.25,0.1,0.25,1]},opacity:{duration:0.18,ease:"easeOut"}}}
+        style={{willChange:"height,opacity"}}
+        className="overflow-hidden">
         <p className="pb-6 text-sm text-slate-500 leading-relaxed">{a}</p>
       </motion.div>)}</AnimatePresence>
     </div>
