@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo,
-  TEST_TYPE_LABEL, type Simulation, type TestType,
+  TEST_TYPE_LABEL, testTypeLabel, type Simulation, type TestType,
 } from "@/lib/simulations";
 import {
   ClipboardCheck, ArrowLeft, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles,
@@ -80,7 +80,7 @@ export default function SimulasiKatalogPage() {
                   </span>
                 </div>
                 <h2 className="font-bold text-slate-900">Simulasi {TEST_TYPE_LABEL[t]}</h2>
-                <p className="mt-1 text-sm text-slate-500">4 skill lengkap, Writing &amp; Speaking dinilai AI. Beli sekali, akses selamanya.</p>
+                <p className="mt-1 text-sm text-slate-500">4 skill lengkap. Beli sekali, akses selamanya.</p>
                 <div className="mt-3 flex items-baseline gap-1.5">
                   <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
                   <span className="text-xs text-slate-400">/ sekali bayar</span>
@@ -101,7 +101,7 @@ export default function SimulasiKatalogPage() {
                     className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-white"
                     style={{ background: s.test_type === "toefl" ? "#2563eb" : "#e11d48" }}
                   >
-                    <Globe className="h-3 w-3" />{TEST_TYPE_LABEL[s.test_type]}
+                    <Globe className="h-3 w-3" />{testTypeLabel(s.test_type, s.test_variant)}
                   </span>
                   {s.level && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600">{s.level}</span>}
                 </div>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Headphones, PenLine, Mic, Sparkles, Bot, type LucideIcon } from "lucide-react";
+import { BookOpen, Headphones, PenLine, Mic, Sparkles, type LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Simulasi TOEFL & IELTS dengan Penilaian AI | Linguo.id",
+  title: "Simulasi TOEFL & IELTS | Linguo.id",
   description:
-    "Latihan simulasi tes TOEFL iBT & IELTS lengkap: Reading, Listening, Writing, dan Speaking. Jawaban Writing & Speaking dinilai otomatis oleh AI dengan feedback detail. Mulai Rp 79.000 di Linguo.id.",
+    "Latihan simulasi tes TOEFL & IELTS lengkap: Reading, Listening, Writing, dan Speaking. Mulai Rp 79.000 di Linguo.id.",
   alternates: { canonical: "https://linguo.id/simulasi" },
 };
 
@@ -36,11 +36,10 @@ export default function SimulasiLandingPage() {
             <Sparkles className="h-4 w-4" /> Baru · Dinilai oleh AI
           </span>
           <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
-            Simulasi TOEFL &amp; IELTS<br />dengan Penilaian AI
+            Simulasi TOEFL &amp; IELTS
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
-            Latihan tes lengkap — Reading, Listening, Writing, dan Speaking — persis seperti tes asli.
-            Writing &amp; Speaking dinilai otomatis oleh AI lengkap dengan feedback perbaikan. Mulai Rp 79.000.
+            Latihan tes lengkap — Reading, Listening, Writing, dan Speaking — persis seperti tes asli. Mulai Rp 79.000.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href="/simulasi/paket" className="rounded-full bg-[#FFC93C] px-7 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#f5bb1f]">
@@ -88,23 +87,6 @@ export default function SimulasiLandingPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* AI highlight */}
-      <section className="mx-auto max-w-4xl px-5 py-16">
-        <div className="rounded-3xl border border-violet-200 bg-gradient-to-br from-violet-50 to-white p-8 sm:p-12">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-sm font-semibold text-violet-700">
-            <Bot className="h-4 w-4" /> Penilaian AI
-          </span>
-          <h2 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">Feedback instan untuk Writing &amp; Speaking</h2>
-          <p className="mt-3 text-slate-600">
-            Tidak perlu menunggu guru mengoreksi. AI menilai esai dan rekaman bicaramu berdasarkan kriteria
-            resmi TOEFL/IELTS — memberi skor per kriteria dan saran konkret untuk meningkatkan band-mu.
-          </p>
-          <Link href="/simulasi/paket" className="mt-6 inline-flex rounded-full px-7 py-3 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
-            Pilih Paket →
-          </Link>
         </div>
       </section>
 

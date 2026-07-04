@@ -5,6 +5,8 @@
 import { supabase } from "@/lib/supabase-client";
 
 export type TestType = "toefl" | "ielts";
+// Varian spesifik: IELTS Academic/General, TOEFL ITP/iBT.
+export type TestVariant = "academic" | "general" | "itp" | "ibt";
 export type Skill = "reading" | "listening" | "writing" | "speaking";
 export type QuestionType =
   | "multiple_choice" | "true_false_ng" | "fill_blank" | "short_answer"
@@ -13,6 +15,7 @@ export type QuestionType =
 export interface Simulation {
   id: string;
   test_type: TestType;
+  test_variant: TestVariant | null;
   title: string;
   description: string | null;
   level: string | null;
@@ -48,7 +51,14 @@ export interface Question {
   sort_order: number;
 }
 
-export const TEST_TYPE_LABEL: Record<TestType, string> = { toefl: "TOEFL iBT", ielts: "IELTS" };
+export const TEST_TYPE_LABEL: Record<TestType, string> = { toefl: "TOEFL", ielts: "IELTS" };
+export const TEST_VARIANT_LABEL: Record<TestVariant, string> = {
+  academic: "Academic", general: "General", itp: "ITP", ibt: "iBT",
+};
+// Label lengkap jenis + varian, mis. "IELTS Academic" / "TOEFL iBT".
+export function testTypeLabel(testType: TestType, variant?: TestVariant | null): string {
+  return variant ? `${TEST_TYPE_LABEL[testType]} ${TEST_VARIANT_LABEL[variant]}` : TEST_TYPE_LABEL[testType];
+}
 export const SKILL_LABEL: Record<Skill, string> = {
   reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking",
 };
@@ -62,7 +72,7 @@ export const TEST_OVERVIEW: Record<TestType, string> = {
   ielts:
     "IELTS mengukur kemampuan bahasa Inggris melalui empat keterampilan: Listening, Reading, Writing, dan Speaking. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
   toefl:
-    "TOEFL iBT mengukur kemampuan bahasa Inggris akademik melalui empat keterampilan: Reading, Listening, Speaking, dan Writing. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+    "TOEFL mengukur kemampuan bahasa Inggris akademik melalui empat keterampilan: Reading, Listening, Speaking, dan Writing. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
 };
 
 // Cara menjawab per keterampilan — jadi instruksi default tiap bagian.
@@ -72,9 +82,9 @@ export const SKILL_HOWTO: Record<Skill, string> = {
   listening:
     "Putar audio dan simak baik-baik (boleh diputar ulang), lalu jawab pertanyaannya. Tulis jawaban singkat sesuai yang kamu dengar.",
   writing:
-    "Tulis esai sesuai instruksi dan jumlah kata minimal. Jawaban dinilai otomatis sesuai kriteria penilaian.",
+    "Tulis esai sesuai instruksi dan jumlah kata minimal.",
   speaking:
-    "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas; rekaman akan ditranskrip dan dinilai otomatis.",
+    "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas sesuai instruksi.",
 };
 
 // Tata tertib umum. Item bertanda { timed: true } hanya tampil bila ada batas waktu.

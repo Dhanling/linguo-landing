@@ -6,7 +6,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
-  AUTO_GRADED, SKILL_LABEL, TEST_TYPE_LABEL,
+  AUTO_GRADED, SKILL_LABEL, testTypeLabel,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill,
 } from "@/lib/simulations";
@@ -430,9 +430,6 @@ function IntroWizard({ sim, sections, questions, onStart }: {
             <Stat icon={Clock} label="Durasi" value={sim.duration_minutes > 0 ? `${sim.duration_minutes} menit` : "Tanpa batas"} />
           </div>
 
-          <div className="mt-3 flex items-center gap-2 rounded-lg bg-violet-50 px-3 py-2 text-sm text-violet-700">
-            <Sparkles className="h-4 w-4 shrink-0" />Bagian Writing &amp; Speaking dinilai otomatis dengan feedback.
-          </div>
         </div>
       )}
 
@@ -622,7 +619,7 @@ function Shell({ sim, children, headerRight, preview }: { sim: Simulation; child
           </span>
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-slate-900">{sim.title}</p>
-            <p className="text-xs text-slate-500">{TEST_TYPE_LABEL[sim.test_type]}</p>
+            <p className="text-xs text-slate-500">{testTypeLabel(sim.test_type, sim.test_variant)}</p>
           </div>
           {headerRight}
         </div>
@@ -895,7 +892,7 @@ function QuestionBlock({ index, q, state, onChange }: {
         <textarea
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
-          placeholder="Tulis esai kamu di sini… (akan dinilai otomatis)"
+          placeholder="Tulis esai kamu di sini…"
           className="mt-3 min-h-[160px] w-full resize-y rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-400"
         />
       )}
@@ -954,7 +951,7 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 
   return (
     <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
-      <p className="mb-3 text-xs text-slate-500">🎤 Rekam jawabanmu. Hasil rekaman ditranskrip &amp; dinilai otomatis.</p>
+      <p className="mb-3 text-xs text-slate-500">🎤 Rekam jawabanmu.</p>
       <div className="flex items-center gap-3">
         {recording ? (
           <button onClick={stopRec} className="inline-flex items-center gap-2 rounded-full bg-red-500 px-4 py-2 text-sm font-semibold text-white">

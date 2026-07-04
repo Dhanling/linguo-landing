@@ -29,7 +29,7 @@ const SKILLS = [
 ];
 const FEATURES = [
   "4 skill lengkap dalam satu sesi",
-  "Writing & Speaking dinilai otomatis + feedback",
+  "Sesuai format tes asli TOEFL & IELTS",
   "Skor & pembahasan langsung keluar",
   "Akses selamanya (sekali bayar)",
 ];
