@@ -13,22 +13,40 @@ const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
-type PaketId = "simulasi-toefl" | "simulasi-ielts";
+type ProductKey = "simulasi-toefl" | "simulasi-ielts";
+type Variant = "itp" | "ibt" | "academic" | "general";
+type SkillKey = "reading" | "listening" | "writing" | "speaking" | "structure";
 
-const PAKET: { id: PaketId; testType: string; title: string; tag: string; accent: string }[] = [
-  { id: "simulasi-toefl", testType: "toefl", title: "Simulasi TOEFL iBT", tag: "Format iBT", accent: "#1A9E9E" },
-  { id: "simulasi-ielts", testType: "ielts", title: "Simulasi IELTS", tag: "Academic", accent: "#6D5AE6" },
+const SKILL_META: Record<SkillKey, { icon: typeof BookOpen; label: string }> = {
+  reading: { icon: BookOpen, label: "Reading" },
+  listening: { icon: Headphones, label: "Listening" },
+  writing: { icon: PenLine, label: "Writing" },
+  speaking: { icon: Mic, label: "Speaking" },
+  structure: { icon: PenLine, label: "Structure" },
+};
+
+// 4 varian tes. Entitlement di-grant per test_type (toefl/ielts) oleh webhook,
+// jadi sekali bayar TOEFL sudah membuka ITP & iBT — begitu pula IELTS utk
+// Academic & General. `variant` cuma dikirim utk pelabelan invoice.
+const PAKET: {
+  productKey: ProductKey;
+  variant: Variant;
+  testType: string;
+  title: string;
+  short: string;
+  tag: string;
+  accent: string;
+  skills: SkillKey[];
+  covers: string; // catatan jujur: 1x bayar mencakup kedua varian
+}[] = [
+  { productKey: "simulasi-toefl", variant: "itp", testType: "toefl", title: "Simulasi TOEFL ITP", short: "TOEFL ITP", tag: "Format ITP", accent: "#1A9E9E", skills: ["listening", "structure", "reading"], covers: "1x bayar TOEFL: akses ITP & iBT" },
+  { productKey: "simulasi-toefl", variant: "ibt", testType: "toefl", title: "Simulasi TOEFL iBT", short: "TOEFL iBT", tag: "Format iBT", accent: "#1A9E9E", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar TOEFL: akses ITP & iBT" },
+  { productKey: "simulasi-ielts", variant: "academic", testType: "ielts", title: "Simulasi IELTS Academic", short: "IELTS Academic", tag: "Academic", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General" },
+  { productKey: "simulasi-ielts", variant: "general", testType: "ielts", title: "Simulasi IELTS General", short: "IELTS General", tag: "General Training", accent: "#6D5AE6", skills: ["reading", "listening", "writing", "speaking"], covers: "1x bayar IELTS: akses Academic & General" },
 ];
 
 const PRICE = 79000;
-const SKILLS = [
-  { icon: BookOpen, label: "Reading" },
-  { icon: Headphones, label: "Listening" },
-  { icon: PenLine, label: "Writing" },
-  { icon: Mic, label: "Speaking" },
-];
 const FEATURES = [
-  "4 skill lengkap dalam satu sesi",
   "Sesuai format tes asli TOEFL & IELTS",
   "Skor & pembahasan langsung keluar",
   "Akses selamanya (sekali bayar)",
@@ -68,7 +86,8 @@ export default function SimulasiPaketPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name.trim(), email: email.trim(), wa_number: wa.trim(),
-          program: "simulasi", level: paket!.testType, productKey: paket!.id,
+          program: "simulasi", level: paket!.testType, productKey: paket!.productKey,
+          variant: paket!.variant,
         }),
       });
       const data = await res.json();
@@ -108,22 +127,26 @@ export default function SimulasiPaketPage() {
       <section className="relative z-10 mx-auto -mt-10 max-w-4xl px-5 pb-16">
         <div className="grid gap-5 sm:grid-cols-2">
           {PAKET.map((p) => (
-            <div key={p.id} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+            <div key={p.variant} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
               <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
                 {p.tag}
               </span>
               <h2 className="mt-4 text-xl font-bold text-slate-900">{p.title}</h2>
               <div className="mt-3 flex flex-wrap gap-2">
-                {SKILLS.map((s) => {
+                {p.skills.map((key) => {
+                  const s = SKILL_META[key];
                   const Icon = s.icon;
                   return (
-                    <span key={s.label} className="inline-flex items-center gap-1 rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
+                    <span key={key} className="inline-flex items-center gap-1 rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
                       <Icon className="h-3.5 w-3.5" style={{ color: p.accent }} /> {s.label}
                     </span>
                   );
                 })}
               </div>
               <ul className="mt-5 space-y-2">
+                <li className="flex items-start gap-2 text-sm text-slate-600">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: p.accent }} /> {p.skills.length} bagian sesuai format tes asli
+                </li>
                 {FEATURES.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
                     <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: p.accent }} /> {f}
@@ -134,11 +157,12 @@ export default function SimulasiPaketPage() {
                 <span className="text-3xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
                 <span className="text-sm text-slate-400">/ sekali bayar</span>
               </div>
+              <p className="mt-1.5 text-xs font-medium" style={{ color: p.accent }}>{p.covers}</p>
               <button
                 onClick={() => openCheckout(p)}
-                className="mt-5 w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
+                className="mt-4 w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
                 style={{ background: p.accent }}>
-                Beli Paket {p.testType.toUpperCase()}
+                Beli {p.short}
               </button>
             </div>
           ))}

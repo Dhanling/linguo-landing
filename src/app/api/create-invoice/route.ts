@@ -183,13 +183,23 @@ export async function POST(req: NextRequest) {
       return await handleLmsSubscription(body);
     }
 
-    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code } = body;
+    const { name, email, wa_number, language, program, level, productKey: directKey, addon, ref_code, variant } = body;
 
     const productKey = directKey || (program && level ? `${program}-${level.toLowerCase()}` : program);
     const product = PRODUCT_PRICES[productKey || ""];
     if (!product) {
       return NextResponse.json({ error: "Produk tidak ditemukan" }, { status: 400 });
     }
+
+    // simulasi-paywall-v1: label varian (ITP/iBT/Academic/General) hanya utk
+    // deskripsi invoice — entitlement tetap di-grant per test_type oleh webhook.
+    const SIM_VARIANT_LABEL: Record<string, string> = {
+      itp: "TOEFL ITP", ibt: "TOEFL iBT", academic: "IELTS Academic", general: "IELTS General",
+    };
+    const variantLabel = typeof variant === "string" ? SIM_VARIANT_LABEL[variant] : undefined;
+    const productDescription = variantLabel
+      ? `Simulasi ${variantLabel} — akses lifetime`
+      : product.description;
 
     // simulasi-paywall-v1: external_id khusus simulasi (LINGUO-SIM-<test_type>-<ts>)
     // supaya xendit-webhook bisa deteksi & grant simulation_entitlements saat PAID.
@@ -283,7 +293,7 @@ export async function POST(req: NextRequest) {
         external_id: externalId,
         amount: totalAmount,
         payer_email: email,
-        description: `${product.description}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
+        description: `${productDescription}${wantsAddon ? " + Bundle E-Book & Recording" : ""}${language ? ` — ${language}` : ""}`,
         currency: "IDR",
         invoice_duration: 86400,
         // invoice-email-notif-v1 — set notifikasi eksplisit supaya Xendit
@@ -302,7 +312,7 @@ export async function POST(req: NextRequest) {
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
         items: [
-          { name: product.description, quantity: 1, price: product.amount },
+          { name: productDescription, quantity: 1, price: product.amount },
           ...(wantsAddon ? [{ name: ADDON_DESC, quantity: 1, price: ADDON_PRICE }] : []),
         ],
       }),
