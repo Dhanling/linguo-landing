@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import {
@@ -22,6 +23,67 @@ const TEAL_DEEP = "#0F6E56";
 const YELLOW = "#FFC93C";
 
 const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic };
+
+// Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
+//  • baris kosong  → jarak antar paragraf
+//  • baris diawali "•", "-", atau "*" → butir daftar
+//  • **teks**      → tebal
+function fmtInline(text: string): ReactNode[] {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    /^\*\*[^*]+\*\*$/.test(part)
+      ? <strong key={i} className="font-semibold text-slate-900">{part.slice(2, -2)}</strong>
+      : <span key={i}>{part}</span>,
+  );
+}
+
+function RichText({ text, className }: { text: string; className?: string }) {
+  const lines = text.replace(/\r\n/g, "\n").split("\n");
+  const blocks: ReactNode[] = [];
+  let bullets: string[] = [];
+  const flush = () => {
+    if (!bullets.length) return;
+    const items = bullets;
+    blocks.push(
+      <ul key={`ul-${blocks.length}`} className="space-y-1.5">
+        {items.map((b, i) => (
+          <li key={i} className="flex gap-2">
+            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: TEAL }} />
+            <span className="flex-1">{fmtInline(b)}</span>
+          </li>
+        ))}
+      </ul>,
+    );
+    bullets = [];
+  };
+  lines.forEach((raw, idx) => {
+    const line = raw.trim();
+    const m = line.match(/^[•\-*]\s+(.*)$/);
+    if (m) { bullets.push(m[1]); return; }
+    flush();
+    if (line) blocks.push(<p key={`p-${idx}`}>{fmtInline(line)}</p>);
+  });
+  flush();
+  return <div className={className}>{blocks}</div>;
+}
+
+// Deteksi konten HTML (dari CMS admin: passage & instruksi kini disimpan sbg HTML
+// dengan bold/italic/underline, rata kiri/tengah/kanan, ukuran font, & daftar).
+function isHtml(s: string): boolean {
+  return /<\/?[a-z][\s\S]*>/i.test(s);
+}
+// Render aman: HTML dari CMS ditampilkan apa adanya (sumber tepercaya = admin
+// dashboard internal), teks lama / markdown tetap lewat <RichText> spy kompatibel.
+function SmartText({ text, className }: { text: string; className?: string }) {
+  if (isHtml(text)) {
+    return (
+      <div
+        className={`${className ?? ""} [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5`.trim()}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    );
+  }
+  return <RichText text={text} className={className} />;
+}
 
 // Petunjuk default per bagian (template) — dipakai bila admin tidak menulis
 // instruksi sendiri. Tampil di layar "intro bagian" sebelum soal dikerjakan.
@@ -434,7 +496,11 @@ export default function SimulasiRunnerPage() {
         <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
       </div>
       <h2 className="text-lg font-bold text-slate-900">{section.title}</h2>
-      {section.instructions && <p className="mt-1 whitespace-pre-line rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>}
+      {section.instructions && (
+        isHtml(section.instructions)
+          ? <SmartText text={section.instructions} className="mt-1 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600" />
+          : <p className="mt-1 whitespace-pre-line rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>
+      )}
     </>
   );
 
@@ -545,9 +611,9 @@ export default function SimulasiRunnerPage() {
                 )
               )}
               {section.passage && (
-                <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1">
-                  {section.passage}
-                </div>
+                isHtml(section.passage)
+                  ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
+                  : <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1">{section.passage}</div>
               )}
             </div>
           </aside>
@@ -655,7 +721,9 @@ function IntroWizard({ sim, sections, questions, onStart }: {
       {step === 0 && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
           <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
-          <p className="mt-1 text-sm text-slate-600">{sim.description || TEST_OVERVIEW[sim.test_type]}</p>
+          {sim.description
+            ? <RichText text={sim.description} className="mt-2 space-y-2.5 text-sm leading-relaxed text-slate-600" />
+            : <p className="mt-1 text-sm text-slate-600">{TEST_OVERVIEW[sim.test_type]}</p>}
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
             <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
@@ -727,7 +795,7 @@ function IntroWizard({ sim, sections, questions, onStart }: {
                           <p className="mt-0.5 text-xs font-medium text-teal-700">
                             {p.count} soal{p.section.duration_minutes > 0 ? ` · ${p.section.duration_minutes} menit` : ""}
                           </p>
-                          <p className="mt-1 text-xs leading-relaxed text-slate-500">{p.section.instructions || SKILL_HOWTO[g.skill]}</p>
+                          <p className="mt-1 text-xs leading-relaxed text-slate-500">{(p.section.instructions ? p.section.instructions.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "") || SKILL_HOWTO[g.skill]}</p>
                         </li>
                       ))}
                     </ol>
@@ -838,7 +906,16 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
   // wide = layout split materi|soal (butuh ruang 2 kolom di desktop)
   const maxW = wide ? "max-w-6xl" : "max-w-3xl";
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="sim-shell min-h-screen bg-slate-50">
+      {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada
+          semua elemen interaktif (tombol, tab, link) di layar siswa & preview. */}
+      <style>{`
+        .sim-shell :is(button, a, [role="tab"], [role="button"], summary):focus,
+        .sim-shell :is(button, a, [role="tab"], [role="button"], summary):focus-visible {
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      `}</style>
       {preview && (
         <div className="bg-amber-400 px-4 py-1.5 text-center text-xs font-semibold text-amber-950">
           Mode Preview — tampilan POV siswa. Jawaban & nilai tidak disimpan.
