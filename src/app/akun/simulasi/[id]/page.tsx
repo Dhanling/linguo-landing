@@ -43,6 +43,36 @@ function youtubeEmbedSrc(url: string): string | null {
   return `https://www.youtube.com/embed/${id}${qs ? `?${qs}` : ""}`;
 }
 
+// Audio mp3 bisa dipotong admin → tersimpan sbg media fragment `#t=start,end`.
+// Native <audio> tak selalu berhenti di `end`, jadi diproses manual: seek ke
+// start & pause saat mencapai end. base = URL tanpa fragment.
+function parseAudioTrim(url: string): { base: string; start: number; end: number } {
+  const hash = (url || "").indexOf("#t=");
+  if (hash < 0) return { base: url || "", start: 0, end: 0 };
+  const base = url.slice(0, hash);
+  const m = url.slice(hash + 3).match(/^(\d+(?:\.\d+)?)(?:,(\d+(?:\.\d+)?))?/);
+  return {
+    base,
+    start: m ? Math.max(0, Math.floor(Number(m[1]) || 0)) : 0,
+    end: m && m[2] != null ? Math.max(0, Math.floor(Number(m[2]) || 0)) : 0,
+  };
+}
+function RangedAudio({ url, className }: { url: string; className?: string }) {
+  const { base, start, end } = parseAudioTrim(url);
+  const ref = useRef<HTMLAudioElement>(null);
+  useEffect(() => {
+    const a = ref.current;
+    if (!a) return;
+    const seekStart = () => { if (start > 0) { try { a.currentTime = start; } catch { /* ignore */ } } };
+    const stopAtEnd = () => { if (end > 0 && a.currentTime >= end) a.pause(); };
+    if (a.readyState >= 1) seekStart();
+    a.addEventListener("loadedmetadata", seekStart);
+    a.addEventListener("timeupdate", stopAtEnd);
+    return () => { a.removeEventListener("loadedmetadata", seekStart); a.removeEventListener("timeupdate", stopAtEnd); };
+  }, [base, start, end]);
+  return <audio key={base} ref={ref} controls src={base} className={className} />;
+}
+
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
 type Phase = "loading" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
@@ -342,7 +372,7 @@ export default function SimulasiRunnerPage() {
                 ) : (
                   // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
                   <div className="sticky top-[72px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
-                    <audio controls src={section.audio_url} className="w-full" />
+                    <RangedAudio url={section.audio_url} className="w-full" />
                   </div>
                 )
               )}
