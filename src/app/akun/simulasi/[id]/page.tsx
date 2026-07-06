@@ -291,9 +291,19 @@ export default function SimulasiRunnerPage() {
   const secQs = questions.filter((q) => q.section_id === section.id);
   const isLast = secIdx === sections.length - 1;
   const SkillIcon = SKILL_ICON[section.skill];
+  const hasMedia = !!(section.audio_url || section.passage);
+  const sectionHeader = (
+    <>
+      <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
+        <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
+      </div>
+      <h2 className="text-lg font-bold text-slate-900">{section.title}</h2>
+      {section.instructions && <p className="mt-1 whitespace-pre-line rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>}
+    </>
+  );
 
   return (
-    <Shell sim={sim} preview={preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+    <Shell sim={sim} preview={preview} wide={hasMedia} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       {/* progress */}
       <div className="mb-4 flex items-center gap-1.5">
         {sections.map((s, i) => (
@@ -311,35 +321,44 @@ export default function SimulasiRunnerPage() {
         qNumber={qNumber}
       />
 
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
-        <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
-          <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
-        </div>
-        <h2 className="text-lg font-bold text-slate-900">{section.title}</h2>
-        {section.instructions && <p className="mt-1 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>}
-
-        {section.audio_url && (
-          youtubeEmbedId(section.audio_url) ? (
-            <div className="mt-3 aspect-video w-full overflow-hidden rounded-lg border border-slate-200">
-              <iframe
-                className="h-full w-full"
-                src={youtubeEmbedSrc(section.audio_url)!}
-                title="Audio listening"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+      {/* Split view ala ujian CBT asli: materi (passage/audio) sticky di kiri,
+          soal discroll di kanan. Bagian tanpa materi tetap satu kolom. */}
+      <div className={hasMedia ? "lg:grid lg:grid-cols-[2fr_3fr] lg:items-start lg:gap-5" : undefined}>
+        {hasMedia && (
+          <aside className="mb-4 lg:sticky lg:top-24 lg:mb-0">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:flex lg:max-h-[calc(100vh-8rem)] lg:min-h-0 lg:flex-col">
+              {sectionHeader}
+              {section.audio_url && (
+                youtubeEmbedId(section.audio_url) ? (
+                  <div className="mt-3 aspect-video w-full shrink-0 overflow-hidden rounded-lg border border-slate-200">
+                    <iframe
+                      className="h-full w-full"
+                      src={youtubeEmbedSrc(section.audio_url)!}
+                      title="Audio listening"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
+                  <div className="sticky top-[72px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
+                    <audio controls src={section.audio_url} className="w-full" />
+                  </div>
+                )
+              )}
+              {section.passage && (
+                <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1">
+                  {section.passage}
+                </div>
+              )}
             </div>
-          ) : (
-            <audio controls src={section.audio_url} className="mt-3 w-full" />
-          )
-        )}
-        {section.passage && (
-          <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700">
-            {section.passage}
-          </div>
+          </aside>
         )}
 
-        <div className="mt-5 space-y-5">
+        <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+        {!hasMedia && sectionHeader}
+
+        <div className="mt-5 space-y-5 first:mt-0">
           {secQs.map((q) => (
             <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
           ))}
@@ -363,6 +382,7 @@ export default function SimulasiRunnerPage() {
               Lanjut <ArrowRight className="h-4 w-4" />
             </button>
           )}
+        </div>
         </div>
       </div>
     </Shell>
@@ -616,7 +636,9 @@ function MicCheck() {
   );
 }
 
-function Shell({ sim, children, headerRight, preview }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean }) {
+function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean }) {
+  // wide = layout split materi|soal (butuh ruang 2 kolom di desktop)
+  const maxW = wide ? "max-w-6xl" : "max-w-3xl";
   return (
     <div className="min-h-screen bg-slate-50">
       {preview && (
@@ -625,7 +647,7 @@ function Shell({ sim, children, headerRight, preview }: { sim: Simulation; child
         </div>
       )}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3.5 sm:px-6">
+        <div className={`mx-auto flex ${maxW} items-center gap-3 px-4 py-3.5 sm:px-6`}>
           <Link href="/akun/simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
             <ArrowLeft className="h-5 w-5" />
           </Link>
@@ -639,7 +661,7 @@ function Shell({ sim, children, headerRight, preview }: { sim: Simulation; child
           {headerRight}
         </div>
       </header>
-      <main className="mx-auto max-w-3xl px-4 py-6 sm:px-6">{children}</main>
+      <main className={`mx-auto ${maxW} px-4 py-6 sm:px-6`}>{children}</main>
     </div>
   );
 }
@@ -872,7 +894,8 @@ function QuestionBlock({ index, q, state, onChange }: {
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
   return (
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
-      <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{q.prompt}</p>
+      {/* pre-line: prompt listening multi-speaker pakai \n per giliran bicara */}
+      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{q.prompt}</p>
 
       {q.image_url && (
         // eslint-disable-next-line @next/next/no-img-element
