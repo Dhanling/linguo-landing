@@ -28,6 +28,21 @@ function youtubeEmbedId(url: string): string | null {
   return m ? m[1] : null;
 }
 
+// Admin bisa memotong intro/akhir video → tersimpan sbg &start= / &end= (detik).
+// Bentuk src embed yang menghormati trim supaya siswa langsung mulai setelah intro.
+function youtubeEmbedSrc(url: string): string | null {
+  const id = youtubeEmbedId(url);
+  if (!id) return null;
+  const num = (re: RegExp) => { const m = (url || "").match(re); return m ? Math.max(0, parseInt(m[1], 10) || 0) : 0; };
+  const start = num(/[?&](?:start|t)=(\d+)/);
+  const end = num(/[?&]end=(\d+)/);
+  const p = new URLSearchParams();
+  if (start > 0) p.set("start", String(start));
+  if (end > 0) p.set("end", String(end));
+  const qs = p.toString();
+  return `https://www.youtube.com/embed/${id}${qs ? `?${qs}` : ""}`;
+}
+
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
 type Phase = "loading" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
@@ -308,7 +323,7 @@ export default function SimulasiRunnerPage() {
             <div className="mt-3 aspect-video w-full overflow-hidden rounded-lg border border-slate-200">
               <iframe
                 className="h-full w-full"
-                src={`https://www.youtube.com/embed/${youtubeEmbedId(section.audio_url)}`}
+                src={youtubeEmbedSrc(section.audio_url)!}
                 title="Audio listening"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
