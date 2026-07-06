@@ -13,7 +13,8 @@ import {
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
-  Clock, X, Info, ChevronDown, Check,
+  Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
+  GripVertical, Minimize2, PlayCircle,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -21,6 +22,43 @@ const TEAL_DEEP = "#0F6E56";
 const YELLOW = "#FFC93C";
 
 const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic };
+
+// Petunjuk default per bagian (template) — dipakai bila admin tidak menulis
+// instruksi sendiri. Tampil di layar "intro bagian" sebelum soal dikerjakan.
+const SECTION_INTRO: Record<string, { title: string; points: string[] }> = {
+  reading: {
+    title: "Petunjuk Bagian Reading",
+    points: [
+      "Baca teks (passage) dengan teliti — teks ada di panel kiri dan bisa digulir.",
+      "Jawab tiap soal sesuai informasi pada teks, bukan pengetahuan umum.",
+      "Boleh kembali membaca teks kapan saja selama waktu masih ada.",
+    ],
+  },
+  listening: {
+    title: "Petunjuk Bagian Listening",
+    points: [
+      "Putar audio dan simak baik-baik — gunakan tombol ±10 detik untuk mengulang bagian penting.",
+      "Kamu boleh menjeda dan mengulang audio selama waktu masih tersedia.",
+      "Tulis/pilih jawaban sesuai yang kamu dengar.",
+    ],
+  },
+  writing: {
+    title: "Petunjuk Bagian Writing",
+    points: [
+      "Tulis esai sesuai instruksi dan perhatikan jumlah kata minimal.",
+      "Susun jawaban dengan struktur yang jelas: pembuka, isi, penutup.",
+      "Periksa kembali tata bahasa dan ejaan sebelum lanjut.",
+    ],
+  },
+  speaking: {
+    title: "Petunjuk Bagian Speaking",
+    points: [
+      "Izinkan akses mikrofon saat diminta browser.",
+      "Rekam jawabanmu — bicara dengan jelas dan sesuai instruksi.",
+      "Kamu bisa merekam ulang bila belum puas dengan jawabanmu.",
+    ],
+  },
+};
 
 // audio_url bisa berupa file mp3 (storage) atau link YouTube (disematkan admin).
 function youtubeEmbedId(url: string): string | null {
@@ -57,20 +95,82 @@ function parseAudioTrim(url: string): { base: string; start: number; end: number
     end: m && m[2] != null ? Math.max(0, Math.floor(Number(m[2]) || 0)) : 0,
   };
 }
+// mm:ss dari detik untuk timestamp player.
+function clock(s: number): string {
+  s = Math.max(0, Math.floor(s || 0));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+// Player audio kustom: seekbar + timestamp jelas, tombol ±10 detik. Menghormati
+// potongan (#t=start,end) — waktu ditampilkan relatif terhadap bagian yang dipotong.
 function RangedAudio({ url, className }: { url: string; className?: string }) {
   const { base, start, end } = parseAudioTrim(url);
   const ref = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [cur, setCur] = useState(start);
+  const [dur, setDur] = useState(0);
+
+  const rEnd = end > 0 ? end : dur;                 // titik akhir efektif
+  const relCur = Math.max(0, cur - start);          // posisi relatif terhadap trim
+  const relDur = Math.max(0, (rEnd || dur) - start);
+
   useEffect(() => {
     const a = ref.current;
     if (!a) return;
-    const seekStart = () => { if (start > 0) { try { a.currentTime = start; } catch { /* ignore */ } } };
-    const stopAtEnd = () => { if (end > 0 && a.currentTime >= end) a.pause(); };
-    if (a.readyState >= 1) seekStart();
-    a.addEventListener("loadedmetadata", seekStart);
-    a.addEventListener("timeupdate", stopAtEnd);
-    return () => { a.removeEventListener("loadedmetadata", seekStart); a.removeEventListener("timeupdate", stopAtEnd); };
+    const onMeta = () => { setDur(a.duration || 0); if (start > 0) { try { a.currentTime = start; } catch { /* ignore */ } setCur(start); } };
+    const onTime = () => { setCur(a.currentTime); if (end > 0 && a.currentTime >= end) a.pause(); };
+    const onPlay = () => setPlaying(true);
+    const onStop = () => setPlaying(false);
+    if (a.readyState >= 1) onMeta();
+    a.addEventListener("loadedmetadata", onMeta);
+    a.addEventListener("timeupdate", onTime);
+    a.addEventListener("play", onPlay);
+    a.addEventListener("pause", onStop);
+    a.addEventListener("ended", onStop);
+    return () => {
+      a.removeEventListener("loadedmetadata", onMeta);
+      a.removeEventListener("timeupdate", onTime);
+      a.removeEventListener("play", onPlay);
+      a.removeEventListener("pause", onStop);
+      a.removeEventListener("ended", onStop);
+    };
   }, [base, start, end]);
-  return <audio key={base} ref={ref} controls src={base} className={className} />;
+
+  const seekTo = (abs: number) => {
+    const a = ref.current; if (!a) return;
+    const hi = rEnd > 0 ? rEnd : (a.duration || abs);
+    const t = Math.min(hi, Math.max(start, abs));
+    a.currentTime = t; setCur(t);
+  };
+  const skip = (d: number) => seekTo((ref.current?.currentTime ?? start) + d);
+  const toggle = () => {
+    const a = ref.current; if (!a) return;
+    if (a.paused) { if (a.currentTime < start || (rEnd > 0 && a.currentTime >= rEnd)) seekTo(start); a.play().catch(() => {}); }
+    else a.pause();
+  };
+
+  return (
+    <div className={`flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 py-2 ${className ?? ""}`}>
+      <audio key={base} ref={ref} src={base} preload="metadata" className="hidden" />
+      <button type="button" onClick={() => skip(-10)} title="Mundur 10 detik" className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100">
+        <RotateCcw className="h-4 w-4" /><span className="absolute text-[7px] font-bold">10</span>
+      </button>
+      <button type="button" onClick={toggle} title={playing ? "Jeda" : "Putar"} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white" style={{ background: TEAL }}>
+        {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-[1px]" />}
+      </button>
+      <button type="button" onClick={() => skip(10)} title="Maju 10 detik" className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100">
+        <RotateCw className="h-4 w-4" /><span className="absolute text-[7px] font-bold">10</span>
+      </button>
+      <span className="w-9 shrink-0 text-right text-[11px] font-medium tabular-nums text-slate-500">{clock(relCur)}</span>
+      <input
+        type="range" min={0} max={relDur || 0} step={0.1} value={Math.min(relCur, relDur || 0)}
+        onChange={(e) => seekTo(start + Number(e.target.value))}
+        className="h-1.5 flex-1 cursor-pointer accent-teal-600"
+        aria-label="Geser posisi audio"
+      />
+      <span className="w-9 shrink-0 text-[11px] font-medium tabular-nums text-slate-400">{clock(relDur)}</span>
+    </div>
+  );
 }
 
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
@@ -91,6 +191,11 @@ export default function SimulasiRunnerPage() {
   const [attemptId, setAttemptId] = useState<string | null>(null);
   const [secIdx, setSecIdx] = useState(0);
   const [maxSecIdx, setMaxSecIdx] = useState(0);
+  // Tiap bagian diawali layar "intro/petunjuk" sebelum soalnya. Set = bagian yang
+  // intronya sudah dilewati (siswa klik "Mulai bagian ini") → tampil soal.
+  const [introDone, setIntroDone] = useState<Set<number>>(new Set());
+  const dismissIntro = (si: number) => setIntroDone((prev) => { const n = new Set(prev); n.add(si); return n; });
+  const reopenIntro = (si: number) => { setSecIdx(si); setIntroDone((prev) => { const n = new Set(prev); n.delete(si); return n; }); };
   const [answers, setAnswers] = useState<Record<string, AnswerState>>({});
   const [results, setResults] = useState<ResultItem[]>([]);
   const [totals, setTotals] = useState({ score: 0, max_score: 0, auto_score: 0, ai_score: 0 });
@@ -136,6 +241,7 @@ export default function SimulasiRunnerPage() {
   // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
   function goToQuestion(targetSecIdx: number, qid: string) {
     setSecIdx(targetSecIdx);
+    dismissIntro(targetSecIdx); // loncat ke nomor soal → lewati layar intro bagian
     requestAnimationFrame(() => setTimeout(() => {
       const el = document.getElementById(`q-${qid}`);
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -332,6 +438,67 @@ export default function SimulasiRunnerPage() {
     </>
   );
 
+  // Layar intro/petunjuk bagian — tampil sebelum soal tiap bagian (template default
+  // per skill, atau instruksi kustom admin). Alur: intro → soal → intro → soal, dst.
+  if (!introDone.has(secIdx)) {
+    const tpl = SECTION_INTRO[section.skill] ?? { title: "Petunjuk Bagian", points: [] };
+    const customInstr = section.instructions?.trim();
+    return (
+      <Shell sim={sim} preview={preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+        <div className="mb-4 flex items-center gap-1.5">
+          {sections.map((s, i) => (
+            <div key={s.id} className="h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : "#e2e8f0" }} />
+          ))}
+        </div>
+
+        <QuestionNavigator
+          sections={sections} questions={questions} answers={answers}
+          currentSecIdx={secIdx} maxVisitedSecIdx={maxSecIdx}
+          onJump={goToQuestion} onIntro={reopenIntro} qNumber={qNumber}
+        />
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+          <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
+            <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
+          </div>
+          <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
+          <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><ListChecks className="h-3.5 w-3.5" />{secQs.length} soal</span>
+            {section.duration_minutes > 0 && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Clock className="h-3.5 w-3.5" />{section.duration_minutes} menit</span>}
+            {section.audio_url && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Headphones className="h-3.5 w-3.5" />Ada audio</span>}
+            {section.passage && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><BookOpen className="h-3.5 w-3.5" />Ada teks bacaan</span>}
+          </div>
+
+          <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50/40 p-4">
+            <h3 className="flex items-center gap-1.5 text-sm font-bold text-slate-800"><Info className="h-4 w-4 text-teal-600" />{tpl.title}</h3>
+            {customInstr ? (
+              <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600">{customInstr}</p>
+            ) : (
+              <ul className="mt-2 space-y-1.5">
+                {tpl.points.map((p, i) => (
+                  <li key={i} className="flex gap-2 text-sm text-slate-600"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" />{p}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <div className="mt-6 flex items-center justify-between gap-3">
+            <button
+              disabled={secIdx === 0}
+              onClick={() => setSecIdx((i) => Math.max(0, i - 1))}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
+            >
+              <ArrowLeft className="h-4 w-4" />Bagian sebelumnya
+            </button>
+            <button onClick={() => dismissIntro(secIdx)} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+              <PlayCircle className="h-4 w-4" />Mulai bagian ini
+            </button>
+          </div>
+        </div>
+      </Shell>
+    );
+  }
+
   return (
     <Shell sim={sim} preview={preview} wide={hasMedia} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       {/* progress */}
@@ -348,6 +515,7 @@ export default function SimulasiRunnerPage() {
         currentSecIdx={secIdx}
         maxVisitedSecIdx={maxSecIdx}
         onJump={goToQuestion}
+        onIntro={reopenIntro}
         qNumber={qNumber}
       />
 
@@ -723,12 +891,48 @@ function isAnswered(q: Question, s?: AnswerState) {
 // ── Navigasi soal mengambang: blok nomor + status terjawab/belum/dilewati ────
 type NavStatus = "answered" | "skipped" | "todo";
 
-function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump, qNumber }: {
+function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump, onIntro, qNumber }: {
   sections: Section[]; questions: Question[]; answers: Record<string, AnswerState>;
   currentSecIdx: number; maxVisitedSecIdx: number; onJump: (secIdx: number, qid: string) => void;
+  onIntro?: (secIdx: number) => void;
   qNumber: Record<string, number>;
 }) {
   const [open, setOpen] = useState(false);
+
+  // Panel desktop (xl+) bisa digeser bebas & diminimize jadi tombol mengambang.
+  // Posisi & status minimize disimpan di localStorage supaya tetap saat pindah soal.
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
+  const [minimized, setMinimized] = useState(false);
+  const panelRef = useRef<HTMLElement>(null);
+  const dragRef = useRef<{ dx: number; dy: number } | null>(null);
+  useEffect(() => {
+    try {
+      const p = localStorage.getItem("sim-nav-pos");
+      if (p) setPos(JSON.parse(p));
+      setMinimized(localStorage.getItem("sim-nav-min") === "1");
+    } catch { /* ignore */ }
+  }, []);
+  const onDragMove = (e: PointerEvent) => {
+    if (!dragRef.current || !panelRef.current) return;
+    const w = panelRef.current.offsetWidth, h = panelRef.current.offsetHeight;
+    const x = Math.min(Math.max(8, e.clientX - dragRef.current.dx), window.innerWidth - w - 8);
+    const y = Math.min(Math.max(8, e.clientY - dragRef.current.dy), window.innerHeight - Math.min(h, 120) - 8);
+    setPos({ x, y });
+  };
+  const onDragEnd = () => {
+    dragRef.current = null;
+    window.removeEventListener("pointermove", onDragMove);
+    window.removeEventListener("pointerup", onDragEnd);
+    setPos((p) => { try { if (p) localStorage.setItem("sim-nav-pos", JSON.stringify(p)); } catch { /* ignore */ } return p; });
+  };
+  const onDragStart = (e: React.PointerEvent) => {
+    if (!panelRef.current) return;
+    const r = panelRef.current.getBoundingClientRect();
+    dragRef.current = { dx: e.clientX - r.left, dy: e.clientY - r.top };
+    window.addEventListener("pointermove", onDragMove);
+    window.addEventListener("pointerup", onDragEnd);
+  };
+  const setMin = (v: boolean) => { setMinimized(v); try { localStorage.setItem("sim-nav-min", v ? "1" : "0"); } catch { /* ignore */ } };
 
   // Kelompokkan section menurut skill → maksimal 4 tab (Reading/Listening/Speaking/Writing).
   // Tiap skill berisi satu/lebih "part" (bagian). Accordion 2 tingkat: skill → part → soal.
@@ -792,9 +996,19 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
           const isActiveSkill = g.skill === currentSkill;
           const multiPart = g.parts.length > 1;
 
-          // Grid nomor soal untuk satu part.
+          // Grid nomor soal untuk satu part — diawali chip "Intro" (petunjuk bagian).
           const qGrid = (qs: Question[], si: number) => (
             <div className="flex flex-wrap gap-1.5">
+              {onIntro && (
+                <button
+                  type="button"
+                  onClick={() => { onIntro(si); setOpen(false); }}
+                  title="Lihat petunjuk bagian ini"
+                  className="flex h-9 items-center gap-1 rounded-lg border border-teal-200 bg-teal-50 px-2 text-[11px] font-semibold text-teal-700 transition hover:border-teal-300"
+                >
+                  <Info className="h-3.5 w-3.5" />Intro
+                </button>
+              )}
               {qs.map((q) => {
                 const st = statusOf(q, si);
                 const num = qNumber[q.id];
@@ -881,10 +1095,49 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
 
   return (
     <>
-      {/* Panel mengambang — layar lebar (xl+) */}
-      <aside className="fixed right-4 top-24 z-30 hidden max-h-[calc(100vh-7rem)] w-56 flex-col overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-lg xl:flex">
-        {body}
-      </aside>
+      {/* Panel mengambang — layar lebar (xl+). Bisa digeser via header & diminimize. */}
+      {!minimized && (
+        <aside
+          ref={panelRef}
+          className="fixed z-30 hidden max-h-[calc(100vh-7rem)] w-56 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg xl:flex"
+          style={pos ? { left: pos.x, top: pos.y } : { right: 16, top: 96 }}
+        >
+          {/* Header = drag handle */}
+          <div
+            onPointerDown={onDragStart}
+            className="flex shrink-0 cursor-grab items-center gap-1.5 border-b border-slate-100 bg-slate-50/80 px-3 py-2 active:cursor-grabbing"
+          >
+            <GripVertical className="h-4 w-4 shrink-0 text-slate-400" />
+            <span className="flex-1 text-xs font-bold text-slate-600">Navigasi Soal</span>
+            <span className="text-[10px] font-medium text-slate-400 tabular-nums">{answeredCount}/{questions.length}</span>
+            <button
+              type="button"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={() => setMin(true)}
+              title="Minimize"
+              className="flex h-6 w-6 items-center justify-center rounded-md text-slate-400 hover:bg-slate-200/70 hover:text-slate-600"
+            >
+              <Minimize2 className="h-3.5 w-3.5" />
+            </button>
+          </div>
+          <div className="overflow-y-auto p-4">{body}</div>
+        </aside>
+      )}
+
+      {/* Tombol mengambang restore — layar lebar saat diminimize */}
+      {minimized && (
+        <button
+          type="button"
+          onClick={() => setMin(false)}
+          className="fixed bottom-5 right-5 z-30 hidden items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg xl:flex"
+          style={{ background: TEAL }}
+          title="Buka Navigasi Soal"
+        >
+          <ListChecks className="h-5 w-5" />
+          {answeredCount}/{questions.length}
+          {skippedCount > 0 && <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[11px]">{skippedCount}</span>}
+        </button>
+      )}
 
       {/* Tombol mengambang — layar kecil/sedang */}
       <button
