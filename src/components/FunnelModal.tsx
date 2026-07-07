@@ -9,21 +9,6 @@ import { ChevronRight, X, Search } from "lucide-react";
 import { getLanguageCategory, PRICE_A1_60MIN, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // funnel-session-duration-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 
-const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
-
-async function saveLead(data: {wa_number:string; language?:string; name?:string; email?:string; program?:string; level?:string; teacher_type?:string|null; referral_source?:string; ref_code?:string}) {
-  try {
-    const ref = new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || undefined;
-    if (ref) localStorage.setItem("linguo_ref", ref);
-    await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` },
-      body: JSON.stringify({ ...data, source: "landing-page", referral_source: data.referral_source || ref || null }),
-    });
-  } catch (e) { console.error("Lead save failed:", e); }
-}
-
 const LANG_CATEGORIES = [
   { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
   { label: "Asia", langs: ["Japanese","Korean","Mandarin","Cantonese","Arabic","Thai","Vietnamese","Hindi","Turkish","Hebrew","Persian","Tagalog","Malay","Georgian","Urdu","Bengali"] },
@@ -68,6 +53,8 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const [selTeacherType, setSelTeacherType] = useState<"lokal"|"native">("lokal");
   const [teacherPick, setTeacherPick] = useState(false);
   const [selDuration, setSelDuration] = useState(60); // funnel-session-duration-v1 — menit per sesi (Private/Kids)
+  // funnel-xendit-v1 — jumlah sesi (paket) utk Private/Kids; total = harga/sesi × jumlah sesi
+  const [selSessions, setSelSessions] = useState(12);
 
   // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
   useOverlayLock(open);
@@ -89,7 +76,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
       if (initialName) setFormName(initialName);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setSelDuration(60); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setSelDuration(60); setSelSessions(12); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
 
   const filtered = search.trim()
@@ -116,6 +103,19 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
   const kidsKey = KIDS_KEY[selLevel];
   const kidsPerSession = kidsKey ? Math.round(((KIDS_PRICE[kidsKey] / KIDS_DURATION[kidsKey]) * selDuration) / 5000) * 5000 : 0;
+
+  // funnel-xendit-v1 — paket jumlah sesi (Private & Kids) + total tagihan.
+  // Reguler & IELTS = harga paket flat (sinkron dgn /api/create-funnel-invoice).
+  const SESSION_OPTS = [4, 8, 12, 16, 24];
+  const REGULER_PRICE = 150000;
+  const IELTS_PRICE = 300000;
+  const isSessionProg = selProgram==="Kelas Private" || selProgram==="Kelas Kids";
+  const perSession = selProgram==="Kelas Private" ? privatePerSession : selProgram==="Kelas Kids" ? kidsPerSession : 0;
+  const totalAmount =
+    isSessionProg ? perSession * selSessions
+    : selProgram==="Kelas Reguler" ? REGULER_PRICE
+    : selProgram==="IELTS/TOEFL Prep" ? IELTS_PRICE
+    : 0;
 
   const isReguler = REGULER_LANGS.includes(selLang); // bahasa ini punya Kelas Reguler?
   const programs = [
@@ -144,49 +144,43 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
     return true;
   };
 
+  // funnel-xendit-v1 — bikin invoice Xendit lalu redirect ke halaman bayar.
+  // Harga dihitung ULANG di server (anti-tamper); `amount` di UI cuma display.
   const handleFinal = async () => {
     setSaving(true);
+    setFormError("");
     try {
       const fullNum = countryCode.replace("+","") + formWa;
-      try {
-        await saveLead({
-          wa_number: fullNum,
+      const refFinal = refCode.trim()
+        || (typeof window !== "undefined"
+          ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "")
+          : "");
+      const res = await fetch("/api/create-funnel-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           name: formName,
           email: formEmail,
-          language: selLang,
+          wa_number: fullNum,
           program: selProgram,
+          language: selLang,
           level: selLevel,
+          duration: selDuration,
           teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
-          // referral-code-field-v1 — input manual menang; fallback ke ?ref= / linguo_ref localStorage
-          ref_code: refCode.trim()
-            || (typeof window !== "undefined"
-              ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || undefined)
-              : undefined),
-        });
-      } catch (leadErr) {
-        console.error("Lead save failed (non-blocking):", leadErr);
+          sessions: isSessionProg ? selSessions : null,
+          ref_code: refFinal || undefined,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok && data?.invoice_url) {
+        window.location.href = data.invoice_url;
+        return;
       }
-      const teacherLine = selProgram==="Kelas Private"
-        ? "Pengajar: " + (selTeacherType==="native"?"Native Speaker":"Lokal") + "\n"
-        : "";
-      // funnel-session-duration-v1 — durasi per sesi (Private/Kids)
-      const durationLine = (selProgram==="Kelas Private" || selProgram==="Kelas Kids")
-        ? "Durasi: " + selDuration + " menit/sesi\n"
-        : "";
-      const waMsg =
-        "Halo Admin Linguo, saya tertarik mendaftar:\n\n" +
-        "Program: " + selProgram + "\n" +
-        teacherLine +
-        "Bahasa: " + selLang + "\n" +
-        "Level: " + selLevel + "\n" +
-        durationLine +
-        "Nama: " + formName + "\n" +
-        "Email: " + formEmail + "\n\n" +
-        "Mohon info pembayaran & jadwalnya. Terima kasih!";
-      window.location.href = "https://wa.me/6282116859493?text=" + encodeURIComponent(waMsg);
+      setFormError(data?.error || "Gagal memproses pembayaran. Coba lagi ya.");
+      setSaving(false);
     } catch(e) {
       console.error("Submit error:", e);
-      alert("Terjadi kesalahan. Silakan coba lagi.");
+      setFormError("Koneksi bermasalah. Silakan coba lagi.");
       setSaving(false);
     }
   };
@@ -200,7 +194,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
     });
   };
 
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setSelDuration(60); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setSelDuration(60); setSelSessions(12); };
 
   return (
     <AnimatePresence>{open&&(
@@ -272,7 +266,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
                 {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
+                  <button key={p.id} onClick={()=>{ setSelLevel(""); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <span className="text-2xl mt-0.5">{p.icon}</span>
                     <div className="flex-1">
@@ -390,16 +384,37 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                       </button>
                     ))}
                   </div>
+
+                  {/* funnel-xendit-v1 — pilih jumlah sesi (paket) */}
+                  <h3 className="text-base font-bold text-slate-900 mb-1">Jumlah sesi</h3>
+                  <p className="text-sm text-slate-500 mb-3">Pilih paket jumlah pertemuan</p>
+                  <div className="grid grid-cols-5 gap-2 mb-5">
+                    {SESSION_OPTS.map(s=>(
+                      <button key={s} onClick={()=>setSelSessions(s)}
+                        className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selSessions===s?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
+                        {s}
+                      </button>
+                    ))}
+                  </div>
+
                   <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-500">Estimasi biaya / sesi ({selDuration} menit)</span>
-                      <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(selProgram==="Kelas Private"?privatePerSession:kidsPerSession)}</span>
+                    <div className="flex items-center justify-between text-slate-500 text-xs">
+                      <span>Harga / sesi ({selDuration} menit)</span>
+                      <span>{fmtRp(perSession)}</span>
                     </div>
-                    <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Estimasi. Harga final &amp; jadwal dikonfirmasi Admin via WhatsApp.</p>
+                    <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
+                      <span>Jumlah sesi</span>
+                      <span>× {selSessions}</span>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-[#1A9E9E]/15 mt-2.5 pt-2.5">
+                      <span className="text-sm font-semibold text-slate-700">Total tagihan</span>
+                      <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Bayar aman via Xendit. Jadwal diatur Admin setelah pembayaran.</p>
                   </div>
                 </motion.div>
               )}
-              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
+              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1 — paket 2 bulan {fmtRp(REGULER_PRICE)}</p>}
               </div>
 
               {/* funnel-sticky-cta-v1 — tombol lanjut dipin di footer biar selalu kelihatan (tak terpotong scroll) */}
@@ -524,21 +539,42 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
                 {/* funnel-session-duration-v1 — durasi sesi terpilih */}
-                {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && (
+                {isSessionProg && (
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-slate-500">Durasi / sesi</span>
                     <span className="text-sm font-medium">{selDuration} menit</span>
                   </div>
                 )}
+                {/* funnel-xendit-v1 — jumlah sesi (paket) */}
+                {isSessionProg && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-500">Jumlah sesi</span>
+                    <span className="text-sm font-medium">{selSessions} sesi</span>
+                  </div>
+                )}
               </div>
+
+              {/* funnel-xendit-v1 — total tagihan */}
+              <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-4">
+                {isSessionProg && (
+                  <div className="flex items-center justify-between text-slate-500 text-xs mb-1.5">
+                    <span>{fmtRp(perSession)} × {selSessions} sesi</span>
+                  </div>
+                )}
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-slate-700">Total tagihan</span>
+                  <span className="text-2xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+                </div>
+              </div>
+              {formError && <p className="text-red-500 text-xs mb-2 text-center">{formError}</p>}
               </div>
               {/* funnel-sticky-cta-v1 — CTA bayar dipin di footer biar selalu kelihatan */}
               <div className="px-6 py-4 border-t border-slate-100 bg-white">
                 <button onClick={handleFinal} disabled={saving}
                   className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                  {saving ? "Memproses..." : "Lanjut Daftar via WhatsApp →"}
+                  {saving ? "Memproses..." : `Bayar ${fmtRp(totalAmount)} →`}
                 </button>
-                <p className="text-[11px] text-slate-400 text-center mt-2">Admin akan konfirmasi biaya, jadwal &amp; pembayaran via WhatsApp</p>
+                <p className="text-[11px] text-slate-400 text-center mt-2">Kamu akan diarahkan ke halaman pembayaran Xendit yang aman</p>
               </div>
             </motion.div>
           )}
