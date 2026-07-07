@@ -29,15 +29,9 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
-  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param,
-  // cookie linguo_ref (di-set middleware), atau localStorage.
-  const [refCode, setRefCode] = useState(() => {
-    if (typeof window === "undefined") return "";
-    const p = new URLSearchParams(window.location.search).get("ref");
-    if (p) return p;
-    const c = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0];
-    return c || localStorage.getItem("linguo_ref") || "";
-  });
+  // referral-code-field-v1 — optional kode referral; default KOSONG (input manual).
+  // Affiliate tetap ke-track lewat cookie linguo_ref / ?ref= saat submit (lihat bawah).
+  const [refCode, setRefCode] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   if (!selectedTier) {

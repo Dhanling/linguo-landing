@@ -5,6 +5,15 @@ import Link from "next/link";
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
+// referral-code-field-v1 — baca ref affiliate dari ?ref= URL, cookie linguo_ref, atau localStorage
+const storedRef = (): string | undefined => {
+  if (typeof window === "undefined") return undefined;
+  const p = new URLSearchParams(window.location.search).get("ref");
+  if (p) return p;
+  const c = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0];
+  return c || localStorage.getItem("linguo_ref") || undefined;
+};
+
 const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇳🇱 Belanda","🇸🇦 Arab","🇫🇷 Prancis","🇰🇷 Korea","🇵🇭 Tagalog","🇮🇹 Italia","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇳🇴 Norwegia","🇫🇮 Finlandia"];
 
 const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
@@ -38,15 +47,9 @@ export default function EbookPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [wa, setWa] = useState("");
-  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param,
-  // cookie linguo_ref (di-set middleware), atau localStorage.
-  const [refCode, setRefCode] = useState(() => {
-    if (typeof window === "undefined") return "";
-    const p = new URLSearchParams(window.location.search).get("ref");
-    if (p) return p;
-    const c = ("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0];
-    return c || localStorage.getItem("linguo_ref") || "";
-  });
+  // referral-code-field-v1 — optional kode referral; default KOSONG (input manual).
+  // Affiliate tetap ke-track lewat cookie linguo_ref / ?ref= saat submit (lihat bawah).
+  const [refCode, setRefCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -98,9 +101,9 @@ export default function EbookPage() {
           language: langLabel,
           program: "digital",
           productKey: `ebook-${paket.id}-${edition}`,
-          // referral-code-field-v1 — TODO: ensure ref_code column exists in leads table
-          referral_source: refCode.trim() || undefined,
-          ref_code: refCode.trim() || undefined,
+          // referral-code-field-v1 — input manual menang; fallback ke cookie linguo_ref / ?ref=
+          referral_source: refCode.trim() || storedRef() || undefined,
+          ref_code: refCode.trim() || storedRef() || undefined,
         }),
       });
       const data = await res.json();

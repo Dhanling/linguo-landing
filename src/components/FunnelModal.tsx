@@ -58,12 +58,9 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const [formEmail, setFormEmail] = useState("");
   const [formWa, setFormWa] = useState(initialWa || "");
   const [countryCode, setCountryCode] = useState("+62");
-  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param
-  // (atau linguo_ref yg sudah tersimpan di localStorage saat halaman dibuka).
-  const [refCode, setRefCode] = useState(() => {
-    if (typeof window === "undefined") return "";
-    return new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "";
-  });
+  // referral-code-field-v1 — optional kode referral; default KOSONG (input manual).
+  // Affiliate tetap ke-track di background lewat ?ref= / localStorage saat submit.
+  const [refCode, setRefCode] = useState("");
   const [formError, setFormError] = useState("");
   const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
@@ -160,7 +157,11 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
           program: selProgram,
           level: selLevel,
           teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
-          ref_code: refCode.trim() || undefined, // referral-code-field-v1 — TODO: ensure ref_code column exists in leads table
+          // referral-code-field-v1 — input manual menang; fallback ke ?ref= / linguo_ref localStorage
+          ref_code: refCode.trim()
+            || (typeof window !== "undefined"
+              ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || undefined)
+              : undefined),
         });
       } catch (leadErr) {
         console.error("Lead save failed (non-blocking):", leadErr);
