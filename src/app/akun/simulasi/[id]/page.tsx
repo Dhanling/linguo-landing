@@ -472,7 +472,7 @@ export default function SimulasiRunnerPage() {
   );
 
   if (phase === "result") return (
-    <ResultView sim={sim} totals={totals} results={results} />
+    <ResultView sim={sim} totals={totals} results={results} preview={preview} />
   );
 
   // intro — onboarding wizard 3 langkah sebelum mulai mengerjakan
@@ -642,7 +642,18 @@ export default function SimulasiRunnerPage() {
               <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
             </button>
           ) : (
-            <button onClick={() => setSecIdx((i) => i + 1)} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+            <button
+              onClick={() => {
+                const next = secIdx + 1;
+                // Bagian berikutnya masih skill yang sama (mis. Listening Part 2
+                // setelah Part 1) → lewati layar intro, langsung tampilkan soal &
+                // audionya karena petunjuknya sama dgn bagian sebelumnya.
+                if (sections[next]?.skill === section.skill) dismissIntro(next);
+                setSecIdx(next);
+              }}
+              className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white"
+              style={{ background: TEAL }}
+            >
               Lanjut <ArrowRight className="h-4 w-4" />
             </button>
           )}
@@ -905,6 +916,10 @@ function MicCheck() {
 function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean }) {
   // wide = layout split materi|soal (butuh ruang 2 kolom di desktop)
   const maxW = wide ? "max-w-6xl" : "max-w-3xl";
+  // Tombol back keluar simulasi. Mode preview dibuka admin di tab baru & tanpa sesi
+  // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
+  // dulu"). Pakai katalog publik /simulasi yang bebas login.
+  const backHref = preview ? "/simulasi" : "/akun/simulasi";
   return (
     <div className="sim-shell min-h-screen bg-slate-50">
       {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada
@@ -923,7 +938,7 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
       )}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
         <div className={`mx-auto flex ${maxW} items-center gap-3 px-4 py-3.5 sm:px-6`}>
-          <Link href="/akun/simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+          <Link href={backHref} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <span className="flex h-9 w-9 items-center justify-center rounded-lg text-white" style={{ background: TEAL_DEEP }}>
@@ -1370,7 +1385,7 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 }
 
 // ── Result ──────────────────────────────────────────────────────────────────
-function ResultView({ sim, totals, results }: { sim: Simulation; totals: { score: number; max_score: number; auto_score: number; ai_score: number }; results: ResultItem[] }) {
+function ResultView({ sim, totals, results, preview }: { sim: Simulation; totals: { score: number; max_score: number; auto_score: number; ai_score: number }; results: ResultItem[]; preview?: boolean }) {
   const pct = totals.max_score > 0 ? Math.round((totals.score / totals.max_score) * 100) : 0;
   return (
     <div className="min-h-screen bg-slate-50">
@@ -1413,13 +1428,23 @@ function ResultView({ sim, totals, results }: { sim: Simulation; totals: { score
           ))}
         </ol>
 
+        {/* Preview dibuka admin di tab baru tanpa sesi siswa → hindari /akun* yg
+            login-gated; cukup satu tombol tutup preview ke katalog publik. */}
         <div className="mt-6 flex gap-3">
-          <Link href="/akun/simulasi" className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-600">
-            <ArrowLeft className="h-4 w-4" />Simulasi lain
-          </Link>
-          <Link href="/akun" className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-            Ke Dashboard
-          </Link>
+          {preview ? (
+            <Link href="/simulasi" className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-600">
+              <ArrowLeft className="h-4 w-4" />Tutup preview
+            </Link>
+          ) : (
+            <>
+              <Link href="/akun/simulasi" className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-600">
+                <ArrowLeft className="h-4 w-4" />Simulasi lain
+              </Link>
+              <Link href="/akun" className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+                Ke Dashboard
+              </Link>
+            </>
+          )}
         </div>
       </main>
     </div>
