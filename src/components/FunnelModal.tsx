@@ -382,7 +382,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
                   <div className="grid grid-cols-3 gap-2 mb-5">
                     {DURATION_OPTS.map(d=>(
-                      <button key={d} onClick={()=>setSelDuration(d)}
+                      <button key={d} onClick={()=>{setSelDuration(d);setStep(4)}}
                         className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selDuration===d?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
                         {d} menit
                       </button>
