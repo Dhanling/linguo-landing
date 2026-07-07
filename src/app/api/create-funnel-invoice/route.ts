@@ -20,6 +20,7 @@ import {
   getLanguageCategory,
   KIDS_PRICE,
   KIDS_DURATION,
+  getSemiPrivatePrice,
 } from "@/lib/trial-pricing";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
@@ -44,8 +45,22 @@ function computeFunnelAmount(input: {
   duration: number;
   teacherType: string;
   sessions: number;
+  classSize: number;
 }): PriceResult | null {
-  const { program, language, level, duration, teacherType, sessions } = input;
+  const { program, language, level, duration, teacherType, sessions, classSize } = input;
+
+  if (program === "Semi Private") {
+    if (!PRIVATE_DURATIONS.includes(duration)) return null;
+    if (!SESSION_OPTS.includes(sessions)) return null;
+    if (!(classSize >= 2 && classSize <= 10)) return null;
+    const sp = getSemiPrivatePrice(language, level || "A1", classSize, duration);
+    if (!sp.perStudent) return null;
+    return {
+      amount: sp.perStudent * sessions,
+      perSession: sp.perStudent,
+      description: `Semi Private ${language} — ${sessions} sesi @${duration} menit (grup ${classSize} orang, harga/orang)`,
+    };
+  }
 
   if (program === "Kelas Private") {
     if (!PRIVATE_DURATIONS.includes(duration)) return null;
@@ -116,6 +131,7 @@ export async function POST(req: NextRequest) {
       duration,
       teacher_type,
       sessions,
+      class_size,
       ref_code,
     } = body || {};
 
@@ -135,6 +151,7 @@ export async function POST(req: NextRequest) {
       duration: Number(duration) || 0,
       teacherType: teacher_type === "native" ? "native" : "lokal",
       sessions: Number(sessions) || 0,
+      classSize: Number(class_size) || 0,
     });
     if (!priced || priced.amount <= 0) {
       return NextResponse.json(

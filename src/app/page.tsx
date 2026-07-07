@@ -1152,19 +1152,16 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       if (initialName) setFormName(initialName);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setAddAddon(false); setAgreeTerms(false); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formWa, setFormWa] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
-  // referral-code-field-v1 — optional kode referral; auto-prefill dari ?ref= URL param
-  // (atau linguo_ref yg sudah tersimpan di localStorage saat halaman dibuka).
-  const [refCode, setRefCode] = useState(() => {
-    if (typeof window === "undefined") return "";
-    return new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "";
-  });
+  // referral-code-field-v1 — optional kode referral; default KOSONG (input manual).
+  // Affiliate tetap ke-track di background lewat ?ref= / linguo_ref saat submit.
+  const [refCode, setRefCode] = useState("");
   const [formError, setFormError] = useState("");
   const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
@@ -1173,6 +1170,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [teacherPick, setTeacherPick] = useState(false);
   const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
   const [selDuration, setSelDuration] = useState(60); // linguo-patch:funnel-session-duration-v1 — menit per sesi (Private/Semi/Kids)
+  const [selSessions, setSelSessions] = useState(12); // funnel-xendit-v1 — jumlah sesi (paket); total = harga/sesi × jumlah sesi
   const [addAddon, setAddAddon] = useState(false); // addon-ebook-recording-v1 — toggle E-Book + Recording bundle (Reguler only)
   const [agreeTerms, setAgreeTerms] = useState(false); // terms-agreement-v1 — gating "Bayar Sekarang" (Reguler only)
 
@@ -1213,6 +1211,20 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
   const kidsKey = KIDS_KEY[selLevel];
   const kidsPerSession = kidsKey ? Math.round(((KIDS_PRICE[kidsKey] / KIDS_DURATION[kidsKey]) * selDuration) / 5000) * 5000 : 0;
+
+  // funnel-xendit-v1 — paket jumlah sesi (Private/Semi/Kids) + total tagihan.
+  // Formula WAJIB identik dgn /api/create-funnel-invoice (server hitung ulang).
+  const SESSION_OPTS = [4, 8, 12, 16, 24];
+  const IELTS_PRICE = 300000;
+  const isSessionProg = selProgram==="Kelas Private" || selProgram==="Semi Private" || selProgram==="Kelas Kids";
+  const perSession = selProgram==="Kelas Private" ? privatePerSession
+    : selProgram==="Kelas Kids" ? kidsPerSession
+    : selProgram==="Semi Private" ? (semiPrice?.perStudent || 0)
+    : 0;
+  const totalAmount =
+    isSessionProg ? perSession * selSessions
+    : selProgram==="IELTS/TOEFL Prep" ? IELTS_PRICE
+    : 0;
 
   const programs = [
     {id:"Kelas Private",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
@@ -1271,53 +1283,37 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
         return;
       }
 
-      // Step 1: Save lead to DB FIRST — always, regardless of Xendit/WA outcome.
-      // This ensures lead capture even if user drops off at WA step.
-      try {
-        await saveLead({
-          wa_number: fullNum,
+      // ── funnel-xendit-v1: Private / Semi Private / Kids / IELTS checkout ──
+      // langsung ke Xendit. Harga dihitung ULANG di server (anti-tamper);
+      // endpoint menyimpan lead + attribusi referral sendiri.
+      const refFinal = refCode.trim()
+        || (typeof window !== "undefined"
+          ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "")
+          : "");
+      const res = await fetch("/api/create-funnel-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           name: formName,
           email: formEmail,
-          language: selLang,
+          wa_number: fullNum,
           program: selProgram,
+          language: selLang,
           level: selLevel,
+          duration: selDuration,
           teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
-          ref_code: refCode.trim() || undefined, // referral-code-field-v1 — TODO: ensure ref_code column exists in leads table
-        });
-      } catch (leadErr) {
-        console.error("Lead save failed (non-blocking):", leadErr);
-      }
-
-      // Step 2: Non-Reguler programs redirect to WhatsApp with a pre-filled
-      // template (Reguler is handled above via Xendit — reguler-xendit-v1).
-      const teacherLine = selProgram==="Kelas Private"
-        ? "Pengajar: " + (selTeacherType==="native"?"Native Speaker":"Lokal") + "\n"
-        : "";
-      // linguo-patch:funnel-semi-private-calc-v1 — estimasi ikut durasi sesi terpilih
-      const sp = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, selDuration) : null;
-      const semiLine = sp && sp.totalGroup>0
-        ? "Jumlah peserta: " + classSize + " orang\n" +
-          "Estimasi: " + fmtRp(sp.totalGroup) + "/sesi grup (" + fmtRp(sp.perStudent) + "/orang)\n"
-        : "";
-      // linguo-patch:funnel-session-duration-v1 — durasi per sesi (Private/Semi/Kids)
-      const durationLine = (selProgram==="Kelas Private" || selProgram==="Semi Private" || selProgram==="Kelas Kids")
-        ? "Durasi: " + selDuration + " menit/sesi\n"
-        : "";
-      const waMsg =
-        "Halo Admin Linguo, saya tertarik mendaftar:\n\n" +
-        "Program: " + selProgram + "\n" +
-        teacherLine +
-        semiLine +
-        "Bahasa: " + selLang + "\n" +
-        "Level: " + selLevel + "\n" +
-        durationLine +
-        "Nama: " + formName + "\n" +
-        "Email: " + formEmail + "\n\n" +
-        "Mohon info pembayaran & jadwalnya. Terima kasih!";
-      window.location.href = "https://wa.me/6282116859493?text=" + encodeURIComponent(waMsg);
+          sessions: isSessionProg ? selSessions : null,
+          class_size: selProgram==="Semi Private" ? classSize : null,
+          ref_code: refFinal || undefined,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok && data?.invoice_url) { window.location.href = data.invoice_url; return; }
+      setFormError(data?.error || "Gagal memproses pembayaran. Coba lagi ya.");
+      setSaving(false);
     } catch(e) {
       console.error("Submit error:", e);
-      alert("Terjadi kesalahan. Silakan coba lagi.");
+      setFormError("Koneksi bermasalah. Silakan coba lagi.");
       setSaving(false);
     }
   };
@@ -1331,7 +1327,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       options: { redirectTo: window.location.origin + "/akun" },
     });
   };
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setAddAddon(false); setAgreeTerms(false); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); };
 
   return (
     <AnimatePresence>{open&&(
@@ -1398,7 +1394,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
                 {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
+                  <button key={p.id} onClick={()=>{ setSelLevel(""); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
@@ -1471,7 +1467,8 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
           {/* STEP 3 — Pilih Level */}
           {step===3 && selProgram!=="Semi Private" && (
-            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
+              <div className="p-6 overflow-y-auto flex-1">
               <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
@@ -1499,7 +1496,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 })}
               </div>
 
-              {/* linguo-patch:funnel-session-duration-v1 — pilih durasi sesi + harga live (Private & Kids) */}
+              {/* linguo-patch:funnel-session-duration-v1 — durasi + jumlah sesi + total (Private & Kids) */}
               {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
                 <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="mt-6">
                   <h3 className="text-base font-bold text-slate-900 mb-1">Durasi per sesi</h3>
@@ -1512,17 +1509,34 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       </button>
                     ))}
                   </div>
-                  <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-5">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-500">Estimasi biaya / sesi ({selDuration} menit)</span>
-                      <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(selProgram==="Kelas Private"?privatePerSession:kidsPerSession)}</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Estimasi. Harga final &amp; jadwal dikonfirmasi Admin via WhatsApp.</p>
+
+                  {/* funnel-xendit-v1 — pilih jumlah sesi (paket) */}
+                  <h3 className="text-base font-bold text-slate-900 mb-1">Jumlah sesi</h3>
+                  <p className="text-sm text-slate-500 mb-3">Pilih paket jumlah pertemuan</p>
+                  <div className="grid grid-cols-5 gap-2 mb-5">
+                    {SESSION_OPTS.map(s=>(
+                      <button key={s} onClick={()=>setSelSessions(s)}
+                        className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selSessions===s?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
+                        {s}
+                      </button>
+                    ))}
                   </div>
-                  <button onClick={()=>setStep(4)}
-                    className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                    Lanjut ke Data Diri →
-                  </button>
+
+                  <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
+                    <div className="flex items-center justify-between text-slate-500 text-xs">
+                      <span>Harga / sesi ({selDuration} menit)</span>
+                      <span>{fmtRp(perSession)}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
+                      <span>Jumlah sesi</span>
+                      <span>× {selSessions}</span>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-[#1A9E9E]/15 mt-2.5 pt-2.5">
+                      <span className="text-sm font-semibold text-slate-700">Total tagihan</span>
+                      <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Bayar aman via Xendit. Jadwal diatur Admin setelah pembayaran.</p>
+                  </div>
                 </motion.div>
               )}
 
@@ -1541,6 +1555,17 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 </div>
               )}
               {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
+              </div>
+
+              {/* funnel-sticky-cta-v1 — tombol lanjut dipin di footer biar tak terpotong scroll */}
+              {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
+                <div className="px-6 py-4 border-t border-slate-100 bg-white">
+                  <button onClick={()=>setStep(4)}
+                    className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
+                    Lanjut ke Data Diri →
+                  </button>
+                </div>
+              )}
             </motion.div>
           )}
 
@@ -1590,17 +1615,33 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 ))}
               </div>
 
+              {/* funnel-xendit-v1 — pilih jumlah sesi (paket) */}
+              <h3 className="text-base font-bold text-slate-900 mb-1">Jumlah sesi</h3>
+              <p className="text-sm text-slate-500 mb-3">Pilih paket jumlah pertemuan</p>
+              <div className="grid grid-cols-5 gap-2 mb-5">
+                {SESSION_OPTS.map(s=>(
+                  <button key={s} onClick={()=>setSelSessions(s)}
+                    className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selSessions===s?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
+                    {s}
+                  </button>
+                ))}
+              </div>
+
               {selLevel && semiPrice && semiPrice.totalGroup>0 && (
                 <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-5">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs text-slate-500">Harga grup / sesi ({selDuration} menit)</span>
-                    <span className="text-sm font-bold text-slate-700">{fmtRp(semiPrice.totalGroup)}</span>
+                  <div className="flex items-center justify-between text-slate-500 text-xs">
+                    <span>Per orang / sesi ({classSize} peserta)</span>
+                    <span>{fmtRp(semiPrice.perStudent)}</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Per orang ({classSize} peserta)</span>
-                    <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(semiPrice.perStudent)}<span className="text-xs font-medium text-slate-400">/orang</span></span>
+                  <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
+                    <span>Jumlah sesi</span>
+                    <span>× {selSessions}</span>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Estimasi per sesi, total dibagi rata ke {classSize} peserta. Daftar bareng teman makin hemat.</p>
+                  <div className="flex items-center justify-between border-t border-[#1A9E9E]/15 mt-2.5 pt-2.5">
+                    <span className="text-sm font-semibold text-slate-700">Total tagihan (kamu)</span>
+                    <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Harga per orang untuk grup {classSize} peserta. Tiap peserta daftar & bayar sendiri. Bayar aman via Xendit.</p>
                 </motion.div>
               )}
 
@@ -1730,10 +1771,24 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-sm font-medium">{selLevel}</span>
                 </div>
                 {/* linguo-patch:funnel-session-duration-v1 — tampilkan durasi sesi terpilih */}
-                {(selProgram==="Kelas Private" || selProgram==="Semi Private" || selProgram==="Kelas Kids") && (
+                {isSessionProg && (
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-slate-500">Durasi / sesi</span>
                     <span className="text-sm font-medium">{selDuration} menit</span>
+                  </div>
+                )}
+                {/* funnel-xendit-v1 — jumlah sesi (paket) */}
+                {isSessionProg && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-500">Jumlah sesi</span>
+                    <span className="text-sm font-medium">{selSessions} sesi</span>
+                  </div>
+                )}
+                {/* funnel-xendit-v1 — total tagihan (Private/Semi/Kids/IELTS; Reguler punya blok sendiri) */}
+                {selProgram!=="Kelas Reguler" && (
+                  <div className="flex items-center justify-between border-t-2 border-slate-200 pt-2.5 mt-2.5">
+                    <span className="text-sm font-bold text-slate-800">Total tagihan{selProgram==="Semi Private" ? " (kamu)" : ""}</span>
+                    <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
                   </div>
                 )}
                 {/* reguler-xendit-v1: durasi + harga · addon-ebook-recording-v1: toggle add-on + total live */}
@@ -1786,12 +1841,13 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-[12px] leading-snug text-slate-500">Dengan ini saya menyetujui <b className="text-slate-700">syarat pembukaan kelas & kebijakan pembayaran</b> Linguo yang tertera di atas.</span>
                 </button>
               )}
-              {/* reguler-xendit-v1: CTA + subtext kondisional — Reguler ke Xendit, lainnya ke WA */}
+              {formError && <p className="text-red-500 text-xs mb-2 text-center">{formError}</p>}
+              {/* funnel-xendit-v1: semua program checkout ke Xendit */}
               <button onClick={handleFinal} disabled={saving || (selProgram==="Kelas Reguler" && !agreeTerms)}
                 className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Memproses..." : (selProgram==="Kelas Reguler" ? "Bayar Sekarang →" : "Lanjut via WhatsApp →")}
+                {saving ? "Memproses..." : (selProgram==="Kelas Reguler" ? `Bayar ${fmtRp(150000 + (addAddon ? 150000 : 0))} →` : `Bayar ${fmtRp(totalAmount)} →`)}
               </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">{selProgram==="Kelas Reguler" ? "Kamu akan diarahkan ke halaman pembayaran Xendit" : "Kamu akan diarahkan ke WhatsApp Admin untuk info pembayaran & jadwal"}</p>
+              <p className="text-[11px] text-slate-400 text-center mt-3">Kamu akan diarahkan ke halaman pembayaran Xendit yang aman</p>
             </motion.div>
           )}
         </motion.div>
