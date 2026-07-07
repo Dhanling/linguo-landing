@@ -348,7 +348,8 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
           )}
 
           {step===3 && (
-            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
+            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
+              <div className="p-6 overflow-y-auto flex-1">
               <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
@@ -383,31 +384,39 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
                   <div className="grid grid-cols-3 gap-2 mb-5">
                     {DURATION_OPTS.map(d=>(
-                      <button key={d} onClick={()=>{setSelDuration(d);setStep(4)}}
+                      <button key={d} onClick={()=>setSelDuration(d)}
                         className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selDuration===d?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
                         {d} menit
                       </button>
                     ))}
                   </div>
-                  <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-5">
+                  <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-slate-500">Estimasi biaya / sesi ({selDuration} menit)</span>
                       <span className="text-lg font-extrabold text-[#1A9E9E]">{fmtRp(selProgram==="Kelas Private"?privatePerSession:kidsPerSession)}</span>
                     </div>
                     <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Estimasi. Harga final &amp; jadwal dikonfirmasi Admin via WhatsApp.</p>
                   </div>
+                </motion.div>
+              )}
+              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
+              </div>
+
+              {/* funnel-sticky-cta-v1 — tombol lanjut dipin di footer biar selalu kelihatan (tak terpotong scroll) */}
+              {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
+                <div className="px-6 py-4 border-t border-slate-100 bg-white">
                   <button onClick={()=>setStep(4)}
                     className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
                     Lanjut ke Data Diri →
                   </button>
-                </motion.div>
+                </div>
               )}
-              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
             </motion.div>
           )}
 
           {step===4 && (
-            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
+            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
+              <div className="p-6 overflow-y-auto flex-1">
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>
@@ -460,15 +469,20 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                 </div>
               </div>
               {formError && <p className="text-red-500 text-xs mt-2">{formError}</p>}
-              <button onClick={()=>{if(validateForm()) setStep(5)}}
-                className="w-full mt-5 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                Lanjut ke Konfirmasi →
-              </button>
+              </div>
+              {/* funnel-sticky-cta-v1 — CTA dipin di footer biar selalu kelihatan */}
+              <div className="px-6 py-4 border-t border-slate-100 bg-white">
+                <button onClick={()=>{if(validateForm()) setStep(5)}}
+                  className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
+                  Lanjut ke Konfirmasi →
+                </button>
+              </div>
             </motion.div>
           )}
 
           {step===5 && (
-            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
+            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
+              <div className="p-6 overflow-y-auto flex-1">
               <button onClick={()=>setStep(4)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Edit data</button>
               <div className="text-center mb-5">
                 <span className="text-4xl mb-2 block">🎉</span>
@@ -517,11 +531,15 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   </div>
                 )}
               </div>
-              <button onClick={handleFinal} disabled={saving}
-                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Memproses pembayaran..." : "Bayar Sekarang →"}
-              </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Kamu akan diarahkan ke halaman pembayaran Xendit</p>
+              </div>
+              {/* funnel-sticky-cta-v1 — CTA bayar dipin di footer biar selalu kelihatan */}
+              <div className="px-6 py-4 border-t border-slate-100 bg-white">
+                <button onClick={handleFinal} disabled={saving}
+                  className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
+                  {saving ? "Memproses..." : "Lanjut Daftar via WhatsApp →"}
+                </button>
+                <p className="text-[11px] text-slate-400 text-center mt-2">Admin akan konfirmasi biaya, jadwal &amp; pembayaran via WhatsApp</p>
+              </div>
             </motion.div>
           )}
         </motion.div>
