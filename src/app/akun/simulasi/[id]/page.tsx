@@ -607,80 +607,83 @@ export default function SimulasiRunnerPage() {
       />
 
       {/* Split view ala ujian CBT asli: materi (passage/audio) sticky di kiri,
-          soal discroll di kanan. Bagian tanpa materi tetap satu kolom. */}
-      <div className={hasMedia ? "lg:grid lg:grid-cols-[2fr_3fr] lg:items-start lg:gap-5" : undefined}>
-        {hasMedia && (
-          <aside className="mb-4 lg:sticky lg:top-24 lg:mb-0">
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:flex lg:max-h-[calc(100vh-8rem)] lg:min-h-0 lg:flex-col">
-              {sectionHeader}
-              {section.audio_url && (
-                youtubeEmbedId(section.audio_url) ? (
-                  <div className="mt-3 aspect-video w-full shrink-0 overflow-hidden rounded-lg border border-slate-200">
-                    <iframe
-                      className="h-full w-full"
-                      src={youtubeEmbedSrc(section.audio_url)!}
-                      title="Audio listening"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                ) : (
-                  // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
-                  <div className="sticky top-[72px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
-                    <RangedAudio url={section.audio_url} className="w-full" />
-                  </div>
-                )
-              )}
-              {section.passage && (
-                isHtml(section.passage)
-                  ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 [&_p]:text-justify [&_p]:hyphens-auto lg:max-h-none lg:min-h-0 lg:flex-1" />
-                  : <PassageText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
+          soal discroll di kanan. Pembatas bisa digeser (drag) untuk mengatur
+          lebar. Bagian tanpa materi tetap satu kolom. */}
+      {(() => {
+        const mediaCard = (
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:flex lg:max-h-[calc(100vh-8rem)] lg:min-h-0 lg:flex-col">
+            {sectionHeader}
+            {section.audio_url && (
+              youtubeEmbedId(section.audio_url) ? (
+                <div className="mt-3 aspect-video w-full shrink-0 overflow-hidden rounded-lg border border-slate-200">
+                  <iframe
+                    className="h-full w-full"
+                    src={youtubeEmbedSrc(section.audio_url)!}
+                    title="Audio listening"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
+                <div className="sticky top-[72px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
+                  <RangedAudio url={section.audio_url} className="w-full" />
+                </div>
+              )
+            )}
+            {section.passage && (
+              isHtml(section.passage)
+                ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 [&_p]:text-justify [&_p]:hyphens-auto lg:max-h-none lg:min-h-0 lg:flex-1" />
+                : <PassageText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
+            )}
+          </div>
+        );
+
+        const questionsCard = (
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+            {!hasMedia && sectionHeader}
+
+            <div className="mt-5 space-y-5 first:mt-0">
+              {secQs.map((q) => (
+                <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
+              ))}
+              {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
+            </div>
+
+            <div className="mt-6 flex items-center justify-between gap-3">
+              <button
+                disabled={secIdx === 0}
+                onClick={() => setSecIdx((i) => Math.max(0, i - 1))}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
+              >
+                <ArrowLeft className="h-4 w-4" />Sebelumnya
+              </button>
+              {isLast ? (
+                <button onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
+                  <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    const next = secIdx + 1;
+                    // Bagian berikutnya masih skill yang sama (mis. Listening Part 2
+                    // setelah Part 1) → lewati layar intro, langsung tampilkan soal &
+                    // audionya karena petunjuknya sama dgn bagian sebelumnya.
+                    if (sections[next]?.skill === section.skill) dismissIntro(next);
+                    setSecIdx(next);
+                  }}
+                  className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white"
+                  style={{ background: TEAL }}
+                >
+                  Lanjut <ArrowRight className="h-4 w-4" />
+                </button>
               )}
             </div>
-          </aside>
-        )}
+          </div>
+        );
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
-        {!hasMedia && sectionHeader}
-
-        <div className="mt-5 space-y-5 first:mt-0">
-          {secQs.map((q) => (
-            <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
-          ))}
-          {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
-        </div>
-
-        <div className="mt-6 flex items-center justify-between gap-3">
-          <button
-            disabled={secIdx === 0}
-            onClick={() => setSecIdx((i) => Math.max(0, i - 1))}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
-          >
-            <ArrowLeft className="h-4 w-4" />Sebelumnya
-          </button>
-          {isLast ? (
-            <button onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
-              <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                const next = secIdx + 1;
-                // Bagian berikutnya masih skill yang sama (mis. Listening Part 2
-                // setelah Part 1) → lewati layar intro, langsung tampilkan soal &
-                // audionya karena petunjuknya sama dgn bagian sebelumnya.
-                if (sections[next]?.skill === section.skill) dismissIntro(next);
-                setSecIdx(next);
-              }}
-              className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white"
-              style={{ background: TEAL }}
-            >
-              Lanjut <ArrowRight className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-        </div>
-      </div>
+        return hasMedia ? <SplitPane left={mediaCard} right={questionsCard} /> : questionsCard;
+      })()}
     </Shell>
   );
 }
@@ -934,9 +937,63 @@ function MicCheck() {
   );
 }
 
+// Panel materi|soal dengan pembatas yang bisa digeser (drag) untuk mengatur
+// lebar. Lebar (%) kolom kiri disimpan di localStorage supaya tetap saat pindah
+// bagian/soal. Default kolom kiri (bacaan) lebih lega (~62%). Hanya aktif di
+// desktop (lg+); di layar kecil kartu ditumpuk vertikal seperti biasa.
+const splitClamp = (n: number) => Math.min(72, Math.max(38, n));
+
+function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
+  const [pct, setPct] = useState(62);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const draggingRef = useRef(false);
+
+  useEffect(() => {
+    try { const v = localStorage.getItem("sim-split-pct"); if (v) setPct(splitClamp(Number(v))); } catch { /* ignore */ }
+  }, []);
+
+  useEffect(() => {
+    const move = (e: PointerEvent) => {
+      if (!draggingRef.current || !wrapRef.current) return;
+      const r = wrapRef.current.getBoundingClientRect();
+      setPct(splitClamp(((e.clientX - r.left) / r.width) * 100));
+    };
+    const up = () => {
+      if (!draggingRef.current) return;
+      draggingRef.current = false;
+      document.body.style.userSelect = "";
+      setPct((p) => { try { localStorage.setItem("sim-split-pct", String(Math.round(p))); } catch { /* ignore */ } return p; });
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+    return () => { window.removeEventListener("pointermove", move); window.removeEventListener("pointerup", up); };
+  }, []);
+
+  const onDown = (e: React.PointerEvent) => {
+    e.preventDefault();
+    draggingRef.current = true;
+    document.body.style.userSelect = "none";
+  };
+
+  return (
+    <div ref={wrapRef} className="lg:flex lg:items-start" style={{ ["--sim-left" as string]: `${pct}%` } as React.CSSProperties}>
+      <aside className="mb-4 lg:sticky lg:top-24 lg:mb-0 lg:w-[var(--sim-left)] lg:shrink-0">{left}</aside>
+      <div
+        onPointerDown={onDown}
+        title="Geser untuk mengatur lebar bacaan & soal"
+        className="group relative hidden shrink-0 cursor-col-resize touch-none select-none lg:sticky lg:top-24 lg:flex lg:h-[calc(100vh-8rem)] lg:w-5 lg:items-center lg:justify-center"
+      >
+        <div className="h-16 w-1.5 rounded-full bg-slate-200 transition-colors group-hover:bg-teal-400 group-active:bg-teal-500" />
+      </div>
+      <div className="lg:min-w-0 lg:flex-1">{right}</div>
+    </div>
+  );
+}
+
 function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean }) {
-  // wide = layout split materi|soal (butuh ruang 2 kolom di desktop)
-  const maxW = wide ? "max-w-6xl" : "max-w-3xl";
+  // wide = layout split materi|soal (butuh ruang 2 kolom di desktop). Kartu
+  // dibuat lebih lebar (memanjang ke kiri & kanan) supaya bacaan & soal lega.
+  const maxW = wide ? "max-w-[92rem]" : "max-w-3xl";
   // Tombol back keluar simulasi. Mode preview dibuka admin di tab baru & tanpa sesi
   // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
   // dulu"). Pakai katalog publik /simulasi yang bebas login.
@@ -1304,12 +1361,19 @@ function QuestionBlock({ index, q, state, onChange }: {
 
       {(q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
         <div className="mt-3 space-y-2">
-          {opts.map((opt, i) => (
-            <label key={i} className={`flex cursor-pointer items-center gap-2.5 rounded-lg border px-3 py-2 text-sm transition ${state.selected_index === i ? "border-teal-400 bg-teal-50" : "border-slate-200 hover:bg-slate-50"}`}>
-              <input type="radio" name={q.id} checked={state.selected_index === i} onChange={() => onChange({ selected_index: i })} className="accent-teal-600" />
-              <span className="text-slate-700">{opt}</span>
-            </label>
-          ))}
+          {opts.map((opt, i) => {
+            const active = state.selected_index === i;
+            return (
+              <label key={i} className={`flex cursor-pointer items-center gap-3 rounded-lg border px-3 py-2 text-sm transition ${active ? "border-teal-400 bg-teal-50" : "border-slate-200 hover:bg-slate-50"}`}>
+                <input type="radio" name={q.id} checked={active} onChange={() => onChange({ selected_index: i })} className="sr-only" />
+                {/* Label pilihan A/B/C/D — sekaligus jadi penanda terpilih */}
+                <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
+                  {String.fromCharCode(65 + i)}
+                </span>
+                <span className="text-slate-700">{opt}</span>
+              </label>
+            );
+          })}
         </div>
       )}
 
