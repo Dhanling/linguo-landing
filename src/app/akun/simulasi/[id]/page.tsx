@@ -15,14 +15,14 @@ import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
   Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
-  GripVertical, Minimize2, PlayCircle,
+  GripVertical, Minimize2, PlayCircle, Type,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
 const YELLOW = "#FFC93C";
 
-const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic };
+const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic, structure: Type };
 
 // Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
 //  • baris kosong  → jarak antar paragraf
@@ -139,6 +139,14 @@ const SECTION_INTRO: Record<string, { title: string; points: string[] }> = {
       "Izinkan akses mikrofon saat diminta browser.",
       "Rekam jawabanmu — bicara dengan jelas dan sesuai instruksi.",
       "Kamu bisa merekam ulang bila belum puas dengan jawabanmu.",
+    ],
+  },
+  structure: {
+    title: "Petunjuk Bagian Structure",
+    points: [
+      "Baca tiap kalimat dengan teliti — ini menguji tata bahasa (grammar).",
+      "Pilih jawaban yang melengkapi kalimat dengan benar, atau tandai bagian yang salah.",
+      "Andalkan aturan tata bahasa, bukan sekadar bunyi kalimat yang terdengar wajar.",
     ],
   },
 };

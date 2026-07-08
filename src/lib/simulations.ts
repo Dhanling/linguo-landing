@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase-client";
 export type TestType = "toefl" | "ielts";
 // Varian spesifik: IELTS Academic/General, TOEFL ITP/iBT.
 export type TestVariant = "academic" | "general" | "itp" | "ibt";
-export type Skill = "reading" | "listening" | "writing" | "speaking";
+export type Skill = "reading" | "listening" | "writing" | "speaking" | "structure";
 export type QuestionType =
   | "multiple_choice" | "true_false_ng" | "fill_blank" | "short_answer"
   | "matching" | "essay" | "speaking_task";
@@ -61,6 +61,7 @@ export function testTypeLabel(testType: TestType, variant?: TestVariant | null):
 }
 export const SKILL_LABEL: Record<Skill, string> = {
   reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking",
+  structure: "Structure",
 };
 export const AUTO_GRADED: QuestionType[] = [
   "multiple_choice", "true_false_ng", "fill_blank", "short_answer", "matching",
@@ -85,6 +86,8 @@ export const SKILL_HOWTO: Record<Skill, string> = {
     "Tulis esai sesuai instruksi dan jumlah kata minimal.",
   speaking:
     "Rekam jawabanmu menggunakan mikrofon. Bicara dengan jelas sesuai instruksi.",
+  structure:
+    "Soal tata bahasa (grammar). Pilih jawaban yang melengkapi kalimat dengan benar, atau temukan bagian kalimat yang salah.",
 };
 
 // Tata tertib umum. Item bertanda { timed: true } hanya tampil bila ada batas waktu.
