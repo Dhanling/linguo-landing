@@ -98,7 +98,7 @@ function SmartText({ text, className }: { text: string; className?: string }) {
   if (isHtml(text)) {
     return (
       <div
-        className={`${className ?? ""} [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5`.trim()}
+        className={`${className ?? ""} [&_img]:my-2 [&_img]:max-w-full [&_img]:rounded-md [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5`.trim()}
         dangerouslySetInnerHTML={{ __html: text }}
       />
     );
