@@ -321,13 +321,18 @@ export default function SimulasiRunnerPage() {
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
 
-  // Penomoran soal berlanjut lintas-bagian (1..N untuk seluruh tes), bukan reset
-  // ke 1 tiap section. `questions` sudah terurut per section dari fetchSimulation.
+  // Penomoran soal RESET ke 1 tiap bagian (part), mengikuti struktur ujian asli
+  // (mis. TOEFL ITP: tiap Part A/B/C & Structure mulai dari 1 lagi) — bukan
+  // menyambung sepanjang tes. `questions` sudah terurut per section dari
+  // fetchSimulation; ikuti urutan `sections` supaya konsisten dgn navigasi.
   const qNumber = useMemo(() => {
     const m: Record<string, number> = {};
-    questions.forEach((q, i) => { m[q.id] = i + 1; });
+    sections.forEach((s) => {
+      let n = 1;
+      questions.filter((q) => q.section_id === s.id).forEach((q) => { m[q.id] = n++; });
+    });
     return m;
-  }, [questions]);
+  }, [questions, sections]);
 
   // Loncat ke soal tertentu lewat navigasi: pindah bagian lalu scroll ke soalnya.
   function goToQuestion(targetSecIdx: number, qid: string) {
@@ -1480,6 +1485,15 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 // ── Result ──────────────────────────────────────────────────────────────────
 function ResultView({ sim, totals, results, preview }: { sim: Simulation; totals: { score: number; max_score: number; auto_score: number; ai_score: number }; results: ResultItem[]; preview?: boolean }) {
   const pct = totals.max_score > 0 ? Math.round((totals.score / totals.max_score) * 100) : 0;
+  // Nomor soal RESET ke 1 tiap bagian (part) — samakan dgn tampilan saat mengerjakan.
+  const resultNo = useMemo(() => {
+    const arr: number[] = []; let prevSec = ""; let n = 0;
+    results.forEach((r) => {
+      if (r.question.section_id !== prevSec) { prevSec = r.question.section_id; n = 1; } else { n += 1; }
+      arr.push(n);
+    });
+    return arr;
+  }, [results]);
   return (
     <div className="min-h-screen bg-slate-50">
       <main className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -1500,7 +1514,7 @@ function ResultView({ sim, totals, results, preview }: { sim: Simulation; totals
         <ol className="space-y-3">
           {results.map((r, i) => (
             <li key={r.question.id} className="rounded-xl border border-slate-200 bg-white p-4">
-              <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{i + 1}.</span>{r.question.prompt}</p>
+              <p className="text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{resultNo[i]}.</span>{r.question.prompt}</p>
               {r.question.image_url && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={r.question.image_url} alt="Visual soal" className="mt-2 max-h-72 w-full rounded-lg border border-slate-200 object-contain bg-slate-50" />
