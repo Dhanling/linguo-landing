@@ -559,7 +559,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             <div className="hidden md:flex items-center gap-8">
               {/* Our Program dropdown */}
               <div className="relative" onMouseEnter={()=>setProgOpen(true)} onMouseLeave={()=>setProgOpen(false)}>
-                <button className={`cursor-pointer relative text-sm font-medium py-1 flex items-center gap-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+                <button className={`cursor-pointer relative text-sm font-bold py-1 flex items-center gap-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   Our Program
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${progOpen?"rotate-180":""}`}/>
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
@@ -715,7 +715,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               </div>
               {/* Other nav links */}
               {[["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
-                <a key={l} href={h} className={`cursor-pointer relative text-sm font-medium py-1 ${c?"text-slate-600 hover:text-slate-900":"text-white/80 hover:text-white"} transition-colors group`}>
+                <a key={l} href={h} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
@@ -2044,8 +2044,9 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
     );
   }
 
+  // Desktop: grid melebar penuh (ala mega-menu), bukan baris flex di tengah.
   return (
-    <div className="flex flex-wrap justify-center gap-4 py-6 px-4">
+    <div className="grid grid-cols-4 gap-4 xl:gap-5 py-6 items-stretch">
       {PRODUCTS.map((p,i)=>(
         <DockCard key={i} product={p} setPricingTab={setPricingTab} onSelectProgram={onSelectProgram}/>
       ))}
@@ -2055,7 +2056,7 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
   const card = p as typeof p & { img1?: string; img2?: string };
-  const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-[200px] lg:w-[280px] rounded-3xl shrink-0 snap-center";
+  const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
   const objPos = "object-center";
 
   const handleClick = () => {
@@ -2090,8 +2091,8 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
       <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px] rounded-lg" : "h-52 lg:h-56 rounded-2xl"}`} style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
-            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 220px, 50vw" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
-            <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 220px, 50vw" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
+            <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
+            <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
           </>
         ) : (
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
@@ -2400,7 +2401,7 @@ export default function Home() {
     {/* PRODUCT CARDS — macOS Dock style */}
     <Reveal>
     <section className="bg-white py-14 border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
         <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
