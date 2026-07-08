@@ -42,7 +42,7 @@ const LANG_CATEGORIES = [
 const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
 
 const FAQS = [
-  {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif."},
+  {q:"Apa itu Linguo.id?",a:"Linguo.id adalah platform kursus bahasa online pertama di Indonesia dengan 55+ pilihan bahasa dan metode interaktif.",video:"3hDBE8o-jJU"},
   {q:"Boleh ikut lebih dari 1 bahasa?",a:"Boleh banget! Kamu bisa daftar beberapa bahasa sekaligus."},
   {q:"Bagaimana format kelasnya?",a:"Kelas Private 1-on-1 via Zoom. Request jadwal & topik sesukamu. Dapat rekaman & materi."},
   {q:"Dapat sertifikat?",a:"Ya! Setiap siswa yang menyelesaikan kursus mendapat e-certificate."},
@@ -837,7 +837,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
   );
 }
 
-function FAQ({q,a}:{q:string;a:string}) {
+function FAQ({q,a,video}:{q:string;a:string;video?:string}) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border-b border-slate-200">
@@ -848,6 +848,20 @@ function FAQ({q,a}:{q:string;a:string}) {
       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${open?"grid-rows-[1fr]":"grid-rows-[0fr]"}`}>
         <div className="overflow-hidden">
           <p className={`pb-6 text-sm text-slate-500 leading-relaxed transition-opacity duration-200 ${open?"opacity-100":"opacity-0"}`}>{a}</p>
+          {video && (
+            <div className={`pb-6 transition-opacity duration-200 ${open?"opacity-100":"opacity-0"}`}>
+              <div className="relative w-full max-w-xl aspect-video rounded-xl overflow-hidden shadow-sm">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${video}`}
+                  title={q}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -2559,7 +2573,7 @@ export default function Home() {
         <p className="text-xs font-bold text-[#1A9E9E] uppercase tracking-widest text-center mb-2">LEARN HOW TO GET STARTED</p>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center mb-3">Frequently Asked Questions</h2>
         <p className="text-[#1A9E9E] text-sm font-semibold text-center mb-10 cursor-pointer hover:underline">Contact Support</p>
-        <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a}/>)}</div>
+        <div>{FAQS.map((f,i)=><FAQ key={i} q={f.q} a={f.a} video={"video" in f ? f.video : undefined}/>)}</div>
       </div>
     </section>
     </Reveal>
