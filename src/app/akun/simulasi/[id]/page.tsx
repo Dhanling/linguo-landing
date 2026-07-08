@@ -66,6 +66,27 @@ function RichText({ text, className }: { text: string; className?: string }) {
   return <div className={className}>{blocks}</div>;
 }
 
+// Passage bacaan berupa teks polos (mis. hasil impor OCR): tiap baris tak-kosong
+// jadi paragraf sendiri dengan jarak antar-paragraf, teks dirata kiri-kanan
+// (justify) biar rapi ala buku, dan baris "judul" (mis. "Bacaan 1: ...") ditebalkan.
+function PassageText({ text, className }: { text: string; className?: string }) {
+  const paras = text.replace(/\r\n/g, "\n").split("\n").map((l) => l.trim()).filter(Boolean);
+  return (
+    <div className={className}>
+      {paras.map((p, i) => {
+        const isHeading =
+          /^(bacaan|passage|reading|text|teks|paragraph|paragraf)\b/i.test(p) ||
+          (i === 0 && p.length <= 80 && !/[.!?,;:]$/.test(p));
+        return isHeading ? (
+          <p key={i} className="mb-2 font-bold text-slate-900 first:mt-0">{fmtInline(p)}</p>
+        ) : (
+          <p key={i} className="mb-3 text-justify hyphens-auto last:mb-0">{fmtInline(p)}</p>
+        );
+      })}
+    </div>
+  );
+}
+
 // Deteksi konten HTML (dari CMS admin: passage & instruksi kini disimpan sbg HTML
 // dengan bold/italic/underline, rata kiri/tengah/kanan, ukuran font, & daftar).
 function isHtml(s: string): boolean {
@@ -612,8 +633,8 @@ export default function SimulasiRunnerPage() {
               )}
               {section.passage && (
                 isHtml(section.passage)
-                  ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
-                  : <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1">{section.passage}</div>
+                  ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 [&_p]:text-justify [&_p]:hyphens-auto lg:max-h-none lg:min-h-0 lg:flex-1" />
+                  : <PassageText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
               )}
             </div>
           </aside>
