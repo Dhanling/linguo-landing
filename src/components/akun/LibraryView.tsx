@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, Download, ChevronRight,
-  Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink,
+  Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
 import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
 
@@ -78,6 +78,13 @@ function glyphFor(p: DProduct) {
 function fmtDate(iso: string) {
   return new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" });
 }
+
+function fmtRupiah(n: number) {
+  return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(n);
+}
+
+// [perpanjang-inplace-v1] tier harga produk digital (dari digital_product_pricing)
+interface RenewTier { id: string; price: number; display_label: string | null; sort_order: number | null; duration_days: number | null }
 
 type Access =
   | { kind: "forever" }
@@ -194,6 +201,8 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
   const [view, setView] = useState<"grid" | "list">("grid");
   const [q, setQ] = useState("");
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
+  // [perpanjang-inplace-v1] popup perpanjang akses — checkout langsung tanpa pindah page
+  const [renewFor, setRenewFor] = useState<Purchase | null>(null);
 
   /* bookmarks (localStorage — tanpa ubah skema DB) */
   useEffect(() => {
@@ -497,6 +506,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
+              onRenew={() => setRenewFor(p)}
             />
           ))}
         </div>
@@ -511,9 +521,15 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
+              onRenew={() => setRenewFor(p)}
             />
           ))}
         </div>
+      )}
+
+      {/* [perpanjang-inplace-v1] popup perpanjang akses */}
+      {renewFor && (
+        <RenewModal purchase={renewFor} supabase={supabase} onClose={() => setRenewFor(null)} />
       )}
     </div>
   );
@@ -562,10 +578,10 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
 }
 
 function ProductCard({
-  p, prog, busy, bookmarked, onToggleBookmark, onOpen,
+  p, prog, busy, bookmarked, onToggleBookmark, onOpen, onRenew,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean;
-  onToggleBookmark: () => void; onOpen: () => void;
+  onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;
   const a = accessInfo(p);
@@ -615,9 +631,9 @@ function ProductCard({
         <div className="mt-auto flex items-center justify-between gap-2 pt-1">
           <AccessChip a={a} />
           {expired ? (
-            <a href="/toko" className="inline-flex items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600">
-              Perpanjang
-            </a>
+            <button onClick={onRenew} className="inline-flex items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]">
+              <Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang
+            </button>
           ) : (
             <button
               onClick={onOpen}
@@ -635,10 +651,10 @@ function ProductCard({
 }
 
 function ProductRow({
-  p, prog, busy, bookmarked, onToggleBookmark, onOpen,
+  p, prog, busy, bookmarked, onToggleBookmark, onOpen, onRenew,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean;
-  onToggleBookmark: () => void; onOpen: () => void;
+  onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;
   const a = accessInfo(p);
@@ -672,7 +688,7 @@ function ProductRow({
         {bookmarked ? <BookmarkCheck className="h-[18px] w-[18px]" fill="currentColor" /> : <Bookmark className="h-[18px] w-[18px]" />}
       </button>
       {expired ? (
-        <a href="/toko" className="shrink-0 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600">Perpanjang</a>
+        <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]"><Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang</button>
       ) : (
         <button onClick={onOpen} disabled={busy} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] disabled:opacity-50">
           {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
@@ -683,10 +699,192 @@ function ProductRow({
   );
 }
 
+// [perpanjang-inplace-v1] Popup perpanjang akses — pilih durasi & checkout Xendit
+// TANPA pindah page (invoice dibuka di tab baru, halaman Perpustakaan tetap).
+// Reuse edge function xendit-create-digital-invoice (sama dgn /toko).
+function RenewModal({
+  purchase, supabase, onClose,
+}: {
+  purchase: Purchase; supabase: SupabaseClient; onClose: () => void;
+}) {
+  const prod = purchase.digital_products;
+  const [tiers, setTiers] = useState<RenewTier[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [buyer, setBuyer] = useState<{ email: string; name: string; phone: string | null }>({ email: "", name: "", phone: null });
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      setLoading(true);
+      // buyer info dari auth (email wajib utk invoice; phone opsional)
+      const { data: userRes } = await supabase.auth.getUser();
+      const u = userRes?.user;
+      // tier harga produk ini
+      const { data, error } = await supabase
+        .from("digital_products")
+        .select("digital_product_pricing ( id, price, display_label, sort_order, duration_days )")
+        .eq("id", prod.id)
+        .single();
+      if (!alive) return;
+      if (u) {
+        setBuyer({
+          email: u.email ?? "",
+          name: (u.user_metadata?.full_name as string) || (u.user_metadata?.name as string) || (u.email?.split("@")[0] ?? "Siswa Linguo"),
+          phone: (u.user_metadata?.phone as string) || (u.phone ? `+${u.phone}` : null),
+        });
+      }
+      if (error) {
+        console.error("Gagal memuat paket perpanjang:", error);
+        toast.error("Gagal memuat paket perpanjang.");
+      } else {
+        const rows = (((data as any)?.digital_product_pricing ?? []) as RenewTier[])
+          .slice()
+          .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+        setTiers(rows);
+        // default: tier paling populer (tengah) kalau ada 3, else pertama
+        setSelectedId(rows.length >= 3 ? rows[1].id : rows[0]?.id ?? null);
+      }
+      setLoading(false);
+    })();
+    return () => { alive = false; };
+  }, [prod.id, supabase]);
+
+  const selected = tiers.find((t) => t.id === selectedId) || null;
+
+  async function handlePay() {
+    if (!selected) return;
+    if (!buyer.email) { toast.error("Email tidak ditemukan. Coba login ulang."); return; }
+    setSubmitting(true);
+    try {
+      const refCookie = typeof document !== "undefined"
+        ? (("; " + document.cookie).split("; linguo_ref=")[1]?.split(";")[0] ?? null)
+        : null;
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/xendit-create-digital-invoice`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            pricing_id: selected.id,
+            referral_code: refCookie,
+            buyer_email: buyer.email,
+            buyer_name: buyer.name,
+            buyer_phone: buyer.phone,
+          }),
+        }
+      );
+      const data = await res.json();
+      if (!res.ok || !data.invoice_url) throw new Error(data.error ?? "Gagal membuat invoice");
+      // buka Xendit di tab baru → halaman Perpustakaan tetap (ga pindah page)
+      window.open(data.invoice_url, "_blank", "noopener,noreferrer");
+      toast.success("Halaman pembayaran dibuka. Akses aktif otomatis setelah bayar.");
+      onClose();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Terjadi kesalahan.");
+      setSubmitting(false);
+    }
+  }
+
+  function tierMonths(t: RenewTier) {
+    if (!t.duration_days) return null;
+    return Math.max(1, Math.round(t.duration_days / 30));
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        className="flex max-h-[92vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* header */}
+        <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-5 py-4">
+          <div className="min-w-0">
+            <h3 className="text-[17px] font-extrabold text-[#12172B]">Perpanjang Akses</h3>
+            <p className="mt-0.5 truncate text-[13px] font-medium text-slate-500">{prod.title}</p>
+          </div>
+          <button onClick={onClose} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200">
+            <X className="h-5 w-5" strokeWidth={2.2} />
+          </button>
+        </div>
+
+        {/* body */}
+        <div className="flex-1 overflow-y-auto px-5 py-4">
+          {loading ? (
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-6 w-6 animate-spin text-slate-300" />
+            </div>
+          ) : tiers.length === 0 ? (
+            <div className="py-10 text-center">
+              <p className="text-[14px] font-semibold text-slate-500">Paket perpanjang belum tersedia.</p>
+              <a href="/toko" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#12A37E] hover:underline">
+                Lihat di Toko <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2.5">
+              <p className="mb-1 text-[13px] font-medium text-slate-500">Pilih durasi perpanjangan:</p>
+              {tiers.map((t) => {
+                const active = t.id === selectedId;
+                const m = tierMonths(t);
+                const pm = m ? Math.round(t.price / m) : null;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setSelectedId(t.id)}
+                    className={`flex items-center justify-between gap-3 rounded-2xl border p-3.5 text-left transition ${
+                      active ? "border-[#12A37E] bg-[#12A37E]/[0.06] ring-1 ring-[#12A37E]" : "border-slate-200 hover:border-slate-300"
+                    }`}
+                  >
+                    <div className="min-w-0">
+                      <p className="text-[14px] font-extrabold text-[#12172B]">{t.display_label || (m ? `${m} Bulan` : "Akses")}</p>
+                      {pm && <p className="mt-0.5 text-[12px] font-medium text-slate-500">≈ {fmtRupiah(pm)}/bulan</p>}
+                    </div>
+                    <div className="flex items-center gap-2.5 shrink-0">
+                      <span className="text-[15px] font-extrabold text-[#12172B]">{fmtRupiah(t.price)}</span>
+                      <span className={`flex h-5 w-5 items-center justify-center rounded-full border ${active ? "border-[#12A37E] bg-[#12A37E] text-white" : "border-slate-300 text-transparent"}`}>
+                        <Check className="h-3 w-3" strokeWidth={3} />
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* footer */}
+        {!loading && tiers.length > 0 && (
+          <div className="border-t border-slate-100 px-5 py-4">
+            <button
+              onClick={handlePay}
+              disabled={!selected || submitting}
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+            >
+              {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
+              {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+            </button>
+            <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
+              Pembayaran aman via Xendit · akses aktif otomatis setelah lunas
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function EmptyState() {
   return (
     <div className="rounded-3xl border border-slate-100 bg-white px-6 py-16 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
-      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-4xl">📚</div>
+      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-[#12A37E]"><BookOpen className="h-9 w-9" strokeWidth={2} /></div>
       <h3 className="font-heading text-[20px] font-extrabold text-[#12172B]">Perpustakaan masih kosong</h3>
       <p className="mx-auto mt-1 max-w-sm text-[14px] font-medium text-slate-500">
         Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.

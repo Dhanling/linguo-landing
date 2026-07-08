@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, Hand, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -3026,7 +3026,6 @@ export default function AkunPage() {
                 );
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
-                const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
                 const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
                 const teacherMap = new Map<string, { name: string; count: number; langs: Set<string> }>();
                 activeRegs.forEach((r: any) => {
@@ -3045,14 +3044,8 @@ export default function AkunPage() {
 
                     {/* ════ KOLOM PROFIL (kiri di desktop) ════ */}
                     <aside className="order-2 flex flex-col lg:order-1 lg:border-r lg:border-slate-100">
-                      {/* header teal + ornamen kuning (overflow-hidden cuma di header ini) */}
-                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
-                        <div className="absolute -top-6 left-6 h-16 w-16 rotate-12 rounded-[14px] bg-[#F2CB05]/90" />
-                        <div className="absolute left-24 top-8 h-10 w-10 rounded-full bg-[#F2CB05] opacity-90" />
-                        <div className="absolute -top-4 right-10 h-20 w-20 rotate-[18deg] rounded-[18px] border-[10px] border-[#F2CB05] opacity-80" />
-                        <div className="absolute right-28 top-12 h-9 w-9 rotate-45 rounded-[6px] bg-[#F2CB05] opacity-80" />
-                        <div className="absolute bottom-3 right-6 h-12 w-12 rounded-full border-[7px] border-[#F2CB05]/80" />
-                      </div>
+                      {/* header teal (polos, tanpa ornamen) */}
+                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]" />
 
                       {/* body — relative z-10 biar avatar naik di atas header teal (full keliatan) */}
                       <div className="relative z-10 -mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
@@ -3130,7 +3123,7 @@ export default function AkunPage() {
                       {/* top bar: greeting + search (search = stub, lihat catatan) */}
                       <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
-                          <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <motion.span style={{ display: "inline-block", transformOrigin: "75% 75%" }} animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}>👋</motion.span></h1>
+                          <h1 className="flex items-center gap-2 text-[24px] font-extrabold leading-tight text-[#12172B] sm:text-[26px]">Halo, {firstName} <motion.span style={{ display: "inline-block", transformOrigin: "75% 75%" }} animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }} transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 1.4, ease: "easeInOut" }}><Hand className="h-6 w-6 text-[#F2CB05]" strokeWidth={2.2} /></motion.span></h1>
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
                         <div className="flex items-center gap-3">
@@ -3154,11 +3147,6 @@ export default function AkunPage() {
                           <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-white px-5 text-[13px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
                             Lihat Kelas <ArrowRight className="h-4 w-4" />
                           </button>
-                        </div>
-                        <div className="pointer-events-none absolute -right-6 top-1/2 hidden -translate-y-1/2 items-center gap-3 opacity-95 sm:flex">
-                          <div className="h-20 w-20 rotate-[8deg] bg-[#F2CB05]" style={{ clipPath: HEXA }} />
-                          <div className="-ml-8 mt-6 h-28 w-28 -rotate-[10deg] bg-[#F2CB05]/70" style={{ clipPath: HEXA }} />
-                          <div className="-ml-4 -mt-12 h-16 w-16 bg-[#F2CB05]" style={{ clipPath: HEXA }} />
                         </div>
                       </div>
 
@@ -3297,7 +3285,7 @@ export default function AkunPage() {
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
-                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]">✨ Daftar Kelas</button>
+                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
                           </div>
                         )}
                       </div>
@@ -3422,7 +3410,6 @@ export default function AkunPage() {
                   { color: "#0891B2", tintBg: "bg-cyan-50", tintText: "text-cyan-600" },
                   { color: "#7C3AED", tintBg: "bg-violet-50", tintText: "text-violet-500" },
                 ];
-                const HEXA = "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
                 const LANGS = [
                   { name: "English", slug: "english", glyph: "EN" },
                   { name: "German", slug: "german", glyph: "DE" },
@@ -3564,10 +3551,6 @@ export default function AkunPage() {
                                       <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{badge.label}</span>
                                       <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{selected.language} — {selected.level || "TBD"}</h2>
                                       <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {selected?.teachers?.name || "Belum ditentukan"}</p>
-                                    </div>
-                                    <div className="pointer-events-none relative z-10 ml-2 hidden shrink-0 opacity-90 md:flex">
-                                      <div className="h-16 w-16 rotate-6 bg-[#F2CB05]/80" style={{ clipPath: HEXA, borderRadius: 8 }} />
-                                      <div className="-ml-6 mt-5 h-20 w-20 bg-[#F2CB05]/60" style={{ clipPath: HEXA, borderRadius: 8 }} />
                                     </div>
                                   </div>
                                   <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
@@ -3970,13 +3953,13 @@ export default function AkunPage() {
                 <h3 className="text-lg font-bold text-gray-900">Booking Sesi</h3>
                 <p className="text-xs text-gray-500 mt-0.5">
                   {bookingReg.language} · {bookingReg.level}
-                  {bookingReg.teachers?.name && <> · 👩‍🏫 {bookingReg.teachers.name}</>}
+                  {bookingReg.teachers?.name && <span className="inline-flex items-center gap-1"> · <GraduationCap className="h-3.5 w-3.5" strokeWidth={2.2} />{bookingReg.teachers.name}</span>}
                 </p>
               </div>
               <button
                 onClick={() => !bookingSubmit && setBookingReg(null)}
                 className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors"
-              >✕</button>
+              ><XCircle className="h-5 w-5" strokeWidth={2} /></button>
             </div>
 
             <div className="flex-1 overflow-y-auto px-5 py-4">
@@ -3984,7 +3967,7 @@ export default function AkunPage() {
                 <div className="py-16 text-center text-sm text-gray-500">Memuat jadwal pengajar...</div>
               ) : availSlots.size === 0 ? (
                 <div className="py-12 text-center">
-                  <p className="text-3xl mb-2">🗓️</p>
+                  <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.8} />
                   <p className="text-sm text-gray-700 font-medium">Pengajar belum set jadwal tersedia</p>
                   <p className="text-xs text-gray-500 mt-1">Hubungi admin untuk booking manual</p>
                 </div>
@@ -4052,10 +4035,10 @@ export default function AkunPage() {
             </div>
 
             <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between gap-3 shrink-0">
-              <div className="text-xs text-gray-500 min-w-0 truncate">
-                {selectedSlots.size > 0
-                  ? `📌 ${selectedSlots.size} sesi dipilih`
-                  : "Pilih slot dulu"}
+              <div className="flex items-center gap-1.5 text-xs text-gray-500 min-w-0 truncate">
+                {selectedSlots.size > 0 ? (
+                  <><Check className="h-3.5 w-3.5 shrink-0 text-teal-600" strokeWidth={2.5} />{selectedSlots.size} sesi dipilih</>
+                ) : "Pilih slot dulu"}
               </div>
               <button
                 onClick={submitBooking}
