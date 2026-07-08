@@ -613,7 +613,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+              {[["Watch & Learn","/watch"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
                 <a key={l} href={h} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
@@ -663,6 +663,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
               <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
+              <a href="/watch" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Watch &amp; Learn</a>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
               <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
               <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
