@@ -498,13 +498,32 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   );
 }
 
+// ── nav-mega-menu-v1: isi dropdown "Our Program" sebagai mega-menu grid 3 kolom
+//    per grup (ala Ruangguru), bukan list vertikal + flyout submenu. ──────────
+type NavMegaItem = { emoji: string; title: string; desc: string; prog?: string; href?: string; schedHref?: string; schedLabel?: string };
+const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
+  { group: "Kelas dengan Pengajar", items: [
+    { emoji:"🎓", title:"Private 1-on-1", desc:"Belajar privat via Zoom, request jadwal & topik sesukamu", prog:"Kelas Private" },
+    { emoji:"👥", title:"Semi Private", desc:"Belajar bareng teman dalam grup kecil, lebih hemat", prog:"Semi Private" },
+    { emoji:"🏫", title:"Kelas Reguler", desc:"Grup class jadwal tetap, paling terjangkau", prog:"Kelas Reguler", schedHref:"/jadwal-kelas-reguler", schedLabel:"Cek jadwal →" },
+    { emoji:"🧒", title:"Kelas Kids", desc:"1-on-1 untuk anak 5–12 tahun, fun & interaktif", prog:"Kelas Kids" },
+    { emoji:"📝", title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", prog:"IELTS/TOEFL Prep", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Cek jadwal ETP →" },
+  ]},
+  { group: "Belajar Mandiri", items: [
+    { emoji:"🖥️", title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/produk" },
+    { emoji:"📚", title:"E-Book", desc:"Buku digital lengkap untuk belajar di mana saja", href:"/produk/ebook" },
+    { emoji:"⏱️", title:"Simulasi TOEFL/IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", href:"/simulasi" },
+  ]},
+  { group: "Untuk Perusahaan", items: [
+    { emoji:"🏢", title:"Language Training", desc:"Pelatihan bahasa untuk tim & karyawan", href:"/corporate" },
+    { emoji:"🎧", title:"Interpreter Service", desc:"Jasa juru bahasa untuk acara & meeting", href:"/interpreter" },
+    { emoji:"📜", title:"Sworn Translator", desc:"Penerjemah tersumpah untuk dokumen resmi", href:"/translator" },
+  ]},
+];
+
 function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void;onLoginOpen:()=>void}) {
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
-  const [regulerSubOpen, setRegulerSubOpen] = useState(false);
-  const [etpSubOpen, setEtpSubOpen] = useState(false);
-  const [corpSubOpen, setCorpSubOpen] = useState(false); // __PATCH_NAV_CORPORATE_SUBMENU__
-  const [privateSubOpen, setPrivateSubOpen] = useState(false); // linguo-patch:nav-semi-private-v1
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false); // linguo-patch:nav-hide-on-scroll-v1
   const lastY = useRef(0);
@@ -566,150 +585,30 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 </button>
                 <AnimatePresence>{progOpen&&(
                   <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:8}} transition={{duration:0.2}}
-                    className="absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 overflow-visible">
-                    {/* Kelas Private — flyout submenu 1-on-1 / Semi Private — linguo-patch:nav-semi-private-v1 */}
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setPrivateSubOpen(true)}
-                      onMouseLeave={() => setPrivateSubOpen(false)}
-                    >
-                      <button
-                        onClick={() => setPrivateSubOpen((v) => !v)}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
-                      >
-                        Kelas Private
-                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (privateSubOpen ? "rotate-0" : "-rotate-90")} />
-                      </button>
-                      {privateSubOpen && (
-                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
-                          <button
-                            onClick={() => { (window as any).__openFunnel?.("Kelas Private"); setProgOpen(false); setPrivateSubOpen(false); }}
-                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Private 1-on-1
-                          </button>
-                          <button
-                            onClick={() => { (window as any).__openFunnel?.("Semi Private"); setProgOpen(false); setPrivateSubOpen(false); }}
-                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Semi Private
-                          </button>
+                    className="absolute top-full left-0 mt-2 w-[720px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5">
+                    {NAV_MEGA.map((g)=>(
+                      <div key={g.group} className="mb-4 last:mb-0">
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-2">{g.group}</p>
+                        <div className="grid grid-cols-3 gap-1">
+                          {g.items.map((it)=>(
+                            <div key={it.title} role="button" tabIndex={0}
+                              onClick={()=>{ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } }}
+                              onKeyDown={(e)=>{ if(e.key==="Enter"){ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } } }}
+                              className="cursor-pointer flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#1A9E9E]/5 transition-colors group/item">
+                              <span className="w-9 h-9 rounded-lg bg-slate-50 flex items-center justify-center text-lg shrink-0">{it.emoji}</span>
+                              <span className="min-w-0">
+                                <span className="block text-sm font-bold text-slate-800 group-hover/item:text-[#1A9E9E] transition-colors">{it.title}</span>
+                                <span className="block text-xs text-slate-400 leading-snug mt-0.5">{it.desc}</span>
+                                {it.schedHref && (
+                                  <a href={it.schedHref} onClick={(e)=>{ e.stopPropagation(); setProgOpen(false); }}
+                                    className="inline-block text-[11px] font-semibold text-[#1A9E9E] mt-1 hover:underline">{it.schedLabel}</a>
+                                )}
+                              </span>
+                            </div>
+                          ))}
                         </div>
-                      )}
-                    </div>
-{/* Kelas Reguler + sub-item Jadwal */}
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setRegulerSubOpen(true)}
-                      onMouseLeave={() => setRegulerSubOpen(false)}
-                    >
-                      <button
-                        onClick={() => setRegulerSubOpen((v) => !v)}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
-                      >
-                        Kelas Reguler
-                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (regulerSubOpen ? "rotate-0" : "-rotate-90")} />
-                      </button>
-                      {regulerSubOpen && (
-                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
-                          <a
-                            href="/jadwal-kelas-reguler"
-                            onClick={() => { setProgOpen(false); setRegulerSubOpen(false); }}
-                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Cek Jadwal Reguler
-                          </a>
-                          <button
-                            onClick={() => { (window as any).__openFunnel?.("Kelas Reguler"); setProgOpen(false); setRegulerSubOpen(false); }}
-                            className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Daftar Kelas Reguler
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                    {/* Kelas Kids */}
-                    <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setProgOpen(false)}}
-                      className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      Kelas Kids
-                    </button>
-                    {/* IELTS / TOEFL + sub-item Jadwal ETP */}
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setEtpSubOpen(true)}
-                      onMouseLeave={() => setEtpSubOpen(false)}
-                    >
-                      <button
-                        onClick={() => setEtpSubOpen((v) => !v)}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
-                      >
-                        IELTS / TOEFL
-                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (etpSubOpen ? "rotate-0" : "-rotate-90")} />
-                      </button>
-                      {etpSubOpen && (
-                        <div className="absolute left-full top-0 ml-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
-                          <a
-                            href="/jadwal-kelas-reguler?tab=etp"
-                            onClick={() => { setProgOpen(false); setEtpSubOpen(false); }}
-                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Cek Jadwal ETP
-                          </a>
-                        </div>
-                      )}
-                    </div>
-                    <div className="border-t border-slate-100 my-1"/>
-                    <a href="/simulasi"
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      Simulasi Tes TOEFL/IELTS
-                    </a>
-                    <a href="/produk"
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      E-Learning
-                    </a>
-                    <a href="/produk/ebook"
-                      className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors">
-                      E-Book
-                    </a>{/* produk-ebook-page-v1 */}
-                    {/* Corporate + sub-items */}
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setCorpSubOpen(true)}
-                      onMouseLeave={() => setCorpSubOpen(false)}
-                    >
-                      <button
-                        onClick={() => setCorpSubOpen((v) => !v)}
-                        className="w-full text-left px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors flex items-center justify-between"
-                      >
-                        Corporate
-                        <ChevronDown className={"h-3 w-3 text-slate-300 transition-transform " + (corpSubOpen ? "rotate-0" : "-rotate-90")} />
-                      </button>
-                      {corpSubOpen && (
-                        <div className="absolute left-full top-0 ml-0 w-60 bg-white rounded-xl shadow-xl border border-slate-100 py-2 transition-all duration-200">
-                          <a
-                            href="/corporate"
-                            onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
-                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Language Training
-                          </a>
-                          <a
-                            href="/interpreter"
-                            onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
-                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Interpreter Service
-                          </a>
-                          <a
-                            href="/translator"
-                            onClick={() => { setProgOpen(false); setCorpSubOpen(false); }}
-                            className="block px-4 py-2.5 text-sm text-slate-600 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] transition-colors"
-                          >
-                            Sworn Translator
-                          </a>
-                        </div>
-                      )}
-                    </div>
+                      </div>
+                    ))}
                   </motion.div>
                 )}</AnimatePresence>
               </div>
