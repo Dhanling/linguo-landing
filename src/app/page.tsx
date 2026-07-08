@@ -1996,109 +1996,6 @@ function TeacherGrid() {
   );
 }
 
-// ── CARA BELAJAR: 2 pilihan (Belajar Bareng / Belajar Sendiri) sebagai card.
-//    Klik card → drawer bawah (tinggi) berisi daftar produk per BARIS + 3D icon
-//    lama (aset step-*.png dari section "How It Works"). ─────────────────────
-type BelajarRow = { title: string; desc: string; price: string; per?: string; icon: string; prog?: string; href?: string };
-
-const BELAJAR_BARENG: BelajarRow[] = [
-  { title:"Kelas Private 1-on-1", desc:"Belajar via Zoom, request jadwal & topik sesukamu", price:"Mulai Rp 90.000", per:"/sesi", icon:"/images/step-2.png", prog:"Kelas Private" },
-  { title:"Kelas Reguler", desc:"Grup class jadwal tetap, lebih hemat & seru bareng teman", price:"Rp 150.000", per:"/2 bln", icon:"/images/step-1.png", prog:"Kelas Reguler" },
-  { title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif + mock test", price:"Rp 300.000", per:"/2 bln", icon:"/images/step-4.png", prog:"IELTS/TOEFL Prep" },
-  { title:"Kelas Kids", desc:"Untuk anak 5–12 thn, 1-on-1 fun & interaktif", price:"Rp 75.000", per:"/sesi", icon:"/images/step-3.png", prog:"Kelas Kids" },
-];
-const BELAJAR_SENDIRI: BelajarRow[] = [
-  { title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", price:"Rp 29.000", icon:"/images/step-3.png", href:"/toko/paket-elearning" },
-  { title:"E-Book", desc:"Buku digital lengkap untuk belajar mandiri", price:"Rp 29.000", icon:"/images/step-1.png", href:"/produk/ebook" },
-  { title:"Simulasi TOEFL / IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", price:"Rp 79.000", icon:"/images/step-4.png", href:"/simulasi" },
-];
-
-function CaraBelajar() {
-  const [drawer, setDrawer] = useState<null | "bareng" | "sendiri">(null);
-  const rows = drawer === "bareng" ? BELAJAR_BARENG : BELAJAR_SENDIRI;
-  useOverlayLock(!!drawer); // sembunyikan FAB chat selama drawer kebuka
-  // Kunci scroll latar selama drawer terbuka.
-  useEffect(() => {
-    if (!drawer) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = prev; };
-  }, [drawer]);
-
-  const go = (r: BelajarRow) => {
-    setDrawer(null);
-    if (r.href) window.location.href = r.href;
-    else if (r.prog) (window as any).__openFunnel?.(r.prog);
-  };
-
-  const cards: { key:"bareng"|"sendiri"; icon:string; title:string; desc:string; cta:string; tint:string }[] = [
-    { key:"bareng", icon:"/images/step-2.png", title:"Belajar Bareng", desc:"Kelas interaktif bareng pengajar & teman — Private, Reguler, sampai persiapan TOEFL/IELTS.", cta:"Lihat pilihan kelas", tint:"from-[#E0F7F7] to-white" },
-    { key:"sendiri", icon:"/images/step-3.png", title:"Belajar Sendiri", desc:"Belajar mandiri sesuai tempo — E-Learning, E-Book, & simulasi tes kapan saja.", cta:"Lihat produk mandiri", tint:"from-[#F3E8FD] to-white" },
-  ];
-
-  return (
-    <>
-      <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
-        {cards.map((c)=>(
-          <button key={c.key} onClick={()=>setDrawer(c.key)}
-            className={`group text-left rounded-3xl border border-slate-100 bg-gradient-to-b ${c.tint} p-5 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_34px_rgba(26,158,158,0.18)] hover:-translate-y-1 transition-all duration-300 active:scale-[0.99] flex flex-col`}>
-            <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mb-3">
-              <Image src={c.icon} alt={c.title} width={200} height={200} loading="lazy" sizes="96px" className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform"/>
-            </div>
-            <h3 className="font-heading text-lg sm:text-xl font-bold text-slate-900 mb-1">{c.title}</h3>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-4 flex-1">{c.desc}</p>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1A9E9E]">
-              {c.cta}<ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform"/>
-            </span>
-          </button>
-        ))}
-      </div>
-
-      <AnimatePresence>
-        {drawer && (
-          <>
-            <motion.div key="ov" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
-              onClick={()=>setDrawer(null)} className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"/>
-            <motion.div key="dw" initial={{y:"100%"}} animate={{y:0}} exit={{y:"100%"}}
-              transition={{type:"spring", damping:32, stiffness:320}}
-              className="fixed inset-x-0 bottom-0 z-[60] bg-white rounded-t-3xl shadow-2xl max-h-[88vh] flex flex-col">
-              <div className="pt-3 pb-1 flex justify-center shrink-0"><div className="w-11 h-1.5 rounded-full bg-slate-200"/></div>
-              <div className="px-5 sm:px-6 pt-2 pb-3 flex items-start justify-between shrink-0">
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">{drawer==="bareng"?"Belajar Bareng":"Belajar Sendiri"}</h3>
-                  <p className="text-sm text-slate-500 mt-0.5">{drawer==="bareng"?"Pilih kelas interaktif bareng pengajar.":"Pilih produk buat belajar mandiri."}</p>
-                </div>
-                <button onClick={()=>setDrawer(null)} aria-label="Tutup" className="w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors shrink-0">
-                  <X className="w-5 h-5"/>
-                </button>
-              </div>
-              <div className="px-4 sm:px-6 pb-8 pt-1 space-y-2.5 overflow-y-auto">
-                {rows.map((r)=>(
-                  <button key={r.title} onClick={()=>go(r)}
-                    className="w-full flex items-center gap-3.5 sm:gap-4 p-3 sm:p-4 rounded-2xl border-2 border-slate-100 bg-white hover:border-[#1A9E9E]/50 hover:bg-[#1A9E9E]/[0.03] transition-all active:scale-[0.99] text-left">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0">
-                      <Image src={r.icon} alt={r.title} width={120} height={120} loading="lazy" sizes="64px" className="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow"/>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-bold text-sm sm:text-base text-slate-900">{r.title}</p>
-                      <p className="text-xs sm:text-sm text-slate-500 leading-snug line-clamp-2">{r.desc}</p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <p className="text-sm sm:text-base font-bold text-[#1A9E9E] whitespace-nowrap">{r.price}</p>
-                      {r.per && <p className="text-[10px] text-slate-400">{r.per}</p>}
-                    </div>
-                    <ChevronRight className="h-5 w-5 text-slate-300 shrink-0"/>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
-
 const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
@@ -2490,9 +2387,9 @@ export default function Home() {
     <Reveal>
     <section className="bg-white py-14 border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Mau belajar dengan cara apa?</h2>
-        <p className="text-slate-500 text-sm text-center mb-10">Belajar bareng pengajar, atau mandiri sesuai tempomu</p>
-        <CaraBelajar/>
+        <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
+        <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
+        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
       </div>
     </section>
     </Reveal>
