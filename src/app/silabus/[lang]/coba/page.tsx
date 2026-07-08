@@ -15,6 +15,18 @@ import PlacementTest from "./PlacementTest";
 import { getCurriculum } from "@/data/curriculum";
 import { englishPlacementTest } from "@/data/placement/english";
 import { japanesePlacementTest } from "@/data/placement/japanese";
+// linguo-patch:placement-asia-v1 — 10 bahasa Asia "SEGERA" dapat placement test CEFR
+import { koreanPlacementTest } from "@/data/placement/korean";
+import { mandarinPlacementTest } from "@/data/placement/mandarin";
+import { cantonesePlacementTest } from "@/data/placement/cantonese";
+import { vietnamesePlacementTest } from "@/data/placement/vietnamese";
+import { thaiPlacementTest } from "@/data/placement/thai";
+import { filipinoPlacementTest } from "@/data/placement/filipino";
+import { khmerPlacementTest } from "@/data/placement/khmer";
+import { burmesePlacementTest } from "@/data/placement/burmese";
+import { hindiPlacementTest } from "@/data/placement/hindi";
+import { urduPlacementTest } from "@/data/placement/urdu";
+import type { Question as PlacementQuestion } from "@/data/placement/english";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TYPES & DATA
@@ -262,16 +274,30 @@ const CATEGORY_ICONS: Record<string, string> = {
 // MAIN COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
 
-// linguo-patch:placement-cefr-wire-v1 — dispatch CEFR (English/Japanese) -> <PlacementTest/>, sisanya flow IELTS/TOEFL
-const CEFR_PLACEMENT = new Set(["english", "japanese"]);
+// linguo-patch:placement-cefr-wire-v1 — dispatch CEFR (English/Japanese/bahasa Asia) -> <PlacementTest/>, sisanya flow IELTS/TOEFL
+// linguo-patch:placement-asia-v1 — map slug -> bank soal CEFR. CEFR_PLACEMENT diturunkan dari kunci map.
+const CEFR_QUESTIONS: Record<string, PlacementQuestion[]> = {
+  english: englishPlacementTest,
+  japanese: japanesePlacementTest,
+  korean: koreanPlacementTest,
+  mandarin: mandarinPlacementTest,
+  cantonese: cantonesePlacementTest,
+  vietnamese: vietnamesePlacementTest,
+  thai: thaiPlacementTest,
+  filipino: filipinoPlacementTest,
+  khmer: khmerPlacementTest,
+  burmese: burmesePlacementTest,
+  hindi: hindiPlacementTest,
+  urdu: urduPlacementTest,
+};
 
 export default function PlacementTestPage() {
   const params = useParams();
   const lang = params?.lang as string;
-  if (CEFR_PLACEMENT.has(lang)) {
+  const questions = CEFR_QUESTIONS[lang];
+  if (questions) {
     const curriculum = getCurriculum(lang);
     if (curriculum) {
-      const questions = lang === "english" ? englishPlacementTest : japanesePlacementTest;
       return <PlacementTest curriculum={curriculum} questions={questions} />;
     }
   }

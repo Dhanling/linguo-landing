@@ -39,7 +39,12 @@ const CATEGORIES: { key: string; label: string }[] = [
 // Route /silabus/[lang]/coba (page.tsx) cuma serve IELTS (lang==="ielts") & TOEFL ITP (else),
 // dua-duanya tes Inggris. Bahasa lain klik "Mulai Test" -> nyasar ke TOEFL ITP. Jadi gate-nya
 // pake whitelist slug yg beneran punya tes sesuai, BUKAN lang.available (itu flag katalog silabus).
-const PLACEMENT_LIVE = new Set(["ielts", "toefl-itp", "english", "japanese"]); // linguo-patch:placement-cefr-wire-v1
+const PLACEMENT_LIVE = new Set([
+  "ielts", "toefl-itp", "english", "japanese", // linguo-patch:placement-cefr-wire-v1
+  // linguo-patch:placement-asia-v1 — 10 bahasa Asia dgn placement test CEFR baru
+  "korean", "mandarin", "cantonese", "vietnamese", "thai",
+  "filipino", "khmer", "burmese", "hindi", "urdu",
+]);
 
 interface Props {
   open: boolean;
