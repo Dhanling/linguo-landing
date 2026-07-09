@@ -34,6 +34,7 @@ import {
   prewarmTranscripts,
   SentenceBreakdown,
   splitWords,
+  TranscriptReason,
   transliterateLines,
 } from "@/lib/immersionLearn";
 import { ImmersionVideo, youtubeThumb } from "@/lib/immersion";
@@ -116,6 +117,12 @@ export default function VideoLearnPlayer({
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
+  // Alasan transkrip kosong (dari fetchTranscript) — buat pesan fallback lebih spesifik.
+  const [txReason, setTxReason] = useState<TranscriptReason>("ok");
+  // Dinaikkan tombol "Coba lagi": memicu ulang effect muat transkrip. Kegagalan di
+  // jalur ini sering transient (ASR timeout / rate-limit / IP blok sesaat), dan
+  // prewarm bisa sudah menghangatkan cache sementara ini — jadi retry sering langsung jadi.
+  const [retryTick, setRetryTick] = useState(0);
   // True saat transkrip jatuh ke jalur AI (yt-asr) yang lambat — buat pesan loading.
   const [asrRunning, setAsrRunning] = useState(false);
   // True selagi bacaan Latin (romaji/pinyin/dll) diisi di background utk bahasa non-Latin.
@@ -232,6 +239,7 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     let cancelled = false;
     setTxState("loading");
+    setTxReason("ok");
     setAsrRunning(false);
     setTranslitLoading(false);
     setCues([]);
@@ -271,6 +279,7 @@ export default function VideoLearnPlayer({
             .finally(() => !cancelled && setTranslitLoading(false));
         }
       } else {
+        setTxReason(r.reason);
         setTxState("none");
         setShowCC(true); // fallback ke caption bawaan YouTube
       }
@@ -278,7 +287,7 @@ export default function VideoLearnPlayer({
     return () => {
       cancelled = true;
     };
-  }, [video.videoId, langCode]);
+  }, [video.videoId, langCode, retryTick]);
 
   // Hangatkan cache transkrip untuk video rekomendasi di background biar saat
   // penonton loncat ke video berikutnya, subtitle + terjemahannya sudah siap
@@ -697,9 +706,21 @@ export default function VideoLearnPlayer({
               </div>
             )}
             {txState === "none" && (
-              <div className="px-2 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
-                Transkrip interaktif belum tersedia untuk video ini. Subtitle bawaan
-                YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton.
+              <div className="flex flex-col items-start gap-3 px-2 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
+                <span>
+                  {txReason === "no_captions"
+                    ? "Transkrip interaktif belum bisa disiapkan untuk video ini. Subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton."
+                    : "Pembuatan transkrip sempat gagal (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — kamu bisa coba siapkan transkrip interaktif lagi."}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setRetryTick((n) => n + 1)}
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors"
+                  style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  Coba lagi
+                </button>
               </div>
             )}
             {txState === "ready" &&
