@@ -9,11 +9,12 @@ import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
 import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, Hand, X, type LucideIcon } from "lucide-react";
 
-import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
-import PlacementPicker from '@/components/PlacementPicker';
-import OneSignalProvider from '@/components/OneSignalProvider';
 import NotificationBell from '@/components/NotificationBell';
+// [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
+const ClassDetailModal = dynamic(() => import('@/components/ClassDetailModal'), { ssr: false });
+const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { ssr: false });
+const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
 import AvatarUploader from '@/components/akun/AvatarUploader';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
@@ -21,7 +22,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
-import SimulasiKatalog from '@/components/akun/SimulasiKatalog'; // [simulasi-inshell-v1]
+const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
 // File ini "use client" → dynamic ssr:false aman dipasang langsung (hindari SSR lottie-web).
@@ -41,14 +42,17 @@ function OnboardingSuccess({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
-import SertifikatTab from '@/components/akun/SertifikatTab';
+// [perf:akun-lazy-tabs-v1] Komponen berat per-tab/modal di-lazy-load (chunk terpisah,
+// baru diunduh saat tab/modal-nya dibuka) — bukan dibundel ke JS awal /akun.
+// ssr:false aman karena page ini "use client" & semua dirender kondisional.
 import type { Cert } from '@/components/akun/SertifikatTab';
-import SilabusOutline from '@/components/akun/SilabusOutline';
-import JadwalCalendar from '@/components/akun/JadwalCalendar'; // linguo-patch:akun-jadwal-tab-v1
-import LmsKatalog from '@/components/lms/LmsKatalog';
-import LessonPlayer from '@/components/akun/LessonPlayer'; // [linguo-patch:akun-inplace-lessonplayer-v1] ganti LmsLesson (master-detail superseded) → immersive player tunggal
+const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), { ssr: false });
+const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'), { ssr: false });
+const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false }); // linguo-patch:akun-jadwal-tab-v1
+const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false });
+const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
+const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false });
 import AttentionAlert from '@/components/akun/AttentionAlert';
-import PerpustakaanSaya from '@/components/PerpustakaanSaya';
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
 // [akun-batalkan-hard-delete-v1] pakai client anon kanonik dari @/lib/supabase-client
