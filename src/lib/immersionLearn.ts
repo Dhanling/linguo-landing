@@ -350,80 +350,62 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
 // paragraf. ~60 karakter kira-kira pas satu baris pada lebar panel transkrip.
 const MAX_CUE_CHARS = 60;
 
-/** Pecah teks jadi potongan ≤ maxChars di batas kata (greedy). Selalu ≥ 1 potongan. */
-function chunkTextByLength(text: string, maxChars: number): string[] {
-  const words = text.trim().split(/\s+/).filter(Boolean);
-  if (!words.length) return [text.trim()];
-  const out: string[] = [];
-  let cur = "";
-  for (const w of words) {
-    if (!cur) cur = w;
-    else if (cur.length + 1 + w.length <= maxChars) cur += " " + w;
-    else {
-      out.push(cur);
-      cur = w;
-    }
-  }
-  if (cur) out.push(cur);
-  return out.length ? out : [text.trim()];
+/** Pisah teks jadi klausa di batas tanda baca (,;:—–) — delimiter ikut klausa sebelumnya. */
+function splitClauses(text: string): string[] {
+  const parts = text.match(/[^,;:—–]+[,;:—–]*/g);
+  return parts ? parts.map((s) => s.trim()).filter(Boolean) : [text.trim()];
 }
 
 /**
- * Bagi sebuah teks (terjemahan/transliterasi) ke `k` bucket mengikuti bobot panjang
- * tiap potongan target — biar posisinya kira-kira sejajar dengan potongan target-nya
- * meski tak bisa dipisah per kalimat. Best-effort untuk keterbacaan.
+ * Pecah cue yang masih kepanjangan di batas KLAUSA (koma dll). Hanya dipecah kalau
+ * terjemahan (base) & transliterasi punya jumlah klausa yang SAMA dengan target —
+ * jadi tiap section hasil pecahan tetap membawa terjemahannya sendiri (tak ada
+ * section tanpa terjemahan / salah pasang). Kalau tak bisa dipasangkan (mis. ASR
+ * tanpa koma), cue dibiarkan utuh — terjemahan tetap benar walau sedikit lebih panjang.
+ * Klausa pendek digabung sampai ≤ MAX_CUE_CHARS biar tak jadi banyak section mungil.
  */
-function distributeByWeight(text: string, weights: number[]): string[] {
-  const k = weights.length;
-  if (k <= 1) return [text.trim()];
-  const words = text.trim().split(/\s+/).filter(Boolean);
-  if (words.length <= 1) {
-    const a = Array<string>(k).fill("");
-    a[0] = text.trim();
-    return a;
-  }
-  const totalW = weights.reduce((n, x) => n + x, 0) || 1;
-  const bounds: number[] = []; // batas kumulatif (fraksi) antar bucket
-  let accW = 0;
-  for (let i = 0; i < k - 1; i++) {
-    accW += weights[i];
-    bounds.push(accW / totalW);
-  }
-  const totalChars = words.reduce((n, w) => n + w.length, 0) || 1;
-  const buckets = Array<string>(k).fill("");
-  let accC = 0;
-  let bi = 0;
-  for (const w of words) {
-    const frac = (accC + w.length / 2) / totalChars;
-    while (bi < k - 1 && frac > bounds[bi]) bi++;
-    buckets[bi] = buckets[bi] ? buckets[bi] + " " + w : w;
-    accC += w.length;
-  }
-  return buckets;
-}
-
-/** Pecah lagi cue yang masih terlalu panjang jadi beberapa section ≤ MAX_CUE_CHARS. */
 function splitLongCue(cue: LearnCue): LearnCue[] {
   if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
-  const pieces = chunkTextByLength(cue.target, MAX_CUE_CHARS);
-  if (pieces.length <= 1) return [cue];
-  const weights = pieces.map((p) => p.length);
-  const bases = cue.base ? distributeByWeight(cue.base, weights) : null;
-  const translits = cue.translit ? distributeByWeight(cue.translit, weights) : null;
+  const targets = splitClauses(cue.target);
+  if (targets.length <= 1) return [cue];
+  const bases = cue.base ? splitClauses(cue.base) : null;
+  const translits = cue.translit ? splitClauses(cue.translit) : null;
+  if (bases && bases.length !== targets.length) return [cue];
+  if (translits && translits.length !== targets.length) return [cue];
 
+  // Kelompokkan klausa jadi grup ≤ MAX_CUE_CHARS (indeks sama dipakai buat base &
+  // translit biar pasangannya tetap sejajar).
+  const groups: number[][] = [];
+  let cur: number[] = [];
+  let curLen = 0;
+  targets.forEach((t, i) => {
+    if (cur.length && curLen + 1 + t.length > MAX_CUE_CHARS) {
+      groups.push(cur);
+      cur = [i];
+      curLen = t.length;
+    } else {
+      cur.push(i);
+      curLen = cur.length === 1 ? t.length : curLen + 1 + t.length;
+    }
+  });
+  if (cur.length) groups.push(cur);
+  if (groups.length <= 1) return [cue];
+
+  const join = (arr: string[], idx: number[]) => idx.map((i) => arr[i]).join(" ").trim();
   const dur = Math.max(0.001, cue.end - cue.start);
-  const total = weights.reduce((n, x) => n + x, 0) || 1;
+  const total = targets.reduce((n, s) => n + s.length, 0) || 1;
   let acc = 0;
-  return pieces.map((tg, i) => {
+  return groups.map((idx, g) => {
+    const tg = join(targets, idx);
     const start = cue.start + dur * (acc / total);
-    acc += tg.length;
-    const end = i === pieces.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    acc += idx.reduce((n, i) => n + targets[i].length, 0);
+    const end = g === groups.length - 1 ? cue.end : cue.start + dur * (acc / total);
     return {
       start,
       end: Math.max(end, start + 0.3),
       target: tg,
-      base: bases ? bases[i] : "",
-      ...(translits ? { translit: translits[i] } : {}),
+      base: bases ? join(bases, idx) : "",
+      ...(translits ? { translit: join(translits, idx) } : {}),
     };
   });
 }
