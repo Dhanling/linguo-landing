@@ -485,7 +485,7 @@ export default function SimulasiRunnerPage() {
           <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
             Beli Paket <ArrowRight className="h-4 w-4" />
           </Link>
-          <Link href="/akun/simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
+          <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
             <ArrowLeft className="h-4 w-4" />Kembali ke daftar
           </Link>
         </div>
@@ -1010,7 +1010,7 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
   // Tombol back keluar simulasi. Mode preview dibuka admin di tab baru & tanpa sesi
   // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
   // dulu"). Pakai katalog publik /simulasi yang bebas login.
-  const backHref = preview ? "/simulasi" : "/akun/simulasi";
+  const backHref = preview ? "/simulasi" : "/akun?menu=simulasi";
   return (
     <div className="sim-shell min-h-screen bg-slate-50">
       {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada

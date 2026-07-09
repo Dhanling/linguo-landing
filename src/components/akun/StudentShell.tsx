@@ -9,18 +9,19 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka"; // [linguo-patch:shell-pustaka-nav-v1]
+export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
   | { key: string; label: string; icon: LucideIcon; soon: true }
-  // simulasi-paywall-v1 — item link ke route terpisah (/akun/simulasi), bukan tab.
+  // simulasi-paywall-v1 — item link ke route terpisah, bukan tab.
   | { key: string; label: string; icon: LucideIcon; href: string };
 
 const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
-  { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck, href: "/akun/simulasi" },
+  // [simulasi-inshell-v1] jadi tab (sidebar tetap tampil), bukan route terpisah lagi
+  { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck },
   { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
   { key: "pustaka", label: "Perpustakaan", icon: Library },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },

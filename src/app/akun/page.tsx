@@ -21,6 +21,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
+import SimulasiKatalog from '@/components/akun/SimulasiKatalog'; // [simulasi-inshell-v1]
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
 // File ini "use client" → dynamic ssr:false aman dipasang langsung (hindari SSR lottie-web).
@@ -82,7 +83,7 @@ type StudentReg = {
   payment_status: string;
   registration_date: string;
   teacher_id?: string;
-  teachers?: { name: string; whatsapp?: string } | null;
+  teachers?: { name: string; whatsapp?: string; avatar_url?: string | null } | null;
   payment_proof_url?: string | null;
   payment_proof_uploaded_at?: string | null;
   payment_verified_at?: string | null;
@@ -2119,11 +2120,13 @@ export default function AkunPage() {
   const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka">("beranda"); // [linguo-patch:akun-pustaka-tab-v1]
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
   const [profileOpen, setProfileOpen] = useState(false);
   // [beranda-kelas-tabs-v1] tab "Kelas Live" vs "Belajar Mandiri" di beranda biar rapi
   const [berandaTab, setBerandaTab] = useState<"live" | "mandiri">("live");
+  // [beranda-riwayat-kelas-v1] Kelas Live cuma tampilin yang aktif; yang selesai pindah ke view "Riwayat"
+  const [liveView, setLiveView] = useState<"aktif" | "riwayat">("aktif");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -2140,11 +2143,11 @@ export default function AkunPage() {
     const menu = sp.get("menu");
     const sesi = sp.get("sesi");
     const view = sp.get("view");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | null = null;
     if (sesi) { setLmsSesi(sesi); setMateriView("mandiri"); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → balik ke sub-tab mandiri pas player ditutup
     if (view === "live" || view === "mandiri") { setMateriView(view); resolved = "materi"; }
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi")) resolved = menu;
     if (!resolved) {
       try {
         const saved = localStorage.getItem("linguo_akun_tab");
@@ -2467,7 +2470,7 @@ export default function AkunPage() {
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
           pipeline_status, archived_at,
-          teachers(name, whatsapp)
+          teachers(name, whatsapp, avatar_url)
         `)
         .eq("student_id", studentData.id)
         .order("registration_date", { ascending: false });
@@ -2948,7 +2951,7 @@ export default function AkunPage() {
                   registration_date, teacher_id,
                   payment_proof_url, payment_proof_uploaded_at,
                   payment_verified_at, payment_rejection_reason,
-                  teachers(name, whatsapp)
+                  teachers(name, whatsapp, avatar_url)
                 `)
                 .single();
               if (regError || !regRow) {
@@ -3098,7 +3101,7 @@ export default function AkunPage() {
       </div>
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         <AnimatePresence mode="wait">
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -3128,9 +3131,10 @@ export default function AkunPage() {
                   const total = r.sessions_total || 0;
                   return (total > 0 && (r.sessions_used || 0) >= total) || !!r.archived_at;
                 };
-                const liveRegs = activeRegs
-                  .filter((r: any) => isValidLiveLang(r.language))
-                  .sort((a: any, b: any) => Number(isKelasSelesai(a)) - Number(isKelasSelesai(b)));
+                // [beranda-riwayat-kelas-v1] pisah kelas aktif vs selesai (riwayat)
+                const liveRegsAll = activeRegs.filter((r: any) => isValidLiveLang(r.language));
+                const liveRegs = liveRegsAll.filter((r: any) => !isKelasSelesai(r));
+                const riwayatRegs = liveRegsAll.filter((r: any) => isKelasSelesai(r));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
@@ -3357,16 +3361,34 @@ export default function AkunPage() {
                               </button>
                             ))}
                           </div>
-                          {berandaTab === "live" && liveRegs.length > 0 && (
-                            <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
+                          {berandaTab === "live" && (
+                            <div className="flex items-center gap-3">
+                              {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
+                              {riwayatRegs.length > 0 && (
+                                <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
+                                  {([["aktif", "Aktif"], ["riwayat", `Riwayat (${riwayatRegs.length})`]] as const).map(([k, label]) => (
+                                    <button
+                                      key={k}
+                                      onClick={() => setLiveView(k)}
+                                      className={`rounded-lg px-3 py-1.5 text-[12px] font-bold transition ${liveView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                    >
+                                      {label}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
+                              {liveView === "aktif" && liveRegs.length > 0 && (
+                                <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
+                              )}
+                            </div>
                           )}
                         </div>
 
                         {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
                         {berandaTab === "live" && (
-                        liveRegs.length > 0 ? (
+                        (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {liveRegs.map((reg: any, idx: number) => {
+                            {(liveView === "riwayat" ? riwayatRegs : liveRegs).map((reg: any, idx: number) => {
                               const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
                               const total = reg.sessions_total || 0;
                               const used = reg.sessions_used || 0;
@@ -3408,7 +3430,15 @@ export default function AkunPage() {
                                       <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
                                     </div>
-                                    <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
+                                    {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas */}
+                                    <div className="mt-1 flex items-center gap-2">
+                                      {reg?.teachers?.avatar_url ? (
+                                        <img src={reg.teachers.avatar_url} alt="" className="h-6 w-6 shrink-0 rounded-full bg-white object-cover ring-1 ring-slate-100" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                      ) : (
+                                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[10px] font-extrabold text-[#16796E]">{reg?.teachers?.name ? initials(reg.teachers.name) : "L"}</span>
+                                      )}
+                                      <p className="truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
+                                    </div>
                                     <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
                                       <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
                                     </div>
@@ -3420,6 +3450,8 @@ export default function AkunPage() {
                                 </button>
                               );
                             })}
+                            {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di view Aktif */}
+                            {liveView === "aktif" && (
                             <button
                               onClick={openEnrollWizard}
                               className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-slate-200 p-4 text-gray-400 transition-colors hover:border-[#16796E]/40 hover:text-[#16796E]"
@@ -3427,6 +3459,13 @@ export default function AkunPage() {
                               <Plus className="h-7 w-7" strokeWidth={2} />
                               <span className="text-[13px] font-semibold">Tambah Kelas</span>
                             </button>
+                            )}
+                          </div>
+                        ) : liveView === "riwayat" ? (
+                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                            <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
+                            <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
                           </div>
                         ) : (
                           <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
@@ -3866,6 +3905,13 @@ export default function AkunPage() {
             />
           )}
 
+          {/* [simulasi-inshell-v1] Simulasi Tes sebagai tab in-shell (sidebar tetap tampil) */}
+          {activeTab === "simulasi" && (
+            <motion.div key="simulasi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full pb-6">
+              <SimulasiKatalog />
+            </motion.div>
+          )}
+
           {activeTab === "akun" && (
             <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="mx-auto w-full max-w-5xl pb-4">
               <AkunTab
@@ -3907,7 +3953,7 @@ export default function AkunPage() {
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
-      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : activeTab === "pustaka" ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} />
+      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : (activeTab === "pustaka" || activeTab === "simulasi") ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} />
 
       {/* Floating Quick Actions FAB */}
       {student && (
