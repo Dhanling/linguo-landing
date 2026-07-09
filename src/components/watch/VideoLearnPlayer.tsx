@@ -249,8 +249,10 @@ export default function VideoLearnPlayer({
       if (ordered.length) {
         setCues(ordered);
         setTxState("ready");
-        // Transkrip kita sudah tampil → matikan CC bawaan biar subtitle tak dobel.
-        setShowCC(false);
+        // Transkrip interaktif tampil, TAPI CC bawaan YouTube tetap dinyalakan dalam
+        // bahasa target (auto-on) — siswa yang sedang belajar Inggris langsung dapat
+        // caption Inggris di video tanpa buka menu CC manual. Effect di bawah yang
+        // memaksa track-nya ke bahasa yang dipelajari.
         // Bahasa non-Latin (Jepang, Mandarin, dll): transkrip dari server tak bawa
         // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
         // lalu romaji/pinyin menyusul tanpa menahan render.

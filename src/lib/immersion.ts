@@ -155,6 +155,37 @@ const KARTUN_FRANCHISE: Record<string, string> = {
   hy: "մուլտֆիլմեր երեխաների համար",
 };
 
+// Kreator besar yang punya BANYAK versi audio/dubbing per bahasa — MrBeast jadi
+// jangkar (punya channel resmi terdubbing di puluhan bahasa: "MrBeast Indonesia",
+// "MrBeast en Español", dll), ditambah kreator viral lain yang kontennya di-dub
+// ke bahasa target. Karena judul channel dub-nya sudah dalam bahasa lokal, filter
+// aksara tetap mengangkat versi bahasa target (bukan versi Inggris aslinya).
+// Bahasa tanpa channel dub resmi jatuh ke `q` generik ("MrBeast challenge").
+const CREATOR_FRANCHISE: Record<string, string> = {
+  en: "MrBeast challenge",
+  id: "MrBeast Indonesia tantangan",
+  es: "MrBeast en Español reto",
+  pt: "MrBeast em Português desafio",
+  fr: "MrBeast en Français défi",
+  de: "MrBeast auf Deutsch Herausforderung",
+  it: "MrBeast in Italiano sfida",
+  nl: "MrBeast Nederlands uitdaging",
+  ru: "MrBeast на русском челлендж",
+  uk: "MrBeast українською челендж",
+  pl: "MrBeast po polsku wyzwanie",
+  tr: "MrBeast Türkçe meydan okuma",
+  ar: "MrBeast بالعربي تحدي",
+  hi: "MrBeast Hindi चुनौती",
+  ja: "MrBeast 日本語 チャレンジ",
+  ko: "MrBeast 한국어 챌린지",
+  zh: "MrBeast 中文 挑战",
+  th: "MrBeast ภาษาไทย ท้าทาย",
+  vi: "MrBeast Tiếng Việt thử thách",
+  fil: "MrBeast Filipino hamon",
+  fa: "MrBeast فارسی چالش",
+  el: "MrBeast στα ελληνικά πρόκληση",
+};
+
 // PENTING: `q` sengaja TANPA nama franchise global (Peppa Pig, Cocomelon, dll).
 // Nama franchise Inggris jadi sinyal ranking yang terlalu kuat — dia menindih
 // relevanceLanguage sehingga hasilnya kebanjiran video Inggris walau bahasa target
@@ -163,6 +194,13 @@ const KARTUN_FRANCHISE: Record<string, string> = {
 // beneran dalam bahasa target (terbukti: "cartoon Magyar" → rajzfilm/mese magyarul).
 export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
   { id: "populer", label: "Populer", emoji: "✨", q: "popular trending" },
+  {
+    id: "kreator",
+    label: "Kreator",
+    emoji: "🔥",
+    q: "MrBeast challenge",
+    perLang: CREATOR_FRANCHISE,
+  },
   { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment funny" },
   {
     id: "kartun",
