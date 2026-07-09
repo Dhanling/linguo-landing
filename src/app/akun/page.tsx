@@ -3431,12 +3431,11 @@ export default function AkunPage() {
                                       <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
                                     </div>
                                     {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas */}
-                                    <div className="mt-1 flex items-center gap-2">
+                                    <div className="mt-1.5 flex items-center gap-2">
                                       {reg?.teachers?.avatar_url ? (
-                                        <img src={reg.teachers.avatar_url} alt="" className="h-6 w-6 shrink-0 rounded-full bg-white object-cover ring-1 ring-slate-100" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                      ) : (
-                                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[10px] font-extrabold text-[#16796E]">{reg?.teachers?.name ? initials(reg.teachers.name) : "L"}</span>
-                                      )}
+                                        <img src={reg.teachers.avatar_url} alt={reg?.teachers?.name || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover ring-2 ring-white shadow-sm" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                      ) : null}
+                                      <span className={`${reg?.teachers?.avatar_url ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{reg?.teachers?.name ? initials(reg.teachers.name) : "L"}</span>
                                       <p className="truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
                                     </div>
                                     <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
