@@ -27,7 +27,11 @@ const BORDER = "rgba(255,255,255,0.1)";
 
 const TIP_W = 260;
 
-function speak(text: string, langCode: string) {
+// Satu elemen audio dipakai ulang biar pemutaran Chirp bisa dibatalkan saat kata
+// baru di-tap (tak numpuk).
+let ttsAudio: HTMLAudioElement | null = null;
+
+function speakBrowser(text: string, langCode: string) {
   if (typeof window === "undefined" || !window.speechSynthesis) return;
   try {
     window.speechSynthesis.cancel();
@@ -37,6 +41,29 @@ function speak(text: string, langCode: string) {
     window.speechSynthesis.speak(u);
   } catch {
     /* best-effort */
+  }
+}
+
+// Ucapkan `text` pakai Chirp 3 HD (lewat /api/tts) — kualitas & harga jauh lebih
+// baik dari suara bawaan browser. Fallback ke Web Speech API kalau request gagal.
+async function speak(text: string, langCode: string) {
+  if (typeof window === "undefined") return;
+  try {
+    ttsAudio?.pause();
+    window.speechSynthesis?.cancel();
+    const res = await fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, lang: langCode }),
+    });
+    if (!res.ok) throw new Error(`tts ${res.status}`);
+    const data = (await res.json()) as { audioContent?: string };
+    if (!data.audioContent) throw new Error("no audio");
+    if (!ttsAudio) ttsAudio = new Audio();
+    ttsAudio.src = `data:audio/mp3;base64,${data.audioContent}`;
+    await ttsAudio.play();
+  } catch {
+    speakBrowser(text, langCode); // best-effort fallback
   }
 }
 

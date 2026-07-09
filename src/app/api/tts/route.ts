@@ -19,6 +19,18 @@ const LANG_CODE = "vi-VN";
 const ENCODING = "MP3";
 const TOKEN_URI = "https://oauth2.googleapis.com/token";
 
+// [watch-tts-chirp-v1] Peta kode bahasa → locale BCP-47 Chirp 3 HD. Dipakai TTS
+// multi-bahasa Watch & Learn (tombol "Dengar" di tooltip kata). Diverifikasi live
+// di app mobile (~/linguo-app/supabase/functions/tts). Voice = `${locale}-Chirp3-HD-Kore`.
+const CHIRP_LOCALES: Record<string, string> = {
+  es: "es-ES", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-BR",
+  nl: "nl-NL", ja: "ja-JP", ko: "ko-KR", zh: "cmn-CN", ru: "ru-RU",
+  ar: "ar-XA", hi: "hi-IN", th: "th-TH", vi: "vi-VN", tr: "tr-TR",
+  en: "en-US",
+};
+// Kore = suara Chirp 3 HD default (valid di semua locale di atas).
+const CHIRP_SPEAKER = "Kore";
+
 type SA = { client_email: string; private_key: string; token_uri?: string };
 
 let _sa: SA | null = null;
@@ -105,14 +117,24 @@ export async function POST(req: NextRequest) {
     if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });
 
     const token = await getAccessToken();
-    const voice = await resolveVoice(token);
+
+    // [watch-tts-chirp-v1] Kalau client kirim `lang` (mis. "es"), pakai voice Chirp
+    // 3 HD sesuai bahasa itu. Tanpa `lang` → perilaku lama (kuis vi-VN) tetap utuh.
+    const langRaw = typeof body?.lang === "string" ? body.lang.trim().toLowerCase() : "";
+    const langBase = langRaw.split("-")[0];
+    const chirpLocale = langBase ? CHIRP_LOCALES[langBase] : undefined;
+
+    const languageCode = chirpLocale ?? LANG_CODE;
+    const voice = chirpLocale
+      ? `${chirpLocale}-Chirp3-HD-${CHIRP_SPEAKER}`
+      : await resolveVoice(token);
 
     const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         input: { text },
-        voice: { languageCode: LANG_CODE, name: voice },
+        voice: { languageCode, name: voice },
         audioConfig: { audioEncoding: ENCODING },
       }),
     });
