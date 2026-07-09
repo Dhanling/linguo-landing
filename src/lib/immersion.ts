@@ -141,6 +141,74 @@ export function buildQuery(
   return `${topic} ${lang.native}`.trim();
 }
 
+// Blok aksara Unicode non-Latin: [awal, akhir, ...kode bahasa yang memakainya].
+// Dipakai buat mencocokkan judul — dan lewat itu audio + subtitle — ke bahasa
+// target, membuang versi Inggris yang bocor lewat nama franchise (Peppa Pig dll)
+// maupun konten bahasa lain yang nyelonong ke hasil.
+const SCRIPT_BLOCKS: Array<[number, number, string[]]> = [
+  [0x0370, 0x03ff, ["el"]], // yunani
+  [0x0400, 0x04ff, ["ru", "uk", "bg"]], // sirilik
+  [0x0530, 0x058f, ["hy"]], // armenia
+  [0x0590, 0x05ff, ["he"]], // ibrani
+  [0x0600, 0x06ff, ["ar", "ur", "fa"]], // arab
+  [0x0900, 0x097f, ["hi"]], // devanagari
+  [0x0e00, 0x0e7f, ["th"]], // thai
+  [0x0e80, 0x0eff, ["lo"]], // lao
+  [0x1000, 0x109f, ["my"]], // myanmar
+  [0x10a0, 0x10ff, ["ka"]], // georgia
+  [0x1200, 0x137f, ["am"]], // ethiopic (amharik)
+  [0x1780, 0x17ff, ["km"]], // khmer
+  [0x3040, 0x30ff, ["ja"]], // hiragana / katakana
+  [0x3400, 0x9fff, ["ja", "zh"]], // han (kanji / hanzi)
+  [0xac00, 0xd7af, ["ko"]], // hangul
+];
+
+function rangeRegex(a: number, b: number): RegExp {
+  return new RegExp(`[\\u{${a.toString(16)}}-\\u{${b.toString(16)}}]`, "u");
+}
+
+// Regex aksara target per bahasa (non-Latin), digabung dari semua blok yang
+// dipakai bahasa itu. Undefined = bahasa beraksara Latin.
+const TARGET_SCRIPT: Record<string, RegExp> = {};
+// Regex "aksara non-Latin apa pun" — gabungan tepat blok-blok di atas (BUKAN satu
+// rentang lebar, biar huruf Latin beraksen spt Vietnam/Prancis tak salah tangkap).
+// Dipakai buat mendeteksi bocoran bahasa lain ke target beraksara Latin.
+const ANY_NON_LATIN = new RegExp(
+  SCRIPT_BLOCKS.map(([a, b]) => rangeRegex(a, b).source).join("|"),
+  "u"
+);
+
+for (const [a, b, codes] of SCRIPT_BLOCKS) {
+  for (const code of codes) {
+    const re = rangeRegex(a, b);
+    const prev = TARGET_SCRIPT[code];
+    TARGET_SCRIPT[code] = prev
+      ? new RegExp(`${prev.source}|${re.source}`, "u")
+      : re;
+  }
+}
+
+// Apakah judul cocok dengan bahasa target? Non-Latin: judul wajib memuat aksara
+// bahasa itu. Latin: judul tak boleh memuat aksara non-Latin (kalau ada, itu
+// konten bahasa lain). Indikasi kuat audio & subtitle-nya juga bahasa target.
+export function titleMatchesLanguage(title: string, langCode: string): boolean {
+  const t = title || "";
+  const target = TARGET_SCRIPT[langCode];
+  if (target) return target.test(t);
+  return !ANY_NON_LATIN.test(t);
+}
+
+// Saring daftar video ke yang cocok bahasa target. Kalau semua kebuang (mis. hasil
+// bahasa lain semua), balikin daftar asli biar rail tak kosong — user tetap dapat
+// sesuatu ketimbang empty state; filter tetap mengangkat yang cocok saat ada.
+export function filterVideosByLanguage(
+  videos: ImmersionVideo[],
+  langCode: string
+): ImmersionVideo[] {
+  const matched = videos.filter((v) => titleMatchesLanguage(v.title, langCode));
+  return matched.length ? matched : videos;
+}
+
 // Thumbnail YouTube dari videoId (fallback kalau API gak kasih thumbnail).
 export function youtubeThumb(videoId: string): string {
   return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;

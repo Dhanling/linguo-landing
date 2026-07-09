@@ -16,6 +16,7 @@ import {
   ImmersionVideo,
   buildQuery,
   clearWatchHistory,
+  filterVideosByLanguage,
   getImmersionLang,
   getWatchHistory,
   pushWatchHistory,
@@ -92,9 +93,11 @@ export default function WatchAndLearn() {
         max: 18,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
-      setVideos(page.results);
+      // Saring ke bahasa target biar audio & subtitle-nya beneran cocok.
+      const results = filterVideosByLanguage(page.results, l.code);
+      setVideos(results);
       setNextToken(page.nextPageToken);
-      setState(page.results.length ? "done" : "empty");
+      setState(results.length ? "done" : "empty");
     },
     []
   );
@@ -118,9 +121,10 @@ export default function WatchAndLearn() {
       pageToken: nextToken,
     });
     if (id !== reqId.current) return;
+    const more = filterVideosByLanguage(page.results, lang.code);
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
-      return [...prev, ...page.results.filter((v) => !seen.has(v.videoId))];
+      return [...prev, ...more.filter((v) => !seen.has(v.videoId))];
     });
     setNextToken(page.nextPageToken);
     setState("done");
