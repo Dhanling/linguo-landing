@@ -196,11 +196,11 @@ function getGreeting() {
 }
 
 // ── Programs & Languages for Enrollment Wizard ───────────────────────────
-const PROGRAMS = [
-  { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar, jadwal fleksibel", icon: "👤", price: "Mulai Rp45k/sesi (30 mnt)" },
-  { key: "Kelas Reguler", label: "Kelas Reguler", desc: "Belajar bersama 8–15 siswa, jadwal tetap", icon: "👥", price: "Rp150k / 2 bulan (8 sesi)" },
-  { key: "Kelas Kids", label: "Kelas Kids", desc: "Untuk anak usia 5-12 tahun", icon: "🧒", price: "Mulai Rp75k/sesi" },
-  { key: "English Test Preparation", label: "IELTS/TOEFL Prep", desc: "Persiapan tes bahasa Inggris", icon: "📝", price: "Rp300k / 2 bulan (16 sesi)" },
+const PROGRAMS: { key: string; label: string; desc: string; icon: LucideIcon; tint: string; price: string }[] = [
+  { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar, jadwal fleksibel", icon: User, tint: "bg-teal-50 text-teal-600", price: "Mulai Rp45k/sesi (30 mnt)" },
+  { key: "Kelas Reguler", label: "Kelas Reguler", desc: "Belajar bersama 8–15 siswa, jadwal tetap", icon: Users, tint: "bg-blue-50 text-blue-600", price: "Rp150k / 2 bulan (8 sesi)" },
+  { key: "Kelas Kids", label: "Kelas Kids", desc: "Untuk anak usia 5-12 tahun", icon: Baby, tint: "bg-purple-50 text-purple-600", price: "Mulai Rp75k/sesi" },
+  { key: "English Test Preparation", label: "IELTS/TOEFL Prep", desc: "Persiapan tes bahasa Inggris", icon: ClipboardList, tint: "bg-amber-50 text-amber-600", price: "Rp300k / 2 bulan (16 sesi)" },
 ];
 
 const POPULAR_LANGUAGES = [
@@ -1672,13 +1672,15 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 {PROGRAMS.map(p => (
                   <button key={p.key} onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
                     className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
-                    <span className="text-2xl">{p.icon}</span>
+                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${p.tint}`}>
+                      <p.icon className="h-[22px] w-[22px]" strokeWidth={2} />
+                    </span>
                     <div className="flex-1">
                       <p className="font-semibold text-gray-900 text-sm">{p.label}</p>
                       <p className="text-xs text-gray-400">{p.desc}</p>
                       <p className="text-xs font-semibold text-teal-600 mt-0.5">{p.price}</p>
                     </div>
-                    <span className="text-gray-300 text-sm">›</span>
+                    <ChevronRight className="h-4 w-4 shrink-0 text-gray-300" />
                   </button>
                 ))}
               </motion.div>
@@ -2062,6 +2064,10 @@ export default function AkunPage() {
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
+  // [preview-student-v1] mode "POV siswa" tanpa login: /akun?preview=<student_id>
+  // Data real di-fetch dari /api/preview-student (service role, bypass RLS).
+  const [previewId, setPreviewId] = useState<string | null>(null);
+  const previewMode = !!previewId;
   const [student, setStudent] = useState<StudentData | null>(null);
   const [badges, setBadges] = useState<Badge[]>([]);
   const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
@@ -2220,6 +2226,11 @@ export default function AkunPage() {
 
   // ── Auth ──────────────────────────────────────────────────────────
   useEffect(() => {
+    // [preview-student-v1] deteksi ?preview=<id> → mode POV siswa tanpa login
+    if (typeof window !== "undefined") {
+      const pid = new URLSearchParams(window.location.search).get("preview");
+      if (pid) { setPreviewId(pid); setAuthLoading(false); return; }
+    }
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setAuthLoading(false);
@@ -2229,6 +2240,25 @@ export default function AkunPage() {
     });
     return () => subscription.unsubscribe();
   }, []);
+
+  // [preview-student-v1] load data siswa real (server, service role) buat preview
+  useEffect(() => {
+    if (!previewId) return;
+    setDataLoading(true);
+    (async () => {
+      try {
+        const res = await fetch(`/api/preview-student?id=${encodeURIComponent(previewId)}`, { cache: "no-store" });
+        if (!res.ok) throw new Error("preview fetch failed");
+        const json = await res.json();
+        setStudent(json.student);
+        setUpcomingSchedules(json.upcomingSchedules || []);
+      } catch (e) {
+        console.error("[preview-student]", e);
+      } finally {
+        setDataLoading(false);
+      }
+    })();
+  }, [previewId]);
 
   const signInWithGoogle = async () => {
     setIsSigningIn(true);
@@ -2636,7 +2666,7 @@ export default function AkunPage() {
     );
   }
 
-  if (!user) {
+  if (!user && !previewMode) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-sm">
@@ -2748,6 +2778,16 @@ export default function AkunPage() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex items-center justify-center">
         <Spinner size={160} />
+      </div>
+    );
+  }
+
+  // [preview-student-v1] preview gagal / id tidak ketemu → pesan sederhana (bukan onboarding)
+  if (!student && previewMode) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4 text-center">
+        <p className="text-lg font-bold text-gray-800">Preview siswa tidak ditemukan</p>
+        <p className="mt-1 text-sm text-gray-500">Cek kembali link preview-nya.</p>
       </div>
     );
   }
@@ -2970,8 +3010,16 @@ export default function AkunPage() {
   return (
     <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl}>
 
+      {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
+      {previewMode && (
+        <div className="sticky top-0 z-[60] flex items-center justify-center gap-2 bg-[#12172B] px-4 py-2 text-center text-[12px] font-semibold text-white">
+          <span className="inline-flex h-2 w-2 rounded-full bg-[#F2CB05]" />
+          Preview POV Siswa · {displayName} — data real, read-only (tanpa login)
+        </div>
+      )}
+
       {/* ── WA Gate: user lama tanpa nomor WA — [linguo-patch:akun-wa-gate-existing-v1] ── */}
-      {student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
+      {!previewMode && student && student.id && student.id !== "pending" && student.id !== user?.id && gateNeedsProfile(student) && (
         <WaGate user={user} student={student} supabase={supabase}
           onSaved={(wa, avatar, name) => setStudent({ ...student, whatsapp: wa || student.whatsapp, name: name || student.name, avatar_url: avatar ?? student.avatar_url } as any)} />
       )}
