@@ -100,7 +100,30 @@ export interface ImmersionCategory {
   q: string;
   news?: boolean;
   fresh?: boolean; // urutkan by tanggal (konten terbaru) — berita, vlog
+  perLang?: Record<string, string>; // override query per bahasa (mis. nama franchise lokal)
 }
+
+// Nama franchise kartun terkenal, DILOKALKAN per bahasa (mis. "Peppa Wutz" utk
+// Jerman, "Bob Esponja" utk Spanyol, "Свинка Пеппа" utk Rusia). Cuma diisi buat
+// bahasa yang punya dubbing/konten franchise kuat di YouTube — di situ nama
+// franchise mengangkat kartun terkenal TANPA menyeret versi Inggris. Bahasa yang
+// TAK terdaftar (mis. Hungaria, Arab, Hindi, Thai) sengaja pakai kata generik saja,
+// karena di sana nama franchise Inggris malah menarik konten Inggris. Terverifikasi
+// empiris lewat yt-search per bahasa. Bahasa non-Latin tetap disaring aksara.
+const KARTUN_FRANCHISE: Record<string, string> = {
+  en: "Peppa Pig Bluey SpongeBob Paw Patrol cartoon",
+  es: "Peppa Pig Bob Esponja Bluey La Patrulla Canina",
+  pt: "Peppa Pig Bob Esponja Patrulha Canina Bluey",
+  fr: "Peppa Pig Bob l'éponge Pat Patrouille Bluey",
+  de: "Peppa Wutz SpongeBob Schwammkopf Paw Patrol Bluey",
+  pl: "Świnka Peppa SpongeBob Psi Patrol",
+  ru: "Свинка Пеппа Губка Боб Щенячий патруль",
+  uk: "Свинка Пеппа Щенячий патруль мультфільм",
+  id: "Upin Ipin Nussa BoBoiBoy kartun anak",
+  ja: "ペッパピッグ アンパンマン アニメ",
+  ko: "페파피그 뽀로로 타요 만화",
+  zh: "小猪佩奇 海绵宝宝 汪汪队 动画片",
+};
 
 // PENTING: `q` sengaja TANPA nama franchise global (Peppa Pig, Cocomelon, dll).
 // Nama franchise Inggris jadi sinyal ranking yang terlalu kuat — dia menindih
@@ -111,7 +134,13 @@ export interface ImmersionCategory {
 export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
   { id: "populer", label: "Populer", emoji: "✨", q: "popular trending" },
   { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment funny" },
-  { id: "kartun", label: "Kartun", emoji: "🧸", q: "cartoon animation for kids" },
+  {
+    id: "kartun",
+    label: "Kartun",
+    emoji: "🧸",
+    q: "cartoon animation for kids",
+    perLang: KARTUN_FRANCHISE,
+  },
   { id: "berita", label: "Berita", emoji: "📰", q: "news", news: true, fresh: true },
   { id: "musik", label: "Musik", emoji: "🎵", q: "official music video" },
   { id: "film", label: "Film & TV", emoji: "🎥", q: "movie clip trailer scene" },
@@ -129,7 +158,11 @@ export function buildQuery(
   freeText?: string
 ): string {
   if (freeText && freeText.trim()) return `${freeText.trim()} ${lang.native}`.trim();
-  const topic = cat.news ? NEWS_WORD[lang.code] ?? "news" : cat.q;
+  // Prioritas topik: berita → kata native; kalau kategori punya override per bahasa
+  // (mis. nama franchise kartun lokal) pakai itu; kalau tak ada, kata generik `q`.
+  const topic = cat.news
+    ? NEWS_WORD[lang.code] ?? "news"
+    : cat.perLang?.[lang.code] ?? cat.q;
   return `${topic} ${lang.native}`.trim();
 }
 

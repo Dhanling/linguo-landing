@@ -76,6 +76,21 @@ export default function WatchAndLearn() {
 
   const refreshVocab = useCallback(() => setVocabCount(getSavedWords().length), []);
 
+  // Tombol Back (browser/in-app) saat nonton video → tutup player, balik ke
+  // Watch & Learn, BUKAN keluar halaman. Dorong satu entri history pas video
+  // dibuka; popstate menutup player. Kalau ditutup lewat tombol X, entri kita
+  // dikonsumsi balik biar history tetap rapi.
+  useEffect(() => {
+    if (!active) return;
+    window.history.pushState({ watchModal: true }, "");
+    const onPop = () => setActive(null);
+    window.addEventListener("popstate", onPop);
+    return () => {
+      window.removeEventListener("popstate", onPop);
+      if (window.history.state?.watchModal) window.history.back();
+    };
+  }, [active]);
+
   // Token buat membatalkan hasil fetch yang ketinggalan (bahasa/kategori keburu ganti).
   const reqId = useRef(0);
 
