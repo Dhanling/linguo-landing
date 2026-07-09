@@ -9,6 +9,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
 import type { LanguageCurriculum } from "@/data/curriculum";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
+import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
+
+// Teks jawaban benar per tipe soal — dipakai di rekap akhir (bukan saat menjawab)
+function correctAnswerText(q: Question): string {
+  switch (q.type) {
+    case "multiple": return q.options[q.correct];
+    case "fill":
+    case "fillChoice": return q.correct;
+    case "dragDrop": return q.correct.join(" ");
+    case "missing": return q.blanks.join(" / ");
+    case "matching": return q.pairs.map((p) => `${p.left} → ${p.right}`).join(", ");
+    default: return "";
+  }
+}
+function questionPrompt(q: Question): string {
+  return q.type === "dragDrop" || q.type === "matching" ? q.prompt : (q as any).question;
+}
 
 interface Props {
   curriculum: LanguageCurriculum;
@@ -44,6 +61,8 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   const [selected, setSelected] = useState<string | number | boolean | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
+  // Rekap benar/salah per soal — TIDAK ditampilkan saat menjawab, hanya di layar hasil.
+  const [log, setLog] = useState<{ correct: boolean; skipped: boolean }[]>([]);
   const startTimeRef = useRef<number>(0);
 
   const question = questions[currentQ];
@@ -54,7 +73,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
   }, [screen, currentQ]);
 
   const startTest = () => {
-    setScreen("quiz"); setCurrentQ(0); setScore(0); setSelected(null); setShowFeedback(false);
+    setScreen("quiz"); setCurrentQ(0); setScore(0); setLog([]); setSelected(null); setShowFeedback(false);
     trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
   };
 
@@ -68,13 +87,16 @@ export default function PlacementTest({ curriculum, questions }: Props) {
       ? isCorrectOverride
       : (question.type === "multiple" || question.type === "fill" || question.type === "fillChoice") && value === (question as any).correct;
     if (correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
+    // Catat hasil untuk rekap akhir — TANPA memberi tahu benar/salah sekarang.
+    setLog((prev) => [...prev, { correct, skipped: false }]);
     setShowFeedback(true);
   };
 
-  // Pass / skip — mark wrong, show explanation, no score
+  // Pass / skip — dicatat sebagai dilewati, tanpa skor & tanpa reveal
   const passAnswer = () => {
     if (showFeedback) return;
     setSelected("__PASSED__");
+    setLog((prev) => [...prev, { correct: false, skipped: true }]);
     setShowFeedback(true);
   };
 
@@ -111,6 +133,7 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             key="result"
             score={score}
             questions={questions}
+            log={log}
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
             onRetake={startTest}
@@ -136,7 +159,9 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
 
         <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          className="text-8xl mb-6">{meta.flag}</motion.div>
+          className="mb-6">
+          <RectFlag code={FLAG_CODE_BY_SLUG[meta.slug]} h={72} className="shadow-md" />
+        </motion.div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
           Placement Test<br />
@@ -160,7 +185,8 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
               <p className="font-semibold mb-1">Tips supaya akurat:</p>
               <ul className="list-disc list-inside space-y-0.5 text-amber-800">
                 <li>Klik opsi = jawaban langsung tersubmit (tanpa tombol)</li>
-                <li>Baca penjelasan setelah jawab — itu pembelajaran intinya</li>
+                <li>Benar/salah tidak dibocorkan per soal — biar kamu fokus</li>
+                <li>Rekap lengkap + pembahasan muncul di akhir test</li>
                 <li>Jawab jujur, tebak kalau ragu</li>
               </ul>
             </div>
@@ -202,12 +228,8 @@ function QuizScreen(props: {
   const [fillValue, setFillValue] = useState("");
   useEffect(() => { setFillValue(""); }, [question.id]);
   const isPassed = selected === "__PASSED__";
-  // isCorrect differs per type
-  const isCorrect = isPassed
-    ? false
-    : question.type === "multiple" || question.type === "fill" || question.type === "fillChoice"
-      ? selected === (question as any).correct
-      : selected === true;
+  // Catatan: benar/salah SENGAJA tidak diungkap saat menjawab. Rekap ada di layar hasil.
+  const answered = showFeedback;
 
   const diffCls = question.difficulty === "A1" ? "bg-emerald-100 text-emerald-700" :
                    question.difficulty === "A2" ? "bg-sky-100 text-sky-700" :
@@ -253,22 +275,19 @@ function QuizScreen(props: {
           <div className="space-y-2 mt-6">
             {question.type === "multiple" && question.options.map((opt, i) => {
               const isSelected = selected === i;
-              const isAnswerCorrect = question.correct === i;
+              // Tanpa reveal: hanya highlight pilihan yg dipilih (netral teal), sisanya diredupkan.
               let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
-              if (showFeedback && isAnswerCorrect) cls = "border-emerald-500 bg-emerald-50";
-              else if (showFeedback && isSelected && !isAnswerCorrect) cls = "border-rose-500 bg-rose-50";
-              else if (showFeedback) cls = "border-gray-200 bg-white opacity-50";
+              if (answered && isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
+              else if (answered) cls = "border-gray-200 bg-white opacity-50";
               else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/5";
               return (
-                <button key={i} onClick={() => onSubmit(i)} disabled={showFeedback}
+                <button key={i} onClick={() => onSubmit(i)} disabled={answered}
                   className={"w-full text-left px-5 py-4 rounded-2xl border-2 transition-all " + cls}>
                   <div className="flex items-center gap-3">
-                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + ((showFeedback && isAnswerCorrect) ? "bg-emerald-500 text-white" : (showFeedback && isSelected && !isAnswerCorrect) ? "bg-rose-500 text-white" : isSelected ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600")}>
+                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-[#1A9E9E] text-white" : "bg-gray-100 text-gray-600")}>
                       {String.fromCharCode(65 + i)}
                     </span>
                     <span className="text-gray-900">{opt}</span>
-                    {showFeedback && isAnswerCorrect && <Icons.Check className="w-5 h-5 text-emerald-600 ml-auto" />}
-                    {showFeedback && isSelected && !isAnswerCorrect && <Icons.X className="w-5 h-5 text-rose-600 ml-auto" />}
                   </div>
                 </button>
               );
@@ -280,7 +299,7 @@ function QuizScreen(props: {
                   onChange={(e) => setFillValue(e.target.value)}
                   onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim() && !showFeedback) onSubmit(fillValue.toLowerCase().trim()); }}
                   disabled={showFeedback} placeholder="Ketik jawaban lalu Enter..."
-                  className={"flex-1 px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (showFeedback ? (selected === question.correct ? "border-emerald-500 bg-emerald-50" : "border-rose-500 bg-rose-50") : "border-gray-200 focus:border-[#1A9E9E]")}
+                  className={"flex-1 px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (answered ? "border-[#1A9E9E] bg-[#1A9E9E]/10" : "border-gray-200 focus:border-[#1A9E9E]")}
                 />
                 {!showFeedback && (
                   <button onClick={() => fillValue.trim() && onSubmit(fillValue.toLowerCase().trim())} disabled={!fillValue.trim()}
@@ -295,19 +314,15 @@ function QuizScreen(props: {
               <div className="grid grid-cols-2 gap-2">
                 {question.options.map((opt, i) => {
                   const isSelected = selected === opt;
-                  const isAnswerCorrect = question.correct === opt;
                   let cls = "border-gray-200 bg-white hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer";
-                  if (showFeedback && isAnswerCorrect) cls = "border-emerald-500 bg-emerald-50";
-                  else if (showFeedback && isSelected && !isAnswerCorrect) cls = "border-rose-500 bg-rose-50";
-                  else if (showFeedback) cls = "border-gray-200 bg-white opacity-50";
+                  if (answered && isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
+                  else if (answered) cls = "border-gray-200 bg-white opacity-50";
                   else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
                   return (
-                    <button key={i} onClick={() => onSubmit(opt)} disabled={showFeedback}
+                    <button key={i} onClick={() => onSubmit(opt)} disabled={answered}
                       className={"w-full px-5 py-4 rounded-2xl border-2 text-center transition-all text-lg font-semibold " + cls}>
                       <div className="flex items-center justify-center gap-2">
                         <span className="text-gray-900">{opt}</span>
-                        {showFeedback && isAnswerCorrect && <Icons.Check className="w-5 h-5 text-emerald-600" />}
-                        {showFeedback && isSelected && !isAnswerCorrect && <Icons.X className="w-5 h-5 text-rose-600" />}
                       </div>
                     </button>
                   );
@@ -329,34 +344,15 @@ function QuizScreen(props: {
           </div>
 
           <AnimatePresence>
-            {showFeedback && (
+            {answered && (
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-                <div className={"mt-5 p-5 rounded-2xl " + (isCorrect ? "bg-emerald-50" : isPassed ? "bg-amber-50" : "bg-rose-50")}>
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className={"w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 " + (isCorrect ? "bg-emerald-500" : isPassed ? "bg-amber-500" : "bg-rose-500")}>
-                      {isCorrect ? <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} /> : isPassed ? <Icons.SkipForward className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.X className="w-4 h-4 text-white" strokeWidth={3} />}
-                    </div>
-                    <div className="flex-1">
-                      <p className={"font-bold text-lg mb-0 " + (isCorrect ? "text-emerald-900" : isPassed ? "text-amber-900" : "text-rose-900")}>
-                        {isCorrect ? "Benar!" : isPassed ? "Dilewati" : "Kurang tepat"}
-                      </p>
-                    </div>
+                <div className="mt-5 p-4 rounded-2xl bg-[#1A9E9E]/5 border border-[#1A9E9E]/20 flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#1A9E9E] flex items-center justify-center flex-shrink-0">
+                    {isPassed ? <Icons.SkipForward className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} />}
                   </div>
-                  <div className={"text-sm leading-relaxed pl-9 " + (isCorrect ? "text-emerald-900" : isPassed ? "text-amber-900" : "text-rose-900")}>
-                    <p className="mb-2">{renderRich(question.explanation)}</p>
-                    {!isCorrect && !isPassed && question.type === "fill" && (
-                      <p className="mt-2 text-xs italic">Jawabanmu: “{String(selected)}” — Jawaban benar: “{(question as any).correct}”</p>
-                    )}
-                    {isPassed && (question.type === "fill" || question.type === "fillChoice") && (
-                      <p className="mt-2 text-xs italic">Jawaban benar: “{(question as any).correct}”</p>
-                    )}
-                    {question.tip && (
-                      <div className="mt-3 flex items-start gap-2 p-3 rounded-xl bg-white/50 border border-gray-200/50">
-                        <span className="text-base">💡</span>
-                        <p className="text-xs text-gray-700"><strong className="font-bold text-gray-900">Tips: </strong>{question.tip}</p>
-                      </div>
-                    )}
-                  </div>
+                  <p className="text-sm text-gray-700">
+                    {isPassed ? "Soal dilewati." : "Jawaban tersimpan."} Rekap benar/salah &amp; pembahasan muncul di akhir.
+                  </p>
                 </div>
               </motion.div>
             )}
@@ -390,13 +386,17 @@ function QuizScreen(props: {
 // ================================================
 // RESULT (with Soft-gate WA)
 // ================================================
-function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
-  score: number; questions: Question[]; meta: any; timeElapsedSec: number; onRetake: () => void;
+function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }: {
+  score: number; questions: Question[]; log: { correct: boolean; skipped: boolean }[]; meta: any; timeElapsedSec: number; onRetake: () => void;
 }) {
   const result = determineLevel(score);
   // Compute max score dynamically: sum of DIFFICULTY_POINTS per question
   const maxScore = questions.reduce((sum, q) => sum + DIFFICULTY_POINTS[q.difficulty], 0);
   const scorePercent = (score / maxScore) * 100;
+  const correctCount = log.filter((l) => l.correct).length;
+  const wrongCount = log.filter((l) => !l.correct && !l.skipped).length;
+  const skippedCount = log.filter((l) => l.skipped).length;
+  const [showRecap, setShowRecap] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
   const [showGate, setShowGate] = useState(false);
   const [waValue, setWaValue] = useState("");
@@ -649,6 +649,63 @@ function ResultScreen({ score, questions, meta, timeElapsedSec, onRetake }: {
           <p className="text-gray-700 text-base leading-relaxed">{result.description}</p>
         </motion.div>
 
+        {/* REKAP BENAR/SALAH — muncul di akhir (bukan per soal) */}
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85 }}
+          className="bg-white border border-gray-100 rounded-3xl p-5 md:p-6 shadow-sm mb-6">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <div className="flex items-center gap-4 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
+                <Icons.Check className="w-4 h-4" /> {correctCount} benar
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-600">
+                <Icons.X className="w-4 h-4" /> {wrongCount} salah
+              </span>
+              {skippedCount > 0 && (
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-600">
+                  <Icons.SkipForward className="w-4 h-4" /> {skippedCount} dilewati
+                </span>
+              )}
+            </div>
+            <button onClick={() => setShowRecap((v) => !v)}
+              className="text-sm font-semibold text-[#1A9E9E] hover:text-[#147a7a] inline-flex items-center gap-1 flex-shrink-0">
+              {showRecap ? "Sembunyikan" : "Lihat pembahasan"}
+              <Icons.ChevronDown className={"w-4 h-4 transition-transform " + (showRecap ? "rotate-180" : "")} />
+            </button>
+          </div>
+
+          <AnimatePresence initial={false}>
+            {showRecap && (
+              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
+                <div className="space-y-3 pt-1">
+                  {questions.map((q, i) => {
+                    const entry = log[i];
+                    const status = entry?.skipped ? "skipped" : entry?.correct ? "correct" : "wrong";
+                    const badge = status === "correct" ? "bg-emerald-100 text-emerald-700"
+                      : status === "skipped" ? "bg-amber-100 text-amber-700" : "bg-rose-100 text-rose-700";
+                    return (
+                      <div key={q.id} className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div className="flex items-start gap-2 mb-1.5">
+                          <span className={"text-[11px] font-bold px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5 " + badge}>
+                            {status === "correct" ? "Benar" : status === "skipped" ? "Dilewati" : "Salah"}
+                          </span>
+                          <p className="text-sm font-semibold text-gray-900 leading-snug">
+                            <span className="text-gray-400">#{i + 1}</span> {questionPrompt(q)}
+                          </p>
+                        </div>
+                        <p className="text-xs text-gray-600 leading-relaxed pl-1">
+                          <span className="font-semibold text-gray-800">Jawaban benar: </span>
+                          {correctAnswerText(q)}
+                        </p>
+                        <p className="text-xs text-gray-600 leading-relaxed pl-1 mt-1">{renderRich(q.explanation)}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
         {/* SOFT GATE: Basic recommendation always visible, detail unlocks with WA */}
         {!unlocked ? (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
@@ -815,13 +872,10 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
         ) : (
           <div className="flex flex-wrap gap-2 items-center">
             {answerTokens.map((tok, i) => {
-              const correctToken = question.correct[i];
-              let cls = "bg-white border-slate-300 text-slate-900";
-              if (showFeedback) {
-                cls = tok === correctToken
-                  ? "bg-emerald-50 border-emerald-400 text-emerald-900"
-                  : "bg-rose-50 border-rose-400 text-rose-900";
-              }
+              // Tanpa reveal: token yg sudah disusun tetap netral (teal), tak ada hijau/merah.
+              const cls = showFeedback
+                ? "bg-[#1A9E9E]/10 border-[#1A9E9E]/40 text-slate-900"
+                : "bg-white border-slate-300 text-slate-900";
               return (
                 <button
                   key={i}
@@ -857,23 +911,15 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
         })}
       </div>
 
-      {/* Check button — muncul saat semua token sudah dipilih */}
+      {/* Submit — tanpa reveal, langsung simpan */}
       {!showFeedback && (
         <button
           onClick={handleCheck}
           disabled={!allPicked}
           className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
         >
-          Periksa Jawaban
+          Simpan Jawaban
         </button>
-      )}
-
-      {/* Show correct answer when feedback + wrong */}
-      {showFeedback && answerTokens.join(" ") !== question.correct.join(" ") && (
-        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
-          <p className="text-xs font-bold text-emerald-900 mb-1">Jawaban benar:</p>
-          <p className="text-sm text-emerald-900">{question.correct.join(" ")}</p>
-        </div>
       )}
     </div>
   );
@@ -945,7 +991,7 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
                   className={"inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] " +
                     (filled[i]
                       ? (showFeedback
-                          ? (filled[i] === question.blanks[i] ? "bg-emerald-50 border-emerald-400 text-emerald-900" : "bg-rose-50 border-rose-400 text-rose-900")
+                          ? "bg-[#1A9E9E]/10 border-[#1A9E9E]/40 text-slate-900"
                           : "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer")
                       : "bg-white border-dashed border-slate-400 text-slate-300")}
                 >
@@ -985,15 +1031,8 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
           disabled={!allFilled}
           className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
         >
-          Periksa Jawaban
+          Simpan Jawaban
         </button>
-      )}
-
-      {showFeedback && filled.some((v, i) => v !== question.blanks[i]) && (
-        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
-          <p className="text-xs font-bold text-emerald-900 mb-1">Jawaban benar:</p>
-          <p className="text-sm text-emerald-900">{question.blanks.join(" / ")}</p>
-        </div>
       )}
     </div>
   );
@@ -1065,12 +1104,9 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
           {question.pairs.map((pair, leftIdx) => {
             const isSelected = selectedLeft === leftIdx;
             const isPaired = pairing[leftIdx] !== null;
-            const pairedCorrect = showFeedback && pairing[leftIdx] === leftIdx;
-            const pairedWrong = showFeedback && isPaired && pairing[leftIdx] !== leftIdx;
+            // Tanpa reveal: pasangan yg dipilih tetap netral, tak ada hijau/merah.
             let cls = "bg-white border-slate-300 text-slate-900";
-            if (pairedCorrect) cls = "bg-emerald-50 border-emerald-400 text-emerald-900";
-            else if (pairedWrong) cls = "bg-rose-50 border-rose-400 text-rose-900";
-            else if (isSelected) cls = "bg-[#1A9E9E]/10 border-[#1A9E9E] text-[#1A9E9E]";
+            if (isSelected) cls = "bg-[#1A9E9E]/10 border-[#1A9E9E] text-[#1A9E9E]";
             else if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
             return (
               <button
@@ -1093,13 +1129,9 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
           {rightOrder.map((origRightIdx, displayIdx) => {
             const isPairedTo = pairing.findIndex((r) => r === origRightIdx);
             const isPaired = isPairedTo !== -1;
-            const pairedCorrect = showFeedback && isPaired && pairing[isPairedTo] === isPairedTo;
-            const pairedWrong = showFeedback && isPaired && pairing[isPairedTo] !== isPairedTo;
             const canClick = selectedLeft !== null && !showFeedback;
             let cls = "bg-white border-slate-300 text-slate-900";
-            if (pairedCorrect) cls = "bg-emerald-50 border-emerald-400 text-emerald-900";
-            else if (pairedWrong) cls = "bg-rose-50 border-rose-400 text-rose-900";
-            else if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
+            if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
             return (
               <button
                 key={displayIdx}
@@ -1123,19 +1155,8 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
           disabled={!allPaired}
           className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
         >
-          Periksa Jawaban
+          Simpan Jawaban
         </button>
-      )}
-
-      {showFeedback && pairing.some((r, l) => r !== l) && (
-        <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
-          <p className="text-xs font-bold text-emerald-900 mb-2">Pasangan yang benar:</p>
-          <ul className="text-sm text-emerald-900 space-y-1">
-            {question.pairs.map((p, i) => (
-              <li key={i}>• {p.left} → {p.right}</li>
-            ))}
-          </ul>
-        </div>
       )}
     </div>
   );
