@@ -7,7 +7,8 @@
 // dan diklem ke tepi layar.
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { BookmarkCheck, BookmarkPlus, Loader2, Sparkles, Volume2, X } from "lucide-react";
+import { BookmarkCheck, BookmarkPlus, Loader2, Maximize2, Sparkles, Volume2, X } from "lucide-react";
+import WordStudy from "./WordStudy";
 import {
   cleanWord,
   getWordGrammar,
@@ -64,6 +65,9 @@ export function WordTooltip({
   const [grammarOpen, setGrammarOpen] = useState(false);
   const [grammar, setGrammar] = useState<string | null>(null);
   const [grammarLoading, setGrammarLoading] = useState(false);
+
+  // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol perbesar.
+  const [studyOpen, setStudyOpen] = useState(false);
 
   // Geser bebas — offset dari posisi awal, di-drag lewat header.
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -147,6 +151,7 @@ export function WordTooltip({
   const bottom = above && typeof window !== "undefined" ? window.innerHeight - y + 14 : undefined;
 
   return (
+    <>
     <div className="fixed inset-0 z-[95]" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
@@ -177,9 +182,18 @@ export function WordTooltip({
               </span>
             )}
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="shrink-0 opacity-60 hover:opacity-100">
-            <X className="h-4 w-4 text-white" />
-          </button>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <button
+              onClick={() => setStudyOpen(true)}
+              aria-label="Belajar mendalam"
+              className="opacity-60 hover:opacity-100"
+            >
+              <Maximize2 className="h-4 w-4 text-white" />
+            </button>
+            <button onClick={onClose} aria-label="Tutup" className="opacity-60 hover:opacity-100">
+              <X className="h-4 w-4 text-white" />
+            </button>
+          </div>
         </div>
 
         {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
@@ -236,6 +250,25 @@ export function WordTooltip({
         )}
       </div>
     </div>
+
+    {studyOpen && (
+      <WordStudy
+        word={word}
+        sentence={sentence}
+        langCode={langCode}
+        translit={translit}
+        meaning={meaning}
+        onClose={() => {
+          setStudyOpen(false);
+          setSaved(isWordSaved(word, langCode));
+        }}
+        onSavedChange={() => {
+          setSaved(isWordSaved(word, langCode));
+          onSavedChange?.();
+        }}
+      />
+    )}
+    </>
   );
 }
 
