@@ -17,6 +17,7 @@ import {
   Pause,
   Play,
   RotateCcw,
+  Type,
   X,
 } from "lucide-react";
 import {
@@ -28,7 +29,7 @@ import {
   SentenceBreakdown,
   splitWords,
 } from "@/lib/immersionLearn";
-import { ImmersionVideo } from "@/lib/immersion";
+import { ImmersionVideo, youtubeThumb } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
 
 const TEAL = "#1A9E9E";
@@ -38,6 +39,14 @@ const BORDER = "rgba(255,255,255,0.08)";
 const SUB = "rgba(255,255,255,0.5)";
 
 const SPEEDS = [1, 0.75, 0.5, 1.25];
+
+// Ukuran teks subtitle/transkrip yang bisa dipilih siswa (disimpan lokal).
+const FONT_LEVELS = [
+  { label: "Kecil", scale: 0.85 },
+  { label: "Sedang", scale: 1 },
+  { label: "Besar", scale: 1.2 },
+];
+const FONT_KEY = "linguo:watch:fontsize:v1";
 
 // ── YouTube IFrame API loader (singleton) ────────────────────────────────────
 let ytApiPromise: Promise<void> | null = null;
@@ -74,11 +83,15 @@ export default function VideoLearnPlayer({
   langCode,
   onClose,
   onSavedChange,
+  recommendations = [],
+  onSelectVideo,
 }: {
   video: ImmersionVideo;
   langCode: string;
   onClose: () => void;
   onSavedChange?: () => void;
+  recommendations?: ImmersionVideo[];
+  onSelectVideo?: (v: ImmersionVideo) => void;
 }) {
   const hostRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,6 +103,8 @@ export default function VideoLearnPlayer({
   const [time, setTime] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
+  const [fontIdx, setFontIdx] = useState(1); // ukuran teks subtitle (default Sedang)
+  const fscale = FONT_LEVELS[fontIdx].scale;
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
@@ -252,6 +267,30 @@ export default function VideoLearnPlayer({
     }
   }, []);
 
+  // Pulihkan ukuran teks pilihan siswa; siklus Kecil → Sedang → Besar.
+  useEffect(() => {
+    try {
+      const s = window.localStorage.getItem(FONT_KEY);
+      if (s != null) {
+        const n = parseInt(s, 10);
+        if (n >= 0 && n < FONT_LEVELS.length) setFontIdx(n);
+      }
+    } catch {
+      /* abaikan */
+    }
+  }, []);
+  const cycleFont = useCallback(() => {
+    setFontIdx((i) => {
+      const n = (i + 1) % FONT_LEVELS.length;
+      try {
+        window.localStorage.setItem(FONT_KEY, String(n));
+      } catch {
+        /* abaikan */
+      }
+      return n;
+    });
+  }, []);
+
   const gotoCue = useCallback(
     (dir: -1 | 1) => {
       if (activeIdx < 0) return;
@@ -338,6 +377,7 @@ export default function VideoLearnPlayer({
             onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
             txState={txState}
             asrRunning={asrRunning}
+            scale={fscale}
           />
 
           {/* Kontrol */}
@@ -408,7 +448,59 @@ export default function VideoLearnPlayer({
             >
               CC
             </button>
+
+            {/* Ukuran teks subtitle & transkrip — Kecil / Sedang / Besar */}
+            <button
+              onClick={cycleFont}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+              title="Ukuran teks subtitle"
+            >
+              <Type className="h-4 w-4" /> {FONT_LEVELS[fontIdx].label}
+            </button>
           </div>
+
+          {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
+              Klik untuk langsung memutar video lain tanpa keluar player. */}
+          {recommendations.length > 0 && onSelectVideo && (
+            <div
+              className="min-h-0 flex-1 overflow-y-auto border-t max-lg:max-h-[42vh] [scrollbar-width:thin]"
+              style={{ borderColor: BORDER }}
+            >
+              <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">
+                Rekomendasi
+              </p>
+              <div className="px-2 pb-4 sm:px-4">
+                {recommendations.map((v) => (
+                  <button
+                    key={v.videoId}
+                    onClick={() => onSelectVideo(v)}
+                    className="flex w-full gap-3 rounded-xl p-2 text-left transition-colors hover:bg-white/5"
+                  >
+                    <div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-black">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={v.thumbnail ?? youtubeThumb(v.videoId)}
+                        alt=""
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="line-clamp-2 text-[13px] font-bold leading-snug text-white">
+                        {v.title}
+                      </p>
+                      {v.channel && (
+                        <p className="mt-1 line-clamp-1 text-[11.5px]" style={{ color: SUB }}>
+                          {v.channel}
+                        </p>
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Kanan: transkrip penuh */}
@@ -466,10 +558,14 @@ export default function VideoLearnPlayer({
                         cue={c}
                         time={time}
                         onWordTap={onWordTap}
-                        className="text-[14px] font-semibold leading-snug"
+                        className="font-semibold leading-snug"
+                        fontSize={14 * fscale}
                       />
                     ) : (
-                      <p className="text-[14px] font-semibold leading-snug text-white">
+                      <p
+                        className="font-semibold leading-snug text-white"
+                        style={{ fontSize: 14 * fscale }}
+                      >
                         {splitWords(c.target).map((w, j) =>
                           w.isWord ? (
                             <span
@@ -486,12 +582,15 @@ export default function VideoLearnPlayer({
                       </p>
                     )}
                     {c.translit && (
-                      <p className="mt-0.5 text-[12px] italic" style={{ color: SUB }}>
+                      <p className="mt-0.5 italic" style={{ color: SUB, fontSize: 12 * fscale }}>
                         {c.translit}
                       </p>
                     )}
                     {c.base && (
-                      <p className="mt-0.5 text-[12.5px] font-semibold" style={{ color: GOLD }}>
+                      <p
+                        className="mt-0.5 font-semibold"
+                        style={{ color: GOLD, fontSize: 12.5 * fscale }}
+                      >
                         {c.base}
                       </p>
                     )}
@@ -527,6 +626,7 @@ function FocusLine({
   onRetryAnalyze,
   txState,
   asrRunning,
+  scale,
 }: {
   cue: LearnCue | null;
   time: number;
@@ -536,6 +636,7 @@ function FocusLine({
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
+  scale: number;
 }) {
   if (txState !== "ready") {
     return (
@@ -582,8 +683,8 @@ function FocusLine({
                   className="cursor-pointer text-center"
                 >
                   <span
-                    className="block text-[19px] font-extrabold leading-tight sm:text-[22px]"
-                    style={{ color: POS_COLOR[t.cat] }}
+                    className="block font-extrabold leading-tight"
+                    style={{ color: POS_COLOR[t.cat], fontSize: 21 * scale }}
                   >
                     {t.word}
                   </span>
@@ -594,7 +695,7 @@ function FocusLine({
               ))}
             </div>
             {breakdown.translation && (
-              <p className="mt-2.5 text-[14px] font-bold" style={{ color: GOLD }}>
+              <p className="mt-2.5 font-bold" style={{ color: GOLD, fontSize: 14 * scale }}>
                 {breakdown.translation}
               </p>
             )}
@@ -612,15 +713,16 @@ function FocusLine({
         cue={cue}
         time={time}
         onWordTap={onWordTap}
-        className="text-[20px] font-extrabold leading-snug sm:text-[24px]"
+        className="font-extrabold leading-snug"
+        fontSize={22 * scale}
       />
       {cue.translit && (
-        <p className="mt-1 text-[13px] italic" style={{ color: SUB }}>
+        <p className="mt-1 italic" style={{ color: SUB, fontSize: 13 * scale }}>
           {cue.translit}
         </p>
       )}
       {cue.base && (
-        <p className="mt-1.5 text-[15px] font-bold sm:text-[16px]" style={{ color: GOLD }}>
+        <p className="mt-1.5 font-bold" style={{ color: GOLD, fontSize: 16 * scale }}>
           {cue.base}
         </p>
       )}
@@ -704,15 +806,17 @@ function KaraokeText({
   time,
   onWordTap,
   className,
+  fontSize,
 }: {
   cue: LearnCue;
   time: number;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
   className?: string;
+  fontSize?: number;
 }) {
   const toks = useMemo(() => karaokeTokens(cue, time), [cue, time]);
   return (
-    <p className={className}>
+    <p className={className} style={fontSize ? { fontSize } : undefined}>
       {toks.map((t, j) =>
         t.isWord ? (
           <KaraokeWord

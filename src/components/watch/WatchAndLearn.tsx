@@ -80,8 +80,11 @@ export default function WatchAndLearn() {
   // Watch & Learn, BUKAN keluar halaman. Dorong satu entri history pas video
   // dibuka; popstate menutup player. Kalau ditutup lewat tombol X, entri kita
   // dikonsumsi balik biar history tetap rapi.
+  // Key ke buka/tutup (bukan `active`) supaya ganti video via rekomendasi tidak
+  // memicu cleanup → history.back → popstate yang malah menutup player.
+  const playerOpen = active != null;
   useEffect(() => {
-    if (!active) return;
+    if (!playerOpen) return;
     window.history.pushState({ watchModal: true }, "");
     const onPop = () => setActive(null);
     window.addEventListener("popstate", onPop);
@@ -89,7 +92,7 @@ export default function WatchAndLearn() {
       window.removeEventListener("popstate", onPop);
       if (window.history.state?.watchModal) window.history.back();
     };
-  }, [active]);
+  }, [playerOpen]);
 
   // Token buat membatalkan hasil fetch yang ketinggalan (bahasa/kategori keburu ganti).
   const reqId = useRef(0);
@@ -463,6 +466,8 @@ export default function WatchAndLearn() {
         <VideoLearnPlayer
           video={active}
           langCode={activeLang}
+          recommendations={videos.filter((v) => v.videoId !== active.videoId)}
+          onSelectVideo={(v) => openVideo(v, lang.code)}
           onClose={() => setActive(null)}
           onSavedChange={refreshVocab}
         />
