@@ -3,8 +3,40 @@
 import { useState, useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/tracking";
 import { motion, AnimatePresence } from "framer-motion";
+import { Globe } from "lucide-react";
+import { resolveFlag } from "@blade-flags/core";
+import { defaultFlags } from "@blade-flags/core/flags/default";
 import { supabase } from "@/lib/supabase-client";
 import { languages, type LanguageMeta, type Region } from "@/data/curriculum";
+
+// linguo-patch:placement-picker-rectflag-v1 — bendera rounded rectangle (bukan emoji),
+// konsisten dgn RectFlag di landing page. Map slug -> kode negara ISO-2.
+const FLAG_CODE_BY_SLUG: Record<string, string> = {
+  english: "gb", ielts: "gb", "toefl-itp": "gb", japanese: "jp", korean: "kr",
+  mandarin: "cn", spanish: "es", french: "fr", german: "de", italian: "it",
+  arabic: "sa", hebrew: "il", persian: "ir", javanese: "id", sundanese: "id",
+  betawi: "id", bipa: "id", georgian: "ge", greek: "gr", "portuguese-pt": "pt",
+  "portuguese-br": "br", dutch: "nl", russian: "ru", swedish: "se", norwegian: "no",
+  danish: "dk", finnish: "fi", polish: "pl", czech: "cz", hungarian: "hu",
+  romanian: "ro", turkish: "tr", bulgarian: "bg", ukrainian: "ua", icelandic: "is",
+  cantonese: "hk", vietnamese: "vn", thai: "th", filipino: "ph", khmer: "kh",
+  lao: "la", burmese: "mm", hindi: "in", urdu: "pk", bengali: "bd",
+  tamil: "in", punjabi: "in", nepali: "np", mongolian: "mn", balinese: "id",
+  minangkabau: "id", batak: "id", bugis: "id", acehnese: "id", banjar: "id",
+  madurese: "id", swahili: "ke", zulu: "za", yoruba: "ng", amharic: "et",
+  armenian: "am",
+};
+
+// Bendera SVG rounded rectangle. Dimensi dihitung dari viewBox agar aspect ratio asli terjaga.
+function RectFlag({ code, h = 28, className = "" }: { code?: string; h?: number; className?: string }) {
+  const svg = code ? resolveFlag(defaultFlags, code, "country") : null;
+  if (!svg) return <Globe aria-hidden style={{ height: h, width: h }} className={`text-gray-300 shrink-0 ${className}`} />;
+  const m = svg.match(/viewBox="([\d.\s-]+)"/);
+  let w = Math.round((h * 36) / 26);
+  if (m) { const p = m[1].trim().split(/\s+/).map(Number); if (p.length === 4 && p[3]) w = Math.round((h * p[2]) / p[3]); }
+  const sized = svg.replace(/<svg /, `<svg width="${w}" height="${h}" preserveAspectRatio="xMidYMid meet" style="display:block" `);
+  return <span aria-hidden style={{ height: h, width: w }} className={`inline-flex overflow-hidden rounded-[5px] shrink-0 ring-1 ring-black/5 ${className}`} dangerouslySetInnerHTML={{ __html: sized }} />;
+}
 
 // Category = "populer" (featured) + region keys (Indonesia-friendly slugs)
 type Category = "populer" | "eropa" | "asia" | "timur-tengah" | "nusantara" | "afrika" | "lainnya";
@@ -174,9 +206,9 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                           const url = `/silabus/${lang.slug}/coba${sid ? `?ref=akun&sid=${sid}` : ""}`;
                           window.location.href = url;
                         }}
-                        className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border-2 border-[#1A9E9E] bg-[#1A9E9E]/5 hover:bg-[#1A9E9E]/10 transition-colors group"
+                        className="flex items-center gap-3 px-4 py-3.5 rounded-2xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors group"
                       >
-                        <span className="text-2xl">{lang.flag}</span>
+                        <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} />
                         <div className="flex-1 min-w-0">
                           <div className="font-bold text-sm text-gray-900">Bahasa {lang.name}</div>
                           <div className="text-xs text-gray-500">{lang.nativeName}</div>
@@ -196,7 +228,7 @@ export default function PlacementPicker({ open, onClose, studentId }: Props) {
                       onClick={() => trackEvent("placement_test_intent", { language: lang.name, language_slug: lang.slug, status: "coming_soon" })}
                       className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-gray-100 hover:border-gray-200 hover:bg-gray-50 transition-colors"
                     >
-                      <span className="text-2xl opacity-60">{lang.flag}</span>
+                      <RectFlag code={FLAG_CODE_BY_SLUG[lang.slug]} h={28} className="opacity-70" />
                       <div className="flex-1 min-w-0">
                         <div className="font-semibold text-sm text-gray-600">Bahasa {lang.name}</div>
                         <div className="text-xs text-gray-400">{lang.nativeName}</div>
