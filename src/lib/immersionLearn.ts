@@ -489,12 +489,18 @@ export async function fetchTranscript(
   return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "empty" };
 }
 
-// ── Prewarm cache transkrip (background) ─────────────────────────────────────
-// Biar subtitle + terjemahan "langsung muncul" saat video dibuka: hangatkan cache
-// untuk video di katalog/rekomendasi SEBELUM diklik. Sekali sebuah (video, bahasa)
-// diproses, hasilnya tersimpan di Supabase → viewer berikutnya (siapa pun) baca
-// instan, tak perlu tunggu caption/ASR (~1 menit) lagi. Best-effort, konkurensi
-// kecil biar tak membanjiri Edge Function (yt-asr) atau kena rate limit Gemini.
+// ── Dedup + batas konkurensi pemrosesan transkrip (Fase 1, client-side) ──────
+// Tiga jalur bisa memicu pemrosesan transkrip: (a) video yang SEDANG ditonton,
+// (b) prewarm rekomendasi/katalog, (c) video yang DITINGGAL sebelum ASR-nya
+// selesai. Tanpa koordinasi, loncat-loncat antar video bisa menumpuk banyak
+// panggilan ASR (Gemini, ~1 menit) sekaligus dari satu tab. Dua pengaman di sini:
+//   1. Dedup in-flight per (video, bahasa) → video aktif & prewarm berbagi SATU
+//      pemrosesan, tak ada panggilan Gemini dobel.
+//   2. Limiter background (maks BG_CONCURRENCY) untuk prewarm/video-yang-ditinggal
+//      supaya tak membanjiri Edge Function yt-asr / kena rate limit Gemini.
+// Batas ini per-tab; batas GLOBAL lintas-user menyusul di antrian server (Fase 2).
+
+const VIDEO_ID_RE = /^[A-Za-z0-9_-]{11}$/;
 
 interface PrewarmVideo {
   videoId: string;
@@ -503,22 +509,51 @@ interface PrewarmVideo {
   duration?: number | null;
 }
 
-const prewarmSeen = new Set<string>(); // (video, bahasa) yang sudah dijadwalkan di sesi ini
-const prewarmQueue: { video: PrewarmVideo; langCode: string }[] = [];
-let prewarmActive = 0;
-const PREWARM_CONCURRENCY = 2;
+// (video, bahasa) yang pemrosesannya masih berjalan — dipakai untuk dedup.
+const inFlightTranscripts = new Map<string, Promise<TranscriptResult>>();
 
-const VIDEO_ID_RE = /^[A-Za-z0-9_-]{11}$/;
+/**
+ * Proses transkrip untuk satu (video, bahasa) dengan DEDUP: kalau permintaan yang
+ * sama sudah berjalan (mis. sudah dihangatkan prewarm lalu penonton mengklik video
+ * itu), keduanya berbagi promise yang sama alih-alih memicu ASR kedua.
+ *
+ * Promise-nya hidup lepas dari komponen React: kalau penonton keluar / pindah
+ * video sebelum ASR selesai, pemrosesan TETAP tuntas di tab ini dan hasilnya
+ * tersimpan ke cache → video muncul di tab "Siap" & instan saat dibuka lagi.
+ *
+ * Dipakai player untuk video yang sedang ditonton (langsung jalan, tak lewat
+ * limiter — hanya ada ~1 video aktif). Prewarm memakainya lewat limiter background.
+ */
+export function processTranscript(
+  videoId: string,
+  langCode: string,
+  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta }
+): Promise<TranscriptResult> {
+  const key = `${langCode}::${videoId}`;
+  const existing = inFlightTranscripts.get(key);
+  if (existing) return existing;
+  const p = fetchTranscript(videoId, langCode, opts).finally(() => {
+    inFlightTranscripts.delete(key);
+  });
+  inFlightTranscripts.set(key, p);
+  return p;
+}
 
-async function prewarmWorker(): Promise<void> {
-  const job = prewarmQueue.shift();
+// Limiter background: maksimum sekian (video, bahasa) diproses BERSAMAAN di luar
+// video yang sedang ditonton. Angka konservatif biar aman untuk kuota Gemini.
+const BG_CONCURRENCY = 5;
+const bgSeen = new Set<string>(); // (video, bahasa) yang sudah dijadwalkan di sesi ini
+const bgQueue: { video: PrewarmVideo; langCode: string }[] = [];
+let bgActive = 0;
+
+async function bgWorker(): Promise<void> {
+  const job = bgQueue.shift();
   if (!job) return;
-  prewarmActive++;
+  bgActive++;
   try {
-    // fetchTranscript sudah: cek cache → caption+terjemah → ASR, lalu simpan hasil
-    // ke cache. Jadi cukup panggil sekali; kalau sudah ada di cache, langsung balik.
-    // Kirim metadata biar video ini muncul di tab "Siap" begitu selesai diproses.
-    await fetchTranscript(job.video.videoId, job.langCode, {
+    // processTranscript sudah: cek cache → caption+terjemah → ASR, lalu simpan hasil
+    // ke cache (dedup dengan video aktif). Kirim metadata biar muncul di tab "Siap".
+    await processTranscript(job.video.videoId, job.langCode, {
       meta: {
         title: job.video.title,
         channel: job.video.channel,
@@ -528,29 +563,29 @@ async function prewarmWorker(): Promise<void> {
   } catch {
     /* best-effort — jangan ganggu apa pun kalau gagal */
   } finally {
-    prewarmActive--;
-    void prewarmWorker(); // ambil job berikutnya
+    bgActive--;
+    void bgWorker(); // ambil job berikutnya
   }
 }
 
 /**
  * Hangatkan cache transkrip untuk sederet video di background (fire-and-forget).
- * Aman dipanggil berkali-kali: tiap (video, bahasa) hanya diproses sekali per sesi,
- * dan konkurensi dibatasi supaya tak membebani server. Dipakai saat katalog /
- * rekomendasi tampil biar video yang nanti diklik sudah siap subtitle-nya — dan
- * sekalian mengisi tab "Siap" (metadata ikut disimpan).
+ * Aman dipanggil berkali-kali: tiap (video, bahasa) hanya dijadwalkan sekali per
+ * sesi, dan konkurensi dibatasi (BG_CONCURRENCY) supaya tak membebani server.
+ * Dipakai saat katalog / rekomendasi tampil biar video yang nanti diklik sudah
+ * siap subtitle-nya — dan sekalian mengisi tab "Siap" (metadata ikut disimpan).
  */
 export function prewarmTranscripts(videos: PrewarmVideo[], langCode: string): void {
   if (typeof window === "undefined" || !langCode) return;
   for (const video of videos) {
     if (!video || !VIDEO_ID_RE.test(video.videoId)) continue;
     const key = `${langCode}::${video.videoId}`;
-    if (prewarmSeen.has(key)) continue;
-    prewarmSeen.add(key);
-    prewarmQueue.push({ video, langCode });
+    if (bgSeen.has(key)) continue;
+    bgSeen.add(key);
+    bgQueue.push({ video, langCode });
   }
   // Isi slot worker yang kosong sampai konkurensi penuh.
-  while (prewarmActive < PREWARM_CONCURRENCY && prewarmQueue.length) void prewarmWorker();
+  while (bgActive < BG_CONCURRENCY && bgQueue.length) void bgWorker();
 }
 
 /**
@@ -847,12 +882,17 @@ export const POS_LABEL_ID: Record<PosCategory, string> = {
 
 // ── Kosakata tersimpan (localStorage) ────────────────────────────────────────
 
+import { gradeCard, newSrsState, type SrsGrade, type SrsState } from "./srs";
+
 export interface SavedWord {
   word: string;
   meaning: string;
   langCode: string;
   example: string;
   ts: number;
+  // State spaced-repetition (SM-2). Opsional: kata lama (sebelum fitur SRS) tak
+  // punya field ini → diperlakukan "baru" / jatuh tempo langsung saat direview.
+  srs?: SrsState;
 }
 
 const VOCAB_KEY = "linguo:watch:vocab:v1";
@@ -876,15 +916,35 @@ export function isWordSaved(word: string, langCode: string): boolean {
   return getSavedWords().some((w) => keyOf(w.word, w.langCode) === keyOf(word, langCode));
 }
 
-export function saveWord(item: Omit<SavedWord, "ts">): SavedWord[] {
+export function saveWord(item: Omit<SavedWord, "ts" | "srs">): SavedWord[] {
   const list = getSavedWords().filter(
     (w) => keyOf(w.word, w.langCode) !== keyOf(item.word, item.langCode)
   );
-  const next = [{ ...item, ts: Date.now() }, ...list].slice(0, 500);
+  // Kata baru mulai dengan state SRS default (jatuh tempo langsung) → masuk sesi
+  // review berikutnya.
+  const next = [{ ...item, ts: Date.now(), srs: newSrsState() }, ...list].slice(0, 500);
   try {
     window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
   } catch {
     /* penuh/diblokir — abaikan */
+  }
+  return next;
+}
+
+/**
+ * Nilai sebuah kartu (SRS) lalu simpan state barunya ke localStorage. Balikin
+ * daftar terbaru. Dipakai flashcard review — tiap nilai menjadwal ulang kartu.
+ */
+export function gradeSavedWord(word: string, langCode: string, grade: SrsGrade): SavedWord[] {
+  const list = getSavedWords();
+  const next = list.map((w) => {
+    if (keyOf(w.word, w.langCode) !== keyOf(word, langCode)) return w;
+    return { ...w, srs: gradeCard(w.srs ?? newSrsState(), grade) };
+  });
+  try {
+    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
+  } catch {
+    /* abaikan */
   }
   return next;
 }

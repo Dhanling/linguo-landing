@@ -25,7 +25,7 @@ import {
   X,
 } from "lucide-react";
 import {
-  fetchTranscript,
+  processTranscript,
   getSentenceBreakdown,
   isNonLatin,
   LearnCue,
@@ -247,7 +247,7 @@ export default function VideoLearnPlayer({
     // Sambil transkrip interaktif disiapkan (jalur AI bisa ~1 menit), tampilkan CC
     // bawaan YouTube DALAM bahasa target biar siswa tak menonton tanpa subtitle.
     setShowCC(true);
-    fetchTranscript(video.videoId, langCode, {
+    processTranscript(video.videoId, langCode, {
       onAsr: () => !cancelled && setAsrRunning(true),
       // Simpan metadata biar video yang ditonton ini ikut muncul di tab "Siap".
       meta: { title: video.title, channel: video.channel, duration: video.duration },

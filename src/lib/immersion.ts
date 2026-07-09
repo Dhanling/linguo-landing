@@ -407,11 +407,21 @@ export function pushWatchHistory(item: WatchHistoryItem): WatchHistoryItem[] {
   return next;
 }
 
-export function clearWatchHistory(): void {
-  if (typeof window === "undefined") return;
+// Hapus riwayat tonton. Tanpa argumen → bersihkan semua. Dengan `lang` →
+// hanya buang riwayat bahasa itu (dipakai tombol "Hapus" yang cuma menampilkan
+// video bahasa aktif, biar riwayat bahasa lain tak ikut terhapus). Balikin sisa.
+export function clearWatchHistory(lang?: string): WatchHistoryItem[] {
+  if (typeof window === "undefined") return [];
   try {
-    window.localStorage.removeItem(HISTORY_KEY);
+    if (!lang) {
+      window.localStorage.removeItem(HISTORY_KEY);
+      return [];
+    }
+    const next = getWatchHistory().filter((h) => h.lang !== lang);
+    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+    return next;
   } catch {
     /* abaikan */
+    return getWatchHistory();
   }
 }

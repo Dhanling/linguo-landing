@@ -95,6 +95,13 @@ export default function WatchAndLearn() {
   const cat =
     IMMERSION_CATEGORIES.find((c) => c.id === category) ?? IMMERSION_CATEGORIES[0];
 
+  // "Lanjut Menonton" hanya menampilkan riwayat bahasa yang sedang dipelajari —
+  // saat belajar bahasa Inggris, video Spanyol dll tak ikut muncul.
+  const shownHistory = useMemo(
+    () => history.filter((h) => h.lang === langCode),
+    [history, langCode]
+  );
+
   // [linguo-patch:watch-orient-frame0-v1] Saat filter Shorts/Video aktif, deteksi
   // orientasi asli tiap video via frame0.jpg (sekali per videoId, hasilnya di-cache).
   // Hanya jalan kalau orient !== "all" biar tak muat gambar ekstra saat tak perlu.
@@ -145,10 +152,17 @@ export default function WatchAndLearn() {
       /* abaikan */
     }
     setHistory(getWatchHistory());
-    setVocabCount(getSavedWords().length);
   }, []);
 
-  const refreshVocab = useCallback(() => setVocabCount(getSavedWords().length), []);
+  // Badge Kosakata menghitung kata bahasa aktif saja — konsisten dengan deck
+  // yang default filter ke bahasa yang sedang ditonton. Recompute tiap ganti bahasa.
+  const refreshVocab = useCallback(
+    () => setVocabCount(getSavedWords().filter((w) => w.langCode === langCode).length),
+    [langCode]
+  );
+  useEffect(() => {
+    refreshVocab();
+  }, [refreshVocab]);
 
   // Tombol Back (browser/in-app) saat nonton video → tutup player, balik ke
   // Watch & Learn, BUKAN keluar halaman. Dorong satu entri history pas video
@@ -308,10 +322,10 @@ export default function WatchAndLearn() {
     );
   }, [langQuery]);
 
+  // Cuma hapus riwayat bahasa aktif (yang sedang tampil), bukan semua bahasa.
   const clearHistory = useCallback(() => {
-    clearWatchHistory();
-    setHistory([]);
-  }, []);
+    setHistory(clearWatchHistory(langCode));
+  }, [langCode]);
 
   return (
     <main style={{ backgroundColor: BG, minHeight: "100vh" }} className="text-white">
@@ -399,7 +413,7 @@ export default function WatchAndLearn() {
         </div>
 
         {/* Continue watching */}
-        {history.length > 0 && (
+        {shownHistory.length > 0 && (
           <section className="mt-8">
             <div className="flex items-center justify-between">
               <h2 className="text-[17px] font-extrabold">Lanjut Menonton</h2>
@@ -412,7 +426,7 @@ export default function WatchAndLearn() {
               </button>
             </div>
             <div className="mt-3 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {history.map((h) => (
+              {shownHistory.map((h) => (
                 <button
                   key={h.videoId}
                   onClick={() =>
