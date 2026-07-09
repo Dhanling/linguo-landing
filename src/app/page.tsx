@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabase-client";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles } from "lucide-react";
+import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
@@ -500,24 +500,24 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 
 // ── nav-mega-menu-v1: isi dropdown "Our Program" sebagai mega-menu grid 3 kolom
 //    per grup (ala Ruangguru), bukan list vertikal + flyout submenu. ──────────
-type NavMegaItem = { emoji: string; title: string; desc: string; prog?: string; href?: string; schedHref?: string; schedLabel?: string };
+type NavMegaItem = { icon: React.ElementType; title: string; desc: string; prog?: string; href?: string; schedHref?: string; schedLabel?: string };
 const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
   { group: "Kelas dengan Pengajar", items: [
-    { emoji:"🎓", title:"Private 1-on-1", desc:"Belajar privat via Zoom, request jadwal & topik sesukamu", prog:"Kelas Private" },
-    { emoji:"👥", title:"Semi Private", desc:"Belajar bareng teman dalam grup kecil, lebih hemat", prog:"Semi Private" },
-    { emoji:"🏫", title:"Kelas Reguler", desc:"Grup class jadwal tetap, paling terjangkau", prog:"Kelas Reguler", schedHref:"/jadwal-kelas-reguler", schedLabel:"Cek jadwal →" },
-    { emoji:"🧒", title:"Kelas Kids", desc:"1-on-1 untuk anak 5–12 tahun, fun & interaktif", prog:"Kelas Kids" },
-    { emoji:"📝", title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", prog:"IELTS/TOEFL Prep", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Cek jadwal ETP →" },
+    { icon:GraduationCap, title:"Private 1-on-1", desc:"Belajar privat via Zoom, request jadwal & topik sesukamu", prog:"Kelas Private" },
+    { icon:Users, title:"Semi Private", desc:"Belajar bareng teman dalam grup kecil, lebih hemat", prog:"Semi Private" },
+    { icon:School, title:"Kelas Reguler", desc:"Grup class jadwal tetap, paling terjangkau", prog:"Kelas Reguler", schedHref:"/jadwal-kelas-reguler", schedLabel:"Cek jadwal →" },
+    { icon:Baby, title:"Kelas Kids", desc:"1-on-1 untuk anak 5–12 tahun, fun & interaktif", prog:"Kelas Kids" },
+    { icon:ClipboardList, title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", prog:"IELTS/TOEFL Prep", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Cek jadwal ETP →" },
   ]},
   { group: "Belajar Mandiri", items: [
-    { emoji:"🖥️", title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/produk" },
-    { emoji:"📚", title:"E-Book", desc:"Buku digital lengkap untuk belajar di mana saja", href:"/produk/ebook" },
-    { emoji:"⏱️", title:"Simulasi TOEFL/IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", href:"/simulasi" },
+    { icon:MonitorPlay, title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/produk" },
+    { icon:BookOpen, title:"E-Book", desc:"Buku digital lengkap untuk belajar di mana saja", href:"/produk/ebook" },
+    { icon:Timer, title:"Simulasi TOEFL/IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", href:"/simulasi" },
   ]},
   { group: "Untuk Perusahaan", items: [
-    { emoji:"🏢", title:"Language Training", desc:"Pelatihan bahasa untuk tim & karyawan", href:"/corporate" },
-    { emoji:"🎧", title:"Interpreter Service", desc:"Jasa juru bahasa untuk acara & meeting", href:"/interpreter" },
-    { emoji:"📜", title:"Sworn Translator", desc:"Penerjemah tersumpah untuk dokumen resmi", href:"/translator" },
+    { icon:Building2, title:"Language Training", desc:"Pelatihan bahasa untuk tim & karyawan", href:"/corporate" },
+    { icon:Headphones, title:"Interpreter Service", desc:"Jasa juru bahasa untuk acara & meeting", href:"/interpreter" },
+    { icon:ScrollText, title:"Sworn Translator", desc:"Penerjemah tersumpah untuk dokumen resmi", href:"/translator" },
   ]},
 ];
 
@@ -595,7 +595,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                               onClick={()=>{ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } }}
                               onKeyDown={(e)=>{ if(e.key==="Enter"){ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } } }}
                               className="cursor-pointer flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#1A9E9E]/5 transition-colors group/item">
-                              <span className="w-9 h-9 rounded-lg bg-slate-50 flex items-center justify-center text-lg shrink-0">{it.emoji}</span>
+                              <span className="w-9 h-9 rounded-lg bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center shrink-0"><it.icon className="w-[18px] h-[18px]"/></span>
                               <span className="min-w-0">
                                 <span className="block text-sm font-bold text-slate-800 group-hover/item:text-[#1A9E9E] transition-colors">{it.title}</span>
                                 <span className="block text-xs text-slate-400 leading-snug mt-0.5">{it.desc}</span>
