@@ -1,0 +1,320 @@
+// Watch & Learn — lapisan "belajar" untuk player: transkrip dwibahasa (subtitle
+// bahasa target + terjemahan Indonesia), arti kata yang di-tap, dan analisa
+// kalimat (kelas kata). Semua jalan lewat Edge Function di project Supabase yang
+// sama dengan app mobile (yt-transcript & word-info) — anon key aman di client.
+
+const SUPABASE_URL =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+// Terjemahan/penjelasan selalu ditulis dalam bahasa pengguna Linguo (Indonesia).
+const EXPLANATION_LANGUAGE = "Bahasa Indonesia";
+
+// Edge Function word-info menaruh nama bahasa langsung ke prompt ("You are a
+// concise Spanish tutor…"), jadi ia butuh nama Inggris — bukan label Indonesia.
+const ENGLISH_NAME: Record<string, string> = {
+  en: "English", ja: "Japanese", ko: "Korean", zh: "Chinese", es: "Spanish",
+  fr: "French", de: "German", it: "Italian", pt: "Portuguese", nl: "Dutch",
+  ru: "Russian", ar: "Arabic", tr: "Turkish", th: "Thai", vi: "Vietnamese",
+  hi: "Hindi",
+};
+
+// Bahasa beraksara non-Latin — pemicu transliterasi (romaji/pinyin/dll).
+const NON_LATIN = new Set(["ja", "ko", "zh", "ar", "ru", "hi", "th"]);
+
+export function isNonLatin(code: string): boolean {
+  return NON_LATIN.has(code);
+}
+
+// Tag BCP-47 untuk Web Speech API (tombol dengar di tooltip).
+export const SPEECH_LANG: Record<string, string> = {
+  en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",
+  de: "de-DE", it: "it-IT", pt: "pt-PT", nl: "nl-NL", ru: "ru-RU", ar: "ar-SA",
+  tr: "tr-TR", th: "th-TH", vi: "vi-VN", hi: "hi-IN",
+};
+
+// ── Transkrip ────────────────────────────────────────────────────────────────
+
+/**
+ * Satu baris subtitle bertimestamp. `target` = kalimat bahasa yang dipelajari
+ * (kata-katanya bisa di-tap), `base` = terjemahan Indonesia (ditampilkan emas).
+ */
+export interface LearnCue {
+  start: number;
+  end: number;
+  target: string;
+  base: string;
+  translit?: string;
+}
+
+/** Kenapa transkrip kosong — buat pesan yang ramah. */
+export type TranscriptReason = "no_captions" | "empty" | "error" | "ok";
+
+export interface TranscriptResult {
+  cues: LearnCue[];
+  reason: TranscriptReason;
+}
+
+/**
+ * Ambil transkrip untuk sebuah video YouTube lewat Edge Function `yt-transcript`
+ * (mode server-side fetch). Best-effort: kalau video tak bercaption atau YouTube
+ * memblokir, balikin daftar kosong + alasannya biar player kasih pesan, bukan
+ * error. `langCode` = kode ISO bahasa target (buat pilih track caption).
+ */
+export async function fetchTranscript(
+  videoId: string,
+  langCode: string
+): Promise<TranscriptResult> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { cues: [], reason: "error" };
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        videoId,
+        language: langCode,
+        explanationLanguage: EXPLANATION_LANGUAGE,
+        // Katalog rekomendasi sudah dibias ke bahasa target, tapi caption kadang
+        // cuma ada dalam bahasa aslinya — izinkan track lain agar tetap kebaca.
+        allowForeign: true,
+      }),
+    });
+    if (!res.ok) return { cues: [], reason: "error" };
+    const data = (await res.json()) as { cues?: unknown; reason?: string };
+    const cues = Array.isArray(data.cues)
+      ? (data.cues as LearnCue[]).filter(
+          (c) =>
+            c &&
+            typeof c.start === "number" &&
+            typeof c.end === "number" &&
+            typeof c.target === "string" &&
+            c.target.length > 0
+        )
+      : [];
+    if (cues.length) return { cues, reason: "ok" };
+    const reason = data.reason === "no_captions" ? "no_captions" : "empty";
+    return { cues: [], reason };
+  } catch {
+    return { cues: [], reason: "error" };
+  }
+}
+
+// ── word-info (arti kata, grammar, analisa kalimat) ──────────────────────────
+
+type WordInfoMode = "meaning" | "grammar" | "breakdown";
+
+async function callWordInfo(params: {
+  word: string;
+  sentence: string;
+  mode: WordInfoMode;
+  langCode: string;
+}): Promise<string> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) throw new Error("Supabase env belum diset.");
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/word-info`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify({
+      word: params.word,
+      sentence: params.sentence,
+      mode: params.mode,
+      language: ENGLISH_NAME[params.langCode] ?? "English",
+      explanationLanguage: EXPLANATION_LANGUAGE,
+      nonLatin: isNonLatin(params.langCode),
+    }),
+  });
+  if (!res.ok) throw new Error(`word-info gagal (${res.status})`);
+  const data = (await res.json()) as { text?: string };
+  if (!data.text) throw new Error("word-info tidak mengembalikan teks.");
+  return data.text;
+}
+
+/** Arti singkat sebuah kata + kelas katanya, keduanya dalam bahasa Indonesia. */
+export interface WordMeaning {
+  meaning: string;
+  type: string;
+}
+
+export async function getWordMeaning(params: {
+  word: string;
+  sentence: string;
+  langCode: string;
+}): Promise<WordMeaning> {
+  const raw = await callWordInfo({ ...params, mode: "meaning" });
+  const start = raw.indexOf("{");
+  const end = raw.lastIndexOf("}");
+  if (start === -1 || end === -1 || end < start) throw new Error("Gagal parse arti.");
+  const parsed = JSON.parse(raw.slice(start, end + 1)) as {
+    meaning?: unknown;
+    type?: unknown;
+  };
+  const meaning = typeof parsed.meaning === "string" ? parsed.meaning.trim() : "";
+  const type = typeof parsed.type === "string" ? parsed.type.trim() : "";
+  if (!meaning && !type) throw new Error("Arti kosong.");
+  return { meaning, type };
+}
+
+/** Penjelasan tata bahasa singkat (teks bebas) untuk kata yang di-tap. */
+export async function getWordGrammar(params: {
+  word: string;
+  sentence: string;
+  langCode: string;
+}): Promise<string> {
+  const text = await callWordInfo({ ...params, mode: "grammar" });
+  return text.trim();
+}
+
+/** Kelas kata kanonik untuk pewarnaan token dalam analisa kalimat. */
+export type PosCategory =
+  | "noun" | "verb" | "pronoun" | "adjective" | "adverb" | "preposition"
+  | "conjunction" | "determiner" | "numeral" | "interjection" | "particle"
+  | "auxiliary" | "punctuation" | "other";
+
+const POS_CATEGORIES: PosCategory[] = [
+  "noun", "verb", "pronoun", "adjective", "adverb", "preposition", "conjunction",
+  "determiner", "numeral", "interjection", "particle", "auxiliary", "punctuation", "other",
+];
+
+export interface SentenceToken {
+  word: string;
+  cat: PosCategory;
+  gloss: string;
+  pos?: string;
+  translit?: string;
+}
+
+export interface SentenceBreakdown {
+  translation: string;
+  tokens: SentenceToken[];
+}
+
+/**
+ * Pecah satu baris subtitle kata demi kata untuk mode "Analisa": terjemahan
+ * akurat + kelas kata (warna) dan arti tiap kata. Backed by word-info "breakdown".
+ */
+export async function getSentenceBreakdown(params: {
+  sentence: string;
+  langCode: string;
+}): Promise<SentenceBreakdown> {
+  const raw = await callWordInfo({
+    word: params.sentence,
+    sentence: params.sentence,
+    mode: "breakdown",
+    langCode: params.langCode,
+  });
+  const start = raw.indexOf("{");
+  const end = raw.lastIndexOf("}");
+  if (start === -1 || end === -1 || end < start) throw new Error("Gagal parse analisa.");
+  const parsed = JSON.parse(raw.slice(start, end + 1)) as { tr?: unknown; tk?: unknown };
+  const translation = typeof parsed.tr === "string" ? parsed.tr.trim() : "";
+  const tokens = Array.isArray(parsed.tk)
+    ? (parsed.tk as unknown[])
+        .map((t) => {
+          const tok = t as { w?: unknown; c?: unknown; g?: unknown; p?: unknown; r?: unknown };
+          const cat = typeof tok.c === "string" ? tok.c.trim().toLowerCase() : "";
+          return {
+            word: typeof tok.w === "string" ? tok.w.trim() : "",
+            cat: (POS_CATEGORIES.includes(cat as PosCategory) ? cat : "other") as PosCategory,
+            gloss: typeof tok.g === "string" ? tok.g.trim() : "",
+            pos: typeof tok.p === "string" ? tok.p.trim() : "",
+            translit: typeof tok.r === "string" ? tok.r.trim() : "",
+          };
+        })
+        .filter((t) => t.word.length > 0)
+    : [];
+  if (!tokens.length) throw new Error("Analisa kosong.");
+  return { translation, tokens };
+}
+
+/** Warna per kelas kata — dipakai chip token di mode Analisa. */
+export const POS_COLOR: Record<PosCategory, string> = {
+  noun: "#5AB0FF", verb: "#FF7A9C", adjective: "#F4B740", adverb: "#B58BFF",
+  pronoun: "#4FD1C5", preposition: "#9AE66E", conjunction: "#FFB86B",
+  determiner: "#7FE0E0", numeral: "#E0E0E0", interjection: "#FF9F80",
+  particle: "#C0C0C0", auxiliary: "#FF9CC8", punctuation: "rgba(255,255,255,0.35)",
+  other: "rgba(255,255,255,0.7)",
+};
+
+export const POS_LABEL_ID: Record<PosCategory, string> = {
+  noun: "benda", verb: "kerja", adjective: "sifat", adverb: "keterangan",
+  pronoun: "ganti", preposition: "depan", conjunction: "sambung",
+  determiner: "sandang", numeral: "bilangan", interjection: "seru",
+  particle: "partikel", auxiliary: "bantu", punctuation: "tanda baca", other: "lainnya",
+};
+
+// ── Kosakata tersimpan (localStorage) ────────────────────────────────────────
+
+export interface SavedWord {
+  word: string;
+  meaning: string;
+  langCode: string;
+  example: string;
+  ts: number;
+}
+
+const VOCAB_KEY = "linguo:watch:vocab:v1";
+
+export function getSavedWords(): SavedWord[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(VOCAB_KEY);
+    const arr = raw ? (JSON.parse(raw) as SavedWord[]) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
+
+function keyOf(word: string, langCode: string): string {
+  return `${langCode}::${word.trim().toLowerCase()}`;
+}
+
+export function isWordSaved(word: string, langCode: string): boolean {
+  return getSavedWords().some((w) => keyOf(w.word, w.langCode) === keyOf(word, langCode));
+}
+
+export function saveWord(item: Omit<SavedWord, "ts">): SavedWord[] {
+  const list = getSavedWords().filter(
+    (w) => keyOf(w.word, w.langCode) !== keyOf(item.word, item.langCode)
+  );
+  const next = [{ ...item, ts: Date.now() }, ...list].slice(0, 500);
+  try {
+    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
+  } catch {
+    /* penuh/diblokir — abaikan */
+  }
+  return next;
+}
+
+export function removeSavedWord(word: string, langCode: string): SavedWord[] {
+  const next = getSavedWords().filter(
+    (w) => keyOf(w.word, w.langCode) !== keyOf(word, langCode)
+  );
+  try {
+    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
+  } catch {
+    /* abaikan */
+  }
+  return next;
+}
+
+/** Pisah sebuah kalimat jadi token kata + spasi, biar tiap kata bisa di-tap. */
+export function splitWords(sentence: string): { text: string; isWord: boolean }[] {
+  // Cocokkan gugus huruf (termasuk aksara non-Latin) sebagai kata; sisanya (spasi,
+  // tanda baca) sebagai pemisah yang tak bisa di-tap.
+  const parts = sentence.match(/[\p{L}\p{M}\p{N}]+(?:['’-][\p{L}\p{M}\p{N}]+)*|[^\p{L}\p{M}\p{N}]+/gu);
+  if (!parts) return [{ text: sentence, isWord: false }];
+  return parts.map((p) => ({ text: p, isWord: /[\p{L}\p{M}\p{N}]/u.test(p) }));
+}
+
+/** Bersihkan kata dari tanda baca di ujung sebelum dikirim ke AI. */
+export function cleanWord(word: string): string {
+  return word.replace(/^[^\p{L}\p{M}\p{N}]+|[^\p{L}\p{M}\p{N}]+$/gu, "");
+}

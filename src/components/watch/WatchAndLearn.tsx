@@ -23,6 +23,7 @@ import {
   WatchHistoryItem,
   youtubeThumb,
 } from "@/lib/immersion";
+import VideoLearnPlayer from "./VideoLearnPlayer";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -48,6 +49,7 @@ export default function WatchAndLearn() {
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   const [langQuery, setLangQuery] = useState("");
   const [active, setActive] = useState<ImmersionVideo | null>(null);
+  const [activeLang, setActiveLang] = useState("en");
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
 
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
@@ -130,6 +132,7 @@ export default function WatchAndLearn() {
   const openVideo = useCallback(
     (v: ImmersionVideo, forLang: string) => {
       setActive(v);
+      setActiveLang(forLang);
       const next = pushWatchHistory({
         videoId: v.videoId,
         title: v.title,
@@ -410,42 +413,13 @@ export default function WatchAndLearn() {
         </div>
       )}
 
-      {/* Player modal */}
+      {/* Player belajar — video + transkrip dwibahasa + analisa + tap kata */}
       {active && (
-        <div
-          className="fixed inset-0 z-[90] flex items-center justify-center p-4"
-          style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
-          onClick={() => setActive(null)}
-        >
-          <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between pb-3">
-              <p className="mr-3 line-clamp-1 text-[15px] font-bold text-white">{active.title}</p>
-              <button
-                onClick={() => setActive(null)}
-                className="shrink-0 rounded-full p-1.5 transition-colors hover:bg-white/10"
-                aria-label="Tutup player"
-              >
-                <X className="h-5 w-5 text-white" />
-              </button>
-            </div>
-            <div
-              className="relative w-full overflow-hidden rounded-2xl"
-              style={{ paddingTop: "56.25%", backgroundColor: "#000" }}
-            >
-              <iframe
-                key={active.videoId}
-                src={`https://www.youtube-nocookie.com/embed/${active.videoId}?autoplay=1&cc_load_policy=1&modestbranding=1&rel=0`}
-                title={active.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full border-0"
-              />
-            </div>
-            <p className="mt-3 text-center text-[12px]" style={{ color: SUB }}>
-              Nyalakan subtitle (CC) di player untuk belajar sambil menonton.
-            </p>
-          </div>
-        </div>
+        <VideoLearnPlayer
+          video={active}
+          langCode={activeLang}
+          onClose={() => setActive(null)}
+        />
       )}
     </main>
   );
