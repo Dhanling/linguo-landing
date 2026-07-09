@@ -94,7 +94,7 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
       {avatarUrl ? (
         <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-full w-full object-cover" />
       ) : (
-        <div className="flex h-full w-full items-center justify-center bg-[#16796E]/10 text-4xl font-extrabold text-[#16796E]">
+        <div className="flex h-full w-full items-center justify-center bg-white text-4xl font-extrabold text-[#16796E]">
           {firstName?.[0]?.toUpperCase() || "S"}
         </div>
       )}
