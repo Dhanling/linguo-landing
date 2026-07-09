@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, Hand, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, Hand, X, type LucideIcon } from "lucide-react";
 
 import ClassDetailModal from '@/components/ClassDetailModal';
 import PaymentCard from '@/components/PaymentCard';
@@ -989,7 +989,7 @@ function SetToggle({ on, onClick }: { on: boolean; onClick: () => void }) {
 
 function SetCard({ title, children, footer }: { title?: string; children: ReactNode; footer?: ReactNode }) {
   return (
-    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-36px_rgba(18,23,43,0.5)]">
+    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-white">
       {title ? <div className="px-6 pb-3 pt-5"><h3 className="text-[16px] font-extrabold text-[#12172B]">{title}</h3></div> : null}
       <div className="px-6 pb-5">{children}</div>
       {footer ? <div className="flex justify-end gap-3 border-t border-slate-100 bg-[#F5F6F8] px-6 py-4">{footer}</div> : null}
@@ -1108,7 +1108,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const title = SETTINGS_NAV.find((n) => n.id === pane)?.label || "Pengaturan";
 
   return (
-    <div className="overflow-hidden rounded-[26px] bg-white shadow-[0_28px_60px_-44px_rgba(18,23,43,0.45)] lg:flex">
+    <div className="overflow-hidden rounded-[26px] bg-white lg:flex">
       {/* linguo-patch:akun-settings-design-v2 — frame Claude Design (sub-nav + panel) */}
 
       {/* LEFT: settings sub-nav */}
@@ -1123,7 +1123,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
             const on = n.id === pane;
             return (
               <button key={n.id} onClick={() => setPane(n.id)}
-                className={`flex shrink-0 items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition ${on ? "bg-white shadow-[0_12px_30px_-22px_rgba(18,23,43,0.5)]" : "hover:bg-[#F5F6F8]"}`}>
+                className={`flex shrink-0 items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition ${on ? "bg-white" : "hover:bg-[#F5F6F8]"}`}>
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition"
                   style={on ? { background: "#16796E", color: "#fff" } : { background: "#F5F6F8", color: "#6B7280" }}>
                   <Icon className="h-[18px] w-[18px]" />
@@ -1153,7 +1153,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
             </p>
             <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{title}</h1>
           </div>
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)]">
+          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white">
             <Bell className="h-[19px] w-[19px] text-[#12172B]" />
           </span>
         </div>
@@ -2068,6 +2068,8 @@ export default function AkunPage() {
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka">("beranda"); // [linguo-patch:akun-pustaka-tab-v1]
+  // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
+  const [profileOpen, setProfileOpen] = useState(false);
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -3040,12 +3042,16 @@ export default function AkunPage() {
                 const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 
                 return (
-                  <div className="flex min-h-[calc(100vh-2rem)] flex-col bg-white lg:grid lg:grid-cols-[330px_minmax(0,1fr)]">
+                  <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
 
-                    {/* ════ KOLOM PROFIL (kiri di desktop) ════ */}
-                    <aside className="order-2 flex flex-col lg:order-1 lg:border-r lg:border-slate-100">
-                      {/* header teal (polos, tanpa ornamen) */}
-                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]" />
+                    {/* ════ KOLOM PROFIL (kiri di desktop) — collapsible, default tertutup ════ */}
+                    <aside className={`order-2 flex-col lg:order-1 lg:border-r lg:border-slate-100 ${profileOpen ? "flex" : "hidden"}`}>
+                      {/* header teal (polos, tanpa ornamen) + tombol tutup */}
+                      <div className="relative h-[132px] shrink-0 overflow-hidden bg-[#16796E]">
+                        <button onClick={() => setProfileOpen(false)} aria-label="Tutup profil" className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25">
+                          <X className="h-4 w-4" strokeWidth={2.4} />
+                        </button>
+                      </div>
 
                       {/* body — relative z-10 biar avatar naik di atas header teal (full keliatan) */}
                       <div className="relative z-10 -mt-14 flex min-h-0 flex-1 flex-col px-6 pb-6">
@@ -3061,14 +3067,14 @@ export default function AkunPage() {
 
                         {/* stats: Bahasa Aktif + Sertifikat CEFR */}
                         <div className="mt-5 grid grid-cols-2 gap-3">
-                          <div className="rounded-2xl border border-slate-100 p-4 shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)]">
+                          <div className="rounded-2xl border border-slate-100 p-4">
                             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
                               <Languages className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
                             <div className="text-2xl font-extrabold leading-none text-[#12172B]">{activeLangCount}</div>
                             <div className="mt-1.5 text-[12px] font-medium text-gray-500">Bahasa Aktif</div>
                           </div>
-                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl border border-slate-100 p-4 text-left shadow-[0_8px_24px_-16px_rgba(18,23,43,0.35)] transition hover:-translate-y-0.5 hover:border-[#F2CB05]/60">
+                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl border border-slate-100 p-4 text-left transition hover:-translate-y-0.5 hover:border-[#F2CB05]/60">
                             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2CB05]/20 text-[#B9890A]">
                               <Award className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
@@ -3093,7 +3099,7 @@ export default function AkunPage() {
                                 <button
                                   key={s.id}
                                   onClick={() => setActiveTab("jadwal")}
-                                  className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left shadow-[0_10px_30px_-20px_rgba(18,23,43,0.5)] transition-shadow hover:shadow-[0_16px_36px_-18px_rgba(18,23,43,0.5)]"
+                                  className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left transition-shadow"
                                 >
                                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
                                   <span className="min-w-0 flex-1">
@@ -3127,7 +3133,7 @@ export default function AkunPage() {
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
+                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
                             <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
                             <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
                           </label>
@@ -3136,6 +3142,21 @@ export default function AkunPage() {
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
                             </div>
                           )}
+                          {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil */}
+                          <button
+                            onClick={() => setProfileOpen((v) => !v)}
+                            aria-label="Buka profil"
+                            className="h-11 w-11 shrink-0 overflow-hidden rounded-full ring-2 ring-white transition hover:ring-[#16796E]/40 active:scale-95"
+                          >
+                            {avatarUrl ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={avatarUrl} alt={firstName} className="h-full w-full object-cover" />
+                            ) : (
+                              <span className="flex h-full w-full items-center justify-center bg-[#16796E]/10 text-[15px] font-extrabold text-[#16796E]">
+                                {(firstName || "?").slice(0, 1).toUpperCase()}
+                              </span>
+                            )}
+                          </button>
                         </div>
                       </div>
 
@@ -3172,7 +3193,7 @@ export default function AkunPage() {
                                 tabIndex={0}
                                 onClick={() => setPendingModalReg(reg)}
                                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPendingModalReg(reg); } }}
-                                className="group cursor-pointer rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
+                                className="group cursor-pointer rounded-3xl bg-white p-3 text-left ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
                                 <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
                                   {photo ? (
@@ -3186,7 +3207,7 @@ export default function AkunPage() {
                                       <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                     </>
                                   )}
-                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700 shadow-sm">
+                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700">
                                     <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum Bayar
                                   </span>
                                 </div>
@@ -3240,7 +3261,7 @@ export default function AkunPage() {
                                 <button
                                   key={reg.id}
                                   onClick={() => setDetailReg(reg)}
-                                  className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] transition-transform hover:-translate-y-1"
+                                  className="group rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1"
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg}`}>
                                     {photo ? (
@@ -3303,7 +3324,7 @@ export default function AkunPage() {
                                 setMateriView("mandiri");
                                 if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
                               }}
-                              className="group rounded-3xl bg-white p-3 text-left shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)] ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
+                              className="group rounded-3xl bg-white p-3 text-left ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
                             >
                               <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
                                 {mandiri.photo ? (
@@ -3314,7 +3335,7 @@ export default function AkunPage() {
                                 ) : (
                                   <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
                                 )}
-                                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E] shadow-sm">
+                                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
                                   <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
                                 </span>
                               </div>
@@ -3340,7 +3361,7 @@ export default function AkunPage() {
                           <h2 className="text-[20px] font-extrabold text-[#12172B]">Pengajar Kamu</h2>
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
                             {teacherList.map((t, i) => (
-                              <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4 shadow-[0_24px_50px_-30px_rgba(18,23,43,0.5)]">
+                              <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4">
                                 <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${ICON_TINT[i % ICON_TINT.length]}`}>{initials(t.name)}</span>
                                 <span className="min-w-0 flex-1">
                                   <span className="block truncate text-[16px] font-extrabold text-[#12172B]">{t.name}</span>
@@ -3454,7 +3475,7 @@ export default function AkunPage() {
                   return (
                     <button
                       onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
-                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-white shadow-[0_16px_36px_-22px_rgba(18,23,43,0.55)] ring-2 ring-[#16796E]" : "hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 border border-slate-100 bg-white" : "w-full"}`}
+                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-white ring-2 ring-[#16796E]" : "hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 border border-slate-100 bg-white" : "w-full"}`}
                     >
                       <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl font-extrabold ${pal.tintBg} ${pal.tintText}`}>{mlangGlyph(r.language)}</span>
                       <span className="min-w-0 flex-1">
@@ -3477,16 +3498,16 @@ export default function AkunPage() {
                       <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">Kelas &amp; Materi</h1>
                       <div className="mt-3 inline-flex gap-1 rounded-2xl bg-[#EEF1F4] p-1">
                         {([["live", "Kelas Live"], ["mandiri", "Belajar Mandiri"], ["jelajahi", "Jelajahi Bahasa"]] as const).map(([k, label]) => (
-                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white shadow-sm" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+                          <button key={k} onClick={() => { setMateriView(k); if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&view=${k}`); }} className={`rounded-xl px-3.5 py-1.5 text-[12px] font-bold transition ${materiView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
                         ))}
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition focus-within:ring-2 focus-within:ring-[#16796E]/30">
+                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition focus-within:ring-2 focus-within:ring-[#16796E]/30">
                         <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
                         <input value={materiSearch} onChange={(e) => setMateriSearch(e.target.value)} placeholder="Cari sesi atau materi…" className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400" />
                       </label>
-                      <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:bg-slate-50">
+                      <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-white transition hover:bg-slate-50">
                         <Bell className="h-[19px] w-[19px] text-[#12172B]" />
                         <span className="absolute right-2.5 top-2.5 h-2.5 w-2.5 rounded-full bg-rose-500 ring-2 ring-white" />
                       </button>
@@ -3500,7 +3521,7 @@ export default function AkunPage() {
                     {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (
-                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
                         <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
@@ -3538,7 +3559,7 @@ export default function AkunPage() {
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
                                 : "Belum terjadwal";
                               return (
-                                <div className="overflow-hidden rounded-3xl bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                                <div className="overflow-hidden rounded-3xl bg-white">
                                   <div className="relative flex items-center gap-5 overflow-hidden px-6 py-6 sm:px-7" style={{ background: pal.color }}>
                                     {langPhoto && (
                                       <>
@@ -3597,7 +3618,7 @@ export default function AkunPage() {
                                       const d = new Date(s.scheduled_at);
                                       const n = (selected.sessions_used || 0) + i + 1;
                                       return (
-                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20 hover:shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)]">
+                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20">
                                           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-[13px] font-extrabold text-[#12172B]">{String(n).padStart(2, "0")}</span>
                                           <div className="min-w-0 flex-1">
                                             <div className="flex flex-wrap items-center gap-2">
@@ -3629,7 +3650,7 @@ export default function AkunPage() {
                       <div className="flex flex-col lg:min-h-0 lg:flex-1">
                         {MateriTopBar}
                         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
-                          <div className="w-full max-w-md rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:border-0 lg:bg-transparent lg:shadow-none">
+                          <div className="w-full max-w-md rounded-3xl border border-slate-100 bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
                             <p className="mt-1 text-[12px] font-medium text-gray-400">Punya paket e-learning? Buka tab <strong>Belajar Mandiri</strong> di atas. Atau daftar kelas live di bawah.</p>
@@ -3659,7 +3680,7 @@ export default function AkunPage() {
                       const selPal = LANGPAL[LANGS.indexOf(selLang) % LANGPAL.length];
                       const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
                       return (
-                        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:rounded-none lg:border-0 lg:shadow-none">
+                        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:rounded-none lg:border-0 lg:shadow-none">
                           {MateriTopBar}
                           <div className="flex flex-col gap-5 px-6 pb-6 pt-4 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:px-8 lg:pb-8">
                           <div>
@@ -3675,7 +3696,7 @@ export default function AkunPage() {
                               const pal = LANGPAL[LANGS.indexOf(l) % LANGPAL.length];
                               const isSel = l.slug === selLang.slug;
                               return (
-                                <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-transparent shadow-[0_16px_36px_-26px_rgba(18,23,43,0.5)] ring-2 ring-[#16796E]" : "border-slate-100 hover:border-[#16796E]/30"}`}>
+                                <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-transparent ring-2 ring-[#16796E]" : "border-slate-100 hover:border-[#16796E]/30"}`}>
                                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[16px] font-extrabold" style={{ background: pal.bg, color: pal.tx }}>{l.glyph}</span>
                                   <span className="min-w-0 flex-1">
                                     <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
@@ -3691,7 +3712,7 @@ export default function AkunPage() {
                           </div>
 
                           {/* detail bahasa kepilih */}
-                          <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+                          <div className="rounded-3xl border border-slate-200 bg-white p-5">
                             <div className="flex items-center gap-3">
                               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[18px] font-extrabold" style={{ background: selPal.bg, color: selPal.tx }}>{selLang.glyph}</span>
                               <div className="min-w-0">
@@ -3755,7 +3776,7 @@ export default function AkunPage() {
           {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning (digital_purchases) */}
           {activeTab === "pustaka" && (
             <motion.div key="pustaka" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+              <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white">
                 <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
                   <div>
                     <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Perpustakaan Saya</span></p>
