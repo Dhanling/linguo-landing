@@ -117,6 +117,8 @@ export default function VideoLearnPlayer({
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
   // True saat transkrip jatuh ke jalur AI (yt-asr) yang lambat — buat pesan loading.
   const [asrRunning, setAsrRunning] = useState(false);
+  // True selagi bacaan Latin (romaji/pinyin/dll) diisi di background utk bahasa non-Latin.
+  const [translitLoading, setTranslitLoading] = useState(false);
 
   const [analyze, setAnalyze] = useState(false);
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
@@ -230,6 +232,7 @@ export default function VideoLearnPlayer({
     let cancelled = false;
     setTxState("loading");
     setAsrRunning(false);
+    setTranslitLoading(false);
     setCues([]);
     setBreakdowns({});
     fetchTranscript(video.videoId, langCode, {
@@ -243,14 +246,17 @@ export default function VideoLearnPlayer({
         // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
         // lalu romaji/pinyin menyusul tanpa menahan render.
         if (isNonLatin(langCode) && r.cues.some((c) => !c.translit)) {
-          transliterateLines(r.cues.map((c) => c.target), langCode).then((tr) => {
-            if (cancelled || tr.length !== r.cues.length) return;
-            setCues((prev) =>
-              prev.length === tr.length
-                ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
-                : prev
-            );
-          });
+          setTranslitLoading(true);
+          transliterateLines(r.cues.map((c) => c.target), langCode)
+            .then((tr) => {
+              if (cancelled || tr.length !== r.cues.length) return;
+              setCues((prev) =>
+                prev.length === tr.length
+                  ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
+                  : prev
+              );
+            })
+            .finally(() => !cancelled && setTranslitLoading(false));
         }
       } else {
         setTxState("none");
@@ -618,6 +624,12 @@ export default function VideoLearnPlayer({
             <span className="text-[11.5px]" style={{ color: SUB }}>
               {txState === "ready" ? `${cues.length} baris` : ""}
             </span>
+            {translitLoading && (
+              <span className="ml-auto inline-flex items-center gap-1.5 text-[11.5px]" style={{ color: SUB }}>
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                Menyiapkan bacaan Latin…
+              </span>
+            )}
           </div>
 
           <div

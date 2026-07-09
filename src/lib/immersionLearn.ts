@@ -319,25 +319,35 @@ export async function transliterateLines(
   const out = new Array<string>(lines.length).fill("");
   if (!isNonLatin(langCode) || !lines.length) return out;
   const CHUNK = 40;
+  // Jalankan semua batch PARALEL (bukan berurutan) biar bacaan Latin muncul cepat —
+  // transkrip panjang (ratusan baris) tak perlu nunggu batch demi batch. Tiap batch
+  // best-effort: yang gagal dibiarkan kosong, tak menahan yang lain.
+  const jobs: Promise<void>[] = [];
   for (let i = 0; i < lines.length; i += CHUNK) {
+    const start = i;
     const slice = lines.slice(i, i + CHUNK);
-    try {
-      const res = await fetch("/api/translit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lines: slice, langCode }),
-      });
-      if (!res.ok) continue;
-      const data = (await res.json()) as { translit?: unknown };
-      const arr = Array.isArray(data.translit) ? data.translit : [];
-      for (let j = 0; j < slice.length; j++) {
-        const v = arr[j];
-        if (typeof v === "string") out[i + j] = v.trim();
-      }
-    } catch {
-      /* best-effort — biarkan kosong */
-    }
+    jobs.push(
+      (async () => {
+        try {
+          const res = await fetch("/api/translit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ lines: slice, langCode }),
+          });
+          if (!res.ok) return;
+          const data = (await res.json()) as { translit?: unknown };
+          const arr = Array.isArray(data.translit) ? data.translit : [];
+          for (let j = 0; j < slice.length; j++) {
+            const v = arr[j];
+            if (typeof v === "string") out[start + j] = v.trim();
+          }
+        } catch {
+          /* best-effort — biarkan kosong */
+        }
+      })()
+    );
   }
+  await Promise.all(jobs);
   return out;
 }
 
