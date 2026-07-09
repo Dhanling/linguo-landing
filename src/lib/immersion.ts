@@ -99,19 +99,34 @@ export interface ImmersionCategory {
   emoji: string;
   q: string;
   news?: boolean;
+  fresh?: boolean; // urutkan by tanggal (konten terbaru) — berita, vlog
 }
 
+// Kartun & Lagu Anak dibumbui nama franchise global yang lazim dijuluki/di-sub
+// ke banyak bahasa (SpongeBob, Peppa, Bluey, Cocomelon, dll). YouTube menilai kata
+// di `q` sebagai ranking lunak — franchise-nya naik ke atas tanpa mematikan recall
+// untuk bahasa yang tak punya dub-nya (relevanceLanguage tetap membias ke target).
 export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
   { id: "populer", label: "Populer", emoji: "✨", q: "popular trending" },
-  { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment" },
-  { id: "kartun", label: "Kartun", emoji: "🧸", q: "cartoon animation" },
-  { id: "berita", label: "Berita", emoji: "📰", q: "news", news: true },
+  { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment funny" },
+  {
+    id: "kartun",
+    label: "Kartun",
+    emoji: "🧸",
+    q: "cartoon animation Peppa Pig SpongeBob Bluey Paw Patrol Pocoyo Tom and Jerry",
+  },
+  { id: "berita", label: "Berita", emoji: "📰", q: "news", news: true, fresh: true },
   { id: "musik", label: "Musik", emoji: "🎵", q: "official music video" },
-  { id: "film", label: "Film & TV", emoji: "🎥", q: "movie clip scene" },
+  { id: "film", label: "Film & TV", emoji: "🎥", q: "movie clip trailer scene" },
   { id: "olahraga", label: "Olahraga", emoji: "⚽", q: "sports highlights" },
-  { id: "teknologi", label: "Teknologi", emoji: "💡", q: "technology review" },
-  { id: "vlog", label: "Vlog", emoji: "📹", q: "daily vlog" },
-  { id: "anak", label: "Anak", emoji: "🎈", q: "kids learning song" },
+  { id: "teknologi", label: "Teknologi", emoji: "💡", q: "technology review gadget" },
+  { id: "vlog", label: "Vlog", emoji: "📹", q: "daily vlog", fresh: true },
+  {
+    id: "anak",
+    label: "Lagu Anak",
+    emoji: "🎈",
+    q: "kids songs nursery rhymes Cocomelon Pinkfong Baby Shark Super Simple Songs",
+  },
 ];
 
 // Bangun query final buat sebuah kategori pada bahasa tertentu: topik + tag native

@@ -88,7 +88,7 @@ export default function WatchAndLearn() {
       const page = await searchImmersionVideos({
         query: q,
         language: l.code,
-        order: c.news ? "date" : undefined,
+        order: c.news || c.fresh ? "date" : undefined,
         max: 18,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
@@ -113,7 +113,7 @@ export default function WatchAndLearn() {
     const page = await searchImmersionVideos({
       query: q,
       language: lang.code,
-      order: cat.news ? "date" : undefined,
+      order: cat.news || cat.fresh ? "date" : undefined,
       max: 18,
       pageToken: nextToken,
     });
