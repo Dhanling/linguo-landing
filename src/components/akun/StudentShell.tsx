@@ -2,7 +2,7 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -23,6 +23,8 @@ const NAV: NavItem[] = [
   // [simulasi-inshell-v1] jadi tab (sidebar tetap tampil), bukan route terpisah lagi
   { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck },
   { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
+  // Entry point global ke flashcard kata tersimpan (halaman /kosakata).
+  { key: "kosakata", label: "Kosakata Saya", icon: Layers, href: "/kosakata" },
   { key: "pustaka", label: "Perpustakaan", icon: Library },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
   { key: "sertifikat", label: "Sertifikat", icon: Star },
