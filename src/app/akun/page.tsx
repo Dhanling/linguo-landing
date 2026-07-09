@@ -2076,6 +2076,8 @@ export default function AkunPage() {
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka">("beranda"); // [linguo-patch:akun-pustaka-tab-v1]
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
   const [profileOpen, setProfileOpen] = useState(false);
+  // [beranda-kelas-tabs-v1] tab "Kelas Live" vs "Belajar Mandiri" di beranda biar rapi
+  const [berandaTab, setBerandaTab] = useState<"live" | "mandiri">("live");
   const [lmsSesi, setLmsSesi] = useState<string | null>(null);
   // Kelas & Materi master-detail UI state
   const [materiSel, setMateriSel] = useState<string | null>(null);
@@ -3190,11 +3192,11 @@ export default function AkunPage() {
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
                             </div>
                           )}
-                          {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil */}
+                          {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil — rounded rectangle biar seragam sama lonceng notif */}
                           <button
                             onClick={() => setProfileOpen((v) => !v)}
                             aria-label="Buka profil"
-                            className="h-11 w-11 shrink-0 overflow-hidden rounded-full ring-2 ring-white transition hover:ring-[#16796E]/40 active:scale-95"
+                            className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:ring-2 hover:ring-[#16796E]/40 active:scale-95"
                           >
                             {avatarUrl ? (
                               // eslint-disable-next-line @next/next/no-img-element
@@ -3286,17 +3288,28 @@ export default function AkunPage() {
                         </div>
                       )}
 
-                      {/* [linguo-patch:beranda-split-live-mandiri-v1] Kelas Kamu dipecah: Kelas Live (cards live → ClassDetailModal) vs Belajar Mandiri (e-learning/LMS) */}
-                      {/* ── Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
+                      {/* [beranda-kelas-tabs-v1] Kelas Kamu jadi tab: Kelas Live vs Belajar Mandiri biar rapi */}
                       <div>
-                        <div className="flex items-center justify-between">
-                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Kelas Live</h2>
-                          {liveRegs.length > 0 && (
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <div className="inline-flex items-center gap-1 rounded-2xl bg-white p-1">
+                            {([["live", "Kelas Live", Video], ["mandiri", "Belajar Mandiri", GraduationCap]] as const).map(([k, label, Icon]) => (
+                              <button
+                                key={k}
+                                onClick={() => setBerandaTab(k)}
+                                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-[14px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                              >
+                                <Icon className="h-4 w-4" strokeWidth={2.4} /> {label}
+                              </button>
+                            ))}
+                          </div>
+                          {berandaTab === "live" && liveRegs.length > 0 && (
                             <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
                           )}
                         </div>
 
-                        {liveRegs.length > 0 ? (
+                        {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
+                        {berandaTab === "live" && (
+                        liveRegs.length > 0 ? (
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
                             {liveRegs.map((reg: any, idx: number) => {
                               const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
@@ -3356,13 +3369,12 @@ export default function AkunPage() {
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
                             <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
                           </div>
+                        )
                         )}
-                      </div>
 
-                      {/* ── Belajar Mandiri (e-learning / LMS) ── [linguo-patch:beranda-split-live-mandiri-v1] */}
-                      {mandiri && (
-                        <div>
-                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Belajar Mandiri</h2>
+                        {/* ── Tab: Belajar Mandiri (e-learning / LMS) ── [beranda-kelas-tabs-v1] */}
+                        {berandaTab === "mandiri" && (
+                        mandiri ? (
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
                             {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
                             <button
@@ -3400,8 +3412,16 @@ export default function AkunPage() {
                               </div>
                             </button>
                           </div>
-                        </div>
-                      )}
+                        ) : (
+                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                            <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
+                            <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
+                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Lihat Paket</button>
+                          </div>
+                        )
+                        )}
+                      </div>
 
                       {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
                       {teacherList.length > 0 && (
