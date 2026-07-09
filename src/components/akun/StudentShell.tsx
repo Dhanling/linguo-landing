@@ -2,7 +2,7 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, type LucideIcon } from "lucide-react";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -21,6 +21,7 @@ const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
   { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck, href: "/akun/simulasi" },
+  { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
   { key: "pustaka", label: "Perpustakaan", icon: Library },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
   { key: "sertifikat", label: "Sertifikat", icon: Star },
