@@ -123,9 +123,11 @@ async function fetchRawCuesFromServer(
     const res = await fetch("/api/yt-transcript", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // Katalog rekomendasi sudah dibias ke bahasa target; tetap izinkan track lain
-      // supaya video yang caption-nya cuma di bahasa asal pun bisa tampil interaktif.
-      body: JSON.stringify({ videoId, language: langCode, allowForeign: true }),
+      // Katalog sudah dibias ke bahasa target, jadi WAJIB caption di bahasa itu.
+      // Kalau tak ada, JANGAN ambil track bahasa lain (dulu `allowForeign: true`
+      // bikin video Spanyol tanpa caption Spanyol malah nampilkan track Hungaria) —
+      // biarkan null supaya jatuh ke ASR yang mentranskrip audio di bahasa target.
+      body: JSON.stringify({ videoId, language: langCode, allowForeign: false }),
     });
     if (!res.ok) return { cues: [], trackLang: "", reason: "error" };
     const data = (await res.json()) as { cues?: RawCue[]; trackLang?: string; reason?: string };
@@ -218,6 +220,62 @@ async function fetchAsrTranscript(
   }
 }
 
+// ── Pecah per kalimat ────────────────────────────────────────────────────────
+// Cue dari caption/ASR sering menggabung beberapa kalimat jadi satu baris panjang.
+// Kita pecah tiap cue jadi satu-kalimat-per-baris biar transkrip rapi & fokus.
+
+/** Pisah teks jadi kalimat. Pakai Intl.Segmenter (paham banyak bahasa), fallback regex. */
+function splitSentences(text: string, locale?: string): string[] {
+  const t = text.trim();
+  if (!t) return [];
+  try {
+    const Seg = (Intl as unknown as { Segmenter?: typeof Intl.Segmenter }).Segmenter;
+    if (Seg) {
+      const seg = new Seg(locale, { granularity: "sentence" });
+      const parts = Array.from(seg.segment(t), (s) => s.segment.trim()).filter(Boolean);
+      if (parts.length) return parts;
+    }
+  } catch {
+    /* fallback regex */
+  }
+  return t.match(/[^.!?…]+[.!?…]*/g)?.map((s) => s.trim()).filter(Boolean) ?? [t];
+}
+
+/**
+ * Pecah satu cue jadi beberapa cue satu-kalimat. Timing dibagi proporsional dengan
+ * panjang tiap kalimat. Hanya dipecah kalau terjemahan (base) & transliterasi bisa
+ * dipisah ke jumlah kalimat yang SAMA — kalau tidak, cue dibiarkan utuh biar
+ * terjemahan tak salah pasang dengan kalimat targetnya.
+ */
+function splitCueBySentence(cue: LearnCue): LearnCue[] {
+  const targets = splitSentences(cue.target);
+  if (targets.length <= 1) return [cue];
+  const bases = cue.base ? splitSentences(cue.base) : null;
+  const translits = cue.translit ? splitSentences(cue.translit) : null;
+  if (bases && bases.length !== targets.length) return [cue];
+  if (translits && translits.length !== targets.length) return [cue];
+
+  const dur = Math.max(0.001, cue.end - cue.start);
+  const total = targets.reduce((n, s) => n + s.length, 0) || 1;
+  let acc = 0;
+  return targets.map((tg, i) => {
+    const start = cue.start + dur * (acc / total);
+    acc += tg.length;
+    const end = i === targets.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    return {
+      start,
+      end: Math.max(end, start + 0.3),
+      target: tg,
+      base: bases ? bases[i] : "",
+      ...(translits ? { translit: translits[i] } : {}),
+    };
+  });
+}
+
+function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
+  return cues.flatMap(splitCueBySentence);
+}
+
 /**
  * Ambil transkrip dwibahasa untuk sebuah video YouTube. Dua jalur:
  * (1) CEPAT — server Next fetch + parse caption YouTube, lalu Edge Function
@@ -236,15 +294,51 @@ export async function fetchTranscript(
   const raw = await fetchRawCuesFromServer(videoId, langCode);
   if (raw.cues.length) {
     const cues = await translateCues(raw.cues, raw.trackLang, langCode);
-    return { cues, reason: "ok" };
+    return { cues: splitCuesBySentence(cues), reason: "ok" };
   }
 
   // 2) Jalur andal: transkripsi audio AI.
   opts?.onAsr?.();
   const asr = await fetchAsrTranscript(videoId, langCode);
-  if (asr.length) return { cues: asr, reason: "ok" };
+  if (asr.length) return { cues: splitCuesBySentence(asr), reason: "ok" };
 
   return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "empty" };
+}
+
+/**
+ * Transliterasi sekumpulan baris (kalimat target) ke aksara Latin lewat
+ * `/api/translit` (Gemini). Dipakai untuk bahasa non-Latin yang transkripnya tak
+ * membawa bacaan Latin. Diproses per-batch biar respons tetap andal & selaras
+ * indeksnya. Balikin array sepanjang `lines` (item kosong "" untuk yang gagal) —
+ * best-effort, non-Latin dipanggil di background biar transkrip tampil dulu.
+ */
+export async function transliterateLines(
+  lines: string[],
+  langCode: string
+): Promise<string[]> {
+  const out = new Array<string>(lines.length).fill("");
+  if (!isNonLatin(langCode) || !lines.length) return out;
+  const CHUNK = 40;
+  for (let i = 0; i < lines.length; i += CHUNK) {
+    const slice = lines.slice(i, i + CHUNK);
+    try {
+      const res = await fetch("/api/translit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lines: slice, langCode }),
+      });
+      if (!res.ok) continue;
+      const data = (await res.json()) as { translit?: unknown };
+      const arr = Array.isArray(data.translit) ? data.translit : [];
+      for (let j = 0; j < slice.length; j++) {
+        const v = arr[j];
+        if (typeof v === "string") out[i + j] = v.trim();
+      }
+    } catch {
+      /* best-effort — biarkan kosong */
+    }
+  }
+  return out;
 }
 
 // ── word-info (arti kata, grammar, analisa kalimat) ──────────────────────────

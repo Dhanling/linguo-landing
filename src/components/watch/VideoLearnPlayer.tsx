@@ -13,7 +13,11 @@ import {
   ChevronRight,
   ListChecks,
   Loader2,
+  Maximize,
+  Minimize,
   Palette,
+  PanelRightClose,
+  PanelRightOpen,
   Pause,
   Play,
   RotateCcw,
@@ -23,11 +27,13 @@ import {
 import {
   fetchTranscript,
   getSentenceBreakdown,
+  isNonLatin,
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
   SentenceBreakdown,
   splitWords,
+  transliterateLines,
 } from "@/lib/immersionLearn";
 import { ImmersionVideo, youtubeThumb } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
@@ -93,6 +99,7 @@ export default function VideoLearnPlayer({
   recommendations?: ImmersionVideo[];
   onSelectVideo?: (v: ImmersionVideo) => void;
 }) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const hostRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const playerRef = useRef<any>(null);
@@ -116,6 +123,45 @@ export default function VideoLearnPlayer({
 
   const [anchor, setAnchor] = useState<Anchor | null>(null);
 
+  // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
+  const [fullscreen, setFullscreen] = useState(false);
+  const [showPanel, setShowPanel] = useState(true);
+
+  // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
+  useEffect(() => {
+    const onChange = () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const d = document as any;
+      const fsEl = document.fullscreenElement ?? d.webkitFullscreenElement ?? null;
+      setFullscreen(fsEl === rootRef.current);
+    };
+    document.addEventListener("fullscreenchange", onChange);
+    document.addEventListener("webkitfullscreenchange", onChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", onChange);
+      document.removeEventListener("webkitfullscreenchange", onChange);
+    };
+  }, []);
+
+  const toggleFullscreen = useCallback(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const d = document as any;
+    const active = document.fullscreenElement ?? d.webkitFullscreenElement;
+    try {
+      if (active) {
+        (document.exitFullscreen ?? d.webkitExitFullscreen)?.call(document);
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const e = el as any;
+        (el.requestFullscreen ?? e.webkitRequestFullscreen)?.call(el);
+      }
+    } catch {
+      /* abaikan — sebagian browser (iOS) tak izinkan fullscreen elemen */
+    }
+  }, []);
+
   // ── Muat YouTube player ─────────────────────────────────────────────────────
   useEffect(() => {
     let cancelled = false;
@@ -130,6 +176,10 @@ export default function VideoLearnPlayer({
           rel: 0,
           cc_load_policy: 0,
           playsinline: 1,
+          // Matikan fullscreen bawaan YouTube — fullscreen iframe menutupi overlay
+          // kita (subtitle + transkrip). Kita pakai tombol fullscreen sendiri yang
+          // men-fullscreen-kan seluruh player biar overlay tetap tampil.
+          fs: 0,
         },
         events: {
           onReady: () => {
@@ -189,6 +239,19 @@ export default function VideoLearnPlayer({
       if (r.cues.length) {
         setCues(r.cues);
         setTxState("ready");
+        // Bahasa non-Latin (Jepang, Mandarin, dll): transkrip dari server tak bawa
+        // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
+        // lalu romaji/pinyin menyusul tanpa menahan render.
+        if (isNonLatin(langCode) && r.cues.some((c) => !c.translit)) {
+          transliterateLines(r.cues.map((c) => c.target), langCode).then((tr) => {
+            if (cancelled || tr.length !== r.cues.length) return;
+            setCues((prev) =>
+              prev.length === tr.length
+                ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
+                : prev
+            );
+          });
+        }
       } else {
         setTxState("none");
         setShowCC(true); // fallback ke caption bawaan YouTube
@@ -337,6 +400,7 @@ export default function VideoLearnPlayer({
 
   return (
     <div
+      ref={rootRef}
       className="fixed inset-0 z-[90] flex flex-col"
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
@@ -356,15 +420,20 @@ export default function VideoLearnPlayer({
 
       {/* Isi — split view */}
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
-        {/* Kiri: video + baris fokus + kontrol */}
-        <div className="flex min-h-0 flex-col lg:w-[62%]">
-          <div className="relative w-full shrink-0 bg-black" style={{ aspectRatio: "16 / 9" }}>
-            <div ref={hostRef} className="absolute inset-0 h-full w-full" />
-            {!ready && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Loader2 className="h-7 w-7 animate-spin" color={SUB} />
-              </div>
-            )}
+        {/* Kiri: video + baris fokus + kontrol. Full width saat panel disembunyikan. */}
+        <div className={`flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
+          {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
+              dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
+              layar & masih menyisakan ruang untuk subtitle + kontrol. */}
+          <div className="relative flex w-full shrink-0 items-center justify-center bg-black" style={{ maxHeight: "70vh" }}>
+            <div className="relative w-full" style={{ aspectRatio: "16 / 9", maxWidth: "calc(70vh * 16 / 9)" }}>
+              <div ref={hostRef} className="absolute inset-0 h-full w-full" />
+              {!ready && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Loader2 className="h-7 w-7 animate-spin" color={SUB} />
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Baris fokus — kalimat aktif */}
@@ -458,6 +527,37 @@ export default function VideoLearnPlayer({
             >
               <Type className="h-4 w-4" /> {FONT_LEVELS[fontIdx].label}
             </button>
+
+            {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
+                buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
+            <button
+              onClick={() => setShowPanel((v) => !v)}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              style={{
+                backgroundColor: showPanel ? "rgba(26,158,158,0.16)" : CARD,
+                border: `1px solid ${showPanel ? TEAL : BORDER}`,
+                color: showPanel ? TEAL : "#fff",
+              }}
+              title={showPanel ? "Sembunyikan transkrip" : "Tampilkan transkrip"}
+            >
+              {showPanel ? (
+                <PanelRightClose className="h-4 w-4" />
+              ) : (
+                <PanelRightOpen className="h-4 w-4" />
+              )}
+              Transkrip
+            </button>
+
+            {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
+            <button
+              onClick={toggleFullscreen}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+              title={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
+            >
+              {fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
+              {fullscreen ? "Keluar" : "Layar penuh"}
+            </button>
           </div>
 
           {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
@@ -503,7 +603,8 @@ export default function VideoLearnPlayer({
           )}
         </div>
 
-        {/* Kanan: transkrip penuh */}
+        {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip. */}
+        {showPanel && (
         <div
           className="flex min-h-0 flex-1 flex-col border-t lg:border-l lg:border-t-0"
           style={{ borderColor: BORDER }}
@@ -599,6 +700,7 @@ export default function VideoLearnPlayer({
               })}
           </div>
         </div>
+        )}
       </div>
 
       {anchor && (
@@ -738,13 +840,30 @@ function FocusLine({
 // "future" (belum).
 type KaraokeState = "sung" | "active" | "future";
 
+// Perkiraan detik-per-karakter untuk kecepatan bicara natural. Dipakai membatasi
+// durasi sapuan karaoke: caption & transkrip AI (yt-asr) sering MENAHAN satu baris
+// di layar jauh lebih lama dari durasi ucapan sebenarnya (jeda/hening di akhir,
+// segmen ASR yang kelewat panjang). Kalau sapuan dibentang ke sepanjang window itu,
+// ia merangkak jauh di belakang audio. Jadi kalau window lebih panjang dari
+// perkiraan bicara, kita pakai perkiraannya — sapuan tak akan lebih lambat dari suara.
+const CJK_RE = /[぀-ヿ㐀-鿿가-힯]/;
+function estSpeechDur(text: string): number {
+  const chars = text.length || 1;
+  // Aksara CJK jauh lebih padat (sedikit karakter per detik) dari Latin.
+  const secPerChar = CJK_RE.test(text) ? 0.2 : 0.075;
+  return chars * secPerChar;
+}
+
 function karaokeTokens(
   cue: LearnCue,
   time: number
 ): { text: string; isWord: boolean; state: KaraokeState; progress: number }[] {
   const toks = splitWords(cue.target);
   const total = cue.target.length || 1;
-  const dur = Math.max(0.001, cue.end - cue.start);
+  const windowDur = Math.max(0.001, cue.end - cue.start);
+  // Durasi efektif = window sebenarnya, TAPI tak lebih panjang dari perkiraan bicara
+  // (mengoreksi baris yang tertahan lama). Kalau window sudah ketat, itu yang dipakai.
+  const dur = Math.max(0.4, Math.min(windowDur, estSpeechDur(cue.target)));
   const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
