@@ -54,15 +54,23 @@ function renderRich(text: string) {
   });
 }
 
+type AnswerEntry = { value: string | number | boolean; correct: boolean; skipped: boolean };
+
+// Varian animasi geser antar soal — arah mengikuti maju (+1) / mundur (-1)
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir >= 0 ? 48 : -48, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir >= 0 ? -48 : 48, opacity: 0 }),
+};
+
 export default function PlacementTest({ curriculum, questions }: Props) {
   const { meta } = curriculum;
   const [screen, setScreen] = useState<Screen>("intro");
   const [currentQ, setCurrentQ] = useState(0);
-  const [selected, setSelected] = useState<string | number | boolean | null>(null);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [score, setScore] = useState(0);
-  // Rekap benar/salah per soal — TIDAK ditampilkan saat menjawab, hanya di layar hasil.
-  const [log, setLog] = useState<{ correct: boolean; skipped: boolean }[]>([]);
+  // Arah transisi: 1 = maju ke soal berikutnya, -1 = mundur ke soal sebelumnya
+  const [direction, setDirection] = useState(1);
+  // Jawaban per soal (null = belum dijawab). Bisa diubah lewat tombol "Soal sebelumnya".
+  const [answers, setAnswers] = useState<(AnswerEntry | null)[]>([]);
   const startTimeRef = useRef<number>(0);
 
   const question = questions[currentQ];
@@ -72,40 +80,47 @@ export default function PlacementTest({ curriculum, questions }: Props) {
     if (screen === "quiz" && currentQ === 0) startTimeRef.current = Date.now();
   }, [screen, currentQ]);
 
+  const computeScore = (arr: (AnswerEntry | null)[]) =>
+    arr.reduce((sum, a, i) => sum + (a?.correct ? DIFFICULTY_POINTS[questions[i].difficulty] : 0), 0);
+
   const startTest = () => {
-    setScreen("quiz"); setCurrentQ(0); setScore(0); setLog([]); setSelected(null); setShowFeedback(false);
+    setScreen("quiz"); setCurrentQ(0); setDirection(1);
+    setAnswers(Array(questions.length).fill(null));
     trackEvent("placement_test_quiz_started", { language: meta?.name ?? "" });
   };
 
-  // Auto-submit on click (multiple) or explicit submit (fill/dragDrop/missing/matching)
-  // For complex types (dragDrop, missing, matching) the renderer computes correctness
-  // and passes a boolean flag as `isCorrectOverride`
+  // Rekam jawaban lalu langsung geser ke soal berikutnya — tanpa jeda notifikasi.
+  // Untuk tipe kompleks (dragDrop/missing/matching) renderer menghitung benar/salah
+  // dan mengoper flag boolean lewat `isCorrectOverride`.
+  const recordAndAdvance = (entry: AnswerEntry) => {
+    const next = [...answers];
+    next[currentQ] = entry;
+    setAnswers(next);
+    if (currentQ + 1 < questions.length) {
+      setDirection(1);
+      setCurrentQ((i) => i + 1);
+    } else {
+      setScreen("result");
+      trackEvent("placement_test_completed", { language: meta?.name ?? "", score: computeScore(next) });
+    }
+  };
+
   const submitAnswer = (value: string | number | boolean, isCorrectOverride?: boolean) => {
-    if (showFeedback) return;
-    setSelected(value);
     const correct = isCorrectOverride !== undefined
       ? isCorrectOverride
       : (question.type === "multiple" || question.type === "fill" || question.type === "fillChoice") && value === (question as any).correct;
-    if (correct) setScore((s) => s + DIFFICULTY_POINTS[question.difficulty]);
-    // Catat hasil untuk rekap akhir — TANPA memberi tahu benar/salah sekarang.
-    setLog((prev) => [...prev, { correct, skipped: false }]);
-    setShowFeedback(true);
+    recordAndAdvance({ value, correct, skipped: false });
   };
 
-  // Pass / skip — dicatat sebagai dilewati, tanpa skor & tanpa reveal
-  const passAnswer = () => {
-    if (showFeedback) return;
-    setSelected("__PASSED__");
-    setLog((prev) => [...prev, { correct: false, skipped: true }]);
-    setShowFeedback(true);
+  // Lewati soal — dicatat sebagai dilewati, tanpa skor.
+  const passAnswer = () => recordAndAdvance({ value: "__PASSED__", correct: false, skipped: true });
+
+  // Mundur ke soal sebelumnya (jawaban lama tetap tersimpan & bisa diubah).
+  const goBack = () => {
+    if (currentQ > 0) { setDirection(-1); setCurrentQ((i) => i - 1); }
   };
 
-  const nextQuestion = () => {
-    setShowFeedback(false);
-    setSelected(null);
-    if (currentQ + 1 < questions.length) setCurrentQ((i) => i + 1);
-    else { setScreen("result"); trackEvent("placement_test_completed", { language: meta?.name ?? "", score }); }
-  };
+  const selected = answers[currentQ]?.value ?? null;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
@@ -120,20 +135,20 @@ export default function PlacementTest({ curriculum, questions }: Props) {
             currentQ={currentQ}
             total={questions.length}
             progress={progress}
+            direction={direction}
             selected={selected}
-            showFeedback={showFeedback}
             onSubmit={submitAnswer}
             onPass={passAnswer}
-            onNext={nextQuestion}
+            onBack={goBack}
             langSlug={meta.slug}
           />
         )}
         {screen === "result" && (
           <ResultScreen
             key="result"
-            score={score}
+            score={computeScore(answers)}
             questions={questions}
-            log={log}
+            log={answers.map((a) => ({ correct: !!a?.correct, skipped: !!a?.skipped }))}
             meta={meta}
             timeElapsedSec={Math.floor((Date.now() - startTimeRef.current) / 1000)}
             onRetake={startTest}
@@ -218,18 +233,19 @@ function InfoCard({ icon, value, label }: { icon: string; value: string; label: 
 // QUIZ (AUTO-SUBMIT on click)
 // ================================================
 function QuizScreen(props: {
-  question: Question; currentQ: number; total: number; progress: number;
-  selected: string | number | boolean | null; showFeedback: boolean;
+  question: Question; currentQ: number; total: number; progress: number; direction: number;
+  selected: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrectOverride?: boolean) => void;
   onPass: () => void;
-  onNext: () => void; langSlug: string;
+  onBack: () => void; langSlug: string;
 }) {
-  const { question, currentQ, total, progress, selected, showFeedback, onSubmit, onPass, onNext, langSlug } = props;
+  const { question, currentQ, total, progress, direction, selected, onSubmit, onPass, onBack, langSlug } = props;
   const [fillValue, setFillValue] = useState("");
-  useEffect(() => { setFillValue(""); }, [question.id]);
-  const isPassed = selected === "__PASSED__";
-  // Catatan: benar/salah SENGAJA tidak diungkap saat menjawab. Rekap ada di layar hasil.
-  const answered = showFeedback;
+  // Saat pindah soal, isi ulang input teks dari jawaban tersimpan (kalau ada).
+  useEffect(() => {
+    setFillValue(typeof selected === "string" && selected !== "__PASSED__" ? selected : "");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question.id]);
 
   const diffCls = question.difficulty === "A1" ? "bg-emerald-100 text-emerald-700" :
                    question.difficulty === "A2" ? "bg-sky-100 text-sky-700" :
@@ -237,9 +253,10 @@ function QuizScreen(props: {
                                                    "bg-rose-100 text-rose-700";
 
   return (
-    <motion.section initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
+    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="min-h-screen flex items-center justify-center px-6 py-10 md:py-16">
       <div className="max-w-2xl w-full">
+        {/* Header progres — di luar area geser, update instan */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2 text-sm">
             <div className="flex items-center gap-2">
@@ -252,132 +269,119 @@ function QuizScreen(props: {
           </div>
           <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
             <motion.div className="h-full bg-[#1A9E9E] rounded-full"
-              initial={{ width: 0 }} animate={{ width: progress + "%" }} transition={{ duration: 0.4 }} />
+              initial={false} animate={{ width: progress + "%" }} transition={{ duration: 0.4 }} />
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8 mb-6">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-3">
-            {question.type === "dragDrop" || question.type === "matching"
-              ? (question as any).prompt
-              : (question as any).question}
-          </h2>
-          {question.type === "dragDrop" && (
-            <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
-              <span className="font-semibold text-[#1A9E9E] not-italic">Terjemahan: </span>
-              {(question as any).translation}
-            </p>
-          )}
-          {question.type === "fill" && (question as any).context && (
-            <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{(question as any).context}</p>
-          )}
+        {/* Kartu soal — geser (slide) saat ganti soal */}
+        <AnimatePresence mode="wait" custom={direction} initial={false}>
+          <motion.div
+            key={currentQ}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter" animate="center" exit="exit"
+            transition={{ duration: 0.26, ease: "easeInOut" }}
+            className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-8"
+          >
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-3">
+              {question.type === "dragDrop" || question.type === "matching"
+                ? (question as any).prompt
+                : (question as any).question}
+            </h2>
+            {question.type === "dragDrop" && (
+              <p className="text-sm md:text-base text-gray-600 italic mb-5 bg-[#1A9E9E]/5 border-l-4 border-[#1A9E9E] px-4 py-3 rounded-r-xl">
+                <span className="font-semibold text-[#1A9E9E] not-italic">Terjemahan: </span>
+                {(question as any).translation}
+              </p>
+            )}
+            {question.type === "fill" && (question as any).context && (
+              <p className="text-sm md:text-base text-gray-600 italic mb-5 font-mono bg-gray-50 px-4 py-3 rounded-xl">{(question as any).context}</p>
+            )}
 
-          <div className="space-y-2 mt-6">
-            {question.type === "multiple" && question.options.map((opt, i) => {
-              const isSelected = selected === i;
-              // Tanpa reveal: hanya highlight pilihan yg dipilih (netral teal), sisanya diredupkan.
-              let cls = "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
-              if (answered && isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
-              else if (answered) cls = "border-gray-200 bg-white opacity-50";
-              else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/5";
-              return (
-                <button key={i} onClick={() => onSubmit(i)} disabled={answered}
-                  className={"w-full text-left px-5 py-4 rounded-2xl border-2 transition-all " + cls}>
-                  <div className="flex items-center gap-3">
-                    <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-[#1A9E9E] text-white" : "bg-gray-100 text-gray-600")}>
-                      {String.fromCharCode(65 + i)}
-                    </span>
-                    <span className="text-gray-900">{opt}</span>
-                  </div>
-                </button>
-              );
-            })}
+            <div className="space-y-2 mt-6">
+              {question.type === "multiple" && question.options.map((opt, i) => {
+                const isSelected = selected === i;
+                // Tanpa reveal: hanya highlight pilihan yg dipilih (netral teal), tetap bisa diubah.
+                const cls = isSelected
+                  ? "border-[#1A9E9E] bg-[#1A9E9E]/5"
+                  : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50 cursor-pointer";
+                return (
+                  <button key={i} onClick={() => onSubmit(i)}
+                    className={"w-full text-left px-5 py-4 rounded-2xl border-2 transition-all " + cls}>
+                    <div className="flex items-center gap-3">
+                      <span className={"flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold flex-shrink-0 " + (isSelected ? "bg-[#1A9E9E] text-white" : "bg-gray-100 text-gray-600")}>
+                        {String.fromCharCode(65 + i)}
+                      </span>
+                      <span className="text-gray-900">{opt}</span>
+                    </div>
+                  </button>
+                );
+              })}
 
-            {question.type === "fill" && (
-              <div className="flex gap-2">
-                <input type="text" value={fillValue}
-                  onChange={(e) => setFillValue(e.target.value)}
-                  onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim() && !showFeedback) onSubmit(fillValue.toLowerCase().trim()); }}
-                  disabled={showFeedback} placeholder="Ketik jawaban lalu Enter..."
-                  className={"flex-1 px-5 py-4 rounded-2xl border-2 focus:outline-none transition-colors " + (answered ? "border-[#1A9E9E] bg-[#1A9E9E]/10" : "border-gray-200 focus:border-[#1A9E9E]")}
-                />
-                {!showFeedback && (
+              {question.type === "fill" && (
+                <div className="flex gap-2">
+                  <input type="text" value={fillValue}
+                    onChange={(e) => setFillValue(e.target.value)}
+                    onKeyDown={(e) => { if (e.key === "Enter" && fillValue.trim()) onSubmit(fillValue.toLowerCase().trim()); }}
+                    placeholder="Ketik jawaban lalu Enter..."
+                    className="flex-1 px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#1A9E9E] focus:outline-none transition-colors"
+                  />
                   <button onClick={() => fillValue.trim() && onSubmit(fillValue.toLowerCase().trim())} disabled={!fillValue.trim()}
                     className="px-6 py-4 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed">
                     OK
                   </button>
-                )}
-              </div>
-            )}
-
-            {question.type === "fillChoice" && (
-              <div className="grid grid-cols-2 gap-2">
-                {question.options.map((opt, i) => {
-                  const isSelected = selected === opt;
-                  let cls = "border-gray-200 bg-white hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer";
-                  if (answered && isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
-                  else if (answered) cls = "border-gray-200 bg-white opacity-50";
-                  else if (isSelected) cls = "border-[#1A9E9E] bg-[#1A9E9E]/10";
-                  return (
-                    <button key={i} onClick={() => onSubmit(opt)} disabled={answered}
-                      className={"w-full px-5 py-4 rounded-2xl border-2 text-center transition-all text-lg font-semibold " + cls}>
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-gray-900">{opt}</span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-
-            {question.type === "dragDrop" && (
-              <DragDropRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
-            )}
-
-            {question.type === "missing" && (
-              <MissingRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
-            )}
-
-            {question.type === "matching" && (
-              <MatchingRenderer question={question} showFeedback={showFeedback} onSubmit={onSubmit} />
-            )}
-          </div>
-
-          <AnimatePresence>
-            {answered && (
-              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden">
-                <div className="mt-5 p-4 rounded-2xl bg-[#1A9E9E]/5 border border-[#1A9E9E]/20 flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#1A9E9E] flex items-center justify-center flex-shrink-0">
-                    {isPassed ? <Icons.SkipForward className="w-4 h-4 text-white" strokeWidth={3} /> : <Icons.Check className="w-4 h-4 text-white" strokeWidth={3} />}
-                  </div>
-                  <p className="text-sm text-gray-700">
-                    {isPassed ? "Soal dilewati." : "Jawaban tersimpan."} Rekap benar/salah &amp; pembahasan muncul di akhir.
-                  </p>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+              )}
 
-        {!showFeedback && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-center">
-            <button onClick={onPass}
+              {question.type === "fillChoice" && (
+                <div className="grid grid-cols-2 gap-2">
+                  {question.options.map((opt, i) => {
+                    const isSelected = selected === opt;
+                    const cls = isSelected
+                      ? "border-[#1A9E9E] bg-[#1A9E9E]/10"
+                      : "border-gray-200 bg-white hover:border-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer";
+                    return (
+                      <button key={i} onClick={() => onSubmit(opt)}
+                        className={"w-full px-5 py-4 rounded-2xl border-2 text-center transition-all text-lg font-semibold " + cls}>
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-gray-900">{opt}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {question.type === "dragDrop" && (
+                <DragDropRenderer question={question} initialValue={selected} onSubmit={onSubmit} />
+              )}
+
+              {question.type === "missing" && (
+                <MissingRenderer question={question} initialValue={selected} onSubmit={onSubmit} />
+              )}
+
+              {question.type === "matching" && (
+                <MatchingRenderer question={question} initialValue={selected} onSubmit={onSubmit} />
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Footer: kembali ke soal sebelumnya + lewati soal */}
+        <div className="mt-6 flex items-center justify-between gap-3">
+          {currentQ > 0 ? (
+            <button onClick={onBack}
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
-              <Icons.SkipForward className="w-4 h-4" />
-              Tidak tahu, lewati soal
+              <Icons.ArrowLeft className="w-4 h-4" />
+              Soal sebelumnya
             </button>
-          </motion.div>
-        )}
-
-        {showFeedback && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
-            <button onClick={onNext}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-full font-bold hover:bg-gray-700 shadow-lg transition-all">
-              {currentQ + 1 < total ? "Soal berikutnya" : "Lihat hasil"}
-              <Icons.ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        )}
+          ) : <span />}
+          <button onClick={onPass}
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100 transition-all">
+            <Icons.SkipForward className="w-4 h-4" />
+            Tidak tahu, lewati soal
+          </button>
+        </div>
       </div>
     </motion.section>
   );
@@ -825,40 +829,46 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
 // ════════════════════════════════════════════════════════════════════════════
 // DragDrop Renderer — tap-to-select pattern (mobile-friendly)
 // ════════════════════════════════════════════════════════════════════════════
-function DragDropRenderer({ question, showFeedback, onSubmit }: {
+// Rekonstruksi urutan token dragDrop dari jawaban tersimpan (best-effort untuk token duplikat)
+function reconstructDragIdx(val: string | number | boolean | null, shuffled: string[]): number[] {
+  if (typeof val !== "string" || val === "__PASSED__" || val === "") return [];
+  const used = new Set<number>();
+  const idx: number[] = [];
+  for (const w of val.split(" ")) {
+    const found = shuffled.findIndex((t, i) => t === w && !used.has(i));
+    if (found === -1) return [];
+    used.add(found); idx.push(found);
+  }
+  return idx;
+}
+
+function DragDropRenderer({ question, initialValue, onSubmit }: {
   question: DragDropQuestion;
-  showFeedback: boolean;
+  initialValue: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
 }) {
-  // Shuffle tokens once per question (stable within one question)
+  // Shuffle tokens once per mount (kartu di-remount tiap ganti soal)
   const [shuffled] = useState(() =>
     [...question.tokens]
       .map((t) => ({ t, k: Math.random() }))
       .sort((a, b) => a.k - b.k)
       .map((x) => x.t)
   );
-  // User's current answer order (array of indices into shuffled)
-  const [answerIdx, setAnswerIdx] = useState<number[]>([]);
+  // Urutan jawaban user (indeks ke shuffled) — dipulihkan dari jawaban tersimpan bila ada
+  const [answerIdx, setAnswerIdx] = useState<number[]>(() => reconstructDragIdx(initialValue, shuffled));
   const answerTokens = answerIdx.map((i) => shuffled[i]);
 
-  // Reset when question changes
-  useEffect(() => {
-    setAnswerIdx([]);
-  }, [question.id]);
-
   const pickToken = (i: number) => {
-    if (showFeedback) return;
     if (answerIdx.includes(i)) return;
     setAnswerIdx([...answerIdx, i]);
   };
   const unpickToken = (positionInAnswer: number) => {
-    if (showFeedback) return;
     setAnswerIdx(answerIdx.filter((_, idx) => idx !== positionInAnswer));
   };
 
   const allPicked = answerIdx.length === shuffled.length;
   const handleCheck = () => {
-    if (!allPicked || showFeedback) return;
+    if (!allPicked) return;
     const isCorrect = answerTokens.join(" ") === question.correct.join(" ");
     onSubmit(answerTokens.join(" "), isCorrect);
   };
@@ -871,22 +881,15 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
           <p className="text-center text-sm text-slate-400 italic py-4">Tap kata di bawah untuk menyusun kalimat</p>
         ) : (
           <div className="flex flex-wrap gap-2 items-center">
-            {answerTokens.map((tok, i) => {
-              // Tanpa reveal: token yg sudah disusun tetap netral (teal), tak ada hijau/merah.
-              const cls = showFeedback
-                ? "bg-[#1A9E9E]/10 border-[#1A9E9E]/40 text-slate-900"
-                : "bg-white border-slate-300 text-slate-900";
-              return (
-                <button
-                  key={i}
-                  onClick={() => unpickToken(i)}
-                  disabled={showFeedback}
-                  className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " + cls + (!showFeedback ? " hover:border-slate-500 active:scale-95" : "")}
-                >
-                  {tok}
-                </button>
-              );
-            })}
+            {answerTokens.map((tok, i) => (
+              <button
+                key={i}
+                onClick={() => unpickToken(i)}
+                className="px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all bg-white border-slate-300 text-slate-900 hover:border-slate-500 active:scale-95"
+              >
+                {tok}
+              </button>
+            ))}
           </div>
         )}
       </div>
@@ -899,7 +902,7 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
             <button
               key={i}
               onClick={() => pickToken(i)}
-              disabled={used || showFeedback}
+              disabled={used}
               className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
                 (used
                   ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
@@ -911,16 +914,14 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
         })}
       </div>
 
-      {/* Submit — tanpa reveal, langsung simpan */}
-      {!showFeedback && (
-        <button
-          onClick={handleCheck}
-          disabled={!allPicked}
-          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
-        >
-          Simpan Jawaban
-        </button>
-      )}
+      {/* Submit — langsung simpan & lanjut ke soal berikutnya */}
+      <button
+        onClick={handleCheck}
+        disabled={!allPicked}
+        className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+      >
+        Simpan Jawaban
+      </button>
     </div>
   );
 }
@@ -928,9 +929,26 @@ function DragDropRenderer({ question, showFeedback, onSubmit }: {
 // ════════════════════════════════════════════════════════════════════════════
 // Missing Renderer — fill blanks by tapping from word bank
 // ════════════════════════════════════════════════════════════════════════════
-function MissingRenderer({ question, showFeedback, onSubmit }: {
+// Pulihkan isian "missing" (blanks + opsi terpakai) dari jawaban tersimpan
+function reconstructMissing(val: string | number | boolean | null, options: string[], numBlanks: number): { filled: (string | null)[]; used: number[] } {
+  const empty = { filled: Array(numBlanks).fill(null) as (string | null)[], used: [] as number[] };
+  if (typeof val !== "string" || val === "__PASSED__" || val === "") return empty;
+  const vals = val.split(",");
+  if (vals.length !== numBlanks) return empty;
+  const filled: (string | null)[] = [];
+  const used: number[] = [];
+  for (const v of vals) {
+    if (v === "") { filled.push(null); continue; }
+    const optIdx = options.findIndex((o, i) => o === v && !used.includes(i));
+    filled.push(v);
+    if (optIdx !== -1) used.push(optIdx);
+  }
+  return { filled, used };
+}
+
+function MissingRenderer({ question, initialValue, onSubmit }: {
   question: MissingQuestion;
-  showFeedback: boolean;
+  initialValue: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
 }) {
   // Parse template: split by "___" to get parts; blanks are between parts
@@ -938,16 +956,11 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
   // parts[i] is text, blanks[i] is between parts[i] and parts[i+1]
   const numBlanks = question.blanks.length;
 
-  const [filled, setFilled] = useState<(string | null)[]>(() => Array(numBlanks).fill(null));
-  const [usedOptions, setUsedOptions] = useState<number[]>([]);
-
-  useEffect(() => {
-    setFilled(Array(numBlanks).fill(null));
-    setUsedOptions([]);
-  }, [question.id]);
+  const [restored] = useState(() => reconstructMissing(initialValue, question.options, numBlanks));
+  const [filled, setFilled] = useState<(string | null)[]>(restored.filled);
+  const [usedOptions, setUsedOptions] = useState<number[]>(restored.used);
 
   const pickOption = (optIdx: number) => {
-    if (showFeedback) return;
     // Find next empty blank
     const nextEmpty = filled.findIndex((v) => v === null);
     if (nextEmpty === -1) return;
@@ -958,7 +971,6 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
   };
 
   const clearBlank = (blankIdx: number) => {
-    if (showFeedback) return;
     const val = filled[blankIdx];
     if (!val) return;
     // Find which option matches this value (first unused-for-clearing occurrence)
@@ -971,7 +983,7 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
 
   const allFilled = filled.every((v) => v !== null);
   const handleCheck = () => {
-    if (!allFilled || showFeedback) return;
+    if (!allFilled) return;
     const isCorrect = filled.every((v, i) => v === question.blanks[i]);
     onSubmit(filled.join(","), isCorrect);
   };
@@ -987,12 +999,10 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
               {i < numBlanks && (
                 <button
                   onClick={() => clearBlank(i)}
-                  disabled={showFeedback || !filled[i]}
+                  disabled={!filled[i]}
                   className={"inline-block mx-1 px-3 py-1 rounded-lg border-2 text-sm font-bold align-middle min-w-[80px] " +
                     (filled[i]
-                      ? (showFeedback
-                          ? "bg-[#1A9E9E]/10 border-[#1A9E9E]/40 text-slate-900"
-                          : "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer")
+                      ? "bg-white border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5 cursor-pointer"
                       : "bg-white border-dashed border-slate-400 text-slate-300")}
                 >
                   {filled[i] || "___"}
@@ -1011,7 +1021,7 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
             <button
               key={i}
               onClick={() => pickOption(i)}
-              disabled={used || showFeedback || allFilled}
+              disabled={used || allFilled}
               className={"px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all " +
                 (used
                   ? "bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed"
@@ -1025,15 +1035,13 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
         })}
       </div>
 
-      {!showFeedback && (
-        <button
-          onClick={handleCheck}
-          disabled={!allFilled}
-          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
-        >
-          Simpan Jawaban
-        </button>
-      )}
+      <button
+        onClick={handleCheck}
+        disabled={!allFilled}
+        className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+      >
+        Simpan Jawaban
+      </button>
     </div>
   );
 }
@@ -1041,9 +1049,18 @@ function MissingRenderer({ question, showFeedback, onSubmit }: {
 // ════════════════════════════════════════════════════════════════════════════
 // Matching Renderer — tap left card then right card to pair
 // ════════════════════════════════════════════════════════════════════════════
-function MatchingRenderer({ question, showFeedback, onSubmit }: {
+// Pulihkan pasangan "matching" dari jawaban tersimpan
+function reconstructMatching(val: string | number | boolean | null, n: number): (number | null)[] {
+  const empty = Array(n).fill(null) as (number | null)[];
+  if (typeof val !== "string" || val === "__PASSED__" || val === "") return empty;
+  const parts = val.split(",");
+  if (parts.length !== n) return empty;
+  return parts.map((p) => { const num = parseInt(p, 10); return Number.isNaN(num) ? null : num; });
+}
+
+function MatchingRenderer({ question, initialValue, onSubmit }: {
   question: MatchingQuestion;
-  showFeedback: boolean;
+  initialValue: string | number | boolean | null;
   onSubmit: (v: string | number | boolean, isCorrect?: boolean) => void;
 }) {
   // Stable shuffle of right-side items (so they don't align 1:1 visually)
@@ -1054,17 +1071,11 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
       .map((x) => x.i)
   );
 
-  // pairing: left index (original) → right index (original) or null
-  const [pairing, setPairing] = useState<(number | null)[]>(() => Array(question.pairs.length).fill(null));
+  // pairing: left index (original) → right index (original) or null — dipulihkan bila ada jawaban
+  const [pairing, setPairing] = useState<(number | null)[]>(() => reconstructMatching(initialValue, question.pairs.length));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
 
-  useEffect(() => {
-    setPairing(Array(question.pairs.length).fill(null));
-    setSelectedLeft(null);
-  }, [question.id]);
-
   const pickLeft = (leftIdx: number) => {
-    if (showFeedback) return;
     if (pairing[leftIdx] !== null) {
       // Unpair
       const newPairing = [...pairing];
@@ -1077,7 +1088,6 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
   };
 
   const pickRight = (rightIdx: number) => {
-    if (showFeedback) return;
     if (selectedLeft === null) return;
     // Check: is this right already paired to another left? If yes, unpair that first
     const newPairing = [...pairing];
@@ -1090,7 +1100,7 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
 
   const allPaired = pairing.every((p) => p !== null);
   const handleCheck = () => {
-    if (!allPaired || showFeedback) return;
+    if (!allPaired) return;
     // Correct if every left i is paired to right i (since original pairs[i].left ↔ pairs[i].right)
     const isCorrect = pairing.every((rightIdx, leftIdx) => rightIdx === leftIdx);
     onSubmit(pairing.join(","), isCorrect);
@@ -1112,8 +1122,7 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
               <button
                 key={leftIdx}
                 onClick={() => pickLeft(leftIdx)}
-                disabled={showFeedback}
-                className={"w-full px-3 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all " + cls + (!showFeedback ? " hover:border-[#1A9E9E] active:scale-95 cursor-pointer" : "")}
+                className={"w-full px-3 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all hover:border-[#1A9E9E] active:scale-95 cursor-pointer " + cls}
               >
                 <div className="flex items-center justify-between gap-2">
                   <span>{pair.left}</span>
@@ -1129,14 +1138,14 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
           {rightOrder.map((origRightIdx, displayIdx) => {
             const isPairedTo = pairing.findIndex((r) => r === origRightIdx);
             const isPaired = isPairedTo !== -1;
-            const canClick = selectedLeft !== null && !showFeedback;
+            const canClick = selectedLeft !== null;
             let cls = "bg-white border-slate-300 text-slate-900";
             if (isPaired) cls = "bg-slate-100 border-slate-400 text-slate-700";
             return (
               <button
                 key={displayIdx}
                 onClick={() => pickRight(origRightIdx)}
-                disabled={showFeedback || !canClick}
+                disabled={!canClick}
                 className={"w-full px-3 py-3 rounded-xl border-2 text-sm font-medium text-left transition-all " + cls + (canClick && !isPaired ? " hover:border-[#1A9E9E] active:scale-95 cursor-pointer" : "")}
               >
                 <div className="flex items-center justify-between gap-2">
@@ -1149,15 +1158,13 @@ function MatchingRenderer({ question, showFeedback, onSubmit }: {
         </div>
       </div>
 
-      {!showFeedback && (
-        <button
-          onClick={handleCheck}
-          disabled={!allPaired}
-          className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
-        >
-          Simpan Jawaban
-        </button>
-      )}
+      <button
+        onClick={handleCheck}
+        disabled={!allPaired}
+        className="w-full px-6 py-3.5 bg-[#1A9E9E] text-white rounded-2xl font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#147a7a] transition"
+      >
+        Simpan Jawaban
+      </button>
     </div>
   );
 }
