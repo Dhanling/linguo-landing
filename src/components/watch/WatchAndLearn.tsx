@@ -44,6 +44,17 @@ const LANG_KEY = "linguo:watch:lang:v1";
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
+
+// [linguo-patch:watch-orient-frame0-v1] Deteksi orientasi ASLI video via thumbnail
+// `frame0.jpg`. Kenapa: YouTube Data API tak kasih orientasi, dan durasi bukan proxy
+// andal (Shorts kini bisa >60 dtk, jadi bocor ke tab "Video"; video ber-durasi null
+// juga salah masuk). Tapi `https://i.ytimg.com/vi/<id>/frame0.jpg` = frame pertama
+// dengan RASIO ASPEK ASLI (portrait → tinggi>lebar), beda dari hqdefault yang selalu
+// 480×360 (letterboxed). Keyless, tanpa kuota API. Rasio tak pernah berubah → cache
+// permanen (module-level, lintas ganti bahasa/kategori). true = portrait (Shorts).
+const orientCache = new Map<string, boolean>();
+const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
+
 // Tab "Siap": video yang transkripnya sudah tersimpan → buka = instan, tanpa
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
@@ -58,6 +69,9 @@ export default function WatchAndLearn() {
   // (klip vertikal pendek) / video (landscape lebih panjang). YouTube Data API
   // tak kasih orientasi, jadi dipisah pakai durasi — proxy paling andal.
   const [orient, setOrient] = useState<"all" | "shorts" | "video">("all");
+  // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
+  // (orientCache mutable di module scope, bukan dependency React).
+  const [orientTick, setOrientTick] = useState(0);
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
@@ -76,16 +90,46 @@ export default function WatchAndLearn() {
   const cat =
     IMMERSION_CATEGORIES.find((c) => c.id === category) ?? IMMERSION_CATEGORIES[0];
 
-  // [linguo-patch:watch-orient-toggle-v1] Terapkan filter jenis konten ke grid.
-  // Video tanpa durasi terbaca dianggap "video" (landscape) — biar tak hilang
-  // dari tampilan default; hanya masuk "shorts" kalau durasinya jelas ≤60 dtk.
-  const shownVideos = useMemo(() => {
-    if (orient === "shorts")
-      return videos.filter((v) => v.duration != null && v.duration <= SHORTS_MAX_SEC);
-    if (orient === "video")
-      return videos.filter((v) => v.duration == null || v.duration > SHORTS_MAX_SEC);
-    return videos;
+  // [linguo-patch:watch-orient-frame0-v1] Saat filter Shorts/Video aktif, deteksi
+  // orientasi asli tiap video via frame0.jpg (sekali per videoId, hasilnya di-cache).
+  // Hanya jalan kalau orient !== "all" biar tak muat gambar ekstra saat tak perlu.
+  useEffect(() => {
+    if (orient === "all") return;
+    const pending = videos.filter((v) => !orientCache.has(v.videoId));
+    if (!pending.length) return;
+    let cancelled = false;
+    pending.forEach((v) => {
+      const img = new Image();
+      img.onload = () => {
+        orientCache.set(v.videoId, img.naturalHeight > img.naturalWidth);
+        if (!cancelled) setOrientTick((n) => n + 1);
+      };
+      // frame0 tak tersedia → biarkan tak terdeteksi; filter jatuh ke fallback durasi.
+      img.onerror = () => {
+        if (!cancelled) setOrientTick((n) => n + 1);
+      };
+      img.src = frame0Url(v.videoId);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [videos, orient]);
+
+  // [linguo-patch:watch-orient-frame0-v1] Terapkan filter jenis konten ke grid.
+  // Prioritas orientasi asli (frame0); selama deteksi belum selesai / frame0 gagal,
+  // pakai proxy durasi sebagai fallback (≤60 dtk → Shorts). Video tanpa durasi
+  // dianggap landscape sementara, tapi begitu frame0 resolve, penilaian dikoreksi.
+  const shownVideos = useMemo(() => {
+    if (orient === "all") return videos;
+    return videos.filter((v) => {
+      const portrait = orientCache.get(v.videoId);
+      if (portrait !== undefined) return orient === "shorts" ? portrait : !portrait;
+      if (orient === "shorts") return v.duration != null && v.duration <= SHORTS_MAX_SEC;
+      return v.duration == null || v.duration > SHORTS_MAX_SEC;
+    });
+    // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videos, orient, orientTick]);
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
