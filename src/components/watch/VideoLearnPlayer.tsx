@@ -31,6 +31,7 @@ import {
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
+  prewarmTranscripts,
   SentenceBreakdown,
   splitWords,
   transliterateLines,
@@ -278,6 +279,14 @@ export default function VideoLearnPlayer({
       cancelled = true;
     };
   }, [video.videoId, langCode]);
+
+  // Hangatkan cache transkrip untuk video rekomendasi di background biar saat
+  // penonton loncat ke video berikutnya, subtitle + terjemahannya sudah siap
+  // (tak menunggu ASR ~1 menit). Best-effort & terdedup per sesi.
+  useEffect(() => {
+    if (!recommendations.length) return;
+    prewarmTranscripts(recommendations.map((v) => v.videoId), langCode);
+  }, [recommendations, langCode]);
 
   // Terapkan CC bawaan + SINKRONKAN bahasanya ke bahasa yang sedang dipelajari.
   // Tanpa ini, track CC "lengket" ke bahasa video sebelumnya (mis. buka video

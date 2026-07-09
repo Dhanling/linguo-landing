@@ -24,7 +24,7 @@ import {
   WatchHistoryItem,
   youtubeThumb,
 } from "@/lib/immersion";
-import { getSavedWords } from "@/lib/immersionLearn";
+import { getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
@@ -116,6 +116,9 @@ export default function WatchAndLearn() {
       setVideos(results);
       setNextToken(page.nextPageToken);
       setState(results.length ? "done" : "empty");
+      // Hangatkan cache transkrip di background biar subtitle + terjemahan
+      // "langsung muncul" saat video mana pun di grid diklik (tak nunggu ASR ~1 mnt).
+      prewarmTranscripts(results.map((v) => v.videoId), l.code);
     },
     []
   );
@@ -146,6 +149,7 @@ export default function WatchAndLearn() {
     });
     setNextToken(page.nextPageToken);
     setState("done");
+    prewarmTranscripts(more.map((v) => v.videoId), lang.code);
   }, [nextToken, state, cat, lang, committedText]);
 
   const pickLang = useCallback((code: string) => {

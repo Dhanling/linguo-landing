@@ -373,6 +373,55 @@ export async function fetchTranscript(
   return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "empty" };
 }
 
+// ── Prewarm cache transkrip (background) ─────────────────────────────────────
+// Biar subtitle + terjemahan "langsung muncul" saat video dibuka: hangatkan cache
+// untuk video di katalog/rekomendasi SEBELUM diklik. Sekali sebuah (video, bahasa)
+// diproses, hasilnya tersimpan di Supabase → viewer berikutnya (siapa pun) baca
+// instan, tak perlu tunggu caption/ASR (~1 menit) lagi. Best-effort, konkurensi
+// kecil biar tak membanjiri Edge Function (yt-asr) atau kena rate limit Gemini.
+
+const prewarmSeen = new Set<string>(); // (video, bahasa) yang sudah dijadwalkan di sesi ini
+const prewarmQueue: { videoId: string; langCode: string }[] = [];
+let prewarmActive = 0;
+const PREWARM_CONCURRENCY = 2;
+
+const VIDEO_ID_RE = /^[A-Za-z0-9_-]{11}$/;
+
+async function prewarmWorker(): Promise<void> {
+  const job = prewarmQueue.shift();
+  if (!job) return;
+  prewarmActive++;
+  try {
+    // fetchTranscript sudah: cek cache → caption+terjemah → ASR, lalu simpan hasil
+    // ke cache. Jadi cukup panggil sekali; kalau sudah ada di cache, langsung balik.
+    await fetchTranscript(job.videoId, job.langCode);
+  } catch {
+    /* best-effort — jangan ganggu apa pun kalau gagal */
+  } finally {
+    prewarmActive--;
+    void prewarmWorker(); // ambil job berikutnya
+  }
+}
+
+/**
+ * Hangatkan cache transkrip untuk sederet video di background (fire-and-forget).
+ * Aman dipanggil berkali-kali: tiap (video, bahasa) hanya diproses sekali per sesi,
+ * dan konkurensi dibatasi supaya tak membebani server. Dipakai saat katalog /
+ * rekomendasi tampil biar video yang nanti diklik sudah siap subtitle-nya.
+ */
+export function prewarmTranscripts(videoIds: string[], langCode: string): void {
+  if (typeof window === "undefined" || !langCode) return;
+  for (const videoId of videoIds) {
+    if (!VIDEO_ID_RE.test(videoId)) continue;
+    const key = `${langCode}::${videoId}`;
+    if (prewarmSeen.has(key)) continue;
+    prewarmSeen.add(key);
+    prewarmQueue.push({ videoId, langCode });
+  }
+  // Isi slot worker yang kosong sampai konkurensi penuh.
+  while (prewarmActive < PREWARM_CONCURRENCY && prewarmQueue.length) void prewarmWorker();
+}
+
 /**
  * Transliterasi sekumpulan baris (kalimat target) ke aksara Latin lewat
  * `/api/translit` (Gemini). Dipakai untuk bahasa non-Latin yang transkripnya tak
@@ -485,6 +534,74 @@ export async function getWordGrammar(params: {
 }): Promise<string> {
   const text = await callWordInfo({ ...params, mode: "grammar" });
   return text.trim();
+}
+
+// ── Belajar mendalami kata (mode layar penuh) ────────────────────────────────
+// Lebih kaya dari tooltip: tingkat kesopanan (register), kapan/bagaimana dipakai,
+// nuansa, kata mirip yang gampang ketuker, contoh kalimat — plus tanya-jawab
+// lanjutan bebas. Backed by route Next /api/word-deep (Gemini).
+
+export interface WordSimilar {
+  word: string;
+  tl?: string;
+  diff: string;
+}
+
+export interface WordExample {
+  target: string;
+  tl?: string;
+  gloss: string;
+}
+
+export interface WordDeepDive {
+  register: string; // "netral" | "formal" | "casual" | "sopan" | "vulgar" | ""
+  registerNote: string;
+  usage: string;
+  nuance: string;
+  similar: WordSimilar[];
+  examples: WordExample[];
+}
+
+/** Ambil kartu belajar mendalam untuk sebuah kata (register, penggunaan, dll). */
+export async function getWordDeepDive(params: {
+  word: string;
+  sentence: string;
+  langCode: string;
+}): Promise<WordDeepDive> {
+  const res = await fetch("/api/word-deep", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...params, mode: "overview" }),
+  });
+  if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
+  const data = (await res.json()) as Partial<WordDeepDive> & { error?: string };
+  if (data.error) throw new Error(data.error);
+  return {
+    register: data.register ?? "",
+    registerNote: data.registerNote ?? "",
+    usage: data.usage ?? "",
+    nuance: data.nuance ?? "",
+    similar: Array.isArray(data.similar) ? data.similar : [],
+    examples: Array.isArray(data.examples) ? data.examples : [],
+  };
+}
+
+/** Tanya-jawab lanjutan bebas tentang sebuah kata (mis. "bedanya dengan …?"). */
+export async function askWordQuestion(params: {
+  word: string;
+  sentence: string;
+  langCode: string;
+  question: string;
+}): Promise<string> {
+  const res = await fetch("/api/word-deep", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...params, mode: "ask" }),
+  });
+  if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
+  const data = (await res.json()) as { answer?: string; error?: string };
+  if (data.error) throw new Error(data.error);
+  return (data.answer ?? "").trim();
 }
 
 /** Kelas kata kanonik untuk pewarnaan token dalam analisa kalimat. */
