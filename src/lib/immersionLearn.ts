@@ -112,6 +112,61 @@ interface RawCue {
   target: string;
 }
 
+// fetch dengan timeout — jalur transkrip best-effort, jangan sampai menggantung
+// UI selamanya kalau server/edge function hang (mis. ASR yang tak pernah balas).
+async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise<Response> {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { ...init, signal: ctrl.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// ── Cache transkrip (Supabase lewat /api/yt-transcript-cache) ────────────────
+// Sekali sebuah (video, bahasa) diproses, hasilnya disimpan → viewer berikutnya
+// baca instan (tak perlu fetch caption / ASR ~1 menit lagi). Best-effort: kalau
+// cache mati, pipeline biasa tetap jalan.
+async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
+  try {
+    const res = await fetchTimeout(
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}`,
+      { method: "GET" },
+      6000
+    );
+    if (!res.ok) return null;
+    const data = (await res.json()) as { cues?: unknown };
+    const cues = Array.isArray(data.cues)
+      ? (data.cues as LearnCue[]).filter(
+          (c) => c && typeof c.start === "number" && typeof c.target === "string" && c.target.length > 0
+        )
+      : [];
+    return cues.length ? cues : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveTranscriptCache(
+  videoId: string,
+  langCode: string,
+  cues: LearnCue[],
+  source: "caption" | "asr"
+): void {
+  // Fire-and-forget — jangan menahan render; kegagalan simpan tak masalah.
+  try {
+    void fetch("/api/yt-transcript-cache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ videoId, lang: langCode, cues, source }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    /* abaikan */
+  }
+}
+
 // Ambil + parse caption dari route Next `/api/yt-transcript` (server Next fetch
 // InnerTube; IP Vercel tak seketat Deno/Supabase + browser tak bisa fetch caption
 // langsung karena CORS). Balikin cue mentah (belum diterjemah) + kode bahasa track.
@@ -120,7 +175,7 @@ async function fetchRawCuesFromServer(
   langCode: string
 ): Promise<{ cues: RawCue[]; trackLang: string; reason: string }> {
   try {
-    const res = await fetch("/api/yt-transcript", {
+    const res = await fetchTimeout("/api/yt-transcript", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       // Katalog sudah dibias ke bahasa target, jadi WAJIB caption di bahasa itu.
@@ -128,7 +183,7 @@ async function fetchRawCuesFromServer(
       // bikin video Spanyol tanpa caption Spanyol malah nampilkan track Hungaria) —
       // biarkan null supaya jatuh ke ASR yang mentranskrip audio di bahasa target.
       body: JSON.stringify({ videoId, language: langCode, allowForeign: false }),
-    });
+    }, 25000);
     if (!res.ok) return { cues: [], trackLang: "", reason: "error" };
     const data = (await res.json()) as { cues?: RawCue[]; trackLang?: string; reason?: string };
     const cues = Array.isArray(data.cues)
@@ -153,7 +208,7 @@ async function translateCues(
   const fallback = cues.map((c) => ({ ...c, base: "" }));
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return fallback;
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
+    const res = await fetchTimeout(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -166,7 +221,7 @@ async function translateCues(
         language: langCode,
         explanationLanguage: EXPLANATION_LANGUAGE,
       }),
-    });
+    }, 45000);
     if (!res.ok) return fallback;
     const data = (await res.json()) as { cues?: LearnCue[] };
     const out = Array.isArray(data.cues)
@@ -190,7 +245,9 @@ async function fetchAsrTranscript(
 ): Promise<LearnCue[]> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-asr`, {
+    // ASR (Gemini transkripsi audio) lambat (~1 menit) — beri jendela lebar tapi
+    // TETAP terbatas biar tak menggantung "loading" selamanya kalau edge fn hang.
+    const res = await fetchTimeout(`${SUPABASE_URL}/functions/v1/yt-asr`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -202,7 +259,7 @@ async function fetchAsrTranscript(
         language: langCode,
         explanationLanguage: EXPLANATION_LANGUAGE,
       }),
-    });
+    }, 120000);
     if (!res.ok) return [];
     const data = (await res.json()) as { cues?: LearnCue[] };
     return Array.isArray(data.cues)
@@ -290,17 +347,28 @@ export async function fetchTranscript(
   langCode: string,
   opts?: { onAsr?: () => void }
 ): Promise<TranscriptResult> {
+  // 0) Cache: kalau (video, bahasa) ini pernah diproses, langsung pakai — hemat
+  //    fetch caption / ASR (~1 menit). Katalog = video populer ditonton berulang.
+  const cached = await readTranscriptCache(videoId, langCode);
+  if (cached?.length) return { cues: cached, reason: "ok" };
+
   // 1) Jalur cepat: cue mentah dari server Next + terjemahan.
   const raw = await fetchRawCuesFromServer(videoId, langCode);
   if (raw.cues.length) {
     const cues = await translateCues(raw.cues, raw.trackLang, langCode);
-    return { cues: splitCuesBySentence(cues), reason: "ok" };
+    const out = splitCuesBySentence(cues);
+    saveTranscriptCache(videoId, langCode, out, "caption");
+    return { cues: out, reason: "ok" };
   }
 
   // 2) Jalur andal: transkripsi audio AI.
   opts?.onAsr?.();
   const asr = await fetchAsrTranscript(videoId, langCode);
-  if (asr.length) return { cues: splitCuesBySentence(asr), reason: "ok" };
+  if (asr.length) {
+    const out = splitCuesBySentence(asr);
+    saveTranscriptCache(videoId, langCode, out, "asr");
+    return { cues: out, reason: "ok" };
+  }
 
   return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "empty" };
 }
