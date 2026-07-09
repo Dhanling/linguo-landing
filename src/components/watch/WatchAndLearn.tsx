@@ -22,9 +22,11 @@ import {
   pushWatchHistory,
   searchImmersionVideos,
   WatchHistoryItem,
+  WATCH_MAX_DURATION_SEC,
+  formatDuration,
   youtubeThumb,
 } from "@/lib/immersion";
-import { getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
+import { fetchReadyVideos, getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
@@ -37,6 +39,9 @@ const BORDER = "rgba(255,255,255,0.08)";
 const SUB = "rgba(255,255,255,0.5)";
 
 const LANG_KEY = "linguo:watch:lang:v1";
+// Tab "Siap": video yang transkripnya sudah tersimpan → buka = instan, tanpa
+// biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
+const SIAP_ID = "siap";
 
 export default function WatchAndLearn() {
   // Bahasa target — disimpan di localStorage biar konsisten antar kunjungan.
@@ -109,23 +114,43 @@ export default function WatchAndLearn() {
         language: l.searchCode ?? l.code,
         order: c.news || c.fresh ? "date" : undefined,
         max: 18,
+        maxDurationSec: WATCH_MAX_DURATION_SEC, // katalog cuma video pendek (≤5 mnt)
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
-      // Saring ke bahasa target biar audio & subtitle-nya beneran cocok.
-      const results = filterVideosByLanguage(page.results, l.code);
+      // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
+      // sisa video kepanjangan (jaga-jaga kalau durasi tak terbaca di server).
+      const results = filterVideosByLanguage(page.results, l.code).filter(
+        (v) => !v.duration || v.duration <= WATCH_MAX_DURATION_SEC
+      );
       setVideos(results);
       setNextToken(page.nextPageToken);
       setState(results.length ? "done" : "empty");
       // Hangatkan cache transkrip di background biar subtitle + terjemahan
       // "langsung muncul" saat video mana pun di grid diklik (tak nunggu ASR ~1 mnt).
-      prewarmTranscripts(results.map((v) => v.videoId), l.code);
+      prewarmTranscripts(results, l.code);
     },
     []
   );
 
+  // Tab "Siap" — baca video ber-transkrip dari cache (instan, tanpa kuota YouTube).
+  const loadReady = useCallback(async (l: ImmersionLang) => {
+    const id = ++reqId.current;
+    setState("loading");
+    setVideos([]);
+    setNextToken(undefined);
+    const ready = await fetchReadyVideos(l.code);
+    if (id !== reqId.current) return;
+    setVideos(ready);
+    setState(ready.length ? "done" : "empty");
+  }, []);
+
+  // Apakah tab "Siap" sedang aktif (dan bukan sedang mencari teks bebas).
+  const readyMode = category === SIAP_ID && !committedText.trim();
+
   // Muat ulang tiap bahasa / kategori / teks yang di-commit berubah.
   useEffect(() => {
-    runSearch(lang, cat, committedText);
+    if (category === SIAP_ID && !committedText.trim()) loadReady(lang);
+    else runSearch(lang, cat, committedText);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langCode, category, committedText]);
 
@@ -140,16 +165,19 @@ export default function WatchAndLearn() {
       order: cat.news || cat.fresh ? "date" : undefined,
       max: 18,
       pageToken: nextToken,
+      maxDurationSec: WATCH_MAX_DURATION_SEC,
     });
     if (id !== reqId.current) return;
-    const more = filterVideosByLanguage(page.results, lang.code);
+    const more = filterVideosByLanguage(page.results, lang.code).filter(
+      (v) => !v.duration || v.duration <= WATCH_MAX_DURATION_SEC
+    );
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
       return [...prev, ...more.filter((v) => !seen.has(v.videoId))];
     });
     setNextToken(page.nextPageToken);
     setState("done");
-    prewarmTranscripts(more.map((v) => v.videoId), lang.code);
+    prewarmTranscripts(more, lang.code);
   }, [nextToken, state, cat, lang, committedText]);
 
   const pickLang = useCallback((code: string) => {
@@ -329,7 +357,7 @@ export default function WatchAndLearn() {
             <span style={{ color: GOLD }}>✨</span> Rekomendasi untukmu
           </h2>
           <button
-            onClick={() => runSearch(lang, cat, committedText)}
+            onClick={() => (readyMode ? loadReady(lang) : runSearch(lang, cat, committedText))}
             className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-opacity hover:opacity-80"
             style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
           >
@@ -337,6 +365,19 @@ export default function WatchAndLearn() {
           </button>
         </div>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* Tab "Siap" — video yang subtitle-nya langsung muncul (sudah diproses). */}
+          <button
+            onClick={() => setCategory(SIAP_ID)}
+            className="shrink-0 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
+            style={{
+              backgroundColor: category === SIAP_ID ? TEAL : CARD,
+              border: `1px solid ${category === SIAP_ID ? TEAL : BORDER}`,
+              color: category === SIAP_ID ? "#fff" : "rgba(255,255,255,0.8)",
+            }}
+          >
+            <span className="mr-1">✅</span>
+            Siap
+          </button>
           {IMMERSION_CATEGORIES.map((c) => {
             const on = c.id === category;
             return (
@@ -363,7 +404,7 @@ export default function WatchAndLearn() {
             ? Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)
             : videos.map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
-                  <Thumb videoId={v.videoId} thumbnail={v.thumbnail} />
+                  <Thumb videoId={v.videoId} thumbnail={v.thumbnail} duration={v.duration} />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
                   {v.channel && (
                     <p className="mt-0.5 line-clamp-1 text-[11.5px]" style={{ color: SUB }}>
@@ -380,11 +421,25 @@ export default function WatchAndLearn() {
             className="mt-6 rounded-2xl p-6 text-center"
             style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
           >
-            <p className="text-[15px] font-bold">Belum ada video ketemu</p>
-            <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-              Coba kategori lain, ganti bahasa, atau muat ulang. Rekomendasi terbatas
-              kuota harian YouTube — beberapa saat lagi biasanya kembali penuh.
-            </p>
+            {readyMode ? (
+              <>
+                <p className="text-[15px] font-bold">Belum ada video siap</p>
+                <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
+                  Tonton beberapa video dari kategori lain dulu. Begitu subtitle +
+                  terjemahannya selesai diproses, video otomatis muncul di sini — dan
+                  langsung tampil instan buat siapa pun yang membukanya.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-[15px] font-bold">Belum ada video ketemu</p>
+                <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
+                  Coba kategori lain, ganti bahasa, atau muat ulang. Katalog cuma
+                  menampilkan video pendek (≤5 menit) & terbatas kuota harian YouTube —
+                  beberapa saat lagi biasanya kembali penuh.
+                </p>
+              </>
+            )}
           </div>
         )}
 
@@ -492,7 +547,16 @@ export default function WatchAndLearn() {
   );
 }
 
-function Thumb({ videoId, thumbnail }: { videoId: string; thumbnail: string | null }) {
+function Thumb({
+  videoId,
+  thumbnail,
+  duration,
+}: {
+  videoId: string;
+  thumbnail: string | null;
+  duration?: number | null;
+}) {
+  const durLabel = formatDuration(duration);
   return (
     <div
       className="relative w-full overflow-hidden rounded-xl"
@@ -505,6 +569,11 @@ function Thumb({ videoId, thumbnail }: { videoId: string; thumbnail: string | nu
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
+      {durLabel && (
+        <span className="absolute bottom-1.5 right-1.5 rounded bg-black/80 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">
+          {durLabel}
+        </span>
+      )}
       <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 hover:opacity-100">
         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90">
           <Play className="h-4 w-4" fill="#10201f" color="#10201f" />

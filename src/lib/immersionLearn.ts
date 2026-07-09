@@ -148,18 +148,34 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
   }
 }
 
+/** Metadata ringan video buat kartu tab "Siap" (disimpan bareng transkrip). */
+export interface TranscriptVideoMeta {
+  title?: string;
+  channel?: string | null;
+  duration?: number | null;
+}
+
 function saveTranscriptCache(
   videoId: string,
   langCode: string,
   cues: LearnCue[],
-  source: "caption" | "asr"
+  source: "caption" | "asr",
+  meta?: TranscriptVideoMeta
 ): void {
   // Fire-and-forget — jangan menahan render; kegagalan simpan tak masalah.
   try {
     void fetch("/api/yt-transcript-cache", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ videoId, lang: langCode, cues, source }),
+      body: JSON.stringify({
+        videoId,
+        lang: langCode,
+        cues,
+        source,
+        title: meta?.title,
+        channel: meta?.channel,
+        dur: meta?.duration,
+      }),
       keepalive: true,
     }).catch(() => {});
   } catch {
@@ -329,8 +345,93 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
   });
 }
 
+// Panjang maksimum satu section transkrip (≈ satu baris di panel). Kalimat yang
+// lebih panjang dipecah lagi biar tiap section ringkas & enak dibaca — bukan blok
+// paragraf. ~60 karakter kira-kira pas satu baris pada lebar panel transkrip.
+const MAX_CUE_CHARS = 60;
+
+/** Pecah teks jadi potongan ≤ maxChars di batas kata (greedy). Selalu ≥ 1 potongan. */
+function chunkTextByLength(text: string, maxChars: number): string[] {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [text.trim()];
+  const out: string[] = [];
+  let cur = "";
+  for (const w of words) {
+    if (!cur) cur = w;
+    else if (cur.length + 1 + w.length <= maxChars) cur += " " + w;
+    else {
+      out.push(cur);
+      cur = w;
+    }
+  }
+  if (cur) out.push(cur);
+  return out.length ? out : [text.trim()];
+}
+
+/**
+ * Bagi sebuah teks (terjemahan/transliterasi) ke `k` bucket mengikuti bobot panjang
+ * tiap potongan target — biar posisinya kira-kira sejajar dengan potongan target-nya
+ * meski tak bisa dipisah per kalimat. Best-effort untuk keterbacaan.
+ */
+function distributeByWeight(text: string, weights: number[]): string[] {
+  const k = weights.length;
+  if (k <= 1) return [text.trim()];
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    const a = Array<string>(k).fill("");
+    a[0] = text.trim();
+    return a;
+  }
+  const totalW = weights.reduce((n, x) => n + x, 0) || 1;
+  const bounds: number[] = []; // batas kumulatif (fraksi) antar bucket
+  let accW = 0;
+  for (let i = 0; i < k - 1; i++) {
+    accW += weights[i];
+    bounds.push(accW / totalW);
+  }
+  const totalChars = words.reduce((n, w) => n + w.length, 0) || 1;
+  const buckets = Array<string>(k).fill("");
+  let accC = 0;
+  let bi = 0;
+  for (const w of words) {
+    const frac = (accC + w.length / 2) / totalChars;
+    while (bi < k - 1 && frac > bounds[bi]) bi++;
+    buckets[bi] = buckets[bi] ? buckets[bi] + " " + w : w;
+    accC += w.length;
+  }
+  return buckets;
+}
+
+/** Pecah lagi cue yang masih terlalu panjang jadi beberapa section ≤ MAX_CUE_CHARS. */
+function splitLongCue(cue: LearnCue): LearnCue[] {
+  if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
+  const pieces = chunkTextByLength(cue.target, MAX_CUE_CHARS);
+  if (pieces.length <= 1) return [cue];
+  const weights = pieces.map((p) => p.length);
+  const bases = cue.base ? distributeByWeight(cue.base, weights) : null;
+  const translits = cue.translit ? distributeByWeight(cue.translit, weights) : null;
+
+  const dur = Math.max(0.001, cue.end - cue.start);
+  const total = weights.reduce((n, x) => n + x, 0) || 1;
+  let acc = 0;
+  return pieces.map((tg, i) => {
+    const start = cue.start + dur * (acc / total);
+    acc += tg.length;
+    const end = i === pieces.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    return {
+      start,
+      end: Math.max(end, start + 0.3),
+      target: tg,
+      base: bases ? bases[i] : "",
+      ...(translits ? { translit: translits[i] } : {}),
+    };
+  });
+}
+
+// Rapikan transkrip jadi satu section per baris: pecah per kalimat dulu (akurat),
+// lalu potong kalimat yang masih kepanjangan biar tak ada section berupa paragraf.
 function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
-  return cues.flatMap(splitCueBySentence);
+  return cues.flatMap(splitCueBySentence).flatMap(splitLongCue);
 }
 
 /**
@@ -345,19 +446,21 @@ function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
 export async function fetchTranscript(
   videoId: string,
   langCode: string,
-  opts?: { onAsr?: () => void }
+  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta }
 ): Promise<TranscriptResult> {
   // 0) Cache: kalau (video, bahasa) ini pernah diproses, langsung pakai — hemat
   //    fetch caption / ASR (~1 menit). Katalog = video populer ditonton berulang.
   const cached = await readTranscriptCache(videoId, langCode);
-  if (cached?.length) return { cues: cached, reason: "ok" };
+  // Rapikan lagi walau dari cache: transkrip lama mungkin masih punya section
+  // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
+  if (cached?.length) return { cues: splitCuesBySentence(cached), reason: "ok" };
 
   // 1) Jalur cepat: cue mentah dari server Next + terjemahan.
   const raw = await fetchRawCuesFromServer(videoId, langCode);
   if (raw.cues.length) {
     const cues = await translateCues(raw.cues, raw.trackLang, langCode);
     const out = splitCuesBySentence(cues);
-    saveTranscriptCache(videoId, langCode, out, "caption");
+    saveTranscriptCache(videoId, langCode, out, "caption", opts?.meta);
     return { cues: out, reason: "ok" };
   }
 
@@ -366,7 +469,7 @@ export async function fetchTranscript(
   const asr = await fetchAsrTranscript(videoId, langCode);
   if (asr.length) {
     const out = splitCuesBySentence(asr);
-    saveTranscriptCache(videoId, langCode, out, "asr");
+    saveTranscriptCache(videoId, langCode, out, "asr", opts?.meta);
     return { cues: out, reason: "ok" };
   }
 
@@ -380,8 +483,15 @@ export async function fetchTranscript(
 // instan, tak perlu tunggu caption/ASR (~1 menit) lagi. Best-effort, konkurensi
 // kecil biar tak membanjiri Edge Function (yt-asr) atau kena rate limit Gemini.
 
+interface PrewarmVideo {
+  videoId: string;
+  title?: string;
+  channel?: string | null;
+  duration?: number | null;
+}
+
 const prewarmSeen = new Set<string>(); // (video, bahasa) yang sudah dijadwalkan di sesi ini
-const prewarmQueue: { videoId: string; langCode: string }[] = [];
+const prewarmQueue: { video: PrewarmVideo; langCode: string }[] = [];
 let prewarmActive = 0;
 const PREWARM_CONCURRENCY = 2;
 
@@ -394,7 +504,14 @@ async function prewarmWorker(): Promise<void> {
   try {
     // fetchTranscript sudah: cek cache → caption+terjemah → ASR, lalu simpan hasil
     // ke cache. Jadi cukup panggil sekali; kalau sudah ada di cache, langsung balik.
-    await fetchTranscript(job.videoId, job.langCode);
+    // Kirim metadata biar video ini muncul di tab "Siap" begitu selesai diproses.
+    await fetchTranscript(job.video.videoId, job.langCode, {
+      meta: {
+        title: job.video.title,
+        channel: job.video.channel,
+        duration: job.video.duration,
+      },
+    });
   } catch {
     /* best-effort — jangan ganggu apa pun kalau gagal */
   } finally {
@@ -407,19 +524,52 @@ async function prewarmWorker(): Promise<void> {
  * Hangatkan cache transkrip untuk sederet video di background (fire-and-forget).
  * Aman dipanggil berkali-kali: tiap (video, bahasa) hanya diproses sekali per sesi,
  * dan konkurensi dibatasi supaya tak membebani server. Dipakai saat katalog /
- * rekomendasi tampil biar video yang nanti diklik sudah siap subtitle-nya.
+ * rekomendasi tampil biar video yang nanti diklik sudah siap subtitle-nya — dan
+ * sekalian mengisi tab "Siap" (metadata ikut disimpan).
  */
-export function prewarmTranscripts(videoIds: string[], langCode: string): void {
+export function prewarmTranscripts(videos: PrewarmVideo[], langCode: string): void {
   if (typeof window === "undefined" || !langCode) return;
-  for (const videoId of videoIds) {
-    if (!VIDEO_ID_RE.test(videoId)) continue;
-    const key = `${langCode}::${videoId}`;
+  for (const video of videos) {
+    if (!video || !VIDEO_ID_RE.test(video.videoId)) continue;
+    const key = `${langCode}::${video.videoId}`;
     if (prewarmSeen.has(key)) continue;
     prewarmSeen.add(key);
-    prewarmQueue.push({ videoId, langCode });
+    prewarmQueue.push({ video, langCode });
   }
   // Isi slot worker yang kosong sampai konkurensi penuh.
   while (prewarmActive < PREWARM_CONCURRENCY && prewarmQueue.length) void prewarmWorker();
+}
+
+/**
+ * Ambil daftar video yang transkripnya SUDAH tersimpan di cache untuk sebuah
+ * bahasa — sumber tab "Siap". Instan (baca cache Supabase), tanpa kuota YouTube /
+ * biaya AI. Best-effort: balikin [] kalau gagal.
+ */
+export async function fetchReadyVideos(
+  langCode: string,
+  limit = 40
+): Promise<import("./immersion").ImmersionVideo[]> {
+  try {
+    const res = await fetchTimeout(
+      `/api/yt-transcript-cache?list=1&lang=${encodeURIComponent(langCode)}&limit=${limit}`,
+      { method: "GET" },
+      6000
+    );
+    if (!res.ok) return [];
+    const data = (await res.json()) as { videos?: unknown };
+    if (!Array.isArray(data.videos)) return [];
+    return (data.videos as Record<string, unknown>[])
+      .filter((v) => v && typeof v.videoId === "string" && (v.videoId as string).length > 0)
+      .map((v) => ({
+        videoId: v.videoId as string,
+        title: typeof v.title === "string" && v.title ? (v.title as string) : "Video",
+        thumbnail: null,
+        channel: typeof v.channel === "string" ? (v.channel as string) : null,
+        duration: typeof v.duration === "number" ? (v.duration as number) : null,
+      }));
+  } catch {
+    return [];
+  }
 }
 
 /**

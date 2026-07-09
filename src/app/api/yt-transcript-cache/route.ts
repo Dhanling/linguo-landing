@@ -26,8 +26,37 @@ function validLang(lang: unknown): lang is string {
 }
 
 export async function GET(req: NextRequest) {
-  const videoId = req.nextUrl.searchParams.get("videoId") ?? "";
-  const lang = req.nextUrl.searchParams.get("lang") ?? "";
+  const params = req.nextUrl.searchParams;
+  const lang = params.get("lang") ?? "";
+
+  // Mode LIST (tab "Siap"): daftar video yang transkripnya sudah tersimpan untuk
+  // sebuah bahasa — kartu dirender dari metadata ini, tanpa panggil YouTube lagi.
+  if (params.get("list")) {
+    if (!validLang(lang)) return NextResponse.json({ videos: [] }, { status: 200 });
+    const limit = Math.min(Math.max(parseInt(params.get("limit") ?? "40", 10) || 40, 1), 100);
+    try {
+      const sb = createServerClient(300); // segar-kan tiap 5 menit
+      const { data, error } = await sb
+        .from("yt_transcripts")
+        .select("video_id, title, channel, dur")
+        .eq("lang", lang)
+        .not("title", "is", null)
+        .order("created_at", { ascending: false })
+        .limit(limit);
+      if (error || !Array.isArray(data)) return NextResponse.json({ videos: [] }, { status: 200 });
+      const videos = data.map((r) => ({
+        videoId: r.video_id as string,
+        title: (r.title as string) ?? "",
+        channel: (r.channel as string) ?? null,
+        duration: typeof r.dur === "number" ? r.dur : null,
+      }));
+      return NextResponse.json({ videos }, { status: 200 });
+    } catch {
+      return NextResponse.json({ videos: [] }, { status: 200 });
+    }
+  }
+
+  const videoId = params.get("videoId") ?? "";
   if (!VIDEO_RE.test(videoId) || !validLang(lang)) {
     return NextResponse.json({ cues: null }, { status: 200 });
   }
@@ -54,6 +83,13 @@ export async function POST(req: NextRequest) {
     const lang = body?.lang;
     const cues = body?.cues;
     const source = typeof body?.source === "string" ? body.source.slice(0, 20) : null;
+    // Metadata opsional buat kartu tab "Siap".
+    const title = typeof body?.title === "string" ? body.title.slice(0, 300) : null;
+    const channel = typeof body?.channel === "string" ? body.channel.slice(0, 200) : null;
+    const dur =
+      typeof body?.dur === "number" && Number.isFinite(body.dur) && body.dur >= 0
+        ? Math.round(body.dur)
+        : null;
 
     if (!VIDEO_RE.test(videoId) || !validLang(lang)) {
       return NextResponse.json({ ok: false, error: "param tidak valid" }, { status: 400 });
@@ -78,7 +114,10 @@ export async function POST(req: NextRequest) {
     const sb = createServerClient(0);
     const { error } = await sb
       .from("yt_transcripts")
-      .upsert({ video_id: videoId, lang, cues: clean, source }, { onConflict: "video_id,lang" });
+      .upsert(
+        { video_id: videoId, lang, cues: clean, source, title, channel, dur },
+        { onConflict: "video_id,lang" }
+      );
     if (error) return NextResponse.json({ ok: false }, { status: 200 });
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch {

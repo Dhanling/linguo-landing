@@ -7,11 +7,26 @@ const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
+// Batas durasi katalog Watch & Learn: video pendek (≤5 mnt) biar transkrip AI
+// (ASR ~1 mnt/video) murah + video pendek memang lebih pas buat belajar. Dipakai
+// sebagai `maxDurationSec` saat search & saring ganda di client.
+export const WATCH_MAX_DURATION_SEC = 300;
+
+/** Format durasi detik → "m:ss" (mis. 245 → "4:05"). null/0 → "". */
+export function formatDuration(sec?: number | null): string {
+  if (!sec || sec <= 0) return "";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
 export interface ImmersionVideo {
   videoId: string;
   title: string;
   thumbnail: string | null;
   channel?: string | null;
+  /** Durasi video dalam detik (dari yt-search). Dipakai badge & filter ≤5 mnt. */
+  duration?: number | null;
 }
 
 export interface ImmersionSearchPage {
@@ -317,6 +332,8 @@ export async function searchImmersionVideos(params: {
   order?: "date" | "rating" | "viewCount" | "relevance";
   max?: number;
   pageToken?: string;
+  /** Batas durasi (detik). Diteruskan ke yt-search buat mode video pendek. */
+  maxDurationSec?: number;
 }): Promise<ImmersionSearchPage> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { results: [] };
   try {
@@ -334,6 +351,7 @@ export async function searchImmersionVideos(params: {
         order: params.order,
         max: params.max ?? 18,
         pageToken: params.pageToken,
+        maxDurationSec: params.maxDurationSec,
       }),
     });
     if (!res.ok) return { results: [] };

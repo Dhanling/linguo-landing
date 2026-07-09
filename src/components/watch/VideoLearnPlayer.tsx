@@ -249,6 +249,8 @@ export default function VideoLearnPlayer({
     setShowCC(true);
     fetchTranscript(video.videoId, langCode, {
       onAsr: () => !cancelled && setAsrRunning(true),
+      // Simpan metadata biar video yang ditonton ini ikut muncul di tab "Siap".
+      meta: { title: video.title, channel: video.channel, duration: video.duration },
     }).then((r) => {
       if (cancelled) return;
       // Urutkan menaik berdasarkan `start`: pencarian biner activeIdx (dan efek
@@ -294,7 +296,7 @@ export default function VideoLearnPlayer({
   // (tak menunggu ASR ~1 menit). Best-effort & terdedup per sesi.
   useEffect(() => {
     if (!recommendations.length) return;
-    prewarmTranscripts(recommendations.map((v) => v.videoId), langCode);
+    prewarmTranscripts(recommendations, langCode);
   }, [recommendations, langCode]);
 
   // Terapkan CC bawaan + SINKRONKAN bahasanya ke bahasa yang sedang dipelajari.
