@@ -7,7 +7,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight } from "lucide-react";
+import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import SilabusOutline from "@/components/akun/SilabusOutline";
 import { isFreeLevel } from "@/lib/lmsAccess"; // [linguo-patch:lms-katalog-upgrade-cta-v1] sumber tunggal aturan A1-gratis
 
@@ -126,6 +126,8 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
   const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
   const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
   const [filter, setFilter] = useState<"all" | "owned" | "run" | "done">("all");
+  // [linguo-patch:lms-katalog-sidebar-collapse-v1] sidebar "Bahasa Kamu" bisa dilipat biar area materi lega
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     let alive = true;
@@ -176,7 +178,9 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
         ents.forEach(({ cid, ok }) => { if (ok) ownedCourses.add(cid); });
       }
 
-      const built = buildCourses(modList, lessons, done, ownedCourses);
+      // [linguo-patch:lms-katalog-owned-only-v1] cuma tampilin bahasa yang SUDAH dibeli/dientitle.
+      // Siswa yang ga daftar bahasa tsb ga lihat sama sekali (mis. Vietnam) — baru muncul setelah beli.
+      const built = buildCourses(modList, lessons, done, ownedCourses).filter((c) => c.owned);
       _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);
@@ -198,8 +202,8 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
     return (
       <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:rounded-none lg:border-0 lg:shadow-none">
         <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-        <p className="text-[14px] font-semibold text-gray-600">Materi mandiri belum tersedia</p>
-        <p className="mt-1 text-[12px] font-medium text-gray-400">Konten Belajar Mandiri lagi disiapin. Cek tab Jelajahi Bahasa dulu ya.</p>
+        <p className="text-[14px] font-semibold text-gray-600">Belum ada materi mandiri kamu</p>
+        <p className="mt-1 text-[12px] font-medium text-gray-400">Kamu belum punya paket Belajar Mandiri. Daftar dulu bahasanya biar materinya muncul di sini.</p>
       </div>
     );
   }
@@ -296,25 +300,51 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
     ) : null;
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+    <div className={`overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none ${sidebarOpen ? "lg:grid-cols-[320px_minmax(0,1fr)]" : "lg:grid-cols-[56px_minmax(0,1fr)]"}`}>
 
-      {/* LEFT list — desktop */}
-      <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
-        <div className="shrink-0 px-6 pb-4 pt-7">
-          <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
-          <p className="mt-0.5 text-[12px] font-medium text-gray-500">{courses.length} bahasa · belajar mandiri</p>
-          <div className="mt-4 flex gap-2">
-            {([["all", "Semua"], ["owned", "Dimiliki"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
-              <button key={k} onClick={() => setFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${filter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
-            ))}
+      {/* LEFT list — desktop [linguo-patch:lms-katalog-sidebar-collapse-v1] bisa dilipat */}
+      {sidebarOpen ? (
+        <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
+          <div className="shrink-0 px-6 pb-4 pt-7">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
+                <p className="mt-0.5 text-[12px] font-medium text-gray-500">{courses.length} bahasa · belajar mandiri</p>
+              </div>
+              <button
+                onClick={() => setSidebarOpen(false)}
+                aria-label="Lipat panel Bahasa Kamu"
+                title="Lipat panel"
+                className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-gray-500 transition hover:bg-[#16796E]/10 hover:text-[#16796E]"
+              >
+                <PanelLeftClose className="h-[18px] w-[18px]" strokeWidth={2} />
+              </button>
+            </div>
+            <div className="mt-4 flex gap-2">
+              {([["all", "Semua"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
+                <button key={k} onClick={() => setFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${filter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
-          {shown.length > 0 ? shown.map((c) => <CourseItem key={c.slug} c={c} />) : (
-            <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">Tidak ada bahasa di filter ini</p>
-          )}
-        </div>
-      </aside>
+          <div className="flex flex-col gap-2.5 overflow-y-auto px-4 pb-6">
+            {shown.length > 0 ? shown.map((c) => <CourseItem key={c.slug} c={c} />) : (
+              <p className="px-2 py-6 text-center text-[13px] font-medium text-gray-400">Tidak ada bahasa di filter ini</p>
+            )}
+          </div>
+        </aside>
+      ) : (
+        /* rail tipis pas dilipat — tombol buka lagi */
+        <aside className="hidden min-h-0 flex-col items-center border-r border-slate-100 bg-white pt-7 lg:flex">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            aria-label="Buka panel Bahasa Kamu"
+            title="Buka panel Bahasa Kamu"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#F5F6F8] text-gray-500 transition hover:bg-[#16796E]/10 hover:text-[#16796E]"
+          >
+            <PanelLeftOpen className="h-[18px] w-[18px]" strokeWidth={2} />
+          </button>
+        </aside>
+      )}
 
       {/* RIGHT detail (+ mobile pills) */}
       <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">

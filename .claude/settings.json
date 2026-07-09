@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(node tt.mjs)",
+      "Bash(node tt.mjs kNz82rLGjxU)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(r['videoId'], '|', r['title'][:50]\\) for r in d.get\\('results',[]\\)]\")",
+      "Bash(node tt.mjs s2MdyyufxW8)",
+      "Bash(grep -n \"VIEW: JELAJAHI BAHASA\\\\|materiView === \\\\\"jelajahi\\\\\"\\\\|VIEW: BELAJAR MANDIRI\\\\|}\\)\\(\\)}\\\\s*$\" src/app/akun/page.tsx)",
+      "Bash(echo \"=== exit $? ===\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/yt-transcript -H \"Content-Type: application/json\" -d '{\"videoId\":\"s2MdyyufxW8\",\"language\":\"es\",\"allowForeign\":true}')",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -X POST http://localhost:3000/api/tts -H \"Content-Type: application/json\" -d '{\"text\":\"planta\",\"lang\":\"es\"}')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); a=d.get\\('audioContent'\\); print\\('audioContent:', \\(str\\(len\\(a\\)\\)+' chars base64 → OK'\\) if a else \\('ERROR: '+json.dumps\\(d\\)[:200]\\)\\)\")",
+      "Bash(pkill -f \"next dev\")"
+    ]
+  }
+}
