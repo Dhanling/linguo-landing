@@ -28,6 +28,7 @@ export interface ImmersionLang {
   native: string; // nama native (dipakai sebagai tag pembias query)
   flag: string; // emoji bendera (fallback)
   country: string; // kode negara ISO-2 buat bendera rounded-rect (RectFlag)
+  searchCode?: string; // relevanceLanguage YouTube kalau `code` tak didukung (mis. jv/su → id)
 }
 
 // Daftar bahasa immersion — diperluas menyamai katalog app Linguo. `code` = kode
@@ -66,8 +67,8 @@ export const IMMERSION_LANGS: ImmersionLang[] = [
   { code: "uk", name: "Ukraina", native: "Українська", flag: "🇺🇦", country: "ua" },
   { code: "is", name: "Islandia", native: "Íslenska", flag: "🇮🇸", country: "is" },
   { code: "id", name: "Indonesia", native: "Bahasa Indonesia", flag: "🇮🇩", country: "id" },
-  { code: "jv", name: "Jawa", native: "Basa Jawa", flag: "🇮🇩", country: "id" },
-  { code: "su", name: "Sunda", native: "Basa Sunda", flag: "🇮🇩", country: "id" },
+  { code: "jv", name: "Jawa", native: "Basa Jawa", flag: "🇮🇩", country: "id", searchCode: "id" },
+  { code: "su", name: "Sunda", native: "Basa Sunda", flag: "🇮🇩", country: "id", searchCode: "id" },
   { code: "fil", name: "Filipina", native: "Tagalog", flag: "🇵🇭", country: "ph" },
   { code: "km", name: "Khmer", native: "ខ្មែរ", flag: "🇰🇭", country: "kh" },
   { code: "lo", name: "Laos", native: "ລາວ", flag: "🇱🇦", country: "la" },
@@ -103,26 +104,55 @@ export interface ImmersionCategory {
   perLang?: Record<string, string>; // override query per bahasa (mis. nama franchise lokal)
 }
 
-// Nama franchise kartun terkenal, DILOKALKAN per bahasa (mis. "Peppa Wutz" utk
-// Jerman, "Bob Esponja" utk Spanyol, "Свинка Пеппа" utk Rusia). Cuma diisi buat
-// bahasa yang punya dubbing/konten franchise kuat di YouTube — di situ nama
-// franchise mengangkat kartun terkenal TANPA menyeret versi Inggris. Bahasa yang
-// TAK terdaftar (mis. Hungaria, Arab, Hindi, Thai) sengaja pakai kata generik saja,
-// karena di sana nama franchise Inggris malah menarik konten Inggris. Terverifikasi
-// empiris lewat yt-search per bahasa. Bahasa non-Latin tetap disaring aksara.
+// Query kartun DILOKALKAN per bahasa: nama franchise dubbing lokal (mis. "Peppa
+// Wutz" utk Jerman, "Bob Esponja" utk Spanyol) ATAU channel/acara anak lokal yang
+// berbahasa target (Bamse-Swedia, Muumi-Finlandia, Rafadan Tayfa-Turki, Ubongo-
+// Swahili, طم طم-Arab, dll). Tujuannya mengangkat kartun terkenal DALAM bahasa
+// target, bukan versi Inggris. Tiap entri terverifikasi empiris lewat yt-search —
+// yang di sini terbukti mengembalikan konten in-language. Bahasa non-Latin tetap
+// dibekingi filter aksara; bahasa yang tak cocok query lokalnya dibiarkan generik.
 const KARTUN_FRANCHISE: Record<string, string> = {
   en: "Peppa Pig Bluey SpongeBob Paw Patrol cartoon",
   es: "Peppa Pig Bob Esponja Bluey La Patrulla Canina",
   pt: "Peppa Pig Bob Esponja Patrulha Canina Bluey",
   fr: "Peppa Pig Bob l'éponge Pat Patrouille Bluey",
   de: "Peppa Wutz SpongeBob Schwammkopf Paw Patrol Bluey",
+  it: "Peppa Pig cartoni animati per bambini",
+  nl: "Bumba Nijntje tekenfilm voor kinderen",
   pl: "Świnka Peppa SpongeBob Psi Patrol",
   ru: "Свинка Пеппа Губка Боб Щенячий патруль",
   uk: "Свинка Пеппа Щенячий патруль мультфільм",
+  el: "παιδικά κινούμενα σχέδια για παιδιά",
+  ro: "desene animate pentru copii",
+  bg: "детски анимационни филми на български",
+  cs: "Krtek pohádky pro děti Modrý Traktor",
+  sv: "Bamse Babblarna barnprogram tecknat",
+  no: "tegnefilm for barn norsk barne-tv",
+  da: "tegnefilm for børn Bamse Ramasjang",
+  fi: "Muumi lasten piirretty ohjelma",
+  is: "teiknimyndir fyrir börn barnaefni",
   id: "Upin Ipin Nussa BoBoiBoy kartun anak",
-  ja: "ペッパピッグ アンパンマン アニメ",
+  jv: "dongeng basa jawa cerita rakyat jawa",
+  su: "dongeng sunda kartun basa sunda",
+  fil: "awiting pambata palabas na pambata Tagalog",
+  ja: "ペッパピッグ アンパンマン アニメ 子供",
   ko: "페파피그 뽀로로 타요 만화",
   zh: "小猪佩奇 海绵宝宝 汪汪队 动画片",
+  ar: "كرتون اطفال طم طم رسوم متحركة",
+  tr: "Rafadan Tayfa Kukuli Pepee Niloya çizgi film",
+  th: "การ์ตูน เด็ก นิทาน",
+  vi: "hoạt hình cho trẻ em",
+  hi: "कार्टून बच्चों के लिए ChuChu TV",
+  he: "סרטים מצוירים לילדים",
+  fa: "کارتون کودکانه",
+  ka: "მულტფილმები ბავშვებისთვის",
+  km: "តុក្កតា កុមារ",
+  lo: "ກາຕູນ ສຳລັບເດັກ",
+  my: "ကလေး ကာတွန်း",
+  ur: "کارٹون بچوں کے لیے اردو کہانیاں",
+  sw: "Ubongo Kids Akili Kids katuni za watoto",
+  am: "የልጆች ካርቱን",
+  hy: "մուլտֆիլմեր երեխաների համար",
 };
 
 // PENTING: `q` sengaja TANPA nama franchise global (Peppa Pig, Cocomelon, dll).

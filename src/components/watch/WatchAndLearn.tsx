@@ -106,7 +106,7 @@ export default function WatchAndLearn() {
       const q = buildQuery(c, l, text);
       const page = await searchImmersionVideos({
         query: q,
-        language: l.code,
+        language: l.searchCode ?? l.code,
         order: c.news || c.fresh ? "date" : undefined,
         max: 18,
       });
@@ -133,7 +133,7 @@ export default function WatchAndLearn() {
     const q = buildQuery(cat, lang, committedText);
     const page = await searchImmersionVideos({
       query: q,
-      language: lang.code,
+      language: lang.searchCode ?? lang.code,
       order: cat.news || cat.fresh ? "date" : undefined,
       max: 18,
       pageToken: nextToken,
