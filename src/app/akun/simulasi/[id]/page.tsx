@@ -92,14 +92,34 @@ function PassageText({ text, className }: { text: string; className?: string }) 
 function isHtml(s: string): boolean {
   return /<\/?[a-z][\s\S]*>/i.test(s);
 }
-// Render aman: HTML dari CMS ditampilkan apa adanya (sumber tepercaya = admin
+// Bersihkan HTML dari CMS sebelum dirender: konten lama sempat menyimpan atribut
+// `style` sampah hasil computed-style saat admin menempel dari sumber lain (mis.
+// `border-color: rgba(0,0,0,0); outline-color: oklab(...)` bawaan Tailwind, bahkan
+// pada <br> kosong). Tanpa dibersihkan, style itu ikut terbawa & terlihat "bocor".
+// Isomorfik (regex murni, tanpa DOMParser) supaya aman di server & client tanpa
+// mismatch hidrasi. Simpan hanya properti gaya yang dipakai editor CMS.
+const ALLOWED_STYLE_PROP = /^(text-align|font-size|font-weight|font-style|text-decoration(-line|-style)?|font-family|vertical-align)$/;
+function sanitizeCmsHtml(html: string): string {
+  return html
+    .replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*')/gi, "")
+    .replace(/\sstyle\s*=\s*("([^"]*)"|'([^']*)')/gi, (_m, _q, dq, sq) => {
+      const cleaned = ((dq ?? sq ?? "") as string)
+        .split(";")
+        .map((d) => d.trim())
+        .filter(Boolean)
+        .filter((d) => ALLOWED_STYLE_PROP.test((d.split(":")[0] || "").trim().toLowerCase()))
+        .join("; ");
+      return cleaned ? ` style="${cleaned}"` : "";
+    });
+}
+// Render aman: HTML dari CMS dibersihkan lalu ditampilkan (sumber tepercaya = admin
 // dashboard internal), teks lama / markdown tetap lewat <RichText> spy kompatibel.
 function SmartText({ text, className }: { text: string; className?: string }) {
   if (isHtml(text)) {
     return (
       <div
         className={`${className ?? ""} [&_img]:my-2 [&_img]:max-w-full [&_img]:rounded-md [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5`.trim()}
-        dangerouslySetInnerHTML={{ __html: text }}
+        dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(text) }}
       />
     );
   }
