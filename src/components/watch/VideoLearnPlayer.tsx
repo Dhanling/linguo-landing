@@ -242,19 +242,23 @@ export default function VideoLearnPlayer({
       onAsr: () => !cancelled && setAsrRunning(true),
     }).then((r) => {
       if (cancelled) return;
-      if (r.cues.length) {
-        setCues(r.cues);
+      // Urutkan menaik berdasarkan `start`: pencarian biner activeIdx (dan efek
+      // karaoke) mengandalkan cue terurut. Kalau transkrip balik tak berurut,
+      // baris aktif "melompat" ke menit acak alih-alih mengikuti dari awal.
+      const ordered = [...r.cues].sort((a, b) => a.start - b.start);
+      if (ordered.length) {
+        setCues(ordered);
         setTxState("ready");
         // Transkrip kita sudah tampil → matikan CC bawaan biar subtitle tak dobel.
         setShowCC(false);
         // Bahasa non-Latin (Jepang, Mandarin, dll): transkrip dari server tak bawa
         // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
         // lalu romaji/pinyin menyusul tanpa menahan render.
-        if (isNonLatin(langCode) && r.cues.some((c) => !c.translit)) {
+        if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
           setTranslitLoading(true);
-          transliterateLines(r.cues.map((c) => c.target), langCode)
+          transliterateLines(ordered.map((c) => c.target), langCode)
             .then((tr) => {
-              if (cancelled || tr.length !== r.cues.length) return;
+              if (cancelled || tr.length !== ordered.length) return;
               setCues((prev) =>
                 prev.length === tr.length
                   ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
@@ -729,7 +733,7 @@ export default function VideoLearnPlayer({
                       </p>
                     )}
                     {c.translit && (
-                      <p className="mt-0.5 italic" style={{ color: SUB, fontSize: 12 * fscale }}>
+                      <p className="mt-0.5 italic" style={{ color: "#fff", fontSize: 12 * fscale }}>
                         {c.translit}
                       </p>
                     )}
@@ -865,7 +869,7 @@ function FocusLine({
         fontSize={22 * scale}
       />
       {cue.translit && (
-        <p className="mt-1 italic" style={{ color: SUB, fontSize: 13 * scale }}>
+        <p className="mt-1 italic" style={{ color: "#fff", fontSize: 13 * scale }}>
           {cue.translit}
         </p>
       )}
