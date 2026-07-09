@@ -305,9 +305,15 @@ export default function SimulasiRunnerPage() {
       setInfo(studentInfo);
       const { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
       if (!simulation) { setPhase("notfound"); return; }
-      setSim(simulation); setSections(secs); setQuestions(qs);
+      // Section tanpa soal (mis. divider "Reading Comprehension" hasil impor yang
+      // cuma berisi petunjuk) tak ada yang bisa dikerjakan → sembunyikan dari siswa
+      // supaya tak muncul bagian "Tidak ada soal di bagian ini".
+      const secsWithQs = secs.filter((s) => qs.some((q) => q.section_id === s.id));
+      const keepIds = new Set(secsWithQs.map((s) => s.id));
+      const shownQs = qs.filter((q) => keepIds.has(q.section_id));
+      setSim(simulation); setSections(secsWithQs); setQuestions(shownQs);
       const init: Record<string, AnswerState> = {};
-      qs.forEach((q) => { init[q.id] = { selected_index: null, text: "", audioBlob: null, audioUrl: null }; });
+      shownQs.forEach((q) => { init[q.id] = { selected_index: null, text: "", audioBlob: null, audioUrl: null }; });
       setAnswers(init);
       setPhase("intro");
     })();
@@ -572,7 +578,9 @@ export default function SimulasiRunnerPage() {
           <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50/40 p-4">
             <h3 className="flex items-center gap-1.5 text-sm font-bold text-slate-800"><Info className="h-4 w-4 text-teal-600" />{tpl.title}</h3>
             {customInstr ? (
-              <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600">{customInstr}</p>
+              isHtml(customInstr)
+                ? <SmartText text={customInstr} className="mt-2 text-sm leading-relaxed text-slate-600" />
+                : <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-600">{customInstr}</p>
             ) : (
               <ul className="mt-2 space-y-1.5">
                 {tpl.points.map((p, i) => (
