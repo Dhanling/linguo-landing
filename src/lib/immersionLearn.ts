@@ -55,17 +55,101 @@ export interface TranscriptResult {
   reason: TranscriptReason;
 }
 
+interface RawCue {
+  start: number;
+  end: number;
+  target: string;
+}
+
+// Ambil + parse caption dari route Next `/api/yt-transcript` (server Next fetch
+// InnerTube; IP Vercel tak seketat Deno/Supabase + browser tak bisa fetch caption
+// langsung karena CORS). Balikin cue mentah (belum diterjemah) + kode bahasa track.
+async function fetchRawCuesFromServer(
+  videoId: string,
+  langCode: string
+): Promise<{ cues: RawCue[]; trackLang: string; reason: string }> {
+  try {
+    const res = await fetch("/api/yt-transcript", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      // Katalog rekomendasi sudah dibias ke bahasa target; tetap izinkan track lain
+      // supaya video yang caption-nya cuma di bahasa asal pun bisa tampil interaktif.
+      body: JSON.stringify({ videoId, language: langCode, allowForeign: true }),
+    });
+    if (!res.ok) return { cues: [], trackLang: "", reason: "error" };
+    const data = (await res.json()) as { cues?: RawCue[]; trackLang?: string; reason?: string };
+    const cues = Array.isArray(data.cues)
+      ? data.cues.filter(
+          (c) => c && typeof c.start === "number" && typeof c.target === "string" && c.target.length > 0
+        )
+      : [];
+    return { cues, trackLang: data.trackLang ?? "", reason: data.reason ?? "ok" };
+  } catch {
+    return { cues: [], trackLang: "", reason: "error" };
+  }
+}
+
+// Terjemahkan cue mentah ke Indonesia lewat Edge Function `yt-transcript` mode
+// translate-only (Mode A) — reuse infra AI yang sama dengan app. Kalau terjemahan
+// gagal, balikin cue tanpa `base` (target tetap bisa di-tap).
+async function translateCues(
+  cues: RawCue[],
+  trackLang: string,
+  langCode: string
+): Promise<LearnCue[]> {
+  const fallback = cues.map((c) => ({ ...c, base: "" }));
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return fallback;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        cues,
+        trackLang: trackLang || langCode,
+        language: langCode,
+        explanationLanguage: EXPLANATION_LANGUAGE,
+      }),
+    });
+    if (!res.ok) return fallback;
+    const data = (await res.json()) as { cues?: LearnCue[] };
+    const out = Array.isArray(data.cues)
+      ? data.cues.filter(
+          (c) => c && typeof c.start === "number" && typeof c.target === "string" && c.target.length > 0
+        )
+      : [];
+    return out.length ? out : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 /**
- * Ambil transkrip untuk sebuah video YouTube lewat Edge Function `yt-transcript`
- * (mode server-side fetch). Best-effort: kalau video tak bercaption atau YouTube
- * memblokir, balikin daftar kosong + alasannya biar player kasih pesan, bukan
- * error. `langCode` = kode ISO bahasa target (buat pilih track caption).
+ * Ambil transkrip dwibahasa untuk sebuah video YouTube. Strategi "device-first"
+ * ala app: (1) server Next fetch + parse caption dari YouTube, (2) Edge Function
+ * menerjemahkan barisnya ke Indonesia. Kalau langkah 1 gagal (video tak bercaption
+ * / diblokir), fallback ke Edge Function mode server-fetch. Best-effort: balikin
+ * daftar kosong + alasan biar player kasih pesan & pakai CC bawaan YouTube.
  */
 export async function fetchTranscript(
   videoId: string,
   langCode: string
 ): Promise<TranscriptResult> {
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { cues: [], reason: "error" };
+  // 1) Ambil cue mentah dari server Next.
+  const raw = await fetchRawCuesFromServer(videoId, langCode);
+  if (raw.cues.length) {
+    const cues = await translateCues(raw.cues, raw.trackLang, langCode);
+    return { cues, reason: "ok" };
+  }
+
+  // 2) Fallback: minta Edge Function fetch sendiri (kadang berhasil utk video
+  // yang berat-cache) sekaligus menerjemah.
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "error" };
+  }
   try {
     const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
       method: "POST",
@@ -78,8 +162,6 @@ export async function fetchTranscript(
         videoId,
         language: langCode,
         explanationLanguage: EXPLANATION_LANGUAGE,
-        // Katalog rekomendasi sudah dibias ke bahasa target, tapi caption kadang
-        // cuma ada dalam bahasa aslinya — izinkan track lain agar tetap kebaca.
         allowForeign: true,
       }),
     });
@@ -96,7 +178,7 @@ export async function fetchTranscript(
         )
       : [];
     if (cues.length) return { cues, reason: "ok" };
-    const reason = data.reason === "no_captions" ? "no_captions" : "empty";
+    const reason = data.reason === "no_captions" || raw.reason === "no_captions" ? "no_captions" : "empty";
     return { cues: [], reason };
   } catch {
     return { cues: [], reason: "error" };
