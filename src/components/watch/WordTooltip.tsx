@@ -12,10 +12,12 @@ import {
   cleanWord,
   getWordGrammar,
   getWordMeaning,
+  isNonLatin,
   isWordSaved,
   removeSavedWord,
   saveWord,
   speakText,
+  transliterateLines,
   WordMeaning,
 } from "@/lib/immersionLearn";
 
@@ -54,6 +56,10 @@ export function WordTooltip({
   const [errored, setErrored] = useState(false);
   const [saved, setSaved] = useState(false);
 
+  // Bacaan Latin (romaji/pinyin/dll) untuk kata beraksara non-Latin — word-info
+  // "meaning" tak mengembalikannya, jadi kita ambil terpisah via /api/translit.
+  const [translit, setTranslit] = useState("");
+
   // Penjelasan grammar (mode Analisa kata) — dibuka on-demand.
   const [grammarOpen, setGrammarOpen] = useState(false);
   const [grammar, setGrammar] = useState<string | null>(null);
@@ -91,12 +97,19 @@ export function WordTooltip({
     setLoading(true);
     setErrored(false);
     setMeaning(null);
+    setTranslit("");
     setSaved(isWordSaved(word, langCode));
     speak(word, langCode);
     getWordMeaning({ word, sentence, langCode })
       .then((m) => !cancelled && setMeaning(m))
       .catch(() => !cancelled && setErrored(true))
       .finally(() => !cancelled && setLoading(false));
+    // Bacaan Latin di background (hanya bahasa non-Latin) — biar arti tampil dulu.
+    if (isNonLatin(langCode)) {
+      transliterateLines([word], langCode)
+        .then((r) => !cancelled && r[0] && setTranslit(r[0]))
+        .catch(() => {});
+    }
     return () => {
       cancelled = true;
     };
@@ -168,6 +181,13 @@ export function WordTooltip({
             <X className="h-4 w-4 text-white" />
           </button>
         </div>
+
+        {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
+        {translit && (
+          <p className="mt-0.5 text-[12.5px] font-medium italic" style={{ color: "#7FE0E0" }}>
+            {translit}
+          </p>
+        )}
 
         {/* Arti */}
         {loading ? (
