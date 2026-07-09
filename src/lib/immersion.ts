@@ -26,26 +26,56 @@ export interface ImmersionLang {
   code: string;
   name: string; // label Indonesia
   native: string; // nama native (dipakai sebagai tag pembias query)
-  flag: string; // emoji bendera
+  flag: string; // emoji bendera (fallback)
+  country: string; // kode negara ISO-2 buat bendera rounded-rect (RectFlag)
 }
 
+// Daftar bahasa immersion — diperluas menyamai katalog app Linguo. `code` = kode
+// ISO-639 untuk relevanceLanguage YouTube (unik per entri), `native` = tag pembias
+// query, `country` = ISO-2 buat bendera rounded-rectangle.
 export const IMMERSION_LANGS: ImmersionLang[] = [
-  { code: "en", name: "Inggris", native: "English", flag: "🇬🇧" },
-  { code: "ja", name: "Jepang", native: "日本語", flag: "🇯🇵" },
-  { code: "ko", name: "Korea", native: "한국어", flag: "🇰🇷" },
-  { code: "zh", name: "Mandarin", native: "中文", flag: "🇨🇳" },
-  { code: "es", name: "Spanyol", native: "Español", flag: "🇪🇸" },
-  { code: "fr", name: "Prancis", native: "Français", flag: "🇫🇷" },
-  { code: "de", name: "Jerman", native: "Deutsch", flag: "🇩🇪" },
-  { code: "it", name: "Italia", native: "Italiano", flag: "🇮🇹" },
-  { code: "pt", name: "Portugis", native: "Português", flag: "🇵🇹" },
-  { code: "nl", name: "Belanda", native: "Nederlands", flag: "🇳🇱" },
-  { code: "ru", name: "Rusia", native: "Русский", flag: "🇷🇺" },
-  { code: "ar", name: "Arab", native: "العربية", flag: "🇸🇦" },
-  { code: "tr", name: "Turki", native: "Türkçe", flag: "🇹🇷" },
-  { code: "th", name: "Thailand", native: "ภาษาไทย", flag: "🇹🇭" },
-  { code: "vi", name: "Vietnam", native: "Tiếng Việt", flag: "🇻🇳" },
-  { code: "hi", name: "Hindi", native: "हिन्दी", flag: "🇮🇳" },
+  { code: "en", name: "Inggris", native: "English", flag: "🇬🇧", country: "gb" },
+  { code: "ja", name: "Jepang", native: "日本語", flag: "🇯🇵", country: "jp" },
+  { code: "ko", name: "Korea", native: "한국어", flag: "🇰🇷", country: "kr" },
+  { code: "zh", name: "Mandarin", native: "中文", flag: "🇨🇳", country: "cn" },
+  { code: "es", name: "Spanyol", native: "Español", flag: "🇪🇸", country: "es" },
+  { code: "fr", name: "Prancis", native: "Français", flag: "🇫🇷", country: "fr" },
+  { code: "de", name: "Jerman", native: "Deutsch", flag: "🇩🇪", country: "de" },
+  { code: "it", name: "Italia", native: "Italiano", flag: "🇮🇹", country: "it" },
+  { code: "pt", name: "Portugis", native: "Português", flag: "🇵🇹", country: "pt" },
+  { code: "nl", name: "Belanda", native: "Nederlands", flag: "🇳🇱", country: "nl" },
+  { code: "ru", name: "Rusia", native: "Русский", flag: "🇷🇺", country: "ru" },
+  { code: "ar", name: "Arab", native: "العربية", flag: "🇸🇦", country: "sa" },
+  { code: "tr", name: "Turki", native: "Türkçe", flag: "🇹🇷", country: "tr" },
+  { code: "th", name: "Thailand", native: "ภาษาไทย", flag: "🇹🇭", country: "th" },
+  { code: "vi", name: "Vietnam", native: "Tiếng Việt", flag: "🇻🇳", country: "vn" },
+  { code: "hi", name: "Hindi", native: "हिन्दी", flag: "🇮🇳", country: "in" },
+  { code: "he", name: "Ibrani", native: "עברית", flag: "🇮🇱", country: "il" },
+  { code: "fa", name: "Persia", native: "فارسی", flag: "🇮🇷", country: "ir" },
+  { code: "el", name: "Yunani", native: "Ελληνικά", flag: "🇬🇷", country: "gr" },
+  { code: "ka", name: "Georgia", native: "ქართული", flag: "🇬🇪", country: "ge" },
+  { code: "sv", name: "Swedia", native: "Svenska", flag: "🇸🇪", country: "se" },
+  { code: "no", name: "Norwegia", native: "Norsk", flag: "🇳🇴", country: "no" },
+  { code: "da", name: "Denmark", native: "Dansk", flag: "🇩🇰", country: "dk" },
+  { code: "fi", name: "Finlandia", native: "Suomi", flag: "🇫🇮", country: "fi" },
+  { code: "pl", name: "Polandia", native: "Polski", flag: "🇵🇱", country: "pl" },
+  { code: "cs", name: "Ceko", native: "Čeština", flag: "🇨🇿", country: "cz" },
+  { code: "hu", name: "Hungaria", native: "Magyar", flag: "🇭🇺", country: "hu" },
+  { code: "ro", name: "Rumania", native: "Română", flag: "🇷🇴", country: "ro" },
+  { code: "bg", name: "Bulgaria", native: "Български", flag: "🇧🇬", country: "bg" },
+  { code: "uk", name: "Ukraina", native: "Українська", flag: "🇺🇦", country: "ua" },
+  { code: "is", name: "Islandia", native: "Íslenska", flag: "🇮🇸", country: "is" },
+  { code: "id", name: "Indonesia", native: "Bahasa Indonesia", flag: "🇮🇩", country: "id" },
+  { code: "jv", name: "Jawa", native: "Basa Jawa", flag: "🇮🇩", country: "id" },
+  { code: "su", name: "Sunda", native: "Basa Sunda", flag: "🇮🇩", country: "id" },
+  { code: "fil", name: "Filipina", native: "Tagalog", flag: "🇵🇭", country: "ph" },
+  { code: "km", name: "Khmer", native: "ខ្មែរ", flag: "🇰🇭", country: "kh" },
+  { code: "lo", name: "Laos", native: "ລາວ", flag: "🇱🇦", country: "la" },
+  { code: "my", name: "Myanmar", native: "မြန်မာ", flag: "🇲🇲", country: "mm" },
+  { code: "ur", name: "Urdu", native: "اردو", flag: "🇵🇰", country: "pk" },
+  { code: "sw", name: "Swahili", native: "Kiswahili", flag: "🇰🇪", country: "ke" },
+  { code: "am", name: "Amharik", native: "አማርኛ", flag: "🇪🇹", country: "et" },
+  { code: "hy", name: "Armenia", native: "Հայերեն", flag: "🇦🇲", country: "am" },
 ];
 
 export function getImmersionLang(code: string): ImmersionLang | undefined {

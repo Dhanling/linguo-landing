@@ -7,7 +7,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Play, RefreshCw, Search, Trash2, X, Check } from "lucide-react";
+import { ArrowLeft, Layers, Play, RefreshCw, Search, Trash2, X, Check } from "lucide-react";
 import {
   IMMERSION_CATEGORIES,
   IMMERSION_LANGS,
@@ -23,7 +23,10 @@ import {
   WatchHistoryItem,
   youtubeThumb,
 } from "@/lib/immersion";
+import { getSavedWords } from "@/lib/immersionLearn";
+import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
+import FlashcardDeck from "./FlashcardDeck";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -51,6 +54,8 @@ export default function WatchAndLearn() {
   const [active, setActive] = useState<ImmersionVideo | null>(null);
   const [activeLang, setActiveLang] = useState("en");
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
+  const [deckOpen, setDeckOpen] = useState(false);
+  const [vocabCount, setVocabCount] = useState(0);
 
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
   const cat =
@@ -65,7 +70,10 @@ export default function WatchAndLearn() {
       /* abaikan */
     }
     setHistory(getWatchHistory());
+    setVocabCount(getSavedWords().length);
   }, []);
+
+  const refreshVocab = useCallback(() => setVocabCount(getSavedWords().length), []);
 
   // Token buat membatalkan hasil fetch yang ketinggalan (bahasa/kategori keburu ganti).
   const reqId = useRef(0);
@@ -178,14 +186,32 @@ export default function WatchAndLearn() {
           >
             <ArrowLeft className="h-4 w-4" /> Beranda
           </Link>
-          <button
-            onClick={() => setLangPickerOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
-            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-          >
-            <span className="text-lg leading-none">{lang.flag}</span>
-            <span>{lang.name}</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setDeckOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            >
+              <Layers className="h-4 w-4" color={TEAL} />
+              <span>Kosakata</span>
+              {vocabCount > 0 && (
+                <span
+                  className="rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
+                  style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
+                >
+                  {vocabCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setLangPickerOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            >
+              <RectFlag code={lang.country} h={16} />
+              <span>{lang.name}</span>
+            </button>
+          </div>
         </div>
 
         {/* Header */}
@@ -392,7 +418,7 @@ export default function WatchAndLearn() {
                     className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors"
                     style={{ backgroundColor: on ? "rgba(26,158,158,0.16)" : "transparent" }}
                   >
-                    <span className="text-xl leading-none">{l.flag}</span>
+                    <RectFlag code={l.country} h={22} />
                     <span className="flex-1">
                       <span className="block text-[15px] font-bold">{l.name}</span>
                       <span className="block text-[11.5px]" style={{ color: SUB }}>
@@ -419,6 +445,19 @@ export default function WatchAndLearn() {
           video={active}
           langCode={activeLang}
           onClose={() => setActive(null)}
+          onSavedChange={refreshVocab}
+        />
+      )}
+
+      {/* Flashcard kosakata tersimpan */}
+      {deckOpen && (
+        <FlashcardDeck
+          initialLang={langCode}
+          onClose={() => {
+            setDeckOpen(false);
+            refreshVocab();
+          }}
+          onChange={refreshVocab}
         />
       )}
     </main>

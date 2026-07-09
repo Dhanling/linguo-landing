@@ -16,11 +16,19 @@ const ENGLISH_NAME: Record<string, string> = {
   en: "English", ja: "Japanese", ko: "Korean", zh: "Chinese", es: "Spanish",
   fr: "French", de: "German", it: "Italian", pt: "Portuguese", nl: "Dutch",
   ru: "Russian", ar: "Arabic", tr: "Turkish", th: "Thai", vi: "Vietnamese",
-  hi: "Hindi",
+  hi: "Hindi", he: "Hebrew", fa: "Persian", el: "Greek", ka: "Georgian",
+  sv: "Swedish", no: "Norwegian", da: "Danish", fi: "Finnish", pl: "Polish",
+  cs: "Czech", hu: "Hungarian", ro: "Romanian", bg: "Bulgarian", uk: "Ukrainian",
+  is: "Icelandic", id: "Indonesian", jv: "Javanese", su: "Sundanese",
+  fil: "Filipino", km: "Khmer", lo: "Lao", my: "Burmese", ur: "Urdu",
+  sw: "Swahili", am: "Amharic", hy: "Armenian",
 };
 
 // Bahasa beraksara non-Latin — pemicu transliterasi (romaji/pinyin/dll).
-const NON_LATIN = new Set(["ja", "ko", "zh", "ar", "ru", "hi", "th"]);
+const NON_LATIN = new Set([
+  "ja", "ko", "zh", "ar", "ru", "hi", "th", "he", "fa", "el", "ka", "bg", "uk",
+  "km", "lo", "my", "ur", "am", "hy",
+]);
 
 export function isNonLatin(code: string): boolean {
   return NON_LATIN.has(code);
@@ -30,8 +38,51 @@ export function isNonLatin(code: string): boolean {
 export const SPEECH_LANG: Record<string, string> = {
   en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",
   de: "de-DE", it: "it-IT", pt: "pt-PT", nl: "nl-NL", ru: "ru-RU", ar: "ar-SA",
-  tr: "tr-TR", th: "th-TH", vi: "vi-VN", hi: "hi-IN",
+  tr: "tr-TR", th: "th-TH", vi: "vi-VN", hi: "hi-IN", he: "he-IL", fa: "fa-IR",
+  el: "el-GR", ka: "ka-GE", sv: "sv-SE", no: "nb-NO", da: "da-DK", fi: "fi-FI",
+  pl: "pl-PL", cs: "cs-CZ", hu: "hu-HU", ro: "ro-RO", bg: "bg-BG", uk: "uk-UA",
+  is: "is-IS", id: "id-ID", jv: "id-ID", su: "id-ID", fil: "fil-PH", km: "km-KH",
+  lo: "lo-LA", my: "my-MM", ur: "ur-PK", sw: "sw-KE", am: "am-ET", hy: "hy-AM",
 };
+
+// ── TTS bersama (Chirp 3 HD lewat /api/tts, fallback Web Speech) ─────────────
+// Dipakai tooltip kata & flashcard. Satu elemen audio dipakai ulang biar bisa
+// dibatalkan saat suara baru diminta (tak numpuk).
+let ttsAudio: HTMLAudioElement | null = null;
+
+function speakBrowser(text: string, langCode: string) {
+  if (typeof window === "undefined" || !window.speechSynthesis) return;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = SPEECH_LANG[langCode] ?? "en-US";
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  } catch {
+    /* best-effort */
+  }
+}
+
+export async function speakText(text: string, langCode: string) {
+  if (typeof window === "undefined") return;
+  try {
+    ttsAudio?.pause();
+    window.speechSynthesis?.cancel();
+    const res = await fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, lang: langCode }),
+    });
+    if (!res.ok) throw new Error(`tts ${res.status}`);
+    const data = (await res.json()) as { audioContent?: string };
+    if (!data.audioContent) throw new Error("no audio");
+    if (!ttsAudio) ttsAudio = new Audio();
+    ttsAudio.src = `data:audio/mp3;base64,${data.audioContent}`;
+    await ttsAudio.play();
+  } catch {
+    speakBrowser(text, langCode); // best-effort fallback
+  }
+}
 
 // ── Transkrip ────────────────────────────────────────────────────────────────
 

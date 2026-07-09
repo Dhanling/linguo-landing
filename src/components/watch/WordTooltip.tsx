@@ -6,7 +6,7 @@
 // Otomatis mengucapkan kata saat dibuka; posisinya menempel di atas titik tap
 // dan diklem ke tepi layar.
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { BookmarkCheck, BookmarkPlus, Loader2, Sparkles, Volume2, X } from "lucide-react";
 import {
   cleanWord,
@@ -15,7 +15,7 @@ import {
   isWordSaved,
   removeSavedWord,
   saveWord,
-  SPEECH_LANG,
+  speakText,
   WordMeaning,
 } from "@/lib/immersionLearn";
 
@@ -27,45 +27,8 @@ const BORDER = "rgba(255,255,255,0.1)";
 
 const TIP_W = 260;
 
-// Satu elemen audio dipakai ulang biar pemutaran Chirp bisa dibatalkan saat kata
-// baru di-tap (tak numpuk).
-let ttsAudio: HTMLAudioElement | null = null;
-
-function speakBrowser(text: string, langCode: string) {
-  if (typeof window === "undefined" || !window.speechSynthesis) return;
-  try {
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = SPEECH_LANG[langCode] ?? "en-US";
-    u.rate = 0.9;
-    window.speechSynthesis.speak(u);
-  } catch {
-    /* best-effort */
-  }
-}
-
-// Ucapkan `text` pakai Chirp 3 HD (lewat /api/tts) — kualitas & harga jauh lebih
-// baik dari suara bawaan browser. Fallback ke Web Speech API kalau request gagal.
-async function speak(text: string, langCode: string) {
-  if (typeof window === "undefined") return;
-  try {
-    ttsAudio?.pause();
-    window.speechSynthesis?.cancel();
-    const res = await fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text, lang: langCode }),
-    });
-    if (!res.ok) throw new Error(`tts ${res.status}`);
-    const data = (await res.json()) as { audioContent?: string };
-    if (!data.audioContent) throw new Error("no audio");
-    if (!ttsAudio) ttsAudio = new Audio();
-    ttsAudio.src = `data:audio/mp3;base64,${data.audioContent}`;
-    await ttsAudio.play();
-  } catch {
-    speakBrowser(text, langCode); // best-effort fallback
-  }
-}
+// Ucapkan kata pakai Chirp 3 HD (fallback Web Speech) — helper bersama di lib.
+const speak = speakText;
 
 export function WordTooltip({
   word: rawWord,
@@ -95,6 +58,32 @@ export function WordTooltip({
   const [grammarOpen, setGrammarOpen] = useState(false);
   const [grammar, setGrammar] = useState<string | null>(null);
   const [grammarLoading, setGrammarLoading] = useState(false);
+
+  // Geser bebas — offset dari posisi awal, di-drag lewat header.
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const dragRef = useRef<{ sx: number; sy: number; ox: number; oy: number } | null>(null);
+
+  const onDragStart = useCallback(
+    (e: React.PointerEvent) => {
+      // Jangan mulai drag saat menekan tombol (tutup, dsb).
+      if ((e.target as HTMLElement).closest("button")) return;
+      e.preventDefault();
+      dragRef.current = { sx: e.clientX, sy: e.clientY, ox: offset.x, oy: offset.y };
+      const move = (ev: PointerEvent) => {
+        const d = dragRef.current;
+        if (!d) return;
+        setOffset({ x: d.ox + (ev.clientX - d.sx), y: d.oy + (ev.clientY - d.sy) });
+      };
+      const up = () => {
+        dragRef.current = null;
+        window.removeEventListener("pointermove", move);
+        window.removeEventListener("pointerup", up);
+      };
+      window.addEventListener("pointermove", move);
+      window.addEventListener("pointerup", up);
+    },
+    [offset]
+  );
 
   // Ambil arti + ucapkan saat mount.
   useEffect(() => {
@@ -156,10 +145,14 @@ export function WordTooltip({
           width: wide ? Math.min(320, vw - 16) : TIP_W,
           backgroundColor: BALLOON,
           border: `1px solid ${BORDER}`,
+          transform: `translate(${offset.x}px, ${offset.y}px)`,
         }}
       >
-        {/* Header: kata + kelas kata + tutup */}
-        <div className="flex items-start justify-between gap-2">
+        {/* Header: kata + kelas kata + tutup — sekaligus pegangan untuk digeser */}
+        <div
+          onPointerDown={onDragStart}
+          className="flex touch-none cursor-move select-none items-start justify-between gap-2"
+        >
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-[18px] font-extrabold text-white">{word}</span>
             {meaning?.type && (
