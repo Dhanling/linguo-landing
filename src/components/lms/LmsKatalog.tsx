@@ -190,21 +190,48 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
     return () => { alive = false; };
   }, []);
 
+  // [linguo-patch:lms-katalog-frame-fallback-v1] loading & empty state WAJIB tetep pakai frame
+  // master-detail (sidebar + topBar). Kalau ngga, klik "Belajar Mandiri" pas belum ada paket
+  // mandiri = tab "Kelas Live" & sidebar ilang → user ke-trap, ga bisa balik.
+  const Frame = ({ sidebar, children }: { sidebar: ReactNode; children: ReactNode }) => (
+    <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+      <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">{sidebar}</aside>
+      <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
+        {topBar}
+        {children}
+      </main>
+    </div>
+  );
+
   if (loading) {
     return (
-      <div className="flex items-center justify-center rounded-3xl border border-slate-100 bg-white py-16 lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0">
-        <Loader2 className="h-6 w-6 animate-spin text-slate-300" />
-      </div>
+      <Frame sidebar={(
+        <div className="shrink-0 px-6 pb-4 pt-7">
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-gray-500">Memuat…</p>
+        </div>
+      )}>
+        <div className="flex flex-1 items-center justify-center py-16">
+          <Loader2 className="h-6 w-6 animate-spin text-slate-300" />
+        </div>
+      </Frame>
     );
   }
 
   if (courses.length === 0) {
     return (
-      <div className="rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)] lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:items-center lg:justify-center lg:rounded-none lg:border-0 lg:shadow-none">
-        <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-        <p className="text-[14px] font-semibold text-gray-600">Belum ada materi mandiri kamu</p>
-        <p className="mt-1 text-[12px] font-medium text-gray-400">Kamu belum punya paket Belajar Mandiri. Daftar dulu bahasanya biar materinya muncul di sini.</p>
-      </div>
+      <Frame sidebar={(
+        <div className="shrink-0 px-6 pb-4 pt-7">
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-gray-500">0 bahasa · belajar mandiri</p>
+        </div>
+      )}>
+        <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 text-center">
+          <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+          <p className="text-[14px] font-semibold text-gray-600">Belum ada materi mandiri kamu</p>
+          <p className="mt-1 max-w-sm text-[12px] font-medium text-gray-400">Kamu belum punya paket Belajar Mandiri. Daftar dulu bahasanya biar materinya muncul di sini.</p>
+        </div>
+      </Frame>
     );
   }
 

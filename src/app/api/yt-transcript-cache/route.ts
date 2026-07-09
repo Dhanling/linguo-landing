@@ -94,6 +94,23 @@ export async function POST(req: NextRequest) {
     if (!VIDEO_RE.test(videoId) || !validLang(lang)) {
       return NextResponse.json({ ok: false, error: "param tidak valid" }, { status: 400 });
     }
+
+    // Mode BACKFILL metadata: transkrip sudah ada di cache (mis. disimpan sebelum
+    // ada kolom metadata), cukup isi title/channel/dur biar video muncul di tab
+    // "Siap" — tanpa kirim ulang cues. Hanya update baris yang sudah ada.
+    if (body?.metaOnly) {
+      if (!title) return NextResponse.json({ ok: false, error: "title wajib" }, { status: 400 });
+      const sb = createServerClient(0);
+      const { error } = await sb
+        .from("yt_transcripts")
+        .update({ title, channel, dur })
+        .eq("video_id", videoId)
+        .eq("lang", lang)
+        .is("title", null); // jangan timpa metadata yang sudah ada
+      if (error) return NextResponse.json({ ok: false }, { status: 200 });
+      return NextResponse.json({ ok: true }, { status: 200 });
+    }
+
     if (!Array.isArray(cues) || cues.length === 0 || cues.length > MAX_CUES) {
       return NextResponse.json({ ok: false, error: "cues tidak valid" }, { status: 400 });
     }

@@ -183,6 +183,32 @@ function saveTranscriptCache(
   }
 }
 
+/**
+ * Isi metadata (title/channel/dur) untuk transkrip yang SUDAH ada di cache tapi
+ * belum punya metadata (baris lama) — biar video ikut muncul di tab "Siap".
+ * Fire-and-forget; hanya menyentuh baris yang title-nya masih kosong.
+ */
+function backfillTranscriptMeta(videoId: string, langCode: string, meta: TranscriptVideoMeta): void {
+  if (!meta.title) return;
+  try {
+    void fetch("/api/yt-transcript-cache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        metaOnly: true,
+        videoId,
+        lang: langCode,
+        title: meta.title,
+        channel: meta.channel,
+        dur: meta.duration,
+      }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    /* abaikan */
+  }
+}
+
 // Ambil + parse caption dari route Next `/api/yt-transcript` (server Next fetch
 // InnerTube; IP Vercel tak seketat Deno/Supabase + browser tak bisa fetch caption
 // langsung karena CORS). Balikin cue mentah (belum diterjemah) + kode bahasa track.
@@ -433,9 +459,14 @@ export async function fetchTranscript(
   // 0) Cache: kalau (video, bahasa) ini pernah diproses, langsung pakai — hemat
   //    fetch caption / ASR (~1 menit). Katalog = video populer ditonton berulang.
   const cached = await readTranscriptCache(videoId, langCode);
-  // Rapikan lagi walau dari cache: transkrip lama mungkin masih punya section
-  // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
-  if (cached?.length) return { cues: splitCuesBySentence(cached), reason: "ok" };
+  if (cached?.length) {
+    // Backfill metadata: baris cache lama (disimpan sebelum ada kolom metadata)
+    // belum punya title → tak muncul di tab "Siap". Isi sekarang biar muncul.
+    if (opts?.meta?.title) backfillTranscriptMeta(videoId, langCode, opts.meta);
+    // Rapikan lagi walau dari cache: transkrip lama mungkin masih punya section
+    // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
+    return { cues: splitCuesBySentence(cached), reason: "ok" };
+  }
 
   // 1) Jalur cepat: cue mentah dari server Next + terjemahan.
   const raw = await fetchRawCuesFromServer(videoId, langCode);
