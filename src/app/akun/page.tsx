@@ -3122,15 +3122,15 @@ export default function AkunPage() {
                 // [akun-split-pending-active-v1] Kelas Live = activeRegs (Lunas/Cicilan) saja.
                 // Reg pending (belum bayar) sudah tidak masuk activeRegs, jadi tak perlu lagi
                 // filter/countdown pending di sini — cukup buang bahasa yang invalid/placeholder.
-                // [beranda-hide-selesai-v1] kelas yang sudah selesai (sesi penuh) ga usah muncul di
-                // "Kelas Live" — cukup nanti di riwayat kelas.
+                // [beranda-status-badge-v1] kelas selesai/tidak aktif tetap tampil tapi grayscale +
+                // badge "Selesai"; yang jalan badge "Aktif". Aktif ditaruh duluan.
                 const isKelasSelesai = (r: any) => {
                   const total = r.sessions_total || 0;
-                  return total > 0 && (r.sessions_used || 0) >= total;
+                  return (total > 0 && (r.sessions_used || 0) >= total) || !!r.archived_at;
                 };
-                const liveRegs = activeRegs.filter(
-                  (r: any) => isValidLiveLang(r.language) && !isKelasSelesai(r)
-                );
+                const liveRegs = activeRegs
+                  .filter((r: any) => isValidLiveLang(r.language))
+                  .sort((a: any, b: any) => Number(isKelasSelesai(a)) - Number(isKelasSelesai(b)));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
@@ -3373,13 +3373,14 @@ export default function AkunPage() {
                               const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
                               const bg = CARD_BG[idx % CARD_BG.length];
                               const photo = getLangPhoto(reg.language);
+                              const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
                               return (
                                 <button
                                   key={reg.id}
                                   onClick={() => setDetailReg(reg)}
-                                  className="group rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1"
+                                  className={`group rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                 >
-                                  <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg}`}>
+                                  <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
                                     {photo ? (
                                       <>
                                         <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
@@ -3390,6 +3391,16 @@ export default function AkunPage() {
                                         <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                         <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
                                       </>
+                                    )}
+                                    {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
+                                    {selesai ? (
+                                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-gray-500">
+                                        <Check className="h-3 w-3" strokeWidth={3} /> Selesai
+                                      </span>
+                                    ) : (
+                                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
+                                      </span>
                                     )}
                                   </div>
                                   <div className="px-2 pb-2 pt-4">
