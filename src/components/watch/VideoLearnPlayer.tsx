@@ -484,6 +484,7 @@ export default function VideoLearnPlayer({
           <FocusLine
             cue={activeCue}
             time={time}
+            langCode={langCode}
             analyze={analyze}
             breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
             onWordTap={onWordTap}
@@ -708,6 +709,7 @@ export default function VideoLearnPlayer({
                       <KaraokeText
                         cue={c}
                         time={time}
+                        langCode={langCode}
                         onWordTap={onWordTap}
                         className="font-semibold leading-snug"
                         fontSize={14 * fscale}
@@ -717,7 +719,7 @@ export default function VideoLearnPlayer({
                         className="font-semibold leading-snug text-white"
                         style={{ fontSize: 14 * fscale }}
                       >
-                        {splitWords(c.target).map((w, j) =>
+                        {splitWords(c.target, langCode).map((w, j) =>
                           w.isWord ? (
                             <span
                               key={j}
@@ -772,6 +774,7 @@ export default function VideoLearnPlayer({
 function FocusLine({
   cue,
   time,
+  langCode,
   analyze,
   breakdown,
   onWordTap,
@@ -782,6 +785,7 @@ function FocusLine({
 }: {
   cue: LearnCue | null;
   time: number;
+  langCode?: string;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
@@ -864,6 +868,7 @@ function FocusLine({
       <KaraokeText
         cue={cue}
         time={time}
+        langCode={langCode}
         onWordTap={onWordTap}
         className="font-extrabold leading-snug"
         fontSize={22 * scale}
@@ -906,9 +911,10 @@ function estSpeechDur(text: string): number {
 
 function karaokeTokens(
   cue: LearnCue,
-  time: number
+  time: number,
+  langCode?: string
 ): { text: string; isWord: boolean; state: KaraokeState; progress: number }[] {
-  const toks = splitWords(cue.target);
+  const toks = splitWords(cue.target, langCode);
   const total = cue.target.length || 1;
   const windowDur = Math.max(0.001, cue.end - cue.start);
   // Durasi efektif = window sebenarnya, TAPI tak lebih panjang dari perkiraan bicara
@@ -973,17 +979,19 @@ function KaraokeWord({
 function KaraokeText({
   cue,
   time,
+  langCode,
   onWordTap,
   className,
   fontSize,
 }: {
   cue: LearnCue;
   time: number;
+  langCode?: string;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
   className?: string;
   fontSize?: number;
 }) {
-  const toks = useMemo(() => karaokeTokens(cue, time), [cue, time]);
+  const toks = useMemo(() => karaokeTokens(cue, time, langCode), [cue, time, langCode]);
   return (
     <p className={className} style={fontSize ? { fontSize } : undefined}>
       {toks.map((t, j) =>

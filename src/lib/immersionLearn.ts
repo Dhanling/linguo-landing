@@ -621,8 +621,41 @@ export function removeSavedWord(word: string, langCode: string): SavedWord[] {
   return next;
 }
 
-/** Pisah sebuah kalimat jadi token kata + spasi, biar tiap kata bisa di-tap. */
-export function splitWords(sentence: string): { text: string; isWord: boolean }[] {
+// Segmenter per-locale di-cache: bikin Intl.Segmenter itu mahal & splitWords
+// dipanggil tiap render (karaoke + daftar transkrip).
+const segmenterCache = new Map<string, Intl.Segmenter>();
+function getWordSegmenter(langCode: string): Intl.Segmenter | null {
+  if (typeof Intl === "undefined" || typeof Intl.Segmenter !== "function") return null;
+  let seg = segmenterCache.get(langCode);
+  if (!seg) {
+    try {
+      seg = new Intl.Segmenter(langCode || undefined, { granularity: "word" });
+    } catch {
+      return null;
+    }
+    segmenterCache.set(langCode, seg);
+  }
+  return seg;
+}
+
+/**
+ * Pisah sebuah kalimat jadi token kata + pemisah, biar tiap kata bisa di-tap.
+ * Pakai Intl.Segmenter (segmentasi berbasis kamus) supaya bahasa tanpa spasi —
+ * Mandarin, Jepang, Thai, dll — terpisah PER KATA, bukan satu blok kalimat.
+ * Fallback ke regex kalau Intl.Segmenter tak ada.
+ */
+export function splitWords(
+  sentence: string,
+  langCode?: string
+): { text: string; isWord: boolean }[] {
+  const seg = getWordSegmenter((langCode || "").split("-")[0]);
+  if (seg) {
+    const out: { text: string; isWord: boolean }[] = [];
+    for (const s of seg.segment(sentence)) {
+      if (s.segment) out.push({ text: s.segment, isWord: !!s.isWordLike });
+    }
+    if (out.length) return out;
+  }
   // Cocokkan gugus huruf (termasuk aksara non-Latin) sebagai kata; sisanya (spasi,
   // tanda baca) sebagai pemisah yang tak bisa di-tap.
   const parts = sentence.match(/[\p{L}\p{M}\p{N}]+(?:['’-][\p{L}\p{M}\p{N}]+)*|[^\p{L}\p{M}\p{N}]+/gu);
