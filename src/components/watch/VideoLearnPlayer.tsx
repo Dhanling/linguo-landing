@@ -235,6 +235,9 @@ export default function VideoLearnPlayer({
     setTranslitLoading(false);
     setCues([]);
     setBreakdowns({});
+    // Sambil transkrip interaktif disiapkan (jalur AI bisa ~1 menit), tampilkan CC
+    // bawaan YouTube DALAM bahasa target biar siswa tak menonton tanpa subtitle.
+    setShowCC(true);
     fetchTranscript(video.videoId, langCode, {
       onAsr: () => !cancelled && setAsrRunning(true),
     }).then((r) => {
@@ -242,6 +245,8 @@ export default function VideoLearnPlayer({
       if (r.cues.length) {
         setCues(r.cues);
         setTxState("ready");
+        // Transkrip kita sudah tampil → matikan CC bawaan biar subtitle tak dobel.
+        setShowCC(false);
         // Bahasa non-Latin (Jepang, Mandarin, dll): transkrip dari server tak bawa
         // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
         // lalu romaji/pinyin menyusul tanpa menahan render.
@@ -268,16 +273,45 @@ export default function VideoLearnPlayer({
     };
   }, [video.videoId, langCode]);
 
-  // Terapkan CC bawaan (dipakai kalau transkrip kita tak tersedia).
+  // Terapkan CC bawaan + SINKRONKAN bahasanya ke bahasa yang sedang dipelajari.
+  // Tanpa ini, track CC "lengket" ke bahasa video sebelumnya (mis. buka video
+  // Inggris tapi CC-nya masih Italia dari video sebelumnya). setOption("track")
+  // memilih track bahasa target sekaligus memaksanya tampil. Modul bisa bernama
+  // "captions" (player AS3) atau "cc" (HTML5) — set keduanya, yang tak aktif no-op.
   useEffect(() => {
     if (!ready) return;
+    const p = playerRef.current;
+    if (!p) return;
+    const base = (langCode || "").split("-")[0];
+    const applyLang = () => {
+      for (const mod of ["captions", "cc"]) {
+        try {
+          p.setOption?.(mod, "track", { languageCode: base });
+        } catch {
+          /* modul lain / belum siap — abaikan */
+        }
+      }
+    };
     try {
-      if (showCC) playerRef.current?.loadModule?.("captions");
-      else playerRef.current?.unloadModule?.("captions");
+      if (showCC) {
+        p.loadModule?.("captions");
+        p.loadModule?.("cc");
+        // setOption sering diabaikan tepat setelah loadModule (modul belum siap),
+        // jadi ulang beberapa kali sampai track bahasa target terpasang.
+        applyLang();
+        const t1 = window.setTimeout(applyLang, 400);
+        const t2 = window.setTimeout(applyLang, 1200);
+        return () => {
+          window.clearTimeout(t1);
+          window.clearTimeout(t2);
+        };
+      }
+      p.unloadModule?.("captions");
+      p.unloadModule?.("cc");
     } catch {
       /* abaikan */
     }
-  }, [showCC, ready]);
+  }, [showCC, ready, langCode]);
 
   // Indeks cue aktif berdasarkan waktu sekarang.
   const activeIdx = useMemo(() => {
