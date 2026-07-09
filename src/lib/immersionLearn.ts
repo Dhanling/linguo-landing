@@ -127,31 +127,17 @@ async function translateCues(
   }
 }
 
-/**
- * Ambil transkrip dwibahasa untuk sebuah video YouTube. Strategi "device-first"
- * ala app: (1) server Next fetch + parse caption dari YouTube, (2) Edge Function
- * menerjemahkan barisnya ke Indonesia. Kalau langkah 1 gagal (video tak bercaption
- * / diblokir), fallback ke Edge Function mode server-fetch. Best-effort: balikin
- * daftar kosong + alasan biar player kasih pesan & pakai CC bawaan YouTube.
- */
-export async function fetchTranscript(
+// Transkrip AI: transkripsi audio video pakai Edge Function `yt-asr` (Gemini) —
+// dipakai saat caption tak bisa diambil (IP datacenter Vercel/Supabase diblokir
+// YouTube untuk endpoint caption, TAPI CDN audio tidak). Lambat (~1 menit) tapi
+// jalan universal + langsung diterjemah ke Indonesia. Best-effort → [] saat gagal.
+async function fetchAsrTranscript(
   videoId: string,
   langCode: string
-): Promise<TranscriptResult> {
-  // 1) Ambil cue mentah dari server Next.
-  const raw = await fetchRawCuesFromServer(videoId, langCode);
-  if (raw.cues.length) {
-    const cues = await translateCues(raw.cues, raw.trackLang, langCode);
-    return { cues, reason: "ok" };
-  }
-
-  // 2) Fallback: minta Edge Function fetch sendiri (kadang berhasil utk video
-  // yang berat-cache) sekaligus menerjemah.
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-    return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "error" };
-  }
+): Promise<LearnCue[]> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
   try {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-transcript`, {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-asr`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -162,13 +148,12 @@ export async function fetchTranscript(
         videoId,
         language: langCode,
         explanationLanguage: EXPLANATION_LANGUAGE,
-        allowForeign: true,
       }),
     });
-    if (!res.ok) return { cues: [], reason: "error" };
-    const data = (await res.json()) as { cues?: unknown; reason?: string };
-    const cues = Array.isArray(data.cues)
-      ? (data.cues as LearnCue[]).filter(
+    if (!res.ok) return [];
+    const data = (await res.json()) as { cues?: LearnCue[] };
+    return Array.isArray(data.cues)
+      ? data.cues.filter(
           (c) =>
             c &&
             typeof c.start === "number" &&
@@ -177,12 +162,38 @@ export async function fetchTranscript(
             c.target.length > 0
         )
       : [];
-    if (cues.length) return { cues, reason: "ok" };
-    const reason = data.reason === "no_captions" || raw.reason === "no_captions" ? "no_captions" : "empty";
-    return { cues: [], reason };
   } catch {
-    return { cues: [], reason: "error" };
+    return [];
   }
+}
+
+/**
+ * Ambil transkrip dwibahasa untuk sebuah video YouTube. Dua jalur:
+ * (1) CEPAT — server Next fetch + parse caption YouTube, lalu Edge Function
+ *     menerjemahkannya (jalan kalau IP-nya tak diblokir & video bercaption).
+ * (2) ANDAL — kalau (1) gagal, transkripsi audio via `yt-asr` (Gemini, ~1 menit);
+ *     ini jalan universal karena CDN audio tidak diblokir seperti endpoint caption.
+ * `onAsr` dipanggil saat masuk jalur (2) biar player bisa ganti pesan loading.
+ * Best-effort: balikin daftar kosong + alasan → player pakai CC bawaan YouTube.
+ */
+export async function fetchTranscript(
+  videoId: string,
+  langCode: string,
+  opts?: { onAsr?: () => void }
+): Promise<TranscriptResult> {
+  // 1) Jalur cepat: cue mentah dari server Next + terjemahan.
+  const raw = await fetchRawCuesFromServer(videoId, langCode);
+  if (raw.cues.length) {
+    const cues = await translateCues(raw.cues, raw.trackLang, langCode);
+    return { cues, reason: "ok" };
+  }
+
+  // 2) Jalur andal: transkripsi audio AI.
+  opts?.onAsr?.();
+  const asr = await fetchAsrTranscript(videoId, langCode);
+  if (asr.length) return { cues: asr, reason: "ok" };
+
+  return { cues: [], reason: raw.reason === "no_captions" ? "no_captions" : "empty" };
 }
 
 // ── word-info (arti kata, grammar, analisa kalimat) ──────────────────────────

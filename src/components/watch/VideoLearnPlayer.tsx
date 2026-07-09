@@ -93,6 +93,8 @@ export default function VideoLearnPlayer({
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
+  // True saat transkrip jatuh ke jalur AI (yt-asr) yang lambat — buat pesan loading.
+  const [asrRunning, setAsrRunning] = useState(false);
 
   const [analyze, setAnalyze] = useState(false);
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
@@ -162,9 +164,12 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     let cancelled = false;
     setTxState("loading");
+    setAsrRunning(false);
     setCues([]);
     setBreakdowns({});
-    fetchTranscript(video.videoId, langCode).then((r) => {
+    fetchTranscript(video.videoId, langCode, {
+      onAsr: () => !cancelled && setAsrRunning(true),
+    }).then((r) => {
       if (cancelled) return;
       if (r.cues.length) {
         setCues(r.cues);
@@ -331,6 +336,7 @@ export default function VideoLearnPlayer({
             onWordTap={onWordTap}
             onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
             txState={txState}
+            asrRunning={asrRunning}
           />
 
           {/* Kontrol */}
@@ -425,8 +431,13 @@ export default function VideoLearnPlayer({
             className="min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 [scrollbar-width:thin]"
           >
             {txState === "loading" && (
-              <div className="flex items-center gap-2 px-2 py-6" style={{ color: SUB }}>
-                <Loader2 className="h-4 w-4 animate-spin" /> Memuat transkrip…
+              <div className="flex items-start gap-2 px-2 py-6" style={{ color: SUB }}>
+                <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin" />
+                <span className="text-[13px] leading-relaxed">
+                  {asrRunning
+                    ? "Membuat subtitle dengan AI… ini bisa memakan waktu sekitar 1 menit. Kamu bisa tetap menonton dulu."
+                    : "Memuat transkrip…"}
+                </span>
               </div>
             )}
             {txState === "none" && (
@@ -504,6 +515,7 @@ function FocusLine({
   onWordTap,
   onRetryAnalyze,
   txState,
+  asrRunning,
 }: {
   cue: LearnCue | null;
   analyze: boolean;
@@ -511,12 +523,17 @@ function FocusLine({
   onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
+  asrRunning: boolean;
 }) {
   if (txState !== "ready") {
     return (
       <div className="flex min-h-[92px] items-center justify-center px-6 py-4 text-center">
         <p className="text-[13px]" style={{ color: SUB }}>
-          {txState === "loading" ? "Menyiapkan subtitle…" : "Menonton dengan subtitle bawaan YouTube."}
+          {txState === "loading"
+            ? asrRunning
+              ? "Membuat subtitle dengan AI… (~1 menit)"
+              : "Menyiapkan subtitle…"
+            : "Menonton dengan subtitle bawaan YouTube."}
         </p>
       </div>
     );
