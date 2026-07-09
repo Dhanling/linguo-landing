@@ -44,6 +44,11 @@ const PLACEMENT_LIVE = new Set([
   // linguo-patch:placement-asia-v1 — 10 bahasa Asia dgn placement test CEFR baru
   "korean", "mandarin", "cantonese", "vietnamese", "thai",
   "filipino", "khmer", "burmese", "hindi", "urdu",
+  // linguo-patch:placement-europe-v1 — 21 bahasa Eropa dgn placement test CEFR baru
+  "german", "french", "spanish", "italian", "dutch", "greek",
+  "portuguese-br", "portuguese-pt", "swedish", "norwegian", "danish",
+  "icelandic", "finnish", "hungarian", "turkish", "romanian",
+  "russian", "ukrainian", "bulgarian", "polish", "czech",
 ]);
 
 interface Props {

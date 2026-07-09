@@ -270,7 +270,7 @@ export function determineLevel(score: number): {
   level: string; sublevel: string; label: string;
   description: string; startChapter: string; estimationMonths: number;
 } {
-  if (score <= 5)  return { level: "A1", sublevel: "A1.1", label: "Pemula Awal", description: "Kamu masih di tahap fondasi. Mulai dari dasar akan bangun trust-mu dengan Bahasa Inggris.", startChapter: "Chapter 1: First Steps", estimationMonths: 10 };
+  if (score <= 5)  return { level: "A1", sublevel: "A1.1", label: "Pemula Awal", description: "Kamu masih di tahap fondasi. Mulai dari dasar akan bangun trust-mu dengan bahasa barumu.", startChapter: "Chapter 1: First Steps", estimationMonths: 10 };
   if (score <= 10) return { level: "A1", sublevel: "A1.2", label: "Pemula Berkembang", description: "Kamu sudah tau dasar. Siap lanjut ke daily life vocabulary.", startChapter: "Chapter 2: Daily Life", estimationMonths: 9 };
   if (score <= 14) return { level: "A1", sublevel: "A1.3", label: "Pemula Lanjutan", description: "Fondasi A1 sudah baik. Tinggal polish ke percakapan sosial.", startChapter: "Chapter 3: Social Basics", estimationMonths: 8 };
   if (score <= 19) return { level: "A2", sublevel: "A2.1", label: "Pra-Menengah Awal", description: "Kamu punya dasar kuat. Saatnya naik ke past tense.", startChapter: "A2 Chapter 1: Beyond Basics", estimationMonths: 7 };

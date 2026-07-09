@@ -26,6 +26,28 @@ import { khmerPlacementTest } from "@/data/placement/khmer";
 import { burmesePlacementTest } from "@/data/placement/burmese";
 import { hindiPlacementTest } from "@/data/placement/hindi";
 import { urduPlacementTest } from "@/data/placement/urdu";
+// linguo-patch:placement-europe-v1 — 21 bahasa Eropa "SEGERA" dapat placement test CEFR
+import { germanPlacementTest } from "@/data/placement/german";
+import { frenchPlacementTest } from "@/data/placement/french";
+import { spanishPlacementTest } from "@/data/placement/spanish";
+import { italianPlacementTest } from "@/data/placement/italian";
+import { dutchPlacementTest } from "@/data/placement/dutch";
+import { greekPlacementTest } from "@/data/placement/greek";
+import { portugueseBrPlacementTest } from "@/data/placement/portuguese-br";
+import { portuguesePtPlacementTest } from "@/data/placement/portuguese-pt";
+import { swedishPlacementTest } from "@/data/placement/swedish";
+import { norwegianPlacementTest } from "@/data/placement/norwegian";
+import { danishPlacementTest } from "@/data/placement/danish";
+import { icelandicPlacementTest } from "@/data/placement/icelandic";
+import { finnishPlacementTest } from "@/data/placement/finnish";
+import { hungarianPlacementTest } from "@/data/placement/hungarian";
+import { turkishPlacementTest } from "@/data/placement/turkish";
+import { romanianPlacementTest } from "@/data/placement/romanian";
+import { russianPlacementTest } from "@/data/placement/russian";
+import { ukrainianPlacementTest } from "@/data/placement/ukrainian";
+import { bulgarianPlacementTest } from "@/data/placement/bulgarian";
+import { polishPlacementTest } from "@/data/placement/polish";
+import { czechPlacementTest } from "@/data/placement/czech";
 import type { Question as PlacementQuestion } from "@/data/placement/english";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -289,6 +311,28 @@ const CEFR_QUESTIONS: Record<string, PlacementQuestion[]> = {
   burmese: burmesePlacementTest,
   hindi: hindiPlacementTest,
   urdu: urduPlacementTest,
+  // linguo-patch:placement-europe-v1
+  german: germanPlacementTest,
+  french: frenchPlacementTest,
+  spanish: spanishPlacementTest,
+  italian: italianPlacementTest,
+  dutch: dutchPlacementTest,
+  greek: greekPlacementTest,
+  "portuguese-br": portugueseBrPlacementTest,
+  "portuguese-pt": portuguesePtPlacementTest,
+  swedish: swedishPlacementTest,
+  norwegian: norwegianPlacementTest,
+  danish: danishPlacementTest,
+  icelandic: icelandicPlacementTest,
+  finnish: finnishPlacementTest,
+  hungarian: hungarianPlacementTest,
+  turkish: turkishPlacementTest,
+  romanian: romanianPlacementTest,
+  russian: russianPlacementTest,
+  ukrainian: ukrainianPlacementTest,
+  bulgarian: bulgarianPlacementTest,
+  polish: polishPlacementTest,
+  czech: czechPlacementTest,
 };
 
 export default function PlacementTestPage() {
