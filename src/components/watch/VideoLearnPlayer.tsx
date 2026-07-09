@@ -331,6 +331,7 @@ export default function VideoLearnPlayer({
           {/* Baris fokus — kalimat aktif */}
           <FocusLine
             cue={activeCue}
+            time={time}
             analyze={analyze}
             breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
             onWordTap={onWordTap}
@@ -460,21 +461,30 @@ export default function VideoLearnPlayer({
                       border: `1px solid ${on ? "rgba(26,158,158,0.4)" : "transparent"}`,
                     }}
                   >
-                    <p className="text-[14px] font-semibold leading-snug text-white">
-                      {splitWords(c.target).map((w, j) =>
-                        w.isWord ? (
-                          <span
-                            key={j}
-                            onClick={(e) => onWordTap(e, w.text, c.target)}
-                            className="cursor-pointer rounded transition-colors hover:bg-[rgba(26,158,158,0.28)]"
-                          >
-                            {w.text}
-                          </span>
-                        ) : (
-                          <span key={j}>{w.text}</span>
-                        )
-                      )}
-                    </p>
+                    {on ? (
+                      <KaraokeText
+                        cue={c}
+                        time={time}
+                        onWordTap={onWordTap}
+                        className="text-[14px] font-semibold leading-snug"
+                      />
+                    ) : (
+                      <p className="text-[14px] font-semibold leading-snug text-white">
+                        {splitWords(c.target).map((w, j) =>
+                          w.isWord ? (
+                            <span
+                              key={j}
+                              onClick={(e) => onWordTap(e, w.text, c.target)}
+                              className="cursor-pointer rounded transition-colors hover:bg-[rgba(26,158,158,0.28)]"
+                            >
+                              {w.text}
+                            </span>
+                          ) : (
+                            <span key={j}>{w.text}</span>
+                          )
+                        )}
+                      </p>
+                    )}
                     {c.translit && (
                       <p className="mt-0.5 text-[12px] italic" style={{ color: SUB }}>
                         {c.translit}
@@ -510,6 +520,7 @@ export default function VideoLearnPlayer({
 // ── Baris fokus (kalimat aktif di bawah video) ────────────────────────────────
 function FocusLine({
   cue,
+  time,
   analyze,
   breakdown,
   onWordTap,
@@ -518,6 +529,7 @@ function FocusLine({
   asrRunning,
 }: {
   cue: LearnCue | null;
+  time: number;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
@@ -593,23 +605,15 @@ function FocusLine({
   }
 
   // Mode normal: kalimat target besar (bisa di-tap) + translit + terjemahan emas.
+  // Kata yang sedang diucapkan disorot ala karaoke (tersapu teal kiri→kanan).
   return (
     <div className="min-h-[92px] px-5 py-4 text-center sm:px-6">
-      <p className="text-[20px] font-extrabold leading-snug text-white sm:text-[24px]">
-        {splitWords(cue.target).map((w, j) =>
-          w.isWord ? (
-            <span
-              key={j}
-              onClick={(e) => onWordTap(e, w.text, cue.target)}
-              className="cursor-pointer rounded px-0.5 transition-colors hover:bg-[rgba(26,158,158,0.3)]"
-            >
-              {w.text}
-            </span>
-          ) : (
-            <span key={j}>{w.text}</span>
-          )
-        )}
-      </p>
+      <KaraokeText
+        cue={cue}
+        time={time}
+        onWordTap={onWordTap}
+        className="text-[20px] font-extrabold leading-snug sm:text-[24px]"
+      />
       {cue.translit && (
         <p className="mt-1 text-[13px] italic" style={{ color: SUB }}>
           {cue.translit}
@@ -621,6 +625,116 @@ function FocusLine({
         </p>
       )}
     </div>
+  );
+}
+
+// ── Efek karaoke ──────────────────────────────────────────────────────────────
+// Cue transkrip hanya punya timing per-baris (start/end), tak ada per kata. Jadi
+// durasi baris didistribusikan ke tiap token proporsional dengan panjang
+// karakter — perkiraan tempo bicara yang cukup baik. Tiap token dapat status:
+// "sung" (sudah lewat), "active" (sedang diucapkan, dengan progress 0..1), atau
+// "future" (belum).
+type KaraokeState = "sung" | "active" | "future";
+
+function karaokeTokens(
+  cue: LearnCue,
+  time: number
+): { text: string; isWord: boolean; state: KaraokeState; progress: number }[] {
+  const toks = splitWords(cue.target);
+  const total = cue.target.length || 1;
+  const dur = Math.max(0.001, cue.end - cue.start);
+  const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
+  const played = frac * total; // jumlah karakter yang "sudah" terucap
+  let acc = 0;
+  return toks.map((t) => {
+    const startC = acc;
+    const endC = acc + t.text.length;
+    acc = endC;
+    let state: KaraokeState = "future";
+    let progress = 0;
+    if (endC <= played) state = "sung";
+    else if (startC < played) {
+      state = "active";
+      progress = (played - startC) / Math.max(1, t.text.length);
+    }
+    return { text: t.text, isWord: t.isWord, state, progress };
+  });
+}
+
+function KaraokeWord({
+  text,
+  state,
+  progress,
+  onClick,
+}: {
+  text: string;
+  state: KaraokeState;
+  progress: number;
+  onClick: (e: React.MouseEvent) => void;
+}) {
+  const active = state === "active";
+  const pct = state === "sung" ? 100 : active ? Math.round(progress * 100) : 0;
+  return (
+    <span
+      onClick={onClick}
+      className="relative mx-[1px] inline-block cursor-pointer rounded align-baseline transition-transform duration-200 hover:bg-[rgba(26,158,158,0.28)]"
+      style={{ transform: active ? "translateY(-1px) scale(1.05)" : "none" }}
+    >
+      {/* lapisan dasar — belum diucapkan (putih) */}
+      <span style={{ color: "#fff" }}>{text}</span>
+      {/* lapisan terisi — sudah diucapkan (teal), tersapu kiri→kanan */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 overflow-hidden whitespace-nowrap"
+        style={{
+          width: `${pct}%`,
+          color: TEAL,
+          transition: "width 220ms linear",
+          textShadow: active ? "0 0 16px rgba(26,158,158,0.55)" : "none",
+        }}
+      >
+        {text}
+      </span>
+    </span>
+  );
+}
+
+function KaraokeText({
+  cue,
+  time,
+  onWordTap,
+  className,
+}: {
+  cue: LearnCue;
+  time: number;
+  onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
+  className?: string;
+}) {
+  const toks = useMemo(() => karaokeTokens(cue, time), [cue, time]);
+  return (
+    <p className={className}>
+      {toks.map((t, j) =>
+        t.isWord ? (
+          <KaraokeWord
+            key={j}
+            text={t.text}
+            state={t.state}
+            progress={t.progress}
+            onClick={(e) => onWordTap(e, t.text, cue.target)}
+          />
+        ) : (
+          <span
+            key={j}
+            style={{
+              color: t.state === "future" ? "#fff" : TEAL,
+              transition: "color 220ms linear",
+            }}
+          >
+            {t.text}
+          </span>
+        )
+      )}
+    </p>
   );
 }
 
