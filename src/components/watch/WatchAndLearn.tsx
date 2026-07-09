@@ -44,6 +44,9 @@ const LANG_KEY = "linguo:watch:lang:v1";
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
+// Jumlah kartu per "halaman" tampilan = 2 baris di desktop (grid lg:grid-cols-4).
+// Grid mulai dengan segini; "Muat lainnya" menambah sebanyak ini lagi.
+const GRID_PAGE = 8;
 
 // [linguo-patch:watch-orient-frame0-v1] Deteksi orientasi ASLI video via thumbnail
 // `frame0.jpg`. Kenapa: YouTube Data API tak kasih orientasi, dan durasi bukan proxy
@@ -72,6 +75,8 @@ export default function WatchAndLearn() {
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
+  // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 2 baris.
+  const [visible, setVisible] = useState(GRID_PAGE);
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
@@ -218,6 +223,12 @@ export default function WatchAndLearn() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langCode, category, committedText]);
 
+  // Balikkan tampilan ke 2 baris tiap daftar/​filter berganti (bukan saat loadMore,
+  // yang cuma menambah `videos` tanpa mengubah key di bawah).
+  useEffect(() => {
+    setVisible(GRID_PAGE);
+  }, [langCode, category, committedText, orient]);
+
   const loadMore = useCallback(async () => {
     if (!nextToken || state === "more") return;
     const id = reqId.current;
@@ -243,6 +254,16 @@ export default function WatchAndLearn() {
     setState("done");
     prewarmTranscripts(more, lang.code);
   }, [nextToken, state, cat, lang, committedText]);
+
+  // "Muat lainnya": tampilkan 2 baris berikutnya dari yang sudah dimuat; kalau
+  // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.
+  const showMore = useCallback(() => {
+    if (visible < shownVideos.length) setVisible((n) => n + GRID_PAGE);
+    else if (nextToken) {
+      setVisible((n) => n + GRID_PAGE);
+      loadMore();
+    }
+  }, [visible, shownVideos.length, nextToken, loadMore]);
 
   const pickLang = useCallback((code: string) => {
     setLangCode(code);
@@ -494,7 +515,7 @@ export default function WatchAndLearn() {
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
           {state === "loading"
             ? Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)
-            : shownVideos.map((v) => (
+            : shownVideos.slice(0, visible).map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
                   <Thumb videoId={v.videoId} thumbnail={v.thumbnail} duration={v.duration} />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
@@ -558,11 +579,12 @@ export default function WatchAndLearn() {
           </div>
         )}
 
-        {/* Muat lainnya */}
-        {state !== "loading" && nextToken && videos.length > 0 && (
+        {/* Muat lainnya — muncul kalau masih ada sisa lokal ATAU halaman server. */}
+        {state !== "loading" && videos.length > 0 && shownVideos.length > 0 &&
+          (visible < shownVideos.length || nextToken) && (
           <div className="mt-8 flex justify-center">
             <button
-              onClick={loadMore}
+              onClick={showMore}
               disabled={state === "more"}
               className="rounded-full px-6 py-3 text-sm font-bold transition-transform active:scale-95 disabled:opacity-60"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
