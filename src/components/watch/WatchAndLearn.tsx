@@ -39,6 +39,11 @@ const BORDER = "rgba(255,255,255,0.08)";
 const SUB = "rgba(255,255,255,0.5)";
 
 const LANG_KEY = "linguo:watch:lang:v1";
+// [linguo-patch:watch-orient-toggle-v1] Ambang pemisah Shorts vs Video landscape.
+// Shorts YouTube praktis selalu ≤60 dtk & vertikal; klip landscape (adegan film,
+// TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
+// sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
+const SHORTS_MAX_SEC = 60;
 // Tab "Siap": video yang transkripnya sudah tersimpan → buka = instan, tanpa
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
@@ -49,6 +54,10 @@ export default function WatchAndLearn() {
   const [category, setCategory] = useState("populer");
   const [freeText, setFreeText] = useState("");
   const [committedText, setCommittedText] = useState("");
+  // [linguo-patch:watch-orient-toggle-v1] filter jenis konten: semua / shorts
+  // (klip vertikal pendek) / video (landscape lebih panjang). YouTube Data API
+  // tak kasih orientasi, jadi dipisah pakai durasi — proxy paling andal.
+  const [orient, setOrient] = useState<"all" | "shorts" | "video">("all");
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
@@ -66,6 +75,17 @@ export default function WatchAndLearn() {
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
   const cat =
     IMMERSION_CATEGORIES.find((c) => c.id === category) ?? IMMERSION_CATEGORIES[0];
+
+  // [linguo-patch:watch-orient-toggle-v1] Terapkan filter jenis konten ke grid.
+  // Video tanpa durasi terbaca dianggap "video" (landscape) — biar tak hilang
+  // dari tampilan default; hanya masuk "shorts" kalau durasinya jelas ≤60 dtk.
+  const shownVideos = useMemo(() => {
+    if (orient === "shorts")
+      return videos.filter((v) => v.duration != null && v.duration <= SHORTS_MAX_SEC);
+    if (orient === "video")
+      return videos.filter((v) => v.duration == null || v.duration > SHORTS_MAX_SEC);
+    return videos;
+  }, [videos, orient]);
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
@@ -398,11 +418,39 @@ export default function WatchAndLearn() {
           })}
         </div>
 
+        {/* [linguo-patch:watch-orient-toggle-v1] Toggle jenis konten: Semua / Shorts / Video */}
+        <div
+          className="mt-4 inline-flex gap-1 rounded-full p-1"
+          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        >
+          {([
+            ["all", "Semua", ""],
+            ["shorts", "Shorts", "📱"],
+            ["video", "Video", "🖥️"],
+          ] as const).map(([k, label, emoji]) => {
+            const on = orient === k;
+            return (
+              <button
+                key={k}
+                onClick={() => setOrient(k)}
+                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
+                style={{
+                  backgroundColor: on ? TEAL : "transparent",
+                  color: on ? "#fff" : "rgba(255,255,255,0.7)",
+                }}
+              >
+                {emoji && <span className="mr-1">{emoji}</span>}
+                {label}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Grid video */}
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
           {state === "loading"
             ? Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)
-            : videos.map((v) => (
+            : shownVideos.map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
                   <Thumb videoId={v.videoId} thumbnail={v.thumbnail} duration={v.duration} />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
@@ -414,6 +462,29 @@ export default function WatchAndLearn() {
                 </button>
               ))}
         </div>
+
+        {/* [linguo-patch:watch-orient-toggle-v1] Grid kosong gara-gara filter jenis konten
+            (bukan karena hasil server nihil) → arahkan balik ke "Semua". */}
+        {state !== "loading" && videos.length > 0 && shownVideos.length === 0 && (
+          <div
+            className="mt-6 rounded-2xl p-6 text-center"
+            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+          >
+            <p className="text-[15px] font-bold">
+              Tak ada {orient === "shorts" ? "Shorts" : "video landscape"} di halaman ini
+            </p>
+            <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
+              Coba pilih <b>Semua</b>, muat lainnya, atau ganti kategori.
+            </p>
+            <button
+              onClick={() => setOrient("all")}
+              className="mt-3 rounded-full px-4 py-2 text-[12.5px] font-bold"
+              style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
+            >
+              Tampilkan semua
+            </button>
+          </div>
+        )}
 
         {/* Empty / error state */}
         {state === "empty" && (
