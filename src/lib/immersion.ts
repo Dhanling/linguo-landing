@@ -102,31 +102,23 @@ export interface ImmersionCategory {
   fresh?: boolean; // urutkan by tanggal (konten terbaru) — berita, vlog
 }
 
-// Kartun & Lagu Anak dibumbui nama franchise global yang lazim dijuluki/di-sub
-// ke banyak bahasa (SpongeBob, Peppa, Bluey, Cocomelon, dll). YouTube menilai kata
-// di `q` sebagai ranking lunak — franchise-nya naik ke atas tanpa mematikan recall
-// untuk bahasa yang tak punya dub-nya (relevanceLanguage tetap membias ke target).
+// PENTING: `q` sengaja TANPA nama franchise global (Peppa Pig, Cocomelon, dll).
+// Nama franchise Inggris jadi sinyal ranking yang terlalu kuat — dia menindih
+// relevanceLanguage sehingga hasilnya kebanjiran video Inggris walau bahasa target
+// lain (mis. pilih Hungaria tapi keluar Peppa Pig Inggris). Dengan kata kategori
+// generik saja + tag native + relevanceLanguage, YouTube mengembalikan konten
+// beneran dalam bahasa target (terbukti: "cartoon Magyar" → rajzfilm/mese magyarul).
 export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
   { id: "populer", label: "Populer", emoji: "✨", q: "popular trending" },
   { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment funny" },
-  {
-    id: "kartun",
-    label: "Kartun",
-    emoji: "🧸",
-    q: "cartoon animation Peppa Pig SpongeBob Bluey Paw Patrol Pocoyo Tom and Jerry",
-  },
+  { id: "kartun", label: "Kartun", emoji: "🧸", q: "cartoon animation for kids" },
   { id: "berita", label: "Berita", emoji: "📰", q: "news", news: true, fresh: true },
   { id: "musik", label: "Musik", emoji: "🎵", q: "official music video" },
   { id: "film", label: "Film & TV", emoji: "🎥", q: "movie clip trailer scene" },
   { id: "olahraga", label: "Olahraga", emoji: "⚽", q: "sports highlights" },
   { id: "teknologi", label: "Teknologi", emoji: "💡", q: "technology review gadget" },
   { id: "vlog", label: "Vlog", emoji: "📹", q: "daily vlog", fresh: true },
-  {
-    id: "anak",
-    label: "Lagu Anak",
-    emoji: "🎈",
-    q: "kids songs nursery rhymes Cocomelon Pinkfong Baby Shark Super Simple Songs",
-  },
+  { id: "anak", label: "Lagu Anak", emoji: "🎈", q: "kids songs nursery rhymes" },
 ];
 
 // Bangun query final buat sebuah kategori pada bahasa tertentu: topik + tag native
