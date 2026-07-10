@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
+import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import { supabase } from "@/lib/supabase-client";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -1257,12 +1258,6 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
             );
           })}
         </nav>
-        <div className="hidden px-4 pb-5 lg:block">
-          <button onClick={signOut} className="flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-[14px] font-bold text-rose-500 transition hover:bg-rose-50">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50"><LogOut className="h-[18px] w-[18px]" /></span>
-            Keluar dari Akun
-          </button>
-        </div>
       </aside>
 
       {/* RIGHT: panel */}
@@ -1274,9 +1269,6 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
             </p>
             <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{title}</h1>
           </div>
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white">
-            <Bell className="h-[19px] w-[19px] text-[#12172B]" />
-          </span>
         </div>
 
         {notice && (
@@ -2253,6 +2245,7 @@ export default function AkunPage() {
   const [isSigningIn, setIsSigningIn] = useState(false);
   // [preview-student-v1] mode "POV siswa" tanpa login: /akun?preview=<student_id>
   // Data real di-fetch dari /api/preview-student (service role, bypass RLS).
+  const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -2310,10 +2303,10 @@ export default function AkunPage() {
     try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
   }, [activeTab]);
   // [linguo-patch:pustaka-page-v1] menu "Perpustakaan" sekarang punya halaman sendiri → redirect ke /akun/perpustakaan
+  // [perf:sidebar-nav-v1] router.replace (client-side, instan) — dulu window.location.replace = full reload
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (activeTab === "pustaka") window.location.replace("/akun/perpustakaan");
-  }, [activeTab]);
+    if (activeTab === "pustaka") router.replace("/akun/perpustakaan");
+  }, [activeTab, router]);
   // [linguo-patch:beranda-mandiri-refresh-v1] tiap masuk Beranda → recompute kartu resume (progress fresh setelah selesai sesi)
   useEffect(() => {
     if (activeTab === "beranda") setResumeNonce((n) => n + 1);
