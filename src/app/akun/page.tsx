@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, Download, XCircle, Hand, X, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, type LucideIcon } from "lucide-react";
 
 import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
@@ -86,6 +86,11 @@ type StudentReg = {
   total_amount: number;
   payment_status: string;
   registration_date: string;
+  // [linguo-patch:akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket
+  installment_paid?: number | null;   // rupiah yang sudah dibayar (cicilan)
+  payment_due_date?: string | null;   // jatuh tempo cicilan berikutnya
+  payment_date?: string | null;       // tanggal pelunasan
+  created_at?: string | null;
   teacher_id?: string;
   teachers?: { name: string; whatsapp?: string; avatar_url?: string | null } | null;
   payment_proof_url?: string | null;
@@ -997,7 +1002,9 @@ function WaGate({ user, student, supabase, onSaved }: {
 // SETTINGS / PENGATURAN — frame Claude Design [linguo-patch:akun-settings-design-v2]
 // Real: avatar, nama, whatsapp, email, status Google, ganti sandi, logout.
 // Lokal/visual (belum ada backend): bio/kota/zona, toggle notif & preferensi.
-// DUMMY (sesuai permintaan): seluruh tab Tagihan & Paket — belum ada backend billing.
+// [linguo-patch:akun-tagihan-real-v1] Tagihan & Paket = DATA REAL dari
+// registrations (total_amount, payment_status, installment_paid, payment_due_date)
+// + digital_purchases (riwayat e-book/e-learning). Tidak ada lagi dummy.
 // ═══════════════════════════════════════════════════════════════════
 type SetPane = "profil" | "akun" | "notif" | "preferensi" | "tagihan";
 
@@ -1050,9 +1057,10 @@ function SetToggleRow({ label, desc, on, onClick }: { label: string; desc: strin
   );
 }
 
-function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate }: {
+function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges, signOut, supabase, onAvatarUpdate, openEnrollWizard }: {
   user: any; student: any; avatarUrl?: string; displayName: string; firstName: string;
   xp: any; badges: any[]; signOut: () => void; supabase: any; onAvatarUpdate: (url: string) => void;
+  openEnrollWizard: () => void;
 }) {
   const [pane, setPane] = useState<SetPane>("profil");
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
@@ -1076,6 +1084,86 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   const [notif, setNotif] = useState({ email_jadwal: true, email_materi: true, wa_pengingat: true, wa_promo: false, push_sesi: true, push_promo: false });
   const [pref, setPref] = useState({ reminder: true, autoplay: false, subtitle: true, weekly_report: true, twofa: false });
   const [uiLang, setUiLang] = useState<"id" | "en">("id");
+
+  // ── [linguo-patch:akun-tagihan-real-v1] Tagihan & Paket — DATA REAL ──────
+  const fmtRp = (n: number) => "Rp " + Math.max(0, Math.round(n || 0)).toLocaleString("id-ID");
+  const fmtTgl = (d?: string | null) => d ? new Date(d).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : "-";
+  const progLabel = (r: StudentReg) => `${PROGRAMS.find(p => p.key === r.product)?.label || r.product}${r.language ? ` — ${r.language}` : ""}`;
+
+  const regs: StudentReg[] = student?.registrations || [];
+  // Guard sama dengan activeRegs/pendingRegs di dashboard: buang yang dibatalkan/diarsip.
+  const liveRegs = regs.filter((r) => r.pipeline_status !== "Batal" && !r.archived_at);
+  const paidRegs = liveRegs.filter((r) => r.payment_status === "Lunas" || r.payment_status === "Cicilan");
+  const cicilanRegs = paidRegs.filter((r) => r.payment_status === "Cicilan");
+  const unpaidRegs = liveRegs.filter((r) => r.status === "Menunggu Pembayaran" && (r.payment_status === "Belum Bayar" || !r.payment_status));
+
+  // Riwayat pembelian digital (e-book / e-learning) — pelengkap riwayat tagihan.
+  const [digitalBuys, setDigitalBuys] = useState<any[]>([]);
+  useEffect(() => {
+    if (!user?.id) return;
+    supabase
+      .from("digital_purchases")
+      .select("id, amount, payment_status, created_at, digital_products(title, type)")
+      .eq("auth_user_id", user.id)
+      .eq("payment_status", "Lunas")
+      .is("archived_at", null)
+      .order("created_at", { ascending: false })
+      .then(({ data }: any) => setDigitalBuys(data || []));
+  }, [user?.id, supabase]);
+
+  // Gabung registrations + digital purchases jadi satu riwayat, terbaru duluan.
+  const riwayat = useMemo(() => {
+    const items: Array<{ key: string; label: string; sub: string; ts: number; amount: number; state: "lunas" | "cicilan" | "pending" }> = [];
+    for (const r of regs) {
+      if (r.pipeline_status === "Batal" || r.archived_at) continue;
+      if (r.payment_status === "Lunas") {
+        const d = r.payment_date || r.payment_verified_at || r.registration_date;
+        items.push({ key: `reg-${r.id}`, label: progLabel(r), sub: `Lunas · ${fmtTgl(d)}`, ts: new Date(d || 0).getTime(), amount: r.total_amount || 0, state: "lunas" });
+      } else if (r.payment_status === "Cicilan") {
+        const d = r.payment_date || r.registration_date;
+        items.push({ key: `reg-${r.id}`, label: `${progLabel(r)} (cicilan)`, sub: `Terbayar ${fmtRp(r.installment_paid || 0)} dari ${fmtRp(r.total_amount || 0)}`, ts: new Date(d || 0).getTime(), amount: r.installment_paid || 0, state: "cicilan" });
+      } else if (r.status === "Menunggu Pembayaran") {
+        const d = r.created_at || r.registration_date;
+        items.push({ key: `reg-${r.id}`, label: progLabel(r), sub: `Menunggu pembayaran · ${fmtTgl(d)}`, ts: new Date(d || 0).getTime(), amount: r.total_amount || 0, state: "pending" });
+      }
+    }
+    for (const p of digitalBuys) {
+      const prod = p.digital_products;
+      const jenis = prod?.type === "ebook" ? "E-Book" : "E-Learning";
+      items.push({ key: `dig-${p.id}`, label: prod?.title || jenis, sub: `${jenis} · Lunas · ${fmtTgl(p.created_at)}`, ts: new Date(p.created_at || 0).getTime(), amount: p.amount || 0, state: "lunas" });
+    }
+    return items.sort((a, b) => b.ts - a.ts);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [student, digitalBuys]);
+
+  // Bayar registrasi yang belum dibayar — buat invoice Xendit lalu redirect
+  // (pola sama dengan onRegenerateXendit di PaymentDetailModal).
+  const [payingId, setPayingId] = useState<string | null>(null);
+  const bayarSekarang = async (r: StudentReg) => {
+    setPayingId(r.id);
+    try {
+      const res = await fetch("https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}` },
+        body: JSON.stringify({
+          registration_id: r.id,
+          amount: r.total_amount || 0,
+          description: progLabel(r),
+          payer_name: displayName,
+          payer_email: user?.email || "",
+          success_redirect_url: "https://linguo.id/akun/success",
+          failure_redirect_url: "https://linguo.id/akun?xendit_failed=1",
+        }),
+      });
+      const data = await res.json();
+      if (data?.success && data?.invoice_url) { window.location.href = data.invoice_url; return; }
+      alert("Gagal membuat invoice. Coba lagi atau hubungi admin ya.");
+    } catch {
+      alert("Gagal membuat invoice. Coba lagi atau hubungi admin ya.");
+    } finally {
+      setPayingId(null);
+    }
+  };
 
   const flash = (msg: string) => { setNotice(msg); setTimeout(() => setNotice(""), 3000); };
 
@@ -1358,61 +1446,109 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
           {pane === "tagihan" && (
             <>
-              {/* CATATAN: seluruh data Tagihan di bawah ini DUMMY/placeholder — belum ada backend subscription/billing. */}
+              {/* [linguo-patch:akun-tagihan-real-v1] Seluruh data di bawah REAL dari registrations + digital_purchases. */}
               <SetCard>
-                <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 text-white" style={{ background: "#16796E" }}>
-                  <div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">Paket Aktif</span>
-                    <p className="mt-2 text-[20px] font-extrabold">E-Learning 3 Bahasa</p>
-                    <p className="mt-0.5 text-[13px] font-medium text-white/80">Inggris · Jepang · Korea · diperpanjang otomatis</p>
+                {paidRegs.length > 0 ? (
+                  <div className="flex flex-col gap-3">
+                    {paidRegs.map((r) => (
+                      <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 text-white" style={{ background: "#16796E" }}>
+                        <div>
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{r.payment_status === "Cicilan" ? "Paket Aktif · Cicilan" : "Paket Aktif"}</span>
+                          <p className="mt-2 text-[20px] font-extrabold">{progLabel(r)}</p>
+                          <p className="mt-0.5 text-[13px] font-medium text-white/80">
+                            {r.level ? `Level ${r.level} · ` : ""}{r.sessions_used || 0}/{r.sessions_total || 0} sesi terpakai{r.duration ? ` · ${r.duration} menit/sesi` : ""}
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-[24px] font-extrabold leading-none">{fmtRp(r.total_amount || 0)}</p>
+                          <p className="mt-1.5 text-[12px] font-medium text-white/80">Terdaftar {fmtTgl(r.registration_date)}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="text-right">
-                    <p className="text-[24px] font-extrabold leading-none">Rp 1,2jt<span className="text-[13px] font-bold text-white/80">/bln</span></p>
-                    <p className="mt-1.5 text-[12px] font-medium text-white/80">Perpanjang berikutnya 12 Jun 2026</p>
+                ) : (
+                  <div className="rounded-2xl border border-dashed border-slate-200 px-5 py-8 text-center">
+                    <p className="text-[14px] font-bold text-[#12172B]">Belum ada paket aktif</p>
+                    <p className="mt-1 text-[12px] font-medium text-[#6B7280]">Daftar kelas dulu yuk — paket yang sudah dibayar bakal muncul di sini.</p>
                   </div>
-                </div>
+                )}
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <button className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Upgrade Paket</button>
-                  <button className="h-11 rounded-xl border border-slate-200 px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Kelola Langganan</button>
+                  <button onClick={openEnrollWizard} className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{paidRegs.length > 0 ? "Tambah Kelas Baru" : "Daftar Kelas"}</button>
+                  <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau tanya soal paket/tagihan saya.`)}`} target="_blank" rel="noopener noreferrer"
+                    className="flex h-11 items-center rounded-xl border border-slate-200 px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Hubungi Admin</a>
                 </div>
               </SetCard>
 
-              <SetCard title="Cicilan Berjalan">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div>
-                    <p className="text-[14px] font-bold text-[#12172B]">Cicilan 2 dari 3</p>
-                    <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Jatuh tempo 12 Jun 2026 · Rp 400rb</p>
-                    <div className="mt-2 h-2 w-48 overflow-hidden rounded-full" style={{ background: "#E8EAEE" }}><div className="h-full rounded-full" style={{ width: "66%", background: "#16796E" }} /></div>
-                  </div>
-                  <button className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>Bayar Sekarang</button>
-                </div>
-              </SetCard>
+              {unpaidRegs.length > 0 && (
+                <SetCard title="Menunggu Pembayaran">
+                  {unpaidRegs.map((r) => (
+                    <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 py-3.5 last:border-0">
+                      <div>
+                        <p className="text-[14px] font-bold text-[#12172B]">{progLabel(r)}</p>
+                        <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{fmtRp(r.total_amount || 0)} · didaftarkan {fmtTgl(r.created_at || r.registration_date)} · selesaikan dalam 24 jam</p>
+                      </div>
+                      <button onClick={() => bayarSekarang(r)} disabled={payingId === r.id}
+                        className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95 disabled:opacity-50" style={{ background: "#F2CB05" }}>
+                        {payingId === r.id ? "Membuat invoice…" : "Bayar Sekarang"}
+                      </button>
+                    </div>
+                  ))}
+                </SetCard>
+              )}
+
+              {cicilanRegs.length > 0 && (
+                <SetCard title="Cicilan Berjalan">
+                  {cicilanRegs.map((r) => {
+                    const total = r.total_amount || 0;
+                    const paid = r.installment_paid || 0;
+                    const sisa = Math.max(0, total - paid);
+                    const pct = total > 0 ? Math.min(100, Math.round((paid / total) * 100)) : 0;
+                    return (
+                      <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 py-3.5 last:border-0">
+                        <div>
+                          <p className="text-[14px] font-bold text-[#12172B]">{progLabel(r)}</p>
+                          <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">
+                            Terbayar {fmtRp(paid)} dari {fmtRp(total)} · sisa {fmtRp(sisa)}{r.payment_due_date ? ` · jatuh tempo ${fmtTgl(r.payment_due_date)}` : ""}
+                          </p>
+                          <div className="mt-2 h-2 w-48 overflow-hidden rounded-full" style={{ background: "#E8EAEE" }}><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
+                        </div>
+                        <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau melanjutkan pembayaran cicilan ${progLabel(r)} (sisa ${fmtRp(sisa)}).`)}`}
+                          target="_blank" rel="noopener noreferrer"
+                          className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>Bayar Sekarang</a>
+                      </div>
+                    );
+                  })}
+                </SetCard>
+              )}
 
               <SetCard title="Metode Pembayaran">
-                <div className="flex items-center justify-between gap-4 py-2">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-11 items-center justify-center rounded-lg border border-slate-200" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
-                    <div><p className="text-[14px] font-bold text-[#12172B]">VISA •••• 4821</p><p className="text-[12px] font-medium text-[#6B7280]">Kedaluwarsa 08/27</p></div>
+                <div className="flex items-center gap-3 py-2">
+                  <span className="flex h-9 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-200" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
+                  <div>
+                    <p className="text-[14px] font-bold text-[#12172B]">Pembayaran online via Xendit</p>
+                    <p className="text-[12px] font-medium text-[#6B7280]">QRIS, transfer bank (VA), e-wallet, & kartu. Linguo tidak menyimpan data kartumu.</p>
                   </div>
-                  <button className="text-[13px] font-bold text-[#16796E]">Ubah</button>
                 </div>
               </SetCard>
 
               <SetCard title="Riwayat Tagihan">
-                <div className="flex flex-col">
-                  {([["12 Mei 2026", "Langganan bulanan", "Rp 1,2jt"], ["12 Apr 2026", "Langganan bulanan", "Rp 1,2jt"], ["14 Feb 2026", "Cicilan 1 dari 3", "Rp 400rb"]] as Array<[string, string, string]>).map((r, i) => (
-                    <div key={i} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><Check className="h-4 w-4" /></span>
-                        <div><p className="text-[14px] font-bold text-[#12172B]">{r[1]}</p><p className="text-[12px] font-medium text-[#6B7280]">{r[0]}</p></div>
+                {riwayat.length === 0 ? (
+                  <p className="py-4 text-center text-[13px] font-medium text-[#6B7280]">Belum ada transaksi. Riwayat pembayaran kelas & produk digital kamu bakal muncul di sini.</p>
+                ) : (
+                  <div className="flex flex-col">
+                    {riwayat.map((it) => (
+                      <div key={it.key} className="flex items-center justify-between gap-4 border-b border-slate-100 py-3 last:border-0">
+                        <div className="flex items-center gap-3">
+                          {it.state === "pending"
+                            ? <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-500"><Clock className="h-4 w-4" /></span>
+                            : <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600"><Check className="h-4 w-4" /></span>}
+                          <div><p className="text-[14px] font-bold text-[#12172B]">{it.label}</p><p className="text-[12px] font-medium text-[#6B7280]">{it.sub}</p></div>
+                        </div>
+                        <span className="text-[14px] font-extrabold text-[#12172B]">{fmtRp(it.amount)}</span>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <span className="text-[14px] font-extrabold text-[#12172B]">{r[2]}</span>
-                        <button className="text-[#6B7280] transition hover:text-[#16796E]"><Download className="h-[18px] w-[18px]" /></button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </SetCard>
             </>
           )}
@@ -2491,6 +2627,7 @@ export default function AkunPage() {
           id, product, language, level, status,
           sessions_total, sessions_used,
           duration, total_amount, payment_status,
+          installment_paid, payment_due_date, payment_date, created_at,
           registration_date, teacher_id, batch_id,
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
@@ -3960,6 +4097,7 @@ export default function AkunPage() {
                 signOut={signOut}
                 supabase={supabase}
                 onAvatarUpdate={(url) => setStudent(s => s ? { ...s, avatar_url: url } : s)}
+                openEnrollWizard={openEnrollWizard}
               />
             </motion.div>
           )}
