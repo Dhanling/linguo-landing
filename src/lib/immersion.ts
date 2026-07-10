@@ -170,35 +170,36 @@ const KARTUN_FRANCHISE: Record<string, string> = {
   hy: "մուլտֆիլմեր երեխաների համար",
 };
 
-// Kreator besar yang punya BANYAK versi audio/dubbing per bahasa — MrBeast jadi
-// jangkar (punya channel resmi terdubbing di puluhan bahasa: "MrBeast Indonesia",
-// "MrBeast en Español", dll), ditambah kreator viral lain yang kontennya di-dub
-// ke bahasa target. Karena judul channel dub-nya sudah dalam bahasa lokal, filter
-// aksara tetap mengangkat versi bahasa target (bukan versi Inggris aslinya).
-// Bahasa tanpa channel dub resmi jatuh ke `q` generik ("MrBeast challenge").
-const CREATOR_FRANCHISE: Record<string, string> = {
-  en: "MrBeast challenge",
-  id: "MrBeast Indonesia tantangan",
-  es: "MrBeast en Español reto",
-  pt: "MrBeast em Português desafio",
-  fr: "MrBeast en Français défi",
-  de: "MrBeast auf Deutsch Herausforderung",
-  it: "MrBeast in Italiano sfida",
-  nl: "MrBeast Nederlands uitdaging",
-  ru: "MrBeast на русском челлендж",
-  uk: "MrBeast українською челендж",
-  pl: "MrBeast po polsku wyzwanie",
-  tr: "MrBeast Türkçe meydan okuma",
-  ar: "MrBeast بالعربي تحدي",
-  hi: "MrBeast Hindi चुनौती",
-  ja: "MrBeast 日本語 チャレンジ",
-  ko: "MrBeast 한국어 챌린지",
-  zh: "MrBeast 中文 挑战",
-  th: "MrBeast ภาษาไทย ท้าทาย",
-  vi: "MrBeast Tiếng Việt thử thách",
-  fil: "MrBeast Filipino hamon",
-  fa: "MrBeast فارسی چالش",
-  el: "MrBeast στα ελληνικά πρόκληση",
+// Kreator ASLI dari negara asal bahasa (bukan MrBeast yang di-dub). Tujuannya:
+// belajar Prancis → dapat YouTuber Prancis beneran (Squeezie, Cyprien, dll), bukan
+// versi terjemahan konten Amerika. Tiap entri = beberapa nama kreator top &
+// mapan negara itu, dijahit jadi satu query — YouTube mengangkat channel-channel
+// tsb yang kontennya memang dalam bahasa target. Bahasa non-Latin tetap dibekingi
+// filter aksara. Bahasa tanpa daftar kurasi jatuh ke `q` generik yang dilokalkan
+// (kata "youtuber/vlog" + nama native bahasa, mis. "youtuber vlog Ελληνικά").
+const CREATOR_NATIVE: Record<string, string> = {
+  en: "MrBeast Sidemen KSI Dude Perfect",
+  id: "Windah Basudara Atta Halilintar Deddy Corbuzier Ria Ricis",
+  es: "elrubius AuronPlay Ibai TheGrefg Luisito Comunica",
+  pt: "Whindersson Nunes Felipe Neto Luccas Neto Você Sabia",
+  fr: "Squeezie Cyprien Norman McFly et Carlito Amixem",
+  de: "Julien Bam Gronkh BibisBeautyPalace Freekickerz",
+  it: "Favij Me contro Te iPantellas St3pNy",
+  nl: "Enzo Knol StukTV Kwebbelkop Dylan Haegens",
+  ru: "A4 Влад Бумага Литвин EeOneGuy",
+  uk: "влогер українською блог відео",
+  pl: "Blowek Stuu Sylwester Wardęga Reżyser",
+  tr: "Enes Batur Orkun Işıtmak Ruhi Çenet Danla Bilic",
+  ar: "AboFlah أحمد حسن وزينب يوتيوبر عربي",
+  hi: "CarryMinati Ashish Chanchlani BB Ki Vines Techno Gamerz",
+  ja: "ヒカキン はじめしゃちょー 東海オンエア",
+  ko: "쯔양 보겸 허팝",
+  zh: "李子柒 華農兄弟 老高與小茉",
+  th: "zbing z. บี้เดอะสกา ยูทูปเบอร์",
+  vi: "Cris Devil Gamer Bà Tân Vlog Ẩm Thực Mẹ Làm",
+  fil: "Cong TV Lloyd Cafe Cadena Zeinab Harake",
+  fa: "یوتیوبر ایرانی ولاگ ویدیو",
+  el: "youtuber βλογκ βίντεο",
 };
 
 // PENTING: `q` sengaja TANPA nama franchise global (Peppa Pig, Cocomelon, dll).
@@ -213,8 +214,10 @@ export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
     id: "kreator",
     label: "Kreator",
     emoji: "🔥",
-    q: "MrBeast challenge",
-    perLang: CREATOR_FRANCHISE,
+    // Fallback generik utk bahasa tanpa daftar kurasi: kata "youtuber/vlog" +
+    // nama native bahasa (dijahit di buildQuery) → kreator lokal, bukan Inggris.
+    q: "youtuber vlog",
+    perLang: CREATOR_NATIVE,
   },
   { id: "hiburan", label: "Hiburan", emoji: "🎬", q: "entertainment funny" },
   {

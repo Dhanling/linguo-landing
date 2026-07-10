@@ -330,14 +330,14 @@ export default function WatchAndLearn() {
   return (
     <main style={{ backgroundColor: BG, minHeight: "100vh" }} className="text-white">
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-5 sm:px-6">
-        {/* Top bar — balik ke beranda */}
+        {/* Top bar — balik ke dashboard siswa (/akun), bukan beranda publik. */}
         <div className="flex items-center justify-between">
           <Link
-            href="/"
+            href="/akun"
             className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
             style={{ color: SUB }}
           >
-            <ArrowLeft className="h-4 w-4" /> Beranda
+            <ArrowLeft className="h-4 w-4" /> Dashboard
           </Link>
           <div className="flex items-center gap-2">
             <button
