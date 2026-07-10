@@ -191,10 +191,16 @@ function ProgressBar({ pct }: { pct: number }) {
 /* ---------------- main ---------------- */
 const BM_KEY = "linguo_pustaka_bookmarks";
 
+// [perf:pustaka-cache-v1] cache module-level per user: buka lagi Perpustakaan →
+// render instan dari kunjungan sebelumnya, data di-refresh di belakang layar.
+type LangProgress = Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>;
+let libCache: { userId: string; purchases: Purchase[]; byLang: LangProgress } | null = null;
+
 export default function LibraryView({ userId, supabase }: { userId: string; supabase: SupabaseClient }) {
-  const [purchases, setPurchases] = useState<Purchase[]>([]);
-  const [byLang, setByLang] = useState<Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>>({});
-  const [loading, setLoading] = useState(true);
+  const cached = libCache && libCache.userId === userId ? libCache : null;
+  const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? []);
+  const [byLang, setByLang] = useState<LangProgress>(cached?.byLang ?? {});
+  const [loading, setLoading] = useState(!cached);
   const [busy, setBusy] = useState<string | null>(null);
 
   const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
@@ -225,7 +231,8 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
   useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId]);
 
   async function fetchAll() {
-    setLoading(true);
+    // [perf:pustaka-cache-v1] spinner cuma pas belum ada cache; refresh berikutnya diam-diam
+    if (!(libCache && libCache.userId === userId)) setLoading(true);
     const purchasesReq = supabase
       .from("digital_purchases")
       .select(`
@@ -247,22 +254,28 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
 
     const [pRes, mRes, lRes, prRes] = await Promise.all([purchasesReq, modReq, lessReq, progReq]);
 
+    let nextPurchases: Purchase[] = [];
     if (pRes.error) {
       console.error("Gagal memuat perpustakaan:", pRes.error);
       toast.error("Gagal memuat perpustakaan.");
       setPurchases([]);
     } else {
-      setPurchases((pRes.data ?? []) as unknown as Purchase[]);
+      nextPurchases = (pRes.data ?? []) as unknown as Purchase[];
+      setPurchases(nextPurchases);
     }
 
+    let nextByLang: LangProgress | null = null;
     if (!mRes.error && !lRes.error) {
       const doneSet = new Set<string>(
         (((prRes.data as { lesson_id: string; status: string }[]) || []) || [])
           .filter((x) => x.status === "completed")
           .map((x) => x.lesson_id)
       );
-      setByLang(buildProgressByLang((mRes.data as any) || [], (lRes.data as any) || [], doneSet));
+      nextByLang = buildProgressByLang((mRes.data as any) || [], (lRes.data as any) || [], doneSet);
+      setByLang(nextByLang);
     }
+    // [perf:pustaka-cache-v1] simpan buat kunjungan berikutnya (jangan cache hasil error)
+    if (!pRes.error) libCache = { userId, purchases: nextPurchases, byLang: nextByLang ?? libCache?.byLang ?? {} };
     setLoading(false);
   }
 

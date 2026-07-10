@@ -150,6 +150,13 @@ export default function FlashcardDeck({
     return [...seen];
   }, [all]);
 
+  // Jumlah kata per bahasa — dipakai sidebar desktop.
+  const langCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const w of all) counts[w.langCode] = (counts[w.langCode] ?? 0) + 1;
+    return counts;
+  }, [all]);
+
   const words = useMemo(
     () => (filter === "all" ? all : all.filter((w) => w.langCode === filter)),
     [all, filter]
@@ -260,75 +267,178 @@ export default function FlashcardDeck({
   }
 
   // ── HOME (tabbed) ──────────────────────────────────────────────────────────
+  // Mobile: header + tab + chip filter (layout lama). Desktop (lg+): dashboard
+  // dengan sidebar kiri (nav tab, filter bahasa, ringkasan penguasaan) + konten
+  // lebar di kanan — memanfaatkan ruang layar PC yang tadinya kosong.
+  const masteredPctAll = stats.total > 0 ? Math.round((stats.masteredCount / stats.total) * 100) : 0;
   return (
     <Shell>
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-        <div className="flex items-center gap-2.5">
-          <span
-            className="flex h-9 w-9 items-center justify-center rounded-xl"
-            style={{ background: `linear-gradient(135deg,${TEAL},${TEAL_DARK})` }}
-          >
-            <Layers className="h-4 w-4" color="#fff" />
-          </span>
-          <div>
-            <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
-            <p className="text-[11.5px]" style={{ color: SUB }}>
-              {totalWords} kata • hafalan dengan pengulangan berjarak
-            </p>
-          </div>
-        </div>
-        <button
-          onClick={onClose}
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-          aria-label="Tutup"
+      <div className="flex min-h-0 flex-1">
+        {/* Sidebar — desktop saja */}
+        <aside
+          className="hidden w-72 shrink-0 flex-col lg:flex"
+          style={{ backgroundColor: SURFACE_ALT, borderRight: `1px solid ${BORDER}` }}
         >
-          <X className="h-5 w-5 text-white" />
-        </button>
-      </div>
+          <div className="flex items-center gap-2.5 px-5 pb-5 pt-6">
+            <span
+              className="flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{ background: `linear-gradient(135deg,${TEAL},${TEAL_DARK})` }}
+            >
+              <Layers className="h-5 w-5" color="#fff" />
+            </span>
+            <div>
+              <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
+              <p className="text-[11.5px]" style={{ color: SUB }}>
+                {totalWords} kata tersimpan
+              </p>
+            </div>
+          </div>
 
-      {/* Tab */}
-      <div className="flex gap-1 px-4 sm:px-6">
-        <TabBtn active={tab === "belajar"} onClick={() => setTab("belajar")}>
-          <Layers className="h-4 w-4" /> Belajar
-        </TabBtn>
-        <TabBtn active={tab === "analisa"} onClick={() => setTab("analisa")}>
-          <BarChart3 className="h-4 w-4" /> Analisa
-        </TabBtn>
-      </div>
+          <nav className="space-y-1 px-3">
+            <SideNavBtn active={tab === "belajar"} onClick={() => setTab("belajar")} icon={<Layers className="h-4 w-4" />}>
+              Belajar
+            </SideNavBtn>
+            <SideNavBtn active={tab === "analisa"} onClick={() => setTab("analisa")} icon={<BarChart3 className="h-4 w-4" />}>
+              Analisa
+            </SideNavBtn>
+          </nav>
 
-      {/* Filter bahasa */}
-      {langCodes.length > 1 && (
-        <div className="mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
-            Semua
-          </FilterChip>
-          {langCodes.map((code) => {
-            const l = getImmersionLang(code);
-            return (
-              <FilterChip key={code} active={filter === code} onClick={() => setFilter(code)}>
-                <RectFlag code={l?.country} h={14} />
-                {l?.name ?? code}
-              </FilterChip>
-            );
-          })}
-        </div>
-      )}
-
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6">
-        <div className="mx-auto w-full max-w-lg">
-          {totalWords === 0 ? (
-            <EmptyState />
-          ) : tab === "belajar" ? (
-            <BelajarTab
-              words={words}
-              stats={stats}
-              reviewedToday={reviewedToday}
-              onStart={startReview}
-            />
-          ) : (
-            <AnalisaTab words={words} stats={stats} />
+          {langCodes.length > 1 && (
+            <div className="mt-6 min-h-0 flex-1 overflow-y-auto px-3">
+              <p className="px-3 pb-2 text-[10.5px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
+                Bahasa
+              </p>
+              <div className="space-y-1">
+                <SideLangBtn active={filter === "all"} onClick={() => setFilter("all")} label="Semua bahasa" count={all.length} />
+                {langCodes.map((code) => {
+                  const l = getImmersionLang(code);
+                  return (
+                    <SideLangBtn
+                      key={code}
+                      active={filter === code}
+                      onClick={() => setFilter(code)}
+                      flag={l?.country}
+                      label={l?.name ?? code}
+                      count={langCounts[code] ?? 0}
+                    />
+                  );
+                })}
+              </div>
+            </div>
           )}
+
+          <div className="mt-auto px-4 py-5">
+            <div className="rounded-2xl p-4" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+              <div className="flex items-center justify-between">
+                <span className="text-[12px]" style={{ color: SUB }}>
+                  Dikuasai
+                </span>
+                <span className="text-[12px] font-bold" style={{ color: "#7FE0E0" }}>
+                  {stats.masteredCount}/{stats.total} · {masteredPctAll}%
+                </span>
+              </div>
+              <div className="mt-2 h-1.5 overflow-hidden rounded-full" style={{ backgroundColor: SURFACE_ALT }}>
+                <div className="h-full rounded-full" style={{ width: `${masteredPctAll}%`, backgroundColor: TEAL }} />
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {/* Konten utama */}
+        <div className="flex min-h-0 flex-1 flex-col">
+          {/* Header + tab + chip — mobile/tablet (layout lama) */}
+          <div className="lg:hidden">
+            <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+              <div className="flex items-center gap-2.5">
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-xl"
+                  style={{ background: `linear-gradient(135deg,${TEAL},${TEAL_DARK})` }}
+                >
+                  <Layers className="h-4 w-4" color="#fff" />
+                </span>
+                <div>
+                  <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
+                  <p className="text-[11.5px]" style={{ color: SUB }}>
+                    {totalWords} kata • hafalan dengan pengulangan berjarak
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={onClose}
+                className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+                aria-label="Tutup"
+              >
+                <X className="h-5 w-5 text-white" />
+              </button>
+            </div>
+
+            <div className="flex gap-1 px-4 sm:px-6">
+              <TabBtn active={tab === "belajar"} onClick={() => setTab("belajar")}>
+                <Layers className="h-4 w-4" /> Belajar
+              </TabBtn>
+              <TabBtn active={tab === "analisa"} onClick={() => setTab("analisa")}>
+                <BarChart3 className="h-4 w-4" /> Analisa
+              </TabBtn>
+            </div>
+
+            {langCodes.length > 1 && (
+              <div className="mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
+                  Semua
+                </FilterChip>
+                {langCodes.map((code) => {
+                  const l = getImmersionLang(code);
+                  return (
+                    <FilterChip key={code} active={filter === code} onClick={() => setFilter(code)}>
+                      <RectFlag code={l?.country} h={14} />
+                      {l?.name ?? code}
+                    </FilterChip>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Topbar — desktop saja */}
+          <div
+            className="hidden items-center justify-between px-8 py-4 lg:flex"
+            style={{ borderBottom: `1px solid ${BORDER}` }}
+          >
+            <div>
+              <p className="text-[18px] font-extrabold leading-tight text-white">
+                {tab === "belajar" ? "Belajar" : "Analisa"}
+              </p>
+              <p className="text-[12px]" style={{ color: SUB }}>
+                {tab === "belajar"
+                  ? `${words.length} kata • hafalan dengan pengulangan berjarak`
+                  : "Statistik & progres belajarmu"}
+              </p>
+            </div>
+            <button
+              onClick={onClose}
+              className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+              aria-label="Tutup"
+            >
+              <X className="h-5 w-5 text-white" />
+            </button>
+          </div>
+
+          <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
+            <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
+              {totalWords === 0 ? (
+                <EmptyState />
+              ) : tab === "belajar" ? (
+                <BelajarTab
+                  words={words}
+                  stats={stats}
+                  reviewedToday={reviewedToday}
+                  onStart={startReview}
+                />
+              ) : (
+                <AnalisaTab words={words} stats={stats} />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </Shell>
@@ -353,7 +463,9 @@ function BelajarTab({
   const masteredPct = stats.total > 0 ? Math.round((stats.masteredCount / stats.total) * 100) : 0;
 
   return (
-    <div className="space-y-4">
+    // Desktop: 2 kolom — panel review (kiri, sticky) + daftar kata (kanan, grid).
+    <div className="space-y-4 lg:grid lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start lg:gap-8 lg:space-y-0">
+      <div className="space-y-4 lg:sticky lg:top-0">
       {/* Hero Review Harian */}
       <div
         className="rounded-3xl p-5"
@@ -409,11 +521,12 @@ function BelajarTab({
         <StageTile value={stats.learningCount} label="Belajar" color={ORANGE} />
         <StageTile value={stats.masteredCount} label="Dikuasai" color={TEAL} />
       </div>
+      </div>
 
       {/* Daftar kata */}
       <div>
-        <p className="mb-3 mt-2 text-[14px] font-bold text-white">Kata ({stats.total})</p>
-        <div className="space-y-2.5">
+        <p className="mb-3 mt-2 text-[14px] font-bold text-white lg:mt-0">Kata ({stats.total})</p>
+        <div className="space-y-2.5 xl:grid xl:grid-cols-2 xl:gap-2.5 xl:space-y-0">
           {words.map((w) => {
             const accent = STAGE[cardStage(w.srs)];
             const lang = getImmersionLang(w.langCode);
@@ -709,7 +822,7 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
   return (
     <div className="space-y-4">
       {/* Kartu ringkasan SRS */}
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-3 xl:grid-cols-6">
         <StatCard icon={<BookOpen className="h-[18px] w-[18px]" style={{ color: TEAL }} />} value={stats.total} label="Total kata" />
         <StatCard icon={<Clock className="h-[18px] w-[18px]" style={{ color: ORANGE }} />} value={stats.dueCount} label="Jatuh tempo" />
         <StatCard icon={<Award className="h-[18px] w-[18px]" style={{ color: GREEN }} />} value={stats.masteredCount} label="Dikuasai" />
@@ -837,6 +950,68 @@ function TabBtn({
       }}
     >
       {children}
+    </button>
+  );
+}
+
+// Tombol nav vertikal di sidebar desktop (tab Belajar / Analisa).
+function SideNavBtn({
+  children,
+  icon,
+  active,
+  onClick,
+}: {
+  children: React.ReactNode;
+  icon: React.ReactNode;
+  active?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-[13.5px] font-bold transition-colors hover:bg-white/5"
+      style={{
+        backgroundColor: active ? `${TEAL}26` : "transparent",
+        color: active ? "#7FE0E0" : SUB,
+      }}
+    >
+      {icon}
+      {children}
+    </button>
+  );
+}
+
+// Item filter bahasa di sidebar desktop — bendera + nama + jumlah kata.
+function SideLangBtn({
+  active,
+  onClick,
+  flag,
+  label,
+  count,
+}: {
+  active?: boolean;
+  onClick: () => void;
+  flag?: string;
+  label: string;
+  count: number;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-[13px] font-semibold transition-colors hover:bg-white/5"
+      style={{
+        backgroundColor: active ? `${TEAL}26` : "transparent",
+        color: active ? "#fff" : "rgba(255,255,255,0.75)",
+      }}
+    >
+      {flag ? <RectFlag code={flag} h={13} /> : <span className="h-[13px] w-[19px] rounded-sm" style={{ backgroundColor: BORDER }} />}
+      <span className="min-w-0 flex-1 truncate">{label}</span>
+      <span
+        className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold"
+        style={{ backgroundColor: active ? `${TEAL}44` : SURFACE_ALT, color: active ? "#7FE0E0" : SUB }}
+      >
+        {count}
+      </span>
     </button>
   );
 }

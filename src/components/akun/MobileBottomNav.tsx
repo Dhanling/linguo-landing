@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Home, Calendar, BookOpen, User, Clapperboard, type LucideIcon } from "lucide-react";
 
 type TabKey = "beranda" | "jadwal" | "materi" | "akun";
@@ -10,7 +11,7 @@ type Props = {
 };
 
 // Tab biasa memicu onChange; item ber-`href` (Watch & Learn) menavigasi ke route
-// terpisah lewat <a>, seperti di icon rail desktop.
+// terpisah lewat next/link (client-side + prefetch), seperti di icon rail desktop. [perf:sidebar-nav-v1]
 type NavItem =
   | { key: TabKey; label: string; icon: LucideIcon }
   | { key: string; label: string; icon: LucideIcon; href: string };
@@ -51,9 +52,9 @@ export default function MobileBottomNav({ activeTab, onChange }: Props) {
           }`;
           if ("href" in item) {
             return (
-              <a key={key} href={item.href} className={cls}>
+              <Link key={key} href={item.href} prefetch className={cls}>
                 {inner}
-              </a>
+              </Link>
             );
           }
           return (

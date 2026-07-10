@@ -4,12 +4,14 @@
 // Reuse StudentShell (rail + panel) yang sama dengan /akun. Rail nav → balik ke /akun?menu=<tab>.
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LibraryView from "@/components/akun/LibraryView";
 
 export default function PerpustakaanPage() {
+  const router = useRouter();
   const [userId, setUserId] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
 
@@ -20,17 +22,19 @@ export default function PerpustakaanPage() {
       const uid = session?.user?.id ?? null;
       if (!uid) {
         // belum login → arahkan ke dashboard (yang nampung UI login)
-        window.location.replace("/akun");
+        router.replace("/akun");
         return;
       }
       setUserId(uid);
       setReady(true);
     });
     return () => { alive = false; };
-  }, []);
+  }, [router]);
 
+  // [perf:sidebar-nav-v1] router.push (client-side) — dulu window.location.href = full reload tiap balik ke tab lain
   const goTab = (t: AkunTab) => {
-    window.location.href = t === "pustaka" ? "/akun/perpustakaan" : `/akun?menu=${t}`;
+    if (t === "pustaka") return;
+    router.push(`/akun?menu=${t}`);
   };
 
   return (

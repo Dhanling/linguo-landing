@@ -18,24 +18,32 @@ const PRICE = 79000;
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 const ALL_TYPES: TestType[] = ["toefl", "ielts"];
 
+// [perf:simulasi-cache-v1] cache module-level: pindah tab lalu balik → render instan
+// dari cache (tanpa spinner), data tetap di-refresh di belakang layar.
+let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean } | null = null;
+
 export default function SimulasiKatalog() {
-  const [sims, setSims] = useState<Simulation[]>([]);
-  const [owned, setOwned] = useState<TestType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [authed, setAuthed] = useState<boolean | null>(null);
+  const [sims, setSims] = useState<Simulation[]>(simCache?.sims ?? []);
+  const [owned, setOwned] = useState<TestType[]>(simCache?.owned ?? []);
+  const [loading, setLoading] = useState(!simCache);
+  const [authed, setAuthed] = useState<boolean | null>(simCache ? simCache.authed : null);
 
   useEffect(() => {
+    let alive = true;
     (async () => {
       const info = await getStudentInfo();
-      setAuthed(!!info);
       const [data, ents] = await Promise.all([
         fetchPublishedSimulations(),
         fetchMyEntitlements(),
       ]);
+      simCache = { sims: data, owned: ents, authed: !!info };
+      if (!alive) return;
+      setAuthed(!!info);
       setSims(data);
       setOwned(ents);
       setLoading(false);
     })();
+    return () => { alive = false; };
   }, []);
 
   // Jenis tes yang belum dimiliki → tampilkan kartu teaser terkunci.

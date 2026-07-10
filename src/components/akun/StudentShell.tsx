@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useEffect, useState } from "react";
+import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, type LucideIcon } from "lucide-react";
 
@@ -25,7 +26,8 @@ const NAV: NavItem[] = [
   { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
   // Entry point global ke flashcard kata tersimpan (halaman /kosakata).
   { key: "kosakata", label: "Kosakata Saya", icon: Layers, href: "/kosakata" },
-  { key: "pustaka", label: "Perpustakaan", icon: Library },
+  // [perf:sidebar-nav-v1] link langsung ke route-nya (dulu tab → redirect full reload)
+  { key: "pustaka", label: "Perpustakaan", icon: Library, href: "/akun/perpustakaan" },
   { key: "jadwal", label: "Jadwal", icon: CalendarDays },
   { key: "sertifikat", label: "Sertifikat", icon: Star },
   { key: "akun", label: "Pengaturan", icon: Settings },
@@ -96,15 +98,24 @@ export default function StudentShell({
             {NAV.map((item) => {
               const Icon = item.icon;
               if ("href" in item) {
+                // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
+                // (dulu <a> biasa = full page reload tiap pindah menu)
+                const isActiveLink = item.key === active;
                 return (
-                  <a
+                  <Link
                     key={item.key}
                     href={item.href}
-                    className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/70 transition hover:bg-white/10 hover:text-white"
+                    prefetch
+                    className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
+                      isActiveLink
+                        ? "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
+                        : "text-white/70 hover:bg-white/10 hover:text-white"
+                    }`}
+                    aria-current={isActiveLink ? "page" : undefined}
                   >
                     <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
                     <Tip label={item.label} />
-                  </a>
+                  </Link>
                 );
               }
               if (item.soon) {
