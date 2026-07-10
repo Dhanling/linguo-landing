@@ -788,26 +788,29 @@ export default function LessonPlayer({
         /* [ling-lms-fullscreen-v3] konten fullscreen ngisi layar: lebih lebar, center (margin auto biar tetap bisa scroll kalau panjang), padding lega */
         .lp-stage-fs{display:flex;flex-direction:column;padding-left:max(2rem,5vw);padding-right:max(2rem,5vw);}
         .lp-stage-fs > div{max-width:64rem;width:100%;margin:auto;}
-        /* [ling-lms-dark-v1] dark mode class-based & scoped — CSS unlayered menang atas utility Tailwind v4 (pakai !important biar pasti) */
-        .lp-dark{background:#0b1220;}
-        .lp-dark .bg-white{background-color:#111827 !important;}
-        .lp-dark .bg-\\[\\#F5F6F8\\]{background-color:#1f2937 !important;}
+        /* [ling-lms-dark-v2] dark mode class-based & scoped — CSS unlayered menang atas utility Tailwind v4 (pakai !important biar pasti).
+           Palet HITAM dominan, disamain dgn .lms-dark di StudentShell biar konsisten pas pindah dashboard ↔ player. */
+        .lp-dark{background:#000000;}
+        /* rail ikon kiri: teal → hitam (match frame dashboard di .lms-dark) */
+        .lp-dark .bg-\\[\\#16796E\\]{background-color:#000000 !important;}
+        .lp-dark .bg-white{background-color:#0a0a0a !important;}
+        .lp-dark .bg-\\[\\#F5F6F8\\]{background-color:#121212 !important;}
         /* [ling-lms-dark-contrast-v1] teks dark mode = PUTIH (bukan abu) */
         .lp-dark .text-slate-900,.lp-dark .text-slate-800,.lp-dark .text-slate-700,.lp-dark .text-slate-600{color:#ffffff !important;}
         .lp-dark .text-slate-500,.lp-dark .text-slate-400,.lp-dark .text-slate-300{color:#f1f5f9 !important;}
-        .lp-dark .border-slate-100,.lp-dark .border-slate-200{border-color:#1f2937 !important;}
-        .lp-dark .border-slate-300{border-color:#374151 !important;}
+        .lp-dark .border-slate-100,.lp-dark .border-slate-200{border-color:#262626 !important;}
+        .lp-dark .border-slate-300{border-color:#3f3f46 !important;}
         /* [ling-lms-dark-contrast-v1] chip/connector bg netral → gelap; teal aktif dibikin lebih terang biar kebaca */
-        .lp-dark .bg-\\[\\#E8EAEE\\],.lp-dark .bg-\\[\\#F1F3F5\\]{background-color:#243042 !important;}
+        .lp-dark .bg-\\[\\#E8EAEE\\],.lp-dark .bg-\\[\\#F1F3F5\\]{background-color:#1a1a1a !important;}
         .lp-dark .text-\\[\\#0F5A52\\]{color:#2dd4bf !important;}
         /* [ling-lms-dark-contrast-v1] hover state index sesi lebih kelihatan */
-        .lp-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#243042 !important;}
-        .lp-dark .hover\\:bg-slate-100:hover{background-color:#243042 !important;}
+        .lp-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#1f1f1f !important;}
+        .lp-dark .hover\\:bg-slate-100:hover{background-color:#1f1f1f !important;}
         .lp-dark .hover\\:bg-\\[\\#F0FAF8\\]:hover{background-color:rgba(22,121,110,0.20) !important;}
         /* [ling-lms-dark-duo-v1] answer card Duolingo-style: bg/border via custom-prop, blend dgn background, cuma border yg beda. Hover override-able. */
         .lp-ans{background:var(--lp-bg);border-color:var(--lp-bd);}
         .lp-ans[data-state="idle"]:hover{background:#F0FAF8;border-color:#16796E;}
-        .lp-dark .lp-ans[data-state="idle"]:hover{background:#374151;border-color:rgba(255,255,255,0.25);}
+        .lp-dark .lp-ans[data-state="idle"]:hover{background:#262626;border-color:rgba(255,255,255,0.25);}
       `}</style>
 
       {/* [linguo-patch:lms-icon-rail-v2-shell-match] rail disamain PERSIS StudentShell: logo Linguo asli + icon rotate-on-hover (group-hover:rotate-[360deg]) + tooltip. Navigasi masih href deep-link /akun?menu= (spinner difix terpisah di v3). */}
@@ -1039,7 +1042,7 @@ export default function LessonPlayer({
                         : active
                         ? { background: hexA(p.color, 0.15), color: p.color }
                         : isDark
-                        ? { background: "#243042", color: "#cbd5e1" }
+                        ? { background: "#1a1a1a", color: "#d4d4d8" }
                         : { background: "#F1F3F5", color: "#94a3b8" }
                     }
                   >
@@ -1047,7 +1050,7 @@ export default function LessonPlayer({
                   </span>
                   <span
                     className="text-[12.5px] font-extrabold"
-                    style={{ color: lit ? (isDark ? "#ffffff" : "#12172B") : (isDark ? "#64748b" : "#94a3b8") }}
+                    style={{ color: lit ? (isDark ? "#ffffff" : "#12172B") : (isDark ? "#9ca3af" : "#94a3b8") }}
                   >
                     {p.label}
                   </span>
@@ -1458,7 +1461,7 @@ function StepView({
             // [ling-lms-dark-duo-v2] palet dark answer card sesuai spec Duolingo (default blend #2d3748, border tipis, state pakai *-900/40 + *-400 + *-200)
             let state: "idle" | "sel" | "correct" | "wrong" | "dim" = "idle";
             let bd = isDark ? "rgba(255,255,255,0.10)" : "#e2e8f0";
-            let bg = isDark ? "#2d3748" : "#ffffff";
+            let bg = isDark ? "#161616" : "#ffffff";
             let textCls = isDark ? "text-white" : "text-slate-800";
             if (answered) {
               if (isCorrect) {
@@ -1737,7 +1740,7 @@ function SessionIndex({
   const canSwitch = mods.length > 0;
   // [ling-lms-dark-contrast-v1] chip ikon flat (state idle) di dark mode: bg gelap + ikon terang biar kontras
   const chipIdle = isDark
-    ? { background: "#243042", color: "#cbd5e1" }
+    ? { background: "#1a1a1a", color: "#d4d4d8" }
     : { background: "#F5F6F8", color: "#94a3b8" };
 
   // [linguo-patch:lms-level-tree-v1] dropdown 2 tingkat: major (A1/A2/B1/B2) -> sub-level (A1.1, A1.2, ...)
