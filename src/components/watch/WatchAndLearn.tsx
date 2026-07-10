@@ -62,6 +62,13 @@ const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
 
+// [perf:watch-catalog-cache-v1] Cache katalog module-level: pindah menu lalu balik
+// ke Watch & Learn → grid tampil instan tanpa nembak yt-search lagi. Kunci per
+// (bahasa, query); TTL 10 menit — lewat itu tampilkan cache dulu, refresh diam-diam.
+const catalogCache = new Map<string, { videos: ImmersionVideo[]; nextToken?: string; at: number }>();
+const CATALOG_TTL_MS = 10 * 60 * 1000;
+const catalogKeyOf = (langCode: string, q: string) => `${langCode}|${q}`;
+
 export default function WatchAndLearn() {
   // Bahasa target — disimpan di localStorage biar konsisten antar kunjungan.
   const [langCode, setLangCode] = useState("en");
@@ -186,11 +193,15 @@ export default function WatchAndLearn() {
   const reqId = useRef(0);
 
   const runSearch = useCallback(
-    async (l: ImmersionLang, c: ImmersionCategory, text: string) => {
+    // [perf:watch-catalog-cache-v1] silent=true → refresh diam-diam (grid dari cache
+    // sudah tampil, jangan diganti spinner).
+    async (l: ImmersionLang, c: ImmersionCategory, text: string, silent = false) => {
       const id = ++reqId.current;
-      setState("loading");
-      setVideos([]);
-      setNextToken(undefined);
+      if (!silent) {
+        setState("loading");
+        setVideos([]);
+        setNextToken(undefined);
+      }
       const q = buildQuery(c, l, text);
       const page = await searchImmersionVideos({
         query: q,
@@ -205,6 +216,9 @@ export default function WatchAndLearn() {
       const results = filterVideosByLanguage(page.results, l.code).filter(
         (v) => !v.duration || v.duration <= WATCH_MAX_DURATION_SEC
       );
+      catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text)), {
+        videos: results, nextToken: page.nextPageToken, at: Date.now(),
+      });
       setVideos(results);
       setNextToken(page.nextPageToken);
       setState(results.length ? "done" : "empty");
@@ -216,12 +230,15 @@ export default function WatchAndLearn() {
   );
 
   // Tab "Siap" — baca video ber-transkrip dari cache (instan, tanpa kuota YouTube).
-  const loadReady = useCallback(async (l: ImmersionLang) => {
+  const loadReady = useCallback(async (l: ImmersionLang, silent = false) => {
     const id = ++reqId.current;
-    setState("loading");
-    setVideos([]);
-    setNextToken(undefined);
+    if (!silent) {
+      setState("loading");
+      setVideos([]);
+      setNextToken(undefined);
+    }
     const ready = await fetchReadyVideos(l.code);
+    catalogCache.set(catalogKeyOf(l.code, SIAP_ID), { videos: ready, at: Date.now() });
     if (id !== reqId.current) return;
     setVideos(ready);
     setState(ready.length ? "done" : "empty");
@@ -231,9 +248,22 @@ export default function WatchAndLearn() {
   const readyMode = category === SIAP_ID && !committedText.trim();
 
   // Muat ulang tiap bahasa / kategori / teks yang di-commit berubah.
+  // [perf:watch-catalog-cache-v1] cache-first: keluar-masuk halaman/menu → grid muncul
+  // instan dari cache module-level; kalau cache masih segar (<TTL) fetch dilewati,
+  // kalau basi di-refresh diam-diam di belakang layar.
   useEffect(() => {
-    if (category === SIAP_ID && !committedText.trim()) loadReady(lang);
-    else runSearch(lang, cat, committedText);
+    const siap = category === SIAP_ID && !committedText.trim();
+    const key = catalogKeyOf(langCode, siap ? SIAP_ID : buildQuery(cat, lang, committedText));
+    const hit = catalogCache.get(key);
+    if (hit) {
+      reqId.current++; // batalkan fetch lama yang mungkin masih jalan
+      setVideos(hit.videos);
+      setNextToken(hit.nextToken);
+      setState(hit.videos.length ? "done" : "empty");
+      if (Date.now() - hit.at < CATALOG_TTL_MS) return; // masih segar
+    }
+    if (siap) loadReady(lang, !!hit);
+    else runSearch(lang, cat, committedText, !!hit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langCode, category, committedText]);
 
@@ -262,7 +292,12 @@ export default function WatchAndLearn() {
     );
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
-      return [...prev, ...more.filter((v) => !seen.has(v.videoId))];
+      const merged = [...prev, ...more.filter((v) => !seen.has(v.videoId))];
+      // [perf:watch-catalog-cache-v1] hasil "Muat lainnya" ikut ke cache biar balik lagi utuh
+      catalogCache.set(catalogKeyOf(lang.code, buildQuery(cat, lang, committedText)), {
+        videos: merged, nextToken: page.nextPageToken, at: Date.now(),
+      });
+      return merged;
     });
     setNextToken(page.nextPageToken);
     setState("done");
