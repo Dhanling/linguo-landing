@@ -98,8 +98,9 @@ export interface LearnCue {
   translit?: string;
 }
 
-/** Kenapa transkrip kosong — buat pesan yang ramah. */
-export type TranscriptReason = "no_captions" | "empty" | "error" | "ok";
+/** Kenapa transkrip kosong — buat pesan yang ramah. `not_ready` = belum ada di
+ *  cache (transkripsi kini server-side via kurasi/antrian, bukan on-the-fly). */
+export type TranscriptReason = "no_captions" | "empty" | "error" | "ok" | "not_ready";
 
 export interface TranscriptResult {
   cues: LearnCue[];
@@ -454,7 +455,7 @@ function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
 export async function fetchTranscript(
   videoId: string,
   langCode: string,
-  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta }
+  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta; cacheOnly?: boolean }
 ): Promise<TranscriptResult> {
   // 0) Cache: kalau (video, bahasa) ini pernah diproses, langsung pakai — hemat
   //    fetch caption / ASR (~1 menit). Katalog = video populer ditonton berulang.
@@ -467,6 +468,11 @@ export async function fetchTranscript(
     // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
     return { cues: splitCuesBySentence(cached), reason: "ok" };
   }
+
+  // cacheOnly: transkripsi kini dilakukan SERVER (kurasi admin + tombol "Minta"),
+  // BUKAN di browser saat buka video (hemat & terkontrol). Kalau belum ada di
+  // cache, jangan picu caption/ASR — beri tahu pemanggil biar tampilkan "Minta".
+  if (opts?.cacheOnly) return { cues: [], reason: "not_ready" };
 
   // 1) Jalur cepat: cue mentah dari server Next + terjemahan.
   const raw = await fetchRawCuesFromServer(videoId, langCode);
@@ -527,7 +533,7 @@ const inFlightTranscripts = new Map<string, Promise<TranscriptResult>>();
 export function processTranscript(
   videoId: string,
   langCode: string,
-  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta }
+  opts?: { onAsr?: () => void; meta?: TranscriptVideoMeta; cacheOnly?: boolean }
 ): Promise<TranscriptResult> {
   const key = `${langCode}::${videoId}`;
   const existing = inFlightTranscripts.get(key);
@@ -539,53 +545,44 @@ export function processTranscript(
   return p;
 }
 
-// Limiter background: maksimum sekian (video, bahasa) diproses BERSAMAAN di luar
-// video yang sedang ditonton. Angka konservatif biar aman untuk kuota Gemini.
-const BG_CONCURRENCY = 5;
-const bgSeen = new Set<string>(); // (video, bahasa) yang sudah dijadwalkan di sesi ini
-const bgQueue: { video: PrewarmVideo; langCode: string }[] = [];
-let bgActive = 0;
-
-async function bgWorker(): Promise<void> {
-  const job = bgQueue.shift();
-  if (!job) return;
-  bgActive++;
-  try {
-    // processTranscript sudah: cek cache → caption+terjemah → ASR, lalu simpan hasil
-    // ke cache (dedup dengan video aktif). Kirim metadata biar muncul di tab "Siap".
-    await processTranscript(job.video.videoId, job.langCode, {
-      meta: {
-        title: job.video.title,
-        channel: job.video.channel,
-        duration: job.video.duration,
-      },
-    });
-  } catch {
-    /* best-effort — jangan ganggu apa pun kalau gagal */
-  } finally {
-    bgActive--;
-    void bgWorker(); // ambil job berikutnya
-  }
+/**
+ * NO-OP (sejak Fase 2). Dulu ini menghangatkan cache dengan MEMICU transkripsi di
+ * browser (caption/ASR) untuk video rekomendasi — mahal & tak terkontrol. Sekarang
+ * transkripsi dilakukan SERVER lewat kurasi admin (antrian `yt_transcript_jobs` +
+ * worker pg_cron), jadi klien tak lagi memicu apa pun. Dipertahankan sebagai
+ * no-op supaya call site lama tak perlu diubah. `void` argumen agar lint tenang.
+ */
+export function prewarmTranscripts(_videos: PrewarmVideo[], _langCode: string): void {
+  void _videos;
+  void _langCode;
 }
 
 /**
- * Hangatkan cache transkrip untuk sederet video di background (fire-and-forget).
- * Aman dipanggil berkali-kali: tiap (video, bahasa) hanya dijadwalkan sekali per
- * sesi, dan konkurensi dibatasi (BG_CONCURRENCY) supaya tak membebani server.
- * Dipakai saat katalog / rekomendasi tampil biar video yang nanti diklik sudah
- * siap subtitle-nya — dan sekalian mengisi tab "Siap" (metadata ikut disimpan).
+ * Tombol "Minta video ini": titipkan (video, bahasa) ke antrian server supaya
+ * ditranskripsi (di-gate di endpoint). Balikin status ringkas untuk UI.
+ *   'queued'     → baru masuk antrian
+ *   'exists'     → sudah antre sebelumnya
+ *   'processing' → sedang diproses
+ *   'ready'      → transkrip sudah siap (buka lagi = langsung ada)
+ *   'cap'        → kuota permintaan penuh / fitur ditutup
+ *   'error'      → gagal
  */
-export function prewarmTranscripts(videos: PrewarmVideo[], langCode: string): void {
-  if (typeof window === "undefined" || !langCode) return;
-  for (const video of videos) {
-    if (!video || !VIDEO_ID_RE.test(video.videoId)) continue;
-    const key = `${langCode}::${video.videoId}`;
-    if (bgSeen.has(key)) continue;
-    bgSeen.add(key);
-    bgQueue.push({ video, langCode });
+export type RequestStatus = "queued" | "exists" | "processing" | "ready" | "cap" | "error";
+
+export async function requestTranscript(videoId: string, langCode: string): Promise<RequestStatus> {
+  try {
+    const res = await fetch("/api/yt-transcript/enqueue", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ videoId, lang: langCode }),
+    });
+    const data = (await res.json().catch(() => ({}))) as { ok?: boolean; status?: string; reason?: string };
+    if (data?.ok && typeof data.status === "string") return data.status as RequestStatus;
+    if (data?.reason === "cap") return "cap";
+    return "error";
+  } catch {
+    return "error";
   }
-  // Isi slot worker yang kosong sampai konkurensi penuh.
-  while (bgActive < BG_CONCURRENCY && bgQueue.length) void bgWorker();
 }
 
 /**

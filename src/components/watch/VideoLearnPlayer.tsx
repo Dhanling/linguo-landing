@@ -21,6 +21,7 @@ import {
   Pause,
   Play,
   RotateCcw,
+  Sparkles,
   Type,
   X,
 } from "lucide-react";
@@ -32,6 +33,8 @@ import {
   POS_COLOR,
   POS_LABEL_ID,
   prewarmTranscripts,
+  requestTranscript,
+  RequestStatus,
   SentenceBreakdown,
   splitWords,
   TranscriptReason,
@@ -127,6 +130,9 @@ export default function VideoLearnPlayer({
   const [asrRunning, setAsrRunning] = useState(false);
   // True selagi bacaan Latin (romaji/pinyin/dll) diisi di background utk bahasa non-Latin.
   const [translitLoading, setTranslitLoading] = useState(false);
+  // Tombol "Minta video ini" (transkrip belum ada di cache → titip ke antrian server).
+  const [reqState, setReqState] = useState<"idle" | "loading" | "done">("idle");
+  const [reqMsg, setReqMsg] = useState("");
 
   const [analyze, setAnalyze] = useState(false);
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
@@ -247,8 +253,11 @@ export default function VideoLearnPlayer({
     // Sambil transkrip interaktif disiapkan (jalur AI bisa ~1 menit), tampilkan CC
     // bawaan YouTube DALAM bahasa target biar siswa tak menonton tanpa subtitle.
     setShowCC(true);
+    setReqState("idle");
+    // cacheOnly: transkripsi dilakukan SERVER (kurasi/antrian). Kalau belum ada di
+    // cache → reason 'not_ready' → tampilkan tombol "Minta" (bukan ASR di browser).
     processTranscript(video.videoId, langCode, {
-      onAsr: () => !cancelled && setAsrRunning(true),
+      cacheOnly: true,
       // Simpan metadata biar video yang ditonton ini ikut muncul di tab "Siap".
       meta: { title: video.title, channel: video.channel, duration: video.duration },
     }).then((r) => {
@@ -448,6 +457,23 @@ export default function VideoLearnPlayer({
     },
     [cues, langCode]
   );
+
+  // "Minta video ini" — titip transkripsi ke antrian server (di-gate).
+  const REQ_MSG: Record<RequestStatus, string> = {
+    queued: 'Berhasil diminta! Subtitle interaktif sedang dibuat — nanti muncul di tab "Siap". Kamu bisa tetap menonton sekarang.',
+    exists: 'Video ini sudah dalam antrian. Cek tab "Siap" beberapa saat lagi.',
+    processing: 'Video ini sedang diproses. Sebentar lagi muncul di tab "Siap".',
+    ready: "Transkripnya ternyata sudah siap! Coba buka lagi video ini.",
+    cap: "Maaf, kuota permintaan hari ini sudah penuh. Coba lagi besok ya.",
+    error: "Gagal mengirim permintaan. Coba lagi sebentar lagi.",
+  };
+  const onRequestTranscript = useCallback(async () => {
+    setReqState("loading");
+    const status = await requestTranscript(video.videoId, langCode);
+    setReqMsg(REQ_MSG[status]);
+    setReqState("done");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [video.videoId, langCode]);
 
   // Saat mode Analisa aktif, ambil breakdown untuk cue yang sedang tayang.
   useEffect(() => {
@@ -709,20 +735,48 @@ export default function VideoLearnPlayer({
             )}
             {txState === "none" && (
               <div className="flex flex-col items-start gap-3 px-2 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
-                <span>
-                  {txReason === "no_captions"
-                    ? "Transkrip interaktif belum bisa disiapkan untuk video ini. Subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton."
-                    : "Pembuatan transkrip sempat gagal (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — kamu bisa coba siapkan transkrip interaktif lagi."}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setRetryTick((n) => n + 1)}
-                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors"
-                  style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
-                >
-                  <RotateCcw className="h-3.5 w-3.5" />
-                  Coba lagi
-                </button>
+                {txReason === "not_ready" ? (
+                  reqState === "done" ? (
+                    <span>{reqMsg}</span>
+                  ) : (
+                    <>
+                      <span>
+                        Subtitle interaktif untuk video ini belum tersedia. Sementara itu subtitle bawaan YouTube (CC) sudah dinyalakan. Mau dibuatkan subtitle interaktif + terjemahannya?
+                      </span>
+                      <button
+                        type="button"
+                        onClick={onRequestTranscript}
+                        disabled={reqState === "loading"}
+                        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors disabled:opacity-60"
+                        style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
+                      >
+                        {reqState === "loading" ? (
+                          <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                        ) : (
+                          <Sparkles className="h-3.5 w-3.5" />
+                        )}
+                        Minta dibuatkan
+                      </button>
+                    </>
+                  )
+                ) : (
+                  <>
+                    <span>
+                      {txReason === "no_captions"
+                        ? "Transkrip interaktif belum bisa disiapkan untuk video ini. Subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton."
+                        : "Pembuatan transkrip sempat gagal (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — kamu bisa coba siapkan transkrip interaktif lagi."}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setRetryTick((n) => n + 1)}
+                      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors"
+                      style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
+                    >
+                      <RotateCcw className="h-3.5 w-3.5" />
+                      Coba lagi
+                    </button>
+                  </>
+                )}
               </div>
             )}
             {txState === "ready" &&
