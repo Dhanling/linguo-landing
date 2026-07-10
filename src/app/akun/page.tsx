@@ -3,6 +3,8 @@
 
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
+import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
+import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { supabase } from "@/lib/supabase-client";
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,7 +15,6 @@ import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award
 import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
 // [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
-const ClassDetailModal = dynamic(() => import('@/components/ClassDetailModal'), { ssr: false });
 const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { ssr: false });
 const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
@@ -23,7 +24,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
-const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false }); // [simulasi-inshell-v1] lazy
+const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
 // File ini "use client" → dynamic ssr:false aman dipasang langsung (hindari SSR lottie-web).
@@ -47,12 +48,19 @@ function OnboardingSuccess({ onClose }: { onClose: () => void }) {
 // baru diunduh saat tab/modal-nya dibuka) — bukan dibundel ke JS awal /akun.
 // ssr:false aman karena page ini "use client" & semua dirender kondisional.
 import type { Cert } from '@/components/akun/SertifikatTab';
-const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), { ssr: false });
+// [chunk-reload-v1] fallback loading utk tab lazy — tanpa ini, klik menu terasa
+// "mati" selama chunk diunduh (atau saat chunk basi gagal dimuat sehabis deploy).
+const TabLoading = () => (
+  <div className="flex w-full items-center justify-center py-24">
+    <div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" />
+  </div>
+);
+const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), { ssr: false, loading: TabLoading });
 const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'), { ssr: false });
-const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false }); // linguo-patch:akun-jadwal-tab-v1
-const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false });
-const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
-const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false });
+const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
+const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false, loading: TabLoading });
+const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false, loading: TabLoading }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
+const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
@@ -136,50 +144,8 @@ type Badge = { id: string; badge_key: string; badge_icon: string; badge_label: s
 type Schedule = { id: string; registration_id: string; scheduled_at: string; duration_minutes: number; status: string };
 
 // ── Constants ────────────────────────────────────────────────────────────
-const LANG_FLAGS: Record<string, string> = {
-  Arabic:"sa",Arab:"sa",Dutch:"nl",Belanda:"nl",English:"gb",Inggris:"gb",
-  Hebrew:"il",Ibrani:"il",Italian:"it",Italia:"it",Japanese:"jp",Jepang:"jp",
-  German:"de",Jerman:"de",Korean:"kr",Korea:"kr",Mandarin:"cn",Chinese:"cn",
-  French:"fr",Prancis:"fr",Russian:"ru",Rusia:"ru",Spanish:"es",Spanyol:"es",
-  Turkish:"tr",Turki:"tr",Thai:"th",Vietnamese:"vn",Hindi:"in",
-  Portuguese:"br",Danish:"dk",Swedish:"se",Finnish:"fi",Polish:"pl",Czech:"cz",
-  Greek:"gr",Yunani:"gr",Persian:"ir",Persia:"ir",Georgian:"ge",Norwegian:"no",
-  Javanese:"id",Jawa:"id",Sundanese:"id",Sunda:"id",BIPA:"id",
-  // [linguo-patch:onboarding-lang-catalog-v1] flag bahasa tambahan (lengkapi katalog Kelas Private)
-  Hungarian:"hu",Romanian:"ro",Bulgarian:"bg",Ukrainian:"ua",Icelandic:"is",
-  Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
-  Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
-};
-const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[lang] || "un"}.png`;
-
-// Foto stok bahasa (drop file ke public/lang/<slug>.jpg). Alias ID & EN, case-insensitive.
-// Kalau bahasa ga ke-map / file belum ada -> getLangPhoto balikin null -> kartu pakai fallback glyph.
-const LANG_PHOTO_SLUG: Record<string, string> = {
-  inggris: "english-convo", english: "english-convo", "english conversation": "english-convo",
-  jepang: "japanese", japanese: "japanese",
-  prancis: "french", perancis: "french", french: "french",
-  spanyol: "spanish", spanish: "spanish",
-  korea: "korean", korean: "korean",
-  jerman: "german", german: "german",
-  arab: "arabic", "bahasa arab": "arabic", arabic: "arabic",
-  italia: "italian", italian: "italian",
-  vietnam: "vietnamese", vietnamese: "vietnamese",
-  swahili: "swahili",
-  rusia: "russian", russian: "russian",
-  portugis: "portuguese", portuguese: "portuguese",
-  hungaria: "hungarian", hungarian: "hungarian",
-  mandarin: "mandarin", "mandarin (china)": "mandarin", china: "mandarin", chinese: "mandarin",
-  hindi: "hindi",
-  indonesia: "indonesian", indonesian: "indonesian", "bahasa indonesia": "indonesian",
-  sunda: "sundanese", sundanese: "sundanese", "bahasa sunda": "sundanese",
-  ibrani: "hebrew", hebrew: "hebrew",
-  "mesir kuno": "ancient-egypt", "ancient egypt": "ancient-egypt", hieroglif: "ancient-egypt",
-};
-const getLangPhoto = (lang?: string | null): string | null => {
-  if (!lang) return null;
-  const slug = LANG_PHOTO_SLUG[lang.trim().toLowerCase()];
-  return slug ? `/lang/${slug}.jpg` : null;
-};
+// [kelas-detail-page-v1] LANG_FLAGS/getFlagUrl/getLangPhoto/langGlyph pindah ke
+// @/lib/lang-visuals — dipakai juga oleh halaman detail kelas /akun/kelas/[id].
 
 const LEVEL_SEQUENCE = ["A1.1","A1.2","A1.3","A2.1","A2.2","A2.3","A2.4","B1.1","B1.2","B1.3","B1.4","B1.5","B2.1","B2.2","B2.3","B2.4","B2.5","B2.6","B2.7"];
 const LEVEL_MILESTONES = ["A1","A2","B1","B2"];
@@ -2355,7 +2321,6 @@ export default function AkunPage() {
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set()); // ISO strings
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [selectedSlots, setSelectedSlots] = useState<Set<string>>(new Set());
-  const [detailReg, setDetailReg] = useState<any>(null); // ISO string
   const [pendingModalReg, setPendingModalReg] = useState<any>(null); // pending-payment popup
   // [akun-cancel-enrollment-v1] target kartu yang lagi dikonfirmasi pembatalannya + flag in-flight
   const [cancelTarget, setCancelTarget] = useState<any>(null);
@@ -3272,16 +3237,7 @@ export default function AkunPage() {
           {activeTab === "beranda" && (
             <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               {(() => {
-                // ── derived khusus port frame ──
-                const langGlyph = (lang: string): string => {
-                  const g: Record<string, string> = {
-                    Jepang: "あ", Japanese: "あ", Korea: "한", Korean: "한",
-                    Mandarin: "中", Chinese: "中", Arab: "ع", Arabic: "ع",
-                    Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
-                    Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
-                  };
-                  return g[lang] || "Aa";
-                };
+                // ── derived khusus port frame ── (langGlyph dari @/lib/lang-visuals)
                 // [linguo-patch:beranda-live-hide-empty-lang-v1] sembunyiin kartu live yang language-nya null/kosong/placeholder
                 // (registrasi Private incomplete) — cuma dipakai di seksi "Kelas Live" Beranda, ga ngubah activeRegs global.
                 const isValidLiveLang = (lang?: string | null): boolean => {
@@ -3563,10 +3519,11 @@ export default function AkunPage() {
                               const photo = getLangPhoto(reg.language);
                               const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
                               return (
-                                <button
+                                <Link
                                   key={reg.id}
-                                  onClick={() => setDetailReg(reg)}
-                                  className={`group rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
+                                  href={`/akun/kelas/${reg.id}`}
+                                  prefetch
+                                  className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
                                     {photo ? (
@@ -3612,7 +3569,7 @@ export default function AkunPage() {
                                       <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
                                     </div>
                                   </div>
-                                </button>
+                                </Link>
                               );
                             })}
                             {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di view Aktif */}
@@ -4062,12 +4019,14 @@ export default function AkunPage() {
           )}
 
           {activeTab === "sertifikat" && (
-            <SertifikatTab
-              studentName={displayName}
-              certs={certs}
-              onContinue={() => setActiveTab("materi")}
-              onSchedule={() => setActiveTab("jadwal")}
-            />
+            <motion.div key="sertifikat" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
+              <SertifikatTab
+                studentName={displayName}
+                certs={certs}
+                onContinue={() => setActiveTab("materi")}
+                onSchedule={() => setActiveTab("jadwal")}
+              />
+            </motion.div>
           )}
 
           {/* [simulasi-inshell-v1] Simulasi Tes sebagai tab in-shell (sidebar tetap tampil) */}
@@ -4182,9 +4141,8 @@ export default function AkunPage() {
         </>
       )}
 
-      {/* Booking Modal */}
+      {/* [kelas-detail-page-v1] detail kelas pindah ke halaman /akun/kelas/[id] (dulu ClassDetailModal) */}
       <OneSignalProvider />
-      {detailReg && <ClassDetailModal reg={detailReg} onClose={() => setDetailReg(null)} />}
 
       {/* Popup detail pembayaran (card kecil "Perlu Perhatian" -> klik) */}
       {pendingModalReg && (
