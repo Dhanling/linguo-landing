@@ -6,8 +6,8 @@
 // `upcomingSchedules` (kolom `scheduled_at` + resolve bahasa/level/teacher dari registrasi).
 // Warna config-independent (hex inline). Palet match shell: teal #16796E.
 // + jadwal-compact-v1: tinggi sel diatur biar proporsional (ga strech/ceper).
-// + jadwal-dummy-fill-v1: fallback sesi dummy kalau akun kosong + lepas max-w.
 // + jadwal-views-v1: toggle tampilan Hari / Minggu / Bulan (ala Google Calendar).
+// + jadwal-real-only-v1: fallback dummy DIHAPUS — akun kosong tampil empty state.
 
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock } from "lucide-react";
@@ -77,33 +77,9 @@ export default function JadwalCalendar({
   const today = useMemo(() => new Date(), []);
   const todayIso = ymd(today);
 
-  // dummy-fallback-v1: kalau akun belum punya sesi real, tampilin contoh biar
-  // kalender + "Sesi Mendatang" ga melompong. Otomatis nyerah ke data real
-  // begitu prop `sessions` keisi. Mau matiin dummy? hapus DUMMY_SESSIONS +
-  // baseSessions, balikin items pakai `sessions`.
-  const DUMMY_SESSIONS = useMemo<JadwalSession[]>(() => {
-    const mk = (addD: number, h: number, mi: number, language: string, level: string, product: string, teacher: string, dur: number): JadwalSession => {
-      const d = new Date(today);
-      d.setDate(d.getDate() + addD);
-      return {
-        id: `dummy-${addD}-${language}`,
-        scheduledAt: `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(h)}:${pad(mi)}:00`,
-        durationMinutes: dur, language, level, product, teacher,
-      };
-    };
-    return [
-      mk(1, 10, 0, "Inggris", "B1", "Kelas Private", "Kak Sarah", 60),
-      mk(3, 19, 0, "Jepang", "A2", "Kelas Private", "Kak Kenji", 60),
-      mk(5, 16, 30, "Spanyol", "A1", "Semi Private", "Kak Maria", 45),
-      mk(8, 20, 0, "Korea", "A1", "Kelas Private", "Kak Min", 60),
-      mk(12, 17, 0, "Prancis", "A2", "Kelas Private", "Kak Lucas", 60),
-    ];
-  }, [today]);
-  const baseSessions = sessions.length ? sessions : DUMMY_SESSIONS;
-
   const items = useMemo<NormSession[]>(
     () =>
-      baseSessions
+      sessions
         .filter((s) => s.scheduledAt)
         .map((s) => {
           const d = new Date(s.scheduledAt);
@@ -117,7 +93,7 @@ export default function JadwalCalendar({
             _weekday: d.toLocaleDateString("id-ID", { weekday: "long" }),
           };
         }),
-    [baseSessions]
+    [sessions]
   );
 
   const [mode, setMode] = useState<ViewMode>("month");
