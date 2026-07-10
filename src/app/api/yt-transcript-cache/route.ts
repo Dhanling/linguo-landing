@@ -61,18 +61,33 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ cues: null }, { status: 200 });
   }
   try {
-    // Baca di-cache Next 1 jam — data immutable per (video, bahasa) jadi aman.
-    const sb = createServerClient(3600);
+    // Query DB tanpa Next Data Cache: dulu miss ("belum ada transkrip") ikut
+    // ke-cache 1 jam, jadi setelah worker selesai player masih dibilang "belum
+    // tersedia" sampai sejam. Sekarang HIT di-cache di CDN via s-maxage (data
+    // immutable per video+bahasa), MISS selalu no-store biar transkrip baru
+    // langsung kelihatan.
+    const sb = createServerClient(0);
     const { data, error } = await sb
       .from("yt_transcripts")
       .select("cues")
       .eq("video_id", videoId)
       .eq("lang", lang)
       .maybeSingle();
-    if (error || !data?.cues) return NextResponse.json({ cues: null }, { status: 200 });
-    return NextResponse.json({ cues: data.cues }, { status: 200 });
+    if (error || !data?.cues) {
+      return NextResponse.json(
+        { cues: null },
+        { status: 200, headers: { "Cache-Control": "no-store" } }
+      );
+    }
+    return NextResponse.json(
+      { cues: data.cues },
+      { status: 200, headers: { "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=86400" } }
+    );
   } catch {
-    return NextResponse.json({ cues: null }, { status: 200 });
+    return NextResponse.json(
+      { cues: null },
+      { status: 200, headers: { "Cache-Control": "no-store" } }
+    );
   }
 }
 
