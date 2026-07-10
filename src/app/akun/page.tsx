@@ -2328,6 +2328,7 @@ export default function AkunPage() {
   };
 
   const signOut = async () => {
+    try { if (user?.email) localStorage.removeItem(`linguo_akun_cache_${user.email}`); } catch {}
     await supabase.auth.signOut();
     setUser(null);
     setStudent(null);
@@ -2368,13 +2369,30 @@ export default function AkunPage() {
   };
 
   // ── Data Loading (fixed column names) ────────────────────────────
+  // linguo-patch:akun-fast-refresh-v1 — cache-first: render instan dari snapshot
+  // localStorage (tanpa spinner), lalu revalidasi diam-diam di belakang.
   useEffect(() => {
     if (!user?.email) return;
-    loadStudentData(user.email);
+    let hadCache = false;
+    try {
+      const raw = localStorage.getItem(`linguo_akun_cache_${user.email}`);
+      if (raw) {
+        const c = JSON.parse(raw);
+        if (c?.student) {
+          setStudent(c.student);
+          setUpcomingSchedules(c.upcomingSchedules || []);
+          setBadges(c.badges || []);
+          if (typeof c.streak === "number") setStreak(c.streak);
+          setDataLoading(false);
+          hadCache = true;
+        }
+      }
+    } catch {}
+    loadStudentData(user.email, hadCache);
   }, [user?.email]);
 
-  async function loadStudentData(email: string) {
-    setDataLoading(true);
+  async function loadStudentData(email: string, silent = false) {
+    if (!silent) setDataLoading(true);
     try {
       let { data: studentData } = await supabase
         .from("students")
@@ -2443,6 +2461,9 @@ export default function AkunPage() {
       }
 
       if (!studentData) {
+        // Student tak ada di DB → snapshot lama tak valid lagi.
+        try { localStorage.removeItem(`linguo_akun_cache_${email}`); } catch {}
+        setStudent(null);
         // Check if wizard was previously completed (survives refresh)
         try {
           const savedWizard = localStorage.getItem(`linguo_wizard_${user?.id || email}`);
@@ -2512,61 +2533,72 @@ export default function AkunPage() {
 
       const regIds = enrichedRegs.map((r: any) => r.id);
 
-      // Upcoming schedules
-      if (regIds.length > 0) {
-        try {
-          const { data: schedData } = await supabase
-            .from("schedules")
-            .select("id, registration_id, scheduled_at, duration_minutes, status")
-            .in("registration_id", regIds)
-            .in("status", ["scheduled", "pending"])
-            .gt("scheduled_at", new Date().toISOString())
-            .order("scheduled_at", { ascending: true });
-          setUpcomingSchedules(schedData || []);
-        } catch (e) { /* schedules table might not exist */ }
-      }
+      // Data inti (student + registrations) sudah tampil — lepas spinner sekarang,
+      // sisanya (schedules/badges/streak) menyusul di belakang tanpa menahan UI.
+      setDataLoading(false);
 
-      // Badges
-      try {
-        const { data: badgeData } = await supabase
+      // Schedules + badges + streak — PARALEL (dulu berurutan = 3x round-trip).
+      const [schedRes, badgeRes, streakRes] = await Promise.all([
+        regIds.length > 0
+          ? supabase
+              .from("schedules")
+              .select("id, registration_id, scheduled_at, duration_minutes, status")
+              .in("registration_id", regIds)
+              .in("status", ["scheduled", "pending"])
+              .gt("scheduled_at", new Date().toISOString())
+              .order("scheduled_at", { ascending: true })
+          : Promise.resolve({ data: null } as any),
+        supabase
           .from("student_badges")
           .select("*")
           .eq("student_id", studentData.id)
-          .order("earned_at", { ascending: false });
-        setBadges(badgeData || []);
-      } catch (e) { /* table might not exist */ }
+          .order("earned_at", { ascending: false }),
+        regIds.length > 0
+          ? supabase
+              .from("schedules")
+              .select("scheduled_at")
+              .in("registration_id", regIds)
+              .eq("status", "completed")
+              .order("scheduled_at", { ascending: false })
+          : Promise.resolve({ data: null } as any),
+      ]);
 
-      // Streak
-      if (regIds.length > 0) {
-        try {
-          const { data: streakData } = await supabase
-            .from("schedules")
-            .select("scheduled_at")
-            .in("registration_id", regIds)
-            .eq("status", "completed")
-            .order("scheduled_at", { ascending: false });
-          if (streakData && streakData.length > 0) {
-            const getWeekNum = (d: Date) => {
-              const start = new Date(d.getFullYear(), 0, 1);
-              return Math.floor(((d.getTime() - start.getTime()) / 86400000 + start.getDay() + 1) / 7);
-            };
-            const weeks = new Set(streakData.map((s: any) => {
-              const d = new Date(s.scheduled_at);
-              return `${d.getFullYear()}-${getWeekNum(d)}`;
-            }));
-            let weekStreak = 0;
-            const now = new Date();
-            for (let i = 0; i <= 52; i++) {
-              const checkDate = new Date(now);
-              checkDate.setDate(checkDate.getDate() - i * 7);
-              const key = `${checkDate.getFullYear()}-${getWeekNum(checkDate)}`;
-              if (weeks.has(key)) weekStreak++;
-              else break;
-            }
-            setStreak(weekStreak);
-          }
-        } catch (e) { /* table might not exist */ }
+      const schedData = schedRes.data || [];
+      const badgeData = badgeRes.data || [];
+      setUpcomingSchedules(schedData);
+      setBadges(badgeData);
+
+      let weekStreak = 0;
+      const streakData = streakRes.data;
+      if (streakData && streakData.length > 0) {
+        const getWeekNum = (d: Date) => {
+          const start = new Date(d.getFullYear(), 0, 1);
+          return Math.floor(((d.getTime() - start.getTime()) / 86400000 + start.getDay() + 1) / 7);
+        };
+        const weeks = new Set(streakData.map((s: any) => {
+          const d = new Date(s.scheduled_at);
+          return `${d.getFullYear()}-${getWeekNum(d)}`;
+        }));
+        const now = new Date();
+        for (let i = 0; i <= 52; i++) {
+          const checkDate = new Date(now);
+          checkDate.setDate(checkDate.getDate() - i * 7);
+          const key = `${checkDate.getFullYear()}-${getWeekNum(checkDate)}`;
+          if (weeks.has(key)) weekStreak++;
+          else break;
+        }
+        setStreak(weekStreak);
       }
+
+      // Simpan snapshot buat refresh berikutnya (cache-first, tanpa spinner).
+      try {
+        localStorage.setItem(`linguo_akun_cache_${email}`, JSON.stringify({
+          student: { ...studentData, registrations: enrichedRegs },
+          upcomingSchedules: schedData,
+          badges: badgeData,
+          streak: weekStreak,
+        }));
+      } catch {}
     } catch (err) {
       console.error("Failed to load student data:", err);
     }
