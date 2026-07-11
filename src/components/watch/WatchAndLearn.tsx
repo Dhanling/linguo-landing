@@ -44,10 +44,11 @@ const LANG_KEY = "linguo:watch:lang:v1";
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
-// Jumlah kartu per "halaman" tampilan = 1 baris di desktop (grid lg:grid-cols-4).
-// Grid mulai dengan segini biar halaman tak kepanjangan; "Muat lainnya" menambah
-// sebanyak ini lagi tiap klik.
-const GRID_PAGE = 4;
+// Layout grid: 5 kartu per baris di desktop (grid lg:grid-cols-5). Default tampil
+// 1 baris (GRID_COLS) biar halaman tak kepanjangan; tiap klik "Muat lainnya"
+// menambah 2 baris lagi (LOAD_MORE_COUNT = 2 × GRID_COLS).
+const GRID_COLS = 5;
+const LOAD_MORE_COUNT = GRID_COLS * 2;
 
 // [linguo-patch:watch-duration-filter-v1] Katalog kini memuat video sampai 20 menit
 // (dulu ≤5 mnt) supaya filter durasi <5 / 5–10 / 10–20 mnt punya isi. Batas atas ini
@@ -124,7 +125,7 @@ export default function WatchAndLearn() {
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
   // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 1 baris.
-  const [visible, setVisible] = useState(GRID_PAGE);
+  const [visible, setVisible] = useState(GRID_COLS);
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
@@ -379,7 +380,7 @@ export default function WatchAndLearn() {
   // Balikkan tampilan ke 1 baris tiap daftar/​filter berganti (bukan saat loadMore,
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
   useEffect(() => {
-    setVisible(GRID_PAGE);
+    setVisible(GRID_COLS);
   }, [langCode, category, committedText, orient, durationFilter]);
 
   const loadMore = useCallback(async () => {
@@ -418,9 +419,9 @@ export default function WatchAndLearn() {
   // "Muat lainnya": tampilkan 1 baris berikutnya dari yang sudah dimuat; kalau
   // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.
   const showMore = useCallback(() => {
-    if (visible < shownVideos.length) setVisible((n) => n + GRID_PAGE);
+    if (visible < shownVideos.length) setVisible((n) => n + LOAD_MORE_COUNT);
     else if (nextToken) {
-      setVisible((n) => n + GRID_PAGE);
+      setVisible((n) => n + LOAD_MORE_COUNT);
       loadMore();
     }
   }, [visible, shownVideos.length, nextToken, loadMore]);
@@ -700,9 +701,9 @@ export default function WatchAndLearn() {
         </div>
 
         {/* Grid video */}
-        <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
           {state === "loading"
-            ? Array.from({ length: GRID_PAGE }).map((_, i) => <CardSkeleton key={i} />)
+            ? Array.from({ length: GRID_COLS }).map((_, i) => <CardSkeleton key={i} />)
             : shownVideos.slice(0, visible).map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
                   <Thumb

@@ -1299,11 +1299,10 @@ function FocusLine({
 type KaraokeState = "sung" | "active" | "future";
 
 // Perkiraan detik-per-karakter untuk kecepatan bicara natural. Dipakai membatasi
-// durasi sapuan karaoke: caption & transkrip AI (yt-asr) sering MENAHAN satu baris
-// di layar jauh lebih lama dari durasi ucapan sebenarnya (jeda/hening di akhir,
-// segmen ASR yang kelewat panjang). Kalau sapuan dibentang ke sepanjang window itu,
-// ia merangkak jauh di belakang audio. Jadi kalau window lebih panjang dari
-// perkiraan bicara, kita pakai perkiraannya — sapuan tak akan lebih lambat dari suara.
+// durasi sapuan karaoke: caption & transkrip AI (yt-asr) kadang MENAHAN satu baris
+// di layar lebih lama dari durasi ucapan sebenarnya (jeda/hening di akhir, segmen
+// ASR yang kelewat panjang). Tapi ini cuma pengaman untuk window yang JELAS
+// kepanjangan — tempo utama tetap dari durasi window caption/ASR (lihat SPEECH_CAP_FACTOR).
 const CJK_RE = /[぀-ヿ㐀-鿿가-힯]/;
 function estSpeechDur(text: string): number {
   const chars = text.length || 1;
@@ -1311,6 +1310,13 @@ function estSpeechDur(text: string): number {
   const secPerChar = CJK_RE.test(text) ? 0.2 : 0.075;
   return chars * secPerChar;
 }
+
+// Ambang toleransi cap: window caption/ASR baru "direm" ke perkiraan bicara kalau
+// panjangnya > FACTOR × perkiraan. Longgar (1.8×) supaya konten yang diucap PELAN
+// (mis. berita "langsam gesprochen") — yang window-nya wajar lebih panjang dari
+// perkiraan tempo normal — TIDAK tersapu lebih cepat dari audio ("kecepeten").
+// Cap tetap menangkap baris yang benar-benar kepanjangan (hening panjang di akhir).
+const SPEECH_CAP_FACTOR = 1.8;
 
 function karaokeTokens(
   cue: LearnCue,
@@ -1320,9 +1326,12 @@ function karaokeTokens(
   const toks = splitWords(cue.target, langCode);
   const total = cue.target.length || 1;
   const windowDur = Math.max(0.001, cue.end - cue.start);
-  // Durasi efektif = window sebenarnya, TAPI tak lebih panjang dari perkiraan bicara
-  // (mengoreksi baris yang tertahan lama). Kalau window sudah ketat, itu yang dipakai.
-  const dur = Math.max(0.4, Math.min(windowDur, estSpeechDur(cue.target)));
+  // Durasi efektif = window caption/ASR SEBENARNYA (tempo paling akurat), kecuali
+  // window itu jauh lebih panjang dari perkiraan bicara (hening/segmen kepanjangan)
+  // — baru saat itu direm ke perkiraan × FACTOR. Ambang longgar ini bikin baris yang
+  // diucap pelan tetap tersapu sepanjang audio-nya, tak mendahului ("kecepeten").
+  const cap = estSpeechDur(cue.target) * SPEECH_CAP_FACTOR;
+  const dur = Math.max(0.4, windowDur > cap ? cap : windowDur);
   const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;

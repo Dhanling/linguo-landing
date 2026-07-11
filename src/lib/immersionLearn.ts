@@ -441,10 +441,76 @@ function splitLongCue(cue: LearnCue): LearnCue[] {
   });
 }
 
+/** Pak kata jadi potongan ≤ maxChars (greedy). Kata tunggal > maxChars berdiri sendiri. */
+function chunkWords(text: string, maxChars: number): string[] {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const chunks: string[] = [];
+  let cur = "";
+  for (const w of words) {
+    if (!cur) cur = w;
+    else if (cur.length + 1 + w.length <= maxChars) cur += " " + w;
+    else {
+      chunks.push(cur);
+      cur = w;
+    }
+  }
+  if (cur) chunks.push(cur);
+  return chunks;
+}
+
+/** Bagi kata jadi TEPAT n grup berurutan, ukuran serata mungkin (buat pasangkan base/translit). */
+function distributeWords(text: string, n: number): string[] {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (n <= 1) return [words.join(" ")];
+  const out: string[] = [];
+  for (let i = 0; i < n; i++) {
+    const from = Math.floor((i * words.length) / n);
+    const to = Math.floor(((i + 1) * words.length) / n);
+    out.push(words.slice(from, to).join(" "));
+  }
+  return out;
+}
+
+/**
+ * Fallback terakhir: pecah cue yang MASIH kepanjangan setelah pemecahan kalimat &
+ * klausa (mis. hasil ASR/Whisper TANPA tanda baca → tak ada batas kalimat/koma untuk
+ * dipotong). Dipecah per KATA jadi potongan ≤ MAX_CUE_CHARS; terjemahan (base) &
+ * transliterasi ikut dibagi proporsional ke jumlah potongan yang SAMA. Perpasangan
+ * jadi PERKIRAAN (beda bahasa, urutan kata tak selalu sejajar), tapi tiap section
+ * jadi satu baris pendek — sesuai target "1 kalimat / 1 baris" utk semua sumber.
+ */
+function splitCueByWords(cue: LearnCue): LearnCue[] {
+  if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
+  const targets = chunkWords(cue.target, MAX_CUE_CHARS);
+  if (targets.length <= 1) return [cue];
+  const bases = cue.base ? distributeWords(cue.base, targets.length) : null;
+  const translits = cue.translit ? distributeWords(cue.translit, targets.length) : null;
+
+  const dur = Math.max(0.001, cue.end - cue.start);
+  const total = targets.reduce((n, s) => n + s.length, 0) || 1;
+  let acc = 0;
+  return targets.map((tg, i) => {
+    const start = cue.start + dur * (acc / total);
+    acc += tg.length;
+    const end = i === targets.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    return {
+      start,
+      end: Math.max(end, start + 0.3),
+      target: tg,
+      base: bases ? bases[i] : "",
+      ...(translits ? { translit: translits[i] } : {}),
+    };
+  });
+}
+
 // Rapikan transkrip jadi satu section per baris: pecah per kalimat dulu (akurat),
-// lalu potong kalimat yang masih kepanjangan biar tak ada section berupa paragraf.
+// lalu di batas klausa, lalu — kalau MASIH kepanjangan (ASR/Whisper tanpa tanda
+// baca) — per kata. Tak ada lagi section berupa paragraf panjang, apa pun sumbernya.
 function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
-  return cues.flatMap(splitCueBySentence).flatMap(splitLongCue);
+  return cues
+    .flatMap(splitCueBySentence)
+    .flatMap(splitLongCue)
+    .flatMap(splitCueByWords);
 }
 
 /**
