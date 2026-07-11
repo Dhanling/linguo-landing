@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import {
   askWordQuestion,
+  FollowupQ,
   getWordDeepDive,
   isWordSaved,
   removeSavedWord,
@@ -58,7 +59,7 @@ const SUGGESTED = [
   "Beri contoh dalam situasi santai",
 ];
 
-type ChatMsg = { role: "user" | "ai"; text: string; followups?: string[] };
+type ChatMsg = { role: "user" | "ai"; text: string; followups?: FollowupQ[] };
 
 export default function WordStudy({
   word,
@@ -528,14 +529,19 @@ function AskTab({
             Lanjut tanya:
           </p>
           <div className="flex flex-wrap gap-2">
-            {lastFollowups.map((q) => (
+            {lastFollowups.map((f) => (
               <button
-                key={q}
-                onClick={() => onAsk(q)}
-                className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
+                key={f.q}
+                onClick={() => onAsk(f.q)}
+                className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
                 style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               >
-                {q}
+                <span className="text-[12.5px] font-semibold">{f.q}</span>
+                {f.tl && (
+                  <span className="text-[11px] italic" style={{ color: "#7FE0E0" }}>
+                    {f.tl}
+                  </span>
+                )}
               </button>
             ))}
           </div>

@@ -91,6 +91,18 @@ export async function POST(req: NextRequest) {
     if (mode === "ask") {
       const question = typeof body?.question === "string" ? body.question.trim().slice(0, 400) : "";
       if (!question) return NextResponse.json({ answer: "", followups: [] }, { status: 200 });
+      // Usulan lanjutan sering menyisipkan kata bahasa target dalam «guillemets».
+      // Untuk bahasa non-Latin (mis. Arab) minta "tl": bacaan Latin kata target
+      // itu saja, biar chip bisa menampilkan transliterasi di bawah pertanyaan.
+      const followupSpec = nonLatin
+        ? `each an object { "q": a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words) ` +
+          `that wraps any cited ${language} word in «guillemets», "tl": the Latin phonetic ` +
+          `reading of ONLY the ${language} (non-Latin) words inside «guillemets» in "q", in order ` +
+          `(empty string if none) }`
+        : `each a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words)`;
+      const followupShape = nonLatin
+        ? `[{"q":"...","tl":"..."}, {"q":"...","tl":"..."}, {"q":"...","tl":"..."}]`
+        : `["...", "...", "..."]`;
       const prompt =
         `You are a warm, concise ${language} tutor helping an Indonesian learner. ` +
         `The learner is studying the ${language} word "${word}".${ctx} ` +
@@ -99,23 +111,31 @@ export async function POST(req: NextRequest) {
         `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
         `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
         `No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
-        `would likely ask NEXT — each a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words), ` +
+        `would likely ask NEXT — ${followupSpec}, ` +
         `directly related to THIS question and answer, without repeating them. ` +
-        `Return ONLY a JSON object: {"answer": "...", "followups": ["...", "...", "..."]}.` +
+        `Return ONLY a JSON object: {"answer": "...", "followups": ${followupShape}}.` +
         `\n\nQuestion: ${question}`;
       const raw = await callGemini(prompt, true);
       const s = raw.indexOf("{");
       const e = raw.lastIndexOf("}");
       let answer = "";
-      let followups: string[] = [];
+      let followups: { q: string; tl?: string }[] = [];
       if (s !== -1 && e > s) {
         try {
           const parsed = JSON.parse(raw.slice(s, e + 1)) as Record<string, unknown>;
           answer = typeof parsed.answer === "string" ? parsed.answer.trim() : "";
           followups = Array.isArray(parsed.followups)
             ? (parsed.followups as unknown[])
-                .map((q) => (typeof q === "string" ? q.trim() : ""))
-                .filter(Boolean)
+                // Terima bentuk string (Latin) maupun objek { q, tl } (non-Latin).
+                .map((it) => {
+                  if (typeof it === "string") return { q: it.trim(), tl: "" };
+                  const o = it as Record<string, unknown>;
+                  return {
+                    q: typeof o?.q === "string" ? o.q.trim() : "",
+                    tl: typeof o?.tl === "string" ? o.tl.trim() : "",
+                  };
+                })
+                .filter((it) => it.q)
                 .slice(0, 3)
             : [];
         } catch {

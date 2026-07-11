@@ -902,10 +902,20 @@ export async function getWordDeepDive(params: {
   };
 }
 
+/**
+ * Satu usulan pertanyaan lanjutan. `tl` = transliterasi (bacaan Latin) kata
+ * bahasa target non-Latin yang tersisip di dalam pertanyaan — kosong utk
+ * bahasa Latin. Dipakai chip "Lanjut tanya" agar Arab dll bisa dibaca.
+ */
+export interface FollowupQ {
+  q: string;
+  tl?: string;
+}
+
 /** Jawaban tanya-lanjutan + usulan pertanyaan berikutnya yang kontekstual. */
 export interface WordAnswer {
   answer: string;
-  followups: string[];
+  followups: FollowupQ[];
 }
 
 /** Tanya-jawab lanjutan bebas tentang sebuah kata (mis. "bedanya dengan …?"). */
@@ -921,11 +931,29 @@ export async function askWordQuestion(params: {
     body: JSON.stringify({ ...params, mode: "ask" }),
   });
   if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
-  const data = (await res.json()) as { answer?: string; followups?: string[]; error?: string };
+  const data = (await res.json()) as {
+    answer?: string;
+    followups?: unknown[];
+    error?: string;
+  };
   if (data.error) throw new Error(data.error);
+  // Terima bentuk lama (string[]) maupun baru ({ q, tl }[]) biar tahan versi.
+  const followups: FollowupQ[] = Array.isArray(data.followups)
+    ? data.followups
+        .map((it): FollowupQ => {
+          if (typeof it === "string") return { q: it.trim() };
+          const o = (it ?? {}) as Record<string, unknown>;
+          return {
+            q: typeof o.q === "string" ? o.q.trim() : "",
+            tl: typeof o.tl === "string" ? o.tl.trim() : "",
+          };
+        })
+        .filter((f) => f.q)
+        .slice(0, 3)
+    : [];
   return {
     answer: (data.answer ?? "").trim(),
-    followups: Array.isArray(data.followups) ? data.followups.filter(Boolean).slice(0, 3) : [],
+    followups,
   };
 }
 
