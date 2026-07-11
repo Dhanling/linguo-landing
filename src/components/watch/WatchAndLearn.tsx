@@ -140,9 +140,8 @@ export default function WatchAndLearn() {
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
   const [deckOpen, setDeckOpen] = useState(false);
   const [vocabCount, setVocabCount] = useState(0);
-  // Watch & Learn adalah fitur PUBLIK — bisa dibuka tanpa login dashboard LMS.
-  // Tombol kembali menyesuaikan: yang sudah login balik ke Dashboard (/akun),
-  // tamu balik ke Beranda (/) supaya tak nyangkut di tembok login.
+  // Watch & Learn WAJIB login dashboard LMS. `null` = sesi masih dicek (tampilkan
+  // spinner); `false` = tamu → dilempar ke /akun (layar login); `true` = render.
   const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
 
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
@@ -247,20 +246,25 @@ export default function WatchAndLearn() {
     refreshVocab();
   }, [refreshVocab]);
 
-  // Deteksi sesi sekali di mount buat mengarahkan tombol kembali. Best-effort:
-  // kalau gagal, anggap tamu (link ke Beranda) — tak pernah memblokir halaman.
+  // Gate login: cek sesi di mount; tamu langsung dialihkan ke /akun (layar login).
+  // onAuthStateChange menjaga kalau sesi berakhir saat halaman terbuka.
   useEffect(() => {
     let alive = true;
+    const gate = (hasSession: boolean) => {
+      if (!alive) return;
+      setLoggedIn(hasSession);
+      if (!hasSession) window.location.replace("/akun");
+    };
     supabase.auth
       .getSession()
-      .then(({ data }) => {
-        if (alive) setLoggedIn(!!data.session);
-      })
-      .catch(() => {
-        if (alive) setLoggedIn(false);
-      });
+      .then(({ data }) => gate(!!data.session))
+      .catch(() => gate(false));
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event, session) => gate(!!session)
+    );
     return () => {
       alive = false;
+      subscription.unsubscribe();
     };
   }, []);
 
@@ -499,19 +503,33 @@ export default function WatchAndLearn() {
     setHistory(clearWatchHistory(langCode));
   }, [langCode]);
 
+  // Gate login: selama sesi belum pasti (null) atau tamu (false, sedang dialihkan
+  // ke /akun), jangan render katalog — cukup spinner biar konten tak sempat bocor.
+  if (loggedIn !== true) {
+    return (
+      <main
+        style={{ backgroundColor: BG, minHeight: "100vh" }}
+        className="flex items-center justify-center text-white"
+      >
+        <div
+          className="h-8 w-8 animate-spin rounded-full border-2 border-t-transparent"
+          style={{ borderColor: TEAL, borderTopColor: "transparent" }}
+        />
+      </main>
+    );
+  }
+
   return (
     <main style={{ backgroundColor: BG, minHeight: "100vh" }} className="text-white">
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-5 sm:px-6">
-        {/* Top bar — tombol kembali menyesuaikan status login: siswa yang login
-            balik ke Dashboard (/akun), tamu balik ke Beranda (/). Fitur ini
-            publik, jadi tamu tak boleh dilempar ke tembok login /akun. */}
+        {/* Top bar — balik ke dashboard siswa (/akun), bukan beranda publik. */}
         <div className="flex items-center justify-between">
           <Link
-            href={loggedIn ? "/akun" : "/"}
+            href="/akun"
             className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
             style={{ color: SUB }}
           >
-            <ArrowLeft className="h-4 w-4" /> {loggedIn ? "Dashboard" : "Beranda"}
+            <ArrowLeft className="h-4 w-4" /> Dashboard
           </Link>
           <div className="flex items-center gap-2">
             <button
