@@ -96,7 +96,17 @@ function stripWatchParams() {
 // (bahasa, query); TTL 10 menit — lewat itu tampilkan cache dulu, refresh diam-diam.
 const catalogCache = new Map<string, { videos: ImmersionVideo[]; nextToken?: string; at: number }>();
 const CATALOG_TTL_MS = 10 * 60 * 1000;
-const catalogKeyOf = (langCode: string, q: string) => `${langCode}|${q}`;
+// Kunci cache memuat filter durasi: tiap tab ("< 5", "5–10", "10–20") kini fetch
+// bucket YouTube berbeda (short/medium), jadi hasilnya tak boleh saling menimpa.
+const catalogKeyOf = (langCode: string, q: string, dur = "all") => `${langCode}|${dur}|${q}`;
+
+// Rentang durasi (detik) yang dikirim ke yt-search untuk sebuah tab filter.
+// "Semua" tetap dibatasi ke katalog ≤20 mnt; sisanya kirim min & max eksplisit
+// agar server membias hasil ke bucket durasi yang benar (bukan Shorts semua).
+function durRange(id: DurationFilter): { min: number; max: number } {
+  const d = DURATION_FILTERS.find((x) => x.id === id) ?? DURATION_FILTERS[0];
+  return { min: d.min, max: d.max === Infinity ? CATALOG_MAX_DURATION_SEC : d.max };
+}
 
 export default function WatchAndLearn() {
   // Bahasa target — disimpan di localStorage biar konsisten antar kunjungan.
@@ -281,7 +291,7 @@ export default function WatchAndLearn() {
   const runSearch = useCallback(
     // [perf:watch-catalog-cache-v1] silent=true → refresh diam-diam (grid dari cache
     // sudah tampil, jangan diganti spinner).
-    async (l: ImmersionLang, c: ImmersionCategory, text: string, silent = false) => {
+    async (l: ImmersionLang, c: ImmersionCategory, text: string, durId: DurationFilter, silent = false) => {
       const id = ++reqId.current;
       if (!silent) {
         setState("loading");
@@ -289,20 +299,25 @@ export default function WatchAndLearn() {
         setNextToken(undefined);
       }
       const q = buildQuery(c, l, text);
+      // [linguo-patch:watch-duration-server-bucket-v1] Kirim rentang durasi tab
+      // aktif ke server. Tab "5–10"/"10–20 mnt" → bucket `medium` YouTube; tanpa
+      // ini `videoDuration=any` membanjiri halaman dgn Shorts → grid selalu kosong.
+      const { min, max } = durRange(durId);
       const page = await searchImmersionVideos({
         query: q,
         language: l.searchCode ?? l.code,
         order: c.news || c.fresh ? "date" : undefined,
         max: 18,
-        maxDurationSec: CATALOG_MAX_DURATION_SEC, // katalog s/d 20 mnt (filter durasi di client)
+        maxDurationSec: max,
+        minDurationSec: min || undefined,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
       // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
-      // sisa video kepanjangan (jaga-jaga kalau durasi tak terbaca di server).
+      // sisa video di luar rentang (jaga-jaga kalau durasi tak terbaca di server).
       const results = filterVideosByLanguage(page.results, l.code).filter(
-        (v) => !v.duration || v.duration <= CATALOG_MAX_DURATION_SEC
+        (v) => !v.duration || v.duration <= max
       );
-      catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text)), {
+      catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text), durId), {
         videos: results, nextToken: page.nextPageToken, at: Date.now(),
       });
       setVideos(results);
@@ -339,7 +354,11 @@ export default function WatchAndLearn() {
   // kalau basi di-refresh diam-diam di belakang layar.
   useEffect(() => {
     const siap = category === SIAP_ID && !committedText.trim();
-    const key = catalogKeyOf(langCode, siap ? SIAP_ID : buildQuery(cat, lang, committedText));
+    // Tab "Siap" tak ikut filter durasi server (baca cache DB, disaring di client),
+    // jadi kuncinya tak menyertakan durationFilter → tak fetch ulang saat toggle.
+    const key = siap
+      ? catalogKeyOf(langCode, SIAP_ID)
+      : catalogKeyOf(langCode, buildQuery(cat, lang, committedText), durationFilter);
     const hit = catalogCache.get(key);
     if (hit) {
       reqId.current++; // batalkan fetch lama yang mungkin masih jalan
@@ -353,9 +372,9 @@ export default function WatchAndLearn() {
       if (!siap && Date.now() - hit.at < CATALOG_TTL_MS) return; // masih segar
     }
     if (siap) loadReady(lang, !!hit);
-    else runSearch(lang, cat, committedText, !!hit);
+    else runSearch(lang, cat, committedText, durationFilter, !!hit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [langCode, category, committedText]);
+  }, [langCode, category, committedText, durationFilter]);
 
   // Balikkan tampilan ke 1 baris tiap daftar/​filter berganti (bukan saat loadMore,
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
@@ -368,23 +387,25 @@ export default function WatchAndLearn() {
     const id = reqId.current;
     setState("more");
     const q = buildQuery(cat, lang, committedText);
+    const { min, max } = durRange(durationFilter);
     const page = await searchImmersionVideos({
       query: q,
       language: lang.searchCode ?? lang.code,
       order: cat.news || cat.fresh ? "date" : undefined,
       max: 18,
       pageToken: nextToken,
-      maxDurationSec: CATALOG_MAX_DURATION_SEC,
+      maxDurationSec: max,
+      minDurationSec: min || undefined,
     });
     if (id !== reqId.current) return;
     const more = filterVideosByLanguage(page.results, lang.code).filter(
-      (v) => !v.duration || v.duration <= CATALOG_MAX_DURATION_SEC
+      (v) => !v.duration || v.duration <= max
     );
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
       const merged = [...prev, ...more.filter((v) => !seen.has(v.videoId))];
       // [perf:watch-catalog-cache-v1] hasil "Muat lainnya" ikut ke cache biar balik lagi utuh
-      catalogCache.set(catalogKeyOf(lang.code, buildQuery(cat, lang, committedText)), {
+      catalogCache.set(catalogKeyOf(lang.code, buildQuery(cat, lang, committedText), durationFilter), {
         videos: merged, nextToken: page.nextPageToken, at: Date.now(),
       });
       return merged;
@@ -392,7 +413,7 @@ export default function WatchAndLearn() {
     setNextToken(page.nextPageToken);
     setState("done");
     prewarmTranscripts(more, lang.code);
-  }, [nextToken, state, cat, lang, committedText]);
+  }, [nextToken, state, cat, lang, committedText, durationFilter]);
 
   // "Muat lainnya": tampilkan 1 baris berikutnya dari yang sudah dimuat; kalau
   // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.
@@ -588,7 +609,7 @@ export default function WatchAndLearn() {
             <span style={{ color: GOLD }}>✨</span> Rekomendasi untukmu
           </h2>
           <button
-            onClick={() => (readyMode ? loadReady(lang) : runSearch(lang, cat, committedText))}
+            onClick={() => (readyMode ? loadReady(lang) : runSearch(lang, cat, committedText, durationFilter))}
             className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-opacity hover:opacity-80"
             style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
           >

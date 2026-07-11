@@ -339,6 +339,9 @@ export async function searchImmersionVideos(params: {
   pageToken?: string;
   /** Batas durasi (detik). Diteruskan ke yt-search buat mode video pendek. */
   maxDurationSec?: number;
+  /** Batas bawah durasi (detik). Membias hasil ke bucket `medium` YouTube +
+   *  saring >= nilai ini — dipakai tab filter durasi "5–10" / "10–20 mnt". */
+  minDurationSec?: number;
 }): Promise<ImmersionSearchPage> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { results: [] };
   try {
@@ -357,6 +360,7 @@ export async function searchImmersionVideos(params: {
         max: params.max ?? 18,
         pageToken: params.pageToken,
         maxDurationSec: params.maxDurationSec,
+        minDurationSec: params.minDurationSec,
       }),
     });
     if (!res.ok) return { results: [] };
