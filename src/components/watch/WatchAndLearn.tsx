@@ -26,6 +26,7 @@ import {
   youtubeThumb,
 } from "@/lib/immersion";
 import { fetchReadyVideos, getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
+import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
@@ -683,7 +684,12 @@ export default function WatchAndLearn() {
             ? Array.from({ length: GRID_PAGE }).map((_, i) => <CardSkeleton key={i} />)
             : shownVideos.slice(0, visible).map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
-                  <Thumb videoId={v.videoId} thumbnail={v.thumbnail} duration={v.duration} />
+                  <Thumb
+                    videoId={v.videoId}
+                    thumbnail={v.thumbnail}
+                    duration={v.duration}
+                    level={v.level}
+                  />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
                   {v.channel && (
                     <p className="mt-0.5 line-clamp-1 text-[11.5px]" style={{ color: SUB }}>
@@ -855,12 +861,15 @@ function Thumb({
   videoId,
   thumbnail,
   duration,
+  level,
 }: {
   videoId: string;
   thumbnail: string | null;
   duration?: number | null;
+  level?: CefrLevel | null;
 }) {
   const durLabel = formatDuration(duration);
+  const lvlStyle = level ? CEFR_STYLE[level] : null;
   return (
     <div
       className="relative w-full overflow-hidden rounded-xl"
@@ -873,6 +882,16 @@ function Thumb({
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
+      {/* Badge level CEFR (estimasi dari transkrip) — hanya video tab "Siap". */}
+      {level && lvlStyle && (
+        <span
+          className="absolute left-1.5 top-1.5 rounded px-1.5 py-0.5 text-[10.5px] font-extrabold leading-none"
+          style={{ backgroundColor: lvlStyle.bg, color: lvlStyle.fg }}
+          title="Perkiraan level bahasa dari transkrip"
+        >
+          {level}
+        </span>
+      )}
       {durLabel && (
         <span className="absolute bottom-1.5 right-1.5 rounded bg-black/80 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">
           {durLabel}

@@ -615,6 +615,7 @@ export async function fetchReadyVideos(
         thumbnail: null,
         channel: typeof v.channel === "string" ? (v.channel as string) : null,
         duration: typeof v.duration === "number" ? (v.duration as number) : null,
+        level: asCefrLevel(v.level),
       }));
   } catch {
     return [];
@@ -884,6 +885,7 @@ export const POS_LABEL_ID: Record<PosCategory, string> = {
 // ── Kosakata tersimpan (localStorage) ────────────────────────────────────────
 
 import { gradeCard, newSrsState, type SrsGrade, type SrsState } from "./srs";
+import { asCefrLevel } from "./cefr";
 
 export interface SavedWord {
   word: string;

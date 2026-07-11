@@ -11,6 +11,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
+import { estimateCefrLevel, asCefrLevel } from "@/lib/cefr";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -42,20 +43,75 @@ export async function GET(req: NextRequest) {
       // CDN tetap kita rem sebentar via s-maxage biar tak dibombardir, tapi cukup
       // pendek supaya video yang baru selesai langsung nongol.
       const sb = createServerClient(0);
-      const { data, error } = await sb
-        .from("yt_transcripts")
-        .select("video_id, title, channel, dur")
-        .eq("lang", lang)
-        .not("title", "is", null)
-        .order("created_at", { ascending: false })
-        .limit(limit);
-      if (error || !Array.isArray(data))
+      // Sertakan kolom `level` (estimasi CEFR) kalau ada. Kalau migrasi kolom belum
+      // dijalankan, select-nya error → jatuh ke query tanpa level (badge absen saja).
+      let hasLevel = true;
+      let rows: Record<string, unknown>[] | null = null;
+      {
+        const r = await sb
+          .from("yt_transcripts")
+          .select("video_id, title, channel, dur, level")
+          .eq("lang", lang)
+          .not("title", "is", null)
+          .order("created_at", { ascending: false })
+          .limit(limit);
+        if (r.error) {
+          hasLevel = false;
+          const r2 = await sb
+            .from("yt_transcripts")
+            .select("video_id, title, channel, dur")
+            .eq("lang", lang)
+            .not("title", "is", null)
+            .order("created_at", { ascending: false })
+            .limit(limit);
+          rows = Array.isArray(r2.data) ? (r2.data as Record<string, unknown>[]) : null;
+        } else {
+          rows = Array.isArray(r.data) ? (r.data as Record<string, unknown>[]) : null;
+        }
+      }
+      if (!rows)
         return NextResponse.json({ videos: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
-      const videos = data.map((r) => ({
+
+      // Backfill lazy: baris yang belum punya level → hitung dari cues (murah,
+      // heuristik) lalu simpan supaya request berikutnya tinggal baca kolomnya.
+      const levelOf = new Map<string, string | null>();
+      if (hasLevel) {
+        const missing = rows
+          .filter((r) => asCefrLevel(r.level) == null)
+          .map((r) => r.video_id as string);
+        if (missing.length) {
+          const cueRes = await sb
+            .from("yt_transcripts")
+            .select("video_id, cues")
+            .eq("lang", lang)
+            .in("video_id", missing);
+          if (Array.isArray(cueRes.data)) {
+            await Promise.all(
+              cueRes.data.map(async (cr) => {
+                const cues = Array.isArray((cr as { cues?: unknown }).cues)
+                  ? ((cr as { cues: unknown[] }).cues)
+                  : [];
+                const lvl = estimateCefrLevel(cues as { target?: unknown }[], lang);
+                levelOf.set(cr.video_id as string, lvl);
+                if (lvl) {
+                  await sb
+                    .from("yt_transcripts")
+                    .update({ level: lvl })
+                    .eq("video_id", cr.video_id as string)
+                    .eq("lang", lang);
+                }
+              })
+            );
+          }
+        }
+      }
+
+      const videos = rows.map((r) => ({
         videoId: r.video_id as string,
         title: (r.title as string) ?? "",
         channel: (r.channel as string) ?? null,
         duration: typeof r.dur === "number" ? r.dur : null,
+        level: asCefrLevel(r.level) ?? levelOf.get(r.video_id as string) ?? null,
       }));
       return NextResponse.json(
         { videos },

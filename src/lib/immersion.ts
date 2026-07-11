@@ -25,8 +25,10 @@ export interface ImmersionVideo {
   title: string;
   thumbnail: string | null;
   channel?: string | null;
-  /** Durasi video dalam detik (dari yt-search). Dipakai badge & filter ≤5 mnt. */
+  /** Durasi video dalam detik (dari yt-search). Dipakai badge & filter durasi. */
   duration?: number | null;
+  /** Estimasi level CEFR dari transkrip — hanya diisi untuk video tab "Siap". */
+  level?: import("./cefr").CefrLevel | null;
 }
 
 export interface ImmersionSearchPage {
