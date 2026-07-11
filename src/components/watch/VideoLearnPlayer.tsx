@@ -141,6 +141,8 @@ export default function VideoLearnPlayer({
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
   const [showPanel, setShowPanel] = useState(true);
+  // Rekomendasi: tampil 5 dulu, "Muat lainnya" menambah — reset tiap ganti video.
+  const [recShown, setRecShown] = useState(5);
 
   // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
   useEffect(() => {
@@ -224,6 +226,11 @@ export default function VideoLearnPlayer({
       playerRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [video.videoId]);
+
+  // Ganti video → daftar rekomendasi kembali ke 5 teratas.
+  useEffect(() => {
+    setRecShown(5);
   }, [video.videoId]);
 
   // Polling waktu tiap 200ms untuk sinkronisasi subtitle.
@@ -533,7 +540,10 @@ export default function VideoLearnPlayer({
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol. */}
-          <div className="relative flex w-full shrink-0 items-center justify-center bg-black" style={{ maxHeight: "70vh" }}>
+          <div
+            className="sticky top-0 z-20 flex w-full shrink-0 items-center justify-center bg-black"
+            style={{ maxHeight: "70vh" }}
+          >
             <div className="relative w-full" style={{ aspectRatio: "16 / 9", maxWidth: "calc(70vh * 16 / 9)" }}>
               <div ref={hostRef} className="absolute inset-0 h-full w-full" />
               {!ready && (
@@ -679,7 +689,7 @@ export default function VideoLearnPlayer({
                 Rekomendasi
               </p>
               <div className="px-2 pb-4 sm:px-4">
-                {recommendations.map((v) => (
+                {recommendations.slice(0, recShown).map((v) => (
                   <button
                     key={v.videoId}
                     onClick={() => onSelectVideo(v)}
@@ -706,6 +716,17 @@ export default function VideoLearnPlayer({
                     </div>
                   </button>
                 ))}
+                {recommendations.length > recShown && (
+                  <div className="mt-2 flex justify-center pb-2">
+                    <button
+                      onClick={() => setRecShown((n) => n + 5)}
+                      className="rounded-full px-5 py-2.5 text-[13px] font-bold transition-transform active:scale-95"
+                      style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+                    >
+                      Muat lainnya
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           )}
