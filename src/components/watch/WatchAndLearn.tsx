@@ -63,6 +63,18 @@ const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
 
+// [linguo-patch:watch-resume-refresh-v1] Video yang sedang dibuka disimpan di URL
+// (?v=<videoId>&vl=<bahasa>) supaya REFRESH tetap kembali ke mode menonton, bukan
+// mental ke katalog. Metadata kartu diambil dari riwayat tonton lokal (video yang
+// dibuka selalu masuk riwayat), jadi judul & durasi tetap tampil setelah reload.
+function stripWatchParams() {
+  const u = new URL(window.location.href);
+  if (!u.searchParams.has("v") && !u.searchParams.has("vl")) return;
+  u.searchParams.delete("v");
+  u.searchParams.delete("vl");
+  window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
+}
+
 // [perf:watch-catalog-cache-v1] Cache katalog module-level: pindah menu lalu balik
 // ke Watch & Learn → grid tampil instan tanpa nembak yt-search lagi. Kunci per
 // (bahasa, query); TTL 10 menit — lewat itu tampilkan cache dulu, refresh diam-diam.
@@ -153,13 +165,34 @@ export default function WatchAndLearn() {
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
+    let saved: string | null = null;
     try {
-      const saved = window.localStorage.getItem(LANG_KEY);
+      saved = window.localStorage.getItem(LANG_KEY);
       if (saved && getImmersionLang(saved)) setLangCode(saved);
     } catch {
       /* abaikan */
     }
-    setHistory(getWatchHistory());
+    const hist = getWatchHistory();
+    setHistory(hist);
+    // [linguo-patch:watch-resume-refresh-v1] URL bawa ?v= → refresh terjadi saat
+    // menonton: pulihkan player-nya, jangan mentalkan siswa ke katalog.
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const vid = params.get("v");
+      if (vid) {
+        const h = hist.find((x) => x.videoId === vid);
+        const vl = params.get("vl") || h?.lang || saved || "en";
+        setActive(
+          h
+            ? { videoId: h.videoId, title: h.title, thumbnail: h.thumbnail,
+                channel: h.channel, duration: h.duration }
+            : { videoId: vid, title: "", thumbnail: null }
+        );
+        setActiveLang(getImmersionLang(vl) ? vl : "en");
+      }
+    } catch {
+      /* abaikan — URL aneh, tampilkan katalog seperti biasa */
+    }
   }, []);
 
   // Badge Kosakata menghitung kata bahasa aktif saja — konsisten dengan deck
@@ -181,14 +214,40 @@ export default function WatchAndLearn() {
   const playerOpen = active != null;
   useEffect(() => {
     if (!playerOpen) return;
-    window.history.pushState({ watchModal: true }, "");
-    const onPop = () => setActive(null);
+    // [linguo-patch:watch-resume-refresh-v1] Setelah refresh, entri history sesi
+    // sebelumnya (state watchModal) masih hidup — jangan dorong dobel.
+    if (!window.history.state?.watchModal) {
+      window.history.pushState({ watchModal: true }, "");
+    }
+    const onPop = () => {
+      setActive(null);
+      // Bersihkan ?v= yang mungkin ikut di entri tujuan (kasus buka via link
+      // langsung) — biar refresh berikutnya tak membuka player yang sudah ditutup.
+      stripWatchParams();
+    };
     window.addEventListener("popstate", onPop);
     return () => {
       window.removeEventListener("popstate", onPop);
-      if (window.history.state?.watchModal) window.history.back();
+      if (window.history.state?.watchModal) {
+        // back() asinkron; strip param di entri tujuan begitu popstate-nya tiba.
+        window.addEventListener("popstate", stripWatchParams, { once: true });
+        window.history.back();
+      } else {
+        stripWatchParams();
+      }
     };
   }, [playerOpen]);
+
+  // [linguo-patch:watch-resume-refresh-v1] Tulis video aktif ke URL. replaceState
+  // (bukan push) supaya pindah-pindah video via rekomendasi tak menumpuk history —
+  // Back tetap sekali tekan untuk keluar dari mode menonton.
+  useEffect(() => {
+    if (!active) return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("v", active.videoId);
+    u.searchParams.set("vl", activeLang);
+    window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
+  }, [active, activeLang]);
 
   // Token buat membatalkan hasil fetch yang ketinggalan (bahasa/kategori keburu ganti).
   const reqId = useRef(0);
