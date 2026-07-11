@@ -38,7 +38,14 @@ import {
   TranscriptReason,
   transliterateLines,
 } from "@/lib/immersionLearn";
-import { ImmersionVideo, youtubeThumb } from "@/lib/immersion";
+import {
+  filterVideosByLanguage,
+  getImmersionLang,
+  ImmersionVideo,
+  searchImmersionVideos,
+  WATCH_MAX_DURATION_SEC,
+  youtubeThumb,
+} from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
 
 const TEAL = "#1A9E9E";
@@ -56,6 +63,10 @@ const FONT_LEVELS = [
   { label: "Besar", scale: 1.2 },
 ];
 const FONT_KEY = "linguo:watch:fontsize:v1";
+
+// Cache video terkait per (bahasa|video) — buka-tutup player tak mengulang
+// pencarian YouTube (hemat kuota) selama halaman belum di-reload.
+const relatedCache = new Map<string, ImmersionVideo[]>();
 
 // ── YouTube IFrame API loader (singleton) ────────────────────────────────────
 let ytApiPromise: Promise<void> | null = null;
@@ -143,6 +154,8 @@ export default function VideoLearnPlayer({
   const [showPanel, setShowPanel] = useState(true);
   // Rekomendasi: tampil 5 dulu, "Muat lainnya" menambah — reset tiap ganti video.
   const [recShown, setRecShown] = useState(5);
+  // Video terkait hasil pencarian (channel/topik sama) — fallback ke katalog halaman.
+  const [related, setRelated] = useState<ImmersionVideo[] | null>(null);
 
   // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
   useEffect(() => {
@@ -232,6 +245,51 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     setRecShown(5);
   }, [video.videoId]);
+
+  // Cari video TERKAIT dengan yang sedang dibuka (bias nama channel → video dari
+  // channel yang sama atau bertopik mirip), bukan sekadar isi katalog halaman.
+  useEffect(() => {
+    const key = `${langCode}|${video.videoId}`;
+    const hit = relatedCache.get(key);
+    if (hit) {
+      setRelated(hit);
+      return;
+    }
+    setRelated(null);
+    let alive = true;
+    const lang = getImmersionLang(langCode);
+    searchImmersionVideos({
+      query: video.channel?.trim() || video.title,
+      language: lang?.searchCode ?? langCode,
+      max: 12,
+      maxDurationSec: WATCH_MAX_DURATION_SEC,
+    })
+      .then((page) => {
+        if (!alive) return;
+        const list = filterVideosByLanguage(page.results, langCode).filter(
+          (v) =>
+            v.videoId !== video.videoId &&
+            (!v.duration || v.duration <= WATCH_MAX_DURATION_SEC)
+        );
+        if (list.length) {
+          relatedCache.set(key, list);
+          setRelated(list);
+        }
+      })
+      .catch(() => {
+        /* best-effort — fallback ke katalog halaman */
+      });
+    return () => {
+      alive = false;
+    };
+  }, [video.videoId, video.channel, video.title, langCode]);
+
+  // Daftar rekomendasi yang dirender: hasil terkait kalau sudah ada, selain itu
+  // katalog dari halaman (prop) — keduanya tanpa video yang sedang diputar.
+  const recList = useMemo(() => {
+    const base = related?.length ? related : recommendations;
+    return base.filter((v) => v.videoId !== video.videoId);
+  }, [related, recommendations, video.videoId]);
 
   // Polling waktu tiap 200ms untuk sinkronisasi subtitle.
   useEffect(() => {
@@ -340,9 +398,9 @@ export default function VideoLearnPlayer({
   // penonton loncat ke video berikutnya, subtitle + terjemahannya sudah siap
   // (tak menunggu ASR ~1 menit). Best-effort & terdedup per sesi.
   useEffect(() => {
-    if (!recommendations.length) return;
-    prewarmTranscripts(recommendations, langCode);
-  }, [recommendations, langCode]);
+    if (!recList.length) return;
+    prewarmTranscripts(recList, langCode);
+  }, [recList, langCode]);
 
   // Terapkan CC bawaan + SINKRONKAN bahasanya ke bahasa yang sedang dipelajari.
   // Tanpa ini, track CC "lengket" ke bahasa video sebelumnya (mis. buka video
@@ -531,18 +589,13 @@ export default function VideoLearnPlayer({
 
       {/* Isi — split view */}
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
-        {/* Kiri: video + baris fokus + kontrol. Full width saat panel disembunyikan.
-            Kolomnya sendiri yang di-scroll (ala YouTube) supaya Rekomendasi di bawah
-            kontrol selalu bisa dijangkau — sebelumnya area itu kebagian tinggi ~0. */}
-        <div
-          className={`flex min-h-0 flex-col overflow-y-auto [scrollbar-width:thin] ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}
-        >
+        {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
+            HANYA daftar Rekomendasi di bawahnya yang punya area scroll sendiri —
+            jadi tak ada scrollbar menimpa video. */}
+        <div className={`flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol. */}
-          {/* Blok atas menempel saat scroll: video + subtitle + kontrol tetap
-              terlihat; hanya Rekomendasi yang lewat di bawahnya. */}
-          <div className="sticky top-0 z-20 shrink-0" style={{ backgroundColor: "#06090A" }}>
           <div
             className="relative flex w-full shrink-0 items-center justify-center bg-black"
             style={{ maxHeight: "70vh" }}
@@ -683,17 +736,19 @@ export default function VideoLearnPlayer({
               {fullscreen ? "Keluar" : "Layar penuh"}
             </button>
           </div>
-          </div>
 
           {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
               Klik untuk langsung memutar video lain tanpa keluar player. */}
-          {recommendations.length > 0 && onSelectVideo && (
-            <div className="shrink-0 border-t" style={{ borderColor: BORDER }}>
+          {recList.length > 0 && onSelectVideo && (
+            <div
+              className="min-h-0 flex-1 overflow-y-auto border-t [scrollbar-width:thin]"
+              style={{ borderColor: BORDER }}
+            >
               <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">
                 Rekomendasi
               </p>
               <div className="px-2 pb-4 sm:px-4">
-                {recommendations.slice(0, recShown).map((v) => (
+                {recList.slice(0, recShown).map((v) => (
                   <button
                     key={v.videoId}
                     onClick={() => onSelectVideo(v)}
@@ -720,7 +775,7 @@ export default function VideoLearnPlayer({
                     </div>
                   </button>
                 ))}
-                {recommendations.length > recShown && (
+                {recList.length > recShown && (
                   <div className="mt-2 flex justify-center pb-2">
                     <button
                       onClick={() => setRecShown((n) => n + 5)}
