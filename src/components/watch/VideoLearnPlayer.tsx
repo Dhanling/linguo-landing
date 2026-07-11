@@ -67,8 +67,10 @@ const FONT_LEVELS = [
 const FONT_KEY = "linguo:watch:fontsize:v1";
 
 // Cache video terkait per (bahasa|video) — buka-tutup player tak mengulang
-// pencarian YouTube (hemat kuota) selama halaman belum di-reload.
-const relatedCache = new Map<string, ImmersionVideo[]>();
+// pencarian YouTube (hemat kuota) selama halaman belum di-reload. `next` =
+// nextPageToken YouTube, biar "Muat lainnya" bisa terus mengambil halaman baru.
+type RelatedPage = { list: ImmersionVideo[]; next?: string };
+const relatedCache = new Map<string, RelatedPage>();
 
 // ── YouTube IFrame API loader (singleton) ────────────────────────────────────
 let ytApiPromise: Promise<void> | null = null;
@@ -160,10 +162,48 @@ export default function VideoLearnPlayer({
   // melebar mengisi ruangnya (leluasa discroll). Elemen host iframe TIDAK
   // di-unmount (cuma ganti class/style), jadi video terus berputar tanpa reload.
   const [mini, setMini] = useState(false);
+  // Posisi kotak mini hasil drag (koordinat kiri-atas); null = default pojok
+  // kanan-bawah. Bisa diseret dari strip atas (muncul saat hover) & bar subtitle.
+  const [miniPos, setMiniPos] = useState<{ x: number; y: number } | null>(null);
+  const miniBoxRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef<{ dx: number; dy: number } | null>(null);
+
+  const onMiniDragStart = useCallback((e: React.PointerEvent) => {
+    // Jangan mulai drag dari tombol (Kembalikan/Tutup tetap berfungsi normal).
+    if ((e.target as HTMLElement).closest("button")) return;
+    const box = miniBoxRef.current;
+    if (!box) return;
+    const r = box.getBoundingClientRect();
+    dragRef.current = { dx: e.clientX - r.left, dy: e.clientY - r.top };
+    // Capture: pointermove tetap ke handle walau kursor melintasi iframe/keluar box.
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }, []);
+  const onMiniDragMove = useCallback((e: React.PointerEvent) => {
+    const d = dragRef.current;
+    const box = miniBoxRef.current;
+    if (!d || !box) return;
+    // Jepit ke dalam viewport (margin 8px) biar kotak tak hilang keluar layar.
+    const x = Math.min(Math.max(8, e.clientX - d.dx), window.innerWidth - box.offsetWidth - 8);
+    const y = Math.min(Math.max(8, e.clientY - d.dy), window.innerHeight - box.offsetHeight - 8);
+    setMiniPos({ x, y });
+  }, []);
+  const onMiniDragEnd = useCallback(() => {
+    dragRef.current = null;
+  }, []);
+
+  // Keluar dari mode mini → posisi drag kembali ke default (pojok kanan-bawah).
+  useEffect(() => {
+    if (!mini) setMiniPos(null);
+  }, [mini]);
   // Rekomendasi: tampil 5 dulu, "Muat lainnya" menambah — reset tiap ganti video.
   const [recShown, setRecShown] = useState(5);
   // Video terkait hasil pencarian (channel/topik sama) — fallback ke katalog halaman.
-  const [related, setRelated] = useState<ImmersionVideo[] | null>(null);
+  const [related, setRelated] = useState<RelatedPage | null>(null);
+  // True selagi "Muat lainnya" mengambil halaman rekomendasi berikutnya dari server.
+  const [recLoading, setRecLoading] = useState(false);
+  // Kunci (bahasa|video) yang sedang aktif — buang hasil fetch basi saat ganti video.
+  const relKeyRef = useRef("");
 
   // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
   useEffect(() => {
@@ -275,6 +315,8 @@ export default function VideoLearnPlayer({
   // channel yang sama atau bertopik mirip), bukan sekadar isi katalog halaman.
   useEffect(() => {
     const key = `${langCode}|${video.videoId}`;
+    relKeyRef.current = key;
+    setRecLoading(false);
     const hit = relatedCache.get(key);
     if (hit) {
       setRelated(hit);
@@ -297,8 +339,9 @@ export default function VideoLearnPlayer({
             (!v.duration || v.duration <= WATCH_MAX_DURATION_SEC)
         );
         if (list.length) {
-          relatedCache.set(key, list);
-          setRelated(list);
+          const data: RelatedPage = { list, next: page.nextPageToken };
+          relatedCache.set(key, data);
+          setRelated(data);
         }
       })
       .catch(() => {
@@ -312,9 +355,52 @@ export default function VideoLearnPlayer({
   // Daftar rekomendasi yang dirender: hasil terkait kalau sudah ada, selain itu
   // katalog dari halaman (prop) — keduanya tanpa video yang sedang diputar.
   const recList = useMemo(() => {
-    const base = related?.length ? related : recommendations;
+    const base = related?.list.length ? related.list : recommendations;
     return base.filter((v) => v.videoId !== video.videoId);
   }, [related, recommendations, video.videoId]);
+
+  // "Muat lainnya" rekomendasi: buka 5 lagi dari stok lokal; kalau stok menipis
+  // dan server masih punya halaman (nextPageToken), ambil halaman berikutnya —
+  // tombol tak mentok setelah 1–2 klik.
+  const loadMoreRecs = useCallback(() => {
+    setRecShown((n) => n + 5);
+    if (!related?.next || recLoading) return;
+    if (related.list.length > recShown + 5) return; // stok lokal masih cukup
+    const key = `${langCode}|${video.videoId}`;
+    setRecLoading(true);
+    const lang = getImmersionLang(langCode);
+    searchImmersionVideos({
+      query: video.channel?.trim() || video.title,
+      language: lang?.searchCode ?? langCode,
+      max: 12,
+      pageToken: related.next,
+      maxDurationSec: WATCH_MAX_DURATION_SEC,
+    })
+      .then((page) => {
+        if (relKeyRef.current !== key) return; // sudah ganti video — hasil basi
+        const more = filterVideosByLanguage(page.results, langCode).filter(
+          (v) =>
+            v.videoId !== video.videoId &&
+            (!v.duration || v.duration <= WATCH_MAX_DURATION_SEC)
+        );
+        setRelated((prev) => {
+          if (!prev) return prev;
+          const seen = new Set(prev.list.map((v) => v.videoId));
+          const merged: RelatedPage = {
+            list: [...prev.list, ...more.filter((v) => !seen.has(v.videoId))],
+            next: page.nextPageToken,
+          };
+          relatedCache.set(key, merged);
+          return merged;
+        });
+      })
+      .catch(() => {
+        /* biarkan — token masih tersimpan, klik berikutnya mencoba lagi */
+      })
+      .finally(() => {
+        if (relKeyRef.current === key) setRecLoading(false);
+      });
+  }, [related, recShown, recLoading, langCode, video.videoId, video.channel, video.title]);
 
   // Polling waktu tiap 200ms untuk sinkronisasi subtitle.
   useEffect(() => {
@@ -625,12 +711,19 @@ export default function VideoLearnPlayer({
               dari flow jadi kotak melayang pojok kanan-bawah (iframe tak remount) —
               ruang yang ditinggalkan diisi daftar Rekomendasi. */}
           <div
+            ref={miniBoxRef}
             className={
               mini
                 ? "group fixed bottom-4 right-4 z-20 flex w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl"
                 : "group relative flex w-full shrink-0 items-center justify-center bg-black"
             }
-            style={mini ? undefined : { maxHeight: "70vh" }}
+            style={
+              mini
+                ? miniPos
+                  ? { left: miniPos.x, top: miniPos.y, right: "auto", bottom: "auto" }
+                  : undefined
+                : { maxHeight: "70vh" }
+            }
           >
             <div
               className="relative w-full"
@@ -643,9 +736,16 @@ export default function VideoLearnPlayer({
                 </div>
               )}
             </div>
-            {/* Kontrol mini — muncul saat hover: kembalikan ukuran / tutup player. */}
+            {/* Kontrol mini — muncul saat hover: kembalikan ukuran / tutup player.
+                Strip ini juga PEGANGAN DRAG: seret untuk memindah kotak mini. */}
             {mini && (
-              <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-end gap-1.5 bg-gradient-to-b from-black/70 to-transparent p-2 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+              <div
+                onPointerDown={onMiniDragStart}
+                onPointerMove={onMiniDragMove}
+                onPointerUp={onMiniDragEnd}
+                onPointerCancel={onMiniDragEnd}
+                className="absolute inset-x-0 top-0 z-10 flex cursor-move touch-none items-center justify-end gap-1.5 bg-gradient-to-b from-black/70 to-transparent p-2 opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+              >
                 <button
                   onClick={() => setMini(false)}
                   className="rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
@@ -664,9 +764,17 @@ export default function VideoLearnPlayer({
                 </button>
               </div>
             )}
-            {/* Subtitle ringkas di kotak mini — tetap bisa belajar sambil scroll. */}
+            {/* Subtitle ringkas di kotak mini — tetap bisa belajar sambil scroll.
+                Bar ini juga bisa dipakai menyeret kotak mini. */}
             {mini && activeCue && (
-              <div className="px-3 pb-2.5 pt-2 text-center" style={{ backgroundColor: "#0B0E0F" }}>
+              <div
+                onPointerDown={onMiniDragStart}
+                onPointerMove={onMiniDragMove}
+                onPointerUp={onMiniDragEnd}
+                onPointerCancel={onMiniDragEnd}
+                className="cursor-move touch-none px-3 pb-2.5 pt-2 text-center"
+                style={{ backgroundColor: "#0B0E0F" }}
+              >
                 <p className="line-clamp-1 text-[13px] font-bold text-white">{activeCue.target}</p>
                 {activeCue.base && (
                   <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold" style={{ color: GOLD }}>
@@ -861,14 +969,15 @@ export default function VideoLearnPlayer({
                     </div>
                   </button>
                 ))}
-                {recList.length > recShown && (
+                {(recList.length > recShown || related?.next) && (
                   <div className="mt-2 flex justify-center pb-2">
                     <button
-                      onClick={() => setRecShown((n) => n + 5)}
-                      className="rounded-full px-5 py-2.5 text-[13px] font-bold transition-transform active:scale-95"
+                      onClick={loadMoreRecs}
+                      disabled={recLoading}
+                      className="rounded-full px-5 py-2.5 text-[13px] font-bold transition-transform active:scale-95 disabled:opacity-60"
                       style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
                     >
-                      Muat lainnya
+                      {recLoading ? "Memuat…" : "Muat lainnya"}
                     </button>
                   </div>
                 )}
