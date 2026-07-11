@@ -22,9 +22,11 @@ function validLang(lang: unknown): lang is string {
 }
 
 // Batas harian GLOBAL untuk permintaan siswa (source='request'). Set lewat env
-// WATCH_REQUEST_DAILY_CAP; default konservatif. Set 0 = tutup fitur "Minta"
-// (praktis katalog penuh). Job dari admin (source='admin') TIDAK dihitung di sini.
-const DAILY_CAP = Math.max(0, parseInt(process.env.WATCH_REQUEST_DAILY_CAP ?? "30", 10) || 0);
+// WATCH_REQUEST_DAILY_CAP. Default dinaikkan ke 100/hari: mayoritas transkrip
+// dibuat dari caption + proxy (murah), ASR Gemini cuma fallback saat tak ada
+// caption — jadi batas bisa longgar tanpa bikin biaya membengkak. Set 0 = tutup
+// fitur "Minta". Job dari admin (source='admin') TIDAK dihitung di sini.
+const DAILY_CAP = Math.max(0, parseInt(process.env.WATCH_REQUEST_DAILY_CAP ?? "100", 10) || 0);
 
 export async function POST(req: NextRequest) {
   try {
