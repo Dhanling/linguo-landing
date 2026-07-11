@@ -67,7 +67,17 @@
       "Bash(/Users/muhamadlutfiramadhani/.deno/bin/deno run *)",
       "Bash(curl -s \"https://linguo.id/api/preview-student?id=4acf7421-bed5-4fb6-bfd5-e410912809bd\")",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r['language'], r['level'], '| teacher_id:', r.get\\('teacher_id'\\), '| teachers:', r.get\\('teachers'\\)\\) for r in d['student']['registrations']]\")",
-      "Bash(git apply *)"
+      "Bash(git apply *)",
+      "Bash(node smoke2.js)",
+      "Bash(tee /tmp/tsc-admin.log)",
+      "Bash(node -e \"const l=require\\('/Users/muhamadlutfiramadhani/linguo-admin-dashboard/node_modules/lucide-react'\\); console.log\\('admin Youtube:', !!l.Youtube\\)\")",
+      "Bash(node --input-type=module -e \"import\\('file:///Users/muhamadlutfiramadhani/linguo-admin-dashboard/node_modules/lucide-react/dist/esm/lucide-react.js'\\).then\\(l=>console.log\\('admin Youtube:', !!l.Youtube\\)\\).catch\\(\\(\\)=>import\\('file:///Users/muhamadlutfiramadhani/linguo-admin-dashboard/node_modules/lucide-react/dist/esm/lucide-react.mjs'\\).then\\(l=>console.log\\('admin Youtube:', !!l.Youtube\\)\\)\\)\")",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-admin-dashboard status --short)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-admin-dashboard branch --show-current)",
+      "Bash(supabase secrets *)",
+      "Bash(command -v supabase)",
+      "Bash(npx --yes supabase secrets set WATCH_CAPTIONS_ONLY=1)",
+      "Bash(npx --yes supabase functions deploy transcript-worker)"
     ],
     "additionalDirectories": [
       "/Users/muhamadlutfiramadhani/linguo-app/supabase/functions/_shared"
