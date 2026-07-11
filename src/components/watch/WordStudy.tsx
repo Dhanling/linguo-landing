@@ -263,6 +263,9 @@ function StudyTab({
   langCode: string;
   onAsk: (q: string) => void;
 }) {
+  // Pertanyaan lanjutan yang diketik langsung dari tab Pelajari.
+  const [ownQ, setOwnQ] = useState("");
+
   if (loading) {
     return (
       <div className="flex flex-col items-center gap-3 py-16" style={{ color: SUB }}>
@@ -393,6 +396,37 @@ function StudyTab({
               {q}
             </button>
           ))}
+        </div>
+
+        {/* Ketik pertanyaan sendiri */}
+        <div className="mt-3 flex items-center gap-2">
+          <input
+            value={ownQ}
+            onChange={(e) => setOwnQ(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && ownQ.trim()) {
+                onAsk(ownQ);
+                setOwnQ("");
+              }
+            }}
+            placeholder="Atau tulis pertanyaanmu sendiri…"
+            className="flex-1 rounded-full px-4 py-2.5 text-[13.5px] text-white outline-none placeholder:text-white/35"
+            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+          />
+          <button
+            onClick={() => {
+              if (ownQ.trim()) {
+                onAsk(ownQ);
+                setOwnQ("");
+              }
+            }}
+            disabled={!ownQ.trim()}
+            aria-label="Kirim pertanyaan"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
+            style={{ backgroundColor: TEAL }}
+          >
+            <Send className="h-[18px] w-[18px] text-white" />
+          </button>
         </div>
       </div>
     </div>

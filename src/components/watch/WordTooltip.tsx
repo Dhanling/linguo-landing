@@ -6,8 +6,18 @@
 // Otomatis mengucapkan kata saat dibuka; posisinya menempel di atas titik tap
 // dan diklem ke tepi layar.
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { BookmarkCheck, BookmarkPlus, Loader2, Maximize2, Sparkles, Volume2, X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  BookmarkCheck,
+  BookmarkPlus,
+  ChevronLeft,
+  ChevronRight,
+  Loader2,
+  Maximize2,
+  Sparkles,
+  Volume2,
+  X,
+} from "lucide-react";
 import WordStudy from "./WordStudy";
 import {
   cleanWord,
@@ -18,6 +28,7 @@ import {
   removeSavedWord,
   saveWord,
   speakText,
+  splitWords,
   transliterateLines,
   WordMeaning,
 } from "@/lib/immersionLearn";
@@ -36,6 +47,7 @@ const speak = speakText;
 export function WordTooltip({
   word: rawWord,
   sentence,
+  wordIdx,
   langCode,
   x,
   y,
@@ -44,13 +56,53 @@ export function WordTooltip({
 }: {
   word: string;
   sentence: string;
+  wordIdx?: number;
   langCode: string;
   x: number;
   y: number;
   onClose: () => void;
   onSavedChange?: () => void;
 }) {
-  const word = cleanWord(rawWord) || rawWord;
+  // Token kalimat + posisi kata — dipakai untuk memperluas pilihan ke frasa
+  // (mis. tap "compañía" lalu gabungkan "la" jadi "la compañía").
+  const tokens = useMemo(() => splitWords(sentence, langCode), [sentence, langCode]);
+  const wordPositions = useMemo(
+    () => tokens.reduce<number[]>((a, t, i) => (t.isWord ? (a.push(i), a) : a), []),
+    [tokens]
+  );
+  // Titik awal pilihan: pakai indeks yang dikirim player kalau valid, kalau tidak
+  // cari kata pertama yang cocok. -1 = tak ketemu (mis. token mode Analisa) →
+  // fitur frasa nonaktif, pakai kata mentah apa adanya.
+  const initialIdx = useMemo(() => {
+    if (wordIdx != null && tokens[wordIdx]?.isWord) return wordIdx;
+    const target = cleanWord(rawWord).toLowerCase();
+    return tokens.findIndex((t) => t.isWord && cleanWord(t.text).toLowerCase() === target);
+  }, [tokens, wordIdx, rawWord]);
+
+  const [sel, setSel] = useState({ lo: initialIdx, hi: initialIdx });
+  useEffect(() => setSel({ lo: initialIdx, hi: initialIdx }), [initialIdx]);
+
+  // Frasa terpilih (endpoint selalu kata, pemisah di antaranya ikut tergabung).
+  const word = useMemo(() => {
+    if (sel.lo < 0 || sel.hi < 0) return cleanWord(rawWord) || rawWord;
+    return tokens.slice(sel.lo, sel.hi + 1).map((t) => t.text).join("").trim();
+  }, [tokens, sel, rawWord]);
+
+  const prevWord = [...wordPositions].reverse().find((p) => p < sel.lo);
+  const nextWord = wordPositions.find((p) => p > sel.hi);
+  const canLeft = sel.lo >= 0 && prevWord != null;
+  const canRight = sel.hi >= 0 && nextWord != null;
+  const multi = sel.hi > sel.lo;
+  const growLeft = useCallback(() => {
+    if (prevWord != null) setSel((s) => ({ ...s, lo: prevWord }));
+  }, [prevWord]);
+  const growRight = useCallback(() => {
+    if (nextWord != null) setSel((s) => ({ ...s, hi: nextWord }));
+  }, [nextWord]);
+  const resetOne = useCallback(
+    () => setSel({ lo: initialIdx, hi: initialIdx }),
+    [initialIdx]
+  );
 
   const [meaning, setMeaning] = useState<WordMeaning | null>(null);
   const [loading, setLoading] = useState(true);
@@ -219,6 +271,26 @@ export function WordTooltip({
           </p>
         )}
 
+        {/* Perluas ke frasa — gabungkan kata di kiri/kanan (mis. "la compañía") */}
+        {initialIdx >= 0 && (canLeft || canRight || multi) && (
+          <div className="mt-2.5 flex items-center gap-1.5">
+            <span className="text-[10.5px] font-semibold" style={{ color: SUB }}>
+              Frasa
+            </span>
+            <PhraseBtn onClick={growLeft} disabled={!canLeft} label="Gabung kata kiri">
+              <ChevronLeft className="h-3.5 w-3.5" />
+            </PhraseBtn>
+            <PhraseBtn onClick={growRight} disabled={!canRight} label="Gabung kata kanan">
+              <ChevronRight className="h-3.5 w-3.5" />
+            </PhraseBtn>
+            {multi && (
+              <PhraseBtn onClick={resetOne} label="Kembali ke satu kata">
+                <span className="text-[10.5px] font-bold">1 kata</span>
+              </PhraseBtn>
+            )}
+          </div>
+        )}
+
         {/* Aksi */}
         <div className="mt-3 flex gap-2">
           <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
@@ -290,6 +362,31 @@ function GrammarText({ text }: { text: string }) {
         return <span key={i}>{p}</span>;
       })}
     </p>
+  );
+}
+
+function PhraseBtn({
+  children,
+  onClick,
+  disabled,
+  label,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+  label: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label}
+      title={label}
+      className="flex h-6 items-center justify-center rounded-md px-1.5 text-white transition hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent"
+      style={{ border: `1px solid ${BORDER}` }}
+    >
+      {children}
+    </button>
   );
 }
 

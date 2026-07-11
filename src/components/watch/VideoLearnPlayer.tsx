@@ -101,6 +101,9 @@ interface Anchor {
   sentence: string;
   x: number;
   y: number;
+  // Indeks token kata dalam splitWords(sentence) — dipakai tooltip untuk memperluas
+  // pilihan ke frasa (mis. "la compañía"). Undefined = jatuh ke pencarian pertama.
+  wordIdx?: number;
 }
 
 export default function VideoLearnPlayer({
@@ -672,9 +675,9 @@ export default function VideoLearnPlayer({
   }, [analyze, activeIdx, breakdowns, requestBreakdown]);
 
   const onWordTap = useCallback(
-    (e: React.MouseEvent, word: string, sentence: string) => {
+    (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => {
       e.stopPropagation();
-      setAnchor({ word, sentence, x: e.clientX, y: e.clientY });
+      setAnchor({ word, sentence, x: e.clientX, y: e.clientY, wordIdx });
     },
     []
   );
@@ -1113,7 +1116,7 @@ export default function VideoLearnPlayer({
                           w.isWord ? (
                             <span
                               key={j}
-                              onClick={(e) => onWordTap(e, w.text, c.target)}
+                              onClick={(e) => onWordTap(e, w.text, c.target, j)}
                               className="cursor-pointer rounded transition-colors hover:bg-[rgba(26,158,158,0.28)]"
                             >
                               {w.text}
@@ -1149,6 +1152,7 @@ export default function VideoLearnPlayer({
         <WordTooltip
           word={anchor.word}
           sentence={anchor.sentence}
+          wordIdx={anchor.wordIdx}
           langCode={langCode}
           x={anchor.x}
           y={anchor.y}
@@ -1178,7 +1182,7 @@ function FocusLine({
   langCode?: string;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
-  onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
+  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
@@ -1386,7 +1390,7 @@ function KaraokeText({
   cue: LearnCue;
   time: number;
   langCode?: string;
-  onWordTap: (e: React.MouseEvent, word: string, sentence: string) => void;
+  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
   className?: string;
   fontSize?: number;
 }) {
@@ -1400,7 +1404,7 @@ function KaraokeText({
             text={t.text}
             state={t.state}
             progress={t.progress}
-            onClick={(e) => onWordTap(e, t.text, cue.target)}
+            onClick={(e) => onWordTap(e, t.text, cue.target, j)}
           />
         ) : (
           <span
