@@ -10,6 +10,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
+import { publicNotes } from '@/components/akun/class-notes';
+import ClassProgressTab from '@/components/akun/ClassProgressTab';
+import ClassMateriTab from '@/components/akun/ClassMateriTab';
+import ClassRaporTab from '@/components/akun/ClassRaporTab';
 import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, type LucideIcon } from 'lucide-react';
 
 interface Props {
@@ -362,29 +366,14 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
           </div>
         )}
 
-        {!loading && activeTab === 'progress' && (
-          <div className="py-14 text-center text-gray-400">
-            <TrendingUp className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
-            <div className="text-sm">Timeline progress A1→B2</div>
-            <div className="mt-1 text-xs">Coming in Phase 3c</div>
-          </div>
-        )}
+        {/* [kelas-tab-v1] Progress = skill CEFR (student_skills) + timeline laporan sesi */}
+        {!loading && activeTab === 'progress' && <ClassProgressTab reg={reg} schedules={schedules} />}
 
-        {!loading && activeTab === 'materi' && (
-          <div className="py-14 text-center text-gray-400">
-            <BookOpen className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
-            <div className="text-sm">Materi pembelajaran per sesi</div>
-            <div className="mt-1 text-xs">Coming Soon</div>
-          </div>
-        )}
+        {/* [kelas-tab-v1] Materi = lampiran pengajar (class_materials) + recording sesi */}
+        {!loading && activeTab === 'materi' && <ClassMateriTab reg={reg} schedules={schedules} teacherName={teacherName} />}
 
-        {!loading && activeTab === 'rapor' && (
-          <div className="py-14 text-center text-gray-400">
-            <BarChart2 className="mx-auto mb-2 h-9 w-9" strokeWidth={1.5} />
-            <div className="text-sm">Rapor & Sertifikat</div>
-            <div className="mt-1 text-xs">Coming Soon</div>
-          </div>
-        )}
+        {/* [kelas-tab-v1] Rapor = class_reports yang published + sertifikat (rapor akhir) */}
+        {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} />}
       </div>
 
       {/* Toast */}
@@ -601,7 +590,8 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
         <span className={`shrink-0 rounded-full px-2 py-1 text-xs font-semibold ${st.color}`}>{st.label}</span>
       </div>
 
-      {sched.notes && !isCancelledOrHangus && <div className="mt-2 text-xs text-gray-500">{sched.notes}</div>}
+      {/* [kelas-tab-v1] WAJIB publicNotes(): notes bisa bawa catatan PRIBADI pengajar setelah ---PRIVATE--- */}
+      {publicNotes(sched.notes) && !isCancelledOrHangus && <div className="mt-2 whitespace-pre-line text-xs text-gray-500">{publicNotes(sched.notes)}</div>}
 
       {/* Detail pembatalan untuk cancelled/hangus */}
       {isCancelledOrHangus && (sched.cancel_reason || sched.cancelled_by) && (
