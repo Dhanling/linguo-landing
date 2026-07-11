@@ -77,7 +77,25 @@
       "Bash(supabase secrets *)",
       "Bash(command -v supabase)",
       "Bash(npx --yes supabase secrets set WATCH_CAPTIONS_ONLY=1)",
-      "Bash(npx --yes supabase functions deploy transcript-worker)"
+      "Bash(npx --yes supabase functions deploy transcript-worker)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app status --short)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app log --oneline -3)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app status --short -- supabase/functions)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app log --oneline -3 -- supabase/functions/_shared/sentences.ts supabase/functions/yt-asr)",
+      "Bash(git log *)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app diff --stat -- supabase/functions/transcript-worker/index.ts supabase/functions/yt-asr/index.ts)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app diff -- supabase/functions/yt-asr/index.ts)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app diff -- supabase/functions/transcript-worker/index.ts)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app show HEAD:supabase/functions/transcript-worker/index.ts)",
+      "Bash(git -C /Users/muhamadlutfiramadhani/linguo-app log --oneline -2 -- supabase/functions/_shared/sentences.ts)",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/yt_transcripts?select=video_id,lang,title,engine&title=ilike.*Digger*&limit=5' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/yt_transcripts?select=video_id,lang,title,cues&title=ilike.*Digger*&limit=2' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(len\\(d\\),'rows'\\); [print\\(r['video_id'],r['lang'],r['title']\\) or [print\\(f\\\\\"  {c['start']:.2f}-{c['end']:.2f}  {c['target'][:55]}\\\\\"\\) for c in r['cues'][:8]] for r in d]\")",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/yt_transcripts?select=video_id,lang,title&title=ilike.*Peppa*&limit=10' -H 'apikey: __TRACKED_VAR__' -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(echo \"===exit $?===\")",
+      "Bash(git update-index *)",
+      "Bash(python3 -c 'import sys,json; d=json.load\\(sys.stdin\\); r=d.get\\(\"results\",[]\\); durs=sorted\\([v.get\\(\"duration\"\\) for v in r if v.get\\(\"duration\"\\)]\\); print\\(\"total:\",len\\(r\\)\\); print\\(\"durasi\\(dtk\\):\",durs\\); import statistics; over5=[x for x in durs if x>300]; print\\(\"jumlah >5mnt:\",len\\(over5\\)\\)')",
+      "Bash(timeout 40 supabase functions list --project-ref jbtgciepdmqxxcjflrxz)"
     ],
     "additionalDirectories": [
       "/Users/muhamadlutfiramadhani/linguo-app/supabase/functions/_shared"
