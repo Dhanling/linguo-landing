@@ -154,11 +154,11 @@ export default function VideoLearnPlayer({
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
   const [showPanel, setShowPanel] = useState(true);
-  // [linguo-patch:watch-miniplayer-v1] Miniplayer ala YouTube: video menyusut jadi
-  // kotak melayang di pojok kanan-bawah, sisa overlay (header/kontrol/transkrip)
-  // disembunyikan — siswa bisa scroll & klik katalog di belakang sambil tetap
-  // menonton. Elemen host iframe TIDAK di-unmount (cuma ganti class/style), jadi
-  // video terus berputar tanpa reload.
+  // [linguo-patch:watch-miniplayer-v1] Miniplayer ala YouTube: TETAP di halaman
+  // player, tapi video menyusut jadi kotak melayang di pojok kanan-bawah; baris
+  // subtitle + kontrol auto-hide sehingga daftar Rekomendasi di kolom kiri
+  // melebar mengisi ruangnya (leluasa discroll). Elemen host iframe TIDAK
+  // di-unmount (cuma ganti class/style), jadi video terus berputar tanpa reload.
   const [mini, setMini] = useState(false);
   // Rekomendasi: tampil 5 dulu, "Muat lainnya" menambah — reset tiap ganti video.
   const [recShown, setRecShown] = useState(5);
@@ -595,42 +595,41 @@ export default function VideoLearnPlayer({
   return (
     <div
       ref={rootRef}
-      className={
-        mini
-          ? // [linguo-patch:watch-miniplayer-v1] Mode mini: overlay penuh berubah jadi
-            // kotak melayang pojok kanan-bawah — halaman di belakang bebas discroll.
-            "fixed bottom-4 right-4 z-[90] w-[min(400px,calc(100vw-2rem))] overflow-hidden rounded-2xl shadow-2xl"
-          : "fixed inset-0 z-[90] flex flex-col"
-      }
-      style={{ backgroundColor: mini ? "#0B0E0F" : "rgba(6,9,10,0.96)" }}
+      className="fixed inset-0 z-[90] flex flex-col"
+      style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
       {/* Header */}
-      {!mini && (
-        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <p className="mr-3 line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
-            {video.title}
-          </p>
-          <button
-            onClick={onClose}
-            className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-            aria-label="Tutup player"
-          >
-            <X className="h-5 w-5 text-white" />
-          </button>
-        </div>
-      )}
+      <div className="flex items-center justify-between px-4 py-3 sm:px-6">
+        <p className="mr-3 line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
+          {video.title}
+        </p>
+        <button
+          onClick={onClose}
+          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+          aria-label="Tutup player"
+        >
+          <X className="h-5 w-5 text-white" />
+        </button>
+      </div>
 
       {/* Isi — split view */}
-      <div className={mini ? "" : "flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row"}>
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
         {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
             HANYA daftar Rekomendasi di bawahnya yang punya area scroll sendiri —
             jadi tak ada scrollbar menimpa video. */}
-        <div className={mini ? "" : `flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
+        <div className={`flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
-              layar & masih menyisakan ruang untuk subtitle + kontrol. */}
+              layar & masih menyisakan ruang untuk subtitle + kontrol.
+              [linguo-patch:watch-miniplayer-v1] Mode mini: elemen yang SAMA lepas
+              dari flow jadi kotak melayang pojok kanan-bawah (iframe tak remount) —
+              ruang yang ditinggalkan diisi daftar Rekomendasi. */}
           <div
-            className="group relative flex w-full shrink-0 items-center justify-center bg-black"
+            className={
+              mini
+                ? "group fixed bottom-4 right-4 z-20 flex w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl"
+                : "group relative flex w-full shrink-0 items-center justify-center bg-black"
+            }
             style={mini ? undefined : { maxHeight: "70vh" }}
           >
             <div
@@ -665,19 +664,18 @@ export default function VideoLearnPlayer({
                 </button>
               </div>
             )}
+            {/* Subtitle ringkas di kotak mini — tetap bisa belajar sambil scroll. */}
+            {mini && activeCue && (
+              <div className="px-3 pb-2.5 pt-2 text-center" style={{ backgroundColor: "#0B0E0F" }}>
+                <p className="line-clamp-1 text-[13px] font-bold text-white">{activeCue.target}</p>
+                {activeCue.base && (
+                  <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold" style={{ color: GOLD }}>
+                    {activeCue.base}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
-
-          {/* Subtitle ringkas di miniplayer — tetap bisa belajar sambil scroll. */}
-          {mini && activeCue && (
-            <div className="px-3 pb-2.5 pt-2 text-center">
-              <p className="line-clamp-1 text-[13px] font-bold text-white">{activeCue.target}</p>
-              {activeCue.base && (
-                <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold" style={{ color: GOLD }}>
-                  {activeCue.base}
-                </p>
-              )}
-            </div>
-          )}
 
           {/* Baris fokus — kalimat aktif (shrink-0: jangan terjepit oleh scroll kolom) */}
           {!mini && (
@@ -821,8 +819,9 @@ export default function VideoLearnPlayer({
           )}
 
           {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
-              Klik untuk langsung memutar video lain tanpa keluar player. */}
-          {!mini && recList.length > 0 && onSelectVideo && (
+              Klik untuk langsung memutar video lain tanpa keluar player.
+              Saat mini, daftar ini yang mengisi seluruh kolom kiri. */}
+          {recList.length > 0 && onSelectVideo && (
             <div
               className="min-h-0 flex-1 overflow-y-auto border-t [scrollbar-width:thin]"
               style={{ borderColor: BORDER }}
@@ -837,7 +836,11 @@ export default function VideoLearnPlayer({
                     onClick={() => onSelectVideo(v)}
                     className="flex w-full gap-3 rounded-xl p-2 text-left transition-colors hover:bg-white/5"
                   >
-                    <div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-lg bg-black">
+                    <div
+                      className={`relative aspect-video shrink-0 overflow-hidden rounded-lg bg-black ${
+                        mini ? "w-44 sm:w-56" : "w-32"
+                      }`}
+                    >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={v.thumbnail ?? youtubeThumb(v.videoId)}
@@ -875,7 +878,7 @@ export default function VideoLearnPlayer({
         </div>
 
         {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip. */}
-        {showPanel && !mini && (
+        {showPanel && (
         <div
           className="flex min-h-0 flex-1 flex-col border-t lg:border-l lg:border-t-0"
           style={{ borderColor: BORDER }}
