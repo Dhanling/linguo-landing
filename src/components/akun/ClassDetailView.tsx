@@ -67,6 +67,24 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reg?.id]);
 
+  // [teacher-avatar-sync-v1] Tambal data pengajar dari tabel `teachers` (sumber yang
+  // SAMA dgn dashboard admin & pengajar) kalau reg (dari handoff/cache lama) belum
+  // membawa avatar_url — foto pengajar tetap muncul & sinkron.
+  const [teacherFix, setTeacherFix] = useState<any>(null);
+  useEffect(() => {
+    if (!reg?.teacher_id || reg?.teachers?.avatar_url) { setTeacherFix(null); return; }
+    let alive = true;
+    (async () => {
+      const { data } = await supabase
+        .from('teachers')
+        .select('name, title, avatar_url')
+        .eq('id', reg.teacher_id)
+        .maybeSingle();
+      if (alive && data) setTeacherFix(data);
+    })();
+    return () => { alive = false; };
+  }, [reg?.teacher_id, reg?.teachers?.avatar_url]);
+
   function flashToast(msg: string) {
     setToast(msg);
     setTimeout(() => setToast(null), 3000);
@@ -187,7 +205,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
     return slots;
   }
 
-  const teacher = reg.teachers || null;
+  const teacher = (reg.teachers || teacherFix) ? { ...(reg.teachers || {}), ...(teacherFix || {}) } : null;
   const teacherName = teacher?.name ? `${teacher.title || 'Kak'} ${teacher.name}` : '';
   const progress = reg.sessions_total ? Math.round(((reg.sessions_used || 0) / reg.sessions_total) * 100) : 0;
   const selesai = (reg.sessions_total > 0 && (reg.sessions_used || 0) >= reg.sessions_total) || !!reg.archived_at;
@@ -246,12 +264,11 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
         {teacherName ? (
           <div className="flex items-center gap-3 rounded-2xl border border-teal-100 bg-[#F0FAF8] p-4">
             {teacher?.avatar_url ? (
-              <img src={teacher.avatar_url} alt={teacherName} className="h-11 w-11 shrink-0 rounded-full object-cover" />
-            ) : (
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
-                <User className="h-5 w-5" strokeWidth={2.2} />
-              </div>
-            )}
+              <img src={teacher.avatar_url} alt={teacherName} className="h-11 w-11 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = 'none'; el.nextElementSibling?.classList.remove('hidden'); }} />
+            ) : null}
+            <div className={`${teacher?.avatar_url ? 'hidden' : ''} flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]`}>
+              <User className="h-5 w-5" strokeWidth={2.2} />
+            </div>
             <div className="min-w-0">
               <div className="text-[11px] font-bold uppercase tracking-wider text-[#16796E]">Pengajar</div>
               <div className="truncate text-[16px] font-extrabold text-[#12172B]">{teacherName}</div>

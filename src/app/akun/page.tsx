@@ -2485,6 +2485,29 @@ export default function AkunPage() {
     loadStudentData(user.email, hadCache);
   }, [user?.email]);
 
+  // [teacher-avatar-sync-v1] Direktori foto pengajar — fetch langsung dari tabel
+  // `teachers` (sumber yang SAMA dengan dashboard admin & pengajar) berdasarkan
+  // teacher_id di registrations. Menambal reg dari cache/snapshot lama yang belum
+  // membawa avatar_url, jadi foto pengajar selalu sinkron tanpa nunggu refresh penuh.
+  const [teacherDir, setTeacherDir] = useState<Record<string, { id: string; name?: string; title?: string; avatar_url?: string | null }>>({});
+  useEffect(() => {
+    const regs = student?.registrations || [];
+    const ids = Array.from(new Set(regs.map((r: any) => r.teacher_id).filter(Boolean))).filter(
+      (id: any) => !(id in teacherDir)
+    );
+    if (ids.length === 0) return;
+    (async () => {
+      const { data } = await supabase.from("teachers").select("id, name, title, avatar_url").in("id", ids);
+      if (!data || data.length === 0) return;
+      setTeacherDir((prev) => {
+        const next = { ...prev };
+        (data as any[]).forEach((t) => { next[t.id] = t; });
+        return next;
+      });
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [student?.registrations]);
+
   async function loadStudentData(email: string, silent = false) {
     if (!silent) setDataLoading(true);
     try {
@@ -3260,14 +3283,17 @@ export default function AkunPage() {
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
                 const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
-                const teacherMap = new Map<string, { name: string; count: number; langs: Set<string> }>();
+                const teacherMap = new Map<string, { name: string; count: number; langs: Set<string>; avatar_url: string | null }>();
                 activeRegs.forEach((r: any) => {
-                  const tn = r?.teachers?.name;
+                  // [teacher-avatar-sync-v1] nama + foto dari direktori teachers (fallback embed)
+                  const d = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  const tn = d?.name || r?.teachers?.name;
                   if (!tn) return;
-                  if (!teacherMap.has(tn)) teacherMap.set(tn, { name: tn, count: 0, langs: new Set() });
+                  if (!teacherMap.has(tn)) teacherMap.set(tn, { name: tn, count: 0, langs: new Set(), avatar_url: null });
                   const t = teacherMap.get(tn)!;
                   t.count += 1;
                   t.langs.add(r.language);
+                  if (!t.avatar_url) t.avatar_url = d?.avatar_url || r?.teachers?.avatar_url || null;
                 });
                 const teacherList = Array.from(teacherMap.values());
                 const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
@@ -3518,6 +3544,11 @@ export default function AkunPage() {
                               const bg = CARD_BG[idx % CARD_BG.length];
                               const photo = getLangPhoto(reg.language);
                               const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
+                              // [teacher-avatar-sync-v1] direktori teachers menang atas embed
+                              // (embed bisa berasal dari snapshot lama tanpa avatar_url)
+                              const tDir = reg.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                              const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
+                              const tName = tDir?.name || reg?.teachers?.name || null;
                               return (
                                 <Link
                                   key={reg.id}
@@ -3525,7 +3556,7 @@ export default function AkunPage() {
                                   prefetch
                                   // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
                                   // render instan tanpa nunggu query (anti mental balik ke beranda)
-                                  onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify(reg)); } catch {} }}
+                                  onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
                                   className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
@@ -3558,11 +3589,11 @@ export default function AkunPage() {
                                     </div>
                                     {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas */}
                                     <div className="mt-1.5 flex items-center gap-2">
-                                      {reg?.teachers?.avatar_url ? (
-                                        <img src={reg.teachers.avatar_url} alt={reg?.teachers?.name || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover ring-2 ring-white shadow-sm" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                      {tAva ? (
+                                        <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover ring-2 ring-white shadow-sm" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
                                       ) : null}
-                                      <span className={`${reg?.teachers?.avatar_url ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{reg?.teachers?.name ? initials(reg.teachers.name) : "L"}</span>
-                                      <p className="truncate text-[13px] font-medium text-gray-500">{reg?.teachers?.name || badge.label}</p>
+                                      <span className={`${tAva ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
+                                      <p className="truncate text-[13px] font-medium text-gray-500">{tName || badge.label}</p>
                                     </div>
                                     <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
                                       <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
@@ -3660,7 +3691,11 @@ export default function AkunPage() {
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
                             {teacherList.map((t, i) => (
                               <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4">
-                                <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${ICON_TINT[i % ICON_TINT.length]}`}>{initials(t.name)}</span>
+                                {/* [teacher-avatar-sync-v1] foto pengajar (fallback inisial) */}
+                                {t.avatar_url ? (
+                                  <img src={t.avatar_url} alt={t.name} className="h-14 w-14 shrink-0 rounded-2xl bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                ) : null}
+                                <span className={`${t.avatar_url ? "hidden" : ""} flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${ICON_TINT[i % ICON_TINT.length]}`}>{initials(t.name)}</span>
                                 <span className="min-w-0 flex-1">
                                   <span className="block truncate text-[16px] font-extrabold text-[#12172B]">{t.name}</span>
                                   <span className="block truncate text-[13px] font-medium text-gray-500">{t.count} Kelas · {Array.from(t.langs).join(", ")}</span>
