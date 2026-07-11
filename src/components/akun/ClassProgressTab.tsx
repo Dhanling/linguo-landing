@@ -30,6 +30,16 @@ const CEFR_LEVELS = [
 ];
 export const cefr = (score: number) => CEFR_LEVELS[Math.min(5, Math.max(1, Math.round(score))) - 1];
 
+// [presensi-blocks-v1] Warna solid blok presensi — samakan dgn ATT_META di admin
+// Registrations (reg-attendance-blocks-v1) & ATTENDANCE_BADGE di class-notes.
+const ATT_SOLID: Record<string, { label: string; solid: string; dot: string }> = {
+  hadir: { label: 'Hadir', solid: 'bg-emerald-500', dot: 'bg-emerald-500' },
+  izin:  { label: 'Izin',  solid: 'bg-amber-500',   dot: 'bg-amber-500' },
+  sakit: { label: 'Sakit', solid: 'bg-sky-500',     dot: 'bg-sky-500' },
+  alpa:  { label: 'Alpa',  solid: 'bg-red-500',     dot: 'bg-red-500' },
+};
+const ATT_ORDER = ['hadir', 'izin', 'sakit', 'alpa'] as const;
+
 export default function ClassProgressTab({ reg, schedules }: { reg: any; schedules: any[] }) {
   // null = masih loading; [] = kosong / gagal (tampilkan placeholder, jangan crash)
   const [skills, setSkills] = useState<any[] | null>(null);
@@ -68,8 +78,81 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
     .map((s, i) => ({ ...s, sessionNo: i + 1 }))
     .reverse();
 
+  // [presensi-blocks-v1] Grid presensi read-only — jumlah blok dari sessions_total
+  // (bukan dari baris `schedules`, sama seperti admin Registrations), jadi tetap
+  // tampil walau sesi belum tercatat. Sesi yg SUDAH jalan (i < used): warna sesuai
+  // attendance_status baris schedules yg session_number-nya cocok, default 'hadir'
+  // (samakan default admin). Sesi belum jalan: abu-abu. Siswa TIDAK bisa mengubah.
+  const total = reg.sessions_total || 0;
+  const used = Math.min(reg.sessions_used || 0, total);
+  const rowBySession: Record<number, any> = {};
+  schedules.forEach((s) => { if (s.session_number) rowBySession[s.session_number] = s; });
+  const attStatus = (i: number): string => {
+    const st = rowBySession[i + 1]?.attendance_status;
+    return st && ATT_SOLID[st] ? st : 'hadir';
+  };
+  const attCounts = { hadir: 0, izin: 0, sakit: 0, alpa: 0 } as Record<string, number>;
+  for (let i = 0; i < used; i++) attCounts[attStatus(i)]++;
+  const hadirRate = used ? Math.round((attCounts.hadir / used) * 100) : 0;
+
   return (
     <div className="space-y-8">
+      {/* ── Presensi ── */}
+      {total > 0 && (
+        <section>
+          <div className="mb-3 flex items-baseline justify-between gap-2">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Presensi</h2>
+            <span className="text-[11px] text-gray-400">{used}/{total} sesi berjalan</span>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-4">
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <span className="text-[13px] font-semibold text-gray-700">Kehadiran</span>
+              <span className="inline-flex items-baseline gap-1 text-[13px] font-bold text-[#16796E]">
+                <span className="text-xl">{hadirRate}%</span>
+                <span className="text-[11px] font-medium text-gray-400">({attCounts.hadir}/{used || 0})</span>
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {Array.from({ length: total }).map((_, i) => {
+                if (i >= used) {
+                  return (
+                    <div
+                      key={i}
+                      title={`Sesi ${i + 1} — belum berjalan`}
+                      className="flex h-8 w-8 select-none items-center justify-center rounded-md border border-dashed border-gray-300 bg-gray-50 text-[10px] text-gray-300"
+                    >
+                      {i + 1}
+                    </div>
+                  );
+                }
+                const meta = ATT_SOLID[attStatus(i)];
+                return (
+                  <div
+                    key={i}
+                    title={`Sesi ${i + 1} — ${meta.label}`}
+                    className={`flex h-8 w-8 select-none items-center justify-center rounded-md text-[10px] font-semibold text-white ${meta.solid}`}
+                  >
+                    {i + 1}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 pt-3 text-[11px] text-gray-500">
+              {ATT_ORDER.map((k) => (
+                <span key={k} className="inline-flex items-center gap-1">
+                  <span className={`h-2.5 w-2.5 rounded-sm ${ATT_SOLID[k].dot}`} />
+                  {ATT_SOLID[k].label}{attCounts[k] ? ` ${attCounts[k]}` : ''}
+                </span>
+              ))}
+              <span className="inline-flex items-center gap-1">
+                <span className="h-2.5 w-2.5 rounded-sm border border-dashed border-gray-300 bg-gray-50" />
+                Belum jalan
+              </span>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Skill CEFR ── */}
       <section>
         <div className="mb-3 flex items-baseline justify-between gap-2">
