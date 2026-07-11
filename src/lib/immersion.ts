@@ -65,7 +65,15 @@ export const IMMERSION_LANGS: ImmersionLang[] = [
   { code: "pt-PT", name: "Portugis (Portugal)", native: "Português", flag: "🇵🇹", country: "pt", searchCode: "pt", region: "PT" },
   { code: "nl", name: "Belanda", native: "Nederlands", flag: "🇳🇱", country: "nl" },
   { code: "ru", name: "Rusia", native: "Русский", flag: "🇷🇺", country: "ru" },
-  { code: "ar", name: "Arab", native: "العربية", flag: "🇸🇦", country: "sa" },
+  // Arab dipisah per dialek — jaraknya jauh (Maroko vs Teluk vs Mesir bisa saling
+  // tak paham), jadi kurasi video dibedakan lewat regionCode + tag native dialek.
+  // MSA tetap `code: "ar"` (default, pan-Arab, sesi & cache lama tetap valid);
+  // transkripsi/terjemahan/transliterasi otomatis ikut dialek yg benar-benar diucap.
+  { code: "ar", name: "Arab (MSA)", native: "العربية", flag: "🇸🇦", country: "sa" },
+  { code: "ar-EG", name: "Arab (Mesir)", native: "العربية المصرية", flag: "🇪🇬", country: "eg", searchCode: "ar", region: "EG" },
+  { code: "ar-LB", name: "Arab (Levantine)", native: "اللهجة الشامية", flag: "🇱🇧", country: "lb", searchCode: "ar", region: "LB" },
+  { code: "ar-AE", name: "Arab (Teluk)", native: "اللهجة الخليجية", flag: "🇦🇪", country: "ae", searchCode: "ar", region: "AE" },
+  { code: "ar-MA", name: "Arab (Maroko)", native: "الدارجة المغربية", flag: "🇲🇦", country: "ma", searchCode: "ar", region: "MA" },
   { code: "tr", name: "Turki", native: "Türkçe", flag: "🇹🇷", country: "tr" },
   { code: "th", name: "Thailand", native: "ภาษาไทย", flag: "🇹🇭", country: "th" },
   { code: "vi", name: "Vietnam", native: "Tiếng Việt", flag: "🇻🇳", country: "vn" },
@@ -314,7 +322,9 @@ for (const [a, b, codes] of SCRIPT_BLOCKS) {
 // konten bahasa lain). Indikasi kuat audio & subtitle-nya juga bahasa target.
 export function titleMatchesLanguage(title: string, langCode: string): boolean {
   const t = title || "";
-  const target = TARGET_SCRIPT[langCode];
+  // Varian regional (mis. "ar-EG") tak punya regex sendiri → pakai aksara base
+  // ("ar") biar filter aksara Arab tetap jalan untuk semua dialek.
+  const target = TARGET_SCRIPT[langCode] ?? TARGET_SCRIPT[langCode.split("-")[0]];
   if (target) return target.test(t);
   return !ANY_NON_LATIN.test(t);
 }

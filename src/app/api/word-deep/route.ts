@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
     if (!word) return NextResponse.json({ error: "no_word" }, { status: 200 });
 
     const language = ENGLISH_NAME[langCode] ?? ENGLISH_NAME[langCode.split("-")[0]] ?? "English";
-    const nonLatin = NON_LATIN.has(langCode);
+    const nonLatin = NON_LATIN.has(langCode) || NON_LATIN.has(langCode.split("-")[0]);
     const translitHint = nonLatin
       ? ` For every ${language} word or example, ALSO give its Latin phonetic reading in a "tl" field.`
       : "";

@@ -31,7 +31,9 @@ const NON_LATIN = new Set([
 ]);
 
 export function isNonLatin(code: string): boolean {
-  return NON_LATIN.has(code);
+  // Varian regional (mis. "ar-EG") → cek base code juga biar transliterasi tetap
+  // dipicu untuk semua dialek Arab dsb.
+  return NON_LATIN.has(code) || NON_LATIN.has(code.split("-")[0]);
 }
 
 // Bahasa beraksara kanan-ke-kiri (Arab, Ibrani, Persia, Urdu, dll). Subtitle

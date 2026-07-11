@@ -52,7 +52,9 @@ export async function POST(req: NextRequest) {
     const langCode = typeof body?.langCode === "string" ? body.langCode : "";
     if (!lines.length) return NextResponse.json({ translit: [] });
 
-    const scheme = SCHEME[langCode] ?? "standard Latin-script romanization";
+    // Varian regional (mis. "ar-EG") reuse skema base ("ar") — romanisasi sama.
+    const scheme =
+      SCHEME[langCode] ?? SCHEME[langCode.split("-")[0]] ?? "standard Latin-script romanization";
     const numbered = lines.map((l, i) => `${i + 1}. ${l}`).join("\n");
     const prompt =
       `Transliterate each numbered line below into ${scheme}. ` +
