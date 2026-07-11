@@ -26,6 +26,7 @@ import {
   youtubeThumb,
 } from "@/lib/immersion";
 import { fetchReadyVideos, getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
+import { supabase } from "@/lib/supabase-client";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
@@ -139,6 +140,10 @@ export default function WatchAndLearn() {
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
   const [deckOpen, setDeckOpen] = useState(false);
   const [vocabCount, setVocabCount] = useState(0);
+  // Watch & Learn adalah fitur PUBLIK — bisa dibuka tanpa login dashboard LMS.
+  // Tombol kembali menyesuaikan: yang sudah login balik ke Dashboard (/akun),
+  // tamu balik ke Beranda (/) supaya tak nyangkut di tembok login.
+  const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
 
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
   const cat =
@@ -241,6 +246,23 @@ export default function WatchAndLearn() {
   useEffect(() => {
     refreshVocab();
   }, [refreshVocab]);
+
+  // Deteksi sesi sekali di mount buat mengarahkan tombol kembali. Best-effort:
+  // kalau gagal, anggap tamu (link ke Beranda) — tak pernah memblokir halaman.
+  useEffect(() => {
+    let alive = true;
+    supabase.auth
+      .getSession()
+      .then(({ data }) => {
+        if (alive) setLoggedIn(!!data.session);
+      })
+      .catch(() => {
+        if (alive) setLoggedIn(false);
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // Tombol Back (browser/in-app) saat nonton video → tutup player, balik ke
   // Watch & Learn, BUKAN keluar halaman. Dorong satu entri history pas video
@@ -480,14 +502,16 @@ export default function WatchAndLearn() {
   return (
     <main style={{ backgroundColor: BG, minHeight: "100vh" }} className="text-white">
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-5 sm:px-6">
-        {/* Top bar — balik ke dashboard siswa (/akun), bukan beranda publik. */}
+        {/* Top bar — tombol kembali menyesuaikan status login: siswa yang login
+            balik ke Dashboard (/akun), tamu balik ke Beranda (/). Fitur ini
+            publik, jadi tamu tak boleh dilempar ke tembok login /akun. */}
         <div className="flex items-center justify-between">
           <Link
-            href="/akun"
+            href={loggedIn ? "/akun" : "/"}
             className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
             style={{ color: SUB }}
           >
-            <ArrowLeft className="h-4 w-4" /> Dashboard
+            <ArrowLeft className="h-4 w-4" /> {loggedIn ? "Dashboard" : "Beranda"}
           </Link>
           <div className="flex items-center gap-2">
             <button
