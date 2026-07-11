@@ -22,7 +22,6 @@ import {
   pushWatchHistory,
   searchImmersionVideos,
   WatchHistoryItem,
-  WATCH_MAX_DURATION_SEC,
   formatDuration,
   youtubeThumb,
 } from "@/lib/immersion";
@@ -48,6 +47,22 @@ const SHORTS_MAX_SEC = 60;
 // Grid mulai dengan segini biar halaman tak kepanjangan; "Muat lainnya" menambah
 // sebanyak ini lagi tiap klik.
 const GRID_PAGE = 4;
+
+// [linguo-patch:watch-duration-filter-v1] Katalog kini memuat video sampai 20 menit
+// (dulu ≤5 mnt) supaya filter durasi <5 / 5–10 / 10–20 mnt punya isi. Batas atas ini
+// dikirim ke yt-search sebagai maxDurationSec sekaligus jadi saring ganda di client.
+const CATALOG_MAX_DURATION_SEC = 20 * 60;
+
+// Pilihan filter durasi di grid rekomendasi. Rentang [min, max) detik; video tanpa
+// durasi hanya lolos di "Semua". Filter murni client-side — semua video ≤20 mnt sudah
+// ikut terambil dari server, jadi ganti tab durasi tak perlu fetch ulang.
+const DURATION_FILTERS = [
+  { id: "all", label: "Semua durasi", min: 0, max: Infinity },
+  { id: "u5", label: "< 5 mnt", min: 0, max: 300 },
+  { id: "5to10", label: "5–10 mnt", min: 300, max: 600 },
+  { id: "10to20", label: "10–20 mnt", min: 600, max: 20 * 60 },
+] as const;
+type DurationFilter = (typeof DURATION_FILTERS)[number]["id"];
 
 // [linguo-patch:watch-orient-frame0-v1] Deteksi orientasi ASLI video via thumbnail
 // `frame0.jpg`. Kenapa: YouTube Data API tak kasih orientasi, dan durasi bukan proxy
@@ -92,6 +107,8 @@ export default function WatchAndLearn() {
   // (klip vertikal pendek) / video (landscape lebih panjang). YouTube Data API
   // tak kasih orientasi, jadi dipisah pakai durasi — proxy paling andal.
   const [orient, setOrient] = useState<"all" | "shorts" | "video">("all");
+  // [linguo-patch:watch-duration-filter-v1] Filter durasi: semua / <5 / 5–10 / 10–20 mnt.
+  const [durationFilter, setDurationFilter] = useState<DurationFilter>("all");
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
@@ -152,16 +169,24 @@ export default function WatchAndLearn() {
   // pakai proxy durasi sebagai fallback (≤60 dtk → Shorts). Video tanpa durasi
   // dianggap landscape sementara, tapi begitu frame0 resolve, penilaian dikoreksi.
   const shownVideos = useMemo(() => {
-    if (orient === "all") return videos;
+    const dur = DURATION_FILTERS.find((d) => d.id === durationFilter) ?? DURATION_FILTERS[0];
     return videos.filter((v) => {
-      const portrait = orientCache.get(v.videoId);
-      if (portrait !== undefined) return orient === "shorts" ? portrait : !portrait;
-      if (orient === "shorts") return v.duration != null && v.duration <= SHORTS_MAX_SEC;
-      return v.duration == null || v.duration > SHORTS_MAX_SEC;
+      // Filter durasi (rentang [min, max) detik; tanpa durasi hanya lolos di "Semua").
+      if (durationFilter !== "all") {
+        if (v.duration == null || v.duration < dur.min || v.duration >= dur.max) return false;
+      }
+      // Filter jenis konten (orientasi asli frame0 → fallback proxy durasi).
+      if (orient !== "all") {
+        const portrait = orientCache.get(v.videoId);
+        if (portrait !== undefined) return orient === "shorts" ? portrait : !portrait;
+        if (orient === "shorts") return v.duration != null && v.duration <= SHORTS_MAX_SEC;
+        return v.duration == null || v.duration > SHORTS_MAX_SEC;
+      }
+      return true;
     });
     // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videos, orient, orientTick]);
+  }, [videos, orient, orientTick, durationFilter]);
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
@@ -268,13 +293,13 @@ export default function WatchAndLearn() {
         language: l.searchCode ?? l.code,
         order: c.news || c.fresh ? "date" : undefined,
         max: 18,
-        maxDurationSec: WATCH_MAX_DURATION_SEC, // katalog cuma video pendek (≤5 mnt)
+        maxDurationSec: CATALOG_MAX_DURATION_SEC, // katalog s/d 20 mnt (filter durasi di client)
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
       // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
       // sisa video kepanjangan (jaga-jaga kalau durasi tak terbaca di server).
       const results = filterVideosByLanguage(page.results, l.code).filter(
-        (v) => !v.duration || v.duration <= WATCH_MAX_DURATION_SEC
+        (v) => !v.duration || v.duration <= CATALOG_MAX_DURATION_SEC
       );
       catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text)), {
         videos: results, nextToken: page.nextPageToken, at: Date.now(),
@@ -335,7 +360,7 @@ export default function WatchAndLearn() {
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
   useEffect(() => {
     setVisible(GRID_PAGE);
-  }, [langCode, category, committedText, orient]);
+  }, [langCode, category, committedText, orient, durationFilter]);
 
   const loadMore = useCallback(async () => {
     if (!nextToken || state === "more") return;
@@ -348,11 +373,11 @@ export default function WatchAndLearn() {
       order: cat.news || cat.fresh ? "date" : undefined,
       max: 18,
       pageToken: nextToken,
-      maxDurationSec: WATCH_MAX_DURATION_SEC,
+      maxDurationSec: CATALOG_MAX_DURATION_SEC,
     });
     if (id !== reqId.current) return;
     const more = filterVideosByLanguage(page.results, lang.code).filter(
-      (v) => !v.duration || v.duration <= WATCH_MAX_DURATION_SEC
+      (v) => !v.duration || v.duration <= CATALOG_MAX_DURATION_SEC
     );
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
@@ -631,6 +656,27 @@ export default function WatchAndLearn() {
           })}
         </div>
 
+        {/* [linguo-patch:watch-duration-filter-v1] Filter durasi: Semua / <5 / 5–10 / 10–20 mnt */}
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {DURATION_FILTERS.map((d) => {
+            const on = durationFilter === d.id;
+            return (
+              <button
+                key={d.id}
+                onClick={() => setDurationFilter(d.id)}
+                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
+                style={{
+                  backgroundColor: on ? TEAL : CARD,
+                  border: `1px solid ${on ? TEAL : BORDER}`,
+                  color: on ? "#fff" : "rgba(255,255,255,0.7)",
+                }}
+              >
+                {d.label}
+              </button>
+            );
+          })}
+        </div>
+
         {/* Grid video */}
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
           {state === "loading"
@@ -648,25 +694,26 @@ export default function WatchAndLearn() {
               ))}
         </div>
 
-        {/* [linguo-patch:watch-orient-toggle-v1] Grid kosong gara-gara filter jenis konten
-            (bukan karena hasil server nihil) → arahkan balik ke "Semua". */}
+        {/* Grid kosong gara-gara filter (jenis konten / durasi), bukan hasil server nihil
+            → arahkan balik ke setelan longgar. */}
         {state !== "loading" && videos.length > 0 && shownVideos.length === 0 && (
           <div
             className="mt-6 rounded-2xl p-6 text-center"
             style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
           >
-            <p className="text-[15px] font-bold">
-              Tak ada {orient === "shorts" ? "Shorts" : "video landscape"} di halaman ini
-            </p>
+            <p className="text-[15px] font-bold">Tak ada video cocok filter di halaman ini</p>
             <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-              Coba pilih <b>Semua</b>, muat lainnya, atau ganti kategori.
+              Longgarkan filter durasi/jenis konten, muat lainnya, atau ganti kategori.
             </p>
             <button
-              onClick={() => setOrient("all")}
+              onClick={() => {
+                setOrient("all");
+                setDurationFilter("all");
+              }}
               className="mt-3 rounded-full px-4 py-2 text-[12.5px] font-bold"
               style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
             >
-              Tampilkan semua
+              Reset filter
             </button>
           </div>
         )}
@@ -691,7 +738,7 @@ export default function WatchAndLearn() {
                 <p className="text-[15px] font-bold">Belum ada video ketemu</p>
                 <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
                   Coba kategori lain, ganti bahasa, atau muat ulang. Katalog cuma
-                  menampilkan video pendek (≤5 menit) & terbatas kuota harian YouTube —
+                  menampilkan video pendek (≤20 menit) & terbatas kuota harian YouTube —
                   beberapa saat lagi biasanya kembali penuh.
                 </p>
               </>
