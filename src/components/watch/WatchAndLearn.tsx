@@ -261,7 +261,11 @@ export default function WatchAndLearn() {
       setVideos(hit.videos);
       setNextToken(hit.nextToken);
       setState(hit.videos.length ? "done" : "empty");
-      if (Date.now() - hit.at < CATALOG_TTL_MS) return; // masih segar
+      // Tab "Siap" baca cache transkrip DB kita sendiri (murah, tanpa kuota
+      // YouTube) → SELALU refresh diam-diam biar video yang transkripnya baru
+      // selesai langsung muncul saat balik ke tab ini, tak nunggu TTL 10 menit.
+      // Katalog pencarian (kena kuota YouTube) tetap hormati TTL biar hemat.
+      if (!siap && Date.now() - hit.at < CATALOG_TTL_MS) return; // masih segar
     }
     if (siap) loadReady(lang, !!hit);
     else runSearch(lang, cat, committedText, !!hit);

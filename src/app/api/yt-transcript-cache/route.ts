@@ -35,7 +35,13 @@ export async function GET(req: NextRequest) {
     if (!validLang(lang)) return NextResponse.json({ videos: [] }, { status: 200 });
     const limit = Math.min(Math.max(parseInt(params.get("limit") ?? "40", 10) || 40, 1), 100);
     try {
-      const sb = createServerClient(300); // segar-kan tiap 5 menit
+      // Baca DB SEGAR (createServerClient(0), tanpa Next Data Cache). Dulu di-cache
+      // 5 menit → begitu worker menandai transkrip 'done', tab "Siap" masih
+      // menampilkan daftar lama (tanpa video baru) sampai 5 menit. Query ini ringan
+      // (indeks yt_transcripts_ready_idx, ≤100 baris) jadi baca tiap kali aman;
+      // CDN tetap kita rem sebentar via s-maxage biar tak dibombardir, tapi cukup
+      // pendek supaya video yang baru selesai langsung nongol.
+      const sb = createServerClient(0);
       const { data, error } = await sb
         .from("yt_transcripts")
         .select("video_id, title, channel, dur")
@@ -43,16 +49,20 @@ export async function GET(req: NextRequest) {
         .not("title", "is", null)
         .order("created_at", { ascending: false })
         .limit(limit);
-      if (error || !Array.isArray(data)) return NextResponse.json({ videos: [] }, { status: 200 });
+      if (error || !Array.isArray(data))
+        return NextResponse.json({ videos: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
       const videos = data.map((r) => ({
         videoId: r.video_id as string,
         title: (r.title as string) ?? "",
         channel: (r.channel as string) ?? null,
         duration: typeof r.dur === "number" ? r.dur : null,
       }));
-      return NextResponse.json({ videos }, { status: 200 });
+      return NextResponse.json(
+        { videos },
+        { status: 200, headers: { "Cache-Control": "public, s-maxage=30, stale-while-revalidate=120" } }
+      );
     } catch {
-      return NextResponse.json({ videos: [] }, { status: 200 });
+      return NextResponse.json({ videos: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
     }
   }
 

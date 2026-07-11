@@ -132,10 +132,11 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=2` = pemecah cache CDN (s-maxage 24 jam): cues kini membawa `translit`
-      // hasil backfill server — tanpa bump ini, edge CDN masih menyajikan versi
-      // lama tanpa bacaan Latin sampai sehari.
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=2`,
+      // `v=3` = pemecah cache CDN (s-maxage 24 jam): cues kini SATU KALIMAT UTUH
+      // per section hasil resegmentasi server (worker + backfill resegmentCache) —
+      // tanpa bump ini, edge CDN masih menyajikan versi lama sampai sehari.
+      // (v=2 dulu untuk `translit` hasil backfill.)
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=3`,
       { method: "GET" },
       6000
     );
