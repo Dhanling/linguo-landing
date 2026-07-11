@@ -46,7 +46,8 @@ export async function GET(req: NextRequest) {
         `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,` +
         // [akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket di preview
         `installment_paid,payment_due_date,payment_date,created_at,` +
-        `pipeline_status,archived_at,teachers(name,whatsapp)` +
+        // [teacher-avatar-sync-v1] ikutkan avatar_url biar foto pengajar tampil di preview
+        `pipeline_status,archived_at,teachers(name,whatsapp,avatar_url)` +
         `&order=registration_date.desc`
     )) || [];
 
