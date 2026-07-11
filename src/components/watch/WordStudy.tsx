@@ -58,7 +58,7 @@ const SUGGESTED = [
   "Beri contoh dalam situasi santai",
 ];
 
-type ChatMsg = { role: "user" | "ai"; text: string };
+type ChatMsg = { role: "user" | "ai"; text: string; followups?: string[] };
 
 export default function WordStudy({
   word,
@@ -130,7 +130,14 @@ export default function WordStudy({
       setAsking(true);
       askWordQuestion({ word, sentence, langCode, question })
         .then((a) =>
-          setChat((c) => [...c, { role: "ai", text: a || "Maaf, tidak ada jawaban. Coba lagi." }])
+          setChat((c) => [
+            ...c,
+            {
+              role: "ai",
+              text: a.answer || "Maaf, tidak ada jawaban. Coba lagi.",
+              followups: a.followups,
+            },
+          ])
         )
         .catch(() => setChat((c) => [...c, { role: "ai", text: "Gagal memuat jawaban. Coba lagi." }]))
         .finally(() => setAsking(false));
@@ -475,6 +482,10 @@ function AskTab({
     );
   }
 
+  // Usulan lanjutan diambil dari pesan AI terakhir (tiap jawaban bawa usulan baru).
+  const lastMsg = chat[chat.length - 1];
+  const lastFollowups = lastMsg?.role === "ai" ? lastMsg.followups ?? [] : [];
+
   return (
     <div className="space-y-3">
       {chat.map((m, i) =>
@@ -506,6 +517,27 @@ function AskTab({
           >
             <Loader2 className="h-4 w-4 animate-spin" />
             <span className="text-[12.5px]">Menjawab…</span>
+          </div>
+        </div>
+      )}
+
+      {/* Usulan lanjutan yang nyambung dengan jawaban terakhir */}
+      {!asking && lastFollowups.length > 0 && (
+        <div className="pt-1">
+          <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
+            Lanjut tanya:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {lastFollowups.map((q) => (
+              <button
+                key={q}
+                onClick={() => onAsk(q)}
+                className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
+                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              >
+                {q}
+              </button>
+            ))}
           </div>
         </div>
       )}

@@ -41,6 +41,20 @@ const BORDER = "rgba(255,255,255,0.1)";
 
 const TIP_W = 260;
 
+// Artikel/determiner per bahasa. Kalau kata yang di-tap didahului salah satunya,
+// pilihan awal otomatis mencakup artikelnya (mis. tap "texto" → "el texto"),
+// karena artikel gender menentukan bentuk & sering dipelajari sepaket. User tetap
+// bisa menciutkan ke "1 kata". Hanya bahasa dengan artikel yang didaftarkan.
+const ARTICLES: Record<string, Set<string>> = {
+  es: new Set(["el", "la", "los", "las", "un", "una", "unos", "unas"]),
+  fr: new Set(["le", "la", "les", "un", "une", "des", "du"]),
+  it: new Set(["il", "lo", "la", "i", "gli", "le", "un", "uno", "una"]),
+  pt: new Set(["o", "a", "os", "as", "um", "uma", "uns", "umas"]),
+  ca: new Set(["el", "la", "els", "les", "un", "una", "uns", "unes"]),
+  de: new Set(["der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "eines"]),
+  nl: new Set(["de", "het", "een"]),
+};
+
 // Ucapkan kata pakai Chirp 3 HD (fallback Web Speech) — helper bersama di lib.
 const speak = speakText;
 
@@ -79,8 +93,18 @@ export function WordTooltip({
     return tokens.findIndex((t) => t.isWord && cleanWord(t.text).toLowerCase() === target);
   }, [tokens, wordIdx, rawWord]);
 
-  const [sel, setSel] = useState({ lo: initialIdx, hi: initialIdx });
-  useEffect(() => setSel({ lo: initialIdx, hi: initialIdx }), [initialIdx]);
+  // Titik kiri default: sertakan artikel gender di depannya kalau ada.
+  const autoLo = useMemo(() => {
+    if (initialIdx < 0) return initialIdx;
+    const arts = ARTICLES[(langCode || "").split("-")[0]];
+    if (!arts) return initialIdx;
+    const prev = [...wordPositions].reverse().find((p) => p < initialIdx);
+    if (prev != null && arts.has(cleanWord(tokens[prev].text).toLowerCase())) return prev;
+    return initialIdx;
+  }, [initialIdx, langCode, wordPositions, tokens]);
+
+  const [sel, setSel] = useState({ lo: autoLo, hi: initialIdx });
+  useEffect(() => setSel({ lo: autoLo, hi: initialIdx }), [autoLo, initialIdx]);
 
   // Frasa terpilih (endpoint selalu kata, pemisah di antaranya ikut tergabung).
   const word = useMemo(() => {

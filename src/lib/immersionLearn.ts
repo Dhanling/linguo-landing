@@ -786,22 +786,31 @@ export async function getWordDeepDive(params: {
   };
 }
 
+/** Jawaban tanya-lanjutan + usulan pertanyaan berikutnya yang kontekstual. */
+export interface WordAnswer {
+  answer: string;
+  followups: string[];
+}
+
 /** Tanya-jawab lanjutan bebas tentang sebuah kata (mis. "bedanya dengan …?"). */
 export async function askWordQuestion(params: {
   word: string;
   sentence: string;
   langCode: string;
   question: string;
-}): Promise<string> {
+}): Promise<WordAnswer> {
   const res = await fetch("/api/word-deep", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...params, mode: "ask" }),
   });
   if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
-  const data = (await res.json()) as { answer?: string; error?: string };
+  const data = (await res.json()) as { answer?: string; followups?: string[]; error?: string };
   if (data.error) throw new Error(data.error);
-  return (data.answer ?? "").trim();
+  return {
+    answer: (data.answer ?? "").trim(),
+    followups: Array.isArray(data.followups) ? data.followups.filter(Boolean).slice(0, 3) : [],
+  };
 }
 
 /** Kelas kata kanonik untuk pewarnaan token dalam analisa kalimat. */

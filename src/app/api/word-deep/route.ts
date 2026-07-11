@@ -86,19 +86,45 @@ export async function POST(req: NextRequest) {
     const ctx = sentence ? ` It appears in this sentence: "${sentence}".` : "";
 
     // ── Mode ask: tanya-jawab lanjutan bebas ─────────────────────────────────
+    // Balikin jawaban + 3 usulan pertanyaan lanjutan yang nyambung dengan
+    // pertanyaan & jawaban ini (biar chip "Lanjutan" muncul lagi tiap giliran).
     if (mode === "ask") {
       const question = typeof body?.question === "string" ? body.question.trim().slice(0, 400) : "";
-      if (!question) return NextResponse.json({ answer: "" }, { status: 200 });
+      if (!question) return NextResponse.json({ answer: "", followups: [] }, { status: 200 });
       const prompt =
         `You are a warm, concise ${language} tutor helping an Indonesian learner. ` +
         `The learner is studying the ${language} word "${word}".${ctx} ` +
-        `Answer their question below in ${EXPLANATION_LANGUAGE}, clearly and briefly ` +
+        `Answer their question in ${EXPLANATION_LANGUAGE}, clearly and briefly ` +
         `(2-4 short paragraphs max). Use concrete examples when helpful. When you cite a ` +
         `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
         `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
-        `No markdown headings.\n\nQuestion: ${question}`;
-      const answer = (await callGemini(prompt, false)).trim();
-      return NextResponse.json({ answer });
+        `No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
+        `would likely ask NEXT — each a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words), ` +
+        `directly related to THIS question and answer, without repeating them. ` +
+        `Return ONLY a JSON object: {"answer": "...", "followups": ["...", "...", "..."]}.` +
+        `\n\nQuestion: ${question}`;
+      const raw = await callGemini(prompt, true);
+      const s = raw.indexOf("{");
+      const e = raw.lastIndexOf("}");
+      let answer = "";
+      let followups: string[] = [];
+      if (s !== -1 && e > s) {
+        try {
+          const parsed = JSON.parse(raw.slice(s, e + 1)) as Record<string, unknown>;
+          answer = typeof parsed.answer === "string" ? parsed.answer.trim() : "";
+          followups = Array.isArray(parsed.followups)
+            ? (parsed.followups as unknown[])
+                .map((q) => (typeof q === "string" ? q.trim() : ""))
+                .filter(Boolean)
+                .slice(0, 3)
+            : [];
+        } catch {
+          /* fallback di bawah */
+        }
+      }
+      // Kalau JSON gagal, pakai teks mentah sebagai jawaban tanpa usulan.
+      if (!answer) answer = raw.trim();
+      return NextResponse.json({ answer, followups });
     }
 
     // ── Mode overview: kartu belajar terstruktur ─────────────────────────────
