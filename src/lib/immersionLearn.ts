@@ -37,7 +37,7 @@ export function isNonLatin(code: string): boolean {
 // Tag BCP-47 untuk Web Speech API (tombol dengar di tooltip).
 export const SPEECH_LANG: Record<string, string> = {
   en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",
-  de: "de-DE", it: "it-IT", pt: "pt-PT", nl: "nl-NL", ru: "ru-RU", ar: "ar-SA",
+  de: "de-DE", it: "it-IT", pt: "pt-PT", "pt-BR": "pt-BR", "pt-PT": "pt-PT", nl: "nl-NL", ru: "ru-RU", ar: "ar-SA",
   tr: "tr-TR", th: "th-TH", vi: "vi-VN", hi: "hi-IN", he: "he-IL", fa: "fa-IR",
   el: "el-GR", ka: "ka-GE", sv: "sv-SE", no: "nb-NO", da: "da-DK", fi: "fi-FI",
   pl: "pl-PL", cs: "cs-CZ", hu: "hu-HU", ro: "ro-RO", bg: "bg-BG", uk: "uk-UA",
@@ -55,7 +55,7 @@ function speakBrowser(text: string, langCode: string) {
   try {
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = SPEECH_LANG[langCode] ?? "en-US";
+    u.lang = SPEECH_LANG[langCode] ?? SPEECH_LANG[langCode.split("-")[0]] ?? "en-US";
     u.rate = 0.9;
     window.speechSynthesis.speak(u);
   } catch {
@@ -756,7 +756,7 @@ async function callWordInfo(params: {
       word: params.word,
       sentence: params.sentence,
       mode: params.mode,
-      language: ENGLISH_NAME[params.langCode] ?? "English",
+      language: ENGLISH_NAME[params.langCode] ?? ENGLISH_NAME[params.langCode.split("-")[0]] ?? "English",
       explanationLanguage: EXPLANATION_LANGUAGE,
       nonLatin: isNonLatin(params.langCode),
     }),

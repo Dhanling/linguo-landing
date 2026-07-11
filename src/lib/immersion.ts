@@ -46,6 +46,7 @@ export interface ImmersionLang {
   flag: string; // emoji bendera (fallback)
   country: string; // kode negara ISO-2 buat bendera rounded-rect (RectFlag)
   searchCode?: string; // relevanceLanguage YouTube kalau `code` tak didukung (mis. jv/su → id)
+  region?: string; // regionCode YouTube (ISO-3166, mis. BR/PT) — memisah varian satu bahasa
 }
 
 // Daftar bahasa immersion — diperluas menyamai katalog app Linguo. `code` = kode
@@ -60,7 +61,8 @@ export const IMMERSION_LANGS: ImmersionLang[] = [
   { code: "fr", name: "Prancis", native: "Français", flag: "🇫🇷", country: "fr" },
   { code: "de", name: "Jerman", native: "Deutsch", flag: "🇩🇪", country: "de" },
   { code: "it", name: "Italia", native: "Italiano", flag: "🇮🇹", country: "it" },
-  { code: "pt", name: "Portugis", native: "Português", flag: "🇵🇹", country: "pt" },
+  { code: "pt-BR", name: "Portugis (Brasil)", native: "Português", flag: "🇧🇷", country: "br", searchCode: "pt", region: "BR" },
+  { code: "pt-PT", name: "Portugis (Portugal)", native: "Português", flag: "🇵🇹", country: "pt", searchCode: "pt", region: "PT" },
   { code: "nl", name: "Belanda", native: "Nederlands", flag: "🇳🇱", country: "nl" },
   { code: "ru", name: "Rusia", native: "Русский", flag: "🇷🇺", country: "ru" },
   { code: "ar", name: "Arab", native: "العربية", flag: "🇸🇦", country: "sa" },
@@ -131,7 +133,8 @@ export interface ImmersionCategory {
 const KARTUN_FRANCHISE: Record<string, string> = {
   en: "Peppa Pig Bluey SpongeBob Paw Patrol cartoon",
   es: "Peppa Pig Bob Esponja Bluey La Patrulla Canina",
-  pt: "Peppa Pig Bob Esponja Patrulha Canina Bluey",
+  pt: "Peppa Pig Bob Esponja Patrulha Canina Bluey", // Brasil (pt-BR)
+  "pt-PT": "Peppa Pig Português Patrulha Pata Bluey desenhos animados", // Portugal (dublagem PT-PT)
   fr: "Peppa Pig Bob l'éponge Pat Patrouille Bluey",
   de: "Peppa Wutz SpongeBob Schwammkopf Paw Patrol Bluey",
   it: "Peppa Pig cartoni animati per bambini",
@@ -183,7 +186,8 @@ const CREATOR_NATIVE: Record<string, string> = {
   en: "MrBeast Sidemen KSI Dude Perfect",
   id: "Windah Basudara Atta Halilintar Deddy Corbuzier Ria Ricis",
   es: "elrubius AuronPlay Ibai TheGrefg Luisito Comunica",
-  pt: "Whindersson Nunes Felipe Neto Luccas Neto Você Sabia",
+  pt: "Whindersson Nunes Felipe Neto Luccas Neto Você Sabia", // Brasil (pt-BR)
+  "pt-PT": "Wuant SirKazzio Windoh Tiagovski youtuber português Portugal", // Portugal (pt-PT)
   fr: "Squeezie Cyprien Norman McFly et Carlito Amixem",
   de: "Julien Bam Gronkh BibisBeautyPalace Freekickerz",
   it: "Favij Me contro Te iPantellas St3pNy",
@@ -248,9 +252,13 @@ export function buildQuery(
   if (freeText && freeText.trim()) return `${freeText.trim()} ${lang.native}`.trim();
   // Prioritas topik: berita → kata native; kalau kategori punya override per bahasa
   // (mis. nama franchise kartun lokal) pakai itu; kalau tak ada, kata generik `q`.
+  // Cari override per bahasa pakai `code` dulu (mis. "pt-PT" khusus Portugal), lalu
+  // jatuh ke `searchCode` (varian tanpa daftar sendiri, mis. "pt-BR" → "pt") biar
+  // varian regional tetap dapat query terkurasi bahasanya.
+  const cfg = <T,>(m: Record<string, T>): T | undefined => m[lang.code] ?? (lang.searchCode ? m[lang.searchCode] : undefined);
   const topic = cat.news
-    ? NEWS_WORD[lang.code] ?? "news"
-    : cat.perLang?.[lang.code] ?? cat.q;
+    ? cfg(NEWS_WORD) ?? "news"
+    : (cat.perLang ? cfg(cat.perLang) : undefined) ?? cat.q;
   return `${topic} ${lang.native}`.trim();
 }
 
@@ -342,6 +350,8 @@ export async function searchImmersionVideos(params: {
   /** Batas bawah durasi (detik). Membias hasil ke bucket `medium` YouTube +
    *  saring >= nilai ini — dipakai tab filter durasi "5–10" / "10–20 mnt". */
   minDurationSec?: number;
+  /** Kode negara ISO-3166 (mis. BR/PT) → YouTube regionCode; memisah varian bahasa. */
+  regionCode?: string;
 }): Promise<ImmersionSearchPage> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { results: [] };
   try {
@@ -361,6 +371,7 @@ export async function searchImmersionVideos(params: {
         pageToken: params.pageToken,
         maxDurationSec: params.maxDurationSec,
         minDurationSec: params.minDurationSec,
+        regionCode: params.regionCode,
       }),
     });
     if (!res.ok) return { results: [] };

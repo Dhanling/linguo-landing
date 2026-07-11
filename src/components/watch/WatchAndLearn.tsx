@@ -311,6 +311,7 @@ export default function WatchAndLearn() {
         max: 18,
         maxDurationSec: max,
         minDurationSec: min || undefined,
+        regionCode: l.region,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
       // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
@@ -397,6 +398,7 @@ export default function WatchAndLearn() {
       pageToken: nextToken,
       maxDurationSec: max,
       minDurationSec: min || undefined,
+      regionCode: lang.region,
     });
     if (id !== reqId.current) return;
     const more = filterVideosByLanguage(page.results, lang.code).filter(
