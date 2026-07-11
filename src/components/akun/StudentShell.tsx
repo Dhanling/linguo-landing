@@ -2,13 +2,10 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
-import { createClient } from "@supabase/supabase-js";
+// [kelas-detail-resilient-v1] pakai klien BERSAMA — instance GoTrue ganda bikin
+// race refresh token (query bisa 401 sesaat padahal user masih login).
+import { supabase } from "@/lib/supabase-client";
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, type LucideIcon } from "lucide-react";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
 

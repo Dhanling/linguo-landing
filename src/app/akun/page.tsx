@@ -3523,6 +3523,9 @@ export default function AkunPage() {
                                   key={reg.id}
                                   href={`/akun/kelas/${reg.id}`}
                                   prefetch
+                                  // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
+                                  // render instan tanpa nunggu query (anti mental balik ke beranda)
+                                  onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify(reg)); } catch {} }}
                                   className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                 >
                                   <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
