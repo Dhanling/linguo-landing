@@ -390,9 +390,14 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
 // paragraf. ~60 karakter kira-kira pas satu baris pada lebar panel transkrip.
 const MAX_CUE_CHARS = 60;
 
-/** Pisah teks jadi klausa di batas tanda baca (,;:—–) — delimiter ikut klausa sebelumnya. */
+/**
+ * Pisah teks jadi klausa di batas tanda baca — delimiter ikut klausa sebelumnya.
+ * Termasuk tanda baca non-Latin (، ؛ Arab/Persia, 、 ， ； CJK) supaya kalimat
+ * panjang beraksara itu bisa dipecah di batas klausa yang benar (bukan jatuh ke
+ * pemecah per-kata yang bisa salah pasang target↔terjemahan).
+ */
 function splitClauses(text: string): string[] {
-  const parts = text.match(/[^,;:—–]+[,;:—–]*/g);
+  const parts = text.match(/[^,;:—–،؛、，；]+[,;:—–،؛、，；]*/g);
   return parts ? parts.map((s) => s.trim()).filter(Boolean) : [text.trim()];
 }
 
@@ -490,6 +495,13 @@ function distributeWords(text: string, n: number): string[] {
  */
 function splitCueByWords(cue: LearnCue): LearnCue[] {
   if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
+  // Pemecahan per-KATA tak bisa memasangkan target↔base↔translit dengan benar
+  // (urutan & jumlah kata beda antar bahasa → terjemahan/bacaan Latin salah geser,
+  // mis. Arab: baris "baytan" tapi bacaannya "fa-ṣnaʿū yā aḥbābī baytan"). Jadi
+  // kalau cue SUDAH bawa terjemahan/transliterasi, biarkan utuh (satu baris agak
+  // panjang tapi PASANGANNYA BENAR) — lebih baik daripada sinkron yang meleset.
+  // Pemecahan per-kata hanya untuk cue mentah tanpa apa pun yang bisa salah pasang.
+  if (cue.base || cue.translit) return [cue];
   const targets = chunkWords(cue.target, MAX_CUE_CHARS);
   if (targets.length <= 1) return [cue];
   const bases = cue.base ? distributeWords(cue.base, targets.length) : null;

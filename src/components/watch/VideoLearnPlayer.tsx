@@ -1112,7 +1112,10 @@ export default function VideoLearnPlayer({
                       <p
                         className="font-semibold leading-snug text-white"
                         dir={isRtl(langCode) ? "rtl" : undefined}
-                        style={{ fontSize: 14 * fscale }}
+                        // Aksara RTL tetap dir="rtl" (bidi & posisi "…" benar) tapi
+                        // rata KIRI biar sejajar dgn transliterasi & terjemahan di
+                        // bawahnya — satu tepi kiri, rapi.
+                        style={{ fontSize: 14 * fscale, textAlign: isRtl(langCode) ? "left" : undefined }}
                       >
                         {splitWords(c.target, langCode).map((w, j) =>
                           w.isWord ? (
@@ -1436,7 +1439,10 @@ function KaraokeText({
         flexWrap: "wrap",
         alignItems: "baseline",
         direction: rtl ? "rtl" : "ltr",
-        justifyContent: center ? "center" : "flex-start",
+        // Baris fokus di panel harus rata KIRI (sejajar translit & terjemahan).
+        // Pada flex direction:rtl, main-start ada di KANAN — jadi "flex-end" yang
+        // justru merapatkan ke KIRI. Overlay bawah tetap center (tak berubah).
+        justifyContent: center ? "center" : rtl ? "flex-end" : "flex-start",
         ...(fontSize ? { fontSize } : {}),
       }}
     >
