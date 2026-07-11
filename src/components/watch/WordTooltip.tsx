@@ -308,7 +308,7 @@ function TipAction({
     <button
       onClick={onClick}
       aria-label={label}
-      className="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl py-2 text-[10.5px] font-semibold transition-colors"
+      className="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl py-2 text-[10.5px] font-semibold transition duration-150 hover:scale-95 active:scale-90"
       style={{
         backgroundColor: active ? TEAL : "rgba(255,255,255,0.06)",
         border: `1px solid ${active ? TEAL : BORDER}`,

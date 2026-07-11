@@ -799,7 +799,6 @@ export default function VideoLearnPlayer({
                     className="cursor-pointer rounded-xl px-3 py-2.5 transition-colors"
                     style={{
                       backgroundColor: on ? "rgba(26,158,158,0.14)" : "transparent",
-                      border: `1px solid ${on ? "rgba(26,158,158,0.4)" : "transparent"}`,
                     }}
                   >
                     {on ? (
