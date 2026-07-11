@@ -355,32 +355,59 @@ function splitSentences(text: string, locale?: string): string[] {
 }
 
 /**
- * Pecah satu cue jadi beberapa cue satu-kalimat. Timing dibagi proporsional dengan
- * panjang tiap kalimat. Hanya dipecah kalau terjemahan (base) & transliterasi bisa
- * dipisah ke jumlah kalimat yang SAMA — kalau tidak, cue dibiarkan utuh biar
- * terjemahan tak salah pasang dengan kalimat targetnya.
+ * Pecah satu cue jadi beberapa cue SATU-KALIMAT — target "1 baris = 1 kalimat".
+ *
+ * Masalah: target hasil auto-caption / ASR (mis. Arab dialek, Jepang) sering datang
+ * TANPA tanda baca akhir kalimat, jadi kalau kita cuma andalkan tanda baca target,
+ * satu blob banyak kalimat tak bisa dipecah → section jadi paragraf panjang.
+ * Tapi transliterasi & terjemahan (dibuat LLM) MEMBUBUHKAN tanda baca kalimat.
+ *
+ * Jadi: jumlah kalimat `n` diambil dari sinyal TERBANYAK yang tersedia (target /
+ * base / translit). Tiap field yang tanda bacanya sendiri sudah pas jadi `n`
+ * kalimat dipakai apa adanya (paling akurat); yang tidak (mis. target tanpa tanda
+ * baca) dibagi proporsional di batas KATA jadi `n` potongan. Transliterasi seurutan
+ * dengan target (romanisasi kata-per-kata), jadi pembagian proporsional target
+ * mengikuti batas kalimat translit dengan wajar — bukan tebakan buta.
  */
 function splitCueBySentence(cue: LearnCue): LearnCue[] {
   const targets = splitSentences(cue.target);
-  if (targets.length <= 1) return [cue];
   const bases = cue.base ? splitSentences(cue.base) : null;
   const translits = cue.translit ? splitSentences(cue.translit) : null;
-  if (bases && bases.length !== targets.length) return [cue];
-  if (translits && translits.length !== targets.length) return [cue];
+
+  // Driver jumlah kalimat `n`: UTAMAKAN terjemahan (base) — itu yang dibaca siswa
+  // untuk paham arti, jadi JANGAN sampai terpotong tengah kalimat. Tiap section =
+  // satu kalimat arti utuh. Kalau base tak bertanda baca (1 kalimat), baru pakai
+  // transliterasi lalu target sebagai sinyal. Target proporsional mengikuti; ia
+  // memang tak selalu punya tanda baca (auto-caption/ASR) → dibagi rata per kata.
+  const n = (bases && bases.length > 1
+    ? bases.length
+    : translits && translits.length > 1
+    ? translits.length
+    : targets.length);
+  if (n <= 1) return [cue];
+
+  // Field yang tanda bacanya sudah `n` kalimat → pakai; selain itu bagi rata per kata.
+  const tgt = targets.length === n ? targets : distributeWords(cue.target, n);
+  const bas = bases ? (bases.length === n ? bases : distributeWords(cue.base, n)) : null;
+  const tr = translits
+    ? translits.length === n
+      ? translits
+      : distributeWords(cue.translit ?? "", n)
+    : null;
 
   const dur = Math.max(0.001, cue.end - cue.start);
-  const total = targets.reduce((n, s) => n + s.length, 0) || 1;
+  const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
-  return targets.map((tg, i) => {
+  return tgt.map((tg, i) => {
     const start = cue.start + dur * (acc / total);
     acc += tg.length;
-    const end = i === targets.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    const end = i === tgt.length - 1 ? cue.end : cue.start + dur * (acc / total);
     return {
       start,
       end: Math.max(end, start + 0.3),
       target: tg,
-      base: bases ? bases[i] : "",
-      ...(translits ? { translit: translits[i] } : {}),
+      base: bas ? bas[i] ?? "" : "",
+      ...(tr ? { translit: tr[i] ?? "" } : {}),
     };
   });
 }

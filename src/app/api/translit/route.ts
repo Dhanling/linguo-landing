@@ -58,6 +58,12 @@ export async function POST(req: NextRequest) {
       `Transliterate each numbered line below into ${scheme}. ` +
       `Return ONLY a JSON array of strings with EXACTLY ${lines.length} items, in the same ` +
       `order, where each item is the phonetic Latin reading of the corresponding line. ` +
+      // Penting utk Arab dsb: teks bisa MSA/fushah ATAU dialek (Levantine, Mesir,
+      // Teluk, Maroko…). Romanisasikan bunyi yang BENAR-BENAR diucapkan/ditulis —
+      // jangan "dibakukan" ke MSA (mis. jangan tambah akhiran i'rab -u/-i/-a yang
+      // tak diucapkan). "شلونكم" → "shlonkum", bukan dipaksa jadi bentuk formal.
+      `Reflect the actual pronunciation as written, including regional/colloquial ` +
+      `(dialectal) forms; do NOT normalize to a formal/standard register. ` +
       `Do NOT translate the meaning. No notes, no markdown.\n\n${numbered}`;
 
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
