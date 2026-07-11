@@ -42,6 +42,7 @@ import {
 } from "@/lib/immersionLearn";
 import {
   filterVideosByLanguage,
+  formatDuration,
   getImmersionLang,
   ImmersionVideo,
   searchImmersionVideos,
@@ -735,6 +736,19 @@ export default function VideoLearnPlayer({
                   <Loader2 className="h-7 w-7 animate-spin" color={SUB} />
                 </div>
               )}
+              {/* Overlay drag SELURUH area video saat mini — iframe YouTube menelan
+                  pointer, jadi tanpa lapisan ini video tak bisa diseret. Tombol strip
+                  (z-10) tetap di atas overlay ini, jadi Kembalikan/Tutup tak terhalang. */}
+              {mini && (
+                <div
+                  onPointerDown={onMiniDragStart}
+                  onPointerMove={onMiniDragMove}
+                  onPointerUp={onMiniDragEnd}
+                  onPointerCancel={onMiniDragEnd}
+                  className="absolute inset-0 z-[5] cursor-move touch-none"
+                  aria-hidden
+                />
+              )}
             </div>
             {/* Kontrol mini — muncul saat hover: kembalikan ukuran / tutup player.
                 Strip ini juga PEGANGAN DRAG: seret untuk memindah kotak mini. */}
@@ -775,12 +789,9 @@ export default function VideoLearnPlayer({
                 className="cursor-move touch-none px-3 pb-2.5 pt-2 text-center"
                 style={{ backgroundColor: "#0B0E0F" }}
               >
-                <p className="line-clamp-1 text-[13px] font-bold text-white">{activeCue.target}</p>
-                {activeCue.base && (
-                  <p className="mt-0.5 line-clamp-1 text-[11.5px] font-semibold" style={{ color: GOLD }}>
-                    {activeCue.base}
-                  </p>
-                )}
+                {/* Mode mini: HANYA subtitle bahasa target — terjemahan disembunyikan
+                    biar kotak ringkas & fokus (lihat penuh lagi setelah dikembalikan). */}
+                <p className="line-clamp-2 text-[13px] font-bold text-white">{activeCue.target}</p>
               </div>
             )}
           </div>
@@ -945,8 +956,8 @@ export default function VideoLearnPlayer({
                     className="flex w-full gap-3 rounded-xl p-2 text-left transition-colors hover:bg-white/5"
                   >
                     <div
-                      className={`relative aspect-video shrink-0 overflow-hidden rounded-lg bg-black ${
-                        mini ? "w-44 sm:w-56" : "w-32"
+                      className={`relative aspect-video shrink-0 self-start overflow-hidden rounded-lg bg-black ${
+                        mini ? "w-44 sm:w-56" : "w-40"
                       }`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -956,6 +967,11 @@ export default function VideoLearnPlayer({
                         loading="lazy"
                         className="absolute inset-0 h-full w-full object-cover"
                       />
+                      {formatDuration(v.duration) && (
+                        <span className="absolute bottom-1 right-1 rounded bg-black/80 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">
+                          {formatDuration(v.duration)}
+                        </span>
+                      )}
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="line-clamp-2 text-[13px] font-bold leading-snug text-white">
