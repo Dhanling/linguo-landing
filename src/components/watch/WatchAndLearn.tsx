@@ -44,9 +44,10 @@ const LANG_KEY = "linguo:watch:lang:v1";
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
-// Jumlah kartu per "halaman" tampilan = 2 baris di desktop (grid lg:grid-cols-4).
-// Grid mulai dengan segini; "Muat lainnya" menambah sebanyak ini lagi.
-const GRID_PAGE = 8;
+// Jumlah kartu per "halaman" tampilan = 1 baris di desktop (grid lg:grid-cols-4).
+// Grid mulai dengan segini biar halaman tak kepanjangan; "Muat lainnya" menambah
+// sebanyak ini lagi tiap klik.
+const GRID_PAGE = 4;
 
 // [linguo-patch:watch-orient-frame0-v1] Deteksi orientasi ASLI video via thumbnail
 // `frame0.jpg`. Kenapa: YouTube Data API tak kasih orientasi, dan durasi bukan proxy
@@ -82,7 +83,7 @@ export default function WatchAndLearn() {
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
-  // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 2 baris.
+  // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 1 baris.
   const [visible, setVisible] = useState(GRID_PAGE);
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
@@ -267,7 +268,7 @@ export default function WatchAndLearn() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langCode, category, committedText]);
 
-  // Balikkan tampilan ke 2 baris tiap daftar/​filter berganti (bukan saat loadMore,
+  // Balikkan tampilan ke 1 baris tiap daftar/​filter berganti (bukan saat loadMore,
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
   useEffect(() => {
     setVisible(GRID_PAGE);
@@ -304,7 +305,7 @@ export default function WatchAndLearn() {
     prewarmTranscripts(more, lang.code);
   }, [nextToken, state, cat, lang, committedText]);
 
-  // "Muat lainnya": tampilkan 2 baris berikutnya dari yang sudah dimuat; kalau
+  // "Muat lainnya": tampilkan 1 baris berikutnya dari yang sudah dimuat; kalau
   // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.
   const showMore = useCallback(() => {
     if (visible < shownVideos.length) setVisible((n) => n + GRID_PAGE);
@@ -334,6 +335,7 @@ export default function WatchAndLearn() {
         title: v.title,
         thumbnail: v.thumbnail,
         channel: v.channel,
+        duration: v.duration,
         lang: forLang,
         ts: Date.now(),
       });
@@ -466,13 +468,19 @@ export default function WatchAndLearn() {
                   key={h.videoId}
                   onClick={() =>
                     openVideo(
-                      { videoId: h.videoId, title: h.title, thumbnail: h.thumbnail, channel: h.channel },
+                      {
+                        videoId: h.videoId,
+                        title: h.title,
+                        thumbnail: h.thumbnail,
+                        channel: h.channel,
+                        duration: h.duration,
+                      },
                       h.lang
                     )
                   }
                   className="group w-[180px] shrink-0 text-left"
                 >
-                  <Thumb videoId={h.videoId} thumbnail={h.thumbnail} />
+                  <Thumb videoId={h.videoId} thumbnail={h.thumbnail} duration={h.duration} />
                   <p className="mt-2 line-clamp-2 text-[12.5px] font-bold leading-snug">
                     {h.title}
                   </p>
@@ -563,7 +571,7 @@ export default function WatchAndLearn() {
         {/* Grid video */}
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
           {state === "loading"
-            ? Array.from({ length: 8 }).map((_, i) => <CardSkeleton key={i} />)
+            ? Array.from({ length: GRID_PAGE }).map((_, i) => <CardSkeleton key={i} />)
             : shownVideos.slice(0, visible).map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
                   <Thumb videoId={v.videoId} thumbnail={v.thumbnail} duration={v.duration} />

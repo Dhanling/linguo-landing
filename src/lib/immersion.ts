@@ -379,6 +379,8 @@ export interface WatchHistoryItem {
   title: string;
   thumbnail: string | null;
   channel?: string | null;
+  /** Durasi detik — buat badge durasi di kartu "Lanjut Menonton". Entri lama: undefined. */
+  duration?: number | null;
   lang: string;
   ts: number;
 }
