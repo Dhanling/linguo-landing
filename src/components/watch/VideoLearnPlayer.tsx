@@ -914,12 +914,13 @@ function FocusLine({
     );
   }
 
-  // Mode Analisa: tampilkan token berwarna + terjemahan akurat.
+  // Mode Analisa: tampilkan token berwarna + terjemahan akurat (rata tengah,
+  // konsisten dengan mode normal).
   if (analyze) {
     return (
-      <div className="min-h-[92px] px-5 py-4 sm:px-6">
+      <div className="min-h-[92px] px-5 py-4 text-center sm:px-6">
         {breakdown === "loading" || breakdown === undefined ? (
-          <div className="flex items-center gap-2" style={{ color: SUB }}>
+          <div className="flex items-center justify-center gap-2" style={{ color: SUB }}>
             <Loader2 className="h-4 w-4 animate-spin" /> Menganalisa kalimat…
           </div>
         ) : breakdown === "error" ? (
@@ -928,7 +929,7 @@ function FocusLine({
           </button>
         ) : (
           <>
-            <div className="flex flex-wrap items-end gap-x-2 gap-y-2">
+            <div className="flex flex-wrap items-end justify-center gap-x-2 gap-y-2">
               {breakdown.tokens.map((t, i) => (
                 <span
                   key={i}
@@ -941,6 +942,14 @@ function FocusLine({
                   >
                     {t.word}
                   </span>
+                  {t.translit && (
+                    <span
+                      className="block italic leading-tight"
+                      style={{ color: "#fff", fontSize: 11 * scale }}
+                    >
+                      {t.translit}
+                    </span>
+                  )}
                   <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
                     {POS_LABEL_ID[t.cat]}
                   </span>
