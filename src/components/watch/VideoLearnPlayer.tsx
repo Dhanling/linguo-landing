@@ -21,7 +21,6 @@ import {
   Pause,
   Play,
   RotateCcw,
-  Sparkles,
   Type,
   X,
 } from "lucide-react";
@@ -34,7 +33,6 @@ import {
   POS_LABEL_ID,
   prewarmTranscripts,
   requestTranscript,
-  RequestStatus,
   SentenceBreakdown,
   splitWords,
   TranscriptReason,
@@ -130,9 +128,10 @@ export default function VideoLearnPlayer({
   const [asrRunning, setAsrRunning] = useState(false);
   // True selagi bacaan Latin (romaji/pinyin/dll) diisi di background utk bahasa non-Latin.
   const [translitLoading, setTranslitLoading] = useState(false);
-  // Tombol "Minta video ini" (transkrip belum ada di cache → titip ke antrian server).
-  const [reqState, setReqState] = useState<"idle" | "loading" | "done">("idle");
-  const [reqMsg, setReqMsg] = useState("");
+  // Kenapa auto-generate gagal — paritas dgn app mobile: transkrip yang belum ada
+  // di cache langsung diantre otomatis (tanpa tombol "Minta"), lalu di-poll sampai
+  // siap. Nilai ini hanya terisi kalau jalur otomatis itu mentok.
+  const [genFail, setGenFail] = useState<null | "cap" | "error" | "timeout">(null);
 
   const [analyze, setAnalyze] = useState(false);
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
@@ -242,61 +241,91 @@ export default function VideoLearnPlayer({
   }, [ready]);
 
   // ── Muat transkrip ──────────────────────────────────────────────────────────
+  // Paritas dgn app mobile: buka video = subtitle DIBUAT OTOMATIS bila belum ada.
+  // Di mobile itu murah (caption YouTube di-fetch on-device, gratis); di web
+  // browser tak bisa fetch caption (Origin diblokir) & IP server diblokir, jadi
+  // jalurnya ASR server (antrian + cap harian sbg rem biaya). Bedanya sekarang
+  // rem itu TAK terlihat siswa: cache miss → auto-enqueue → poll sampai siap.
   useEffect(() => {
     let cancelled = false;
+    let pollTimer: number | null = null;
     setTxState("loading");
     setTxReason("ok");
     setAsrRunning(false);
     setTranslitLoading(false);
+    setGenFail(null);
     setCues([]);
     setBreakdowns({});
     // Sambil transkrip interaktif disiapkan (jalur AI bisa ~1 menit), tampilkan CC
     // bawaan YouTube DALAM bahasa target biar siswa tak menonton tanpa subtitle.
     setShowCC(true);
-    setReqState("idle");
-    // cacheOnly: transkripsi dilakukan SERVER (kurasi/antrian). Kalau belum ada di
-    // cache → reason 'not_ready' → tampilkan tombol "Minta" (bukan ASR di browser).
-    processTranscript(video.videoId, langCode, {
-      cacheOnly: true,
-      // Simpan metadata biar video yang ditonton ini ikut muncul di tab "Siap".
-      meta: { title: video.title, channel: video.channel, duration: video.duration },
-    }).then((r) => {
-      if (cancelled) return;
-      // Urutkan menaik berdasarkan `start`: pencarian biner activeIdx (dan efek
-      // karaoke) mengandalkan cue terurut. Kalau transkrip balik tak berurut,
-      // baris aktif "melompat" ke menit acak alih-alih mengikuti dari awal.
-      const ordered = [...r.cues].sort((a, b) => a.start - b.start);
-      if (ordered.length) {
-        setCues(ordered);
-        setTxState("ready");
-        // Transkrip interaktif tampil, TAPI CC bawaan YouTube tetap dinyalakan dalam
-        // bahasa target (auto-on) — siswa yang sedang belajar Inggris langsung dapat
-        // caption Inggris di video tanpa buka menu CC manual. Effect di bawah yang
-        // memaksa track-nya ke bahasa yang dipelajari.
-        // Bahasa non-Latin (Jepang, Mandarin, dll): transkrip dari server tak bawa
-        // bacaan Latin. Isi transliterasi di background biar transkrip tampil dulu,
-        // lalu romaji/pinyin menyusul tanpa menahan render.
-        if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
-          setTranslitLoading(true);
-          transliterateLines(ordered.map((c) => c.target), langCode)
-            .then((tr) => {
-              if (cancelled || tr.length !== ordered.length) return;
-              setCues((prev) =>
-                prev.length === tr.length
-                  ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
-                  : prev
-              );
-            })
-            .finally(() => !cancelled && setTranslitLoading(false));
-        }
-      } else {
-        setTxReason(r.reason);
-        setTxState("none");
-        setShowCC(true); // fallback ke caption bawaan YouTube
+
+    const meta = { title: video.title, channel: video.channel, duration: video.duration };
+
+    // Pasang cues ke UI (urut menaik by `start`: pencarian biner activeIdx & efek
+    // karaoke mengandalkan cue terurut) + isi bacaan Latin di background untuk
+    // bahasa non-Latin yang cache-nya belum bawa translit (baris lama).
+    const applyCues = (list: LearnCue[]) => {
+      const ordered = [...list].sort((a, b) => a.start - b.start);
+      setCues(ordered);
+      setTxState("ready");
+      setAsrRunning(false);
+      if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
+        setTranslitLoading(true);
+        transliterateLines(ordered.map((c) => c.target), langCode)
+          .then((tr) => {
+            if (cancelled || tr.length !== ordered.length) return;
+            setCues((prev) =>
+              prev.length === tr.length
+                ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
+                : prev
+            );
+          })
+          .finally(() => !cancelled && setTranslitLoading(false));
       }
+    };
+
+    const giveUp = (reason: TranscriptReason, fail: null | "cap" | "error" | "timeout") => {
+      setAsrRunning(false);
+      setGenFail(fail);
+      setTxReason(reason);
+      setTxState("none");
+      setShowCC(true); // fallback ke caption bawaan YouTube
+    };
+
+    // Worker (pg_cron tiap menit) biasanya kelar ±1 menit; beri ruang antre +
+    // video panjang sebelum menyerah.
+    const POLL_MS = 8000;
+    const deadline = Date.now() + 6 * 60_000;
+    const poll = () => {
+      if (cancelled) return;
+      processTranscript(video.videoId, langCode, { cacheOnly: true, meta }).then((p) => {
+        if (cancelled) return;
+        if (p.cues.length) return applyCues(p.cues);
+        if (Date.now() > deadline) return giveUp("not_ready", "timeout");
+        pollTimer = window.setTimeout(poll, POLL_MS);
+      });
+    };
+
+    processTranscript(video.videoId, langCode, { cacheOnly: true, meta }).then((r) => {
+      if (cancelled) return;
+      if (r.cues.length) return applyCues(r.cues);
+      if (r.reason !== "not_ready") return giveUp(r.reason, null);
+      // Belum ada di cache → antre otomatis (idempoten; job failed di-reset ke
+      // pending oleh route enqueue) lalu tunggu hasil worker.
+      setAsrRunning(true); // pesan "Membuat subtitle dengan AI…"
+      requestTranscript(video.videoId, langCode).then((status) => {
+        if (cancelled) return;
+        if (status === "ready") return poll(); // ternyata sudah ada → muat
+        if (status === "cap") return giveUp("not_ready", "cap");
+        if (status === "error") return giveUp("not_ready", "error");
+        // queued | exists | processing → poll cache sampai worker selesai.
+        pollTimer = window.setTimeout(poll, POLL_MS);
+      });
     });
     return () => {
       cancelled = true;
+      if (pollTimer) window.clearTimeout(pollTimer);
     };
   }, [video.videoId, langCode, retryTick]);
 
@@ -457,23 +486,6 @@ export default function VideoLearnPlayer({
     },
     [cues, langCode]
   );
-
-  // "Minta video ini" — titip transkripsi ke antrian server (di-gate).
-  const REQ_MSG: Record<RequestStatus, string> = {
-    queued: 'Berhasil diminta! Subtitle interaktif sedang dibuat — nanti muncul di tab "Siap". Kamu bisa tetap menonton sekarang.',
-    exists: 'Video ini sudah dalam antrian. Cek tab "Siap" beberapa saat lagi.',
-    processing: 'Video ini sedang diproses. Sebentar lagi muncul di tab "Siap".',
-    ready: "Transkripnya ternyata sudah siap! Coba buka lagi video ini.",
-    cap: "Maaf, kuota permintaan hari ini sudah penuh. Coba lagi besok ya.",
-    error: "Gagal mengirim permintaan. Coba lagi sebentar lagi.",
-  };
-  const onRequestTranscript = useCallback(async () => {
-    setReqState("loading");
-    const status = await requestTranscript(video.videoId, langCode);
-    setReqMsg(REQ_MSG[status]);
-    setReqState("done");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [video.videoId, langCode]);
 
   // Saat mode Analisa aktif, ambil breakdown untuk cue yang sedang tayang.
   useEffect(() => {
@@ -736,29 +748,26 @@ export default function VideoLearnPlayer({
             {txState === "none" && (
               <div className="flex flex-col items-start gap-3 px-2 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
                 {txReason === "not_ready" ? (
-                  reqState === "done" ? (
-                    <span>{reqMsg}</span>
-                  ) : (
-                    <>
-                      <span>
-                        Subtitle interaktif untuk video ini belum tersedia. Sementara itu subtitle bawaan YouTube (CC) sudah dinyalakan. Mau dibuatkan subtitle interaktif + terjemahannya?
-                      </span>
+                  <>
+                    <span>
+                      {genFail === "cap"
+                        ? "Kuota pembuatan subtitle AI hari ini sudah penuh — coba lagi besok ya. Sementara itu subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar."
+                        : genFail === "timeout"
+                          ? "Subtitle AI-nya masih diproses lebih lama dari biasanya. Subtitle bawaan YouTube (CC) sudah dinyalakan — coba muat ulang sebentar lagi."
+                          : "Gagal memulai pembuatan subtitle AI (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — coba lagi ya."}
+                    </span>
+                    {genFail !== "cap" && (
                       <button
                         type="button"
-                        onClick={onRequestTranscript}
-                        disabled={reqState === "loading"}
-                        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors disabled:opacity-60"
+                        onClick={() => setRetryTick((n) => n + 1)}
+                        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors"
                         style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
                       >
-                        {reqState === "loading" ? (
-                          <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                        ) : (
-                          <Sparkles className="h-3.5 w-3.5" />
-                        )}
-                        Minta dibuatkan
+                        <RotateCcw className="h-3.5 w-3.5" />
+                        Coba lagi
                       </button>
-                    </>
-                  )
+                    )}
+                  </>
                 ) : (
                   <>
                     <span>
