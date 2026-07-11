@@ -524,8 +524,12 @@ export default function VideoLearnPlayer({
 
       {/* Isi — split view */}
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
-        {/* Kiri: video + baris fokus + kontrol. Full width saat panel disembunyikan. */}
-        <div className={`flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
+        {/* Kiri: video + baris fokus + kontrol. Full width saat panel disembunyikan.
+            Kolomnya sendiri yang di-scroll (ala YouTube) supaya Rekomendasi di bawah
+            kontrol selalu bisa dijangkau — sebelumnya area itu kebagian tinggi ~0. */}
+        <div
+          className={`flex min-h-0 flex-col overflow-y-auto [scrollbar-width:thin] ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}
+        >
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol. */}
@@ -540,23 +544,25 @@ export default function VideoLearnPlayer({
             </div>
           </div>
 
-          {/* Baris fokus — kalimat aktif */}
-          <FocusLine
-            cue={activeCue}
-            time={time}
-            langCode={langCode}
-            analyze={analyze}
-            breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
-            onWordTap={onWordTap}
-            onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
-            txState={txState}
-            asrRunning={asrRunning}
-            scale={fscale}
-          />
+          {/* Baris fokus — kalimat aktif (shrink-0: jangan terjepit oleh scroll kolom) */}
+          <div className="shrink-0">
+            <FocusLine
+              cue={activeCue}
+              time={time}
+              langCode={langCode}
+              analyze={analyze}
+              breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
+              onWordTap={onWordTap}
+              onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
+              txState={txState}
+              asrRunning={asrRunning}
+              scale={fscale}
+            />
+          </div>
 
           {/* Kontrol */}
           <div
-            className="flex flex-wrap items-center gap-2 border-t px-4 py-3 sm:px-6"
+            className="flex shrink-0 flex-wrap items-center gap-2 border-t px-4 py-3 sm:px-6"
             style={{ borderColor: BORDER }}
           >
             <CtrlBtn label="Sebelumnya" onClick={() => gotoCue(-1)} disabled={activeIdx <= 0}>
@@ -668,10 +674,7 @@ export default function VideoLearnPlayer({
           {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
               Klik untuk langsung memutar video lain tanpa keluar player. */}
           {recommendations.length > 0 && onSelectVideo && (
-            <div
-              className="min-h-0 flex-1 overflow-y-auto border-t max-lg:max-h-[42vh] [scrollbar-width:thin]"
-              style={{ borderColor: BORDER }}
-            >
+            <div className="shrink-0 border-t" style={{ borderColor: BORDER }}>
               <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">
                 Rekomendasi
               </p>
