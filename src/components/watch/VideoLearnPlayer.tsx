@@ -540,8 +540,11 @@ export default function VideoLearnPlayer({
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol. */}
+          {/* Blok atas menempel saat scroll: video + subtitle + kontrol tetap
+              terlihat; hanya Rekomendasi yang lewat di bawahnya. */}
+          <div className="sticky top-0 z-20 shrink-0" style={{ backgroundColor: "#06090A" }}>
           <div
-            className="sticky top-0 z-20 flex w-full shrink-0 items-center justify-center bg-black"
+            className="relative flex w-full shrink-0 items-center justify-center bg-black"
             style={{ maxHeight: "70vh" }}
           >
             <div className="relative w-full" style={{ aspectRatio: "16 / 9", maxWidth: "calc(70vh * 16 / 9)" }}>
@@ -679,6 +682,7 @@ export default function VideoLearnPlayer({
               {fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
               {fullscreen ? "Keluar" : "Layar penuh"}
             </button>
+          </div>
           </div>
 
           {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
