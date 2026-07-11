@@ -34,6 +34,15 @@ export function isNonLatin(code: string): boolean {
   return NON_LATIN.has(code);
 }
 
+// Bahasa beraksara kanan-ke-kiri (Arab, Ibrani, Persia, Urdu, dll). Subtitle
+// bahasa target untuk bahasa-bahasa ini WAJIB dirender dir="rtl" biar tanda baca
+// & urutan kata benar. Transliterasi (Latin) & terjemahan Indonesia tetap LTR.
+const RTL = new Set(["ar", "he", "fa", "ur", "ps", "sd", "ug", "ckb", "yi", "dv"]);
+
+export function isRtl(code: string): boolean {
+  return RTL.has((code || "").split("-")[0]);
+}
+
 // Tag BCP-47 untuk Web Speech API (tombol dengar di tooltip).
 export const SPEECH_LANG: Record<string, string> = {
   en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",

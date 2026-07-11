@@ -30,6 +30,7 @@ import {
   processTranscript,
   getSentenceBreakdown,
   isNonLatin,
+  isRtl,
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
@@ -794,7 +795,7 @@ export default function VideoLearnPlayer({
               >
                 {/* Mode mini: HANYA subtitle bahasa target — terjemahan disembunyikan
                     biar kotak ringkas & fokus (lihat penuh lagi setelah dikembalikan). */}
-                <p className="line-clamp-2 text-[13px] font-bold text-white">{activeCue.target}</p>
+                <p className="line-clamp-2 text-[13px] font-bold text-white" dir={isRtl(langCode) ? "rtl" : undefined}>{activeCue.target}</p>
               </div>
             )}
           </div>
@@ -1110,6 +1111,7 @@ export default function VideoLearnPlayer({
                     ) : (
                       <p
                         className="font-semibold leading-snug text-white"
+                        dir={isRtl(langCode) ? "rtl" : undefined}
                         style={{ fontSize: 14 * fscale }}
                       >
                         {splitWords(c.target, langCode).map((w, j) =>
@@ -1226,7 +1228,10 @@ function FocusLine({
           </button>
         ) : (
           <>
-            <div className="flex flex-wrap items-end justify-center gap-x-2 gap-y-2">
+            <div
+              className="flex flex-wrap items-end justify-center gap-x-2 gap-y-2"
+              dir={isRtl(langCode ?? "") ? "rtl" : undefined}
+            >
               {breakdown.tokens.map((t, i) => (
                 <span
                   key={i}
@@ -1275,6 +1280,7 @@ function FocusLine({
         onWordTap={onWordTap}
         className="font-extrabold leading-snug"
         fontSize={22 * scale}
+        center
       />
       {cue.translit && (
         <p className="mt-1 italic" style={{ color: "#fff", fontSize: 13 * scale }}>
@@ -1354,15 +1360,23 @@ function KaraokeWord({
   text,
   state,
   progress,
+  rtl,
   onClick,
 }: {
   text: string;
   state: KaraokeState;
   progress: number;
+  rtl?: boolean;
   onClick: (e: React.MouseEvent) => void;
 }) {
   const active = state === "active";
   const pct = state === "sung" ? 100 : active ? Math.round(progress * 100) : 0;
+  // Lapisan teal ditumpuk PAS di atas lapisan dasar (lebar 100%, posisi sama) lalu
+  // dipangkas pakai clip-path — jadi glyph selalu sejajar (tak melenceng seperti
+  // kalau lebar overlay dikecilkan). Aksara RTL disapu dari KANAN (awal kata Arab)
+  // → pangkas dari kiri; Latin disapu dari kiri → pangkas dari kanan.
+  const hide = 100 - pct;
+  const clip = rtl ? `inset(0 0 0 ${hide}%)` : `inset(0 ${hide}% 0 0)`;
   return (
     <span
       onClick={onClick}
@@ -1371,14 +1385,15 @@ function KaraokeWord({
     >
       {/* lapisan dasar — belum diucapkan (putih) */}
       <span style={{ color: "#fff" }}>{text}</span>
-      {/* lapisan terisi — sudah diucapkan (teal), tersapu kiri→kanan */}
+      {/* lapisan terisi — sudah diucapkan (teal), dipangkas mengikuti progres */}
       <span
         aria-hidden
-        className="pointer-events-none absolute left-0 top-0 overflow-hidden whitespace-nowrap"
+        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden whitespace-nowrap"
         style={{
-          width: `${pct}%`,
           color: TEAL,
-          transition: "width 220ms linear",
+          clipPath: clip,
+          WebkitClipPath: clip,
+          transition: "clip-path 220ms linear, -webkit-clip-path 220ms linear",
           textShadow: active ? "0 0 16px rgba(26,158,158,0.55)" : "none",
         }}
       >
@@ -1395,6 +1410,7 @@ function KaraokeText({
   onWordTap,
   className,
   fontSize,
+  center,
 }: {
   cue: LearnCue;
   time: number;
@@ -1402,10 +1418,28 @@ function KaraokeText({
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
   className?: string;
   fontSize?: number;
+  center?: boolean;
 }) {
   const toks = useMemo(() => karaokeTokens(cue, time, langCode), [cue, time, langCode]);
+  const rtl = isRtl(langCode ?? "");
+  // Tiap kata dibungkus inline-block (butuh position:relative buat overlay karaoke).
+  // Urutan antar-kata TIDAK boleh mengandalkan algoritma bidi atas kotak inline-block:
+  // Chrome & Safari menyusunnya BERBEDA (bikin baris karaoke kebalik di Safari). Jadi
+  // pakai FLEXBOX + `direction` — urutan flex item ditentukan spec (deterministik lintas
+  // browser): rtl → kata pertama di kanan. justify-content atur perataan (tengah utk
+  // baris fokus, awal/kanan utk baris transkrip).
   return (
-    <p className={className} style={fontSize ? { fontSize } : undefined}>
+    <p
+      className={className}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "baseline",
+        direction: rtl ? "rtl" : "ltr",
+        justifyContent: center ? "center" : "flex-start",
+        ...(fontSize ? { fontSize } : {}),
+      }}
+    >
       {toks.map((t, j) =>
         t.isWord ? (
           <KaraokeWord
@@ -1413,11 +1447,13 @@ function KaraokeText({
             text={t.text}
             state={t.state}
             progress={t.progress}
+            rtl={rtl}
             onClick={(e) => onWordTap(e, t.text, cue.target, j)}
           />
         ) : (
           <span
             key={j}
+            className="whitespace-pre"
             style={{
               color: t.state === "future" ? "#fff" : TEAL,
               transition: "color 220ms linear",
