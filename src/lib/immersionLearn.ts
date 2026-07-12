@@ -7,8 +7,61 @@ const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
-// Terjemahan/penjelasan selalu ditulis dalam bahasa pengguna Linguo (Indonesia).
+// Terjemahan/penjelasan DEFAULT dalam bahasa pengguna Linguo (Indonesia). Ini juga
+// bahasa `base` yang disimpan di cache transkrip server. Pengguna bisa memilih bahasa
+// terjemahan lain (lihat BASE_LANGS) → baris `target` diterjemah ulang di klien.
 const EXPLANATION_LANGUAGE = "Bahasa Indonesia";
+
+// ── Bahasa terjemahan ("kamu bicara bahasa apa?") ────────────────────────────
+// Bahasa yang dipakai untuk baris terjemahan di bawah subtitle. Default Indonesia
+// (sesuai cache server); pilihan lain: Inggris + 5 bahasa resmi PBB lainnya. `name`
+// = nama Inggris yang ditaruh ke prompt AI (explanationLanguage). `country` untuk
+// bendera. Aksara kanan-ke-kiri (Arab) ditangani lewat isRtl(code).
+export interface BaseLang {
+  code: string;
+  label: string; // ditulis dalam bahasa itu sendiri
+  english: string; // nama Inggris (subjudul di picker)
+  name: string; // dikirim ke AI sebagai explanationLanguage
+  country: string; // untuk RectFlag
+}
+
+export const BASE_LANGS: BaseLang[] = [
+  { code: "id", label: "Bahasa Indonesia", english: "Indonesian", name: "Bahasa Indonesia", country: "ID" },
+  { code: "en", label: "English", english: "English", name: "English", country: "GB" },
+  { code: "ar", label: "العربية", english: "Arabic", name: "Arabic", country: "SA" },
+  { code: "zh", label: "中文", english: "Chinese", name: "Chinese (Simplified)", country: "CN" },
+  { code: "fr", label: "Français", english: "French", name: "French", country: "FR" },
+  { code: "ru", label: "Русский", english: "Russian", name: "Russian", country: "RU" },
+  { code: "es", label: "Español", english: "Spanish", name: "Spanish", country: "ES" },
+];
+
+export const DEFAULT_BASE_LANG = "id";
+
+const BASE_PREF_KEY = "linguo:watch:base:v1";
+
+export function getBaseLangDef(code: string): BaseLang {
+  return BASE_LANGS.find((b) => b.code === code) ?? BASE_LANGS[0];
+}
+
+/** Bahasa terjemahan tersimpan, atau null kalau belum pernah dipilih (→ tanya). */
+export function getStoredBaseLang(): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const v = window.localStorage.getItem(BASE_PREF_KEY);
+    return v && BASE_LANGS.some((b) => b.code === v) ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+export function storeBaseLang(code: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(BASE_PREF_KEY, code);
+  } catch {
+    /* abaikan */
+  }
+}
 
 // Edge Function word-info menaruh nama bahasa langsung ke prompt ("You are a
 // concise Spanish tutor…"), jadi ia butuh nama Inggris — bukan label Indonesia.
@@ -143,12 +196,13 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=4` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=3 setelah
-      // backfill terjemahan Indonesia baris `pending` (mis. vlog Hindi
-      // G-dcJA_lA0g yang tadinya menampilkan teks Hindi sebagai terjemahan).
-      // (v=3 dulu untuk cues SATU KALIMAT UTUH; v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=4`,
+      // `v=5` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=4 setelah
+      // backfill terjemahan Indonesia baris `pending` (mis. vlog Persia
+      // 3WMSN12Q598 yang tadinya menampilkan teks Persia sebagai terjemahan).
+      // (v=4 dulu backfill vlog Hindi G-dcJA_lA0g; v=3 untuk cues SATU KALIMAT
+      // UTUH; v=2 untuk `translit`.)
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=5`,
       { method: "GET" },
       6000
     );
@@ -291,6 +345,90 @@ async function translateCues(
     return out.length ? out : fallback;
   } catch {
     return fallback;
+  }
+}
+
+// ── Terjemahan ulang ke bahasa pengguna (selain Indonesia) ───────────────────
+// Cache server menyimpan `base` dalam Bahasa Indonesia. Kalau pengguna memilih
+// bahasa terjemahan lain (English/PBB), kita terjemahkan ULANG baris `target`
+// (bahasa asli video) ke bahasa itu lewat yt-transcript mode translate-only, lalu
+// simpan hasilnya di localStorage per (bahasa, video) — buka lagi = instan.
+const BASE_CACHE_PREFIX = "linguo:watch:basecues:bv1";
+const baseCacheKey = (base: string, lang: string, videoId: string) =>
+  `${BASE_CACHE_PREFIX}:${base}:${lang}:${videoId}`;
+
+function readBaseCache(base: string, lang: string, videoId: string, n: number): string[] | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(baseCacheKey(base, lang, videoId));
+    if (!raw) return null;
+    const arr = JSON.parse(raw) as unknown;
+    return Array.isArray(arr) && arr.length === n ? arr.map((x) => String(x)) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeBaseCache(base: string, lang: string, videoId: string, bases: string[]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(baseCacheKey(base, lang, videoId), JSON.stringify(bases));
+  } catch {
+    /* kuota localStorage penuh — abaikan, cuma kehilangan cache */
+  }
+}
+
+/**
+ * Terjemahkan baris `target` cue ke bahasa terjemahan pilihan pengguna (mis.
+ * English, Arab). Untuk Indonesia (default) langsung pakai `base` bawaan cache.
+ * Balikin array `base` selaras urutan `cues`, atau null saat gagal — pemanggil
+ * sebaiknya menyembunyikan terjemahan (jangan tampilkan Indonesia ke penutur lain).
+ */
+export async function translateCuesToBase(
+  videoId: string,
+  langCode: string,
+  baseCode: string,
+  cues: LearnCue[]
+): Promise<string[] | null> {
+  if (!cues.length) return [];
+  if (baseCode === DEFAULT_BASE_LANG) return cues.map((c) => c.base);
+
+  const cached = readBaseCache(baseCode, langCode, videoId, cues.length);
+  if (cached) return cached;
+
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+  const into = getBaseLangDef(baseCode).name;
+  try {
+    const res = await fetchTimeout(
+      `${SUPABASE_URL}/functions/v1/yt-transcript`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          cues: cues.map((c) => ({ start: c.start, end: c.end, target: c.target })),
+          trackLang: langCode,
+          language: langCode,
+          explanationLanguage: into,
+        }),
+      },
+      60000
+    );
+    if (!res.ok) return null;
+    const data = (await res.json()) as { cues?: { base?: string }[] };
+    const out = Array.isArray(data.cues) ? data.cues : [];
+    // Mode translate-only mempertahankan urutan & jumlah cue (hanya buang target
+    // kosong — cue kita sudah tersaring). Beda jumlah = anggap gagal biar tak salah-selaras.
+    if (out.length !== cues.length) return null;
+    const bases = out.map((c) => (typeof c.base === "string" ? c.base : ""));
+    if (!bases.some((b) => b.trim())) return null;
+    writeBaseCache(baseCode, langCode, videoId, bases);
+    return bases;
+  } catch {
+    return null;
   }
 }
 

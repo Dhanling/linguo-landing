@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import {
   processTranscript,
+  DEFAULT_BASE_LANG,
   getSentenceBreakdown,
   isNonLatin,
   isRtl,
@@ -38,6 +39,7 @@ import {
   requestTranscript,
   SentenceBreakdown,
   splitWords,
+  translateCuesToBase,
   TranscriptReason,
   transliterateLines,
 } from "@/lib/immersionLearn";
@@ -110,6 +112,7 @@ interface Anchor {
 export default function VideoLearnPlayer({
   video,
   langCode,
+  baseLang = DEFAULT_BASE_LANG,
   onClose,
   onSavedChange,
   recommendations = [],
@@ -117,6 +120,8 @@ export default function VideoLearnPlayer({
 }: {
   video: ImmersionVideo;
   langCode: string;
+  /** Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). */
+  baseLang?: string;
   onClose: () => void;
   onSavedChange?: () => void;
   recommendations?: ImmersionVideo[];
@@ -148,6 +153,15 @@ export default function VideoLearnPlayer({
   const [asrRunning, setAsrRunning] = useState(false);
   // True selagi bacaan Latin (romaji/pinyin/dll) diisi di background utk bahasa non-Latin.
   const [translitLoading, setTranslitLoading] = useState(false);
+  // True selagi baris terjemahan diterjemah ulang ke bahasa pengguna (selain Indonesia).
+  const [baseTranslating, setBaseTranslating] = useState(false);
+  // Terjemahan Indonesia asli (dari cache) — disimpan supaya bisa dipulihkan saat
+  // pengguna kembali memilih Indonesia setelah sempat ganti bahasa terjemahan.
+  const idBaseRef = useRef<string[]>([]);
+  // Cue terbaru (dibaca di dalam effect terjemahan tanpa jadi dependency, biar isi
+  // translit di background tak memicu terjemah ulang).
+  const cuesRef = useRef<LearnCue[]>([]);
+  cuesRef.current = cues;
   // Kenapa auto-generate gagal — paritas dgn app mobile: transkrip yang belum ada
   // di cache langsung diantre otomatis (tanpa tombol "Minta"), lalu di-poll sampai
   // siap. Nilai ini hanya terisi kalau jalur otomatis itu mentok.
@@ -157,6 +171,13 @@ export default function VideoLearnPlayer({
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
 
   const [anchor, setAnchor] = useState<Anchor | null>(null);
+
+  // [linguo-patch:watch-translit-hover-sync-v1] Kata target yang sedang di-hover di
+  // panel transkrip. `i` = indeks cue, `k` = indeks-urut kata (di antara token kata)
+  // dalam baris itu. Dipakai agar hover kata non-Latin (Georgia/China/dll) IKUT
+  // menyorot token transliterasi yang bersesuaian — dan sebaliknya. Selaras hanya
+  // saat jumlah kata target === jumlah token translit (lihat alignTranslitTokens).
+  const [hoverWord, setHoverWord] = useState<{ i: number; k: number } | null>(null);
 
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
@@ -448,6 +469,9 @@ export default function VideoLearnPlayer({
     // bahasa non-Latin yang cache-nya belum bawa translit (baris lama).
     const applyCues = (list: LearnCue[]) => {
       const ordered = [...list].sort((a, b) => a.start - b.start);
+      // Simpan base Indonesia asli (cache selalu Indonesia) untuk bisa dipulihkan
+      // kalau pengguna balik memilih Indonesia; effect terjemahan menimpa `base`.
+      idBaseRef.current = ordered.map((c) => c.base);
       setCues(ordered);
       setTxState("ready");
       setAsrRunning(false);
@@ -509,6 +533,46 @@ export default function VideoLearnPlayer({
       if (pollTimer) window.clearTimeout(pollTimer);
     };
   }, [video.videoId, langCode, retryTick]);
+
+  // ── Terjemahan di bawah subtitle mengikuti "kamu bicara bahasa apa?" ──────────
+  // Cache server menyimpan `base` dalam Indonesia. Kalau pengguna memilih bahasa
+  // lain, terjemahkan ulang baris `target` ke bahasa itu (hasil di-cache lokal).
+  // Kunci by JUMLAH cue (bukan identitas array) supaya pengisian translit di
+  // background — yang cuma menambah field `translit` — tak memicu terjemah ulang.
+  const cuesReadyKey = cues.length ? `${video.videoId}|${langCode}|${cues.length}` : "";
+  useEffect(() => {
+    if (!cuesReadyKey) return;
+    // Indonesia = base bawaan cache → pulihkan terjemahan asli, tak perlu AI.
+    if (baseLang === DEFAULT_BASE_LANG) {
+      setBaseTranslating(false);
+      setCues((prev) =>
+        prev.map((c, i) => ({ ...c, base: idBaseRef.current[i] ?? c.base }))
+      );
+      return;
+    }
+    let cancelled = false;
+    setBaseTranslating(true);
+    // Sembunyikan terjemahan Indonesia selagi diterjemah ulang — jangan tampilkan
+    // bahasa yang tak dimengerti penutur lain.
+    setCues((prev) => prev.map((c) => ({ ...c, base: "" })));
+    translateCuesToBase(video.videoId, langCode, baseLang, cuesRef.current)
+      .then((bases) => {
+        if (cancelled || !bases) return;
+        setCues((prev) =>
+          prev.length === bases.length
+            ? prev.map((c, i) => ({ ...c, base: bases[i] ?? "" }))
+            : prev
+        );
+      })
+      .finally(() => {
+        if (!cancelled) setBaseTranslating(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+    // idBaseRef/cuesRef sengaja bukan dependency (ref); cuesReadyKey mewakili cue.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cuesReadyKey, baseLang]);
 
   // Hangatkan cache transkrip untuk video rekomendasi di background biar saat
   // penonton loncat ke video berikutnya, subtitle + terjemahannya sudah siap
@@ -1105,6 +1169,8 @@ export default function VideoLearnPlayer({
                         time={time}
                         langCode={langCode}
                         onWordTap={onWordTap}
+                        hoveredK={hoverWord?.i === i ? hoverWord.k : null}
+                        onHoverWord={(k) => setHoverWord(k == null ? null : { i, k })}
                         className="font-semibold leading-snug"
                         fontSize={14 * fscale}
                       />
@@ -1117,30 +1183,46 @@ export default function VideoLearnPlayer({
                         // bawahnya — satu tepi kiri, rapi.
                         style={{ fontSize: 14 * fscale, textAlign: isRtl(langCode) ? "left" : undefined }}
                       >
-                        {splitWords(c.target, langCode).map((w, j) =>
-                          w.isWord ? (
-                            <span
-                              key={j}
-                              onClick={(e) => onWordTap(e, w.text, c.target, j)}
-                              className="cursor-pointer rounded transition-colors hover:bg-[rgba(26,158,158,0.28)]"
-                            >
-                              {w.text}
-                            </span>
-                          ) : (
-                            <span key={j}>{w.text}</span>
-                          )
-                        )}
+                        {(() => {
+                          // k = indeks-urut kata (di antara token kata) → kunci sinkron
+                          // hover dengan token transliterasi di baris ini.
+                          let k = -1;
+                          return splitWords(c.target, langCode).map((w, j) => {
+                            if (!w.isWord) return <span key={j}>{w.text}</span>;
+                            const wk = ++k;
+                            const hot = hoverWord?.i === i && hoverWord.k === wk;
+                            return (
+                              <span
+                                key={j}
+                                onClick={(e) => onWordTap(e, w.text, c.target, j)}
+                                onMouseEnter={() => setHoverWord({ i, k: wk })}
+                                onMouseLeave={() => setHoverWord(null)}
+                                className="cursor-pointer rounded transition-colors"
+                                style={{ backgroundColor: hot ? "rgba(26,158,158,0.28)" : undefined }}
+                              >
+                                {w.text}
+                              </span>
+                            );
+                          });
+                        })()}
                       </p>
                     )}
                     {c.translit && (
-                      <p className="mt-0.5 italic" style={{ color: "#fff", fontSize: 12 * fscale }}>
-                        {c.translit}
-                      </p>
+                      <TranslitLine
+                        target={c.target}
+                        translit={c.translit}
+                        langCode={langCode}
+                        hoveredK={hoverWord?.i === i ? hoverWord.k : null}
+                        onHover={(k) => setHoverWord(k == null ? null : { i, k })}
+                        className="mt-0.5 italic"
+                        style={{ color: "#fff", fontSize: 12 * fscale }}
+                      />
                     )}
                     {c.base && (
                       <p
                         className="mt-0.5 font-semibold"
                         style={{ color: GOLD, fontSize: 12.5 * fscale }}
+                        dir={isRtl(baseLang) ? "rtl" : undefined}
                       >
                         {c.base}
                       </p>
@@ -1299,6 +1381,83 @@ function FocusLine({
   );
 }
 
+// ── Sinkron hover transliterasi ────────────────────────────────────────────────
+// [linguo-patch:watch-translit-hover-sync-v1] Bacaan Latin (translit) disimpan per
+// BARIS (satu string), bukan per kata. Untuk menyorot token translit yang pas saat
+// kata target di-hover, kita selaraskan BERDASARKAN URUTAN: kata ke-k pada target ↔
+// token translit ke-k. Ini bersih untuk bahasa yang translit-nya memisah kata pakai
+// spasi (Georgia, Rusia, Yunani, dll). Kalau jumlah tak sama (mis. sebagian pinyin
+// China menggabung suku kata), kita TAK menyorot apa pun daripada salah sorot →
+// kembalikan null dan translit dirender polos seperti sebelumnya.
+const HOVER_BG = "rgba(26,158,158,0.28)";
+
+function alignTranslitTokens(
+  target: string,
+  translit: string,
+  langCode?: string
+): { text: string; k: number }[] | null {
+  const wordCount = splitWords(target, langCode).filter((w) => w.isWord).length;
+  // Pertahankan pemisah (spasi) sebagai token sendiri biar spasi asli translit utuh.
+  const pieces = translit.split(/(\s+)/).filter((p) => p.length);
+  const wordPieces = pieces.filter((p) => p.trim().length);
+  if (!wordCount || wordCount !== wordPieces.length) return null;
+  let k = -1;
+  return pieces.map((p) => (p.trim().length ? { text: p, k: ++k } : { text: p, k: -1 }));
+}
+
+// Baris transliterasi dengan token yang bisa disorot sinkron dengan kata target.
+// `hoveredK` = indeks-urut kata yang sedang di-hover (dari kata target ATAU dari
+// token translit ini sendiri); `onHover` mengabarkan balik ke induk supaya kata
+// target ikut menyala. Kalau translit tak bisa diselaraskan, render polos.
+function TranslitLine({
+  target,
+  translit,
+  langCode,
+  hoveredK,
+  onHover,
+  className,
+  style,
+}: {
+  target: string;
+  translit: string;
+  langCode?: string;
+  hoveredK: number | null;
+  onHover: (k: number | null) => void;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const toks = useMemo(
+    () => alignTranslitTokens(target, translit, langCode),
+    [target, translit, langCode]
+  );
+  if (!toks) {
+    return (
+      <p className={className} style={style}>
+        {translit}
+      </p>
+    );
+  }
+  return (
+    <p className={className} style={style}>
+      {toks.map((t, idx) =>
+        t.k < 0 ? (
+          <span key={idx}>{t.text}</span>
+        ) : (
+          <span
+            key={idx}
+            onMouseEnter={() => onHover(t.k)}
+            onMouseLeave={() => onHover(null)}
+            className="rounded transition-colors"
+            style={{ backgroundColor: hoveredK === t.k ? HOVER_BG : undefined }}
+          >
+            {t.text}
+          </span>
+        )
+      )}
+    </p>
+  );
+}
+
 // ── Efek karaoke ──────────────────────────────────────────────────────────────
 // Cue transkrip hanya punya timing per-baris (start/end), tak ada per kata. Jadi
 // durasi baris didistribusikan ke tiap token proporsional dengan panjang
@@ -1365,12 +1524,18 @@ function KaraokeWord({
   progress,
   rtl,
   onClick,
+  hovered,
+  onHover,
 }: {
   text: string;
   state: KaraokeState;
   progress: number;
   rtl?: boolean;
   onClick: (e: React.MouseEvent) => void;
+  // [linguo-patch:watch-translit-hover-sync-v1] hover jarak-jauh: token translit
+  // yang bersesuaian di-hover → kata ini ikut menyala (dan sebaliknya via onHover).
+  hovered?: boolean;
+  onHover?: (h: boolean) => void;
 }) {
   const active = state === "active";
   const pct = state === "sung" ? 100 : active ? Math.round(progress * 100) : 0;
@@ -1383,8 +1548,13 @@ function KaraokeWord({
   return (
     <span
       onClick={onClick}
+      onMouseEnter={() => onHover?.(true)}
+      onMouseLeave={() => onHover?.(false)}
       className="relative mx-[1px] inline-block cursor-pointer rounded align-baseline transition-transform duration-200 hover:bg-[rgba(26,158,158,0.28)]"
-      style={{ transform: active ? "translateY(-1px) scale(1.05)" : "none" }}
+      style={{
+        transform: active ? "translateY(-1px) scale(1.05)" : "none",
+        backgroundColor: hovered ? "rgba(26,158,158,0.28)" : undefined,
+      }}
     >
       {/* lapisan dasar — belum diucapkan (putih) */}
       <span style={{ color: "#fff" }}>{text}</span>
@@ -1411,6 +1581,8 @@ function KaraokeText({
   time,
   langCode,
   onWordTap,
+  hoveredK,
+  onHoverWord,
   className,
   fontSize,
   center,
@@ -1419,12 +1591,22 @@ function KaraokeText({
   time: number;
   langCode?: string;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
+  // [linguo-patch:watch-translit-hover-sync-v1] sinkron hover dengan baris translit
+  // (opsional — bar subtitle di bawah tak mengoper ini, jatuh ke hover CSS biasa).
+  hoveredK?: number | null;
+  onHoverWord?: (k: number | null) => void;
   className?: string;
   fontSize?: number;
   center?: boolean;
 }) {
   const toks = useMemo(() => karaokeTokens(cue, time, langCode), [cue, time, langCode]);
   const rtl = isRtl(langCode ?? "");
+  // Indeks-urut kata (di antara token kata) untuk menyelaraskan hover dengan token
+  // transliterasi. Dihitung sekali; `wordK[j]` = k untuk token ke-j (−1 kalau bukan kata).
+  const wordK = useMemo(() => {
+    let k = -1;
+    return toks.map((t) => (t.isWord ? ++k : -1));
+  }, [toks]);
   // Tiap kata dibungkus inline-block (butuh position:relative buat overlay karaoke).
   // Urutan antar-kata TIDAK boleh mengandalkan algoritma bidi atas kotak inline-block:
   // Chrome & Safari menyusunnya BERBEDA (bikin baris karaoke kebalik di Safari). Jadi
@@ -1455,6 +1637,8 @@ function KaraokeText({
             progress={t.progress}
             rtl={rtl}
             onClick={(e) => onWordTap(e, t.text, cue.target, j)}
+            hovered={hoveredK != null && hoveredK === wordK[j]}
+            onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
           />
         ) : (
           <span
