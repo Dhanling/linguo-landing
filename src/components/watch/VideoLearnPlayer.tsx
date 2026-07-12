@@ -29,6 +29,8 @@ import {
 import {
   processTranscript,
   DEFAULT_BASE_LANG,
+  getAlignment,
+  type AlignGroup,
   getSentenceBreakdown,
   isNonLatin,
   isRtl,
@@ -178,6 +180,14 @@ export default function VideoLearnPlayer({
   // menyorot token transliterasi yang bersesuaian — dan sebaliknya. Selaras hanya
   // saat jumlah kata target === jumlah token translit (lihat alignTranslitTokens).
   const [hoverWord, setHoverWord] = useState<{ i: number; k: number } | null>(null);
+
+  // [watch-word-align-v1] Penjajaran frasa target↔terjemahan per baris (indeks cue
+  // → grup). Dipakai agar hover satu kata IKUT menyorot arti-nya di baris terjemahan
+  // (dan sebaliknya), dengan frasa multi-kata ("el entrenamiento de fuerza" ↔
+  // "strength training") menyala sebagai SATU unit. Hanya untuk pasangan bahasa
+  // beraksara Latin (target & terjemahan) — non-Latin tetap pakai sinkron translit.
+  const [aligns, setAligns] = useState<Record<number, AlignGroup[]>>({});
+  const alignReqRef = useRef<Set<string>>(new Set());
 
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
@@ -674,6 +684,77 @@ export default function VideoLearnPlayer({
   }, [cues, time]);
 
   const activeCue = activeIdx >= 0 ? cues[activeIdx] : null;
+
+  // [watch-word-align-v1] Penjajaran hanya berlaku saat target & terjemahan sama-sama
+  // beraksara Latin (hover-sync kata↔arti). Non-Latin dilewati (pakai translit).
+  const alignEnabled = !isNonLatin(langCode) && !isNonLatin(baseLang);
+
+  // Reset penjajaran saat ganti video/bahasa (cue di-reset ke []).
+  useEffect(() => {
+    setAligns({});
+    alignReqRef.current = new Set();
+  }, [video.videoId, langCode, baseLang]);
+
+  // Ambil penjajaran satu baris (lazy, dedup via ref + cache localStorage di lib).
+  const ensureAlign = useCallback(
+    (i: number) => {
+      if (!alignEnabled) return;
+      const c = cuesRef.current[i];
+      if (!c || !c.base?.trim()) return;
+      const key = `${i}::${c.target}`;
+      if (alignReqRef.current.has(key)) return;
+      alignReqRef.current.add(key);
+      getAlignment({ target: c.target, base: c.base, langCode, baseCode: baseLang })
+        .then((g) => setAligns((prev) => ({ ...prev, [i]: g })))
+        .catch(() => alignReqRef.current.delete(key));
+    },
+    [alignEnabled, langCode, baseLang]
+  );
+
+  // Prefetch penjajaran baris aktif (yang paling mungkin dibaca/hover pengguna).
+  useEffect(() => {
+    if (activeIdx >= 0) ensureAlign(activeIdx);
+  }, [activeIdx, ensureAlign]);
+
+  // Peta bantu per baris: ordinal kata target → grup, ordinal kata terjemahan →
+  // grup, dan ordinal target pertama tiap grup (buat hover dari sisi terjemahan).
+  const alignMaps = useMemo(() => {
+    const out: Record<number, { tGroup: number[]; bGroup: number[]; firstT: number[] }> = {};
+    for (const key of Object.keys(aligns)) {
+      const i = Number(key);
+      const groups = aligns[i];
+      if (!groups || !groups.length) continue;
+      const tGroup: number[] = [];
+      const bGroup: number[] = [];
+      const firstT: number[] = [];
+      groups.forEach((g, gi) => {
+        firstT[gi] = g.t.length ? Math.min(...g.t) : -1;
+        g.t.forEach((t) => (tGroup[t] = gi));
+        g.b.forEach((b) => (bGroup[b] = gi));
+      });
+      out[i] = { tGroup, bGroup, firstT };
+    }
+    return out;
+  }, [aligns]);
+
+  // Kumpulan ordinal yang harus menyala saat ini untuk baris `i` — mengikuti grup
+  // penjajaran kalau ada (frasa menyala utuh), kalau tidak cuma kata yang di-hover.
+  const hotSets = useCallback(
+    (i: number): { t: Set<number>; b: Set<number> } => {
+      const t = new Set<number>();
+      const b = new Set<number>();
+      if (!hoverWord || hoverWord.i !== i) return { t, b };
+      t.add(hoverWord.k);
+      const m = alignMaps[i];
+      const g = m?.tGroup[hoverWord.k];
+      if (m && g != null && g >= 0) {
+        m.tGroup.forEach((gg, k) => gg === g && t.add(k));
+        m.bGroup.forEach((gg, bj) => gg === g && b.add(bj));
+      }
+      return { t, b };
+    },
+    [hoverWord, alignMaps]
+  );
 
   // Auto-scroll baris aktif ke tengah panel transkrip.
   useEffect(() => {
@@ -1210,6 +1291,9 @@ export default function VideoLearnPlayer({
             {txState === "ready" &&
               cues.map((c, i) => {
                 const on = i === activeIdx;
+                // [watch-word-align-v1] ordinal kata target/terjemahan yang menyala.
+                const hs = hotSets(i);
+                const am = alignMaps[i];
                 return (
                   <div
                     key={i}
@@ -1227,7 +1311,14 @@ export default function VideoLearnPlayer({
                         langCode={langCode}
                         onWordTap={onWordTap}
                         hoveredK={hoverWord?.i === i ? hoverWord.k : null}
-                        onHoverWord={(k) => setHoverWord(k == null ? null : { i, k })}
+                        hotKeys={hs.t}
+                        onHoverWord={(k) => {
+                          if (k == null) setHoverWord(null);
+                          else {
+                            setHoverWord({ i, k });
+                            ensureAlign(i);
+                          }
+                        }}
                         className="font-semibold leading-snug"
                         fontSize={14 * fscale}
                       />
@@ -1242,17 +1333,20 @@ export default function VideoLearnPlayer({
                       >
                         {(() => {
                           // k = indeks-urut kata (di antara token kata) → kunci sinkron
-                          // hover dengan token transliterasi di baris ini.
+                          // hover dengan token transliterasi / terjemahan di baris ini.
                           let k = -1;
                           return splitWords(c.target, langCode).map((w, j) => {
                             if (!w.isWord) return <span key={j}>{w.text}</span>;
                             const wk = ++k;
-                            const hot = hoverWord?.i === i && hoverWord.k === wk;
+                            const hot = hs.t.has(wk);
                             return (
                               <span
                                 key={j}
                                 onClick={(e) => onWordTap(e, w.text, c.target, j)}
-                                onMouseEnter={() => setHoverWord({ i, k: wk })}
+                                onMouseEnter={() => {
+                                  setHoverWord({ i, k: wk });
+                                  ensureAlign(i);
+                                }}
                                 onMouseLeave={() => setHoverWord(null)}
                                 className="cursor-pointer rounded transition-colors"
                                 style={{ backgroundColor: hot ? "rgba(26,158,158,0.28)" : undefined }}
@@ -1275,15 +1369,52 @@ export default function VideoLearnPlayer({
                         style={{ color: "#fff", fontSize: 12 * fscale }}
                       />
                     )}
-                    {c.base && (
-                      <p
-                        className="mt-0.5 font-semibold"
-                        style={{ color: GOLD, fontSize: 12.5 * fscale }}
-                        dir={isRtl(baseLang) ? "rtl" : undefined}
-                      >
-                        {c.base}
-                      </p>
-                    )}
+                    {c.base &&
+                      (alignEnabled ? (
+                        <p
+                          className="mt-0.5 font-semibold"
+                          style={{ color: GOLD, fontSize: 12.5 * fscale }}
+                          dir={isRtl(baseLang) ? "rtl" : undefined}
+                        >
+                          {(() => {
+                            // Kata terjemahan bisa di-hover → menyorot kata/frasa
+                            // target-nya (dan sebaliknya) lewat peta penjajaran.
+                            let bk = -1;
+                            return splitWords(c.base, baseLang).map((w, j) => {
+                              if (!w.isWord) return <span key={j}>{w.text}</span>;
+                              const wk = ++bk;
+                              const hot = hs.b.has(wk);
+                              const gi = am?.bGroup[wk];
+                              const linked = am && gi != null && gi >= 0 && am.firstT[gi] >= 0;
+                              return (
+                                <span
+                                  key={j}
+                                  onMouseEnter={() => {
+                                    ensureAlign(i);
+                                    if (linked) setHoverWord({ i, k: am!.firstT[gi!] });
+                                  }}
+                                  onMouseLeave={() => setHoverWord(null)}
+                                  className="rounded transition-colors"
+                                  style={{
+                                    backgroundColor: hot ? "rgba(26,158,158,0.28)" : undefined,
+                                    cursor: linked ? "pointer" : undefined,
+                                  }}
+                                >
+                                  {w.text}
+                                </span>
+                              );
+                            });
+                          })()}
+                        </p>
+                      ) : (
+                        <p
+                          className="mt-0.5 font-semibold"
+                          style={{ color: GOLD, fontSize: 12.5 * fscale }}
+                          dir={isRtl(baseLang) ? "rtl" : undefined}
+                        >
+                          {c.base}
+                        </p>
+                      ))}
                   </div>
                 );
               })}
@@ -1651,6 +1782,7 @@ function KaraokeText({
   langCode,
   onWordTap,
   hoveredK,
+  hotKeys,
   onHoverWord,
   className,
   fontSize,
@@ -1663,6 +1795,8 @@ function KaraokeText({
   // [linguo-patch:watch-translit-hover-sync-v1] sinkron hover dengan baris translit
   // (opsional — bar subtitle di bawah tak mengoper ini, jatuh ke hover CSS biasa).
   hoveredK?: number | null;
+  // [watch-word-align-v1] ordinal kata yang harus menyala (frasa penjajaran utuh).
+  hotKeys?: Set<number> | null;
   onHoverWord?: (k: number | null) => void;
   className?: string;
   fontSize?: number;
@@ -1706,7 +1840,7 @@ function KaraokeText({
             progress={t.progress}
             rtl={rtl}
             onClick={(e) => onWordTap(e, t.text, cue.target, j)}
-            hovered={hoveredK != null && hoveredK === wordK[j]}
+            hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
             onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
           />
         ) : (

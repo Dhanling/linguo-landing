@@ -1260,6 +1260,136 @@ export async function getSentenceBreakdown(params: {
   return { translation, tokens };
 }
 
+// ── Penjajaran kata target↔terjemahan (hover-sync frasa) ─────────────────────
+// Satu grup = sekumpulan indeks kata TARGET yang bermakna sama dengan sekumpulan
+// indeks kata TERJEMAHAN (base). Dipakai player untuk menyorot kata + artinya
+// bersamaan saat di-hover, dengan frasa multi-kata ("el entrenamiento de fuerza"
+// ↔ "strength training") sebagai SATU unit. Indeks mengacu ke urutan kata (token
+// isWord) hasil splitWords — sama dengan yang dirender, jadi pasti sinkron.
+export interface AlignGroup {
+  t: number[];
+  b: number[];
+}
+
+const ALIGN_CACHE_PREFIX = "linguo:watch:align:v1:";
+
+function alignCacheKey(target: string, base: string): string {
+  // Hash ringkas & stabil (djb2) dari pasangan target|base — cukup untuk kunci cache.
+  let h = 5381;
+  const s = `${target} ${base}`;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+  return ALIGN_CACHE_PREFIX + (h >>> 0).toString(36);
+}
+
+function readAlignCache(target: string, base: string): AlignGroup[] | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const v = window.localStorage.getItem(alignCacheKey(target, base));
+    return v ? (JSON.parse(v) as AlignGroup[]) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeAlignCache(target: string, base: string, groups: AlignGroup[]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(alignCacheKey(target, base), JSON.stringify(groups));
+  } catch {
+    /* kuota penuh → abaikan */
+  }
+}
+
+const alignInFlight = new Map<string, Promise<AlignGroup[]>>();
+
+/**
+ * Ambil penjajaran frasa antara satu baris `target` dan terjemahannya `base`.
+ * Tokenisasi dilakukan di sini (splitWords, hanya token isWord) supaya indeks yang
+ * dikembalikan model persis sama dengan yang dirender player. Hasil di-cache di
+ * localStorage per pasangan kalimat — biaya LLM sekali saja per baris. Best-effort:
+ * kalau gagal/kosong, balikin [] (player fallback ke sorot per-kata biasa).
+ */
+export async function getAlignment(params: {
+  target: string;
+  base: string;
+  langCode: string;
+  baseCode: string;
+}): Promise<AlignGroup[]> {
+  const { target, base, langCode, baseCode } = params;
+  if (!target.trim() || !base.trim()) return [];
+  const cached = readAlignCache(target, base);
+  if (cached) return cached;
+
+  const ck = alignCacheKey(target, base);
+  const existing = alignInFlight.get(ck);
+  if (existing) return existing;
+
+  const run = (async (): Promise<AlignGroup[]> => {
+    const targetTokens = splitWords(target, langCode).filter((w) => w.isWord).map((w) => w.text);
+    const baseTokens = splitWords(base, baseCode).filter((w) => w.isWord).map((w) => w.text);
+    if (targetTokens.length === 0 || baseTokens.length === 0) return [];
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/word-info`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
+        mode: "align",
+        word: target,
+        sentence: target,
+        language: ENGLISH_NAME[langCode] ?? ENGLISH_NAME[langCode.split("-")[0]] ?? "English",
+        explanationLanguage: getBaseLangDef(baseCode).name,
+        targetTokens,
+        baseTokens,
+      }),
+    });
+    if (!res.ok) return [];
+    const data = (await res.json()) as { text?: string };
+    const raw = data.text ?? "";
+    const start = raw.indexOf("{");
+    const end = raw.lastIndexOf("}");
+    if (start === -1 || end === -1 || end < start) return [];
+    let parsed: { g?: unknown };
+    try {
+      parsed = JSON.parse(raw.slice(start, end + 1)) as { g?: unknown };
+    } catch {
+      return [];
+    }
+    const tn = targetTokens.length;
+    const bn = baseTokens.length;
+    const groups: AlignGroup[] = Array.isArray(parsed.g)
+      ? (parsed.g as unknown[])
+          .map((grp) => {
+            const g = grp as { t?: unknown; b?: unknown };
+            const clean = (v: unknown, max: number) =>
+              Array.isArray(v)
+                ? Array.from(
+                    new Set(
+                      v
+                        .map((n) => (typeof n === "number" ? n : Number(n)))
+                        .filter((n) => Number.isInteger(n) && n >= 0 && n < max)
+                    )
+                  )
+                : [];
+            return { t: clean(g.t, tn), b: clean(g.b, bn) };
+          })
+          .filter((g) => g.t.length > 0)
+      : [];
+    if (groups.length) writeAlignCache(target, base, groups);
+    return groups;
+  })();
+
+  alignInFlight.set(ck, run);
+  try {
+    return await run;
+  } finally {
+    alignInFlight.delete(ck);
+  }
+}
+
 /** Warna per kelas kata — dipakai chip token di mode Analisa. */
 export const POS_COLOR: Record<PosCategory, string> = {
   noun: "#5AB0FF", verb: "#FF7A9C", adjective: "#F4B740", adverb: "#B58BFF",
