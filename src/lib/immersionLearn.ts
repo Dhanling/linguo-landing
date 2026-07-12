@@ -196,13 +196,14 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=5` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=4 setelah
-      // backfill terjemahan Indonesia baris `pending` (mis. vlog Persia
-      // 3WMSN12Q598 yang tadinya menampilkan teks Persia sebagai terjemahan).
-      // (v=4 dulu backfill vlog Hindi G-dcJA_lA0g; v=3 untuk cues SATU KALIMAT
-      // UTUH; v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=5`,
+      // `v=6` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=5 setelah
+      // re-segmentasi + terjemahan Indonesia vlog Spanyol gpFqVxLDEJ0 (DW
+      // "proteína") yang tadinya 20 baris `pending` = teks Spanyol raksasa tanpa
+      // tanda baca ditampilkan sebagai terjemahan; kini 86 klausa 1-kalimat ber-arti.
+      // (v=5 backfill vlog Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g;
+      // v=3 untuk cues SATU KALIMAT UTUH; v=2 untuk `translit`.)
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=6`,
       { method: "GET" },
       6000
     );
