@@ -40,6 +40,56 @@ const NON_LATIN = new Set([
   "km", "lo", "my", "ur", "am", "hy",
 ]);
 
+// Perbaiki JSON dari model yang lupa meng-escape newline/tab MENTAH di dalam
+// nilai string — kasus paling sering saat model menyisipkan tabel markdown ke
+// field "answer" (baris baru asli bikin JSON.parse gagal, lalu seluruh blob
+// {"answer":...,"followups":...} bocor mentah ke gelembung chat). Kita jalan per
+// karakter dan hanya meng-escape kontrol saat sedang berada DI DALAM string,
+// supaya newline struktural antar-token JSON tak ikut dirusak.
+function repairJson(raw: string): string {
+  let out = "";
+  let inStr = false;
+  let esc = false;
+  for (const ch of raw) {
+    if (esc) {
+      out += ch;
+      esc = false;
+      continue;
+    }
+    if (ch === "\\") {
+      out += ch;
+      esc = true;
+      continue;
+    }
+    if (ch === '"') {
+      inStr = !inStr;
+      out += ch;
+      continue;
+    }
+    if (inStr) {
+      if (ch === "\n") { out += "\\n"; continue; }
+      if (ch === "\r") { out += "\\r"; continue; }
+      if (ch === "\t") { out += "\\t"; continue; }
+    }
+    out += ch;
+  }
+  return out;
+}
+
+// Parse JSON longgar: coba apa adanya dulu, lalu perbaiki kontrol mentah dalam
+// string. Balikin null kalau tetap gagal.
+function parseJsonLoose(raw: string): Record<string, unknown> | null {
+  try {
+    return JSON.parse(raw) as Record<string, unknown>;
+  } catch {
+    try {
+      return JSON.parse(repairJson(raw)) as Record<string, unknown>;
+    } catch {
+      return null;
+    }
+  }
+}
+
 // Panggil Gemini generateContent; balikin teks gabungan (atau "" saat gagal).
 async function callGemini(prompt: string, json: boolean): Promise<string> {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
@@ -130,8 +180,8 @@ export async function POST(req: NextRequest) {
       let answer = "";
       let followups: { q: string; tl?: string }[] = [];
       if (s !== -1 && e > s) {
-        try {
-          const parsed = JSON.parse(raw.slice(s, e + 1)) as Record<string, unknown>;
+        const parsed = parseJsonLoose(raw.slice(s, e + 1));
+        if (parsed) {
           answer = typeof parsed.answer === "string" ? parsed.answer.trim() : "";
           followups = Array.isArray(parsed.followups)
             ? (parsed.followups as unknown[])
@@ -147,12 +197,14 @@ export async function POST(req: NextRequest) {
                 .filter((it) => it.q)
                 .slice(0, 3)
             : [];
-        } catch {
-          /* fallback di bawah */
         }
       }
-      // Kalau JSON gagal, pakai teks mentah sebagai jawaban tanpa usulan.
-      if (!answer) answer = raw.trim();
+      // Kalau JSON tetap gagal: pakai teks mentah HANYA bila ia bukan blob JSON
+      // (kalau diawali "{" berarti JSON rusak — jangan bocorkan mentah ke chat).
+      if (!answer) {
+        const t = raw.trim();
+        answer = t.startsWith("{") ? "Maaf, jawaban gagal dimuat. Coba tanya lagi." : t;
+      }
       return NextResponse.json({ answer, followups });
     }
 
@@ -184,10 +236,8 @@ export async function POST(req: NextRequest) {
     if (s === -1 || e === -1 || e < s) {
       return NextResponse.json({ error: "parse_failed" }, { status: 200 });
     }
-    let parsed: Record<string, unknown> = {};
-    try {
-      parsed = JSON.parse(raw.slice(s, e + 1));
-    } catch {
+    const parsed = parseJsonLoose(raw.slice(s, e + 1));
+    if (!parsed) {
       return NextResponse.json({ error: "parse_failed" }, { status: 200 });
     }
 
