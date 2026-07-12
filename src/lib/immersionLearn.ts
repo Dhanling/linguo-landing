@@ -196,14 +196,16 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=6` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=5 setelah
-      // re-segmentasi + terjemahan Indonesia vlog Spanyol gpFqVxLDEJ0 (DW
-      // "proteína") yang tadinya 20 baris `pending` = teks Spanyol raksasa tanpa
-      // tanda baca ditampilkan sebagai terjemahan; kini 86 klausa 1-kalimat ber-arti.
-      // (v=5 backfill vlog Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g;
-      // v=3 untuk cues SATU KALIMAT UTUH; v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=6`,
+      // `v=7` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=6 setelah
+      // [watch-pair-safe-v1]: split kalimat kini hanya saat jumlah kalimat target ==
+      // base (== translit) → target↔arti tak lagi geser satu baris (gejala Peppa Pig
+      // Spanyol: subtitle tak sinkron dengan terjemahan). Cache lama di-re-split saat
+      // dibaca (splitCuesBySentence idempoten), bump ini yang memaksa CDN menyajikannya.
+      // (v=6 re-segmentasi vlog Spanyol gpFqVxLDEJ0 "proteína"; v=5 backfill vlog
+      // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
+      // v=2 untuk `translit`.)
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=7`,
       { method: "GET" },
       6000
     );
@@ -516,26 +518,25 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
   const bases = cue.base ? splitSentences(cue.base) : null;
   const translits = cue.translit ? splitSentences(cue.translit) : null;
 
-  // Driver jumlah kalimat `n`: UTAMAKAN terjemahan (base) — itu yang dibaca siswa
-  // untuk paham arti, jadi JANGAN sampai terpotong tengah kalimat. Tiap section =
-  // satu kalimat arti utuh. Kalau base tak bertanda baca (1 kalimat), baru pakai
-  // transliterasi lalu target sebagai sinyal. Target proporsional mengikuti; ia
-  // memang tak selalu punya tanda baca (auto-caption/ASR) → dibagi rata per kata.
-  const n = (bases && bases.length > 1
-    ? bases.length
-    : translits && translits.length > 1
-    ? translits.length
-    : targets.length);
+  // [watch-pair-safe-v1] Section = satu kalimat, TAPI pecah HANYA kalau target, base,
+  // & translit SAMA-SAMA terpecah jadi jumlah kalimat yang sama → pasangan 1:1
+  // tepercaya (target[i] ↔ base[i]). Dulu jumlah kalimat `n` diambil dari base lalu
+  // target dibagi rata PER-KATA untuk menyamakannya — itu akar "subtitle tak sinkron
+  // dengan terjemahan": batas kalimat base (Indonesia bertanda baca) hampir tak
+  // pernah jatuh di titik yang sama dengan potongan-kata target (mis. Spanyol ASR
+  // tanpa tanda baca), jadi base[i] berakhir jadi arti target[i-1] — geser satu baris.
+  // Kalau jumlahnya BEDA, biarkan cue UTUH: satu baris memang lebih panjang tapi
+  // target↔arti PAS. Itulah syarat hover-sync (underline arti muncul di section yang
+  // SAMA saat kata target di-hover). Perapian panjang yang tetap aman (pecah di batas
+  // tanda baca hanya saat jumlah penggal target==base) dikerjakan splitLongCue berikutnya.
+  const n = targets.length;
   if (n <= 1) return [cue];
+  if (bases && bases.length !== n) return [cue];
+  if (translits && translits.length !== n) return [cue];
 
-  // Field yang tanda bacanya sudah `n` kalimat → pakai; selain itu bagi rata per kata.
-  const tgt = targets.length === n ? targets : distributeWords(cue.target, n);
-  const bas = bases ? (bases.length === n ? bases : distributeWords(cue.base, n)) : null;
-  const tr = translits
-    ? translits.length === n
-      ? translits
-      : distributeWords(cue.translit ?? "", n)
-    : null;
+  const tgt = targets;
+  const bas = bases;
+  const tr = translits;
 
   const dur = Math.max(0.001, cue.end - cue.start);
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
