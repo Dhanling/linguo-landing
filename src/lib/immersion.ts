@@ -345,8 +345,14 @@ export function youtubeThumb(videoId: string): string {
   return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 }
 
-// Search YouTube lewat Edge Function `yt-search`. Dibias ke bahasa target dan
-// (default) dibatasi ke video bercaption biar subtitle-nya ada saat ditonton.
+// Search YouTube lewat Edge Function `yt-search`. Dibias ke bahasa target.
+// [linguo-patch:watch-caption-agnostic-v1] TIDAK lagi mensyaratkan caption manual
+// (dulu default withCaptions=true → videoCaption=closedCaption). YouTube hanya
+// menghitung caption yang DIUNGGAH MANUAL, bukan auto-caption — jadi filter itu
+// mengosongkan katalog bahasa minim konten (mis. Georgia: kategori Vlog/Kartun +
+// durasi jadi nihil). Player sudah punya fallback ASR (yt-asr Gemini) saat video
+// tak bercaption, jadi katalog aman tanpa syarat caption. Caller boleh tetap kirim
+// withCaptions:true kalau memang perlu track manual.
 // Return [] kalau gagal (quota/network) biar UI turun ke empty state, bukan error.
 export async function searchImmersionVideos(params: {
   query: string;
@@ -375,7 +381,7 @@ export async function searchImmersionVideos(params: {
       body: JSON.stringify({
         query: params.query,
         language: params.language,
-        withCaptions: params.withCaptions ?? true,
+        withCaptions: params.withCaptions ?? false,
         order: params.order,
         max: params.max ?? 18,
         pageToken: params.pageToken,
