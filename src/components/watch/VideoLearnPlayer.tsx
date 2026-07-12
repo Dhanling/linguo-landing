@@ -62,6 +62,16 @@ const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
+
+// [watch-word-align-v1] Penanda hover-sync antar baris (kata target ↔ arti ↔
+// transliterasi). Dulu sorot LATAR teal — sekarang GARIS BAWAH: tak menutup teks,
+// lebih halus, dan tetap rapi saat frasa multi-kata menyala menembus wrap baris.
+const SYNC_UNDERLINE: React.CSSProperties = {
+  textDecorationLine: "underline",
+  textDecorationColor: TEAL,
+  textDecorationThickness: 2,
+  textUnderlineOffset: 3,
+};
 const SUB = "rgba(255,255,255,0.5)";
 
 const SPEEDS = [1, 0.75, 0.5, 1.25];
@@ -1368,8 +1378,8 @@ export default function VideoLearnPlayer({
                                   ensureAlign(i);
                                 }}
                                 onMouseLeave={() => setHoverWord(null)}
-                                className="cursor-pointer rounded transition-colors"
-                                style={{ backgroundColor: hot ? "rgba(26,158,158,0.28)" : undefined }}
+                                className="cursor-pointer transition-colors"
+                                style={hot ? SYNC_UNDERLINE : undefined}
                               >
                                 {w.text}
                               </span>
@@ -1414,9 +1424,9 @@ export default function VideoLearnPlayer({
                                     if (linked) setHoverWord({ i, k: am!.firstT[gi!] });
                                   }}
                                   onMouseLeave={() => setHoverWord(null)}
-                                  className="rounded transition-colors"
+                                  className="transition-colors"
                                   style={{
-                                    backgroundColor: hot ? "rgba(26,158,158,0.28)" : undefined,
+                                    ...(hot ? SYNC_UNDERLINE : null),
                                     cursor: linked ? "pointer" : undefined,
                                   }}
                                 >
@@ -1609,7 +1619,6 @@ function FocusLine({
 // spasi (Georgia, Rusia, Yunani, dll). Kalau jumlah tak sama (mis. sebagian pinyin
 // China menggabung suku kata), kita TAK menyorot apa pun daripada salah sorot →
 // kembalikan null dan translit dirender polos seperti sebelumnya.
-const HOVER_BG = "rgba(26,158,158,0.28)";
 
 function alignTranslitTokens(
   target: string,
@@ -1667,8 +1676,8 @@ function TranslitLine({
             key={idx}
             onMouseEnter={() => onHover(t.k)}
             onMouseLeave={() => onHover(null)}
-            className="rounded transition-colors"
-            style={{ backgroundColor: hoveredK === t.k ? HOVER_BG : undefined }}
+            className="transition-colors"
+            style={hoveredK === t.k ? SYNC_UNDERLINE : undefined}
           >
             {t.text}
           </span>
@@ -1770,10 +1779,10 @@ function KaraokeWord({
       onClick={onClick}
       onMouseEnter={() => onHover?.(true)}
       onMouseLeave={() => onHover?.(false)}
-      className="relative mx-[1px] inline-block cursor-pointer rounded align-baseline transition-transform duration-200 hover:bg-[rgba(26,158,158,0.28)]"
+      className="relative mx-[1px] inline-block cursor-pointer align-baseline transition-transform duration-200 hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]"
       style={{
         transform: active ? "translateY(-1px) scale(1.05)" : "none",
-        backgroundColor: hovered ? "rgba(26,158,158,0.28)" : undefined,
+        ...(hovered ? SYNC_UNDERLINE : null),
       }}
     >
       {/* lapisan dasar — belum diucapkan (putih) */}

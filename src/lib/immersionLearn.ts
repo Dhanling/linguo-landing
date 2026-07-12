@@ -1271,7 +1271,11 @@ export interface AlignGroup {
   b: number[];
 }
 
-const ALIGN_CACHE_PREFIX = "linguo:watch:align:v1:";
+// v2: prompt align diperbaiki — kata mirip artikel yang sebenarnya kata ganti objek
+// (Spanyol "las"/"los" = "them", Prancis "les"/"leur", Italia "li"/"le", Portugis
+// "os"/"as", dll.) kini dijajarkan ke arti sebenarnya, bukan dilebur ke artikel+nomina.
+// Naikkan versi biar penjajaran lama yang salah di localStorage di-ambil ulang.
+const ALIGN_CACHE_PREFIX = "linguo:watch:align:v2:";
 
 function alignCacheKey(target: string, base: string): string {
   // Hash ringkas & stabil (djb2) dari pasangan target|base — cukup untuk kunci cache.
