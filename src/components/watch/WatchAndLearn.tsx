@@ -7,7 +7,30 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Languages, Layers, Play, RefreshCw, Search, Trash2, X, Check } from "lucide-react";
+import {
+  ArrowLeft,
+  Languages,
+  Layers,
+  Play,
+  RefreshCw,
+  Search,
+  Trash2,
+  X,
+  Check,
+  CircleCheck,
+  Sparkles,
+  Flame,
+  Clapperboard,
+  ToyBrick,
+  Newspaper,
+  Music,
+  Film,
+  Trophy,
+  Lightbulb,
+  Video,
+  Baby,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import {
   IMMERSION_CATEGORIES,
   IMMERSION_LANGS,
@@ -90,6 +113,22 @@ const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
 
+// [linguo-patch:watch-tab-lucide-v1] Ikon Lucide per kategori (menggantikan emoji
+// di tab). Dipetakan ke `id` kategori dari IMMERSION_CATEGORIES.
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  populer: Sparkles,
+  kreator: Flame,
+  hiburan: Clapperboard,
+  kartun: ToyBrick,
+  berita: Newspaper,
+  musik: Music,
+  film: Film,
+  olahraga: Trophy,
+  teknologi: Lightbulb,
+  vlog: Video,
+  anak: Baby,
+};
+
 // [linguo-patch:watch-resume-refresh-v1] Video yang sedang dibuka disimpan di URL
 // (?v=<videoId>&vl=<bahasa>) supaya REFRESH tetap kembali ke mode menonton, bukan
 // mental ke katalog. Metadata kartu diambil dari riwayat tonton lokal (video yang
@@ -122,13 +161,11 @@ function durRange(id: DurationFilter): { min: number; max: number } {
 export default function WatchAndLearn() {
   // Bahasa target — disimpan di localStorage biar konsisten antar kunjungan.
   const [langCode, setLangCode] = useState("en");
-  const [category, setCategory] = useState("populer");
+  const [category, setCategory] = useState(SIAP_ID);
   const [freeText, setFreeText] = useState("");
   const [committedText, setCommittedText] = useState("");
-  // [linguo-patch:watch-orient-toggle-v1] filter jenis konten: semua / shorts
-  // (klip vertikal pendek) / video (landscape lebih panjang). YouTube Data API
-  // tak kasih orientasi, jadi dipisah pakai durasi — proxy paling andal.
-  const [orient, setOrient] = useState<"all" | "shorts" | "video">("all");
+  // [linguo-patch:watch-video-only-v1] Katalog kini khusus video landscape — Shorts
+  // (klip vertikal pendek) disingkirkan sepenuhnya (lihat filter orientasi di shownVideos).
   // [linguo-patch:watch-duration-filter-v1] Filter durasi: semua / <5 / 5–10 / 10–20 mnt.
   const [durationFilter, setDurationFilter] = useState<DurationFilter>("all");
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
@@ -169,11 +206,10 @@ export default function WatchAndLearn() {
     [history, langCode]
   );
 
-  // [linguo-patch:watch-orient-frame0-v1] Saat filter Shorts/Video aktif, deteksi
-  // orientasi asli tiap video via frame0.jpg (sekali per videoId, hasilnya di-cache).
-  // Hanya jalan kalau orient !== "all" biar tak muat gambar ekstra saat tak perlu.
+  // [linguo-patch:watch-orient-frame0-v1] Katalog khusus landscape: deteksi orientasi
+  // asli tiap video via frame0.jpg (sekali per videoId, hasilnya di-cache) supaya klip
+  // portrait/Shorts bisa disaring keluar dari grid.
   useEffect(() => {
-    if (orient === "all") return;
     const pending = videos.filter((v) => !orientCache.has(v.videoId));
     if (!pending.length) return;
     let cancelled = false;
@@ -192,7 +228,7 @@ export default function WatchAndLearn() {
     return () => {
       cancelled = true;
     };
-  }, [videos, orient]);
+  }, [videos]);
 
   // [linguo-patch:watch-orient-frame0-v1] Terapkan filter jenis konten ke grid.
   // Prioritas orientasi asli (frame0); selama deteksi belum selesai / frame0 gagal,
@@ -205,18 +241,16 @@ export default function WatchAndLearn() {
       if (durationFilter !== "all") {
         if (v.duration == null || v.duration < dur.min || v.duration >= dur.max) return false;
       }
-      // Filter jenis konten (orientasi asli frame0 → fallback proxy durasi).
-      if (orient !== "all") {
-        const portrait = orientCache.get(v.videoId);
-        if (portrait !== undefined) return orient === "shorts" ? portrait : !portrait;
-        if (orient === "shorts") return v.duration != null && v.duration <= SHORTS_MAX_SEC;
-        return v.duration == null || v.duration > SHORTS_MAX_SEC;
-      }
-      return true;
+      // Hanya landscape: orientasi asli frame0 → fallback proxy durasi. Video portrait
+      // (Shorts) disingkirkan; yang durasinya null dianggap landscape sementara sampai
+      // frame0 resolve.
+      const portrait = orientCache.get(v.videoId);
+      if (portrait !== undefined) return !portrait;
+      return v.duration == null || v.duration > SHORTS_MAX_SEC;
     });
     // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videos, orient, orientTick, durationFilter]);
+  }, [videos, orientTick, durationFilter]);
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
@@ -426,7 +460,7 @@ export default function WatchAndLearn() {
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
   useEffect(() => {
     setVisible(GRID_COLS);
-  }, [langCode, category, committedText, orient, durationFilter]);
+  }, [langCode, category, committedText, durationFilter]);
 
   const loadMore = useCallback(async () => {
     if (!nextToken || state === "more") return;
@@ -699,59 +733,32 @@ export default function WatchAndLearn() {
           {/* Tab "Siap" — video yang subtitle-nya langsung muncul (sudah diproses). */}
           <button
             onClick={() => setCategory(SIAP_ID)}
-            className="shrink-0 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
             style={{
               backgroundColor: category === SIAP_ID ? TEAL : CARD,
               border: `1px solid ${category === SIAP_ID ? TEAL : BORDER}`,
               color: category === SIAP_ID ? "#fff" : "rgba(255,255,255,0.8)",
             }}
           >
-            <span className="mr-1">✅</span>
+            <CircleCheck className="h-4 w-4" />
             Siap
           </button>
           {IMMERSION_CATEGORIES.map((c) => {
             const on = c.id === category;
+            const Icon = CATEGORY_ICONS[c.id];
             return (
               <button
                 key={c.id}
                 onClick={() => setCategory(c.id)}
-                className="shrink-0 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
                 style={{
                   backgroundColor: on ? TEAL : CARD,
                   border: `1px solid ${on ? TEAL : BORDER}`,
                   color: on ? "#fff" : "rgba(255,255,255,0.8)",
                 }}
               >
-                <span className="mr-1">{c.emoji}</span>
+                {Icon && <Icon className="h-4 w-4" />}
                 {c.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* [linguo-patch:watch-orient-toggle-v1] Toggle jenis konten: Semua / Shorts / Video */}
-        <div
-          className="mt-4 inline-flex gap-1 rounded-full p-1"
-          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-        >
-          {([
-            ["all", "Semua", ""],
-            ["shorts", "Shorts", "📱"],
-            ["video", "Video", "🖥️"],
-          ] as const).map(([k, label, emoji]) => {
-            const on = orient === k;
-            return (
-              <button
-                key={k}
-                onClick={() => setOrient(k)}
-                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
-                style={{
-                  backgroundColor: on ? TEAL : "transparent",
-                  color: on ? "#fff" : "rgba(255,255,255,0.7)",
-                }}
-              >
-                {emoji && <span className="mr-1">{emoji}</span>}
-                {label}
               </button>
             );
           })}
@@ -809,11 +816,10 @@ export default function WatchAndLearn() {
           >
             <p className="text-[15px] font-bold">Tak ada video cocok filter di halaman ini</p>
             <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-              Longgarkan filter durasi/jenis konten, muat lainnya, atau ganti kategori.
+              Longgarkan filter durasi, muat lainnya, atau ganti kategori.
             </p>
             <button
               onClick={() => {
-                setOrient("all");
                 setDurationFilter("all");
               }}
               className="mt-3 rounded-full px-4 py-2 text-[12.5px] font-bold"
