@@ -559,36 +559,86 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
 // muat satu baris pada lebar panel transkrip (target "1 kalimat / 1 baris").
 const MAX_CUE_CHARS = 50;
 
+// Kata sambung lintas-bahasa (fokus katalog: EN/ES/ID/FR/DE/PT/IT). Dipakai jadi
+// titik pisah klausa TAMBAHAN untuk transkrip tanpa tanda baca (ASR/auto-caption),
+// biar kalimat panjang tetap terpecah jadi section 1–2 baris. Pisah terjadi
+// SEBELUM kata sambung (ia memimpin klausa berikutnya, mis. "…crezcan | ya los
+// conozco | porque…"). Klausa pendek digabung lagi ke ≤ MAX_CUE_CHARS di
+// splitLongCue, jadi tak jadi remah.
+const CLAUSE_CONJUNCTIONS = [
+  // Indonesia
+  "dan", "tetapi", "tapi", "namun", "atau", "karena", "sehingga", "sedangkan",
+  "meskipun", "walaupun", "supaya", "agar", "ketika", "sementara", "yang",
+  // English
+  "and", "but", "or", "because", "although", "though", "while", "however",
+  "therefore", "since", "when", "which", "that", "who",
+  // Spanish
+  "pero", "porque", "aunque", "mientras", "sino", "pues", "cuando", "que",
+  "quien", "donde", "ya",
+  // French
+  "et", "mais", "car", "parce", "tandis", "qui", "quand", "lorsque", "donc", "puisque",
+  // German
+  "und", "aber", "oder", "weil", "obwohl", "während", "dass", "wenn", "denn", "sondern",
+  // Portuguese / Italian
+  "embora", "enquanto", "porém", "perché", "benché", "mentre", "poiché", "quindi",
+];
+const CONJ_SPLIT_RE = new RegExp(`\\s+(?=(?:${CLAUSE_CONJUNCTIONS.join("|")})\\b)`, "iu");
+
 /**
- * Pisah teks jadi klausa di batas tanda baca — delimiter ikut klausa sebelumnya.
- * Termasuk tanda baca non-Latin (، ؛ Arab/Persia, 、 ， ； CJK) supaya kalimat
- * panjang beraksara itu bisa dipecah di batas klausa yang benar (bukan jatuh ke
- * pemecah per-kata yang bisa salah pasang target↔terjemahan).
+ * Pisah teks jadi klausa: pertama di batas tanda baca (termasuk non-Latin ، ؛ 、
+ * ， ；), lalu tiap penggal dipecah lagi di batas KATA SAMBUNG. Pemecahan kata
+ * sambung inilah yang menyelamatkan transkrip ASR tanpa tanda baca — tanpa itu
+ * satu kalimat panjang tak punya titik potong sama sekali (delimiter ikut klausa
+ * sebelumnya; kata sambung memimpin klausa berikutnya).
  */
 function splitClauses(text: string): string[] {
-  const parts = text.match(/[^,;:—–،؛、，；]+[,;:—–،؛、，；]*/g);
-  return parts ? parts.map((s) => s.trim()).filter(Boolean) : [text.trim()];
+  const byPunct = text.match(/[^,;:—–،؛、，；]+[,;:—–،؛、，；]*/g) ?? [text];
+  const out: string[] = [];
+  for (const seg of byPunct) {
+    for (const piece of seg.split(CONJ_SPLIT_RE)) {
+      const t = piece.trim();
+      if (t) out.push(t);
+    }
+  }
+  return out.length ? out : [text.trim()];
 }
 
 /**
- * Pecah cue yang masih kepanjangan di batas KLAUSA (koma dll). Hanya dipecah kalau
- * terjemahan (base) & transliterasi punya jumlah klausa yang SAMA dengan target —
- * jadi tiap section hasil pecahan tetap membawa terjemahannya sendiri (tak ada
- * section tanpa terjemahan / salah pasang). Kalau tak bisa dipasangkan (mis. ASR
- * tanpa koma), cue dibiarkan utuh — terjemahan tetap benar walau sedikit lebih panjang.
- * Klausa pendek digabung sampai ≤ MAX_CUE_CHARS biar tak jadi banyak section mungil.
+ * Bagi teks jadi n potongan berurutan dengan ukuran proporsional ke `weights`
+ * (panjang target tiap grup). Dipakai memasangkan base/translit ke grup target
+ * saat jumlah klausanya TAK sama (kata sambung antar bahasa tak selalu sejajar) —
+ * perkiraan, tapi setiap section tetap membawa terjemahannya, bukan blob panjang.
+ */
+function distributeByWeights(text: string, weights: number[]): string[] {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const totalW = weights.reduce((a, b) => a + b, 0) || 1;
+  const out: string[] = [];
+  let idx = 0;
+  let acc = 0;
+  for (let g = 0; g < weights.length; g++) {
+    acc += weights[g];
+    const to = g === weights.length - 1
+      ? words.length
+      : Math.max(idx, Math.round((acc / totalW) * words.length));
+    out.push(words.slice(idx, to).join(" "));
+    idx = to;
+  }
+  return out;
+}
+
+/**
+ * Pecah cue yang masih kepanjangan di batas KLAUSA (tanda baca + kata sambung).
+ * Klausa target digabung greedy jadi grup ≤ MAX_CUE_CHARS. Base & translit
+ * dipasangkan ke grup: kalau jumlah klausanya SAMA dengan target → gabung per grup
+ * (akurat); kalau tidak → dibagi proporsional per kata mengikuti panjang tiap grup
+ * target (perkiraan, tapi tiap section tetap bawa terjemahannya, tak ada blob panjang).
  */
 function splitLongCue(cue: LearnCue): LearnCue[] {
   if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
   const targets = splitClauses(cue.target);
   if (targets.length <= 1) return [cue];
-  const bases = cue.base ? splitClauses(cue.base) : null;
-  const translits = cue.translit ? splitClauses(cue.translit) : null;
-  if (bases && bases.length !== targets.length) return [cue];
-  if (translits && translits.length !== targets.length) return [cue];
 
-  // Kelompokkan klausa jadi grup ≤ MAX_CUE_CHARS (indeks sama dipakai buat base &
-  // translit biar pasangannya tetap sejajar).
+  // Kelompokkan klausa target jadi grup ≤ MAX_CUE_CHARS.
   const groups: number[][] = [];
   let cur: number[] = [];
   let curLen = 0;
@@ -605,21 +655,35 @@ function splitLongCue(cue: LearnCue): LearnCue[] {
   if (cur.length) groups.push(cur);
   if (groups.length <= 1) return [cue];
 
-  const join = (arr: string[], idx: number[]) => idx.map((i) => arr[i]).join(" ").trim();
+  const groupText = groups.map((idx) => idx.map((i) => targets[i]).join(" ").trim());
+  const weights = groupText.map((s) => s.length);
+
+  // Pasangkan base/translit ke grup target — sejajar kalau klausanya sama banyak,
+  // proporsional kalau tidak.
+  const pairField = (val: string | undefined | null): string[] | null => {
+    if (!val) return null;
+    const clauses = splitClauses(val);
+    if (clauses.length === targets.length) {
+      return groups.map((idx) => idx.map((i) => clauses[i]).join(" ").trim());
+    }
+    return distributeByWeights(val, weights);
+  };
+  const bases = pairField(cue.base);
+  const translits = pairField(cue.translit);
+
   const dur = Math.max(0.001, cue.end - cue.start);
-  const total = targets.reduce((n, s) => n + s.length, 0) || 1;
+  const total = weights.reduce((n, w) => n + w, 0) || 1;
   let acc = 0;
-  return groups.map((idx, g) => {
-    const tg = join(targets, idx);
+  return groups.map((_, g) => {
     const start = cue.start + dur * (acc / total);
-    acc += idx.reduce((n, i) => n + targets[i].length, 0);
+    acc += weights[g];
     const end = g === groups.length - 1 ? cue.end : cue.start + dur * (acc / total);
     return {
       start,
       end: Math.max(end, start + 0.3),
-      target: tg,
-      base: bases ? join(bases, idx) : "",
-      ...(translits ? { translit: join(translits, idx) } : {}),
+      target: groupText[g],
+      base: bases ? bases[g] ?? "" : "",
+      ...(translits ? { translit: translits[g] ?? "" } : {}),
     };
   });
 }
