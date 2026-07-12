@@ -25,6 +25,7 @@ import {
   removeSavedWord,
   saveWord,
   speakText,
+  WordConjugation,
   WordDeepDive,
   WordMeaning,
 } from "@/lib/immersionLearn";
@@ -274,6 +275,13 @@ function StudyTab({
   // Pertanyaan lanjutan yang diketik langsung dari tab Pelajari.
   const [ownQ, setOwnQ] = useState("");
 
+  // Chip "Apa itu <istilah> dalam bahasa <X>?" untuk tiap istilah tata bahasa baru
+  // yang disebut di penjelasan (mis. "vokatif" pada kata Georgia).
+  const langName = getImmersionLang(langCode)?.name ?? "";
+  const termQuestions = (deep?.terms ?? []).map((t) =>
+    langName ? `Apa itu ${t} dalam bahasa ${langName}?` : `Apa itu ${t}?`
+  );
+
   if (loading) {
     return (
       <div className="flex flex-col items-center gap-3 py-16" style={{ color: SUB }}>
@@ -325,6 +333,16 @@ function StudyTab({
       {deep.nuance && (
         <Section title="Nuansa">
           <p className="text-[13.5px] leading-relaxed text-white/85">{deep.nuance}</p>
+        </Section>
+      )}
+
+      {/* Konjugasi (kata kerja) — bagian yang berubah diberi warna */}
+      {deep.conjugation && deep.conjugation.rows.length > 0 && (
+        <Section title={deep.conjugation.caption ? `Konjugasi — ${deep.conjugation.caption}` : "Konjugasi"}>
+          {deep.conjugation.note && (
+            <p className="mb-2.5 text-[13px] leading-relaxed text-white/75">{deep.conjugation.note}</p>
+          )}
+          <ConjugationTable conj={deep.conjugation} langCode={langCode} />
         </Section>
       )}
 
@@ -388,12 +406,23 @@ function StudyTab({
         </Section>
       )}
 
-      {/* Ajakan bertanya */}
+      {/* Ajakan bertanya — chip istilah tata bahasa baru muncul lebih dulu, mis.
+          "Apa itu vokatif dalam bahasa Georgia?" dari deep.terms. */}
       <div className="pt-1">
         <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
           Masih penasaran? Tanya AI:
         </p>
         <div className="flex flex-wrap gap-2">
+          {termQuestions.map((q) => (
+            <button
+              key={q}
+              onClick={() => onAsk(q)}
+              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/10"
+              style={{ backgroundColor: "rgba(26,158,158,0.12)", border: `1px solid rgba(26,158,158,0.35)`, color: "#7FE0E0" }}
+            >
+              {q}
+            </button>
+          ))}
           {SUGGESTED.map((q) => (
             <button
               key={q}
@@ -569,6 +598,65 @@ function RichText({ text }: { text: string }) {
         return <span key={i}>{p}</span>;
       })}
     </p>
+  );
+}
+
+// Tabel konjugasi kata kerja. Kolom: Bentuk (subjek) · Kata (target) · Suffix · Arti.
+// Bagian yang berubah antar-baris (part.c) diwarnai emas di dalam kata utuh, dan
+// kolom Suffix menyorotnya lagi biar pola perubahannya kelihatan sekilas.
+function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode: string }) {
+  return (
+    <div className="-mx-1 overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr style={{ color: SUB }}>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Bentuk</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Kata</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Suffix</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Arti</th>
+          </tr>
+        </thead>
+        <tbody>
+          {conj.rows.map((r, i) => {
+            const full = r.parts.map((p) => p.t).join("");
+            return (
+              <tr key={i} style={{ borderTop: `1px solid ${BORDER}` }}>
+                <td className="px-1.5 py-2 align-top text-[12.5px] font-semibold text-white/75 whitespace-nowrap">
+                  {r.label}
+                </td>
+                <td className="px-1.5 py-2 align-top">
+                  <button
+                    onClick={() => speakText(full, langCode)}
+                    className="inline-flex items-center gap-1 text-left"
+                    aria-label="Dengar"
+                  >
+                    <span className="text-[14.5px] font-bold leading-snug" dir="auto">
+                      {r.parts.map((p, j) => (
+                        <span key={j} style={p.c ? { color: GOLD } : { color: "#fff" }}>
+                          {p.t}
+                        </span>
+                      ))}
+                    </span>
+                    <Volume2 className="h-3.5 w-3.5 shrink-0 opacity-50" style={{ color: TEAL }} />
+                  </button>
+                  {r.tl && (
+                    <p className="text-[11px] italic" style={{ color: "#7FE0E0" }} dir="ltr">
+                      {r.tl}
+                    </p>
+                  )}
+                </td>
+                <td className="px-1.5 py-2 align-top text-[13px] font-bold whitespace-nowrap" style={{ color: GOLD }} dir="auto">
+                  {r.suffix || "—"}
+                </td>
+                <td className="px-1.5 py-2 align-top text-[12.5px] leading-snug text-white/80">
+                  {r.gloss}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

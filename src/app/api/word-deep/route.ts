@@ -113,6 +113,9 @@ export async function POST(req: NextRequest) {
         `No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
         `would likely ask NEXT — ${followupSpec}, ` +
         `directly related to THIS question and answer, without repeating them. ` +
+        `If your answer introduced a grammatical term the learner may not know (e.g. a case, ` +
+        `mood, aspect, gender), make ONE follow-up ask what that term means in the context of ` +
+        `${language} — phrased in ${EXPLANATION_LANGUAGE} naming the language (e.g. "Apa itu vokatif dalam bahasa Georgia?"). ` +
         `Return ONLY a JSON object: {"answer": "...", "followups": ${followupShape}}.` +
         `\n\nQuestion: ${question}`;
       const raw = await callGemini(prompt, true);
@@ -158,7 +161,15 @@ export async function POST(req: NextRequest) {
       `  "usage": 1-2 sentences on WHEN and HOW this word is typically used,\n` +
       `  "nuance": 1 sentence on connotation/nuance/feeling the word carries (empty string if none),\n` +
       `  "similar": array (0-3) of { "word": a similar/confusable ${language} word,${nonLatin ? ' "tl": its Latin reading,' : ""} "diff": one short sentence on how it differs from "${word}" },\n` +
-      `  "examples": array (exactly 2) of { "target": a natural ${language} example sentence using "${word}",${nonLatin ? ' "tl": its Latin reading,' : ""} "gloss": its ${EXPLANATION_LANGUAGE} translation }\n` +
+      `  "examples": array (exactly 2) of { "target": a natural ${language} example sentence using "${word}",${nonLatin ? ' "tl": its Latin reading,' : ""} "gloss": its ${EXPLANATION_LANGUAGE} translation },\n` +
+      `  "conjugation": include ONLY if "${word}" is a VERB, otherwise null. Object:\n` +
+      `    { "caption": short ${EXPLANATION_LANGUAGE} label of the paradigm shown (e.g. the tense/aspect, like "Kala kini (present)"),\n` +
+      `      "note": one short ${EXPLANATION_LANGUAGE} sentence about the base/dictionary form and what changes,\n` +
+      `      "rows": array (the standard subject persons — saya, kamu, dia, kami, kalian, mereka — or the paradigm most useful for this verb) of\n` +
+      `        { "label": the ${EXPLANATION_LANGUAGE} label for this form (the subject/person),\n` +
+      `          "parts": ordered text segments that concatenate EXACTLY to the full ${language} conjugated form, each { "t": the segment text, "c": true ONLY for the segment(s) that CHANGE across the paradigm (the inflected prefix/suffix), false for the invariant stem },\n` +
+      `          "suffix": the changing affix(es) for this form as a short ${language} string (e.g. "-s"),${nonLatin ? ' "tl": Latin reading of the full form,' : ""} "gloss": short ${EXPLANATION_LANGUAGE} meaning of this form } },\n` +
+      `  "terms": array (0-4) of grammatical terms in ${EXPLANATION_LANGUAGE} that you used above and that a beginner may not know (e.g. "vokatif", "nominatif", "aspek", "gender gramatikal"); empty array if none\n` +
       `}` + translitHint + ` No markdown, no commentary outside the JSON.`;
 
     const raw = await callGemini(prompt, true);
@@ -194,6 +205,43 @@ export async function POST(req: NextRequest) {
           .slice(0, 3)
       : [];
 
+    // Tabel konjugasi — hanya untuk kata kerja (null kalau bukan). Tiap baris
+    // membawa `parts` (segmen kata; `c:true` = bagian yang berubah/terkonjugasi)
+    // supaya klien bisa mewarnai afiks yang berubah di dalam kata utuh.
+    const co = parsed.conjugation as Record<string, unknown> | null | undefined;
+    let conjugation: {
+      caption: string;
+      note: string;
+      rows: { label: string; parts: { t: string; c: boolean }[]; suffix: string; tl: string; gloss: string }[];
+    } | null = null;
+    if (co && typeof co === "object" && Array.isArray(co.rows)) {
+      const rows = (co.rows as unknown[])
+        .map((r) => {
+          const o = r as Record<string, unknown>;
+          const parts = Array.isArray(o.parts)
+            ? (o.parts as unknown[])
+                .map((p) => {
+                  const po = p as Record<string, unknown>;
+                  return { t: str(po.t), c: po.c === true };
+                })
+                .filter((p) => p.t)
+            : [];
+          return { label: str(o.label), parts, suffix: str(o.suffix), tl: str(o.tl), gloss: str(o.gloss) };
+        })
+        .filter((r) => r.parts.length > 0)
+        .slice(0, 8);
+      if (rows.length) {
+        conjugation = { caption: str(co.caption), note: str(co.note), rows };
+      }
+    }
+
+    const terms = Array.isArray(parsed.terms)
+      ? (parsed.terms as unknown[])
+          .map((t) => str(t))
+          .filter((t) => t.length > 0 && t.length <= 40)
+          .slice(0, 4)
+      : [];
+
     return NextResponse.json({
       register: str(parsed.register).toLowerCase(),
       registerNote: str(parsed.registerNote),
@@ -201,6 +249,8 @@ export async function POST(req: NextRequest) {
       nuance: str(parsed.nuance),
       similar,
       examples,
+      conjugation,
+      terms,
     });
   } catch {
     return NextResponse.json({ error: "failed" }, { status: 200 });

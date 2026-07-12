@@ -7,7 +7,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Layers, Play, RefreshCw, Search, Trash2, X, Check } from "lucide-react";
+import { ArrowLeft, Languages, Layers, Play, RefreshCw, Search, Trash2, X, Check } from "lucide-react";
 import {
   IMMERSION_CATEGORIES,
   IMMERSION_LANGS,
@@ -25,7 +25,16 @@ import {
   formatDuration,
   youtubeThumb,
 } from "@/lib/immersion";
-import { fetchReadyVideos, getSavedWords, prewarmTranscripts } from "@/lib/immersionLearn";
+import {
+  fetchReadyVideos,
+  getSavedWords,
+  prewarmTranscripts,
+  BASE_LANGS,
+  DEFAULT_BASE_LANG,
+  getBaseLangDef,
+  getStoredBaseLang,
+  storeBaseLang,
+} from "@/lib/immersionLearn";
 import { supabase } from "@/lib/supabase-client";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
@@ -135,6 +144,11 @@ export default function WatchAndLearn() {
   );
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   const [langQuery, setLangQuery] = useState("");
+  // Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). `basePickerOpen`
+  // = picker biasa (bisa ditutup); `baseFirstOpen` = tanya pertama kali (wajib pilih).
+  const [baseLang, setBaseLang] = useState(DEFAULT_BASE_LANG);
+  const [basePickerOpen, setBasePickerOpen] = useState(false);
+  const [baseFirstOpen, setBaseFirstOpen] = useState(false);
   const [active, setActive] = useState<ImmersionVideo | null>(null);
   const [activeLang, setActiveLang] = useState("en");
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
@@ -213,6 +227,10 @@ export default function WatchAndLearn() {
     } catch {
       /* abaikan */
     }
+    // Bahasa terjemahan: pulihkan pilihan, atau tanya kalau ini pertama kali.
+    const storedBase = getStoredBaseLang();
+    if (storedBase) setBaseLang(storedBase);
+    else setBaseFirstOpen(true);
     const hist = getWatchHistory();
     setHistory(hist);
     // [linguo-patch:watch-resume-refresh-v1] URL bawa ?v= → refresh terjadi saat
@@ -465,6 +483,13 @@ export default function WatchAndLearn() {
     }
   }, []);
 
+  const pickBase = useCallback((code: string) => {
+    setBaseLang(code);
+    storeBaseLang(code);
+    setBasePickerOpen(false);
+    setBaseFirstOpen(false);
+  }, []);
+
   const openVideo = useCallback(
     (v: ImmersionVideo, forLang: string) => {
       setActive(v);
@@ -547,6 +572,15 @@ export default function WatchAndLearn() {
                   {vocabCount}
                 </span>
               )}
+            </button>
+            <button
+              onClick={() => setBasePickerOpen(true)}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              title="Bahasa terjemahan di bawah subtitle"
+            >
+              <Languages className="h-4 w-4" color={GOLD} />
+              <span className="hidden sm:inline">{getBaseLangDef(baseLang).label}</span>
             </button>
             <button
               onClick={() => setLangPickerOpen(true)}
@@ -896,11 +930,69 @@ export default function WatchAndLearn() {
         </div>
       )}
 
+      {/* Bahasa terjemahan ("kamu bicara bahasa apa?") — tanya pertama kali (wajib
+          pilih, tak bisa ditutup) atau ganti kapan saja lewat tombol di header. */}
+      {(basePickerOpen || baseFirstOpen) && (
+        <div
+          className="fixed inset-0 z-[85] flex items-center justify-center p-4"
+          style={{ backgroundColor: "rgba(4,7,8,0.8)" }}
+          onClick={() => !baseFirstOpen && setBasePickerOpen(false)}
+        >
+          <div
+            className="flex w-full max-w-md flex-col overflow-hidden rounded-3xl"
+            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-3 px-5 pt-5">
+              <div>
+                <p className="text-[16px] font-bold">Kamu bicara bahasa apa?</p>
+                <p className="mt-1 text-[12.5px] leading-relaxed" style={{ color: SUB }}>
+                  Terjemahan di bawah subtitle akan ditampilkan dalam bahasa ini. Bisa
+                  diganti kapan saja lewat tombol{" "}
+                  <Languages className="inline h-3.5 w-3.5 align-text-bottom" color={GOLD} /> di atas.
+                </p>
+              </div>
+              {!baseFirstOpen && (
+                <button onClick={() => setBasePickerOpen(false)} aria-label="Tutup" className="shrink-0">
+                  <X className="h-5 w-5" color={SUB} />
+                </button>
+              )}
+            </div>
+            <div className="mt-3 grid grid-cols-1 gap-1.5 px-2.5 pb-4 sm:grid-cols-2">
+              {BASE_LANGS.map((b) => {
+                const on = b.code === baseLang;
+                return (
+                  <button
+                    key={b.code}
+                    onClick={() => pickBase(b.code)}
+                    className="flex items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors"
+                    style={{
+                      backgroundColor: on ? "rgba(244,183,64,0.16)" : "rgba(255,255,255,0.03)",
+                      border: `1px solid ${on ? "rgba(244,183,64,0.4)" : BORDER}`,
+                    }}
+                  >
+                    <RectFlag code={b.country} h={20} />
+                    <span className="flex-1">
+                      <span className="block text-[14.5px] font-bold">{b.label}</span>
+                      <span className="block text-[11px]" style={{ color: SUB }}>
+                        {b.english}
+                      </span>
+                    </span>
+                    {on && <Check className="h-4 w-4" color={GOLD} />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Player belajar — video + transkrip dwibahasa + analisa + tap kata */}
       {active && (
         <VideoLearnPlayer
           video={active}
           langCode={activeLang}
+          baseLang={baseLang}
           recommendations={videos.filter((v) => v.videoId !== active.videoId)}
           onSelectVideo={(v) => openVideo(v, lang.code)}
           onClose={() => setActive(null)}

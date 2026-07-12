@@ -871,6 +871,8 @@ export default function VideoLearnPlayer({
               cue={activeCue}
               time={time}
               langCode={langCode}
+              baseLang={baseLang}
+              baseTranslating={baseTranslating}
               analyze={analyze}
               breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
               onWordTap={onWordTap}
@@ -1256,6 +1258,8 @@ function FocusLine({
   cue,
   time,
   langCode,
+  baseLang,
+  baseTranslating,
   analyze,
   breakdown,
   onWordTap,
@@ -1267,6 +1271,8 @@ function FocusLine({
   cue: LearnCue | null;
   time: number;
   langCode?: string;
+  baseLang?: string;
+  baseTranslating?: boolean;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
@@ -1372,11 +1378,19 @@ function FocusLine({
           {cue.translit}
         </p>
       )}
-      {cue.base && (
-        <p className="mt-1.5 font-bold" style={{ color: GOLD, fontSize: 16 * scale }}>
+      {cue.base ? (
+        <p
+          className="mt-1.5 font-bold"
+          style={{ color: GOLD, fontSize: 16 * scale }}
+          dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
+        >
           {cue.base}
         </p>
-      )}
+      ) : baseTranslating && baseLang !== DEFAULT_BASE_LANG ? (
+        <p className="mt-1.5 font-semibold italic opacity-70" style={{ color: GOLD, fontSize: 13 * scale }}>
+          Menerjemahkan…
+        </p>
+      ) : null}
     </div>
   );
 }

@@ -1008,6 +1008,32 @@ export interface WordExample {
   gloss: string;
 }
 
+/**
+ * Satu segmen kata dalam tabel konjugasi. `c: true` menandai bagian yang BERUBAH
+ * antar-baris paradigma (afiks terkonjugasi) — diwarnai di UI; `c: false` = stem
+ * yang tetap. Gabungan `t` seluruh part = bentuk kata utuh.
+ */
+export interface ConjugationPart {
+  t: string;
+  c: boolean;
+}
+
+/** Satu baris tabel konjugasi (mis. satu persona/subjek). */
+export interface ConjugationRow {
+  label: string; // label persona/subjek dalam bahasa Indonesia
+  parts: ConjugationPart[];
+  suffix: string; // afiks yang berubah (kolom "Suffix")
+  tl?: string; // bacaan Latin bentuk utuh (bahasa non-Latin)
+  gloss: string; // arti bentuk ini dalam bahasa Indonesia
+}
+
+/** Tabel konjugasi kata kerja — hanya ada saat kata yang dibuka adalah verb. */
+export interface WordConjugation {
+  caption: string;
+  note: string;
+  rows: ConjugationRow[];
+}
+
 export interface WordDeepDive {
   register: string; // "netral" | "formal" | "casual" | "sopan" | "vulgar" | ""
   registerNote: string;
@@ -1015,6 +1041,11 @@ export interface WordDeepDive {
   nuance: string;
   similar: WordSimilar[];
   examples: WordExample[];
+  // Tabel konjugasi (verb saja; null untuk kelas kata lain).
+  conjugation: WordConjugation | null;
+  // Istilah tata bahasa baru yang muncul di penjelasan (mis. "vokatif") — dipakai
+  // untuk menawarkan chip "Apa itu <istilah>?" di bawah kartu Pelajari.
+  terms: string[];
 }
 
 /** Ambil kartu belajar mendalam untuk sebuah kata (register, penggunaan, dll). */
@@ -1031,6 +1062,7 @@ export async function getWordDeepDive(params: {
   if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
   const data = (await res.json()) as Partial<WordDeepDive> & { error?: string };
   if (data.error) throw new Error(data.error);
+  const conj = data.conjugation;
   return {
     register: data.register ?? "",
     registerNote: data.registerNote ?? "",
@@ -1038,6 +1070,11 @@ export async function getWordDeepDive(params: {
     nuance: data.nuance ?? "",
     similar: Array.isArray(data.similar) ? data.similar : [],
     examples: Array.isArray(data.examples) ? data.examples : [],
+    conjugation:
+      conj && Array.isArray(conj.rows) && conj.rows.length
+        ? { caption: conj.caption ?? "", note: conj.note ?? "", rows: conj.rows }
+        : null,
+    terms: Array.isArray(data.terms) ? data.terms.filter((t) => typeof t === "string" && t.trim()) : [],
   };
 }
 
