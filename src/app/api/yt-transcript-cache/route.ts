@@ -26,6 +26,19 @@ function validLang(lang: unknown): lang is string {
   return typeof lang === "string" && /^[a-z]{2,3}(-[A-Za-z]{2,4})?$/.test(lang);
 }
 
+// Durasi ≈ akhir cue terakhir. Transkrip menutup hampir seluruh video, jadi ini
+// proxy yang cukup akurat untuk badge durasi tab "Siap" — tanpa kuota YouTube
+// Data API. Dipakai buat backfill baris yang `dur`-nya belum terisi (video kurasi
+// lama). Balikin null kalau cues kosong / tak punya `end`.
+function durationFromCues(cues: unknown[]): number | null {
+  let max = 0;
+  for (const c of cues) {
+    const end = (c as { end?: unknown })?.end;
+    if (typeof end === "number" && Number.isFinite(end) && end > max) max = end;
+  }
+  return max > 0 ? Math.round(max) : null;
+}
+
 export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
   const lang = params.get("lang") ?? "";
@@ -72,37 +85,46 @@ export async function GET(req: NextRequest) {
       if (!rows)
         return NextResponse.json({ videos: [] }, { status: 200, headers: { "Cache-Control": "no-store" } });
 
-      // Backfill lazy: baris yang belum punya level → hitung dari cues (murah,
-      // heuristik) lalu simpan supaya request berikutnya tinggal baca kolomnya.
+      // Backfill lazy dari cues (satu kali ambil, hitung level + durasi): baris
+      // yang belum punya level → estimasi CEFR (heuristik teks), yang belum punya
+      // `dur` → durasi ≈ akhir cue terakhir. Hasilnya disimpan balik supaya request
+      // berikutnya tinggal baca kolomnya. Keduanya berbagi satu fetch cues.
       const levelOf = new Map<string, string | null>();
-      if (hasLevel) {
-        const missing = rows
-          .filter((r) => asCefrLevel(r.level) == null)
-          .map((r) => r.video_id as string);
-        if (missing.length) {
-          const cueRes = await sb
-            .from("yt_transcripts")
-            .select("video_id, cues")
-            .eq("lang", lang)
-            .in("video_id", missing);
-          if (Array.isArray(cueRes.data)) {
-            await Promise.all(
-              cueRes.data.map(async (cr) => {
-                const cues = Array.isArray((cr as { cues?: unknown }).cues)
-                  ? ((cr as { cues: unknown[] }).cues)
-                  : [];
+      const durOf = new Map<string, number | null>();
+      const needsLevel = (r: Record<string, unknown>) => hasLevel && asCefrLevel(r.level) == null;
+      const needsDur = (r: Record<string, unknown>) => typeof r.dur !== "number";
+      const missing = rows
+        .filter((r) => needsLevel(r) || needsDur(r))
+        .map((r) => r.video_id as string);
+      if (missing.length) {
+        const cueRes = await sb
+          .from("yt_transcripts")
+          .select(hasLevel ? "video_id, cues, dur, level" : "video_id, cues, dur")
+          .eq("lang", lang)
+          .in("video_id", missing);
+        if (Array.isArray(cueRes.data)) {
+          await Promise.all(
+            (cueRes.data as unknown as Record<string, unknown>[]).map(async (cr) => {
+              const cues = Array.isArray(cr.cues) ? (cr.cues as unknown[]) : [];
+              const vid = cr.video_id as string;
+              const update: { level?: string; dur?: number } = {};
+              if (hasLevel && asCefrLevel(cr.level) == null) {
                 const lvl = estimateCefrLevel(cues as { target?: unknown }[], lang);
-                levelOf.set(cr.video_id as string, lvl);
-                if (lvl) {
-                  await sb
-                    .from("yt_transcripts")
-                    .update({ level: lvl })
-                    .eq("video_id", cr.video_id as string)
-                    .eq("lang", lang);
+                levelOf.set(vid, lvl);
+                if (lvl) update.level = lvl;
+              }
+              if (typeof cr.dur !== "number") {
+                const d = durationFromCues(cues);
+                if (d) {
+                  durOf.set(vid, d);
+                  update.dur = d;
                 }
-              })
-            );
-          }
+              }
+              if (Object.keys(update).length) {
+                await sb.from("yt_transcripts").update(update).eq("video_id", vid).eq("lang", lang);
+              }
+            })
+          );
         }
       }
 
@@ -110,7 +132,7 @@ export async function GET(req: NextRequest) {
         videoId: r.video_id as string,
         title: (r.title as string) ?? "",
         channel: (r.channel as string) ?? null,
-        duration: typeof r.dur === "number" ? r.dur : null,
+        duration: typeof r.dur === "number" ? r.dur : durOf.get(r.video_id as string) ?? null,
         level: asCefrLevel(r.level) ?? levelOf.get(r.video_id as string) ?? null,
       }));
       return NextResponse.json(
