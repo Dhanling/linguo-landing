@@ -786,11 +786,62 @@ function splitCueByWords(cue: LearnCue): LearnCue[] {
   });
 }
 
-// Rapikan transkrip jadi satu section per baris: pecah per kalimat dulu (akurat),
-// lalu di batas klausa, lalu — kalau MASIH kepanjangan (ASR/Whisper tanpa tanda
-// baca) — per kata. Tak ada lagi section berupa paragraf panjang, apa pun sumbernya.
+// Batas atas panjang satu kalimat wajar saat menggabung penggalan (pengaman biar
+// transkrip ASR TANPA tanda baca tak terkumpul jadi satu blok raksasa) & jeda maks
+// antar cue yang masih dianggap satu kalimat berlanjut.
+const MERGE_MAX_CHARS = 240;
+const MERGE_MAX_GAP = 2.5;
+// Cue dianggap MENGAKHIRI kalimat kalau target-nya berakhir tanda titik kalimat
+// (termasuk CJK。！？) — opsional diikuti kutип/kurung penutup.
+const SENTENCE_END_RE = /[.!?…。！？]["'”’)\]]*\s*$/u;
+
+function joinText(a: string | undefined, b: string | undefined): string {
+  return [a?.trim(), b?.trim()].filter(Boolean).join(" ");
+}
+
+/**
+ * Gabungkan kembali cue yang merupakan PENGGALAN satu kalimat jadi cue se-kalimat,
+ * supaya di-split ulang dengan logika terkini.
+ *
+ * Kenapa perlu: transkrip yang di-cache menyimpan hasil SPLIT lama (dulu memasangkan
+ * terjemahan per-klausa → arti bisa salah geser antar baris). Tapi urutan penggalan
+ * base tetap utuh: menyambungnya kembali memulihkan kalimat + terjemahan yang BENAR,
+ * lalu splitCuesBySentence memecahnya ulang dengan pemasangan tanda-baca yang aman.
+ * Idempoten untuk cue yang sudah benar (kalimat utuh berakhir titik → tak digabung).
+ *
+ * Aman: hanya menggabung selama cue sebelumnya BELUM mengakhiri kalimat, dengan
+ * pengaman panjang (MERGE_MAX_CHARS) & jeda waktu (MERGE_MAX_GAP) supaya ASR tanpa
+ * tanda baca tak menyatu jadi satu blok.
+ */
+function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
+  const out: LearnCue[] = [];
+  for (const c of cues) {
+    const prev = out[out.length - 1];
+    const gap = prev ? c.start - prev.end : Infinity;
+    const canMerge =
+      prev &&
+      !SENTENCE_END_RE.test(prev.target) &&
+      prev.target.length + 1 + c.target.length <= MERGE_MAX_CHARS &&
+      gap <= MERGE_MAX_GAP;
+    if (canMerge) {
+      prev.end = c.end;
+      prev.target = joinText(prev.target, c.target);
+      prev.base = joinText(prev.base, c.base);
+      const tr = joinText(prev.translit, c.translit);
+      if (tr) prev.translit = tr;
+    } else {
+      out.push({ ...c });
+    }
+  }
+  return out;
+}
+
+// Rapikan transkrip jadi satu section per baris: satukan dulu penggalan jadi kalimat
+// utuh (memulihkan pasangan target↔arti dari cache lama), lalu pecah per kalimat
+// (akurat), di batas tanda baca, lalu — kalau MASIH kepanjangan (ASR tanpa tanda
+// baca) — per kata. Tak ada lagi section paragraf panjang, apa pun sumbernya.
 function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
-  return cues
+  return mergeCueFragments(cues)
     .flatMap(splitCueBySentence)
     .flatMap(splitLongCue)
     .flatMap(splitCueByWords);
