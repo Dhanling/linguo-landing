@@ -314,6 +314,15 @@ export default function VideoLearnPlayer({
           onReady: () => {
             if (cancelled) return;
             setReady(true);
+            // Paksa caption CC YouTube mati — kita sudah punya subtitle + arti
+            // sendiri di overlay/transkrip. cc_load_policy:0 saja tak cukup
+            // karena YouTube mengingat preferensi CC user; unload modul-nya.
+            try {
+              playerRef.current?.unloadModule("captions");
+              playerRef.current?.unloadModule("cc");
+            } catch {
+              /* abaikan */
+            }
             try {
               playerRef.current?.playVideo();
             } catch {
@@ -324,6 +333,16 @@ export default function VideoLearnPlayer({
           onStateChange: (e: any) => {
             // 1 = playing, 2 = paused, 0 = ended
             setPlaying(e.data === 1);
+            // Modul caption kadang baru dimuat setelah playback mulai —
+            // matikan lagi begitu video benar-benar jalan agar CC tak muncul.
+            if (e.data === 1) {
+              try {
+                playerRef.current?.unloadModule("captions");
+                playerRef.current?.unloadModule("cc");
+              } catch {
+                /* abaikan */
+              }
+            }
           },
         },
       });
