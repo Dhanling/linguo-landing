@@ -1271,11 +1271,13 @@ export interface AlignGroup {
   b: number[];
 }
 
-// v2: prompt align diperbaiki — kata mirip artikel yang sebenarnya kata ganti objek
-// (Spanyol "las"/"los" = "them", Prancis "les"/"leur", Italia "li"/"le", Portugis
-// "os"/"as", dll.) kini dijajarkan ke arti sebenarnya, bukan dilebur ke artikel+nomina.
-// Naikkan versi biar penjajaran lama yang salah di localStorage di-ambil ulang.
-const ALIGN_CACHE_PREFIX = "linguo:watch:align:v2:";
+// v3: penjajaran sekarang DETERMINISTIK & halus per-kata. Edge function word-info
+// mode "align" dulu pakai temperature default (acak: baris yang sama bisa dapat grup
+// beda tiap panggilan) TANPA schema — model kerap melebur satu klausa jadi SATU grup,
+// jadi hover satu kata menyorot seluruh baris (tak sinkron dgn artinya). Sekarang:
+// temperature 0 + JSON schema + thinkingBudget → grup sekecil mungkin (1 kata ↔ 1 arti,
+// artikel yang jatuh dapat "b":[]). Naikkan versi biar cache v2 yang kasar di-ambil ulang.
+const ALIGN_CACHE_PREFIX = "linguo:watch:align:v3:";
 
 function alignCacheKey(target: string, base: string): string {
   // Hash ringkas & stabil (djb2) dari pasangan target|base — cukup untuk kunci cache.
