@@ -11,6 +11,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
+  Languages,
   ListChecks,
   Loader2,
   Maximize,
@@ -55,6 +56,7 @@ import {
   youtubeThumb,
 } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
+import { RectFlag } from "@/components/RectFlag";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -116,6 +118,7 @@ export default function VideoLearnPlayer({
   langCode,
   baseLang = DEFAULT_BASE_LANG,
   onClose,
+  onChangeLang,
   onSavedChange,
   recommendations = [],
   onSelectVideo,
@@ -125,6 +128,8 @@ export default function VideoLearnPlayer({
   /** Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). */
   baseLang?: string;
   onClose: () => void;
+  /** Ganti bahasa yang dipelajari saat menonton → balik ke beranda Watch & Learn. */
+  onChangeLang?: () => void;
   onSavedChange?: () => void;
   recommendations?: ImmersionVideo[];
   onSelectVideo?: (v: ImmersionVideo) => void;
@@ -889,11 +894,26 @@ export default function VideoLearnPlayer({
       className="fixed inset-0 z-[90] flex flex-col"
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-        <p className="mr-3 line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
+      {/* Header — judul + tombol bahasa (ganti → balik ke beranda) + tutup. */}
+      <div className="flex items-center gap-2 px-4 py-3 sm:px-6">
+        <p className="mr-auto line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
           {video.title}
         </p>
+        {onChangeLang &&
+          (() => {
+            const wl = getImmersionLang(langCode);
+            return (
+              <button
+                onClick={onChangeLang}
+                className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                style={{ border: `1px solid ${BORDER}` }}
+                title="Ganti bahasa yang dipelajari"
+              >
+                {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4" color={TEAL} />}
+                <span className="hidden sm:inline">{wl?.name ?? langCode}</span>
+              </button>
+            );
+          })()}
         <button
           onClick={onClose}
           className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"

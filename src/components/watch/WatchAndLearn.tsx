@@ -594,8 +594,14 @@ export default function WatchAndLearn() {
   return (
     <main style={{ backgroundColor: BG, minHeight: "100vh" }} className="text-white">
       <div className="mx-auto max-w-6xl px-4 pb-24 pt-5 sm:px-6">
-        {/* Top bar — balik ke dashboard siswa (/akun), bukan beranda publik. */}
-        <div className="flex items-center justify-between">
+        {/* Top bar — balik ke dashboard siswa (/akun), bukan beranda publik.
+            Melayang (sticky) saat scroll: Kosakata + tombol bahasa tetap terjangkau
+            di kanan atas tanpa harus scroll balik ke puncak. z-40 di bawah modal
+            pemilih bahasa (z-80) supaya dialog tetap di atas. */}
+        <div
+          className="sticky top-0 z-40 -mx-4 flex items-center justify-between px-4 py-3 sm:-mx-6 sm:px-6"
+          style={{ backgroundColor: BG, borderBottom: `1px solid ${BORDER}` }}
+        >
           <Link
             href="/akun"
             className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
@@ -1047,6 +1053,12 @@ export default function WatchAndLearn() {
           recommendations={videos.filter((v) => v.videoId !== active.videoId)}
           onSelectVideo={(v) => openVideo(v, lang.code)}
           onClose={() => setActive(null)}
+          // Ganti bahasa yang dipelajari saat menonton → tutup player & buka pemilih
+          // bahasa; setelah dipilih, beranda Watch & Learn tampil dgn bahasa baru.
+          onChangeLang={() => {
+            setActive(null);
+            setLangPickerOpen(true);
+          }}
           onSavedChange={refreshVocab}
         />
       )}
