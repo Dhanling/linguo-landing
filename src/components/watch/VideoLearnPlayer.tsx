@@ -747,7 +747,10 @@ export default function VideoLearnPlayer({
   // Navigasi section pakai panah kiri/kanan keyboard (abaikan saat mengetik).
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      // Kiri/Atas = section sebelumnya, Kanan/Bawah = section berikutnya.
+      const prev = e.key === "ArrowLeft" || e.key === "ArrowUp";
+      const next = e.key === "ArrowRight" || e.key === "ArrowDown";
+      if (!prev && !next) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const t = e.target as HTMLElement | null;
       if (
@@ -758,7 +761,7 @@ export default function VideoLearnPlayer({
       )
         return;
       e.preventDefault();
-      gotoCue(e.key === "ArrowRight" ? 1 : -1);
+      gotoCue(next ? 1 : -1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);

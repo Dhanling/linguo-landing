@@ -41,6 +41,10 @@ const BORDER = "rgba(255,255,255,0.1)";
 
 const TIP_W = 260;
 
+// Berapa kata maksimum dirambatkan otomatis saat kata tunggal tak berarti mandiri
+// (kata fungsi) — cukup untuk menangkap frasa seperti "por el entrenamiento de fuerza".
+const MAX_AUTO_EXPAND = 4;
+
 // Artikel/determiner per bahasa. Kalau kata yang di-tap didahului salah satunya,
 // pilihan awal otomatis mencakup artikelnya (mis. tap "texto" → "el texto"),
 // karena artikel gender menentukan bentuk & sering dipelajari sepaket. User tetap
@@ -106,6 +110,18 @@ export function WordTooltip({
   const [sel, setSel] = useState({ lo: autoLo, hi: initialIdx });
   useEffect(() => setSel({ lo: autoLo, hi: initialIdx }), [autoLo, initialIdx]);
 
+  // Auto-perluas ke frasa saat kata tunggal tak punya arti mandiri (kata fungsi
+  // seperti "por", "de", "el"). Arti sesungguhnya baru muncul digabung tetangganya
+  // (mis. "por" → "por el entrenamiento de fuerza"), jadi kita rambat ke KANAN
+  // sampai dapat arti — tanpa user harus menekan tombol Frasa. Nonaktif begitu
+  // user menyentuh kontrol frasa manual, & direset tiap klik kata baru.
+  const autoAllowRef = useRef(true);
+  const [autoTries, setAutoTries] = useState(0);
+  useEffect(() => {
+    autoAllowRef.current = true;
+    setAutoTries(0);
+  }, [initialIdx, rawWord]);
+
   // Frasa terpilih (endpoint selalu kata, pemisah di antaranya ikut tergabung).
   const word = useMemo(() => {
     if (sel.lo < 0 || sel.hi < 0) return cleanWord(rawWord) || rawWord;
@@ -118,20 +134,26 @@ export function WordTooltip({
   const canRight = sel.hi >= 0 && nextWord != null;
   const multi = sel.hi > sel.lo;
   const growLeft = useCallback(() => {
+    autoAllowRef.current = false;
     if (prevWord != null) setSel((s) => ({ ...s, lo: prevWord }));
   }, [prevWord]);
   const growRight = useCallback(() => {
+    autoAllowRef.current = false;
     if (nextWord != null) setSel((s) => ({ ...s, hi: nextWord }));
   }, [nextWord]);
-  const resetOne = useCallback(
-    () => setSel({ lo: initialIdx, hi: initialIdx }),
-    [initialIdx]
-  );
+  const resetOne = useCallback(() => {
+    autoAllowRef.current = false;
+    setSel({ lo: initialIdx, hi: initialIdx });
+  }, [initialIdx]);
 
   const [meaning, setMeaning] = useState<WordMeaning | null>(null);
   const [loading, setLoading] = useState(true);
   const [errored, setErrored] = useState(false);
   const [saved, setSaved] = useState(false);
+  // Frasa yang `meaning` sekarang wakili — auto-expand hanya boleh lanjut kalau arti
+  // yang terlihat memang milik `word` saat ini (bukan sisa fetch sebelumnya), supaya
+  // tiap langkah MENUNGGU hasil fetch & tak menembus beberapa perluasan sekaligus.
+  const [meaningWord, setMeaningWord] = useState("");
 
   // Bacaan Latin (romaji/pinyin/dll) untuk kata beraksara non-Latin — word-info
   // "meaning" tak mengembalikannya, jadi kita ambil terpisah via /api/translit.
@@ -171,7 +193,15 @@ export function WordTooltip({
     [offset]
   );
 
-  // Ambil arti + ucapkan saat mount.
+  // Ucapkan kata/frasa yang STABIL (debounce). Saat perluasan frasa — otomatis
+  // (kata fungsi) maupun manual — mengubah `word` beruntun, hanya bentuk final yang
+  // diucapkan sehingga audio tak menumpuk/tumpang-tindih.
+  useEffect(() => {
+    const id = window.setTimeout(() => speak(word, langCode), 350);
+    return () => window.clearTimeout(id);
+  }, [word, langCode]);
+
+  // Ambil arti saat kata/frasa berubah.
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -179,9 +209,12 @@ export function WordTooltip({
     setMeaning(null);
     setTranslit("");
     setSaved(isWordSaved(word, langCode));
-    speak(word, langCode);
     getWordMeaning({ word, sentence, langCode })
-      .then((m) => !cancelled && setMeaning(m))
+      .then((m) => {
+        if (cancelled) return;
+        setMeaning(m);
+        setMeaningWord(word);
+      })
       .catch(() => !cancelled && setErrored(true))
       .finally(() => !cancelled && setLoading(false));
     // Bacaan Latin di background (hanya bahasa non-Latin) — biar arti tampil dulu.
@@ -195,6 +228,19 @@ export function WordTooltip({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, sentence, langCode]);
+
+  // Arti tunggal kosong = kata fungsi tanpa makna mandiri → rambatkan ke kata
+  // kanan (skip artikel via seleksi) sampai dapat arti, maksimum beberapa kata.
+  useEffect(() => {
+    if (!autoAllowRef.current) return;
+    if (loading || errored) return;
+    if (meaningWord !== word) return; // arti belum sinkron dgn frasa saat ini
+    if (meaning?.meaning) return; // sudah ada arti → berhenti
+    if (autoTries >= MAX_AUTO_EXPAND) return;
+    if (nextWord == null) return; // tak ada kata di kanan lagi
+    setSel((s) => ({ ...s, hi: nextWord }));
+    setAutoTries((n) => n + 1);
+  }, [loading, errored, meaning, meaningWord, word, autoTries, nextWord]);
 
   const toggleSave = useCallback(() => {
     if (saved) {

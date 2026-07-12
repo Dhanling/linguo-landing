@@ -554,9 +554,10 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
 }
 
 // Panjang maksimum satu section transkrip (≈ satu baris di panel). Kalimat yang
-// lebih panjang dipecah lagi biar tiap section ringkas & enak dibaca — bukan blok
-// paragraf. ~60 karakter kira-kira pas satu baris pada lebar panel transkrip.
-const MAX_CUE_CHARS = 60;
+// lebih panjang dipecah lagi di batas klausa biar tiap section ringkas & tak
+// overwhelming — bukan blok paragraf. ~50 karakter menjaga satu section tetap
+// muat satu baris pada lebar panel transkrip (target "1 kalimat / 1 baris").
+const MAX_CUE_CHARS = 50;
 
 /**
  * Pisah teks jadi klausa di batas tanda baca — delimiter ikut klausa sebelumnya.
