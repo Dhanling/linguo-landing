@@ -99,6 +99,12 @@ const DURATION_FILTERS = [
 ] as const;
 type DurationFilter = (typeof DURATION_FILTERS)[number]["id"];
 
+// [linguo-patch:watch-level-filter-v1] Filter level CEFR di tab "Siap" — pelajar bisa
+// menyaring video sesuai kemampuannya (A1 pemula … C1 mahir). "Semua" = tak menyaring.
+// Hanya video tab "Siap" yang punya estimasi level, jadi filter ini cuma muncul di sana.
+const LEVEL_FILTERS: ("all" | CefrLevel)[] = ["all", "A1", "A2", "B1", "B2", "C1"];
+type LevelFilter = (typeof LEVEL_FILTERS)[number];
+
 // [linguo-patch:watch-orient-frame0-v1] Deteksi orientasi ASLI video via thumbnail
 // `frame0.jpg`. Kenapa: YouTube Data API tak kasih orientasi, dan durasi bukan proxy
 // andal (Shorts kini bisa >60 dtk, jadi bocor ke tab "Video"; video ber-durasi null
@@ -168,6 +174,8 @@ export default function WatchAndLearn() {
   // (klip vertikal pendek) disingkirkan sepenuhnya (lihat filter orientasi di shownVideos).
   // [linguo-patch:watch-duration-filter-v1] Filter durasi: semua / <5 / 5–10 / 10–20 mnt.
   const [durationFilter, setDurationFilter] = useState<DurationFilter>("all");
+  // [linguo-patch:watch-level-filter-v1] Filter level CEFR (hanya tab "Siap"). Client-side.
+  const [levelFilter, setLevelFilter] = useState<LevelFilter>("all");
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
@@ -236,11 +244,16 @@ export default function WatchAndLearn() {
   // dianggap landscape sementara, tapi begitu frame0 resolve, penilaian dikoreksi.
   const shownVideos = useMemo(() => {
     const dur = DURATION_FILTERS.find((d) => d.id === durationFilter) ?? DURATION_FILTERS[0];
+    // Filter level hanya relevan di tab "Siap" (satu-satunya sumber estimasi level).
+    // Di tab lain video dari YouTube tak punya level → jangan ikut menyaring.
+    const siapMode = category === SIAP_ID && !committedText.trim();
     return videos.filter((v) => {
       // Filter durasi (rentang [min, max) detik; tanpa durasi hanya lolos di "Semua").
       if (durationFilter !== "all") {
         if (v.duration == null || v.duration < dur.min || v.duration >= dur.max) return false;
       }
+      // Filter level CEFR (tab "Siap"): sisakan video yang levelnya persis terpilih.
+      if (siapMode && levelFilter !== "all" && v.level !== levelFilter) return false;
       // Hanya landscape: orientasi asli frame0 → fallback proxy durasi. Video portrait
       // (Shorts) disingkirkan; yang durasinya null dianggap landscape sementara sampai
       // frame0 resolve.
@@ -250,7 +263,7 @@ export default function WatchAndLearn() {
     });
     // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videos, orientTick, durationFilter]);
+  }, [videos, orientTick, durationFilter, levelFilter, category, committedText]);
 
   // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
   useEffect(() => {
@@ -785,6 +798,37 @@ export default function WatchAndLearn() {
           })}
         </div>
 
+        {/* [linguo-patch:watch-level-filter-v1] Filter level CEFR — hanya tab "Siap"
+            (video di sana yang punya estimasi level). Chip aktif memakai warna levelnya. */}
+        {readyMode && (
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="text-[12px] font-bold" style={{ color: SUB }}>
+              Level:
+            </span>
+            {LEVEL_FILTERS.map((lv) => {
+              const on = levelFilter === lv;
+              const style = lv !== "all" ? CEFR_STYLE[lv] : null;
+              return (
+                <button
+                  key={lv}
+                  onClick={() => {
+                    setLevelFilter(lv);
+                    setVisible(GRID_COLS);
+                  }}
+                  className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
+                  style={{
+                    backgroundColor: on ? (style ? style.bg : TEAL) : CARD,
+                    border: `1px solid ${on ? (style ? style.bg : TEAL) : BORDER}`,
+                    color: on ? (style ? style.fg : "#fff") : "rgba(255,255,255,0.7)",
+                  }}
+                >
+                  {lv === "all" ? "Semua" : lv}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {/* Grid video */}
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
           {state === "loading"
@@ -816,11 +860,12 @@ export default function WatchAndLearn() {
           >
             <p className="text-[15px] font-bold">Tak ada video cocok filter di halaman ini</p>
             <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
-              Longgarkan filter durasi, muat lainnya, atau ganti kategori.
+              Longgarkan filter durasi/level, muat lainnya, atau ganti kategori.
             </p>
             <button
               onClick={() => {
                 setDurationFilter("all");
+                setLevelFilter("all");
               }}
               className="mt-3 rounded-full px-4 py-2 text-[12.5px] font-bold"
               style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
