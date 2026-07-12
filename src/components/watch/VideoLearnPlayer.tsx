@@ -429,18 +429,48 @@ export default function VideoLearnPlayer({
   }, [related, recShown, recLoading, langCode, video.videoId, video.channel, video.title]);
 
   // Polling waktu tiap 200ms untuk sinkronisasi subtitle.
+  // Lacak waktu video untuk sorotan karaoke. Sekadar sampling getCurrentTime tiap
+  // 200ms bikin sorotan tersendat & tertinggal dari audio (lag hingga 200ms) —
+  // terasa "ga sinkron". Jadi: ANCHOR ke waktu asli player secara berkala, lalu
+  // INTERPOLASI dengan jam dinding × kecepatan putar di antara anchor. Sorotan jadi
+  // mengalir mulus dan menempel ke audio; re-anchor tiap 400ms mengoreksi drift &
+  // lompatan (seek/scrub, termasuk saat dijeda).
   useEffect(() => {
     if (!ready) return;
-    const id = window.setInterval(() => {
-      try {
-        const t = playerRef.current?.getCurrentTime?.();
-        if (typeof t === "number") setTime(t);
-      } catch {
-        /* abaikan */
+    const rate = SPEEDS[speedIdx] || 1;
+    let raf = 0;
+    let anchorT = playerRef.current?.getCurrentTime?.() ?? 0;
+    let anchorPerf = performance.now();
+    let lastResync = anchorPerf;
+    let lastSet = 0;
+    let emitted = -1;
+    const tick = () => {
+      const now = performance.now();
+      if (now - lastResync > 400) {
+        try {
+          const real = playerRef.current?.getCurrentTime?.();
+          if (typeof real === "number") {
+            anchorT = real;
+            anchorPerf = now;
+          }
+        } catch {
+          /* abaikan */
+        }
+        lastResync = now;
       }
-    }, 200);
-    return () => window.clearInterval(id);
-  }, [ready]);
+      const est = playing ? anchorT + ((now - anchorPerf) / 1000) * rate : anchorT;
+      // Throttle ~50ms (20fps): mulus untuk sapuan karaoke, jauh lebih ringan dari
+      // 60fps untuk panel transkrip; lewati kalau nilainya tak berubah (saat jeda).
+      if (now - lastSet > 50 && Math.abs(est - emitted) > 0.015) {
+        lastSet = now;
+        emitted = est;
+        setTime(est);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [ready, playing, speedIdx]);
 
   // ── Muat transkrip ──────────────────────────────────────────────────────────
   // Paritas dgn app mobile: buka video = subtitle DIBUAT OTOMATIS bila belum ada.
@@ -705,12 +735,34 @@ export default function VideoLearnPlayer({
 
   const gotoCue = useCallback(
     (dir: -1 | 1) => {
-      if (activeIdx < 0) return;
-      const next = activeIdx + dir;
+      if (cues.length === 0) return;
+      // Kalau belum ada cue aktif, panah kiri/kanan mulai dari cue pertama.
+      const base = activeIdx < 0 ? (dir === 1 ? -1 : 0) : activeIdx;
+      const next = base + dir;
       if (next >= 0 && next < cues.length) seekTo(cues[next].start);
     },
     [activeIdx, cues, seekTo]
   );
+
+  // Navigasi section pakai panah kiri/kanan keyboard (abaikan saat mengetik).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (
+        t &&
+        (t.tagName === "INPUT" ||
+          t.tagName === "TEXTAREA" ||
+          t.isContentEditable)
+      )
+        return;
+      e.preventDefault();
+      gotoCue(e.key === "ArrowRight" ? 1 : -1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [gotoCue]);
 
   const replayLine = useCallback(() => {
     if (activeCue) seekTo(activeCue.start);
