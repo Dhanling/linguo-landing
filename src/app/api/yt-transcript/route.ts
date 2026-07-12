@@ -134,6 +134,16 @@ async function getCaptionTracks(
 // Pilih track terbaik: track manusia di bahasa target dulu, lalu auto-caption di
 // bahasa itu. `allowForeign` mengizinkan bahasa lain (buat free-paste); untuk
 // katalog kita ketat — kalau tak ada di bahasa target, balikin null (fallback CC).
+// YouTube memakai kode ISO 639-1 LAWAS di `languageCode` sebagian track:
+// Hebrew `iw` (= `he`), Indonesia `in` (= `id`), Yiddish `ji` (= `yi`),
+// Jawa `jw` (= `jv`). Tanpa alias, track Hebrew bercaption `iw` dikira asing.
+const LEGACY_LANG_ALIASES: Record<string, string[]> = {
+  he: ["iw"], iw: ["he"],
+  id: ["in"], in: ["id"],
+  yi: ["ji"], ji: ["yi"],
+  jv: ["jw"], jw: ["jv"],
+};
+
 function pickTrack(
   tracks: CaptionTrack[],
   langCode: string,
@@ -141,10 +151,16 @@ function pickTrack(
 ): CaptionTrack | null {
   if (!tracks.length) return null;
   const base = (langCode || "").split("-")[0].toLowerCase();
+  const accept = base ? [base, ...(LEGACY_LANG_ALIASES[base] ?? [])] : [];
   const human = tracks.filter((t) => t.kind !== "asr");
   const asr = tracks.filter((t) => t.kind === "asr");
   const inLang = (list: CaptionTrack[]) =>
-    base ? list.find((t) => t.languageCode?.toLowerCase().startsWith(base)) : undefined;
+    accept.length
+      ? list.find((t) => {
+          const lc = t.languageCode?.toLowerCase() ?? "";
+          return accept.some((a) => lc.startsWith(a));
+        })
+      : undefined;
   const native = inLang(human) ?? inLang(asr);
   if (native) return native;
   if (allowForeign) {
