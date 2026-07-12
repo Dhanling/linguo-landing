@@ -35,8 +35,8 @@ import { RectFlag } from "@/components/RectFlag";
 const TEAL = "#1A9E9E";
 // Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
 // pesan pengguna, tombol kirim) — kontras #1A9E9E dengan putih terlalu tipis (~3:1,
-// di bawah WCAG AA). Shade ini ~5:1 sehingga font putih tetap terbaca jelas.
-const TEAL_DARK = "#0D7A7A";
+// di bawah WCAG AA). Shade ini ~7:1 (AAA) sehingga font putih terbaca sangat jelas.
+const TEAL_DARK = "#0A6060";
 const GOLD = "#F4B740";
 const BG = "#06090A";
 const CARD = "#0F1416";
@@ -605,6 +605,48 @@ function splitTableRow(line: string): string[] {
   return s.split("|").map((c) => c.trim());
 }
 
+// Model kadang menulis tabel INLINE tanpa baris baru — seluruh "| a | b | |---|---|
+// | 1 | 2 |" jadi satu paragraf. Susun ulang jadi markdown multibaris supaya
+// parseRichBlocks bisa mengenalinya. Memakai baris pemisah (sel berisi dashes) sebagai
+// jangkar: jumlah kolom N = jumlah sel pemisah; N sel tepat sebelum pemisah = header;
+// sel setelahnya dikelompokkan per N = baris data; sisa tak-genap di ujung = prosa.
+const INLINE_SEP_RE = /\|(?:\s*:?-{2,}:?\s*\|)+/;
+
+function reflowInlineTables(text: string): string {
+  const m = INLINE_SEP_RE.exec(text);
+  if (!m) return text;
+  const sep = m[0];
+  const n = (sep.match(/-{2,}/g) || []).length;
+  if (n < 1) return text;
+
+  const before = text.slice(0, m.index);
+  const after = text.slice(m.index + sep.length);
+
+  // Header: N sel non-kosong terakhir sebelum pemisah; sisanya = prosa pembuka.
+  const bc = before.split("|").map((c) => c.trim());
+  while (bc.length && bc[bc.length - 1] === "") bc.pop();
+  const header = bc.slice(Math.max(0, bc.length - n));
+  const lead = bc.slice(0, Math.max(0, bc.length - n)).join(" ").trim();
+
+  // Sel data: buang boundary kosong (antar-baris jadi "| |"), lalu kelompokkan per N.
+  // Token sisa di ujung (jumlah tak habis dibagi N) = prosa penutup.
+  const cells = after.split("|").map((c) => c.trim()).filter((c) => c !== "");
+  const rowCount = Math.floor(cells.length / n);
+  const dataCells = cells.slice(0, rowCount * n);
+  const trail = cells.slice(rowCount * n).join(" ").trim();
+
+  const lines: string[] = [];
+  if (lead) lines.push(lead);
+  lines.push(`| ${header.join(" | ")} |`);
+  lines.push(`|${Array(n).fill("---").join("|")}|`);
+  for (let i = 0; i < dataCells.length; i += n) {
+    lines.push(`| ${dataCells.slice(i, i + n).join(" | ")} |`);
+  }
+  // Kalau prosa penutup masih memuat tabel inline lain, susun ulang juga.
+  if (trail) lines.push(INLINE_SEP_RE.test(trail) ? reflowInlineTables(trail) : trail);
+  return lines.join("\n");
+}
+
 function parseRichBlocks(text: string): RichBlock[] {
   const lines = text.replace(/\r/g, "").split("\n");
   const blocks: RichBlock[] = [];
@@ -630,7 +672,11 @@ function parseRichBlocks(text: string): RichBlock[] {
 }
 
 function RichText({ text }: { text: string }) {
-  const blocks = parseRichBlocks(text);
+  let blocks = parseRichBlocks(text);
+  // Fallback: tabel ditulis inline (tanpa baris baru) → susun ulang lalu parse lagi.
+  if (!blocks.some((b) => b.type === "table") && INLINE_SEP_RE.test(text)) {
+    blocks = parseRichBlocks(reflowInlineTables(text));
+  }
   return (
     <div className="space-y-2.5 text-[13.5px] leading-relaxed text-white/85">
       {blocks.map((b, i) =>
