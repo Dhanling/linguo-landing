@@ -110,7 +110,13 @@ export async function POST(req: NextRequest) {
         `(2-4 short paragraphs max). Use concrete examples when helpful. When you cite a ` +
         `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
         `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
-        `No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
+        `When the answer is naturally tabular — e.g. comparing forms, listing the tenses/` +
+        `moods/aspects, a conjugation paradigm, or several items each with a few attributes — ` +
+        `present THAT part as a GitHub-style markdown pipe table: a header row "| Kolom | Kolom |", ` +
+        `a separator row "|---|---|", then the data rows. Precede the table with one short prose ` +
+        `sentence. Use a table ONLY when it genuinely aids understanding; otherwise plain prose. ` +
+        `Keep tables compact (2-4 columns). You may still wrap ${language} words in «guillemets» ` +
+        `inside cells. No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
         `would likely ask NEXT — ${followupSpec}, ` +
         `directly related to THIS question and answer, without repeating them. ` +
         `If your answer introduced a grammatical term the learner may not know (e.g. a case, ` +

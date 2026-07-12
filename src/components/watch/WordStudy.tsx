@@ -33,6 +33,10 @@ import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 
 const TEAL = "#1A9E9E";
+// Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
+// pesan pengguna, tombol kirim) — kontras #1A9E9E dengan putih terlalu tipis (~3:1,
+// di bawah WCAG AA). Shade ini ~5:1 sehingga font putih tetap terbaca jelas.
+const TEAL_DARK = "#0D7A7A";
 const GOLD = "#F4B740";
 const BG = "#06090A";
 const CARD = "#0F1416";
@@ -245,7 +249,7 @@ export default function WordStudy({
               disabled={!input.trim() || asking}
               aria-label="Kirim"
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
-              style={{ backgroundColor: TEAL }}
+              style={{ backgroundColor: TEAL_DARK }}
             >
               <Send className="h-5 w-5 text-white" />
             </button>
@@ -460,7 +464,7 @@ function StudyTab({
             disabled={!ownQ.trim()}
             aria-label="Kirim pertanyaan"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
-            style={{ backgroundColor: TEAL }}
+            style={{ backgroundColor: TEAL_DARK }}
           >
             <Send className="h-[18px] w-[18px] text-white" />
           </button>
@@ -523,7 +527,7 @@ function AskTab({
           <div key={i} className="flex justify-end">
             <div
               className="max-w-[85%] rounded-2xl rounded-br-md px-3.5 py-2 text-[13.5px] font-medium text-white"
-              style={{ backgroundColor: TEAL }}
+              style={{ backgroundColor: TEAL_DARK }}
             >
               {m.text}
             </div>
@@ -581,12 +585,72 @@ function AskTab({
   );
 }
 
-// Sorot «kata» (dengan arti opsional dalam kurung) berwarna teal — sama seperti
-// panel analisa grammar di tooltip.
+// Render jawaban AI: paragraf biasa + tabel markdown (pipe table) untuk konten
+// yang tabular (mis. daftar tenses, perbandingan bentuk). Kata dalam «guillemets»
+// disorot teal — sama seperti panel analisa grammar di tooltip — baik di paragraf
+// maupun di dalam sel tabel.
+type RichBlock =
+  | { type: "p"; text: string }
+  | { type: "table"; header: string[]; rows: string[][] };
+
+// Baris pemisah header tabel markdown: |---|:--:|--- dsb.
+const isTableSep = (line: string) =>
+  /^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/.test(line);
+
+// Pecah satu baris pipe "| a | b |" jadi sel-selnya (buang pipe tepi).
+function splitTableRow(line: string): string[] {
+  let s = line.trim();
+  if (s.startsWith("|")) s = s.slice(1);
+  if (s.endsWith("|")) s = s.slice(0, -1);
+  return s.split("|").map((c) => c.trim());
+}
+
+function parseRichBlocks(text: string): RichBlock[] {
+  const lines = text.replace(/\r/g, "").split("\n");
+  const blocks: RichBlock[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    // Awal tabel: baris pipe diikuti baris pemisah dashes.
+    if (line.startsWith("|") && i + 1 < lines.length && isTableSep(lines[i + 1])) {
+      const header = splitTableRow(line);
+      const rows: string[][] = [];
+      i += 2; // lewati header + pemisah
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        rows.push(splitTableRow(lines[i].trim()));
+        i++;
+      }
+      i--; // kompensasi i++ dari for-loop
+      blocks.push({ type: "table", header, rows });
+      continue;
+    }
+    blocks.push({ type: "p", text: line });
+  }
+  return blocks;
+}
+
 function RichText({ text }: { text: string }) {
-  const parts = text.split(/(«[^»]*»(?:\s*\([^)]*\))?)/g);
+  const blocks = parseRichBlocks(text);
   return (
-    <p className="text-[13.5px] leading-relaxed text-white/85">
+    <div className="space-y-2.5 text-[13.5px] leading-relaxed text-white/85">
+      {blocks.map((b, i) =>
+        b.type === "table" ? (
+          <RichTable key={i} header={b.header} rows={b.rows} />
+        ) : (
+          <p key={i}>
+            <RichInline text={b.text} />
+          </p>
+        )
+      )}
+    </div>
+  );
+}
+
+// Sorot «kata» (teal) dan **tebal** (markdown) dalam sepotong teks inline.
+function RichInline({ text }: { text: string }) {
+  const parts = text.split(/(«[^»]*»(?:\s*\([^)]*\))?|\*\*[^*]+\*\*)/g);
+  return (
+    <>
       {parts.map((p, i) => {
         if (p.startsWith("«")) {
           return (
@@ -595,9 +659,52 @@ function RichText({ text }: { text: string }) {
             </span>
           );
         }
+        if (p.startsWith("**") && p.endsWith("**") && p.length > 4) {
+          return (
+            <strong key={i} className="font-bold text-white">
+              {p.slice(2, -2)}
+            </strong>
+          );
+        }
         return <span key={i}>{p}</span>;
       })}
-    </p>
+    </>
+  );
+}
+
+// Tabel markdown dari jawaban AI — gaya samakan dengan ConjugationTable.
+function RichTable({ header, rows }: { header: string[]; rows: string[][] }) {
+  return (
+    <div className="-mx-1 overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr style={{ color: SUB }}>
+            {header.map((h, i) => (
+              <th
+                key={i}
+                className="px-2 py-1.5 text-[10.5px] font-bold uppercase tracking-wide"
+              >
+                <RichInline text={h} />
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r, ri) => (
+            <tr key={ri} style={{ borderTop: `1px solid ${BORDER}` }}>
+              {r.map((c, ci) => (
+                <td
+                  key={ci}
+                  className="px-2 py-2 align-top text-[12.5px] text-white/80"
+                >
+                  <RichInline text={c} />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -685,8 +792,8 @@ function TabBtn({
       onClick={onClick}
       className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[13px] font-bold transition-colors"
       style={{
-        backgroundColor: active ? TEAL : "transparent",
-        border: `1px solid ${active ? TEAL : BORDER}`,
+        backgroundColor: active ? TEAL_DARK : "transparent",
+        border: `1px solid ${active ? TEAL_DARK : BORDER}`,
         color: active ? "#fff" : "rgba(255,255,255,0.7)",
       }}
     >
