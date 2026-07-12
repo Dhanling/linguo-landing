@@ -246,7 +246,13 @@ export const IMMERSION_CATEGORIES: ImmersionCategory[] = [
   { id: "film", label: "Film & TV", emoji: "🎥", q: "movie clip trailer scene" },
   { id: "olahraga", label: "Olahraga", emoji: "⚽", q: "sports highlights" },
   { id: "teknologi", label: "Teknologi", emoji: "💡", q: "technology review gadget" },
-  { id: "vlog", label: "Vlog", emoji: "📹", q: "daily vlog", fresh: true },
+  // [linguo-patch:watch-vlog-relevance-v1] TANPA fresh:true. `fresh` memaksa
+  // order=date (upload terbaru), dan utk keyword generik "daily vlog" itu membanjiri
+  // hasil dgn vlog global paling baru — mayoritas India (judul Inggris/latin tak
+  // ber-tag audio, jadi lolos filter bahasa) → bocor ke rail bahasa lain (mis.
+  // Spanyol keluar Hindi). order=relevance bikin relevanceLanguage + tag native
+  // ("Español") menang → hasilnya beneran bahasa target. (Terverifikasi via yt-search.)
+  { id: "vlog", label: "Vlog", emoji: "📹", q: "daily vlog" },
   { id: "anak", label: "Lagu Anak", emoji: "🎈", q: "kids songs nursery rhymes" },
 ];
 
