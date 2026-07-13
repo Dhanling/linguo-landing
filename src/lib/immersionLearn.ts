@@ -262,13 +262,14 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=13` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=12 setelah
-      // backfill vlog Peppa Bulgaria ls64k49ueuA: 29 cue run-on TANPA tanda baca
-      // (base=Bulgaria, semua `pending`) → dipecah per klausa di kata sambung Cyrillic
-      // (и/но/или/защото/докато…) jadi 89 section pendek + diterjemah ulang ke Indonesia
-      // via Edge yt-transcript (Gemini); di-PATCH service_role → base ID, pending false.
-      // (v=12 backfill vlog Hindi qK0wnEnaNE0 Jason Vlogs;
+      // `v=14` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=13 setelah
+      // backfill vlog/kartun Hindi gHB-EcsWhgo (Bluey "The Beach"): 56/76 cue
+      // `pending` (base=Hindi, tampil sbg terjemahan) → diterjemah sendiri ke
+      // Indonesia + PATCH service_role → base ID, pending false. Model Groq SEHAT,
+      // pola 429 free-tier saat job jalan (lihat [[groq-model-deprecation]]).
+      // (v=13 backfill vlog Peppa Bulgaria ls64k49ueuA (89 section);
+      // v=12 backfill vlog Hindi qK0wnEnaNE0 Jason Vlogs;
       // v=11 [watch-base-driven-split]: target auto-caption TANPA tanda baca (mis.
       // vlog Hindi) tak lagi jadi paragraf raksasa — dipecah per KALIMAT/KLAUSA base
       // (terjemahan Indonesia) dgn target proporsional + kata sambung Hindi/non-Latin;
@@ -277,7 +278,7 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=13`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=14`,
       { method: "GET" },
       6000
     );
