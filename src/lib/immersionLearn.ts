@@ -262,19 +262,19 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=10` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=9 setelah
-      // backfill terjemahan Indonesia 2 video Swedia yang semua barisnya
-      // `pending` (4JoMUFxDAts + AZOAeZHXH8k — Groq rate-limit saat job jalan).
-      // (v=9 pemecah KLAUSA di transcript-worker: kalimat > 100 char dipecah di
-      // koma/kata sambung + restore punktuasi blob per-segmen, vlog Polandia
-      // TYfuHr-ffjo; v=8 restorasi tanda baca caption auto — 1 kalimat/section,
-      // Peppa Spanyol 15r3pHkqC5M;
-      // v=7 [watch-pair-safe-v1] split kalimat hanya saat jumlah target == base;
-      // v=6 re-segmentasi vlog Spanyol gpFqVxLDEJ0 "proteína"; v=5 backfill vlog
+      // `v=11` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=10 setelah
+      // [watch-base-driven-split]: target auto-caption TANPA tanda baca (mis. vlog
+      // Hindi) tak lagi jadi paragraf raksasa — kini dipecah per KALIMAT/KLAUSA base
+      // (terjemahan Indonesia bertanda baca) dengan target proporsional, + kata
+      // sambung Hindi/skrip non-Latin. Jalur pasangan-aman (target berpunktuasi)
+      // tak berubah. Cache lama di-re-split saat dibaca (splitCuesBySentence idempoten).
+      // (v=10 backfill 2 video Swedia; v=9 pemecah KLAUSA di transcript-worker;
+      // v=8 restorasi tanda baca caption auto; v=7 [watch-pair-safe-v1] split kalimat
+      // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=10`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=11`,
       { method: "GET" },
       6000
     );
@@ -564,7 +564,7 @@ function splitSentences(text: string, locale?: string): string[] {
   } catch {
     /* fallback regex */
   }
-  return t.match(/[^.!?…]+[.!?…]*/g)?.map((s) => s.trim()).filter(Boolean) ?? [t];
+  return t.match(/[^.!?…।。！？؟۔]+[.!?…।。！？؟۔]*/g)?.map((s) => s.trim()).filter(Boolean) ?? [t];
 }
 
 /**
@@ -599,7 +599,15 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
   // SAMA saat kata target di-hover). Perapian panjang yang tetap aman (pecah di batas
   // tanda baca hanya saat jumlah penggal target==base) dikerjakan splitLongCue berikutnya.
   const n = targets.length;
-  if (n <= 1) return [cue];
+  if (n <= 1) {
+    // [watch-base-driven-split] Target satu blob TANPA tanda baca (auto-caption
+    // Hindi/Arab dll yang belum di-restore) → tak bisa dipecah dari sinyalnya
+    // sendiri. Tapi kalau base (terjemahan) banyak kalimat, pecah per kalimat
+    // base + target proporsional biar tak jadi paragraf raksasa (approx, lihat
+    // splitByBasePieces). Jalur pasangan-aman di bawah TIDAK berubah.
+    if (bases && bases.length > 1) return splitByBasePieces(cue, bases);
+    return [cue];
+  }
   if (bases && bases.length !== n) return [cue];
   if (translits && translits.length !== n) return [cue];
 
@@ -652,8 +660,15 @@ const CLAUSE_CONJUNCTIONS = [
   "und", "aber", "oder", "weil", "obwohl", "während", "dass", "wenn", "denn", "sondern",
   // Portuguese / Italian
   "embora", "enquanto", "porém", "perché", "benché", "mentre", "poiché", "quindi",
+  // Hindi (Devanagari — batas kata \b ASCII tak berlaku, dipakai lookahead spasi)
+  "और", "लेकिन", "पर", "परन्तु", "या", "क्योंकि", "तो", "फिर", "तथा", "कि", "जब", "अगर", "जबकि",
 ];
-const CONJ_SPLIT_RE = new RegExp(`\\s+(?=(?:${CLAUSE_CONJUNCTIONS.join("|")})\\b)`, "iu");
+// Pisah di spasi yang MENDAHULUI kata sambung. Batas sesudah kata sambung ditandai
+// spasi/tanda baca/akhir teks (BUKAN \b yang cuma ASCII → gagal utk Devanagari/Arab).
+const CONJ_SPLIT_RE = new RegExp(
+  `\\s+(?=(?:${CLAUSE_CONJUNCTIONS.join("|")})(?:\\s|[.,;:!?،؛।]|$))`,
+  "iu"
+);
 
 /**
  * Pisah teks jadi klausa: pertama di batas tanda baca (termasuk non-Latin ، ؛ 、
@@ -774,6 +789,20 @@ function splitLongCue(cue: LearnCue): LearnCue[] {
     tSeg.length !== bSeg.length ||
     (trSeg && trSeg.length !== tSeg.length)
   ) {
+    // [watch-base-driven-split] Tak bisa dipasangkan aman lewat tanda baca (target
+    // tak terpunktuasi). Kalau base masih panjang & punya batas KLAUSA (tanda baca
+    // atau kata sambung dan/atau/karena/…), pecah per klausa base + target
+    // proporsional biar satu kalimat panjang tak overwhelming. Kalau base pun tak
+    // punya batas klausa, biarkan utuh.
+    if ((cue.base ?? "").trim().length > MAX_CUE_CHARS) {
+      const baseClauses = splitClauses(cue.base ?? "");
+      if (baseClauses.length > 1) {
+        const groups = greedyGroups(baseClauses).map((idx) =>
+          idx.map((i) => baseClauses[i]).join(" ").trim()
+        );
+        if (groups.length > 1) return splitByBasePieces(cue, groups);
+      }
+    }
     return [cue];
   }
 
@@ -816,6 +845,61 @@ function distributeWords(text: string, n: number): string[] {
     out.push(words.slice(from, to).join(" "));
   }
   return out;
+}
+
+/**
+ * Bagi teks jadi TEPAT n potongan berurutan. Kalau cukup banyak kata (bahasa
+ * berspasi: Hindi/Arab/Latin) → per KATA; kalau tidak (bahasa tanpa spasi:
+ * Jepang/Mandarin/Thai) → per HURUF. Dipakai membagi target/translit proporsional
+ * saat pemasangan lewat tanda baca tak mungkin (target auto-caption tanpa punktuasi).
+ */
+function distributeUnits(text: string, n: number): string[] {
+  const t = text.trim();
+  if (n <= 1) return [t];
+  const words = t.split(/\s+/).filter(Boolean);
+  if (words.length >= n) return distributeWords(t, n);
+  const chars = Array.from(t);
+  const out: string[] = [];
+  for (let i = 0; i < n; i++) {
+    const from = Math.floor((i * chars.length) / n);
+    const to = Math.floor(((i + 1) * chars.length) / n);
+    out.push(chars.slice(from, to).join("").trim());
+  }
+  return out;
+}
+
+/**
+ * [watch-base-driven-split] Pemasangan APPROKSIMATIF untuk cue yang TARGET-nya
+ * datang TANPA tanda baca (auto-caption mentah — mis. Hindi/Arab yang belum
+ * di-restore punktuasinya oleh worker) sehingga tak bisa dipecah aman lewat
+ * pencocokan jumlah penggal. `base` (terjemahan Indonesia) SUDAH bertanda baca,
+ * jadi kita jadikan ia penggerak: pecah base jadi `basePieces` (kalimat/klausa),
+ * lalu target & translit dibagi proporsional ke jumlah yang SAMA. Pemasangan
+ * per-kata jadi perkiraan (batas kata target ≠ batas kalimat base — inilah yang
+ * dulu di-rem [watch-pair-safe-v1]), TAPI dipakai HANYA saat alternatifnya adalah
+ * satu paragraf raksasa (target sama sekali tak terpunktuasi). Tiap section kini =
+ * satu kalimat/klausa arti utuh → jauh lebih terbaca & tak overwhelming.
+ */
+function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
+  const n = basePieces.length;
+  if (n <= 1) return [cue];
+  const tgt = distributeUnits(cue.target, n);
+  const tr = cue.translit ? distributeUnits(cue.translit, n) : null;
+  const dur = Math.max(0.001, cue.end - cue.start);
+  const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
+  let acc = 0;
+  return basePieces.map((b, i) => {
+    const start = cue.start + dur * (acc / total);
+    acc += tgt[i].length;
+    const end = i === n - 1 ? cue.end : cue.start + dur * (acc / total);
+    return {
+      start,
+      end: Math.max(end, start + 0.3),
+      target: tgt[i] ?? "",
+      base: b,
+      ...(tr ? { translit: tr[i] ?? "" } : {}),
+    };
+  });
 }
 
 /**
@@ -864,7 +948,7 @@ const MERGE_MAX_CHARS = 240;
 const MERGE_MAX_GAP = 2.5;
 // Cue dianggap MENGAKHIRI kalimat kalau target-nya berakhir tanda titik kalimat
 // (termasuk CJK。！？) — opsional diikuti kutип/kurung penutup.
-const SENTENCE_END_RE = /[.!?…。！？]["'”’)\]]*\s*$/u;
+const SENTENCE_END_RE = /[.!?…。！？।؟۔]["'”’)\]]*\s*$/u;
 
 function joinText(a: string | undefined, b: string | undefined): string {
   return [a?.trim(), b?.trim()].filter(Boolean).join(" ");
