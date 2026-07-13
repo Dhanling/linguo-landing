@@ -9,9 +9,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  Check,
   ChevronLeft,
   ChevronRight,
   Languages,
+  Layers,
   ListChecks,
   Loader2,
   Maximize,
@@ -28,6 +30,9 @@ import {
   X,
 } from "lucide-react";
 import {
+  BASE_LANGS,
+  countSavedForVideo,
+  getBaseLangDef,
   processTranscript,
   DEFAULT_BASE_LANG,
   getAlignment,
@@ -129,6 +134,8 @@ export default function VideoLearnPlayer({
   baseLang = DEFAULT_BASE_LANG,
   onClose,
   onChangeLang,
+  onChangeBaseLang,
+  onOpenVocab,
   onSavedChange,
   recommendations = [],
   onSelectVideo,
@@ -140,6 +147,10 @@ export default function VideoLearnPlayer({
   onClose: () => void;
   /** Ganti bahasa yang dipelajari saat menonton → balik ke beranda Watch & Learn. */
   onChangeLang?: () => void;
+  /** Ganti bahasa terjemahan (tombol di header) — baris terjemahan diterjemah ulang. */
+  onChangeBaseLang?: (code: string) => void;
+  /** Buka deck kosakata (tombol jumlah kosakata di header). */
+  onOpenVocab?: () => void;
   onSavedChange?: () => void;
   recommendations?: ImmersionVideo[];
   onSelectVideo?: (v: ImmersionVideo) => void;
@@ -188,6 +199,23 @@ export default function VideoLearnPlayer({
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
 
   const [anchor, setAnchor] = useState<Anchor | null>(null);
+
+  // Dropdown pilih bahasa terjemahan (tombol di header). Dirender di DALAM player
+  // karena picker milik katalog (z-85) tenggelam di bawah overlay player (z-90).
+  const [baseMenuOpen, setBaseMenuOpen] = useState(false);
+  // Jumlah kosakata yang disimpan sewaktu menonton video ini (badge di header).
+  const [savedCount, setSavedCount] = useState(0);
+  const refreshSaved = useCallback(() => {
+    setSavedCount(countSavedForVideo(video.videoId, langCode));
+  }, [video.videoId, langCode]);
+  useEffect(() => {
+    refreshSaved();
+  }, [refreshSaved]);
+  // Simpan kata → perbarui badge lokal + teruskan ke induk (refresh deck/badge katalog).
+  const handleSaved = useCallback(() => {
+    refreshSaved();
+    onSavedChange?.();
+  }, [refreshSaved, onSavedChange]);
 
   // [linguo-patch:watch-translit-hover-sync-v1] Kata target yang sedang di-hover di
   // panel transkrip. `i` = indeks cue, `k` = indeks-urut kata (di antara token kata)
@@ -923,11 +951,76 @@ export default function VideoLearnPlayer({
       className="fixed inset-0 z-[90] flex flex-col"
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
-      {/* Header — judul + tombol bahasa (ganti → balik ke beranda) + tutup. */}
+      {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup. */}
       <div className="flex items-center gap-2 px-4 py-3 sm:px-6">
         <p className="mr-auto line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
           {video.title}
         </p>
+
+        {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata. */}
+        {onOpenVocab && (
+          <button
+            onClick={onOpenVocab}
+            className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+            style={{ border: `1px solid ${BORDER}` }}
+            title="Kosakata tersimpan dari video ini"
+          >
+            <Layers className="h-4 w-4" color={TEAL} />
+            <span className="hidden sm:inline">Kosakata</span>
+            {savedCount > 0 && (
+              <span
+                className="rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
+                style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
+              >
+                {savedCount}
+              </span>
+            )}
+          </button>
+        )}
+
+        {/* Bahasa terjemahan (baris di bawah subtitle) — dropdown ganti cepat. */}
+        {onChangeBaseLang && (
+          <div className="relative shrink-0">
+            <button
+              onClick={() => setBaseMenuOpen((v) => !v)}
+              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+              style={{ border: `1px solid ${BORDER}` }}
+              title="Bahasa terjemahan di bawah subtitle"
+            >
+              <Languages className="h-4 w-4" color={GOLD} />
+              <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
+              <span className="hidden sm:inline">{getBaseLangDef(baseLang).label}</span>
+            </button>
+            {baseMenuOpen && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setBaseMenuOpen(false)} />
+                <div
+                  className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+                  style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                >
+                  {BASE_LANGS.map((b) => {
+                    const on = b.code === baseLang;
+                    return (
+                      <button
+                        key={b.code}
+                        onClick={() => {
+                          setBaseMenuOpen(false);
+                          if (!on) onChangeBaseLang(b.code);
+                        }}
+                        className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
+                      >
+                        <RectFlag code={b.country} h={16} />
+                        <span className="flex-1 font-semibold text-white">{b.label}</span>
+                        {on && <Check className="h-4 w-4" color={TEAL} />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
         {onChangeLang &&
           (() => {
             const wl = getImmersionLang(langCode);
@@ -1478,10 +1571,11 @@ export default function VideoLearnPlayer({
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
           langCode={langCode}
+          videoId={video.videoId}
           x={anchor.x}
           y={anchor.y}
           onClose={() => setAnchor(null)}
-          onSavedChange={onSavedChange}
+          onSavedChange={handleSaved}
         />
       )}
     </div>

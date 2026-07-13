@@ -70,6 +70,7 @@ export default function WordStudy({
   word,
   sentence,
   langCode,
+  videoId,
   translit,
   meaning,
   onClose,
@@ -78,6 +79,7 @@ export default function WordStudy({
   word: string;
   sentence: string;
   langCode: string;
+  videoId?: string;
   translit?: string;
   meaning?: WordMeaning | null;
   onClose: () => void;
@@ -120,11 +122,11 @@ export default function WordStudy({
       removeSavedWord(word, langCode);
       setSaved(false);
     } else {
-      saveWord({ word, meaning: meaning?.meaning ?? deep?.usage ?? "", langCode, example: sentence });
+      saveWord({ word, meaning: meaning?.meaning ?? deep?.usage ?? "", langCode, example: sentence, videoId });
       setSaved(true);
     }
     onSavedChange?.();
-  }, [saved, word, langCode, meaning, deep, sentence, onSavedChange]);
+  }, [saved, word, langCode, meaning, deep, sentence, videoId, onSavedChange]);
 
   const ask = useCallback(
     (q: string) => {

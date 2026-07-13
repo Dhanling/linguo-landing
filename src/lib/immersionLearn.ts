@@ -1107,6 +1107,9 @@ async function callWordInfo(params: {
 export interface WordMeaning {
   meaning: string;
   type: string;
+  /** Bentuk dasar/kamus (infinitive) untuk verba yang terkonjugasi — mis. "produjo"
+   *  → "producir". Kosong/undefined untuk non-verba atau kata yang sudah bentuk dasar. */
+  base?: string;
 }
 
 export async function getWordMeaning(params: {
@@ -1121,11 +1124,13 @@ export async function getWordMeaning(params: {
   const parsed = JSON.parse(raw.slice(start, end + 1)) as {
     meaning?: unknown;
     type?: unknown;
+    base?: unknown;
   };
   const meaning = typeof parsed.meaning === "string" ? parsed.meaning.trim() : "";
   const type = typeof parsed.type === "string" ? parsed.type.trim() : "";
+  const base = typeof parsed.base === "string" ? parsed.base.trim() : "";
   if (!meaning && !type) throw new Error("Arti kosong.");
-  return { meaning, type };
+  return { meaning, type, base: base || undefined };
 }
 
 /** Penjelasan tata bahasa singkat (teks bebas) untuk kata yang di-tap. */
@@ -1504,6 +1509,9 @@ export interface SavedWord {
   meaning: string;
   langCode: string;
   example: string;
+  // Video tempat kata disimpan — dipakai badge "kosakata di video ini" pada player.
+  // Opsional: kata lama (sebelum fitur ini) tak punya field ini.
+  videoId?: string;
   ts: number;
   // State spaced-repetition (SM-2). Opsional: kata lama (sebelum fitur SRS) tak
   // punya field ini → diperlakukan "baru" / jatuh tempo langsung saat direview.
@@ -1525,6 +1533,12 @@ export function getSavedWords(): SavedWord[] {
 
 function keyOf(word: string, langCode: string): string {
   return `${langCode}::${word.trim().toLowerCase()}`;
+}
+
+/** Jumlah kosakata yang disimpan sewaktu menonton sebuah video (bahasa tertentu). */
+export function countSavedForVideo(videoId: string, langCode: string): number {
+  if (!videoId) return 0;
+  return getSavedWords().filter((w) => w.videoId === videoId && w.langCode === langCode).length;
 }
 
 export function isWordSaved(word: string, langCode: string): boolean {

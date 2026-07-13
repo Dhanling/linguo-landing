@@ -1059,6 +1059,12 @@ export default function WatchAndLearn() {
             setActive(null);
             setLangPickerOpen(true);
           }}
+          // Ganti bahasa terjemahan langsung dari header player (tanpa tutup video).
+          onChangeBaseLang={(code) => {
+            setBaseLang(code);
+            storeBaseLang(code);
+          }}
+          onOpenVocab={() => setDeckOpen(true)}
           onSavedChange={refreshVocab}
         />
       )}

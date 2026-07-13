@@ -67,6 +67,7 @@ export function WordTooltip({
   sentence,
   wordIdx,
   langCode,
+  videoId,
   x,
   y,
   onClose,
@@ -76,6 +77,7 @@ export function WordTooltip({
   sentence: string;
   wordIdx?: number;
   langCode: string;
+  videoId?: string;
   x: number;
   y: number;
   onClose: () => void;
@@ -247,11 +249,11 @@ export function WordTooltip({
       removeSavedWord(word, langCode);
       setSaved(false);
     } else {
-      saveWord({ word, meaning: meaning?.meaning ?? "", langCode, example: sentence });
+      saveWord({ word, meaning: meaning?.meaning ?? "", langCode, example: sentence, videoId });
       setSaved(true);
     }
     onSavedChange?.();
-  }, [saved, word, langCode, meaning, sentence, onSavedChange]);
+  }, [saved, word, langCode, meaning, sentence, videoId, onSavedChange]);
 
   const openGrammar = useCallback(() => {
     setGrammarOpen(true);
@@ -295,6 +297,13 @@ export function WordTooltip({
         >
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-[18px] font-extrabold text-white">{word}</span>
+            {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
+            {meaning?.base &&
+              meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
+                <span className="text-[14px] font-semibold" style={{ color: SUB }}>
+                  ({meaning.base})
+                </span>
+              )}
             {meaning?.type && (
               <span
                 className="rounded-md px-1.5 py-0.5 text-[10.5px] font-semibold"
@@ -398,6 +407,7 @@ export function WordTooltip({
         word={word}
         sentence={sentence}
         langCode={langCode}
+        videoId={videoId}
         translit={translit}
         meaning={meaning}
         onClose={() => {
