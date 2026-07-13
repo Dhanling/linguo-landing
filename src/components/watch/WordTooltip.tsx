@@ -2,9 +2,9 @@
 
 // Tooltip balon di atas kata yang di-tap dalam player Watch & Learn. Menampilkan
 // arti + kelas kata (dari word-info AI), lalu deret aksi: Simpan kata (ke
-// localStorage), Analisa (penjelasan tata bahasa), dan Dengar (Web Speech API).
+// localStorage), Analisa (mode belajar mendalam layar penuh), dan Dengar.
 // Otomatis mengucapkan kata saat dibuka; posisinya menempel di atas titik tap
-// dan diklem ke tepi layar.
+// dan diklem ke tepi layar. Bisa digeser dari area mana pun kecuali tombol.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -13,7 +13,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Loader2,
-  Maximize2,
   Sparkles,
   Volume2,
   X,
@@ -21,7 +20,6 @@ import {
 import WordStudy from "./WordStudy";
 import {
   cleanWord,
-  getWordGrammar,
   getWordMeaning,
   isNonLatin,
   isWordSaved,
@@ -161,15 +159,10 @@ export function WordTooltip({
   // "meaning" tak mengembalikannya, jadi kita ambil terpisah via /api/translit.
   const [translit, setTranslit] = useState("");
 
-  // Penjelasan grammar (mode Analisa kata) — dibuka on-demand.
-  const [grammarOpen, setGrammarOpen] = useState(false);
-  const [grammar, setGrammar] = useState<string | null>(null);
-  const [grammarLoading, setGrammarLoading] = useState(false);
-
-  // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol perbesar.
+  // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa.
   const [studyOpen, setStudyOpen] = useState(false);
 
-  // Geser bebas — offset dari posisi awal, di-drag lewat header.
+  // Geser bebas — offset dari posisi awal, di-drag dari area mana pun balon.
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const dragRef = useRef<{ sx: number; sy: number; ox: number; oy: number } | null>(null);
 
@@ -255,20 +248,9 @@ export function WordTooltip({
     onSavedChange?.();
   }, [saved, word, langCode, meaning, sentence, videoId, onSavedChange]);
 
-  const openGrammar = useCallback(() => {
-    setGrammarOpen(true);
-    if (grammar || grammarLoading) return;
-    setGrammarLoading(true);
-    getWordGrammar({ word, sentence, langCode })
-      .then((t) => setGrammar(t))
-      .catch(() => setGrammar("Gagal memuat analisa. Coba lagi nanti."))
-      .finally(() => setGrammarLoading(false));
-  }, [grammar, grammarLoading, word, sentence, langCode]);
-
   // Posisi balon: di atas titik tap, diklem ke layar.
   const vw = typeof window !== "undefined" ? window.innerWidth : 360;
   const left = Math.max(8, Math.min(x - TIP_W / 2, vw - TIP_W - 8));
-  const wide = grammarOpen;
   // Kalau kepenuhan di atas, taruh di bawah titik tap.
   const above = y > 240;
   const top = above ? undefined : y + 16;
@@ -279,22 +261,20 @@ export function WordTooltip({
     <div className="fixed inset-0 z-[95]" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
-        className="absolute rounded-2xl p-3.5 shadow-2xl"
+        onPointerDown={onDragStart}
+        className="absolute touch-none cursor-move select-none rounded-2xl p-3.5 shadow-2xl"
         style={{
           left,
           top,
           bottom,
-          width: wide ? Math.min(320, vw - 16) : TIP_W,
+          width: TIP_W,
           backgroundColor: BALLOON,
           border: `1px solid ${BORDER}`,
           transform: `translate(${offset.x}px, ${offset.y}px)`,
         }}
       >
-        {/* Header: kata + kelas kata + tutup — sekaligus pegangan untuk digeser */}
-        <div
-          onPointerDown={onDragStart}
-          className="flex touch-none cursor-move select-none items-start justify-between gap-2"
-        >
+        {/* Header: kata + kelas kata + tutup */}
+        <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-[18px] font-extrabold text-white">{word}</span>
             {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
@@ -313,18 +293,9 @@ export function WordTooltip({
               </span>
             )}
           </div>
-          <div className="flex shrink-0 items-center gap-1.5">
-            <button
-              onClick={() => setStudyOpen(true)}
-              aria-label="Belajar mendalam"
-              className="opacity-60 hover:opacity-100"
-            >
-              <Maximize2 className="h-4 w-4 text-white" />
-            </button>
-            <button onClick={onClose} aria-label="Tutup" className="opacity-60 hover:opacity-100">
-              <X className="h-4 w-4 text-white" />
-            </button>
-          </div>
+          <button onClick={onClose} aria-label="Tutup" className="shrink-0 opacity-60 hover:opacity-100">
+            <X className="h-4 w-4 text-white" />
+          </button>
         </div>
 
         {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
@@ -375,30 +346,13 @@ export function WordTooltip({
           <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
             {saved ? <BookmarkCheck className="h-4 w-4" /> : <BookmarkPlus className="h-4 w-4" />}
           </TipAction>
-          <TipAction active={grammarOpen} onClick={openGrammar} label="Analisa">
+          <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
             <Sparkles className="h-4 w-4" />
           </TipAction>
           <TipAction onClick={() => speak(word, langCode)} label="Dengar">
             <Volume2 className="h-4 w-4" />
           </TipAction>
         </div>
-
-        {/* Panel analisa grammar */}
-        {grammarOpen && (
-          <div
-            className="mt-3 max-h-52 overflow-y-auto rounded-xl px-3 py-2.5 [scrollbar-width:thin]"
-            style={{ backgroundColor: "rgba(255,255,255,0.04)", border: `1px solid ${BORDER}` }}
-          >
-            {grammarLoading ? (
-              <div className="flex items-center gap-2" style={{ color: SUB }}>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                <span className="text-[12px]">Menganalisa…</span>
-              </div>
-            ) : (
-              <GrammarText text={grammar ?? ""} />
-            )}
-          </div>
-        )}
       </div>
     </div>
 
@@ -421,27 +375,6 @@ export function WordTooltip({
       />
     )}
     </>
-  );
-}
-
-// Render penjelasan grammar. word-info membungkus kata target dalam « » guillemet
-// (diikuti arti dalam kurung) — kita sorot bagian itu dengan warna teal.
-function GrammarText({ text }: { text: string }) {
-  const parts = text.split(/(«[^»]*»(?:\s*\([^)]*\))?)/g);
-  return (
-    <p className="text-[12.5px] leading-relaxed text-white/85">
-      {parts.map((p, i) => {
-        if (p.startsWith("«")) {
-          const clean = p.replace(/[«»]/g, "");
-          return (
-            <span key={i} className="font-bold" style={{ color: "#7FE0E0" }}>
-              {clean}
-            </span>
-          );
-        }
-        return <span key={i}>{p}</span>;
-      })}
-    </p>
   );
 }
 
