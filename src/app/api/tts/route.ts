@@ -27,6 +27,15 @@ const CHIRP_LOCALES: Record<string, string> = {
   nl: "nl-NL", ja: "ja-JP", ko: "ko-KR", zh: "cmn-CN", ru: "ru-RU",
   ar: "ar-XA", hi: "hi-IN", th: "th-TH", vi: "vi-VN", tr: "tr-TR",
   en: "en-US",
+  // [watch-tts-chirp-v2] Locale tambahan (Danish dkk) — diverifikasi live via
+  // GET /v1/voices 2026-07-13: semua locale di bawah punya varian Chirp3-HD-Kore.
+  da: "da-DK", sv: "sv-SE", no: "nb-NO", nb: "nb-NO", fi: "fi-FI",
+  pl: "pl-PL", cs: "cs-CZ", sk: "sk-SK", hu: "hu-HU", ro: "ro-RO",
+  bg: "bg-BG", uk: "uk-UA", el: "el-GR", he: "he-IL", id: "id-ID",
+  hr: "hr-HR", sr: "sr-RS", sl: "sl-SI", lt: "lt-LT", lv: "lv-LV",
+  et: "et-EE", sw: "sw-KE", ur: "ur-IN", bn: "bn-IN", ta: "ta-IN",
+  te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", mr: "mr-IN",
+  pa: "pa-IN", yue: "yue-HK",
 };
 // Kore = suara Chirp 3 HD default (valid di semua locale di atas).
 const CHIRP_SPEAKER = "Kore";
@@ -116,13 +125,20 @@ export async function POST(req: NextRequest) {
     const text = cleanText(body?.text || "").slice(0, 400);
     if (!text) return NextResponse.json({ error: "text kosong" }, { status: 400 });
 
-    const token = await getAccessToken();
-
     // [watch-tts-chirp-v1] Kalau client kirim `lang` (mis. "es"), pakai voice Chirp
     // 3 HD sesuai bahasa itu. Tanpa `lang` → perilaku lama (kuis vi-VN) tetap utuh.
     const langRaw = typeof body?.lang === "string" ? body.lang.trim().toLowerCase() : "";
     const langBase = langRaw.split("-")[0];
     const chirpLocale = langBase ? CHIRP_LOCALES[langBase] : undefined;
+
+    // [watch-tts-chirp-v2] Bahasa dikirim tapi tak ada di peta (mis. fa, km, am):
+    // JANGAN jatuh ke voice vi-VN (kedengaran bahasa Vietnam!) — balas 422 supaya
+    // client fallback ke Web Speech browser.
+    if (langBase && !chirpLocale) {
+      return NextResponse.json({ error: `lang tidak didukung: ${langBase}` }, { status: 422 });
+    }
+
+    const token = await getAccessToken();
 
     const languageCode = chirpLocale ?? LANG_CODE;
     const voice = chirpLocale

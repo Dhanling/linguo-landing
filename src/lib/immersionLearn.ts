@@ -127,11 +127,57 @@ function speakBrowser(text: string, langCode: string) {
   }
 }
 
-export async function speakText(text: string, langCode: string) {
-  if (typeof window === "undefined") return;
+// [wl-tts-cache-v1] Cache audio TTS: sekali sebuah (teks, bahasa) di-generate,
+// klik berikutnya pakai audio yang sama — hemat kuota Google TTS. Dua lapis:
+//   1. Map in-memory (tercepat, per page-load, dibatasi TTS_MEM_MAX entri)
+//   2. Cache API browser (persist antar reload/halaman, best-effort)
+// Request in-flight juga di-dedupe biar klik ganda cepat tak memicu dua fetch.
+const TTS_MEM_MAX = 60;
+const ttsMem = new Map<string, string>();
+const ttsInflight = new Map<string, Promise<string>>();
+
+function ttsRemember(key: string, b64: string) {
+  ttsMem.delete(key);
+  ttsMem.set(key, b64); // re-insert → jadi entri termuda (Map jaga urutan insert)
+  while (ttsMem.size > TTS_MEM_MAX) {
+    const tertua = ttsMem.keys().next().value;
+    if (tertua === undefined) break;
+    ttsMem.delete(tertua);
+  }
+}
+
+async function ttsCacheStore(): Promise<Cache | null> {
   try {
-    ttsAudio?.pause();
-    window.speechSynthesis?.cancel();
+    if (typeof caches === "undefined") return null;
+    return await caches.open("wl-tts-v1");
+  } catch {
+    return null; // mis. private mode / konteks non-secure
+  }
+}
+
+// URL sintetis sebagai kunci Cache API (POST tak bisa di-cache, jadi kunci GET buatan)
+function ttsCacheKey(text: string, langCode: string): string {
+  return `/api/tts?wl-cache=1&lang=${encodeURIComponent(langCode)}&text=${encodeURIComponent(text)}`;
+}
+
+async function fetchTtsAudio(text: string, langCode: string): Promise<string> {
+  const key = `${langCode}|${text}`;
+  const hit = ttsMem.get(key);
+  if (hit) return hit;
+  const inflight = ttsInflight.get(key);
+  if (inflight) return inflight;
+  const p = (async () => {
+    const store = await ttsCacheStore();
+    if (store) {
+      const cached = await store.match(ttsCacheKey(text, langCode)).catch(() => undefined);
+      if (cached) {
+        const b64 = await cached.text();
+        if (b64) {
+          ttsRemember(key, b64);
+          return b64;
+        }
+      }
+    }
     const res = await fetch("/api/tts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -140,8 +186,28 @@ export async function speakText(text: string, langCode: string) {
     if (!res.ok) throw new Error(`tts ${res.status}`);
     const data = (await res.json()) as { audioContent?: string };
     if (!data.audioContent) throw new Error("no audio");
+    ttsRemember(key, data.audioContent);
+    if (store) {
+      await store.put(ttsCacheKey(text, langCode), new Response(data.audioContent)).catch(() => {});
+    }
+    return data.audioContent;
+  })();
+  ttsInflight.set(key, p);
+  try {
+    return await p;
+  } finally {
+    ttsInflight.delete(key);
+  }
+}
+
+export async function speakText(text: string, langCode: string) {
+  if (typeof window === "undefined") return;
+  try {
+    ttsAudio?.pause();
+    window.speechSynthesis?.cancel();
+    const audioContent = await fetchTtsAudio(text, langCode);
     if (!ttsAudio) ttsAudio = new Audio();
-    ttsAudio.src = `data:audio/mp3;base64,${data.audioContent}`;
+    ttsAudio.src = `data:audio/mp3;base64,${audioContent}`;
     await ttsAudio.play();
   } catch {
     speakBrowser(text, langCode); // best-effort fallback
