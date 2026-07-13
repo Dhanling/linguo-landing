@@ -262,19 +262,20 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=11` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=10 setelah
-      // [watch-base-driven-split]: target auto-caption TANPA tanda baca (mis. vlog
-      // Hindi) tak lagi jadi paragraf raksasa — kini dipecah per KALIMAT/KLAUSA base
-      // (terjemahan Indonesia bertanda baca) dengan target proporsional, + kata
-      // sambung Hindi/skrip non-Latin. Jalur pasangan-aman (target berpunktuasi)
-      // tak berubah. Cache lama di-re-split saat dibaca (splitCuesBySentence idempoten).
-      // (v=10 backfill 2 video Swedia; v=9 pemecah KLAUSA di transcript-worker;
+      // `v=12` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=11 setelah
+      // backfill terjemahan Indonesia vlog Hindi qK0wnEnaNE0 (Jason Vlogs — 20/27
+      // baris `pending`, base=Hindi krn Groq 429 saat job jalan; di-PATCH via
+      // service_role → base ID, pending false).
+      // (v=11 [watch-base-driven-split]: target auto-caption TANPA tanda baca (mis.
+      // vlog Hindi) tak lagi jadi paragraf raksasa — dipecah per KALIMAT/KLAUSA base
+      // (terjemahan Indonesia) dgn target proporsional + kata sambung Hindi/non-Latin;
+      // v=10 backfill 2 video Swedia; v=9 pemecah KLAUSA di transcript-worker;
       // v=8 restorasi tanda baca caption auto; v=7 [watch-pair-safe-v1] split kalimat
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=11`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=12`,
       { method: "GET" },
       6000
     );
