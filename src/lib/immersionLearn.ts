@@ -196,16 +196,17 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=7` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=6 setelah
-      // [watch-pair-safe-v1]: split kalimat kini hanya saat jumlah kalimat target ==
-      // base (== translit) → target↔arti tak lagi geser satu baris (gejala Peppa Pig
-      // Spanyol: subtitle tak sinkron dengan terjemahan). Cache lama di-re-split saat
-      // dibaca (splitCuesBySentence idempoten), bump ini yang memaksa CDN menyajikannya.
-      // (v=6 re-segmentasi vlog Spanyol gpFqVxLDEJ0 "proteína"; v=5 backfill vlog
+      // `v=8` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=7 setelah
+      // restorasi tanda baca caption auto di transcript-worker: transkrip TANPA
+      // punktuasi (mis. Peppa Spanyol 15r3pHkqC5M) kini dipulihkan tanda bacanya
+      // via LLM lalu dipecah 1 kalimat/section (ganti pembicara = section baru);
+      // cache lama sudah di-backfill lewat resegmentCache.
+      // (v=7 [watch-pair-safe-v1] split kalimat hanya saat jumlah target == base;
+      // v=6 re-segmentasi vlog Spanyol gpFqVxLDEJ0 "proteína"; v=5 backfill vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=7`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=8`,
       { method: "GET" },
       6000
     );
