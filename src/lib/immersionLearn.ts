@@ -262,13 +262,22 @@ async function fetchTimeout(url: string, init: RequestInit, ms: number): Promise
 async function readTranscriptCache(videoId: string, langCode: string): Promise<LearnCue[] | null> {
   try {
     const res = await fetchTimeout(
-      // `v=14` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=13 setelah
-      // backfill vlog/kartun Hindi gHB-EcsWhgo (Bluey "The Beach"): 56/76 cue
-      // `pending` (base=Hindi, tampil sbg terjemahan) → diterjemah sendiri ke
-      // Indonesia + PATCH service_role → base ID, pending false. Model Groq SEHAT,
-      // pola 429 free-tier saat job jalan (lihat [[groq-model-deprecation]]).
-      // (v=13 backfill vlog Peppa Bulgaria ls64k49ueuA (89 section);
+      // `v=15` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
+      // masih menyajikan versi lama sampai sehari. Di-bump dari v=14 setelah
+      // re-transcribe Peppa Bulgaria ls64k49ueuA: cache lama = window caption TANPA
+      // tanda baca (restorePunctuation diam-diam gagal karena Groq 429 tanpa retry)
+      // → satu section mencampur beberapa kalimat & PEMBICARA + karaoke meleset.
+      // Fix: groqPunctuate kini retry 429/5xx (worker) → transkrip di-restore jadi
+      // 1 kalimat/1 pembicara per section; klien interpTime menyandarkan waktu
+      // potongan ke batas window ASLI (anchor) biar sorotan menempel ke audio.
+      // (v=16 [watch-tagalog-conjunctions]: kata sambung Tagalog (fil/tl:
+      // at/o/ngunit/kaya/dahil/…) ditambah ke pemecah klausa transcript-worker →
+      // kalimat Tagalog panjang tak lagi jadi section raksasa; backfill lagu anak
+      // "Tatlong Bibe" lJCSu8RmSjE: reproses (35→58 section) + 58 cue diterjemah ID;
+      // v=15 (lihat bawah);
+      // v=14 backfill vlog/kartun Hindi gHB-EcsWhgo (Bluey "The Beach"): 56/76 cue
+      // `pending` (base=Hindi) → diterjemah + PATCH service_role → base ID;
+      // v=13 backfill vlog Peppa Bulgaria ls64k49ueuA (89 section);
       // v=12 backfill vlog Hindi qK0wnEnaNE0 Jason Vlogs;
       // v=11 [watch-base-driven-split]: target auto-caption TANPA tanda baca (mis.
       // vlog Hindi) tak lagi jadi paragraf raksasa — dipecah per KALIMAT/KLAUSA base
@@ -278,7 +287,7 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=14`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=16`,
       { method: "GET" },
       6000
     );
@@ -571,6 +580,35 @@ function splitSentences(text: string, locale?: string): string[] {
   return t.match(/[^.!?…।。！？؟۔]+[.!?…।。！？؟۔]*/g)?.map((s) => s.trim()).filter(Boolean) ?? [t];
 }
 
+// [watch-karaoke-anchor-v1] Cue yang digabung dari BEBERAPA window caption
+// (mergeCueFragments) membawa "anchor" waktu: pasangan [offset-karakter, detik]
+// di tiap batas window ASLI YouTube. Saat cue itu dipecah ulang, waktu tiap
+// potongan TAK lagi ditebak rata per-karakter (yang bikin sorotan karaoke meleset
+// dari audio saat satu potongan menyeberang batas window), melainkan diinterpolasi
+// terhadap batas window ASLI — sorotan menempel ke timing sebenarnya. Cue window
+// tunggal (tanpa anchor) tetap pakai perkiraan linear seperti sebelumnya.
+type TimedCue = LearnCue & { _anc?: Array<[number, number]> };
+
+/** Detik untuk offset-karakter `chars` di dalam cue, snap ke batas window asli bila ada. */
+function interpTime(cue: LearnCue, chars: number, total: number): number {
+  const { start, end } = cue;
+  const frac = total > 0 ? Math.max(0, Math.min(1, chars / total)) : 0;
+  const anc = (cue as TimedCue)._anc;
+  if (!anc || !anc.length) return start + (end - start) * frac;
+  // Titik kontrol (fraksi-karakter → detik): awal, tiap anchor window, lalu akhir.
+  const pts: Array<[number, number]> = [
+    [0, start],
+    ...anc.map(([c, t]) => [Math.max(0, Math.min(1, c / total)), t] as [number, number]),
+    [1, end],
+  ];
+  for (let i = 1; i < pts.length; i++) {
+    const [f0, t0] = pts[i - 1];
+    const [f1, t1] = pts[i];
+    if (frac >= f0 && frac <= f1) return f1 <= f0 ? t0 : t0 + (t1 - t0) * ((frac - f0) / (f1 - f0));
+  }
+  return end;
+}
+
 /**
  * Pecah satu cue jadi beberapa cue SATU-KALIMAT — target "1 baris = 1 kalimat".
  *
@@ -619,13 +657,12 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
   const bas = bases;
   const tr = translits;
 
-  const dur = Math.max(0.001, cue.end - cue.start);
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return tgt.map((tg, i) => {
-    const start = cue.start + dur * (acc / total);
+    const start = interpTime(cue, acc, total);
     acc += tg.length;
-    const end = i === tgt.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    const end = i === tgt.length - 1 ? cue.end : interpTime(cue, acc, total);
     return {
       start,
       end: Math.max(end, start + 0.3),
@@ -721,13 +758,12 @@ function spreadOverGroups(
   translitGroups: string[] | null
 ): LearnCue[] {
   const weights = targetGroups.map((s) => s.length);
-  const dur = Math.max(0.001, cue.end - cue.start);
   const total = weights.reduce((n, w) => n + w, 0) || 1;
   let acc = 0;
   return targetGroups.map((tg, g) => {
-    const start = cue.start + dur * (acc / total);
+    const start = interpTime(cue, acc, total);
     acc += weights[g];
-    const end = g === targetGroups.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    const end = g === targetGroups.length - 1 ? cue.end : interpTime(cue, acc, total);
     return {
       start,
       end: Math.max(end, start + 0.3),
@@ -893,13 +929,12 @@ function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
   if (n <= 1) return [cue];
   const tgt = distributeUnits(cue.target, n);
   const tr = cue.translit ? distributeUnits(cue.translit, n) : null;
-  const dur = Math.max(0.001, cue.end - cue.start);
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return basePieces.map((b, i) => {
-    const start = cue.start + dur * (acc / total);
+    const start = interpTime(cue, acc, total);
     acc += tgt[i].length;
-    const end = i === n - 1 ? cue.end : cue.start + dur * (acc / total);
+    const end = i === n - 1 ? cue.end : interpTime(cue, acc, total);
     return {
       start,
       end: Math.max(end, start + 0.3),
@@ -932,13 +967,12 @@ function splitCueByWords(cue: LearnCue): LearnCue[] {
   const bases = cue.base ? distributeWords(cue.base, targets.length) : null;
   const translits = cue.translit ? distributeWords(cue.translit, targets.length) : null;
 
-  const dur = Math.max(0.001, cue.end - cue.start);
   const total = targets.reduce((n, s) => n + s.length, 0) || 1;
   let acc = 0;
   return targets.map((tg, i) => {
-    const start = cue.start + dur * (acc / total);
+    const start = interpTime(cue, acc, total);
     acc += tg.length;
-    const end = i === targets.length - 1 ? cue.end : cue.start + dur * (acc / total);
+    const end = i === targets.length - 1 ? cue.end : interpTime(cue, acc, total);
     return {
       start,
       end: Math.max(end, start + 0.3),
@@ -987,6 +1021,11 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
       prev.target.length + 1 + c.target.length <= MERGE_MAX_CHARS &&
       gap <= MERGE_MAX_GAP;
     if (canMerge) {
+      // [watch-karaoke-anchor-v1] Catat batas window ASLI: offset-karakter tempat
+      // `c` mulai di target gabungan → waktu asli c.start. Dipakai interpTime saat
+      // cue gabungan ini dipecah ulang, biar sorotan menempel ke timing sebenarnya.
+      const tp = prev as TimedCue;
+      (tp._anc ??= []).push([prev.target.length + (prev.target ? 1 : 0), c.start]);
       prev.end = c.end;
       prev.target = joinText(prev.target, c.target);
       prev.base = joinText(prev.base, c.base);
@@ -1007,7 +1046,11 @@ function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
   return mergeCueFragments(cues)
     .flatMap(splitCueBySentence)
     .flatMap(splitLongCue)
-    .flatMap(splitCueByWords);
+    .flatMap(splitCueByWords)
+    // Buang anchor internal (dipakai interpTime) supaya tak ikut tersimpan ke cache.
+    .map(({ start, end, target, base, translit }) =>
+      translit ? { start, end, target, base, translit } : { start, end, target, base }
+    );
 }
 
 /**
