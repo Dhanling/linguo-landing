@@ -10,8 +10,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Check,
-  ChevronLeft,
-  ChevronRight,
   Languages,
   Layers,
   ListChecks,
@@ -23,8 +21,6 @@ import {
   Palette,
   PanelRightClose,
   PanelRightOpen,
-  Pause,
-  Play,
   RotateCcw,
   Type,
   X,
@@ -834,15 +830,6 @@ export default function VideoLearnPlayer({
     }
   }, []);
 
-  const togglePlay = useCallback(() => {
-    try {
-      if (playing) playerRef.current?.pauseVideo?.();
-      else playerRef.current?.playVideo?.();
-    } catch {
-      /* abaikan */
-    }
-  }, [playing]);
-
   const applySpeed = useCallback((idx: number) => {
     setSpeedIdx(idx);
     try {
@@ -909,10 +896,6 @@ export default function VideoLearnPlayer({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [gotoCue]);
-
-  const replayLine = useCallback(() => {
-    if (activeCue) seekTo(activeCue.start);
-  }, [activeCue, seekTo]);
 
   // Minta analisa kalimat (breakdown) untuk sebuah cue — lazy + dedup.
   const requestBreakdown = useCallback(
@@ -1147,9 +1130,10 @@ export default function VideoLearnPlayer({
               kosong antara video dan kontrol → subtitle turun & lebih lega. */}
           {!mini && (
           <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
-            {/* my-auto: terpusat saat ruang lega, tapi tetap bisa discroll kalau
-                hasil analisa membuat baris fokus lebih tinggi dari ruang. */}
-            <div className="my-auto w-full">
+            {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
+                supaya baris kontrol terpisah jelas di dasar & tak menutupi
+                terjemahan. Tetap bisa discroll kalau analisa bikin baris tinggi. */}
+            <div className="mb-auto mt-2 w-full">
               <FocusLine
                 cue={activeCue}
                 time={time}
@@ -1168,45 +1152,21 @@ export default function VideoLearnPlayer({
           </div>
           )}
 
-          {/* Kontrol */}
+          {/* Kontrol — di mobile jadi SATU baris yang bisa digeser mendatar (tak
+              lagi membungkus jadi 3 baris berantakan); di ≥sm kembali membungkus. */}
           {!mini && (
           <div
-            className="flex shrink-0 flex-wrap items-center gap-2 border-t px-4 py-3 sm:px-6"
+            className="flex shrink-0 items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden"
             style={{ borderColor: BORDER }}
           >
-            <CtrlBtn label="Sebelumnya" onClick={() => gotoCue(-1)} disabled={activeIdx <= 0}>
-              <ChevronLeft className="h-5 w-5" />
-            </CtrlBtn>
-            <button
-              onClick={togglePlay}
-              className="flex h-11 w-11 items-center justify-center rounded-full transition-transform active:scale-95"
-              style={{ backgroundColor: "#fff" }}
-              aria-label={playing ? "Jeda" : "Putar"}
-            >
-              {playing ? (
-                <Pause className="h-5 w-5" fill="#0B0E0F" color="#0B0E0F" />
-              ) : (
-                <Play className="h-5 w-5" fill="#0B0E0F" color="#0B0E0F" />
-              )}
-            </button>
-            <CtrlBtn
-              label="Berikutnya"
-              onClick={() => gotoCue(1)}
-              disabled={activeIdx < 0 || activeIdx >= cues.length - 1}
-            >
-              <ChevronRight className="h-5 w-5" />
-            </CtrlBtn>
-            <CtrlBtn label="Ulang kalimat" onClick={replayLine} disabled={!activeCue}>
-              <RotateCcw className="h-4 w-4" />
-            </CtrlBtn>
-
-            <div className="mx-1 h-6 w-px" style={{ backgroundColor: BORDER }} />
-
+            {/* Kontrol putar/jeda/loncat & ulang kalimat DIHAPUS — pakai kontrol
+                bawaan YouTube di video; navigasi section tetap bisa via panah
+                keyboard. Sisakan hanya tombol belajar. */}
             {/* Analisa */}
             <button
               onClick={() => setAnalyze((v) => !v)}
               disabled={txState !== "ready"}
-              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors disabled:opacity-40"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors disabled:opacity-40"
               style={{
                 backgroundColor: analyze ? TEAL : CARD,
                 border: `1px solid ${analyze ? TEAL : BORDER}`,
@@ -1219,7 +1179,7 @@ export default function VideoLearnPlayer({
             {/* Kecepatan */}
             <button
               onClick={() => applySpeed((speedIdx + 1) % SPEEDS.length)}
-              className="rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="shrink-0 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
             >
               {SPEEDS[speedIdx]}x
@@ -1228,7 +1188,7 @@ export default function VideoLearnPlayer({
             {/* CC bawaan YouTube — berguna saat transkrip kita tak ada */}
             <button
               onClick={() => setShowCC((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{
                 backgroundColor: showCC ? "rgba(26,158,158,0.16)" : CARD,
                 border: `1px solid ${showCC ? TEAL : BORDER}`,
@@ -1241,7 +1201,7 @@ export default function VideoLearnPlayer({
             {/* Ukuran teks subtitle & transkrip — Kecil / Sedang / Besar */}
             <button
               onClick={cycleFont}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
               title="Ukuran teks subtitle"
             >
@@ -1252,7 +1212,7 @@ export default function VideoLearnPlayer({
                 buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
             <button
               onClick={() => setShowPanel((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{
                 backgroundColor: showPanel ? "rgba(26,158,158,0.16)" : CARD,
                 border: `1px solid ${showPanel ? TEAL : BORDER}`,
@@ -1272,7 +1232,7 @@ export default function VideoLearnPlayer({
                 daftar rekomendasi muncul mengisi kolom kiri & bisa discroll. */}
             <button
               onClick={enterMini}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
               title="Kecilkan video & tampilkan rekomendasi"
             >
@@ -1282,7 +1242,7 @@ export default function VideoLearnPlayer({
             {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
             <button
               onClick={toggleFullscreen}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
               title={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
             >
@@ -2010,26 +1970,3 @@ function KaraokeText({
   );
 }
 
-function CtrlBtn({
-  children,
-  label,
-  onClick,
-  disabled,
-}: {
-  children: React.ReactNode;
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 disabled:opacity-30"
-      style={{ border: `1px solid ${BORDER}` }}
-    >
-      {children}
-    </button>
-  );
-}
