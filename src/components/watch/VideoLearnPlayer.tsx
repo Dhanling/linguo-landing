@@ -15,12 +15,12 @@ import {
   Languages,
   Layers,
   ListChecks,
+  ListVideo,
   Loader2,
   Maximize,
   Maximize2,
   Minimize,
   Palette,
-  PictureInPicture2,
   PanelRightClose,
   PanelRightOpen,
   Pause,
@@ -1142,23 +1142,29 @@ export default function VideoLearnPlayer({
             )}
           </div>
 
-          {/* Baris fokus — kalimat aktif (shrink-0: jangan terjepit oleh scroll kolom) */}
+          {/* Baris fokus — kalimat aktif. Kini rekomendasi disembunyikan saat
+              menonton penuh, jadi baris ini tumbuh (flex-1) & terpusat di ruang
+              kosong antara video dan kontrol → subtitle turun & lebih lega. */}
           {!mini && (
-          <div className="shrink-0">
-            <FocusLine
-              cue={activeCue}
-              time={time}
-              langCode={langCode}
-              baseLang={baseLang}
-              baseTranslating={baseTranslating}
-              analyze={analyze}
-              breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
-              onWordTap={onWordTap}
-              onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
-              txState={txState}
-              asrRunning={asrRunning}
-              scale={fscale}
-            />
+          <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
+            {/* my-auto: terpusat saat ruang lega, tapi tetap bisa discroll kalau
+                hasil analisa membuat baris fokus lebih tinggi dari ruang. */}
+            <div className="my-auto w-full">
+              <FocusLine
+                cue={activeCue}
+                time={time}
+                langCode={langCode}
+                baseLang={baseLang}
+                baseTranslating={baseTranslating}
+                analyze={analyze}
+                breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
+                onWordTap={onWordTap}
+                onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
+                txState={txState}
+                asrRunning={asrRunning}
+                scale={fscale}
+              />
+            </div>
           </div>
           )}
 
@@ -1262,14 +1268,15 @@ export default function VideoLearnPlayer({
               Transkrip
             </button>
 
-            {/* Miniplayer — video mengecil melayang di pojok, katalog bisa discroll. */}
+            {/* Rekomendasi — video mengecil melayang di pojok (miniplayer) sehingga
+                daftar rekomendasi muncul mengisi kolom kiri & bisa discroll. */}
             <button
               onClick={enterMini}
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
-              title="Kecilkan video (miniplayer)"
+              title="Kecilkan video & tampilkan rekomendasi"
             >
-              <PictureInPicture2 className="h-4 w-4" /> Kecilkan
+              <ListVideo className="h-4 w-4" /> Rekomendasi
             </button>
 
             {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
@@ -1285,10 +1292,11 @@ export default function VideoLearnPlayer({
           </div>
           )}
 
-          {/* Rekomendasi video — di bawah video yang ditonton (ala YouTube).
+          {/* Rekomendasi video — HANYA muncul saat miniplayer (video mengecil).
               Klik untuk langsung memutar video lain tanpa keluar player.
-              Saat mini, daftar ini yang mengisi seluruh kolom kiri. */}
-          {recList.length > 0 && onSelectVideo && (
+              Saat mini, daftar ini yang mengisi seluruh kolom kiri; saat menonton
+              penuh sengaja disembunyikan agar subtitle + kontrol lebih lega. */}
+          {mini && recList.length > 0 && onSelectVideo && (
             <div
               className="min-h-0 flex-1 overflow-y-auto border-t [scrollbar-width:thin]"
               style={{ borderColor: BORDER }}
