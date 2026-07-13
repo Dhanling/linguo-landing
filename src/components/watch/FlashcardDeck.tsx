@@ -23,9 +23,11 @@ import {
   Layers,
   Repeat2,
   RotateCcw,
+  Sparkles,
   Volume2,
   X,
 } from "lucide-react";
+import DeckLibrary from "./DeckLibrary";
 import {
   getSavedWords,
   gradeSavedWord,
@@ -113,7 +115,7 @@ function buildOrder(words: SavedWord[], reviewAhead: boolean): SavedWord[] {
 
 const srsOf = (w: SavedWord): SrsState => w.srs ?? newSrsState();
 
-type Tab = "belajar" | "analisa";
+type Tab = "belajar" | "deck" | "analisa";
 type ViewMode = "home" | "review" | "done";
 
 export default function FlashcardDeck({
@@ -298,6 +300,9 @@ export default function FlashcardDeck({
             <SideNavBtn active={tab === "belajar"} onClick={() => setTab("belajar")} icon={<Layers className="h-4 w-4" />}>
               Belajar
             </SideNavBtn>
+            <SideNavBtn active={tab === "deck"} onClick={() => setTab("deck")} icon={<Sparkles className="h-4 w-4" />}>
+              Deck
+            </SideNavBtn>
             <SideNavBtn active={tab === "analisa"} onClick={() => setTab("analisa")} icon={<BarChart3 className="h-4 w-4" />}>
               Analisa
             </SideNavBtn>
@@ -376,6 +381,9 @@ export default function FlashcardDeck({
               <TabBtn active={tab === "belajar"} onClick={() => setTab("belajar")}>
                 <Layers className="h-4 w-4" /> Belajar
               </TabBtn>
+              <TabBtn active={tab === "deck"} onClick={() => setTab("deck")}>
+                <Sparkles className="h-4 w-4" /> Deck
+              </TabBtn>
               <TabBtn active={tab === "analisa"} onClick={() => setTab("analisa")}>
                 <BarChart3 className="h-4 w-4" /> Analisa
               </TabBtn>
@@ -406,11 +414,13 @@ export default function FlashcardDeck({
           >
             <div>
               <p className="text-[18px] font-extrabold leading-tight text-white">
-                {tab === "belajar" ? "Belajar" : "Analisa"}
+                {tab === "belajar" ? "Belajar" : tab === "deck" ? "Deck" : "Analisa"}
               </p>
               <p className="text-[12px]" style={{ color: SUB }}>
                 {tab === "belajar"
                   ? `${words.length} kata • hafalan dengan pengulangan berjarak`
+                  : tab === "deck"
+                  ? "Deck tematik AI, dari video, buatan sendiri & komunitas"
                   : "Statistik & progres belajarmu"}
               </p>
             </div>
@@ -425,7 +435,17 @@ export default function FlashcardDeck({
 
           <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
             <div className="mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none">
-              {totalWords === 0 ? (
+              {tab === "deck" ? (
+                // Tab Deck tetap tampil walau belum ada kata tersimpan — justru
+                // deck (AI/komunitas) jadi jalan tercepat mengisi kosakata.
+                <DeckLibrary
+                  lang={filter !== "all" ? filter : initialLang}
+                  onVocabChange={() => {
+                    setAll(getSavedWords());
+                    onChange?.();
+                  }}
+                />
+              ) : totalWords === 0 ? (
                 <EmptyState />
               ) : tab === "belajar" ? (
                 <BelajarTab
