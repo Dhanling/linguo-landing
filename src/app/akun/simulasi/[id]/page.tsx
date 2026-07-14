@@ -1436,15 +1436,81 @@ function FillBlankChips({ q, state, onChange }: {
   );
 }
 
+// Soal "pilih bagian yang salah" (Written Expression): opsi berlabel (A)/(B)/…
+// dan frasanya muncul di dalam kalimat. Kita ANDALKAN frasa opsi (bukan marker
+// di prompt yg sering ga lengkap): buang marker dari kalimat, lalu cari tiap
+// frasa opsi utk dijadikan bagian yg bisa diklik. Return null (→ fallback aman
+// ke daftar radio) kalau ada frasa yg tak ketemu / bertumpuk — jadi soal
+// dgn data import jelek tak pernah tampil rusak / tak bisa dijawab.
+function buildErrorInline(prompt: string, options: string[]): Array<{ text: string; optIndex: number | null }> | null {
+  const clean = prompt.replace(/\([A-Za-z]\)/g, "").replace(/\s{2,}/g, " ").trim();
+  const lower = clean.toLowerCase();
+  const found: { start: number; end: number; optIndex: number }[] = [];
+  for (let i = 0; i < options.length; i++) {
+    const phrase = stripOptionLabel(options[i], i).toLowerCase().trim();
+    if (!phrase) return null;
+    const start = lower.indexOf(phrase);
+    if (start < 0) return null;
+    found.push({ start, end: start + phrase.length, optIndex: i });
+  }
+  found.sort((a, b) => a.start - b.start);
+  for (let i = 1; i < found.length; i++) if (found[i].start < found[i - 1].end) return null; // overlap → nyerah
+  const tokens: Array<{ text: string; optIndex: number | null }> = [];
+  let cursor = 0;
+  for (const f of found) {
+    if (f.start > cursor) tokens.push({ text: clean.slice(cursor, f.start), optIndex: null });
+    tokens.push({ text: clean.slice(f.start, f.end), optIndex: f.optIndex });
+    cursor = f.end;
+  }
+  if (cursor < clean.length) tokens.push({ text: clean.slice(cursor), optIndex: null });
+  return tokens;
+}
+
+// Kalimat dengan 4 bagian bergaris-bawah berlabel A–D yang bisa diklik untuk
+// menandai bagian yang salah secara tata bahasa (gaya tes Linguo).
+function IdentifyErrorInline({ tokens, state, onChange }: {
+  tokens: Array<{ text: string; optIndex: number | null }>;
+  state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
+}) {
+  return (
+    <p className="mt-3 text-base leading-loose text-slate-900">
+      {tokens.map((t, i) => {
+        if (t.optIndex == null) return <span key={i}>{t.text}</span>;
+        const active = state.selected_index === t.optIndex;
+        return (
+          <button
+            key={i}
+            type="button"
+            onClick={() => onChange({ selected_index: t.optIndex! })}
+            className={`mx-0.5 inline rounded border-b-2 px-1 align-baseline transition ${active ? "border-teal-500 bg-teal-50 font-semibold text-teal-700" : "border-slate-300 hover:border-slate-500 hover:bg-slate-50"}`}
+          >
+            <sup className={`mr-0.5 text-[10px] font-bold ${active ? "text-teal-600" : "text-slate-400"}`}>{String.fromCharCode(65 + t.optIndex)}</sup>
+            {t.text}
+          </button>
+        );
+      })}
+    </p>
+  );
+}
+
 function QuestionBlock({ index, q, state, onChange }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
 }) {
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
   const isFillBlank = q.type === "multiple_choice" && BLANK_RE.test(q.prompt) && (q.options?.length ?? 0) > 0;
+  // Written Expression: coba rakit versi inline yg bisa diklik; kalau data tak
+  // memungkinkan, errorTokens=null dan jatuh ke daftar radio (tetap bisa dijawab).
+  const errorTokens = (!isFillBlank && q.type === "multiple_choice" && (q.options?.length ?? 0) > 0
+    && q.options!.every((o) => /^\s*\([A-Za-z]\)/.test(o)))
+    ? buildErrorInline(q.prompt, q.options!) : null;
+  const hideRawPrompt = isFillBlank || !!errorTokens;
+  const promptHeading = isFillBlank
+    ? "Lengkapi kalimat dengan kata yang tepat:"
+    : "Pilih bagian yang salah secara tata bahasa:";
   return (
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       {/* pre-line: prompt listening multi-speaker pakai \n per giliran bicara */}
-      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{isFillBlank ? "Lengkapi kalimat dengan kata yang tepat:" : q.prompt}</p>
+      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{hideRawPrompt ? promptHeading : q.prompt}</p>
 
       {q.image_url && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -1457,7 +1523,9 @@ function QuestionBlock({ index, q, state, onChange }: {
 
       {isFillBlank && <FillBlankChips q={q} state={state} onChange={onChange} />}
 
-      {!isFillBlank && (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
+      {errorTokens && <IdentifyErrorInline tokens={errorTokens} state={state} onChange={onChange} />}
+
+      {!isFillBlank && !errorTokens && (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
         <div className="mt-3 space-y-2">
           {opts.map((opt, i) => {
             const active = state.selected_index === i;
