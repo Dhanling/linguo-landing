@@ -568,8 +568,11 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
       animate={{ y: hidden && !open ? "-100%" : 0 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
     >
-      {/* Main Nav */}
-      <nav className={`transition-all duration-300 ${c ? "bg-white shadow-sm" : "bg-[#1A9E9E]"}`}>
+      {/* Main Nav — linguo-patch:nav-floating-glass-v1
+          Di atas hero: bar teal full-width. Setelah scroll (ter-reveal saat scroll
+          up): floating pill dengan efek kaca (frosted glass) — background di baliknya
+          nge-blur ala Lingopie. */}
+      <nav className={`transition-all duration-300 ${c ? "mt-2.5 sm:mt-3 mx-2.5 sm:mx-4 rounded-2xl sm:rounded-full bg-white/60 supports-[backdrop-filter]:bg-white/50 backdrop-blur-xl backdrop-saturate-150 border border-white/50 shadow-xl shadow-slate-900/10" : "bg-[#1A9E9E]"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
