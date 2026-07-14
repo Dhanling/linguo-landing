@@ -993,12 +993,15 @@ export default function VideoLearnPlayer({
       {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
           Di layar penuh: header lepas dari flow (absolute) & auto-hide — geser turun
           saat kursor didekatkan ke tepi atas (strip hover), lalu sembunyi lagi. */}
-      <div className={fullscreen ? "absolute inset-x-0 top-0 z-40" : "shrink-0"}>
+      {/* Di layar penuh header pindah ke bawah (di atas baris kontrol, dalam zona
+          hitam subtitle) supaya TIDAK menutupi kontrol bawaan YouTube di tepi atas
+          video (setting/CC/volume) maupun judulnya. */}
+      <div className={fullscreen ? "absolute inset-x-0 bottom-[3.75rem] z-40" : "shrink-0"}>
         <div
-          className={`flex items-center gap-2 px-4 py-3 sm:px-6 ${
+          className={`flex items-center gap-2 px-4 py-2.5 sm:px-6 ${
             fullscreen
-              ? `bg-gradient-to-b from-black/90 via-black/55 to-transparent transition-all duration-300 ${
-                  chromeHidden ? "pointer-events-none -translate-y-full opacity-0" : "translate-y-0 opacity-100"
+              ? `bg-black transition-all duration-300 ${
+                  chromeHidden ? "pointer-events-none translate-y-full opacity-0" : "translate-y-0 opacity-100"
                 }`
               : ""
           }`}
@@ -1045,7 +1048,9 @@ export default function VideoLearnPlayer({
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setBaseMenuOpen(false)} />
                 <div
-                  className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+                  className={`absolute right-0 z-20 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl ${
+                    fullscreen ? "bottom-full mb-2" : "mt-2"
+                  }`}
                   style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
                 >
                   {BASE_LANGS.map((b) => {
@@ -1209,7 +1214,7 @@ export default function VideoLearnPlayer({
           {!mini && (
           <div
             className={`flex flex-col overflow-y-auto ${
-              fullscreen ? "shrink-0 bg-black px-4 pb-16 pt-3 sm:px-6" : "min-h-0 flex-1 py-2"
+              fullscreen ? "shrink-0 bg-black px-4 pb-32 pt-3 sm:px-6" : "min-h-0 flex-1 py-2"
             }`}
           >
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
