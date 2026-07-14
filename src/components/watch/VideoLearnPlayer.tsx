@@ -1062,9 +1062,10 @@ export default function VideoLearnPlayer({
               : ""
           }`}
         >
-        <p className="mr-auto line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
-          {video.title}
-        </p>
+        {/* Judul dihapus — YouTube sudah menampilkan judul + channel-nya sendiri
+            (kartu saat dijeda / sudut kiri-atas video), jadi judul kita redundan.
+            Spacer ini menggantikan mr-auto agar kontrol tetap terdorong ke kanan. */}
+        <div className="mr-auto" />
 
         {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata. */}
         {onOpenVocab && (
