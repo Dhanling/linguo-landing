@@ -36,9 +36,18 @@ const CHIRP_LOCALES: Record<string, string> = {
   et: "et-EE", sw: "sw-KE", ur: "ur-IN", bn: "bn-IN", ta: "ta-IN",
   te: "te-IN", gu: "gu-IN", kn: "kn-IN", ml: "ml-IN", mr: "mr-IN",
   pa: "pa-IN", yue: "yue-HK",
+  // Tagalog/Filipino — kode kanonik `fil`, `tl` alias ISO-639-1. Chirp3-HD fil-PH.
+  fil: "fil-PH", tl: "fil-PH",
 };
 // Kore = suara Chirp 3 HD default (valid di semua locale di atas).
 const CHIRP_SPEAKER = "Kore";
+
+// [watch-tts-tagalog] Locale yang BELUM punya voice Chirp 3 HD → pakai voice
+// terbaik yang tersedia (diverifikasi live via GET /v1/voices 2026-07-14). Tanpa
+// override, nama `${locale}-Chirp3-HD-Kore` tak eksis → sintesis 400 "voice not found".
+const VOICE_OVERRIDE: Record<string, string> = {
+  "fil-PH": "fil-ph-Neural2-A", // Tagalog: Neural2 wanita (Chirp3-HD belum ada di fil-PH)
+};
 
 type SA = { client_email: string; private_key: string; token_uri?: string };
 
@@ -142,7 +151,7 @@ export async function POST(req: NextRequest) {
 
     const languageCode = chirpLocale ?? LANG_CODE;
     const voice = chirpLocale
-      ? `${chirpLocale}-Chirp3-HD-${CHIRP_SPEAKER}`
+      ? (VOICE_OVERRIDE[chirpLocale] ?? `${chirpLocale}-Chirp3-HD-${CHIRP_SPEAKER}`)
       : await resolveVoice(token);
 
     const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
