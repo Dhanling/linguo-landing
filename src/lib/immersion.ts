@@ -27,6 +27,19 @@ export function formatDuration(sec?: number | null): string {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
+/** Format jumlah penonton → ringkas ala YouTube (1200 → "1,2 rb", 3_400_000 →
+ *  "3,4 jt"). null/0 → "". Dipakai buat badge "views" di kartu Watch & Learn. */
+export function formatViews(views?: number | null): string {
+  if (views == null || views < 0) return "";
+  if (views < 1000) return `${views}`;
+  if (views < 1_000_000) {
+    const n = views / 1000;
+    return `${n >= 100 ? Math.round(n) : n.toFixed(1).replace(/\.0$/, "").replace(".", ",")} rb`;
+  }
+  const n = views / 1_000_000;
+  return `${n >= 100 ? Math.round(n) : n.toFixed(1).replace(/\.0$/, "").replace(".", ",")} jt`;
+}
+
 export interface ImmersionVideo {
   videoId: string;
   title: string;
@@ -34,6 +47,8 @@ export interface ImmersionVideo {
   channel?: string | null;
   /** Durasi video dalam detik (dari yt-search). Dipakai badge & filter durasi. */
   duration?: number | null;
+  /** Jumlah penonton (viewCount YouTube). Dipakai badge "views" di kartu. */
+  views?: number | null;
   /** Estimasi level CEFR dari transkrip — hanya diisi untuk video tab "Siap". */
   level?: import("./cefr").CefrLevel | null;
 }
@@ -420,6 +435,44 @@ export async function searchImmersionVideos(params: {
     return { results, nextPageToken: data.nextPageToken ?? undefined };
   } catch {
     return { results: [] };
+  }
+}
+
+/** Ambil jumlah penonton (dan durasi) untuk sekumpulan videoId lewat mode `ids`
+ *  di yt-search. Dipakai tab "Terjemahan Siap" yang kartunya lahir dari cache
+ *  transkrip DB (tanpa viewCount) → di-enrich supaya badge views ikut muncul.
+ *  Balikin Map videoId → { views, duration }. Best-effort: gagal → Map kosong. */
+export async function fetchVideoStats(
+  ids: string[]
+): Promise<Map<string, { views: number | null; duration: number | null }>> {
+  const out = new Map<string, { views: number | null; duration: number | null }>();
+  const clean = ids.filter((v) => typeof v === "string" && v.length === 11).slice(0, 50);
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY || !clean.length) return out;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/yt-search`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({ ids: clean }),
+    });
+    if (!res.ok) return out;
+    const data = (await res.json()) as {
+      stats?: { videoId?: string; views?: number | null; duration?: number | null }[];
+    };
+    for (const s of data.stats ?? []) {
+      if (s && typeof s.videoId === "string") {
+        out.set(s.videoId, {
+          views: typeof s.views === "number" ? s.views : null,
+          duration: typeof s.duration === "number" ? s.duration : null,
+        });
+      }
+    }
+    return out;
+  } catch {
+    return out;
   }
 }
 

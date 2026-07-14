@@ -29,6 +29,7 @@ import {
   Lightbulb,
   Video,
   Baby,
+  Eye,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -46,6 +47,8 @@ import {
   searchImmersionVideos,
   WatchHistoryItem,
   formatDuration,
+  formatViews,
+  fetchVideoStats,
   youtubeThumb,
 } from "@/lib/immersion";
 import {
@@ -436,6 +439,20 @@ export default function WatchAndLearn() {
     if (id !== reqId.current) return;
     setVideos(ready);
     setState(ready.length ? "done" : "empty");
+    // Kartu "Terjemahan Siap" lahir dari cache transkrip DB → tak bawa jumlah
+    // penonton. Enrich dengan viewCount live dari YouTube (mode `ids` yt-search,
+    // 1 unit kuota, di-cache 6 jam) supaya badge views ikut muncul. Best-effort:
+    // gagal → kartu tetap tampil tanpa views.
+    if (ready.length) {
+      const stats = await fetchVideoStats(ready.map((v) => v.videoId));
+      if (id !== reqId.current || stats.size === 0) return;
+      const enriched = ready.map((v) => {
+        const s = stats.get(v.videoId);
+        return s ? { ...v, views: s.views, duration: v.duration ?? s.duration } : v;
+      });
+      catalogCache.set(catalogKeyOf(l.code, SIAP_ID), { videos: enriched, at: Date.now() });
+      setVideos(enriched);
+    }
   }, []);
 
   // Apakah tab "Siap" sedang aktif (dan bukan sedang mencari teks bebas).
@@ -760,7 +777,7 @@ export default function WatchAndLearn() {
             }}
           >
             <CircleCheck className="h-4 w-4" />
-            Siap
+            Terjemahan Siap
           </button>
           {IMMERSION_CATEGORIES.map((c) => {
             const on = c.id === category;
@@ -848,9 +865,19 @@ export default function WatchAndLearn() {
                     level={v.level}
                   />
                   <p className="mt-2 line-clamp-2 text-[13px] font-bold leading-snug">{v.title}</p>
-                  {v.channel && (
-                    <p className="mt-0.5 line-clamp-1 text-[11.5px]" style={{ color: SUB }}>
-                      {v.channel}
+                  {(v.channel || v.views != null) && (
+                    <p
+                      className="mt-0.5 line-clamp-1 flex items-center gap-1 text-[11.5px]"
+                      style={{ color: SUB }}
+                    >
+                      {v.channel && <span className="truncate">{v.channel}</span>}
+                      {v.channel && v.views != null && <span aria-hidden>·</span>}
+                      {v.views != null && (
+                        <span className="inline-flex shrink-0 items-center gap-0.5">
+                          <Eye className="h-3 w-3" />
+                          {formatViews(v.views)}
+                        </span>
+                      )}
                     </p>
                   )}
                 </button>
