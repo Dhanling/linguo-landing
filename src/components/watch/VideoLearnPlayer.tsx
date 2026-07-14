@@ -1155,8 +1155,9 @@ export default function VideoLearnPlayer({
         </div>
       </div>
 
-      {/* Isi — split view */}
-      <div className="flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row">
+      {/* Isi — split view. Di layar penuh beri ruang atas (pt) supaya video +
+          subtitle turun & tak tertutup baris header (judul kiri / tombol kanan). */}
+      <div className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""}`}>
         {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
             HANYA daftar Rekomendasi di bawahnya yang punya area scroll sendiri —
             jadi tak ada scrollbar menimpa video. */}
