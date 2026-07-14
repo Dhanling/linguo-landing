@@ -1382,6 +1382,14 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
 // ── Per-question input ──────────────────────────────────────────────────────
 const TFNG = ["True", "False", "Not Given"];
 
+// Buang prefiks label "(A) " / "A. " / "A) " bawaan import — badge A/B/C/D sudah
+// dirender sendiri, jadi tanpa ini teksnya jadi dobel ("(A) (A) Each of").
+function stripOptionLabel(opt: string, i: number): string {
+  const letter = String.fromCharCode(65 + i);
+  const stripped = opt.replace(new RegExp(`^\\s*[([]?${letter}[)\\].:\\-]?\\s+`, "i"), "").trim();
+  return stripped || opt;
+}
+
 function QuestionBlock({ index, q, state, onChange }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
 }) {
@@ -1411,7 +1419,7 @@ function QuestionBlock({ index, q, state, onChange }: {
                 <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
                   {String.fromCharCode(65 + i)}
                 </span>
-                <span className="text-slate-700">{opt}</span>
+                <span className="text-slate-700">{q.type === "true_false_ng" ? opt : stripOptionLabel(opt, i)}</span>
               </label>
             );
           })}
