@@ -1749,6 +1749,51 @@ function keyOf(word: string, langCode: string): string {
   return `${langCode}::${word.trim().toLowerCase()}`;
 }
 
+// ── Freemium: kuota simpan kata (ala LingQ) ──────────────────────────────────
+// Nonton + transkrip + terjemahan GRATIS tanpa batas (itu mesin akuisisi/SEO).
+// Yang dibatasi cuma MENYIMPAN kosakata: pengguna gratis dapat kuota supaya
+// sempat merasakan loop "simpan → review → ingat" beberapa kali, lalu diarahkan
+// ke produk berbayar Linguo yang sudah ada (kelas guru / simulasi) begitu serius.
+//
+// `isWatchPremium` sengaja jadi SATU titik sambung: sekarang membaca flag lokal;
+// nanti tinggal disambung ke entitlement langganan sebenarnya tanpa mengubah
+// call site mana pun.
+export const FREE_SAVE_LIMIT = 50;
+
+const PREMIUM_KEY = "linguo:watch:premium:v1";
+
+/** Akses premium Watch & Learn (simpan kata tanpa batas). Titik sambung tunggal. */
+export function isWatchPremium(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(PREMIUM_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Jumlah total kosakata tersimpan (semua bahasa) — buat badge kuota. */
+export function savedWordCount(): number {
+  return getSavedWords().length;
+}
+
+/** Sisa kuota simpan gratis (0 kalau habis; -1 = tak terbatas/premium). */
+export function remainingSaveQuota(): number {
+  if (isWatchPremium()) return -1;
+  return Math.max(0, FREE_SAVE_LIMIT - savedWordCount());
+}
+
+/**
+ * Boleh menyimpan kata (baru) sekarang? Premium = selalu boleh. Gratis = selama
+ * masih di bawah kuota. Kata yang SUDAH tersimpan tak dihitung, jadi menyimpan
+ * ulang / menghapus tetap boleh walau kuota penuh.
+ */
+export function canSaveWord(word?: string, langCode?: string): boolean {
+  if (isWatchPremium()) return true;
+  if (word && langCode && isWordSaved(word, langCode)) return true;
+  return savedWordCount() < FREE_SAVE_LIMIT;
+}
+
 /** Jumlah kosakata yang disimpan sewaktu menonton sebuah video (bahasa tertentu). */
 export function countSavedForVideo(videoId: string, langCode: string): number {
   if (!videoId) return 0;

@@ -19,17 +19,20 @@ import {
 } from "lucide-react";
 import WordStudy from "./WordStudy";
 import {
+  canSaveWord,
   cleanWord,
   getWordMeaning,
   isNonLatin,
   isWordSaved,
   removeSavedWord,
+  savedWordCount,
   saveWord,
   speakText,
   splitWords,
   transliterateLines,
   WordMeaning,
 } from "@/lib/immersionLearn";
+import WatchUpsellModal from "./WatchUpsellModal";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -150,6 +153,9 @@ export function WordTooltip({
   const [loading, setLoading] = useState(true);
   const [errored, setErrored] = useState(false);
   const [saved, setSaved] = useState(false);
+  // Kalau non-null: tampilkan modal upsell (kuota simpan gratis habis); angkanya =
+  // jumlah kata tersimpan buat ditampilkan di modal.
+  const [upsellCount, setUpsellCount] = useState<number | null>(null);
   // Frasa yang `meaning` sekarang wakili — auto-expand hanya boleh lanjut kalau arti
   // yang terlihat memang milik `word` saat ini (bukan sisa fetch sebelumnya), supaya
   // tiap langkah MENUNGGU hasil fetch & tak menembus beberapa perluasan sekaligus.
@@ -242,6 +248,11 @@ export function WordTooltip({
       removeSavedWord(word, langCode);
       setSaved(false);
     } else {
+      // Gratis: mentok kuota → tawarkan langkah berikutnya, jangan diam-diam gagal.
+      if (!canSaveWord(word, langCode)) {
+        setUpsellCount(savedWordCount());
+        return;
+      }
       saveWord({ word, meaning: meaning?.meaning ?? "", langCode, example: sentence, videoId });
       setSaved(true);
     }
@@ -373,6 +384,10 @@ export function WordTooltip({
           onSavedChange?.();
         }}
       />
+    )}
+
+    {upsellCount !== null && (
+      <WatchUpsellModal savedCount={upsellCount} onClose={() => setUpsellCount(null)} />
     )}
     </>
   );
