@@ -22,7 +22,9 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
 
 // Bendera SVG rounded rectangle. Dimensi dihitung dari viewBox agar aspect ratio asli terjaga.
 export function RectFlag({ code, h = 28, className = "" }: { code?: string; h?: number; className?: string }) {
-  const svg = code ? resolveFlag(defaultFlags, code, "country") : null;
+  // resolveFlag case-sensitive & mengharap ISO-2 huruf kecil. Sebagian pemanggil
+  // (mis. BASE_LANGS) menyimpan kode HURUF BESAR → normalkan biar bendera tetap muncul.
+  const svg = code ? resolveFlag(defaultFlags, code.toLowerCase(), "country") : null;
   if (!svg) return <Globe aria-hidden style={{ height: h, width: h }} className={`text-gray-300 shrink-0 ${className}`} />;
   const m = svg.match(/viewBox="([\d.\s-]+)"/);
   let w = Math.round((h * 36) / 26);
