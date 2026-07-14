@@ -19,10 +19,12 @@ import {
 } from "lucide-react";
 import {
   askWordQuestion,
+  canSaveWord,
   FollowupQ,
   getWordDeepDive,
   isWordSaved,
   removeSavedWord,
+  savedWordCount,
   saveWord,
   speakText,
   WordConjugation,
@@ -31,6 +33,7 @@ import {
 } from "@/lib/immersionLearn";
 import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
+import WatchUpsellModal from "./WatchUpsellModal";
 
 const TEAL = "#1A9E9E";
 // Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
@@ -88,6 +91,8 @@ export default function WordStudy({
   const lang = getImmersionLang(langCode);
   const [tab, setTab] = useState<"study" | "ask">("study");
   const [saved, setSaved] = useState(false);
+  // Non-null → modal upsell (kuota simpan gratis habis); angka = jumlah kata tersimpan.
+  const [upsellCount, setUpsellCount] = useState<number | null>(null);
 
   const [deep, setDeep] = useState<WordDeepDive | null>(null);
   const [loading, setLoading] = useState(true);
@@ -122,6 +127,11 @@ export default function WordStudy({
       removeSavedWord(word, langCode);
       setSaved(false);
     } else {
+      // Gratis: mentok kuota → tawarkan langkah berikutnya, jangan diam-diam gagal.
+      if (!canSaveWord(word, langCode)) {
+        setUpsellCount(savedWordCount());
+        return;
+      }
       saveWord({ word, meaning: meaning?.meaning ?? deep?.usage ?? "", langCode, example: sentence, videoId });
       setSaved(true);
     }
@@ -257,6 +267,10 @@ export default function WordStudy({
             </button>
           </div>
         </div>
+      )}
+
+      {upsellCount !== null && (
+        <WatchUpsellModal savedCount={upsellCount} onClose={() => setUpsellCount(null)} />
       )}
     </div>
   );

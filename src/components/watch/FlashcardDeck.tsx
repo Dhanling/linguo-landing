@@ -29,8 +29,10 @@ import {
 } from "lucide-react";
 import DeckLibrary from "./DeckLibrary";
 import {
+  FREE_SAVE_LIMIT,
   getSavedWords,
   gradeSavedWord,
+  isWatchPremium,
   SavedWord,
   speakText,
 } from "@/lib/immersionLearn";
@@ -291,7 +293,9 @@ export default function FlashcardDeck({
             <div>
               <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
               <p className="text-[11.5px]" style={{ color: SUB }}>
-                {totalWords} kata tersimpan
+                {isWatchPremium()
+                  ? `${totalWords} kata tersimpan`
+                  : `${totalWords}/${FREE_SAVE_LIMIT} kata gratis`}
               </p>
             </div>
           </div>
