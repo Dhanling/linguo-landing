@@ -1207,7 +1207,11 @@ export default function VideoLearnPlayer({
               menonton penuh, jadi baris ini tumbuh (flex-1) & terpusat di ruang
               kosong antara video dan kontrol → subtitle turun & lebih lega. */}
           {!mini && (
-          <div className="flex min-h-0 flex-1 flex-col overflow-y-auto py-2">
+          <div
+            className={`flex flex-col overflow-y-auto ${
+              fullscreen ? "shrink-0 bg-black px-4 pb-16 pt-3 sm:px-6" : "min-h-0 flex-1 py-2"
+            }`}
+          >
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
                 supaya baris kontrol terpisah jelas di dasar & tak menutupi
                 terjemahan. Tetap bisa discroll kalau analisa bikin baris tinggi. */}
@@ -1234,7 +1238,13 @@ export default function VideoLearnPlayer({
               lagi membungkus jadi 3 baris berantakan); di ≥sm kembali membungkus. */}
           {!mini && (
           <div
-            className="flex shrink-0 items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden"
+            className={`flex items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden ${
+              fullscreen
+                ? `absolute inset-x-0 bottom-0 z-40 justify-center bg-black transition-all duration-300 ${
+                    chromeHidden ? "pointer-events-none translate-y-full opacity-0" : "translate-y-0 opacity-100"
+                  }`
+                : "shrink-0"
+            }`}
             style={{ borderColor: BORDER }}
           >
             {/* Kontrol putar/jeda/loncat & ulang kalimat DIHAPUS — pakai kontrol
