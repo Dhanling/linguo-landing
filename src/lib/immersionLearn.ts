@@ -1758,7 +1758,7 @@ function keyOf(word: string, langCode: string): string {
 // `isWatchPremium` sengaja jadi SATU titik sambung: sekarang membaca flag lokal;
 // nanti tinggal disambung ke entitlement langganan sebenarnya tanpa mengubah
 // call site mana pun.
-export const FREE_SAVE_LIMIT = 50;
+export const FREE_SAVE_LIMIT = 20;
 
 const PREMIUM_KEY = "linguo:watch:premium:v1";
 
