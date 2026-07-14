@@ -270,7 +270,14 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // Fix: groqPunctuate kini retry 429/5xx (worker) → transkrip di-restore jadi
       // 1 kalimat/1 pembicara per section; klien interpTime menyandarkan waktu
       // potongan ke batas window ASLI (anchor) biar sorotan menempel ke audio.
-      // (v=17 backfill ulang kartun Peppa Bulgaria ls64k49ueuA "Kukleniyat
+      // (v=18 backfill massal 25 video `pending` (base=bahasa asli muncul sbg
+      // terjemahan, regres Groq 429) — 15 video Inggris (A1 Cooking uVGV8LG3HHM
+      // yang dilaporkan + A1 Supermarket/Language Learning, "Learn English With
+      // Words…", English Conversation/Restaurant, Daily Routine, 6 Minute English,
+      // Bluey/Peppa, lagu) + 10 non-Inggris (de/fil/he/hi/ka/tr/vi) → diterjemah
+      // via Mode A yt-transcript (Anthropic, bukan Groq) + PATCH service_role →
+      // base ID; sisa `pending` cuma nama/interjeksi ("Mr.", "Hmm.", [Music]);
+      // v=17 backfill ulang kartun Peppa Bulgaria ls64k49ueuA "Kukleniyat
       // teatar na Kloi": 48/48 cue `pending` (base=Bulgaria muncul sbg terjemahan,
       // regres Groq 429) → diterjemah + PATCH service_role → base ID;
       // v=16 [watch-tagalog-conjunctions]: kata sambung Tagalog (fil/tl:
@@ -290,7 +297,7 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=17`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=18`,
       { method: "GET" },
       6000
     );
