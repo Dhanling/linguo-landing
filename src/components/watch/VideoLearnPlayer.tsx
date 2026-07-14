@@ -231,6 +231,9 @@ export default function VideoLearnPlayer({
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
   const [showPanel, setShowPanel] = useState(true);
+  // Di layar penuh: sembunyikan header + baris kontrol saat kursor diam (immersive
+  // ala YouTube). Subtitle + terjemahan TETAP tampil. Gerakkan kursor → muncul lagi.
+  const [chromeHidden, setChromeHidden] = useState(false);
   // [linguo-patch:watch-miniplayer-v1] Miniplayer ala YouTube: TETAP di halaman
   // player, tapi video menyusut jadi kotak melayang di pojok kanan-bawah; baris
   // subtitle + kontrol auto-hide sehingga daftar Rekomendasi di kolom kiri
@@ -296,6 +299,32 @@ export default function VideoLearnPlayer({
     };
   }, []);
 
+  // ── Auto-hide header + kontrol saat kursor diam (hanya di layar penuh) ────────
+  useEffect(() => {
+    if (!fullscreen) {
+      setChromeHidden(false);
+      return;
+    }
+    let t: ReturnType<typeof setTimeout>;
+    const wake = () => {
+      setChromeHidden(false);
+      clearTimeout(t);
+      t = setTimeout(() => setChromeHidden(true), 2600);
+    };
+    wake();
+    window.addEventListener("mousemove", wake);
+    window.addEventListener("mousedown", wake);
+    window.addEventListener("touchstart", wake);
+    window.addEventListener("keydown", wake);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("mousemove", wake);
+      window.removeEventListener("mousedown", wake);
+      window.removeEventListener("touchstart", wake);
+      window.removeEventListener("keydown", wake);
+    };
+  }, [fullscreen]);
+
   const toggleFullscreen = useCallback(() => {
     const el = rootRef.current;
     if (!el) return;
@@ -333,6 +362,9 @@ export default function VideoLearnPlayer({
           // kita (subtitle + transkrip). Kita pakai tombol fullscreen sendiri yang
           // men-fullscreen-kan seluruh player biar overlay tetap tampil.
           fs: 0,
+          // Matikan kontrol keyboard bawaan YouTube (panah = seek/volume) supaya
+          // panah kiri/kanan/atas/bawah kita pakai untuk navigasi section.
+          disablekb: 1,
         },
         events: {
           onReady: () => {
@@ -881,12 +913,12 @@ export default function VideoLearnPlayer({
     [activeIdx, cues, seekTo]
   );
 
-  // Navigasi section pakai panah kiri/kanan keyboard (abaikan saat mengetik).
+  // Navigasi section pakai panah keyboard (abaikan saat mengetik).
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      // Kiri/Atas = section sebelumnya, Kanan/Bawah = section berikutnya.
-      const prev = e.key === "ArrowLeft" || e.key === "ArrowUp";
-      const next = e.key === "ArrowRight" || e.key === "ArrowDown";
+      // Kiri/Bawah = section sebelumnya (mundur), Kanan/Atas = section berikutnya (maju).
+      const prev = e.key === "ArrowLeft" || e.key === "ArrowDown";
+      const next = e.key === "ArrowRight" || e.key === "ArrowUp";
       if (!prev && !next) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const t = e.target as HTMLElement | null;
@@ -903,6 +935,23 @@ export default function VideoLearnPlayer({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [gotoCue]);
+
+  // Penjaga fokus: begitu user klik video, fokus pindah ke IFRAME YouTube
+  // (cross-origin) sehingga event keydown di window tak lagi terpicu — panah pun
+  // "mati". Kembalikan fokus ke dokumen supaya navigasi section tetap jalan.
+  // Hanya aktif saat player penuh (bukan mini) biar tak mengganggu scroll halaman.
+  useEffect(() => {
+    if (mini) return;
+    const onBlur = () => {
+      // Tunggu satu frame supaya document.activeElement sudah ter-update ke iframe.
+      requestAnimationFrame(() => {
+        const el = document.activeElement as HTMLElement | null;
+        if (el && el.tagName === "IFRAME") el.blur();
+      });
+    };
+    window.addEventListener("blur", onBlur);
+    return () => window.removeEventListener("blur", onBlur);
+  }, [mini]);
 
   // Minta analisa kalimat (breakdown) untuk sebuah cue — lazy + dedup.
   const requestBreakdown = useCallback(
@@ -938,19 +987,19 @@ export default function VideoLearnPlayer({
   return (
     <div
       ref={rootRef}
-      className="fixed inset-0 z-[90] flex flex-col"
+      className={`fixed inset-0 z-[90] flex flex-col ${fullscreen && chromeHidden ? "cursor-none" : ""}`}
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
       {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
           Di layar penuh: header lepas dari flow (absolute) & auto-hide — geser turun
           saat kursor didekatkan ke tepi atas (strip hover), lalu sembunyi lagi. */}
-      <div className={fullscreen ? "group/chrome absolute inset-x-0 top-0 z-40" : "shrink-0"}>
-        {/* Strip pemicu tak terlihat di tepi atas — target hover saat header disembunyikan. */}
-        {fullscreen && <div className="absolute inset-x-0 top-0 h-14" aria-hidden />}
+      <div className={fullscreen ? "absolute inset-x-0 top-0 z-40" : "shrink-0"}>
         <div
           className={`flex items-center gap-2 px-4 py-3 sm:px-6 ${
             fullscreen
-              ? "bg-gradient-to-b from-black/85 via-black/55 to-transparent transition-transform duration-200 -translate-y-full group-hover/chrome:translate-y-0"
+              ? `bg-gradient-to-b from-black/90 via-black/55 to-transparent transition-all duration-300 ${
+                  chromeHidden ? "pointer-events-none -translate-y-full opacity-0" : "translate-y-0 opacity-100"
+                }`
               : ""
           }`}
         >
@@ -1052,7 +1101,7 @@ export default function VideoLearnPlayer({
         {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
             HANYA daftar Rekomendasi di bawahnya yang punya area scroll sendiri —
             jadi tak ada scrollbar menimpa video. */}
-        <div className={`flex min-h-0 flex-col ${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
+        <div className={`flex min-h-0 flex-col ${fullscreen ? "relative " : ""}${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol.
@@ -1064,19 +1113,29 @@ export default function VideoLearnPlayer({
             className={
               mini
                 ? "group fixed bottom-4 right-4 z-20 flex w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl"
-                : "group relative flex w-full shrink-0 items-center justify-center bg-black"
+                : fullscreen
+                  ? "group relative flex min-h-0 w-full flex-1 items-center justify-center bg-black"
+                  : "group relative flex w-full shrink-0 items-center justify-center bg-black"
             }
             style={
               mini
                 ? miniPos
                   ? { left: miniPos.x, top: miniPos.y, right: "auto", bottom: "auto" }
                   : undefined
-                : { maxHeight: "70vh" }
+                : fullscreen
+                  ? undefined
+                  : { maxHeight: "70vh" }
             }
           >
             <div
               className="relative w-full"
-              style={mini ? { aspectRatio: "16 / 9" } : { aspectRatio: "16 / 9", maxWidth: "calc(70vh * 16 / 9)" }}
+              style={
+                mini
+                  ? { aspectRatio: "16 / 9" }
+                  : fullscreen
+                    ? { height: "100%", width: "100%" }
+                    : { aspectRatio: "16 / 9", maxWidth: "calc(70vh * 16 / 9)" }
+              }
             >
               <div ref={hostRef} className="absolute inset-0 h-full w-full" />
               {!ready && (
