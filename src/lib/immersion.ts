@@ -12,6 +12,13 @@ const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 // sebagai `maxDurationSec` saat search & saring ganda di client.
 export const WATCH_MAX_DURATION_SEC = 300;
 
+// Batas durasi untuk daftar REKOMENDASI di player (bukan search katalog): 20 mnt,
+// sama dengan katalog. Sengaja TIDAK memakai 300 (5 mnt) — bucket `videoDuration=
+// short` (<4 mnt) YouTube didominasi Shorts/portrait, jadi setelah Shorts dibuang
+// daftar jadi nyaris kosong. Rentang 20 mnt mengambil dari video landscape normal
+// (yang memang ditonton user) sehingga rekomendasi tetap penuh & tanpa portrait.
+export const WATCH_REC_MAX_DURATION_SEC = 20 * 60;
+
 /** Format durasi detik → "m:ss" (mis. 245 → "4:05"). null/0 → "". */
 export function formatDuration(sec?: number | null): string {
   if (!sec || sec <= 0) return "";
@@ -374,6 +381,9 @@ export async function searchImmersionVideos(params: {
   minDurationSec?: number;
   /** Kode negara ISO-3166 (mis. BR/PT) → YouTube regionCode; memisah varian bahasa. */
   regionCode?: string;
+  /** Buang video portrait/YouTube Shorts dari hasil. Default true untuk web —
+   *  Watch & Learn hanya menampilkan video landscape (katalog + rekomendasi). */
+  excludeShorts?: boolean;
 }): Promise<ImmersionSearchPage> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return { results: [] };
   try {
@@ -394,6 +404,7 @@ export async function searchImmersionVideos(params: {
         maxDurationSec: params.maxDurationSec,
         minDurationSec: params.minDurationSec,
         regionCode: params.regionCode,
+        excludeShorts: params.excludeShorts ?? true,
       }),
     });
     if (!res.ok) return { results: [] };

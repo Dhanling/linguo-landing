@@ -53,7 +53,7 @@ import {
   getImmersionLang,
   ImmersionVideo,
   searchImmersionVideos,
-  WATCH_MAX_DURATION_SEC,
+  WATCH_REC_MAX_DURATION_SEC,
   youtubeThumb,
 } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
@@ -423,14 +423,14 @@ export default function VideoLearnPlayer({
       query: video.channel?.trim() || video.title,
       language: lang?.searchCode ?? langCode,
       max: 12,
-      maxDurationSec: WATCH_MAX_DURATION_SEC,
+      maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
     })
       .then((page) => {
         if (!alive) return;
         const list = filterVideosByLanguage(page.results, langCode).filter(
           (v) =>
             v.videoId !== video.videoId &&
-            (!v.duration || v.duration <= WATCH_MAX_DURATION_SEC)
+            (!v.duration || v.duration <= WATCH_REC_MAX_DURATION_SEC)
         );
         if (list.length) {
           const data: RelatedPage = { list, next: page.nextPageToken };
@@ -448,10 +448,17 @@ export default function VideoLearnPlayer({
 
   // Daftar rekomendasi yang dirender: hasil terkait kalau sudah ada, selain itu
   // katalog dari halaman (prop) — keduanya tanpa video yang sedang diputar.
+  // Relevansi: video dari CHANNEL yang sama diangkat ke atas (paling nyambung),
+  // sisanya (bertopik mirip dari channel lain) menyusul — mirip "Selanjutnya" YT.
   const recList = useMemo(() => {
     const base = related?.list.length ? related.list : recommendations;
-    return base.filter((v) => v.videoId !== video.videoId);
-  }, [related, recommendations, video.videoId]);
+    const rest = base.filter((v) => v.videoId !== video.videoId);
+    const chan = video.channel?.trim().toLowerCase();
+    if (!chan) return rest;
+    const same = rest.filter((v) => v.channel?.trim().toLowerCase() === chan);
+    const other = rest.filter((v) => v.channel?.trim().toLowerCase() !== chan);
+    return [...same, ...other];
+  }, [related, recommendations, video.videoId, video.channel]);
 
   // "Muat lainnya" rekomendasi: buka 5 lagi dari stok lokal; kalau stok menipis
   // dan server masih punya halaman (nextPageToken), ambil halaman berikutnya —
@@ -468,14 +475,14 @@ export default function VideoLearnPlayer({
       language: lang?.searchCode ?? langCode,
       max: 12,
       pageToken: related.next,
-      maxDurationSec: WATCH_MAX_DURATION_SEC,
+      maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
     })
       .then((page) => {
         if (relKeyRef.current !== key) return; // sudah ganti video — hasil basi
         const more = filterVideosByLanguage(page.results, langCode).filter(
           (v) =>
             v.videoId !== video.videoId &&
-            (!v.duration || v.duration <= WATCH_MAX_DURATION_SEC)
+            (!v.duration || v.duration <= WATCH_REC_MAX_DURATION_SEC)
         );
         setRelated((prev) => {
           if (!prev) return prev;
