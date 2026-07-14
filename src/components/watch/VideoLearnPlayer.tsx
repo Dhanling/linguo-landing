@@ -1338,6 +1338,20 @@ export default function VideoLearnPlayer({
                 txState={txState}
                 asrRunning={asrRunning}
                 scale={fscale}
+                // Sinkron hover kata↔terjemahan (sama seperti panel transkrip) supaya
+                // di bar subtitle bawah / fullscreen, hover kata target juga menyorot
+                // arti-nya di baris emas — dan sebaliknya.
+                alignEnabled={alignEnabled}
+                alignMap={activeIdx >= 0 ? alignMaps[activeIdx] : undefined}
+                hot={activeIdx >= 0 ? hotSets(activeIdx) : undefined}
+                hoveredK={hoverWord?.i === activeIdx ? hoverWord.k : null}
+                onHoverWord={(k) => {
+                  if (k == null) setHoverWord(null);
+                  else if (activeIdx >= 0) {
+                    setHoverWord({ i: activeIdx, k });
+                    ensureAlign(activeIdx);
+                  }
+                }}
               />
             </div>
           </div>
@@ -1804,6 +1818,11 @@ function FocusLine({
   txState,
   asrRunning,
   scale,
+  alignEnabled,
+  alignMap,
+  hot,
+  hoveredK,
+  onHoverWord,
 }: {
   cue: LearnCue | null;
   time: number;
@@ -1817,6 +1836,12 @@ function FocusLine({
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
   scale: number;
+  // Sinkron hover kata↔terjemahan di bar subtitle bawah (setara panel transkrip).
+  alignEnabled?: boolean;
+  alignMap?: { tGroup: number[]; bGroup: number[]; firstT: number[] };
+  hot?: { t: Set<number>; b: Set<number> };
+  hoveredK?: number | null;
+  onHoverWord?: (k: number | null) => void;
 }) {
   if (txState !== "ready") {
     return (
@@ -1906,6 +1931,9 @@ function FocusLine({
         time={time}
         langCode={langCode}
         onWordTap={onWordTap}
+        hoveredK={hoveredK}
+        hotKeys={hot?.t}
+        onHoverWord={onHoverWord}
         className="font-extrabold leading-snug"
         fontSize={22 * scale}
         center
@@ -1916,13 +1944,50 @@ function FocusLine({
         </p>
       )}
       {cue.base ? (
-        <p
-          className="mt-1.5 font-bold"
-          style={{ color: GOLD, fontSize: 16 * scale }}
-          dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
-        >
-          {cue.base}
-        </p>
+        alignEnabled ? (
+          <p
+            className="mt-1.5 font-bold"
+            style={{ color: GOLD, fontSize: 16 * scale }}
+            dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
+          >
+            {(() => {
+              // Kata terjemahan bisa di-hover → menyorot kata/frasa target-nya
+              // (dan sebaliknya) lewat peta penjajaran — sama seperti panel transkrip.
+              let bk = -1;
+              return splitWords(cue.base, baseLang).map((w, j) => {
+                if (!w.isWord) return <span key={j}>{w.text}</span>;
+                const wk = ++bk;
+                const isHot = hot?.b.has(wk);
+                const gi = alignMap?.bGroup[wk];
+                const linked = alignMap && gi != null && gi >= 0 && alignMap.firstT[gi] >= 0;
+                return (
+                  <span
+                    key={j}
+                    onMouseEnter={() => {
+                      if (linked) onHoverWord?.(alignMap!.firstT[gi!]);
+                    }}
+                    onMouseLeave={() => onHoverWord?.(null)}
+                    className="transition-colors"
+                    style={{
+                      ...(isHot ? SYNC_UNDERLINE : null),
+                      cursor: linked ? "pointer" : undefined,
+                    }}
+                  >
+                    {w.text}
+                  </span>
+                );
+              });
+            })()}
+          </p>
+        ) : (
+          <p
+            className="mt-1.5 font-bold"
+            style={{ color: GOLD, fontSize: 16 * scale }}
+            dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
+          >
+            {cue.base}
+          </p>
+        )
       ) : baseTranslating && baseLang !== DEFAULT_BASE_LANG ? (
         <p className="mt-1.5 font-semibold italic opacity-70" style={{ color: GOLD, fontSize: 13 * scale }}>
           Menerjemahkan…
