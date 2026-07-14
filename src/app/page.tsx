@@ -78,7 +78,7 @@ function mapOtpError(msg: string): string {
   return "Kode tidak valid atau sudah expired, coba kirim ulang";
 }
 
-function LoginModal({ open, onClose, redirectTo = "/akun" }: { open: boolean; onClose: () => void; redirectTo?: string }) {
+function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [view, setView] = useState<AuthView>("login");
   const [tab, setTab] = useState<"email" | "phone">("email");
 
@@ -122,7 +122,7 @@ function LoginModal({ open, onClose, redirectTo = "/akun" }: { open: boolean; on
     try {
       await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: window.location.origin + redirectTo },
+        options: { redirectTo: window.location.origin + "/akun" },
       });
     } catch { setError("Gagal login dengan Google."); setLoading(false); }
   };
@@ -134,7 +134,7 @@ function LoginModal({ open, onClose, redirectTo = "/akun" }: { open: boolean; on
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) { setError(error.message === "Invalid login credentials" ? "Email atau password salah." : error.message); }
-    else { onClose(); window.location.href = redirectTo; }
+    else { onClose(); window.location.href = "/akun"; }
   };
 
   // ── Email Sign Up ──
@@ -250,7 +250,7 @@ function LoginModal({ open, onClose, redirectTo = "/akun" }: { open: boolean; on
     const { error } = await supabase.auth.verifyOtp({ phone: fullPhone, token: otp, type: "sms" });
     setLoading(false);
     if (error) { setError("Kode OTP salah atau expired."); }
-    else { onClose(); window.location.href = redirectTo; }
+    else { onClose(); window.location.href = "/akun"; }
   };
 
   if (!open) return null;
@@ -521,25 +521,12 @@ const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
   ]},
 ];
 
-function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void;onLoginOpen:(redirect?:string)=>void}) {
+function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:string)=>void;onPricingTab:(t:number)=>void;onLoginOpen:()=>void}) {
   const [open, setOpen] = useState(false);
   const [progOpen, setProgOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false); // linguo-patch:nav-hide-on-scroll-v1
-  const [isAuthed, setIsAuthed] = useState(false); // linguo-patch:gate-watch-learn-v1 — Watch & Learn butuh login
   const lastY = useRef(0);
-  // linguo-patch:gate-watch-learn-v1 — pantau sesi login untuk gating menu Watch & Learn
-  useEffect(() => {
-    let mounted = true;
-    supabase.auth.getSession().then(({ data }) => { if (mounted) setIsAuthed(!!data.session); });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => setIsAuthed(!!session));
-    return () => { mounted = false; sub.subscription.unsubscribe(); };
-  }, []);
-  // Klik Watch & Learn: kalau belum login, buka modal login dulu (redirect ke /watch setelah login)
-  const guardWatch = (e: React.MouseEvent, after?: () => void) => {
-    if (!isAuthed) { e.preventDefault(); onLoginOpen("/watch"); }
-    after?.();
-  };
   const [placementPickerOpen, setPlacementPickerOpen] = useState(false);
   const [startPickerOpen, setStartPickerOpen] = useState(false); // linguo-patch:start-picker-v1
   useEffect(() => {
@@ -626,8 +613,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                 )}</AnimatePresence>
               </div>
               {/* Other nav links */}
-              {[["Watch & Learn","/watch"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
-                <a key={l} href={h} onClick={h==="/watch" ? (e)=>guardWatch(e) : undefined} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
+              {[["Watch & Learn","/watch-learn"],["Harga","/harga"],["Silabus","/silabus"],["Blog","/blog"]].map(([l,h]) => (
+                <a key={l} href={h} className={`cursor-pointer relative text-sm font-bold py-1 ${c?"text-slate-700 hover:text-slate-900":"text-white hover:text-white"} transition-colors group`}>
                   {l}
                   <span className={`absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full transition-all duration-300 rounded-full bg-[#fbbf24]`}/>
                 </a>
@@ -635,7 +622,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             </div>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button onClick={()=>onLoginOpen()} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
+            <button onClick={onLoginOpen} className={`font-semibold px-5 py-2.5 rounded-full text-sm transition-all border-2 ${c ? "border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E]/5" : "border-white/60 text-white hover:bg-white/10"}`}>Login</button>
             {/* linguo-patch:start-picker-v1 — Placement Test + Coba Trial digabung jadi 1 tombol */}
             <button onClick={()=>setStartPickerOpen(true)} className="bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm transition-all active:scale-95">Mulai Belajar</button>
           </div>
@@ -676,7 +663,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
               <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
-              <a href="/watch" onClick={(e)=>guardWatch(e, ()=>setOpen(false))} className="text-base py-3 text-left">Watch &amp; Learn</a>
+              <a href="/watch-learn" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Watch &amp; Learn</a>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
               <a href="/silabus" onClick={()=>setOpen(false)} className="text-base py-3">Silabus</a>
               <a href="/blog" onClick={()=>setOpen(false)} className="text-base py-3">Blog</a>
@@ -2247,8 +2234,6 @@ export default function Home() {
   const [lang, setLang] = useState("id");
   const [pricingTab, setPricingTab] = useState(0);
   const [loginOpen, setLoginOpen] = useState(false);
-  const [loginRedirect, setLoginRedirect] = useState("/akun"); // linguo-patch:gate-watch-learn-v1
-  const openLogin = (redirect = "/akun") => { setLoginRedirect(redirect); setLoginOpen(true); };
   useEffect(()=>{
     window.scrollTo(0,0);
     let ticking=false;
@@ -2261,8 +2246,8 @@ export default function Home() {
   },[]);
 
   return (<>
-    <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab} onLoginOpen={openLogin}/>
-    <LoginModal open={loginOpen} onClose={()=>setLoginOpen(false)} redirectTo={loginRedirect} />
+    <Navbar lang={lang} setLang={setLang} onPricingTab={setPricingTab} onLoginOpen={()=>setLoginOpen(true)}/>
+    <LoginModal open={loginOpen} onClose={()=>setLoginOpen(false)} />
 
     {/* HERO */}
     <section className="bg-[#1A9E9E] lg:min-h-screen flex items-center relative overflow-hidden pt-20 lg:pt-32 pb-6 lg:pb-0">

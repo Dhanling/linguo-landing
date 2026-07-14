@@ -2414,11 +2414,18 @@ export default function AkunPage() {
       const pid = new URLSearchParams(window.location.search).get("preview");
       if (pid) { setPreviewId(pid); setAuthLoading(false); return; }
     }
+    // [gate-watch-learn-v1] ?next=/path → setelah sesi ada (login sukses / sudah
+    // login), langsung dialihkan ke tujuan itu. Hanya path internal (diawali "/")
+    // yang diterima, cegah open-redirect.
+    const nextRaw = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("next") : null;
+    const nextPath = nextRaw && nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? nextRaw : null;
     supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session && nextPath) { window.location.replace(nextPath); return; }
       setUser(session?.user ?? null);
       setAuthLoading(false);
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session && nextPath) { window.location.replace(nextPath); return; }
       setUser(session?.user ?? null);
     });
     return () => subscription.unsubscribe();
@@ -2445,9 +2452,12 @@ export default function AkunPage() {
 
   const signInWithGoogle = async () => {
     setIsSigningIn(true);
+    // [gate-watch-learn-v1] pertahankan ?next lewat OAuth round-trip → balik ke /akun?next=…
+    const nextRaw = new URLSearchParams(window.location.search).get("next");
+    const nextQs = nextRaw && nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? `?next=${encodeURIComponent(nextRaw)}` : "";
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/akun` },
+      options: { redirectTo: `${window.location.origin}/akun${nextQs}` },
     });
     if (error) setIsSigningIn(false);
   };
@@ -2478,10 +2488,13 @@ export default function AkunPage() {
   const signInWithMagicLink = async () => {
     if (!loginEmail) return;
     setIsSigningIn(true);
+    // [gate-watch-learn-v1] bawa ?next lewat magic-link (selesai di page load baru)
+    const nextRaw = new URLSearchParams(window.location.search).get("next");
+    const nextQs = nextRaw && nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? `?next=${encodeURIComponent(nextRaw)}` : "";
     const { error } = await supabase.auth.signInWithOtp({
       email: loginEmail,
       options: {
-        emailRedirectTo: window.location.origin + "/akun",
+        emailRedirectTo: window.location.origin + "/akun" + nextQs,
         shouldCreateUser: true,
       },
     });

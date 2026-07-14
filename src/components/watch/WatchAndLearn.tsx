@@ -321,7 +321,8 @@ export default function WatchAndLearn() {
     const gate = (hasSession: boolean) => {
       if (!alive) return;
       setLoggedIn(hasSession);
-      if (!hasSession) window.location.replace("/akun");
+      // Tamu → layar login /akun, bawa ?next=/watch supaya balik ke sini setelah login.
+      if (!hasSession) window.location.replace("/akun?next=%2Fwatch");
     };
     supabase.auth
       .getSession()
