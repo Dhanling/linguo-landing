@@ -10,6 +10,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Check,
+  Gauge,
   Languages,
   Layers,
   ListChecks,
@@ -84,6 +85,22 @@ const FONT_LEVELS = [
   { label: "Besar", scale: 1.2 },
 ];
 const FONT_KEY = "linguo:watch:fontsize:v1";
+
+// Label ramah untuk string kualitas YouTube (dipakai pemilih kualitas kita).
+const QUALITY_LABELS: Record<string, string> = {
+  highres: "4320p",
+  hd2160: "2160p",
+  hd1440: "1440p",
+  hd1080: "1080p",
+  hd720: "720p",
+  large: "480p",
+  medium: "360p",
+  small: "240p",
+  tiny: "144p",
+  auto: "Auto",
+  default: "Auto",
+};
+const qualityLabel = (q: string) => QUALITY_LABELS[q] ?? q;
 
 // Cache video terkait per (bahasa|video) — buka-tutup player tak mengulang
 // pencarian YouTube (hemat kuota) selama halaman belum di-reload. `next` =
@@ -162,6 +179,13 @@ export default function VideoLearnPlayer({
   const [time, setTime] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
+  // Kualitas video — kontrol bawaan YouTube dimatikan (controls:0), jadi kita sediakan
+  // pemilih kualitas sendiri (mis. turunkan resolusi untuk hemat paket data).
+  // Catatan: setPlaybackQuality/suggestedQuality sudah DEPRECATED YouTube & sering
+  // diabaikan player modern — jadi ini best-effort, tak dijamin selalu berefek.
+  const [qualityMenuOpen, setQualityMenuOpen] = useState(false);
+  const [qualityLevels, setQualityLevels] = useState<string[]>([]);
+  const [quality, setQuality] = useState("auto"); // "auto" | level string YT
   const [fontIdx, setFontIdx] = useState(1); // ukuran teks subtitle (default Sedang)
   const fscale = FONT_LEVELS[fontIdx].scale;
 
@@ -358,6 +382,13 @@ export default function VideoLearnPlayer({
           rel: 0,
           cc_load_policy: 0,
           playsinline: 1,
+          // Sembunyikan SEMUA kontrol bawaan YouTube (progress bar, tombol share/
+          // watch-later/logo, setting/CC/volume, judul). Chrome YT menutupi sudut
+          // yang kita pakai untuk header sendiri (judul kiri-atas + language selector
+          // kanan-atas). Play/jeda tetap bisa dengan klik video (perilaku default YT
+          // saat controls=0); seek lewat klik kalimat transkrip; kualitas via tombol
+          // "Kualitas" kita sendiri.
+          controls: 0,
           // Matikan fullscreen bawaan YouTube — fullscreen iframe menutupi overlay
           // kita (subtitle + transkrip). Kita pakai tombol fullscreen sendiri yang
           // men-fullscreen-kan seluruh player biar overlay tetap tampil.
@@ -878,6 +909,32 @@ export default function VideoLearnPlayer({
     }
   }, []);
 
+  // Pilih kualitas video (best-effort — API sudah deprecated). "auto" = biar YouTube
+  // yang menentukan sesuai koneksi. Refresh daftar level tiap dibuka karena level
+  // yang tersedia baru terisi setelah playback mulai.
+  const refreshQualityLevels = useCallback(() => {
+    try {
+      const levels: string[] = playerRef.current?.getAvailableQualityLevels?.() ?? [];
+      // Buang "auto"/"default" dari daftar — kita tambahkan opsi "Auto" sendiri di atas.
+      setQualityLevels(levels.filter((l) => l !== "auto" && l !== "default"));
+      const cur = playerRef.current?.getPlaybackQuality?.();
+      if (cur) setQuality(cur);
+    } catch {
+      /* abaikan */
+    }
+  }, []);
+
+  const applyQuality = useCallback((level: string) => {
+    setQuality(level);
+    setQualityMenuOpen(false);
+    try {
+      if (level === "auto") playerRef.current?.setPlaybackQuality?.("default");
+      else playerRef.current?.setPlaybackQuality?.(level);
+    } catch {
+      /* abaikan */
+    }
+  }, []);
+
   // Pulihkan ukuran teks pilihan siswa; siklus Kecil → Sedang → Besar.
   useEffect(() => {
     try {
@@ -991,17 +1048,16 @@ export default function VideoLearnPlayer({
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
       {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
-          Di layar penuh: header lepas dari flow (absolute) & auto-hide — geser turun
-          saat kursor didekatkan ke tepi atas (strip hover), lalu sembunyi lagi. */}
-      {/* Di layar penuh header pindah ke bawah (di atas baris kontrol, dalam zona
-          hitam subtitle) supaya TIDAK menutupi kontrol bawaan YouTube di tepi atas
-          video (setting/CC/volume) maupun judulnya. */}
-      <div className={fullscreen ? "absolute inset-x-0 bottom-[3.75rem] z-40" : "shrink-0"}>
+          Di layar penuh: header lepas dari flow (absolute) di tepi ATAS & auto-hide —
+          geser naik keluar layar saat chrome disembunyikan (kursor diam), muncul lagi
+          saat kursor bergerak. Kontrol YouTube sudah dimatikan (controls:0) jadi header
+          kita bebas menempati sudut atas: judul kiri, language selector kanan. */}
+      <div className={fullscreen ? "absolute inset-x-0 top-0 z-40" : "shrink-0"}>
         <div
           className={`flex items-center gap-2 px-4 py-2.5 sm:px-6 ${
             fullscreen
-              ? `bg-black transition-all duration-300 ${
-                  chromeHidden ? "pointer-events-none translate-y-full opacity-0" : "translate-y-0 opacity-100"
+              ? `bg-gradient-to-b from-black/80 to-transparent transition-all duration-300 ${
+                  chromeHidden ? "pointer-events-none -translate-y-full opacity-0" : "translate-y-0 opacity-100"
                 }`
               : ""
           }`}
@@ -1048,9 +1104,7 @@ export default function VideoLearnPlayer({
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setBaseMenuOpen(false)} />
                 <div
-                  className={`absolute right-0 z-20 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl ${
-                    fullscreen ? "bottom-full mb-2" : "mt-2"
-                  }`}
+                  className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
                   style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
                 >
                   {BASE_LANGS.map((b) => {
@@ -1277,6 +1331,45 @@ export default function VideoLearnPlayer({
             >
               {SPEEDS[speedIdx]}x
             </button>
+
+            {/* Kualitas video — kontrol bawaan YouTube dimatikan, jadi ini jalan
+                sendiri untuk turunkan resolusi (hemat paket data). Best-effort. */}
+            <div className="relative shrink-0">
+              <button
+                onClick={() => {
+                  refreshQualityLevels();
+                  setQualityMenuOpen((v) => !v);
+                }}
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+                title="Kualitas video (hemat paket data)"
+              >
+                <Gauge className="h-4 w-4" /> {qualityLabel(quality)}
+              </button>
+              {qualityMenuOpen && (
+                <>
+                  <div className="fixed inset-0 z-10" onClick={() => setQualityMenuOpen(false)} />
+                  <div
+                    className="absolute bottom-full left-0 z-20 mb-2 max-h-64 w-40 overflow-y-auto rounded-2xl py-1.5 shadow-2xl"
+                    style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                  >
+                    {["auto", ...qualityLevels].map((lv) => {
+                      const on = lv === quality;
+                      return (
+                        <button
+                          key={lv}
+                          onClick={() => applyQuality(lv)}
+                          className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
+                        >
+                          <span className="flex-1 font-semibold text-white">{qualityLabel(lv)}</span>
+                          {on && <Check className="h-4 w-4" color={TEAL} />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
 
             {/* CC bawaan YouTube — berguna saat transkrip kita tak ada */}
             <button
