@@ -270,7 +270,10 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // Fix: groqPunctuate kini retry 429/5xx (worker) → transkrip di-restore jadi
       // 1 kalimat/1 pembicara per section; klien interpTime menyandarkan waktu
       // potongan ke batas window ASLI (anchor) biar sorotan menempel ke audio.
-      // (v=16 [watch-tagalog-conjunctions]: kata sambung Tagalog (fil/tl:
+      // (v=17 backfill ulang kartun Peppa Bulgaria ls64k49ueuA "Kukleniyat
+      // teatar na Kloi": 48/48 cue `pending` (base=Bulgaria muncul sbg terjemahan,
+      // regres Groq 429) → diterjemah + PATCH service_role → base ID;
+      // v=16 [watch-tagalog-conjunctions]: kata sambung Tagalog (fil/tl:
       // at/o/ngunit/kaya/dahil/…) ditambah ke pemecah klausa transcript-worker →
       // kalimat Tagalog panjang tak lagi jadi section raksasa; backfill lagu anak
       // "Tatlong Bibe" lJCSu8RmSjE: reproses (35→58 section) + 58 cue diterjemah ID;
@@ -287,7 +290,7 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=16`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=17`,
       { method: "GET" },
       6000
     );
