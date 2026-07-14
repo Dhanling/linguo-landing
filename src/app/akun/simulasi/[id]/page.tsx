@@ -1390,14 +1390,61 @@ function stripOptionLabel(opt: string, i: number): string {
   return stripped || opt;
 }
 
+// Soal "melengkapi kalimat" (Structure Part A): prompt punya kotak isian ___ dan
+// opsi kata pendek. Ditampilkan gaya tes Linguo — kalimat dgn kotak isian inline
+// + chip kata di bawah. Tetap single-select seperti multiple_choice biasa.
+const BLANK_RE = /_{3,}/;
+
+// Kalimat dengan kotak isian inline + chip kata (gaya tes Linguo). Kotak isian
+// menampilkan kata yang dipilih; tetap 4 opsi (A–D), single-select.
+function FillBlankChips({ q, state, onChange }: {
+  q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
+}) {
+  const opts = q.options ?? [];
+  const chosen = state.selected_index != null ? opts[state.selected_index] : null;
+  const parts = q.prompt.split(BLANK_RE);
+  return (
+    <div className="mt-3">
+      <p className="text-base leading-loose text-slate-900">
+        {parts.map((part, i) => (
+          <span key={i}>
+            {part}
+            {i < parts.length - 1 && (
+              <span className={`mx-1 inline-flex min-w-[64px] items-center justify-center rounded-md border px-3 py-0.5 text-sm font-semibold align-middle ${chosen ? "border-teal-400 bg-teal-50 text-teal-700" : "border-dashed border-slate-300 text-slate-400"}`}>
+                {chosen ? stripOptionLabel(chosen, state.selected_index!) : "____"}
+              </span>
+            )}
+          </span>
+        ))}
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {opts.map((opt, i) => {
+          const active = state.selected_index === i;
+          return (
+            <button
+              key={i}
+              type="button"
+              onClick={() => onChange({ selected_index: i })}
+              className={`rounded-lg border px-4 py-2 text-sm font-medium transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"}`}
+            >
+              {stripOptionLabel(opt, i)}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function QuestionBlock({ index, q, state, onChange }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
 }) {
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
+  const isFillBlank = q.type === "multiple_choice" && BLANK_RE.test(q.prompt) && (q.options?.length ?? 0) > 0;
   return (
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       {/* pre-line: prompt listening multi-speaker pakai \n per giliran bicara */}
-      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{q.prompt}</p>
+      <p className="whitespace-pre-line text-sm font-medium text-slate-900"><span className="mr-1 text-slate-400">{index}.</span>{isFillBlank ? "Lengkapi kalimat dengan kata yang tepat:" : q.prompt}</p>
 
       {q.image_url && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -1408,7 +1455,9 @@ function QuestionBlock({ index, q, state, onChange }: {
         />
       )}
 
-      {(q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
+      {isFillBlank && <FillBlankChips q={q} state={state} onChange={onChange} />}
+
+      {!isFillBlank && (q.type === "multiple_choice" || q.type === "matching" || q.type === "true_false_ng") && (
         <div className="mt-3 space-y-2">
           {opts.map((opt, i) => {
             const active = state.selected_index === i;
