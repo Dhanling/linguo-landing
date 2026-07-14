@@ -941,8 +941,19 @@ export default function VideoLearnPlayer({
       className="fixed inset-0 z-[90] flex flex-col"
       style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
     >
-      {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup. */}
-      <div className="flex items-center gap-2 px-4 py-3 sm:px-6">
+      {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
+          Di layar penuh: header lepas dari flow (absolute) & auto-hide — geser turun
+          saat kursor didekatkan ke tepi atas (strip hover), lalu sembunyi lagi. */}
+      <div className={fullscreen ? "group/chrome absolute inset-x-0 top-0 z-40" : "shrink-0"}>
+        {/* Strip pemicu tak terlihat di tepi atas — target hover saat header disembunyikan. */}
+        {fullscreen && <div className="absolute inset-x-0 top-0 h-14" aria-hidden />}
+        <div
+          className={`flex items-center gap-2 px-4 py-3 sm:px-6 ${
+            fullscreen
+              ? "bg-gradient-to-b from-black/85 via-black/55 to-transparent transition-transform duration-200 -translate-y-full group-hover/chrome:translate-y-0"
+              : ""
+          }`}
+        >
         <p className="mr-auto line-clamp-1 text-[14px] font-bold text-white sm:text-[15px]">
           {video.title}
         </p>
@@ -1033,6 +1044,7 @@ export default function VideoLearnPlayer({
         >
           <X className="h-5 w-5 text-white" />
         </button>
+        </div>
       </div>
 
       {/* Isi — split view */}
@@ -1163,7 +1175,7 @@ export default function VideoLearnPlayer({
               lagi membungkus jadi 3 baris berantakan); di ≥sm kembali membungkus. */}
           {!mini && (
           <div
-            className="flex shrink-0 items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden"
+            className="flex shrink-0 items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden"
             style={{ borderColor: BORDER }}
           >
             {/* Kontrol putar/jeda/loncat & ulang kalimat DIHAPUS — pakai kontrol
