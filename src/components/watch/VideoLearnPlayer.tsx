@@ -20,6 +20,8 @@ import {
   Maximize2,
   Minimize,
   Palette,
+  Pause,
+  Play,
   PanelRightClose,
   PanelRightOpen,
   RotateCcw,
@@ -236,6 +238,36 @@ export default function VideoLearnPlayer({
     refreshSaved();
     onSavedChange?.();
   }, [refreshSaved, onSavedChange]);
+
+  // [linguo-patch:watch-hover-pause-v1] Hover-to-pause ala LingoPie. Asumsi: kalau
+  // kursor mampir ke baris subtitle di bawah video, pengguna sedang MEMBACA teks →
+  // otomatis pause biar tak kebablasan sebelum sempat lookup kata; keluar → lanjut.
+  // Hanya via mouse (desktop) — di HP mouseenter tak terpicu, jadi tak ganggu tap.
+  // `hoverPausedRef` menandai bahwa PAUSE itu dari kita, supaya kita hanya melanjutkan
+  // kembali kalau memang kita yang mem-pause (bukan kalau user sengaja pause sendiri).
+  const hoverPausedRef = useRef(false);
+  const onSubtitleEnter = useCallback(() => {
+    const p = playerRef.current;
+    // 1 = playing. Cuma pause kalau memang lagi jalan.
+    if (p?.getPlayerState?.() === 1) {
+      p.pauseVideo?.();
+      hoverPausedRef.current = true;
+    }
+  }, []);
+  const onSubtitleLeave = useCallback(() => {
+    if (!hoverPausedRef.current) return;
+    hoverPausedRef.current = false;
+    playerRef.current?.playVideo?.();
+  }, []);
+
+  // Play/jeda manual — dipakai tombol di strip kotak mini (iframe YT menelan klik,
+  // jadi butuh tombol eksplisit; di mode penuh play/jeda cukup klik video).
+  const togglePlay = useCallback(() => {
+    const p = playerRef.current;
+    if (!p) return;
+    if (p.getPlayerState?.() === 1) p.pauseVideo?.();
+    else p.playVideo?.();
+  }, []);
 
   // [linguo-patch:watch-translit-hover-sync-v1] Kata target yang sedang di-hover di
   // panel transkrip. `i` = indeks cue, `k` = indeks-urut kata (di antara token kata)
@@ -1226,9 +1258,23 @@ export default function VideoLearnPlayer({
                 onPointerMove={onMiniDragMove}
                 onPointerUp={onMiniDragEnd}
                 onPointerCancel={onMiniDragEnd}
-                className="absolute inset-x-0 top-0 z-10 flex cursor-move touch-none items-center justify-end gap-1.5 bg-gradient-to-b from-black/70 to-transparent p-2 opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+                className="absolute inset-x-0 top-0 z-10 flex cursor-move touch-none items-center gap-1.5 bg-gradient-to-b from-black/70 to-transparent p-2 opacity-0 transition-opacity duration-150 group-hover:opacity-100"
               >
                 <button
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={togglePlay}
+                  className="mr-auto rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
+                  aria-label={playing ? "Jeda" : "Putar"}
+                  title={playing ? "Jeda" : "Putar"}
+                >
+                  {playing ? (
+                    <Pause className="h-4 w-4 text-white" />
+                  ) : (
+                    <Play className="h-4 w-4 text-white" />
+                  )}
+                </button>
+                <button
+                  onPointerDown={(e) => e.stopPropagation()}
                   onClick={() => setMini(false)}
                   className="rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
                   aria-label="Kembalikan ukuran video"
@@ -1237,6 +1283,7 @@ export default function VideoLearnPlayer({
                   <Maximize2 className="h-4 w-4 text-white" />
                 </button>
                 <button
+                  onPointerDown={(e) => e.stopPropagation()}
                   onClick={onClose}
                   className="rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
                   aria-label="Tutup player"
@@ -1275,8 +1322,9 @@ export default function VideoLearnPlayer({
           >
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
                 supaya baris kontrol terpisah jelas di dasar & tak menutupi
-                terjemahan. Tetap bisa discroll kalau analisa bikin baris tinggi. */}
-            <div className="mb-auto mt-2 w-full">
+                terjemahan. Tetap bisa discroll kalau analisa bikin baris tinggi.
+                Hover di area ini → pause otomatis (baca subtitle), keluar → lanjut. */}
+            <div className="mb-auto mt-2 w-full" onMouseEnter={onSubtitleEnter} onMouseLeave={onSubtitleLeave}>
               <FocusLine
                 cue={activeCue}
                 time={time}
@@ -1373,18 +1421,22 @@ export default function VideoLearnPlayer({
               )}
             </div>
 
-            {/* CC bawaan YouTube — berguna saat transkrip kita tak ada */}
-            <button
-              onClick={() => setShowCC((v) => !v)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{
-                backgroundColor: showCC ? "rgba(26,158,158,0.16)" : CARD,
-                border: `1px solid ${showCC ? TEAL : BORDER}`,
-                color: showCC ? TEAL : "#fff",
-              }}
-            >
-              CC
-            </button>
+            {/* CC bawaan YouTube — HANYA muncul sebagai fallback saat transkrip kita
+                tak tersedia. Kalau transkrip + terjemahan sudah ada, tombol ini
+                redundan (malah bikin caption dobel) jadi disembunyikan. */}
+            {txState === "none" && (
+              <button
+                onClick={() => setShowCC((v) => !v)}
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+                style={{
+                  backgroundColor: showCC ? "rgba(26,158,158,0.16)" : CARD,
+                  border: `1px solid ${showCC ? TEAL : BORDER}`,
+                  color: showCC ? TEAL : "#fff",
+                }}
+              >
+                CC
+              </button>
+            )}
 
             {/* Ukuran teks subtitle & transkrip — Kecil / Sedang / Besar */}
             <button
