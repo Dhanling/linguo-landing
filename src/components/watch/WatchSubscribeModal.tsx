@@ -9,9 +9,16 @@
 // Entitlement asli disambung lewat isWatchPremium/setWatchPremium (lihat
 // immersionLearn). Untuk sekarang unlock per-perangkat setelah bayar (redirect).
 
-import { useState } from "react";
-import { X, Sparkles, Check, ArrowRight, Tag, Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { X, Sparkles, Check, ArrowRight, Tag, Loader2, BadgePercent } from "lucide-react";
 import { WATCH_PLANS, type WatchPlan } from "@/lib/immersionLearn";
+
+interface PromoApplied {
+  code: string;
+  discountPct: number;
+  discountedAmount: number;
+  label?: string;
+}
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -26,10 +33,56 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
   const [email, setEmail] = useState("");
   const [promoOpen, setPromoOpen] = useState(false);
   const [promo, setPromo] = useState("");
+  const [promoBusy, setPromoBusy] = useState(false);
+  const [promoError, setPromoError] = useState<string | null>(null);
+  const [applied, setApplied] = useState<PromoApplied | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const plan = WATCH_PLANS.find((p) => p.id === planId)!;
+  const effectiveAmount = applied ? applied.discountedAmount : plan.price;
+
+  // Validasi kode promo ke server (sumber tunggal = /api/validate-wl-promo).
+  const applyPromo = async (planFor: WatchPlan["id"] = planId, code = promo) => {
+    const c = code.trim();
+    if (!c) {
+      setApplied(null);
+      setPromoError(null);
+      return;
+    }
+    setPromoBusy(true);
+    setPromoError(null);
+    try {
+      const res = await fetch(
+        `/api/validate-wl-promo?code=${encodeURIComponent(c)}&plan=${planFor}`
+      );
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        setApplied({
+          code: data.code,
+          discountPct: data.discountPct,
+          discountedAmount: data.discountedAmount,
+          label: data.label,
+        });
+        setPromoError(null);
+      } else {
+        setApplied(null);
+        setPromoError(data.reason || "Kode promo tidak berlaku.");
+      }
+    } catch {
+      setApplied(null);
+      setPromoError("Gagal memeriksa kode. Coba lagi.");
+    } finally {
+      setPromoBusy(false);
+    }
+  };
+
+  // Diskon bisa bergantung paket (nominal & pembatasan) → validasi ulang saat ganti
+  // paket kalau sudah ada promo terpasang.
+  useEffect(() => {
+    if (applied) applyPromo(planId, applied.code);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [planId]);
 
   const submit = async () => {
     setError(null);
@@ -161,21 +214,45 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
               <Tag className="h-4 w-4" /> Punya kode promo?
             </button>
           ) : (
-            <div className="flex items-center gap-2">
-              <div className="relative flex-1">
-                <Tag
-                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2"
-                  style={{ color: SUB }}
-                />
-                <input
-                  value={promo}
-                  onChange={(e) => setPromo(e.target.value.toUpperCase())}
-                  placeholder="Kode promo"
-                  autoCapitalize="characters"
-                  className="w-full rounded-xl bg-white/5 py-2.5 pl-9 pr-3 text-[14px] font-semibold uppercase tracking-wide text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-white/40 focus:outline-none"
-                  style={{ border: `1px solid ${BORDER}` }}
-                />
+            <div>
+              <div className="flex items-center gap-2">
+                <div className="relative flex-1">
+                  <Tag
+                    className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2"
+                    style={{ color: SUB }}
+                  />
+                  <input
+                    value={promo}
+                    onChange={(e) => {
+                      setPromo(e.target.value.toUpperCase());
+                      if (applied) setApplied(null);
+                      if (promoError) setPromoError(null);
+                    }}
+                    onKeyDown={(e) => e.key === "Enter" && applyPromo()}
+                    placeholder="Kode promo"
+                    autoCapitalize="characters"
+                    className="w-full rounded-xl bg-white/5 py-2.5 pl-9 pr-3 text-[14px] font-semibold uppercase tracking-wide text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-white/40 focus:outline-none"
+                    style={{ border: `1px solid ${applied ? TEAL : BORDER}` }}
+                  />
+                </div>
+                <button
+                  onClick={() => applyPromo()}
+                  disabled={promoBusy || !promo.trim()}
+                  className="shrink-0 rounded-xl px-4 py-2.5 text-[13px] font-bold text-white transition hover:brightness-110 disabled:opacity-40"
+                  style={{ backgroundColor: "rgba(255,255,255,0.08)", border: `1px solid ${BORDER}` }}
+                >
+                  {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Terapkan"}
+                </button>
               </div>
+              {applied && (
+                <p className="mt-1.5 flex items-center gap-1.5 text-[12.5px] font-semibold" style={{ color: TEAL }}>
+                  <BadgePercent className="h-4 w-4" />
+                  {applied.label ? `${applied.label} — ` : "Kode terpakai — "}hemat {applied.discountPct}%
+                </p>
+              )}
+              {promoError && (
+                <p className="mt-1.5 text-[12.5px] font-semibold text-red-400">{promoError}</p>
+              )}
             </div>
           )}
         </div>
@@ -207,7 +284,11 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
             </>
           ) : (
             <>
-              Langganan {plan.label} — {fmt(plan.price)}
+              Langganan {plan.label} —{" "}
+              {applied && (
+                <span className="text-white/60 line-through">{fmt(plan.price)}</span>
+              )}{" "}
+              {fmt(effectiveAmount)}
               <ArrowRight className="h-5 w-5" />
             </>
           )}

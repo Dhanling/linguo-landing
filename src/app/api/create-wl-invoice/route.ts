@@ -12,25 +12,12 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { WATCH_PLANS } from "@/lib/immersionLearn";
+import { evaluatePromo } from "@/lib/watchPromo";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
-
-// TODO: pindahkan ke tabel promo + validasi masa berlaku/kuota di server.
-// diskonPct dipotong dari total, minimal Rp0.
-const PROMO_CODES: Record<string, { discountPct: number }> = {
-  // contoh: "LAUNCH50": { discountPct: 50 },
-};
-
-function applyPromo(amount: number, promo?: string): { amount: number; code: string | null } {
-  if (!promo) return { amount, code: null };
-  const rule = PROMO_CODES[promo.trim().toUpperCase()];
-  if (!rule) return { amount, code: null }; // kode tak dikenal → diabaikan, harga penuh
-  const discounted = Math.max(0, Math.round(amount * (1 - rule.discountPct / 100)));
-  return { amount: discounted, code: promo.trim().toUpperCase() };
-}
 
 export async function POST(req: NextRequest) {
   try {
@@ -46,8 +33,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Paket tidak valid." }, { status: 400 });
     }
 
-    // ── 2. Harga SERVER-SIDE + promo ───────────────────────────────────────
-    const { amount, code } = applyPromo(plan.price, typeof promo === "string" ? promo : undefined);
+    // ── 2. Harga SERVER-SIDE + promo (evaluasi ulang, anti-tamper) ─────────
+    let amount = plan.price;
+    let code: string | null = null;
+    if (typeof promo === "string" && promo.trim()) {
+      const ev = evaluatePromo(promo, plan.id);
+      if (ev.ok && typeof ev.discountedAmount === "number") {
+        amount = ev.discountedAmount;
+        code = ev.code ?? null;
+      }
+      // Kode tak valid → abaikan diam-diam, tagih harga penuh (modal sudah kasih
+      // feedback validasi sebelum checkout).
+    }
     if (amount <= 0) {
       // Promo 100% → aktifkan tanpa invoice (belum didukung di jalur ini).
       return NextResponse.json({ error: "Kode promo tidak berlaku untuk paket ini." }, { status: 400 });
