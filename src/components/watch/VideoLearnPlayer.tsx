@@ -88,6 +88,14 @@ const FONT_LEVELS = [
 ];
 const FONT_KEY = "linguo:watch:fontsize:v1";
 
+// [watch-sync-offset-v1] Nudge manual sinkron subtitle↔audio. Timestamp dari ASR/
+// caption YouTube kadang meleset maju/mundur untuk video tertentu, jadi sorotan &
+// baris fokus terasa "ga sinkron". Tombol ± menggeser semua highlight; disimpan
+// per-video di lokal. Positif = subtitle MAJU (muncul lebih awal dari audio).
+const SYNC_STEP = 0.25; // detik per klik
+const SYNC_MAX = 10; // batas geser (detik)
+const syncKeyFor = (videoId: string, langCode: string) => `linguo:watch:sync:v1:${videoId}:${langCode}`;
+
 // Label ramah untuk string kualitas YouTube (dipakai pemilih kualitas kita).
 const QUALITY_LABELS: Record<string, string> = {
   highres: "4320p",
@@ -194,6 +202,8 @@ export default function VideoLearnPlayer({
   const [quality, setQuality] = useState("auto"); // "auto" | level string YT
   const [fontIdx, setFontIdx] = useState(1); // ukuran teks subtitle (default Sedang)
   const fscale = FONT_LEVELS[fontIdx].scale;
+  // [watch-sync-offset-v1] Geser sinkron subtitle (detik). + = subtitle lebih cepat.
+  const [syncOffset, setSyncOffset] = useState(0);
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
@@ -828,16 +838,21 @@ export default function VideoLearnPlayer({
     }
   }, [showCC, ready, langCode]);
 
+  // [watch-sync-offset-v1] Waktu yang dipakai SEMUA sorotan (baris aktif, karaoke,
+  // panel transkrip) — waktu player + geser sinkron manual. Dipusatkan di sini biar
+  // baris fokus & panel selalu kompak.
+  const syncedTime = time + syncOffset;
+
   // Indeks cue aktif berdasarkan waktu sekarang.
   const activeIdx = useMemo(() => {
     if (!cues.length) return -1;
-    // Cari cue yang mencakup `time`; kalau di celah, pakai cue terakhir yang lewat.
+    // Cari cue yang mencakup `syncedTime`; kalau di celah, pakai cue terakhir yang lewat.
     let lo = 0;
     let hi = cues.length - 1;
     let ans = -1;
     while (lo <= hi) {
       const mid = (lo + hi) >> 1;
-      if (cues[mid].start <= time) {
+      if (cues[mid].start <= syncedTime) {
         ans = mid;
         lo = mid + 1;
       } else {
@@ -847,7 +862,7 @@ export default function VideoLearnPlayer({
     if (ans === -1) return -1;
     // Kalau sudah lewat end cue ini dan belum masuk berikutnya, tetap sorot ini.
     return ans;
-  }, [cues, time]);
+  }, [cues, syncedTime]);
 
   const activeCue = activeIdx >= 0 ? cues[activeIdx] : null;
 
@@ -1005,6 +1020,46 @@ export default function VideoLearnPlayer({
       return n;
     });
   }, []);
+
+  // [watch-sync-offset-v1] Pulihkan geser sinkron tersimpan tiap ganti video/bahasa
+  // (default 0 kalau belum pernah diatur untuk video ini).
+  useEffect(() => {
+    let v = 0;
+    try {
+      const s = window.localStorage.getItem(syncKeyFor(video.videoId, langCode));
+      if (s != null) {
+        const n = parseFloat(s);
+        if (Number.isFinite(n)) v = Math.max(-SYNC_MAX, Math.min(SYNC_MAX, n));
+      }
+    } catch {
+      /* abaikan */
+    }
+    setSyncOffset(v);
+  }, [video.videoId, langCode]);
+
+  const nudgeSync = useCallback(
+    (delta: number) => {
+      setSyncOffset((cur) => {
+        const next = Math.max(-SYNC_MAX, Math.min(SYNC_MAX, Math.round((cur + delta) * 100) / 100));
+        try {
+          window.localStorage.setItem(syncKeyFor(video.videoId, langCode), String(next));
+        } catch {
+          /* abaikan */
+        }
+        return next;
+      });
+    },
+    [video.videoId, langCode]
+  );
+
+  const resetSync = useCallback(() => {
+    setSyncOffset(0);
+    try {
+      window.localStorage.removeItem(syncKeyFor(video.videoId, langCode));
+    } catch {
+      /* abaikan */
+    }
+  }, [video.videoId, langCode]);
 
   const gotoCue = useCallback(
     (dir: -1 | 1) => {
@@ -1342,7 +1397,7 @@ export default function VideoLearnPlayer({
             <div className="mb-auto mt-2 w-full" onMouseEnter={onSubtitleEnter} onMouseLeave={onSubtitleLeave}>
               <FocusLine
                 cue={activeCue}
-                time={time}
+                time={syncedTime}
                 langCode={langCode}
                 baseLang={baseLang}
                 baseTranslating={baseTranslating}
@@ -1476,6 +1531,48 @@ export default function VideoLearnPlayer({
             >
               <Type className="h-4 w-4" /> {FONT_LEVELS[fontIdx].label}
             </button>
+
+            {/* [watch-sync-offset-v1] Sinkron subtitle — geser kalau highlight
+                mendahului / ketinggalan dari audio. − mundur, + maju; angka =
+                geser sekarang (detik). Ketuk angka utk reset ke 0. Hanya tampil
+                saat transkrip interaktif sudah siap. */}
+            {txState === "ready" && (
+              <div
+                className="inline-flex shrink-0 items-center gap-0.5 rounded-full px-1 py-1 text-[13px] font-bold"
+                style={{
+                  backgroundColor: syncOffset !== 0 ? "rgba(26,158,158,0.16)" : CARD,
+                  border: `1px solid ${syncOffset !== 0 ? TEAL : BORDER}`,
+                  color: "#fff",
+                }}
+                title="Sinkron subtitle dengan audio (− mundur / + maju)"
+              >
+                <button
+                  onClick={() => nudgeSync(-SYNC_STEP)}
+                  className="rounded-full px-2 py-1 leading-none transition-colors hover:bg-white/10"
+                  title="Subtitle lebih lambat (mundur)"
+                  aria-label="Subtitle lebih lambat"
+                >
+                  −
+                </button>
+                <button
+                  onClick={resetSync}
+                  className="min-w-[3.25rem] rounded-full px-1 py-1 text-center leading-none transition-colors hover:bg-white/10"
+                  style={{ color: syncOffset !== 0 ? TEAL : "#fff" }}
+                  title="Reset sinkron ke 0"
+                  aria-label="Reset sinkron"
+                >
+                  {syncOffset > 0 ? `+${syncOffset.toFixed(2)}` : syncOffset.toFixed(2)}s
+                </button>
+                <button
+                  onClick={() => nudgeSync(SYNC_STEP)}
+                  className="rounded-full px-2 py-1 leading-none transition-colors hover:bg-white/10"
+                  title="Subtitle lebih cepat (maju)"
+                  aria-label="Subtitle lebih cepat"
+                >
+                  +
+                </button>
+              </div>
+            )}
 
             {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
                 buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
@@ -1686,7 +1783,7 @@ export default function VideoLearnPlayer({
                     {on ? (
                       <KaraokeText
                         cue={c}
-                        time={time}
+                        time={syncedTime}
                         langCode={langCode}
                         onWordTap={onWordTap}
                         hoveredK={hoverWord?.i === i ? hoverWord.k : null}
