@@ -42,6 +42,7 @@ import {
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
+  prewarmBreakdowns,
   prewarmTranscripts,
   requestTranscript,
   SentenceBreakdown,
@@ -691,6 +692,43 @@ export default function VideoLearnPlayer({
       setCues(ordered);
       setTxState("ready");
       setAsrRunning(false);
+
+      // ── Precompute analisa (mode Analisa instan) ──────────────────────────
+      // Peta target→indeks cue: satu kalimat bisa muncul di beberapa cue, dan
+      // breakdown = fungsi murni kalimat, jadi hasil dipakai untuk semua indeks
+      // yang cocok. Seed dulu dari breakdown yang sudah tersimpan bareng transkrip
+      // (cache lintas-pengguna) → nol loading. Sisanya di-warm di latar belakang.
+      const targetToIdx = new Map<string, number[]>();
+      ordered.forEach((c, i) => {
+        const arr = targetToIdx.get(c.target);
+        if (arr) arr.push(i);
+        else targetToIdx.set(c.target, [i]);
+      });
+      const seed: Record<number, SentenceBreakdown> = {};
+      ordered.forEach((c, i) => {
+        if (c.breakdown) seed[i] = c.breakdown;
+      });
+      if (Object.keys(seed).length) setBreakdowns((prev) => ({ ...prev, ...seed }));
+      const needWarm = Array.from(
+        new Set(ordered.filter((c) => !c.breakdown).map((c) => c.target))
+      );
+      if (needWarm.length) {
+        void prewarmBreakdowns({
+          videoId: video.videoId,
+          langCode,
+          sentences: needWarm,
+          isCancelled: () => cancelled,
+          onOne: (sentence, bd) => {
+            const idxs = targetToIdx.get(sentence);
+            if (!idxs) return;
+            setBreakdowns((prev) => {
+              const next = { ...prev };
+              for (const i of idxs) if (typeof next[i] !== "object") next[i] = bd;
+              return next;
+            });
+          },
+        });
+      }
       if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
         setTranslitLoading(true);
         transliterateLines(ordered.map((c) => c.target), langCode)
@@ -1072,13 +1110,10 @@ export default function VideoLearnPlayer({
     [activeIdx, cues, seekTo]
   );
 
-  // Navigasi section pakai panah keyboard (abaikan saat mengetik).
+  // Pintasan keyboard: Spasi/Enter = play-pause, panah = navigasi section
+  // (abaikan saat mengetik atau saat fokus di tombol/link).
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      // Kiri/Bawah = section sebelumnya (mundur), Kanan/Atas = section berikutnya (maju).
-      const prev = e.key === "ArrowLeft" || e.key === "ArrowDown";
-      const next = e.key === "ArrowRight" || e.key === "ArrowUp";
-      if (!prev && !next) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const t = e.target as HTMLElement | null;
       if (
@@ -1088,12 +1123,32 @@ export default function VideoLearnPlayer({
           t.isContentEditable)
       )
         return;
+
+      // Spasi / Enter = play-pause. Kalau fokus di tombol/link, biarkan
+      // aktivasi normalnya (jangan bajak) supaya kontrol UI tetap jalan.
+      if (e.key === " " || e.code === "Space" || e.key === "Enter") {
+        if (
+          t &&
+          (t.tagName === "BUTTON" ||
+            t.tagName === "A" ||
+            t.getAttribute("role") === "button")
+        )
+          return;
+        e.preventDefault();
+        togglePlay();
+        return;
+      }
+
+      // Atas/Kiri = section sebelumnya (mundur), Bawah/Kanan = berikutnya (maju).
+      const prev = e.key === "ArrowUp" || e.key === "ArrowLeft";
+      const next = e.key === "ArrowDown" || e.key === "ArrowRight";
+      if (!prev && !next) return;
       e.preventDefault();
       gotoCue(next ? 1 : -1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [gotoCue]);
+  }, [gotoCue, togglePlay]);
 
   // Penjaga fokus: begitu user klik video, fokus pindah ke IFRAME YouTube
   // (cross-origin) sehingga event keydown di window tak lagi terpicu — panah pun
@@ -2001,8 +2056,17 @@ function FocusLine({
                 <span
                   key={i}
                   onClick={(e) => onWordTap(e, t.word, cue.target)}
-                  className="cursor-pointer text-center"
+                  className="flex cursor-pointer flex-col items-center text-center"
                 >
+                  {/* Arti per kata (di ATAS kata) — emas biar beda dari kelas kata */}
+                  {t.gloss && (
+                    <span
+                      className="block font-semibold leading-tight"
+                      style={{ color: GOLD, fontSize: 11 * scale }}
+                    >
+                      {t.gloss}
+                    </span>
+                  )}
                   <span
                     className="block font-extrabold leading-tight"
                     style={{ color: POS_COLOR[t.cat], fontSize: 21 * scale }}
