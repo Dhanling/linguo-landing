@@ -1165,16 +1165,51 @@ export function processTranscript(
   return p;
 }
 
+// Sesi ini: (video|lang) yang sudah dititip ke antrian prewarm — jangan kirim ulang
+// tiap render / kunjungan tab (hemat panggilan endpoint & insert DB). Ditandai
+// SEBELUM fetch: prewarm best-effort, gagal sekali biar tak nyepam; jalur reaktif
+// "Minta video ini" tetap jadi jaring pengaman, dan sesi berikutnya coba lagi.
+const prewarmedThisSession = new Set<string>();
+// Cuma hangatkan video TERATAS tiap daftar (paling mungkin diklik) — konservatif,
+// biar antrian & biaya server tetap terkendali. Server punya cap harian sendiri.
+const PREWARM_MAX = 8;
+
 /**
- * NO-OP (sejak Fase 2). Dulu ini menghangatkan cache dengan MEMICU transkripsi di
- * browser (caption/ASR) untuk video rekomendasi — mahal & tak terkontrol. Sekarang
- * transkripsi dilakukan SERVER lewat kurasi admin (antrian `yt_transcript_jobs` +
- * worker pg_cron), jadi klien tak lagi memicu apa pun. Dipertahankan sebagai
- * no-op supaya call site lama tak perlu diubah. `void` argumen agar lint tenang.
+ * Pra-hangatkan transkrip untuk daftar video (hasil tab browse / rekomendasi) SEBELUM
+ * siswa mengkliknya: titipkan ke antrian server `yt_transcript_jobs` (source
+ * 'prewarm') lewat `/api/yt-transcript/prewarm`. Worker pg_cron (tiap menit)
+ * memprosesnya di latar belakang, jadi saat siswa membuka video, transkrip biasanya
+ * SUDAH siap → tampil instan.
+ *
+ * Tidak lagi memicu transkripsi di browser (dulu no-op karena itu mahal/tak
+ * terkontrol) — di sini klien hanya MENITIP enqueue; kerja beratnya di server, yang
+ * men-dedup (skip yang sudah siap/antre) & membatasi kuota harian. Fire-and-forget:
+ * tak menahan UI, kegagalan diabaikan diam-diam.
  */
-export function prewarmTranscripts(_videos: PrewarmVideo[], _langCode: string): void {
-  void _videos;
-  void _langCode;
+export function prewarmTranscripts(videos: PrewarmVideo[], langCode: string): void {
+  if (typeof window === "undefined") return;
+  if (!/^[a-z]{2,3}(-[A-Za-z]{2,4})?$/.test(langCode)) return;
+
+  const ids: string[] = [];
+  for (const v of videos) {
+    const id = v?.videoId;
+    if (!id || !VIDEO_ID_RE.test(id)) continue;
+    const key = `${langCode}::${id}`;
+    if (prewarmedThisSession.has(key)) continue;
+    prewarmedThisSession.add(key);
+    ids.push(id);
+    if (ids.length >= PREWARM_MAX) break;
+  }
+  if (!ids.length) return;
+
+  void fetch("/api/yt-transcript/prewarm", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ videoIds: ids, lang: langCode }),
+    keepalive: true, // tetap terkirim walau siswa buru-buru pindah/klik video
+  }).catch(() => {
+    /* best-effort — prewarm tak boleh mengganggu; abaikan kegagalan */
+  });
 }
 
 /**
