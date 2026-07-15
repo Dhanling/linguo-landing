@@ -226,6 +226,10 @@ export interface LearnCue {
   target: string;
   base: string;
   translit?: string;
+  // Analisa kalimat (kelas kata + arti per kata) yang sudah di-precompute &
+  // disimpan bareng transkrip → mode Analisa instan tanpa loading. Diisi oleh
+  // prewarmBreakdowns() (klien) lalu di-persist ke yt_transcripts.cues[].breakdown.
+  breakdown?: SentenceBreakdown;
 }
 
 /** Kenapa transkrip kosong — buat pesan yang ramah. `not_ready` = belum ada di
@@ -1558,19 +1562,49 @@ export interface SentenceBreakdown {
   tokens: SentenceToken[];
 }
 
-/**
- * Pecah satu baris subtitle kata demi kata untuk mode "Analisa": terjemahan
- * akurat + kelas kata (warna) dan arti tiap kata. Backed by word-info "breakdown".
- */
-export async function getSentenceBreakdown(params: {
-  sentence: string;
-  langCode: string;
-}): Promise<SentenceBreakdown> {
+// ── Cache analisa kalimat (breakdown) ────────────────────────────────────────
+// Breakdown = fungsi murni dari (kalimat, bahasa) → aman di-cache permanen. Di-key
+// per kalimat (bukan per video) supaya kalimat identik di video lain ikut instan.
+// localStorage = cache per-perangkat; persist ke yt_transcripts.cues[].breakdown
+// (lewat prewarmBreakdowns) = cache lintas-perangkat/pengguna "bareng transkrip".
+const BREAKDOWN_CACHE_PREFIX = "linguo:watch:breakdown:v1:";
+
+function breakdownCacheKey(sentence: string, langCode: string): string {
+  let h = 5381;
+  const s = `${langCode}|${sentence}`;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+  return BREAKDOWN_CACHE_PREFIX + (h >>> 0).toString(36);
+}
+
+function readBreakdownCache(sentence: string, langCode: string): SentenceBreakdown | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const v = window.localStorage.getItem(breakdownCacheKey(sentence, langCode));
+    if (!v) return null;
+    const bd = JSON.parse(v) as SentenceBreakdown;
+    return Array.isArray(bd?.tokens) && bd.tokens.length ? bd : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeBreakdownCache(sentence: string, langCode: string, bd: SentenceBreakdown): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(breakdownCacheKey(sentence, langCode), JSON.stringify(bd));
+  } catch {
+    /* kuota penuh → abaikan */
+  }
+}
+
+const breakdownInFlight = new Map<string, Promise<SentenceBreakdown>>();
+
+async function fetchSentenceBreakdown(sentence: string, langCode: string): Promise<SentenceBreakdown> {
   const raw = await callWordInfo({
-    word: params.sentence,
-    sentence: params.sentence,
+    word: sentence,
+    sentence,
     mode: "breakdown",
-    langCode: params.langCode,
+    langCode,
   });
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
@@ -1594,6 +1628,97 @@ export async function getSentenceBreakdown(params: {
     : [];
   if (!tokens.length) throw new Error("Analisa kosong.");
   return { translation, tokens };
+}
+
+/**
+ * Pecah satu baris subtitle kata demi kata untuk mode "Analisa": terjemahan
+ * akurat + kelas kata (warna) dan arti tiap kata. Backed by word-info "breakdown".
+ * Di-cache di localStorage + de-dup panggilan bersamaan (kalimat sama) supaya
+ * mode Analisa & prewarm tak memanggil LLM dua kali untuk kalimat yang sama.
+ */
+export async function getSentenceBreakdown(params: {
+  sentence: string;
+  langCode: string;
+}): Promise<SentenceBreakdown> {
+  const sentence = params.sentence.trim();
+  const cached = readBreakdownCache(sentence, params.langCode);
+  if (cached) return cached;
+  const key = breakdownCacheKey(sentence, params.langCode);
+  const inflight = breakdownInFlight.get(key);
+  if (inflight) return inflight;
+  const p = fetchSentenceBreakdown(sentence, params.langCode)
+    .then((bd) => {
+      writeBreakdownCache(sentence, params.langCode, bd);
+      return bd;
+    })
+    .finally(() => breakdownInFlight.delete(key));
+  breakdownInFlight.set(key, p);
+  return p;
+}
+
+/**
+ * Precompute analisa untuk SEMUA kalimat sebuah transkrip di latar belakang, biar
+ * mode Analisa instan (tanpa loading) saat siswa mengklik. Throttled (concurrency
+ * kecil + jeda) supaya tak menghajar edge fn. `onOne` dipanggil tiap kalimat siap
+ * (dari cache maupun hasil baru) → player mengisi state realtime. Kalimat yang baru
+ * dihitung di-persist sekali ke cache transkrip bersama (yt_transcripts) supaya
+ * viewer/kunjungan berikutnya baca analisa langsung bareng transkrip.
+ */
+export async function prewarmBreakdowns(params: {
+  videoId: string;
+  langCode: string;
+  sentences: string[];
+  onOne?: (sentence: string, bd: SentenceBreakdown) => void;
+  isCancelled?: () => boolean;
+}): Promise<void> {
+  const { videoId, langCode, onOne, isCancelled } = params;
+  const uniq = Array.from(
+    new Set(params.sentences.map((s) => s.trim()).filter((s) => s.length > 0))
+  );
+  // Kalimat yang benar-benar baru dipanggil ke LLM (bukan dari cache) → yang perlu
+  // di-persist ke DB. Di-key per target text (breakdown = fungsi murni kalimat).
+  const fresh: Record<string, SentenceBreakdown> = {};
+  const CONCURRENCY = 2;
+  let cursor = 0;
+
+  const worker = async () => {
+    while (cursor < uniq.length) {
+      if (isCancelled?.()) return;
+      const sentence = uniq[cursor++];
+      const cached = readBreakdownCache(sentence, langCode);
+      if (cached) {
+        onOne?.(sentence, cached);
+        continue;
+      }
+      try {
+        const bd = await getSentenceBreakdown({ sentence, langCode });
+        if (isCancelled?.()) return;
+        onOne?.(sentence, bd);
+        fresh[sentence] = bd;
+      } catch {
+        /* satu kalimat gagal → lanjut, jangan gagalkan seluruh prewarm */
+      }
+      // Jeda kecil biar antrean edge fn tak dibombardir untuk video panjang.
+      await new Promise((r) => setTimeout(r, 150));
+    }
+  };
+
+  await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
+
+  const freshKeys = Object.keys(fresh);
+  if (isCancelled?.() || !freshKeys.length) return;
+  // Persist ke cache transkrip bersama (best-effort). Server menyisipkan breakdown
+  // ke cue yang target-nya cocok.
+  try {
+    void fetch("/api/yt-transcript-cache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ videoId, lang: langCode, breakdowns: fresh }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    /* abaikan */
+  }
 }
 
 // ── Penjajaran kata target↔terjemahan (hover-sync frasa) ─────────────────────

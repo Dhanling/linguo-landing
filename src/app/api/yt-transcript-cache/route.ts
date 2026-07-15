@@ -26,6 +26,20 @@ function validLang(lang: unknown): lang is string {
   return typeof lang === "string" && /^[a-z]{2,3}(-[A-Za-z]{2,4})?$/.test(lang);
 }
 
+// Validasi ringan bentuk breakdown ({ translation, tokens:[{word,cat,gloss,...}] })
+// sebelum masuk DB — cegah payload sampah mencemari cache transkrip.
+const MAX_TOKENS = 200;
+function isValidBreakdown(bd: unknown): boolean {
+  if (!bd || typeof bd !== "object") return false;
+  const b = bd as { translation?: unknown; tokens?: unknown };
+  if (!Array.isArray(b.tokens) || b.tokens.length === 0 || b.tokens.length > MAX_TOKENS) return false;
+  if (b.translation != null && typeof b.translation !== "string") return false;
+  return b.tokens.every((t) => {
+    const tok = t as { word?: unknown };
+    return tok && typeof tok === "object" && typeof tok.word === "string" && tok.word.length > 0;
+  });
+}
+
 // Durasi ≈ akhir cue terakhir. Transkrip menutup hampir seluruh video, jadi ini
 // proxy yang cukup akurat untuk badge durasi tab "Siap" — tanpa kuota YouTube
 // Data API. Dipakai buat backfill baris yang `dur`-nya belum terisi (video kurasi
@@ -212,6 +226,56 @@ export async function POST(req: NextRequest) {
         .is("title", null); // jangan timpa metadata yang sudah ada
       if (error) return NextResponse.json({ ok: false }, { status: 200 });
       return NextResponse.json({ ok: true }, { status: 200 });
+    }
+
+    // Mode BREAKDOWN: sisipkan analisa kalimat (kelas kata + arti per kata) yang
+    // sudah di-precompute klien ke cue yang target-nya cocok → mode Analisa instan
+    // "bareng transkrip" lintas-perangkat/pengguna. Di-key per target text karena
+    // breakdown = fungsi murni dari (kalimat, bahasa); aman untuk cue kembar.
+    if (body?.breakdowns && typeof body.breakdowns === "object" && !Array.isArray(body.breakdowns)) {
+      const incoming = body.breakdowns as Record<string, unknown>;
+      const byTarget = new Map<string, unknown>();
+      for (const [target, bd] of Object.entries(incoming)) {
+        if (typeof target === "string" && target.length > 0 && isValidBreakdown(bd)) {
+          byTarget.set(target, bd);
+        }
+      }
+      if (!byTarget.size) return NextResponse.json({ ok: true }, { status: 200 });
+
+      const sb = createServerClient(0);
+      const { data, error } = await sb
+        .from("yt_transcripts")
+        .select("cues")
+        .eq("video_id", videoId)
+        .eq("lang", lang)
+        .maybeSingle();
+      if (error || !Array.isArray(data?.cues)) {
+        return NextResponse.json({ ok: false }, { status: 200 });
+      }
+      const stored = data.cues as Record<string, unknown>[];
+      let changed = false;
+      for (const cue of stored) {
+        const t = cue?.target;
+        if (typeof t !== "string") continue;
+        if (cue.breakdown) continue; // immutable: jangan timpa yang sudah ada (hemat tulis)
+        const bd = byTarget.get(t);
+        if (bd) {
+          cue.breakdown = bd;
+          changed = true;
+        }
+      }
+      if (!changed) return NextResponse.json({ ok: true }, { status: 200 });
+      if (JSON.stringify(stored).length > MAX_JSON) {
+        // Transkrip + breakdown melebihi batas → lewati persist (cache localStorage
+        // klien tetap menutupi). Bukan error yang perlu diteriakkan.
+        return NextResponse.json({ ok: false, error: "kegedean" }, { status: 200 });
+      }
+      const { error: upErr } = await sb
+        .from("yt_transcripts")
+        .update({ cues: stored })
+        .eq("video_id", videoId)
+        .eq("lang", lang);
+      return NextResponse.json({ ok: !upErr }, { status: 200 });
     }
 
     if (!Array.isArray(cues) || cues.length === 0 || cues.length > MAX_CUES) {

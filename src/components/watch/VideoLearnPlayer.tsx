@@ -65,6 +65,9 @@ import { RectFlag } from "@/components/RectFlag";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
+// Gold redup untuk arti per-kata di mode Analisa — se-keluarga dengan terjemahan
+// kalimat (GOLD terang) tapi jelas subordinat, biar hierarki baca enak.
+const GOLD_DIM = "rgba(244,183,64,0.72)";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
 
@@ -713,21 +716,27 @@ export default function VideoLearnPlayer({
         new Set(ordered.filter((c) => !c.breakdown).map((c) => c.target))
       );
       if (needWarm.length) {
-        void prewarmBreakdowns({
-          videoId: video.videoId,
-          langCode,
-          sentences: needWarm,
-          isCancelled: () => cancelled,
-          onOne: (sentence, bd) => {
-            const idxs = targetToIdx.get(sentence);
-            if (!idxs) return;
-            setBreakdowns((prev) => {
-              const next = { ...prev };
-              for (const i of idxs) if (typeof next[i] !== "object") next[i] = bd;
-              return next;
-            });
-          },
-        });
+        // Beri jeda kecil sebelum warm massal biar tak rebutan dgn render subtitle
+        // + transliterasi awal (paint pertama tetap mulus). isCancelled dicek lagi
+        // di dalam prewarm, jadi ganti video / unmount saat menunggu aman.
+        window.setTimeout(() => {
+          if (cancelled) return;
+          void prewarmBreakdowns({
+            videoId: video.videoId,
+            langCode,
+            sentences: needWarm,
+            isCancelled: () => cancelled,
+            onOne: (sentence, bd) => {
+              const idxs = targetToIdx.get(sentence);
+              if (!idxs) return;
+              setBreakdowns((prev) => {
+                const next = { ...prev };
+                for (const i of idxs) if (typeof next[i] !== "object") next[i] = bd;
+                return next;
+              });
+            },
+          });
+        }, 1200);
       }
       if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
         setTranslitLoading(true);
@@ -2058,11 +2067,12 @@ function FocusLine({
                   onClick={(e) => onWordTap(e, t.word, cue.target)}
                   className="flex cursor-pointer flex-col items-center text-center"
                 >
-                  {/* Arti per kata (di ATAS kata) — emas biar beda dari kelas kata */}
+                  {/* Arti per kata (di ATAS kata) — gold redup: se-keluarga dgn
+                      terjemahan kalimat tapi subordinat, beda dari kelas kata (abu) */}
                   {t.gloss && (
                     <span
                       className="block font-semibold leading-tight"
-                      style={{ color: GOLD, fontSize: 11 * scale }}
+                      style={{ color: GOLD_DIM, fontSize: 11 * scale }}
                     >
                       {t.gloss}
                     </span>
