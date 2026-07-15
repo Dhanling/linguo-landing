@@ -88,6 +88,16 @@ const SYNC_UNDERLINE: React.CSSProperties = {
 };
 const SUB = "rgba(255,255,255,0.5)";
 
+// Jam pemutaran m:ss (atau h:mm:ss utk >1 jam) — untuk label waktu di slider seek.
+// Beda dari formatDuration (yg kembalikan "" saat 0): di sini 0 → "0:00".
+function fmtClock(sec: number): string {
+  const s = Math.max(0, Math.floor(sec || 0));
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const ss = String(s % 60).padStart(2, "0");
+  return h > 0 ? `${h}:${String(m).padStart(2, "0")}:${ss}` : `${m}:${ss}`;
+}
+
 const SPEEDS = [1, 0.75, 0.5, 1.25];
 
 // Ukuran teks subtitle/transkrip yang bisa dipilih siswa (disimpan lokal).
@@ -201,6 +211,15 @@ export default function VideoLearnPlayer({
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
+  // Durasi total video (detik) dari YT API — untuk slider seek + label waktu.
+  const [duration, setDuration] = useState(0);
+  // Sedang menyeret slider seek → tampilkan posisi seret (bukan waktu play) supaya
+  // handle tak "melompat balik" oleh loop interpolasi waktu saat jari masih menahan.
+  const [scrubbing, setScrubbing] = useState(false);
+  const [scrubVal, setScrubVal] = useState(0);
+  // [watch-hide-sentence-tr-v1] Sembunyikan baris terjemahan kalimat (emas) di bawah
+  // subtitle → fokus ke arti per-kata di mode Analisa. Default tampil.
+  const [showSentenceTr, setShowSentenceTr] = useState(true);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
   // Kualitas video — kontrol bawaan YouTube dimatikan (controls:0), jadi kita sediakan
@@ -670,6 +689,21 @@ export default function VideoLearnPlayer({
     return () => cancelAnimationFrame(raf);
   }, [ready, playing, speedIdx]);
 
+  // Durasi video baru tersedia beberapa saat setelah player siap → poll pelan sampai
+  // dapat (>0), lalu berhenti. Reset ke 0 tiap ganti video biar slider tak salah.
+  useEffect(() => {
+    setDuration(0);
+    if (!ready) return;
+    const id = window.setInterval(() => {
+      const d = playerRef.current?.getDuration?.();
+      if (typeof d === "number" && d > 0) {
+        setDuration(d);
+        window.clearInterval(id);
+      }
+    }, 500);
+    return () => window.clearInterval(id);
+  }, [ready, video.videoId]);
+
   // ── Muat transkrip ──────────────────────────────────────────────────────────
   // Paritas dgn app mobile: buka video = subtitle DIBUAT OTOMATIS bila belum ada.
   // Di mobile itu murah (caption YouTube di-fetch on-device, gratis); di web
@@ -922,6 +956,26 @@ export default function VideoLearnPlayer({
   }, [cues, syncedTime]);
 
   const activeCue = activeIdx >= 0 ? cues[activeIdx] : null;
+
+  // [watch-gap-hide-v1] Cue yang benar-benar DITAYANGKAN di baris fokus. Beda dari
+  // activeCue: saat waktu sudah lewat `end` cue ini dan jeda ke cue berikutnya PANJANG
+  // (hening / musik / tak ada yang bicara), subtitle disembunyikan (visibleCue = null)
+  // ketimbang menahan kalimat lama di layar. Jeda PENDEK (≤ GAP_HIDE) tetap menahan
+  // kalimat sampai cue berikutnya mulai — biar jeda napas natural tak bikin flicker.
+  const GAP_HIDE = 1.2;
+  const visibleCue = useMemo(() => {
+    if (activeIdx < 0) return null;
+    const cur = cues[activeIdx];
+    if (syncedTime <= cur.end) return cur; // masih di dalam window ucapan
+    const next = cues[activeIdx + 1];
+    const gapEnd = next ? next.start : Infinity; // Infinity = setelah cue terakhir
+    return gapEnd - cur.end <= GAP_HIDE ? cur : null;
+  }, [cues, activeIdx, syncedTime]);
+
+  // Sedang dalam jeda hening (sudah lewat cue pertama tapi tak ada cue yang tayang) —
+  // beda dari "belum mulai": yang pertama biarkan baris fokus KOSONG, bukan tampilkan
+  // ajakan "Tekan play".
+  const inGap = txState === "ready" && cues.length > 0 && syncedTime >= cues[0].start && visibleCue === null;
 
   // [watch-word-align-v1] Penjajaran hanya berlaku saat target & terjemahan sama-sama
   // beraksara Latin (hover-sync kata↔arti). Non-Latin dilewati (pakai translit).
@@ -1373,7 +1427,7 @@ export default function VideoLearnPlayer({
             }
           >
             <div
-              className="relative w-full"
+              className="group/vid relative w-full"
               style={
                 mini
                   ? { aspectRatio: "16 / 9" }
@@ -1387,6 +1441,64 @@ export default function VideoLearnPlayer({
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Loader2 className="h-7 w-7 animate-spin" color={SUB} />
                 </div>
+              )}
+              {/* [watch-own-controls-v1] Lapisan kontrol kita sendiri di atas iframe
+                  (mode penuh, bukan mini). Selain memberi play/jeda + slider seek, ini
+                  MENELAN klik ke overlay bawaan YouTube (share / tonton-nanti / "video
+                  lainnya" / logo) sehingga menonton tak pernah melompat keluar ke
+                  youtube.com — "video lainnya" diganti tombol kita yang tetap di
+                  Watch & Learn (mengecilkan video + memunculkan rekomendasi). */}
+              {ready && !mini && (
+                <>
+                  {/* Seluruh area video = tombol play/jeda (menelan klik YouTube). */}
+                  <button
+                    type="button"
+                    onClick={togglePlay}
+                    aria-label={playing ? "Jeda" : "Putar"}
+                    className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
+                  />
+                  {/* Bar seek + durasi — muncul saat hover video, atau selalu saat
+                      dijeda. Gradien gelap menutupi sisa kontrol/logo YouTube di tepi. */}
+                  <div
+                    className={`absolute inset-x-0 bottom-0 z-[7] flex items-center gap-2 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-3 pb-2 pt-7 transition-opacity duration-150 ${
+                      playing ? "opacity-0 group-hover/vid:opacity-100 focus-within:opacity-100" : "opacity-100"
+                    }`}
+                  >
+                    <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/90">
+                      {fmtClock(scrubbing ? scrubVal : time)}
+                    </span>
+                    <input
+                      type="range"
+                      min={0}
+                      max={duration || 0}
+                      step="any"
+                      value={duration ? Math.min(scrubbing ? scrubVal : time, duration) : 0}
+                      disabled={!duration}
+                      onPointerDown={() => setScrubbing(true)}
+                      onChange={(e) => setScrubVal(parseFloat(e.target.value))}
+                      onPointerUp={(e) => {
+                        seekTo(parseFloat((e.target as HTMLInputElement).value));
+                        setScrubbing(false);
+                      }}
+                      onKeyUp={(e) => seekTo(parseFloat((e.target as HTMLInputElement).value))}
+                      className="h-1 flex-1 cursor-pointer accent-[#1A9E9E] disabled:cursor-default"
+                      aria-label="Geser posisi video"
+                    />
+                    <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/70">
+                      {fmtClock(duration)}
+                    </span>
+                    {onSelectVideo && (
+                      <button
+                        type="button"
+                        onClick={enterMini}
+                        title="Video lainnya — tetap di Watch & Learn"
+                        className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white transition-colors hover:bg-black/85"
+                      >
+                        <ListVideo className="h-3.5 w-3.5" /> Video lainnya
+                      </button>
+                    )}
+                  </div>
+                </>
               )}
               {/* Overlay drag SELURUH area video saat mini — iframe YouTube menelan
                   pointer, jadi tanpa lapisan ini video tak bisa diseret. Tombol strip
@@ -1478,11 +1590,13 @@ export default function VideoLearnPlayer({
                 Hover di area ini → pause otomatis (baca subtitle), keluar → lanjut. */}
             <div className="mb-auto mt-2 w-full" onMouseEnter={onSubtitleEnter} onMouseLeave={onSubtitleLeave}>
               <FocusLine
-                cue={activeCue}
+                cue={visibleCue}
+                inGap={inGap}
                 time={syncedTime}
                 langCode={langCode}
                 baseLang={baseLang}
                 baseTranslating={baseTranslating}
+                showTranslation={showSentenceTr}
                 analyze={analyze}
                 breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
                 onWordTap={onWordTap}
@@ -1663,6 +1777,21 @@ export default function VideoLearnPlayer({
                 </button>
               </div>
             )}
+
+            {/* [watch-hide-sentence-tr-v1] Sembunyikan/tampilkan baris terjemahan
+                kalimat (emas) di bawah subtitle → fokus ke arti per-kata. */}
+            <button
+              onClick={() => setShowSentenceTr((v) => !v)}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
+              style={{
+                backgroundColor: showSentenceTr ? "rgba(26,158,158,0.16)" : CARD,
+                border: `1px solid ${showSentenceTr ? TEAL : BORDER}`,
+                color: showSentenceTr ? TEAL : "#fff",
+              }}
+              title={showSentenceTr ? "Sembunyikan terjemahan kalimat" : "Tampilkan terjemahan kalimat"}
+            >
+              <Languages className="h-4 w-4" /> Terjemahan
+            </button>
 
             {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
                 buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
@@ -2011,10 +2140,12 @@ export default function VideoLearnPlayer({
 // ── Baris fokus (kalimat aktif di bawah video) ────────────────────────────────
 function FocusLine({
   cue,
+  inGap,
   time,
   langCode,
   baseLang,
   baseTranslating,
+  showTranslation = true,
   analyze,
   breakdown,
   onWordTap,
@@ -2029,10 +2160,12 @@ function FocusLine({
   onHoverWord,
 }: {
   cue: LearnCue | null;
+  inGap?: boolean;
   time: number;
   langCode?: string;
   baseLang?: string;
   baseTranslating?: boolean;
+  showTranslation?: boolean;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
@@ -2061,6 +2194,9 @@ function FocusLine({
     );
   }
   if (!cue) {
+    // Sedang hening / musik / tak ada yang bicara di tengah pemutaran → biarkan KOSONG
+    // (jangan tahan kalimat lama, jangan pula tampilkan ajakan "Tekan play").
+    if (inGap) return <div className="min-h-[92px]" aria-hidden />;
     return (
       <div className="flex min-h-[92px] items-center justify-center px-6 py-4 text-center">
         <p className="text-[13px]" style={{ color: SUB }}>
@@ -2125,11 +2261,9 @@ function FocusLine({
                 </span>
               ))}
             </div>
-            {breakdown.translation && (
-              <p className="mt-2.5 font-bold" style={{ color: GOLD, fontSize: 14 * scale }}>
-                {breakdown.translation}
-              </p>
-            )}
+            {/* Terjemahan kalimat penuh SENGAJA tak ditampilkan di mode Analisa —
+                arti per-kata (gloss di atas tiap token) sudah memberi makna; baris
+                emas di bawah cuma bikin redundan & menuh-menuhin. */}
           </>
         )}
       </div>
@@ -2157,7 +2291,7 @@ function FocusLine({
           {cue.translit}
         </p>
       )}
-      {cue.base ? (
+      {!showTranslation ? null : cue.base ? (
         alignEnabled ? (
           <p
             className="mt-1.5 font-bold"
@@ -2295,26 +2429,6 @@ function TranslitLine({
 // "future" (belum).
 type KaraokeState = "sung" | "active" | "future";
 
-// Perkiraan detik-per-karakter untuk kecepatan bicara natural. Dipakai membatasi
-// durasi sapuan karaoke: caption & transkrip AI (yt-asr) kadang MENAHAN satu baris
-// di layar lebih lama dari durasi ucapan sebenarnya (jeda/hening di akhir, segmen
-// ASR yang kelewat panjang). Tapi ini cuma pengaman untuk window yang JELAS
-// kepanjangan — tempo utama tetap dari durasi window caption/ASR (lihat SPEECH_CAP_FACTOR).
-const CJK_RE = /[぀-ヿ㐀-鿿가-힯]/;
-function estSpeechDur(text: string): number {
-  const chars = text.length || 1;
-  // Aksara CJK jauh lebih padat (sedikit karakter per detik) dari Latin.
-  const secPerChar = CJK_RE.test(text) ? 0.2 : 0.075;
-  return chars * secPerChar;
-}
-
-// Ambang toleransi cap: window caption/ASR baru "direm" ke perkiraan bicara kalau
-// panjangnya > FACTOR × perkiraan. Longgar (1.8×) supaya konten yang diucap PELAN
-// (mis. berita "langsam gesprochen") — yang window-nya wajar lebih panjang dari
-// perkiraan tempo normal — TIDAK tersapu lebih cepat dari audio ("kecepeten").
-// Cap tetap menangkap baris yang benar-benar kepanjangan (hening panjang di akhir).
-const SPEECH_CAP_FACTOR = 1.8;
-
 function karaokeTokens(
   cue: LearnCue,
   time: number,
@@ -2322,13 +2436,12 @@ function karaokeTokens(
 ): { text: string; isWord: boolean; state: KaraokeState; progress: number }[] {
   const toks = splitWords(cue.target, langCode);
   const total = cue.target.length || 1;
-  const windowDur = Math.max(0.001, cue.end - cue.start);
-  // Durasi efektif = window caption/ASR SEBENARNYA (tempo paling akurat), kecuali
-  // window itu jauh lebih panjang dari perkiraan bicara (hening/segmen kepanjangan)
-  // — baru saat itu direm ke perkiraan × FACTOR. Ambang longgar ini bikin baris yang
-  // diucap pelan tetap tersapu sepanjang audio-nya, tak mendahului ("kecepeten").
-  const cap = estSpeechDur(cue.target) * SPEECH_CAP_FACTOR;
-  const dur = Math.max(0.4, windowDur > cap ? cap : windowDur);
+  // Sapuan dibentang SEPENUH window caption/ASR (start→end) — sengaja TIDAK direm ke
+  // perkiraan tempo bicara. Dulu ada cap ke estimasi × faktor; hasilnya sapuan sering
+  // "kecepeten" (selesai sebelum kalimat habis diucap). Sekarang sapuan tak pernah
+  // rampung sebelum barisnya hilang. Hening panjang bukan lagi masalah di sini: jeda
+  // ANTAR-cue kini disembunyikan (lihat visibleCue), jadi window yang tersisa ≈ ucapan.
+  const dur = Math.max(0.4, cue.end - cue.start);
   const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
