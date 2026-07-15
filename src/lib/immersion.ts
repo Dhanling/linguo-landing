@@ -79,7 +79,12 @@ export const IMMERSION_LANGS: ImmersionLang[] = [
   { code: "ja", name: "Jepang", native: "日本語", flag: "🇯🇵", country: "jp" },
   { code: "ko", name: "Korea", native: "한국어", flag: "🇰🇷", country: "kr" },
   { code: "zh", name: "Mandarin", native: "中文", flag: "🇨🇳", country: "cn" },
-  { code: "es", name: "Spanyol", native: "Español", flag: "🇪🇸", country: "es" },
+  // Spanyol dipisah per varian — Eropa (Kastilia) vs Amerika Latin punya beda
+  // aksen, kosakata & "seseo". Base tetap `code: "es"` (default relevanceLanguage,
+  // sesi & cache lama tetap valid) kini dibias ke Spanyol lewat regionCode ES;
+  // varian Amerika Latin pakai regionCode MX (pasar penutur terbesar).
+  { code: "es", name: "Spanyol (Eropa)", native: "Español", flag: "🇪🇸", country: "es", region: "ES" },
+  { code: "es-419", name: "Spanyol (Amerika Latin)", native: "Español", flag: "🇲🇽", country: "mx", searchCode: "es", region: "MX" },
   { code: "fr", name: "Prancis", native: "Français", flag: "🇫🇷", country: "fr" },
   { code: "de", name: "Jerman", native: "Deutsch", flag: "🇩🇪", country: "de" },
   { code: "it", name: "Italia", native: "Italiano", flag: "🇮🇹", country: "it" },
