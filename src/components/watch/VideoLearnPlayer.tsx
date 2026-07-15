@@ -154,11 +154,15 @@ export default function VideoLearnPlayer({
   onSavedChange,
   recommendations = [],
   onSelectVideo,
+  initialStart,
 }: {
   video: ImmersionVideo;
   langCode: string;
   /** Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). */
   baseLang?: string;
+  /** Detik awal pemutaran — dipakai saat dibuka dari "Cari Kata" (lompat ke
+   *  momen kata diucapkan). */
+  initialStart?: number;
   onClose: () => void;
   /** Ganti bahasa yang dipelajari saat menonton → balik ke beranda Watch & Learn. */
   onChangeLang?: () => void;
@@ -410,6 +414,8 @@ export default function VideoLearnPlayer({
         videoId: video.videoId,
         playerVars: {
           autoplay: 1,
+          // Dibuka dari "Cari Kata" → mulai di detik kata diucapkan.
+          ...(initialStart && initialStart > 1 ? { start: Math.floor(initialStart) } : {}),
           modestbranding: 1,
           rel: 0,
           cc_load_policy: 0,
@@ -932,6 +938,15 @@ export default function VideoLearnPlayer({
     }
   }, []);
 
+  // Dibuka dari "Cari Kata": lompat ke detik kata diucapkan begitu player siap.
+  // `start` playerVar menangani mount pertama; efek ini menangani kasus kata baru
+  // dipilih untuk video yang SAMA (video.videoId tak berubah → player tak dibuat
+  // ulang), jadi seek harus dipicu manual saat initialStart berganti.
+  useEffect(() => {
+    if (!ready || !initialStart || initialStart <= 1) return;
+    seekTo(initialStart);
+  }, [ready, initialStart, seekTo]);
+
   const applySpeed = useCallback((idx: number) => {
     setSpeedIdx(idx);
     try {
@@ -1317,7 +1332,7 @@ export default function VideoLearnPlayer({
           {!mini && (
           <div
             className={`flex flex-col overflow-y-auto ${
-              fullscreen ? "shrink-0 bg-black px-4 pb-32 pt-3 sm:px-6" : "min-h-0 flex-1 py-2"
+              fullscreen ? "shrink-0 bg-black px-4 pb-20 pt-2 sm:px-6" : "min-h-0 flex-1 py-2"
             }`}
           >
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)

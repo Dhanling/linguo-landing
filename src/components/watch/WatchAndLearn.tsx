@@ -30,6 +30,9 @@ import {
   Video,
   Baby,
   Eye,
+  TextSearch,
+  Clock3,
+  Loader2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -55,6 +58,8 @@ import {
   fetchReadyVideos,
   getSavedWords,
   prewarmTranscripts,
+  searchWordInVideos,
+  type WordHit,
   BASE_LANGS,
   DEFAULT_BASE_LANG,
   getBaseLangDef,
@@ -121,6 +126,36 @@ const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
 // Tab "Siap": video yang transkripnya sudah tersimpan → buka = instan, tanpa
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
 const SIAP_ID = "siap";
+
+// Tab "Cari Kata" (ala YouGlish): ketik satu kata → daftar kalimat nyata dari
+// video katalog tempat kata itu dipakai, klik lompat ke detiknya. Bukan pencarian
+// video/YouTube, jadi ditangani khusus (RPC search_cues via /api/watch-search).
+const WORD_ID = "cari-kata";
+
+// Detik → "m:ss" (badge timestamp hasil Cari Kata).
+function fmtStamp(sec: number): string {
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+// Pecah kalimat di sekitar kemunculan `word` (case-insensitive, literal) untuk
+// menyorot kata yang dicari — mengembalikan potongan { text, hit }.
+function highlightParts(sentence: string, word: string): { text: string; hit: boolean }[] {
+  const w = word.trim();
+  if (!w) return [{ text: sentence, hit: false }];
+  const re = new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+  const out: { text: string; hit: boolean }[] = [];
+  let last = 0;
+  for (const m of sentence.matchAll(re)) {
+    const i = m.index ?? 0;
+    if (i > last) out.push({ text: sentence.slice(last, i), hit: false });
+    out.push({ text: m[0], hit: true });
+    last = i + m[0].length;
+  }
+  if (last < sentence.length) out.push({ text: sentence.slice(last), hit: false });
+  return out.length ? out : [{ text: sentence, hit: false }];
+}
 
 // [linguo-patch:watch-tab-lucide-v1] Ikon Lucide per kategori (menggantikan emoji
 // di tab). Dipetakan ke `id` kategori dari IMMERSION_CATEGORIES.
@@ -199,7 +234,14 @@ export default function WatchAndLearn() {
   const [baseFirstOpen, setBaseFirstOpen] = useState(false);
   const [active, setActive] = useState<ImmersionVideo | null>(null);
   const [activeLang, setActiveLang] = useState("en");
+  // Detik awal pemutaran saat dibuka dari "Cari Kata" (lompat ke momen kata).
+  const [activeStart, setActiveStart] = useState<number | undefined>(undefined);
   const [history, setHistory] = useState<WatchHistoryItem[]>([]);
+  // ── Cari Kata (YouGlish) ──
+  const [wordInput, setWordInput] = useState("");
+  const [wordResults, setWordResults] = useState<WordHit[]>([]);
+  const [wordState, setWordState] = useState<"idle" | "loading" | "done" | "empty">("idle");
+  const wordReqId = useRef(0);
   const [deckOpen, setDeckOpen] = useState(false);
   const [vocabCount, setVocabCount] = useState(0);
   // Watch & Learn WAJIB login dashboard LMS. `null` = sesi masih dicek (tampilkan
@@ -458,12 +500,16 @@ export default function WatchAndLearn() {
 
   // Apakah tab "Siap" sedang aktif (dan bukan sedang mencari teks bebas).
   const readyMode = category === SIAP_ID && !committedText.trim();
+  // Apakah tab "Cari Kata" (YouGlish) sedang aktif.
+  const wordMode = category === WORD_ID;
 
   // Muat ulang tiap bahasa / kategori / teks yang di-commit berubah.
   // [perf:watch-catalog-cache-v1] cache-first: keluar-masuk halaman/menu → grid muncul
   // instan dari cache module-level; kalau cache masih segar (<TTL) fetch dilewati,
   // kalau basi di-refresh diam-diam di belakang layar.
   useEffect(() => {
+    // Tab "Cari Kata" tak memuat grid video — pencarian kata ditangani terpisah.
+    if (category === WORD_ID) return;
     const siap = category === SIAP_ID && !committedText.trim();
     // Tab "Siap" tak ikut filter durasi server (baca cache DB, disaring di client),
     // jadi kuncinya tak menyertakan durationFilter → tak fetch ulang saat toggle.
@@ -556,9 +602,10 @@ export default function WatchAndLearn() {
   }, []);
 
   const openVideo = useCallback(
-    (v: ImmersionVideo, forLang: string) => {
+    (v: ImmersionVideo, forLang: string, startAt?: number) => {
       setActive(v);
       setActiveLang(forLang);
+      setActiveStart(startAt);
       const next = pushWatchHistory({
         videoId: v.videoId,
         title: v.title,
@@ -576,6 +623,29 @@ export default function WatchAndLearn() {
   const onSearchSubmit = useCallback(() => {
     setCommittedText(freeText);
   }, [freeText]);
+
+  // Cari Kata (YouGlish): cari `wordInput` di transkrip katalog bahasa aktif.
+  const runWordSearch = useCallback(async () => {
+    const q = wordInput.trim();
+    if (q.length < 2) {
+      setWordResults([]);
+      setWordState("idle");
+      return;
+    }
+    const id = ++wordReqId.current;
+    setWordState("loading");
+    const hits = await searchWordInVideos(q, langCode);
+    if (id !== wordReqId.current) return; // pencarian lebih baru sudah jalan
+    setWordResults(hits);
+    setWordState(hits.length ? "done" : "empty");
+  }, [wordInput, langCode]);
+
+  // Ganti bahasa saat di tab Cari Kata → kosongkan hasil lama (bahasa beda).
+  useEffect(() => {
+    wordReqId.current++;
+    setWordResults([]);
+    setWordState("idle");
+  }, [langCode]);
 
   const filteredLangs = useMemo(() => {
     const q = langQuery.trim().toLowerCase();
@@ -680,34 +750,37 @@ export default function WatchAndLearn() {
           </div>
         </div>
 
-        {/* Search box */}
-        <div
-          className="mt-6 flex items-center gap-2.5 rounded-2xl px-4"
-          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-        >
-          <Search className="h-4 w-4 shrink-0" color={SUB} />
-          <input
-            value={freeText}
-            onChange={(e) => setFreeText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") onSearchSubmit();
-            }}
-            placeholder={`Cari video dalam bahasa ${lang.name}…`}
-            className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
-          />
-          {(freeText || committedText) && (
-            <button
-              onClick={() => {
-                setFreeText("");
-                setCommittedText("");
+        {/* Search box (pencarian video) — disembunyikan di tab Cari Kata yang
+            punya kotak pencarian kata sendiri. */}
+        {!wordMode && (
+          <div
+            className="mt-6 flex items-center gap-2.5 rounded-2xl px-4"
+            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+          >
+            <Search className="h-4 w-4 shrink-0" color={SUB} />
+            <input
+              value={freeText}
+              onChange={(e) => setFreeText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") onSearchSubmit();
               }}
-              className="shrink-0 transition-opacity hover:opacity-70"
-              aria-label="Hapus pencarian"
-            >
-              <X className="h-4 w-4" color={SUB} />
-            </button>
-          )}
-        </div>
+              placeholder={`Cari video dalam bahasa ${lang.name}…`}
+              className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
+            />
+            {(freeText || committedText) && (
+              <button
+                onClick={() => {
+                  setFreeText("");
+                  setCommittedText("");
+                }}
+                className="shrink-0 transition-opacity hover:opacity-70"
+                aria-label="Hapus pencarian"
+              >
+                <X className="h-4 w-4" color={SUB} />
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Continue watching */}
         {shownHistory.length > 0 && (
@@ -756,15 +829,25 @@ export default function WatchAndLearn() {
         {/* Category chips */}
         <div className="mt-8 flex items-center justify-between">
           <h2 className="text-[17px] font-extrabold">
-            <span style={{ color: GOLD }}>✨</span> Rekomendasi untukmu
+            {wordMode ? (
+              <>
+                <TextSearch className="mr-1 inline h-4 w-4 align-text-bottom" color={GOLD} /> Cari Kata
+              </>
+            ) : (
+              <>
+                <span style={{ color: GOLD }}>✨</span> Rekomendasi untukmu
+              </>
+            )}
           </h2>
-          <button
-            onClick={() => (readyMode ? loadReady(lang) : runSearch(lang, cat, committedText, durationFilter))}
-            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-opacity hover:opacity-80"
-            style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
-          >
-            <RefreshCw className="h-3.5 w-3.5" /> Muat ulang
-          </button>
+          {!wordMode && (
+            <button
+              onClick={() => (readyMode ? loadReady(lang) : runSearch(lang, cat, committedText, durationFilter))}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-opacity hover:opacity-80"
+              style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL }}
+            >
+              <RefreshCw className="h-3.5 w-3.5" /> Muat ulang
+            </button>
+          )}
         </div>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {/* Tab "Siap" — video yang subtitle-nya langsung muncul (sudah diproses). */}
@@ -779,6 +862,19 @@ export default function WatchAndLearn() {
           >
             <CircleCheck className="h-4 w-4" />
             Terjemahan Siap
+          </button>
+          {/* Tab "Cari Kata" (ala YouGlish) — cari cara pakai kata di kalimat video. */}
+          <button
+            onClick={() => setCategory(WORD_ID)}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
+            style={{
+              backgroundColor: category === WORD_ID ? GOLD : CARD,
+              border: `1px solid ${category === WORD_ID ? GOLD : BORDER}`,
+              color: category === WORD_ID ? "#1A1205" : "rgba(255,255,255,0.8)",
+            }}
+          >
+            <TextSearch className="h-4 w-4" />
+            Cari Kata
           </button>
           {IMMERSION_CATEGORIES.map((c) => {
             const on = c.id === category;
@@ -801,6 +897,167 @@ export default function WatchAndLearn() {
           })}
         </div>
 
+        {/* [watch-cue-search-v1] Panel Cari Kata (YouGlish): kotak kata + hasil kalimat. */}
+        {wordMode && (
+          <div className="mt-5">
+            <div
+              className="flex items-center gap-2.5 rounded-2xl px-4"
+              style={{ backgroundColor: CARD, border: `1px solid ${wordInput ? GOLD : BORDER}` }}
+            >
+              <TextSearch className="h-4 w-4 shrink-0" color={GOLD} />
+              <input
+                value={wordInput}
+                onChange={(e) => setWordInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") runWordSearch();
+                }}
+                placeholder={`Ketik kata dalam bahasa ${lang.name}…`}
+                className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
+              />
+              {wordInput && (
+                <button
+                  onClick={() => {
+                    setWordInput("");
+                    setWordResults([]);
+                    setWordState("idle");
+                    wordReqId.current++;
+                  }}
+                  className="shrink-0 transition-opacity hover:opacity-70"
+                  aria-label="Hapus"
+                >
+                  <X className="h-4 w-4" color={SUB} />
+                </button>
+              )}
+              <button
+                onClick={runWordSearch}
+                disabled={wordInput.trim().length < 2}
+                className="shrink-0 rounded-xl px-4 py-2 text-[13px] font-bold transition-opacity hover:opacity-90 disabled:opacity-40"
+                style={{ backgroundColor: GOLD, color: "#1A1205" }}
+              >
+                Cari
+              </button>
+            </div>
+            <p className="mt-2 text-[12.5px]" style={{ color: SUB }}>
+              Lihat cara sebuah kata dipakai di kalimat nyata dari video katalog. Klik hasil
+              untuk lompat ke momen kata itu diucapkan.
+            </p>
+
+            {wordState === "loading" && (
+              <div
+                className="mt-8 flex items-center justify-center gap-2 text-[13px]"
+                style={{ color: SUB }}
+              >
+                <Loader2 className="h-4 w-4 animate-spin" /> Mencari…
+              </div>
+            )}
+
+            {wordState === "idle" && (
+              <div className="mt-10 text-center text-[13px]" style={{ color: SUB }}>
+                Ketik sebuah kata lalu tekan Enter untuk melihat contohnya di video.
+              </div>
+            )}
+
+            {wordState === "empty" && (
+              <div
+                className="mt-6 rounded-2xl p-6 text-center"
+                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              >
+                <p className="text-[15px] font-bold">Tidak ketemu di katalog</p>
+                <p className="mx-auto mt-1 max-w-md text-[13px]" style={{ color: SUB }}>
+                  Kata “{wordInput.trim()}” belum ada di transkrip video {lang.name} yang
+                  tersimpan. Coba kata lain, atau tambah videonya ke katalog dulu.
+                </p>
+              </div>
+            )}
+
+            {wordState === "done" && (
+              <div className="mt-5 space-y-2.5">
+                <p className="text-[12.5px] font-bold" style={{ color: SUB }}>
+                  {wordResults.length} contoh ditemukan
+                </p>
+                {wordResults.map((h, i) => {
+                  const parts = highlightParts(h.target, wordInput.trim());
+                  const lvl =
+                    h.level && CEFR_STYLE[h.level as CefrLevel]
+                      ? CEFR_STYLE[h.level as CefrLevel]
+                      : null;
+                  return (
+                    <button
+                      key={`${h.videoId}-${h.start}-${i}`}
+                      onClick={() =>
+                        openVideo(
+                          {
+                            videoId: h.videoId,
+                            title: h.title,
+                            thumbnail: youtubeThumb(h.videoId),
+                            channel: h.channel,
+                            level: (h.level as CefrLevel) ?? null,
+                          },
+                          langCode,
+                          h.start
+                        )
+                      }
+                      className="flex w-full gap-3 rounded-2xl p-3 text-left transition-colors hover:bg-white/5"
+                      style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                    >
+                      <div className="relative shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={youtubeThumb(h.videoId)}
+                          alt=""
+                          className="h-[54px] w-[96px] rounded-lg object-cover"
+                        />
+                        <span className="absolute bottom-1 right-1 inline-flex items-center gap-0.5 rounded bg-black/75 px-1 py-0.5 text-[10px] font-bold text-white">
+                          <Clock3 className="h-2.5 w-2.5" /> {fmtStamp(h.start)}
+                        </span>
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[14px] font-bold leading-snug text-white">
+                          {parts.map((p, j) =>
+                            p.hit ? (
+                              <mark
+                                key={j}
+                                className="rounded px-0.5"
+                                style={{ backgroundColor: "rgba(244,183,64,0.28)", color: GOLD }}
+                              >
+                                {p.text}
+                              </mark>
+                            ) : (
+                              <span key={j}>{p.text}</span>
+                            )
+                          )}
+                        </p>
+                        {h.base && (
+                          <p className="mt-1 line-clamp-2 text-[12.5px]" style={{ color: SUB }}>
+                            {h.base}
+                          </p>
+                        )}
+                        <p
+                          className="mt-1.5 line-clamp-1 flex items-center gap-1.5 text-[11.5px]"
+                          style={{ color: SUB }}
+                        >
+                          {lvl && (
+                            <span
+                              className="rounded px-1 py-0.5 text-[10px] font-bold"
+                              style={{ backgroundColor: lvl.bg, color: lvl.fg }}
+                            >
+                              {h.level}
+                            </span>
+                          )}
+                          <Play className="h-3 w-3 shrink-0" color={GOLD} />
+                          <span className="truncate">{h.title}</span>
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
+        {!wordMode && (
+        <>
         {/* [linguo-patch:watch-duration-filter-v1] Filter durasi: Semua / <5 / 5–10 / 10–20 mnt */}
         <div className="mt-3 flex flex-wrap items-center gap-2">
           {DURATION_FILTERS.map((d) => {
@@ -951,6 +1208,8 @@ export default function WatchAndLearn() {
             </button>
           </div>
         )}
+        </>
+        )}
       </div>
 
       {/* Language picker */}
@@ -1078,6 +1337,7 @@ export default function WatchAndLearn() {
           video={active}
           langCode={activeLang}
           baseLang={baseLang}
+          initialStart={activeStart}
           recommendations={videos.filter((v) => v.videoId !== active.videoId)}
           onSelectVideo={(v) => openVideo(v, lang.code)}
           onClose={() => setActive(null)}

@@ -1895,3 +1895,36 @@ export function splitWords(
 export function cleanWord(word: string): string {
   return word.replace(/^[^\p{L}\p{M}\p{N}]+|[^\p{L}\p{M}\p{N}]+$/gu, "");
 }
+
+// ── Cari Kata (YouGlish) ─────────────────────────────────────────────────────
+// Satu kemunculan kata di suatu kalimat transkrip video katalog.
+export interface WordHit {
+  videoId: string;
+  title: string;
+  channel: string | null;
+  level: string | null;
+  start: number; // detik kata diucapkan → seek player
+  end: number | null;
+  target: string; // kalimat bahasa target (kata ada di dalamnya)
+  base: string | null; // terjemahan Indonesia (kalau ada)
+}
+
+/** Cari sebuah kata di seluruh transkrip katalog bahasa `lang` (lewat RPC
+ *  search_cues via /api/watch-search). Kembalikan daftar kalimat contoh + detik
+ *  kata diucapkan. Best-effort: gagal / <2 huruf → array kosong. */
+export async function searchWordInVideos(word: string, lang: string): Promise<WordHit[]> {
+  const q = word.trim();
+  if (q.length < 2) return [];
+  try {
+    const res = await fetchTimeout(
+      `/api/watch-search?q=${encodeURIComponent(q)}&lang=${encodeURIComponent(lang)}`,
+      { method: "GET" },
+      8000
+    );
+    if (!res.ok) return [];
+    const data = (await res.json()) as { results?: unknown };
+    return Array.isArray(data.results) ? (data.results as WordHit[]) : [];
+  } catch {
+    return [];
+  }
+}
