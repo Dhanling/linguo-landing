@@ -12,7 +12,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { WATCH_PLANS } from "@/lib/immersionLearn";
-import { evaluatePromo } from "@/lib/watchPromo";
+import { resolveWatchCode } from "@/lib/watchPromo";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -33,21 +33,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Paket tidak valid." }, { status: 400 });
     }
 
-    // ── 2. Harga SERVER-SIDE + promo (evaluasi ulang, anti-tamper) ─────────
+    // ── 2. Harga SERVER-SIDE + kode (promo/afiliator, evaluasi ulang anti-tamper) ──
     let amount = plan.price;
     let code: string | null = null;
+    let affiliateId: string | null = null;
     if (typeof promo === "string" && promo.trim()) {
-      const ev = evaluatePromo(promo, plan.id);
+      const ev = await resolveWatchCode(promo, plan.id);
       if (ev.ok && typeof ev.discountedAmount === "number") {
         amount = ev.discountedAmount;
         code = ev.code ?? null;
+        affiliateId = ev.affiliateId ?? null; // hanya terisi kalau kode afiliator
       }
       // Kode tak valid → abaikan diam-diam, tagih harga penuh (modal sudah kasih
       // feedback validasi sebelum checkout).
     }
     if (amount <= 0) {
-      // Promo 100% → aktifkan tanpa invoice (belum didukung di jalur ini).
-      return NextResponse.json({ error: "Kode promo tidak berlaku untuk paket ini." }, { status: 400 });
+      // Diskon 100% → aktifkan tanpa invoice (belum didukung di jalur ini).
+      return NextResponse.json({ error: "Kode tidak berlaku untuk paket ini." }, { status: 400 });
     }
     const description = `Langganan Watch & Learn — ${plan.label}`;
 
@@ -75,6 +77,9 @@ export async function POST(req: NextRequest) {
           payment_status: "PENDING",
           xendit_external_id: externalId,
           amount,
+          // Atribusi afiliator kalau kode yang dipakai = referral_code valid.
+          affiliate_id: affiliateId,
+          affiliate_ref_code: affiliateId ? code : null,
         }),
       });
     } catch (e) {

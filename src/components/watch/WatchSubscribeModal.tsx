@@ -211,7 +211,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
               className="inline-flex items-center gap-1.5 text-[13px] font-semibold"
               style={{ color: TEAL }}
             >
-              <Tag className="h-4 w-4" /> Punya kode promo?
+              <Tag className="h-4 w-4" /> Punya kode promo / afiliator?
             </button>
           ) : (
             <div>
@@ -229,7 +229,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
                       if (promoError) setPromoError(null);
                     }}
                     onKeyDown={(e) => e.key === "Enter" && applyPromo()}
-                    placeholder="Kode promo"
+                    placeholder="Kode promo / afiliator"
                     autoCapitalize="characters"
                     className="w-full rounded-xl bg-white/5 py-2.5 pl-9 pr-3 text-[14px] font-semibold uppercase tracking-wide text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-white/40 focus:outline-none"
                     style={{ border: `1px solid ${applied ? TEAL : BORDER}` }}
@@ -247,7 +247,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
               {applied && (
                 <p className="mt-1.5 flex items-center gap-1.5 text-[12.5px] font-semibold" style={{ color: TEAL }}>
                   <BadgePercent className="h-4 w-4" />
-                  {applied.label ? `${applied.label} — ` : "Kode terpakai — "}hemat {applied.discountPct}%
+                  {applied.label ?? `Kode ${applied.code}`} — hemat {applied.discountPct}%
                 </p>
               )}
               {promoError && (

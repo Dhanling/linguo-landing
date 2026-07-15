@@ -77,6 +77,12 @@ const GOLD_DIM = "rgba(244,183,64,0.72)";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
 
+// Label tombol header (Kosakata / bahasa) — tersembunyi (lebar 0) secara default
+// sehingga tombol hanya menampilkan ikon; saat hover teksnya "keluar" dari kanan
+// ke kiri (lebar & opasitas melebar, geser translate-x → 0).
+const REVEAL_LABEL =
+  "max-w-0 translate-x-1 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 ease-out group-hover:ml-2 group-hover:max-w-[180px] group-hover:translate-x-0 group-hover:opacity-100";
+
 // [watch-word-align-v1] Penanda hover-sync antar baris (kata target ↔ arti ↔
 // transliterasi). Dulu sorot LATAR teal — sekarang GARIS BAWAH: tak menutup teks,
 // lebih halus, dan tetap rapi saat frasa multi-kata menyala menembus wrap baris.
@@ -131,6 +137,54 @@ const QUALITY_LABELS: Record<string, string> = {
   default: "Auto",
 };
 const qualityLabel = (q: string) => QUALITY_LABELS[q] ?? q;
+
+// [watch-toolbar-iconify-v1] Tombol kontrol bar bawah: tampil ringkas sebagai
+// glyph (ikon untuk aksi, atau teks nilai singkat seperti "1x"/"Auto"/"Besar"
+// untuk tombol bernilai) tanpa outline. Saat hover, label meluncur masuk dari
+// kanan ke kiri (kolom grid 0fr→1fr + translate/opacity). `active` menandai
+// status nyala pakai warna teal + latar teal tipis, bukan garis tepi.
+function ToolButton({
+  glyph,
+  label,
+  onClick,
+  active = false,
+  disabled = false,
+  title,
+}: {
+  glyph: React.ReactNode;
+  label: string;
+  onClick: () => void;
+  active?: boolean;
+  disabled?: boolean;
+  title?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      title={title ?? label}
+      aria-label={label}
+      className="group inline-flex shrink-0 items-center rounded-full px-2.5 py-2 transition-colors hover:bg-white/10 disabled:opacity-40"
+      style={{
+        color: active ? TEAL : "#fff",
+        backgroundColor: active ? "rgba(26,158,158,0.16)" : "transparent",
+      }}
+    >
+      <span className="grid h-5 min-w-5 place-items-center text-[13px] font-bold leading-none">
+        {glyph}
+      </span>
+      {/* Wadah lebar 0 → auto (grid fr) supaya label mendorong keluar mulus. */}
+      <span className="grid grid-cols-[0fr] overflow-hidden transition-[grid-template-columns] duration-300 ease-out group-hover:grid-cols-[1fr]">
+        <span className="min-w-0 overflow-hidden">
+          <span className="block translate-x-2 whitespace-nowrap pl-1.5 text-[13px] font-bold leading-none opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100">
+            {label}
+          </span>
+        </span>
+      </span>
+    </button>
+  );
+}
 
 // Cache video terkait per (bahasa|video) — buka-tutup player tak mengulang
 // pencarian YouTube (hemat kuota) selama halaman belum di-reload. `next` =
@@ -1274,6 +1328,9 @@ export default function VideoLearnPlayer({
         return;
       }
       recordWordLookup(key, langCode);
+      // Jeda video otomatis saat membuka arti kata — biar tak terus jalan & ganggu
+      // saat siswa fokus baca artinya.
+      playerRef.current?.pauseVideo?.();
       setAnchor({ word, sentence, x: e.clientX, y: e.clientY, wordIdx });
     },
     [langCode]
@@ -1305,19 +1362,20 @@ export default function VideoLearnPlayer({
             Spacer ini menggantikan mr-auto agar kontrol tetap terdorong ke kanan. */}
         <div className="mr-auto" />
 
-        {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata. */}
+        {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata.
+            Default icon saja (tanpa border); label "Kosakata" muncul dari kanan
+            ke kiri saat hover. */}
         {onOpenVocab && (
           <button
             onClick={onOpenVocab}
-            className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
-            style={{ border: `1px solid ${BORDER}` }}
+            className="group inline-flex shrink-0 items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
             title="Kosakata tersimpan dari video ini"
           >
-            <Layers className="h-4 w-4" color={TEAL} />
-            <span className="hidden sm:inline">Kosakata</span>
+            <Layers className="h-4 w-4 shrink-0" color={TEAL} />
+            <span className={REVEAL_LABEL}>Kosakata</span>
             {savedCount > 0 && (
               <span
-                className="rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
+                className="ml-1.5 shrink-0 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
                 style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
               >
                 {savedCount}
@@ -1331,13 +1389,11 @@ export default function VideoLearnPlayer({
           <div className="relative shrink-0">
             <button
               onClick={() => setBaseMenuOpen((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
-              style={{ border: `1px solid ${BORDER}` }}
+              className="group inline-flex items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
               title="Bahasa terjemahan di bawah subtitle"
             >
-              <Languages className="h-4 w-4" color={GOLD} />
               <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
-              <span className="hidden sm:inline">{getBaseLangDef(baseLang).label}</span>
+              <span className={REVEAL_LABEL}>{getBaseLangDef(baseLang).label}</span>
             </button>
             {baseMenuOpen && (
               <>
@@ -1375,12 +1431,11 @@ export default function VideoLearnPlayer({
             return (
               <button
                 onClick={onChangeLang}
-                className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
-                style={{ border: `1px solid ${BORDER}` }}
+                className="group inline-flex shrink-0 items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
                 title="Ganti bahasa yang dipelajari"
               >
-                {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4" color={TEAL} />}
-                <span className="hidden sm:inline">{wl?.name ?? langCode}</span>
+                {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
+                <span className={REVEAL_LABEL}>{wl?.name ?? langCode}</span>
               </button>
             );
           })()}
@@ -1481,7 +1536,18 @@ export default function VideoLearnPlayer({
                         setScrubbing(false);
                       }}
                       onKeyUp={(e) => seekTo(parseFloat((e.target as HTMLInputElement).value))}
-                      className="h-1 flex-1 cursor-pointer accent-[#1A9E9E] disabled:cursor-default"
+                      // Slider netral (tanpa warna aksen) — fill putih & penanda posisi
+                      // berupa lingkaran; --pct menggerakkan panjang fill lewat CSS.
+                      className="watch-seek flex-1 cursor-pointer disabled:cursor-default"
+                      style={
+                        {
+                          "--pct": `${
+                            duration
+                              ? Math.min(((scrubbing ? scrubVal : time) / duration) * 100, 100)
+                              : 0
+                          }%`,
+                        } as React.CSSProperties
+                      }
                       aria-label="Geser posisi video"
                     />
                     <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/70">
@@ -1640,7 +1706,11 @@ export default function VideoLearnPlayer({
                 bawaan YouTube di video; navigasi section tetap bisa via panah
                 keyboard. Sisakan hanya tombol belajar. */}
             {/* Analisa */}
-            <button
+            <ToolButton
+              glyph={<Palette className="h-4 w-4" />}
+              label="Analisa"
+              active={analyze}
+              disabled={txState !== "ready"}
               onClick={() => {
                 // Gate: Analisa grammar ikut paywall belajar (cicip bersama arti kata).
                 // Mematikan mode selalu boleh; menyalakan butuh premium/cicip tersisa.
@@ -1648,42 +1718,33 @@ export default function VideoLearnPlayer({
                   setSubscribeOpen(true);
                   return;
                 }
+                // Jeda video saat mode Analisa dinyalakan biar tak lanjut jalan
+                // sementara siswa membaca breakdown kalimat.
+                if (!analyze) playerRef.current?.pauseVideo?.();
                 setAnalyze((v) => !v);
               }}
-              disabled={txState !== "ready"}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors disabled:opacity-40"
-              style={{
-                backgroundColor: analyze ? TEAL : CARD,
-                border: `1px solid ${analyze ? TEAL : BORDER}`,
-                color: "#fff",
-              }}
-            >
-              <Palette className="h-4 w-4" /> Analisa
-            </button>
+            />
 
-            {/* Kecepatan */}
-            <button
+            {/* Kecepatan — nilai jadi glyph, label "Kecepatan" muncul saat hover */}
+            <ToolButton
+              glyph={`${SPEEDS[speedIdx]}x`}
+              label="Kecepatan"
               onClick={() => applySpeed((speedIdx + 1) % SPEEDS.length)}
-              className="shrink-0 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
-            >
-              {SPEEDS[speedIdx]}x
-            </button>
+            />
 
             {/* Kualitas video — kontrol bawaan YouTube dimatikan, jadi ini jalan
                 sendiri untuk turunkan resolusi (hemat paket data). Best-effort. */}
             <div className="relative shrink-0">
-              <button
+              <ToolButton
+                glyph={<Gauge className="h-4 w-4" />}
+                label={`Kualitas: ${qualityLabel(quality)}`}
+                title="Kualitas video (hemat paket data)"
+                active={qualityMenuOpen || quality !== "auto"}
                 onClick={() => {
                   refreshQualityLevels();
                   setQualityMenuOpen((v) => !v);
                 }}
-                className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
-                title="Kualitas video (hemat paket data)"
-              >
-                <Gauge className="h-4 w-4" /> {qualityLabel(quality)}
-              </button>
+              />
               {qualityMenuOpen && (
                 <>
                   <div className="fixed inset-0 z-10" onClick={() => setQualityMenuOpen(false)} />
@@ -1713,28 +1774,21 @@ export default function VideoLearnPlayer({
                 tak tersedia. Kalau transkrip + terjemahan sudah ada, tombol ini
                 redundan (malah bikin caption dobel) jadi disembunyikan. */}
             {txState === "none" && (
-              <button
+              <ToolButton
+                glyph="CC"
+                label={showCC ? "Sembunyikan CC" : "Tampilkan CC"}
+                active={showCC}
                 onClick={() => setShowCC((v) => !v)}
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-                style={{
-                  backgroundColor: showCC ? "rgba(26,158,158,0.16)" : CARD,
-                  border: `1px solid ${showCC ? TEAL : BORDER}`,
-                  color: showCC ? TEAL : "#fff",
-                }}
-              >
-                CC
-              </button>
+              />
             )}
 
             {/* Ukuran teks subtitle & transkrip — Kecil / Sedang / Besar */}
-            <button
-              onClick={cycleFont}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+            <ToolButton
+              glyph={<Type className="h-4 w-4" />}
+              label={`Teks: ${FONT_LEVELS[fontIdx].label}`}
               title="Ukuran teks subtitle"
-            >
-              <Type className="h-4 w-4" /> {FONT_LEVELS[fontIdx].label}
-            </button>
+              onClick={cycleFont}
+            />
 
             {/* [watch-sync-offset-v1] Sinkron subtitle — geser kalau highlight
                 mendahului / ketinggalan dari audio. − mundur, + maju; angka =
@@ -1744,8 +1798,7 @@ export default function VideoLearnPlayer({
               <div
                 className="inline-flex shrink-0 items-center gap-0.5 rounded-full px-1 py-1 text-[13px] font-bold"
                 style={{
-                  backgroundColor: syncOffset !== 0 ? "rgba(26,158,158,0.16)" : CARD,
-                  border: `1px solid ${syncOffset !== 0 ? TEAL : BORDER}`,
+                  backgroundColor: syncOffset !== 0 ? "rgba(26,158,158,0.16)" : "transparent",
                   color: "#fff",
                 }}
                 title="Sinkron subtitle dengan audio (− mundur / + maju)"
@@ -1780,60 +1833,41 @@ export default function VideoLearnPlayer({
 
             {/* [watch-hide-sentence-tr-v1] Sembunyikan/tampilkan baris terjemahan
                 kalimat (emas) di bawah subtitle → fokus ke arti per-kata. */}
-            <button
-              onClick={() => setShowSentenceTr((v) => !v)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{
-                backgroundColor: showSentenceTr ? "rgba(26,158,158,0.16)" : CARD,
-                border: `1px solid ${showSentenceTr ? TEAL : BORDER}`,
-                color: showSentenceTr ? TEAL : "#fff",
-              }}
+            <ToolButton
+              glyph={<Languages className="h-4 w-4" />}
+              label="Terjemahan"
+              active={showSentenceTr}
               title={showSentenceTr ? "Sembunyikan terjemahan kalimat" : "Tampilkan terjemahan kalimat"}
-            >
-              <Languages className="h-4 w-4" /> Terjemahan
-            </button>
+              onClick={() => setShowSentenceTr((v) => !v)}
+            />
 
             {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
                 buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
-            <button
-              onClick={() => setShowPanel((v) => !v)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{
-                backgroundColor: showPanel ? "rgba(26,158,158,0.16)" : CARD,
-                border: `1px solid ${showPanel ? TEAL : BORDER}`,
-                color: showPanel ? TEAL : "#fff",
-              }}
+            <ToolButton
+              glyph={showPanel ? <PanelRightClose className="h-4 w-4" /> : <PanelRightOpen className="h-4 w-4" />}
+              label="Transkrip"
+              active={showPanel}
               title={showPanel ? "Sembunyikan transkrip" : "Tampilkan transkrip"}
-            >
-              {showPanel ? (
-                <PanelRightClose className="h-4 w-4" />
-              ) : (
-                <PanelRightOpen className="h-4 w-4" />
-              )}
-              Transkrip
-            </button>
+              onClick={() => setShowPanel((v) => !v)}
+            />
 
             {/* Rekomendasi — video mengecil melayang di pojok (miniplayer) sehingga
                 daftar rekomendasi muncul mengisi kolom kiri & bisa discroll. */}
-            <button
-              onClick={enterMini}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+            <ToolButton
+              glyph={<ListVideo className="h-4 w-4" />}
+              label="Rekomendasi"
               title="Kecilkan video & tampilkan rekomendasi"
-            >
-              <ListVideo className="h-4 w-4" /> Rekomendasi
-            </button>
+              onClick={enterMini}
+            />
 
             {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
-            <button
-              onClick={toggleFullscreen}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[13px] font-bold transition-colors"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
+            <ToolButton
+              glyph={fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
+              label={fullscreen ? "Keluar" : "Layar penuh"}
+              active={fullscreen}
               title={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
-            >
-              {fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
-              {fullscreen ? "Keluar" : "Layar penuh"}
-            </button>
+              onClick={toggleFullscreen}
+            />
           </div>
           )}
 

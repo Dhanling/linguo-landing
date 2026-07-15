@@ -1,16 +1,20 @@
 // =============================================================================
 // /api/validate-wl-promo
-// Validasi kode promo langganan Watch & Learn untuk preview instan di modal.
-// Sumber tunggal = watchPromo.evaluatePromo (sama dgn yang dipakai checkout), jadi
-// diskon yang ditampilkan = diskon yang ditagih. Endpoint ini read-only.
+// Validasi kode langganan Watch & Learn untuk preview instan di modal. Satu kolom
+// menerima promo statis (mis. HEMAT10) ATAU kode afiliator (→ 5%). Sumber tunggal
+// = watchPromo.resolveWatchCode (sama dgn checkout), jadi diskon yang ditampilkan
+// = diskon yang ditagih. Read-only.
 // =============================================================================
 
 import { NextRequest, NextResponse } from "next/server";
-import { evaluatePromo } from "@/lib/watchPromo";
+import { resolveWatchCode } from "@/lib/watchPromo";
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code") || "";
   const plan = req.nextUrl.searchParams.get("plan") || "";
-  const result = evaluatePromo(code, plan);
-  return NextResponse.json(result, { status: result.ok ? 200 : 400 });
+  const r = await resolveWatchCode(code, plan);
+  // JANGAN bocorkan affiliateId ke client.
+  const { affiliateId: _drop, ...safe } = r;
+  void _drop;
+  return NextResponse.json(safe, { status: r.ok ? 200 : 400 });
 }
