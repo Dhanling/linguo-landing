@@ -30,13 +30,18 @@ import {
 } from "lucide-react";
 import {
   BASE_LANGS,
+  canLookupWord,
+  cleanWord,
   countSavedForVideo,
   getBaseLangDef,
+  isWatchPremium,
   processTranscript,
+  recordWordLookup,
   DEFAULT_BASE_LANG,
   getAlignment,
   type AlignGroup,
   getSentenceBreakdown,
+  isFreshBreakdown,
   isNonLatin,
   isRtl,
   LearnCue,
@@ -61,6 +66,7 @@ import {
   youtubeThumb,
 } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
+import WatchSubscribeModal from "./WatchSubscribeModal";
 import { RectFlag } from "@/components/RectFlag";
 
 const TEAL = "#1A9E9E";
@@ -239,6 +245,8 @@ export default function VideoLearnPlayer({
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
 
   const [anchor, setAnchor] = useState<Anchor | null>(null);
+  // Paywall langganan Watch & Learn (buka arti kata / Analisa saat cicip habis).
+  const [subscribeOpen, setSubscribeOpen] = useState(false);
 
   // Dropdown pilih bahasa terjemahan (tombol di header). Dirender di DALAM player
   // karena picker milik katalog (z-85) tenggelam di bawah overlay player (z-90).
@@ -707,13 +715,15 @@ export default function VideoLearnPlayer({
         if (arr) arr.push(i);
         else targetToIdx.set(c.target, [i]);
       });
+      // Hanya seed dari breakdown versi terbaru; yang lawas (tanpa arti per-kata)
+      // diabaikan supaya tak ditampilkan & ikut dihitung ulang di bawah.
       const seed: Record<number, SentenceBreakdown> = {};
       ordered.forEach((c, i) => {
-        if (c.breakdown) seed[i] = c.breakdown;
+        if (isFreshBreakdown(c.breakdown)) seed[i] = c.breakdown!;
       });
       if (Object.keys(seed).length) setBreakdowns((prev) => ({ ...prev, ...seed }));
       const needWarm = Array.from(
-        new Set(ordered.filter((c) => !c.breakdown).map((c) => c.target))
+        new Set(ordered.filter((c) => !isFreshBreakdown(c.breakdown)).map((c) => c.target))
       );
       if (needWarm.length) {
         // Beri jeda kecil sebelum warm massal biar tak rebutan dgn render subtitle
@@ -1202,9 +1212,17 @@ export default function VideoLearnPlayer({
   const onWordTap = useCallback(
     (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => {
       e.stopPropagation();
+      // Gate: buka arti kata butuh langganan setelah cicip gratis habis. Kata yang
+      // sudah pernah dibuka boleh dilihat ulang (tak menghabiskan kuota).
+      const key = cleanWord(word);
+      if (!canLookupWord(key, langCode)) {
+        setSubscribeOpen(true);
+        return;
+      }
+      recordWordLookup(key, langCode);
       setAnchor({ word, sentence, x: e.clientX, y: e.clientY, wordIdx });
     },
-    []
+    [langCode]
   );
 
   return (
@@ -1509,7 +1527,15 @@ export default function VideoLearnPlayer({
                 keyboard. Sisakan hanya tombol belajar. */}
             {/* Analisa */}
             <button
-              onClick={() => setAnalyze((v) => !v)}
+              onClick={() => {
+                // Gate: Analisa grammar ikut paywall belajar (cicip bersama arti kata).
+                // Mematikan mode selalu boleh; menyalakan butuh premium/cicip tersisa.
+                if (!analyze && !isWatchPremium() && !canLookupWord()) {
+                  setSubscribeOpen(true);
+                  return;
+                }
+                setAnalyze((v) => !v);
+              }}
               disabled={txState !== "ready"}
               className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors disabled:opacity-40"
               style={{
@@ -1976,6 +2002,8 @@ export default function VideoLearnPlayer({
           onSavedChange={handleSaved}
         />
       )}
+
+      {subscribeOpen && <WatchSubscribeModal onClose={() => setSubscribeOpen(false)} />}
     </div>
   );
 }

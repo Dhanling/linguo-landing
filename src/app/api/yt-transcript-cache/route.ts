@@ -29,6 +29,10 @@ function validLang(lang: unknown): lang is string {
 // Validasi ringan bentuk breakdown ({ translation, tokens:[{word,cat,gloss,...}] })
 // sebelum masuk DB — cegah payload sampah mencemari cache transkrip.
 const MAX_TOKENS = 200;
+// Versi breakdown (0 = lawas/tak ber-versi). Dipakai untuk memutuskan overwrite.
+function numVersion(v: unknown): number {
+  return typeof v === "number" && Number.isFinite(v) ? v : 0;
+}
 function isValidBreakdown(bd: unknown): boolean {
   if (!bd || typeof bd !== "object") return false;
   const b = bd as { translation?: unknown; tokens?: unknown };
@@ -257,12 +261,16 @@ export async function POST(req: NextRequest) {
       for (const cue of stored) {
         const t = cue?.target;
         if (typeof t !== "string") continue;
-        if (cue.breakdown) continue; // immutable: jangan timpa yang sudah ada (hemat tulis)
         const bd = byTarget.get(t);
-        if (bd) {
-          cue.breakdown = bd;
-          changed = true;
-        }
+        if (!bd) continue;
+        // Timpa hanya kalau breakdown tersimpan lebih lawas (versi lebih kecil / tak
+        // ber-versi). Yang sudah versi >= kiriman dibiarkan (hemat tulis). Ini yang
+        // membuat cache lama tanpa arti per-kata otomatis diperbarui.
+        const storedV = numVersion((cue.breakdown as { v?: unknown } | undefined)?.v);
+        const incomingV = numVersion((bd as { v?: unknown }).v);
+        if (cue.breakdown && storedV >= incomingV) continue;
+        cue.breakdown = bd;
+        changed = true;
       }
       if (!changed) return NextResponse.json({ ok: true }, { status: 200 });
       if (JSON.stringify(stored).length > MAX_JSON) {

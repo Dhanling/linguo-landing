@@ -1560,6 +1560,31 @@ export interface SentenceToken {
 export interface SentenceBreakdown {
   translation: string;
   tokens: SentenceToken[];
+  // Versi bentuk/isi breakdown. Naikkan tiap kali aturan arti/token berubah supaya
+  // cache lama (localStorage + yt_transcripts.cues[].breakdown) dianggap basi &
+  // dihitung ulang otomatis — bukan menampilkan hasil lawas tanpa arti per-kata.
+  v?: number;
+}
+
+// v2: arti per-kata (gloss) ditaruh di atas tiap kata + kata fungsi (partikel/kata
+// bantu) sengaja dikosongkan artinya + tanda baca berdiri sendiri dibuang. Cache
+// breakdown lama (tanpa `v` atau v<2) tak lagi dipakai → di-refetch.
+export const BREAKDOWN_VERSION = 2;
+
+/** Apakah breakdown ini hasil versi terbaru (bukan cache lawas yang perlu dihitung ulang). */
+export function isFreshBreakdown(bd: SentenceBreakdown | undefined | null): boolean {
+  return !!bd && bd.v === BREAKDOWN_VERSION;
+}
+
+// Kata fungsi yang—buat pelajar—tak punya arti leksikal berdiri sendiri; barisnya
+// dikosongkan (fungsinya sudah terwakili label kelas kata di bawah). Kata isi
+// (benda/kerja/sifat/keterangan/sambung/dll.) tetap diberi arti.
+const NO_GLOSS_CATS = new Set<PosCategory>(["particle", "auxiliary", "punctuation"]);
+
+// Token tanpa satu pun huruf/angka = tanda baca/simbol berdiri sendiri ("、", "。",
+// "?") → dibuang dari analisa (bukan kata untuk dipelajari).
+function isPunctuationOnly(word: string): boolean {
+  return !/[\p{L}\p{N}]/u.test(word);
 }
 
 // ── Cache analisa kalimat (breakdown) ────────────────────────────────────────
@@ -1582,7 +1607,9 @@ function readBreakdownCache(sentence: string, langCode: string): SentenceBreakdo
     const v = window.localStorage.getItem(breakdownCacheKey(sentence, langCode));
     if (!v) return null;
     const bd = JSON.parse(v) as SentenceBreakdown;
-    return Array.isArray(bd?.tokens) && bd.tokens.length ? bd : null;
+    // Cache versi lawas (belum ada arti per-kata / partikel belum dikosongkan) →
+    // anggap tak ada supaya dihitung ulang dengan aturan terbaru.
+    return isFreshBreakdown(bd) && Array.isArray(bd?.tokens) && bd.tokens.length ? bd : null;
   } catch {
     return null;
   }
@@ -1615,19 +1642,32 @@ async function fetchSentenceBreakdown(sentence: string, langCode: string): Promi
     ? (parsed.tk as unknown[])
         .map((t) => {
           const tok = t as { w?: unknown; c?: unknown; g?: unknown; p?: unknown; r?: unknown };
-          const cat = typeof tok.c === "string" ? tok.c.trim().toLowerCase() : "";
+          const cat = (
+            typeof tok.c === "string" ? tok.c.trim().toLowerCase() : ""
+          ) as string;
+          const catNorm = (POS_CATEGORIES.includes(cat as PosCategory) ? cat : "other") as PosCategory;
+          const word = typeof tok.w === "string" ? tok.w.trim() : "";
+          const rawGloss = typeof tok.g === "string" ? tok.g.trim() : "";
+          // Arti dikosongkan untuk kata fungsi (partikel/kata bantu) & bila arti-nya
+          // cuma tanda baca / sama persis dengan kata itu sendiri (tak informatif).
+          const gloss =
+            NO_GLOSS_CATS.has(catNorm) || isPunctuationOnly(rawGloss) || rawGloss === word
+              ? ""
+              : rawGloss;
           return {
-            word: typeof tok.w === "string" ? tok.w.trim() : "",
-            cat: (POS_CATEGORIES.includes(cat as PosCategory) ? cat : "other") as PosCategory,
-            gloss: typeof tok.g === "string" ? tok.g.trim() : "",
+            word,
+            cat: catNorm,
+            gloss,
             pos: typeof tok.p === "string" ? tok.p.trim() : "",
             translit: typeof tok.r === "string" ? tok.r.trim() : "",
           };
         })
-        .filter((t) => t.word.length > 0)
+        // Buang token kosong & tanda baca berdiri sendiri (model kadang tetap
+        // menyertakannya walau diminta melewati).
+        .filter((t) => t.word.length > 0 && !isPunctuationOnly(t.word))
     : [];
   if (!tokens.length) throw new Error("Analisa kosong.");
-  return { translation, tokens };
+  return { translation, tokens, v: BREAKDOWN_VERSION };
 }
 
 /**
@@ -1920,9 +1960,16 @@ function keyOf(word: string, langCode: string): string {
 // call site mana pun.
 export const FREE_SAVE_LIMIT = 20;
 
-const PREMIUM_KEY = "linguo:watch:premium:v1";
+// Cicip gratis untuk fitur "belajar" (buka arti kata + Analisa grammar). Pengguna
+// dingin butuh beberapa tap untuk paham nilai Watch & Learn sebelum diarahkan ke
+// langganan — jadi buka arti kata GRATIS beberapa kali, lalu gate. Nonton +
+// subtitle + terjemahan tetap gratis tak terbatas (mesin akuisisi/SEO).
+export const FREE_LOOKUP_LIMIT = 3;
 
-/** Akses premium Watch & Learn (simpan kata tanpa batas). Titik sambung tunggal. */
+const PREMIUM_KEY = "linguo:watch:premium:v1";
+const LOOKUP_KEY = "linguo:watch:lookups:v1";
+
+/** Akses premium Watch & Learn (buka arti/Analisa tanpa batas). Titik sambung tunggal. */
 export function isWatchPremium(): boolean {
   if (typeof window === "undefined") return false;
   try {
@@ -1930,6 +1977,102 @@ export function isWatchPremium(): boolean {
   } catch {
     return false;
   }
+}
+
+/**
+ * Sambungan tunggal untuk MENGAKTIFKAN premium. Sekarang menulis flag lokal
+ * (per-perangkat) — dipanggil setelah pembayaran berhasil (halaman redirect) atau
+ * saat entitlement langganan asli disambung. TODO: verifikasi entitlement server.
+ */
+export function setWatchPremium(on: boolean): void {
+  if (typeof window === "undefined") return;
+  try {
+    if (on) window.localStorage.setItem(PREMIUM_KEY, "1");
+    else window.localStorage.removeItem(PREMIUM_KEY);
+  } catch {
+    /* diblokir — abaikan */
+  }
+}
+
+// ── Kuota cicip: buka arti kata (dipakai bersama Analisa) ────────────────────
+function getLookedUpWords(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(LOOKUP_KEY);
+    const arr = raw ? (JSON.parse(raw) as string[]) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Sisa cicip buka arti (−1 = tak terbatas/premium). */
+export function remainingLookups(): number {
+  if (isWatchPremium()) return -1;
+  return Math.max(0, FREE_LOOKUP_LIMIT - getLookedUpWords().length);
+}
+
+/**
+ * Boleh buka arti kata / Analisa sekarang? Premium = selalu. Gratis = selama
+ * masih ada cicip, ATAU kata itu sudah pernah dibuka (lihat ulang tak menghabiskan
+ * kuota — biar tak terasa menghukum).
+ */
+export function canLookupWord(word?: string, langCode?: string): boolean {
+  if (isWatchPremium()) return true;
+  if (word && langCode && getLookedUpWords().includes(keyOf(word, langCode))) return true;
+  return getLookedUpWords().length < FREE_LOOKUP_LIMIT;
+}
+
+/** Catat sebuah kata sudah dibuka artinya (menghabiskan 1 cicip kalau baru). */
+export function recordWordLookup(word: string, langCode: string): void {
+  if (typeof window === "undefined" || isWatchPremium()) return;
+  const key = keyOf(word, langCode);
+  const list = getLookedUpWords();
+  if (list.includes(key)) return;
+  try {
+    window.localStorage.setItem(LOOKUP_KEY, JSON.stringify([...list, key].slice(0, 200)));
+  } catch {
+    /* penuh/diblokir — abaikan */
+  }
+}
+
+// ── Paket langganan Watch & Learn ────────────────────────────────────────────
+// Harga IDR untuk pasar Indonesia: 1 bulan sebagai harga impuls, makin panjang
+// makin hemat (anchor tahunan). WAJIB sinkron dengan perhitungan server di
+// /api/create-wl-invoice (anti-tamper).
+export interface WatchPlan {
+  id: "monthly" | "biannual" | "annual";
+  label: string;
+  months: number;
+  price: number; // total IDR yang ditagih
+  perMonth: number; // untuk badge "≈ x rb/bln"
+  savePct?: number; // hemat vs harga bulanan
+  badge?: string;
+}
+
+export const WATCH_PLANS: WatchPlan[] = [
+  { id: "monthly", label: "1 Bulan", months: 1, price: 39000, perMonth: 39000 },
+  {
+    id: "biannual",
+    label: "6 Bulan",
+    months: 6,
+    price: 149000,
+    perMonth: Math.round(149000 / 6),
+    savePct: Math.round((1 - 149000 / 6 / 39000) * 100),
+  },
+  {
+    id: "annual",
+    label: "1 Tahun",
+    months: 12,
+    price: 249000,
+    perMonth: Math.round(249000 / 12),
+    savePct: Math.round((1 - 249000 / 12 / 39000) * 100),
+    badge: "Terbaik",
+  },
+];
+
+export function getWatchPlan(id: string): WatchPlan | undefined {
+  return WATCH_PLANS.find((p) => p.id === id);
 }
 
 /** Jumlah total kosakata tersimpan (semua bahasa) — buat badge kuota. */
