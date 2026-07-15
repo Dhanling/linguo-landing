@@ -1417,7 +1417,7 @@ function FillBlankChips({ q, state, onChange }: {
           </span>
         ))}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 space-y-2">
         {opts.map((opt, i) => {
           const active = state.selected_index === i;
           return (
@@ -1425,9 +1425,13 @@ function FillBlankChips({ q, state, onChange }: {
               key={i}
               type="button"
               onClick={() => onChange({ selected_index: i })}
-              className={`rounded-lg border px-4 py-2 text-sm font-medium transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-200 bg-white text-slate-700 hover:bg-slate-50"}`}
+              className={`flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left text-sm font-medium transition ${active ? "border-teal-400 bg-teal-50" : "border-slate-200 bg-white hover:bg-slate-50"}`}
             >
-              {stripOptionLabel(opt, i)}
+              {/* Label pilihan A/B/C/D — sekaligus penanda terpilih */}
+              <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition ${active ? "border-teal-500 bg-teal-500 text-white" : "border-slate-300 bg-white text-slate-500"}`}>
+                {String.fromCharCode(65 + i)}
+              </span>
+              <span className={active ? "text-teal-700" : "text-slate-700"}>{stripOptionLabel(opt, i)}</span>
             </button>
           );
         })}
