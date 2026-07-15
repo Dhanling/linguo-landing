@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import WatchAndLearn from "@/components/watch/WatchAndLearn";
+import WatchActivate from "@/components/watch/WatchActivate";
 
 export const metadata: Metadata = {
   title: "Watch & Learn — Belajar Bahasa dari Video | Linguo.id",
@@ -9,5 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default function WatchPage() {
-  return <WatchAndLearn />;
+  return (
+    <>
+      <Suspense fallback={null}>
+        <WatchActivate />
+      </Suspense>
+      <WatchAndLearn />
+    </>
+  );
 }
