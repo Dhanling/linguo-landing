@@ -65,6 +65,10 @@ const CSS = `
 .lingw-launcher svg{width:28px;height:28px;}
 .lingw-launcher .ping{position:absolute;inset:0;border-radius:50%;border:2px solid var(--teal);animation:lingw-ping 2.2s ease-out infinite;}
 .lingw-launcher.hidden{opacity:0;pointer-events:none;transform:scale(.6);}
+/* Sembunyiin FAB selama ada overlay/modal full-screen (mis. player Watch & Learn).
+   Dulu rule ini cuma ada di media query mobile → di desktop FAB tetap nongol nutupin
+   overlay. Naikin ke base biar berlaku di semua ukuran layar. */
+.lingw-launcher.ovhide{opacity:0;pointer-events:none;transform:scale(.6);}
 @keyframes lingw-ping{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.5);opacity:0;}}
 
 .lingw-scrim{

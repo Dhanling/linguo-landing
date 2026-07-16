@@ -722,6 +722,12 @@ const CLAUSE_CONJUNCTIONS = [
   "und", "aber", "oder", "weil", "obwohl", "während", "dass", "wenn", "denn", "sondern",
   // Portuguese / Italian
   "embora", "enquanto", "porém", "perché", "benché", "mentre", "poiché", "quindi",
+  // Finnish (ja=dan, sekä=serta, tai/vai=atau, mutta/vaan=tetapi, koska/sillä=karena,
+  // että=bahwa, kun=ketika, jos=jika, vaikka=meskipun, joten=jadi, jotta=supaya,
+  // joka/mikä=yang) — video "Easy Finnish" sering ASR tanpa tanda baca, jadi kata
+  // sambung ini yang memecah kalimat panjang jadi 1 klausa/section.
+  "ja", "sekä", "tai", "vai", "mutta", "vaan", "koska", "sillä", "että", "kun",
+  "jos", "vaikka", "joten", "jotta", "joka", "mikä", "kunnes",
   // Hindi (Devanagari — batas kata \b ASCII tak berlaku, dipakai lookahead spasi)
   "और", "लेकिन", "पर", "परन्तु", "या", "क्योंकि", "तो", "फिर", "तथा", "कि", "जब", "अगर", "जबकि",
   // Bulgaria/Slavia Sirilik (и=dan, а/но=tapi, или=atau, защото=karena, макар=meskipun,
