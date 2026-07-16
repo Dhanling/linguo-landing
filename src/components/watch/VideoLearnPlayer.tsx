@@ -1783,10 +1783,10 @@ export default function VideoLearnPlayer({
                 baseLang={baseLang}
                 baseTranslating={baseTranslating}
                 showTranslation={showSentenceTr}
-                // Analisa grammar kini hidup di drawer kanan (AnalyzeDrawer), bukan
-                // lagi menggantikan subtitle di bawah video — jadi baris fokus ini
-                // selalu mode normal (karaoke bersih) supaya video tetap enak ditonton.
-                analyze={false}
+                // Tombol Analisa di bawah menggantikan subtitle di baris fokus ini
+                // dengan breakdown grammar (arti + kelas kata per token) — inline,
+                // bukan drawer. Drawer disisakan hanya untuk analisa per-kata (WordStudy).
+                analyze={analyze}
                 breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
                 onWordTap={onWordTap}
                 onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
@@ -1834,7 +1834,7 @@ export default function VideoLearnPlayer({
               label="Analisa"
               active={analyze}
               disabled={txState !== "ready"}
-              title={analyze ? "Tutup panel analisa grammar" : "Buka panel analisa grammar"}
+              title={analyze ? "Matikan analisa grammar" : "Analisa grammar kalimat"}
               onClick={() => {
                 // Gate: Analisa grammar ikut paywall belajar (cicip bersama arti kata).
                 // Mematikan mode selalu boleh; menyalakan butuh premium/cicip tersisa.
@@ -2303,23 +2303,6 @@ export default function VideoLearnPlayer({
         )}
       </div>
 
-      {/* Drawer Analisa — geser masuk dari kanan (ala panel "Tanya AI" YouTube):
-          video tetap terlihat & tak ikut mengecil, breakdown grammar hidup di sini.
-          Follow kalimat aktif (auto-scroll), bisa scroll riwayat & klik utk lompat. */}
-      <AnalyzeDrawer
-        open={analyze}
-        cues={cues}
-        activeIdx={activeIdx}
-        breakdowns={breakdowns}
-        onSeek={seekTo}
-        onRetry={requestBreakdown}
-        onClose={() => setAnalyze(false)}
-        onWordTap={onWordTap}
-        langCode={langCode}
-        baseLang={baseLang}
-        scale={fscale}
-      />
-
       {anchor && (
         <WordTooltip
           word={anchor.word}
@@ -2336,184 +2319,6 @@ export default function VideoLearnPlayer({
       )}
 
       {subscribeOpen && <WatchSubscribeModal onClose={() => setSubscribeOpen(false)} />}
-    </div>
-  );
-}
-
-// ── Drawer Analisa grammar (panel kanan, ala "Tanya AI" YouTube) ──────────────
-// Overlay geser dari kanan (desktop) / bottom-sheet (mobile) supaya video TETAP
-// terlihat & tak ikut mengecil. Isinya daftar transkrip yang ringkas; kalimat yang
-// sedang tayang MENGEMBANG jadi breakdown grammar penuh (arti per kata + kelas kata)
-// dan auto-scroll ke tengah. Klik baris mana pun → lompat ke waktunya (jadi aktif →
-// mengembang). Cuma baris aktif yang render grid berat, jadi ringan buat video panjang.
-function AnalyzeDrawer({
-  open,
-  cues,
-  activeIdx,
-  breakdowns,
-  onSeek,
-  onRetry,
-  onClose,
-  onWordTap,
-  langCode,
-  baseLang,
-  scale,
-}: {
-  open: boolean;
-  cues: LearnCue[];
-  activeIdx: number;
-  breakdowns: Record<number, SentenceBreakdown | "loading" | "error">;
-  onSeek: (t: number) => void;
-  onRetry: (idx: number) => void;
-  onClose: () => void;
-  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
-  langCode?: string;
-  baseLang?: string;
-  scale: number;
-}) {
-  const bodyRef = useRef<HTMLDivElement>(null);
-  const rtl = isRtl(langCode ?? "");
-
-  // Auto-scroll kalimat aktif ke tengah drawer (mengikuti video), sama pola dengan
-  // panel transkrip. Hanya saat drawer terbuka biar tak kerja sia-sia saat tertutup.
-  useEffect(() => {
-    if (!open || activeIdx < 0 || !bodyRef.current) return;
-    const el = bodyRef.current.querySelector<HTMLElement>(`[data-abr="${activeIdx}"]`);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, [open, activeIdx]);
-
-  return (
-    <div
-      // Mobile: bottom-sheet (video tetap tampak di atas). Desktop (lg): drawer kanan.
-      className={`absolute inset-x-0 bottom-0 z-[60] flex h-[58%] flex-col overflow-hidden rounded-t-2xl shadow-2xl transition-transform duration-300 ease-out lg:inset-y-0 lg:left-auto lg:right-0 lg:h-auto lg:w-[42%] lg:max-w-[460px] lg:rounded-none ${
-        open
-          ? "translate-y-0 lg:translate-x-0"
-          : "pointer-events-none translate-y-full lg:translate-x-full lg:translate-y-0"
-      }`}
-      style={{ backgroundColor: "#0B0E0F", borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}
-      aria-hidden={!open}
-    >
-      <div
-        className="flex shrink-0 items-center gap-2 px-4 py-3 sm:px-5"
-        style={{ borderBottom: `1px solid ${BORDER}` }}
-      >
-        <Palette className="h-4 w-4" color={TEAL} />
-        <p className="text-[13px] font-extrabold text-white">Analisa Grammar</p>
-        <span className="text-[11.5px]" style={{ color: SUB }}>
-          {activeIdx >= 0 ? "kalimat yang tayang" : "tekan play"}
-        </span>
-        <button
-          onClick={onClose}
-          className="ml-auto rounded-full p-1.5 transition-colors hover:bg-white/10"
-          aria-label="Tutup analisa"
-          title="Tutup analisa"
-        >
-          <X className="h-4 w-4 text-white" />
-        </button>
-      </div>
-
-      <div
-        ref={bodyRef}
-        className="min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 [scrollbar-width:thin]"
-      >
-        {cues.map((c, i) => {
-          const on = i === activeIdx;
-          const bd = breakdowns[i];
-          return (
-            <div
-              key={i}
-              data-abr={i}
-              onClick={() => onSeek(c.start)}
-              className="cursor-pointer rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.03]"
-              style={{ backgroundColor: on ? "rgba(26,158,158,0.14)" : "transparent" }}
-            >
-              {on ? (
-                bd === undefined || bd === "loading" ? (
-                  <div className="flex items-center gap-2 py-1" style={{ color: SUB }}>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span className="text-[13px]">Menganalisa kalimat…</span>
-                  </div>
-                ) : bd === "error" ? (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onRetry(i);
-                    }}
-                    className="text-[13px] font-bold"
-                    style={{ color: TEAL }}
-                  >
-                    Gagal menganalisa — ketuk untuk coba lagi
-                  </button>
-                ) : (
-                  // Kalimat aktif → breakdown grammar penuh. Terjemahan kalimat penuh
-                  // SENGAJA tak ditampilkan (arti per-kata di atas tiap token sudah cukup),
-                  // konsisten dengan mode Analisa lama di bawah video.
-                  <div
-                    className="flex flex-wrap items-end gap-x-2 gap-y-2.5"
-                    dir={rtl ? "rtl" : undefined}
-                  >
-                    {bd.tokens.map((t, k) => (
-                      <span
-                        key={k}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onWordTap(e, t.word, c.target);
-                        }}
-                        className="flex cursor-pointer flex-col items-center text-center"
-                      >
-                        {t.gloss && (
-                          <span
-                            className="block font-semibold leading-tight"
-                            style={{ color: GOLD_DIM, fontSize: 11 * scale }}
-                          >
-                            {t.gloss}
-                          </span>
-                        )}
-                        <span
-                          className="block font-extrabold leading-tight"
-                          style={{ color: POS_COLOR[t.cat], fontSize: 20 * scale }}
-                        >
-                          {t.word}
-                        </span>
-                        {t.translit && (
-                          <span
-                            className="block italic leading-tight"
-                            style={{ color: "#fff", fontSize: 11 * scale }}
-                          >
-                            {t.translit}
-                          </span>
-                        )}
-                        <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
-                          {POS_LABEL_ID[t.cat]}
-                        </span>
-                      </span>
-                    ))}
-                  </div>
-                )
-              ) : (
-                <>
-                  <p
-                    className="font-semibold leading-snug text-white"
-                    dir={rtl ? "rtl" : undefined}
-                    style={{ fontSize: 14 * scale, textAlign: rtl ? "left" : undefined }}
-                  >
-                    {c.target}
-                  </p>
-                  {c.base && (
-                    <p
-                      className="mt-0.5 font-semibold"
-                      style={{ color: GOLD, fontSize: 12.5 * scale }}
-                      dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
-                    >
-                      {c.base}
-                    </p>
-                  )}
-                </>
-              )}
-            </div>
-          );
-        })}
-      </div>
     </div>
   );
 }
