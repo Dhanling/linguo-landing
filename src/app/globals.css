@@ -104,6 +104,31 @@ body { animation: pageEnter 0.5s ease-out both; }
   100% { transform: translateX(-50%); }
 }
 
+/* Watch & Learn skeleton loading — placeholder abu-abu dengan sapuan cahaya
+   (shimmer) yang berjalan kiri→kanan. Dipakai di drawer "Belajar Mendalami Kata"
+   saat materi Pelajari / jawaban Tanya AI sedang dimuat. Warna base = background-color,
+   sapuan = background-image gradient yang digeser via background-position. */
+@keyframes wlSkeletonSweep {
+  0%   { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+.wl-skeleton {
+  background-color: rgba(255, 255, 255, 0.06);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.09) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  animation: wlSkeletonSweep 1.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wl-skeleton { animation: none; }
+}
+
 /* Watch & Learn seek slider — netral (tanpa warna aksen), fill putih dengan
    penanda posisi berupa lingkaran. Panjang fill dikendalikan --pct dari React. */
 .watch-seek {

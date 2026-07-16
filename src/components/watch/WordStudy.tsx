@@ -11,7 +11,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   BookmarkCheck,
   BookmarkPlus,
-  Loader2,
   Send,
   Sparkles,
   Volume2,
@@ -315,6 +314,64 @@ export default function WordStudy({
   );
 }
 
+// ── Skeleton loading ─────────────────────────────────────────────────────────
+// Placeholder abu-abu dengan sapuan shimmer (kelas .wl-skeleton di globals.css).
+function Skel({ w, h = 11, r = 6, className = "" }: { w: number | string; h?: number; r?: number; className?: string }) {
+  return <div className={`wl-skeleton ${className}`} style={{ width: w, height: h, borderRadius: r }} />;
+}
+
+// Satu kartu section palsu: judul + (opsional) chip + beberapa baris teks.
+function SkelSection({ lines = 3, chip = false }: { lines?: number; chip?: boolean }) {
+  return (
+    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+      <Skel w={96} h={10} className="mb-3" />
+      {chip && <Skel w={76} h={22} r={9999} className="mb-2.5" />}
+      <div className="space-y-2">
+        {Array.from({ length: lines }).map((_, i) => (
+          <Skel key={i} w={i === lines - 1 ? "68%" : "100%"} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Kerangka tab Pelajari saat materi masih dimuat — meniru tata letak section asli
+// (kesopanan, penggunaan, contoh) + baris chip pertanyaan.
+function StudySkeleton() {
+  return (
+    <div className="space-y-3.5" aria-busy="true" aria-label="Menyiapkan materi belajar">
+      <SkelSection lines={2} chip />
+      <SkelSection lines={3} />
+      <SkelSection lines={2} />
+      <div className="pt-1">
+        <Skel w={132} h={10} className="mb-2.5" />
+        <div className="flex flex-wrap gap-2">
+          {[112, 150, 96, 128].map((w, i) => (
+            <Skel key={i} w={w} h={30} r={9999} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Gelembung jawaban palsu saat AI sedang menjawab (Tanya AI / pertanyaan lanjutan).
+function AnswerSkeleton() {
+  return (
+    <div className="flex justify-start" aria-busy="true" aria-label="Menjawab">
+      <div
+        className="w-[90%] space-y-2 rounded-2xl rounded-bl-md px-3.5 py-3"
+        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+      >
+        <Skel w="95%" />
+        <Skel w="100%" />
+        <Skel w="88%" />
+        <Skel w="60%" />
+      </div>
+    </div>
+  );
+}
+
 // ── Tab Pelajari ─────────────────────────────────────────────────────────────
 function StudyTab({
   loading,
@@ -342,12 +399,7 @@ function StudyTab({
   );
 
   if (loading) {
-    return (
-      <div className="flex flex-col items-center gap-3 py-16" style={{ color: SUB }}>
-        <Loader2 className="h-7 w-7 animate-spin" />
-        <p className="text-[13px] font-medium">Menyiapkan materi belajar…</p>
-      </div>
-    );
+    return <StudySkeleton />;
   }
   if (errored || !deep) {
     return (
@@ -598,17 +650,7 @@ function AskTab({
           </div>
         )
       )}
-      {asking && (
-        <div className="flex justify-start">
-          <div
-            className="flex items-center gap-2 rounded-2xl rounded-bl-md px-3.5 py-2.5"
-            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: SUB }}
-          >
-            <Loader2 className="h-4 w-4 animate-spin" />
-            <span className="text-[12.5px]">Menjawab…</span>
-          </div>
-        </div>
-      )}
+      {asking && <AnswerSkeleton />}
 
       {/* Usulan lanjutan yang nyambung dengan jawaban terakhir */}
       {!asking && lastFollowups.length > 0 && (
