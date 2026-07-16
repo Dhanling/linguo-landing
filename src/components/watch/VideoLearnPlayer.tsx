@@ -275,6 +275,24 @@ export default function VideoLearnPlayer({
   // supaya mudah "dibidik" & di-drag, meski video terus jalan. `hoverSeek` menyimpan
   // detik saat mulai hover; null = tidak sedang hover.
   const [hoverSeek, setHoverSeek] = useState<number | null>(null);
+  // [watch-video-idle-v1] Kursor aktif di atas video → tampilkan slider + tombol
+  // "Video lainnya". Setelah kursor DIAM beberapa detik (meski masih di atas video),
+  // kontrol auto-hide ala YouTube — beda dengan :hover CSS yang tetap "on" selama
+  // kursor di dalam elemen walau tak bergerak. Reset tiap kali kursor bergerak.
+  const [videoHot, setVideoHot] = useState(false);
+  const videoIdleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wakeVideoControls = useCallback(() => {
+    setVideoHot(true);
+    if (videoIdleTimer.current) clearTimeout(videoIdleTimer.current);
+    videoIdleTimer.current = setTimeout(() => setVideoHot(false), 2600);
+  }, []);
+  const sleepVideoControls = useCallback(() => {
+    if (videoIdleTimer.current) clearTimeout(videoIdleTimer.current);
+    setVideoHot(false);
+  }, []);
+  useEffect(() => () => {
+    if (videoIdleTimer.current) clearTimeout(videoIdleTimer.current);
+  }, []);
   // [watch-hide-sentence-tr-v1] Sembunyikan baris terjemahan kalimat (emas) di bawah
   // subtitle → fokus ke arti per-kata di mode Analisa. Default tampil.
   const [showSentenceTr, setShowSentenceTr] = useState(true);
@@ -1490,6 +1508,8 @@ export default function VideoLearnPlayer({
           >
             <div
               className="group/vid relative w-full"
+              onPointerMove={wakeVideoControls}
+              onPointerLeave={sleepVideoControls}
               style={
                 mini
                   ? { aspectRatio: "16 / 9" }
@@ -1519,11 +1539,15 @@ export default function VideoLearnPlayer({
                     aria-label={playing ? "Jeda" : "Putar"}
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
-                  {/* Bar seek + durasi — muncul saat hover video, atau selalu saat
-                      dijeda. Gradien gelap menutupi sisa kontrol/logo YouTube di tepi. */}
+                  {/* Bar seek + durasi — muncul saat kursor aktif di atas video, atau
+                      selalu saat dijeda. Auto-hide saat kursor DIAM (videoHot=false) ala
+                      YouTube; tetap tampil selama menyeret / hover slider (hoverSeek) /
+                      fokus keyboard. Gradien gelap menutupi kontrol/logo YouTube di tepi. */}
                   <div
-                    className={`absolute inset-x-0 bottom-0 z-[7] flex items-center gap-2 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-3 pb-2 pt-7 transition-opacity duration-150 ${
-                      playing ? "opacity-0 group-hover/vid:opacity-100 focus-within:opacity-100" : "opacity-100"
+                    className={`absolute inset-x-0 bottom-0 z-[7] flex items-center gap-2 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-3 pb-2 pt-7 transition-opacity duration-150 focus-within:opacity-100 ${
+                      !playing || videoHot || scrubbing || hoverSeek !== null
+                        ? "opacity-100"
+                        : "pointer-events-none opacity-0"
                     }`}
                   >
                     <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/90">

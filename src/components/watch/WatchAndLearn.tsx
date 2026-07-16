@@ -381,7 +381,31 @@ export default function WatchAndLearn() {
   // isWatchPremium() ikut true di seluruh player tanpa mengubah call site gate.
   useEffect(() => {
     let alive = true;
+    // Asal "dari dashboard admin": link katalog admin membawa ?admin=1 → buka akses
+    // penuh (staf) tanpa gate langganan, tanpa bergantung pada profiles.role. Flag
+    // disimpan di sessionStorage supaya tetap terbuka saat navigasi/refresh tab ini,
+    // lalu param di-strip dari URL agar link tak ikut kebagikan sebagai bypass.
+    let adminOrigin = false;
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("admin") === "1") {
+        adminOrigin = true;
+        window.sessionStorage.setItem("linguo:watch:adminOrigin:v1", "1");
+        const u = new URL(window.location.href);
+        u.searchParams.delete("admin");
+        window.history.replaceState(
+          window.history.state, "", u.pathname + u.search + u.hash
+        );
+      } else {
+        adminOrigin =
+          window.sessionStorage.getItem("linguo:watch:adminOrigin:v1") === "1";
+      }
+    } catch {
+      /* storage/URL diblokir — abaikan, jatuh ke cek role biasa */
+    }
     const syncStaff = async (userId: string | undefined) => {
+      // Dari dashboard admin → selalu staf; cek role tak boleh menurunkannya.
+      if (adminOrigin) return void setWatchStaff(true);
       if (!userId) return void setWatchStaff(false);
       try {
         const { data } = await supabase
