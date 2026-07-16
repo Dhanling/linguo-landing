@@ -1971,9 +1971,13 @@ export default function VideoLearnPlayer({
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
                 supaya baris kontrol terpisah jelas di dasar & tak menutupi
                 terjemahan. Tetap bisa discroll kalau analisa bikin baris tinggi.
-                Hover di area ini → pause otomatis (baca subtitle), keluar → lanjut. */}
-            <div className="mb-auto mt-2 w-full" onMouseEnter={onSubtitleEnter} onMouseLeave={onSubtitleLeave}>
+                Hover-pause TIDAK dipasang di pembungkus lebar-penuh ini — dioper ke
+                FocusLine supaya hanya blok teks subtitle/terjemahan yang memicu jeda,
+                bukan ruang kosong di kiri-kanannya. */}
+            <div className="mb-auto mt-2 w-full">
               <FocusLine
+                onHoverPause={onSubtitleEnter}
+                onHoverResume={onSubtitleLeave}
                 cue={visibleCue}
                 inGap={inGap}
                 time={syncedTime}
@@ -2739,6 +2743,8 @@ function FocusLine({
   hot,
   hoveredK,
   onHoverWord,
+  onHoverPause,
+  onHoverResume,
 }: {
   cue: LearnCue | null;
   inGap?: boolean;
@@ -2760,6 +2766,11 @@ function FocusLine({
   hot?: { t: Set<number>; b: Set<number> };
   hoveredK?: number | null;
   onHoverWord?: (k: number | null) => void;
+  // Hover-to-pause: dipasang di blok teks yang menyusut sesuai isi (bukan
+  // pembungkus lebar-penuh) supaya jeda cuma terpicu saat kursor benar-benar
+  // di atas subtitle/terjemahan — bukan di ruang kosong sekitarnya.
+  onHoverPause?: () => void;
+  onHoverResume?: () => void;
 }) {
   if (txState !== "ready") {
     return (
@@ -2801,7 +2812,11 @@ function FocusLine({
             Gagal menganalisa — ketuk untuk coba lagi
           </button>
         ) : (
-          <>
+          <div
+            className="inline-block max-w-full"
+            onMouseEnter={onHoverPause}
+            onMouseLeave={onHoverResume}
+          >
             <div
               className="flex flex-wrap items-end justify-center gap-x-2 gap-y-2"
               dir={isRtl(langCode ?? "") ? "rtl" : undefined}
@@ -2845,7 +2860,7 @@ function FocusLine({
             {/* Terjemahan kalimat penuh SENGAJA tak ditampilkan di mode Analisa —
                 arti per-kata (gloss di atas tiap token) sudah memberi makna; baris
                 emas di bawah cuma bikin redundan & menuh-menuhin. */}
-          </>
+          </div>
         )}
       </div>
     );
@@ -2853,8 +2868,15 @@ function FocusLine({
 
   // Mode normal: kalimat target besar (bisa di-tap) + translit + terjemahan emas.
   // Kata yang sedang diucapkan disorot ala karaoke (tersapu teal kiri→kanan).
+  // Blok inline-block menyusut selebar teks → hover-pause hanya aktif tepat di
+  // atas subtitle/translit/terjemahan, bukan di sisa lebar baris.
   return (
     <div className="min-h-[92px] px-5 py-4 text-center sm:px-6">
+      <div
+        className="inline-block max-w-full"
+        onMouseEnter={onHoverPause}
+        onMouseLeave={onHoverResume}
+      >
       <KaraokeText
         cue={cue}
         time={time}
@@ -2926,6 +2948,7 @@ function FocusLine({
           Menerjemahkan…
         </p>
       ) : null}
+      </div>
     </div>
   );
 }
