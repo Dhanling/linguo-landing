@@ -409,6 +409,66 @@ export default function VideoLearnPlayer({
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
   const [showPanel, setShowPanel] = useState(true);
+  // Lebar kolom video (%) di desktop — sisanya untuk transkrip. Bisa diseret lewat
+  // separator di antara keduanya, lalu diingat (localStorage) & diklem 35–80%.
+  const [splitPct, setSplitPct] = useState(62);
+  useEffect(() => {
+    try {
+      const v = Number(localStorage.getItem("watch:splitPct"));
+      if (Number.isFinite(v) && v >= 35 && v <= 80) setSplitPct(v);
+    } catch {
+      /* localStorage tak tersedia — pakai default */
+    }
+  }, []);
+  const splitRowRef = useRef<HTMLDivElement>(null);
+  const draggingSplitRef = useRef(false);
+  const onSplitDragStart = useCallback((e: React.PointerEvent) => {
+    e.preventDefault();
+    draggingSplitRef.current = true;
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "col-resize";
+    const move = (ev: PointerEvent) => {
+      const row = splitRowRef.current;
+      if (!draggingSplitRef.current || !row) return;
+      const r = row.getBoundingClientRect();
+      const pct = ((ev.clientX - r.left) / r.width) * 100;
+      setSplitPct(Math.min(80, Math.max(35, pct)));
+    };
+    const up = () => {
+      draggingSplitRef.current = false;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+      setSplitPct((v) => {
+        try {
+          localStorage.setItem("watch:splitPct", String(Math.round(v)));
+        } catch {
+          /* abaikan */
+        }
+        return v;
+      });
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+  }, []);
+  // Drawer Analisa kata (WordStudy) sedang terbuka? Ia panel kanan yang menimpa
+  // kolom transkrip → auto-sembunyikan transkrip selama terbuka, lalu kembalikan ke
+  // kondisi semula saat ditutup (menghormati toggle transkrip user sebelumnya).
+  const [wordStudyOpen, setWordStudyOpen] = useState(false);
+  const panelBeforeStudyRef = useRef<boolean | null>(null);
+  useEffect(() => {
+    if (wordStudyOpen) {
+      if (panelBeforeStudyRef.current === null) {
+        panelBeforeStudyRef.current = showPanel;
+        setShowPanel(false);
+      }
+    } else if (panelBeforeStudyRef.current !== null) {
+      setShowPanel(panelBeforeStudyRef.current);
+      panelBeforeStudyRef.current = null;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wordStudyOpen]);
   // Di layar penuh: sembunyikan header + baris kontrol saat kursor diam (immersive
   // ala YouTube). Subtitle + terjemahan TETAP tampil. Gerakkan kursor → muncul lagi.
   const [chromeHidden, setChromeHidden] = useState(false);
@@ -1482,11 +1542,15 @@ export default function VideoLearnPlayer({
 
       {/* Isi — split view. Di layar penuh beri ruang atas (pt) supaya video +
           subtitle turun & tak tertutup baris header (judul kiri / tombol kanan). */}
-      <div className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""}`}>
+      <div
+        ref={splitRowRef}
+        className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""}`}
+        style={{ "--split-w": showPanel ? `${splitPct}%` : "100%" } as React.CSSProperties}
+      >
         {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
             HANYA daftar Rekomendasi di bawahnya yang punya area scroll sendiri —
             jadi tak ada scrollbar menimpa video. */}
-        <div className={`flex min-h-0 flex-col ${fullscreen ? "relative " : ""}${showPanel ? "lg:w-[62%]" : "lg:w-full"}`}>
+        <div className={`flex min-h-0 flex-col ${fullscreen ? "relative " : ""}${showPanel ? "lg:w-[var(--split-w)]" : "lg:w-full"}`}>
           {/* Container video: letterbox aman. Lebar penuh dibatasi tinggi (maxWidth
               dari 70vh) supaya saat panel disembunyikan/fullscreen video tak menutup
               layar & masih menyisakan ruang untuk subtitle + kontrol.
@@ -1999,6 +2063,31 @@ export default function VideoLearnPlayer({
           )}
         </div>
 
+        {/* Separator draggable (desktop) — seret untuk mengatur lebar video vs
+            transkrip. Sembunyi di mobile (kolom menumpuk vertikal). */}
+        {showPanel && (
+          <div
+            role="separator"
+            aria-orientation="vertical"
+            aria-label="Atur lebar transkrip"
+            onPointerDown={onSplitDragStart}
+            onDoubleClick={() => {
+              setSplitPct(62);
+              try {
+                localStorage.setItem("watch:splitPct", "62");
+              } catch {
+                /* abaikan */
+              }
+            }}
+            className="group hidden shrink-0 cursor-col-resize touch-none items-center justify-center lg:flex lg:w-2"
+            title="Seret untuk atur lebar · klik ganda untuk reset"
+          >
+            <div
+              className="h-10 w-1 rounded-full bg-white/15 transition-colors group-hover:bg-white/40"
+            />
+          </div>
+        )}
+
         {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip. */}
         {showPanel && (
         <div
@@ -2242,6 +2331,7 @@ export default function VideoLearnPlayer({
           y={anchor.y}
           onClose={() => setAnchor(null)}
           onSavedChange={handleSaved}
+          onStudyOpenChange={setWordStudyOpen}
         />
       )}
 

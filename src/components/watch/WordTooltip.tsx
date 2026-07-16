@@ -72,6 +72,7 @@ export function WordTooltip({
   y,
   onClose,
   onSavedChange,
+  onStudyOpenChange,
 }: {
   word: string;
   sentence: string;
@@ -82,6 +83,9 @@ export function WordTooltip({
   y: number;
   onClose: () => void;
   onSavedChange?: () => void;
+  // Diberi tahu saat drawer Analisa (WordStudy) buka/tutup — player memakainya untuk
+  // auto-sembunyikan transkrip (drawer kini panel kanan yang menimpa kolom transkrip).
+  onStudyOpenChange?: (open: boolean) => void;
 }) {
   // Token kalimat + posisi kata — dipakai untuk memperluas pilihan ke frasa
   // (mis. tap "compañía" lalu gabungkan "la" jadi "la compañía").
@@ -152,6 +156,14 @@ export function WordTooltip({
 
   // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa.
   const [studyOpen, setStudyOpen] = useState(false);
+
+  // Rambatkan status buka/tutup drawer ke player (auto-hide transkrip). Cleanup
+  // memastikan status "tutup" tetap terkirim kalau tooltip di-unmount saat drawer
+  // masih terbuka (mis. anchor dibersihkan) — biar transkrip tak nyangkut tersembunyi.
+  useEffect(() => {
+    onStudyOpenChange?.(studyOpen);
+  }, [studyOpen, onStudyOpenChange]);
+  useEffect(() => () => onStudyOpenChange?.(false), [onStudyOpenChange]);
 
   // Geser bebas — offset dari posisi awal, di-drag dari area mana pun balon.
   const [offset, setOffset] = useState({ x: 0, y: 0 });
