@@ -1974,6 +1974,21 @@ const LOOKUP_KEY = "linguo:watch:lookups:v1";
 // lewat isWatchPremium() supaya SEMUA call site gate ikut terbuka tanpa diubah.
 const STAFF_KEY = "linguo:watch:staff:v1";
 
+// Daftar email yang diberi akses penuh Watch & Learn secara cuma-cuma (comp),
+// tanpa langganan & tanpa harus owner/admin di profiles. Dipakai untuk akun
+// internal/tester tertentu. Email login yang cocok → diperlakukan seperti staf
+// (isWatchPremium() true di seluruh player). Cocokkan setelah lowercase+trim.
+const WATCH_COMP_EMAILS = new Set<string>([
+  "ramadhanimuhamadlutfi@gmail.com",
+  "mlutfiramadhani1@gmail.com",
+]);
+
+/** Apakah email ini termasuk daftar akses penuh WL cuma-cuma. */
+export function isWatchCompedEmail(email: string | null | undefined): boolean {
+  if (!email) return false;
+  return WATCH_COMP_EMAILS.has(email.trim().toLowerCase());
+}
+
 /** Tandai (atau cabut) akses staf. Dipanggil setelah cek role sesi login. */
 export function setWatchStaff(on: boolean): void {
   if (typeof window === "undefined") return;

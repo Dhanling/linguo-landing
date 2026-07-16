@@ -66,6 +66,7 @@ import {
   getStoredBaseLang,
   storeBaseLang,
   setWatchStaff,
+  isWatchCompedEmail,
 } from "@/lib/immersionLearn";
 import { supabase } from "@/lib/supabase-client";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
@@ -403,9 +404,14 @@ export default function WatchAndLearn() {
     } catch {
       /* storage/URL diblokir — abaikan, jatuh ke cek role biasa */
     }
-    const syncStaff = async (userId: string | undefined) => {
+    const syncStaff = async (
+      userId: string | undefined,
+      email: string | null | undefined,
+    ) => {
       // Dari dashboard admin → selalu staf; cek role tak boleh menurunkannya.
       if (adminOrigin) return void setWatchStaff(true);
+      // Email di daftar akses penuh cuma-cuma → langsung staf tanpa cek role.
+      if (isWatchCompedEmail(email)) return void setWatchStaff(true);
       if (!userId) return void setWatchStaff(false);
       try {
         const { data } = await supabase
@@ -419,7 +425,9 @@ export default function WatchAndLearn() {
         if (alive) setWatchStaff(false);
       }
     };
-    const gate = (session: { user?: { id?: string } } | null) => {
+    const gate = (
+      session: { user?: { id?: string; email?: string | null } } | null,
+    ) => {
       if (!alive) return;
       const hasSession = !!session;
       setLoggedIn(hasSession);
@@ -429,7 +437,7 @@ export default function WatchAndLearn() {
         window.location.replace("/akun?next=%2Fwatch");
         return;
       }
-      syncStaff(session?.user?.id);
+      syncStaff(session?.user?.id, session?.user?.email);
     };
     supabase.auth
       .getSession()
