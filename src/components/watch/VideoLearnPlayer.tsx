@@ -108,6 +108,23 @@ function fmtClock(sec: number): string {
 
 const SPEEDS = [1, 0.75, 0.5, 1.25];
 
+// [watch-rec-search-v1] Chip saran pencarian di panel Rekomendasi. `label` tampil
+// ke pelajar; `q` kata kunci yang dikirim (digabung nama native bahasa saat cari,
+// jadi "podcast" → "podcast Suomi" untuk pelajar Finlandia). Kata kunci sengaja
+// generik/Inggris karena itu yang paling andal dikenali pencarian YouTube.
+const REC_SUGGESTIONS: { label: string; q: string }[] = [
+  { label: "Podcast", q: "podcast" },
+  { label: "Berita", q: "news" },
+  { label: "Musik", q: "music" },
+  { label: "Vlog", q: "vlog" },
+  { label: "Film", q: "movie" },
+  { label: "Kartun", q: "cartoon" },
+  { label: "Wawancara", q: "interview" },
+  { label: "Memasak", q: "cooking" },
+  { label: "Komedi", q: "comedy" },
+  { label: "Olahraga", q: "sports" },
+];
+
 // Ukuran teks subtitle/transkrip yang bisa dipilih siswa (disimpan lokal).
 const FONT_LEVELS = [
   { label: "Kecil", scale: 0.85 },
@@ -568,12 +585,16 @@ export default function VideoLearnPlayer({
   const [recQuery, setRecQuery] = useState("");
   const [recSearchList, setRecSearchList] = useState<ImmersionVideo[] | null>(null);
   const [recSearchState, setRecSearchState] = useState<"idle" | "loading" | "done" | "empty">("idle");
+  // Panel saran pencarian (chip "podcast", "berita", …) yang muncul saat kolom
+  // cari difokus — animasi turun dari atas.
+  const [recFocused, setRecFocused] = useState(false);
   const recSearchReq = useRef(0);
 
-  // Jalankan pencarian video (Enter / tombol): pakai jalur yt-search yang sama
-  // dengan katalog halaman, disaring ke bahasa target & durasi rekomendasi.
-  const runRecSearch = useCallback(async () => {
-    const q = recQuery.trim();
+  // Jalankan pencarian video (Enter / tombol / klik chip saran): pakai jalur
+  // yt-search yang sama dengan katalog halaman, disaring ke bahasa target & durasi
+  // rekomendasi. `override` dipakai saat klik chip (state recQuery belum ter-commit).
+  const runRecSearch = useCallback(async (override?: string) => {
+    const q = (override ?? recQuery).trim();
     if (!q) {
       recSearchReq.current++;
       setRecSearchList(null);
@@ -582,10 +603,15 @@ export default function VideoLearnPlayer({
     }
     const id = ++recSearchReq.current;
     setRecSearchState("loading");
+    setRecFocused(false);
     const lang = getImmersionLang(langCode);
+    // Jahitkan nama native bahasa ("Suomi", "日本語", …) ke query supaya YouTube
+    // mengembalikan konten BAHASA TARGET, bukan Inggris — sama seperti buildQuery
+    // di katalog. Tanpa ini "podcast" untuk pelajar Finlandia keluar podcast Inggris.
+    const query = lang?.native ? `${q} ${lang.native}` : q;
     try {
       const page = await searchImmersionVideos({
-        query: q,
+        query,
         language: lang?.searchCode ?? langCode,
         max: 18,
         maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
@@ -2106,18 +2132,22 @@ export default function VideoLearnPlayer({
               className="flex min-h-0 flex-1 flex-col border-t"
               style={{ borderColor: BORDER }}
             >
-              {/* [watch-rec-search-v1] Cari video tanpa keluar player. */}
+              {/* [watch-rec-search-v1] Cari video tanpa keluar player. Fokus kolom →
+                  panel saran (chip "Podcast"/"Berita"/…) turun beranimasi dari atas. */}
               <div className="px-4 pt-3 sm:px-6">
                 <div
                   className="flex items-center gap-2.5 rounded-xl px-3"
-                  style={{ backgroundColor: CARD, border: `1px solid ${recQuery ? TEAL : BORDER}` }}
+                  style={{ backgroundColor: CARD, border: `1px solid ${recQuery || recFocused ? TEAL : BORDER}` }}
                 >
                   <Search className="h-4 w-4 shrink-0" color={SUB} />
                   <input
                     value={recQuery}
                     onChange={(e) => setRecQuery(e.target.value)}
+                    onFocus={() => setRecFocused(true)}
+                    onBlur={() => setRecFocused(false)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") runRecSearch();
+                      else if (e.key === "Escape") setRecFocused(false);
                     }}
                     placeholder={`Cari video ${getImmersionLang(langCode)?.name ?? ""}…`}
                     className="flex-1 bg-transparent py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
@@ -2131,6 +2161,36 @@ export default function VideoLearnPlayer({
                       <X className="h-4 w-4" color={SUB} />
                     </button>
                   )}
+                </div>
+                {/* Panel saran — animasi tinggi 0fr→1fr (mulus, tanpa lompatan). */}
+                <div
+                  className={`grid overflow-hidden transition-all duration-300 ease-out ${
+                    recFocused ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <p className="mb-1.5 text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
+                      Saran pencarian
+                    </p>
+                    <div className="flex flex-wrap gap-2 pb-0.5">
+                      {REC_SUGGESTIONS.map((s) => (
+                        <button
+                          key={s.q}
+                          // mousedown preventDefault → input tak kehilangan fokus
+                          // sebelum onClick chip sempat jalan.
+                          onMouseDown={(e) => e.preventDefault()}
+                          onClick={() => {
+                            setRecQuery(s.q);
+                            runRecSearch(s.q);
+                          }}
+                          className="rounded-full px-3 py-1.5 text-[12.5px] font-bold text-white/85 transition-colors hover:bg-white/10"
+                          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                        >
+                          {s.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
               <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">

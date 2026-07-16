@@ -41,7 +41,13 @@ const TEAL = "#1A9E9E";
 const TEAL_DARK = "#0A6060";
 const GOLD = "#F4B740";
 const BG = "#06090A";
-const CARD = "#0F1416";
+// Permukaan kartu/chip/gelembung/input: fill putih transparan yang halus, TANPA
+// garis tepi — tampilan modern "borderless" (elemen terpisah lewat fill, bukan outline).
+const CARD = "rgba(255,255,255,0.05)";
+// Baris tabel selang-seling (zebra) menggantikan garis pemisah antar-baris.
+const ROW_ALT = "rgba(255,255,255,0.028)";
+// BORDER hanya untuk rangka struktural drawer (tepi panel, garis pemisah header &
+// footer input) — hairline lebar-penuh, bukan kotak ber-outline.
 const BORDER = "rgba(255,255,255,0.09)";
 const SUB = "rgba(255,255,255,0.5)";
 
@@ -287,7 +293,7 @@ export default function WordStudy({
               onKeyDown={(e) => e.key === "Enter" && ask(input)}
               placeholder={`Tanya apa saja tentang "${word}"…`}
               className="flex-1 rounded-full px-4 py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              style={{ backgroundColor: CARD }}
             />
             <button
               onClick={() => ask(input)}
@@ -323,7 +329,7 @@ function Skel({ w, h = 11, r = 6, className = "" }: { w: number | string; h?: nu
 // Satu kartu section palsu: judul + (opsional) chip + beberapa baris teks.
 function SkelSection({ lines = 3, chip = false }: { lines?: number; chip?: boolean }) {
   return (
-    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
       <Skel w={96} h={10} className="mb-3" />
       {chip && <Skel w={76} h={22} r={9999} className="mb-2.5" />}
       <div className="space-y-2">
@@ -361,7 +367,7 @@ function AnswerSkeleton() {
     <div className="flex justify-start" aria-busy="true" aria-label="Menjawab">
       <div
         className="w-[90%] space-y-2 rounded-2xl rounded-bl-md px-3.5 py-3"
-        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        style={{ backgroundColor: CARD }}
       >
         <Skel w="95%" />
         <Skel w="100%" />
@@ -466,7 +472,7 @@ function StudyTab({
                 <button
                   onClick={() => speakText(s.word, langCode)}
                   className="mt-0.5 shrink-0 rounded-lg px-2 py-1 text-[13px] font-bold transition-colors hover:bg-white/10"
-                  style={{ color: "#7FE0E0", border: `1px solid ${BORDER}` }}
+                  style={{ color: "#7FE0E0", backgroundColor: CARD }}
                 >
                   {s.word}
                 </button>
@@ -529,7 +535,7 @@ function StudyTab({
               key={q}
               onClick={() => onAsk(q)}
               className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/10"
-              style={{ backgroundColor: "rgba(26,158,158,0.12)", border: `1px solid rgba(26,158,158,0.35)`, color: "#7FE0E0" }}
+              style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
             >
               {q}
             </button>
@@ -539,7 +545,7 @@ function StudyTab({
               key={q}
               onClick={() => onAsk(q)}
               className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              style={{ backgroundColor: CARD }}
             >
               {q}
             </button>
@@ -559,7 +565,7 @@ function StudyTab({
             }}
             placeholder="Atau tulis pertanyaanmu sendiri…"
             className="flex-1 rounded-full px-4 py-2.5 text-[13.5px] text-white outline-none placeholder:text-white/35"
-            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            style={{ backgroundColor: CARD }}
           />
           <button
             onClick={() => {
@@ -598,7 +604,7 @@ function AskTab({
       <div className="py-6">
         <div
           className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl"
-          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+          style={{ backgroundColor: CARD }}
         >
           <Sparkles className="h-6 w-6" color={TEAL} />
         </div>
@@ -613,7 +619,7 @@ function AskTab({
               key={q}
               onClick={() => onAsk(q)}
               className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              style={{ backgroundColor: CARD }}
             >
               {q}
             </button>
@@ -643,7 +649,7 @@ function AskTab({
           <div key={i} className="flex justify-start">
             <div
               className="max-w-[90%] rounded-2xl rounded-bl-md px-3.5 py-2.5"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              style={{ backgroundColor: CARD }}
             >
               <RichText text={m.text} />
             </div>
@@ -664,7 +670,7 @@ function AskTab({
                 key={f.q}
                 onClick={() => onAsk(f.q)}
                 className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
-                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                style={{ backgroundColor: CARD }}
               >
                 <span className="text-[12.5px] font-semibold">{f.q}</span>
                 {f.tl && (
@@ -912,7 +918,7 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
       <p className="mb-1.5 text-[11.5px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
         {title}
       </p>
