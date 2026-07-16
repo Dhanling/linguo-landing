@@ -70,6 +70,7 @@ export function WordTooltip({
   videoId,
   x,
   y,
+  autoStudy = false,
   onClose,
   onSavedChange,
   onStudyOpenChange,
@@ -81,6 +82,9 @@ export function WordTooltip({
   videoId?: string;
   x: number;
   y: number;
+  // Langsung buka drawer Analisa (WordStudy) tanpa singgah di balon kecil dulu —
+  // dipakai saat dibuka ulang dari riwayat kata (tombol AI melayang).
+  autoStudy?: boolean;
   onClose: () => void;
   onSavedChange?: () => void;
   // Diberi tahu saat drawer Analisa (WordStudy) buka/tutup — player memakainya untuk
@@ -154,8 +158,9 @@ export function WordTooltip({
   // "meaning" tak mengembalikannya, jadi kita ambil terpisah via /api/translit.
   const [translit, setTranslit] = useState("");
 
-  // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa.
-  const [studyOpen, setStudyOpen] = useState(false);
+  // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa, atau
+  // langsung terbuka saat dipanggil dari riwayat (autoStudy).
+  const [studyOpen, setStudyOpen] = useState(autoStudy);
 
   // Rambatkan status buka/tutup drawer ke player (auto-hide transkrip). Cleanup
   // memastikan status "tutup" tetap terkirim kalau tooltip di-unmount saat drawer

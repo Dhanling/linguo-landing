@@ -2118,6 +2118,65 @@ export function recordWordLookup(word: string, langCode: string): void {
   }
 }
 
+// ── Riwayat kata yang di-study (localStorage) ────────────────────────────────
+// Setiap kali siswa mengetuk sebuah kata di player (buka artinya), kita catat di
+// sini supaya tombol AI melayang bisa menampilkan "kata yang dipilih terakhir".
+// Beda dari LOOKUP_KEY (cuma kunci untuk kuota cicip & tak jalan untuk premium):
+// riwayat ini SELALU dicatat + menyimpan kalimat asalnya, jadi bisa dibuka ulang
+// instan (arti diambil dari cache breakdown lewat getCachedWordMeaning).
+export interface StudyHistoryItem {
+  word: string;
+  langCode: string;
+  sentence: string;
+  videoId?: string;
+  ts: number;
+}
+
+const STUDY_HIST_KEY = "linguo:watch:studyhist:v1";
+const STUDY_HIST_MAX = 60;
+
+/** Riwayat kata yang di-study, terbaru di depan. */
+export function getStudyHistory(): StudyHistoryItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(STUDY_HIST_KEY);
+    const arr = raw ? (JSON.parse(raw) as StudyHistoryItem[]) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Catat sebuah kata yang baru di-study. Dedup per kata+bahasa (yang lama dinaikkan
+ *  ke depan), dibatasi STUDY_HIST_MAX. Kembalikan daftar terbaru. */
+export function recordStudyHistory(
+  item: Omit<StudyHistoryItem, "ts">
+): StudyHistoryItem[] {
+  if (typeof window === "undefined") return [];
+  const w = cleanWord(item.word).trim();
+  if (!w) return getStudyHistory();
+  const rest = getStudyHistory().filter(
+    (h) => keyOf(h.word, h.langCode) !== keyOf(w, item.langCode)
+  );
+  const next = [{ ...item, word: w, ts: Date.now() }, ...rest].slice(0, STUDY_HIST_MAX);
+  try {
+    window.localStorage.setItem(STUDY_HIST_KEY, JSON.stringify(next));
+  } catch {
+    /* penuh/diblokir — abaikan */
+  }
+  return next;
+}
+
+/** Kosongkan riwayat study. */
+export function clearStudyHistory(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(STUDY_HIST_KEY);
+  } catch {
+    /* abaikan */
+  }
+}
+
 // ── Paket langganan Watch & Learn ────────────────────────────────────────────
 // Harga IDR untuk pasar Indonesia: 1 bulan sebagai harga impuls, makin panjang
 // makin hemat (anchor tahunan). WAJIB sinkron dengan perhitungan server di

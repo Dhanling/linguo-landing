@@ -840,7 +840,7 @@ function RichTable({ header, rows }: { header: string[]; rows: string[][] }) {
         </thead>
         <tbody>
           {rows.map((r, ri) => (
-            <tr key={ri} style={{ borderTop: `1px solid ${BORDER}` }}>
+            <tr key={ri} style={{ backgroundColor: ri % 2 === 1 ? ROW_ALT : "transparent" }}>
               {r.map((c, ci) => (
                 <td
                   key={ci}
@@ -876,7 +876,7 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
           {conj.rows.map((r, i) => {
             const full = r.parts.map((p) => p.t).join("");
             return (
-              <tr key={i} style={{ borderTop: `1px solid ${BORDER}` }}>
+              <tr key={i} style={{ backgroundColor: i % 2 === 1 ? ROW_ALT : "transparent" }}>
                 <td className="px-1.5 py-2 align-top text-[12.5px] font-semibold text-white/75 whitespace-nowrap">
                   {r.label}
                 </td>
@@ -941,8 +941,7 @@ function TabBtn({
       onClick={onClick}
       className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[13px] font-bold transition-colors"
       style={{
-        backgroundColor: active ? TEAL_DARK : "transparent",
-        border: `1px solid ${active ? TEAL_DARK : BORDER}`,
+        backgroundColor: active ? TEAL_DARK : CARD,
         color: active ? "#fff" : "rgba(255,255,255,0.7)",
       }}
     >
@@ -968,7 +967,6 @@ function IconBtn({
       aria-label={label}
       className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10"
       style={{
-        border: `1px solid ${active ? TEAL : BORDER}`,
         color: active ? "#7FE0E0" : "#fff",
         backgroundColor: active ? "rgba(26,158,158,0.15)" : "transparent",
       }}

@@ -26,6 +26,8 @@ import {
   PanelRightOpen,
   RotateCcw,
   Search,
+  Sparkles,
+  Trash2,
   Type,
   X,
 } from "lucide-react";
@@ -41,7 +43,12 @@ import {
   DEFAULT_BASE_LANG,
   getAlignment,
   type AlignGroup,
+  getCachedWordMeaning,
   getSentenceBreakdown,
+  getStudyHistory,
+  recordStudyHistory,
+  clearStudyHistory,
+  StudyHistoryItem,
   isFreshBreakdown,
   isNonLatin,
   isRtl,
@@ -70,6 +77,7 @@ import {
 import { WordTooltip } from "./WordTooltip";
 import WatchSubscribeModal from "./WatchSubscribeModal";
 import { RectFlag } from "@/components/RectFlag";
+import { useOverlayLock } from "@/lib/overlayStore";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -242,6 +250,8 @@ interface Anchor {
   // Indeks token kata dalam splitWords(sentence) — dipakai tooltip untuk memperluas
   // pilihan ke frasa (mis. "la compañía"). Undefined = jatuh ke pencarian pertama.
   wordIdx?: number;
+  // Langsung buka drawer Analisa (dibuka ulang dari riwayat kata, bukan tap baru).
+  autoStudy?: boolean;
 }
 
 export default function VideoLearnPlayer({
@@ -386,17 +396,23 @@ export default function VideoLearnPlayer({
   // `hoverPausedRef` menandai bahwa PAUSE itu dari kita, supaya kita hanya melanjutkan
   // kembali kalau memang kita yang mem-pause (bukan kalau user sengaja pause sendiri).
   const hoverPausedRef = useRef(false);
+  // Cermin state dari hoverPausedRef untuk render: saat jeda ini datang dari hover
+  // subtitle (bukan jeda sengaja), lapisan penutup pause TIDAK ditampilkan supaya
+  // frame video tetap kelihatan sambil baca teks (tak berkedip hitam tiap hover).
+  const [hoverPaused, setHoverPaused] = useState(false);
   const onSubtitleEnter = useCallback(() => {
     const p = playerRef.current;
     // 1 = playing. Cuma pause kalau memang lagi jalan.
     if (p?.getPlayerState?.() === 1) {
       p.pauseVideo?.();
       hoverPausedRef.current = true;
+      setHoverPaused(true);
     }
   }, []);
   const onSubtitleLeave = useCallback(() => {
     if (!hoverPausedRef.current) return;
     hoverPausedRef.current = false;
+    setHoverPaused(false);
     playerRef.current?.playVideo?.();
   }, []);
 
@@ -487,6 +503,33 @@ export default function VideoLearnPlayer({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordStudyOpen]);
+
+  // [watch-study-history-v1] Sembunyikan FAB CS global (ChatWidget) selama player
+  // terbuka — pojok kanan-bawah kita pakai sendiri untuk tombol AI (riwayat kata).
+  useOverlayLock(true);
+
+  // Riwayat kata yang di-study — panel yang muncul dari tombol AI melayang. Dimuat
+  // dari localStorage saat dibuka & disegarkan tiap kali sebuah kata di-study.
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [history, setHistory] = useState<StudyHistoryItem[]>([]);
+  const refreshHistory = useCallback(() => setHistory(getStudyHistory()), []);
+  useEffect(() => {
+    if (historyOpen) refreshHistory();
+  }, [historyOpen, refreshHistory]);
+
+  // Buka ulang sebuah kata dari riwayat → langsung ke drawer Analisa (autoStudy).
+  const openFromHistory = useCallback((h: StudyHistoryItem) => {
+    setHistoryOpen(false);
+    playerRef.current?.pauseVideo?.();
+    setAnchor({
+      word: h.word,
+      sentence: h.sentence,
+      x: typeof window !== "undefined" ? window.innerWidth / 2 : 0,
+      y: typeof window !== "undefined" ? window.innerHeight / 2 : 0,
+      autoStudy: true,
+    });
+  }, []);
+
   // Lebar drawer analisa kata (px, desktop). Dishare ke WordStudy lewat CSS var
   // --drawer-w di root player → video kiri reflow otomatis (padding-right) & drawer
   // ikut selebar ini. Bisa diseret lewat separator di batas kiri drawer, diklem, diingat.
@@ -1543,12 +1586,15 @@ export default function VideoLearnPlayer({
         return;
       }
       recordWordLookup(key, langCode);
+      // Catat ke riwayat study (tombol AI melayang) — kata terakhir yang dipilih
+      // naik ke depan; bisa dibuka ulang instan dari panel riwayat.
+      setHistory(recordStudyHistory({ word: key, langCode, sentence, videoId: video.videoId }));
       // Jeda video otomatis saat membuka arti kata — biar tak terus jalan & ganggu
       // saat siswa fokus baca artinya.
       playerRef.current?.pauseVideo?.();
       setAnchor({ word, sentence, x: e.clientX, y: e.clientY, wordIdx });
     },
-    [langCode]
+    [langCode, video.videoId]
   );
 
   return (
@@ -1735,6 +1781,26 @@ export default function VideoLearnPlayer({
                     aria-label={playing ? "Jeda" : "Putar"}
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
+                  {/* [watch-hide-yt-pause-overlay-v1] Saat DIJEDA, YouTube menampilkan
+                      overlay bawaan (tombol bagikan / tonton-nanti, dinding "video
+                      lainnya", logo YouTube) di atas frame — tak bisa dimatikan lewat
+                      API iframe lintas-asal. Jadi kita tutup dengan lapisan gelap milik
+                      sendiri + tombol putar besar di tengah, sehingga jeda tampak
+                      bersih & terarah, bukan ajakan keluar ke youtube.com. Hilang
+                      begitu diputar lagi (frame video kembali penuh). */}
+                  {!playing && !hoverPaused && (
+                    <button
+                      type="button"
+                      onClick={togglePlay}
+                      aria-label="Putar"
+                      className="absolute inset-0 z-[6] flex items-center justify-center"
+                      style={{ backgroundColor: "#0B0E0F" }}
+                    >
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-transform hover:scale-105">
+                        <Play className="ml-0.5 h-7 w-7 text-white" fill="currentColor" />
+                      </span>
+                    </button>
+                  )}
                   {/* Bar seek + durasi — muncul saat kursor aktif di atas video, atau
                       selalu saat dijeda. Auto-hide saat kursor DIAM (videoHot=false) ala
                       YouTube; tetap tampil selama menyeret / hover slider (hoverSeek) /
@@ -2193,9 +2259,20 @@ export default function VideoLearnPlayer({
                   </div>
                 </div>
               </div>
-              <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">
-                {recSearchList !== null ? "Hasil pencarian" : "Rekomendasi"}
-              </p>
+              <div className="flex items-center justify-between gap-2 px-4 pb-1 pt-3 sm:px-6">
+                <p className="text-[13px] font-extrabold text-white">
+                  {recSearchList !== null ? "Hasil pencarian" : "Rekomendasi"}
+                </p>
+                {/* Kembali ke mode nonton penuh (keluar dari miniplayer + rekomendasi). */}
+                <button
+                  onClick={() => setMini(false)}
+                  className="inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[12px] font-bold text-white transition-colors hover:bg-white/10"
+                  title="Kembali menonton"
+                  aria-label="Tutup rekomendasi & kembali menonton"
+                >
+                  <X className="h-4 w-4" /> Tutup
+                </button>
+              </div>
               <div className="min-h-0 flex-1 overflow-y-auto px-2 pb-4 sm:px-4 [scrollbar-width:thin]">
                 {recSearchState === "loading" ? (
                   <div
@@ -2530,6 +2607,90 @@ export default function VideoLearnPlayer({
         </div>
       )}
 
+      {/* [watch-study-history-v1] Tombol AI melayang (menggantikan FAB CS global
+          yang disembunyikan) — buka panel "riwayat kata" yang tadi dipilih; klik
+          salah satu untuk membuka ulang drawer Analisa-nya. Sembunyi saat
+          miniplayer (pojok itu dipakai kotak video) atau saat drawer sudah buka. */}
+      {!mini && !wordStudyOpen && (
+        <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end sm:bottom-6 sm:right-6">
+          {historyOpen && (
+            <div
+              className="mb-3 flex max-h-[min(60vh,26rem)] w-[min(20rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl shadow-2xl"
+              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            >
+              <div
+                className="flex items-center justify-between gap-2 border-b px-4 py-3"
+                style={{ borderColor: BORDER }}
+              >
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-4 w-4" color={TEAL} />
+                  <span className="text-[13px] font-extrabold text-white">Riwayat kata</span>
+                </div>
+                {history.length > 0 && (
+                  <button
+                    onClick={() => {
+                      clearStudyHistory();
+                      setHistory([]);
+                    }}
+                    className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold transition-colors hover:bg-white/10"
+                    style={{ color: SUB }}
+                    title="Kosongkan riwayat"
+                  >
+                    <Trash2 className="h-3.5 w-3.5" /> Hapus
+                  </button>
+                )}
+              </div>
+              <div className="min-h-0 flex-1 overflow-y-auto py-1 [scrollbar-width:thin]">
+                {history.length === 0 ? (
+                  <p className="px-4 py-8 text-center text-[12.5px]" style={{ color: SUB }}>
+                    Belum ada kata yang dibuka. Ketuk kata mana pun di subtitle untuk
+                    melihat artinya — kata itu muncul di sini.
+                  </p>
+                ) : (
+                  history.map((h) => {
+                    const m = getCachedWordMeaning({
+                      word: h.word,
+                      sentence: h.sentence,
+                      langCode: h.langCode,
+                    });
+                    return (
+                      <button
+                        key={`${h.langCode}::${h.word}::${h.ts}`}
+                        onClick={() => openFromHistory(h)}
+                        className="flex w-full flex-col gap-0.5 px-4 py-2 text-left transition-colors hover:bg-white/5"
+                        title="Buka analisa kata ini"
+                      >
+                        <span className="text-[14px] font-bold text-white" dir={isRtl(h.langCode) ? "rtl" : undefined}>
+                          {h.word}
+                        </span>
+                        {m?.meaning && (
+                          <span className="line-clamp-1 text-[12px] font-semibold" style={{ color: GOLD_DIM }}>
+                            {m.meaning}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+          )}
+          <button
+            onClick={() => setHistoryOpen((v) => !v)}
+            aria-label={historyOpen ? "Tutup riwayat kata" : "Riwayat kata (AI)"}
+            title={historyOpen ? "Tutup riwayat" : "Riwayat kata"}
+            className="flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-transform active:scale-95"
+            style={{ backgroundColor: TEAL }}
+          >
+            {historyOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Sparkles className="h-6 w-6 text-white" />
+            )}
+          </button>
+        </div>
+      )}
+
       {anchor && (
         <WordTooltip
           word={anchor.word}
@@ -2539,6 +2700,7 @@ export default function VideoLearnPlayer({
           videoId={video.videoId}
           x={anchor.x}
           y={anchor.y}
+          autoStudy={anchor.autoStudy}
           onClose={() => setAnchor(null)}
           onSavedChange={handleSaved}
           onStudyOpenChange={setWordStudyOpen}
