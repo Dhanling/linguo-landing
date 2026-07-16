@@ -660,6 +660,12 @@ export default function WatchAndLearn() {
     setLangCode(code);
     setLangPickerOpen(false);
     setLangQuery("");
+    // Ganti bahasa → buang teks pencarian lama. Tanpa ini query "learn khmer"
+    // (mis.) tetap nempel & mendominasi hasil YouTube; filter aksara tak bisa
+    // menolaknya untuk bahasa Latin (judul Inggris lolos) → grid nampilin bahasa
+    // lain walau bendera sudah ganti. Reset biar balik ke katalog kurasi bahasa.
+    setFreeText("");
+    setCommittedText("");
     try {
       window.localStorage.setItem(LANG_KEY, code);
     } catch {
