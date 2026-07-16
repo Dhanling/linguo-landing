@@ -2,6 +2,8 @@
 // ebook-xendit-v3 — edisi toggle + paket bundle + multi-select kuota + checkout Xendit otomatis
 import { useState } from "react";
 import Link from "next/link";
+import { Check, FileText, Infinity as InfinityIcon, PenLine, RefreshCw, Star, Lock, Zap, Globe, X, ArrowLeft } from "lucide-react";
+import { RectFlag } from "@/components/RectFlag";
 
 const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
 
@@ -14,7 +16,16 @@ const storedRef = (): string | undefined => {
   return c || localStorage.getItem("linguo_ref") || undefined;
 };
 
-const LANGS = ["🇬🇧 Inggris","🇪🇸 Spanyol","🇩🇪 Jerman","🇯🇵 Jepang","🇨🇳 Mandarin","🇳🇱 Belanda","🇸🇦 Arab","🇫🇷 Prancis","🇰🇷 Korea","🇵🇭 Tagalog","🇮🇹 Italia","🇹🇷 Turki","🇷🇺 Rusia","🇵🇹 Portugis","🇹🇭 Thailand","🇻🇳 Vietnam","🇮🇳 Hindi","🇸🇪 Swedia","🇳🇴 Norwegia","🇫🇮 Finlandia"];
+// Bendera dirender pakai RectFlag (rounded rectangle SVG), bukan emoji. code = ISO-2.
+const LANGS: { name: string; code: string }[] = [
+  { name: "Inggris", code: "gb" }, { name: "Spanyol", code: "es" }, { name: "Jerman", code: "de" },
+  { name: "Jepang", code: "jp" }, { name: "Mandarin", code: "cn" }, { name: "Belanda", code: "nl" },
+  { name: "Arab", code: "sa" }, { name: "Prancis", code: "fr" }, { name: "Korea", code: "kr" },
+  { name: "Tagalog", code: "ph" }, { name: "Italia", code: "it" }, { name: "Turki", code: "tr" },
+  { name: "Rusia", code: "ru" }, { name: "Portugis", code: "pt" }, { name: "Thailand", code: "th" },
+  { name: "Vietnam", code: "vn" }, { name: "Hindi", code: "in" }, { name: "Swedia", code: "se" },
+  { name: "Norwegia", code: "no" }, { name: "Finlandia", code: "fi" },
+];
 
 const FEATURES = ["Format PDF","Akses selamanya","Kosakata praktis","Latihan soal","Contoh percakapan","Update gratis"];
 
@@ -58,7 +69,7 @@ export default function EbookPage() {
   const quota = paket.qty;
   const price = PRICES[edition][paket.id];
   const editionLabel = EDITIONS.find((e) => e.id === edition)?.label ?? "Bahasa Indonesia";
-  const selected = isAll ? LANGS.map((l) => l.slice(2).trim()) : picked;
+  const selected = isAll ? LANGS.map((l) => l.name) : picked;
   const ready = isAll || picked.length === quota;
   const remaining = quota - picked.length;
   const langLabel = isAll ? "Semua 20 bahasa" : selected.join(", ");
@@ -121,7 +132,8 @@ export default function EbookPage() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-slate-800 hover:text-teal-600">
-            <span className="font-bold text-lg">← Linguo.id</span>
+            <ArrowLeft className="h-5 w-5" />
+            <span className="font-bold text-lg">Linguo.id</span>
           </Link>
           <a href="https://wa.me/6282116859493" target="_blank" className="text-sm text-teal-600 font-medium">
             Butuh bantuan?
@@ -229,7 +241,7 @@ export default function EbookPage() {
               <div className="grid grid-cols-2 gap-2">
                 {FEATURES.map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm text-slate-600">
-                    <span className="text-indigo-500">✓</span>
+                    <Check className="h-4 w-4 text-indigo-500 shrink-0" strokeWidth={2.5} />
                     {f}
                   </div>
                 ))}
@@ -247,12 +259,12 @@ export default function EbookPage() {
               )}
               <div className="grid grid-cols-2 gap-2 max-h-72 overflow-y-auto">
                 {LANGS.map((l) => {
-                  const nm: string = l.slice(2).trim();
+                  const nm = l.name;
                   const on = selected.includes(nm);
                   const locked = !on && !isAll && picked.length >= quota;
                   return (
                     <button
-                      key={l}
+                      key={nm}
                       onClick={() => toggleLang(nm)}
                       disabled={isAll || locked}
                       className={`flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
@@ -263,7 +275,8 @@ export default function EbookPage() {
                           : "bg-slate-50 text-slate-700 hover:bg-indigo-50"
                       }`}
                     >
-                      {l}
+                      <RectFlag code={l.code} h={16} className={locked ? "opacity-40" : ""} />
+                      {nm}
                     </button>
                   );
                 })}
@@ -294,13 +307,13 @@ export default function EbookPage() {
         {/* Feature strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           {[
-            { i: "📄", l: "Format PDF", s: "Buka di HP / laptop" },
-            { i: "♾️", l: "Akses Selamanya", s: "Sekali beli, simpan terus" },
-            { i: "✏️", l: "Latihan Soal", s: "Latih pemahamanmu" },
-            { i: "🔄", l: "Update Gratis", s: "Revisi terbaru gratis" },
+            { Icon: FileText, l: "Format PDF", s: "Buka di HP / laptop" },
+            { Icon: InfinityIcon, l: "Akses Selamanya", s: "Sekali beli, simpan terus" },
+            { Icon: PenLine, l: "Latihan Soal", s: "Latih pemahamanmu" },
+            { Icon: RefreshCw, l: "Update Gratis", s: "Revisi terbaru gratis" },
           ].map((f) => (
             <div key={f.l} className="bg-slate-50 rounded-2xl p-5 text-center">
-              <div className="text-2xl mb-2">{f.i}</div>
+              <f.Icon className="h-6 w-6 mx-auto mb-2 text-indigo-500" strokeWidth={1.75} />
               <p className="text-sm font-semibold text-slate-900">{f.l}</p>
               <p className="text-xs text-slate-400 mt-1">{f.s}</p>
             </div>
@@ -320,7 +333,7 @@ export default function EbookPage() {
             <div key={i} className="bg-slate-50 rounded-2xl p-6">
               <div className="flex gap-1 mb-3">
                 {[1, 2, 3, 4, 5].map((j) => (
-                  <span key={j} className="text-amber-400">★</span>
+                  <Star key={j} className="h-4 w-4 text-amber-400 fill-amber-400" />
                 ))}
               </div>
               <p className="text-sm text-slate-600 mb-4">&ldquo;{t.t}&rdquo;</p>
@@ -333,8 +346,16 @@ export default function EbookPage() {
       {/* Trust */}
       <section className="max-w-6xl mx-auto px-4 pb-20">
         <div className="bg-slate-50 rounded-3xl p-8 flex flex-wrap items-center justify-center gap-8">
-          {["🔒 Pembayaran Aman", "⚡ Akses Instan", "🌍 20+ Bahasa", "⭐ Google Review 5.0"].map((b) => (
-            <span key={b} className="text-sm font-medium text-slate-500">{b}</span>
+          {[
+            { Icon: Lock, l: "Pembayaran Aman" },
+            { Icon: Zap, l: "Akses Instan" },
+            { Icon: Globe, l: "20+ Bahasa" },
+            { Icon: Star, l: "Google Review 5.0" },
+          ].map((b) => (
+            <span key={b.l} className="flex items-center gap-2 text-sm font-medium text-slate-500">
+              <b.Icon className="h-4 w-4 text-slate-400" strokeWidth={2} />
+              {b.l}
+            </span>
           ))}
         </div>
       </section>
@@ -373,7 +394,7 @@ export default function EbookPage() {
                   onClick={() => !loading && setOpen(false)}
                   className="h-8 w-8 flex items-center justify-center rounded-full bg-white/20 shrink-0"
                 >
-                  ✕
+                  <X className="h-4 w-4" />
                 </button>
               </div>
               <p className="text-2xl font-extrabold mt-2">{formatRp(price)}</p>
