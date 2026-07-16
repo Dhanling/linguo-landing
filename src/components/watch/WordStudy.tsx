@@ -122,6 +122,19 @@ export default function WordStudy({
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chat, asking]);
 
+  // Animasi masuk/keluar drawer — geser dari kanan (desktop) / naik dari bawah
+  // (mobile). `entered` di-flip setelah mount agar transisi transform berjalan;
+  // `close` menyapu keluar dulu baru unmount (via onClose) supaya mulus.
+  const [entered, setEntered] = useState(false);
+  useEffect(() => {
+    const r = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(r);
+  }, []);
+  const close = useCallback(() => {
+    setEntered(false);
+    window.setTimeout(onClose, 220);
+  }, [onClose]);
+
   const toggleSave = useCallback(() => {
     if (saved) {
       removeSavedWord(word, langCode);
@@ -166,7 +179,26 @@ export default function WordStudy({
   const reg = deep ? registerStyle(deep.register) : null;
 
   return (
-    <div className="fixed inset-0 z-[97] flex flex-col" style={{ backgroundColor: BG }}>
+    <>
+    {/* Backdrop — klik utk tutup. Di desktop transparan (video tetap jelas terlihat,
+        ala panel "Tanya AI" YouTube); di mobile diberi dim tipis untuk fokus. */}
+    <div
+      onClick={close}
+      // Desktop: transparan + pointer-events-none → video tetap bisa di-play/pause &
+      // di-scrub selagi drawer terbuka (ala YouTube), tutup via tombol X. Mobile:
+      // dim tipis & tap-to-dismiss.
+      className={`fixed inset-0 z-[96] bg-black/50 transition-opacity duration-200 lg:pointer-events-none lg:bg-transparent ${
+        entered ? "opacity-100" : "opacity-0"
+      }`}
+      aria-hidden
+    />
+    {/* Drawer — bottom-sheet di mobile, panel kanan di desktop. */}
+    <div
+      className={`fixed z-[97] flex flex-col overflow-hidden shadow-2xl transition-transform duration-[220ms] ease-out inset-x-0 bottom-0 h-[86%] rounded-t-2xl lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[440px] lg:max-w-[92vw] lg:rounded-none ${
+        entered ? "translate-y-0 lg:translate-x-0" : "translate-y-full lg:translate-x-full lg:translate-y-0"
+      }`}
+      style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}
+    >
       {/* Header */}
       <div className="flex items-start justify-between gap-3 px-4 py-4 sm:px-6" style={{ borderBottom: `1px solid ${BORDER}` }}>
         <div className="min-w-0">
@@ -210,7 +242,7 @@ export default function WordStudy({
           <IconBtn label={saved ? "Tersimpan" : "Simpan"} active={saved} onClick={toggleSave}>
             {saved ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
           </IconBtn>
-          <IconBtn label="Tutup" onClick={onClose}>
+          <IconBtn label="Tutup" onClick={close}>
             <X className="h-5 w-5" />
           </IconBtn>
         </div>
@@ -269,10 +301,15 @@ export default function WordStudy({
         </div>
       )}
 
-      {upsellCount !== null && (
-        <WatchUpsellModal savedCount={upsellCount} onClose={() => setUpsellCount(null)} />
-      )}
     </div>
+
+    {/* Modal upsell dirender DI LUAR drawer: drawer punya `transform` (animasi geser)
+        yang menjadikannya containing-block untuk elemen fixed → kalau di dalam, modal
+        ter-clip / salah posisi. Di luar, ia fixed relatif viewport (benar). */}
+    {upsellCount !== null && (
+      <WatchUpsellModal savedCount={upsellCount} onClose={() => setUpsellCount(null)} />
+    )}
+    </>
   );
 }
 

@@ -276,6 +276,10 @@ export function WordTooltip({
 
   return (
     <>
+    {/* Saat drawer Analisa (WordStudy) terbuka, popup kecil ini disembunyikan —
+        kalau tidak, ia nyempil di belakang drawer (drawer kini panel kanan, bukan
+        full-screen). Tutup drawer → popup muncul lagi. */}
+    {!studyOpen && (
     <div className="fixed inset-0 z-[95]" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
@@ -353,6 +357,7 @@ export function WordTooltip({
         </div>
       </div>
     </div>
+    )}
 
     {studyOpen && (
       <WordStudy
