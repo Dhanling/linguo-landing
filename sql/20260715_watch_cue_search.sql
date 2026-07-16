@@ -168,6 +168,10 @@ as $$
   from matches m
   join public.yt_transcripts t
     on t.video_id = m.video_id and t.lang = m.lang
+  -- Video 'hidden' (kurasi admin) dikecualikan — kolom dari migrasi
+  -- 20260717_watch_quality_curation.sql (repo dashboard), yang juga
+  -- me-redeploy function ini dgn filter yang sama.
+  where coalesce(t.curation, 'new') <> 'hidden'
   order by m.whole_word desc, length(m.target) asc
   limit greatest(1, least(p_limit, 100));
 $$;

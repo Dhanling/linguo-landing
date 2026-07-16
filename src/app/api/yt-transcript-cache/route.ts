@@ -79,15 +79,20 @@ export async function GET(req: NextRequest) {
       let hasLevel = true;
       let rows: Record<string, unknown>[] | null = null;
       {
+        // Video 'hidden' (kurasi admin, tab Kualitas dashboard) tak boleh tampil
+        // di "Siap". Kolom curation NOT NULL default 'new' (migrasi
+        // 20260717_watch_quality_curation.sql, repo dashboard) → .neq aman.
         const r = await sb
           .from("yt_transcripts")
           .select("video_id, title, channel, dur, level")
           .eq("lang", lang)
           .not("title", "is", null)
+          .neq("curation", "hidden")
           .order("created_at", { ascending: false })
           .limit(limit);
         if (r.error) {
           hasLevel = false;
+          // Fallback kalau kolom level/curation belum ada (migrasi belum jalan).
           const r2 = await sb
             .from("yt_transcripts")
             .select("video_id, title, channel, dur")
