@@ -267,7 +267,15 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
   try {
     const res = await fetchTimeout(
       // `v=15` = pemecah cache CDN (s-maxage 24 jam): tanpa bump ini, edge CDN
-      // masih menyajikan versi lama sampai sehari. Di-bump dari v=14 setelah
+      // masih menyajikan versi lama sampai sehari.
+      // (v=20 fix video "Easy Finnish" kotityöt tACeFtUkm0E: caption creator DWIBAHASA
+      // (Finnish/ gloss Inggris) → target & terjemahan tercemar teks Inggris + section
+      // paragraf raksasa. Sumber caption memang bilingual (bukan echo model), jadi
+      // di-bersihkan sekali via Gemini: buang gloss Inggris, sisakan Finnish +
+      // tanda baca, terjemahan ID — timestamp caption asli dipertahankan (timing benar
+      // + cakupan penuh). Juga: kata sambung FINLANDIA (ja/mutta/koska/…) ditambah ke
+      // pemecah klausa + prompt yt-asr kini larang baca teks tertanam di layar.)
+      // Di-bump dari v=14 setelah
       // re-transcribe Peppa Bulgaria ls64k49ueuA: cache lama = window caption TANPA
       // tanda baca (restorePunctuation diam-diam gagal karena Groq 429 tanpa retry)
       // → satu section mencampur beberapa kalimat & PEMBICARA + karaoke meleset.
