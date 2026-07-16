@@ -194,7 +194,9 @@ export default function WordStudy({
     />
     {/* Drawer — bottom-sheet di mobile, panel kanan di desktop. */}
     <div
-      className={`fixed z-[97] flex flex-col overflow-hidden shadow-2xl transition-transform duration-[220ms] ease-out inset-x-0 bottom-0 h-[86%] rounded-t-2xl lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[440px] lg:max-w-[92vw] lg:rounded-none ${
+      // Lebar desktop dikontrol player lewat CSS var --drawer-w (diseret via separator);
+      // fallback 440px kalau var tak ada. Diklem max 92vw biar tak menutupi video penuh.
+      className={`fixed z-[97] flex flex-col overflow-hidden shadow-2xl transition-transform duration-[220ms] ease-out inset-x-0 bottom-0 h-[86%] rounded-t-2xl lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[var(--drawer-w,440px)] lg:max-w-[92vw] lg:rounded-none ${
         entered ? "translate-y-0 lg:translate-x-0" : "translate-y-full lg:translate-x-full lg:translate-y-0"
       }`}
       style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}

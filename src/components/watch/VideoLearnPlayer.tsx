@@ -469,6 +469,47 @@ export default function VideoLearnPlayer({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordStudyOpen]);
+  // Lebar drawer analisa kata (px, desktop). Dishare ke WordStudy lewat CSS var
+  // --drawer-w di root player → video kiri reflow otomatis (padding-right) & drawer
+  // ikut selebar ini. Bisa diseret lewat separator di batas kiri drawer, diklem, diingat.
+  const [drawerWidth, setDrawerWidth] = useState(440);
+  useEffect(() => {
+    try {
+      const v = Number(localStorage.getItem("watch:drawerW"));
+      if (Number.isFinite(v) && v >= 320) setDrawerWidth(v);
+    } catch {
+      /* localStorage tak tersedia — pakai default */
+    }
+  }, []);
+  const draggingDrawerRef = useRef(false);
+  const onDrawerDragStart = useCallback((e: React.PointerEvent) => {
+    e.preventDefault();
+    draggingDrawerRef.current = true;
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "col-resize";
+    const move = (ev: PointerEvent) => {
+      if (!draggingDrawerRef.current) return;
+      const max = Math.min(720, window.innerWidth * 0.85);
+      setDrawerWidth(Math.min(max, Math.max(320, window.innerWidth - ev.clientX)));
+    };
+    const up = () => {
+      draggingDrawerRef.current = false;
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+      setDrawerWidth((w) => {
+        try {
+          localStorage.setItem("watch:drawerW", String(Math.round(w)));
+        } catch {
+          /* abaikan */
+        }
+        return w;
+      });
+    };
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+  }, []);
   // Di layar penuh: sembunyikan header + baris kontrol saat kursor diam (immersive
   // ala YouTube). Subtitle + terjemahan TETAP tampil. Gerakkan kursor → muncul lagi.
   const [chromeHidden, setChromeHidden] = useState(false);
@@ -1431,7 +1472,7 @@ export default function VideoLearnPlayer({
     <div
       ref={rootRef}
       className={`fixed inset-0 z-[90] flex flex-col ${fullscreen && chromeHidden ? "cursor-none" : ""}`}
-      style={{ backgroundColor: "rgba(6,9,10,0.96)" }}
+      style={{ backgroundColor: "rgba(6,9,10,0.96)", "--drawer-w": `${drawerWidth}px` } as React.CSSProperties}
     >
       {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
           Di layar penuh: header lepas dari flow (absolute) di tepi ATAS & auto-hide —
@@ -1544,7 +1585,9 @@ export default function VideoLearnPlayer({
           subtitle turun & tak tertutup baris header (judul kiri / tombol kanan). */}
       <div
         ref={splitRowRef}
-        className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""}`}
+        className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""} ${
+          wordStudyOpen ? "lg:pr-[var(--drawer-w)]" : ""
+        }`}
         style={{ "--split-w": showPanel ? `${splitPct}%` : "100%" } as React.CSSProperties}
       >
         {/* Kiri: video + baris fokus + kontrol selalu terlihat (tak ikut scroll);
@@ -2302,6 +2345,31 @@ export default function VideoLearnPlayer({
         </div>
         )}
       </div>
+
+      {/* Separator drawer analisa kata (desktop) — nempel di batas kiri drawer,
+          seret untuk atur lebar drawer; video kiri reflow otomatis (var --drawer-w).
+          z di atas drawer (z-97) supaya bisa digenggam. */}
+      {wordStudyOpen && (
+        <div
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Atur lebar panel analisa"
+          onPointerDown={onDrawerDragStart}
+          onDoubleClick={() => {
+            setDrawerWidth(440);
+            try {
+              localStorage.setItem("watch:drawerW", "440");
+            } catch {
+              /* abaikan */
+            }
+          }}
+          className="group fixed inset-y-0 z-[98] hidden w-2 cursor-col-resize touch-none items-center justify-center lg:flex"
+          style={{ right: "var(--drawer-w)" }}
+          title="Seret untuk atur lebar · klik ganda untuk reset"
+        >
+          <div className="h-12 w-1 rounded-full bg-white/25 transition-colors group-hover:bg-white/50" />
+        </div>
+      )}
 
       {anchor && (
         <WordTooltip
