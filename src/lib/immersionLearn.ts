@@ -274,7 +274,14 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // Fix: groqPunctuate kini retry 429/5xx (worker) → transkrip di-restore jadi
       // 1 kalimat/1 pembicara per section; klien interpTime menyandarkan waktu
       // potongan ke batas window ASLI (anchor) biar sorotan menempel ke audio.
-      // (v=18 backfill massal 25 video `pending` (base=bahasa asli muncul sbg
+      // (v=19 fix AKAR echo prompt kode-mentah: transcript-worker prompt penerjemah
+      // dulu pakai KODE bahasa ("FI") → gpt-oss meng-echo teks sumber (Finnish balik
+      // Finnish) → base=target tersimpan TANPA flag `pending` → self-heal buta. Fix
+      // worker: LANG_NAMES (nama penuh "Finnish") + penjaga isSourceEcho + retranslate
+      // pindai semua baris. Sweep backlog 81 video / 25 bahasa (hu/da/es/pt/en/pl/…,
+      // ~3,5rb baris) diterjemah via Mode A yt-transcript (Anthropic) + PATCH; sisa
+      // echo cuma lirik/nama diri;
+      // v=18 backfill massal 25 video `pending` (base=bahasa asli muncul sbg
       // terjemahan, regres Groq 429) — 15 video Inggris (A1 Cooking uVGV8LG3HHM
       // yang dilaporkan + A1 Supermarket/Language Learning, "Learn English With
       // Words…", English Conversation/Restaurant, Daily Routine, 6 Minute English,
@@ -301,7 +308,7 @@ async function readTranscriptCache(videoId: string, langCode: string): Promise<L
       // hanya saat jumlah target == base; v=6 vlog Spanyol gpFqVxLDEJ0; v=5 vlog
       // Persia 3WMSN12Q598; v=4 vlog Hindi G-dcJA_lA0g; v=3 cues SATU KALIMAT UTUH;
       // v=2 untuk `translit`.)
-      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=18`,
+      `/api/yt-transcript-cache?videoId=${encodeURIComponent(videoId)}&lang=${encodeURIComponent(langCode)}&v=19`,
       { method: "GET" },
       6000
     );
