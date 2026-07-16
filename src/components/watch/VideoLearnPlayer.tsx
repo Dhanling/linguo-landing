@@ -48,6 +48,7 @@ import {
   POS_COLOR,
   POS_LABEL_ID,
   prewarmBreakdowns,
+  primeBreakdownCache,
   prewarmTranscripts,
   requestTranscript,
   SentenceBreakdown,
@@ -829,7 +830,12 @@ export default function VideoLearnPlayer({
       // diabaikan supaya tak ditampilkan & ikut dihitung ulang di bawah.
       const seed: Record<number, SentenceBreakdown> = {};
       ordered.forEach((c, i) => {
-        if (isFreshBreakdown(c.breakdown)) seed[i] = c.breakdown!;
+        if (isFreshBreakdown(c.breakdown)) {
+          seed[i] = c.breakdown!;
+          // Tulis juga ke cache localStorage → tooltip (getCachedWordMeaning) bisa
+          // memunculkan arti kata INSTAN, bukan cuma mode Analisa.
+          primeBreakdownCache(c.target, langCode, c.breakdown!);
+        }
       });
       if (Object.keys(seed).length) setBreakdowns((prev) => ({ ...prev, ...seed }));
       const needWarm = Array.from(

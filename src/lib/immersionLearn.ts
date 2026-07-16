@@ -1624,6 +1624,17 @@ function writeBreakdownCache(sentence: string, langCode: string, bd: SentenceBre
   }
 }
 
+/**
+ * Tulis breakdown yang ikut dibawa transkrip (cue.breakdown, cache lintas-pengguna)
+ * ke cache localStorage — supaya `getCachedWordMeaning` (dibaca tooltip) menemukannya
+ * dan tap kata langsung instan tanpa harus dihitung ulang di perangkat ini. Hanya
+ * menulis breakdown versi terbaru; yang lawas diabaikan.
+ */
+export function primeBreakdownCache(sentence: string, langCode: string, bd: SentenceBreakdown): void {
+  if (!isFreshBreakdown(bd)) return;
+  writeBreakdownCache(sentence.trim(), langCode, bd);
+}
+
 const breakdownInFlight = new Map<string, Promise<SentenceBreakdown>>();
 
 async function fetchSentenceBreakdown(sentence: string, langCode: string): Promise<SentenceBreakdown> {
@@ -1912,6 +1923,35 @@ export const POS_LABEL_ID: Record<PosCategory, string> = {
   determiner: "sandang", numeral: "bilangan", interjection: "seru",
   particle: "partikel", auxiliary: "bantu", punctuation: "tanda baca", other: "lainnya",
 };
+
+/**
+ * Arti sebuah kata dari analisa kalimat (breakdown) yang SUDAH di-cache — INSTAN,
+ * tanpa memanggil word-info. `prewarmBreakdowns` menghangatkan cache ini begitu
+ * transkrip siap, jadi tap kata bisa langsung memunculkan artinya tanpa loading.
+ *
+ * Mengembalikan null (→ pemanggil fallback ke `getWordMeaning` + auto-expand frasa)
+ * kalau: belum ada breakdown untuk kalimat ini, kata tak ketemu di token, atau
+ * token itu kata fungsi tanpa arti mandiri (gloss kosong).
+ */
+export function getCachedWordMeaning(params: {
+  word: string;
+  sentence: string;
+  langCode: string;
+}): (WordMeaning & { translit?: string }) | null {
+  const bd = readBreakdownCache(params.sentence.trim(), params.langCode);
+  if (!bd) return null;
+  const target = cleanWord(params.word).toLowerCase();
+  if (!target) return null;
+  const tok = bd.tokens.find(
+    (t) => cleanWord(t.word).toLowerCase() === target && t.gloss.trim()
+  );
+  if (!tok) return null;
+  return {
+    meaning: tok.gloss.trim(),
+    type: `kata ${POS_LABEL_ID[tok.cat]}`,
+    translit: tok.translit?.trim() || undefined,
+  };
+}
 
 // ── Kosakata tersimpan (localStorage) ────────────────────────────────────────
 

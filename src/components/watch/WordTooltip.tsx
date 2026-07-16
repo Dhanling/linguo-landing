@@ -19,6 +19,7 @@ import WordStudy from "./WordStudy";
 import {
   canSaveWord,
   cleanWord,
+  getCachedWordMeaning,
   getWordMeaning,
   isNonLatin,
   isWordSaved,
@@ -189,11 +190,33 @@ export function WordTooltip({
   // Ambil arti saat kata/frasa berubah.
   useEffect(() => {
     let cancelled = false;
+    setSaved(isWordSaved(word, langCode));
+
+    // Jalur cepat: arti kata ini sudah ada di cache analisa kalimat (di-prewarm
+    // begitu transkrip siap) → tampil INSTAN tanpa memanggil word-info. Fallback
+    // ke fetch di bawah hanya kalau cache belum ada / kata fungsi (auto-expand).
+    const cached = getCachedWordMeaning({ word, sentence, langCode });
+    if (cached) {
+      setMeaning({ meaning: cached.meaning, type: cached.type, base: cached.base });
+      setMeaningWord(word);
+      setErrored(false);
+      setLoading(false);
+      setTranslit(isNonLatin(langCode) && cached.translit ? cached.translit : "");
+      // Cache tak menyertakan bacaan Latin → ambil terpisah (background).
+      if (isNonLatin(langCode) && !cached.translit) {
+        transliterateLines([word], langCode)
+          .then((r) => !cancelled && r[0] && setTranslit(r[0]))
+          .catch(() => {});
+      }
+      return () => {
+        cancelled = true;
+      };
+    }
+
     setLoading(true);
     setErrored(false);
     setMeaning(null);
     setTranslit("");
-    setSaved(isWordSaved(word, langCode));
     getWordMeaning({ word, sentence, langCode })
       .then((m) => {
         if (cancelled) return;
