@@ -25,6 +25,7 @@ import {
   PanelRightClose,
   PanelRightOpen,
   RotateCcw,
+  Search,
   Type,
   X,
 } from "lucide-react";
@@ -561,6 +562,62 @@ export default function VideoLearnPlayer({
   const [recLoading, setRecLoading] = useState(false);
   // Kunci (bahasa|video) yang sedang aktif — buang hasil fetch basi saat ganti video.
   const relKeyRef = useRef("");
+  // [watch-rec-search-v1] Cari video langsung dari panel Rekomendasi (mode mini),
+  // tanpa keluar player. `recSearchList` null = belum mencari → tampilkan rekomendasi
+  // biasa; non-null = tampilkan hasil pencarian (bisa array kosong = tidak ketemu).
+  const [recQuery, setRecQuery] = useState("");
+  const [recSearchList, setRecSearchList] = useState<ImmersionVideo[] | null>(null);
+  const [recSearchState, setRecSearchState] = useState<"idle" | "loading" | "done" | "empty">("idle");
+  const recSearchReq = useRef(0);
+
+  // Jalankan pencarian video (Enter / tombol): pakai jalur yt-search yang sama
+  // dengan katalog halaman, disaring ke bahasa target & durasi rekomendasi.
+  const runRecSearch = useCallback(async () => {
+    const q = recQuery.trim();
+    if (!q) {
+      recSearchReq.current++;
+      setRecSearchList(null);
+      setRecSearchState("idle");
+      return;
+    }
+    const id = ++recSearchReq.current;
+    setRecSearchState("loading");
+    const lang = getImmersionLang(langCode);
+    try {
+      const page = await searchImmersionVideos({
+        query: q,
+        language: lang?.searchCode ?? langCode,
+        max: 18,
+        maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
+        regionCode: lang?.region,
+      });
+      if (id !== recSearchReq.current) return; // hasil basi — abaikan
+      const results = filterVideosByLanguage(page.results, langCode).filter(
+        (v) => v.videoId !== video.videoId && (!v.duration || v.duration <= WATCH_REC_MAX_DURATION_SEC)
+      );
+      setRecSearchList(results);
+      setRecSearchState(results.length ? "done" : "empty");
+    } catch {
+      if (id !== recSearchReq.current) return;
+      setRecSearchList([]);
+      setRecSearchState("empty");
+    }
+  }, [recQuery, langCode, video.videoId]);
+
+  const clearRecSearch = useCallback(() => {
+    recSearchReq.current++;
+    setRecQuery("");
+    setRecSearchList(null);
+    setRecSearchState("idle");
+  }, []);
+
+  // Ganti bahasa target → hasil pencarian lama (bahasa lain) tak relevan lagi.
+  useEffect(() => {
+    recSearchReq.current++;
+    setRecQuery("");
+    setRecSearchList(null);
+    setRecSearchState("idle");
+  }, [langCode]);
 
   // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
   useEffect(() => {
@@ -2044,16 +2101,56 @@ export default function VideoLearnPlayer({
               Klik untuk langsung memutar video lain tanpa keluar player.
               Saat mini, daftar ini yang mengisi seluruh kolom kiri; saat menonton
               penuh sengaja disembunyikan agar subtitle + kontrol lebih lega. */}
-          {mini && recList.length > 0 && onSelectVideo && (
+          {mini && onSelectVideo && (
             <div
-              className="min-h-0 flex-1 overflow-y-auto border-t [scrollbar-width:thin]"
+              className="flex min-h-0 flex-1 flex-col border-t"
               style={{ borderColor: BORDER }}
             >
+              {/* [watch-rec-search-v1] Cari video tanpa keluar player. */}
+              <div className="px-4 pt-3 sm:px-6">
+                <div
+                  className="flex items-center gap-2.5 rounded-xl px-3"
+                  style={{ backgroundColor: CARD, border: `1px solid ${recQuery ? TEAL : BORDER}` }}
+                >
+                  <Search className="h-4 w-4 shrink-0" color={SUB} />
+                  <input
+                    value={recQuery}
+                    onChange={(e) => setRecQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") runRecSearch();
+                    }}
+                    placeholder={`Cari video ${getImmersionLang(langCode)?.name ?? ""}…`}
+                    className="flex-1 bg-transparent py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
+                  />
+                  {recQuery && (
+                    <button
+                      onClick={clearRecSearch}
+                      className="shrink-0 transition-opacity hover:opacity-70"
+                      aria-label="Hapus pencarian"
+                    >
+                      <X className="h-4 w-4" color={SUB} />
+                    </button>
+                  )}
+                </div>
+              </div>
               <p className="px-4 pb-1 pt-3 text-[13px] font-extrabold text-white sm:px-6">
-                Rekomendasi
+                {recSearchList !== null ? "Hasil pencarian" : "Rekomendasi"}
               </p>
-              <div className="px-2 pb-4 sm:px-4">
-                {recList.slice(0, recShown).map((v) => (
+              <div className="min-h-0 flex-1 overflow-y-auto px-2 pb-4 sm:px-4 [scrollbar-width:thin]">
+                {recSearchState === "loading" ? (
+                  <div
+                    className="flex items-center justify-center gap-2 py-10 text-[13px]"
+                    style={{ color: SUB }}
+                  >
+                    <Loader2 className="h-4 w-4 animate-spin" /> Mencari…
+                  </div>
+                ) : recSearchState === "empty" ? (
+                  <p className="px-2 py-10 text-center text-[13px]" style={{ color: SUB }}>
+                    Tidak ada video ketemu untuk “{recQuery.trim()}”. Coba kata kunci lain.
+                  </p>
+                ) : (recSearchList ?? recList).length === 0 ? null : (
+                <>
+                {(recSearchList !== null ? recSearchList : recList.slice(0, recShown)).map((v) => (
                   <button
                     key={v.videoId}
                     onClick={() => onSelectVideo(v)}
@@ -2089,7 +2186,7 @@ export default function VideoLearnPlayer({
                     </div>
                   </button>
                 ))}
-                {(recList.length > recShown || related?.next) && (
+                {recSearchList === null && (recList.length > recShown || related?.next) && (
                   <div className="mt-2 flex justify-center pb-2">
                     <button
                       onClick={loadMoreRecs}
@@ -2100,6 +2197,8 @@ export default function VideoLearnPlayer({
                       {recLoading ? "Memuat…" : "Muat lainnya"}
                     </button>
                   </div>
+                )}
+                </>
                 )}
               </div>
             </div>
