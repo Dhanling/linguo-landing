@@ -127,6 +127,7 @@ body { animation: pageEnter 0.5s ease-out both; }
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   cursor: pointer;
+  transition: transform 0.15s ease;
 }
 .watch-seek::-moz-range-thumb {
   width: 13px;
@@ -136,6 +137,17 @@ body { animation: pageEnter 0.5s ease-out both; }
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   cursor: pointer;
+  transition: transform 0.15s ease;
+}
+/* Hover di slider → lingkaran penanda membesar (zoom in) ala YouTube, track tetap
+   static. Aktif juga saat sedang menyeret supaya konsisten. */
+.watch-seek:hover:not(:disabled)::-webkit-slider-thumb,
+.watch-seek:active:not(:disabled)::-webkit-slider-thumb {
+  transform: scale(1.45);
+}
+.watch-seek:hover:not(:disabled)::-moz-range-thumb,
+.watch-seek:active:not(:disabled)::-moz-range-thumb {
+  transform: scale(1.45);
 }
 .watch-seek::-moz-range-track {
   height: 4px;
