@@ -2867,9 +2867,13 @@ function FocusLine({
         center
       />
       {cue.translit && (
-        <p className="mt-1 italic" style={{ color: "#fff", fontSize: 13 * scale }}>
-          {cue.translit}
-        </p>
+        <KaraokeTranslit
+          cue={cue}
+          time={time}
+          langCode={langCode}
+          className="mt-1 italic"
+          style={{ fontSize: 13 * scale }}
+        />
       )}
       {!showTranslation ? null : cue.base ? (
         alignEnabled ? (
@@ -3179,6 +3183,115 @@ function KaraokeText({
         )
       )}
     </p>
+  );
+}
+
+// ── Karaoke pada baris transliterasi ────────────────────────────────────────────
+// [linguo-patch:watch-translit-karaoke-v1] Baris bacaan Latin (romaji/pinyin/dsb)
+// ikut tersapu teal BARENG aksara asli di atasnya — pelajar bahasa non-Latin jadi
+// tahu sedang di suku kata mana. Transliterasi selalu Latin → sapuan kiri→kanan.
+//   • Kalau token translit selaras 1:1 dgn kata target (alignTranslitTokens) →
+//     sapuan PER-KATA pakai state/progress kata target padanannya, jadi word-locked
+//     (Rusia/Yunani/Georgia dsb yang romanisasinya memisah kata pakai spasi).
+//   • Kalau tak selaras (Jepang/Mandarin: segmenter kata beda jumlah dgn token
+//     romaji) → sapuan berbasis KARAKTER sepanjang baris pakai frac waktu yang sama;
+//     kelar di cue.end bareng target. Dipecah per token biar tetap membungkus rapi.
+function translitSweepTokens(text: string, frac: number) {
+  const toks = splitWords(text); // Latin → pecah spasi/tanda baca
+  const total = text.length || 1;
+  const played = frac * total;
+  let acc = 0;
+  return toks.map((t) => {
+    const startC = acc;
+    const endC = acc + t.text.length;
+    acc = endC;
+    let pct = 0;
+    if (endC <= played) pct = 100;
+    else if (startC < played)
+      pct = Math.round(((played - startC) / Math.max(1, t.text.length)) * 100);
+    return { text: t.text, isWord: t.isWord, pct };
+  });
+}
+
+function KaraokeTranslit({
+  cue,
+  time,
+  langCode,
+  className,
+  style,
+}: {
+  cue: LearnCue;
+  time: number;
+  langCode?: string;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const translit = cue.translit ?? "";
+  const aligned = useMemo(
+    () => alignTranslitTokens(cue.target, translit, langCode),
+    [cue.target, translit, langCode]
+  );
+  const wordStates = useMemo(
+    () => karaokeTokens(cue, time, langCode).filter((t) => t.isWord),
+    [cue, time, langCode]
+  );
+  const dur = Math.max(0.4, cue.end - cue.start);
+  const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
+  const charToks = useMemo(() => translitSweepTokens(translit, frac), [translit, frac]);
+  if (!translit) return null;
+
+  // Sapuan per-kata hanya bila token translit benar-benar selaras 1:1 dgn kata target.
+  const wordSync = aligned && aligned.filter((t) => t.k >= 0).length === wordStates.length;
+  const chunks = wordSync
+    ? aligned!.map((t) => ({
+        text: t.text,
+        isWord: t.k >= 0,
+        pct:
+          t.k < 0
+            ? 0
+            : wordStates[t.k].state === "sung"
+              ? 100
+              : wordStates[t.k].state === "active"
+                ? Math.round(wordStates[t.k].progress * 100)
+                : 0,
+      }))
+    : charToks;
+
+  return (
+    <p className={className} style={{ color: "#fff", ...style }}>
+      {chunks.map((c, idx) =>
+        c.isWord ? (
+          <TranslitSweepChunk key={idx} text={c.text} pct={c.pct} />
+        ) : (
+          <span key={idx} className="whitespace-pre">
+            {c.text}
+          </span>
+        )
+      )}
+    </p>
+  );
+}
+
+// Satu potongan translit dgn overlay teal dipangkas mengikuti `pct` (0..100). Latin →
+// pangkas dari kanan (inset kanan). Overlay lebar 100% biar glyph selalu sejajar.
+function TranslitSweepChunk({ text, pct }: { text: string; pct: number }) {
+  const clip = `inset(0 ${100 - pct}% 0 0)`;
+  return (
+    <span className="relative inline-block align-baseline">
+      <span style={{ color: "inherit" }}>{text}</span>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden whitespace-nowrap"
+        style={{
+          color: TEAL,
+          clipPath: clip,
+          WebkitClipPath: clip,
+          transition: "clip-path 220ms linear, -webkit-clip-path 220ms linear",
+        }}
+      >
+        {text}
+      </span>
+    </span>
   );
 }
 
