@@ -865,11 +865,17 @@ export default function VideoLearnPlayer({
     setRelated(null);
     let alive = true;
     const lang = getImmersionLang(langCode);
+    // Jahitkan nama native bahasa ("Dansk", "Suomi", …) ke query. Tanpa ini,
+    // channel multi-bahasa (mis. "Easy Languages") mengembalikan video Inggris/
+    // Jerman — dan filter aksara Latin tak bisa menyaringnya untuk bahasa target
+    // beraksara Latin, jadi rekomendasi bocor ke bahasa lain. Ref: buildQuery.
+    const relBase = video.channel?.trim() || video.title;
     searchImmersionVideos({
-      query: video.channel?.trim() || video.title,
+      query: lang?.native ? `${relBase} ${lang.native}` : relBase,
       language: lang?.searchCode ?? langCode,
       max: 12,
       maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
+      regionCode: lang?.region,
     })
       .then((page) => {
         if (!alive) return;
@@ -916,12 +922,14 @@ export default function VideoLearnPlayer({
     const key = `${langCode}|${video.videoId}`;
     setRecLoading(true);
     const lang = getImmersionLang(langCode);
+    const relBase = video.channel?.trim() || video.title;
     searchImmersionVideos({
-      query: video.channel?.trim() || video.title,
+      query: lang?.native ? `${relBase} ${lang.native}` : relBase,
       language: lang?.searchCode ?? langCode,
       max: 12,
       pageToken: related.next,
       maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
+      regionCode: lang?.region,
     })
       .then((page) => {
         if (relKeyRef.current !== key) return; // sudah ganti video — hasil basi
