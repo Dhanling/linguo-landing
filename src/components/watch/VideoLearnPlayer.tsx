@@ -1789,22 +1789,19 @@ export default function VideoLearnPlayer({
                     aria-label={playing ? "Jeda" : "Putar"}
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
-                  {/* [watch-hide-yt-pause-overlay-v1] Saat DIJEDA, YouTube menampilkan
-                      overlay bawaan (tombol bagikan / tonton-nanti, dinding "video
-                      lainnya", logo YouTube) di atas frame — tak bisa dimatikan lewat
-                      API iframe lintas-asal. Jadi kita tutup dengan lapisan gelap milik
-                      sendiri + tombol putar besar di tengah, sehingga jeda tampak
-                      bersih & terarah, bukan ajakan keluar ke youtube.com. Hilang
-                      begitu diputar lagi (frame video kembali penuh). */}
+                  {/* [watch-pause-keep-frame-v1] Saat DIJEDA, tampilkan tombol putar
+                      besar di tengah TAPI biarkan frame video tetap kelihatan (dulu
+                      ditutup lapisan gelap solid → layar hitam saat pause). Cuma scrim
+                      tipis + gradien tepi ringan biar tombol putar terbaca & UI bawaan
+                      YouTube di sudut sedikit teredam, tanpa menutupi gambar video. */}
                   {!playing && !hoverPaused && (
                     <button
                       type="button"
                       onClick={togglePlay}
                       aria-label="Putar"
-                      className="absolute inset-0 z-[6] flex items-center justify-center"
-                      style={{ backgroundColor: "#0B0E0F" }}
+                      className="absolute inset-0 z-[6] flex items-center justify-center bg-black/20 transition-colors"
                     >
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-transform hover:scale-105">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/45 backdrop-blur-sm transition-transform hover:scale-105">
                         <Play className="ml-0.5 h-7 w-7 text-white" fill="currentColor" />
                       </span>
                     </button>

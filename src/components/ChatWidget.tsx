@@ -324,9 +324,10 @@ export default function ChatWidget() {
   const lastIsAssistant = messages[messages.length - 1]?.role === "assistant";
 
   // [ling-hide-fab-akun-v1] Ling itu chat sales/support buat calon murid — sembunyiin di
-  // SELURUH app student (/akun/*: dashboard + player lesson). Tetap render global di layout,
-  // cuma di-suppress di sini. FAB tetap tampil di halaman marketing publik.
-  if (pathname?.startsWith("/akun")) return null;
+  // SELURUH app student (/akun/*: dashboard + player lesson) DAN Watch & Learn (/watch:
+  // home + player) supaya FAB CS ga numpuk sama tombol shortcut Analisa. Tetap render
+  // global di layout, cuma di-suppress di sini; FAB tetap tampil di halaman marketing publik.
+  if (pathname?.startsWith("/akun") || pathname?.startsWith("/watch")) return null;
 
   return (
     <div className="lingw">
