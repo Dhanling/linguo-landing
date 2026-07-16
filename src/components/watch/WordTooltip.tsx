@@ -10,8 +10,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   BookmarkCheck,
   BookmarkPlus,
-  ChevronLeft,
-  ChevronRight,
   Loader2,
   Sparkles,
   Volume2,
@@ -131,23 +129,9 @@ export function WordTooltip({
     return tokens.slice(sel.lo, sel.hi + 1).map((t) => t.text).join("").trim();
   }, [tokens, sel, rawWord]);
 
-  const prevWord = [...wordPositions].reverse().find((p) => p < sel.lo);
+  // Kata kanan berikutnya — dipakai auto-expand kata fungsi (kontrol frasa manual
+  // sudah dihapus demi tooltip yang ringkas).
   const nextWord = wordPositions.find((p) => p > sel.hi);
-  const canLeft = sel.lo >= 0 && prevWord != null;
-  const canRight = sel.hi >= 0 && nextWord != null;
-  const multi = sel.hi > sel.lo;
-  const growLeft = useCallback(() => {
-    autoAllowRef.current = false;
-    if (prevWord != null) setSel((s) => ({ ...s, lo: prevWord }));
-  }, [prevWord]);
-  const growRight = useCallback(() => {
-    autoAllowRef.current = false;
-    if (nextWord != null) setSel((s) => ({ ...s, hi: nextWord }));
-  }, [nextWord]);
-  const resetOne = useCallback(() => {
-    autoAllowRef.current = false;
-    setSel({ lo: initialIdx, hi: initialIdx });
-  }, [initialIdx]);
 
   const [meaning, setMeaning] = useState<WordMeaning | null>(null);
   const [loading, setLoading] = useState(true);
@@ -332,26 +316,6 @@ export function WordTooltip({
           </p>
         )}
 
-        {/* Perluas ke frasa — gabungkan kata di kiri/kanan (mis. "la compañía") */}
-        {initialIdx >= 0 && (canLeft || canRight || multi) && (
-          <div className="mt-2.5 flex items-center gap-1.5">
-            <span className="text-[10.5px] font-semibold" style={{ color: SUB }}>
-              Frasa
-            </span>
-            <PhraseBtn onClick={growLeft} disabled={!canLeft} label="Gabung kata kiri">
-              <ChevronLeft className="h-3.5 w-3.5" />
-            </PhraseBtn>
-            <PhraseBtn onClick={growRight} disabled={!canRight} label="Gabung kata kanan">
-              <ChevronRight className="h-3.5 w-3.5" />
-            </PhraseBtn>
-            {multi && (
-              <PhraseBtn onClick={resetOne} label="Kembali ke satu kata">
-                <span className="text-[10.5px] font-bold">1 kata</span>
-              </PhraseBtn>
-            )}
-          </div>
-        )}
-
         {/* Aksi */}
         <div className="mt-3 flex gap-2">
           <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
@@ -393,31 +357,6 @@ export function WordTooltip({
   );
 }
 
-function PhraseBtn({
-  children,
-  onClick,
-  disabled,
-  label,
-}: {
-  children: React.ReactNode;
-  onClick: () => void;
-  disabled?: boolean;
-  label: string;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={label}
-      title={label}
-      className="flex h-6 items-center justify-center rounded-md px-1.5 text-white transition hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent"
-      style={{ border: `1px solid ${BORDER}` }}
-    >
-      {children}
-    </button>
-  );
-}
-
 function TipAction({
   children,
   onClick,
@@ -429,18 +368,43 @@ function TipAction({
   active?: boolean;
   label: string;
 }) {
+  // Ikon saja (ringkas) — labelnya jadi tooltip hover lewat komponen Tip.
   return (
-    <button
-      onClick={onClick}
-      aria-label={label}
-      className="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl py-2 text-[10.5px] font-semibold transition duration-150 hover:scale-105 active:scale-95"
-      style={{
-        backgroundColor: active ? TEAL : "rgba(255,255,255,0.06)",
-        color: "#fff",
-      }}
+    <Tip label={label}>
+      <button
+        onClick={onClick}
+        aria-label={label}
+        className="flex flex-1 items-center justify-center rounded-xl py-2.5 transition duration-150 hover:scale-105 active:scale-95"
+        style={{
+          backgroundColor: active ? TEAL : "rgba(255,255,255,0.06)",
+          color: "#fff",
+        }}
+      >
+        {children}
+      </button>
+    </Tip>
+  );
+}
+
+// Tooltip info kecil yang muncul saat hover tombol aksi. Native title kadang
+// lambat/tak konsisten, jadi kita render sendiri agar tampil rapi di atas tombol.
+function Tip({ label, children }: { label: string; children: React.ReactNode }) {
+  const [show, setShow] = useState(false);
+  return (
+    <div
+      className="relative flex flex-1"
+      onPointerEnter={() => setShow(true)}
+      onPointerLeave={() => setShow(false)}
     >
       {children}
-      <span>{label}</span>
-    </button>
+      {show && (
+        <span
+          className="pointer-events-none absolute -top-1 left-1/2 z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md px-2 py-1 text-[10.5px] font-semibold text-white shadow-lg"
+          style={{ backgroundColor: "rgba(0,0,0,0.9)", border: `1px solid ${BORDER}` }}
+        >
+          {label}
+        </span>
+      )}
+    </div>
   );
 }
