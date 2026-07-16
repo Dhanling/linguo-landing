@@ -271,6 +271,10 @@ export default function VideoLearnPlayer({
   // handle tak "melompat balik" oleh loop interpolasi waktu saat jari masih menahan.
   const [scrubbing, setScrubbing] = useState(false);
   const [scrubVal, setScrubVal] = useState(0);
+  // Hover di slider → bekukan posisi lingkaran penanda (tak ikut jalan playback)
+  // supaya mudah "dibidik" & di-drag, meski video terus jalan. `hoverSeek` menyimpan
+  // detik saat mulai hover; null = tidak sedang hover.
+  const [hoverSeek, setHoverSeek] = useState<number | null>(null);
   // [watch-hide-sentence-tr-v1] Sembunyikan baris terjemahan kalimat (emas) di bawah
   // subtitle → fokus ke arti per-kata di mode Analisa. Default tampil.
   const [showSentenceTr, setShowSentenceTr] = useState(true);
@@ -1523,20 +1527,36 @@ export default function VideoLearnPlayer({
                     }`}
                   >
                     <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/90">
-                      {fmtClock(scrubbing ? scrubVal : time)}
+                      {fmtClock(scrubbing ? scrubVal : hoverSeek ?? time)}
                     </span>
                     <input
                       type="range"
                       min={0}
                       max={duration || 0}
                       step="any"
-                      value={duration ? Math.min(scrubbing ? scrubVal : time, duration) : 0}
+                      value={
+                        duration
+                          ? Math.min(scrubbing ? scrubVal : hoverSeek ?? time, duration)
+                          : 0
+                      }
                       disabled={!duration}
+                      // Bekukan penanda saat kursor masuk (pakai waktu paling akurat dari
+                      // player), lepas saat keluar — kecuali sedang menyeret.
+                      onPointerEnter={() =>
+                        setHoverSeek(playerRef.current?.getCurrentTime?.() ?? time)
+                      }
+                      onPointerLeave={() => {
+                        if (!scrubbing) setHoverSeek(null);
+                      }}
                       onPointerDown={() => setScrubbing(true)}
                       onChange={(e) => setScrubVal(parseFloat(e.target.value))}
                       onPointerUp={(e) => {
-                        seekTo(parseFloat((e.target as HTMLInputElement).value));
+                        const v = parseFloat((e.target as HTMLInputElement).value);
+                        seekTo(v);
                         setScrubbing(false);
+                        // Masih hover setelah lepas seret → bekukan di posisi baru
+                        // supaya penanda tak lompat balik ke waktu play lama.
+                        setHoverSeek(v);
                       }}
                       onKeyUp={(e) => seekTo(parseFloat((e.target as HTMLInputElement).value))}
                       // Slider netral (tanpa warna aksen) — fill putih & penanda posisi
@@ -1546,7 +1566,10 @@ export default function VideoLearnPlayer({
                         {
                           "--pct": `${
                             duration
-                              ? Math.min(((scrubbing ? scrubVal : time) / duration) * 100, 100)
+                              ? Math.min(
+                                  ((scrubbing ? scrubVal : hoverSeek ?? time) / duration) * 100,
+                                  100
+                                )
                               : 0
                           }%`,
                         } as React.CSSProperties
