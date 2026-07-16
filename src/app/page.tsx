@@ -1032,7 +1032,7 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource="",initialName="",initialWa=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string;initialName?:string;initialWa?:string}) {
+function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource="",initialName="",initialEmail="",initialWa=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string;initialName?:string;initialEmail?:string;initialWa?:string}) {
   /* linguo-patch:funnel-native-v1 */
   // Detect initial step dari props biar gak flash step 1 dulu pas open
   const initialStep = (() => {
@@ -1061,16 +1061,19 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       } else if (initialLang && initialProgram) {
         setSelLang(initialLang); setSelProgram(initialProgram); setStep(3);
       } else if (initialLang) {
-        setSelLang(initialLang); setStep(2);
+        // Placement flow: bahasa + level diketahui → mendarat di pilih program (step 2),
+        // level dibawa supaya pre-terpilih saat masuk step 3.
+        setSelLang(initialLang); if (initialLevel) setSelLevel(initialLevel); setStep(2);
       } else if (initialProgram) {
         setSelProgram(initialProgram); setStep(1);
       }
       // Auto-fill form fields dari prefill (placement test flow)
       if (initialName) setFormName(initialName);
+      if (initialEmail) setFormEmail(initialEmail);
       if (initialWa) setFormWa(initialWa);
     }
     if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); }
-  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialWa]);
+  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialEmail, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
@@ -1311,7 +1314,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
                 {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ setSelLevel(""); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
+                  <button key={p.id} onClick={()=>{ const preLvl=(p.id==="Kelas Private"||p.id==="Semi Private")?(initialLevel||""):""; setSelLevel(preLvl); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
@@ -1780,6 +1783,7 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [funnelLevel, setFunnelLevel] = useState("");
   const [funnelPreferredProg, setFunnelPreferredProg] = useState("");
   const [funnelPrefillName, setFunnelPrefillName] = useState("");
+  const [funnelPrefillEmail, setFunnelPrefillEmail] = useState("");
   const [funnelPrefillWa, setFunnelPrefillWa] = useState("");
   const [funnelSource, setFunnelSource] = useState("");
   useEffect(() => {
@@ -1791,16 +1795,27 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
       const from = params.get("from") || "";
       window.history.replaceState({}, "", window.location.pathname);
       if (lang) {
+        // Prefill data diri dari placement test (disimpan di localStorage saat gate)
+        try {
+          const stored = localStorage.getItem("linguo_prefill");
+          if (stored) {
+            const d = JSON.parse(stored);
+            if (d.name) setFunnelPrefillName(d.name);
+            if (d.email) setFunnelPrefillEmail(d.email);
+            if (d.whatsapp) setFunnelPrefillWa(d.whatsapp);
+          }
+        } catch {}
         setFunnelLang(lang); setFunnelLevel(level);
-        setFunnelPreferredProg("Kelas Private");
+        // Kosongkan preferredProg → funnel mendarat di pilih program (Private / Semi Private)
+        setFunnelPreferredProg("");
         setFunnelSource(from); setFunnelProg("");
         setFunnelOpen(true);
       }
     }
   }, []);
 
-  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillWa?:string})=>{
-      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillWa("");
+  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillEmail?:string;prefillWa?:string})=>{
+      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillEmail("");setFunnelPrefillWa("");
         if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_opened",{program:input});
       }
       else{
@@ -1810,6 +1825,7 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
         setFunnelPreferredProg(input.preferredProgram||"");
         setFunnelSource(input.source||"");
         setFunnelPrefillName(input.prefillName||"");
+        setFunnelPrefillEmail(input.prefillEmail||"");
         setFunnelPrefillWa(input.prefillWa||"");
       }
       setFunnelOpen(true);
@@ -1866,7 +1882,7 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
         {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialWa={funnelPrefillWa}/>
+      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialEmail={funnelPrefillEmail} initialWa={funnelPrefillWa}/>
     </>
   );
 }

@@ -44,6 +44,18 @@ function cleanWa(raw: string): string {
   return d.slice(0, 13);
 }
 
+// linguo-patch:placement-daftar-funnel-v1 — nama bahasa untuk funnel pendaftaran.
+// meta.name = Indonesia ("Italia"), tapi funnel + pricelist pakai nama Inggris
+// ("Italian") buat lookup bendera & kategori harga. Turunkan dari slug kurikulum.
+const FUNNEL_LANG_OVERRIDE: Record<string, string> = {
+  filipino: "Tagalog",
+  "portuguese-br": "Portuguese",
+  "portuguese-pt": "Portuguese",
+};
+function funnelLangName(slug: string): string {
+  return FUNNEL_LANG_OVERRIDE[slug] || (slug.charAt(0).toUpperCase() + slug.slice(1));
+}
+
 function renderRich(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((p, i) => {
@@ -424,7 +436,8 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
     try {
       const intentData = JSON.stringify({
         lang: meta.slug,
-        langFull: "Bahasa " + meta.name,
+        // langFull dipakai /auth/callback sbg query ?lang= ke funnel → WAJIB nama Inggris
+        langFull: funnelLangName(meta.slug),
         level: result.sublevel,
         source: "placement-test-" + meta.slug,
       });
@@ -435,28 +448,34 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
   // Buka wizard dengan bahasa + level pre-filled
   const openWizardPrefilled = () => {
     const w = window as any;
-    const langFull = "Bahasa " + meta.name;
+    // Funnel & pricelist pakai nama Inggris ("Italian"), bukan "Bahasa Italia".
+    const funnelLang = funnelLangName(meta.slug);
     const sourceTag = "placement-test-" + meta.slug;
     let prefillName = "";
     let prefillWa = "";
+    let prefillEmail = "";
     try {
       const stored = localStorage.getItem("linguo_prefill");
       if (stored) {
         const data = JSON.parse(stored);
         prefillName = data.name || "";
         prefillWa = data.whatsapp || "";
+        prefillEmail = data.email || "";
       }
     } catch {}
     if (typeof w.__openFunnel === "function") {
       try {
         w.__openFunnel({
-          language: langFull, level: result.sublevel,
-          preferredProgram: "Kelas Private", source: sourceTag,
-          prefillName, prefillWa,
+          language: funnelLang, level: result.sublevel,
+          source: sourceTag,
+          prefillName, prefillWa, prefillEmail,
         });
-      } catch { w.__openFunnel(langFull); }
+      } catch { w.__openFunnel(funnelLang); }
     } else {
-      window.location.href = "/?lang=" + encodeURIComponent(langFull) + "&from=" + sourceTag + "&level=" + result.sublevel;
+      // Halaman placement ≠ homepage → __openFunnel belum ada. Redirect ke homepage
+      // dgn openFunnel=1 (WAJIB, tanpa ini funnel tak kebuka) + bahasa/level. Prefill
+      // nama/email/WA diambil homepage dari localStorage linguo_prefill.
+      window.location.href = "/?openFunnel=1&lang=" + encodeURIComponent(funnelLang) + "&level=" + encodeURIComponent(result.sublevel) + "&from=" + encodeURIComponent(sourceTag);
     }
   };
 
