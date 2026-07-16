@@ -1324,6 +1324,9 @@ export default function VideoLearnPlayer({
       // sudah pernah dibuka boleh dilihat ulang (tak menghabiskan kuota).
       const key = cleanWord(word);
       if (!canLookupWord(key, langCode)) {
+        // Jeda video juga saat gate bayar muncul — biar tak terus jalan di
+        // belakang modal langganan saat siswa fokus baca penawaran.
+        playerRef.current?.pauseVideo?.();
         setSubscribeOpen(true);
         return;
       }
@@ -1715,6 +1718,8 @@ export default function VideoLearnPlayer({
                 // Gate: Analisa grammar ikut paywall belajar (cicip bersama arti kata).
                 // Mematikan mode selalu boleh; menyalakan butuh premium/cicip tersisa.
                 if (!analyze && !isWatchPremium() && !canLookupWord()) {
+                  // Jeda video juga saat gate bayar muncul (sama seperti tap kata).
+                  playerRef.current?.pauseVideo?.();
                   setSubscribeOpen(true);
                   return;
                 }

@@ -1968,12 +1968,32 @@ export const FREE_LOOKUP_LIMIT = 3;
 
 const PREMIUM_KEY = "linguo:watch:premium:v1";
 const LOOKUP_KEY = "linguo:watch:lookups:v1";
+// Flag staf (owner/admin Linguo): akses penuh Watch & Learn tanpa langganan —
+// biar tim internal bisa nonton & pakai semua fitur belajar tanpa kena gate.
+// Disetel oleh WatchAndLearn saat sesi terdeteksi (baca profiles.role), dibaca
+// lewat isWatchPremium() supaya SEMUA call site gate ikut terbuka tanpa diubah.
+const STAFF_KEY = "linguo:watch:staff:v1";
+
+/** Tandai (atau cabut) akses staf. Dipanggil setelah cek role sesi login. */
+export function setWatchStaff(on: boolean): void {
+  if (typeof window === "undefined") return;
+  try {
+    if (on) window.localStorage.setItem(STAFF_KEY, "1");
+    else window.localStorage.removeItem(STAFF_KEY);
+  } catch {
+    /* diblokir — abaikan */
+  }
+}
 
 /** Akses premium Watch & Learn (buka arti/Analisa tanpa batas). Titik sambung tunggal. */
 export function isWatchPremium(): boolean {
   if (typeof window === "undefined") return false;
   try {
-    return window.localStorage.getItem(PREMIUM_KEY) === "1";
+    // Staf internal (owner/admin) dianggap premium — pengecualian gate.
+    return (
+      window.localStorage.getItem(STAFF_KEY) === "1" ||
+      window.localStorage.getItem(PREMIUM_KEY) === "1"
+    );
   } catch {
     return false;
   }

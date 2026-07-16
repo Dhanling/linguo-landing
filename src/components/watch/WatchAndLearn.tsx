@@ -5,7 +5,7 @@
 // `yt-search`), player embed dengan caption, dan rail "Lanjut Menonton" dari
 // riwayat lokal. Tema gelap biar konten video kelihatan nendang, senada app.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -65,6 +65,7 @@ import {
   getBaseLangDef,
   getStoredBaseLang,
   storeBaseLang,
+  setWatchStaff,
 } from "@/lib/immersionLearn";
 import { supabase } from "@/lib/supabase-client";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
@@ -122,6 +123,22 @@ type LevelFilter = (typeof LEVEL_FILTERS)[number];
 // permanen (module-level, lintas ganti bahasa/kategori). true = portrait (Shorts).
 const orientCache = new Map<string, boolean>();
 const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
+
+// Tombol top-bar (Kosakata / bahasa) tampil ikon saja; label "keluar" ke kiri saat
+// hover — sama seperti tombol header di player. Wadah grid 0fr→1fr supaya lebar
+// beranimasi mulus (bukan max-w yang loncat), teks geser + fade. Dipakai bareng
+// class `group` di tombol induk. Ref: VideoLearnPlayer REVEAL_LABEL.
+function RevealLabel({ children }: { children: ReactNode }) {
+  return (
+    <span className="grid grid-cols-[0fr] overflow-hidden transition-[grid-template-columns] duration-300 ease-out group-hover:grid-cols-[1fr]">
+      <span className="min-w-0 overflow-hidden">
+        <span className="block translate-x-1 whitespace-nowrap pl-2 leading-none opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100">
+          {children}
+        </span>
+      </span>
+    </span>
+  );
+}
 
 // Tab "Siap": video yang transkripnya sudah tersimpan → buka = instan, tanpa
 // biaya AI. Bukan kategori YouTube, jadi ditangani khusus (baca dari cache).
@@ -358,20 +375,44 @@ export default function WatchAndLearn() {
 
   // Gate login: cek sesi di mount; tamu langsung dialihkan ke /akun (layar login).
   // onAuthStateChange menjaga kalau sesi berakhir saat halaman terbuka.
+  //
+  // Pengecualian staf: kalau user login adalah owner/admin Linguo (profiles.role),
+  // buka akses penuh (setWatchStaff) supaya tim internal bebas gate langganan —
+  // isWatchPremium() ikut true di seluruh player tanpa mengubah call site gate.
   useEffect(() => {
     let alive = true;
-    const gate = (hasSession: boolean) => {
+    const syncStaff = async (userId: string | undefined) => {
+      if (!userId) return void setWatchStaff(false);
+      try {
+        const { data } = await supabase
+          .from("profiles")
+          .select("role")
+          .eq("id", userId)
+          .maybeSingle();
+        if (!alive) return;
+        setWatchStaff(data?.role === "owner" || data?.role === "admin");
+      } catch {
+        if (alive) setWatchStaff(false);
+      }
+    };
+    const gate = (session: { user?: { id?: string } } | null) => {
       if (!alive) return;
+      const hasSession = !!session;
       setLoggedIn(hasSession);
       // Tamu → layar login /akun, bawa ?next=/watch supaya balik ke sini setelah login.
-      if (!hasSession) window.location.replace("/akun?next=%2Fwatch");
+      if (!hasSession) {
+        setWatchStaff(false);
+        window.location.replace("/akun?next=%2Fwatch");
+        return;
+      }
+      syncStaff(session?.user?.id);
     };
     supabase.auth
       .getSession()
-      .then(({ data }) => gate(!!data.session))
-      .catch(() => gate(false));
+      .then(({ data }) => gate(data.session))
+      .catch(() => gate(null));
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => gate(!!session)
+      (_event, session) => gate(session)
     );
     return () => {
       alive = false;
@@ -700,14 +741,16 @@ export default function WatchAndLearn() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setDeckOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              title="Kosakata"
+              aria-label="Kosakata"
+              className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
             >
-              <Layers className="h-4 w-4" color={TEAL} />
-              <span>Kosakata</span>
+              <Layers className="h-4 w-4 shrink-0" color={TEAL} />
+              <RevealLabel>Kosakata</RevealLabel>
               {vocabCount > 0 && (
                 <span
-                  className="rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
+                  className="ml-1.5 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
                   style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
                 >
                   {vocabCount}
@@ -716,20 +759,23 @@ export default function WatchAndLearn() {
             </button>
             <button
               onClick={() => setBasePickerOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               title="Bahasa terjemahan di bawah subtitle"
+              aria-label={getBaseLangDef(baseLang).label}
             >
-              <Languages className="h-4 w-4" color={GOLD} />
-              <span className="hidden sm:inline">{getBaseLangDef(baseLang).label}</span>
+              <Languages className="h-4 w-4 shrink-0" color={GOLD} />
+              <RevealLabel>{getBaseLangDef(baseLang).label}</RevealLabel>
             </button>
             <button
               onClick={() => setLangPickerOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              title={lang.name}
+              aria-label={lang.name}
+              className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
               style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
             >
               <RectFlag code={lang.country} h={16} />
-              <span>{lang.name}</span>
+              <RevealLabel>{lang.name}</RevealLabel>
             </button>
           </div>
         </div>
@@ -1115,7 +1161,7 @@ export default function WatchAndLearn() {
           {state === "loading"
             ? Array.from({ length: GRID_COLS }).map((_, i) => <CardSkeleton key={i} />)
             : shownVideos.slice(0, visible).map((v) => (
-                <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="text-left">
+                <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="group text-left">
                   <Thumb
                     videoId={v.videoId}
                     thumbnail={v.thumbnail}
@@ -1395,7 +1441,7 @@ function Thumb({
         src={thumbnail ?? youtubeThumb(videoId)}
         alt=""
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
       />
       {/* Badge level CEFR (estimasi dari transkrip) — hanya video tab "Siap". */}
       {level && lvlStyle && (
@@ -1412,7 +1458,7 @@ function Thumb({
           {durLabel}
         </span>
       )}
-      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 hover:opacity-100">
+      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90">
           <Play className="h-4 w-4" fill="#10201f" color="#10201f" />
         </span>
