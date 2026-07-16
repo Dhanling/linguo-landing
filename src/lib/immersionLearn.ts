@@ -355,7 +355,13 @@ function saveTranscriptCache(
       body: JSON.stringify({
         videoId,
         lang: langCode,
-        cues,
+        // Anchor karaoke `_anc` cuma untuk runtime (karaokeFrac) — jangan ikut
+        // tersimpan; ia dibangun ulang klien tiap load lewat mergeCueFragments.
+        cues: cues.map((c) => {
+          const copy = { ...(c as TimedCue) };
+          delete copy._anc;
+          return copy;
+        }),
         source,
         title: meta?.title,
         channel: meta?.channel,
@@ -639,6 +645,56 @@ function interpTime(cue: LearnCue, chars: number, total: number): number {
 }
 
 /**
+ * [watch-karaoke-anchor-v2] Fraksi karakter target (0..1) yang sudah terucap pada
+ * detik `time` — KEBALIKAN interpTime. Cue gabungan beberapa window caption membawa
+ * anchor batas window ASLI video → sapuan karaoke mengikuti timing sebenarnya
+ * (menempel ke audio, seirama caption bawaan video), bukan rata linear per karakter
+ * yang melenceng saat tempo ucapan tak rata (lagu, jeda napas panjang).
+ * Cue tanpa anchor tetap linear seperti sebelumnya.
+ */
+export function karaokeFrac(cue: LearnCue, time: number): number {
+  const { start, end } = cue;
+  const anc = (cue as TimedCue)._anc;
+  if (!anc?.length) {
+    const dur = Math.max(0.4, end - start);
+    return Math.min(1, Math.max(0, (time - start) / dur));
+  }
+  const total = cue.target.length || 1;
+  // Titik kontrol (detik → fraksi-karakter), dijaga monotonic naik dua arah.
+  const pts: Array<[number, number]> = [[start, 0]];
+  for (const [c, t] of anc) {
+    const last = pts[pts.length - 1];
+    pts.push([Math.max(last[0], Math.min(end, t)), Math.max(last[1], Math.min(1, c / total))]);
+  }
+  pts.push([Math.max(pts[pts.length - 1][0], end), 1]);
+  if (time <= start) return 0;
+  for (let i = 1; i < pts.length; i++) {
+    const [t0, f0] = pts[i - 1];
+    const [t1, f1] = pts[i];
+    if (time <= t1) return t1 <= t0 ? f1 : f0 + (f1 - f0) * ((time - t0) / (t1 - t0));
+  }
+  return 1;
+}
+
+/**
+ * Turunkan anchor parent yang jatuh DI DALAM potongan anak (rentang karakter
+ * aStart..aEnd pada ruang acc/total pemanggil) — offset di-rebase ke anak, hanya
+ * anchor yang waktunya juga di dalam window anak. Biar potongan yang MASIH
+ * menyeberang beberapa window caption asli tetap membawa timing sebenarnya
+ * untuk sapuan karaoke (karaokeFrac), bukan cuma batas potongannya.
+ */
+function inheritAnc(parent: LearnCue, child: LearnCue, aStart: number, aEnd: number): LearnCue {
+  const anc = (parent as TimedCue)._anc;
+  if (anc?.length) {
+    const out = anc
+      .filter(([c, t]) => c > aStart && c < aEnd && t > child.start && t < child.end)
+      .map(([c, t]) => [c - aStart, t] as [number, number]);
+    if (out.length) (child as TimedCue)._anc = out;
+  }
+  return child;
+}
+
+/**
  * Pecah satu cue jadi beberapa cue SATU-KALIMAT — target "1 baris = 1 kalimat".
  *
  * Masalah: target hasil auto-caption / ASR (mis. Arab dialek, Jepang) sering datang
@@ -689,16 +745,22 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return tgt.map((tg, i) => {
+    const aStart = acc;
     const start = interpTime(cue, acc, total);
     acc += tg.length;
     const end = i === tgt.length - 1 ? cue.end : interpTime(cue, acc, total);
-    return {
-      start,
-      end: Math.max(end, start + 0.3),
-      target: tg,
-      base: bas ? bas[i] ?? "" : "",
-      ...(tr ? { translit: tr[i] ?? "" } : {}),
-    };
+    return inheritAnc(
+      cue,
+      {
+        start,
+        end: Math.max(end, start + 0.3),
+        target: tg,
+        base: bas ? bas[i] ?? "" : "",
+        ...(tr ? { translit: tr[i] ?? "" } : {}),
+      },
+      aStart,
+      acc
+    );
   });
 }
 
@@ -796,16 +858,22 @@ function spreadOverGroups(
   const total = weights.reduce((n, w) => n + w, 0) || 1;
   let acc = 0;
   return targetGroups.map((tg, g) => {
+    const aStart = acc;
     const start = interpTime(cue, acc, total);
     acc += weights[g];
     const end = g === targetGroups.length - 1 ? cue.end : interpTime(cue, acc, total);
-    return {
-      start,
-      end: Math.max(end, start + 0.3),
-      target: tg,
-      base: baseGroups ? baseGroups[g] ?? "" : "",
-      ...(translitGroups ? { translit: translitGroups[g] ?? "" } : {}),
-    };
+    return inheritAnc(
+      cue,
+      {
+        start,
+        end: Math.max(end, start + 0.3),
+        target: tg,
+        base: baseGroups ? baseGroups[g] ?? "" : "",
+        ...(translitGroups ? { translit: translitGroups[g] ?? "" } : {}),
+      },
+      aStart,
+      acc
+    );
   });
 }
 
@@ -967,16 +1035,22 @@ function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return basePieces.map((b, i) => {
+    const aStart = acc;
     const start = interpTime(cue, acc, total);
     acc += tgt[i].length;
     const end = i === n - 1 ? cue.end : interpTime(cue, acc, total);
-    return {
-      start,
-      end: Math.max(end, start + 0.3),
-      target: tgt[i] ?? "",
-      base: b,
-      ...(tr ? { translit: tr[i] ?? "" } : {}),
-    };
+    return inheritAnc(
+      cue,
+      {
+        start,
+        end: Math.max(end, start + 0.3),
+        target: tgt[i] ?? "",
+        base: b,
+        ...(tr ? { translit: tr[i] ?? "" } : {}),
+      },
+      aStart,
+      acc
+    );
   });
 }
 
@@ -1005,16 +1079,22 @@ function splitCueByWords(cue: LearnCue): LearnCue[] {
   const total = targets.reduce((n, s) => n + s.length, 0) || 1;
   let acc = 0;
   return targets.map((tg, i) => {
+    const aStart = acc;
     const start = interpTime(cue, acc, total);
     acc += tg.length;
     const end = i === targets.length - 1 ? cue.end : interpTime(cue, acc, total);
-    return {
-      start,
-      end: Math.max(end, start + 0.3),
-      target: tg,
-      base: bases ? bases[i] : "",
-      ...(translits ? { translit: translits[i] } : {}),
-    };
+    return inheritAnc(
+      cue,
+      {
+        start,
+        end: Math.max(end, start + 0.3),
+        target: tg,
+        base: bases ? bases[i] : "",
+        ...(translits ? { translit: translits[i] } : {}),
+      },
+      aStart,
+      acc
+    );
   });
 }
 
@@ -1082,10 +1162,18 @@ function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
     .flatMap(splitCueBySentence)
     .flatMap(splitLongCue)
     .flatMap(splitCueByWords)
-    // Buang anchor internal (dipakai interpTime) supaya tak ikut tersimpan ke cache.
-    .map(({ start, end, target, base, translit }) =>
-      translit ? { start, end, target, base, translit } : { start, end, target, base }
-    );
+    // Rapikan field per cue. Anchor `_anc` IKUT dipertahankan — dipakai karaokeFrac
+    // di player biar sapuan menempel ke timing window caption asli; ia dibuang saat
+    // tulis cache (saveTranscriptCache) supaya format simpanan tak berubah.
+    .map((c) => {
+      const { start, end, target, base, translit } = c;
+      const out: LearnCue = translit
+        ? { start, end, target, base, translit }
+        : { start, end, target, base };
+      const anc = (c as TimedCue)._anc;
+      if (anc?.length) (out as TimedCue)._anc = anc;
+      return out;
+    });
 }
 
 /**

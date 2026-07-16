@@ -52,6 +52,7 @@ import {
   isFreshBreakdown,
   isNonLatin,
   isRtl,
+  karaokeFrac,
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
@@ -3025,8 +3026,10 @@ function karaokeTokens(
   // "kecepeten" (selesai sebelum kalimat habis diucap). Sekarang sapuan tak pernah
   // rampung sebelum barisnya hilang. Hening panjang bukan lagi masalah di sini: jeda
   // ANTAR-cue kini disembunyikan (lihat visibleCue), jadi window yang tersisa ≈ ucapan.
-  const dur = Math.max(0.4, cue.end - cue.start);
-  const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
+  // [watch-karaoke-anchor-v2] Cue gabungan beberapa window caption bawa anchor batas
+  // window ASLI → karaokeFrac menyandarkan sapuan ke timing sebenarnya video (seirama
+  // audio & caption bawaan), bukan rata linear yang melenceng saat tempo tak rata (lagu).
+  const frac = karaokeFrac(cue, time);
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
   return toks.map((t) => {
@@ -3235,8 +3238,9 @@ function KaraokeTranslit({
     () => karaokeTokens(cue, time, langCode).filter((t) => t.isWord),
     [cue, time, langCode]
   );
-  const dur = Math.max(0.4, cue.end - cue.start);
-  const frac = Math.min(1, Math.max(0, (time - cue.start) / dur));
+  // [watch-karaoke-anchor-v2] Ikuti anchor window caption asli (sama dgn karaokeTokens)
+  // biar sapuan translit tetap seirama audio pada cue gabungan beberapa window.
+  const frac = karaokeFrac(cue, time);
   const charToks = useMemo(() => translitSweepTokens(translit, frac), [translit, frac]);
   if (!translit) return null;
 
