@@ -88,6 +88,18 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
     setError(null);
     const trimmed = email.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+      // Salah kolom yang sering kejadian: kode promo diketik di kolom email
+      // (toggle promo persis di atasnya). Pindahkan otomatis + kasih tahu.
+      if (/^[A-Z0-9_-]{3,24}$/i.test(trimmed) && !trimmed.includes("@")) {
+        setPromoOpen(true);
+        setPromo(trimmed.toUpperCase());
+        setEmail("");
+        applyPromo(planId, trimmed);
+        setError(
+          `"${trimmed.toUpperCase()}" kelihatannya kode promo — sudah dipindahkan ke kolom promo. Sekarang isi email kamu ya.`
+        );
+        return;
+      }
       setError("Masukkan email yang valid untuk kirim invoice & aktivasi.");
       return;
     }
@@ -230,6 +242,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
                     }}
                     onKeyDown={(e) => e.key === "Enter" && applyPromo()}
                     placeholder="Kode promo / afiliator"
+                    autoFocus
                     autoCapitalize="characters"
                     className="w-full rounded-xl bg-white/5 py-2.5 pl-9 pr-3 text-[14px] font-semibold uppercase tracking-wide text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-white/40 focus:outline-none"
                     style={{ border: `1px solid ${applied ? TEAL : BORDER}` }}
@@ -257,13 +270,24 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
           )}
         </div>
 
-        {/* Email */}
+        {/* Email — label permanen (bukan cuma placeholder) biar tetap jelas ini
+            kolom email walau sudah terisi; sering ketuker sama kolom promo. */}
         <div className="mt-3">
+          <label
+            htmlFor="wl-subscribe-email"
+            className="mb-1 block text-[12px] font-semibold"
+            style={{ color: SUB }}
+          >
+            Email (untuk invoice & aktivasi)
+          </label>
           <input
+            id="wl-subscribe-email"
             type="email"
+            autoComplete="email"
+            inputMode="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email kamu (untuk invoice & aktivasi)"
+            placeholder="nama@email.com"
             className="w-full rounded-xl bg-white/5 px-3 py-2.5 text-[14px] text-white placeholder:text-white/40 focus:outline-none"
             style={{ border: `1px solid ${BORDER}` }}
           />
