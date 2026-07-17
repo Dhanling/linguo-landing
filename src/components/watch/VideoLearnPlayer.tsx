@@ -2857,9 +2857,25 @@ function FocusLine({
                 </span>
               ))}
             </div>
-            {/* Terjemahan kalimat penuh SENGAJA tak ditampilkan di mode Analisa —
-                arti per-kata (gloss di atas tiap token) sudah memberi makna; baris
-                emas di bawah cuma bikin redundan & menuh-menuhin. */}
+            {/* Terjemahan kalimat penuh di mode Analisa IKUT tombol "Terjemahan"
+                (default tampil) — bisa disembunyikan kalau gloss per-kata dirasa
+                cukup, tapi jangan hilang total supaya tombolnya tetap berefek. */}
+            {!showTranslation ? null : cue.base ? (
+              <p
+                className="mt-2 font-bold"
+                style={{ color: GOLD, fontSize: 15 * scale }}
+                dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
+              >
+                {cue.base}
+              </p>
+            ) : baseTranslating && baseLang !== DEFAULT_BASE_LANG ? (
+              <p
+                className="mt-2 font-semibold italic opacity-70"
+                style={{ color: GOLD, fontSize: 13 * scale }}
+              >
+                Menerjemahkan…
+              </p>
+            ) : null}
           </div>
         )}
       </div>
