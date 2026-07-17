@@ -67,6 +67,7 @@ export function WordTooltip({
   sentence,
   wordIdx,
   langCode,
+  baseLang,
   videoId,
   x,
   y,
@@ -79,6 +80,9 @@ export function WordTooltip({
   sentence: string;
   wordIdx?: number;
   langCode: string;
+  /** Bahasa terjemahan pengguna ("kamu bicara bahasa apa?") — arti kata & cache
+   *  breakdown ikut bahasa ini, bukan selalu Indonesia. */
+  baseLang?: string;
   videoId?: string;
   x: number;
   y: number;
@@ -212,7 +216,7 @@ export function WordTooltip({
     // Jalur cepat: arti kata ini sudah ada di cache analisa kalimat (di-prewarm
     // begitu transkrip siap) → tampil INSTAN tanpa memanggil word-info. Fallback
     // ke fetch di bawah hanya kalau cache belum ada / kata fungsi (auto-expand).
-    const cached = getCachedWordMeaning({ word, sentence, langCode });
+    const cached = getCachedWordMeaning({ word, sentence, langCode, baseCode: baseLang });
     if (cached) {
       setMeaning({ meaning: cached.meaning, type: cached.type, base: cached.base });
       setMeaningWord(word);
@@ -234,7 +238,7 @@ export function WordTooltip({
     setErrored(false);
     setMeaning(null);
     setTranslit("");
-    getWordMeaning({ word, sentence, langCode })
+    getWordMeaning({ word, sentence, langCode, baseCode: baseLang })
       .then((m) => {
         if (cancelled) return;
         setMeaning(m);
@@ -252,7 +256,7 @@ export function WordTooltip({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [word, sentence, langCode]);
+  }, [word, sentence, langCode, baseLang]);
 
   // Arti tunggal kosong = kata fungsi tanpa makna mandiri → rambatkan ke kata
   // kanan (skip artikel via seleksi) sampai dapat arti, maksimum beberapa kata.

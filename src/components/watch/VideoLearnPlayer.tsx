@@ -1057,55 +1057,6 @@ export default function VideoLearnPlayer({
       setTxState("ready");
       setAsrRunning(false);
 
-      // ── Precompute analisa (mode Analisa instan) ──────────────────────────
-      // Peta target→indeks cue: satu kalimat bisa muncul di beberapa cue, dan
-      // breakdown = fungsi murni kalimat, jadi hasil dipakai untuk semua indeks
-      // yang cocok. Seed dulu dari breakdown yang sudah tersimpan bareng transkrip
-      // (cache lintas-pengguna) → nol loading. Sisanya di-warm di latar belakang.
-      const targetToIdx = new Map<string, number[]>();
-      ordered.forEach((c, i) => {
-        const arr = targetToIdx.get(c.target);
-        if (arr) arr.push(i);
-        else targetToIdx.set(c.target, [i]);
-      });
-      // Hanya seed dari breakdown versi terbaru; yang lawas (tanpa arti per-kata)
-      // diabaikan supaya tak ditampilkan & ikut dihitung ulang di bawah.
-      const seed: Record<number, SentenceBreakdown> = {};
-      ordered.forEach((c, i) => {
-        if (isFreshBreakdown(c.breakdown)) {
-          seed[i] = c.breakdown!;
-          // Tulis juga ke cache localStorage → tooltip (getCachedWordMeaning) bisa
-          // memunculkan arti kata INSTAN, bukan cuma mode Analisa.
-          primeBreakdownCache(c.target, langCode, c.breakdown!);
-        }
-      });
-      if (Object.keys(seed).length) setBreakdowns((prev) => ({ ...prev, ...seed }));
-      const needWarm = Array.from(
-        new Set(ordered.filter((c) => !isFreshBreakdown(c.breakdown)).map((c) => c.target))
-      );
-      if (needWarm.length) {
-        // Beri jeda kecil sebelum warm massal biar tak rebutan dgn render subtitle
-        // + transliterasi awal (paint pertama tetap mulus). isCancelled dicek lagi
-        // di dalam prewarm, jadi ganti video / unmount saat menunggu aman.
-        window.setTimeout(() => {
-          if (cancelled) return;
-          void prewarmBreakdowns({
-            videoId: video.videoId,
-            langCode,
-            sentences: needWarm,
-            isCancelled: () => cancelled,
-            onOne: (sentence, bd) => {
-              const idxs = targetToIdx.get(sentence);
-              if (!idxs) return;
-              setBreakdowns((prev) => {
-                const next = { ...prev };
-                for (const i of idxs) if (typeof next[i] !== "object") next[i] = bd;
-                return next;
-              });
-            },
-          });
-        }, 1200);
-      }
       if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
         setTranslitLoading(true);
         transliterateLines(ordered.map((c) => c.target), langCode)
@@ -1202,6 +1153,77 @@ export default function VideoLearnPlayer({
       cancelled = true;
     };
     // idBaseRef/cuesRef sengaja bukan dependency (ref); cuesReadyKey mewakili cue.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cuesReadyKey, baseLang]);
+
+  // ── Precompute analisa (mode Analisa instan) — IKUT bahasa terjemahan ─────────
+  // Peta target→indeks cue: satu kalimat bisa muncul di beberapa cue, dan breakdown
+  // = fungsi murni kalimat, jadi hasil dipakai untuk semua indeks yang cocok.
+  // Di-key juga oleh baseLang: ganti bahasa terjemahan → arti per-kata dihitung
+  // ulang dalam bahasa itu (dulu selalu Indonesia walau pengguna pilih Inggris).
+  useEffect(() => {
+    if (!cuesReadyKey) return;
+    let cancelled = false;
+    setBreakdowns({});
+    const ordered = cuesRef.current;
+    const targetToIdx = new Map<string, number[]>();
+    ordered.forEach((c, i) => {
+      const arr = targetToIdx.get(c.target);
+      if (arr) arr.push(i);
+      else targetToIdx.set(c.target, [i]);
+    });
+    // Breakdown bawaan transkrip (cache lintas-pengguna di server) selalu Indonesia
+    // → hanya di-seed saat bahasa terjemahan Indonesia; bahasa lain di-warm ulang.
+    // Hanya seed versi terbaru; yang lawas (tanpa arti per-kata) ikut dihitung ulang.
+    const canSeed = baseLang === DEFAULT_BASE_LANG;
+    if (canSeed) {
+      const seed: Record<number, SentenceBreakdown> = {};
+      ordered.forEach((c, i) => {
+        if (isFreshBreakdown(c.breakdown)) {
+          seed[i] = c.breakdown!;
+          // Tulis juga ke cache localStorage → tooltip (getCachedWordMeaning) bisa
+          // memunculkan arti kata INSTAN, bukan cuma mode Analisa.
+          primeBreakdownCache(c.target, langCode, c.breakdown!);
+        }
+      });
+      if (Object.keys(seed).length) setBreakdowns((prev) => ({ ...prev, ...seed }));
+    }
+    const needWarm = Array.from(
+      new Set(
+        ordered
+          .filter((c) => !(canSeed && isFreshBreakdown(c.breakdown)))
+          .map((c) => c.target)
+      )
+    );
+    if (!needWarm.length) return;
+    // Beri jeda kecil sebelum warm massal biar tak rebutan dgn render subtitle
+    // + transliterasi awal (paint pertama tetap mulus). isCancelled dicek lagi
+    // di dalam prewarm, jadi ganti video/bahasa/unmount saat menunggu aman.
+    const warmTimer = window.setTimeout(() => {
+      if (cancelled) return;
+      void prewarmBreakdowns({
+        videoId: video.videoId,
+        langCode,
+        baseCode: baseLang,
+        sentences: needWarm,
+        isCancelled: () => cancelled,
+        onOne: (sentence, bd) => {
+          const idxs = targetToIdx.get(sentence);
+          if (!idxs) return;
+          setBreakdowns((prev) => {
+            const next = { ...prev };
+            for (const i of idxs) if (typeof next[i] !== "object") next[i] = bd;
+            return next;
+          });
+        },
+      });
+    }, 1200);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(warmTimer);
+    };
+    // cuesRef sengaja bukan dependency (ref); cuesReadyKey sudah mewakili cue siap
+    // (termasuk videoId + langCode).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cuesReadyKey, baseLang]);
 
@@ -1573,11 +1595,11 @@ export default function VideoLearnPlayer({
         if (prev[idx] !== undefined) return prev;
         return { ...prev, [idx]: "loading" };
       });
-      getSentenceBreakdown({ sentence: cue.target, langCode })
+      getSentenceBreakdown({ sentence: cue.target, langCode, baseCode: baseLang })
         .then((b) => setBreakdowns((prev) => ({ ...prev, [idx]: b })))
         .catch(() => setBreakdowns((prev) => ({ ...prev, [idx]: "error" })));
     },
-    [cues, langCode]
+    [cues, langCode, baseLang]
   );
 
   // Saat mode Analisa aktif, ambil breakdown untuk cue yang sedang tayang.
@@ -2624,8 +2646,9 @@ export default function VideoLearnPlayer({
       )}
 
       {/* [watch-study-history-v1] Tombol AI melayang (menggantikan FAB CS global
-          yang disembunyikan) — buka panel "riwayat kata" yang tadi dipilih; klik
-          salah satu untuk membuka ulang drawer Analisa-nya. Sembunyi saat
+          yang disembunyikan) — klik LANGSUNG membuka drawer Analisa kata terakhir
+          yang dipelajari (tanpa singgah daftar riwayat). Panel riwayat hanya tampil
+          saat belum ada kata yang pernah dibuka (berisi petunjuk). Sembunyi saat
           miniplayer (pojok itu dipakai kotak video) atau saat drawer sudah buka. */}
       {!mini && !wordStudyOpen && (
         <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end sm:bottom-6 sm:right-6">
@@ -2668,6 +2691,7 @@ export default function VideoLearnPlayer({
                       word: h.word,
                       sentence: h.sentence,
                       langCode: h.langCode,
+                      baseCode: baseLang,
                     });
                     return (
                       <button
@@ -2692,9 +2716,16 @@ export default function VideoLearnPlayer({
             </div>
           )}
           <button
-            onClick={() => setHistoryOpen((v) => !v)}
-            aria-label={historyOpen ? "Tutup riwayat kata" : "Riwayat kata (AI)"}
-            title={historyOpen ? "Tutup riwayat" : "Riwayat kata"}
+            onClick={() => {
+              if (historyOpen) return setHistoryOpen(false);
+              // [watch-fab-last-word-v1] Langsung buka analisa kata TERAKHIR yang
+              // diklik/dipelajari. Belum ada riwayat → tampilkan panel petunjuk.
+              const last = getStudyHistory()[0];
+              if (last) openFromHistory(last);
+              else setHistoryOpen(true);
+            }}
+            aria-label={historyOpen ? "Tutup riwayat kata" : "Analisa kata terakhir (AI)"}
+            title={historyOpen ? "Tutup riwayat" : "Analisa kata terakhir"}
             className="flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-transform active:scale-95"
             style={{ backgroundColor: TEAL }}
           >
@@ -2713,6 +2744,7 @@ export default function VideoLearnPlayer({
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
           langCode={langCode}
+          baseLang={baseLang}
           videoId={video.videoId}
           x={anchor.x}
           y={anchor.y}

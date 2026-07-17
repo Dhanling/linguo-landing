@@ -1441,6 +1441,8 @@ async function callWordInfo(params: {
   sentence: string;
   mode: WordInfoMode;
   langCode: string;
+  /** Bahasa terjemahan/penjelasan (kode BASE_LANGS) — default Indonesia. */
+  baseCode?: string;
 }): Promise<string> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) throw new Error("Supabase env belum diset.");
   const res = await fetch(`${SUPABASE_URL}/functions/v1/word-info`, {
@@ -1455,7 +1457,9 @@ async function callWordInfo(params: {
       sentence: params.sentence,
       mode: params.mode,
       language: ENGLISH_NAME[params.langCode] ?? ENGLISH_NAME[params.langCode.split("-")[0]] ?? "English",
-      explanationLanguage: EXPLANATION_LANGUAGE,
+      // Ikut bahasa terjemahan yang dipilih pengguna ("kamu bicara bahasa apa?") —
+      // arti per-kata & penjelasan keluar dalam bahasa itu, bukan selalu Indonesia.
+      explanationLanguage: getBaseLangDef(params.baseCode ?? DEFAULT_BASE_LANG).name,
       nonLatin: isNonLatin(params.langCode),
     }),
   });
@@ -1478,6 +1482,8 @@ export async function getWordMeaning(params: {
   word: string;
   sentence: string;
   langCode: string;
+  /** Bahasa arti/penjelasan — default Indonesia. */
+  baseCode?: string;
 }): Promise<WordMeaning> {
   const raw = await callWordInfo({ ...params, mode: "meaning" });
   const start = raw.indexOf("{");
@@ -1500,6 +1506,8 @@ export async function getWordGrammar(params: {
   word: string;
   sentence: string;
   langCode: string;
+  /** Bahasa penjelasan — default Indonesia. */
+  baseCode?: string;
 }): Promise<string> {
   const text = await callWordInfo({ ...params, mode: "grammar" });
   return text.trim();
@@ -1703,17 +1711,27 @@ function isPunctuationOnly(word: string): boolean {
 // (lewat prewarmBreakdowns) = cache lintas-perangkat/pengguna "bareng transkrip".
 const BREAKDOWN_CACHE_PREFIX = "linguo:watch:breakdown:v1:";
 
-function breakdownCacheKey(sentence: string, langCode: string): string {
+function breakdownCacheKey(sentence: string, langCode: string, baseCode: string): string {
   let h = 5381;
-  const s = `${langCode}|${sentence}`;
+  // Cache di-key juga per bahasa terjemahan (gloss keluar dalam bahasa itu).
+  // Format lama (tanpa baseCode) dipertahankan untuk Indonesia supaya cache yang
+  // sudah ada di perangkat pengguna tetap valid.
+  const s =
+    baseCode === DEFAULT_BASE_LANG
+      ? `${langCode}|${sentence}`
+      : `${langCode}|${baseCode}|${sentence}`;
   for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
   return BREAKDOWN_CACHE_PREFIX + (h >>> 0).toString(36);
 }
 
-function readBreakdownCache(sentence: string, langCode: string): SentenceBreakdown | null {
+function readBreakdownCache(
+  sentence: string,
+  langCode: string,
+  baseCode: string
+): SentenceBreakdown | null {
   if (typeof window === "undefined") return null;
   try {
-    const v = window.localStorage.getItem(breakdownCacheKey(sentence, langCode));
+    const v = window.localStorage.getItem(breakdownCacheKey(sentence, langCode, baseCode));
     if (!v) return null;
     const bd = JSON.parse(v) as SentenceBreakdown;
     // Cache versi lawas (belum ada arti per-kata / partikel belum dikosongkan) →
@@ -1724,10 +1742,15 @@ function readBreakdownCache(sentence: string, langCode: string): SentenceBreakdo
   }
 }
 
-function writeBreakdownCache(sentence: string, langCode: string, bd: SentenceBreakdown): void {
+function writeBreakdownCache(
+  sentence: string,
+  langCode: string,
+  baseCode: string,
+  bd: SentenceBreakdown
+): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(breakdownCacheKey(sentence, langCode), JSON.stringify(bd));
+    window.localStorage.setItem(breakdownCacheKey(sentence, langCode, baseCode), JSON.stringify(bd));
   } catch {
     /* kuota penuh → abaikan */
   }
@@ -1741,17 +1764,24 @@ function writeBreakdownCache(sentence: string, langCode: string, bd: SentenceBre
  */
 export function primeBreakdownCache(sentence: string, langCode: string, bd: SentenceBreakdown): void {
   if (!isFreshBreakdown(bd)) return;
-  writeBreakdownCache(sentence.trim(), langCode, bd);
+  // Breakdown bawaan transkrip (cache server) selalu berbahasa Indonesia → tulis
+  // ke slot cache Indonesia; bahasa terjemahan lain dihitung terpisah.
+  writeBreakdownCache(sentence.trim(), langCode, DEFAULT_BASE_LANG, bd);
 }
 
 const breakdownInFlight = new Map<string, Promise<SentenceBreakdown>>();
 
-async function fetchSentenceBreakdown(sentence: string, langCode: string): Promise<SentenceBreakdown> {
+async function fetchSentenceBreakdown(
+  sentence: string,
+  langCode: string,
+  baseCode: string
+): Promise<SentenceBreakdown> {
   const raw = await callWordInfo({
     word: sentence,
     sentence,
     mode: "breakdown",
     langCode,
+    baseCode,
   });
   const start = raw.indexOf("{");
   const end = raw.lastIndexOf("}");
@@ -1799,16 +1829,19 @@ async function fetchSentenceBreakdown(sentence: string, langCode: string): Promi
 export async function getSentenceBreakdown(params: {
   sentence: string;
   langCode: string;
+  /** Bahasa arti per-kata & terjemahan — default Indonesia. */
+  baseCode?: string;
 }): Promise<SentenceBreakdown> {
   const sentence = params.sentence.trim();
-  const cached = readBreakdownCache(sentence, params.langCode);
+  const baseCode = params.baseCode ?? DEFAULT_BASE_LANG;
+  const cached = readBreakdownCache(sentence, params.langCode, baseCode);
   if (cached) return cached;
-  const key = breakdownCacheKey(sentence, params.langCode);
+  const key = breakdownCacheKey(sentence, params.langCode, baseCode);
   const inflight = breakdownInFlight.get(key);
   if (inflight) return inflight;
-  const p = fetchSentenceBreakdown(sentence, params.langCode)
+  const p = fetchSentenceBreakdown(sentence, params.langCode, baseCode)
     .then((bd) => {
-      writeBreakdownCache(sentence, params.langCode, bd);
+      writeBreakdownCache(sentence, params.langCode, baseCode, bd);
       return bd;
     })
     .finally(() => breakdownInFlight.delete(key));
@@ -1827,11 +1860,14 @@ export async function getSentenceBreakdown(params: {
 export async function prewarmBreakdowns(params: {
   videoId: string;
   langCode: string;
+  /** Bahasa arti per-kata — default Indonesia. */
+  baseCode?: string;
   sentences: string[];
   onOne?: (sentence: string, bd: SentenceBreakdown) => void;
   isCancelled?: () => boolean;
 }): Promise<void> {
   const { videoId, langCode, onOne, isCancelled } = params;
+  const baseCode = params.baseCode ?? DEFAULT_BASE_LANG;
   const uniq = Array.from(
     new Set(params.sentences.map((s) => s.trim()).filter((s) => s.length > 0))
   );
@@ -1845,13 +1881,13 @@ export async function prewarmBreakdowns(params: {
     while (cursor < uniq.length) {
       if (isCancelled?.()) return;
       const sentence = uniq[cursor++];
-      const cached = readBreakdownCache(sentence, langCode);
+      const cached = readBreakdownCache(sentence, langCode, baseCode);
       if (cached) {
         onOne?.(sentence, cached);
         continue;
       }
       try {
-        const bd = await getSentenceBreakdown({ sentence, langCode });
+        const bd = await getSentenceBreakdown({ sentence, langCode, baseCode });
         if (isCancelled?.()) return;
         onOne?.(sentence, bd);
         fresh[sentence] = bd;
@@ -1867,6 +1903,9 @@ export async function prewarmBreakdowns(params: {
 
   const freshKeys = Object.keys(fresh);
   if (isCancelled?.() || !freshKeys.length) return;
+  // Cache transkrip bersama di server SELALU Indonesia — jangan cemari dengan
+  // breakdown bahasa lain (hasil bahasa lain cukup di cache lokal perangkat).
+  if (baseCode !== DEFAULT_BASE_LANG) return;
   // Persist ke cache transkrip bersama (best-effort). Server menyisipkan breakdown
   // ke cue yang target-nya cocok.
   try {
@@ -2046,8 +2085,14 @@ export function getCachedWordMeaning(params: {
   word: string;
   sentence: string;
   langCode: string;
+  /** Bahasa arti — default Indonesia (harus sama dgn yang dipakai saat prewarm). */
+  baseCode?: string;
 }): (WordMeaning & { translit?: string }) | null {
-  const bd = readBreakdownCache(params.sentence.trim(), params.langCode);
+  const bd = readBreakdownCache(
+    params.sentence.trim(),
+    params.langCode,
+    params.baseCode ?? DEFAULT_BASE_LANG
+  );
   if (!bd) return null;
   const target = cleanWord(params.word).toLowerCase();
   if (!target) return null;
