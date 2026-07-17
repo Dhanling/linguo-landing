@@ -4,18 +4,22 @@
 // linguo-patch:ling-chat-v3  — session id + nomor tiket + polling balasan admin (live take-over)
 // linguo-patch:ling-chat-v4-redesign  — drawer UI: gradient header, avatar spin, WA strip, typing dots, composer pill, scrim blur. Semua wiring fungsional dipertahanin.
 // linguo-patch:ling-lesson-reposition-v2  — angkat launcher bubble di /akun/belajar biar ga nutupin tombol Selesaikan/Lanjut (panel drawer samping ga diutak-atik)
+// linguo-patch:ling-menu-flow-v1  — flow menu bernomor 1-6 ala WA bot: greeting tampilkan menu, chip = pilihan angka, nomor 6 langsung buka WA admin
 import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
 
 const WA_NUMBER = "6282116859493"; // admin handoff
 const GREETING =
-  "Halo! 👋 Aku Ling, asisten Linguo.id. Mau tanya soal kelas bahasa, harga, jadwal, atau cara daftar? Tanya aja di sini 😊";
-const CHIPS = [
-  "Lihat harga kelas",
-  "Jadwal kelas reguler",
-  "Daftar kelas trial",
-  "Bahasa apa aja?",
+  "Halo kak! 👋 Aku Ling, asisten Linguo.id 😊\nAda yang bisa dibantu? Bales angka atau ketik pertanyaan langsung ya:\n\n1️⃣ Info program & bahasa\n2️⃣ Info biaya\n3️⃣ Trial class\n4️⃣ Jadwal kelas reguler\n5️⃣ Cara daftar\n6️⃣ Chat langsung dengan admin";
+// Chip menu bernomor — disamakan dgn menu WA bot. Nomor 6 langsung handoff WA admin.
+const MENU_CHIPS: { n: string; label: string }[] = [
+  { n: "1", label: "1️⃣ Program & bahasa" },
+  { n: "2", label: "2️⃣ Info biaya" },
+  { n: "3", label: "3️⃣ Trial class" },
+  { n: "4", label: "4️⃣ Jadwal reguler" },
+  { n: "5", label: "5️⃣ Cara daftar" },
+  { n: "6", label: "6️⃣ Chat admin" },
 ];
 
 type Msg = { role: "user" | "assistant" | "admin"; content: string };
@@ -425,10 +429,14 @@ export default function ChatWidget() {
 
           {!loading && !humanMode && lastIsAssistant && (
             <div className="lingw-fu">
-              <div className="lingw-fulabel">{IcSpark} Pertanyaan cepat</div>
-              {CHIPS.map((c) => (
-                <button key={c} className="lingw-chip" onClick={() => send(c)}>
-                  {c}
+              <div className="lingw-fulabel">{IcSpark} Pilih menu</div>
+              {MENU_CHIPS.map((c) => (
+                <button
+                  key={c.n}
+                  className="lingw-chip"
+                  onClick={() => (c.n === "6" ? waHandoff() : send(c.n))}
+                >
+                  {c.label}
                 </button>
               ))}
             </div>
