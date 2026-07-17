@@ -2811,8 +2811,23 @@ export default function AkunPage() {
         student_confirmed_at: new Date().toISOString(),
         notes: "Menunggu konfirmasi pengajar",
       }));
-      const { error } = await supabase.from("schedules").insert(rows);
+      const { data: created, error } = await supabase.from("schedules").insert(rows).select("id, scheduled_at");
       if (error) throw error;
+      // [notif-v2] kabari pengajar ada booking baru (bell dashboard pengajar).
+      // Lewat RPC notify_user (SECURITY DEFINER) karena RLS notifications menolak
+      // insert lintas-user. Gagal kirim tidak boleh membatalkan booking-nya.
+      try {
+        await Promise.all((created || []).map((row: any) =>
+          supabase.rpc("notify_user", {
+            p_recipient_id: bookingReg.teacher_id,
+            p_user_type: "teacher",
+            p_title: "Booking baru menunggu konfirmasi",
+            p_body: `${student.name || "Siswa"} booking kelas ${bookingReg.language} pada ${new Date(row.scheduled_at).toLocaleString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" })} WIB.`,
+            p_url: null,
+            p_schedule_id: row.id,
+          })
+        ));
+      } catch (e) { console.error("[notif-v2] gagal kirim notif booking ke pengajar:", e); }
       setBookingReg(null);
       setSelectedSlots(new Set());
       alert(`✅ ${rows.length} sesi berhasil di-booking! Menunggu konfirmasi pengajar.`);
