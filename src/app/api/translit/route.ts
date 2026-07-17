@@ -31,8 +31,10 @@ const SCHEME: Record<string, string> = {
   fa: "standard Latin romanization (with vowels)",
   el: "standard Latin romanization",
   ka: "national (Latin) romanization",
-  bg: "standard Latin romanization",
-  uk: "standard Latin romanization",
+  bg: "the official Bulgarian Streamlined System romanization",
+  // "standard Latin romanization" doang bikin Gemini kadang balas IPA fonetik
+  // (T͡sɛ mɔjɑ…) — kunci ke sistem resmi + contoh biar hasilnya Latin biasa.
+  uk: 'the official Ukrainian National (2010) romanization, e.g. "Це моя бабуся" → "Tse moia babusia"',
   km: "UNGEGN romanization",
   lo: "standard Latin romanization",
   my: "MLC romanization",
@@ -59,7 +61,9 @@ export async function POST(req: NextRequest) {
     const prompt =
       `Transliterate each numbered line below into ${scheme}. ` +
       `Return ONLY a JSON array of strings with EXACTLY ${lines.length} items, in the same ` +
-      `order, where each item is the phonetic Latin reading of the corresponding line. ` +
+      `order, where each item is the Latin-script reading of the corresponding line. ` +
+      `Use ONLY ordinary Latin letters (plus the scheme's standard diacritics). ` +
+      `NEVER use IPA or phonetic-notation symbols such as ɛ ɔ ɪ ʲ ʋ ə ʃ or tie bars. ` +
       // Penting utk Arab dsb: teks bisa MSA/fushah ATAU dialek (Levantine, Mesir,
       // Teluk, Maroko…). Romanisasikan bunyi yang BENAR-BENAR diucapkan/ditulis —
       // jangan "dibakukan" ke MSA (mis. jangan tambah akhiran i'rab -u/-i/-a yang
