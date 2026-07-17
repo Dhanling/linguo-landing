@@ -139,11 +139,11 @@ export async function fetchSimulation(id: string, preview = false): Promise<{
   if (preview) {
     const { data, error } = await supabase.rpc("get_simulation_exam", { p_sim_id: id });
     if (error || !data || !data.simulation) return { simulation: null, sections: [], questions: [] };
-    const secs = (data.sections as Section[]) || [];
+    const secs = orderSectionsGrouped((data.sections as Section[]) || []);
     return {
       simulation: data.simulation as Simulation,
       sections: secs,
-      questions: orderQuestions(secs, (data.questions as Question[]) || []),
+      questions: stripPromptNumbers(orderQuestions(secs, (data.questions as Question[]) || [])),
     };
   }
 
@@ -162,7 +162,8 @@ export async function fetchSimulation(id: string, preview = false): Promise<{
       .order("sort_order", { ascending: true });
     qs = (qData as Question[]) || [];
   }
-  return { simulation: sim as Simulation, sections: (secs as Section[]) || [], questions: orderQuestions((secs as Section[]) || [], qs) };
+  const orderedSecs = orderSectionsGrouped((secs as Section[]) || []);
+  return { simulation: sim as Simulation, sections: orderedSecs, questions: stripPromptNumbers(orderQuestions(orderedSecs, qs)) };
 }
 
 // Urutkan soal mengikuti urutan SECTION dulu, baru sort_order dalam tiap section.
@@ -176,6 +177,32 @@ function orderQuestions(sections: Section[], questions: Question[]): Question[] 
     (a, b) =>
       (rank[a.section_id] ?? 0) - (rank[b.section_id] ?? 0) ||
       a.sort_order - b.sort_order,
+  );
+}
+
+// Kelompokkan section per skill — urutan grup mengikuti kemunculan pertama skill
+// pada sort_order. CMS admin MENAMPILKAN section digrup per skill (semua Reading
+// barengan), tapi sort_order mentah di DB bisa terselip antar-skill (mis. section
+// Listening dibuat belakangan dapat sort_order di tengah deretan Reading). Tanpa
+// penyamaan ini, urutan bagian yang dilihat siswa beda dari susunan di CMS
+// (bug: "Bacaan 5" muncul setelah Listening Section 1).
+function orderSectionsGrouped(sections: Section[]): Section[] {
+  const rank = new Map<Skill, number>();
+  sections.forEach((s) => { if (!rank.has(s.skill)) rank.set(s.skill, rank.size); });
+  return sections
+    .map((s, i) => ({ s, i }))
+    .sort((a, b) => (rank.get(a.s.skill)! - rank.get(b.s.skill)!) || a.i - b.i)
+    .map((x) => x.s);
+}
+
+// Buang nomor bawaan di awal prompt ("3. What does ...") — soal hasil impor lama
+// masih menyimpan nomor di teksnya, padahal UI sudah menomori sendiri → tampil dobel.
+const LEADING_NUMBER_RE = /^\s*\d{1,3}[.)]\s+/;
+function stripPromptNumbers(questions: Question[]): Question[] {
+  return questions.map((q) =>
+    q.prompt && LEADING_NUMBER_RE.test(q.prompt)
+      ? { ...q, prompt: q.prompt.replace(LEADING_NUMBER_RE, "") }
+      : q,
   );
 }
 
