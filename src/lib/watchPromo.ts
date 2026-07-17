@@ -1,6 +1,6 @@
 // Sumber tunggal kode langganan Watch & Learn. SATU kolom kode menerima DUA jenis:
 //   1) Promo statis (PROMO_CODES di bawah, mis. HEMAT10 = 10%)
-//   2) Kode afiliator (referral_code di tabel `affiliates`) → diskon tetap 5% +
+//   2) Kode afiliator (referral_code di tabel `affiliates`) → diskon tetap 10% +
 //      atribusi ke afiliatornya.
 // Dipakai bersama oleh:
 //   - /api/validate-wl-promo   → feedback instan di modal (preview diskon)
@@ -27,11 +27,12 @@ export const PROMO_CODES: Record<string, WatchPromo> = {
     code: "HEMAT10",
     discountPct: 10,
     enabled: true,
+    label: "Diskon 10%",
   },
 };
 
 // Diskon untuk kode afiliator (referral_code valid di tabel affiliates).
-export const AFFILIATE_DISCOUNT_PCT = 5;
+export const AFFILIATE_DISCOUNT_PCT = 10;
 
 export type CodeKind = "promo" | "affiliate";
 

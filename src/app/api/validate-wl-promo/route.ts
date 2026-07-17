@@ -1,7 +1,7 @@
 // =============================================================================
 // /api/validate-wl-promo
 // Validasi kode langganan Watch & Learn untuk preview instan di modal. Satu kolom
-// menerima promo statis (mis. HEMAT10) ATAU kode afiliator (→ 5%). Sumber tunggal
+// menerima promo statis (mis. HEMAT10) ATAU kode afiliator (→ 10%). Sumber tunggal
 // = watchPromo.resolveWatchCode (sama dgn checkout), jadi diskon yang ditampilkan
 // = diskon yang ditagih. Read-only.
 // =============================================================================
