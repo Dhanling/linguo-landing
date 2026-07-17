@@ -766,6 +766,12 @@ export default function VideoLearnPlayer({
           rel: 0,
           cc_load_policy: 0,
           playsinline: 1,
+          // Video ber-"auto-dub": YouTube memilih audio track default sesuai
+          // bahasa player (hl), yang kalau tak diset ikut locale browser dan
+          // sering jatuh ke dub Inggris — video Korea keluar suara Inggris.
+          // Set hl = bahasa target belajar (= bahasa asli video) supaya player
+          // memilih audio track ORIGINAL, bukan dub.
+          hl: langCode,
           // Sembunyikan SEMUA kontrol bawaan YouTube (progress bar, tombol share/
           // watch-later/logo, setting/CC/volume, judul). Chrome YT menutupi sudut
           // yang kita pakai untuk header sendiri (judul kiri-atas + language selector
