@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { useParams, useSearchParams, useRouter } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
@@ -1059,7 +1059,6 @@ function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
 }
 
 function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean; confirmExit?: boolean }) {
-  const router = useRouter();
   // Konfirmasi sebelum keluar saat tes sedang berjalan (cegah keluar tak sengaja
   // yang bikin kehilangan progres/waktu). Hanya aktif saat confirmExit=true.
   const [askExit, setAskExit] = useState(false);
@@ -1070,6 +1069,15 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
   // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
   // dulu"). Pakai katalog publik /simulasi yang bebas login.
   const backHref = preview ? "/simulasi" : "/akun?menu=simulasi";
+  // Keluar simulasi: pastikan lepas dari layar penuh dulu, lalu navigasi keras
+  // (window.location) — router.push kadang diam-diam gagal di tab baru/preview
+  // (tanpa riwayat) atau saat route cache basi. Preview dibuka admin di tab baru →
+  // kalau memang bisa ditutup (script-opened), tutup tabnya; jika tidak, ke katalog.
+  const leave = () => {
+    if (fsElement()) exitFs();
+    if (preview) { try { window.close(); } catch { /* diblokir */ } }
+    window.location.assign(backHref);
+  };
 
   // Mode gelap (disimpan di localStorage supaya konsisten antar soal & sesi).
   const [dark, setDark] = useState(false);
@@ -1157,7 +1165,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
           ) : (
             // Preview / layar non-ujian: langsung keluar (tak ada progres yg hilang) &
             // pastikan keluar dari layar penuh dulu supaya tak nyangkut fullscreen.
-            <button type="button" onClick={() => { if (fsElement()) exitFs(); router.push(backHref); }} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+            <button type="button" onClick={leave} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
               <ArrowLeft className="h-5 w-5" />
             </button>
           )}
@@ -1215,7 +1223,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
               </button>
               <button
                 type="button"
-                onClick={() => { if (fsElement()) exitFs(); router.push(backHref); }}
+                onClick={leave}
                 className="rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600"
               >
                 Ya, keluar
