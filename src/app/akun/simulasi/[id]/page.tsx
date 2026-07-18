@@ -1073,6 +1073,9 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
       {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada
           semua elemen interaktif (tombol, tab, link) di layar siswa & preview. */}
       <style>{`
+        /* Teks dasar dibuat lebih tebal (medium) supaya lebih jelas & nyaman
+           dibaca saat mengerjakan soal — heading bold/semibold tetap seperti biasa. */
+        .sim-shell { font-weight: 500; }
         .sim-shell :is(button, a, [role="tab"], [role="button"], summary):focus,
         .sim-shell :is(button, a, [role="tab"], [role="button"], summary):focus-visible {
           outline: none !important;
