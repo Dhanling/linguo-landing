@@ -104,8 +104,9 @@ KLASIFIKASI (isi di output JSON setiap balasan):
 - "escalate": true HANYA untuk kasus eskalasi di ATURAN PENTING (termasuk user pilih menu 6 / minta ngobrol admin); selain itu false.
 
 FORMAT OUTPUT (WAJIB):
-- Balas HANYA dengan satu objek JSON valid, tanpa teks lain, tanpa code fence.
+- Balas HANYA dengan satu objek JSON valid. Seluruh output = objek JSON itu SAJA: tanpa teks pembuka/penutup di luar JSON, tanpa code fence, dan JANGAN menulis reply dua kali (sekali di luar + sekali di dalam JSON).
 - Format: {"reply":"balasan untuk user (teks biasa, boleh pakai baris baru)","lead_name":"nama user atau null","lead_wa":"nomor WA user atau null","intent":"...","language":"... atau null","product":"... atau null","escalate":false}
+- reply usahakan RINGKAS ala chat (maksimal ±120 kata). Untuk daftar harga lengkap cukup sebut kategori yang relevan + link https://linguo.id/harga, jangan tulis semua tabel.
 - lead_name/lead_wa HANYA diisi kalau user benar-benar menyebutkannya sendiri. Jangan mengarang.
 
 ATURAN PENTING:
@@ -128,11 +129,32 @@ type BotOut = {
   escalate: boolean;
 };
 
-// Model diminta balas JSON; kalau parsing gagal, seluruh teks dianggap reply biasa
-// (chat ga boleh putus gara-gara format).
+// Model diminta balas JSON, tapi kadang ngeyel: nulis teks + fence campur, atau
+// JSON-nya kepotong max_tokens. Parser ini salvage semaksimal mungkin dan
+// JANGAN PERNAH bocorin JSON mentah ke user.
+function unescJson(s: string): string {
+  // buang escape yang kepotong di ekor (mis. berakhir "\" tunggal)
+  const trimmed = s.replace(/\\+$/, (m) => (m.length % 2 ? m.slice(1) : m));
+  try {
+    return JSON.parse('"' + trimmed + '"') as string;
+  } catch {
+    return trimmed
+      .replace(/\\n/g, "\n")
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\");
+  }
+}
+
+function rxField(raw: string, key: string): string | null {
+  const m = raw.match(new RegExp('"' + key + '"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"'));
+  if (!m) return null;
+  const v = unescJson(m[1]).trim();
+  return v && v.toLowerCase() !== "null" ? v : null;
+}
+
 function parseBotOut(raw: string): BotOut {
-  const fallback: BotOut = {
-    reply: raw,
+  const out: BotOut = {
+    reply: "",
     lead_name: null,
     lead_wa: null,
     intent: null,
@@ -140,30 +162,77 @@ function parseBotOut(raw: string): BotOut {
     product: null,
     escalate: false,
   };
+  const str = (v: unknown) =>
+    typeof v === "string" && v.trim() && v.trim().toLowerCase() !== "null"
+      ? v.trim()
+      : null;
+
+  // 1) jalur normal: JSON utuh (boleh kebungkus fence)
   try {
     const cleaned = raw.replace(/```json|```/g, "").trim();
     const start = cleaned.indexOf("{");
     const end = cleaned.lastIndexOf("}");
-    if (start < 0 || end <= start) return fallback;
-    const o = JSON.parse(cleaned.slice(start, end + 1)) as Record<string, unknown>;
-    const str = (v: unknown) =>
-      typeof v === "string" && v.trim() && v.trim().toLowerCase() !== "null"
-        ? v.trim()
-        : null;
-    const reply = str(o.reply);
-    if (!reply) return fallback;
-    return {
-      reply,
-      lead_name: str(o.lead_name),
-      lead_wa: str(o.lead_wa),
-      intent: str(o.intent),
-      language: str(o.language),
-      product: str(o.product),
-      escalate: o.escalate === true,
-    };
+    if (start >= 0 && end > start) {
+      const o = JSON.parse(cleaned.slice(start, end + 1)) as Record<string, unknown>;
+      const reply = str(o.reply);
+      if (reply) {
+        return {
+          reply,
+          lead_name: str(o.lead_name),
+          lead_wa: str(o.lead_wa),
+          intent: str(o.intent),
+          language: str(o.language),
+          product: str(o.product),
+          escalate: o.escalate === true,
+        };
+      }
+    }
   } catch {
-    return fallback;
+    /* lanjut ke salvage */
   }
+
+  // 2) salvage per-field via regex (JSON kepotong/campur teks)
+  out.lead_name = rxField(raw, "lead_name");
+  out.lead_wa = rxField(raw, "lead_wa");
+  out.intent = rxField(raw, "intent");
+  out.language = rxField(raw, "language");
+  out.product = rxField(raw, "product");
+  out.escalate = /"escalate"\s*:\s*true/.test(raw);
+
+  // 2a) reply lengkap (string tertutup)
+  const fullReply = rxField(raw, "reply");
+  if (fullReply) {
+    out.reply = fullReply;
+    return out;
+  }
+
+  // 2b) model nulis teks biasa dulu baru fence/JSON → pakai teks sebelum JSON
+  const preJson = raw.split(/```|\{\s*"reply"/)[0].trim();
+  if (preJson && !preJson.startsWith("{")) {
+    out.reply = preJson;
+    return out;
+  }
+
+  // 2c) reply kepotong tanpa penutup kutip → ambil sampai ujung, unescape manual
+  const partial = raw.match(/"reply"\s*:\s*"([\s\S]+)/);
+  if (partial) {
+    const cut = unescJson(partial[1].replace(/"\s*,?\s*("lead_name|"lead_wa|"intent|"language|"product|"escalate)[\s\S]*$/, "")).trim();
+    if (cut.length > 10) {
+      out.reply = cut;
+      return out;
+    }
+  }
+
+  // 3) bukan JSON sama sekali → anggap seluruh teks reply biasa
+  if (!raw.trim().startsWith("{")) {
+    out.reply = raw.trim();
+    return out;
+  }
+
+  // 4) mentok: jangan tampilkan JSON mentah
+  out.reply =
+    "Maaf kak, boleh diulang pertanyaannya? Atau klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏";
+  return out;
 }
 
 // Normalisasi nomor WA Indonesia: 0812… / +62… / 812… → 62812…
@@ -281,7 +350,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 700,
+        max_tokens: 1024,
         system: SYSTEM,
         messages: msgs,
       }),
