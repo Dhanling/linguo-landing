@@ -573,7 +573,7 @@ export default function SimulasiRunnerPage() {
       <Shell sim={sim} preview={preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
         <div className="mb-4 flex items-center gap-1.5">
           {sections.map((s, i) => (
-            <div key={s.id} className="h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : "#e2e8f0" }} />
+            <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
           ))}
         </div>
 
@@ -632,7 +632,7 @@ export default function SimulasiRunnerPage() {
       {/* progress */}
       <div className="mb-4 flex items-center gap-1.5">
         {sections.map((s, i) => (
-          <div key={s.id} className="h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : "#e2e8f0" }} />
+          <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
         ))}
       </div>
 
@@ -787,7 +787,7 @@ function IntroWizard({ sim, sections, questions, onStart }: {
               <span className={`hidden text-xs font-semibold sm:inline ${i === step ? "text-slate-900" : "text-slate-400"}`}>{label}</span>
             </div>
             {i < INTRO_STEPS.length - 1 && (
-              <div className="mx-2 h-0.5 flex-1 rounded" style={{ background: i < step ? TEAL : "#e2e8f0" }} />
+              <div className="sim-track mx-2 h-0.5 flex-1 rounded" style={{ background: i < step ? TEAL : undefined }} />
             )}
           </div>
         ))}
@@ -1099,6 +1099,9 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
         .sim-dark .hover\\:bg-slate-50:hover { background-color: #1c2735; }
         .sim-dark .hover\\:bg-slate-100:hover { background-color: #26323f; }
         .sim-dark .hover\\:bg-slate-200:hover { background-color: #313f4d; }
+        /* Bar progress (segmen non-aktif) — warna via kelas biar bisa ikut gelap. */
+        .sim-shell .sim-track { background-color: #e2e8f0; }
+        .sim-dark .sim-track { background-color: #26323f; }
       `}</style>
       {preview && (
         <div className="bg-amber-400 px-4 py-1.5 text-center text-xs font-semibold text-amber-950">
