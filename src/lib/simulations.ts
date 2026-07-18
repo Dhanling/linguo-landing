@@ -63,6 +63,30 @@ export const SKILL_LABEL: Record<Skill, string> = {
   reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking",
   structure: "Structure",
 };
+
+// Durasi total tes sesungguhnya (menit) — dipakai sebagai fallback bila admin
+// belum mengisi durasi simulasi/bagian, supaya countdown pengerjaan tetap muncul
+// dan sesuai tes asli. TOEFL ITP: Listening 35 + Structure 25 + Reading 55 = 115.
+// TOEFL iBT (format baru): ~116. IELTS: Listening 30 + Reading 60 + Writing 60
+// (+ Speaking ~15) ≈ 165.
+export const REAL_TEST_DURATION_BY_VARIANT: Partial<Record<TestVariant, number>> = {
+  itp: 115, ibt: 116, academic: 165, general: 165,
+};
+export const REAL_TEST_DURATION_BY_TYPE: Record<TestType, number> = {
+  toefl: 115, ielts: 165,
+};
+export function defaultDurationMinutes(testType: TestType, variant?: TestVariant | null): number {
+  if (variant && REAL_TEST_DURATION_BY_VARIANT[variant] != null) return REAL_TEST_DURATION_BY_VARIANT[variant]!;
+  return REAL_TEST_DURATION_BY_TYPE[testType] ?? 0;
+}
+// Durasi efektif countdown: pakai durasi simulasi bila diset, lalu jumlah durasi
+// bagian, terakhir fallback ke durasi tes asli (biar timer selalu otomatis muncul).
+export function effectiveDurationMinutes(sim: Simulation, sections: Section[]): number {
+  if (sim.duration_minutes > 0) return sim.duration_minutes;
+  const sum = sections.reduce((n, s) => n + (s.duration_minutes || 0), 0);
+  if (sum > 0) return sum;
+  return defaultDurationMinutes(sim.test_type, sim.test_variant);
+}
 export const AUTO_GRADED: QuestionType[] = [
   "multiple_choice", "true_false_ng", "fill_blank", "short_answer", "matching",
 ];

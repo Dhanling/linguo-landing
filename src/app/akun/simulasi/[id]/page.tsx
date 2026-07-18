@@ -7,7 +7,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
-  AUTO_GRADED, SKILL_LABEL, testTypeLabel,
+  AUTO_GRADED, SKILL_LABEL, testTypeLabel, effectiveDurationMinutes,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill,
 } from "@/lib/simulations";
@@ -404,10 +404,9 @@ export default function SimulasiRunnerPage() {
       setAttemptId(aid);
     }
     // Durasi total = durasi simulasi bila diset; kalau 0, jumlahkan durasi tiap
-    // bagian (mis. TOEFL ITP yang waktunya per-bagian) → timer tetap otomatis muncul.
-    const totalMin = sim.duration_minutes > 0
-      ? sim.duration_minutes
-      : sections.reduce((n, s) => n + (s.duration_minutes || 0), 0);
+    // bagian; kalau masih 0, fallback ke durasi tes asli (mis. TOEFL ITP 115 mnt)
+    // → countdown tetap otomatis muncul & sesuai tes sesungguhnya.
+    const totalMin = effectiveDurationMinutes(sim, sections);
     if (totalMin > 0) {
       const dl = Date.now() + totalMin * 60_000;
       setDeadline(dl);
@@ -780,7 +779,8 @@ function IntroWizard({ sim, sections, questions, onStart }: {
 }) {
   const [step, setStep] = useState(0);
   const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
-  const rules = GENERAL_RULES.filter((r) => !r.timed || sim.duration_minutes > 0);
+  const effDuration = useMemo(() => effectiveDurationMinutes(sim, sections), [sim, sections]);
+  const rules = GENERAL_RULES.filter((r) => !r.timed || effDuration > 0);
 
   // Kelompokkan bagian per skill → accordion biar daftar yang panjang (mis. 13
   // bagian) tidak membanjiri layar. Default skill pertama yang terbuka.
@@ -831,7 +831,7 @@ function IntroWizard({ sim, sections, questions, onStart }: {
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
             <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
             <Stat icon={BookOpen} label="Jumlah Bagian" value={`${sections.length} bagian`} />
-            <Stat icon={Clock} label="Durasi" value={sim.duration_minutes > 0 ? `${sim.duration_minutes} menit` : "Tanpa batas"} />
+            <Stat icon={Clock} label="Durasi" value={effDuration > 0 ? `${effDuration} menit` : "Tanpa batas"} />
           </div>
 
         </div>
