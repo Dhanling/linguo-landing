@@ -17,7 +17,7 @@ export default function PrivacyPage() {
 
       <main className="max-w-3xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-bold text-slate-900 mb-2">Privacy Policy</h1>
-        <p className="text-sm text-slate-400 mb-8">Terakhir diperbarui: 13 April 2026</p>
+        <p className="text-sm text-slate-400 mb-8">Terakhir diperbarui: 18 Juli 2026</p>
 
         <div className="prose prose-slate prose-sm max-w-none space-y-6 text-slate-600 leading-relaxed">
           <section>
@@ -26,6 +26,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-5 space-y-1">
               <li>Nama lengkap, alamat email, dan nomor WhatsApp saat pendaftaran</li>
               <li>Data akun Google (nama, email, foto profil) jika mendaftar via Google OAuth</li>
+              <li>Isi pesan, nama pengguna publik, dan foto profil publik Instagram jika Anda menghubungi kami melalui Direct Message akun bisnis @linguo.id (lihat bagian 4)</li>
               <li>Data interaksi dengan platform termasuk jadwal kelas, progress belajar, dan riwayat pembayaran</li>
               <li>Data analitik penggunaan website secara anonim</li>
             </ul>
@@ -47,18 +48,31 @@ export default function PrivacyPage() {
             <p>Kami tidak menjual atau menyewakan data pribadi Anda kepada pihak ketiga. Data hanya dibagikan kepada:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Pengajar Linguo.id yang relevan dengan kelas Anda</li>
-              <li>Penyedia layanan pihak ketiga yang membantu operasional kami (Supabase, Vercel, Xendit) dengan perjanjian kerahasiaan</li>
+              <li>Penyedia layanan pihak ketiga yang membantu operasional kami (Supabase, Vercel, Xendit, serta Meta Platforms untuk komunikasi Instagram) dengan perjanjian kerahasiaan</li>
               <li>Pihak berwenang jika diwajibkan oleh hukum yang berlaku</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">4. Keamanan Data</h2>
+            <h2 className="text-lg font-bold text-slate-900">4. Integrasi Instagram &amp; Platform Meta</h2>
+            <p>Kami mengoperasikan akun bisnis Instagram <strong>@linguo.id</strong> dan terhubung dengan Instagram Graph API dari Meta Platforms untuk mengelola pesan layanan pelanggan langsung dari sistem internal kami. Melalui integrasi ini:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Data yang kami terima:</strong> isi pesan (teks dan lampiran) yang Anda kirim ke @linguo.id, ID pengguna berbasis akun (IGSID), nama pengguna publik, foto profil publik, serta stempel waktu pesan.</li>
+              <li><strong>Tujuan penggunaan:</strong> semata-mata untuk membaca dan membalas pertanyaan Anda seputar harga kelas, jadwal, pendaftaran, dan dukungan layanan pelanggan lainnya.</li>
+              <li><strong>Dasar pemrosesan:</strong> kami hanya memproses data ini apabila Anda lebih dulu menghubungi kami. Kami tidak mengirim pesan yang tidak diminta, massal, maupun promosi tanpa persetujuan Anda.</li>
+              <li><strong>Pembagian:</strong> data pesan tidak dijual atau dibagikan ke pihak ketiga di luar penyedia infrastruktur yang tercantum pada bagian 3.</li>
+              <li><strong>Penyimpanan &amp; penghapusan:</strong> data pesan disimpan selama diperlukan untuk menangani percakapan Anda dan dapat dihapus atas permintaan sesuai bagian Penghapusan Data.</li>
+            </ul>
+            <p>Penggunaan data yang diperoleh dari Instagram tunduk pada <a href="https://www.facebook.com/legal/terms/plainlanguage" target="_blank" rel="noopener noreferrer" className="text-[#1A9E9E] hover:underline">Ketentuan Platform Meta</a> dan <a href="https://developers.facebook.com/policy/" target="_blank" rel="noopener noreferrer" className="text-[#1A9E9E] hover:underline">Kebijakan Developer Meta</a>. Untuk memahami bagaimana Meta mengelola data Anda, lihat <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer" className="text-[#1A9E9E] hover:underline">Kebijakan Privasi Instagram</a>.</p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-bold text-slate-900">5. Keamanan Data</h2>
             <p>Kami menggunakan langkah-langkah keamanan yang wajar untuk melindungi data Anda, termasuk enkripsi data, akses terbatas, dan penyimpanan pada server yang aman.</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">5. Hak Anda</h2>
+            <h2 className="text-lg font-bold text-slate-900">6. Hak Anda</h2>
             <p>Anda memiliki hak untuk:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Mengakses data pribadi yang kami simpan tentang Anda</li>
@@ -70,22 +84,22 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">6. Cookie & Penyimpanan Lokal</h2>
+            <h2 className="text-lg font-bold text-slate-900">7. Cookie & Penyimpanan Lokal</h2>
             <p>Kami menggunakan cookie dan penyimpanan lokal browser untuk menyimpan preferensi pengguna dan data sesi login. Anda dapat mengatur penggunaan cookie melalui pengaturan browser.</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">7. Penghapusan Data</h2>
+            <h2 className="text-lg font-bold text-slate-900">8. Penghapusan Data</h2>
             <p>Jika Anda ingin menghapus seluruh data Anda dari sistem kami, silakan kirim email ke <a href="mailto:official.linguo@gmail.com" className="text-[#1A9E9E] hover:underline">official.linguo@gmail.com</a> dengan subjek "Permintaan Penghapusan Data". Kami akan memproses dalam 14 hari kerja.</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">8. Perubahan Kebijakan</h2>
+            <h2 className="text-lg font-bold text-slate-900">9. Perubahan Kebijakan</h2>
             <p>Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Perubahan akan dipublikasikan di halaman ini dengan tanggal pembaruan terbaru.</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-slate-900">9. Kontak</h2>
+            <h2 className="text-lg font-bold text-slate-900">10. Kontak</h2>
             <p>Jika ada pertanyaan mengenai kebijakan privasi ini, hubungi kami:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Email: <a href="mailto:official.linguo@gmail.com" className="text-[#1A9E9E] hover:underline">official.linguo@gmail.com</a></li>

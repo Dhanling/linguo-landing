@@ -249,11 +249,11 @@ const JELAJAHI_LANGPAL = [
 // ═══════════════════════════════════════════════════════════════════════════
 // ONBOARDING WIZARD — Typeform-style, program-first
 // ═══════════════════════════════════════════════════════════════════════════
-const WIZARD_PROGRAMS = [
-  { key: "Kelas Private", label: "Kelas Private 1-on-1", icon: "👤", desc: "Belajar langsung dengan pengajar, jadwal fleksibel", price: "Mulai Rp45k/sesi (30 menit)", badge: "Paling Populer" },
-  { key: "Kelas Reguler", label: "Kelas Reguler", icon: "👥", desc: "Belajar bersama 8–15 siswa, lebih hemat", price: "Rp18.750/sesi (8 sesi @90 mnt / 2 bulan)" },
-  { key: "Kelas Kids", label: "Kelas Kids", icon: "🧒", desc: "Untuk anak usia 5–12 tahun", price: "Mulai Rp75k/sesi" },
-  { key: "English Test Preparation", label: "IELTS / TOEFL Prep", icon: "📝", desc: "Persiapan tes bahasa Inggris bersertifikat", price: "Rp300k/2 bulan (16 sesi @90 mnt)" },
+const WIZARD_PROGRAMS: { key: string; label: string; icon: LucideIcon; iconTint: string; desc: string; price: string; badge?: string }[] = [
+  { key: "Kelas Private", label: "Kelas Private 1-on-1", icon: User, iconTint: "bg-teal-50 text-teal-600", desc: "Belajar langsung dengan pengajar, jadwal fleksibel", price: "Mulai Rp45k/sesi (30 menit)", badge: "Paling Populer" },
+  { key: "Kelas Reguler", label: "Kelas Reguler", icon: Users, iconTint: "bg-blue-50 text-blue-600", desc: "Belajar bersama 8–15 siswa, lebih hemat", price: "Rp18.750/sesi (8 sesi @90 mnt / 2 bulan)" },
+  { key: "Kelas Kids", label: "Kelas Kids", icon: Baby, iconTint: "bg-purple-50 text-purple-600", desc: "Untuk anak usia 5–12 tahun", price: "Mulai Rp75k/sesi" },
+  { key: "English Test Preparation", label: "IELTS / TOEFL Prep", icon: ClipboardList, iconTint: "bg-amber-50 text-amber-600", desc: "Persiapan tes bahasa Inggris bersertifikat", price: "Rp300k/2 bulan (16 sesi @90 mnt)" },
 ];
 // [linguo-patch:onboarding-lang-catalog-v1] katalog bahasa Kelas Private — lengkap, dikelompokkan per region
 const PRIVATE_LANG_GROUPS: { region: string; langs: string[] }[] = [
@@ -511,15 +511,17 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 1 && (
             <div>
               <div className="text-center mb-6">
-                <div className="text-4xl mb-2">🎯</div>
+                <div className="mb-3 flex justify-center"><span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-teal-50 text-teal-600"><Target className="w-6 h-6" /></span></div>
                 <h2 className="text-xl font-extrabold text-gray-900">Program apa yang kamu inginkan?</h2>
                 <p className="text-gray-400 text-sm mt-1">Pilih satu — langsung lanjut otomatis</p>
               </div>
               <div className="space-y-3">
-                {WIZARD_PROGRAMS.map(p => (
+                {WIZARD_PROGRAMS.map(p => {
+                  const Icon = p.icon;
+                  return (
                   <button key={p.key} onClick={() => { setProgram(p.key); setLang(""); setTestType(""); setExp(""); go(2); }}
                     className={`w-full flex items-start gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${program === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white hover:bg-teal-50/30"}`}>
-                    <span className="text-2xl mt-0.5 shrink-0">{p.icon}</span>
+                    <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0 mt-0.5 ${p.iconTint}`}><Icon className="w-5 h-5" /></span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="font-bold text-sm text-gray-800">{p.label}</span>
@@ -528,9 +530,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       <div className="text-xs text-gray-400 mt-0.5">{p.desc}</div>
                       <div className="text-xs text-teal-600 font-semibold mt-1">{p.price}</div>
                     </div>
-                    {program === p.key && <span className="text-teal-500 font-bold shrink-0 mt-0.5">✓</span>}
+                    {program === p.key && <span className="text-teal-500 font-bold shrink-0 mt-0.5"><Check className="w-4 h-4" /></span>}
                   </button>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

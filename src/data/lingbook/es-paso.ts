@@ -41,11 +41,25 @@ const t = (...keys: string[]): Token[] => keys.map((k) => (glossary[k] ? { ref: 
 
 const chapter: Chapter = {
   slug: "en-el-cafe",
-  label: "Bab 3 — En el café",
+  label: "Unit 3 — En el café",
   title: "En el café",
   subtitle: "Di Kafe",
-  meta: "± 6 menit baca · 18 kata baru",
+  meta: "± 10 menit · versi ringkas (validasi language-agnostic)",
   glossary,
+
+  // Unit ringkas (validasi language-agnostic): hanya Tujuan → Dialog → Kosakata.
+  steps: [
+    { id: "tujuan", label: "Tujuan" },
+    { id: "dialog", label: "Dialog" },
+    { id: "vocab", label: "Kosakata" },
+  ],
+  objectives: [
+    { text: "Memesan minuman di kafe", section: "dialog" },
+    { text: "Artikel & gender (un/una, el/la)", section: "dialog" },
+    { text: "Verba querer (presente)", section: "vocab" },
+  ],
+  vocabRefs: ["cafeE", "leche", "teE", "quiero", "tomar", "porfavor"],
+
   blocks: [
     { type: "heading", text: "El diálogo", sub: "Percakapan" },
     {

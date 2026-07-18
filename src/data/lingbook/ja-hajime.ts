@@ -43,24 +43,36 @@ const t = (...keys: string[]): Token[] => keys.map((k) => (glossary[k] ? { ref: 
 
 const chapter: Chapter = {
   slug: "kafe-de",
-  label: "Bab 3 — カフェで",
+  label: "Unit 3 — カフェで",
   title: "カフェで",
   subtitle: "Di Kafe",
-  meta: "± 8 menit baca · 24 kata baru",
+  meta: "± 20 menit · dialog + 4 grammar points + latihan",
   glossary,
+
+  // ── Struktur unit ala Teach Yourself (phase 2) ──
+  steps: [
+    { id: "tujuan", label: "Tujuan" },
+    { id: "dialog", label: "Dialog" },
+    { id: "vocab", label: "Kosakata" },
+    { id: "grammar", label: "Grammar" },
+    { id: "latihan", label: "Latihan" },
+    { id: "test", label: "Test" },
+  ],
+  objectives: [
+    { text: "Memesan minuman di kafe", section: "dialog" },
+    { text: "Partikel を (objek) dan へ (arah)", section: "grammar" },
+    { text: "Verba sopan bentuk 〜ます", section: "grammar" },
+    { text: "Kosakata kunci: minuman & kafe", section: "vocab" },
+  ],
+  vocabRefs: ["koohii", "koucha", "kafe", "kissaten", "nomimasu", "ikimasu", "kudasai", "gochuumon"],
+
+  // Step "Dialog" — bacaan interaktif.
   blocks: [
     { type: "heading", text: "会話の前に", sub: "Sebelum Percakapan" },
     {
       type: "paragraph",
       tokens: t("kyou", "、", "yuki", "san", "to", "rina", "san", "ha", "kafe", "he", "ikimasu", "。", "futari", "ha", "koohii", "ga", "daisuki", "desu", "。"),
       translation: "Hari ini, Yuki dan Rina pergi ke kafe. Mereka berdua sangat suka kopi.",
-    },
-    {
-      type: "callout",
-      variant: "info",
-      title: "Partikel へ",
-      body: 'へ menandai arah atau tujuan gerakan — ditulis へ (he) tapi dibaca "e". Tap contohnya di bawah:',
-      example: { tokens: t("kafe", "he", "ikimasu", "。"), translation: "= pergi ke kafe" },
     },
     { type: "heading", text: "会話", sub: "Percakapan" },
     {
@@ -74,30 +86,11 @@ const chapter: Chapter = {
       ],
     },
     {
-      type: "callout",
-      variant: "warning",
-      title: "を vs は",
-      body: "Jangan tertukar: を menandai objek langsung dari verba, sedangkan は menandai topik kalimat. Keduanya sering muncul dalam satu kalimat yang sama.",
-    },
-    {
       type: "image",
       src: "/images/lingbook/ja/kissaten.jpg",
       alt: "Kedai kopi kecil di Tokyo",
       captionTokens: t("toukyou", "no", "chiisana", "kissaten"),
       captionTranslation: "Kedai kopi kecil di Tokyo.",
-    },
-    { type: "heading", text: "文法ノート", sub: "Catatan Tata Bahasa" },
-    {
-      type: "table",
-      title: "Konjugasi 飲む (minum)",
-      columns: ["Bentuk", "Jepang", "Arti"],
-      rows: [
-        [{ text: "Kamus" }, { tokens: t("nomu") }, { text: "minum" }],
-        [{ text: "Sopan (〜ます)" }, { tokens: t("nomimasu") }, { text: "minum" }],
-        [{ text: "Negatif sopan" }, { tokens: t("nomimasen") }, { text: "tidak minum" }],
-        [{ text: "Lampau sopan" }, { tokens: t("nomimashita") }, { text: "sudah minum" }],
-        [{ text: "Bentuk-te" }, { tokens: t("nonde") }, { text: "(menyambung)" }],
-      ],
     },
     {
       type: "audio",
@@ -112,11 +105,77 @@ const chapter: Chapter = {
       ],
     },
     {
-      type: "callout",
-      variant: "tips",
+      type: "culture_note",
       title: "Budaya: お冷 (ohiya)",
       body: "Di kafe dan restoran Jepang, segelas air dingin (お冷) dan handuk basah (おしぼり) disajikan gratis secara otomatis — tidak perlu dipesan.",
     },
+  ],
+
+  // Step "Grammar" — poin grammar tetap tap-to-learn.
+  grammarPoints: [
+    {
+      type: "grammar_point",
+      title: "Partikel を — penanda objek",
+      body: 'を menandai objek langsung dari verba: benda yang dikenai tindakan. Ditulis を tapi dibaca "o". Bandingkan dengan は yang menandai topik kalimat — keduanya sering muncul bersamaan.',
+      pattern: "[nomina] を [verba]",
+      example: { tokens: t("koohii", "wo", "nomimasu", "。"), translation: "(Saya) minum kopi." },
+    },
+    {
+      type: "grammar_point",
+      title: "Verba sopan 〜ます",
+      body: "Bentuk 〜ます adalah bentuk sopan standar — aman dipakai ke siapa pun. Konjugasinya sangat teratur: satu pola untuk positif, negatif, dan lampau.",
+      table: {
+        columns: ["Bentuk", "Jepang", "Arti"],
+        rows: [
+          [{ text: "Kamus" }, { tokens: t("nomu") }, { text: "minum" }],
+          [{ text: "Sopan" }, { tokens: t("nomimasu") }, { text: "minum" }],
+          [{ text: "Negatif sopan" }, { tokens: t("nomimasen") }, { text: "tidak minum" }],
+          [{ text: "Lampau sopan" }, { tokens: t("nomimashita") }, { text: "sudah minum" }],
+          [{ text: "Bentuk-te" }, { tokens: t("nonde") }, { text: "(menyambung)" }],
+        ],
+      },
+    },
+    {
+      type: "grammar_point",
+      title: "〜をください — meminta sesuatu",
+      body: "Pola paling praktis untuk memesan: sebut benda + をください. Sopan dan langsung, dipakai di kafe, toko, dan restoran.",
+      pattern: '[nomina] をください = "minta [nomina]"',
+      example: { tokens: t("koohii", "wo", "kudasai", "。"), translation: "Minta kopi, ya." },
+    },
+    {
+      type: "grammar_point",
+      title: "Partikel へ — arah gerakan",
+      body: 'へ menandai arah atau tujuan gerakan, selalu dibaca "e". Berpasangan dengan verba gerakan seperti 行きます (pergi) dan 来ます (datang).',
+      pattern: "[tempat] へ [verba gerakan]",
+      example: { tokens: t("kafe", "he", "ikimasu", "。"), translation: "Pergi ke kafe." },
+    },
+  ],
+
+  // Step "Latihan" — feedback instan per soal, skor lokal.
+  exercises: [
+    { type: "mc", q: "リナさんは何を注文しましたか。", qTrans: "Apa yang dipesan Rina?", opts: ["コーヒー", "紅茶", "水"], ans: 0, expl: "リナ berkata 「コーヒーをください」 — dia meminta kopi." },
+    { type: "mc", q: "ゆきさんは何を飲みますか。", qTrans: "Apa yang diminum Yuki?", opts: ["コーヒー", "紅茶", "水"], ans: 1, expl: "「私は紅茶を飲みます」 — Yuki minum teh." },
+    { type: "fill", q: "コーヒー ___ ください。", qTrans: "Pilih partikel yang tepat", opts: ["を", "は", "へ"], ans: 0, expl: "を menandai objek yang diminta pada pola 〜をください." },
+    { type: "fill", q: "カフェ ___ 行きます。", qTrans: "Pilih partikel yang tepat", opts: ["を", "が", "へ"], ans: 2, expl: "へ menandai arah gerakan bersama verba 行きます." },
+    { type: "match", qTrans: "Jodohkan kata dengan artinya", pairs: [["飲みます", "minum"], ["紅茶", "teh hitam"], ["ください", "tolong berikan"], ["喫茶店", "kedai kopi"]] },
+    { type: "order", qTrans: 'Susun jadi kalimat: "Saya minum teh."', words: ["私", "は", "紅茶", "を", "飲みます", "。"], expl: "私 (topik) + は + 紅茶 (objek) + を + 飲みます (predikat)." },
+    { type: "order", qTrans: 'Susun jadi kalimat: "Minta kopi, ya."', words: ["コーヒー", "を", "ください", "。"], expl: "Pola 〜をください: objek dulu, lalu を, lalu ください." },
+  ],
+
+  // Step "Test Yourself" — mini-quiz gabungan.
+  test: [
+    { q: "「いらっしゃいませ」 artinya…", opts: ["Selamat datang", "Terima kasih", "Sampai jumpa"], ans: 0, topic: "Ungkapan pelayan" },
+    { q: "Partikel penanda objek langsung adalah…", opts: ["は", "を", "へ"], ans: 1, topic: "Partikel を" },
+    { q: "Bentuk lampau sopan dari 飲む…", opts: ["飲みました", "飲みます", "飲まない"], ans: 0, topic: "Konjugasi 〜ます" },
+    { q: "カフェ ___ 行きます。", opts: ["へ", "を", "か"], ans: 0, topic: "Partikel へ" },
+    { q: '"Mohon tunggu sebentar" =', opts: ["少々お待ちください", "かしこまりました", "ご注文は何ですか"], ans: 0, topic: "Ungkapan sopan (keigo)" },
+  ],
+
+  // Roleplay akhir unit — scripted (mock). // TODO: wire ke AI (Lingcore pattern) di phase berikutnya.
+  roleplay: [
+    { ai: "いらっしゃいませ。ご注文は何ですか。", trans: "Selamat datang. Mau pesan apa?", choices: [{ t: "コーヒーをください。", tr: "Minta kopi." }, { t: "紅茶をください。", tr: "Minta teh." }] },
+    { ai: "かしこまりました。お砂糖はいりますか。", trans: "Baik. Perlu gula?", choices: [{ t: "はい、お願いします。", tr: "Ya, tolong." }, { t: "いいえ、大丈夫です。", tr: "Tidak, tidak apa-apa." }] },
+    { ai: "かしこまりました。少々お待ちください。", trans: "Baik. Mohon tunggu sebentar.", choices: null },
   ],
 };
 

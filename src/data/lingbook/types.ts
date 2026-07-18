@@ -116,6 +116,59 @@ export interface CalloutBlock {
   example?: { tokens: Token[]; translation?: string };
 }
 
+// ── Phase 2: struktur unit ala Teach Yourself ─────────────────────────────
+
+/** Id section/langkah unit — menggerakkan stepper navigasi. */
+export type StepId = "tujuan" | "dialog" | "vocab" | "grammar" | "latihan" | "test";
+
+/** Satu langkah pada stepper. */
+export interface UnitStep {
+  id: StepId;
+  label: string;
+}
+
+/** Satu learning objective — tercentang saat `section` diselesaikan. */
+export interface Objective {
+  text: string;
+  /** Section yang, bila selesai, mencentang tujuan ini. */
+  section: StepId;
+}
+
+/**
+ * Kotak learning objectives di awal unit (step "Tujuan").
+ * Dirender jadi checklist yang tercentang mengikuti progress section.
+ */
+export interface ObjectivesBlock {
+  type: "objectives";
+  items: Objective[];
+}
+
+/** Kartu kosakata kunci (step "Kosakata") — refs mengacu ke glosarium. */
+export interface VocabListBlock {
+  type: "vocab_list";
+  refs: string[];
+}
+
+/** Poin grammar (step "Grammar") — penjelasan + pola + contoh + tabel. */
+export interface GrammarPointBlock {
+  type: "grammar_point";
+  title: string;
+  body: string;
+  /** Pola ringkas, mis. "[nomina] をください". */
+  pattern?: string;
+  /** Contoh kalimat yang tetap tap-to-learn. */
+  example?: { tokens: Token[]; translation?: string };
+  /** Tabel pendukung (mis. konjugasi). */
+  table?: { columns: string[]; rows: TableCell[][] };
+}
+
+/** Callout varian budaya (ikon 🌏). */
+export interface CultureNoteBlock {
+  type: "culture_note";
+  title: string;
+  body: string;
+}
+
 export type ContentBlock =
   | HeadingBlock
   | ParagraphBlock
@@ -123,7 +176,63 @@ export type ContentBlock =
   | ImageBlock
   | AudioBlock
   | TableBlock
-  | CalloutBlock;
+  | CalloutBlock
+  | ObjectivesBlock
+  | VocabListBlock
+  | GrammarPointBlock
+  | CultureNoteBlock;
+
+// ── Latihan & Test Yourself ───────────────────────────────────────────────
+
+/** Soal pilihan ganda / isian (opsi partikel). Feedback instan via `expl`. */
+export interface ChoiceExercise {
+  type: "mc" | "fill";
+  q: string;
+  qTrans?: string;
+  opts: string[];
+  /** Index opsi benar. */
+  ans: number;
+  expl: string;
+}
+
+/** Soal menjodohkan — pasangan [kiri, kanan]. */
+export interface MatchExercise {
+  type: "match";
+  qTrans: string;
+  pairs: [string, string][];
+}
+
+/** Soal susun kalimat (tap-to-order). `words` = urutan benar. */
+export interface OrderExercise {
+  type: "order";
+  qTrans: string;
+  words: string[];
+  expl: string;
+}
+
+export type Exercise = ChoiceExercise | MatchExercise | OrderExercise;
+
+/** Satu soal mini-quiz Test Yourself. */
+export interface TestQuestion {
+  q: string;
+  opts: string[];
+  ans: number;
+  /** Materi terkait — untuk breakdown hasil. */
+  topic: string;
+}
+
+/** Satu pilihan balasan siswa saat roleplay. */
+export interface RoleplayChoice {
+  t: string;
+  tr: string;
+}
+
+/** Satu giliran roleplay — ucapan AI + pilihan balasan (null = penutup). */
+export interface RoleplayTurn {
+  ai: string;
+  trans: string;
+  choices: RoleplayChoice[] | null;
+}
 
 export interface Chapter {
   slug: string;
@@ -135,7 +244,25 @@ export interface Chapter {
   /** Meta baca, mis. "± 8 menit baca · 24 kata baru". */
   meta?: string;
   glossary: Record<string, Word>;
+  /** Konten bacaan/dialog (step "Dialog"). */
   blocks: ContentBlock[];
+
+  // ── Phase 2: struktur unit (opsional). Bila `steps` ada, reader pakai
+  //    mode unit (stepper). Bila tidak, jatuh ke mode baca datar lama. ──
+  /** Urutan langkah pada stepper. */
+  steps?: UnitStep[];
+  /** Learning objectives (step "Tujuan"). */
+  objectives?: Objective[];
+  /** Kata kunci untuk step "Kosakata" (refs glosarium). */
+  vocabRefs?: string[];
+  /** Poin grammar (step "Grammar"). */
+  grammarPoints?: GrammarPointBlock[];
+  /** Soal latihan (step "Latihan"). */
+  exercises?: Exercise[];
+  /** Mini-quiz (step "Test Yourself"). */
+  test?: TestQuestion[];
+  /** Skrip roleplay akhir unit (mock/scripted). */
+  roleplay?: RoleplayTurn[];
 }
 
 /** Ringkasan bab untuk daftar isi / library. */

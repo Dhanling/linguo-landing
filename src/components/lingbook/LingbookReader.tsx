@@ -14,12 +14,20 @@ import type {
   Chapter,
   ContentBlock,
   DialogLine,
+  GrammarPointBlock,
+  ObjectivesBlock,
+  StepId,
   TableCell,
   Token,
+  VocabListBlock,
   Word,
 } from "@/data/lingbook";
 import { tokensToText } from "@/data/lingbook";
 import { cancelSpeech, speak } from "@/lib/lingbook-speech";
+import { LatihanSection, TestSection } from "./Exercises";
+import AskAiPanel, { type AskContext } from "./AskAiPanel";
+import RoleplayModal from "./RoleplayModal";
+import { PURPLE } from "./theme";
 
 const TEAL = "#1A9E9E";
 const DARK = "#11313A";
@@ -51,6 +59,17 @@ const CLOSING = new Set([",", ".", "!", "?", ";", ":"]);
 type CardPos = { left: number; top: number; above: boolean } | null;
 type Selection = { key: string; word: Word } | null;
 
+// Konteks interaktif untuk block unit (objectives checklist, vocab_list save-all).
+type UnitCtx = {
+  stepDone: Set<StepId>;
+  saved: Set<string>;
+  allSavedRefs: boolean;
+  onOpenWord: (key: string) => void;
+  onSaveAll: () => void;
+  onSpeak: (surface: string) => void;
+  isCjk: boolean;
+};
+
 // ── Render token inline (dipakai paragraf, dialog, callout, caption, tabel, transkrip) ──
 function TokenText({
   tokens,
@@ -75,10 +94,15 @@ function TokenText({
   mark: boolean;
   clicked: Set<string>;
   selKey: string | null;
-  onWord: (key: string, el: HTMLElement) => void;
+  onWord: (key: string, el: HTMLElement, sentence: string) => void;
   dark?: boolean;
   style?: React.CSSProperties;
 }) {
+  const sentence = tokens
+    .map((tk) => ("ref" in tk ? glossary[tk.ref]?.surface ?? "" : "text" in tk ? tk.text : ""))
+    .join(isLatin ? " " : "")
+    .replace(/\s+([,.!?;:])/g, "$1")
+    .trim();
   return (
     <span style={style}>
       {tokens.map((tk, i) => {
@@ -127,7 +151,7 @@ function TokenText({
             key={i}
             className={dark ? "lb-word lb-word-dark" : "lb-word"}
             style={wordStyle}
-            onClick={(e) => onWord(key, e.currentTarget)}
+            onClick={(e) => onWord(key, e.currentTarget, sentence)}
           >
             {rt ? (
               <ruby>
@@ -301,6 +325,19 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const [toast, setToast] = useState<string | null>(null);
   const [prog, setProg] = useState(4);
 
+  // ── Unit mode (phase 2) — stepper + progress per section ──
+  const steps = chapter.steps ?? [];
+  const isUnit = steps.length > 0;
+  const [step, setStep] = useState(0);
+  const [stepDone, setStepDone] = useState<Set<StepId>>(new Set());
+  const stepIdx = Math.min(step, Math.max(0, steps.length - 1));
+  const stepId: StepId | undefined = isUnit ? steps[stepIdx]?.id : undefined;
+  const isLastStep = stepIdx === steps.length - 1;
+
+  // Tanya AI panel + roleplay modal
+  const [askCtx, setAskCtx] = useState<AskContext | null>(null);
+  const [rpOpen, setRpOpen] = useState(false);
+
   const [activeLine, setActiveLine] = useState(-1);
   const [playingAll, setPlayingAll] = useState(false);
   const playingAllRef = useRef(false);
@@ -308,6 +345,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const scrollRef = useRef<HTMLDivElement>(null);
   const toastT = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scrollT = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const askSentenceRef = useRef(""); // kalimat konteks kata terakhir dibuka (utk Tanya AI)
   const storeKey = `lingbook-scroll:${book.slug}:${chapter.slug}`;
 
   useEffect(() => {
@@ -334,9 +372,10 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   }, []);
 
   const openCard = useCallback(
-    (key: string, el: HTMLElement) => {
+    (key: string, el: HTMLElement | null, sentence = "") => {
       const word = glossary[key];
       if (!word) return;
+      askSentenceRef.current = sentence;
       setClicked((prev) => {
         if (prev.has(key)) return prev;
         const nx = new Set(prev);
@@ -416,12 +455,58 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
     showToast("✓ Tersimpan ke Kosakata");
   };
 
+  const markStepDone = useCallback((id: StepId | undefined) => {
+    if (!id) return;
+    setStepDone((prev) => {
+      if (prev.has(id)) return prev;
+      const nx = new Set(prev);
+      nx.add(id);
+      return nx;
+    });
+  }, []);
+
+  const goStep = useCallback((i: number) => {
+    setStep(i);
+    setActiveLine(-1);
+    setPlayingAll(false);
+    playingAllRef.current = false;
+    cancelSpeech();
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, []);
+
+  const saveAllVocab = () => {
+    const refs = chapter.vocabRefs ?? [];
+    setSaved((prev) => {
+      const nx = new Set(prev);
+      refs.forEach((k) => nx.add(k));
+      return nx;
+    });
+    showToast(`✓ ${refs.length} kata tersimpan ke Kosakata`);
+  };
+
+  // Buka panel Tanya AI dari word card (context: kata + kalimat + grammar).
+  const openAsk = useCallback(() => {
+    if (!sel) return;
+    const w = sel.word;
+    const grammar = w.grammar ? Object.entries(w.grammar).map(([k, v]) => `${k}: ${v}`).join("; ") : "";
+    setAskCtx({
+      word: w.surface,
+      meaning: w.meaning,
+      pos: w.pos,
+      sentence: askSentenceRef.current,
+      grammar,
+      langName: book.language.name,
+    });
+    setSel(null);
+  }, [sel, book.language.name]);
+
   const completeChapter = () => {
+    markStepDone(stepId);
     if (!isDone) {
       setCompleted(true);
       setIsDone(true);
     } else {
-      showToast("Bab ini sudah ditandai selesai");
+      showToast("Unit ini sudah ditandai selesai");
     }
   };
 
@@ -463,6 +548,48 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const prevSummary = doneIdx > 0 ? book.toc[doneIdx - 1] : null;
   const nextSummary = doneIdx >= 0 && doneIdx < book.toc.length - 1 ? book.toc[doneIdx + 1] : null;
 
+  const vocabRefs = chapter.vocabRefs ?? [];
+  const unitCtx: UnitCtx = {
+    stepDone,
+    saved,
+    allSavedRefs: vocabRefs.length > 0 && vocabRefs.every((k) => saved.has(k)),
+    onOpenWord: (key: string) => openCard(key, null),
+    onSaveAll: saveAllVocab,
+    onSpeak: (surface: string) => { speak(surface, book.language.speechLang); },
+    isCjk,
+  };
+
+  // Tombol penutup unit/bab (dipakai di step terakhir & mode baca lama).
+  const finishButtons = (
+    <div style={{ marginTop: 44, display: "flex", flexDirection: "column", gap: 14 }}>
+      <button
+        onClick={completeChapter}
+        style={{
+          width: "100%", padding: 15, borderRadius: 13,
+          border: isDone ? `1.5px solid ${TEAL}` : "none",
+          background: isDone ? "#DFF1EF" : TEAL, color: isDone ? "#0B7570" : "#FFFFFF",
+          fontFamily: "inherit", fontSize: 15.5, fontWeight: 800, cursor: "pointer",
+          boxShadow: isDone ? "none" : "0 6px 16px rgba(26,158,158,.3)",
+        }}
+      >
+        {isDone ? `✓ ${isUnit ? "Unit" : "Bab"} Selesai` : `Tandai ${isUnit ? "Unit" : "Bab"} Selesai ✓`}
+      </button>
+      <div style={{ display: "flex", gap: 10 }}>
+        <button onClick={() => (prevSummary ? goChapter(prevSummary.slug) : showToast(`Ini ${isUnit ? "unit" : "bab"} pertama`))} style={{ ...navBtn, textAlign: "left" }}>
+          ← {prevSummary ? `${isUnit ? "Unit" : "Bab"} ${doneIdx}: ${prevSummary.title}` : `${isUnit ? "Unit" : "Bab"} pertama`}
+        </button>
+        <button onClick={() => (nextSummary ? goChapter(nextSummary.slug) : showToast(`Ini ${isUnit ? "unit" : "bab"} terakhir`))} style={{ ...navBtn, textAlign: "right" }}>
+          {nextSummary ? `${isUnit ? "Unit" : "Bab"} ${doneIdx + 2}: ${nextSummary.title}` : `${isUnit ? "Unit" : "Bab"} terakhir`} →
+        </button>
+      </div>
+    </div>
+  );
+
+  const blockViewCommon = {
+    book, glossary, readFont, isCjk, fpx, readerStyle, trans,
+    activeLine, playingAll, onPlayLine: playLine, onPlayAll: playAll, tokenTextProps,
+  };
+
   return (
     <div style={{ display: "flex", height: "100dvh", overflow: "hidden", background: "#F6FAF9", fontFamily: "var(--font-jakarta), 'Plus Jakarta Sans', sans-serif", color: DARK }}>
       {/* Font baca + hover kata — dimuat khusus reader */}
@@ -481,6 +608,11 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
         @keyframes lbEq2{0%,100%{height:11px;}50%{height:4px;}}
         @keyframes lbEq3{0%,100%{height:7px;}50%{height:12px;}}
         @keyframes lbPulseRing{0%{box-shadow:0 0 0 0 rgba(26,158,158,.4);}100%{box-shadow:0 0 0 10px rgba(26,158,158,0);}}
+        @keyframes lbShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+        @keyframes lbDotBlink{0%,80%,100%{opacity:.25;}40%{opacity:1;}}
+        .lb-ai-suggest:hover{background:#F4F1FB !important;}
+        .lb-rp-choice:hover{border-color:#1A9E9E !important;}
+        .lb-vocab-card:hover{border-color:#1A9E9E !important;}
       `}</style>
 
       <main style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
@@ -494,82 +626,113 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
               <div style={{ fontSize: 14, fontWeight: 700, color: DARK, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{chapter.label}</div>
             </div>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#5A7A78", whiteSpace: "nowrap" }}>
-              Bab {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
+              {isUnit ? "Unit" : "Bab"} {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
             </div>
             <button onClick={() => setTocOpen(true)} title="Daftar Isi" style={hdrBtn}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h8" stroke="#33565C" strokeWidth="1.8" strokeLinecap="round" /></svg>
             </button>
           </div>
+
+          {/* Step navigator — responsif (scroll horizontal di mobile) */}
+          {isUnit && (
+            <div style={{ display: "flex", gap: 6, padding: "0 14px 10px 14px", overflowX: "auto" }}>
+              {steps.map((st, i) => {
+                const done = stepDone.has(st.id);
+                const active = i === stepIdx;
+                return (
+                  <button
+                    key={st.id}
+                    onClick={() => goStep(i)}
+                    style={{
+                      display: "flex", alignItems: "center", gap: 6, padding: "6px 12px 6px 7px", borderRadius: 999, whiteSpace: "nowrap",
+                      border: active ? `1.5px solid ${TEAL}` : "1.5px solid #E3EEEC", cursor: "pointer", fontFamily: "inherit",
+                      background: active ? "#DFF1EF" : "#FFFFFF", color: active ? "#0B7570" : done ? "#0B7570" : "#8AA3A0",
+                      fontSize: 12.5, fontWeight: 800, flex: "none",
+                    }}
+                  >
+                    <span style={{ width: 18, height: 18, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 10.5, fontWeight: 800, background: done || active ? TEAL : "#EFF6F5", color: done || active ? "#FFFFFF" : "#8AA3A0" }}>
+                      {done ? "✓" : String(i + 1)}
+                    </span>
+                    {st.label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           <div style={{ height: 3, background: "#E9F2F0" }}>
-            <div style={{ height: "100%", width: `${prog}%`, background: TEAL, borderRadius: "0 2px 2px 0", transition: "width .15s" }} />
+            <div style={{ height: "100%", width: isUnit ? `${Math.max(4, ((stepIdx + 1) / steps.length) * 100)}%` : `${prog}%`, background: TEAL, borderRadius: "0 2px 2px 0", transition: isUnit ? "width .3s" : "width .15s" }} />
           </div>
         </header>
 
         <div ref={scrollRef} onScroll={onScroll} style={{ flex: 1, overflowY: "auto", overscrollBehavior: "contain" }}>
           <article style={{ maxWidth: 700, margin: "0 auto", padding: "28px 20px 90px 20px", boxSizing: "border-box" }}>
-            <div style={{ marginBottom: 30 }}>
-              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".1em", textTransform: "uppercase", color: TEAL, marginBottom: 8 }}>
-                Bab {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
+            {/* Hero — selalu (mode baca lama) atau hanya di step Tujuan (mode unit) */}
+            {(!isUnit || stepId === "tujuan") && (
+              <div style={{ marginBottom: isUnit ? 26 : 30 }}>
+                <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".1em", textTransform: "uppercase", color: TEAL, marginBottom: 8 }}>
+                  {isUnit ? "Unit" : "Bab"} {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
+                </div>
+                <h1 style={{ fontFamily: readFont, fontSize: isCjk ? 40 : 34, fontWeight: 700, color: DARK, margin: 0, lineHeight: 1.2 }}>{chapter.title}</h1>
+                {chapter.subtitle && <div style={{ fontSize: 16, color: "#5A7A78", fontWeight: 600, marginTop: 4 }}>{chapter.subtitle}</div>}
+                {chapter.meta && <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 10 }}>{chapter.meta}</div>}
               </div>
-              <h1 style={{ fontFamily: readFont, fontSize: isCjk ? 40 : 34, fontWeight: 700, color: DARK, margin: 0, lineHeight: 1.2 }}>{chapter.title}</h1>
-              {chapter.subtitle && <div style={{ fontSize: 16, color: "#5A7A78", fontWeight: 600, marginTop: 4 }}>{chapter.subtitle}</div>}
-              {chapter.meta && <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 10 }}>{chapter.meta}</div>}
-            </div>
+            )}
 
-            {chapter.blocks.map((block, bi) => (
-              <BlockView
-                key={bi}
-                block={block}
-                bi={bi}
-                book={book}
-                glossary={glossary}
-                readFont={readFont}
-                isCjk={isCjk}
-                fpx={fpx}
-                readerStyle={readerStyle}
-                trans={trans}
-                activeLine={activeLine}
-                playingAll={playingAll}
-                onPlayLine={playLine}
-                onPlayAll={playAll}
-                tokenTextProps={tokenTextProps}
-              />
-            ))}
+            {!isUnit && (
+              <>
+                {chapter.blocks.map((block, bi) => (
+                  <BlockView key={bi} block={block} bi={bi} {...blockViewCommon} />
+                ))}
+                {finishButtons}
+              </>
+            )}
 
-            <div style={{ marginTop: 44, display: "flex", flexDirection: "column", gap: 14 }}>
-              <button
-                onClick={completeChapter}
-                style={{
-                  width: "100%",
-                  padding: 15,
-                  borderRadius: 13,
-                  border: isDone ? `1.5px solid ${TEAL}` : "none",
-                  background: isDone ? "#DFF1EF" : TEAL,
-                  color: isDone ? "#0B7570" : "#FFFFFF",
-                  fontFamily: "inherit",
-                  fontSize: 15.5,
-                  fontWeight: 800,
-                  cursor: "pointer",
-                  boxShadow: isDone ? "none" : "0 6px 16px rgba(26,158,158,.3)",
-                }}
-              >
-                {isDone ? "✓ Bab Selesai" : "Tandai Bab Selesai ✓"}
-              </button>
-              <div style={{ display: "flex", gap: 10 }}>
-                <button
-                  onClick={() => (prevSummary ? goChapter(prevSummary.slug) : showToast("Ini bab pertama"))}
-                  style={{ ...navBtn, textAlign: "left" }}
-                >
-                  ← {prevSummary ? `Bab ${doneIdx}: ${prevSummary.title}` : "Bab pertama"}
-                </button>
-                <button
-                  onClick={() => (nextSummary ? goChapter(nextSummary.slug) : showToast("Ini bab terakhir"))}
-                  style={{ ...navBtn, textAlign: "right" }}
-                >
-                  {nextSummary ? `Bab ${doneIdx + 2}: ${nextSummary.title}` : "Bab terakhir"} →
-                </button>
-              </div>
-            </div>
+            {isUnit && (
+              <>
+                {stepId === "tujuan" && (
+                  <BlockView block={{ type: "objectives", items: chapter.objectives ?? [] } satisfies ObjectivesBlock} bi={0} {...blockViewCommon} unitCtx={unitCtx} />
+                )}
+                {stepId === "dialog" && chapter.blocks.map((block, bi) => (
+                  <BlockView key={bi} block={block} bi={bi} {...blockViewCommon} />
+                ))}
+                {stepId === "vocab" && (
+                  <BlockView block={{ type: "vocab_list", refs: vocabRefs } satisfies VocabListBlock} bi={0} {...blockViewCommon} unitCtx={unitCtx} />
+                )}
+                {stepId === "grammar" && (
+                  <>
+                    <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: "0 0 4px 0" }}>Language Points</h2>
+                    <div style={{ fontSize: 13, color: "#8AA3A0", marginBottom: 20 }}>{(chapter.grammarPoints ?? []).length} poin grammar di unit ini</div>
+                    {(chapter.grammarPoints ?? []).map((gp, gi) => (
+                      <BlockView key={gi} block={gp} bi={gi} {...blockViewCommon} />
+                    ))}
+                  </>
+                )}
+                {stepId === "latihan" && (
+                  <LatihanSection exercises={chapter.exercises ?? []} isCjk={isCjk} readFont={readFont} />
+                )}
+                {stepId === "test" && (
+                  <TestSection
+                    test={chapter.test ?? []}
+                    isCjk={isCjk}
+                    readFont={readFont}
+                    onSkip={() => { markStepDone("test"); showToast("Test dilewati — ditandai di progres"); }}
+                    onOpenRoleplay={() => setRpOpen(true)}
+                  />
+                )}
+
+                {!isLastStep ? (
+                  <button
+                    onClick={() => { markStepDone(stepId); goStep(stepIdx + 1); }}
+                    style={{ marginTop: 36, width: "100%", padding: 15, borderRadius: 13, border: "none", background: TEAL, color: "#FFFFFF", fontFamily: "inherit", fontSize: 15, fontWeight: 800, cursor: "pointer", boxShadow: "0 6px 16px rgba(26,158,158,.3)" }}
+                  >
+                    {stepId === "tujuan" ? "Mulai unit →" : `Selesai, lanjut: ${steps[stepIdx + 1].label} →`}
+                  </button>
+                ) : (
+                  finishButtons
+                )}
+              </>
+            )}
           </article>
         </div>
       </main>
@@ -612,12 +775,28 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           speaking={cardSpeaking}
           onClose={closeCard}
           onSave={saveWord}
+          onAsk={openAsk}
           onPlay={() => {
             setCardSpeaking(true);
             const u = speak(sel.word.surface, book.language.speechLang);
             if (u) u.onend = () => setCardSpeaking(false);
             else setTimeout(() => setCardSpeaking(false), 1200);
           }}
+        />
+      )}
+
+      {askCtx && (
+        <AskAiPanel ctx={askCtx} isMobile={isMobile} onClose={() => setAskCtx(null)} />
+      )}
+
+      {rpOpen && (chapter.roleplay?.length ?? 0) > 0 && (
+        <RoleplayModal
+          turns={chapter.roleplay ?? []}
+          isMobile={isMobile}
+          readFont={readFont}
+          title={`Roleplay: ${chapter.subtitle ?? chapter.title}`}
+          avatar={isCjk ? "店" : (chapter.roleplay?.[0]?.ai?.charAt(0) ?? "AI")}
+          onClose={() => setRpOpen(false)}
         />
       )}
 
@@ -638,7 +817,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
             <div style={{ width: 74, height: 74, borderRadius: "50%", background: TEAL, color: "#FFFFFF", display: "grid", placeItems: "center", margin: "0 auto 18px auto", animation: "lbCheckPop .45s ease" }}>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
-            <div style={{ fontWeight: 800, fontSize: 21, color: DARK }}>Bab selesai!</div>
+            <div style={{ fontWeight: 800, fontSize: 21, color: DARK }}>{isUnit ? "Unit" : "Bab"} selesai!</div>
             <div style={{ fontSize: 14, color: "#5A7A78", marginTop: 4 }}>{chapter.label}</div>
             <div style={{ display: "flex", gap: 10, margin: "22px 0" }}>
               <div style={statCard}><div style={statNum}>{clicked.size}</div><div style={statLabel}>kata di-tap</div></div>
@@ -687,6 +866,7 @@ function BlockView({
   onPlayLine,
   onPlayAll,
   tokenTextProps,
+  unitCtx,
 }: {
   block: ContentBlock;
   bi: number;
@@ -702,6 +882,7 @@ function BlockView({
   onPlayLine: (bi: number, li: number, tokens: Token[]) => void;
   onPlayAll: (bi: number, lines: DialogLine[]) => void;
   tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "dark" | "style">;
+  unitCtx?: UnitCtx;
 }) {
   if (block.type === "heading") {
     return (
@@ -853,7 +1034,143 @@ function BlockView({
     return <AudioPlayerBlock block={block} glossary={glossary} book={book} tokenTextProps={tokenTextProps} />;
   }
 
+  if (block.type === "culture_note") {
+    return (
+      <div style={{ margin: "0 0 24px 0", background: "#EDE9F8", border: "1px solid #8A73D044", borderRadius: 14, padding: "14px 16px", color: "#6B54C8" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+          <span style={{ width: 22, height: 22, borderRadius: "50%", background: "#8A73D0", color: "#FFFFFF", display: "grid", placeItems: "center", fontSize: 12, flex: "none" }}>🌏</span>
+          <span style={{ fontWeight: 800, fontSize: 14 }}>{block.title}</span>
+        </div>
+        <div style={{ fontSize: 14.5, lineHeight: 1.6, color: "#33565C" }}>{block.body}</div>
+      </div>
+    );
+  }
+
+  if (block.type === "grammar_point") {
+    return <GrammarPointView block={block} n={bi + 1} isCjk={isCjk} readFont={readFont} fpx={fpx} tokenTextProps={tokenTextProps} />;
+  }
+
+  if (block.type === "objectives" && unitCtx) {
+    const total = block.items.length;
+    const doneN = block.items.filter((o) => unitCtx.stepDone.has(o.section)).length;
+    return (
+      <div style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: "20px 22px", marginBottom: 24 }}>
+        <div style={{ fontWeight: 800, fontSize: 15, color: DARK, marginBottom: 4 }}>Di unit ini kamu akan belajar</div>
+        <div style={{ fontSize: 12.5, color: "#8AA3A0", marginBottom: 14 }}>{doneN} dari {total} objektif tercapai</div>
+        {block.items.map((o, oi) => {
+          const checked = unitCtx.stepDone.has(o.section);
+          return (
+            <div key={oi} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: "1px solid #F0F6F5" }}>
+              <span style={{ width: 22, height: 22, borderRadius: 7, flex: "none", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 800, background: checked ? TEAL : "#FFFFFF", color: "#FFFFFF", border: checked ? "none" : "2px solid #D5E6E3" }}>{checked ? "✓" : ""}</span>
+              <span style={{ fontSize: 14.5, fontWeight: 600, color: checked ? "#8AA3A0" : DARK, textDecoration: checked ? "line-through" : "none" }}>{o.text}</span>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  if (block.type === "vocab_list" && unitCtx) {
+    const words = block.refs.map((k) => ({ key: k, word: glossary[k] })).filter((x): x is { key: string; word: Word } => !!x.word);
+    return (
+      <div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
+          <div>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: 0 }}>Kosakata Kunci</h2>
+            <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 2 }}>{words.length} kata penting di unit ini — tap untuk detail</div>
+          </div>
+          <button onClick={unitCtx.onSaveAll} style={{ padding: "10px 16px", borderRadius: 11, border: unitCtx.allSavedRefs ? `1.5px solid ${TEAL}` : "none", background: unitCtx.allSavedRefs ? "#DFF1EF" : TEAL, color: unitCtx.allSavedRefs ? "#0B7570" : "#FFFFFF", fontFamily: "inherit", fontSize: 13, fontWeight: 800, cursor: "pointer", flex: "none" }}>
+            {unitCtx.allSavedRefs ? "✓ Semua tersimpan" : "+ Simpan semua"}
+          </button>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 12 }}>
+          {words.map(({ key, word }) => {
+            const sub = isCjk ? [word.reading, word.romaji].filter(Boolean).join(" · ") : word.grammar ? Object.values(word.grammar)[0] : "";
+            const isSaved = unitCtx.saved.has(key);
+            return (
+              <div key={key} onClick={() => unitCtx.onOpenWord(key)} className="lb-vocab-card" style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 14, padding: "14px 16px", display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontFamily: readFont, fontSize: isCjk ? 22 : 19, fontWeight: 700, color: DARK }}>{word.surface}</div>
+                  {sub && <div style={{ fontSize: 12, color: "#0E7D7D", fontWeight: 700 }}>{sub}</div>}
+                  <div style={{ fontSize: 13.5, color: "#33565C", marginTop: 2 }}>{word.meaning}</div>
+                </div>
+                <button onClick={(e) => { e.stopPropagation(); unitCtx.onSpeak(word.surface); }} title="Dengar" style={{ width: 34, height: 34, borderRadius: "50%", border: "none", background: "#E4F2F1", color: "#0B7570", cursor: "pointer", display: "grid", placeItems: "center", flex: "none" }}>
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 7.5v5h3.2L11 17V3L6.2 7.5H3z" fill="currentColor" /><path d="M13.5 6.5c1 .9 1.6 2.1 1.6 3.5s-.6 2.6-1.6 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+                </button>
+                <span style={{ width: 22, flex: "none", textAlign: "center", fontSize: 15, fontWeight: 800, color: TEAL }}>{isSaved ? "✓" : ""}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return null;
+}
+
+// Kartu poin grammar (step "Grammar") — contoh tetap tap-to-learn.
+function GrammarPointView({
+  block,
+  n,
+  isCjk,
+  readFont,
+  fpx,
+  tokenTextProps,
+}: {
+  block: GrammarPointBlock;
+  n: number;
+  isCjk: boolean;
+  readFont: string;
+  fpx: number;
+  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "dark" | "style">;
+}) {
+  return (
+    <div style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: "20px 22px", marginBottom: 16 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+        <span style={{ width: 26, height: 26, borderRadius: 8, background: "#DFF1EF", color: "#0B7570", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 13, flex: "none" }}>{n}</span>
+        <span style={{ fontSize: 16.5, fontWeight: 800, color: DARK, fontFamily: isCjk ? readFont : "inherit" }}>{block.title}</span>
+      </div>
+      <div style={{ fontSize: 14.5, lineHeight: 1.65, color: "#33565C" }}>{block.body}</div>
+      {block.pattern && (
+        <div style={{ marginTop: 12, padding: "10px 14px", background: "#F2F8F7", borderLeft: `3px solid ${TEAL}`, borderRadius: "0 10px 10px 0", fontSize: 14.5, fontWeight: 700, color: "#0B7570" }}>{block.pattern}</div>
+      )}
+      {block.example && (
+        <div style={{ marginTop: 12, padding: "12px 14px", background: "#FBFDFD", border: "1px solid #EDF4F3", borderRadius: 10 }}>
+          <TokenText {...tokenTextProps} tokens={block.example.tokens} style={{ fontFamily: readFont, fontSize: Math.round(fpx * 0.9), lineHeight: 2 }} />
+          {block.example.translation && <div style={{ fontSize: 12.5, color: "#8AA3A0", marginTop: 4 }}>{block.example.translation}</div>}
+        </div>
+      )}
+      {block.table && (
+        <div style={{ marginTop: 12, border: "1px solid #EDF4F3", borderRadius: 10, overflow: "hidden" }}>
+          <table style={{ borderCollapse: "collapse", width: "100%" }}>
+            <thead>
+              <tr>
+                {block.table.columns.map((c, ci) => (
+                  <th key={ci} style={{ textAlign: "left", padding: "8px 14px", fontSize: 11, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", color: "#5A7A78", borderBottom: "1px solid #E9F2F0", background: "#FBFDFD" }}>{c}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.table.rows.map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell: TableCell, ci) => (
+                    <td key={ci} style={{ padding: "9px 14px", borderBottom: "1px solid #F0F6F5", verticalAlign: "middle" }}>
+                      {"tokens" in cell ? (
+                        <TokenText {...tokenTextProps} tokens={cell.tokens} style={{ fontFamily: readFont, fontSize: isCjk ? 20 : 17, lineHeight: 1.9 }} />
+                      ) : (
+                        <span style={{ fontSize: 13.5, color: "#33565C" }}>{cell.text}</span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
 }
 
 function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
@@ -951,6 +1268,7 @@ function WordCard({
   speaking,
   onClose,
   onSave,
+  onAsk,
   onPlay,
 }: {
   selection: { key: string; word: Word };
@@ -962,6 +1280,7 @@ function WordCard({
   speaking: boolean;
   onClose: () => void;
   onSave: () => void;
+  onAsk: () => void;
   onPlay: () => void;
 }) {
   const w = selection.word;
@@ -1020,12 +1339,21 @@ function WordCard({
             </div>
           </div>
         )}
-        <button
-          onClick={onSave}
-          style={{ width: "100%", marginTop: 18, padding: 13, borderRadius: 12, border: saved ? `1.5px solid ${TEAL}` : "none", background: saved ? "#DFF1EF" : TEAL, color: saved ? "#0B7570" : "#FFFFFF", fontFamily: "inherit", fontSize: 14.5, fontWeight: 800, cursor: "pointer" }}
-        >
-          {saved ? "✓ Tersimpan di Kosakata" : "+ Simpan ke Kosakata"}
-        </button>
+        <div style={{ display: "flex", gap: 8, marginTop: 18 }}>
+          <button
+            onClick={onSave}
+            style={{ flex: 1, padding: 13, borderRadius: 12, border: saved ? `1.5px solid ${TEAL}` : "none", background: saved ? "#DFF1EF" : TEAL, color: saved ? "#0B7570" : "#FFFFFF", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
+          >
+            {saved ? "✓ Tersimpan" : "+ Simpan ke Kosakata"}
+          </button>
+          <button
+            onClick={onAsk}
+            title="Tanya lebih lanjut ke AI"
+            style={{ flex: "none", padding: "13px 16px", borderRadius: 12, border: `1.5px solid ${PURPLE}`, background: "#F4F1FB", color: "#6B54C8", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
+          >
+            ✦ Tanya AI
+          </button>
+        </div>
       </div>
     </>
   );
