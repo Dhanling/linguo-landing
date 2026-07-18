@@ -253,6 +253,12 @@ function loadYouTubeApi(): Promise<void> {
 }
 
 interface Anchor {
+  // Id unik tiap tap — dipakai sebagai React key WordTooltip supaya tooltip
+  // MELUNTUR (remount) tiap kata baru: popup muncul lagi dari awal & state
+  // internalnya (drawer Analisa yang terbuka, riwayat Tanya AI) tak nyangkut dari
+  // kata sebelumnya. Tanpa ini, tap kata baru saat drawer terbuka cuma menukar
+  // isi diam-diam (header kata baru tapi chat kata lama).
+  id: number;
   word: string;
   sentence: string;
   x: number;
@@ -379,6 +385,8 @@ export default function VideoLearnPlayer({
   const [breakdowns, setBreakdowns] = useState<Record<number, SentenceBreakdown | "loading" | "error">>({});
 
   const [anchor, setAnchor] = useState<Anchor | null>(null);
+  // Penghitung id anchor — tiap tap kata dapat id baru → WordTooltip remount bersih.
+  const anchorSeq = useRef(0);
   // Paywall langganan Watch & Learn (buka arti kata / Analisa saat cicip habis).
   const [subscribeOpen, setSubscribeOpen] = useState(false);
 
@@ -532,6 +540,7 @@ export default function VideoLearnPlayer({
     setHistoryOpen(false);
     playerRef.current?.pauseVideo?.();
     setAnchor({
+      id: ++anchorSeq.current,
       word: h.word,
       sentence: h.sentence,
       x: typeof window !== "undefined" ? window.innerWidth / 2 : 0,
@@ -1647,7 +1656,7 @@ export default function VideoLearnPlayer({
       // Jeda video otomatis saat membuka arti kata — biar tak terus jalan & ganggu
       // saat siswa fokus baca artinya.
       playerRef.current?.pauseVideo?.();
-      setAnchor({ word, sentence, x: e.clientX, y: e.clientY, wordIdx });
+      setAnchor({ id: ++anchorSeq.current, word, sentence, x: e.clientX, y: e.clientY, wordIdx });
     },
     [langCode, video.videoId]
   );
@@ -2759,6 +2768,9 @@ export default function VideoLearnPlayer({
 
       {anchor && (
         <WordTooltip
+          // key per tap → tooltip remount bersih tiap kata baru (popup muncul lagi,
+          // drawer & chat kata sebelumnya tak nyangkut).
+          key={anchor.id}
           word={anchor.word}
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
