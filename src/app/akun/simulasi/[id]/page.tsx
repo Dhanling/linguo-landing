@@ -15,7 +15,7 @@ import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
   Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
-  GripVertical, Minimize2, PlayCircle, Type,
+  GripVertical, Minimize2, PlayCircle, Type, Moon, Sun, Maximize, Minimize,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -1039,8 +1039,33 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
   // siswa → JANGAN arahkan ke /akun/simulasi (butuh login → mentok halaman "masuk
   // dulu"). Pakai katalog publik /simulasi yang bebas login.
   const backHref = preview ? "/simulasi" : "/akun?menu=simulasi";
+
+  // Mode gelap (disimpan di localStorage supaya konsisten antar soal & sesi).
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    try { setDark(localStorage.getItem("sim-dark") === "1"); } catch { /* ignore */ }
+  }, []);
+  const toggleDark = () => setDark((d) => {
+    const v = !d;
+    try { localStorage.setItem("sim-dark", v ? "1" : "0"); } catch { /* ignore */ }
+    return v;
+  });
+
+  // Layar penuh (browser Fullscreen API) → tab & address bar tersembunyi,
+  // fokus penuh ke soal seperti aplikasi ujian.
+  const [fs, setFs] = useState(false);
+  useEffect(() => {
+    const onChange = () => setFs(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
+  const toggleFs = () => {
+    if (document.fullscreenElement) document.exitFullscreen?.();
+    else document.documentElement.requestFullscreen?.().catch(() => { /* diblokir browser */ });
+  };
+
   return (
-    <div className="sim-shell min-h-screen bg-slate-50">
+    <div className={`sim-shell min-h-screen bg-slate-50${dark ? " sim-dark" : ""}`}>
       {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada
           semua elemen interaktif (tombol, tab, link) di layar siswa & preview. */}
       <style>{`
@@ -1049,6 +1074,31 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
           outline: none !important;
           box-shadow: none !important;
         }
+        /* ── Mode gelap: remap utility warna terang → gelap (scoped ke .sim-dark).
+           Selektor 2-kelas menang atas utility 1-kelas Tailwind tanpa !important. */
+        .sim-shell.sim-dark { background: #0b1017; }
+        .sim-dark .bg-white { background-color: #151d27; }
+        .sim-dark .bg-slate-50 { background-color: #0b1017; }
+        .sim-dark .bg-slate-100 { background-color: #1c2735; }
+        .sim-dark .bg-slate-200 { background-color: #26323f; }
+        .sim-dark .bg-teal-50 { background-color: rgba(26,158,158,0.14); }
+        .sim-dark .bg-teal-100 { background-color: rgba(26,158,158,0.22); }
+        .sim-dark .bg-red-50 { background-color: rgba(239,68,68,0.16); }
+        .sim-dark .text-slate-900 { color: #eef2f6; }
+        .sim-dark .text-slate-800 { color: #e2e8ee; }
+        .sim-dark .text-slate-700 { color: #cdd6df; }
+        .sim-dark .text-slate-600 { color: #b2bdc8; }
+        .sim-dark .text-slate-500 { color: #93a0ac; }
+        .sim-dark .text-slate-400 { color: #74818d; }
+        .sim-dark .text-teal-800 { color: #34cabf; }
+        .sim-dark .text-teal-700 { color: #3ad0c6; }
+        .sim-dark .text-teal-600 { color: #45d6cc; }
+        .sim-dark .border-slate-100 { border-color: #1e2833; }
+        .sim-dark .border-slate-200 { border-color: #26323f; }
+        .sim-dark .border-slate-300 { border-color: #33414f; }
+        .sim-dark .hover\\:bg-slate-50:hover { background-color: #1c2735; }
+        .sim-dark .hover\\:bg-slate-100:hover { background-color: #26323f; }
+        .sim-dark .hover\\:bg-slate-200:hover { background-color: #313f4d; }
       `}</style>
       {preview && (
         <div className="bg-amber-400 px-4 py-1.5 text-center text-xs font-semibold text-amber-950">
@@ -1068,6 +1118,20 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
             <p className="text-xs text-slate-500">{testTypeLabel(sim.test_type, sim.test_variant)}</p>
           </div>
           {headerRight}
+          <button
+            onClick={toggleDark}
+            title={dark ? "Mode terang" : "Mode gelap"}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
+          >
+            {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </button>
+          <button
+            onClick={toggleFs}
+            title={fs ? "Keluar layar penuh" : "Layar penuh"}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
+          >
+            {fs ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
+          </button>
         </div>
       </header>
       <main className={`mx-auto ${maxW} px-4 py-6 sm:px-6`}>{children}</main>
