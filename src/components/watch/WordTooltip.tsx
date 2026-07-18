@@ -63,6 +63,7 @@ const ARTICLES: Record<string, Set<string>> = {
 const speak = speakText;
 
 export function WordTooltip({
+  tapId,
   word: rawWord,
   sentence,
   wordIdx,
@@ -76,6 +77,11 @@ export function WordTooltip({
   onSavedChange,
   onStudyOpenChange,
 }: {
+  // Id unik tiap tap kata (dari player). Berubah = kata baru di-tap → reset apakah
+  // drawer Analisa terbuka, mengikuti autoStudy (drawer sudah terbuka → tetap di
+  // drawer & muat ulang; belum → kembali ke popup). Reset TANPA remount (drawer
+  // tetap terpasang) supaya tak ada kedipan animasi/reflow.
+  tapId?: number;
   word: string;
   sentence: string;
   wordIdx?: number;
@@ -165,6 +171,19 @@ export function WordTooltip({
   // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa, atau
   // langsung terbuka saat dipanggil dari riwayat (autoStudy).
   const [studyOpen, setStudyOpen] = useState(autoStudy);
+  // Tiap tap kata baru (tapId berubah) → selaraskan status drawer dgn autoStudy:
+  // drawer sedang terbuka (tap saat drawer aktif → autoStudy true) tetap di drawer
+  // & memuat ulang kata baru di tempat; kalau tidak, kembali ke popup. Lewati mount
+  // pertama (nilai awal sudah = autoStudy) supaya tak memicu ulang percuma.
+  const firstTapRef = useRef(true);
+  useEffect(() => {
+    if (firstTapRef.current) {
+      firstTapRef.current = false;
+      return;
+    }
+    setStudyOpen(autoStudy);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tapId]);
 
   // Rambatkan status buka/tutup drawer ke player (auto-hide transkrip). Cleanup
   // memastikan status "tutup" tetap terkirim kalau tooltip di-unmount saat drawer

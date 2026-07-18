@@ -111,6 +111,14 @@ export default function WordStudy({
 
   useEffect(() => {
     setSaved(isWordSaved(word, langCode));
+    // Kata berganti (drawer dimuat ulang di tempat utk kata baru) → bersihkan konten
+    // kata lama: deep-dive, riwayat Tanya AI, input, & balik ke tab Belajar. Tanpa
+    // ini header kata baru bisa nyandingkan chat/analisa kata sebelumnya.
+    setDeep(null);
+    setChat([]);
+    setInput("");
+    setAsking(false);
+    setTab("study");
     let cancelled = false;
     setLoading(true);
     setErrored(false);

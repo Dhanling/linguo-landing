@@ -255,11 +255,11 @@ function loadYouTubeApi(): Promise<void> {
 }
 
 interface Anchor {
-  // Id unik tiap tap — dipakai sebagai React key WordTooltip supaya tooltip
-  // MELUNTUR (remount) tiap kata baru: popup muncul lagi dari awal & state
-  // internalnya (drawer Analisa yang terbuka, riwayat Tanya AI) tak nyangkut dari
-  // kata sebelumnya. Tanpa ini, tap kata baru saat drawer terbuka cuma menukar
-  // isi diam-diam (header kata baru tapi chat kata lama).
+  // Id unik tiap tap — dipakai WordTooltip (prop tapId) untuk MERESET state
+  // internalnya tiap kata baru (buka/tutup drawer, riwayat Tanya AI) TANPA remount.
+  // Kenapa bukan React key (remount): remount bikin drawer Analisa main animasi
+  // masuk lagi + transkrip reflow tiap tap → kedipan. Dengan reset via prop,
+  // drawer tetap terpasang & cuma memuat ulang isinya (mulus, tanpa kedipan).
   id: number;
   word: string;
   sentence: string;
@@ -514,6 +514,10 @@ export default function VideoLearnPlayer({
   // kolom transkrip → auto-sembunyikan transkrip selama terbuka, lalu kembalikan ke
   // kondisi semula saat ditutup (menghormati toggle transkrip user sebelumnya).
   const [wordStudyOpen, setWordStudyOpen] = useState(false);
+  // Cermin ref utk dibaca di onWordTap (callback stabil) — tap kata saat drawer
+  // terbuka langsung muat ulang drawer di tempat, bukan balik ke popup.
+  const wordStudyOpenRef = useRef(false);
+  wordStudyOpenRef.current = wordStudyOpen;
   const panelBeforeStudyRef = useRef<boolean | null>(null);
   useEffect(() => {
     if (wordStudyOpen) {
@@ -1673,7 +1677,18 @@ export default function VideoLearnPlayer({
         : isExplanationCue(sentence, langCode)
         ? "en"
         : langCode;
-      setAnchor({ id: ++anchorSeq.current, word, sentence, x: e.clientX, y: e.clientY, wordIdx, lang });
+      setAnchor({
+        id: ++anchorSeq.current,
+        word,
+        sentence,
+        x: e.clientX,
+        y: e.clientY,
+        wordIdx,
+        lang,
+        // Drawer Analisa sudah terbuka → langsung muat ulang drawer di tempat (bukan
+        // balik ke popup) supaya mulus tanpa kedipan. Belum ada drawer → popup dulu.
+        autoStudy: wordStudyOpenRef.current,
+      });
     },
     [langCode, video.videoId, cues]
   );
@@ -2785,9 +2800,9 @@ export default function VideoLearnPlayer({
 
       {anchor && (
         <WordTooltip
-          // key per tap → tooltip remount bersih tiap kata baru (popup muncul lagi,
-          // drawer & chat kata sebelumnya tak nyangkut).
-          key={anchor.id}
+          // Id tap → tooltip reset state (buka/tutup drawer) tiap kata baru tanpa
+          // remount → tak ada kedipan animasi/reflow.
+          tapId={anchor.id}
           word={anchor.word}
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
