@@ -50,6 +50,7 @@ import {
   clearStudyHistory,
   StudyHistoryItem,
   isFreshBreakdown,
+  isExplanationCue,
   isNonLatin,
   isRtl,
   karaokeFrac,
@@ -87,6 +88,14 @@ const GOLD = "#F4B740";
 const GOLD_DIM = "rgba(244,183,64,0.72)";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
+
+// Sembunyikan baris terjemahan kalau ia sekadar menduplikasi teks target — terjadi
+// saat cue memang berbahasa penjelas (mis. Inggris di video Ukraina) DAN bahasa
+// terjemahan pengguna kebetulan sama, sehingga target == terjemahan. Baris target
+// sudah menampilkan teksnya, jadi baris kedua yang identik cuma bising.
+const isDuplicateBase = (cue: LearnCue, langCode: string): boolean =>
+  isExplanationCue(cue.target, langCode) &&
+  cue.base.trim().toLowerCase() === cue.target.trim().toLowerCase();
 
 // Label tombol header (Kosakata / bahasa) — tersembunyi (lebar 0) secara default
 // sehingga tombol hanya menampilkan ikon; saat hover teksnya "keluar" dari kanan
@@ -1057,9 +1066,18 @@ export default function VideoLearnPlayer({
       setTxState("ready");
       setAsrRunning(false);
 
-      if (isNonLatin(langCode) && ordered.some((c) => !c.translit)) {
+      // Cue berbahasa penjelas (mis. penutur Ukraina menjelaskan pakai Inggris)
+      // sudah beraksara Latin — JANGAN diromanisasi (hasilnya duplikat/ngawur) &
+      // jangan buang kuota Gemini untuknya: kirim "" sebagai gantinya.
+      if (
+        isNonLatin(langCode) &&
+        ordered.some((c) => !c.translit && !isExplanationCue(c.target, langCode))
+      ) {
         setTranslitLoading(true);
-        transliterateLines(ordered.map((c) => c.target), langCode)
+        transliterateLines(
+          ordered.map((c) => (isExplanationCue(c.target, langCode) ? "" : c.target)),
+          langCode
+        )
           .then((tr) => {
             if (cancelled || tr.length !== ordered.length) return;
             setCues((prev) =>
@@ -2555,7 +2573,7 @@ export default function VideoLearnPlayer({
                         })()}
                       </p>
                     )}
-                    {c.translit && (
+                    {c.translit && !isExplanationCue(c.target, langCode) && (
                       <TranslitLine
                         target={c.target}
                         translit={c.translit}
@@ -2567,6 +2585,7 @@ export default function VideoLearnPlayer({
                       />
                     )}
                     {c.base &&
+                      !isDuplicateBase(c, langCode) &&
                       (alignEnabled ? (
                         <p
                           className="mt-0.5 font-semibold"
@@ -2743,7 +2762,12 @@ export default function VideoLearnPlayer({
           word={anchor.word}
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
-          langCode={langCode}
+          // Kata di baris penjelas (mis. kalimat Inggris di video Ukraina)
+          // dianalisis sebagai bahasa penjelas, BUKAN bahasa target — biar arti &
+          // pecahan katanya benar. Bahasa penjelas di video "native mengajar pakai
+          // Inggris" praktis selalu Inggris → pakai "en"; artinya tetap dijelaskan
+          // ke bahasa terjemahan pilihan pengguna (prop baseLang di bawah).
+          langCode={isExplanationCue(anchor.sentence, langCode) ? "en" : langCode}
           baseLang={baseLang}
           videoId={video.videoId}
           x={anchor.x}
@@ -2898,7 +2922,7 @@ function FocusLine({
             {/* Terjemahan kalimat penuh di mode Analisa IKUT tombol "Terjemahan"
                 (default tampil) — bisa disembunyikan kalau gloss per-kata dirasa
                 cukup, tapi jangan hilang total supaya tombolnya tetap berefek. */}
-            {!showTranslation ? null : cue.base ? (
+            {!showTranslation ? null : cue.base && !isDuplicateBase(cue, langCode ?? "") ? (
               <p
                 className="mt-2 font-bold"
                 style={{ color: GOLD, fontSize: 15 * scale }}
@@ -2943,7 +2967,7 @@ function FocusLine({
         fontSize={22 * scale}
         center
       />
-      {cue.translit && (
+      {cue.translit && !isExplanationCue(cue.target, langCode ?? "") && (
         <KaraokeTranslit
           cue={cue}
           time={time}
@@ -2952,7 +2976,7 @@ function FocusLine({
           style={{ fontSize: 13 * scale }}
         />
       )}
-      {!showTranslation ? null : cue.base ? (
+      {!showTranslation ? null : cue.base && !isDuplicateBase(cue, langCode ?? "") ? (
         alignEnabled ? (
           <p
             className="mt-1.5 font-bold"

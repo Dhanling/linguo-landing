@@ -98,6 +98,38 @@ export function isRtl(code: string): boolean {
   return RTL.has((code || "").split("-")[0]);
 }
 
+// ── Segmen berbahasa penjelas (subtitle mengikuti audio) ─────────────────────
+// Sebagian video belajar bahasa dituturkan CAMPUR: penutur asli menjelaskan
+// bahasa target (mis. Ukraina) memakai bahasa Inggris, lalu berganti ke bahasa
+// target. Transkriber (Gemini/ASR) sudah menuliskan tiap segmen APA ADANYA —
+// baris Inggris tetap Inggris. Yang dulu keliru: lapisan transliterasi & analisa
+// memaksa SEMUA baris ke bahasa target, jadi baris Inggris dapat romanisasi
+// Ukraina yang ngawur dan analisa kata pun salah bahasa.
+//
+// Deteksi murni dari AKSARA, HANYA saat bahasa target NON-LATIN: baris yang
+// mayoritas hurufnya Latin jelas BUKAN bahasa target → itu penjelasan, tampilkan
+// apa adanya (tanpa baris transliterasi; analisa kata pakai bahasa penjelas).
+// Baris beraksara target (Sirilik/Han/Arab/…) tak pernah terpicu → video satu-
+// bahasa biasa berperilaku PERSIS seperti sebelumnya (nol regresi). Video tetap
+// masuk kategori bahasa target di language selector (kategori tak berubah).
+export function isExplanationCue(text: string, langCode: string): boolean {
+  if (!isNonLatin(langCode)) return false;
+  let letters = 0;
+  let latin = 0;
+  for (const ch of text) {
+    if (!/\p{L}/u.test(ch)) continue;
+    letters++;
+    // ≤ U+02FF = aksara Latin (termasuk huruf Latin berdiakritik). Di atasnya =
+    // Sirilik/Yunani/Han/Arab/dll = aksara bahasa target.
+    if ((ch.codePointAt(0) ?? 0) <= 0x2ff) latin++;
+  }
+  // Ambang: minimal 4 huruf (abaikan potongan simbol/angka) & ≥70% Latin. Kalimat
+  // penjelas asli (Inggris) hampir 100% Latin; kalimat target asli ~0%. Margin 0.7
+  // menjaga kalimat target pendek yang kebetulan memuat nama merek/serapan Latin
+  // panjang (mis. "Це мій iPhone Pro") tetap dikenali sebagai bahasa target.
+  return letters >= 4 && latin / letters >= 0.7;
+}
+
 // Tag BCP-47 untuk Web Speech API (tombol dengar di tooltip).
 export const SPEECH_LANG: Record<string, string> = {
   en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",
