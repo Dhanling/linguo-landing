@@ -288,6 +288,24 @@ type AnswerState = { selected_index: number | null; text: string; audioBlob: Blo
 type Phase = "loading" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
 
+// ── Fullscreen API lintas-browser ────────────────────────────────────────────
+// Safari memakai prefiks `webkit`; versi unprefixed saja bikin fitur diam-diam
+// mati (requestFullscreen/exitFullscreen/fullscreenElement = undefined → `?.()`
+// short-circuit tanpa error). Helper ini coba unprefixed dulu, lalu webkit.
+function fsElement(): Element | null {
+  if (typeof document === "undefined") return null;
+  return (document.fullscreenElement || (document as any).webkitFullscreenElement) ?? null;
+}
+function requestFs(el: HTMLElement) {
+  const fn = el.requestFullscreen || (el as any).webkitRequestFullscreen;
+  try { const p = fn?.call(el); if (p && typeof p.catch === "function") p.catch(() => { /* diblokir */ }); } catch { /* ignore */ }
+}
+function exitFs() {
+  if (typeof document === "undefined") return;
+  const fn = document.exitFullscreen || (document as any).webkitExitFullscreen;
+  try { fn?.call(document); } catch { /* ignore */ }
+}
+
 export default function SimulasiRunnerPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id as string;
@@ -307,6 +325,9 @@ export default function SimulasiRunnerPage() {
   const [introDone, setIntroDone] = useState<Set<number>>(new Set());
   const dismissIntro = (si: number) => setIntroDone((prev) => { const n = new Set(prev); n.add(si); return n; });
   const reopenIntro = (si: number) => { setSecIdx(si); setIntroDone((prev) => { const n = new Set(prev); n.delete(si); return n; }); };
+  // Layar penuh (fokus ala ujian). Dipanggil dari gesture user (klik Mulai) supaya
+  // tak diblokir browser; abaikan bila gagal (mis. izin ditolak).
+  const enterFullscreen = () => { if (!fsElement()) requestFs(document.documentElement); };
   const [answers, setAnswers] = useState<Record<string, AnswerState>>({});
   const [results, setResults] = useState<ResultItem[]>([]);
   const [totals, setTotals] = useState({ score: 0, max_score: 0, auto_score: 0, ai_score: 0 });
@@ -374,6 +395,7 @@ export default function SimulasiRunnerPage() {
 
   async function start() {
     if (!sim || !info) return;
+    enterFullscreen(); // masuk layar penuh saat mulai (fokus ala ujian)
     if (preview) {
       setAttemptId("preview"); // tak menyimpan attempt sungguhan
     } else {
@@ -381,10 +403,15 @@ export default function SimulasiRunnerPage() {
       if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
       setAttemptId(aid);
     }
-    if (sim.duration_minutes > 0) {
-      const dl = Date.now() + sim.duration_minutes * 60_000;
+    // Durasi total = durasi simulasi bila diset; kalau 0, jumlahkan durasi tiap
+    // bagian (mis. TOEFL ITP yang waktunya per-bagian) → timer tetap otomatis muncul.
+    const totalMin = sim.duration_minutes > 0
+      ? sim.duration_minutes
+      : sections.reduce((n, s) => n + (s.duration_minutes || 0), 0);
+    if (totalMin > 0) {
+      const dl = Date.now() + totalMin * 60_000;
       setDeadline(dl);
-      setRemaining(sim.duration_minutes * 60);
+      setRemaining(totalMin * 60);
     }
     setPhase("running");
   }
@@ -618,7 +645,7 @@ export default function SimulasiRunnerPage() {
             >
               <ArrowLeft className="h-4 w-4" />Bagian sebelumnya
             </button>
-            <button onClick={() => dismissIntro(secIdx)} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+            <button onClick={() => { enterFullscreen(); dismissIntro(secIdx); }} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
               <PlayCircle className="h-4 w-4" />Mulai bagian ini
             </button>
           </div>
@@ -1059,13 +1086,18 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
   // fokus penuh ke soal seperti aplikasi ujian.
   const [fs, setFs] = useState(false);
   useEffect(() => {
-    const onChange = () => setFs(!!document.fullscreenElement);
+    const onChange = () => setFs(!!fsElement());
     document.addEventListener("fullscreenchange", onChange);
-    return () => document.removeEventListener("fullscreenchange", onChange);
+    document.addEventListener("webkitfullscreenchange", onChange); // Safari
+    onChange(); // sinkron state awal (mis. sudah fullscreen dari layar intro)
+    return () => {
+      document.removeEventListener("fullscreenchange", onChange);
+      document.removeEventListener("webkitfullscreenchange", onChange);
+    };
   }, []);
   const toggleFs = () => {
-    if (document.fullscreenElement) document.exitFullscreen?.();
-    else document.documentElement.requestFullscreen?.().catch(() => { /* diblokir browser */ });
+    if (fsElement()) exitFs();
+    else requestFs(document.documentElement);
   };
 
   return (
@@ -1115,16 +1147,19 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
           Mode Preview — tampilan POV siswa. Jawaban & nilai tidak disimpan.
         </div>
       )}
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
         <div className={`mx-auto flex ${maxW} items-center gap-3 px-4 py-3.5 sm:px-6`}>
-          {confirmExit ? (
+          {confirmExit && !preview ? (
+            // Siswa sungguhan: konfirmasi dulu (cegah kehilangan progres/waktu).
             <button type="button" onClick={() => setAskExit(true)} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
               <ArrowLeft className="h-5 w-5" />
             </button>
           ) : (
-            <Link href={backHref} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+            // Preview / layar non-ujian: langsung keluar (tak ada progres yg hilang) &
+            // pastikan keluar dari layar penuh dulu supaya tak nyangkut fullscreen.
+            <button type="button" onClick={() => { if (fsElement()) exitFs(); router.push(backHref); }} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
               <ArrowLeft className="h-5 w-5" />
-            </Link>
+            </button>
           )}
           <span className="flex h-9 w-9 items-center justify-center rounded-lg text-white" style={{ background: TEAL_DEEP }}>
             <ClipboardCheck className="h-5 w-5" />
@@ -1180,7 +1215,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
               </button>
               <button
                 type="button"
-                onClick={() => { if (document.fullscreenElement) document.exitFullscreen?.(); router.push(backHref); }}
+                onClick={() => { if (fsElement()) exitFs(); router.push(backHref); }}
                 className="rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600"
               >
                 Ya, keluar
@@ -1237,7 +1272,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
   useEffect(() => {
     try {
       const p = localStorage.getItem("sim-nav-pos");
-      if (p) setPos(JSON.parse(p));
+      if (p) { const v = JSON.parse(p); setPos({ x: v.x, y: Math.max(96, v.y) }); } // jangan menutupi header (tombol kembali)
       setMinimized(localStorage.getItem("sim-nav-min") === "1");
     } catch { /* ignore */ }
   }, []);
@@ -1245,7 +1280,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
     if (!dragRef.current || !panelRef.current) return;
     const w = panelRef.current.offsetWidth, h = panelRef.current.offsetHeight;
     const x = Math.min(Math.max(8, e.clientX - dragRef.current.dx), window.innerWidth - w - 8);
-    const y = Math.min(Math.max(8, e.clientY - dragRef.current.dy), window.innerHeight - Math.min(h, 120) - 8);
+    const y = Math.min(Math.max(96, e.clientY - dragRef.current.dy), window.innerHeight - Math.min(h, 120) - 8);
     setPos({ x, y });
   };
   const onDragEnd = () => {
