@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Headphones, PenLine, Mic, Sparkles, type LucideIcon } from "lucide-react";
+import { BookOpen, Headphones, PenLine, Mic, type LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Simulasi TOEFL & IELTS | Linguo.id",
@@ -32,10 +32,7 @@ export default function SimulasiLandingPage() {
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
         <div className="mx-auto max-w-5xl px-5 py-20 text-center text-white sm:py-28">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold backdrop-blur">
-            <Sparkles className="h-4 w-4" /> Baru · Dinilai oleh AI
-          </span>
-          <h1 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
             Simulasi TOEFL &amp; IELTS
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams, useRouter } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
@@ -570,7 +570,7 @@ export default function SimulasiRunnerPage() {
     const tpl = SECTION_INTRO[section.skill] ?? { title: "Petunjuk Bagian", points: [] };
     const customInstr = section.instructions?.trim();
     return (
-      <Shell sim={sim} preview={preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+      <Shell sim={sim} preview={preview} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
         <div className="mb-4 flex items-center gap-1.5">
           {sections.map((s, i) => (
             <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
@@ -628,7 +628,7 @@ export default function SimulasiRunnerPage() {
   }
 
   return (
-    <Shell sim={sim} preview={preview} wide={hasMedia} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+    <Shell sim={sim} preview={preview} wide={hasMedia} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       {/* progress */}
       <div className="mb-4 flex items-center gap-1.5">
         {sections.map((s, i) => (
@@ -1031,7 +1031,11 @@ function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
   );
 }
 
-function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean }) {
+function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean; confirmExit?: boolean }) {
+  const router = useRouter();
+  // Konfirmasi sebelum keluar saat tes sedang berjalan (cegah keluar tak sengaja
+  // yang bikin kehilangan progres/waktu). Hanya aktif saat confirmExit=true.
+  const [askExit, setAskExit] = useState(false);
   // wide = layout split materi|soal (butuh ruang 2 kolom di desktop). Kartu
   // dibuat lebih lebar (memanjang ke kiri & kanan) supaya bacaan & soal lega.
   const maxW = wide ? "max-w-[92rem]" : "max-w-3xl";
@@ -1110,9 +1114,15 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
       )}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white">
         <div className={`mx-auto flex ${maxW} items-center gap-3 px-4 py-3.5 sm:px-6`}>
-          <Link href={backHref} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
-            <ArrowLeft className="h-5 w-5" />
-          </Link>
+          {confirmExit ? (
+            <button type="button" onClick={() => setAskExit(true)} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+          ) : (
+            <Link href={backHref} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+              <ArrowLeft className="h-5 w-5" />
+            </Link>
+          )}
           <span className="flex h-9 w-9 items-center justify-center rounded-lg text-white" style={{ background: TEAL_DEEP }}>
             <ClipboardCheck className="h-5 w-5" />
           </span>
@@ -1138,6 +1148,44 @@ function Shell({ sim, children, headerRight, preview, wide }: { sim: Simulation;
         </div>
       </header>
       <main className={`mx-auto ${maxW} px-4 py-6 sm:px-6`}>{children}</main>
+
+      {/* Konfirmasi keluar sesi tes — cegah keluar tak sengaja saat mengerjakan. */}
+      {askExit && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setAskExit(false)} />
+          <div className="relative w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
+            <div className="flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-500">
+                <AlertCircle className="h-5 w-5" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-base font-bold text-slate-900">Keluar dari simulasi?</p>
+                <p className="mt-1 text-sm text-slate-500">
+                  {preview
+                    ? "Kamu akan keluar dari mode preview."
+                    : "Progres & sisa waktu bagian ini bisa hilang. Kamu yakin mau keluar?"}
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setAskExit(false)}
+                className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+              >
+                Batal
+              </button>
+              <button
+                type="button"
+                onClick={() => { if (document.fullscreenElement) document.exitFullscreen?.(); router.push(backHref); }}
+                className="rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600"
+              >
+                Ya, keluar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
