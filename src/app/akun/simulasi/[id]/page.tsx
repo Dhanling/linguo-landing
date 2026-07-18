@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
+  peekSimulationAccess, startGuestSession,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
   AUTO_GRADED, SKILL_LABEL, testTypeLabel, effectiveDurationMinutes,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
@@ -16,6 +17,7 @@ import {
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
   Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
   GripVertical, Minimize2, PlayCircle, Type, Moon, Sun, Maximize, Minimize,
+  User, Mail, Phone,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -285,7 +287,7 @@ function RangedAudio({ url, className }: { url: string; className?: string }) {
 }
 
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
-type Phase = "loading" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
+type Phase = "loading" | "guestform" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
 
 // ── Fullscreen API lintas-browser ────────────────────────────────────────────
@@ -334,32 +336,63 @@ export default function SimulasiRunnerPage() {
   const [gradingMsg, setGradingMsg] = useState("");
   const [deadline, setDeadline] = useState<number | null>(null);
   const [remaining, setRemaining] = useState<number | null>(null);
+  const [guestTitle, setGuestTitle] = useState<string>(""); // judul sim di form identitas tamu
+  const [guestBusy, setGuestBusy] = useState(false);
   const submittingRef = useRef(false);
+
+  // Ambil paket soal + siapkan state jawaban, lalu tampilkan layar intro.
+  async function loadExam(studentInfo: StudentInfo) {
+    setInfo(studentInfo);
+    const { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
+    if (!simulation) { setPhase("notfound"); return; }
+    // Section tanpa soal (mis. divider "Reading Comprehension" hasil impor yang
+    // cuma berisi petunjuk) tak ada yang bisa dikerjakan → sembunyikan dari siswa
+    // supaya tak muncul bagian "Tidak ada soal di bagian ini".
+    const secsWithQs = secs.filter((s) => qs.some((q) => q.section_id === s.id));
+    const keepIds = new Set(secsWithQs.map((s) => s.id));
+    const shownQs = qs.filter((q) => keepIds.has(q.section_id));
+    setSim(simulation); setSections(secsWithQs); setQuestions(shownQs);
+    const init: Record<string, AnswerState> = {};
+    shownQs.forEach((q) => { init[q.id] = { selected_index: null, text: "", audioBlob: null, audioUrl: null }; });
+    setAnswers(init);
+    setPhase("intro");
+  }
 
   useEffect(() => {
     (async () => {
       let studentInfo = await getStudentInfo();
       if (!studentInfo) {
-        if (!preview) { setPhase("noauth"); return; }
-        studentInfo = { name: "Preview", email: "preview@linguo.id" } as StudentInfo; // dummy, tak disimpan
+        if (preview) {
+          studentInfo = { user_id: null, name: "Preview", email: "preview@linguo.id", whatsapp: null }; // dummy, tak disimpan
+        } else {
+          // Belum login → intip mode akses. Simulasi mode tamu (B2B) diarahkan ke
+          // form identitas (bisa dikerjakan tanpa akun); selain itu wajib login.
+          const peek = await peekSimulationAccess(id);
+          if (peek?.is_published && peek.access_mode === "guest") {
+            setGuestTitle(peek.title); setPhase("guestform"); return;
+          }
+          setPhase("noauth"); return;
+        }
       }
-      setInfo(studentInfo);
-      const { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
-      if (!simulation) { setPhase("notfound"); return; }
-      // Section tanpa soal (mis. divider "Reading Comprehension" hasil impor yang
-      // cuma berisi petunjuk) tak ada yang bisa dikerjakan → sembunyikan dari siswa
-      // supaya tak muncul bagian "Tidak ada soal di bagian ini".
-      const secsWithQs = secs.filter((s) => qs.some((q) => q.section_id === s.id));
-      const keepIds = new Set(secsWithQs.map((s) => s.id));
-      const shownQs = qs.filter((q) => keepIds.has(q.section_id));
-      setSim(simulation); setSections(secsWithQs); setQuestions(shownQs);
-      const init: Record<string, AnswerState> = {};
-      shownQs.forEach((q) => { init[q.id] = { selected_index: null, text: "", audioBlob: null, audioUrl: null }; });
-      setAnswers(init);
-      setPhase("intro");
+      await loadExam(studentInfo);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, preview]);
+
+  // Submit form identitas tamu → buka sesi anonymous lalu muat soal.
+  async function submitGuest(name: string, email: string, whatsapp: string) {
+    if (guestBusy) return;
+    setGuestBusy(true);
+    const studentInfo = await startGuestSession(name, email || null, whatsapp || null);
+    if (!studentInfo) {
+      setGuestBusy(false);
+      alert("Gagal memulai sesi tamu. Coba lagi, atau hubungi admin bila terus berulang.");
+      return;
+    }
+    setPhase("loading");
+    await loadExam(studentInfo);
+    setGuestBusy(false);
+  }
 
   // Catat bagian terjauh yang pernah dibuka — soal di bagian yang sudah dilewati
   // namun belum dijawab dianggap "dilewati" (ditandai merah di navigasi).
@@ -516,6 +549,10 @@ export default function SimulasiRunnerPage() {
 
   // ── Render states ──────────────────────────────────────────────────────────
   if (phase === "loading") return <Centered><Loader2 className="h-6 w-6 animate-spin text-slate-400" /></Centered>;
+
+  if (phase === "guestform") return (
+    <GuestIdentityForm title={guestTitle} busy={guestBusy} onSubmit={submitGuest} />
+  );
 
   if (phase === "noauth") return (
     <Centered>
@@ -769,6 +806,59 @@ function Stat({ icon: Icon, label, value }: { icon: any; label: string; value: s
 
 function Centered({ children }: { children: React.ReactNode }) {
   return <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4">{children}</div>;
+}
+
+// Form identitas untuk siswa mode tamu (B2B) yang mengerjakan tanpa akun. Nama
+// wajib; email & WhatsApp opsional (dipakai admin untuk rekap ke perusahaan).
+function GuestIdentityForm({ title, busy, onSubmit }: {
+  title: string; busy: boolean; onSubmit: (name: string, email: string, whatsapp: string) => void;
+}) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const canSubmit = name.trim().length >= 2 && !busy;
+  const fieldCls = "w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-100";
+
+  return (
+    <Centered>
+      <form
+        onSubmit={(e) => { e.preventDefault(); if (canSubmit) onSubmit(name, email, whatsapp); }}
+        className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
+      >
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl text-white" style={{ background: TEAL }}>
+          <ClipboardCheck className="h-6 w-6" />
+        </div>
+        <h1 className="mt-4 text-lg font-bold text-slate-900">Isi identitas dulu</h1>
+        <p className="mt-1 text-sm text-slate-500">
+          Sebelum mengerjakan{title ? ` "${title}"` : " simulasi"}, isi data berikut. Nama akan tampil di hasil pengerjaanmu.
+        </p>
+
+        <div className="mt-5 space-y-3">
+          <div className="relative">
+            <User className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input className={fieldCls} placeholder="Nama lengkap *" value={name} onChange={(e) => setName(e.target.value)} autoFocus />
+          </div>
+          <div className="relative">
+            <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input className={fieldCls} type="email" placeholder="Email (opsional)" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div className="relative">
+            <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input className={fieldCls} inputMode="tel" placeholder="No. WhatsApp (opsional)" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          disabled={!canSubmit}
+          className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white disabled:opacity-40"
+          style={{ background: TEAL }}
+        >
+          {busy ? <><Loader2 className="h-4 w-4 animate-spin" />Menyiapkan…</> : <>Mulai Simulasi <ArrowRight className="h-4 w-4" /></>}
+        </button>
+      </form>
+    </Centered>
+  );
 }
 
 // ── Onboarding wizard: Ikhtisar → Petunjuk & cek mic → Rincian bagian ─────────

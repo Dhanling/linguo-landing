@@ -7,7 +7,7 @@
 // simpan / analisa / dengar. Semua best-effort; kalau transkrip tak ada, video
 // tetap jalan dengan caption bawaan YouTube.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   Check,
   Gauge,
@@ -519,7 +519,12 @@ export default function VideoLearnPlayer({
   const wordStudyOpenRef = useRef(false);
   wordStudyOpenRef.current = wordStudyOpen;
   const panelBeforeStudyRef = useRef<boolean | null>(null);
-  useEffect(() => {
+  // useLayoutEffect (bukan useEffect) supaya sembunyi/tampil transkrip terjadi SEBELUM
+  // browser melukis. Kalau useEffect: render pembuka drawer sudah memasang padding
+  // `lg:pr-[var(--drawer-w)]` ke baris split TAPI transkrip baru disembunyikan setelah
+  // paint → ada satu frame transkrip kepencet ke ruang yang menyempit = kedipan. Dengan
+  // layout-effect, padding & transkrip-tersembunyi mendarat di paint yang sama (mulus).
+  useLayoutEffect(() => {
     if (wordStudyOpen) {
       if (panelBeforeStudyRef.current === null) {
         panelBeforeStudyRef.current = showPanel;

@@ -21,6 +21,7 @@ export interface Simulation {
   level: string | null;
   duration_minutes: number;
   is_published: boolean;
+  access_mode: "account" | "guest";
   created_at: string;
   section_count?: number;
   question_count?: number;
@@ -236,6 +237,31 @@ export interface StudentInfo {
   name: string | null;
   email: string | null;
   whatsapp: string | null;
+}
+
+// Intip mode akses simulasi TANPA perlu login — lewat RPC SECURITY DEFINER yang
+// granted ke anon. Dipakai untuk memutuskan: pengunjung belum login diarahkan ke
+// form identitas tamu (mode 'guest') atau layar wajib-login (mode 'account').
+export async function peekSimulationAccess(id: string): Promise<{ is_published: boolean; access_mode: "account" | "guest"; title: string } | null> {
+  const { data } = await supabase.rpc("get_simulation_exam", { p_sim_id: id });
+  const s = (data as any)?.simulation;
+  if (!s) return null;
+  return { is_published: !!s.is_published, access_mode: s.access_mode === "guest" ? "guest" : "account", title: s.title };
+}
+
+// Mulai sesi tamu (B2B): Supabase Anonymous Sign-In → jadi role authenticated
+// sehingga attempt/jawaban tersimpan lewat RLS yang sudah ada. Nama/email/WA dari
+// form disimpan ke attempt (bukan ke profil). Butuh Anonymous Sign-Ins aktif di
+// dashboard Supabase (Auth settings).
+export async function startGuestSession(name: string, email: string | null, whatsapp: string | null): Promise<StudentInfo | null> {
+  const { data, error } = await supabase.auth.signInAnonymously();
+  if (error || !data.user) return null;
+  return {
+    user_id: data.user.id,
+    name: name.trim() || null,
+    email: email?.trim() || null,
+    whatsapp: whatsapp?.trim() || null,
+  };
 }
 
 export async function getStudentInfo(): Promise<StudentInfo | null> {
