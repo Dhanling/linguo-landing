@@ -622,7 +622,7 @@ export default function SimulasiRunnerPage() {
             {section.passage && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><BookOpen className="h-3.5 w-3.5" />Ada teks bacaan</span>}
           </div>
 
-          <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50/40 p-4">
+          <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50 p-4">
             <h3 className="flex items-center gap-1.5 text-sm font-bold text-slate-800"><Info className="h-4 w-4 text-teal-600" />{tpl.title}</h3>
             {customInstr ? (
               isHtml(customInstr)
@@ -1140,6 +1140,8 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
         .sim-dark .text-teal-800 { color: #34cabf; }
         .sim-dark .text-teal-700 { color: #3ad0c6; }
         .sim-dark .text-teal-600 { color: #45d6cc; }
+        .sim-dark .text-teal-500 { color: #45d6cc; }
+        .sim-dark .border-teal-100 { border-color: rgba(26,158,158,0.32); }
         .sim-dark .border-slate-100 { border-color: #1e2833; }
         .sim-dark .border-slate-200 { border-color: #26323f; }
         .sim-dark .border-slate-300 { border-color: #33414f; }
