@@ -3091,6 +3091,13 @@ function TranslitLine({
 // "future" (belum).
 type KaraokeState = "sung" | "active" | "future";
 
+// [watch-karaoke-lag-v1] Lag sapuan karaoke terhadap audio (detik). Timing per-baris
+// dari ASR/estimasi proporsional (cue tanpa anchor) cenderung MEMIMPIN ucapan —
+// sorotan kata sampai di ujung kalimat sebelum penuturnya selesai. Menunda sapuan
+// sedikit membuat kata yang menyala pas dengan yang sedang diucap. Hanya menggeser
+// sapuan KATA di dalam baris; pemilihan baris aktif tetap pakai syncedTime.
+const KARAOKE_LAG_SEC = 0.5;
+
 function karaokeTokens(
   cue: LearnCue,
   time: number,
@@ -3106,7 +3113,7 @@ function karaokeTokens(
   // [watch-karaoke-anchor-v2] Cue gabungan beberapa window caption bawa anchor batas
   // window ASLI → karaokeFrac menyandarkan sapuan ke timing sebenarnya video (seirama
   // audio & caption bawaan), bukan rata linear yang melenceng saat tempo tak rata (lagu).
-  const frac = karaokeFrac(cue, time);
+  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
   return toks.map((t) => {
@@ -3317,7 +3324,8 @@ function KaraokeTranslit({
   );
   // [watch-karaoke-anchor-v2] Ikuti anchor window caption asli (sama dgn karaokeTokens)
   // biar sapuan translit tetap seirama audio pada cue gabungan beberapa window.
-  const frac = karaokeFrac(cue, time);
+  // [watch-karaoke-lag-v1] Lag sama dgn karaokeTokens supaya sapuan translit sejajar.
+  const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
   const charToks = useMemo(() => translitSweepTokens(translit, frac), [translit, frac]);
   if (!translit) return null;
 
