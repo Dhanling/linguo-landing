@@ -51,6 +51,8 @@ import {
   StudyHistoryItem,
   isFreshBreakdown,
   isExplanationCue,
+  cueIsExplanation,
+  cueAnalysisLang,
   isNonLatin,
   isRtl,
   karaokeFrac,
@@ -94,7 +96,7 @@ const BORDER = "rgba(255,255,255,0.08)";
 // terjemahan pengguna kebetulan sama, sehingga target == terjemahan. Baris target
 // sudah menampilkan teksnya, jadi baris kedua yang identik cuma bising.
 const isDuplicateBase = (cue: LearnCue, langCode: string): boolean =>
-  isExplanationCue(cue.target, langCode) &&
+  cueIsExplanation(cue, langCode) &&
   cue.base.trim().toLowerCase() === cue.target.trim().toLowerCase();
 
 // Label tombol header (Kosakata / bahasa) — tersembunyi (lebar 0) secara default
@@ -268,6 +270,10 @@ interface Anchor {
   wordIdx?: number;
   // Langsung buka drawer Analisa (dibuka ulang dari riwayat kata, bukan tap baru).
   autoStudy?: boolean;
+  // Bahasa untuk MENGANALISIS kata ini — beda dari bahasa target video kalau
+  // katanya ada di baris penjelas (mis. kata Inggris di video Ukraina). Undefined
+  // = pakai bahasa target.
+  lang?: string;
 }
 
 export default function VideoLearnPlayer({
@@ -546,6 +552,9 @@ export default function VideoLearnPlayer({
       x: typeof window !== "undefined" ? window.innerWidth / 2 : 0,
       y: typeof window !== "undefined" ? window.innerHeight / 2 : 0,
       autoStudy: true,
+      // Riwayat tak menyimpan bahasa cue → tebak dari aksara kalimatnya (kata di
+      // baris penjelas Inggris tetap dianalisis sebagai Inggris saat dibuka ulang).
+      lang: isExplanationCue(h.sentence, h.langCode) ? "en" : h.langCode,
     });
   }, []);
 
@@ -1080,11 +1089,11 @@ export default function VideoLearnPlayer({
       // jangan buang kuota Gemini untuknya: kirim "" sebagai gantinya.
       if (
         isNonLatin(langCode) &&
-        ordered.some((c) => !c.translit && !isExplanationCue(c.target, langCode))
+        ordered.some((c) => !c.translit && !cueIsExplanation(c, langCode))
       ) {
         setTranslitLoading(true);
         transliterateLines(
-          ordered.map((c) => (isExplanationCue(c.target, langCode) ? "" : c.target)),
+          ordered.map((c) => (cueIsExplanation(c, langCode) ? "" : c.target)),
           langCode
         )
           .then((tr) => {
@@ -1656,9 +1665,17 @@ export default function VideoLearnPlayer({
       // Jeda video otomatis saat membuka arti kata — biar tak terus jalan & ganggu
       // saat siswa fokus baca artinya.
       playerRef.current?.pauseVideo?.();
-      setAnchor({ id: ++anchorSeq.current, word, sentence, x: e.clientX, y: e.clientY, wordIdx });
+      // Bahasa analisa mengikuti bahasa cue: kata di baris penjelas (mis. kalimat
+      // Inggris di video Ukraina) dianalisis sebagai bahasa itu, bukan bahasa target.
+      const cue = cues.find((c) => c.target === sentence);
+      const lang = cue
+        ? cueAnalysisLang(cue, langCode)
+        : isExplanationCue(sentence, langCode)
+        ? "en"
+        : langCode;
+      setAnchor({ id: ++anchorSeq.current, word, sentence, x: e.clientX, y: e.clientY, wordIdx, lang });
     },
-    [langCode, video.videoId]
+    [langCode, video.videoId, cues]
   );
 
   return (
@@ -2582,7 +2599,7 @@ export default function VideoLearnPlayer({
                         })()}
                       </p>
                     )}
-                    {c.translit && !isExplanationCue(c.target, langCode) && (
+                    {c.translit && !cueIsExplanation(c, langCode) && (
                       <TranslitLine
                         target={c.target}
                         translit={c.translit}
@@ -2775,11 +2792,10 @@ export default function VideoLearnPlayer({
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
           // Kata di baris penjelas (mis. kalimat Inggris di video Ukraina)
-          // dianalisis sebagai bahasa penjelas, BUKAN bahasa target — biar arti &
-          // pecahan katanya benar. Bahasa penjelas di video "native mengajar pakai
-          // Inggris" praktis selalu Inggris → pakai "en"; artinya tetap dijelaskan
-          // ke bahasa terjemahan pilihan pengguna (prop baseLang di bawah).
-          langCode={isExplanationCue(anchor.sentence, langCode) ? "en" : langCode}
+          // dianalisis sebagai bahasa cue-nya (dari anchor.lang), BUKAN dipaksa
+          // bahasa target — biar arti & pecahan katanya benar. Artinya tetap
+          // dijelaskan ke bahasa terjemahan pilihan pengguna (prop baseLang).
+          langCode={anchor.lang ?? langCode}
           baseLang={baseLang}
           videoId={video.videoId}
           x={anchor.x}
@@ -2979,7 +2995,7 @@ function FocusLine({
         fontSize={22 * scale}
         center
       />
-      {cue.translit && !isExplanationCue(cue.target, langCode ?? "") && (
+      {cue.translit && !cueIsExplanation(cue, langCode ?? "") && (
         <KaraokeTranslit
           cue={cue}
           time={time}

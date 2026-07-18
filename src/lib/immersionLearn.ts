@@ -130,6 +130,25 @@ export function isExplanationCue(text: string, langCode: string): boolean {
   return letters >= 4 && latin / letters >= 0.7;
 }
 
+// Versi cue-aware: kalau cue membawa `lang` per-segmen (jalur ASR), pakai itu —
+// bahasa cue BERBEDA dari bahasa target = segmen penjelas. Ini lebih akurat dari
+// deteksi aksara & juga jalan untuk bahasa target beraksara Latin (mis. belajar
+// Spanyol via Inggris). Tanpa `lang` (cache lama/caption) → jatuh ke deteksi aksara.
+export function cueIsExplanation(cue: { target: string; lang?: string }, langCode: string): boolean {
+  if (cue.lang) {
+    return cue.lang.split("-")[0].toLowerCase() !== (langCode || "").split("-")[0].toLowerCase();
+  }
+  return isExplanationCue(cue.target, langCode);
+}
+
+// Bahasa untuk MENGANALISIS/menampilkan sebuah cue: kalau segmen penjelas, pakai
+// bahasa cue-nya (fallback "en" — penjelas hampir selalu Inggris); selain itu
+// bahasa target video.
+export function cueAnalysisLang(cue: { target: string; lang?: string }, langCode: string): string {
+  if (!cueIsExplanation(cue, langCode)) return langCode;
+  return cue.lang ? cue.lang.split("-")[0].toLowerCase() : "en";
+}
+
 // Tag BCP-47 untuk Web Speech API (tombol dengar di tooltip).
 export const SPEECH_LANG: Record<string, string> = {
   en: "en-US", ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", es: "es-ES", fr: "fr-FR",
@@ -258,6 +277,10 @@ export interface LearnCue {
   target: string;
   base: string;
   translit?: string;
+  /** Bahasa yang DIUCAPKAN di cue ini (BCP-47 base), diisi jalur ASR untuk video
+   *  campur bahasa (mis. penutur menjelaskan bahasa target memakai Inggris). Kosong
+   *  = cue lama/caption → jatuh ke deteksi aksara (isExplanationCue). */
+  lang?: string;
   // Analisa kalimat (kelas kata + arti per kata) yang sudah di-precompute &
   // disimpan bareng transkrip → mode Analisa instan tanpa loading. Diisi oleh
   // prewarmBreakdowns() (klien) lalu di-persist ke yt_transcripts.cues[].breakdown.
