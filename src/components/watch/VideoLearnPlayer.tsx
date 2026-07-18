@@ -786,6 +786,34 @@ export default function VideoLearnPlayer({
     }
   }, []);
 
+  // ── Auto-fullscreen saat video dibuka ────────────────────────────────────────
+  // Buka video = langsung layar penuh, jadi tab & chrome browser (Safari) tersembunyi
+  // dan fokus penuh ke tontonan. Dipanggil di mount effect: klik kartu video barusan
+  // masih dalam jendela "transient activation" (~5 dtk), jadi requestFullscreen diizinkan.
+  // Di iOS (fullscreen elemen tak didukung) call gagal diam-diam — user tetap bisa
+  // pakai tombol fullscreen manual. Hanya sekali per pembukaan player.
+  const autoFsTriedRef = useRef(false);
+  useEffect(() => {
+    if (autoFsTriedRef.current) return;
+    autoFsTriedRef.current = true;
+    const el = rootRef.current;
+    if (!el) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const e = el as any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const d = document as any;
+    // Sudah fullscreen (mis. balik dari miniplayer) → jangan panggil lagi.
+    if (document.fullscreenElement ?? d.webkitFullscreenElement) return;
+    try {
+      const p = (el.requestFullscreen ?? e.webkitRequestFullscreen)?.call(el);
+      // requestFullscreen mengembalikan Promise yang bisa reject (mis. tanpa gesture);
+      // telan penolakannya supaya tak ada unhandled rejection di console.
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    } catch {
+      /* abaikan — sebagian browser (iOS) tak izinkan fullscreen elemen */
+    }
+  }, []);
+
   // ── Muat YouTube player ─────────────────────────────────────────────────────
   useEffect(() => {
     let cancelled = false;
