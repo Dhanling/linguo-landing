@@ -2,6 +2,9 @@
 // linguo-patch:ling-polish-v2
 // linguo-patch:ling-chat-v3  — logging Supabase, nomor tiket, status human-aware
 // linguo-patch:ling-chat-v3-1  — tabel rename ling_chat_* (anti-bentrok WA Inbox dll)
+// linguo-patch:ling-intercom-v1 — lead capture di tengah chat (nama+WA → tabel leads, source "ling-chat"),
+//   output model jadi JSON {reply, lead_*, intent, language, product, escalate} ala WA bot,
+//   visitor_name/visitor_wa disimpan di ling_chat_sessions (kolom sudah ada, tanpa migrasi)
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -89,6 +92,22 @@ Lainnya:
 - Kelas anak: https://linguo.id/kelas-anak
 - Cara daftar: buka linguo.id → pilih program & bahasa → isi form → bayar → admin hubungi & masukkan ke grup WA.
 
+LEAD CAPTURE (natural ala CS profesional, JANGAN maksa):
+- Kalau user menunjukkan niat serius (tanya harga bahasa spesifik, mau daftar, tanya trial/jadwal), SETELAH menjawab pertanyaannya, tawarkan SEKALI dengan natural: minta nama & nomor WhatsApp supaya admin bisa bantu proses lebih lanjut. Contoh: "Biar gampang di-follow up admin, boleh Ling minta nama & nomor WA kakak? 😊"
+- Jangan minta di sapaan pertama, dan jangan ulangi kalau user mengabaikan/menolak — tetap layani seperti biasa.
+- Kalau user menyebut nama dan/atau nomor WA-nya kapan pun di percakapan, isi field lead_name / lead_wa di output JSON. Setelah dapat, ucapkan terima kasih singkat dan lanjut bantu.
+
+KLASIFIKASI (isi di output JSON setiap balasan):
+- "intent": pilih SATU — "daftar_baru" (niat mendaftar/ambil kelas), "info_produk" (tanya program/biaya/jadwal/bahasa), "pelayanan" (urusan siswa existing), "komplain" (keluhan), "lainnya".
+- "language": bahasa yang DIMINATI user dari seluruh konteks (bukan bahasa mengetiknya), tulis dalam bahasa Inggris, mis. "English", "Korean", "Japanese", "German", "Spanish". Minat IELTS → "Test Prep - IELTS", TOEFL → "Test Prep - TOEFL". Belum jelas → null.
+- "product": pilih SATU key — "private", "semi_private", "reguler", "kids", "test_prep", "trial", "simulasi", "corporate", "elearning", "ebook". Belum jelas → null.
+- "escalate": true HANYA untuk kasus eskalasi di ATURAN PENTING (termasuk user pilih menu 6 / minta ngobrol admin); selain itu false.
+
+FORMAT OUTPUT (WAJIB):
+- Balas HANYA dengan satu objek JSON valid, tanpa teks lain, tanpa code fence.
+- Format: {"reply":"balasan untuk user (teks biasa, boleh pakai baris baru)","lead_name":"nama user atau null","lead_wa":"nomor WA user atau null","intent":"...","language":"... atau null","product":"... atau null","escalate":false}
+- lead_name/lead_wa HANYA diisi kalau user benar-benar menyebutkannya sendiri. Jangan mengarang.
+
 ATURAN PENTING:
 - Linguo TIDAK punya trial/uji coba GRATIS. Jangan pernah bilang ada "trial gratis" atau "coba gratis". Kalau user nanya trial gratis, jelaskan ramah bahwa kelas trial tersedia tapi berbayar, arahkan ke https://linguo.id/kelas-trial
 - JANGAN mengarang harga, jadwal, promo, atau diskon di luar knowledge base ini.
@@ -98,6 +117,75 @@ ATURAN PENTING:
 // ====== /OTAK ======
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
+
+type BotOut = {
+  reply: string;
+  lead_name: string | null;
+  lead_wa: string | null;
+  intent: string | null;
+  language: string | null;
+  product: string | null;
+  escalate: boolean;
+};
+
+// Model diminta balas JSON; kalau parsing gagal, seluruh teks dianggap reply biasa
+// (chat ga boleh putus gara-gara format).
+function parseBotOut(raw: string): BotOut {
+  const fallback: BotOut = {
+    reply: raw,
+    lead_name: null,
+    lead_wa: null,
+    intent: null,
+    language: null,
+    product: null,
+    escalate: false,
+  };
+  try {
+    const cleaned = raw.replace(/```json|```/g, "").trim();
+    const start = cleaned.indexOf("{");
+    const end = cleaned.lastIndexOf("}");
+    if (start < 0 || end <= start) return fallback;
+    const o = JSON.parse(cleaned.slice(start, end + 1)) as Record<string, unknown>;
+    const str = (v: unknown) =>
+      typeof v === "string" && v.trim() && v.trim().toLowerCase() !== "null"
+        ? v.trim()
+        : null;
+    const reply = str(o.reply);
+    if (!reply) return fallback;
+    return {
+      reply,
+      lead_name: str(o.lead_name),
+      lead_wa: str(o.lead_wa),
+      intent: str(o.intent),
+      language: str(o.language),
+      product: str(o.product),
+      escalate: o.escalate === true,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+// Normalisasi nomor WA Indonesia: 0812… / +62… / 812… → 62812…
+function normWa(v: string): string | null {
+  let d = v.replace(/\D/g, "");
+  if (d.startsWith("0")) d = "62" + d.slice(1);
+  else if (d.startsWith("8")) d = "62" + d;
+  return d.length >= 10 && d.length <= 16 ? d : null;
+}
+
+const PRODUCT_LABEL: Record<string, string> = {
+  private: "Kelas Private",
+  semi_private: "Kelas Semi-Private",
+  reguler: "Kelas Reguler",
+  kids: "Kelas Anak",
+  test_prep: "Test Prep",
+  trial: "Trial Class",
+  simulasi: "Simulasi Tes",
+  corporate: "Corporate",
+  elearning: "E-Learning",
+  ebook: "E-Book",
+};
 
 function sb() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -193,7 +281,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 512,
+        max_tokens: 700,
         system: SYSTEM,
         messages: msgs,
       }),
@@ -211,7 +299,7 @@ export async function POST(req: Request) {
     const data = (await r.json()) as {
       content?: Array<{ type?: string; text?: string }>;
     };
-    const reply = Array.isArray(data.content)
+    const rawText = Array.isArray(data.content)
       ? data.content
           .filter((b) => b.type === "text")
           .map((b) => b.text || "")
@@ -219,11 +307,12 @@ export async function POST(req: Request) {
           .trim()
       : "";
 
+    const out = parseBotOut(rawText);
     const finalReply =
-      reply ||
+      out.reply ||
       "Maaf, Ling belum bisa jawab itu. Klik tombol WhatsApp di atas buat ngobrol sama admin ya 🙏";
 
-    if (db && sessionId && reply) {
+    if (db && sessionId && out.reply) {
       try {
         await db
           .from("ling_chat_messages")
@@ -233,7 +322,44 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ reply: finalReply, ticket_no, status });
+    // --- Lead capture ala Intercom: nama+WA dari percakapan → tabel leads ---
+    // Best-effort; sekali per sesi (kalau visitor_wa sudah keisi, jangan dobel insert).
+    let lead_captured = false;
+    const wa = out.lead_wa ? normWa(out.lead_wa) : null;
+    if (db && sessionId && wa) {
+      try {
+        const { data: s2 } = await db
+          .from("ling_chat_sessions")
+          .select("visitor_wa")
+          .eq("id", sessionId)
+          .maybeSingle();
+        const already = (s2 as { visitor_wa: string | null } | null)?.visitor_wa;
+        if (!already) {
+          await db
+            .from("ling_chat_sessions")
+            .update({ visitor_name: out.lead_name, visitor_wa: wa })
+            .eq("id", sessionId);
+          await db.from("leads").insert({
+            name: out.lead_name || "Visitor Chat Web",
+            wa_number: wa,
+            language: out.language,
+            program: (out.product && PRODUCT_LABEL[out.product]) || null,
+            source: "ling-chat" + (ticket_no ? ` · ${ticket_no}` : ""),
+          });
+          lead_captured = true;
+        }
+      } catch {
+        /* gagal simpan lead: jangan ganggu chat */
+      }
+    }
+
+    return NextResponse.json({
+      reply: finalReply,
+      ticket_no,
+      status,
+      escalate: out.escalate,
+      lead_captured,
+    });
   } catch {
     return NextResponse.json({
       reply:

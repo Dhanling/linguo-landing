@@ -5,6 +5,7 @@
 // linguo-patch:ling-chat-v4-redesign  — drawer UI: gradient header, avatar spin, WA strip, typing dots, composer pill, scrim blur. Semua wiring fungsional dipertahanin.
 // linguo-patch:ling-lesson-reposition-v2  — angkat launcher bubble di /akun/belajar biar ga nutupin tombol Selesaikan/Lanjut (panel drawer samping ga diutak-atik)
 // linguo-patch:ling-menu-flow-v1  — flow menu bernomor 1-6 ala WA bot: greeting tampilkan menu, chip = pilihan angka, nomor 6 langsung buka WA admin
+// linguo-patch:ling-intercom-v1  — fitur ala Intercom: riwayat chat persisten (muat ulang dari server), handoff WA pakai ringkasan AI, proactive teaser per halaman, nudge tombol admin saat bot eskalasi
 import { useState, useRef, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { subscribeOverlay, getOverlayCount } from "@/lib/overlayStore";
@@ -20,6 +21,17 @@ const MENU_CHIPS: { n: string; label: string }[] = [
   { n: "4", label: "4️⃣ Jadwal reguler" },
   { n: "5", label: "5️⃣ Cara daftar" },
   { n: "6", label: "6️⃣ Chat admin" },
+];
+
+// Proactive message ala Intercom: teaser nyapa duluan sesuai halaman yang lagi dibuka.
+// Sekali per halaman per sesi browser (sessionStorage), muncul setelah beberapa detik.
+const PROACTIVE: { prefix: string; text: string }[] = [
+  { prefix: "/harga", text: "Bingung hitung biaya kelasnya? Tanya Ling aja 😊" },
+  { prefix: "/kelas-trial", text: "Mau coba dulu 1 sesi trial? Ling bantu pilihin 😊" },
+  { prefix: "/jadwal-kelas-reguler", text: "Cari jadwal yang cocok? Tanya Ling ya 😊" },
+  { prefix: "/kelas-anak", text: "Mau cari kelas buat si kecil? Ling siap bantu 😊" },
+  { prefix: "/silabus", text: "Ada pertanyaan soal materi & level? Tanya Ling 😊" },
+  { prefix: "/toko", text: "Butuh rekomendasi e-book atau e-learning? Tanya Ling 😊" },
 ];
 
 type Msg = { role: "user" | "assistant" | "admin"; content: string };
@@ -154,10 +166,27 @@ const CSS = `
 .lingw-powered{text-align:center;font-size:11px;color:#B6C8C4;margin-top:9px;font-weight:600;}
 .lingw-powered b{color:var(--teal-deep);font-family:'Baloo 2','Plus Jakarta Sans',sans-serif;}
 
+/* [ling-intercom-v1] teaser proactive di atas launcher */
+.lingw-teaser{
+  position:fixed;right:20px;bottom:96px;z-index:9990;max-width:270px;cursor:pointer;
+  background:#fff;color:var(--ink);border:1px solid var(--teal-line);border-radius:16px;border-bottom-right-radius:6px;
+  padding:13px 34px 13px 15px;font-size:13.5px;line-height:1.45;font-weight:500;
+  box-shadow:0 14px 34px -12px rgba(8,51,46,.35);animation:lingw-rise .45s cubic-bezier(.2,.7,.3,1) both;
+}
+.lingw-teaser .x{
+  position:absolute;top:6px;right:6px;width:22px;height:22px;border:none;border-radius:50%;
+  background:#F1F7F6;color:#5C7A75;cursor:pointer;display:grid;place-items:center;font-size:13px;line-height:1;
+}
+.lingw-teaser .x:hover{background:#E2EEEC;}
+
+/* [ling-intercom-v1] nudge tombol WA pas bot menyarankan ngobrol sama admin */
+.lingw-wa.nudge{border-color:var(--yellow);box-shadow:0 0 0 0 rgba(248,197,61,.7);animation:lingw-nudge 1.6s ease-out infinite;}
+@keyframes lingw-nudge{0%{box-shadow:0 0 0 0 rgba(248,197,61,.55);}100%{box-shadow:0 0 0 12px rgba(248,197,61,0);}}
+
 /* [ling-hide-fab-overlay-v1] FAB cuma disembunyiin pas ada modal kebuka di tampilan HP —
    di desktop modal ke-center & ga nutupin FAB, jadi tetap tampil. */
 .lingw-launcher.ovhide{opacity:1;pointer-events:auto;transform:none;}
-@media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}.lingw-launcher.ovhide{opacity:0;pointer-events:none;transform:scale(.6);}}
+@media (max-width:560px){.lingw{--panel-w:100vw;}.lingw-launcher{right:16px;bottom:16px;}.lingw-launcher.ovhide{opacity:0;pointer-events:none;transform:scale(.6);}.lingw-teaser{right:16px;bottom:90px;}}
 `;
 
 export default function ChatWidget() {
@@ -170,8 +199,11 @@ export default function ChatWidget() {
   const [sessionId, setSessionId] = useState("");
   const [ticket, setTicket] = useState<string | null>(null);
   const [humanMode, setHumanMode] = useState(false);
+  const [teaser, setTeaser] = useState<string | null>(null);
+  const [waNudge, setWaNudge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const adminCursor = useRef(0);
+  const histLoaded = useRef(false);
 
   const pathname = usePathname();
 
@@ -233,6 +265,67 @@ export default function ChatWidget() {
     };
   }, [open]);
 
+  // [ling-intercom-v1] riwayat persisten: pas panel pertama kebuka, muat ulang
+  // percakapan lama dari server (kalau ada) biar refresh ga menghapus obrolan.
+  useEffect(() => {
+    if (!open || !sessionId || histLoaded.current) return;
+    histLoaded.current = true;
+    (async () => {
+      try {
+        const res = await fetch("/api/chat/history", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sessionId }),
+        });
+        const data = await res.json();
+        const arr: Array<{ id: number; role: string; content: string }> =
+          Array.isArray(data?.messages) ? data.messages : [];
+        if (data?.ticket_no) setTicket(data.ticket_no);
+        if (data?.status === "human") setHumanMode(true);
+        if (arr.length) {
+          adminCursor.current = Math.max(
+            adminCursor.current,
+            ...arr.map((x) => x.id)
+          );
+          const past: Msg[] = arr
+            .filter(
+              (x) => x.role === "user" || x.role === "assistant" || x.role === "admin"
+            )
+            .map((x) => ({ role: x.role as Msg["role"], content: x.content }));
+          // cuma merge kalau user belum ngetik apa-apa di sesi render ini
+          setMessages((m) =>
+            m.length <= 1 ? [{ role: "assistant", content: GREETING }, ...past] : m
+          );
+        }
+      } catch {
+        /* gagal muat riwayat: mulai fresh aja */
+      }
+    })();
+  }, [open, sessionId]);
+
+  // [ling-intercom-v1] proactive teaser sesuai halaman — sekali per halaman per sesi browser
+  useEffect(() => {
+    setTeaser(null);
+    if (open || !pathname) return;
+    const hit = PROACTIVE.find((p) => pathname.startsWith(p.prefix));
+    if (!hit) return;
+    const key = "ling_teaser_" + hit.prefix;
+    try {
+      if (sessionStorage.getItem(key)) return;
+    } catch {
+      /* sessionStorage diblok: tampilkan aja */
+    }
+    const t = setTimeout(() => {
+      setTeaser(hit.text);
+      try {
+        sessionStorage.setItem(key, "1");
+      } catch {
+        /* abaikan */
+      }
+    }, 5000);
+    return () => clearTimeout(t);
+  }, [pathname, open]);
+
   // polling: ambil balasan admin + status (cuma jalan pas panel kebuka)
   useEffect(() => {
     if (!open || !sessionId) return;
@@ -270,21 +363,45 @@ export default function ChatWidget() {
     };
   }, [open, sessionId]);
 
-  function waHandoff() {
+  // [ling-intercom-v1] handoff dengan konteks: minta ringkasan AI dulu, fallback
+  // ke 3 pesan terakhir. Window dibuka sinkron (blank) biar ga kena popup blocker.
+  async function waHandoff() {
+    setWaNudge(false);
     const transcript = messages
       .filter((m) => m.role === "user")
       .slice(-3)
       .map((m) => m.content)
       .join(" | ");
     const tiket = ticket ? ` (Tiket ${ticket})` : "";
-    const text =
+    let text =
       "Halo Admin Linguo, saya dari chat website." +
       tiket +
       (transcript ? ` Pertanyaan saya: ${transcript}` : "");
-    window.open(
-      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`,
-      "_blank"
-    );
+    const w = window.open("", "_blank");
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 4000);
+      const res = await fetch("/api/chat/handoff", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId }),
+        signal: ctrl.signal,
+      });
+      clearTimeout(t);
+      const data = await res.json();
+      if (data?.summary) {
+        text =
+          "Halo Admin Linguo, saya dari chat website." +
+          tiket +
+          " Ringkasan chat saya: " +
+          data.summary;
+      }
+    } catch {
+      /* ringkasan gagal/lambat: pakai fallback */
+    }
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    if (w) w.location.href = url;
+    else window.open(url, "_blank");
   }
 
   async function send(forced?: string) {
@@ -307,6 +424,7 @@ export default function ChatWidget() {
       const data = await res.json();
       if (data?.ticket_no) setTicket(data.ticket_no);
       if (data?.status === "human") setHumanMode(true);
+      setWaNudge(data?.escalate === true);
       const reply = data && data.reply;
       if (reply) {
         setMessages((m) => [...m, { role: "assistant", content: reply }]);
@@ -346,6 +464,29 @@ export default function ChatWidget() {
         {IcChat}
       </button>
 
+      {teaser && !open && !overlayOpen && (
+        <div
+          className="lingw-teaser"
+          role="button"
+          onClick={() => {
+            setTeaser(null);
+            setOpen(true);
+          }}
+        >
+          {teaser}
+          <button
+            className="x"
+            aria-label="Tutup"
+            onClick={(e) => {
+              e.stopPropagation();
+              setTeaser(null);
+            }}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       <div
         className={"lingw-scrim" + (open ? " open" : "")}
         onClick={() => setOpen(false)}
@@ -382,7 +523,10 @@ export default function ChatWidget() {
               {IcClose}
             </button>
           </div>
-          <button className="lingw-wa" onClick={waHandoff}>
+          <button
+            className={"lingw-wa" + (waNudge ? " nudge" : "")}
+            onClick={waHandoff}
+          >
             <span className="ic">{IcWa}</span>
             Ngobrol langsung sama admin (WhatsApp)
           </button>
