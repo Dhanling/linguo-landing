@@ -5,7 +5,7 @@ import Link from "next/link";
 // [kelas-detail-resilient-v1] pakai klien BERSAMA — instance GoTrue ganda bikin
 // race refresh token (query bisa 401 sesaat padahal user masih login).
 import { supabase } from "@/lib/supabase-client";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, type LucideIcon } from "lucide-react";
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
 
@@ -18,6 +18,8 @@ type NavItem =
 const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
   { key: "materi", label: "Kelas & Materi", icon: BookOpen },
+  // [lingbook-phase1-v1] ebook interaktif → route terpisah /akun/lingbook
+  { key: "lingbook", label: "Lingbook", icon: BookText, href: "/akun/lingbook" },
   // [simulasi-inshell-v1] jadi tab (sidebar tetap tampil), bukan route terpisah lagi
   { key: "simulasi", label: "Simulasi Tes", icon: ClipboardCheck },
   { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
