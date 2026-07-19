@@ -360,7 +360,6 @@ export function WordTooltip({
           bottom,
           width: TIP_W,
           backgroundColor: BALLOON,
-          border: `1px solid ${BORDER}`,
           transform: `translate(${offset.x}px, ${offset.y}px)`,
           transformOrigin: "center bottom",
           animation: "wtPopUp 240ms cubic-bezier(0.16,1,0.3,1)",

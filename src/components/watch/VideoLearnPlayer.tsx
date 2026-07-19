@@ -227,9 +227,9 @@ const qualityLabel = (q: string) => QUALITY_LABELS[q] ?? q;
 
 // [watch-toolbar-iconify-v1] Tombol kontrol bar bawah: tampil ringkas sebagai
 // glyph (ikon untuk aksi, atau teks nilai singkat seperti "1x"/"Auto"/"Besar"
-// untuk tombol bernilai) tanpa outline. Tak ada lagi label yang meluncur saat
-// hover — diganti "tab" latar (TabBg) + tooltip (IconTooltip). `active` menandai
-// status nyala pakai warna teal + tab teal, bukan garis tepi.
+// untuk tombol bernilai) — ikon polos tanpa "tab" latar biar rapi & compact.
+// Status nyala ditandai warna teal; saat hover ikon zoom-in (membesar), label
+// tampil lewat tooltip kecil (IconTooltip).
 function ToolButton({
   glyph,
   label,
@@ -251,10 +251,9 @@ function ToolButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={label}
-      className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 disabled:opacity-40"
+      className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 transition-transform duration-150 ease-out hover:scale-125 active:scale-90 disabled:opacity-40 disabled:hover:scale-100"
       style={{ color: active ? TEAL : "#fff" }}
     >
-      <TabBg active={active} />
       <span className="relative grid h-5 min-w-5 place-items-center text-[13px] font-bold leading-none">
         {glyph}
       </span>
@@ -2858,8 +2857,7 @@ export default function VideoLearnPlayer({
                                 <span
                                   key={`p${cid}-${j}`}
                                   onClick={(e) => onWordTap(e, chunk.text, c.target, chunk.firstTok, chunk.lastTok)}
-                                  className="cursor-pointer rounded-md"
-                                  style={{ backgroundColor: "rgba(26,158,158,0.2)", padding: "1px 5px" }}
+                                  className="cursor-pointer"
                                 >
                                   {inner}
                                 </span>
@@ -3489,6 +3487,7 @@ function KaraokeWord({
   hovered,
   onHover,
   inPhrase,
+  phraseActive,
 }: {
   text: string;
   state: KaraokeState;
@@ -3500,10 +3499,12 @@ function KaraokeWord({
   hovered?: boolean;
   onHover?: (h: boolean) => void;
   // [watch-phrase-chunk-v1] Kata ini bagian dari unit frasa (mis. "the king"):
-  // klik/hover/garis bawah ditangani oleh pembungkus frasa, bukan per-kata — supaya
-  // seluruh frasa jadi satu sorotan & satu tap (arti frasa). Kata tetap "pop" saat
-  // giliran karaokenya, jadi sapuan mengalir per-kata di dalam frasa.
+  // klik/hover ditangani pembungkus frasa, bukan per-kata. Warna & "pop" mengikuti
+  // FRASA (phraseActive) — jadi "the king" menyala teal BERSAMAAN saat sinkron audio,
+  // lalu balik putih; bukan per-kata. Itu penanda kontekstual frasanya (tanpa blok).
   inPhrase?: boolean;
+  // Frasa sedang diucapkan (playhead di dalam rentang frasa) → semua katanya teal.
+  phraseActive?: boolean;
 }) {
   // [watch-karaoke-solid-shadow-v1] Sorotan PER-KATA ala Lingopie: hanya kata yang
   // SEDANG diucapkan yang menyala teal + "pop" naik; kata lain putih. Sapuan
@@ -3511,9 +3512,8 @@ function KaraokeWord({
   // "kata mana yang lagi dibaca". `rtl`/`progress` tak lagi dipakai di sini.
   void rtl;
   void progress;
-  const active = state === "active";
-  // Di dalam frasa: tak menangkap pointer sendiri (pembungkus yang urus) & tanpa
-  // garis-bawah hover per-kata — biar frasa terasa satu kesatuan.
+  // Di dalam frasa: warna/pop ikut phraseActive (satu kesatuan); di luar: state kata.
+  const active = inPhrase ? !!phraseActive : state === "active";
   const cls = inPhrase
     ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
     : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
@@ -3526,7 +3526,9 @@ function KaraokeWord({
       style={{
         color: active ? TEAL : "#fff",
         textShadow: KARAOKE_SHADOW,
-        transform: active ? "translateY(-2px) scale(1.08)" : "none",
+        // Pop per-kata hanya di luar frasa; di dalam frasa pembungkus yang "pop"
+        // supaya seluruh frasa naik bareng (bukan tiap kata sendiri-sendiri).
+        transform: !inPhrase && active ? "translateY(-2px) scale(1.08)" : "none",
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
@@ -3536,28 +3538,24 @@ function KaraokeWord({
 }
 
 // [watch-phrase-chunk-v1] Pembungkus satu unit frasa karaoke (mis. "the king",
-// "the press conference"). Membawa kata-katanya (tiap kata tetap "pop" saat
-// gilirannya) + BLOK SOROTAN warna teal PERSISTEN sebagai penanda "ini satu unit
-// yang bisa di-tap". Hover → blok lebih pekat; klik → buka arti FRASA (bukan per-kata).
+// "the press conference"). TANPA blok/garis — penanda frasa muncul KONTEKSTUAL lewat
+// warna font: saat sinkron audio, seluruh katanya menyala teal & "pop" naik BERSAMAAN
+// (via phraseActive di tiap kata + transform di sini), lalu balik putih. Klik →
+// buka arti FRASA (bukan per-kata).
 function KaraokePhrase({
   children,
+  active,
   onClick,
 }: {
   children: React.ReactNode;
+  active?: boolean;
   onClick: (e: React.MouseEvent) => void;
 }) {
-  const [hover, setHover] = useState(false);
   return (
     <span
       onClick={onClick}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className="relative inline-flex cursor-pointer items-baseline rounded-md align-baseline"
-      style={{
-        backgroundColor: `rgba(26,158,158,${hover ? 0.34 : 0.2})`,
-        padding: "1px 5px",
-        transition: "background-color 150ms ease-out",
-      }}
+      className="relative inline-flex cursor-pointer items-baseline align-baseline transition-transform duration-200 ease-out"
+      style={{ transform: active ? "translateY(-2px) scale(1.08)" : "none" }}
     >
       {children}
     </span>
@@ -3604,8 +3602,9 @@ function KaraokeText({
   }, [toks]);
 
   // Satu token kata → elemen KaraokeWord. `inPhrase` mematikan klik/hover per-kata
-  // (pembungkus frasa yang urus). Token di dalam frasa tetap "pop" saat gilirannya.
-  const renderWord = (j: number, inPhrase: boolean) => {
+  // (pembungkus frasa yang urus); `phraseActive` mewarnai kata teal saat frasanya
+  // sedang diucapkan (semua kata frasa nyala bareng).
+  const renderWord = (j: number, inPhrase: boolean, phraseActive?: boolean) => {
     const t = toks[j];
     return (
       <KaraokeWord
@@ -3615,6 +3614,7 @@ function KaraokeText({
         progress={t.progress}
         rtl={rtl}
         inPhrase={inPhrase}
+        phraseActive={phraseActive}
         onClick={(e) => onWordTap(e, t.text, cue.target, j)}
         hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
         onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
@@ -3628,20 +3628,32 @@ function KaraokeText({
   );
 
   // Susun elemen render: token yang jatuh di chunk multi-kata dibungkus KaraokePhrase
-  // (satu garis bawah + satu tap → arti frasa); sisanya render per-token biasa.
+  // (satu tap → arti frasa); sisanya render per-token biasa. Frasa dianggap "sedang
+  // diucapkan" saat playhead di dalam rentangnya — kata pertama sudah lewat "future"
+  // & kata terakhir belum "sung" → seluruh frasa menyala teal tanpa kedip antar-kata.
   const nodes: React.ReactNode[] = [];
   for (let j = 0; j < toks.length; ) {
     const cid = chunks?.tokenChunk[j] ?? -1;
     const chunk = cid >= 0 ? chunks!.chunks[cid] : null;
     if (chunk && chunk.words > 1) {
+      let firstState: KaraokeState | undefined;
+      let lastState: KaraokeState | undefined;
+      for (let jj = j; jj <= chunk.lastTok && jj < toks.length; jj++) {
+        if (toks[jj].isWord) {
+          if (firstState === undefined) firstState = toks[jj].state;
+          lastState = toks[jj].state;
+        }
+      }
+      const phraseActive = firstState !== undefined && firstState !== "future" && lastState !== "sung";
       const inner: React.ReactNode[] = [];
       let jj = j;
       for (; jj <= chunk.lastTok && jj < toks.length; jj++) {
-        inner.push(toks[jj].isWord ? renderWord(jj, true) : renderSep(jj));
+        inner.push(toks[jj].isWord ? renderWord(jj, true, phraseActive) : renderSep(jj));
       }
       nodes.push(
         <KaraokePhrase
           key={`p${cid}-${j}`}
+          active={phraseActive}
           onClick={(e) => onWordTap(e, chunk.text, cue.target, chunk.firstTok, chunk.lastTok)}
         >
           {inner}
