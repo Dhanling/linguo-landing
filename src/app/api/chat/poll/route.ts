@@ -48,9 +48,12 @@ export async function POST(req: Request) {
 
     // Read receipt: widget hanya mem-poll saat panel terbuka (visitor sedang
     // melihat), jadi pesan admin yang terkirim ke sini dianggap sudah dibaca →
-    // Chat Minling nampilin ✓✓ "Dibaca". Fire-and-forget.
+    // Chat Minling nampilin ✓✓ "Dibaca".
+    // WAJIB di-await: query supabase-js baru jalan saat di-await, dan di
+    // serverless (Vercel) fungsi langsung beku setelah respons — pola
+    // fire-and-forget bikin update ini tak pernah tereksekusi.
     if (m && m.length) {
-      void db
+      await db
         .from("ling_chat_messages")
         .update({ read_at: new Date().toISOString() })
         .eq("session_id", sessionId)
