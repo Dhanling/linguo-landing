@@ -13,18 +13,21 @@
 // ============================================================================
 
 import {
-  NextResponse,
   type NextRequest,
   type NextFetchEvent,
 } from "next/server";
+import { updateSupabaseSession } from "@/lib/supabase-middleware";
 
 const EF_URL =
   "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/track-affiliate-click";
 const REF_COOKIE = "linguo_ref";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 60; // 60 days, in seconds
 
-export function middleware(req: NextRequest, event: NextFetchEvent) {
-  const res = NextResponse.next();
+export async function middleware(req: NextRequest, event: NextFetchEvent) {
+  // [auth-cookie-session-v1] Refresh sesi Supabase & set-ulang cookie sesi
+  // (server-side) lebih dulu. Response ini yang kita pakai seterusnya supaya
+  // cookie sesi + cookie referral menempel di respons yang sama.
+  const res = await updateSupabaseSession(req);
 
   const rawRef = req.nextUrl.searchParams.get("ref");
   if (!rawRef) return res;
