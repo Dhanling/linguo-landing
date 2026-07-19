@@ -466,7 +466,9 @@ export default function VideoLearnPlayer({
 
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
   const [fullscreen, setFullscreen] = useState(false);
-  const [showPanel, setShowPanel] = useState(true);
+  // Default MATI ala YouTube: buka video → video langsung lega/fullscreen tanpa panel.
+  // Transkrip baru muncul (dgn latar thumbnail blur gelap) saat tombol Transkrip ditekan.
+  const [showPanel, setShowPanel] = useState(false);
   // Lebar kolom video (%) di desktop — sisanya untuk transkrip. Bisa diseret lewat
   // separator di antara keduanya, lalu diingat (localStorage) & diklem 35–80%.
   const [splitPct, setSplitPct] = useState(62);
@@ -2502,11 +2504,23 @@ export default function VideoLearnPlayer({
         {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip. */}
         {showPanel && (
         <div
-          className="flex min-h-0 flex-1 flex-col border-t lg:border-l lg:border-t-0"
+          className="relative flex min-h-0 flex-1 flex-col overflow-hidden border-t lg:border-l lg:border-t-0"
           style={{ borderColor: BORDER }}
         >
+          {/* Latar thumbnail video di-blur pekat + gelap ala YouTube — memberi
+              panel transkrip kesan "menyatu" dgn video, bukan kotak hitam datar. */}
+          <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <img
+              src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
+              alt=""
+              loading="lazy"
+              className="h-full w-full scale-125 object-cover opacity-35 blur-2xl"
+            />
+            <div className="absolute inset-0 bg-black/75" />
+          </div>
+
           <div
-            className="flex items-center gap-2 px-4 py-3 sm:px-5"
+            className="relative z-10 flex items-center gap-2 px-4 py-3 sm:px-5"
             style={{ borderBottom: `1px solid ${BORDER}` }}
           >
             <ListChecks className="h-4 w-4" color={TEAL} />
@@ -2524,7 +2538,7 @@ export default function VideoLearnPlayer({
 
           <div
             ref={listRef}
-            className="min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 [scrollbar-width:thin]"
+            className="relative z-10 min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 [scrollbar-width:thin]"
           >
             {txState === "loading" && (
               <div className="flex items-start gap-2 px-2 py-6" style={{ color: SUB }}>
