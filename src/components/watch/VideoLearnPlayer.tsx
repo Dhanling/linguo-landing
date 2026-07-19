@@ -3349,6 +3349,7 @@ function FocusLine({
           cue={cue}
           time={time}
           langCode={langCode}
+          tapped={tapped}
           className="mt-1 italic"
           style={{ fontSize: 13 * scale }}
         />
@@ -3546,6 +3547,7 @@ function KaraokeWord({
   inPhrase,
   phraseActive,
   tapped,
+  lineTapped,
   onHoverOpen,
   onHoverClose,
 }: {
@@ -3556,6 +3558,9 @@ function KaraokeWord({
   onClick: (e: React.MouseEvent) => void;
   // [watch-tap-colored-v1] Kata ini lagi dibuka artinya (balon terbuka) → tetap teal.
   tapped?: boolean;
+  // Ada kata LAIN di baris ini yang di-tap → tahan sorot karaoke kata ini supaya HANYA
+  // kata yang di-tap yang berwarna (permintaan user: cuma yang diklik yang menyala).
+  lineTapped?: boolean;
   // [linguo-patch:watch-translit-hover-sync-v1] hover jarak-jauh: token translit
   // yang bersesuaian di-hover → kata ini ikut menyala (dan sebaliknya via onHover).
   hovered?: boolean;
@@ -3580,10 +3585,15 @@ function KaraokeWord({
   void progress;
   // Di dalam frasa: warna/pop ikut phraseActive (satu kesatuan); di luar: state kata.
   const active = inPhrase ? !!phraseActive : state === "active";
-  // [watch-tap-colored-v1] Warna teal kalau SEDANG diucapkan (karaoke) ATAU lagi dibuka
-  // artinya (tapped) — tapi "pop" (naik+membesar) hanya untuk yang diucapkan, biar kata
-  // yang di-tap cuma menyala tenang, tak ikut melonjak selama balon terbuka.
-  const colored = active || !!tapped;
+  // [watch-tap-colored-v1] Aturan warna:
+  //  • kata yang di-tap → SELALU teal (menyala tenang selama balon arti terbuka);
+  //  • kalau ada kata lain yang di-tap di baris ini (lineTapped) → kata ini DIPADAMKAN
+  //    (putih) walau kebetulan jadi kata karaoke aktif → hanya yang diklik yang menyala;
+  //  • selain itu → ikut karaoke (aktif = teal).
+  const colored = tapped ? true : lineTapped ? false : active;
+  // "Pop" (naik+membesar) hanya saat karaoke berjalan tanpa ada kata yang di-tap — kata
+  // yang di-tap cuma menyala, tak ikut melonjak.
+  const popping = active && !lineTapped;
   const cls = inPhrase
     ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
     : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
@@ -3598,7 +3608,7 @@ function KaraokeWord({
         textShadow: KARAOKE_SHADOW,
         // Pop per-kata hanya di luar frasa; di dalam frasa pembungkus yang "pop"
         // supaya seluruh frasa naik bareng (bukan tiap kata sendiri-sendiri).
-        transform: !inPhrase && active ? "translateY(-2px) scale(1.08)" : "none",
+        transform: !inPhrase && popping ? "translateY(-2px) scale(1.08)" : "none",
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
@@ -3692,6 +3702,8 @@ function KaraokeText({
   // sedang diucapkan (semua kata frasa nyala bareng).
   // [watch-tap-colored-v1] Apakah token ke-j termasuk kata/frasa yang lagi dibuka artinya.
   const isTapped = (j: number) => !!tapped && j >= tapped.lo && j <= tapped.hi;
+  // Ada kata di baris ini yang lagi dibuka artinya → padamkan karaoke kata lain.
+  const anyTapped = !!tapped;
   const renderWord = (j: number, inPhrase: boolean, phraseActive?: boolean, tappedOn?: boolean) => {
     const t = toks[j];
     return (
@@ -3704,6 +3716,7 @@ function KaraokeText({
         inPhrase={inPhrase}
         phraseActive={phraseActive}
         tapped={tappedOn}
+        lineTapped={anyTapped}
         onClick={(e) => onWordTap(e, t.text, cue.target, j)}
         onHoverOpen={onWordHoverOpen ? (e) => onWordHoverOpen(e, t.text, cue.target, j) : undefined}
         onHoverClose={onWordHoverClose}
@@ -3735,9 +3748,12 @@ function KaraokeText({
           lastState = toks[jj].state;
         }
       }
-      const phraseActive = firstState !== undefined && firstState !== "future" && lastState !== "sung";
+      const phraseActiveRaw = firstState !== undefined && firstState !== "future" && lastState !== "sung";
       // Frasa yang di-tap sebagai satu unit → semua katanya menyala teal.
       const phraseTapped = isTapped(j) || isTapped(chunk.lastTok);
+      // Saat ada kata/frasa yang di-tap di baris ini, karaoke frasa lain dipadamkan →
+      // frasa hanya menyala kalau dia yang di-tap.
+      const phraseActive = anyTapped ? phraseTapped : phraseActiveRaw;
       const inner: React.ReactNode[] = [];
       let jj = j;
       for (; jj <= chunk.lastTok && jj < toks.length; jj++) {
@@ -3820,12 +3836,16 @@ function KaraokeTranslit({
   cue,
   time,
   langCode,
+  tapped,
   className,
   style,
 }: {
   cue: LearnCue;
   time: number;
   langCode?: string;
+  // [watch-tap-colored-v1] Rentang token (indeks splitWords) yang lagi dibuka artinya →
+  // token translit yang bersesuaian ikut menyala teal, dan HANYA itu (karaoke dipadamkan).
+  tapped?: { lo: number; hi: number } | null;
   className?: string;
   style?: React.CSSProperties;
 }) {
@@ -3838,6 +3858,19 @@ function KaraokeTranslit({
     () => karaokeTokens(cue, time, langCode).filter((t) => t.isWord),
     [cue, time, langCode]
   );
+  // Ordinal kata (0-based di antara kata target) yang termasuk rentang yang di-tap —
+  // dipetakan dari indeks token splitWords ke urutan kata, sejajar dengan `t.k` translit.
+  const tappedKs = useMemo(() => {
+    if (!tapped) return null;
+    const s = new Set<number>();
+    let k = -1;
+    splitWords(cue.target, langCode).forEach((t, i) => {
+      if (!t.isWord) return;
+      k++;
+      if (i >= tapped.lo && i <= tapped.hi) s.add(k);
+    });
+    return s;
+  }, [tapped, cue.target, langCode]);
   // [watch-karaoke-anchor-v2] Ikuti anchor window caption asli (sama dgn karaokeTokens)
   // biar sorotan translit tetap seirama audio pada cue gabungan beberapa window.
   // [watch-karaoke-lag-v1] Lag sama dgn karaokeTokens supaya sorotan translit sejajar.
@@ -3848,13 +3881,14 @@ function KaraokeTranslit({
   // Sorot per-kata (ikut state target) hanya bila token translit selaras 1:1 dgn kata
   // target; kalau tidak, state berbasis karakter pakai frac yang sama.
   const wordSync = aligned && aligned.filter((t) => t.k >= 0).length === wordStates.length;
-  const toks: { text: string; isWord: boolean; state: KaraokeState }[] = wordSync
+  const toks: { text: string; isWord: boolean; state: KaraokeState; k: number }[] = wordSync
     ? aligned!.map((t) => ({
         text: t.text,
         isWord: t.k >= 0,
         state: t.k < 0 ? ("future" as KaraokeState) : wordStates[t.k].state,
+        k: t.k,
       }))
-    : charToks;
+    : charToks.map((c) => ({ ...c, k: -1 }));
 
   return (
     <p className={className} style={{ color: "#fff", textShadow: KARAOKE_SHADOW, ...style }}>
@@ -3863,7 +3897,17 @@ function KaraokeTranslit({
           <span
             key={idx}
             className="transition-colors duration-200 ease-out"
-            style={{ color: c.state === "active" ? TEAL : "#fff" }}
+            // [watch-tap-colored-v1] Saat ada kata di-tap: HANYA token translit-nya teal
+            // (karaoke dipadamkan). Tanpa tap: ikut karaoke (kata aktif = teal).
+            style={{
+              color: tappedKs
+                ? c.k >= 0 && tappedKs.has(c.k)
+                  ? TEAL
+                  : "#fff"
+                : c.state === "active"
+                ? TEAL
+                : "#fff",
+            }}
           >
             {c.text}
           </span>
