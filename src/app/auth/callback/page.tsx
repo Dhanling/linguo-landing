@@ -28,10 +28,22 @@ function parsePlacementIntent(): { lang: string; langFull: string; level: string
 export default function AuthCallbackPage() {
   const [status, setStatus] = useState<"loading"|"success"|"error">("loading");
   const [userName, setUserName] = useState("");
+  const [errMsg, setErrMsg] = useState("");
 
   useEffect(() => {
     const handle = async () => {
       try {
+        // [akun-oauth-error-surface-v1] Provider gagal → Supabase balik dgn
+        // `#error=…&error_description=…`. Tampilkan segera, jangan tunggu timeout 8 dtk.
+        const hp = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+        const qp = new URLSearchParams(window.location.search);
+        const errCode = hp.get("error") || qp.get("error") || "";
+        if (errCode) {
+          const d = hp.get("error_description") || qp.get("error_description") || "";
+          setErrMsg(decodeURIComponent(d.replace(/\+/g, " ")) || errCode);
+          setStatus("error");
+          return;
+        }
         // Read funnel data from cookie (set before OAuth redirect)
         let funnelData: { program: string; language: string; level: string; wa?: string; name?: string } = { program: "", language: "", level: "" };
         const raw = getCookie("linguo_funnel");
@@ -142,7 +154,8 @@ export default function AuthCallbackPage() {
               <span className="text-4xl">✕</span>
             </div>
             <h2 className="text-xl font-bold mb-3">Oops, ada masalah</h2>
-            <p className="text-slate-500 text-sm mb-6">Login gagal. Coba lagi atau hubungi kami.</p>
+            <p className="text-slate-500 text-sm mb-2">{errMsg || "Login gagal. Coba lagi atau hubungi kami."}</p>
+            <p className="text-slate-400 text-xs mb-6">Kalau pakai Safari, coba matikan “Cegah pelacakan lintas situs” di Setelan → Privasi, atau pakai Chrome.</p>
             <div className="flex gap-3 justify-center">
               <a href="/akun" className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-6 py-3 rounded-full text-sm transition-all">
                 Coba ke Dashboard

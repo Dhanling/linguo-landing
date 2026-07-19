@@ -2243,6 +2243,11 @@ export default function AkunPage() {
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
+  // [akun-oauth-error-surface-v1] Simpan pesan error yang dikirim balik provider OAuth
+  // (mis. `#error=server_error&error_description=…`). Tanpa ini, kegagalan login Google
+  // di Safari (ITP blokir state cookie lintas-situs) cuma "mantul" ke gate login tanpa
+  // alasan apa pun — bikin user & kita nebak-nebak.
+  const [authError, setAuthError] = useState<string>("");
   // [preview-student-v1] mode "POV siswa" tanpa login: /akun?preview=<student_id>
   // Data real di-fetch dari /api/preview-student (service role, bypass RLS).
   const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
@@ -2416,6 +2421,22 @@ export default function AkunPage() {
     if (typeof window !== "undefined") {
       const pid = new URLSearchParams(window.location.search).get("preview");
       if (pid) { setPreviewId(pid); setAuthLoading(false); return; }
+    }
+    // [akun-oauth-error-surface-v1] Kalau provider OAuth balik dengan error, Supabase
+    // mengarahkan ke redirectTo dgn `#error=…&error_description=…` (kadang di query).
+    // Baca & tampilkan alih-alih diam-diam balik ke gate login. Lalu bersihkan URL
+    // biar hash error tak "nyangkut" saat refresh.
+    if (typeof window !== "undefined") {
+      const hp = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+      const qp = new URLSearchParams(window.location.search);
+      const errCode = hp.get("error") || qp.get("error") || "";
+      const errDesc = hp.get("error_description") || qp.get("error_description") || "";
+      if (errCode) {
+        const pretty = decodeURIComponent(errDesc.replace(/\+/g, " ")) || errCode;
+        setAuthError(pretty);
+        // buang param error dari URL (biar tak muncul lagi saat reload / share link)
+        try { window.history.replaceState(null, "", window.location.pathname + window.location.search.replace(/([?&])error[^&]*/g, "").replace(/([?&])error_description[^&]*/g, "").replace(/[?&]$/, "")); } catch {}
+      }
     }
     // [gate-watch-learn-v1] ?next=/path → setelah sesi ada (login sukses / sudah
     // login), langsung dialihkan ke tujuan itu. Hanya path internal (diawali "/")
@@ -2972,6 +2993,17 @@ export default function AkunPage() {
 
             <div className="rounded-3xl border border-black/5 bg-white p-7 shadow-xl shadow-teal-900/5 sm:p-8">
               <h2 className="mb-6 text-2xl font-extrabold text-gray-900">Masuk ke Linguo.id</h2>
+
+              {/* [akun-oauth-error-surface-v1] Tampilkan alasan gagal login (bukan diam-diam mantul) */}
+              {authError && (
+                <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] leading-relaxed text-red-700">
+                  <p className="font-bold">Login belum berhasil</p>
+                  <p className="mt-0.5 text-red-600/90">{authError}</p>
+                  <p className="mt-1.5 text-[12px] text-red-500/80">
+                    Kalau kamu pakai Safari, coba matikan <b>Cegah pelacakan lintas situs</b> (Setelan → Privasi) atau pakai Chrome, lalu coba lagi. Bisa juga login pakai <b>link email</b> di bawah.
+                  </p>
+                </div>
+              )}
 
               <motion.button
                 whileHover={{ scale: 1.02 }}
