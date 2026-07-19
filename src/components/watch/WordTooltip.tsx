@@ -321,7 +321,11 @@ export function WordTooltip({
         full-screen). Tutup drawer → popup muncul lagi. */}
     {!studyOpen && (
     <div className="fixed inset-0 z-[95]" onClick={onClose}>
+      {/* [watch-tip-pop-v1] Balon "meletup" naik dari bawah tiap kata di-tap —
+          key={tapId} me-remount div-nya jadi animasi replay tiap kata baru. */}
+      <style>{`@keyframes wtPopUp{from{opacity:0;transform:translateY(14px) scale(0.92)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
       <div
+        key={tapId}
         onClick={(e) => e.stopPropagation()}
         onPointerDown={onDragStart}
         className="absolute touch-none cursor-move select-none rounded-2xl p-3.5 shadow-2xl"
@@ -333,6 +337,8 @@ export function WordTooltip({
           backgroundColor: BALLOON,
           border: `1px solid ${BORDER}`,
           transform: `translate(${offset.x}px, ${offset.y}px)`,
+          transformOrigin: "center bottom",
+          animation: "wtPopUp 240ms cubic-bezier(0.16,1,0.3,1)",
         }}
       >
         {/* Header: kata + kelas kata + tutup */}

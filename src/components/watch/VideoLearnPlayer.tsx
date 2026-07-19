@@ -10,6 +10,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   Check,
+  ChevronDown,
   Gauge,
   Languages,
   Layers,
@@ -152,6 +153,13 @@ const SYNC_UNDERLINE: React.CSSProperties = {
   textUnderlineOffset: 3,
 };
 const SUB = "rgba(255,255,255,0.5)";
+
+// [watch-karaoke-solid-shadow-v1] Bayangan SOLID (garis tepi hitam pekat, bukan
+// blur) ala subtitle Lingopie — bikin teks karaoke tetap terbaca tajam di atas
+// video apa pun & memberi kesan "tebal" yang khas. Outline 4 arah + drop shadow
+// halus di bawah. Dipakai baris fokus, subtitle overlay, dan transliterasi.
+const KARAOKE_SHADOW =
+  "1px 1px 0 rgba(0,0,0,0.92), -1px 1px 0 rgba(0,0,0,0.92), 1px -1px 0 rgba(0,0,0,0.92), -1px -1px 0 rgba(0,0,0,0.92), 0 3px 5px rgba(0,0,0,0.55)";
 
 // Jam pemutaran m:ss (atau h:mm:ss utk >1 jam) — untuk label waktu di slider seek.
 // Beda dari formatDuration (yg kembalikan "" saat 0): di sini 0 → "0:00".
@@ -1828,49 +1836,65 @@ export default function VideoLearnPlayer({
           </button>
         )}
 
-        {/* Bahasa terjemahan (baris di bawah subtitle) — dropdown ganti cepat. */}
+        {/* Bahasa terjemahan (baris di bawah subtitle) — dropdown ganti cepat.
+            [watch-langsel-hover-v1] Dropdown terbuka saat HOVER (lebih ramah UX
+            daripada harus klik dulu). Klik tetap men-toggle untuk perangkat sentuh.
+            Bridge `pt-2` (bukan margin) menutup celah antara tombol & panel supaya
+            kursor tak jatuh keluar & menutup dropdown saat mengarah ke pilihan. */}
         {onChangeBaseLang && (
-          <div className="relative shrink-0">
+          <div
+            className="relative shrink-0"
+            onMouseEnter={() => setBaseMenuOpen(true)}
+            onMouseLeave={() => setBaseMenuOpen(false)}
+          >
             <button
               onClick={() => setBaseMenuOpen((v) => !v)}
               className="group relative inline-flex items-center justify-center rounded-full p-2 text-white"
               aria-label="Bahasa terjemahan di bawah subtitle"
+              aria-expanded={baseMenuOpen}
             >
               <TabBg active={baseMenuOpen} />
-              <span className="relative inline-flex">
+              <span className="relative inline-flex items-center gap-1">
                 <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
+                <ChevronDown
+                  className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${baseMenuOpen ? "rotate-180" : ""}`}
+                  color={TEAL}
+                />
               </span>
-              <IconTooltip side="bottom">{getBaseLangDef(baseLang).label}</IconTooltip>
+              {!baseMenuOpen && <IconTooltip side="bottom">{getBaseLangDef(baseLang).label}</IconTooltip>}
             </button>
-            {baseMenuOpen && (
-              <>
-                <div className="fixed inset-0 z-10" onClick={() => setBaseMenuOpen(false)} />
-                <div
-                  className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
-                  style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-                >
-                  {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
-                      bahasa yang sama tak masuk akal. */}
-                  {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
-                    const on = b.code === baseLang;
-                    return (
-                      <button
-                        key={b.code}
-                        onClick={() => {
-                          setBaseMenuOpen(false);
-                          if (!on) onChangeBaseLang(b.code);
-                        }}
-                        className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
-                      >
-                        <RectFlag code={b.country} h={16} />
-                        <span className="flex-1 font-semibold text-white">{b.label}</span>
-                        {on && <Check className="h-4 w-4" color={TEAL} />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </>
-            )}
+            <div
+              className={`absolute right-0 top-full z-20 pt-2 transition-all duration-150 ease-out ${
+                baseMenuOpen
+                  ? "translate-y-0 opacity-100"
+                  : "pointer-events-none -translate-y-1 opacity-0"
+              }`}
+            >
+              <div
+                className="w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              >
+                {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
+                    bahasa yang sama tak masuk akal. */}
+                {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
+                  const on = b.code === baseLang;
+                  return (
+                    <button
+                      key={b.code}
+                      onClick={() => {
+                        setBaseMenuOpen(false);
+                        if (!on) onChangeBaseLang(b.code);
+                      }}
+                      className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
+                    >
+                      <RectFlag code={b.country} h={16} />
+                      <span className="flex-1 font-semibold text-white">{b.label}</span>
+                      {on && <Check className="h-4 w-4" color={TEAL} />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         )}
 
@@ -3341,41 +3365,27 @@ function KaraokeWord({
   hovered?: boolean;
   onHover?: (h: boolean) => void;
 }) {
+  // [watch-karaoke-solid-shadow-v1] Sorotan PER-KATA ala Lingopie: hanya kata yang
+  // SEDANG diucapkan yang menyala teal + "pop" naik; kata lain putih. Sapuan
+  // per-karakter (clip-path) diganti pewarnaan kata utuh — lebih tegas & jelas
+  // "kata mana yang lagi dibaca". `rtl`/`progress` tak lagi dipakai di sini.
+  void rtl;
+  void progress;
   const active = state === "active";
-  const pct = state === "sung" ? 100 : active ? Math.round(progress * 100) : 0;
-  // Lapisan teal ditumpuk PAS di atas lapisan dasar (lebar 100%, posisi sama) lalu
-  // dipangkas pakai clip-path — jadi glyph selalu sejajar (tak melenceng seperti
-  // kalau lebar overlay dikecilkan). Aksara RTL disapu dari KANAN (awal kata Arab)
-  // → pangkas dari kiri; Latin disapu dari kiri → pangkas dari kanan.
-  const hide = 100 - pct;
-  const clip = rtl ? `inset(0 0 0 ${hide}%)` : `inset(0 ${hide}% 0 0)`;
   return (
     <span
       onClick={onClick}
       onMouseEnter={() => onHover?.(true)}
       onMouseLeave={() => onHover?.(false)}
-      className="relative mx-[1px] inline-block cursor-pointer align-baseline transition-transform duration-200 hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]"
+      className="relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]"
       style={{
-        transform: active ? "translateY(-1px) scale(1.05)" : "none",
+        color: active ? TEAL : "#fff",
+        textShadow: KARAOKE_SHADOW,
+        transform: active ? "translateY(-2px) scale(1.08)" : "none",
         ...(hovered ? SYNC_UNDERLINE : null),
       }}
     >
-      {/* lapisan dasar — belum diucapkan (putih) */}
-      <span style={{ color: "#fff" }}>{text}</span>
-      {/* lapisan terisi — sudah diucapkan (teal), dipangkas mengikuti progres */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden whitespace-nowrap"
-        style={{
-          color: TEAL,
-          clipPath: clip,
-          WebkitClipPath: clip,
-          transition: "clip-path 220ms linear, -webkit-clip-path 220ms linear",
-          textShadow: active ? "0 0 16px rgba(26,158,158,0.55)" : "none",
-        }}
-      >
-        {text}
-      </span>
+      {text}
     </span>
   );
 }
@@ -3451,10 +3461,7 @@ function KaraokeText({
           <span
             key={j}
             className="whitespace-pre"
-            style={{
-              color: t.state === "future" ? "#fff" : TEAL,
-              transition: "color 220ms linear",
-            }}
+            style={{ color: "#fff", textShadow: KARAOKE_SHADOW }}
           >
             {t.text}
           </span>
@@ -3538,7 +3545,7 @@ function KaraokeTranslit({
     : charToks;
 
   return (
-    <p className={className} style={{ color: "#fff", ...style }}>
+    <p className={className} style={{ color: "#fff", textShadow: KARAOKE_SHADOW, ...style }}>
       {chunks.map((c, idx) =>
         c.isWord ? (
           <TranslitSweepChunk key={idx} text={c.text} pct={c.pct} />
