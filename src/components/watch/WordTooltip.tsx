@@ -385,7 +385,10 @@ export function WordTooltip({
               : { bottom: "100%", borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderBottom: `11px solid ${BALLOON}` }),
           }}
         />
-        {/* Header: kata + kelas kata + tutup */}
+        {/* Header: kata + kelas kata (kiri) — aksi + tutup (KANAN ATAS).
+            [watch-tip-actions-top-v1] Deret aksi (Simpan · Analisa · Dengar)
+            dipindah ke pojok KANAN ATAS bersama tombol tutup (permintaan user),
+            tiap ikon zoom-in saat hover. */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-[16px] font-extrabold text-white">{word}</span>
@@ -405,9 +408,24 @@ export function WordTooltip({
               </span>
             )}
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="shrink-0 opacity-60 hover:opacity-100">
-            <X className="h-4 w-4 text-white" />
-          </button>
+          <div className="flex shrink-0 items-center gap-0.5">
+            <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
+              {saved ? <BookmarkCheck className="h-[17px] w-[17px]" /> : <BookmarkPlus className="h-[17px] w-[17px]" />}
+            </TipAction>
+            <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
+              <Sparkles className="h-[17px] w-[17px]" />
+            </TipAction>
+            <TipAction onClick={() => speak(word, langCode)} label="Dengar">
+              <Volume2 className="h-[17px] w-[17px]" />
+            </TipAction>
+            <button
+              onClick={onClose}
+              aria-label="Tutup"
+              className="ml-0.5 flex items-center justify-center rounded-lg p-1.5 text-white/60 transition duration-150 hover:scale-125 hover:bg-white/10 hover:text-white active:scale-95"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
         </div>
 
         {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
@@ -476,19 +494,6 @@ export function WordTooltip({
           </div>
         )}
 
-        {/* [watch-tip-compact-v1] Aksi: ikon POLOS tanpa kotak abu-abu — compact,
-            rata kanan. Simpan · Analisa · Dengar. */}
-        <div className="mt-2 flex items-center justify-end gap-0.5">
-          <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
-            {saved ? <BookmarkCheck className="h-[18px] w-[18px]" /> : <BookmarkPlus className="h-[18px] w-[18px]" />}
-          </TipAction>
-          <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
-            <Sparkles className="h-[18px] w-[18px]" />
-          </TipAction>
-          <TipAction onClick={() => speak(word, langCode)} label="Dengar">
-            <Volume2 className="h-[18px] w-[18px]" />
-          </TipAction>
-        </div>
       </div>
     </div>
     )}
@@ -533,12 +538,14 @@ function TipAction({
 }) {
   // [watch-tip-compact-v1] Ikon POLOS (tanpa kotak abu-abu) — hanya highlight halus
   // saat hover; aktif (tersimpan) → warna teal. Label muncul sebagai tooltip hover.
+  // [watch-tip-actions-top-v1] Hover = zoom-in tegas (scale-125) biar ikon di pojok
+  // kanan-atas terasa "membesar" saat disorot.
   return (
     <Tip label={label}>
       <button
         onClick={onClick}
         aria-label={label}
-        className="flex items-center justify-center rounded-lg p-2 transition duration-150 hover:scale-110 hover:bg-white/10 active:scale-95"
+        className="flex items-center justify-center rounded-lg p-1.5 transition duration-150 hover:scale-125 hover:bg-white/10 active:scale-95"
         style={{ color: active ? TEAL : "rgba(255,255,255,0.85)" }}
       >
         {children}

@@ -2724,6 +2724,38 @@ export function computeCueChunks(params: {
     }
   }
 
+  // [watch-ja-subword-v1] Bahasa tanpa spasi (Jepang/Mandarin/Thai/…): Intl.Segmenter
+  // kerap MEMECAH satu kata kamus jadi beberapa token (mis. 伸びてる → 伸び|てる, つらい
+  // → つら|い). Untuk mewarnai "kata kontekstual" seperti English, kita gabungkan
+  // token-token yang jatuh dalam SATU kata breakdown AI jadi satu unit karaoke —
+  // warnanya nyala bareng & tap = arti kata utuh. Pemetaan dicocokkan per-karakter:
+  // rangkai kata AI berurutan, konsumsi teks token kata sampai persis menutup satu
+  // kata AI. Kalau ada ketidakcocokan (segmenter malah LEBIH kasar / teks beda) →
+  // batal total (bwOfWord tetap null → sorot per-kata seperti biasa; tak pernah salah).
+  let bwOfWord: number[] | null = null;
+  if (isNonLatin(langCode) && bdTokens && bdTokens.length) {
+    const norm = (s: string) => s.replace(/\s+/g, "");
+    const bdw = bdTokens.map((t) => norm(t.word)).filter((w) => w.length > 0);
+    const map: number[] = new Array(n).fill(-1);
+    let bi = 0;
+    let buf = "";
+    let ok = true;
+    for (let k = 0; k < n && bi < bdw.length; k++) {
+      map[k] = bi;
+      buf += norm(tokens[wordTok[k]].text);
+      if (buf.length === bdw[bi].length) {
+        if (buf !== bdw[bi]) { ok = false; break; }
+        buf = "";
+        bi++;
+      } else if (buf.length > bdw[bi].length) {
+        ok = false;
+        break;
+      }
+    }
+    // Terpakai hanya bila semua kata segmenter tuntas menutup kata-kata AI tepat pas.
+    if (ok && buf === "") bwOfWord = map;
+  }
+
   const ag = alignTGroup ?? null;
   // Ada tanda baca pemutus di antara kata ordinal k-1 dan k?
   const brokenBetween = (k: number): boolean => {
@@ -2757,7 +2789,10 @@ export function computeCueChunks(params: {
     const mergeAlign = !!ag && ag[k] != null && ag[k] >= 0 && ag[k] === ag[k - 1];
     // Gabung ekspresi AI: dua kata bersebelahan di rentang ekspresi yang sama.
     const mergeExpr = exprOf[k] >= 0 && exprOf[k] === exprOf[k - 1];
-    chunkOfWord[k] = (mergeNP || mergeAlign || mergeExpr) && !brokenBetween(k) ? cid : ++cid;
+    // [watch-ja-subword-v1] Gabung sub-kata: dua token segmenter dalam satu kata AI.
+    const mergeSubword = !!bwOfWord && bwOfWord[k] >= 0 && bwOfWord[k] === bwOfWord[k - 1];
+    chunkOfWord[k] =
+      (mergeNP || mergeAlign || mergeExpr || mergeSubword) && !brokenBetween(k) ? cid : ++cid;
   }
 
   // Susun metadata chunk + peta per-token. Token pemisah DI DALAM satu chunk ikut

@@ -1852,35 +1852,12 @@ export default function VideoLearnPlayer({
     [langCode, video.videoId, cues]
   );
 
-  // [watch-hover-open-v1] Hover kata di bar subtitle = tap (buka balon arti otomatis).
-  // Debounce ~180ms: menyapu kursor melintasi baris tak memuntahkan balon/quota tiap
-  // kata — hanya kata tempat kursor BERHENTI yang terbuka. Koordinat balon disalin dari
-  // event (bukan simpan event React) supaya aman dipakai setelah delay.
-  const hoverOpenTimer = useRef<number | null>(null);
-  const clearHoverOpen = useCallback(() => {
-    if (hoverOpenTimer.current != null) {
-      window.clearTimeout(hoverOpenTimer.current);
-      hoverOpenTimer.current = null;
-    }
-  }, []);
-  const onWordHoverOpen = useCallback(
-    (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      clearHoverOpen();
-      hoverOpenTimer.current = window.setTimeout(() => {
-        onWordTap(
-          { stopPropagation() {}, clientX: x, clientY: y } as unknown as React.MouseEvent,
-          word,
-          sentence,
-          wordIdx,
-          wordEndIdx
-        );
-      }, 180);
-    },
-    [onWordTap, clearHoverOpen]
-  );
-  useEffect(() => clearHoverOpen, [clearHoverOpen]);
+  // [watch-hover-open-removed] Hover kata TIDAK lagi membuka balon arti — pengguna
+  // WAJIB klik kata dulu (permintaan: hover cuma menyorot/sinkron, pop-up hanya via
+  // klik). Handler hover-open dijadikan undefined supaya KaraokeWord/Phrase tak
+  // menjadwalkan tap otomatis; sorot-sinkron kata↔arti (onHover) tetap jalan.
+  const onWordHoverOpen = undefined;
+  const clearHoverOpen = undefined;
 
   return (
     <div
