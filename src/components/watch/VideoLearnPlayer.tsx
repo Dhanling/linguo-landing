@@ -3783,16 +3783,19 @@ function KaraokeText({
 }
 
 // ── Karaoke pada baris transliterasi ────────────────────────────────────────────
-// [linguo-patch:watch-translit-karaoke-v1] Baris bacaan Latin (romaji/pinyin/dsb)
-// ikut tersapu teal BARENG aksara asli di atasnya — pelajar bahasa non-Latin jadi
-// tahu sedang di suku kata mana. Transliterasi selalu Latin → sapuan kiri→kanan.
+// [linguo-patch:watch-translit-karaoke-v2] Baris bacaan Latin (romaji/pinyin/dsb)
+// disorot PERSIS seperti subtitle di atasnya: PER-KATA warna — hanya token yang
+// SEDANG diucapkan yang menyala teal, sisanya putih (bukan lagi sapuan clip-path
+// bertahap). Jadi pelajar bahasa non-Latin lihat suku kata mana yang aktif, dan
+// warnanya berganti bareng kata target.
 //   • Kalau token translit selaras 1:1 dgn kata target (alignTranslitTokens) →
-//     sapuan PER-KATA pakai state/progress kata target padanannya, jadi word-locked
-//     (Rusia/Yunani/Georgia dsb yang romanisasinya memisah kata pakai spasi).
+//     state IKUT kata target padanannya, jadi word-locked persis (Rusia/Yunani/
+//     Georgia dsb yang romanisasinya memisah kata pakai spasi).
 //   • Kalau tak selaras (Jepang/Mandarin: segmenter kata beda jumlah dgn token
-//     romaji) → sapuan berbasis KARAKTER sepanjang baris pakai frac waktu yang sama;
-//     kelar di cue.end bareng target. Dipecah per token biar tetap membungkus rapi.
-function translitSweepTokens(text: string, frac: number) {
+//     romaji) → state per-token berbasis KARAKTER pakai frac waktu yang sama →
+//     token yang playhead-nya sedang lewati → teal. frac identik dgn subtitle jadi
+//     posisi aktifnya proporsional sama (tetap sinkron dgn aksara asli di atas).
+function translitStateTokens(text: string, frac: number) {
   const toks = splitWords(text); // Latin → pecah spasi/tanda baca
   const total = text.length || 1;
   const played = frac * total;
@@ -3801,11 +3804,10 @@ function translitSweepTokens(text: string, frac: number) {
     const startC = acc;
     const endC = acc + t.text.length;
     acc = endC;
-    let pct = 0;
-    if (endC <= played) pct = 100;
-    else if (startC < played)
-      pct = Math.round(((played - startC) / Math.max(1, t.text.length)) * 100);
-    return { text: t.text, isWord: t.isWord, pct };
+    let state: KaraokeState = "future";
+    if (endC <= played) state = "sung";
+    else if (startC < played) state = "active";
+    return { text: t.text, isWord: t.isWord, state };
   });
 }
 
@@ -3832,34 +3834,34 @@ function KaraokeTranslit({
     [cue, time, langCode]
   );
   // [watch-karaoke-anchor-v2] Ikuti anchor window caption asli (sama dgn karaokeTokens)
-  // biar sapuan translit tetap seirama audio pada cue gabungan beberapa window.
-  // [watch-karaoke-lag-v1] Lag sama dgn karaokeTokens supaya sapuan translit sejajar.
+  // biar sorotan translit tetap seirama audio pada cue gabungan beberapa window.
+  // [watch-karaoke-lag-v1] Lag sama dgn karaokeTokens supaya sorotan translit sejajar.
   const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
-  const charToks = useMemo(() => translitSweepTokens(translit, frac), [translit, frac]);
+  const charToks = useMemo(() => translitStateTokens(translit, frac), [translit, frac]);
   if (!translit) return null;
 
-  // Sapuan per-kata hanya bila token translit benar-benar selaras 1:1 dgn kata target.
+  // Sorot per-kata (ikut state target) hanya bila token translit selaras 1:1 dgn kata
+  // target; kalau tidak, state berbasis karakter pakai frac yang sama.
   const wordSync = aligned && aligned.filter((t) => t.k >= 0).length === wordStates.length;
-  const chunks = wordSync
+  const toks: { text: string; isWord: boolean; state: KaraokeState }[] = wordSync
     ? aligned!.map((t) => ({
         text: t.text,
         isWord: t.k >= 0,
-        pct:
-          t.k < 0
-            ? 0
-            : wordStates[t.k].state === "sung"
-              ? 100
-              : wordStates[t.k].state === "active"
-                ? Math.round(wordStates[t.k].progress * 100)
-                : 0,
+        state: t.k < 0 ? ("future" as KaraokeState) : wordStates[t.k].state,
       }))
     : charToks;
 
   return (
     <p className={className} style={{ color: "#fff", textShadow: KARAOKE_SHADOW, ...style }}>
-      {chunks.map((c, idx) =>
+      {toks.map((c, idx) =>
         c.isWord ? (
-          <TranslitSweepChunk key={idx} text={c.text} pct={c.pct} />
+          <span
+            key={idx}
+            className="transition-colors duration-200 ease-out"
+            style={{ color: c.state === "active" ? TEAL : "#fff" }}
+          >
+            {c.text}
+          </span>
         ) : (
           <span key={idx} className="whitespace-pre">
             {c.text}
@@ -3867,29 +3869,6 @@ function KaraokeTranslit({
         )
       )}
     </p>
-  );
-}
-
-// Satu potongan translit dgn overlay teal dipangkas mengikuti `pct` (0..100). Latin →
-// pangkas dari kanan (inset kanan). Overlay lebar 100% biar glyph selalu sejajar.
-function TranslitSweepChunk({ text, pct }: { text: string; pct: number }) {
-  const clip = `inset(0 ${100 - pct}% 0 0)`;
-  return (
-    <span className="relative inline-block align-baseline">
-      <span style={{ color: "inherit" }}>{text}</span>
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-0 top-0 w-full overflow-hidden whitespace-nowrap"
-        style={{
-          color: TEAL,
-          clipPath: clip,
-          WebkitClipPath: clip,
-          transition: "clip-path 220ms linear, -webkit-clip-path 220ms linear",
-        }}
-      >
-        {text}
-      </span>
-    </span>
   );
 }
 
