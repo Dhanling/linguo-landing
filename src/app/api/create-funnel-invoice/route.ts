@@ -208,6 +208,10 @@ export async function POST(req: NextRequest) {
         program,
         level: level || null,
         duration: Number(duration) || null, // leads-lang-level-duration-v1 — menit/sesi utk tampil di admin Leads
+        // funnel-sessions-sync-v1 — simpan jumlah sesi + tipe pengajar biar webhook bisa isi
+        // registrations.sessions_total/duration/price_per_session otomatis (bukan null lagi).
+        sessions: Number(sessions) || null,
+        teacher_type: teacher_type === "native" ? "native" : teacher_type === "lokal" ? "lokal" : null,
         source: "landing-page",
         payment_status: "PENDING",
         xendit_external_id: externalId,
