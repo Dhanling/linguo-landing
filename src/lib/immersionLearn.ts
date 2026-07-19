@@ -2618,6 +2618,116 @@ export function cleanWord(word: string): string {
   return word.replace(/^[^\p{L}\p{M}\p{N}]+|[^\p{L}\p{M}\p{N}]+$/gu, "");
 }
 
+// ── Pengelompokan frasa untuk karaoke ("the king" → 1 unit) ──────────────────
+// [watch-phrase-chunk-v1] Pelajar bahasa belajar per-FRASA, bukan cuma per-kata:
+// "the king" = "raja", "for a walk" = "jalan-jalan", phrasal verb "go out" = "keluar".
+// Kita gabungkan token kata bersebelahan jadi satu unit karaoke (satu sorotan, satu
+// tap → arti frasa) memakai DUA sinyal yang sudah tersedia & di-cache:
+//   1. Kelas kata (breakdown POS) — bangun frasa BENDA deterministik:
+//        determiner/preposisi + (kata sifat/bilangan) + kata benda
+//        → "the king", "the big house", "for a walk", "of pigs".
+//   2. Penjajaran AI (alignGroup) — tangkap idiom/phrasal verb yang satu konsep di
+//        bahasa terjemahan (mis. "go out"↔"keluar", "go for a walk"↔"jalan-jalan"):
+//        kata bersebelahan yang jatuh di grup penjajaran yang SAMA ikut digabung.
+// Aman & progresif: kalau POS/penjajaran belum siap → kembalikan null (pemanggil
+// sorot per-kata seperti biasa). TAK pernah lebih buruk dari sebelumnya.
+
+// Kelas kata yang boleh MENGAWALI frasa benda (menempel ke kata di kanannya).
+const NP_LEADER: Set<PosCategory> = new Set(["determiner", "preposition", "adjective", "numeral"]);
+// Kelas kata yang boleh menjadi ANGGOTA lanjutan frasa benda.
+const NP_MEMBER: Set<PosCategory> = new Set(["determiner", "adjective", "numeral", "noun"]);
+// Tanda baca yang MEMUTUS frasa (koma, titik, dsb.) walau kelas kata cocok.
+const PHRASE_BREAK_RE = /[.,;:!?…—–()"«»„"'']/;
+
+export interface CueChunks {
+  /** Per indeks token (hasil splitWords): id chunk kalau token kata, -1 kalau pemisah. */
+  tokenChunk: number[];
+  /** Per id chunk: teks frasa utuh + rentang token + jumlah kata. */
+  chunks: { text: string; firstTok: number; lastTok: number; words: number }[];
+}
+
+/**
+ * Hitung pengelompokan frasa satu baris cue. `alignTGroup[k]` = indeks grup
+ * penjajaran untuk kata ke-k (dari alignMaps); `breakdown` memberi kelas kata.
+ * Kembalikan null kalau tak ada yang bisa digabung (semua kata berdiri sendiri)
+ * atau data pendukung belum ada — pemanggil lalu sorot per-kata.
+ */
+export function computeCueChunks(params: {
+  target: string;
+  langCode: string;
+  breakdown?: SentenceBreakdown | null;
+  alignTGroup?: number[] | null;
+}): CueChunks | null {
+  const { target, langCode, breakdown, alignTGroup } = params;
+  const tokens = splitWords(target, langCode);
+  // Indeks token tiap kata (ordinal k → indeks token j) + teks kata.
+  const wordTok: number[] = [];
+  tokens.forEach((t, j) => t.isWord && wordTok.push(j));
+  const n = wordTok.length;
+  if (n < 2) return null;
+
+  // Kelas kata per ordinal, dicocokkan berurutan dgn token breakdown (yang membuang
+  // tanda baca — sama seperti token kata splitWords). Kalau teks tak cocok, biarkan
+  // null (tak dipakai untuk gabung POS; penjajaran tetap boleh).
+  const pos: (PosCategory | null)[] = new Array(n).fill(null);
+  const bdTokens = breakdown && Array.isArray(breakdown.tokens) ? breakdown.tokens : null;
+  if (bdTokens && bdTokens.length === n) {
+    for (let k = 0; k < n; k++) {
+      const bw = cleanWord(bdTokens[k].word).toLowerCase();
+      const tw = cleanWord(tokens[wordTok[k]].text).toLowerCase();
+      if (bw && bw === tw) pos[k] = bdTokens[k].cat;
+    }
+  }
+
+  const ag = alignTGroup ?? null;
+  // Ada tanda baca pemutus di antara kata ordinal k-1 dan k?
+  const brokenBetween = (k: number): boolean => {
+    for (let j = wordTok[k - 1] + 1; j < wordTok[k]; j++) {
+      if (!tokens[j].isWord && PHRASE_BREAK_RE.test(tokens[j].text)) return true;
+    }
+    return false;
+  };
+
+  const chunkOfWord: number[] = new Array(n);
+  let cid = 0;
+  chunkOfWord[0] = 0;
+  for (let k = 1; k < n; k++) {
+    const a = pos[k - 1];
+    const b = pos[k];
+    // Gabung frasa benda: pemimpin (det/prep/sifat/bilangan) → anggota (det/sifat/bilangan/benda),
+    // atau benda+benda (kata majemuk).
+    const mergeNP =
+      a != null && b != null &&
+      ((NP_LEADER.has(a) && NP_MEMBER.has(b)) || (a === "noun" && b === "noun"));
+    // Gabung idiom: dua kata bersebelahan di grup penjajaran yang sama.
+    const mergeAlign = !!ag && ag[k] != null && ag[k] >= 0 && ag[k] === ag[k - 1];
+    chunkOfWord[k] = (mergeNP || mergeAlign) && !brokenBetween(k) ? cid : ++cid;
+  }
+
+  // Susun metadata chunk + peta per-token. Token pemisah DI DALAM satu chunk ikut
+  // ditandai chunk itu (biar garis grup menyambung); pemisah antar-chunk = -1.
+  const chunks: CueChunks["chunks"] = [];
+  const tokenChunk: number[] = new Array(tokens.length).fill(-1);
+  let anyMulti = false;
+  for (let c = 0; c <= cid; c++) {
+    const ords: number[] = [];
+    for (let k = 0; k < n; k++) if (chunkOfWord[k] === c) ords.push(k);
+    if (!ords.length) continue;
+    const firstTok = wordTok[ords[0]];
+    const lastTok = wordTok[ords[ords.length - 1]];
+    for (let j = firstTok; j <= lastTok; j++) tokenChunk[j] = c;
+    chunks[c] = {
+      text: tokens.slice(firstTok, lastTok + 1).map((t) => t.text).join("").trim(),
+      firstTok,
+      lastTok,
+      words: ords.length,
+    };
+    if (ords.length > 1) anyMulti = true;
+  }
+  if (!anyMulti) return null; // tak ada frasa → biar pemanggil sorot per-kata
+  return { tokenChunk, chunks };
+}
+
 // ── Cari Kata (YouGlish) ─────────────────────────────────────────────────────
 // Satu kemunculan kata di suatu kalimat transkrip video katalog.
 export interface WordHit {

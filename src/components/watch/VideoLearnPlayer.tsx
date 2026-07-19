@@ -57,6 +57,8 @@ import {
   isNonLatin,
   isRtl,
   karaokeFrac,
+  computeCueChunks,
+  CueChunks,
   LearnCue,
   POS_COLOR,
   POS_LABEL_ID,
@@ -83,6 +85,7 @@ import {
 import { WordTooltip } from "./WordTooltip";
 import WatchSubscribeModal from "./WatchSubscribeModal";
 import { RectFlag } from "@/components/RectFlag";
+import { LangPickerPanel } from "./LangPickerPanel";
 import { useOverlayLock } from "@/lib/overlayStore";
 
 const TEAL = "#1A9E9E";
@@ -303,6 +306,10 @@ interface Anchor {
   // Indeks token kata dalam splitWords(sentence) — dipakai tooltip untuk memperluas
   // pilihan ke frasa (mis. "la compañía"). Undefined = jatuh ke pencarian pertama.
   wordIdx?: number;
+  // [watch-phrase-chunk-v1] Indeks token AKHIR frasa saat yang di-tap adalah unit
+  // frasa karaoke (mis. "the king"): tooltip memilih rentang wordIdx..wordEndIdx
+  // penuh → arti frasa ("raja"), lalu siswa bisa turun ke per-kata lewat chip.
+  wordEndIdx?: number;
   // Langsung buka drawer Analisa (dibuka ulang dari riwayat kata, bukan tap baru).
   autoStudy?: boolean;
   // Bahasa untuk MENGANALISIS kata ini — beda dari bahasa target video kalau
@@ -317,6 +324,8 @@ export default function VideoLearnPlayer({
   baseLang = DEFAULT_BASE_LANG,
   onClose,
   onChangeLang,
+  onPickLang,
+  recentLangCodes = [],
   onChangeBaseLang,
   onOpenVocab,
   onSavedChange,
@@ -332,8 +341,13 @@ export default function VideoLearnPlayer({
    *  momen kata diucapkan). */
   initialStart?: number;
   onClose: () => void;
-  /** Ganti bahasa yang dipelajari saat menonton → balik ke beranda Watch & Learn. */
+  /** Ganti bahasa yang dipelajari saat menonton → balik ke beranda Watch & Learn.
+   *  Fallback untuk perangkat sentuh (klik trigger dropdown saat hover tak ada). */
   onChangeLang?: () => void;
+  /** Pilih bahasa yang dipelajari langsung dari dropdown hover di header. */
+  onPickLang?: (code: string) => void;
+  /** Bahasa dipelajari yang terakhir dipilih (chip "terakhir dipilih" di dropdown). */
+  recentLangCodes?: string[];
   /** Ganti bahasa terjemahan (tombol di header) — baris terjemahan diterjemah ulang. */
   onChangeBaseLang?: (code: string) => void;
   /** Buka deck kosakata (tombol jumlah kosakata di header). */
@@ -434,6 +448,8 @@ export default function VideoLearnPlayer({
   // Dropdown pilih bahasa terjemahan (tombol di header). Dirender di DALAM player
   // karena picker milik katalog (z-85) tenggelam di bawah overlay player (z-90).
   const [baseMenuOpen, setBaseMenuOpen] = useState(false);
+  // Dropdown "bahasa yang dipelajari" di header — muncul saat hover (bukan pop-up).
+  const [learnMenuOpen, setLearnMenuOpen] = useState(false);
   // Jumlah kosakata yang disimpan sewaktu menonton video ini (badge di header).
   const [savedCount, setSavedCount] = useState(0);
   const refreshSaved = useCallback(() => {
@@ -1745,7 +1761,7 @@ export default function VideoLearnPlayer({
   }, [analyze, activeIdx, breakdowns, requestBreakdown]);
 
   const onWordTap = useCallback(
-    (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => {
+    (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => {
       e.stopPropagation();
       // Gate: buka arti kata butuh langganan setelah cicip gratis habis. Kata yang
       // sudah pernah dibuka boleh dilihat ulang (tak menghabiskan kuota).
@@ -1779,6 +1795,7 @@ export default function VideoLearnPlayer({
         x: e.clientX,
         y: e.clientY,
         wordIdx,
+        wordEndIdx,
         lang,
         // Drawer Analisa sudah terbuka → langsung muat ulang drawer di tempat (bukan
         // balik ke popup) supaya mulus tanpa kedipan. Belum ada drawer → popup dulu.
@@ -1900,21 +1917,53 @@ export default function VideoLearnPlayer({
           </div>
         )}
 
-        {onChangeLang &&
+        {/* Bahasa yang dipelajari — dropdown HOVER (dulu pop-up layar penuh).
+            [watch-learnlang-hover-v1] Hover buka dropdown berisi kotak cari +
+            daftar bahasa yang bisa digulir; klik trigger tetap men-toggle untuk
+            perangkat sentuh. Bridge `pt-2` menutup celah trigger↔panel supaya
+            kursor tak jatuh keluar & menutup dropdown saat mengarah ke pilihan. */}
+        {(onPickLang || onChangeLang) &&
           (() => {
             const wl = getImmersionLang(langCode);
+            const pick = (code: string) => {
+              setLearnMenuOpen(false);
+              if (code !== langCode) (onPickLang ?? (() => onChangeLang?.()))(code);
+            };
             return (
-              <button
-                onClick={onChangeLang}
-                className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
-                aria-label="Ganti bahasa yang dipelajari"
+              <div
+                className="relative shrink-0"
+                onMouseEnter={() => setLearnMenuOpen(true)}
+                onMouseLeave={() => setLearnMenuOpen(false)}
               >
-                <TabBg />
-                <span className="relative inline-flex">
-                  {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
-                </span>
-                <IconTooltip side="bottom">{wl?.name ?? langCode}</IconTooltip>
-              </button>
+                <button
+                  onClick={() => setLearnMenuOpen((v) => !v)}
+                  className="group relative inline-flex items-center justify-center rounded-full p-2 text-white"
+                  aria-label="Ganti bahasa yang dipelajari"
+                  aria-expanded={learnMenuOpen}
+                >
+                  <TabBg active={learnMenuOpen} />
+                  <span className="relative inline-flex items-center gap-1">
+                    {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${learnMenuOpen ? "rotate-180" : ""}`}
+                      color={TEAL}
+                    />
+                  </span>
+                  {!learnMenuOpen && <IconTooltip side="bottom">{wl?.name ?? langCode}</IconTooltip>}
+                </button>
+                <div
+                  className={`absolute right-0 top-full z-30 pt-2 transition-all duration-150 ease-out ${
+                    learnMenuOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                  }`}
+                >
+                  <LangPickerPanel
+                    open={learnMenuOpen}
+                    langCode={langCode}
+                    onPick={pick}
+                    recentCodes={recentLangCodes}
+                  />
+                </div>
+              </div>
             );
           })()}
         <button
@@ -2956,6 +3005,7 @@ export default function VideoLearnPlayer({
           word={anchor.word}
           sentence={anchor.sentence}
           wordIdx={anchor.wordIdx}
+          wordEndIdx={anchor.wordEndIdx}
           // Kata di baris penjelas (mis. kalimat Inggris di video Ukraina)
           // dianalisis sebagai bahasa cue-nya (dari anchor.lang), BUKAN dipaksa
           // bahasa target — biar arti & pecahan katanya benar. Artinya tetap
@@ -3010,7 +3060,7 @@ function FocusLine({
   showTranslation?: boolean;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
-  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
+  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
@@ -3410,7 +3460,7 @@ function KaraokeText({
   cue: LearnCue;
   time: number;
   langCode?: string;
-  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number) => void;
+  onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
   // [linguo-patch:watch-translit-hover-sync-v1] sinkron hover dengan baris translit
   // (opsional — bar subtitle di bawah tak mengoper ini, jatuh ke hover CSS biasa).
   hoveredK?: number | null;

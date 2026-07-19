@@ -23,10 +23,17 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // (limit ~10k/model). Saat model utama kena 429 RESOURCE_EXHAUSTED (mentok
 // harian) — gejalanya drawer "Gagal memuat materi" — kita jatuh ke model
 // berikutnya yang punya jatah harian sendiri, jadi fitur tetap hidup.
-const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
-// Hanya seri 2.5+/3 yang menerima thinkingConfig; 2.0 akan 400 kalau dikirim.
+// (gemini-2.0-flash & 2.0-flash-lite kini "no longer available" → 404, jadi tak
+// dipakai sebagai cadangan; gemini-flash-lite-latest auto-ikut model lite terbaru.)
+const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
+// Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
+// thinkingConfig; model 2.0 akan 400 kalau dikirim.
 function supportsThinking(model: string): boolean {
-  return model.startsWith("gemini-2.5") || model.startsWith("gemini-3");
+  return (
+    model.startsWith("gemini-2.5") ||
+    model.startsWith("gemini-3") ||
+    model.endsWith("-latest")
+  );
 }
 // Bahasa penjelasan default (saat klien tak mengirim baseCode) — pengguna Linguo
 // berbahasa Indonesia. Kalau baseCode dikirim (bahasa terjemahan pilihan pengguna),

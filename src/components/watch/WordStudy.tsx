@@ -60,8 +60,16 @@ const REGISTER: Record<string, { label: string; color: string; bg: string }> = {
   vulgar: { label: "Kasar", color: "#FF6B6B", bg: "rgba(255,107,107,0.16)" },
 };
 
+// Saat penjelasan berbahasa Inggris (baseCode="en"), model kadang mengembalikan
+// nilai register versi Inggris ("neutral"/"polite"/…) alih-alih token Indonesia
+// di prompt → samakan dulu supaya chip kesopanan tetap berwarna & berlabel benar.
+const REGISTER_ALIAS: Record<string, string> = {
+  neutral: "netral", polite: "sopan", informal: "casual", rude: "vulgar", crude: "vulgar",
+};
+
 function registerStyle(reg: string) {
-  return REGISTER[reg] ?? { label: reg || "—", color: SUB, bg: "rgba(255,255,255,0.06)" };
+  const key = REGISTER_ALIAS[reg] ?? reg;
+  return REGISTER[key] ?? { label: reg || "—", color: SUB, bg: "rgba(255,255,255,0.06)" };
 }
 
 // Pertanyaan lanjutan siap-pakai — chip yang tinggal ketuk.

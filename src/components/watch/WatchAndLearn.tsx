@@ -33,6 +33,7 @@ import {
   TextSearch,
   Clock3,
   Loader2,
+  ChevronDown,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -73,6 +74,7 @@ import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
+import { LangPickerPanel } from "./LangPickerPanel";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -247,6 +249,8 @@ export default function WatchAndLearn() {
     "idle"
   );
   const [langPickerOpen, setLangPickerOpen] = useState(false);
+  // Dropdown "bahasa yang dipelajari" di bilah menu — muncul saat hover.
+  const [learnMenuOpen, setLearnMenuOpen] = useState(false);
   const [langQuery, setLangQuery] = useState("");
   // Riwayat bahasa terakhir dipilih (kode, terbaru dulu) — quick-pick di picker.
   const [recentLangs, setRecentLangs] = useState<string[]>([]);
@@ -860,16 +864,46 @@ export default function WatchAndLearn() {
               <Languages className="h-4 w-4 shrink-0" color={GOLD} />
               <RevealLabel>{getBaseLangDef(baseLang).label}</RevealLabel>
             </button>
-            <button
-              onClick={() => setLangPickerOpen(true)}
-              title={lang.name}
-              aria-label={lang.name}
-              className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            {/* Bahasa yang dipelajari — dropdown HOVER (dulu pop-up layar penuh).
+                [watch-learnlang-hover-v1] Hover buka dropdown cari + daftar; klik
+                tetap men-toggle untuk perangkat sentuh. Bridge `pt-2` menutup
+                celah trigger↔panel supaya kursor tak jatuh keluar saat mengarah. */}
+            <div
+              className="relative"
+              onMouseEnter={() => setLearnMenuOpen(true)}
+              onMouseLeave={() => setLearnMenuOpen(false)}
             >
-              <RectFlag code={lang.country} h={16} />
-              <RevealLabel>{lang.name}</RevealLabel>
-            </button>
+              <button
+                onClick={() => setLearnMenuOpen((v) => !v)}
+                title={lang.name}
+                aria-label={lang.name}
+                aria-expanded={learnMenuOpen}
+                className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
+                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              >
+                <RectFlag code={lang.country} h={16} />
+                <RevealLabel>{lang.name}</RevealLabel>
+                <ChevronDown
+                  className={`ml-1 h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${learnMenuOpen ? "rotate-180" : ""}`}
+                  color={TEAL}
+                />
+              </button>
+              <div
+                className={`absolute right-0 top-full z-30 pt-2 transition-all duration-150 ease-out ${
+                  learnMenuOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                }`}
+              >
+                <LangPickerPanel
+                  open={learnMenuOpen}
+                  langCode={langCode}
+                  onPick={(code) => {
+                    setLearnMenuOpen(false);
+                    pickLang(code);
+                  }}
+                  recentCodes={recentLangs}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1510,10 +1544,18 @@ export default function WatchAndLearn() {
           onClose={() => setActive(null)}
           // Ganti bahasa yang dipelajari saat menonton → tutup player & buka pemilih
           // bahasa; setelah dipilih, beranda Watch & Learn tampil dgn bahasa baru.
+          // Fallback perangkat sentuh (dropdown hover tak bisa di-hover).
           onChangeLang={() => {
             setActive(null);
             setLangPickerOpen(true);
           }}
+          // Pilih bahasa langsung dari dropdown hover di header player → tutup video
+          // & pindah ke katalog bahasa baru (tanpa mampir pop-up).
+          onPickLang={(code) => {
+            setActive(null);
+            pickLang(code);
+          }}
+          recentLangCodes={recentLangs}
           // Ganti bahasa terjemahan langsung dari header player (tanpa tutup video).
           onChangeBaseLang={(code) => {
             setBaseLang(code);
