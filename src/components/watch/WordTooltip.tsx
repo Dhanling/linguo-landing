@@ -39,7 +39,7 @@ const BALLOON = "#0A1212";
 const SUB = "rgba(255,255,255,0.5)";
 const BORDER = "rgba(255,255,255,0.1)";
 
-const TIP_W = 260;
+const TIP_W = 232;
 
 // Berapa kata maksimum dirambatkan otomatis saat kata tunggal tak berarti mandiri
 // (kata fungsi) — cukup untuk menangkap frasa seperti "por el entrenamiento de fuerza".
@@ -359,7 +359,7 @@ export function WordTooltip({
       <div
         key={tapId}
         onPointerDown={onDragStart}
-        className="pointer-events-auto absolute touch-none cursor-move select-none rounded-2xl p-3.5 shadow-2xl"
+        className="pointer-events-auto absolute touch-none cursor-move select-none rounded-2xl p-3 shadow-2xl"
         style={{
           left,
           top,
@@ -388,7 +388,7 @@ export function WordTooltip({
         {/* Header: kata + kelas kata + tutup */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap items-baseline gap-2">
-            <span className="text-[18px] font-extrabold text-white">{word}</span>
+            <span className="text-[16px] font-extrabold text-white">{word}</span>
             {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
             {meaning?.base &&
               meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
@@ -428,7 +428,7 @@ export function WordTooltip({
             Tidak ada arti mandiri — mungkin kata fungsi tata bahasa.
           </p>
         ) : (
-          <p className="mt-1.5 text-[15px] font-bold leading-snug" style={{ color: GOLD }}>
+          <p className="mt-1 text-[14px] font-bold leading-snug" style={{ color: GOLD }}>
             {meaning.meaning}
           </p>
         )}
@@ -476,16 +476,17 @@ export function WordTooltip({
           </div>
         )}
 
-        {/* Aksi */}
-        <div className="mt-3 flex gap-2">
+        {/* [watch-tip-compact-v1] Aksi: ikon POLOS tanpa kotak abu-abu — compact,
+            rata kanan. Simpan · Analisa · Dengar. */}
+        <div className="mt-2 flex items-center justify-end gap-0.5">
           <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
-            {saved ? <BookmarkCheck className="h-4 w-4" /> : <BookmarkPlus className="h-4 w-4" />}
+            {saved ? <BookmarkCheck className="h-[18px] w-[18px]" /> : <BookmarkPlus className="h-[18px] w-[18px]" />}
           </TipAction>
           <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
-            <Sparkles className="h-4 w-4" />
+            <Sparkles className="h-[18px] w-[18px]" />
           </TipAction>
           <TipAction onClick={() => speak(word, langCode)} label="Dengar">
-            <Volume2 className="h-4 w-4" />
+            <Volume2 className="h-[18px] w-[18px]" />
           </TipAction>
         </div>
       </div>
@@ -530,17 +531,15 @@ function TipAction({
   active?: boolean;
   label: string;
 }) {
-  // Ikon saja (ringkas) — labelnya jadi tooltip hover lewat komponen Tip.
+  // [watch-tip-compact-v1] Ikon POLOS (tanpa kotak abu-abu) — hanya highlight halus
+  // saat hover; aktif (tersimpan) → warna teal. Label muncul sebagai tooltip hover.
   return (
     <Tip label={label}>
       <button
         onClick={onClick}
         aria-label={label}
-        className="flex flex-1 items-center justify-center rounded-xl py-2.5 transition duration-150 hover:scale-105 active:scale-95"
-        style={{
-          backgroundColor: active ? TEAL : "rgba(255,255,255,0.06)",
-          color: "#fff",
-        }}
+        className="flex items-center justify-center rounded-lg p-2 transition duration-150 hover:scale-110 hover:bg-white/10 active:scale-95"
+        style={{ color: active ? TEAL : "rgba(255,255,255,0.85)" }}
       >
         {children}
       </button>
@@ -554,7 +553,7 @@ function Tip({ label, children }: { label: string; children: React.ReactNode }) 
   const [show, setShow] = useState(false);
   return (
     <div
-      className="relative flex flex-1"
+      className="relative flex"
       onPointerEnter={() => setShow(true)}
       onPointerLeave={() => setShow(false)}
     >

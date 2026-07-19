@@ -2062,13 +2062,27 @@ export interface AlignGroup {
   b: number[];
 }
 
+// Hasil penjajaran satu baris: `groups` = penjajaran halus per-kata (buat hover),
+// `expr` = rentang indeks kata TARGET (ordinal isWord) yang membentuk satu EKSPRESI
+// idiomatik ("We're good" → [0,1], "look forward to" → [2,3,4]) yang sebaiknya dibaca
+// & disorot sebagai SATU unit. Kedua sinyal INDEPENDEN: satu kata bisa jadi grup hover
+// kecil sendiri sekaligus anggota satu `expr` besar. `expr` selalu ada (kosong = tak ada
+// ekspresi); rentangnya kontigu, urut, & tak tumpang tindih.
+export interface AlignResult {
+  groups: AlignGroup[];
+  expr: number[][];
+}
+
 // v3: penjajaran sekarang DETERMINISTIK & halus per-kata. Edge function word-info
 // mode "align" dulu pakai temperature default (acak: baris yang sama bisa dapat grup
 // beda tiap panggilan) TANPA schema — model kerap melebur satu klausa jadi SATU grup,
 // jadi hover satu kata menyorot seluruh baris (tak sinkron dgn artinya). Sekarang:
 // temperature 0 + JSON schema + thinkingBudget → grup sekecil mungkin (1 kata ↔ 1 arti,
 // artikel yang jatuh dapat "b":[]). Naikkan versi biar cache v2 yang kasar di-ambil ulang.
-const ALIGN_CACHE_PREFIX = "linguo:watch:align:v3:";
+// v4: align juga mengembalikan `x` (rentang EKSPRESI idiomatik → highlight 1 unit).
+// Cache lama (v3) hanya menyimpan grup tanpa ekspresi → naikkan versi biar di-ambil
+// ulang & ikut dapat ekspresi. Bentuk cache berubah: dulu AlignGroup[], kini AlignResult.
+const ALIGN_CACHE_PREFIX = "linguo:watch:align:v4:";
 
 function alignCacheKey(target: string, base: string): string {
   // Hash ringkas & stabil (djb2) dari pasangan target|base — cukup untuk kunci cache.
@@ -2078,26 +2092,29 @@ function alignCacheKey(target: string, base: string): string {
   return ALIGN_CACHE_PREFIX + (h >>> 0).toString(36);
 }
 
-function readAlignCache(target: string, base: string): AlignGroup[] | null {
+function readAlignCache(target: string, base: string): AlignResult | null {
   if (typeof window === "undefined") return null;
   try {
     const v = window.localStorage.getItem(alignCacheKey(target, base));
-    return v ? (JSON.parse(v) as AlignGroup[]) : null;
+    if (!v) return null;
+    const parsed = JSON.parse(v) as Partial<AlignResult>;
+    if (!Array.isArray(parsed?.groups)) return null;
+    return { groups: parsed.groups, expr: Array.isArray(parsed.expr) ? parsed.expr : [] };
   } catch {
     return null;
   }
 }
 
-function writeAlignCache(target: string, base: string, groups: AlignGroup[]): void {
+function writeAlignCache(target: string, base: string, result: AlignResult): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(alignCacheKey(target, base), JSON.stringify(groups));
+    window.localStorage.setItem(alignCacheKey(target, base), JSON.stringify(result));
   } catch {
     /* kuota penuh → abaikan */
   }
 }
 
-const alignInFlight = new Map<string, Promise<AlignGroup[]>>();
+const alignInFlight = new Map<string, Promise<AlignResult>>();
 
 /**
  * Ambil penjajaran frasa antara satu baris `target` dan terjemahannya `base`.
@@ -2111,9 +2128,10 @@ export async function getAlignment(params: {
   base: string;
   langCode: string;
   baseCode: string;
-}): Promise<AlignGroup[]> {
+}): Promise<AlignResult> {
   const { target, base, langCode, baseCode } = params;
-  if (!target.trim() || !base.trim()) return [];
+  const EMPTY: AlignResult = { groups: [], expr: [] };
+  if (!target.trim() || !base.trim()) return EMPTY;
   const cached = readAlignCache(target, base);
   if (cached) return cached;
 
@@ -2121,11 +2139,11 @@ export async function getAlignment(params: {
   const existing = alignInFlight.get(ck);
   if (existing) return existing;
 
-  const run = (async (): Promise<AlignGroup[]> => {
+  const run = (async (): Promise<AlignResult> => {
     const targetTokens = splitWords(target, langCode).filter((w) => w.isWord).map((w) => w.text);
     const baseTokens = splitWords(base, baseCode).filter((w) => w.isWord).map((w) => w.text);
-    if (targetTokens.length === 0 || baseTokens.length === 0) return [];
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return [];
+    if (targetTokens.length === 0 || baseTokens.length === 0) return EMPTY;
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return EMPTY;
     const res = await fetch(`${SUPABASE_URL}/functions/v1/word-info`, {
       method: "POST",
       headers: {
@@ -2143,40 +2161,59 @@ export async function getAlignment(params: {
         baseTokens,
       }),
     });
-    if (!res.ok) return [];
+    if (!res.ok) return EMPTY;
     const data = (await res.json()) as { text?: string };
     const raw = data.text ?? "";
     const start = raw.indexOf("{");
     const end = raw.lastIndexOf("}");
-    if (start === -1 || end === -1 || end < start) return [];
-    let parsed: { g?: unknown };
+    if (start === -1 || end === -1 || end < start) return EMPTY;
+    let parsed: { g?: unknown; x?: unknown };
     try {
-      parsed = JSON.parse(raw.slice(start, end + 1)) as { g?: unknown };
+      parsed = JSON.parse(raw.slice(start, end + 1)) as { g?: unknown; x?: unknown };
     } catch {
-      return [];
+      return EMPTY;
     }
     const tn = targetTokens.length;
     const bn = baseTokens.length;
+    const clean = (v: unknown, max: number): number[] =>
+      Array.isArray(v)
+        ? Array.from(
+            new Set(
+              v
+                .map((n) => (typeof n === "number" ? n : Number(n)))
+                .filter((n) => Number.isInteger(n) && n >= 0 && n < max)
+            )
+          )
+        : [];
     const groups: AlignGroup[] = Array.isArray(parsed.g)
       ? (parsed.g as unknown[])
           .map((grp) => {
             const g = grp as { t?: unknown; b?: unknown };
-            const clean = (v: unknown, max: number) =>
-              Array.isArray(v)
-                ? Array.from(
-                    new Set(
-                      v
-                        .map((n) => (typeof n === "number" ? n : Number(n)))
-                        .filter((n) => Number.isInteger(n) && n >= 0 && n < max)
-                    )
-                  )
-                : [];
             return { t: clean(g.t, tn), b: clean(g.b, bn) };
           })
           .filter((g) => g.t.length > 0)
       : [];
-    if (groups.length) writeAlignCache(target, base, groups);
-    return groups;
+    // Ekspresi idiomatik ("x"): tiap rentang = indeks kata TARGET yang dibaca 1 unit.
+    // Dibersihkan ketat — hanya rentang KONTIGU (run beruntun) ≥2 kata & TAK tumpang
+    // tindih (yang mulai lebih dulu menang) — supaya penggabungan chunk aman.
+    const rawExpr: number[][] = Array.isArray(parsed.x)
+      ? (parsed.x as unknown[])
+          .map((sp) => clean(sp, tn).sort((a, b) => a - b))
+          // kontigu: [3,4,5] → 5-3+1===3; buang yang bolong / <2 kata
+          .filter((sp) => sp.length >= 2 && sp[sp.length - 1] - sp[0] + 1 === sp.length)
+          .sort((a, b) => a[0] - b[0])
+      : [];
+    const expr: number[][] = [];
+    let lastEnd = -1;
+    for (const sp of rawExpr) {
+      if (sp[0] > lastEnd) {
+        expr.push(sp);
+        lastEnd = sp[sp.length - 1];
+      }
+    }
+    const result: AlignResult = { groups, expr };
+    if (groups.length || expr.length) writeAlignCache(target, base, result);
+    return result;
   })();
 
   alignInFlight.set(ck, run);
@@ -2652,7 +2689,10 @@ export interface CueChunks {
 
 /**
  * Hitung pengelompokan frasa satu baris cue. `alignTGroup[k]` = indeks grup
- * penjajaran untuk kata ke-k (dari alignMaps); `breakdown` memberi kelas kata.
+ * penjajaran untuk kata ke-k (dari alignMaps); `breakdown` memberi kelas kata;
+ * `exprSpans` = daftar rentang ordinal kata TARGET yang membentuk satu EKSPRESI
+ * idiomatik ("We're good" → [0,1]) dari AI — digabung sebagai 1 unit dengan
+ * PRIORITAS penuh (menang atas per-kata) supaya pelajar membacanya sebagai satu arti.
  * Kembalikan null kalau tak ada yang bisa digabung (semua kata berdiri sendiri)
  * atau data pendukung belum ada — pemanggil lalu sorot per-kata.
  */
@@ -2661,8 +2701,9 @@ export function computeCueChunks(params: {
   langCode: string;
   breakdown?: SentenceBreakdown | null;
   alignTGroup?: number[] | null;
+  exprSpans?: number[][] | null;
 }): CueChunks | null {
-  const { target, langCode, breakdown, alignTGroup } = params;
+  const { target, langCode, breakdown, alignTGroup, exprSpans } = params;
   const tokens = splitWords(target, langCode);
   // Indeks token tiap kata (ordinal k → indeks token j) + teks kata.
   const wordTok: number[] = [];
@@ -2692,6 +2733,15 @@ export function computeCueChunks(params: {
     return false;
   };
 
+  // Ekspresi idiomatik dari AI: exprOf[k] = indeks rentang ekspresi yang memuat
+  // ordinal k (atau -1). Dua kata bersebelahan di rentang yang sama → digabung.
+  const exprOf: number[] = new Array(n).fill(-1);
+  if (exprSpans) {
+    exprSpans.forEach((span, si) => {
+      for (const k of span) if (Number.isInteger(k) && k >= 0 && k < n && exprOf[k] === -1) exprOf[k] = si;
+    });
+  }
+
   const chunkOfWord: number[] = new Array(n);
   let cid = 0;
   chunkOfWord[0] = 0;
@@ -2705,7 +2755,9 @@ export function computeCueChunks(params: {
       ((NP_LEADER.has(a) && NP_MEMBER.has(b)) || (a === "noun" && b === "noun"));
     // Gabung idiom: dua kata bersebelahan di grup penjajaran yang sama.
     const mergeAlign = !!ag && ag[k] != null && ag[k] >= 0 && ag[k] === ag[k - 1];
-    chunkOfWord[k] = (mergeNP || mergeAlign) && !brokenBetween(k) ? cid : ++cid;
+    // Gabung ekspresi AI: dua kata bersebelahan di rentang ekspresi yang sama.
+    const mergeExpr = exprOf[k] >= 0 && exprOf[k] === exprOf[k - 1];
+    chunkOfWord[k] = (mergeNP || mergeAlign || mergeExpr) && !brokenBetween(k) ? cid : ++cid;
   }
 
   // Susun metadata chunk + peta per-token. Token pemisah DI DALAM satu chunk ikut

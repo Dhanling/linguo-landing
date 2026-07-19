@@ -43,7 +43,7 @@ import {
   recordWordLookup,
   DEFAULT_BASE_LANG,
   getAlignment,
-  type AlignGroup,
+  type AlignResult,
   getCachedWordMeaning,
   getSentenceBreakdown,
   getStudyHistory,
@@ -518,7 +518,7 @@ export default function VideoLearnPlayer({
   // (dan sebaliknya), dengan frasa multi-kata ("el entrenamiento de fuerza" ↔
   // "strength training") menyala sebagai SATU unit. Hanya untuk pasangan bahasa
   // beraksara Latin (target & terjemahan) — non-Latin tetap pakai sinkron translit.
-  const [aligns, setAligns] = useState<Record<number, AlignGroup[]>>({});
+  const [aligns, setAligns] = useState<Record<number, AlignResult>>({});
   const alignReqRef = useRef<Set<string>>(new Set());
 
   // Fullscreen player kita sendiri (bukan iframe) + tampil/sembunyi panel transkrip.
@@ -1506,7 +1506,7 @@ export default function VideoLearnPlayer({
       if (alignReqRef.current.has(key)) return;
       alignReqRef.current.add(key);
       getAlignment({ target: c.target, base: c.base, langCode, baseCode: baseLang })
-        .then((g) => setAligns((prev) => ({ ...prev, [i]: g })))
+        .then((r) => setAligns((prev) => ({ ...prev, [i]: r })))
         .catch(() => alignReqRef.current.delete(key));
     },
     [alignEnabled, langCode, baseLang]
@@ -1520,20 +1520,26 @@ export default function VideoLearnPlayer({
   // Peta bantu per baris: ordinal kata target → grup, ordinal kata terjemahan →
   // grup, dan ordinal target pertama tiap grup (buat hover dari sisi terjemahan).
   const alignMaps = useMemo(() => {
-    const out: Record<number, { tGroup: number[]; bGroup: number[]; firstT: number[] }> = {};
+    const out: Record<
+      number,
+      { tGroup: number[]; bGroup: number[]; firstT: number[]; expr: number[][] }
+    > = {};
     for (const key of Object.keys(aligns)) {
       const i = Number(key);
-      const groups = aligns[i];
-      if (!groups || !groups.length) continue;
+      const a = aligns[i];
+      const groups = a?.groups;
+      const expr = a?.expr ?? [];
+      // Simpan entri kalau ada penjajaran ATAU ada ekspresi (chunking bisa pakai salah satu).
+      if ((!groups || !groups.length) && !expr.length) continue;
       const tGroup: number[] = [];
       const bGroup: number[] = [];
       const firstT: number[] = [];
-      groups.forEach((g, gi) => {
+      (groups ?? []).forEach((g, gi) => {
         firstT[gi] = g.t.length ? Math.min(...g.t) : -1;
         g.t.forEach((t) => (tGroup[t] = gi));
         g.b.forEach((b) => (bGroup[b] = gi));
       });
-      out[i] = { tGroup, bGroup, firstT };
+      out[i] = { tGroup, bGroup, firstT, expr };
     }
     return out;
   }, [aligns]);
@@ -1570,18 +1576,27 @@ export default function VideoLearnPlayer({
       const bd = breakdowns[i];
       const breakdown = bd && typeof bd === "object" ? bd : null;
       const alignTGroup = alignMaps[i]?.tGroup ?? null;
-      out[i] = breakdown || alignTGroup
-        ? computeCueChunks({ target: c.target, langCode, breakdown, alignTGroup })
+      const exprSpans = alignMaps[i]?.expr ?? null;
+      out[i] = breakdown || alignTGroup || exprSpans
+        ? computeCueChunks({ target: c.target, langCode, breakdown, alignTGroup, exprSpans })
         : null;
     });
     return out;
   }, [cues, breakdowns, alignMaps, langCode]);
 
   // Auto-scroll baris aktif ke tengah panel transkrip.
+  // Kita hitung scrollTop container sendiri (bukan scrollIntoView) supaya HANYA
+  // panel transkrip yang bergerak — scrollIntoView merambat ke semua leluhur yang
+  // bisa discroll (window/overlay) sehingga saat pindah baris terasa "mantul"
+  // menyentak ke atas. Dengan scrollTo terarah, geser antar-section jadi mulus.
   useEffect(() => {
     if (activeIdx < 0 || !listRef.current) return;
-    const el = listRef.current.querySelector<HTMLElement>(`[data-cue="${activeIdx}"]`);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    const container = listRef.current;
+    const el = container.querySelector<HTMLElement>(`[data-cue="${activeIdx}"]`);
+    if (!el) return;
+    const target = el.offsetTop - container.clientHeight / 2 + el.offsetHeight / 2;
+    const max = container.scrollHeight - container.clientHeight;
+    container.scrollTo({ top: Math.min(Math.max(0, target), Math.max(0, max)), behavior: "smooth" });
   }, [activeIdx]);
 
   const seekTo = useCallback((sec: number) => {
@@ -1836,6 +1851,36 @@ export default function VideoLearnPlayer({
     },
     [langCode, video.videoId, cues]
   );
+
+  // [watch-hover-open-v1] Hover kata di bar subtitle = tap (buka balon arti otomatis).
+  // Debounce ~180ms: menyapu kursor melintasi baris tak memuntahkan balon/quota tiap
+  // kata — hanya kata tempat kursor BERHENTI yang terbuka. Koordinat balon disalin dari
+  // event (bukan simpan event React) supaya aman dipakai setelah delay.
+  const hoverOpenTimer = useRef<number | null>(null);
+  const clearHoverOpen = useCallback(() => {
+    if (hoverOpenTimer.current != null) {
+      window.clearTimeout(hoverOpenTimer.current);
+      hoverOpenTimer.current = null;
+    }
+  }, []);
+  const onWordHoverOpen = useCallback(
+    (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      clearHoverOpen();
+      hoverOpenTimer.current = window.setTimeout(() => {
+        onWordTap(
+          { stopPropagation() {}, clientX: x, clientY: y } as unknown as React.MouseEvent,
+          word,
+          sentence,
+          wordIdx,
+          wordEndIdx
+        );
+      }, 180);
+    },
+    [onWordTap, clearHoverOpen]
+  );
+  useEffect(() => clearHoverOpen, [clearHoverOpen]);
 
   return (
     <div
@@ -2254,8 +2299,11 @@ export default function VideoLearnPlayer({
 
           {/* Baris fokus — kalimat aktif. Kini rekomendasi disembunyikan saat
               menonton penuh, jadi baris ini tumbuh (flex-1) & terpusat di ruang
-              kosong antara video dan kontrol → subtitle turun & lebih lega. */}
-          {!mini && (
+              kosong antara video dan kontrol → subtitle turun & lebih lega.
+              Saat panel Transkrip dibuka (mode transkrip, bukan layar penuh),
+              subtitle di bawah video otomatis disembunyikan — kalimat aktif sudah
+              tampil & tersorot di panel transkrip, jadi tak perlu diduplikasi. */}
+          {!mini && !(showPanel && !fullscreen) && (
           <div
             className={`flex flex-col ${
               fullscreen
@@ -2297,6 +2345,8 @@ export default function VideoLearnPlayer({
                 analyze={analyze}
                 breakdown={activeIdx >= 0 ? breakdowns[activeIdx] : undefined}
                 onWordTap={onWordTap}
+                onWordHoverOpen={onWordHoverOpen}
+                onWordHoverClose={clearHoverOpen}
                 onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
                 txState={txState}
                 asrRunning={asrRunning}
@@ -2788,7 +2838,12 @@ export default function VideoLearnPlayer({
                     key={i}
                     data-cue={i}
                     onClick={() => seekTo(c.start)}
-                    className="cursor-pointer rounded-xl px-3 py-2.5 transition-colors"
+                    // Section non-aktif diredupkan (opacity) jadi terkesan abu-abu
+                    // supaya fokus jatuh ke baris yang sedang diputar; hover meredakan
+                    // redup itu biar tetap enak ditarget/dibaca.
+                    className={`cursor-pointer rounded-xl px-3 py-2.5 transition-[background-color,opacity] duration-300 ${
+                      on ? "opacity-100" : "opacity-40 hover:opacity-75"
+                    }`}
                     style={{
                       backgroundColor: on ? "rgba(26,158,158,0.14)" : "transparent",
                     }}
@@ -3105,6 +3160,8 @@ function FocusLine({
   analyze,
   breakdown,
   onWordTap,
+  onWordHoverOpen,
+  onWordHoverClose,
   onRetryAnalyze,
   txState,
   asrRunning,
@@ -3127,13 +3184,16 @@ function FocusLine({
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
+  // [watch-hover-open-v1] Hover = tap di bar subtitle bawah (debounce di player).
+  onWordHoverOpen?: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
+  onWordHoverClose?: () => void;
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
   scale: number;
   // Sinkron hover kata↔terjemahan di bar subtitle bawah (setara panel transkrip).
   alignEnabled?: boolean;
-  alignMap?: { tGroup: number[]; bGroup: number[]; firstT: number[] };
+  alignMap?: { tGroup: number[]; bGroup: number[]; firstT: number[]; expr?: number[][] };
   hot?: { t: Set<number>; b: Set<number> };
   hoveredK?: number | null;
   onHoverWord?: (k: number | null) => void;
@@ -3153,6 +3213,7 @@ function FocusLine({
             langCode: langCode ?? "",
             breakdown: breakdown && typeof breakdown === "object" ? breakdown : null,
             alignTGroup: alignMap?.tGroup ?? null,
+            exprSpans: alignMap?.expr ?? null,
           })
         : null,
     [cue, langCode, breakdown, alignMap]
@@ -3283,6 +3344,8 @@ function FocusLine({
         time={time}
         langCode={langCode}
         onWordTap={onWordTap}
+        onWordHoverOpen={onWordHoverOpen}
+        onWordHoverClose={onWordHoverClose}
         hoveredK={hoveredK}
         hotKeys={hot?.t}
         onHoverWord={onHoverWord}
@@ -3492,6 +3555,8 @@ function KaraokeWord({
   onHover,
   inPhrase,
   phraseActive,
+  onHoverOpen,
+  onHoverClose,
 }: {
   text: string;
   state: KaraokeState;
@@ -3502,6 +3567,10 @@ function KaraokeWord({
   // yang bersesuaian di-hover → kata ini ikut menyala (dan sebaliknya via onHover).
   hovered?: boolean;
   onHover?: (h: boolean) => void;
+  // [watch-hover-open-v1] Hover = tap: masuk kata → buka tooltip (debounce di player),
+  // keluar → batalkan yang tertunda. Membawa event utk koordinat balon.
+  onHoverOpen?: (e: React.MouseEvent) => void;
+  onHoverClose?: () => void;
   // [watch-phrase-chunk-v1] Kata ini bagian dari unit frasa (mis. "the king"):
   // klik/hover ditangani pembungkus frasa, bukan per-kata. Warna & "pop" mengikuti
   // FRASA (phraseActive) — jadi "the king" menyala teal BERSAMAAN saat sinkron audio,
@@ -3524,8 +3593,8 @@ function KaraokeWord({
   return (
     <span
       onClick={inPhrase ? undefined : onClick}
-      onMouseEnter={inPhrase ? undefined : () => onHover?.(true)}
-      onMouseLeave={inPhrase ? undefined : () => onHover?.(false)}
+      onMouseEnter={inPhrase ? undefined : (e) => { onHover?.(true); onHoverOpen?.(e); }}
+      onMouseLeave={inPhrase ? undefined : () => { onHover?.(false); onHoverClose?.(); }}
       className={cls}
       style={{
         color: active ? TEAL : "#fff",
@@ -3550,14 +3619,21 @@ function KaraokePhrase({
   children,
   active,
   onClick,
+  onHoverOpen,
+  onHoverClose,
 }: {
   children: React.ReactNode;
   active?: boolean;
   onClick: (e: React.MouseEvent) => void;
+  // [watch-hover-open-v1] Hover frasa = tap frasa (buka arti utuh).
+  onHoverOpen?: (e: React.MouseEvent) => void;
+  onHoverClose?: () => void;
 }) {
   return (
     <span
       onClick={onClick}
+      onMouseEnter={onHoverOpen}
+      onMouseLeave={onHoverClose}
       className="relative inline-flex cursor-pointer items-baseline align-baseline transition-transform duration-200 ease-out"
       style={{ transform: active ? "translateY(-2px) scale(1.08)" : "none" }}
     >
@@ -3571,6 +3647,8 @@ function KaraokeText({
   time,
   langCode,
   onWordTap,
+  onWordHoverOpen,
+  onWordHoverClose,
   hoveredK,
   hotKeys,
   onHoverWord,
@@ -3583,6 +3661,10 @@ function KaraokeText({
   time: number;
   langCode?: string;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
+  // [watch-hover-open-v1] Hover = tap (debounce di player). Opsional — hanya bar
+  // subtitle bawah yang mengoper ini; panel transkrip tetap butuh klik.
+  onWordHoverOpen?: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
+  onWordHoverClose?: () => void;
   // [linguo-patch:watch-translit-hover-sync-v1] sinkron hover dengan baris translit
   // (opsional — bar subtitle di bawah tak mengoper ini, jatuh ke hover CSS biasa).
   hoveredK?: number | null;
@@ -3620,6 +3702,8 @@ function KaraokeText({
         inPhrase={inPhrase}
         phraseActive={phraseActive}
         onClick={(e) => onWordTap(e, t.text, cue.target, j)}
+        onHoverOpen={onWordHoverOpen ? (e) => onWordHoverOpen(e, t.text, cue.target, j) : undefined}
+        onHoverClose={onWordHoverClose}
         hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
         onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
       />
@@ -3659,6 +3743,8 @@ function KaraokeText({
           key={`p${cid}-${j}`}
           active={phraseActive}
           onClick={(e) => onWordTap(e, chunk.text, cue.target, chunk.firstTok, chunk.lastTok)}
+          onHoverOpen={onWordHoverOpen ? (e) => onWordHoverOpen(e, chunk.text, cue.target, chunk.firstTok, chunk.lastTok) : undefined}
+          onHoverClose={onWordHoverClose}
         >
           {inner}
         </KaraokePhrase>
