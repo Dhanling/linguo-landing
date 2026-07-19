@@ -16,7 +16,13 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL = "gemini-2.5-flash";
+
+// Rantai model fallback. Kuota free-tier Gemini dihitung PER-MODEL per hari
+// (limit ~10k/model). Saat model utama kena 429 RESOURCE_EXHAUSTED (mentok
+// harian) — gejalanya transliterasi (romaji/pinyin/dll) HILANG total di
+// transkrip Watch & Learn — kita jatuh ke model cadangan yang punya jatah
+// harian sendiri. Samakan pola dengan /api/word-deep.
+const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
 
 // Skema romanisasi per bahasa — biar hasilnya baku (mis. pinyin bertanda nada).
 const SCHEME: Record<string, string> = {
@@ -42,6 +48,47 @@ const SCHEME: Record<string, string> = {
   am: "standard Latin romanization",
   hy: "standard Latin romanization",
 };
+
+// Satu panggilan generateContent ke SATU model. Balikin teks (atau "" saat
+// gagal — termasuk 429 kuota harian, yang jadi sinyal untuk coba model berikut).
+async function callModel(model: string, prompt: string): Promise<string> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0,
+        responseMimeType: "application/json",
+        // Transliterasi tak butuh reasoning — matikan "thinking" biar cepat & murah.
+        thinkingConfig: { thinkingBudget: 0 },
+      },
+    }),
+  });
+  if (!res.ok) return "";
+  const data = await res.json();
+  return (
+    data?.candidates?.[0]?.content?.parts
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ?.map((p: any) => (typeof p?.text === "string" ? p.text : ""))
+      .join("") ?? ""
+  );
+}
+
+// Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
+// Balikin "" hanya bila semua model habis kuotanya.
+async function callGemini(prompt: string): Promise<string> {
+  for (const model of MODELS) {
+    try {
+      const text = await callModel(model, prompt);
+      if (text.trim()) return text;
+    } catch {
+      /* coba model berikutnya */
+    }
+  }
+  return "";
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -72,28 +119,9 @@ export async function POST(req: NextRequest) {
       `(dialectal) forms; do NOT normalize to a formal/standard register. ` +
       `Do NOT translate the meaning. No notes, no markdown.\n\n${numbered}`;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0,
-          responseMimeType: "application/json",
-          // Transliterasi tak butuh reasoning — matikan "thinking" biar cepat & murah.
-          thinkingConfig: { thinkingBudget: 0 },
-        },
-      }),
-    });
-    if (!res.ok) return NextResponse.json({ translit: [] });
-
-    const data = await res.json();
-    const text: string =
-      data?.candidates?.[0]?.content?.parts
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ?.map((p: any) => (typeof p?.text === "string" ? p.text : ""))
-        .join("") ?? "";
+    // Coba tiap model berurutan sampai ada yang membalas teks non-kosong. Model
+    // utama yang mentok kuota harian (429 → "") jadi sinyal untuk coba cadangan.
+    const text = await callGemini(prompt);
 
     let arr: unknown = [];
     try {
