@@ -33,7 +33,6 @@ import {
   TextSearch,
   Clock3,
   Loader2,
-  ChevronDown,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -841,7 +840,7 @@ export default function WatchAndLearn() {
               title="Kosakata"
               aria-label="Kosakata"
               className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+              style={{ backgroundColor: CARD }}
             >
               <Layers className="h-4 w-4 shrink-0" color={TEAL} />
               <RevealLabel>Kosakata</RevealLabel>
@@ -856,13 +855,12 @@ export default function WatchAndLearn() {
             </button>
             <button
               onClick={() => setBasePickerOpen(true)}
-              className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
-              style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-              title="Bahasa terjemahan di bawah subtitle"
+              className="group inline-flex items-center rounded-full px-2.5 py-1.5 text-sm font-bold transition-transform active:scale-95"
+              style={{ backgroundColor: CARD }}
+              title={`Bahasa terjemahan: ${getBaseLangDef(baseLang).label}`}
               aria-label={getBaseLangDef(baseLang).label}
             >
               <Languages className="h-4 w-4 shrink-0" color={GOLD} />
-              <RevealLabel>{getBaseLangDef(baseLang).label}</RevealLabel>
             </button>
             {/* Bahasa yang dipelajari — dropdown HOVER (dulu pop-up layar penuh).
                 [watch-learnlang-hover-v1] Hover buka dropdown cari + daftar; klik
@@ -878,15 +876,10 @@ export default function WatchAndLearn() {
                 title={lang.name}
                 aria-label={lang.name}
                 aria-expanded={learnMenuOpen}
-                className="group inline-flex items-center rounded-full px-3 py-1.5 text-sm font-bold transition-transform active:scale-95"
-                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+                className="group inline-flex items-center rounded-full px-2.5 py-1.5 text-sm font-bold transition-transform active:scale-95"
+                style={{ backgroundColor: CARD }}
               >
                 <RectFlag code={lang.country} h={16} />
-                <RevealLabel>{lang.name}</RevealLabel>
-                <ChevronDown
-                  className={`ml-1 h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${learnMenuOpen ? "rotate-180" : ""}`}
-                  color={TEAL}
-                />
               </button>
               <div
                 className={`absolute right-0 top-full z-30 pt-2 transition-all duration-150 ease-out ${
@@ -1029,7 +1022,6 @@ export default function WatchAndLearn() {
             className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
             style={{
               backgroundColor: category === SIAP_ID ? TEAL : CARD,
-              border: `1px solid ${category === SIAP_ID ? TEAL : BORDER}`,
               color: category === SIAP_ID ? "#fff" : "rgba(255,255,255,0.8)",
             }}
           >
@@ -1042,7 +1034,6 @@ export default function WatchAndLearn() {
             className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
             style={{
               backgroundColor: category === WORD_ID ? GOLD : CARD,
-              border: `1px solid ${category === WORD_ID ? GOLD : BORDER}`,
               color: category === WORD_ID ? "#1A1205" : "rgba(255,255,255,0.8)",
             }}
           >
@@ -1059,7 +1050,6 @@ export default function WatchAndLearn() {
                 className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-bold transition-colors"
                 style={{
                   backgroundColor: on ? TEAL : CARD,
-                  border: `1px solid ${on ? TEAL : BORDER}`,
                   color: on ? "#fff" : "rgba(255,255,255,0.8)",
                 }}
               >
