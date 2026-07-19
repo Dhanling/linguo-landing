@@ -1792,7 +1792,9 @@ export default function VideoLearnPlayer({
                   className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
                   style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
                 >
-                  {BASE_LANGS.map((b) => {
+                  {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
+                      bahasa yang sama tak masuk akal. */}
+                  {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
                     const on = b.code === baseLang;
                     return (
                       <button

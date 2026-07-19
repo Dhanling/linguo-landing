@@ -355,8 +355,18 @@ export default function WatchAndLearn() {
     }
     // Bahasa terjemahan: pulihkan pilihan, atau tanya kalau ini pertama kali.
     const storedBase = getStoredBaseLang();
-    if (storedBase) setBaseLang(storedBase);
-    else setBaseFirstOpen(true);
+    if (storedBase) {
+      // Jangan biarkan terjemahan == bahasa yang dipelajari (mis. dua-duanya
+      // Indonesia). Geser otomatis biar terjemahan tetap masuk akal.
+      const target = saved && getImmersionLang(saved) ? saved : "en";
+      if (storedBase === target) {
+        const fallback = target === "en" ? "id" : "en";
+        setBaseLang(fallback);
+        storeBaseLang(fallback);
+      } else {
+        setBaseLang(storedBase);
+      }
+    } else setBaseFirstOpen(true);
     const hist = getWatchHistory();
     setHistory(hist);
     // [linguo-patch:watch-resume-refresh-v1] URL bawa ?v= → refresh terjadi saat
@@ -674,6 +684,16 @@ export default function WatchAndLearn() {
 
   const pickLang = useCallback((code: string) => {
     setLangCode(code);
+    // Bahasa terjemahan ("kamu bicara apa") tak boleh sama dengan bahasa yang
+    // dipelajari — mis. pilih belajar Indonesia tapi terjemahan juga Indonesia
+    // tak masuk akal. Kalau bentrok, geser otomatis: belajar Inggris → terjemahan
+    // Indonesia, selain itu → Inggris.
+    setBaseLang((prevBase) => {
+      if (code !== prevBase) return prevBase;
+      const fallback = code === "en" ? "id" : "en";
+      storeBaseLang(fallback);
+      return fallback;
+    });
     setLangPickerOpen(false);
     setLangQuery("");
     // Ganti bahasa → buang teks pencarian lama. Tanpa ini query "learn khmer"
@@ -1448,7 +1468,9 @@ export default function WatchAndLearn() {
               )}
             </div>
             <div className="mt-3 grid grid-cols-1 gap-1.5 px-2.5 pb-4 sm:grid-cols-2">
-              {BASE_LANGS.map((b) => {
+              {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke bahasa
+                  yang sama tak masuk akal. */}
+              {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
                 const on = b.code === baseLang;
                 return (
                   <button
