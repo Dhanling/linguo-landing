@@ -442,6 +442,9 @@ export default function VideoLearnPlayer({
   const [anchor, setAnchor] = useState<Anchor | null>(null);
   // Penghitung id anchor — tiap tap kata dapat id baru → WordTooltip remount bersih.
   const anchorSeq = useRef(0);
+  // [watch-tip-persist-v1] Balon arti kata hanya muncul saat video DIJEDA. Begitu
+  // video jalan lagi, balon otomatis hilang (tak menghalangi tontonan). Drawer Analisa
+  // (studyOpen) dikecualikan — panel dalam itu tetap tampil biar analisa tak terputus.
   // Paywall langganan Watch & Learn (buka arti kata / Analisa saat cicip habis).
   const [subscribeOpen, setSubscribeOpen] = useState(false);
 
@@ -571,6 +574,12 @@ export default function VideoLearnPlayer({
   // terbuka langsung muat ulang drawer di tempat, bukan balik ke popup.
   const wordStudyOpenRef = useRef(false);
   wordStudyOpenRef.current = wordStudyOpen;
+  // [watch-tip-persist-v1] Video jalan lagi → tutup balon arti kata (biar tak
+  // menghalangi tontonan). Drawer Analisa (wordStudyOpen) dikecualikan: panel dalam
+  // itu memang dibuka untuk dibaca berlama-lama, tak ikut tertutup saat video jalan.
+  useEffect(() => {
+    if (playing && !wordStudyOpenRef.current) setAnchor(null);
+  }, [playing]);
   const panelBeforeStudyRef = useRef<boolean | null>(null);
   // useLayoutEffect (bukan useEffect) supaya sembunyi/tampil transkrip terjadi SEBELUM
   // browser melukis. Kalau useEffect: render pembuka drawer sudah memasang padding
@@ -2849,8 +2858,8 @@ export default function VideoLearnPlayer({
                                 <span
                                   key={`p${cid}-${j}`}
                                   onClick={(e) => onWordTap(e, chunk.text, c.target, chunk.firstTok, chunk.lastTok)}
-                                  className="cursor-pointer"
-                                  style={{ borderBottom: "2px dashed rgba(26,158,158,0.55)", paddingBottom: 1 }}
+                                  className="cursor-pointer rounded-md"
+                                  style={{ backgroundColor: "rgba(26,158,158,0.2)", padding: "1px 5px" }}
                                 >
                                   {inner}
                                 </span>
@@ -3527,9 +3536,9 @@ function KaraokeWord({
 }
 
 // [watch-phrase-chunk-v1] Pembungkus satu unit frasa karaoke (mis. "the king",
-// "for a walk"). Membawa kata-katanya (tiap kata tetap "pop" saat gilirannya) +
-// garis bawah tipis teal PERSISTEN sebagai penanda "ini satu unit yang bisa di-tap".
-// Hover → garis menebal; klik → buka arti FRASA (bukan per-kata).
+// "the press conference"). Membawa kata-katanya (tiap kata tetap "pop" saat
+// gilirannya) + BLOK SOROTAN warna teal PERSISTEN sebagai penanda "ini satu unit
+// yang bisa di-tap". Hover → blok lebih pekat; klik → buka arti FRASA (bukan per-kata).
 function KaraokePhrase({
   children,
   onClick,
@@ -3543,11 +3552,11 @@ function KaraokePhrase({
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="relative inline-flex cursor-pointer items-baseline align-baseline"
+      className="relative inline-flex cursor-pointer items-baseline rounded-md align-baseline"
       style={{
-        borderBottom: `2px ${hover ? "solid" : "dashed"} rgba(26,158,158,${hover ? 0.95 : 0.55})`,
-        paddingBottom: 1,
-        transition: "border-color 150ms ease-out",
+        backgroundColor: `rgba(26,158,158,${hover ? 0.34 : 0.2})`,
+        padding: "1px 5px",
+        transition: "background-color 150ms ease-out",
       }}
     >
       {children}

@@ -2624,16 +2624,20 @@ export function cleanWord(word: string): string {
 // Kita gabungkan token kata bersebelahan jadi satu unit karaoke (satu sorotan, satu
 // tap → arti frasa) memakai DUA sinyal yang sudah tersedia & di-cache:
 //   1. Kelas kata (breakdown POS) — bangun frasa BENDA deterministik:
-//        determiner/preposisi + (kata sifat/bilangan) + kata benda
-//        → "the king", "the big house", "for a walk", "of pigs".
+//        determiner + (kata sifat/bilangan) + kata benda
+//        → "the king", "the big house", "the press conference".
+//      PREPOSISI SENGAJA TIDAK menggabung ke frasa benda di kanannya: "to"/"of"/"for"
+//      punya arti sendiri yang penting dipelajari ("to" = "ke") → biar berdiri sendiri.
+//      Jadi "to the press conference" = "to" | "the press conference" (bukan 1 blok).
 //   2. Penjajaran AI (alignGroup) — tangkap idiom/phrasal verb yang satu konsep di
-//        bahasa terjemahan (mis. "go out"↔"keluar", "go for a walk"↔"jalan-jalan"):
+//        bahasa terjemahan (mis. "go out"↔"keluar", "give up"↔"menyerah"):
 //        kata bersebelahan yang jatuh di grup penjajaran yang SAMA ikut digabung.
 // Aman & progresif: kalau POS/penjajaran belum siap → kembalikan null (pemanggil
 // sorot per-kata seperti biasa). TAK pernah lebih buruk dari sebelumnya.
 
 // Kelas kata yang boleh MENGAWALI frasa benda (menempel ke kata di kanannya).
-const NP_LEADER: Set<PosCategory> = new Set(["determiner", "preposition", "adjective", "numeral"]);
+// Preposisi TIDAK termasuk — biar "to/of/for" berdiri sendiri (arti tersendiri).
+const NP_LEADER: Set<PosCategory> = new Set(["determiner", "adjective", "numeral"]);
 // Kelas kata yang boleh menjadi ANGGOTA lanjutan frasa benda.
 const NP_MEMBER: Set<PosCategory> = new Set(["determiner", "adjective", "numeral", "noun"]);
 // Tanda baca yang MEMUTUS frasa (koma, titik, dsb.) walau kelas kata cocok.
