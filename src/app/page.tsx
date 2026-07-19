@@ -8,7 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { getLanguageCategory, PRICE_A1_60MIN, getSemiPrivatePrice, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1
 
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
@@ -1116,6 +1116,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   // kategori bahasa. Level dipilih SETELAH langkah ini → angka ini "Mulai dari".
   // Fallback "C" (Rp100rb) bila bahasa belum dikenal, JANGAN D (Rp90rb).
   const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
+  // funnel-private-level-price-v1 — harga/sesi ikut level yang dipilih (A2 ≠ A1).
+  // PRIVATE_BASE_PRICE (A1) hanya utk label "Mulai dari" di kartu program.
+  const privateBase60 = getPrivateBase60(selLang, selLevel || "A1");
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
   // linguo-patch:funnel-semi-private-calc-v1 — harga semi private live (ikut durasi sesi terpilih)
@@ -1126,7 +1129,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   // dibatasi utk rentang usia anak, harga di-scale dari tarif dasar per tipe.
   const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
   // Harga Private/sesi utk durasi & tipe pengajar terpilih (proporsional dari base 60mnt).
-  const privatePerSession = Math.round((PRIVATE_BASE_PRICE * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
+  const privatePerSession = Math.round((privateBase60 * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
   // Harga Kids/sesi: scale dari tarif dasar (per tipe) proporsional durasi, dibulatkan ke 5rb.
   const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
   const kidsKey = KIDS_KEY[selLevel];

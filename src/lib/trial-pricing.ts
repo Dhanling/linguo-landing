@@ -42,6 +42,54 @@ export const PRICE_A1_60MIN: Record<string, number> = {
   E: 150000,
 };
 
+// =============================================================================
+// linguo-patch:funnel-private-level-price-v1
+// Harga Kelas Private per sesi 60 menit BERBEDA per level (bukan flat A1).
+// SUMBER KEBENARAN = admin Registrations.tsx PRICE_TABLE — angka HARUS identik
+// biar tagihan funnel = pricelist resmi. Bug lama: funnel abai level → semua
+// level ditagih harga A1 (mis. Portuguese A2 harusnya 130rb, ketagih 120rb).
+// Index = tier dari getPrivateLevelTier(): [A1, A2, B1/B2, C1/C2]. Kategori C
+// (English dkk) punya 5 tier (B1 & B2 dipisah, increment 10rb).
+// =============================================================================
+export const PRICE_PRIVATE_60MIN: Record<string, number[]> = {
+  A: [120000, 130000, 140000, 150000],
+  B: [110000, 120000, 130000, 140000],
+  C: [100000, 110000, 120000, 130000, 140000], // 5-tier: A1,A2,B1,B2,C1/C2
+  D: [90000, 95000, 100000, 110000],
+  E: [150000, 160000, 170000, 180000],
+};
+
+/**
+ * Level (string) -> tier index untuk PRICE_PRIVATE_60MIN. Category-aware: cat C
+ * memisah B1 (tier 2) & B2 (tier 3). Mirror admin getLevelTier(level, category).
+ */
+export function getPrivateLevelTier(level: string, category?: string): number {
+  const l = (level || "A1").toUpperCase().replace(/\.\d+$/, "");
+  if (category === "C") {
+    if (l === "A1") return 0;
+    if (l === "A2") return 1;
+    if (l === "B1") return 2;
+    if (l === "B2") return 3;
+    if (l === "C1" || l === "C2") return 4;
+    return 0;
+  }
+  if (l === "A1") return 0;
+  if (l === "A2") return 1;
+  if (l === "B1" || l === "B2") return 2;
+  if (l === "C1" || l === "C2") return 3;
+  return 0;
+}
+
+/**
+ * Harga Private per sesi 60 menit sesuai kategori bahasa + level.
+ * Fallback kategori "C" bila bahasa belum dikategorikan (JANGAN ke D — itu bug lama).
+ */
+export function getPrivateBase60(language: string, level: string): number {
+  const cat = getLanguageCategory(language) || "C";
+  const tier = getPrivateLevelTier(level || "A1", cat);
+  return PRICE_PRIVATE_60MIN[cat][tier];
+}
+
 /** Kids: harga flat per tipe (per sesi). */
 export const KIDS_PRICE: Record<string, number> = {
   "little-learner": 75000,

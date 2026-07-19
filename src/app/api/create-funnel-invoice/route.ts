@@ -16,8 +16,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import {
-  PRICE_A1_60MIN,
-  getLanguageCategory,
+  getPrivateBase60,
   KIDS_PRICE,
   KIDS_DURATION,
   getSemiPrivatePrice,
@@ -65,8 +64,8 @@ function computeFunnelAmount(input: {
   if (program === "Kelas Private") {
     if (!PRIVATE_DURATIONS.includes(duration)) return null;
     if (!SESSION_OPTS.includes(sessions)) return null;
-    const cat = getLanguageCategory(language) || "C";
-    const base60 = PRICE_A1_60MIN[cat] ?? 100000;
+    // funnel-private-level-price-v1 — harga/sesi mengikuti level tier (bukan flat A1).
+    const base60 = getPrivateBase60(language, level || "A1");
     const perSession =
       Math.round((base60 * duration) / 60) *
       (teacherType === "native" ? NATIVE_MULTIPLIER : 1);
@@ -74,7 +73,7 @@ function computeFunnelAmount(input: {
       amount: perSession * sessions,
       perSession,
       description:
-        `Kelas Private ${language} — ${sessions} sesi @${duration} menit` +
+        `Kelas Private ${language} — Level ${level || "A1"} — ${sessions} sesi @${duration} menit` +
         (teacherType === "native" ? " (Pengajar Native)" : ""),
     };
   }
@@ -208,6 +207,7 @@ export async function POST(req: NextRequest) {
         language,
         program,
         level: level || null,
+        duration: Number(duration) || null, // leads-lang-level-duration-v1 — menit/sesi utk tampil di admin Leads
         source: "landing-page",
         payment_status: "PENDING",
         xendit_external_id: externalId,

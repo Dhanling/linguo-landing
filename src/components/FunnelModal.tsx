@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, X, Search } from "lucide-react";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 // (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
-import { getLanguageCategory, PRICE_A1_60MIN, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // funnel-session-duration-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // funnel-session-duration-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 
 const LANG_CATEGORIES = [
@@ -94,12 +94,15 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   // angka ini adalah harga "Mulai dari". Fallback "C" (Rp100rb) bila bahasa
   // belum dikenal — JANGAN fallback ke D (Rp90rb), itu sumber bug-nya.
   const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
+  // funnel-private-level-price-v1 — harga/sesi mengikuti level yang dipilih siswa
+  // (A2 ≠ A1). PRIVATE_BASE_PRICE (A1) hanya utk label "Mulai dari" di kartu program.
+  const privateBase60 = getPrivateBase60(selLang, selLevel || "A1");
   const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
 
   // funnel-session-duration-v1 — pilihan durasi (menit) per sesi + harga live.
   const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
-  const privatePerSession = Math.round((PRIVATE_BASE_PRICE * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
+  const privatePerSession = Math.round((privateBase60 * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
   const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
   const kidsKey = KIDS_KEY[selLevel];
   const kidsPerSession = kidsKey ? Math.round(((KIDS_PRICE[kidsKey] / KIDS_DURATION[kidsKey]) * selDuration) / 5000) * 5000 : 0;
