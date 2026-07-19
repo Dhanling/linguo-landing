@@ -1702,6 +1702,8 @@ export async function getWordDeepDive(params: {
   word: string;
   sentence: string;
   langCode: string;
+  // Bahasa penjelasan (kode BASE_LANGS) — materi ditulis dalam bahasa ini.
+  baseCode?: string;
 }): Promise<WordDeepDive> {
   const res = await fetch("/api/word-deep", {
     method: "POST",
@@ -1749,6 +1751,8 @@ export async function askWordQuestion(params: {
   sentence: string;
   langCode: string;
   question: string;
+  // Bahasa jawaban (kode BASE_LANGS) — jawaban ditulis dalam bahasa ini.
+  baseCode?: string;
 }): Promise<WordAnswer> {
   const res = await fetch("/api/word-deep", {
     method: "POST",

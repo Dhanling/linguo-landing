@@ -20,7 +20,10 @@ export const maxDuration = 30;
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 const MODEL = "gemini-2.5-flash";
-const EXPLANATION_LANGUAGE = "Bahasa Indonesia";
+// Bahasa penjelasan default (saat klien tak mengirim baseCode) — pengguna Linguo
+// berbahasa Indonesia. Kalau baseCode dikirim (bahasa terjemahan pilihan pengguna),
+// materi & jawaban ditulis dalam bahasa itu (lihat `explanationLanguage` di bawah).
+const DEFAULT_EXPLANATION_LANGUAGE = "Indonesian";
 
 // Nama Inggris tiap bahasa — dimasukkan langsung ke prompt ("... in French").
 const ENGLISH_NAME: Record<string, string> = {
@@ -129,6 +132,12 @@ export async function POST(req: NextRequest) {
     if (!word) return NextResponse.json({ error: "no_word" }, { status: 200 });
 
     const language = ENGLISH_NAME[langCode] ?? ENGLISH_NAME[langCode.split("-")[0]] ?? "English";
+    // Bahasa penjelasan = bahasa terjemahan pilihan pengguna (baseCode). Mis. belajar
+    // Indonesia dgn terjemahan Inggris → penjelasan drawer dalam bahasa Inggris.
+    // Tanpa baseCode → default Indonesia (perilaku lama).
+    const baseCode = typeof body?.baseCode === "string" ? body.baseCode : "";
+    const explanationLanguage =
+      ENGLISH_NAME[baseCode] ?? ENGLISH_NAME[baseCode.split("-")[0]] ?? DEFAULT_EXPLANATION_LANGUAGE;
     const nonLatin = NON_LATIN.has(langCode) || NON_LATIN.has(langCode.split("-")[0]);
     const translitHint = nonLatin
       ? ` For every ${language} word or example, ALSO give its Latin phonetic reading in a "tl" field.`
@@ -145,24 +154,24 @@ export async function POST(req: NextRequest) {
       // Untuk bahasa non-Latin (mis. Arab) minta "tl": bacaan Latin kata target
       // itu saja, biar chip bisa menampilkan transliterasi di bawah pertanyaan.
       const followupSpec = nonLatin
-        ? `each an object { "q": a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words) ` +
+        ? `each an object { "q": a SHORT question in ${explanationLanguage} (max ~9 words) ` +
           `that wraps any cited ${language} word in «guillemets», "tl": the Latin phonetic ` +
           `reading of ONLY the ${language} (non-Latin) words inside «guillemets» in "q", in order ` +
           `(empty string if none) }`
-        : `each a SHORT question in ${EXPLANATION_LANGUAGE} (max ~9 words)`;
+        : `each a SHORT question in ${explanationLanguage} (max ~9 words)`;
       const followupShape = nonLatin
         ? `[{"q":"...","tl":"..."}, {"q":"...","tl":"..."}, {"q":"...","tl":"..."}]`
         : `["...", "...", "..."]`;
       const prompt =
-        `You are a warm, concise ${language} tutor helping an Indonesian learner. ` +
+        `You are a warm, concise ${language} tutor helping a learner whose language is ${explanationLanguage}. ` +
         `The learner is studying the ${language} word "${word}".${ctx} ` +
-        `Answer their question in ${EXPLANATION_LANGUAGE}, clearly and briefly ` +
+        `Answer their question in ${explanationLanguage}, clearly and briefly ` +
         `(2-4 short paragraphs max). Use concrete examples when helpful. When you cite a ` +
         `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
         `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
         `When the answer is naturally tabular — e.g. comparing forms, listing the tenses/` +
         `moods/aspects, a conjugation paradigm, or several items each with a few attributes — ` +
-        `present THAT part as a GitHub-style markdown pipe table: a header row "| Kolom | Kolom |", ` +
+        `present THAT part as a GitHub-style markdown pipe table: a header row "| Column | Column |", ` +
         `a separator row "|---|---|", then the data rows. Precede the table with one short prose ` +
         `sentence. Use a table ONLY when it genuinely aids understanding; otherwise plain prose. ` +
         `Keep tables compact (2-4 columns). You may still wrap ${language} words in «guillemets» ` +
@@ -171,7 +180,7 @@ export async function POST(req: NextRequest) {
         `directly related to THIS question and answer, without repeating them. ` +
         `If your answer introduced a grammatical term the learner may not know (e.g. a case, ` +
         `mood, aspect, gender), make ONE follow-up ask what that term means in the context of ` +
-        `${language} — phrased in ${EXPLANATION_LANGUAGE} naming the language (e.g. "Apa itu vokatif dalam bahasa Georgia?"). ` +
+        `${language} — phrased in ${explanationLanguage}, naming the language (e.g. in Indonesian "Apa itu vokatif dalam bahasa Georgia?"). ` +
         `Return ONLY a JSON object: {"answer": "...", "followups": ${followupShape}}.` +
         `\n\nQuestion: ${question}`;
       const raw = await callGemini(prompt, true);
@@ -210,24 +219,24 @@ export async function POST(req: NextRequest) {
 
     // ── Mode overview: kartu belajar terstruktur ─────────────────────────────
     const prompt =
-      `You are a concise ${language} tutor for an Indonesian learner. Analyze the ` +
+      `You are a concise ${language} tutor for a learner whose language is ${explanationLanguage}. Analyze the ` +
       `${language} word "${word}".${ctx} Return ONLY a JSON object, all explanatory text ` +
-      `in ${EXPLANATION_LANGUAGE}, with this exact shape:\n` +
+      `in ${explanationLanguage}, with this exact shape:\n` +
       `{\n` +
       `  "register": one of "netral" | "formal" | "casual" | "vulgar" | "sopan",\n` +
       `  "registerNote": one short sentence on the word's politeness/formality level and social context,\n` +
       `  "usage": 1-2 sentences on WHEN and HOW this word is typically used,\n` +
       `  "nuance": 1 sentence on connotation/nuance/feeling the word carries (empty string if none),\n` +
       `  "similar": array (0-3) of { "word": a similar/confusable ${language} word,${nonLatin ? ' "tl": its Latin reading,' : ""} "diff": one short sentence on how it differs from "${word}" },\n` +
-      `  "examples": array (exactly 2) of { "target": a natural ${language} example sentence using "${word}",${nonLatin ? ' "tl": its Latin reading,' : ""} "gloss": its ${EXPLANATION_LANGUAGE} translation },\n` +
+      `  "examples": array (exactly 2) of { "target": a natural ${language} example sentence using "${word}",${nonLatin ? ' "tl": its Latin reading,' : ""} "gloss": its ${explanationLanguage} translation },\n` +
       `  "conjugation": include ONLY if "${word}" is a VERB, otherwise null. Object:\n` +
-      `    { "caption": short ${EXPLANATION_LANGUAGE} label of the paradigm shown (e.g. the tense/aspect, like "Kala kini (present)"),\n` +
-      `      "note": one short ${EXPLANATION_LANGUAGE} sentence about the base/dictionary form and what changes,\n` +
+      `    { "caption": short ${explanationLanguage} label of the paradigm shown (e.g. the tense/aspect, like "Kala kini (present)"),\n` +
+      `      "note": one short ${explanationLanguage} sentence about the base/dictionary form and what changes,\n` +
       `      "rows": array (the standard subject persons — saya, kamu, dia, kami, kalian, mereka — or the paradigm most useful for this verb) of\n` +
-      `        { "label": the ${EXPLANATION_LANGUAGE} label for this form (the subject/person),\n` +
+      `        { "label": the ${explanationLanguage} label for this form (the subject/person),\n` +
       `          "parts": ordered text segments that concatenate EXACTLY to the full ${language} conjugated form, each { "t": the segment text, "c": true ONLY for the segment(s) that CHANGE across the paradigm (the inflected prefix/suffix), false for the invariant stem },\n` +
-      `          "suffix": the changing affix(es) for this form as a short ${language} string (e.g. "-s"),${nonLatin ? ' "tl": Latin reading of the full form,' : ""} "gloss": short ${EXPLANATION_LANGUAGE} meaning of this form } },\n` +
-      `  "terms": array (0-4) of grammatical terms in ${EXPLANATION_LANGUAGE} that you used above and that a beginner may not know (e.g. "vokatif", "nominatif", "aspek", "gender gramatikal"); empty array if none\n` +
+      `          "suffix": the changing affix(es) for this form as a short ${language} string (e.g. "-s"),${nonLatin ? ' "tl": Latin reading of the full form,' : ""} "gloss": short ${explanationLanguage} meaning of this form } },\n` +
+      `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} that you used above and that a beginner may not know (e.g. "vokatif", "nominatif", "aspek", "gender gramatikal"); empty array if none\n` +
       `}` + translitHint + ` No markdown, no commentary outside the JSON.`;
 
     const raw = await callGemini(prompt, true);

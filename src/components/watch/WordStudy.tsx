@@ -78,6 +78,7 @@ export default function WordStudy({
   word,
   sentence,
   langCode,
+  baseCode,
   videoId,
   translit,
   meaning,
@@ -87,6 +88,10 @@ export default function WordStudy({
   word: string;
   sentence: string;
   langCode: string;
+  // Bahasa terjemahan/penjelasan pilihan pengguna (kode BASE_LANGS) — dipakai agar
+  // materi & jawaban AI ditulis dalam bahasa itu (mis. belajar Indonesia dgn
+  // terjemahan Inggris → penjelasan drawer bahasa Inggris), bukan selalu Indonesia.
+  baseCode?: string;
   videoId?: string;
   translit?: string;
   meaning?: WordMeaning | null;
@@ -122,14 +127,14 @@ export default function WordStudy({
     let cancelled = false;
     setLoading(true);
     setErrored(false);
-    getWordDeepDive({ word, sentence, langCode })
+    getWordDeepDive({ word, sentence, langCode, baseCode })
       .then((d) => !cancelled && setDeep(d))
       .catch(() => !cancelled && setErrored(true))
       .finally(() => !cancelled && setLoading(false));
     return () => {
       cancelled = true;
     };
-  }, [word, sentence, langCode]);
+  }, [word, sentence, langCode, baseCode]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -172,7 +177,7 @@ export default function WordStudy({
       setTab("ask");
       setChat((c) => [...c, { role: "user", text: question }]);
       setAsking(true);
-      askWordQuestion({ word, sentence, langCode, question })
+      askWordQuestion({ word, sentence, langCode, baseCode, question })
         .then((a) =>
           setChat((c) => [
             ...c,
@@ -186,7 +191,7 @@ export default function WordStudy({
         .catch(() => setChat((c) => [...c, { role: "ai", text: "Gagal memuat jawaban. Coba lagi." }]))
         .finally(() => setAsking(false));
     },
-    [asking, word, sentence, langCode]
+    [asking, word, sentence, langCode, baseCode]
   );
 
   const reg = deep ? registerStyle(deep.register) : null;

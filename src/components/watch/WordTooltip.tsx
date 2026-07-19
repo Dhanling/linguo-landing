@@ -404,6 +404,7 @@ export function WordTooltip({
         word={word}
         sentence={sentence}
         langCode={langCode}
+        baseCode={baseLang}
         videoId={videoId}
         translit={translit}
         meaning={meaning}
