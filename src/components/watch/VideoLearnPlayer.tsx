@@ -100,11 +100,47 @@ const isDuplicateBase = (cue: LearnCue, langCode: string): boolean =>
   cueIsExplanation(cue, langCode) &&
   cue.base.trim().toLowerCase() === cue.target.trim().toLowerCase();
 
-// Label tombol header (Kosakata / bahasa) — tersembunyi (lebar 0) secara default
-// sehingga tombol hanya menampilkan ikon; saat hover teksnya "keluar" dari kanan
-// ke kiri (lebar & opasitas melebar, geser translate-x → 0).
-const REVEAL_LABEL =
-  "max-w-0 translate-x-1 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 ease-out group-hover:ml-2 group-hover:max-w-[180px] group-hover:translate-x-0 group-hover:opacity-100";
+// [watch-icon-tab-v1] Tombol ikon header & bar bawah TAK lagi memunculkan label
+// yang meluncur saat hover. Sebagai gantinya: (1) "tab" latar (pill) muncul
+// beranimasi di belakang ikon, dan (2) tooltip kecil menampilkan namanya.
+//
+// TabBg — latar pill di belakang ikon. Saat aktif tetap tampil (teal); saat
+// tidak, transparan lalu skala+fade masuk ketika induk (group) di-hover.
+function TabBg({ active = false }: { active?: boolean }) {
+  return (
+    <span
+      aria-hidden
+      className={`pointer-events-none absolute inset-0 rounded-full transition-all duration-200 ease-out ${
+        active
+          ? "scale-100 opacity-100"
+          : "scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100"
+      }`}
+      style={{ backgroundColor: active ? "rgba(26,158,158,0.16)" : "rgba(255,255,255,0.12)" }}
+    />
+  );
+}
+
+// IconTooltip — label kecil yang muncul saat hover (ganti animasi label lama).
+// `side` = posisi relatif tombol: "bottom" utk tombol header (di atas layar),
+// "top" utk tombol bar bawah.
+function IconTooltip({
+  children,
+  side = "bottom",
+}: {
+  children: React.ReactNode;
+  side?: "top" | "bottom";
+}) {
+  const pos = side === "top" ? "bottom-full mb-1.5" : "top-full mt-1.5";
+  return (
+    <span
+      role="tooltip"
+      className={`pointer-events-none absolute left-1/2 z-30 -translate-x-1/2 ${pos} whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100`}
+      style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
+    >
+      {children}
+    </span>
+  );
+}
 
 // [watch-word-align-v1] Penanda hover-sync antar baris (kata target ↔ arti ↔
 // transliterasi). Dulu sorot LATAR teal — sekarang GARIS BAWAH: tak menutup teks,
@@ -180,9 +216,9 @@ const qualityLabel = (q: string) => QUALITY_LABELS[q] ?? q;
 
 // [watch-toolbar-iconify-v1] Tombol kontrol bar bawah: tampil ringkas sebagai
 // glyph (ikon untuk aksi, atau teks nilai singkat seperti "1x"/"Auto"/"Besar"
-// untuk tombol bernilai) tanpa outline. Saat hover, label meluncur masuk dari
-// kanan ke kiri (kolom grid 0fr→1fr + translate/opacity). `active` menandai
-// status nyala pakai warna teal + latar teal tipis, bukan garis tepi.
+// untuk tombol bernilai) tanpa outline. Tak ada lagi label yang meluncur saat
+// hover — diganti "tab" latar (TabBg) + tooltip (IconTooltip). `active` menandai
+// status nyala pakai warna teal + tab teal, bukan garis tepi.
 function ToolButton({
   glyph,
   label,
@@ -203,25 +239,15 @@ function ToolButton({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      title={title ?? label}
       aria-label={label}
-      className="group inline-flex shrink-0 items-center rounded-full px-2.5 py-2 transition-colors hover:bg-white/10 disabled:opacity-40"
-      style={{
-        color: active ? TEAL : "#fff",
-        backgroundColor: active ? "rgba(26,158,158,0.16)" : "transparent",
-      }}
+      className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 disabled:opacity-40"
+      style={{ color: active ? TEAL : "#fff" }}
     >
-      <span className="grid h-5 min-w-5 place-items-center text-[13px] font-bold leading-none">
+      <TabBg active={active} />
+      <span className="relative grid h-5 min-w-5 place-items-center text-[13px] font-bold leading-none">
         {glyph}
       </span>
-      {/* Wadah lebar 0 → auto (grid fr) supaya label mendorong keluar mulus. */}
-      <span className="grid grid-cols-[0fr] overflow-hidden transition-[grid-template-columns] duration-300 ease-out group-hover:grid-cols-[1fr]">
-        <span className="min-w-0 overflow-hidden">
-          <span className="block translate-x-2 whitespace-nowrap pl-1.5 text-[13px] font-bold leading-none opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100">
-            {label}
-          </span>
-        </span>
-      </span>
+      <IconTooltip side="top">{title ?? label}</IconTooltip>
     </button>
   );
 }
@@ -1779,24 +1805,26 @@ export default function VideoLearnPlayer({
         <div className="mr-auto" />
 
         {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata.
-            Default icon saja (tanpa border); label "Kosakata" muncul dari kanan
-            ke kiri saat hover. */}
+            Ikon saja + badge jumlah; tab latar & tooltip muncul saat hover. */}
         {onOpenVocab && (
           <button
             onClick={onOpenVocab}
-            className="group inline-flex shrink-0 items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
-            title="Kosakata tersimpan dari video ini"
+            className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
+            aria-label="Kosakata tersimpan dari video ini"
           >
-            <Layers className="h-4 w-4 shrink-0" color={TEAL} />
-            <span className={REVEAL_LABEL}>Kosakata</span>
-            {savedCount > 0 && (
-              <span
-                className="ml-1.5 shrink-0 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
-                style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
-              >
-                {savedCount}
-              </span>
-            )}
+            <TabBg />
+            <span className="relative inline-flex items-center">
+              <Layers className="h-4 w-4 shrink-0" color={TEAL} />
+              {savedCount > 0 && (
+                <span
+                  className="ml-1.5 shrink-0 rounded-full px-1.5 py-0.5 text-[11px] font-extrabold leading-none"
+                  style={{ backgroundColor: "rgba(26,158,158,0.2)", color: "#7FE0E0" }}
+                >
+                  {savedCount}
+                </span>
+              )}
+            </span>
+            <IconTooltip side="bottom">Kosakata</IconTooltip>
           </button>
         )}
 
@@ -1805,11 +1833,14 @@ export default function VideoLearnPlayer({
           <div className="relative shrink-0">
             <button
               onClick={() => setBaseMenuOpen((v) => !v)}
-              className="group inline-flex items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
-              title="Bahasa terjemahan di bawah subtitle"
+              className="group relative inline-flex items-center justify-center rounded-full p-2 text-white"
+              aria-label="Bahasa terjemahan di bawah subtitle"
             >
-              <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
-              <span className={REVEAL_LABEL}>{getBaseLangDef(baseLang).label}</span>
+              <TabBg active={baseMenuOpen} />
+              <span className="relative inline-flex">
+                <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
+              </span>
+              <IconTooltip side="bottom">{getBaseLangDef(baseLang).label}</IconTooltip>
             </button>
             {baseMenuOpen && (
               <>
@@ -1849,20 +1880,27 @@ export default function VideoLearnPlayer({
             return (
               <button
                 onClick={onChangeLang}
-                className="group inline-flex shrink-0 items-center rounded-full p-2 text-sm font-bold text-white transition-colors hover:bg-white/10"
-                title="Ganti bahasa yang dipelajari"
+                className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
+                aria-label="Ganti bahasa yang dipelajari"
               >
-                {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
-                <span className={REVEAL_LABEL}>{wl?.name ?? langCode}</span>
+                <TabBg />
+                <span className="relative inline-flex">
+                  {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
+                </span>
+                <IconTooltip side="bottom">{wl?.name ?? langCode}</IconTooltip>
               </button>
             );
           })()}
         <button
           onClick={onClose}
-          className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+          className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
           aria-label="Tutup player"
         >
-          <X className="h-5 w-5 text-white" />
+          <TabBg />
+          <span className="relative inline-flex">
+            <X className="h-5 w-5 text-white" />
+          </span>
+          <IconTooltip side="bottom">Tutup</IconTooltip>
         </button>
         </div>
       </div>
