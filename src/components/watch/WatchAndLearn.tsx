@@ -9,7 +9,6 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import Link from "next/link";
 import {
   ArrowLeft,
-  Languages,
   Layers,
   Play,
   RefreshCw,
@@ -250,6 +249,8 @@ export default function WatchAndLearn() {
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   // Dropdown "bahasa yang dipelajari" di bilah menu — muncul saat hover.
   const [learnMenuOpen, setLearnMenuOpen] = useState(false);
+  // Dropdown "bahasa terjemahan" (I speak) — juga hover, senada learn selector.
+  const [baseMenuOpen, setBaseMenuOpen] = useState(false);
   const [langQuery, setLangQuery] = useState("");
   // Riwayat bahasa terakhir dipilih (kode, terbaru dulu) — quick-pick di picker.
   const [recentLangs, setRecentLangs] = useState<string[]>([]);
@@ -853,15 +854,69 @@ export default function WatchAndLearn() {
                 </span>
               )}
             </button>
-            <button
-              onClick={() => setBasePickerOpen(true)}
-              className="group inline-flex items-center rounded-full px-2.5 py-1.5 text-sm font-bold transition-transform active:scale-95"
-              style={{ backgroundColor: CARD }}
-              title={`Bahasa terjemahan: ${getBaseLangDef(baseLang).label}`}
-              aria-label={getBaseLangDef(baseLang).label}
+            {/* Bahasa terjemahan ("I speak") — bendera + dropdown HOVER, senada
+                dengan pemilih bahasa yang dipelajari. Bridge `pt-2` menutup celah
+                trigger↔panel supaya kursor tak jatuh keluar saat mengarah. */}
+            <div
+              className="relative"
+              onMouseEnter={() => setBaseMenuOpen(true)}
+              onMouseLeave={() => setBaseMenuOpen(false)}
             >
-              <Languages className="h-4 w-4 shrink-0" color={GOLD} />
-            </button>
+              <button
+                onClick={() => setBaseMenuOpen((v) => !v)}
+                className="group inline-flex items-center rounded-full px-2.5 py-1.5 text-sm font-bold transition-transform active:scale-95"
+                style={{ backgroundColor: CARD }}
+                title={`Bahasa terjemahan: ${getBaseLangDef(baseLang).label}`}
+                aria-label={getBaseLangDef(baseLang).label}
+                aria-expanded={baseMenuOpen}
+              >
+                <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
+              </button>
+              <div
+                className={`absolute right-0 top-full z-30 pt-2 transition-all duration-150 ease-out ${
+                  baseMenuOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                }`}
+              >
+                <div
+                  className="flex flex-col overflow-hidden rounded-2xl shadow-2xl"
+                  style={{ width: 240, backgroundColor: "#12171A", border: `1px solid ${BORDER}` }}
+                >
+                  <div
+                    className="px-3 pt-2.5 pb-1 text-[11px] font-bold uppercase tracking-wide"
+                    style={{ color: SUB }}
+                  >
+                    Bahasa terjemahan
+                  </div>
+                  <div className="px-1.5 pb-1.5">
+                    {BASE_LANGS.map((b) => {
+                      const on = b.code === baseLang;
+                      return (
+                        <button
+                          key={b.code}
+                          onClick={() => {
+                            setBaseMenuOpen(false);
+                            pickBase(b.code);
+                          }}
+                          className="flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors hover:bg-white/5"
+                          style={{ backgroundColor: on ? "rgba(26,158,158,0.16)" : "transparent" }}
+                        >
+                          <RectFlag code={b.country} h={18} />
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-[13.5px] font-bold text-white">
+                              {b.label}
+                            </span>
+                            <span className="block truncate text-[11px]" style={{ color: SUB }}>
+                              {b.english}
+                            </span>
+                          </span>
+                          {on && <Check className="h-4 w-4 shrink-0" color={TEAL} />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Bahasa yang dipelajari — dropdown HOVER (dulu pop-up layar penuh).
                 [watch-learnlang-hover-v1] Hover buka dropdown cari + daftar; klik
                 tetap men-toggle untuk perangkat sentuh. Bridge `pt-2` menutup
@@ -1479,8 +1534,7 @@ export default function WatchAndLearn() {
                 <p className="text-[16px] font-bold">Kamu bicara bahasa apa?</p>
                 <p className="mt-1 text-[12.5px] leading-relaxed" style={{ color: SUB }}>
                   Terjemahan di bawah subtitle akan ditampilkan dalam bahasa ini. Bisa
-                  diganti kapan saja lewat tombol{" "}
-                  <Languages className="inline h-3.5 w-3.5 align-text-bottom" color={GOLD} /> di atas.
+                  diganti kapan saja lewat tombol bendera di atas.
                 </p>
               </div>
               {!baseFirstOpen && (
