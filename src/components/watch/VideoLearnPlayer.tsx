@@ -1441,7 +1441,9 @@ export default function VideoLearnPlayer({
   // (hening / musik / tak ada yang bicara), subtitle disembunyikan (visibleCue = null)
   // ketimbang menahan kalimat lama di layar. Jeda PENDEK (≤ GAP_HIDE) tetap menahan
   // kalimat sampai cue berikutnya mulai — biar jeda napas natural tak bikin flicker.
-  const GAP_HIDE = 1.2;
+  // Ambang diketatkan 1.2→0.6s: saat adegan cuma gerak tanpa dialog, subtitle cepat
+  // hilang (tak menggantung membingungkan); jeda napas ≤0.6s tetap ditahan.
+  const GAP_HIDE = 0.6;
   const visibleCue = useMemo(() => {
     if (activeIdx < 0) return null;
     const cur = cues[activeIdx];
@@ -3307,11 +3309,14 @@ function TranslitLine({
 type KaraokeState = "sung" | "active" | "future";
 
 // [watch-karaoke-lag-v1] Lag sapuan karaoke terhadap audio (detik). Timing per-baris
-// dari ASR/estimasi proporsional (cue tanpa anchor) cenderung MEMIMPIN ucapan —
-// sorotan kata sampai di ujung kalimat sebelum penuturnya selesai. Menunda sapuan
-// sedikit membuat kata yang menyala pas dengan yang sedang diucap. Hanya menggeser
-// sapuan KATA di dalam baris; pemilihan baris aktif tetap pakai syncedTime.
-const KARAOKE_LAG_SEC = 0.5;
+// dari ASR/estimasi proporsional (cue tanpa anchor) dulu cenderung MEMIMPIN ucapan,
+// jadi sapuan sengaja ditunda 0.5s. TAPI sejak [watch-karaoke-anchor-v2] sapuan sudah
+// disandarkan ke anchor timing asli video — penundaan 0.5s jadi over-koreksi dan bikin
+// sorotan kata malah TELAT ~0.5s di hampir semua video (dulu ditambal manual dgn geser
+// sinkron +0.50s tiap video). Dinolkan supaya sapuan pas audio secara global tanpa
+// geser manual. Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif
+// tetap pakai syncedTime.
+const KARAOKE_LAG_SEC = 0;
 
 function karaokeTokens(
   cue: LearnCue,
