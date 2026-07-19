@@ -285,6 +285,12 @@ export interface LearnCue {
   // disimpan bareng transkrip → mode Analisa instan tanpa loading. Diisi oleh
   // prewarmBreakdowns() (klien) lalu di-persist ke yt_transcripts.cues[].breakdown.
   breakdown?: SentenceBreakdown;
+  // Terjemahan alternatif per bahasa (selain Indonesia): kode BCP-47 → teks.
+  // Cache server hanya menyimpan `base` Indonesia; kalau pengguna memilih bahasa
+  // terjemahan lain, hasil terjemahannya di-persist ke sini (bareng transkrip)
+  // → buka lagi dari PERANGKAT/PENGGUNA mana pun = instan, tanpa "Menerjemahkan…".
+  // Sama pola dengan `breakdown`. Di-key per bahasa; Indonesia tetap pakai `base`.
+  baseAlt?: Record<string, string>;
 }
 
 /** Kenapa transkrip kosong — buat pesan yang ramah. `not_ready` = belum ada di
@@ -554,6 +560,59 @@ function writeBaseCache(base: string, lang: string, videoId: string, bases: stri
 }
 
 /**
+ * Terjemahan alternatif yang SUDAH tersimpan bareng transkrip (cue.baseAlt) untuk
+ * bahasa `baseCode`. Balikin array `base` selaras `cues` kalau SEMUA cue punya
+ * terjemahannya — ini yang membuat pindah ke Inggris (dst.) INSTAN, tanpa jaringan
+ * maupun kedip "Menerjemahkan…". Kalau ada yang bolong → null (jatuh ke terjemah AI).
+ */
+export function baseAltFromCues(cues: LearnCue[], baseCode: string): string[] | null {
+  if (!cues.length) return null;
+  const out: string[] = [];
+  for (const c of cues) {
+    const v = c.baseAlt?.[baseCode];
+    if (typeof v !== "string" || !v.trim()) return null;
+    out.push(v);
+  }
+  return out;
+}
+
+/**
+ * Persist terjemahan (bahasa non-Indonesia) ke cache transkrip server, di-key per
+ * teks target — sama pola dengan breakdown. Sekali seorang penonton menerjemahkan
+ * sebuah video ke Inggris, penonton berikutnya (perangkat/akun mana pun) langsung
+ * dapat versi Inggris bareng transkrip → instan. Fire-and-forget best-effort.
+ */
+function saveBaseAltCache(
+  videoId: string,
+  langCode: string,
+  baseCode: string,
+  cues: LearnCue[],
+  bases: string[]
+): void {
+  if (baseCode === DEFAULT_BASE_LANG) return;
+  if (cues.length !== bases.length) return;
+  // target → terjemahan (buang yang kosong). Cue kembar berbagi terjemahan yang
+  // sama (terjemahan = fungsi murni dari target+bahasa), jadi aman di-key per target.
+  const byTarget: Record<string, string> = {};
+  for (let i = 0; i < cues.length; i++) {
+    const t = cues[i].target;
+    const b = bases[i];
+    if (typeof t === "string" && t && typeof b === "string" && b.trim()) byTarget[t] = b;
+  }
+  if (!Object.keys(byTarget).length) return;
+  try {
+    void fetch("/api/yt-transcript-cache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ videoId, lang: langCode, baseCode, baseAlt: byTarget }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    /* abaikan */
+  }
+}
+
+/**
  * Terjemahkan baris `target` cue ke bahasa terjemahan pilihan pengguna (mis.
  * English, Arab). Untuk Indonesia (default) langsung pakai `base` bawaan cache.
  * Balikin array `base` selaras urutan `cues`, atau null saat gagal — pemanggil
@@ -567,6 +626,10 @@ export async function translateCuesToBase(
 ): Promise<string[] | null> {
   if (!cues.length) return [];
   if (baseCode === DEFAULT_BASE_LANG) return cues.map((c) => c.base);
+
+  // 0) Sudah tersimpan bareng transkrip (server, lintas perangkat/pengguna) → instan.
+  const preloaded = baseAltFromCues(cues, baseCode);
+  if (preloaded) return preloaded;
 
   const cached = readBaseCache(baseCode, langCode, videoId, cues.length);
   if (cached) return cached;
@@ -601,6 +664,9 @@ export async function translateCuesToBase(
     const bases = out.map((c) => (typeof c.base === "string" ? c.base : ""));
     if (!bases.some((b) => b.trim())) return null;
     writeBaseCache(baseCode, langCode, videoId, bases);
+    // Simpan juga BARENG transkrip (server) → penonton berikutnya dapat versi ini
+    // instan, tanpa terjemah ulang. Fire-and-forget, tak menahan hasil.
+    saveBaseAltCache(videoId, langCode, baseCode, cues, bases);
     return bases;
   } catch {
     return null;
@@ -1227,6 +1293,12 @@ function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
         : { start, end, target, base };
       const anc = (c as TimedCue)._anc;
       if (anc?.length) (out as TimedCue)._anc = anc;
+      // Bawa serta analisa & terjemahan alternatif yang tersimpan bareng transkrip
+      // → mode Analisa & pindah bahasa terjemahan (mis. Inggris) tetap instan.
+      // Aman: untuk cache yang sudah terpecah per-kalimat (kasus umum), langkah split
+      // di atas idempoten sehingga target tak berubah → field ini tetap selaras.
+      if (c.breakdown) out.breakdown = c.breakdown;
+      if (c.baseAlt) out.baseAlt = c.baseAlt;
       return out;
     });
 }

@@ -65,6 +65,7 @@ import {
   requestTranscript,
   SentenceBreakdown,
   splitWords,
+  baseAltFromCues,
   translateCuesToBase,
   TranscriptReason,
   transliterateLines,
@@ -1122,6 +1123,10 @@ export default function VideoLearnPlayer({
       setCues(ordered);
       setTxState("ready");
       setAsrRunning(false);
+      // Transkrip + subtitle kita sudah siap → matikan CC bawaan YouTube yang tadi
+      // dinyalakan sbagai fallback saat loading. Kalau tidak, caption dobel (CC
+      // YouTube + subtitle kita) menumpuk di atas video.
+      setShowCC(false);
 
       // Cue berbahasa penjelas (mis. penutur Ukraina menjelaskan pakai Inggris)
       // sudah beraksara Latin — JANGAN diromanisasi (hasilnya duplikat/ngawur) &
@@ -1207,6 +1212,19 @@ export default function VideoLearnPlayer({
       );
       return;
     }
+    // Terjemahan bahasa ini SUDAH tersimpan bareng transkrip (cue.baseAlt) → pasang
+    // langsung, tanpa kedip "Menerjemahkan…" maupun panggilan jaringan. Inilah yang
+    // bikin pindah ke Inggris (dst.) instan begitu video pernah diterjemahkan.
+    const preloaded = baseAltFromCues(cuesRef.current, baseLang);
+    if (preloaded) {
+      setBaseTranslating(false);
+      setCues((prev) =>
+        prev.length === preloaded.length
+          ? prev.map((c, i) => ({ ...c, base: preloaded[i] ?? c.base }))
+          : prev
+      );
+      return;
+    }
     let cancelled = false;
     setBaseTranslating(true);
     // Sembunyikan terjemahan Indonesia selagi diterjemah ulang — jangan tampilkan
@@ -1215,9 +1233,15 @@ export default function VideoLearnPlayer({
     translateCuesToBase(video.videoId, langCode, baseLang, cuesRef.current)
       .then((bases) => {
         if (cancelled || !bases) return;
+        // Tempel juga ke cue.baseAlt di memori → balik-balik antar bahasa terjemahan
+        // dalam sesi ini pun instan (baseAltFromCues langsung kena, tanpa kedip).
         setCues((prev) =>
           prev.length === bases.length
-            ? prev.map((c, i) => ({ ...c, base: bases[i] ?? "" }))
+            ? prev.map((c, i) => ({
+                ...c,
+                base: bases[i] ?? "",
+                baseAlt: { ...(c.baseAlt ?? {}), [baseLang]: bases[i] ?? "" },
+              }))
             : prev
         );
       })
@@ -2088,8 +2112,15 @@ export default function VideoLearnPlayer({
               kosong antara video dan kontrol → subtitle turun & lebih lega. */}
           {!mini && (
           <div
-            className={`flex flex-col overflow-y-auto ${
-              fullscreen ? "shrink-0 bg-black px-4 pb-20 pt-2 sm:px-6" : "min-h-0 flex-1 py-2"
+            className={`flex flex-col ${
+              fullscreen
+                ? // Layar penuh: subtitle + terjemahan MELAYANG di atas video (video jadi
+                  // latar, penuh sampai bawah — bukan lagi kotak hitam di bawah video).
+                  // Scrim gradien dari bawah biar teks tetap terbaca. pointer-events-none
+                  // di pembungkus supaya area kosong tetap meneruskan klik ke video
+                  // (play/jeda); hanya blok teks yang menangkap pointer (word tap/hover).
+                  "pointer-events-none absolute inset-x-0 bottom-0 z-30 justify-end bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 pb-24 pt-12 sm:px-6"
+                : "min-h-0 flex-1 overflow-y-auto py-2"
             }`}
           >
             {/* Subtitle nempel di bawah video (mb-auto dorong sisa ruang ke bawah)
@@ -2098,7 +2129,13 @@ export default function VideoLearnPlayer({
                 Hover-pause TIDAK dipasang di pembungkus lebar-penuh ini — dioper ke
                 FocusLine supaya hanya blok teks subtitle/terjemahan yang memicu jeda,
                 bukan ruang kosong di kiri-kanannya. */}
-            <div className="mb-auto mt-2 w-full">
+            <div
+              className={
+                fullscreen
+                  ? "pointer-events-auto max-h-[42vh] w-full overflow-y-auto text-center"
+                  : "mb-auto mt-2 w-full"
+              }
+            >
               <FocusLine
                 onHoverPause={onSubtitleEnter}
                 onHoverResume={onSubtitleLeave}

@@ -291,6 +291,67 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: !upErr }, { status: 200 });
     }
 
+    // Mode BASEALT: sisipkan terjemahan (bahasa non-Indonesia) yang sudah dihitung
+    // klien ke cue yang target-nya cocok → begitu SATU penonton menerjemahkan video
+    // ke Inggris (dst.), penonton berikutnya (perangkat/akun mana pun) dapat versi
+    // itu instan "bareng transkrip", tanpa terjemah ulang. Di-key per target karena
+    // terjemahan = fungsi murni dari (kalimat, bahasa) — aman untuk cue kembar.
+    if (body?.baseAlt && typeof body.baseAlt === "object" && !Array.isArray(body.baseAlt)) {
+      const baseCode = body?.baseCode;
+      // Indonesia disimpan di `base`, bukan di sini; kode bahasa harus valid.
+      if (!validLang(baseCode) || baseCode === "id") {
+        return NextResponse.json({ ok: false, error: "baseCode tidak valid" }, { status: 400 });
+      }
+      const incoming = body.baseAlt as Record<string, unknown>;
+      const byTarget = new Map<string, string>();
+      for (const [target, tr] of Object.entries(incoming)) {
+        if (typeof target === "string" && target.length > 0 && typeof tr === "string" && tr.trim()) {
+          byTarget.set(target, tr.slice(0, 2000));
+        }
+        if (byTarget.size >= MAX_CUES) break;
+      }
+      if (!byTarget.size) return NextResponse.json({ ok: true }, { status: 200 });
+
+      const sb = createServerClient(0);
+      const { data, error } = await sb
+        .from("yt_transcripts")
+        .select("cues")
+        .eq("video_id", videoId)
+        .eq("lang", lang)
+        .maybeSingle();
+      if (error || !Array.isArray(data?.cues)) {
+        return NextResponse.json({ ok: false }, { status: 200 });
+      }
+      const stored = data.cues as Record<string, unknown>[];
+      let changed = false;
+      for (const cue of stored) {
+        const t = cue?.target;
+        if (typeof t !== "string") continue;
+        const tr = byTarget.get(t);
+        if (!tr) continue;
+        const alt = (cue.baseAlt && typeof cue.baseAlt === "object" ? cue.baseAlt : {}) as Record<
+          string,
+          unknown
+        >;
+        if (alt[baseCode] === tr) continue; // sudah sama → hemat tulis
+        alt[baseCode] = tr;
+        cue.baseAlt = alt;
+        changed = true;
+      }
+      if (!changed) return NextResponse.json({ ok: true }, { status: 200 });
+      if (JSON.stringify(stored).length > MAX_JSON) {
+        // Transkrip + terjemahan melebihi batas → lewati persist (cache localStorage
+        // klien tetap menutupi). Bukan error yang perlu diteriakkan.
+        return NextResponse.json({ ok: false, error: "kegedean" }, { status: 200 });
+      }
+      const { error: upErr } = await sb
+        .from("yt_transcripts")
+        .update({ cues: stored })
+        .eq("video_id", videoId)
+        .eq("lang", lang);
+      return NextResponse.json({ ok: !upErr }, { status: 200 });
+    }
+
     if (!Array.isArray(cues) || cues.length === 0 || cues.length > MAX_CUES) {
       return NextResponse.json({ ok: false, error: "cues tidak valid" }, { status: 400 });
     }
