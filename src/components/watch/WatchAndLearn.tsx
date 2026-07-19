@@ -82,6 +82,9 @@ const BORDER = "rgba(255,255,255,0.08)";
 const SUB = "rgba(255,255,255,0.5)";
 
 const LANG_KEY = "linguo:watch:lang:v1";
+// Riwayat bahasa yang terakhir dipilih di language selector (kode, terbaru dulu).
+const RECENT_LANGS_KEY = "linguo:watch:recentLangs:v1";
+const RECENT_LANGS_MAX = 5;
 // [linguo-patch:watch-orient-toggle-v1] Ambang pemisah Shorts vs Video landscape.
 // Shorts YouTube praktis selalu ≤60 dtk & vertikal; klip landscape (adegan film,
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
@@ -245,6 +248,8 @@ export default function WatchAndLearn() {
   );
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   const [langQuery, setLangQuery] = useState("");
+  // Riwayat bahasa terakhir dipilih (kode, terbaru dulu) — quick-pick di picker.
+  const [recentLangs, setRecentLangs] = useState<string[]>([]);
   // Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). `basePickerOpen`
   // = picker biasa (bisa ditutup); `baseFirstOpen` = tanya pertama kali (wajib pilih).
   const [baseLang, setBaseLang] = useState(DEFAULT_BASE_LANG);
@@ -334,6 +339,17 @@ export default function WatchAndLearn() {
     try {
       saved = window.localStorage.getItem(LANG_KEY);
       if (saved && getImmersionLang(saved)) setLangCode(saved);
+      const rawRecent = window.localStorage.getItem(RECENT_LANGS_KEY);
+      if (rawRecent) {
+        const parsed = JSON.parse(rawRecent);
+        if (Array.isArray(parsed)) {
+          setRecentLangs(
+            parsed
+              .filter((c): c is string => typeof c === "string" && !!getImmersionLang(c))
+              .slice(0, RECENT_LANGS_MAX)
+          );
+        }
+      }
     } catch {
       /* abaikan */
     }
@@ -666,6 +682,16 @@ export default function WatchAndLearn() {
     // lain walau bendera sudah ganti. Reset biar balik ke katalog kurasi bahasa.
     setFreeText("");
     setCommittedText("");
+    // Catat ke riwayat: pindahkan/masukkan `code` ke depan, buang duplikat, batasi.
+    setRecentLangs((prev) => {
+      const next = [code, ...prev.filter((c) => c !== code)].slice(0, RECENT_LANGS_MAX);
+      try {
+        window.localStorage.setItem(RECENT_LANGS_KEY, JSON.stringify(next));
+      } catch {
+        /* abaikan */
+      }
+      return next;
+    });
     try {
       window.localStorage.setItem(LANG_KEY, code);
     } catch {
@@ -725,6 +751,15 @@ export default function WatchAndLearn() {
     setWordResults([]);
     setWordState("idle");
   }, [langCode]);
+
+  // Objek bahasa untuk chip "Terakhir dipilih" (hanya saat tak sedang mencari).
+  const recentLangObjs = useMemo(
+    () =>
+      recentLangs
+        .map((c) => getImmersionLang(c))
+        .filter((l): l is NonNullable<typeof l> => !!l),
+    [recentLangs]
+  );
 
   const filteredLangs = useMemo(() => {
     const q = langQuery.trim().toLowerCase();
@@ -1327,6 +1362,32 @@ export default function WatchAndLearn() {
                 className="flex-1 bg-transparent py-3 text-[14px] text-white outline-none placeholder:text-white/35"
               />
             </div>
+            {!langQuery.trim() && recentLangObjs.length > 0 && (
+              <div className="mt-3 px-5">
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
+                  Terakhir dipilih
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {recentLangObjs.map((l) => {
+                    const on = l.code === langCode;
+                    return (
+                      <button
+                        key={l.code}
+                        onClick={() => pickLang(l.code)}
+                        className="flex items-center gap-2 rounded-full py-1.5 pl-1.5 pr-3 transition-transform active:scale-95"
+                        style={{
+                          backgroundColor: on ? "rgba(26,158,158,0.16)" : "rgba(255,255,255,0.06)",
+                          border: `1px solid ${on ? "rgba(26,158,158,0.4)" : BORDER}`,
+                        }}
+                      >
+                        <RectFlag code={l.country} h={16} />
+                        <span className="text-[13px] font-bold">{l.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             <div className="mt-2 flex-1 overflow-y-auto px-2.5 pb-3">
               {filteredLangs.map((l) => {
                 const on = l.code === langCode;
