@@ -6,15 +6,12 @@
 // KANAN = detail bahasa kepilih (hero foto + progress + resume) + SilabusOutline (selfpaced)
 
 import { useEffect, useState, type ReactNode } from "react";
-import { createClient } from "@supabase/supabase-js";
+// [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
+import { supabase } from "@/lib/supabase-client";
 import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import SilabusOutline from "@/components/akun/SilabusOutline";
 import { isFreeLevel } from "@/lib/lmsAccess"; // [linguo-patch:lms-katalog-upgrade-cta-v1] sumber tunggal aturan A1-gratis
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 const TEAL = "#16796E";
 const TEAL_DEEP = "#0F5A52";

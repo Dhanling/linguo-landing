@@ -1,13 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+// [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
+import { supabase } from "@/lib/supabase-client";
 import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };

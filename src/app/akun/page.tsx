@@ -5,7 +5,7 @@ import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
-import { supabase } from "@/lib/supabase-client";
+import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -2429,8 +2429,10 @@ export default function AkunPage() {
     if (typeof window !== "undefined") {
       const hp = new URLSearchParams(window.location.hash.replace(/^#/, ""));
       const qp = new URLSearchParams(window.location.search);
-      const errCode = hp.get("error") || qp.get("error") || "";
-      const errDesc = hp.get("error_description") || qp.get("error_description") || "";
+      // [akun-oauth-error-surface-v2] fallback ke snapshot module-load — SDK bisa
+      // keburu nyapu hash sebelum effect ini jalan, bikin error tak pernah tampil
+      const errCode = hp.get("error") || qp.get("error") || initialAuthError?.code || "";
+      const errDesc = hp.get("error_description") || qp.get("error_description") || initialAuthError?.description || "";
       if (errCode) {
         const pretty = decodeURIComponent(errDesc.replace(/\+/g, " ")) || errCode;
         setAuthError(pretty);

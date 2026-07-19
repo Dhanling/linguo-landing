@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase-client";
+import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
 import Link from "next/link";
 import { Spinner } from "@/components/Spinner";
 
@@ -37,9 +37,10 @@ export default function AuthCallbackPage() {
         // `#error=…&error_description=…`. Tampilkan segera, jangan tunggu timeout 8 dtk.
         const hp = new URLSearchParams(window.location.hash.replace(/^#/, ""));
         const qp = new URLSearchParams(window.location.search);
-        const errCode = hp.get("error") || qp.get("error") || "";
+        // [akun-oauth-error-surface-v2] fallback snapshot module-load, SDK bisa keburu nyapu hash
+        const errCode = hp.get("error") || qp.get("error") || initialAuthError?.code || "";
         if (errCode) {
-          const d = hp.get("error_description") || qp.get("error_description") || "";
+          const d = hp.get("error_description") || qp.get("error_description") || initialAuthError?.description || "";
           setErrMsg(decodeURIComponent(d.replace(/\+/g, " ")) || errCode);
           setStatus("error");
           return;

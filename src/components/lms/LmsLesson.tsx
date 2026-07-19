@@ -1,15 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+// [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
+import { supabase } from "@/lib/supabase-client";
 import {
   Volume2, Languages, BookOpen, CheckCircle2, Loader2, ArrowLeft, ChevronLeft, ChevronRight, Lock,
 } from "lucide-react";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 const TEAL = "#1A9E9E";
 

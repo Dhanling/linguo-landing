@@ -1,13 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { createClient } from "@supabase/supabase-js";
-
-// Use the same Supabase project — anon key is safe for inserts with RLS
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// [fix:gotrue-client-tunggal-v1] pakai client kanonik (anon, RLS tetap berlaku),
+// jangan bikin instance GoTrue baru — instance ganda ganggu deteksi sesi OAuth
+import { supabase } from "@/lib/supabase-client";
 
 /**
  * Tracks a page view for a blog article.

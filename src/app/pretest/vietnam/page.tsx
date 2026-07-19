@@ -4,16 +4,12 @@
 // v2: hapus field Jabatan + Bagian C (lisan/tutor) · tombol pilihan transisi halus (no flicker)
 // Taruh di: src/app/pretest/vietnam/page.tsx — auto-route ke linguo.id/pretest/vietnam
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+// [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
+import { supabase } from "@/lib/supabase-client";
 import {
   ArrowLeft, ArrowRight, Check, HelpCircle, BookOpen, MessageSquare,
   Sparkles, PartyPopper, CircleCheck, User, Loader2, ChevronDown,
 } from "lucide-react";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 const TEAL = "#16796E";
 const YELLOW = "#F2CB05";

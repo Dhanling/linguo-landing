@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { createClient } from "@supabase/supabase-js";
+// [fix:gotrue-client-tunggal-v1] jangan bikin GoTrue client sendiri — instance ganda
+// balapan ngambil hash #access_token OAuth di /akun (sesi "hilang" di Safari)
+import { supabase } from "@/lib/supabase-client";
 import {
   ArrowLeft,
   ArrowRight,
@@ -40,10 +42,6 @@ import {
 import UnlockFullAccess from "./UnlockFullAccess";
 import { isFreeLevel, majorOf } from "@/lib/lmsAccess";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 // [linguo-patch:lms-lesson-frame-v1] immersive step-flow player (inner frame, no yellow outer)
 const TEAL = "#16796E";
