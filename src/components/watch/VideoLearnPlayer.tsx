@@ -2324,6 +2324,14 @@ export default function VideoLearnPlayer({
                 onWordTap={onWordTap}
                 onWordHoverOpen={onWordHoverOpen}
                 onWordHoverClose={clearHoverOpen}
+                // [watch-tap-colored-v1] Kata/frasa yang barusan di-tap (balon arti
+                // terbuka) tetap MENYALA teal — bukan cuma garis-bawah hover — biar
+                // jelas kata mana yang lagi dibuka artinya. Cocok dengan cue aktif saja.
+                tapped={
+                  anchor && visibleCue && anchor.sentence === visibleCue.target && anchor.wordIdx != null
+                    ? { lo: anchor.wordIdx, hi: anchor.wordEndIdx ?? anchor.wordIdx }
+                    : null
+                }
                 onRetryAnalyze={() => activeIdx >= 0 && requestBreakdown(activeIdx)}
                 txState={txState}
                 asrRunning={asrRunning}
@@ -3139,6 +3147,7 @@ function FocusLine({
   onWordTap,
   onWordHoverOpen,
   onWordHoverClose,
+  tapped,
   onRetryAnalyze,
   txState,
   asrRunning,
@@ -3164,6 +3173,9 @@ function FocusLine({
   // [watch-hover-open-v1] Hover = tap di bar subtitle bawah (debounce di player).
   onWordHoverOpen?: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
   onWordHoverClose?: () => void;
+  // [watch-tap-colored-v1] Rentang token (indeks splitWords) yang barusan di-tap →
+  // tetap menyala teal selama balon artinya terbuka. null = tak ada.
+  tapped?: { lo: number; hi: number } | null;
   onRetryAnalyze: () => void;
   txState: "loading" | "ready" | "none";
   asrRunning: boolean;
@@ -3323,6 +3335,7 @@ function FocusLine({
         onWordTap={onWordTap}
         onWordHoverOpen={onWordHoverOpen}
         onWordHoverClose={onWordHoverClose}
+        tapped={tapped}
         hoveredK={hoveredK}
         hotKeys={hot?.t}
         onHoverWord={onHoverWord}
@@ -3532,6 +3545,7 @@ function KaraokeWord({
   onHover,
   inPhrase,
   phraseActive,
+  tapped,
   onHoverOpen,
   onHoverClose,
 }: {
@@ -3540,6 +3554,8 @@ function KaraokeWord({
   progress: number;
   rtl?: boolean;
   onClick: (e: React.MouseEvent) => void;
+  // [watch-tap-colored-v1] Kata ini lagi dibuka artinya (balon terbuka) → tetap teal.
+  tapped?: boolean;
   // [linguo-patch:watch-translit-hover-sync-v1] hover jarak-jauh: token translit
   // yang bersesuaian di-hover → kata ini ikut menyala (dan sebaliknya via onHover).
   hovered?: boolean;
@@ -3564,6 +3580,10 @@ function KaraokeWord({
   void progress;
   // Di dalam frasa: warna/pop ikut phraseActive (satu kesatuan); di luar: state kata.
   const active = inPhrase ? !!phraseActive : state === "active";
+  // [watch-tap-colored-v1] Warna teal kalau SEDANG diucapkan (karaoke) ATAU lagi dibuka
+  // artinya (tapped) — tapi "pop" (naik+membesar) hanya untuk yang diucapkan, biar kata
+  // yang di-tap cuma menyala tenang, tak ikut melonjak selama balon terbuka.
+  const colored = active || !!tapped;
   const cls = inPhrase
     ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
     : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
@@ -3574,7 +3594,7 @@ function KaraokeWord({
       onMouseLeave={inPhrase ? undefined : () => { onHover?.(false); onHoverClose?.(); }}
       className={cls}
       style={{
-        color: active ? TEAL : "#fff",
+        color: colored ? TEAL : "#fff",
         textShadow: KARAOKE_SHADOW,
         // Pop per-kata hanya di luar frasa; di dalam frasa pembungkus yang "pop"
         // supaya seluruh frasa naik bareng (bukan tiap kata sendiri-sendiri).
@@ -3626,6 +3646,7 @@ function KaraokeText({
   onWordTap,
   onWordHoverOpen,
   onWordHoverClose,
+  tapped,
   hoveredK,
   hotKeys,
   onHoverWord,
@@ -3642,6 +3663,8 @@ function KaraokeText({
   // subtitle bawah yang mengoper ini; panel transkrip tetap butuh klik.
   onWordHoverOpen?: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
   onWordHoverClose?: () => void;
+  // [watch-tap-colored-v1] Rentang token yang barusan di-tap → tetap menyala teal.
+  tapped?: { lo: number; hi: number } | null;
   // [linguo-patch:watch-translit-hover-sync-v1] sinkron hover dengan baris translit
   // (opsional — bar subtitle di bawah tak mengoper ini, jatuh ke hover CSS biasa).
   hoveredK?: number | null;
@@ -3667,7 +3690,9 @@ function KaraokeText({
   // Satu token kata → elemen KaraokeWord. `inPhrase` mematikan klik/hover per-kata
   // (pembungkus frasa yang urus); `phraseActive` mewarnai kata teal saat frasanya
   // sedang diucapkan (semua kata frasa nyala bareng).
-  const renderWord = (j: number, inPhrase: boolean, phraseActive?: boolean) => {
+  // [watch-tap-colored-v1] Apakah token ke-j termasuk kata/frasa yang lagi dibuka artinya.
+  const isTapped = (j: number) => !!tapped && j >= tapped.lo && j <= tapped.hi;
+  const renderWord = (j: number, inPhrase: boolean, phraseActive?: boolean, tappedOn?: boolean) => {
     const t = toks[j];
     return (
       <KaraokeWord
@@ -3678,6 +3703,7 @@ function KaraokeText({
         rtl={rtl}
         inPhrase={inPhrase}
         phraseActive={phraseActive}
+        tapped={tappedOn}
         onClick={(e) => onWordTap(e, t.text, cue.target, j)}
         onHoverOpen={onWordHoverOpen ? (e) => onWordHoverOpen(e, t.text, cue.target, j) : undefined}
         onHoverClose={onWordHoverClose}
@@ -3710,10 +3736,12 @@ function KaraokeText({
         }
       }
       const phraseActive = firstState !== undefined && firstState !== "future" && lastState !== "sung";
+      // Frasa yang di-tap sebagai satu unit → semua katanya menyala teal.
+      const phraseTapped = isTapped(j) || isTapped(chunk.lastTok);
       const inner: React.ReactNode[] = [];
       let jj = j;
       for (; jj <= chunk.lastTok && jj < toks.length; jj++) {
-        inner.push(toks[jj].isWord ? renderWord(jj, true, phraseActive) : renderSep(jj));
+        inner.push(toks[jj].isWord ? renderWord(jj, true, phraseActive, phraseTapped) : renderSep(jj));
       }
       nodes.push(
         <KaraokePhrase
@@ -3728,7 +3756,7 @@ function KaraokeText({
       );
       j = jj;
     } else {
-      nodes.push(toks[j].isWord ? renderWord(j, false) : renderSep(j));
+      nodes.push(toks[j].isWord ? renderWord(j, false, undefined, isTapped(j)) : renderSep(j));
       j++;
     }
   }
