@@ -91,10 +91,18 @@ const RECENT_LANGS_MAX = 5;
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
 // Layout grid: 5 kartu per baris di desktop (grid lg:grid-cols-5). Default tampil
-// 1 baris (GRID_COLS) biar halaman tak kepanjangan; tiap klik "Muat lainnya"
-// menambah 2 baris lagi (LOAD_MORE_COUNT = 2 × GRID_COLS).
+// 2 baris (INITIAL_VISIBLE = 2 × GRID_COLS = 10 video) tiap tab; tiap klik
+// "Muat lainnya" menambah 2 baris lagi (LOAD_MORE_COUNT = 2 × GRID_COLS).
 const GRID_COLS = 5;
+const INITIAL_VISIBLE = GRID_COLS * 2;
 const LOAD_MORE_COUNT = GRID_COLS * 2;
+
+// [watch-tab-order-v1] Urutan tab kategori: "Vlog" ditaruh paling depan supaya
+// tampil tepat di kanan tab "Cari Kata"; sisanya ikut urutan asli.
+const CATEGORY_TABS = [
+  ...IMMERSION_CATEGORIES.filter((c) => c.id === "vlog"),
+  ...IMMERSION_CATEGORIES.filter((c) => c.id !== "vlog"),
+];
 
 // [linguo-patch:watch-duration-filter-v1] Katalog kini memuat video sampai 20 menit
 // (dulu ≤5 mnt) supaya filter durasi <5 / 5–10 / 10–20 mnt punya isi. Batas atas ini
@@ -238,8 +246,8 @@ export default function WatchAndLearn() {
   // Penanda buat memicu re-hitung filter tiap kali orientasi baru terdeteksi
   // (orientCache mutable di module scope, bukan dependency React).
   const [orientTick, setOrientTick] = useState(0);
-  // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 1 baris.
-  const [visible, setVisible] = useState(GRID_COLS);
+  // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 2 baris.
+  const [visible, setVisible] = useState(INITIAL_VISIBLE);
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
@@ -636,10 +644,10 @@ export default function WatchAndLearn() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langCode, category, committedText, durationFilter]);
 
-  // Balikkan tampilan ke 1 baris tiap daftar/​filter berganti (bukan saat loadMore,
+  // Balikkan tampilan ke 2 baris tiap daftar/​filter berganti (bukan saat loadMore,
   // yang cuma menambah `videos` tanpa mengubah key di bawah).
   useEffect(() => {
-    setVisible(GRID_COLS);
+    setVisible(INITIAL_VISIBLE);
   }, [langCode, category, committedText, durationFilter]);
 
   const loadMore = useCallback(async () => {
@@ -1095,7 +1103,7 @@ export default function WatchAndLearn() {
             <TextSearch className="h-4 w-4" />
             Cari Kata
           </button>
-          {IMMERSION_CATEGORIES.map((c) => {
+          {CATEGORY_TABS.map((c) => {
             const on = c.id === category;
             const Icon = CATEGORY_ICONS[c.id];
             return (
@@ -1276,25 +1284,29 @@ export default function WatchAndLearn() {
 
         {!wordMode && (
         <>
-        {/* [linguo-patch:watch-duration-filter-v1] Filter durasi: Semua / <5 / 5–10 / 10–20 mnt */}
-        <div className="mt-3 flex flex-wrap items-center gap-2">
-          {DURATION_FILTERS.map((d) => {
-            const on = durationFilter === d.id;
-            return (
-              <button
-                key={d.id}
-                onClick={() => setDurationFilter(d.id)}
-                className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
-                style={{
-                  backgroundColor: on ? TEAL : CARD,
-                  color: on ? "#fff" : "rgba(255,255,255,0.7)",
-                }}
-              >
-                {d.label}
-              </button>
-            );
-          })}
-        </div>
+        {/* [linguo-patch:watch-duration-filter-v1] Filter durasi: Semua / <5 / 5–10 / 10–20 mnt.
+            Hanya muncul di tab rekomendasi (kategori) — disembunyikan di "Terjemahan Siap"
+            (yang pakai filter Level) & "Cari Kata". */}
+        {!readyMode && (
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            {DURATION_FILTERS.map((d) => {
+              const on = durationFilter === d.id;
+              return (
+                <button
+                  key={d.id}
+                  onClick={() => setDurationFilter(d.id)}
+                  className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
+                  style={{
+                    backgroundColor: on ? TEAL : CARD,
+                    color: on ? "#fff" : "rgba(255,255,255,0.7)",
+                  }}
+                >
+                  {d.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* [linguo-patch:watch-level-filter-v1] Filter level CEFR — hanya tab "Siap"
             (video di sana yang punya estimasi level). Chip aktif memakai warna levelnya. */}
@@ -1311,7 +1323,7 @@ export default function WatchAndLearn() {
                   key={lv}
                   onClick={() => {
                     setLevelFilter(lv);
-                    setVisible(GRID_COLS);
+                    setVisible(INITIAL_VISIBLE);
                   }}
                   className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
                   style={{
@@ -1329,7 +1341,7 @@ export default function WatchAndLearn() {
         {/* Grid video */}
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
           {state === "loading"
-            ? Array.from({ length: GRID_COLS }).map((_, i) => <CardSkeleton key={i} />)
+            ? Array.from({ length: INITIAL_VISIBLE }).map((_, i) => <CardSkeleton key={i} />)
             : shownVideos.slice(0, visible).map((v) => (
                 <button key={v.videoId} onClick={() => openVideo(v, lang.code)} className="group text-left">
                   <Thumb
