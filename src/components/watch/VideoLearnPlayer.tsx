@@ -1545,6 +1545,26 @@ export default function VideoLearnPlayer({
     [hoverWord, alignMaps]
   );
 
+  // [watch-phrase-chunk-v1] Pengelompokan frasa per baris cue ("the king" → 1 unit).
+  // Sinyal: kelas kata (breakdown, di-prewarm semua baris) untuk frasa benda +
+  // penjajaran AI (alignMaps, ada di baris aktif/hover) untuk idiom/phrasal verb.
+  // Dihitung hanya untuk baris yang breakdown/penjajarannya sudah termuat (baris lain
+  // → null = sorot per-kata, terisi otomatis begitu breakdown-nya hangat). Di-memo
+  // per (breakdowns/aligns/cues) — BUKAN per tick karaoke — supaya tak dihitung ulang
+  // tiap frame saat daftar transkrip re-render.
+  const cueChunks = useMemo(() => {
+    const out: Record<number, CueChunks | null> = {};
+    cues.forEach((c, i) => {
+      const bd = breakdowns[i];
+      const breakdown = bd && typeof bd === "object" ? bd : null;
+      const alignTGroup = alignMaps[i]?.tGroup ?? null;
+      out[i] = breakdown || alignTGroup
+        ? computeCueChunks({ target: c.target, langCode, breakdown, alignTGroup })
+        : null;
+    });
+    return out;
+  }, [cues, breakdowns, alignMaps, langCode]);
+
   // Auto-scroll baris aktif ke tengah panel transkrip.
   useEffect(() => {
     if (activeIdx < 0 || !listRef.current) return;
@@ -2749,6 +2769,8 @@ export default function VideoLearnPlayer({
                 // [watch-word-align-v1] ordinal kata target/terjemahan yang menyala.
                 const hs = hotSets(i);
                 const am = alignMaps[i];
+                // [watch-phrase-chunk-v1] frasa ("the king" → 1 unit) baris ini.
+                const ck = cueChunks[i] ?? null;
                 return (
                   <div
                     key={i}
@@ -2774,6 +2796,7 @@ export default function VideoLearnPlayer({
                             ensureAlign(i);
                           }
                         }}
+                        chunks={ck}
                         className="font-semibold leading-snug"
                         fontSize={14 * fscale}
                       />
@@ -2789,27 +2812,59 @@ export default function VideoLearnPlayer({
                         {(() => {
                           // k = indeks-urut kata (di antara token kata) → kunci sinkron
                           // hover dengan token transliterasi / terjemahan di baris ini.
-                          let k = -1;
-                          return splitWords(c.target, langCode).map((w, j) => {
-                            if (!w.isWord) return <span key={j}>{w.text}</span>;
-                            const wk = ++k;
+                          // [watch-phrase-chunk-v1] Token yang jatuh di chunk multi-kata
+                          // dibungkus satu span frasa (garis putus-putus + tap arti frasa),
+                          // konsisten dgn baris karaoke aktif.
+                          const toks = splitWords(c.target, langCode);
+                          const wordOrd: number[] = [];
+                          { let k = -1; toks.forEach((w) => wordOrd.push(w.isWord ? ++k : -1)); }
+                          const wordSpan = (j: number, inPhrase: boolean) => {
+                            const w = toks[j];
+                            const wk = wordOrd[j];
                             const hot = hs.t.has(wk);
                             return (
                               <span
                                 key={j}
-                                onClick={(e) => onWordTap(e, w.text, c.target, j)}
-                                onMouseEnter={() => {
-                                  setHoverWord({ i, k: wk });
-                                  ensureAlign(i);
-                                }}
-                                onMouseLeave={() => setHoverWord(null)}
-                                className="cursor-pointer transition-colors"
-                                style={hot ? SYNC_UNDERLINE : undefined}
+                                onClick={inPhrase ? undefined : (e) => onWordTap(e, w.text, c.target, j)}
+                                onMouseEnter={inPhrase ? undefined : () => { setHoverWord({ i, k: wk }); ensureAlign(i); }}
+                                onMouseLeave={inPhrase ? undefined : () => setHoverWord(null)}
+                                className={inPhrase ? "transition-colors" : "cursor-pointer transition-colors"}
+                                style={hot && !inPhrase ? SYNC_UNDERLINE : undefined}
                               >
                                 {w.text}
                               </span>
                             );
-                          });
+                          };
+                          const out: React.ReactNode[] = [];
+                          for (let j = 0; j < toks.length; ) {
+                            const cid = ck?.tokenChunk[j] ?? -1;
+                            const chunk = cid >= 0 ? ck!.chunks[cid] : null;
+                            if (chunk && chunk.words > 1) {
+                              const inner: React.ReactNode[] = [];
+                              let jj = j;
+                              for (; jj <= chunk.lastTok && jj < toks.length; jj++) {
+                                inner.push(toks[jj].isWord ? wordSpan(jj, true) : <span key={jj}>{toks[jj].text}</span>);
+                              }
+                              out.push(
+                                <span
+                                  key={`p${cid}-${j}`}
+                                  onClick={(e) => onWordTap(e, chunk.text, c.target, chunk.firstTok, chunk.lastTok)}
+                                  className="cursor-pointer"
+                                  style={{ borderBottom: "2px dashed rgba(26,158,158,0.55)", paddingBottom: 1 }}
+                                >
+                                  {inner}
+                                </span>
+                              );
+                              j = jj;
+                            } else if (toks[j].isWord) {
+                              out.push(wordSpan(j, false));
+                              j++;
+                            } else {
+                              out.push(<span key={j}>{toks[j].text}</span>);
+                              j++;
+                            }
+                          }
+                          return out;
                         })()}
                       </p>
                     )}
@@ -3077,6 +3132,20 @@ function FocusLine({
   onHoverPause?: () => void;
   onHoverResume?: () => void;
 }) {
+  // [watch-phrase-chunk-v1] Frasa ("the king" → 1 unit) untuk bar subtitle fokus —
+  // dari kelas kata (breakdown) + penjajaran AI (alignMap) baris aktif.
+  const chunks = useMemo(
+    () =>
+      cue
+        ? computeCueChunks({
+            target: cue.target,
+            langCode: langCode ?? "",
+            breakdown: breakdown && typeof breakdown === "object" ? breakdown : null,
+            alignTGroup: alignMap?.tGroup ?? null,
+          })
+        : null,
+    [cue, langCode, breakdown, alignMap]
+  );
   if (txState !== "ready") {
     return (
       <div className="flex min-h-[92px] items-center justify-center px-6 py-4 text-center">
@@ -3206,6 +3275,7 @@ function FocusLine({
         hoveredK={hoveredK}
         hotKeys={hot?.t}
         onHoverWord={onHoverWord}
+        chunks={chunks}
         className="font-extrabold leading-snug"
         fontSize={22 * scale}
         center
@@ -3409,6 +3479,7 @@ function KaraokeWord({
   onClick,
   hovered,
   onHover,
+  inPhrase,
 }: {
   text: string;
   state: KaraokeState;
@@ -3419,6 +3490,11 @@ function KaraokeWord({
   // yang bersesuaian di-hover → kata ini ikut menyala (dan sebaliknya via onHover).
   hovered?: boolean;
   onHover?: (h: boolean) => void;
+  // [watch-phrase-chunk-v1] Kata ini bagian dari unit frasa (mis. "the king"):
+  // klik/hover/garis bawah ditangani oleh pembungkus frasa, bukan per-kata — supaya
+  // seluruh frasa jadi satu sorotan & satu tap (arti frasa). Kata tetap "pop" saat
+  // giliran karaokenya, jadi sapuan mengalir per-kata di dalam frasa.
+  inPhrase?: boolean;
 }) {
   // [watch-karaoke-solid-shadow-v1] Sorotan PER-KATA ala Lingopie: hanya kata yang
   // SEDANG diucapkan yang menyala teal + "pop" naik; kata lain putih. Sapuan
@@ -3427,20 +3503,54 @@ function KaraokeWord({
   void rtl;
   void progress;
   const active = state === "active";
+  // Di dalam frasa: tak menangkap pointer sendiri (pembungkus yang urus) & tanpa
+  // garis-bawah hover per-kata — biar frasa terasa satu kesatuan.
+  const cls = inPhrase
+    ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
+    : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
   return (
     <span
-      onClick={onClick}
-      onMouseEnter={() => onHover?.(true)}
-      onMouseLeave={() => onHover?.(false)}
-      className="relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]"
+      onClick={inPhrase ? undefined : onClick}
+      onMouseEnter={inPhrase ? undefined : () => onHover?.(true)}
+      onMouseLeave={inPhrase ? undefined : () => onHover?.(false)}
+      className={cls}
       style={{
         color: active ? TEAL : "#fff",
         textShadow: KARAOKE_SHADOW,
         transform: active ? "translateY(-2px) scale(1.08)" : "none",
-        ...(hovered ? SYNC_UNDERLINE : null),
+        ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
       {text}
+    </span>
+  );
+}
+
+// [watch-phrase-chunk-v1] Pembungkus satu unit frasa karaoke (mis. "the king",
+// "for a walk"). Membawa kata-katanya (tiap kata tetap "pop" saat gilirannya) +
+// garis bawah tipis teal PERSISTEN sebagai penanda "ini satu unit yang bisa di-tap".
+// Hover → garis menebal; klik → buka arti FRASA (bukan per-kata).
+function KaraokePhrase({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick: (e: React.MouseEvent) => void;
+}) {
+  const [hover, setHover] = useState(false);
+  return (
+    <span
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className="relative inline-flex cursor-pointer items-baseline align-baseline"
+      style={{
+        borderBottom: `2px ${hover ? "solid" : "dashed"} rgba(26,158,158,${hover ? 0.95 : 0.55})`,
+        paddingBottom: 1,
+        transition: "border-color 150ms ease-out",
+      }}
+    >
+      {children}
     </span>
   );
 }
@@ -3453,6 +3563,7 @@ function KaraokeText({
   hoveredK,
   hotKeys,
   onHoverWord,
+  chunks,
   className,
   fontSize,
   center,
@@ -3467,6 +3578,9 @@ function KaraokeText({
   // [watch-word-align-v1] ordinal kata yang harus menyala (frasa penjajaran utuh).
   hotKeys?: Set<number> | null;
   onHoverWord?: (k: number | null) => void;
+  // [watch-phrase-chunk-v1] Pengelompokan frasa ("the king" → 1 unit). Kalau null →
+  // sorot per-kata seperti biasa.
+  chunks?: CueChunks | null;
   className?: string;
   fontSize?: number;
   center?: boolean;
@@ -3479,6 +3593,58 @@ function KaraokeText({
     let k = -1;
     return toks.map((t) => (t.isWord ? ++k : -1));
   }, [toks]);
+
+  // Satu token kata → elemen KaraokeWord. `inPhrase` mematikan klik/hover per-kata
+  // (pembungkus frasa yang urus). Token di dalam frasa tetap "pop" saat gilirannya.
+  const renderWord = (j: number, inPhrase: boolean) => {
+    const t = toks[j];
+    return (
+      <KaraokeWord
+        key={j}
+        text={t.text}
+        state={t.state}
+        progress={t.progress}
+        rtl={rtl}
+        inPhrase={inPhrase}
+        onClick={(e) => onWordTap(e, t.text, cue.target, j)}
+        hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
+        onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
+      />
+    );
+  };
+  const renderSep = (j: number) => (
+    <span key={j} className="whitespace-pre" style={{ color: "#fff", textShadow: KARAOKE_SHADOW }}>
+      {toks[j].text}
+    </span>
+  );
+
+  // Susun elemen render: token yang jatuh di chunk multi-kata dibungkus KaraokePhrase
+  // (satu garis bawah + satu tap → arti frasa); sisanya render per-token biasa.
+  const nodes: React.ReactNode[] = [];
+  for (let j = 0; j < toks.length; ) {
+    const cid = chunks?.tokenChunk[j] ?? -1;
+    const chunk = cid >= 0 ? chunks!.chunks[cid] : null;
+    if (chunk && chunk.words > 1) {
+      const inner: React.ReactNode[] = [];
+      let jj = j;
+      for (; jj <= chunk.lastTok && jj < toks.length; jj++) {
+        inner.push(toks[jj].isWord ? renderWord(jj, true) : renderSep(jj));
+      }
+      nodes.push(
+        <KaraokePhrase
+          key={`p${cid}-${j}`}
+          onClick={(e) => onWordTap(e, chunk.text, cue.target, chunk.firstTok, chunk.lastTok)}
+        >
+          {inner}
+        </KaraokePhrase>
+      );
+      j = jj;
+    } else {
+      nodes.push(toks[j].isWord ? renderWord(j, false) : renderSep(j));
+      j++;
+    }
+  }
+
   // Tiap kata dibungkus inline-block (butuh position:relative buat overlay karaoke).
   // Urutan antar-kata TIDAK boleh mengandalkan algoritma bidi atas kotak inline-block:
   // Chrome & Safari menyusunnya BERBEDA (bikin baris karaoke kebalik di Safari). Jadi
@@ -3500,28 +3666,7 @@ function KaraokeText({
         ...(fontSize ? { fontSize } : {}),
       }}
     >
-      {toks.map((t, j) =>
-        t.isWord ? (
-          <KaraokeWord
-            key={j}
-            text={t.text}
-            state={t.state}
-            progress={t.progress}
-            rtl={rtl}
-            onClick={(e) => onWordTap(e, t.text, cue.target, j)}
-            hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
-            onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
-          />
-        ) : (
-          <span
-            key={j}
-            className="whitespace-pre"
-            style={{ color: "#fff", textShadow: KARAOKE_SHADOW }}
-          >
-            {t.text}
-          </span>
-        )
-      )}
+      {nodes}
     </p>
   );
 }

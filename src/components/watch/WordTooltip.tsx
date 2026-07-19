@@ -50,6 +50,7 @@ const MAX_AUTO_EXPAND = 4;
 // karena artikel gender menentukan bentuk & sering dipelajari sepaket. User tetap
 // bisa menciutkan ke "1 kata". Hanya bahasa dengan artikel yang didaftarkan.
 const ARTICLES: Record<string, Set<string>> = {
+  en: new Set(["a", "an", "the"]),
   es: new Set(["el", "la", "los", "las", "un", "una", "unos", "unas"]),
   fr: new Set(["le", "la", "les", "un", "une", "des", "du"]),
   it: new Set(["il", "lo", "la", "i", "gli", "le", "un", "uno", "una"]),
@@ -67,6 +68,7 @@ export function WordTooltip({
   word: rawWord,
   sentence,
   wordIdx,
+  wordEndIdx,
   langCode,
   baseLang,
   videoId,
@@ -85,6 +87,9 @@ export function WordTooltip({
   word: string;
   sentence: string;
   wordIdx?: number;
+  /** Indeks token AKHIR frasa (mis. tap "birthday card" dari sapuan karaoke) —
+   *  selection dibuka langsung sebagai rentang wordIdx..wordEndIdx. */
+  wordEndIdx?: number;
   langCode: string;
   /** Bahasa terjemahan pengguna ("kamu bicara bahasa apa?") — arti kata & cache
    *  breakdown ikut bahasa ini, bukan selalu Indonesia. */
@@ -127,8 +132,18 @@ export function WordTooltip({
     return initialIdx;
   }, [initialIdx, langCode, wordPositions, tokens]);
 
-  const [sel, setSel] = useState({ lo: autoLo, hi: initialIdx });
-  useEffect(() => setSel({ lo: autoLo, hi: initialIdx }), [autoLo, initialIdx]);
+  // Titik kanan default: kalau player mengirim akhir frasa (sapuan karaoke, mis.
+  // "birthday card"), buka selection langsung sampai kata itu; kalau tidak, kata
+  // tunggal (hi = awal).
+  const initialHi = useMemo(() => {
+    if (wordEndIdx != null && wordEndIdx >= initialIdx && tokens[wordEndIdx]?.isWord) {
+      return wordEndIdx;
+    }
+    return initialIdx;
+  }, [wordEndIdx, initialIdx, tokens]);
+
+  const [sel, setSel] = useState({ lo: autoLo, hi: initialHi });
+  useEffect(() => setSel({ lo: autoLo, hi: initialHi }), [autoLo, initialHi]);
 
   // Auto-perluas ke frasa saat kata tunggal tak punya arti mandiri (kata fungsi
   // seperti "por", "de", "el"). Arti sesungguhnya baru muncul digabung tetangganya
@@ -151,6 +166,13 @@ export function WordTooltip({
   // Kata kanan berikutnya — dipakai auto-expand kata fungsi (kontrol frasa manual
   // sudah dihapus demi tooltip yang ringkas).
   const nextWord = wordPositions.find((p) => p > sel.hi);
+
+  // [watch-phrase-chunk-v1] Posisi token tiap kata dalam frasa yang MULA-MULA di-tap
+  // (rentang autoLo..initialHi) — jadi bahan chip "turun ke per-kata".
+  const phraseWords = useMemo(
+    () => wordPositions.filter((p) => p >= autoLo && p <= initialHi),
+    [wordPositions, autoLo, initialHi]
+  );
 
   const [meaning, setMeaning] = useState<WordMeaning | null>(null);
   const [loading, setLoading] = useState(true);
@@ -320,15 +342,18 @@ export function WordTooltip({
         kalau tidak, ia nyempil di belakang drawer (drawer kini panel kanan, bukan
         full-screen). Tutup drawer → popup muncul lagi. */}
     {!studyOpen && (
-    <div className="fixed inset-0 z-[95]" onClick={onClose}>
+    // [watch-tip-persist-v1] Backdrop TEMBUS klik (pointer-events-none): balon tetap
+    // tampil saat video di-play lagi — klik tombol putar/kontrol video lolos ke bawah,
+    // tak lagi nyangkut di backdrop & menutup balon. Balon ditutup lewat tombol ✕ atau
+    // saat kata lain di-tap. Balon sendiri pointer-events-auto (interaktif & bisa digeser).
+    <div className="pointer-events-none fixed inset-0 z-[95]">
       {/* [watch-tip-pop-v1] Balon "meletup" naik dari bawah tiap kata di-tap —
           key={tapId} me-remount div-nya jadi animasi replay tiap kata baru. */}
       <style>{`@keyframes wtPopUp{from{opacity:0;transform:translateY(14px) scale(0.92)}to{opacity:1;transform:translateY(0) scale(1)}}`}</style>
       <div
         key={tapId}
-        onClick={(e) => e.stopPropagation()}
         onPointerDown={onDragStart}
-        className="absolute touch-none cursor-move select-none rounded-2xl p-3.5 shadow-2xl"
+        className="pointer-events-auto absolute touch-none cursor-move select-none rounded-2xl p-3.5 shadow-2xl"
         style={{
           left,
           top,
@@ -387,6 +412,49 @@ export function WordTooltip({
           <p className="mt-1.5 text-[15px] font-bold leading-snug" style={{ color: GOLD }}>
             {meaning.meaning}
           </p>
+        )}
+
+        {/* [watch-phrase-chunk-v1] Turun ke per-kata: kalau yang di-tap sebuah FRASA
+            ("the king"), tampilkan chip tiap katanya biar siswa yang mau belajar
+            per-kata tinggal ketuk — dan chip "Frasa" untuk balik ke arti utuh. Siswa
+            dapat DUA level (frasa & kata) tanpa mode/toggle yang membingungkan. */}
+        {phraseWords.length > 1 && (
+          <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+            <button
+              onClick={() => {
+                autoAllowRef.current = false;
+                setSel({ lo: autoLo, hi: initialHi });
+              }}
+              className="rounded-full px-2 py-0.5 text-[11px] font-bold transition-colors"
+              style={
+                sel.lo === autoLo && sel.hi === initialHi
+                  ? { backgroundColor: TEAL, color: "#fff" }
+                  : { backgroundColor: "rgba(255,255,255,0.06)", color: "#7FE0E0" }
+              }
+            >
+              Frasa
+            </button>
+            {phraseWords.map((p) => {
+              const on = sel.lo === p && sel.hi === p;
+              return (
+                <button
+                  key={p}
+                  onClick={() => {
+                    autoAllowRef.current = false;
+                    setSel({ lo: p, hi: p });
+                  }}
+                  className="rounded-full px-2 py-0.5 text-[11px] font-semibold transition-colors"
+                  style={
+                    on
+                      ? { backgroundColor: TEAL, color: "#fff" }
+                      : { backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.75)" }
+                  }
+                >
+                  {cleanWord(tokens[p].text)}
+                </button>
+              );
+            })}
+          </div>
         )}
 
         {/* Aksi */}
