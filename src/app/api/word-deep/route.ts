@@ -19,7 +19,15 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL = "gemini-2.5-flash";
+// Rantai model fallback. Kuota free-tier Gemini dihitung PER-MODEL per hari
+// (limit ~10k/model). Saat model utama kena 429 RESOURCE_EXHAUSTED (mentok
+// harian) — gejalanya drawer "Gagal memuat materi" — kita jatuh ke model
+// berikutnya yang punya jatah harian sendiri, jadi fitur tetap hidup.
+const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.0-flash"];
+// Hanya seri 2.5+/3 yang menerima thinkingConfig; 2.0 akan 400 kalau dikirim.
+function supportsThinking(model: string): boolean {
+  return model.startsWith("gemini-2.5") || model.startsWith("gemini-3");
+}
 // Bahasa penjelasan default (saat klien tak mengirim baseCode) — pengguna Linguo
 // berbahasa Indonesia. Kalau baseCode dikirim (bahasa terjemahan pilihan pengguna),
 // materi & jawaban ditulis dalam bahasa itu (lihat `explanationLanguage` di bawah).
@@ -93,9 +101,10 @@ function parseJsonLoose(raw: string): Record<string, unknown> | null {
   }
 }
 
-// Panggil Gemini generateContent; balikin teks gabungan (atau "" saat gagal).
-async function callGemini(prompt: string, json: boolean): Promise<string> {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+// Satu panggilan generateContent ke SATU model. Balikin teks (atau "" saat
+// gagal — termasuk 429 kuota harian, yang jadi sinyal untuk coba model berikut).
+async function callModel(model: string, prompt: string, json: boolean): Promise<string> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
@@ -104,7 +113,7 @@ async function callGemini(prompt: string, json: boolean): Promise<string> {
       generationConfig: {
         temperature: 0.4,
         ...(json ? { responseMimeType: "application/json" } : {}),
-        thinkingConfig: { thinkingBudget: 0 },
+        ...(supportsThinking(model) ? { thinkingConfig: { thinkingBudget: 0 } } : {}),
       },
     }),
   });
@@ -116,6 +125,17 @@ async function callGemini(prompt: string, json: boolean): Promise<string> {
       ?.map((p: any) => (typeof p?.text === "string" ? p.text : ""))
       .join("") ?? ""
   );
+}
+
+// Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
+// Jadi saat model utama mentok kuota harian (429 → ""), fitur tetap jalan lewat
+// model cadangan yang punya jatah harian sendiri. Balikin "" hanya bila semua habis.
+async function callGemini(prompt: string, json: boolean): Promise<string> {
+  for (const model of MODELS) {
+    const text = await callModel(model, prompt, json);
+    if (text.trim()) return text;
+  }
+  return "";
 }
 
 export async function POST(req: NextRequest) {
