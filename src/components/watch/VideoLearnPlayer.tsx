@@ -157,12 +157,16 @@ const SYNC_UNDERLINE: React.CSSProperties = {
 };
 const SUB = "rgba(255,255,255,0.5)";
 
-// [watch-karaoke-solid-shadow-v1] Bayangan SOLID (garis tepi hitam pekat, bukan
-// blur) ala subtitle Lingopie — bikin teks karaoke tetap terbaca tajam di atas
-// video apa pun & memberi kesan "tebal" yang khas. Outline 4 arah + drop shadow
-// halus di bawah. Dipakai baris fokus, subtitle overlay, dan transliterasi.
+// [watch-karaoke-solid-shadow-v2] Garis tepi hitam SOLID tebal ala subtitle
+// "brainrot"/TikTok (referensi user) — outline pekat 8 arah + PENEBALAN ke
+// KANAN-BAWAH (offset stiker) supaya teks terasa nempel & timbul di atas video
+// apa pun. Dipakai baris fokus, subtitle overlay, dan transliterasi.
 const KARAOKE_SHADOW =
-  "1px 1px 0 rgba(0,0,0,0.92), -1px 1px 0 rgba(0,0,0,0.92), 1px -1px 0 rgba(0,0,0,0.92), -1px -1px 0 rgba(0,0,0,0.92), 0 3px 5px rgba(0,0,0,0.55)";
+  // outline solid ~2px keliling
+  "2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, " +
+  "2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, " +
+  // kedalaman/stiker condong ke kanan-bawah + drop shadow halus
+  "3px 3px 0 #000, 4px 4px 0 rgba(0,0,0,0.9), 5px 6px 6px rgba(0,0,0,0.5)";
 
 // Jam pemutaran m:ss (atau h:mm:ss utk >1 jam) — untuk label waktu di slider seek.
 // Beda dari formatDuration (yg kembalikan "" saat 0): di sini 0 → "0:00".

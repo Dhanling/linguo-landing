@@ -333,8 +333,14 @@ export function WordTooltip({
   const left = Math.max(8, Math.min(x - TIP_W / 2, vw - TIP_W - 8));
   // Kalau kepenuhan di atas, taruh di bawah titik tap.
   const above = y > 240;
-  const top = above ? undefined : y + 16;
-  const bottom = above && typeof window !== "undefined" ? window.innerHeight - y + 14 : undefined;
+  // [watch-tip-balloon-v1] Balon "agak ke atas" (referensi user): gap dinaikkan
+  // (14→28 / 16→30) supaya ada ruang buat ekor speech-bubble & balon melayang lebih
+  // tinggi dari kata, tak menimpanya.
+  const top = above ? undefined : y + 30;
+  const bottom = above && typeof window !== "undefined" ? window.innerHeight - y + 28 : undefined;
+  // Ekor balon menunjuk ke kata yang di-tap: posisi horizontal relatif tepi kiri
+  // balon, diklem biar tak keluar dari sudut membulat.
+  const tailLeft = Math.max(20, Math.min(x - left, TIP_W - 20));
 
   return (
     <>
@@ -365,6 +371,20 @@ export function WordTooltip({
           animation: "wtPopUp 240ms cubic-bezier(0.16,1,0.3,1)",
         }}
       >
+        {/* [watch-tip-balloon-v1] Ekor speech-bubble menunjuk ke kata: di BAWAH balon
+            saat balon di atas kata (menunjuk turun), atau di ATAS balon saat balon di
+            bawah kata (menunjuk naik). Segitiga CSS sewarna balon. */}
+        <span
+          aria-hidden
+          className="absolute h-0 w-0"
+          style={{
+            left: tailLeft,
+            transform: "translateX(-50%)",
+            ...(above
+              ? { top: "100%", borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderTop: `11px solid ${BALLOON}` }
+              : { bottom: "100%", borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderBottom: `11px solid ${BALLOON}` }),
+          }}
+        />
         {/* Header: kata + kelas kata + tutup */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap items-baseline gap-2">
