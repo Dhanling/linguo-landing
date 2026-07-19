@@ -921,7 +921,7 @@ export default function WatchAndLearn() {
         {!wordMode && (
           <div
             className="mt-6 flex items-center gap-2.5 rounded-2xl px-4"
-            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+            style={{ backgroundColor: CARD }}
           >
             <Search className="h-4 w-4 shrink-0" color={SUB} />
             <input
@@ -1065,7 +1065,7 @@ export default function WatchAndLearn() {
           <div className="mt-5">
             <div
               className="flex items-center gap-2.5 rounded-2xl px-4"
-              style={{ backgroundColor: CARD, border: `1px solid ${wordInput ? GOLD : BORDER}` }}
+              style={{ backgroundColor: CARD }}
             >
               <TextSearch className="h-4 w-4 shrink-0" color={GOLD} />
               <input
@@ -1232,7 +1232,6 @@ export default function WatchAndLearn() {
                 className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
                 style={{
                   backgroundColor: on ? TEAL : CARD,
-                  border: `1px solid ${on ? TEAL : BORDER}`,
                   color: on ? "#fff" : "rgba(255,255,255,0.7)",
                 }}
               >
@@ -1262,7 +1261,6 @@ export default function WatchAndLearn() {
                   className="rounded-full px-3.5 py-1.5 text-[12.5px] font-bold transition-colors"
                   style={{
                     backgroundColor: on ? (style ? style.bg : TEAL) : CARD,
-                    border: `1px solid ${on ? (style ? style.bg : TEAL) : BORDER}`,
                     color: on ? (style ? style.fg : "#fff") : "rgba(255,255,255,0.7)",
                   }}
                 >
