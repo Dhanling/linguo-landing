@@ -39,6 +39,16 @@ export async function POST(req: Request) {
       .order("id", { ascending: true })
       .limit(200);
 
+    // Read receipt: begitu visitor membuka widget & memuat riwayat, semua pesan
+    // admin dianggap sudah dibaca → Chat Minling nampilin ✓✓ "Dibaca".
+    // Fire-and-forget (tak menghambat respons; gagal ya sudah).
+    void db
+      .from("ling_chat_messages")
+      .update({ read_at: new Date().toISOString() })
+      .eq("session_id", sessionId)
+      .eq("role", "admin")
+      .is("read_at", null);
+
     return NextResponse.json({
       messages: m || [],
       status: (s as { status?: string } | null)?.status || "bot",
