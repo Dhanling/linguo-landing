@@ -18,6 +18,9 @@ const CARD = "#12171A"; // solid supaya terbaca jelas menimpa video
 const BORDER = "rgba(255,255,255,0.09)";
 const SUB = "rgba(255,255,255,0.5)";
 
+/** Bahasa terjemahan ("Bahasa saya") — hanya subset field yang dibutuhkan panel. */
+type BaseLangOption = { code: string; country: string; label: string; english?: string };
+
 export function LangPickerPanel({
   open,
   langCode,
@@ -25,6 +28,9 @@ export function LangPickerPanel({
   recentCodes = [],
   width = 300,
   title = "Bahasa target",
+  baseLangs,
+  baseLangCode,
+  onPickBase,
 }: {
   open: boolean;
   langCode: string;
@@ -33,6 +39,11 @@ export function LangPickerPanel({
   width?: number;
   /** Judul kecil di atas kotak cari — menegaskan ini pemilih bahasa apa. */
   title?: string;
+  /** Kalau diisi, tampilkan section "Bahasa saya" (bahasa terjemahan) di atas —
+      menyatukan dua pemilih bahasa jadi satu dropdown. */
+  baseLangs?: BaseLangOption[];
+  baseLangCode?: string;
+  onPickBase?: (code: string) => void;
 }) {
   const [q, setQ] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -70,6 +81,39 @@ export function LangPickerPanel({
       className="flex max-h-[62vh] flex-col overflow-hidden rounded-2xl shadow-2xl"
       style={{ width, backgroundColor: CARD, border: `1px solid ${BORDER}` }}
     >
+      {baseLangs && baseLangs.length > 0 && (
+        <>
+          <div
+            className="px-3 pt-2.5 pb-1 text-[11px] font-bold uppercase tracking-wide"
+            style={{ color: SUB }}
+          >
+            Bahasa saya
+          </div>
+          <div className="px-2 pb-2">
+            <div className="flex flex-wrap gap-1.5">
+              {baseLangs.map((b) => {
+                const on = b.code === baseLangCode;
+                return (
+                  <button
+                    key={b.code}
+                    onClick={() => onPickBase?.(b.code)}
+                    className="flex items-center gap-1.5 rounded-full py-1 pl-1 pr-2.5 transition-transform active:scale-95"
+                    style={{
+                      backgroundColor: on ? "rgba(26,158,158,0.16)" : "rgba(255,255,255,0.06)",
+                      border: `1px solid ${on ? "rgba(26,158,158,0.4)" : BORDER}`,
+                    }}
+                  >
+                    <RectFlag code={b.country} h={14} />
+                    <span className="text-[12px] font-bold text-white">{b.label}</span>
+                    {on && <Check className="h-3.5 w-3.5 shrink-0" color={TEAL} />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div style={{ borderTop: `1px solid ${BORDER}` }} />
+        </>
+      )}
       {title && (
         <div
           className="px-3 pt-2.5 pb-0.5 text-[11px] font-bold uppercase tracking-wide"
