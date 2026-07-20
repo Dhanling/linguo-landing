@@ -2,9 +2,11 @@
 
 // Tooltip balon di atas kata yang di-tap dalam player Watch & Learn. Menampilkan
 // arti + kelas kata (dari word-info AI), lalu deret aksi: Simpan kata (ke
-// localStorage), Analisa (mode belajar mendalam layar penuh), dan Dengar.
-// Otomatis mengucapkan kata saat dibuka; posisinya menempel di atas titik tap
-// dan diklem ke tepi layar. Bisa digeser dari area mana pun kecuali tombol.
+// localStorage) & Analisa (mode belajar mendalam layar penuh). Otomatis
+// mengucapkan kata saat dibuka; KETUK area balon/kata untuk memutar audio ulang
+// (tombol Dengar & tombol tutup dihapus — balon tertutup saat video diputar lagi
+// atau kata lain di-tap). Posisinya menempel di atas titik tap & diklem ke tepi
+// layar; bisa digeser dari area mana pun kecuali tombol.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -12,8 +14,6 @@ import {
   BookmarkPlus,
   Loader2,
   Sparkles,
-  Volume2,
-  X,
 } from "lucide-react";
 import WordStudy from "./WordStudy";
 import {
@@ -221,24 +221,32 @@ export function WordTooltip({
 
   const onDragStart = useCallback(
     (e: React.PointerEvent) => {
-      // Jangan mulai drag saat menekan tombol (tutup, dsb).
+      // Jangan mulai drag / ucap saat menekan tombol aksi (Simpan, Analisa).
       if ((e.target as HTMLElement).closest("button")) return;
       e.preventDefault();
       dragRef.current = { sx: e.clientX, sy: e.clientY, ox: offset.x, oy: offset.y };
+      // Bedakan ketuk vs geser: kalau kursor bergerak > 4px, ini geser (bukan ketuk),
+      // jadi jangan ucapkan kata saat dilepas.
+      let moved = false;
       const move = (ev: PointerEvent) => {
         const d = dragRef.current;
         if (!d) return;
+        if (Math.abs(ev.clientX - d.sx) + Math.abs(ev.clientY - d.sy) > 4) moved = true;
         setOffset({ x: d.ox + (ev.clientX - d.sx), y: d.oy + (ev.clientY - d.sy) });
       };
       const up = () => {
         dragRef.current = null;
         window.removeEventListener("pointermove", move);
         window.removeEventListener("pointerup", up);
+        // [watch-tip-tap-to-speak-v1] Ketuk (bukan geser) di area balon = ucapkan
+        // kata/frasa. Pengganti tombol Dengar 🔊 yang dihapus — cukup klik kata /
+        // balon-nya untuk memutar audio ulang.
+        if (!moved) speak(word, langCode);
       };
       window.addEventListener("pointermove", move);
       window.addEventListener("pointerup", up);
     },
-    [offset]
+    [offset, word, langCode]
   );
 
   // Ucapkan kata/frasa yang STABIL (debounce). Saat perluasan frasa — otomatis
@@ -421,16 +429,6 @@ export function WordTooltip({
             <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
               <Sparkles className="h-[17px] w-[17px]" />
             </TipAction>
-            <TipAction onClick={() => speak(word, langCode)} label="Dengar">
-              <Volume2 className="h-[17px] w-[17px]" />
-            </TipAction>
-            <button
-              onClick={onClose}
-              aria-label="Tutup"
-              className="ml-0.5 flex items-center justify-center rounded-lg p-1.5 text-white/60 transition duration-150 hover:scale-125 hover:bg-white/10 hover:text-white active:scale-95"
-            >
-              <X className="h-4 w-4" />
-            </button>
           </div>
         </div>
 

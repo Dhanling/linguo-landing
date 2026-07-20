@@ -476,6 +476,10 @@ export default function VideoLearnPlayer({
   // subtitle (bukan jeda sengaja), lapisan penutup pause TIDAK ditampilkan supaya
   // frame video tetap kelihatan sambil baca teks (tak berkedip hitam tiap hover).
   const [hoverPaused, setHoverPaused] = useState(false);
+  // [watch-idle-thumb-v1] Layar diam ala Netflix: kalau video DIJEDA (sengaja, bukan
+  // hover-baca) lebih dari 5 detik, tampilkan thumbnail besar + gradien + judul.
+  // Dimatikan saat diputar lagi / jeda-hover / sedang buka tooltip kata.
+  const [idlePaused, setIdlePaused] = useState(false);
   const onSubtitleEnter = useCallback(() => {
     const p = playerRef.current;
     // 1 = playing. Cuma pause kalau memang lagi jalan.
@@ -585,6 +589,17 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     if (playing && !wordStudyOpenRef.current) setAnchor(null);
   }, [playing]);
+  // [watch-idle-thumb-v1] Timer 5 detik untuk memunculkan layar diam ala Netflix.
+  // Hanya berjalan saat jeda DISENGAJA (bukan hover-baca subtitle); begitu diputar
+  // lagi atau hover-pause, layar diam langsung disembunyikan & timer direset.
+  useEffect(() => {
+    if (playing || hoverPaused) {
+      setIdlePaused(false);
+      return;
+    }
+    const t = window.setTimeout(() => setIdlePaused(true), 5000);
+    return () => window.clearTimeout(t);
+  }, [playing, hoverPaused]);
   const panelBeforeStudyRef = useRef<boolean | null>(null);
   // useLayoutEffect (bukan useEffect) supaya sembunyi/tampil transkrip terjadi SEBELUM
   // browser melukis. Kalau useEffect: render pembuka drawer sudah memasang padding
@@ -1806,7 +1821,13 @@ export default function VideoLearnPlayer({
       setHistory(recordStudyHistory({ word: key, langCode, sentence, videoId: video.videoId }));
       // Jeda video otomatis saat membuka arti kata — biar tak terus jalan & ganggu
       // saat siswa fokus baca artinya.
+      // [watch-tap-deliberate-pause-v1] Tap kata = jeda DISENGAJA: lepas tanda
+      // hover-pause supaya kursor yang keluar dari baris subtitle (mis. naik ke
+      // tooltip untuk dijelajahi) TAK melanjutkan video otomatis. Siswa harus tekan
+      // play/space/enter sendiri saat sudah selesai.
       playerRef.current?.pauseVideo?.();
+      hoverPausedRef.current = false;
+      setHoverPaused(false);
       // Bahasa analisa mengikuti bahasa cue: kata di baris penjelas (mis. kalimat
       // Inggris di video Ukraina) dianalisis sebagai bahasa itu, bukan bahasa target.
       const cue = cues.find((c) => c.target === sentence);
@@ -2147,22 +2168,79 @@ export default function VideoLearnPlayer({
                     aria-label={playing ? "Jeda" : "Putar"}
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
-                  {/* [watch-pause-keep-frame-v1] Saat DIJEDA, tampilkan tombol putar
-                      besar di tengah TAPI biarkan frame video tetap kelihatan (dulu
-                      ditutup lapisan gelap solid → layar hitam saat pause). Cuma scrim
-                      tipis + gradien tepi ringan biar tombol putar terbaca & UI bawaan
-                      YouTube di sudut sedikit teredam, tanpa menutupi gambar video. */}
-                  {!playing && !hoverPaused && (
+                  {/* [watch-yt-title-v1] Judul + channel di sudut KIRI-ATAS ala YouTube —
+                      muncul saat dijeda / kursor aktif, meredup mulus saat menonton
+                      lancar. pointer-events-none supaya klik tetap menembus ke tombol
+                      play/jeda di bawahnya. Disembunyikan saat layar-diam Netflix aktif
+                      (judulnya sudah tampil besar di sana). */}
+                  <div
+                    className={`pointer-events-none absolute inset-x-0 top-0 z-[6] bg-gradient-to-b from-black/75 via-black/25 to-transparent px-4 pb-8 pt-3 transition-opacity duration-300 ${
+                      (!playing || videoHot) && !idlePaused ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <p className="line-clamp-2 text-[15px] font-bold leading-snug text-white drop-shadow sm:text-[17px]">
+                      {video.title}
+                    </p>
+                    {video.channel && (
+                      <p className="mt-0.5 text-[12px] font-medium text-white/70">{video.channel}</p>
+                    )}
+                  </div>
+                  {/* [watch-idle-thumb-v1] Layar diam ala Netflix: jeda disengaja > 5 dtk
+                      → thumbnail besar object-cover + gradien kiri/bawah + judul & tombol
+                      lanjut. Tidak muncul saat menganalisis kata (tooltip/drawer terbuka)
+                      supaya frame tetap terlihat. Klik di mana pun = lanjut menonton. */}
+                  {idlePaused && !anchor && !anyDrawerOpen ? (
                     <button
                       type="button"
                       onClick={togglePlay}
-                      aria-label="Putar"
-                      className="absolute inset-0 z-[6] flex items-center justify-center bg-black/20 transition-colors"
+                      aria-label="Lanjut menonton"
+                      className="group/idle absolute inset-0 z-[6] cursor-pointer overflow-hidden text-left"
                     >
-                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/45 backdrop-blur-sm transition-transform hover:scale-105">
-                        <Play className="ml-0.5 h-7 w-7 text-white" fill="currentColor" />
+                      <img
+                        src={video.thumbnail ?? youtubeThumb(video.videoId)}
+                        alt=""
+                        aria-hidden
+                        className="absolute inset-0 h-full w-full scale-105 object-cover"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = youtubeThumb(video.videoId);
+                        }}
+                      />
+                      {/* Gradien Netflix: gelap dari kiri + dari bawah supaya teks terbaca */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/45 to-transparent" />
+                      <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/25" />
+                      <span className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-5 sm:p-8">
+                        <span className="flex flex-col gap-1">
+                          <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">
+                            Dijeda
+                          </span>
+                          <span className="line-clamp-2 max-w-[70%] text-[20px] font-extrabold leading-tight text-white drop-shadow sm:text-[26px]">
+                            {video.title}
+                          </span>
+                          {video.channel && (
+                            <span className="text-[13px] font-semibold text-white/75">{video.channel}</span>
+                          )}
+                        </span>
+                        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-[14px] font-bold text-black transition-transform group-hover/idle:scale-105">
+                          <Play className="h-4 w-4" fill="currentColor" /> Lanjut menonton
+                        </span>
                       </span>
                     </button>
+                  ) : (
+                    /* [watch-pause-keep-frame-v1] Saat DIJEDA (belum 5 dtk), tampilkan
+                        tombol putar besar di tengah TAPI biarkan frame video tetap
+                        kelihatan. Cuma scrim tipis biar tombol terbaca. */
+                    !playing && !hoverPaused && (
+                      <button
+                        type="button"
+                        onClick={togglePlay}
+                        aria-label="Putar"
+                        className="absolute inset-0 z-[6] flex items-center justify-center bg-black/20 transition-colors"
+                      >
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/45 backdrop-blur-sm transition-transform hover:scale-105">
+                          <Play className="ml-0.5 h-7 w-7 text-white" fill="currentColor" />
+                        </span>
+                      </button>
+                    )
                   )}
                   {/* Bar seek + durasi melayang di dasar video — HANYA mode normal (bukan
                       layar penuh). Muncul saat kursor aktif di atas video, atau selalu
