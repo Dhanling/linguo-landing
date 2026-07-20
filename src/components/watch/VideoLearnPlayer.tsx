@@ -2066,7 +2066,10 @@ export default function VideoLearnPlayer({
               aria-expanded={baseMenuOpen}
             >
               <TabBg active={baseMenuOpen} />
-              <span className="relative inline-flex items-center gap-1">
+              <span className="relative inline-flex items-center gap-1.5">
+                <span className="hidden text-[11px] font-bold sm:inline" style={{ color: SUB }}>
+                  Bahasa saya
+                </span>
                 <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
                 <ChevronDown
                   className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${baseMenuOpen ? "rotate-180" : ""}`}
@@ -2086,6 +2089,12 @@ export default function VideoLearnPlayer({
                 className="w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
                 style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               >
+                <div
+                  className="px-3 pt-1 pb-1.5 text-[11px] font-bold uppercase tracking-wide"
+                  style={{ color: SUB }}
+                >
+                  Bahasa saya
+                </div>
                 {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
                     bahasa yang sama tak masuk akal. */}
                 {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
@@ -2135,7 +2144,10 @@ export default function VideoLearnPlayer({
                   aria-expanded={learnMenuOpen}
                 >
                   <TabBg active={learnMenuOpen} />
-                  <span className="relative inline-flex items-center gap-1">
+                  <span className="relative inline-flex items-center gap-1.5">
+                    <span className="hidden text-[11px] font-bold sm:inline" style={{ color: SUB }}>
+                      Bahasa target
+                    </span>
                     {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
                     <ChevronDown
                       className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${learnMenuOpen ? "rotate-180" : ""}`}

@@ -24,12 +24,15 @@ export function LangPickerPanel({
   onPick,
   recentCodes = [],
   width = 300,
+  title = "Bahasa target",
 }: {
   open: boolean;
   langCode: string;
   onPick: (code: string) => void;
   recentCodes?: string[];
   width?: number;
+  /** Judul kecil di atas kotak cari — menegaskan ini pemilih bahasa apa. */
+  title?: string;
 }) {
   const [q, setQ] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -67,6 +70,14 @@ export function LangPickerPanel({
       className="flex max-h-[62vh] flex-col overflow-hidden rounded-2xl shadow-2xl"
       style={{ width, backgroundColor: CARD, border: `1px solid ${BORDER}` }}
     >
+      {title && (
+        <div
+          className="px-3 pt-2.5 pb-0.5 text-[11px] font-bold uppercase tracking-wide"
+          style={{ color: SUB }}
+        >
+          {title}
+        </div>
+      )}
       <div className="p-2">
         <div
           className="flex items-center gap-2 rounded-xl px-3"
