@@ -111,8 +111,8 @@ const BORDER = "rgba(255,255,255,0.08)";
 // biar tak fetch ulang tiap ganti video; TTL longgar karena katalog jarang berubah.
 const READY_REC_CACHE = new Map<string, { videos: ImmersionVideo[]; at: number }>();
 const READY_REC_TTL_MS = 5 * 60 * 1000;
-// Detik hitung-mundur sebelum kartu utama diputar otomatis.
-const AUTOPLAY_SECS = 10;
+// Detik hitung-mundur sebelum kartu utama diputar otomatis (ala Netflix).
+const AUTOPLAY_SECS = 5;
 
 // Sembunyikan baris terjemahan kalau ia sekadar menduplikasi teks target — terjadi
 // saat cue memang berbahasa penjelas (mis. Inggris di video Ukraina) DAN bahasa
