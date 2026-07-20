@@ -22,14 +22,18 @@ import {
   ChevronDown,
   Clock,
   Download,
+  Info,
   Layers,
+  PartyPopper,
   Repeat2,
   RotateCcw,
   Sparkles,
   Volume2,
   X,
+  Zap,
 } from "lucide-react";
 import DeckLibrary from "./DeckLibrary";
+import VocabQuiz from "./VocabQuiz";
 import {
   FREE_SAVE_LIMIT,
   getSavedWords,
@@ -42,6 +46,7 @@ import {
   cardStage,
   gradePreviewLabel,
   isDue,
+  MASTERED_INTERVAL_DAYS,
   newSrsState,
   type CardStage,
   type SrsGrade,
@@ -213,7 +218,7 @@ function exportVocabPdf(words: SavedWord[], title: string) {
 }
 
 type Tab = "belajar" | "deck" | "analisa";
-type ViewMode = "home" | "review" | "done";
+type ViewMode = "home" | "review" | "done" | "quiz";
 
 export default function FlashcardDeck({
   initialLang,
@@ -233,6 +238,10 @@ export default function FlashcardDeck({
   const [deck, setDeck] = useState<SavedWord[]>([]);
   const [pos, setPos] = useState(0);
   const [knew, setKnew] = useState(0);
+  // Kata yang NAIK status jadi "Dikuasai" selama sesi ini → dipakai layar ringkasan
+  // buat memberi tahu pengguna kapan sebuah kata berpindah status (jawaban langsung
+  // atas kebingungan "kok Dikuasai tetap 0?").
+  const [masteredThisSession, setMasteredThisSession] = useState<string[]>([]);
 
   // Hidrasi kosakata + pilih filter awal. Selalu buka pada SATU bahasa (bukan
   // "Semua bahasa") supaya dashboard tak langsung mencampur semua flashcard:
@@ -292,6 +301,7 @@ export default function FlashcardDeck({
       setDeck(order);
       setPos(0);
       setKnew(0);
+      setMasteredThisSession([]);
       setView("review");
     },
     [words]
@@ -301,10 +311,18 @@ export default function FlashcardDeck({
     (grade: SrsGrade) => {
       const card = deck[pos];
       if (card) {
+        const before = cardStage(card.srs);
         const next = gradeSavedWord(card.word, card.langCode, grade);
         setAll(next);
         onChange?.();
         if (grade !== "again") setKnew((k) => k + 1);
+        // Deteksi kenaikan status → "Dikuasai" (interval kartu ≥ 21 hari). `card.srs`
+        // masih state pra-nilai (deck dibekukan saat sesi mulai), jadi bandingkan
+        // dengan state baru dari daftar hasil.
+        const updated = next.find((w) => w.word === card.word && w.langCode === card.langCode);
+        if (before !== "mastered" && cardStage(updated?.srs) === "mastered") {
+          setMasteredThisSession((m) => (m.includes(card.word) ? m : [...m, card.word]));
+        }
       }
       setPos((p) => p + 1);
     },
@@ -320,7 +338,7 @@ export default function FlashcardDeck({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (view === "review" || view === "done") setView("home");
+        if (view === "review" || view === "done" || view === "quiz") setView("home");
         else onClose();
       }
     };
@@ -369,9 +387,19 @@ export default function FlashcardDeck({
         <DoneScreen
           cards={deck.length}
           accuracy={accuracy}
+          masteredWords={masteredThisSession}
           onDone={() => setView("home")}
           onReplay={() => startReview(true)}
         />
+      </Shell>
+    );
+  }
+
+  // ── KUIS ────────────────────────────────────────────────────────────────────
+  if (view === "quiz") {
+    return (
+      <Shell>
+        <VocabQuiz words={words} onExit={() => setView("home")} />
       </Shell>
     );
   }
@@ -552,6 +580,7 @@ export default function FlashcardDeck({
                   stats={stats}
                   reviewedToday={reviewedToday}
                   onStart={startReview}
+                  onQuiz={() => setView("quiz")}
                 />
               ) : (
                 <AnalisaTab words={words} stats={stats} />
@@ -570,11 +599,13 @@ function BelajarTab({
   stats,
   reviewedToday,
   onStart,
+  onQuiz,
 }: {
   words: SavedWord[];
   stats: DeckStats;
   reviewedToday: number;
   onStart: (reviewAhead: boolean) => void;
+  onQuiz: () => void;
 }) {
   const due = stats.dueCount;
   const todayTarget = due + reviewedToday;
@@ -622,9 +653,12 @@ function BelajarTab({
       {/* Progres penguasaan */}
       <div>
         <div className="flex items-center justify-between">
-          <span className="text-[13px]" style={{ color: SUB }}>
-            {stats.masteredCount} dari {stats.total} sudah dikuasai
-          </span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[13px]" style={{ color: SUB }}>
+              {stats.masteredCount} dari {stats.total} sudah dikuasai
+            </span>
+            <MasteryInfo />
+          </div>
           <span className="text-[13px] font-bold" style={{ color: "#7FE0E0" }}>
             {masteredPct}%
           </span>
@@ -640,6 +674,22 @@ function BelajarTab({
         <StageTile value={stats.learningCount} label="Belajar" color={ORANGE} />
         <StageTile value={stats.masteredCount} label="Dikuasai" color={TEAL} />
       </div>
+
+      {/* Main Kuis — gamifikasi hafalan arti kata */}
+      <button
+        onClick={onQuiz}
+        className="flex w-full items-center gap-3 rounded-2xl p-4 text-left transition-transform hover:scale-[1.01]"
+        style={{ background: `linear-gradient(135deg,${PURPLE},#5B4BC4)` }}
+      >
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/20">
+          <Zap className="h-5 w-5 text-white" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[15px] font-extrabold text-white">Main Kuis Arti Kata</p>
+          <p className="text-[12px] text-white/80">Tebak arti lawan waktu — poin, streak &amp; efek suara</p>
+        </div>
+        <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
+      </button>
       </div>
 
       {/* Daftar kata */}
@@ -811,11 +861,13 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
 function DoneScreen({
   cards,
   accuracy,
+  masteredWords,
   onDone,
   onReplay,
 }: {
   cards: number;
   accuracy: number;
+  masteredWords: string[];
   onDone: () => void;
   onReplay: () => void;
 }) {
@@ -828,6 +880,28 @@ function DoneScreen({
       <p className="mt-2 text-[15px]" style={{ color: SUB }}>
         Kerja bagus — kamu mereview {cards} kartu.
       </p>
+
+      {/* Feedback penguasaan — jawaban langsung atas "kapan kata jadi Dikuasai?". */}
+      {masteredWords.length > 0 ? (
+        <div
+          className="mt-5 flex w-full max-w-sm items-start gap-2.5 rounded-2xl px-4 py-3 text-left"
+          style={{ backgroundColor: `${TEAL}1c`, border: `1px solid ${TEAL}55` }}
+        >
+          <PartyPopper className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#7FE0E0" }} />
+          <p className="text-[13px] leading-snug text-white">
+            <span className="font-bold">{masteredWords.length} kata naik jadi “Dikuasai”</span>
+            {": "}
+            <span style={{ color: "#7FE0E0" }}>{masteredWords.slice(0, 6).join(", ")}</span>
+            {masteredWords.length > 6 ? ` +${masteredWords.length - 6} lagi` : ""}.
+          </p>
+        </div>
+      ) : (
+        <p className="mt-4 max-w-sm text-[12.5px] leading-snug" style={{ color: SUB }}>
+          Belum ada kata baru dikuasai sesi ini. Kata jadi “Dikuasai” setelah beberapa
+          kali kamu nilai “Bagus”/“Mudah” di hari yang berbeda — tiap ulangan benar
+          menjadwalkannya makin jauh sampai jaraknya mencapai {MASTERED_INTERVAL_DAYS} hari.
+        </p>
+      )}
 
       <div
         className="mt-8 flex w-full max-w-sm items-center justify-around rounded-3xl px-4 py-5"
@@ -1217,6 +1291,49 @@ function LangSelect({
         </>
       )}
     </div>
+  );
+}
+
+// Penjelasan cara kerja indikator "Dikuasai" — popover kecil di sebelah angka
+// penguasaan. Menjawab kebingungan umum: "sudah beberapa kali review tapi Dikuasai
+// tetap 0". Kuncinya interval SRS dihitung dalam HARI, jadi review berkali-kali di
+// hari yang sama tak mempercepat (kartu belum jatuh tempo lagi).
+function MasteryInfo() {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-flex">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        onBlur={() => setOpen(false)}
+        aria-label="Cara kerja indikator Dikuasai"
+        className="rounded-full p-0.5 transition-colors hover:bg-white/10"
+      >
+        <Info className="h-3.5 w-3.5" style={{ color: SUB }} />
+      </button>
+      {open && (
+        <div
+          className="absolute left-0 top-6 z-20 w-72 rounded-2xl p-3.5 text-left shadow-xl"
+          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        >
+          <p className="text-[12.5px] font-bold text-white">Cara sebuah kata jadi “Dikuasai”</p>
+          <p className="mt-1.5 text-[12px] leading-relaxed" style={{ color: SUB }}>
+            Tiap kali kamu menilai kartu <b className="text-white">“Bagus”</b> atau{" "}
+            <b className="text-white">“Mudah”</b> saat review, jadwal munculnya kembali
+            makin jauh (1 hari → beberapa hari → berminggu-minggu). Begitu jaraknya
+            mencapai <b style={{ color: "#7FE0E0" }}>{MASTERED_INTERVAL_DAYS} hari</b>, kata
+            itu dihitung <b style={{ color: "#7FE0E0" }}>Dikuasai</b>.
+          </p>
+          <p className="mt-2 text-[12px] leading-relaxed" style={{ color: SUB }}>
+            Jaraknya dihitung dalam <b className="text-white">hari</b>, jadi mengulang kata
+            yang sama berkali-kali <b className="text-white">di hari yang sama tak
+            mempercepat</b> — kartu baru jatuh tempo lagi setelah jaraknya lewat.
+            Butuh beberapa hari review benar yang konsisten. Nilai{" "}
+            <b style={{ color: RED }}>“Lagi”</b> mengembalikannya ke awal.
+          </p>
+        </div>
+      )}
+    </span>
   );
 }
 
