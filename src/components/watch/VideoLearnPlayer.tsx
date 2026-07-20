@@ -611,13 +611,18 @@ export default function VideoLearnPlayer({
   // Hanya berjalan saat jeda DISENGAJA (bukan hover-baca subtitle); begitu diputar
   // lagi atau hover-pause, layar diam langsung disembunyikan & timer direset.
   useEffect(() => {
-    if (playing || hoverPaused) {
+    // [watch-idle-hold-tooltip-v1] Saat balon arti kata (anchor) atau drawer Analisa
+    // terbuka, JANGAN masuk layar diam — siswa sedang belajar & subtitle harus tetap
+    // tampil (bukan ketutup thumbnail besar). Selaras dgn guard overlay tengah yang
+    // juga `!anchor && !anyDrawerOpen`. Tutup tooltip/drawer → efek re-run, timer 5 dtk
+    // arm lagi (layar diam muncul normal kalau jeda diteruskan).
+    if (playing || hoverPaused || anchor || anyDrawerOpen) {
       setIdlePaused(false);
       return;
     }
     const t = window.setTimeout(() => setIdlePaused(true), 5000);
     return () => window.clearTimeout(t);
-  }, [playing, hoverPaused]);
+  }, [playing, hoverPaused, anchor, anyDrawerOpen]);
   const panelBeforeStudyRef = useRef<boolean | null>(null);
   // useLayoutEffect (bukan useEffect) supaya sembunyi/tampil transkrip terjadi SEBELUM
   // browser melukis. Kalau useEffect: render pembuka drawer sudah memasang padding

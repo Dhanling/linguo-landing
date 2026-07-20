@@ -19,7 +19,8 @@ import {
 import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 // Elemen render bersama dengan drawer kata (chat kaya, kartu section, tab, ikon).
-import { AnswerSkeleton, IconBtn, RichText, Section, TabBtn } from "./WordStudy";
+import WordStudy, { AnswerSkeleton, IconBtn, RichText, Section, stripGuillemets, TabBtn, WordTapHandler } from "./WordStudy";
+import ExplanationWordTip from "./ExplanationWordTip";
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#0A6060";
@@ -60,6 +61,14 @@ export default function SentenceStudy({
 }) {
   const lang = getImmersionLang(langCode);
   const [tab, setTab] = useState<"study" | "ask">("study");
+
+  // [watch-explain-word-tip-v1] Kata target di-tap di teks penjelasan → balon arti;
+  // `subWord` = kata "Analisa" dari balon → buka drawer WordStudy di atasnya.
+  const [wordTip, setWordTip] = useState<{ word: string; x: number; y: number; id: number } | null>(null);
+  const [subWord, setSubWord] = useState<string | null>(null);
+  const onExplainWordTap = useCallback<WordTapHandler>((w, e) => {
+    setWordTip({ word: w, x: e.clientX, y: e.clientY, id: Date.now() });
+  }, []);
 
   const [deep, setDeep] = useState<SentenceDeepDive | null>(null);
   const [loading, setLoading] = useState(true);
@@ -201,7 +210,7 @@ export default function SentenceStudy({
           {tab === "study" ? (
             <StudyTab loading={loading} errored={errored} deep={deep} langCode={langCode} onAsk={ask} />
           ) : (
-            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} />
+            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
           )}
         </div>
       </div>
@@ -231,6 +240,36 @@ export default function SentenceStudy({
         </div>
       )}
     </div>
+
+    {/* [watch-explain-word-tip-v1] Balon arti kata target yang di-tap di penjelasan —
+        di LUAR drawer (drawer ber-transform → containing block untuk fixed). */}
+    {wordTip && (
+      <ExplanationWordTip
+        key={wordTip.id}
+        word={wordTip.word}
+        sentence={sentence}
+        langCode={langCode}
+        baseCode={baseCode}
+        x={wordTip.x}
+        y={wordTip.y}
+        onClose={() => setWordTip(null)}
+        onAnalyze={(w) => {
+          setWordTip(null);
+          setSubWord(w);
+        }}
+      />
+    )}
+
+    {/* Analisa kata dari balon → drawer WordStudy di atas drawer kalimat. */}
+    {subWord && (
+      <WordStudy
+        word={subWord}
+        sentence={sentence}
+        langCode={langCode}
+        baseCode={baseCode}
+        onClose={() => setSubWord(null)}
+      />
+    )}
     </>
   );
 }
@@ -442,11 +481,13 @@ function AskTab({
   asking,
   onAsk,
   chatEndRef,
+  onWordTap,
 }: {
   chat: ChatMsg[];
   asking: boolean;
   onAsk: (q: string) => void;
   chatEndRef: React.RefObject<HTMLDivElement | null>;
+  onWordTap?: WordTapHandler;
 }) {
   if (chat.length === 0 && !asking) {
     return (
@@ -498,7 +539,7 @@ function AskTab({
               className="max-w-[90%] rounded-2xl rounded-bl-md px-3.5 py-2.5"
               style={{ backgroundColor: CARD }}
             >
-              <RichText text={m.text} />
+              <RichText text={m.text} onWordTap={onWordTap} />
             </div>
           </div>
         )
@@ -514,14 +555,14 @@ function AskTab({
             {lastFollowups.map((f) => (
               <button
                 key={f.q}
-                onClick={() => onAsk(f.q)}
+                onClick={() => onAsk(stripGuillemets(f.q))}
                 className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
                 style={{ backgroundColor: CARD }}
               >
-                <span className="text-[12.5px] font-semibold">{f.q}</span>
+                <span className="text-[12.5px] font-semibold">{stripGuillemets(f.q)}</span>
                 {f.tl && (
                   <span className="text-[11px] italic" style={{ color: "#7FE0E0" }}>
-                    {f.tl}
+                    {stripGuillemets(f.tl)}
                   </span>
                 )}
               </button>

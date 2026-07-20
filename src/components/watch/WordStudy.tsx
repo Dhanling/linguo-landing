@@ -33,6 +33,7 @@ import {
 import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 import WatchUpsellModal from "./WatchUpsellModal";
+import ExplanationWordTip from "./ExplanationWordTip";
 
 const TEAL = "#1A9E9E";
 // Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
@@ -82,6 +83,10 @@ const SUGGESTED = [
 
 type ChatMsg = { role: "user" | "ai"; text: string; followups?: FollowupQ[] };
 
+// [watch-followup-clean-v1] Model kadang membungkus istilah pakai «guillemets» di
+// teks pertanyaan lanjutan — buang tanda kutipnya di chip biar bersih dibaca.
+export const stripGuillemets = (s: string) => s.replace(/[«»]/g, "");
+
 export default function WordStudy({
   word,
   sentence,
@@ -109,6 +114,15 @@ export default function WordStudy({
   const lang = getImmersionLang(langCode);
   const [tab, setTab] = useState<"study" | "ask">("study");
   const [saved, setSaved] = useState(false);
+  // [watch-explain-word-tip-v1] Kata target yang di-tap di teks jawaban AI → balon
+  // arti kecil. `subWord` = kata yang dipilih "Analisa" dari balon → buka WordStudy
+  // baru di atasnya (rekursif; komponen ini me-render dirinya sendiri, bukan import
+  // melingkar). id memastikan tap kata sama berulang tetap membuka balon lagi.
+  const [wordTip, setWordTip] = useState<{ word: string; x: number; y: number; id: number } | null>(null);
+  const [subWord, setSubWord] = useState<string | null>(null);
+  const onExplainWordTap = useCallback<WordTapHandler>((w, e) => {
+    setWordTip({ word: w, x: e.clientX, y: e.clientY, id: Date.now() });
+  }, []);
   // Non-null → modal upsell (kuota simpan gratis habis); angka = jumlah kata tersimpan.
   const [upsellCount, setUpsellCount] = useState<number | null>(null);
 
@@ -299,7 +313,7 @@ export default function WordStudy({
               onAsk={ask}
             />
           ) : (
-            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} />
+            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
           )}
         </div>
       </div>
@@ -330,6 +344,40 @@ export default function WordStudy({
       )}
 
     </div>
+
+    {/* [watch-explain-word-tip-v1] Balon arti kata target yang di-tap di jawaban AI —
+        di LUAR drawer supaya fixed-nya relatif viewport (drawer ber-transform). */}
+    {wordTip && (
+      <ExplanationWordTip
+        key={wordTip.id}
+        word={wordTip.word}
+        sentence={sentence}
+        langCode={langCode}
+        baseCode={baseCode}
+        videoId={videoId}
+        x={wordTip.x}
+        y={wordTip.y}
+        onClose={() => setWordTip(null)}
+        onAnalyze={(w) => {
+          setWordTip(null);
+          setSubWord(w);
+        }}
+        onSavedChange={onSavedChange}
+      />
+    )}
+
+    {/* Analisa kata dari balon → WordStudy baru di atas (rekursi komponen ini). */}
+    {subWord && (
+      <WordStudy
+        word={subWord}
+        sentence={sentence}
+        langCode={langCode}
+        baseCode={baseCode}
+        videoId={videoId}
+        onClose={() => setSubWord(null)}
+        onSavedChange={onSavedChange}
+      />
+    )}
 
     {/* Modal upsell dirender DI LUAR drawer: drawer punya `transform` (animasi geser)
         yang menjadikannya containing-block untuk elemen fixed → kalau di dalam, modal
@@ -614,11 +662,13 @@ function AskTab({
   asking,
   onAsk,
   chatEndRef,
+  onWordTap,
 }: {
   chat: ChatMsg[];
   asking: boolean;
   onAsk: (q: string) => void;
   chatEndRef: React.RefObject<HTMLDivElement | null>;
+  onWordTap?: WordTapHandler;
 }) {
   if (chat.length === 0 && !asking) {
     return (
@@ -672,7 +722,7 @@ function AskTab({
               className="max-w-[90%] rounded-2xl rounded-bl-md px-3.5 py-2.5"
               style={{ backgroundColor: CARD }}
             >
-              <RichText text={m.text} />
+              <RichText text={m.text} onWordTap={onWordTap} />
             </div>
           </div>
         )
@@ -689,14 +739,14 @@ function AskTab({
             {lastFollowups.map((f) => (
               <button
                 key={f.q}
-                onClick={() => onAsk(f.q)}
+                onClick={() => onAsk(stripGuillemets(f.q))}
                 className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
                 style={{ backgroundColor: CARD }}
               >
-                <span className="text-[12.5px] font-semibold">{f.q}</span>
+                <span className="text-[12.5px] font-semibold">{stripGuillemets(f.q)}</span>
                 {f.tl && (
                   <span className="text-[11px] italic" style={{ color: "#7FE0E0" }}>
-                    {f.tl}
+                    {stripGuillemets(f.tl)}
                   </span>
                 )}
               </button>
@@ -795,7 +845,12 @@ function parseRichBlocks(text: string): RichBlock[] {
   return blocks;
 }
 
-export function RichText({ text }: { text: string }) {
+// [watch-explain-word-tip-v1] `onWordTap` opsional: kalau diberi, tiap kata target
+// dalam «guillemets» jadi tombol yang bisa diketuk → host memunculkan balon arti
+// (Simpan · Analisa · TTS). Kalau tidak, kata cuma disorot teal seperti biasa.
+export type WordTapHandler = (word: string, e: React.MouseEvent) => void;
+
+export function RichText({ text, onWordTap }: { text: string; onWordTap?: WordTapHandler }) {
   let blocks = parseRichBlocks(text);
   // Fallback: tabel ditulis inline (tanpa baris baru) → susun ulang lalu parse lagi.
   if (!blocks.some((b) => b.type === "table") && INLINE_SEP_RE.test(text)) {
@@ -805,10 +860,10 @@ export function RichText({ text }: { text: string }) {
     <div className="space-y-2.5 text-[13.5px] leading-relaxed text-white/85">
       {blocks.map((b, i) =>
         b.type === "table" ? (
-          <RichTable key={i} header={b.header} rows={b.rows} />
+          <RichTable key={i} header={b.header} rows={b.rows} onWordTap={onWordTap} />
         ) : (
           <p key={i}>
-            <RichInline text={b.text} />
+            <RichInline text={b.text} onWordTap={onWordTap} />
           </p>
         )
       )}
@@ -817,12 +872,40 @@ export function RichText({ text }: { text: string }) {
 }
 
 // Sorot «kata» (teal) dan **tebal** (markdown) dalam sepotong teks inline.
-function RichInline({ text }: { text: string }) {
+function RichInline({ text, onWordTap }: { text: string; onWordTap?: WordTapHandler }) {
   const parts = text.split(/(«[^»]*»(?:\s*\([^)]*\))?|\*\*[^*]+\*\*)/g);
   return (
     <>
       {parts.map((p, i) => {
         if (p.startsWith("«")) {
+          // Pisahkan kata target (dalam «») dari gloss dalam kurung — hanya kata
+          // target yang bisa diketuk; gloss ikut teal tapi tak interaktif.
+          const m = p.match(/^«([^»]*)»(\s*\([^)]*\))?/);
+          const inner = (m?.[1] ?? p.replace(/[«»]/g, "")).trim();
+          const paren = m?.[2] ?? "";
+          if (onWordTap && inner) {
+            return (
+              <span key={i}>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onWordTap(inner, e);
+                  }}
+                  className="font-bold underline decoration-dotted underline-offset-2 transition-colors hover:text-white"
+                  style={{ color: "#7FE0E0" }}
+                  dir="auto"
+                >
+                  {inner}
+                </button>
+                {paren && (
+                  <span className="font-bold" style={{ color: "#7FE0E0" }}>
+                    {paren}
+                  </span>
+                )}
+              </span>
+            );
+          }
           return (
             <span key={i} className="font-bold" style={{ color: "#7FE0E0" }}>
               {p.replace(/[«»]/g, "")}
@@ -843,7 +926,7 @@ function RichInline({ text }: { text: string }) {
 }
 
 // Tabel markdown dari jawaban AI — gaya samakan dengan ConjugationTable.
-function RichTable({ header, rows }: { header: string[]; rows: string[][] }) {
+function RichTable({ header, rows, onWordTap }: { header: string[]; rows: string[][]; onWordTap?: WordTapHandler }) {
   return (
     <div className="-mx-1 overflow-x-auto">
       <table className="w-full border-collapse text-left">
@@ -854,7 +937,7 @@ function RichTable({ header, rows }: { header: string[]; rows: string[][] }) {
                 key={i}
                 className="px-2 py-1.5 text-[10.5px] font-bold uppercase tracking-wide"
               >
-                <RichInline text={h} />
+                <RichInline text={h} onWordTap={onWordTap} />
               </th>
             ))}
           </tr>
@@ -867,7 +950,7 @@ function RichTable({ header, rows }: { header: string[]; rows: string[][] }) {
                   key={ci}
                   className="px-2 py-2 align-top text-[12.5px] text-white/80"
                 >
-                  <RichInline text={c} />
+                  <RichInline text={c} onWordTap={onWordTap} />
                 </td>
               ))}
             </tr>
