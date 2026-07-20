@@ -129,6 +129,27 @@ body { animation: pageEnter 0.5s ease-out both; }
   .wl-skeleton { animation: none; }
 }
 
+/* Watch & Learn layar diam ala Netflix — muncul mulus (fade + zoom halus) saat
+   video dijeda > 5 detik. Dipakai overlay thumbnail besar + judul. */
+@keyframes wlIdleIn {
+  from { opacity: 0; transform: scale(1.015); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.wl-idle-in { animation: wlIdleIn 420ms ease-out both; }
+
+/* Bar progres looping di tombol "Lanjut menonton" — sapuan teal tumbuh kiri→kanan
+   berulang, memberi kesan hidup (indeterminate) tanpa arti progres sebenarnya. */
+@keyframes wlIdleBar {
+  0%   { transform: scaleX(0); opacity: 0.35; }
+  50%  { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 0.35; }
+}
+.wl-idle-bar { transform-origin: left center; animation: wlIdleBar 2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .wl-idle-in { animation: none; }
+  .wl-idle-bar { animation: none; transform: scaleX(1); }
+}
+
 /* Watch & Learn seek slider — netral (tanpa warna aksen), fill putih dengan
    penanda posisi berupa lingkaran. Panjang fill dikendalikan --pct dari React. */
 .watch-seek {

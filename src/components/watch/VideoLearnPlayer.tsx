@@ -589,7 +589,16 @@ export default function VideoLearnPlayer({
   // itu memang dibuka untuk dibaca berlama-lama, tak ikut tertutup saat video jalan.
   useEffect(() => {
     if (playing && !wordStudyOpenRef.current) setAnchor(null);
-  }, [playing]);
+    // [watch-idle-rearm-v1] Sembuhkan hoverPaused yang bisa NYANGKUT true bila
+    // subtitle ke-unmount saat kursor masih di atasnya (onSubtitleLeave tak pernah
+    // terpanggil). Kalau nyangkut, jeda BERIKUTNYA dikira hover-baca → layar diam
+    // ala Netflix tak pernah muncul lagi (bug "pause kedua"). Begitu video jalan,
+    // status hover PASTI sudah tak relevan → reset ref & state.
+    if (playing) {
+      hoverPausedRef.current = false;
+      if (hoverPaused) setHoverPaused(false);
+    }
+  }, [playing, hoverPaused]);
   // [watch-idle-thumb-v1] Timer 5 detik untuk memunculkan layar diam ala Netflix.
   // Hanya berjalan saat jeda DISENGAJA (bukan hover-baca subtitle); begitu diputar
   // lagi atau hover-pause, layar diam langsung disembunyikan & timer direset.
@@ -2248,7 +2257,7 @@ export default function VideoLearnPlayer({
                       type="button"
                       onClick={togglePlay}
                       aria-label="Lanjut menonton"
-                      className="group/idle absolute inset-0 z-[6] cursor-pointer overflow-hidden text-left"
+                      className="group/idle wl-idle-in absolute inset-0 z-[6] cursor-pointer overflow-hidden text-left"
                     >
                       {/* [watch-idle-thumb-hires-v1] Layar besar → pakai maxresdefault
                           (1280×720) biar tajam saat di-stretch fullscreen; hqdefault
@@ -2281,8 +2290,16 @@ export default function VideoLearnPlayer({
                             <span className="text-[13px] font-semibold text-white/75">{video.channel}</span>
                           )}
                         </span>
-                        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-[14px] font-bold text-black transition-transform group-hover/idle:scale-105">
-                          <Play className="h-4 w-4" fill="currentColor" /> Lanjut menonton
+                        <span className="relative inline-flex w-fit items-center gap-2 overflow-hidden rounded-full bg-white px-5 py-2 text-[14px] font-bold text-black transition-transform group-hover/idle:scale-105">
+                          <Play className="relative z-10 h-4 w-4" fill="currentColor" />
+                          <span className="relative z-10">Lanjut menonton</span>
+                          {/* Bar progres looping kiri→kanan (indeterminate) — garis teal
+                              tipis di dasar pill yang tumbuh berulang biar tombol "hidup". */}
+                          <span
+                            aria-hidden
+                            className="wl-idle-bar absolute inset-x-0 bottom-0 h-[3px] rounded-full"
+                            style={{ backgroundColor: TEAL }}
+                          />
                         </span>
                       </span>
                     </button>
@@ -3128,7 +3145,17 @@ export default function VideoLearnPlayer({
           fallback: buka analisa kata terakhir / panel riwayat. Sembunyi saat
           miniplayer (pojok itu dipakai kotak video) atau saat drawer sudah buka. */}
       {!mini && !anyDrawerOpen && (
-        <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end sm:bottom-6 sm:right-6">
+        <div
+          className={`fixed bottom-4 right-4 z-[70] flex flex-col items-end transition-all duration-300 sm:bottom-6 sm:right-6 ${
+            // Auto-hide saat layar diam ala Netflix aktif — pojok itu jadi bersih,
+            // fokus ke thumbnail + tombol Lanjut menonton. Muncul mulus lagi begitu
+            // diputar. (historyOpen dikecualikan biar panel yang lagi dibuka tak
+            // tiba-tiba lenyap.)
+            idlePaused && !historyOpen
+              ? "pointer-events-none translate-y-3 opacity-0"
+              : "translate-y-0 opacity-100"
+          }`}
+        >
           {historyOpen && (
             <div
               className="mb-3 flex max-h-[min(60vh,26rem)] w-[min(20rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl shadow-2xl"
