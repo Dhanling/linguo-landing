@@ -3735,10 +3735,12 @@ type KaraokeState = "sung" | "active" | "future";
 // disandarkan ke anchor timing asli video — penundaan 0.5s jadi over-koreksi dan bikin
 // sorotan kata malah TELAT ~0.5s di hampir semua video (dulu ditambal manual dgn geser
 // sinkron +0.50s tiap video). Sempat dinolkan, tapi sapuan masih terasa NGEKOR audio.
-// [watch-karaoke-lag-v3] Dimajukan 0.5s (lag negatif → evaluasi frac di time+0.5s)
-// supaya sapuan kata memimpin/pas audio secara global untuk semua video & bahasa.
-// Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif tetap pakai syncedTime.
-const KARAOKE_LAG_SEC = -0.5;
+// [watch-karaoke-lag-v3] Dimajukan (lag negatif → evaluasi frac di time+|lag|s) supaya
+// sapuan kata memimpin/pas audio secara global untuk semua video & bahasa. -0.5s masih
+// terasa ngekor (getCurrentTime YouTube sendiri sedikit telat dari audio nyata), jadi
+// dinaikkan ke -0.8s. Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif
+// tetap pakai syncedTime.
+const KARAOKE_LAG_SEC = -0.8;
 
 function karaokeTokens(
   cue: LearnCue,
