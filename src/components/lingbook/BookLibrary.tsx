@@ -3,8 +3,10 @@
 // [lingbook-phase1-v1] Library Lingbook — grid buku. Klik buku → bab "sekarang"
 // (status "now") atau bab pertama. Dipakai di dalam StudentShell (/akun/lingbook).
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BOOKS, type Book } from "@/data/lingbook";
+import { loadBooks } from "@/data/lingbook/remote";
 import { BookOpen } from "lucide-react";
 
 function firstChapterSlug(book: Book): string {
@@ -18,6 +20,14 @@ function progressOf(book: Book): { done: number; total: number } {
 }
 
 export default function BookLibrary() {
+  // Paint instan dari file, lalu override dgn data CMS (Supabase) bila ada.
+  const [books, setBooks] = useState<Book[]>(BOOKS);
+  useEffect(() => {
+    let alive = true;
+    loadBooks().then((b) => { if (alive && b.length) setBooks(b); });
+    return () => { alive = false; };
+  }, []);
+
   return (
     <div>
       <header className="mb-6">
@@ -28,7 +38,7 @@ export default function BookLibrary() {
       </header>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        {BOOKS.map((book) => {
+        {books.map((book) => {
           const slug = firstChapterSlug(book);
           const { done, total } = progressOf(book);
           const pct = total ? Math.round((done / total) * 100) : 0;

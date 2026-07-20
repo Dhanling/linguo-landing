@@ -4,7 +4,7 @@
 // + layar hasil). Semua state jawaban di React state, skor dihitung lokal.
 import { useEffect, useState } from "react";
 import type { Exercise, TestQuestion } from "@/data/lingbook";
-import { TEAL, DARK } from "./theme";
+import { TEAL } from "./theme";
 
 // ── util style ──
 const feedbackBox = (ok: boolean, warn: boolean): React.CSSProperties => ({
@@ -36,7 +36,7 @@ const BADGES: Record<Exercise["type"], string> = {
 };
 
 function chip(readFont: string): React.CSSProperties {
-  return { padding: "9px 16px", borderRadius: 11, border: "1.5px solid #D5E6E3", background: "#FFFFFF", fontFamily: readFont, fontSize: 16, color: DARK, cursor: "pointer", fontWeight: 600 };
+  return { padding: "9px 16px", borderRadius: 11, border: "1.5px solid var(--lb-line)", background: "var(--lb-surface)", fontFamily: readFont, fontSize: 16, color: "var(--lb-ink)", cursor: "pointer", fontWeight: 600 };
 }
 
 function Feedback({ ok, warn, title, text }: { ok: boolean; warn: boolean; title: string; text: string }) {
@@ -73,23 +73,23 @@ function ExerciseCard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [st.done, st.ok]);
   const cardStyle: React.CSSProperties = {
-    background: "#FFFFFF",
-    border: done ? `1.5px solid ${st.ok ? "#9CCB8E" : "#E8B4A5"}` : "1px solid #E3EEEC",
+    background: "var(--lb-surface)",
+    border: done ? `1.5px solid ${st.ok ? "#9CCB8E" : "#E8B4A5"}` : "1px solid var(--lb-line)",
     borderRadius: 16,
     padding: "18px 20px",
     marginBottom: 14,
   };
-  const qStyle: React.CSSProperties = { fontSize: 19, fontWeight: 700, color: DARK, lineHeight: 1.6, fontFamily: isCjk ? readFont : "inherit" };
+  const qStyle: React.CSSProperties = { fontSize: 19, fontWeight: 700, color: "var(--lb-ink)", lineHeight: 1.6, fontFamily: isCjk ? readFont : "inherit" };
 
   return (
     <div style={cardStyle}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-        <span style={{ fontSize: 12, fontWeight: 800, color: "#8AA3A0" }}>SOAL {n}</span>
-        <span style={{ padding: "3px 9px", borderRadius: 999, background: "#EFF6F5", color: "#5A7A78", fontSize: 10.5, fontWeight: 800, letterSpacing: ".05em" }}>{BADGES[ex.type]}</span>
+        <span style={{ fontSize: 12, fontWeight: 800, color: "var(--lb-ink-4)" }}>SOAL {n}</span>
+        <span style={{ padding: "3px 9px", borderRadius: 999, background: "var(--lb-soft)", color: "var(--lb-ink-3)", fontSize: 10.5, fontWeight: 800, letterSpacing: ".05em" }}>{BADGES[ex.type]}</span>
       </div>
 
       {"q" in ex && ex.q && <div style={qStyle}>{ex.q}</div>}
-      {ex.qTrans && <div style={{ fontSize: 12.5, color: "#8AA3A0", marginTop: 2, marginBottom: 10 }}>{ex.qTrans}</div>}
+      {ex.qTrans && <div style={{ fontSize: 12.5, color: "var(--lb-ink-4)", marginTop: 2, marginBottom: 10 }}>{ex.qTrans}</div>}
 
       {/* Pilihan ganda / isian partikel */}
       {(ex.type === "mc" || ex.type === "fill") && (
@@ -99,7 +99,7 @@ function ExerciseCard({
             const style = { ...chip(readFont) };
             if (done && oi === ex.ans) { style.background = "#E4F3DF"; style.borderColor = "#9CCB8E"; }
             else if (done && sel) { style.background = "#FCE8E4"; style.borderColor = "#E8B4A5"; }
-            else if (sel) { style.background = "#DFF1EF"; style.borderColor = TEAL; }
+            else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; }
             return (
               <button key={oi} onClick={() => setSt({ sel: oi, done: true, ok: oi === ex.ans })} style={style}>{op}</button>
             );
@@ -142,7 +142,7 @@ function MatchGrid({ ex, st, setSt, readFont }: { ex: Extract<Exercise, { type: 
           const sel = st.sel === li;
           const style = { ...chip(readFont), textAlign: "center" as const };
           if (matched) { style.background = "#E4F3DF"; style.borderColor = "#9CCB8E"; style.cursor = "default"; }
-          else if (sel) { style.background = "#DFF1EF"; style.borderColor = TEAL; }
+          else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; }
           return <button key={li} onClick={() => { if (!matched) setSt({ sel: li }); }} style={style}>{p[0]}</button>;
         })}
       </div>
@@ -183,13 +183,13 @@ function OrderBuilder({ ex, st, setSt, readFont, done }: { ex: Extract<Exercise,
   const canCheck = picked.length === ex.words.length && !done;
   return (
     <>
-      <div style={{ minHeight: 52, background: "#F7FAFA", border: "1.5px dashed #C9DEDB", borderRadius: 12, padding: 10, display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginTop: 10 }}>
+      <div style={{ minHeight: 52, background: "var(--lb-surface-2)", border: "1.5px dashed var(--lb-line)", borderRadius: 12, padding: 10, display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginTop: 10 }}>
         {picked.length === 0 && <span style={{ fontSize: 13, color: "#9AB4B1" }}>Tap kata di bawah untuk menyusun kalimat…</span>}
         {picked.map((wi, pi) => (
           <button
             key={pi}
             onClick={() => { if (done) { setSt({ picked: [], done: false, ok: false }); } else setSt({ picked: picked.filter((_, xi) => xi !== pi) }); }}
-            style={{ ...chip(readFont), background: "#DFF1EF", borderColor: TEAL }}
+            style={{ ...chip(readFont), background: "var(--lb-active)", borderColor: TEAL }}
           >
             {ex.words[wi]}
           </button>
@@ -228,8 +228,8 @@ export function LatihanSection({
     <div>
       <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 20 }}>
         <div>
-          <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: 0 }}>Latihan</h2>
-          <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 2 }}>Feedback instan per soal</div>
+          <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--lb-ink)", margin: 0 }}>Latihan</h2>
+          <div style={{ fontSize: 13, color: "var(--lb-ink-4)", marginTop: 2 }}>Feedback instan per soal</div>
         </div>
         <span style={{ fontSize: 13, fontWeight: 800, color: TEAL }}>{doneN} / {exercises.length} selesai</span>
       </div>
@@ -271,20 +271,20 @@ export function TestSection({
 
   return (
     <div>
-      <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: "0 0 4px 0" }}>Test Yourself</h2>
-      <div style={{ fontSize: 13, color: "#8AA3A0", marginBottom: 20 }}>Mini-quiz akhir unit — {test.length} soal. Bisa dilewati, tapi akan ditandai.</div>
+      <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--lb-ink)", margin: "0 0 4px 0" }}>Test Yourself</h2>
+      <div style={{ fontSize: 13, color: "var(--lb-ink-4)", marginBottom: 20 }}>Mini-quiz akhir unit — {test.length} soal. Bisa dilewati, tapi akan ditandai.</div>
 
       {!scored && (
         <>
           {test.map((tq, i) => (
-            <div key={i} style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: "18px 20px", marginBottom: 12 }}>
-              <div style={{ fontSize: 12, fontWeight: 800, color: "#8AA3A0", marginBottom: 8 }}>{i + 1} / {test.length}</div>
-              <div style={{ fontSize: 17, fontWeight: 700, color: DARK, lineHeight: 1.6, ...jpUi }}>{tq.q}</div>
+            <div key={i} style={{ background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 16, padding: "18px 20px", marginBottom: 12 }}>
+              <div style={{ fontSize: 12, fontWeight: 800, color: "var(--lb-ink-4)", marginBottom: 8 }}>{i + 1} / {test.length}</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: "var(--lb-ink)", lineHeight: 1.6, ...jpUi }}>{tq.q}</div>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
                 {tq.opts.map((op, oi) => {
                   const sel = ans[i] === oi;
                   const style = { ...chip(readFont) };
-                  if (sel) { style.background = "#DFF1EF"; style.borderColor = TEAL; }
+                  if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; }
                   return <button key={oi} onClick={() => setAns((prev) => ({ ...prev, [i]: oi }))} style={style}>{op}</button>;
                 })}
               </div>
@@ -293,31 +293,31 @@ export function TestSection({
           <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
             <button
               onClick={() => allAnswered && setScored(true)}
-              style={{ flex: 1, padding: 14, borderRadius: 13, border: "none", background: allAnswered ? TEAL : "#C9DEDB", color: "#FFFFFF", fontFamily: "inherit", fontSize: 14.5, fontWeight: 800, cursor: allAnswered ? "pointer" : "default", boxShadow: allAnswered ? "0 6px 16px rgba(26,158,158,.3)" : "none" }}
+              style={{ flex: 1, padding: 14, borderRadius: 13, border: "none", background: allAnswered ? TEAL : "var(--lb-line)", color: "#FFFFFF", fontFamily: "inherit", fontSize: 14.5, fontWeight: 800, cursor: allAnswered ? "pointer" : "default", boxShadow: allAnswered ? "0 6px 16px rgba(26,158,158,.3)" : "none" }}
             >
               Kumpulkan jawaban
             </button>
-            <button onClick={onSkip} style={{ padding: "14px 18px", borderRadius: 13, border: "1px solid #D5E6E3", background: "#FFFFFF", color: "#5A7A78", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>Lewati</button>
+            <button onClick={onSkip} style={{ padding: "14px 18px", borderRadius: 13, border: "1px solid var(--lb-line)", background: "var(--lb-surface)", color: "var(--lb-ink-3)", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer" }}>Lewati</button>
           </div>
         </>
       )}
 
       {scored && (
         <>
-          <div style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 18, padding: 26, textAlign: "center", marginBottom: 16 }}>
+          <div style={{ background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 18, padding: 26, textAlign: "center", marginBottom: 16 }}>
             <div style={{ width: 96, height: 96, borderRadius: "50%", margin: "0 auto", display: "grid", placeItems: "center", fontSize: 26, fontWeight: 800, color: "#FFFFFF", background: pct >= 80 ? TEAL : pct >= 60 ? "#D9A13B" : "#C96F55", animation: "lbCheckPop .45s ease" }}>{pct}%</div>
-            <div style={{ fontWeight: 800, fontSize: 18, color: DARK, marginTop: 14 }}>{pct >= 80 ? "Hebat, kamu siap lanjut!" : pct >= 60 ? "Lumayan — masih ada celah" : "Perlu review dulu"}</div>
-            <div style={{ fontSize: 13.5, color: "#5A7A78", marginTop: 4 }}>{correctN} dari {test.length} soal benar</div>
-            <button onClick={() => { setScored(false); setAns({}); }} style={{ marginTop: 14, padding: "10px 18px", borderRadius: 11, border: "1px solid #D5E6E3", background: "#FFFFFF", color: "#33565C", fontFamily: "inherit", fontSize: 13, fontWeight: 800, cursor: "pointer" }}>Coba lagi</button>
+            <div style={{ fontWeight: 800, fontSize: 18, color: "var(--lb-ink)", marginTop: 14 }}>{pct >= 80 ? "Hebat, kamu siap lanjut!" : pct >= 60 ? "Lumayan — masih ada celah" : "Perlu review dulu"}</div>
+            <div style={{ fontSize: 13.5, color: "var(--lb-ink-3)", marginTop: 4 }}>{correctN} dari {test.length} soal benar</div>
+            <button onClick={() => { setScored(false); setAns({}); }} style={{ marginTop: 14, padding: "10px 18px", borderRadius: 11, border: "1px solid var(--lb-line)", background: "var(--lb-surface)", color: "var(--lb-ink-2)", fontFamily: "inherit", fontSize: 13, fontWeight: 800, cursor: "pointer" }}>Coba lagi</button>
           </div>
           {test.map((tq, i) => {
             const ok = ans[i] === tq.ans;
             return (
-              <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 13, padding: "13px 16px", marginBottom: 8 }}>
+              <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 13, padding: "13px 16px", marginBottom: 8 }}>
                 <span style={{ fontSize: 14, flex: "none" }}>{ok ? "✅" : "❌"}</span>
                 <div style={{ minWidth: 0 }}>
-                  <div style={{ fontSize: 14.5, fontWeight: 700, color: DARK, ...jpUi }}>{tq.q}</div>
-                  <div style={{ fontSize: 12.5, color: "#5A7A78", marginTop: 2 }}>{ok ? `Benar — ${tq.topic}` : `Jawaban benar: ${tq.opts[tq.ans]} · topik: ${tq.topic}`}</div>
+                  <div style={{ fontSize: 14.5, fontWeight: 700, color: "var(--lb-ink)", ...jpUi }}>{tq.q}</div>
+                  <div style={{ fontSize: 12.5, color: "var(--lb-ink-3)", marginTop: 2 }}>{ok ? `Benar — ${tq.topic}` : `Jawaban benar: ${tq.opts[tq.ans]} · topik: ${tq.topic}`}</div>
                 </div>
               </div>
             );

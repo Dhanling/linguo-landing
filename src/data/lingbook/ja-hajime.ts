@@ -1,5 +1,7 @@
-// [lingbook-phase1-v1] Buku demo Jepang — 1 bab penuh ("カフェで" / Di Kafe).
+// [lingbook-phase1-v1] Buku demo Jepang — bab penuh: Unit 1 ("はじめまして")
+// dan Unit 3 ("カフェで" / Di Kafe).
 import type { Book, Chapter, Token, Word } from "./types";
+import { hajimemashiteChapter } from "./ja-hajimemashite";
 
 const glossary: Record<string, Word> = {
   kyou: { surface: "今日", reading: "きょう", romaji: "kyō", meaning: "hari ini", pos: "nomina", grammar: { Jenis: "kata keterangan waktu", Peran: "keterangan waktu" } },
@@ -202,5 +204,5 @@ export const jaHajime: Book = {
     { slug: "ryokou", title: "旅行の計画", subtitle: "Rencana liburan", duration: "12 mnt", status: "" },
     { slug: "omoide", title: "一年の思い出", subtitle: "Kenangan setahun", duration: "13 mnt", status: "" },
   ],
-  chapters: [chapter],
+  chapters: [hajimemashiteChapter, chapter],
 };

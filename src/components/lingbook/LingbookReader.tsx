@@ -38,7 +38,7 @@ const MD = 768;
 // Warna badge kelas kata (bg, teks).
 function posTheme(pos: string): [string, string] {
   const m: Record<string, [string, string]> = {
-    verba: ["#DDF1EE", "#0B7570"],
+    verba: ["#DDF1EE", "var(--lb-teal-ink)"],
     nomina: ["#E1EDF8", "#2A6CA8"],
     partikel: ["#ECE8F9", "#6B54C8"],
     ungkapan: ["#FBF0DB", "#9A6B14"],
@@ -178,7 +178,7 @@ function AudioPlayerBlock({
   block: AudioBlock;
   glossary: Record<string, Word>;
   book: Book;
-  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "dark" | "style">;
+  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "style">;
 }) {
   const [playing, setPlaying] = useState(false);
   const [prog, setProg] = useState(0);
@@ -324,6 +324,24 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const [isDone, setIsDone] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [prog, setProg] = useState(4);
+  const [dark, setDark] = useState(false);
+
+  // Preferensi mode gelap — persist per-perangkat, default ikut sistem.
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("lingbook-dark");
+      if (saved === "1") setDark(true);
+      else if (saved === "0") setDark(false);
+      else if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) setDark(true);
+    } catch { /* no-op */ }
+  }, []);
+  const toggleDark = useCallback(() => {
+    setDark((v) => {
+      const nx = !v;
+      try { localStorage.setItem("lingbook-dark", nx ? "1" : "0"); } catch { /* no-op */ }
+      return nx;
+    });
+  }, []);
 
   // ── Unit mode (phase 2) — stepper + progress per section ──
   const steps = chapter.steps ?? [];
@@ -520,7 +538,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const sizes = isCjk ? [19, 22, 26] : [17.5, 20, 23];
   const fpx = sizes[fs];
   const lh = isCjk ? (furigana || romaji ? 2.25 : 1.95) : 1.8;
-  const readerStyle: React.CSSProperties = { fontFamily: readFont, fontSize: fpx, lineHeight: lh, color: "#1E3A40", margin: 0 };
+  const readerStyle: React.CSSProperties = { fontFamily: readFont, fontSize: fpx, lineHeight: lh, color: "var(--lb-ink)", margin: 0 };
 
   const tokenTextProps = {
     glossary,
@@ -532,6 +550,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
     clicked,
     selKey: sel?.key ?? null,
     onWord: openCard,
+    dark,
   };
 
   const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
@@ -567,7 +586,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
         style={{
           width: "100%", padding: 15, borderRadius: 13,
           border: isDone ? `1.5px solid ${TEAL}` : "none",
-          background: isDone ? "#DFF1EF" : TEAL, color: isDone ? "#0B7570" : "#FFFFFF",
+          background: isDone ? "var(--lb-active)" : TEAL, color: isDone ? "var(--lb-teal-ink)" : "#FFFFFF",
           fontFamily: "inherit", fontSize: 15.5, fontWeight: 800, cursor: "pointer",
           boxShadow: isDone ? "none" : "0 6px 16px rgba(26,158,158,.3)",
         }}
@@ -591,12 +610,27 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   };
 
   return (
-    <div style={{ display: "flex", height: "100dvh", overflow: "hidden", background: "#F6FAF9", fontFamily: "var(--font-jakarta), 'Plus Jakarta Sans', sans-serif", color: DARK }}>
+    <div className="lb-root" data-lb-theme={dark ? "dark" : "light"} style={{ display: "flex", height: "100dvh", overflow: "hidden", background: "var(--lb-bg)", fontFamily: "var(--font-jakarta), 'Plus Jakarta Sans', sans-serif", color: "var(--lb-ink)" }}>
       {/* Font baca + hover kata — dimuat khusus reader */}
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" />
       <style>{`
-        .lb-word:hover{background:#DCEFED !important;}
+        .lb-root{
+          --lb-bg:#f6faf9; --lb-surface:#ffffff; --lb-surface-2:#fbfdfd;
+          --lb-soft:#e4f2f1; --lb-active:#dff1ef; --lb-trans:#eaf5f4;
+          --lb-line:#e3eeec; --lb-ink:#11313a; --lb-ink-2:#33565c;
+          --lb-ink-3:#5a7a78; --lb-ink-4:#8aa3a0; --lb-teal-ink:#0b7570;
+          --lb-scrim:rgba(17,49,58,.45);
+        }
+        .lb-root[data-lb-theme="dark"]{
+          --lb-bg:#0e1619; --lb-surface:#16242b; --lb-surface-2:#1b2d34;
+          --lb-soft:#123339; --lb-active:#143b38; --lb-trans:#152e31;
+          --lb-line:#283b42; --lb-ink:#e7eff0; --lb-ink-2:#bacdcd;
+          --lb-ink-3:#93aeae; --lb-ink-4:#728e8e; --lb-teal-ink:#63d6d0;
+          --lb-scrim:rgba(2,10,12,.62);
+        }
+        .lb-root[data-lb-theme="dark"] img{opacity:.92;}
+        .lb-word:hover{background:var(--lb-soft) !important;}
         .lb-word-dark:hover{background:rgba(127,212,208,.25) !important;}
         @keyframes lbPopIn{from{opacity:0;transform:translateY(6px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
         @keyframes lbPopInUp{from{opacity:0;transform:translateY(calc(-100% + 6px)) scale(.97);}to{opacity:1;transform:translateY(-100%) scale(1);}}
@@ -616,20 +650,20 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
       `}</style>
 
       <main style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
-        <header style={{ flex: "none", background: "#FFFFFF", borderBottom: "1px solid #E3EEEC" }}>
+        <header style={{ flex: "none", background: "var(--lb-surface)", borderBottom: "1px solid var(--lb-line)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px" }}>
             <button onClick={goLibrary} title="Kembali ke Library" style={hdrBtn}>←</button>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: TEAL, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                 {book.language.nativeName ? `${book.language.nativeName} — ${book.title} · ${book.level}` : `${book.title} · ${book.level}`}
               </div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: DARK, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{chapter.label}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "var(--lb-ink)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{chapter.label}</div>
             </div>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#5A7A78", whiteSpace: "nowrap" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "var(--lb-ink-3)", whiteSpace: "nowrap" }}>
               {isUnit ? "Unit" : "Bab"} {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
             </div>
             <button onClick={() => setTocOpen(true)} title="Daftar Isi" style={hdrBtn}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h8" stroke="#33565C" strokeWidth="1.8" strokeLinecap="round" /></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
             </button>
           </div>
 
@@ -645,12 +679,12 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
                     onClick={() => goStep(i)}
                     style={{
                       display: "flex", alignItems: "center", gap: 6, padding: "6px 12px 6px 7px", borderRadius: 999, whiteSpace: "nowrap",
-                      border: active ? `1.5px solid ${TEAL}` : "1.5px solid #E3EEEC", cursor: "pointer", fontFamily: "inherit",
-                      background: active ? "#DFF1EF" : "#FFFFFF", color: active ? "#0B7570" : done ? "#0B7570" : "#8AA3A0",
+                      border: active ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", cursor: "pointer", fontFamily: "inherit",
+                      background: active ? "var(--lb-active)" : "#FFFFFF", color: active ? "var(--lb-teal-ink)" : done ? "var(--lb-teal-ink)" : "#8AA3A0",
                       fontSize: 12.5, fontWeight: 800, flex: "none",
                     }}
                   >
-                    <span style={{ width: 18, height: 18, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 10.5, fontWeight: 800, background: done || active ? TEAL : "#EFF6F5", color: done || active ? "#FFFFFF" : "#8AA3A0" }}>
+                    <span style={{ width: 18, height: 18, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 10.5, fontWeight: 800, background: done || active ? TEAL : "var(--lb-soft)", color: done || active ? "#FFFFFF" : "#8AA3A0" }}>
                       {done ? "✓" : String(i + 1)}
                     </span>
                     {st.label}
@@ -660,7 +694,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
             </div>
           )}
 
-          <div style={{ height: 3, background: "#E9F2F0" }}>
+          <div style={{ height: 3, background: "var(--lb-line)" }}>
             <div style={{ height: "100%", width: isUnit ? `${Math.max(4, ((stepIdx + 1) / steps.length) * 100)}%` : `${prog}%`, background: TEAL, borderRadius: "0 2px 2px 0", transition: isUnit ? "width .3s" : "width .15s" }} />
           </div>
         </header>
@@ -673,9 +707,9 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
                 <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".1em", textTransform: "uppercase", color: TEAL, marginBottom: 8 }}>
                   {isUnit ? "Unit" : "Bab"} {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
                 </div>
-                <h1 style={{ fontFamily: readFont, fontSize: isCjk ? 40 : 34, fontWeight: 700, color: DARK, margin: 0, lineHeight: 1.2 }}>{chapter.title}</h1>
-                {chapter.subtitle && <div style={{ fontSize: 16, color: "#5A7A78", fontWeight: 600, marginTop: 4 }}>{chapter.subtitle}</div>}
-                {chapter.meta && <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 10 }}>{chapter.meta}</div>}
+                <h1 style={{ fontFamily: readFont, fontSize: isCjk ? 40 : 34, fontWeight: 700, color: "var(--lb-ink)", margin: 0, lineHeight: 1.2 }}>{chapter.title}</h1>
+                {chapter.subtitle && <div style={{ fontSize: 16, color: "var(--lb-ink-3)", fontWeight: 600, marginTop: 4 }}>{chapter.subtitle}</div>}
+                {chapter.meta && <div style={{ fontSize: 13, color: "var(--lb-ink-4)", marginTop: 10 }}>{chapter.meta}</div>}
               </div>
             )}
 
@@ -701,8 +735,8 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
                 )}
                 {stepId === "grammar" && (
                   <>
-                    <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: "0 0 4px 0" }}>Language Points</h2>
-                    <div style={{ fontSize: 13, color: "#8AA3A0", marginBottom: 20 }}>{(chapter.grammarPoints ?? []).length} poin grammar di unit ini</div>
+                    <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--lb-ink)", margin: "0 0 4px 0" }}>Language Points</h2>
+                    <div style={{ fontSize: 13, color: "var(--lb-ink-4)", marginBottom: 20 }}>{(chapter.grammarPoints ?? []).length} poin grammar di unit ini</div>
                     {(chapter.grammarPoints ?? []).map((gp, gi) => (
                       <BlockView key={gi} block={gp} bi={gi} {...blockViewCommon} />
                     ))}
@@ -755,6 +789,8 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           trans={trans}
           mark={mark}
           fs={fs}
+          dark={dark}
+          onToggleDark={toggleDark}
           onClose={() => setSettingsOpen(false)}
           setFurigana={(v) => { setFurigana(v); if (v) setRomaji(false); }}
           setRomaji={(v) => { setRomaji(v); if (v) setFurigana(false); }}
@@ -813,12 +849,12 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
 
       {completed && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(17,49,58,.55)", zIndex: 70, display: "grid", placeItems: "center", animation: "lbFadeIn .25s", padding: 20, boxSizing: "border-box" }}>
-          <div style={{ background: "#FFFFFF", borderRadius: 22, padding: "34px 30px", maxWidth: 380, width: "100%", textAlign: "center", boxShadow: "0 24px 60px rgba(17,49,58,.3)" }}>
+          <div style={{ background: "var(--lb-surface)", borderRadius: 22, padding: "34px 30px", maxWidth: 380, width: "100%", textAlign: "center", boxShadow: "0 24px 60px rgba(17,49,58,.3)" }}>
             <div style={{ width: 74, height: 74, borderRadius: "50%", background: TEAL, color: "#FFFFFF", display: "grid", placeItems: "center", margin: "0 auto 18px auto", animation: "lbCheckPop .45s ease" }}>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
-            <div style={{ fontWeight: 800, fontSize: 21, color: DARK }}>{isUnit ? "Unit" : "Bab"} selesai!</div>
-            <div style={{ fontSize: 14, color: "#5A7A78", marginTop: 4 }}>{chapter.label}</div>
+            <div style={{ fontWeight: 800, fontSize: 21, color: "var(--lb-ink)" }}>{isUnit ? "Unit" : "Bab"} selesai!</div>
+            <div style={{ fontSize: 14, color: "var(--lb-ink-3)", marginTop: 4 }}>{chapter.label}</div>
             <div style={{ display: "flex", gap: 10, margin: "22px 0" }}>
               <div style={statCard}><div style={statNum}>{clicked.size}</div><div style={statLabel}>kata di-tap</div></div>
               <div style={statCard}><div style={statNum}>{saved.size}</div><div style={statLabel}>kata disimpan</div></div>
@@ -829,7 +865,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
             >
               {nextSummary ? `Bab ${doneIdx + 2}: ${nextSummary.title}` : "Kembali ke Library"} →
             </button>
-            <button onClick={() => setCompleted(false)} style={{ width: "100%", padding: 12, borderRadius: 13, border: "none", background: "none", color: "#5A7A78", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginTop: 6 }}>Kembali membaca</button>
+            <button onClick={() => setCompleted(false)} style={{ width: "100%", padding: 12, borderRadius: 13, border: "none", background: "none", color: "var(--lb-ink-3)", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginTop: 6 }}>Kembali membaca</button>
           </div>
         </div>
       )}
@@ -845,11 +881,11 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
 
 // ── Sub-komponen ─────────────────────────────────────────────────────────
 
-const hdrBtn: React.CSSProperties = { width: 36, height: 36, borderRadius: 10, border: "1px solid #E3EEEC", background: "#FFFFFF", color: "#33565C", fontSize: 16, cursor: "pointer", display: "grid", placeItems: "center" };
-const navBtn: React.CSSProperties = { flex: 1, padding: "13px 14px", borderRadius: 12, border: "1px solid #D5E6E3", background: "#FFFFFF", color: "#33565C", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer" };
-const statCard: React.CSSProperties = { flex: 1, background: "#F2F8F7", borderRadius: 14, padding: "14px 8px" };
+const hdrBtn: React.CSSProperties = { width: 36, height: 36, borderRadius: 10, border: "1px solid var(--lb-line)", background: "var(--lb-surface)", color: "var(--lb-ink-2)", fontSize: 16, cursor: "pointer", display: "grid", placeItems: "center" };
+const navBtn: React.CSSProperties = { flex: 1, padding: "13px 14px", borderRadius: 12, border: "1px solid var(--lb-line)", background: "var(--lb-surface)", color: "var(--lb-ink-2)", fontFamily: "inherit", fontSize: 13.5, fontWeight: 700, cursor: "pointer" };
+const statCard: React.CSSProperties = { flex: 1, background: "var(--lb-surface-2)", borderRadius: 14, padding: "14px 8px" };
 const statNum: React.CSSProperties = { fontWeight: 800, fontSize: 24, color: TEAL };
-const statLabel: React.CSSProperties = { fontSize: 12, color: "#5A7A78", fontWeight: 600 };
+const statLabel: React.CSSProperties = { fontSize: 12, color: "var(--lb-ink-3)", fontWeight: 600 };
 
 function BlockView({
   block,
@@ -881,14 +917,14 @@ function BlockView({
   playingAll: boolean;
   onPlayLine: (bi: number, li: number, tokens: Token[]) => void;
   onPlayAll: (bi: number, lines: DialogLine[]) => void;
-  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "dark" | "style">;
+  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "style">;
   unitCtx?: UnitCtx;
 }) {
   if (block.type === "heading") {
     return (
-      <div style={{ margin: "38px 0 16px 0", display: "flex", alignItems: "baseline", gap: 12, borderBottom: "2px solid #E3EEEC", paddingBottom: 10 }}>
-        <h2 style={{ fontFamily: readFont, fontSize: isCjk ? 24 : 22, fontWeight: 700, color: DARK, margin: 0 }}>{block.text}</h2>
-        {block.sub && <span style={{ fontSize: 13, color: "#8AA3A0", fontWeight: 600 }}>{block.sub}</span>}
+      <div style={{ margin: "38px 0 16px 0", display: "flex", alignItems: "baseline", gap: 12, borderBottom: "2px solid var(--lb-line)", paddingBottom: 10 }}>
+        <h2 style={{ fontFamily: readFont, fontSize: isCjk ? 24 : 22, fontWeight: 700, color: "var(--lb-ink)", margin: 0 }}>{block.text}</h2>
+        {block.sub && <span style={{ fontSize: 13, color: "var(--lb-ink-4)", fontWeight: 600 }}>{block.sub}</span>}
       </div>
     );
   }
@@ -900,7 +936,7 @@ function BlockView({
           <TokenText {...tokenTextProps} tokens={block.tokens} />
         </p>
         {trans && block.translation && (
-          <div style={{ marginTop: 6, padding: "10px 14px", background: "#EAF5F4", borderRadius: 10, fontSize: 14, color: "#33565C", lineHeight: 1.55 }}>{block.translation}</div>
+          <div style={{ marginTop: 6, padding: "10px 14px", background: "var(--lb-trans)", borderRadius: 10, fontSize: 14, color: "var(--lb-ink-2)", lineHeight: 1.55 }}>{block.translation}</div>
         )}
       </div>
     );
@@ -908,7 +944,7 @@ function BlockView({
 
   if (block.type === "callout") {
     const variants: Record<string, [string, string, string, string]> = {
-      info: ["#E4F2F1", TEAL, "i", "#0B7570"],
+      info: ["var(--lb-soft)", TEAL, "i", "var(--lb-teal-ink)"],
       warning: ["#FBF0DB", "#D9A13B", "!", "#9A6B14"],
       tips: ["#EDE9F8", "#8A73D0", "✦", "#6B54C8"],
     };
@@ -919,11 +955,11 @@ function BlockView({
           <span style={{ width: 20, height: 20, borderRadius: "50%", background: v[1], color: "#FFFFFF", display: "grid", placeItems: "center", fontSize: 12, fontWeight: 800, flex: "none" }}>{v[2]}</span>
           <span style={{ fontWeight: 800, fontSize: 14 }}>{block.title}</span>
         </div>
-        <div style={{ fontSize: 14.5, lineHeight: 1.6, color: "#33565C" }}>{block.body}</div>
+        <div style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--lb-ink-2)" }}>{block.body}</div>
         {block.example && (
           <div style={{ marginTop: 10, padding: "10px 12px", background: "rgba(255,255,255,.7)", borderRadius: 8, display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
             <TokenText {...tokenTextProps} tokens={block.example.tokens} style={{ fontFamily: readFont, fontSize: Math.round(fpx * 0.9), lineHeight: 2 }} />
-            {block.example.translation && <span style={{ fontSize: 13, color: "#5A7A78" }}>{block.example.translation}</span>}
+            {block.example.translation && <span style={{ fontSize: 13, color: "var(--lb-ink-3)" }}>{block.example.translation}</span>}
           </div>
         )}
       </div>
@@ -932,11 +968,11 @@ function BlockView({
 
   if (block.type === "dialog") {
     return (
-      <div style={{ margin: "0 0 24px 0", background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: 18 }}>
+      <div style={{ margin: "0 0 24px 0", background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 16, padding: 18 }}>
         <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
           <button
             onClick={() => onPlayAll(bi, block.lines)}
-            style={{ padding: "7px 14px", borderRadius: 999, border: "none", background: playingAll ? DARK : "#E4F2F1", color: playingAll ? "#FFFFFF" : "#0B7570", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
+            style={{ padding: "7px 14px", borderRadius: 999, border: "none", background: playingAll ? DARK : "var(--lb-soft)", color: playingAll ? "#FFFFFF" : "var(--lb-teal-ink)", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
           >
             {playingAll ? "■ Berhenti" : "▶ Putar semua"}
           </button>
@@ -948,9 +984,9 @@ function BlockView({
               <div style={{ width: 38, height: 38, borderRadius: "50%", background: ln.color || DARK, color: "#FFFFFF", display: "grid", placeItems: "center", fontWeight: 700, fontSize: 15, flex: "none", fontFamily: readFont }}>{ln.speaker.charAt(0)}</div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5 }}>
-                  <span style={{ fontSize: 12.5, fontWeight: 800, color: "#33565C" }}>{ln.speaker}</span>
-                  {ln.role && <span style={{ fontSize: 11.5, color: "#8AA3A0" }}>{ln.role}</span>}
-                  <button onClick={() => onPlayLine(bi, li, ln.tokens)} title="Putar audio baris" style={{ width: 22, height: 22, borderRadius: "50%", border: "none", background: active ? TEAL : "#E4F2F1", color: active ? "#FFFFFF" : "#0B7570", cursor: "pointer", display: "grid", placeItems: "center", padding: 0 }}>
+                  <span style={{ fontSize: 12.5, fontWeight: 800, color: "var(--lb-ink-2)" }}>{ln.speaker}</span>
+                  {ln.role && <span style={{ fontSize: 11.5, color: "var(--lb-ink-4)" }}>{ln.role}</span>}
+                  <button onClick={() => onPlayLine(bi, li, ln.tokens)} title="Putar audio baris" style={{ width: 22, height: 22, borderRadius: "50%", border: "none", background: active ? TEAL : "var(--lb-soft)", color: active ? "#FFFFFF" : "var(--lb-teal-ink)", cursor: "pointer", display: "grid", placeItems: "center", padding: 0 }}>
                     <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1.2v7.6L8.4 5 2 1.2z" fill="currentColor" /></svg>
                   </button>
                   {active && (
@@ -961,10 +997,10 @@ function BlockView({
                     </span>
                   )}
                 </div>
-                <div style={{ background: active ? "#EAF7F6" : "#F7FAFA", border: active ? `1.5px solid ${TEAL}` : "1.5px solid #EDF4F3", borderRadius: "4px 14px 14px 14px", padding: "10px 14px", transition: "all .2s" }}>
+                <div style={{ background: active ? "var(--lb-trans)" : "var(--lb-surface-2)", border: active ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", borderRadius: "4px 14px 14px 14px", padding: "10px 14px", transition: "all .2s" }}>
                   <TokenText {...tokenTextProps} tokens={ln.tokens} style={{ ...readerStyle, fontSize: Math.round((readerStyle.fontSize as number) * 0.92) }} />
                   {trans && ln.translation && (
-                    <div style={{ marginTop: 8, paddingTop: 8, borderTop: "1px dashed #D5E6E3", fontSize: 13.5, color: "#5A7A78" }}>{ln.translation}</div>
+                    <div style={{ marginTop: 8, paddingTop: 8, borderTop: "1px dashed var(--lb-line)", fontSize: 13.5, color: "var(--lb-ink-3)" }}>{ln.translation}</div>
                   )}
                 </div>
               </div>
@@ -978,18 +1014,18 @@ function BlockView({
   if (block.type === "image") {
     return (
       <figure style={{ margin: "0 0 24px 0" }}>
-        <div style={{ width: "100%", aspectRatio: "16/9", position: "relative", borderRadius: 14, overflow: "hidden", background: "linear-gradient(135deg,#E3EEEC,#D5E6E3)" }}>
+        <div style={{ width: "100%", aspectRatio: "16/9", position: "relative", borderRadius: 14, overflow: "hidden", background: "linear-gradient(135deg,var(--lb-line),var(--lb-line))" }}>
           {block.src ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={block.src} alt={block.alt || ""} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           ) : (
-            <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", color: "#8AA3A0", fontSize: 13, fontWeight: 700 }}>{block.alt || "Gambar"}</div>
+            <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", color: "var(--lb-ink-4)", fontSize: 13, fontWeight: 700 }}>{block.alt || "Gambar"}</div>
           )}
         </div>
         {(block.captionTokens || block.captionTranslation) && (
           <figcaption style={{ marginTop: 10, textAlign: "center" }}>
-            {block.captionTokens && <TokenText {...tokenTextProps} tokens={block.captionTokens} style={{ fontFamily: readFont, fontSize: Math.round(fpx * 0.82), lineHeight: 1.9, color: "#33565C" }} />}
-            {block.captionTranslation && <div style={{ fontSize: 12.5, color: "#8AA3A0", marginTop: 2 }}>{block.captionTranslation}</div>}
+            {block.captionTokens && <TokenText {...tokenTextProps} tokens={block.captionTokens} style={{ fontFamily: readFont, fontSize: Math.round(fpx * 0.82), lineHeight: 1.9, color: "var(--lb-ink-2)" }} />}
+            {block.captionTranslation && <div style={{ fontSize: 12.5, color: "var(--lb-ink-4)", marginTop: 2 }}>{block.captionTranslation}</div>}
           </figcaption>
         )}
       </figure>
@@ -998,14 +1034,14 @@ function BlockView({
 
   if (block.type === "table") {
     return (
-      <div style={{ margin: "0 0 24px 0", background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 14, overflow: "hidden" }}>
-        {block.title && <div style={{ padding: "12px 16px", fontWeight: 800, fontSize: 14, color: DARK, borderBottom: "1px solid #E9F2F0", background: "#FBFDFD" }}>{block.title}</div>}
+      <div style={{ margin: "0 0 24px 0", background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 14, overflow: "hidden" }}>
+        {block.title && <div style={{ padding: "12px 16px", fontWeight: 800, fontSize: 14, color: "var(--lb-ink)", borderBottom: "1px solid var(--lb-line)", background: "var(--lb-surface-2)" }}>{block.title}</div>}
         <div style={{ overflowX: "auto" }}>
           <table style={{ borderCollapse: "collapse", width: "100%" }}>
             <thead>
               <tr>
                 {block.columns.map((c, ci) => (
-                  <th key={ci} style={{ textAlign: "left", padding: "9px 16px", fontSize: 11.5, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", color: "#5A7A78", borderBottom: "1px solid #E9F2F0" }}>{c}</th>
+                  <th key={ci} style={{ textAlign: "left", padding: "9px 16px", fontSize: 11.5, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--lb-ink-3)", borderBottom: "1px solid var(--lb-line)" }}>{c}</th>
                 ))}
               </tr>
             </thead>
@@ -1013,11 +1049,11 @@ function BlockView({
               {block.rows.map((row, ri) => (
                 <tr key={ri}>
                   {row.map((cell: TableCell, ci) => (
-                    <td key={ci} style={{ padding: "10px 16px", borderBottom: "1px solid #F0F6F5", verticalAlign: "middle" }}>
+                    <td key={ci} style={{ padding: "10px 16px", borderBottom: "1px solid var(--lb-line)", verticalAlign: "middle" }}>
                       {"tokens" in cell ? (
                         <TokenText {...tokenTextProps} tokens={cell.tokens} style={{ fontFamily: readFont, fontSize: isCjk ? 20 : 17, lineHeight: 1.9 }} />
                       ) : (
-                        <span style={{ fontSize: 13.5, color: "#33565C" }}>{cell.text}</span>
+                        <span style={{ fontSize: 13.5, color: "var(--lb-ink-2)" }}>{cell.text}</span>
                       )}
                     </td>
                   ))}
@@ -1041,7 +1077,7 @@ function BlockView({
           <span style={{ width: 22, height: 22, borderRadius: "50%", background: "#8A73D0", color: "#FFFFFF", display: "grid", placeItems: "center", fontSize: 12, flex: "none" }}>🌏</span>
           <span style={{ fontWeight: 800, fontSize: 14 }}>{block.title}</span>
         </div>
-        <div style={{ fontSize: 14.5, lineHeight: 1.6, color: "#33565C" }}>{block.body}</div>
+        <div style={{ fontSize: 14.5, lineHeight: 1.6, color: "var(--lb-ink-2)" }}>{block.body}</div>
       </div>
     );
   }
@@ -1054,14 +1090,14 @@ function BlockView({
     const total = block.items.length;
     const doneN = block.items.filter((o) => unitCtx.stepDone.has(o.section)).length;
     return (
-      <div style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: "20px 22px", marginBottom: 24 }}>
-        <div style={{ fontWeight: 800, fontSize: 15, color: DARK, marginBottom: 4 }}>Di unit ini kamu akan belajar</div>
-        <div style={{ fontSize: 12.5, color: "#8AA3A0", marginBottom: 14 }}>{doneN} dari {total} objektif tercapai</div>
+      <div style={{ background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 16, padding: "20px 22px", marginBottom: 24 }}>
+        <div style={{ fontWeight: 800, fontSize: 15, color: "var(--lb-ink)", marginBottom: 4 }}>Di unit ini kamu akan belajar</div>
+        <div style={{ fontSize: 12.5, color: "var(--lb-ink-4)", marginBottom: 14 }}>{doneN} dari {total} objektif tercapai</div>
         {block.items.map((o, oi) => {
           const checked = unitCtx.stepDone.has(o.section);
           return (
-            <div key={oi} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: "1px solid #F0F6F5" }}>
-              <span style={{ width: 22, height: 22, borderRadius: 7, flex: "none", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 800, background: checked ? TEAL : "#FFFFFF", color: "#FFFFFF", border: checked ? "none" : "2px solid #D5E6E3" }}>{checked ? "✓" : ""}</span>
+            <div key={oi} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: "1px solid var(--lb-line)" }}>
+              <span style={{ width: 22, height: 22, borderRadius: 7, flex: "none", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 800, background: checked ? TEAL : "#FFFFFF", color: "#FFFFFF", border: checked ? "none" : "2px solid var(--lb-line)" }}>{checked ? "✓" : ""}</span>
               <span style={{ fontSize: 14.5, fontWeight: 600, color: checked ? "#8AA3A0" : DARK, textDecoration: checked ? "line-through" : "none" }}>{o.text}</span>
             </div>
           );
@@ -1076,10 +1112,10 @@ function BlockView({
       <div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
           <div>
-            <h2 style={{ fontSize: 22, fontWeight: 800, color: DARK, margin: 0 }}>Kosakata Kunci</h2>
-            <div style={{ fontSize: 13, color: "#8AA3A0", marginTop: 2 }}>{words.length} kata penting di unit ini — tap untuk detail</div>
+            <h2 style={{ fontSize: 22, fontWeight: 800, color: "var(--lb-ink)", margin: 0 }}>Kosakata Kunci</h2>
+            <div style={{ fontSize: 13, color: "var(--lb-ink-4)", marginTop: 2 }}>{words.length} kata penting di unit ini — tap untuk detail</div>
           </div>
-          <button onClick={unitCtx.onSaveAll} style={{ padding: "10px 16px", borderRadius: 11, border: unitCtx.allSavedRefs ? `1.5px solid ${TEAL}` : "none", background: unitCtx.allSavedRefs ? "#DFF1EF" : TEAL, color: unitCtx.allSavedRefs ? "#0B7570" : "#FFFFFF", fontFamily: "inherit", fontSize: 13, fontWeight: 800, cursor: "pointer", flex: "none" }}>
+          <button onClick={unitCtx.onSaveAll} style={{ padding: "10px 16px", borderRadius: 11, border: unitCtx.allSavedRefs ? `1.5px solid ${TEAL}` : "none", background: unitCtx.allSavedRefs ? "var(--lb-active)" : TEAL, color: unitCtx.allSavedRefs ? "var(--lb-teal-ink)" : "#FFFFFF", fontFamily: "inherit", fontSize: 13, fontWeight: 800, cursor: "pointer", flex: "none" }}>
             {unitCtx.allSavedRefs ? "✓ Semua tersimpan" : "+ Simpan semua"}
           </button>
         </div>
@@ -1088,13 +1124,13 @@ function BlockView({
             const sub = isCjk ? [word.reading, word.romaji].filter(Boolean).join(" · ") : word.grammar ? Object.values(word.grammar)[0] : "";
             const isSaved = unitCtx.saved.has(key);
             return (
-              <div key={key} onClick={() => unitCtx.onOpenWord(key)} className="lb-vocab-card" style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 14, padding: "14px 16px", display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }}>
+              <div key={key} onClick={() => unitCtx.onOpenWord(key)} className="lb-vocab-card" style={{ background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 14, padding: "14px 16px", display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }}>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: readFont, fontSize: isCjk ? 22 : 19, fontWeight: 700, color: DARK }}>{word.surface}</div>
-                  {sub && <div style={{ fontSize: 12, color: "#0E7D7D", fontWeight: 700 }}>{sub}</div>}
-                  <div style={{ fontSize: 13.5, color: "#33565C", marginTop: 2 }}>{word.meaning}</div>
+                  <div style={{ fontFamily: readFont, fontSize: isCjk ? 22 : 19, fontWeight: 700, color: "var(--lb-ink)" }}>{word.surface}</div>
+                  {sub && <div style={{ fontSize: 12, color: "var(--lb-teal-ink)", fontWeight: 700 }}>{sub}</div>}
+                  <div style={{ fontSize: 13.5, color: "var(--lb-ink-2)", marginTop: 2 }}>{word.meaning}</div>
                 </div>
-                <button onClick={(e) => { e.stopPropagation(); unitCtx.onSpeak(word.surface); }} title="Dengar" style={{ width: 34, height: 34, borderRadius: "50%", border: "none", background: "#E4F2F1", color: "#0B7570", cursor: "pointer", display: "grid", placeItems: "center", flex: "none" }}>
+                <button onClick={(e) => { e.stopPropagation(); unitCtx.onSpeak(word.surface); }} title="Dengar" style={{ width: 34, height: 34, borderRadius: "50%", border: "none", background: "var(--lb-soft)", color: "var(--lb-teal-ink)", cursor: "pointer", display: "grid", placeItems: "center", flex: "none" }}>
                   <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M3 7.5v5h3.2L11 17V3L6.2 7.5H3z" fill="currentColor" /><path d="M13.5 6.5c1 .9 1.6 2.1 1.6 3.5s-.6 2.6-1.6 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
                 </button>
                 <span style={{ width: 22, flex: "none", textAlign: "center", fontSize: 15, fontWeight: 800, color: TEAL }}>{isSaved ? "✓" : ""}</span>
@@ -1123,31 +1159,31 @@ function GrammarPointView({
   isCjk: boolean;
   readFont: string;
   fpx: number;
-  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "dark" | "style">;
+  tokenTextProps: Omit<React.ComponentProps<typeof TokenText>, "tokens" | "style">;
 }) {
   return (
-    <div style={{ background: "#FFFFFF", border: "1px solid #E3EEEC", borderRadius: 16, padding: "20px 22px", marginBottom: 16 }}>
+    <div style={{ background: "var(--lb-surface)", border: "1px solid var(--lb-line)", borderRadius: 16, padding: "20px 22px", marginBottom: 16 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-        <span style={{ width: 26, height: 26, borderRadius: 8, background: "#DFF1EF", color: "#0B7570", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 13, flex: "none" }}>{n}</span>
-        <span style={{ fontSize: 16.5, fontWeight: 800, color: DARK, fontFamily: isCjk ? readFont : "inherit" }}>{block.title}</span>
+        <span style={{ width: 26, height: 26, borderRadius: 8, background: "var(--lb-active)", color: "var(--lb-teal-ink)", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 13, flex: "none" }}>{n}</span>
+        <span style={{ fontSize: 16.5, fontWeight: 800, color: "var(--lb-ink)", fontFamily: isCjk ? readFont : "inherit" }}>{block.title}</span>
       </div>
-      <div style={{ fontSize: 14.5, lineHeight: 1.65, color: "#33565C" }}>{block.body}</div>
+      <div style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--lb-ink-2)" }}>{block.body}</div>
       {block.pattern && (
-        <div style={{ marginTop: 12, padding: "10px 14px", background: "#F2F8F7", borderLeft: `3px solid ${TEAL}`, borderRadius: "0 10px 10px 0", fontSize: 14.5, fontWeight: 700, color: "#0B7570" }}>{block.pattern}</div>
+        <div style={{ marginTop: 12, padding: "10px 14px", background: "var(--lb-surface-2)", borderLeft: `3px solid ${TEAL}`, borderRadius: "0 10px 10px 0", fontSize: 14.5, fontWeight: 700, color: "var(--lb-teal-ink)" }}>{block.pattern}</div>
       )}
       {block.example && (
-        <div style={{ marginTop: 12, padding: "12px 14px", background: "#FBFDFD", border: "1px solid #EDF4F3", borderRadius: 10 }}>
+        <div style={{ marginTop: 12, padding: "12px 14px", background: "var(--lb-surface-2)", border: "1px solid var(--lb-line)", borderRadius: 10 }}>
           <TokenText {...tokenTextProps} tokens={block.example.tokens} style={{ fontFamily: readFont, fontSize: Math.round(fpx * 0.9), lineHeight: 2 }} />
-          {block.example.translation && <div style={{ fontSize: 12.5, color: "#8AA3A0", marginTop: 4 }}>{block.example.translation}</div>}
+          {block.example.translation && <div style={{ fontSize: 12.5, color: "var(--lb-ink-4)", marginTop: 4 }}>{block.example.translation}</div>}
         </div>
       )}
       {block.table && (
-        <div style={{ marginTop: 12, border: "1px solid #EDF4F3", borderRadius: 10, overflow: "hidden" }}>
+        <div style={{ marginTop: 12, border: "1px solid var(--lb-line)", borderRadius: 10, overflow: "hidden" }}>
           <table style={{ borderCollapse: "collapse", width: "100%" }}>
             <thead>
               <tr>
                 {block.table.columns.map((c, ci) => (
-                  <th key={ci} style={{ textAlign: "left", padding: "8px 14px", fontSize: 11, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", color: "#5A7A78", borderBottom: "1px solid #E9F2F0", background: "#FBFDFD" }}>{c}</th>
+                  <th key={ci} style={{ textAlign: "left", padding: "8px 14px", fontSize: 11, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--lb-ink-3)", borderBottom: "1px solid var(--lb-line)", background: "var(--lb-surface-2)" }}>{c}</th>
                 ))}
               </tr>
             </thead>
@@ -1155,11 +1191,11 @@ function GrammarPointView({
               {block.table.rows.map((row, ri) => (
                 <tr key={ri}>
                   {row.map((cell: TableCell, ci) => (
-                    <td key={ci} style={{ padding: "9px 14px", borderBottom: "1px solid #F0F6F5", verticalAlign: "middle" }}>
+                    <td key={ci} style={{ padding: "9px 14px", borderBottom: "1px solid var(--lb-line)", verticalAlign: "middle" }}>
                       {"tokens" in cell ? (
                         <TokenText {...tokenTextProps} tokens={cell.tokens} style={{ fontFamily: readFont, fontSize: isCjk ? 20 : 17, lineHeight: 1.9 }} />
                       ) : (
-                        <span style={{ fontSize: 13.5, color: "#33565C" }}>{cell.text}</span>
+                        <span style={{ fontSize: 13.5, color: "var(--lb-ink-2)" }}>{cell.text}</span>
                       )}
                     </td>
                   ))}
@@ -1175,7 +1211,7 @@ function GrammarPointView({
 
 function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
   return (
-    <div onClick={onToggle} style={{ width: 44, height: 26, borderRadius: 999, background: on ? TEAL : "#D5E6E3", padding: 3, boxSizing: "border-box", cursor: "pointer", transition: "background .2s", flex: "none" }}>
+    <div onClick={onToggle} style={{ width: 44, height: 26, borderRadius: 999, background: on ? TEAL : "var(--lb-line)", padding: 3, boxSizing: "border-box", cursor: "pointer", transition: "background .2s", flex: "none" }}>
       <div style={{ width: 20, height: 20, borderRadius: "50%", background: "#FFFFFF", transform: on ? "translateX(18px)" : "none", transition: "transform .2s", boxShadow: "0 1px 3px rgba(17,49,58,.25)" }} />
     </div>
   );
@@ -1189,6 +1225,8 @@ function SettingsSheet({
   trans,
   mark,
   fs,
+  dark,
+  onToggleDark,
   onClose,
   setFurigana,
   setRomaji,
@@ -1203,6 +1241,8 @@ function SettingsSheet({
   trans: boolean;
   mark: boolean;
   fs: number;
+  dark: boolean;
+  onToggleDark: () => void;
   onClose: () => void;
   setFurigana: (v: boolean) => void;
   setRomaji: (v: boolean) => void;
@@ -1211,6 +1251,7 @@ function SettingsSheet({
   setFs: (v: number) => void;
 }) {
   const rows: { label: string; desc: string; on: boolean; toggle: () => void }[] = [];
+  rows.push({ label: "Mode gelap", desc: "Tema gelap nyaman untuk mata", on: dark, toggle: onToggleDark });
   if (isCjk) {
     rows.push({ label: "Furigana", desc: "Cara baca kana di atas kanji", on: furigana, toggle: () => setFurigana(!furigana) });
     rows.push({ label: "Romaji", desc: "Huruf Latin di atas kata", on: romaji, toggle: () => setRomaji(!romaji) });
@@ -1219,34 +1260,34 @@ function SettingsSheet({
   rows.push({ label: "Tandai kata di-tap", desc: "Garis putus di kata yang pernah dibuka", on: mark, toggle: () => setMark(!mark) });
 
   const sheet: React.CSSProperties = isMobile
-    ? { position: "fixed", left: 0, right: 0, bottom: 0, background: "#FFFFFF", borderRadius: "22px 22px 0 0", padding: "18px 22px 28px 22px", zIndex: 52, boxShadow: "0 -10px 40px rgba(17,49,58,.2)", animation: "lbSheetUp .28s cubic-bezier(.3,1,.4,1)", boxSizing: "border-box" }
-    : { position: "fixed", right: 20, bottom: 90, width: 340, background: "#FFFFFF", borderRadius: 18, padding: "18px 22px 22px 22px", zIndex: 52, border: "1px solid #E3EEEC", boxShadow: "0 18px 50px rgba(17,49,58,.2)", animation: "lbPopIn .18s ease", boxSizing: "border-box" };
+    ? { position: "fixed", left: 0, right: 0, bottom: 0, background: "var(--lb-surface)", borderRadius: "22px 22px 0 0", padding: "18px 22px 28px 22px", zIndex: 52, boxShadow: "0 -10px 40px rgba(17,49,58,.2)", animation: "lbSheetUp .28s cubic-bezier(.3,1,.4,1)", boxSizing: "border-box" }
+    : { position: "fixed", right: 20, bottom: 90, width: 340, background: "var(--lb-surface)", borderRadius: 18, padding: "18px 22px 22px 22px", zIndex: 52, border: "1px solid var(--lb-line)", boxShadow: "0 18px 50px rgba(17,49,58,.2)", animation: "lbPopIn .18s ease", boxSizing: "border-box" };
 
   return (
     <>
       <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 51, background: isMobile ? "rgba(17,49,58,.4)" : "transparent", animation: isMobile ? "lbFadeIn .2s" : "none" }} />
       <div style={sheet}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-          <div style={{ fontWeight: 800, fontSize: 16, color: DARK }}>Pengaturan Baca</div>
-          <button onClick={onClose} style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: "#EFF6F5", color: "#33565C", cursor: "pointer", fontSize: 13 }}>✕</button>
+          <div style={{ fontWeight: 800, fontSize: 16, color: "var(--lb-ink)" }}>Pengaturan Baca</div>
+          <button onClick={onClose} style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: "var(--lb-soft)", color: "var(--lb-ink-2)", cursor: "pointer", fontSize: 13 }}>✕</button>
         </div>
         {rows.map((r) => (
-          <div key={r.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 0", borderBottom: "1px solid #EDF4F3", gap: 14 }}>
+          <div key={r.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 0", borderBottom: "1px solid var(--lb-line)", gap: 14 }}>
             <div style={{ minWidth: 0 }}>
-              <div style={{ fontWeight: 700, fontSize: 14.5, color: DARK }}>{r.label}</div>
-              <div style={{ fontSize: 12.5, color: "#5A7A78", marginTop: 1 }}>{r.desc}</div>
+              <div style={{ fontWeight: 700, fontSize: 14.5, color: "var(--lb-ink)" }}>{r.label}</div>
+              <div style={{ fontSize: 12.5, color: "var(--lb-ink-3)", marginTop: 1 }}>{r.desc}</div>
             </div>
             <Toggle on={r.on} onToggle={r.toggle} />
           </div>
         ))}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 0 4px 0", gap: 14 }}>
-          <div style={{ fontWeight: 700, fontSize: 14.5, color: DARK }}>Ukuran font</div>
+          <div style={{ fontWeight: 700, fontSize: 14.5, color: "var(--lb-ink)" }}>Ukuran font</div>
           <div style={{ display: "flex", gap: 6 }}>
             {["Kecil", "Sedang", "Besar"].map((l, i) => (
               <button
                 key={l}
                 onClick={() => setFs(i)}
-                style={{ padding: "7px 12px", borderRadius: 9, border: fs === i ? `1.5px solid ${TEAL}` : "1.5px solid #D5E6E3", background: fs === i ? "#DFF1EF" : "#FFFFFF", color: fs === i ? "#0B7570" : "#5A7A78", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
+                style={{ padding: "7px 12px", borderRadius: 9, border: fs === i ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", background: fs === i ? "var(--lb-active)" : "#FFFFFF", color: fs === i ? "var(--lb-teal-ink)" : "#5A7A78", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
               >
                 {l}
               </button>
@@ -1288,14 +1329,14 @@ function WordCard({
   const readingLine = isCjk ? [w.reading, w.romaji].filter(Boolean).join(" · ") : "";
   const grammarRows = w.grammar ? Object.entries(w.grammar) : [];
 
-  const base: React.CSSProperties = { background: "#FFFFFF", boxSizing: "border-box", zIndex: 60, boxShadow: "0 18px 50px rgba(17,49,58,.22)" };
+  const base: React.CSSProperties = { background: "var(--lb-surface)", boxSizing: "border-box", zIndex: 60, boxShadow: "0 18px 50px rgba(17,49,58,.22)" };
   let cardStyle: React.CSSProperties;
   let backStyle: React.CSSProperties;
   if (isMobile || !cardPos) {
     cardStyle = { ...base, position: "fixed", left: 0, right: 0, bottom: 0, borderRadius: "22px 22px 0 0", padding: "14px 22px 26px 22px", maxHeight: "76vh", overflowY: "auto", animation: "lbSheetUp .28s cubic-bezier(.3,1,.4,1)" };
     backStyle = { position: "fixed", inset: 0, background: "rgba(17,49,58,.45)", zIndex: 59, animation: "lbFadeIn .2s" };
   } else {
-    cardStyle = { ...base, position: "fixed", left: cardPos.left, top: cardPos.top, width: 340, borderRadius: 18, padding: "20px 22px", maxHeight: "70vh", overflowY: "auto", border: "1px solid #E3EEEC", transform: cardPos.above ? "translateY(-100%)" : "none", animation: `${cardPos.above ? "lbPopInUp" : "lbPopIn"} .18s ease` };
+    cardStyle = { ...base, position: "fixed", left: cardPos.left, top: cardPos.top, width: 340, borderRadius: 18, padding: "20px 22px", maxHeight: "70vh", overflowY: "auto", border: "1px solid var(--lb-line)", transform: cardPos.above ? "translateY(-100%)" : "none", animation: `${cardPos.above ? "lbPopInUp" : "lbPopIn"} .18s ease` };
     backStyle = { position: "fixed", inset: 0, zIndex: 59, background: "transparent" };
   }
 
@@ -1303,17 +1344,17 @@ function WordCard({
     <>
       <div onClick={onClose} style={backStyle} />
       <div style={cardStyle}>
-        {isMobile && <div style={{ width: 40, height: 4, borderRadius: 2, background: "#D5E6E3", margin: "0 auto 12px auto" }} />}
+        {isMobile && <div style={{ width: 40, height: 4, borderRadius: 2, background: "var(--lb-line)", margin: "0 auto 12px auto" }} />}
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 14 }}>
           <div style={{ minWidth: 0 }}>
-            <div style={{ fontFamily: readFont, fontSize: isCjk ? 38 : 32, fontWeight: 700, color: DARK, lineHeight: 1.25 }}>{w.surface}</div>
-            {readingLine && <div style={{ fontSize: 14.5, color: "#0E7D7D", fontWeight: 700, marginTop: 3 }}>{readingLine}</div>}
+            <div style={{ fontFamily: readFont, fontSize: isCjk ? 38 : 32, fontWeight: 700, color: "var(--lb-ink)", lineHeight: 1.25 }}>{w.surface}</div>
+            {readingLine && <div style={{ fontSize: 14.5, color: "var(--lb-teal-ink)", fontWeight: 700, marginTop: 3 }}>{readingLine}</div>}
           </div>
-          <button onClick={onPlay} title="Dengar pengucapan" style={{ width: 44, height: 44, borderRadius: "50%", border: "none", background: "#E4F2F1", color: "#0B7570", cursor: "pointer", flex: "none", display: "grid", placeItems: "center", animation: speaking ? "lbPulseRing 1.2s infinite" : "none" }}>
+          <button onClick={onPlay} title="Dengar pengucapan" style={{ width: 44, height: 44, borderRadius: "50%", border: "none", background: "var(--lb-soft)", color: "var(--lb-teal-ink)", cursor: "pointer", flex: "none", display: "grid", placeItems: "center", animation: speaking ? "lbPulseRing 1.2s infinite" : "none" }}>
             <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 7.5v5h3.2L11 17V3L6.2 7.5H3z" fill="currentColor" /><path d="M13.5 6.5c1 .9 1.6 2.1 1.6 3.5s-.6 2.6-1.6 3.5M15.5 4.2c1.7 1.4 2.7 3.5 2.7 5.8s-1 4.4-2.7 5.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
           </button>
         </div>
-        <div style={{ fontSize: 17, color: DARK, fontWeight: 600, marginTop: 10 }}>{w.meaning}</div>
+        <div style={{ fontSize: 17, color: "var(--lb-ink)", fontWeight: 600, marginTop: 10 }}>{w.meaning}</div>
         <div style={{ display: "flex", gap: 6, marginTop: 10, flexWrap: "wrap" }}>
           <span style={{ padding: "4px 11px", borderRadius: 999, background: th[0], color: th[1], fontSize: 12, fontWeight: 800, letterSpacing: ".03em", textTransform: "capitalize" }}>{w.pos}</span>
         </div>
@@ -1321,19 +1362,19 @@ function WordCard({
           <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 8 }}>
             {grammarRows.map(([k, v]) => (
               <div key={k} style={{ display: "flex", gap: 12, alignItems: "baseline" }}>
-                <span style={{ width: 118, flex: "none", fontSize: 11.5, fontWeight: 800, letterSpacing: ".04em", textTransform: "uppercase", color: "#8AA3A0" }}>{k}</span>
-                <span style={{ fontSize: 14, color: DARK, lineHeight: 1.45 }}>{v}</span>
+                <span style={{ width: 118, flex: "none", fontSize: 11.5, fontWeight: 800, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--lb-ink-4)" }}>{k}</span>
+                <span style={{ fontSize: 14, color: "var(--lb-ink)", lineHeight: 1.45 }}>{v}</span>
               </div>
             ))}
           </div>
         )}
         {w.forms && w.forms.length > 0 && (
           <div style={{ marginTop: 14 }}>
-            <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: ".04em", textTransform: "uppercase", color: "#8AA3A0", marginBottom: 8 }}>Bentuk lain</div>
+            <div style={{ fontSize: 11.5, fontWeight: 800, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--lb-ink-4)", marginBottom: 8 }}>Bentuk lain</div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {w.forms.map((f, i) => (
-                <span key={i} style={{ padding: "6px 11px", background: "#EFF6F5", borderRadius: 9, fontSize: 14, color: DARK }}>
-                  <span style={{ fontFamily: readFont, fontWeight: 600 }}>{f.form}</span> <span style={{ fontSize: 11.5, color: "#5A7A78" }}>{f.note}</span>
+                <span key={i} style={{ padding: "6px 11px", background: "var(--lb-soft)", borderRadius: 9, fontSize: 14, color: "var(--lb-ink)" }}>
+                  <span style={{ fontFamily: readFont, fontWeight: 600 }}>{f.form}</span> <span style={{ fontSize: 11.5, color: "var(--lb-ink-3)" }}>{f.note}</span>
                 </span>
               ))}
             </div>
@@ -1342,7 +1383,7 @@ function WordCard({
         <div style={{ display: "flex", gap: 8, marginTop: 18 }}>
           <button
             onClick={onSave}
-            style={{ flex: 1, padding: 13, borderRadius: 12, border: saved ? `1.5px solid ${TEAL}` : "none", background: saved ? "#DFF1EF" : TEAL, color: saved ? "#0B7570" : "#FFFFFF", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
+            style={{ flex: 1, padding: 13, borderRadius: 12, border: saved ? `1.5px solid ${TEAL}` : "none", background: saved ? "var(--lb-active)" : TEAL, color: saved ? "var(--lb-teal-ink)" : "#FFFFFF", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
           >
             {saved ? "✓ Tersimpan" : "+ Simpan ke Kosakata"}
           </button>
@@ -1375,8 +1416,8 @@ function TocDrawer({
   onPick: (slug: string) => void;
 }) {
   const drawer: React.CSSProperties = isMobile
-    ? { position: "fixed", left: 0, right: 0, bottom: 0, top: "10vh", background: "#FFFFFF", borderRadius: "22px 22px 0 0", padding: "18px 20px", zIndex: 55, overflowY: "auto", animation: "lbSheetUp .3s cubic-bezier(.3,1,.4,1)", boxSizing: "border-box" }
-    : { position: "fixed", right: 0, top: 0, bottom: 0, width: 360, background: "#FFFFFF", padding: "20px 20px", zIndex: 55, overflowY: "auto", boxShadow: "-16px 0 40px rgba(17,49,58,.15)", animation: "lbPopIn .2s ease", boxSizing: "border-box" };
+    ? { position: "fixed", left: 0, right: 0, bottom: 0, top: "10vh", background: "var(--lb-surface)", borderRadius: "22px 22px 0 0", padding: "18px 20px", zIndex: 55, overflowY: "auto", animation: "lbSheetUp .3s cubic-bezier(.3,1,.4,1)", boxSizing: "border-box" }
+    : { position: "fixed", right: 0, top: 0, bottom: 0, width: 360, background: "var(--lb-surface)", padding: "20px 20px", zIndex: 55, overflowY: "auto", boxShadow: "-16px 0 40px rgba(17,49,58,.15)", animation: "lbPopIn .2s ease", boxSizing: "border-box" };
 
   return (
     <>
@@ -1384,10 +1425,10 @@ function TocDrawer({
       <div style={drawer}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
           <div>
-            <div style={{ fontWeight: 800, fontSize: 17, color: DARK }}>Daftar Isi</div>
-            <div style={{ fontSize: 12.5, color: "#5A7A78" }}>{book.title} · {book.level}</div>
+            <div style={{ fontWeight: 800, fontSize: 17, color: "var(--lb-ink)" }}>Daftar Isi</div>
+            <div style={{ fontSize: 12.5, color: "var(--lb-ink-3)" }}>{book.title} · {book.level}</div>
           </div>
-          <button onClick={onClose} style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: "#EFF6F5", color: "#33565C", cursor: "pointer", fontSize: 13 }}>✕</button>
+          <button onClick={onClose} style={{ width: 30, height: 30, borderRadius: "50%", border: "none", background: "var(--lb-soft)", color: "var(--lb-ink-2)", cursor: "pointer", fontSize: 13 }}>✕</button>
         </div>
         <div style={{ marginTop: 12, display: "flex", flexDirection: "column" }}>
           {book.toc.map((c, i) => {
@@ -1398,14 +1439,14 @@ function TocDrawer({
                 key={c.slug}
                 onClick={() => onPick(c.slug)}
                 className="lb-toc-row"
-                style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 10px", borderRadius: 12, cursor: "pointer", background: now ? "#EFF8F7" : "transparent" }}
+                style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 10px", borderRadius: 12, cursor: "pointer", background: now ? "var(--lb-soft)" : "transparent" }}
               >
                 <span style={{ width: 30, flex: "none", fontSize: 12.5, fontWeight: 800, color: now ? TEAL : "#B9CCC9", fontVariantNumeric: "tabular-nums" }}>{String(i + 1).padStart(2, "0")}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: DARK }}>{c.title}</div>
-                  <div style={{ fontSize: 12, color: "#8AA3A0" }}>{c.subtitle}{c.duration ? ` · ${c.duration}` : ""}</div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: "var(--lb-ink)" }}>{c.title}</div>
+                  <div style={{ fontSize: 12, color: "var(--lb-ink-4)" }}>{c.subtitle}{c.duration ? ` · ${c.duration}` : ""}</div>
                 </div>
-                <span style={{ fontSize: done ? 15 : 11, fontWeight: 800, color: done ? TEAL : now ? "#0B7570" : "#B9CCC9", whiteSpace: "nowrap" }}>{done ? "✓" : now ? "● Dibaca" : ""}</span>
+                <span style={{ fontSize: done ? 15 : 11, fontWeight: 800, color: done ? TEAL : now ? "var(--lb-teal-ink)" : "#B9CCC9", whiteSpace: "nowrap" }}>{done ? "✓" : now ? "● Dibaca" : ""}</span>
               </div>
             );
           })}
