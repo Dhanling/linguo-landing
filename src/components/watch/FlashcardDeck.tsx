@@ -19,6 +19,7 @@ import {
   BarChart3,
   BookOpen,
   Check,
+  ChevronDown,
   Clock,
   Download,
   Layers,
@@ -533,13 +534,24 @@ export default function FlashcardDeck({
                   : "Statistik & progres belajarmu"}
               </p>
             </div>
-            <button
-              onClick={onClose}
-              className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-              aria-label="Tutup"
-            >
-              <X className="h-5 w-5 text-white" />
-            </button>
+            <div className="flex items-center gap-3">
+              {langCodes.length > 1 && (
+                <LangSelect
+                  filter={filter}
+                  onSelect={setFilter}
+                  langCodes={langCodes}
+                  langCounts={langCounts}
+                  allCount={all.length}
+                />
+              )}
+              <button
+                onClick={onClose}
+                className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+                aria-label="Tutup"
+              >
+                <X className="h-5 w-5 text-white" />
+              </button>
+            </div>
           </div>
 
           <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
@@ -1155,6 +1167,78 @@ function SideLangBtn({
         {count}
       </span>
     </button>
+  );
+}
+
+// Dropdown pemilih bahasa di pojok kanan atas — cara utama & jelas mengganti
+// bahasa yang dipelajari (senada dengan daftar bahasa di sidebar desktop).
+function LangSelect({
+  filter,
+  onSelect,
+  langCodes,
+  langCounts,
+  allCount,
+}: {
+  filter: string;
+  onSelect: (code: string) => void;
+  langCodes: string[];
+  langCounts: Record<string, number>;
+  allCount: number;
+}) {
+  const [open, setOpen] = useState(false);
+  const current = filter === "all" ? null : getImmersionLang(filter);
+  const label = filter === "all" ? "Semua bahasa" : current?.name ?? filter;
+  const count = filter === "all" ? allCount : langCounts[filter] ?? 0;
+
+  const pick = (code: string) => {
+    onSelect(code);
+    setOpen(false);
+  };
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-bold text-white transition-colors hover:bg-white/5"
+        style={{ border: `1px solid ${BORDER}`, backgroundColor: CARD }}
+        aria-label="Pilih bahasa"
+      >
+        {filter === "all" ? (
+          <Layers className="h-4 w-4" style={{ color: SUB }} />
+        ) : (
+          <RectFlag code={current?.country} h={14} />
+        )}
+        <span className="max-w-[150px] truncate">{label}</span>
+        <span className="rounded-full px-1.5 py-0.5 text-[10px] font-bold" style={{ backgroundColor: SURFACE_ALT, color: SUB }}>
+          {count}
+        </span>
+        <ChevronDown className="h-4 w-4 transition-transform" style={{ color: SUB, transform: open ? "rotate(180deg)" : "none" }} />
+      </button>
+      {open && (
+        <>
+          <div className="fixed inset-0 z-[95]" onClick={() => setOpen(false)} />
+          <div
+            className="absolute right-0 z-[96] mt-2 w-64 space-y-1 overflow-y-auto rounded-2xl p-1.5 shadow-2xl"
+            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, maxHeight: "60vh" }}
+          >
+            <SideLangBtn active={filter === "all"} onClick={() => pick("all")} label="Semua bahasa" count={allCount} />
+            {langCodes.map((code) => {
+              const l = getImmersionLang(code);
+              return (
+                <SideLangBtn
+                  key={code}
+                  active={filter === code}
+                  onClick={() => pick(code)}
+                  flag={l?.country}
+                  label={l?.name ?? code}
+                  count={langCounts[code] ?? 0}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
   );
 }
 
