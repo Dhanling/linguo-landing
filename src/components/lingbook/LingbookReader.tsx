@@ -23,6 +23,13 @@ import type {
   Word,
 } from "@/data/lingbook";
 import { tokensToText } from "@/data/lingbook";
+import {
+  loadLocalProgress,
+  saveLocalProgress,
+  loadRemoteProgress,
+  saveRemoteProgress,
+  mergeProgress,
+} from "@/data/lingbook/progress";
 import { cancelSpeech, speak } from "@/lib/lingbook-speech";
 import { LatihanSection, TestSection } from "./Exercises";
 import AskAiPanel, { type AskContext } from "./AskAiPanel";
@@ -348,6 +355,8 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const isUnit = steps.length > 0;
   const [step, setStep] = useState(0);
   const [stepDone, setStepDone] = useState<Set<StepId>>(new Set());
+  const [score, setScore] = useState<number | null>(null);
+  const hydratedKey = useRef(""); // slug yg progresnya sudah dihidrasi (cegah save silang bab)
   const stepIdx = Math.min(step, Math.max(0, steps.length - 1));
   const stepId: StepId | undefined = isUnit ? steps[stepIdx]?.id : undefined;
   const isLastStep = stepIdx === steps.length - 1;
@@ -482,6 +491,42 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
       return nx;
     });
   }, []);
+
+  // ── [lingbook-progress] Persist progres: localStorage (selalu) + DB (graceful) ──
+  // Hidrasi saat bab dibuka: pakai localStorage instan, lalu merge dgn DB bila login
+  // & tabel ada. `hydratedKey` menjaga save tak nyasar ke bab lain saat navigasi.
+  useEffect(() => {
+    const key = `${book.slug}:${chapter.slug}`;
+    hydratedKey.current = "";
+    const local = loadLocalProgress(book.slug, chapter.slug);
+    setStepDone(new Set(local.stepsDone));
+    setIsDone(local.isDone);
+    setScore(local.score);
+    hydratedKey.current = key;
+    let alive = true;
+    loadRemoteProgress(book.slug, chapter.slug).then((remote) => {
+      if (!alive || !remote || hydratedKey.current !== key) return;
+      const merged = mergeProgress(local, remote);
+      setStepDone(new Set(merged.stepsDone));
+      setIsDone(merged.isDone);
+      setScore(merged.score);
+      saveLocalProgress(book.slug, chapter.slug, merged);
+      void saveRemoteProgress(book.slug, chapter.slug, merged);
+    });
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [book.slug, chapter.slug]);
+
+  // Simpan tiap perubahan progres → localStorage langsung + DB (debounce ringan).
+  useEffect(() => {
+    const key = `${book.slug}:${chapter.slug}`;
+    if (hydratedKey.current !== key) return; // belum terhidrasi utk bab ini
+    const p = { stepsDone: [...stepDone], isDone, score };
+    saveLocalProgress(book.slug, chapter.slug, p);
+    const t = setTimeout(() => void saveRemoteProgress(book.slug, chapter.slug, p), 600);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stepDone, isDone, score]);
 
   const goStep = useCallback((i: number) => {
     setStep(i);
@@ -621,6 +666,8 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           --lb-line:#e3eeec; --lb-ink:#11313a; --lb-ink-2:#33565c;
           --lb-ink-3:#5a7a78; --lb-ink-4:#8aa3a0; --lb-teal-ink:#0b7570;
           --lb-scrim:rgba(17,49,58,.45);
+          --lb-ai:#8a73d0; --lb-ai-ink:#6b54c8; --lb-ai-bubble:#f2f0fa;
+          --lb-ai-soft:#fbfafe; --lb-ai-line:#e0d9f2; --lb-ai-suggest-hover:#f4f1fb;
         }
         .lb-root[data-lb-theme="dark"]{
           --lb-bg:#0e1619; --lb-surface:#16242b; --lb-surface-2:#1b2d34;
@@ -628,6 +675,8 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           --lb-line:#283b42; --lb-ink:#e7eff0; --lb-ink-2:#bacdcd;
           --lb-ink-3:#93aeae; --lb-ink-4:#728e8e; --lb-teal-ink:#63d6d0;
           --lb-scrim:rgba(2,10,12,.62);
+          --lb-ai:#a996e0; --lb-ai-ink:#b9a9ec; --lb-ai-bubble:#221d33;
+          --lb-ai-soft:#1c1830; --lb-ai-line:#33294f; --lb-ai-suggest-hover:#241f38;
         }
         .lb-root[data-lb-theme="dark"] img{opacity:.92;}
         .lb-word:hover{background:var(--lb-soft) !important;}
@@ -644,7 +693,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
         @keyframes lbPulseRing{0%{box-shadow:0 0 0 0 rgba(26,158,158,.4);}100%{box-shadow:0 0 0 10px rgba(26,158,158,0);}}
         @keyframes lbShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
         @keyframes lbDotBlink{0%,80%,100%{opacity:.25;}40%{opacity:1;}}
-        .lb-ai-suggest:hover{background:#F4F1FB !important;}
+        .lb-ai-suggest:hover{background:var(--lb-ai-suggest-hover) !important;}
         .lb-rp-choice:hover{border-color:#1A9E9E !important;}
         .lb-vocab-card:hover{border-color:#1A9E9E !important;}
       `}</style>
@@ -751,6 +800,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
                     isCjk={isCjk}
                     readFont={readFont}
                     onSkip={() => { markStepDone("test"); showToast("Test dilewati — ditandai di progres"); }}
+                    onScore={(pct) => { setScore(pct); markStepDone("test"); }}
                     onOpenRoleplay={() => setRpOpen(true)}
                   />
                 )}
@@ -858,6 +908,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
             <div style={{ display: "flex", gap: 10, margin: "22px 0" }}>
               <div style={statCard}><div style={statNum}>{clicked.size}</div><div style={statLabel}>kata di-tap</div></div>
               <div style={statCard}><div style={statNum}>{saved.size}</div><div style={statLabel}>kata disimpan</div></div>
+              {score != null && <div style={statCard}><div style={statNum}>{score}%</div><div style={statLabel}>skor test</div></div>}
             </div>
             <button
               onClick={() => { setCompleted(false); if (nextSummary) goChapter(nextSummary.slug); }}

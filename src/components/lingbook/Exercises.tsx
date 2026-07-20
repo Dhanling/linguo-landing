@@ -253,12 +253,14 @@ export function TestSection({
   readFont,
   onSkip,
   onOpenRoleplay,
+  onScore,
 }: {
   test: TestQuestion[];
   isCjk: boolean;
   readFont: string;
   onSkip: () => void;
   onOpenRoleplay: () => void;
+  onScore?: (pct: number) => void;
 }) {
   const [ans, setAns] = useState<Record<number, number>>({});
   const [scored, setScored] = useState(false);
@@ -292,7 +294,7 @@ export function TestSection({
           ))}
           <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
             <button
-              onClick={() => allAnswered && setScored(true)}
+              onClick={() => { if (allAnswered) { setScored(true); onScore?.(pct); } }}
               style={{ flex: 1, padding: 14, borderRadius: 13, border: "none", background: allAnswered ? TEAL : "var(--lb-line)", color: "#FFFFFF", fontFamily: "inherit", fontSize: 14.5, fontWeight: 800, cursor: allAnswered ? "pointer" : "default", boxShadow: allAnswered ? "0 6px 16px rgba(26,158,158,.3)" : "none" }}
             >
               Kumpulkan jawaban
