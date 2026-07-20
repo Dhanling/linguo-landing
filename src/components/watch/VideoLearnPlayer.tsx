@@ -89,6 +89,10 @@ import { LangPickerPanel } from "./LangPickerPanel";
 import { useOverlayLock } from "@/lib/overlayStore";
 
 const TEAL = "#1A9E9E";
+// [watch-karaoke-number-sync-v1] Token yang isinya HANYA angka (mis. "1", "2024",
+// "２"). Dipakai untuk menyorot angka seirama satuannya walau Intl.Segmenter browser
+// tak menandainya word-like (jadi ter-render sebagai pemisah, bukan kata).
+const isDigitToken = (s: string) => /^\p{N}+$/u.test(s);
 const GOLD = "#F4B740";
 // Gold redup untuk arti per-kata di mode Analisa — se-keluarga dengan terjemahan
 // kalimat (GOLD terang) tapi jelas subordinat, biar hierarki baca enak.
@@ -3568,9 +3572,13 @@ function karaokeTokens(
   // murni berbagi window sorot dengan satuan yang menempel langsung (tanpa pemisah di
   // antara → berarti token kata bersebelahan di array). Bila salah satunya "active",
   // keduanya di-set "active" → menyala teal BERSAMAAN selama satuan itu diucapkan.
-  const isDigit = (s: string) => /^\p{N}+$/u.test(s);
+  //
+  // PENTING: JANGAN gerbang dengan `isWord`. Intl.Segmenter di sebagian browser (ICU
+  // beda versi dari Node) menandai token angka telanjang sebagai BUKAN word-like →
+  // angka jadi token "pemisah" (renderSep, selalu putih) dan lolos dari merge ini.
+  // Deteksi angka murni via teks saja; pasangannya (satuan) cukup token kata mana pun.
   for (let i = 0; i < out.length; i++) {
-    if (!out[i].isWord || !isDigit(out[i].text)) continue;
+    if (!isDigitToken(out[i].text)) continue;
     // Ikat angka ke SATU token kata yang menempel: prioritas satuan sesudahnya
     // (mis. "つ"/"年"), lalu token kata sebelumnya (mis. "第" pada "第1").
     let partner = -1;
@@ -3774,11 +3782,19 @@ function KaraokeText({
       />
     );
   };
-  const renderSep = (j: number) => (
-    <span key={j} className="whitespace-pre" style={{ color: "#fff", textShadow: KARAOKE_SHADOW }}>
-      {toks[j].text}
-    </span>
-  );
+  const renderSep = (j: number) => {
+    const t = toks[j];
+    // [watch-karaoke-number-sync-v1] Token angka yang JATUH ke jalur pemisah (browser
+    // tak menandainya word-like) tetap ikut menyala teal saat window karaoke gabungan
+    // dengan satuannya aktif — biar angka & satuan sewarna. Pemisah lain (spasi, tanda
+    // baca) tetap putih. Padam saat ada kata lain di baris ini yang dibuka artinya.
+    const colored = isDigitToken(t.text) && t.state === "active" && !anyTapped;
+    return (
+      <span key={j} className="whitespace-pre" style={{ color: colored ? TEAL : "#fff", textShadow: KARAOKE_SHADOW }}>
+        {t.text}
+      </span>
+    );
+  };
 
   // Susun elemen render: token yang jatuh di chunk multi-kata dibungkus KaraokePhrase
   // (satu tap → arti frasa); sisanya render per-token biasa. Frasa dianggap "sedang
