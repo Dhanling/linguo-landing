@@ -1567,13 +1567,52 @@ export default function VideoLearnPlayer({
       const expr = a?.expr ?? [];
       // Simpan entri kalau ada penjajaran ATAU ada ekspresi (chunking bisa pakai salah satu).
       if ((!groups || !groups.length) && !expr.length) continue;
+      // [watch-context-phrase-v1] Gabungkan grup yang berbagi indeks kata TARGET yang
+      // sama. Model kadang menyerakkan padanan satu kata ke beberapa grup (mis. "Let's"
+      // → grup {b:ayo} DAN {b:kita}); tanpa penggabungan, `tGroup[t]` yang last-write-wins
+      // cuma menyimpan padanan TERAKHIR ("kita") & "ayo" hilang. Union-find atas indeks
+      // grup, disatukan bila berbagi indeks target → satu kata menyala di SEMUA artinya.
+      const raw = groups ?? [];
+      const parent = raw.map((_, gi) => gi);
+      const find = (x: number): number => {
+        while (parent[x] !== x) {
+          parent[x] = parent[parent[x]];
+          x = parent[x];
+        }
+        return x;
+      };
+      const seenT = new Map<number, number>();
+      raw.forEach((g, gi) => {
+        g.t.forEach((t) => {
+          const prev = seenT.get(t);
+          if (prev == null) seenT.set(t, gi);
+          else parent[find(prev)] = find(gi);
+        });
+      });
+      // Kumpulkan tiap komponen → himpunan indeks target & terjemahannya.
+      const compT = new Map<number, Set<number>>();
+      const compB = new Map<number, Set<number>>();
+      raw.forEach((g, gi) => {
+        const r = find(gi);
+        if (!compT.has(r)) {
+          compT.set(r, new Set());
+          compB.set(r, new Set());
+        }
+        g.t.forEach((t) => compT.get(r)!.add(t));
+        g.b.forEach((b) => compB.get(r)!.add(b));
+      });
+      // Beri id grup baru urut indeks target terkecil (stabil untuk firstT).
+      const comps = [...compT.keys()]
+        .map((r) => ({ t: compT.get(r)!, b: compB.get(r)! }))
+        .filter((c) => c.t.size > 0)
+        .sort((a, b) => Math.min(...a.t) - Math.min(...b.t));
       const tGroup: number[] = [];
       const bGroup: number[] = [];
       const firstT: number[] = [];
-      (groups ?? []).forEach((g, gi) => {
-        firstT[gi] = g.t.length ? Math.min(...g.t) : -1;
-        g.t.forEach((t) => (tGroup[t] = gi));
-        g.b.forEach((b) => (bGroup[b] = gi));
+      comps.forEach((c, gi) => {
+        firstT[gi] = Math.min(...c.t);
+        c.t.forEach((t) => (tGroup[t] = gi));
+        c.b.forEach((b) => (bGroup[b] = gi));
       });
       out[i] = { tGroup, bGroup, firstT, expr };
     }
@@ -1582,18 +1621,32 @@ export default function VideoLearnPlayer({
 
   // Kumpulan ordinal yang harus menyala saat ini untuk baris `i` — mengikuti grup
   // penjajaran kalau ada (frasa menyala utuh), kalau tidak cuma kata yang di-hover.
+  // [watch-context-phrase-v1] Kalau kata yang di-hover jatuh dalam SATU rentang
+  // ekspresi (`expr`, mis. "you're in" → [3,4]), sorot SELURUH rentang di sisi target
+  // DAN gabungan semua arti kata-katanya di sisi terjemahan ("kamu ikut") — biar frasa
+  // & padanannya menyala sewarna satu unit, bukan cuma kata yang disentuh.
   const hotSets = useCallback(
     (i: number): { t: Set<number>; b: Set<number> } => {
       const t = new Set<number>();
       const b = new Set<number>();
       if (!hoverWord || hoverWord.i !== i) return { t, b };
-      t.add(hoverWord.k);
       const m = alignMaps[i];
-      const g = m?.tGroup[hoverWord.k];
-      if (m && g != null && g >= 0) {
-        m.tGroup.forEach((gg, k) => gg === g && t.add(k));
-        m.bGroup.forEach((gg, bj) => gg === g && b.add(bj));
+      // Ordinal target yang menyala: kata yang di-hover + anggota grup penjajarannya +
+      // (kalau ada) seluruh rentang ekspresi yang memuatnya.
+      const lightT = new Set<number>([hoverWord.k]);
+      if (m) {
+        const g = m.tGroup[hoverWord.k];
+        if (g != null && g >= 0) m.tGroup.forEach((gg, k) => gg === g && lightT.add(k));
+        const span = (m.expr ?? []).find((sp) => sp.includes(hoverWord.k));
+        if (span) span.forEach((k) => lightT.add(k));
       }
+      lightT.forEach((k) => t.add(k));
+      // Sisi terjemahan: gabungan arti tiap kata target yang menyala (via grupnya).
+      if (m)
+        lightT.forEach((k) => {
+          const g = m.tGroup[k];
+          if (g != null && g >= 0) m.bGroup.forEach((gg, bj) => gg === g && b.add(bj));
+        });
       return { t, b };
     },
     [hoverWord, alignMaps]

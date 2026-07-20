@@ -2163,7 +2163,11 @@ export interface AlignResult {
 // v4: align juga mengembalikan `x` (rentang EKSPRESI idiomatik → highlight 1 unit).
 // Cache lama (v3) hanya menyimpan grup tanpa ekspresi → naikkan versi biar di-ambil
 // ulang & ikut dapat ekspresi. Bentuk cache berubah: dulu AlignGroup[], kini AlignResult.
-const ALIGN_CACHE_PREFIX = "linguo:watch:align:v4:";
+// v5: prompt align kini KONTEKSTUAL — kontraksi/frasa-set ("Let's" ↔ "ayo kita",
+// "you're in" ↔ "kamu ikut") digabung jadi satu grup/ekspresi & semua padanan satu
+// kata dikumpulkan (tak lagi tercecer di grup ganda). Naikkan versi biar hasil lama
+// yang kasar di-ambil ulang dengan penjajaran baru.
+const ALIGN_CACHE_PREFIX = "linguo:watch:align:v5:";
 
 function alignCacheKey(target: string, base: string): string {
   // Hash ringkas & stabil (djb2) dari pasangan target|base — cukup untuk kunci cache.
