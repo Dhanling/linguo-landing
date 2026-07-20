@@ -20,6 +20,7 @@ import {
   BookOpen,
   Check,
   Clock,
+  Download,
   Layers,
   Repeat2,
   RotateCcw,
@@ -117,6 +118,99 @@ function buildOrder(words: SavedWord[], reviewAhead: boolean): SavedWord[] {
 
 const srsOf = (w: SavedWord): SrsState => w.srs ?? newSrsState();
 
+// ── Ekspor PDF ────────────────────────────────────────────────────────────────
+// Unduh kosakata sebagai PDF berbentuk kolom (Kata | Arti | Contoh) — mirip
+// tabel kosakata di menu obrolan Lingcore pada app Linguo. Sengaja lewat jendela
+// cetak browser (bukan jsPDF) supaya SEMUA aksara ikut terbaca dengan benar
+// (Jepang, Korea, Arab, Mandarin, Thai, dsb) memakai font sistem — jsPDF hanya
+// mendukung Latin tanpa menyematkan font.
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// Judul ekspor dari bahasa kata yang tampil: nama bahasa kalau seragam, selain
+// itu "Semua bahasa".
+function exportTitle(words: SavedWord[]): string {
+  const codes = new Set(words.map((w) => w.langCode));
+  if (codes.size === 1) {
+    const code = [...codes][0];
+    return getImmersionLang(code)?.name ?? code;
+  }
+  return "Semua bahasa";
+}
+
+function exportVocabPdf(words: SavedWord[], title: string) {
+  if (typeof window === "undefined" || words.length === 0) return;
+  const today = new Date().toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const rows = words
+    .map((w, i) => {
+      const stage = STAGE[cardStage(w.srs)];
+      return `<tr>
+        <td class="no">${i + 1}</td>
+        <td class="kata">${escapeHtml(w.word)}</td>
+        <td class="arti">${escapeHtml(w.meaning || "—")}</td>
+        <td class="contoh">${w.example ? escapeHtml(w.example) : ""}</td>
+        <td class="tahap"><span class="badge">${stage.label}</span></td>
+      </tr>`;
+    })
+    .join("");
+
+  const html = `<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8" />
+<title>Kosakata Linguo — ${escapeHtml(title)}</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; color: #1a1a1a; margin: 40px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid ${TEAL}; padding-bottom: 12px; margin-bottom: 20px; }
+  h1 { font-size: 20px; margin: 0; color: ${TEAL_DARK}; }
+  .sub { font-size: 12px; color: #888; }
+  .meta { font-size: 12px; color: #666; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; background: ${TEAL}; color: #fff; padding: 9px 10px; font-size: 12px; }
+  td { padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  tr:nth-child(even) td { background: #f6fbfb; }
+  .no { width: 34px; color: #999; text-align: right; }
+  .kata { font-weight: 700; white-space: nowrap; }
+  .arti { color: #b8860b; font-weight: 600; }
+  .contoh { color: #666; font-style: italic; }
+  .tahap { width: 78px; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #eef2f7; color: #555; }
+  footer { margin-top: 22px; font-size: 10px; color: #aaa; text-align: center; }
+  @media print { body { margin: 18px; } th { -webkit-print-color-adjust: exact; print-color-adjust: exact; } tr:nth-child(even) td { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style></head>
+<body>
+  <header>
+    <div><h1>Kosakata Saya</h1><div class="sub">${escapeHtml(title)}</div></div>
+    <div class="sub">Linguo · linguo.id</div>
+  </header>
+  <div class="meta">${words.length} kata · diekspor ${today}</div>
+  <table>
+    <thead><tr><th class="no">#</th><th>Kata</th><th>Arti</th><th>Contoh</th><th>Tahap</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <footer>Dibuat dengan Linguo Watch &amp; Learn — linguo.id</footer>
+</body></html>`;
+
+  const win = window.open("", "_blank");
+  if (!win) {
+    alert("Aktifkan pop-up untuk mengunduh PDF.");
+    return;
+  }
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  // Beri waktu render aksara/font sebelum dialog cetak muncul.
+  setTimeout(() => win.print(), 350);
+}
+
 type Tab = "belajar" | "deck" | "analisa";
 type ViewMode = "home" | "review" | "done";
 
@@ -139,12 +233,23 @@ export default function FlashcardDeck({
   const [pos, setPos] = useState(0);
   const [knew, setKnew] = useState(0);
 
-  // Hidrasi kosakata + pilih filter awal (bahasa yang sedang ditonton kalau ada).
+  // Hidrasi kosakata + pilih filter awal. Selalu buka pada SATU bahasa (bukan
+  // "Semua bahasa") supaya dashboard tak langsung mencampur semua flashcard:
+  // prioritas bahasa yang sedang ditonton, kalau tak punya kata → bahasa dengan
+  // kata terbanyak. "all" hanya saat belum ada kata sama sekali.
   useEffect(() => {
     const list = getSavedWords();
     setAll(list);
-    const hasInit = list.some((w) => w.langCode === initialLang);
-    setFilter(hasInit ? initialLang : "all");
+    if (list.some((w) => w.langCode === initialLang)) {
+      setFilter(initialLang);
+    } else if (list.length > 0) {
+      const counts: Record<string, number> = {};
+      for (const w of list) counts[w.langCode] = (counts[w.langCode] ?? 0) + 1;
+      const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+      setFilter(top);
+    } else {
+      setFilter("all");
+    }
   }, [initialLang]);
 
   // Bahasa yang punya kata tersimpan — buat chip filter.
@@ -549,7 +654,20 @@ function BelajarTab({
 
       {/* Daftar kata */}
       <div>
-        <p className="mb-3 mt-2 text-[14px] font-bold text-white lg:mt-0">Kata ({stats.total})</p>
+        <div className="mb-3 mt-2 flex items-center justify-between gap-2 lg:mt-0">
+          <p className="text-[14px] font-bold text-white">Kata ({stats.total})</p>
+          {words.length > 0 && (
+            <button
+              onClick={() => exportVocabPdf(words, exportTitle(words))}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-white/10"
+              style={{ border: `1px solid ${BORDER}`, color: "#7FE0E0" }}
+              aria-label="Unduh kosakata sebagai PDF"
+              title="Unduh sebagai PDF (kolom kata & arti)"
+            >
+              <Download className="h-3.5 w-3.5" /> Unduh PDF
+            </button>
+          )}
+        </div>
         <div className="space-y-2.5 xl:grid xl:grid-cols-2 xl:gap-2.5 xl:space-y-0">
           {words.map((w) => {
             const accent = STAGE[cardStage(w.srs)];
