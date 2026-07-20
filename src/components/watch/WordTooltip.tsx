@@ -393,43 +393,30 @@ export function WordTooltip({
               : { bottom: "100%", borderLeft: "10px solid transparent", borderRight: "10px solid transparent", borderBottom: `11px solid ${BALLOON}` }),
           }}
         />
-        {/* Header: kata + kelas kata (kiri) — aksi + tutup (KANAN ATAS).
-            [watch-tip-actions-top-v1] Deret aksi (Simpan · Analisa · Dengar)
-            dipindah ke pojok KANAN ATAS bersama tombol tutup (permintaan user),
-            tiap ikon zoom-in saat hover. */}
+        {/* Header: kata + kelas kata (kiri). Deret aksi dipindah ke KANAN BAWAH balon. */}
         {/* [watch-tip-pos-inline-v1] Kelas kata (POS) menempel di KANAN kata dalam
             SATU baris — bukan turun & membungkus 2 baris seperti sebelumnya
             (permintaan user). Kata & bentuk dasar shrink-0 (utuh); hanya pil POS
             yang boleh menciut/terpotong (min-w-0 + truncate) kalau ruang mepet,
-            jadi tetap 1 baris tanpa mendorong ikon aksi. */}
-        <div className="flex items-start justify-between gap-1.5">
-          <div className="flex min-w-0 items-baseline gap-1.5">
-            <span className="shrink-0 text-[16px] font-extrabold text-white">{word}</span>
-            {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
-            {meaning?.base &&
-              meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
-                <span className="shrink-0 text-[14px] font-semibold" style={{ color: SUB }}>
-                  ({meaning.base})
-                </span>
-              )}
-            {meaning?.type && (
-              <span
-                title={meaning.type}
-                className="min-w-0 shrink truncate whitespace-nowrap rounded-md px-1.5 py-0.5 text-[10px] font-semibold leading-tight"
-                style={{ backgroundColor: "rgba(26,158,158,0.18)", color: "#7FE0E0" }}
-              >
-                {meaning.type}
+            jadi tetap 1 baris. */}
+        <div className="flex min-w-0 items-baseline gap-1.5">
+          <span className="shrink-0 text-[16px] font-extrabold text-white">{word}</span>
+          {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
+          {meaning?.base &&
+            meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
+              <span className="shrink-0 text-[14px] font-semibold" style={{ color: SUB }}>
+                ({meaning.base})
               </span>
             )}
-          </div>
-          <div className="flex shrink-0 items-center gap-0.5">
-            <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
-              {saved ? <BookmarkCheck className="h-[17px] w-[17px]" /> : <BookmarkPlus className="h-[17px] w-[17px]" />}
-            </TipAction>
-            <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
-              <Sparkles className="h-[17px] w-[17px]" />
-            </TipAction>
-          </div>
+          {meaning?.type && (
+            <span
+              title={meaning.type}
+              className="min-w-0 shrink truncate whitespace-nowrap rounded-md px-1.5 py-0.5 text-[10px] font-semibold leading-tight"
+              style={{ backgroundColor: "rgba(26,158,158,0.18)", color: "#7FE0E0" }}
+            >
+              {meaning.type}
+            </span>
+          )}
         </div>
 
         {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
@@ -497,6 +484,17 @@ export function WordTooltip({
             })}
           </div>
         )}
+
+        {/* [watch-tip-actions-bottom-v1] Deret aksi (Simpan · Analisa) di pojok
+            KANAN BAWAH balon (permintaan user) — tiap ikon zoom-in saat hover. */}
+        <div className="mt-2.5 flex items-center justify-end gap-0.5">
+          <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
+            {saved ? <BookmarkCheck className="h-[17px] w-[17px]" /> : <BookmarkPlus className="h-[17px] w-[17px]" />}
+          </TipAction>
+          <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
+            <Sparkles className="h-[17px] w-[17px]" />
+          </TipAction>
+        </div>
 
       </div>
     </div>

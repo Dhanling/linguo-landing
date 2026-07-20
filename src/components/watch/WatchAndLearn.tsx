@@ -85,6 +85,9 @@ const LANG_KEY = "linguo:watch:lang:v1";
 // Riwayat bahasa yang terakhir dipilih di language selector (kode, terbaru dulu).
 const RECENT_LANGS_KEY = "linguo:watch:recentLangs:v1";
 const RECENT_LANGS_MAX = 5;
+// Riwayat kata kunci pencarian video (teks, terbaru dulu).
+const SEARCH_HISTORY_KEY = "linguo:watch:searchHistory:v1";
+const SEARCH_HISTORY_MAX = 8;
 // [linguo-patch:watch-orient-toggle-v1] Ambang pemisah Shorts vs Video landscape.
 // Shorts YouTube praktis selalu ≤60 dtk & vertikal; klip landscape (adegan film,
 // TV, wawancara) di katalog umumnya lebih panjang. Bukan deteksi aspect ratio
@@ -237,6 +240,8 @@ export default function WatchAndLearn() {
   const [category, setCategory] = useState(SIAP_ID);
   const [freeText, setFreeText] = useState("");
   const [committedText, setCommittedText] = useState("");
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
+  const [searchFocused, setSearchFocused] = useState(false);
   // [linguo-patch:watch-video-only-v1] Katalog kini khusus video landscape — Shorts
   // (klip vertikal pendek) disingkirkan sepenuhnya (lihat filter orientasi di shownVideos).
   // [linguo-patch:watch-duration-filter-v1] Filter durasi: semua / <5 / 5–10 / 10–20 mnt.
@@ -359,6 +364,17 @@ export default function WatchAndLearn() {
             parsed
               .filter((c): c is string => typeof c === "string" && !!getImmersionLang(c))
               .slice(0, RECENT_LANGS_MAX)
+          );
+        }
+      }
+      const rawSearch = window.localStorage.getItem(SEARCH_HISTORY_KEY);
+      if (rawSearch) {
+        const parsed = JSON.parse(rawSearch);
+        if (Array.isArray(parsed)) {
+          setSearchHistory(
+            parsed
+              .filter((q): q is string => typeof q === "string" && !!q.trim())
+              .slice(0, SEARCH_HISTORY_MAX)
           );
         }
       }
@@ -757,9 +773,68 @@ export default function WatchAndLearn() {
     []
   );
 
+  // Simpan kata kunci ke riwayat (dedup case-insensitive, terbaru dulu).
+  const pushSearchHistory = useCallback((raw: string) => {
+    const q = raw.trim();
+    if (!q) return;
+    setSearchHistory((prev) => {
+      const next = [q, ...prev.filter((x) => x.toLowerCase() !== q.toLowerCase())].slice(
+        0,
+        SEARCH_HISTORY_MAX
+      );
+      try {
+        window.localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(next));
+      } catch {
+        /* abaikan */
+      }
+      return next;
+    });
+  }, []);
+
+  const removeSearchHistory = useCallback((q: string) => {
+    setSearchHistory((prev) => {
+      const next = prev.filter((x) => x !== q);
+      try {
+        window.localStorage.setItem(SEARCH_HISTORY_KEY, JSON.stringify(next));
+      } catch {
+        /* abaikan */
+      }
+      return next;
+    });
+  }, []);
+
+  const clearSearchHistory = useCallback(() => {
+    setSearchHistory([]);
+    try {
+      window.localStorage.removeItem(SEARCH_HISTORY_KEY);
+    } catch {
+      /* abaikan */
+    }
+  }, []);
+
   const onSearchSubmit = useCallback(() => {
     setCommittedText(freeText);
-  }, [freeText]);
+    pushSearchHistory(freeText);
+    setSearchFocused(false);
+  }, [freeText, pushSearchHistory]);
+
+  // Pilih dari riwayat: isi kotak + langsung cari.
+  const applySearchHistory = useCallback(
+    (q: string) => {
+      setFreeText(q);
+      setCommittedText(q);
+      pushSearchHistory(q);
+      setSearchFocused(false);
+    },
+    [pushSearchHistory]
+  );
+
+  // Riwayat yang ditampilkan di dropdown: kalau sedang mengetik, saring yang cocok.
+  const shownSearchHistory = useMemo(() => {
+    const q = freeText.trim().toLowerCase();
+    if (!q) return searchHistory;
+    return searchHistory.filter((x) => x.toLowerCase().includes(q) && x.toLowerCase() !== q);
+  }, [searchHistory, freeText]);
 
   // Cari Kata (YouGlish): cari `wordInput` di transkrip katalog bahasa aktif.
   const runWordSearch = useCallback(async () => {
@@ -982,31 +1057,80 @@ export default function WatchAndLearn() {
         {/* Search box (pencarian video) — disembunyikan di tab Cari Kata yang
             punya kotak pencarian kata sendiri. */}
         {!wordMode && (
-          <div
-            className="mt-6 flex items-center gap-2.5 rounded-2xl px-4"
-            style={{ backgroundColor: CARD }}
-          >
-            <Search className="h-4 w-4 shrink-0" color={SUB} />
-            <input
-              value={freeText}
-              onChange={(e) => setFreeText(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") onSearchSubmit();
-              }}
-              placeholder={`Cari video dalam bahasa ${lang.name}…`}
-              className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
-            />
-            {(freeText || committedText) && (
-              <button
-                onClick={() => {
-                  setFreeText("");
-                  setCommittedText("");
+          <div className="relative mt-6">
+            <div
+              className="flex items-center gap-2.5 rounded-2xl px-4"
+              style={{ backgroundColor: CARD }}
+            >
+              <Search className="h-4 w-4 shrink-0" color={SUB} />
+              <input
+                value={freeText}
+                onChange={(e) => setFreeText(e.target.value)}
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => window.setTimeout(() => setSearchFocused(false), 120)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") onSearchSubmit();
+                  else if (e.key === "Escape") setSearchFocused(false);
                 }}
-                className="shrink-0 transition-opacity hover:opacity-70"
-                aria-label="Hapus pencarian"
+                placeholder={`Cari video dalam bahasa ${lang.name}…`}
+                className="flex-1 bg-transparent py-3.5 text-[15px] text-white outline-none placeholder:text-white/35"
+              />
+              {(freeText || committedText) && (
+                <button
+                  onClick={() => {
+                    setFreeText("");
+                    setCommittedText("");
+                  }}
+                  className="shrink-0 transition-opacity hover:opacity-70"
+                  aria-label="Hapus pencarian"
+                >
+                  <X className="h-4 w-4" color={SUB} />
+                </button>
+              )}
+            </div>
+
+            {/* Riwayat pencarian — muncul saat kotak fokus & ada riwayat. */}
+            {searchFocused && shownSearchHistory.length > 0 && (
+              <div
+                className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
+                style={{ backgroundColor: CARD }}
               >
-                <X className="h-4 w-4" color={SUB} />
-              </button>
+                <div className="flex items-center justify-between px-4 pt-3 pb-1.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
+                    Pencarian terakhir
+                  </span>
+                  <button
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={clearSearchHistory}
+                    className="text-[11px] font-bold transition-opacity hover:opacity-70"
+                    style={{ color: SUB }}
+                  >
+                    Hapus semua
+                  </button>
+                </div>
+                <ul className="pb-1.5">
+                  {shownSearchHistory.map((q) => (
+                    <li key={q} className="group flex items-center">
+                      <button
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => applySearchHistory(q)}
+                        className="flex flex-1 items-center gap-3 px-4 py-2.5 text-left transition-colors hover:bg-white/5"
+                      >
+                        <Clock3 className="h-4 w-4 shrink-0" color={SUB} />
+                        <span className="truncate text-[14px] text-white">{q}</span>
+                      </button>
+                      <button
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => removeSearchHistory(q)}
+                        className="shrink-0 px-3 py-2.5 opacity-60 transition-opacity hover:opacity-100"
+                        aria-label={`Hapus "${q}" dari riwayat`}
+                      >
+                        <X className="h-3.5 w-3.5" color={SUB} />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         )}
