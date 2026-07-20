@@ -32,11 +32,15 @@ import {
   X,
 } from "lucide-react";
 import {
+  buildDeckOrder,
   createDeck,
+  deckDueCount,
   deleteDeck,
   fetchDeckCards,
   generateAiDeck,
+  getDeckSrs,
   getDeckUser,
+  gradeDeckCard,
   importCardsToVocab,
   listCommunityDecks,
   listMyDecks,
@@ -46,6 +50,7 @@ import {
   type GeneratedDeck,
 } from "@/lib/decks";
 import { getSavedWords, speakText, type SavedWord } from "@/lib/immersionLearn";
+import { gradePreviewLabel, newSrsState, type SrsGrade, type SrsState } from "@/lib/srs";
 import { getImmersionLang, IMMERSION_LANGS } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 
@@ -53,11 +58,21 @@ const TEAL = "#1A9E9E";
 const TEAL_DARK = "#127d7d";
 const GOLD = "#F4B740";
 const RED = "#FF6B6B";
+const ORANGE = "#E8973D";
+const GREEN = "#16A34A";
 const PURPLE = "#7C6BE0";
 const CARD = "#161A1C";
 const SURFACE_ALT = "#10161A";
 const BORDER = "rgba(255,255,255,0.08)";
 const SUB = "rgba(255,255,255,0.5)";
+
+// Empat respons review ala Anki (sama dengan tab "Belajar" Kosakata Saya).
+const GRADES: { grade: SrsGrade; label: string; color: string }[] = [
+  { grade: "again", label: "Lagi", color: RED },
+  { grade: "hard", label: "Sulit", color: ORANGE },
+  { grade: "good", label: "Bagus", color: TEAL },
+  { grade: "easy", label: "Mudah", color: GREEN },
+];
 
 // Tema siap pakai — chip di form Generate AI biar siswa tak mulai dari kosong.
 const THEME_SUGGESTIONS = [
@@ -385,6 +400,8 @@ function DeckRow({
   onDelete?: () => void;
 }) {
   const src = SOURCE_META[deck.source];
+  // Jumlah kartu yang jatuh tempo (SRS) — tampil sebagai lencana ajakan review.
+  const due = deckDueCount(deck.id, deck.cardCount);
   return (
     <div className="rounded-2xl p-4" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
       <div className="flex items-start justify-between gap-2">
@@ -392,6 +409,12 @@ function DeckRow({
           <p className="truncate text-[15px] font-bold text-white">{deck.title}</p>
           <p className="mt-0.5 text-[12px]" style={{ color: SUB }}>
             {deck.cardCount} kartu
+            {due > 0 && (
+              <>
+                {" · "}
+                <span style={{ color: "#7FE0E0" }}>{due} jatuh tempo</span>
+              </>
+            )}
             {mine ? null : (
               <>
                 {" · "}
@@ -415,7 +438,7 @@ function DeckRow({
           className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl py-2 text-[13px] font-bold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: TEAL }}
         >
-          <Play className="h-3.5 w-3.5" /> Pelajari
+          <Play className="h-3.5 w-3.5" /> {due > 0 ? "Review" : "Pelajari"}
         </button>
         {mine && onTogglePublic && (
           <button
@@ -789,6 +812,11 @@ function PreviewCardRow({ card, lang }: { card: DeckCard; lang: string }) {
             {card.example}
           </p>
         )}
+        {card.exampleTranslation && (
+          <p className="truncate text-[11.5px]" style={{ color: "rgba(127,224,224,0.7)" }}>
+            {card.exampleTranslation}
+          </p>
+        )}
       </div>
       <button
         onClick={() => void speakText(card.word, lang)}
@@ -838,7 +866,7 @@ function CreateVideoForm({
     if (saving) return;
     const cards = words
       .filter((w) => selected.has(w.word))
-      .map((w) => ({ word: w.word, meaning: w.meaning, example: w.example, translit: "" }));
+      .map((w) => ({ word: w.word, meaning: w.meaning, example: w.example, exampleTranslation: "", translit: "" }));
     if (!cards.length) {
       setError("Pilih minimal satu kata.");
       return;
@@ -947,6 +975,7 @@ interface ManualRow {
   word: string;
   meaning: string;
   example: string;
+  exampleTranslation: string;
 }
 
 function CreateManualForm({
@@ -960,9 +989,9 @@ function CreateManualForm({
 }) {
   const [title, setTitle] = useState("");
   const [rows, setRows] = useState<ManualRow[]>([
-    { word: "", meaning: "", example: "" },
-    { word: "", meaning: "", example: "" },
-    { word: "", meaning: "", example: "" },
+    { word: "", meaning: "", example: "", exampleTranslation: "" },
+    { word: "", meaning: "", example: "", exampleTranslation: "" },
+    { word: "", meaning: "", example: "", exampleTranslation: "" },
   ]);
   const [isPublic, setIsPublic] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -986,6 +1015,7 @@ function CreateManualForm({
         word: r.word.trim(),
         meaning: r.meaning.trim(),
         example: r.example.trim(),
+        exampleTranslation: r.exampleTranslation.trim(),
         translit: "",
       })),
     });
@@ -1054,10 +1084,17 @@ function CreateManualForm({
               className={inputCls}
               style={inputStyle}
             />
+            <input
+              value={r.exampleTranslation}
+              onChange={(e) => setRow(i, { exampleTranslation: e.target.value })}
+              placeholder="Terjemahan contoh (opsional)"
+              className={inputCls}
+              style={inputStyle}
+            />
           </div>
         ))}
         <button
-          onClick={() => setRows((rs) => [...rs, { word: "", meaning: "", example: "" }])}
+          onClick={() => setRows((rs) => [...rs, { word: "", meaning: "", example: "", exampleTranslation: "" }])}
           className="inline-flex w-full items-center justify-center gap-1.5 rounded-2xl py-3 text-[13.5px] font-bold text-white transition-colors hover:bg-white/10"
           style={{ border: `1px dashed ${BORDER}` }}
         >
@@ -1079,8 +1116,14 @@ function CreateManualForm({
 }
 
 // ── Sesi belajar deck (overlay penuh) ─────────────────────────────────────────
-// Alur ringan tanpa SRS: balik kartu → "Belum hafal" / "Hafal". Di akhir sesi
-// bisa impor seluruh kartu ke "Kosakata Saya" agar masuk review harian.
+// Kini memakai SRS (spaced repetition SM-2) yang sama dengan tab "Belajar"
+// Kosakata Saya: kartu dinilai 4 tingkat (Lagi/Sulit/Bagus/Mudah) dan dijadwal
+// ulang. Progres disimpan TERPISAH per-deck (localStorage, lihat gradeDeckCard)
+// supaya tak mencemari Kosakata Saya / kena kuota simpan. Kartu jatuh tempo tampil
+// dulu; kalau tak ada yang jatuh tempo, semua kartu ditinjau ("ulang lebih awal").
+// Di akhir sesi tetap bisa diimpor ke "Kosakata Saya".
+const srsKey = (word: string) => word.trim().toLowerCase();
+
 function StudyOverlay({
   deck,
   lang,
@@ -1093,6 +1136,8 @@ function StudyOverlay({
   onVocabChange?: () => void;
 }) {
   const [cards, setCards] = useState<DeckCard[] | null>(null);
+  const [order, setOrder] = useState<DeckCard[]>([]);
+  const [srsMap, setSrsMap] = useState<Record<string, SrsState>>({});
   const [pos, setPos] = useState(0);
   const [knew, setKnew] = useState(0);
   const [imported, setImported] = useState(false);
@@ -1100,7 +1145,13 @@ function StudyOverlay({
   useEffect(() => {
     let alive = true;
     void fetchDeckCards(deck.id).then((cs) => {
-      if (alive) setCards(cs);
+      if (!alive) return;
+      const map = getDeckSrs(deck.id);
+      setCards(cs);
+      setSrsMap(map);
+      setOrder(buildDeckOrder(cs, map, false));
+      setPos(0);
+      setKnew(0);
     });
     return () => {
       alive = false;
@@ -1122,7 +1173,28 @@ function StudyOverlay({
     onVocabChange?.();
   }, [cards, imported, deck.langCode, lang, onVocabChange]);
 
-  const done = cards !== null && pos >= cards.length;
+  const onGrade = useCallback(
+    (grade: SrsGrade) => {
+      const card = order[pos];
+      if (card) {
+        const next = gradeDeckCard(deck.id, card.word, grade);
+        setSrsMap((m) => ({ ...m, [srsKey(card.word)]: next }));
+        if (grade !== "again") setKnew((k) => k + 1);
+      }
+      setPos((p) => p + 1);
+    },
+    [order, pos, deck.id]
+  );
+
+  const replay = useCallback(() => {
+    if (!cards) return;
+    setOrder(buildDeckOrder(cards, getDeckSrs(deck.id), true));
+    setPos(0);
+    setKnew(0);
+  }, [cards, deck.id]);
+
+  const done = cards !== null && cards.length > 0 && pos >= order.length;
+  const total = order.length;
 
   return (
     <div className="fixed inset-0 z-[93] flex flex-col" style={{ backgroundColor: "rgba(6,9,10,0.98)" }}>
@@ -1132,20 +1204,20 @@ function StudyOverlay({
           <X className="h-5 w-5 text-white" />
         </button>
         <div className="min-w-0 flex-1">
-          {cards && cards.length > 0 && !done ? (
+          {total > 0 && !done ? (
             <div className="h-2.5 overflow-hidden rounded-full" style={{ backgroundColor: SURFACE_ALT }}>
               <div
                 className="h-full rounded-full transition-all"
-                style={{ width: `${(pos / cards.length) * 100}%`, backgroundColor: TEAL }}
+                style={{ width: `${(pos / total) * 100}%`, backgroundColor: TEAL }}
               />
             </div>
           ) : (
             <p className="truncate text-[14px] font-bold text-white">{deck.title}</p>
           )}
         </div>
-        {cards && cards.length > 0 && !done && (
+        {total > 0 && !done && (
           <span className="shrink-0 text-[13px] font-bold" style={{ color: SUB }}>
-            {Math.min(pos + 1, cards.length)}/{cards.length}
+            {Math.min(pos + 1, total)}/{total}
           </span>
         )}
       </div>
@@ -1165,9 +1237,10 @@ function StudyOverlay({
           <div className="flex h-20 w-20 items-center justify-center rounded-full" style={{ backgroundColor: TEAL }}>
             <Check className="h-9 w-9 text-white" strokeWidth={3} />
           </div>
-          <p className="mt-6 text-[26px] font-extrabold text-white">Deck selesai!</p>
+          <p className="mt-6 text-[26px] font-extrabold text-white">Sesi selesai!</p>
           <p className="mt-2 text-[15px]" style={{ color: SUB }}>
-            Kamu hafal {knew} dari {cards.length} kartu.
+            Kamu mereview {total} kartu — {knew} kamu ingat. Kartu yang sudah dijadwal
+            ulang muncul lagi saat jatuh tempo.
           </p>
           <div className="mt-8 w-full max-w-sm space-y-3">
             <button
@@ -1180,14 +1253,11 @@ function StudyOverlay({
               {imported ? "Sudah masuk Kosakata Saya" : "Tambahkan ke Kosakata Saya"}
             </button>
             <button
-              onClick={() => {
-                setPos(0);
-                setKnew(0);
-              }}
+              onClick={replay}
               className="w-full rounded-2xl py-3.5 text-[14px] font-bold text-white transition-colors hover:bg-white/10"
               style={{ border: `1px solid ${BORDER}` }}
             >
-              Ulangi deck
+              Ulang lebih awal
             </button>
             <button onClick={onClose} className="w-full py-2 text-[13.5px] font-bold" style={{ color: SUB }}>
               Tutup
@@ -1197,12 +1267,10 @@ function StudyOverlay({
       ) : (
         <StudyCard
           key={`${deck.id}::${pos}`}
-          card={cards[pos]}
+          card={order[pos]}
           lang={deck.langCode || lang}
-          onAnswer={(hafal) => {
-            if (hafal) setKnew((k) => k + 1);
-            setPos((p) => p + 1);
-          }}
+          srs={srsMap[srsKey(order[pos].word)] ?? newSrsState()}
+          onGrade={onGrade}
         />
       )}
     </div>
@@ -1212,11 +1280,13 @@ function StudyOverlay({
 function StudyCard({
   card,
   lang,
-  onAnswer,
+  srs,
+  onGrade,
 }: {
   card: DeckCard;
   lang: string;
-  onAnswer: (hafal: boolean) => void;
+  srs: SrsState;
+  onGrade: (grade: SrsGrade) => void;
 }) {
   const [revealed, setRevealed] = useState(false);
   const langDef = getImmersionLang(lang);
@@ -1272,10 +1342,17 @@ function StudyCard({
               </p>
               {card.example && (
                 <div
-                  className="mt-4 w-full rounded-2xl px-4 py-3 text-center text-[13px] italic"
-                  style={{ backgroundColor: SURFACE_ALT, color: SUB }}
+                  className="mt-4 w-full rounded-2xl px-4 py-3 text-center"
+                  style={{ backgroundColor: SURFACE_ALT }}
                 >
-                  “{card.example}”
+                  <p className="text-[13px] italic" style={{ color: SUB }}>
+                    “{card.example}”
+                  </p>
+                  {card.exampleTranslation && (
+                    <p className="mt-1.5 text-[12.5px]" style={{ color: "rgba(127,224,224,0.85)" }}>
+                      {card.exampleTranslation}
+                    </p>
+                  )}
                 </div>
               )}
             </div>
@@ -1297,22 +1374,26 @@ function StudyCard({
             Tampilkan jawaban
           </button>
         ) : (
-          <div className="flex gap-2">
-            <button
-              onClick={() => onAnswer(false)}
-              className="flex-1 rounded-2xl py-3.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: RED }}
-            >
-              Belum hafal
-            </button>
-            <button
-              onClick={() => onAnswer(true)}
-              className="flex-1 rounded-2xl py-3.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: TEAL }}
-            >
-              Hafal
-            </button>
-          </div>
+          <>
+            <p className="mb-2.5 text-center text-[13px]" style={{ color: SUB }}>
+              Seberapa baik kamu mengingatnya?
+            </p>
+            <div className="flex gap-2">
+              {GRADES.map(({ grade, label, color }) => (
+                <button
+                  key={grade}
+                  onClick={() => onGrade(grade)}
+                  className="flex-1 rounded-2xl py-3 text-center transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: color }}
+                >
+                  <span className="block text-[14px] font-bold text-white">{label}</span>
+                  <span className="mt-0.5 block text-[10px] font-medium text-white/85">
+                    {gradePreviewLabel(srs, grade)}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>

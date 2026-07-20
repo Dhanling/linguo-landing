@@ -67,6 +67,7 @@ export interface GeneratedCard {
   word: string;
   meaning: string;
   example: string;
+  exampleTranslation: string;
   translit: string;
 }
 
@@ -99,7 +100,7 @@ export async function POST(req: NextRequest) {
       `You are a vocabulary curator for ${language} learners whose native language is ${EXPLANATION_LANGUAGE}.`,
       `Create a flashcard deck of exactly ${count} essential ${language} vocabulary items for the theme "${theme}"${level ? `, suitable for CEFR level ${level}` : ""}.`,
       `Return ONLY valid JSON with this exact shape:`,
-      `{"title":"<judul deck singkat dalam Bahasa Indonesia (maks 5 kata)>","cards":[{"w":"<word/phrase in ${language}>","m":"<arti singkat dalam Bahasa Indonesia, maks 5 kata>","ex":"<one short natural example sentence in ${language}>"${nonLatin ? `,"tl":"<Latin transliteration of w>"` : ""}}]}`,
+      `{"title":"<judul deck singkat dalam Bahasa Indonesia (maks 5 kata)>","cards":[{"w":"<word/phrase in ${language}>","m":"<arti singkat dalam Bahasa Indonesia, maks 5 kata>","ex":"<one short natural example sentence in ${language}>","ext":"<terjemahan Bahasa Indonesia yang natural dari kalimat ex>"${nonLatin ? `,"tl":"<Latin transliteration of w>"` : ""}}]}`,
       `Rules: single words or short common phrases (max 3 words each), no duplicates, order from most common to least, pick words a learner would actually use for this theme.`,
     ].join("\n");
 
@@ -125,6 +126,7 @@ export async function POST(req: NextRequest) {
               word: typeof o.w === "string" ? o.w.trim() : "",
               meaning: typeof o.m === "string" ? o.m.trim() : "",
               example: typeof o.ex === "string" ? o.ex.trim() : "",
+              exampleTranslation: typeof o.ext === "string" ? o.ext.trim() : "",
               translit: typeof o.tl === "string" ? o.tl.trim() : "",
             };
           })

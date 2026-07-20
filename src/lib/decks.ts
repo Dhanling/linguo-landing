@@ -8,6 +8,7 @@
 
 import { supabase } from "@/lib/supabase-client";
 import { saveWord } from "./immersionLearn";
+import { gradeCard, isDue, newSrsState, type SrsGrade, type SrsState } from "./srs";
 
 export type DeckSource = "ai" | "video" | "custom";
 
@@ -15,6 +16,9 @@ export interface DeckCard {
   word: string;
   meaning: string;
   example: string;
+  // Terjemahan Bahasa Indonesia dari `example` — biar siswa paham kalimat contoh,
+  // bukan cuma katanya. Bisa kosong untuk deck lama / kartu tanpa terjemahan.
+  exampleTranslation: string;
   translit: string;
 }
 
@@ -108,16 +112,19 @@ export async function listCommunityDecks(langCode: string, limit = 30): Promise<
 
 /** Isi kartu sebuah deck, urut posisi. */
 export async function fetchDeckCards(deckId: string): Promise<DeckCard[]> {
+  // select("*") supaya tetap jalan walau kolom example_translation belum ditambah
+  // (migrasi manual) — kolom yang belum ada cukup dibaca sebagai "".
   const { data, error } = await supabase
     .from("wl_deck_cards")
-    .select("word,meaning,example,translit,position")
+    .select("*")
     .eq("deck_id", deckId)
     .order("position", { ascending: true });
   if (error || !data) return [];
-  return (data as (DeckCard & { position: number })[]).map((c) => ({
+  return (data as (Record<string, string> & { position: number })[]).map((c) => ({
     word: c.word,
     meaning: c.meaning ?? "",
     example: c.example ?? "",
+    exampleTranslation: c.example_translation ?? "",
     translit: c.translit ?? "",
   }));
 }
@@ -158,16 +165,25 @@ export async function createDeck(params: {
   if (error || !data) return null;
   const deck = rowToDeck(data as DeckRow);
 
-  const { error: cardsErr } = await supabase.from("wl_deck_cards").insert(
-    cards.map((c, i) => ({
-      deck_id: deck.id,
-      position: i,
-      word: c.word.trim(),
-      meaning: c.meaning.trim(),
-      example: c.example.trim(),
-      translit: c.translit.trim(),
-    }))
-  );
+  const baseRows = cards.map((c, i) => ({
+    deck_id: deck.id,
+    position: i,
+    word: c.word.trim(),
+    meaning: c.meaning.trim(),
+    example: c.example.trim(),
+    translit: c.translit.trim(),
+  }));
+  const rowsWithTranslation = baseRows.map((r, i) => ({
+    ...r,
+    example_translation: (cards[i].exampleTranslation ?? "").trim(),
+  }));
+
+  let cardsErr = (await supabase.from("wl_deck_cards").insert(rowsWithTranslation)).error;
+  // Fallback: kolom example_translation belum ada (migrasi manual belum jalan) →
+  // simpan tanpa terjemahan supaya pembuatan deck tetap berhasil.
+  if (cardsErr && /example_translation/i.test(cardsErr.message ?? "")) {
+    cardsErr = (await supabase.from("wl_deck_cards").insert(baseRows)).error;
+  }
   if (cardsErr) {
     // Kartu gagal masuk → jangan sisakan deck kosong.
     await supabase.from("wl_decks").delete().eq("id", deck.id);
@@ -185,6 +201,7 @@ export async function setDeckPublic(deckId: string, isPublic: boolean): Promise<
 export async function deleteDeck(deckId: string): Promise<boolean> {
   // Kartu ikut terhapus lewat FK on delete cascade.
   const { error } = await supabase.from("wl_decks").delete().eq("id", deckId);
+  if (!error) resetDeckSrs(deckId); // buang juga progres SRS lokalnya
   return !error;
 }
 
@@ -233,4 +250,92 @@ export function importCardsToVocab(cards: DeckCard[], langCode: string): number 
     n++;
   }
   return n;
+}
+
+// ── SRS per-deck (spaced repetition saat mempelajari deck) ────────────────────
+// Belajar deck kini memakai penjadwalan SM-2 yang sama dengan "Kosakata Saya",
+// TAPI progresnya disimpan terpisah per-deck (localStorage) supaya tidak mencemari
+// Kosakata Saya / kena kuota simpan. Kunci: deckId → { word(lowercase) → SrsState }.
+// Kartu yang belum pernah dinilai = tidak ada di map = dianggap "baru"/jatuh tempo.
+
+const DECK_SRS_KEY = "linguo:watch:deckstudy:v1";
+type DeckSrsStore = Record<string, Record<string, SrsState>>;
+
+function cardKey(word: string): string {
+  return word.trim().toLowerCase();
+}
+
+function readDeckSrsStore(): DeckSrsStore {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem(DECK_SRS_KEY);
+    const obj = raw ? (JSON.parse(raw) as DeckSrsStore) : {};
+    return obj && typeof obj === "object" ? obj : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeDeckSrsStore(store: DeckSrsStore): void {
+  try {
+    window.localStorage.setItem(DECK_SRS_KEY, JSON.stringify(store));
+  } catch {
+    /* penuh/diblokir — abaikan */
+  }
+}
+
+/** State SRS tersimpan untuk satu deck (word → state). Kosong = semua kartu baru. */
+export function getDeckSrs(deckId: string): Record<string, SrsState> {
+  return readDeckSrsStore()[deckId] ?? {};
+}
+
+/** Nilai satu kartu deck (SRS) lalu simpan; balikin state barunya. */
+export function gradeDeckCard(deckId: string, word: string, grade: SrsGrade): SrsState {
+  const store = readDeckSrsStore();
+  const deckMap = store[deckId] ?? {};
+  const next = gradeCard(deckMap[cardKey(word)] ?? newSrsState(), grade);
+  store[deckId] = { ...deckMap, [cardKey(word)]: next };
+  writeDeckSrsStore(store);
+  return next;
+}
+
+/** Lupakan progres SRS sebuah deck (mis. saat deck dihapus / "belajar dari awal"). */
+export function resetDeckSrs(deckId: string): void {
+  const store = readDeckSrsStore();
+  if (store[deckId]) {
+    delete store[deckId];
+    writeDeckSrsStore(store);
+  }
+}
+
+/**
+ * Berapa kartu deck yang jatuh tempo sekarang, TANPA perlu memuat isi kartunya:
+ * kartu baru (belum ada di map) selalu jatuh tempo, plus kartu terjadwal yang
+ * sudah lewat. Dipakai badge "N jatuh tempo" pada daftar deck.
+ */
+export function deckDueCount(deckId: string, cardCount: number): number {
+  const map = getDeckSrs(deckId);
+  const known = Object.keys(map).length;
+  const newDue = Math.max(0, cardCount - known); // kartu yang belum pernah dinilai
+  let scheduledDue = 0;
+  for (const s of Object.values(map)) if (isDue(s)) scheduledDue++;
+  return newDue + scheduledDue;
+}
+
+/**
+ * Ambil kartu (word) untuk state SRS, plus urutkan sesi belajar: kartu jatuh tempo
+ * dulu (baru → terjadwal-lewat), lalu diacak. `reviewAhead` = pelajari semua walau
+ * belum jatuh tempo (dipakai tombol "Ulangi deck").
+ */
+export function buildDeckOrder(
+  cards: DeckCard[],
+  srs: Record<string, SrsState>,
+  reviewAhead: boolean
+): DeckCard[] {
+  const due = cards.filter((c) => isDue(srs[cardKey(c.word)]));
+  const pool = reviewAhead || due.length === 0 ? cards.slice() : due;
+  return pool
+    .map((c) => ({ c, k: Math.random() }))
+    .sort((a, b) => a.k - b.k)
+    .map((x) => x.c);
 }
