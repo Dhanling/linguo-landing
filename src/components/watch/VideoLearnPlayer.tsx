@@ -450,6 +450,12 @@ export default function VideoLearnPlayer({
   // Dropdown pilih bahasa terjemahan (tombol di header). Dirender di DALAM player
   // karena picker milik katalog (z-85) tenggelam di bawah overlay player (z-90).
   const [baseMenuOpen, setBaseMenuOpen] = useState(false);
+  // Teks pencarian di dropdown "Bahasa saya" (senada dengan pemilih target).
+  const [baseQuery, setBaseQuery] = useState("");
+  // Reset teks cari tiap kali dropdown base dibuka/ditutup.
+  useEffect(() => {
+    if (!baseMenuOpen) setBaseQuery("");
+  }, [baseMenuOpen]);
   // Dropdown "bahasa yang dipelajari" di header — muncul saat hover (bukan pop-up).
   const [learnMenuOpen, setLearnMenuOpen] = useState(false);
   // Jumlah kosakata yang disimpan sewaktu menonton video ini (badge di header).
@@ -2086,34 +2092,76 @@ export default function VideoLearnPlayer({
               }`}
             >
               <div
-                className="w-56 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+                className="flex max-h-[62vh] w-64 flex-col overflow-hidden rounded-2xl shadow-2xl"
                 style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               >
                 <div
-                  className="px-3 pt-1 pb-1.5 text-[11px] font-bold uppercase tracking-wide"
+                  className="px-3 pt-2.5 pb-0.5 text-[11px] font-bold uppercase tracking-wide"
                   style={{ color: SUB }}
                 >
                   Bahasa saya
                 </div>
+                <div className="p-2">
+                  <div
+                    className="flex items-center gap-2 rounded-xl px-3"
+                    style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+                  >
+                    <Search className="h-4 w-4 shrink-0" color={SUB} />
+                    <input
+                      value={baseQuery}
+                      onChange={(e) => setBaseQuery(e.target.value)}
+                      placeholder="Cari bahasa saya…"
+                      className="flex-1 bg-transparent py-2.5 text-[13px] text-white outline-none placeholder:text-white/35"
+                    />
+                  </div>
+                </div>
                 {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
                     bahasa yang sama tak masuk akal. */}
-                {BASE_LANGS.filter((b) => b.code !== langCode).map((b) => {
-                  const on = b.code === baseLang;
-                  return (
-                    <button
-                      key={b.code}
-                      onClick={() => {
-                        setBaseMenuOpen(false);
-                        if (!on) onChangeBaseLang(b.code);
-                      }}
-                      className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
-                    >
-                      <RectFlag code={b.country} h={16} />
-                      <span className="flex-1 font-semibold text-white">{b.label}</span>
-                      {on && <Check className="h-4 w-4" color={TEAL} />}
-                    </button>
-                  );
-                })}
+                <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-1.5">
+                  {(() => {
+                    const s = baseQuery.trim().toLowerCase();
+                    const list = BASE_LANGS.filter(
+                      (b) =>
+                        b.code !== langCode &&
+                        (!s ||
+                          b.label.toLowerCase().includes(s) ||
+                          b.english.toLowerCase().includes(s) ||
+                          b.code.toLowerCase().includes(s))
+                    );
+                    if (list.length === 0) {
+                      return (
+                        <p className="px-3 py-5 text-center text-[12.5px]" style={{ color: SUB }}>
+                          Tidak ada bahasa cocok.
+                        </p>
+                      );
+                    }
+                    return list.map((b) => {
+                      const on = b.code === baseLang;
+                      return (
+                        <button
+                          key={b.code}
+                          onClick={() => {
+                            setBaseMenuOpen(false);
+                            if (!on) onChangeBaseLang(b.code);
+                          }}
+                          className="flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors hover:bg-white/5"
+                          style={{ backgroundColor: on ? "rgba(26,158,158,0.16)" : "transparent" }}
+                        >
+                          <RectFlag code={b.country} h={18} />
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-[13.5px] font-bold text-white">
+                              {b.label}
+                            </span>
+                            <span className="block truncate text-[11px]" style={{ color: SUB }}>
+                              {b.english}
+                            </span>
+                          </span>
+                          {on && <Check className="h-4 w-4 shrink-0" color={TEAL} />}
+                        </button>
+                      );
+                    });
+                  })()}
+                </div>
               </div>
             </div>
           </div>
@@ -2166,6 +2214,7 @@ export default function VideoLearnPlayer({
                     langCode={langCode}
                     onPick={pick}
                     recentCodes={recentLangCodes}
+                    title="Bahasa target (yang mau dipelajari)"
                   />
                 </div>
               </div>
