@@ -1859,6 +1859,65 @@ export default function VideoLearnPlayer({
   const onWordHoverOpen = undefined;
   const clearHoverOpen = undefined;
 
+  // [watch-seek-shared-v1] Isi bar seek (label waktu berjalan + slider + durasi total)
+  // dipakai di DUA tempat: melayang di dasar video (mode normal) DAN di baris kontrol
+  // bawah saat layar penuh — supaya slider + durasi ikut auto-hide bareng tombol.
+  const seekControls = (
+    <>
+      <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/90">
+        {fmtClock(scrubbing ? scrubVal : hoverSeek ?? time)}
+      </span>
+      <input
+        type="range"
+        min={0}
+        max={duration || 0}
+        step="any"
+        value={
+          duration ? Math.min(scrubbing ? scrubVal : hoverSeek ?? time, duration) : 0
+        }
+        disabled={!duration}
+        // Bekukan penanda saat kursor masuk (pakai waktu paling akurat dari player),
+        // lepas saat keluar — kecuali sedang menyeret.
+        onPointerEnter={() =>
+          setHoverSeek(playerRef.current?.getCurrentTime?.() ?? time)
+        }
+        onPointerLeave={() => {
+          if (!scrubbing) setHoverSeek(null);
+        }}
+        onPointerDown={() => setScrubbing(true)}
+        onChange={(e) => setScrubVal(parseFloat(e.target.value))}
+        onPointerUp={(e) => {
+          const v = parseFloat((e.target as HTMLInputElement).value);
+          seekTo(v);
+          setScrubbing(false);
+          // Masih hover setelah lepas seret → bekukan di posisi baru supaya penanda
+          // tak lompat balik ke waktu play lama.
+          setHoverSeek(v);
+        }}
+        onKeyUp={(e) => seekTo(parseFloat((e.target as HTMLInputElement).value))}
+        // Slider netral (tanpa warna aksen) — fill putih & penanda posisi berupa
+        // lingkaran; --pct menggerakkan panjang fill lewat CSS.
+        className="watch-seek flex-1 cursor-pointer disabled:cursor-default"
+        style={
+          {
+            "--pct": `${
+              duration
+                ? Math.min(
+                    ((scrubbing ? scrubVal : hoverSeek ?? time) / duration) * 100,
+                    100
+                  )
+                : 0
+            }%`,
+          } as React.CSSProperties
+        }
+        aria-label="Geser posisi video"
+      />
+      <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/70">
+        {fmtClock(duration)}
+      </span>
+    </>
+  );
+
   return (
     <div
       ref={rootRef}
@@ -2122,81 +2181,33 @@ export default function VideoLearnPlayer({
                       </span>
                     </button>
                   )}
-                  {/* Bar seek + durasi — muncul saat kursor aktif di atas video, atau
-                      selalu saat dijeda. Auto-hide saat kursor DIAM (videoHot=false) ala
-                      YouTube; tetap tampil selama menyeret / hover slider (hoverSeek) /
-                      fokus keyboard. Gradien gelap menutupi kontrol/logo YouTube di tepi. */}
-                  <div
-                    className={`absolute inset-x-0 bottom-0 z-[7] flex items-center gap-2 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-3 pb-2 pt-7 transition-opacity duration-150 focus-within:opacity-100 ${
-                      !playing || videoHot || scrubbing || hoverSeek !== null
-                        ? "opacity-100"
-                        : "pointer-events-none opacity-0"
-                    }`}
-                  >
-                    <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/90">
-                      {fmtClock(scrubbing ? scrubVal : hoverSeek ?? time)}
-                    </span>
-                    <input
-                      type="range"
-                      min={0}
-                      max={duration || 0}
-                      step="any"
-                      value={
-                        duration
-                          ? Math.min(scrubbing ? scrubVal : hoverSeek ?? time, duration)
-                          : 0
-                      }
-                      disabled={!duration}
-                      // Bekukan penanda saat kursor masuk (pakai waktu paling akurat dari
-                      // player), lepas saat keluar — kecuali sedang menyeret.
-                      onPointerEnter={() =>
-                        setHoverSeek(playerRef.current?.getCurrentTime?.() ?? time)
-                      }
-                      onPointerLeave={() => {
-                        if (!scrubbing) setHoverSeek(null);
-                      }}
-                      onPointerDown={() => setScrubbing(true)}
-                      onChange={(e) => setScrubVal(parseFloat(e.target.value))}
-                      onPointerUp={(e) => {
-                        const v = parseFloat((e.target as HTMLInputElement).value);
-                        seekTo(v);
-                        setScrubbing(false);
-                        // Masih hover setelah lepas seret → bekukan di posisi baru
-                        // supaya penanda tak lompat balik ke waktu play lama.
-                        setHoverSeek(v);
-                      }}
-                      onKeyUp={(e) => seekTo(parseFloat((e.target as HTMLInputElement).value))}
-                      // Slider netral (tanpa warna aksen) — fill putih & penanda posisi
-                      // berupa lingkaran; --pct menggerakkan panjang fill lewat CSS.
-                      className="watch-seek flex-1 cursor-pointer disabled:cursor-default"
-                      style={
-                        {
-                          "--pct": `${
-                            duration
-                              ? Math.min(
-                                  ((scrubbing ? scrubVal : hoverSeek ?? time) / duration) * 100,
-                                  100
-                                )
-                              : 0
-                          }%`,
-                        } as React.CSSProperties
-                      }
-                      aria-label="Geser posisi video"
-                    />
-                    <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/70">
-                      {fmtClock(duration)}
-                    </span>
-                    {onSelectVideo && (
-                      <button
-                        type="button"
-                        onClick={enterMini}
-                        title="Video lainnya — tetap di Watch & Learn"
-                        className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white transition-colors hover:bg-black/85"
-                      >
-                        <ListVideo className="h-3.5 w-3.5" /> Video lainnya
-                      </button>
-                    )}
-                  </div>
+                  {/* Bar seek + durasi melayang di dasar video — HANYA mode normal (bukan
+                      layar penuh). Muncul saat kursor aktif di atas video, atau selalu
+                      saat dijeda; auto-hide saat kursor DIAM (videoHot=false) ala YouTube;
+                      tetap tampil selama menyeret / hover slider / fokus keyboard. Di layar
+                      penuh slider dipindah ke atas baris kontrol (ikut auto-hide bareng
+                      tombol) — lihat "bottom chrome" di bawah. */}
+                  {!fullscreen && (
+                    <div
+                      className={`absolute inset-x-0 bottom-0 z-[7] flex items-center gap-2 bg-gradient-to-t from-black/85 via-black/55 to-transparent px-3 pb-2 pt-7 transition-opacity duration-150 focus-within:opacity-100 ${
+                        !playing || videoHot || scrubbing || hoverSeek !== null
+                          ? "opacity-100"
+                          : "pointer-events-none opacity-0"
+                      }`}
+                    >
+                      {seekControls}
+                      {onSelectVideo && (
+                        <button
+                          type="button"
+                          onClick={enterMini}
+                          title="Video lainnya — tetap di Watch & Learn"
+                          className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white transition-colors hover:bg-black/85"
+                        >
+                          <ListVideo className="h-3.5 w-3.5" /> Video lainnya
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </>
               )}
               {/* Overlay drag SELURUH area video saat mini — iframe YouTube menelan
@@ -2355,16 +2366,31 @@ export default function VideoLearnPlayer({
           </div>
           )}
 
-          {/* Kontrol — di mobile jadi SATU baris yang bisa digeser mendatar (tak
-              lagi membungkus jadi 3 baris berantakan); di ≥sm kembali membungkus. */}
+          {/* Bottom chrome — di layar penuh, slider seek + durasi DAN baris kontrol
+              dibungkus jadi satu blok yang melayang di dasar & auto-hide BARENG (ala
+              YouTube). Di mode normal, pembungkus display:contents jadi tak berpengaruh
+              (baris kontrol tetap mengalir di bawah video seperti semula). */}
           {!mini && (
           <div
-            className={`flex items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden ${
+            className={
               fullscreen
-                ? `absolute inset-x-0 bottom-0 z-40 justify-center bg-black transition-all duration-300 ${
+                ? `absolute inset-x-0 bottom-0 z-40 flex flex-col transition-all duration-300 ${
                     chromeHidden ? "pointer-events-none translate-y-full opacity-0" : "translate-y-0 opacity-100"
                   }`
-                : "shrink-0"
+                : "contents"
+            }
+          >
+            {/* Slider seek + durasi (khusus layar penuh) — tepat di atas baris tombol. */}
+            {fullscreen && (
+              <div className="flex items-center gap-2 bg-gradient-to-t from-black via-black/85 to-transparent px-4 pb-1 pt-6 focus-within:opacity-100 sm:px-6">
+                {seekControls}
+              </div>
+            )}
+          {/* Kontrol — di mobile jadi SATU baris yang bisa digeser mendatar (tak
+              lagi membungkus jadi 3 baris berantakan); di ≥sm kembali membungkus. */}
+          <div
+            className={`flex items-center gap-2 overflow-x-auto border-t px-4 py-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden ${
+              fullscreen ? "justify-center bg-black" : "shrink-0"
             }`}
             style={{ borderColor: BORDER }}
           >
@@ -2537,6 +2563,7 @@ export default function VideoLearnPlayer({
               title={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
               onClick={toggleFullscreen}
             />
+          </div>
           </div>
           )}
 
@@ -3521,7 +3548,7 @@ function karaokeTokens(
   const frac = karaokeFrac(cue, time - KARAOKE_LAG_SEC);
   const played = frac * total; // jumlah karakter yang "sudah" terucap
   let acc = 0;
-  return toks.map((t) => {
+  const out = toks.map((t) => {
     const startC = acc;
     const endC = acc + t.text.length;
     acc = endC;
@@ -3534,6 +3561,28 @@ function karaokeTokens(
     }
     return { text: t.text, isWord: t.isWord, state, progress };
   });
+  // [watch-karaoke-number-sync-v1] Angka + satuannya (mis. Jepang "1つ" = hitotsu,
+  // "2024年") tersegmentasi jadi token TERPISAH ("1" dan "つ") sehingga dapat window
+  // karaoke sendiri-sendiri: saat "つ" menyala teal, "1" sudah "sung" (putih) — angka
+  // seolah tak pernah ikut disorot. Padahal keduanya satu bunyi. Solusi: token angka
+  // murni berbagi window sorot dengan satuan yang menempel langsung (tanpa pemisah di
+  // antara → berarti token kata bersebelahan di array). Bila salah satunya "active",
+  // keduanya di-set "active" → menyala teal BERSAMAAN selama satuan itu diucapkan.
+  const isDigit = (s: string) => /^\p{N}+$/u.test(s);
+  for (let i = 0; i < out.length; i++) {
+    if (!out[i].isWord || !isDigit(out[i].text)) continue;
+    // Ikat angka ke SATU token kata yang menempel: prioritas satuan sesudahnya
+    // (mis. "つ"/"年"), lalu token kata sebelumnya (mis. "第" pada "第1").
+    let partner = -1;
+    if (out[i + 1]?.isWord) partner = i + 1;
+    else if (out[i - 1]?.isWord) partner = i - 1;
+    if (partner === -1) continue;
+    if (out[i].state === "active" || out[partner].state === "active") {
+      out[i].state = "active";
+      out[partner].state = "active";
+    }
+  }
+  return out;
 }
 
 function KaraokeWord({
