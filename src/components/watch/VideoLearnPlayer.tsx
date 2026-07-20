@@ -3049,6 +3049,25 @@ export default function VideoLearnPlayer({
               onClick={enterMini}
             />
 
+            {/* [watch-sentence-study-v1] Analisa kalimat/riwayat — dipindah dari FAB
+                melayang ke baris kontrol, tepat di kiri tombol layar penuh. Aksi
+                utama: analisa KALIMAT yang sedang tayang; fallback ke kata terakhir /
+                panel riwayat kalau tak ada kalimat tayang. */}
+            <ToolButton
+              glyph={<Sparkles className="h-4 w-4" />}
+              label="Analisa kalimat"
+              active={historyOpen}
+              title={historyOpen ? "Tutup riwayat" : "Analisa kalimat tayang (AI)"}
+              onClick={() => {
+                if (historyOpen) return setHistoryOpen(false);
+                const cue = visibleCue ?? activeCue;
+                if (cue && cue.target.trim()) return openSentenceStudy(cue);
+                const last = getStudyHistory()[0];
+                if (last) openFromHistory(last);
+                else setHistoryOpen(true);
+              }}
+            />
+
             {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
             <ToolButton
               glyph={fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
@@ -3531,23 +3550,12 @@ export default function VideoLearnPlayer({
         </div>
       )}
 
-      {/* [watch-sentence-study-v1] Tombol AI melayang — klik LANGSUNG membuka drawer
-          Analisa Kalimat untuk kalimat yang sedang tayang di video (arti keseluruhan
-          + tata bahasa + pecahan + Tanya AI). Tak ada kalimat tayang (jeda/awal) →
-          fallback: buka analisa kata terakhir / panel riwayat. Sembunyi saat
-          miniplayer (pojok itu dipakai kotak video) atau saat drawer sudah buka. */}
-      {!mini && !anyDrawerOpen && (
-        <div
-          className={`fixed bottom-4 right-4 z-[70] flex flex-col items-end transition-all duration-300 sm:bottom-6 sm:right-6 ${
-            // Auto-hide saat layar diam ala Netflix aktif — pojok itu jadi bersih,
-            // fokus ke thumbnail + tombol Lanjut menonton. Muncul mulus lagi begitu
-            // diputar. (historyOpen dikecualikan biar panel yang lagi dibuka tak
-            // tiba-tiba lenyap.)
-            idlePaused && !historyOpen
-              ? "pointer-events-none translate-y-3 opacity-0"
-              : "translate-y-0 opacity-100"
-          }`}
-        >
+      {/* [watch-sentence-study-v1] Panel riwayat kata melayang — dibuka dari tombol
+          ✨ di baris kontrol (tombol FAB melayang lama sudah dihapus; aksinya pindah
+          ke sebelah kiri tombol layar penuh). Muncul di kanan bawah, tepat di atas
+          baris kontrol. Sembunyi saat miniplayer / drawer analisa sudah buka. */}
+      {!mini && !anyDrawerOpen && historyOpen && (
+        <div className="fixed bottom-20 right-4 z-[70] flex flex-col items-end sm:right-6">
           {historyOpen && (
             <div
               className="mb-3 flex max-h-[min(60vh,26rem)] w-[min(20rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl shadow-2xl"
@@ -3611,29 +3619,6 @@ export default function VideoLearnPlayer({
               </div>
             </div>
           )}
-          <button
-            onClick={() => {
-              if (historyOpen) return setHistoryOpen(false);
-              // [watch-sentence-study-v1] Aksi utama: analisa KALIMAT yang sedang
-              // tayang (cue terlihat, atau cue aktif terakhir saat di jeda). Tak ada
-              // kalimat → fallback: buka analisa kata terakhir / panel riwayat.
-              const cue = visibleCue ?? activeCue;
-              if (cue && cue.target.trim()) return openSentenceStudy(cue);
-              const last = getStudyHistory()[0];
-              if (last) openFromHistory(last);
-              else setHistoryOpen(true);
-            }}
-            aria-label={historyOpen ? "Tutup riwayat kata" : "Analisa kalimat tayang (AI)"}
-            title={historyOpen ? "Tutup riwayat" : "Analisa kalimat"}
-            className="flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-transform active:scale-95"
-            style={{ backgroundColor: TEAL }}
-          >
-            {historyOpen ? (
-              <X className="h-6 w-6 text-white" />
-            ) : (
-              <Sparkles className="h-6 w-6 text-white" />
-            )}
-          </button>
         </div>
       )}
 
