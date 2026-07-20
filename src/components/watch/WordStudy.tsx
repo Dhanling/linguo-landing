@@ -882,7 +882,10 @@ function RichInline({ text, onWordTap }: { text: string; onWordTap?: WordTapHand
           // target yang bisa diketuk; gloss ikut teal tapi tak interaktif.
           const m = p.match(/^«([^»]*)»(\s*\([^)]*\))?/);
           const inner = (m?.[1] ?? p.replace(/[«»]/g, "")).trim();
-          const paren = m?.[2] ?? "";
+          // Arti dalam kurung: model kadang keliru membungkusnya juga dgn
+          // «guillemets» → buang, biar tak ada tanda kutip mentah tampil. Arti
+          // dibiarkan warna normal (bukan teal) — hanya kata target yang disorot.
+          const paren = (m?.[2] ?? "").replace(/[«»]/g, "");
           if (onWordTap && inner) {
             return (
               <span key={i}>
@@ -898,11 +901,7 @@ function RichInline({ text, onWordTap }: { text: string; onWordTap?: WordTapHand
                 >
                   {inner}
                 </button>
-                {paren && (
-                  <span className="font-bold" style={{ color: "#7FE0E0" }}>
-                    {paren}
-                  </span>
-                )}
+                {paren && <span className="text-white/85">{paren}</span>}
               </span>
             );
           }

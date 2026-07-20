@@ -2337,12 +2337,26 @@ export default function VideoLearnPlayer({
                           (1280×720) biar tajam saat di-stretch fullscreen; hqdefault
                           (480×360) bikin buram. maxres kadang 404 → fallback bertingkat
                           maxres → hqdefault (jangan balik ke video.thumbnail yang malah
-                          lebih kecil). */}
+                          lebih kecil).
+                          [watch-idle-thumb-placeholder-fix] GOTCHA: utk banyak video
+                          (spt podcast ini) maxresdefault TIDAK 404 saat tak ada —
+                          YouTube malah balas placeholder abu-abu 120×90 dgn status 200,
+                          jadi onError tak pernah jalan & yg tampil kotak abu buram saat
+                          dijeda. Deteksi lewat onLoad: kalau naturalWidth ≤ 120 (ciri
+                          placeholder), jatuh ke hqdefault yg pasti gambar asli. */}
                       <img
                         src={youtubeThumbMax(video.videoId)}
                         alt=""
                         aria-hidden
                         className="absolute inset-0 h-full w-full scale-105 object-cover"
+                        onLoad={(e) => {
+                          const img = e.currentTarget as HTMLImageElement;
+                          const hq = youtubeThumb(video.videoId);
+                          // Placeholder abu-abu maxres = 120×90 → ganti ke hqdefault.
+                          if (img.naturalWidth > 0 && img.naturalWidth <= 120 && img.src !== hq) {
+                            img.src = hq;
+                          }
+                        }}
                         onError={(e) => {
                           const img = e.currentTarget as HTMLImageElement;
                           const hq = youtubeThumb(video.videoId);

@@ -157,6 +157,13 @@ function buildAskPrompt(opts: {
   question: string;
 }): string {
   const { language, explanationLanguage, nonLatin, subject, question } = opts;
+  // Sapaan netral & santai: pakai "kamu", JANGAN "Anda" (khusus penjelasan
+  // Indonesia). Sisi klien menyorot kata target dengan warna, jadi model tak
+  // perlu—dan tak boleh—menaruh «guillemets» di sekitar arti/kata bahasa penjelasan.
+  const idAddress =
+    explanationLanguage === "Indonesian"
+      ? `Address the learner as "kamu" (neutral, friendly) — NEVER "Anda". `
+      : "";
   // Usulan lanjutan sering menyisipkan kata bahasa target dalam «guillemets».
   // Untuk bahasa non-Latin (mis. Arab) minta "tl": bacaan Latin kata target
   // itu saja, biar chip bisa menampilkan transliterasi di bawah pertanyaan.
@@ -172,13 +179,17 @@ function buildAskPrompt(opts: {
   return (
     `You are a warm, concise ${language} tutor helping a learner whose language is ${explanationLanguage}. ` +
     `${subject} ` +
+    `${idAddress}` +
     `Answer their question in ${explanationLanguage}, clearly and briefly ` +
     `(2-4 short paragraphs max). Do NOT open with a greeting or filler ` +
     `("Halo", "Tentu", "Pertanyaan bagus", "Great question", etc.) — start ` +
     `immediately with the substance, straight to the point. ` +
     `Use concrete examples when helpful. When you cite a ` +
-    `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
-    `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
+    `${language} word or phrase, wrap ONLY that ${language} word/phrase in «guillemets» ` +
+    `(the app renders it in a highlight color) and put its meaning right after in plain ` +
+    `parentheses. NEVER wrap ${explanationLanguage} words, meanings, or anything else in ` +
+    `«guillemets» — they are reserved strictly for ${language} target text.` +
+    `${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
     `When the answer is naturally tabular — e.g. comparing forms, listing the tenses/` +
     `moods/aspects, a conjugation paradigm, or several items each with a few attributes — ` +
     `present THAT part as a GitHub-style markdown pipe table: a header row "| Column | Column |", ` +
@@ -256,6 +267,11 @@ export async function POST(req: NextRequest) {
     const explanationLanguage =
       ENGLISH_NAME[baseCode] ?? ENGLISH_NAME[baseCode.split("-")[0]] ?? DEFAULT_EXPLANATION_LANGUAGE;
     const nonLatin = NON_LATIN.has(langCode) || NON_LATIN.has(langCode.split("-")[0]);
+    // Sapaan netral utk penjelasan Indonesia: "kamu", bukan "Anda".
+    const idAddress =
+      explanationLanguage === "Indonesian"
+        ? ` Address the learner as "kamu" (neutral, friendly) — NEVER "Anda".`
+        : "";
 
     // ── Kalimat: analisa kalimat utuh + tanya-jawab lanjutan ─────────────────
     if (kind === "sentence") {
@@ -290,7 +306,7 @@ export async function POST(req: NextRequest) {
         `  "tone": one short ${explanationLanguage} sentence on the tone/register/politeness of the whole sentence (empty string if plain/neutral),\n` +
         `  "chunks": array of the sentence's meaningful parts IN ORDER, each { "part": the ${language} chunk (a word or short phrase),${nonLatin ? ' "tl": its Latin reading,' : ""} "role": a SHORT ${explanationLanguage} grammatical role label (e.g. "subjek", "kata kerja", "objek", "partikel", "keterangan"), "gloss": its ${explanationLanguage} meaning },\n` +
         `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} you used that a beginner may not know (e.g. "partikel", "kata bantu", "kala lampau"); empty array if none\n` +
-        `}` + translitHint + ` No markdown, no commentary outside the JSON.`;
+        `}` + translitHint + idAddress + ` No markdown, no commentary outside the JSON.`;
       const raw = await callGemini(prompt, true);
       const s = raw.indexOf("{");
       const e = raw.lastIndexOf("}");
@@ -371,7 +387,7 @@ export async function POST(req: NextRequest) {
       `          "parts": ordered text segments that concatenate EXACTLY to the full ${language} conjugated form, each { "t": the segment text, "c": true ONLY for the segment(s) that CHANGE across the paradigm (the inflected prefix/suffix), false for the invariant stem },\n` +
       `          "suffix": the changing affix(es) for this form as a short ${language} string (e.g. "-s"),${nonLatin ? ' "tl": Latin reading of the full form,' : ""} "gloss": short ${explanationLanguage} meaning of this form } },\n` +
       `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} that you used above and that a beginner may not know (e.g. "vokatif", "nominatif", "aspek", "gender gramatikal"); empty array if none\n` +
-      `}` + translitHint + ` No markdown, no commentary outside the JSON.`;
+      `}` + translitHint + idAddress + ` No markdown, no commentary outside the JSON.`;
 
     const raw = await callGemini(prompt, true);
     const s = raw.indexOf("{");
