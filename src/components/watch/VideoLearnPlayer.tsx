@@ -81,6 +81,7 @@ import {
   searchImmersionVideos,
   WATCH_REC_MAX_DURATION_SEC,
   youtubeThumb,
+  youtubeThumbMax,
 } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
 import SentenceStudy from "./SentenceStudy";
@@ -2196,13 +2197,20 @@ export default function VideoLearnPlayer({
                       aria-label="Lanjut menonton"
                       className="group/idle absolute inset-0 z-[6] cursor-pointer overflow-hidden text-left"
                     >
+                      {/* [watch-idle-thumb-hires-v1] Layar besar → pakai maxresdefault
+                          (1280×720) biar tajam saat di-stretch fullscreen; hqdefault
+                          (480×360) bikin buram. maxres kadang 404 → fallback bertingkat
+                          maxres → hqdefault (jangan balik ke video.thumbnail yang malah
+                          lebih kecil). */}
                       <img
-                        src={video.thumbnail ?? youtubeThumb(video.videoId)}
+                        src={youtubeThumbMax(video.videoId)}
                         alt=""
                         aria-hidden
                         className="absolute inset-0 h-full w-full scale-105 object-cover"
                         onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).src = youtubeThumb(video.videoId);
+                          const img = e.currentTarget as HTMLImageElement;
+                          const hq = youtubeThumb(video.videoId);
+                          if (img.src !== hq) img.src = hq;
                         }}
                       />
                       {/* Gradien Netflix: gelap dari kiri + dari bawah supaya teks terbaca */}
@@ -2352,7 +2360,11 @@ export default function VideoLearnPlayer({
               Saat panel Transkrip dibuka (mode transkrip, bukan layar penuh),
               subtitle di bawah video otomatis disembunyikan — kalimat aktif sudah
               tampil & tersorot di panel transkrip, jadi tak perlu diduplikasi. */}
-          {!mini && !(showPanel && !fullscreen) && (
+          {/* [watch-idle-hide-subtitle-v1] Saat layar diam ala Netflix aktif (jeda
+              disengaja > 5 dtk), sembunyikan subtitle+terjemahan biar tak menimpa
+              thumbnail besar & judul. Begitu diputar/di-hover lagi idlePaused mati →
+              subtitle balik. Tetap tampil saat jeda-hover baca (bukan idlePaused). */}
+          {!mini && !(showPanel && !fullscreen) && !idlePaused && (
           <div
             className={`flex flex-col ${
               fullscreen

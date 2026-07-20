@@ -378,6 +378,13 @@ export function youtubeThumb(videoId: string): string {
   return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 }
 
+// Thumbnail resolusi tinggi (1280×720) — untuk tampilan besar/fullscreen seperti
+// layar diam ala Netflix. maxresdefault kadang tak tersedia (404) → pemakainya
+// WAJIB pasang onError fallback ke youtubeThumb (hqdefault) biar tak blank.
+export function youtubeThumbMax(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
 // Search YouTube lewat Edge Function `yt-search`. Dibias ke bahasa target.
 // [linguo-patch:watch-caption-agnostic-v1] TIDAK lagi mensyaratkan caption manual
 // (dulu default withCaptions=true → videoCaption=closedCaption). YouTube hanya
