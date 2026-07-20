@@ -500,6 +500,14 @@ export default function VideoLearnPlayer({
   // Play/jeda manual — dipakai tombol di strip kotak mini (iframe YT menelan klik,
   // jadi butuh tombol eksplisit; di mode penuh play/jeda cukup klik video).
   const togglePlay = useCallback(() => {
+    // [watch-drawer-autoclose-v1] Klik video / Spasi / Enter = kembali menonton →
+    // tutup drawer Analisa (kata & kalimat) di kanan biar layar kembali lega.
+    // Drawer kata hidup di dalam WordTooltip (dikendalikan `anchor`), jadi tutup
+    // via setAnchor(null); drawer kalimat via setSentenceCue(null). Setter state
+    // stabil → deps tetap kosong. Aman dipanggil walau drawer sudah tertutup (no-op).
+    setAnchor(null);
+    setWordStudyOpen(false);
+    setSentenceCue(null);
     const p = playerRef.current;
     if (!p) return;
     if (p.getPlayerState?.() === 1) p.pauseVideo?.();
@@ -3721,10 +3729,11 @@ type KaraokeState = "sung" | "active" | "future";
 // jadi sapuan sengaja ditunda 0.5s. TAPI sejak [watch-karaoke-anchor-v2] sapuan sudah
 // disandarkan ke anchor timing asli video — penundaan 0.5s jadi over-koreksi dan bikin
 // sorotan kata malah TELAT ~0.5s di hampir semua video (dulu ditambal manual dgn geser
-// sinkron +0.50s tiap video). Dinolkan supaya sapuan pas audio secara global tanpa
-// geser manual. Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif
-// tetap pakai syncedTime.
-const KARAOKE_LAG_SEC = 0;
+// sinkron +0.50s tiap video). Sempat dinolkan, tapi sapuan masih terasa NGEKOR audio.
+// [watch-karaoke-lag-v3] Dimajukan 0.5s (lag negatif → evaluasi frac di time+0.5s)
+// supaya sapuan kata memimpin/pas audio secara global untuk semua video & bahasa.
+// Hanya menggeser sapuan KATA di dalam baris; pemilihan baris aktif tetap pakai syncedTime.
+const KARAOKE_LAG_SEC = -0.5;
 
 function karaokeTokens(
   cue: LearnCue,
