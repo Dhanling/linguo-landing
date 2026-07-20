@@ -72,7 +72,9 @@ import {
   translateCuesToBase,
   TranscriptReason,
   transliterateLines,
+  fetchReadyVideos,
 } from "@/lib/immersionLearn";
+import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import {
   filterVideosByLanguage,
   formatDuration,
@@ -101,6 +103,16 @@ const GOLD = "#F4B740";
 const GOLD_DIM = "rgba(244,183,64,0.72)";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
+
+// [watch-endscreen-recs-v1] Layar akhir ala Netflix: saat video habis, tampilkan
+// rekomendasi video berikutnya dari tab "Siap" (transkrip sudah siap → buka instan)
+// yang levelnya SESUAI video yang baru ditonton (belajar A1 → rekomendasi A1). Kartu
+// utama punya hitung-mundur auto-play. Cache katalog "Siap" per-bahasa module-level
+// biar tak fetch ulang tiap ganti video; TTL longgar karena katalog jarang berubah.
+const READY_REC_CACHE = new Map<string, { videos: ImmersionVideo[]; at: number }>();
+const READY_REC_TTL_MS = 5 * 60 * 1000;
+// Detik hitung-mundur sebelum kartu utama diputar otomatis.
+const AUTOPLAY_SECS = 10;
 
 // Sembunyikan baris terjemahan kalau ia sekadar menduplikasi teks target — terjadi
 // saat cue memang berbahasa penjelas (mis. Inggris di video Ukraina) DAN bahasa
@@ -487,6 +499,12 @@ export default function VideoLearnPlayer({
   // hover-baca) lebih dari 5 detik, tampilkan thumbnail besar + gradien + judul.
   // Dimatikan saat diputar lagi / jeda-hover / sedang buka tooltip kata.
   const [idlePaused, setIdlePaused] = useState(false);
+  // [watch-endscreen-recs-v1] Video habis (state YT = 0) → tampilkan layar akhir
+  // Netflix. `endReady` = katalog "Siap" bahasa ini (sumber rekomendasi + level).
+  // `autoCount` = sisa detik hitung-mundur auto-play kartu utama (null = tak jalan).
+  const [ended, setEnded] = useState(false);
+  const [endReady, setEndReady] = useState<ImmersionVideo[]>([]);
+  const [autoCount, setAutoCount] = useState<number | null>(null);
   const onSubtitleEnter = useCallback(() => {
     const p = playerRef.current;
     // 1 = playing. Cuma pause kalau memang lagi jalan.
@@ -1004,6 +1022,9 @@ export default function VideoLearnPlayer({
           onStateChange: (e: any) => {
             // 1 = playing, 2 = paused, 0 = ended
             setPlaying(e.data === 1);
+            // [watch-endscreen-recs-v1] Habis → layar akhir; putar lagi → tutup.
+            if (e.data === 0) setEnded(true);
+            else if (e.data === 1) setEnded(false);
             // Modul caption kadang baru dimuat setelah playback mulai —
             // matikan lagi begitu video benar-benar jalan agar CC tak muncul.
             if (e.data === 1) {
@@ -1035,7 +1056,92 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     setRecShown(5);
     setMini(false);
+    setEnded(false);
+    setAutoCount(null);
   }, [video.videoId]);
+
+  // [watch-endscreen-recs-v1] Muat katalog tab "Siap" bahasa ini (video ber-transkrip
+  // → buka instan) sebagai sumber rekomendasi layar akhir. Cache module-level per
+  // bahasa; jalan sekali di background begitu player dibuka, siap saat video habis.
+  useEffect(() => {
+    let cancelled = false;
+    const hit = READY_REC_CACHE.get(langCode);
+    if (hit && Date.now() - hit.at < READY_REC_TTL_MS) {
+      setEndReady(hit.videos);
+      return;
+    }
+    fetchReadyVideos(langCode)
+      .then((vids) => {
+        if (cancelled) return;
+        READY_REC_CACHE.set(langCode, { videos: vids, at: Date.now() });
+        setEndReady(vids);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [langCode]);
+
+  // Rekomendasi layar akhir: utamakan video yang levelnya PERSIS sama dengan video
+  // yang baru ditonton (belajar A1 → rekomendasi A1). Kalau yang se-level < 3, lengkapi
+  // dengan level lain supaya layar tak sepi. Selalu buang video yang sedang diputar.
+  const endRecs = useMemo(() => {
+    const pool = endReady.filter((v) => v.videoId !== video.videoId);
+    const lvl = video.level ?? null;
+    if (!lvl) return pool.slice(0, 6);
+    const matched = pool.filter((v) => v.level === lvl);
+    if (matched.length >= 3) return matched.slice(0, 6);
+    const rest = pool.filter((v) => v.level !== lvl);
+    return [...matched, ...rest].slice(0, 6);
+  }, [endReady, video.videoId, video.level]);
+  const primaryRec = endRecs[0] ?? null;
+
+  // Hitung-mundur auto-play kartu utama (ala Netflix "next episode in Ns"). Dibatalkan
+  // lewat `autoCancelRef` — dipakai tombol "Batal" agar interval berhenti tapi layar
+  // rekomendasi tetap terbuka untuk dipilih manual.
+  const autoCancelRef = useRef(false);
+  const cancelAutoplay = useCallback(() => {
+    autoCancelRef.current = true;
+    setAutoCount(null);
+  }, []);
+  useEffect(() => {
+    if (!ended || mini || !primaryRec || !onSelectVideo) {
+      setAutoCount(null);
+      return;
+    }
+    autoCancelRef.current = false;
+    let n = AUTOPLAY_SECS;
+    setAutoCount(n);
+    const id = setInterval(() => {
+      if (autoCancelRef.current) {
+        clearInterval(id);
+        return;
+      }
+      n -= 1;
+      if (n <= 0) {
+        clearInterval(id);
+        setAutoCount(null);
+        onSelectVideo(primaryRec);
+      } else {
+        setAutoCount(n);
+      }
+    }, 1000);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ended, mini, primaryRec?.videoId, onSelectVideo]);
+
+  // Tonton lagi dari awal (tombol di layar akhir) — tutup layar + putar ulang.
+  const replayVideo = useCallback(() => {
+    setEnded(false);
+    setAutoCount(null);
+    const p = playerRef.current;
+    try {
+      p?.seekTo?.(0, true);
+      p?.playVideo?.();
+    } catch {
+      /* abaikan */
+    }
+  }, []);
 
   // [linguo-patch:watch-miniplayer-v1] Masuk miniplayer; kalau sedang fullscreen,
   // keluar dulu (fixed pojok tak ada artinya di dalam elemen fullscreen).
@@ -2436,6 +2542,204 @@ export default function VideoLearnPlayer({
                     </div>
                   )}
                 </>
+              )}
+              {/* [watch-endscreen-recs-v1] Layar akhir ala Netflix — video habis →
+                  overlay rekomendasi "berikutnya" dari tab "Siap" yang levelnya sesuai
+                  video ini. Kartu utama auto-play dengan hitung-mundur; sisanya bisa
+                  dipilih manual. Menutupi layar-akhir bawaan YouTube (z di atas kontrol). */}
+              {ended && !mini && (
+                <div className="wl-idle-in absolute inset-0 z-[8] overflow-y-auto bg-black/92 backdrop-blur-sm">
+                  <div className="mx-auto flex min-h-full w-full max-w-3xl flex-col gap-5 px-5 py-6 sm:px-8 sm:py-8">
+                    {/* Header + tombol tutup layar akhir (kembali lihat frame terakhir). */}
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
+                          Selesai ditonton
+                        </p>
+                        <h3 className="mt-1 text-[18px] font-extrabold leading-tight text-white sm:text-[22px]">
+                          {video.level ? (
+                            <>
+                              Lanjut belajar{" "}
+                              <span
+                                className="inline-flex items-center rounded-md px-1.5 py-0.5 align-middle text-[13px] font-black sm:text-[15px]"
+                                style={{
+                                  backgroundColor: CEFR_STYLE[video.level as CefrLevel].bg,
+                                  color: CEFR_STYLE[video.level as CefrLevel].fg,
+                                }}
+                              >
+                                {video.level}
+                              </span>
+                            </>
+                          ) : (
+                            "Tonton berikutnya"
+                          )}
+                        </h3>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          cancelAutoplay();
+                          setEnded(false);
+                        }}
+                        title="Tutup"
+                        className="shrink-0 rounded-full bg-white/10 p-2 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    {primaryRec && onSelectVideo ? (
+                      <>
+                        {/* Kartu utama: thumbnail besar + judul + level + hitung-mundur. */}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            cancelAutoplay();
+                            onSelectVideo(primaryRec);
+                          }}
+                          className="group/next flex flex-col overflow-hidden rounded-2xl bg-white/[0.06] text-left ring-1 ring-white/10 transition-all hover:bg-white/[0.1] hover:ring-white/25 sm:flex-row"
+                        >
+                          <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-black sm:w-[46%]">
+                            <img
+                              src={primaryRec.thumbnail ?? youtubeThumb(primaryRec.videoId)}
+                              alt=""
+                              aria-hidden
+                              loading="lazy"
+                              className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover/next:scale-105"
+                            />
+                            <span className="absolute inset-0 grid place-items-center bg-black/25 opacity-0 transition-opacity group-hover/next:opacity-100">
+                              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/95">
+                                <Play className="ml-0.5 h-6 w-6 text-black" fill="currentColor" />
+                              </span>
+                            </span>
+                            {primaryRec.duration ? (
+                              <span className="absolute bottom-1.5 right-1.5 rounded bg-black/80 px-1.5 py-0.5 text-[11px] font-bold text-white">
+                                {formatDuration(primaryRec.duration)}
+                              </span>
+                            ) : null}
+                          </div>
+                          <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 p-4 sm:p-5">
+                            <div className="flex items-center gap-2">
+                              <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/45">
+                                Berikutnya
+                              </span>
+                              {primaryRec.level && (
+                                <span
+                                  className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-black"
+                                  style={{
+                                    backgroundColor: CEFR_STYLE[primaryRec.level as CefrLevel].bg,
+                                    color: CEFR_STYLE[primaryRec.level as CefrLevel].fg,
+                                  }}
+                                >
+                                  {primaryRec.level}
+                                </span>
+                              )}
+                            </div>
+                            <p className="line-clamp-2 text-[16px] font-extrabold leading-snug text-white sm:text-[18px]">
+                              {primaryRec.title}
+                            </p>
+                            {primaryRec.channel && (
+                              <p className="truncate text-[12px] font-medium text-white/55">
+                                {primaryRec.channel}
+                              </p>
+                            )}
+                            <span
+                              className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-[14px] font-bold text-black transition-transform group-hover/next:scale-[1.03]"
+                            >
+                              <Play className="h-4 w-4" fill="currentColor" />
+                              {autoCount !== null ? `Putar dalam ${autoCount}s` : "Putar"}
+                            </span>
+                          </div>
+                        </button>
+
+                        <div className="flex flex-wrap items-center gap-3">
+                          {autoCount !== null && (
+                            <button
+                              type="button"
+                              onClick={cancelAutoplay}
+                              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white/85 transition-colors hover:bg-white/20"
+                            >
+                              <X className="h-3.5 w-3.5" /> Batal auto-play
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={replayVideo}
+                            className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white/85 transition-colors hover:bg-white/20"
+                          >
+                            <RotateCcw className="h-3.5 w-3.5" /> Tonton lagi
+                          </button>
+                        </div>
+
+                        {/* Rekomendasi lain se-level (kalau ada). */}
+                        {endRecs.length > 1 && (
+                          <div className="mt-1">
+                            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">
+                              Lainnya untukmu
+                            </p>
+                            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                              {endRecs.slice(1).map((v) => (
+                                <button
+                                  key={v.videoId}
+                                  type="button"
+                                  onClick={() => {
+                                    cancelAutoplay();
+                                    onSelectVideo(v);
+                                  }}
+                                  className="group/rec text-left"
+                                >
+                                  <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black ring-1 ring-white/10 transition-all group-hover/rec:ring-white/30">
+                                    <img
+                                      src={v.thumbnail ?? youtubeThumb(v.videoId)}
+                                      alt=""
+                                      aria-hidden
+                                      loading="lazy"
+                                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover/rec:scale-105"
+                                    />
+                                    {v.level && (
+                                      <span
+                                        className="absolute left-1.5 top-1.5 inline-flex items-center rounded px-1.5 py-0.5 text-[9px] font-black"
+                                        style={{
+                                          backgroundColor: CEFR_STYLE[v.level as CefrLevel].bg,
+                                          color: CEFR_STYLE[v.level as CefrLevel].fg,
+                                        }}
+                                      >
+                                        {v.level}
+                                      </span>
+                                    )}
+                                    {v.duration ? (
+                                      <span className="absolute bottom-1.5 right-1.5 rounded bg-black/80 px-1 py-0.5 text-[10px] font-bold text-white">
+                                        {formatDuration(v.duration)}
+                                      </span>
+                                    ) : null}
+                                  </div>
+                                  <p className="mt-1.5 line-clamp-2 text-[12px] font-bold leading-snug text-white/90">
+                                    {v.title}
+                                  </p>
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      /* Tak ada video "Siap" se-bahasa → cukup tawarkan tonton lagi. */
+                      <div className="flex flex-1 flex-col items-center justify-center gap-4 py-10 text-center">
+                        <p className="max-w-sm text-[14px] font-medium text-white/60">
+                          Belum ada rekomendasi siap untuk bahasa ini. Tonton lagi atau cari
+                          video lain lewat menu.
+                        </p>
+                        <button
+                          type="button"
+                          onClick={replayVideo}
+                          className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-bold text-black transition-transform hover:scale-105"
+                        >
+                          <RotateCcw className="h-4 w-4" /> Tonton lagi
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
               )}
               {/* Overlay drag SELURUH area video saat mini — iframe YouTube menelan
                   pointer, jadi tanpa lapisan ini video tak bisa diseret. Tombol strip
