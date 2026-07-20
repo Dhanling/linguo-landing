@@ -418,30 +418,8 @@ export default function FlashcardDeck({
             </SideNavBtn>
           </nav>
 
-          {langCodes.length > 1 && (
-            <div className="mt-6 min-h-0 flex-1 overflow-y-auto px-3">
-              <p className="px-3 pb-2 text-[10.5px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-                Bahasa
-              </p>
-              <div className="space-y-1">
-                <SideLangBtn active={filter === "all"} onClick={() => setFilter("all")} label="Semua bahasa" count={all.length} />
-                {langCodes.map((code) => {
-                  const l = getImmersionLang(code);
-                  return (
-                    <SideLangBtn
-                      key={code}
-                      active={filter === code}
-                      onClick={() => setFilter(code)}
-                      flag={l?.country}
-                      label={l?.name ?? code}
-                      count={langCounts[code] ?? 0}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
+          {/* Daftar bahasa dipindah ke pemilih dropdown pojok kanan atas — sidebar
+              cukup untuk nav + ringkasan penguasaan. */}
           <div className="mt-auto px-4 py-5">
             <div className="rounded-2xl p-4" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
               <div className="flex items-center justify-between">
