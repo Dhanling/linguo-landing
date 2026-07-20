@@ -73,6 +73,7 @@ import {
   TranscriptReason,
   transliterateLines,
   fetchReadyVideos,
+  fetchReadyCounts,
 } from "@/lib/immersionLearn";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import {
@@ -470,6 +471,17 @@ export default function VideoLearnPlayer({
   }, [baseMenuOpen]);
   // Dropdown "bahasa yang dipelajari" di header — muncul saat hover (bukan pop-up).
   const [learnMenuOpen, setLearnMenuOpen] = useState(false);
+  // Jumlah video "Siap" per bahasa → badge di pemilih bahasa target.
+  const [readyCounts, setReadyCounts] = useState<Record<string, number>>({});
+  useEffect(() => {
+    let alive = true;
+    fetchReadyCounts().then((c) => {
+      if (alive) setReadyCounts(c);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
   // Jumlah kosakata yang disimpan sewaktu menonton video ini (badge di header).
   const [savedCount, setSavedCount] = useState(0);
   const refreshSaved = useCallback(() => {
@@ -2320,6 +2332,7 @@ export default function VideoLearnPlayer({
                     langCode={langCode}
                     onPick={pick}
                     recentCodes={recentLangCodes}
+                    readyCounts={readyCounts}
                     title="Bahasa target (yang mau dipelajari)"
                   />
                 </div>

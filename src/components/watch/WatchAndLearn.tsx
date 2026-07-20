@@ -55,6 +55,7 @@ import {
 } from "@/lib/immersion";
 import {
   fetchReadyVideos,
+  fetchReadyCounts,
   getSavedWords,
   prewarmTranscripts,
   searchWordInVideos,
@@ -266,6 +267,8 @@ export default function WatchAndLearn() {
   const [langQuery, setLangQuery] = useState("");
   // Riwayat bahasa terakhir dipilih (kode, terbaru dulu) — quick-pick di picker.
   const [recentLangs, setRecentLangs] = useState<string[]>([]);
+  // Jumlah video "Siap" per bahasa → badge di pemilih bahasa. Dimuat sekali di mount.
+  const [readyCounts, setReadyCounts] = useState<Record<string, number>>({});
   // Bahasa terjemahan di bawah subtitle ("kamu bicara bahasa apa?"). `basePickerOpen`
   // = picker biasa (bisa ditutup); `baseFirstOpen` = tanya pertama kali (wajib pilih).
   const [baseLang, setBaseLang] = useState(DEFAULT_BASE_LANG);
@@ -427,6 +430,17 @@ export default function WatchAndLearn() {
     refreshVocab();
   }, [refreshVocab]);
 
+  // Muat jumlah video "Siap" per bahasa sekali di mount → badge di pemilih bahasa.
+  useEffect(() => {
+    let alive = true;
+    fetchReadyCounts().then((c) => {
+      if (alive) setReadyCounts(c);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   // Gate login: cek sesi di mount; tamu langsung dialihkan ke /akun (layar login).
   // onAuthStateChange menjaga kalau sesi berakhir saat halaman terbuka.
   //
@@ -563,6 +577,10 @@ export default function WatchAndLearn() {
         setNextToken(undefined);
       }
       const q = buildQuery(c, l, text);
+      // [watch-freetext-soft-filter-v1] Pencarian teks-bebas eksplisit (mis. nama
+      // artis "fujii kaze") minta lebih banyak stok & filter bahasa yang lembut,
+      // supaya judul romaji/Inggris tak menciutkan hasil jadi 1–2 video.
+      const freeText = !!text.trim();
       // [linguo-patch:watch-duration-server-bucket-v1] Kirim rentang durasi tab
       // aktif ke server. Tab "5–10"/"10–20 mnt" → bucket `medium` YouTube; tanpa
       // ini `videoDuration=any` membanjiri halaman dgn Shorts → grid selalu kosong.
@@ -571,7 +589,7 @@ export default function WatchAndLearn() {
         query: q,
         language: l.searchCode ?? l.code,
         order: c.news || c.fresh ? "date" : undefined,
-        max: 18,
+        max: freeText ? 30 : 18,
         maxDurationSec: max,
         minDurationSec: min || undefined,
         regionCode: l.region,
@@ -579,7 +597,7 @@ export default function WatchAndLearn() {
       if (id !== reqId.current) return; // hasil basi — abaikan
       // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
       // sisa video di luar rentang (jaga-jaga kalau durasi tak terbaca di server).
-      const results = filterVideosByLanguage(page.results, l.code).filter(
+      const results = filterVideosByLanguage(page.results, l.code, freeText).filter(
         (v) => !v.duration || v.duration <= max
       );
       catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text), durId), {
@@ -670,19 +688,20 @@ export default function WatchAndLearn() {
     const id = reqId.current;
     setState("more");
     const q = buildQuery(cat, lang, committedText);
+    const freeText = !!committedText.trim();
     const { min, max } = durRange(durationFilter);
     const page = await searchImmersionVideos({
       query: q,
       language: lang.searchCode ?? lang.code,
       order: cat.news || cat.fresh ? "date" : undefined,
-      max: 18,
+      max: freeText ? 30 : 18,
       pageToken: nextToken,
       maxDurationSec: max,
       minDurationSec: min || undefined,
       regionCode: lang.region,
     });
     if (id !== reqId.current) return;
-    const more = filterVideosByLanguage(page.results, lang.code).filter(
+    const more = filterVideosByLanguage(page.results, lang.code, freeText).filter(
       (v) => !v.duration || v.duration <= max
     );
     setVideos((prev) => {
@@ -971,6 +990,7 @@ export default function WatchAndLearn() {
                     pickLang(code);
                   }}
                   recentCodes={recentLangs}
+                  readyCounts={readyCounts}
                   baseLangs={BASE_LANGS}
                   baseLangCode={baseLang}
                   onPickBase={(code) => pickBase(code)}

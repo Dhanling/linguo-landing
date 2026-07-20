@@ -61,6 +61,45 @@ export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
   const lang = params.get("lang") ?? "";
 
+  // Mode COUNTS: jumlah video "Siap" per bahasa — dipakai badge di pemilih bahasa
+  // supaya pengguna tahu bahasa mana yang katalognya paling banyak sebelum memilih.
+  // Satu query ringan (hanya kolom `lang`), dihitung per-bahasa di server.
+  if (params.get("counts")) {
+    try {
+      const sb = createServerClient(0);
+      // Sama seperti tab "Siap": hanya video ber-metadata (title) & tak 'hidden'.
+      let rows: { lang?: unknown }[] | null = null;
+      const r = await sb
+        .from("yt_transcripts")
+        .select("lang")
+        .not("title", "is", null)
+        .neq("curation", "hidden")
+        .limit(20000);
+      if (r.error) {
+        // Fallback kalau kolom curation belum ada (migrasi belum jalan).
+        const r2 = await sb
+          .from("yt_transcripts")
+          .select("lang")
+          .not("title", "is", null)
+          .limit(20000);
+        rows = Array.isArray(r2.data) ? (r2.data as { lang?: unknown }[]) : null;
+      } else {
+        rows = Array.isArray(r.data) ? (r.data as { lang?: unknown }[]) : null;
+      }
+      const counts: Record<string, number> = {};
+      for (const row of rows ?? []) {
+        const l = row.lang;
+        if (typeof l === "string" && l) counts[l] = (counts[l] ?? 0) + 1;
+      }
+      return NextResponse.json(
+        { counts },
+        { status: 200, headers: { "Cache-Control": "public, s-maxage=120, stale-while-revalidate=600" } }
+      );
+    } catch {
+      return NextResponse.json({ counts: {} }, { status: 200, headers: { "Cache-Control": "no-store" } });
+    }
+  }
+
   // Mode LIST (tab "Siap"): daftar video yang transkripnya sudah tersimpan untuk
   // sebuah bahasa — kartu dirender dari metadata ini, tanpa panggil YouTube lagi.
   if (params.get("list")) {

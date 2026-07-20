@@ -1514,6 +1514,26 @@ export async function fetchReadyVideos(
 }
 
 /**
+ * Ambil jumlah video "Siap" per bahasa (kode → jumlah) — sumber badge di pemilih
+ * bahasa. Instan (baca cache Supabase), best-effort: balikin {} kalau gagal.
+ */
+export async function fetchReadyCounts(): Promise<Record<string, number>> {
+  try {
+    const res = await fetchTimeout(`/api/yt-transcript-cache?counts=1`, { method: "GET" }, 6000);
+    if (!res.ok) return {};
+    const data = (await res.json()) as { counts?: unknown };
+    if (!data.counts || typeof data.counts !== "object") return {};
+    const out: Record<string, number> = {};
+    for (const [k, v] of Object.entries(data.counts as Record<string, unknown>)) {
+      if (typeof v === "number" && Number.isFinite(v) && v > 0) out[k] = v;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+/**
  * Transliterasi sekumpulan baris (kalimat target) ke aksara Latin lewat
  * `/api/translit` (Gemini). Dipakai untuk bahasa non-Latin yang transkripnya tak
  * membawa bacaan Latin. Diproses per-batch biar respons tetap andal & selaras

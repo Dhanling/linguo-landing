@@ -31,6 +31,7 @@ export function LangPickerPanel({
   baseLangs,
   baseLangCode,
   onPickBase,
+  readyCounts,
 }: {
   open: boolean;
   langCode: string;
@@ -39,6 +40,9 @@ export function LangPickerPanel({
   width?: number;
   /** Judul kecil di atas kotak cari — menegaskan ini pemilih bahasa apa. */
   title?: string;
+  /** Jumlah video "Siap" per kode bahasa → badge di tiap baris (biar tahu bahasa
+      mana yang katalognya paling banyak). Kosong/undefined = badge disembunyikan. */
+  readyCounts?: Record<string, number>;
   /** Kalau diisi, tampilkan section "Bahasa saya" (bahasa terjemahan) di atas —
       menyatukan dua pemilih bahasa jadi satu dropdown. */
   baseLangs?: BaseLangOption[];
@@ -58,14 +62,21 @@ export function LangPickerPanel({
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
-    if (!s) return IMMERSION_LANGS;
-    return IMMERSION_LANGS.filter(
-      (l) =>
-        l.name.toLowerCase().includes(s) ||
-        l.native.toLowerCase().includes(s) ||
-        l.code.toLowerCase().includes(s)
-    );
-  }, [q]);
+    const base = !s
+      ? IMMERSION_LANGS
+      : IMMERSION_LANGS.filter(
+          (l) =>
+            l.name.toLowerCase().includes(s) ||
+            l.native.toLowerCase().includes(s) ||
+            l.code.toLowerCase().includes(s)
+        );
+    // Tanpa pencarian: dahulukan bahasa yang punya video "Siap" (jumlah terbanyak
+    // di atas) supaya pengguna langsung lihat mana yang katalognya sudah terisi.
+    // Urutan asli dipertahankan untuk bahasa tanpa video. Saat mencari, biarkan
+    // hasil apa adanya (relevansi teks lebih penting).
+    if (s || !readyCounts) return base;
+    return [...base].sort((a, b) => (readyCounts[b.code] ?? 0) - (readyCounts[a.code] ?? 0));
+  }, [q, readyCounts]);
 
   const recents = useMemo(
     () =>
@@ -179,6 +190,7 @@ export function LangPickerPanel({
                   {l.native}
                 </span>
               </span>
+              <ReadyBadge n={readyCounts?.[l.code]} />
               {on && <Check className="h-4 w-4 shrink-0" color={TEAL} />}
             </button>
           );
@@ -190,5 +202,20 @@ export function LangPickerPanel({
         )}
       </div>
     </div>
+  );
+}
+
+/** Badge kecil "N siap" — jumlah video tab "Siap" untuk sebuah bahasa. Disembunyikan
+    kalau tak ada video (n falsy) supaya baris bahasa kosong tetap bersih. */
+function ReadyBadge({ n }: { n?: number }) {
+  if (!n) return null;
+  return (
+    <span
+      className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-bold leading-none tabular-nums"
+      style={{ backgroundColor: "rgba(26,158,158,0.16)", color: TEAL }}
+      title={`${n} video siap tonton`}
+    >
+      {n} siap
+    </span>
   );
 }
