@@ -365,11 +365,23 @@ export function titleMatchesLanguage(title: string, langCode: string): boolean {
 // Saring daftar video ke yang cocok bahasa target. Kalau semua kebuang (mis. hasil
 // bahasa lain semua), balikin daftar asli biar rail tak kosong — user tetap dapat
 // sesuatu ketimbang empty state; filter tetap mengangkat yang cocok saat ada.
+//
+// [watch-freetext-soft-filter-v1] `soft=true` → mode pencarian teks-bebas eksplisit
+// (mis. "fujii kaze"): pengguna JELAS mau konten itu, jadi jangan buang video yang
+// judulnya romaji/Inggris (nama lagu/artis kerap bukan aksara target) — cukup
+// dahulukan yang cocok bahasa target, sisanya tetap ikut. Tanpa ini hasil sering
+// menciut jadi 1–2 video meski YouTube mengembalikan belasan.
 export function filterVideosByLanguage(
   videos: ImmersionVideo[],
-  langCode: string
+  langCode: string,
+  soft = false
 ): ImmersionVideo[] {
-  const matched = videos.filter((v) => titleMatchesLanguage(v.title, langCode));
+  const matched: ImmersionVideo[] = [];
+  const rest: ImmersionVideo[] = [];
+  for (const v of videos) {
+    (titleMatchesLanguage(v.title, langCode) ? matched : rest).push(v);
+  }
+  if (soft) return [...matched, ...rest]; // dahulukan yang cocok, jangan buang sisanya
   return matched.length ? matched : videos;
 }
 
