@@ -210,14 +210,6 @@ const FONT_LEVELS = [
 ];
 const FONT_KEY = "linguo:watch:fontsize:v1";
 
-// [watch-sync-offset-v1] Nudge manual sinkron subtitle↔audio. Timestamp dari ASR/
-// caption YouTube kadang meleset maju/mundur untuk video tertentu, jadi sorotan &
-// baris fokus terasa "ga sinkron". Tombol ± menggeser semua highlight; disimpan
-// per-video di lokal. Positif = subtitle MAJU (muncul lebih awal dari audio).
-const SYNC_STEP = 0.25; // detik per klik
-const SYNC_MAX = 10; // batas geser (detik)
-const syncKeyFor = (videoId: string, langCode: string) => `linguo:watch:sync:v1:${videoId}:${langCode}`;
-
 // Label ramah untuk string kualitas YouTube (dipakai pemilih kualitas kita).
 const QUALITY_LABELS: Record<string, string> = {
   highres: "4320p",
@@ -415,8 +407,6 @@ export default function VideoLearnPlayer({
   const [quality, setQuality] = useState("auto"); // "auto" | level string YT
   const [fontIdx, setFontIdx] = useState(1); // ukuran teks subtitle (default Sedang)
   const fscale = FONT_LEVELS[fontIdx].scale;
-  // [watch-sync-offset-v1] Geser sinkron subtitle (detik). + = subtitle lebih cepat.
-  const [syncOffset, setSyncOffset] = useState(0);
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
@@ -1467,10 +1457,9 @@ export default function VideoLearnPlayer({
     }
   }, [showCC, ready, langCode]);
 
-  // [watch-sync-offset-v1] Waktu yang dipakai SEMUA sorotan (baris aktif, karaoke,
-  // panel transkrip) — waktu player + geser sinkron manual. Dipusatkan di sini biar
-  // baris fokus & panel selalu kompak.
-  const syncedTime = time + syncOffset;
+  // Waktu yang dipakai SEMUA sorotan (baris aktif, karaoke, panel transkrip) —
+  // langsung waktu player. Dipusatkan di sini biar baris fokus & panel selalu kompak.
+  const syncedTime = time;
 
   // Indeks cue aktif berdasarkan waktu sekarang.
   const activeIdx = useMemo(() => {
@@ -1706,46 +1695,6 @@ export default function VideoLearnPlayer({
       return n;
     });
   }, []);
-
-  // [watch-sync-offset-v1] Pulihkan geser sinkron tersimpan tiap ganti video/bahasa
-  // (default 0 kalau belum pernah diatur untuk video ini).
-  useEffect(() => {
-    let v = 0;
-    try {
-      const s = window.localStorage.getItem(syncKeyFor(video.videoId, langCode));
-      if (s != null) {
-        const n = parseFloat(s);
-        if (Number.isFinite(n)) v = Math.max(-SYNC_MAX, Math.min(SYNC_MAX, n));
-      }
-    } catch {
-      /* abaikan */
-    }
-    setSyncOffset(v);
-  }, [video.videoId, langCode]);
-
-  const nudgeSync = useCallback(
-    (delta: number) => {
-      setSyncOffset((cur) => {
-        const next = Math.max(-SYNC_MAX, Math.min(SYNC_MAX, Math.round((cur + delta) * 100) / 100));
-        try {
-          window.localStorage.setItem(syncKeyFor(video.videoId, langCode), String(next));
-        } catch {
-          /* abaikan */
-        }
-        return next;
-      });
-    },
-    [video.videoId, langCode]
-  );
-
-  const resetSync = useCallback(() => {
-    setSyncOffset(0);
-    try {
-      window.localStorage.removeItem(syncKeyFor(video.videoId, langCode));
-    } catch {
-      /* abaikan */
-    }
-  }, [video.videoId, langCode]);
 
   const gotoCue = useCallback(
     (dir: -1 | 1) => {
@@ -2518,47 +2467,6 @@ export default function VideoLearnPlayer({
               title="Ukuran teks subtitle"
               onClick={cycleFont}
             />
-
-            {/* [watch-sync-offset-v1] Sinkron subtitle — geser kalau highlight
-                mendahului / ketinggalan dari audio. − mundur, + maju; angka =
-                geser sekarang (detik). Ketuk angka utk reset ke 0. Hanya tampil
-                saat transkrip interaktif sudah siap. */}
-            {txState === "ready" && (
-              <div
-                className="inline-flex shrink-0 items-center gap-0.5 rounded-full px-1 py-1 text-[13px] font-bold"
-                style={{
-                  backgroundColor: syncOffset !== 0 ? "rgba(26,158,158,0.16)" : "transparent",
-                  color: "#fff",
-                }}
-                title="Sinkron subtitle dengan audio (− mundur / + maju)"
-              >
-                <button
-                  onClick={() => nudgeSync(-SYNC_STEP)}
-                  className="rounded-full px-2 py-1 leading-none transition-colors hover:bg-white/10"
-                  title="Subtitle lebih lambat (mundur)"
-                  aria-label="Subtitle lebih lambat"
-                >
-                  −
-                </button>
-                <button
-                  onClick={resetSync}
-                  className="min-w-[3.25rem] rounded-full px-1 py-1 text-center leading-none transition-colors hover:bg-white/10"
-                  style={{ color: syncOffset !== 0 ? TEAL : "#fff" }}
-                  title="Reset sinkron ke 0"
-                  aria-label="Reset sinkron"
-                >
-                  {syncOffset > 0 ? `+${syncOffset.toFixed(2)}` : syncOffset.toFixed(2)}s
-                </button>
-                <button
-                  onClick={() => nudgeSync(SYNC_STEP)}
-                  className="rounded-full px-2 py-1 leading-none transition-colors hover:bg-white/10"
-                  title="Subtitle lebih cepat (maju)"
-                  aria-label="Subtitle lebih cepat"
-                >
-                  +
-                </button>
-              </div>
-            )}
 
             {/* [watch-hide-sentence-tr-v1] Sembunyikan/tampilkan baris terjemahan
                 kalimat (emas) di bawah subtitle → fokus ke arti per-kata. */}
@@ -3491,24 +3399,90 @@ function FocusLine({
 // ── Sinkron hover transliterasi ────────────────────────────────────────────────
 // [linguo-patch:watch-translit-hover-sync-v1] Bacaan Latin (translit) disimpan per
 // BARIS (satu string), bukan per kata. Untuk menyorot token translit yang pas saat
-// kata target di-hover, kita selaraskan BERDASARKAN URUTAN: kata ke-k pada target ↔
-// token translit ke-k. Ini bersih untuk bahasa yang translit-nya memisah kata pakai
-// spasi (Georgia, Rusia, Yunani, dll). Kalau jumlah tak sama (mis. sebagian pinyin
-// China menggabung suku kata), kita TAK menyorot apa pun daripada salah sorot →
-// kembalikan null dan translit dirender polos seperti sebelumnya.
+// kata target di-hover / di-tap, kita selaraskan token translit ke kata target.
+// Tiap token translit dapat `k` = indeks-urut kata target yang bersesuaian (−1 utk
+// pemisah). Konsumen (hover-sync & tap-berwarna) menyorot token yang k-nya cocok.
+//
+// Dua jalur:
+//   1. CEPAT (bahasa beraksara alfabet: Rusia, Yunani, Georgia, Arab, Ibrani…):
+//      translit memisah kata pakai spasi 1:1 dengan kata target → kata ke-k ↔ token
+//      ke-k. Dipakai bila jumlah token == jumlah kata.
+//   2. SUKU-KATA (aksara silabis TANPA spasi: Mandarin/pinyin, Korea, kana Jepang):
+//      1 karakter target ≈ 1 suku kata, dan tiap token pinyin/romaji punya jumlah
+//      suku kata = jumlah gugus vokalnya. Kalau TOTAL suku kata translit == TOTAL
+//      karakter target, kita petakan berurutan (karakter→suku kata) lalu tiap token
+//      ambil ordinal kata mayoritas. Ini yang bikin "měi zhōu" ikut menyala saat
+//      "每周" di-tap walau segmentasi pinyin tak seragam ("Yóuyǒng" digabung tapi
+//      "měi zhōu" dipisah). Kalau jumlah tak pas → null (render polos, tanpa regresi).
+
+// Karakter target yang dihitung 1 suku kata: Han (CJK), Hangul, Hiragana, Katakana.
+const SYLLABIC_CHAR_RE =
+  /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u3040-\u309F\u30A0-\u30FA\u30FF\uAC00-\uD7A3]/u;
+
+// Jumlah suku kata sebuah token Latin = jumlah gugus vokal (a e i o u, termasuk yang
+// bertanda nada/diakritik lewat normalisasi NFD). "y" dianggap konsonan/glide.
+function countTranslitSyllables(token: string): number {
+  const norm = token.normalize("NFD");
+  let n = 0;
+  let inVowel = false;
+  for (const ch of norm) {
+    if (/[aeiou]/i.test(ch)) {
+      if (!inVowel) { n++; inVowel = true; }
+    } else if (/[a-z]/i.test(ch)) {
+      inVowel = false; // konsonan memutus gugus vokal
+    }
+    // tanda diakritik gabung (hasil NFD) & lainnya: abaikan, tak memutus gugus
+  }
+  return n;
+}
 
 function alignTranslitTokens(
   target: string,
   translit: string,
   langCode?: string
 ): { text: string; k: number }[] | null {
-  const wordCount = splitWords(target, langCode).filter((w) => w.isWord).length;
+  const words = splitWords(target, langCode);
+  const wordCount = words.filter((w) => w.isWord).length;
   // Pertahankan pemisah (spasi) sebagai token sendiri biar spasi asli translit utuh.
   const pieces = translit.split(/(\s+)/).filter((p) => p.length);
   const wordPieces = pieces.filter((p) => p.trim().length);
-  if (!wordCount || wordCount !== wordPieces.length) return null;
+  if (!wordCount) return null;
+
+  // Jalur CEPAT: token translit 1:1 dengan kata target.
+  if (wordCount === wordPieces.length) {
+    let k = -1;
+    return pieces.map((p) => (p.trim().length ? { text: p, k: ++k } : { text: p, k: -1 }));
+  }
+
+  // Jalur SUKU-KATA: hanya untuk aksara silabis (tiap karakter kata = 1 suku kata).
+  const charK: number[] = [];
   let k = -1;
-  return pieces.map((p) => (p.trim().length ? { text: p, k: ++k } : { text: p, k: -1 }));
+  for (const w of words) {
+    if (!w.isWord) continue;
+    k++;
+    for (const ch of Array.from(w.text)) {
+      if (!SYLLABIC_CHAR_RE.test(ch)) return null; // ada aksara non-silabis → batal
+      charK.push(k);
+    }
+  }
+  if (!charK.length) return null;
+  const sylCounts = wordPieces.map(countTranslitSyllables);
+  if (sylCounts.some((n) => n === 0)) return null; // token tanpa vokal → tak bisa dipetakan
+  if (sylCounts.reduce((a, b) => a + b, 0) !== charK.length) return null; // jumlah tak pas
+  // Tiap token translit ambil ordinal kata MAYORITAS dari suku kata yang dicakupnya.
+  let ci = 0;
+  const pieceK = sylCounts.map((n) => {
+    const slice = charK.slice(ci, ci + n);
+    ci += n;
+    const counts = new Map<number, number>();
+    for (const kk of slice) counts.set(kk, (counts.get(kk) ?? 0) + 1);
+    let best = slice[0];
+    let bestN = 0;
+    for (const [kk, cc] of counts) if (cc > bestN) { bestN = cc; best = kk; }
+    return best;
+  });
+  let wi = -1;
+  return pieces.map((p) => (p.trim().length ? { text: p, k: pieceK[++wi] } : { text: p, k: -1 }));
 }
 
 // Baris transliterasi dengan token yang bisa disorot sinkron dengan kata target.
@@ -3991,9 +3965,10 @@ function KaraokeTranslit({
   const charToks = useMemo(() => translitStateTokens(translit, frac), [translit, frac]);
   if (!translit) return null;
 
-  // Sorot per-kata (ikut state target) hanya bila token translit selaras 1:1 dgn kata
-  // target; kalau tidak, state berbasis karakter pakai frac yang sama.
-  const wordSync = aligned && aligned.filter((t) => t.k >= 0).length === wordStates.length;
+  // Sorot per-kata (ikut state target) bila translit bisa diselaraskan ke kata target
+  // (jalur cepat 1:1 ATAU jalur suku-kata utk aksara silabis). Tiap `k` sudah dijamin
+  // ordinal kata yang valid. Kalau tidak selaras: state berbasis karakter pakai frac.
+  const wordSync = !!aligned && aligned.every((t) => t.k < wordStates.length);
   const toks: { text: string; isWord: boolean; state: KaraokeState; k: number }[] = wordSync
     ? aligned!.map((t) => ({
         text: t.text,
