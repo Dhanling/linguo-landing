@@ -24,6 +24,7 @@ import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 import MobileBottomNav from '@/components/akun/MobileBottomNav';
 import StudentShell from '@/components/akun/StudentShell';
+import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -2307,6 +2308,13 @@ export default function AkunPage() {
     if (typeof window === "undefined") return;
     try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
   }, [activeTab]);
+  // [materi-gate-v1] menu "Kelas & Materi" masih under development → hanya boleh
+  // diakses email di allowlist. Kalau bukan, lempar balik ke Beranda (menutup
+  // deep-link ?menu=materi maupun tab tersimpan di localStorage).
+  const canSeeMateri = canAccessMateriGate(user?.email);
+  useEffect(() => {
+    if (!canSeeMateri && activeTab === "materi") setActiveTab("beranda");
+  }, [canSeeMateri, activeTab]);
   // [linguo-patch:pustaka-page-v1] menu "Perpustakaan" sekarang punya halaman sendiri → redirect ke /akun/perpustakaan
   // [perf:sidebar-nav-v1] router.replace (client-side, instan) — dulu window.location.replace = full reload
   useEffect(() => {
@@ -3342,7 +3350,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl}>
+    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} canAccessMateri={canSeeMateri}>
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
@@ -3940,7 +3948,7 @@ export default function AkunPage() {
             </motion.div>
           )}
 
-          {activeTab === "materi" && (
+          {activeTab === "materi" && canSeeMateri && (
             <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
               {(() => {
                 const mlangGlyph = (lang: string): string => {
@@ -4242,7 +4250,7 @@ export default function AkunPage() {
       </main>
 
       {/* ── Bottom Tab Nav (mobile only) ── */}
-      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : (activeTab === "pustaka" || activeTab === "simulasi") ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} />
+      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : (activeTab === "pustaka" || activeTab === "simulasi") ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} canAccessMateri={canSeeMateri} />
 
       {/* Floating Quick Actions FAB */}
       {student && (

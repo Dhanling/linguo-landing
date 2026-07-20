@@ -43,6 +43,7 @@ function Tip({ label }: { label: string }) {
 export default function StudentShell({
   active,
   onTabChange,
+  canAccessMateri = true,
   children,
 }: {
   active: AkunTab;
@@ -50,6 +51,9 @@ export default function StudentShell({
   firstName?: string;
   avatarUrl?: string;
   segment?: "b2c" | "b2b";
+  // [materi-gate-v1] menu "Kelas & Materi" masih under development → sembunyikan
+  // dari sidebar kalau email tidak masuk allowlist.
+  canAccessMateri?: boolean;
   children: ReactNode;
 }) {
   const signOut = async () => {
@@ -135,7 +139,7 @@ export default function StudentShell({
 
           {/* nav */}
           <nav className="mt-12 flex flex-col items-center gap-3">
-            {NAV.map((item) => {
+            {NAV.filter((item) => canAccessMateri || item.key !== "materi").map((item) => {
               const Icon = item.icon;
               if ("href" in item) {
                 // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis

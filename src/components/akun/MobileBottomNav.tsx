@@ -8,6 +8,8 @@ type TabKey = "beranda" | "jadwal" | "materi" | "akun";
 type Props = {
   activeTab: TabKey;
   onChange: (tab: TabKey) => void;
+  // [materi-gate-v1] sembunyikan tab "Materi" kalau email tidak masuk allowlist.
+  canAccessMateri?: boolean;
 };
 
 // Tab biasa memicu onChange; item ber-`href` (Watch & Learn) menavigasi ke route
@@ -24,15 +26,16 @@ const TABS: NavItem[] = [
   { key: "akun",    label: "Akun",    icon: User },
 ];
 
-export default function MobileBottomNav({ activeTab, onChange }: Props) {
+export default function MobileBottomNav({ activeTab, onChange, canAccessMateri = true }: Props) {
+  const tabs = TABS.filter((item) => canAccessMateri || item.key !== "materi");
   return (
     <nav
       className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="Navigation utama"
     >
-      <div className="mx-auto max-w-lg grid grid-cols-5 h-14">
-        {TABS.map((item) => {
+      <div className={`mx-auto max-w-lg grid h-14 ${tabs.length === 5 ? "grid-cols-5" : "grid-cols-4"}`}>
+        {tabs.map((item) => {
           const { key, label, icon: Icon } = item;
           const isActive = !("href" in item) && activeTab === key;
           const inner = (
