@@ -389,19 +389,25 @@ export function WordTooltip({
             [watch-tip-actions-top-v1] Deret aksi (Simpan · Analisa · Dengar)
             dipindah ke pojok KANAN ATAS bersama tombol tutup (permintaan user),
             tiap ikon zoom-in saat hover. */}
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex flex-wrap items-baseline gap-2">
-            <span className="text-[16px] font-extrabold text-white">{word}</span>
+        {/* [watch-tip-pos-inline-v1] Kelas kata (POS) menempel di KANAN kata dalam
+            SATU baris — bukan turun & membungkus 2 baris seperti sebelumnya
+            (permintaan user). Kata & bentuk dasar shrink-0 (utuh); hanya pil POS
+            yang boleh menciut/terpotong (min-w-0 + truncate) kalau ruang mepet,
+            jadi tetap 1 baris tanpa mendorong ikon aksi. */}
+        <div className="flex items-start justify-between gap-1.5">
+          <div className="flex min-w-0 items-baseline gap-1.5">
+            <span className="shrink-0 text-[16px] font-extrabold text-white">{word}</span>
             {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
             {meaning?.base &&
               meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
-                <span className="text-[14px] font-semibold" style={{ color: SUB }}>
+                <span className="shrink-0 text-[14px] font-semibold" style={{ color: SUB }}>
                   ({meaning.base})
                 </span>
               )}
             {meaning?.type && (
               <span
-                className="rounded-md px-1.5 py-0.5 text-[10.5px] font-semibold"
+                title={meaning.type}
+                className="min-w-0 shrink truncate whitespace-nowrap rounded-md px-1.5 py-0.5 text-[10px] font-semibold leading-tight"
                 style={{ backgroundColor: "rgba(26,158,158,0.18)", color: "#7FE0E0" }}
               >
                 {meaning.type}
