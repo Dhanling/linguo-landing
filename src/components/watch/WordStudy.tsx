@@ -383,7 +383,7 @@ function StudySkeleton() {
 }
 
 // Gelembung jawaban palsu saat AI sedang menjawab (Tanya AI / pertanyaan lanjutan).
-function AnswerSkeleton() {
+export function AnswerSkeleton() {
   return (
     <div className="flex justify-start" aria-busy="true" aria-label="Menjawab">
       <div
@@ -795,7 +795,7 @@ function parseRichBlocks(text: string): RichBlock[] {
   return blocks;
 }
 
-function RichText({ text }: { text: string }) {
+export function RichText({ text }: { text: string }) {
   let blocks = parseRichBlocks(text);
   // Fallback: tabel ditulis inline (tanpa baris baru) → susun ulang lalu parse lagi.
   if (!blocks.some((b) => b.type === "table") && INLINE_SEP_RE.test(text)) {
@@ -937,7 +937,7 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+export function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
       <p className="mb-1.5 text-[11.5px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
@@ -948,7 +948,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function TabBtn({
+export function TabBtn({
   children,
   active,
   onClick,
@@ -971,7 +971,7 @@ function TabBtn({
   );
 }
 
-function IconBtn({
+export function IconBtn({
   children,
   label,
   onClick,

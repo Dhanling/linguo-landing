@@ -145,6 +145,90 @@ async function callGemini(prompt: string, json: boolean): Promise<string> {
   return "";
 }
 
+// Prompt tanya-jawab lanjutan bebas — dipakai baik untuk KATA maupun KALIMAT.
+// `subject` = kalimat pembuka yang menyebut apa yang sedang dipelajari (kata vs
+// kalimat); sisanya (aturan gaya jawaban, tabel, «guillemets», 3 usulan lanjutan)
+// identik supaya kedua jalur konsisten.
+function buildAskPrompt(opts: {
+  language: string;
+  explanationLanguage: string;
+  nonLatin: boolean;
+  subject: string;
+  question: string;
+}): string {
+  const { language, explanationLanguage, nonLatin, subject, question } = opts;
+  // Usulan lanjutan sering menyisipkan kata bahasa target dalam «guillemets».
+  // Untuk bahasa non-Latin (mis. Arab) minta "tl": bacaan Latin kata target
+  // itu saja, biar chip bisa menampilkan transliterasi di bawah pertanyaan.
+  const followupSpec = nonLatin
+    ? `each an object { "q": a SHORT question in ${explanationLanguage} (max ~9 words) ` +
+      `that wraps any cited ${language} word in «guillemets», "tl": the Latin phonetic ` +
+      `reading of ONLY the ${language} (non-Latin) words inside «guillemets» in "q", in order ` +
+      `(empty string if none) }`
+    : `each a SHORT question in ${explanationLanguage} (max ~9 words)`;
+  const followupShape = nonLatin
+    ? `[{"q":"...","tl":"..."}, {"q":"...","tl":"..."}, {"q":"...","tl":"..."}]`
+    : `["...", "...", "..."]`;
+  return (
+    `You are a warm, concise ${language} tutor helping a learner whose language is ${explanationLanguage}. ` +
+    `${subject} ` +
+    `Answer their question in ${explanationLanguage}, clearly and briefly ` +
+    `(2-4 short paragraphs max). Use concrete examples when helpful. When you cite a ` +
+    `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
+    `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
+    `When the answer is naturally tabular — e.g. comparing forms, listing the tenses/` +
+    `moods/aspects, a conjugation paradigm, or several items each with a few attributes — ` +
+    `present THAT part as a GitHub-style markdown pipe table: a header row "| Column | Column |", ` +
+    `a separator row "|---|---|", then the data rows. Precede the table with one short prose ` +
+    `sentence. Use a table ONLY when it genuinely aids understanding; otherwise plain prose. ` +
+    `Keep tables compact (2-4 columns). You may still wrap ${language} words in «guillemets» ` +
+    `inside cells. No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
+    `would likely ask NEXT — ${followupSpec}, ` +
+    `directly related to THIS question and answer, without repeating them. ` +
+    `If your answer introduced a grammatical term the learner may not know (e.g. a case, ` +
+    `mood, aspect, gender), make ONE follow-up ask what that term means in the context of ` +
+    `${language} — phrased in ${explanationLanguage}, naming the language (e.g. in Indonesian "Apa itu vokatif dalam bahasa Georgia?"). ` +
+    `Return ONLY a JSON object: {"answer": "...", "followups": ${followupShape}}.` +
+    `\n\nQuestion: ${question}`
+  );
+}
+
+// Parse balasan Gemini mode ask → { answer, followups }. Toleran: JSON longgar,
+// terima followups bentuk string[] (lama) maupun { q, tl }[] (baru), dan jangan
+// bocorkan blob JSON rusak mentah-mentah ke gelembung chat.
+function parseAsk(raw: string): { answer: string; followups: { q: string; tl?: string }[] } {
+  const s = raw.indexOf("{");
+  const e = raw.lastIndexOf("}");
+  let answer = "";
+  let followups: { q: string; tl?: string }[] = [];
+  if (s !== -1 && e > s) {
+    const parsed = parseJsonLoose(raw.slice(s, e + 1));
+    if (parsed) {
+      answer = typeof parsed.answer === "string" ? parsed.answer.trim() : "";
+      followups = Array.isArray(parsed.followups)
+        ? (parsed.followups as unknown[])
+            .map((it) => {
+              if (typeof it === "string") return { q: it.trim(), tl: "" };
+              const o = it as Record<string, unknown>;
+              return {
+                q: typeof o?.q === "string" ? o.q.trim() : "",
+                tl: typeof o?.tl === "string" ? o.tl.trim() : "",
+              };
+            })
+            .filter((it) => it.q)
+            .slice(0, 3)
+        : [];
+    }
+  }
+  // Kalau JSON tetap gagal: pakai teks mentah HANYA bila ia bukan blob JSON
+  // (kalau diawali "{" berarti JSON rusak — jangan bocorkan mentah ke chat).
+  if (!answer) {
+    const t = raw.trim();
+    answer = t.startsWith("{") ? "Maaf, jawaban gagal dimuat. Coba tanya lagi." : t;
+  }
+  return { answer, followups };
+}
+
 export async function POST(req: NextRequest) {
   try {
     if (!GEMINI_API_KEY) {
@@ -156,7 +240,10 @@ export async function POST(req: NextRequest) {
     const sentence = typeof body?.sentence === "string" ? body.sentence.trim().slice(0, 500) : "";
     const langCode = typeof body?.langCode === "string" ? body.langCode : "en";
     const mode = body?.mode === "ask" ? "ask" : "overview";
-    if (!word) return NextResponse.json({ error: "no_word" }, { status: 200 });
+    // [watch-sentence-study-v1] `kind: "sentence"` → subjeknya SATU KALIMAT utuh
+    // (dari tombol AI melayang: analisa kalimat yang sedang tayang di video), bukan
+    // satu kata. Ditangani terpisah lalu return; sisanya = jalur kata seperti biasa.
+    const kind = body?.kind === "sentence" ? "sentence" : "word";
 
     const language = ENGLISH_NAME[langCode] ?? ENGLISH_NAME[langCode.split("-")[0]] ?? "English";
     // Bahasa penjelasan = bahasa terjemahan pilihan pengguna (baseCode). Mis. belajar
@@ -166,6 +253,79 @@ export async function POST(req: NextRequest) {
     const explanationLanguage =
       ENGLISH_NAME[baseCode] ?? ENGLISH_NAME[baseCode.split("-")[0]] ?? DEFAULT_EXPLANATION_LANGUAGE;
     const nonLatin = NON_LATIN.has(langCode) || NON_LATIN.has(langCode.split("-")[0]);
+
+    // ── Kalimat: analisa kalimat utuh + tanya-jawab lanjutan ─────────────────
+    if (kind === "sentence") {
+      if (!sentence) return NextResponse.json({ error: "no_sentence" }, { status: 200 });
+
+      if (mode === "ask") {
+        const question = typeof body?.question === "string" ? body.question.trim().slice(0, 400) : "";
+        if (!question) return NextResponse.json({ answer: "", followups: [] }, { status: 200 });
+        const prompt = buildAskPrompt({
+          language,
+          explanationLanguage,
+          nonLatin,
+          subject: `The learner is studying this ${language} sentence: "${sentence}".`,
+          question,
+        });
+        const raw = await callGemini(prompt, true);
+        return NextResponse.json(parseAsk(raw));
+      }
+
+      // overview: kartu analisa kalimat (arti, struktur/tata bahasa, nada, pecahan).
+      const translitHint = nonLatin
+        ? ` For every ${language} chunk, ALSO give its Latin phonetic reading in a "tl" field.`
+        : "";
+      const prompt =
+        `You are a concise ${language} tutor for a learner whose language is ${explanationLanguage}. Analyze this ` +
+        `${language} sentence: "${sentence}". Return ONLY a JSON object, all explanatory text ` +
+        `in ${explanationLanguage}, with this exact shape:\n` +
+        `{\n` +
+        `  "translation": a natural ${explanationLanguage} translation of the whole sentence,\n` +
+        `  "literal": a more literal word-order gloss in ${explanationLanguage} ONLY if it usefully differs from the natural translation, else empty string,\n` +
+        `  "grammar": 1-3 short sentences in ${explanationLanguage} explaining the sentence's structure (word order, particles, tense/aspect, key constructions),\n` +
+        `  "tone": one short ${explanationLanguage} sentence on the tone/register/politeness of the whole sentence (empty string if plain/neutral),\n` +
+        `  "chunks": array of the sentence's meaningful parts IN ORDER, each { "part": the ${language} chunk (a word or short phrase),${nonLatin ? ' "tl": its Latin reading,' : ""} "role": a SHORT ${explanationLanguage} grammatical role label (e.g. "subjek", "kata kerja", "objek", "partikel", "keterangan"), "gloss": its ${explanationLanguage} meaning },\n` +
+        `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} you used that a beginner may not know (e.g. "partikel", "kata bantu", "kala lampau"); empty array if none\n` +
+        `}` + translitHint + ` No markdown, no commentary outside the JSON.`;
+      const raw = await callGemini(prompt, true);
+      const s = raw.indexOf("{");
+      const e = raw.lastIndexOf("}");
+      if (s === -1 || e === -1 || e < s) {
+        return NextResponse.json({ error: "parse_failed" }, { status: 200 });
+      }
+      const parsed = parseJsonLoose(raw.slice(s, e + 1));
+      if (!parsed) {
+        return NextResponse.json({ error: "parse_failed" }, { status: 200 });
+      }
+      const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
+      const chunks = Array.isArray(parsed.chunks)
+        ? (parsed.chunks as unknown[])
+            .map((it) => {
+              const o = it as Record<string, unknown>;
+              return { part: str(o.part), tl: str(o.tl), role: str(o.role), gloss: str(o.gloss) };
+            })
+            .filter((it) => it.part && it.gloss)
+            .slice(0, 24)
+        : [];
+      const terms = Array.isArray(parsed.terms)
+        ? (parsed.terms as unknown[])
+            .map((t) => str(t))
+            .filter((t) => t.length > 0 && t.length <= 40)
+            .slice(0, 4)
+        : [];
+      return NextResponse.json({
+        translation: str(parsed.translation),
+        literal: str(parsed.literal),
+        grammar: str(parsed.grammar),
+        tone: str(parsed.tone),
+        chunks,
+        terms,
+      });
+    }
+
+    if (!word) return NextResponse.json({ error: "no_word" }, { status: 200 });
+
     const translitHint = nonLatin
       ? ` For every ${language} word or example, ALSO give its Latin phonetic reading in a "tl" field.`
       : "";
@@ -177,71 +337,15 @@ export async function POST(req: NextRequest) {
     if (mode === "ask") {
       const question = typeof body?.question === "string" ? body.question.trim().slice(0, 400) : "";
       if (!question) return NextResponse.json({ answer: "", followups: [] }, { status: 200 });
-      // Usulan lanjutan sering menyisipkan kata bahasa target dalam «guillemets».
-      // Untuk bahasa non-Latin (mis. Arab) minta "tl": bacaan Latin kata target
-      // itu saja, biar chip bisa menampilkan transliterasi di bawah pertanyaan.
-      const followupSpec = nonLatin
-        ? `each an object { "q": a SHORT question in ${explanationLanguage} (max ~9 words) ` +
-          `that wraps any cited ${language} word in «guillemets», "tl": the Latin phonetic ` +
-          `reading of ONLY the ${language} (non-Latin) words inside «guillemets» in "q", in order ` +
-          `(empty string if none) }`
-        : `each a SHORT question in ${explanationLanguage} (max ~9 words)`;
-      const followupShape = nonLatin
-        ? `[{"q":"...","tl":"..."}, {"q":"...","tl":"..."}, {"q":"...","tl":"..."}]`
-        : `["...", "...", "..."]`;
-      const prompt =
-        `You are a warm, concise ${language} tutor helping a learner whose language is ${explanationLanguage}. ` +
-        `The learner is studying the ${language} word "${word}".${ctx} ` +
-        `Answer their question in ${explanationLanguage}, clearly and briefly ` +
-        `(2-4 short paragraphs max). Use concrete examples when helpful. When you cite a ` +
-        `${language} word or phrase, wrap it in «guillemets» and add its meaning in ` +
-        `parentheses.${nonLatin ? " Include Latin readings for non-Latin script." : ""} ` +
-        `When the answer is naturally tabular — e.g. comparing forms, listing the tenses/` +
-        `moods/aspects, a conjugation paradigm, or several items each with a few attributes — ` +
-        `present THAT part as a GitHub-style markdown pipe table: a header row "| Column | Column |", ` +
-        `a separator row "|---|---|", then the data rows. Precede the table with one short prose ` +
-        `sentence. Use a table ONLY when it genuinely aids understanding; otherwise plain prose. ` +
-        `Keep tables compact (2-4 columns). You may still wrap ${language} words in «guillemets» ` +
-        `inside cells. No markdown headings. ALSO propose exactly 3 natural follow-up questions the learner ` +
-        `would likely ask NEXT — ${followupSpec}, ` +
-        `directly related to THIS question and answer, without repeating them. ` +
-        `If your answer introduced a grammatical term the learner may not know (e.g. a case, ` +
-        `mood, aspect, gender), make ONE follow-up ask what that term means in the context of ` +
-        `${language} — phrased in ${explanationLanguage}, naming the language (e.g. in Indonesian "Apa itu vokatif dalam bahasa Georgia?"). ` +
-        `Return ONLY a JSON object: {"answer": "...", "followups": ${followupShape}}.` +
-        `\n\nQuestion: ${question}`;
+      const prompt = buildAskPrompt({
+        language,
+        explanationLanguage,
+        nonLatin,
+        subject: `The learner is studying the ${language} word "${word}".${ctx}`,
+        question,
+      });
       const raw = await callGemini(prompt, true);
-      const s = raw.indexOf("{");
-      const e = raw.lastIndexOf("}");
-      let answer = "";
-      let followups: { q: string; tl?: string }[] = [];
-      if (s !== -1 && e > s) {
-        const parsed = parseJsonLoose(raw.slice(s, e + 1));
-        if (parsed) {
-          answer = typeof parsed.answer === "string" ? parsed.answer.trim() : "";
-          followups = Array.isArray(parsed.followups)
-            ? (parsed.followups as unknown[])
-                // Terima bentuk string (Latin) maupun objek { q, tl } (non-Latin).
-                .map((it) => {
-                  if (typeof it === "string") return { q: it.trim(), tl: "" };
-                  const o = it as Record<string, unknown>;
-                  return {
-                    q: typeof o?.q === "string" ? o.q.trim() : "",
-                    tl: typeof o?.tl === "string" ? o.tl.trim() : "",
-                  };
-                })
-                .filter((it) => it.q)
-                .slice(0, 3)
-            : [];
-        }
-      }
-      // Kalau JSON tetap gagal: pakai teks mentah HANYA bila ia bukan blob JSON
-      // (kalau diawali "{" berarti JSON rusak — jangan bocorkan mentah ke chat).
-      if (!answer) {
-        const t = raw.trim();
-        answer = t.startsWith("{") ? "Maaf, jawaban gagal dimuat. Coba tanya lagi." : t;
-      }
-      return NextResponse.json({ answer, followups });
+      return NextResponse.json(parseAsk(raw));
     }
 
     // ── Mode overview: kartu belajar terstruktur ─────────────────────────────

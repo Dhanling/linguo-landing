@@ -1786,6 +1786,87 @@ export async function askWordQuestion(params: {
   };
 }
 
+// ── Belajar mendalami KALIMAT (tombol AI melayang) ───────────────────────────
+// Sama backend /api/word-deep tapi `kind: "sentence"`: subjeknya satu kalimat
+// utuh yang sedang tayang di video. overview = kartu analisa (arti keseluruhan +
+// struktur/tata bahasa + nada + pecahan bermakna); ask = tanya-jawab lanjutan.
+
+/** Satu pecahan bermakna dari kalimat (kata/frasa) dengan peran & artinya. */
+export interface SentenceChunk {
+  part: string; // potongan bahasa target
+  tl?: string; // bacaan Latin (bahasa non-Latin)
+  role: string; // label peran tata bahasa singkat (mis. "subjek", "kata kerja")
+  gloss: string; // arti potongan ini dalam bahasa penjelasan
+}
+
+export interface SentenceDeepDive {
+  translation: string; // arti keseluruhan kalimat
+  literal: string; // gloss lebih harfiah (kosong bila tak beda berguna)
+  grammar: string; // penjelasan struktur/tata bahasa
+  tone: string; // nada/register kalimat (kosong bila datar)
+  chunks: SentenceChunk[]; // pecahan bermakna berurutan
+  terms: string[]; // istilah tata bahasa baru → chip "Apa itu …?"
+}
+
+/** Ambil kartu analisa mendalam untuk sebuah kalimat (arti, struktur, pecahan). */
+export async function getSentenceDeepDive(params: {
+  sentence: string;
+  langCode: string;
+  baseCode?: string;
+}): Promise<SentenceDeepDive> {
+  const res = await fetch("/api/word-deep", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...params, kind: "sentence", mode: "overview" }),
+  });
+  if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
+  const data = (await res.json()) as Partial<SentenceDeepDive> & { error?: string };
+  if (data.error) throw new Error(data.error);
+  return {
+    translation: data.translation ?? "",
+    literal: data.literal ?? "",
+    grammar: data.grammar ?? "",
+    tone: data.tone ?? "",
+    chunks: Array.isArray(data.chunks) ? data.chunks : [],
+    terms: Array.isArray(data.terms) ? data.terms.filter((t) => typeof t === "string" && t.trim()) : [],
+  };
+}
+
+/** Tanya-jawab lanjutan bebas tentang sebuah kalimat (arti, grammar, dll). */
+export async function askSentenceQuestion(params: {
+  sentence: string;
+  langCode: string;
+  question: string;
+  baseCode?: string;
+}): Promise<WordAnswer> {
+  const res = await fetch("/api/word-deep", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ ...params, kind: "sentence", mode: "ask" }),
+  });
+  if (!res.ok) throw new Error(`word-deep gagal (${res.status})`);
+  const data = (await res.json()) as {
+    answer?: string;
+    followups?: unknown[];
+    error?: string;
+  };
+  if (data.error) throw new Error(data.error);
+  const followups: FollowupQ[] = Array.isArray(data.followups)
+    ? data.followups
+        .map((it): FollowupQ => {
+          if (typeof it === "string") return { q: it.trim() };
+          const o = (it ?? {}) as Record<string, unknown>;
+          return {
+            q: typeof o.q === "string" ? o.q.trim() : "",
+            tl: typeof o.tl === "string" ? o.tl.trim() : "",
+          };
+        })
+        .filter((f) => f.q)
+        .slice(0, 3)
+    : [];
+  return { answer: (data.answer ?? "").trim(), followups };
+}
+
 /** Kelas kata kanonik untuk pewarnaan token dalam analisa kalimat. */
 export type PosCategory =
   | "noun" | "verb" | "pronoun" | "adjective" | "adverb" | "preposition"

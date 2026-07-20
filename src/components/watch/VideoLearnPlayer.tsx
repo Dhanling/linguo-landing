@@ -83,6 +83,7 @@ import {
   youtubeThumb,
 } from "@/lib/immersion";
 import { WordTooltip } from "./WordTooltip";
+import SentenceStudy from "./SentenceStudy";
 import WatchSubscribeModal from "./WatchSubscribeModal";
 import { RectFlag } from "@/components/RectFlag";
 import { LangPickerPanel } from "./LangPickerPanel";
@@ -581,6 +582,13 @@ export default function VideoLearnPlayer({
   // terbuka langsung muat ulang drawer di tempat, bukan balik ke popup.
   const wordStudyOpenRef = useRef(false);
   wordStudyOpenRef.current = wordStudyOpen;
+  // [watch-sentence-study-v1] Drawer "Analisa Kalimat" — dibuka dari tombol AI
+  // melayang untuk kalimat yang sedang tayang. null = tertutup. Berbagi lebar
+  // & pergeseran layout dengan drawer kata (var --drawer-w) lewat anyDrawerOpen.
+  const [sentenceCue, setSentenceCue] = useState<
+    { sentence: string; translit?: string; translation?: string; lang: string } | null
+  >(null);
+  const anyDrawerOpen = wordStudyOpen || sentenceCue !== null;
   // [watch-tip-persist-v1] Video jalan lagi → tutup balon arti kata (biar tak
   // menghalangi tontonan). Drawer Analisa (wordStudyOpen) dikecualikan: panel dalam
   // itu memang dibuka untuk dibaca berlama-lama, tak ikut tertutup saat video jalan.
@@ -594,7 +602,7 @@ export default function VideoLearnPlayer({
   // paint → ada satu frame transkrip kepencet ke ruang yang menyempit = kedipan. Dengan
   // layout-effect, padding & transkrip-tersembunyi mendarat di paint yang sama (mulus).
   useLayoutEffect(() => {
-    if (wordStudyOpen) {
+    if (anyDrawerOpen) {
       if (panelBeforeStudyRef.current === null) {
         panelBeforeStudyRef.current = showPanel;
         setShowPanel(false);
@@ -604,7 +612,7 @@ export default function VideoLearnPlayer({
       panelBeforeStudyRef.current = null;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [wordStudyOpen]);
+  }, [anyDrawerOpen]);
 
   // [watch-study-history-v1] Sembunyikan FAB CS global (ChatWidget) selama player
   // terbuka — pojok kanan-bawah kita pakai sendiri untuk tombol AI (riwayat kata).
@@ -635,6 +643,25 @@ export default function VideoLearnPlayer({
       lang: isExplanationCue(h.sentence, h.langCode) ? "en" : h.langCode,
     });
   }, []);
+
+  // [watch-sentence-study-v1] Buka drawer Analisa Kalimat untuk sebuah cue —
+  // dipakai tombol AI melayang atas kalimat yang sedang tayang. Tutup dulu balon
+  // arti kata & panel riwayat biar tak dobel drawer, jeda video, lalu buka.
+  const openSentenceStudy = useCallback(
+    (cue: LearnCue) => {
+      setAnchor(null);
+      setHistoryOpen(false);
+      playerRef.current?.pauseVideo?.();
+      setSentenceCue({
+        sentence: cue.target,
+        translit: cue.translit,
+        translation: cue.base,
+        // Bahasa analisa ikut cue (baris penjelas campur-bahasa dianalisis sbg-nya).
+        lang: cueAnalysisLang(cue, langCode),
+      });
+    },
+    [langCode]
+  );
 
   // Lebar drawer analisa kata (px, desktop). Dishare ke WordStudy lewat CSS var
   // --drawer-w di root player → video kiri reflow otomatis (padding-right) & drawer
@@ -1839,6 +1866,9 @@ export default function VideoLearnPlayer({
         : isExplanationCue(sentence, langCode)
         ? "en"
         : langCode;
+      // Tap kata saat drawer Analisa Kalimat terbuka → beralih ke arti kata (tutup
+      // drawer kalimat biar tak dobel panel).
+      setSentenceCue(null);
       setAnchor({
         id: ++anchorSeq.current,
         word,
@@ -2102,7 +2132,7 @@ export default function VideoLearnPlayer({
       <div
         ref={splitRowRef}
         className={`flex min-h-0 flex-1 flex-col overflow-hidden lg:flex-row ${fullscreen ? "pt-14" : ""} ${
-          wordStudyOpen ? "lg:pr-[var(--drawer-w)]" : ""
+          anyDrawerOpen ? "lg:pr-[var(--drawer-w)]" : ""
         }`}
         style={{ "--split-w": showPanel ? `${splitPct}%` : "100%" } as React.CSSProperties}
       >
@@ -3019,7 +3049,7 @@ export default function VideoLearnPlayer({
       {/* Separator drawer analisa kata (desktop) — nempel di batas kiri drawer,
           seret untuk atur lebar drawer; video kiri reflow otomatis (var --drawer-w).
           z di atas drawer (z-97) supaya bisa digenggam. */}
-      {wordStudyOpen && (
+      {anyDrawerOpen && (
         <div
           role="separator"
           aria-orientation="vertical"
@@ -3041,12 +3071,12 @@ export default function VideoLearnPlayer({
         </div>
       )}
 
-      {/* [watch-study-history-v1] Tombol AI melayang (menggantikan FAB CS global
-          yang disembunyikan) — klik LANGSUNG membuka drawer Analisa kata terakhir
-          yang dipelajari (tanpa singgah daftar riwayat). Panel riwayat hanya tampil
-          saat belum ada kata yang pernah dibuka (berisi petunjuk). Sembunyi saat
+      {/* [watch-sentence-study-v1] Tombol AI melayang — klik LANGSUNG membuka drawer
+          Analisa Kalimat untuk kalimat yang sedang tayang di video (arti keseluruhan
+          + tata bahasa + pecahan + Tanya AI). Tak ada kalimat tayang (jeda/awal) →
+          fallback: buka analisa kata terakhir / panel riwayat. Sembunyi saat
           miniplayer (pojok itu dipakai kotak video) atau saat drawer sudah buka. */}
-      {!mini && !wordStudyOpen && (
+      {!mini && !anyDrawerOpen && (
         <div className="fixed bottom-4 right-4 z-[70] flex flex-col items-end sm:bottom-6 sm:right-6">
           {historyOpen && (
             <div
@@ -3114,14 +3144,17 @@ export default function VideoLearnPlayer({
           <button
             onClick={() => {
               if (historyOpen) return setHistoryOpen(false);
-              // [watch-fab-last-word-v1] Langsung buka analisa kata TERAKHIR yang
-              // diklik/dipelajari. Belum ada riwayat → tampilkan panel petunjuk.
+              // [watch-sentence-study-v1] Aksi utama: analisa KALIMAT yang sedang
+              // tayang (cue terlihat, atau cue aktif terakhir saat di jeda). Tak ada
+              // kalimat → fallback: buka analisa kata terakhir / panel riwayat.
+              const cue = visibleCue ?? activeCue;
+              if (cue && cue.target.trim()) return openSentenceStudy(cue);
               const last = getStudyHistory()[0];
               if (last) openFromHistory(last);
               else setHistoryOpen(true);
             }}
-            aria-label={historyOpen ? "Tutup riwayat kata" : "Analisa kata terakhir (AI)"}
-            title={historyOpen ? "Tutup riwayat" : "Analisa kata terakhir"}
+            aria-label={historyOpen ? "Tutup riwayat kata" : "Analisa kalimat tayang (AI)"}
+            title={historyOpen ? "Tutup riwayat" : "Analisa kalimat"}
             className="flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-transform active:scale-95"
             style={{ backgroundColor: TEAL }}
           >
@@ -3156,6 +3189,21 @@ export default function VideoLearnPlayer({
           onClose={() => setAnchor(null)}
           onSavedChange={handleSaved}
           onStudyOpenChange={setWordStudyOpen}
+        />
+      )}
+
+      {/* [watch-sentence-study-v1] Drawer Analisa Kalimat — kalimat yang sedang
+          tayang, dibuka dari tombol AI melayang. Key = kalimat supaya ganti cue
+          (mis. tap kalimat lain nanti) memuat ulang konten dengan bersih. */}
+      {sentenceCue && (
+        <SentenceStudy
+          key={sentenceCue.sentence}
+          sentence={sentenceCue.sentence}
+          translit={sentenceCue.translit}
+          translation={sentenceCue.translation}
+          langCode={sentenceCue.lang}
+          baseCode={baseLang}
+          onClose={() => setSentenceCue(null)}
         />
       )}
 
