@@ -1709,7 +1709,12 @@ export default function WatchAndLearn() {
       {/* Flashcard kosakata tersimpan */}
       {deckOpen && (
         <FlashcardDeck
-          initialLang={langCode}
+          // Dibuka dari player (video sedang tayang) → default ke bahasa VIDEO
+          // (activeLang), bukan bahasa katalog (langCode) yang bisa berbeda saat
+          // user membuka video hasil pencarian di bahasa lain. Kalau tidak, kata
+          // yang baru disimpan (langCode = bahasa video) tampak "hilang" karena
+          // dashboard memfilter ke bahasa katalog. Dari bilah katalog → langCode.
+          initialLang={active ? activeLang : langCode}
           onClose={() => {
             setDeckOpen(false);
             refreshVocab();

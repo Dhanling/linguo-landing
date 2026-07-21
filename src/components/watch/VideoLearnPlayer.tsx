@@ -27,7 +27,6 @@ import {
   PanelRightClose,
   PanelRightOpen,
   RotateCcw,
-  Search,
   Sparkles,
   Trash2,
   Type,
