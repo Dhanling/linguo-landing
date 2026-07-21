@@ -264,6 +264,71 @@ function sb() {
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Jadwal batch LIVE untuk knowledge Ling (sinkron dgn halaman
+// linguo.id/jadwal-kelas-reguler). Reguler dari view v_regular_batches_summary,
+// ETP (TOEFL/IELTS Prep) dari etp_batches — sumber yang sama dg halaman jadwal.
+// Supaya jawaban jadwal ikut BATCH yang sedang dibuka, bukan statis. Di-cache 5
+// menit di server. Kosong kalau tak ada batch / DB nonaktif.
+// ─────────────────────────────────────────────────────────────────────────────
+let scheduleCache: { text: string; at: number } = { text: "", at: 0 };
+const SCHEDULE_TTL_MS = 5 * 60 * 1000;
+
+function fmtDateID(iso: string): string {
+  const d = new Date(String(iso) + (String(iso).length === 10 ? "T00:00:00" : ""));
+  if (isNaN(d.getTime())) return String(iso);
+  return d.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+}
+
+async function getScheduleBlock(): Promise<string> {
+  if (Date.now() - scheduleCache.at < SCHEDULE_TTL_MS) return scheduleCache.text;
+  const client = sb();
+  if (!client) return scheduleCache.text;
+  try {
+    const [{ data: reg }, { data: etp }] = await Promise.all([
+      client
+        .from("v_regular_batches_summary")
+        .select("language, level, session_day, session_start_time, session_end_time, start_date, actual_enrolled, max_capacity")
+        .eq("is_published", true)
+        .in("status", ["Open", "Confirmed"])
+        .order("start_date", { ascending: true }),
+      client
+        .from("etp_batches")
+        .select("title, badge, days, time, start_date, total_sessions")
+        .eq("is_active", true)
+        .order("start_date", { ascending: true }),
+    ]);
+
+    const regLines = (reg || [])
+      .filter((b: any) => (b.actual_enrolled ?? 0) < (b.max_capacity ?? 0))
+      .map((b: any) => {
+        const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
+        const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
+        const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
+        return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}, mulai ${fmtDateID(b.start_date)}`;
+      });
+    const etpLines = (etp || []).map(
+      (b: any) => `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, mulai ${fmtDateID(b.start_date)}, ${b.total_sessions}x pertemuan`,
+    );
+
+    const parts: string[] = [];
+    if (regLines.length) {
+      parts.push("JADWAL BATCH REGULER YANG SEDANG DIBUKA (sinkron dgn linguo.id/jadwal-kelas-reguler):\n" + regLines.join("\n"));
+    }
+    if (etpLines.length) {
+      parts.push("JADWAL BATCH ETP / TEST PREP (TOEFL & IELTS Prep group) YANG SEDANG DIBUKA:\n" + etpLines.join("\n"));
+    }
+    const text = parts.length
+      ? parts.join("\n\n") +
+        "\n\nCATATAN JADWAL: Kalau user tanya jadwal kelas Reguler/Test Prep, SEBUTKAN hari & jam dari daftar batch di atas (jangan jawab 'nanti diinfokan' kalau datanya ADA di sini). Jadwal sudah fix dari Linguo & tidak bisa request. Kalau bahasa/track yang ditanya TIDAK ada di daftar, berarti batchnya belum dibuka — arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya."
+      : "";
+    scheduleCache = { text, at: Date.now() };
+    return text;
+  } catch {
+    return scheduleCache.text;
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -352,7 +417,10 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 1024,
-        system: SYSTEM,
+        system: await (async () => {
+          const sched = await getScheduleBlock();
+          return sched ? `${SYSTEM}\n\n${sched}` : SYSTEM;
+        })(),
         messages: msgs,
       }),
     });
