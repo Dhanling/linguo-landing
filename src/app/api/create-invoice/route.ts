@@ -307,7 +307,9 @@ export async function POST(req: NextRequest) {
         customer: {
           given_names: name,
           email: email,
-          mobile_number: wa_number?.startsWith("+") ? wa_number : `+62${wa_number}`,
+          // wa_number opsional (user login bisa checkout tanpa isi WA) —
+          // jangan kirim "+62undefined" ke Xendit kalau kosong.
+          ...(wa_number ? { mobile_number: wa_number.startsWith("+") ? wa_number : `+62${wa_number}` } : {}),
         },
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,

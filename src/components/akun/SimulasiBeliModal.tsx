@@ -5,8 +5,8 @@
 // halaman /simulasi/paket). Alur: pilih paket → isi data → bayar via Xendit.
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Check, Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { ArrowLeft, Check, Loader2, Mail } from "lucide-react";
+import { getStudentInfo } from "@/lib/simulations";
 import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, type Paket } from "@/lib/simulasiPakets";
 
 const TEAL = "#1A9E9E";
@@ -27,16 +27,21 @@ export default function SimulasiBeliModal({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [wa, setWa] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   // Prefill dari user yang login → email harus cocok saat grant entitlement.
+  // Kalau sudah login, data (nama/email/WA) diambil dari profil → tak perlu
+  // isi form lagi, langsung ke tombol Bayar.
   useEffect(() => {
     (async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user?.email) setEmail(user.email);
-      const fn = (user?.user_metadata?.full_name as string) || "";
-      if (fn) setName(fn);
+      const info = await getStudentInfo();
+      if (!info?.user_id) return;
+      setLoggedIn(true);
+      if (info.name) setName(info.name);
+      if (info.email) setEmail(info.email);
+      if (info.whatsapp) setWa(info.whatsapp);
     })();
   }, []);
 
@@ -46,7 +51,10 @@ export default function SimulasiBeliModal({
   }, [open]);
 
   const checkout = async () => {
-    if (!name.trim() || !email.trim() || !wa.trim()) { setError("Lengkapi semua field"); return; }
+    // User login: WA opsional (sudah dari profil / boleh kosong). Tamu: semua wajib.
+    if (!name.trim() || !email.trim() || (!loggedIn && !wa.trim())) {
+      setError("Lengkapi semua field"); return;
+    }
     setLoading(true); setError("");
     try {
       const res = await fetch("/api/create-invoice", {
@@ -138,21 +146,36 @@ export default function SimulasiBeliModal({
                     </li>
                   ))}
                 </ul>
-                <div>
-                  <label className="mb-1.5 block text-xs font-semibold text-slate-500">Nama Lengkap</label>
-                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" disabled={loading}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
-                </div>
-                <div>
-                  <label className="mb-1.5 block text-xs font-semibold text-slate-500">Email <span className="font-normal text-slate-400">(dipakai untuk akses)</span></label>
-                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@contoh.com" disabled={loading}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
-                </div>
-                <div>
-                  <label className="mb-1.5 block text-xs font-semibold text-slate-500">WhatsApp</label>
-                  <input type="tel" value={wa} onChange={(e) => setWa(e.target.value)} placeholder="0821..." disabled={loading}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
-                </div>
+                {loggedIn ? (
+                  /* Sudah login → tak perlu isi ulang. Tampilkan akun tujuan akses. */
+                  <div className="flex items-center gap-3 rounded-xl bg-slate-50 px-4 py-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white" style={{ background: TEAL }}>
+                      <Mail className="h-4 w-4" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-slate-800">{name || email}</p>
+                      <p className="truncate text-xs text-slate-500">Akses terbuka di {email}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div>
+                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">Nama Lengkap</label>
+                      <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" disabled={loading}
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">Email <span className="font-normal text-slate-400">(dipakai untuk akses)</span></label>
+                      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@contoh.com" disabled={loading}
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-xs font-semibold text-slate-500">WhatsApp</label>
+                      <input type="tel" value={wa} onChange={(e) => setWa(e.target.value)} placeholder="0821..." disabled={loading}
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                    </div>
+                  </>
+                )}
                 {error && <p className="rounded-xl bg-red-50 px-4 py-2 text-sm text-red-500">{error}</p>}
                 <button onClick={checkout} disabled={loading}
                   className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
