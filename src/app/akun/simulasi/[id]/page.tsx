@@ -634,11 +634,12 @@ export default function SimulasiRunnerPage() {
     const customInstr = section.instructions?.trim();
     return (
       <Shell sim={sim} preview={preview} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
-        <div className="mb-4 flex items-center gap-1.5">
-          {sections.map((s, i) => (
-            <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
-          ))}
-        </div>
+        <ExamProgress
+          sections={sections}
+          secIdx={secIdx}
+          answered={questions.filter((q) => isAnswered(q, answers[q.id])).length}
+          total={questions.length}
+        />
 
         <QuestionNavigator
           sections={sections} questions={questions} answers={answers}
@@ -692,12 +693,13 @@ export default function SimulasiRunnerPage() {
 
   return (
     <Shell sim={sim} preview={preview} wide={hasMedia} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
-      {/* progress */}
-      <div className="mb-4 flex items-center gap-1.5">
-        {sections.map((s, i) => (
-          <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
-        ))}
-      </div>
+      {/* progres mengambang: segmen bagian + hitungan soal dikerjakan */}
+      <ExamProgress
+        sections={sections}
+        secIdx={secIdx}
+        answered={questions.filter((q) => isAnswered(q, answers[q.id])).length}
+        total={questions.length}
+      />
 
       <QuestionNavigator
         sections={sections}
@@ -1238,6 +1240,20 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
         .sim-dark .hover\\:bg-slate-50:hover { background-color: #1c2735; }
         .sim-dark .hover\\:bg-slate-100:hover { background-color: #26323f; }
         .sim-dark .hover\\:bg-slate-200:hover { background-color: #313f4d; }
+        /* Varian warna dengan modifier transparansi (mis. bg-slate-50/80,
+           bg-teal-50/60, bg-white/95) TIDAK ikut remap 1-kelas di atas → di mode
+           gelap tampil terang & washed-out. Petakan eksplisit di sini. */
+        .sim-dark .bg-slate-50\\/80 { background-color: #131b24; }
+        .sim-dark .bg-slate-50\\/95 { background-color: #131b24; }
+        .sim-dark .bg-white\\/95 { background-color: rgba(21,29,39,0.95); }
+        .sim-dark .bg-white\\/90 { background-color: rgba(21,29,39,0.9); }
+        .sim-dark .bg-teal-50\\/60 { background-color: rgba(26,158,158,0.16); }
+        .sim-dark .hover\\:bg-slate-200\\/70:hover { background-color: rgba(49,63,77,0.7); }
+        /* Kartu & tab tanpa garis luar (outline): kontainer rounded-xl/2xl pemisahnya
+           lewat latar, bukan border. Border status (teal/merah) & kotak opsi/input
+           (rounded-lg) tetap punya garis karena bukan slate-100/200. */
+        .sim-shell :is(.rounded-xl, .rounded-2xl).border-slate-100,
+        .sim-shell :is(.rounded-xl, .rounded-2xl).border-slate-200 { border-color: transparent; }
         /* Bar progress (segmen non-aktif) — warna via kelas biar bisa ikut gelap. */
         .sim-shell .sim-track { background-color: #e2e8f0; }
         .sim-dark .sim-track { background-color: #26323f; }
@@ -1350,6 +1366,28 @@ function isAnswered(q: Question, s?: AnswerState) {
     return s.selected_index != null;
   if (q.type === "speaking_task") return !!(s.audioBlob || s.audioUrl);
   return s.text.trim().length > 0;
+}
+
+// ── Bar progres mengambang (sticky di bawah header): segmen per bagian + jumlah
+//    soal yang sudah dikerjakan dari total, biar siswa langsung tahu posisinya. ──
+function ExamProgress({ sections, secIdx, answered, total }: {
+  sections: Section[]; secIdx: number; answered: number; total: number;
+}) {
+  return (
+    <div className="sticky top-[60px] z-20 -mx-4 mb-4 bg-slate-50 px-4 pb-3 pt-2 sm:-mx-6 sm:px-6">
+      <div className="mb-1.5 flex items-center justify-between text-[11px] font-semibold">
+        <span className="text-slate-500 tabular-nums">Bagian {secIdx + 1}/{sections.length}</span>
+        <span className="text-slate-600 tabular-nums">
+          <span className="font-bold text-teal-600">{answered}</span>/{total} soal dikerjakan
+        </span>
+      </div>
+      <div className="flex items-center gap-1.5">
+        {sections.map((s, i) => (
+          <div key={s.id} className="sim-track h-1.5 flex-1 rounded-full" style={{ background: i <= secIdx ? TEAL : undefined }} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 // ── Navigasi soal mengambang: blok nomor + status terjawab/belum/dilewati ────
