@@ -3951,9 +3951,6 @@ function KaraokeWord({
   //    (putih) walau kebetulan jadi kata karaoke aktif → hanya yang diklik yang menyala;
   //  • selain itu → ikut karaoke (aktif = teal).
   const colored = tapped ? true : lineTapped ? false : active;
-  // "Pop" (naik+membesar) hanya saat karaoke berjalan tanpa ada kata yang di-tap — kata
-  // yang di-tap cuma menyala, tak ikut melonjak.
-  const popping = active && !lineTapped;
   const cls = inPhrase
     ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
     : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
@@ -3964,11 +3961,11 @@ function KaraokeWord({
       onMouseLeave={inPhrase ? undefined : () => { onHover?.(false); onHoverClose?.(); }}
       className={cls}
       style={{
+        // [watch-karaoke-color-only-v1] Sorotan karaoke CUKUP WARNA (teal) — TANPA
+        // zoom/scale/pop. Efek membesar dulu bikin kata aktif menimpa kata di
+        // sebelahnya (permintaan user), jadi dibuang; kini hanya ganti warna.
         color: colored ? TEAL : "#fff",
         textShadow: KARAOKE_SHADOW,
-        // Pop per-kata hanya di luar frasa; di dalam frasa pembungkus yang "pop"
-        // supaya seluruh frasa naik bareng (bukan tiap kata sendiri-sendiri).
-        transform: !inPhrase && popping ? "translateY(-2px) scale(1.08)" : "none",
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
@@ -3979,12 +3976,12 @@ function KaraokeWord({
 
 // [watch-phrase-chunk-v1] Pembungkus satu unit frasa karaoke (mis. "the king",
 // "the press conference"). TANPA blok/garis — penanda frasa muncul KONTEKSTUAL lewat
-// warna font: saat sinkron audio, seluruh katanya menyala teal & "pop" naik BERSAMAAN
-// (via phraseActive di tiap kata + transform di sini), lalu balik putih. Klik →
-// buka arti FRASA (bukan per-kata).
+// warna font: saat sinkron audio, seluruh katanya menyala teal BERSAMAAN (via
+// phraseActive di tiap kata), lalu balik putih. Klik → buka arti FRASA (bukan per-kata).
+// [watch-karaoke-color-only-v1] Tanpa zoom/scale/pop (dulu bikin frasa menimpa kata
+// tetangga) — `active` sekarang cuma dipakai anak-katanya utk warna, bukan transform.
 function KaraokePhrase({
   children,
-  active,
   onClick,
   onHoverOpen,
   onHoverClose,
@@ -4001,8 +3998,7 @@ function KaraokePhrase({
       onClick={onClick}
       onMouseEnter={onHoverOpen}
       onMouseLeave={onHoverClose}
-      className="relative inline-flex cursor-pointer items-baseline align-baseline transition-transform duration-200 ease-out"
-      style={{ transform: active ? "translateY(-2px) scale(1.08)" : "none" }}
+      className="relative inline-flex cursor-pointer items-baseline align-baseline"
     >
       {children}
     </span>

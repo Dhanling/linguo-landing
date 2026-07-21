@@ -338,7 +338,19 @@ export function WordTooltip({
 
   // Posisi balon: di atas titik tap, diklem ke layar.
   const vw = typeof window !== "undefined" ? window.innerWidth : 360;
-  const left = Math.max(8, Math.min(x - TIP_W / 2, vw - TIP_W - 8));
+  // [watch-tip-adaptive-w-v1] Lebar balon MENYESUAIKAN panjang kata/frasa yang diklik:
+  // kata pendek tetap ramping (TIP_W), frasa panjang (mis. "Siswa Sekolah Menengah
+  // pertama SMP") melebar sampai batas MAXW supaya header tak terpotong. Estimasi
+  // lebar header 16px extra-bold: aksara CJK/Hangul ~15px, lainnya ~8.6px; +24px
+  // padding p-3, +40px ruang pil POS di kanan. Kalau masih lebih panjang dari MAXW,
+  // header dibiarkan membungkus (lihat flex-wrap + break-words di bawah).
+  const tipW = useMemo(() => {
+    const MAXW = Math.min(420, vw - 16);
+    let est = 24 + 40;
+    for (const ch of word) est += /[　-鿿가-힯＀-￯]/.test(ch) ? 15 : 8.6;
+    return Math.round(Math.max(TIP_W, Math.min(est, MAXW)));
+  }, [word, vw]);
+  const left = Math.max(8, Math.min(x - tipW / 2, vw - tipW - 8));
   // Kalau kepenuhan di atas, taruh di bawah titik tap.
   const above = y > 240;
   // [watch-tip-balloon-v1] Balon "agak ke atas" (referensi user): gap dinaikkan
@@ -399,8 +411,8 @@ export function WordTooltip({
             (permintaan user). Kata & bentuk dasar shrink-0 (utuh); hanya pil POS
             yang boleh menciut/terpotong (min-w-0 + truncate) kalau ruang mepet,
             jadi tetap 1 baris. */}
-        <div className="flex min-w-0 items-baseline gap-1.5">
-          <span className="shrink-0 text-[16px] font-extrabold text-white">{word}</span>
+        <div className="flex min-w-0 flex-wrap items-baseline gap-1.5">
+          <span className="min-w-0 break-words text-[16px] font-extrabold text-white">{word}</span>
           {/* Bentuk dasar/infinitive utk verba terkonjugasi — mis. produjo (producir) */}
           {meaning?.base &&
             meaning.base.trim().toLowerCase() !== word.trim().toLowerCase() && (
