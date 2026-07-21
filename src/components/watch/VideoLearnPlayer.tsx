@@ -12,6 +12,8 @@ import {
   ArrowLeft,
   Check,
   ChevronDown,
+  Eye,
+  EyeOff,
   Gauge,
   Languages,
   Layers,
@@ -277,6 +279,104 @@ function ToolButton({
   );
 }
 
+// [watch-subtitle-menu-v1] Tombol "Terjemahan" di bar kontrol kini membuka menu
+// hover kecil dengan DUA pilihan alih-alih sekadar toggle: (1) sembunyikan baris
+// terjemahan (emas) saja → fokus ke arti per-kata, atau (2) sembunyikan SELURUH
+// subtitle (target + translit + terjemahan) → nonton bersih tanpa teks apa pun.
+// Hover buka; klik trigger juga toggle (perangkat sentuh). Menu = anak dari
+// pembungkus supaya hover-nya ikut menahan menu tetap terbuka; timer kecil
+// menjembatani celah antara tombol & panel saat kursor menyeberang.
+function SubtitleMenuButton({
+  showSentenceTr,
+  onToggleSentenceTr,
+  hideSubtitle,
+  onToggleSubtitle,
+}: {
+  showSentenceTr: boolean;
+  onToggleSentenceTr: () => void;
+  hideSubtitle: boolean;
+  onToggleSubtitle: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpen(false), 140);
+  };
+  useEffect(() => () => cancelClose(), []);
+  // Nyala teal saat masih ada teks tampil (subtitle & terjemahan aktif).
+  const active = showSentenceTr && !hideSubtitle;
+  return (
+    <div
+      className="relative shrink-0"
+      onMouseEnter={() => {
+        cancelClose();
+        setOpen(true);
+      }}
+      onMouseLeave={scheduleClose}
+    >
+      <button
+        type="button"
+        aria-label="Opsi subtitle & terjemahan"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="inline-flex shrink-0 items-center justify-center rounded-full p-2 transition-transform duration-150 ease-out hover:scale-125 active:scale-90"
+        style={{ color: active ? TEAL : "#fff" }}
+      >
+        <span className="relative grid h-5 min-w-5 place-items-center">
+          <Languages className="h-4 w-4" />
+        </span>
+      </button>
+      {open && (
+        <div
+          role="menu"
+          className="absolute bottom-full left-1/2 z-20 mb-2 w-60 -translate-x-1/2 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        >
+          <button
+            type="button"
+            role="menuitem"
+            onClick={onToggleSentenceTr}
+            disabled={hideSubtitle}
+            className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5 disabled:opacity-40"
+          >
+            {showSentenceTr && !hideSubtitle ? (
+              <Eye className="h-4 w-4 shrink-0" color={TEAL} />
+            ) : (
+              <EyeOff className="h-4 w-4 shrink-0 text-white/50" />
+            )}
+            <span className="flex-1 font-semibold text-white">
+              {showSentenceTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+            </span>
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={onToggleSubtitle}
+            className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
+          >
+            {!hideSubtitle ? (
+              <Eye className="h-4 w-4 shrink-0" color={TEAL} />
+            ) : (
+              <EyeOff className="h-4 w-4 shrink-0 text-white/50" />
+            )}
+            <span className="flex-1 font-semibold text-white">
+              {hideSubtitle ? "Tampilkan semua subtitle" : "Sembunyikan semua subtitle"}
+            </span>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Cache video terkait per (bahasa|video) — buka-tutup player tak mengulang
 // pencarian YouTube (hemat kuota) selama halaman belum di-reload. `next` =
 // nextPageToken YouTube, biar "Muat lainnya" bisa terus mengambil halaman baru.
@@ -410,6 +510,10 @@ export default function VideoLearnPlayer({
   // [watch-hide-sentence-tr-v1] Sembunyikan baris terjemahan kalimat (emas) di bawah
   // subtitle → fokus ke arti per-kata di mode Analisa. Default tampil.
   const [showSentenceTr, setShowSentenceTr] = useState(true);
+  // [watch-subtitle-menu-v1] Sembunyikan SELURUH blok subtitle (target + translit +
+  // terjemahan) → menonton bersih tanpa teks apa pun. Terpisah dari showSentenceTr
+  // yang hanya menyembunyikan baris terjemahan emas.
+  const [hideSubtitle, setHideSubtitle] = useState(false);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
   // Kualitas video — kontrol bawaan YouTube dimatikan (controls:0), jadi kita sediakan
@@ -2707,7 +2811,7 @@ export default function VideoLearnPlayer({
               disengaja > 5 dtk), sembunyikan subtitle+terjemahan biar tak menimpa
               thumbnail besar & judul. Begitu diputar/di-hover lagi idlePaused mati →
               subtitle balik. Tetap tampil saat jeda-hover baca (bukan idlePaused). */}
-          {!mini && !(showPanel && !fullscreen) && !idlePaused && (
+          {!mini && !(showPanel && !fullscreen) && !idlePaused && !hideSubtitle && (
           <div
             className={`flex flex-col ${
               fullscreen
@@ -2901,14 +3005,13 @@ export default function VideoLearnPlayer({
               onClick={cycleFont}
             />
 
-            {/* [watch-hide-sentence-tr-v1] Sembunyikan/tampilkan baris terjemahan
-                kalimat (emas) di bawah subtitle → fokus ke arti per-kata. */}
-            <ToolButton
-              glyph={<Languages className="h-4 w-4" />}
-              label="Terjemahan"
-              active={showSentenceTr}
-              title={showSentenceTr ? "Sembunyikan terjemahan kalimat" : "Tampilkan terjemahan kalimat"}
-              onClick={() => setShowSentenceTr((v) => !v)}
+            {/* [watch-subtitle-menu-v1] Menu hover: sembunyikan baris terjemahan
+                (emas) saja, atau sembunyikan SELURUH subtitle → nonton bersih. */}
+            <SubtitleMenuButton
+              showSentenceTr={showSentenceTr}
+              onToggleSentenceTr={() => setShowSentenceTr((v) => !v)}
+              hideSubtitle={hideSubtitle}
+              onToggleSubtitle={() => setHideSubtitle((v) => !v)}
             />
 
             {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
