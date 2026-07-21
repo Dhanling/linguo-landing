@@ -100,7 +100,11 @@ function isHtml(s: string): boolean {
 // pada <br> kosong). Tanpa dibersihkan, style itu ikut terbawa & terlihat "bocor".
 // Isomorfik (regex murni, tanpa DOMParser) supaya aman di server & client tanpa
 // mismatch hidrasi. Simpan hanya properti gaya yang dipakai editor CMS.
-const ALLOWED_STYLE_PROP = /^(text-align|font-size|font-weight|font-style|text-decoration(-line|-style)?|font-family|vertical-align)$/;
+// `font-family` sengaja TIDAK diizinkan: konten impor dari Google Docs/Drive membawa
+// serif (Times/Cambria) yg bikin instruksi tampil beda font dari soal. Karena sanitasi
+// ini jalan saat render, membuangnya juga merapikan sim lama yg sudah terlanjur simpan
+// font-family — teks otomatis ikut font aplikasi (seragam dgn soal).
+const ALLOWED_STYLE_PROP = /^(text-align|font-size|font-weight|font-style|text-decoration(-line|-style)?|vertical-align)$/;
 function sanitizeCmsHtml(html: string): string {
   return html
     .replace(/\son[a-z]+\s*=\s*("[^"]*"|'[^']*')/gi, "")
@@ -1227,8 +1231,8 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
         .sim-dark .text-slate-800 { color: #e2e8ee; }
         .sim-dark .text-slate-700 { color: #cdd6df; }
         .sim-dark .text-slate-600 { color: #b2bdc8; }
-        .sim-dark .text-slate-500 { color: #93a0ac; }
-        .sim-dark .text-slate-400 { color: #74818d; }
+        .sim-dark .text-slate-500 { color: #aab5c0; }
+        .sim-dark .text-slate-400 { color: #919ea9; }
         .sim-dark .text-teal-800 { color: #34cabf; }
         .sim-dark .text-teal-700 { color: #3ad0c6; }
         .sim-dark .text-teal-600 { color: #45d6cc; }
@@ -1473,14 +1477,16 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
 
   const handleJump = (si: number, qid: string) => { onJump(si, qid); setOpen(false); };
 
-  const body = (
+  const renderBody = (showTitle: boolean) => (
     <>
-      <div className="mb-3 flex items-center justify-between">
-        <p className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
-          <ListChecks className="h-4 w-4 text-teal-600" />Navigasi Soal
-        </p>
-        <span className="text-xs font-medium text-slate-500">{answeredCount}/{questions.length} terjawab</span>
-      </div>
+      {showTitle && (
+        <div className="mb-3 flex items-center justify-between">
+          <p className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
+            <ListChecks className="h-4 w-4 text-teal-600" />Navigasi Soal
+          </p>
+          <span className="text-xs font-medium text-slate-500">{answeredCount}/{questions.length} terjawab</span>
+        </div>
+      )}
 
       {skippedCount > 0 && (
         <p className="mb-3 flex items-center gap-1.5 rounded-lg bg-red-50 px-2.5 py-1.5 text-[11px] font-medium text-red-600">
@@ -1536,11 +1542,11 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
           );
 
           return (
-            <div key={g.skill} className="overflow-hidden rounded-xl border border-slate-100">
+            <div key={g.skill} className="overflow-hidden rounded-xl bg-slate-100">
               <button
                 type="button"
                 onClick={() => setOpenSkill(isSkillOpen ? null : g.skill)}
-                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${isActiveSkill ? "bg-teal-50/60 text-teal-800" : "text-slate-600 hover:bg-slate-50"}`}
+                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${isActiveSkill ? "bg-teal-500/15 text-teal-700" : "text-slate-600 hover:bg-slate-200/70"}`}
               >
                 <Icon className="h-3.5 w-3.5 shrink-0 text-slate-400" />
                 <span className="flex-1 truncate text-left">{SKILL_LABEL[g.skill]}</span>
@@ -1560,11 +1566,11 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
                       const skipInPart = p.qs.filter((q) => statusOf(q, p.si) === "skipped").length;
                       const isActivePart = p.si === currentSecIdx;
                       return (
-                        <div key={p.section.id} className="overflow-hidden rounded-lg border border-slate-100">
+                        <div key={p.section.id} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
                           <button
                             type="button"
                             onClick={() => setOpenPart(isPartOpen ? -1 : p.si)}
-                            className={`flex w-full items-center gap-1.5 px-2 py-1.5 text-[11px] font-semibold ${isActivePart ? "bg-teal-50/60 text-teal-800" : "text-slate-500 hover:bg-slate-50"}`}
+                            className={`flex w-full items-center gap-1.5 px-2 py-1.5 text-[11px] font-semibold ${isActivePart ? "bg-teal-500/15 text-teal-700" : "text-slate-500 hover:bg-slate-200/70"}`}
                           >
                             <span className="flex-1 truncate text-left">Part {pi + 1}</span>
                             {isActivePart && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[9px] font-semibold text-teal-700">aktif</span>}
@@ -1601,7 +1607,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
       {!minimized && (
         <aside
           ref={panelRef}
-          className="fixed z-30 hidden max-h-[calc(100vh-7rem)] w-56 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg xl:flex"
+          className="fixed z-30 hidden max-h-[calc(100vh-7rem)] w-64 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg xl:flex"
           style={pos ? { left: pos.x, top: pos.y } : { right: 16, top: 96 }}
         >
           {/* Header = drag handle */}
@@ -1622,7 +1628,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
               <Minimize2 className="h-3.5 w-3.5" />
             </button>
           </div>
-          <div className="overflow-y-auto p-4">{body}</div>
+          <div className="overflow-y-auto p-4">{renderBody(false)}</div>
         </aside>
       )}
 
@@ -1662,7 +1668,7 @@ function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVis
                 <X className="h-5 w-5" />
               </button>
             </div>
-            {body}
+            {renderBody(true)}
           </div>
         </div>
       )}
