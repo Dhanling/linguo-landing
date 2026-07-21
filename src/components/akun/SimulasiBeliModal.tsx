@@ -135,14 +135,20 @@ export default function SimulasiBeliModal({
                 {list.map((p) => (
                   <button
                     key={p.variant}
-                    onClick={() => { setPaket(p); setError(""); }}
-                    className="w-full rounded-2xl border border-slate-200 p-4 text-left transition hover:border-teal-300 hover:shadow-md active:scale-[0.99]"
+                    onClick={() => { if (!p.soon) { setPaket(p); setError(""); } }}
+                    disabled={p.soon}
+                    className={`w-full rounded-2xl border border-slate-200 p-4 text-left transition ${p.soon ? "cursor-not-allowed opacity-70" : "hover:border-teal-300 hover:shadow-md active:scale-[0.99]"}`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
-                        {p.tag}
-                      </span>
-                      <span className="text-lg font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
+                          {p.tag}
+                        </span>
+                        {p.soon && (
+                          <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-700">Segera</span>
+                        )}
+                      </div>
+                      <span className="text-lg font-extrabold text-slate-900">{p.soon ? "" : formatRp(PRICE)}</span>
                     </div>
                     <h4 className="mt-2 font-bold text-slate-900">{p.title}</h4>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -156,7 +162,9 @@ export default function SimulasiBeliModal({
                         );
                       })}
                     </div>
-                    <p className="mt-2 text-[11px] font-medium" style={{ color: p.accent }}>{p.covers}</p>
+                    <p className="mt-2 text-[11px] font-medium" style={{ color: p.accent }}>
+                      {p.soon ? "Masih dalam pengembangan — segera hadir." : p.covers}
+                    </p>
                   </button>
                 ))}
               </div>

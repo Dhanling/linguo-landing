@@ -112,10 +112,17 @@ export default function SimulasiPaketPage() {
       <section className="relative z-10 mx-auto -mt-10 max-w-4xl px-5 pb-16">
         <div className="grid gap-5 sm:grid-cols-2">
           {PAKET.map((p) => (
-            <div key={p.variant} className="flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
-              <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
-                {p.tag}
-              </span>
+            <div key={p.variant} className={`flex flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] ${p.soon ? "opacity-75" : ""}`}>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold text-white" style={{ background: p.accent }}>
+                  {p.tag}
+                </span>
+                {p.soon && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700">
+                    Segera
+                  </span>
+                )}
+              </div>
               <h2 className="mt-4 text-xl font-bold text-slate-900">{p.title}</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {p.skills.map((key) => {
@@ -143,12 +150,19 @@ export default function SimulasiPaketPage() {
                 <span className="text-sm text-slate-400">/ sekali bayar</span>
               </div>
               <p className="mt-1.5 text-xs font-medium" style={{ color: p.accent }}>{p.covers}</p>
-              <button
-                onClick={() => openCheckout(p)}
-                className="mt-4 w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
-                style={{ background: p.accent }}>
-                Beli {p.short}
-              </button>
+              {p.soon ? (
+                <button disabled
+                  className="mt-4 w-full cursor-not-allowed rounded-2xl bg-slate-200 py-3.5 text-sm font-bold text-slate-500">
+                  Segera Hadir
+                </button>
+              ) : (
+                <button
+                  onClick={() => openCheckout(p)}
+                  className="mt-4 w-full rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
+                  style={{ background: p.accent }}>
+                  Beli {p.short}
+                </button>
+              )}
             </div>
           ))}
         </div>

@@ -8,7 +8,7 @@
 // BUKAN dari body — supaya orang tak bisa grant akses ke email sembarang.
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { FREE_PROMOS, normalizePromo, PROMO_SOURCE_PREFIX } from "@/lib/simulasiPakets";
+import { FREE_PROMOS, normalizePromo, PROMO_SOURCE_PREFIX, testTypeHasAvailable } from "@/lib/simulasiPakets";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -40,6 +40,10 @@ export async function POST(req: NextRequest) {
     if (!promo) return NextResponse.json({ error: "Kode promo tidak berlaku." }, { status: 400 });
     if (!VALID_TEST_TYPES.has(testType)) {
       return NextResponse.json({ error: "Jenis tes tidak valid." }, { status: 400 });
+    }
+    // Jenis tes yang masih "soon" (belum ada paket aktif) belum bisa diklaim.
+    if (!testTypeHasAvailable(testType)) {
+      return NextResponse.json({ error: "Simulasi ini masih dalam pengembangan." }, { status: 400 });
     }
 
     // 3. Sudah punya entitlement aktif utk jenis tes ini? → tidak perlu grant lagi.

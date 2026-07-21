@@ -12,6 +12,7 @@ import {
   ClipboardCheck, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles,
 } from "lucide-react";
 import SimulasiBeliModal from "./SimulasiBeliModal";
+import { testTypeHasAvailable } from "@/lib/simulasiPakets";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -78,33 +79,53 @@ export default function SimulasiKatalog() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {/* Paket terkunci (belum dibeli) → CTA ke halaman checkout */}
-          {lockedTypes.map((t) => (
-            <div key={`lock-${t}`} className="flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white">
+          {lockedTypes.map((t) => {
+            const comingSoon = !testTypeHasAvailable(t); // semua paket jenis tes ini masih "soon"
+            return (
+            <div key={`lock-${t}`} className={`flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white ${comingSoon ? "opacity-90" : ""}`}>
               {/* Cover — gradasi teal ala menu Simulasi Tes (halaman /simulasi) */}
               <div className="relative overflow-hidden px-5 py-6 text-white" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
                 <ClipboardCheck className="pointer-events-none absolute -right-3 -bottom-4 h-24 w-24 opacity-15" />
-                <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
-                  <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
-                </span>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
+                    <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
+                  </span>
+                  {comingSoon && (
+                    <span className="inline-flex items-center rounded-full bg-amber-400/90 px-2.5 py-1 text-[11px] font-bold text-amber-950">Segera</span>
+                  )}
+                </div>
                 <h2 className="mt-2 text-lg font-extrabold">Simulasi {TEST_TYPE_LABEL[t]}</h2>
                 <p className="text-[13px] text-white/80">4 skill lengkap · penilaian AI</p>
               </div>
               <div className="flex flex-1 flex-col p-5">
-                <p className="text-sm text-slate-500">Beli sekali, akses selamanya.</p>
-                <div className="mt-3 flex items-baseline gap-1.5">
-                  <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
-                  <span className="text-xs text-slate-400">/ sekali bayar</span>
-                </div>
-                <button
-                  onClick={() => setBeliType(t)}
-                  className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95"
-                  style={{ background: TEAL }}
-                >
-                  <Sparkles className="h-4 w-4" /> Beli Paket
-                </button>
+                {comingSoon ? (
+                  <>
+                    <p className="text-sm text-slate-500">Masih dalam pengembangan. Segera hadir!</p>
+                    <button disabled
+                      className="mt-4 inline-flex cursor-not-allowed items-center justify-center gap-1.5 rounded-xl bg-slate-200 py-2.5 text-sm font-bold text-slate-500">
+                      Segera Hadir
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm text-slate-500">Beli sekali, akses selamanya.</p>
+                    <div className="mt-3 flex items-baseline gap-1.5">
+                      <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+                      <span className="text-xs text-slate-400">/ sekali bayar</span>
+                    </div>
+                    <button
+                      onClick={() => setBeliType(t)}
+                      className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95"
+                      style={{ background: TEAL }}
+                    >
+                      <Sparkles className="h-4 w-4" /> Beli Paket
+                    </button>
+                  </>
+                )}
               </div>
             </div>
-          ))}
+            );
+          })}
           {sims.map((s) => (
             <Link
               key={s.id}
