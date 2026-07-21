@@ -461,16 +461,9 @@ export default function VideoLearnPlayer({
   // Paywall langganan Watch & Learn (buka arti kata / Analisa saat cicip habis).
   const [subscribeOpen, setSubscribeOpen] = useState(false);
 
-  // Dropdown pilih bahasa terjemahan (tombol di header). Dirender di DALAM player
-  // karena picker milik katalog (z-85) tenggelam di bawah overlay player (z-90).
-  const [baseMenuOpen, setBaseMenuOpen] = useState(false);
-  // Teks pencarian di dropdown "Bahasa saya" (senada dengan pemilih target).
-  const [baseQuery, setBaseQuery] = useState("");
-  // Reset teks cari tiap kali dropdown base dibuka/ditutup.
-  useEffect(() => {
-    if (!baseMenuOpen) setBaseQuery("");
-  }, [baseMenuOpen]);
-  // Dropdown "bahasa yang dipelajari" di header — muncul saat hover (bukan pop-up).
+  // Dropdown bahasa GABUNGAN di header (bahasa saya + bahasa target) — muncul saat
+  // hover. Dirender di DALAM player karena picker milik katalog (z-85) tenggelam di
+  // bawah overlay player (z-90).
   const [learnMenuOpen, setLearnMenuOpen] = useState(false);
   // Jumlah video "Siap" per bahasa → badge di pemilih bahasa target.
   const [readyCounts, setReadyCounts] = useState<Record<string, number>>({});
@@ -820,71 +813,6 @@ export default function VideoLearnPlayer({
   const [recLoading, setRecLoading] = useState(false);
   // Kunci (bahasa|video) yang sedang aktif — buang hasil fetch basi saat ganti video.
   const relKeyRef = useRef("");
-  // [watch-rec-search-v1] Cari video langsung dari panel Rekomendasi (mode mini),
-  // tanpa keluar player. `recSearchList` null = belum mencari → tampilkan rekomendasi
-  // biasa; non-null = tampilkan hasil pencarian (bisa array kosong = tidak ketemu).
-  const [recQuery, setRecQuery] = useState("");
-  const [recSearchList, setRecSearchList] = useState<ImmersionVideo[] | null>(null);
-  const [recSearchState, setRecSearchState] = useState<"idle" | "loading" | "done" | "empty">("idle");
-  // Panel saran pencarian (chip "podcast", "berita", …) yang muncul saat kolom
-  // cari difokus — animasi turun dari atas.
-  const [recFocused, setRecFocused] = useState(false);
-  const recSearchReq = useRef(0);
-
-  // Jalankan pencarian video (Enter / tombol / klik chip saran): pakai jalur
-  // yt-search yang sama dengan katalog halaman, disaring ke bahasa target & durasi
-  // rekomendasi. `override` dipakai saat klik chip (state recQuery belum ter-commit).
-  const runRecSearch = useCallback(async (override?: string) => {
-    const q = (override ?? recQuery).trim();
-    if (!q) {
-      recSearchReq.current++;
-      setRecSearchList(null);
-      setRecSearchState("idle");
-      return;
-    }
-    const id = ++recSearchReq.current;
-    setRecSearchState("loading");
-    setRecFocused(false);
-    const lang = getImmersionLang(langCode);
-    // Jahitkan nama native bahasa ("Suomi", "日本語", …) ke query supaya YouTube
-    // mengembalikan konten BAHASA TARGET, bukan Inggris — sama seperti buildQuery
-    // di katalog. Tanpa ini "podcast" untuk pelajar Finlandia keluar podcast Inggris.
-    const query = lang?.native ? `${q} ${lang.native}` : q;
-    try {
-      const page = await searchImmersionVideos({
-        query,
-        language: lang?.searchCode ?? langCode,
-        max: 18,
-        maxDurationSec: WATCH_REC_MAX_DURATION_SEC,
-        regionCode: lang?.region,
-      });
-      if (id !== recSearchReq.current) return; // hasil basi — abaikan
-      const results = filterVideosByLanguage(page.results, langCode).filter(
-        (v) => v.videoId !== video.videoId && (!v.duration || v.duration <= WATCH_REC_MAX_DURATION_SEC)
-      );
-      setRecSearchList(results);
-      setRecSearchState(results.length ? "done" : "empty");
-    } catch {
-      if (id !== recSearchReq.current) return;
-      setRecSearchList([]);
-      setRecSearchState("empty");
-    }
-  }, [recQuery, langCode, video.videoId]);
-
-  const clearRecSearch = useCallback(() => {
-    recSearchReq.current++;
-    setRecQuery("");
-    setRecSearchList(null);
-    setRecSearchState("idle");
-  }, []);
-
-  // Ganti bahasa target → hasil pencarian lama (bahasa lain) tak relevan lagi.
-  useEffect(() => {
-    recSearchReq.current++;
-    setRecQuery("");
-    setRecSearchList(null);
-    setRecSearchState("idle");
-  }, [langCode]);
 
   // ── Fullscreen: sinkronkan state dengan API (termasuk exit lewat Esc) ─────────
   useEffect(() => {
@@ -2134,14 +2062,25 @@ export default function VideoLearnPlayer({
   return (
     <div
       ref={rootRef}
-      className={`fixed inset-0 z-[90] flex flex-col ${fullscreen && chromeHidden ? "cursor-none" : ""}`}
-      style={{ backgroundColor: "rgba(6,9,10,0.96)", "--drawer-w": `${drawerWidth}px` } as React.CSSProperties}
+      className={`fixed inset-0 z-[90] flex flex-col ${
+        // [watch-back-mini-v1] Mode mini = PiP ala YouTube: overlay jadi TEMBUS
+        // (transparan + click-through) supaya beranda Watch & Learn di belakang
+        // tampil & bisa diklik/di-scroll; hanya kotak video melayang yang aktif.
+        mini ? "pointer-events-none" : ""
+      } ${fullscreen && chromeHidden ? "cursor-none" : ""}`}
+      style={{
+        backgroundColor: mini ? "transparent" : "rgba(6,9,10,0.96)",
+        "--drawer-w": `${drawerWidth}px`,
+      } as React.CSSProperties}
     >
       {/* Header — judul + tombol kosakata + bahasa terjemahan + bahasa dipelajari + tutup.
           Di layar penuh: header lepas dari flow (absolute) di tepi ATAS & auto-hide —
           geser naik keluar layar saat chrome disembunyikan (kursor diam), muncul lagi
           saat kursor bergerak. Kontrol YouTube sudah dimatikan (controls:0) jadi header
-          kita bebas menempati sudut atas: judul kiri, language selector kanan. */}
+          kita bebas menempati sudut atas: judul kiri, language selector kanan.
+          [watch-back-mini-v1] Disembunyikan di mode mini — kotak melayang punya
+          strip kontrolnya sendiri & beranda di belakang yang jadi fokus. */}
+      {!mini && (
       <div className={fullscreen ? "absolute inset-x-0 top-0 z-40" : "shrink-0"}>
         <div
           className={`flex items-center gap-2 px-4 py-2.5 sm:px-6 ${
@@ -2196,125 +2135,13 @@ export default function VideoLearnPlayer({
           </button>
         )}
 
-        {/* Bahasa terjemahan (baris di bawah subtitle) — dropdown ganti cepat.
-            [watch-langsel-hover-v1] Dropdown terbuka saat HOVER (lebih ramah UX
-            daripada harus klik dulu). Klik tetap men-toggle untuk perangkat sentuh.
-            Bridge `pt-2` (bukan margin) menutup celah antara tombol & panel supaya
-            kursor tak jatuh keluar & menutup dropdown saat mengarah ke pilihan. */}
-        {onChangeBaseLang && (
-          <div
-            className="relative shrink-0"
-            onMouseEnter={() => setBaseMenuOpen(true)}
-            onMouseLeave={() => setBaseMenuOpen(false)}
-          >
-            <button
-              onClick={() => setBaseMenuOpen((v) => !v)}
-              className="group relative inline-flex items-center justify-center rounded-full p-2 text-white"
-              aria-label="Bahasa terjemahan di bawah subtitle"
-              aria-expanded={baseMenuOpen}
-            >
-              <TabBg active={baseMenuOpen} />
-              <span className="relative inline-flex items-center gap-1.5">
-                <span className="hidden text-[11px] font-bold sm:inline" style={{ color: SUB }}>
-                  Bahasa saya
-                </span>
-                <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
-                <ChevronDown
-                  className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${baseMenuOpen ? "rotate-180" : ""}`}
-                  color={TEAL}
-                />
-              </span>
-              {!baseMenuOpen && <IconTooltip side="bottom">{getBaseLangDef(baseLang).label}</IconTooltip>}
-            </button>
-            <div
-              className={`absolute right-0 top-full z-20 pt-2 transition-all duration-150 ease-out ${
-                baseMenuOpen
-                  ? "translate-y-0 opacity-100"
-                  : "pointer-events-none -translate-y-1 opacity-0"
-              }`}
-            >
-              <div
-                className="flex max-h-[62vh] w-64 flex-col overflow-hidden rounded-2xl shadow-2xl"
-                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-              >
-                <div
-                  className="px-3 pt-2.5 pb-0.5 text-[11px] font-bold uppercase tracking-wide"
-                  style={{ color: SUB }}
-                >
-                  Bahasa saya
-                </div>
-                <div className="p-2">
-                  <div
-                    className="flex items-center gap-2 rounded-xl px-3"
-                    style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-                  >
-                    <Search className="h-4 w-4 shrink-0" color={SUB} />
-                    <input
-                      value={baseQuery}
-                      onChange={(e) => setBaseQuery(e.target.value)}
-                      placeholder="Cari bahasa saya…"
-                      className="flex-1 bg-transparent py-2.5 text-[13px] text-white outline-none placeholder:text-white/35"
-                    />
-                  </div>
-                </div>
-                {/* Sembunyikan bahasa yang sedang dipelajari — terjemahan ke
-                    bahasa yang sama tak masuk akal. */}
-                <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-1.5">
-                  {(() => {
-                    const s = baseQuery.trim().toLowerCase();
-                    const list = BASE_LANGS.filter(
-                      (b) =>
-                        b.code !== langCode &&
-                        (!s ||
-                          b.label.toLowerCase().includes(s) ||
-                          b.english.toLowerCase().includes(s) ||
-                          b.code.toLowerCase().includes(s))
-                    );
-                    if (list.length === 0) {
-                      return (
-                        <p className="px-3 py-5 text-center text-[12.5px]" style={{ color: SUB }}>
-                          Tidak ada bahasa cocok.
-                        </p>
-                      );
-                    }
-                    return list.map((b) => {
-                      const on = b.code === baseLang;
-                      return (
-                        <button
-                          key={b.code}
-                          onClick={() => {
-                            setBaseMenuOpen(false);
-                            if (!on) onChangeBaseLang(b.code);
-                          }}
-                          className="flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left transition-colors hover:bg-white/5"
-                          style={{ backgroundColor: on ? "rgba(26,158,158,0.16)" : "transparent" }}
-                        >
-                          <RectFlag code={b.country} h={18} />
-                          <span className="min-w-0 flex-1">
-                            <span className="block truncate text-[13.5px] font-bold text-white">
-                              {b.label}
-                            </span>
-                            <span className="block truncate text-[11px]" style={{ color: SUB }}>
-                              {b.english}
-                            </span>
-                          </span>
-                          {on && <Check className="h-4 w-4 shrink-0" color={TEAL} />}
-                        </button>
-                      );
-                    });
-                  })()}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Bahasa yang dipelajari — dropdown HOVER (dulu pop-up layar penuh).
-            [watch-learnlang-hover-v1] Hover buka dropdown berisi kotak cari +
-            daftar bahasa yang bisa digulir; klik trigger tetap men-toggle untuk
-            perangkat sentuh. Bridge `pt-2` menutup celah trigger↔panel supaya
-            kursor tak jatuh keluar & menutup dropdown saat mengarah ke pilihan. */}
-        {(onPickLang || onChangeLang) &&
+        {/* Pemilih bahasa GABUNGAN — satu tombol menampilkan dua bendera dipisah
+            "/": kiri = bahasa saya (terjemahan), kanan = bahasa yang dipelajari.
+            Hover → satu dropdown dengan dua section ("Bahasa saya" + "Bahasa
+            target"), seragam dengan katalog Watch & Learn (WatchAndLearn.tsx).
+            Bridge `pt-2` menutup celah trigger↔panel supaya kursor tak jatuh
+            keluar & menutup dropdown saat mengarah ke pilihan. */}
+        {(onPickLang || onChangeLang || onChangeBaseLang) &&
           (() => {
             const wl = getImmersionLang(langCode);
             const pick = (code: string) => {
@@ -2329,22 +2156,26 @@ export default function VideoLearnPlayer({
               >
                 <button
                   onClick={() => setLearnMenuOpen((v) => !v)}
+                  title={`${getBaseLangDef(baseLang).label} → ${wl?.name ?? langCode}`}
+                  aria-label={`Bahasa saya ${getBaseLangDef(baseLang).label}, bahasa yang dipelajari ${wl?.name ?? langCode}`}
                   className="group relative inline-flex items-center justify-center rounded-full p-2 text-white"
-                  aria-label="Ganti bahasa yang dipelajari"
                   aria-expanded={learnMenuOpen}
                 >
                   <TabBg active={learnMenuOpen} />
                   <span className="relative inline-flex items-center gap-1.5">
-                    <span className="hidden text-[11px] font-bold sm:inline" style={{ color: SUB }}>
-                      Bahasa target
-                    </span>
+                    <RectFlag code={getBaseLangDef(baseLang).country} h={16} />
+                    <span className="text-white/35">/</span>
                     {wl ? <RectFlag code={wl.country} h={16} /> : <Languages className="h-4 w-4 shrink-0" color={TEAL} />}
                     <ChevronDown
                       className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${learnMenuOpen ? "rotate-180" : ""}`}
                       color={TEAL}
                     />
                   </span>
-                  {!learnMenuOpen && <IconTooltip side="bottom">{wl?.name ?? langCode}</IconTooltip>}
+                  {!learnMenuOpen && (
+                    <IconTooltip side="bottom">
+                      {getBaseLangDef(baseLang).label} → {wl?.name ?? langCode}
+                    </IconTooltip>
+                  )}
                 </button>
                 <div
                   className={`absolute right-0 top-full z-30 pt-2 transition-all duration-150 ease-out ${
@@ -2358,6 +2189,15 @@ export default function VideoLearnPlayer({
                     recentCodes={recentLangCodes}
                     readyCounts={readyCounts}
                     title="Bahasa target (yang mau dipelajari)"
+                    baseLangs={onChangeBaseLang ? BASE_LANGS.filter((b) => b.code !== langCode) : undefined}
+                    baseLangCode={baseLang}
+                    onPickBase={
+                      onChangeBaseLang
+                        ? (code) => {
+                            if (code !== baseLang) onChangeBaseLang(code);
+                          }
+                        : undefined
+                    }
                   />
                 </div>
               </div>
@@ -2376,6 +2216,7 @@ export default function VideoLearnPlayer({
         </button>
         </div>
       </div>
+      )}
 
       {/* Isi — split view. Di layar penuh beri ruang atas (pt) supaya video +
           subtitle turun & tak tertutup baris header (judul kiri / tombol kanan). */}
@@ -2400,7 +2241,7 @@ export default function VideoLearnPlayer({
             ref={miniBoxRef}
             className={
               mini
-                ? "group fixed bottom-4 right-4 z-20 flex w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl"
+                ? "group pointer-events-auto fixed bottom-4 right-4 z-20 flex w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl bg-black shadow-2xl"
                 : fullscreen
                   ? "group relative flex min-h-0 w-full flex-1 items-center justify-center bg-black"
                   : "group relative flex w-full shrink-0 items-center justify-center bg-black"
@@ -3117,162 +2958,11 @@ export default function VideoLearnPlayer({
           </div>
           )}
 
-          {/* Rekomendasi video — HANYA muncul saat miniplayer (video mengecil).
-              Klik untuk langsung memutar video lain tanpa keluar player.
-              Saat mini, daftar ini yang mengisi seluruh kolom kiri; saat menonton
-              penuh sengaja disembunyikan agar subtitle + kontrol lebih lega. */}
-          {mini && onSelectVideo && (
-            <div
-              className="flex min-h-0 flex-1 flex-col border-t"
-              style={{ borderColor: BORDER }}
-            >
-              {/* [watch-rec-search-v1] Cari video tanpa keluar player. Fokus kolom →
-                  panel saran (chip "Podcast"/"Berita"/…) turun beranimasi dari atas. */}
-              <div className="px-4 pt-3 sm:px-6">
-                <div
-                  className="flex items-center gap-2.5 rounded-xl px-3"
-                  style={{ backgroundColor: CARD, border: `1px solid ${recQuery || recFocused ? TEAL : BORDER}` }}
-                >
-                  <Search className="h-4 w-4 shrink-0" color={SUB} />
-                  <input
-                    value={recQuery}
-                    onChange={(e) => setRecQuery(e.target.value)}
-                    onFocus={() => setRecFocused(true)}
-                    onBlur={() => setRecFocused(false)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") runRecSearch();
-                      else if (e.key === "Escape") setRecFocused(false);
-                    }}
-                    placeholder={`Cari video ${getImmersionLang(langCode)?.name ?? ""}…`}
-                    className="flex-1 bg-transparent py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
-                  />
-                  {recQuery && (
-                    <button
-                      onClick={clearRecSearch}
-                      className="shrink-0 transition-opacity hover:opacity-70"
-                      aria-label="Hapus pencarian"
-                    >
-                      <X className="h-4 w-4" color={SUB} />
-                    </button>
-                  )}
-                </div>
-                {/* Panel saran — animasi tinggi 0fr→1fr (mulus, tanpa lompatan). */}
-                <div
-                  className={`grid overflow-hidden transition-all duration-300 ease-out ${
-                    recFocused ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="min-h-0 overflow-hidden">
-                    <p className="mb-1.5 text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
-                      Saran pencarian
-                    </p>
-                    <div className="flex flex-wrap gap-2 pb-0.5">
-                      {REC_SUGGESTIONS.map((s) => (
-                        <button
-                          key={s.q}
-                          // mousedown preventDefault → input tak kehilangan fokus
-                          // sebelum onClick chip sempat jalan.
-                          onMouseDown={(e) => e.preventDefault()}
-                          onClick={() => {
-                            setRecQuery(s.q);
-                            runRecSearch(s.q);
-                          }}
-                          className="rounded-full px-3 py-1.5 text-[12.5px] font-bold text-white/85 transition-colors hover:bg-white/10"
-                          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-                        >
-                          {s.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between gap-2 px-4 pb-1 pt-3 sm:px-6">
-                <p className="text-[13px] font-extrabold text-white">
-                  {recSearchList !== null ? "Hasil pencarian" : "Rekomendasi"}
-                </p>
-                {/* Kembali ke mode nonton penuh (keluar dari miniplayer + rekomendasi). */}
-                <button
-                  onClick={() => setMini(false)}
-                  className="inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[12px] font-bold text-white transition-colors hover:bg-white/10"
-                  title="Kembali menonton"
-                  aria-label="Tutup rekomendasi & kembali menonton"
-                >
-                  <X className="h-4 w-4" /> Tutup
-                </button>
-              </div>
-              <div className="min-h-0 flex-1 overflow-y-auto px-2 pb-4 sm:px-4 [scrollbar-width:thin]">
-                {recSearchState === "loading" ? (
-                  <div
-                    className="flex items-center justify-center gap-2 py-10 text-[13px]"
-                    style={{ color: SUB }}
-                  >
-                    <Loader2 className="h-4 w-4 animate-spin" /> Mencari…
-                  </div>
-                ) : recSearchState === "empty" ? (
-                  <p className="px-2 py-10 text-center text-[13px]" style={{ color: SUB }}>
-                    Tidak ada video ketemu untuk “{recQuery.trim()}”. Coba kata kunci lain.
-                  </p>
-                ) : (recSearchList ?? recList).length === 0 ? null : (
-                <>
-                {(recSearchList !== null ? recSearchList : recList.slice(0, recShown)).map((v) => (
-                  <button
-                    key={v.videoId}
-                    onClick={() => onSelectVideo(v)}
-                    className="flex w-full gap-3 rounded-xl p-2 text-left transition-colors hover:bg-white/5"
-                  >
-                    <div
-                      className={`relative aspect-video shrink-0 self-start overflow-hidden rounded-lg bg-black ${
-                        mini ? "w-44 sm:w-56" : "w-40"
-                      }`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={v.thumbnail ?? youtubeThumb(v.videoId)}
-                        alt=""
-                        loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover"
-                      />
-                      {formatDuration(v.duration) && (
-                        <span className="absolute bottom-1 right-1 rounded bg-black/80 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">
-                          {formatDuration(v.duration)}
-                        </span>
-                      )}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="line-clamp-2 text-[13px] font-bold leading-snug text-white">
-                        {v.title}
-                      </p>
-                      {v.channel && (
-                        <p className="mt-1 line-clamp-1 text-[11.5px]" style={{ color: SUB }}>
-                          {v.channel}
-                        </p>
-                      )}
-                    </div>
-                  </button>
-                ))}
-                {recSearchList === null && (recList.length > recShown || related?.next) && (
-                  <div className="mt-2 flex justify-center pb-2">
-                    <button
-                      onClick={loadMoreRecs}
-                      disabled={recLoading}
-                      className="rounded-full px-5 py-2.5 text-[13px] font-bold transition-transform active:scale-95 disabled:opacity-60"
-                      style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: "#fff" }}
-                    >
-                      {recLoading ? "Memuat…" : "Muat lainnya"}
-                    </button>
-                  </div>
-                )}
-                </>
-                )}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Separator draggable (desktop) — seret untuk mengatur lebar video vs
             transkrip. Sembunyi di mobile (kolom menumpuk vertikal). */}
-        {showPanel && (
+        {showPanel && !mini && (
           <div
             role="separator"
             aria-orientation="vertical"
@@ -3295,8 +2985,9 @@ export default function VideoLearnPlayer({
           </div>
         )}
 
-        {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip. */}
-        {showPanel && (
+        {/* Kanan: transkrip penuh — bisa disembunyikan lewat tombol Transkrip.
+            Disembunyikan di mode mini (PiP tembus ke beranda). */}
+        {showPanel && !mini && (
         <div
           className="relative flex min-h-0 flex-1 flex-col overflow-hidden border-t lg:border-l lg:border-t-0"
           style={{ borderColor: BORDER }}
