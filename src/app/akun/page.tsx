@@ -16,7 +16,8 @@ import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
 // [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
 const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { ssr: false });
-const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
+// [remove-onesignal-prompt] provider dimatikan — hilangkan popup auto-prompt notifikasi
+// const OneSignalProvider = dynamic(() => import('@/components/OneSignalProvider'), { ssr: false });
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
 import AvatarUploader from '@/components/akun/AvatarUploader';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
@@ -4314,7 +4315,9 @@ export default function AkunPage() {
       )}
 
       {/* [kelas-detail-page-v1] detail kelas pindah ke halaman /akun/kelas/[id] (dulu ClassDetailModal) */}
-      <OneSignalProvider />
+      {/* [remove-onesignal-prompt] popup "Subscribe to our notifications" (auto-prompt bawaan OneSignal)
+          mengganggu di halaman belajar — provider dimatikan agar tidak ada popup lagi. */}
+      {/* <OneSignalProvider /> */}
 
       {/* Popup detail pembayaran (card kecil "Perlu Perhatian" -> klik) */}
       {pendingModalReg && (

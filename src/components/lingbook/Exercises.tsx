@@ -14,8 +14,8 @@ const feedbackBox = (ok: boolean, warn: boolean): React.CSSProperties => ({
   display: "flex",
   gap: 10,
   alignItems: "flex-start",
-  background: ok ? "#E4F3DF" : warn ? "#FBF0DB" : "#FCE8E4",
-  color: ok ? "#3E7D2E" : warn ? "#9A6B14" : "#B04A32",
+  background: ok ? "var(--lb-ok-bg)" : warn ? "var(--lb-warn-bg)" : "var(--lb-err-bg)",
+  color: ok ? "var(--lb-ok-ink)" : warn ? "var(--lb-warn-ink)" : "var(--lb-err-ink)",
 });
 
 // ── state per soal ──
@@ -74,7 +74,7 @@ function ExerciseCard({
   }, [st.done, st.ok]);
   const cardStyle: React.CSSProperties = {
     background: "var(--lb-surface)",
-    border: done ? `1.5px solid ${st.ok ? "#9CCB8E" : "#E8B4A5"}` : "1px solid var(--lb-line)",
+    border: done ? `1.5px solid ${st.ok ? "var(--lb-ok-line)" : "var(--lb-err-line)"}` : "1px solid var(--lb-line)",
     borderRadius: 16,
     padding: "18px 20px",
     marginBottom: 14,
@@ -97,9 +97,9 @@ function ExerciseCard({
           {ex.opts.map((op, oi) => {
             const sel = st.sel === oi;
             const style = { ...chip(readFont) };
-            if (done && oi === ex.ans) { style.background = "#E4F3DF"; style.borderColor = "#9CCB8E"; }
-            else if (done && sel) { style.background = "#FCE8E4"; style.borderColor = "#E8B4A5"; }
-            else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; }
+            if (done && oi === ex.ans) { style.background = "var(--lb-ok-bg)"; style.borderColor = "var(--lb-ok-line)"; style.color = "var(--lb-ok-ink)"; }
+            else if (done && sel) { style.background = "var(--lb-err-bg)"; style.borderColor = "var(--lb-err-line)"; style.color = "var(--lb-err-ink)"; }
+            else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; style.color = "var(--lb-teal-ink)"; }
             return (
               <button key={oi} onClick={() => setSt({ sel: oi, done: true, ok: oi === ex.ans })} style={style}>{op}</button>
             );
@@ -141,8 +141,8 @@ function MatchGrid({ ex, st, setSt, readFont }: { ex: Extract<Exercise, { type: 
           const matched = map[li] !== undefined;
           const sel = st.sel === li;
           const style = { ...chip(readFont), textAlign: "center" as const };
-          if (matched) { style.background = "#E4F3DF"; style.borderColor = "#9CCB8E"; style.cursor = "default"; }
-          else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; }
+          if (matched) { style.background = "var(--lb-ok-bg)"; style.borderColor = "var(--lb-ok-line)"; style.color = "var(--lb-ok-ink)"; style.cursor = "default"; }
+          else if (sel) { style.background = "var(--lb-active)"; style.borderColor = TEAL; style.color = "var(--lb-teal-ink)"; }
           return <button key={li} onClick={() => { if (!matched) setSt({ sel: li }); }} style={style}>{p[0]}</button>;
         })}
       </div>
@@ -151,8 +151,8 @@ function MatchGrid({ ex, st, setSt, readFont }: { ex: Extract<Exercise, { type: 
           const matched = Object.values(map).includes(ri);
           const wrong = st.wrong === ri;
           const style = { ...chip(readFont), fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 14, textAlign: "center" as const };
-          if (matched) { style.background = "#E4F3DF"; style.borderColor = "#9CCB8E"; style.cursor = "default"; }
-          if (wrong) { style.background = "#FCE8E4"; style.borderColor = "#E8B4A5"; style.animation = "lbShake .3s"; }
+          if (matched) { style.background = "var(--lb-ok-bg)"; style.borderColor = "var(--lb-ok-line)"; style.color = "var(--lb-ok-ink)"; style.cursor = "default"; }
+          if (wrong) { style.background = "var(--lb-err-bg)"; style.borderColor = "var(--lb-err-line)"; style.color = "var(--lb-err-ink)"; style.animation = "lbShake .3s"; }
           return (
             <button
               key={ri}

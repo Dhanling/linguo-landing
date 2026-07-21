@@ -669,6 +669,9 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           --lb-scrim:rgba(17,49,58,.45);
           --lb-ai:#8a73d0; --lb-ai-ink:#6b54c8; --lb-ai-bubble:#f2f0fa;
           --lb-ai-soft:#fbfafe; --lb-ai-line:#e0d9f2; --lb-ai-suggest-hover:#f4f1fb;
+          --lb-ok-bg:#e4f3df; --lb-ok-ink:#3e7d2e; --lb-ok-line:#9ccb8e;
+          --lb-warn-bg:#fbf0db; --lb-warn-ink:#9a6b14; --lb-warn-line:#e0c489;
+          --lb-err-bg:#fce8e4; --lb-err-ink:#b04a32; --lb-err-line:#e8b4a5;
         }
         .lb-root[data-lb-theme="dark"]{
           --lb-bg:#0e1619; --lb-surface:#16242b; --lb-surface-2:#1b2d34;
@@ -678,6 +681,9 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           --lb-scrim:rgba(2,10,12,.62);
           --lb-ai:#a996e0; --lb-ai-ink:#b9a9ec; --lb-ai-bubble:#221d33;
           --lb-ai-soft:#1c1830; --lb-ai-line:#33294f; --lb-ai-suggest-hover:#241f38;
+          --lb-ok-bg:#173021; --lb-ok-ink:#8fd694; --lb-ok-line:#357a45;
+          --lb-warn-bg:#332a12; --lb-warn-ink:#e6c069; --lb-warn-line:#6f5c26;
+          --lb-err-bg:#361d1a; --lb-err-ink:#f0a48f; --lb-err-line:#7d4036;
         }
         .lb-root[data-lb-theme="dark"] img{opacity:.92;}
         .lb-word:hover{background:var(--lb-soft) !important;}
