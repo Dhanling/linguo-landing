@@ -711,6 +711,13 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
             <div style={{ fontSize: 12, fontWeight: 700, color: "var(--lb-ink-3)", whiteSpace: "nowrap" }}>
               {isUnit ? "Unit" : "Bab"} {doneIdx >= 0 ? doneIdx + 1 : 1} dari {book.chapterCount}
             </div>
+            <button onClick={toggleDark} title={dark ? "Mode terang" : "Mode gelap"} aria-label={dark ? "Mode terang" : "Mode gelap"} style={hdrBtn}>
+              {dark ? (
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" /><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+              ) : (
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M20 14.2A8 8 0 019.8 4 7 7 0 1020 14.2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /></svg>
+              )}
+            </button>
             <button onClick={() => setTocOpen(true)} title="Daftar Isi" style={hdrBtn}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
             </button>
@@ -729,11 +736,11 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
                     style={{
                       display: "flex", alignItems: "center", gap: 6, padding: "6px 12px 6px 7px", borderRadius: 999, whiteSpace: "nowrap",
                       border: active ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", cursor: "pointer", fontFamily: "inherit",
-                      background: active ? "var(--lb-active)" : "#FFFFFF", color: active ? "var(--lb-teal-ink)" : done ? "var(--lb-teal-ink)" : "#8AA3A0",
+                      background: active ? "var(--lb-active)" : "var(--lb-surface)", color: active ? "var(--lb-teal-ink)" : done ? "var(--lb-teal-ink)" : "var(--lb-ink-4)",
                       fontSize: 12.5, fontWeight: 800, flex: "none",
                     }}
                   >
-                    <span style={{ width: 18, height: 18, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 10.5, fontWeight: 800, background: done || active ? TEAL : "var(--lb-soft)", color: done || active ? "#FFFFFF" : "#8AA3A0" }}>
+                    <span style={{ width: 18, height: 18, borderRadius: "50%", display: "grid", placeItems: "center", fontSize: 10.5, fontWeight: 800, background: done || active ? TEAL : "var(--lb-soft)", color: done || active ? "#FFFFFF" : "var(--lb-ink-4)" }}>
                       {done ? "✓" : String(i + 1)}
                     </span>
                     {st.label}
@@ -1123,7 +1130,7 @@ function BlockView({
 
   if (block.type === "culture_note") {
     return (
-      <div style={{ margin: "0 0 24px 0", background: "#EDE9F8", border: "1px solid #8A73D044", borderRadius: 14, padding: "14px 16px", color: "#6B54C8" }}>
+      <div style={{ margin: "0 0 24px 0", background: "var(--lb-ai-bubble)", border: "1px solid var(--lb-ai-line)", borderRadius: 14, padding: "14px 16px", color: "var(--lb-ai-ink)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
           <span style={{ width: 22, height: 22, borderRadius: "50%", background: "#8A73D0", color: "#FFFFFF", display: "grid", placeItems: "center", fontSize: 12, flex: "none" }}>🌏</span>
           <span style={{ fontWeight: 800, fontSize: 14 }}>{block.title}</span>
@@ -1148,8 +1155,8 @@ function BlockView({
           const checked = unitCtx.stepDone.has(o.section);
           return (
             <div key={oi} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 0", borderBottom: "1px solid var(--lb-line)" }}>
-              <span style={{ width: 22, height: 22, borderRadius: 7, flex: "none", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 800, background: checked ? TEAL : "#FFFFFF", color: "#FFFFFF", border: checked ? "none" : "2px solid var(--lb-line)" }}>{checked ? "✓" : ""}</span>
-              <span style={{ fontSize: 14.5, fontWeight: 600, color: checked ? "#8AA3A0" : DARK, textDecoration: checked ? "line-through" : "none" }}>{o.text}</span>
+              <span style={{ width: 22, height: 22, borderRadius: 7, flex: "none", display: "grid", placeItems: "center", fontSize: 13, fontWeight: 800, background: checked ? TEAL : "var(--lb-surface)", color: "#FFFFFF", border: checked ? "none" : "2px solid var(--lb-line)" }}>{checked ? "✓" : ""}</span>
+              <span style={{ fontSize: 14.5, fontWeight: 600, color: checked ? "var(--lb-ink-4)" : "var(--lb-ink)", textDecoration: checked ? "line-through" : "none" }}>{o.text}</span>
             </div>
           );
         })}
@@ -1338,7 +1345,7 @@ function SettingsSheet({
               <button
                 key={l}
                 onClick={() => setFs(i)}
-                style={{ padding: "7px 12px", borderRadius: 9, border: fs === i ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", background: fs === i ? "var(--lb-active)" : "#FFFFFF", color: fs === i ? "var(--lb-teal-ink)" : "#5A7A78", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
+                style={{ padding: "7px 12px", borderRadius: 9, border: fs === i ? `1.5px solid ${TEAL}` : "1.5px solid var(--lb-line)", background: fs === i ? "var(--lb-active)" : "var(--lb-surface)", color: fs === i ? "var(--lb-teal-ink)" : "var(--lb-ink-3)", fontFamily: "inherit", fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}
               >
                 {l}
               </button>
@@ -1441,7 +1448,7 @@ function WordCard({
           <button
             onClick={onAsk}
             title="Tanya lebih lanjut ke AI"
-            style={{ flex: "none", padding: "13px 16px", borderRadius: 12, border: `1.5px solid ${PURPLE}`, background: "#F4F1FB", color: "#6B54C8", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
+            style={{ flex: "none", padding: "13px 16px", borderRadius: 12, border: `1.5px solid ${PURPLE}`, background: "var(--lb-ai-soft)", color: "var(--lb-ai-ink)", fontFamily: "inherit", fontSize: 14, fontWeight: 800, cursor: "pointer" }}
           >
             ✦ Tanya AI
           </button>

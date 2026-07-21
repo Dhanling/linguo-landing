@@ -11,6 +11,7 @@ import {
 import {
   ClipboardCheck, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles,
 } from "lucide-react";
+import SimulasiBeliModal from "./SimulasiBeliModal";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -27,6 +28,8 @@ export default function SimulasiKatalog() {
   const [owned, setOwned] = useState<TestType[]>(simCache?.owned ?? []);
   const [loading, setLoading] = useState(!simCache);
   const [authed, setAuthed] = useState<boolean | null>(simCache ? simCache.authed : null);
+  // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
+  const [beliType, setBeliType] = useState<TestType | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -74,21 +77,30 @@ export default function SimulasiKatalog() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {/* Paket terkunci (belum dibeli) → CTA ke halaman checkout */}
           {lockedTypes.map((t) => (
-            <div key={`lock-${t}`} className="flex flex-col rounded-2xl border border-dashed border-slate-300 bg-white p-5">
-              <div className="mb-3 flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-500">
+            <div key={`lock-${t}`} className="flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white">
+              {/* Cover — gradasi teal ala menu Simulasi Tes (halaman /simulasi) */}
+              <div className="relative overflow-hidden px-5 py-6 text-white" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
+                <ClipboardCheck className="pointer-events-none absolute -right-3 -bottom-4 h-24 w-24 opacity-15" />
+                <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
                   <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
                 </span>
+                <h2 className="mt-2 text-lg font-extrabold">Simulasi {TEST_TYPE_LABEL[t]}</h2>
+                <p className="text-[13px] text-white/80">4 skill lengkap · penilaian AI</p>
               </div>
-              <h2 className="font-bold text-slate-900">Simulasi {TEST_TYPE_LABEL[t]}</h2>
-              <p className="mt-1 text-sm text-slate-500">4 skill lengkap. Beli sekali, akses selamanya.</p>
-              <div className="mt-3 flex items-baseline gap-1.5">
-                <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
-                <span className="text-xs text-slate-400">/ sekali bayar</span>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-sm text-slate-500">Beli sekali, akses selamanya.</p>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+                  <span className="text-xs text-slate-400">/ sekali bayar</span>
+                </div>
+                <button
+                  onClick={() => setBeliType(t)}
+                  className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95"
+                  style={{ background: TEAL }}
+                >
+                  <Sparkles className="h-4 w-4" /> Beli Paket
+                </button>
               </div>
-              <Link href="/simulasi/paket" className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95" style={{ background: TEAL }}>
-                <Sparkles className="h-4 w-4" /> Beli Paket
-              </Link>
             </div>
           ))}
           {sims.map((s) => (
@@ -126,6 +138,8 @@ export default function SimulasiKatalog() {
           )}
         </div>
       )}
+
+      <SimulasiBeliModal open={beliType !== null} onClose={() => setBeliType(null)} testType={beliType ?? undefined} />
     </div>
   );
 }
