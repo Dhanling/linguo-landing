@@ -3,8 +3,8 @@
 // [lingbook-phase1-v1] Reader ebook interaktif Lingbook. Language-agnostic:
 // furigana via <ruby> native, field grammar dirender dinamis per bahasa.
 // Word card = popover (desktop) / bottom sheet (mobile, breakpoint md=768px).
-// Audio phase 1 via TTS browser (lihat lingbook-speech.ts); field *Src siap
-// diganti file storage. Semua teks UI berbahasa Indonesia.
+// Audio pengucapan via Gemini 2.5 Flash TTS (lihat lingbook-speech.ts, fallback
+// Web Speech); field *Src siap diganti file storage. Semua teks UI bahasa Indonesia.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -313,9 +313,12 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
   const glossary = chapter.glossary;
 
   const [isMobile, setIsMobile] = useState(false);
-  const [furigana, setFurigana] = useState(true);
-  const [romaji, setRomaji] = useState(false);
-  const [trans, setTrans] = useState(false);
+  // Default: tampilkan transliterasi Latin (romaji) + terjemahan Indonesia supaya
+  // pemula langsung terbantu; furigana off krn romaji sudah jadi bantuan baca
+  // (keduanya eksklusif — lihat setter di ReaderSettings). Semua bisa di-toggle.
+  const [furigana, setFurigana] = useState(false);
+  const [romaji, setRomaji] = useState(true);
+  const [trans, setTrans] = useState(true);
   const [mark, setMark] = useState(true);
   const [fs, setFs] = useState(1);
 
@@ -438,8 +441,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
       setPlayingAll(false);
       setActiveLine(bi * 100 + li);
       const u = speak(lineText(tokens), book.language.speechLang);
-      if (u) u.onend = () => setActiveLine(-1);
-      else setTimeout(() => setActiveLine(-1), 1600);
+      u.onended = () => setActiveLine(-1);
     },
     [lineText, book.language.speechLang],
   );
@@ -464,8 +466,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
         }
         setActiveLine(bi * 100 + i);
         const u = speak(lineText(lines[i].tokens), book.language.speechLang);
-        if (u) u.onend = () => step(i + 1);
-        else setTimeout(() => step(i + 1), 1800);
+        u.onended = () => step(i + 1);
       };
       step(0);
     },
@@ -872,8 +873,7 @@ export default function LingbookReader({ book, chapter }: { book: Book; chapter:
           onPlay={() => {
             setCardSpeaking(true);
             const u = speak(sel.word.surface, book.language.speechLang);
-            if (u) u.onend = () => setCardSpeaking(false);
-            else setTimeout(() => setCardSpeaking(false), 1200);
+            u.onended = () => setCardSpeaking(false);
           }}
         />
       )}
