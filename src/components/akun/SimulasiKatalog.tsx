@@ -170,8 +170,30 @@ export default function SimulasiKatalog() {
             <Link
               key={s.id}
               href={`/akun/simulasi/${s.id}`}
-              className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-teal-300 hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-teal-300 hover:shadow-md"
             >
+              {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                {s.cover_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={s.cover_url}
+                    alt={s.title}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
+                    <ClipboardCheck className="h-12 w-12 text-white/40" />
+                  </div>
+                )}
+                {prog && (
+                  <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-teal-600/95 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur">
+                    <PlayCircle className="h-3 w-3" />Sedang dikerjakan
+                  </span>
+                )}
+              </div>
+
+              <div className="flex flex-1 flex-col p-5">
               <div className="mb-3 flex items-center gap-2">
                 <span
                   className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-white"
@@ -180,11 +202,6 @@ export default function SimulasiKatalog() {
                   <Globe className="h-3 w-3" />{testTypeLabel(s.test_type, s.test_variant)}
                 </span>
                 {s.level && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600">{s.level}</span>}
-                {prog && (
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-semibold text-teal-700">
-                    <PlayCircle className="h-3 w-3" />Sedang dikerjakan
-                  </span>
-                )}
               </div>
               <h2 className="font-bold text-slate-900 group-hover:text-teal-700">{s.title}</h2>
               {s.description && <p className="mt-1 line-clamp-2 text-sm text-slate-500">{s.description}</p>}
@@ -210,6 +227,7 @@ export default function SimulasiKatalog() {
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
                 {prog ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
+              </div>
             </Link>
             );
           })}

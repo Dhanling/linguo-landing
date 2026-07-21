@@ -23,6 +23,7 @@ export interface Simulation {
   duration_minutes: number;
   is_published: boolean;
   access_mode: "account" | "guest";
+  cover_url: string | null; // gambar cover paket (dikelola dari admin)
   created_at: string;
   section_count?: number;
   question_count?: number;
