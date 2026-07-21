@@ -9,6 +9,7 @@
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
+  ArrowLeft,
   Check,
   ChevronDown,
   Gauge,
@@ -1170,6 +1171,14 @@ export default function VideoLearnPlayer({
     setMini(true);
   }, []);
 
+  // [watch-back-mini-v1] Tombol "kembali" di kiri-atas: kecilkan player jadi kotak
+  // melayang pojok kanan-bawah SEKALIGUS jeda video — pengguna berhenti fokus
+  // menonton (mau menjelajah katalog di belakang), jadi audio ikut berhenti.
+  const backToMini = useCallback(() => {
+    enterMini();
+    playerRef.current?.pauseVideo?.();
+  }, [enterMini]);
+
   // Cari video TERKAIT dengan yang sedang dibuka (bias nama channel → video dari
   // channel yang sama atau bertopik mirip), bukan sekadar isi katalog halaman.
   useEffect(() => {
@@ -2143,10 +2152,25 @@ export default function VideoLearnPlayer({
               : ""
           }`}
         >
-        {/* Judul dihapus — YouTube sudah menampilkan judul + channel-nya sendiri
-            (kartu saat dijeda / sudut kiri-atas video), jadi judul kita redundan.
-            Spacer ini menggantikan mr-auto agar kontrol tetap terdorong ke kanan. */}
-        <div className="mr-auto" />
+        {/* [watch-back-mini-v1] Tombol kembali di kiri-atas → kecilkan jadi kotak
+            melayang pojok kanan-bawah + jeda video. Hanya tampil di mode penuh
+            (di mode mini sudah ada kontrol sendiri). mr-auto mendorong kontrol
+            bahasa/tutup tetap ke kanan. */}
+        {!mini ? (
+          <button
+            onClick={backToMini}
+            className="group relative mr-auto inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
+            aria-label="Kembali (kecilkan video)"
+          >
+            <TabBg />
+            <span className="relative inline-flex">
+              <ArrowLeft className="h-5 w-5 text-white" />
+            </span>
+            <IconTooltip side="bottom">Kembali</IconTooltip>
+          </button>
+        ) : (
+          <div className="mr-auto" />
+        )}
 
         {/* Jumlah kosakata yang disimpan di video ini → buka deck kosakata.
             Ikon saja + badge jumlah; tab latar & tooltip muncul saat hover. */}
