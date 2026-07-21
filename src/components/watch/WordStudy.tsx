@@ -960,6 +960,26 @@ function RichTable({ header, rows, onWordTap }: { header: string[]; rows: string
   );
 }
 
+// Rapikan spasi antar-segmen: kadang model menempelkan kata subjek ke kata kerja
+// (mis. "I" + "tethered" → "Itethered"). Afiks yang berubah selalu ditandai
+// `c:true`, jadi dua segmen INVARIAN (c:false) berturut-turut yang bertemu di
+// batas huruf pasti dua kata terpisah → sisipkan spasi. Stem+akhiran tak pernah
+// kena aturan ini karena akhirannya c:true.
+function spaceConjParts(parts: { t: string; c: boolean }[]): { t: string; c: boolean }[] {
+  const endsWithLetter = (s: string) => /\p{L}$/u.test(s);
+  const startsWithLetter = (s: string) => /^\p{L}/u.test(s);
+  return parts.map((p, j) => {
+    if (j === 0) return p;
+    const prev = parts[j - 1];
+    const glued =
+      prev.c === false &&
+      p.c === false &&
+      endsWithLetter(prev.t) &&
+      startsWithLetter(p.t);
+    return glued ? { ...p, t: " " + p.t } : p;
+  });
+}
+
 // Tabel konjugasi kata kerja. Kolom: Bentuk (subjek) · Kata (target) · Suffix · Arti.
 // Bagian yang berubah antar-baris (part.c) diwarnai emas di dalam kata utuh, dan
 // kolom Suffix menyorotnya lagi biar pola perubahannya kelihatan sekilas.
@@ -977,7 +997,8 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
         </thead>
         <tbody>
           {conj.rows.map((r, i) => {
-            const full = r.parts.map((p) => p.t).join("");
+            const parts = spaceConjParts(r.parts);
+            const full = parts.map((p) => p.t).join("");
             return (
               <tr key={i} style={{ backgroundColor: i % 2 === 1 ? ROW_ALT : "transparent" }}>
                 <td className="px-1.5 py-2 align-top text-[12.5px] font-semibold text-white/75 whitespace-nowrap">
@@ -990,8 +1011,8 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
                     aria-label="Dengar"
                   >
                     <span className="text-[14.5px] font-bold leading-snug" dir="auto">
-                      {r.parts.map((p, j) => (
-                        <span key={j} style={p.c ? { color: GOLD } : { color: "#fff" }}>
+                      {parts.map((p, j) => (
+                        <span key={j} style={p.c ? { color: GOLD } : { color: "#fff" }} className="whitespace-pre">
                           {p.t}
                         </span>
                       ))}
