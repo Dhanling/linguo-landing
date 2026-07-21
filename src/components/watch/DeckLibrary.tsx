@@ -11,10 +11,9 @@
 // muncul di bagian "Deck Komunitas" lengkap dengan nama kontributornya, bisa
 // langsung dipelajari atau diimpor ke "Kosakata Saya" (masuk review SRS harian).
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Check,
-  ChevronDown,
   ChevronLeft,
   Globe2,
   Layers,
@@ -23,7 +22,6 @@ import {
   PencilLine,
   Play,
   Plus,
-  Search,
   Sparkles,
   Trash2,
   User,
@@ -51,8 +49,7 @@ import {
 } from "@/lib/decks";
 import { getSavedWords, speakText, type SavedWord } from "@/lib/immersionLearn";
 import { gradePreviewLabel, newSrsState, type SrsGrade, type SrsState } from "@/lib/srs";
-import { getImmersionLang, IMMERSION_LANGS } from "@/lib/immersion";
-import { RectFlag } from "@/components/RectFlag";
+import { getImmersionLang } from "@/lib/immersion";
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#127d7d";
@@ -114,15 +111,9 @@ export default function DeckLibrary({
   const [loading, setLoading] = useState(true);
   // Deck yang sedang dipelajari (overlay sesi belajar).
   const [studying, setStudying] = useState<Deck | null>(null);
-  // Bahasa deck yang aktif — bebas dipilih lewat selector (default: bahasa yang
-  // sedang ditonton). Terpisah dari filter "Kosakata Saya" supaya siswa bisa
-  // membuat/melihat deck bahasa apa pun tanpa harus punya kata tersimpan dulu.
-  const [langCode, setLangCode] = useState(lang);
-
-  // Prop `lang` berubah (mis. ganti bahasa di player / filter chip) → ikut pindah.
-  useEffect(() => {
-    setLangCode(lang);
-  }, [lang]);
+  // Bahasa deck mengikuti pemilih bahasa tunggal di pojok kanan atas (prop `lang`)
+  // — tak ada selector terpisah di dalam tab Deck.
+  const langCode = lang;
 
   const langName = getImmersionLang(langCode)?.name ?? langCode;
 
@@ -197,9 +188,6 @@ export default function DeckLibrary({
 
   return (
     <div className="space-y-6">
-      {/* Selector bahasa deck — pilih bahasa apa pun untuk dibuat/dilihat decknya */}
-      <LangSelector value={langCode} onChange={setLangCode} />
-
       {/* Pilihan buat deck baru */}
       <div className="grid gap-2.5 sm:grid-cols-3">
         <CreateTile
@@ -276,110 +264,6 @@ export default function DeckLibrary({
           onClose={() => setStudying(null)}
           onVocabChange={onVocabChange}
         />
-      )}
-    </div>
-  );
-}
-
-// ── Selector bahasa deck ──────────────────────────────────────────────────────
-// Dropdown ringkas + kotak cari — buka daftar seluruh bahasa Watch & Learn biar
-// siswa gampang pindah bahasa deck tanpa keluar dari tab.
-function LangSelector({ value, onChange }: { value: string; onChange: (code: string) => void }) {
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const ref = useRef<HTMLDivElement>(null);
-  const current = getImmersionLang(value);
-
-  // Klik di luar / Escape → tutup.
-  useEffect(() => {
-    if (!open) return;
-    const onDoc = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("mousedown", onDoc);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onDoc);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return IMMERSION_LANGS;
-    return IMMERSION_LANGS.filter(
-      (l) => l.name.toLowerCase().includes(q) || l.native.toLowerCase().includes(q)
-    );
-  }, [query]);
-
-  return (
-    <div ref={ref} className="relative">
-      <div className="flex items-center justify-between gap-3">
-        <p className="text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-          Bahasa deck
-        </p>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13.5px] font-bold text-white transition-colors hover:bg-white/5"
-          style={{ backgroundColor: CARD, border: `1px solid ${open ? TEAL : BORDER}` }}
-        >
-          <RectFlag code={current?.country} h={15} />
-          <span>{current?.name ?? value}</span>
-          <ChevronDown className="h-4 w-4" style={{ color: SUB, transform: open ? "rotate(180deg)" : undefined }} />
-        </button>
-      </div>
-
-      {open && (
-        <div
-          className="absolute right-0 z-20 mt-2 w-72 max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl shadow-2xl"
-          style={{ backgroundColor: SURFACE_ALT, border: `1px solid ${BORDER}` }}
-        >
-          <div className="flex items-center gap-2 px-3 py-2.5" style={{ borderBottom: `1px solid ${BORDER}` }}>
-            <Search className="h-4 w-4 shrink-0" style={{ color: SUB }} />
-            <input
-              autoFocus
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Cari bahasa…"
-              className="w-full bg-transparent text-[14px] text-white outline-none placeholder:text-white/30"
-            />
-          </div>
-          <div className="max-h-72 overflow-y-auto py-1">
-            {results.length === 0 ? (
-              <p className="px-4 py-6 text-center text-[13px]" style={{ color: SUB }}>
-                Bahasa tak ditemukan.
-              </p>
-            ) : (
-              results.map((l) => {
-                const active = l.code === value;
-                return (
-                  <button
-                    key={l.code}
-                    onClick={() => {
-                      onChange(l.code);
-                      setOpen(false);
-                      setQuery("");
-                    }}
-                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors hover:bg-white/5"
-                    style={{ backgroundColor: active ? `${TEAL}1f` : "transparent" }}
-                  >
-                    <RectFlag code={l.country} h={15} />
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[14px] font-bold text-white">{l.name}</span>
-                      <span className="block truncate text-[12px]" style={{ color: SUB }}>
-                        {l.native}
-                      </span>
-                    </span>
-                    {active && <Check className="h-4 w-4 shrink-0" style={{ color: TEAL }} />}
-                  </button>
-                );
-              })
-            )}
-          </div>
-        </div>
       )}
     </div>
   );
