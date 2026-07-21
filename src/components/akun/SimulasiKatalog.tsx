@@ -5,7 +5,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo,
+  fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo, fetchSimulationCovers,
   TEST_TYPE_LABEL, testTypeLabel, type Simulation, type TestType,
 } from "@/lib/simulations";
 import {
@@ -23,11 +23,12 @@ const ALL_TYPES: TestType[] = ["toefl", "ielts"];
 
 // [perf:simulasi-cache-v1] cache module-level: pindah tab lalu balik → render instan
 // dari cache (tanpa spinner), data tetap di-refresh di belakang layar.
-let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean } | null = null;
+let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean; covers: Partial<Record<TestType, string>> } | null = null;
 
 export default function SimulasiKatalog() {
   const [sims, setSims] = useState<Simulation[]>(simCache?.sims ?? []);
   const [owned, setOwned] = useState<TestType[]>(simCache?.owned ?? []);
+  const [covers, setCovers] = useState<Partial<Record<TestType, string>>>(simCache?.covers ?? {});
   const [loading, setLoading] = useState(!simCache);
   const [authed, setAuthed] = useState<boolean | null>(simCache ? simCache.authed : null);
   // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
@@ -38,15 +39,17 @@ export default function SimulasiKatalog() {
 
   const refresh = async () => {
     const info = await getStudentInfo();
-    const [data, ents] = await Promise.all([
+    const [data, ents, cov] = await Promise.all([
       fetchPublishedSimulations(),
       fetchMyEntitlements(),
+      fetchSimulationCovers(),
     ]);
-    simCache = { sims: data, owned: ents, authed: !!info };
+    simCache = { sims: data, owned: ents, authed: !!info, covers: cov };
     setAuthed(!!info);
     setUid(info?.user_id ?? null);
     setSims(data);
     setOwned(ents);
+    setCovers(cov);
     setLoading(false);
   };
 
@@ -120,24 +123,35 @@ export default function SimulasiKatalog() {
             const comingSoon = !testTypeHasAvailable(t); // semua paket jenis tes ini masih "soon"
             return (
             <div key={`lock-${t}`} className={`flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white ${comingSoon ? "opacity-90" : ""}`}>
-              {/* Cover — gradasi teal ala menu Simulasi Tes (halaman /simulasi) */}
-              <div className="relative overflow-hidden px-5 py-6 text-white" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
-                <ClipboardCheck className="pointer-events-none absolute -right-3 -bottom-4 h-24 w-24 opacity-15" />
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold backdrop-blur">
+              {/* Cover — pakai foto per-jenis dari admin bila ada (mis. logo IELTS);
+                  fallback gradasi teal. Badge kunci/Segera di-overlay di atasnya. */}
+              <div className="relative aspect-[16/7] w-full overflow-hidden bg-slate-100">
+                {covers[t] ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={covers[t]} alt={TEST_TYPE_LABEL[t]} className="h-full w-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                  </>
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
+                    <ClipboardCheck className="h-10 w-10 text-white/40" />
+                  </div>
+                )}
+                <div className="absolute left-2 top-2 flex flex-wrap items-center gap-1.5">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur">
                     <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
                   </span>
                   {comingSoon && (
-                    <span className="inline-flex items-center rounded-full bg-amber-400/90 px-2.5 py-1 text-[11px] font-bold text-amber-950">Segera</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-400/95 px-2.5 py-1 text-[11px] font-bold text-amber-950 shadow-sm">Segera</span>
                   )}
                 </div>
-                <h2 className="mt-2 text-lg font-extrabold">Simulasi {TEST_TYPE_LABEL[t]}</h2>
-                <p className="text-[13px] text-white/80">4 skill lengkap · penilaian AI</p>
               </div>
-              <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-1 flex-col p-4">
+                <h2 className="font-bold text-slate-900">Simulasi {TEST_TYPE_LABEL[t]}</h2>
+                <p className="text-[13px] text-slate-500">4 skill lengkap · penilaian AI</p>
                 {comingSoon ? (
                   <>
-                    <p className="text-sm text-slate-500">Masih dalam pengembangan. Segera hadir!</p>
+                    <p className="mt-3 text-sm text-slate-500">Masih dalam pengembangan. Segera hadir!</p>
                     <button disabled
                       className="mt-4 inline-flex cursor-not-allowed items-center justify-center gap-1.5 rounded-xl bg-slate-200 py-2.5 text-sm font-bold text-slate-500">
                       Segera Hadir
@@ -145,7 +159,7 @@ export default function SimulasiKatalog() {
                   </>
                 ) : (
                   <>
-                    <p className="text-sm text-slate-500">Beli sekali, akses selamanya.</p>
+                    <p className="mt-3 text-sm text-slate-500">Beli sekali, akses selamanya.</p>
                     <div className="mt-3 flex items-baseline gap-1.5">
                       <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
                       <span className="text-xs text-slate-400">/ sekali bayar</span>
@@ -172,18 +186,22 @@ export default function SimulasiKatalog() {
               href={`/akun/simulasi/${s.id}`}
               className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-teal-300 hover:shadow-md"
             >
-              {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
+              {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon.
+                  aspect-[16/7] menyamai kartu admin biar tak terlalu tinggi. */}
+              <div className="relative aspect-[16/7] w-full overflow-hidden bg-slate-100">
                 {s.cover_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={s.cover_url}
-                    alt={s.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={s.cover_url}
+                      alt={s.title}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </>
                 ) : (
                   <div className="flex h-full w-full items-center justify-center" style={{ background: `linear-gradient(135deg, ${TEAL_DEEP}, ${TEAL})` }}>
-                    <ClipboardCheck className="h-12 w-12 text-white/40" />
+                    <ClipboardCheck className="h-10 w-10 text-white/40" />
                   </div>
                 )}
                 {prog && (
@@ -193,7 +211,7 @@ export default function SimulasiKatalog() {
                 )}
               </div>
 
-              <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-1 flex-col p-4">
               <div className="mb-3 flex items-center gap-2">
                 <span
                   className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold text-white"

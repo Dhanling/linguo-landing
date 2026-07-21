@@ -156,6 +156,20 @@ export async function fetchPublishedSimulations(): Promise<Simulation[]> {
   }));
 }
 
+// ── Cover foto per JENIS tes (utk kartu teaser "Segera") ──────────────────────
+// Kartu terkunci bersifat per-jenis; simulasi-nya bisa saja masih Draft sehingga
+// cover-nya tak terbaca lewat query biasa. RPC get_simulation_covers (SECURITY
+// DEFINER) hanya mengembalikan {test_type, cover_url}, aman dipanggil siapa pun.
+export async function fetchSimulationCovers(): Promise<Partial<Record<TestType, string>>> {
+  const { data, error } = await supabase.rpc("get_simulation_covers");
+  if (error || !data) return {};
+  const out: Partial<Record<TestType, string>> = {};
+  (data as { test_type: TestType; cover_url: string | null }[]).forEach((r) => {
+    if (r.cover_url) out[r.test_type] = r.cover_url;
+  });
+  return out;
+}
+
 export async function fetchSimulation(id: string, preview = false): Promise<{
   simulation: Simulation | null; sections: Section[]; questions: Question[];
 }> {
