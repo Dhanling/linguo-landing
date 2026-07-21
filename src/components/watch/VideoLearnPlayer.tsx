@@ -501,7 +501,7 @@ export default function VideoLearnPlayer({
   // frame video tetap kelihatan sambil baca teks (tak berkedip hitam tiap hover).
   const [hoverPaused, setHoverPaused] = useState(false);
   // [watch-idle-thumb-v1] Layar diam ala Netflix: kalau video DIJEDA (sengaja, bukan
-  // hover-baca) lebih dari 5 detik, tampilkan thumbnail besar + gradien + judul.
+  // hover-baca) lebih dari 10 detik & kursor sudah diam, tampilkan thumbnail besar + gradien + judul.
   // Dimatikan saat diputar lagi / jeda-hover / sedang buka tooltip kata.
   const [idlePaused, setIdlePaused] = useState(false);
   // [watch-endscreen-recs-v1] Video habis (state YT = 0) → tampilkan layar akhir
@@ -636,22 +636,26 @@ export default function VideoLearnPlayer({
       if (hoverPaused) setHoverPaused(false);
     }
   }, [playing, hoverPaused]);
-  // [watch-idle-thumb-v1] Timer 5 detik untuk memunculkan layar diam ala Netflix.
+  // [watch-idle-thumb-v1] Timer 10 detik untuk memunculkan layar diam ala Netflix.
   // Hanya berjalan saat jeda DISENGAJA (bukan hover-baca subtitle); begitu diputar
   // lagi atau hover-pause, layar diam langsung disembunyikan & timer direset.
   useEffect(() => {
     // [watch-idle-hold-tooltip-v1] Saat balon arti kata (anchor) atau drawer Analisa
     // terbuka, JANGAN masuk layar diam — siswa sedang belajar & subtitle harus tetap
     // tampil (bukan ketutup thumbnail besar). Selaras dgn guard overlay tengah yang
-    // juga `!anchor && !anyDrawerOpen`. Tutup tooltip/drawer → efek re-run, timer 5 dtk
+    // juga `!anchor && !anyDrawerOpen`. Tutup tooltip/drawer → efek re-run, timer 10 dtk
     // arm lagi (layar diam muncul normal kalau jeda diteruskan).
-    if (playing || hoverPaused || anchor || anyDrawerOpen) {
+    // [watch-idle-cursor-active-v1] Selagi kursor MASIH BERGERAK di atas video
+    // (videoHot true), JANGAN dianggap diam — timer 10 dtk baru mulai berhitung
+    // setelah kursor benar-benar berhenti (videoHot mati sendiri ~2.6 dtk kemudian).
+    // Tiap gerakan pointer men-set videoHot true → efek re-run → timer di-reset.
+    if (playing || hoverPaused || anchor || anyDrawerOpen || videoHot) {
       setIdlePaused(false);
       return;
     }
-    const t = window.setTimeout(() => setIdlePaused(true), 5000);
+    const t = window.setTimeout(() => setIdlePaused(true), 10000);
     return () => window.clearTimeout(t);
-  }, [playing, hoverPaused, anchor, anyDrawerOpen]);
+  }, [playing, hoverPaused, anchor, anyDrawerOpen, videoHot]);
   const panelBeforeStudyRef = useRef<boolean | null>(null);
   // useLayoutEffect (bukan useEffect) supaya sembunyi/tampil transkrip terjadi SEBELUM
   // browser melukis. Kalau useEffect: render pembuka drawer sudah memasang padding
@@ -2305,7 +2309,7 @@ export default function VideoLearnPlayer({
                       <p className="mt-0.5 text-[12px] font-medium text-white/70">{video.channel}</p>
                     )}
                   </div>
-                  {/* [watch-idle-thumb-v1] Layar diam ala Netflix: jeda disengaja > 5 dtk
+                  {/* [watch-idle-thumb-v1] Layar diam ala Netflix: jeda disengaja > 10 dtk
                       → thumbnail besar object-cover + gradien kiri/bawah + judul & tombol
                       lanjut. Tidak muncul saat menganalisis kata (tooltip/drawer terbuka)
                       supaya frame tetap terlihat. Klik di mana pun = lanjut menonton. */}
