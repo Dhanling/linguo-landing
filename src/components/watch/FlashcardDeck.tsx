@@ -244,13 +244,16 @@ export default function FlashcardDeck({
   const [masteredThisSession, setMasteredThisSession] = useState<string[]>([]);
 
   // Hidrasi kosakata + pilih filter awal. Selalu buka pada SATU bahasa (bukan
-  // "Semua bahasa") supaya dashboard tak langsung mencampur semua flashcard:
-  // prioritas bahasa yang sedang ditonton, kalau tak punya kata → bahasa dengan
-  // kata terbanyak. "all" hanya saat belum ada kata sama sekali.
+  // "Semua bahasa") supaya dashboard tak langsung mencampur semua flashcard.
+  // Prioritas: bahasa yang SEDANG ditonton — walau belum punya kata tersimpan
+  // (mis. baru mulai belajar Inggris) dashboard tetap default ke bahasa itu &
+  // menampilkan empty state siap diisi, bukan lompat ke deck bahasa lain.
+  // Fallback ke bahasa dengan kata terbanyak hanya bila bahasa tontonan tak
+  // valid; "all" hanya saat belum ada kata sama sekali.
   useEffect(() => {
     const list = getSavedWords();
     setAll(list);
-    if (list.some((w) => w.langCode === initialLang)) {
+    if (getImmersionLang(initialLang)) {
       setFilter(initialLang);
     } else if (list.length > 0) {
       const counts: Record<string, number> = {};
@@ -262,12 +265,15 @@ export default function FlashcardDeck({
     }
   }, [initialLang]);
 
-  // Bahasa yang punya kata tersimpan — buat chip filter.
+  // Bahasa yang punya kata tersimpan — buat chip filter. Sertakan juga bahasa
+  // yang sedang ditonton walau belum punya kata (mis. Inggris), supaya bisa
+  // dipilih & tampil di pemilih bahasa (count 0, empty state siap diisi).
   const langCodes = useMemo(() => {
     const seen = new Set<string>();
     for (const w of all) seen.add(w.langCode);
+    if (getImmersionLang(initialLang)) seen.add(initialLang);
     return [...seen];
-  }, [all]);
+  }, [all, initialLang]);
 
   // Jumlah kata per bahasa — dipakai sidebar desktop.
   const langCounts = useMemo(() => {
@@ -573,6 +579,10 @@ export default function FlashcardDeck({
                   }}
                 />
               ) : totalWords === 0 ? (
+                <EmptyState />
+              ) : tab === "belajar" && words.length === 0 ? (
+                // Bahasa yang dipilih (mis. baru mulai ditonton) belum punya kata —
+                // arahkan menyimpan kata, bukan tampil "Semua kartu sudah diulang".
                 <EmptyState />
               ) : tab === "belajar" ? (
                 <BelajarTab
