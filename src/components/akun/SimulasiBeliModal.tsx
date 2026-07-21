@@ -210,7 +210,7 @@ export default function SimulasiBeliModal({
                   </label>
                   <div className="relative">
                     <Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="mis. LINGUOHEMAT" disabled={loading}
+                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Masukkan kode" disabled={loading}
                       className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
                   </div>
                   {freePromo && (
