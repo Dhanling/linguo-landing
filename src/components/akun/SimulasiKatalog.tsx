@@ -31,22 +31,24 @@ export default function SimulasiKatalog() {
   // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
   const [beliType, setBeliType] = useState<TestType | null>(null);
 
+  const refresh = async () => {
+    const info = await getStudentInfo();
+    const [data, ents] = await Promise.all([
+      fetchPublishedSimulations(),
+      fetchMyEntitlements(),
+    ]);
+    simCache = { sims: data, owned: ents, authed: !!info };
+    setAuthed(!!info);
+    setSims(data);
+    setOwned(ents);
+    setLoading(false);
+  };
+
   useEffect(() => {
     let alive = true;
-    (async () => {
-      const info = await getStudentInfo();
-      const [data, ents] = await Promise.all([
-        fetchPublishedSimulations(),
-        fetchMyEntitlements(),
-      ]);
-      simCache = { sims: data, owned: ents, authed: !!info };
-      if (!alive) return;
-      setAuthed(!!info);
-      setSims(data);
-      setOwned(ents);
-      setLoading(false);
-    })();
+    (async () => { if (alive) await refresh(); })();
     return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Jenis tes yang belum dimiliki → tampilkan kartu teaser terkunci.
@@ -139,7 +141,12 @@ export default function SimulasiKatalog() {
         </div>
       )}
 
-      <SimulasiBeliModal open={beliType !== null} onClose={() => setBeliType(null)} testType={beliType ?? undefined} />
+      <SimulasiBeliModal
+        open={beliType !== null}
+        onClose={() => setBeliType(null)}
+        testType={beliType ?? undefined}
+        onGranted={() => { setBeliType(null); refresh(); }}
+      />
     </div>
   );
 }

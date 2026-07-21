@@ -46,3 +46,17 @@ export const FEATURES = [
 ];
 
 export const formatRp = (n: number) => `Rp ${n.toLocaleString("id-ID")}`;
+
+// ── promo-code-v1 ────────────────────────────────────────────────────────────
+// Kode promo GRATIS: alih-alih bayar, user dapat akses coba beberapa kali.
+// `source_external_id` entitlement diprefix "PROMO-" supaya bisa dibedakan dari
+// pembelian berbayar (yang unlimited) → cap attempt hanya berlaku utk promo.
+// Prefix ini juga dipakai enforcement di simulations.ts (jangan diubah).
+export const PROMO_SOURCE_PREFIX = "PROMO-";
+export type FreePromo = { code: string; attemptLimit: number; label: string };
+export const FREE_PROMOS: Record<string, FreePromo> = {
+  LINGUOHEMAT: { code: "LINGUOHEMAT", attemptLimit: 3, label: "Gratis coba 3x" },
+};
+export const normalizePromo = (raw: string) => raw.trim().toUpperCase();
+export const getFreePromo = (raw: string): FreePromo | null =>
+  FREE_PROMOS[normalizePromo(raw)] ?? null;

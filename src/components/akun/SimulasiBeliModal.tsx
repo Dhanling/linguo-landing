@@ -5,9 +5,10 @@
 // halaman /simulasi/paket). Alur: pilih paket → isi data → bayar via Xendit.
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Check, Loader2, Mail } from "lucide-react";
+import { ArrowLeft, Check, Loader2, Mail, Tag, Sparkles } from "lucide-react";
 import { getStudentInfo } from "@/lib/simulations";
-import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, type Paket } from "@/lib/simulasiPakets";
+import { supabase } from "@/lib/supabase-client";
+import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, getFreePromo, type Paket } from "@/lib/simulasiPakets";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -16,10 +17,12 @@ export default function SimulasiBeliModal({
   open,
   onClose,
   testType,
+  onGranted,
 }: {
   open: boolean;
   onClose: () => void;
   testType?: string; // batasi paket ke satu jenis tes (mis. "toefl"); kosong = semua
+  onGranted?: () => void; // dipanggil setelah kode promo gratis berhasil diklaim
 }) {
   const list = testType ? PAKET.filter((p) => p.testType === testType) : PAKET;
 
@@ -27,9 +30,12 @@ export default function SimulasiBeliModal({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [wa, setWa] = useState("");
+  const [code, setCode] = useState(""); // kode promo / afiliator
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
 
   // Prefill dari user yang login → email harus cocok saat grant entitlement.
   // Kalau sudah login, data (nama/email/WA) diambil dari profil → tak perlu
@@ -47,8 +53,27 @@ export default function SimulasiBeliModal({
 
   // Reset pilihan tiap kali modal dibuka.
   useEffect(() => {
-    if (open) { setPaket(null); setError(""); }
+    if (open) { setPaket(null); setError(""); setCode(""); }
   }, [open]);
+
+  // Klaim kode promo GRATIS (mis. LINGUOHEMAT) → grant akses via endpoint, tanpa Xendit.
+  const claimFree = async () => {
+    setLoading(true); setError("");
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Kamu perlu login dulu untuk pakai kode promo.");
+      const res = await fetch("/api/simulasi/redeem-promo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ code: code.trim(), test_type: paket!.testType }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Gagal memakai kode promo");
+      onGranted?.();
+      onClose();
+    } catch (e: any) { setError(e.message); setLoading(false); }
+  };
 
   const checkout = async () => {
     // User login: WA opsional (sudah dari profil / boleh kosong). Tamu: semua wajib.
@@ -64,6 +89,8 @@ export default function SimulasiBeliModal({
           name: name.trim(), email: email.trim(), wa_number: wa.trim(),
           program: "simulasi", level: paket!.testType, productKey: paket!.productKey,
           variant: paket!.variant,
+          // kode afiliator (non-gratis) → atribusi komisi di server
+          ref_code: code.trim() || undefined,
         }),
       });
       const data = await res.json();
@@ -176,13 +203,39 @@ export default function SimulasiBeliModal({
                     </div>
                   </>
                 )}
+                {/* Kode promo / afiliator */}
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold text-slate-500">
+                    Kode Promo / Afiliator <span className="font-normal text-slate-400">(opsional)</span>
+                  </label>
+                  <div className="relative">
+                    <Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="mis. LINGUOHEMAT" disabled={loading}
+                      className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                  </div>
+                  {freePromo && (
+                    <p className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
+                      <Sparkles className="h-3.5 w-3.5" /> Kode {freePromo.code}: {freePromo.label} — gratis, tanpa bayar!
+                    </p>
+                  )}
+                </div>
                 {error && <p className="rounded-xl bg-red-50 px-4 py-2 text-sm text-red-500">{error}</p>}
-                <button onClick={checkout} disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
-                  style={{ background: TEAL }}>
-                  {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
-                </button>
-                <p className="text-center text-[11px] text-slate-400">Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank</p>
+                {freePromo ? (
+                  <button onClick={claimFree} disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
+                    style={{ background: "#059669" }}>
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Mengaktifkan...</>) : (<><Sparkles className="h-4 w-4" /> Klaim Akses Gratis</>)}
+                  </button>
+                ) : (
+                  <button onClick={checkout} disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
+                    style={{ background: TEAL }}>
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
+                  </button>
+                )}
+                <p className="text-center text-[11px] text-slate-400">
+                  {freePromo ? "Akses gratis dibatasi sesuai ketentuan kode promo." : "Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank"}
+                </p>
               </div>
             )}
           </motion.div>

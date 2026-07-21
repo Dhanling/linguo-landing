@@ -3,6 +3,7 @@
 // simulation_attempts / simulation_answers). Penilaian Writing/Speaking via
 // edge function grade-simulation (transcribe speaking + AI scoring).
 import { supabase } from "@/lib/supabase-client";
+import { PROMO_SOURCE_PREFIX, FREE_PROMOS } from "@/lib/simulasiPakets";
 
 export type TestType = "toefl" | "ielts";
 // Varian spesifik: IELTS Academic/General, TOEFL ITP/iBT.
@@ -287,6 +288,48 @@ export async function fetchMyEntitlements(): Promise<TestType[]> {
     .select("test_type")
     .eq("status", "active");
   return Array.from(new Set((data || []).map((r: any) => r.test_type))) as TestType[];
+}
+
+// ── promo-code-v1: cap attempt utk entitlement gratis (mis. LINGUOHEMAT) ──────
+export interface PromoAttemptStatus {
+  used: number;      // berapa kali user sudah mengerjakan tes jenis ini
+  limit: number;     // jatah dari promo
+  remaining: number; // sisa kesempatan
+  blocked: boolean;  // true bila jatah habis
+}
+
+// Cek status jatah gratis utk sebuah jenis tes. Return null bila:
+// - user belum login, ATAU
+// - entitlement bukan promo (mis. sudah bayar → unlimited, tak dibatasi).
+// Kalau entitlement-nya promo, kembalikan pemakaian vs jatah.
+export async function getPromoAttemptStatus(testType: TestType): Promise<PromoAttemptStatus | null> {
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
+
+  // RLS "Self read entitlement" sudah memfilter ke baris milik user.
+  const { data: ents } = await supabase
+    .from("simulation_entitlements")
+    .select("source_external_id")
+    .eq("status", "active")
+    .eq("test_type", testType);
+  if (!ents || ents.length === 0) return null;
+
+  const isPromoSrc = (s: unknown) => typeof s === "string" && s.startsWith(PROMO_SOURCE_PREFIX);
+  // Ada pembelian berbayar (non-promo)? → akses penuh, tak dibatasi.
+  if (ents.some((e) => !isPromoSrc(e.source_external_id))) return null;
+
+  const promoRow = ents.find((e) => isPromoSrc(e.source_external_id))!;
+  const code = String(promoRow.source_external_id).slice(PROMO_SOURCE_PREFIX.length);
+  const limit = FREE_PROMOS[code]?.attemptLimit ?? 3;
+
+  // Hitung attempt yang sudah dibuat untuk jenis tes ini (join ke test_simulations).
+  const { count } = await supabase
+    .from("simulation_attempts")
+    .select("id, test_simulations!inner(test_type)", { count: "exact", head: true })
+    .eq("user_id", user.id)
+    .eq("test_simulations.test_type", testType);
+  const used = count ?? 0;
+  return { used, limit, remaining: Math.max(0, limit - used), blocked: used >= limit };
 }
 
 export async function createAttempt(simulationId: string, info: StudentInfo): Promise<string | null> {

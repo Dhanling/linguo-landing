@@ -6,11 +6,11 @@ import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import {
   fetchSimulation, getStudentInfo, createAttempt, uploadRecording,
-  peekSimulationAccess, startGuestSession,
+  peekSimulationAccess, startGuestSession, getPromoAttemptStatus,
   gradeObjective, gradeWithAI, saveAnswers, finalizeAttempt,
   AUTO_GRADED, SKILL_LABEL, testTypeLabel, effectiveDurationMinutes,
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
-  type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill,
+  type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill, type PromoAttemptStatus,
 } from "@/lib/simulations";
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
@@ -291,7 +291,7 @@ function RangedAudio({ url, className }: { url: string; className?: string }) {
 }
 
 type AnswerState = { selected_index: number | null; text: string; audioBlob: Blob | null; audioUrl: string | null };
-type Phase = "loading" | "guestform" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound";
+type Phase = "loading" | "guestform" | "intro" | "running" | "grading" | "result" | "noauth" | "notfound" | "promoexhausted";
 type ResultItem = { question: Question; skill: string; correct: boolean | null; points: number; ai_score: number | null; ai_feedback: string | null };
 
 // ── Fullscreen API lintas-browser ────────────────────────────────────────────
@@ -340,6 +340,7 @@ export default function SimulasiRunnerPage() {
   const [gradingMsg, setGradingMsg] = useState("");
   const [deadline, setDeadline] = useState<number | null>(null);
   const [remaining, setRemaining] = useState<number | null>(null);
+  const [promo, setPromo] = useState<PromoAttemptStatus | null>(null); // jatah gratis (null = tak dibatasi)
   const [guestTitle, setGuestTitle] = useState<string>(""); // judul sim di form identitas tamu
   const [guestBusy, setGuestBusy] = useState(false);
   const submittingRef = useRef(false);
@@ -359,6 +360,11 @@ export default function SimulasiRunnerPage() {
     const init: Record<string, AnswerState> = {};
     shownQs.forEach((q) => { init[q.id] = { selected_index: null, text: "", audioBlob: null, audioUrl: null }; });
     setAnswers(init);
+    // promo-code-v1: kalau akses dari kode gratis, ambil sisa jatah utk ditampilkan
+    // di intro & dicek ulang saat mulai. Non-promo/berbayar → null (tak dibatasi).
+    if (!preview && studentInfo.user_id) {
+      try { setPromo(await getPromoAttemptStatus(simulation.test_type)); } catch { setPromo(null); }
+    }
     setPhase("intro");
   }
 
@@ -432,6 +438,13 @@ export default function SimulasiRunnerPage() {
 
   async function start() {
     if (!sim || !info) return;
+    // promo-code-v1: cek ulang jatah gratis tepat sebelum mulai (hindari race /
+    // buka tab lama). Jatah habis → layar "kesempatan gratis habis".
+    if (!preview && info.user_id) {
+      const ps = await getPromoAttemptStatus(sim.test_type);
+      setPromo(ps);
+      if (ps?.blocked) { setPhase("promoexhausted"); return; }
+    }
     enterFullscreen(); // masuk layar penuh saat mulai (fokus ala ujian)
     if (preview) {
       setAttemptId("preview"); // tak menyimpan attempt sungguhan
@@ -586,6 +599,28 @@ export default function SimulasiRunnerPage() {
     </Centered>
   );
 
+  // promo-code-v1: jatah gratis (kode promo) sudah habis.
+  if (phase === "promoexhausted") return (
+    <Centered>
+      <div className="text-center">
+        <Sparkles className="mx-auto h-8 w-8 text-slate-400" />
+        <p className="mt-2 font-semibold text-slate-800">Kesempatan gratis sudah habis</p>
+        <p className="mt-1 text-sm text-slate-500">
+          Kamu sudah memakai {promo?.limit ?? 3}× kesempatan coba gratis untuk tes ini.
+          Beli paket untuk akses penuh tanpa batas.
+        </p>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
+            Beli Paket <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
+            <ArrowLeft className="h-4 w-4" />Kembali ke daftar
+          </Link>
+        </div>
+      </div>
+    </Centered>
+  );
+
   if (!sim) return null;
 
   if (phase === "grading") return (
@@ -606,7 +641,7 @@ export default function SimulasiRunnerPage() {
   if (phase === "intro") {
     return (
       <Shell sim={sim} preview={preview}>
-        <IntroWizard sim={sim} sections={sections} questions={questions} onStart={start} />
+        <IntroWizard sim={sim} sections={sections} questions={questions} onStart={start} promo={promo} />
       </Shell>
     );
   }
@@ -870,8 +905,8 @@ function GuestIdentityForm({ title, busy, onSubmit }: {
 // ── Onboarding wizard: Ikhtisar → Petunjuk & cek mic → Rincian bagian ─────────
 const INTRO_STEPS = ["Ikhtisar", "Petunjuk", "Rincian"] as const;
 
-function IntroWizard({ sim, sections, questions, onStart }: {
-  sim: Simulation; sections: Section[]; questions: Question[]; onStart: () => void;
+function IntroWizard({ sim, sections, questions, onStart, promo }: {
+  sim: Simulation; sections: Section[]; questions: Question[]; onStart: () => void; promo: PromoAttemptStatus | null;
 }) {
   const [step, setStep] = useState(0);
   const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
@@ -896,6 +931,16 @@ function IntroWizard({ sim, sections, questions, onStart }: {
 
   return (
     <div>
+      {/* promo-code-v1: badge sisa jatah gratis (hanya utk akses via kode promo) */}
+      {promo && (
+        <div className="mb-4 flex items-center gap-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-800">
+          <Sparkles className="h-4 w-4 shrink-0" />
+          <span>
+            Akses gratis (kode promo) — sisa <b>{promo.remaining}</b> dari {promo.limit}× kesempatan.
+            {promo.remaining <= 0 && " Jatah habis, beli paket untuk lanjut."}
+          </span>
+        </div>
+      )}
       {/* Stepper */}
       <div className="mb-5 flex items-center">
         {INTRO_STEPS.map((label, i) => (
