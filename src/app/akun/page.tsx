@@ -2291,7 +2291,7 @@ export default function AkunPage() {
     if (!resolved) {
       try {
         const saved = localStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
