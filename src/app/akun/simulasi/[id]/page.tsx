@@ -24,6 +24,10 @@ const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
 const YELLOW = "#FFC93C";
 
+// Maksimal soal yang tampil per halaman — supaya siswa tak perlu menggulir jauh
+// ke bawah; sisanya dibagi ke halaman berikutnya (tombol "Lanjut" di atas).
+const PAGE_SIZE = 5;
+
 const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic, structure: Type };
 
 // Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
@@ -312,6 +316,37 @@ function exitFs() {
   try { fn?.call(document); } catch { /* ignore */ }
 }
 
+// ── Simpan progres berjalan (localStorage) supaya siswa bisa keluar lalu MELANJUTKAN
+//    dari sisa waktu & jawaban yang sama. Di-key per simulasi + user (tamu = "guest").
+//    Audio (blob) tak ikut disimpan — hanya pilihan/teks/URL rekaman yang sudah diunggah.
+type SavedProgress = {
+  v: 1;
+  attemptId: string;
+  deadline: number | null; // timestamp absolut → sisa waktu dihitung ulang saat lanjut
+  answers: Record<string, { selected_index: number | null; text: string; audioUrl: string | null }>;
+  secIdx: number;
+  maxSecIdx: number;
+  introDone: number[];
+  qPage: number;
+  savedAt: number;
+};
+function progressKey(id: string, uid: string | null | undefined) {
+  return `sim-progress:v1:${id}:${uid ?? "guest"}`;
+}
+function saveProgress(id: string, uid: string | null | undefined, data: SavedProgress) {
+  try { localStorage.setItem(progressKey(id, uid), JSON.stringify(data)); } catch { /* ignore */ }
+}
+function readProgress(id: string, uid: string | null | undefined): SavedProgress | null {
+  try {
+    const raw = localStorage.getItem(progressKey(id, uid));
+    const p = raw ? JSON.parse(raw) : null;
+    return p && p.attemptId ? (p as SavedProgress) : null;
+  } catch { return null; }
+}
+function clearProgress(id: string, uid: string | null | undefined) {
+  try { localStorage.removeItem(progressKey(id, uid)); } catch { /* ignore */ }
+}
+
 export default function SimulasiRunnerPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id as string;
@@ -326,6 +361,8 @@ export default function SimulasiRunnerPage() {
   const [attemptId, setAttemptId] = useState<string | null>(null);
   const [secIdx, setSecIdx] = useState(0);
   const [maxSecIdx, setMaxSecIdx] = useState(0);
+  // Halaman soal aktif dalam bagian sekarang (paginasi tiap PAGE_SIZE soal).
+  const [qPage, setQPage] = useState(0);
   // Tiap bagian diawali layar "intro/petunjuk" sebelum soalnya. Set = bagian yang
   // intronya sudah dilewati (siswa klik "Mulai bagian ini") → tampil soal.
   const [introDone, setIntroDone] = useState<Set<number>>(new Set());
@@ -364,6 +401,25 @@ export default function SimulasiRunnerPage() {
     // di intro & dicek ulang saat mulai. Non-promo/berbayar → null (tak dibatasi).
     if (!preview && studentInfo.user_id) {
       try { setPromo(await getPromoAttemptStatus(simulation.test_type)); } catch { setPromo(null); }
+    }
+    // Ada progres berjalan yang tersimpan? → lanjutkan dari sisa waktu & jawaban
+    // sebelumnya (lompati layar intro). Audio rekaman lokal tak ikut dipulihkan.
+    const saved = preview ? null : readProgress(id, studentInfo.user_id);
+    if (saved) {
+      const restored = { ...init };
+      Object.entries(saved.answers || {}).forEach(([qid, v]) => {
+        if (restored[qid]) restored[qid] = { selected_index: v.selected_index ?? null, text: v.text ?? "", audioBlob: null, audioUrl: v.audioUrl ?? null };
+      });
+      setAnswers(restored);
+      setAttemptId(saved.attemptId);
+      setDeadline(saved.deadline ?? null);
+      setRemaining(saved.deadline != null ? Math.max(0, Math.round((saved.deadline - Date.now()) / 1000)) : null);
+      setSecIdx(Math.min(saved.secIdx ?? 0, Math.max(0, secsWithQs.length - 1)));
+      setMaxSecIdx(saved.maxSecIdx ?? 0);
+      setIntroDone(new Set(saved.introDone ?? []));
+      setQPage(saved.qPage ?? 0);
+      setPhase("running");
+      return;
     }
     setPhase("intro");
   }
@@ -408,6 +464,16 @@ export default function SimulasiRunnerPage() {
   // namun belum dijawab dianggap "dilewati" (ditandai merah di navigasi).
   useEffect(() => { setMaxSecIdx((m) => Math.max(m, secIdx)); }, [secIdx]);
 
+  // Simpan progres tiap kali jawaban/posisi berubah selama tes berjalan → bisa
+  // keluar & lanjut lagi dari sisa waktu yang sama. Preview tak disimpan.
+  useEffect(() => {
+    if (preview || phase !== "running" || !attemptId || !info) return;
+    const ser: SavedProgress["answers"] = {};
+    Object.entries(answers).forEach(([qid, a]) => { ser[qid] = { selected_index: a.selected_index, text: a.text, audioUrl: a.audioUrl }; });
+    saveProgress(id, info.user_id, { v: 1, attemptId, deadline, answers: ser, secIdx, maxSecIdx, introDone: [...introDone], qPage, savedAt: Date.now() });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preview, phase, attemptId, answers, deadline, secIdx, maxSecIdx, introDone, qPage]);
+
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
 
@@ -428,6 +494,10 @@ export default function SimulasiRunnerPage() {
   function goToQuestion(targetSecIdx: number, qid: string) {
     setSecIdx(targetSecIdx);
     dismissIntro(targetSecIdx); // loncat ke nomor soal → lewati layar intro bagian
+    // Pindah ke halaman yang memuat soal tujuan (paginasi PAGE_SIZE soal/halaman).
+    const targetSecId = sections[targetSecIdx]?.id;
+    const idxInSec = questions.filter((q) => q.section_id === targetSecId).findIndex((q) => q.id === qid);
+    setQPage(idxInSec >= 0 ? Math.floor(idxInSec / PAGE_SIZE) : 0);
     requestAnimationFrame(() => setTimeout(() => {
       const el = document.getElementById(`q-${qid}`);
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -558,6 +628,7 @@ export default function SimulasiRunnerPage() {
     if (!preview) { // mode preview tidak menyimpan attempt/jawaban ke database
       await saveAnswers(attemptId, payloads);
       await finalizeAttempt(attemptId, t);
+      clearProgress(id, info?.user_id); // tes selesai → buang progres tersimpan
     }
     setTotals(t);
     setResults(resultItems);
@@ -652,6 +723,32 @@ export default function SimulasiRunnerPage() {
   const isLast = secIdx === sections.length - 1;
   const SkillIcon = SKILL_ICON[section.skill];
   const hasMedia = !!(section.audio_url || section.passage);
+
+  // Paginasi soal: maksimal PAGE_SIZE soal per halaman (kurangi scroll panjang).
+  const pageCount = Math.max(1, Math.ceil(secQs.length / PAGE_SIZE));
+  const safePage = Math.min(qPage, pageCount - 1);
+  const pageStart = safePage * PAGE_SIZE;
+  const pageQs = secQs.slice(pageStart, pageStart + PAGE_SIZE);
+  const isLastPage = safePage >= pageCount - 1;
+  const isFirstPage = safePage === 0 && secIdx === 0;
+  const scrollToTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { /* ignore */ } };
+  // Lanjut: halaman berikut dalam bagian, atau pindah ke bagian selanjutnya.
+  const goNextPage = () => {
+    if (!isLastPage) { setQPage(safePage + 1); scrollToTop(); return; }
+    const next = secIdx + 1;
+    if (next >= sections.length) return;
+    if (sections[next]?.skill === section.skill) dismissIntro(next); // skill sama → lewati intro
+    setSecIdx(next); setQPage(0); scrollToTop();
+  };
+  // Sebelumnya: halaman sebelum dalam bagian, atau balik ke halaman terakhir bagian lalu.
+  const goPrevPage = () => {
+    if (safePage > 0) { setQPage(safePage - 1); scrollToTop(); return; }
+    if (secIdx === 0) return;
+    const prev = secIdx - 1;
+    const prevCount = questions.filter((q) => q.section_id === sections[prev].id).length;
+    dismissIntro(prev);
+    setSecIdx(prev); setQPage(Math.max(0, Math.ceil(prevCount / PAGE_SIZE) - 1)); scrollToTop();
+  };
   const sectionHeader = (
     <>
       <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
@@ -716,12 +813,12 @@ export default function SimulasiRunnerPage() {
           <div className="mt-6 flex items-center justify-between gap-3">
             <button
               disabled={secIdx === 0}
-              onClick={() => setSecIdx((i) => Math.max(0, i - 1))}
+              onClick={() => { setQPage(0); setSecIdx((i) => Math.max(0, i - 1)); }}
               className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
             >
               <ArrowLeft className="h-4 w-4" />Bagian sebelumnya
             </button>
-            <button onClick={() => { enterFullscreen(); dismissIntro(secIdx); }} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+            <button onClick={() => { setQPage(0); enterFullscreen(); dismissIntro(secIdx); }} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
               <PlayCircle className="h-4 w-4" />Mulai bagian ini
             </button>
           </div>
@@ -739,6 +836,34 @@ export default function SimulasiRunnerPage() {
         answered={questions.filter((q) => isAnswered(q, answers[q.id])).length}
         total={questions.length}
       />
+
+      {/* Navigasi halaman soal — dipindah ke atas (di bawah progress bar), kanan.
+          Maks PAGE_SIZE soal/halaman → tak perlu menggulir jauh untuk lanjut. */}
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <span className="text-xs font-medium text-slate-500 tabular-nums">
+          Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, secQs.length)} dari {secQs.length}
+          {pageCount > 1 && <span className="text-slate-400"> · Hal {safePage + 1}/{pageCount}</span>}
+        </span>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            disabled={isFirstPage}
+            onClick={goPrevPage}
+            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-semibold text-slate-600 disabled:opacity-40"
+          >
+            <ArrowLeft className="h-4 w-4" />Sebelumnya
+          </button>
+          {isLast && isLastPage ? (
+            <button type="button" onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
+              <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
+            </button>
+          ) : (
+            <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white" style={{ background: TEAL }}>
+              Lanjut <ArrowRight className="h-4 w-4" />
+            </button>
+          )}
+        </div>
+      </div>
 
       <QuestionNavigator
         sections={sections}
@@ -789,37 +914,29 @@ export default function SimulasiRunnerPage() {
             {!hasMedia && sectionHeader}
 
             <div className="mt-5 space-y-5 first:mt-0">
-              {secQs.map((q) => (
+              {pageQs.map((q) => (
                 <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
               ))}
               {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
             </div>
 
+            {/* Navigasi bawah (kembar dengan yang di atas) — praktis setelah menjawab
+                halaman ini tanpa harus menggulir balik ke atas. */}
             <div className="mt-6 flex items-center justify-between gap-3">
               <button
-                disabled={secIdx === 0}
-                onClick={() => setSecIdx((i) => Math.max(0, i - 1))}
+                type="button"
+                disabled={isFirstPage}
+                onClick={goPrevPage}
                 className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
               >
                 <ArrowLeft className="h-4 w-4" />Sebelumnya
               </button>
-              {isLast ? (
-                <button onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
+              {isLast && isLastPage ? (
+                <button type="button" onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
                   <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
                 </button>
               ) : (
-                <button
-                  onClick={() => {
-                    const next = secIdx + 1;
-                    // Bagian berikutnya masih skill yang sama (mis. Listening Part 2
-                    // setelah Part 1) → lewati layar intro, langsung tampilkan soal &
-                    // audionya karena petunjuknya sama dgn bagian sebelumnya.
-                    if (sections[next]?.skill === section.skill) dismissIntro(next);
-                    setSecIdx(next);
-                  }}
-                  className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white"
-                  style={{ background: TEAL }}
-                >
+                <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
                   Lanjut <ArrowRight className="h-4 w-4" />
                 </button>
               )}
@@ -1315,9 +1432,10 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
         <div className={`mx-auto flex ${maxW} items-center gap-3 px-4 py-3.5 sm:px-6`}>
           {confirmExit && !preview ? (
-            // Siswa sungguhan: konfirmasi dulu (cegah kehilangan progres/waktu).
-            <button type="button" onClick={() => setAskExit(true)} title="Keluar simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
-              <ArrowLeft className="h-5 w-5" />
+            // Siswa sungguhan: tombol tutup (X) + konfirmasi dulu. Progres & sisa
+            // waktu tersimpan → bisa dilanjutkan saat masuk lagi.
+            <button type="button" onClick={() => setAskExit(true)} title="Tutup simulasi" className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100">
+              <X className="h-5 w-5" />
             </button>
           ) : (
             // Preview / layar non-ujian: langsung keluar (tak ada progres yg hilang) &
@@ -1358,15 +1476,15 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
           <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setAskExit(false)} />
           <div className="relative w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
             <div className="flex items-start gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-500">
-                <AlertCircle className="h-5 w-5" />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-600">
+                <X className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <p className="text-base font-bold text-slate-900">Keluar dari simulasi?</p>
+                <p className="text-base font-bold text-slate-900">Tutup simulasi?</p>
                 <p className="mt-1 text-sm text-slate-500">
                   {preview
                     ? "Kamu akan keluar dari mode preview."
-                    : "Progres & sisa waktu bagian ini bisa hilang. Kamu yakin mau keluar?"}
+                    : "Jawaban & sisa waktu tersimpan otomatis. Kamu bisa membuka simulasi ini lagi dan melanjutkan dari titik ini."}
                 </p>
               </div>
             </div>
@@ -1381,9 +1499,10 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
               <button
                 type="button"
                 onClick={leave}
-                className="rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white hover:bg-red-600"
+                className="rounded-xl px-4 py-2 text-sm font-bold text-white"
+                style={{ background: TEAL }}
               >
-                Ya, keluar
+                {preview ? "Ya, keluar" : "Ya, tutup & simpan"}
               </button>
             </div>
           </div>
