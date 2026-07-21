@@ -496,7 +496,7 @@ function IeltsToeflPlacement() {
             </div>
           </div>
           <button
-            onClick={() => setPhase("lead")}
+            onClick={() => setPhase("test")}
             className="w-full py-3.5 bg-gradient-to-r from-teal-500 to-emerald-600 text-white font-semibold rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2"
           >
             Mulai Test <ChevronRight className="w-5 h-5" />
