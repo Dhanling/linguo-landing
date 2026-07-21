@@ -15,7 +15,20 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const MODEL = "gemini-2.5-flash";
+// Rantai model fallback — samakan dengan /api/word-deep. Kuota free-tier Gemini
+// dihitung PER-MODEL per hari; saat model utama kena 429 RESOURCE_EXHAUSTED
+// (gejalanya "AI tidak mengembalikan JSON." karena callGemini balikin ""), kita
+// jatuh ke model berikutnya yang punya jatah harian sendiri agar fitur tetap hidup.
+const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
+// Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
+// thinkingConfig; model lain akan 400 kalau dikirim.
+function supportsThinking(model: string): boolean {
+  return (
+    model.startsWith("gemini-2.5") ||
+    model.startsWith("gemini-3") ||
+    model.endsWith("-latest")
+  );
+}
 const EXPLANATION_LANGUAGE = "Bahasa Indonesia";
 
 // Nama Inggris tiap bahasa — dimasukkan langsung ke prompt ("... in French").
@@ -38,9 +51,10 @@ const NON_LATIN = new Set([
 
 const CEFR_LEVELS = new Set(["A1", "A2", "B1", "B2", "C1"]);
 
-// Panggil Gemini generateContent mode JSON; balikin teks gabungan (atau "").
-async function callGemini(prompt: string): Promise<string> {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+// Satu panggilan generateContent ke SATU model, mode JSON; balikin teks gabungan
+// (atau "" saat gagal — termasuk 429 kuota harian, sinyal untuk coba model berikut).
+async function callModel(model: string, prompt: string): Promise<string> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
@@ -49,7 +63,7 @@ async function callGemini(prompt: string): Promise<string> {
       generationConfig: {
         temperature: 0.5,
         responseMimeType: "application/json",
-        thinkingConfig: { thinkingBudget: 0 },
+        ...(supportsThinking(model) ? { thinkingConfig: { thinkingBudget: 0 } } : {}),
       },
     }),
   });
@@ -61,6 +75,16 @@ async function callGemini(prompt: string): Promise<string> {
       ?.map((p: any) => (typeof p?.text === "string" ? p.text : ""))
       .join("") ?? ""
   );
+}
+
+// Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
+// Balikin "" hanya bila semua model habis kuota/gagal.
+async function callGemini(prompt: string): Promise<string> {
+  for (const model of MODELS) {
+    const text = await callModel(model, prompt);
+    if (text.trim()) return text;
+  }
+  return "";
 }
 
 export interface GeneratedCard {
