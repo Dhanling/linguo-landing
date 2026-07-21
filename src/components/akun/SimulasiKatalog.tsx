@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import SimulasiBeliModal from "./SimulasiBeliModal";
 import { testTypeHasAvailable } from "@/lib/simulasiPakets";
-import { readProgress, answeredCount } from "@/lib/simProgress";
+import { readProgress, readAnyProgress, answeredCount } from "@/lib/simProgress";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -54,7 +54,9 @@ export default function SimulasiKatalog() {
   const reloadProgress = useCallback(() => {
     const m: Record<string, { answered: number; total: number }> = {};
     for (const s of sims) {
-      const p = readProgress(s.id, uid);
+      // Coba key uid saat ini dulu; kalau tak ketemu (tersimpan di bawah identitas
+      // lain krn race auth / sesi tamu), fallback pindai semua key sim ini.
+      const p = readProgress(s.id, uid) ?? readAnyProgress(s.id);
       if (p) m[s.id] = { answered: answeredCount(p), total: s.question_count ?? 0 };
     }
     setProgressMap(m);

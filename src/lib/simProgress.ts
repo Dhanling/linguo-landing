@@ -31,6 +31,26 @@ export function readProgress(id: string, uid: string | null | undefined): SavedP
   } catch { return null; }
 }
 
+// Cari progres simulasi TANPA bergantung pada uid — pindai semua key
+// `sim-progress:v1:${id}:*` lalu ambil yang paling baru disimpan. Dipakai katalog
+// supaya progres tetap kebaca walau tersimpan di bawah identitas berbeda (mis.
+// race GoTrue bikin getStudentInfo sesaat null → tersimpan sebagai "guest",
+// atau sesi tamu anonim) dari uid yang dipakai katalog saat membaca.
+export function readAnyProgress(id: string): SavedProgress | null {
+  try {
+    const prefix = `sim-progress:v1:${id}:`;
+    let best: SavedProgress | null = null;
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !k.startsWith(prefix)) continue;
+      const raw = localStorage.getItem(k);
+      const p = raw ? JSON.parse(raw) : null;
+      if (p && p.attemptId && (!best || (p.savedAt ?? 0) > (best.savedAt ?? 0))) best = p as SavedProgress;
+    }
+    return best;
+  } catch { return null; }
+}
+
 export function clearProgress(id: string, uid: string | null | undefined) {
   try { localStorage.removeItem(progressKey(id, uid)); } catch { /* ignore */ }
 }

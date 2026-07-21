@@ -12,7 +12,7 @@ import {
   TEST_OVERVIEW, SKILL_HOWTO, GENERAL_RULES,
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill, type PromoAttemptStatus,
 } from "@/lib/simulations";
-import { readProgress, saveProgress, clearProgress, type SavedProgress } from "@/lib/simProgress";
+import { readProgress, readAnyProgress, saveProgress, clearProgress, type SavedProgress } from "@/lib/simProgress";
 import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
@@ -374,7 +374,9 @@ export default function SimulasiRunnerPage() {
     }
     // Ada progres berjalan yang tersimpan? → lanjutkan dari sisa waktu & jawaban
     // sebelumnya (lompati layar intro). Audio rekaman lokal tak ikut dipulihkan.
-    const saved = preview ? null : readProgress(id, studentInfo.user_id);
+    // Utamakan key uid saat ini; fallback pindai semua key sim ini supaya sesi
+    // yang tersimpan di bawah identitas berbeda (race auth / tamu) tetap bisa dilanjut.
+    const saved = preview ? null : (readProgress(id, studentInfo.user_id) ?? readAnyProgress(id));
     if (saved) {
       const restored = { ...init };
       Object.entries(saved.answers || {}).forEach(([qid, v]) => {
