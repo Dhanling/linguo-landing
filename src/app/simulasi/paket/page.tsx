@@ -6,9 +6,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Sparkles, Check, Loader2 } from "lucide-react";
+import { ArrowLeft, Sparkles, Check, Loader2, Tag } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
-import { PAKET, PRICE, FEATURES, SKILL_META, formatRp } from "@/lib/simulasiPakets";
+import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, getFreePromo } from "@/lib/simulasiPakets";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -19,8 +19,11 @@ export default function SimulasiPaketPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [wa, setWa] = useState("");
+  const [code, setCode] = useState(""); // kode promo / afiliator
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
 
   // Prefill dari user yang sudah login → kurangi salah email (entitlement match by email).
   useEffect(() => {
@@ -35,7 +38,26 @@ export default function SimulasiPaketPage() {
   const openCheckout = (p: (typeof PAKET)[number]) => {
     setPaket(p);
     setError("");
+    setCode("");
     setOpen(true);
+  };
+
+  // Klaim kode promo GRATIS (mis. LINGUOHEMAT) → grant akses via endpoint, tanpa Xendit.
+  const claimFree = async () => {
+    setLoading(true); setError("");
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token;
+      if (!token) throw new Error("Login dulu di /akun untuk pakai kode gratis ini.");
+      const res = await fetch("/api/simulasi/redeem-promo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ code: code.trim(), test_type: paket!.testType }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Gagal memakai kode promo");
+      window.location.href = "/akun?menu=simulasi";
+    } catch (e: any) { setError(e.message); setLoading(false); }
   };
 
   const checkout = async () => {
@@ -49,6 +71,8 @@ export default function SimulasiPaketPage() {
           name: name.trim(), email: email.trim(), wa_number: wa.trim(),
           program: "simulasi", level: paket!.testType, productKey: paket!.productKey,
           variant: paket!.variant,
+          // kode afiliator (non-gratis) → atribusi komisi di server
+          ref_code: code.trim() || undefined,
         }),
       });
       const data = await res.json();
@@ -170,13 +194,39 @@ export default function SimulasiPaketPage() {
                   <input type="tel" value={wa} onChange={(e) => setWa(e.target.value)} placeholder="0821..." disabled={loading}
                     className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
                 </div>
+                {/* Kode promo / afiliator */}
+                <div>
+                  <label className="mb-1.5 block text-xs font-semibold text-slate-500">
+                    Kode Promo / Afiliator <span className="font-normal text-slate-400">(opsional)</span>
+                  </label>
+                  <div className="relative">
+                    <Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                    <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="mis. LINGUOHEMAT" disabled={loading}
+                      className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                  </div>
+                  {freePromo && (
+                    <p className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
+                      <Sparkles className="h-3.5 w-3.5" /> Kode {freePromo.code}: {freePromo.label} — gratis, tanpa bayar!
+                    </p>
+                  )}
+                </div>
                 {error && <p className="rounded-xl bg-red-50 px-4 py-2 text-sm text-red-500">{error}</p>}
-                <button onClick={checkout} disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
-                  style={{ background: TEAL }}>
-                  {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
-                </button>
-                <p className="text-center text-[11px] text-slate-400">Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank</p>
+                {freePromo ? (
+                  <button onClick={claimFree} disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
+                    style={{ background: "#059669" }}>
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Mengaktifkan...</>) : (<><Sparkles className="h-4 w-4" /> Klaim Akses Gratis</>)}
+                  </button>
+                ) : (
+                  <button onClick={checkout} disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
+                    style={{ background: TEAL }}>
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
+                  </button>
+                )}
+                <p className="text-center text-[11px] text-slate-400">
+                  {freePromo ? "Akses gratis dibatasi sesuai ketentuan kode promo." : "Pembayaran aman via Xendit: QRIS, GoPay, OVO, Dana, ShopeePay, Transfer Bank"}
+                </p>
               </div>
             </motion.div>
           </motion.div>
