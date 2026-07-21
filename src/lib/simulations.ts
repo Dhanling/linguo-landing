@@ -322,12 +322,15 @@ export async function getPromoAttemptStatus(testType: TestType): Promise<PromoAt
   const code = String(promoRow.source_external_id).slice(PROMO_SOURCE_PREFIX.length);
   const limit = FREE_PROMOS[code]?.attemptLimit ?? 3;
 
-  // Hitung attempt yang sudah dibuat untuk jenis tes ini (join ke test_simulations).
+  // Hitung attempt yang BENAR-BENAR sudah dikumpulkan (submitted_at terisi) untuk
+  // jenis tes ini. Attempt yang masih "in_progress" (mulai lalu keluar tanpa submit)
+  // TIDAK dihitung — jatah baru terpakai saat siswa menekan "Selesai & Kirim".
   const { count } = await supabase
     .from("simulation_attempts")
     .select("id, test_simulations!inner(test_type)", { count: "exact", head: true })
     .eq("user_id", user.id)
-    .eq("test_simulations.test_type", testType);
+    .eq("test_simulations.test_type", testType)
+    .not("submitted_at", "is", null);
   const used = count ?? 0;
   return { used, limit, remaining: Math.max(0, limit - used), blocked: used >= limit };
 }

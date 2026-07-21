@@ -9,10 +9,11 @@ import {
   TEST_TYPE_LABEL, testTypeLabel, type Simulation, type TestType,
 } from "@/lib/simulations";
 import {
-  ClipboardCheck, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles,
+  ClipboardCheck, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles, PlayCircle,
 } from "lucide-react";
 import SimulasiBeliModal from "./SimulasiBeliModal";
 import { testTypeHasAvailable } from "@/lib/simulasiPakets";
+import { readProgress, answeredCount } from "@/lib/simProgress";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -31,6 +32,9 @@ export default function SimulasiKatalog() {
   const [authed, setAuthed] = useState<boolean | null>(simCache ? simCache.authed : null);
   // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
   const [beliType, setBeliType] = useState<TestType | null>(null);
+  // Progres berjalan yang tersimpan lokal (per simulasi): utk progress bar "Lanjut".
+  const [uid, setUid] = useState<string | null>(null);
+  const [progressMap, setProgressMap] = useState<Record<string, { answered: number; total: number }>>({});
 
   const refresh = async () => {
     const info = await getStudentInfo();
@@ -40,10 +44,21 @@ export default function SimulasiKatalog() {
     ]);
     simCache = { sims: data, owned: ents, authed: !!info };
     setAuthed(!!info);
+    setUid(info?.user_id ?? null);
     setSims(data);
     setOwned(ents);
     setLoading(false);
   };
+
+  // Baca progres tersimpan (localStorage) tiap kali daftar sim / user berubah.
+  useEffect(() => {
+    const m: Record<string, { answered: number; total: number }> = {};
+    for (const s of sims) {
+      const p = readProgress(s.id, uid);
+      if (p) m[s.id] = { answered: answeredCount(p), total: s.question_count ?? 0 };
+    }
+    setProgressMap(m);
+  }, [sims, uid]);
 
   useEffect(() => {
     let alive = true;
@@ -126,7 +141,10 @@ export default function SimulasiKatalog() {
             </div>
             );
           })}
-          {sims.map((s) => (
+          {sims.map((s) => {
+            const prog = progressMap[s.id];
+            const pct = prog && prog.total > 0 ? Math.min(100, Math.round((prog.answered / prog.total) * 100)) : 0;
+            return (
             <Link
               key={s.id}
               href={`/akun/simulasi/${s.id}`}
@@ -140,6 +158,11 @@ export default function SimulasiKatalog() {
                   <Globe className="h-3 w-3" />{testTypeLabel(s.test_type, s.test_variant)}
                 </span>
                 {s.level && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-slate-600">{s.level}</span>}
+                {prog && (
+                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-1 text-[11px] font-semibold text-teal-700">
+                    <PlayCircle className="h-3 w-3" />Sedang dikerjakan
+                  </span>
+                )}
               </div>
               <h2 className="font-bold text-slate-900 group-hover:text-teal-700">{s.title}</h2>
               {s.description && <p className="mt-1 line-clamp-2 text-sm text-slate-500">{s.description}</p>}
@@ -148,11 +171,26 @@ export default function SimulasiKatalog() {
                 <span className="flex items-center gap-1"><ListChecks className="h-3.5 w-3.5" />{s.question_count} soal</span>
                 {s.duration_minutes > 0 && <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{s.duration_minutes}m</span>}
               </div>
+
+              {/* Progress bar — muncul bila ada sesi tersimpan yang belum dikumpulkan. */}
+              {prog && (
+                <div className="mt-3">
+                  <div className="mb-1 flex items-center justify-between text-[11px] font-medium">
+                    <span className="text-teal-700">Progres tersimpan</span>
+                    <span className="tabular-nums text-slate-500">{prog.answered}/{prog.total} soal · {pct}%</span>
+                  </div>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+                    <div className="h-full rounded-full transition-[width]" style={{ width: `${pct}%`, background: TEAL }} />
+                  </div>
+                </div>
+              )}
+
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
-                Mulai <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                {prog ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
             </Link>
-          ))}
+            );
+          })}
           {sims.length === 0 && lockedTypes.length === 0 && (
             <div className="sm:col-span-2 xl:col-span-3 rounded-2xl border border-slate-200 bg-white p-10 text-center text-slate-500">
               <ClipboardCheck className="mx-auto mb-3 h-8 w-8 opacity-50" />
