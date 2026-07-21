@@ -2,7 +2,7 @@
 
 // [simulasi-inshell-v1] Katalog simulasi versi in-shell (dipakai di tab /akun, sidebar tetap tampil).
 // Sebelumnya cuma ada di route terpisah /akun/simulasi yang nutup sidebar.
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo,
@@ -50,8 +50,8 @@ export default function SimulasiKatalog() {
     setLoading(false);
   };
 
-  // Baca progres tersimpan (localStorage) tiap kali daftar sim / user berubah.
-  useEffect(() => {
+  // Baca progres tersimpan (localStorage) → peta { answered, total } per simulasi.
+  const reloadProgress = useCallback(() => {
     const m: Record<string, { answered: number; total: number }> = {};
     for (const s of sims) {
       const p = readProgress(s.id, uid);
@@ -59,6 +59,26 @@ export default function SimulasiKatalog() {
     }
     setProgressMap(m);
   }, [sims, uid]);
+
+  // Baca ulang tiap kali daftar sim / user berubah, DAN tiap kali halaman ini
+  // kembali aktif. Runner ujian dibuka di tab lain / lewat tombol back (bfcache),
+  // jadi tanpa ini progres yang baru disimpan di sana tak pernah terbaca di kartu.
+  useEffect(() => {
+    reloadProgress();
+    const onVisible = () => { if (!document.hidden) reloadProgress(); };
+    const onStorage = (e: StorageEvent) => { if (!e.key || e.key.startsWith("sim-progress:")) reloadProgress(); };
+    const onPageShow = () => reloadProgress(); // pemulihan bfcache (tombol back)
+    window.addEventListener("focus", reloadProgress);
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("storage", onStorage);
+    window.addEventListener("pageshow", onPageShow);
+    return () => {
+      window.removeEventListener("focus", reloadProgress);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener("pageshow", onPageShow);
+    };
+  }, [reloadProgress]);
 
   useEffect(() => {
     let alive = true;
