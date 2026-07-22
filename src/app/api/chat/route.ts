@@ -63,7 +63,7 @@ Biaya Private (per sesi 60 menit, pengajar lokal) — tergantung KATEGORI bahasa
 - Kategori D (Nusantara): Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura, Melayu.
 - Kategori E: BIPA (Indonesian for Foreigners).
 Tarif per sesi 60 menit (urutan A1 | A2 | B1/B2 | C1/C2):
-- Kategori C: Rp 100.000 | 105.000 | 110.000 | 120.000
+- Kategori C: Rp 100.000 | 110.000 | 120.000 | 130.000
 - Kategori B: Rp 110.000 | 120.000 | 130.000 | 140.000
 - Kategori A: Rp 120.000 | 130.000 | 140.000 | 150.000
 - Kategori D: Rp 90.000 | 95.000 | 100.000 | 110.000
