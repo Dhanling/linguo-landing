@@ -427,10 +427,28 @@ export default function WatchAndLearn() {
         );
         setActiveLang(getImmersionLang(vl) ? vl : "en");
       }
+      // URL bawa ?kosakata=1 → refresh terjadi saat dashboard Kosakata terbuka:
+      // buka lagi overlay flashcard, jangan mentalkan siswa ke katalog Watch & Learn.
+      if (params.get("kosakata") === "1") setDeckOpen(true);
     } catch {
       /* abaikan — URL aneh, tampilkan katalog seperti biasa */
     }
   }, []);
+
+  // Sinkronkan status buka dashboard Kosakata ke URL (?kosakata=1) — pakai
+  // replaceState (bukan push) supaya buka/tutup tak menumpuk history; efeknya
+  // REFRESH saat dashboard terbuka mengembalikan ke dashboard, bukan ke katalog.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const u = new URL(window.location.href);
+      if (deckOpen) u.searchParams.set("kosakata", "1");
+      else u.searchParams.delete("kosakata");
+      window.history.replaceState(window.history.state, "", u.pathname + u.search + u.hash);
+    } catch {
+      /* URL diblokir — abaikan */
+    }
+  }, [deckOpen]);
 
   // Badge Kosakata menghitung kata bahasa aktif saja — konsisten dengan deck
   // yang default filter ke bahasa yang sedang ditonton. Recompute tiap ganti bahasa.

@@ -129,6 +129,34 @@ function buildOrder(words: SavedWord[], reviewAhead: boolean): SavedWord[] {
 
 const srsOf = (w: SavedWord): SrsState => w.srs ?? newSrsState();
 
+// Pastikan bacaan Latin (romaji/pinyin/hangul-romanisasi/dll) SELALU tersedia untuk
+// kata beraksara non-Latin (Jepang, Mandarin, Korea, Arab, dst). Kalau `initial`
+// kosong — kata baru disimpan / backfill dashboard belum sempat jalan — ambil lazily
+// via /api/translit lalu persist ke localStorage. Dipakai kartu review & popup detail
+// supaya transliterasi tampil di mana pun kartu dibuka, bukan cuma di daftar dashboard.
+function useTranslit(word: string, langCode: string, initial?: string): string {
+  const [translit, setTranslit] = useState(initial ?? "");
+  useEffect(() => {
+    setTranslit(initial ?? "");
+    if ((initial && initial.trim()) || !isNonLatin(langCode)) return;
+    let cancelled = false;
+    void transliterateLines([word], langCode)
+      .then((readings) => {
+        const r = readings[0];
+        if (cancelled || !r) return;
+        setTranslit(r);
+        setSavedWordTranslit(word, langCode, r);
+      })
+      .catch(() => {
+        /* kuota/gagal — kartu tetap tampil tanpa bacaan */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [word, langCode, initial]);
+  return translit;
+}
+
 // ── Ekspor PDF ────────────────────────────────────────────────────────────────
 // Unduh kosakata sebagai PDF berbentuk kolom (Kata | Arti | Contoh) — mirip
 // tabel kosakata di menu obrolan Lingcore pada app Linguo. Sengaja lewat jendela
@@ -699,6 +727,9 @@ function BelajarTab({
   const todayPct = todayTarget > 0 ? Math.round((reviewedToday / todayTarget) * 100) : 0;
   const masteredPct = stats.total > 0 ? Math.round((stats.masteredCount / stats.total) * 100) : 0;
 
+  // Kartu yang sedang dibuka detailnya (popup) — null = tertutup.
+  const [detail, setDetail] = useState<SavedWord | null>(null);
+
   return (
     // Desktop: 2 kolom — panel review (kiri, sticky) + daftar kata (kanan, grid).
     <div className="space-y-4 lg:grid lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start lg:gap-8 lg:space-y-0">
@@ -802,7 +833,16 @@ function BelajarTab({
             return (
               <div
                 key={`${w.langCode}::${w.word}`}
-                className="flex items-center gap-3 rounded-2xl px-4 py-3"
+                role="button"
+                tabIndex={0}
+                onClick={() => setDetail(w)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setDetail(w);
+                  }
+                }}
+                className="flex cursor-pointer items-center gap-3 rounded-2xl px-4 py-3 text-left transition-colors hover:bg-white/[0.04]"
                 style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
               >
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: accent.color }} />
@@ -820,7 +860,10 @@ function BelajarTab({
                   )}
                 </div>
                 <button
-                  onClick={() => speakText(w.word, w.langCode)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    speakText(w.word, w.langCode);
+                  }}
                   aria-label="Dengar"
                   className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
                 >
@@ -838,6 +881,113 @@ function BelajarTab({
           })}
         </div>
       </div>
+
+      {detail && <WordDetailModal word={detail} onClose={() => setDetail(null)} />}
+    </div>
+  );
+}
+
+// ── Popup detail kata (dari daftar) ───────────────────────────────────────────
+// Ketuk kartu di daftar → munculkan detail lengkap: bahasa + tahap, kata besar,
+// transliterasi (romaji/pinyin/dll — diambil lazily kalau belum ada), tombol dengar,
+// arti (terjemahan Indonesia), contoh kalimat, dan ringkasan progres SRS.
+function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => void }) {
+  const lang = getImmersionLang(word.langCode);
+  const translit = useTranslit(word.word, word.langCode, word.translit);
+  const stage = STAGE[cardStage(word.srs)];
+  const srs = word.srs;
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[95] flex items-center justify-center p-4"
+      style={{ backgroundColor: "rgba(6,9,10,0.72)" }}
+      onClick={onClose}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md rounded-3xl p-6"
+        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+      >
+        <button
+          onClick={onClose}
+          className="absolute right-3 top-3 rounded-full p-2 transition-colors hover:bg-white/10"
+          aria-label="Tutup"
+        >
+          <X className="h-5 w-5 text-white" />
+        </button>
+
+        <div className="flex flex-col items-center text-center">
+          <div className="flex flex-wrap items-center justify-center gap-2" style={{ color: SUB }}>
+            <RectFlag code={lang?.country} h={16} />
+            <span className="text-[12px] font-semibold">{lang?.name ?? word.langCode}</span>
+            <span
+              className="rounded-full px-2 py-0.5 text-[11px] font-bold"
+              style={{ backgroundColor: `${stage.color}22`, color: stage.color }}
+            >
+              {stage.label}
+            </span>
+          </div>
+          <p className="mt-3 text-[38px] font-extrabold leading-tight text-white">{word.word}</p>
+          {translit && (
+            <p className="mt-1 text-[16px] italic" style={{ color: TEAL }}>
+              {translit}
+            </p>
+          )}
+          <button
+            onClick={() => speakText(word.word, word.langCode)}
+            className="mt-3 flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-white/10"
+            style={{ backgroundColor: SURFACE_ALT }}
+            aria-label="Dengar"
+          >
+            <Volume2 className="h-5 w-5" style={{ color: TEAL }} />
+          </button>
+        </div>
+
+        <div className="mt-5 h-px w-full" style={{ backgroundColor: BORDER }} />
+
+        <p className="mt-4 text-[11px] font-bold uppercase tracking-wider" style={{ color: TEAL }}>
+          Arti
+        </p>
+        <p className="mt-1 text-[20px] font-extrabold" style={{ color: GOLD }}>
+          {word.meaning || "—"}
+        </p>
+
+        {word.example && (
+          <>
+            <p className="mt-4 text-[11px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
+              Contoh
+            </p>
+            <p className="mt-1 text-[14px] italic" style={{ color: "rgba(255,255,255,0.85)" }}>
+              “{word.example}”
+            </p>
+          </>
+        )}
+
+        {srs && srs.reviewCount > 0 && (
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]" style={{ color: SUB }}>
+            <span>Diulang {srs.reviewCount}×</span>
+            {srs.dueAt && (
+              <span>
+                Jatuh tempo{" "}
+                {isDue(srs)
+                  ? "sekarang"
+                  : new Date(srs.dueAt).toLocaleDateString("id-ID", { day: "numeric", month: "short" })}
+              </span>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -847,6 +997,9 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
   const [revealed, setRevealed] = useState(false);
   const lang = getImmersionLang(card.langCode);
   const srs = srsOf(card);
+  // Bacaan Latin — diambil lazily kalau kata non-Latin belum punya (biar transliterasi
+  // tampil di kartu flashcard, tak cuma di daftar dashboard).
+  const translit = useTranslit(card.word, card.langCode, card.translit);
 
   // Otomatis bunyikan kata begitu kartu muncul.
   useEffect(() => {
@@ -872,9 +1025,9 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
             <p className="mt-3 text-center text-[34px] font-extrabold leading-tight text-white sm:text-[40px]">
               {card.word}
             </p>
-            {card.translit && (
+            {translit && (
               <p className="mt-1.5 text-center text-[15px] italic" style={{ color: TEAL }}>
-                {card.translit}
+                {translit}
               </p>
             )}
             <button
