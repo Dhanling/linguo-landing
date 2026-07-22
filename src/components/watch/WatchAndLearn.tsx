@@ -334,20 +334,32 @@ export default function WatchAndLearn() {
     // Filter level hanya relevan di tab "Siap" (satu-satunya sumber estimasi level).
     // Di tab lain video dari YouTube tak punya level → jangan ikut menyaring.
     const siapMode = category === SIAP_ID && !committedText.trim();
-    return videos.filter((v) => {
+    // Tahap 1: filter yang DIPILIH pengguna secara eksplisit (durasi & level).
+    // Kalau ini yang mengosongkan grid, empty-state "Tak ada video cocok filter"
+    // memang tepat — user tinggal longgarkan filternya.
+    const base = videos.filter((v) => {
       // Filter durasi (rentang [min, max) detik; tanpa durasi hanya lolos di "Semua").
       if (durationFilter !== "all") {
         if (v.duration == null || v.duration < dur.min || v.duration >= dur.max) return false;
       }
       // Filter level CEFR (tab "Siap"): sisakan video yang levelnya persis terpilih.
       if (siapMode && levelFilter !== "all" && v.level !== levelFilter) return false;
-      // Hanya landscape: orientasi asli frame0 → fallback proxy durasi. Video portrait
-      // (Shorts) disingkirkan; yang durasinya null dianggap landscape sementara sampai
-      // frame0 resolve.
+      return true;
+    });
+    // Tahap 2: buang portrait/Shorts pakai orientasi asli frame0 → fallback proxy durasi.
+    // Video durasi null dianggap landscape sementara sampai frame0 resolve.
+    const landscape = base.filter((v) => {
       const portrait = orientCache.get(v.videoId);
       if (portrait !== undefined) return !portrait;
       return v.duration == null || v.duration > SHORTS_MAX_SEC;
     });
+    // [linguo-patch:watch-orient-nonempty-v1] frame0 rapuh (bisa placeholder/timeout,
+    // atau server sesekali meloloskan Shorts yang lalu dibuang habis di client) →
+    // JANGAN sampai heuristik orientasi mengosongkan seluruh grid. Kalau semua kebuang,
+    // kembalikan hasil lolos durasi/level apa adanya (pola sama filterVideosByLanguage:
+    // "kalau semua kebuang, balikin daftar asli"). User tetap dapat sesuatu ketimbang
+    // empty-state palsu; begitu SATU landscape terdeteksi, penyaringan Shorts jalan lagi.
+    return landscape.length ? landscape : base;
     // orientTick sengaja jadi dependency: memicu re-filter tiap orientasi baru masuk cache.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videos, orientTick, durationFilter, levelFilter, category, committedText]);
