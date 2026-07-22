@@ -5,9 +5,15 @@
 import { supabase } from "@/lib/supabase-client";
 import { PROMO_SOURCE_PREFIX, FREE_PROMOS } from "@/lib/simulasiPakets";
 
-export type TestType = "toefl" | "ielts";
-// Varian spesifik: IELTS Academic/General, TOEFL ITP/iBT.
-export type TestVariant = "academic" | "general" | "itp" | "ibt";
+export type TestType = "toefl" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe";
+// Varian/level: IELTS Academic/General · TOEFL ITP/iBT · JLPT N5–N1 · HSK 1–6 ·
+// TOPIK I/II · Goethe (CEFR) A1–C2.
+export type TestVariant =
+  | "academic" | "general" | "itp" | "ibt"
+  | "n5" | "n4" | "n3" | "n2" | "n1"
+  | "hsk1" | "hsk2" | "hsk3" | "hsk4" | "hsk5" | "hsk6"
+  | "topik1" | "topik2"
+  | "a1" | "a2" | "b1" | "b2" | "c1" | "c2";
 export type Skill = "reading" | "listening" | "writing" | "speaking" | "structure";
 export type QuestionType =
   | "multiple_choice" | "true_false_ng" | "fill_blank" | "short_answer"
@@ -54,9 +60,15 @@ export interface Question {
   sort_order: number;
 }
 
-export const TEST_TYPE_LABEL: Record<TestType, string> = { toefl: "TOEFL", ielts: "IELTS" };
+export const TEST_TYPE_LABEL: Record<TestType, string> = {
+  toefl: "TOEFL", ielts: "IELTS", jlpt: "JLPT", hsk: "HSK", topik: "TOPIK", goethe: "Goethe",
+};
 export const TEST_VARIANT_LABEL: Record<TestVariant, string> = {
   academic: "Academic", general: "General", itp: "ITP", ibt: "iBT",
+  n5: "N5", n4: "N4", n3: "N3", n2: "N2", n1: "N1",
+  hsk1: "1", hsk2: "2", hsk3: "3", hsk4: "4", hsk5: "5", hsk6: "6",
+  topik1: "I", topik2: "II",
+  a1: "A1", a2: "A2", b1: "B1", b2: "B2", c1: "C1", c2: "C2",
 };
 // Label lengkap jenis + varian, mis. "IELTS Academic" / "TOEFL iBT".
 export function testTypeLabel(testType: TestType, variant?: TestVariant | null): string {
@@ -74,9 +86,17 @@ export const SKILL_LABEL: Record<Skill, string> = {
 // (+ Speaking ~15) ≈ 165.
 export const REAL_TEST_DURATION_BY_VARIANT: Partial<Record<TestVariant, number>> = {
   itp: 115, ibt: 116, academic: 165, general: 165,
+  // JLPT durasi resmi naik dengan level.
+  n5: 90, n4: 105, n3: 115, n2: 140, n1: 165,
+  // HSK 1–2 pendek, makin tinggi makin panjang.
+  hsk1: 40, hsk2: 55, hsk3: 90, hsk4: 105, hsk5: 125, hsk6: 140,
+  // TOPIK I (listening+reading) vs TOPIK II (+writing).
+  topik1: 100, topik2: 180,
+  // Goethe (CEFR) — 4 modul, makin tinggi makin panjang.
+  a1: 60, a2: 90, b1: 150, b2: 190, c1: 230, c2: 230,
 };
 export const REAL_TEST_DURATION_BY_TYPE: Record<TestType, number> = {
-  toefl: 115, ielts: 165,
+  toefl: 115, ielts: 165, jlpt: 115, hsk: 90, topik: 140, goethe: 120,
 };
 export function defaultDurationMinutes(testType: TestType, variant?: TestVariant | null): number {
   if (variant && REAL_TEST_DURATION_BY_VARIANT[variant] != null) return REAL_TEST_DURATION_BY_VARIANT[variant]!;
@@ -101,6 +121,14 @@ export const TEST_OVERVIEW: Record<TestType, string> = {
     "IELTS mengukur kemampuan bahasa Inggris melalui empat keterampilan: Listening, Reading, Writing, dan Speaking. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
   toefl:
     "TOEFL mengukur kemampuan bahasa Inggris akademik melalui empat keterampilan: Reading, Listening, Speaking, dan Writing. Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  jlpt:
+    "JLPT (日本語能力試験) mengukur kemampuan bahasa Jepang melalui Pengetahuan Bahasa (huruf, kosakata, tata bahasa), Membaca (読解), dan Menyimak (聴解). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  hsk:
+    "HSK (汉语水平考试) mengukur kemampuan bahasa Mandarin melalui Menyimak (听力), Membaca (阅读), dan Menulis (书写, mulai HSK 3). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  topik:
+    "TOPIK (한국어능력시험) mengukur kemampuan bahasa Korea melalui Menyimak (듣기), Membaca (읽기), dan Menulis (쓰기, TOPIK II). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
+  goethe:
+    "Goethe-Zertifikat mengukur kemampuan bahasa Jerman melalui empat modul: Lesen (Membaca), Hören (Menyimak), Schreiben (Menulis), dan Sprechen (Berbicara). Kerjakan tiap bagian secara berurutan dan perhatikan sisa waktu.",
 };
 
 // Cara menjawab per keterampilan — jadi instruksi default tiap bagian.
