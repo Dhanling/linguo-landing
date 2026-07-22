@@ -524,7 +524,36 @@ export default function VideoLearnPlayer({
   const [qualityLevels, setQualityLevels] = useState<string[]>([]);
   const [quality, setQuality] = useState("auto"); // "auto" | level string YT
   const [fontIdx, setFontIdx] = useState(1); // ukuran teks subtitle (default Sedang)
-  const fscale = FONT_LEVELS[fontIdx].scale;
+  // [watch-responsive-subtitle-v1] Ukuran layar dilacak supaya subtitle di HP &
+  // tablet menyesuaikan diri: di layar sempit/pendek, teks target+translit+
+  // terjemahan bisa lebih tinggi dari ruang tersisa → kepotong. Faktor ini
+  // mengecilkan skala teks pilihan siswa hanya di layar kecil (tak mengubah
+  // pilihannya di desktop) & jadi acuan pembatas tinggi video di bawah.
+  const [vp, setVp] = useState({ w: 1280, h: 800 });
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const read = () => setVp({ w: window.innerWidth, h: window.innerHeight });
+    read();
+    window.addEventListener("resize", read);
+    window.addEventListener("orientationchange", read);
+    return () => {
+      window.removeEventListener("resize", read);
+      window.removeEventListener("orientationchange", read);
+    };
+  }, []);
+  // Faktor responsif: mengecil di layar sempit ATAU pendek (landscape HP/tablet),
+  // supaya blok subtitle muat tanpa terpotong. Di layar normal → 1 (tanpa efek).
+  const vpFactor = useMemo(() => {
+    let f = 1;
+    if (vp.w < 400) f = 0.72;
+    else if (vp.w < 640) f = 0.82;
+    else if (vp.w < 900) f = 0.92;
+    // Layar pendek (mis. HP/tablet landscape) — ruang vertikal ekstra sempit.
+    if (vp.h < 520) f = Math.min(f, 0.8);
+    else if (vp.h < 680) f = Math.min(f, 0.9);
+    return f;
+  }, [vp.w, vp.h]);
+  const fscale = FONT_LEVELS[fontIdx].scale * vpFactor;
 
   const [cues, setCues] = useState<LearnCue[]>([]);
   const [txState, setTxState] = useState<"loading" | "ready" | "none">("loading");
@@ -2360,7 +2389,11 @@ export default function VideoLearnPlayer({
                   : undefined
                 : fullscreen
                   ? undefined
-                  : { maxHeight: "70vh" }
+                  : // [watch-responsive-subtitle-v1] Batasi tinggi video agar SELALU
+                    // sisa ruang untuk subtitle + kontrol di bawahnya. Di layar
+                    // pendek (HP/tablet landscape) 70vh menelan hampir seluruh layar
+                    // → subtitle kepotong; sisihkan ~200px utk header+subtitle+kontrol.
+                    { maxHeight: "min(70vh, calc(100dvh - 200px))" }
             }
           >
             <div
@@ -3605,7 +3638,7 @@ function FocusLine({
   // konsisten dengan mode normal).
   if (analyze) {
     return (
-      <div className="min-h-[92px] px-5 py-4 text-center sm:px-6">
+      <div className="min-h-[64px] px-3 py-2 text-center sm:min-h-[92px] sm:px-6 sm:py-4">
         {breakdown === "loading" || breakdown === undefined ? (
           <div className="flex items-center justify-center gap-2" style={{ color: SUB }}>
             <Loader2 className="h-4 w-4 animate-spin" /> Menganalisa kalimat…
@@ -3690,7 +3723,7 @@ function FocusLine({
   // Blok inline-block menyusut selebar teks → hover-pause hanya aktif tepat di
   // atas subtitle/translit/terjemahan, bukan di sisa lebar baris.
   return (
-    <div className="min-h-[92px] px-5 py-4 text-center sm:px-6">
+    <div className="min-h-[64px] px-3 py-2 text-center sm:min-h-[92px] sm:px-6 sm:py-4">
       <div
         className="inline-block max-w-full"
         onMouseEnter={onHoverPause}
