@@ -107,6 +107,12 @@ const GOLD = "#F4B740";
 const GOLD_DIM = "rgba(244,183,64,0.72)";
 const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
+// [watch-cue-block-v1] Latar BLOK PENUH baris transkrip yang sedang diputar (ala
+// Lingopie) — solid, bukan tint tembus 14% seperti dulu, supaya batas section tegas.
+// Sengaja gelap kehijauan (bukan teal terang): sorotan karaoke per-kata JUGA teal,
+// jadi blok terang malah menelan sorotan itu; dengan latar gelap, teal karaoke,
+// putih target, dan emas terjemahan semuanya tetap kontras.
+const CUE_ON_BG = "#16302F";
 
 // [watch-endscreen-recs-v1] Layar akhir ala Netflix: saat video habis, tampilkan
 // rekomendasi video berikutnya dari tab "Siap" (transkrip sudah siap → buka instan)
@@ -3325,16 +3331,47 @@ export default function VideoLearnPlayer({
                     key={i}
                     data-cue={i}
                     onClick={() => seekTo(c.start)}
+                    // [watch-cue-block-v1] Baris aktif = BLOK PENUH ala Lingopie: latar
+                    // solid + pita teal di tepi kiri + bayangan tipis, jadi section yang
+                    // sedang diputar terbaca sebagai satu kartu utuh. Perpindahannya
+                    // dianimasikan (.wl-cue / .wl-cue-on di globals.css) supaya mulus,
+                    // bukan blok yang kedip pindah.
                     // Section non-aktif diredupkan (opacity) jadi terkesan abu-abu
                     // supaya fokus jatuh ke baris yang sedang diputar; hover meredakan
                     // redup itu biar tetap enak ditarget/dibaca.
-                    className={`cursor-pointer rounded-xl px-3 py-2.5 transition-[background-color,opacity] duration-300 ${
-                      on ? "opacity-100" : "opacity-40 hover:opacity-75"
+                    className={`wl-cue group relative my-0.5 cursor-pointer rounded-xl py-2.5 pl-3.5 pr-[72px] ${
+                      on ? "wl-cue-on opacity-100" : "opacity-40 hover:opacity-80"
                     }`}
                     style={{
-                      backgroundColor: on ? "rgba(26,158,158,0.14)" : "transparent",
+                      backgroundColor: on ? CUE_ON_BG : "transparent",
+                      boxShadow: on
+                        ? `inset 3px 0 0 ${TEAL}, 0 8px 20px rgba(0,0,0,0.35)`
+                        : undefined,
                     }}
                   >
+                    {/* [watch-cue-explain-v1] Tombol Analisa per-section (ala tombol
+                        "Explain" Lingopie) — buka drawer Analisa Kalimat untuk baris
+                        INI, tanpa menunggu kalimatnya tayang. Klik tak boleh menular ke
+                        baris (yang tugasnya loncat waktu). */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openSentenceStudy(c);
+                      }}
+                      title="Analisa kalimat ini dengan AI"
+                      className={`absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full px-2 py-1 text-[10.5px] font-bold transition-all hover:bg-white/10 ${
+                        on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+                      }`}
+                      style={{
+                        color: TEAL,
+                        border: "1px solid rgba(26,158,158,0.45)",
+                        backgroundColor: "rgba(26,158,158,0.12)",
+                      }}
+                    >
+                      <Sparkles className="h-3 w-3" />
+                      Analisa
+                    </button>
                     {on ? (
                       <KaraokeText
                         cue={c}
@@ -3428,7 +3465,7 @@ export default function VideoLearnPlayer({
                         langCode={langCode}
                         hoveredK={hoverWord?.i === i ? hoverWord.k : null}
                         onHover={(k) => setHoverWord(k == null ? null : { i, k })}
-                        className="mt-0.5 italic"
+                        className="wl-cue-line mt-0.5 italic"
                         style={{ color: "#fff", fontSize: 12 * fscale }}
                       />
                     )}
@@ -3436,7 +3473,7 @@ export default function VideoLearnPlayer({
                       !isDuplicateBase(c, langCode) &&
                       (alignEnabled ? (
                         <p
-                          className="mt-0.5 font-semibold"
+                          className="wl-cue-line mt-0.5 font-semibold"
                           style={{ color: GOLD, fontSize: 12.5 * fscale }}
                           dir={isRtl(baseLang) ? "rtl" : undefined}
                         >
@@ -3472,7 +3509,7 @@ export default function VideoLearnPlayer({
                         </p>
                       ) : (
                         <p
-                          className="mt-0.5 font-semibold"
+                          className="wl-cue-line mt-0.5 font-semibold"
                           style={{ color: GOLD, fontSize: 12.5 * fscale }}
                           dir={isRtl(baseLang) ? "rtl" : undefined}
                         >
