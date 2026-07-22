@@ -205,6 +205,27 @@ function getGreeting() {
   return "Selamat malam";
 }
 
+// ── [kelas-video-siswa-v1] Masuk Kelas Video Linguo ────────────────────────
+// Kelas video self-hosted ada di dashboard (dashboard.linguo.id/kelas/<roomId>);
+// room id-nya deterministik dari id jadwal, jadi siswa tidak perlu menunggu
+// pengajar mengirim link apa pun. `guest=1` = masuk 2 arah sebagai peserta.
+const CLASS_ROOM_ORIGIN = "https://dashboard.linguo.id";
+
+function classRoomUrl(scheduleId: string, opts: { title?: string; teacher?: string } = {}) {
+  const q = new URLSearchParams({ guest: "1" });
+  if (opts.title) q.set("title", opts.title);
+  if (opts.teacher) q.set("teacher", opts.teacher);
+  return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
+}
+
+// Tombol muncul dari 30 menit sebelum kelas sampai 3 jam sesudahnya — di luar
+// jendela itu link kelas cuma bikin siswa masuk room kosong.
+function isJoinable(scheduledAt: string) {
+  const start = new Date(scheduledAt).getTime();
+  const now = Date.now();
+  return now >= start - 30 * 60_000 && now <= start + 3 * 60 * 60_000;
+}
+
 // ── Programs & Languages for Enrollment Wizard ───────────────────────────
 const PROGRAMS: { key: string; label: string; desc: string; icon: LucideIcon; tint: string; price: string }[] = [
   { key: "Kelas Private", label: "Kelas Private", desc: "1-on-1 dengan pengajar, jadwal fleksibel", icon: User, tint: "bg-teal-50 text-teal-600", price: "Mulai Rp45k/sesi (30 mnt)" },
@@ -3487,21 +3508,35 @@ export default function AkunPage() {
                               const d = new Date(s.scheduled_at);
                               const reg = student?.registrations?.find((r) => r.id === s.registration_id);
                               const lang = reg?.language || "";
+                              const joinable = isJoinable(s.scheduled_at);
                               return (
-                                <button
-                                  key={s.id}
-                                  onClick={() => setActiveTab("jadwal")}
-                                  className="group flex w-full items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 text-left transition-shadow"
-                                >
-                                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
-                                  <span className="min-w-0 flex-1">
-                                    <span className="block truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
-                                    <span className="block text-[12px] font-medium text-gray-500">
-                                      {d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
+                                <div key={s.id} className="rounded-2xl border border-slate-100 bg-white">
+                                  <button
+                                    onClick={() => setActiveTab("jadwal")}
+                                    className="group flex w-full items-center gap-3 rounded-2xl p-3 text-left transition-shadow"
+                                  >
+                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
+                                    <span className="min-w-0 flex-1">
+                                      <span className="block truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
+                                      <span className="block text-[12px] font-medium text-gray-500">
+                                        {d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
+                                      </span>
                                     </span>
-                                  </span>
-                                  <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
-                                </button>
+                                    <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
+                                  </button>
+                                  {/* [kelas-video-siswa-v1] pintu masuk kelas video — sebelumnya
+                                      siswa cuma bisa masuk lewat link yang dikirim manual */}
+                                  {joinable && (
+                                    <a
+                                      href={classRoomUrl(s.id, { title: lang ? `Kelas ${lang}` : "Kelas Linguo" })}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="mx-3 mb-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
+                                    >
+                                      <Video className="h-3.5 w-3.5" /> Masuk Kelas
+                                    </a>
+                                  )}
+                                </div>
                               );
                             })}
                           </div>

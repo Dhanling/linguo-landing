@@ -43,6 +43,21 @@ function fmtTime(d: Date) { return `${pad(d.getHours())}.${pad(d.getMinutes())}`
 function addDays(d: Date, n: number) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
 function startOfWeek(d: Date) { const x = new Date(d); const off = (x.getDay() + 6) % 7; x.setDate(x.getDate() - off); x.setHours(0, 0, 0, 0); return x; }
 
+// [kelas-video-siswa-v1] Kelas Video Linguo (self-hosted) ada di dashboard, dan
+// room id-nya diturunkan dari id jadwal — jadi tombolnya bisa dirender tanpa
+// menunggu pengajar mengirim link apa pun. Tampil 30 menit sebelum s/d 3 jam
+// setelah jam mulai; di luar itu siswa cuma akan masuk room kosong.
+const CLASS_ROOM_ORIGIN = "https://dashboard.linguo.id";
+function classRoomUrl(scheduleId: string, title?: string) {
+  const q = new URLSearchParams({ guest: "1" });
+  if (title) q.set("title", title);
+  return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
+}
+function isJoinable(d: Date) {
+  const now = Date.now();
+  return now >= d.getTime() - 30 * 60_000 && now <= d.getTime() + 3 * 60 * 60_000;
+}
+
 type LangColor = { dot: string; bg: string; text: string };
 const PALETTE: LangColor[] = [
   { dot: "#16796E", bg: "#16796E1A", text: "#0F5A52" },
@@ -369,6 +384,16 @@ export default function JadwalCalendar({
                               {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
                             </span>
                           </span>
+                          {isJoinable(e._d) && (
+                            <a
+                              href={classRoomUrl(e.id, `Kelas ${e.language}`)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="self-center inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52] shrink-0"
+                            >
+                              <Video className="w-3.5 h-3.5" strokeWidth={2.2} /> Masuk Kelas
+                            </a>
+                          )}
                         </div>
                       );
                     })}
