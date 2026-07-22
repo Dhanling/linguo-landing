@@ -560,7 +560,7 @@ export default function FlashcardDeck({
           {/* Daftar bahasa dipindah ke pemilih dropdown pojok kanan atas — sidebar
               cukup untuk nav + ringkasan penguasaan. */}
           <div className="mt-auto px-4 py-5">
-            <div className="rounded-2xl p-4" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+            <div className="rounded-2xl p-4" style={{ backgroundColor: CARD }}>
               <div className="flex items-center justify-between">
                 <span className="text-[12px]" style={{ color: SUB }}>
                   Dikuasai
@@ -827,62 +827,71 @@ function BelajarTab({
           )}
         </div>
         <div className="space-y-2.5 xl:grid xl:grid-cols-2 xl:gap-2.5 xl:space-y-0">
-          {words.map((w) => {
-            const accent = STAGE[cardStage(w.srs)];
-            const lang = getImmersionLang(w.langCode);
-            return (
-              <div
-                key={`${w.langCode}::${w.word}`}
-                role="button"
-                tabIndex={0}
-                onClick={() => setDetail(w)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setDetail(w);
-                  }
-                }}
-                className="flex cursor-pointer items-center gap-3 rounded-2xl px-4 py-3 text-left transition-colors hover:bg-white/[0.04]"
-                style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
-              >
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: accent.color }} />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-[15px] font-bold text-white">{w.word}</p>
-                  {w.translit && (
-                    <p className="truncate text-[12px] italic" style={{ color: TEAL }}>
-                      {w.translit}
-                    </p>
-                  )}
-                  {w.meaning && (
-                    <p className="truncate text-[13px]" style={{ color: SUB }}>
-                      {w.meaning}
-                    </p>
-                  )}
-                </div>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    speakText(w.word, w.langCode);
-                  }}
-                  aria-label="Dengar"
-                  className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-                >
-                  <Volume2 className="h-4 w-4" style={{ color: SUB }} />
-                </button>
-                <span
-                  className="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold"
-                  style={{ backgroundColor: `${accent.color}22`, color: accent.color }}
-                >
-                  {accent.label}
-                </span>
-                <RectFlag code={lang?.country} h={13} />
-              </div>
-            );
-          })}
+          {words.map((w) => (
+            <WordListCard key={`${w.langCode}::${w.word}`} word={w} onOpen={() => setDetail(w)} />
+          ))}
         </div>
       </div>
 
       {detail && <WordDetailModal word={detail} onClose={() => setDetail(null)} />}
+    </div>
+  );
+}
+
+// ── Kartu kata di daftar ──────────────────────────────────────────────────────
+// Satu baris kata: titik tahap, kata + transliterasi + arti, tombol dengar, badge
+// tahap, bendera. Diketuk → buka popup detail. Transliterasi diambil lazily lewat
+// useTranslit supaya bacaan Latin (romaji/pinyin/dll) tampil walau kata belum
+// sempat di-backfill — berlaku untuk semua bahasa non-Latin.
+function WordListCard({ word, onOpen }: { word: SavedWord; onOpen: () => void }) {
+  const accent = STAGE[cardStage(word.srs)];
+  const lang = getImmersionLang(word.langCode);
+  const translit = useTranslit(word.word, word.langCode, word.translit);
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
+      className="flex cursor-pointer items-center gap-3 rounded-2xl px-4 py-3 text-left transition-colors hover:bg-white/[0.06]"
+      style={{ backgroundColor: CARD }}
+    >
+      <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: accent.color }} />
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-[15px] font-bold text-white">{word.word}</p>
+        {translit && (
+          <p className="truncate text-[12px] italic" style={{ color: TEAL }}>
+            {translit}
+          </p>
+        )}
+        {word.meaning && (
+          <p className="truncate text-[13px]" style={{ color: SUB }}>
+            {word.meaning}
+          </p>
+        )}
+      </div>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          speakText(word.word, word.langCode);
+        }}
+        aria-label="Dengar"
+        className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
+      >
+        <Volume2 className="h-4 w-4" style={{ color: SUB }} />
+      </button>
+      <span
+        className="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold"
+        style={{ backgroundColor: `${accent.color}22`, color: accent.color }}
+      >
+        {accent.label}
+      </span>
+      <RectFlag code={lang?.country} h={13} />
     </div>
   );
 }
@@ -917,7 +926,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
       <div
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-md rounded-3xl p-6"
-        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        style={{ backgroundColor: CARD }}
       >
         <button
           onClick={onClose}
@@ -1013,7 +1022,7 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
         <button
           onClick={() => setRevealed((v) => !v)}
           className="relative w-full max-w-lg rounded-3xl p-6 text-left"
-          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, minHeight: 280 }}
+          style={{ backgroundColor: CARD, minHeight: 280 }}
           aria-label="Balik kartu"
         >
           {/* Depan */}
@@ -1155,7 +1164,7 @@ function DoneScreen({
 
       <div
         className="mt-8 flex w-full max-w-sm items-center justify-around rounded-3xl px-4 py-5"
-        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        style={{ backgroundColor: CARD }}
       >
         <div>
           <p className="text-[24px] font-extrabold" style={{ color: "#7FE0E0" }}>
@@ -1313,7 +1322,7 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
       </div>
 
       {/* Grafik batang */}
-      <div className="rounded-3xl p-4" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+      <div className="rounded-3xl p-4" style={{ backgroundColor: CARD }}>
         <div className="flex h-40 items-end justify-between gap-1">
           {buckets.map((b, i) => {
             const h = Math.round((b.count / maxCount) * 128);
@@ -1373,7 +1382,7 @@ function EmptyState() {
     <div className="mx-auto max-w-sm pt-10 text-center">
       <div
         className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl"
-        style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        style={{ backgroundColor: CARD }}
       >
         <Layers className="h-6 w-6" color={SUB} />
       </div>
@@ -1521,7 +1530,7 @@ function LangSelect({
           <div className="fixed inset-0 z-[95]" onClick={() => setOpen(false)} />
           <div
             className="absolute right-0 z-[96] mt-2 w-64 space-y-1 overflow-y-auto rounded-2xl p-1.5 shadow-2xl"
-            style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, maxHeight: "60vh" }}
+            style={{ backgroundColor: CARD, maxHeight: "60vh" }}
           >
             <SideLangBtn active={filter === "all"} onClick={() => pick("all")} label="Semua bahasa" count={allCount} />
             {langCodes.map((code) => {
@@ -1564,7 +1573,7 @@ function MasteryInfo() {
       {open && (
         <div
           className="absolute left-0 top-6 z-20 w-72 rounded-2xl p-3.5 text-left shadow-xl"
-          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+          style={{ backgroundColor: CARD }}
         >
           <p className="text-[12.5px] font-bold text-white">Cara sebuah kata jadi “Dikuasai”</p>
           <p className="mt-1.5 text-[12px] leading-relaxed" style={{ color: SUB }}>
@@ -1591,7 +1600,7 @@ function StageTile({ value, label, color }: { value: number; label: string; colo
   return (
     <div
       className="flex-1 rounded-2xl py-3.5 text-center"
-      style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+      style={{ backgroundColor: CARD }}
     >
       <p className="text-[20px] font-extrabold" style={{ color }}>
         {value}
@@ -1605,7 +1614,7 @@ function StageTile({ value, label, color }: { value: number; label: string; colo
 
 function StatCard({ icon, value, label }: { icon: React.ReactNode; value: number; label: string }) {
   return (
-    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
+    <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
       {icon}
       <p className="mt-2 text-[22px] font-extrabold text-white">{value}</p>
       <p className="text-[12px]" style={{ color: SUB }}>
