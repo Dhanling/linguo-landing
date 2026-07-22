@@ -10,6 +10,8 @@
 //   - Kelas Kids    : harga/sesi (tier × durasi) × jumlah sesi
 //   - Kelas Reguler : flat Rp 150.000 (paket 2 bulan)
 //   - IELTS/TOEFL   : flat Rp 300.000 (16 sesi @90 menit)
+//   - Test Prep     : HSK/JLPT/TOPIK/Goethe — semi-private (paket 12 sesi,
+//                     harga/orang) atau private (harga/sesi × sesi), lihat testPrep.ts
 // Formula per-sesi WAJIB identik dengan FunnelModal biar total yang tampil =
 // total yang ditagih.
 // =============================================================================
@@ -21,6 +23,11 @@ import {
   KIDS_DURATION,
   getSemiPrivatePrice,
 } from "@/lib/trial-pricing";
+import {
+  getTestPrepProduct,
+  quoteTestPrep,
+  type TestPrepFormat,
+} from "@/lib/testPrep";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -45,8 +52,22 @@ function computeFunnelAmount(input: {
   teacherType: string;
   sessions: number;
   classSize: number;
+  testPrepId: string;
+  testPrepFormat: string;
 }): PriceResult | null {
-  const { program, language, level, duration, teacherType, sessions, classSize } = input;
+  const { program, language, level, duration, teacherType, sessions, classSize, testPrepId, testPrepFormat } = input;
+
+  // ── test-prep-v1: Persiapan Ujian (HSK/JLPT/TOPIK/Goethe) ────────────────
+  // Semi-private = paket tetap 12 sesi (harga/orang). Private = harga/sesi ×
+  // jumlah sesi. Harga dari sumber tunggal @/lib/testPrep (anti-tamper).
+  if (program === "Test Prep") {
+    const product = getTestPrepProduct(testPrepId);
+    if (!product) return null;
+    const format: TestPrepFormat = testPrepFormat === "private" ? "private" : "semi";
+    const q = quoteTestPrep(product, format, level, Number(sessions) || undefined);
+    if (q.amount <= 0) return null;
+    return { amount: q.amount, perSession: q.perSession, description: q.description };
+  }
 
   if (program === "Semi Private") {
     if (!PRIVATE_DURATIONS.includes(duration)) return null;
@@ -132,6 +153,8 @@ export async function POST(req: NextRequest) {
       sessions,
       class_size,
       ref_code,
+      test_prep_id,
+      test_prep_format,
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
@@ -151,6 +174,8 @@ export async function POST(req: NextRequest) {
       teacherType: teacher_type === "native" ? "native" : "lokal",
       sessions: Number(sessions) || 0,
       classSize: Number(class_size) || 0,
+      testPrepId: typeof test_prep_id === "string" ? test_prep_id : "",
+      testPrepFormat: typeof test_prep_format === "string" ? test_prep_format : "",
     });
     if (!priced || priced.amount <= 0) {
       return NextResponse.json(

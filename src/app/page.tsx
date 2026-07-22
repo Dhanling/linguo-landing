@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabase-client";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText } from "lucide-react";
+import { Globe, ChevronDown, ChevronLeft, ChevronRight, Mail, Star, Check, ArrowRight, ArrowUp, Menu, X, Zap, AtSign, Search, Sparkles, GraduationCap, Users, School, Baby, ClipboardList, MonitorPlay, BookOpen, Timer, Building2, Headphones, ScrollText, Languages } from "lucide-react";
 import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
@@ -508,6 +508,7 @@ const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
     { icon:School, title:"Kelas Reguler", desc:"Grup class jadwal tetap, paling terjangkau", prog:"Kelas Reguler", schedHref:"/jadwal-kelas-reguler", schedLabel:"Cek jadwal →" },
     { icon:Baby, title:"Kelas Kids", desc:"1-on-1 untuk anak 5–12 tahun, fun & interaktif", prog:"Kelas Kids" },
     { icon:ClipboardList, title:"IELTS / TOEFL Prep", desc:"16 sesi @90 menit, persiapan tes intensif", prog:"IELTS/TOEFL Prep", schedHref:"/jadwal-kelas-reguler?tab=etp", schedLabel:"Cek jadwal ETP →" },
+    { icon:Languages, title:"Persiapan Ujian Bahasa", desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private", href:"/persiapan-tes" },
   ]},
   { group: "Belajar Mandiri", items: [
     { icon:MonitorPlay, title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/produk" },
@@ -662,6 +663,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Jadwal Batch Terbaru</a>
               <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
               <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Cek Jadwal ETP</a>
+              <a href="/persiapan-tes" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Persiapan Ujian (HSK/JLPT/TOPIK/Goethe)</a>
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids</button>
               <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
               <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
@@ -1940,6 +1942,8 @@ const PRODUCTS = [
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",img1:"/images/programs/reguler-1.jpg",img2:"/images/programs/reguler-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",img1:"/images/programs/ielts-2.jpg",img2:"/images/programs/ielts-1.jpg"},
+  // test-prep-v1 — persiapan ujian bahasa non-Inggris (HSK/JLPT/TOPIK/Goethe) → halaman /persiapan-tes
+  {badgeIcon:<Languages className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Ujian Bahasa",badgeColor:"bg-teal-600 text-white",title:"Persiapan Ujian Bahasa",desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private + mock test",priceOld:null,price:"Mulai Rp 1.000.000",per:"/paket",discount:null,tab:-1,href:"/persiapan-tes",bgColor:"#E0F7F7",imageEmoji:"",lucideIcon:Languages,img1:"",img2:""},
   {badgeIcon:<Sparkles className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Lifetime",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill: Reading, Listening, Writing, Speaking",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:"",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
@@ -1978,7 +1982,8 @@ function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>
 }
 
 function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:typeof PRODUCTS[0];mobile?:boolean;setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
-  const card = p as typeof p & { img1?: string; img2?: string };
+  const card = p as typeof p & { img1?: string; img2?: string; lucideIcon?: React.ElementType };
+  const LucideIco = card.lucideIcon;
   const sizeCls = mobile ? "w-full h-full rounded-xl" : "w-full h-full rounded-3xl";
   const objPos = "object-center";
 
@@ -2017,6 +2022,8 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
             <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
             <Image src={card.img2 || card.img1} alt="" aria-hidden fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
           </>
+        ) : LucideIco ? (
+          <div className="w-full h-full flex items-center justify-center"><LucideIco className={mobile?"w-10 h-10":"w-14 h-14"} style={{color:"#1A9E9E"}} strokeWidth={1.5}/></div>
         ) : (
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
