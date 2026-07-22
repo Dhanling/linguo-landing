@@ -2901,10 +2901,12 @@ export default function VideoLearnPlayer({
               fullscreen
                 ? // Layar penuh: subtitle + terjemahan MELAYANG di atas video (video jadi
                   // latar, penuh sampai bawah — bukan lagi kotak hitam di bawah video).
-                  // Scrim gradien dari bawah biar teks tetap terbaca. pointer-events-none
-                  // di pembungkus supaya area kosong tetap meneruskan klik ke video
-                  // (play/jeda); hanya blok teks yang menangkap pointer (word tap/hover).
-                  "pointer-events-none absolute inset-x-0 bottom-0 z-30 justify-end bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 pb-24 pt-12 sm:px-6"
+                  // [watch-subtitle-drag-v1] Scrim gradien DIHAPUS biar rapi (tak ada
+                  // "kotak" gelap menimpa video) — keterbacaan tetap terjaga oleh garis
+                  // tepi hitam solid di teks ([watch-karaoke-solid-shadow]).
+                  // pointer-events-none di pembungkus supaya area kosong tetap meneruskan
+                  // klik ke video (play/jeda); hanya blok teks yang menangkap pointer.
+                  "pointer-events-none absolute inset-x-0 bottom-0 z-30 justify-end px-4 pb-24 pt-12 sm:px-6"
                 : "min-h-0 flex-1 overflow-y-auto py-2"
             }`}
           >
