@@ -125,6 +125,8 @@ export default function WordStudy({
   }, []);
   // Non-null → modal upsell (kuota simpan gratis habis); angka = jumlah kata tersimpan.
   const [upsellCount, setUpsellCount] = useState<number | null>(null);
+  // Penyimpanan browser penuh/diblokir → pesan jujur di header, bukan gagal diam-diam.
+  const [saveError, setSaveError] = useState(false);
 
   const [deep, setDeep] = useState<WordDeepDive | null>(null);
   const [loading, setLoading] = useState(true);
@@ -185,7 +187,9 @@ export default function WordStudy({
         setUpsellCount(savedWordCount());
         return;
       }
-      saveWord({
+      // Penyimpanan browser penuh → laporkan apa adanya, jangan tampil "Tersimpan"
+      // padahal katanya tak masuk flashcard.
+      const res = saveWord({
         word,
         meaning: meaning?.meaning ?? deep?.usage ?? "",
         langCode,
@@ -193,6 +197,11 @@ export default function WordStudy({
         videoId,
         ...(translit ? { translit } : {}),
       });
+      if (!res.ok) {
+        setSaveError(true);
+        return;
+      }
+      setSaveError(false);
       setSaved(true);
     }
     onSavedChange?.();
@@ -281,6 +290,11 @@ export default function WordStudy({
           {meaning?.meaning && (
             <p className="mt-1 text-[16px] font-bold leading-snug" style={{ color: GOLD }}>
               {meaning.meaning}
+            </p>
+          )}
+          {saveError && (
+            <p className="mt-1.5 text-[12px] font-medium leading-snug" style={{ color: "#FCA5A5" }}>
+              Gagal menyimpan — penyimpanan browser penuh. Bersihkan data situs lalu coba lagi.
             </p>
           )}
         </div>

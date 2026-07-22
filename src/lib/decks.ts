@@ -246,8 +246,15 @@ export function importCardsToVocab(cards: DeckCard[], langCode: string): number 
   // Dibalik supaya kartu pertama deck berakhir paling atas daftar (saveWord prepend).
   for (const c of [...cards].reverse()) {
     if (!c.word.trim()) continue;
-    saveWord({ word: c.word.trim(), meaning: c.meaning.trim(), langCode, example: c.example.trim() });
-    n++;
+    // Hanya hitung yang BENAR-BENAR tersimpan — penyimpanan browser bisa penuh,
+    // dan angka "x kata diimpor" tak boleh membohongi siswa.
+    const res = saveWord({
+      word: c.word.trim(),
+      meaning: c.meaning.trim(),
+      langCode,
+      example: c.example.trim(),
+    });
+    if (res.ok) n++;
   }
   return n;
 }

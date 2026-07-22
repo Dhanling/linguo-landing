@@ -57,6 +57,7 @@ import {
   fetchReadyVideos,
   fetchReadyCounts,
   getSavedWords,
+  onSavedWordsChanged,
   prewarmTranscripts,
   searchWordInVideos,
   type WordHit,
@@ -459,6 +460,9 @@ export default function WatchAndLearn() {
   useEffect(() => {
     refreshVocab();
   }, [refreshVocab]);
+  // Badge juga ikut event perubahan kosakata (impor deck, tab lain, simpan kata dari
+  // player) supaya angkanya tak pernah basi.
+  useEffect(() => onSavedWordsChanged(refreshVocab), [refreshVocab]);
 
   // Muat jumlah video "Siap" per bahasa sekali di mount → badge di pemilih bahasa.
   useEffect(() => {

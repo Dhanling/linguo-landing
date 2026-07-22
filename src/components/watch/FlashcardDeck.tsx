@@ -41,6 +41,7 @@ import {
   gradeSavedWord,
   isNonLatin,
   isWatchPremium,
+  onSavedWordsChanged,
   SavedWord,
   setSavedWordMeaning,
   setSavedWordTranslit,
@@ -300,6 +301,11 @@ export default function FlashcardDeck({
       setFilter("all");
     }
   }, [initialLang]);
+
+  // [watch-vocab-durable-v1] Ikut segar saat kosakata berubah dari tempat lain —
+  // impor deck, tab lain, atau kata baru yang disimpan selagi dashboard terbuka.
+  // Tanpa ini daftar cuma dihidrasi sekali saat mount → kata baru "tidak muncul".
+  useEffect(() => onSavedWordsChanged(() => setAll(getSavedWords())), []);
 
   // Bahasa yang punya kata tersimpan — buat chip filter. Sertakan juga bahasa
   // yang sedang ditonton walau belum punya kata (mis. Inggris), supaya bisa
@@ -688,7 +694,10 @@ export default function FlashcardDeck({
               ) : tab === "belajar" && words.length === 0 ? (
                 // Bahasa yang dipilih (mis. baru mulai ditonton) belum punya kata —
                 // arahkan menyimpan kata, bukan tampil "Semua kartu sudah diulang".
-                <EmptyState />
+                // Kalau kata ADA tapi di bahasa lain (mis. kata dari baris penjelas
+                // berbahasa Inggris di video Jepang tersimpan sebagai "en"), beri
+                // jalan keluar: lihat semua bahasa — supaya tak terasa "hilang".
+                <EmptyState otherCount={totalWords} onShowAll={() => setFilter("all")} />
               ) : tab === "belajar" ? (
                 <BelajarTab
                   words={words}
@@ -1377,7 +1386,15 @@ function Shell({ children }: { children?: React.ReactNode }) {
   );
 }
 
-function EmptyState() {
+function EmptyState({
+  otherCount = 0,
+  onShowAll,
+}: {
+  /** Jumlah kata tersimpan di SELURUH bahasa — >0 berarti kata ada, cuma tak di
+   *  bahasa yang sedang difilter. */
+  otherCount?: number;
+  onShowAll?: () => void;
+}) {
   return (
     <div className="mx-auto max-w-sm pt-10 text-center">
       <div
@@ -1392,6 +1409,15 @@ function EmptyState() {
         <span style={{ color: TEAL }}>Simpan</span>. Kata itu akan muncul di sini sebagai flashcard
         untuk dihafal.
       </p>
+      {otherCount > 0 && onShowAll && (
+        <button
+          onClick={onShowAll}
+          className="mt-4 rounded-full px-4 py-2 text-[13px] font-bold transition-colors"
+          style={{ backgroundColor: "rgba(26,158,158,0.18)", color: "#7FE0E0" }}
+        >
+          Lihat {otherCount} kata di bahasa lain
+        </button>
+      )}
     </div>
   );
 }

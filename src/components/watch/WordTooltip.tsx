@@ -181,6 +181,8 @@ export function WordTooltip({
   // Kalau non-null: tampilkan modal upsell (kuota simpan gratis habis); angkanya =
   // jumlah kata tersimpan buat ditampilkan di modal.
   const [upsellCount, setUpsellCount] = useState<number | null>(null);
+  // Penyimpanan browser penuh/diblokir → tampilkan pesan jujur, jangan diam-diam gagal.
+  const [saveError, setSaveError] = useState(false);
   // Frasa yang `meaning` sekarang wakili — auto-expand hanya boleh lanjut kalau arti
   // yang terlihat memang milik `word` saat ini (bukan sisa fetch sebelumnya), supaya
   // tiap langkah MENUNGGU hasil fetch & tak menembus beberapa perluasan sekaligus.
@@ -261,6 +263,7 @@ export function WordTooltip({
   useEffect(() => {
     let cancelled = false;
     setSaved(isWordSaved(word, langCode));
+    setSaveError(false);
 
     // Jalur cepat: arti kata ini sudah ada di cache analisa kalimat (di-prewarm
     // begitu transkrip siap) → tampil INSTAN tanpa memanggil word-info. Fallback
@@ -330,7 +333,9 @@ export function WordTooltip({
         setUpsellCount(savedWordCount());
         return;
       }
-      saveWord({
+      // Gagal tulis (penyimpanan browser penuh/diblokir) → JANGAN pura-pura sukses:
+      // dulu tombol berubah "Tersimpan" tapi katanya tak pernah muncul di flashcard.
+      const res = saveWord({
         word,
         meaning: meaning?.meaning ?? "",
         langCode,
@@ -338,6 +343,11 @@ export function WordTooltip({
         videoId,
         ...(isNonLatin(langCode) && translit ? { translit } : {}),
       });
+      if (!res.ok) {
+        setSaveError(true);
+        return;
+      }
+      setSaveError(false);
       setSaved(true);
     }
     onSavedChange?.();
@@ -502,6 +512,13 @@ export function WordTooltip({
               );
             })}
           </div>
+        )}
+
+        {saveError && (
+          <p className="mt-2 text-[11px] font-medium leading-snug" style={{ color: "#FCA5A5" }}>
+            Gagal menyimpan — penyimpanan browser penuh. Coba tutup tab lain atau
+            bersihkan data situs, lalu simpan lagi.
+          </p>
         )}
 
         {/* [watch-tip-actions-bottom-v1] Deret aksi (Simpan · Analisa) di pojok

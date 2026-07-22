@@ -63,6 +63,8 @@ export default function ExplanationWordTip({
   const [saved, setSaved] = useState(false);
   const [translit, setTranslit] = useState("");
   const [upsellCount, setUpsellCount] = useState<number | null>(null);
+  // Penyimpanan browser penuh/diblokir → tampilkan pesan, jangan gagal diam-diam.
+  const [saveError, setSaveError] = useState(false);
 
   // Arti + bacaan Latin (background) tiap kata berubah.
   useEffect(() => {
@@ -101,7 +103,19 @@ export default function ExplanationWordTip({
         setUpsellCount(savedWordCount());
         return;
       }
-      saveWord({ word, meaning: meaning?.meaning ?? "", langCode, example: sentence, videoId });
+      // Gagal tulis (penyimpanan penuh) → jangan tampil "Tersimpan" palsu.
+      const res = saveWord({
+        word,
+        meaning: meaning?.meaning ?? "",
+        langCode,
+        example: sentence,
+        videoId,
+      });
+      if (!res.ok) {
+        setSaveError(true);
+        return;
+      }
+      setSaveError(false);
       setSaved(true);
     }
     onSavedChange?.();
@@ -202,6 +216,12 @@ export default function ExplanationWordTip({
         ) : (
           <p className="mt-1 text-[14px] font-bold leading-snug" style={{ color: GOLD }}>
             {meaning.meaning}
+          </p>
+        )}
+
+        {saveError && (
+          <p className="mt-1.5 text-[11px] font-medium leading-snug" style={{ color: "#FCA5A5" }}>
+            Gagal menyimpan — penyimpanan browser penuh.
           </p>
         )}
       </div>

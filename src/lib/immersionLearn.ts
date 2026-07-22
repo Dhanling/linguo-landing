@@ -2405,6 +2405,104 @@ export interface SavedWord {
 
 const VOCAB_KEY = "linguo:watch:vocab:v1";
 
+// [watch-vocab-durable-v1] Kosakata siswa adalah data yang TAK BOLEH hilang, tapi
+// ia berbagi kuota localStorage (~5 MB) dengan cache besar yang bisa diambil ulang
+// dari server: transkrip terjemahan per video (basecues), pecahan kalimat
+// (breakdown), dan align karaoke. Cache itu tumbuh tiap video ditonton, jadi lama-
+// lama kuota habis → `setItem(VOCAB_KEY)` melempar QuotaExceededError dan (dulu)
+// ditelan diam-diam: tombol berubah jadi "Tersimpan" padahal tak ada yang tersimpan,
+// dan kata itu tak pernah muncul di flashcard.
+//
+// Sekarang: kalau menulis kosakata gagal, cache yang bisa diambil ulang DIBUANG
+// bertahap lalu tulisan diulang; kalau tetap gagal, pemanggil dikasih tahu (ok:false)
+// supaya UI bisa jujur, bukan pura-pura sukses.
+const DISPOSABLE_CACHE_PREFIXES = [
+  BASE_CACHE_PREFIX,
+  BREAKDOWN_CACHE_PREFIX,
+  ALIGN_CACHE_PREFIX,
+];
+
+/** Kunci cache yang boleh dibuang saat penyimpanan penuh. */
+function disposableCacheKeys(): string[] {
+  const keys: string[] = [];
+  try {
+    for (let i = 0; i < window.localStorage.length; i++) {
+      const k = window.localStorage.key(i);
+      if (k && DISPOSABLE_CACHE_PREFIXES.some((p) => k.startsWith(p))) keys.push(k);
+    }
+  } catch {
+    /* storage diblokir — tak ada yang bisa dibuang */
+  }
+  return keys;
+}
+
+// Perubahan kosakata disiarkan supaya tampilan lain ikut segar TANPA remount:
+// badge Kosakata di katalog, dashboard flashcard yang sedang terbuka, dan tab lain
+// (lewat event `storage` bawaan browser).
+export const VOCAB_CHANGED_EVENT = "linguo:watch:vocab-changed";
+
+/**
+ * Pasang pendengar perubahan kosakata (tab ini + tab lain). Balikin fungsi lepas.
+ * Dipakai komponen: `useEffect(() => onSavedWordsChanged(refresh), [])`.
+ */
+export function onSavedWordsChanged(cb: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const onLocal = () => cb();
+  const onStorage = (e: StorageEvent) => {
+    if (!e.key || e.key === VOCAB_KEY) cb();
+  };
+  window.addEventListener(VOCAB_CHANGED_EVENT, onLocal);
+  window.addEventListener("storage", onStorage);
+  return () => {
+    window.removeEventListener(VOCAB_CHANGED_EVENT, onLocal);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+/**
+ * Tulis daftar kosakata ke localStorage dengan JAMINAN: kalau penuh, buang cache
+ * yang bisa diambil ulang lalu coba lagi; verifikasi hasil tulisan (Safari mode
+ * privat kadang menerima setItem tanpa benar-benar menyimpan). Balikin sukses/tidak.
+ */
+function writeVocab(list: SavedWord[]): boolean {
+  if (typeof window === "undefined") return false;
+  const payload = JSON.stringify(list);
+  const put = (): boolean => {
+    try {
+      window.localStorage.setItem(VOCAB_KEY, payload);
+      // Verifikasi benar-benar tersimpan, bukan cuma "tidak melempar".
+      return window.localStorage.getItem(VOCAB_KEY) === payload;
+    } catch {
+      return false;
+    }
+  };
+  let ok = put();
+  if (!ok) {
+    // Buang cache bertahap (batch) — mulai dari sedikit supaya video yang sedang
+    // ditonton tak langsung kehilangan seluruh cache-nya.
+    const keys = disposableCacheKeys();
+    const batch = Math.max(10, Math.ceil(keys.length / 4));
+    for (let i = 0; i < keys.length && !ok; i += batch) {
+      for (const k of keys.slice(i, i + batch)) {
+        try {
+          window.localStorage.removeItem(k);
+        } catch {
+          /* abaikan */
+        }
+      }
+      ok = put();
+    }
+  }
+  if (ok) {
+    try {
+      window.dispatchEvent(new Event(VOCAB_CHANGED_EVENT));
+    } catch {
+      /* lingkungan tanpa Event — abaikan */
+    }
+  }
+  return ok;
+}
+
 export function getSavedWords(): SavedWord[] {
   if (typeof window === "undefined") return [];
   try {
@@ -2672,19 +2770,22 @@ export function isWordSaved(word: string, langCode: string): boolean {
   return getSavedWords().some((w) => keyOf(w.word, w.langCode) === keyOf(word, langCode));
 }
 
-export function saveWord(item: Omit<SavedWord, "ts" | "srs">): SavedWord[] {
+/** Hasil simpan kata: `ok:false` = benar-benar gagal tersimpan (penyimpanan penuh
+ *  / diblokir), jadi UI JANGAN menampilkan "Tersimpan". */
+export interface SaveWordResult {
+  ok: boolean;
+  list: SavedWord[];
+}
+
+export function saveWord(item: Omit<SavedWord, "ts" | "srs">): SaveWordResult {
   const list = getSavedWords().filter(
     (w) => keyOf(w.word, w.langCode) !== keyOf(item.word, item.langCode)
   );
   // Kata baru mulai dengan state SRS default (jatuh tempo langsung) → masuk sesi
   // review berikutnya.
   const next = [{ ...item, ts: Date.now(), srs: newSrsState() }, ...list].slice(0, 500);
-  try {
-    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
-  } catch {
-    /* penuh/diblokir — abaikan */
-  }
-  return next;
+  const ok = writeVocab(next);
+  return { ok, list: ok ? next : getSavedWords() };
 }
 
 /**
@@ -2697,24 +2798,14 @@ export function gradeSavedWord(word: string, langCode: string, grade: SrsGrade):
     if (keyOf(w.word, w.langCode) !== keyOf(word, langCode)) return w;
     return { ...w, srs: gradeCard(w.srs ?? newSrsState(), grade) };
   });
-  try {
-    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
-  } catch {
-    /* abaikan */
-  }
-  return next;
+  return writeVocab(next) ? next : getSavedWords();
 }
 
 export function removeSavedWord(word: string, langCode: string): SavedWord[] {
   const next = getSavedWords().filter(
     (w) => keyOf(w.word, w.langCode) !== keyOf(word, langCode)
   );
-  try {
-    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
-  } catch {
-    /* abaikan */
-  }
-  return next;
+  return writeVocab(next) ? next : getSavedWords();
 }
 
 /**
@@ -2731,12 +2822,7 @@ export function setSavedWordTranslit(word: string, langCode: string, translit: s
       ? { ...w, translit: t }
       : w
   );
-  try {
-    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
-  } catch {
-    /* abaikan */
-  }
-  return next;
+  return writeVocab(next) ? next : list;
 }
 
 /**
@@ -2753,12 +2839,7 @@ export function setSavedWordMeaning(word: string, langCode: string, meaning: str
       ? { ...w, meaning: m }
       : w
   );
-  try {
-    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
-  } catch {
-    /* abaikan */
-  }
-  return next;
+  return writeVocab(next) ? next : list;
 }
 
 // Segmenter per-locale di-cache: bikin Intl.Segmenter itu mahal & splitWords
