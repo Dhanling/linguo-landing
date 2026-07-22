@@ -2390,6 +2390,10 @@ export interface SavedWord {
   meaning: string;
   langCode: string;
   example: string;
+  // Transliterasi/bacaan Latin (romaji, pinyin, dll) untuk kata beraksara non-Latin.
+  // Opsional: kata beraksara Latin tak punya; kata lama (sebelum fitur ini) juga
+  // belum punya → dashboard mengisinya lazily lewat setSavedWordTranslit().
+  translit?: string;
   // Video tempat kata disimpan — dipakai badge "kosakata di video ini" pada player.
   // Opsional: kata lama (sebelum fitur ini) tak punya field ini.
   videoId?: string;
@@ -2704,6 +2708,50 @@ export function gradeSavedWord(word: string, langCode: string, grade: SrsGrade):
 export function removeSavedWord(word: string, langCode: string): SavedWord[] {
   const next = getSavedWords().filter(
     (w) => keyOf(w.word, w.langCode) !== keyOf(word, langCode)
+  );
+  try {
+    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
+  } catch {
+    /* abaikan */
+  }
+  return next;
+}
+
+/**
+ * Isi bacaan Latin (translit) sebuah kata yang tersimpan TANPA translit — dipakai
+ * dashboard flashcard untuk membubuhkan romaji/pinyin pada kata lama (disimpan
+ * sebelum fitur translit) secara lazy. Hanya menyentuh kata yang cocok & masih
+ * kosong; kata beraksara Latin tak pernah dipanggil. Balikin daftar terbaru.
+ */
+export function setSavedWordTranslit(word: string, langCode: string, translit: string): SavedWord[] {
+  const t = translit.trim();
+  const list = getSavedWords();
+  const next = list.map((w) =>
+    keyOf(w.word, w.langCode) === keyOf(word, langCode) && !w.translit && t
+      ? { ...w, translit: t }
+      : w
+  );
+  try {
+    window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));
+  } catch {
+    /* abaikan */
+  }
+  return next;
+}
+
+/**
+ * Isi arti sebuah kata yang tersimpan TANPA arti — mis. kata fungsi seperti "です"
+ * yang saat disimpan lookup-nya balik kosong. Dashboard mengisinya lazily (sekali
+ * per kata, hasilnya di-persist) supaya tak menembak word-info berulang. Hanya
+ * menyentuh kata yang cocok & artinya masih kosong. Balikin daftar terbaru.
+ */
+export function setSavedWordMeaning(word: string, langCode: string, meaning: string): SavedWord[] {
+  const m = meaning.trim();
+  const list = getSavedWords();
+  const next = list.map((w) =>
+    keyOf(w.word, w.langCode) === keyOf(word, langCode) && !w.meaning && m
+      ? { ...w, meaning: m }
+      : w
   );
   try {
     window.localStorage.setItem(VOCAB_KEY, JSON.stringify(next));

@@ -185,11 +185,18 @@ export default function WordStudy({
         setUpsellCount(savedWordCount());
         return;
       }
-      saveWord({ word, meaning: meaning?.meaning ?? deep?.usage ?? "", langCode, example: sentence, videoId });
+      saveWord({
+        word,
+        meaning: meaning?.meaning ?? deep?.usage ?? "",
+        langCode,
+        example: sentence,
+        videoId,
+        ...(translit ? { translit } : {}),
+      });
       setSaved(true);
     }
     onSavedChange?.();
-  }, [saved, word, langCode, meaning, deep, sentence, videoId, onSavedChange]);
+  }, [saved, word, langCode, meaning, deep, translit, sentence, videoId, onSavedChange]);
 
   const ask = useCallback(
     (q: string) => {

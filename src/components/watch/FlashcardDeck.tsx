@@ -37,10 +37,15 @@ import VocabQuiz from "./VocabQuiz";
 import {
   FREE_SAVE_LIMIT,
   getSavedWords,
+  getWordMeaning,
   gradeSavedWord,
+  isNonLatin,
   isWatchPremium,
   SavedWord,
+  setSavedWordMeaning,
+  setSavedWordTranslit,
   speakText,
+  transliterateLines,
 } from "@/lib/immersionLearn";
 import {
   cardStage,
@@ -161,7 +166,9 @@ function exportVocabPdf(words: SavedWord[], title: string) {
       const stage = STAGE[cardStage(w.srs)];
       return `<tr>
         <td class="no">${i + 1}</td>
-        <td class="kata">${escapeHtml(w.word)}</td>
+        <td class="kata">${escapeHtml(w.word)}${
+          w.translit ? `<div class="baca">${escapeHtml(w.translit)}</div>` : ""
+        }</td>
         <td class="arti">${escapeHtml(w.meaning || "—")}</td>
         <td class="contoh">${w.example ? escapeHtml(w.example) : ""}</td>
         <td class="tahap"><span class="badge">${stage.label}</span></td>
@@ -185,6 +192,7 @@ function exportVocabPdf(words: SavedWord[], title: string) {
   tr:nth-child(even) td { background: #f6fbfb; }
   .no { width: 34px; color: #999; text-align: right; }
   .kata { font-weight: 700; white-space: nowrap; }
+  .baca { font-weight: 400; font-style: italic; font-size: 11px; color: ${TEAL_DARK}; margin-top: 2px; }
   .arti { color: #b8860b; font-weight: 600; }
   .contoh { color: #666; font-style: italic; }
   .tahap { width: 78px; }
@@ -292,6 +300,75 @@ export default function FlashcardDeck({
     () => words.filter((w) => isToday(w.srs?.lastReviewedAt)).length,
     [words]
   );
+
+  // Backfill bacaan Latin (romaji/pinyin/dll) untuk kata beraksara non-Latin yang
+  // belum punya `translit` — kata lama disimpan sebelum fitur ini, jadi dashboard
+  // mengisinya lazily via /api/translit lalu men-persist ke localStorage. Best-effort:
+  // gagal = kartu tetap tampil tanpa bacaan. Hanya menyentuh kata yang kosong.
+  useEffect(() => {
+    const missing = words.filter((w) => isNonLatin(w.langCode) && !w.translit);
+    if (!missing.length) return;
+    let cancelled = false;
+    // Kelompokkan per bahasa — transliterateLines memproses satu bahasa per panggilan.
+    const byLang = new Map<string, SavedWord[]>();
+    for (const w of missing) {
+      const arr = byLang.get(w.langCode) ?? [];
+      arr.push(w);
+      byLang.set(w.langCode, arr);
+    }
+    void Promise.all(
+      [...byLang.entries()].map(async ([code, ws]) => {
+        const readings = await transliterateLines(
+          ws.map((w) => w.word),
+          code
+        );
+        if (cancelled) return;
+        ws.forEach((w, i) => {
+          const r = readings[i];
+          if (r) setSavedWordTranslit(w.word, w.langCode, r);
+        });
+      })
+    ).then(() => {
+      if (!cancelled) setAll(getSavedWords());
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [words]);
+
+  // Backfill ARTI untuk kata yang tersimpan tanpa arti — mis. kata fungsi ("です")
+  // yang lookup-nya balik kosong saat disimpan. Sekali per kata (hasil di-persist),
+  // best-effort & serial biar tak menembak word-info beramai-ramai / kena kuota.
+  useEffect(() => {
+    const missing = words.filter((w) => !w.meaning);
+    if (!missing.length) return;
+    let cancelled = false;
+    void (async () => {
+      let changed = false;
+      for (const w of missing) {
+        if (cancelled) break;
+        try {
+          const m = await getWordMeaning({
+            word: w.word,
+            sentence: w.example || "",
+            langCode: w.langCode,
+          });
+          if (m.meaning) {
+            setSavedWordMeaning(w.word, w.langCode, m.meaning);
+            changed = true;
+          }
+        } catch {
+          /* kuota/gagal — biarkan kosong, coba lagi lain kali */
+        }
+      }
+      if (!cancelled && changed) setAll(getSavedWords());
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [words]);
 
   // Ganti filter/tab saat sesi tak aktif → kembali ke home.
   useEffect(() => {
@@ -731,6 +808,11 @@ function BelajarTab({
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: accent.color }} />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-[15px] font-bold text-white">{w.word}</p>
+                  {w.translit && (
+                    <p className="truncate text-[12px] italic" style={{ color: TEAL }}>
+                      {w.translit}
+                    </p>
+                  )}
                   {w.meaning && (
                     <p className="truncate text-[13px]" style={{ color: SUB }}>
                       {w.meaning}
@@ -790,6 +872,11 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
             <p className="mt-3 text-center text-[34px] font-extrabold leading-tight text-white sm:text-[40px]">
               {card.word}
             </p>
+            {card.translit && (
+              <p className="mt-1.5 text-center text-[15px] italic" style={{ color: TEAL }}>
+                {card.translit}
+              </p>
+            )}
             <button
               onClick={(e) => {
                 e.stopPropagation();

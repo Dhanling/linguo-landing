@@ -330,11 +330,18 @@ export function WordTooltip({
         setUpsellCount(savedWordCount());
         return;
       }
-      saveWord({ word, meaning: meaning?.meaning ?? "", langCode, example: sentence, videoId });
+      saveWord({
+        word,
+        meaning: meaning?.meaning ?? "",
+        langCode,
+        example: sentence,
+        videoId,
+        ...(isNonLatin(langCode) && translit ? { translit } : {}),
+      });
       setSaved(true);
     }
     onSavedChange?.();
-  }, [saved, word, langCode, meaning, sentence, videoId, onSavedChange]);
+  }, [saved, word, langCode, meaning, translit, sentence, videoId, onSavedChange]);
 
   // Posisi balon: di atas titik tap, diklem ke layar.
   const vw = typeof window !== "undefined" ? window.innerWidth : 360;
