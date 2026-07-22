@@ -968,6 +968,12 @@ export default function VideoLearnPlayer({
       (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
       e.preventDefault();
       e.stopPropagation();
+      // [watch-subtitle-drag-v1] Bersihkan seleksi teks yang mungkin terlanjur
+      // terbentuk — kalau tidak, sorotan ::selection (teal brand) tampak seperti
+      // "pita hijau" melintang di atas video.
+      try {
+        window.getSelection()?.removeAllRanges();
+      } catch {}
     },
     [subtitleDY],
   );
@@ -2486,7 +2492,7 @@ export default function VideoLearnPlayer({
                       play/jeda di bawahnya. Disembunyikan saat layar-diam Netflix aktif
                       (judulnya sudah tampil besar di sana). */}
                   <div
-                    className={`pointer-events-none absolute inset-x-0 top-0 z-[6] bg-gradient-to-b from-black/75 via-black/25 to-transparent px-4 pb-8 pt-3 transition-opacity duration-300 ${
+                    className={`pointer-events-none absolute inset-x-0 top-0 z-[6] select-none bg-gradient-to-b from-black/75 via-black/25 to-transparent px-4 pb-8 pt-3 transition-opacity duration-300 ${
                       (!playing || videoHot) && !idlePaused ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -2906,7 +2912,9 @@ export default function VideoLearnPlayer({
                   // tepi hitam solid di teks ([watch-karaoke-solid-shadow]).
                   // pointer-events-none di pembungkus supaya area kosong tetap meneruskan
                   // klik ke video (play/jeda); hanya blok teks yang menangkap pointer.
-                  "pointer-events-none absolute inset-x-0 bottom-0 z-30 justify-end px-4 pb-24 pt-12 sm:px-6"
+                  // select-none: cegah blok teks ini keseleksi saat digeser/di-tap
+                  // (sorotan ::selection teal bikin "pita hijau" menimpa video).
+                  "pointer-events-none absolute inset-x-0 bottom-0 z-30 select-none justify-end px-4 pb-24 pt-12 sm:px-6"
                 : "min-h-0 flex-1 overflow-y-auto py-2"
             }`}
           >
@@ -2942,7 +2950,7 @@ export default function VideoLearnPlayer({
                   onPointerUp={onSubDragEnd}
                   onPointerCancel={onSubDragEnd}
                   onDoubleClick={resetSubtitleDY}
-                  className={`pointer-events-auto absolute left-1/2 top-0 z-10 flex -translate-x-1/2 -translate-y-[calc(100%+6px)] cursor-grab touch-none items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm transition-opacity duration-150 active:cursor-grabbing ${
+                  className={`pointer-events-auto absolute left-1/2 top-0 z-10 flex -translate-x-1/2 -translate-y-[calc(100%+6px)] cursor-grab touch-none select-none items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm transition-opacity duration-150 active:cursor-grabbing ${
                     subtitleDY !== 0
                       ? "opacity-80"
                       : "opacity-0 group-hover/subdrag:opacity-80 focus:opacity-80"
