@@ -15,6 +15,7 @@ import {
   Eye,
   EyeOff,
   Gauge,
+  GripHorizontal,
   Languages,
   Layers,
   ListChecks,
@@ -941,6 +942,56 @@ export default function VideoLearnPlayer({
   useEffect(() => {
     if (!mini) setMiniPos(null);
   }, [mini]);
+
+  // [watch-subtitle-drag-v1] Geser blok subtitle (target + translit + terjemahan) naik/
+  // turun saat MELAYANG di atas video (layar penuh). Berguna kalau video aslinya sudah
+  // punya subtitle/terjemahan bawaan — pindahkan subtitle Linguo ke atas/bawah biar tak
+  // tumpang-tindih. Offset vertikal (px, negatif = naik) disimpan lokal → tahan refresh
+  // & pindah video. Grip drag hanya muncul saat overlay melayang (fullscreen).
+  const [subtitleDY, setSubtitleDY] = useState(0);
+  useEffect(() => {
+    try {
+      const v = Number(localStorage.getItem("wl-subtitle-dy-v1"));
+      if (Number.isFinite(v) && v !== 0) setSubtitleDY(v);
+    } catch {}
+  }, []);
+  const subDragRef = useRef<{ y: number; cur: number } | null>(null);
+  const persistSubtitleDY = useCallback((v: number) => {
+    try {
+      if (v === 0) localStorage.removeItem("wl-subtitle-dy-v1");
+      else localStorage.setItem("wl-subtitle-dy-v1", String(Math.round(v)));
+    } catch {}
+  }, []);
+  const onSubDragStart = useCallback(
+    (e: React.PointerEvent) => {
+      subDragRef.current = { y: e.clientY, cur: subtitleDY };
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+      e.preventDefault();
+      e.stopPropagation();
+    },
+    [subtitleDY],
+  );
+  const onSubDragMove = useCallback((e: React.PointerEvent) => {
+    const d = subDragRef.current;
+    if (!d) return;
+    // Boleh naik hampir sampai atas layar; turun dibatasi sedikit (subtitle sudah
+    // menempel dekat dasar video).
+    const next = Math.min(
+      40,
+      Math.max(-window.innerHeight * 0.72, d.cur + (e.clientY - d.y)),
+    );
+    subDragRef.current = { y: e.clientY, cur: next };
+    setSubtitleDY(next);
+  }, []);
+  const onSubDragEnd = useCallback(() => {
+    const d = subDragRef.current;
+    subDragRef.current = null;
+    if (d) persistSubtitleDY(d.cur);
+  }, [persistSubtitleDY]);
+  const resetSubtitleDY = useCallback(() => {
+    setSubtitleDY(0);
+    persistSubtitleDY(0);
+  }, [persistSubtitleDY]);
   // Rekomendasi: tampil 5 dulu, "Muat lainnya" menambah — reset tiap ganti video.
   const [recShown, setRecShown] = useState(5);
   // Video terkait hasil pencarian (channel/topik sama) — fallback ke katalog halaman.
@@ -2866,10 +2917,43 @@ export default function VideoLearnPlayer({
             <div
               className={
                 fullscreen
-                  ? "pointer-events-auto max-h-[42vh] w-full overflow-y-auto text-center"
+                  ? "group/subdrag pointer-events-auto relative w-full"
                   : "mb-auto mt-2 w-full"
               }
+              style={
+                fullscreen && subtitleDY !== 0
+                  ? { transform: `translateY(${subtitleDY}px)` }
+                  : undefined
+              }
             >
+              {/* [watch-subtitle-drag-v1] Grip untuk menyeret subtitle naik/turun.
+                  Hanya di layar penuh (saat subtitle melayang di atas video). Klik-ganda
+                  = kembalikan ke posisi bawaan. */}
+              {fullscreen && (
+                <div
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Geser posisi subtitle (klik-ganda untuk reset)"
+                  title="Seret untuk memindahkan subtitle • klik-ganda untuk reset"
+                  onPointerDown={onSubDragStart}
+                  onPointerMove={onSubDragMove}
+                  onPointerUp={onSubDragEnd}
+                  onPointerCancel={onSubDragEnd}
+                  onDoubleClick={resetSubtitleDY}
+                  className={`pointer-events-auto absolute left-1/2 top-0 z-10 flex -translate-x-1/2 -translate-y-[calc(100%+6px)] cursor-grab touch-none items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm transition-opacity duration-150 active:cursor-grabbing ${
+                    subtitleDY !== 0
+                      ? "opacity-80"
+                      : "opacity-0 group-hover/subdrag:opacity-80 focus:opacity-80"
+                  }`}
+                >
+                  <GripHorizontal className="h-4 w-4" />
+                </div>
+              )}
+              <div
+                className={
+                  fullscreen ? "max-h-[42vh] w-full overflow-y-auto text-center" : "w-full"
+                }
+              >
               <FocusLine
                 onHoverPause={onSubtitleEnter}
                 onHoverResume={onSubtitleLeave}
@@ -2915,6 +2999,7 @@ export default function VideoLearnPlayer({
                   }
                 }}
               />
+              </div>
             </div>
           </div>
           )}
