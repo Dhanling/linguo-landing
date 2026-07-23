@@ -12,7 +12,12 @@ import { Send, Sparkles, Volume2, X } from "lucide-react";
 import {
   askSentenceQuestion,
   FollowupQ,
+  getSentenceBreakdown,
   getSentenceDeepDive,
+  isRtl,
+  POS_COLOR,
+  POS_LABEL_ID,
+  SentenceBreakdown,
   speakText,
   SentenceDeepDive,
 } from "@/lib/immersionLearn";
@@ -29,6 +34,9 @@ const BG = "#06090A";
 const CARD = "rgba(255,255,255,0.05)";
 const BORDER = "rgba(255,255,255,0.09)";
 const SUB = "rgba(255,255,255,0.5)";
+// Gold redup untuk arti per-kata — SAMA dengan mode Analisa di player, supaya
+// "Pecahan Kalimat" di drawer terbaca sebagai tampilan yang sama, bukan gaya lain.
+const GOLD_DIM = "rgba(244,183,64,0.72)";
 
 // Pertanyaan lanjutan siap-pakai untuk sebuah kalimat — chip yang tinggal ketuk.
 const SUGGESTED = [
@@ -74,6 +82,14 @@ export default function SentenceStudy({
   const [loading, setLoading] = useState(true);
   const [errored, setErrored] = useState(false);
 
+  // [watch-study-breakdown-v1] "Pecahan Kalimat" memakai breakdown per-kata yang
+  // SAMA dengan mode Analisa di player (arti di atas kata, kata berwarna kelas kata,
+  // label kelas kata di bawah) — bukan daftar frasa bergaya sendiri. Sumbernya juga
+  // sama (getSentenceBreakdown → cache localStorage/prewarm), jadi hampir selalu
+  // instan dan tak pernah beda isi dengan yang tampil di subtitle.
+  const [bd, setBd] = useState<SentenceBreakdown | null>(null);
+  const [bdLoading, setBdLoading] = useState(true);
+
   // Tanya-jawab lanjutan.
   const [chat, setChat] = useState<ChatMsg[]>([]);
   const [input, setInput] = useState("");
@@ -94,6 +110,13 @@ export default function SentenceStudy({
       .then((d) => !cancelled && setDeep(d))
       .catch(() => !cancelled && setErrored(true))
       .finally(() => !cancelled && setLoading(false));
+    // Breakdown per-kata jalan paralel; gagal = diam-diam fallback ke pecahan frasa AI.
+    setBd(null);
+    setBdLoading(true);
+    getSentenceBreakdown({ sentence, langCode, baseCode })
+      .then((b) => !cancelled && setBd(b))
+      .catch(() => {})
+      .finally(() => !cancelled && setBdLoading(false));
     return () => {
       cancelled = true;
     };
@@ -208,7 +231,16 @@ export default function SentenceStudy({
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6">
         <div className="mx-auto max-w-2xl">
           {tab === "study" ? (
-            <StudyTab loading={loading} errored={errored} deep={deep} langCode={langCode} onAsk={ask} />
+            <StudyTab
+              loading={loading}
+              errored={errored}
+              deep={deep}
+              bd={bd}
+              bdLoading={bdLoading}
+              langCode={langCode}
+              onAsk={ask}
+              onWordTap={onExplainWordTap}
+            />
           ) : (
             <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
           )}
@@ -315,14 +347,21 @@ function StudyTab({
   loading,
   errored,
   deep,
+  bd,
+  bdLoading,
   langCode,
   onAsk,
+  onWordTap,
 }: {
   loading: boolean;
   errored: boolean;
   deep: SentenceDeepDive | null;
+  // Breakdown per-kata (sumber sama dgn mode Analisa player); null = belum ada/gagal.
+  bd: SentenceBreakdown | null;
+  bdLoading: boolean;
   langCode: string;
   onAsk: (q: string) => void;
+  onWordTap: WordTapHandler;
 }) {
   const [ownQ, setOwnQ] = useState("");
 
@@ -374,8 +413,62 @@ function StudyTab({
         </Section>
       )}
 
-      {/* Pecahan kalimat — kata/frasa + peran + arti; tap potongan = dengar */}
-      {deep.chunks.length > 0 && (
+      {/* Pecahan kalimat — tampilan per-kata PERSIS mode Analisa di player: arti
+          (emas redup) di atas kata, kata diwarnai kelas kata, bacaan Latin, lalu
+          label kelas kata di bawah. Ketuk kata = balon arti (Simpan · Analisa · TTS). */}
+      {bd && bd.tokens.length > 0 ? (
+        <Section title="Pecahan Kalimat">
+          <div
+            className="flex flex-wrap items-end gap-x-3 gap-y-3"
+            dir={isRtl(langCode) ? "rtl" : undefined}
+          >
+            {bd.tokens.map((t, i) => (
+              <span
+                key={i}
+                onClick={(e) => onWordTap(t.word, e)}
+                className="flex cursor-pointer flex-col items-center text-center transition-opacity hover:opacity-80"
+              >
+                {t.gloss && (
+                  <span
+                    className="block text-[11px] font-semibold leading-tight"
+                    style={{ color: GOLD_DIM }}
+                  >
+                    {t.gloss}
+                  </span>
+                )}
+                <span
+                  className="block text-[19px] font-extrabold leading-tight"
+                  style={{ color: POS_COLOR[t.cat] }}
+                >
+                  {t.word}
+                </span>
+                {t.translit && (
+                  <span className="block text-[11px] italic leading-tight text-white">
+                    {t.translit}
+                  </span>
+                )}
+                <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
+                  {POS_LABEL_ID[t.cat]}
+                </span>
+              </span>
+            ))}
+          </div>
+        </Section>
+      ) : bdLoading ? (
+        <Section title="Pecahan Kalimat">
+          <div className="flex flex-wrap items-end gap-x-3 gap-y-3">
+            {[52, 38, 64, 46, 58].map((w, i) => (
+              <div key={i} className="flex flex-col items-center gap-1">
+                <Skel w={w * 0.8} h={9} />
+                <Skel w={w} h={16} />
+                <Skel w={w * 0.6} h={8} />
+              </div>
+            ))}
+          </div>
+        </Section>
+      ) : deep.chunks.length > 0 ? (
+        /* Fallback: breakdown per-kata tak tersedia (offline/AI gagal) → pecahan
+           frasa dari deep-dive, gaya lama. */
         <Section title="Pecahan Kalimat">
           <div className="space-y-2.5">
             {deep.chunks.map((c, i) => (
@@ -410,7 +503,7 @@ function StudyTab({
             ))}
           </div>
         </Section>
-      )}
+      ) : null}
 
       {/* Ajakan bertanya */}
       <div className="pt-1">
