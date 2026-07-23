@@ -12,8 +12,6 @@ import {
   ArrowLeft,
   Check,
   ChevronDown,
-  Eye,
-  EyeOff,
   Gauge,
   GripHorizontal,
   Languages,
@@ -286,23 +284,50 @@ function ToolButton({
   );
 }
 
-// [watch-subtitle-menu-v1] Tombol "Terjemahan" di bar kontrol kini membuka menu
-// hover kecil dengan DUA pilihan alih-alih sekadar toggle: (1) sembunyikan baris
-// terjemahan (emas) saja → fokus ke arti per-kata, atau (2) sembunyikan SELURUH
-// subtitle (target + translit + terjemahan) → nonton bersih tanpa teks apa pun.
+// Sakelar geser kecil ala iOS — dipakai di panel subtitle. Nyala = teal brand.
+function MiniSwitch({ on }: { on: boolean }) {
+  return (
+    <span
+      aria-hidden
+      className="relative inline-flex h-[22px] w-[38px] shrink-0 items-center rounded-full transition-colors duration-200"
+      style={{ backgroundColor: on ? TEAL : "rgba(255,255,255,0.18)" }}
+    >
+      <span
+        className="absolute h-[18px] w-[18px] rounded-full bg-white shadow-sm transition-transform duration-200"
+        style={{ transform: `translateX(${on ? 18 : 2}px)` }}
+      />
+    </span>
+  );
+}
+
+// [watch-subtitle-toggle-v2] Tombol subtitle di bar kontrol kini membuka panel
+// bergaya pemutar imersi: SATU BARIS PER BAHASA (bendera rounded rectangle +
+// nama bahasa + sakelar geser) — baris atas subtitle bahasa yang dipelajari,
+// baris bawah terjemahan. Keduanya mandiri; kalau dua-duanya dimatikan blok
+// subtitle hilang total (= "sembunyikan semua subtitle" versi lama).
 // Hover buka; klik trigger juga toggle (perangkat sentuh). Menu = anak dari
 // pembungkus supaya hover-nya ikut menahan menu tetap terbuka; timer kecil
 // menjembatani celah antara tombol & panel saat kursor menyeberang.
 function SubtitleMenuButton({
   showSentenceTr,
   onToggleSentenceTr,
+  showTargetSub,
+  onToggleTargetSub,
   hideSubtitle,
-  onToggleSubtitle,
+  targetLabel,
+  targetFlag,
+  baseLabel,
+  baseFlag,
 }: {
   showSentenceTr: boolean;
   onToggleSentenceTr: () => void;
+  showTargetSub: boolean;
+  onToggleTargetSub: () => void;
   hideSubtitle: boolean;
-  onToggleSubtitle: () => void;
+  targetLabel: string;
+  targetFlag?: string;
+  baseLabel: string;
+  baseFlag?: string;
 }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -344,40 +369,54 @@ function SubtitleMenuButton({
       {open && (
         <div
           role="menu"
-          className="absolute bottom-full left-1/2 z-20 mb-2 w-60 -translate-x-1/2 overflow-hidden rounded-2xl py-1.5 shadow-2xl"
+          className="absolute bottom-full left-1/2 z-20 mb-2 w-64 -translate-x-1/2 overflow-hidden rounded-2xl shadow-2xl"
           style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
         >
-          <button
-            type="button"
-            role="menuitem"
-            onClick={onToggleSentenceTr}
-            disabled={hideSubtitle}
-            className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5 disabled:opacity-40"
-          >
-            {showSentenceTr && !hideSubtitle ? (
-              <Eye className="h-4 w-4 shrink-0" color={TEAL} />
-            ) : (
-              <EyeOff className="h-4 w-4 shrink-0 text-white/50" />
-            )}
-            <span className="flex-1 font-semibold text-white">
-              {showSentenceTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
-            </span>
-          </button>
-          <button
-            type="button"
-            role="menuitem"
-            onClick={onToggleSubtitle}
-            className="flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm transition-colors hover:bg-white/5"
-          >
-            {!hideSubtitle ? (
-              <Eye className="h-4 w-4 shrink-0" color={TEAL} />
-            ) : (
-              <EyeOff className="h-4 w-4 shrink-0 text-white/50" />
-            )}
-            <span className="flex-1 font-semibold text-white">
-              {hideSubtitle ? "Tampilkan semua subtitle" : "Sembunyikan semua subtitle"}
-            </span>
-          </button>
+          <p className="px-3.5 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-wide text-white/45">
+            Subtitle
+          </p>
+          {(
+            [
+              {
+                key: "target",
+                label: targetLabel,
+                flag: targetFlag,
+                hint: "Bahasa yang dipelajari",
+                on: showTargetSub,
+                toggle: onToggleTargetSub,
+              },
+              {
+                key: "base",
+                label: baseLabel,
+                flag: baseFlag,
+                hint: "Terjemahan",
+                on: showSentenceTr,
+                toggle: onToggleSentenceTr,
+              },
+            ] as const
+          ).map((row) => (
+            <button
+              key={row.key}
+              type="button"
+              role="menuitemcheckbox"
+              aria-checked={row.on}
+              onClick={row.toggle}
+              className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-left transition-colors hover:bg-white/5"
+            >
+              <RectFlag code={row.flag} h={18} />
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-sm font-bold text-white">{row.label}</span>
+                <span className="block text-[11px] font-medium text-white/45">{row.hint}</span>
+              </span>
+              <MiniSwitch on={row.on} />
+            </button>
+          ))}
+          {/* Dua-duanya mati = nonton bersih tanpa teks; kasih tahu cara baliknya. */}
+          {hideSubtitle && (
+            <p className="border-t px-3.5 py-2 text-[11px] font-medium leading-snug text-white/45" style={{ borderColor: BORDER }}>
+              Semua subtitle mati — nyalakan salah satu untuk menampilkannya lagi.
+            </p>
+          )}
         </div>
       )}
     </div>
@@ -517,10 +556,12 @@ export default function VideoLearnPlayer({
   // [watch-hide-sentence-tr-v1] Sembunyikan baris terjemahan kalimat (emas) di bawah
   // subtitle → fokus ke arti per-kata di mode Analisa. Default tampil.
   const [showSentenceTr, setShowSentenceTr] = useState(true);
-  // [watch-subtitle-menu-v1] Sembunyikan SELURUH blok subtitle (target + translit +
-  // terjemahan) → menonton bersih tanpa teks apa pun. Terpisah dari showSentenceTr
-  // yang hanya menyembunyikan baris terjemahan emas.
-  const [hideSubtitle, setHideSubtitle] = useState(false);
+  // [watch-subtitle-toggle-v2] Subtitle bahasa target (+ translit) punya sakelar
+  // SENDIRI, sejajar dengan sakelar terjemahan — persis pola pemutar imersi lain:
+  // satu baris per bahasa, masing-masing bisa dimatikan. Kalau KEDUANYA mati,
+  // blok subtitle hilang total (setara "sembunyikan semua subtitle" yang lama).
+  const [showTargetSub, setShowTargetSub] = useState(true);
+  const hideSubtitle = !showTargetSub && !showSentenceTr;
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
   // Kualitas video — kontrol bawaan YouTube dimatikan (controls:0), jadi kita sediakan
@@ -2980,6 +3021,7 @@ export default function VideoLearnPlayer({
                 baseLang={baseLang}
                 baseTranslating={baseTranslating}
                 showTranslation={showSentenceTr}
+                showTarget={showTargetSub}
                 // Tombol Analisa di bawah menggantikan subtitle di baris fokus ini
                 // dengan breakdown grammar (arti + kelas kata per token) — inline,
                 // bukan drawer. Drawer disisakan hanya untuk analisa per-kata (WordStudy).
@@ -3139,13 +3181,18 @@ export default function VideoLearnPlayer({
               onClick={cycleFont}
             />
 
-            {/* [watch-subtitle-menu-v1] Menu hover: sembunyikan baris terjemahan
-                (emas) saja, atau sembunyikan SELURUH subtitle → nonton bersih. */}
+            {/* [watch-subtitle-toggle-v2] Panel sakelar per bahasa: baris subtitle
+                bahasa target & baris terjemahan, masing-masing bisa dimatikan. */}
             <SubtitleMenuButton
               showSentenceTr={showSentenceTr}
               onToggleSentenceTr={() => setShowSentenceTr((v) => !v)}
+              showTargetSub={showTargetSub}
+              onToggleTargetSub={() => setShowTargetSub((v) => !v)}
               hideSubtitle={hideSubtitle}
-              onToggleSubtitle={() => setHideSubtitle((v) => !v)}
+              targetLabel={getImmersionLang(langCode)?.name ?? langCode}
+              targetFlag={getImmersionLang(langCode)?.country}
+              baseLabel={getBaseLangDef(baseLang).label}
+              baseFlag={getBaseLangDef(baseLang).country}
             />
 
             {/* Tampil/sembunyikan panel transkrip di kanan — berguna di fullscreen
@@ -3680,6 +3727,7 @@ function FocusLine({
   baseLang,
   baseTranslating,
   showTranslation = true,
+  showTarget = true,
   analyze,
   breakdown,
   onWordTap,
@@ -3705,6 +3753,9 @@ function FocusLine({
   baseLang?: string;
   baseTranslating?: boolean;
   showTranslation?: boolean;
+  // [watch-subtitle-toggle-v2] Sakelar baris subtitle bahasa target (+ translit).
+  // Mati → yang tersisa hanya terjemahan (kalau sakelarnya masih nyala).
+  showTarget?: boolean;
   analyze: boolean;
   breakdown: SentenceBreakdown | "loading" | "error" | undefined;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
@@ -3866,31 +3917,35 @@ function FocusLine({
         onMouseEnter={onHoverPause}
         onMouseLeave={onHoverResume}
       >
-      <KaraokeText
-        cue={cue}
-        time={time}
-        langCode={langCode}
-        onWordTap={onWordTap}
-        onWordHoverOpen={onWordHoverOpen}
-        onWordHoverClose={onWordHoverClose}
-        tapped={tapped}
-        hoveredK={hoveredK}
-        hotKeys={hot?.t}
-        onHoverWord={onHoverWord}
-        chunks={chunks}
-        className="font-extrabold leading-snug"
-        fontSize={22 * scale}
-        center
-      />
-      {cue.translit && !cueIsExplanation(cue, langCode ?? "") && (
-        <KaraokeTranslit
-          cue={cue}
-          time={time}
-          langCode={langCode}
-          tapped={tapped}
-          className="mt-1 italic"
-          style={{ fontSize: 13 * scale }}
-        />
+      {showTarget && (
+        <>
+          <KaraokeText
+            cue={cue}
+            time={time}
+            langCode={langCode}
+            onWordTap={onWordTap}
+            onWordHoverOpen={onWordHoverOpen}
+            onWordHoverClose={onWordHoverClose}
+            tapped={tapped}
+            hoveredK={hoveredK}
+            hotKeys={hot?.t}
+            onHoverWord={onHoverWord}
+            chunks={chunks}
+            className="font-extrabold leading-snug"
+            fontSize={22 * scale}
+            center
+          />
+          {cue.translit && !cueIsExplanation(cue, langCode ?? "") && (
+            <KaraokeTranslit
+              cue={cue}
+              time={time}
+              langCode={langCode}
+              tapped={tapped}
+              className="mt-1 italic"
+              style={{ fontSize: 13 * scale }}
+            />
+          )}
+        </>
       )}
       {!showTranslation ? null : cue.base && !isDuplicateBase(cue, langCode ?? "") ? (
         alignEnabled ? (
