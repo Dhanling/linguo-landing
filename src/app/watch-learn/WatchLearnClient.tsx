@@ -147,7 +147,9 @@ function PlayerMock() {
       <div className="wl-glow pointer-events-none absolute -inset-10 rounded-[3rem] bg-[radial-gradient(55%_55%_at_50%_45%,rgba(26,158,158,0.38),transparent_72%)] blur-2xl" />
 
       <div className="relative rounded-[26px] bg-[#0B0E0F] p-2.5 shadow-[0_30px_80px_-20px_rgba(11,14,15,0.55)] ring-1 ring-white/10">
-        <div className="relative aspect-video overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#1d3b42_0%,#122a30_45%,#0d1719_100%)]">
+        {/* Di layar kecil bingkai sengaja lebih tinggi (4:3) supaya kartu arti kata
+            tidak menimpa subtitle. Mulai sm ke atas kembali ke rasio video normal. */}
+        <div className="relative aspect-[4/3] sm:aspect-video overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#1d3b42_0%,#122a30_45%,#0d1719_100%)]">
           {/* "adegan" abstrak */}
           <div className="absolute -left-10 top-4 h-40 w-40 rounded-full bg-[#1A9E9E]/25 blur-3xl" />
           <div className="absolute right-2 -top-6 h-36 w-36 rounded-full bg-amber-300/20 blur-3xl" />
@@ -164,7 +166,7 @@ function PlayerMock() {
           </div>
 
           {/* kartu arti kata */}
-          <div className="wl-float absolute right-2.5 top-9 sm:right-6 sm:top-14 w-[150px] sm:w-[184px] rounded-2xl bg-white p-2.5 sm:p-3 shadow-2xl ring-1 ring-black/5">
+          <div className="wl-float absolute right-2.5 top-11 sm:right-6 sm:top-14 w-[150px] sm:w-[184px] rounded-2xl bg-white p-2.5 sm:p-3 shadow-2xl ring-1 ring-black/5">
             <div className="flex items-center justify-between gap-2">
               <span className="font-heading text-[15px] font-extrabold text-slate-900">regalas</span>
               <span className="rounded-md bg-[#1A9E9E]/10 px-1.5 py-0.5 text-[9px] font-bold text-[#14807f]">
