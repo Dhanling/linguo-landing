@@ -2,72 +2,91 @@
 /* linguo-patch:harga-native-toggle-v2 */
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { Hand, Scroll, Globe, Landmark } from "lucide-react";
+import { RectFlag } from "@/components/RectFlag";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
-type LangEntry = { flag: string; name: string; cat: "A" | "B" | "C" | "D" | "E" };
+// `code` = ISO-2 negara untuk bendera rounded rectangle (sama seperti menu registrasi).
+// Bahasa tanpa negara (isyarat, Latin, Esperanto, Mesir Kuno) pakai ikon lucide via `icon`.
+type LangIcon = "sign" | "scroll" | "globe" | "landmark";
+type LangEntry = { code?: string; icon?: LangIcon; name: string; cat: "A" | "B" | "C" | "D" | "E" };
 type TeacherType = "lokal" | "native";
 
 // Sorted by demand (most popular first)
 const LANGUAGES: LangEntry[] = [
   // C — paling diminati
-  { flag: "🇬🇧", name: "English",          cat: "C" },
-  { flag: "🇰🇷", name: "Korean",           cat: "C" },
-  { flag: "🇯🇵", name: "Japanese",         cat: "C" },
-  { flag: "🇨🇳", name: "Mandarin",         cat: "C" },
-  { flag: "🇫🇷", name: "French",           cat: "C" },
-  { flag: "🇩🇪", name: "German",           cat: "C" },
-  { flag: "🇸🇦", name: "Arabic",           cat: "C" },
+  { code: "gb", name: "English",          cat: "C" },
+  { code: "kr", name: "Korean",           cat: "C" },
+  { code: "jp", name: "Japanese",         cat: "C" },
+  { code: "cn", name: "Mandarin",         cat: "C" },
+  { code: "fr", name: "French",           cat: "C" },
+  { code: "de", name: "German",           cat: "C" },
+  { code: "sa", name: "Arabic",           cat: "C" },
   // B — populer Eropa & Asia
-  { flag: "🇪🇸", name: "Spanish",          cat: "B" },
-  { flag: "🇮🇹", name: "Italian",          cat: "B" },
-  { flag: "🇷🇺", name: "Russian",          cat: "B" },
-  { flag: "🇳🇱", name: "Dutch",            cat: "B" },
-  { flag: "🇹🇭", name: "Thai",             cat: "B" },
-  { flag: "👌",   name: "Sign Language",   cat: "B" },
+  { code: "es", name: "Spanish",          cat: "B" },
+  { code: "it", name: "Italian",          cat: "B" },
+  { code: "ru", name: "Russian",          cat: "B" },
+  { code: "nl", name: "Dutch",            cat: "B" },
+  { code: "th", name: "Thai",             cat: "B" },
+  { icon: "sign", name: "Sign Language",  cat: "B" },
   // A — langka & Eropa
-  { flag: "🇵🇹", name: "Portuguese",       cat: "A" },
-  { flag: "🇻🇳", name: "Vietnamese",       cat: "A" },
-  { flag: "🇮🇳", name: "Hindi",            cat: "A" },
-  { flag: "🇹🇷", name: "Turkish",          cat: "A" },
-  { flag: "🇵🇱", name: "Polish",           cat: "A" },
-  { flag: "🇸🇪", name: "Swedish",          cat: "A" },
-  { flag: "🇨🇿", name: "Czech",            cat: "A" },
-  { flag: "🇫🇮", name: "Finnish",          cat: "A" },
-  { flag: "🇬🇷", name: "Greek",            cat: "A" },
-  { flag: "🇷🇴", name: "Romanian",         cat: "A" },
-  { flag: "🇵🇭", name: "Tagalog",          cat: "A" },
-  { flag: "🇳🇴", name: "Norwegian",        cat: "A" },
-  { flag: "🇩🇰", name: "Danish",           cat: "A" },
-  { flag: "🇮🇱", name: "Hebrew",           cat: "A" },
-  { flag: "🇭🇺", name: "Hungarian",        cat: "A" },
-  { flag: "🇲🇾", name: "Malay",            cat: "A" },
-  { flag: "🇵🇰", name: "Urdu",             cat: "A" },
-  { flag: "🇰🇭", name: "Khmer",            cat: "A" },
-  { flag: "🇮🇷", name: "Farsi",            cat: "A" },
-  { flag: "🇬🇧", name: "English British",  cat: "A" },
-  { flag: "🇺🇿", name: "Uzbek",            cat: "A" },
-  { flag: "🇷🇸", name: "Serbian",          cat: "A" },
-  { flag: "🇪🇪", name: "Estonian",         cat: "A" },
-  { flag: "🇹🇿", name: "Swahili",          cat: "A" },
-  { flag: "🇹🇼", name: "Traditional Chinese", cat: "A" },
-  { flag: "🇬🇪", name: "Georgian",         cat: "A" },
-  { flag: "🇮🇪", name: "Irish",            cat: "A" },
-  { flag: "🏴",   name: "Kurdish",          cat: "A" },
-  { flag: "📜",   name: "Latin",            cat: "A" },
-  { flag: "🇪🇬", name: "Ancient Egyptian", cat: "A" },
-  { flag: "🌐",   name: "Esperanto",        cat: "A" },
+  { code: "pt", name: "Portuguese",       cat: "A" },
+  { code: "vn", name: "Vietnamese",       cat: "A" },
+  { code: "in", name: "Hindi",            cat: "A" },
+  { code: "tr", name: "Turkish",          cat: "A" },
+  { code: "pl", name: "Polish",           cat: "A" },
+  { code: "se", name: "Swedish",          cat: "A" },
+  { code: "cz", name: "Czech",            cat: "A" },
+  { code: "fi", name: "Finnish",          cat: "A" },
+  { code: "gr", name: "Greek",            cat: "A" },
+  { code: "ro", name: "Romanian",         cat: "A" },
+  { code: "ph", name: "Tagalog",          cat: "A" },
+  { code: "no", name: "Norwegian",        cat: "A" },
+  { code: "dk", name: "Danish",           cat: "A" },
+  { code: "il", name: "Hebrew",           cat: "A" },
+  { code: "hu", name: "Hungarian",        cat: "A" },
+  { code: "my", name: "Malay",            cat: "A" },
+  { code: "pk", name: "Urdu",             cat: "A" },
+  { code: "kh", name: "Khmer",            cat: "A" },
+  { code: "ir", name: "Farsi",            cat: "A" },
+  { code: "gb", name: "English British",  cat: "A" },
+  { code: "uz", name: "Uzbek",            cat: "A" },
+  { code: "rs", name: "Serbian",          cat: "A" },
+  { code: "ee", name: "Estonian",         cat: "A" },
+  { code: "tz", name: "Swahili",          cat: "A" },
+  { code: "tw", name: "Traditional Chinese", cat: "A" },
+  { code: "ge", name: "Georgian",         cat: "A" },
+  { code: "ie", name: "Irish",            cat: "A" },
+  { code: "iq", name: "Kurdish",          cat: "A" },
+  { icon: "scroll",   name: "Latin",            cat: "A" },
+  { icon: "landmark", name: "Ancient Egyptian", cat: "A" },
+  { icon: "globe",    name: "Esperanto",        cat: "A" },
   // D — Nusantara
-  { flag: "🇮🇩", name: "Javanese",         cat: "D" },
-  { flag: "🇮🇩", name: "Sundanese",        cat: "D" },
-  { flag: "🇮🇩", name: "Balinese",         cat: "D" },
-  { flag: "🇮🇩", name: "Batak",            cat: "D" },
-  { flag: "🇮🇩", name: "Bugis",            cat: "D" },
-  { flag: "🇮🇩", name: "Banjar",           cat: "D" },
-  { flag: "🇮🇩", name: "Madurese",         cat: "D" },
+  { code: "id", name: "Javanese",         cat: "D" },
+  { code: "id", name: "Sundanese",        cat: "D" },
+  { code: "id", name: "Balinese",         cat: "D" },
+  { code: "id", name: "Batak",            cat: "D" },
+  { code: "id", name: "Bugis",            cat: "D" },
+  { code: "id", name: "Banjar",           cat: "D" },
+  { code: "id", name: "Madurese",         cat: "D" },
   // E — BIPA
-  { flag: "🇮🇩", name: "BIPA (Indonesian for Foreigners)", cat: "E" },
+  { code: "id", name: "BIPA (Indonesian for Foreigners)", cat: "E" },
 ];
+
+// Bendera kartu: SVG rounded rectangle, atau ikon lucide untuk bahasa tanpa negara.
+function LangFlag({ lang, muted }: { lang: LangEntry; muted?: boolean }) {
+  const wrap = muted ? "grayscale opacity-70" : "";
+  if (lang.icon) {
+    const Icon = lang.icon === "sign" ? Hand : lang.icon === "scroll" ? Scroll : lang.icon === "landmark" ? Landmark : Globe;
+    return (
+      <span className={`inline-flex h-[26px] w-[36px] items-center justify-center rounded-[5px] bg-slate-100 ring-1 ring-black/5 shrink-0 ${wrap}`}>
+        <Icon aria-hidden className="h-4 w-4 text-slate-500" strokeWidth={2} />
+      </span>
+    );
+  }
+  return <RectFlag code={lang.code} h={26} className={wrap} />;
+}
 
 // Price per session (60 min) by [cat][levelIdx]
 const PRICE_TABLE: Record<string, number[]> = {
@@ -293,7 +312,7 @@ export default function HargaPage() {
                   <div key={lang.name}
                     className={`group bg-white rounded-2xl border p-4 flex flex-col gap-3 transition-all duration-200 ${comingSoon ? "border-slate-100 opacity-60" : "border-slate-100 hover:border-[#1A9E9E]/30 hover:shadow-md"}`}>
                     <div className="flex items-center gap-3">
-                      <span className={`text-3xl leading-none ${comingSoon ? "grayscale" : ""}`}>{lang.flag}</span>
+                      <LangFlag lang={lang} muted={comingSoon} />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5">
                           <p className="font-bold text-slate-900 text-sm truncate">{lang.name}</p>
