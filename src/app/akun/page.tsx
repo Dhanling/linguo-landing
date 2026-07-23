@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
+import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
 import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -241,25 +242,26 @@ const POPULAR_LANGUAGES = [
 ];
 
 // [linguo-patch:beranda-jelajahi-v1] daftar bahasa utk seksi "Jelajahi Bahasa" (dipindah dari tab Materi ke Beranda)
+// [linguo-patch:jelajahi-rectflag-v1] glyph huruf diganti bendera rounded rectangle (flag = ISO-2 negara)
 const JELAJAHI_LANGS = [
-  { name: "English", slug: "english", glyph: "EN" },
-  { name: "German", slug: "german", glyph: "DE" },
-  { name: "Spanish", slug: "spanish", glyph: "ES" },
-  { name: "French", slug: "french", glyph: "FR" },
-  { name: "Japanese", slug: "japanese", glyph: "あ" },
-  { name: "Korean", slug: "korean", glyph: "한" },
-  { name: "Mandarin", slug: "mandarin", glyph: "中" },
-  { name: "Arabic", slug: "arabic", glyph: "ع" },
-  { name: "Russian", slug: "russian", glyph: "Я" },
-  { name: "Dutch", slug: "dutch", glyph: "NL" },
-  { name: "Italian", slug: "italian", glyph: "IT" },
-  { name: "Turkish", slug: "turkish", glyph: "TR" },
-  { name: "Portuguese", slug: "portuguese", glyph: "PT" },
-  { name: "Thai", slug: "thai", glyph: "ก" },
-  { name: "Hindi", slug: "hindi", glyph: "ह" },
-  { name: "Polish", slug: "polish", glyph: "PL" },
-  { name: "Vietnamese", slug: "vietnamese", glyph: "Vi" },
-  { name: "Greek", slug: "greek", glyph: "Ω" },
+  { name: "English", slug: "english", flag: "gb" },
+  { name: "German", slug: "german", flag: "de" },
+  { name: "Spanish", slug: "spanish", flag: "es" },
+  { name: "French", slug: "french", flag: "fr" },
+  { name: "Japanese", slug: "japanese", flag: "jp" },
+  { name: "Korean", slug: "korean", flag: "kr" },
+  { name: "Mandarin", slug: "mandarin", flag: "cn" },
+  { name: "Arabic", slug: "arabic", flag: "sa" },
+  { name: "Russian", slug: "russian", flag: "ru" },
+  { name: "Dutch", slug: "dutch", flag: "nl" },
+  { name: "Italian", slug: "italian", flag: "it" },
+  { name: "Turkish", slug: "turkish", flag: "tr" },
+  { name: "Portuguese", slug: "portuguese", flag: "pt" },
+  { name: "Thai", slug: "thai", flag: "th" },
+  { name: "Hindi", slug: "hindi", flag: "in" },
+  { name: "Polish", slug: "polish", flag: "pl" },
+  { name: "Vietnamese", slug: "vietnamese", flag: "vn" },
+  { name: "Greek", slug: "greek", flag: "gr" },
 ];
 const JELAJAHI_LANGPAL = [
   { bg: "#EEEDFE", tx: "#3C3489" }, { bg: "#FAECE7", tx: "#993C1D" },
@@ -3902,7 +3904,7 @@ export default function AkunPage() {
                                 const isSel = l.slug === selLang.slug;
                                 return (
                                   <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-transparent ring-2 ring-[#16796E]" : "border-slate-100 hover:border-[#16796E]/30"}`}>
-                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[16px] font-extrabold" style={{ background: pal.bg, color: pal.tx }}>{l.glyph}</span>
+                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: pal.bg }}><RectFlag code={l.flag} h={20} /></span>
                                     <span className="min-w-0 flex-1">
                                       <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
                                       <span className="block text-[12px] font-medium text-gray-500">CEFR A1–B2</span>
@@ -3919,7 +3921,7 @@ export default function AkunPage() {
                             {/* detail bahasa kepilih */}
                             <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-5">
                               <div className="flex items-center gap-3">
-                                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[18px] font-extrabold" style={{ background: selPal.bg, color: selPal.tx }}>{selLang.glyph}</span>
+                                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl" style={{ background: selPal.bg }}><RectFlag code={selLang.flag} h={22} /></span>
                                 <div className="min-w-0">
                                   <p className="text-[15px] font-extrabold text-[#12172B]">{selLang.name} — CEFR A1–B2</p>
                                   <p className="text-[12px] font-medium text-gray-500">8 sublevel · A1.1 sampai B2.2</p>
