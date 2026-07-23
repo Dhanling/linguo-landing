@@ -2014,9 +2014,9 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 
   return (
     <div onClick={handleClick}
-      className={`group relative flex flex-col bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden p-3 ${sizeCls}`}>
-      {/* Image zone (inset from card edges): hover-swap img1/img2, else bgColor + emoji */}
-      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px] rounded-lg" : "h-52 lg:h-56 rounded-2xl"}`} style={{backgroundColor:p.bgColor}}>
+      className={`group relative flex flex-col bg-gradient-to-b from-white to-slate-50/80 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(26,158,158,0.15)] transition-all duration-300 cursor-pointer overflow-hidden ${sizeCls}`}>
+      {/* Image zone full-bleed ke tepi kartu (tanpa bezel putih) — sudut atas ikut radius kartu via overflow-hidden */}
+      <div className={`relative overflow-hidden w-full mb-0 ${mobile ? "h-[130px]" : "h-52 lg:h-56"}`} style={{backgroundColor:p.bgColor}}>
         {card.img1 ? (
           <>
             <Image src={card.img1} alt={p.title} fill loading="lazy" sizes="(min-width: 1024px) 300px, 50vw" className={`object-cover ${objPos} transition-opacity duration-300 group-hover:opacity-0`} />
@@ -2028,13 +2028,13 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
         {/* Badge overlaid on image */}
-        <span className={`absolute top-2 left-2 lg:top-3 lg:left-3 z-10 inline-flex items-center gap-1 ${mobile?"text-xs px-2 py-0.5":"text-[9px] lg:text-[10px] px-2.5 py-1"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+        <span className={`absolute top-3 left-3 lg:top-4 lg:left-4 z-10 inline-flex items-center gap-1 ${mobile?"text-xs px-2 py-0.5":"text-[9px] lg:text-[10px] px-2.5 py-1"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
         {/* Frosted bottom blend into info panel */}
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/60 to-transparent" />
       </div>
 
       {/* Info panel below image */}
-      <div className="pt-3 pb-1 flex flex-col flex-1">
+      <div className="px-3 pt-3 pb-3 flex flex-col flex-1">
         <h3 className="font-bold text-sm lg:text-[15px] text-slate-900 mb-0.5">{p.title}</h3>
         <p className={`${mobile?"text-xs":"text-[10px] lg:text-xs"} text-slate-400 leading-snug mb-3 line-clamp-2`}>{p.desc}</p>
         {mobile ? (
