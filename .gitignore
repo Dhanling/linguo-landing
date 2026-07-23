@@ -47,3 +47,7 @@ next-env.d.ts
 # Patch scripts (one-off)
 patch-*.mjs
 
+
+# Ad-hoc debug/audit scripts (one-off, jangan ikut ke-deploy & ke-typecheck)
+*-tmp.mts
+*-tmp.mjs
