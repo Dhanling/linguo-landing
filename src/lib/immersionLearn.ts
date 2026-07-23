@@ -1826,6 +1826,9 @@ export interface SentenceDeepDive {
   tone: string; // nada/register kalimat (kosong bila datar)
   chunks: SentenceChunk[]; // pecahan bermakna berurutan
   terms: string[]; // istilah tata bahasa baru → chip "Apa itu …?"
+  // [watch-sentence-followup-grammar-v1] 3 pertanyaan lanjutan yang menempel pada
+  // tata bahasa kalimat ini (konstruksi/pola/tense-nya) — menggantikan chip generik.
+  followups: string[];
 }
 
 /** Ambil kartu analisa mendalam untuk sebuah kalimat (arti, struktur, pecahan). */
@@ -1849,6 +1852,12 @@ export async function getSentenceDeepDive(params: {
     tone: data.tone ?? "",
     chunks: Array.isArray(data.chunks) ? data.chunks : [],
     terms: Array.isArray(data.terms) ? data.terms.filter((t) => typeof t === "string" && t.trim()) : [],
+    followups: Array.isArray(data.followups)
+      ? data.followups
+          .filter((q): q is string => typeof q === "string" && q.trim().length > 0)
+          .map((q) => q.trim())
+          .slice(0, 3)
+      : [],
   };
 }
 

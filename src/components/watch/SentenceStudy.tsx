@@ -38,13 +38,16 @@ const SUB = "rgba(255,255,255,0.5)";
 // "Pecahan Kalimat" di drawer terbaca sebagai tampilan yang sama, bukan gaya lain.
 const GOLD_DIM = "rgba(244,183,64,0.72)";
 
-// Pertanyaan lanjutan siap-pakai untuk sebuah kalimat — chip yang tinggal ketuk.
-const SUGGESTED = [
+// [watch-sentence-followup-grammar-v1] Chip pertanyaan lanjutan datang dari AI dan
+// menempel pada tata bahasa kalimat yang sedang dianalisa (mis. "Ajarin pakai
+// «antes de» + infinitif"), maksimal 3 biar tidak jadi dinding chip. Daftar di
+// bawah cuma CADANGAN kalau AI tak mengirim usulan (offline/parse gagal).
+const SUGGESTED_FALLBACK = [
   "Jelaskan tata bahasanya lebih dalam",
   "Kenapa urutan katanya begini?",
   "Buat contoh kalimat yang mirip",
-  "Apa versi lebih formal atau santainya?",
 ];
+const MAX_FOLLOWUPS = 3;
 
 type ChatMsg = { role: "user" | "ai"; text: string; followups?: FollowupQ[] };
 
@@ -242,7 +245,14 @@ export default function SentenceStudy({
               onWordTap={onExplainWordTap}
             />
           ) : (
-            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
+            <AskTab
+              chat={chat}
+              asking={asking}
+              onAsk={ask}
+              chatEndRef={chatEndRef}
+              onWordTap={onExplainWordTap}
+              suggestions={(deep?.followups?.length ? deep.followups : SUGGESTED_FALLBACK).slice(0, MAX_FOLLOWUPS)}
+            />
           )}
         </div>
       </div>
@@ -333,7 +343,7 @@ function StudySkeleton() {
       <div className="pt-1">
         <Skel w={132} h={10} className="mb-2.5" />
         <div className="flex flex-wrap gap-2">
-          {[150, 128, 112, 160].map((w, i) => (
+          {[186, 164, 148].map((w, i) => (
             <Skel key={i} w={w} h={30} r={9999} />
           ))}
         </div>
@@ -366,9 +376,15 @@ function StudyTab({
   const [ownQ, setOwnQ] = useState("");
 
   const langName = getImmersionLang(langCode)?.name ?? "";
+  // Chip lanjutan: usulan AI yang menempel pada grammar kalimat ini didahulukan,
+  // baru istilah tata bahasa yang tadi dipakai ("Apa itu …?"), baru cadangan
+  // generik. Dipotong 3 supaya ringkas (permintaan user).
   const termQuestions = (deep?.terms ?? []).map((t) =>
     langName ? `Apa itu ${t} dalam bahasa ${langName}?` : `Apa itu ${t}?`
   );
+  const followupChips = [...(deep?.followups ?? []), ...termQuestions, ...SUGGESTED_FALLBACK]
+    .filter((q, i, arr) => arr.indexOf(q) === i)
+    .slice(0, MAX_FOLLOWUPS);
 
   if (loading) {
     return <StudySkeleton />;
@@ -386,23 +402,19 @@ function StudyTab({
 
   return (
     <div className="space-y-3.5">
-      {/* Arti keseluruhan */}
-      {deep.translation && (
-        <Section title="Arti Keseluruhan">
-          <p className="text-[14px] font-semibold leading-relaxed text-white/90">{deep.translation}</p>
+      {/* Struktur & tata bahasa. Kartu "Arti Keseluruhan" sengaja DIHAPUS: artinya
+          sudah tercetak besar (emas) di header drawer, jadi kartu itu cuma
+          mengulang. Gloss harfiah — satu-satunya isi yang tak ada di header —
+          menumpang di sini sebagai baris kecil. */}
+      {(deep.grammar || deep.literal) && (
+        <Section title="Struktur & Tata Bahasa">
+          {deep.grammar && <p className="text-[13.5px] leading-relaxed text-white/85">{deep.grammar}</p>}
           {deep.literal && (
-            <p className="mt-2 text-[13px] leading-relaxed" style={{ color: SUB }}>
+            <p className={`text-[13px] leading-relaxed ${deep.grammar ? "mt-2" : ""}`} style={{ color: SUB }}>
               <span className="font-bold" style={{ color: "#7FE0E0" }}>Harfiah: </span>
               {deep.literal}
             </p>
           )}
-        </Section>
-      )}
-
-      {/* Struktur & tata bahasa */}
-      {deep.grammar && (
-        <Section title="Struktur & Tata Bahasa">
-          <p className="text-[13.5px] leading-relaxed text-white/85">{deep.grammar}</p>
         </Section>
       )}
 
@@ -511,22 +523,12 @@ function StudyTab({
           Masih penasaran? Tanya AI:
         </p>
         <div className="flex flex-wrap gap-2">
-          {termQuestions.map((q) => (
+          {followupChips.map((q) => (
             <button
               key={q}
               onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/10"
+              className="rounded-full px-3 py-1.5 text-left text-[12.5px] font-semibold transition-colors hover:bg-white/10"
               style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
-            >
-              {q}
-            </button>
-          ))}
-          {SUGGESTED.map((q) => (
-            <button
-              key={q}
-              onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
-              style={{ backgroundColor: CARD }}
             >
               {q}
             </button>
@@ -575,12 +577,15 @@ function AskTab({
   onAsk,
   chatEndRef,
   onWordTap,
+  suggestions,
 }: {
   chat: ChatMsg[];
   asking: boolean;
   onAsk: (q: string) => void;
   chatEndRef: React.RefObject<HTMLDivElement | null>;
   onWordTap?: WordTapHandler;
+  // Chip pembuka tab Tanya — sama sumbernya dengan chip di tab Pelajari.
+  suggestions: string[];
 }) {
   if (chat.length === 0 && !asking) {
     return (
@@ -596,7 +601,7 @@ function AskTab({
           Tata bahasanya, kenapa urutannya begini, versi lain — ketik di bawah atau pilih salah satu:
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {SUGGESTED.map((q) => (
+          {suggestions.map((q) => (
             <button
               key={q}
               onClick={() => onAsk(q)}

@@ -155,27 +155,42 @@ body { animation: pageEnter 0.5s ease-out both; }
    dianimasikan: naik sedikit + skala mikro + terang, jadi mata ikut berpindah
    dengan mulus alih-alih blok "kedip pindah" begitu saja. Baris non-aktif cuma
    memudar/menerang lewat transition di .wl-cue. */
+/* [watch-cue-zoom-smooth-v1] Zoom-in baris aktif dulu terasa KASAR karena tiga hal
+   yang saling tabrakan: (1) keyframe ikut menganimasikan opacity padahal opacity
+   juga sudah ditransisikan lewat kelas Tailwind opacity-40/100 → dobel-fade yang
+   patah-patah; (2) `transform` ada di daftar transition SEKALIGUS dikendalikan
+   keyframe → dua mesin animasi merebut properti yang sama, dan tiap ganti baris
+   keyframe di-restart dari nilai awal (bukan dari posisi sekarang) sehingga terlihat
+   "nyentak" saat pindah cepat/scrub; (3) translateY berlawanan arah dengan
+   auto-scroll halus panel, jadi barisnya seperti bergetar.
+   Perbaikan: transform HANYA dipegang keyframe (dicoret dari transition), opacity
+   HANYA dipegang transition, translateY dibuang (biar scroll yang menggerakkan),
+   dan zoom-nya dipromosikan ke compositor (translate3d + will-change) dengan kurva
+   ease-out panjang supaya membesarnya mulus, bukan meletup. */
 @keyframes wlCueIn {
-  from { transform: translateY(6px) scale(0.985); opacity: 0.5; }
-  to   { transform: translateY(0) scale(1); opacity: 1; }
+  from { transform: translate3d(0, 0, 0) scale(0.965); }
+  to   { transform: translate3d(0, 0, 0) scale(1); }
 }
 .wl-cue {
   transform-origin: left center;
   transition:
-    background-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
-    padding 260ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 320ms ease,
-    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    background-color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.wl-cue-on { animation: wlCueIn 340ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.wl-cue-on {
+  animation: wlCueIn 460ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform;
+  backface-visibility: hidden;
+}
 /* Isi baris aktif (translit + terjemahan) menyusul sepersekian detik — kesan
-   "terbuka", bukan semua muncul sekaligus. */
+   "terbuka", bukan semua muncul sekaligus. Murni opacity: geser vertikal di dalam
+   induk yang sedang di-scale bikin teks bergetar/blur. */
 @keyframes wlCueLineIn {
-  from { opacity: 0; transform: translateY(3px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-.wl-cue-on .wl-cue-line { animation: wlCueLineIn 300ms ease-out both; animation-delay: 90ms; }
+.wl-cue-on .wl-cue-line { animation: wlCueLineIn 300ms ease-out both; animation-delay: 70ms; }
 @media (prefers-reduced-motion: reduce) {
   .wl-cue { transition: background-color 120ms linear, opacity 120ms linear; }
   .wl-cue-on,

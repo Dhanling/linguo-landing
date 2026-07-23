@@ -305,7 +305,12 @@ export async function POST(req: NextRequest) {
         `  "grammar": 1-3 short sentences in ${explanationLanguage} explaining the sentence's structure (word order, particles, tense/aspect, key constructions),\n` +
         `  "tone": one short ${explanationLanguage} sentence on the tone/register/politeness of the whole sentence (empty string if plain/neutral),\n` +
         `  "chunks": array of the sentence's meaningful parts IN ORDER, each { "part": the ${language} chunk (a word or short phrase),${nonLatin ? ' "tl": its Latin reading,' : ""} "role": a SHORT ${explanationLanguage} grammatical role label (e.g. "subjek", "kata kerja", "objek", "partikel", "keterangan"), "gloss": its ${explanationLanguage} meaning },\n` +
-        `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} you used that a beginner may not know (e.g. "partikel", "kata bantu", "kala lampau"); empty array if none\n` +
+        `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} you used that a beginner may not know (e.g. "partikel", "kata bantu", "kala lampau"); empty array if none,\n` +
+        // [watch-sentence-followup-grammar-v1] Chip pertanyaan lanjutan HARUS lahir
+        // dari tata bahasa kalimat INI (konstruksi/pola/tensesnya), bukan basa-basi
+        // generik — mis. untuk "Antes de irme…": "Ajarin pakai 'antes de' + infinitif"
+        // atau "Gimana cara bilang 'sebelum' dan 'setelah'?". Maksimal 3 biar ringkas.
+        `  "followups": array of EXACTLY 3 short follow-up questions in ${explanationLanguage} that a learner would tap next. Each MUST target a concrete grammar point that actually occurs in THIS sentence — the specific construction/pattern (quote the ${language} words in it), the tense/aspect used, the particle/preposition used, or how to express that same function in general. Phrase them as a learner talking to a tutor (e.g. "Ajarin cara pakai «...»", "Gimana cara bilang ... dalam bahasa ${language}?", "Kapan pakai ...?"). NEVER generic questions like "jelaskan tata bahasanya lebih dalam" or "buat contoh kalimat mirip"\n` +
         `}` + translitHint + idAddress + ` No markdown, no commentary outside the JSON.`;
       const raw = await callGemini(prompt, true);
       const s = raw.indexOf("{");
@@ -333,6 +338,13 @@ export async function POST(req: NextRequest) {
             .filter((t) => t.length > 0 && t.length <= 40)
             .slice(0, 4)
         : [];
+      // Chip lanjutan yang nyambung ke grammar kalimat ini (maks 3).
+      const followups = Array.isArray(parsed.followups)
+        ? (parsed.followups as unknown[])
+            .map((it) => (typeof it === "string" ? str(it) : str((it as Record<string, unknown>)?.q)))
+            .filter((q) => q.length > 0 && q.length <= 120)
+            .slice(0, 3)
+        : [];
       return NextResponse.json({
         translation: str(parsed.translation),
         literal: str(parsed.literal),
@@ -340,6 +352,7 @@ export async function POST(req: NextRequest) {
         tone: str(parsed.tone),
         chunks,
         terms,
+        followups,
       });
     }
 
