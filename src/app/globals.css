@@ -240,3 +240,50 @@ body { animation: pageEnter 0.5s ease-out both; }
 .watch-seek:disabled {
   opacity: 0.5;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   linguo-patch:watch-learn-landing-v1 — animasi khusus halaman /watch-learn.
+   Semua CSS-only (tanpa JS) supaya ringan & tetap jalan saat hydration belum
+   selesai. Dimatikan otomatis kalau pengguna minta reduced motion.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Sapuan karaoke di mockup subtitle: tiap kata menyala bergiliran.
+   Slot dibagi lewat --wl-i (indeks kata) dan --wl-n (jumlah kata). */
+@keyframes wlKaraoke {
+  0%, 14% { color: #2dd4bf; text-shadow: 0 0 18px rgba(45, 212, 191, 0.45); }
+  20%, 100% { color: rgba(255, 255, 255, 0.9); text-shadow: none; }
+}
+.wl-karaoke > span {
+  animation: wlKaraoke 5s linear infinite;
+  animation-delay: calc(var(--wl-i) * 0.62s);
+}
+
+/* Kartu arti kata yang mengambang halus di atas subtitle. */
+@keyframes wlFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+.wl-float { animation: wlFloat 4.5s ease-in-out infinite; }
+.wl-float-slow { animation: wlFloat 6s ease-in-out infinite; }
+
+/* Progress bar player mockup. */
+@keyframes wlProgress {
+  0% { width: 18%; }
+  100% { width: 82%; }
+}
+.wl-progress { animation: wlProgress 12s linear infinite alternate; }
+
+/* Kilau lembut di balik hero. */
+@keyframes wlGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+.wl-glow { animation: wlGlow 9s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wl-karaoke > span,
+  .wl-float,
+  .wl-float-slow,
+  .wl-progress,
+  .wl-glow { animation: none !important; }
+}

@@ -3382,23 +3382,19 @@ export default function VideoLearnPlayer({
                     data-cue={i}
                     onClick={() => seekTo(c.start)}
                     // [watch-cue-block-v1] Baris aktif = BLOK PENUH ala Lingopie: latar
-                    // solid + pita teal di tepi kiri + bayangan tipis, jadi section yang
-                    // sedang diputar terbaca sebagai satu kartu utuh. Perpindahannya
-                    // dianimasikan (.wl-cue / .wl-cue-on di globals.css) supaya mulus,
-                    // bukan blok yang kedip pindah.
+                    // abu solid membentang sampai tepi video, TANPA garis aksen apa pun
+                    // (permintaan user) — bloknya sendiri sudah jadi penanda. Perpindahan
+                    // antar-baris dianimasikan (.wl-cue / .wl-cue-on di globals.css)
+                    // supaya mulus, bukan blok yang kedip pindah.
                     // Section non-aktif diredupkan (opacity) jadi terkesan abu-abu
                     // supaya fokus jatuh ke baris yang sedang diputar; hover meredakan
                     // redup itu biar tetap enak ditarget/dibaca.
-                    className={`wl-cue group relative cursor-pointer py-2 pl-4 pr-[74px] ${
+                    className={`wl-cue group relative cursor-pointer py-2 pl-4 pr-11 ${
                       on ? "wl-cue-on opacity-100" : "opacity-40 hover:opacity-80"
                     }`}
                     style={{
                       backgroundColor: on ? CUE_ON_BG : "transparent",
-                      // Pita teal tipis persis di tepi kiri (batas dengan video) —
-                      // penanda "ini yang lagi diputar" tanpa mengubah warna blok.
-                      boxShadow: on
-                        ? `inset 3px 0 0 ${TEAL}, 0 6px 16px rgba(0,0,0,0.3)`
-                        : undefined,
+                      boxShadow: on ? "0 6px 16px rgba(0,0,0,0.3)" : undefined,
                     }}
                   >
                     {/* [watch-cue-explain-v1] Tombol Analisa per-section (ala tombol
@@ -3411,18 +3407,21 @@ export default function VideoLearnPlayer({
                         e.stopPropagation();
                         openSentenceStudy(c);
                       }}
-                      title="Analisa kalimat ini dengan AI"
-                      className={`absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full px-2 py-1 text-[10.5px] font-bold transition-all hover:bg-white/10 ${
+                      aria-label="Analisa kalimat ini dengan AI"
+                      className={`wl-cue-explain absolute right-2 top-1.5 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
                         on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
                       }`}
-                      style={{
-                        color: TEAL,
-                        border: "1px solid rgba(26,158,158,0.45)",
-                        backgroundColor: "rgba(26,158,158,0.12)",
-                      }}
+                      style={{ color: TEAL }}
                     >
-                      <Sparkles className="h-3 w-3" />
-                      Analisa
+                      <Sparkles className="h-4 w-4" />
+                      {/* Tooltip muncul saat hover ikon — label "Analisa" tak lagi
+                          dicetak permanen biar barisnya lega & compact. */}
+                      <span
+                        className="wl-cue-explain-tip pointer-events-none absolute right-full top-1/2 mr-1.5 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10.5px] font-bold text-white opacity-0 transition-opacity"
+                        style={{ backgroundColor: "rgba(0,0,0,0.85)", border: `1px solid ${BORDER}` }}
+                      >
+                        Analisa
+                      </span>
                     </button>
                     {on ? (
                       <KaraokeText
@@ -4238,9 +4237,12 @@ function KaraokeWord({
   lineTapped,
   onHoverOpen,
   onHoverClose,
+  plain,
 }: {
   text: string;
   state: KaraokeState;
+  // [watch-panel-plain-v1] Matikan outline hitam (dipakai di panel transkrip).
+  plain?: boolean;
   progress: number;
   rtl?: boolean;
   onClick: (e: React.MouseEvent) => void;
@@ -4293,7 +4295,9 @@ function KaraokeWord({
         // zoom/scale/pop. Efek membesar dulu bikin kata aktif menimpa kata di
         // sebelahnya (permintaan user), jadi dibuang; kini hanya ganti warna.
         color: colored ? TEAL : "#fff",
-        textShadow: KARAOKE_SHADOW,
+        // [watch-panel-plain-v1] Outline hitam tebal itu buat teks DI ATAS video;
+        // di panel transkrip (latar rata) ia cuma bikin huruf kotor → `plain`.
+        textShadow: plain ? "none" : KARAOKE_SHADOW,
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
@@ -4348,9 +4352,12 @@ function KaraokeText({
   className,
   fontSize,
   center,
+  plain,
 }: {
   cue: LearnCue;
   time: number;
+  // [watch-panel-plain-v1] Tanpa outline hitam — teks putih polos (panel transkrip).
+  plain?: boolean;
   langCode?: string;
   onWordTap: (e: React.MouseEvent, word: string, sentence: string, wordIdx?: number, wordEndIdx?: number) => void;
   // [watch-hover-open-v1] Hover = tap (debounce di player). Opsional — hanya bar
@@ -4406,6 +4413,7 @@ function KaraokeText({
         onHoverClose={onWordHoverClose}
         hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
         onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
+        plain={plain}
       />
     );
   };
@@ -4417,7 +4425,7 @@ function KaraokeText({
     // baca) tetap putih. Padam saat ada kata lain di baris ini yang dibuka artinya.
     const colored = isDigitToken(t.text) && t.state === "active" && !anyTapped;
     return (
-      <span key={j} className="whitespace-pre" style={{ color: colored ? TEAL : "#fff", textShadow: KARAOKE_SHADOW }}>
+      <span key={j} className="whitespace-pre" style={{ color: colored ? TEAL : "#fff", textShadow: plain ? "none" : KARAOKE_SHADOW }}>
         {t.text}
       </span>
     );
