@@ -148,6 +148,55 @@ async function recordTrialConversion(
   }
 }
 
+// [trial-paid-sync-v1] Tandai lunas juga di baris `leads` (mirror CRM yang
+// dibuat create-trial-invoice dengan xendit_external_id yang sama). Sebelumnya
+// verify HANYA meng-update trial_registrations, jadi di menu Leads pendaftar
+// trial yang sudah bayar tetap tampil "Menunggu Bayar" selamanya.
+// TIDAK PERNAH throw — verifikasi pembayaran tetap sukses walau mirror gagal.
+async function markLeadPaid(
+  externalId: string,
+  // Bentuk invoice dari Xendit, atau null kalau trial sudah PAID duluan
+  // (jalur idempoten) — waktu itu pakai nilai dari DB seadanya.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  inv: any | null,
+  amountFallback: number | null,
+  supaHeaders: SupaHeaders
+): Promise<void> {
+  try {
+    const paidAt = inv?.paid_at || new Date().toISOString();
+    const paidAmount = inv?.paid_amount ?? inv?.amount ?? amountFallback ?? null;
+    const paymentMethod = inv
+      ? `${inv.payment_method ?? ""} - ${inv.payment_channel ?? ""}`.trim()
+      : null;
+
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/leads` +
+        `?xendit_external_id=eq.${encodeURIComponent(externalId)}` +
+        // Lead yang sudah dikonversi jadi registrasi jangan ditarik mundur.
+        `&payment_status=neq.CONVERTED`,
+      {
+        method: "PATCH",
+        headers: supaHeaders,
+        body: JSON.stringify({
+          payment_status: "PAID",
+          paid_at: paidAt,
+          paid_amount: paidAmount,
+          payment_method: paymentMethod,
+          xendit_status: "PAID",
+          xendit_paid_at: paidAt,
+          xendit_paid_amount: paidAmount,
+          xendit_payment_method: paymentMethod,
+        }),
+      }
+    );
+    if (!res.ok) {
+      console.warn("Lead mark paid (trial) non-fatal error:", await res.text());
+    }
+  } catch (e) {
+    console.warn("markLeadPaid threw (non-fatal):", e);
+  }
+}
+
 type VerifyResult = {
   status: number;
   body: Record<string, unknown>;
@@ -183,6 +232,9 @@ async function verify(externalId: string): Promise<VerifyResult> {
   // Sudah PAID dari sebelumnya -> pastikan komisi tercatat (idempoten), balikin
   if (trial.payment_status === "PAID") {
     await recordTrialConversion(trial, supaHeaders);
+    // [trial-paid-sync-v1] mirror ke leads juga — idempoten, sekaligus
+    // menyembuhkan baris lama yang lunas sebelum patch ini ada.
+    await markLeadPaid(externalId, null, Number(trial.amount) || null, supaHeaders);
     return { status: 200, body: { paid: true, payment_status: "PAID" } };
   }
 
@@ -244,6 +296,8 @@ async function verify(externalId: string): Promise<VerifyResult> {
     }
     // Catat komisi affiliate sekarang invoice LUNAS (non-fatal, idempoten)
     await recordTrialConversion(trial, supaHeaders);
+    // [trial-paid-sync-v1] dan tandai lunas di mirror CRM `leads`
+    await markLeadPaid(externalId, inv, Number(trial.amount) || null, supaHeaders);
     return { status: 200, body: { paid: true, payment_status: "PAID" } };
   }
 

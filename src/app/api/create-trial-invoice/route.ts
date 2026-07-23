@@ -302,6 +302,31 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // ── 7b. Patch lead mirror dengan data invoice ─────────────────────────
+    // [trial-paid-sync-v1] Lead dibuat di langkah 5 (sebelum invoice ada), jadi
+    // xendit_invoice_id-nya null. Tanpa itu lead trial INVISIBLE buat "Sinkron
+    // Xendit" di dashboard (edge fn xendit-reconcile-registration menyaring
+    // .not("xendit_invoice_id","is",null)) → lead nyangkut "Menunggu Bayar"
+    // walau uangnya sudah masuk. Non-fatal.
+    if (leadId) {
+      try {
+        await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${leadId}`, {
+          method: "PATCH",
+          headers: supaHeaders,
+          body: JSON.stringify({
+            xendit_invoice_id: invoice.id,
+            xendit_invoice_url: invoice.invoice_url,
+            xendit_status: "PENDING",
+            xendit_amount: amount,
+            xendit_created_at: invoice.created ?? new Date().toISOString(),
+            payment_deadline: invoice.expiry_date,
+          }),
+        });
+      } catch (e) {
+        console.warn("Lead patch (trial invoice) non-fatal:", e);
+      }
+    }
+
     return NextResponse.json({
       invoice_url: invoice.invoice_url,
       invoice_id: invoice.id,
