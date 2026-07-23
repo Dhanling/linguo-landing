@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, X, Search } from "lucide-react";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 // (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
-import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // funnel-session-duration-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // funnel-session-duration-v1 · native-pricing-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 
 const LANG_CATEGORIES = [
@@ -86,9 +86,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   const isEnglish = selLang==="English";
 
   // Pengajar native: terbatas ke bahasa yang sudah punya native teacher.
-  // Native = NATIVE_MULTIPLIER x tarif lokal (konsisten dgn /harga).
-  const NATIVE_AVAILABLE_LANGS = ["English","Tagalog","Spanish","Arabic"];
-  const NATIVE_MULTIPLIER = 2;
+  // Native = NATIVE_MULTIPLIER x tarif lokal (sumber tunggal: lib/trial-pricing).
   // linguo-patch:private-pricing-v1 — harga per sesi 60 menit, level A1, sesuai
   // kategori bahasa yg dipilih siswa. Level dipilih SETELAH langkah ini, jadi
   // angka ini adalah harga "Mulai dari". Fallback "C" (Rp100rb) bila bahasa
@@ -97,15 +95,19 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   // funnel-private-level-price-v1 — harga/sesi mengikuti level yang dipilih siswa
   // (A2 ≠ A1). PRIVATE_BASE_PRICE (A1) hanya utk label "Mulai dari" di kartu program.
   const privateBase60 = getPrivateBase60(selLang, selLevel || "A1");
-  const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
+  const nativeAvailable = isNativeAvailable(selLang);
+  // native-pricing-v1 — program yang punya pilihan tipe pengajar (Private & Kids).
+  const NATIVE_PROGRAMS = ["Kelas Private", "Kelas Kids"];
+  const hasTeacherPick = (prog: string) => NATIVE_PROGRAMS.includes(prog);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
 
   // funnel-session-duration-v1 — pilihan durasi (menit) per sesi + harga live.
   const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
-  const privatePerSession = Math.round((privateBase60 * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
-  const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
-  const kidsKey = KIDS_KEY[selLevel];
-  const kidsPerSession = kidsKey ? Math.round(((KIDS_PRICE[kidsKey] / KIDS_DURATION[kidsKey]) * selDuration) / 5000) * 5000 : 0;
+  const privatePerSession = applyNativeMultiplier(Math.round((privateBase60 * selDuration) / 60), selTeacherType);
+  const kidsKey = KIDS_LEVEL_KEY[selLevel];
+  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType) : 0;
+  // Harga "Mulai dari" di kartu tipe pengajar — ikut program terpilih.
+  const teacherPickBase = selProgram==="Kelas Kids" ? KIDS_PRICE["little-learner"] : PRIVATE_BASE_PRICE;
 
   // funnel-xendit-v1 — paket jumlah sesi (Private & Kids) + total tagihan.
   // Reguler & IELTS = harga paket flat (sinkron dgn /api/create-funnel-invoice).
@@ -169,7 +171,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
           language: selLang,
           level: selLevel,
           duration: selDuration,
-          teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
+          teacher_type: hasTeacherPick(selProgram) ? selTeacherType : null,
           sessions: isSessionProg ? selSessions : null,
           ref_code: refFinal || undefined,
         }),
@@ -246,7 +248,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                       // batalin presetnya & arahin ke step pilih program (Reguler ga akan muncul di sana).
                       const prog = (selProgram==="Kelas Reguler" && !REGULER_LANGS.includes(l)) ? "" : selProgram;
                       if(prog!==selProgram) setSelProgram(prog);
-                      if(prog==="Kelas Private"){setTeacherPick(true);setStep(2)} else {setStep(prog?3:2)}
+                      if(hasTeacherPick(prog)){setTeacherPick(true);setStep(2)} else {setStep(prog?3:2)}
                     }}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
@@ -269,7 +271,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
                 {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ setSelLevel(""); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
+                  <button key={p.id} onClick={()=>{ setSelLevel(""); setSelDuration(60); setSelSessions(12); if(hasTeacherPick(p.id)){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <span className="text-2xl mt-0.5">{p.icon}</span>
                     <div className="flex-1">
@@ -296,10 +298,10 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">Kelas Private</span>
+                <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih tipe pengajar</h3>
-              <p className="text-sm text-slate-500 mb-5">Mau belajar dengan pengajar lokal atau native speaker?</p>
+              <p className="text-sm text-slate-500 mb-5">{selProgram==="Kelas Kids" ? "Mau anak diajar pengajar lokal atau native speaker?" : "Mau belajar dengan pengajar lokal atau native speaker?"}</p>
               <div className="flex flex-col gap-3">
                 {/* Lokal */}
                 <button onClick={()=>{setSelTeacherType("lokal");setTeacherPick(false);setStep(3)}}
@@ -308,7 +310,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <div className="flex-1">
                     <p className="font-bold text-sm">Pengajar Lokal</p>
                     <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
-                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
+                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase)}/sesi</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                 </button>
@@ -324,7 +326,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">Diajar langsung oleh penutur asli bersertifikat</p>
                       <p className="text-[11px] text-slate-400 italic leading-relaxed mt-1.5">Native speaker classes are conducted fully in your target language by a certified native teacher — full immersion for authentic pronunciation and fluency.</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
+                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase*NATIVE_MULTIPLIER)}/sesi</p>
                     </div>
                     <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                   </button>
@@ -347,7 +349,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
           {step===3 && (
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
               <div className="p-6 overflow-y-auto flex-1">
-              <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
+              <button onClick={()=>{ if(hasTeacherPick(selProgram)){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
                 <span className="text-sm font-medium">{selLang}</span>
@@ -531,7 +533,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                   <span className="text-xs text-slate-500">Program</span>
                   <span className="text-sm font-medium text-[#1A9E9E]">{selProgram}</span>
                 </div>
-                {selProgram==="Kelas Private" && (
+                {hasTeacherPick(selProgram) && (
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-slate-500">Pengajar</span>
                     <span className="text-sm font-medium">{selTeacherType==="native"?"Native Speaker":"Lokal"}</span>

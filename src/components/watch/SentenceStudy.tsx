@@ -168,6 +168,35 @@ export default function SentenceStudy({
   // terjemahan cue (baris emas) supaya header tak kosong selagi analisa dimuat.
   const headTranslation = deep?.translation || translation || "";
 
+  // [watch-sentence-composer-dock-v1] Chip pertanyaan + kolom ketik TIDAK lagi ikut
+  // menggantung di ujung konten (dulu nyangkut di tengah drawer dengan ruang kosong
+  // menganga di bawahnya). Keduanya sekarang DIDOK di dasar drawer ala Gemini:
+  // isi bergulir di atasnya, komposer tetap di tempat — sama untuk tab Pelajari
+  // maupun Tanya AI, jadi mata tahu "ngetiknya selalu di sini".
+  const langName = lang?.name ?? "";
+  const baseChips: FollowupQ[] = [
+    // Usulan AI (nempel grammar kalimat ini) didahulukan, lalu istilah tata bahasa
+    // yang tadi dipakai, baru cadangan generik. Dipotong 3 biar ringkas.
+    ...(deep?.followups ?? []),
+    ...(deep?.terms ?? []).map((t) => (langName ? `Apa itu ${t} dalam bahasa ${langName}?` : `Apa itu ${t}?`)),
+    ...SUGGESTED_FALLBACK,
+  ]
+    .filter((q, i, arr) => arr.indexOf(q) === i)
+    .slice(0, MAX_FOLLOWUPS)
+    .map((q) => ({ q }));
+
+  // Chip yang tampil di dok: tab Pelajari = usulan awal; tab Tanya = lanjutan dari
+  // jawaban terakhir (biar percakapan terus mengalir), kosong selagi AI menjawab.
+  const lastMsg = chat[chat.length - 1];
+  const dockChips: FollowupQ[] = asking
+    ? []
+    : tab === "study" || chat.length === 0
+      ? baseChips
+      : lastMsg?.role === "ai"
+        ? (lastMsg.followups ?? []).slice(0, MAX_FOLLOWUPS)
+        : [];
+  const dockLabel = tab === "study" || chat.length === 0 ? "Masih penasaran? Tanya AI:" : "Lanjut tanya:";
+
   return (
     <>
     {/* Backdrop — transparan di desktop (video tetap terlihat, ala WordStudy),
@@ -241,26 +270,43 @@ export default function SentenceStudy({
               bd={bd}
               bdLoading={bdLoading}
               langCode={langCode}
-              onAsk={ask}
               onWordTap={onExplainWordTap}
             />
           ) : (
-            <AskTab
-              chat={chat}
-              asking={asking}
-              onAsk={ask}
-              chatEndRef={chatEndRef}
-              onWordTap={onExplainWordTap}
-              suggestions={(deep?.followups?.length ? deep.followups : SUGGESTED_FALLBACK).slice(0, MAX_FOLLOWUPS)}
-            />
+            <AskTab chat={chat} asking={asking} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
           )}
         </div>
       </div>
 
-      {/* Input tanya (selalu tampak di tab Tanya) */}
-      {tab === "ask" && (
-        <div className="px-4 py-3 sm:px-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div className="mx-auto flex max-w-2xl items-center gap-2">
+      {/* Komposer terdok — chip usulan + kolom ketik, selalu menempel di dasar
+          drawer (ala Gemini). Chip disembunyikan selagi analisa dimuat supaya dok
+          tak melonjak tinggi lalu mengempis begitu data datang. */}
+      <div
+        className="px-4 pb-3 pt-2.5 sm:px-6"
+        style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: BG, paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+      >
+        <div className="mx-auto max-w-2xl">
+          {!loading && dockChips.length > 0 && (
+            <div className="mb-2.5 max-h-[34vh] overflow-y-auto">
+              <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
+                {dockLabel}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {dockChips.map((c) => (
+                  <button
+                    key={c.q}
+                    onClick={() => ask(stripGuillemets(c.q))}
+                    className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left transition-colors hover:bg-white/10"
+                    style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
+                  >
+                    <span className="text-[12.5px] font-semibold">{stripGuillemets(c.q)}</span>
+                    {c.tl && <span className="text-[11px] italic opacity-80">{stripGuillemets(c.tl)}</span>}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="flex items-center gap-2">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -280,7 +326,7 @@ export default function SentenceStudy({
             </button>
           </div>
         </div>
-      )}
+      </div>
     </div>
 
     {/* [watch-explain-word-tip-v1] Balon arti kata target yang di-tap di penjelasan —
@@ -360,7 +406,6 @@ function StudyTab({
   bd,
   bdLoading,
   langCode,
-  onAsk,
   onWordTap,
 }: {
   loading: boolean;
@@ -370,22 +415,8 @@ function StudyTab({
   bd: SentenceBreakdown | null;
   bdLoading: boolean;
   langCode: string;
-  onAsk: (q: string) => void;
   onWordTap: WordTapHandler;
 }) {
-  const [ownQ, setOwnQ] = useState("");
-
-  const langName = getImmersionLang(langCode)?.name ?? "";
-  // Chip lanjutan: usulan AI yang menempel pada grammar kalimat ini didahulukan,
-  // baru istilah tata bahasa yang tadi dipakai ("Apa itu …?"), baru cadangan
-  // generik. Dipotong 3 supaya ringkas (permintaan user).
-  const termQuestions = (deep?.terms ?? []).map((t) =>
-    langName ? `Apa itu ${t} dalam bahasa ${langName}?` : `Apa itu ${t}?`
-  );
-  const followupChips = [...(deep?.followups ?? []), ...termQuestions, ...SUGGESTED_FALLBACK]
-    .filter((q, i, arr) => arr.indexOf(q) === i)
-    .slice(0, MAX_FOLLOWUPS);
-
   if (loading) {
     return <StudySkeleton />;
   }
@@ -516,56 +547,8 @@ function StudyTab({
           </div>
         </Section>
       ) : null}
-
-      {/* Ajakan bertanya */}
-      <div className="pt-1">
-        <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
-          Masih penasaran? Tanya AI:
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {followupChips.map((q) => (
-            <button
-              key={q}
-              onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-left text-[12.5px] font-semibold transition-colors hover:bg-white/10"
-              style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
-            >
-              {q}
-            </button>
-          ))}
-        </div>
-
-        {/* Ketik pertanyaan sendiri */}
-        <div className="mt-3 flex items-center gap-2">
-          <input
-            value={ownQ}
-            onChange={(e) => setOwnQ(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && ownQ.trim()) {
-                onAsk(ownQ);
-                setOwnQ("");
-              }
-            }}
-            placeholder="Atau tulis pertanyaanmu sendiri…"
-            className="flex-1 rounded-full px-4 py-2.5 text-[13.5px] text-white outline-none placeholder:text-white/35"
-            style={{ backgroundColor: CARD }}
-          />
-          <button
-            onClick={() => {
-              if (ownQ.trim()) {
-                onAsk(ownQ);
-                setOwnQ("");
-              }
-            }}
-            disabled={!ownQ.trim()}
-            aria-label="Kirim pertanyaan"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
-            style={{ backgroundColor: TEAL_DARK }}
-          >
-            <Send className="h-[18px] w-[18px] text-white" />
-          </button>
-        </div>
-      </div>
+      {/* Chip usulan & kolom ketik TIDAK di sini — keduanya didok di dasar drawer
+          (lihat komposer di komponen induk), jadi kartu analisa berhenti di sini. */}
     </div>
   );
 }
@@ -574,19 +557,15 @@ function StudyTab({
 function AskTab({
   chat,
   asking,
-  onAsk,
   chatEndRef,
   onWordTap,
-  suggestions,
 }: {
   chat: ChatMsg[];
   asking: boolean;
-  onAsk: (q: string) => void;
   chatEndRef: React.RefObject<HTMLDivElement | null>;
   onWordTap?: WordTapHandler;
-  // Chip pembuka tab Tanya — sama sumbernya dengan chip di tab Pelajari.
-  suggestions: string[];
 }) {
+  // Layar pembuka — chip usulannya ada di dok bawah, jadi di sini cukup ajakannya.
   if (chat.length === 0 && !asking) {
     return (
       <div className="py-6">
@@ -598,26 +577,11 @@ function AskTab({
         </div>
         <p className="text-center text-[15px] font-bold text-white">Tanya apa saja tentang kalimat ini</p>
         <p className="mx-auto mt-1 max-w-sm text-center text-[13px] leading-relaxed" style={{ color: SUB }}>
-          Tata bahasanya, kenapa urutannya begini, versi lain — ketik di bawah atau pilih salah satu:
+          Tata bahasanya, kenapa urutannya begini, versi lain — ketik di bawah atau pilih salah satu usulannya.
         </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {suggestions.map((q) => (
-            <button
-              key={q}
-              onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
-              style={{ backgroundColor: CARD }}
-            >
-              {q}
-            </button>
-          ))}
-        </div>
       </div>
     );
   }
-
-  const lastMsg = chat[chat.length - 1];
-  const lastFollowups = lastMsg?.role === "ai" ? lastMsg.followups ?? [] : [];
 
   return (
     <div className="space-y-3">
@@ -643,31 +607,7 @@ function AskTab({
         )
       )}
       {asking && <AnswerSkeleton />}
-
-      {!asking && lastFollowups.length > 0 && (
-        <div className="pt-1">
-          <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
-            Lanjut tanya:
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {lastFollowups.map((f) => (
-              <button
-                key={f.q}
-                onClick={() => onAsk(stripGuillemets(f.q))}
-                className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
-                style={{ backgroundColor: CARD }}
-              >
-                <span className="text-[12.5px] font-semibold">{stripGuillemets(f.q)}</span>
-                {f.tl && (
-                  <span className="text-[11px] italic" style={{ color: "#7FE0E0" }}>
-                    {stripGuillemets(f.tl)}
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Chip "Lanjut tanya" pindah ke dok bawah bersama kolom ketik. */}
       <div ref={chatEndRef} />
     </div>
   );

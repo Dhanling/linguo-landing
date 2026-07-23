@@ -15,6 +15,9 @@ import {
   computePrivateTrialPrice,
   computeKidsTrialPrice,
   formatRupiah,
+  isNativeAvailable,
+  NATIVE_AVAILABLE_LANGS,
+  type TeacherType,
 } from "@/lib/trial-pricing";
 import {
   COUNTRIES,
@@ -191,6 +194,9 @@ export default function TrialWizard({
   const [kidsType, setKidsType] = useState<
     "" | "little-learner" | "young-explorer"
   >("");
+  // native-pricing-v1 — trial juga bisa pilih pengajar native (2× tarif lokal),
+  // aturan sama untuk Private maupun Kids.
+  const [teacherType, setTeacherType] = useState<TeacherType>("lokal");
   const [days, setDays] = useState<string[]>([]);
   const [times, setTimes] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
@@ -249,15 +255,24 @@ export default function TrialWizard({
     }
   }, []);
 
+  // Pengajar native cuma untuk bahasa yang sudah punya native teacher. Kalau
+  // siswa ganti ke bahasa tanpa native, balikin pilihan ke lokal biar harga
+  // yang tampil tidak 2× untuk kelas yang tetap diajar pengajar lokal.
+  const nativeOk = isNativeAvailable(language);
+  useEffect(() => {
+    if (!nativeOk && teacherType === "native") setTeacherType("lokal");
+  }, [nativeOk, teacherType]);
+
   const price = useMemo<number | null>(() => {
+    const tt = nativeOk ? teacherType : "lokal";
     if (program === "private") {
-      return language ? computePrivateTrialPrice(language, duration) : null;
+      return language ? computePrivateTrialPrice(language, duration, tt) : null;
     }
     if (program === "kids") {
-      return kidsType ? computeKidsTrialPrice(kidsType) : null;
+      return kidsType ? computeKidsTrialPrice(kidsType, tt) : null;
     }
     return null;
-  }, [program, language, duration, kidsType]);
+  }, [program, language, duration, kidsType, teacherType, nativeOk]);
 
   // linguo-patch:trial-lang-picker-v1 — daftar bahasa terfilter (search + chip)
   const filteredLangs = useMemo(() => {
@@ -358,6 +373,8 @@ export default function TrialWizard({
           program,
           language,
           kids_type: program === "kids" ? kidsType : null,
+          // native-pricing-v1 — server hitung ulang harganya (anti-tamper).
+          teacher_type: nativeOk ? teacherType : "lokal",
           duration_minutes:
             program === "kids"
               ? KIDS_DURATION[kidsType as string]
@@ -556,6 +573,49 @@ export default function TrialWizard({
           </div>
         </div>
       </div>
+
+      {/* native-pricing-v1 — tipe pengajar (Private & Kids). Native = 2× tarif lokal. */}
+      {language && (
+        <div>
+          <div className="text-sm font-semibold text-gray-800 mb-1.5">
+            Tipe pengajar
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => setTeacherType("lokal")}
+              className={selectCard(teacherType === "lokal") + " p-3"}
+            >
+              {teacherType === "lokal" && <Check />}
+              <div className="font-bold text-sm text-gray-900">Lokal</div>
+              <div className="text-[11px] text-gray-500">
+                Pengajar Indonesia bersertifikat
+              </div>
+            </button>
+            {nativeOk ? (
+              <button
+                type="button"
+                onClick={() => setTeacherType("native")}
+                className={selectCard(teacherType === "native") + " p-3"}
+              >
+                {teacherType === "native" && <Check />}
+                <div className="font-bold text-sm text-gray-900">Native</div>
+                <div className="text-[11px] text-gray-500">
+                  Penutur asli — 2× tarif lokal
+                </div>
+              </button>
+            ) : (
+              <div className="relative w-full text-left rounded-2xl border-2 border-gray-100 bg-gray-50 p-3 opacity-70">
+                <div className="font-bold text-sm text-gray-500">Native</div>
+                <div className="text-[11px] text-gray-400">
+                  Belum tersedia untuk {language}. Saat ini:{" "}
+                  {NATIVE_AVAILABLE_LANGS.join(", ")}.
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {program === "private" && (
         <div>

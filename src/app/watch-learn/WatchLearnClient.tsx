@@ -164,7 +164,7 @@ function PlayerMock() {
           </div>
 
           {/* kartu arti kata */}
-          <div className="wl-float absolute right-3 top-12 sm:right-6 sm:top-14 w-[152px] sm:w-[184px] rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-black/5">
+          <div className="wl-float absolute right-2.5 top-9 sm:right-6 sm:top-14 w-[150px] sm:w-[184px] rounded-2xl bg-white p-2.5 sm:p-3 shadow-2xl ring-1 ring-black/5">
             <div className="flex items-center justify-between gap-2">
               <span className="font-heading text-[15px] font-extrabold text-slate-900">regalas</span>
               <span className="rounded-md bg-[#1A9E9E]/10 px-1.5 py-0.5 text-[9px] font-bold text-[#14807f]">
@@ -174,7 +174,8 @@ function PlayerMock() {
             <p className="mt-1 text-[12px] leading-snug text-slate-500">
               kamu memberi (hadiah) — <span className="text-slate-400">dari</span> regalar
             </p>
-            <div className="mt-2.5 flex items-center gap-1.5">
+            {/* tombol disembunyikan di layar kecil supaya kartu tak menimpa subtitle */}
+            <div className="mt-2.5 hidden sm:flex items-center gap-1.5">
               <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-2 py-1 text-[10px] font-bold text-white">
                 <Volume2 className="h-3 w-3" /> Dengar
               </span>
@@ -219,7 +220,7 @@ function PlayerMock() {
       </div>
 
       {/* notifikasi flashcard */}
-      <div className="wl-float-slow absolute -bottom-8 -left-2 sm:-left-12 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 shadow-xl ring-1 ring-black/5">
+      <div className="wl-float-slow absolute -bottom-10 -left-2 sm:-left-14 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 shadow-xl ring-1 ring-black/5">
         <span className="grid h-8 w-8 place-items-center rounded-xl bg-amber-100 text-amber-600">
           <Layers className="h-4 w-4" />
         </span>

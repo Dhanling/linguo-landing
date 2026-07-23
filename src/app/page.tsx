@@ -1230,7 +1230,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           language: selLang,
           level: selLevel,
           duration: selDuration,
-          teacher_type: selProgram==="Kelas Private" ? selTeacherType : null,
+          teacher_type: hasTeacherPick(selProgram) ? selTeacherType : null,
           sessions: isSessionProg ? selSessions : null,
           class_size: selProgram==="Semi Private" ? classSize : null,
           ref_code: refFinal || undefined,
@@ -1323,7 +1323,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
               <div className="flex flex-col gap-3">
                 {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ const preLvl=(p.id==="Kelas Private"||p.id==="Semi Private")?(initialLevel||""):""; setSelLevel(preLvl); setSelDuration(60); setSelSessions(12); if(p.id==="Kelas Private"){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
+                  <button key={p.id} onClick={()=>{ const preLvl=(p.id==="Kelas Private"||p.id==="Semi Private")?(initialLevel||""):""; setSelLevel(preLvl); setSelDuration(60); setSelSessions(12); if(hasTeacherPick(p.id)){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
@@ -1341,7 +1341,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
             </motion.div>
           )}
 
-          {/* STEP 2b — Pilih Tipe Pengajar (khusus Kelas Private) */}
+          {/* STEP 2b — Pilih Tipe Pengajar (Kelas Private & Kelas Kids) */}
           {step===2 && teacherPick && (
             <motion.div key="s2b" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
               <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
@@ -1349,10 +1349,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
                 <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">Kelas Private</span>
+                <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih tipe pengajar</h3>
-              <p className="text-sm text-slate-500 mb-5">Mau belajar dengan pengajar lokal atau native speaker?</p>
+              <p className="text-sm text-slate-500 mb-5">{selProgram==="Kelas Kids" ? "Mau anak diajar pengajar lokal atau native speaker?" : "Mau belajar dengan pengajar lokal atau native speaker?"}</p>
               <div className="flex flex-col gap-3">
                 {/* Lokal */}
                 <button onClick={()=>{setSelTeacherType("lokal");setTeacherPick(false);setStep(3)}}
@@ -1360,7 +1360,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <div className="flex-1">
                     <p className="font-bold text-sm">Pengajar Lokal</p>
                     <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
-                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE)}/sesi</p>
+                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase)}/sesi</p>
                   </div>
                   <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                 </button>
@@ -1375,7 +1375,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">Diajar langsung oleh penutur asli bersertifikat</p>
                       <p className="text-[11px] text-slate-400 italic leading-relaxed mt-1.5">Native speaker classes are conducted fully in your target language by a certified native teacher — full immersion for authentic pronunciation and fluency.</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(PRIVATE_BASE_PRICE*NATIVE_MULTIPLIER)}/sesi</p>
+                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase*NATIVE_MULTIPLIER)}/sesi</p>
                     </div>
                     <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
                   </button>
@@ -1398,7 +1398,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           {step===3 && selProgram!=="Semi Private" && (
             <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
               <div className="p-6 overflow-y-auto flex-1">
-              <button onClick={()=>{ if(selProgram==="Kelas Private"){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
+              <button onClick={()=>{ if(hasTeacherPick(selProgram)){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
                 <span className="text-sm font-medium">{selLang}</span>
@@ -1675,7 +1675,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <span className="text-xs text-slate-500">Program</span>
                   <span className="text-sm font-medium text-[#1A9E9E]">{selProgram}</span>
                 </div>
-                {selProgram==="Kelas Private" && (
+                {hasTeacherPick(selProgram) && (
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-slate-500">Pengajar</span>
                     <span className="text-sm font-medium">{selTeacherType==="native"?"Native Speaker":"Lokal"}</span>

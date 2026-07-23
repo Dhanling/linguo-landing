@@ -12,6 +12,7 @@ import {
   computeKidsTrialPrice,
   KIDS_DURATION,
   TRIAL_DURATIONS,
+  isNativeAvailable,
 } from "@/lib/trial-pricing";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
       language,
       kids_type,
       duration_minutes,
+      teacher_type, // native-pricing-v1 — "lokal" | "native"
       preferred_schedule,
       affiliate_id, // referral-code-trial-v1 — hasil validasi di client (opsional)
       affiliate_ref_code, // kode referral mentah, disimpan untuk audit (opsional)
@@ -57,6 +59,12 @@ export async function POST(req: NextRequest) {
     // ── 2. Hitung harga SERVER-SIDE (jangan percaya amount dari client) ────
     let amount: number | null = null;
     let durationMin = 0;
+    // native-pricing-v1 — markup native (2×) cuma berlaku untuk bahasa yang
+    // memang punya pengajar native; selain itu paksa lokal.
+    const teacherType =
+      teacher_type === "native" && isNativeAvailable(language)
+        ? "native"
+        : "lokal";
 
     if (program === "private") {
       durationMin = Number(duration_minutes) || 0;
@@ -66,7 +74,7 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      amount = computePrivateTrialPrice(language, durationMin);
+      amount = computePrivateTrialPrice(language, durationMin, teacherType);
       if (amount == null) {
         return NextResponse.json(
           {
@@ -83,7 +91,7 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      amount = computeKidsTrialPrice(kids_type);
+      amount = computeKidsTrialPrice(kids_type, teacherType);
       durationMin = KIDS_DURATION[kids_type];
     }
 

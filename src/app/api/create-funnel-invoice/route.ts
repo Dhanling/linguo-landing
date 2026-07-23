@@ -19,8 +19,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   getPrivateBase60,
-  KIDS_PRICE,
-  KIDS_DURATION,
+  computeKidsPerSession,
+  applyNativeMultiplier,
+  isNativeAvailable,
   getSemiPrivatePrice,
 } from "@/lib/trial-pricing";
 import {
@@ -34,8 +35,8 @@ const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
 
-// Konstanta harus sinkron dengan FunnelModal.tsx
-const NATIVE_MULTIPLIER = 2;
+// Konstanta harus sinkron dengan FunnelModal.tsx. Markup native (2×) hidup di
+// @/lib/trial-pricing → applyNativeMultiplier, dipakai Private & Kids.
 const REGULER_PRICE = 150000;
 const IELTS_PRICE = 300000;
 const SESSION_OPTS = [4, 8, 12, 16, 24];
@@ -87,9 +88,10 @@ function computeFunnelAmount(input: {
     if (!SESSION_OPTS.includes(sessions)) return null;
     // funnel-private-level-price-v1 — harga/sesi mengikuti level tier (bukan flat A1).
     const base60 = getPrivateBase60(language, level || "A1");
-    const perSession =
-      Math.round((base60 * duration) / 60) *
-      (teacherType === "native" ? NATIVE_MULTIPLIER : 1);
+    const perSession = applyNativeMultiplier(
+      Math.round((base60 * duration) / 60),
+      teacherType
+    );
     return {
       amount: perSession * sessions,
       perSession,
@@ -109,13 +111,15 @@ function computeFunnelAmount(input: {
         ? "young-explorer"
         : null;
     if (!key) return null;
-    const perSession =
-      Math.round(((KIDS_PRICE[key] / KIDS_DURATION[key]) * duration) / 5000) *
-      5000;
+    // native-pricing-v1 — Kids ikut aturan yang sama dengan dewasa: native = 2× lokal.
+    const perSession = computeKidsPerSession(key, duration, teacherType);
+    if (!perSession) return null;
     return {
       amount: perSession * sessions,
       perSession,
-      description: `Kelas Kids ${level} — ${sessions} sesi @${duration} menit`,
+      description:
+        `Kelas Kids ${level} — ${sessions} sesi @${duration} menit` +
+        (teacherType === "native" ? " (Pengajar Native)" : ""),
     };
   }
 
@@ -171,7 +175,11 @@ export async function POST(req: NextRequest) {
       language,
       level: level || "",
       duration: Number(duration) || 0,
-      teacherType: teacher_type === "native" ? "native" : "lokal",
+      // native-pricing-v1 — "native" cuma dihormati untuk bahasa yang memang
+      // punya pengajar native; selain itu turunkan ke lokal supaya tidak ada
+      // tagihan 2× untuk kelas yang tetap diajar pengajar lokal.
+      teacherType:
+        teacher_type === "native" && isNativeAvailable(language) ? "native" : "lokal",
       sessions: Number(sessions) || 0,
       classSize: Number(class_size) || 0,
       testPrepId: typeof test_prep_id === "string" ? test_prep_id : "",
