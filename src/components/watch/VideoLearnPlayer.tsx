@@ -12,6 +12,8 @@ import {
   ArrowLeft,
   Check,
   ChevronDown,
+  Eye,
+  EyeOff,
   Gauge,
   GripHorizontal,
   Languages,
@@ -562,6 +564,27 @@ export default function VideoLearnPlayer({
   // blok subtitle hilang total (setara "sembunyikan semua subtitle" yang lama).
   const [showTargetSub, setShowTargetSub] = useState(true);
   const hideSubtitle = !showTargetSub && !showSentenceTr;
+  // [watch-panel-hide-tr-v1] Sakelar terjemahan KHUSUS panel transkrip — terpisah dari
+  // sakelar subtitle di atas video, supaya bisa "tutup contekan" di transkrip (latihan
+  // baca bahasa target) tanpa mematikan terjemahan di layar video. Diingat lokal.
+  const [showPanelTr, setShowPanelTr] = useState(true);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("watch:panelTr") === "0") setShowPanelTr(false);
+    } catch {
+      /* localStorage tak tersedia — pakai default */
+    }
+  }, []);
+  const togglePanelTr = useCallback(() => {
+    setShowPanelTr((v) => {
+      try {
+        localStorage.setItem("watch:panelTr", v ? "0" : "1");
+      } catch {
+        /* abaikan */
+      }
+      return !v;
+    });
+  }, []);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [showCC, setShowCC] = useState(false); // CC bawaan YouTube (fallback)
   // Kualitas video — kontrol bawaan YouTube dimatikan (controls:0), jadi kita sediakan
@@ -3306,6 +3329,24 @@ export default function VideoLearnPlayer({
                 Menyiapkan bacaan Latin…
               </span>
             )}
+            {/* [watch-panel-hide-tr-v1] Tutup/buka baris terjemahan di transkrip —
+                buat latihan baca tanpa contekan. Hanya berpengaruh di panel ini. */}
+            {txState === "ready" && (
+              <button
+                type="button"
+                onClick={togglePanelTr}
+                title={showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+                className="ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors"
+                style={{
+                  color: showPanelTr ? GOLD : SUB,
+                  border: `1px solid ${showPanelTr ? "rgba(244,183,64,0.4)" : BORDER}`,
+                  backgroundColor: showPanelTr ? "rgba(244,183,64,0.12)" : "transparent",
+                }}
+              >
+                {showPanelTr ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
+                Terjemahan
+              </button>
+            )}
           </div>
 
           <div
@@ -3408,7 +3449,7 @@ export default function VideoLearnPlayer({
                         openSentenceStudy(c);
                       }}
                       aria-label="Analisa kalimat ini dengan AI"
-                      className={`wl-cue-explain absolute right-2 top-1.5 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
+                      className={`group/ex absolute right-2 top-1.5 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
                         on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
                       }`}
                       style={{ color: TEAL }}
@@ -3417,7 +3458,7 @@ export default function VideoLearnPlayer({
                       {/* Tooltip muncul saat hover ikon — label "Analisa" tak lagi
                           dicetak permanen biar barisnya lega & compact. */}
                       <span
-                        className="wl-cue-explain-tip pointer-events-none absolute right-full top-1/2 mr-1.5 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10.5px] font-bold text-white opacity-0 transition-opacity"
+                        className="pointer-events-none absolute right-full top-1/2 mr-1.5 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10.5px] font-bold text-white opacity-0 transition-opacity group-hover/ex:opacity-100 group-focus-visible/ex:opacity-100"
                         style={{ backgroundColor: "rgba(0,0,0,0.85)", border: `1px solid ${BORDER}` }}
                       >
                         Analisa
@@ -3439,6 +3480,9 @@ export default function VideoLearnPlayer({
                           }
                         }}
                         chunks={ck}
+                        // [watch-panel-plain-v1] Di panel transkrip teksnya putih polos
+                        // — outline hitam tebal cuma perlu saat menumpang di atas video.
+                        plain
                         className="font-semibold leading-snug"
                         fontSize={14 * fscale}
                       />
@@ -3517,10 +3561,11 @@ export default function VideoLearnPlayer({
                         hoveredK={hoverWord?.i === i ? hoverWord.k : null}
                         onHover={(k) => setHoverWord(k == null ? null : { i, k })}
                         className="wl-cue-line mt-0.5 italic"
-                        style={{ color: "#fff", fontSize: 12 * fscale }}
+                        style={{ color: "#fff", textShadow: "none", fontSize: 12 * fscale }}
                       />
                     )}
                     {c.base &&
+                      showPanelTr &&
                       !isDuplicateBase(c, langCode) &&
                       (alignEnabled ? (
                         <p
