@@ -234,8 +234,51 @@ export function stopwordScores(text: string): Record<string, Score> {
 const MIN_LETTERS = 120;        // di bawah ini tak cukup bukti untuk menghakimi
 const MIN_WINNER_SCORE = 0.05;  // pemenang harus benar-benar padat kata fungsi
 const MIN_WINNER_DISTINCT = 6;  // ≥6 kata fungsi BERBEDA — lagu/refrain tak cukup
-const WINNER_MARGIN = 3;        // pemenang ≥ 3× skor bahasa target
+const WINNER_MARGIN = 3;        // pemenang ≥ 3× skor target → tolak tanpa syarat
+const SOFT_MARGIN = 1.25;       // menang tipis → tolak HANYA bila judul sependapat
 const SCRIPT_FLOOR = 0.25;      // aksara target minimal 25% huruf
+
+// Bahasa yang kata fungsinya nyaris identik — pembeda antar-mereka tak bisa
+// dipercaya, jadi mereka TAK PERNAH saling menuduh. (Video Denmark asli kerap
+// skor Norwegia-nya cuma selisih 0,003; menolaknya = katalog sah ikut terbuang.)
+const CLOSE_GROUPS: string[][] = [
+  ["da", "no", "nb", "nn"],
+  ["id", "ms"],
+  ["cs", "sk"],
+  ["hr", "sr", "bs", "sl"],
+  ["tl", "fil"],
+  ["nl", "af"],
+  ["hi", "ur", "mr"],
+  ["fa", "tg"],
+  ["ru", "be"],
+];
+
+/** Apakah dua kode bahasa terlalu mirip untuk saling dijadikan bukti? */
+function isCloseLang(a: string, b: string): boolean {
+  const x = (a || "").split("-")[0].toLowerCase();
+  const y = (b || "").split("-")[0].toLowerCase();
+  if (x === y) return true;
+  return CLOSE_GROUPS.some((g) => g.includes(x) && g.includes(y));
+}
+
+/**
+ * Tebakan bahasa dari teks PENDEK (judul + nama channel). Terlalu lemah untuk
+ * memvonis sendirian — dipakai cuma sebagai SAKSI KEDUA saat skor transkrip
+ * menang tipis. Balikin null kalau tak ada kata fungsi yang kena sama sekali.
+ */
+function hintLang(text: string, script: string): string | null {
+  const scores = stopwordScores(text || "");
+  let best = "";
+  let bestScore = 0;
+  for (const [lang, s] of Object.entries(scores)) {
+    if (scriptOf(lang) !== script || !s.distinct) continue;
+    if (s.ratio > bestScore) {
+      bestScore = s.ratio;
+      best = lang;
+    }
+  }
+  return best || null;
+}
 
 const LANG_NAME: Record<string, string> = {
   en: "Inggris", da: "Denmark", no: "Norwegia", sv: "Swedia", nl: "Belanda",
@@ -267,7 +310,7 @@ function nameOf(code: string): string {
  * Teks pendek, skor tipis, atau bahasa yang tak punya daftar kata fungsi →
  * selalu ok=true (lebih baik meloloskan daripada membuang katalog yang sah).
  */
-export function verifyTranscriptLang(text: string, target: string): LangVerdict {
+export function verifyTranscriptLang(text: string, target: string, hint = ""): LangVerdict {
   const raw = (text || "").trim();
   const base = (target || "").split("-")[0].toLowerCase();
   if (!raw || !base) return OK;
@@ -316,29 +359,51 @@ export function verifyTranscriptLang(text: string, target: string): LangVerdict 
       bestLang = lang;
     }
   }
+  // Kandidat pemenang tak layak dinilai → lolos.
   if (
-    bestLang &&
-    bestLang !== base &&
-    bestScore >= MIN_WINNER_SCORE &&
-    bestDistinct >= MIN_WINNER_DISTINCT &&
-    bestScore >= targetScore * WINNER_MARGIN
+    !bestLang ||
+    bestLang === base ||
+    isCloseLang(bestLang, base) || // bahasa kembar (da/no, id/ms) tak jadi bukti
+    bestScore < MIN_WINNER_SCORE ||
+    bestDistinct < MIN_WINNER_DISTINCT
   ) {
-    return {
-      ok: false,
-      detected: bestLang,
-      reason: `transkrip terdeteksi bahasa ${nameOf(bestLang)} (skor ${bestScore.toFixed(3)} vs ${nameOf(base)} ${targetScore.toFixed(3)}), bukan ${nameOf(base)}`,
-    };
+    return OK;
+  }
+
+  const verdict = (extra: string): LangVerdict => ({
+    ok: false,
+    detected: bestLang,
+    reason: `transkrip terdeteksi bahasa ${nameOf(bestLang)} (skor ${bestScore.toFixed(3)} vs ${nameOf(base)} ${targetScore.toFixed(3)}${extra}), bukan ${nameOf(base)}`,
+  });
+
+  // Menang TELAK → tolak langsung.
+  if (bestScore >= targetScore * WINNER_MARGIN) return verdict("");
+
+  // Menang TIPIS → butuh saksi kedua. Ini kasus transkrip CAMPUR: Whisper yang
+  // dipaksa ke bahasa target pada audio asing menghasilkan separuh teks asli +
+  // separuh "bahasa target" halusinasi, jadi skornya berdekatan. Judul/nama
+  // channel yang menunjuk bahasa yang SAMA dengan pemenang = konfirmasi cukup.
+  // (Contoh: "Learn the Basics: Georgian" — transkrip en 0,073 vs da 0,051,
+  // judul juga en → tolak. Sebaliknya "New Year in Denmark | Easy Danish 10"
+  // berjudul Inggris tapi transkripnya menang di da → tetap lolos.)
+  if (hint && bestScore >= targetScore * SOFT_MARGIN) {
+    const witness = hintLang(hint, want);
+    if (witness && witness === bestLang) return verdict(", judul sependapat");
   }
   return OK;
 }
 
 /**
  * Versi praktis untuk pemanggil yang memegang cues: ambil contoh baris target
- * (dibatasi supaya murah) lalu nilai. `sampleChars` = panjang contoh maksimal.
+ * (dibatasi supaya murah) lalu nilai.
+ *
+ * `hint` = judul + nama channel video kalau ada — dipakai sebagai saksi kedua
+ * saat skor transkrip menang tipis (lihat verifyTranscriptLang).
  */
 export function verifyCuesLang(
   cues: { target?: unknown }[],
   target: string,
+  hint = "",
   sampleChars = 6000
 ): LangVerdict {
   let text = "";
@@ -348,5 +413,5 @@ export function verifyCuesLang(
     text += (text ? " " : "") + t;
     if (text.length >= sampleChars) break;
   }
-  return verifyTranscriptLang(text, target);
+  return verifyTranscriptLang(text, target, hint);
 }

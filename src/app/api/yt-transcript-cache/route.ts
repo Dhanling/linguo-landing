@@ -12,6 +12,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
 import { estimateCefrLevel, asCefrLevel } from "@/lib/cefr";
+import { verifyCuesLang } from "@/lib/langGuard";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -406,6 +407,19 @@ export async function POST(req: NextRequest) {
     if (!clean.length) return NextResponse.json({ ok: false, error: "cues kosong" }, { status: 400 });
     if (JSON.stringify(clean).length > MAX_JSON) {
       return NextResponse.json({ ok: false, error: "cues kegedean" }, { status: 413 });
+    }
+    // [watch-lang-guard-v1] Gerbang bahasa: transkrip yang isinya JELAS bahasa
+    // lain tak boleh masuk cache — kalau masuk, dia langsung jadi kartu tab
+    // "Terjemahan Siap" bahasa itu (kasus nyata: video Inggris "Learn the Basics:
+    // Georgian" nangkring di katalog Denmark). Player tetap boleh menampilkan
+    // transkripnya ke penonton yang sedang membuka; yang kita tolak hanya
+    // MENYIMPANNYA sebagai katalog bahasa ini. Konservatif — ragu = diloloskan.
+    const verdict = verifyCuesLang(clean, lang, `${title ?? ""} ${channel ?? ""}`);
+    if (!verdict.ok) {
+      return NextResponse.json(
+        { ok: false, error: `bahasa tidak cocok: ${verdict.reason}` },
+        { status: 200 }
+      );
     }
 
     const sb = createServerClient(0);
