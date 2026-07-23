@@ -80,11 +80,16 @@ Tarif per sesi 60 menit (urutan A1 | A2 | B1/B2 | C1/C2):
 - Kategori E: Rp 150.000 | 160.000 | 170.000 | 180.000
 Cara hitung total: tarif per sesi × jumlah sesi; paket standar 16 sesi per sublevel. Contoh: Spanyol (kategori B) level A1 = Rp 110.000 × 16 = Rp 1.760.000. Tersedia durasi 30/45/90 menit (harga proporsional). Bisa dicicil 2x (50% awal, 50% di tengah sesi).
 Pengajar NATIVE speaker = 2× tarif lokal. Native saat ini: English, Tagalog, Spanish, Arabic; bahasa lain coming soon (sementara pengajar lokal).
+CARA HITUNG NATIVE (jangan mengarang angka): ambil tarif LOKAL per sesi yang sudah sesuai kategori + level + durasi, BARU dikali 2. Contoh English (kategori C): A1 60 menit lokal Rp 100.000 → native Rp 200.000; A1 45 menit lokal Rp 75.000 → native Rp 150.000; A2 45 menit lokal Rp 82.500 → native Rp 165.000.
+Markup 2× berlaku untuk Kelas Private DAN Kelas Kids. Semi-Private & Reguler itu kelas grup — TIDAK ada opsi native, jangan pernah dikalikan 2.
+Kids native: Little Learner Rp 150.000/sesi (30 menit), Young Explorer Rp 170.000/sesi (45 menit).
+JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids (5-8 / 9-12 tahun), BUKAN level kelas dewasa. Level dewasa = Basic/Upper Basic/Intermediate/Advance (A1/A2/B1-B2/C1-C2). Frasa seperti "Young Explorer level Upper Basic" SALAH.
 
 Trial Class (BERBAYAR, bukan gratis):
 - Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Full online via Zoom. Trial terjadi SEBELUM placement test, jadi harganya pakai tarif level A1.
 - Harga trial Private = tarif per sesi A1 sesuai kategori bahasa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit: kategori C Rp 100.000, B Rp 110.000, A Rp 120.000. Durasi 30 menit = setengahnya.
 - Trial Kids: Little Learner (30 menit) Rp 75.000, Young Explorer (45 menit) Rp 85.000.
+- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native: Little Learner Rp 150.000, Young Explorer Rp 170.000.
 - Daftar trial: https://linguo.id/kelas-trial
 
 Jadwal & ketentuan:

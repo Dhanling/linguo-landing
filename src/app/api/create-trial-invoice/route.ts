@@ -154,6 +154,7 @@ export async function POST(req: NextRequest) {
           language,
           kids_type: program === "kids" ? kids_type : null,
           duration_minutes: durationMin,
+          teacher_type: teacherType, // native-pricing-v1
           preferred_schedule: preferred_schedule || null,
           status: "registered",
           payment_status: "PENDING",
@@ -201,6 +202,7 @@ export async function POST(req: NextRequest) {
           payment_status: "PENDING",
           xendit_external_id: externalId,
           amount,
+          teacher_type: teacherType, // native-pricing-v1
           schedule_preference: preferred_schedule || null,
         }),
       });
@@ -224,7 +226,8 @@ export async function POST(req: NextRequest) {
       `Trial ${programLabel} — ${language}` +
       (program === "kids"
         ? ` (${kids_type})`
-        : ` (${durationMin} menit/sesi)`);
+        : ` (${durationMin} menit/sesi)`) +
+      (teacherType === "native" ? " — Pengajar Native" : "");
 
     const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {
       method: "POST",
