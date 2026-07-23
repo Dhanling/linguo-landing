@@ -90,7 +90,42 @@ export function getPrivateBase60(language: string, level: string): number {
   return PRICE_PRIVATE_60MIN[cat][tier];
 }
 
-/** Kids: harga flat per tipe (per sesi). */
+// =============================================================================
+// linguo-patch:native-pricing-v1
+// SUMBER TUNGGAL aturan pengajar native. Sebelum ini konstanta 2× dicopy-paste
+// di page.tsx, FunnelModal.tsx & create-funnel-invoice, dan Kids/Trial tidak
+// punya opsi native sama sekali (padahal tarifnya sama saja: 2× tarif lokal).
+// Mirror di /harga (NATIVE_MULTIPLIER) & admin dashboard (Registrations.tsx +
+// quickReplyData.ts) — kalau angka di sini berubah, samakan di sana.
+// =============================================================================
+
+/** Native speaker = 2× tarif pengajar lokal. Berlaku untuk Private DAN Kids. */
+export const NATIVE_MULTIPLIER = 2;
+
+/** Bahasa yang native teacher-nya sudah tersedia. Sisanya "coming soon". */
+export const NATIVE_AVAILABLE_LANGS = ["English", "Tagalog", "Spanish", "Arabic"];
+
+export type TeacherType = "lokal" | "native";
+
+export function isNativeAvailable(language: string): boolean {
+  return NATIVE_AVAILABLE_LANGS.includes(language);
+}
+
+/**
+ * Terapkan markup native ke harga per sesi yang SUDAH final untuk pengajar lokal
+ * (sudah di-scale durasi / dibulatkan). Dipanggil paling akhir supaya klaim
+ * "native = 2× tarif lokal" benar-benar persis 2×. Dibulatkan ke ribuan terdekat
+ * biar seragam dengan kalkulator /harga.
+ */
+export function applyNativeMultiplier(
+  perSessionLocal: number,
+  teacherType?: string | null
+): number {
+  if (teacherType !== "native") return perSessionLocal;
+  return Math.round((perSessionLocal * NATIVE_MULTIPLIER) / 1000) * 1000;
+}
+
+/** Kids: harga flat per tipe (per sesi, pengajar LOKAL). Native = 2× (lihat applyNativeMultiplier). */
 export const KIDS_PRICE: Record<string, number> = {
   "little-learner": 75000,
   "young-explorer": 85000,
@@ -101,6 +136,29 @@ export const KIDS_DURATION: Record<string, number> = {
   "little-learner": 30,
   "young-explorer": 45,
 };
+
+/** Nama level Kids di funnel → key KIDS_PRICE/KIDS_DURATION. */
+export const KIDS_LEVEL_KEY: Record<string, string> = {
+  "Little Learner": "little-learner",
+  "Young Explorer": "young-explorer",
+};
+
+/**
+ * Harga Kids per sesi. Tarif dasar per tipe usia di-scale proporsional ke durasi
+ * lalu dibulatkan ke 5rb (pengajar lokal), baru dikali markup native kalau perlu.
+ * Formula WAJIB identik di FunnelModal, page.tsx & /api/create-funnel-invoice.
+ */
+export function computeKidsPerSession(
+  kidsKey: string,
+  duration: number,
+  teacherType?: string | null
+): number {
+  const base = KIDS_PRICE[kidsKey];
+  const baseDur = KIDS_DURATION[kidsKey];
+  if (!base || !baseDur) return 0;
+  const local = Math.round(((base / baseDur) * duration) / 5000) * 5000;
+  return applyNativeMultiplier(local, teacherType);
+}
 
 /** Pilihan durasi (menit) untuk trial Private. */
 export const TRIAL_DURATIONS: number[] = [30, 45, 60, 75, 90];
@@ -124,19 +182,24 @@ export function getLanguageCategory(language: string): string | null {
  */
 export function computePrivateTrialPrice(
   language: string,
-  durationMinutes: number
+  durationMinutes: number,
+  teacherType?: string | null
 ): number | null {
   const cat = getLanguageCategory(language);
   if (!cat) return null;
   const base60 = PRICE_A1_60MIN[cat];
   const dur = Number(durationMinutes) || 60;
-  return Math.round((base60 * dur) / 60);
+  const local = Math.round((base60 * dur) / 60);
+  return applyNativeMultiplier(local, teacherType);
 }
 
-/** Harga trial Kids = flat per tipe. Return null kalau tipe tidak dikenal. */
-export function computeKidsTrialPrice(kidsType: string): number | null {
+/** Harga trial Kids = flat per tipe (native = 2×). Return null kalau tipe tidak dikenal. */
+export function computeKidsTrialPrice(
+  kidsType: string,
+  teacherType?: string | null
+): number | null {
   const p = KIDS_PRICE[kidsType];
-  return typeof p === "number" ? p : null;
+  return typeof p === "number" ? applyNativeMultiplier(p, teacherType) : null;
 }
 
 // =============================================================================

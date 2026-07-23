@@ -8,7 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_DURATION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1
 
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
@@ -1111,9 +1111,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const isReguler = REGULER_LANGS.includes(selLang);
 
   // Pengajar native: terbatas ke bahasa yang sudah punya native teacher.
-  // Native = NATIVE_MULTIPLIER x tarif lokal (konsisten dgn /harga).
-  const NATIVE_AVAILABLE_LANGS = ["English","Tagalog","Spanish","Arabic"];
-  const NATIVE_MULTIPLIER = 2;
+  // Native = NATIVE_MULTIPLIER x tarif lokal (sumber tunggal: lib/trial-pricing).
   // linguo-patch:private-pricing-v1 — harga per sesi 60 menit, level A1, sesuai
   // kategori bahasa. Level dipilih SETELAH langkah ini → angka ini "Mulai dari".
   // Fallback "C" (Rp100rb) bila bahasa belum dikenal, JANGAN D (Rp90rb).
@@ -1121,7 +1119,11 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   // funnel-private-level-price-v1 — harga/sesi ikut level yang dipilih (A2 ≠ A1).
   // PRIVATE_BASE_PRICE (A1) hanya utk label "Mulai dari" di kartu program.
   const privateBase60 = getPrivateBase60(selLang, selLevel || "A1");
-  const nativeAvailable = NATIVE_AVAILABLE_LANGS.includes(selLang);
+  const nativeAvailable = isNativeAvailable(selLang);
+  // native-pricing-v1 — program yang punya pilihan tipe pengajar (Private & Kids).
+  // Semi Private & Reguler = grup, pengajar lokal saja.
+  const NATIVE_PROGRAMS = ["Kelas Private", "Kelas Kids"];
+  const hasTeacherPick = (prog: string) => NATIVE_PROGRAMS.includes(prog);
   const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
   // linguo-patch:funnel-semi-private-calc-v1 — harga semi private live (ikut durasi sesi terpilih)
   const semiPrice = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, selDuration) : null;
@@ -1131,11 +1133,13 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   // dibatasi utk rentang usia anak, harga di-scale dari tarif dasar per tipe.
   const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
   // Harga Private/sesi utk durasi & tipe pengajar terpilih (proporsional dari base 60mnt).
-  const privatePerSession = Math.round((privateBase60 * selDuration) / 60) * (selTeacherType==="native" ? NATIVE_MULTIPLIER : 1);
-  // Harga Kids/sesi: scale dari tarif dasar (per tipe) proporsional durasi, dibulatkan ke 5rb.
-  const KIDS_KEY: Record<string,string> = { "Little Learner":"little-learner", "Young Explorer":"young-explorer" };
-  const kidsKey = KIDS_KEY[selLevel];
-  const kidsPerSession = kidsKey ? Math.round(((KIDS_PRICE[kidsKey] / KIDS_DURATION[kidsKey]) * selDuration) / 5000) * 5000 : 0;
+  const privatePerSession = applyNativeMultiplier(Math.round((privateBase60 * selDuration) / 60), selTeacherType);
+  // Harga Kids/sesi: scale dari tarif dasar (per tipe) proporsional durasi, dibulatkan
+  // ke 5rb, lalu ×2 kalau native (native-pricing-v1 — aturan sama dengan dewasa).
+  const kidsKey = KIDS_LEVEL_KEY[selLevel];
+  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType) : 0;
+  // Harga "Mulai dari" pada kartu pilihan tipe pengajar — ikut program terpilih.
+  const teacherPickBase = selProgram==="Kelas Kids" ? KIDS_PRICE["little-learner"] : PRIVATE_BASE_PRICE;
 
   // funnel-xendit-v1 — paket jumlah sesi (Private/Semi/Kids) + total tagihan.
   // Formula WAJIB identik dgn /api/create-funnel-invoice (server hitung ulang).
@@ -1296,7 +1300,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <div className="px-6 pb-6 overflow-y-auto flex-1">
                 <div className="grid grid-cols-2 gap-2">
                   {filtered.map(l=>(
-                    <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(selProgram==="Kelas Private"){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
+                    <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(hasTeacherPick(selProgram)){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <RectFlag code={getFlagCode(l)} h={24}/>
                       {l}

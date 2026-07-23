@@ -106,6 +106,37 @@ const LOAD_MORE_COUNT = GRID_COLS * 4;
 // Jadi tiap batch boleh merangkai beberapa halaman sampai kuotanya kekejar.
 const CATALOG_PAGE_SIZE = 25;
 const CATALOG_MAX_PAGES = 3;
+// [watch-shuffle-v1] Tiap muat ulang harus nampilin video + channel yang beda.
+// Dua tuas dipakai bareng:
+//  1) POOL_FACTOR — ambil kolam lebih besar dari yang ditampilkan (20 kartu dari
+//     ~40 kandidat), lalu diacak → refresh berikutnya kebagian isi kolam yang lain.
+//     Sisanya jadi cadangan lokal buat "Muat lainnya" (tanpa kuota tambahan).
+//  2) CATALOG_ORDERS — sort order YouTube diundi tiap batch. Tiap order punya
+//     kunci cache server sendiri (yt-search cacheKey ikut `order`), jadi hasilnya
+//     beneran kumpulan video beda, bukan cuma urutan beda dari 25 yang sama.
+const POOL_FACTOR = 2;
+type CatalogOrder = "date" | "rating" | "viewCount" | "relevance";
+const CATALOG_ORDERS: CatalogOrder[] = ["relevance", "viewCount"];
+// Maksimal kartu dari channel yang sama di dalam satu layar hasil. Tanpa ini satu
+// channel dominan (mis. MrBeast di tab Kreator) bisa memborong hampir seluruh grid.
+const MAX_PER_CHANNEL = 2;
+
+// Fisher–Yates, tidak mengubah array asal.
+function shuffle<T>(list: T[]): T[] {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Order acak buat sebuah kategori. Rail berita/terbaru tetap `date` — di sana
+// urutan kronologis itu justru fiturnya.
+function pickOrder(cat: ImmersionCategory): CatalogOrder {
+  if (cat.news || cat.fresh) return "date";
+  return CATALOG_ORDERS[Math.floor(Math.random() * CATALOG_ORDERS.length)];
+}
 // Pengisi otomatis kalau filter client (orientasi/Shorts) masih menyisakan grid
 // kurang dari sebaris penuh. Dibatasi biar tak menguras kuota YouTube.
 const AUTOFILL_MAX = 2;
@@ -230,7 +261,10 @@ function stripWatchParams() {
 // [perf:watch-catalog-cache-v1] Cache katalog module-level: pindah menu lalu balik
 // ke Watch & Learn → grid tampil instan tanpa nembak yt-search lagi. Kunci per
 // (bahasa, query); TTL 10 menit — lewat itu tampilkan cache dulu, refresh diam-diam.
-const catalogCache = new Map<string, { videos: ImmersionVideo[]; nextToken?: string; at: number }>();
+const catalogCache = new Map<
+  string,
+  { videos: ImmersionVideo[]; nextToken?: string; order?: CatalogOrder; at: number }
+>();
 const CATALOG_TTL_MS = 10 * 60 * 1000;
 // Kunci cache memuat filter durasi: tiap tab ("< 5", "5–10", "10–20") kini fetch
 // bucket YouTube berbeda (short/medium), jadi hasilnya tak boleh saling menimpa.
@@ -257,14 +291,20 @@ function diversifyByChannel(list: ImmersionVideo[]): ImmersionVideo[] {
   }
   const queues = [...buckets.values()];
   const out: ImmersionVideo[] = [];
-  for (let i = 0; out.length < list.length; i++) {
+  // [watch-shuffle-v1] Ronde 0..MAX_PER_CHANNEL-1 duluan (jatah wajar tiap channel),
+  // sisanya nyusul di belakang. Tak ada yang dibuang — cuma didorong ke ekor daftar,
+  // jadi channel dominan tetap kebagian tapi tak memborong layar pertama.
+  const tail: ImmersionVideo[] = [];
+  for (let i = 0; out.length + tail.length < list.length; i++) {
     for (const q of queues) {
       const v = q[i];
-      if (v) out.push(v);
+      if (!v) continue;
+      if (i < MAX_PER_CHANNEL) out.push(v);
+      else tail.push(v);
     }
     if (i > list.length) break; // jaga-jaga, tak mungkin tercapai
   }
-  return out;
+  return [...out, ...tail];
 }
 
 // [watch-batch-20-v1] Ambil satu batch katalog berisi ~`want` video: merangkai
@@ -278,10 +318,13 @@ async function fetchCatalogBatch(opts: {
   durId: DurationFilter;
   want: number;
   pageToken?: string;
+  /** Sort order YouTube untuk batch ini. WAJIB sama dengan order yang melahirkan
+   *  `pageToken` — token halaman terikat ke parameter pencariannya. */
+  order: CatalogOrder;
   /** videoId yang sudah tampil di grid — jangan dihitung sebagai "hasil baru". */
   exclude?: Set<string>;
 }): Promise<{ results: ImmersionVideo[]; nextToken?: string }> {
-  const { lang, cat, text, durId, want, exclude } = opts;
+  const { lang, cat, text, durId, want, order, exclude } = opts;
   const q = buildQuery(cat, lang, text);
   const freeText = !!text.trim();
   const { min, max } = durRange(durId);
@@ -292,7 +335,7 @@ async function fetchCatalogBatch(opts: {
     const page = await searchImmersionVideos({
       query: q,
       language: lang.searchCode ?? lang.code,
-      order: cat.news || cat.fresh ? "date" : undefined,
+      order,
       max: CATALOG_PAGE_SIZE,
       pageToken: token,
       maxDurationSec: max,
@@ -310,7 +353,10 @@ async function fetchCatalogBatch(opts: {
     token = page.nextPageToken;
     if (!token) break; // halaman habis
   }
-  return { results: diversifyByChannel(out), nextToken: token };
+  // [watch-shuffle-v1] Rail berita/terbaru tetap kronologis; sisanya diacak dulu
+  // sebelum disebar antar channel supaya tiap muat ulang beda isinya.
+  const pool = order === "date" ? out : shuffle(out);
+  return { results: diversifyByChannel(pool), nextToken: token };
 }
 
 export default function WatchAndLearn() {
@@ -335,6 +381,10 @@ export default function WatchAndLearn() {
 
   const [videos, setVideos] = useState<ImmersionVideo[]>([]);
   const [nextToken, setNextToken] = useState<string | undefined>();
+  // [watch-shuffle-v1] Sort order yang dipakai batch aktif. `nextToken` cuma sah
+  // buat order yang melahirkannya, jadi "Muat lainnya" harus meneruskan yang ini —
+  // bukan mengundi ulang.
+  const [order, setOrder] = useState<CatalogOrder>("relevance");
   const [state, setState] = useState<"idle" | "loading" | "more" | "done" | "empty" | "error">(
     "idle"
   );
@@ -690,15 +740,35 @@ export default function WatchAndLearn() {
       // [watch-batch-20-v1] Batch pertama langsung sebanyak grid awal (20 kartu =
       // 4 baris) — hasil sudah disaring ke bahasa target + rentang durasi tab aktif
       // dan disebar antar channel di dalam fetchCatalogBatch.
-      const { results, nextToken: tok } = await fetchCatalogBatch({
-        lang: l, cat: c, text, durId, want: INITIAL_VISIBLE,
+      // [watch-shuffle-v1] Ambil POOL_FACTOR× lipat: 20 kartu pertama ditampilkan,
+      // sisanya jadi cadangan "Muat lainnya" — dan karena kolamnya diacak, tiap
+      // muat ulang memunculkan potongan yang berbeda.
+      let ord = pickOrder(c);
+      let { results, nextToken: tok } = await fetchCatalogBatch({
+        lang: l, cat: c, text, durId, want: INITIAL_VISIBLE * POOL_FACTOR, order: ord,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
+      // [watch-shuffle-v1] Order alternatif (mis. viewCount) kadang miskin hasil di
+      // bahasa/kategori tertentu → grid bisa cuma separuh baris. Kalau kurang dari
+      // satu layar penuh, ulangi sekali pakai `relevance` (kolam paling gemuk) biar
+      // 20 kartu tetap kekejar. Server cache-nya sudah panas → nyaris tanpa kuota.
+      if (results.length < INITIAL_VISIBLE && ord !== "relevance") {
+        const fb = await fetchCatalogBatch({
+          lang: l, cat: c, text, durId, want: INITIAL_VISIBLE * POOL_FACTOR, order: "relevance",
+        });
+        if (id !== reqId.current) return;
+        if (fb.results.length > results.length) {
+          ord = "relevance";
+          results = fb.results;
+          tok = fb.nextToken;
+        }
+      }
       catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text), durId), {
-        videos: results, nextToken: tok, at: Date.now(),
+        videos: results, nextToken: tok, order: ord, at: Date.now(),
       });
       setVideos(results);
       setNextToken(tok);
+      setOrder(ord);
       setState(results.length ? "done" : "empty");
       // Hangatkan cache transkrip di background biar subtitle + terjemahan
       // "langsung muncul" saat video mana pun di grid diklik (tak nunggu ASR ~1 mnt).
@@ -759,6 +829,7 @@ export default function WatchAndLearn() {
       reqId.current++; // batalkan fetch lama yang mungkin masih jalan
       setVideos(hit.videos);
       setNextToken(hit.nextToken);
+      setOrder(hit.order ?? "relevance");
       setState(hit.videos.length ? "done" : "empty");
       // Tab "Siap" baca cache transkrip DB kita sendiri (murah, tanpa kuota
       // YouTube) → SELALU refresh diam-diam biar video yang transkripnya baru
@@ -787,6 +858,7 @@ export default function WatchAndLearn() {
       lang, cat, text: committedText, durId: durationFilter,
       want: LOAD_MORE_COUNT,
       pageToken: nextToken,
+      order,
       exclude: new Set(videos.map((v) => v.videoId)),
     });
     if (id !== reqId.current) return;
@@ -795,14 +867,14 @@ export default function WatchAndLearn() {
       const merged = [...prev, ...more.filter((v) => !seen.has(v.videoId))];
       // [perf:watch-catalog-cache-v1] hasil "Muat lainnya" ikut ke cache biar balik lagi utuh
       catalogCache.set(catalogKeyOf(lang.code, buildQuery(cat, lang, committedText), durationFilter), {
-        videos: merged, nextToken: tok, at: Date.now(),
+        videos: merged, nextToken: tok, order, at: Date.now(),
       });
       return merged;
     });
     setNextToken(tok);
     setState("done");
     prewarmTranscripts(more, lang.code);
-  }, [nextToken, state, cat, lang, committedText, durationFilter, videos]);
+  }, [nextToken, state, cat, lang, committedText, durationFilter, videos, order]);
 
   // "Muat lainnya": tampilkan 1 baris berikutnya dari yang sudah dimuat; kalau
   // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.

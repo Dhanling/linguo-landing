@@ -37,7 +37,6 @@ import { RectFlag } from "@/components/RectFlag";
 import { IMMERSION_LANGS } from "@/lib/immersion";
 import { BASE_LANGS, WATCH_PLANS } from "@/lib/immersionLearn";
 
-const TEAL = "#1A9E9E";
 const LANG_COUNT = IMMERSION_LANGS.length;
 
 const NAV_LINKS = [
@@ -76,7 +75,7 @@ function TopBar() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 h-16 lg:h-[70px] flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Image
-            src="/images/logo-color.png"
+            src="/images/full-logo-linguo-hijau.png"
             alt="Linguo"
             width={158}
             height={56}
@@ -220,7 +219,7 @@ function PlayerMock() {
       </div>
 
       {/* notifikasi flashcard */}
-      <div className="wl-float-slow absolute -bottom-5 -left-3 sm:-left-8 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 shadow-xl ring-1 ring-black/5">
+      <div className="wl-float-slow absolute -bottom-8 -left-2 sm:-left-12 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 shadow-xl ring-1 ring-black/5">
         <span className="grid h-8 w-8 place-items-center rounded-xl bg-amber-100 text-amber-600">
           <Layers className="h-4 w-4" />
         </span>
@@ -1010,7 +1009,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 sm:px-6 md:flex-row md:justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo-color.png"
+            src="/images/full-logo-linguo-hijau.png"
             alt="Linguo"
             width={158}
             height={56}

@@ -3436,6 +3436,12 @@ export default function VideoLearnPlayer({
                     style={{
                       backgroundColor: on ? CUE_ON_BG : "transparent",
                       boxShadow: on ? "0 6px 16px rgba(0,0,0,0.3)" : undefined,
+                      // [watch-panel-plain-v1] Panel transkrip TIDAK pernah pakai
+                      // outline/shadow teks (itu cuma buat subtitle di atas video).
+                      // text-shadow itu properti WARISAN — dimatikan di blok baris
+                      // supaya baris non-aktif & baris terjemahan emas tak bisa
+                      // mewarisi outline dari leluhur mana pun.
+                      textShadow: "none",
                     }}
                   >
                     {/* [watch-cue-explain-v1] Tombol Analisa per-section (ala tombol
