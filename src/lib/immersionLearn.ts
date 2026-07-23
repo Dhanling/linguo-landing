@@ -830,7 +830,7 @@ function inheritAnc(parent: LearnCue, child: LearnCue, aStart: number, aEnd: num
  * dengan target (romanisasi kata-per-kata), jadi pembagian proporsional target
  * mengikuti batas kalimat translit dengan wajar — bukan tebakan buta.
  */
-function splitCueBySentence(cue: LearnCue): LearnCue[] {
+function splitCueBySentence(cue: LearnCue, langCode: string): LearnCue[] {
   const targets = splitSentences(cue.target);
   const bases = cue.base ? splitSentences(cue.base) : null;
   const translits = cue.translit ? splitSentences(cue.translit) : null;
@@ -853,7 +853,7 @@ function splitCueBySentence(cue: LearnCue): LearnCue[] {
     // sendiri. Tapi kalau base (terjemahan) banyak kalimat, pecah per kalimat
     // base + target proporsional biar tak jadi paragraf raksasa (approx, lihat
     // splitByBasePieces). Jalur pasangan-aman di bawah TIDAK berubah.
-    if (bases && bases.length > 1) return splitByBasePieces(cue, bases);
+    if (bases && bases.length > 1) return splitByBasePieces(cue, bases, langCode);
     return [cue];
   }
   if (bases && bases.length !== n) return [cue];
@@ -1048,17 +1048,93 @@ function mergeTinyClauses(pieces: string[]): string[] {
   return out.length ? out : pieces;
 }
 
+// ── Anti-section menggantung ─────────────────────────────────────────────────
+// [watch-no-dangling-v1] Section tak boleh BERAKHIR dengan kata penghubung —
+// kopula/to-be, kata bantu, artikel, preposisi, atau kata sambung. Kata-kata itu
+// MEMBUKA bagian berikutnya, jadi kalau ia menutup section, pembaca ditinggal
+// menggantung: "…to step up to the challenge | is richie now richie is…".
+//
+// Kenapa bisa terjadi: transkrip auto-caption datang TANPA tanda baca, jadi batas
+// section diambil dari potongan `base` (terjemahan) lalu target dibagi per-KATA
+// secara proporsional (splitByBasePieces) — batas kata itu buta tata bahasa. Fungsi
+// di bawah menggeser batasnya satu-dua kata: kata penghubung yang menutup section
+// dipindah ke AWAL section berikutnya. Urutan teks tak berubah, timing ikut geser
+// (dihitung ulang dari panjang teks oleh pemanggil).
+//
+// Per BAHASA (bukan satu daftar global): "a" artikel di Inggris tapi preposisi di
+// Spanyol, "is" kopula Inggris tapi bukan apa-apa di Belanda — daftar campur bikin
+// salah potong di bahasa lain. Bahasa yang tak terdaftar dilewati (aman).
+const DANGLING_TAIL_WORDS: Record<string, string[]> = {
+  en: ["is", "are", "was", "were", "am", "be", "been", "being", "has", "have", "had", "do", "does", "did", "will", "would", "shall", "should", "can", "could", "may", "might", "must", "a", "an", "the", "of", "to", "in", "on", "at", "for", "with", "from", "by", "about", "into", "over", "as", "and", "but", "or", "so", "that", "which", "who", "because", "if", "when", "while", "my", "your", "his", "her", "its", "our", "their", "this", "these", "those"],
+  id: ["adalah", "ialah", "merupakan", "yaitu", "yakni", "yang", "dan", "atau", "tapi", "tetapi", "karena", "untuk", "dengan", "dari", "ke", "di", "pada", "oleh", "kalau", "jika", "ketika", "saat", "sebuah", "para", "sang", "akan", "sudah", "telah", "sedang", "bisa", "dapat", "harus", "lebih", "paling"],
+  ms: ["adalah", "ialah", "merupakan", "iaitu", "yang", "dan", "atau", "tetapi", "kerana", "untuk", "dengan", "dari", "ke", "di", "pada", "oleh", "kalau", "jika", "ketika", "akan", "sudah", "telah", "sedang", "boleh", "harus"],
+  es: ["es", "son", "era", "eran", "está", "están", "ha", "han", "he", "hay", "ser", "estar", "el", "la", "los", "las", "un", "una", "unos", "unas", "de", "del", "a", "al", "en", "con", "por", "para", "sin", "sobre", "y", "e", "o", "u", "pero", "que", "porque", "si", "cuando", "mi", "tu", "su", "este", "esta", "muy", "más"],
+  pt: ["é", "são", "era", "eram", "está", "estão", "tem", "têm", "ser", "estar", "o", "a", "os", "as", "um", "uma", "de", "do", "da", "dos", "das", "em", "no", "na", "com", "por", "para", "sem", "sobre", "e", "ou", "mas", "que", "porque", "se", "quando", "meu", "seu", "muito", "mais"],
+  fr: ["est", "sont", "était", "étaient", "a", "ont", "ai", "être", "avoir", "le", "la", "les", "un", "une", "des", "du", "de", "à", "au", "aux", "en", "dans", "avec", "par", "pour", "sans", "sur", "et", "ou", "mais", "que", "qui", "parce", "si", "quand", "mon", "ton", "son", "ce", "cette", "très", "plus"],
+  de: ["ist", "sind", "war", "waren", "bin", "bist", "sein", "hat", "haben", "hatte", "wird", "werden", "kann", "können", "muss", "müssen", "der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "von", "zu", "in", "an", "auf", "mit", "für", "ohne", "über", "und", "oder", "aber", "dass", "weil", "wenn", "als", "mein", "dein", "sehr"],
+  it: ["è", "sono", "era", "erano", "ha", "hanno", "essere", "avere", "il", "lo", "la", "i", "gli", "le", "un", "uno", "una", "di", "del", "della", "a", "al", "in", "nel", "con", "per", "senza", "su", "e", "ed", "o", "ma", "che", "perché", "se", "quando", "mio", "tuo", "suo", "molto", "più"],
+  nl: ["is", "zijn", "was", "waren", "ben", "heeft", "hebben", "had", "wordt", "worden", "kan", "kunnen", "moet", "de", "het", "een", "van", "te", "in", "op", "aan", "met", "voor", "zonder", "over", "en", "of", "maar", "dat", "omdat", "als", "toen", "mijn", "jouw", "zeer", "heel"],
+  tr: ["bir", "bu", "şu", "ve", "veya", "ama", "fakat", "çünkü", "eğer", "için", "ile", "gibi", "kadar", "daha", "en", "çok"],
+  vi: ["là", "và", "hoặc", "nhưng", "vì", "nên", "của", "cho", "với", "từ", "đến", "trong", "trên", "một", "các", "những", "rất"],
+  pl: ["jest", "są", "był", "była", "byli", "ma", "mają", "będzie", "i", "a", "ale", "albo", "lub", "oraz", "bo", "ponieważ", "że", "żeby", "jeśli", "kiedy", "gdy", "w", "na", "do", "od", "z", "ze", "o", "po", "przez", "dla", "bardzo"],
+  ru: ["и", "а", "но", "или", "что", "чтобы", "если", "когда", "потому", "в", "на", "с", "со", "к", "по", "из", "от", "для", "о", "об", "при", "это", "очень", "мой", "твой", "его", "её", "их"],
+  uk: ["і", "й", "та", "а", "але", "або", "що", "щоб", "якщо", "коли", "бо", "в", "у", "на", "з", "із", "до", "від", "по", "для", "про", "при", "це", "дуже"],
+  fil: ["ay", "ang", "ng", "sa", "na", "at", "o", "ni", "kay", "mga", "para", "kung", "dahil", "pero", "ngunit", "napaka"],
+  tl: ["ay", "ang", "ng", "sa", "na", "at", "o", "ni", "kay", "mga", "para", "kung", "dahil", "pero", "ngunit", "napaka"],
+  fi: ["ja", "sekä", "tai", "vai", "mutta", "vaan", "koska", "sillä", "että", "kun", "jos", "vaikka", "joten", "jotta", "joka", "mikä", "on", "ovat", "oli", "olivat", "olla", "hyvin", "todella"],
+  hi: ["और", "या", "लेकिन", "क्योंकि", "कि", "जब", "अगर", "का", "की", "के", "को", "से", "में", "पर", "है", "हैं", "था", "थे", "एक", "बहुत"],
+  ar: ["و", "أو", "لكن", "لأن", "أن", "إن", "في", "على", "من", "إلى", "عن", "مع", "هذا", "هذه"],
+  ko: ["그리고", "하지만", "그런데", "그래서", "왜냐하면", "또", "매우", "아주"],
+  bg: ["и", "а", "но", "или", "защото", "понеже", "макар", "докато", "когато", "затова", "е", "са", "беше", "в", "на", "с", "за", "от", "до", "по", "при", "много"],
+};
+// Maksimum kata yang boleh berpindah dari satu section. Rem: kalau lebih dari ini,
+// batasnya memang jauh salah tempat & menggeser terus cuma memindahkan masalah.
+const DANGLING_MAX_MOVE = 3;
+// Section sumber wajib menyisakan minimal segini kata — jangan sampai memperbaiki
+// ujungnya malah menghasilkan baris kerdil 1 kata.
+const DANGLING_MIN_KEEP_WORDS = 2;
+
+const bareWord = (w: string) => w.toLowerCase().replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, "");
+
+/**
+ * Geser kata penghubung yang MENUTUP sebuah potongan ke AWAL potongan berikutnya.
+ * Beroperasi di batas kata (bahasa berspasi saja); bahasa tanpa spasi
+ * (Jepang/Mandarin/Thai) dilewati karena "kata terakhir" tak terdefinisi di sana.
+ */
+function fixDanglingTails(pieces: string[], langCode: string): string[] {
+  if (pieces.length < 2) return pieces;
+  const list = DANGLING_TAIL_WORDS[(langCode || "").split("-")[0].toLowerCase()];
+  if (!list?.length) return pieces;
+  const dangling = new Set(list);
+  const words = pieces.map((p) => p.trim().split(/\s+/).filter(Boolean));
+  for (let i = 0; i < words.length - 1; i++) {
+    let moved = 0;
+    while (
+      moved < DANGLING_MAX_MOVE &&
+      words[i].length > DANGLING_MIN_KEEP_WORDS &&
+      dangling.has(bareWord(words[i][words[i].length - 1]))
+    ) {
+      words[i + 1].unshift(words[i].pop() as string);
+      moved++;
+    }
+  }
+  return words.map((w) => w.join(" "));
+}
+
 /**
  * Pecah cue TANPA terjemahan/translit (ASR/caption mentah) di batas KLAUSA (tanda
  * baca + kata sambung) untuk keterbacaan — aman karena tak ada pasangan arti yang
  * bisa salah geser.
  */
-function splitCueClausesNoBase(cue: LearnCue): LearnCue[] {
+function splitCueClausesNoBase(cue: LearnCue, langCode: string): LearnCue[] {
   const targets = splitClauses(cue.target);
   if (targets.length <= 1) return [cue];
   const groups = greedyGroups(targets);
   if (groups.length <= 1) return [cue];
-  const targetGroups = groups.map((idx) => idx.map((i) => targets[i]).join(" ").trim());
+  const targetGroups = fixDanglingTails(
+    groups.map((idx) => idx.map((i) => targets[i]).join(" ").trim()),
+    langCode
+  );
   return spreadOverGroups(cue, targetGroups, null, null);
 }
 
@@ -1075,9 +1151,9 @@ function splitCueClausesNoBase(cue: LearnCue): LearnCue[] {
  * PAS — jauh lebih baik daripada sinkron yang meleset. Cue tanpa terjemahan tetap
  * dipecah di batas klausa untuk keterbacaan (splitCueClausesNoBase).
  */
-function splitLongCue(cue: LearnCue): LearnCue[] {
+function splitLongCue(cue: LearnCue, langCode: string): LearnCue[] {
   if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
-  if (!cue.base && !cue.translit) return splitCueClausesNoBase(cue);
+  if (!cue.base && !cue.translit) return splitCueClausesNoBase(cue, langCode);
 
   const tSeg = splitByPunct(cue.target);
   const bSeg = splitByPunct(cue.base ?? "");
@@ -1102,7 +1178,7 @@ function splitLongCue(cue: LearnCue): LearnCue[] {
         const groups = greedyGroups(baseClauses).map((idx) =>
           idx.map((i) => baseClauses[i]).join(" ").trim()
         );
-        if (groups.length > 1) return splitByBasePieces(cue, groups);
+        if (groups.length > 1) return splitByBasePieces(cue, groups, langCode);
       }
     }
     return [cue];
@@ -1220,14 +1296,19 @@ function distributeUnitsWeighted(text: string, weights: number[]): string[] {
  * satu paragraf raksasa (target sama sekali tak terpunktuasi). Tiap section kini =
  * satu kalimat/klausa arti utuh → jauh lebih terbaca & tak overwhelming.
  */
-function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
+function splitByBasePieces(cue: LearnCue, basePieces: string[], langCode: string): LearnCue[] {
   const n = basePieces.length;
   if (n <= 1) return [cue];
   // Bobot = panjang tiap potongan base → target & translit dibagi SEBANDING arti
   // yang dipasangkan padanya, bukan rata (lihat distributeUnitsWeighted).
   const weights = basePieces.map((b) => b.trim().length);
-  const tgt = distributeUnitsWeighted(cue.target, weights);
   const tr = cue.translit ? distributeUnitsWeighted(cue.translit, weights) : null;
+  // [watch-no-dangling-v1] Batas per-kata di sini buta tata bahasa → rapikan
+  // ujungnya biar section tak berhenti di "…is"/"…yang"/"…de". Dilewati kalau cue
+  // punya transliterasi: translit dibagi dengan bobot yang sama, jadi menggeser
+  // kata target saja akan membuat bacaan Latinnya meleset satu kata.
+  const rawTgt = distributeUnitsWeighted(cue.target, weights);
+  const tgt = tr ? rawTgt : fixDanglingTails(rawTgt, langCode);
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return basePieces.map((b, i) => {
@@ -1258,7 +1339,7 @@ function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
  * jadi PERKIRAAN (beda bahasa, urutan kata tak selalu sejajar), tapi tiap section
  * jadi satu baris pendek — sesuai target "1 kalimat / 1 baris" utk semua sumber.
  */
-function splitCueByWords(cue: LearnCue): LearnCue[] {
+function splitCueByWords(cue: LearnCue, langCode: string): LearnCue[] {
   if (cue.target.trim().length <= MAX_CUE_CHARS) return [cue];
   // Pemecahan per-KATA tak bisa memasangkan target↔base↔translit dengan benar
   // (urutan & jumlah kata beda antar bahasa → terjemahan/bacaan Latin salah geser,
@@ -1267,7 +1348,7 @@ function splitCueByWords(cue: LearnCue): LearnCue[] {
   // panjang tapi PASANGANNYA BENAR) — lebih baik daripada sinkron yang meleset.
   // Pemecahan per-kata hanya untuk cue mentah tanpa apa pun yang bisa salah pasang.
   if (cue.base || cue.translit) return [cue];
-  const targets = chunkWords(cue.target, MAX_CUE_CHARS);
+  const targets = fixDanglingTails(chunkWords(cue.target, MAX_CUE_CHARS), langCode);
   if (targets.length <= 1) return [cue];
   const bases = cue.base ? distributeWords(cue.base, targets.length) : null;
   const translits = cue.translit ? distributeWords(cue.translit, targets.length) : null;
@@ -1353,11 +1434,11 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
 // utuh (memulihkan pasangan target↔arti dari cache lama), lalu pecah per kalimat
 // (akurat), di batas tanda baca, lalu — kalau MASIH kepanjangan (ASR tanpa tanda
 // baca) — per kata. Tak ada lagi section paragraf panjang, apa pun sumbernya.
-function splitCuesBySentence(cues: LearnCue[]): LearnCue[] {
+function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
   return mergeCueFragments(cues)
-    .flatMap(splitCueBySentence)
-    .flatMap(splitLongCue)
-    .flatMap(splitCueByWords)
+    .flatMap((c) => splitCueBySentence(c, langCode))
+    .flatMap((c) => splitLongCue(c, langCode))
+    .flatMap((c) => splitCueByWords(c, langCode))
     // Rapikan field per cue. Anchor `_anc` IKUT dipertahankan — dipakai karaokeFrac
     // di player biar sapuan menempel ke timing window caption asli; ia dibuang saat
     // tulis cache (saveTranscriptCache) supaya format simpanan tak berubah.
@@ -1401,7 +1482,7 @@ export async function fetchTranscript(
     if (opts?.meta?.title) backfillTranscriptMeta(videoId, langCode, opts.meta);
     // Rapikan lagi walau dari cache: transkrip lama mungkin masih punya section
     // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
-    return { cues: splitCuesBySentence(cached), reason: "ok" };
+    return { cues: splitCuesBySentence(cached, langCode), reason: "ok" };
   }
 
   // cacheOnly: transkripsi kini dilakukan SERVER (kurasi admin + tombol "Minta"),
@@ -1413,7 +1494,7 @@ export async function fetchTranscript(
   const raw = await fetchRawCuesFromServer(videoId, langCode);
   if (raw.cues.length) {
     const cues = await translateCues(raw.cues, raw.trackLang, langCode);
-    const out = splitCuesBySentence(cues);
+    const out = splitCuesBySentence(cues, langCode);
     saveTranscriptCache(videoId, langCode, out, "caption", opts?.meta);
     return { cues: out, reason: "ok" };
   }
@@ -1422,7 +1503,7 @@ export async function fetchTranscript(
   opts?.onAsr?.();
   const asr = await fetchAsrTranscript(videoId, langCode);
   if (asr.length) {
-    const out = splitCuesBySentence(asr);
+    const out = splitCuesBySentence(asr, langCode);
     saveTranscriptCache(videoId, langCode, out, "asr", opts?.meta);
     return { cues: out, reason: "ok" };
   }

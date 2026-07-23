@@ -1672,11 +1672,12 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     Portuguese: "A", Finnish: "A", Czech: "A", "Traditional Chinese": "A", Hungarian: "A",
     Esperanto: "A", Farsi: "A", "English British": "A", Romanian: "A", Khmer: "A",
     Danish: "A", Uzbek: "A", Serbian: "A", Estonian: "A", Latin: "A",
-    "Ancient Egyptian": "A", Georgian: "A", Irish: "A",
+    "Ancient Egyptian": "A", Georgian: "A", Irish: "A", Malay: "A",
     Russian: "B", Dutch: "B", Italian: "B", Spanish: "B", Thai: "B", "Sign Language": "B",
     Arabic: "C", English: "C", Japanese: "C", German: "C", Korean: "C", Mandarin: "C", French: "C",
     Javanese: "D", Sundanese: "D", Madurese: "D", Batak: "D", Banjar: "D",
-    Balinese: "D", Malay: "D", Bugis: "D",
+    // Melayu = bahasa asing (Malaysia/Brunei/Singapura), bukan bahasa daerah → kategori A.
+    Balinese: "D", Bugis: "D",
     BIPA: "E",
   };
   // Resolve nama bahasa ke kategori harga. Ga ketemu → "C" (median).

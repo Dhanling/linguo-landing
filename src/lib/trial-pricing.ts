@@ -23,12 +23,15 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     // "Bengali" sebelumnya tidak ketemu kategori → harga jatuh ke fallback.
     // Bengali diasumsikan kategori A (setara Hindi/Urdu) — koreksi bila salah.
     "Persian", "Bengali",
+    // Melayu = bahasa asing (Malaysia/Brunei/Singapura), bukan bahasa daerah
+    // Nusantara → kategori A, bukan D.
+    "Malay",
   ],
   B: ["Russian", "Dutch", "Italian", "Spanish", "Thai", "Sign Language"],
   C: ["Arabic", "English", "Japanese", "German", "Korean", "Mandarin", "French"],
   D: [
     "Javanese", "Sundanese", "Betawi", "Madurese", "Batak", "Banjar", "Balinese",
-    "Malay", "Bugis",
+    "Bugis",
   ],
   E: ["BIPA"],
 };
