@@ -5,6 +5,7 @@ import Link from "next/link";
 // [kelas-detail-resilient-v1] pakai klien BERSAMA — instance GoTrue ganda bikin
 // race refresh token (query bisa 401 sesaat padahal user masih login).
 import { supabase } from "@/lib/supabase-client";
+import { canAccessMateri as canAccessMateriGate } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, type LucideIcon } from "lucide-react";
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
@@ -14,6 +15,11 @@ type NavItem =
   | { key: string; label: string; icon: LucideIcon; soon: true }
   // simulasi-paywall-v1 — item link ke route terpisah, bukan tab.
   | { key: string; label: string; icon: LucideIcon; href: string };
+
+// [dev-gate-lingbook-v1] menu yang masih development → cuma tampil buat email allowlist
+// (lib/materiGate). Digate DI SINI biar semua halaman yang pakai StudentShell ikut aman,
+// bukan cuma /akun.
+const DEV_ONLY_KEYS = new Set(["materi", "lingbook"]);
 
 const NAV: NavItem[] = [
   { key: "beranda", label: "Beranda", icon: LayoutGrid },
@@ -60,6 +66,19 @@ export default function StudentShell({
     await supabase.auth.signOut();
     window.location.href = "/";
   };
+
+  // [dev-gate-lingbook-v1] cek email sesi → menu development (Kelas & Materi, Lingbook)
+  // default SEMBUNYI sampai terbukti masuk allowlist, biar ga sempat kelihatan sekilas.
+  const [devOk, setDevOk] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (alive) setDevOk(canAccessMateriGate(session?.user?.email));
+    });
+    return () => { alive = false; };
+  }, []);
+  const showNav = (key: string) =>
+    !DEV_ONLY_KEYS.has(key) || (devOk && (key !== "materi" || canAccessMateri));
 
   // [ling-lms-dark-v1] dark mode dashboard — state sync dgn LessonPlayer via localStorage "lms-dark-mode"
   const [isDark, setIsDark] = useState(false);
@@ -139,7 +158,7 @@ export default function StudentShell({
 
           {/* nav */}
           <nav className="mt-12 flex flex-col items-center gap-3">
-            {NAV.filter((item) => canAccessMateri || item.key !== "materi").map((item) => {
+            {NAV.filter((item) => showNav(item.key)).map((item) => {
               const Icon = item.icon;
               if ("href" in item) {
                 // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis

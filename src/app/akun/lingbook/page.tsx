@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
+import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import BookLibrary from "@/components/lingbook/BookLibrary";
 
@@ -19,6 +20,11 @@ export default function LingbookLibraryPage() {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!alive) return;
       if (!session?.user?.id) {
+        router.replace("/akun");
+        return;
+      }
+      // [dev-gate-lingbook-v1] Lingbook masih development → non-allowlist dilempar balik
+      if (!canAccessLingbook(session.user.email)) {
         router.replace("/akun");
         return;
       }
