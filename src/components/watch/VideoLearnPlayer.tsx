@@ -109,10 +109,10 @@ const CARD = "#161A1C";
 const BORDER = "rgba(255,255,255,0.08)";
 // [watch-cue-block-v1] Latar BLOK PENUH baris transkrip yang sedang diputar (ala
 // Lingopie) — solid, bukan tint tembus 14% seperti dulu, supaya batas section tegas.
-// Sengaja gelap kehijauan (bukan teal terang): sorotan karaoke per-kata JUGA teal,
-// jadi blok terang malah menelan sorotan itu; dengan latar gelap, teal karaoke,
+// Abu-abu netral (bukan teal): sorotan karaoke per-kata & pita penanda kiri JUGA
+// teal, jadi blok berwarna malah menelan keduanya. Dengan abu gelap, teal karaoke,
 // putih target, dan emas terjemahan semuanya tetap kontras.
-const CUE_ON_BG = "#16302F";
+const CUE_ON_BG = "#282B2D";
 
 // [watch-endscreen-recs-v1] Layar akhir ala Netflix: saat video habis, tampilkan
 // rekomendasi video berikutnya dari tab "Siap" (transkrip sudah siap → buka instan)
@@ -3263,10 +3263,13 @@ export default function VideoLearnPlayer({
 
           <div
             ref={listRef}
-            className="relative z-10 min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 [scrollbar-width:thin]"
+            // [watch-cue-block-v1] TANPA padding kiri/kanan: blok baris aktif harus
+            // membentang penuh sampai nempel ke batas video di kiri (rapi & compact).
+            // Padding pindah ke tiap baris; status loading/gagal bawa padding sendiri.
+            className="relative z-10 min-h-0 flex-1 overflow-y-auto py-2 [scrollbar-width:thin]"
           >
             {txState === "loading" && (
-              <div className="flex items-start gap-2 px-2 py-6" style={{ color: SUB }}>
+              <div className="flex items-start gap-2 px-4 py-6" style={{ color: SUB }}>
                 <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin" />
                 <span className="text-[13px] leading-relaxed">
                   {asrRunning
@@ -3276,7 +3279,7 @@ export default function VideoLearnPlayer({
               </div>
             )}
             {txState === "none" && (
-              <div className="flex flex-col items-start gap-3 px-2 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
+              <div className="flex flex-col items-start gap-3 px-4 py-6 text-[13px] leading-relaxed" style={{ color: SUB }}>
                 {txReason === "not_ready" ? (
                   <>
                     <span>
@@ -3339,13 +3342,15 @@ export default function VideoLearnPlayer({
                     // Section non-aktif diredupkan (opacity) jadi terkesan abu-abu
                     // supaya fokus jatuh ke baris yang sedang diputar; hover meredakan
                     // redup itu biar tetap enak ditarget/dibaca.
-                    className={`wl-cue group relative my-0.5 cursor-pointer rounded-xl py-2.5 pl-3.5 pr-[72px] ${
+                    className={`wl-cue group relative cursor-pointer py-2 pl-4 pr-[74px] ${
                       on ? "wl-cue-on opacity-100" : "opacity-40 hover:opacity-80"
                     }`}
                     style={{
                       backgroundColor: on ? CUE_ON_BG : "transparent",
+                      // Pita teal tipis persis di tepi kiri (batas dengan video) —
+                      // penanda "ini yang lagi diputar" tanpa mengubah warna blok.
                       boxShadow: on
-                        ? `inset 3px 0 0 ${TEAL}, 0 8px 20px rgba(0,0,0,0.35)`
+                        ? `inset 3px 0 0 ${TEAL}, 0 6px 16px rgba(0,0,0,0.3)`
                         : undefined,
                     }}
                   >
