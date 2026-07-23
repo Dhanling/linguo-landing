@@ -158,15 +158,21 @@ function TabBg({ active = false }: { active?: boolean }) {
 function IconTooltip({
   children,
   side = "bottom",
+  align = "center",
 }: {
   children: React.ReactNode;
   side?: "top" | "bottom";
+  // `align` = titik jangkar horizontal. Tombol yang nempel tepi kanan panel
+  // (mis. toggle terjemahan) wajib "right" — kalau center, balonnya kepotong
+  // `overflow-hidden` panel.
+  align?: "center" | "right";
 }) {
   const pos = side === "top" ? "bottom-full mb-1.5" : "top-full mt-1.5";
+  const alignPos = align === "right" ? "right-0" : "left-1/2 -translate-x-1/2";
   return (
     <span
       role="tooltip"
-      className={`pointer-events-none absolute left-1/2 z-30 -translate-x-1/2 ${pos} whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100`}
+      className={`pointer-events-none absolute z-30 ${alignPos} ${pos} whitespace-nowrap rounded-md px-2 py-1 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100`}
       style={{ backgroundColor: "rgba(0,0,0,0.85)" }}
     >
       {children}
@@ -3335,16 +3341,15 @@ export default function VideoLearnPlayer({
               <button
                 type="button"
                 onClick={togglePanelTr}
-                title={showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
-                className="ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors"
-                style={{
-                  color: showPanelTr ? GOLD : SUB,
-                  border: `1px solid ${showPanelTr ? "rgba(244,183,64,0.4)" : BORDER}`,
-                  backgroundColor: showPanelTr ? "rgba(244,183,64,0.12)" : "transparent",
-                }}
+                aria-label={showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+                aria-pressed={showPanelTr}
+                className="group relative ml-auto inline-flex shrink-0 items-center justify-center rounded-full p-1 transition-colors hover:text-white"
+                style={{ color: showPanelTr ? GOLD : SUB }}
               >
-                {showPanelTr ? <Eye className="h-3.5 w-3.5" /> : <EyeOff className="h-3.5 w-3.5" />}
-                Terjemahan
+                {showPanelTr ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+                <IconTooltip side="bottom" align="right">
+                  {showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+                </IconTooltip>
               </button>
             )}
           </div>
@@ -3430,9 +3435,12 @@ export default function VideoLearnPlayer({
                     // Section non-aktif diredupkan (opacity) jadi terkesan abu-abu
                     // supaya fokus jatuh ke baris yang sedang diputar; hover meredakan
                     // redup itu biar tetap enak ditarget/dibaca.
-                    className={`wl-cue group relative cursor-pointer py-2 pl-4 pr-11 ${
-                      on ? "wl-cue-on opacity-100" : "opacity-40 hover:opacity-80"
-                    }`}
+                    // [watch-panel-hide-tr-v1] Tanpa baris terjemahan tiap section
+                    // cuma 1 baris teks → kalau padding-nya tetap, daftarnya mepet
+                    // dan susah dipisah mata. Beri napas ekstra saat mode itu aktif.
+                    className={`wl-cue group relative cursor-pointer pl-4 pr-11 ${
+                      showPanelTr ? "py-2" : "py-3"
+                    } ${on ? "wl-cue-on opacity-100" : "opacity-40 hover:opacity-80"}`}
                     style={{
                       backgroundColor: on ? CUE_ON_BG : "transparent",
                       boxShadow: on ? "0 6px 16px rgba(0,0,0,0.3)" : undefined,
@@ -3455,9 +3463,9 @@ export default function VideoLearnPlayer({
                         openSentenceStudy(c);
                       }}
                       aria-label="Analisa kalimat ini dengan AI"
-                      className={`group/ex absolute right-2 top-1.5 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
-                        on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
-                      }`}
+                      className={`group/ex absolute right-2 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
+                        showPanelTr ? "top-1.5" : "top-2.5"
+                      } ${on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"}`}
                       style={{ color: TEAL }}
                     >
                       <Sparkles className="h-4 w-4" />
