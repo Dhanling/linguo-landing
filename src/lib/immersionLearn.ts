@@ -1018,6 +1018,36 @@ function greedyGroups(segs: string[]): number[][] {
   return groups;
 }
 
+// Klausa lebih pendek dari ini dianggap REMAH: disatukan ke klausa tetangga
+// sebelum dijadikan section. Batas 40% MAX_CUE_CHARS — cukup memberi ruang untuk
+// klausa pendek yang sah ("kata dia,"), tapi menyapu remah 2–3 kata.
+const MIN_CLAUSE_CHARS = Math.round(MAX_CUE_CHARS * 0.4);
+
+/**
+ * Satukan klausa remah (< MIN_CLAUSE_CHARS) ke klausa SESUDAHNYA — atau ke
+ * sebelumnya kalau ia yang terakhir. Urutan teks tak berubah, cuma batas
+ * potongnya yang digeser.
+ */
+function mergeTinyClauses(pieces: string[]): string[] {
+  const out: string[] = [];
+  let carry = "";
+  pieces.forEach((p, i) => {
+    const t = [carry, p.trim()].filter(Boolean).join(" ");
+    if (t.length < MIN_CLAUSE_CHARS && i < pieces.length - 1) {
+      carry = t; // masih remah → gabung ke klausa berikutnya
+      return;
+    }
+    carry = "";
+    if (t.length < MIN_CLAUSE_CHARS && out.length) out[out.length - 1] += " " + t;
+    else if (t) out.push(t);
+  });
+  if (carry) {
+    if (out.length) out[out.length - 1] += " " + carry;
+    else out.push(carry);
+  }
+  return out.length ? out : pieces;
+}
+
 /**
  * Pecah cue TANPA terjemahan/translit (ASR/caption mentah) di batas KLAUSA (tanda
  * baca + kata sambung) untuk keterbacaan — aman karena tak ada pasangan arti yang
@@ -1063,7 +1093,11 @@ function splitLongCue(cue: LearnCue): LearnCue[] {
     // proporsional biar satu kalimat panjang tak overwhelming. Kalau base pun tak
     // punya batas klausa, biarkan utuh.
     if ((cue.base ?? "").trim().length > MAX_CUE_CHARS) {
-      const baseClauses = splitClauses(cue.base ?? "");
+      // Klausa remah (mis. "hari ini aku") disatukan dulu ke tetangganya: potongan
+      // sependek itu jadi section sendiri hanya bikin baris kerdil yang pasangan
+      // target-nya pasti meleset. Kalau setelah disatukan tinggal satu potongan,
+      // cue dibiarkan UTUH — satu baris agak panjang tapi artinya PAS.
+      const baseClauses = mergeTinyClauses(splitClauses(cue.base ?? ""));
       if (baseClauses.length > 1) {
         const groups = greedyGroups(baseClauses).map((idx) =>
           idx.map((i) => baseClauses[i]).join(" ").trim()
@@ -1137,6 +1171,44 @@ function distributeUnits(text: string, n: number): string[] {
 }
 
 /**
+ * [watch-base-driven-split-v2] Sama seperti distributeUnits, TAPI porsi tiap
+ * potongan SEBANDING `weights` (panjang potongan base pasangannya) — bukan rata.
+ *
+ * Kenapa perlu: pembagian rata memasangkan potongan base yang panjangnya jauh
+ * berbeda ke potongan target yang sama besar. Kasus nyata (ASR Inggris tanpa
+ * tanda baca): base terpecah jadi "hari ini aku" (12 huruf) + sisa kalimat (130
+ * huruf), tapi target dibagi DUA SAMA RATA → baris pertama menampilkan setengah
+ * kalimat Inggris dengan terjemahan cuma "hari ini aku". Dengan bobot, porsi
+ * target ikut proporsi base-nya, jadi pasangannya masuk akal.
+ */
+function distributeUnitsWeighted(text: string, weights: number[]): string[] {
+  const n = weights.length;
+  const t = text.trim();
+  if (n <= 1) return [t];
+  const total = weights.reduce((s, w) => s + Math.max(0, w), 0);
+  if (total <= 0) return distributeUnits(t, n);
+  const words = t.split(/\s+/).filter(Boolean);
+  const perWord = words.length >= n;
+  const units = perWord ? words : Array.from(t);
+  if (units.length < n) return distributeUnits(t, n);
+  const out: string[] = [];
+  let acc = 0;
+  let used = 0;
+  for (let i = 0; i < n; i++) {
+    acc += Math.max(0, weights[i]);
+    // Sisakan minimal 1 unit untuk tiap grup sesudahnya → tak ada baris kosong.
+    const ideal = Math.round((acc / total) * units.length);
+    const to =
+      i === n - 1
+        ? units.length
+        : Math.min(units.length - (n - 1 - i), Math.max(used + 1, ideal));
+    out.push(units.slice(used, to).join(perWord ? " " : "").trim());
+    used = to;
+  }
+  return out;
+}
+
+/**
  * [watch-base-driven-split] Pemasangan APPROKSIMATIF untuk cue yang TARGET-nya
  * datang TANPA tanda baca (auto-caption mentah — mis. Hindi/Arab yang belum
  * di-restore punktuasinya oleh worker) sehingga tak bisa dipecah aman lewat
@@ -1151,8 +1223,11 @@ function distributeUnits(text: string, n: number): string[] {
 function splitByBasePieces(cue: LearnCue, basePieces: string[]): LearnCue[] {
   const n = basePieces.length;
   if (n <= 1) return [cue];
-  const tgt = distributeUnits(cue.target, n);
-  const tr = cue.translit ? distributeUnits(cue.translit, n) : null;
+  // Bobot = panjang tiap potongan base → target & translit dibagi SEBANDING arti
+  // yang dipasangkan padanya, bukan rata (lihat distributeUnitsWeighted).
+  const weights = basePieces.map((b) => b.trim().length);
+  const tgt = distributeUnitsWeighted(cue.target, weights);
+  const tr = cue.translit ? distributeUnitsWeighted(cue.translit, weights) : null;
   const total = tgt.reduce((sum, s) => sum + s.length, 0) || 1;
   let acc = 0;
   return basePieces.map((b, i) => {
