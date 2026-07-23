@@ -202,6 +202,15 @@ const KARAOKE_SHADOW =
   // kedalaman/stiker condong ke kanan-bawah + drop shadow halus
   "3px 3px 0 #000, 4px 4px 0 rgba(0,0,0,0.9), 5px 6px 6px rgba(0,0,0,0.5)";
 
+// [watch-translation-stroke-v1] Baris TERJEMAHAN (emas) juga butuh garis tepi hitam
+// biar kebaca di atas video terang — tapi lebih tipis (~1.5px) dari baris target
+// karena fontnya lebih kecil: stroke setebal KARAOKE_SHADOW bikin huruf emas
+// "tenggelam"/dempet. Tanpa efek stiker kanan-bawah supaya tetap subordinat.
+const TRANSLATION_SHADOW =
+  "1.5px 1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px -1.5px 0 #000, " +
+  "1.5px 0 0 #000, -1.5px 0 0 #000, 0 1.5px 0 #000, 0 -1.5px 0 #000, " +
+  "0 2px 5px rgba(0,0,0,0.55)";
+
 // Jam pemutaran m:ss (atau h:mm:ss utk >1 jam) — untuk label waktu di slider seek.
 // Beda dari formatDuration (yg kembalikan "" saat 0): di sini 0 → "0:00".
 function fmtClock(sec: number): string {
@@ -3945,7 +3954,7 @@ function FocusLine({
             {!showTranslation ? null : cue.base && !isDuplicateBase(cue, langCode ?? "") ? (
               <p
                 className="mt-2 font-bold"
-                style={{ color: GOLD, fontSize: 15 * scale }}
+                style={{ color: GOLD, fontSize: 15 * scale, textShadow: TRANSLATION_SHADOW }}
                 dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
               >
                 {cue.base}
@@ -3953,7 +3962,7 @@ function FocusLine({
             ) : baseTranslating && baseLang !== DEFAULT_BASE_LANG ? (
               <p
                 className="mt-2 font-semibold italic opacity-70"
-                style={{ color: GOLD, fontSize: 13 * scale }}
+                style={{ color: GOLD, fontSize: 13 * scale, textShadow: TRANSLATION_SHADOW }}
               >
                 Menerjemahkan…
               </p>
@@ -4009,7 +4018,7 @@ function FocusLine({
         alignEnabled ? (
           <p
             className="mt-1.5 font-bold"
-            style={{ color: GOLD, fontSize: 16 * scale }}
+            style={{ color: GOLD, fontSize: 16 * scale, textShadow: TRANSLATION_SHADOW }}
             dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
           >
             {(() => {
@@ -4044,14 +4053,17 @@ function FocusLine({
         ) : (
           <p
             className="mt-1.5 font-bold"
-            style={{ color: GOLD, fontSize: 16 * scale }}
+            style={{ color: GOLD, fontSize: 16 * scale, textShadow: TRANSLATION_SHADOW }}
             dir={isRtl(baseLang ?? "") ? "rtl" : undefined}
           >
             {cue.base}
           </p>
         )
       ) : baseTranslating && baseLang !== DEFAULT_BASE_LANG ? (
-        <p className="mt-1.5 font-semibold italic opacity-70" style={{ color: GOLD, fontSize: 13 * scale }}>
+        <p
+          className="mt-1.5 font-semibold italic opacity-70"
+          style={{ color: GOLD, fontSize: 13 * scale, textShadow: TRANSLATION_SHADOW }}
+        >
           Menerjemahkan…
         </p>
       ) : null}
