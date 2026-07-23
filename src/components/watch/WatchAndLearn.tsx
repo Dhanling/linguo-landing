@@ -96,11 +96,19 @@ const SEARCH_HISTORY_MAX = 8;
 // sempurna (API tak sediakan), tapi proxy durasi ini cocok utk mayoritas kasus.
 const SHORTS_MAX_SEC = 60;
 // Layout grid: 5 kartu per baris di desktop (grid lg:grid-cols-5). Default tampil
-// 2 baris (INITIAL_VISIBLE = 2 × GRID_COLS = 10 video) tiap tab; tiap klik
-// "Muat lainnya" menambah 2 baris lagi (LOAD_MORE_COUNT = 2 × GRID_COLS).
+// 4 baris (INITIAL_VISIBLE = 4 × GRID_COLS = 20 video) tiap tab; tiap klik
+// "Muat lainnya" menambah 4 baris lagi (LOAD_MORE_COUNT = 4 × GRID_COLS).
 const GRID_COLS = 5;
-const INITIAL_VISIBLE = GRID_COLS * 2;
-const LOAD_MORE_COUNT = GRID_COLS * 2;
+const INITIAL_VISIBLE = GRID_COLS * 4;
+const LOAD_MORE_COUNT = GRID_COLS * 4;
+// [watch-batch-20-v1] yt-search membatasi `max` di 25/halaman, dan sebagian hasil
+// rontok kena filter bahasa/durasi → satu halaman sering tak cukup buat 20 kartu.
+// Jadi tiap batch boleh merangkai beberapa halaman sampai kuotanya kekejar.
+const CATALOG_PAGE_SIZE = 25;
+const CATALOG_MAX_PAGES = 3;
+// Pengisi otomatis kalau filter client (orientasi/Shorts) masih menyisakan grid
+// kurang dari sebaris penuh. Dibatasi biar tak menguras kuota YouTube.
+const AUTOFILL_MAX = 2;
 
 // [watch-tab-order-v1] Urutan tab kategori: "Vlog" ditaruh paling depan supaya
 // tampil tepat di kanan tab "Cari Kata"; sisanya ikut urutan asli.
@@ -234,6 +242,75 @@ const catalogKeyOf = (langCode: string, q: string, dur = "all") => `${langCode}|
 function durRange(id: DurationFilter): { min: number; max: number } {
   const d = DURATION_FILTERS.find((x) => x.id === id) ?? DURATION_FILTERS[0];
   return { min: d.min, max: d.max === Infinity ? CATALOG_MAX_DURATION_SEC : d.max };
+}
+
+// [watch-batch-20-v1] Sebar hasil biar kartu bersebelahan tak dari channel yang
+// sama: round-robin antar channel dengan urutan relevansi di dalam tiap channel
+// tetap terjaga. Tak ada video yang dibuang — cuma diurutkan ulang.
+function diversifyByChannel(list: ImmersionVideo[]): ImmersionVideo[] {
+  const buckets = new Map<string, ImmersionVideo[]>();
+  for (const v of list) {
+    const key = (v.channel || v.videoId).toLowerCase();
+    const b = buckets.get(key);
+    if (b) b.push(v);
+    else buckets.set(key, [v]);
+  }
+  const queues = [...buckets.values()];
+  const out: ImmersionVideo[] = [];
+  for (let i = 0; out.length < list.length; i++) {
+    for (const q of queues) {
+      const v = q[i];
+      if (v) out.push(v);
+    }
+    if (i > list.length) break; // jaga-jaga, tak mungkin tercapai
+  }
+  return out;
+}
+
+// [watch-batch-20-v1] Ambil satu batch katalog berisi ~`want` video: merangkai
+// beberapa halaman yt-search kalau satu halaman kurang (banyak yang rontok kena
+// filter bahasa/durasi), lalu disebar antar channel. Balikin juga pageToken
+// terakhir supaya "Muat lainnya" berikutnya lanjut dari sana (video baru semua).
+async function fetchCatalogBatch(opts: {
+  lang: ImmersionLang;
+  cat: ImmersionCategory;
+  text: string;
+  durId: DurationFilter;
+  want: number;
+  pageToken?: string;
+  /** videoId yang sudah tampil di grid — jangan dihitung sebagai "hasil baru". */
+  exclude?: Set<string>;
+}): Promise<{ results: ImmersionVideo[]; nextToken?: string }> {
+  const { lang, cat, text, durId, want, exclude } = opts;
+  const q = buildQuery(cat, lang, text);
+  const freeText = !!text.trim();
+  const { min, max } = durRange(durId);
+  const seen = new Set<string>(exclude ?? []);
+  const out: ImmersionVideo[] = [];
+  let token = opts.pageToken;
+  for (let i = 0; i < CATALOG_MAX_PAGES && out.length < want; i++) {
+    const page = await searchImmersionVideos({
+      query: q,
+      language: lang.searchCode ?? lang.code,
+      order: cat.news || cat.fresh ? "date" : undefined,
+      max: CATALOG_PAGE_SIZE,
+      pageToken: token,
+      maxDurationSec: max,
+      minDurationSec: min || undefined,
+      regionCode: lang.region,
+    });
+    const ok = filterVideosByLanguage(page.results, lang.code, freeText).filter(
+      (v) => !v.duration || v.duration <= max
+    );
+    for (const v of ok) {
+      if (seen.has(v.videoId)) continue;
+      seen.add(v.videoId);
+      out.push(v);
+    }
+    token = page.nextPageToken;
+    if (!token) break; // halaman habis
+  }
+  return { results: diversifyByChannel(out), nextToken: token };
 }
 
 export default function WatchAndLearn() {
@@ -610,35 +687,18 @@ export default function WatchAndLearn() {
         setVideos([]);
         setNextToken(undefined);
       }
-      const q = buildQuery(c, l, text);
-      // [watch-freetext-soft-filter-v1] Pencarian teks-bebas eksplisit (mis. nama
-      // artis "fujii kaze") minta lebih banyak stok & filter bahasa yang lembut,
-      // supaya judul romaji/Inggris tak menciutkan hasil jadi 1–2 video.
-      const freeText = !!text.trim();
-      // [linguo-patch:watch-duration-server-bucket-v1] Kirim rentang durasi tab
-      // aktif ke server. Tab "5–10"/"10–20 mnt" → bucket `medium` YouTube; tanpa
-      // ini `videoDuration=any` membanjiri halaman dgn Shorts → grid selalu kosong.
-      const { min, max } = durRange(durId);
-      const page = await searchImmersionVideos({
-        query: q,
-        language: l.searchCode ?? l.code,
-        order: c.news || c.fresh ? "date" : undefined,
-        max: freeText ? 30 : 18,
-        maxDurationSec: max,
-        minDurationSec: min || undefined,
-        regionCode: l.region,
+      // [watch-batch-20-v1] Batch pertama langsung sebanyak grid awal (20 kartu =
+      // 4 baris) — hasil sudah disaring ke bahasa target + rentang durasi tab aktif
+      // dan disebar antar channel di dalam fetchCatalogBatch.
+      const { results, nextToken: tok } = await fetchCatalogBatch({
+        lang: l, cat: c, text, durId, want: INITIAL_VISIBLE,
       });
       if (id !== reqId.current) return; // hasil basi — abaikan
-      // Saring ke bahasa target biar audio & subtitle-nya beneran cocok, lalu buang
-      // sisa video di luar rentang (jaga-jaga kalau durasi tak terbaca di server).
-      const results = filterVideosByLanguage(page.results, l.code, freeText).filter(
-        (v) => !v.duration || v.duration <= max
-      );
       catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text), durId), {
-        videos: results, nextToken: page.nextPageToken, at: Date.now(),
+        videos: results, nextToken: tok, at: Date.now(),
       });
       setVideos(results);
-      setNextToken(page.nextPageToken);
+      setNextToken(tok);
       setState(results.length ? "done" : "empty");
       // Hangatkan cache transkrip di background biar subtitle + terjemahan
       // "langsung muncul" saat video mana pun di grid diklik (tak nunggu ASR ~1 mnt).
@@ -721,36 +781,28 @@ export default function WatchAndLearn() {
     if (!nextToken || state === "more") return;
     const id = reqId.current;
     setState("more");
-    const q = buildQuery(cat, lang, committedText);
-    const freeText = !!committedText.trim();
-    const { min, max } = durRange(durationFilter);
-    const page = await searchImmersionVideos({
-      query: q,
-      language: lang.searchCode ?? lang.code,
-      order: cat.news || cat.fresh ? "date" : undefined,
-      max: freeText ? 30 : 18,
+    // [watch-batch-20-v1] Tiap klik "Muat lainnya" = 20 video BARU (bukan 10),
+    // dedup terhadap yang sudah tampil & disebar antar channel.
+    const { results: more, nextToken: tok } = await fetchCatalogBatch({
+      lang, cat, text: committedText, durId: durationFilter,
+      want: LOAD_MORE_COUNT,
       pageToken: nextToken,
-      maxDurationSec: max,
-      minDurationSec: min || undefined,
-      regionCode: lang.region,
+      exclude: new Set(videos.map((v) => v.videoId)),
     });
     if (id !== reqId.current) return;
-    const more = filterVideosByLanguage(page.results, lang.code, freeText).filter(
-      (v) => !v.duration || v.duration <= max
-    );
     setVideos((prev) => {
       const seen = new Set(prev.map((v) => v.videoId));
       const merged = [...prev, ...more.filter((v) => !seen.has(v.videoId))];
       // [perf:watch-catalog-cache-v1] hasil "Muat lainnya" ikut ke cache biar balik lagi utuh
       catalogCache.set(catalogKeyOf(lang.code, buildQuery(cat, lang, committedText), durationFilter), {
-        videos: merged, nextToken: page.nextPageToken, at: Date.now(),
+        videos: merged, nextToken: tok, at: Date.now(),
       });
       return merged;
     });
-    setNextToken(page.nextPageToken);
+    setNextToken(tok);
     setState("done");
     prewarmTranscripts(more, lang.code);
-  }, [nextToken, state, cat, lang, committedText, durationFilter]);
+  }, [nextToken, state, cat, lang, committedText, durationFilter, videos]);
 
   // "Muat lainnya": tampilkan 1 baris berikutnya dari yang sudah dimuat; kalau
   // stok lokal habis & masih ada halaman server, ambil dari server lalu buka.
@@ -761,6 +813,22 @@ export default function WatchAndLearn() {
       loadMore();
     }
   }, [visible, shownVideos.length, nextToken, loadMore]);
+
+  // [watch-batch-20-v1] Filter client (orientasi/Shorts) kadang menyisakan grid
+  // kurang dari 20 kartu walau servernya sudah mengirim 20+. Susul otomatis
+  // sekali-dua kali biar barisnya penuh, tapi berhenti di situ supaya kuota
+  // YouTube tak terkuras kalau bahasanya memang miskin konten.
+  const autofill = useRef(0);
+  useEffect(() => {
+    autofill.current = 0;
+  }, [langCode, category, committedText, durationFilter]);
+  useEffect(() => {
+    if (state !== "done" || readyMode || wordMode) return;
+    if (!nextToken || shownVideos.length >= visible) return;
+    if (autofill.current >= AUTOFILL_MAX) return;
+    autofill.current++;
+    loadMore();
+  }, [state, readyMode, wordMode, nextToken, shownVideos.length, visible, loadMore]);
 
   const pickLang = useCallback((code: string) => {
     setLangCode(code);
