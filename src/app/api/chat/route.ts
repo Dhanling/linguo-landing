@@ -47,7 +47,9 @@ KNOWLEDGE BASE:
 Program:
 - Private = 1-on-1, jadwal fleksibel ditentukan siswa bersama pengajar, biasanya 1-4x seminggu. Reguler = group class 8-15 siswa, jadwal sudah ditentukan Linguo (1 jadwal, tidak bisa request).
 - Level CEFR: A1 = 3 sublevel (A1.1-A1.3), A2 = 4 sublevel, B1 = 5 sublevel, B2 = 6 sublevel. Tiap sublevel 16 sesi @60 atau @90 menit. Bisa skip sublevel kalau lolos evaluasi pengajar.
-- Full online interaktif via Zoom. Materi & recording via Google Classroom. Silabus: https://linguo.id/silabus
+- Kelas online interaktif via Zoom. Materi & recording via Google Classroom. Silabus: https://linguo.id/silabus
+- ONLINE & OFFLINE — jangan bilang "full online / hanya online". Kelas offline = PENGAJAR DATANG KE TEMPAT SISWA, dan TIDAK selalu tersedia: tergantung ada/tidaknya pengajar yang siap ke area siswa. Jangan menjanjikan offline pasti bisa — tanyakan lokasi siswa dulu, lalu bilang admin akan cek ketersediaan pengajar di area itu.
+- Biaya offline = harga online + selisih PER SESI: Jabodetabek +Rp50.000/sesi, luar Jabodetabek +Rp30.000/sesi. SEMUA harga di sini adalah tarif ONLINE — untuk offline tambahkan selisih itu ke tarif per sesi (jangan mengarang angka lain).
 - Bahasa kelas Reguler ada 11, SAMA PERSIS dengan pilihan bahasa di form pendaftaran halaman ini: Inggris, Mandarin, Jepang, Korea, Arab, Prancis, Jerman, Italia, Belanda, Spanyol, Tagalog. Kelas Private: 60+ bahasa.
 - Kalau user tanya "bahasa apa saja yang ada/tersedia" (Reguler atau kelas grup), SEBUTKAN ke-11 bahasa di atas satu per satu — jangan balik bertanya "bahasa apa yang kamu mau?" dan jangan menyuruh user cek daftar lain.
 - Kelas Reguler HANYA dibuka untuk level Basic (A1.1). Level lanjutan (A1.2 ke atas / A2 / B1 / B2) tersedia lewat Private atau Semi-Private. Tidak pernah ada batch Reguler A1.2 ke atas — JANGAN bilang "batchnya belum dibuka / tunggu batch berikutnya" untuk level lanjutan, langsung arahkan ke Private/Semi-Private.
@@ -86,7 +88,7 @@ Kids native: Little Learner Rp 150.000/sesi (30 menit), Young Explorer Rp 170.00
 JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids (5-8 / 9-12 tahun), BUKAN level kelas dewasa. Level dewasa = Basic/Upper Basic/Intermediate/Advance (A1/A2/B1-B2/C1-C2). Frasa seperti "Young Explorer level Upper Basic" SALAH.
 
 Trial Class (BERBAYAR, bukan gratis):
-- Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Full online via Zoom. Trial terjadi SEBELUM placement test, jadi harganya pakai tarif level A1.
+- Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom. Trial terjadi SEBELUM placement test, jadi harganya pakai tarif level A1.
 - Harga trial Private = tarif per sesi A1 sesuai kategori bahasa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit: kategori C Rp 100.000, B Rp 110.000, A Rp 120.000. Durasi 30 menit = setengahnya.
 - Trial Kids: Little Learner (30 menit) Rp 75.000, Young Explorer (45 menit) Rp 85.000.
 - Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native: Little Learner Rp 150.000, Young Explorer Rp 170.000.
@@ -101,7 +103,7 @@ Jadwal & ketentuan:
 - Siswa Private tetap dibuatkan grup WA (1 pengajar + 1 siswa + 1 admin).
 
 Fasilitas Private:
-- Full online Zoom + Google Classroom (recording & materi), 1-on-1 dengan perhatian penuh, pengajar berpengalaman, jadwal fleksibel, materi disesuaikan kebutuhan, umpan balik langsung dari pengajar.
+- Zoom + Google Classroom (recording & materi) untuk kelas online; opsi offline pengajar datang ke tempat siswa (tergantung ketersediaan pengajar di area itu, ada selisih biaya), 1-on-1 dengan perhatian penuh, pengajar berpengalaman, jadwal fleksibel, materi disesuaikan kebutuhan, umpan balik langsung dari pengajar.
 
 Lainnya:
 - E-learning: video pembelajaran mandiri, akses via linguo.id/akun. Toko: https://linguo.id/toko
