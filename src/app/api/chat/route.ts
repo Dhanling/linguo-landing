@@ -315,6 +315,7 @@ const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
 - Hari, jam, jumlah pertemuan & tanggal mulai kelas Reguler/ETP HANYA boleh diambil dari daftar di atas. Daftar ini ditarik dari sumber yang SAMA dengan halaman linguo.id/jadwal-kelas-reguler. DILARANG mengarang atau memakai jadwal dari ingatan.
 - Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
 - Status batch: pakai penanda [BELUM MULAI] / [SUDAH BERJALAN] apa adanya. DILARANG menebak sendiri apakah suatu batch sudah jalan atau belum — bandingkan tanggal mulai dengan TANGGAL HARI INI di atas.
+- Penanda dalam kurung siku itu CATATAN INTERNAL. JANGAN pernah menyalinnya ke balasan. Sampaikan maksudnya dengan kalimat biasa ("pendaftaran masih dibuka", "kelasnya sedang berjalan").
 - Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung. Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
 - Batch [BELUM MULAI]: sebutkan tanggal mulainya, pendaftaran masih dibuka.
 - Jadwal sudah fix dari Linguo & tidak bisa request hari/jam.
