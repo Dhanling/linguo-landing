@@ -94,6 +94,8 @@ Trial Class (BERBAYAR, bukan gratis):
 
 Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
+- HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
+- Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
 - Kelas Reguler dibuka minimal 8 siswa. Kalau kuota tidak terpenuhi: menunggu/deposit batch berikutnya, pindah program, pindah Private/Semi-Private, tukar produk digital, atau refund PENUH tanpa potongan.
 - Siswa Private tetap dibuatkan grup WA (1 pengajar + 1 siswa + 1 admin).
@@ -295,6 +297,29 @@ function fmtDateID(iso: string): string {
   return d.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
 }
 
+// Tanggal kalender WIB (UTC+7) hari ini, 'YYYY-MM-DD'. Dipakai untuk menandai
+// batch BELUM MULAI vs SUDAH BERJALAN — tanpa ini AI menebak sendiri dan bisa
+// bilang "batch sudah berjalan" untuk batch yang baru mulai bulan depan.
+function todayWIB(): string {
+  return new Date(Date.now() + 7 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+function batchTag(startIso: string | null, today: string): string {
+  if (!startIso) return "[TANGGAL MULAI BELUM DITENTUKAN]";
+  return String(startIso) > today
+    ? "[BELUM MULAI — pendaftaran masih dibuka]"
+    : "[SUDAH BERJALAN — kelas sedang jalan, bukan batch baru]";
+}
+
+const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
+- Hari, jam, jumlah pertemuan & tanggal mulai kelas Reguler/ETP HANYA boleh diambil dari daftar di atas. Daftar ini ditarik dari sumber yang SAMA dengan halaman linguo.id/jadwal-kelas-reguler. DILARANG mengarang atau memakai jadwal dari ingatan.
+- Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
+- Status batch: pakai penanda [BELUM MULAI] / [SUDAH BERJALAN] apa adanya. DILARANG menebak sendiri apakah suatu batch sudah jalan atau belum — bandingkan tanggal mulai dengan TANGGAL HARI INI di atas.
+- Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung. Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
+- Batch [BELUM MULAI]: sebutkan tanggal mulainya, pendaftaran masih dibuka.
+- Jadwal sudah fix dari Linguo & tidak bisa request hari/jam.
+- Bahasa/track yang TIDAK ada di daftar = batchnya belum dibuka → arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya.`;
+
 async function getScheduleBlock(): Promise<string> {
   if (Date.now() - scheduleCache.at < SCHEDULE_TTL_MS) return scheduleCache.text;
   const client = sb();
@@ -303,40 +328,40 @@ async function getScheduleBlock(): Promise<string> {
     const [{ data: reg }, { data: etp }] = await Promise.all([
       client
         .from("v_regular_batches_summary")
-        .select("language, level, session_day, session_start_time, session_end_time, start_date, actual_enrolled, max_capacity")
+        .select("language, level, session_day, session_start_time, session_end_time, start_date, total_sessions, actual_enrolled, max_capacity")
         .eq("is_published", true)
         .in("status", ["Open", "Confirmed"])
         .order("start_date", { ascending: true }),
       client
         .from("etp_batches")
-        .select("title, badge, days, time, start_date, total_sessions")
+        .select("title, badge, days, time, start_date, total_sessions, price")
         .eq("is_active", true)
         .order("start_date", { ascending: true }),
     ]);
 
+    const today = todayWIB();
     const regLines = (reg || [])
       .filter((b: any) => (b.actual_enrolled ?? 0) < (b.max_capacity ?? 0))
       .map((b: any) => {
         const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
         const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
         const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
-        return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}, mulai ${fmtDateID(b.start_date)}`;
+        const sesi = b.total_sessions ? `, ${b.total_sessions}x pertemuan` : "";
+        return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}`;
       });
-    const etpLines = (etp || []).map(
-      (b: any) => `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, mulai ${fmtDateID(b.start_date)}, ${b.total_sessions}x pertemuan`,
-    );
+    const etpLines = (etp || []).map((b: any) => {
+      const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";
+      return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}`;
+    });
 
-    const parts: string[] = [];
+    const parts: string[] = [`TANGGAL HARI INI: ${fmtDateID(today)} (WIB)`];
     if (regLines.length) {
-      parts.push("JADWAL BATCH REGULER YANG SEDANG DIBUKA (sinkron dgn linguo.id/jadwal-kelas-reguler):\n" + regLines.join("\n"));
+      parts.push("JADWAL BATCH REGULER (sumber sama persis dgn halaman linguo.id/jadwal-kelas-reguler):\n" + regLines.join("\n"));
     }
     if (etpLines.length) {
-      parts.push("JADWAL BATCH ETP / TEST PREP (TOEFL & IELTS Prep group) YANG SEDANG DIBUKA:\n" + etpLines.join("\n"));
+      parts.push("JADWAL BATCH ETP / TEST PREP (TOEFL & IELTS Prep group) — tab ETP di linguo.id/jadwal-kelas-reguler:\n" + etpLines.join("\n"));
     }
-    const text = parts.length
-      ? parts.join("\n\n") +
-        "\n\nCATATAN JADWAL: Kalau user tanya jadwal kelas Reguler/Test Prep, SEBUTKAN hari & jam dari daftar batch di atas (jangan jawab 'nanti diinfokan' kalau datanya ADA di sini). Jadwal sudah fix dari Linguo & tidak bisa request. Kalau bahasa/track yang ditanya TIDAK ada di daftar, berarti batchnya belum dibuka — arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya."
-      : "";
+    const text = parts.length > 1 ? parts.join("\n\n") + "\n\n" + SCHEDULE_NOTE : "";
     scheduleCache = { text, at: Date.now() };
     return text;
   } catch {
