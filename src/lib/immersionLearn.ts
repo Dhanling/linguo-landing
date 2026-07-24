@@ -1384,6 +1384,16 @@ const MERGE_MAX_GAP = 2.5;
 // (termasuk CJK。！？) — opsional diikuti kutип/kurung penutup.
 const SENTENCE_END_RE = /[.!?…。！？।؟۔]["'”’)\]]*\s*$/u;
 
+// [watch-speaker-marker] Caption sering menandai GANTI PEMBICARA dengan ">>"
+// (mis. berita: narasumber → pembahasan lain). Itu batas section KERAS: satu
+// section tak boleh mencampur dua pembicara. Deteksi di AWAL teks (sesudah trim)
+// dan strip untuk tampilan (">>" mentah bikin subtitle terlihat berantakan).
+const SPEAKER_MARKER_RE = /^\s*(?:>>+|»)\s*/u;
+const startsWithSpeakerMarker = (t: string | undefined): boolean =>
+  !!t && SPEAKER_MARKER_RE.test(t);
+const stripSpeakerMarker = (t: string | undefined): string =>
+  (t ?? "").replace(SPEAKER_MARKER_RE, "").trim();
+
 function joinText(a: string | undefined, b: string | undefined): string {
   return [a?.trim(), b?.trim()].filter(Boolean).join(" ");
 }
@@ -1409,6 +1419,8 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
     const gap = prev ? c.start - prev.end : Infinity;
     const canMerge =
       prev &&
+      // Cue ini membuka pembicara baru (">>") → JANGAN gabung ke section sebelumnya.
+      !startsWithSpeakerMarker(c.target) &&
       !SENTENCE_END_RE.test(prev.target) &&
       prev.target.length + 1 + c.target.length <= MERGE_MAX_CHARS &&
       gap <= MERGE_MAX_GAP;
@@ -1424,7 +1436,10 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
       const tr = joinText(prev.translit, c.translit);
       if (tr) prev.translit = tr;
     } else {
-      out.push({ ...c });
+      // Buka section baru. Strip marker pembicara ">>" DI SINI (bukan di cleanup
+      // akhir): panjang string berubah, jadi harus sebelum ada anchor `_anc` yang
+      // menyimpan offset-karakter — kalau tidak, sorotan karaoke bisa bergeser.
+      out.push({ ...c, target: stripSpeakerMarker(c.target), base: stripSpeakerMarker(c.base) });
     }
   }
   return out;
@@ -1443,10 +1458,18 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
 // Panjang string dijaga (cuma ganti kasus) supaya offset karaoke `_anc` tetap valid.
 function deshout(s: string): string {
   if (!s) return s;
-  // Sudah ada huruf kecil → bukan all-caps, biarkan.
-  if (/\p{Ll}/u.test(s)) return s;
-  // Tak ada huruf besar sama sekali (aksara tanpa kasus) → biarkan.
-  if (!/\p{Lu}/u.test(s)) return s;
+  // [watch-caption-deshout-accents] Dulu: "ada SATU huruf kecil → anggap kasus
+  // normal, biarkan". Tapi caption berita Spanyol ALL-CAPS sering menyisakan huruf
+  // BERAKSEN dalam huruf kecil (ñ/á/é/í/ó/ú) sebagai artefak encoding —
+  // "UNA MAñANA COMPLEJA, MáS…" (kapital=31, kecil=2) tetap "berteriak" tapi lolos.
+  // Kini pakai DOMINASI: hanya de-shout kalau kapital jauh mengungguli huruf kecil.
+  const upper = (s.match(/\p{Lu}/gu) || []).length;
+  const lower = (s.match(/\p{Ll}/gu) || []).length;
+  // Aksara tanpa kasus (Han/Arab/Jepang) atau kapital terlalu sedikit → biarkan.
+  if (upper < 4) return s;
+  // Huruf kecil masih cukup banyak (>¼ dari kapital) → ini teks berkasus normal
+  // (atau baris ber-akronim wajar spt "USA y la OTAN") → jangan dikecilkan.
+  if (lower * 4 > upper) return s;
   return s
     .toLowerCase()
     .replace(/(^|[.!?…]\s+|[¿¡]\s*)(\p{Ll})/gu, (_m, pre: string, ch: string) => pre + ch.toUpperCase());
@@ -1465,6 +1488,8 @@ function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
       // Rapikan caption ALL-CAPS → sentence case (lihat deshout). Kena baik ke jalur
       // caption/ASR baru maupun cache lama (fetchTranscript memanggil fungsi ini juga
       // saat cache-hit), jadi transkrip dini hari yang sudah tersimpan pun ikut rapi.
+      // Marker pembicara ">>" sudah di-strip lebih awal di mergeCueFragments (jaga
+      // offset anchor karaoke), jadi di sini cukup de-shout.
       const target = deshout(c.target);
       const base = deshout(c.base);
       const out: LearnCue = translit
