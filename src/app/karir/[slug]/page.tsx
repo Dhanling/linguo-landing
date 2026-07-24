@@ -3,6 +3,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import { ArrowLeft, Briefcase, MapPin, Clock, Users } from "lucide-react";
 import ApplicationForm from "./ApplicationForm";
+import { employmentTypeLabel } from "@/lib/employmentType";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -70,7 +71,7 @@ export default async function KarirDetailPage({ params }: Props) {
             {job.employment_type && (
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-gray-400" />
-                {job.employment_type}
+                {employmentTypeLabel(job.employment_type)}
               </span>
             )}
             {job.location && (

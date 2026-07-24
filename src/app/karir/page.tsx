@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { supabase } from "@/lib/supabase-client";
 import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
+import { employmentTypeLabel } from "@/lib/employmentType";
 
 export const metadata = {
   title: "Karir di Linguo.id — Bergabunglah dengan Tim Kami",
@@ -110,7 +111,7 @@ export default async function KarirPage() {
                         {job.employment_type && (
                           <span className="inline-flex items-center gap-1">
                             <Clock className="h-3.5 w-3.5 text-gray-400" />
-                            {job.employment_type}
+                            {employmentTypeLabel(job.employment_type)}
                           </span>
                         )}
                         {job.location && (
