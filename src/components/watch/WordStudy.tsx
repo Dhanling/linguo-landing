@@ -981,24 +981,52 @@ function RichTable({ header, rows, onWordTap }: { header: string[]; rows: string
   );
 }
 
+// Klitik refleksif/objek yang lazimnya kata terpisah dari kata kerjanya —
+// model kadang menandainya c:true (ikut berubah antar-baris) sehingga tak
+// tertangkap aturan dua-segmen-invarian di bawah.
+const CLITIC_WORDS = new Set([
+  "me", "te", "se", "nos", "os", // Spanyol/Portugis
+  "mi", "ti", "si", "ci", "vi", // Italia
+  "nous", "vous", // Prancis
+  "mich", "dich", "sich", "uns", "euch", // Jerman
+]);
+
 // Rapikan spasi antar-segmen: kadang model menempelkan kata subjek ke kata kerja
-// (mis. "I" + "tethered" → "Itethered"). Afiks yang berubah selalu ditandai
-// `c:true`, jadi dua segmen INVARIAN (c:false) berturut-turut yang bertemu di
-// batas huruf pasti dua kata terpisah → sisipkan spasi. Stem+akhiran tak pernah
-// kena aturan ini karena akhirannya c:true.
+// (mis. "I" + "tethered" → "Itethered", atau refleksif "Nous" + "nous" + "inquiétons").
+// Yang disisipi spasi hanya batas huruf-ketemu-huruf yang terbukti dua kata:
+// - dua segmen INVARIAN (c:false) berturut-turut (stem+akhiran aman krn akhiran c:true)
+// - klitik elisi berapostrof (m', t', s') — nempel ke kata berikut, pisah dari subjek
+// - segmen yang mengulang segmen sebelumnya ("Nous"+"nous", "Vous"+"vous")
+// - klitik umum dari CLITIC_WORDS (bukan segmen terakhir, biar "mach"+"te" tak kena)
+// - segmen tepat sesudah klitik-kata ("nous"+"inquiét")
 function spaceConjParts(parts: { t: string; c: boolean }[]): { t: string; c: boolean }[] {
   const endsWithLetter = (s: string) => /\p{L}$/u.test(s);
   const startsWithLetter = (s: string) => /^\p{L}/u.test(s);
-  return parts.map((p, j) => {
-    if (j === 0) return p;
+  const out: { t: string; c: boolean }[] = [];
+  let prevWasClitic = false;
+  for (let j = 0; j < parts.length; j++) {
+    const p = parts[j];
+    if (j === 0) {
+      out.push(p);
+      continue;
+    }
     const prev = parts[j - 1];
-    const glued =
-      prev.c === false &&
-      p.c === false &&
-      endsWithLetter(prev.t) &&
-      startsWithLetter(p.t);
-    return glued ? { ...p, t: " " + p.t } : p;
-  });
+    const boundary = endsWithLetter(prev.t) && startsWithLetter(p.t);
+    let isClitic = false;
+    let needSpace = false;
+    if (boundary) {
+      const cur = p.t.trim().toLocaleLowerCase();
+      const prv = prev.t.trim().toLocaleLowerCase();
+      const notLast = j < parts.length - 1;
+      if (/['’]/.test(p.t)) isClitic = true;
+      else if (cur === prv) isClitic = true;
+      else if (CLITIC_WORDS.has(cur) && notLast) isClitic = true;
+      needSpace = isClitic || (prev.c === false && p.c === false) || prevWasClitic;
+    }
+    out.push(needSpace ? { ...p, t: " " + p.t } : p);
+    prevWasClitic = isClitic;
+  }
+  return out;
 }
 
 // Tabel konjugasi kata kerja. Kolom: Bentuk (subjek) · Kata (target) · Suffix · Arti.
