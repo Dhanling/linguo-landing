@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, type LucideIcon } from 'lucide-react';
+import { studentRecordingHref } from '@/lib/classRoom';
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
 export function detectKind(url: string): string {
@@ -147,7 +148,9 @@ export default function ClassMateriTab({ reg, schedules, teacherName }: { reg: a
             id: `rec-${s.id}`,
             title: 'Recording Sesi',
             kind: 'recording',
-            url: s.recording_url,
+            // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard khusus tim →
+            // alihkan ke pemutar siswa (lihat lib/classRoom).
+            url: studentRecordingHref(s.recording_url),
             created_at: s.scheduled_at,
           });
         }

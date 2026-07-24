@@ -11,6 +11,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
+import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
 import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
@@ -259,9 +260,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
 
                   {s.recording_url && (
                     <a
-                      href={s.recording_url}
-                      target="_blank"
-                      rel="noreferrer"
+                      // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard cuma
+                      // bisa dibuka tim — dialihkan ke pemutar siswa di linguo.id.
+                      href={studentRecordingHref(s.recording_url)}
+                      {...(isInternalRecordingHref(studentRecordingHref(s.recording_url))
+                        ? {}
+                        : { target: "_blank", rel: "noreferrer" })}
                       className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800"
                     >
                       <Video className="h-3.5 w-3.5" strokeWidth={2.5} /> Tonton Recording

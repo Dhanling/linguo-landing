@@ -4,6 +4,7 @@
 import { useState, useEffect, useMemo, useRef, type ReactNode } from "react";
 import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
+import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
 import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
@@ -206,26 +207,8 @@ function getGreeting() {
   return "Selamat malam";
 }
 
-// ── [kelas-video-siswa-v1] Masuk Kelas Video Linguo ────────────────────────
-// Kelas video self-hosted ada di dashboard (dashboard.linguo.id/kelas/<roomId>);
-// room id-nya deterministik dari id jadwal, jadi siswa tidak perlu menunggu
-// pengajar mengirim link apa pun. `guest=1` = masuk 2 arah sebagai peserta.
-const CLASS_ROOM_ORIGIN = "https://dashboard.linguo.id";
-
-function classRoomUrl(scheduleId: string, opts: { title?: string; teacher?: string } = {}) {
-  const q = new URLSearchParams({ guest: "1" });
-  if (opts.title) q.set("title", opts.title);
-  if (opts.teacher) q.set("teacher", opts.teacher);
-  return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
-}
-
-// Tombol muncul dari 30 menit sebelum kelas sampai 3 jam sesudahnya — di luar
-// jendela itu link kelas cuma bikin siswa masuk room kosong.
-function isJoinable(scheduledAt: string) {
-  const start = new Date(scheduledAt).getTime();
-  const now = Date.now();
-  return now >= start - 30 * 60_000 && now <= start + 3 * 60 * 60_000;
-}
+// [kelas-video-siswa-v1] `classRoomUrl` + `isJoinable` pindah ke @/lib/classRoom
+// (dipakai bareng JadwalCalendar — dulu disalin di dua tempat).
 
 // ── Programs & Languages for Enrollment Wizard ───────────────────────────
 const PROGRAMS: { key: string; label: string; desc: string; icon: LucideIcon; tint: string; price: string }[] = [
@@ -3531,7 +3514,12 @@ export default function AkunPage() {
                                       siswa cuma bisa masuk lewat link yang dikirim manual */}
                                   {joinable && (
                                     <a
-                                      href={classRoomUrl(s.id, { title: lang ? `Kelas ${lang}` : "Kelas Linguo" })}
+                                      href={classRoomUrl(s.id, {
+                                        title: lang ? `Kelas ${lang}` : "Kelas Linguo",
+                                        // Siswa sudah login di sini — jangan suruh dia
+                                        // ketik namanya lagi di halaman masuk kelas.
+                                        name: student?.name || undefined,
+                                      })}
                                       target="_blank"
                                       rel="noreferrer"
                                       className="mx-3 mb-3 flex items-center justify-center gap-1.5 rounded-xl bg-[#16796E] px-3 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
@@ -3982,7 +3970,7 @@ export default function AkunPage() {
                     scheduleTime: r.batch.schedule_time,
                     zoomLink: r.batch.zoom_link || null,
                   }));
-                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} />;
+                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
               })()}
             </motion.div>
           )}

@@ -11,6 +11,7 @@
 
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock } from "lucide-react";
+import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 
 export type JadwalSession = {
   id: string;
@@ -43,20 +44,8 @@ function fmtTime(d: Date) { return `${pad(d.getHours())}.${pad(d.getMinutes())}`
 function addDays(d: Date, n: number) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
 function startOfWeek(d: Date) { const x = new Date(d); const off = (x.getDay() + 6) % 7; x.setDate(x.getDate() - off); x.setHours(0, 0, 0, 0); return x; }
 
-// [kelas-video-siswa-v1] Kelas Video Linguo (self-hosted) ada di dashboard, dan
-// room id-nya diturunkan dari id jadwal — jadi tombolnya bisa dirender tanpa
-// menunggu pengajar mengirim link apa pun. Tampil 30 menit sebelum s/d 3 jam
-// setelah jam mulai; di luar itu siswa cuma akan masuk room kosong.
-const CLASS_ROOM_ORIGIN = "https://dashboard.linguo.id";
-function classRoomUrl(scheduleId: string, title?: string) {
-  const q = new URLSearchParams({ guest: "1" });
-  if (title) q.set("title", title);
-  return `${CLASS_ROOM_ORIGIN}/kelas/sched-${scheduleId}?${q.toString()}`;
-}
-function isJoinable(d: Date) {
-  const now = Date.now();
-  return now >= d.getTime() - 30 * 60_000 && now <= d.getTime() + 3 * 60 * 60_000;
-}
+// [kelas-video-siswa-v1] `classRoomUrl` + `isJoinable` sekarang di @/lib/classRoom
+// (dulu disalin di sini DAN di akun/page.tsx — gampang lepas sinkron).
 
 type LangColor = { dot: string; bg: string; text: string };
 const PALETTE: LangColor[] = [
@@ -85,9 +74,12 @@ type ViewMode = "day" | "week" | "month";
 export default function JadwalCalendar({
   sessions,
   regularBatches = [],
+  studentName,
 }: {
   sessions: JadwalSession[];
   regularBatches?: RegularBatch[];
+  /** Nama siswa — ikut dikirim ke room biar dia tak perlu mengetiknya lagi. */
+  studentName?: string;
 }) {
   const today = useMemo(() => new Date(), []);
   const todayIso = ymd(today);
@@ -386,7 +378,7 @@ export default function JadwalCalendar({
                           </span>
                           {isJoinable(e._d) && (
                             <a
-                              href={classRoomUrl(e.id, `Kelas ${e.language}`)}
+                              href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="self-center inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52] shrink-0"
