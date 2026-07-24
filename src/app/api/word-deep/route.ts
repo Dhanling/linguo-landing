@@ -304,6 +304,14 @@ export async function POST(req: NextRequest) {
         `  "literal": a more literal word-order gloss in ${explanationLanguage} ONLY if it usefully differs from the natural translation, else empty string,\n` +
         `  "grammar": 1-3 short sentences in ${explanationLanguage} explaining the sentence's structure (word order, particles, tense/aspect, key constructions),\n` +
         `  "tone": one short ${explanationLanguage} sentence on the tone/register/politeness of the whole sentence (empty string if plain/neutral),\n` +
+        // [watch-sentence-contextual-v1] Terjemahan kontekstual: bagaimana kalimat ini
+        // SEBENARNYA dipakai orang di situasi ini — beda dari terjemahan netral di
+        // header (mis. "ahí tiré la ficha" → "di situ aku baru ngeh", bukan "di sana
+        // saya melempar kepingan"). `contextNote` menjelaskan KENAPA beda.
+        `  "contextual": how a native ${explanationLanguage} speaker would actually say this in the same situation — natural, idiomatic, spoken register, NOT word-for-word. Empty string ONLY if it would be identical to "translation",\n` +
+        `  "contextNote": one short ${explanationLanguage} sentence on WHY it lands that way (idiom, ellipsis, implied subject, spoken shorthand, cultural reference). Empty string if "contextual" is empty,\n` +
+        // Idiom/ungkapan/slang yang benar-benar ADA di kalimat ini — jangan mengarang.
+        `  "idioms": array (0-3) of idioms, fixed expressions, phrasal verbs, or slang that ACTUALLY occur in this sentence, each { "phrase": the ${language} expression exactly as it appears,${nonLatin ? ' "tl": its Latin reading,' : ""} "literal": its word-for-word ${explanationLanguage} reading, "meaning": what it REALLY means in ${explanationLanguage}, "note": one short ${explanationLanguage} sentence on when/how it is used (empty string if obvious) }. Return an EMPTY array if the sentence is plain literal language — NEVER invent an idiom,\n` +
         `  "chunks": array of the sentence's meaningful parts IN ORDER, each { "part": the ${language} chunk (a word or short phrase),${nonLatin ? ' "tl": its Latin reading,' : ""} "role": a SHORT ${explanationLanguage} grammatical role label (e.g. "subjek", "kata kerja", "objek", "partikel", "keterangan"), "gloss": its ${explanationLanguage} meaning },\n` +
         `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} you used that a beginner may not know (e.g. "partikel", "kata bantu", "kala lampau"); empty array if none,\n` +
         // [watch-sentence-followup-grammar-v1] Chip pertanyaan lanjutan HARUS lahir
@@ -332,6 +340,22 @@ export async function POST(req: NextRequest) {
             .filter((it) => it.part && it.gloss)
             .slice(0, 24)
         : [];
+      // [watch-sentence-contextual-v1] Idiom hanya diterima kalau frasa + maknanya ada.
+      const idioms = Array.isArray(parsed.idioms)
+        ? (parsed.idioms as unknown[])
+            .map((it) => {
+              const o = it as Record<string, unknown>;
+              return {
+                phrase: str(o.phrase),
+                tl: str(o.tl),
+                literal: str(o.literal),
+                meaning: str(o.meaning),
+                note: str(o.note),
+              };
+            })
+            .filter((it) => it.phrase && it.meaning)
+            .slice(0, 3)
+        : [];
       const terms = Array.isArray(parsed.terms)
         ? (parsed.terms as unknown[])
             .map((t) => str(t))
@@ -350,6 +374,9 @@ export async function POST(req: NextRequest) {
         literal: str(parsed.literal),
         grammar: str(parsed.grammar),
         tone: str(parsed.tone),
+        contextual: str(parsed.contextual),
+        contextNote: str(parsed.contextNote),
+        idioms,
         chunks,
         terms,
         followups,

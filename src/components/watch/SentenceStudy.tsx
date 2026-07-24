@@ -8,7 +8,7 @@
 // itu. Semua konten AI ditarik dari /api/word-deep (kind:"sentence") — sekali per buka.
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Send, Sparkles, Volume2, X } from "lucide-react";
+import { Quote, Send, Sparkles, Volume2, X } from "lucide-react";
 import {
   askSentenceQuestion,
   FollowupQ,
@@ -547,6 +547,65 @@ function StudyTab({
           </div>
         </Section>
       ) : null}
+
+      {/* [watch-sentence-contextual-v1] Terjemahan kontekstual — setelah pelajar
+          melihat pecahan kata per kata, baru ditunjukkan bunyinya kalau diucapkan
+          orang Indonesia di situasi yang sama (sering jauh dari harfiah), plus
+          alasan singkat kenapa bisa beda. */}
+      {deep.contextual && (
+        <Section title="Terjemahan Kontekstual">
+          <p className="text-[14.5px] font-bold leading-snug" style={{ color: GOLD }}>
+            {deep.contextual}
+          </p>
+          {deep.contextNote && (
+            <p className="mt-1.5 text-[13px] leading-relaxed" style={{ color: SUB }}>
+              <span className="font-bold" style={{ color: "#7FE0E0" }}>Kenapa begitu: </span>
+              {deep.contextNote}
+            </p>
+          )}
+        </Section>
+      )}
+
+      {/* Idiom/ungkapan yang ada di kalimat ini — arti harfiah vs makna sebenarnya.
+          Kosong kalau kalimatnya lurus (AI dilarang mengarang idiom). */}
+      {deep.idioms.length > 0 && (
+        <Section title={deep.idioms.length > 1 ? "Idiom & Ungkapan" : "Idiom"}>
+          <div className="space-y-3">
+            {deep.idioms.map((it, i) => (
+              <div key={i} className={i > 0 ? "pt-3" : undefined} style={i > 0 ? { borderTop: `1px solid ${BORDER}` } : undefined}>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <button
+                    onClick={() => speakText(it.phrase, langCode)}
+                    className="flex items-center gap-1.5 rounded-lg px-2 py-1 text-[14px] font-extrabold transition-colors hover:bg-white/10"
+                    style={{ color: "#7FE0E0", backgroundColor: "rgba(26,158,158,0.16)" }}
+                    dir="auto"
+                  >
+                    <Quote className="h-3.5 w-3.5 shrink-0" />
+                    {it.phrase}
+                  </button>
+                  {it.tl && (
+                    <span className="text-[11.5px] italic" style={{ color: SUB }}>
+                      {it.tl}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1.5 text-[13.5px] font-semibold leading-relaxed text-white/90">{it.meaning}</p>
+                {it.literal && (
+                  <p className="mt-0.5 text-[12.5px] leading-relaxed" style={{ color: SUB }}>
+                    <span className="font-bold">Harfiah: </span>
+                    {it.literal}
+                  </p>
+                )}
+                {it.note && (
+                  <p className="mt-0.5 text-[12.5px] leading-relaxed" style={{ color: SUB }}>
+                    {it.note}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
       {/* Chip usulan & kolom ketik TIDAK di sini — keduanya didok di dasar drawer
           (lihat komposer di komponen induk), jadi kartu analisa berhenti di sini. */}
     </div>
