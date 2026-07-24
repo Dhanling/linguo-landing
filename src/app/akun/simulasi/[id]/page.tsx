@@ -17,8 +17,8 @@ import {
   ArrowLeft, ArrowRight, BookOpen, Headphones, PenLine, Mic, Square,
   Loader2, CheckCircle2, Trophy, Sparkles, ListChecks, AlertCircle, ClipboardCheck,
   Clock, X, Info, ChevronDown, Check, Play, Pause, RotateCcw, RotateCw,
-  GripVertical, Minimize2, PlayCircle, Type, Moon, Sun, Maximize, Minimize,
-  User, Mail, Phone,
+  PlayCircle, Type, Moon, Sun, Maximize, Minimize,
+  User, Mail, Phone, Lock, ShieldAlert,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -28,6 +28,24 @@ const YELLOW = "#FFC93C";
 // Maksimal soal yang tampil per halaman — supaya siswa tak perlu menggulir jauh
 // ke bawah; sisanya dibagi ke halaman berikutnya (tombol "Lanjut" di atas).
 const PAGE_SIZE = 5;
+
+// [sim-subtes-v1] Ujian dipecah per SUBTES (kelompok bagian se-skill, mis.
+// Listening / Structure / Reading) — dipilih dari hub "Detail Tryout" ala CBT.
+// Subtes yang sudah dimulai dikunci minimal segini menit: siswa tidak bisa
+// menyelesaikan/pindah subtes sebelum kunci lewat (dicap saat subtes dimulai).
+const SECTION_LOCK_MINUTES = 30;
+// [sim-proctor-v1] Proctoring anti-curang: pindah tab / keluar layar penuh
+// tercatat sebagai pelanggaran; mencapai batas ini → jawaban auto-submit.
+const MAX_VIOLATIONS = 3;
+// Keluar simulasi lewat tombol tutup (disengaja) tak boleh dihitung pelanggaran —
+// flag modul karena leave() (Shell) & listener proctoring hidup di komponen beda.
+let leavingSim = false;
+// Aturan tambahan (ikut tampil di wizard intro, bagian Petunjuk Pengerjaan).
+const EXTRA_RULES = [
+  { text: `Ujian terbagi per subtes (mis. Listening, Reading) — tiap subtes punya batas waktu sendiri dan yang sudah diselesaikan tidak bisa dibuka lagi.` },
+  { text: `Subtes yang sedang berjalan dikunci minimal ${SECTION_LOCK_MINUTES} menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).` },
+  { text: `Sistem anti-curang aktif: berpindah tab atau keluar dari layar penuh tercatat sebagai pelanggaran. ${MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan.` },
+];
 
 const SKILL_ICON: Record<string, any> = { reading: BookOpen, listening: Headphones, writing: PenLine, speaking: Mic, structure: Type };
 
@@ -337,7 +355,6 @@ export default function SimulasiRunnerPage() {
   // intronya sudah dilewati (siswa klik "Mulai bagian ini") → tampil soal.
   const [introDone, setIntroDone] = useState<Set<number>>(new Set());
   const dismissIntro = (si: number) => setIntroDone((prev) => { const n = new Set(prev); n.add(si); return n; });
-  const reopenIntro = (si: number) => { setSecIdx(si); setIntroDone((prev) => { const n = new Set(prev); n.delete(si); return n; }); };
   // Layar penuh (fokus ala ujian). Dipanggil dari gesture user (klik Mulai) supaya
   // tak diblokir browser; abaikan bila gagal (mis. izin ditolak).
   const enterFullscreen = () => { if (!fsElement()) requestFs(document.documentElement); };
@@ -345,8 +362,21 @@ export default function SimulasiRunnerPage() {
   const [results, setResults] = useState<ResultItem[]>([]);
   const [totals, setTotals] = useState({ score: 0, max_score: 0, auto_score: 0, ai_score: 0 });
   const [gradingMsg, setGradingMsg] = useState("");
-  const [deadline, setDeadline] = useState<number | null>(null);
   const [remaining, setRemaining] = useState<number | null>(null);
+  // [sim-subtes-v1] hub "Detail Tryout" (daftar subtes) vs sedang mengerjakan satu subtes.
+  const [view, setView] = useState<"hub" | "work">("hub");
+  // Deadline & waktu mulai per subtes (key = skill) — absolut, jadi sisa waktu
+  // tetap benar walau siswa keluar-masuk halaman.
+  const [groupDeadlines, setGroupDeadlines] = useState<Record<string, number>>({});
+  const [groupStartedAt, setGroupStartedAt] = useState<Record<string, number>>({});
+  const [groupDone, setGroupDone] = useState<Set<string>>(new Set());
+  // Cermin groupDone di ref → pengaman anti dobel-finish dari tick interval
+  // (closure interval memegang state basi).
+  const finishedRef = useRef<Set<string>>(new Set());
+  // [sim-proctor-v1] hitungan pelanggaran + pesan peringatan yang sedang tampil.
+  const [violations, setViolations] = useState(0);
+  const violationsRef = useRef(0);
+  const [violationMsg, setViolationMsg] = useState<string | null>(null);
   const [promo, setPromo] = useState<PromoAttemptStatus | null>(null); // jatah gratis (null = tak dibatasi)
   const [guestTitle, setGuestTitle] = useState<string>(""); // judul sim di form identitas tamu
   const [guestBusy, setGuestBusy] = useState(false);
@@ -384,12 +414,19 @@ export default function SimulasiRunnerPage() {
       });
       setAnswers(restored);
       setAttemptId(saved.attemptId);
-      setDeadline(saved.deadline ?? null);
-      setRemaining(saved.deadline != null ? Math.max(0, Math.round((saved.deadline - Date.now()) / 1000)) : null);
       setSecIdx(Math.min(saved.secIdx ?? 0, Math.max(0, secsWithQs.length - 1)));
       setMaxSecIdx(saved.maxSecIdx ?? 0);
       setIntroDone(new Set(saved.introDone ?? []));
       setQPage(saved.qPage ?? 0);
+      // [sim-subtes-v1] pulihkan state per-subtes; selalu mendarat di hub —
+      // siswa masuk lagi ke subtes berjalan lewat tombol "Lanjutkan".
+      setGroupDeadlines(saved.groupDeadlines ?? {});
+      setGroupStartedAt(saved.groupStartedAt ?? {});
+      setGroupDone(new Set(saved.groupDone ?? []));
+      finishedRef.current = new Set(saved.groupDone ?? []);
+      violationsRef.current = saved.violations ?? 0;
+      setViolations(saved.violations ?? 0);
+      setView("hub");
       setPhase("running");
       return;
     }
@@ -442,9 +479,12 @@ export default function SimulasiRunnerPage() {
     if (preview || phase !== "running" || !attemptId || !info) return;
     const ser: SavedProgress["answers"] = {};
     Object.entries(answers).forEach(([qid, a]) => { ser[qid] = { selected_index: a.selected_index, text: a.text, audioUrl: a.audioUrl }; });
-    saveProgress(id, info.user_id, { v: 1, attemptId, deadline, answers: ser, secIdx, maxSecIdx, introDone: [...introDone], qPage, savedAt: Date.now() });
+    saveProgress(id, info.user_id, {
+      v: 2, attemptId, deadline: null, answers: ser, secIdx, maxSecIdx, introDone: [...introDone], qPage, savedAt: Date.now(),
+      groupDeadlines, groupStartedAt, groupDone: [...groupDone], violations,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [preview, phase, attemptId, answers, deadline, secIdx, maxSecIdx, introDone, qPage]);
+  }, [preview, phase, attemptId, answers, secIdx, maxSecIdx, introDone, qPage, groupDeadlines, groupStartedAt, groupDone, violations]);
 
   const setAns = (qid: string, patch: Partial<AnswerState>) =>
     setAnswers((p) => ({ ...p, [qid]: { ...p[qid], ...patch } }));
@@ -478,6 +518,75 @@ export default function SimulasiRunnerPage() {
     }, 60));
   }
 
+  // [sim-subtes-v1] Kelompokkan bagian per skill → SUBTES (kartu di hub Detail
+  // Tryout). Satu subtes bisa berisi beberapa part (mis. Listening Part A/B/C)
+  // yang berbagi SATU timer subtes.
+  type SkillGroup = { skill: Skill; secIdxs: number[]; qCount: number };
+  const skillGroups = useMemo<SkillGroup[]>(() => {
+    const arr: SkillGroup[] = [];
+    sections.forEach((s, i) => {
+      let g = arr.find((x) => x.skill === s.skill);
+      if (!g) { g = { skill: s.skill, secIdxs: [], qCount: 0 }; arr.push(g); }
+      g.secIdxs.push(i);
+      g.qCount += questions.filter((q) => q.section_id === s.id).length;
+    });
+    return arr;
+  }, [sections, questions]);
+
+  // Durasi subtes: jumlah durasi bagian-bagiannya; kalau admin tak mengisi,
+  // bagi durasi total efektif proporsional jumlah soalnya (min 5 menit).
+  const effTotalMin = useMemo(() => (sim ? effectiveDurationMinutes(sim, sections) : 0), [sim, sections]);
+  const groupDurationMin = (g: SkillGroup) => {
+    const own = g.secIdxs.reduce((n, si) => n + (sections[si]?.duration_minutes || 0), 0);
+    if (own > 0) return own;
+    const totalQ = questions.length || 1;
+    return Math.max(5, Math.round((effTotalMin * g.qCount) / totalQ)) || 30;
+  };
+  const groupQuestions = (g: SkillGroup) =>
+    g.secIdxs.flatMap((si) => questions.filter((q) => q.section_id === sections[si]?.id));
+  const groupAnswered = (g: SkillGroup) =>
+    groupQuestions(g).filter((q) => isAnswered(q, answers[q.id])).length;
+
+  // Subtes yang memuat bagian aktif (dipakai saat view "work").
+  const activeGroup = useMemo(
+    () => skillGroups.find((g) => g.secIdxs.includes(secIdx)) ?? null,
+    [skillGroups, secIdx],
+  );
+  const activeDeadline = activeGroup ? groupDeadlines[activeGroup.skill] ?? null : null;
+
+  // Mulai / lanjutkan subtes dari hub. Deadline & cap waktu mulai hanya diisi
+  // sekali (klik "Lanjutkan" tidak me-reset sisa waktu).
+  function startGroup(skill: Skill) {
+    const g = skillGroups.find((x) => x.skill === skill);
+    if (!g || groupDone.has(skill)) return;
+    enterFullscreen();
+    const now = Date.now();
+    setGroupDeadlines((p) => (p[skill] ? p : { ...p, [skill]: now + groupDurationMin(g) * 60_000 }));
+    setGroupStartedAt((p) => (p[skill] ? p : { ...p, [skill]: now }));
+    setSecIdx(g.secIdxs[0]);
+    setQPage(0);
+    setView("work");
+  }
+
+  // Tutup subtes aktif (manual setelah kunci lewat, atau otomatis saat waktu
+  // subtes habis). Subtes terakhir selesai → seluruh jawaban dikumpulkan.
+  function finishGroup(auto = false) {
+    const g = activeGroup;
+    if (!g || finishedRef.current.has(g.skill)) return;
+    if (!auto && !preview) {
+      const un = groupQuestions(g).filter((q) => !isAnswered(q, answers[q.id])).length;
+      if (un > 0 && !window.confirm(`Masih ada ${un} soal belum dijawab di subtes ini. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi. Yakin selesai?`)) return;
+    }
+    finishedRef.current.add(g.skill);
+    setGroupDone(new Set(finishedRef.current));
+    if (finishedRef.current.size >= skillGroups.length) { submit(true); return; }
+    setView("hub");
+  }
+  // Ref ke versi terbaru — tick interval/listeners memanggil lewat ref supaya
+  // tidak menggenggam state basi (answers dkk. berubah tiap detik).
+  const finishGroupRef = useRef(finishGroup);
+  finishGroupRef.current = finishGroup;
+
   async function start() {
     if (!sim || !info) return;
     // promo-code-v1: cek ulang jatah gratis tepat sebelum mulai (hindari race /
@@ -495,31 +604,78 @@ export default function SimulasiRunnerPage() {
       if (!aid) { alert("Gagal memulai simulasi. Coba lagi."); return; }
       setAttemptId(aid);
     }
-    // Durasi total = durasi simulasi bila diset; kalau 0, jumlahkan durasi tiap
-    // bagian; kalau masih 0, fallback ke durasi tes asli (mis. TOEFL ITP 115 mnt)
-    // → countdown tetap otomatis muncul & sesuai tes sesungguhnya.
-    const totalMin = effectiveDurationMinutes(sim, sections);
-    if (totalMin > 0) {
-      const dl = Date.now() + totalMin * 60_000;
-      setDeadline(dl);
-      setRemaining(totalMin * 60);
-    }
+    // [sim-subtes-v1] tidak ada lagi timer global — masuk hub Detail Tryout;
+    // countdown baru jalan per subtes saat siswa menekan "Mulai" di kartunya.
+    setView("hub");
     setPhase("running");
   }
 
-  // Countdown timer — auto-submit saat waktu habis.
+  // Countdown timer subtes aktif — waktu subtes habis → subtes dikunci otomatis
+  // (dan bila itu subtes terakhir, seluruh jawaban dikumpulkan).
   useEffect(() => {
-    if (phase !== "running" || !deadline) return;
+    if (phase !== "running" || view !== "work" || !activeDeadline) { setRemaining(null); return; }
     const tick = () => {
-      const secs = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+      const secs = Math.max(0, Math.round((activeDeadline - Date.now()) / 1000));
       setRemaining(secs);
-      if (secs <= 0) submit(true); // waktu habis → kirim paksa walau belum lengkap
+      if (secs <= 0) finishGroupRef.current(true); // lewat ref → state selalu segar
     };
     tick();
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
+  }, [phase, view, activeDeadline]);
+
+  // Di hub: subtes yang deadline-nya sudah lewat (mis. siswa menutup tab lalu
+  // kembali) dikunci otomatis; kalau semuanya selesai, langsung kumpulkan.
+  useEffect(() => {
+    if (phase !== "running" || view !== "hub" || skillGroups.length === 0) return;
+    const now = Date.now();
+    let changed = false;
+    skillGroups.forEach((g) => {
+      const dl = groupDeadlines[g.skill];
+      if (dl && dl <= now && !finishedRef.current.has(g.skill)) { finishedRef.current.add(g.skill); changed = true; }
+    });
+    if (!changed) return;
+    setGroupDone(new Set(finishedRef.current));
+    if (finishedRef.current.size >= skillGroups.length) submit(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, deadline]);
+  }, [phase, view, skillGroups, groupDeadlines]);
+
+  // [sim-proctor-v1] Proctoring anti-curang — aktif hanya saat mengerjakan subtes
+  // (bukan preview): pindah tab/minimize & keluar layar penuh = pelanggaran;
+  // klik kanan + copy/paste diblokir diam-diam. MAX_VIOLATIONS → auto-submit.
+  const submitRef = useRef<(force?: boolean) => Promise<void>>(submit);
+  submitRef.current = submit;
+  useEffect(() => {
+    if (preview || phase !== "running" || view !== "work") return;
+    const violate = (msg: string) => {
+      if (leavingSim || submittingRef.current) return;
+      violationsRef.current += 1;
+      setViolations(violationsRef.current);
+      if (violationsRef.current >= MAX_VIOLATIONS) {
+        setViolationMsg(null);
+        submitRef.current(true); // 3× pelanggaran → jawaban dikumpulkan paksa
+      } else {
+        setViolationMsg(msg);
+      }
+    };
+    const onVis = () => { if (document.visibilityState === "hidden") violate("Kamu terdeteksi berpindah tab / meninggalkan layar ujian."); };
+    const onFs = () => { if (!fsElement()) violate("Kamu terdeteksi keluar dari mode layar penuh."); };
+    const block = (e: Event) => e.preventDefault();
+    document.addEventListener("visibilitychange", onVis);
+    document.addEventListener("fullscreenchange", onFs);
+    document.addEventListener("webkitfullscreenchange", onFs); // Safari
+    document.addEventListener("contextmenu", block);
+    document.addEventListener("copy", block);
+    document.addEventListener("paste", block);
+    return () => {
+      document.removeEventListener("visibilitychange", onVis);
+      document.removeEventListener("fullscreenchange", onFs);
+      document.removeEventListener("webkitfullscreenchange", onFs);
+      document.removeEventListener("contextmenu", block);
+      document.removeEventListener("copy", block);
+      document.removeEventListener("paste", block);
+    };
+  }, [preview, phase, view]);
 
   async function submit(force = false) {
     if (!sim || !attemptId) return;
@@ -689,12 +845,100 @@ export default function SimulasiRunnerPage() {
     );
   }
 
-  // running
+  // ── [sim-subtes-v1] HUB "Detail Tryout": daftar subtes terpisah ala CBT ─────
+  if (view === "hub") {
+    const inProgress = skillGroups.find((g) => groupDeadlines[g.skill] != null && !groupDone.has(g.skill)) ?? null;
+    const totalDur = skillGroups.reduce((n, g) => n + groupDurationMin(g), 0);
+    return (
+      <Shell sim={sim} preview={preview} confirmExit>
+        <div className="rounded-2xl p-6 text-white sm:p-8" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${TEAL_DEEP} 100%)` }}>
+          <p className="text-xs font-semibold uppercase tracking-wide text-white/80">Detail Tryout · {testTypeLabel(sim.test_type, sim.test_variant)}</p>
+          <h1 className="mt-1 text-xl font-bold sm:text-2xl">{sim.title}</h1>
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-medium text-white/90">
+            <span className="inline-flex items-center gap-1.5"><ListChecks className="h-4 w-4" />{questions.length} soal · {skillGroups.length} subtes</span>
+            <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" />± {totalDur} menit total</span>
+            {!preview && <span className="inline-flex items-center gap-1.5"><ShieldAlert className="h-4 w-4" />Proctoring aktif</span>}
+          </div>
+        </div>
+
+        {violations > 0 && (
+          <p className="mt-4 flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-semibold text-red-600">
+            <ShieldAlert className="h-4 w-4 shrink-0" />
+            Pelanggaran tercatat: {violations}/{MAX_VIOLATIONS}. Mencapai {MAX_VIOLATIONS}× → jawaban otomatis dikumpulkan.
+          </p>
+        )}
+
+        <h2 className="mt-6 mb-3 text-sm font-bold text-slate-800">Subtes yang diujikan</h2>
+        <div className="space-y-3">
+          {skillGroups.map((g) => {
+            const Icon = SKILL_ICON[g.skill];
+            const gQs = groupQuestions(g);
+            const ans = groupAnswered(g);
+            const dur = groupDurationMin(g);
+            const done = groupDone.has(g.skill);
+            const started = groupDeadlines[g.skill] != null && !done;
+            const blocked = !done && !started && !!inProgress; // wajib tuntaskan subtes berjalan dulu
+            return (
+              <div key={g.skill} className={`flex items-center gap-4 rounded-2xl border bg-white p-4 sm:p-5 ${done ? "border-emerald-200" : started ? "border-teal-300" : "border-slate-200"}`}>
+                <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${done ? "bg-emerald-50 text-emerald-600" : "bg-teal-50 text-teal-700"}`}>
+                  {done ? <CheckCircle2 className="h-6 w-6" /> : <Icon className="h-6 w-6" />}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-bold text-slate-900">{SKILL_LABEL[g.skill]}</p>
+                  <p className="mt-0.5 text-xs font-medium text-slate-500 tabular-nums">
+                    {ans}/{gQs.length} Soal · {dur} Menit{g.secIdxs.length > 1 ? ` · ${g.secIdxs.length} part` : ""}
+                  </p>
+                  <span className={`mt-1.5 inline-block rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                    done ? "bg-emerald-50 text-emerald-600" : started ? "bg-amber-50 text-amber-700" : "bg-slate-100 text-slate-500"
+                  }`}>
+                    {done ? "Selesai" : started ? "Sedang dikerjakan" : "Belum Dikerjakan"}
+                  </span>
+                </div>
+                {!done && (
+                  <button
+                    type="button"
+                    disabled={blocked}
+                    onClick={() => startGroup(g.skill)}
+                    title={blocked && inProgress ? `Selesaikan subtes ${SKILL_LABEL[inProgress.skill]} dulu` : undefined}
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-bold text-white disabled:opacity-40"
+                    style={{ background: started ? TEAL_DEEP : TEAL }}
+                  >
+                    {started ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-slate-500">
+          <Info className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
+          Tiap subtes punya batas waktu sendiri. Subtes yang sedang berjalan dikunci minimal {SECTION_LOCK_MINUTES} menit
+          (tidak bisa pindah subtes sebelum itu), dan subtes yang sudah diselesaikan tidak bisa dibuka lagi.
+          Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.
+        </p>
+      </Shell>
+    );
+  }
+
+  // running — mengerjakan SATU subtes (view "work")
   const section = sections[secIdx];
+  if (!section || !activeGroup) return null;
   const secQs = questions.filter((q) => q.section_id === section.id);
-  const isLast = secIdx === sections.length - 1;
   const SkillIcon = SKILL_ICON[section.skill];
   const hasMedia = !!(section.audio_url || section.passage);
+
+  // Posisi bagian di dalam subtes aktif — navigasi TIDAK boleh menyeberang subtes.
+  const gPos = activeGroup.secIdxs.indexOf(secIdx);
+  const isLastInGroup = gPos === activeGroup.secIdxs.length - 1;
+  const groupSections = activeGroup.secIdxs.map((si) => sections[si]);
+  const gQsAll = groupQuestions(activeGroup);
+  const gAnswered = gQsAll.filter((q) => isAnswered(q, answers[q.id])).length;
+
+  // Kunci subtes: sebelum lewat, tombol "Selesaikan Subtes" nonaktif. Nilai ini
+  // dihitung ulang tiap render — re-render tiap detik sudah dijamin tick timer.
+  const lockMin = Math.min(SECTION_LOCK_MINUTES, groupDurationMin(activeGroup));
+  const lockLeft = preview ? 0 : Math.max(0, Math.ceil(((groupStartedAt[activeGroup.skill] ?? 0) + lockMin * 60_000 - Date.now()) / 1000));
 
   // Paginasi soal: maksimal PAGE_SIZE soal per halaman (kurangi scroll panjang).
   const pageCount = Math.max(1, Math.ceil(secQs.length / PAGE_SIZE));
@@ -702,21 +946,21 @@ export default function SimulasiRunnerPage() {
   const pageStart = safePage * PAGE_SIZE;
   const pageQs = secQs.slice(pageStart, pageStart + PAGE_SIZE);
   const isLastPage = safePage >= pageCount - 1;
-  const isFirstPage = safePage === 0 && secIdx === 0;
+  const isFirstPage = safePage === 0 && gPos <= 0;
   const scrollToTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { /* ignore */ } };
-  // Lanjut: halaman berikut dalam bagian, atau pindah ke bagian selanjutnya.
+  // Lanjut: halaman berikut dalam bagian, atau part berikutnya DI SUBTES yang sama.
   const goNextPage = () => {
     if (!isLastPage) { setQPage(safePage + 1); scrollToTop(); return; }
-    const next = secIdx + 1;
-    if (next >= sections.length) return;
-    if (sections[next]?.skill === section.skill) dismissIntro(next); // skill sama → lewati intro
+    if (isLastInGroup) return;
+    const next = activeGroup.secIdxs[gPos + 1];
+    dismissIntro(next); // part se-subtes = se-skill → tak perlu intro ulang
     setSecIdx(next); setQPage(0); scrollToTop();
   };
-  // Sebelumnya: halaman sebelum dalam bagian, atau balik ke halaman terakhir bagian lalu.
+  // Sebelumnya: halaman sebelum dalam bagian, atau part sebelumnya di subtes yang sama.
   const goPrevPage = () => {
     if (safePage > 0) { setQPage(safePage - 1); scrollToTop(); return; }
-    if (secIdx === 0) return;
-    const prev = secIdx - 1;
+    if (gPos <= 0) return;
+    const prev = activeGroup.secIdxs[gPos - 1];
     const prevCount = questions.filter((q) => q.section_id === sections[prev].id).length;
     dismissIntro(prev);
     setSecIdx(prev); setQPage(Math.max(0, Math.ceil(prevCount / PAGE_SIZE) - 1)); scrollToTop();
@@ -741,23 +985,11 @@ export default function SimulasiRunnerPage() {
     const tpl = SECTION_INTRO[section.skill] ?? { title: "Petunjuk Bagian", points: [] };
     const customInstr = section.instructions?.trim();
     return (
-      <Shell sim={sim} preview={preview} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
-        <ExamProgress
-          sections={sections}
-          secIdx={secIdx}
-          answered={questions.filter((q) => isAnswered(q, answers[q.id])).length}
-          total={questions.length}
-        />
-
-        <QuestionNavigator
-          sections={sections} questions={questions} answers={answers}
-          currentSecIdx={secIdx} maxVisitedSecIdx={maxSecIdx}
-          onJump={goToQuestion} onIntro={reopenIntro} qNumber={qNumber}
-        />
-
+      <Shell sim={sim} preview={preview} confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+        <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
           <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
-            <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
+            <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Part {gPos + 1}/{groupSections.length}
           </div>
           <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
           <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
@@ -782,14 +1014,7 @@ export default function SimulasiRunnerPage() {
             )}
           </div>
 
-          <div className="mt-6 flex items-center justify-between gap-3">
-            <button
-              disabled={secIdx === 0}
-              onClick={() => { setQPage(0); setSecIdx((i) => Math.max(0, i - 1)); }}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
-            >
-              <ArrowLeft className="h-4 w-4" />Bagian sebelumnya
-            </button>
+          <div className="mt-6 flex items-center justify-end gap-3">
             <button onClick={() => { setQPage(0); enterFullscreen(); dismissIntro(secIdx); }} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
               <PlayCircle className="h-4 w-4" />Mulai bagian ini
             </button>
@@ -799,21 +1024,59 @@ export default function SimulasiRunnerPage() {
     );
   }
 
+  // Panel "Nomor Soal" statik (ala CBT): dirender dua kali — aside sticky di
+  // desktop, slide-over lewat tombol mengambang di layar kecil.
+  const navPanel = (
+    <SectionNavPanel
+      parts={activeGroup.secIdxs.map((si) => ({ si, section: sections[si], qs: questions.filter((q) => q.section_id === sections[si].id) }))}
+      answers={answers}
+      currentSecIdx={secIdx}
+      maxVisitedSecIdx={maxSecIdx}
+      currentQids={new Set(pageQs.map((q) => q.id))}
+      qNumber={qNumber}
+      remaining={remaining}
+      onJump={goToQuestion}
+      lockLeft={lockLeft}
+      lockMin={lockMin}
+      onFinish={() => finishGroup()}
+      answered={gAnswered}
+      total={gQsAll.length}
+    />
+  );
+
+  // Tombol selesaikan subtes — nonaktif selama kunci menit minimal belum lewat.
+  const finishGroupBtn = (
+    <button
+      type="button"
+      disabled={lockLeft > 0}
+      onClick={() => finishGroup()}
+      title={lockLeft > 0 ? `Subtes terkunci minimal ${lockMin} menit — sisa ${clock(lockLeft)}` : undefined}
+      className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white disabled:opacity-50"
+      style={{ background: TEAL_DEEP }}
+    >
+      {lockLeft > 0 ? <><Lock className="h-4 w-4" />Terkunci {clock(lockLeft)}</> : <><CheckCircle2 className="h-4 w-4" />Selesaikan Subtes</>}
+    </button>
+  );
+
   return (
-    <Shell sim={sim} preview={preview} wide={hasMedia} confirmExit headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
-      {/* progres mengambang: segmen bagian + hitungan soal dikerjakan */}
+    <Shell sim={sim} preview={preview} wide confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
+      <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
+
+      {/* progres mengambang: segmen part di subtes ini + hitungan soal dikerjakan */}
       <ExamProgress
-        sections={sections}
-        secIdx={secIdx}
-        answered={questions.filter((q) => isAnswered(q, answers[q.id])).length}
-        total={questions.length}
+        sections={groupSections}
+        secIdx={gPos}
+        answered={gAnswered}
+        total={gQsAll.length}
       />
 
-      {/* Navigasi halaman soal — dipindah ke atas (di bawah progress bar), kanan.
+      <div className="lg:flex lg:items-start lg:gap-5">
+      <div className="min-w-0 flex-1">
+      {/* Navigasi halaman soal — di atas (di bawah progress bar), kanan.
           Maks PAGE_SIZE soal/halaman → tak perlu menggulir jauh untuk lanjut. */}
       <div className="mb-4 flex items-center justify-between gap-3">
         <span className="text-xs font-medium text-slate-500 tabular-nums">
-          Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, secQs.length)} dari {secQs.length}
+          {SKILL_LABEL[activeGroup.skill]} · Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, secQs.length)} dari {secQs.length}
           {pageCount > 1 && <span className="text-slate-400"> · Hal {safePage + 1}/{pageCount}</span>}
         </span>
         <div className="flex items-center gap-2">
@@ -825,28 +1088,13 @@ export default function SimulasiRunnerPage() {
           >
             <ArrowLeft className="h-4 w-4" />Sebelumnya
           </button>
-          {isLast && isLastPage ? (
-            <button type="button" onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
-              <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
-            </button>
-          ) : (
+          {isLastInGroup && isLastPage ? finishGroupBtn : (
             <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white" style={{ background: TEAL }}>
               Lanjut <ArrowRight className="h-4 w-4" />
             </button>
           )}
         </div>
       </div>
-
-      <QuestionNavigator
-        sections={sections}
-        questions={questions}
-        answers={answers}
-        currentSecIdx={secIdx}
-        maxVisitedSecIdx={maxSecIdx}
-        onJump={goToQuestion}
-        onIntro={reopenIntro}
-        qNumber={qNumber}
-      />
 
       {/* Split view ala ujian CBT asli: materi (passage/audio) sticky di kiri,
           soal discroll di kanan. Pembatas bisa digeser (drag) untuk mengatur
@@ -903,11 +1151,7 @@ export default function SimulasiRunnerPage() {
               >
                 <ArrowLeft className="h-4 w-4" />Sebelumnya
               </button>
-              {isLast && isLastPage ? (
-                <button type="button" onClick={() => submit()} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
-                  <CheckCircle2 className="h-4 w-4" />Selesai &amp; Kirim
-                </button>
-              ) : (
+              {isLastInGroup && isLastPage ? finishGroupBtn : (
                 <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
                   Lanjut <ArrowRight className="h-4 w-4" />
                 </button>
@@ -918,6 +1162,16 @@ export default function SimulasiRunnerPage() {
 
         return hasMedia ? <SplitPane left={mediaCard} right={questionsCard} /> : questionsCard;
       })()}
+      </div>
+
+      {/* Panel Nomor Soal STATIK — selalu tampil di kanan pada desktop */}
+      <aside className="mt-4 hidden w-64 shrink-0 lg:sticky lg:top-28 lg:mt-0 lg:block">
+        {navPanel}
+      </aside>
+      </div>
+
+      {/* Layar kecil: tombol mengambang → slide-over berisi panel yang sama */}
+      <MobileNavSheet answered={gAnswered} total={gQsAll.length}>{navPanel}</MobileNavSheet>
     </Shell>
   );
 }
@@ -1000,7 +1254,8 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
   const [step, setStep] = useState(0);
   const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
   const effDuration = useMemo(() => effectiveDurationMinutes(sim, sections), [sim, sections]);
-  const rules = GENERAL_RULES.filter((r) => !r.timed || effDuration > 0);
+  // + aturan mode subtes & proctoring (EXTRA_RULES) supaya siswa tahu sebelum mulai.
+  const rules = [...GENERAL_RULES.filter((r) => !r.timed || effDuration > 0), ...EXTRA_RULES];
 
   // Kelompokkan bagian per skill → accordion biar daftar yang panjang (mis. 13
   // bagian) tidak membanjiri layar. Default skill pertama yang terbuka.
@@ -1288,7 +1543,7 @@ function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
   );
 }
 
-function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean; confirmExit?: boolean }) {
+function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctored }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean; confirmExit?: boolean; proctored?: boolean }) {
   // Konfirmasi sebelum keluar saat tes sedang berjalan (cegah keluar tak sengaja
   // yang bikin kehilangan progres/waktu). Hanya aktif saat confirmExit=true.
   const [askExit, setAskExit] = useState(false);
@@ -1304,6 +1559,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
   // (tanpa riwayat) atau saat route cache basi. Preview dibuka admin di tab baru →
   // kalau memang bisa ditutup (script-opened), tutup tabnya; jika tidak, ke katalog.
   const leave = () => {
+    leavingSim = true; // keluar disengaja → proctoring jangan mencatat pelanggaran
     if (fsElement()) exitFs();
     if (preview) { try { window.close(); } catch { /* diblokir */ } }
     window.location.assign(backHref);
@@ -1431,13 +1687,18 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit }: { sim
           >
             {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
-          <button
-            onClick={toggleFs}
-            title={fs ? "Keluar layar penuh" : "Layar penuh"}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
-          >
-            {fs ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
-          </button>
+          {/* [sim-proctor-v1] saat proctoring aktif, keluar layar penuh = pelanggaran →
+              tombol toggle disembunyikan supaya tak jadi jebakan; yang tampil hanya
+              tombol MASUK fullscreen bila siswa sedang di luar layar penuh. */}
+          {(!proctored || !fs) && (
+            <button
+              onClick={toggleFs}
+              title={fs ? "Keluar layar penuh" : "Layar penuh"}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
+            >
+              {fs ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
+            </button>
+          )}
         </div>
       </header>
       <main className={`mx-auto ${maxW} px-4 py-6 sm:px-6`}>{children}</main>
@@ -1530,285 +1791,160 @@ function ExamProgress({ sections, secIdx, answered, total }: {
   );
 }
 
-// ── Navigasi soal mengambang: blok nomor + status terjawab/belum/dilewati ────
+// ── Panel "Nomor Soal" STATIK (ala CBT): status tiap soal subtes aktif ───────
 type NavStatus = "answered" | "skipped" | "todo";
 
-function QuestionNavigator({ sections, questions, answers, currentSecIdx, maxVisitedSecIdx, onJump, onIntro, qNumber }: {
-  sections: Section[]; questions: Question[]; answers: Record<string, AnswerState>;
-  currentSecIdx: number; maxVisitedSecIdx: number; onJump: (secIdx: number, qid: string) => void;
-  onIntro?: (secIdx: number) => void;
+function SectionNavPanel({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQids, qNumber, remaining, onJump, lockLeft, lockMin, onFinish, answered, total }: {
+  parts: { si: number; section: Section; qs: Question[] }[];
+  answers: Record<string, AnswerState>;
+  currentSecIdx: number;
+  maxVisitedSecIdx: number;
+  currentQids: Set<string>; // soal yang sedang tampil di halaman aktif
   qNumber: Record<string, number>;
+  remaining: number | null;
+  onJump: (secIdx: number, qid: string) => void;
+  lockLeft: number;  // detik sisa kunci subtes (0 = boleh selesai)
+  lockMin: number;
+  onFinish: () => void;
+  answered: number;
+  total: number;
 }) {
-  const [open, setOpen] = useState(false);
-
-  // Panel desktop (xl+) bisa digeser bebas & diminimize jadi tombol mengambang.
-  // Posisi & status minimize disimpan di localStorage supaya tetap saat pindah soal.
-  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
-  const [minimized, setMinimized] = useState(false);
-  const panelRef = useRef<HTMLElement>(null);
-  const dragRef = useRef<{ dx: number; dy: number } | null>(null);
-  useEffect(() => {
-    try {
-      const p = localStorage.getItem("sim-nav-pos");
-      if (p) { const v = JSON.parse(p); setPos({ x: v.x, y: Math.max(96, v.y) }); } // jangan menutupi header (tombol kembali)
-      setMinimized(localStorage.getItem("sim-nav-min") === "1");
-    } catch { /* ignore */ }
-  }, []);
-  const onDragMove = (e: PointerEvent) => {
-    if (!dragRef.current || !panelRef.current) return;
-    const w = panelRef.current.offsetWidth, h = panelRef.current.offsetHeight;
-    const x = Math.min(Math.max(8, e.clientX - dragRef.current.dx), window.innerWidth - w - 8);
-    const y = Math.min(Math.max(96, e.clientY - dragRef.current.dy), window.innerHeight - Math.min(h, 120) - 8);
-    setPos({ x, y });
-  };
-  const onDragEnd = () => {
-    dragRef.current = null;
-    window.removeEventListener("pointermove", onDragMove);
-    window.removeEventListener("pointerup", onDragEnd);
-    setPos((p) => { try { if (p) localStorage.setItem("sim-nav-pos", JSON.stringify(p)); } catch { /* ignore */ } return p; });
-  };
-  const onDragStart = (e: React.PointerEvent) => {
-    if (!panelRef.current) return;
-    const r = panelRef.current.getBoundingClientRect();
-    dragRef.current = { dx: e.clientX - r.left, dy: e.clientY - r.top };
-    window.addEventListener("pointermove", onDragMove);
-    window.addEventListener("pointerup", onDragEnd);
-  };
-  const setMin = (v: boolean) => { setMinimized(v); try { localStorage.setItem("sim-nav-min", v ? "1" : "0"); } catch { /* ignore */ } };
-
-  // Kelompokkan section menurut skill → maksimal 4 tab (Reading/Listening/Speaking/Writing).
-  // Tiap skill berisi satu/lebih "part" (bagian). Accordion 2 tingkat: skill → part → soal.
-  const groups = useMemo(() => {
-    const map: { skill: Skill; parts: { section: Section; si: number; qs: Question[] }[] }[] = [];
-    sections.forEach((s, si) => {
-      const qs = questions.filter((q) => q.section_id === s.id);
-      if (qs.length === 0) return;
-      let g = map.find((x) => x.skill === s.skill);
-      if (!g) { g = { skill: s.skill, parts: [] }; map.push(g); }
-      g.parts.push({ section: s, si, qs });
-    });
-    return map;
-  }, [sections, questions]);
-
-  const currentSkill = sections[currentSecIdx]?.skill ?? null;
-  // Accordion: hanya skill & part yang aktif yang terbuka, lainnya otomatis ter-collapse.
-  const [openSkill, setOpenSkill] = useState<Skill | null>(currentSkill);
-  const [openPart, setOpenPart] = useState(currentSecIdx);
-  useEffect(() => {
-    setOpenSkill(sections[currentSecIdx]?.skill ?? null);
-    setOpenPart(currentSecIdx);
-  }, [currentSecIdx, sections]);
-
   const statusOf = (q: Question, si: number): NavStatus => {
     if (isAnswered(q, answers[q.id])) return "answered";
-    return si < maxVisitedSecIdx ? "skipped" : "todo"; // dilewati vs belum dibuka
+    return si < maxVisitedSecIdx ? "skipped" : "todo";
   };
 
-  let answeredCount = 0, skippedCount = 0;
-  sections.forEach((s, si) => questions.filter((q) => q.section_id === s.id).forEach((q) => {
-    const st = statusOf(q, si);
-    if (st === "answered") answeredCount++;
-    else if (st === "skipped") skippedCount++;
-  }));
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-4">
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <p className="text-sm font-bold text-slate-800">Nomor Soal</p>
+        {remaining != null && <TimerPill seconds={remaining} />}
+      </div>
 
-  const handleJump = (si: number, qid: string) => { onJump(si, qid); setOpen(false); };
+      {/* Legenda status — ala CBT: saat ini / kosong / terisi */}
+      <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-slate-100 pb-3 text-[11px] font-medium text-slate-500">
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded-full" style={{ background: TEAL_DEEP }} />Nomor saat ini</span>
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded-full border border-slate-300 bg-white" />Kosong</span>
+        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded-full" style={{ background: TEAL }} />Terisi</span>
+      </div>
 
-  const renderBody = (showTitle: boolean) => (
-    <>
-      {showTitle && (
-        <div className="mb-3 flex items-center justify-between">
-          <p className="flex items-center gap-1.5 text-sm font-bold text-slate-700">
-            <ListChecks className="h-4 w-4 text-teal-600" />Navigasi Soal
-          </p>
-          <span className="text-xs font-medium text-slate-500">{answeredCount}/{questions.length} terjawab</span>
-        </div>
-      )}
-
-      {skippedCount > 0 && (
-        <p className="mb-3 flex items-center gap-1.5 rounded-lg bg-red-50 px-2.5 py-1.5 text-[11px] font-medium text-red-600">
-          <AlertCircle className="h-3.5 w-3.5" />{skippedCount} soal terlewati belum dijawab
-        </p>
-      )}
-
-      <div className="space-y-2">
-        {groups.map((g) => {
-          const Icon = SKILL_ICON[g.skill];
-          const isSkillOpen = openSkill === g.skill;
-          const allQs = g.parts.flatMap((p) => p.qs);
-          const ansInSkill = allQs.filter((q) => isAnswered(q, answers[q.id])).length;
-          const skipInSkill = g.parts.reduce((n, p) => n + p.qs.filter((q) => statusOf(q, p.si) === "skipped").length, 0);
-          const isActiveSkill = g.skill === currentSkill;
-          const multiPart = g.parts.length > 1;
-
-          // Grid nomor soal untuk satu part — diawali chip "Intro" (petunjuk bagian).
-          const qGrid = (qs: Question[], si: number) => (
+      <div className="space-y-3">
+        {parts.map((p, pi) => (
+          <div key={p.section.id}>
+            {parts.length > 1 && (
+              <p className={`mb-1.5 text-[11px] font-bold ${p.si === currentSecIdx ? "text-teal-700" : "text-slate-500"}`}>
+                Part {pi + 1}{p.si === currentSecIdx ? " · aktif" : ""}
+              </p>
+            )}
             <div className="flex flex-wrap gap-1.5">
-              {onIntro && (
-                <button
-                  type="button"
-                  onClick={() => { onIntro(si); setOpen(false); }}
-                  title="Lihat petunjuk bagian ini"
-                  className="flex h-9 items-center gap-1 rounded-lg border border-teal-200 bg-teal-50 px-2 text-[11px] font-semibold text-teal-700 transition hover:border-teal-300"
-                >
-                  <Info className="h-3.5 w-3.5" />Intro
-                </button>
-              )}
-              {qs.map((q) => {
-                const st = statusOf(q, si);
-                const num = qNumber[q.id];
-                const cls =
-                  st === "answered" ? "text-white"
+              {p.qs.map((q) => {
+                const st = statusOf(q, p.si);
+                const isCurrent = p.si === currentSecIdx && currentQids.has(q.id);
+                const cls = isCurrent
+                  ? "text-white"
+                  : st === "answered" ? "text-white"
                   : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
                   : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
-                const label = st === "answered" ? "sudah dijawab" : st === "skipped" ? "terlewati — belum dijawab" : "belum dijawab";
+                const bg = isCurrent ? TEAL_DEEP : st === "answered" ? TEAL : undefined;
+                const label = st === "answered" ? "terisi" : st === "skipped" ? "terlewati — belum dijawab" : "kosong";
                 return (
                   <button
                     key={q.id}
                     type="button"
-                    onClick={() => handleJump(si, q.id)}
-                    title={`Soal ${num} · ${label}`}
-                    className={`flex h-9 min-w-9 items-center justify-center rounded-lg px-1.5 text-xs font-semibold tabular-nums transition ${cls}`}
-                    style={st === "answered" ? { background: TEAL } : undefined}
+                    onClick={() => onJump(p.si, q.id)}
+                    title={`Soal ${qNumber[q.id]} · ${label}`}
+                    className={`flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold tabular-nums transition ${cls}`}
+                    style={bg ? { background: bg } : undefined}
                   >
-                    {num}
+                    {qNumber[q.id]}
                   </button>
                 );
               })}
             </div>
-          );
-
-          return (
-            <div key={g.skill} className="overflow-hidden rounded-xl bg-slate-100">
-              <button
-                type="button"
-                onClick={() => setOpenSkill(isSkillOpen ? null : g.skill)}
-                className={`flex w-full items-center gap-1.5 px-2.5 py-2 text-xs font-semibold ${isActiveSkill ? "bg-teal-500/15 text-teal-700" : "text-slate-600 hover:bg-slate-200/70"}`}
-              >
-                <Icon className="h-3.5 w-3.5 shrink-0 text-slate-400" />
-                <span className="flex-1 truncate text-left">{SKILL_LABEL[g.skill]}</span>
-                {isActiveSkill && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[10px] font-semibold text-teal-700">aktif</span>}
-                {skipInSkill > 0 && <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] text-white">{skipInSkill}</span>}
-                <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInSkill}/{allQs.length}</span>
-                <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform ${isSkillOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {isSkillOpen && (
-                multiPart ? (
-                  // >1 bagian → tampilkan accordion "Part 1 / Part 2 / …".
-                  <div className="space-y-1.5 px-2 pb-2.5 pt-1">
-                    {g.parts.map((p, pi) => {
-                      const isPartOpen = openPart === p.si;
-                      const ansInPart = p.qs.filter((q) => isAnswered(q, answers[q.id])).length;
-                      const skipInPart = p.qs.filter((q) => statusOf(q, p.si) === "skipped").length;
-                      const isActivePart = p.si === currentSecIdx;
-                      return (
-                        <div key={p.section.id} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-                          <button
-                            type="button"
-                            onClick={() => setOpenPart(isPartOpen ? -1 : p.si)}
-                            className={`flex w-full items-center gap-1.5 px-2 py-1.5 text-[11px] font-semibold ${isActivePart ? "bg-teal-500/15 text-teal-700" : "text-slate-500 hover:bg-slate-200/70"}`}
-                          >
-                            <span className="flex-1 truncate text-left">Part {pi + 1}</span>
-                            {isActivePart && <span className="rounded-full bg-teal-100 px-1.5 py-0.5 text-[9px] font-semibold text-teal-700">aktif</span>}
-                            {skipInPart > 0 && <span className="flex h-3.5 min-w-3.5 items-center justify-center rounded-full bg-red-500 px-1 text-[9px] text-white">{skipInPart}</span>}
-                            <span className="text-[10px] font-medium text-slate-400 tabular-nums">{ansInPart}/{p.qs.length}</span>
-                            <ChevronDown className={`h-3 w-3 shrink-0 text-slate-400 transition-transform ${isPartOpen ? "rotate-180" : ""}`} />
-                          </button>
-                          {isPartOpen && <div className="px-2 pb-2 pt-1.5">{qGrid(p.qs, p.si)}</div>}
-                        </div>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  // 1 bagian → langsung grid nomor, tanpa label "Part".
-                  <div className="px-2.5 pb-2.5 pt-0.5">{qGrid(g.parts[0].qs, g.parts[0].si)}</div>
-                )
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-400">
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded" style={{ background: TEAL }} />Terjawab</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded border border-red-300 bg-red-50" />Dilewati</span>
-        <span className="flex items-center gap-1"><span className="h-3 w-3 rounded border border-slate-300 bg-white" />Belum</span>
-      </div>
-    </>
-  );
-
-  return (
-    <>
-      {/* Panel mengambang — layar lebar (xl+). Bisa digeser via header & diminimize. */}
-      {!minimized && (
-        <aside
-          ref={panelRef}
-          className="fixed z-30 hidden max-h-[calc(100vh-7rem)] w-64 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg xl:flex"
-          style={pos ? { left: pos.x, top: pos.y } : { right: 16, top: 96 }}
-        >
-          {/* Header = drag handle */}
-          <div
-            onPointerDown={onDragStart}
-            className="flex shrink-0 cursor-grab items-center gap-1.5 border-b border-slate-100 bg-slate-50/80 px-3 py-2 active:cursor-grabbing"
-          >
-            <GripVertical className="h-4 w-4 shrink-0 text-slate-400" />
-            <span className="flex-1 text-xs font-bold text-slate-600">Navigasi Soal</span>
-            <span className="text-[10px] font-medium text-slate-400 tabular-nums">{answeredCount}/{questions.length}</span>
-            <button
-              type="button"
-              onPointerDown={(e) => e.stopPropagation()}
-              onClick={() => setMin(true)}
-              title="Minimize"
-              className="flex h-6 w-6 items-center justify-center rounded-md text-slate-400 hover:bg-slate-200/70 hover:text-slate-600"
-            >
-              <Minimize2 className="h-3.5 w-3.5" />
-            </button>
           </div>
-          <div className="overflow-y-auto p-4">{renderBody(false)}</div>
-        </aside>
-      )}
+        ))}
+      </div>
 
-      {/* Tombol mengambang restore — layar lebar saat diminimize */}
-      {minimized && (
+      <div className="mt-4 border-t border-slate-100 pt-3">
+        <p className="mb-2 text-center text-xs font-medium text-slate-500 tabular-nums">
+          <span className="font-bold text-teal-600">{answered}</span>/{total} soal terisi
+        </p>
         <button
           type="button"
-          onClick={() => setMin(false)}
-          className="fixed bottom-5 right-5 z-30 hidden items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg xl:flex"
-          style={{ background: TEAL }}
-          title="Buka Navigasi Soal"
+          disabled={lockLeft > 0}
+          onClick={onFinish}
+          title={lockLeft > 0 ? `Subtes terkunci minimal ${lockMin} menit` : undefined}
+          className="flex w-full items-center justify-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-bold text-white disabled:opacity-50"
+          style={{ background: TEAL_DEEP }}
         >
-          <ListChecks className="h-5 w-5" />
-          {answeredCount}/{questions.length}
-          {skippedCount > 0 && <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[11px]">{skippedCount}</span>}
+          {lockLeft > 0
+            ? <><Lock className="h-4 w-4" />Terkunci {clock(lockLeft)}</>
+            : <><CheckCircle2 className="h-4 w-4" />Selesaikan Subtes</>}
         </button>
-      )}
+        {lockLeft > 0 && (
+          <p className="mt-1.5 text-center text-[11px] leading-snug text-slate-400">
+            Baru bisa pindah subtes setelah {lockMin} menit.
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
 
-      {/* Tombol mengambang — layar kecil/sedang */}
+// Layar kecil/sedang: tombol mengambang → slide-over berisi panel Nomor Soal.
+function MobileNavSheet({ answered, total, children }: { answered: number; total: number; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg xl:hidden"
+        className="fixed bottom-5 right-5 z-30 flex items-center gap-2 rounded-full px-4 py-3 text-sm font-bold text-white shadow-lg lg:hidden"
         style={{ background: TEAL }}
       >
-        <ListChecks className="h-5 w-5" />
-        {answeredCount}/{questions.length}
-        {skippedCount > 0 && <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[11px]">{skippedCount}</span>}
+        <ListChecks className="h-5 w-5" />{answered}/{total}
       </button>
-
-      {/* Slide-over — layar kecil/sedang */}
       {open && (
-        <div className="fixed inset-0 z-40 flex justify-end bg-black/30 xl:hidden" onClick={() => setOpen(false)}>
-          <div className="h-full w-72 max-w-[85vw] overflow-y-auto bg-white p-4 shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-2 flex justify-end">
+        <div className="fixed inset-0 z-40 flex justify-end bg-black/30 lg:hidden" onClick={() => setOpen(false)}>
+          <div className="h-full w-80 max-w-[88vw] overflow-y-auto bg-slate-50 p-3 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-1 flex justify-end">
               <button type="button" onClick={() => setOpen(false)} className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 hover:bg-slate-100">
                 <X className="h-5 w-5" />
               </button>
             </div>
-            {renderBody(true)}
+            {children}
           </div>
         </div>
       )}
     </>
+  );
+}
+
+// ── [sim-proctor-v1] Modal peringatan pelanggaran proctoring ─────────────────
+function ViolationModal({ count, msg, onResume }: { count: number; msg: string | null; onResume: () => void }) {
+  if (!msg) return null;
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" />
+      <div className="relative w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-500">
+          <ShieldAlert className="h-6 w-6" />
+        </span>
+        <p className="mt-3 text-base font-bold text-slate-900">Pelanggaran terdeteksi ({count}/{MAX_VIOLATIONS})</p>
+        <p className="mt-1 text-sm leading-relaxed text-slate-600">{msg}</p>
+        <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-xs font-medium text-red-600">
+          {MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan dan ujian berakhir.
+        </p>
+        <button
+          type="button"
+          onClick={onResume}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white"
+          style={{ background: TEAL }}
+        >
+          <PlayCircle className="h-4 w-4" />Lanjutkan Ujian (layar penuh)
+        </button>
+      </div>
+    </div>
   );
 }
 

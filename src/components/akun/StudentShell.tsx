@@ -38,13 +38,9 @@ const NAV: NavItem[] = [
   { key: "akun", label: "Pengaturan", icon: Settings },
 ];
 
-function Tip({ label }: { label: string }) {
-  return (
-    <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">
-      {label}
-    </span>
-  );
-}
+// [sidebar-label-v1] item sidebar: ikon + TEKS label (bukan ikon-saja + tooltip)
+// supaya menu langsung terbaca tanpa harus hover satu-satu.
+const NAV_ITEM_BASE = "group relative flex w-full items-center gap-3 rounded-2xl px-3.5 py-2.5 text-left text-[13px] font-semibold transition";
 
 export default function StudentShell({
   active,
@@ -149,15 +145,16 @@ export default function StudentShell({
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
-        {/* ICON RAIL — desktop only */}
-        <aside className="hidden w-[96px] shrink-0 flex-col items-center py-7 lg:flex">
+        {/* SIDEBAR — desktop only. [sidebar-label-v1] ikon + teks label */}
+        <aside className="hidden w-[216px] shrink-0 flex-col px-4 py-7 lg:flex">
           {/* logo — white bubble langsung di atas teal, tanpa kotak putih */}
-          <div className="flex h-12 w-12 items-center justify-center">
+          <div className="flex items-center gap-2.5 px-2">
             <img src="/images/logo-linguo-icon.png" alt="Linguo" className="h-9 w-9 object-contain" />
+            <span className="text-lg font-bold text-white">Linguo</span>
           </div>
 
           {/* nav */}
-          <nav className="mt-12 flex flex-col items-center gap-3">
+          <nav className="mt-10 flex flex-col gap-1.5">
             {NAV.filter((item) => showNav(item.key)).map((item) => {
               const Icon = item.icon;
               if ("href" in item) {
@@ -169,26 +166,23 @@ export default function StudentShell({
                     key={item.key}
                     href={item.href}
                     prefetch
-                    className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
+                    className={`${NAV_ITEM_BASE} ${
                       isActiveLink
                         ? "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
                         : "text-white/70 hover:bg-white/10 hover:text-white"
                     }`}
                     aria-current={isActiveLink ? "page" : undefined}
                   >
-                    <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <Tip label={item.label} />
+                    <Icon className="h-[20px] w-[20px] shrink-0 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                    <span className="truncate">{item.label}</span>
                   </Link>
                 );
               }
               if (item.soon) {
                 return (
-                  <div
-                    key={item.key}
-                    className="group relative flex h-12 w-12 cursor-default items-center justify-center rounded-2xl text-white/35"
-                  >
-                    <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <Tip label={item.label} />
+                  <div key={item.key} className={`${NAV_ITEM_BASE} cursor-default text-white/35`}>
+                    <Icon className="h-[20px] w-[20px] shrink-0 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                    <span className="truncate">{item.label}</span>
                   </div>
                 );
               }
@@ -197,42 +191,39 @@ export default function StudentShell({
                 <button
                   key={item.key}
                   onClick={() => onTabChange(item.key as AkunTab)}
-                  className={`group relative flex h-12 w-12 items-center justify-center rounded-2xl transition ${
+                  className={`${NAV_ITEM_BASE} ${
                     isActive
                       ? "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]"
                       : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  <Icon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-                  <Tip label={item.label} />
+                  <Icon className="h-[20px] w-[20px] shrink-0 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                  <span className="truncate">{item.label}</span>
                 </button>
               );
             })}
           </nav>
 
           {/* bottom group: dark toggle + logout */}
-          <div className="mt-auto flex flex-col items-center gap-3">
+          <div className="mt-auto flex flex-col gap-1.5">
             {/* [ling-lms-dark-v1] toggle dark mode (state sync ke lesson player) */}
             <button
               onClick={toggleDark}
-              className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
+              className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
               aria-label={isDark ? "Mode terang" : "Mode gelap"}
             >
               {isDark ? (
-                <Sun className="h-[22px] w-[22px] text-amber-300 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                <Sun className="h-[20px] w-[20px] shrink-0 text-amber-300 transition-transform duration-500 group-hover:rotate-[360deg]" />
               ) : (
-                <Moon className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
+                <Moon className="h-[20px] w-[20px] shrink-0 transition-transform duration-500 group-hover:rotate-[360deg]" />
               )}
-              <Tip label={isDark ? "Mode terang" : "Mode gelap"} />
+              <span className="truncate">{isDark ? "Mode terang" : "Mode gelap"}</span>
             </button>
             {/* logout */}
-            <button
-              onClick={signOut}
-              className="group relative flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
-            >
-              <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-              <Tip label="Keluar" />
+            <button onClick={signOut} className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}>
+              <LogOut className="h-[20px] w-[20px] shrink-0 transition-transform duration-500 group-hover:rotate-[360deg]" />
+              <span className="truncate">Keluar</span>
             </button>
           </div>
         </aside>

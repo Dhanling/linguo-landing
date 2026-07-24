@@ -4,7 +4,7 @@
 // Di-key per simulasi + user (tamu = "guest"). Audio (blob) tak ikut disimpan —
 // hanya pilihan/teks/URL rekaman yang sudah terunggah.
 export type SavedProgress = {
-  v: 1;
+  v: 1 | 2;
   attemptId: string;
   deadline: number | null; // timestamp absolut → sisa waktu dihitung ulang saat lanjut
   answers: Record<string, { selected_index: number | null; text: string; audioUrl: string | null }>;
@@ -13,6 +13,14 @@ export type SavedProgress = {
   introDone: number[];
   qPage: number;
   savedAt: number;
+  // v2 — mode subtes terpisah (hub "Detail Tryout"): tiap subtes (skill) punya
+  // deadline sendiri + kunci minimal menit. Semua di-key pakai nama skill.
+  groupDeadlines?: Record<string, number>;
+  groupStartedAt?: Record<string, number>;
+  groupDone?: string[];
+  // Hitungan pelanggaran proctoring (pindah tab / keluar fullscreen) — ikut
+  // disimpan supaya refresh tidak me-reset jatah pelanggaran.
+  violations?: number;
 };
 
 export function progressKey(id: string, uid: string | null | undefined) {
