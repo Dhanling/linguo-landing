@@ -1434,6 +1434,24 @@ function mergeCueFragments(cues: LearnCue[]): LearnCue[] {
 // utuh (memulihkan pasangan target↔arti dari cache lama), lalu pecah per kalimat
 // (akurat), di batas tanda baca, lalu — kalau MASIH kepanjangan (ASR tanpa tanda
 // baca) — per kata. Tak ada lagi section paragraf panjang, apa pun sumbernya.
+// [watch-caption-deshout] Sebagian caption/ASR (mis. acara TV Spanyol "Programa
+// Hoy") datang HURUF BESAR SEMUA — melelahkan dibaca. Kalau satu baris TAK punya
+// huruf kecil sama sekali (murni kapital), ubah ke sentence case: huruf besar hanya
+// di awal kalimat (juga setelah . ! ? … dan pembuka ¿ ¡), sisanya kecil. Baris yang
+// sudah berkasus normal (ada huruf kecil) TIDAK disentuh. Aman untuk aksara tanpa
+// kasus (Han/Arab/Jepang): tak ada huruf besar → langsung dikembalikan apa adanya.
+// Panjang string dijaga (cuma ganti kasus) supaya offset karaoke `_anc` tetap valid.
+function deshout(s: string): string {
+  if (!s) return s;
+  // Sudah ada huruf kecil → bukan all-caps, biarkan.
+  if (/\p{Ll}/u.test(s)) return s;
+  // Tak ada huruf besar sama sekali (aksara tanpa kasus) → biarkan.
+  if (!/\p{Lu}/u.test(s)) return s;
+  return s
+    .toLowerCase()
+    .replace(/(^|[.!?…]\s+|[¿¡]\s*)(\p{Ll})/gu, (_m, pre: string, ch: string) => pre + ch.toUpperCase());
+}
+
 function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
   return mergeCueFragments(cues)
     .flatMap((c) => splitCueBySentence(c, langCode))
@@ -1443,7 +1461,12 @@ function splitCuesBySentence(cues: LearnCue[], langCode: string): LearnCue[] {
     // di player biar sapuan menempel ke timing window caption asli; ia dibuang saat
     // tulis cache (saveTranscriptCache) supaya format simpanan tak berubah.
     .map((c) => {
-      const { start, end, target, base, translit } = c;
+      const { start, end, translit } = c;
+      // Rapikan caption ALL-CAPS → sentence case (lihat deshout). Kena baik ke jalur
+      // caption/ASR baru maupun cache lama (fetchTranscript memanggil fungsi ini juga
+      // saat cache-hit), jadi transkrip dini hari yang sudah tersimpan pun ikut rapi.
+      const target = deshout(c.target);
+      const base = deshout(c.base);
       const out: LearnCue = translit
         ? { start, end, target, base, translit }
         : { start, end, target, base };
@@ -1975,11 +1998,26 @@ export interface SentenceChunk {
   gloss: string; // arti potongan ini dalam bahasa penjelasan
 }
 
+/** Idiom/ungkapan/slang yang muncul di kalimat, beserta makna sebenarnya. */
+export interface SentenceIdiom {
+  phrase: string; // ungkapan bahasa target apa adanya
+  tl?: string; // bacaan Latin (bahasa non-Latin)
+  literal?: string; // arti harfiah kata per kata
+  meaning: string; // makna sebenarnya
+  note?: string; // kapan/bagaimana dipakai
+}
+
 export interface SentenceDeepDive {
   translation: string; // arti keseluruhan kalimat
   literal: string; // gloss lebih harfiah (kosong bila tak beda berguna)
   grammar: string; // penjelasan struktur/tata bahasa
   tone: string; // nada/register kalimat (kosong bila datar)
+  // [watch-sentence-contextual-v1] Terjemahan kontekstual — bunyi kalimat ini kalau
+  // diucapkan penutur asli bahasa penjelasan di situasi yang sama (kosong bila sama
+  // dengan `translation`), plus alasan singkat kenapa beda dari terjemahan harfiah.
+  contextual: string;
+  contextNote: string;
+  idioms: SentenceIdiom[]; // idiom/ungkapan di kalimat ini (kosong bila tak ada)
   chunks: SentenceChunk[]; // pecahan bermakna berurutan
   terms: string[]; // istilah tata bahasa baru → chip "Apa itu …?"
   // [watch-sentence-followup-grammar-v1] 3 pertanyaan lanjutan yang menempel pada
@@ -2006,6 +2044,11 @@ export async function getSentenceDeepDive(params: {
     literal: data.literal ?? "",
     grammar: data.grammar ?? "",
     tone: data.tone ?? "",
+    contextual: data.contextual ?? "",
+    contextNote: data.contextNote ?? "",
+    idioms: Array.isArray(data.idioms)
+      ? data.idioms.filter((it) => it && typeof it.phrase === "string" && it.phrase.trim() && typeof it.meaning === "string" && it.meaning.trim())
+      : [],
     chunks: Array.isArray(data.chunks) ? data.chunks : [],
     terms: Array.isArray(data.terms) ? data.terms.filter((t) => typeof t === "string" && t.trim()) : [],
     followups: Array.isArray(data.followups)
