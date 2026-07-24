@@ -2572,13 +2572,20 @@ export default function VideoLearnPlayer({
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
                   {/* [watch-yt-title-v1] Judul + channel di sudut KIRI-ATAS ala YouTube —
-                      muncul saat dijeda / kursor aktif, meredup mulus saat menonton
-                      lancar. pointer-events-none supaya klik tetap menembus ke tombol
-                      play/jeda di bawahnya. Disembunyikan saat layar-diam Netflix aktif
-                      (judulnya sudah tampil besar di sana). */}
+                      muncul saat kursor aktif, meredup mulus saat menonton lancar.
+                      pointer-events-none supaya klik tetap menembus ke tombol play/jeda
+                      di bawahnya. Disembunyikan saat layar-diam Netflix aktif (judulnya
+                      sudah tampil besar di sana).
+                      [watch-title-no-dupe-v1] JANGAN tampilkan saat DIJEDA: meski
+                      controls:0, YouTube tetap memunculkan judul + channel-nya sendiri
+                      di sudut yang sama begitu video dijeda, dan chrome di dalam iframe
+                      itu tak bisa kita sembunyikan dari luar → dua judul saling menimpa.
+                      Saat menonton, chrome YT tak pernah muncul (pointer ditelan tombol
+                      play/jeda di z-4), jadi judul kita satu-satunya. Hasilnya selalu
+                      TEPAT SATU judul: dijeda → judul YouTube, menonton → judul kita. */}
                   <div
                     className={`pointer-events-none absolute inset-x-0 top-0 z-[6] select-none bg-gradient-to-b from-black/75 via-black/25 to-transparent px-4 pb-8 pt-3 transition-opacity duration-300 ${
-                      (!playing || videoHot) && !idlePaused ? "opacity-100" : "opacity-0"
+                      playing && videoHot && !idlePaused ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <p className="line-clamp-2 text-[15px] font-bold leading-snug text-white drop-shadow sm:text-[17px]">
