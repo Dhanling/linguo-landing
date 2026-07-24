@@ -12,6 +12,7 @@ import {
   computeKidsTrialPrice,
   KIDS_DURATION,
   TRIAL_DURATIONS,
+  TRIAL_LEVEL_IDS,
   isNativeAvailable,
 } from "@/lib/trial-pricing";
 
@@ -34,6 +35,7 @@ export async function POST(req: NextRequest) {
       wa_number,
       program,
       language,
+      level, // trial-level-price-v1 — level CEFR pilihan siswa (Private saja)
       kids_type,
       duration_minutes,
       teacher_type, // native-pricing-v1 — "lokal" | "native"
@@ -59,6 +61,8 @@ export async function POST(req: NextRequest) {
     // ── 2. Hitung harga SERVER-SIDE (jangan percaya amount dari client) ────
     let amount: number | null = null;
     let durationMin = 0;
+    // trial-level-price-v1 — level cuma relevan untuk Private (Kids ikut tier usia).
+    let trialLevel: string | null = null;
     // native-pricing-v1 — markup native (2×) cuma berlaku untuk bahasa yang
     // memang punya pengajar native; selain itu paksa lokal.
     const teacherType =
@@ -74,7 +78,22 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      amount = computePrivateTrialPrice(language, durationMin, teacherType);
+      // trial-level-price-v1 — tarif per sesi beda tiap level, jadi level WAJIB
+      // dan harus dari daftar resmi (jangan biarkan level asing diam-diam jatuh
+      // ke tarif A1 — itu bug yang bikin siswa B1 English ketagih Rp100rb).
+      trialLevel = typeof level === "string" ? level.trim().toUpperCase() : "";
+      if (!TRIAL_LEVEL_IDS.includes(trialLevel)) {
+        return NextResponse.json(
+          { error: "Level tidak valid. Pilih level kelas dulu ya." },
+          { status: 400 }
+        );
+      }
+      amount = computePrivateTrialPrice(
+        language,
+        durationMin,
+        teacherType,
+        trialLevel
+      );
       if (amount == null) {
         return NextResponse.json(
           {
@@ -152,6 +171,7 @@ export async function POST(req: NextRequest) {
           wa_number,
           program,
           language,
+          level: trialLevel, // trial-level-price-v1
           kids_type: program === "kids" ? kids_type : null,
           duration_minutes: durationMin,
           teacher_type: teacherType, // native-pricing-v1
@@ -197,6 +217,7 @@ export async function POST(req: NextRequest) {
           email,
           wa_number,
           language,
+          level: trialLevel, // trial-level-price-v1
           program: programLabel,
           source: "Trial Class",
           payment_status: "PENDING",
@@ -226,7 +247,7 @@ export async function POST(req: NextRequest) {
       `Trial ${programLabel} — ${language}` +
       (program === "kids"
         ? ` (${kids_type})`
-        : ` (${durationMin} menit/sesi)`) +
+        : ` ${trialLevel} (${durationMin} menit/sesi)`) +
       (teacherType === "native" ? " — Pengajar Native" : "");
 
     const xenditRes = await fetch("https://api.xendit.co/v2/invoices", {

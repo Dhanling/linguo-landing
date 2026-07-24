@@ -5,8 +5,13 @@
 // harga live) DAN di route /api/create-trial-invoice (hitung ulang server-side
 // — jangan pernah percaya amount dari client).
 //
-// Trial = 1 sesi berbayar. Karena trial terjadi SEBELUM placement test (level
-// siswa belum diketahui), harga Private pakai kolom A1/Basic.
+// Trial = 1 sesi berbayar.
+//
+// [linguo-patch:trial-level-price-v1] Harga trial Private IKUT LEVEL yang dipilih
+// siswa (English B1 60 menit = 120rb, bukan 100rb). Sebelumnya form web memaksa
+// kolom A1 dengan alasan "trial terjadi sebelum placement test" — akibatnya siswa
+// intermediate yang daftar sendiri di website ditagih tarif A1, beda dari quote
+// admin di WA (buildTrialQuote di dashboard sudah level-aware sejak awal).
 // =============================================================================
 
 /** Bahasa -> kategori harga. Sumber: pricelist Private (getAutoPrice dashboard). */
@@ -166,6 +171,23 @@ export function computeKidsPerSession(
 /** Pilihan durasi (menit) untuk trial Private. */
 export const TRIAL_DURATIONS: number[] = [30, 45, 60, 75, 90];
 
+// =============================================================================
+// linguo-patch:trial-level-price-v1
+// Pilihan level untuk trial Private. Empat level pertama identik dengan picker
+// level funnel (FunnelModal/page.tsx); C1 ditambah karena PRICE_PRIVATE_60MIN
+// kategori C memang punya tier ke-5 — tanpa itu siswa advanced ketagih tarif B2.
+// =============================================================================
+export const TRIAL_LEVELS: { id: string; label: string; desc: string }[] = [
+  { id: "A1", label: "A1 — Basic", desc: "Pemula, mulai dari nol" },
+  { id: "A2", label: "A2 — Elementary", desc: "Percakapan sederhana" },
+  { id: "B1", label: "B1 — Intermediate", desc: "Percakapan sehari-hari" },
+  { id: "B2", label: "B2 — Upper Intermediate", desc: "Lancar & topik kompleks" },
+  { id: "C1", label: "C1 — Advanced", desc: "Nyaris seperti penutur asli" },
+];
+
+/** ID level yang sah dikirim client (dipakai validasi server-side). */
+export const TRIAL_LEVEL_IDS: string[] = TRIAL_LEVELS.map((l) => l.id);
+
 /** Daftar bahasa yang bisa dihitung harganya (gabungan semua kategori), urut A-Z. */
 export const TRIAL_LANGUAGES: string[] = Object.values(PRICE_CATEGORIES)
   .reduce<string[]>((acc, arr) => acc.concat(arr), [])
@@ -180,17 +202,19 @@ export function getLanguageCategory(language: string): string | null {
 }
 
 /**
- * Harga trial Private = harga A1 kategori bahasa, di-scale proporsional ke durasi.
- * Return null kalau bahasa tidak ada di pricelist.
+ * Harga trial Private = tarif per sesi 60 menit kategori bahasa PADA LEVEL yang
+ * dipilih siswa (trial-level-price-v1), di-scale proporsional ke durasi.
+ * Return null kalau bahasa tidak ada di pricelist. Level kosong → A1 (perilaku lama).
  */
 export function computePrivateTrialPrice(
   language: string,
   durationMinutes: number,
-  teacherType?: string | null
+  teacherType?: string | null,
+  level?: string | null
 ): number | null {
   const cat = getLanguageCategory(language);
   if (!cat) return null;
-  const base60 = PRICE_A1_60MIN[cat];
+  const base60 = PRICE_PRIVATE_60MIN[cat][getPrivateLevelTier(level || "A1", cat)];
   const dur = Number(durationMinutes) || 60;
   const local = Math.round((base60 * dur) / 60);
   return applyNativeMultiplier(local, teacherType);

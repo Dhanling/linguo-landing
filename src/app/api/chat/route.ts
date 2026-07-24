@@ -88,11 +88,12 @@ Kids native: Little Learner Rp 150.000/sesi (30 menit), Young Explorer Rp 170.00
 JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids (5-8 / 9-12 tahun), BUKAN level kelas dewasa. Level dewasa = Basic/Upper Basic/Intermediate/Advance (A1/A2/B1-B2/C1-C2). Frasa seperti "Young Explorer level Upper Basic" SALAH.
 
 Trial Class (BERBAYAR, bukan gratis):
-- Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom. Trial terjadi SEBELUM placement test, jadi harganya pakai tarif level A1.
-- Harga trial Private = tarif per sesi A1 sesuai kategori bahasa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit: kategori C Rp 100.000, B Rp 110.000, A Rp 120.000. Durasi 30 menit = setengahnya.
-- Trial Kids: Little Learner (30 menit) Rp 75.000, Young Explorer (45 menit) Rp 85.000.
-- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native: Little Learner Rp 150.000, Young Explorer Rp 170.000.
-- Daftar trial: https://linguo.id/kelas-trial
+- Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom.
+- Harga trial Private = SAMA dengan tarif per sesi kelas Private biasa: ikut kategori bahasa DAN LEVEL siswa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit bahasa Inggris (kategori C): A1 Rp 100.000, A2 Rp 110.000, B1 Rp 120.000, B2 Rp 130.000, C1/C2 Rp 140.000. Durasi 30 menit = setengahnya. JANGAN quote tarif A1 untuk semua level.
+- Belum tahu levelnya? Pilih perkiraan terdekat dulu, nanti dipastikan lewat placement test gratis.
+- Trial Kids: Little Learner (30 menit) Rp 75.000, Young Explorer (45 menit) Rp 85.000 (ikut tier usia, bukan level CEFR).
+- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English A1 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native: Little Learner Rp 150.000, Young Explorer Rp 170.000.
+- Daftar trial: https://linguo.id/kelas-trial (pilih bahasa, level, durasi, jadwal → bayar)
 
 Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler

@@ -11,6 +11,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   TRIAL_LANGUAGES,
   TRIAL_DURATIONS,
+  TRIAL_LEVELS,
   KIDS_DURATION,
   computePrivateTrialPrice,
   computeKidsTrialPrice,
@@ -190,6 +191,9 @@ export default function TrialWizard({
   const [country, setCountry] = useState<CountryCode>(DEFAULT_COUNTRY.code);
   const [waNational, setWaNational] = useState("");
   const [language, setLanguage] = useState("");
+  // trial-level-price-v1 — tarif trial beda tiap level, jadi siswa wajib milih
+  // (bukan default A1 diam-diam, itu yang bikin siswa intermediate ketagih 100rb).
+  const [level, setLevel] = useState("");
   const [duration, setDuration] = useState(60);
   const [kidsType, setKidsType] = useState<
     "" | "little-learner" | "young-explorer"
@@ -266,13 +270,16 @@ export default function TrialWizard({
   const price = useMemo<number | null>(() => {
     const tt = nativeOk ? teacherType : "lokal";
     if (program === "private") {
-      return language ? computePrivateTrialPrice(language, duration, tt) : null;
+      // Harga baru muncul setelah level dipilih — level menentukan tarifnya.
+      return language && level
+        ? computePrivateTrialPrice(language, duration, tt, level)
+        : null;
     }
     if (program === "kids") {
       return kidsType ? computeKidsTrialPrice(kidsType, tt) : null;
     }
     return null;
-  }, [program, language, duration, kidsType, teacherType, nativeOk]);
+  }, [program, language, level, duration, kidsType, teacherType, nativeOk]);
 
   // linguo-patch:trial-lang-picker-v1 — daftar bahasa terfilter (search + chip)
   const filteredLangs = useMemo(() => {
@@ -321,6 +328,8 @@ export default function TrialWizard({
     if (s === 2) {
       if (program === "kids" && !kidsType) return "Pilih tipe kelas Kids.";
       if (!language) return "Pilih bahasa dulu ya.";
+      // trial-level-price-v1 — tarif ikut level, jadi wajib dipilih (Private).
+      if (program === "private" && !level) return "Pilih level kamu dulu ya.";
       if (price == null || price <= 0) {
         return "Bahasa ini belum tersedia untuk trial. Hubungi admin ya.";
       }
@@ -372,6 +381,8 @@ export default function TrialWizard({
           wa_number: phone.e164,
           program,
           language,
+          // trial-level-price-v1 — server hitung ulang harga pakai level ini.
+          level: program === "private" ? level : null,
           kids_type: program === "kids" ? kidsType : null,
           // native-pricing-v1 — server hitung ulang harganya (anti-tamper).
           teacher_type: nativeOk ? teacherType : "lokal",
@@ -574,6 +585,48 @@ export default function TrialWizard({
         </div>
       </div>
 
+      {/* trial-level-price-v1 — level menentukan tarif per sesi (mirror funnel) */}
+      {program === "private" && language && (
+        <div>
+          <div className="text-sm font-semibold text-gray-800 mb-1.5">
+            Level kamu
+          </div>
+          <div className="flex flex-col gap-2">
+            {TRIAL_LEVELS.map((lv) => (
+              <button
+                key={lv.id}
+                type="button"
+                onClick={() => {
+                  setLevel(lv.id);
+                  setError("");
+                }}
+                className={selectCard(level === lv.id) + " p-3"}
+              >
+                {level === lv.id && <Check />}
+                <div className="flex items-center gap-3 pr-6">
+                  <div
+                    className="h-9 w-9 shrink-0 rounded-full flex items-center justify-center text-xs font-bold"
+                    style={{ background: "rgba(26,158,158,0.1)", color: TEAL }}
+                  >
+                    {lv.id}
+                  </div>
+                  <div>
+                    <div className="font-bold text-sm text-gray-900">
+                      {lv.label}
+                    </div>
+                    <div className="text-[11px] text-gray-500">{lv.desc}</div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 text-[11px] text-gray-400 leading-relaxed">
+            Belum yakin levelmu? Pilih perkiraan terdekat dulu — nanti pengajar
+            bantu pastikan lewat placement test gratis.
+          </p>
+        </div>
+      )}
+
       {/* native-pricing-v1 — tipe pengajar (Private & Kids). Native = 2× tarif lokal. */}
       {language && (
         <div>
@@ -694,7 +747,7 @@ export default function TrialWizard({
       language +
       (program === "kids"
         ? ` · ${kidsType}`
-        : ` · ${duration} menit`);
+        : ` · ${level} · ${duration} menit`);
     return (
       <div className="space-y-4">
         {/* linguo-patch:trial-lang-picker-v1 — nama/WA/email wajib (label + bintang) */}
