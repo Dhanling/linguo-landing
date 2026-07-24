@@ -852,12 +852,17 @@ const WHY_CARDS = [
 function WhyCarousel() {
   const [active, setActive] = useState(1);
   const [cardW, setCardW] = useState(300);
+  const [hovered, setHovered] = useState(false);
   const total = WHY_CARDS.length;
   const gap = 24;
   const step = cardW + gap;
 
-  // linguo-patch:disable-autoscroll-v1
-  // Auto-scroll disabled — user can navigate manually via arrows/dots
+  // linguo-patch:why-autoplay-v1 — jalan otomatis kiri→kanan, jeda saat hover
+  useEffect(() => {
+    if (hovered) return;
+    const id = setInterval(() => setActive(a => (a + 1) % total), 3500);
+    return () => clearInterval(id);
+  }, [hovered, total]);
 
   // Responsive card width — fit phones, normal on desktop
   useEffect(() => {
@@ -875,7 +880,7 @@ function WhyCarousel() {
   const offset = -(active * step);
 
   return (
-    <div className="relative px-4 sm:px-6">
+    <div className="relative px-4 sm:px-6" onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
       <div className="flex justify-end max-w-5xl mx-auto gap-2 mb-3 sm:mb-6">
         <button onClick={() => setActive(a => (a - 1 + total) % total)} className="h-8 w-8 sm:h-9 sm:w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-500"/></button>
         <button onClick={() => setActive(a => (a + 1) % total)} className="h-8 w-8 sm:h-9 sm:w-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"><ChevronRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-500"/></button>
@@ -1943,15 +1948,15 @@ const PRODUCTS = [
   // linguo-patch:private-pricing-v1 — harga Private bervariasi per bahasa (Rp90rb–
   // 120rb+/sesi). Homepage tidak tahu bahasa, jadi tampilkan "Mulai" + hapus
   // framing "diskon 10% dari Rp100.000" yg tidak akurat utk harga variabel.
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",img1:"/images/programs/reguler-1.jpg",img2:"/images/programs/reguler-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",img1:"/images/programs/ielts-2.jpg",img2:"/images/programs/ielts-1.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>,badgeLabel:"Paling Diminati",badgeColor:"bg-[#1A9E9E] text-white",title:"Kelas Private",desc:"Belajar 1-on-1 via Zoom, request jadwal & topik sesukamu",priceOld:null,price:"Mulai Rp 90.000",per:"/sesi",discount:null,tab:0,bgColor:"#E0F7F7",imageEmoji:"",img1:"/images/programs/private-1.jpg",img2:"/images/programs/private-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,badgeLabel:"Terjangkau",badgeColor:"bg-blue-500 text-white",title:"Kelas Reguler",desc:"Grup class dengan jadwal tetap, cocok untuk belajar bareng",priceOld:"Rp 200.000",price:"Rp 150.000",per:"/2 bulan",discount:"25%",tab:1,bgColor:"#E8F0FE",imageEmoji:"",img1:"/images/programs/reguler-1.jpg",img2:"/images/programs/reguler-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>,badgeLabel:"Intensif",badgeColor:"bg-amber-500 text-white",title:"IELTS / TOEFL",desc:"16 sesi @90 menit, persiapan tes bahasa Inggris terlengkap",priceOld:"Rp 400.000",price:"Rp 300.000",per:"/2 bulan",discount:"25%",tab:2,bgColor:"#FFF8E1",imageEmoji:"",img1:"/images/programs/ielts-2.jpg",img2:"/images/programs/ielts-1.jpg"},
   // test-prep-v1 — persiapan ujian bahasa non-Inggris (HSK/JLPT/TOPIK/Goethe) → halaman /persiapan-tes
-  {badgeIcon:<Languages className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Ujian Bahasa",badgeColor:"bg-teal-600 text-white",title:"Persiapan Ujian Bahasa",desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private + mock test",priceOld:null,price:"Mulai Rp 1.000.000",per:"/paket",discount:null,tab:-1,href:"/persiapan-tes",bgColor:"#E0F7F7",imageEmoji:"",lucideIcon:Languages,img1:"/images/programs/private-2.jpg",img2:"/images/programs/private-1.jpg"},
-  {badgeIcon:<Sparkles className="w-3 h-3 inline-block mr-1"/>,badgeLabel:"Lifetime",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill: Reading, Listening, Writing, Speaking",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:"",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-3 h-3 inline-block mr-1"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"",img1:"/images/programs/ebook-1.jpg",img2:"/images/programs/ebook-2.jpg"},
+  {badgeIcon:<Languages className="w-2.5 h-2.5 inline-block mr-0.5"/>,badgeLabel:"Ujian Bahasa",badgeColor:"bg-teal-600 text-white",title:"Persiapan Ujian Bahasa",desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private + mock test",priceOld:null,price:"Mulai Rp 1.000.000",per:"/paket",discount:null,tab:-1,href:"/persiapan-tes",bgColor:"#E0F7F7",imageEmoji:"",lucideIcon:Languages,img1:"/images/programs/private-2.jpg",img2:"/images/programs/private-1.jpg"},
+  {badgeIcon:<Sparkles className="w-2.5 h-2.5 inline-block mr-0.5"/>,badgeLabel:"Lifetime",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill: Reading, Listening, Writing, Speaking",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:"",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Mulai Rp 29.000",per:"/bulan",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Rp 29.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"",img1:"/images/programs/ebook-1.jpg",img2:"/images/programs/ebook-2.jpg"},
 ];
 
 function ProductDock({setPricingTab,onSelectProgram}:{setPricingTab:(t:number)=>void;onSelectProgram:(prog:string)=>void}) {
@@ -2004,14 +2009,14 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
     <div className="flex flex-col min-w-0">
       {p.priceOld && (
         <div className="flex items-center gap-1 mb-0.5">
-          <span className={`${mobile?"text-xs":"text-[9px] lg:text-[10px]"} text-slate-400 line-through`}>{p.priceOld}</span>
-          {p.discount && <span className={`${mobile?"text-xs":"text-[8px] lg:text-[9px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
+          <span className={`${mobile?"text-[10px]":"text-[9px] lg:text-[10px]"} text-slate-400 line-through`}>{p.priceOld}</span>
+          {p.discount && <span className={`${mobile?"text-[9px]":"text-[8px] lg:text-[9px]"} font-bold text-red-500 bg-red-50 px-1 py-0.5 rounded`}>{p.discount}</span>}
         </div>
       )}
-      {priceMulai && <span className={`${mobile?"text-xs text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
+      {priceMulai && <span className={`${mobile?"text-[10px] text-slate-500":"text-[10px] text-slate-400"} leading-none`}>Mulai</span>}
       <div className="flex items-baseline gap-0.5">
-        <span className="text-sm lg:text-base font-bold text-slate-900 whitespace-nowrap">{priceMain}</span>
-        {p.per && <span className={`${mobile?"text-xs":"text-[10px]"} text-slate-400`}>{p.per}</span>}
+        <span className={`${mobile?"text-[13px]":"text-sm lg:text-base"} font-bold text-slate-900 whitespace-nowrap`}>{priceMain}</span>
+        {p.per && <span className={`${mobile?"text-[10px]":"text-[10px]"} text-slate-400`}>{p.per}</span>}
       </div>
     </div>
   );
@@ -2032,21 +2037,21 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
           <div className="w-full h-full flex items-center justify-center"><span className="text-4xl">{p.imageEmoji}</span></div>
         )}
         {/* Badge overlaid on image */}
-        <span className={`absolute top-3 left-3 lg:top-4 lg:left-4 z-10 inline-flex items-center gap-1 ${mobile?"text-xs px-2 py-0.5":"text-[9px] lg:text-[10px] px-2.5 py-1"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
+        <span className={`absolute z-10 inline-flex items-center gap-0.5 ${mobile?"top-2 left-2 text-[9px] px-1.5 py-0.5":"top-3 left-3 text-[9px] px-2 py-0.5"} font-bold rounded-full whitespace-nowrap ${p.badgeColor}`}>{p.badgeIcon}{p.badgeLabel}</span>
         {/* Frosted bottom blend into info panel */}
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/60 to-transparent" />
       </div>
 
       {/* Info panel below image */}
       <div className="px-3 pt-3 pb-3 flex flex-col flex-1">
-        <h3 className="font-bold text-sm lg:text-[15px] text-slate-900 mb-0.5">{p.title}</h3>
-        <p className={`${mobile?"text-xs":"text-[10px] lg:text-xs"} text-slate-400 leading-snug mb-3 line-clamp-2`}>{p.desc}</p>
+        <h3 className={`font-bold ${mobile?"text-[13px]":"text-sm lg:text-[15px]"} text-slate-900 mb-0.5 leading-tight`}>{p.title}</h3>
+        <p className={`${mobile?"text-[10px]":"text-[10px] lg:text-xs"} text-slate-400 leading-snug mb-3 line-clamp-2`}>{p.desc}</p>
         {mobile ? (
           /* Mobile: stack price above a full-width button — never overlap. product-dock-mobile-stack-v1 */
           <div className="flex flex-col gap-2 mt-auto">
             {priceBlock}
             <button onClick={(e)=>{e.stopPropagation(); handleClick();}}
-              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors active:scale-95">
+              className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95">
               Beli →
             </button>
           </div>
@@ -2242,13 +2247,17 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
           <h3 className="text-base sm:text-xl font-bold mb-4 sm:mb-6">Mau belajar sendiri dulu?</h3>
           <div className="flex justify-center gap-3 sm:gap-5 flex-wrap">
             {[
-              {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000"},
-              {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000"},
+              {name:"E-Learning",desc:"Akses materi interaktif kapan saja",price:"Rp 29.000",mulai:true,per:"/bulan"},
+              {name:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri",price:"Rp 29.000",mulai:true},
             ].map((d,i)=>(
               <div key={i} className="w-[160px] sm:w-[260px] bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 text-center hover:border-[#1A9E9E]/40 hover:shadow-md transition-all">
                 <p className="font-bold text-sm sm:text-base">{d.name}</p>
                 <p className="text-[10px] sm:text-xs text-slate-400 mt-1 mb-2 sm:mb-3">{d.desc}</p>
-                <p className="text-base sm:text-xl font-bold text-[#1A9E9E] mb-3 sm:mb-4">{d.price}</p>
+                <p className="text-base sm:text-xl font-bold text-[#1A9E9E] mb-3 sm:mb-4">
+                  {(d as any).mulai && <span className="block text-[9px] sm:text-[11px] font-medium text-slate-400 leading-none">Mulai</span>}
+                  {d.price}
+                  {(d as any).per && <span className="text-[10px] sm:text-xs font-medium text-slate-400">{(d as any).per}</span>}
+                </p>
                 <a href={(d as any).href || "/produk"}
                   className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95">
                   Beli Sekarang
