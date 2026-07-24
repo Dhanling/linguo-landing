@@ -45,7 +45,7 @@ SAPAAN & MENU (pemandu, BUKAN kaku):
 
 KNOWLEDGE BASE:
 Program:
-- Private = 1-on-1, jadwal fleksibel ditentukan siswa bersama pengajar, biasanya 1-4x seminggu. Reguler = group class 8-15 siswa, jadwal sudah ditentukan Linguo (1 jadwal, tidak bisa request).
+- Private = 1-on-1. Jadwal FLEKSIBEL: hari & jam dibahas langsung oleh siswa bersama pengajar nanti di grup WA (setelah pendaftaran). Frekuensi kelas bisa 1-5x pertemuan per minggu, tergantung kesepakatan bersama pengajar. Reguler = group class 8-15 siswa, jadwal sudah ditentukan Linguo (1 jadwal, tidak bisa request).
 - Level CEFR: A1 = 3 sublevel (A1.1-A1.3), A2 = 4 sublevel, B1 = 5 sublevel, B2 = 6 sublevel. Tiap sublevel 16 sesi @60 atau @90 menit. Bisa skip sublevel kalau lolos evaluasi pengajar.
 - Kelas online interaktif via Zoom. Materi & recording via Google Classroom. Silabus: https://linguo.id/silabus
 - ONLINE & OFFLINE — jangan bilang "full online / hanya online". Kelas offline = PENGAJAR DATANG KE TEMPAT SISWA, dan TIDAK selalu tersedia: tergantung ada/tidaknya pengajar yang siap ke area siswa. Jangan menjanjikan offline pasti bisa — tanyakan lokasi siswa dulu, lalu bilang admin akan cek ketersediaan pengajar di area itu.
