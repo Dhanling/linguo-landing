@@ -9,8 +9,13 @@
 //  - Tampil sebagai modal wizard 3-step (Data Diri / Profil & Lampiran / Pengalaman)
 //  - TAMBAH field CV (link Google Drive) — WAJIB. Disimpan ke kolom job_applications.cv_url
 //    (butuh migration: ADD COLUMN cv_url text — lihat catatan deploy).
-//  - HAPUS field "Portfolio / Karya". Kolom portfolio_url DB dibiarkan (tidak diisi lagi).
+//  - HAPUS field "Portfolio / Karya" (default). Kolom portfolio_url DB dibiarkan.
 //  - LinkedIn jadi OPSIONAL (tetap divalidasi formatnya kalau diisi).
+//
+// Khusus loker VIDEOGRAFER & TALENT:
+//  - Field "Portfolio / Link Contoh Karya" MUNCUL KEMBALI di langkah akhir
+//    (Pengalaman) dan WAJIB diisi. Dideteksi dari judul lowongan (openingTitle).
+//    Disimpan ke kolom job_applications.portfolio_url.
 // =============================================================================
 
 import { useEffect, useState } from "react";
@@ -71,10 +76,23 @@ const EMPTY = {
   education: "",
   experience_summary: "",
   cover_letter: "",
+  portfolio_url: "",
 };
+
+// Loker yang butuh portofolio / link contoh karya (videografer & talent).
+function needsPortfolio(title: string): boolean {
+  const t = title.toLowerCase();
+  return (
+    t.includes("videograf") ||
+    t.includes("videography") ||
+    t.includes("talent")
+  );
+}
 
 export default function ApplicationForm({ openingId, openingTitle }: Props) {
   const router = useRouter();
+
+  const wantPortfolio = needsPortfolio(openingTitle);
 
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(1);
@@ -125,6 +143,15 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
     if (s === 3) {
       if (form.experience_summary.trim().length < 20)
         return "Ceritain pengalaman lo minimal 20 karakter.";
+      if (wantPortfolio) {
+        if (!form.portfolio_url.trim())
+          return "Link portofolio / contoh karya wajib diisi.";
+        try {
+          new URL(normalizeUrl(form.portfolio_url));
+        } catch {
+          return "Link portofolio tidak valid. Contoh: youtube.com/... atau drive.google.com/...";
+        }
+      }
     }
     return "";
   };
@@ -169,6 +196,9 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
         education: form.education.trim() || null,
         experience_summary: form.experience_summary.trim(),
         cover_letter: form.cover_letter.trim() || null,
+        portfolio_url: form.portfolio_url.trim()
+          ? normalizeUrl(form.portfolio_url)
+          : null,
         status: "screening",
       };
 
@@ -407,6 +437,29 @@ export default function ApplicationForm({ openingId, openingTitle }: Props) {
                             minimum
                           </p>
                         </div>
+                        {wantPortfolio && (
+                          <div>
+                            <label className={labelCls}>
+                              <FileUp className="h-3.5 w-3.5 text-[#1A9E9E]" />
+                              Portofolio / Link Contoh Karya {reqStar}
+                            </label>
+                            <input
+                              className={inputCls}
+                              type="text"
+                              inputMode="url"
+                              placeholder="youtube.com/... , instagram.com/... , drive.google.com/..."
+                              value={form.portfolio_url}
+                              onChange={(e) =>
+                                set("portfolio_url", e.target.value)
+                              }
+                            />
+                            <p className="text-[10px] text-gray-500 mt-1 leading-relaxed">
+                              Tempel link karya yang udah lo bikin — reel,
+                              showreel, akun IG/TikTok, kanal YouTube, atau folder
+                              Google Drive. Pastikan bisa diakses tim HR.
+                            </p>
+                          </div>
+                        )}
                         <div>
                           <label className={labelCls}>
                             Cover Letter / Pesan Singkat {optTag}
