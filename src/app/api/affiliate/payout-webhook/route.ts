@@ -14,12 +14,20 @@
 
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { Resend } from 'resend';
 
 const TEACHER_PREFIX = 'TCH-';
 const MONTHS = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
   'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
 const rupiah = (n: number) => 'Rp' + Math.round(Number(n) || 0).toLocaleString('id-ID');
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY || '';
+// Domain HARUS terverifikasi di Resend (sama seperti email lain dari edge functions).
+const EMAIL_FROM = process.env.EMAIL_FROM || 'Linguo <noreply@linguo.id>';
+
+const BRAND = '#136666';
+const BRAND_DARK = '#0F4F4F';
 
 /** 08xx / 8xx / +62xx → 62xx (format yang dipakai bot WA). */
 function normalizePhone(raw: string | null | undefined): string | null {
@@ -112,12 +120,12 @@ export async function POST(req: Request) {
 async function completeTeacherPayout(admin: any, payoutId: string, xenditId: string | null, data: any) {
   const { data: payout } = await admin
     .from('teacher_payouts')
-    .select('*, teachers(id, name, whatsapp)')
+    .select('*, teachers(id, name, whatsapp, email)')
     .eq('id', payoutId)
     .maybeSingle();
   if (!payout) return;
   // sudah pernah diproses (Xendit suka kirim callback dobel) → berhenti,
-  // jangan sampai pengajar dapat notifikasi WA dua kali.
+  // jangan sampai pengajar dapat notifikasi WA/email dua kali.
   if (payout.status === 'transferred') return;
 
   const now = new Date().toISOString();
@@ -131,7 +139,18 @@ async function completeTeacherPayout(admin: any, payoutId: string, xenditId: str
     fee_amount: Number(data?.fee?.amount ?? payout.fee_amount ?? 0) || 0,
   }).eq('id', payoutId);
 
-  await notifyTeacher(admin, payout);
+  // rincian per sesi dipakai bareng oleh notifikasi WA dan email
+  const { data: items } = await admin
+    .from('teacher_payout_items')
+    .select('session_date, student_name, duration_minutes, amount, note')
+    .eq('payout_id', payout.id)
+    .is('released_at', null)
+    .order('session_date', { ascending: true });
+
+  // dua kanal, dua-duanya best-effort — kegagalan notifikasi TIDAK boleh
+  // membatalkan status transfer (uangnya sudah keluar).
+  await notifyTeacher(admin, payout, items || []);
+  await emailTeacher(payout, items || []);
   await closeBatchIfSettled(admin, payout.batch_id);
 }
 
@@ -168,16 +187,9 @@ async function closeBatchIfSettled(admin: any, batchId: string | null) {
  * Kabari pengajar lewat bot WA (antrian wa_outbound, dikirim nomor CS).
  * Ini pengganti pesan manual + link Google Sheet yang selama ini dikirim tangan.
  */
-async function notifyTeacher(admin: any, payout: any) {
+async function notifyTeacher(admin: any, payout: any, items: any[]) {
   const phone = normalizePhone(payout.teachers?.whatsapp);
   if (!phone) return; // pengajar belum punya nomor — dilewati diam-diam
-
-  const { data: items } = await admin
-    .from('teacher_payout_items')
-    .select('session_date, student_name, duration_minutes, amount, note')
-    .eq('payout_id', payout.id)
-    .is('released_at', null)
-    .order('session_date', { ascending: true });
 
   const periode = `${MONTHS[(payout.month || 1) - 1]} ${payout.year}`;
   const nama = String(payout.teachers?.name || '').split(' ')[0] || 'Kak';
@@ -217,4 +229,115 @@ async function notifyTeacher(admin: any, payout: any) {
   // gagal antre WA TIDAK boleh membatalkan status transfer — uangnya sudah keluar
   const { error } = await admin.from('wa_outbound').insert({ phone, body });
   if (error) console.error('[teacher-payout] gagal antre WA:', error.message);
+}
+
+/** Escape teks bebas (nama siswa, catatan) sebelum ditaruh ke HTML email. */
+function esc(s: any): string {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/**
+ * Kabari pengajar lewat EMAIL (Resend) — jalur kedua di samping WA. Dipakai
+ * karena tidak semua pengajar aktif di WA, dan email jadi bukti transfer yang
+ * bisa dicari ulang. Best-effort: kegagalan kirim TIDAK membatalkan transfer.
+ */
+async function emailTeacher(payout: any, items: any[]) {
+  const to = String(payout.teachers?.email || '').trim();
+  if (!to || !to.includes('@')) return; // pengajar belum punya email — lewati
+  if (!RESEND_API_KEY) {
+    console.error('[teacher-payout] RESEND_API_KEY belum di-set, email dilewati');
+    return;
+  }
+
+  const periode = `${MONTHS[(payout.month || 1) - 1]} ${payout.year}`;
+  const nama = String(payout.teachers?.name || '').split(' ')[0] || 'Kak';
+  const adj = Number(payout.adjustment_amount) || 0;
+  const bank = payout.bank_name || payout.bank_code || 'rekening terdaftar';
+  const last4 = String(payout.account_number || '').slice(-4);
+  const list = items || [];
+  const MAX = 30;
+
+  // ── rincian per sesi sebagai baris tabel ──
+  const rowsHtml = list.slice(0, MAX).map((it: any) => {
+    const tgl = it.session_date
+      ? new Date(it.session_date).toLocaleDateString('id-ID', { day: '2-digit', month: 'short' })
+      : '-';
+    const label = esc(it.student_name || it.note || 'Sesi');
+    const durasi = it.duration_minutes ? ` (${it.duration_minutes}m)` : '';
+    return `<tr>
+      <td style="color:#5F7876;font-size:13px;padding:6px 0;border-top:1px solid #EEF3F3;white-space:nowrap;">${tgl}</td>
+      <td style="color:#1F3534;font-size:13px;padding:6px 10px;border-top:1px solid #EEF3F3;">${label}${durasi}</td>
+      <td align="right" style="color:#1F3534;font-size:13px;font-weight:600;padding:6px 0;border-top:1px solid #EEF3F3;white-space:nowrap;">${rupiah(it.amount)}</td>
+    </tr>`;
+  }).join('');
+  const moreHtml = list.length > MAX
+    ? `<tr><td colspan="3" style="color:#7A9594;font-size:12px;padding:6px 0;border-top:1px solid #EEF3F3;">…dan ${list.length - MAX} sesi lainnya</td></tr>`
+    : '';
+  const rincianBlock = list.length
+    ? `<tr><td style="padding:16px 0 4px;color:#0F2D2C;font-size:14px;font-weight:700;">Rincian sesi</td></tr>
+       <tr><td><table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rowsHtml}${moreHtml}</table></td></tr>`
+    : '';
+
+  // ── ringkasan angka ──
+  const summaryRows = [
+    ['Jumlah sesi', String(payout.sessions_completed || 0)],
+    ['Fee sesi', rupiah(payout.total_fee)],
+    ...(adj ? [[adj > 0 ? 'Tambahan' : 'Penyesuaian', rupiah(adj) + (payout.adjustment_note ? ` (${esc(payout.adjustment_note)})` : '')]] as [string, string][] : []),
+    ['Ditransfer ke', `${esc(bank)}${last4 ? ` ···${last4}` : ''} a.n. ${esc(payout.account_holder || '-')}`],
+  ].map(([k, v], i) =>
+    `<tr><td style="color:#5F7876;font-size:14px;padding:9px 0;${i ? 'border-top:1px solid #EEF3F3;' : ''}">${k}</td>` +
+    `<td align="right" style="color:#1F3534;font-size:14px;font-weight:600;padding:9px 0;${i ? 'border-top:1px solid #EEF3F3;' : ''}">${v}</td></tr>`
+  ).join('');
+
+  const html = `<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#EAF2F2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Fee mengajar ${periode} sudah ditransfer: ${rupiah(payout.netto)}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EAF2F2;padding:24px 12px;">
+    <tr><td align="center">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;">
+        <tr><td align="center" style="padding:8px 0 20px;">
+          <span style="font-size:22px;font-weight:800;color:${BRAND_DARK};letter-spacing:-0.5px;">Linguo</span>
+        </td></tr>
+        <tr><td style="background:#ffffff;border-radius:20px;padding:32px 28px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr><td style="color:#0F2D2C;font-size:24px;line-height:30px;font-weight:800;padding:0 0 8px;">Fee mengajar sudah ditransfer 🎉</td></tr>
+            <tr><td style="color:#1F3534;font-size:15px;line-height:24px;padding:6px 0;">Halo Kak ${esc(nama)}, fee mengajar periode <strong>${periode}</strong> sudah kami transfer ke rekeningmu ya.</td></tr>
+            <tr><td style="padding:14px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${BRAND};border-radius:14px;">
+                <tr><td style="padding:18px 20px;">
+                  <div style="color:#BFE3E1;font-size:13px;">Total ditransfer</div>
+                  <div style="color:#ffffff;font-size:26px;font-weight:800;line-height:32px;">${rupiah(payout.netto)}</div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td><table role="presentation" width="100%" cellpadding="0" cellspacing="0">${summaryRows}</table></td></tr>
+            ${rincianBlock}
+            <tr><td style="color:#5F7876;font-size:14px;line-height:22px;padding:18px 0 0;">Kalau ada yang kurang pas, langsung kabari admin ya. Terima kasih sudah mengajar bareng Linguo 🙏</td></tr>
+          </table>
+        </td></tr>
+        <tr><td align="center" style="padding:20px 8px;color:#7A9594;font-size:12px;line-height:18px;">
+          Kamu menerima email ini karena terdaftar sebagai pengajar di Linguo.<br>
+          © ${new Date().getFullYear()} Linguo · <a href="https://linguo.id" style="color:#7A9594;">linguo.id</a>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>`;
+
+  try {
+    const resend = new Resend(RESEND_API_KEY);
+    const { error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to,
+      subject: `Fee mengajar ${periode} sudah ditransfer — ${rupiah(payout.netto)}`,
+      html,
+    });
+    if (error) console.error('[teacher-payout] gagal kirim email:', error);
+  } catch (e: any) {
+    // best-effort — jangan sampai melempar dan bikin webhook balas 500 (Xendit retry)
+    console.error('[teacher-payout] error kirim email (non-fatal):', e?.message || e);
+  }
 }
