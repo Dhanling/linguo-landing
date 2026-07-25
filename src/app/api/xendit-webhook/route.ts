@@ -283,13 +283,16 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
     const regJson = await insReg.json();
     const regId = Array.isArray(regJson) ? regJson[0]?.id : regJson?.id;
 
-    // 5. Tandai lead CONVERTED + arsip + link ke registration (idempotensi berikutnya).
+    // 5. Tandai lead CONVERTED + link ke registration (idempotensi berikutnya).
+    //    SENGAJA TAK diarsip: beda dari Convert manual admin — lead tetap tampil
+    //    di daftar Leads aktif dengan badge "Converted" biar customer yang sudah
+    //    bayar tetap kelihatan di CRM. `converted_registration_id` jadi kunci
+    //    idempotensi + penanda "jangan convert ulang".
     await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${lead.id}`, {
       method: "PATCH",
       headers: supaHeaders,
       body: JSON.stringify({
         payment_status: "CONVERTED",
-        archived_at: new Date().toISOString(),
         converted_registration_id: regId || null,
       }),
     });
