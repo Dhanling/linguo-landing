@@ -14,14 +14,16 @@ import { publicNotes } from '@/components/akun/class-notes';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
 import ClassMateriTab from '@/components/akun/ClassMateriTab';
 import ClassRaporTab from '@/components/akun/ClassRaporTab';
-import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, type LucideIcon } from 'lucide-react';
+// [teacher-workspace-v1] PR punya siklus penuh: diberi pengajar → disetor di sini → dinilai
+import ClassTugasTab from '@/components/akun/ClassTugasTab';
+import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, PenLine, type LucideIcon } from 'lucide-react';
 
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
   initialTab?: string | null;
 }
 
-export type ClassTab = 'overview' | 'jadwal' | 'progress' | 'materi' | 'rapor';
+export type ClassTab = 'overview' | 'jadwal' | 'progress' | 'materi' | 'tugas' | 'rapor';
 type CancelStep = 'confirm' | 'form';
 
 const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
@@ -29,6 +31,7 @@ const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
   { id: 'jadwal', label: 'Jadwal', icon: Calendar },
   { id: 'progress', label: 'Progress', icon: TrendingUp },
   { id: 'materi', label: 'Materi', icon: BookOpen },
+  { id: 'tugas', label: 'Tugas', icon: PenLine },
   { id: 'rapor', label: 'Rapor', icon: BarChart2 },
 ];
 
@@ -371,6 +374,9 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
 
         {/* [kelas-tab-v1] Materi = lampiran pengajar (class_materials) + recording sesi */}
         {!loading && activeTab === 'materi' && <ClassMateriTab reg={reg} schedules={schedules} teacherName={teacherName} />}
+
+        {/* [teacher-workspace-v1] Tugas = PR per sesi + setoran siswa + penilaian pengajar */}
+        {!loading && activeTab === 'tugas' && <ClassTugasTab reg={reg} schedules={schedules} />}
 
         {/* [kelas-tab-v1] Rapor = class_reports yang published + sertifikat (rapor akhir) */}
         {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} />}
