@@ -33,6 +33,7 @@ import {
   Zap,
 } from "lucide-react";
 import DeckLibrary from "./DeckLibrary";
+import { useWlPanel } from "@/lib/wlAnalytics";
 import VocabQuiz from "./VocabQuiz";
 import {
   FREE_SAVE_LIMIT,
@@ -273,6 +274,10 @@ export default function FlashcardDeck({
   // State sesi review (dibekukan saat sesi mulai).
   const [view, setView] = useState<ViewMode>("home");
   const [deck, setDeck] = useState<SavedWord[]>([]);
+
+  // Analitik WL: kuis kosakata & pustaka Deck komunitas.
+  useWlPanel("watch_vocab_quiz", view === "quiz");
+  useWlPanel("watch_deck_library", tab === "deck");
   const [pos, setPos] = useState(0);
   const [knew, setKnew] = useState(0);
   // Kata yang NAIK status jadi "Dikuasai" selama sesi ini → dipakai layar ringkasan

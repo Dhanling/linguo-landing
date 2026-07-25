@@ -75,6 +75,7 @@ import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
 import { LangPickerPanel } from "./LangPickerPanel";
+import { useWlPanel } from "@/lib/wlAnalytics";
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -414,6 +415,11 @@ export default function WatchAndLearn() {
   const wordReqId = useRef(0);
   const [deckOpen, setDeckOpen] = useState(false);
   const [vocabCount, setVocabCount] = useState(0);
+
+  // Analitik WL: dwell di katalog, sesi nonton video, & buka dashboard Kosakata.
+  useWlPanel("watch_catalog", true);
+  useWlPanel("watch_player", active !== null);
+  useWlPanel("watch_kosakata", deckOpen);
   // Watch & Learn WAJIB login dashboard LMS. `null` = sesi masih dicek (tampilkan
   // spinner); `false` = tamu → dilempar ke /akun (layar login); `true` = render.
   const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
