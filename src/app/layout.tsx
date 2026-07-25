@@ -21,6 +21,7 @@ const baloo = Baloo_2({
 import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:trial-wizard-v1
 import ChatWidgetLazy from "@/components/ChatWidgetLazy"; // linguo-patch:chat-widget-ai-wa-v1 — code-split out of initial bundle
 import ChunkReloader from "@/components/ChunkReloader"; // [chunk-reload-v1] auto-reload saat bundle basi sehabis deploy
+import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analytics-v1 — catat page view + durasi ke Supabase
 
 export const metadata: Metadata = {
   title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ChunkReloader />{/* [chunk-reload-v1] */}
         <TrialWizardModal />{/* linguo-patch:trial-wizard-v1 */}
         <ChatWidgetLazy />{/* linguo-patch:chat-widget-ai-wa-v1 */}
+        <AnalyticsTracker />{/* landing-analytics-v1 */}
 
       </body>
     </html>
