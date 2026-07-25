@@ -118,6 +118,187 @@ async function grantSimulationEntitlement(externalId: string): Promise<void> {
   }
 }
 
+// ── funnel-autoconvert-v1: PAID funnel lead → registrations otomatis ─────────
+// MASALAH: checkout funnel landing (create-funnel-invoice) cuma bikin baris di
+// `leads`. Overview admin (line chart, "Pendaftaran Terbaru", omzet) baca dari
+// `registrations`. Jadi pembayaran ETP/Test Prep/Private dari landing yang sudah
+// LUNAS di Xendit TAK PERNAH nongol di Overview sampai admin klik "Convert"
+// manual. Fungsi ini mereplikasi logika Convert (Leads.tsx handleConvertToRegistration)
+// di sisi server: upsert student → insert registration (Lunas) → tandai lead
+// CONVERTED + archived + converted_registration_id.
+//
+// Anti double-count / idempoten: skip kalau lead sudah punya converted_registration_id
+// atau sudah diarsip (webhook Xendit bisa dikirim berkali-kali). Digital (E-Learning/
+// E-Book) SENGAJA di-skip — punya pipeline sendiri (digital_purchases) biar tak dobel.
+function mapFunnelProgramToProduct(program: string | null): string | null {
+  const p = (program || "").toLowerCase().trim();
+  if (!p) return null;
+  if (p === "kelas private" || p === "private") return "Kelas Private";
+  if (p === "kelas reguler" || p === "reguler") return "Kelas Reguler";
+  if (p === "kelas kids" || p === "kids") return "Kelas Kids";
+  if (p === "semi private" || p === "kelas semi private") return "Kelas Semi Private";
+  if (
+    p === "ielts/toefl prep" ||
+    p === "ielts-toefl" ||
+    p === "english test preparation (ielts/toefl)"
+  )
+    return "English Test Preparation (IELTS/TOEFL)";
+  // Test Prep (HSK/JLPT/TOPIK/Goethe): tak ada enum khusus → default format grup kecil.
+  if (p === "test prep") return "Kelas Semi Private";
+  // "digital"/"e-learning"/"e-book"/"simulasi" → skip (pipeline sendiri).
+  return null;
+}
+
+async function autoConvertPaidLeadToRegistration(externalId: string): Promise<void> {
+  try {
+    const supaHeaders = {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    };
+
+    // 1. Ambil lead lengkap by external_id.
+    const leadRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${externalId}&select=id,name,email,wa_number,language,program,level,amount,paid_amount,paid_at,birthdate,learning_goal,schedule_preference,sessions,converted_registration_id,archived_at&limit=1`,
+      { headers: supaHeaders }
+    );
+    if (!leadRes.ok) {
+      console.error("Autoconvert lead lookup failed:", await leadRes.text());
+      return;
+    }
+    const leadRows = await leadRes.json();
+    const lead = Array.isArray(leadRows) ? leadRows[0] : null;
+    if (!lead) return; // bukan lead funnel (subscription/enroll/simulasi) — skip diam-diam
+    // Idempoten: sudah dikonversi atau diarsip → jangan dobel.
+    if (lead.converted_registration_id || lead.archived_at) {
+      console.log(`Autoconvert skip: lead ${lead.id} sudah dikonversi/diarsip`);
+      return;
+    }
+    if (!lead.name) {
+      console.log(`Autoconvert skip: lead ${lead.id} tanpa nama`);
+      return;
+    }
+    const product = mapFunnelProgramToProduct(lead.program);
+    if (!product) {
+      console.log(`Autoconvert skip: program "${lead.program}" tak dipetakan (digital/simulasi/unknown)`);
+      return;
+    }
+
+    // 2. Upsert student (match by nama, mirror admin Convert).
+    let studentId: string | null = null;
+    const stuRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/students?name=ilike.${encodeURIComponent(lead.name)}&select=id&limit=1`,
+      { headers: supaHeaders }
+    );
+    if (stuRes.ok) {
+      const stuRows = await stuRes.json();
+      if (Array.isArray(stuRows) && stuRows[0]?.id) studentId = stuRows[0].id;
+    }
+    if (studentId) {
+      await fetch(`${SUPABASE_URL}/rest/v1/students?id=eq.${studentId}`, {
+        method: "PATCH",
+        headers: supaHeaders,
+        body: JSON.stringify({
+          whatsapp: lead.wa_number || null,
+          email: lead.email || null,
+          birth_date: lead.birthdate || null,
+        }),
+      });
+    } else {
+      // source dibiarkan null (CHECK students_source_check cuma terima enum channel).
+      const insStu = await fetch(`${SUPABASE_URL}/rest/v1/students`, {
+        method: "POST",
+        headers: { ...supaHeaders, Prefer: "return=representation" },
+        body: JSON.stringify({
+          name: lead.name,
+          whatsapp: lead.wa_number || null,
+          email: lead.email || null,
+          birth_date: lead.birthdate || null,
+          learning_objective: lead.learning_goal || null,
+        }),
+      });
+      if (!insStu.ok) {
+        console.error("Autoconvert student insert failed:", await insStu.text());
+        return;
+      }
+      const stuJson = await insStu.json();
+      studentId = Array.isArray(stuJson) ? stuJson[0]?.id : stuJson?.id;
+    }
+    if (!studentId) {
+      console.error("Autoconvert: student_id tak ketemu setelah upsert");
+      return;
+    }
+
+    // 3. Reguler: resolusi kode batch dari lead.language (mirror admin).
+    const isReguler = product === "Kelas Reguler";
+    let resolvedBatchId: string | null = null;
+    let resolvedLevel: string | null = null;
+    const batchCode =
+      (lead.language || "").match(/([A-Z]{2,4}-[A-Za-z0-9.]+-[A-Z]{3}\d{2}(?:-[A-Z])?)/)?.[1] ||
+      null;
+    if (batchCode) {
+      resolvedLevel = batchCode.split("-")[1] || null;
+      const bRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/regular_batches?batch_code=ilike.${encodeURIComponent(batchCode)}&select=id&limit=1`,
+        { headers: supaHeaders }
+      );
+      if (bRes.ok) {
+        const bRows = await bRes.json();
+        if (Array.isArray(bRows) && bRows[0]?.id) resolvedBatchId = bRows[0].id;
+      }
+    }
+
+    // 4. Insert registration (Lunas). payment_date WAJIB diisi biar masuk grafik
+    //    Pendapatan (di-bucket by payment_date, lihat omzet-payment-date-invariant).
+    const paidDate = lead.paid_at
+      ? new Date(lead.paid_at).toISOString().split("T")[0]
+      : new Date().toISOString().split("T")[0];
+    const isDigital = product === "E-Learning" || product === "E-Book";
+    const regPayload: Record<string, unknown> = {
+      student_id: studentId,
+      product,
+      language: lead.language || null,
+      batch_id: resolvedBatchId,
+      level: resolvedLevel || (lead.level ? `${lead.level}.1` : null),
+      status: "Aktif",
+      pipeline_status: "Aktif",
+      total_amount: lead.paid_amount || lead.amount || 0,
+      payment_status: "Lunas",
+      registration_date: paidDate,
+      payment_date: paidDate,
+      sessions_total: isDigital || isReguler ? null : Number(lead.sessions) || 16,
+      preferred_schedule: isDigital ? null : lead.schedule_preference || null,
+    };
+    if (isReguler) regPayload.product_type = "Reguler";
+
+    const insReg = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
+      method: "POST",
+      headers: { ...supaHeaders, Prefer: "return=representation" },
+      body: JSON.stringify(regPayload),
+    });
+    if (!insReg.ok) {
+      console.error("Autoconvert registration insert failed:", await insReg.text());
+      return;
+    }
+    const regJson = await insReg.json();
+    const regId = Array.isArray(regJson) ? regJson[0]?.id : regJson?.id;
+
+    // 5. Tandai lead CONVERTED + arsip + link ke registration (idempotensi berikutnya).
+    await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${lead.id}`, {
+      method: "PATCH",
+      headers: supaHeaders,
+      body: JSON.stringify({
+        payment_status: "CONVERTED",
+        archived_at: new Date().toISOString(),
+        converted_registration_id: regId || null,
+      }),
+    });
+    console.log(`Autoconvert OK: lead ${lead.id} (${lead.name}) → registration ${regId} [${product}]`);
+  } catch (e) {
+    console.error("autoConvertPaidLeadToRegistration error (non-fatal):", e);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Verify webhook token
@@ -169,6 +350,10 @@ export async function POST(req: NextRequest) {
       await activateLmsSubscription(id);
       // simulasi-paywall-v1: grant entitlement simulasi (external_id LINGUO-SIM-*).
       await grantSimulationEntitlement(external_id);
+      // funnel-autoconvert-v1: lead funnel landing yang LUNAS → registrations otomatis
+      // biar langsung nongol di Overview (line chart, Pendaftaran Terbaru, omzet).
+      // Skip diam-diam kalau bukan lead funnel / digital / sudah dikonversi.
+      await autoConvertPaidLeadToRegistration(external_id);
     }
 
     // 2c. [REGISTRATION] enrollment-server-flow-v1 — invoice dari /api/enroll
