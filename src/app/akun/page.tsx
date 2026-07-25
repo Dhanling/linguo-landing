@@ -1841,7 +1841,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700 mb-3">Pilih jenis kelas:</p>
                 {PROGRAMS.map(p => (
                   <button key={p.key} onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
                     <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${p.tint}`}>
                       <p.icon className="h-[22px] w-[22px]" strokeWidth={2} />
                     </span>
@@ -1862,13 +1862,15 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Pilih bahasa:</p>
                 <input type="text" placeholder="Cari bahasa..." value={langSearch} onChange={e => setLangSearch(e.target.value)} autoFocus
                   onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}
-                  className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400" />
-                <div className="grid grid-cols-3 gap-2">
+                  className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:border-gray-300 focus:ring-2 focus:ring-gray-200" />
+                {/* [linguo-patch:enroll-lang-rows-v1] pilih bahasa jadi daftar baris (bukan grid 3 kolom) + outline netral */}
+                <div className="space-y-2">
                   {enrollAvailLangs.map(lang => (
                     <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
-                      className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${enrollLang === lang ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
-                      <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 object-contain rounded-sm" />
-                      <span className="text-xs font-medium text-gray-700">{lang}</span>
+                      className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                      <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 shrink-0 object-contain rounded-sm" />
+                      <span className="flex-1 truncate text-sm font-medium text-gray-700">{lang}</span>
+                      <ChevronRight className="h-4 w-4 shrink-0 text-gray-300" />
                     </button>
                   ))}
                 </div>
@@ -1888,7 +1890,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Pilih durasi per sesi:</p>
                 {DURATION_OPTIONS.map(d => (
                   <button key={d.val} onClick={() => { setEnrollDuration(d.val); setEnrollStep(3); }}
-                    className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300"}`}>
+                    className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
                     <div>
                       <p className="font-semibold text-gray-900">{d.label}</p>
                       <p className="text-xs text-gray-400">{d.note}</p>
@@ -1919,7 +1921,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     const selected = d in enrollSchedule;
                     const dayTimes = enrollSchedule[d] || [];
                     return (
-                      <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-teal-400 bg-teal-50/50" : "border-gray-100"}`}>
+                      <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-gray-300 bg-gray-50" : "border-gray-100"}`}>
                         <button className="w-full flex items-center justify-between px-4 py-2.5"
                           onClick={() => {
                             if (selected) {
@@ -1944,7 +1946,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                                     [d]: active ? dayTimes.filter(x => x !== t) : [...dayTimes, t]
                                   }));
                                 }}
-                                  className={`py-1.5 rounded-lg text-xs font-medium border transition-all ${active ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 text-gray-600 hover:border-teal-300"}`}>
+                                  className={`py-1.5 rounded-lg text-xs font-medium border transition-all ${active ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
                                   {t}
                                 </button>
                               );
@@ -3883,7 +3885,7 @@ export default function AkunPage() {
                               </div>
                               <div className="relative w-full sm:w-[280px]">
                                 <Search className="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-400" strokeWidth={2} />
-                                <input value={jelajahiQ} onChange={(e) => setJelajahiQ(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/20" />
+                                <input value={jelajahiQ} onChange={(e) => setJelajahiQ(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200/70" />
                               </div>
                             </div>
 
@@ -3891,8 +3893,9 @@ export default function AkunPage() {
                               {filtered.map((l) => {
                                 const pal = JELAJAHI_LANGPAL[JELAJAHI_LANGS.indexOf(l) % JELAJAHI_LANGPAL.length];
                                 const isSel = l.slug === selLang.slug;
+                                // [linguo-patch:jelajahi-no-color-outline-v1] kartu kepilih ga pake ring/outline warna — cukup border & bg netral
                                 return (
-                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-transparent ring-2 ring-[#16796E]" : "border-slate-100 hover:border-[#16796E]/30"}`}>
+                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-slate-300 bg-slate-50" : "border-slate-100 hover:border-slate-200"}`}>
                                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: pal.bg }}><RectFlag code={l.flag} h={20} /></span>
                                     <span className="min-w-0 flex-1">
                                       <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
