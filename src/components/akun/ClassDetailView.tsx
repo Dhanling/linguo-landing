@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
+import { displayLanguage } from '@/lib/classLanguage';
 import { publicNotes } from '@/components/akun/class-notes';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
 import ClassMateriTab from '@/components/akun/ClassMateriTab';
@@ -259,7 +260,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
             <div className="mt-1 flex items-center gap-2.5">
               <img src={getFlagUrl(reg.language)} alt="" className="h-5 w-5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
               <h1 className="truncate text-[24px] font-extrabold leading-tight text-white sm:text-[30px]">
-                {reg.language} · {reg.level || 'TBD'}
+                {displayLanguage(reg.language)} · {reg.level || 'TBD'}
               </h1>
             </div>
           </div>

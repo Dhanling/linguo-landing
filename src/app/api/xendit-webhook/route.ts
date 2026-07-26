@@ -230,21 +230,36 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
     }
 
     // 3. Reguler: resolusi kode batch dari lead.language (mirror admin).
+    // [reguler-english-conversation-v1] nama kelas & level diambil dari baris
+    // regular_batches, JANGAN salin blob "English - Conversation A1.1 (ENG-A11-AUG26)"
+    // mentah-mentah ke registrations (bikin lookup bendera/silabus siswa gagal).
     const isReguler = product === "Kelas Reguler";
     let resolvedBatchId: string | null = null;
     let resolvedLevel: string | null = null;
+    let resolvedLanguage: string | null = lead.language || null;
     const batchCode =
       (lead.language || "").match(/([A-Z]{2,4}-[A-Za-z0-9.]+-[A-Z]{3}\d{2}(?:-[A-Z])?)/)?.[1] ||
       null;
     if (batchCode) {
-      resolvedLevel = batchCode.split("-")[1] || null;
+      // "ENG-A11-AUG26" -> "A1.1" (kode batch lama pakai "A1.1", yg baru "A11").
+      resolvedLevel = (batchCode.split("-")[1] || "").replace(/^([A-C][12])(\d)$/i, "$1.$2") || null;
+      resolvedLanguage =
+        (lead.language || "")
+          .replace(/\s*\([^)]*\)\s*$/, "")
+          .replace(/\s+[A-Ca-c][12](?:\.\d+)?\s*$/, "")
+          .trim() || resolvedLanguage;
       const bRes = await fetch(
-        `${SUPABASE_URL}/rest/v1/regular_batches?batch_code=ilike.${encodeURIComponent(batchCode)}&select=id&limit=1`,
+        `${SUPABASE_URL}/rest/v1/regular_batches?batch_code=ilike.${encodeURIComponent(batchCode)}&select=id,language,level&limit=1`,
         { headers: supaHeaders }
       );
       if (bRes.ok) {
         const bRows = await bRes.json();
-        if (Array.isArray(bRows) && bRows[0]?.id) resolvedBatchId = bRows[0].id;
+        const batch = Array.isArray(bRows) ? bRows[0] : null;
+        if (batch?.id) {
+          resolvedBatchId = batch.id;
+          resolvedLanguage = batch.language || resolvedLanguage;
+          resolvedLevel = batch.level || resolvedLevel;
+        }
       }
     }
 
@@ -257,7 +272,7 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
     const regPayload: Record<string, unknown> = {
       student_id: studentId,
       product,
-      language: lead.language || null,
+      language: resolvedLanguage,
       batch_id: resolvedBatchId,
       level: resolvedLevel || (lead.level ? `${lead.level}.1` : null),
       status: "Aktif",

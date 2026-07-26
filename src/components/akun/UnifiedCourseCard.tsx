@@ -16,6 +16,8 @@ import {
   FileText,
   type LucideIcon,
 } from "lucide-react";
+import { getFlagUrl } from "@/lib/lang-visuals";
+import { displayLanguage } from "@/lib/classLanguage";
 
 // ── Types ──────────────────────────────────────────────────────────
 export type CourseReg = {
@@ -66,17 +68,9 @@ const PRODUCT_BADGE: Record<string, { label: string; icon: LucideIcon; color: st
 };
 
 // ── Helpers ────────────────────────────────────────────────────────
-const LANG_FLAGS: Record<string, string> = {
-  Arabic:"sa",Arab:"sa",Dutch:"nl",Belanda:"nl",English:"gb",Inggris:"gb",
-  Hebrew:"il",Ibrani:"il",Italian:"it",Italia:"it",Japanese:"jp",Jepang:"jp",
-  German:"de",Jerman:"de",Korean:"kr",Korea:"kr",Mandarin:"cn",Chinese:"cn",
-  French:"fr",Prancis:"fr",Russian:"ru",Rusia:"ru",Spanish:"es",Spanyol:"es",
-  Turkish:"tr",Turki:"tr",Thai:"th",Vietnamese:"vn",Hindi:"in",
-  Portuguese:"br",Danish:"dk",Swedish:"se",Finnish:"fi",Polish:"pl",Czech:"cz",
-  Greek:"gr",Yunani:"gr",Persian:"ir",Persia:"ir",Georgian:"ge",Norwegian:"no",
-  Javanese:"id",Jawa:"id",Sundanese:"id",Sunda:"id",BIPA:"id",
-};
-const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[lang] || "un"}.png`;
+// [reguler-english-conversation-v1] tabel bendera lokal dibuang — pakai sumber
+// tunggal @/lib/lang-visuals yang sudah menormalkan nama kelas reguler
+// ("English - Conversation A1.1 (ENG-A11-AUG26)" -> bendera English).
 
 const LEVEL_SEQUENCE = ["A1.1","A1.2","A1.3","A2.1","A2.2","A2.3","A2.4","B1.1","B1.2","B1.3","B1.4","B1.5","B2.1","B2.2","B2.3","B2.4","B2.5","B2.6","B2.7"];
 const LEVEL_MILESTONES = ["A1","A2","B1","B2"];
@@ -141,7 +135,7 @@ export default function UnifiedCourseCard({
             <img src={getFlagUrl(reg.language || "")} alt="" className="h-6 w-6 object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="font-semibold text-gray-900 truncate" title={reg.language || reg.product}>{reg.language || reg.product}</h4>
+            <h4 className="font-semibold text-gray-900 truncate" title={displayLanguage(reg.language) || reg.product}>{displayLanguage(reg.language) || reg.product}</h4>
             <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
               <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color} whitespace-nowrap`}>
                 <BadgeIcon className="w-3 h-3" strokeWidth={2.5} />
@@ -187,7 +181,7 @@ export default function UnifiedCourseCard({
           <img src={getFlagUrl(reg.language)} alt="" className="h-6 w-6 object-contain" />
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-gray-900">{reg.language}</h4>
+          <h4 className="font-semibold text-gray-900">{displayLanguage(reg.language)}</h4>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span className={`inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${badge.bg} ${badge.color}`}>
               <BadgeIcon className="w-3 h-3" strokeWidth={2.5} />

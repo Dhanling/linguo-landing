@@ -13,6 +13,7 @@ import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePr
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import { useOverlayLock } from "@/lib/overlayStore";
+import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
@@ -1103,6 +1104,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
 
   // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
   const isRegulerFlow = selProgram==="Kelas Reguler";
+  // [reguler-english-conversation-v1] label bahasa yg dipakai di ringkasan & yg DISIMPAN
+  // ke lead/registrasi. Di alur Reguler, English = "English - Conversation".
+  const selLangLabel = isRegulerFlow ? regulerLangName(selLang) : selLang;
   const pool = isRegulerFlow
     ? REGULER_LANGS
     : (search.trim()
@@ -1203,7 +1207,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           const res = await fetch("/api/create-invoice", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLang, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined, ref_code: refCode.trim() || undefined }),
+            // [reguler-english-conversation-v1] language DISIMPAN dgn nama kelas resmi
+            // ("English - Conversation"), sinkron dgn regular_batches.language.
+            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLangLabel, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined, ref_code: refCode.trim() || undefined }),
           });
           const data = await res.json();
           if (data.invoice_url) { window.location.href = data.invoice_url; return; }
@@ -1308,7 +1314,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                     <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(hasTeacherPick(selProgram)){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <RectFlag code={getFlagCode(l)} h={24}/>
-                      {l}
+                      {/* [reguler-english-conversation-v1] di alur Kelas Reguler, English cuma dibuka
+                          sebagai kelas Conversation — tampilkan nama kelasnya, bukan "English" polos. */}
+                      {isRegulerFlow ? regulerLangName(l) : l}
                     </button>
                   ))}
                 </div>
@@ -1322,7 +1330,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
               <div className="flex items-center gap-2 mb-4">
                 <RectFlag code={getFlagCode(selLang)} h={24}/>
-                <span className="font-bold">{selLang}</span>
+                <span className="font-bold">{selLangLabel}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
@@ -1352,7 +1360,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-sm font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
@@ -1406,7 +1414,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <button onClick={()=>{ if(hasTeacherPick(selProgram)){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-sm font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
@@ -1509,7 +1517,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <button onClick={()=>setStep(initialProgram ? 1 : 2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← {initialProgram ? "Ganti bahasa" : "Ganti program"}</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-sm font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">Semi Private</span>
               </div>
@@ -1592,7 +1600,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
                 <RectFlag code={getFlagCode(selLang)} h={16}/>
-                <span className="font-medium">{selLang}</span>
+                <span className="font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
                 <span className="text-slate-300">•</span>
@@ -1673,7 +1681,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Bahasa</span>
                   <span className="text-sm font-medium flex items-center gap-2">
-                    <RectFlag code={getFlagCode(selLang)} h={16}/>{selLang}
+                    <RectFlag code={getFlagCode(selLang)} h={16}/>{selLangLabel}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">

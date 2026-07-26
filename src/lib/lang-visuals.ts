@@ -1,6 +1,12 @@
 // [kelas-detail-page-v1] Helper visual bahasa (bendera, foto stok, glyph) — diekstrak
 // dari src/app/akun/page.tsx supaya bisa dipakai bersama oleh beranda akun DAN halaman
 // detail kelas /akun/kelas/[id]. Satu sumber: nambah bahasa cukup di sini.
+//
+// [reguler-english-conversation-v1] registrations.language kelas reguler isinya nama
+// KELAS ("English - Conversation", kadang plus level & kode batch), bukan nama bahasa.
+// Semua lookup di bawah dinormalkan dulu lewat baseLanguage() — tanpa itu bendera
+// jatuh ke "un" & foto stok hilang untuk siswa reguler.
+import { baseLanguage } from "./classLanguage";
 
 export const LANG_FLAGS: Record<string, string> = {
   Arabic:"sa",Arab:"sa",Dutch:"nl",Belanda:"nl",English:"gb",Inggris:"gb",
@@ -16,7 +22,7 @@ export const LANG_FLAGS: Record<string, string> = {
   Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
   Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
 };
-export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[lang] || "un"}.png`;
+export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[baseLanguage(lang)] || "un"}.png`;
 
 // Foto stok bahasa (drop file ke public/lang/<slug>.jpg). Alias ID & EN, case-insensitive.
 // Kalau bahasa ga ke-map / file belum ada -> getLangPhoto balikin null -> kartu pakai fallback glyph.
@@ -43,7 +49,7 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
 };
 export const getLangPhoto = (lang?: string | null): string | null => {
   if (!lang) return null;
-  const slug = LANG_PHOTO_SLUG[lang.trim().toLowerCase()];
+  const slug = LANG_PHOTO_SLUG[baseLanguage(lang).toLowerCase()];
   return slug ? `/lang/${slug}.jpg` : null;
 };
 
@@ -55,5 +61,5 @@ export const langGlyph = (lang: string): string => {
     Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
     Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
   };
-  return g[lang] || "Aa";
+  return g[baseLanguage(lang)] || "Aa";
 };

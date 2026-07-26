@@ -8,6 +8,7 @@ import { ChevronRight, X, Search } from "lucide-react";
 // (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
 import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // funnel-session-duration-v1 · native-pricing-v1
 import { useOverlayLock } from "@/lib/overlayStore";
+import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 
 const LANG_CATEGORIES = [
   { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
@@ -123,6 +124,10 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
     : 0;
 
   const isReguler = REGULER_LANGS.includes(selLang); // bahasa ini punya Kelas Reguler?
+  // [reguler-english-conversation-v1] Kelas Reguler English cuma dibuka sebagai kelas
+  // Conversation — nama itu yang ditampilkan DAN yang disimpan ke lead/registrasi.
+  const isRegulerFlow = selProgram==="Kelas Reguler";
+  const selLangLabel = isRegulerFlow ? regulerLangName(selLang) : selLang;
   const programs = [
     {id:"Kelas Private",icon:"🎓",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
     ...(isReguler?[{id:"Kelas Reguler",icon:"👥",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
@@ -168,7 +173,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
           email: formEmail,
           wa_number: fullNum,
           program: selProgram,
-          language: selLang,
+          language: selLangLabel,
           level: selLevel,
           duration: selDuration,
           teacher_type: hasTeacherPick(selProgram) ? selTeacherType : null,
@@ -252,7 +257,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                     }}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
                       <img src={`https://flagcdn.com/w40/${getFlagCode(l)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
-                      {l}
+                      {isRegulerFlow ? regulerLangName(l) : l}
                     </button>
                   ))}
                 </div>
@@ -265,7 +270,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
               <div className="flex items-center gap-2 mb-4">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-6 w-6 rounded-full object-cover"/>
-                <span className="font-bold">{selLang}</span>
+                <span className="font-bold">{selLangLabel}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
               <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
@@ -296,7 +301,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-sm font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
@@ -352,7 +357,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <button onClick={()=>{ if(hasTeacherPick(selProgram)){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-5 w-5 rounded-full object-cover"/>
-                <span className="text-sm font-medium">{selLang}</span>
+                <span className="text-sm font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
               </div>
@@ -440,7 +445,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
               <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
               <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
                 <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>
-                <span className="font-medium">{selLang}</span>
+                <span className="font-medium">{selLangLabel}</span>
                 <span className="text-slate-300">•</span>
                 <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
                 <span className="text-slate-300">•</span>
@@ -526,7 +531,7 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-slate-500">Bahasa</span>
                   <span className="text-sm font-medium flex items-center gap-2">
-                    <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>{selLang}
+                    <img src={`https://flagcdn.com/w40/${getFlagCode(selLang)}.png`} alt="" className="h-4 w-4 rounded-full object-cover"/>{selLangLabel}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
