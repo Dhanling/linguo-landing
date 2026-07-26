@@ -203,6 +203,15 @@ const KARAOKE_SHADOW =
   // kedalaman/stiker condong ke kanan-bawah + drop shadow halus
   "3px 3px 0 #000, 4px 4px 0 rgba(0,0,0,0.9), 5px 6px 6px rgba(0,0,0,0.5)";
 
+// [watch-translit-outline-only-v1] Baris TRANSLITERASI (bacaan Latin aksara non-Latin)
+// pakai garis tepi hitam SAJA — tanpa efek stiker kanan-bawah & tanpa drop shadow blur.
+// Fontnya kecil dan miring: offset 3-4px + blur bikin huruf tampak dobel/kotor (mis.
+// pinyin "Chōngdiàn, wǒ shǒujī…" terlihat ada bayangan hantu di belakangnya). Outline
+// ~1.5px keliling sudah cukup buat kebaca di atas video terang, dan jauh lebih rapi.
+const TRANSLIT_OUTLINE =
+  "1.5px 1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px -1.5px 0 #000, " +
+  "1.5px 0 0 #000, -1.5px 0 0 #000, 0 1.5px 0 #000, 0 -1.5px 0 #000";
+
 // [watch-translation-stroke-v1] Baris TERJEMAHAN (emas) juga butuh garis tepi hitam
 // biar kebaca di atas video terang — tapi lebih tipis (~1.5px) dari baris target
 // karena fontnya lebih kecil: stroke setebal KARAOKE_SHADOW bikin huruf emas
@@ -4677,7 +4686,7 @@ function KaraokeTranslit({
     : charToks.map((c) => ({ ...c, k: -1 }));
 
   return (
-    <p className={className} style={{ color: "#fff", textShadow: KARAOKE_SHADOW, ...style }}>
+    <p className={className} style={{ color: "#fff", textShadow: TRANSLIT_OUTLINE, ...style }}>
       {toks.map((c, idx) =>
         c.isWord ? (
           <span
