@@ -269,7 +269,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
       {/* ── Info strip: pengajar + progress + chips ── */}
       <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
         {teacherName ? (
-          <div className="flex items-center gap-3 rounded-2xl border border-teal-100 bg-[#F0FAF8] p-4">
+          <div className="flex items-center gap-3 rounded-2xl bg-[#F0FAF8] p-4">
             {teacher?.avatar_url ? (
               <img src={teacher.avatar_url} alt={teacherName} className="h-11 w-11 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = 'none'; el.nextElementSibling?.classList.remove('hidden'); }} />
             ) : null}
@@ -307,7 +307,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
               <button
                 key={t.id}
                 onClick={() => setActiveTab(t.id)}
-                className={`inline-flex items-center gap-1.5 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${activeTab === t.id ? 'border-[#16796E] text-[#16796E]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
+                className={`inline-flex items-center gap-1.5 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${activeTab === t.id ? 'border-transparent text-[#16796E]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
               >
                 <Icon className="h-4 w-4" strokeWidth={2} />{t.label}
               </button>
@@ -323,11 +323,11 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
         {!loading && activeTab === 'overview' && (
           <div className="space-y-5">
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4">
+              <div className="rounded-2xl bg-white p-4">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500"><Clock className="h-3.5 w-3.5" strokeWidth={2} />Durasi/Sesi</div>
                 <div className="mt-1 text-base font-bold text-gray-900">{reg.duration || '-'} menit</div>
               </div>
-              <div className="rounded-2xl border border-gray-200 bg-white p-4">
+              <div className="rounded-2xl bg-white p-4">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500"><CreditCard className="h-3.5 w-3.5" strokeWidth={2} />Total Pembayaran</div>
                 <div className="mt-1 text-base font-bold text-gray-900">Rp{(reg.total_amount || 0).toLocaleString('id-ID')}</div>
               </div>
@@ -421,7 +421,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
                           selectedSlot === s.iso ? 'border-[#16796E] bg-[#16796E] text-white'
                           : disabled ? 'cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400 line-through'
                           : s.isCurrent ? 'border-dashed border-yellow-300 bg-yellow-50 text-yellow-800'
-                          : 'border-slate-200 bg-teal-50 text-teal-700 hover:bg-teal-100'
+                          : 'border-transparent bg-teal-50 text-teal-700 hover:bg-teal-100'
                         }`}
                       >
                         {s.label}
@@ -514,7 +514,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
                         ⚠️ Sesi ini &lt;24 jam lagi. Kalau dibatalkan, <b>sesi tetap terhitung (sessions_used +1)</b> — tidak bisa dikembalikan.
                       </div>
                     ) : (
-                      <div className="rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-800">
+                      <div className="rounded-xl bg-teal-50 p-3 text-sm text-teal-800">
                         ✓ Sesi ini &gt;24 jam lagi, bisa dibatalkan tanpa di-charge.
                       </div>
                     )}
@@ -583,7 +583,7 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-3.5">
+    <div className="rounded-2xl bg-white p-3.5">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <div className={`font-semibold ${isCancelledOrHangus ? 'text-gray-500 line-through' : 'text-gray-900'}`}>

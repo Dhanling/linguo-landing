@@ -156,7 +156,7 @@ export default function JadwalCalendar({
     <div className="w-full space-y-4">
       {/* Jadwal Tetap (Kelas Reguler) — recurring batch + Zoom */}
       {regularBatches.length > 0 && (
-        <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
+        <div className="rounded-2xl bg-white p-4 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
           <h3 className="text-[13px] font-bold text-[#12172B] mb-2.5 inline-flex items-center gap-1.5">
             <CalendarDays className="w-4 h-4 text-[#16796E]" strokeWidth={2.5} /> Jadwal Tetap (Kelas Reguler)
           </h3>
@@ -189,7 +189,7 @@ export default function JadwalCalendar({
       )}
 
       {/* Kalender panel */}
-      <div className="bg-white rounded-[26px] overflow-hidden flex flex-col-reverse lg:flex-row min-w-0 shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] border border-slate-100">
+      <div className="bg-white rounded-[26px] overflow-hidden flex flex-col-reverse lg:flex-row min-w-0 shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)]">
         {/* LEFT: sesi mendatang + legend */}
         <section className="w-full lg:w-[268px] shrink-0 border-t lg:border-t-0 lg:border-r border-slate-100 flex flex-col bg-white">
           <div className="px-5 pt-6 pb-3 flex items-center justify-between">
@@ -360,7 +360,7 @@ export default function JadwalCalendar({
                     {dayEvents.map((e) => {
                       const c = langColor(e.language);
                       return (
-                        <div key={e.id} className="flex items-stretch gap-3 rounded-2xl border border-slate-100 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
+                        <div key={e.id} className="flex items-stretch gap-3 rounded-2xl bg-slate-50 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
                           <span className="flex flex-col items-center justify-center w-20 shrink-0 rounded-xl py-2" style={{ background: c.bg }}>
                             <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
                             {e._end && <span className="text-[11px] font-semibold mt-0.5" style={{ color: c.text }}>{e._end}</span>}
@@ -416,7 +416,7 @@ function SideItem({ s, onClick }: { s: NormSession; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left bg-white rounded-2xl border border-slate-100 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)] p-3 flex items-center gap-3 hover:border-slate-200 hover:-translate-y-0.5 transition"
+      className="w-full text-left bg-white rounded-2xl shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)] p-3 flex items-center gap-3 hover:border-slate-200 hover:-translate-y-0.5 transition"
     >
       <span className="w-12 h-12 shrink-0 rounded-xl bg-[#F5F6F8] flex flex-col items-center justify-center leading-none">
         <span className="text-[15px] font-extrabold text-[#12172B]">{s._d.getDate()}</span>

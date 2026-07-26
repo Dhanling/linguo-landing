@@ -113,7 +113,7 @@ export default function SimulasiKatalog() {
           <Loader2 className="h-6 w-6 animate-spin" />
         </div>
       ) : authed === false ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center">
+        <div className="rounded-2xl bg-white p-8 text-center">
           <p className="text-sm text-slate-600">Kamu perlu masuk dulu untuk mengerjakan simulasi.</p>
         </div>
       ) : (
@@ -184,7 +184,7 @@ export default function SimulasiKatalog() {
             <Link
               key={s.id}
               href={`/akun/simulasi/${s.id}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-gray-200 hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded-2xl bg-white transition hover:border-gray-200 hover:shadow-md"
             >
               {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon.
                   aspect-[16/7] menyamai kartu admin biar tak terlalu tinggi. */}
@@ -250,7 +250,7 @@ export default function SimulasiKatalog() {
             );
           })}
           {sims.length === 0 && lockedTypes.length === 0 && (
-            <div className="sm:col-span-2 xl:col-span-3 rounded-2xl border border-slate-200 bg-white p-10 text-center text-slate-500">
+            <div className="sm:col-span-2 xl:col-span-3 rounded-2xl bg-white p-10 text-center text-slate-500">
               <ClipboardCheck className="mx-auto mb-3 h-8 w-8 opacity-50" />
               <p className="text-sm">Belum ada simulasi yang tersedia. Cek lagi nanti ya!</p>
             </div>

@@ -216,7 +216,7 @@ export default function ClassRaporTab({ reg, teacherName }: { reg: any; teacherN
         const rated = SKILLS.filter((s) => skills[s.key]?.score);
         const avg = rated.length ? rated.reduce((a, s) => a + (skills[s.key].score || 0), 0) / rated.length : 0;
         return (
-          <div key={r.id} className="rounded-2xl border border-gray-200 bg-white p-5">
+          <div key={r.id} className="rounded-2xl bg-white p-5">
             <div className="flex items-start justify-between gap-2">
               <div>
                 <span className={`inline-block rounded-full px-2.5 py-1 text-[11px] font-bold ${r.report_type === 'final' ? 'bg-[#16796E] text-white' : 'bg-[#16796E]/10 text-[#16796E]'}`}>

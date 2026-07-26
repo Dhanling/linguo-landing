@@ -35,7 +35,7 @@ type LessonState =
 
 function ContentSlot({ icon: Icon, label, hint }: { icon: any; label: string; hint: string }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-[#F5F6F8]/60 px-3.5 py-3">
+    <div className="flex items-center gap-3 rounded-xl bg-[#F5F6F8]/60 px-3.5 py-3">
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-slate-400 ring-1 ring-slate-100">
         <Icon className="h-4 w-4" strokeWidth={2} />
       </span>
@@ -224,7 +224,7 @@ export default function SilabusOutline({
         const isCurrent =
           !!currentLevel && currentLevel.toUpperCase().startsWith(lvl.code.toUpperCase());
         return (
-          <div key={lvl.code} className="overflow-hidden rounded-2xl border border-slate-100 bg-white">
+          <div key={lvl.code} className="overflow-hidden rounded-2xl bg-white">
             <button
               onClick={() => setOpenLevel(levelOpen ? null : lvl.code)}
               className="flex w-full items-center gap-3 px-4 py-3.5 text-left transition hover:bg-slate-50"
@@ -256,7 +256,7 @@ export default function SilabusOutline({
                 {lvl.sublevels.map((sub, si) => {
                   const subOpen = openSub === sub.code;
                   return (
-                    <div key={sub.code} className="mt-2 overflow-hidden rounded-xl border border-slate-100">
+                    <div key={sub.code} className="mt-2 overflow-hidden rounded-xl bg-slate-50">
                       <button
                         onClick={() => setOpenSub(subOpen ? null : sub.code)}
                         className="flex w-full items-center gap-3 bg-white px-3.5 py-3 text-left transition hover:bg-slate-50"
@@ -305,7 +305,7 @@ export default function SilabusOutline({
       <div className="flex flex-wrap items-center gap-2 pt-1">
         <a
           href={`/silabus/${slug}`}
-          className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
+          className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
         >
           <BookOpen className="h-4 w-4" strokeWidth={2} />
           Silabus lengkap{languageLabel ? ` ${languageLabel}` : ""}
@@ -313,7 +313,7 @@ export default function SilabusOutline({
         {showPlacementTest ? (
           <a
             href={`/silabus/${slug}/coba`}
-            className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
+            className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
           >
             <Target className="h-4 w-4" strokeWidth={2} />
             Placement Test
@@ -364,11 +364,11 @@ export default function SilabusOutline({
             ) : null}
 
             {lessonState.status === "loading" ? (
-              <div className="mt-5 flex items-center justify-center rounded-xl border border-slate-100 bg-[#F5F6F8]/60 py-6">
+              <div className="mt-5 flex items-center justify-center rounded-xl bg-[#F5F6F8]/60 py-6">
                 <Loader2 className="h-5 w-5 animate-spin text-slate-300" />
               </div>
             ) : lessonState.status === "found" ? (
-              <div className="mt-5 rounded-2xl border border-[#16796E]/20 bg-[#16796E]/5 p-4">
+              <div className="mt-5 rounded-2xl bg-[#16796E]/5 p-4">
                 <div className="flex items-center gap-2.5">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#16796E] text-white">
                     <BookOpen className="h-4 w-4" strokeWidth={2.2} />

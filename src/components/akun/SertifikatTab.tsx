@@ -264,7 +264,7 @@ function SkillBlock({ ct, accent }: { ct: Cert; accent: string }) {
     { icon: PenLine, label: "Menulis", v: Number(w) },
   ];
   return (
-    <div className="mx-auto mt-8 w-full max-w-[480px] rounded-2xl border border-slate-100 bg-white/70 p-5">
+    <div className="mx-auto mt-8 w-full max-w-[480px] rounded-2xl bg-white/70 p-5">
       <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#6B7280]">Penilaian Kemampuan</p>
       <div className="mt-3 flex flex-col items-center gap-5 sm:flex-row sm:items-center">
         <SkillRadar s={Number(s)} l={Number(l)} r={Number(r)} w={Number(w)} accent={accent} />
@@ -334,7 +334,7 @@ export default function SertifikatTab({
   if (!list.length) {
     return (
       <div className="w-full">
-        <div className="rounded-[26px] border border-slate-100 bg-white p-12 text-center shadow-[0_24px_60px_-40px_rgba(18,23,43,.45)]">
+        <div className="rounded-[26px] bg-white p-12 text-center shadow-[0_24px_60px_-40px_rgba(18,23,43,.45)]">
           <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
           <p className="text-[15px] font-extrabold text-[#12172B]">Belum ada sertifikat</p>
           <p className="mt-1 text-[13px] text-[#6B7280]">Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).</p>
@@ -345,7 +345,7 @@ export default function SertifikatTab({
 
   return (
     <div className="w-full">
-      <div className="flex min-w-0 flex-col-reverse overflow-hidden rounded-[26px] border border-slate-100 bg-white shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] lg:flex-row">
+      <div className="flex min-w-0 flex-col-reverse overflow-hidden rounded-[26px] bg-white shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] lg:flex-row">
         {/* LEFT: list */}
         <section className="flex w-full shrink-0 flex-col border-t border-slate-100 bg-white lg:w-[320px] lg:border-r lg:border-t-0">
           <div className="px-6 pb-3 pt-7">
@@ -417,7 +417,7 @@ export default function SertifikatTab({
                 ? <IssuedDetail ct={selected} studentName={studentName} />
                 : <ProgressDetail ct={selected} onContinue={onContinue} onSchedule={onSchedule} />
             ) : (
-              <div className="rounded-2xl border border-slate-100 bg-white p-12 text-center">
+              <div className="rounded-2xl bg-white p-12 text-center">
                 <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
                 <p className="text-[15px] font-extrabold text-[#12172B]">Pilih sertifikat</p>
                 <p className="mt-1 text-[13px] text-[#6B7280]">Belum ada sertifikat di kategori ini.</p>
@@ -587,8 +587,8 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
           {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
           {pdfLoading ? "Membuat PDF…" : "Unduh PDF"}
         </button>
-        <button onClick={handleShare} className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
-        <button onClick={handleLinkedIn} className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
+        <button onClick={handleShare} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
+        <button onClick={handleLinkedIn} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
         <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
       </div>
 
@@ -646,13 +646,13 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#E8EAEE]"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
         <p className="mt-3 flex items-center gap-1.5 text-[13px] font-medium text-[#6B7280]"><Flag className="h-4 w-4 text-[#16796E]" />Tinggal <b className="text-[#12172B]">{remain} sesi</b> lagi ({used}/{total}) untuk membuka sertifikat ini.</p>
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-100 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Selesai</p></div>
-          <div className="rounded-2xl border border-slate-100 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Tersisa</p></div>
-          <div className="rounded-2xl border border-slate-100 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Target Level</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Selesai</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Tersisa</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Target Level</p></div>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />Lanjut Belajar</button>
-          <button onClick={onSchedule} className="inline-flex h-12 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
+          <button onClick={onSchedule} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
         </div>
       </div>
     </div>

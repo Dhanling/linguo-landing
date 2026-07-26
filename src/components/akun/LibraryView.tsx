@@ -396,7 +396,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
 
         {/* bookmark counter */}
         <div className="relative shrink-0">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-[#12A37E] shadow-sm">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#12A37E] shadow-sm">
             <Bookmark className="h-5 w-5" strokeWidth={2.2} fill={bookmarks.size ? "currentColor" : "none"} />
           </div>
           {bookmarks.size > 0 && (
@@ -505,7 +505,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
       {purchases.length === 0 ? (
         <EmptyState />
       ) : shown.length === 0 ? (
-        <div className="rounded-3xl border border-slate-100 bg-white py-16 text-center">
+        <div className="rounded-3xl bg-white py-16 text-center">
           <p className="text-[14px] font-semibold text-slate-500">Tidak ada produk yang cocok.</p>
         </div>
       ) : view === "grid" ? (
@@ -551,7 +551,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
 /* ---------------- sub-components ---------------- */
 function StatChip({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-[13px] font-bold text-slate-600">
+    <span className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-[13px] font-bold text-slate-600">
       {icon}
       {label}
     </span>
@@ -605,7 +605,7 @@ function ProductCard({
   const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
 
   return (
-    <div className={`group flex flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}>
+    <div className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}>
       {/* cover (clickable) */}
       <button onClick={onOpen} disabled={expired} className="relative block text-left disabled:cursor-not-allowed">
         <Cover p={prod} prog={prog} />
@@ -676,7 +676,7 @@ function ProductRow({
   const verb = accessVerb(prod);
   const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
   return (
-    <div className={`flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
+    <div className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>
         {prod.cover_url ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -896,7 +896,7 @@ function RenewModal({
 
 function EmptyState() {
   return (
-    <div className="rounded-3xl border border-slate-100 bg-white px-6 py-16 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
+    <div className="rounded-3xl bg-white px-6 py-16 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
       <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-[#12A37E]"><BookOpen className="h-9 w-9" strokeWidth={2} /></div>
       <h3 className="font-heading text-[20px] font-extrabold text-[#12172B]">Perpustakaan masih kosong</h3>
       <p className="mx-auto mt-1 max-w-sm text-[14px] font-medium text-slate-500">

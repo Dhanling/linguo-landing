@@ -136,7 +136,7 @@ export default function PaymentInstructionSheet({
 
               {/* Existing proof thumbnail */}
               {existingProofUrl && (
-                <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-gray-100">
+                <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
                   <img src={existingProofUrl} alt="Bukti" className="h-10 w-10 rounded object-cover border" />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium text-gray-700 truncate">Bukti sudah diupload</p>

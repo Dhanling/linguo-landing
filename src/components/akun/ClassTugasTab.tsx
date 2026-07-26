@@ -104,7 +104,7 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
         const sub = subs[s.id];
         const isOpen = openId === s.id;
         return (
-          <div key={s.id} className="rounded-2xl border border-gray-200 bg-white p-4">
+          <div key={s.id} className="rounded-2xl bg-white p-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-semibold text-gray-500">{fmtDate(s.scheduled_at)}</span>
               {sub ? (

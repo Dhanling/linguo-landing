@@ -498,7 +498,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               <p className="text-gray-400 text-sm mb-8">Yuk setup akun kamu dalam 1 menit. Kami bantu temukan kelas yang paling cocok! 🚀</p>
               <div className="grid grid-cols-3 gap-3 mb-8 text-center">
                 {[["60+","Bahasa"],["200+","Siswa Aktif"],["1-on-1","Kelas Private"]].map(([v,l]) => (
-                  <div key={l} className="bg-white rounded-2xl p-3 shadow-sm border border-teal-100">
+                  <div key={l} className="bg-white rounded-2xl p-3 shadow-sm">
                     <div className="text-xl font-extrabold text-teal-600">{v}</div>
                     <div className="text-xs text-gray-400 mt-0.5">{l}</div>
                   </div>
@@ -523,7 +523,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   const Icon = p.icon;
                   return (
                   <button key={p.key} onClick={() => { setProgram(p.key); setLang(""); setTestType(""); setExp(""); go(2); }}
-                    className={`w-full flex items-start gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${program === p.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white hover:bg-teal-50/30"}`}>
+                    className={`w-full flex items-start gap-4 p-4 rounded-2xl transition-all text-left active:scale-[0.98] ${program === p.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                     <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0 mt-0.5 ${p.iconTint}`}><Icon className="w-5 h-5" /></span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -551,7 +551,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               <div className="space-y-3 mb-5">
                 {TEST_TYPES.map(t => (
                   <button key={t.key} onClick={() => { setTestType(t.key); go(3); }}
-                    className={`w-full flex items-center gap-4 p-5 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${testType === t.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white"}`}>
+                    className={`w-full flex items-center gap-4 p-5 rounded-2xl transition-all text-left active:scale-[0.98] ${testType === t.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                     <span className="text-3xl">{t.icon}</span>
                     <div>
                       <div className="font-bold text-gray-800">{t.label}</div>
@@ -586,7 +586,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     <div className="grid grid-cols-3 gap-2">
                       {g.langs.map(l => (
                         <button key={l} onClick={() => { setLang(l); go(3, 200); }}
-                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-gray-100 bg-gray-50 text-teal-700" : "border-gray-100 hover:border-gray-200 text-gray-600 bg-white"}`}>
+                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl text-xs font-semibold transition-all active:scale-95 ${lang === l ? "bg-gray-100 text-teal-700" : "bg-gray-50 hover:bg-gray-100 text-gray-600"}`}>
                           {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
                           {l}
                         </button>
@@ -617,7 +617,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       if (opt.key === "beginner") { setExp("beginner"); setLevel(isTestPrep ? "" : "A1.1"); go(4); }
                       else { setExp("some"); if (isTestPrep) { go(4); } else { setLevel(""); } }
                     }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${exp === opt.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white"}`}>
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all text-left active:scale-[0.98] ${exp === opt.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                     <span className="text-3xl">{opt.emoji}</span>
                     <div>
                       <div className={`font-bold text-sm ${exp === opt.key ? "text-teal-700" : "text-gray-800"}`}>{opt.title}</div>
@@ -630,13 +630,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
 
               {/* Level sub-picker — [linguo-patch:onboarding-level-placement-v1] muncul kalau "Sudah ada dasar" & bukan test prep */}
               {exp === "some" && !isTestPrep && (
-                <div className="mt-5 rounded-2xl border-2 border-teal-100 bg-teal-50/40 p-4">
+                <div className="mt-5 rounded-2xl bg-teal-50/40 p-4">
                   <p className="text-sm font-bold text-gray-800">Kamu tau level kamu sekarang?</p>
                   <p className="text-xs text-gray-400 mb-3">Pilih kalau yakin, atau ikut placement test kalau ragu.</p>
                   <div className="grid grid-cols-4 gap-2 mb-2">
                     {["A1","A2","B1","B2"].map(lv => (
                       <button key={lv} onClick={() => { setLevel(lv); go(4); }}
-                        className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all active:scale-95 ${level === lv ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 bg-white text-gray-700 hover:border-gray-200"}`}>
+                        className={`rounded-xl py-2.5 text-sm font-bold transition-all active:scale-95 ${level === lv ? "bg-teal-500 text-white" : "bg-gray-50 text-gray-700 hover:bg-gray-100"}`}>
                         {lv}
                       </button>
                     ))}
@@ -690,11 +690,11 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 <p className="text-gray-400 text-sm mt-1">Biar tim Linguo bisa siapin kelas yang pas buat kamu</p>
               </div>
 
-              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-3 space-y-3">
+              <div className="bg-white rounded-2xl p-4 mb-3 space-y-3">
                 {/* Email — otomatis dari Google, read-only */}
                 <div>
                   <label className="text-xs text-gray-500 mb-1 block">Email</label>
-                  <div className="flex items-center gap-2 rounded-xl border border-gray-100 bg-gray-50 px-4 py-2.5">
+                  <div className="flex items-center gap-2 rounded-xl bg-gray-50 px-4 py-2.5">
                     <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
                     <span className="truncate text-sm text-gray-500">{user?.email || "—"}</span>
                     <span className="ml-auto shrink-0 rounded-full bg-gray-200 px-2 py-0.5 text-[10px] font-semibold text-gray-500">Google</span>
@@ -762,7 +762,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     const years: number[] = [];
                     for (let y = today.getFullYear(); y >= today.getFullYear() - 100; y--) years.push(y);
                     return (
-                      <div className="absolute left-0 right-0 z-30 mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-xl">
+                      <div className="absolute left-0 right-0 z-30 mt-2 rounded-2xl bg-white p-3 shadow-xl">
                         <div className="mb-2 flex items-center gap-2">
                           <select value={calM} onChange={e => setCalM(Number(e.target.value))} className="flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-gray-300">
                             {mLabels.map((m, i) => <option key={m} value={i}>{m}</option>)}
@@ -864,7 +864,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 <h2 className="text-xl font-extrabold text-gray-900">Siap mulai belajar!</h2>
                 <p className="text-gray-400 text-sm mt-1">Ini rangkuman pilihanmu</p>
               </div>
-              <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-5 space-y-3">
+              <div className="bg-white rounded-2xl p-4 mb-5 space-y-3">
                 {[
                   ["🎯 Program", WIZARD_PROGRAMS.find(p => p.key === program)?.label || program],
                   ...(isTestPrep ? [["📝 Tes", testType]] : [["🌍 Bahasa", lang]]),
@@ -964,7 +964,7 @@ function WaGate({ user, student, supabase, onSaved }: {
           <h2 className="text-xl font-extrabold text-gray-900 mt-4">Hai, {firstName}! 👋</h2>
           <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">Sebelum lanjut, lengkapi data profil kamu dulu ya. Tim Linguo butuh ini buat menghubungimu soal jadwal &amp; kelas.</p>
         </div>
-        <div className="bg-white rounded-2xl border border-teal-100 p-4 shadow-sm space-y-3">
+        <div className="bg-white rounded-2xl p-4 shadow-sm space-y-3">
           {needName && (
             <div>
               <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
@@ -1033,7 +1033,7 @@ function SetToggle({ on, onClick }: { on: boolean; onClick: () => void }) {
 
 function SetCard({ title, children, footer }: { title?: string; children: ReactNode; footer?: ReactNode }) {
   return (
-    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-white">
+    <section className="overflow-hidden rounded-3xl bg-white">
       {title ? <div className="px-6 pb-3 pt-5"><h3 className="text-[16px] font-extrabold text-[#12172B]">{title}</h3></div> : null}
       <div className="px-6 pb-5">{children}</div>
       {footer ? <div className="flex justify-end gap-3 border-t border-slate-100 bg-[#F5F6F8] px-6 py-4">{footer}</div> : null}
@@ -1352,7 +1352,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                 </div>
                 {isGoogle && (
                   <div className="mt-1 flex items-center gap-3 border-t border-slate-100 py-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-[15px] font-extrabold" style={{ color: "#4285F4" }}>G</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-[15px] font-extrabold" style={{ color: "#4285F4" }}>G</span>
                     <div><p className="text-[14px] font-bold text-[#12172B]">Google</p><p className="text-[12px] font-medium text-[#6B7280]">Terhubung{user?.email ? " · " + user.email : ""}</p></div>
                   </div>
                 )}
@@ -1470,7 +1470,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <button onClick={openEnrollWizard} className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{paidRegs.length > 0 ? "Tambah Kelas Baru" : "Daftar Kelas"}</button>
                   <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau tanya soal paket/tagihan saya.`)}`} target="_blank" rel="noopener noreferrer"
-                    className="flex h-11 items-center rounded-xl border border-slate-200 px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Hubungi Admin</a>
+                    className="flex h-11 items-center rounded-xl px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Hubungi Admin</a>
                 </div>
               </SetCard>
 
@@ -1518,7 +1518,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
               <SetCard title="Metode Pembayaran">
                 <div className="flex items-center gap-3 py-2">
-                  <span className="flex h-9 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-200" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
+                  <span className="flex h-9 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-50" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
                   <div>
                     <p className="text-[14px] font-bold text-[#12172B]">Pembayaran online via Xendit</p>
                     <p className="text-[12px] font-medium text-[#6B7280]">QRIS, transfer bank (VA), e-wallet, & kartu. Linguo tidak menyimpan data kartumu.</p>
@@ -1836,7 +1836,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700 mb-3">Pilih jenis kelas:</p>
                 {PROGRAMS.map(p => (
                   <button key={p.key} onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                     <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${p.tint}`}>
                       <p.icon className="h-[22px] w-[22px]" strokeWidth={2} />
                     </span>
@@ -1862,7 +1862,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <div className="space-y-2">
                   {enrollAvailLangs.map(lang => (
                     <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
-                      className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                      className={`w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                       <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 shrink-0 object-contain rounded-sm" />
                       <span className="flex-1 truncate text-sm font-medium text-gray-700">{lang}</span>
                       <ChevronRight className="h-4 w-4 shrink-0 text-gray-300" />
@@ -1885,7 +1885,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Pilih durasi per sesi:</p>
                 {DURATION_OPTIONS.map(d => (
                   <button key={d.val} onClick={() => { setEnrollDuration(d.val); setEnrollStep(3); }}
-                    className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                    className={`w-full flex items-center justify-between p-4 rounded-2xl text-left transition-all ${enrollDuration === d.val ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                     <div>
                       <p className="font-semibold text-gray-900">{d.label}</p>
                       <p className="text-xs text-gray-400">{d.note}</p>
@@ -1916,7 +1916,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     const selected = d in enrollSchedule;
                     const dayTimes = enrollSchedule[d] || [];
                     return (
-                      <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-gray-100 bg-gray-50" : "border-gray-100"}`}>
+                      <div key={d} className={`rounded-xl transition-all ${selected ? "bg-gray-100" : "bg-gray-50"}`}>
                         <button className="w-full flex items-center justify-between px-4 py-2.5"
                           onClick={() => {
                             if (selected) {
@@ -1941,7 +1941,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                                     [d]: active ? dayTimes.filter(x => x !== t) : [...dayTimes, t]
                                   }));
                                 }}
-                                  className={`py-1.5 rounded-lg text-xs font-medium border transition-all ${active ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>
+                                  className={`py-1.5 rounded-lg text-xs font-medium transition-all ${active ? "bg-teal-500 text-white" : "bg-white text-gray-600 hover:bg-gray-200"}`}>
                                   {t}
                                 </button>
                               );
@@ -1968,7 +1968,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Ringkasan pendaftaran:</p>
 
                 {/* Kelas baru */}
-                <div className="rounded-2xl border border-teal-100 bg-teal-50/50 p-4 space-y-2">
+                <div className="rounded-2xl bg-teal-50/50 p-4 space-y-2">
                   <div className="flex items-center gap-3 mb-2">
                     {!isTestPrep && <img src={getFlagUrl(enrollLang)} alt="" className="h-8 w-8 object-contain rounded" />}
                     <div>
@@ -3006,7 +3006,7 @@ export default function AkunPage() {
               <GreetingTypewriter />
             </div>
 
-            <div className="rounded-3xl border border-black/5 bg-white p-7 shadow-xl shadow-teal-900/5 sm:p-8">
+            <div className="rounded-3xl bg-white p-7 shadow-xl shadow-teal-900/5 sm:p-8">
               <h2 className="mb-6 text-2xl font-extrabold text-gray-900">Masuk ke Linguo.id</h2>
 
               {/* [akun-oauth-error-surface-v1] Tampilkan alasan gagal login (bukan diam-diam mantul) */}
@@ -3463,14 +3463,14 @@ export default function AkunPage() {
 
                         {/* stats: Bahasa Aktif + Sertifikat CEFR */}
                         <div className="mt-5 grid grid-cols-2 gap-3">
-                          <div className="rounded-2xl border border-slate-100 p-4">
+                          <div className="rounded-2xl bg-slate-50 p-4">
                             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#16796E]/10 text-[#16796E]">
                               <Languages className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
                             <div className="text-2xl font-extrabold leading-none text-[#12172B]">{activeLangCount}</div>
                             <div className="mt-1.5 text-[12px] font-medium text-gray-500">Bahasa Aktif</div>
                           </div>
-                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl border border-slate-100 p-4 text-left transition hover:-translate-y-0.5 hover:border-[#F2CB05]/60">
+                          <button onClick={() => setActiveTab("sertifikat")} className="rounded-2xl bg-slate-50 p-4 text-left transition hover:-translate-y-0.5 hover:bg-slate-100">
                             <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2CB05]/20 text-[#B9890A]">
                               <Award className="h-[18px] w-[18px]" strokeWidth={2.2} />
                             </div>
@@ -3493,7 +3493,7 @@ export default function AkunPage() {
                               const lang = reg?.language || "";
                               const joinable = isJoinable(s.scheduled_at);
                               return (
-                                <div key={s.id} className="rounded-2xl border border-slate-100 bg-white">
+                                <div key={s.id} className="rounded-2xl bg-white">
                                   <button
                                     onClick={() => setActiveTab("jadwal")}
                                     className="group flex w-full items-center gap-3 rounded-2xl p-3 text-left transition-shadow"
@@ -3641,7 +3641,7 @@ export default function AkunPage() {
                                   <button
                                     type="button"
                                     onClick={(e) => { e.stopPropagation(); setCancelTarget(reg); }}
-                                    className="mt-3 w-full rounded-xl border border-gray-200 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+                                    className="mt-3 w-full rounded-xl bg-slate-50 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:bg-red-50 hover:text-red-600"
                                   >
                                     Batalkan pendaftaran
                                   </button>
@@ -3768,7 +3768,7 @@ export default function AkunPage() {
                             {liveView === "aktif" && (
                             <button
                               onClick={openEnrollWizard}
-                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-slate-200 p-4 text-gray-400 transition-colors hover:border-slate-200 hover:text-[#16796E]"
+                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
                             >
                               <Plus className="h-7 w-7" strokeWidth={2} />
                               <span className="text-[13px] font-semibold">Tambah Kelas</span>
@@ -3776,13 +3776,13 @@ export default function AkunPage() {
                             )}
                           </div>
                         ) : liveView === "riwayat" ? (
-                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
                             <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
@@ -3832,7 +3832,7 @@ export default function AkunPage() {
                             </button>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
                             <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
                             <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
@@ -3889,7 +3889,7 @@ export default function AkunPage() {
                                 // [linguo-patch:jelajahi-no-color-outline-v1] kartu kepilih ga pake ring/outline warna — cukup border & bg netral
                                 // [linguo-patch:jelajahi-flag-no-tile-v1] bendera tanpa kotak latar, cukup ikon bendera
                                 return (
-                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-slate-100 bg-slate-50" : "border-slate-100 hover:border-slate-200"}`}>
+                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-slate-100" : "bg-white hover:bg-slate-50"}`}>
                                     <span className="flex h-11 w-11 shrink-0 items-center justify-center"><RectFlag code={l.flag} h={26} /></span>
                                     <span className="min-w-0 flex-1">
                                       <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
@@ -3905,7 +3905,7 @@ export default function AkunPage() {
                             </div>
 
                             {/* detail bahasa kepilih */}
-                            <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-5">
+                            <div className="mt-4 rounded-3xl bg-white p-5">
                               <div className="flex items-center gap-3">
                                 <span className="flex h-12 w-12 shrink-0 items-center justify-center"><RectFlag code={selLang.flag} h={28} /></span>
                                 <div className="min-w-0">
@@ -3919,8 +3919,8 @@ export default function AkunPage() {
                                 ))}
                               </div>
                               <div className="mt-4 flex flex-wrap gap-2">
-                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
-                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
+                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
+                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
                                 <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
                               </div>
                             </div>
@@ -4010,7 +4010,7 @@ export default function AkunPage() {
                   return (
                     <button
                       onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
-                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-white ring-2 ring-[#16796E]" : "hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 border border-slate-100 bg-white" : "w-full"}`}
+                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-[#E8EAEE]" : "bg-white hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 bg-white" : "w-full"}`}
                     >
                       <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl font-extrabold ${pal.tintBg} ${pal.tintText}`}>{mlangGlyph(r.language)}</span>
                       <span className="min-w-0 flex-1">
@@ -4056,7 +4056,7 @@ export default function AkunPage() {
                     {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (
-                      <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+                      <div className="overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
                         <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
@@ -4153,7 +4153,7 @@ export default function AkunPage() {
                                       const d = new Date(s.scheduled_at);
                                       const n = (selected.sessions_used || 0) + i + 1;
                                       return (
-                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[#16796E]/20">
+                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl bg-white p-4 transition hover:bg-[#F5F6F8]">
                                           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-[13px] font-extrabold text-[#12172B]">{String(n).padStart(2, "0")}</span>
                                           <div className="min-w-0 flex-1">
                                             <div className="flex flex-wrap items-center gap-2">
@@ -4185,7 +4185,7 @@ export default function AkunPage() {
                       <div className="flex flex-col lg:min-h-0 lg:flex-1">
                         {MateriTopBar}
                         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
-                          <div className="w-full max-w-md rounded-3xl border border-slate-100 bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
+                          <div className="w-full max-w-md rounded-3xl bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
                             <p className="mt-1 text-[12px] font-medium text-gray-400">Punya paket e-learning? Buka tab <strong>Belajar Mandiri</strong> di atas. Atau daftar kelas live di bawah.</p>
@@ -4253,7 +4253,7 @@ export default function AkunPage() {
           {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning (digital_purchases) */}
           {activeTab === "pustaka" && (
             <motion.div key="pustaka" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <div className="overflow-hidden rounded-3xl border border-slate-100 bg-white">
+              <div className="overflow-hidden rounded-3xl bg-white">
                 <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
                   <div>
                     <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Perpustakaan Saya</span></p>
@@ -4306,7 +4306,7 @@ export default function AkunPage() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 16, scale: 0.95 }}
                   transition={{ duration: 0.18 }}
-                  className="fixed bottom-44 right-4 sm:right-6 z-[60] w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl border border-gray-100 p-4"
+                  className="fixed bottom-44 right-4 sm:right-6 z-[60] w-[calc(100vw-2rem)] max-w-xs rounded-2xl bg-white shadow-2xl p-4"
                 >
                   <h3 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-1.5">
                     <Zap className="w-4 h-4 text-teal-600" strokeWidth={2.5} fill="currentColor" />
@@ -4422,7 +4422,7 @@ export default function AkunPage() {
                 type="button"
                 onClick={() => setCancelTarget(null)}
                 disabled={cancelling}
-                className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-bold text-gray-600 transition-colors hover:bg-gray-50 disabled:opacity-50"
+                className="flex-1 rounded-xl py-2.5 text-sm font-bold text-gray-600 transition-colors hover:bg-gray-50 disabled:opacity-50"
               >
                 Tidak
               </button>
@@ -4494,7 +4494,7 @@ export default function AkunPage() {
                       if (daySlots.length === 0) return null;
                       const dayLabel = date.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" });
                       return (
-                        <div key={di} className="border border-gray-100 rounded-xl p-3">
+                        <div key={di} className="bg-slate-50 rounded-xl p-3">
                           <p className="text-xs font-semibold text-gray-700 mb-2">{dayLabel}</p>
                           <div className="flex flex-wrap gap-1.5">
                             {daySlots.map(s => {
@@ -4514,7 +4514,7 @@ export default function AkunPage() {
                                 }}
                                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                                     isSelected
-                                      ? "bg-teal-600 text-white ring-2 ring-teal-300"
+                                      ? "bg-teal-600 text-white"
                                       : disabled
                                       ? "bg-gray-100 text-gray-400 cursor-not-allowed line-through"
                                       : "bg-green-50 text-green-700 hover:bg-green-100 border border-green-200"

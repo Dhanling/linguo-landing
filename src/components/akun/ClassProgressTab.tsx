@@ -105,7 +105,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Presensi</h2>
             <span className="text-[11px] text-gray-400">{used}/{total} sesi berjalan</span>
           </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-4">
+          <div className="rounded-2xl bg-white p-4">
             <div className="mb-3 flex items-center justify-between gap-2">
               <span className="text-[13px] font-semibold text-gray-700">Kehadiran</span>
               <span className="inline-flex items-baseline gap-1 text-[13px] font-bold text-[#16796E]">
@@ -175,7 +175,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_180px]">
-            <div className="space-y-3 rounded-2xl border border-gray-200 bg-white p-4">
+            <div className="space-y-3 rounded-2xl bg-white p-4">
               {SKILLS.map(({ key, label, Icon }) => {
                 const row = skillMap[key];
                 const score = row?.score || 0;
@@ -232,7 +232,7 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
               const parsed = parseSessionNotes(s.notes);
               const att = ATTENDANCE_BADGE[s.attendance_status] || null;
               return (
-                <div key={s.id} className="relative rounded-2xl border border-gray-200 bg-white p-4">
+                <div key={s.id} className="relative rounded-2xl bg-white p-4">
                   <span className="absolute -left-[19px] top-5 h-3 w-3 rounded-full border-2 border-white bg-[#16796E]" />
                   <div className="flex items-start justify-between gap-2">
                     <div>

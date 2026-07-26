@@ -137,7 +137,7 @@ export default function SimulasiBeliModal({
                     key={p.variant}
                     onClick={() => { if (!p.soon) { setPaket(p); setError(""); } }}
                     disabled={p.soon}
-                    className={`w-full rounded-2xl border border-slate-200 p-4 text-left transition ${p.soon ? "cursor-not-allowed opacity-70" : "hover:border-gray-200 hover:shadow-md active:scale-[0.99]"}`}
+                    className={`w-full rounded-2xl bg-slate-50 p-4 text-left transition ${p.soon ? "cursor-not-allowed opacity-70" : "hover:border-gray-200 hover:shadow-md active:scale-[0.99]"}`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap items-center gap-1.5">

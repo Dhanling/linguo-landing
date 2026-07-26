@@ -88,7 +88,7 @@ export default function AvatarUploader({ avatarUrl, firstName, studentId, supaba
       onDrop={handleDrop}
       title="Klik atau drag gambar untuk ganti foto"
       className={`group relative h-28 w-28 cursor-pointer overflow-hidden rounded-3xl shadow-lg ring-4 transition ${
-        dragOver ? "ring-[#16796E]" : "ring-white"
+        dragOver ? "ring-slate-300" : "ring-white"
       }`}
     >
       {avatarUrl ? (

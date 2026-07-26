@@ -184,7 +184,7 @@ function renderMarkdown(md: string): ReactNode {
             return (
               <div
                 key={j}
-                className="flex items-start gap-3 rounded-2xl border border-slate-100 bg-white p-3.5"
+                className="flex items-start gap-3 rounded-2xl bg-white p-3.5"
               >
                 <span
                   className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg"
@@ -1328,7 +1328,7 @@ function StepView({
             {b.content.instruction}
           </p>
         ) : null}
-        <div className="mt-6 rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_18px_40px_-34px_rgba(18,23,43,.5)]">
+        <div className="mt-6 rounded-3xl bg-white p-5 shadow-[0_18px_40px_-34px_rgba(18,23,43,.5)]">
           <div className="flex items-center gap-3">
             <span
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
@@ -1351,7 +1351,7 @@ function StepView({
               <BookOpen className="h-4 w-4" /> Tampilkan teks
             </button>
           ) : (
-            <div className="mt-4 rounded-2xl border border-slate-100 bg-[#F5F6F8] p-4">
+            <div className="mt-4 rounded-2xl bg-[#F5F6F8] p-4">
               {b.content?.transcript ? (
                 <div className="text-[18px] font-extrabold leading-snug text-slate-900">
                   {b.content.transcript}
@@ -1611,7 +1611,7 @@ function StepView({
       {/* [linguo-patch:lms-stage-redesign-v1] kartu statistik (data asli, no XP palsu) */}
       <div className={`mt-7 grid gap-3 text-left ${total > 0 ? "grid-cols-2" : "grid-cols-1"}`}>
         {total > 0 && (
-          <div className="rounded-2xl border border-slate-100 bg-white p-4">
+          <div className="rounded-2xl bg-white p-4">
             <span
               className="flex h-9 w-9 items-center justify-center rounded-xl"
               style={{ background: hexA(TEAL, 0.1), color: TEAL }}
@@ -1625,7 +1625,7 @@ function StepView({
             <p className="mt-1 text-[12px] font-semibold text-slate-500">Skor kuis</p>
           </div>
         )}
-        <div className="rounded-2xl border border-slate-100 bg-white p-4">
+        <div className="rounded-2xl bg-white p-4">
           <span
             className="flex h-9 w-9 items-center justify-center rounded-xl"
             style={{ background: hexA(YELLOW, 0.2), color: "#9a7400" }}
@@ -1643,7 +1643,7 @@ function StepView({
       {nextLesson ? (
         <button
           onClick={() => onOpenLesson(nextLesson.id)}
-          className="lp-lift mt-4 flex w-full items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 text-left"
+          className="lp-lift mt-4 flex w-full items-center gap-4 rounded-2xl bg-white p-4 text-left"
         >
           <span
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[13px] font-extrabold"
@@ -1844,7 +1844,7 @@ function SessionIndex({
         </div>
 
         {levelOpen && canSwitch && (
-          <div className="absolute left-3 right-3 top-full z-30 mt-1 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_24px_50px_-18px_rgba(18,23,43,0.45)]">
+          <div className="absolute left-3 right-3 top-full z-30 mt-1 overflow-hidden rounded-2xl bg-white shadow-[0_24px_50px_-18px_rgba(18,23,43,0.45)]">
             <p className="px-3 pb-1 pt-3 text-[10px] font-bold uppercase tracking-wide text-slate-400">
               Pilih level
             </p>
