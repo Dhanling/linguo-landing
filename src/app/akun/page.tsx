@@ -246,12 +246,7 @@ const JELAJAHI_LANGS = [
   { name: "Vietnamese", slug: "vietnamese", flag: "vn" },
   { name: "Greek", slug: "greek", flag: "gr" },
 ];
-const JELAJAHI_LANGPAL = [
-  { bg: "#EEEDFE", tx: "#3C3489" }, { bg: "#FAECE7", tx: "#993C1D" },
-  { bg: "#E6F1FB", tx: "#0C447C" }, { bg: "#FBEAF0", tx: "#72243E" },
-  { bg: "#E1F5EE", tx: "#085041" }, { bg: "#FAEEDA", tx: "#633806" },
-  { bg: "#EAF3DE", tx: "#27500A" }, { bg: "#FCEBEB", tx: "#791F1F" },
-];
+// [linguo-patch:jelajahi-flag-no-tile-v1] palet kotak latar bendera dilepas — bendera tampil polos
 
 // ═══════════════════════════════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════════════════════
@@ -372,7 +367,7 @@ function OnbMilestoneBar({ step }: { step: number }) {
       <div className="flex items-center gap-1.5">
         {ONB_MILESTONES.map((label, i) => (
           <div key={label} className={`flex items-center gap-1.5 ${i < total - 1 ? "flex-1" : "flex-none"}`}>
-            <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold transition-all ${i < active ? "bg-teal-500 text-white" : i === active ? "bg-teal-600 text-white ring-4 ring-teal-100" : "bg-gray-100 text-gray-400"}`}>
+            <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold transition-all ${i < active ? "bg-teal-500 text-white" : i === active ? "bg-teal-600 text-white ring-4 ring-gray-100" : "bg-gray-100 text-gray-400"}`}>
               {i < active ? "✓" : i + 1}
             </div>
             {i < total - 1 && <div className={`h-1 flex-1 rounded-full transition-all ${i < active ? "bg-teal-400" : "bg-gray-100"}`} />}
@@ -398,7 +393,7 @@ function RegulerTermsBox({ checked, onChange }: { checked: boolean; onChange: (v
           type="checkbox"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-amber-400 accent-teal-600 focus:ring-teal-500"
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-amber-400 accent-teal-600 focus:ring-gray-300"
         />
         <span className="text-[12px] font-semibold text-amber-900">Saya sudah membaca &amp; menyetujui ketentuan Kelas Reguler di atas.</span>
       </label>
@@ -528,7 +523,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   const Icon = p.icon;
                   return (
                   <button key={p.key} onClick={() => { setProgram(p.key); setLang(""); setTestType(""); setExp(""); go(2); }}
-                    className={`w-full flex items-start gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${program === p.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white hover:bg-teal-50/30"}`}>
+                    className={`w-full flex items-start gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${program === p.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white hover:bg-teal-50/30"}`}>
                     <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0 mt-0.5 ${p.iconTint}`}><Icon className="w-5 h-5" /></span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -556,7 +551,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               <div className="space-y-3 mb-5">
                 {TEST_TYPES.map(t => (
                   <button key={t.key} onClick={() => { setTestType(t.key); go(3); }}
-                    className={`w-full flex items-center gap-4 p-5 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${testType === t.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white"}`}>
+                    className={`w-full flex items-center gap-4 p-5 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${testType === t.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white"}`}>
                     <span className="text-3xl">{t.icon}</span>
                     <div>
                       <div className="font-bold text-gray-800">{t.label}</div>
@@ -580,7 +575,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               </div>
               <div className="relative mb-3">
                 <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari bahasa..."
-                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 pl-9" />
+                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-gray-300 pl-9" />
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
               </div>
               {/* [linguo-patch:onboarding-lang-catalog-v1] grid bahasa dikelompokkan per region */}
@@ -591,7 +586,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     <div className="grid grid-cols-3 gap-2">
                       {g.langs.map(l => (
                         <button key={l} onClick={() => { setLang(l); go(3, 200); }}
-                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-teal-500 bg-teal-50 text-teal-700" : "border-gray-100 hover:border-teal-200 text-gray-600 bg-white"}`}>
+                          className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl border-2 text-xs font-semibold transition-all active:scale-95 ${lang === l ? "border-gray-100 bg-gray-50 text-teal-700" : "border-gray-100 hover:border-gray-200 text-gray-600 bg-white"}`}>
                           {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
                           {l}
                         </button>
@@ -622,7 +617,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       if (opt.key === "beginner") { setExp("beginner"); setLevel(isTestPrep ? "" : "A1.1"); go(4); }
                       else { setExp("some"); if (isTestPrep) { go(4); } else { setLevel(""); } }
                     }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${exp === opt.key ? "border-teal-500 bg-teal-50" : "border-gray-100 hover:border-teal-300 bg-white"}`}>
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 transition-all text-left active:scale-[0.98] ${exp === opt.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200 bg-white"}`}>
                     <span className="text-3xl">{opt.emoji}</span>
                     <div>
                       <div className={`font-bold text-sm ${exp === opt.key ? "text-teal-700" : "text-gray-800"}`}>{opt.title}</div>
@@ -641,13 +636,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   <div className="grid grid-cols-4 gap-2 mb-2">
                     {["A1","A2","B1","B2"].map(lv => (
                       <button key={lv} onClick={() => { setLevel(lv); go(4); }}
-                        className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all active:scale-95 ${level === lv ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 bg-white text-gray-700 hover:border-teal-300"}`}>
+                        className={`rounded-xl border-2 py-2.5 text-sm font-bold transition-all active:scale-95 ${level === lv ? "border-teal-500 bg-teal-500 text-white" : "border-gray-200 bg-white text-gray-700 hover:border-gray-200"}`}>
                         {lv}
                       </button>
                     ))}
                   </div>
                   <button onClick={() => { setLevel("TBD"); go(4); }}
-                    className="w-full flex items-center justify-center gap-2 rounded-xl border-2 border-dashed border-teal-300 bg-white py-2.5 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
+                    className="w-full flex items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-200 bg-white py-2.5 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
                     {placementSlug(lang) ? "🎯 Belum yakin — ikut Placement Test" : "🤔 Belum yakin (pengajar bantu cek)"}
                   </button>
                 </div>
@@ -676,7 +671,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   <button
                     type="button"
                     onClick={() => avatarInputRef.current?.click()}
-                    className="group relative h-20 w-20 overflow-hidden rounded-full border-4 border-white bg-teal-100 shadow-md ring-1 ring-teal-200"
+                    className="group relative h-20 w-20 overflow-hidden rounded-full border-4 border-white bg-teal-100 shadow-md ring-1 ring-slate-200"
                   >
                     {(avatarPreview || googleAvatar) ? (
                       <img src={avatarPreview || googleAvatar} alt="" className="h-full w-full object-cover" />
@@ -713,14 +708,14 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="Nama lengkap kamu"
-                    className={`w-full rounded-xl border px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100 ${triedNext && name.trim().length < 2 ? "border-red-300" : "border-gray-200"}`}
+                    className={`w-full rounded-xl border px-4 py-2.5 text-sm outline-none focus:border-gray-300 ${triedNext && name.trim().length < 2 ? "border-red-300" : "border-gray-200"}`}
                   />
                 </div>
 
                 {/* Nomor WhatsApp — prefix bendera + +62 (inline sebaris) */}
                 <div>
                   <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
-                  <div className={`flex items-stretch overflow-hidden rounded-xl border bg-white focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-100 ${triedNext && !waValid ? "border-red-300" : "border-gray-200"}`}>
+                  <div className={`flex items-stretch overflow-hidden rounded-xl border bg-white focus-within:border-gray-300 ${triedNext && !waValid ? "border-red-300" : "border-gray-200"}`}>
                     <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-gray-200 bg-gray-50 px-3 text-sm font-semibold text-gray-600">
                       <span className="text-base leading-none">🇮🇩</span> +62
                     </span>
@@ -746,7 +741,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       if (birthdate) { const d = new Date(birthdate); setCalY(d.getFullYear()); setCalM(d.getMonth()); }
                       setDateOpen(o => !o);
                     }}
-                    className={`flex w-full items-center gap-2 rounded-xl border px-4 py-2.5 text-left text-sm outline-none focus:border-teal-500 ${triedNext && !birthdate ? "border-red-300" : "border-gray-200"} ${birthdate ? "text-gray-800" : "text-gray-400"}`}
+                    className={`flex w-full items-center gap-2 rounded-xl border px-4 py-2.5 text-left text-sm outline-none focus:border-gray-300 ${triedNext && !birthdate ? "border-red-300" : "border-gray-200"} ${birthdate ? "text-gray-800" : "text-gray-400"}`}
                   >
                     <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                     {birthdate
@@ -769,10 +764,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     return (
                       <div className="absolute left-0 right-0 z-30 mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-xl">
                         <div className="mb-2 flex items-center gap-2">
-                          <select value={calM} onChange={e => setCalM(Number(e.target.value))} className="flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-teal-500">
+                          <select value={calM} onChange={e => setCalM(Number(e.target.value))} className="flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-gray-300">
                             {mLabels.map((m, i) => <option key={m} value={i}>{m}</option>)}
                           </select>
-                          <select value={calY} onChange={e => setCalY(Number(e.target.value))} className="w-24 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-teal-500">
+                          <select value={calY} onChange={e => setCalY(Number(e.target.value))} className="w-24 rounded-lg border border-gray-200 px-2 py-1.5 text-sm outline-none focus:border-gray-300">
                             {years.map(y => <option key={y} value={y}>{y}</option>)}
                           </select>
                         </div>
@@ -811,13 +806,13 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   {!isLN ? (
                     <div className="space-y-2">
                       <select value={province} onChange={e => { setProvince(e.target.value); setCity(""); setManualCity(""); }}
-                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !province ? "border-red-300" : "border-gray-200"} ${province ? "text-gray-800" : "text-gray-400"}`}>
+                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-300 ${triedNext && !province ? "border-red-300" : "border-gray-200"} ${province ? "text-gray-800" : "text-gray-400"}`}>
                         <option value="">Pilih provinsi…</option>
                         {ID_PROVINCES.map(p => <option key={p} value={p}>{p}</option>)}
                       </select>
                       {province && (
                         <select value={city} onChange={e => setCity(e.target.value)}
-                          className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !idCityName ? "border-red-300" : "border-gray-200"} ${city ? "text-gray-800" : "text-gray-400"}`}>
+                          className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-300 ${triedNext && !idCityName ? "border-red-300" : "border-gray-200"} ${city ? "text-gray-800" : "text-gray-400"}`}>
                           <option value="">Pilih kota/kabupaten…</option>
                           {cityOptions.map(c => <option key={c} value={c}>{c}</option>)}
                           <option value="__manual__">Lainnya (ketik manual)…</option>
@@ -825,18 +820,18 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       )}
                       {city === "__manual__" && (
                         <input value={manualCity} onChange={e => setManualCity(e.target.value)} placeholder="Ketik nama kota/kabupaten"
-                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                          className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gray-300" />
                       )}
                     </div>
                   ) : (
                     <div className="space-y-2">
                       <select value={country} onChange={e => setCountry(e.target.value)}
-                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-teal-500 ${triedNext && !country ? "border-red-300" : "border-gray-200"} ${country ? "text-gray-800" : "text-gray-400"}`}>
+                        className={`w-full rounded-xl border bg-white px-3 py-2.5 text-sm outline-none focus:border-gray-300 ${triedNext && !country ? "border-red-300" : "border-gray-200"} ${country ? "text-gray-800" : "text-gray-400"}`}>
                         <option value="">Pilih negara…</option>
                         {WORLD_COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                       </select>
                       <input value={lnCity} onChange={e => setLnCity(e.target.value)} placeholder="Kota (opsional), mis. Tokyo"
-                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                        className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm outline-none focus:border-gray-300" />
                     </div>
                   )}
                 </div>
@@ -891,7 +886,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 Daftar via WhatsApp
               </a>
               {level === "TBD" && !isTestPrep && placementSlug(lang) && (
-                <a href={`/silabus/${placementSlug(lang)}/coba`} onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-teal-500 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
+                <a href={`/silabus/${placementSlug(lang)}/coba`} onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-slate-200 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
                   🎯 Ambil Placement Test dulu
                 </a>
               )}
@@ -974,7 +969,7 @@ function WaGate({ user, student, supabase, onSaved }: {
             <div>
               <label className="text-xs text-gray-500 mb-1 block">Nama lengkap</label>
               <input value={name} onChange={e => setName(e.target.value)} placeholder="Nama lengkap kamu"
-                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-gray-300" />
               {name.length > 0 && !nameValid && (
                 <p className="text-[11px] text-red-500 mt-1.5">Masukkan nama lengkap kamu</p>
               )}
@@ -984,7 +979,7 @@ function WaGate({ user, student, supabase, onSaved }: {
             <div>
               <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
               <input value={wa} onChange={e => setWa(e.target.value)} inputMode="numeric" placeholder="08xxxxxxxxxx"
-                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+                className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-gray-300" />
               {wa.length > 0 && !waValid && (
                 <p className="text-[11px] text-red-500 mt-1.5">Masukkan nomor WhatsApp yang valid (contoh: 08123456789)</p>
               )}
@@ -1048,7 +1043,7 @@ function SetCard({ title, children, footer }: { title?: string; children: ReactN
 
 function SetFieldBox({ children }: { children: ReactNode }) {
   return (
-    <div className="mt-1.5 flex h-12 items-center rounded-xl border border-slate-200 px-4 transition focus-within:border-[#16796E] focus-within:shadow-[0_0_0_4px_rgba(22,121,110,0.12)]">
+    <div className="mt-1.5 flex h-12 items-center rounded-xl border border-slate-200 px-4 transition focus-within:border-slate-300">
       {children}
     </div>
   );
@@ -1337,7 +1332,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   </div>
                   <div className="sm:col-span-2">
                     <label className="text-[13px] font-bold text-[#12172B]">Bio singkat</label>
-                    <div className="mt-1.5 rounded-xl border border-slate-200 px-4 py-3 transition focus-within:border-[#16796E] focus-within:shadow-[0_0_0_4px_rgba(22,121,110,0.12)]">
+                    <div className="mt-1.5 rounded-xl border border-slate-200 px-4 py-3 transition focus-within:border-slate-300">
                       <textarea rows={3} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Ceritakan sedikit tentang dirimu & tujuan belajarmu..." className="w-full resize-none bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
                     </div>
                   </div>
@@ -1841,7 +1836,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700 mb-3">Pilih jenis kelas:</p>
                 {PROGRAMS.map(p => (
                   <button key={p.key} onClick={() => { setEnrollProgram(p.key); setEnrollStep(1); }}
-                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                    className={`w-full flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all active:scale-[0.98] ${enrollProgram === p.key ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
                     <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${p.tint}`}>
                       <p.icon className="h-[22px] w-[22px]" strokeWidth={2} />
                     </span>
@@ -1862,12 +1857,12 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Pilih bahasa:</p>
                 <input type="text" placeholder="Cari bahasa..." value={langSearch} onChange={e => setLangSearch(e.target.value)} autoFocus
                   onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}
-                  className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:border-gray-300 focus:ring-2 focus:ring-gray-200" />
+                  className="w-full h-10 rounded-xl border border-gray-200 px-4 text-sm focus:outline-none focus:border-gray-300" />
                 {/* [linguo-patch:enroll-lang-rows-v1] pilih bahasa jadi daftar baris (bukan grid 3 kolom) + outline netral */}
                 <div className="space-y-2">
                   {enrollAvailLangs.map(lang => (
                     <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
-                      className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                      className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
                       <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 shrink-0 object-contain rounded-sm" />
                       <span className="flex-1 truncate text-sm font-medium text-gray-700">{lang}</span>
                       <ChevronRight className="h-4 w-4 shrink-0 text-gray-300" />
@@ -1890,7 +1885,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 <p className="text-sm font-semibold text-gray-700">Pilih durasi per sesi:</p>
                 {DURATION_OPTIONS.map(d => (
                   <button key={d.val} onClick={() => { setEnrollDuration(d.val); setEnrollStep(3); }}
-                    className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-gray-300 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
+                    className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 text-left transition-all ${enrollDuration === d.val ? "border-gray-100 bg-gray-50" : "border-gray-100 hover:border-gray-200"}`}>
                     <div>
                       <p className="font-semibold text-gray-900">{d.label}</p>
                       <p className="text-xs text-gray-400">{d.note}</p>
@@ -1921,7 +1916,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     const selected = d in enrollSchedule;
                     const dayTimes = enrollSchedule[d] || [];
                     return (
-                      <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-gray-300 bg-gray-50" : "border-gray-100"}`}>
+                      <div key={d} className={`rounded-xl border-2 transition-all ${selected ? "border-gray-100 bg-gray-50" : "border-gray-100"}`}>
                         <button className="w-full flex items-center justify-between px-4 py-2.5"
                           onClick={() => {
                             if (selected) {
@@ -2090,7 +2085,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   Bayar via Transfer (Hubungi Admin WA)
                 </a>
                 <button onClick={() => { handleConfirm(); setTimeout(openEnrollWizard, 300); }}
-                  className="w-full h-10 rounded-xl border-2 border-teal-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
+                  className="w-full h-10 rounded-xl border-2 border-slate-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
                   ➕ Selesai & Tambah Kelas Lain
                 </button>
               </motion.div>
@@ -3553,7 +3548,7 @@ export default function AkunPage() {
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 transition focus-within:ring-2 focus-within:ring-[#16796E]/30 sm:w-[300px]">
+                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 transition sm:w-[300px]">
                             <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
                             <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
                           </label>
@@ -3566,7 +3561,7 @@ export default function AkunPage() {
                           <button
                             onClick={() => setProfileOpen((v) => !v)}
                             aria-label="Buka profil"
-                            className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition hover:ring-2 hover:ring-[#16796E]/40 active:scale-95"
+                            className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition active:scale-95"
                           >
                             {avatarUrl ? (
                               // eslint-disable-next-line @next/next/no-img-element
@@ -3773,7 +3768,7 @@ export default function AkunPage() {
                             {liveView === "aktif" && (
                             <button
                               onClick={openEnrollWizard}
-                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-slate-200 p-4 text-gray-400 transition-colors hover:border-[#16796E]/40 hover:text-[#16796E]"
+                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-slate-200 p-4 text-gray-400 transition-colors hover:border-slate-200 hover:text-[#16796E]"
                             >
                               <Plus className="h-7 w-7" strokeWidth={2} />
                               <span className="text-[13px] font-semibold">Tambah Kelas</span>
@@ -3781,13 +3776,13 @@ export default function AkunPage() {
                             )}
                           </div>
                         ) : liveView === "riwayat" ? (
-                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
                             <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
@@ -3808,7 +3803,7 @@ export default function AkunPage() {
                                 setMateriView("mandiri");
                                 if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
                               }}
-                              className="group rounded-3xl bg-white p-3 text-left ring-1 ring-[#16796E]/15 transition-transform hover:-translate-y-1"
+                              className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
                             >
                               <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
                                 {mandiri.photo ? (
@@ -3837,7 +3832,7 @@ export default function AkunPage() {
                             </button>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl border-2 border-dashed border-slate-200 bg-white p-10 text-center">
+                          <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-10 text-center">
                             <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
                             <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
@@ -3874,7 +3869,6 @@ export default function AkunPage() {
                         const q = jelajahiQ.trim().toLowerCase();
                         const filtered = q ? JELAJAHI_LANGS.filter((l) => l.name.toLowerCase().includes(q)) : JELAJAHI_LANGS;
                         const selLang = JELAJAHI_LANGS.find((l) => l.slug === materiLang) || JELAJAHI_LANGS[0];
-                        const selPal = JELAJAHI_LANGPAL[JELAJAHI_LANGS.indexOf(selLang) % JELAJAHI_LANGPAL.length];
                         const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
                         return (
                           <div>
@@ -3885,18 +3879,18 @@ export default function AkunPage() {
                               </div>
                               <div className="relative w-full sm:w-[280px]">
                                 <Search className="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-400" strokeWidth={2} />
-                                <input value={jelajahiQ} onChange={(e) => setJelajahiQ(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200/70" />
+                                <input value={jelajahiQ} onChange={(e) => setJelajahiQ(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-slate-300" />
                               </div>
                             </div>
 
                             <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 xl:grid-cols-4">
                               {filtered.map((l) => {
-                                const pal = JELAJAHI_LANGPAL[JELAJAHI_LANGS.indexOf(l) % JELAJAHI_LANGPAL.length];
                                 const isSel = l.slug === selLang.slug;
                                 // [linguo-patch:jelajahi-no-color-outline-v1] kartu kepilih ga pake ring/outline warna — cukup border & bg netral
+                                // [linguo-patch:jelajahi-flag-no-tile-v1] bendera tanpa kotak latar, cukup ikon bendera
                                 return (
-                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-slate-300 bg-slate-50" : "border-slate-100 hover:border-slate-200"}`}>
-                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: pal.bg }}><RectFlag code={l.flag} h={20} /></span>
+                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl border bg-white p-3 text-left transition ${isSel ? "border-slate-100 bg-slate-50" : "border-slate-100 hover:border-slate-200"}`}>
+                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center"><RectFlag code={l.flag} h={26} /></span>
                                     <span className="min-w-0 flex-1">
                                       <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
                                       <span className="block text-[12px] font-medium text-gray-500">CEFR A1–B2</span>
@@ -3913,7 +3907,7 @@ export default function AkunPage() {
                             {/* detail bahasa kepilih */}
                             <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-5">
                               <div className="flex items-center gap-3">
-                                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl" style={{ background: selPal.bg }}><RectFlag code={selLang.flag} h={22} /></span>
+                                <span className="flex h-12 w-12 shrink-0 items-center justify-center"><RectFlag code={selLang.flag} h={28} /></span>
                                 <div className="min-w-0">
                                   <p className="text-[15px] font-extrabold text-[#12172B]">{selLang.name} — CEFR A1–B2</p>
                                   <p className="text-[12px] font-medium text-gray-500">8 sublevel · A1.1 sampai B2.2</p>
@@ -3925,8 +3919,8 @@ export default function AkunPage() {
                                 ))}
                               </div>
                               <div className="mt-4 flex flex-wrap gap-2">
-                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
-                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
+                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
+                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
                                 <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
                               </div>
                             </div>
@@ -4044,7 +4038,7 @@ export default function AkunPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition focus-within:ring-2 focus-within:ring-[#16796E]/30">
+                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition">
                         <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
                         <input value={materiSearch} onChange={(e) => setMateriSearch(e.target.value)} placeholder="Cari sesi atau materi…" className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400" />
                       </label>

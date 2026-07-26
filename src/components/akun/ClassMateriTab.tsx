@@ -48,7 +48,7 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
       href={m.url || '#'}
       target="_blank"
       rel="noreferrer"
-      className="group flex items-center gap-3 rounded-2xl border border-gray-200 bg-white p-3.5 transition hover:border-[#16796E]/40 hover:shadow-sm"
+      className="group flex items-center gap-3 rounded-2xl border border-gray-200 bg-white p-3.5 transition hover:border-slate-200 hover:shadow-sm"
     >
       {yt ? (
         <img src={`https://img.youtube.com/vi/${yt}/mqdefault.jpg`} alt="" className="h-12 w-20 shrink-0 rounded-lg object-cover" />

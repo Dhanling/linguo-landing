@@ -421,7 +421,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
                           selectedSlot === s.iso ? 'border-[#16796E] bg-[#16796E] text-white'
                           : disabled ? 'cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400 line-through'
                           : s.isCurrent ? 'border-dashed border-yellow-300 bg-yellow-50 text-yellow-800'
-                          : 'border-teal-200 bg-teal-50 text-teal-700 hover:bg-teal-100'
+                          : 'border-slate-200 bg-teal-50 text-teal-700 hover:bg-teal-100'
                         }`}
                       >
                         {s.label}
@@ -525,7 +525,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
                         onChange={(e) => setCancelReason(e.target.value)}
                         rows={3}
                         placeholder="Contoh: ada keperluan mendadak di kantor"
-                        className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:border-[#16796E] focus:ring-2 focus:ring-[#16796E]/40"
+                        className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:border-slate-300"
                       />
                       <div className="mt-1 text-[11px] text-gray-500">Alasan akan dikirim ke pengajar sebagai notifikasi</div>
                     </div>

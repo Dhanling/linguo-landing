@@ -487,7 +487,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Cari produk…"
-              className="w-full rounded-2xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-[14px] font-medium text-[#12172B] outline-none transition placeholder:text-slate-400 focus:border-[#12A37E] focus:ring-2 focus:ring-[#12A37E]/10"
+              className="w-full rounded-2xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-[14px] font-medium text-[#12172B] outline-none transition placeholder:text-slate-400 focus:border-slate-300"
             />
           </div>
           <div className="hidden items-center gap-1 rounded-2xl bg-slate-100 p-1 sm:flex">
@@ -676,7 +676,7 @@ function ProductRow({
   const verb = accessVerb(prod);
   const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
   return (
-    <div className={`flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-3 transition hover:border-[#12A37E]/30 ${expired ? "opacity-70" : ""}`}>
+    <div className={`flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>
         {prod.cover_url ? (
           // eslint-disable-next-line @next/next/no-img-element

@@ -283,7 +283,7 @@ export default function SilabusOutline({
                                 onClick={() => setOpenSession({ s, subCode: sub.code, levelName: lvl.name })}
                                 className="group flex w-full items-center gap-3 rounded-lg px-1.5 py-2 text-left transition hover:bg-white"
                               >
-                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-[#16796E] ring-1 ring-[#16796E]/15">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-[#16796E] ring-1 ring-slate-200">
                                   {s.number}
                                 </span>
                                 <span className="min-w-0 flex-1 truncate text-[13px] font-bold text-[#12172B]">{s.title}</span>
@@ -305,7 +305,7 @@ export default function SilabusOutline({
       <div className="flex flex-wrap items-center gap-2 pt-1">
         <a
           href={`/silabus/${slug}`}
-          className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"
+          className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
         >
           <BookOpen className="h-4 w-4" strokeWidth={2} />
           Silabus lengkap{languageLabel ? ` ${languageLabel}` : ""}
@@ -313,7 +313,7 @@ export default function SilabusOutline({
         {showPlacementTest ? (
           <a
             href={`/silabus/${slug}/coba`}
-            className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-[#16796E]/30 hover:text-[#16796E]"
+            className="inline-flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 text-[12px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"
           >
             <Target className="h-4 w-4" strokeWidth={2} />
             Placement Test

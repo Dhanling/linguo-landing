@@ -150,7 +150,7 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Tulis jawabanmu di sini…"
-                  className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-[#16796E]"
+                  className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-slate-300"
                 />
                 <input
                   type="url"
@@ -158,7 +158,7 @@ export default function ClassTugasTab({ reg, schedules }: { reg: any; schedules:
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="…atau tempel link (Google Docs, Drive, dll)"
                   disabled={!!file}
-                  className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-[#16796E] disabled:bg-gray-50"
+                  className="w-full rounded-xl border border-gray-300 p-3 text-sm outline-none focus:border-slate-300 disabled:bg-gray-50"
                 />
                 <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-xl border border-dashed border-gray-300 px-3 py-2 text-xs font-medium text-gray-600 hover:bg-gray-50">
                   <Upload className="h-3.5 w-3.5" strokeWidth={2} /> {file ? file.name : 'Lampirkan file (foto / PDF)'}

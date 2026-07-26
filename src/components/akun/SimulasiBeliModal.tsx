@@ -137,7 +137,7 @@ export default function SimulasiBeliModal({
                     key={p.variant}
                     onClick={() => { if (!p.soon) { setPaket(p); setError(""); } }}
                     disabled={p.soon}
-                    className={`w-full rounded-2xl border border-slate-200 p-4 text-left transition ${p.soon ? "cursor-not-allowed opacity-70" : "hover:border-teal-300 hover:shadow-md active:scale-[0.99]"}`}
+                    className={`w-full rounded-2xl border border-slate-200 p-4 text-left transition ${p.soon ? "cursor-not-allowed opacity-70" : "hover:border-gray-200 hover:shadow-md active:scale-[0.99]"}`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap items-center gap-1.5">
@@ -197,17 +197,17 @@ export default function SimulasiBeliModal({
                     <div>
                       <label className="mb-1.5 block text-xs font-semibold text-slate-500">Nama Lengkap</label>
                       <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" disabled={loading}
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
                     </div>
                     <div>
                       <label className="mb-1.5 block text-xs font-semibold text-slate-500">Email <span className="font-normal text-slate-400">(dipakai untuk akses)</span></label>
                       <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@contoh.com" disabled={loading}
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
                     </div>
                     <div>
                       <label className="mb-1.5 block text-xs font-semibold text-slate-500">WhatsApp</label>
                       <input type="tel" value={wa} onChange={(e) => setWa(e.target.value)} placeholder="0821..." disabled={loading}
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-300 disabled:opacity-50" />
                     </div>
                   </>
                 )}
@@ -219,7 +219,7 @@ export default function SimulasiBeliModal({
                   <div className="relative">
                     <Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                     <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Masukkan kode" disabled={loading}
-                      className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case focus:outline-none focus:ring-2 focus:ring-teal-500 disabled:opacity-50" />
+                      className="w-full rounded-xl border border-slate-200 py-3 pl-10 pr-4 text-sm uppercase placeholder:normal-case outline-none focus:border-slate-300 disabled:opacity-50" />
                   </div>
                   {freePromo && (
                     <p className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">

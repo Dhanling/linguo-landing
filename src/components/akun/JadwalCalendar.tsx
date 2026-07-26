@@ -416,7 +416,7 @@ function SideItem({ s, onClick }: { s: NormSession; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left bg-white rounded-2xl border border-slate-100 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)] p-3 flex items-center gap-3 hover:border-[#16796E]/30 hover:-translate-y-0.5 transition"
+      className="w-full text-left bg-white rounded-2xl border border-slate-100 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)] p-3 flex items-center gap-3 hover:border-slate-200 hover:-translate-y-0.5 transition"
     >
       <span className="w-12 h-12 shrink-0 rounded-xl bg-[#F5F6F8] flex flex-col items-center justify-center leading-none">
         <span className="text-[15px] font-extrabold text-[#12172B]">{s._d.getDate()}</span>

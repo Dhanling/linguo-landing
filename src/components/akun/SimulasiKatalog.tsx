@@ -184,7 +184,7 @@ export default function SimulasiKatalog() {
             <Link
               key={s.id}
               href={`/akun/simulasi/${s.id}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-teal-300 hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-gray-200 hover:shadow-md"
             >
               {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon.
                   aspect-[16/7] menyamai kartu admin biar tak terlalu tinggi. */}

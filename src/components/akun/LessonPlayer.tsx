@@ -1949,7 +1949,7 @@ function SessionIndex({
             return (
               <div
                 key={s.id}
-                className={`mb-1 rounded-2xl ${expanded ? "border border-[#16796E]/15" : ""}`}
+                className={`mb-1 rounded-2xl ${expanded ? "border border-slate-200" : ""}`}
               >
                 <button
                   onClick={() => onOpen(s.id)}
