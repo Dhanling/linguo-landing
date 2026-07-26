@@ -38,7 +38,8 @@ export default function LingbookLibraryPage() {
   };
 
   return (
-    <StudentShell active={"lingbook" as AkunTab} onTabChange={goTab}>
+    // [shell-nav-groups-v1] "lingbook" sekarang key sah (NavKey) → highlight sidebar nyala
+    <StudentShell active="lingbook" onTabChange={goTab}>
       <main className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
         {ready ? (
           <BookLibrary />

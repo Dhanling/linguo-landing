@@ -36,7 +36,9 @@ export default function LessonPage() {
   };
 
   return (
-    <StudentShell active="materi" onTabChange={goTab}>
+    // [shell-mobile-drawer-v1] immersive: LessonPlayer punya tombol kembali & kontrol
+    // sendiri — chrome mobile shell dimatikan biar ga numpuk.
+    <StudentShell active="materi" onTabChange={goTab} immersive>
       <LessonPlayer
         lessonId={lessonId}
         onBack={() => router.push("/akun?menu=materi")}

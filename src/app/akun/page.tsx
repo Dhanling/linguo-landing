@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"; // [perf:sidebar-nav-v1]
 import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /akun/kelas/[id]
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
+import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
 import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
 import { toast } from "sonner";
@@ -23,9 +24,8 @@ const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { 
 import PaymentDetailModal from '@/components/akun/PaymentDetailModal';
 import AvatarUploader from '@/components/akun/AvatarUploader';
 import PaymentInstructionSheet from '@/components/akun/PaymentInstructionSheet';
-import TopBarMinimal from '@/components/akun/TopBarMinimal';
 import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
-import MobileBottomNav from '@/components/akun/MobileBottomNav';
+// [shell-mobile-drawer-v1] TopBarMinimal & MobileBottomNav sekarang dirender StudentShell.
 import StudentShell from '@/components/akun/StudentShell';
 import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
@@ -1092,7 +1092,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   // ── [linguo-patch:akun-tagihan-real-v1] Tagihan & Paket — DATA REAL ──────
   const fmtRp = (n: number) => "Rp " + Math.max(0, Math.round(n || 0)).toLocaleString("id-ID");
   const fmtTgl = (d?: string | null) => d ? new Date(d).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) : "-";
-  const progLabel = (r: StudentReg) => `${PROGRAMS.find(p => p.key === r.product)?.label || r.product}${r.language ? ` — ${r.language}` : ""}`;
+  const progLabel = (r: StudentReg) => `${PROGRAMS.find(p => p.key === r.product)?.label || r.product}${r.language ? ` — ${displayLanguage(r.language)}` : ""}`;
 
   const regs: StudentReg[] = student?.registrations || [];
   // Guard sama dengan activeRegs/pendingRegs di dashboard: buang yang dibatalkan/diarsip.
@@ -1591,9 +1591,12 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
       return;
     }
     setLoadingBatches(true);
-    // Map English language name to possible Indonesian/alias
+    // [reguler-english-conversation-v1] dulu query ke tabel `regular_class_batches`
+    // (TIDAK ADA di DB) + status "open" huruf kecil → hasilnya selalu kosong, jadi
+    // step ini selalu bilang "belum ada batch". Sumber yg benar: `regular_batches`,
+    // status "Open", dan bahasa reguler English tersimpan "English - Conversation".
     const langAliases: Record<string, string[]> = {
-      "English": ["English", "Inggris"],
+      "English": ["English - Conversation", "English", "Inggris"],
       "Japanese": ["Japanese", "Jepang"],
       "Korean": ["Korean", "Korea"],
       "Mandarin": ["Mandarin", "Chinese"],
@@ -1604,10 +1607,10 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     };
     const searchLangs = langAliases[enrollLang] || [enrollLang];
     supabase
-      .from("regular_class_batches")
-      .select("id, batch_code, language, schedule_day, schedule_time, start_date, end_date, sessions_total, current_enrolled, max_students, status")
+      .from("regular_batches")
+      .select("id, batch_code, language, session_day, session_start_time, start_date, end_date, total_sessions, current_enrolled, max_capacity, status")
       .in("language", searchLangs)
-      .eq("status", "open")
+      .eq("status", "Open")
       .order("start_date", { ascending: true })
       .then(({ data }: any) => {
         setAvailBatches(data || []);
@@ -1708,7 +1711,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   const waMsg = encodeURIComponent(
     `Halo admin Linguo! Saya ${displayName} (${user?.email}), mau daftar:\n` +
     `• Program: ${PROGRAMS.find(p => p.key === enrollProgram)?.label}\n` +
-    (isTestPrep ? "" : `• Bahasa: ${enrollLang}\n`) +
+    (isTestPrep ? "" : `• Bahasa: ${isRegulerEnroll ? regulerLangName(enrollLang) : enrollLang}\n`) +
     `• Durasi: ${enrollDuration} menit/sesi\n` +
     `• Preferensi hari: ${Object.keys(enrollSchedule).join(", ") || "-"}\n` +
     `• Preferensi jam: ${Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + ts.join(", ")).join(" | ") || "-"}\n` +
@@ -1723,7 +1726,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     wa_number: student?.whatsapp || null,
     avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
     product: enrollProgram,
-    language: isTestPrep ? "IELTS/TOEFL" : enrollLang,
+    // [reguler-english-conversation-v1] pendaftaran reguler disimpan dgn nama kelas
+    // resmi ("English - Conversation"), samain dgn regular_batches.language.
+    language: isTestPrep ? "IELTS/TOEFL" : (isRegulerEnroll ? regulerLangName(enrollLang) : enrollLang),
     level: "A1.1",
     duration: enrollDuration,
     amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
@@ -1864,7 +1869,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     <button key={lang} onClick={() => { setEnrollLang(lang); setEnrollStep(2); }}
                       className={`w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all active:scale-[0.99] ${enrollLang === lang ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
                       <img src={getFlagUrl(lang)} alt="" className="h-6 w-6 shrink-0 object-contain rounded-sm" />
-                      <span className="flex-1 truncate text-sm font-medium text-gray-700">{lang}</span>
+                      {/* [reguler-english-conversation-v1] di Kelas Reguler, English cuma dibuka
+                          sebagai kelas Conversation — tampilkan nama kelas yang sebenarnya. */}
+                      <span className="flex-1 truncate text-sm font-medium text-gray-700">{isRegulerEnroll ? regulerLangName(lang) : lang}</span>
                       <ChevronRight className="h-4 w-4 shrink-0 text-gray-300" />
                     </button>
                   ))}
@@ -1972,7 +1979,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   <div className="flex items-center gap-3 mb-2">
                     {!isTestPrep && <img src={getFlagUrl(enrollLang)} alt="" className="h-8 w-8 object-contain rounded" />}
                     <div>
-                      <p className="font-bold text-gray-900">{isTestPrep ? "IELTS/TOEFL Prep" : enrollLang}</p>
+                      <p className="font-bold text-gray-900">{isTestPrep ? "IELTS/TOEFL Prep" : (isRegulerEnroll ? regulerLangName(enrollLang) : enrollLang)}</p>
                       <p className="text-xs text-gray-500">{PROGRAMS.find(p => p.key === enrollProgram)?.label}{!isFixedPrice ? ` · ${enrollDuration} mnt/sesi` : ""}</p>
                     </div>
                   </div>
@@ -2012,10 +2019,10 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                       <p className="text-xs text-blue-600">⏳ Memuat batch yang tersedia...</p>
                     ) : availBatches.length > 0 ? (
                       <>
-                        <p className="text-xs font-semibold text-blue-700 mb-2">📅 Batch {enrollLang} yang tersedia:</p>
+                        <p className="text-xs font-semibold text-blue-700 mb-2">📅 Batch {regulerLangName(enrollLang)} yang tersedia:</p>
                         <div className="space-y-1.5">
                           {availBatches.slice(0, 3).map((b: any) => {
-                            const seatsLeft = (b.max_students || 15) - (b.current_enrolled || 0);
+                            const seatsLeft = (b.max_capacity || 15) - (b.current_enrolled || 0);
                             const startDate = b.start_date ? new Date(b.start_date).toLocaleDateString("id-ID", { day: "numeric", month: "short" }) : "-";
                             return (
                               <div key={b.id} className="bg-white rounded-lg px-3 py-2 text-xs border border-blue-100">
@@ -2026,7 +2033,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                                   </span>
                                 </div>
                                 <p className="text-gray-600">
-                                  {b.schedule_day}, {b.schedule_time} WIB · Mulai {startDate}
+                                  {b.session_day}{b.session_start_time ? `, ${String(b.session_start_time).slice(0, 5)}` : ""} WIB · Mulai {startDate}
                                 </p>
                               </div>
                             );
@@ -2041,7 +2048,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                       </>
                     ) : (
                       <p className="text-xs text-blue-700">
-                        📋 Belum ada batch {enrollLang} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
+                        📋 Belum ada batch {regulerLangName(enrollLang)} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
                         <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">cek jadwal lengkap</a>.
                       </p>
                     )}
@@ -2281,6 +2288,14 @@ export default function AkunPage() {
   const [materiSearch, setMateriSearch] = useState("");
   // [linguo-patch:beranda-jelajahi-v1] state seksi "Jelajahi Bahasa" di Beranda (pindahan dari tab Materi)
   const [jelajahiQ, setJelajahiQ] = useState("");
+  // [beranda-jelajahi-collapse-v1] katalog 60+ bahasa itu konten akuisisi — di dashboard
+  // siswa cukup 8 dulu, sisanya on-demand, biar workspace-nya ga ketutupan katalog.
+  const [jelajahiAll, setJelajahiAll] = useState(false);
+  // [beranda-search-live-v1] kolom cari di header Beranda DULU cuma hiasan: input tanpa
+  // state/handler, diketik ga terjadi apa-apa. Sekarang nyata — nyari kelas, pengajar,
+  // bahasa, & menu, lalu langsung navigasi.
+  const [homeQ, setHomeQ] = useState("");
+  const [homeQOpen, setHomeQOpen] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
     const sp = new URLSearchParams(window.location.search);
@@ -2861,7 +2876,7 @@ export default function AkunPage() {
             p_recipient_id: bookingReg.teacher_id,
             p_user_type: "teacher",
             p_title: "Booking baru menunggu konfirmasi",
-            p_body: `${student.name || "Siswa"} booking kelas ${bookingReg.language} pada ${new Date(row.scheduled_at).toLocaleString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" })} WIB.`,
+            p_body: `${student.name || "Siswa"} booking kelas ${displayLanguage(bookingReg.language)} pada ${new Date(row.scheduled_at).toLocaleString("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Jakarta" })} WIB.`,
             p_url: null,
             p_schedule_id: row.id,
           })
@@ -3355,7 +3370,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} canAccessMateri={canSeeMateri}>
+    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri}>
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
@@ -3383,15 +3398,9 @@ export default function AkunPage() {
       {/* ── Sukses onboarding: Lottie ceklis sebelum dashboard — [linguo-patch:onboarding-success-lottie-v1] ── */}
       {showSuccessAnim && <OnboardingSuccess onClose={() => setShowSuccessAnim(false)} />}
 
-      {/* ── Header (mobile only — desktop pakai sidebar + bell di samping search) ── */}
-      <div className="lg:hidden">
-        <TopBarMinimal
-          studentId={student?.id || ""}
-          avatarUrl={avatarUrl}
-          firstName={firstName}
-          onAvatarClick={() => setActiveTab("akun")}
-        />
-      </div>
+      {/* [shell-mobile-drawer-v1] Header mobile (hamburger + logo + lonceng) sekarang
+          dirender oleh StudentShell, jadi SEMUA halaman ber-shell kebagian — dulu cuma
+          halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
@@ -3436,6 +3445,62 @@ export default function AkunPage() {
                 });
                 const teacherList = Array.from(teacherMap.values());
                 const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+
+                // [beranda-search-live-v1] hasil pencarian header. Cakupannya sengaja
+                // dibatasi ke hal yang bisa langsung ditindak dari dashboard: kelas
+                // yang dimiliki, pengajar, bahasa di katalog, dan menu.
+                const hq = homeQ.trim().toLowerCase();
+                type HomeHit = { id: string; kind: string; label: string; sub: string; run: () => void };
+                const homeHits: HomeHit[] = [];
+                if (hq.length >= 2) {
+                  liveRegsAll.forEach((r: any) => {
+                    const nm = `${displayLanguage(r.language)} ${r.level || ""}`.toLowerCase();
+                    if (nm.includes(hq)) homeHits.push({
+                      id: `kelas-${r.id}`, kind: "Kelas",
+                      label: `${displayLanguage(r.language)}${r.level ? ` — ${r.level}` : ""}`,
+                      sub: PRODUCT_BADGE[r.product]?.label || r.product || "Kelas live",
+                      run: () => router.push(`/akun/kelas/${r.id}`),
+                    });
+                  });
+                  teacherList.forEach((t) => {
+                    if (t.name.toLowerCase().includes(hq)) homeHits.push({
+                      id: `guru-${t.name}`, kind: "Pengajar", label: t.name,
+                      sub: `${t.count} kelas · ${Array.from(t.langs).map((l) => displayLanguage(l)).join(", ")}`,
+                      run: () => setActiveTab("jadwal"),
+                    });
+                  });
+                  JELAJAHI_LANGS.filter((l) => l.name.toLowerCase().includes(hq)).slice(0, 4).forEach((l) => {
+                    homeHits.push({
+                      id: `bahasa-${l.slug}`, kind: "Bahasa", label: l.name, sub: "Lihat silabus & daftar kelas",
+                      run: () => {
+                        setMateriLang(l.slug);
+                        setJelajahiQ("");
+                        setJelajahiAll(true);
+                        document.getElementById("jelajahi-bahasa")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                      },
+                    });
+                  });
+                  ([
+                    { key: "materi", label: "Kelas & Materi" },
+                    { key: "jadwal", label: "Jadwal" },
+                    { key: "simulasi", label: "Simulasi Tes" },
+                    { key: "sertifikat", label: "Sertifikat" },
+                    { key: "akun", label: "Pengaturan" },
+                  ] as const).filter((m) => m.label.toLowerCase().includes(hq)).forEach((m) => {
+                    homeHits.push({
+                      id: `menu-${m.key}`, kind: "Menu", label: m.label, sub: "Buka menu",
+                      run: () => setActiveTab(m.key as any),
+                    });
+                  });
+                }
+                const homeHitsTop = homeHits.slice(0, 8);
+                const runHit = (h: HomeHit) => { setHomeQOpen(false); setHomeQ(""); h.run(); };
+
+                // [beranda-onboarding-cta-v1] siswa yang belum punya apa pun dulu disambut
+                // banner promo + kotak kosong + 3 tombol yang semuanya "daftar". Sekarang
+                // satu langkah berikutnya yang jelas; banner promo turun ke bawah.
+                const belumPunyaApaPun = liveRegsAll.length === 0 && !mandiri && pendingRegs.length === 0;
+                const sesiBerikutnya = upcomingSchedules[0];
 
                 return (
                   <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
@@ -3532,7 +3597,7 @@ export default function AkunPage() {
                           <div className="mt-3 rounded-2xl border border-dashed border-slate-200 bg-white/60 px-4 py-6 text-center">
                             <Calendar className="mx-auto mb-2 h-7 w-7 text-slate-300" strokeWidth={1.8} />
                             <p className="text-[13px] font-semibold text-gray-500">Belum ada jadwal mendatang</p>
-                            <p className="mt-0.5 text-[12px] font-medium text-gray-400">Jadwal kelas kamu bakal muncul di sini.</p>
+                            <p className="mt-0.5 text-[12px] font-medium text-gray-500">Jadwal kelas kamu bakal muncul di sini.</p>
                           </div>
                         )}
                       </div>
@@ -3548,10 +3613,52 @@ export default function AkunPage() {
                           <p className="mt-0.5 text-[14px] font-medium text-gray-500">{getGreeting()} — yuk belajar bahasa hari ini!</p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <label className="flex h-12 w-full max-w-[320px] items-center gap-2.5 rounded-2xl bg-white px-4 transition sm:w-[300px]">
-                            <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" />
-                            <input type="text" placeholder="Cari kelas, materi, atau pengajar…" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
-                          </label>
+                          {/* [beranda-search-live-v1] cari kelas / pengajar / bahasa / menu */}
+                          <div className="relative w-full max-w-[320px] sm:w-[300px]">
+                            <label className="flex h-12 items-center gap-2.5 rounded-2xl bg-white px-4 transition focus-within:ring-2 focus-within:ring-[#16796E]/40">
+                              <Search className="h-[18px] w-[18px] shrink-0 text-gray-500" />
+                              <input
+                                type="text"
+                                value={homeQ}
+                                onChange={(e) => { setHomeQ(e.target.value); setHomeQOpen(true); }}
+                                onFocus={() => setHomeQOpen(true)}
+                                onBlur={() => window.setTimeout(() => setHomeQOpen(false), 150)}
+                                onKeyDown={(e) => {
+                                  if (e.key === "Escape") { setHomeQOpen(false); (e.target as HTMLInputElement).blur(); }
+                                  if (e.key === "Enter" && homeHitsTop[0]) runHit(homeHitsTop[0]);
+                                }}
+                                placeholder="Cari kelas, pengajar, atau bahasa…"
+                                aria-label="Cari di dashboard"
+                                className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400"
+                              />
+                              {homeQ && (
+                                <button type="button" onClick={() => { setHomeQ(""); setHomeQOpen(false); }} aria-label="Kosongkan pencarian" className="shrink-0 text-gray-400 transition hover:text-gray-600">
+                                  <X className="h-4 w-4" strokeWidth={2.4} />
+                                </button>
+                              )}
+                            </label>
+                            {homeQOpen && hq.length >= 2 && (
+                              <div className="absolute left-0 right-0 top-[calc(100%+6px)] z-30 max-h-[340px] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-1.5 shadow-[0_24px_60px_-30px_rgba(18,23,43,0.45)]">
+                                {homeHitsTop.length > 0 ? homeHitsTop.map((h) => (
+                                  <button
+                                    key={h.id}
+                                    type="button"
+                                    onMouseDown={(e) => e.preventDefault()}
+                                    onClick={() => runHit(h)}
+                                    className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition hover:bg-slate-50"
+                                  >
+                                    <span className="min-w-0 flex-1">
+                                      <span className="block truncate text-[13.5px] font-bold text-[#12172B]">{h.label}</span>
+                                      <span className="block truncate text-[12px] font-medium text-gray-500">{h.sub}</span>
+                                    </span>
+                                    <span className="shrink-0 rounded-lg bg-slate-100 px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wide text-gray-500">{h.kind}</span>
+                                  </button>
+                                )) : (
+                                  <p className="px-3 py-6 text-center text-[13px] font-medium text-gray-500">Ga ada yang cocok sama &ldquo;{homeQ}&rdquo;</p>
+                                )}
+                              </div>
+                            )}
+                          </div>
                           {student?.id && (
                             <div className="hidden lg:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
@@ -3560,8 +3667,9 @@ export default function AkunPage() {
                           {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil — rounded rectangle biar seragam sama lonceng notif */}
                           <button
                             onClick={() => setProfileOpen((v) => !v)}
-                            aria-label="Buka profil"
-                            className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition active:scale-95"
+                            aria-label={profileOpen ? "Tutup panel profil" : "Buka panel profil"}
+                            aria-expanded={profileOpen}
+                            className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]/40"
                           >
                             {avatarUrl ? (
                               // eslint-disable-next-line @next/next/no-img-element
@@ -3575,16 +3683,84 @@ export default function AkunPage() {
                         </div>
                       </div>
 
-                      {/* promo banner — lebih pendek */}
-                      <div className="relative overflow-hidden rounded-[1.5rem] bg-[#16796E] px-7 py-5 text-white sm:px-9 sm:py-6">
-                        <div className="relative z-10 max-w-[60%]">
-                          <h2 className="text-[19px] font-extrabold leading-snug sm:text-[22px]">Pilihan Tepat untuk Naik Level</h2>
-                          <p className="mt-1.5 max-w-[420px] text-[13px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
-                          <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-white px-5 text-[13px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
-                            Lihat Kelas <ArrowRight className="h-4 w-4" />
-                          </button>
+                      {/* [beranda-sesi-berikutnya-v1] SESI BERIKUTNYA — hal paling penting
+                          buat siswa harian (kapan kelas + tombol masuk). Dulu ini cuma ada di
+                          panel profil yang default TERTUTUP di balik tombol avatar, jadi
+                          praktis ga pernah kelihatan. */}
+                      {sesiBerikutnya && (() => {
+                        const d = new Date(sesiBerikutnya.scheduled_at);
+                        const reg = student?.registrations?.find((r) => r.id === sesiBerikutnya.registration_id);
+                        const lang = reg?.language ? displayLanguage(reg.language) : "";
+                        const joinable = isJoinable(sesiBerikutnya.scheduled_at);
+                        const today = new Date();
+                        const sameDay = d.toDateString() === today.toDateString();
+                        const besok = new Date(today.getTime() + 86400000).toDateString() === d.toDateString();
+                        const hariLabel = sameDay ? "Hari ini" : besok ? "Besok" : d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" });
+                        const guru = reg?.teacher_id ? teacherDir[reg.teacher_id]?.name : (reg as any)?.teachers?.name;
+                        return (
+                          <div className="rounded-3xl bg-white p-5 ring-1 ring-slate-200 sm:p-6">
+                            <div className="flex flex-wrap items-center gap-4">
+                              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-xl font-extrabold text-[#16796E]">{langGlyph(reg?.language || "")}</span>
+                              <div className="min-w-0 flex-1">
+                                <p className="inline-flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-[#16796E]">
+                                  <Clock className="h-3.5 w-3.5" strokeWidth={2.6} /> Sesi berikutnya
+                                </p>
+                                <h2 className="mt-1 truncate text-[18px] font-extrabold leading-tight text-[#12172B]">
+                                  {lang || "Sesi kelas"}{reg?.level ? ` — ${reg.level}` : ""}
+                                </h2>
+                                <p className="mt-0.5 text-[13px] font-medium text-gray-500">
+                                  {hariLabel} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
+                                  {guru ? ` · ${guru}` : ""}
+                                </p>
+                              </div>
+                              <div className="flex shrink-0 items-center gap-2">
+                                <button onClick={() => setActiveTab("jadwal")} className="inline-flex h-11 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]">
+                                  <Calendar className="h-4 w-4" strokeWidth={2.2} /> Jadwal
+                                </button>
+                                {joinable ? (
+                                  <a
+                                    href={classRoomUrl(sesiBerikutnya.id, { title: lang ? `Kelas ${lang}` : "Kelas Linguo", name: student?.name || undefined })}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-extrabold text-white transition hover:bg-[#0F5A52]"
+                                  >
+                                    <Video className="h-4 w-4" strokeWidth={2.4} /> Masuk Kelas
+                                  </a>
+                                ) : (
+                                  <span className="inline-flex h-11 items-center rounded-2xl bg-slate-50 px-4 text-[12.5px] font-bold text-gray-500">
+                                    Link aktif 15 menit sebelum mulai
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })()}
+
+                      {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
+                          gantinya banner promo + 3 CTA rebutan yang dulu jadi layar pertama. */}
+                      {belumPunyaApaPun && (
+                        <div className="rounded-3xl bg-white p-6 ring-1 ring-slate-200 sm:p-7">
+                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Mulai dari sini</h2>
+                          <p className="mt-1 text-[13.5px] font-medium text-gray-500">Tiga langkah, sepuluh menit — habis itu kamu udah punya kelas.</p>
+                          <ol className="mt-5 grid gap-3 sm:grid-cols-3">
+                            {([
+                              { n: 1, t: "Tes penempatan gratis", d: "Biar level kamu pas, ga ketinggian atau kerendahan.", cta: "Mulai tes", run: () => setShowPlacementPicker(true) },
+                              { n: 2, t: "Pilih bahasa & lihat silabus", d: "60+ bahasa, CEFR A1–B2, materi per sublevel.", cta: "Jelajahi bahasa", run: () => document.getElementById("jelajahi-bahasa")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
+                              { n: 3, t: "Daftar kelas", d: "Private, Semi-Private, Reguler, atau belajar mandiri.", cta: "Daftar sekarang", run: openEnrollWizard },
+                            ] as const).map((s) => (
+                              <li key={s.n} className="flex flex-col rounded-2xl bg-slate-50 p-4">
+                                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#16796E] text-[13px] font-extrabold text-white">{s.n}</span>
+                                <span className="mt-3 text-[14.5px] font-extrabold leading-snug text-[#12172B]">{s.t}</span>
+                                <span className="mt-1 flex-1 text-[12.5px] font-medium leading-relaxed text-gray-500">{s.d}</span>
+                                <button onClick={s.run} className="mt-3 inline-flex items-center gap-1 self-start text-[12.5px] font-bold text-[#16796E] transition hover:text-[#0F5A52]">
+                                  {s.cta} <ArrowRight className="h-3.5 w-3.5" />
+                                </button>
+                              </li>
+                            ))}
+                          </ol>
                         </div>
-                      </div>
+                      )}
 
                       {/* Perlu Perhatian — card kecil (glyph + status), klik -> PaymentDetailModal */}
                       {pendingRegs.length > 0 && (
@@ -3629,7 +3805,7 @@ export default function AkunPage() {
                                 <div className="px-2 pb-2 pt-4">
                                   <div className="flex items-center gap-2">
                                     <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
                                   </div>
                                   <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{PRODUCT_BADGE[reg.product]?.label || reg.product}</p>
                                   <div className="mt-4 flex items-center justify-between">
@@ -3641,7 +3817,7 @@ export default function AkunPage() {
                                   <button
                                     type="button"
                                     onClick={(e) => { e.stopPropagation(); setCancelTarget(reg); }}
-                                    className="mt-3 w-full rounded-xl bg-slate-50 py-2 text-[12px] font-bold text-gray-400 transition-colors hover:bg-red-50 hover:text-red-600"
+                                    className="mt-3 w-full rounded-xl bg-slate-50 py-2 text-[12px] font-bold text-gray-500 transition-colors hover:bg-red-50 hover:text-red-600"
                                   >
                                     Batalkan pendaftaran
                                   </button>
@@ -3743,7 +3919,7 @@ export default function AkunPage() {
                                   <div className="px-2 pb-2 pt-4">
                                     <div className="flex items-center gap-2">
                                       <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                      <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{reg.language} — {reg.level || "TBD"}</h3>
+                                      <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
                                     </div>
                                     {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas */}
                                     <div className="mt-1.5 flex items-center gap-2">
@@ -3786,7 +3962,10 @@ export default function AkunPage() {
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
-                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
+                            {/* [beranda-onboarding-cta-v1] kalau kartu "Mulai dari sini" udah tampil di
+                                atas, tombol di sini diturunkan jadi sekunder — biar ga 2 CTA primer
+                                dgn tujuan sama saling rebutan di satu layar. */}
+                            <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
                           </div>
                         )
                         )}
@@ -3819,7 +3998,7 @@ export default function AkunPage() {
                                 </span>
                               </div>
                               <div className="px-2 pb-2 pt-4">
-                                <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-400">· {mandiri.label}</span></h3>
+                                <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
                                 <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
                                 <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
                                   <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
@@ -3864,14 +4043,32 @@ export default function AkunPage() {
                         </div>
                       )}
 
+                      {/* [beranda-onboarding-cta-v1] promo banner turun ke bawah & cuma buat
+                          siswa yang UDAH punya kelas (upsell naik level). Buat siswa baru,
+                          layar pertama sekarang dipimpin kartu "Mulai dari sini". */}
+                      {!belumPunyaApaPun && (
+                        <div className="relative overflow-hidden rounded-[1.5rem] bg-[#16796E] px-7 py-5 text-white sm:px-9 sm:py-6">
+                          <div className="relative z-10 max-w-[60%]">
+                            <h2 className="text-[19px] font-extrabold leading-snug sm:text-[22px]">Pilihan Tepat untuk Naik Level</h2>
+                            <p className="mt-1.5 max-w-[420px] text-[13px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
+                            <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-white px-5 text-[13px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
+                              Lihat Kelas <ArrowRight className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
                       {/* [linguo-patch:beranda-jelajahi-v1] Jelajahi Bahasa — dipindah dari tab Materi ke Beranda */}
                       {(() => {
                         const q = jelajahiQ.trim().toLowerCase();
                         const filtered = q ? JELAJAHI_LANGS.filter((l) => l.name.toLowerCase().includes(q)) : JELAJAHI_LANGS;
+                        // [beranda-jelajahi-collapse-v1] default 8 kartu; katalog penuh on-demand.
+                        const visible = q || jelajahiAll ? filtered : filtered.slice(0, 8);
+                        const sisa = filtered.length - visible.length;
                         const selLang = JELAJAHI_LANGS.find((l) => l.slug === materiLang) || JELAJAHI_LANGS[0];
                         const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
                         return (
-                          <div>
+                          <div id="jelajahi-bahasa" className="scroll-mt-6">
                             <div className="flex flex-wrap items-end justify-between gap-3">
                               <div>
                                 <h2 className="flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]"><Globe className="h-5 w-5 text-[#16796E]" strokeWidth={2.4} />Jelajahi Bahasa</h2>
@@ -3884,7 +4081,7 @@ export default function AkunPage() {
                             </div>
 
                             <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 xl:grid-cols-4">
-                              {filtered.map((l) => {
+                              {visible.map((l) => {
                                 const isSel = l.slug === selLang.slug;
                                 // [linguo-patch:jelajahi-no-color-outline-v1] kartu kepilih ga pake ring/outline warna — cukup border & bg netral
                                 // [linguo-patch:jelajahi-flag-no-tile-v1] bendera tanpa kotak latar, cukup ikon bendera
@@ -3900,9 +4097,19 @@ export default function AkunPage() {
                                 );
                               })}
                               {filtered.length === 0 && (
-                                <p className="col-span-full rounded-2xl border border-dashed border-slate-200 px-4 py-8 text-center text-[13px] font-medium text-gray-400">Bahasa "{jelajahiQ}" ga ketemu · cek Semua Silabus di bawah</p>
+                                <p className="col-span-full rounded-2xl border border-dashed border-slate-200 px-4 py-8 text-center text-[13px] font-medium text-gray-500">Bahasa &ldquo;{jelajahiQ}&rdquo; ga ketemu · cek Semua Silabus di bawah</p>
                               )}
                             </div>
+
+                            {/* [beranda-jelajahi-collapse-v1] buka katalog penuh cuma kalau diminta */}
+                            {!q && (sisa > 0 || jelajahiAll) && (
+                              <button
+                                onClick={() => setJelajahiAll((v) => !v)}
+                                className="mt-3 inline-flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"
+                              >
+                                {jelajahiAll ? "Tampilkan lebih sedikit" : `Tampilkan semua bahasa (+${sisa})`}
+                              </button>
+                            )}
 
                             {/* detail bahasa kepilih */}
                             <div className="mt-4 rounded-3xl bg-white p-5">
@@ -3919,8 +4126,12 @@ export default function AkunPage() {
                                 ))}
                               </div>
                               <div className="mt-4 flex flex-wrap gap-2">
-                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
-                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-slate-200 hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
+                                {/* [beranda-silabus-btn-border-v1] dua tombol ini dulu `bg-white` di
+                                    atas kartu `bg-white` dan cuma punya `hover:border-*` TANPA utility
+                                    `border` — lebar border-nya 0, jadi affordance-nya invisible
+                                    selamanya (kelihatan cuma teks polos). */}
+                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
+                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
                                 <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
                               </div>
                             </div>
@@ -3982,7 +4193,7 @@ export default function AkunPage() {
                     Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
                     Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
                   };
-                  return g[lang] || "Aa";
+                  return g[baseLanguage(lang)] || "Aa";
                 };
                 const PAL = [
                   { color: "#16796E", tintBg: "bg-[#16796E]/10", tintText: "text-[#16796E]" },
@@ -4014,7 +4225,7 @@ export default function AkunPage() {
                     >
                       <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl font-extrabold ${pal.tintBg} ${pal.tintText}`}>{mlangGlyph(r.language)}</span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{r.language} — {r.level || "TBD"}</span>
+                        <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{displayLanguage(r.language)} — {r.level || "TBD"}</span>
                         <span className="block truncate text-[12px] font-medium text-gray-500">{r?.teachers?.name || (PRODUCT_BADGE[r.product]?.label || r.product)}</span>
                         <span className="mt-2 flex items-center gap-2">
                           <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} /></span>
@@ -4105,7 +4316,7 @@ export default function AkunPage() {
                                     <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-[44px] font-extrabold leading-none text-white">{mlangGlyph(selected.language)}</span>
                                     <div className="relative z-10 min-w-0 flex-1 text-white">
                                       <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{badge.label}</span>
-                                      <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{selected.language} — {selected.level || "TBD"}</h2>
+                                      <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{displayLanguage(selected.language)} — {selected.level || "TBD"}</h2>
                                       <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {selected?.teachers?.name || "Belum ditentukan"}</p>
                                     </div>
                                   </div>
@@ -4171,8 +4382,10 @@ export default function AkunPage() {
                               })()
                             ) : (
                               <SilabusOutline
-                                slug={selected.language?.toLowerCase().replace(/\s+/g, "-") || "english"}
-                                languageLabel={selected.language || ""}
+                                /* [reguler-english-conversation-v1] slug HARUS dari bahasa dasar —
+                                   "English - Conversation A1.1 (ENG-A11-AUG26)" dulu jadi slug ngawur. */
+                                slug={baseLanguage(selected.language).toLowerCase().replace(/\s+/g, "-") || "english"}
+                                languageLabel={displayLanguage(selected.language) || ""}
                                 currentLevel={selected.level}
                                 showPlacementTest={selected.product !== "English Test Preparation"}
                               />
@@ -4273,8 +4486,8 @@ export default function AkunPage() {
       <PlacementPicker open={showPlacementPicker} onClose={() => setShowPlacementPicker(false)} studentId={student?.id} />
       </main>
 
-      {/* ── Bottom Tab Nav (mobile only) ── */}
-      <MobileBottomNav activeTab={activeTab === "sertifikat" ? "akun" : (activeTab === "pustaka" || activeTab === "simulasi") ? "materi" : activeTab} onChange={(t) => setActiveTab(t)} canAccessMateri={canSeeMateri} />
+      {/* [shell-mobile-drawer-v1] Bottom nav juga pindah ke StudentShell (satu sumber
+          untuk semua halaman) — pemetaan tab-nya ikut pindah ke sana. */}
 
       {/* Floating Quick Actions FAB */}
       {student && (
@@ -4356,7 +4569,7 @@ export default function AkunPage() {
               onRegenerateXendit={async () => {
                 try {
                   const programLabel = PROGRAMS.find(p => p.key === r.product)?.label || r.product;
-                  const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : r.language;
+                  const langLabel = r.product === "IELTS/TOEFL Prep" ? "IELTS/TOEFL" : displayLanguage(r.language);
                   const desc = `${programLabel} — ${langLabel}`;
                   const res = await fetch(
                     "https://jbtgciepdmqxxcjflrxz.supabase.co/functions/v1/xendit-create-invoice",
@@ -4414,7 +4627,7 @@ export default function AkunPage() {
             <h3 className="text-lg font-extrabold text-gray-900">Batalkan pendaftaran?</h3>
             <p className="mt-1.5 text-sm text-gray-500">
               Yakin ingin membatalkan pendaftaran{" "}
-              <strong className="text-gray-700">{cancelTarget.language} {cancelTarget.level || "TBD"}</strong>?
+              <strong className="text-gray-700">{displayLanguage(cancelTarget.language)} {cancelTarget.level || "TBD"}</strong>?
               Pendaftaran yang belum dibayar akan hilang dari daftar kamu.
             </p>
             <div className="mt-5 flex gap-2.5">
@@ -4451,7 +4664,7 @@ export default function AkunPage() {
               <div>
                 <h3 className="text-lg font-bold text-gray-900">Booking Sesi</h3>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  {bookingReg.language} · {bookingReg.level}
+                  {displayLanguage(bookingReg.language)} · {bookingReg.level}
                   {bookingReg.teachers?.name && <span className="inline-flex items-center gap-1"> · <GraduationCap className="h-3.5 w-3.5" strokeWidth={2.2} />{bookingReg.teachers.name}</span>}
                 </p>
               </div>

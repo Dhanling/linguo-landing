@@ -32,7 +32,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
     <nav
       className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
-      aria-label="Navigation utama"
+      aria-label="Navigasi utama"
     >
       <div className={`mx-auto max-w-lg grid h-14 ${tabs.length === 5 ? "grid-cols-5" : "grid-cols-4"}`}>
         {tabs.map((item) => {
@@ -50,8 +50,10 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
               <span className="text-[10px] font-medium">{label}</span>
             </>
           );
-          const cls = `flex flex-col items-center justify-center gap-0.5 transition-colors relative ${
-            isActive ? "text-[#1A9E9E]" : "text-gray-400 hover:text-gray-600"
+          // [shell-a11y-focus-v1] ring fokus keyboard + label non-aktif dinaikkan ke
+          // gray-500 (gray-400 di 10px gagal kontras WCAG AA di atas putih).
+          const cls = `flex flex-col items-center justify-center gap-0.5 transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#1A9E9E] ${
+            isActive ? "text-[#1A9E9E]" : "text-gray-500 hover:text-gray-700"
           }`;
           if ("href" in item) {
             return (
