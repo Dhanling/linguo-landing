@@ -34,6 +34,8 @@ import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 import WatchUpsellModal from "./WatchUpsellModal";
 import ExplanationWordTip from "./ExplanationWordTip";
+// [watch-followup-translit-v1] Bacaan Latin kata bahasa target yang dikutip di chip.
+import { FollowupText, hasInlineReading, useFollowupReadings } from "./followupTranslit";
 
 const TEAL = "#1A9E9E";
 // Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
@@ -334,7 +336,7 @@ export default function WordStudy({
               onAsk={ask}
             />
           ) : (
-            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} />
+            <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} langCode={langCode} />
           )}
         </div>
       </div>
@@ -684,13 +686,22 @@ function AskTab({
   onAsk,
   chatEndRef,
   onWordTap,
+  langCode,
 }: {
   chat: ChatMsg[];
   asking: boolean;
   onAsk: (q: string) => void;
   chatEndRef: React.RefObject<HTMLDivElement | null>;
   onWordTap?: WordTapHandler;
+  // [watch-followup-translit-v1] Bahasa target — pemicu bacaan Latin di chip lanjutan.
+  langCode: string;
 }) {
+  // Hook harus dipanggil sebelum early-return layar pembuka di bawah (aturan hooks);
+  // daftar pertanyaan dihitung dari pesan AI terakhir, kosong = tak ada fetch.
+  const last = chat[chat.length - 1];
+  const chipQs =
+    last?.role === "ai" ? (last.followups ?? []).map((f) => stripGuillemets(f.q)) : [];
+  const chipReadings = useFollowupReadings(chipQs, langCode);
   if (chat.length === 0 && !asking) {
     return (
       <div className="py-6">
@@ -764,8 +775,12 @@ function AskTab({
                 className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left text-white/85 transition-colors hover:bg-white/10"
                 style={{ backgroundColor: CARD }}
               >
-                <span className="text-[12.5px] font-semibold">{stripGuillemets(f.q)}</span>
-                {f.tl && (
+                <span className="text-[12.5px] font-semibold">
+                  <FollowupText text={stripGuillemets(f.q)} readings={chipReadings} />
+                </span>
+                {/* Baris `tl` dari AI hanya jadi jaring pengaman kalau bacaan per-kutipan
+                    belum ada — kalau ada, bacaan sudah nempel di katanya. */}
+                {f.tl && !hasInlineReading(stripGuillemets(f.q), chipReadings) && (
                   <span className="text-[11px] italic" style={{ color: "#7FE0E0" }}>
                     {stripGuillemets(f.tl)}
                   </span>

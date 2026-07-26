@@ -26,6 +26,8 @@ import { RectFlag } from "@/components/RectFlag";
 // Elemen render bersama dengan drawer kata (chat kaya, kartu section, tab, ikon).
 import WordStudy, { AnswerSkeleton, IconBtn, RichText, Section, stripGuillemets, TabBtn, WordTapHandler } from "./WordStudy";
 import ExplanationWordTip from "./ExplanationWordTip";
+// [watch-followup-translit-v1] Bacaan Latin kata bahasa target yang dikutip di chip.
+import { FollowupText, hasInlineReading, useFollowupReadings } from "./followupTranslit";
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#0A6060";
@@ -196,6 +198,12 @@ export default function SentenceStudy({
         ? (lastMsg.followups ?? []).slice(0, MAX_FOLLOWUPS)
         : [];
   const dockLabel = tab === "study" || chat.length === 0 ? "Masih penasaran? Tanya AI:" : "Lanjut tanya:";
+  // [watch-followup-translit-v1] Bacaan Latin tiap kutipan bahasa target di chip yang
+  // SEDANG tampil (mis. 要 → yào) — bahasa beraksara Latin tak memicu apa pun.
+  const chipReadings = useFollowupReadings(
+    dockChips.map((c) => stripGuillemets(c.q)),
+    langCode
+  );
 
   return (
     <>
@@ -299,8 +307,14 @@ export default function SentenceStudy({
                     className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left transition-colors hover:bg-white/10"
                     style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
                   >
-                    <span className="text-[12.5px] font-semibold">{stripGuillemets(c.q)}</span>
-                    {c.tl && <span className="text-[11px] italic opacity-80">{stripGuillemets(c.tl)}</span>}
+                    <span className="text-[12.5px] font-semibold">
+                      <FollowupText text={stripGuillemets(c.q)} readings={chipReadings} />
+                    </span>
+                    {/* `tl` dari AI cuma dipakai kalau bacaan per-kutipan belum ada
+                        (bahasa Latin tak pernah punya keduanya) — biar tak dobel. */}
+                    {c.tl && !hasInlineReading(stripGuillemets(c.q), chipReadings) && (
+                      <span className="text-[11px] italic opacity-80">{stripGuillemets(c.tl)}</span>
+                    )}
                   </button>
                 ))}
               </div>
