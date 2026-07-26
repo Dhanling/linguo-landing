@@ -11,6 +11,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   BookmarkCheck,
   BookmarkPlus,
+  ChevronDown,
   Send,
   Sparkles,
   Volume2,
@@ -1104,13 +1105,90 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
   );
 }
 
-export function Section({ title, children }: { title: string; children: React.ReactNode }) {
+// [watch-section-collapse-v1] Kartu analisa bisa DILIPAT (opsional). Dipakai drawer
+// kalimat supaya isi yang panjang & jarang dibaca ulang (tata bahasa, idiom) tak
+// ikut memenuhi layar tiap kali kalimat dibuka. Tanpa prop `collapsible`, kartu
+// tampil persis seperti sebelumnya — pemakaian lama (drawer kata) tak berubah.
+// Pilihan buka/tutup diingat per `storageKey` supaya konsisten antar kalimat.
+export function Section({
+  title,
+  children,
+  collapsible,
+  defaultOpen = true,
+  storageKey,
+  // Cuplikan 1 baris yang tampil selagi kartu tertutup — biar isi yang disembunyikan
+  // tetap terbaca sekilas, bukan jadi judul kosong yang harus ditebak.
+  preview,
+}: {
+  title: string;
+  children: React.ReactNode;
+  collapsible?: boolean;
+  defaultOpen?: boolean;
+  storageKey?: string;
+  preview?: string;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  // Baca preferensi SETELAH render pertama (bukan di initializer) supaya markup
+  // server & klien tetap sama — localStorage tak ada saat SSR.
+  useEffect(() => {
+    if (!collapsible || !storageKey) return;
+    try {
+      const v = window.localStorage.getItem(`wl-sect-${storageKey}`);
+      if (v === "1" || v === "0") setOpen(v === "1");
+    } catch {
+      /* penyimpanan diblokir → pakai default */
+    }
+  }, [collapsible, storageKey]);
+
+  const toggle = useCallback(() => {
+    setOpen((o) => {
+      const next = !o;
+      if (storageKey) {
+        try {
+          window.localStorage.setItem(`wl-sect-${storageKey}`, next ? "1" : "0");
+        } catch {
+          /* abaikan */
+        }
+      }
+      return next;
+    });
+  }, [storageKey]);
+
+  if (!collapsible) {
+    return (
+      <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
+        <p className="mb-1.5 text-[11.5px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
+          {title}
+        </p>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div className="rounded-2xl p-3.5" style={{ backgroundColor: CARD }}>
-      <p className="mb-1.5 text-[11.5px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
-        {title}
-      </p>
-      {children}
+      <button
+        type="button"
+        onClick={toggle}
+        aria-expanded={open}
+        className="flex w-full items-center gap-1.5 text-left"
+      >
+        <ChevronDown
+          className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${open ? "" : "-rotate-90"}`}
+          style={{ color: SUB }}
+        />
+        <span className="text-[11.5px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
+          {title}
+        </span>
+      </button>
+      {open ? (
+        <div className="mt-1.5">{children}</div>
+      ) : preview ? (
+        <p className="mt-1 truncate text-[12.5px] leading-snug" style={{ color: "rgba(255,255,255,0.42)" }}>
+          {preview}
+        </p>
+      ) : null}
     </div>
   );
 }

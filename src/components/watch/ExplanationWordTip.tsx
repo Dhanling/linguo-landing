@@ -38,6 +38,7 @@ export default function ExplanationWordTip({
   videoId,
   x,
   y,
+  anchor,
   onClose,
   onAnalyze,
   onSavedChange,
@@ -52,6 +53,10 @@ export default function ExplanationWordTip({
   // Titik klik (viewport) — balon dipasang menempel di atas/bawahnya, diklem ke layar.
   x: number;
   y: number;
+  // [watch-tip-anchor-v1] Kotak elemen kata yang diketuk. Kalau ada, balon menempel
+  // di TEPI kata (bukan di titik jari), jadi tak pernah menutupi kata itu sendiri —
+  // penting di "Pecahan Kalimat" yang satu tokennya setinggi 2–3 baris.
+  anchor?: { top: number; bottom: number };
   onClose: () => void;
   // Buka analisa mendalam kata ini (host yang memutuskan render WordStudy).
   onAnalyze: (word: string) => void;
@@ -121,12 +126,24 @@ export default function ExplanationWordTip({
     onSavedChange?.();
   }, [saved, word, langCode, meaning, sentence, videoId, onSavedChange]);
 
-  // Posisi balon: di atas titik tap, diklem ke layar (di bawah kalau kepenuhan di atas).
+  // Posisi balon: menempel di tepi kata (atau titik tap kalau tak ada `anchor`),
+  // diklem ke layar. Sisi atas/bawah dipilih dari RUANG yang tersedia, bukan ambang
+  // tetap — kata di paruh bawah tak lagi memaksa balon menimpa isi di atasnya.
   const vw = typeof window !== "undefined" ? window.innerWidth : 360;
+  const vh = typeof window !== "undefined" ? window.innerHeight : 640;
   const left = Math.max(8, Math.min(x - TIP_W / 2, vw - TIP_W - 8));
-  const above = y > 240;
-  const top = above ? undefined : y + 26;
-  const bottom = above && typeof window !== "undefined" ? window.innerHeight - y + 24 : undefined;
+  // Tanpa anchor perilakunya sama seperti dulu (jarak 26/24 dari titik tap).
+  const topEdge = anchor ? anchor.top : y;
+  const bottomEdge = anchor ? anchor.bottom : y;
+  const gapAbove = anchor ? 10 : 24;
+  const gapBelow = anchor ? 10 : 26;
+  // Tinggi balon ± (kata + bacaan + arti 2 baris) — cukup untuk memilih sisi.
+  const EST_H = 172;
+  const roomAbove = topEdge - 8;
+  const roomBelow = vh - bottomEdge - 8;
+  const above = roomAbove >= EST_H ? true : roomBelow >= EST_H ? false : roomAbove > roomBelow;
+  const top = above ? undefined : bottomEdge + gapBelow;
+  const bottom = above ? vh - topEdge + gapAbove : undefined;
   const tailLeft = Math.max(20, Math.min(x - left, TIP_W - 20));
 
   return (

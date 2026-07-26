@@ -8,7 +8,7 @@
 // itu. Semua konten AI ditarik dari /api/word-deep (kind:"sentence") — sekali per buka.
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Quote, Send, Sparkles, Volume2, X } from "lucide-react";
+import { ChevronDown, MessageCircle, Quote, Send, Sparkles, Volume2, X } from "lucide-react";
 import {
   askSentenceQuestion,
   FollowupQ,
@@ -17,6 +17,7 @@ import {
   isRtl,
   POS_COLOR,
   POS_LABEL_ID,
+  PosCategory,
   SentenceBreakdown,
   speakText,
   SentenceDeepDive,
@@ -77,10 +78,26 @@ export default function SentenceStudy({
 
   // [watch-explain-word-tip-v1] Kata target di-tap di teks penjelasan → balon arti;
   // `subWord` = kata "Analisa" dari balon → buka drawer WordStudy di atasnya.
-  const [wordTip, setWordTip] = useState<{ word: string; x: number; y: number; id: number } | null>(null);
+  const [wordTip, setWordTip] = useState<{
+    word: string;
+    x: number;
+    y: number;
+    anchor?: { top: number; bottom: number };
+    id: number;
+  } | null>(null);
   const [subWord, setSubWord] = useState<string | null>(null);
+  // [watch-tip-anchor-v1] Kotak elemen kata diambil SEKARANG (bukan di render balon)
+  // supaya balon menempel di tepi kata — di Pecahan Kalimat satu token setinggi
+  // 2–3 baris, jadi balon di titik jari gampang menutupi katanya sendiri.
   const onExplainWordTap = useCallback<WordTapHandler>((w, e) => {
-    setWordTip({ word: w, x: e.clientX, y: e.clientY, id: Date.now() });
+    const r = (e.currentTarget as HTMLElement | null)?.getBoundingClientRect();
+    setWordTip({
+      word: w,
+      x: r ? r.left + r.width / 2 : e.clientX,
+      y: e.clientY,
+      anchor: r ? { top: r.top, bottom: r.bottom } : undefined,
+      id: Date.now(),
+    });
   }, []);
 
   const [deep, setDeep] = useState<SentenceDeepDive | null>(null);
@@ -136,6 +153,17 @@ export default function SentenceStudy({
     const r = requestAnimationFrame(() => setEntered(true));
     return () => cancelAnimationFrame(r);
   }, []);
+
+  // [watch-sentence-header-shrink-v1] Header (kalimat besar + bacaan Latin + arti)
+  // makan seperempat layar mobile. Begitu isi digulir, header menciut jadi satu
+  // baris ringkas — arti & transliterasinya balik lagi saat digulir ke atas.
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+  // Pindah tab = konten baru → balik ke atas, header mekar lagi.
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0 });
+    setScrolled(false);
+  }, [tab]);
   const close = useCallback(() => {
     setEntered(false);
     window.setTimeout(onClose, 220);
@@ -233,19 +261,32 @@ export default function SentenceStudy({
               Analisa Kalimat
             </span>
           </div>
-          <p className="text-[18px] font-extrabold leading-snug text-white sm:text-[20px]" dir="auto">
+          <p
+            className={`font-extrabold text-white transition-all duration-200 ${
+              scrolled ? "truncate text-[15px] leading-tight" : "text-[18px] leading-snug sm:text-[20px]"
+            }`}
+            dir="auto"
+          >
             {sentence}
           </p>
-          {translit && (
-            <p className="mt-0.5 text-[13px] font-medium italic" style={{ color: "#7FE0E0" }}>
-              {translit}
-            </p>
-          )}
-          {headTranslation && (
-            <p className="mt-1 text-[15px] font-bold leading-snug" style={{ color: GOLD }}>
-              {headTranslation}
-            </p>
-          )}
+          {/* Bacaan Latin + arti dilipat saat menggulir (bukan dilepas dari DOM,
+              biar transisinya mulus dan tak bikin layout melompat). */}
+          <div
+            className={`overflow-hidden transition-all duration-200 ${
+              scrolled ? "max-h-0 opacity-0" : "max-h-40 opacity-100"
+            }`}
+          >
+            {translit && (
+              <p className="mt-0.5 text-[13px] font-medium italic" style={{ color: "#7FE0E0" }}>
+                {translit}
+              </p>
+            )}
+            {headTranslation && (
+              <p className="mt-1 text-[15px] font-bold leading-snug" style={{ color: GOLD }}>
+                {headTranslation}
+              </p>
+            )}
+          </div>
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
           <IconBtn label="Dengar" onClick={() => speakText(sentence, langCode)}>
@@ -268,7 +309,11 @@ export default function SentenceStudy({
       </div>
 
       {/* Isi */}
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6">
+      <div
+        ref={scrollRef}
+        onScroll={(e) => setScrolled(e.currentTarget.scrollTop > 24)}
+        className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6"
+      >
         <div className="mx-auto max-w-2xl">
           {tab === "study" ? (
             <StudyTab
@@ -278,6 +323,7 @@ export default function SentenceStudy({
               bd={bd}
               bdLoading={bdLoading}
               langCode={langCode}
+              headTranslation={headTranslation}
               onWordTap={onExplainWordTap}
             />
           ) : (
@@ -294,26 +340,33 @@ export default function SentenceStudy({
         style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: BG, paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         <div className="mx-auto max-w-2xl">
+          {/* [watch-sentence-chip-row-v1] Chip usulan dulu membungkus jadi 3 baris dan
+              memakan ~20% layar terus-menerus. Sekarang SATU baris yang bisa digeser
+              mendatar; teks panjang dipotong secara tampilan saja — yang dikirim ke AI
+              tetap pertanyaan utuh (`c.q`), dan versi penuhnya ada di tooltip. */}
           {!loading && dockChips.length > 0 && (
-            <div className="mb-2.5 max-h-[34vh] overflow-y-auto">
-              <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
+            <div className="mb-2">
+              <p className="mb-1.5 text-[11px] font-semibold" style={{ color: SUB }}>
                 {dockLabel}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex gap-2 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {dockChips.map((c) => (
                   <button
                     key={c.q}
                     onClick={() => ask(stripGuillemets(c.q))}
-                    className="flex flex-col items-start rounded-2xl px-3 py-1.5 text-left transition-colors hover:bg-white/10"
+                    title={stripGuillemets(c.q)}
+                    className="flex max-w-[74vw] shrink-0 flex-col items-start rounded-2xl px-3 py-1.5 text-left transition-colors hover:bg-white/10 sm:max-w-[300px]"
                     style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
                   >
-                    <span className="text-[12.5px] font-semibold">
+                    <span className="block max-w-full truncate text-[12.5px] font-semibold">
                       <FollowupText text={stripGuillemets(c.q)} readings={chipReadings} />
                     </span>
                     {/* `tl` dari AI cuma dipakai kalau bacaan per-kutipan belum ada
                         (bahasa Latin tak pernah punya keduanya) — biar tak dobel. */}
                     {c.tl && !hasInlineReading(stripGuillemets(c.q), chipReadings) && (
-                      <span className="text-[11px] italic opacity-80">{stripGuillemets(c.tl)}</span>
+                      <span className="block max-w-full truncate text-[11px] italic opacity-80">
+                        {stripGuillemets(c.tl)}
+                      </span>
                     )}
                   </button>
                 ))}
@@ -354,6 +407,7 @@ export default function SentenceStudy({
         baseCode={baseCode}
         x={wordTip.x}
         y={wordTip.y}
+        anchor={wordTip.anchor}
         onClose={() => setWordTip(null)}
         onAnalyze={(w) => {
           setWordTip(null);
@@ -395,19 +449,93 @@ function SkelSection({ lines = 3 }: { lines?: number }) {
 }
 
 function StudySkeleton() {
+  // Bentuknya mengikuti susunan baru: baris nada → pecahan kalimat → arti → tata
+  // bahasa (tertutup). Chip pertanyaan tak ada di sini — tempatnya di dok bawah.
   return (
-    <div className="space-y-3.5" aria-busy="true" aria-label="Menyiapkan analisa kalimat">
-      <SkelSection lines={2} />
+    <div className="space-y-3" aria-busy="true" aria-label="Menyiapkan analisa kalimat">
+      <Skel w="62%" h={30} r={12} />
       <SkelSection lines={3} />
-      <SkelSection lines={4} />
-      <div className="pt-1">
-        <Skel w={132} h={10} className="mb-2.5" />
-        <div className="flex flex-wrap gap-2">
-          {[186, 164, 148].map((w, i) => (
-            <Skel key={i} w={w} h={30} r={9999} />
+      <SkelSection lines={2} />
+      <SkelSection lines={1} />
+    </div>
+  );
+}
+
+// Dua teks dianggap sama kalau isinya identik selain huruf besar/kecil, spasi, dan
+// tanda baca — dipakai membuang terjemahan yang cuma mengulang isi header.
+const normText = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "");
+function sameText(a: string, b: string): boolean {
+  return !!a && !!b && normText(a) === normText(b);
+}
+
+// [watch-sentence-tone-row-v1] Nada kalimat sebagai SATU baris (dulu kartu penuh
+// dengan judul + padding demi satu kalimat pendek). Diketuk = teks utuh.
+function ToneRow({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen((o) => !o)}
+      aria-expanded={open}
+      className="flex w-full items-start gap-2 rounded-xl px-3 py-2 text-left transition-colors hover:bg-white/[0.07]"
+      style={{ backgroundColor: CARD }}
+    >
+      <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: "#7FE0E0" }} />
+      <span className={`text-[12.5px] leading-snug text-white/75 ${open ? "" : "line-clamp-1"}`}>
+        <span className="font-bold" style={{ color: "#7FE0E0" }}>Nada: </span>
+        {text}
+      </span>
+    </button>
+  );
+}
+
+// [watch-pos-legend-v1] Legenda warna kelas kata — pengganti label teks yang dulu
+// dicetak di bawah TIAP kata. Hanya kelas yang muncul di kalimat ini, satu baris,
+// dan bisa disembunyikan (pilihannya diingat) buat yang sudah hafal warnanya.
+function PosLegend({ cats }: { cats: PosCategory[] }) {
+  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    try {
+      const v = window.localStorage.getItem("wl-pos-legend");
+      if (v === "0") setOpen(false);
+    } catch {
+      /* penyimpanan diblokir → tampilkan saja */
+    }
+  }, []);
+  if (!cats.length) return null;
+  const toggle = () =>
+    setOpen((o) => {
+      const next = !o;
+      try {
+        window.localStorage.setItem("wl-pos-legend", next ? "1" : "0");
+      } catch {
+        /* abaikan */
+      }
+      return next;
+    });
+  return (
+    <div className="mt-2.5 border-t pt-2" style={{ borderColor: BORDER }}>
+      <button
+        type="button"
+        onClick={toggle}
+        aria-expanded={open}
+        className="flex items-center gap-1 text-[10.5px] font-semibold uppercase tracking-wide"
+        style={{ color: SUB }}
+      >
+        <ChevronDown
+          className={`h-3 w-3 shrink-0 transition-transform duration-200 ${open ? "" : "-rotate-90"}`}
+        />
+        Warna = kelas kata
+      </button>
+      {open && (
+        <div className="mt-1.5 flex flex-wrap gap-x-2.5 gap-y-1">
+          {cats.map((c) => (
+            <span key={c} className="text-[10.5px] font-bold" style={{ color: POS_COLOR[c] }}>
+              {POS_LABEL_ID[c]}
+            </span>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -420,6 +548,7 @@ function StudyTab({
   bd,
   bdLoading,
   langCode,
+  headTranslation,
   onWordTap,
 }: {
   loading: boolean;
@@ -429,6 +558,9 @@ function StudyTab({
   bd: SentenceBreakdown | null;
   bdLoading: boolean;
   langCode: string;
+  // Arti yang SUDAH tercetak emas di header — dipakai untuk membuang terjemahan
+  // kontekstual yang isinya sama persis (dulu tampil dobel dengan gaya yang sama).
+  headTranslation: string;
   onWordTap: WordTapHandler;
 }) {
   if (loading) {
@@ -445,44 +577,37 @@ function StudyTab({
     );
   }
 
+  // Terjemahan kontekstual sering identik dengan arti yang SUDAH tercetak emas di
+  // header — kalau sama, jangan ditampilkan dua kali dengan gaya yang sama persis.
+  const contextual = deep.contextual && !sameText(deep.contextual, headTranslation) ? deep.contextual : "";
+  // Kelas kata yang benar-benar muncul di kalimat ini — jadi legenda warna, gantinya
+  // label teks di bawah TIAP kata (dulu 11 kata = 11 label; sekarang 1 baris).
+  const legendCats = (bd?.tokens ?? [])
+    .map((t) => t.cat)
+    .filter((c, i, a) => c !== "punctuation" && a.indexOf(c) === i);
+
   return (
-    <div className="space-y-3.5">
-      {/* Struktur & tata bahasa. Kartu "Arti Keseluruhan" sengaja DIHAPUS: artinya
-          sudah tercetak besar (emas) di header drawer, jadi kartu itu cuma
-          mengulang. Gloss harfiah — satu-satunya isi yang tak ada di header —
-          menumpang di sini sebagai baris kecil. */}
-      {(deep.grammar || deep.literal) && (
-        <Section title="Struktur & Tata Bahasa">
-          {deep.grammar && <p className="text-[13.5px] leading-relaxed text-white/85">{deep.grammar}</p>}
-          {deep.literal && (
-            <p className={`text-[13px] leading-relaxed ${deep.grammar ? "mt-2" : ""}`} style={{ color: SUB }}>
-              <span className="font-bold" style={{ color: "#7FE0E0" }}>Harfiah: </span>
-              {deep.literal}
-            </p>
-          )}
-        </Section>
-      )}
+    <div className="space-y-3">
+      {/* Nada — dulu kartu penuh demi satu kalimat pendek; sekarang satu baris yang
+          bisa diketuk untuk melihat teks utuhnya. */}
+      {deep.tone && <ToneRow text={deep.tone} />}
 
-      {/* Nada */}
-      {deep.tone && (
-        <Section title="Nada">
-          <p className="text-[13.5px] leading-relaxed text-white/85">{deep.tone}</p>
-        </Section>
-      )}
-
-      {/* Pecahan kalimat — tampilan per-kata PERSIS mode Analisa di player: arti
-          (emas redup) di atas kata, kata diwarnai kelas kata, bacaan Latin, lalu
-          label kelas kata di bawah. Ketuk kata = balon arti (Simpan · Analisa · TTS). */}
+      {/* Pecahan kalimat — naik ke ATAS karena paling cepat dicerna (dulu nomor 3,
+          di bawah fold). Tampilan per-kata PERSIS mode Analisa di player: arti (emas
+          redup) di atas kata, kata diwarnai kelas kata, bacaan Latin. Label kelas
+          kata TIDAK lagi dicetak di tiap kata — warna + legenda + balon (yang sudah
+          menampilkan badge kelas kata saat diketuk) sudah mewakili. */}
       {bd && bd.tokens.length > 0 ? (
         <Section title="Pecahan Kalimat">
           <div
-            className="flex flex-wrap items-end gap-x-3 gap-y-3"
+            className="flex flex-wrap items-end gap-x-3 gap-y-2.5"
             dir={isRtl(langCode) ? "rtl" : undefined}
           >
             {bd.tokens.map((t, i) => (
               <span
                 key={i}
                 onClick={(e) => onWordTap(t.word, e)}
+                title={POS_LABEL_ID[t.cat]}
                 className="flex cursor-pointer flex-col items-center text-center transition-opacity hover:opacity-80"
               >
                 {t.gloss && (
@@ -504,12 +629,10 @@ function StudyTab({
                     {t.translit}
                   </span>
                 )}
-                <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
-                  {POS_LABEL_ID[t.cat]}
-                </span>
               </span>
             ))}
           </div>
+          <PosLegend cats={legendCats} />
         </Section>
       ) : bdLoading ? (
         <Section title="Pecahan Kalimat">
@@ -562,16 +685,27 @@ function StudyTab({
         </Section>
       ) : null}
 
-      {/* [watch-sentence-contextual-v1] Terjemahan kontekstual — setelah pelajar
-          melihat pecahan kata per kata, baru ditunjukkan bunyinya kalau diucapkan
-          orang Indonesia di situasi yang sama (sering jauh dari harfiah), plus
-          alasan singkat kenapa bisa beda. */}
-      {deep.contextual && (
-        <Section title="Terjemahan Kontekstual">
-          <p className="text-[14.5px] font-bold leading-snug" style={{ color: GOLD }}>
-            {deep.contextual}
-          </p>
-          {deep.contextNote && (
+      {/* [watch-sentence-meaning-merge-v1] Satu kartu "Arti" menggantikan dua tempat
+          terpisah: gloss harfiah yang dulu nebeng di kartu tata bahasa + kartu
+          "Terjemahan Kontekstual". Disandingkan begini, keduanya terbaca sebagai
+          PERBANDINGAN (bunyi apa adanya vs bunyi kalau diucapkan sehari-hari) —
+          bukan sebagai versi arti ketiga yang mengulang header. */}
+      {(contextual || deep.literal) && (
+        <Section title="Arti">
+          {contextual && (
+            <p className="text-[14.5px] font-bold leading-snug" style={{ color: GOLD }}>
+              <span className="text-[12px] font-bold" style={{ color: "#7FE0E0" }}>Sehari-hari: </span>
+              {contextual}
+            </p>
+          )}
+          {deep.literal && (
+            <p className={`text-[13px] leading-relaxed ${contextual ? "mt-1.5" : ""}`} style={{ color: SUB }}>
+              <span className="font-bold" style={{ color: "#7FE0E0" }}>Harfiah: </span>
+              {deep.literal}
+            </p>
+          )}
+          {/* Alasan bedanya cuma relevan kalau versi sehari-harinya memang tampil. */}
+          {contextual && deep.contextNote && (
             <p className="mt-1.5 text-[13px] leading-relaxed" style={{ color: SUB }}>
               <span className="font-bold" style={{ color: "#7FE0E0" }}>Kenapa begitu: </span>
               {deep.contextNote}
@@ -580,10 +714,31 @@ function StudyTab({
         </Section>
       )}
 
+      {/* Struktur & tata bahasa — isi terpanjang tapi paling jarang dibaca ulang,
+          jadi TERTUTUP default (cuplikan 1 baris tetap kelihatan). Kartu "Arti
+          Keseluruhan" tetap tak ada: artinya sudah tercetak emas di header. */}
+      {deep.grammar && (
+        <Section
+          title="Struktur & Tata Bahasa"
+          collapsible
+          defaultOpen={false}
+          storageKey="grammar"
+          preview={deep.grammar}
+        >
+          <p className="text-[13.5px] leading-relaxed text-white/85">{deep.grammar}</p>
+        </Section>
+      )}
+
       {/* Idiom/ungkapan yang ada di kalimat ini — arti harfiah vs makna sebenarnya.
           Kosong kalau kalimatnya lurus (AI dilarang mengarang idiom). */}
       {deep.idioms.length > 0 && (
-        <Section title={deep.idioms.length > 1 ? "Idiom & Ungkapan" : "Idiom"}>
+        <Section
+          title={deep.idioms.length > 1 ? "Idiom & Ungkapan" : "Idiom"}
+          collapsible
+          defaultOpen={false}
+          storageKey="idiom"
+          preview={`${deep.idioms[0].phrase} — ${deep.idioms[0].meaning}`}
+        >
           <div className="space-y-3">
             {deep.idioms.map((it, i) => (
               <div key={i} className={i > 0 ? "pt-3" : undefined} style={i > 0 ? { borderTop: `1px solid ${BORDER}` } : undefined}>
