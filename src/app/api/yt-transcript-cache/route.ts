@@ -13,9 +13,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase-server";
 import { estimateCefrLevel, asCefrLevel } from "@/lib/cefr";
 import { verifyCuesLang } from "@/lib/langGuard";
+import { hasTranslitScheme, transliterateBatch, TRANSLIT_MAX_LINES } from "@/lib/translit-gemini";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// Mode fillTranslit memanggil Gemini beberapa batch → butuh lebih dari 10s default.
+export const maxDuration = 60;
+
+// Maks batch Gemini per panggilan fillTranslit (rem waktu & biaya). Sisa baris
+// diisi panggilan berikutnya — mode ini idempoten.
+const MAX_FILL_BATCHES = 4;
 
 const VIDEO_RE = /^[A-Za-z0-9_-]{11}$/;
 // Batas wajar biar payload jahat/kegedean tak masuk DB (transkrip terpanjang pun
@@ -329,6 +336,88 @@ export async function POST(req: NextRequest) {
         .eq("video_id", videoId)
         .eq("lang", lang);
       return NextResponse.json({ ok: !upErr }, { status: 200 });
+    }
+
+    // Mode FILLTRANSLIT: lengkapi bacaan Latin (pinyin/romaji/dll) baris yang
+    // tersimpan TANPA translit.
+    //
+    // Kenapa di SERVER, bukan kiriman klien: transkrip cache dipecah ulang di klien
+    // (mergeCueFragments + split per kalimat), jadi teks cue yang dilihat penonton
+    // belum tentu sama persis dengan baris tersimpan — memetakannya balik per teks
+    // tak bisa diandalkan. Di sini kita romanisasi baris yang PERSIS tersimpan, jadi
+    // alignment-nya pasti, dan hasilnya ikut terbawa saat cue dipecah (splitCue…
+    // membagi translit seiring target).
+    //
+    // Ini yang menghapus jeda "beberapa detik tanpa pinyin" di awal video: cukup
+    // SEKALI per (video, bahasa) — penonton berikutnya (perangkat/akun mana pun)
+    // dapat bacaan Latin langsung bareng transkrip. Idempoten; baris yang sudah
+    // punya translit tak disentuh.
+    if (body?.fillTranslit) {
+      if (!hasTranslitScheme(lang)) return NextResponse.json({ ok: true }, { status: 200 });
+      const sb = createServerClient(0);
+      const { data, error } = await sb
+        .from("yt_transcripts")
+        .select("cues")
+        .eq("video_id", videoId)
+        .eq("lang", lang)
+        .maybeSingle();
+      if (error || !Array.isArray(data?.cues)) {
+        return NextResponse.json({ ok: false }, { status: 200 });
+      }
+      const stored = data.cues as Record<string, unknown>[];
+      // Baris yang masih bolong (punya target, translit kosong).
+      const holes: number[] = [];
+      for (let i = 0; i < stored.length; i++) {
+        const c = stored[i];
+        const t = c?.target;
+        if (typeof t !== "string" || !t.trim()) continue;
+        if (typeof c.translit === "string" && c.translit.trim()) continue;
+        holes.push(i);
+      }
+      if (!holes.length) return NextResponse.json({ ok: true, filled: 0 }, { status: 200 });
+
+      // Batch paralel; dibatasi agar route (maxDuration 60s) tak kehabisan waktu di
+      // transkrip panjang. Sisanya diisi panggilan berikutnya — idempoten, jadi
+      // penonton/prewarm selanjutnya melanjutkan dari baris yang masih bolong.
+      const budget = holes.slice(0, TRANSLIT_MAX_LINES * MAX_FILL_BATCHES);
+      const batches: number[][] = [];
+      for (let i = 0; i < budget.length; i += TRANSLIT_MAX_LINES) {
+        batches.push(budget.slice(i, i + TRANSLIT_MAX_LINES));
+      }
+      const results = await Promise.all(
+        batches.map(async (idxs) => {
+          try {
+            return await transliterateBatch(
+              idxs.map((i) => String(stored[i].target)),
+              lang
+            );
+          } catch {
+            return [] as string[];
+          }
+        })
+      );
+
+      let filled = 0;
+      batches.forEach((idxs, b) => {
+        const got = results[b] ?? [];
+        idxs.forEach((cueIdx, k) => {
+          const tr = got[k];
+          if (typeof tr === "string" && tr.trim()) {
+            stored[cueIdx].translit = tr.slice(0, 2000);
+            filled++;
+          }
+        });
+      });
+      if (!filled) return NextResponse.json({ ok: false, filled: 0 }, { status: 200 });
+      if (JSON.stringify(stored).length > MAX_JSON) {
+        return NextResponse.json({ ok: false, error: "kegedean" }, { status: 200 });
+      }
+      const { error: upErr } = await sb
+        .from("yt_transcripts")
+        .update({ cues: stored })
+        .eq("video_id", videoId)
+        .eq("lang", lang);
+      return NextResponse.json({ ok: !upErr, filled }, { status: 200 });
     }
 
     // Mode BASEALT: sisipkan terjemahan (bahasa non-Indonesia) yang sudah dihitung

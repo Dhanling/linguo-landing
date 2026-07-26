@@ -1528,6 +1528,13 @@ export async function fetchTranscript(
     // Backfill metadata: baris cache lama (disimpan sebelum ada kolom metadata)
     // belum punya title → tak muncul di tab "Siap". Isi sekarang biar muncul.
     if (opts?.meta?.title) backfillTranscriptMeta(videoId, langCode, opts.meta);
+    // [watch-translit-instant-v1] Baris tersimpan yang belum punya bacaan Latin →
+    // minta server melengkapinya SEKARANG (sekali per video), memakai teks yang
+    // PERSIS tersimpan sehingga alignment-nya pasti. Penonton ini tetap dilayani
+    // tambalan klien yang progresif; yang berikutnya sudah tak kena jeda lagi.
+    if (isNonLatin(langCode) && cached.some((c) => c?.target && !c?.translit)) {
+      requestTranslitFill(videoId, langCode);
+    }
     // Rapikan lagi walau dari cache: transkrip lama mungkin masih punya section
     // panjang (belum kena pemecahan per-baris). Idempoten untuk cache baru.
     return { cues: splitCuesBySentence(cached, langCode), reason: "ok" };
@@ -1746,41 +1753,127 @@ export async function fetchReadyCounts(): Promise<Record<string, number>> {
  */
 export async function transliterateLines(
   lines: string[],
-  langCode: string
+  langCode: string,
+  opts?: {
+    /**
+     * Dipanggil tiap SATU batch selesai (bukan menunggu semuanya) — `values`
+     * sepanjang batch, mulai dari indeks `from`. Ini yang bikin bacaan Latin
+     * baris-baris awal nongol duluan, tak menunggu batch terakhir.
+     */
+    onPartial?: (from: number, values: string[]) => void;
+    /**
+     * Jumlah baris PERTAMA yang dikirim sebagai batch kecil tersendiri. Batch kecil
+     * balik jauh lebih cepat dari batch 40 baris → transliterasi baris yang sedang
+     * ditonton (awal video) muncul hampir seketika.
+     */
+    lead?: number;
+  }
 ): Promise<string[]> {
   const out = new Array<string>(lines.length).fill("");
   if (!isNonLatin(langCode) || !lines.length) return out;
   const CHUNK = 40;
+  // [watch-translit-lead-batch-v1] Batch PERTAMA sengaja kecil. Dulu semua batch
+  // berisi 40 baris dan hasilnya baru dipasang setelah SEMUA batch selesai, jadi
+  // penonton menatap subtitle tanpa pinyin/romaji selama beberapa detik pertama —
+  // persis bagian yang sedang dia dengar. Sekarang: baris awal → batch kecil →
+  // balik duluan → dipasang lewat onPartial.
+  const lead = Math.max(0, Math.min(opts?.lead ?? 0, lines.length));
+  const bounds: [number, number][] = [];
+  if (lead > 0) bounds.push([0, lead]);
+  for (let i = lead; i < lines.length; i += CHUNK) {
+    bounds.push([i, Math.min(i + CHUNK, lines.length)]);
+  }
+
   // Jalankan semua batch PARALEL (bukan berurutan) biar bacaan Latin muncul cepat —
   // transkrip panjang (ratusan baris) tak perlu nunggu batch demi batch. Tiap batch
   // best-effort: yang gagal dibiarkan kosong, tak menahan yang lain.
-  const jobs: Promise<void>[] = [];
-  for (let i = 0; i < lines.length; i += CHUNK) {
-    const start = i;
-    const slice = lines.slice(i, i + CHUNK);
-    jobs.push(
-      (async () => {
-        try {
-          const res = await fetch("/api/translit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ lines: slice, langCode }),
-          });
-          if (!res.ok) return;
-          const data = (await res.json()) as { translit?: unknown };
-          const arr = Array.isArray(data.translit) ? data.translit : [];
-          for (let j = 0; j < slice.length; j++) {
-            const v = arr[j];
-            if (typeof v === "string") out[start + j] = v.trim();
-          }
-        } catch {
-          /* best-effort — biarkan kosong */
-        }
-      })()
-    );
-  }
+  const jobs = bounds.map(async ([start, stop]) => {
+    const slice = lines.slice(start, stop);
+    try {
+      const res = await fetch("/api/translit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lines: slice, langCode }),
+      });
+      if (!res.ok) return;
+      const data = (await res.json()) as { translit?: unknown };
+      const arr = Array.isArray(data.translit) ? data.translit : [];
+      const got = new Array<string>(slice.length).fill("");
+      for (let j = 0; j < slice.length; j++) {
+        const v = arr[j];
+        if (typeof v === "string") got[j] = v.trim();
+      }
+      for (let j = 0; j < slice.length; j++) out[start + j] = got[j];
+      if (got.some((v) => v)) opts?.onPartial?.(start, got);
+    } catch {
+      /* best-effort — biarkan kosong */
+    }
+  });
   await Promise.all(jobs);
   return out;
+}
+
+// ── Cache bacaan Latin (translit) per video ─────────────────────────────────
+// [watch-translit-instant-v1] Transkrip lama di cache server belum tentu membawa
+// `translit` (baris disimpan sebelum worker menghasilkannya). Dulu itu ditambal
+// ULANG tiap kali video dibuka — tiap penonton, tiap kali — jadi selalu ada jeda
+// beberapa detik tanpa pinyin/romaji. Sekarang hasil tambalan itu disimpan: di
+// localStorage (perangkat ini, instan tanpa jaringan) DAN ke cache transkrip
+// server (lintas perangkat/penonton, ikut terbaca bareng transkrip).
+const TRANSLIT_CACHE_PREFIX = "linguo:watch:translit:tv1";
+const translitCacheKey = (lang: string, videoId: string) =>
+  `${TRANSLIT_CACHE_PREFIX}:${lang}:${videoId}`;
+
+/** Bacaan Latin tersimpan di perangkat ini untuk (video, bahasa). null bila tak cocok. */
+export function readTranslitCache(lang: string, videoId: string, n: number): string[] | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(translitCacheKey(lang, videoId));
+    if (!raw) return null;
+    const arr = JSON.parse(raw) as unknown;
+    return Array.isArray(arr) && arr.length === n ? arr.map((x) => String(x ?? "")) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function writeTranslitCache(lang: string, videoId: string, translits: string[]): void {
+  if (typeof window === "undefined") return;
+  if (!translits.some((t) => t)) return;
+  try {
+    window.localStorage.setItem(translitCacheKey(lang, videoId), JSON.stringify(translits));
+  } catch {
+    /* kuota localStorage penuh — abaikan, cuma kehilangan cache */
+  }
+}
+
+// (video|lang) yang sudah dimintakan pengisian translit di sesi ini — jangan
+// kirim berulang tiap buka/putar video.
+const translitFillAsked = new Set<string>();
+
+/**
+ * Minta SERVER melengkapi bacaan Latin pada transkrip tersimpan (video, bahasa).
+ * Fire-and-forget: penonton yang sedang menonton tetap dilayani tambalan klien
+ * (progresif), sementara ini membuat penonton BERIKUTNYA — perangkat/akun mana
+ * pun — dapat pinyin/romaji langsung bareng transkrip, tanpa jeda sama sekali.
+ * Idempoten di server; di klien cukup sekali per sesi.
+ */
+export function requestTranslitFill(videoId: string, langCode: string): void {
+  if (typeof window === "undefined") return;
+  if (!videoId || !isNonLatin(langCode)) return;
+  const key = `${langCode}::${videoId}`;
+  if (translitFillAsked.has(key)) return;
+  translitFillAsked.add(key);
+  try {
+    void fetch("/api/yt-transcript-cache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ videoId, lang: langCode, fillTranslit: true }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    /* abaikan — best-effort */
+  }
 }
 
 // ── word-info (arti kata, grammar, analisa kalimat) ──────────────────────────

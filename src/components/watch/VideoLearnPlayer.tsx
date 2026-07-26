@@ -75,6 +75,8 @@ import {
   translateCuesToBase,
   TranscriptReason,
   transliterateLines,
+  readTranslitCache,
+  writeTranslitCache,
   fetchReadyVideos,
   fetchReadyCounts,
 } from "@/lib/immersionLearn";
@@ -124,6 +126,13 @@ const READY_REC_CACHE = new Map<string, { videos: ImmersionVideo[]; at: number }
 const READY_REC_TTL_MS = 5 * 60 * 1000;
 // Detik hitung-mundur sebelum kartu utama diputar otomatis (ala Netflix).
 const AUTOPLAY_SECS = 5;
+
+// [watch-translit-lead-batch-v1] Berapa baris PERTAMA transkrip yang diromanisasi
+// dalam batch kecil tersendiri. Batch kecil balik jauh lebih cepat dari batch 40
+// baris, jadi pinyin/romaji kalimat pembuka — yang persis sedang didengar penonton
+// saat video baru diklik — muncul hampir seketika, bukan setelah seluruh transkrip
+// selesai. Sisanya menyusul progresif di belakang layar.
+const TRANSLIT_LEAD_LINES = 6;
 
 // Sembunyikan baris terjemahan kalau ia sekadar menduplikasi teks target — terjadi
 // saat cue memang berbahasa penjelas (mis. Inggris di video Ukraina) DAN bahasa
@@ -1611,18 +1620,50 @@ export default function VideoLearnPlayer({
         isNonLatin(langCode) &&
         ordered.some((c) => !c.translit && !cueIsExplanation(c, langCode))
       ) {
+        // [watch-translit-instant-v1] 1) Perangkat ini pernah menambal video ini →
+        // pasang dari localStorage SEKETIKA (tanpa jaringan, tanpa jeda).
+        const cachedTr = readTranslitCache(langCode, video.videoId, ordered.length);
+        if (cachedTr) {
+          setCues((prev) =>
+            prev.length === cachedTr.length
+              ? prev.map((c, i) => (c.translit || !cachedTr[i] ? c : { ...c, translit: cachedTr[i] }))
+              : prev
+          );
+        }
+        // 2) Masih ada yang bolong → tambal lewat Gemini, tapi PROGRESIF: batch
+        // kecil baris-baris AWAL dikirim tersendiri supaya bacaan Latin bagian
+        // yang sedang ditonton muncul hampir seketika, tak menunggu batch terakhir
+        // (dulu semua hasil baru dipasang setelah seluruh transkrip selesai —
+        // itulah "beberapa detik tanpa pinyin" di awal video).
+        const need = ordered.map((c, i) =>
+          cueIsExplanation(c, langCode) || c.translit || cachedTr?.[i] ? "" : c.target
+        );
+        if (!need.some((t) => t)) return;
         setTranslitLoading(true);
-        transliterateLines(
-          ordered.map((c) => (cueIsExplanation(c, langCode) ? "" : c.target)),
-          langCode
-        )
-          .then((tr) => {
-            if (cancelled || tr.length !== ordered.length) return;
+        const merged = cachedTr ? [...cachedTr] : new Array<string>(ordered.length).fill("");
+        transliterateLines(need, langCode, {
+          lead: TRANSLIT_LEAD_LINES,
+          onPartial: (from, values) => {
+            if (cancelled) return;
+            for (let j = 0; j < values.length; j++) {
+              if (values[j]) merged[from + j] = values[j];
+            }
             setCues((prev) =>
-              prev.length === tr.length
-                ? prev.map((c, i) => (c.translit || !tr[i] ? c : { ...c, translit: tr[i] }))
+              prev.length === ordered.length
+                ? prev.map((c, i) =>
+                    c.translit || i < from || i >= from + values.length || !values[i - from]
+                      ? c
+                      : { ...c, translit: values[i - from] }
+                  )
                 : prev
             );
+          },
+        })
+          .then(() => {
+            if (cancelled) return;
+            // Simpan hasil gabungan (cache lama + tambalan baru) → buka lagi video
+            // ini di perangkat ini = bacaan Latin langsung ada.
+            writeTranslitCache(langCode, video.videoId, merged);
           })
           .finally(() => !cancelled && setTranslitLoading(false));
       }
