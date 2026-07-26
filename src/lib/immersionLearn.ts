@@ -2244,7 +2244,11 @@ export interface SentenceBreakdown {
 // v2: arti per-kata (gloss) ditaruh di atas tiap kata + kata fungsi (partikel/kata
 // bantu) sengaja dikosongkan artinya + tanda baca berdiri sendiri dibuang. Cache
 // breakdown lama (tanpa `v` atau v<2) tak lagi dipakai → di-refetch.
-export const BREAKDOWN_VERSION = 2;
+// v3 [watch-modal-gloss-v1]: kata MODAL tak lagi dilabeli "auxiliary" oleh word-info
+// (要/会/能, can/must/want = kata kerja), jadi artinya tak ikut dikosongkan
+// NO_GLOSS_CATS — dulu tap 要 memunculkan kelas kata tanpa arti sama sekali. Gloss
+// juga wajib kata yang PERSIS itu (要 = mau/akan/harus, bukan "ingin" = 想).
+export const BREAKDOWN_VERSION = 3;
 
 /** Apakah breakdown ini hasil versi terbaru (bukan cache lawas yang perlu dihitung ulang). */
 export function isFreshBreakdown(bd: SentenceBreakdown | undefined | null): boolean {
