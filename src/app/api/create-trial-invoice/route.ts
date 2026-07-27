@@ -110,7 +110,9 @@ export async function POST(req: NextRequest) {
           { status: 400 }
         );
       }
-      amount = computeKidsTrialPrice(kids_type, teacherType);
+      // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa (Belanda kat. B
+      // ≠ Inggris kat. C). Tanpa `language` semua bahasa ketagih tarif kat. C.
+      amount = computeKidsTrialPrice(kids_type, teacherType, language);
       durationMin = KIDS_DURATION[kids_type];
     }
 

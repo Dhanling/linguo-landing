@@ -133,10 +133,64 @@ export function applyNativeMultiplier(
   return Math.round((perSessionLocal * NATIVE_MULTIPLIER) / 1000) * 1000;
 }
 
-/** Kids: harga flat per tipe (per sesi, pengajar LOKAL). Native = 2× (lihat applyNativeMultiplier). */
+// =============================================================================
+// linguo-patch:kids-lang-pricing-v1
+// Harga Kids BUKAN flat — ikut KATEGORI BAHASA (A–E) + level, persis seperti
+// kelas dewasa. SUMBER KEBENARAN = admin Registrations.tsx (KIDS_PRICE_LL /
+// KIDS_PRICE_YE + getKidsPerSessionPrice). Bug lama: landing & semua knowledge
+// AI mengutip 75rb/85rb untuk SEMUA bahasa — padahal itu cuma kolom kategori C
+// level A1. Akibatnya Belanda (kat. B) Young Explorer ditagih 85rb, harusnya
+// 95rb (selisih 10rb per sesi × 16 sesi = 160rb kurang bayar).
+// Index array = [A1, A2, B1, B2]. Key = kategori bahasa dari PRICE_CATEGORIES.
+// =============================================================================
+
+/** Level yang di-index tabel Kids di bawah. Kids default A1 (tidak pakai placement). */
+export const KIDS_PRICE_LEVELS = ["A1", "A2", "B1", "B2"];
+
+/** Little Learner (5–8 th, 30 mnt) — per anak/sesi, pengajar LOKAL. */
+export const KIDS_PRICE_LL: Record<string, number[]> = {
+  A: [ 90000, 100000, 110000, 120000],
+  B: [ 80000,  90000, 100000, 110000],
+  C: [ 75000,  85000,  95000, 105000],
+  D: [ 70000,  80000,  90000, 100000],
+  E: [110000, 120000, 130000, 140000],
+};
+
+/** Young Explorer (9–12 th, 45 mnt) — per anak/sesi, pengajar LOKAL. */
+export const KIDS_PRICE_YE: Record<string, number[]> = {
+  A: [100000, 110000, 120000, 130000],
+  B: [ 95000, 105000, 115000, 125000],
+  C: [ 85000,  95000, 105000, 115000],
+  D: [ 75000,  85000,  95000, 105000],
+  E: [130000, 140000, 150000, 160000],
+};
+
+/**
+ * Tarif dasar Kids per sesi (durasi baku tier, pengajar lokal) sesuai kategori
+ * bahasa + level. Bahasa tak dikenal → fallback kategori "C" (sama seperti
+ * getPrivateBase60 — JANGAN ke D, itu bug lama yang bikin harga kemurahan).
+ */
+export function getKidsBasePerSession(
+  kidsKey: string,
+  language?: string | null,
+  level?: string | null
+): number {
+  const table = kidsKey === "young-explorer" ? KIDS_PRICE_YE : kidsKey === "little-learner" ? KIDS_PRICE_LL : null;
+  if (!table) return 0;
+  const cat = (language ? getLanguageCategory(language) : null) || "C";
+  const lvl = (level || "A1").toUpperCase().replace(/\.\d+$/, "");
+  const idx = KIDS_PRICE_LEVELS.indexOf(lvl);
+  return table[cat][idx < 0 ? 0 : idx];
+}
+
+/**
+ * Kids: harga "mulai dari" per tipe = kategori C (English dkk) level A1.
+ * HANYA untuk label etalase ("Mulai Rp 75.000/sesi"). Untuk tagihan WAJIB
+ * pakai getKidsBasePerSession()/computeKidsPerSession() yang sadar bahasa.
+ */
 export const KIDS_PRICE: Record<string, number> = {
-  "little-learner": 75000,
-  "young-explorer": 85000,
+  "little-learner": KIDS_PRICE_LL.C[0],
+  "young-explorer": KIDS_PRICE_YE.C[0],
 };
 
 /** Kids: durasi per tipe (fixed by tipe, bukan pilihan bebas). */
@@ -152,16 +206,19 @@ export const KIDS_LEVEL_KEY: Record<string, string> = {
 };
 
 /**
- * Harga Kids per sesi. Tarif dasar per tipe usia di-scale proporsional ke durasi
- * lalu dibulatkan ke 5rb (pengajar lokal), baru dikali markup native kalau perlu.
+ * Harga Kids per sesi. Tarif dasar per tipe usia IKUT KATEGORI BAHASA + level
+ * (kids-lang-pricing-v1), di-scale proporsional ke durasi lalu dibulatkan ke 5rb
+ * (pengajar lokal), baru dikali markup native kalau perlu.
  * Formula WAJIB identik di FunnelModal, page.tsx & /api/create-funnel-invoice.
  */
 export function computeKidsPerSession(
   kidsKey: string,
   duration: number,
-  teacherType?: string | null
+  teacherType?: string | null,
+  language?: string | null,
+  level?: string | null
 ): number {
-  const base = KIDS_PRICE[kidsKey];
+  const base = getKidsBasePerSession(kidsKey, language, level);
   const baseDur = KIDS_DURATION[kidsKey];
   if (!base || !baseDur) return 0;
   const local = Math.round(((base / baseDur) * duration) / 5000) * 5000;
@@ -220,13 +277,18 @@ export function computePrivateTrialPrice(
   return applyNativeMultiplier(local, teacherType);
 }
 
-/** Harga trial Kids = flat per tipe (native = 2×). Return null kalau tipe tidak dikenal. */
+/**
+ * Harga trial Kids = tarif per sesi tier usia pada KATEGORI BAHASA siswa
+ * (kids-lang-pricing-v1; native = 2×). Return null kalau tipe tidak dikenal.
+ */
 export function computeKidsTrialPrice(
   kidsType: string,
-  teacherType?: string | null
+  teacherType?: string | null,
+  language?: string | null,
+  level?: string | null
 ): number | null {
-  const p = KIDS_PRICE[kidsType];
-  return typeof p === "number" ? applyNativeMultiplier(p, teacherType) : null;
+  const p = getKidsBasePerSession(kidsType, language, level);
+  return p > 0 ? applyNativeMultiplier(p, teacherType) : null;
 }
 
 // =============================================================================

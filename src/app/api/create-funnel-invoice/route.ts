@@ -112,13 +112,15 @@ function computeFunnelAmount(input: {
         : null;
     if (!key) return null;
     // native-pricing-v1 — Kids ikut aturan yang sama dengan dewasa: native = 2× lokal.
-    const perSession = computeKidsPerSession(key, duration, teacherType);
+    // kids-lang-pricing-v1 — tarif dasar ikut kategori bahasa (Belanda ≠ Inggris),
+    // jadi `language` WAJIB ikut dihitung; tanpa itu semua bahasa ketagih tarif kat. C.
+    const perSession = computeKidsPerSession(key, duration, teacherType, language);
     if (!perSession) return null;
     return {
       amount: perSession * sessions,
       perSession,
       description:
-        `Kelas Kids ${level} — ${sessions} sesi @${duration} menit` +
+        `Kelas Kids ${language} — ${level} — ${sessions} sesi @${duration} menit` +
         (teacherType === "native" ? " (Pengajar Native)" : ""),
     };
   }

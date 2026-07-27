@@ -276,7 +276,9 @@ export default function TrialWizard({
         : null;
     }
     if (program === "kids") {
-      return kidsType ? computeKidsTrialPrice(kidsType, tt) : null;
+      // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa, jadi harga baru
+      // muncul setelah bahasa dipilih (Belanda ≠ Inggris, selisih 10rb/sesi).
+      return kidsType && language ? computeKidsTrialPrice(kidsType, tt, language) : null;
     }
     return null;
   }, [program, language, level, duration, kidsType, teacherType, nativeOk]);

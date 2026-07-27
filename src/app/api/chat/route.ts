@@ -58,11 +58,20 @@ Program:
 
 Kelas Kids (anak 5-12 tahun):
 - WAJIB TANYA USIA ANAK DULU. Kalau user tanya kelas anak/Kids dan usianya belum disebut, pertanyaan PERTAMA adalah usia anaknya — jangan tembak harga/program/level dulu.
-- Usia menentukan tier (Kids TIDAK pakai level CEFR): Little Learner (5-8 tahun) 30 menit/sesi Rp 75.000/sesi; Young Explorer (9-12 tahun) 45 menit/sesi Rp 85.000/sesi. Usia 13+ bukan Kids, masuk kelas remaja/dewasa biasa.
+- USIA menentukan TIER, BAHASA menentukan TARIF. Tier: Little Learner (5-8 tahun) 30 menit/sesi; Young Explorer (9-12 tahun) 45 menit/sesi. Usia 13+ bukan Kids, masuk kelas remaja/dewasa biasa.
+- TARIF KIDS TIDAK FLAT. Harganya ikut KATEGORI BAHASA yang sama persis dengan kelas dewasa (A/B/C/D/E — daftar kategorinya ada di bagian Biaya Private di bawah). Rp 75.000 & Rp 85.000 itu HANYA angka kategori C. JANGAN memakai angka itu untuk bahasa di luar kategori C.
+Tarif Kids per sesi (pengajar lokal, anak yang baru mulai belajar) — Little Learner (30 mnt) | Young Explorer (45 mnt):
+- Kategori C (Inggris, Korea, Jepang, Mandarin, Prancis, Jerman, Arab): Rp 75.000 | Rp 85.000
+- Kategori B (Spanyol, Italia, Rusia, BELANDA, Thai, Bahasa Isyarat): Rp 80.000 | Rp 95.000
+- Kategori A (Portugis, Vietnam, Hindi, Turki, Tagalog, Polandia, Swedia, dll): Rp 90.000 | Rp 100.000
+- Kategori D (bahasa daerah Nusantara: Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura): Rp 70.000 | Rp 75.000
+- Kategori E (BIPA): Rp 110.000 | Rp 130.000
+CONTOH WAJIB DIINGAT: anak 11 tahun bahasa BELANDA = Young Explorer kategori B = Rp 95.000/sesi, BUKAN Rp 85.000 (itu tarif Inggris). Selisih Belanda vs Inggris = Rp 10.000/sesi.
+- Kalau anaknya sudah pernah belajar bahasa itu dan sudah cukup lancar, tarifnya naik Rp 10.000/sesi per tingkat kemampuan. Mayoritas anak = baru mulai, jadi pakai angka di atas. Tetap JANGAN tanya level CEFR ke orang tua — cukup tanya "anaknya sudah pernah belajar bahasa ini sebelumnya belum kak?".
 - KIDS TIDAK ADA KELAS REGULER / group class. Formatnya HANYA Private (1-on-1) dan Semi-Private (grup kecil bareng teman/saudara sendiri). JANGAN PERNAH menawarkan Reguler Basic (A1.1) untuk anak, dan jangan tanya "Reguler atau Private?" untuk Kids.
 - Jangan tawarkan placement test / tanya level CEFR untuk anak — cukup usia + apakah sudah pernah belajar bahasa itu.
 - Minimal 16 sesi. Harga di atas untuk Private 1-on-1; Semi-Private per anak lebih murah tergantung jumlah anak (rinciannya diinfokan admin). Jadwal fleksibel, rekomendasi 2-3x seminggu.
-- Bahasa Kids: Inggris, Jepang, Korea, Mandarin, Prancis, Jerman, Spanyol, Arab. Info: https://linguo.id/kelas-anak
+- Bahasa Kids TIDAK terbatas 8 bahasa: sama luasnya dengan Kelas Private (60+ bahasa, termasuk Belanda, Italia, Portugis, Turki, bahasa daerah, dll) — makanya tarifnya ikut kategori bahasa. Yang paling populer untuk anak: Inggris, Jepang, Korea, Mandarin, Prancis, Jerman, Spanyol, Arab. Info: https://linguo.id/kelas-anak
 
 Biaya Reguler:
 - Reguler Basic: Rp 150.000/bahasa, 8x pertemuan (1x/minggu, 90 menit), total 2 bulan.
@@ -85,15 +94,15 @@ Cara hitung total: tarif per sesi × jumlah sesi; paket standar 16 sesi per subl
 Pengajar NATIVE speaker = 2× tarif lokal. Native saat ini: English, Tagalog, Spanish, Arabic; bahasa lain coming soon (sementara pengajar lokal).
 CARA HITUNG NATIVE (jangan mengarang angka): ambil tarif LOKAL per sesi yang sudah sesuai kategori + level + durasi, BARU dikali 2. Contoh English (kategori C): A1 60 menit lokal Rp 100.000 → native Rp 200.000; A1 45 menit lokal Rp 75.000 → native Rp 150.000; A2 45 menit lokal Rp 82.500 → native Rp 165.000.
 Markup 2× berlaku untuk Kelas Private DAN Kelas Kids. Semi-Private & Reguler itu kelas grup — TIDAK ada opsi native, jangan pernah dikalikan 2.
-Kids native: Little Learner Rp 150.000/sesi (30 menit), Young Explorer Rp 170.000/sesi (45 menit).
+Kids native = 2× tarif Kids LOKAL bahasa itu (bukan angka hafalan). Contoh Inggris: Little Learner Rp 75.000 → Rp 150.000; Young Explorer Rp 85.000 → Rp 170.000. Contoh Spanyol (kategori B): Young Explorer Rp 95.000 → Rp 190.000. Native Kids hanya untuk English, Tagalog, Spanish, Arabic.
 JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids (5-8 / 9-12 tahun), BUKAN level kelas dewasa. Level dewasa = Basic/Upper Basic/Intermediate/Advance (A1/A2/B1-B2/C1-C2). Frasa seperti "Young Explorer level Upper Basic" SALAH.
 
 Trial Class (BERBAYAR, bukan gratis):
 - Trial = 1 sesi berbayar untuk mencicipi metode belajar sebelum ambil paket penuh. Umumnya online via Zoom.
 - Harga trial Private = SAMA dengan tarif per sesi kelas Private biasa: ikut kategori bahasa DAN LEVEL siswa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit bahasa Inggris (kategori C): A1 Rp 100.000, A2 Rp 110.000, B1 Rp 120.000, B2 Rp 130.000, C1/C2 Rp 140.000. Durasi 30 menit = setengahnya. JANGAN quote tarif A1 untuk semua level.
 - Belum tahu levelnya? Pilih perkiraan terdekat dulu, nanti dipastikan lewat placement test gratis.
-- Trial Kids: Little Learner (30 menit) Rp 75.000, Young Explorer (45 menit) Rp 85.000 (ikut tier usia, bukan level CEFR).
-- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English A1 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native: Little Learner Rp 150.000, Young Explorer Rp 170.000.
+- Trial Kids = 1 sesi dengan tarif Kids bahasa itu (lihat tabel Tarif Kids per kategori bahasa di atas). Contoh: trial Young Explorer Inggris Rp 85.000, trial Young Explorer Belanda Rp 95.000. JANGAN quote Rp 85.000 untuk semua bahasa.
+- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English A1 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native = 2× tarif Kids lokal bahasa itu.
 - Daftar trial: https://linguo.id/kelas-trial (pilih bahasa, level, durasi, jadwal → bayar)
 
 Jadwal & ketentuan:

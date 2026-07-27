@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, X, Search } from "lucide-react";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
 // (bukan flat Rp90k). Rp90k hanya valid utk bahasa daerah / kategori D.
-import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // funnel-session-duration-v1 · native-pricing-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // funnel-session-duration-v1 · native-pricing-v1 · kids-lang-pricing-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 
@@ -105,10 +105,13 @@ export default function FunnelModal({open,onClose,initialProgram="",initialLang=
   // funnel-session-duration-v1 — pilihan durasi (menit) per sesi + harga live.
   const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
   const privatePerSession = applyNativeMultiplier(Math.round((privateBase60 * selDuration) / 60), selTeacherType);
+  // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa (Belanda ≠ Inggris).
   const kidsKey = KIDS_LEVEL_KEY[selLevel];
-  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType) : 0;
-  // Harga "Mulai dari" di kartu tipe pengajar — ikut program terpilih.
-  const teacherPickBase = selProgram==="Kelas Kids" ? KIDS_PRICE["little-learner"] : PRIVATE_BASE_PRICE;
+  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType, selLang) : 0;
+  // Harga "Mulai dari" di kartu tipe pengajar — ikut program & bahasa terpilih.
+  const teacherPickBase = selProgram==="Kelas Kids"
+    ? getKidsBasePerSession("little-learner", selLang)
+    : PRIVATE_BASE_PRICE;
 
   // funnel-xendit-v1 — paket jumlah sesi (Private & Kids) + total tagihan.
   // Reguler & IELTS = harga paket flat (sinkron dgn /api/create-funnel-invoice).

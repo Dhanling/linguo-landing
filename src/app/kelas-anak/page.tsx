@@ -12,7 +12,9 @@ const TIERS = [
     name: "Little Learner",
     age: "5–8 tahun",
     duration: "30 menit/sesi",
-    price: "Rp 75.000",
+    // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa; angka ini kolom
+    // termurah (kategori C: Inggris/Jepang/Korea/Mandarin/Prancis/Jerman/Arab).
+    price: "Mulai Rp 75.000",
     pricePer: "/sesi",
     color: "from-pink-400 to-rose-500",
     bg: "bg-pink-50",
@@ -33,7 +35,8 @@ const TIERS = [
     name: "Young Explorer",
     age: "9–12 tahun",
     duration: "45 menit/sesi",
-    price: "Rp 85.000",
+    // kids-lang-pricing-v1 — lihat catatan di tier Little Learner.
+    price: "Mulai Rp 85.000",
     pricePer: "/sesi",
     color: "from-blue-400 to-indigo-500",
     bg: "bg-blue-50",
@@ -217,7 +220,14 @@ export default function KelasAnakPage() {
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-sm text-slate-400 mt-8">
+          {/* kids-lang-pricing-v1 — tarif Kids beda per kategori bahasa, sama
+              seperti kelas dewasa. Angka di kartu = kolom termurah (kategori C). */}
+          <p className="text-center text-sm text-slate-500 mt-8 max-w-2xl mx-auto">
+            Tarif di atas untuk bahasa Inggris, Jepang, Korea, Mandarin, Prancis, Jerman &amp; Arab.
+            Bahasa lain sedikit berbeda — misalnya Belanda, Spanyol, Italia &amp; Rusia +Rp 5.000–10.000 per sesi.
+            Harga pastinya bisa dicek saat pendaftaran atau tanya admin.
+          </p>
+          <p className="text-center text-sm text-slate-400 mt-3">
             💡 Beli paket hemat: 12 sesi (diskon 10%) atau 24 sesi (diskon 17%).{" "}
             <a href={waMsg("Halo, saya mau tanya paket hemat Kelas Kids Linguo.")} target="_blank" rel="noopener" className="text-[#1A9E9E] hover:underline font-medium">Tanya kami →</a>
           </p>
@@ -280,7 +290,7 @@ export default function KelasAnakPage() {
               ["", "Kelas Kids", "Private (Dewasa)"],
               ["Usia", "5–12 tahun", "13+ / Dewasa"],
               ["Durasi", "30–45 menit", "60 menit"],
-              ["Harga", "Rp 75.000–85.000", "Rp 90.000"],
+              ["Harga", "Mulai Rp 75.000–85.000", "Mulai Rp 90.000"],
               ["Metode", "Games, lagu, interaktif", "Konversasi, textbook"],
               ["Format", "1-on-1 via Zoom", "1-on-1 via Zoom"],
               ["Bahasa", "55+ bahasa", "55+ bahasa"],

@@ -8,7 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1
 
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
@@ -1145,10 +1145,13 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const privatePerSession = applyNativeMultiplier(Math.round((privateBase60 * selDuration) / 60), selTeacherType);
   // Harga Kids/sesi: scale dari tarif dasar (per tipe) proporsional durasi, dibulatkan
   // ke 5rb, lalu ×2 kalau native (native-pricing-v1 — aturan sama dengan dewasa).
+  // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa (Belanda ≠ Inggris).
   const kidsKey = KIDS_LEVEL_KEY[selLevel];
-  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType) : 0;
-  // Harga "Mulai dari" pada kartu pilihan tipe pengajar — ikut program terpilih.
-  const teacherPickBase = selProgram==="Kelas Kids" ? KIDS_PRICE["little-learner"] : PRIVATE_BASE_PRICE;
+  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType, selLang) : 0;
+  // Harga "Mulai dari" pada kartu pilihan tipe pengajar — ikut program & bahasa.
+  const teacherPickBase = selProgram==="Kelas Kids"
+    ? getKidsBasePerSession("little-learner", selLang)
+    : PRIVATE_BASE_PRICE;
 
   // funnel-xendit-v1 — paket jumlah sesi (Private/Semi/Kids) + total tagihan.
   // Formula WAJIB identik dgn /api/create-funnel-invoice (server hitung ulang).
@@ -1168,7 +1171,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
     {id:"Kelas Private",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
     {id:"Semi Private",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
     ...(isReguler?[{id:"Kelas Reguler",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
-    {id:"Kelas Kids",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai Rp 75.000/sesi",highlight:false},
+    {id:"Kelas Kids",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai "+fmtRp(getKidsBasePerSession("little-learner", selLang))+"/sesi",highlight:false}, // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa
     ...(isEnglish?[{id:"IELTS/TOEFL Prep",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
   ];
 
