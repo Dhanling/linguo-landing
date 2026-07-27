@@ -100,6 +100,7 @@ Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
+- JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
 - Kelas Reguler dibuka minimal 8 siswa. Kalau kuota tidak terpenuhi: menunggu/deposit batch berikutnya, pindah program, pindah Private/Semi-Private, tukar produk digital, atau refund PENUH tanpa potongan.
 - Siswa Private tetap dibuatkan grup WA (1 pengajar + 1 siswa + 1 admin).
@@ -315,6 +316,27 @@ function batchTag(startIso: string | null, today: string): string {
     : "[SUDAH BERJALAN — kelas sedang jalan, bukan batch baru]";
 }
 
+// Kuota REALTIME batch: jumlah pendaftar vs kapasitas, langsung dari database
+// pendaftaran (actual_enrolled/max_capacity di v_regular_batches_summary,
+// current_enrolled/max_capacity di etp_batches) — angka yang sama dengan yang
+// dipakai halaman linguo.id/jadwal-kelas-reguler. Ditulis eksplisit supaya
+// pertanyaan "sudah ada berapa yang daftar / sisa kuota berapa" dijawab dari
+// data, bukan tebakan atau "nanti dicek dulu".
+function seatTag(enrolled: unknown, max: unknown, min?: unknown): string {
+  const e = Number(enrolled ?? 0) || 0;
+  const m = Number(max ?? 0) || 0;
+  if (!m) return "";
+  if (e >= m) return ` [KUOTA: PENUH ${e}/${m} peserta — pendaftaran batch ini ditutup]`;
+  const minN = Number(min ?? 0) || 0;
+  const kurang = minN > e ? minN - e : 0;
+  const catatan = kurang
+    ? `; butuh ${kurang} peserta lagi supaya kelas dipastikan jalan (minimal ${minN})`
+    : minN
+      ? `; minimal ${minN} peserta sudah terpenuhi, kelas dipastikan jalan`
+      : "";
+  return ` [KUOTA: sudah ${e} dari ${m} peserta, sisa ${m - e} slot${catatan}]`;
+}
+
 const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
 - Hari, jam, jumlah pertemuan & tanggal mulai kelas Reguler/ETP HANYA boleh diambil dari daftar di atas. Daftar ini ditarik dari sumber yang SAMA dengan halaman linguo.id/jadwal-kelas-reguler. DILARANG mengarang atau memakai jadwal dari ingatan.
 - Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
@@ -323,7 +345,17 @@ const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
 - Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung. Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
 - Batch [BELUM MULAI]: sebutkan tanggal mulainya, pendaftaran masih dibuka.
 - Jadwal sudah fix dari Linguo & tidak bisa request hari/jam.
-- Bahasa/track yang TIDAK ada di daftar = batchnya belum dibuka → arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya.`;
+- Bahasa/track yang TIDAK ada di daftar = batchnya belum dibuka → arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya.
+
+KUOTA / JUMLAH PENDAFTAR (WAJIB):
+- Pertanyaan "sudah ada berapa yang daftar", "sisa kuota berapa", "kelasnya sudah penuh belum", "sudah pasti jalan?" untuk Reguler & ETP DIJAWAB dari penanda [KUOTA: ...] pada batch di daftar di atas. Angka itu ditarik realtime dari database pendaftaran, sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler.
+- DILARANG mengarang jumlah peserta, dan JANGAN menjawab "nanti dicek dulu / diinfokan admin" kalau angkanya sudah ada di daftar.
+- Sampaikan pakai kalimat biasa, mis. "batch ini sudah terisi 9 dari 15 peserta, jadi masih ada 6 slot". Jangan menyalin format kurung siku.
+- Pendaftar masih 0: jangan bilang "sepi / belum ada peminat". Sampaikan batch-nya baru dibuka dan kuotanya masih tersedia penuh, ajak daftar lebih awal.
+- Belum mencapai minimal peserta: boleh disampaikan apa adanya sekaligus ketentuannya — kelas jalan setelah minimal peserta terkumpul; kalau sampai jadwal mulai belum terpenuhi, siswa bisa pindah batch/program, pindah Private/Semi-Private, atau refund PENUH.
+- Sisa slot 3 atau kurang: boleh disampaikan sebagai urgensi ("tinggal 2 slot lagi"), tapi angkanya tetap apa adanya.
+- Batch bertanda [KUOTA: PENUH ...]: jangan ditawarkan sebagai batch yang bisa didaftar. Sebutkan hanya kalau ditanya, lalu arahkan ke batch lain / Private / Semi-Private.
+- Angka kuota berubah tiap ada pendaftar baru: SELALU pakai angka di daftar ini, jangan angka dari percakapan sebelumnya.`;
 
 async function getScheduleBlock(): Promise<string> {
   if (Date.now() - scheduleCache.at < SCHEDULE_TTL_MS) return scheduleCache.text;
@@ -333,30 +365,32 @@ async function getScheduleBlock(): Promise<string> {
     const [{ data: reg }, { data: etp }] = await Promise.all([
       client
         .from("v_regular_batches_summary")
-        .select("language, level, session_day, session_start_time, session_end_time, start_date, total_sessions, actual_enrolled, max_capacity")
+        .select("language, level, session_day, session_start_time, session_end_time, start_date, total_sessions, actual_enrolled, min_capacity, max_capacity")
         .eq("is_published", true)
         .in("status", ["Open", "Confirmed"])
         .order("start_date", { ascending: true }),
       client
         .from("etp_batches")
-        .select("title, badge, days, time, start_date, total_sessions, price")
+        .select("title, badge, days, time, start_date, total_sessions, price, current_enrolled, max_capacity")
         .eq("is_active", true)
         .order("start_date", { ascending: true }),
     ]);
 
     const today = todayWIB();
-    const regLines = (reg || [])
-      .filter((b: any) => (b.actual_enrolled ?? 0) < (b.max_capacity ?? 0))
-      .map((b: any) => {
-        const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
-        const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
-        const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
-        const sesi = b.total_sessions ? `, ${b.total_sessions}x pertemuan` : "";
-        return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}`;
-      });
+    // Batch penuh TETAP dicantumkan (bertanda [KUOTA: PENUH ...]) — dulu dibuang,
+    // akibatnya kalau ditanya batch itu AI jawab "belum dibuka" padahal penuh.
+    const regLines = (reg || []).map((b: any) => {
+      const t1 = (b.session_start_time || "").slice(0, 5).replace(":", ".");
+      const t2 = (b.session_end_time || "").slice(0, 5).replace(":", ".");
+      const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
+      const sesi = b.total_sessions ? `, ${b.total_sessions}x pertemuan` : "";
+      const kuota = seatTag(b.actual_enrolled, b.max_capacity, b.min_capacity);
+      return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
+    });
     const etpLines = (etp || []).map((b: any) => {
       const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";
-      return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}`;
+      const kuota = seatTag(b.current_enrolled, b.max_capacity);
+      return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
     });
 
     const parts: string[] = [`TANGGAL HARI INI: ${fmtDateID(today)} (WIB)`];
