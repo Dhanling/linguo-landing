@@ -50,6 +50,14 @@ const PLACEMENT_LIVE = new Set([
   "portuguese-br", "portuguese-pt", "swedish", "norwegian", "danish",
   "icelandic", "finnish", "hungarian", "turkish", "romanian",
   "russian", "ukrainian", "bulgarian", "polish", "czech",
+  // linguo-patch:placement-all-v1 — sisa bahasa "SEGERA": semua bahasa di picker
+  // sekarang punya placement test CEFR sendiri
+  "arabic", "hebrew", "persian", "kurdish", "armenian",
+  "javanese", "sundanese", "betawi", "bipa", "balinese",
+  "minangkabau", "batak", "bugis", "acehnese", "banjar", "madurese",
+  "lao", "bengali", "tamil", "punjabi", "nepali", "mongolian",
+  "swahili", "zulu", "yoruba", "amharic",
+  "georgian", "latin", "esperanto",
 ]);
 
 interface Props {

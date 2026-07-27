@@ -70,7 +70,8 @@ export const languages: LanguageMeta[] = [
   { slug: "acehnese",    name: "Aceh",      nativeName: "Bahsa Acèh",  flag: "🇮🇩", region: "nusantara", available: false },
   { slug: "banjar",      name: "Banjar",    nativeName: "Bahasa Banjar", flag: "🇮🇩", region: "nusantara", available: false },
   { slug: "madurese",    name: "Madura",    nativeName: "Bhâsa Madhurâ", flag: "🇮🇩", region: "nusantara", available: true },
-  { slug: "betawi",      name: "Betawi",    nativeName: "Bahasa Betawi", flag: "🇮🇩", region: "nusantara", available: false },
+  // linguo-patch:placement-all-v1 — entri "betawi" kedua dihapus: duplikat slug bikin
+  // Betawi muncul 2x di PlacementPicker (entri utama featured ada di blok atas).
 
   // === African ===
   { slug: "swahili",     name: "Swahili",   nativeName: "Kiswahili",   flag: "🇰🇪", region: "african", available: false },

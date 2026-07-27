@@ -12,7 +12,7 @@ import { supabase } from "@/lib/supabase-client";
 import RegisterModal from "@/components/RegisterModal";
 // linguo-patch:placement-cefr-wire-v1
 import PlacementTest from "./PlacementTest";
-import { getCurriculum } from "@/data/curriculum";
+import { getCurriculum, getLanguageBySlug } from "@/data/curriculum";
 import { englishPlacementTest } from "@/data/placement/english";
 import { japanesePlacementTest } from "@/data/placement/japanese";
 // linguo-patch:placement-asia-v1 — 10 bahasa Asia "SEGERA" dapat placement test CEFR
@@ -48,6 +48,37 @@ import { ukrainianPlacementTest } from "@/data/placement/ukrainian";
 import { bulgarianPlacementTest } from "@/data/placement/bulgarian";
 import { polishPlacementTest } from "@/data/placement/polish";
 import { czechPlacementTest } from "@/data/placement/czech";
+// linguo-patch:placement-all-v1 — sisa bahasa "SEGERA" (Timur Tengah, Nusantara, Asia Selatan,
+// Afrika, Klasik/Lainnya) dapat placement test CEFR — picker gak punya "Segera" lagi
+import { arabicPlacementTest } from "@/data/placement/arabic";
+import { hebrewPlacementTest } from "@/data/placement/hebrew";
+import { persianPlacementTest } from "@/data/placement/persian";
+import { kurdishPlacementTest } from "@/data/placement/kurdish";
+import { armenianPlacementTest } from "@/data/placement/armenian";
+import { javanesePlacementTest } from "@/data/placement/javanese";
+import { sundanesePlacementTest } from "@/data/placement/sundanese";
+import { betawiPlacementTest } from "@/data/placement/betawi";
+import { bipaPlacementTest } from "@/data/placement/bipa";
+import { balinesePlacementTest } from "@/data/placement/balinese";
+import { minangkabauPlacementTest } from "@/data/placement/minangkabau";
+import { batakPlacementTest } from "@/data/placement/batak";
+import { bugisPlacementTest } from "@/data/placement/bugis";
+import { acehnesePlacementTest } from "@/data/placement/acehnese";
+import { banjarPlacementTest } from "@/data/placement/banjar";
+import { maduresePlacementTest } from "@/data/placement/madurese";
+import { laoPlacementTest } from "@/data/placement/lao";
+import { bengaliPlacementTest } from "@/data/placement/bengali";
+import { tamilPlacementTest } from "@/data/placement/tamil";
+import { punjabiPlacementTest } from "@/data/placement/punjabi";
+import { nepaliPlacementTest } from "@/data/placement/nepali";
+import { mongolianPlacementTest } from "@/data/placement/mongolian";
+import { swahiliPlacementTest } from "@/data/placement/swahili";
+import { zuluPlacementTest } from "@/data/placement/zulu";
+import { yorubaPlacementTest } from "@/data/placement/yoruba";
+import { amharicPlacementTest } from "@/data/placement/amharic";
+import { georgianPlacementTest } from "@/data/placement/georgian";
+import { latinPlacementTest } from "@/data/placement/latin";
+import { esperantoPlacementTest } from "@/data/placement/esperanto";
 import type { Question as PlacementQuestion } from "@/data/placement/english";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -333,6 +364,36 @@ const CEFR_QUESTIONS: Record<string, PlacementQuestion[]> = {
   bulgarian: bulgarianPlacementTest,
   polish: polishPlacementTest,
   czech: czechPlacementTest,
+  // linguo-patch:placement-all-v1
+  arabic: arabicPlacementTest,
+  hebrew: hebrewPlacementTest,
+  persian: persianPlacementTest,
+  kurdish: kurdishPlacementTest,
+  armenian: armenianPlacementTest,
+  javanese: javanesePlacementTest,
+  sundanese: sundanesePlacementTest,
+  betawi: betawiPlacementTest,
+  bipa: bipaPlacementTest,
+  balinese: balinesePlacementTest,
+  minangkabau: minangkabauPlacementTest,
+  batak: batakPlacementTest,
+  bugis: bugisPlacementTest,
+  acehnese: acehnesePlacementTest,
+  banjar: banjarPlacementTest,
+  madurese: maduresePlacementTest,
+  lao: laoPlacementTest,
+  bengali: bengaliPlacementTest,
+  tamil: tamilPlacementTest,
+  punjabi: punjabiPlacementTest,
+  nepali: nepaliPlacementTest,
+  mongolian: mongolianPlacementTest,
+  swahili: swahiliPlacementTest,
+  zulu: zuluPlacementTest,
+  yoruba: yorubaPlacementTest,
+  amharic: amharicPlacementTest,
+  georgian: georgianPlacementTest,
+  latin: latinPlacementTest,
+  esperanto: esperantoPlacementTest,
 };
 
 export default function PlacementTestPage() {
@@ -340,7 +401,11 @@ export default function PlacementTestPage() {
   const lang = params?.lang as string;
   const questions = CEFR_QUESTIONS[lang];
   if (questions) {
-    const curriculum = getCurriculum(lang);
+    // linguo-patch:placement-all-v1 — bahasa yang belum punya data silabus tetap bisa
+    // placement test: <PlacementTest/> cuma pakai curriculum.meta, jadi cukup stub
+    // dari languages.ts (overview/levels kosong).
+    const meta = getLanguageBySlug(lang);
+    const curriculum = getCurriculum(lang) ?? (meta ? { meta, overview: "", levels: [] } : null);
     if (curriculum) {
       return <PlacementTest curriculum={curriculum} questions={questions} />;
     }

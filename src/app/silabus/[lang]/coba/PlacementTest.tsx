@@ -51,6 +51,7 @@ const FUNNEL_LANG_OVERRIDE: Record<string, string> = {
   filipino: "Tagalog",
   "portuguese-br": "Portuguese",
   "portuguese-pt": "Portuguese",
+  bipa: "BIPA", // linguo-patch:placement-all-v1 — akronim, bukan "Bipa"
 };
 function funnelLangName(slug: string): string {
   return FUNNEL_LANG_OVERRIDE[slug] || (slug.charAt(0).toUpperCase() + slug.slice(1));
