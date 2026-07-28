@@ -1882,8 +1882,23 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [qProgram, setQProgram] = useState("");
   const [qExp, setQExp] = useState("");
   const [qSending, setQSending] = useState(false);
+  // wa-quick-modal-v1 — hero tetap ramping (nomor + tombol). Detail wajibnya
+  // diminta lewat popup yang kebuka SETELAH tombol diskon diklik.
+  const [quickOpen, setQuickOpen] = useState(false);
+  useOverlayLock(quickOpen);
 
   const quickSavingRef = React.useRef(false);
+  // Tahap 1: nomor divalidasi di hero, lalu popup detail dibuka.
+  const handleQuickStart = () => {
+    if(!waNumber) { setError("Masukkan nomor WhatsApp-mu"); return; }
+    if(waNumber.length < 9) { setError("Nomor terlalu pendek, minimal 9 digit"); return; }
+    if(waNumber.length > 15) { setError("Nomor terlalu panjang"); return; }
+    if(countryCode==="+62" && !["8"].includes(waNumber[0])) { setError("Nomor Indonesia harus diawali angka 8 (contoh: 812...)"); return; }
+    setError("");
+    setQuickOpen(true);
+    if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","wa_quick_opened");
+  };
+  // Tahap 2: detail di popup divalidasi, baru lanjut ke WhatsApp.
   const handleQuickSubmit = async () => {
     if(quickSavingRef.current || qSending) return; // wa-quick-guard-v1: anti double-fire
     if(!qName.trim()) { setError(lang==="id"?"Nama kamu dulu ya":"Please enter your name"); return; }
@@ -1891,10 +1906,6 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
     if(!qLang) { setError(lang==="id"?"Pilih bahasa yang mau dipelajari":"Choose a language"); return; }
     if(!qExp) { setError(lang==="id"?"Pilih dulu: pernah belajar atau belum":"Tell us your experience"); return; }
     if(!qProgram) { setError(lang==="id"?"Pilih jenis kelasnya":"Choose a class type"); return; }
-    if(!waNumber) { setError("Masukkan nomor WhatsApp-mu"); return; }
-    if(waNumber.length < 9) { setError("Nomor terlalu pendek, minimal 9 digit"); return; }
-    if(waNumber.length > 15) { setError("Nomor terlalu panjang"); return; }
-    if(countryCode==="+62" && !["8"].includes(waNumber[0])) { setError("Nomor Indonesia harus diawali angka 8 (contoh: 812...)"); return; }
     setError("");
     const fullNum = countryCode.replace("+","") + waNumber;
     quickSavingRef.current = true; // wa-quick-guard-v1
@@ -1935,64 +1946,89 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
             <span className="text-white text-sm font-medium max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap transition-all duration-300 opacity-0 group-hover:opacity-100">Pilih Bahasa</span>
           </button>
         </div>
-        {/* wa-quick-detail-form-v1 — data singkat WAJIB diisi dulu, baru tombol
-            diskon. Datanya langsung nyambung ke WA Inbox admin buat follow up. */}
-        <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial — isi data singkat ini dulu":"Special discount — fill in your details first"}</p>
-        <div className="bg-white rounded-2xl w-full max-w-full sm:max-w-sm shadow-lg p-2.5 space-y-2">
-          <div className="grid grid-cols-2 gap-2">
-            <input type="text" placeholder={lang==="id"?"Nama kamu":"Your name"} value={qName}
-              onChange={(e)=>{setQName(e.target.value);setError("")}}
-              className={QUICK_FIELD_CLS} required />
-            <input type="email" placeholder="email@kamu.com" value={qEmail}
-              onChange={(e)=>{setQEmail(e.target.value);setError("")}}
-              className={QUICK_FIELD_CLS} required />
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            <select value={qLang} onChange={(e)=>{setQLang(e.target.value);setError("")}}
-              className={`${QUICK_FIELD_CLS} cursor-pointer ${qLang?"":"text-slate-400"}`}>
-              <option value="">{lang==="id"?"Pilih bahasa":"Language"}</option>
-              {QUICK_LANGS.map(l=><option key={l} value={l} className="text-slate-900">{l}</option>)}
-            </select>
-            <select value={qProgram} onChange={(e)=>{setQProgram(e.target.value);setError("")}}
-              className={`${QUICK_FIELD_CLS} cursor-pointer ${qProgram?"":"text-slate-400"}`}>
-              <option value="">{lang==="id"?"Jenis kelas":"Class type"}</option>
-              {QUICK_PROGRAMS.map(p=><option key={p} value={p} className="text-slate-900">{p}</option>)}
-            </select>
-          </div>
-          <div>
-            <p className="text-[10px] text-slate-500 mb-1 px-0.5">{lang==="id"?"Pernah belajar bahasa ini sebelumnya?":"Studied this language before?"}</p>
-            <div className="grid grid-cols-2 gap-2">
-              {QUICK_EXPERIENCE.map(x=>(
-                <button key={x.value} type="button" onClick={()=>{setQExp(x.value);setError("")}}
-                  className={`rounded-lg py-2 text-xs font-semibold transition-colors ${qExp===x.value?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
-                  {lang==="id"?x.id:x.en}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center rounded-full border border-slate-200 overflow-hidden">
-            <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-              className="bg-transparent pl-3 pr-0 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none w-[52px] sm:w-auto shrink-0">
-              {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
-            <input type="tel" placeholder="812 3456 7890" value={waNumber}
-              onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
-              className="flex-1 min-w-0 w-full px-1 sm:px-2 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
-              onKeyDown={(e)=>e.key==='Enter'&&handleQuickSubmit()} required />
-          </div>
-          <button onClick={handleQuickSubmit} disabled={qSending}
-            className="group no-cta-zoom w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-70 disabled:cursor-not-allowed text-slate-900 font-bold px-4 py-2.5 text-xs sm:text-sm transition-colors active:scale-95 whitespace-nowrap rounded-full inline-flex items-center justify-center gap-1">
-            {qSending ? (lang==="id"?"Mengirim...":"Sending...") : (<>
-              {lang==="id"?"Dapatkan Diskon":"Get Discount"}
-              <span className="arrow-loop inline-block">→</span>
-            </>)}
+        {/* Inline WA input — compact */}
+        <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
+        <div className="bg-white rounded-full flex items-center w-full max-w-full sm:max-w-sm shadow-lg overflow-hidden">
+          <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
+            className="bg-transparent pl-3 pr-0 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer appearance-none w-[52px] sm:w-auto shrink-0">
+            {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+          <input type="tel" placeholder="812 3456 7890" value={waNumber}
+            onChange={(e)=>{const v=e.target.value.replace(/[^0-9]/g,"");setWaNumber(v.startsWith("0")?v.slice(1):v);setError("")}}
+            className="flex-1 min-w-0 w-full px-1 sm:px-2 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none bg-transparent"
+            onKeyDown={(e)=>e.key==='Enter'&&handleQuickStart()} required />
+          {/* wa-quick-modal-v1 — tombol ini nggak langsung ke WhatsApp: buka popup
+              detail wajib dulu (nama, email, bahasa, pengalaman, jenis kelas). */}
+          <button onClick={handleQuickStart}
+            className="group no-cta-zoom bg-[#fbbf24] hover:bg-[#f59e0b] text-slate-900 font-bold px-2 sm:px-4 py-2 text-[10px] sm:text-xs transition-colors active:scale-95 whitespace-nowrap rounded-full m-1 shrink-0 inline-flex items-center gap-1">
+            <span className="hidden sm:inline">Dapatkan Diskon</span><span className="sm:hidden">Diskon</span>
+            <span className="arrow-loop inline-block">→</span>
           </button>
         </div>
-        {error && <p className="text-red-300 text-xs mt-2">{error}</p>}
+        {!quickOpen && error && <p className="text-red-300 text-xs mt-2">{error}</p>}
         <p className="text-white/50 text-xs mt-3">{lang==="id"?"Gratis konsultasi pertama via WhatsApp":"Free first consultation via WhatsApp"}</p>
       </div>
+      {/* wa-quick-modal-v1 — popup detail wajib sebelum lanjut ke WhatsApp */}
+      <AnimatePresence>{quickOpen && (
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
+          className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
+          onClick={()=>!qSending&&setQuickOpen(false)}>
+          <motion.div initial={{y:40,opacity:0}} animate={{y:0,opacity:1}} exit={{y:40,opacity:0}}
+            onClick={(e)=>e.stopPropagation()}
+            className="bg-white w-full sm:max-w-sm rounded-t-3xl sm:rounded-3xl p-5 shadow-2xl max-h-[92vh] overflow-y-auto">
+            <div className="flex items-start justify-between gap-3 mb-1">
+              <h3 className="text-lg font-bold text-slate-900">{lang==="id"?"Klaim diskonmu":"Claim your discount"}</h3>
+              <button onClick={()=>!qSending&&setQuickOpen(false)} className="text-slate-400 hover:text-slate-600 shrink-0" aria-label="Tutup">
+                <X className="h-5 w-5"/>
+              </button>
+            </div>
+            <p className="text-xs text-slate-500 mb-4">
+              {lang==="id"
+                ? `Isi data singkat ini dulu, lalu kamu langsung tersambung ke WhatsApp kami (${countryCode}${waNumber}).`
+                : `Fill in these quick details, then you'll be connected to our WhatsApp (${countryCode}${waNumber}).`}
+            </p>
+            <div className="space-y-2.5">
+              <input type="text" placeholder={lang==="id"?"Nama kamu":"Your name"} value={qName}
+                onChange={(e)=>{setQName(e.target.value);setError("")}} className={QUICK_FIELD_CLS} autoFocus required />
+              <input type="email" placeholder="email@kamu.com" value={qEmail}
+                onChange={(e)=>{setQEmail(e.target.value);setError("")}} className={QUICK_FIELD_CLS} required />
+              <select value={qLang} onChange={(e)=>{setQLang(e.target.value);setError("")}}
+                className={`${QUICK_FIELD_CLS} cursor-pointer ${qLang?"":"text-slate-400"}`}>
+                <option value="">{lang==="id"?"Bahasa yang mau dipelajari":"Language you want to learn"}</option>
+                {QUICK_LANGS.map(l=><option key={l} value={l} className="text-slate-900">{l}</option>)}
+              </select>
+              <select value={qProgram} onChange={(e)=>{setQProgram(e.target.value);setError("")}}
+                className={`${QUICK_FIELD_CLS} cursor-pointer ${qProgram?"":"text-slate-400"}`}>
+                <option value="">{lang==="id"?"Jenis kelas yang diminati":"Class type you prefer"}</option>
+                {QUICK_PROGRAMS.map(p=><option key={p} value={p} className="text-slate-900">{p}</option>)}
+              </select>
+              <div>
+                <p className="text-[11px] text-slate-500 mb-1.5">{lang==="id"?"Pernah belajar bahasa ini sebelumnya?":"Studied this language before?"}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {QUICK_EXPERIENCE.map(x=>(
+                    <button key={x.value} type="button" onClick={()=>{setQExp(x.value);setError("")}}
+                      className={`rounded-lg py-2.5 text-xs font-semibold transition-colors ${qExp===x.value?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
+                      {lang==="id"?x.id:x.en}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {error && <p className="text-red-500 text-xs mt-3">{error}</p>}
+            <button onClick={handleQuickSubmit} disabled={qSending}
+              className="no-cta-zoom w-full mt-4 bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-70 disabled:cursor-not-allowed text-slate-900 font-bold px-4 py-3 text-sm transition-colors active:scale-95 rounded-full inline-flex items-center justify-center gap-1.5">
+              {qSending
+                ? (lang==="id"?"Menghubungkan...":"Connecting...")
+                : (<>{lang==="id"?"Dapatkan Diskon":"Get Discount"} <span className="arrow-loop inline-block">→</span></>)}
+            </button>
+            <p className="text-[11px] text-slate-400 text-center mt-3">
+              {lang==="id"?"Kamu akan diarahkan ke WhatsApp Linguo":"You'll be redirected to Linguo's WhatsApp"}
+            </p>
+          </motion.div>
+        </motion.div>
+      )}</AnimatePresence>
       <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialEmail={funnelPrefillEmail} initialWa={funnelPrefillWa}/>
     </>
   );
