@@ -426,8 +426,12 @@ export default function PaketElearningClient({
                 a: 'Setelah pembayaran terkonfirmasi (instan untuk QRIS/e-wallet), kamu akan dapat email + bisa langsung login di linguo.id/akun untuk akses semua materi.',
               },
               {
+                q: 'Materinya sampai level apa?',
+                a: 'E-learning berisi rekaman kelas untuk level basic (A1). Untuk lanjut ke level di atasnya, kamu bisa ambil kelas Private yang materinya disesuaikan dengan levelmu.',
+              },
+              {
                 q: 'Apakah e-sertifikat di paket 12 bulan diakui?',
-                a: 'E-sertifikat resmi dari Linguo Edu Indonesia (PT terdaftar), bisa digunakan untuk portofolio belajar mandiri dan referensi level CEFR (A1–B2).',
+                a: 'E-sertifikat resmi dari Linguo Edu Indonesia (PT terdaftar), bisa digunakan untuk portofolio belajar mandiri dan referensi level CEFR A1 (basic).',
               },
               {
                 q: 'Bahasa apa saja yang tersedia?',
