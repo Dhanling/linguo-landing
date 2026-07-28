@@ -2204,6 +2204,37 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 
 // ========== LANGUAGE FLAG STRIP ==========
 // Flag codes resolved via getFlagCode(name) — see FLAG_CODES map above.
+// [seo-internal-link-v1] Sepuluh tautan "Learn a Language" di footer dulu semua
+// mengarah ke wa.me — jadi otoritas dari halaman terkuat di situs (homepage)
+// mengalir keluar ke WhatsApp, sementara landing page bahasa sendiri tidak
+// pernah ditaut dari mana pun. Sekarang semuanya menunjuk ke dalam:
+// bahasa yang punya landing sendiri → /kelas/bahasa-*, sisanya → silabusnya.
+// Label diubah ke bahasa Indonesia supaya cocok dengan kata yang benar-benar
+// dicari orang ("kursus bahasa jepang", bukan "learn Japanese").
+const FOOTER_LANGUAGES: { label: string; href: string }[] = [
+  { label: "Inggris",  href: "/kelas/bahasa-inggris" },
+  { label: "Jepang",   href: "/kelas/bahasa-jepang" },
+  { label: "Korea",    href: "/kelas/bahasa-korea" },
+  { label: "Mandarin", href: "/kelas/bahasa-mandarin" },
+  { label: "Prancis",  href: "/silabus/french" },
+  { label: "Jerman",   href: "/silabus/german" },
+  { label: "Spanyol",  href: "/silabus/spanish" },
+  { label: "Arab",     href: "/silabus/arabic" },
+  { label: "Italia",   href: "/silabus/italian" },
+  { label: "Belanda",  href: "/silabus/dutch" },
+];
+
+// Sama seperti di atas: program diarahkan ke halamannya sendiri, bukan ke WA.
+// Tombol WA tetap ada di banyak tempat lain — yang hilang cuma kebocoran
+// otoritas link, bukan jalur konversinya.
+const FOOTER_PROGRAMS: { label: string; href: string }[] = [
+  { label: "Kelas Reguler",   href: "/jadwal-kelas-reguler" },
+  { label: "Kelas Private",   href: "/kelas" },
+  { label: "Persiapan IELTS", href: "/persiapan-tes" },
+  { label: "Persiapan TOEFL", href: "/persiapan-tes" },
+  { label: "Kelas Anak",      href: "/kelas-anak" },
+];
+
 const LANGUAGES = [
   "English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish",
   "Italian","Dutch","Portuguese","Russian","Polish","Swedish","Norwegian","Danish",
@@ -2430,8 +2461,18 @@ export default function Home() {
         <motion.div initial={{opacity:0,x:-30}} animate={{opacity:1,x:0}} transition={{duration:0.7}}>
           <div className="flex items-start gap-3 lg:block mb-4 lg:mb-0">
             <div className="flex-1">
+              {/* [seo-h1-v1] H1 lama cuma berbunyi "Everyone Can Be a Polyglot":
+                  kuat sebagai tagline, tapi nol nilai kata kunci — orang
+                  Indonesia tidak mencari kata "polyglot". H1 adalah sinyal
+                  relevansi terkuat kedua setelah <title>, jadi kalimat yang
+                  benar-benar dicari ditambahkan di dalamnya sebagai baris kedua
+                  yang KELIHATAN (bukan teks tersembunyi — itu dihukum Google).
+                  Tagline-nya sendiri tetap dominan, hero tetap ramping. */}
               <h1 className="font-heading text-[1.6rem] sm:text-4xl lg:text-[3.8rem] font-extrabold text-white leading-[1.1] mb-4 lg:mb-8">
                 Everyone Can<br/>Be a Polyglot
+                <span className="block font-sans text-[0.72rem] sm:text-sm lg:text-lg font-semibold text-white/85 leading-snug mt-1.5 lg:mt-4">
+                  Kursus Bahasa Asing Online — 60+ Bahasa
+                </span>
               </h1>
             </div>
             <div className="lg:hidden shrink-0 relative translate-x-2 sm:translate-x-3">
@@ -2659,22 +2700,28 @@ export default function Home() {
     <footer className="bg-[#14726E] text-white py-14">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-10 mb-10">
-          <div><h4 className="font-bold mb-4">Learn a Language</h4>
+          <div><h4 className="font-bold mb-4">Kursus Bahasa</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
-              {["English","French","Spanish","Portuguese","German","Japanese","Korean","Arabic","Italian","Russian"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=Halo, saya mau kursus ${l}`} className="hover:text-white transition-colors">Learn {l}</a></li>))}
-              <li><a onClick={()=>{window.scrollTo({top:0,behavior:'smooth'})}} className="cursor-pointer font-semibold text-white hover:underline">Learn More Languages</a></li>
+              {FOOTER_LANGUAGES.map(l=>(<li key={l.href}><a href={l.href} className="hover:text-white transition-colors">Kursus Bahasa {l.label}</a></li>))}
+              <li><a href="/kelas" className="font-semibold text-white hover:underline">Lihat Semua 60+ Bahasa</a></li>
             </ul>
           </div>
           <div><h4 className="font-bold mb-4">Level Option</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Basic","Upper Basic","Intermediate","Advance"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya mau kursus level "+l)}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
             <h4 className="font-bold mt-6 mb-4">Program</h4>
-            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{["Regular Class","Private Class","IELTS Prep","TOEFL Prep"].map(l=>(<li key={l}><a href={`https://wa.me/6282116859493?text=${encodeURIComponent("Halo, saya tertarik "+l+" Linguo")}`} target="_blank" className="hover:text-white transition-colors">{l}</a></li>))}</ul>
+            <ul className="flex flex-col gap-1.5 text-sm text-white/80">{FOOTER_PROGRAMS.map(p=>(<li key={p.href}><a href={p.href} className="hover:text-white transition-colors">{p.label}</a></li>))}</ul>
           </div>
           <div>
             <h4 className="font-bold mb-4">Info</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
               <li><a href="/harga" className="hover:text-white transition-colors">Harga Kelas</a></li>
+              <li><a href="/kelas" className="hover:text-white transition-colors">Semua Kelas Bahasa</a></li>
               <li><a href="/silabus" className="hover:text-white transition-colors">Silabus & Kurikulum</a></li>
+              <li><a href="/kelas-trial" className="hover:text-white transition-colors">Kelas Trial</a></li>
+              <li><a href="/kosakata" className="hover:text-white transition-colors">Kosakata Gratis</a></li>
+              <li><a href="/watch-learn" className="hover:text-white transition-colors">Watch &amp; Learn</a></li>
+              <li><a href="/simulasi" className="hover:text-white transition-colors">Simulasi TOEFL &amp; IELTS</a></li>
+              <li><a href="/toko/paket-elearning" className="hover:text-white transition-colors">Paket E-Learning</a></li>
               <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
               <li><a href="/corporate" className="hover:text-white transition-colors">Corporate</a></li>
               <li><a href="/jadi-pengajar" className="hover:text-white transition-colors">Jadi Pengajar</a></li>

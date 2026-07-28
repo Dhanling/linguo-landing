@@ -23,17 +23,92 @@ import ChatWidgetLazy from "@/components/ChatWidgetLazy"; // linguo-patch:chat-w
 import ChunkReloader from "@/components/ChunkReloader"; // [chunk-reload-v1] auto-reload saat bundle basi sehabis deploy
 import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analytics-v1 — catat page view + durasi ke Supabase
 
+// [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
+// yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
+// relevansi untuk kueri yang sebenarnya dicari ("kursus bahasa asing online",
+// "les bahasa online"). Deskripsi dipertahankan hampir apa adanya karena CTR-nya
+// sudah bagus (16,6% di Search Console) — yang diperbaiki relevansinya, bukan
+// daya tariknya.
+//
+// `metadataBase` sebelumnya tidak ada, jadi URL og:image relatif tidak bisa
+// diresolusi jadi URL absolut. Canonical juga belum pernah dipasang di homepage.
+//
+// CATATAN: sengaja TIDAK memakai title.template. Beberapa halaman anak (mis.
+// /kelas/bahasa-*) sudah menuliskan "| Linguo.id" di metaTitle-nya sendiri —
+// template akan membuatnya dobel.
 export const metadata: Metadata = {
-  title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
-  description: "Belajar 55+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 29.000.",
+  metadataBase: new URL("https://linguo.id"),
+  title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
+  description: "Kursus 60+ bahasa asing online rasa offline! Kelas Private, Reguler, IELTS/TOEFL, E-Learning & E-Book. Mulai dari Rp 29.000.",
+  keywords: [
+    "kursus bahasa asing online",
+    "les bahasa online",
+    "kursus bahasa online",
+    "belajar bahasa asing online",
+    "kursus bahasa inggris online",
+    "les privat bahasa",
+  ],
+  alternates: { canonical: "https://linguo.id" },
   openGraph: {
-    title: "Linguo.id — Kursus Polyglot No. 1 di Indonesia",
-    description: "Belajar 55+ bahasa asing online rasa offline! Mulai dari Rp 29.000.",
+    title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
+    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 29.000.",
     url: "https://linguo.id",
     siteName: "Linguo.id",
     locale: "id_ID",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kursus Bahasa Asing Online No.1 di Indonesia — Linguo.id",
+    description: "Kursus 60+ bahasa asing online rasa offline! Kelas live via Zoom, mulai dari Rp 29.000.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+};
+
+// [seo-jsonld-v1] Sebelumnya tidak ada structured data sama sekali di level
+// situs. Organization + WebSite adalah dasar yang dipakai Google untuk knowledge
+// panel dan sitelink — dan alamat fisik di Bandung adalah sinyal lokal yang
+// selama ini tidak pernah disampaikan ke mesin pencari dalam bentuk terbaca.
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://linguo.id/#organization",
+  name: "Linguo.id",
+  legalName: "PT. Linguo Edu Indonesia",
+  url: "https://linguo.id",
+  logo: "https://linguo.id/FULL_LOGO_LINGUO_HIJAU.png",
+  description: "Sekolah bahasa online dengan 60+ pilihan bahasa. Kelas live via Zoom bersama pengajar berpengalaman.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong",
+    addressLocality: "Bandung",
+    addressRegion: "Jawa Barat",
+    postalCode: "40135",
+    addressCountry: "ID",
+  },
+  telephone: "+62-22-85942550",
+  email: "official.linguo@gmail.com",
+  sameAs: [
+    "https://instagram.com/linguo.id",
+    "https://facebook.com/linguo.id",
+    "https://tiktok.com/@linguo.id",
+    "https://linkedin.com/company/linguo-id",
+    "https://youtube.com/@linguo.id",
+  ],
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://linguo.id/#website",
+  url: "https://linguo.id",
+  name: "Linguo.id",
+  inLanguage: "id-ID",
+  publisher: { "@id": "https://linguo.id/#organization" },
 };
 
 // Set your IDs in Vercel Environment Variables:
@@ -49,6 +124,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Warm up the connection to the flag-image CDN used across the page */}
         <link rel="preconnect" href="https://flagcdn.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://flagcdn.com" />
+
+        {/* [seo-jsonld-v1] Structured data tingkat situs — dibaca crawler, tidak
+            memengaruhi tampilan sedikit pun. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
+        />
 
         {/* Google Analytics (GA4) */}
         {GA_ID && (
