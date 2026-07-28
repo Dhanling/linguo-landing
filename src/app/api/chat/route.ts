@@ -117,6 +117,11 @@ Jadwal & ketentuan:
 Fasilitas Private:
 - Zoom + Google Classroom (recording & materi) untuk kelas online; opsi offline pengajar datang ke tempat siswa (tergantung ketersediaan pengajar di area itu, ada selisih biaya), 1-on-1 dengan perhatian penuh, pengajar berpengalaman, jadwal fleksibel, materi disesuaikan kebutuhan, umpan balik langsung dari pengajar.
 
+Paket Recording + E-Book (tambahan opsional saat mendaftar):
+- Setiap pendaftaran Private/Semi-Private/Reguler boleh menambah paket rekaman kelas (recording seluruh sesi, akses selamanya): bahasa yang sudah punya E-Book = Recording + E-Book Rp 150.000; bahasa yang belum punya E-Book = Recording saja Rp 100.000. Kelas trial TIDAK kena paket ini.
+- PROMO KLAIM DISKON LANDING PAGE: yang mendaftar lewat form "Klaim diskonmu" di linguo.id (isi nama, email, bahasa, jenis kelas, pengalaman) dapat E-BOOK GRATIS. Jadi diskonnya = e-book-nya digratiskan, dan kalau mau rekaman kelas tinggal tambah Rp 100.000 saja (BUKAN Rp 150.000). Jangan menagih e-book terpisah ke mereka. Bahasa yang belum punya e-book tetap Rp 100.000 (recording saja).
+- E-book gratis promo ini dikirim admin setelah pendaftaran diproses, bukan diunduh sendiri dari website. Promo ini TIDAK memotong harga kelas/paket sesi — jangan menjanjikan potongan harga kelas.
+
 Lainnya:
 - E-learning: isinya REKAMAN KELAS (recording class) untuk level BASIC A1 SAJA — belajar mandiri, akses via linguo.id/akun. Toko: https://linguo.id/toko
 - Materi di ATAS A1 (A2/B1/B2 dst) TIDAK ada di e-learning. Kalau siswa mau lanjut ke level di atas basic, arahkan ke kelas Private. DILARANG menjanjikan e-learning bisa mengantar sampai level intermediate/mahir, berapa pun durasi langganannya (1/6/12 bulan) — durasi itu cuma lama AKSES, bukan tambahan level.
