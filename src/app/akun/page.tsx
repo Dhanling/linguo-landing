@@ -97,6 +97,9 @@ const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'),
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false, loading: TabLoading });
 const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false, loading: TabLoading }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
+// [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
+// ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
+const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
 const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
@@ -3764,6 +3767,19 @@ export default function AkunPage() {
                           </div>
                         );
                       })()}
+
+                      {/* [beranda-insights-v1] Ringkasan belajar — progres 4 skill + selisih
+                          dari rapor terakhir, PR yang belum disetor, materi terbaru, beban
+                          minggu ini, dan peringkat kelas grup. Semuanya dulu terkubur di
+                          detail kelas (2–3 klik); sekarang naik ke layar pertama.
+                          Komponennya menyembunyikan diri sendiri kalau datanya kosong. */}
+                      {liveRegsAll.length > 0 && (
+                        <BerandaInsights
+                          regs={liveRegsAll}
+                          studentName={student?.name || firstName || "Siswa"}
+                          displayLanguage={displayLanguage}
+                        />
+                      )}
 
                       {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
                           gantinya banner promo + 3 CTA rebutan yang dulu jadi layar pertama. */}

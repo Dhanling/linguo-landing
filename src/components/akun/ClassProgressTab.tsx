@@ -7,12 +7,20 @@
 //   2. Timeline sesi — laporan tiap sesi completed dari schedules (topik/PR/
 //      catatan diparse dari notes via class-notes.ts, presensi & recording
 //      dari kolomnya sendiri). Terbaru di atas.
+//
+// [progress-delta-v1] Skor sekarang saja tidak menjawab "aku maju berapa".
+// Pembanding diambil dari rapor terbit terakhir (class_reports) lewat
+// fetchSkillProgressFor, lalu ditampilkan sebagai bar bayangan + panah naik/turun
+// dengan rentang periodenya. Progres juga bisa dibagikan / dicetak.
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 import { parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
-import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, type LucideIcon } from 'lucide-react';
+import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
+import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
+import { SkillRow } from '@/components/akun/SkillBar';
+import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
   { key: 'speaking', label: 'Speaking', Icon: Mic },
@@ -42,34 +50,52 @@ const ATT_SOLID: Record<string, { label: string; solid: string; dot: string }> =
 const ATT_ORDER = ['hadir', 'izin', 'sakit', 'alpa'] as const;
 
 export default function ClassProgressTab({ reg, schedules }: { reg: any; schedules: any[] }) {
-  // null = masih loading; [] = kosong / gagal (tampilkan placeholder, jangan crash)
-  const [skills, setSkills] = useState<any[] | null>(null);
+  // undefined = masih loading; null = kosong / gagal (tampilkan placeholder, jangan crash)
+  const [prog, setProg] = useState<SkillProgress | null | undefined>(undefined);
+  const [studentName, setStudentName] = useState('Siswa');
+  // [progress-delta-v1] status tombol bagikan: '' | 'copied' | 'failed'
+  const [shareState, setShareState] = useState('');
 
   useEffect(() => {
     let alive = true;
     (async () => {
-      const { data, error } = await supabase
-        .from('student_skills')
-        .select('skill, score, notes, updated_at')
-        .eq('registration_id', reg.id);
+      const [p, stu] = await Promise.all([
+        fetchSkillProgressFor(reg.id),
+        reg.student_id
+          ? supabase.from('students').select('name').eq('id', reg.student_id).maybeSingle()
+          : Promise.resolve({ data: null } as any),
+      ]);
       if (!alive) return;
-      if (error) {
-        // Policy/tabel belum siap → tampilkan bagian timeline saja.
-        console.warn('[kelas-progress] gagal load student_skills:', error.message);
-        setSkills([]);
-        return;
-      }
-      setSkills(data || []);
+      setProg(p);
+      if (stu?.data?.name) setStudentName(stu.data.name);
     })();
     return () => { alive = false; };
-  }, [reg.id]);
+  }, [reg.id, reg.student_id]);
 
   const skillMap: Record<string, any> = {};
-  (skills || []).forEach((r) => { skillMap[r.skill] = r; });
+  (prog?.skills || []).forEach((s) => { skillMap[s.key] = s; });
   const rated = SKILLS.filter((s) => skillMap[s.key]?.score);
-  const avg = rated.length ? rated.reduce((a, s) => a + skillMap[s.key].score, 0) / rated.length : 0;
-  const latestUpdate = (skills || []).reduce<string | null>(
-    (acc, r) => (r.updated_at && (!acc || r.updated_at > acc) ? r.updated_at : acc), null);
+  const avg = prog?.avg || 0;
+  const avgBefore = prog?.avgBefore ?? null;
+  const periode = periodLabel(prog?.periodStart ?? null, prog?.periodEnd ?? null);
+
+  const shareData = {
+    studentName,
+    language: reg.language || 'Bahasa',
+    level: reg.level || null,
+    skills: prog?.skills || [],
+    avg,
+    avgBefore,
+    periodStart: prog?.periodStart ?? null,
+    periodEnd: prog?.periodEnd ?? null,
+  };
+
+  const onShare = async () => {
+    const r = await shareProgress(shareData);
+    if (r === 'copied') setShareState('copied');
+    else if (r === 'failed') setShareState('failed');
+    window.setTimeout(() => setShareState(''), 2200);
+  };
 
   // Timeline: sesi completed, nomor urut kronologis, tampil terbaru dulu.
   const completedChrono = schedules
@@ -156,16 +182,33 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
 
       {/* ── Skill CEFR ── */}
       <section>
-        <div className="mb-3 flex items-baseline justify-between gap-2">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Kemampuan 4 Skill · CEFR</h2>
-          {latestUpdate && (
-            <span className="text-[11px] text-gray-400">
-              Dinilai pengajar · {new Date(latestUpdate).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
-            </span>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-500">Kemampuan 4 Skill · CEFR</h2>
+            {/* [progress-delta-v1] rentang periode: dari rapor pembanding sampai
+                penilaian terakhir. Tanpa ini angka progres kehilangan konteks. */}
+            {periode && <p className="mt-0.5 text-[11px] font-semibold text-gray-400">{periode}</p>}
+          </div>
+          {rated.length > 0 && (
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                onClick={onShare}
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#16796E]/10 px-3 py-2 text-xs font-bold text-[#16796E] transition hover:bg-[#16796E]/15"
+              >
+                {shareState === 'copied' ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : <Share2 className="h-3.5 w-3.5" strokeWidth={2.5} />}
+                {shareState === 'copied' ? 'Tersalin' : shareState === 'failed' ? 'Gagal' : 'Bagikan'}
+              </button>
+              <button
+                onClick={() => printProgressCard(shareData)}
+                className="inline-flex items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-200"
+              >
+                <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> Cetak
+              </button>
+            </div>
           )}
         </div>
 
-        {skills === null ? (
+        {prog === undefined ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center text-sm text-gray-400">Memuat…</div>
         ) : rated.length === 0 ? (
           <div className="rounded-2xl bg-gray-50 p-6 text-center">
@@ -176,31 +219,14 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
         ) : (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_180px]">
             <div className="space-y-3 rounded-2xl bg-white p-4">
-              {SKILLS.map(({ key, label, Icon }) => {
-                const row = skillMap[key];
-                const score = row?.score || 0;
-                return (
-                  <div key={key}>
-                    <div className="mb-1 flex items-center justify-between gap-2">
-                      <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-800">
-                        <Icon className="h-4 w-4 text-[#16796E]" strokeWidth={2} /> {label}
-                      </span>
-                      {score ? (
-                        <span className="inline-flex items-center gap-1.5 text-[13px] font-bold text-[#16796E]">
-                          <span className="rounded bg-[#16796E]/10 px-1.5 py-0.5 text-xs">{cefr(score).band}</span>
-                          {cefr(score).name}
-                        </span>
-                      ) : (
-                        <span className="text-xs text-gray-400">belum dinilai</span>
-                      )}
-                    </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-gray-100">
-                      <div className="h-full rounded-full bg-gradient-to-r from-[#16796E] to-emerald-500 transition-all" style={{ width: `${(score / 5) * 100}%` }} />
-                    </div>
-                    {row?.notes && <div className="mt-1 text-[11px] text-gray-500">💬 {row.notes}</div>}
-                  </div>
-                );
-              })}
+              {SKILLS.map(({ key, label, Icon }) => (
+                <SkillRow
+                  key={key}
+                  skill={skillMap[key] || { key, score: 0, before: null, delta: null, note: null }}
+                  label={label}
+                  Icon={Icon}
+                />
+              ))}
             </div>
 
             <div className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-[#16796E] to-emerald-600 p-4 text-center text-white">
@@ -210,6 +236,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
               {avg > 0 && (
                 <div className="mt-2 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">
                   ≈ {cefr(avg).band} · {cefr(avg).name}
+                </div>
+              )}
+              {/* [progress-delta-v1] rata-rata lama biar kenaikannya kebaca sekali lihat */}
+              {avgBefore !== null && (
+                <div className="mt-2 text-[11px] font-semibold opacity-85">
+                  sebelumnya {avgBefore.toFixed(1)} · {cefr(avgBefore).band}
                 </div>
               )}
             </div>

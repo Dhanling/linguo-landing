@@ -12,6 +12,7 @@
 import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock, BookOpen, FileText, ExternalLink } from "lucide-react";
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
+import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 
 // + jadwal-recurring-materi-v1: pertemuan ke berapa + materi yang bakal dibahas
 //   (topik, rincian, berkas/link rujukan) — diisi pengajar waktu bikin jadwal.
@@ -143,6 +144,46 @@ export default function JadwalCalendar({
     return Array.from({ length: 7 }, (_, i) => addDays(s, i));
   }, [cursor]);
 
+  // + jadwal-week-timeline-v1: tampilan Minggu jadi kisi JAM (ala Google Calendar),
+  //   bukan 7 kotak hari. Rentang jamnya ikut isi minggu itu — kalau semua sesi
+  //   sore, kisi pagi kosong tidak usah ikut memakan layar.
+  const weekRange = useMemo(() => {
+    const isos = new Set(weekDays.map(ymd));
+    const evs = items.filter((i) => isos.has(i._iso));
+    let start = 7, end = 21;
+    evs.forEach((e) => {
+      const h = e._d.getHours();
+      const endH = Math.ceil((h * 60 + e._d.getMinutes() + (e.durationMinutes || 60)) / 60);
+      if (h < start) start = h;
+      if (endH > end) end = endH;
+    });
+    return { start: Math.max(0, start), end: Math.min(24, Math.max(end, start + 4)) };
+  }, [items, weekDays]);
+
+  /** Total menit sesi terjadwal di minggu yang lagi dilihat. */
+  const weekMinutes = useMemo(() => {
+    const isos = new Set(weekDays.map(ymd));
+    return items.filter((i) => isos.has(i._iso)).reduce((a, e) => a + (e.durationMinutes || 60), 0);
+  }, [items, weekDays]);
+
+  /**
+   * Susun sesi satu hari jadi jalur (lane) supaya sesi yang jamnya tabrakan
+   * tampil bersebelahan, bukan tumpuk-tumpukan.
+   */
+  const layoutDay = (evs: NormSession[]) => {
+    const sorted = [...evs].sort((a, b) => a._d.getTime() - b._d.getTime());
+    const laneEnd: number[] = [];
+    const placed = sorted.map((e) => {
+      const s = e._d.getTime();
+      const t = s + (e.durationMinutes || 60) * 60000;
+      let lane = laneEnd.findIndex((end) => end <= s);
+      if (lane === -1) { lane = laneEnd.length; laneEnd.push(t); }
+      else laneEnd[lane] = t;
+      return { e, lane };
+    });
+    return { placed, lanes: Math.max(1, laneEnd.length) };
+  };
+
   const dayEvents = useMemo(() => eventsOn(ymd(cursor)), [items, cursor]);
 
   const goPrev = () => { setSelected(null); setCursor((c) => mode === "month" ? new Date(c.getFullYear(), c.getMonth() - 1, 1) : addDays(c, mode === "week" ? -7 : -1)); };
@@ -248,7 +289,18 @@ export default function JadwalCalendar({
           </div>
 
           <div className="px-5 lg:px-7 mt-4 flex items-center justify-between gap-3 flex-wrap">
-            <h2 className="text-[18px] font-extrabold text-[#12172B]">{periodTitle}</h2>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <h2 className="text-[18px] font-extrabold text-[#12172B]">{periodTitle}</h2>
+              {/* jadwal-week-timeline-v1: beban minggu yang lagi dilihat. `sessions`
+                  cuma berisi sesi MENDATANG, jadi labelnya "terjadwal" — bukan klaim
+                  jam yang sudah dijalani. */}
+              {mode === "week" && weekMinutes > 0 && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#16796E]/10 px-3 py-1 text-[12px] font-bold text-[#16796E]">
+                  <Clock className="w-3.5 h-3.5" strokeWidth={2.6} />
+                  Terjadwal minggu ini: {fmtDuration(weekMinutes)}
+                </span>
+              )}
+            </div>
             <div className="flex items-center gap-2 flex-wrap">
               {/* toggle Hari / Minggu / Bulan */}
               <div className="inline-flex rounded-xl bg-white p-1 shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)]">
@@ -321,49 +373,116 @@ export default function JadwalCalendar({
               </div>
             )}
 
-            {/* ===== MINGGU ===== */}
-            {mode === "week" && (
+            {/* ===== MINGGU — kisi jam (jadwal-week-timeline-v1) ===== */}
+            {mode === "week" && (() => {
+              const HOUR_H = 56; // tinggi 1 jam (px)
+              const hours = Array.from({ length: weekRange.end - weekRange.start }, (_, i) => weekRange.start + i);
+              const gridH = hours.length * HOUR_H;
+              const topOf = (d: Date) => ((d.getHours() * 60 + d.getMinutes()) - weekRange.start * 60) / 60 * HOUR_H;
+              // Minggu kosong: kisi 14 jam melompong itu cuma bikin halaman panjang
+              // tanpa informasi — tampilkan pesan singkat saja.
+              if (weekMinutes === 0) {
+                return (
+                  <div className="bg-white rounded-[2rem] p-8 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
+                    <CalendarDays className="mx-auto mb-2 w-8 h-8 text-slate-300" strokeWidth={1.6} />
+                    <p className="text-[14px] font-bold text-[#12172B]">Tidak ada sesi minggu ini</p>
+                    <p className="mt-1 text-[12.5px] font-medium text-[#6B7280]">Pakai panah di atas buat lihat minggu lain.</p>
+                  </div>
+                );
+              }
+              return (
               <div className="bg-white rounded-[2rem] p-3 sm:p-4 shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
-                <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
-                  {weekDays.map((d) => {
-                    const iso = ymd(d);
-                    const evs = eventsOn(iso);
-                    const isToday = iso === todayIso;
-                    const dow = (d.getDay() + 6) % 7;
-                    return (
-                      <div key={iso} className={`rounded-xl p-2 min-h-[300px] sm:min-h-[360px] flex flex-col gap-1.5 ${dow >= 5 ? "bg-[#F5F6F8]/60" : "bg-[#F5F6F8]"}`}>
-                        <div className="flex flex-col items-center pb-1.5 border-b border-slate-200/70">
-                          <span className={`text-[11px] font-bold ${dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
-                          {isToday ? (
-                            <span className="mt-1 inline-flex w-7 h-7 rounded-full items-center justify-center text-[13px] font-extrabold" style={{ background: "#16796E", color: "#fff" }}>{d.getDate()}</span>
-                          ) : (
-                            <span className="mt-1 text-[15px] font-extrabold text-[#12172B]">{d.getDate()}</span>
-                          )}
-                        </div>
-                        <div className="flex flex-col gap-1.5 overflow-y-auto">
-                          {evs.length ? evs.map((e) => {
-                            const c = langColor(e.language);
-                            return (
-                              <button key={e.id} onClick={() => setSelected(iso)} className="text-left rounded-lg px-2 py-1.5 hover:opacity-90 transition" style={{ background: c.bg, color: c.text }}>
-                                <span className="flex items-center justify-between gap-1 text-[11px] font-extrabold leading-tight">
-                                  {e._time}
-                                  {/* jadwal-recurring-materi-v1 */}
-                                  {e.sessionNumber ? <span className="shrink-0 opacity-70">#{e.sessionNumber}</span> : null}
-                                </span>
-                                <span className="block text-[11px] font-bold leading-tight truncate">{e.language}{e.level ? ` ${e.level}` : ""}</span>
-                                {e.materialTitle && <span className="block text-[10px] font-semibold leading-tight truncate opacity-75">{e.materialTitle}</span>}
-                              </button>
-                            );
-                          }) : (
-                            <span className="text-[11px] text-[#C7CCD6] text-center pt-3">—</span>
-                          )}
-                        </div>
+                {/* Di HP 7 kolom jam mustahil kebaca — biarkan digulir menyamping. */}
+                <div className="overflow-x-auto">
+                  <div className="min-w-[680px]">
+                    {/* Kepala hari */}
+                    <div className="grid grid-cols-[48px_repeat(7,minmax(0,1fr))] gap-1">
+                      <div />
+                      {weekDays.map((d) => {
+                        const iso = ymd(d);
+                        const isToday = iso === todayIso;
+                        const dow = (d.getDay() + 6) % 7;
+                        return (
+                          <div key={iso} className="flex flex-col items-center pb-2">
+                            <span className={`text-[11px] font-bold ${dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
+                            {isToday ? (
+                              <span className="mt-1 inline-flex w-7 h-7 rounded-full items-center justify-center text-[13px] font-extrabold" style={{ background: "#16796E", color: "#fff" }}>{d.getDate()}</span>
+                            ) : (
+                              <span className="mt-1 text-[15px] font-extrabold text-[#12172B]">{d.getDate()}</span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Badan: kolom jam + 7 kolom hari */}
+                    <div className="grid grid-cols-[48px_repeat(7,minmax(0,1fr))] gap-1 border-t border-slate-100 pt-1">
+                      {/* label jam */}
+                      <div className="relative" style={{ height: gridH }}>
+                        {hours.map((h, i) => (
+                          <span key={h} className="absolute right-1 -translate-y-1/2 text-[10.5px] font-bold text-[#9AA1AE]" style={{ top: i * HOUR_H }}>
+                            {pad(h)}.00
+                          </span>
+                        ))}
                       </div>
-                    );
-                  })}
+
+                      {weekDays.map((d) => {
+                        const iso = ymd(d);
+                        const { placed, lanes } = layoutDay(eventsOn(iso));
+                        const dow = (d.getDay() + 6) % 7;
+                        const isToday = iso === todayIso;
+                        return (
+                          <div
+                            key={iso}
+                            className={`relative rounded-xl ${dow >= 5 ? "bg-[#F5F6F8]/60" : "bg-[#F5F6F8]"}`}
+                            style={{ height: gridH, outline: isToday ? "2px solid #16796E33" : undefined }}
+                          >
+                            {/* garis jam */}
+                            {hours.map((h, i) => (
+                              <span key={h} className="pointer-events-none absolute left-0 right-0 border-t border-white" style={{ top: i * HOUR_H }} />
+                            ))}
+                            {placed.map(({ e, lane }) => {
+                              const c = langColor(e.language);
+                              const mins = e.durationMinutes || 60;
+                              const h = Math.max(30, (mins / 60) * HOUR_H - 3);
+                              const w = 100 / lanes;
+                              return (
+                                <button
+                                  key={e.id}
+                                  onClick={() => setSelected(iso)}
+                                  title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}`}
+                                  className="absolute overflow-hidden rounded-lg px-1.5 py-1 text-left transition hover:opacity-90"
+                                  style={{
+                                    top: topOf(e._d) + 2,
+                                    height: h,
+                                    left: `calc(${lane * w}% + 2px)`,
+                                    width: `calc(${w}% - 4px)`,
+                                    background: c.bg,
+                                    color: c.text,
+                                    borderLeft: `3px solid ${c.dot}`,
+                                  }}
+                                >
+                                  <span className="flex items-center justify-between gap-1 text-[10px] font-extrabold leading-tight">
+                                    {e._time}
+                                    {/* jadwal-recurring-materi-v1 */}
+                                    {e.sessionNumber ? <span className="shrink-0 opacity-70">#{e.sessionNumber}</span> : null}
+                                  </span>
+                                  <span className="block truncate text-[11px] font-bold leading-tight">{e.language}{e.level ? ` ${e.level}` : ""}</span>
+                                  {h > 52 && e.materialTitle && (
+                                    <span className="block truncate text-[10px] font-semibold leading-tight opacity-75">{e.materialTitle}</span>
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
-            )}
+              );
+            })()}
 
             {/* ===== HARI ===== */}
             {mode === "day" && (
