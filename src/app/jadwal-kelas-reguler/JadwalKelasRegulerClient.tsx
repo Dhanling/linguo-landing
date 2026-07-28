@@ -16,6 +16,11 @@ import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 import Link from "next/link";
 import RegisterRegulerModal from "@/components/RegisterRegulerModal";
+import {
+  type EtpBatchRow,
+  resolveEtpBatches,
+  todayWIBISO,
+} from "@/lib/etpBatches";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -45,25 +50,8 @@ interface Batch {
   capacity_hint: string;
 }
 
-// Raw row dari tabel etp_batches di Supabase
-export interface EtpBatchRow {
-  id: string;
-  title: string;
-  badge: string;
-  icon: string;
-  color: string;
-  days: string;
-  time: string;
-  start_date: string; // ISO date string
-  duration_min: number;
-  total_sessions: number;
-  price: number;
-  max_capacity: number;
-  current_enrolled: number;
-  syllabus: { week: string; topics: string[] }[];
-  highlights: string[];
-  is_active: boolean;
-}
+// Bentuk baris tabel etp_batches ada di @/lib/etpBatches — dipakai bareng
+// knowledge AI supaya jadwal ETP di chat selalu sama dengan halaman ini.
 
 interface EtpProgram {
   id: string;
@@ -85,81 +73,6 @@ interface EtpProgram {
   currentEnrolled: number;
   color: string;
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Static ETP data (TOEFL & IELTS Agustus 2026) — sinkron dgn dashboard test_prep_batches
-// ─────────────────────────────────────────────────────────────────────────────
-
-const ETP_PROGRAMS: EtpProgram[] = [
-  {
-    id: "toefl-agu26",
-    title: "TOEFL Preparation",
-    subtitle: "Batch Agustus 2026",
-    icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
-    badge: "TOEFL",
-    days: "Senin & Rabu",
-    time: "19.30 – 21.00 WIB",
-    startDate: "3 Agustus 2026",
-    startDateISO: "2026-08-03",
-    duration: "90 menit/sesi",
-    sessions: 16,
-    sessionMin: 90,
-    price: 300000,
-    maxCapacity: 15,
-    currentEnrolled: 0,
-    highlights: [
-      "Latihan Listening, Structure, Reading intensif",
-      "Bank soal TOEFL ITP & PBT terlengkap",
-      "Simulasi ujian sebelum test hari H",
-      "Target skor 500+ dalam 1 batch",
-    ],
-    syllabus: [
-      { week: "Sesi 1–2", topics: ["Orientasi format TOEFL ITP & strategi umum", "Listening Section: short conversations, surprise questions"] },
-      { week: "Sesi 3–4", topics: ["Listening Section: longer conversations & mini talks", "Teknik note-taking & prediksi jawaban"] },
-      { week: "Sesi 5–6", topics: ["Structure: subject-verb agreement & verb forms", "Written Expression: error recognition dasar"] },
-      { week: "Sesi 7–8", topics: ["Structure lanjutan: parallel structure, relative clauses", "Written Expression: preposisi, artikel, word form"] },
-      { week: "Sesi 9–10", topics: ["Reading: main idea, topic sentence, inference", "Vocabulary in context & reference questions"] },
-      { week: "Sesi 11–12", topics: ["Reading: scanning & skimming cepat", "Unstated detail & negative fact questions"] },
-      { week: "Sesi 13–14", topics: ["Full mock test #1 (Listening + Structure + Reading)", "Review mendalam: analisis kesalahan per section"] },
-      { week: "Sesi 15–16", topics: ["Full mock test #2 + simulasi kondisi ujian nyata", "Target skor 500+: strategi akhir & manajemen waktu"] },
-    ],
-    color: "teal",
-  },
-  {
-    id: "ielts-agu26",
-    title: "IELTS Preparation",
-    subtitle: "Batch Agustus 2026",
-    icon: "", // ikon dirender lewat <EtpIcon> (Lucide) berdasarkan badge
-    badge: "IELTS",
-    days: "Selasa & Kamis",
-    time: "19.30 – 21.00 WIB",
-    startDate: "4 Agustus 2026",
-    startDateISO: "2026-08-04",
-    duration: "90 menit/sesi",
-    sessions: 16,
-    sessionMin: 90,
-    price: 300000,
-    maxCapacity: 15,
-    currentEnrolled: 0,
-    highlights: [
-      "4 skill: Listening, Reading, Writing, Speaking",
-      "Latihan Task 1 & Task 2 Writing dengan feedback",
-      "Mock speaking session 1-on-1",
-      "Target band 6.5+ dalam 1 batch",
-    ],
-    syllabus: [
-      { week: "Sesi 1–2", topics: ["Orientasi format IELTS Academic & strategi umum", "Listening Section 1–2: form filling & multiple choice"] },
-      { week: "Sesi 3–4", topics: ["Listening Section 3–4: lectures & seminars", "Map labelling, diagram completion, sentence completion"] },
-      { week: "Sesi 5–6", topics: ["Reading: True/False/Not Given & Yes/No/Not Given", "Matching headings & matching information"] },
-      { week: "Sesi 7–8", topics: ["Reading: summary completion & short answer questions", "Teknik skimming & scanning untuk waktu terbatas"] },
-      { week: "Sesi 9–10", topics: ["Writing Task 1: describe grafik, tabel, diagram, peta", "Struktur paragraf & academic vocabulary Task 1"] },
-      { week: "Sesi 11–12", topics: ["Writing Task 2: opinion, discussion, problem-solution essay", "Coherence & cohesion, lexical resource, grammatical range"] },
-      { week: "Sesi 13–14", topics: ["Speaking Part 1: personal questions & fluency drills", "Speaking Part 2: long turn (cue card) & Part 3: discussion"] },
-      { week: "Sesi 15–16", topics: ["Full Academic mock test + mock speaking 1-on-1", "Feedback individual & strategi raih band 6.5+"] },
-    ],
-    color: "blue",
-  },
-];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -339,13 +252,11 @@ export default function JadwalKelasRegulerClient({
   const [openSyllabus, setOpenSyllabus] = useState<Record<string, boolean>>({});
   const [registerBatch, setRegisterBatch] = useState<Batch | null>(null);
 
-  // Sumber data ETP: pakai baris DB (etp_batches) kalau ada, kalau kosong
-  // fallback ke data statik. Ini yang bikin publish dari admin dashboard tampil.
+  // Sumber data ETP: baris DB (etp_batches) yang masih jalan, kalau kosong
+  // fallback ke data statik di @/lib/etpBatches. Resolver-nya sama persis dengan
+  // yang dipakai knowledge AI, jadi jadwal di chat gak pernah beda dari kartu ini.
   const etpPrograms: EtpProgram[] = useMemo(
-    () =>
-      etpBatches && etpBatches.length > 0
-        ? etpBatches.map(mapEtpRow)
-        : ETP_PROGRAMS,
+    () => resolveEtpBatches(etpBatches, todayWIBISO()).map(mapEtpRow),
     [etpBatches]
   );
 

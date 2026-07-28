@@ -7,6 +7,7 @@
 //   visitor_name/visitor_wa disimpan di ling_chat_sessions (kolom sudah ada, tanpa migrasi)
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { resolveEtpBatches, todayWIBISO } from "@/lib/etpBatches";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -320,9 +321,7 @@ function fmtDateID(iso: string): string {
 // Tanggal kalender WIB (UTC+7) hari ini, 'YYYY-MM-DD'. Dipakai untuk menandai
 // batch BELUM MULAI vs SUDAH BERJALAN — tanpa ini AI menebak sendiri dan bisa
 // bilang "batch sudah berjalan" untuk batch yang baru mulai bulan depan.
-function todayWIB(): string {
-  return new Date(Date.now() + 7 * 60 * 60 * 1000).toISOString().slice(0, 10);
-}
+const todayWIB = todayWIBISO;
 
 function batchTag(startIso: string | null, today: string): string {
   if (!startIso) return "[TANGGAL MULAI BELUM DITENTUKAN]";
@@ -386,12 +385,17 @@ async function getScheduleBlock(): Promise<string> {
         .order("start_date", { ascending: true }),
       client
         .from("etp_batches")
-        .select("title, badge, days, time, start_date, total_sessions, price, current_enrolled, max_capacity")
+        .select("id, title, badge, icon, color, days, time, start_date, duration_min, total_sessions, price, current_enrolled, max_capacity, syllabus, highlights, is_active")
         .eq("is_active", true)
         .order("start_date", { ascending: true }),
     ]);
 
     const today = todayWIB();
+    // Batch ETP dilewatkan resolver yang SAMA dengan halaman jadwal: batch yang
+    // kelasnya sudah kelar dibuang, dan kalau tabelnya kosong dipakai cadangan
+    // statik. Ini yang bikin Ling gak lagi menyebut batch lama (mis. Juni)
+    // sementara landing sudah memasang batch baru.
+    const etpLive = resolveEtpBatches(etp as never, today);
     // Batch penuh TETAP dicantumkan (bertanda [KUOTA: PENUH ...]) — dulu dibuang,
     // akibatnya kalau ditanya batch itu AI jawab "belum dibuka" padahal penuh.
     const regLines = (reg || []).map((b: any) => {
@@ -402,7 +406,7 @@ async function getScheduleBlock(): Promise<string> {
       const kuota = seatTag(b.actual_enrolled, b.max_capacity, b.min_capacity);
       return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
     });
-    const etpLines = (etp || []).map((b: any) => {
+    const etpLines = etpLive.map((b: any) => {
       const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";
       const kuota = seatTag(b.current_enrolled, b.max_capacity);
       return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
