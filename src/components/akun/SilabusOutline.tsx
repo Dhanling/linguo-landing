@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 // [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
 import { supabase } from "@/lib/supabase-client";
 import { BookOpen, ChevronDown, Target, Loader2, ArrowRight, X, Video, FileText, ClipboardList, ChevronRight } from "lucide-react";
+// [lms-content-readiness-v1] sumber tunggal "sesi ini sudah ada isinya atau belum"
+import { fetchLessonStats } from "@/lib/lmsContent";
 
 type Session = { number: number; title: string; topics?: string[] };
 type Sublevel = { code: string; name: string; preview?: boolean; sessions: Session[] };
@@ -63,7 +65,7 @@ export default function SilabusOutline({
   const [openSession, setOpenSession] = useState<OpenSession | null>(null);
   // [linguo-patch:silabus-prefetch-lessons-v1] map sublevel→sesi (lessonId + meta) di-prefetch SEKALI → klik sesi = instan, no spinner per-klik
   const [bySub, setBySub] = useState<
-    Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean }[]> | null
+    Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean; hasContent: boolean }[]> | null
   >(null);
   const [showOverview, setShowOverview] = useState(false); // [linguo-patch:silabus-overview-modal-v1]
 
@@ -130,30 +132,27 @@ export default function SilabusOutline({
         if (!alive) return;
         const lessList = ((lessons as any[]) || []).slice().sort((a: any, b: any) => a.sort_order - b.sort_order);
 
-        // meta konten (quiz/audio/materi) di-batch SEKALI buat semua lesson
-        const allIds = lessList.map((l: any) => l.id);
-        const metaByLesson: Record<string, { quizCount: number; hasAudio: boolean; hasMateri: boolean }> = {};
-        if (allIds.length) {
-          const { data: blocks } = await supabase
-            .from("lms_blocks")
-            .select("lesson_id, type, lms_quiz_questions(id)")
-            .in("lesson_id", allIds);
-          if (!alive) return;
-          ((blocks as any[]) || []).forEach((b: any) => {
-            const e = (metaByLesson[b.lesson_id] =
-              metaByLesson[b.lesson_id] || { quizCount: 0, hasAudio: false, hasMateri: false });
-            e.quizCount += (b.lms_quiz_questions || []).length;
-            if (b.type === "audio") e.hasAudio = true;
-            if (b.type === "logic" || b.type === "vocab") e.hasMateri = true;
-          });
-        }
+        // [lms-content-readiness-v1] meta konten dibaca dari view agregat `lms_lesson_stats`,
+        // BUKAN dari `lms_blocks` langsung. `lms_blocks` dilindungi RLS entitlement, jadi
+        // siswa yang belum beli selalu dapat 0 blok → semua sesi terlihat "tanpa materi"
+        // padahal ada. View-nya cuma memaparkan angka, tanpa isi materi.
+        const stats = await fetchLessonStats();
+        if (!alive) return;
 
-        const map: Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean }[]> = {};
+        const map: Record<string, { lessonId: string; quizCount: number; hasAudio: boolean; hasMateri: boolean; hasContent: boolean }[]> = {};
         lessList.forEach((l: any) => {
           const sub = subByModule[l.module_id];
           if (!sub) return;
-          const m = metaByLesson[l.id] || { quizCount: 0, hasAudio: false, hasMateri: false };
-          (map[sub] = map[sub] || []).push({ lessonId: l.id, ...m });
+          const s = stats?.get(l.id);
+          (map[sub] = map[sub] || []).push({
+            lessonId: l.id,
+            quizCount: s?.quiz_count ?? 0,
+            hasAudio: (s?.audio_count ?? 0) > 0,
+            hasMateri: (s?.materi_count ?? 0) > 0,
+            // stats null (view belum ada) → anggap ada isinya, biar perilakunya sama
+            // seperti sebelum fitur ini dipasang.
+            hasContent: stats ? !!s?.has_content : true,
+          });
         });
         if (alive) setBySub(map);
       } catch {
@@ -195,7 +194,9 @@ export default function SilabusOutline({
     ? { status: "loading" }
     : (() => {
         const e = bySub[openSession.subCode]?.[openSession.s.number - 1];
-        return e
+        // [lms-content-readiness-v1] baris sesi yang ADA di DB tapi NOL blok materi bukan
+        // "tersedia" — dulu tetap dikasih tombol "Mulai belajar" ke pemutar kosong.
+        return e && e.hasContent
           ? { status: "found", lessonId: e.lessonId, quizCount: e.quizCount, hasAudio: e.hasAudio, hasMateri: e.hasMateri }
           : { status: "none" };
       })();
@@ -277,20 +278,32 @@ export default function SilabusOutline({
                       </button>
                       {subOpen ? (
                         <ol className="border-t border-slate-100 bg-[#F5F6F8]/50 px-2 py-1.5">
-                          {(sub.sessions || []).map((s) => (
+                          {(sub.sessions || []).map((s) => {
+                            // [lms-content-readiness-v1] di Belajar Mandiri, sesi yang materinya
+                            // belum ditulis ditandai duluan di daftar — biar siswa ga buka satu-satu
+                            // cuma buat nemu "lagi disiapin".
+                            const soon =
+                              mode === "selfpaced" &&
+                              bySub != null &&
+                              !bySub[sub.code]?.[s.number - 1]?.hasContent;
+                            return (
                             <li key={s.number}>
                               <button
                                 onClick={() => setOpenSession({ s, subCode: sub.code, levelName: lvl.name })}
                                 className="group flex w-full items-center gap-3 rounded-lg px-1.5 py-2 text-left transition hover:bg-white"
                               >
-                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-[#16796E] ring-1 ring-slate-200">
+                                <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-extrabold ring-1 ${soon ? "bg-slate-100 text-slate-400 ring-slate-200" : "bg-white text-[#16796E] ring-slate-200"}`}>
                                   {s.number}
                                 </span>
-                                <span className="min-w-0 flex-1 truncate text-[13px] font-bold text-[#12172B]">{s.title}</span>
+                                <span className={`min-w-0 flex-1 truncate text-[13px] font-bold ${soon ? "text-gray-400" : "text-[#12172B]"}`}>{s.title}</span>
+                                {soon ? (
+                                  <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-gray-400">Segera</span>
+                                ) : null}
                                 <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" strokeWidth={2} />
                               </button>
                             </li>
-                          ))}
+                            );
+                          })}
                         </ol>
                       ) : null}
                     </div>

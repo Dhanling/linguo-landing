@@ -8,9 +8,11 @@
 import { useEffect, useState, type ReactNode } from "react";
 // [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
 import { supabase } from "@/lib/supabase-client";
-import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight, PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { Loader2, PlayCircle, GraduationCap, Lock, Crown, ArrowRight, PanelLeftClose, PanelLeftOpen, Hammer } from "lucide-react";
 import SilabusOutline from "@/components/akun/SilabusOutline";
 import { isFreeLevel } from "@/lib/lmsAccess"; // [linguo-patch:lms-katalog-upgrade-cta-v1] sumber tunggal aturan A1-gratis
+// [lms-content-readiness-v1] sesi yang belum ditulis materinya jangan ikut dihitung
+import { fetchLessonStats, keepReady, type LessonStat } from "@/lib/lmsContent";
 
 
 const TEAL = "#16796E";
@@ -56,6 +58,9 @@ type Course = {
   owned: boolean;
   // [linguo-patch:lms-katalog-upgrade-cta-v1] lesson terkunci pertama (A2+) buat deep-link ke panel checkout; null kalau owned / cuma ada A1
   upgrade: string | null;
+  // [lms-content-readiness-v1] sesi yang judulnya sudah ke-seed tapi materinya belum ditulis.
+  // Tidak masuk `total`/`pct` — cuma dipakai buat kalimat "sesi lain masih disiapkan".
+  pending: number;
 };
 
 // [linguo-patch:lms-katalog-perf-v1] cache modul-level → switch balik ke Belajar Mandiri = instan (stale-while-revalidate, ga refetch dari nol)
@@ -65,7 +70,8 @@ function buildCourses(
   modList: { id: string; language: string; sort_order: number; course_id: string | null; cefr_label: string | null }[],
   lessons: { id: string; module_id: string; title: string; sort_order: number; is_preview: boolean }[],
   done: Set<string>,
-  ownedCourses: Set<string> // [linguo-patch:lms-katalog-entitlement-v1] course_id yg sudah dientitle
+  ownedCourses: Set<string>, // [linguo-patch:lms-katalog-entitlement-v1] course_id yg sudah dientitle
+  stats: Map<string, LessonStat> | null // [lms-content-readiness-v1] null = statistik ga tersedia → jangan saring
 ): Course[] {
   const langByModule: Record<string, string> = {};
   modList.forEach((m) => { langByModule[m.id] = m.language; });
@@ -89,10 +95,14 @@ function buildCourses(
   modList.forEach((m) => { if (!langOrder.includes(m.language)) langOrder.push(m.language); });
   return langOrder.map((language) => {
     const mt = meta(language);
-    const ls = (byLang[language] || []).slice().sort((a, b) => {
+    const all = (byLang[language] || []).slice().sort((a, b) => {
       const mo = (moduleOrder[a.module_id] ?? 0) - (moduleOrder[b.module_id] ?? 0);
       return mo !== 0 ? mo : a.sort_order - b.sort_order;
     });
+    // [lms-content-readiness-v1] cuma sesi yang materinya sudah ditulis yang dihitung &
+    // bisa dibuka. Dulu 288 sesi cangkang ikut jadi penyebut → progres mentok ~5% dan
+    // tombol "Lanjutkan" mendarat di sesi kosong.
+    const ls = keepReady(all, stats);
     const total = ls.length;
     const dcount = ls.filter((l) => done.has(l.id)).length;
     const next = ls.find((l) => !done.has(l.id));
@@ -114,11 +124,17 @@ function buildCourses(
       resume: next ? { id: next.id, title: next.title } : null,
       owned,
       upgrade,
+      pending: all.length - ls.length,
     };
   });
 }
 
-export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: string) => void; topBar?: ReactNode }) {
+export default function LmsKatalog({
+  onOpen,
+  topBar,
+  // [materi-search-live-v1] teks dari kotak cari di top bar Kelas & Materi
+  query = "",
+}: { onOpen?: (lessonId: string) => void; topBar?: ReactNode; query?: string }) {
   const [loading, setLoading] = useState(() => !_lmsCache);
   const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
   const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
@@ -146,12 +162,13 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
       }
       const moduleIds = modList.map((m) => m.id);
 
-      // lessons + progress PARALEL (sebelumnya 2x sequential await)
-      const [lessRes, progRes] = await Promise.all([
+      // lessons + progress + statistik konten PARALEL (sebelumnya 2x sequential await)
+      const [lessRes, progRes, stats] = await Promise.all([
         supabase.from("lms_lessons").select("id,module_id,title,sort_order,is_preview").in("module_id", moduleIds).order("sort_order"),
         uid
           ? supabase.from("lms_progress").select("lesson_id,status").eq("user_id", uid)
           : Promise.resolve({ data: [] as { lesson_id: string; status: string }[] }),
+        fetchLessonStats(), // [lms-content-readiness-v1]
       ]);
       const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number; is_preview: boolean }[];
       const done = new Set<string>(
@@ -177,7 +194,7 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
 
       // [linguo-patch:lms-katalog-owned-only-v1] cuma tampilin bahasa yang SUDAH dibeli/dientitle.
       // Siswa yang ga daftar bahasa tsb ga lihat sama sekali (mis. Vietnam) — baru muncul setelah beli.
-      const built = buildCourses(modList, lessons, done, ownedCourses).filter((c) => c.owned);
+      const built = buildCourses(modList, lessons, done, ownedCourses, stats).filter((c) => c.owned);
       _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);
@@ -232,7 +249,10 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
     );
   }
 
+  const q = query.trim().toLowerCase();
   const shown = courses.filter((c) => {
+    // [materi-search-live-v1] kotak cari di top bar ikut menyaring daftar bahasa
+    if (q && ![c.native, c.idLabel, c.language].some((v) => v.toLowerCase().includes(q))) return false;
     if (filter === "owned") return c.owned;
     if (filter === "run") return c.pct < 100;
     if (filter === "done") return c.pct >= 100;
@@ -296,6 +316,15 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
           {startLabel}
         </a>
       )
+    ) : selected.total === 0 ? (
+      /* [lms-content-readiness-v1] bahasa ini belum punya satu pun sesi berisi.
+         Dulu tombol tetap muncul dan mendarat di sesi kosong — sekarang jujur. */
+      <span
+        className={`inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-[13px] font-bold text-gray-500 ring-1 ring-slate-200 ${block ? "w-full" : ""}`}
+      >
+        <Hammer className="h-4 w-4" strokeWidth={2.2} />
+        Materi sedang disiapkan
+      </span>
     ) : null;
 
   // [linguo-patch:lms-katalog-upgrade-cta-v1] CTA buka akses penuh utk bahasa belum dibeli.
@@ -404,6 +433,10 @@ export default function LmsKatalog({ onOpen, topBar }: { onOpen?: (lessonId: str
               <div className="border-l border-slate-100 pl-4">
                 <p className="text-[12px] font-semibold text-gray-500">Sesi Selesai</p>
                 <p className="mt-1 text-[18px] font-extrabold text-[#12172B]">{selected.done}<span className="text-[14px] font-bold text-gray-400">/{selected.total}</span></p>
+                {/* [lms-content-readiness-v1] sesi yang judulnya sudah ada tapi materinya belum ditulis */}
+                {selected.pending > 0 ? (
+                  <p className="mt-0.5 text-[11px] font-semibold text-gray-400">+{selected.pending} sesi lagi disiapkan</p>
+                ) : null}
               </div>
               <div className="border-l border-slate-100 pl-4">
                 <p className="text-[12px] font-semibold text-gray-500">Akses</p>

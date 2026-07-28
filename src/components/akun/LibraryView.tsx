@@ -13,6 +13,8 @@ import {
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
 import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
+// [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
+import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -252,7 +254,13 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
     const lessReq = supabase.from("lms_lessons").select("id,module_id,title,sort_order").order("sort_order");
     const progReq = supabase.from("lms_progress").select("lesson_id,status").eq("user_id", userId);
 
-    const [pRes, mRes, lRes, prRes] = await Promise.all([purchasesReq, modReq, lessReq, progReq]);
+    const [pRes, mRes, lRes, prRes, lessonStats] = await Promise.all([
+      purchasesReq,
+      modReq,
+      lessReq,
+      progReq,
+      fetchLessonStats(), // [lms-content-readiness-v1]
+    ]);
 
     let nextPurchases: Purchase[] = [];
     if (pRes.error) {
@@ -271,7 +279,11 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
           .filter((x) => x.status === "completed")
           .map((x) => x.lesson_id)
       );
-      nextByLang = buildProgressByLang((mRes.data as any) || [], (lRes.data as any) || [], doneSet);
+      // [lms-content-readiness-v1] sesi yang materinya belum ditulis jangan jadi penyebut
+      const allLessons = ((lRes.data as any) || []) as {
+        id: string; module_id: string; title: string; sort_order: number | null;
+      }[];
+      nextByLang = buildProgressByLang((mRes.data as any) || [], keepReady(allLessons, lessonStats), doneSet);
       setByLang(nextByLang);
     }
     // [perf:pustaka-cache-v1] simpan buat kunjungan berikutnya (jangan cache hasil error)

@@ -28,6 +28,8 @@ import CompactHeroBanner from '@/components/akun/CompactHeroBanner';
 // [shell-mobile-drawer-v1] TopBarMinimal & MobileBottomNav sekarang dirender StudentShell.
 import StudentShell from '@/components/akun/StudentShell';
 import { canAccessMateri as canAccessMateriGate } from '@/lib/materiGate';
+// [lms-content-readiness-v1] sesi Belajar Mandiri yang materinya belum ditulis jangan ikut dihitung
+import { fetchLessonStats, keepReady } from '@/lib/lmsContent';
 const SimulasiKatalog = dynamic(() => import('@/components/akun/SimulasiKatalog'), { ssr: false, loading: () => <div className="flex w-full items-center justify-center py-24"><div className="h-7 w-7 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /></div> }); // [simulasi-inshell-v1] lazy
 
 // [linguo-patch:onboarding-success-lottie-v1] Lottie ceklis sukses (reuse success-anim.json).
@@ -2187,11 +2189,17 @@ export default function AkunPage() {
         const modList = (mods || []) as { id: string; language: string; sort_order: number; cefr_label: string | null; course_id: string | null }[];
         if (!modList.length) { if (alive) setMandiri(null); return; }
         const moduleIds = modList.map((m) => m.id);
-        const [lessRes, progRes] = await Promise.all([
+        const [lessRes, progRes, lessonStats] = await Promise.all([
           supabase.from("lms_lessons").select("id,module_id,title,sort_order").in("module_id", moduleIds).order("sort_order"),
           supabase.from("lms_progress").select("lesson_id,status").eq("user_id", uid),
+          fetchLessonStats(), // [lms-content-readiness-v1]
         ]);
-        const lessons = (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number }[];
+        // [lms-content-readiness-v1] sesi cangkang (judul ke-seed, materi belum ditulis)
+        // dibuang di sini: dulu ikut jadi penyebut persen & bisa kepilih jadi target "Lanjut".
+        const lessons = keepReady(
+          (lessRes.data || []) as { id: string; module_id: string; title: string; sort_order: number }[],
+          lessonStats
+        );
         const done = new Set<string>(
           ((progRes.data as any[]) || []).filter((p) => p?.status === "completed").map((p) => p.lesson_id)
         );
@@ -4208,7 +4216,15 @@ export default function AkunPage() {
                   const t = r.sessions_total || 0; const u = r.sessions_used || 0;
                   return t > 0 ? Math.min(100, Math.max(0, Math.round((u / t) * 100))) : 0;
                 };
+                // [materi-search-live-v1] chip filter + kotak cari dipakai bareng
+                const mq = materiSearch.trim().toLowerCase();
+                const matchQ = (r: any) =>
+                  !mq ||
+                  [displayLanguage(r.language), r.level, r?.teachers?.name, PRODUCT_BADGE[r.product]?.label, r.product]
+                    .filter(Boolean)
+                    .some((v: string) => String(v).toLowerCase().includes(mq));
                 const shown = liveClasses.filter((r: any) => {
+                  if (!matchQ(r)) return false;
                   if (materiFilter === "run") return pctOf(r) < 100;
                   if (materiFilter === "done") return pctOf(r) >= 100;
                   return true;
@@ -4249,14 +4265,26 @@ export default function AkunPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
+                      {/* [materi-search-live-v1] kotak cari ini dulu nol fungsi: nilainya disimpan
+                          ke state tapi tidak dipakai menyaring apa pun. Sekarang benar-benar
+                          menyaring daftar kelas (view Live) / daftar bahasa (view Mandiri). */}
                       <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition">
                         <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
-                        <input value={materiSearch} onChange={(e) => setMateriSearch(e.target.value)} placeholder="Cari sesi atau materi…" className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400" />
+                        <input
+                          value={materiSearch}
+                          onChange={(e) => setMateriSearch(e.target.value)}
+                          placeholder={materiView === "mandiri" ? "Cari bahasa…" : "Cari kelas, pengajar, atau bahasa…"}
+                          className="w-full bg-transparent text-[13px] font-medium outline-none placeholder:text-slate-400"
+                        />
+                        {materiSearch ? (
+                          <button onClick={() => setMateriSearch("")} aria-label="Hapus pencarian" className="shrink-0 text-gray-400 transition hover:text-[#12172B]">
+                            <X className="h-4 w-4" strokeWidth={2.4} />
+                          </button>
+                        ) : null}
                       </label>
-                      <button className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-white transition hover:bg-slate-50">
-                        <Bell className="h-[19px] w-[19px] text-[#12172B]" />
-                        <span className="absolute right-2.5 top-2.5 h-2.5 w-2.5 rounded-full bg-rose-500 ring-2 ring-white" />
-                      </button>
+                      {/* [materi-bell-real-v1] dulu lonceng hiasan dengan titik merah permanen —
+                          selalu "ada notifikasi baru", padahal tidak nyambung ke mana-mana. */}
+                      {student?.id ? <NotificationBell userId={student.id} userType="student" /> : null}
                     </div>
                   </div>
                 );
@@ -4413,6 +4441,7 @@ export default function AkunPage() {
                     {materiView === "mandiri" && (
                       <LmsKatalog
                         topBar={MateriTopBar}
+                        query={materiSearch}
                         onOpen={(id) => {
                           setLmsSesi(id);
                           if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);
