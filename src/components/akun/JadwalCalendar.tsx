@@ -10,8 +10,12 @@
 // + jadwal-real-only-v1: fallback dummy DIHAPUS — akun kosong tampil empty state.
 
 import { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock } from "lucide-react";
+import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock, BookOpen, FileText, ExternalLink } from "lucide-react";
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
+
+// + jadwal-recurring-materi-v1: pertemuan ke berapa + materi yang bakal dibahas
+//   (topik, rincian, berkas/link rujukan) — diisi pengajar waktu bikin jadwal.
+export type JadwalMaterialLink = { name: string; url: string; kind: "file" | "link" };
 
 export type JadwalSession = {
   id: string;
@@ -21,6 +25,10 @@ export type JadwalSession = {
   level?: string;
   product?: string;
   teacher?: string;
+  sessionNumber?: number | null;
+  materialTitle?: string;
+  materialNotes?: string;
+  materialLinks?: JadwalMaterialLink[];
 };
 
 export type RegularBatch = {
@@ -337,8 +345,13 @@ export default function JadwalCalendar({
                             const c = langColor(e.language);
                             return (
                               <button key={e.id} onClick={() => setSelected(iso)} className="text-left rounded-lg px-2 py-1.5 hover:opacity-90 transition" style={{ background: c.bg, color: c.text }}>
-                                <span className="block text-[11px] font-extrabold leading-tight">{e._time}</span>
+                                <span className="flex items-center justify-between gap-1 text-[11px] font-extrabold leading-tight">
+                                  {e._time}
+                                  {/* jadwal-recurring-materi-v1 */}
+                                  {e.sessionNumber ? <span className="shrink-0 opacity-70">#{e.sessionNumber}</span> : null}
+                                </span>
                                 <span className="block text-[11px] font-bold leading-tight truncate">{e.language}{e.level ? ` ${e.level}` : ""}</span>
+                                {e.materialTitle && <span className="block text-[10px] font-semibold leading-tight truncate opacity-75">{e.materialTitle}</span>}
                               </button>
                             );
                           }) : (
@@ -360,32 +373,39 @@ export default function JadwalCalendar({
                     {dayEvents.map((e) => {
                       const c = langColor(e.language);
                       return (
-                        <div key={e.id} className="flex items-stretch gap-3 rounded-2xl bg-slate-50 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
-                          <span className="flex flex-col items-center justify-center w-20 shrink-0 rounded-xl py-2" style={{ background: c.bg }}>
-                            <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
-                            {e._end && <span className="text-[11px] font-semibold mt-0.5" style={{ color: c.text }}>{e._end}</span>}
-                          </span>
-                          <span className="min-w-0 flex-1 flex flex-col justify-center">
-                            <span className="flex items-center gap-2">
-                              <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: c.dot }} />
-                              <span className="text-[15px] font-extrabold text-[#12172B] truncate">{e.language}{e.level ? ` — ${e.level}` : ""}</span>
+                        <div key={e.id} className="rounded-2xl bg-slate-50 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
+                          <div className="flex items-stretch gap-3">
+                            <span className="flex flex-col items-center justify-center w-20 shrink-0 rounded-xl py-2" style={{ background: c.bg }}>
+                              <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
+                              {e._end && <span className="text-[11px] font-semibold mt-0.5" style={{ color: c.text }}>{e._end}</span>}
                             </span>
-                            <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-1 text-[12px] text-[#6B7280] font-medium">
-                              {e.teacher && <span className="inline-flex items-center gap-1"><GraduationCap className="w-3.5 h-3.5" strokeWidth={2} /> {e.teacher}</span>}
-                              {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
-                              {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
+                            <span className="min-w-0 flex-1 flex flex-col justify-center">
+                              <span className="flex items-center gap-2">
+                                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: c.dot }} />
+                                <span className="text-[15px] font-extrabold text-[#12172B] truncate">{e.language}{e.level ? ` — ${e.level}` : ""}</span>
+                                {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
+                                {e.sessionNumber ? (
+                                  <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>Sesi {e.sessionNumber}</span>
+                                ) : null}
+                              </span>
+                              <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-1 text-[12px] text-[#6B7280] font-medium">
+                                {e.teacher && <span className="inline-flex items-center gap-1"><GraduationCap className="w-3.5 h-3.5" strokeWidth={2} /> {e.teacher}</span>}
+                                {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
+                                {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
+                              </span>
                             </span>
-                          </span>
-                          {isJoinable(e._d) && (
-                            <a
-                              href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="self-center inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52] shrink-0"
-                            >
-                              <Video className="w-3.5 h-3.5" strokeWidth={2.2} /> Masuk Kelas
-                            </a>
-                          )}
+                            {isJoinable(e._d) && (
+                              <a
+                                href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="self-center inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52] shrink-0"
+                              >
+                                <Video className="w-3.5 h-3.5" strokeWidth={2.2} /> Masuk Kelas
+                              </a>
+                            )}
+                          </div>
+                          <MaterialBlock s={e} />
                         </div>
                       );
                     })}
@@ -426,10 +446,19 @@ function SideItem({ s, onClick }: { s: NormSession; onClick: () => void }) {
         <span className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full shrink-0" style={{ background: c.dot }} />
           <span className="text-[14px] font-extrabold truncate text-[#12172B]">{s.language}{s.level ? ` — ${s.level}` : ""}</span>
+          {/* jadwal-recurring-materi-v1 */}
+          {s.sessionNumber ? (
+            <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>#{s.sessionNumber}</span>
+          ) : null}
         </span>
         <span className="block text-[12px] text-[#6B7280] font-medium mt-0.5 truncate">
           {s._weekday} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}
         </span>
+        {s.materialTitle && (
+          <span className="mt-0.5 flex items-center gap-1 text-[11px] font-bold text-[#16796E] truncate">
+            <BookOpen className="w-3 h-3 shrink-0" strokeWidth={2.4} /> <span className="truncate">{s.materialTitle}</span>
+          </span>
+        )}
         {s.teacher && (
           <span className="inline-flex items-center gap-1 text-[11px] text-[#9CA3AF] font-medium mt-0.5">
             <GraduationCap className="w-3 h-3" strokeWidth={2} /> {s.teacher}
@@ -437,5 +466,36 @@ function SideItem({ s, onClick }: { s: NormSession; onClick: () => void }) {
         )}
       </span>
     </button>
+  );
+}
+
+/**
+ * jadwal-recurring-materi-v1: blok "Materi" pada kartu sesi — topik + rincian +
+ * berkas/link rujukan yang dilampirkan pengajar. Tak dirender kalau kosong.
+ */
+function MaterialBlock({ s }: { s: NormSession }) {
+  const links = s.materialLinks ?? [];
+  if (!s.materialTitle && !s.materialNotes && links.length === 0) return null;
+  return (
+    <div className="mt-2.5 rounded-xl bg-white p-3">
+      <p className="flex items-center gap-1.5 text-[12px] font-extrabold text-[#16796E]">
+        <BookOpen className="w-3.5 h-3.5 shrink-0" strokeWidth={2.4} />
+        {s.materialTitle || "Materi sesi"}
+      </p>
+      {s.materialNotes && <p className="mt-1 text-[12px] font-medium leading-snug text-[#6B7280] whitespace-pre-line">{s.materialNotes}</p>}
+      {links.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {links.map((m, i) => (
+            <a key={`${m.url}-${i}`} href={m.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex max-w-full items-center gap-1.5 rounded-lg bg-[#F5F6F8] px-2.5 py-1.5 text-[11.5px] font-bold text-[#12172B] hover:bg-[#EAECEF]">
+              {m.kind === "file"
+                ? <FileText className="w-3.5 h-3.5 shrink-0 text-[#16796E]" strokeWidth={2.2} />
+                : <ExternalLink className="w-3.5 h-3.5 shrink-0 text-[#16796E]" strokeWidth={2.2} />}
+              <span className="truncate">{m.name}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

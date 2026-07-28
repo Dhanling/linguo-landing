@@ -178,7 +178,16 @@ type StudentData = {
 };
 
 type Badge = { id: string; badge_key: string; badge_icon: string; badge_label: string; earned_at: string };
-type Schedule = { id: string; registration_id: string; scheduled_at: string; duration_minutes: number; status: string };
+// jadwal-recurring-materi-v1: pengajar sekarang mengisi nomor pertemuan + materi
+// (topik, rincian, berkas/link rujukan) waktu bikin jadwal — ikut tampil di kalender siswa.
+type ScheduleMaterialLink = { name: string; url: string; kind: "file" | "link" };
+type Schedule = {
+  id: string; registration_id: string; scheduled_at: string; duration_minutes: number; status: string;
+  session_number?: number | null;
+  session_title?: string | null;
+  material_notes?: string | null;
+  material_links?: ScheduleMaterialLink[] | null;
+};
 
 // ── Constants ────────────────────────────────────────────────────────────
 // [kelas-detail-page-v1] LANG_FLAGS/getFlagUrl/getLangPhoto/langGlyph pindah ke
@@ -2766,7 +2775,8 @@ export default function AkunPage() {
         regIds.length > 0
           ? supabase
               .from("schedules")
-              .select("id, registration_id, scheduled_at, duration_minutes, status")
+              // jadwal-recurring-materi-v1: nomor pertemuan + materi ikut ditarik
+              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links")
               .in("registration_id", regIds)
               .in("status", ["scheduled", "pending"])
               .gt("scheduled_at", new Date().toISOString())
@@ -3573,10 +3583,20 @@ export default function AkunPage() {
                                   >
                                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(lang)}</span>
                                     <span className="min-w-0 flex-1">
-                                      <span className="block truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
+                                      <span className="flex items-center gap-1.5">
+                                        <span className="min-w-0 flex-1 truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
+                                        {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
+                                        {s.session_number ? (
+                                          <span className="shrink-0 rounded-full bg-[#16796E]/10 px-1.5 py-0.5 text-[10px] font-extrabold text-[#16796E]">#{s.session_number}</span>
+                                        ) : null}
+                                      </span>
                                       <span className="block text-[12px] font-medium text-gray-500">
                                         {d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
                                       </span>
+                                      {/* jadwal-recurring-materi-v1: topik yang bakal dibahas */}
+                                      {s.session_title && (
+                                        <span className="mt-0.5 block truncate text-[11.5px] font-bold text-[#16796E]">{s.session_title}</span>
+                                      )}
                                     </span>
                                     <ChevronRight className="h-4 w-4 text-slate-300 transition group-hover:text-[#16796E]" />
                                   </button>
@@ -4174,6 +4194,11 @@ export default function AkunPage() {
                     level: reg?.level || "",
                     product: reg?.product || "",
                     teacher: reg?.teachers?.name || "",
+                    // jadwal-recurring-materi-v1
+                    sessionNumber: s.session_number ?? null,
+                    materialTitle: s.session_title || "",
+                    materialNotes: s.material_notes || "",
+                    materialLinks: Array.isArray(s.material_links) ? s.material_links : [],
                   };
                 });
                 const jadwalRegulerBatches = activeRegs
