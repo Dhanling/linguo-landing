@@ -340,31 +340,31 @@ export default function SentenceStudy({
         style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: BG, paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         <div className="mx-auto max-w-2xl">
-          {/* [watch-sentence-chip-row-v1] Chip usulan dulu membungkus jadi 3 baris dan
-              memakan ~20% layar terus-menerus. Sekarang SATU baris yang bisa digeser
-              mendatar; teks panjang dipotong secara tampilan saja — yang dikirim ke AI
-              tetap pertanyaan utuh (`c.q`), dan versi penuhnya ada di tooltip. */}
+          {/* [watch-sentence-chip-stack-v1] Chip usulan ditumpuk ke bawah, satu chip
+              satu baris penuh, teksnya dibiarkan membungkus supaya pertanyaannya
+              KEBACA UTUH (versi satu-baris-geser dulu memotong teks di tengah).
+              Tingginya dibatasi + bisa digulir biar dok tak makan layar video. */}
           {!loading && dockChips.length > 0 && (
             <div className="mb-2">
               <p className="mb-1.5 text-[11px] font-semibold" style={{ color: SUB }}>
                 {dockLabel}
               </p>
-              <div className="flex gap-2 overflow-x-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div className="flex max-h-[34vh] flex-col gap-1.5 overflow-y-auto pb-0.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {dockChips.map((c) => (
                   <button
                     key={c.q}
                     onClick={() => ask(stripGuillemets(c.q))}
                     title={stripGuillemets(c.q)}
-                    className="flex max-w-[74vw] shrink-0 flex-col items-start rounded-2xl px-3 py-1.5 text-left transition-colors hover:bg-white/10 sm:max-w-[300px]"
+                    className="flex w-full flex-col items-start rounded-2xl px-3 py-2 text-left transition-colors hover:bg-white/10"
                     style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
                   >
-                    <span className="block max-w-full truncate text-[12.5px] font-semibold">
+                    <span className="block w-full text-[12.5px] font-semibold leading-snug">
                       <FollowupText text={stripGuillemets(c.q)} readings={chipReadings} />
                     </span>
                     {/* `tl` dari AI cuma dipakai kalau bacaan per-kutipan belum ada
                         (bahasa Latin tak pernah punya keduanya) — biar tak dobel. */}
                     {c.tl && !hasInlineReading(stripGuillemets(c.q), chipReadings) && (
-                      <span className="block max-w-full truncate text-[11px] italic opacity-80">
+                      <span className="mt-0.5 block w-full text-[11px] italic leading-snug opacity-80">
                         {stripGuillemets(c.tl)}
                       </span>
                     )}
