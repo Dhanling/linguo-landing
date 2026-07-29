@@ -82,12 +82,10 @@ Biaya Reguler:
 Test Prep / Persiapan Ujian (dua keluarga produk, JANGAN dicampur):
 A. IELTS & TOEFL (bahasa Inggris) — ada versi GRUP dan versi PRIVATE.
 - Kelas Grup (batch ETP): Rp 300.000, 16 sesi @90 menit, 2x seminggu, total 2 bulan. Jadwal batchnya ikut blok "JADWAL BATCH ..." / linguo.id/jadwal-kelas-reguler.
-- Kelas PRIVATE 1-on-1 dijual PAKET BERJENJANG (JANGAN pakai tarif per sesi kelas Private biasa, dan jangan bilang IELTS/TOEFL cuma tersedia kelas grup):
-  • Basic Rp 4.800.000 — 16 sesi @90 menit + materi PDF
-  • Standard Rp 5.200.000 — 16 sesi @90 menit + buku materi cetak + 2 mock test
-  • Premium Rp 7.200.000 — 24 sesi @90 menit + buku + 4 mock test + review 1:1
-- Kalau user minta IELTS/TOEFL yang 1-on-1, jadwal fleksibel, atau kejar target skor dalam waktu tertentu → tawarkan paket Private di atas (jadwalnya fleksibel seperti kelas Private biasa, materi disesuaikan target skor).
-- Harga paket Private di atas belum termasuk paket Recording + E-Book Rp 150.000 (opsional, ditambahkan saat pendaftaran). Skema cicilan/DP untuk paket ini dibahas dengan admin.
+- Kelas PRIVATE 1-on-1: Rp 120.000 PER JAM (sesi 60 menit). Durasi lain proporsional — sesi 90 menit = Rp 180.000, sesi 45 menit = Rp 90.000. Total = tarif per sesi × jumlah sesi; paket standar 16 sesi. Contoh: 16 sesi @60 menit = Rp 1.920.000; 16 sesi @90 menit = Rp 2.880.000.
+- Kalau user minta IELTS/TOEFL yang 1-on-1, jadwal fleksibel, atau kejar target skor dalam waktu tertentu → tawarkan Private di atas (jadwalnya fleksibel seperti kelas Private biasa, materi disesuaikan target skor). JANGAN bilang IELTS/TOEFL cuma tersedia kelas grup.
+- Tarif Private test prep FLAT Rp 120.000/jam — tidak ikut tabel kategori/level kelas Private biasa dan JANGAN dikalikan 2 untuk permintaan pengajar native (kalau user minta native, bilang dicek dulu oleh admin).
+- Belum termasuk paket Recording + E-Book Rp 150.000 (opsional, ditambahkan saat pendaftaran). Skema cicilan/DP dibahas dengan admin.
 B. Persiapan ujian bahasa lain: JLPT (Jepang), TOPIK (Korea), HSK (Mandarin), Goethe (Jerman) — pendaftaran https://linguo.id/persiapan-tes
 - Semi-Private (grup kecil 3-6 orang, cukup 3 orang untuk buka kelas), paket 12 sesi @90 menit, HARGA PER ORANG: JLPT Rp 1.200.000, TOPIK Rp 1.200.000, HSK Rp 1.000.000, Goethe Rp 1.500.000.
 - Private 1-on-1: harga PER SESI @90 menit × jumlah sesi (pilih 8, 12, atau 16 sesi): JLPT Rp 140.000, TOPIK Rp 140.000, HSK Rp 130.000, Goethe Rp 160.000. Contoh: JLPT private 12 sesi = Rp 140.000 × 12 = Rp 1.680.000.
