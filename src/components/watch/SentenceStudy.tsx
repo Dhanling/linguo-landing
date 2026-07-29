@@ -298,8 +298,12 @@ export default function SentenceStudy({
         </div>
       </div>
 
-      {/* Tab bar */}
-      <div className="flex gap-1 px-4 pt-3 sm:px-6">
+      {/* Tab bar — diberi jarak & garis pemisah di bawahnya supaya isi yang
+          digulir tak kelihatan nempel/nabrak tombol tab. */}
+      <div
+        className="flex shrink-0 gap-1 px-4 pb-2.5 pt-3 sm:px-6"
+        style={{ borderBottom: `1px solid ${BORDER}` }}
+      >
         <TabBtn active={tab === "study"} onClick={() => setTab("study")}>
           Pelajari
         </TabBtn>
@@ -308,11 +312,13 @@ export default function SentenceStudy({
         </TabBtn>
       </div>
 
-      {/* Isi */}
+      {/* Isi — [watch-sentence-scroll-fade-v1] tepi atasnya dilembutkan (mask) biar
+          baris yang terpotong saat digulir memudar dulu, bukan terpenggal mendadak
+          persis di bawah tab. */}
       <div
         ref={scrollRef}
         onScroll={(e) => setScrolled(e.currentTarget.scrollTop > 24)}
-        className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6"
+        className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-5 sm:px-6 [mask-image:linear-gradient(to_bottom,transparent_0,#000_18px)]"
       >
         <div className="mx-auto max-w-2xl">
           {tab === "study" ? (
