@@ -170,6 +170,28 @@ where dp.id = b.id
 
 commit;
 
--- Verifikasi:
---   select buyer_name, buyer_email, amount, xendit_external_id, created_at
---   from digital_purchases where source = 'xendit' order by created_at desc limit 20;
+-- ---------------------------------------------------------------------------
+-- DIAGNOSA — jalankan TERPISAH kalau Overview masih kosong. Menunjukkan di
+-- langkah mana rantainya putus: lead → digital_purchases → registrations.
+-- ---------------------------------------------------------------------------
+--  select
+--    (select count(*) from public.leads
+--      where source = 'landing-page'
+--        and lower(coalesce(program,'')) in ('digital','e-book','ebook')
+--        and upper(coalesce(payment_status,'')) in ('PAID','CONVERTED')
+--        and coalesce(trim(language),'') <> '')                    as lead_ebook_lunas,
+--    (select count(*) from public.digital_purchases
+--      where source = 'xendit'
+--        and xendit_external_id like 'LINGUO-%')                   as baris_digital_purchases,
+--    (select count(*) from public.registrations
+--      where notes = 'Synced from digital_purchases')              as mirror_registrations;
+--
+--  Bacaan:
+--   lead > 0, digital = 0  → langkah 1 tak menemukan pasangan (cek `amount` lead
+--                            ada di edition_map, dan produk katalog utk bahasa+edisi itu ada)
+--   digital > 0, mirror=0  → langkah 2 tidak jalan / trigger sync tidak aktif
+--   mirror > 0             → data sudah benar; Overview tinggal di-refresh keras
+--
+-- Rincian barisnya:
+--   select buyer_name, buyer_email, amount, payment_status, registration_id, created_at
+--   from public.digital_purchases where source = 'xendit' order by created_at desc limit 20;
