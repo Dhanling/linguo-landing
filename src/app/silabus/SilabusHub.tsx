@@ -1,17 +1,34 @@
 "use client";
 
-import { useMemo, useState } from "react";
+// linguo-patch:silabus-hub-perf-v1
+// Dua masalah yang dibereskan di sini:
+//  1. Emoji bendera -> <LangSlugFlag> (rounded rectangle, konsisten lintas OS).
+//  2. "Kedipan" waktu scroll. Sumbernya tiga, semuanya dihapus:
+//     a. whileHover={{y:-4}} di elemen yang SAMA dengan target hover. Pas halaman
+//        di-scroll, kartu naik 4px -> kursor lepas dari kartu -> turun lagi ->
+//        kena hover lagi. Loop ini yang kelihatan seperti kedip. Sekarang yang
+//        bergerak elemen DALAM, target hover (.group) diam di tempat.
+//     b. className "transition-all" bentrok dengan transform inline framer-motion
+//        (CSS ikut men-transisi transform yang lagi di-animasi per frame).
+//     c. 60+ motion card = 60+ IntersectionObserver + fade-in stagger saat scroll.
+//        Kartu sekarang HTML biasa; animasi masuk cuma di hero (CSS, sekali).
+//     Bonus: backdrop-blur pada bar sticky dilepas (repaint tiap frame scroll di
+//     Safari, padahal latarnya putih polos) + useDeferredValue biar ngetik di
+//     kolom cari nggak nge-render ulang 60 kartu secara sinkron.
+
+import { memo, useDeferredValue, useMemo, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import type { LanguageMeta } from "@/data/curriculum";
 import { regionLabels } from "@/data/curriculum/languages";
+import { LangSlugFlag } from "@/components/RectFlag";
 
 export default function SilabusHub({ languages }: { languages: LanguageMeta[] }) {
   const [query, setQuery] = useState("");
   const [activeRegion, setActiveRegion] = useState<string>("all");
+  const deferredQuery = useDeferredValue(query);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = deferredQuery.trim().toLowerCase();
     return languages.filter((l) => {
       const matchQuery =
         !q ||
@@ -21,32 +38,26 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
       const matchRegion = activeRegion === "all" || l.region === activeRegion;
       return matchQuery && matchRegion;
     });
-  }, [query, activeRegion, languages]);
+  }, [deferredQuery, activeRegion, languages]);
 
-  const featured = filtered.filter((l) => l.featured);
-  const rest = filtered.filter((l) => !l.featured);
+  const featured = useMemo(() => filtered.filter((l) => l.featured), [filtered]);
   const grouped = useMemo(() => {
     const g: Record<string, LanguageMeta[]> = {};
-    rest.forEach((l) => { (g[l.region] ||= []).push(l); });
+    filtered.forEach((l) => { if (!l.featured) (g[l.region] ||= []).push(l); });
     return g;
-  }, [rest]);
+  }, [filtered]);
 
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
       <section className="relative pt-24 md:pt-36 pb-20 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#1A9E9E]/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-200/30 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl silabus-rise">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A9E9E]/10 text-[#1A9E9E] text-sm font-medium mb-8">
               <span className="w-2 h-2 rounded-full bg-[#1A9E9E] animate-pulse" />
               Kurikulum Transparan · CEFR-aligned
@@ -71,12 +82,14 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
               <div><span className="block text-3xl font-bold text-gray-900">304</span>Sesi per Bahasa</div>
               <div><span className="block text-3xl font-bold text-gray-900">4</span>Level CEFR</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* SEARCH + FILTER */}
-      <section className="sticky top-16 md:top-20 z-20 bg-white/90 backdrop-blur-md border-y border-gray-100">
+      {/* SEARCH + FILTER — sengaja TANPA backdrop-blur: bar ini melayang di atas
+          konten putih, dan backdrop-filter memaksa repaint area besar tiap frame
+          scroll (kedip di Safari) tanpa bedanya kelihatan. */}
+      <section className="sticky top-16 md:top-20 z-20 bg-white border-y border-gray-100 transform-gpu">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-4 md:items-center">
           <div className="relative flex-1">
             <input
@@ -117,8 +130,8 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
               <p className="text-sm text-gray-500 hidden md:block">Paling diminati di Linguo.id</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {featured.map((lang, i) => (
-                <LanguageCard key={lang.slug} lang={lang} index={i} large />
+              {featured.map((lang) => (
+                <LanguageCard key={lang.slug} lang={lang} large />
               ))}
             </div>
           </div>
@@ -136,8 +149,8 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
                   <span className="ml-3 text-sm font-normal text-gray-400">{items.length} bahasa</span>
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-                  {items.map((lang, i) => (
-                    <LanguageCard key={lang.slug} lang={lang} index={i} />
+                  {items.map((lang) => (
+                    <LanguageCard key={lang.slug} lang={lang} />
                   ))}
                 </div>
               </div>
@@ -147,15 +160,15 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
       )}
 
       {/* EMPTY */}
-      <AnimatePresence>
-        {filtered.length === 0 && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="py-32 text-center">
-            <div className="text-6xl mb-4">🔍</div>
-            <p className="text-xl text-gray-500">Tidak ada bahasa yang cocok dengan pencarian kamu.</p>
-            <button onClick={() => { setQuery(""); setActiveRegion("all"); }} className="mt-6 text-[#1A9E9E] font-medium hover:underline">Reset filter</button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {filtered.length === 0 && (
+        <div className="py-32 text-center">
+          <svg className="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <p className="text-xl text-gray-500">Tidak ada bahasa yang cocok dengan pencarian kamu.</p>
+          <button onClick={() => { setQuery(""); setActiveRegion("all"); }} className="mt-6 text-[#1A9E9E] font-medium hover:underline">Reset filter</button>
+        </div>
+      )}
 
       {/* CTA STRIP */}
       <section className="py-20 md:py-28">
@@ -188,41 +201,40 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
   );
 }
 
-function LanguageCard({ lang, index, large = false }: { lang: LanguageMeta; index: number; large?: boolean }) {
+const LanguageCard = memo(function LanguageCard({ lang, large = false }: { lang: LanguageMeta; large?: boolean }) {
   const isLocked = !lang.available;
   const content = (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.4) }}
-      whileHover={{ y: -4 }}
-      className={`group relative bg-white rounded-2xl border border-gray-100 hover:border-[#1A9E9E]/40 hover:shadow-lg transition-all cursor-pointer ${
-        large ? "p-6 md:p-7" : "p-4 md:p-5"
-      } ${isLocked ? "opacity-90" : ""}`}
-    >
-      <div className="flex items-start justify-between mb-3">
-        <div className={`${large ? "text-4xl" : "text-3xl"}`}>{lang.flag}</div>
-        {isLocked ? (
-          <span className="text-[10px] uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">Segera</span>
-        ) : (
-          <span className="text-[10px] uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">Tersedia</span>
+    // Pembungkus .group = target hover, posisinya TIDAK pernah berubah.
+    // Kartu di dalamnya yang naik pas hover → kursor nggak pernah "lepas".
+    <div className="group block h-full">
+      <div
+        className={`relative h-full bg-white rounded-2xl border border-gray-100 transform-gpu transition-[transform,box-shadow,border-color] duration-200 ease-out group-hover:-translate-y-1 group-hover:border-[#1A9E9E]/40 group-hover:shadow-lg ${
+          large ? "p-6 md:p-7" : "p-4 md:p-5"
+        } ${isLocked ? "opacity-90" : ""}`}
+      >
+        <div className="flex items-start justify-between mb-3">
+          <LangSlugFlag slug={lang.slug} h={large ? 30 : 24} />
+          {isLocked ? (
+            <span className="text-[10px] uppercase tracking-wider bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-semibold">Segera</span>
+          ) : (
+            <span className="text-[10px] uppercase tracking-wider bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-semibold">Tersedia</span>
+          )}
+        </div>
+        <h3 className={`font-bold text-gray-900 mb-1 ${large ? "text-xl md:text-2xl" : "text-base"}`}>
+          Bahasa {lang.name}
+        </h3>
+        <p className="text-sm text-gray-500 mb-2">{lang.nativeName}</p>
+        {large && lang.description && (
+          <p className="text-sm text-gray-600 leading-relaxed mt-3">{lang.description}</p>
         )}
+        <div className="mt-4 text-sm font-medium text-[#1A9E9E] inline-flex items-center gap-1">
+          {isLocked ? "Waitlist" : "Lihat silabus"}
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
       </div>
-      <h3 className={`font-bold text-gray-900 mb-1 ${large ? "text-xl md:text-2xl" : "text-base"}`}>
-        Bahasa {lang.name}
-      </h3>
-      <p className="text-sm text-gray-500 mb-2">{lang.nativeName}</p>
-      {large && lang.description && (
-        <p className="text-sm text-gray-600 leading-relaxed mt-3">{lang.description}</p>
-      )}
-      <div className="mt-4 text-sm font-medium text-[#1A9E9E] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-        {isLocked ? "Waitlist" : "Lihat silabus"}
-        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </motion.div>
+    </div>
   );
 
   if (isLocked) {
@@ -237,4 +249,4 @@ function LanguageCard({ lang, index, large = false }: { lang: LanguageMeta; inde
     );
   }
   return <Link href={`/silabus/${lang.slug}`}>{content}</Link>;
-}
+});

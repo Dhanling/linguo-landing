@@ -302,3 +302,16 @@ body { animation: pageEnter 0.5s ease-out both; }
   .wl-progress,
   .wl-glow { animation: none !important; }
 }
+
+/* linguo-patch:silabus-hub-perf-v1 — reveal hero silabus.
+   Pengganti motion.div framer-motion: CSS murni, jalan sekali saat mount,
+   tanpa observer & tanpa transform yang di-update per frame dari JS. */
+@keyframes silabusRise {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+.silabus-rise { animation: silabusRise 600ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .silabus-rise { animation: none !important; }
+}

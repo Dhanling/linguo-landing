@@ -840,7 +840,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
         open={showAuthModal}
         onClose={() => setShowAuthModal(false)}
         onSuccess={handleAuthSuccess}
-        intent={`Simpan hasil test ${meta.flag} & lanjut daftar kelas`}
+        intent={`Simpan hasil test Bahasa ${meta.name} & lanjut daftar kelas`}
       />
     </motion.section>
     )

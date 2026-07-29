@@ -7,6 +7,7 @@ import * as Icons from "lucide-react";
 import type { LanguageCurriculum, Level, Sublevel } from "@/data/curriculum";
 import { getIconForSession } from "@/data/curriculum/sessionIcons";
 import FunnelModal from "@/components/FunnelModal";
+import { LangSlugFlag } from "@/components/RectFlag";
 
 const MOCK_STATS = {
   totalLearners: 1247,
@@ -80,12 +81,11 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
           </Link>
 
           <div className="flex items-center gap-4 mb-5">
-            <motion.span
-              initial={{ scale: 0.6, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 180, damping: 14 }}
-              className="text-5xl md:text-6xl"
-            >{meta.flag}</motion.span>
+            {/* linguo-patch:silabus-rect-icon-v1 — bendera rounded rectangle, bukan emoji */}
+            <span className="silabus-rise shrink-0">
+              <LangSlugFlag slug={meta.slug} h={44} className="md:hidden" />
+              <LangSlugFlag slug={meta.slug} h={56} className="hidden md:inline-flex" />
+            </span>
             <div>
               <p className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Silabus</p>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Bahasa {meta.name}</h1>
@@ -362,12 +362,7 @@ function ChapterSection({
 
       {/* Chapter CTA — tanpa framing gembok */}
       {!hasDetailedTopics && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className={`mt-6 p-5 rounded-2xl ${theme.bgSoft} border border-gray-100`}
-        >
+        <div className={`mt-6 p-5 rounded-2xl ${theme.bgSoft} border border-gray-100`}>
           <div className="flex items-start gap-3">
             <div className={`w-10 h-10 rounded-full ${theme.primaryCls} flex items-center justify-center flex-shrink-0`}>
               <Icons.Sparkles className="w-5 h-5 text-white" />
@@ -384,7 +379,7 @@ function ChapterSection({
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );
@@ -399,13 +394,10 @@ function LessonRow({
   const hasTopics = topics && topics.length > 0;
 
   return (
-    <motion.li
-      initial={{ opacity: 0, x: -10 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ delay: Math.min(index * 0.04, 0.5), duration: 0.3 }}
-      className="relative"
-    >
+    // linguo-patch:silabus-hub-perf-v1 — dulu motion.li dengan whileInView + stagger:
+    // satu IntersectionObserver PER sesi (bisa 60+ per chapter) dan tiap baris fade-in
+    // telat saat discroll → kelihatan berkedip. Baris sekarang HTML biasa.
+    <li className="relative">
       <button
         onClick={() => hasTopics && setExpanded((e) => !e)}
         disabled={!hasTopics}
@@ -462,6 +454,6 @@ function LessonRow({
           </AnimatePresence>
         </div>
       </button>
-    </motion.li>
+    </li>
   );
 }
