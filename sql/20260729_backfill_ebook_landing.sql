@@ -15,7 +15,18 @@ begin;
 
 -- ---------------------------------------------------------------------------
 -- 1. Lead e-book LUNAS → digital_purchases (satu baris per bahasa)
+--
+--    Barisnya sengaja dibuat "Belum Bayar" dulu, baru diaktifkan di langkah 2.
+--    Alasannya: `digital_purchases` punya trigger BEFORE INSERT OR UPDATE
+--    (sync_digital_purchase_to_registration) yang menyalin baris lunas ke
+--    `registrations` dengan source_digital_purchase_id = id baris tsb. Saat
+--    BEFORE INSERT barisnya belum ada di tabel, jadi FK
+--    registrations_source_digital_purchase_id_fkey gagal:
+--      ERROR 23503 ... Key (source_digital_purchase_id)=(...) is not present
+--    Insert-lalu-update bikin trigger jalan di UPDATE, saat barisnya sudah ada.
 -- ---------------------------------------------------------------------------
+create temp table _ebook_backfill (id uuid, email text) on commit drop;
+
 with lang_map(id_name, catalog) as (values
   ('Inggris','English'), ('Spanyol','Spanish'), ('Jerman','German'),
   ('Jepang','Japanese'), ('Mandarin','Mandarin'), ('Belanda','Dutch'),
@@ -87,35 +98,51 @@ with_prod as (
     on prod.type = 'ebook'
    and prod.language = r.catalog_lang
    and prod.slug like '%-' || r.edition
+),
+ins as (
+  insert into public.digital_purchases (
+    product_id, pricing_id, buyer_email, buyer_name, buyer_phone, amount,
+    payment_status, xendit_status, xendit_invoice_id, xendit_external_id,
+    xendit_paid_at, access_granted, source
+  )
+  select
+    product_id,
+    pricing_id,
+    email,
+    name,
+    wa_number,
+    -- Nominal dibagi rata; sisa pembagian ditaruh di baris pertama supaya total
+    -- omzet persis sama dengan yang dibayar (bukan N x harga bundle).
+    case when rn = 1 then total - floor(total / n) * (n - 1) else floor(total / n) end,
+    'Belum Bayar',
+    'PENDING',
+    xendit_invoice_id,
+    -- Satu external_id dipakai banyak baris → baris ke-2 dst diberi sufiks biar
+    -- tetap bisa dicocokkan 1:1 (dan cek idempotensi di webhook tetap kena baris 1).
+    case when rn = 1 then xendit_external_id else xendit_external_id || '-' || rn end,
+    coalesce(paid_at, now()),
+    false,
+    'xendit'
+  from with_prod
+  returning id, buyer_email
 )
-insert into public.digital_purchases (
-  product_id, pricing_id, buyer_email, buyer_name, buyer_phone, amount,
-  payment_status, xendit_status, xendit_invoice_id, xendit_external_id,
-  xendit_paid_at, access_granted, access_granted_at, source
-)
-select
-  product_id,
-  pricing_id,
-  email,
-  name,
-  wa_number,
-  -- Nominal dibagi rata; sisa pembagian ditaruh di baris pertama supaya total
-  -- omzet persis sama dengan yang dibayar (bukan N x harga bundle).
-  case when rn = 1 then total - floor(total / n) * (n - 1) else floor(total / n) end,
-  'Lunas',
-  'PAID',
-  xendit_invoice_id,
-  -- Satu external_id dipakai banyak baris → baris ke-2 dst diberi sufiks biar
-  -- tetap bisa dicocokkan 1:1 (dan cek idempotensi di webhook tetap kena baris 1).
-  case when rn = 1 then xendit_external_id else xendit_external_id || '-' || rn end,
-  coalesce(paid_at, now()),
-  true,
-  now(),
-  'xendit'
-from with_prod;
+insert into _ebook_backfill (id, email)
+select id, buyer_email from ins;
 
 -- ---------------------------------------------------------------------------
--- 2. Normalisasi leads.program: "digital" ambigu → "e-book" / "e-learning"
+-- 2. Aktifkan baris hasil langkah 1 → trigger menyalinnya ke `registrations`
+--    (kini barisnya sudah ada, jadi FK-nya aman).
+-- ---------------------------------------------------------------------------
+update public.digital_purchases dp
+set payment_status     = 'Lunas',
+    xendit_status      = 'PAID',
+    access_granted     = true,
+    access_granted_at  = now()
+from _ebook_backfill b
+where dp.id = b.id;
+
+-- ---------------------------------------------------------------------------
+-- 3. Normalisasi leads.program: "digital" ambigu → "e-book" / "e-learning"
 --    (label admin PROGRAM_LABELS sudah mengenal dua nilai ini)
 -- ---------------------------------------------------------------------------
 update public.leads
@@ -127,15 +154,19 @@ where source = 'landing-page'
   and lower(coalesce(program, '')) = 'digital';
 
 -- ---------------------------------------------------------------------------
--- 3. Sambungkan akses ke akun yang sudah terdaftar (Perpustakaan /akun cocokkan
---    lewat auth_user_id, bukan email). Hanya mengisi yang masih kosong.
+-- 4. Sambungkan akses ke akun yang sudah terdaftar (Perpustakaan /akun cocokkan
+--    lewat auth_user_id, bukan email).
+--    SENGAJA dibatasi ke baris hasil backfill ini: meng-update seluruh tabel
+--    akan memicu trigger sync pada baris lunas lama yang belum punya
+--    registration_id, dan itu menerbitkan baris `registrations` baru di luar
+--    lingkup perbaikan ini.
 -- ---------------------------------------------------------------------------
 update public.digital_purchases dp
 set auth_user_id = u.id
-from auth.users u
-where dp.auth_user_id is null
-  and dp.buyer_email is not null
-  and lower(u.email) = lower(dp.buyer_email);
+from _ebook_backfill b
+join auth.users u on lower(u.email) = lower(b.email)
+where dp.id = b.id
+  and dp.auth_user_id is null;
 
 commit;
 

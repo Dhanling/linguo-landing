@@ -460,26 +460,58 @@ async function fulfillEbookLead(
       buyer_name: lead.name || null,
       buyer_phone: lead.wa_number || null,
       amount: i === 0 ? total - per * (picked.length - 1) : per,
-      payment_status: "Lunas",
-      xendit_status: "PAID",
+      // WAJIB masuk sebagai BELUM BAYAR dulu — lihat catatan aktivasi di bawah.
+      payment_status: "Belum Bayar",
+      xendit_status: "PENDING",
       xendit_invoice_id: invoiceId,
       // Baris ke-2 dst diberi sufiks: kolom ini dipakai sebagai kunci match 1:1
       // di tempat lain, jadi jangan sampai satu external_id punya banyak baris
       // identik. Cek idempotensi di atas memakai baris pertama (tanpa sufiks).
       xendit_external_id: i === 0 ? externalId : `${externalId}-${i + 1}`,
       xendit_paid_at: paidAt || nowIso,
-      access_granted: true,
-      access_granted_at: nowIso,
+      access_granted: false,
       source: "xendit",
     }));
 
     const insRes = await fetch(`${SUPABASE_URL}/rest/v1/digital_purchases`, {
       method: "POST",
-      headers: supaHeaders,
+      headers: { ...supaHeaders, Prefer: "return=representation" },
       body: JSON.stringify(payload),
     });
     if (!insRes.ok) {
       console.error("Ebook fulfillment insert failed:", await insRes.text());
+      return;
+    }
+    const created = (await insRes.json()) as { id: string }[];
+    const ids = (Array.isArray(created) ? created : []).map((r) => r.id).filter(Boolean);
+    if (ids.length === 0) {
+      console.error("Ebook fulfillment: insert tak mengembalikan id");
+      return;
+    }
+
+    // Aktivasi TERPISAH dari insert — bukan gaya-gayaan, ini keharusan.
+    // `digital_purchases` punya trigger BEFORE INSERT OR UPDATE
+    // (sync_digital_purchase_to_registration) yang, begitu barisnya dianggap
+    // lunas, menyalinnya ke `registrations` dengan source_digital_purchase_id =
+    // id baris ini. Pada BEFORE INSERT baris itu BELUM ada di tabel, jadi FK
+    // registrations_source_digital_purchase_id_fkey gagal dan seluruh insert
+    // ditolak. Alur toko (/toko) selamat karena kebetulan menulis "Belum Bayar"
+    // dulu lalu meng-update saat webhook masuk — pola itu yang ditiru di sini.
+    const actRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/digital_purchases?id=in.(${ids.join(",")})`,
+      {
+        method: "PATCH",
+        headers: supaHeaders,
+        body: JSON.stringify({
+          payment_status: "Lunas",
+          xendit_status: "PAID",
+          access_granted: true,
+          access_granted_at: nowIso,
+        }),
+      }
+    );
+    if (!actRes.ok) {
+      console.error("Ebook fulfillment activation failed:", await actRes.text());
       return;
     }
     console.log(
