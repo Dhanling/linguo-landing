@@ -317,6 +317,179 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
   }
 }
 
+// ── ebook-fulfillment-v1: lead e-book landing LUNAS → digital_purchases ──────
+// MASALAH: checkout e-book /produk/ebook cuma menulis baris `leads` + invoice
+// Xendit. Autoconvert di atas SENGAJA melewati program digital dengan alasan
+// "punya pipeline sendiri (digital_purchases)" — tapi pipeline itu cuma ada di
+// toko (/toko → edge function xendit-create-digital-invoice), TIDAK PERNAH
+// dibuat untuk jalur /produk/ebook. Akibatnya pembelian yang sudah dibayar di
+// Xendit tidak muncul di Overview admin, tidak muncul di Penjualan Digital, dan
+// pembelinya tidak dapat akses di Perpustakaan /akun.
+//
+// BUNDLE: satu invoice bisa berisi banyak bahasa (Bundle Hemat 3, Populer 5,
+// All-Access 20). Dibuat SATU baris digital_purchases PER BAHASA supaya akses
+// per-produk benar, dan nominalnya DIBAGI RATA (sisa pembagian ditaruh di baris
+// pertama) supaya total omzet persis sama dengan yang dibayar — bukan N×harga.
+
+// Nama bahasa di landing pakai bahasa Indonesia; katalog digital_products pakai
+// nama Inggris. Kunci = LANGS di src/app/produk/ebook/page.tsx.
+const EBOOK_LANG_TO_CATALOG: Record<string, string> = {
+  Inggris: "English", Spanyol: "Spanish", Jerman: "German", Jepang: "Japanese",
+  Mandarin: "Mandarin", Belanda: "Dutch", Arab: "Arabic", Prancis: "French",
+  Korea: "Korean", Tagalog: "Tagalog", Italia: "Italian", Turki: "Turkish",
+  Rusia: "Russian", Portugis: "Portuguese", Thailand: "Thai", Vietnam: "Vietnamese",
+  Hindi: "Hindi", Swedia: "Swedish", Norwegia: "Norwegian", Finlandia: "Finnish",
+};
+
+// Fallback edisi untuk invoice LAMA yang external_id-nya belum membawa SKU
+// (dibuat sebelum ebook-fulfillment-v1). Harga per SKU unik antar edisi, jadi
+// nominal cukup untuk memastikan edisinya. Sumber: PRODUCT_PRICES di
+// src/app/api/create-invoice/route.ts — jaga tetap sinkron.
+const EBOOK_EDITION_BY_AMOUNT: Record<number, "id" | "en"> = {
+  99000: "id", 239000: "id", 349000: "id", 749000: "id",
+  79000: "en", 189000: "en", 279000: "en", 599000: "en",
+};
+
+async function fulfillEbookLead(
+  externalId: string,
+  invoiceId: string,
+  paidAmount: number | null,
+  paidAt: string | null
+): Promise<void> {
+  try {
+    const supaHeaders = {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    };
+
+    const sku = /^LINGUO-EBOOK-(satuan|hemat|populer|all)-(id|en)-/.exec(externalId || "");
+
+    const leadRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${externalId}&select=id,name,email,wa_number,language,program,amount,paid_amount&limit=1`,
+      { headers: supaHeaders }
+    );
+    if (!leadRes.ok) {
+      console.error("Ebook fulfillment lead lookup failed:", await leadRes.text());
+      return;
+    }
+    const leadRows = await leadRes.json();
+    const lead = Array.isArray(leadRows) ? leadRows[0] : null;
+    if (!lead) return; // bukan lead funnel — skip diam-diam
+
+    // Gerbang: hanya pembelian e-book. Lead lama pakai program "digital" yang
+    // dipakai bareng checkout e-learning /produk — e-learning tak pernah mengisi
+    // `language`, jadi baris tanpa bahasa DIABAIKAN (bukan e-book).
+    const prog = String(lead.program || "").toLowerCase();
+    const rawLang = String(lead.language || "").trim();
+    if (!sku && !(["e-book", "ebook", "digital"].includes(prog) && rawLang)) return;
+    if (!lead.email) {
+      console.error(`Ebook fulfillment: lead ${lead.id} tanpa email — akses tak bisa dibuat`);
+      return;
+    }
+
+    // Idempotensi: webhook Xendit bisa dikirim berkali-kali.
+    const existRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/digital_purchases?xendit_external_id=eq.${externalId}&select=id&limit=1`,
+      { headers: supaHeaders }
+    );
+    if (existRes.ok) {
+      const exist = await existRes.json();
+      if (Array.isArray(exist) && exist[0]?.id) {
+        console.log(`Ebook fulfillment: ${externalId} sudah dipenuhi — skip`);
+        return;
+      }
+    }
+
+    const total = Number(paidAmount ?? lead.paid_amount ?? lead.amount ?? 0);
+    const edition = sku?.[2] ?? EBOOK_EDITION_BY_AMOUNT[Number(lead.amount ?? total)];
+    if (!edition) {
+      console.error(`Ebook fulfillment: edisi tak bisa dipastikan utk ${externalId} (Rp${total})`);
+      return;
+    }
+
+    // All-Access dikirim sebagai label "Semua 20 bahasa", bukan daftar bahasa.
+    const isAll = sku?.[1] === "all" || /^semua/i.test(rawLang);
+    const wanted = (isAll ? Object.keys(EBOOK_LANG_TO_CATALOG) : rawLang.split(","))
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((n) => EBOOK_LANG_TO_CATALOG[n] || n);
+    if (wanted.length === 0) {
+      console.error(`Ebook fulfillment: daftar bahasa kosong utk ${externalId}`);
+      return;
+    }
+
+    // Katalog: 1 produk per bahasa per edisi, dibedakan sufiks slug (-id / -en).
+    const prodRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/digital_products?type=eq.ebook&language=in.(${wanted
+        .map((l) => `"${l}"`)
+        .join(",")})&select=id,slug,language,digital_product_pricing(id,is_active)`,
+      { headers: supaHeaders }
+    );
+    if (!prodRes.ok) {
+      console.error("Ebook fulfillment product lookup failed:", await prodRes.text());
+      return;
+    }
+    const prods = (await prodRes.json()) as {
+      id: string;
+      slug: string;
+      language: string;
+      digital_product_pricing?: { id: string; is_active: boolean }[];
+    }[];
+
+    const picked = wanted
+      .map((l) => prods.find((p) => p.language === l && String(p.slug || "").endsWith(`-${edition}`)))
+      .filter(Boolean) as typeof prods;
+    const missing = wanted.filter((l) => !picked.some((p) => p.language === l));
+    if (missing.length > 0) {
+      // Non-fatal: bahasa yang ada tetap dipenuhi, sisanya dilaporkan ke log
+      // supaya admin bisa menambahkan aksesnya manual dari Penjualan Digital.
+      console.error(`Ebook fulfillment: produk edisi '${edition}' tak ada utk ${missing.join(", ")}`);
+    }
+    if (picked.length === 0) return;
+
+    // Bagi rata; sisa pembagian ke baris pertama → jumlahnya persis `total`.
+    const per = Math.floor(total / picked.length);
+    const nowIso = new Date().toISOString();
+    const payload = picked.map((p, i) => ({
+      product_id: p.id,
+      pricing_id: (p.digital_product_pricing || []).find((pr) => pr.is_active)?.id
+        ?? (p.digital_product_pricing || [])[0]?.id
+        ?? null,
+      buyer_email: lead.email,
+      buyer_name: lead.name || null,
+      buyer_phone: lead.wa_number || null,
+      amount: i === 0 ? total - per * (picked.length - 1) : per,
+      payment_status: "Lunas",
+      xendit_status: "PAID",
+      xendit_invoice_id: invoiceId,
+      // Baris ke-2 dst diberi sufiks: kolom ini dipakai sebagai kunci match 1:1
+      // di tempat lain, jadi jangan sampai satu external_id punya banyak baris
+      // identik. Cek idempotensi di atas memakai baris pertama (tanpa sufiks).
+      xendit_external_id: i === 0 ? externalId : `${externalId}-${i + 1}`,
+      xendit_paid_at: paidAt || nowIso,
+      access_granted: true,
+      access_granted_at: nowIso,
+      source: "xendit",
+    }));
+
+    const insRes = await fetch(`${SUPABASE_URL}/rest/v1/digital_purchases`, {
+      method: "POST",
+      headers: supaHeaders,
+      body: JSON.stringify(payload),
+    });
+    if (!insRes.ok) {
+      console.error("Ebook fulfillment insert failed:", await insRes.text());
+      return;
+    }
+    console.log(
+      `Ebook fulfillment OK: lead ${lead.id} (${lead.name}) → ${picked.length} akses e-book edisi ${edition}`
+    );
+  } catch (e) {
+    console.error("fulfillEbookLead error (non-fatal):", e);
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     // 1. Verify webhook token
@@ -372,6 +545,9 @@ export async function POST(req: NextRequest) {
       // biar langsung nongol di Overview (line chart, Pendaftaran Terbaru, omzet).
       // Skip diam-diam kalau bukan lead funnel / digital / sudah dikonversi.
       await autoConvertPaidLeadToRegistration(external_id);
+      // ebook-fulfillment-v1: pembelian e-book landing (bundle sekalipun) → baris
+      // digital_purchases, biar masuk Overview/Penjualan Digital + akses /akun.
+      await fulfillEbookLead(external_id, id, paid_amount ?? null, paid_at ?? null);
     }
 
     // 2c. [REGISTRATION] enrollment-server-flow-v1 — invoice dari /api/enroll

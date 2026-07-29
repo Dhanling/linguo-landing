@@ -110,7 +110,11 @@ export default function EbookPage() {
           email: email.trim(),
           wa_number: cleanWa,
           language: langLabel,
-          program: "digital",
+          // ebook-program-label-v1 — dulu "digital", jadi ketuker sama checkout
+          // e-learning /produk yang juga kirim "digital": di Tagihan & Leads admin
+          // dua-duanya tampil "digital" mentah. Sekarang eksplisit "e-book" (nilai
+          // yang sudah dikenal PROGRAM_LABELS admin) dan /produk kirim "e-learning".
+          program: "e-book",
           productKey: `ebook-${paket.id}-${edition}`,
           // referral-code-field-v1 — input manual menang; fallback ke cookie linguo_ref / ?ref=
           referral_source: refCode.trim() || storedRef() || undefined,

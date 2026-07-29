@@ -204,8 +204,16 @@ export async function POST(req: NextRequest) {
     // simulasi-paywall-v1: external_id khusus simulasi (LINGUO-SIM-<test_type>-<ts>)
     // supaya xendit-webhook bisa deteksi & grant simulation_entitlements saat PAID.
     const simMatch = /^simulasi-(toefl|ielts)$/.exec(productKey || "");
+    // ebook-fulfillment-v1: external_id e-book membawa SKU (paket + edisi) supaya
+    // xendit-webhook bisa bikin baris digital_purchases-nya tanpa menebak dari
+    // nominal. Baris `leads` tidak menyimpan productKey, dan harga bundle bisa
+    // bentrok antar-edisi (mis. 99.000 = e-book satuan edisi ID *dan* e-learning
+    // 6 bulan) — jadi SKU-nya harus ikut di external_id.
+    const ebookMatch = /^ebook-(satuan|hemat|populer|all)-(id|en)$/.exec(productKey || "");
     const externalId = simMatch
       ? `LINGUO-SIM-${simMatch[1]}-${Date.now()}`
+      : ebookMatch
+      ? `LINGUO-EBOOK-${ebookMatch[1]}-${ebookMatch[2]}-${Date.now()}`
       : `LINGUO-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
 
     // ── addon-ebook-recording-v1: cross-sell bundle e-book + recording (Reguler) ──
