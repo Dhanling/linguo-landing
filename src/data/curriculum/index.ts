@@ -101,5 +101,5 @@ export function getCurriculum(slug: string): LanguageCurriculum | null {
   return registry[slug] ?? null;
 }
 
-export { languages, regionLabels, featuredLanguages, getLanguageBySlug } from "./languages";
+export { languages, regionLabels, featuredLanguages, getLanguageBySlug, examSlugs, displayLangTitle } from "./languages";
 export type * from "./types";

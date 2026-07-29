@@ -19,7 +19,7 @@
 import { memo, useDeferredValue, useMemo, useState } from "react";
 import Link from "next/link";
 import type { LanguageMeta } from "@/data/curriculum";
-import { regionLabels } from "@/data/curriculum/languages";
+import { displayLangTitle, regionLabels } from "@/data/curriculum/languages";
 import { LangSlugFlag } from "@/components/RectFlag";
 
 export default function SilabusHub({ languages }: { languages: LanguageMeta[] }) {
@@ -221,9 +221,12 @@ const LanguageCard = memo(function LanguageCard({ lang, large = false }: { lang:
           )}
         </div>
         <h3 className={`font-bold text-gray-900 mb-1 ${large ? "text-xl md:text-2xl" : "text-base"}`}>
-          Bahasa {lang.name}
+          {displayLangTitle(lang)}
         </h3>
-        <p className="text-sm text-gray-500 mb-2">{lang.nativeName}</p>
+        {/* Entri ujian: nativeName == name ("IELTS" / "IELTS") → jangan diulang. */}
+        {lang.nativeName !== lang.name && (
+          <p className="text-sm text-gray-500 mb-2">{lang.nativeName}</p>
+        )}
         {large && lang.description && (
           <p className="text-sm text-gray-600 leading-relaxed mt-3">{lang.description}</p>
         )}

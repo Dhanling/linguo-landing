@@ -2,10 +2,11 @@
 // dipakai bareng di PlacementPicker & PlacementTest. Map slug -> kode negara ISO-2.
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
-import { FileText, Globe, GraduationCap, Scroll, Sun } from "lucide-react";
+import { Globe, Scroll, Sun } from "lucide-react";
 
 export const FLAG_CODE_BY_SLUG: Record<string, string> = {
-  english: "gb", ielts: "gb", "toefl-itp": "gb", japanese: "jp", korean: "kr",
+  // IELTS = ujian Inggris British Council/IDP → bendera UK. TOEFL = ETS, Amerika → bendera US.
+  english: "gb", ielts: "gb", "toefl-itp": "us", japanese: "jp", korean: "kr",
   mandarin: "cn", spanish: "es", french: "fr", german: "de", italian: "it",
   arabic: "sa", hebrew: "il", persian: "ir", javanese: "id", sundanese: "id",
   betawi: "id", bipa: "id", georgian: "ge", greek: "gr", "portuguese-pt": "pt",
@@ -33,14 +34,13 @@ export function RectFlag({ code, h = 28, className = "" }: { code?: string; h?: 
   return <span aria-hidden style={{ height: h, width: w }} className={`inline-flex overflow-hidden rounded-[5px] shrink-0 ring-1 ring-black/5 ${className}`} dangerouslySetInnerHTML={{ __html: sized }} />;
 }
 
-// linguo-patch:silabus-rect-icon-v1 — sebagian entri silabus BUKAN negara (IELTS,
-// TOEFL ITP, Latin, Esperanto, Kurdi) jadi gak punya bendera. Dulu dipaksa emoji
-// (🎓 📝 📜 🟢 ☀️) yang render-nya beda-beda per OS & tingginya ikut font, bukan
-// kotak. Ganti jadi ubin rounded-rectangle dengan ikon lucide → satu siluet dengan
-// bendera di sebelahnya.
+// linguo-patch:silabus-rect-icon-v1 — sebagian entri silabus BUKAN negara (Latin,
+// Esperanto, Kurdi) jadi gak punya bendera. Dulu dipaksa emoji (📜 🟢 ☀️) yang
+// render-nya beda-beda per OS & tingginya ikut font, bukan kotak. Ganti jadi ubin
+// rounded-rectangle dengan ikon lucide → satu siluet dengan bendera di sebelahnya.
+// IELTS & TOEFL ITP TIDAK di sini: keduanya pakai bendera negara asal ujiannya
+// (UK & US) lewat FLAG_CODE_BY_SLUG.
 const SLUG_TILE: Record<string, { Icon: typeof Globe; bg: string; fg: string }> = {
-  ielts:        { Icon: GraduationCap, bg: "linear-gradient(135deg,#1A9E9E,#0E6B6B)", fg: "#ffffff" },
-  "toefl-itp":  { Icon: FileText,      bg: "linear-gradient(135deg,#3b82f6,#1e40af)", fg: "#ffffff" },
   latin:        { Icon: Scroll,        bg: "linear-gradient(135deg,#a8a29e,#57534e)", fg: "#ffffff" },
   esperanto:    { Icon: Globe,         bg: "linear-gradient(135deg,#22c55e,#15803d)", fg: "#ffffff" },
   kurdish:      { Icon: Sun,           bg: "linear-gradient(135deg,#fbbf24,#dc2626)", fg: "#ffffff" },

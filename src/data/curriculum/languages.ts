@@ -94,6 +94,17 @@ export const regionLabels: Record<string, string> = {
   "other": "Klasik & Lainnya",
 };
 
+// linguo-patch:silabus-exam-title-v1 — IELTS & TOEFL ITP itu NAMA UJIAN, bukan nama
+// bahasa. "Bahasa IELTS" salah secara harfiah, jadi prefiks "Bahasa" dilepas khusus
+// buat slug di sini. Tambah slug baru ke set ini kalau nanti ada entri ujian lain
+// (mis. JLPT/TOPIK) yang masuk katalog silabus.
+export const examSlugs = new Set(["ielts", "toefl-itp"]);
+
+/** Judul tampilan sebuah entri silabus: "Bahasa Jepang", tapi "IELTS" (tanpa prefiks). */
+export function displayLangTitle(l: { slug: string; name: string }) {
+  return examSlugs.has(l.slug) ? l.name : `Bahasa ${l.name}`;
+}
+
 export const featuredLanguages = languages.filter((l) => l.featured);
 export function getLanguageBySlug(slug: string) {
   return languages.find((l) => l.slug === slug);

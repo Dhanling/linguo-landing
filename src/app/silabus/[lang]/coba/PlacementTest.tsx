@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase-client";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
-import type { LanguageCurriculum } from "@/data/curriculum";
+import { type LanguageCurriculum, displayLangTitle } from "@/data/curriculum";
 import { type Question, type DragDropQuestion, type MissingQuestion, type MatchingQuestion, type FillChoiceQuestion, DIFFICULTY_POINTS, determineLevel } from "@/data/placement/english";
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
 
@@ -193,7 +193,7 @@ function IntroScreen({ meta, total, onStart }: { meta: any; total: number; onSta
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
           Placement Test<br />
-          <span className="text-[#1A9E9E]">Bahasa {meta.name}</span>
+          <span className="text-[#1A9E9E]">{displayLangTitle(meta)}</span>
         </h1>
 
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -840,7 +840,7 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
         open={showAuthModal}
         onClose={() => setShowAuthModal(false)}
         onSuccess={handleAuthSuccess}
-        intent={`Simpan hasil test Bahasa ${meta.name} & lanjut daftar kelas`}
+        intent={`Simpan hasil test ${displayLangTitle(meta)} & lanjut daftar kelas`}
       />
     </motion.section>
     )

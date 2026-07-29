@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCurriculum, languages } from "@/data/curriculum";
+import { displayLangTitle, getCurriculum, languages } from "@/data/curriculum";
 import CurriculumViewer from "./CurriculumViewer";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -13,11 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const c = getCurriculum(lang);
   if (!c) return { title: "Silabus tidak ditemukan | Linguo.id" };
+  const title = displayLangTitle(c.meta);
   return {
-    title: `Silabus Bahasa ${c.meta.name} — A1 sampai B2 | Linguo.id`,
-    description: `Kurikulum lengkap Bahasa ${c.meta.name} di Linguo.id: 192 sesi, 4 level CEFR. ${c.overview}`,
+    title: `Silabus ${title} — A1 sampai B2 | Linguo.id`,
+    description: `Kurikulum lengkap ${title} di Linguo.id: 192 sesi, 4 level CEFR. ${c.overview}`,
     openGraph: {
-      title: `Silabus Bahasa ${c.meta.name} — Linguo.id`,
+      title: `Silabus ${title} — Linguo.id`,
       description: c.overview,
       type: "website",
     },

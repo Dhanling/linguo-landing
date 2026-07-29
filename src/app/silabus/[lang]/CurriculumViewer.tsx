@@ -8,6 +8,7 @@ import type { LanguageCurriculum, Level, Sublevel } from "@/data/curriculum";
 import { getIconForSession } from "@/data/curriculum/sessionIcons";
 import FunnelModal from "@/components/FunnelModal";
 import { LangSlugFlag } from "@/components/RectFlag";
+import { displayLangTitle } from "@/data/curriculum";
 
 const MOCK_STATS = {
   totalLearners: 1247,
@@ -39,6 +40,8 @@ const LEVEL_THEMES: Record<string, LevelTheme> = {
 
 export default function CurriculumViewer({ curriculum }: { curriculum: LanguageCurriculum }) {
   const { meta, overview, levels } = curriculum;
+  // "Bahasa Jepang", tapi IELTS/TOEFL ITP tanpa prefiks "Bahasa" (itu nama ujian).
+  const title = displayLangTitle(meta);
   const [activeLevelIdx, setActiveLevelIdx] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showStickyCta, setShowStickyCta] = useState(false);
@@ -67,7 +70,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
   }, []);
 
   const handleStartLearning = () => {
-    openFunnel(`Bahasa ${meta.name}`, `silabus-${meta.slug}`);
+    openFunnel(title, `silabus-${meta.slug}`);
   };
 
   return (
@@ -88,8 +91,10 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
             </span>
             <div>
               <p className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Silabus</p>
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Bahasa {meta.name}</h1>
-              <p className="text-sm md:text-base text-gray-500 italic">{meta.nativeName}</p>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">{title}</h1>
+              {meta.nativeName !== meta.name && (
+                <p className="text-sm md:text-base text-gray-500 italic">{meta.nativeName}</p>
+              )}
             </div>
           </div>
 
@@ -101,7 +106,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
               onClick={handleStartLearning}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#1A9E9E] text-white rounded-full font-bold text-base hover:bg-[#147a7a] shadow-lg shadow-[#1A9E9E]/20 hover:shadow-xl hover:shadow-[#1A9E9E]/30 transition-all group"
             >
-              Mulai Belajar Bahasa {meta.name}
+              Mulai Belajar {title}
               <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <Link
@@ -269,7 +274,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
               onClick={handleStartLearning}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#1A9E9E] text-white rounded-full font-bold text-base shadow-lg"
             >
-              Mulai Belajar Bahasa {meta.name}
+              Mulai Belajar {title}
               <Icons.ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
