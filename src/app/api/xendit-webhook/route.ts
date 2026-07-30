@@ -1,5 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// ⚠️ BACA DULU — route ini BUKAN webhook Xendit yang aktif.
+// Bukti (30 Jul 2026): pembayaran simulasi LINGUO-SIM-toefl-1785391868375 masuk
+// 4x ke `xendit_webhook_logs` (tabel yang HANYA diisi edge function), tapi tak
+// ada satu pun efek dari file ini — entitlement tak dibuat dan baris `leads`
+// akhirnya ditandai lunas manual oleh admin ("Transfer Manual / Verifikasi Admin").
+// Kesimpulan: URL yang terdaftar di dashboard Xendit = edge function
+// `xendit-webhook` (repo linguo-app), bukan endpoint ini.
+//
+// Jadi: fulfillment baru (simulasi, e-book, dll) HARUS ditulis di
+// linguo-app/supabase/functions/xendit-webhook/index.ts. Menambahkannya di sini
+// saja = uang masuk tanpa fulfillment. Fungsi di bawah dipertahankan sebagai
+// cadangan/dokumentasi kalau URL ini nanti didaftarkan sebagai webhook kedua
+// (semua handler-nya idempoten, jadi aman kalau dobel jalan).
 const XENDIT_WEBHOOK_TOKEN = process.env.XENDIT_WEBHOOK_TOKEN!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
