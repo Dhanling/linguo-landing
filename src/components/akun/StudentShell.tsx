@@ -8,13 +8,13 @@ import { supabase } from "@/lib/supabase-client";
 import { canAccessMateri as canAccessMateriGate } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, Menu, X, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, type LucideIcon } from "lucide-react";
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
 
 // [shell-nav-groups-v1] key menu yang bukan tab (route terpisah) ikut dipakai sbg
 // penanda "active" — dulu di-cast paksa ke AkunTab, jadi highlight-nya ga pernah nyala.
-export type NavKey = AkunTab | "watch" | "kosakata" | "lingbook";
+export type NavKey = AkunTab | "watch" | "kosakata" | "lingbook" | "grup";
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
@@ -50,6 +50,8 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
     title: "Aktivitas",
     items: [
       { key: "jadwal", label: "Jadwal", icon: CalendarDays },
+      // [student-group-chat-v1] grup WhatsApp kelas, dibaca & dibalas dari LMS
+      { key: "grup", label: "Grup Kelas", icon: MessagesSquare, href: "/akun/grup" },
       // [perf:sidebar-nav-v1] link langsung ke route-nya (dulu tab → redirect full reload)
       { key: "pustaka", label: "Perpustakaan", icon: Library, href: "/akun/perpustakaan" },
       { key: "sertifikat", label: "Sertifikat", icon: Star },
@@ -88,6 +90,9 @@ const BOTTOM_TAB: Record<string, "beranda" | "jadwal" | "materi" | "akun"> = {
   pustaka: "materi",
   lingbook: "materi",
   kosakata: "materi",
+  // Grup Kelas paling dekat ke "Jadwal" di bottom nav: dua-duanya soal kelas
+  // yang sedang berjalan, bukan bahan belajar.
+  grup: "jadwal",
   sertifikat: "akun",
   akun: "akun",
 };
