@@ -48,7 +48,7 @@ export async function GET(req: NextRequest) {
     if (sim) qCount[sim] = (qCount[sim] || 0) + 1;
   });
 
-  const simulations = (sims || []).map((s) => ({
+  const simulations: Row[] = (sims || []).map((s) => ({
     ...s,
     section_count: secCount[s.id] ?? 0,
     question_count: qCount[s.id] ?? 0,
@@ -83,8 +83,16 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // Pratinjau harus memperlihatkan APA YANG SISWA LIHAT, bukan seluruh katalog:
+  // service role melewati RLS, jadi saringan policy ("Entitled read simulations"
+  // + "Guest read simulations") ditiru manual di sini. Tanpa ini staf melihat
+  // simulasi yang di layar siswanya sendiri masih berupa kartu terkunci.
+  const visible = simulations.filter(
+    (s) => s.access_mode === "guest" || owned.has(s.test_type),
+  );
+
   return NextResponse.json({
-    simulations,
+    simulations: visible,
     owned: [...owned],
     covers: coverMap,
   });
