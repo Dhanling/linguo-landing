@@ -69,7 +69,7 @@ import {
   setWatchStaff,
   isWatchCompedEmail,
 } from "@/lib/immersionLearn";
-import { supabase } from "@/lib/supabase-client";
+import { supabase, peekSessionUser } from "@/lib/supabase-client"; // [perf:session-cookie-peek-v1]
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
@@ -716,6 +716,15 @@ export default function WatchAndLearn() {
     };
 
     let subscription: { unsubscribe: () => void } | null = null;
+    // [perf:session-cookie-peek-v1] Buka gate duluan dari identitas di cookie:
+    // getSession() antre di Web Locks / bisa refresh token ke jaringan dulu, dan
+    // selama itu SELURUH katalog ketutup spinner — itu yang bikin klik "Watch &
+    // Learn" dari dashboard terasa lambat. Jawaban getSession() tetap yang final.
+    const peeked = peekSessionUser();
+    if (peeked) {
+      setLoggedIn(true);
+      syncStaff(peeked.id, peeked.email);
+    }
     (async () => {
       if (await verifyPreview()) {
         if (!alive) return;

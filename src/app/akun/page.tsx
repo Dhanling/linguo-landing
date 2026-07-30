@@ -8,7 +8,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
-import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
+import { supabase, initialAuthError, peekSessionUser } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -2376,7 +2376,11 @@ export default function AkunPage() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const warm = () => {
-      import("@/components/akun/SimulasiKatalog");
+      // [perf:simulasi-prewarm-v1] chunk-nya ditarik SEKALIGUS datanya dipanaskan:
+      // klik "Simulasi Tes" jadi render dari cache, bukan mulai 4 query dari nol.
+      import("@/components/akun/SimulasiKatalog").then((m) => {
+        if (!previewMode) m.prewarmSimulasiCatalog?.();
+      });
       import("@/components/akun/JadwalCalendar");
       import("@/components/akun/SertifikatTab");
       import("@/components/lms/LmsKatalog");
@@ -2385,7 +2389,9 @@ export default function AkunPage() {
     if (ric) { const id = ric(warm, { timeout: 4000 }); return () => (window as any).cancelIdleCallback?.(id); }
     const t = setTimeout(warm, 1500);
     return () => clearTimeout(t);
-  }, []);
+    // previewMode ikut dep: mode pratinjau baru ketahuan setelah efek auth jalan,
+    // dan pemanasan data (butuh sesi login) tak boleh ikut jalan di mode itu.
+  }, [previewMode]);
   // [materi-gate-v1] menu "Kelas & Materi" masih under development → hanya boleh
   // diakses email di allowlist. Kalau bukan, lempar balik ke Beranda (menutup
   // deep-link ?menu=materi maupun tab tersimpan di localStorage).
@@ -2531,6 +2537,15 @@ export default function AkunPage() {
     // yang diterima, cegah open-redirect.
     const nextRaw = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("next") : null;
     const nextPath = nextRaw && nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? nextRaw : null;
+    // [perf:session-cookie-peek-v1] Mulai render duluan dari identitas di cookie.
+    // getSession() di bawah tetap yang menentukan (kalau sesinya ternyata mati,
+    // halaman jatuh ke gate login sendiri) — ini semata menghapus spinner layar
+    // penuh selama SDK antre Web Locks / refresh token, yang bikin balik dari
+    // Watch & Learn ke dashboard terasa lama padahal datanya sudah di cache.
+    if (!nextPath) {
+      const peek = peekSessionUser();
+      if (peek) { setUser(peek); setAuthLoading(false); }
+    }
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session && nextPath) { window.location.replace(nextPath); return; }
       setUser(session?.user ?? null);
@@ -2544,14 +2559,36 @@ export default function AkunPage() {
   }, []);
 
   // [preview-student-v1] load data siswa real (server, service role) buat preview
+  // [perf:preview-cache-v1] cache-first ala jalur login: snapshot kunjungan
+  // sebelumnya dipasang instan (tanpa spinner layar penuh), lalu direvalidasi
+  // diam-diam. Tanpa ini tiap balik dari Watch & Learn / Perpustakaan ke
+  // dashboard selalu menunggu satu panggilan server dari nol.
   useEffect(() => {
     if (!previewId) return;
-    setDataLoading(true);
+    let hadCache = false;
+    try {
+      const raw = sessionStorage.getItem(`linguo_preview_cache_${previewId}`);
+      if (raw) {
+        const c = JSON.parse(raw);
+        if (c?.student) {
+          setStudent(c.student);
+          setAllSchedules(c.schedules || []);
+          hadCache = true;
+        }
+      }
+    } catch {}
+    if (!hadCache) setDataLoading(true);
     (async () => {
       try {
         const res = await fetch(`/api/preview-student?id=${encodeURIComponent(previewId)}`, { cache: "no-store" });
         if (!res.ok) throw new Error("preview fetch failed");
         const json = await res.json();
+        try {
+          sessionStorage.setItem(`linguo_preview_cache_${previewId}`, JSON.stringify({
+            student: json.student,
+            schedules: json.schedules || json.upcomingSchedules || [],
+          }));
+        } catch {}
         setStudent(json.student);
         // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
         // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.

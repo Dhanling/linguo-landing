@@ -309,7 +309,12 @@ export async function startGuestSession(name: string, email: string | null, what
 }
 
 export async function getStudentInfo(): Promise<StudentInfo | null> {
-  const { data: { user } } = await supabase.auth.getUser();
+  // [perf:auth-getsession-v1] getSession() baca sesi lokal; getUser() SELALU
+  // menembak /auth/v1/user ke jaringan. Dipanggil di jalur buka tab Simulasi,
+  // jadi satu round-trip itu langsung terasa sebagai "loading lama". Identitas
+  // di sini cuma untuk tampilan/pra-isi — otoritasnya tetap RLS di server.
+  const { data: { session } } = await supabase.auth.getSession();
+  const user = session?.user;
   if (!user) return null;
   let name = (user.user_metadata?.full_name as string) || (user.email?.split("@")[0] ?? null);
   let whatsapp: string | null = null;
@@ -324,8 +329,9 @@ export async function getStudentInfo(): Promise<StudentInfo | null> {
 // Jenis tes yang sudah dibeli user saat ini. RLS "Self read entitlement" sudah
 // memfilter ke baris milik user (by uid/email), jadi tak perlu filter manual.
 export async function fetchMyEntitlements(): Promise<TestType[]> {
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return [];
+  // [perf:auth-getsession-v1] cukup sesi lokal — barisnya tetap disaring RLS.
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session?.user) return [];
   const { data } = await supabase
     .from("simulation_entitlements")
     .select("test_type")

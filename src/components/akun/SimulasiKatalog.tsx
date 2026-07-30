@@ -30,6 +30,26 @@ let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean; covers: 
 // spinner + satu panggilan server lagi.
 let simPreviewCache: { student: string; sims: Simulation[]; owned: TestType[]; covers: Partial<Record<TestType, string>> } | null = null;
 
+/**
+ * [perf:simulasi-prewarm-v1] Panaskan katalog dari dashboard saat browser senggang,
+ * jadi klik menu "Simulasi Tes" langsung render dari cache — bukan menunggu 4 query
+ * berangkat dari nol. Aman dipanggil berkali-kali: sekali isi, sisanya no-op.
+ */
+export async function prewarmSimulasiCatalog() {
+  if (simCache) return;
+  try {
+    const [info, sims, owned, covers] = await Promise.all([
+      getStudentInfo(),
+      fetchPublishedSimulations(),
+      fetchMyEntitlements(),
+      fetchSimulationCovers(),
+    ]);
+    if (!simCache) simCache = { sims, owned, authed: !!info, covers };
+  } catch {
+    /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
+  }
+}
+
 // Kartu simulasi: link biasa untuk siswa, kotak mati saat pratinjau staf —
 // halaman pengerjaan butuh sesi login, jadi tautannya cuma berujung layar masuk.
 const SIM_CARD_CLASS =
@@ -91,8 +111,11 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
       setLoading(false);
       return;
     }
-    const info = await getStudentInfo();
-    const [data, ents, cov] = await Promise.all([
+    // [perf:simulasi-parallel-v1] dulu getStudentInfo() ditunggu SENDIRIAN dulu
+    // (auth + query profiles) baru sisanya jalan → satu round-trip ekstra yang
+    // menahan seluruh katalog. Sekarang keempatnya berangkat bareng.
+    const [info, data, ents, cov] = await Promise.all([
+      getStudentInfo(),
       fetchPublishedSimulations(),
       fetchMyEntitlements(),
       fetchSimulationCovers(),
