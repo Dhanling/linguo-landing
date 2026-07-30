@@ -75,7 +75,14 @@ import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
 import FlashcardDeck from "./FlashcardDeck";
 import { LangPickerPanel } from "./LangPickerPanel";
-import { useWlPanel } from "@/lib/wlAnalytics";
+import { useWlPanel, useWlHeartbeat } from "@/lib/wlAnalytics";
+
+// Dimensi bahasa yang ikut di tiap event analitik WL. `lang_country` dikirim apa
+// adanya supaya dashboard bisa menggambar bendera tanpa menyalin daftar bahasa.
+function wlLangProps(code: string) {
+  const l = getImmersionLang(code);
+  return { lang: code, lang_label: l?.name ?? code, lang_country: l?.country ?? "" };
+}
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -416,10 +423,6 @@ export default function WatchAndLearn() {
   const [deckOpen, setDeckOpen] = useState(false);
   const [vocabCount, setVocabCount] = useState(0);
 
-  // Analitik WL: dwell di katalog, sesi nonton video, & buka dashboard Kosakata.
-  useWlPanel("watch_catalog", true);
-  useWlPanel("watch_player", active !== null);
-  useWlPanel("watch_kosakata", deckOpen);
   // Watch & Learn WAJIB login dashboard LMS. `null` = sesi masih dicek (tampilkan
   // spinner); `false` = tamu → dilempar ke /akun (layar login); `true` = render.
   const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
@@ -427,6 +430,29 @@ export default function WatchAndLearn() {
   const lang = getImmersionLang(langCode) ?? IMMERSION_LANGS[0];
   const cat =
     IMMERSION_CATEGORIES.find((c) => c.id === category) ?? IMMERSION_CATEGORIES[0];
+
+  // Analitik WL: dwell di katalog, sesi nonton video, & buka dashboard Kosakata.
+  // Tiap event dibubuhi bahasa yang sedang dibuka (katalog = bahasa yang dijelajahi,
+  // player = bahasa video yang diputar) supaya dashboard bisa menjawab "bahasa apa
+  // yang paling sering ditonton", bukan cuma "fitur apa yang paling sering dibuka".
+  const catalogLangProps = useMemo(() => wlLangProps(langCode), [langCode]);
+  const playerLangProps = useMemo(
+    () => ({
+      ...wlLangProps(activeLang),
+      video_id: active?.videoId,
+      video_title: active?.title ? active.title.slice(0, 80) : undefined,
+    }),
+    [activeLang, active]
+  );
+  useWlPanel("watch_catalog", true, catalogLangProps);
+  useWlPanel("watch_player", active !== null, playerLangProps);
+  useWlPanel("watch_kosakata", deckOpen, catalogLangProps);
+  // Denyut "masih di sini" → kartu Aktif sekarang di dashboard admin. `watching`
+  // membedakan yang benar-benar memutar video dari yang cuma buka katalog.
+  useWlHeartbeat(loggedIn === true, {
+    ...(active ? playerLangProps : catalogLangProps),
+    watching: active ? 1 : 0,
+  });
 
   // "Lanjut Menonton" hanya menampilkan riwayat bahasa yang sedang dipelajari —
   // saat belajar bahasa Inggris, video Spanyol dll tak ikut muncul.

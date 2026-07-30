@@ -76,17 +76,68 @@ export async function trackWl(event: string, props: WlProps = {}) {
  *   useWlPanel("watch_kosakata", deckOpen);
  *
  * `feature` = kunci stabil snake_case yang dikelompokkan dashboard.
+ *
+ * `extra` = dimensi tambahan yang ikut dikirim di kedua event (mis. `lang`,
+ * `lang_label`, `video_id`) supaya dashboard bisa memecah pemakaian PER BAHASA.
+ * Disimpan di ref: isinya boleh berubah tiap render tanpa memicu open/close palsu
+ * (kalau masuk dependency array, ganti judul video = "buka panel" baru).
  */
-export function useWlPanel(feature: string, isOpen: boolean) {
+export function useWlPanel(feature: string, isOpen: boolean, extra?: WlProps) {
   const openedAt = useRef<number | null>(null);
+  const extraRef = useRef<WlProps | undefined>(extra);
+  extraRef.current = extra;
   useEffect(() => {
     if (!isOpen) return;
     openedAt.current = Date.now();
-    void trackWl("feature_open", { feature });
+    // Snapshot saat dibuka: kalau pengguna ganti bahasa/video sambil panel terbuka,
+    // durasi tetap jatuh ke bahasa yang benar-benar ditonton saat itu.
+    const opened = { ...extraRef.current };
+    void trackWl("feature_open", { feature, ...opened });
     return () => {
       const ms = openedAt.current ? Date.now() - openedAt.current : 0;
       openedAt.current = null;
-      if (ms > 0) void trackWl("feature_close", { feature, ms });
+      if (ms > 0) void trackWl("feature_close", { feature, ms, ...opened });
     };
   }, [feature, isOpen]);
+}
+
+// Detak jantung "masih di sini" — feature_open cuma sekali saat panel dibuka, jadi
+// orang yang menonton video 20 menit TIDAK terlihat oleh metrik apa pun sampai ia
+// menutup tab. Heartbeat tiap menit membuat kartu "Aktif sekarang" di dashboard
+// (jendela 5 menit) memantulkan siapa yang benar-benar sedang memakai Watch & Learn.
+const HEARTBEAT_MS = 60_000;
+
+/**
+ * Kirim event `heartbeat` tiap menit selama `active` && tab terlihat.
+ * Berhenti saat tab disembunyikan (tab nganggur di background bukan "pengguna aktif")
+ * dan langsung berdetak lagi begitu tab dibuka kembali.
+ */
+export function useWlHeartbeat(active: boolean, extra?: WlProps) {
+  const extraRef = useRef<WlProps | undefined>(extra);
+  extraRef.current = extra;
+  useEffect(() => {
+    if (!active || typeof window === "undefined") return;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const beat = () => {
+      if (document.visibilityState !== "visible") return;
+      void trackWl("heartbeat", { ...extraRef.current });
+    };
+    const start = () => {
+      if (timer) return;
+      beat();
+      timer = setInterval(beat, HEARTBEAT_MS);
+    };
+    const stop = () => {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    };
+    const onVis = () => (document.visibilityState === "visible" ? start() : stop());
+    onVis();
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, [active]);
 }

@@ -860,11 +860,21 @@ export default function VideoLearnPlayer({
   >(null);
   const anyDrawerOpen = wordStudyOpen || sentenceCue !== null;
 
-  // Analitik WL: panel transkrip, Analisa Kata/Kalimat, & modal langganan.
-  useWlPanel("watch_transcript_panel", showPanel);
-  useWlPanel("watch_word_analisa", wordStudyOpen);
-  useWlPanel("watch_sentence_analisa", sentenceCue !== null);
-  useWlPanel("watch_subscribe_modal", subscribeOpen);
+  // Analitik WL: panel transkrip, Analisa Kata/Kalimat, & modal langganan. Semua
+  // dibubuhi bahasa + video yang sedang diputar → dashboard bisa memecah per bahasa.
+  const wlProps = useMemo(() => {
+    const l = getImmersionLang(langCode);
+    return {
+      lang: langCode,
+      lang_label: l?.name ?? langCode,
+      lang_country: l?.country ?? "",
+      video_id: video.videoId,
+    };
+  }, [langCode, video.videoId]);
+  useWlPanel("watch_transcript_panel", showPanel, wlProps);
+  useWlPanel("watch_word_analisa", wordStudyOpen, wlProps);
+  useWlPanel("watch_sentence_analisa", sentenceCue !== null, wlProps);
+  useWlPanel("watch_subscribe_modal", subscribeOpen, wlProps);
   // [watch-tip-persist-v1] Video jalan lagi → tutup balon arti kata (biar tak
   // menghalangi tontonan). Drawer Analisa (wordStudyOpen) dikecualikan: panel dalam
   // itu memang dibuka untuk dibaca berlama-lama, tak ikut tertutup saat video jalan.
