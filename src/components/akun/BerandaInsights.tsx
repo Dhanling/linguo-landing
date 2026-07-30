@@ -85,6 +85,13 @@ function StatTile({ Icon, value, label, sub, tone = 'teal', alert = false }: {
   );
 }
 
+// [beranda-insights-cache-v1] Hasil terakhir ditahan di memori modul.
+// Tab Beranda di-unmount tiap pindah menu, jadi balik ke Beranda = komponen ini
+// mount ulang dengan data null → seluruh blok "Ringkasan Belajar" hilang dulu,
+// baru muncul lagi setelah 5 query kelar = beranda kedip + konten loncat.
+// Sekarang render langsung dari cache, fetch-nya jalan diam-diam di belakang.
+const insightsCache = new Map<string, StudentInsights>();
+
 export default function BerandaInsights({
   regs,
   studentName,
@@ -94,22 +101,27 @@ export default function BerandaInsights({
   studentName: string;
   displayLanguage?: (lang: string) => string;
 }) {
-  const [data, setData] = useState<StudentInsights | null>(null);
+  const [fetched, setFetched] = useState<{ key: string; data: StudentInsights } | null>(null);
   const [selReg, setSelReg] = useState<string>('');
   const [shareState, setShareState] = useState('');
 
   // Kunci stabil supaya effect tidak jalan ulang tiap render (regs objek baru terus).
   const regKey = useMemo(() => regs.map((r) => r.id).sort().join(','), [regs]);
 
+  // Dibaca saat render (bukan di effect) — kalau lewat effect tetap kebagian satu
+  // frame kosong, dan justru frame itu yang kelihatan sebagai kedipan.
+  const data = fetched?.key === regKey ? fetched.data : insightsCache.get(regKey) ?? null;
+
   useEffect(() => {
     let alive = true;
-    if (regs.length === 0) { setData(null); return; }
+    if (regs.length === 0) { setFetched(null); return; }
     (async () => {
       const res = await fetchStudentInsights(
         regs.map((r) => ({ id: r.id, language: r.language, batch_id: r.batch_id }))
       );
       if (!alive) return;
-      setData(res);
+      insightsCache.set(regKey, res);
+      setFetched({ key: regKey, data: res });
     })();
     return () => { alive = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps

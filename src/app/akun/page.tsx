@@ -2347,9 +2347,14 @@ export default function AkunPage() {
     if (view === "live" || view === "mandiri") { setMateriView(view); resolved = "materi"; }
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
     if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi")) resolved = menu;
+    // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
+    // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
+    // di Simulasi Tes / Sertifikat. Sekarang cuma sessionStorage: refresh di tab
+    // browser yang sama tetap balik ke menu yang lagi dibuka (biar F5 ga bikin
+    // kehilangan tempat), tapi kunjungan baru selalu mulai dari Beranda.
     if (!resolved) {
       try {
-        const saved = localStorage.getItem("linguo_akun_tab");
+        const saved = sessionStorage.getItem("linguo_akun_tab");
         if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi") resolved = saved;
       } catch {}
     }
@@ -2363,10 +2368,13 @@ export default function AkunPage() {
       } catch {}
     }
   }, []);
-  // persist tab aktif -> refresh balik ke tab terakhir dibuka
+  // persist tab aktif -> refresh (tab browser yang sama) balik ke menu terakhir
   useEffect(() => {
     if (typeof window === "undefined") return;
-    try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
+    try {
+      sessionStorage.setItem("linguo_akun_tab", activeTab);
+      localStorage.removeItem("linguo_akun_tab"); // [akun-open-beranda-v1] buang sisa key lama
+    } catch {}
   }, [activeTab]);
 
   // [perf:tab-prefetch-v1] Semua tab berat dimuat lazy (dynamic import). Chunk-nya
@@ -3504,9 +3512,14 @@ export default function AkunPage() {
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
-        <AnimatePresence mode="wait">
+        {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
+            fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
+            ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
+            Sekarang swap-nya instan (tanpa exit, tanpa initial), jadi menu terasa
+            langsung ganti isi. */}
+        <AnimatePresence>
           {activeTab === "beranda" && (
-            <motion.div key="beranda" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div key="beranda" initial={false} animate={{ opacity: 1 }}>
               {(() => {
                 // ── derived khusus port frame ── (langGlyph dari @/lib/lang-visuals)
                 // [linguo-patch:beranda-live-hide-empty-lang-v1] sembunyiin kartu live yang language-nya null/kosong/placeholder
@@ -4276,7 +4289,7 @@ export default function AkunPage() {
           )}
 
           {activeTab === "jadwal" && (
-            <motion.div key="jadwal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
+            <motion.div key="jadwal" initial={false} animate={{ opacity: 1 }} className="w-full">
               {/* linguo-patch:akun-jadwal-tab-v1 — kalender LMS, data real dari upcomingSchedules */}
               {(() => {
                 // jadwal-riwayat-v1: kalender pakai `allSchedules` (riwayat + mendatang),
@@ -4327,7 +4340,7 @@ export default function AkunPage() {
           )}
 
           {activeTab === "materi" && canSeeMateri && (
-            <motion.div key="materi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
+            <motion.div key="materi" initial={false} animate={{ opacity: 1 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
               {(() => {
                 const mlangGlyph = (lang: string): string => {
                   const g: Record<string, string> = {
@@ -4592,7 +4605,7 @@ export default function AkunPage() {
           )}
 
           {activeTab === "sertifikat" && (
-            <motion.div key="sertifikat" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
+            <motion.div key="sertifikat" initial={false} animate={{ opacity: 1 }} className="w-full">
               <SertifikatTab
                 studentName={displayName}
                 certs={certs}
@@ -4604,13 +4617,13 @@ export default function AkunPage() {
 
           {/* [simulasi-inshell-v1] Simulasi Tes sebagai tab in-shell (sidebar tetap tampil) */}
           {activeTab === "simulasi" && (
-            <motion.div key="simulasi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full pb-6">
+            <motion.div key="simulasi" initial={false} animate={{ opacity: 1 }} className="w-full pb-6">
               <SimulasiKatalog previewStudentId={previewId} />
             </motion.div>
           )}
 
           {activeTab === "akun" && (
-            <motion.div key="akun" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="mx-auto w-full max-w-5xl pb-4">
+            <motion.div key="akun" initial={false} animate={{ opacity: 1 }} className="mx-auto w-full max-w-5xl pb-4">
               <AkunTab
                 user={user}
                 student={student}
@@ -4629,7 +4642,7 @@ export default function AkunPage() {
 
           {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning (digital_purchases) */}
           {activeTab === "pustaka" && (
-            <motion.div key="pustaka" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div key="pustaka" initial={false} animate={{ opacity: 1 }}>
               <div className="overflow-hidden rounded-3xl bg-white">
                 <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
                   <div>
