@@ -232,6 +232,15 @@ export default function JadwalCalendar({
 
   const pastCount = useMemo(() => items.filter((i) => i._past || isDead(i.status)).length, [items]);
 
+  // jadwal-compact-v2: daftar samping dulu memuat SEMUA sesi mendatang (13 kartu
+  // = kolom sepanjang 3x kalender + laut kosong di sebelahnya). Tampil 4 dulu,
+  // sisanya lewat "Lihat semua" dan digulir di dalam kolomnya sendiri.
+  const SIDE_LIMIT = 4;
+  const [sideExpanded, setSideExpanded] = useState(false);
+  useEffect(() => { setSideExpanded(false); }, [selected, showPast]);
+  const sideVisible = sideExpanded ? sideList : sideList.slice(0, SIDE_LIMIT);
+  const sideHidden = Math.max(0, sideList.length - sideVisible.length);
+
   /** jadwal-riwayat-v1: rekap per kelas — "Sesi 5 dari 16" + hitungan presensi. */
   const classSummary = useMemo(() => {
     if (!classes.length) return [];
@@ -305,6 +314,23 @@ export default function JadwalCalendar({
 
   const dayEvents = useMemo(() => eventsOn(ymd(cursor)), [items, cursor]);
 
+  /**
+   * jadwal-compact-v2: hari yang isinya dibedah di bawah kisi bulanan. Tanpa
+   * pilihan manual: hari ini kalau ada sesinya, kalau tidak lompat ke sesi
+   * terdekat — kotak "tidak ada sesi" tiap kali tab dibuka itu ruang terbuang.
+   */
+  const agendaIso = useMemo(() => {
+    if (selected) return selected;
+    if (items.some((i) => i._iso === todayIso)) return todayIso;
+    return upcoming[0]?._iso ?? todayIso;
+  }, [selected, items, upcoming, todayIso]);
+  const agendaEvents = useMemo(() => eventsOn(agendaIso), [items, agendaIso]);
+  const agendaTitle = useMemo(() => {
+    const [yy, mm, dd] = agendaIso.split("-").map(Number);
+    const d = new Date(yy, mm - 1, dd);
+    return `${DOWS_FULL[(d.getDay() + 6) % 7]}, ${dd} ${MONTHS[mm - 1]} ${yy}`;
+  }, [agendaIso]);
+
   const goPrev = () => { setSelected(null); setCursor((c) => mode === "month" ? new Date(c.getFullYear(), c.getMonth() - 1, 1) : addDays(c, mode === "week" ? -7 : -1)); };
   const goNext = () => { setSelected(null); setCursor((c) => mode === "month" ? new Date(c.getFullYear(), c.getMonth() + 1, 1) : addDays(c, mode === "week" ? 7 : 1)); };
   const goToday = () => { setSelected(null); setCursor(new Date()); };
@@ -359,8 +385,10 @@ export default function JadwalCalendar({
       {/* jadwal-riwayat-v1: rekap progres per kelas — "Sesi 5 dari 16" + presensi.
           Ini yang bikin kalender kebaca sebagai catatan perjalanan, bukan cuma
           daftar janji temu. */}
+      {/* jadwal-compact-v2: kelas aktif bisa 4+; 2 kolom bikin blok ini setinggi
+          kalender sendiri. Di layar lebar dirapatkan jadi 4 kolom. */}
       {classSummary.length > 0 && (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {classSummary.map((c) => {
             const total = c.sessionsTotal || 0;
             const pct = total > 0 ? Math.min(100, Math.round((c.done / total) * 100)) : 0;
@@ -437,9 +465,9 @@ export default function JadwalCalendar({
               </div>
             </div>
           )}
-          <div className="px-4 pb-4 flex flex-col gap-2.5 overflow-y-auto flex-1 max-h-[320px] lg:max-h-none">
+          <div className={`px-4 pb-2 flex flex-col gap-2.5 overflow-y-auto ${sideExpanded ? "max-h-[420px]" : "max-h-[320px] lg:max-h-none"}`}>
             {sideList.length ? (
-              sideList.map((s) => (
+              sideVisible.map((s) => (
                 <SideItem key={s.id} s={s} now={now} studentName={studentName} onClick={() => setSelected(s._iso)} />
               ))
             ) : (
@@ -451,13 +479,26 @@ export default function JadwalCalendar({
               </div>
             )}
           </div>
+          {sideHidden > 0 || sideExpanded ? (
+            <div className="px-4 pb-4 pt-1">
+              <button
+                onClick={() => setSideExpanded((v) => !v)}
+                className="w-full rounded-xl bg-[#F5F6F8] py-2 text-[12px] font-bold text-[#16796E] transition hover:bg-[#EAF3F2]"
+              >
+                {sideExpanded ? "Ringkas" : `Lihat semua (${sideList.length})`}
+              </button>
+            </div>
+          ) : (
+            <div className="pb-2" />
+          )}
           {legend.length > 0 && (
-            <div className="px-5 py-4 border-t border-slate-100">
-              <p className="text-[11px] font-bold text-[#6B7280] uppercase tracking-wide mb-2.5">Bahasa</p>
-              <div className="flex flex-col gap-2 text-[13px] font-semibold text-[#12172B]">
+            <div className="mt-auto px-5 py-4 border-t border-slate-100">
+              <p className="text-[11px] font-bold text-[#6B7280] uppercase tracking-wide mb-2">Bahasa</p>
+              {/* jadwal-compact-v2: mendatar — 6 bahasa menumpuk bikin kolom makin jangkung */}
+              <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-[12.5px] font-semibold text-[#12172B]">
                 {legend.map(([lang, c]) => (
-                  <span key={lang} className="flex items-center gap-2.5">
-                    <span className="w-3 h-3 rounded-full" style={{ background: c.dot }} />{lang}
+                  <span key={lang} className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: c.dot }} />{lang}
                   </span>
                 ))}
               </div>
@@ -586,6 +627,36 @@ export default function JadwalCalendar({
               </div>
             )}
 
+            {/* jadwal-compact-v2: agenda hari terpilih persis di bawah kisi bulanan —
+                pola yang sama dengan kalender dashboard pengajar. Tanpa ini sel bulan
+                cuma titik warna, dan seluruh detail sesi terdorong ke kolom samping
+                (yang lalu jadi jangkung sendirian di sebelah kanvas kosong). */}
+            {mode === "month" && (
+              <div className="mt-4">
+                <div className="mb-2 flex items-center justify-between gap-2">
+                  <h3 className="text-[14px] font-extrabold text-[#12172B]">{agendaTitle}</h3>
+                  {agendaEvents.length > 0 && (
+                    <span className="text-[12px] font-semibold text-[#6B7280]">{agendaEvents.length} sesi</span>
+                  )}
+                </div>
+                <div className="bg-white rounded-[2rem] p-3 sm:p-4 shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
+                  {agendaEvents.length ? (
+                    <div className="flex flex-col gap-3">
+                      {agendaEvents.map((e) => (
+                        <SessionCard key={e.id} e={e} now={now} studentName={studentName} />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center py-10 text-center">
+                      <CalendarDays className="mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
+                      <p className="text-[13.5px] font-bold text-[#12172B]">Tidak ada sesi di tanggal ini</p>
+                      <p className="mt-1 text-[12.5px] font-medium text-[#6B7280]">Klik tanggal lain yang bertanda warna buat lihat detailnya.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* ===== MINGGU — kisi jam (jadwal-week-timeline-v1) ===== */}
             {mode === "week" && (() => {
               const HOUR_H = 56; // tinggi 1 jam (px)
@@ -704,75 +775,9 @@ export default function JadwalCalendar({
               <div className="bg-white rounded-[2rem] p-4 sm:p-6 shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)] min-h-[420px]">
                 {dayEvents.length ? (
                   <div className="flex flex-col gap-3">
-                    {dayEvents.map((e) => {
-                      const c = langColor(e.language);
-                      const st = statusMeta(e); // jadwal-riwayat-v1
-                      const rec = e.recordingUrl ? studentRecordingHref(e.recordingUrl) : null;
-                      return (
-                        <div
-                          key={e.id}
-                          className="rounded-2xl bg-slate-50 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]"
-                          style={isDead(e.status) ? { opacity: 0.65 } : undefined}
-                        >
-                          <div className="flex items-stretch gap-3">
-                            <span className="flex flex-col items-center justify-center w-20 shrink-0 rounded-xl py-2" style={{ background: c.bg }}>
-                              <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
-                              {e._end && <span className="text-[11px] font-semibold mt-0.5" style={{ color: c.text }}>{e._end}</span>}
-                            </span>
-                            <span className="min-w-0 flex-1 flex flex-col justify-center">
-                              <span className="flex items-center gap-2">
-                                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: c.dot }} />
-                                <span className={`text-[15px] font-extrabold text-[#12172B] truncate ${isDead(e.status) ? "line-through" : ""}`}>
-                                  {e.language}{e.level ? ` — ${e.level}` : ""}
-                                </span>
-                                {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
-                                {e.sessionNumber ? (
-                                  <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>Sesi {e.sessionNumber}</span>
-                                ) : null}
-                                {/* jadwal-riwayat-v1: hasil sesi (presensi / dibatalkan) */}
-                                {st && (
-                                  <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>
-                                    {st.label}
-                                  </span>
-                                )}
-                              </span>
-                              <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-1 text-[12px] text-[#6B7280] font-medium">
-                                {e.teacher && <span className="inline-flex items-center gap-1"><GraduationCap className="w-3.5 h-3.5" strokeWidth={2} /> {e.teacher}</span>}
-                                {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
-                                {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
-                                {/* jadwal-riwayat-v1: hitung mundur sesi mendatang */}
-                                {!e._past && !isDead(e.status) && (
-                                  <span className="font-bold text-[#16796E]">{countdownLabel(e._d, now)}</span>
-                                )}
-                              </span>
-                            </span>
-                            <span className="flex shrink-0 flex-col justify-center gap-1.5">
-                              {e._joinable && (
-                                <a
-                                  href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
-                                >
-                                  <Video className="w-3.5 h-3.5" strokeWidth={2.2} /> Masuk Kelas
-                                </a>
-                              )}
-                              {/* jadwal-riwayat-v1: rekaman sesi lampau */}
-                              {rec && (
-                                <a
-                                  href={rec}
-                                  {...(isInternalRecordingHref(rec) ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                                  className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] hover:bg-[#EAF3F2]"
-                                >
-                                  <PlayCircle className="w-3.5 h-3.5" strokeWidth={2.2} /> Rekaman
-                                </a>
-                              )}
-                            </span>
-                          </div>
-                          <MaterialBlock s={e} />
-                        </div>
-                      );
-                    })}
+                    {dayEvents.map((e) => (
+                      <SessionCard key={e.id} e={e} now={now} studentName={studentName} />
+                    ))}
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center py-20">
@@ -793,6 +798,80 @@ export default function JadwalCalendar({
     const [yy, mm, dd] = iso.split("-").map(Number);
     return `${dd} ${MONTHS[mm - 1]} ${yy}`;
   }
+}
+
+/**
+ * jadwal-compact-v2: kartu sesi lengkap (jam, kelas, pengajar, aksi, materi).
+ * Dipakai view Hari DAN agenda di bawah kisi bulanan — dulu markup ini cuma
+ * hidup di view Hari, jadi mode Bulan (default) tak pernah menampilkan detail.
+ */
+function SessionCard({ e, now, studentName }: { e: NormSession; now: number; studentName?: string }) {
+  const c = langColor(e.language);
+  const st = statusMeta(e); // jadwal-riwayat-v1
+  const rec = e.recordingUrl ? studentRecordingHref(e.recordingUrl) : null;
+  return (
+    <div
+      className="rounded-2xl bg-slate-50 p-3 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]"
+      style={isDead(e.status) ? { opacity: 0.65 } : undefined}
+    >
+      <div className="flex items-stretch gap-3">
+        <span className="flex flex-col items-center justify-center w-20 shrink-0 rounded-xl py-2" style={{ background: c.bg }}>
+          <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
+          {e._end && <span className="text-[11px] font-semibold mt-0.5" style={{ color: c.text }}>{e._end}</span>}
+        </span>
+        <span className="min-w-0 flex-1 flex flex-col justify-center">
+          <span className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: c.dot }} />
+            <span className={`text-[15px] font-extrabold text-[#12172B] truncate ${isDead(e.status) ? "line-through" : ""}`}>
+              {e.language}{e.level ? ` — ${e.level}` : ""}
+            </span>
+            {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
+            {e.sessionNumber ? (
+              <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>Sesi {e.sessionNumber}</span>
+            ) : null}
+            {/* jadwal-riwayat-v1: hasil sesi (presensi / dibatalkan) */}
+            {st && (
+              <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>
+                {st.label}
+              </span>
+            )}
+          </span>
+          <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-1 text-[12px] text-[#6B7280] font-medium">
+            {e.teacher && <span className="inline-flex items-center gap-1"><GraduationCap className="w-3.5 h-3.5" strokeWidth={2} /> {e.teacher}</span>}
+            {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
+            {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
+            {/* jadwal-riwayat-v1: hitung mundur sesi mendatang */}
+            {!e._past && !isDead(e.status) && (
+              <span className="font-bold text-[#16796E]">{countdownLabel(e._d, now)}</span>
+            )}
+          </span>
+        </span>
+        <span className="flex shrink-0 flex-col justify-center gap-1.5">
+          {e._joinable && (
+            <a
+              href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"
+            >
+              <Video className="w-3.5 h-3.5" strokeWidth={2.2} /> Masuk Kelas
+            </a>
+          )}
+          {/* jadwal-riwayat-v1: rekaman sesi lampau */}
+          {rec && (
+            <a
+              href={rec}
+              {...(isInternalRecordingHref(rec) ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-[12.5px] font-extrabold text-[#16796E] hover:bg-[#EAF3F2]"
+            >
+              <PlayCircle className="w-3.5 h-3.5" strokeWidth={2.2} /> Rekaman
+            </a>
+          )}
+        </span>
+      </div>
+      <MaterialBlock s={e} />
+    </div>
+  );
 }
 
 /**

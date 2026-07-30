@@ -197,12 +197,23 @@ const BM_KEY = "linguo_pustaka_bookmarks";
 // render instan dari kunjungan sebelumnya, data di-refresh di belakang layar.
 type LangProgress = Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>;
 let libCache: { userId: string; purchases: Purchase[]; byLang: LangProgress } | null = null;
+// [perf:preview-cache-v1] cache terpisah untuk mode pratinjau (per siswa) — jangan
+// menumpang libCache biar pustaka siswa yang dipratinjau tak bocor ke sesi staf.
+let libPreviewCache: { student: string; purchases: Purchase[] } | null = null;
 
-export default function LibraryView({ userId, supabase }: { userId: string; supabase: SupabaseClient }) {
-  const cached = libCache && libCache.userId === userId ? libCache : null;
-  const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? []);
+// [preview-session-v1] mode POV siswa: tanpa sesi login, `auth_user_id` mustahil
+// dicocokkan dan policy digital_purchases (role authenticated) memblokir semua
+// baris → dulu halamannya memantul ke /akun. Di mode ini isinya dari
+// /api/preview-library (service role, dikunci cookie pratinjau) & read-only.
+export default function LibraryView({ userId, supabase, previewStudentId = null }: {
+  userId: string; supabase: SupabaseClient; previewStudentId?: string | null;
+}) {
+  const preview = !!previewStudentId;
+  const pvCached = preview && libPreviewCache?.student === previewStudentId ? libPreviewCache : null;
+  const cached = !preview && libCache && libCache.userId === userId ? libCache : null;
+  const [purchases, setPurchases] = useState<Purchase[]>(cached?.purchases ?? pvCached?.purchases ?? []);
   const [byLang, setByLang] = useState<LangProgress>(cached?.byLang ?? {});
-  const [loading, setLoading] = useState(!cached);
+  const [loading, setLoading] = useState(preview ? !pvCached : !cached);
   const [busy, setBusy] = useState<string | null>(null);
 
   const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
@@ -230,9 +241,27 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
   }
 
   /* fetch */
-  useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId]);
+  useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId, previewStudentId]);
 
   async function fetchAll() {
+    // [preview-session-v1] pratinjau: satu panggilan server, cache modul sengaja
+    // TIDAK disentuh supaya pustaka siswa lain tak bocor ke sesi staf di tab yang sama.
+    if (previewStudentId) {
+      // spinner cuma saat belum ada cache; kunjungan berikutnya refresh diam-diam
+      if (libPreviewCache?.student !== previewStudentId) setLoading(true);
+      try {
+        const res = await fetch(`/api/preview-library?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" });
+        const j = res.ok ? await res.json() : null;
+        const next = ((j?.purchases ?? []) as unknown) as Purchase[];
+        setPurchases(next);
+        if (j) libPreviewCache = { student: previewStudentId, purchases: next };
+      } catch {
+        setPurchases([]);
+      }
+      setByLang({});
+      setLoading(false);
+      return;
+    }
     // [perf:pustaka-cache-v1] spinner cuma pas belum ada cache; refresh berikutnya diam-diam
     if (!(libCache && libCache.userId === userId)) setLoading(true);
     const purchasesReq = supabase
@@ -293,6 +322,9 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
 
   /* open / download */
   async function openProduct(p: Purchase) {
+    // [preview-session-v1] pratinjau staf: tampilan saja — membuka produk butuh
+    // sesi siswa (signed URL storage + catatan unduhan atas namanya).
+    if (preview) { toast("Mode pratinjau — hanya tampilan."); return; }
     const prod = p.digital_products;
     if (accessInfo(p).kind === "expired") { toast.error("Akses produk ini sudah berakhir."); return; }
 
@@ -531,7 +563,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
-              onRenew={() => setRenewFor(p)}
+              onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
             />
           ))}
         </div>
@@ -546,7 +578,7 @@ export default function LibraryView({ userId, supabase }: { userId: string; supa
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
-              onRenew={() => setRenewFor(p)}
+              onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
             />
           ))}
         </div>

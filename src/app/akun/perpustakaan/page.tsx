@@ -3,19 +3,23 @@
 // [linguo-patch:pustaka-page-v1] Route khusus "Perpustakaan Saya" → /akun/perpustakaan.
 // Reuse StudentShell (rail + panel) yang sama dengan /akun. Rail nav → balik ke /akun?menu=<tab>.
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LibraryView from "@/components/akun/LibraryView";
 
-export default function PerpustakaanPage() {
+function PerpustakaanInner() {
   const router = useRouter();
+  // [preview-session-v1] POV siswa (staf) tak punya sesi login — dulu halaman ini
+  // langsung memantul ke /akun, jadi menu "Perpustakaan" terasa mati waktu preview.
+  const previewId = useSearchParams().get("preview");
   const [userId, setUserId] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    if (previewId) { setReady(true); return; }
     let alive = true;
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!alive) return;
@@ -29,19 +33,24 @@ export default function PerpustakaanPage() {
       setReady(true);
     });
     return () => { alive = false; };
-  }, [router]);
+  }, [router, previewId]);
 
   // [perf:sidebar-nav-v1] router.push (client-side) — dulu window.location.href = full reload tiap balik ke tab lain
   const goTab = (t: AkunTab) => {
     if (t === "pustaka") return;
-    router.push(`/akun?menu=${t}`);
+    router.push(`/akun?menu=${t}${previewId ? `&preview=${encodeURIComponent(previewId)}` : ""}`);
   };
 
   return (
-    <StudentShell active="pustaka" onTabChange={goTab}>
+    <StudentShell active="pustaka" onTabChange={goTab} previewStudentId={previewId}>
       <main className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-6 sm:px-8 lg:py-9">
-        {ready && userId ? (
-          <LibraryView userId={userId} supabase={supabase} />
+        {previewId && (
+          <div className="mb-4 rounded-xl bg-[#12172B] px-4 py-2 text-center text-[12px] font-bold text-amber-300">
+            Preview POV Siswa — data real, read-only (tanpa login)
+          </div>
+        )}
+        {ready && (userId || previewId) ? (
+          <LibraryView userId={userId ?? ""} supabase={supabase} previewStudentId={previewId} />
         ) : (
           <div className="flex items-center justify-center py-24">
             <Loader2 className="h-7 w-7 animate-spin text-slate-300" />
@@ -49,5 +58,14 @@ export default function PerpustakaanPage() {
         )}
       </main>
     </StudentShell>
+  );
+}
+
+export default function PerpustakaanPage() {
+  // useSearchParams butuh Suspense boundary di App Router (build error kalau tidak).
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center"><Loader2 className="h-7 w-7 animate-spin text-slate-300" /></div>}>
+      <PerpustakaanInner />
+    </Suspense>
   );
 }

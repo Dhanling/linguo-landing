@@ -24,6 +24,11 @@ const ALL_TYPES: TestType[] = ["toefl", "ielts"];
 // [perf:simulasi-cache-v1] cache module-level: pindah tab lalu balik → render instan
 // dari cache (tanpa spinner), data tetap di-refresh di belakang layar.
 let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean; covers: Partial<Record<TestType, string>> } | null = null;
+// [perf:preview-cache-v1] cache TERPISAH per siswa buat mode pratinjau — sengaja
+// tidak menumpang simCache supaya katalog siswa yang dipratinjau tak bocor ke
+// sesi login staf di tab yang sama. Tanpa ini tiap balik ke tab Simulasi selalu
+// spinner + satu panggilan server lagi.
+let simPreviewCache: { student: string; sims: Simulation[]; owned: TestType[]; covers: Partial<Record<TestType, string>> } | null = null;
 
 // Kartu simulasi: link biasa untuk siswa, kotak mati saat pratinjau staf —
 // halaman pengerjaan butuh sesi login, jadi tautannya cuma berujung layar masuk.
@@ -51,10 +56,11 @@ function SimCard({ preview, href, children }: { preview: boolean; href: string; 
 // (service role, dikunci cookie pratinjau) dan tampil read-only.
 export default function SimulasiKatalog({ previewStudentId = null }: { previewStudentId?: string | null }) {
   const preview = !!previewStudentId;
-  const [sims, setSims] = useState<Simulation[]>(preview ? [] : simCache?.sims ?? []);
-  const [owned, setOwned] = useState<TestType[]>(preview ? [] : simCache?.owned ?? []);
-  const [covers, setCovers] = useState<Partial<Record<TestType, string>>>(preview ? {} : simCache?.covers ?? {});
-  const [loading, setLoading] = useState(preview || !simCache);
+  const pvCache = preview && simPreviewCache?.student === previewStudentId ? simPreviewCache : null;
+  const [sims, setSims] = useState<Simulation[]>(preview ? pvCache?.sims ?? [] : simCache?.sims ?? []);
+  const [owned, setOwned] = useState<TestType[]>(preview ? pvCache?.owned ?? [] : simCache?.owned ?? []);
+  const [covers, setCovers] = useState<Partial<Record<TestType, string>>>(preview ? pvCache?.covers ?? {} : simCache?.covers ?? {});
+  const [loading, setLoading] = useState(preview ? !pvCache : !simCache);
   const [authed, setAuthed] = useState<boolean | null>(preview ? true : simCache ? simCache.authed : null);
   // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
   const [beliType, setBeliType] = useState<TestType | null>(null);
@@ -70,9 +76,13 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
         const res = await fetch(`/api/preview-simulasi?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" });
         if (res.ok) {
           const j = await res.json();
-          setSims((j.simulations || []) as Simulation[]);
-          setOwned((j.owned || []) as TestType[]);
-          setCovers((j.covers || {}) as Partial<Record<TestType, string>>);
+          const nextSims = (j.simulations || []) as Simulation[];
+          const nextOwned = (j.owned || []) as TestType[];
+          const nextCovers = (j.covers || {}) as Partial<Record<TestType, string>>;
+          setSims(nextSims);
+          setOwned(nextOwned);
+          setCovers(nextCovers);
+          simPreviewCache = { student: previewStudentId, sims: nextSims, owned: nextOwned, covers: nextCovers };
         }
       } catch {
         /* biarkan kosong — layar tetap tampil, bukan layar login */

@@ -2368,6 +2368,24 @@ export default function AkunPage() {
     if (typeof window === "undefined") return;
     try { localStorage.setItem("linguo_akun_tab", activeTab); } catch {}
   }, [activeTab]);
+
+  // [perf:tab-prefetch-v1] Semua tab berat dimuat lazy (dynamic import). Chunk-nya
+  // baru diunduh SAAT menu diklik → tiap pindah menu selalu kena spinner beberapa
+  // detik, padahal datanya sudah ada di memori. Di sini chunk-nya ditarik duluan
+  // saat browser senggang, jadi pindah menu berikutnya langsung render.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const warm = () => {
+      import("@/components/akun/SimulasiKatalog");
+      import("@/components/akun/JadwalCalendar");
+      import("@/components/akun/SertifikatTab");
+      import("@/components/lms/LmsKatalog");
+    };
+    const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, o?: any) => number);
+    if (ric) { const id = ric(warm, { timeout: 4000 }); return () => (window as any).cancelIdleCallback?.(id); }
+    const t = setTimeout(warm, 1500);
+    return () => clearTimeout(t);
+  }, []);
   // [materi-gate-v1] menu "Kelas & Materi" masih under development → hanya boleh
   // diakses email di allowlist. Kalau bukan, lempar balik ke Beranda (menutup
   // deep-link ?menu=materi maupun tab tersimpan di localStorage).
