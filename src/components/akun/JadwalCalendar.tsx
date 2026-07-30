@@ -10,7 +10,7 @@
 // + jadwal-real-only-v1: fallback dummy DIHAPUS — akun kosong tampil empty state.
 
 import { useEffect, useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Video, GraduationCap, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 
@@ -26,6 +26,8 @@ export type JadwalSession = {
   level?: string;
   product?: string;
   teacher?: string;
+  /** jadwal-teacher-avatar-v1: foto pengajar (teachers.avatar_url) — fallback inisial. */
+  teacherAvatarUrl?: string | null;
   sessionNumber?: number | null;
   materialTitle?: string;
   materialNotes?: string;
@@ -54,6 +56,9 @@ export type JadwalClass = {
    * "Sesi 0 dari 16".
    */
   sessionsUsed?: number | null;
+  /** jadwal-teacher-avatar-v1: pengajar kelas ini — buat avatar di kartu rekap. */
+  teacher?: string;
+  teacherAvatarUrl?: string | null;
 };
 
 export type RegularBatch = {
@@ -99,6 +104,48 @@ function langColor(language: string): LangColor {
   let h = 0;
   for (let i = 0; i < language.length; i++) h = (h * 31 + language.charCodeAt(i)) >>> 0;
   return PALETTE[3 + (h % (PALETTE.length - 3))];
+}
+
+// ── jadwal-teacher-avatar-v1: foto pengajar ──────────────────────────────────
+// Nama pengajar sebelumnya cuma teks + ikon topi wisuda yang sama buat semua
+// orang. Foto bikin kartu sesi langsung kebaca "kelas sama siapa". Sumber foto =
+// `teachers.avatar_url` (sama dengan dashboard admin & pengajar); kalau kosong /
+// gagal dimuat, jatuh ke inisial berwarna — jangan tampilkan kotak abu kosong.
+function teacherInitials(name: string) {
+  return name.trim().split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
+}
+function teacherTint(name: string): { bg: string; text: string } {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  const p = PALETTE[h % PALETTE.length];
+  return { bg: p.bg, text: p.text };
+}
+
+function TeacherAvatar({ name, src, size = 18 }: { name: string; src?: string | null; size?: number }) {
+  const [broken, setBroken] = useState(false);
+  const tint = teacherTint(name);
+  const box = { width: size, height: size };
+  if (src && !broken) {
+    return (
+      <img
+        src={src}
+        alt={name}
+        loading="lazy"
+        onError={() => setBroken(true)}
+        className="shrink-0 rounded-full object-cover ring-1 ring-black/5"
+        style={box}
+      />
+    );
+  }
+  return (
+    <span
+      aria-hidden
+      className="inline-flex shrink-0 items-center justify-center rounded-full font-extrabold leading-none"
+      style={{ ...box, background: tint.bg, color: tint.text, fontSize: Math.max(8, Math.round(size * 0.42)) }}
+    >
+      {teacherInitials(name) || "?"}
+    </span>
+  );
 }
 
 // ── jadwal-riwayat-v1: status sesi ───────────────────────────────────────────
@@ -392,8 +439,21 @@ export default function JadwalCalendar({
           {classSummary.map((c) => {
             const total = c.sessionsTotal || 0;
             const pct = total > 0 ? Math.min(100, Math.round((c.done / total) * 100)) : 0;
+            // jadwal-kelas-selesai-v1: kelas yang sesinya sudah habis DAN tak punya
+            // sesi berikutnya = kelas kelar. Dibikin abu biar mata langsung jatuh ke
+            // kelas yang masih jalan; warnanya balik pas disorot (masih bisa dibaca,
+            // cuma tidak ikut berebut perhatian).
+            const finished = total > 0 && c.done >= total && !c.next;
             return (
-              <div key={c.id} className="rounded-2xl bg-white p-4 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
+              <div
+                key={c.id}
+                className={[
+                  "group rounded-2xl bg-white p-4 shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)] transition duration-200",
+                  finished
+                    ? "grayscale opacity-70 hover:grayscale-0 hover:opacity-100 focus-within:grayscale-0 focus-within:opacity-100 hover:-translate-y-0.5"
+                    : "",
+                ].join(" ")}
+              >
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: c.color.dot }} />
                   <p className="min-w-0 flex-1 truncate text-[13.5px] font-extrabold text-[#12172B]">
@@ -409,6 +469,13 @@ export default function JadwalCalendar({
                   </div>
                 )}
                 <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11.5px] font-semibold">
+                  {/* jadwal-teacher-avatar-v1: pengajar kelas ini */}
+                  {c.teacher && (
+                    <span className="inline-flex min-w-0 items-center gap-1.5 text-[#6B7280]">
+                      <TeacherAvatar name={c.teacher} src={c.teacherAvatarUrl} size={18} />
+                      <span className="truncate">{c.teacher}</span>
+                    </span>
+                  )}
                   {(["hadir", "izin", "sakit", "alpa"] as const).map((k) =>
                     c.att[k] ? (
                       <span key={k} className="inline-flex items-center gap-1" style={{ color: ATT_META[k].color }}>
@@ -422,7 +489,11 @@ export default function JadwalCalendar({
                       Berikutnya {c.next._d.getDate()} {MONTHS_SHORT[c.next._d.getMonth()]} · {c.next._time}
                     </span>
                   )}
-                  {!c.next && <span className="text-[#9CA3AF]">Belum ada sesi terjadwal</span>}
+                  {!c.next && (
+                    <span className={finished ? "text-[#059669]" : "text-[#9CA3AF]"}>
+                      {finished ? "Kelas selesai" : "Belum ada sesi terjadwal"}
+                    </span>
+                  )}
                 </div>
               </div>
             );
@@ -837,7 +908,13 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             )}
           </span>
           <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5 mt-1 text-[12px] text-[#6B7280] font-medium">
-            {e.teacher && <span className="inline-flex items-center gap-1"><GraduationCap className="w-3.5 h-3.5" strokeWidth={2} /> {e.teacher}</span>}
+            {/* jadwal-teacher-avatar-v1 */}
+            {e.teacher && (
+              <span className="inline-flex items-center gap-1.5">
+                <TeacherAvatar name={e.teacher} src={e.teacherAvatarUrl} size={20} />
+                {e.teacher}
+              </span>
+            )}
             {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
             {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
             {/* jadwal-riwayat-v1: hitung mundur sesi mendatang */}
@@ -926,8 +1003,10 @@ function SideItem({ s, now, studentName, onClick }: {
             </span>
           )}
           {s.teacher && (
-            <span className="inline-flex items-center gap-1 text-[11px] text-[#9CA3AF] font-medium mt-0.5">
-              <GraduationCap className="w-3 h-3" strokeWidth={2} /> {s.teacher}
+            // jadwal-teacher-avatar-v1: foto pengajar gantiin ikon topi wisuda
+            <span className="mt-1 flex items-center gap-1.5 text-[11px] font-medium text-[#6B7280]">
+              <TeacherAvatar name={s.teacher} src={s.teacherAvatarUrl} size={18} />
+              <span className="truncate">{s.teacher}</span>
             </span>
           )}
         </span>

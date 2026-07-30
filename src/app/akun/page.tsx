@@ -4296,6 +4296,9 @@ export default function AkunPage() {
                 // bukan `upcomingSchedules` — itu sebabnya bulan berjalan dulu tampak kosong.
                 const jadwalSessions = allSchedules.map((s: any) => {
                   const reg = student?.registrations.find((r: any) => r.id === s.registration_id);
+                  // [jadwal-teacher-avatar-v1] direktori `teachers` menang atas embed
+                  // registrasi (embed bisa dari cache lama yang belum punya foto).
+                  const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
                   return {
                     id: s.id,
                     registrationId: s.registration_id,
@@ -4304,7 +4307,8 @@ export default function AkunPage() {
                     language: reg?.language || "—",
                     level: reg?.level || "",
                     product: reg?.product || "",
-                    teacher: reg?.teachers?.name || "",
+                    teacher: tDir?.name || reg?.teachers?.name || "",
+                    teacherAvatarUrl: tDir?.avatar_url || reg?.teachers?.avatar_url || null,
                     // jadwal-recurring-materi-v1
                     sessionNumber: s.session_number ?? null,
                     materialTitle: s.session_title || "",
@@ -4317,13 +4321,18 @@ export default function AkunPage() {
                   };
                 });
                 // jadwal-riwayat-v1: dasar ringkasan "Sesi 5 dari 16" per kelas
-                const jadwalClasses = activeRegs.map((r: any) => ({
-                  id: r.id,
-                  language: r.language,
-                  level: r.level || "",
-                  sessionsTotal: r.sessions_total ?? null,
-                  sessionsUsed: r.sessions_used ?? null,
-                }));
+                const jadwalClasses = activeRegs.map((r: any) => {
+                  const tDir = r.teacher_id ? teacherDir[r.teacher_id] : undefined; // [jadwal-teacher-avatar-v1]
+                  return {
+                    id: r.id,
+                    language: r.language,
+                    level: r.level || "",
+                    sessionsTotal: r.sessions_total ?? null,
+                    sessionsUsed: r.sessions_used ?? null,
+                    teacher: tDir?.name || r?.teachers?.name || "",
+                    teacherAvatarUrl: tDir?.avatar_url || r?.teachers?.avatar_url || null,
+                  };
+                });
                 const jadwalRegulerBatches = activeRegs
                   .filter((r: any) => r.product === "Kelas Reguler" && r.batch)
                   .map((r: any) => ({
