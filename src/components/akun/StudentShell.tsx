@@ -76,6 +76,9 @@ const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracki
 
 const DARK_KEY = "lms-dark-mode";
 
+/** Jawaban "punya grup kelas?" ditahan per tab — menunya ikut ke semua halaman LMS. */
+const GROUP_NAV_KEY = "linguo-has-group-v1";
+
 // [shell-dark-fouc-v1] Skrip kecil yang ikut ke-render di HTML awal → kelas `lms-dark`
 // nempel ke <html> SEBELUM paint pertama. Dulu tema dibaca di useEffect, jadi user
 // mode gelap selalu kena kilat putih dulu tiap buka halaman.
@@ -104,9 +107,13 @@ export default function StudentShell({
   firstName,
   avatarUrl,
   studentId,
+  previewStudentId = null,
   immersive = false,
   children,
 }: {
+  // [preview-session-v1] mode POV siswa (staf) — menu ikut membawa ?preview=<id>
+  // supaya pindah halaman tidak menjatuhkan sesi pratinjau.
+  previewStudentId?: string | null;
   active: NavKey;
   onTabChange: (t: AkunTab) => void;
   firstName?: string;
@@ -137,8 +144,41 @@ export default function StudentShell({
     });
     return () => { alive = false; };
   }, []);
-  const showNav = (key: string) =>
-    !DEV_ONLY_KEYS.has(key) || (devOk && (key !== "materi" || canAccessMateri));
+  /* [student-group-gate-v1] "Grup Kelas" cuma untuk siswa yang PUNYA grup kelas.
+     Dulu item ini tampil untuk semua yang login, dan halamannya membaca wa_groups
+     langsung — user yang kebetulan juga pengajar/admin jadi melihat seluruh grup
+     kelas Linguo di menu siswa. Sekarang daftar & menunya sama-sama bersandar
+     pada RPC student_group_list() (tautan wa_group_students milik dirinya).
+     Jawabannya di-cache per tab: menu ini ikut ke SEMUA halaman LMS, tak perlu
+     satu query tiap pindah halaman. */
+  const [hasGroup, setHasGroup] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    try { return sessionStorage.getItem(GROUP_NAV_KEY) === "1"; } catch { return false; }
+  });
+  useEffect(() => {
+    let alive = true;
+    const remember = (v: boolean) => {
+      if (!alive) return;
+      setHasGroup(v);
+      try { sessionStorage.setItem(GROUP_NAV_KEY, v ? "1" : "0"); } catch {}
+    };
+    if (previewStudentId) {
+      fetch(`/api/preview-group?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => remember(!!j?.groups?.length))
+        .catch(() => {});
+      return () => { alive = false; };
+    }
+    supabase.rpc("student_group_list").then(({ data, error }) => {
+      if (!error) remember(((data as unknown[]) ?? []).length > 0);
+    });
+    return () => { alive = false; };
+  }, [previewStudentId]);
+
+  const showNav = (key: string) => {
+    if (key === "grup") return hasGroup;
+    return !DEV_ONLY_KEYS.has(key) || (devOk && (key !== "materi" || canAccessMateri));
+  };
 
   // [ling-lms-dark-v1] dark mode dashboard — state sync dgn LessonPlayer via localStorage "lms-dark-mode"
   const [isDark, setIsDark] = useState(false);
@@ -187,10 +227,13 @@ export default function StudentShell({
       // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
       // (dulu <a> biasa = full page reload tiap pindah menu)
       const isActiveLink = item.key === active;
+      const href = previewStudentId
+        ? `${item.href}${item.href.includes("?") ? "&" : "?"}preview=${encodeURIComponent(previewStudentId)}`
+        : item.href;
       return (
         <Link
           key={item.key}
-          href={item.href}
+          href={href}
           prefetch
           onClick={onNavigated}
           className={`${NAV_ITEM_BASE} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}

@@ -305,7 +305,12 @@ function getBaseline(): string {
 
 /* ── Komponen utama ──────────────────────────────────────────────────────── */
 
-export default function StudentGroupChat() {
+export default function StudentGroupChat({ previewStudentId = null }: { previewStudentId?: string | null } = {}) {
+  /* [preview-session-v1] Mode pratinjau POV siswa (dibuka staf dari avatar
+     dashboard admin): tak ada sesi login, jadi semua data lewat /api/preview-group
+     (service role, dikunci cookie pratinjau ke satu siswa) dan seluruh jalur
+     tulis — kirim, reaksi, batal antre — dimatikan. */
+  const preview = !!previewStudentId;
   const [identity, setIdentity] = useState<Identity | null>(null);
   const [identityReady, setIdentityReady] = useState(false);
   const [groups, setGroups] = useState<GroupRow[]>([]);
@@ -335,6 +340,13 @@ export default function StudentGroupChat() {
   // ── Identitas siswa ───────────────────────────────────────────────────────
   useEffect(() => {
     let alive = true;
+    if (preview) {
+      // Identitas ikut dalam satu respons dengan daftar grup — lihat efek berikut.
+      setIdentityReady(true);
+      return () => {
+        alive = false;
+      };
+    }
     void supabase.rpc("student_group_identity").then(({ data, error }) => {
       if (!alive) return;
       if (!error) setIdentity(((data as Identity[]) ?? [])[0] ?? null);
@@ -343,28 +355,47 @@ export default function StudentGroupChat() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [preview]);
 
   // ── Daftar grup ───────────────────────────────────────────────────────────
-  // RLS (wa_groups_student_select) sudah menyaring ke grup kelas siswa ini —
-  // tak ada filter siapa-pun di klien yang bisa dilewati.
+  /* [student-group-gate-v1] Daftarnya dari RPC student_group_list(), BUKAN
+     select langsung ke wa_groups. Policy wa_groups semuanya permissive (di-OR),
+     jadi select langsung ikut membawa policy pengajar & owner/admin: user yang
+     kebetulan juga pengajar melihat seluruh grup kelas Linguo di halaman yang
+     seharusnya berisi grup kelasnya sendiri. RPC-nya cuma tahu satu hal —
+     tautan wa_group_students milik siswa yang login. */
   useEffect(() => {
     let alive = true;
     const load = async () => {
-      const { data, error } = await supabase
-        .from("wa_groups")
-        .select("jid, sender, subject, participants, last_seen_at")
-        .eq("hidden", false)
-        .order("last_seen_at", { ascending: false, nullsFirst: false });
-      if (!alive) return;
-      if (error) {
-        // Timeout/pembatalan cukup ditunggu poll berikutnya — daftar lama tetap
-        // terpampang, jauh lebih berguna daripada toast merah.
-        if (!isAbortError(error)) toast.error(`Gagal memuat grup: ${error.message}`);
-        setLoadingGroups(false);
-        return;
+      let rows: GroupRow[] = [];
+      if (preview) {
+        try {
+          const res = await fetch(
+            `/api/preview-group?student=${encodeURIComponent(previewStudentId!)}`,
+            { cache: "no-store" },
+          );
+          if (!res.ok) throw new Error(String(res.status));
+          const json = await res.json();
+          if (!alive) return;
+          setIdentity(json.identity ?? null);
+          rows = (json.groups as GroupRow[]) ?? [];
+        } catch {
+          if (!alive) return;
+          setLoadingGroups(false);
+          return;
+        }
+      } else {
+        const { data, error } = await supabase.rpc("student_group_list");
+        if (!alive) return;
+        if (error) {
+          // Timeout/pembatalan cukup ditunggu poll berikutnya — daftar lama tetap
+          // terpampang, jauh lebih berguna daripada toast merah.
+          if (!isAbortError(error)) toast.error(`Gagal memuat grup: ${error.message}`);
+          setLoadingGroups(false);
+          return;
+        }
+        rows = (data as GroupRow[]) ?? [];
       }
-      const rows = (data as GroupRow[]) ?? [];
       setGroups(rows);
       setLoadingGroups(false);
       if (rows.length === 0) {
@@ -372,6 +403,9 @@ export default function StudentGroupChat() {
         setUnread({});
         return;
       }
+      // Pratinjau: pratayang & badge dilewat — grup yang dibuka tetap mengisi
+      // baris pratayangnya sendiri lewat loadMsgs(). Cukup untuk lihat tampilan.
+      if (preview) return;
       /* Urutan daftar & badge "belum dibaca" mengikuti pesan TERBARU, bukan
          wa_groups.last_seen_at (itu cuma diperbarui bot saat menyegarkan
          metadata grup). Satu query untuk semua grup: siswa paling banyak
@@ -416,7 +450,7 @@ export default function StudentGroupChat() {
       alive = false;
       clearInterval(timer);
     };
-  }, []);
+  }, [preview, previewStudentId]);
 
   const filteredGroups = useMemo(() => {
     const q = groupQuery.trim().toLowerCase();
@@ -475,6 +509,41 @@ export default function StudentGroupChat() {
       msgAbort.current = controller;
       const timer = setTimeout(() => controller.abort(), MSG_FETCH_TIMEOUT_MS);
       try {
+        if (preview) {
+          // Pratinjau: transkrip lewat server (anon tak punya akses wa_messages),
+          // lampiran ikut ditandatangani di sana. Tak ada antrean kirim.
+          try {
+            const res = await fetch(
+              `/api/preview-group?student=${encodeURIComponent(previewStudentId!)}&jid=${encodeURIComponent(jid)}`,
+              { cache: "no-store", signal: controller.signal },
+            );
+            if (!res.ok) throw new Error(String(res.status));
+            const json = await res.json();
+            if (msgKey.current !== `${jid}|${sender}`) return;
+            const rows = (json.messages as Msg[]) ?? [];
+            setMsgs(rows);
+            if (json.media) setMediaUrls((prev) => ({ ...prev, ...json.media }));
+            const newest = rows[rows.length - 1];
+            if (newest) {
+              setLastMsgs((prev) => ({
+                ...prev,
+                [jid]: {
+                  at: newest.created_at,
+                  body: newest.body,
+                  media_type: newest.media_type,
+                  direction: newest.direction,
+                  contact_name: newest.contact_name,
+                },
+              }));
+            }
+            setPending([]);
+          } catch (e) {
+            if (!(e instanceof DOMException && e.name === "AbortError")) {
+              toast.error("Gagal memuat pesan pratinjau");
+            }
+          }
+          return;
+        }
         /* Sengaja TANPA .eq("sender", …): satu grup kelas sering diikuti lebih
            dari satu nomor Linguo dan tiap sesi mencatat barisnya sendiri, jadi
            menyaring per sender bikin transkrip bolong-bolong padahal di WhatsApp
@@ -540,7 +609,7 @@ export default function StudentGroupChat() {
         }
       }
     },
-    [markRead],
+    [markRead, preview, previewStudentId],
   );
 
   useEffect(() => {
@@ -571,19 +640,22 @@ export default function StudentGroupChat() {
         if (alive) void loadMsgs(jid, sender, { silent: true });
       }, 400);
     };
-    const channel = supabase
-      .channel(`student-group-${jid}`)
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "wa_messages", filter: `phone=eq.${jid}` },
-        refresh,
-      )
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "wa_outbound", filter: `phone=eq.${jid}` },
-        refresh,
-      )
-      .subscribe();
+    // Realtime butuh sesi (kanalnya ikut RLS) — di pratinjau cukup poll 8 detik.
+    const channel = preview
+      ? null
+      : supabase
+          .channel(`student-group-${jid}`)
+          .on(
+            "postgres_changes",
+            { event: "*", schema: "public", table: "wa_messages", filter: `phone=eq.${jid}` },
+            refresh,
+          )
+          .on(
+            "postgres_changes",
+            { event: "*", schema: "public", table: "wa_outbound", filter: `phone=eq.${jid}` },
+            refresh,
+          )
+          .subscribe();
     return () => {
       alive = false;
       clearInterval(timer);
@@ -593,9 +665,9 @@ export default function StudentGroupChat() {
       msgKey.current = null;
       msgQueued.current = null;
       msgAbort.current?.abort();
-      void supabase.removeChannel(channel);
+      if (channel) void supabase.removeChannel(channel);
     };
-  }, [active, loadMsgs]);
+  }, [active, loadMsgs, preview]);
 
   // Ganti grup → buang state composer supaya draf/kutipan tak nyasar.
   useEffect(() => {
@@ -607,6 +679,8 @@ export default function StudentGroupChat() {
   // Signed URL media — hanya untuk path yang belum punya URL, supaya poll 8 dtk
   // tidak terus-menerus membuat URL baru.
   useEffect(() => {
+    // Pratinjau: URL-nya sudah ditandatangani server (anon buta ke bucket wa-media).
+    if (preview) return;
     const need = msgs.map((m) => m.media_path).filter((p): p is string => !!p && !mediaUrls[p]);
     if (need.length === 0) return;
     let alive = true;
@@ -626,7 +700,7 @@ export default function StudentGroupChat() {
     return () => {
       alive = false;
     };
-  }, [msgs, mediaUrls]);
+  }, [msgs, mediaUrls, preview]);
 
   /**
    * Gelembung kanan = pesan siswa ini sendiri. Dua jalurnya:
@@ -686,7 +760,7 @@ export default function StudentGroupChat() {
 
   const send = useCallback(async () => {
     const text = draft.trim();
-    if (!text || !active || sending) return;
+    if (!text || !active || sending || preview) return;
     // Kutipan dikirim sebagai blockquote WhatsApp (baris diawali "> ") — bot
     // mengirim body apa adanya, jadi kutipan cukup di teks.
     const body = replyTo ? `> ${snippetOf(replyTo).slice(0, 160)}\n${text}` : text;
@@ -701,11 +775,12 @@ export default function StudentGroupChat() {
     setReplyTo(null);
     stickToBottom.current = true;
     void loadMsgs(active.jid, active.sender, { silent: true });
-  }, [draft, active, sending, replyTo, loadMsgs]);
+  }, [draft, active, sending, replyTo, loadMsgs, preview]);
 
   /** Pasang/lepas reaksi. Emoji yang sama = lepas (persis WhatsApp). */
   const toggleReaction = useCallback(
     async (m: Msg, emoji: string) => {
+      if (preview) return;
       const next = m.reaction === emoji ? "" : emoji;
       // Optimistis: reaksi terasa instan, poll/realtime yang mengoreksi.
       setMsgs((prev) =>
@@ -719,12 +794,13 @@ export default function StudentGroupChat() {
         if (active) void loadMsgs(active.jid, active.sender, { silent: true });
       }
     },
-    [active, loadMsgs],
+    [active, loadMsgs, preview],
   );
 
   /** Batalkan kiriman yang masih mengantre / gagal. */
   const cancelQueued = useCallback(
     async (p: Pending) => {
+      if (preview) return;
       const { error } = await supabase.from("wa_outbound").delete().eq("id", p.id);
       if (error) {
         toast.error("Gagal membatalkan");
@@ -732,7 +808,7 @@ export default function StudentGroupChat() {
       }
       setPending((prev) => prev.filter((x) => x.id !== p.id));
     },
-    [],
+    [preview],
   );
 
   // Pesan dikelompokkan per hari untuk pemisah tanggal ala WhatsApp.
@@ -1019,6 +1095,13 @@ export default function StudentGroupChat() {
               </div>
 
               {/* ── Kotak tulis ── */}
+              {/* Pratinjau staf: kotak tulis diganti catatan. Staf boleh melihat
+                  tampilan siswa, tapi tidak ikut bicara di grup atas namanya. */}
+              {preview ? (
+                <div className="border-t border-gray-200 px-4 py-4 text-center text-[11.5px] font-medium text-gray-400">
+                  Mode pratinjau — kotak tulis dimatikan.
+                </div>
+              ) : (
               <div className="border-t border-gray-200">
                 {replyTo && (
                   <div className="flex items-start gap-2 border-b border-gray-200 bg-gray-50 px-3 py-2">
@@ -1097,6 +1180,7 @@ export default function StudentGroupChat() {
                   pengajar tahu ini dari kamu.
                 </p>
               </div>
+              )}
             </>
           )}
         </section>

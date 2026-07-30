@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
+import { previewStudentId } from "@/lib/previewSession";
 
 // ── preview-student-v1 ───────────────────────────────────────────────────
-// Endpoint READ-ONLY buat "POV siswa" tanpa login. Dashboard /akun bisa
-// dibuka via /akun?preview=<student_id>. Karena RLS memblok anon baca
-// registrations, data real di-fetch di server pakai SERVICE_ROLE_KEY.
+// Endpoint READ-ONLY buat "POV siswa". Dashboard /akun dibuka via
+// /akun?preview=<student_id>. Karena RLS memblok anon baca registrations, data
+// real di-fetch di server pakai SERVICE_ROLE_KEY.
 //
-// Keamanan: <student_id> adalah UUID (praktis tidak bisa ditebak) & endpoint
-// ini cuma mengembalikan data belajar (bukan data sensitif pembayaran mentah).
-// Dipakai internal buat preview tampilan; jangan disebar publik.
+// [preview-session-v1] Dulu penjaganya cuma "UUID susah ditebak" — padahal yang
+// dikembalikan nama, email, WhatsApp, dan riwayat tagihan siswa. Sekarang wajib
+// ada cookie sesi pratinjau yang lahir dari kode sekali-pakai terbitan
+// owner/admin (/api/preview-start), dan cookie itu mengunci SATU siswa: id di
+// query harus sama dengan yang tercatat di kodenya.
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -29,6 +32,10 @@ export async function GET(req: NextRequest) {
   // Validasi bentuk UUID biar ga dipakai buat enumerasi sembarangan.
   if (!id || !/^[0-9a-f-]{36}$/i.test(id)) {
     return NextResponse.json({ error: "invalid id" }, { status: 400 });
+  }
+  const allowed = await previewStudentId(req);
+  if (!allowed || allowed !== id) {
+    return NextResponse.json({ error: "preview session required" }, { status: 403 });
   }
 
   const students = await rest(

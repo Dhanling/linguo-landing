@@ -3391,7 +3391,7 @@ export default function AkunPage() {
   // DASHBOARD — Responsive Desktop + Mobile
   // ═══════════════════════════════════════════════════════════════════
   return (
-    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri}>
+    <StudentShell active={activeTab} onTabChange={(t) => setActiveTab(t)} firstName={firstName} avatarUrl={avatarUrl} studentId={student?.id} canAccessMateri={canSeeMateri} previewStudentId={previewId}>
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
