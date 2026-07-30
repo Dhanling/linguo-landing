@@ -699,16 +699,43 @@ export default function WatchAndLearn() {
       }
       syncStaff(session?.user?.id, session?.user?.email);
     };
-    supabase.auth
-      .getSession()
-      .then(({ data }) => gate(data.session))
-      .catch(() => gate(null));
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => gate(session)
-    );
+    // [preview-session-v1] POV siswa dari dashboard admin (/watch?preview=<id>)
+    // tidak punya sesi login sama sekali — tanpa jalan keluar ini gate-nya melempar
+    // staf ke layar masuk dan sesi pratinjaunya ikut hilang. Param URL TIDAK
+    // dipercaya begitu saja: keabsahannya ditanyakan ke endpoint pratinjau yang
+    // mewajibkan cookie httpOnly terbitan /api/preview-start.
+    const verifyPreview = async () => {
+      const pid = new URLSearchParams(window.location.search).get("preview");
+      if (!pid || !/^[0-9a-f-]{36}$/i.test(pid)) return false;
+      try {
+        const res = await fetch(`/api/preview-student?id=${encodeURIComponent(pid)}`, { cache: "no-store" });
+        return res.ok;
+      } catch {
+        return false;
+      }
+    };
+
+    let subscription: { unsubscribe: () => void } | null = null;
+    (async () => {
+      if (await verifyPreview()) {
+        if (!alive) return;
+        // Pratinjau = akses penuh katalog (staf), tanpa sesi & tanpa gate langganan.
+        setLoggedIn(true);
+        setWatchStaff(true);
+        return;
+      }
+      if (!alive) return;
+      supabase.auth
+        .getSession()
+        .then(({ data }) => gate(data.session))
+        .catch(() => gate(null));
+      subscription = supabase.auth.onAuthStateChange(
+        (_event, session) => gate(session)
+      ).data.subscription;
+    })();
     return () => {
       alive = false;
-      subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 

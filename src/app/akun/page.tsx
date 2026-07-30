@@ -4511,7 +4511,7 @@ export default function AkunPage() {
           {/* [simulasi-inshell-v1] Simulasi Tes sebagai tab in-shell (sidebar tetap tampil) */}
           {activeTab === "simulasi" && (
             <motion.div key="simulasi" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full pb-6">
-              <SimulasiKatalog />
+              <SimulasiKatalog previewStudentId={previewId} />
             </motion.div>
           )}
 

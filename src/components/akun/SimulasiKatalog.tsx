@@ -2,7 +2,7 @@
 
 // [simulasi-inshell-v1] Katalog simulasi versi in-shell (dipakai di tab /akun, sidebar tetap tampil).
 // Sebelumnya cuma ada di route terpisah /akun/simulasi yang nutup sidebar.
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
   fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo, fetchSimulationCovers,
@@ -25,12 +25,37 @@ const ALL_TYPES: TestType[] = ["toefl", "ielts"];
 // dari cache (tanpa spinner), data tetap di-refresh di belakang layar.
 let simCache: { sims: Simulation[]; owned: TestType[]; authed: boolean; covers: Partial<Record<TestType, string>> } | null = null;
 
-export default function SimulasiKatalog() {
-  const [sims, setSims] = useState<Simulation[]>(simCache?.sims ?? []);
-  const [owned, setOwned] = useState<TestType[]>(simCache?.owned ?? []);
-  const [covers, setCovers] = useState<Partial<Record<TestType, string>>>(simCache?.covers ?? {});
-  const [loading, setLoading] = useState(!simCache);
-  const [authed, setAuthed] = useState<boolean | null>(simCache ? simCache.authed : null);
+// Kartu simulasi: link biasa untuk siswa, kotak mati saat pratinjau staf —
+// halaman pengerjaan butuh sesi login, jadi tautannya cuma berujung layar masuk.
+const SIM_CARD_CLASS =
+  "group flex flex-col overflow-hidden rounded-2xl bg-white transition hover:border-gray-200 hover:shadow-md";
+
+function SimCard({ preview, href, children }: { preview: boolean; href: string; children: ReactNode }) {
+  if (preview) {
+    return (
+      <div className={SIM_CARD_CLASS} title="Mode pratinjau — hanya tampilan">
+        {children}
+      </div>
+    );
+  }
+  return (
+    <Link href={href} className={SIM_CARD_CLASS}>
+      {children}
+    </Link>
+  );
+}
+
+// [preview-session-v1] Mode POV siswa tak punya sesi login, sedangkan SEMUA policy
+// test_simulations & simulation_entitlements cuma berlaku utk role authenticated →
+// klien anon baca nol baris. Di mode itu katalog diambil dari /api/preview-simulasi
+// (service role, dikunci cookie pratinjau) dan tampil read-only.
+export default function SimulasiKatalog({ previewStudentId = null }: { previewStudentId?: string | null }) {
+  const preview = !!previewStudentId;
+  const [sims, setSims] = useState<Simulation[]>(preview ? [] : simCache?.sims ?? []);
+  const [owned, setOwned] = useState<TestType[]>(preview ? [] : simCache?.owned ?? []);
+  const [covers, setCovers] = useState<Partial<Record<TestType, string>>>(preview ? {} : simCache?.covers ?? {});
+  const [loading, setLoading] = useState(preview || !simCache);
+  const [authed, setAuthed] = useState<boolean | null>(preview ? true : simCache ? simCache.authed : null);
   // Popup "Beli Paket": simpan jenis tes yang mau dibeli (null = tertutup).
   const [beliType, setBeliType] = useState<TestType | null>(null);
   // Progres berjalan yang tersimpan lokal (per simulasi): utk progress bar "Lanjut".
@@ -38,6 +63,24 @@ export default function SimulasiKatalog() {
   const [progressMap, setProgressMap] = useState<Record<string, { answered: number; total: number }>>({});
 
   const refresh = async () => {
+    // Pratinjau: satu panggilan server; cache modul sengaja TIDAK disentuh supaya
+    // katalog siswa lain tak bocor ke sesi login staf di tab yang sama.
+    if (previewStudentId) {
+      try {
+        const res = await fetch(`/api/preview-simulasi?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" });
+        if (res.ok) {
+          const j = await res.json();
+          setSims((j.simulations || []) as Simulation[]);
+          setOwned((j.owned || []) as TestType[]);
+          setCovers((j.covers || {}) as Partial<Record<TestType, string>>);
+        }
+      } catch {
+        /* biarkan kosong — layar tetap tampil, bukan layar login */
+      }
+      setAuthed(true);
+      setLoading(false);
+      return;
+    }
     const info = await getStudentInfo();
     const [data, ents, cov] = await Promise.all([
       fetchPublishedSimulations(),
@@ -166,7 +209,8 @@ export default function SimulasiKatalog() {
                     </div>
                     <button
                       onClick={() => setBeliType(t)}
-                      className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition active:scale-95"
+                      disabled={preview}
+                      className={`mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition ${preview ? "cursor-not-allowed opacity-60" : "active:scale-95"}`}
                       style={{ background: TEAL }}
                     >
                       <Sparkles className="h-4 w-4" /> Beli Paket
@@ -181,11 +225,7 @@ export default function SimulasiKatalog() {
             const prog = progressMap[s.id];
             const pct = prog && prog.total > 0 ? Math.min(100, Math.round((prog.answered / prog.total) * 100)) : 0;
             return (
-            <Link
-              key={s.id}
-              href={`/akun/simulasi/${s.id}`}
-              className="group flex flex-col overflow-hidden rounded-2xl bg-white transition hover:border-gray-200 hover:shadow-md"
-            >
+            <SimCard key={s.id} preview={preview} href={`/akun/simulasi/${s.id}`}>
               {/* Cover — pakai gambar dari admin (cover_url); fallback gradasi teal + ikon.
                   aspect-[16/7] menyamai kartu admin biar tak terlalu tinggi. */}
               <div className="relative aspect-[16/7] w-full overflow-hidden bg-slate-100">
@@ -246,7 +286,7 @@ export default function SimulasiKatalog() {
                 {prog ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
               </div>
-            </Link>
+            </SimCard>
             );
           })}
           {sims.length === 0 && lockedTypes.length === 0 && (
