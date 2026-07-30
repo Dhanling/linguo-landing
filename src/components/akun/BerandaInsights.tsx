@@ -73,13 +73,13 @@ function StatTile({ Icon, value, label, sub, tone = 'teal', alert = false }: {
     rose: 'bg-rose-50 text-rose-500',
   }[tone];
   return (
-    <div className="relative rounded-2xl bg-white p-4 ring-1 ring-slate-200/70">
+    <div className="relative rounded-2xl bg-white p-3.5 ring-1 ring-slate-200/70">
       {alert && <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-rose-500 ring-4 ring-rose-100" />}
-      <div className={`mb-3 flex h-9 w-9 items-center justify-center rounded-full ${tint}`}>
+      <div className={`mb-2.5 flex h-8 w-8 items-center justify-center rounded-full ${tint}`}>
         <Icon className="h-[18px] w-[18px]" strokeWidth={2.2} />
       </div>
-      <div className="text-[22px] font-extrabold leading-none text-[#12172B]">{value}</div>
-      <div className="mt-1.5 text-[12px] font-semibold text-gray-600">{label}</div>
+      <div className="text-[20px] font-extrabold leading-none text-[#12172B]">{value}</div>
+      <div className="mt-1 text-[11.5px] font-semibold text-gray-600">{label}</div>
       {sub && <div className="mt-0.5 text-[11px] font-medium text-gray-400">{sub}</div>}
     </div>
   );
@@ -181,9 +181,9 @@ export default function BerandaInsights({
   (active?.skills || []).forEach((s) => { skillMap[s.key] = s; });
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="inline-flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]">
+        <h2 className="inline-flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]">
           <TrendingUp className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />
           Ringkasan Belajar
         </h2>
@@ -196,7 +196,7 @@ export default function BerandaInsights({
       </div>
 
       {/* ── Baris statistik ── */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         <StatTile
           Icon={Clock}
           value={fmtDuration(week.doneMinutes)}
@@ -227,10 +227,10 @@ export default function BerandaInsights({
         />
       </div>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
         {/* ── Kartu progres skill ── */}
         {active && activeReg && shareData && (
-          <div className="rounded-3xl bg-white p-5 ring-1 ring-slate-200/70">
+          <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200/70">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0">
                 <h3 className="truncate text-[16px] font-extrabold text-[#12172B]">
@@ -278,7 +278,7 @@ export default function BerandaInsights({
               </div>
             )}
 
-            <div className="mt-4 space-y-3">
+            <div className="mt-3 space-y-2.5">
               {SKILLS.map(({ key, label, Icon }) => (
                 <SkillRow
                   key={key}
@@ -290,7 +290,7 @@ export default function BerandaInsights({
               ))}
             </div>
 
-            <div className="mt-4 flex items-center justify-between gap-2 border-t border-slate-100 pt-3">
+            <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-100 pt-2.5">
               <span className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-gray-500">
                 Rata-rata
                 <span className="text-[15px] font-extrabold text-[#16796E]">{active.avg.toFixed(1)}</span>
@@ -316,9 +316,9 @@ export default function BerandaInsights({
         )}
 
         {/* ── Kolom kanan: PR + materi ── */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4">
           {pendingHomework.length > 0 && (
-            <div className="rounded-3xl bg-white p-5 ring-1 ring-rose-200">
+            <div className="rounded-3xl bg-white p-4 ring-1 ring-rose-200">
               <div className="flex items-center gap-2">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-rose-500">
                   <ClipboardList className="h-[18px] w-[18px]" strokeWidth={2.2} />
@@ -362,7 +362,7 @@ export default function BerandaInsights({
           )}
 
           {materials.length > 0 && (
-            <div className="rounded-3xl bg-white p-5 ring-1 ring-slate-200/70">
+            <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200/70">
               <div className="flex items-center justify-between gap-2">
                 <h3 className="text-[15px] font-extrabold text-[#12172B]">Materi Terbaru</h3>
                 <span className="text-[11.5px] font-semibold text-gray-400">dari pengajar</span>
@@ -401,7 +401,7 @@ export default function BerandaInsights({
 
       {/* ── Papan peringkat kelas grup ── */}
       {leaderboard && (
-        <div className="rounded-3xl bg-white p-5 ring-1 ring-slate-200/70">
+        <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200/70">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="inline-flex items-center gap-2 text-[15px] font-extrabold text-[#12172B]">
               <Trophy className="h-[18px] w-[18px] text-[#F2CB05]" strokeWidth={2.4} />

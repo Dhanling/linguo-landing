@@ -100,6 +100,9 @@ const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { s
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
 const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
+// [beranda-kosakata-v1] kartu penguasaan kosakata (materi + kuis selesai & kata
+// simpanan Watch & Learn). ssr:false — sebagian datanya dari localStorage.
+const KosakataCard = dynamic(() => import('@/components/akun/KosakataCard'), { ssr: false });
 const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
@@ -3727,7 +3730,11 @@ export default function AkunPage() {
                     </aside>
 
                     {/* ════ KOLOM UTAMA (kanan di desktop) ════ */}
-                    <section className="order-1 flex min-w-0 flex-col gap-7 bg-[#F5F6F8] p-6 lg:order-2 lg:p-8">
+                    {/* [beranda-compact-v1] Ritme vertikal dirapatkan (gap-7→gap-5,
+                        p-6/lg:p-8 → p-5/lg:p-6): isi beranda banyak, dan jarak antar
+                        blok yang lega bikin kartu di bawah "Ringkasan Belajar" nyaris
+                        selalu kelewat di layar pertama. */}
+                    <section className="order-1 flex min-w-0 flex-col gap-5 bg-[#F5F6F8] p-5 lg:order-2 lg:p-6">
 
                       {/* top bar: greeting + search (search = stub, lihat catatan) */}
                       <div className="flex flex-wrap items-center justify-between gap-4">
@@ -3821,23 +3828,23 @@ export default function AkunPage() {
                         const hariLabel = sameDay ? "Hari ini" : besok ? "Besok" : d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" });
                         const guru = reg?.teacher_id ? teacherDir[reg.teacher_id]?.name : (reg as any)?.teachers?.name;
                         return (
-                          <div className="rounded-3xl bg-white p-5 ring-1 ring-slate-200 sm:p-6">
-                            <div className="flex flex-wrap items-center gap-4">
-                              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-xl font-extrabold text-[#16796E]">{langGlyph(reg?.language || "")}</span>
+                          <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
+                            <div className="flex flex-wrap items-center gap-3">
+                              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(reg?.language || "")}</span>
                               <div className="min-w-0 flex-1">
-                                <p className="inline-flex items-center gap-1.5 text-[11.5px] font-bold uppercase tracking-wide text-[#16796E]">
+                                <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-[#16796E]">
                                   <Clock className="h-3.5 w-3.5" strokeWidth={2.6} /> Sesi berikutnya
                                 </p>
-                                <h2 className="mt-1 truncate text-[18px] font-extrabold leading-tight text-[#12172B]">
+                                <h2 className="mt-0.5 truncate text-[17px] font-extrabold leading-tight text-[#12172B]">
                                   {lang || "Sesi kelas"}{reg?.level ? ` — ${reg.level}` : ""}
                                 </h2>
-                                <p className="mt-0.5 text-[13px] font-medium text-gray-500">
+                                <p className="mt-0.5 text-[12.5px] font-medium text-gray-500">
                                   {hariLabel} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
                                   {guru ? ` · ${guru}` : ""}
                                 </p>
                               </div>
                               <div className="flex shrink-0 items-center gap-2">
-                                <button onClick={() => setActiveTab("jadwal")} className="inline-flex h-11 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]">
+                                <button onClick={() => setActiveTab("jadwal")} className="inline-flex h-10 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 text-[12.5px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]">
                                   <Calendar className="h-4 w-4" strokeWidth={2.2} /> Jadwal
                                 </button>
                                 {joinable ? (
@@ -3845,12 +3852,12 @@ export default function AkunPage() {
                                     href={classRoomUrl(sesiBerikutnya.id, { title: lang ? `Kelas ${lang}` : "Kelas Linguo", name: student?.name || undefined })}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-5 text-[13px] font-extrabold text-white transition hover:bg-[#0F5A52]"
+                                    className="inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-4 text-[12.5px] font-extrabold text-white transition hover:bg-[#0F5A52]"
                                   >
                                     <Video className="h-4 w-4" strokeWidth={2.4} /> Masuk Kelas
                                   </a>
                                 ) : (
-                                  <span className="inline-flex h-11 items-center rounded-2xl bg-slate-50 px-4 text-[12.5px] font-bold text-gray-500">
+                                  <span className="inline-flex h-10 items-center rounded-2xl bg-slate-50 px-3.5 text-[12px] font-bold text-gray-500">
                                     Link aktif 15 menit sebelum mulai
                                   </span>
                                 )}
@@ -3873,11 +3880,23 @@ export default function AkunPage() {
                         />
                       )}
 
+                      {/* [beranda-kosakata-v1] Berapa kata yang sudah dikuasai, kata
+                          apa saja, dan targetnya berapa — dulu tak ada jawabannya di
+                          dashboard: kata simpanan cuma kelihatan di dalam flashcard,
+                          kosakata materi tak pernah dihitung sama sekali. */}
+                      {!belumPunyaApaPun && (
+                        <KosakataCard
+                          userId={user?.id}
+                          levels={liveRegsAll.map((r: any) => r.level)}
+                          previewMode={previewMode}
+                        />
+                      )}
+
                       {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
                           gantinya banner promo + 3 CTA rebutan yang dulu jadi layar pertama. */}
                       {belumPunyaApaPun && (
                         <div className="rounded-3xl bg-white p-6 ring-1 ring-slate-200 sm:p-7">
-                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Mulai dari sini</h2>
+                          <h2 className="text-[18px] font-extrabold text-[#12172B]">Mulai dari sini</h2>
                           <p className="mt-1 text-[13.5px] font-medium text-gray-500">Tiga langkah, sepuluh menit — habis itu kamu udah punya kelas.</p>
                           <ol className="mt-5 grid gap-3 sm:grid-cols-3">
                             {([
@@ -3902,7 +3921,7 @@ export default function AkunPage() {
                       {pendingRegs.length > 0 && (
                         <div>
                           <div className="flex items-center gap-2">
-                            <h2 className="inline-flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]">
+                            <h2 className="inline-flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]">
                               <Clock className="h-5 w-5 text-amber-500" strokeWidth={2.5} />
                               Perlu Perhatian
                             </h2>
@@ -3910,7 +3929,7 @@ export default function AkunPage() {
                               {pendingRegs.length}
                             </span>
                           </div>
-                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                             {pendingRegs.map((reg: any) => {
                               const photo = getLangPhoto(reg.language);
                               return (
@@ -3922,7 +3941,7 @@ export default function AkunPage() {
                                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPendingModalReg(reg); } }}
                                 className="group cursor-pointer rounded-3xl bg-white p-3 text-left ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
+                                <div className="relative flex h-32 items-center justify-center overflow-hidden rounded-2xl bg-amber-400">
                                   {photo ? (
                                     <>
                                       <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
@@ -3938,7 +3957,7 @@ export default function AkunPage() {
                                     <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum Bayar
                                   </span>
                                 </div>
-                                <div className="px-2 pb-2 pt-4">
+                                <div className="px-2 pb-1.5 pt-3">
                                   <div className="flex items-center gap-2">
                                     <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                     <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
@@ -3973,7 +3992,7 @@ export default function AkunPage() {
                               <button
                                 key={k}
                                 onClick={() => setBerandaTab(k)}
-                                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-[14px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-[13.5px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
                               >
                                 <Icon className="h-4 w-4" strokeWidth={2.4} /> {label}
                               </button>
@@ -4005,7 +4024,7 @@ export default function AkunPage() {
                         {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
                         {berandaTab === "live" && (
                         (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
-                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                             {(liveView === "riwayat" ? riwayatRegs : liveRegs).map((reg: any, idx: number) => {
                               const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
                               const total = reg.sessions_total || 0;
@@ -4029,7 +4048,7 @@ export default function AkunPage() {
                                   onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
                                   className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                 >
-                                  <div className={`relative flex h-40 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
+                                  <div className={`relative flex h-32 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
                                     {photo ? (
                                       <>
                                         <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
@@ -4052,7 +4071,7 @@ export default function AkunPage() {
                                       </span>
                                     )}
                                   </div>
-                                  <div className="px-2 pb-2 pt-4">
+                                  <div className="px-2 pb-1.5 pt-3">
                                     <div className="flex items-center gap-2">
                                       <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
@@ -4080,7 +4099,7 @@ export default function AkunPage() {
                             {liveView === "aktif" && (
                             <button
                               onClick={openEnrollWizard}
-                              className="flex min-h-[200px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
+                              className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
                             >
                               <Plus className="h-7 w-7" strokeWidth={2} />
                               <span className="text-[13px] font-semibold">Tambah Kelas</span>
@@ -4088,13 +4107,13 @@ export default function AkunPage() {
                             )}
                           </div>
                         ) : liveView === "riwayat" ? (
-                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
+                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
                             <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
+                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
                             <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
@@ -4109,7 +4128,7 @@ export default function AkunPage() {
                         {/* ── Tab: Belajar Mandiri (e-learning / LMS) ── [beranda-kelas-tabs-v1] */}
                         {berandaTab === "mandiri" && (
                         mandiri ? (
-                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                             {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
                             <button
                               key="mandiri-resume"
@@ -4133,7 +4152,7 @@ export default function AkunPage() {
                                   <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
                                 </span>
                               </div>
-                              <div className="px-2 pb-2 pt-4">
+                              <div className="px-2 pb-1.5 pt-3">
                                 <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
                                 <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
                                 <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
@@ -4147,7 +4166,7 @@ export default function AkunPage() {
                             </button>
                           </div>
                         ) : (
-                          <div className="mt-4 rounded-3xl bg-white p-10 text-center">
+                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                             <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
                             <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
@@ -4160,7 +4179,7 @@ export default function AkunPage() {
                       {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
                       {teacherList.length > 0 && (
                         <div>
-                          <h2 className="text-[20px] font-extrabold text-[#12172B]">Pengajar Kamu</h2>
+                          <h2 className="text-[18px] font-extrabold text-[#12172B]">Pengajar Kamu</h2>
                           <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
                             {teacherList.map((t, i) => (
                               <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4">
@@ -4207,7 +4226,7 @@ export default function AkunPage() {
                           <div id="jelajahi-bahasa" className="scroll-mt-6">
                             <div className="flex flex-wrap items-end justify-between gap-3">
                               <div>
-                                <h2 className="flex items-center gap-2 text-[20px] font-extrabold text-[#12172B]"><Globe className="h-5 w-5 text-[#16796E]" strokeWidth={2.4} />Jelajahi Bahasa</h2>
+                                <h2 className="flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><Globe className="h-5 w-5 text-[#16796E]" strokeWidth={2.4} />Jelajahi Bahasa</h2>
                                 <p className="mt-0.5 text-[13px] font-medium text-gray-500">60+ bahasa · CEFR A1–B2 · pilih, lihat silabus, langsung daftar</p>
                               </div>
                               <div className="relative w-full sm:w-[280px]">
