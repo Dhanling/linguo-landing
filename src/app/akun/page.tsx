@@ -190,6 +190,16 @@ type Schedule = {
   session_title?: string | null;
   material_notes?: string | null;
   material_links?: ScheduleMaterialLink[] | null;
+  // jadwal-riwayat-v1: sesi lampau ikut ditarik, jadi presensi & rekamannya perlu
+  attendance_status?: string | null;
+  recording_url?: string | null;
+};
+
+/** jadwal-riwayat-v1: batas riwayat sesi yang ditarik ke kalender siswa (12 bulan). */
+const HISTORY_SINCE = () => {
+  const d = new Date();
+  d.setMonth(d.getMonth() - 12);
+  return d.toISOString();
 };
 
 // ── Constants ────────────────────────────────────────────────────────────
@@ -2288,7 +2298,17 @@ export default function AkunPage() {
   const previewMode = !!previewId;
   const [student, setStudent] = useState<StudentData | null>(null);
   const [badges, setBadges] = useState<Badge[]>([]);
-  const [upcomingSchedules, setUpcomingSchedules] = useState<Schedule[]>([]);
+  // jadwal-riwayat-v1: dulu state ini cuma diisi sesi MENDATANG, jadi kalender di
+  // tab Jadwal selalu tampak kosong buat siswa yang sudah les berbulan-bulan.
+  // Sekarang yang disimpan SELURUH sesi (12 bulan ke belakang s/d mendatang);
+  // `upcomingSchedules` jadi turunan supaya semua pemakai lama tak ikut berubah.
+  const [allSchedules, setAllSchedules] = useState<Schedule[]>([]);
+  const upcomingSchedules = useMemo(() => {
+    const now = Date.now();
+    return allSchedules
+      .filter((s) => (s.status === "scheduled" || s.status === "pending") && new Date(s.scheduled_at).getTime() > now)
+      .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
+  }, [allSchedules]);
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
@@ -2515,7 +2535,9 @@ export default function AkunPage() {
         if (!res.ok) throw new Error("preview fetch failed");
         const json = await res.json();
         setStudent(json.student);
-        setUpcomingSchedules(json.upcomingSchedules || []);
+        // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
+        // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.
+        setAllSchedules(json.schedules || json.upcomingSchedules || []);
       } catch (e) {
         console.error("[preview-student]", e);
       } finally {
@@ -2592,7 +2614,7 @@ export default function AkunPage() {
         const c = JSON.parse(raw);
         if (c?.student) {
           setStudent(c.student);
-          setUpcomingSchedules(c.upcomingSchedules || []);
+          setAllSchedules(c.schedules || c.upcomingSchedules || []); // jadwal-riwayat-v1
           setBadges(c.badges || []);
           if (typeof c.streak === "number") setStreak(c.streak);
           setDataLoading(false);
@@ -2779,10 +2801,12 @@ export default function AkunPage() {
           ? supabase
               .from("schedules")
               // jadwal-recurring-materi-v1: nomor pertemuan + materi ikut ditarik
-              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links")
+              // jadwal-riwayat-v1: + presensi & rekaman, dan TANPA saringan
+              //   status/`gt(now)` — kalender butuh sesi lampau juga. Dibatasi 12 bulan
+              //   ke belakang biar payload siswa lama tetap wajar.
+              .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url")
               .in("registration_id", regIds)
-              .in("status", ["scheduled", "pending"])
-              .gt("scheduled_at", new Date().toISOString())
+              .gte("scheduled_at", HISTORY_SINCE())
               .order("scheduled_at", { ascending: true })
           : Promise.resolve({ data: null } as any),
         supabase
@@ -2802,7 +2826,7 @@ export default function AkunPage() {
 
       const schedData = schedRes.data || [];
       const badgeData = badgeRes.data || [];
-      setUpcomingSchedules(schedData);
+      setAllSchedules(schedData); // jadwal-riwayat-v1
       setBadges(badgeData);
 
       let weekStreak = 0;
@@ -2831,7 +2855,7 @@ export default function AkunPage() {
       try {
         localStorage.setItem(`linguo_akun_cache_${email}`, JSON.stringify({
           student: { ...studentData, registrations: enrichedRegs },
-          upcomingSchedules: schedData,
+          schedules: schedData, // jadwal-riwayat-v1 (dulu `upcomingSchedules`)
           badges: badgeData,
           streak: weekStreak,
         }));
@@ -4200,10 +4224,13 @@ export default function AkunPage() {
             <motion.div key="jadwal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full">
               {/* linguo-patch:akun-jadwal-tab-v1 — kalender LMS, data real dari upcomingSchedules */}
               {(() => {
-                const jadwalSessions = upcomingSchedules.map((s: any) => {
+                // jadwal-riwayat-v1: kalender pakai `allSchedules` (riwayat + mendatang),
+                // bukan `upcomingSchedules` — itu sebabnya bulan berjalan dulu tampak kosong.
+                const jadwalSessions = allSchedules.map((s: any) => {
                   const reg = student?.registrations.find((r: any) => r.id === s.registration_id);
                   return {
                     id: s.id,
+                    registrationId: s.registration_id,
                     scheduledAt: s.scheduled_at,
                     durationMinutes: s.duration_minutes,
                     language: reg?.language || "—",
@@ -4215,8 +4242,20 @@ export default function AkunPage() {
                     materialTitle: s.session_title || "",
                     materialNotes: s.material_notes || "",
                     materialLinks: Array.isArray(s.material_links) ? s.material_links : [],
+                    // jadwal-riwayat-v1
+                    status: s.status,
+                    attendanceStatus: s.attendance_status ?? null,
+                    recordingUrl: s.recording_url ?? null,
                   };
                 });
+                // jadwal-riwayat-v1: dasar ringkasan "Sesi 5 dari 16" per kelas
+                const jadwalClasses = activeRegs.map((r: any) => ({
+                  id: r.id,
+                  language: r.language,
+                  level: r.level || "",
+                  sessionsTotal: r.sessions_total ?? null,
+                  sessionsUsed: r.sessions_used ?? null,
+                }));
                 const jadwalRegulerBatches = activeRegs
                   .filter((r: any) => r.product === "Kelas Reguler" && r.batch)
                   .map((r: any) => ({
@@ -4227,7 +4266,7 @@ export default function AkunPage() {
                     scheduleTime: r.batch.schedule_time,
                     zoomLink: r.batch.zoom_link || null,
                   }));
-                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
+                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} classes={jadwalClasses} />;
               })()}
             </motion.div>
           )}

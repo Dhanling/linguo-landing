@@ -73,17 +73,29 @@ export async function GET(req: NextRequest) {
     batch: r.batch_id ? batchMap[r.batch_id] || null : null,
   }));
 
-  // Jadwal mendatang
+  // Jadwal — jadwal-riwayat-v1: riwayat 12 bulan + sesi mendatang (dulu cuma
+  // mendatang, jadi kalender di POV pratinjau selalu tampak kosong). Kolomnya
+  // WAJIB sama dengan query klien di akun/page.tsx.
   const regIds = registrations.map((r: any) => r.id);
-  let upcomingSchedules: any[] = [];
+  let schedules: any[] = [];
   if (regIds.length > 0) {
-    upcomingSchedules =
+    const since = new Date();
+    since.setMonth(since.getMonth() - 12);
+    schedules =
       (await rest(
         `schedules?registration_id=in.(${regIds.join(",")})` +
-          `&status=in.(scheduled,pending)&scheduled_at=gt.${encodeURIComponent(new Date().toISOString())}` +
-          `&select=id,registration_id,scheduled_at,duration_minutes,status&order=scheduled_at.asc`
+          `&scheduled_at=gte.${encodeURIComponent(since.toISOString())}` +
+          `&select=id,registration_id,scheduled_at,duration_minutes,status,session_number,` +
+          `session_title,material_notes,material_links,attendance_status,recording_url` +
+          `&order=scheduled_at.asc`
       )) || [];
   }
 
-  return NextResponse.json({ student: { ...student, registrations }, upcomingSchedules });
+  // `upcomingSchedules` tetap dikirim buat klien versi lama yang belum tahu `schedules`.
+  const now = Date.now();
+  const upcomingSchedules = schedules.filter(
+    (s: any) => (s.status === "scheduled" || s.status === "pending") && new Date(s.scheduled_at).getTime() > now
+  );
+
+  return NextResponse.json({ student: { ...student, registrations }, schedules, upcomingSchedules });
 }
