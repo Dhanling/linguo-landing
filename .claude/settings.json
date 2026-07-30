@@ -132,7 +132,17 @@
       "Bash(echo \"exit-src-errors=$?\")",
       "Bash(node --check senders.js)",
       "Bash(node --check db.js)",
-      "Bash(pm2 restart *)"
+      "Bash(pm2 restart *)",
+      "Bash(grep -n \"Simulasi selesai\\\\|Rincian jawaban\\\\|function \\\\|const .* = \\(\\\\|=> {$\" src/app/akun/simulasi/\\\\[id\\\\]/page.tsx)",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/leads?program=eq.simulasi&select=id,name,email,source,program,level,amount,paid_amount,paid_at,payment_status,xendit_external_id,converted_registration_id,archived_at,created_at&order=created_at.desc&limit=10' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTAzMTUyMywiZXhwIjoyMDkwNjA3NTIzfQ.Bdcucx2RhhmPZ3Qy0pnBFMbDN97Gxkd1u2riRBSEgWI' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTAzMTUyMywiZXhwIjoyMDkwNjA3NTIzfQ.Bdcucx2RhhmPZ3Qy0pnBFMbDN97Gxkd1u2riRBSEgWI')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/simulation_entitlements?select=*&order=created_at.desc&limit=10' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/xendit_webhook_logs?select=id,external_id,event_type,processed,amount,error_message,created_at&order=created_at.desc&limit=15' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/students?email=eq.kartikaqiyarawangi04@gmail.com&select=id,name,email,created_at,source,is_test' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s https://dashboard.linguo.id/ -o idx.html)",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/leads?select=id,name,wa_number,email,program,language,level,duration,amount,paid_amount,payment_status,xendit_invoice_url,payment_deadline,paid_at,created_at&source=eq.landing-page&xendit_external_id=not.is.null&order=created_at.desc&limit=6' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/leads?id=eq.b163b05e-09b0-41af-a122-c193a14a9674&select=payment_method,payment_channel,xendit_status,xendit_paid_at,xendit_invoice_id,updated_at' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s 'https://jbtgciepdmqxxcjflrxz.supabase.co/rest/v1/leads?id=eq.b163b05e-09b0-41af-a122-c193a14a9674&select=payment_method,payment_channel,xendit_status,xendit_paid_at,xendit_invoice_id' -H 'apikey: __CMDSUB_OUTPUT__' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(SRK=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTAzMTUyMywiZXhwIjoyMDkwNjA3NTIzfQ.Bdcucx2RhhmPZ3Qy0pnBFMbDN97Gxkd1u2riRBSEgWI node -e ' *)"
     ],
     "additionalDirectories": [
       "/Users/muhamadlutfiramadhani/linguo-app/supabase/functions/_shared"

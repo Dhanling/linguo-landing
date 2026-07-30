@@ -20,6 +20,8 @@ import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
 import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights';
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
 import { SkillRow } from '@/components/akun/SkillBar';
+// [nilai-per-pertemuan-v1] nilai kuis tiap pertemuan (schedules.quiz_*)
+import ClassQuizScores, { quizPct } from '@/components/akun/ClassQuizScores';
 import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
@@ -249,6 +251,9 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
         )}
       </section>
 
+      {/* ── Nilai kuis per pertemuan ── */}
+      <ClassQuizScores schedules={schedules} />
+
       {/* ── Timeline sesi ── */}
       <section>
         <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-gray-500">Perjalanan Belajar ({timeline.length} sesi)</h2>
@@ -273,7 +278,22 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
                         {new Date(s.scheduled_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                       </div>
                     </div>
-                    {att && <span className={`shrink-0 rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>{att.label}</span>}
+                    <div className="flex shrink-0 items-center gap-1.5">
+                      {/* [nilai-per-pertemuan-v1] nilai kuis sesi ini — angkanya ditulis
+                          penuh (bukan warna saja) supaya kebaca tanpa membedakan warna */}
+                      {(() => {
+                        const pct = quizPct(s.quiz_score, s.quiz_max);
+                        return pct === null ? null : (
+                          <span
+                            title={`Nilai kuis ${s.quiz_score}/${s.quiz_max}`}
+                            className="rounded-full bg-[#16796E]/10 px-2 py-1 text-xs font-bold text-[#16796E]"
+                          >
+                            Kuis {pct}%
+                          </span>
+                        );
+                      })()}
+                      {att && <span className={`rounded-full px-2 py-1 text-xs font-semibold ${att.cls}`}>{att.label}</span>}
+                    </div>
                   </div>
 
                   {(parsed.topic || parsed.homework || parsed.message || parsed.extras.length > 0) && (
