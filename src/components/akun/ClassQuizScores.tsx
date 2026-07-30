@@ -14,9 +14,40 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
-import { ClipboardCheck, TrendingUp, TrendingDown, X, Check, Minus, Sparkles } from 'lucide-react';
+import {
+  ClipboardCheck, TrendingUp, TrendingDown, X, Check, Minus, Sparkles,
+  ThumbsUp, AlertTriangle, Target, BookOpen,
+} from 'lucide-react';
 
 const BRAND = '#16796E';
+
+// [kuis-sesi-analisis-v1] Rapor kuis: bukan cuma "berapa", tapi KURANGNYA apa dan
+// PERBAIKANNYA bagaimana. Dibuat AI sekali waktu koreksi lalu disimpan di
+// quiz_submissions.analysis — jadi kalimatnya tetap, dan sama persis dengan yang
+// dibaca pengajar di dashboardnya.
+interface QuizAnalysis {
+  summary: string;
+  strengths: string[];
+  weaknesses: string[];
+  improvements: string[];
+  topics: string[];
+}
+
+function parseAnalysis(raw: unknown): QuizAnalysis | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const o = raw as Record<string, unknown>;
+  const list = (v: unknown) =>
+    Array.isArray(v) ? v.map((x) => String(x ?? '').trim()).filter(Boolean) : [];
+  const a: QuizAnalysis = {
+    summary: String(o.summary ?? '').trim(),
+    strengths: list(o.strengths),
+    weaknesses: list(o.weaknesses),
+    improvements: list(o.improvements),
+    topics: list(o.topics),
+  };
+  if (!a.summary && !a.strengths.length && !a.weaknesses.length && !a.improvements.length) return null;
+  return a;
+}
 
 export interface QuizScoreRow {
   id: string;
@@ -134,6 +165,74 @@ export default function ClassQuizScores({ schedules }: { schedules: any[] }) {
   );
 }
 
+// ── Rapor kuis ──────────────────────────────────────────────────────────────
+// Urutan bloknya disengaja: yang sudah bagus → yang masih kurang → perbaikannya.
+// Kalimat "kurang" lebih mudah diterima sesudah siswa melihat apa yang berhasil,
+// dan blok terakhir yang tertinggal di ingatan jadi yang bisa dikerjakan — bukan
+// daftar kesalahan.
+//
+// Warna cuma memperkuat; tiap blok selalu punya JUDUL dan IKON sendiri, jadi
+// maknanya tidak pernah hanya disandikan lewat warna.
+function AnalysisBlock({
+  icon: Icon, title, items, ring, tint, fg,
+}: {
+  icon: typeof ThumbsUp; title: string; items: string[];
+  ring: string; tint: string; fg: string;
+}) {
+  if (!items.length) return null;
+  return (
+    <div className={`rounded-2xl border ${ring} ${tint} p-3`}>
+      <p className={`mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider ${fg}`}>
+        <Icon className="h-3.5 w-3.5" strokeWidth={2.5} /> {title}
+      </p>
+      <ul className="space-y-1.5">
+        {items.map((t, i) => (
+          <li key={i} className="flex gap-2 text-[13px] leading-snug text-gray-700">
+            <span className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full ${fg.replace('text-', 'bg-')}`} />
+            <span>{t}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function AnalysisPanel({ analysis }: { analysis: QuizAnalysis }) {
+  return (
+    <div className="mb-4 space-y-2.5">
+      <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider" style={{ color: BRAND }}>
+        <Sparkles className="h-3.5 w-3.5" strokeWidth={2.5} /> Catatan buat kamu
+      </h3>
+
+      {analysis.summary && (
+        <p className="rounded-2xl bg-gray-50 p-3 text-[13px] leading-relaxed text-gray-600">{analysis.summary}</p>
+      )}
+
+      {/* Kelas warnanya sengaja TANPA modifier opacity (`bg-emerald-50`, bukan
+          `bg-emerald-50/60`): override dark mode di StudentShell menyasar nama
+          kelas polos, dan varian /60 lolos dari situ lalu jadi blok terang
+          menyilaukan di atas latar hitam. */}
+      <AnalysisBlock icon={ThumbsUp} title="Sudah bagus" items={analysis.strengths}
+        ring="border-emerald-200" tint="bg-emerald-50" fg="text-emerald-700" />
+      <AnalysisBlock icon={AlertTriangle} title="Masih kurang" items={analysis.weaknesses}
+        ring="border-amber-200" tint="bg-amber-50" fg="text-amber-700" />
+      <AnalysisBlock icon={Target} title="Perbaikannya" items={analysis.improvements}
+        ring="border-teal-200" tint="bg-teal-50" fg="text-teal-700" />
+
+      {analysis.topics.length > 0 && (
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="flex items-center gap-1 text-[11px] font-semibold text-gray-500">
+            <BookOpen className="h-3 w-3" /> Ulang lagi:
+          </span>
+          {analysis.topics.map((t, i) => (
+            <span key={i} className="rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-semibold text-gray-600">{t}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Pembahasan per soal ─────────────────────────────────────────────────────
 // Kunci jawaban & pembahasan baru boleh dibaca siswa SETELAH kuisnya dikoreksi —
 // itu ditegakkan di RLS (policy quiz_questions_own_read → quiz_my_graded_set_ids),
@@ -150,6 +249,7 @@ interface AnswerRow {
 
 function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => void }) {
   const [answers, setAnswers] = useState<AnswerRow[] | null>(null);
+  const [analysis, setAnalysis] = useState<QuizAnalysis | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -164,6 +264,20 @@ function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => v
       );
       setAnswers(sorted as AnswerRow[]);
     })();
+
+    // Rapornya query terpisah, dan sengaja TIDAK memblokir pembahasan per soal:
+    // kalau kolomnya belum dimigrasi atau rapornya gagal dibuat, siswa tetap
+    // mendapat koreksinya. Dibaca lewat policy quiz_submissions_own_read.
+    (async () => {
+      const { data } = await supabase
+        .from('quiz_submissions')
+        .select('analysis')
+        .eq('id', row.quiz_submission_id)
+        .maybeSingle();
+      if (!alive) return;
+      setAnalysis(parseAnalysis((data as any)?.analysis));
+    })();
+
     return () => { alive = false; };
   }, [row.quiz_submission_id]);
 
@@ -187,6 +301,11 @@ function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => v
           </button>
         </div>
 
+        {/* Rapor dulu, baru soal per soal. Siswa yang buru-buru cuma membaca yang
+            paling atas — jadi yang paling atas harus "harus ngapain", bukan daftar
+            20 soal yang menuntut dia menyimpulkan sendiri. */}
+        {analysis && <AnalysisPanel analysis={analysis} />}
+
         {answers === null ? (
           <div className="py-8 text-center text-sm text-gray-400">Memuat pembahasan…</div>
         ) : answers.length === 0 ? (
@@ -195,11 +314,13 @@ function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => v
           </div>
         ) : (
           <div className="space-y-2.5">
+            <h3 className="pt-1 text-[11px] font-bold uppercase tracking-wider text-gray-500">Koreksi per soal</h3>
             {answers.map((a, i) => {
               const q = a.quiz_questions || {};
               const ok = a.is_correct === true;
               return (
-                <div key={a.id} className={`rounded-2xl border p-3 ${ok ? 'border-emerald-200 bg-emerald-50/60' : 'border-amber-200 bg-amber-50/60'}`}>
+                /* bg tanpa /60 — lihat catatan di AnalysisPanel soal dark mode. */
+                <div key={a.id} className={`rounded-2xl border p-3 ${ok ? 'border-emerald-200 bg-emerald-50' : 'border-amber-200 bg-amber-50'}`}>
                   <div className="mb-1 flex items-center gap-2">
                     <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white text-[10px] font-bold text-gray-600">{i + 1}</span>
                     <span className={`inline-flex items-center gap-1 text-[11px] font-bold ${ok ? 'text-emerald-700' : 'text-amber-700'}`}>
@@ -210,7 +331,7 @@ function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => v
                   </div>
                   <p className="text-[13px] font-medium text-gray-800">{q.prompt}</p>
                   {a.feedback && (
-                    <p className="mt-2 flex items-start gap-1.5 rounded-xl bg-white/80 px-3 py-2 text-[13px] text-gray-600">
+                    <p className="mt-2 flex items-start gap-1.5 rounded-xl bg-white px-3 py-2 text-[13px] text-gray-600">
                       <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0" style={{ color: BRAND }} strokeWidth={2} />
                       <span>{a.feedback}</span>
                     </p>
