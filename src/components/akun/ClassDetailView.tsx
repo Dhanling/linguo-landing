@@ -215,8 +215,16 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
 
   const teacher = (reg.teachers || teacherFix) ? { ...(reg.teachers || {}), ...(teacherFix || {}) } : null;
   const teacherName = teacher?.name ? `${teacher.title || 'Kak'} ${teacher.name}` : '';
-  const progress = reg.sessions_total ? Math.round(((reg.sessions_used || 0) / reg.sessions_total) * 100) : 0;
-  const selesai = (reg.sessions_total > 0 && (reg.sessions_used || 0) >= reg.sessions_total) || !!reg.archived_at;
+  // [blok-sync-v2] sessions_used bisa tertinggal dari presensi yang tercatat di `schedules`
+  // (sesi ditandai selesai lewat menu Jadwal / konfirmasi siswa cuma menyentuh baris
+  // schedule). Dashboard pengajar & tab Progress memakai yang terbesar — samakan di sini
+  // supaya "Progress Sesi" tidak menyebut angka yang berbeda dari grid presensinya.
+  const sesiTerpakai = Math.min(
+    reg.sessions_total || Infinity,
+    Math.max(reg.sessions_used || 0, schedules.filter((s: any) => s.status === 'completed').length),
+  );
+  const progress = reg.sessions_total ? Math.round((sesiTerpakai / reg.sessions_total) * 100) : 0;
+  const selesai = (reg.sessions_total > 0 && sesiTerpakai >= reg.sessions_total) || !!reg.archived_at;
   const photo = getLangPhoto(reg.language);
   const upcoming = schedules.filter((s: any) => ['pending', 'scheduled'].includes(s.status) && new Date(s.scheduled_at).getTime() > Date.now() - 3600_000);
   const history = schedules.filter((s: any) => !upcoming.includes(s));
@@ -291,7 +299,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
         <div className="rounded-2xl bg-gray-50 p-4">
           <div className="mb-2 flex items-center justify-between">
             <div className="text-sm font-semibold text-gray-700">Progress Sesi</div>
-            <div className="text-sm font-bold text-[#16796E]">{reg.sessions_used || 0} / {reg.sessions_total || 0}</div>
+            <div className="text-sm font-bold text-[#16796E]">{sesiTerpakai} / {reg.sessions_total || 0}</div>
           </div>
           <div className="h-2.5 overflow-hidden rounded-full bg-gray-200">
             <div className="h-full rounded-full bg-gradient-to-r from-[#16796E] to-emerald-500 transition-all" style={{ width: `${progress}%` }} />

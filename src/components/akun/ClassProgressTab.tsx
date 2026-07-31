@@ -113,7 +113,12 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
   // attendance_status baris schedules yg session_number-nya cocok, default 'hadir'
   // (samakan default admin). Sesi belum jalan: abu-abu. Siswa TIDAK bisa mengubah.
   const total = reg.sessions_total || 0;
-  const used = Math.min(reg.sessions_used || 0, total);
+  // [blok-sync-v2] kolom sessions_used bisa tertinggal dari presensi yang benar-benar
+  // tercatat di `schedules` (sesi ditandai selesai lewat menu Jadwal / konfirmasi siswa
+  // hanya menyentuh baris schedule). Dashboard pengajar memakai yang terbesar, jadi tanpa
+  // ini siswa bisa melihat 5/16 untuk kelas yang di sisi pengajar sudah 15/16.
+  const rawUsed = Math.max(reg.sessions_used || 0, completedChrono.length);
+  const used = total > 0 ? Math.min(rawUsed, total) : rawUsed;
   const rowBySession: Record<number, any> = {};
   schedules.forEach((s) => { if (s.session_number) rowBySession[s.session_number] = s; });
   const attStatus = (i: number): string => {
