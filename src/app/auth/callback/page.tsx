@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase, initialAuthError } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2]
+import { supabase, initialAuthError, adoptImplicitSessionFromUrl } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [auth-implicit-hash-adopt-v1]
 import Link from "next/link";
 import { Spinner } from "@/components/Spinner";
 
@@ -53,7 +53,11 @@ export default function AuthCallbackPage() {
           deleteCookie("linguo_funnel");
         }
 
-        // Give Supabase a moment to process the hash (implicit flow)
+        // [auth-implicit-hash-adopt-v1] Alur implicit (token di hash) TIDAK
+        // diproses sendiri oleh SDK — klien dikunci PKCE, hash-nya ditolak
+        // "Not a valid PKCE flow url". Tebus manual dulu di sini.
+        await adoptImplicitSessionFromUrl();
+        // Beri jeda buat alur PKCE (?code=) yang memang diproses SDK sendiri.
         await new Promise(r => setTimeout(r, 600));
 
         const { data: { session } } = await supabase.auth.getSession();

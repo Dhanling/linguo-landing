@@ -8,7 +8,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
-import { supabase, initialAuthError, peekSessionUser } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1]
+import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -2570,6 +2570,11 @@ export default function AkunPage() {
       setAuthLoading(false);
     };
     (async () => {
+      // [auth-implicit-hash-adopt-v1] Link login email mendarat di sini dengan
+      // token di hash. Tebus DULU, sebelum tanya sesi — kalau tidak, jawabannya
+      // pasti null dan gate login nongol padahal linknya barusan sah.
+      await adoptImplicitSessionFromUrl();
+      if (!alive) return;
       let { data: { session } } = await supabase.auth.getSession();
       if (!session && peekSessionUser()) {
         await new Promise((r) => setTimeout(r, 900));

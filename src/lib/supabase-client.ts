@@ -30,7 +30,59 @@ export const initialAuthError: { code: string; description: string } | null = ((
 // Flow OAuth otomatis jadi PKCE (default @supabase/ssr): code_verifier ikut
 // disimpan di cookie, jadi pertukaran ?code→session tetap jalan walau Safari.
 // Semua komponen tetap `import { supabase } from "@/lib/supabase-client"` — tak berubah.
-export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey, { auth: { debug: true } });
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+
+/**
+ * [auth-implicit-hash-adopt-v1] Tebus token dari `#access_token=…` (alur implicit).
+ *
+ * Kenapa perlu: `createBrowserClient` mengunci `flowType: "pkce"`. Login Google
+ * memang balik dengan `?code=` (PKCE, aman). TAPI link login lewat email
+ * ("Kirim link login" / magic link) balik dari Supabase dengan token di HASH —
+ * dan klien PKCE menolaknya mentah-mentah:
+ *
+ *     AuthPKCEGrantCodeExchangeError: Not a valid PKCE flow url.
+ *
+ * Akibatnya sesi TIDAK PERNAH tersimpan di browser walau linknya sah: baris
+ * sesi terbuat di server, hash-nya nyangkut di URL, cookie `sb-…-auth-token`
+ * tak pernah ditulis. User melihat gate login lagi (atau UI dari cache lama,
+ * lalu terlempar ke gate begitu pindah halaman) — persis keluhan "klik menu
+ * malah keluar akun".
+ *
+ * Jadi hash-nya kita tebus sendiri lewat setSession(), lalu URL dibersihkan
+ * supaya token tak tertinggal di riwayat browser / tautan yang di-share.
+ *
+ * Idempoten & aman dipanggil di halaman mana pun (tanpa hash → langsung false).
+ */
+export async function adoptImplicitSessionFromUrl(): Promise<boolean> {
+  if (typeof window === "undefined") return false;
+  const hash = window.location.hash;
+  if (!hash || hash.indexOf("access_token") === -1) return false;
+
+  const p = new URLSearchParams(hash.replace(/^#/, ""));
+  const access_token = p.get("access_token");
+  const refresh_token = p.get("refresh_token");
+  // Hash dibersihkan apa pun hasilnya: token sekali pakai, jangan menetap di URL.
+  const clean = () => {
+    try {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    } catch {}
+  };
+  if (!access_token || !refresh_token) return false;
+
+  try {
+    const { error } = await supabase.auth.setSession({ access_token, refresh_token });
+    clean();
+    if (error) {
+      console.warn("[auth-implicit-hash] gagal menebus token dari URL:", error.message);
+      return false;
+    }
+    return true;
+  } catch (e) {
+    clean();
+    console.warn("[auth-implicit-hash] gagal menebus token dari URL:", e);
+    return false;
+  }
+}
 
 /**
  * [perf:session-cookie-peek-v1] Identitas sesi dibaca LANGSUNG dari cookie, sinkron.
