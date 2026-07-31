@@ -2557,16 +2557,35 @@ export default function AkunPage() {
       const peek = peekSessionUser();
       if (peek) { setUser(peek); setAuthLoading(false); }
     }
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // [akun-gate-resilient-v1] Gate login itu vonis berat: sekali muncul, user
+    // merasa "ke-logout". Jadi jawaban `session: null` TIDAK langsung dipercaya —
+    // kalau cookie sesi masih memegang token hidup, itu tanda SDK-nya yang lagi
+    // sial (antre Web Locks, refresh token barusan dirotasi middleware), bukan
+    // sesinya yang mati. Coba sekali lagi sebelum menjatuhkan gate.
+    let alive = true;
+    const settle = (session: any) => {
+      if (!alive) return;
       if (session && nextPath) { window.location.replace(nextPath); return; }
       setUser(session?.user ?? null);
       setAuthLoading(false);
+    };
+    (async () => {
+      let { data: { session } } = await supabase.auth.getSession();
+      if (!session && peekSessionUser()) {
+        await new Promise((r) => setTimeout(r, 900));
+        if (!alive) return;
+        ({ data: { session } } = await supabase.auth.getSession());
+      }
+      settle(session);
+    })();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session) { settle(session); return; }
+      // Event tanpa sesi: cuma SIGNED_OUT yang benar-benar berarti user keluar.
+      // Event lain (INITIAL_SESSION yang balapan, TOKEN_REFRESHED gagal sesaat)
+      // dulu ikut mengosongkan `user` → gate login nongol padahal masih login.
+      if (event === "SIGNED_OUT") { setUser(null); setAuthLoading(false); }
     });
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session && nextPath) { window.location.replace(nextPath); return; }
-      setUser(session?.user ?? null);
-    });
-    return () => subscription.unsubscribe();
+    return () => { alive = false; subscription.unsubscribe(); };
   }, []);
 
   // [preview-student-v1] load data siswa real (server, service role) buat preview
