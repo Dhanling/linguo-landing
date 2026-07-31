@@ -96,11 +96,16 @@ export default function BerandaInsights({
   regs,
   studentName,
   displayLanguage = (l: string) => l,
+  previewStudentId = null,
 }: {
   regs: RegLite[];
   studentName: string;
   displayLanguage?: (lang: string) => string;
+  // [preview-keep-param-v1] POV staf: tautan ke detail kelas wajib membawa
+  // ?preview=, kalau tidak halaman tujuan kehilangan identitas pratinjau.
+  previewStudentId?: string | null;
 }) {
+  const previewQs = previewStudentId ? `&preview=${encodeURIComponent(previewStudentId)}` : "";
   const [fetched, setFetched] = useState<{ key: string; data: StudentInsights } | null>(null);
   const [selReg, setSelReg] = useState<string>('');
   const [shareState, setShareState] = useState('');
@@ -305,7 +310,7 @@ export default function BerandaInsights({
                 )}
               </span>
               <Link
-                href={`/akun/kelas/${activeReg.id}?tab=progress`}
+                href={`/akun/kelas/${activeReg.id}?tab=progress${previewQs}`}
                 onClick={() => handoff(activeReg)}
                 className="inline-flex items-center gap-1 text-[12.5px] font-bold text-[#16796E] hover:text-[#0F5A52]"
               >
@@ -334,7 +339,7 @@ export default function BerandaInsights({
                   return (
                     <Link
                       key={hw.scheduleId}
-                      href={`/akun/kelas/${hw.registrationId}?tab=tugas`}
+                      href={`/akun/kelas/${hw.registrationId}?tab=tugas${previewQs}`}
                       onClick={() => r && handoff(r)}
                       className="group flex items-start gap-2.5 rounded-2xl bg-slate-50 p-3 transition hover:bg-rose-50"
                     >

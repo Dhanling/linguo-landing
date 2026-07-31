@@ -31,10 +31,42 @@ function KelasDetailInner() {
   const [reg, setReg] = useState<any>(null);
   const [loadError, setLoadError] = useState(false);
   const [attempt, setAttempt] = useState(0); // tombol "Coba Lagi" → jalankan ulang effect
+  // [preview-keep-param-v1] POV staf ("Lihat sebagai Siswa"): halaman ini dulu tak
+  // kenal `?preview=` sama sekali. Akibatnya kartu kelas yang diklik dari pratinjau
+  // mendarat di sini TANPA sesi (isinya cuma nyangkut dari handoff sessionStorage),
+  // lalu tiap menu di sidebar mengarah ke /akun polos → gate login. Dari sisi user
+  // persis seperti "klik Beranda malah keluar akun", padahal memang tak pernah login.
+  const previewId = searchParams.get("preview");
+  const [previewSchedules, setPreviewSchedules] = useState<any[] | null>(null);
 
   useEffect(() => {
     let alive = true;
     (async () => {
+      // Mode pratinjau: tak ada sesi yang bisa diverifikasi. Data diambil dari
+      // handoff kartu, atau endpoint pratinjau (service role, dijaga cookie).
+      if (previewId) {
+        let shown = false;
+        try {
+          const h = JSON.parse(sessionStorage.getItem(regHandoffKey(params.id)) || "null");
+          if (h && h.id === params.id && alive) { setReg(h); shown = true; }
+        } catch {}
+        try {
+          const res = await fetch(`/api/preview-student?id=${encodeURIComponent(previewId)}`, { cache: "no-store" });
+          if (!res.ok) throw new Error("preview fetch failed");
+          const json = await res.json();
+          const found = (json.student?.registrations || []).find((r: any) => r.id === params.id);
+          if (!alive) return;
+          if (found) setReg(found);
+          // Jadwal ikut dari endpoint yang sama — query `schedules` langsung
+          // pasti kosong di pratinjau (RLS memblok anon), dan tab Jadwal kosong
+          // itu menyesatkan: kelihatan seperti siswanya belum punya jadwal.
+          setPreviewSchedules((json.schedules || []).filter((s: any) => s.registration_id === params.id));
+          if (!found && !shown) setLoadError(true);
+        } catch {
+          if (alive && !shown) setLoadError(true);
+        }
+        return;
+      }
       // 0) Handoff dari beranda: card sudah punya data reg lengkap → tampil duluan.
       //    Query di bawah tetap jalan sebagai verifikasi + penyegar di background.
       let handoff: any = null;
@@ -114,14 +146,16 @@ function KelasDetailInner() {
       } catch {}
     })();
     return () => { alive = false; };
-  }, [params.id, router, attempt]);
+  }, [params.id, router, attempt, previewId]);
 
-  const goTab = (t: AkunTab) => router.push(`/akun?menu=${t}`);
+  // [preview-keep-param-v1] menu sidebar & tombol kembali ikut membawa ?preview=
+  const previewQs = previewId ? `&preview=${encodeURIComponent(previewId)}` : "";
+  const goTab = (t: AkunTab) => router.push(`/akun?menu=${t}${previewQs}`);
 
   return (
-    <StudentShell active="beranda" onTabChange={goTab}>
+    <StudentShell active="beranda" onTabChange={goTab} previewStudentId={previewId}>
       {reg ? (
-        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} />
+        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} />
       ) : loadError ? (
         <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
           <div className="text-[15px] font-semibold text-slate-700">Gagal memuat detail kelas</div>

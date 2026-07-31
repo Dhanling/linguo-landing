@@ -3599,7 +3599,7 @@ export default function AkunPage() {
                       id: `kelas-${r.id}`, kind: "Kelas",
                       label: `${displayLanguage(r.language)}${r.level ? ` — ${r.level}` : ""}`,
                       sub: PRODUCT_BADGE[r.product]?.label || r.product || "Kelas live",
-                      run: () => router.push(`/akun/kelas/${r.id}`),
+                      run: () => router.push(previewId ? `/akun/kelas/${r.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${r.id}`),
                     });
                   });
                   teacherList.forEach((t) => {
@@ -3901,6 +3901,7 @@ export default function AkunPage() {
                           regs={liveRegsAll}
                           studentName={student?.name || firstName || "Siswa"}
                           displayLanguage={displayLanguage}
+                          previewStudentId={previewId}
                         />
                       )}
 
@@ -4065,7 +4066,11 @@ export default function AkunPage() {
                               return (
                                 <Link
                                   key={reg.id}
-                                  href={`/akun/kelas/${reg.id}`}
+                                  // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
+                                  // ikut. Tanpa itu halaman detail kehilangan identitas
+                                  // pratinjau → tombol menu di sana balik ke /akun polos
+                                  // dan mendarat di gate login (terasa "keluar akun").
+                                  href={previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`}
                                   prefetch
                                   // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
                                   // render instan tanpa nunggu query (anti mental balik ke beranda)

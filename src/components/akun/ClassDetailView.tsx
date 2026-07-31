@@ -22,6 +22,12 @@ import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, Cred
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
   initialTab?: string | null;
+  // [preview-keep-param-v1] POV staf: tautan kembali harus tetap membawa ?preview=,
+  // kalau tidak halaman /akun kehilangan identitas pratinjau → mendarat di gate login.
+  previewStudentId?: string | null;
+  // Jadwal hasil endpoint pratinjau (service role). Di mode pratinjau query
+  // `schedules` biasa selalu kosong karena RLS memblok anon.
+  previewSchedules?: any[] | null;
 }
 
 export type ClassTab = 'overview' | 'jadwal' | 'progress' | 'materi' | 'tugas' | 'rapor';
@@ -39,7 +45,7 @@ const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
 const isValidTab = (t: string | null | undefined): t is ClassTab =>
   !!t && TABS.some((x) => x.id === t);
 
-export default function ClassDetailView({ reg, initialTab }: Props) {
+export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null }: Props) {
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(initialTab) ? initialTab : 'overview');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -71,9 +77,14 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
 
   useEffect(() => {
     if (!reg) return;
+    if (previewStudentId) {
+      setSchedules(previewSchedules || []);
+      setLoading(false);
+      return;
+    }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reg?.id]);
+  }, [reg?.id, previewStudentId, previewSchedules]);
 
   // [teacher-avatar-sync-v1] Tambal data pengajar dari tabel `teachers` (sumber yang
   // SAMA dgn dashboard admin & pengajar) kalau reg (dari handoff/cache lama) belum
@@ -232,7 +243,7 @@ export default function ClassDetailView({ reg, initialTab }: Props) {
   return (
     <main className="mx-auto w-full max-w-[1000px] px-4 pb-16 pt-5 sm:px-6">
       {/* Back */}
-      <Link href="/akun" prefetch className="inline-flex items-center gap-1.5 text-[13px] font-bold text-gray-500 transition hover:text-[#16796E]">
+      <Link href={previewStudentId ? `/akun?preview=${encodeURIComponent(previewStudentId)}` : "/akun"} prefetch className="inline-flex items-center gap-1.5 text-[13px] font-bold text-gray-500 transition hover:text-[#16796E]">
         <ArrowLeft className="h-4 w-4" strokeWidth={2.5} /> Kembali ke Beranda
       </Link>
 
