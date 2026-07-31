@@ -13,12 +13,16 @@
 //   * bahasa itu belum punya konsep/bank soal,
 //   * sesi sebelumnya masih pending / dikerjakan dan belum hangus.
 //
-// Auth: Authorization: Bearer <CRON_SECRET>
+// Auth: Authorization: Bearer <CRON_SECRET | QUIZ_BOT_SECRET>
+//   CRON_SECRET dipakai Vercel Cron. QUIZ_BOT_SECRET ikut diterima supaya cron
+//   ini bisa dipicu ulang manual — CRON_SECRET ditandai "sensitive" di Vercel
+//   dan nilainya tidak bisa dibaca lagi dari luar, jadi tanpa jalur kedua tidak
+//   ada cara menjalankan ulang pembuatan kuis kalau cron paginya terlewat.
 // ============================================================================
 
 import { NextResponse } from "next/server";
 import { quizAdmin } from "@/lib/quiz/db";
-import { guardCron } from "@/lib/quiz/auth";
+import { guardBot } from "@/lib/quiz/auth";
 import { createQuizSession, findOpenSession, sessionUrl } from "@/lib/quiz/session";
 import { toLangCode } from "@/lib/quiz/language";
 
@@ -38,7 +42,7 @@ interface Dispatch {
 }
 
 async function run(req: Request) {
-  const denied = guardCron(req);
+  const denied = guardBot(req);
   if (denied) return denied;
 
   const admin = quizAdmin();
