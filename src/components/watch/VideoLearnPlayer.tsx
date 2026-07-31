@@ -3561,6 +3561,21 @@ export default function VideoLearnPlayer({
                         Analisa
                       </span>
                     </button>
+                    {/* [watch-translit-ruby-v1] Bacaan Latin dibaca DULUAN (di atas
+                        aksara aslinya) — sejajar dengan subtitle di atas video.
+                        Posisinya sama untuk baris aktif & non-aktif supaya daftar
+                        tak "loncat" saat baris berganti. */}
+                    {c.translit && !cueIsExplanation(c, langCode) && (
+                      <TranslitLine
+                        target={c.target}
+                        translit={c.translit}
+                        langCode={langCode}
+                        hoveredK={hoverWord?.i === i ? hoverWord.k : null}
+                        onHover={(k) => setHoverWord(k == null ? null : { i, k })}
+                        className="wl-cue-line mb-0.5 italic"
+                        style={{ color: "#fff", textShadow: "none", fontSize: 12 * fscale }}
+                      />
+                    )}
                     {on ? (
                       <KaraokeText
                         cue={c}
@@ -3649,17 +3664,6 @@ export default function VideoLearnPlayer({
                           return out;
                         })()}
                       </p>
-                    )}
-                    {c.translit && !cueIsExplanation(c, langCode) && (
-                      <TranslitLine
-                        target={c.target}
-                        translit={c.translit}
-                        langCode={langCode}
-                        hoveredK={hoverWord?.i === i ? hoverWord.k : null}
-                        onHover={(k) => setHoverWord(k == null ? null : { i, k })}
-                        className="wl-cue-line mt-0.5 italic"
-                        style={{ color: "#fff", textShadow: "none", fontSize: 12 * fscale }}
-                      />
                     )}
                     {c.base &&
                       showPanelTr &&
@@ -3937,6 +3941,16 @@ function FocusLine({
         : null,
     [cue, langCode, breakdown, alignMap]
   );
+  // [watch-translit-ruby-v1] Bahasa non-Latin (Mandarin/Jepang/Korea/Arab/Rusia…):
+  // bacaan Latin dicetak DI ATAS tiap kata seperti referensi, bukan sebagai baris
+  // di bawah subtitle. Kalau tak bisa diselaraskan per-kata → null, dan baris
+  // translit utuh dirender (tetap di ATAS kalimat target).
+  const hasTranslit = !!(cue && cue.translit && !cueIsExplanation(cue, langCode ?? ""));
+  const rubyByK = useMemo(
+    () =>
+      cue && hasTranslit ? buildRubyByK(cue.target, cue.translit ?? "", langCode) : null,
+    [cue, hasTranslit, langCode]
+  );
   if (txState !== "ready") {
     return (
       <div className="flex min-h-[92px] items-center justify-center px-6 py-4 text-center">
@@ -4002,12 +4016,8 @@ function FocusLine({
                       {t.gloss}
                     </span>
                   )}
-                  <span
-                    className="block font-extrabold leading-tight"
-                    style={{ color: POS_COLOR[t.cat], fontSize: 21 * scale }}
-                  >
-                    {t.word}
-                  </span>
+                  {/* [watch-translit-ruby-v1] Bacaan Latin DI ATAS kata (ala
+                      furigana) — sama seperti subtitle & panel transkrip. */}
                   {t.translit && (
                     <span
                       className="block italic leading-tight"
@@ -4016,6 +4026,12 @@ function FocusLine({
                       {t.translit}
                     </span>
                   )}
+                  <span
+                    className="block font-extrabold leading-tight"
+                    style={{ color: POS_COLOR[t.cat], fontSize: 21 * scale }}
+                  >
+                    {t.word}
+                  </span>
                   <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
                     {POS_LABEL_ID[t.cat]}
                   </span>
@@ -4060,6 +4076,19 @@ function FocusLine({
       >
       {showTarget && (
         <>
+          {/* [watch-translit-ruby-v1] Fallback: translit yang tak bisa dipetakan
+              per-kata tetap tampil sebagai baris utuh — tapi di ATAS kalimat
+              target (referensi user), dengan karaoke yang sama sinkronnya. */}
+          {hasTranslit && !rubyByK && (
+            <KaraokeTranslit
+              cue={cue}
+              time={time}
+              langCode={langCode}
+              tapped={tapped}
+              className="mb-1 italic"
+              style={{ fontSize: 13 * scale }}
+            />
+          )}
           <KaraokeText
             cue={cue}
             time={time}
@@ -4072,20 +4101,11 @@ function FocusLine({
             hotKeys={hot?.t}
             onHoverWord={onHoverWord}
             chunks={chunks}
+            rubyByK={rubyByK}
             className="font-extrabold leading-snug"
             fontSize={22 * scale}
             center
           />
-          {cue.translit && !cueIsExplanation(cue, langCode ?? "") && (
-            <KaraokeTranslit
-              cue={cue}
-              time={time}
-              langCode={langCode}
-              tapped={tapped}
-              className="mt-1 italic"
-              style={{ fontSize: 13 * scale }}
-            />
-          )}
         </>
       )}
       {!showTranslation ? null : cue.base && !isDuplicateBase(cue, langCode ?? "") ? (
@@ -4233,6 +4253,31 @@ function alignTranslitTokens(
   });
   let wi = -1;
   return pieces.map((p) => (p.trim().length ? { text: p, k: pieceK[++wi] } : { text: p, k: -1 }));
+}
+
+// [watch-translit-ruby-v1] Ubah satu baris transliterasi jadi peta per-kata:
+// ordinal kata target (k) → bacaan Latin kata itu. Dipakai buat mencetak pinyin/
+// romaji PERSIS di atas aksaranya (referensi user), bukan sebagai baris sendiri.
+// null kalau translit tak bisa diselaraskan ke kata (lihat alignTranslitTokens) →
+// pemanggil balik ke baris translit utuh (tetap di ATAS subtitle).
+function buildRubyByK(
+  target: string,
+  translit: string,
+  langCode?: string
+): Map<number, string> | null {
+  const toks = alignTranslitTokens(target, translit, langCode);
+  if (!toks) return null;
+  const map = new Map<number, string>();
+  for (const t of toks) {
+    if (t.k < 0) continue;
+    const piece = t.text.trim();
+    if (!piece) continue;
+    // Satu kata target bisa dapat >1 token translit (mis. "měi zhōu" utk 每周) →
+    // digabung dengan spasi supaya tetap terbaca sebagai satu bacaan.
+    const prev = map.get(t.k);
+    map.set(t.k, prev ? `${prev} ${piece}` : piece);
+  }
+  return map.size ? map : null;
 }
 
 // Baris transliterasi dengan token yang bisa disorot sinkron dengan kata target.
@@ -4383,9 +4428,13 @@ function KaraokeWord({
   onHoverOpen,
   onHoverClose,
   plain,
+  ruby,
 }: {
   text: string;
   state: KaraokeState;
+  // [watch-translit-ruby-v1] Bacaan Latin kata INI (pinyin/romaji/dsb) dicetak
+  // PERSIS DI ATAS katanya ala furigana — bukan lagi baris terpisah di bawah.
+  ruby?: string;
   // [watch-panel-plain-v1] Matikan outline hitam (dipakai di panel transkrip).
   plain?: boolean;
   progress: number;
@@ -4446,7 +4495,31 @@ function KaraokeWord({
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
-      {text}
+      {/* [watch-translit-ruby-v1] Susun 2 baris DALAM SATU kotak inline-block:
+          bacaan Latin di atas, aksara aslinya di bawah. Karena inline-block
+          mengambil baseline dari baris TERAKHIR-nya, kata tetap sejajar dengan
+          token pemisah (spasi/tanda baca) di sekitarnya. Warnanya diwarisi dari
+          kata → sorotan karaoke otomatis SINKRON di kedua baris. */}
+      {ruby ? (
+        <>
+          <span
+            aria-hidden
+            className="block whitespace-nowrap text-center italic"
+            style={{
+              fontSize: "0.58em",
+              lineHeight: 1.15,
+              marginBottom: "0.12em",
+              // Outline tipis: font kecil + stroke tebal bikin huruf dempet.
+              textShadow: plain ? "none" : TRANSLIT_OUTLINE,
+            }}
+          >
+            {ruby}
+          </span>
+          <span className="block text-center">{text}</span>
+        </>
+      ) : (
+        text
+      )}
     </span>
   );
 }
@@ -4498,9 +4571,14 @@ function KaraokeText({
   fontSize,
   center,
   plain,
+  rubyByK,
 }: {
   cue: LearnCue;
   time: number;
+  // [watch-translit-ruby-v1] Peta ordinal-kata → bacaan Latin. Ada isinya → tiap
+  // kata mencetak bacaannya SENDIRI di atas kepalanya (ala furigana), jadi baris
+  // transliterasi terpisah tak perlu dirender lagi oleh pemanggil.
+  rubyByK?: Map<number, string> | null;
   // [watch-panel-plain-v1] Tanpa outline hitam — teks putih polos (panel transkrip).
   plain?: boolean;
   langCode?: string;
@@ -4559,6 +4637,7 @@ function KaraokeText({
         hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
         onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
         plain={plain}
+        ruby={rubyByK?.get(wordK[j])}
       />
     );
   };
