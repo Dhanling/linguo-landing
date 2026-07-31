@@ -69,6 +69,19 @@ async function run(req: Request) {
       | { id: string; name: string | null; whatsapp: string | null; is_archived: boolean | null }[];
   };
 
+  // Bahasa yang katalog konsepnya SUDAH ada — ditarik sekali di depan.
+  // Tanpa ini, tiap siswa berbahasa "belum ada konsepnya" tetap menjalani
+  // rangkaian query penjadwal sampai gagal; dengan 127 siswa seperti itu,
+  // cron menghabiskan ~4 menit cuma untuk memastikan tidak ada yang bisa dibuat.
+  const { data: langRows, error: langErr } = await admin
+    .from("sr_concepts")
+    .select("language_code")
+    .eq("is_active", true);
+  if (langErr) {
+    return NextResponse.json({ error: `Gagal baca katalog konsep: ${langErr.message}` }, { status: 500 });
+  }
+  const langSiap = new Set((langRows ?? []).map((r) => (r as { language_code: string }).language_code));
+
   const seen = new Set<string>();
   const targets: { studentId: string; name: string | null; phone: string | null; lang: string }[] = [];
   const skipped: { student_id: string; reason: string }[] = [];
@@ -84,55 +97,69 @@ async function run(req: Request) {
       skipped.push({ student_id: row.student_id, reason: `bahasa tidak dikenali: ${row.language}` });
       continue;
     }
+    if (!langSiap.has(lang)) {
+      skipped.push({ student_id: row.student_id, reason: `Belum ada konsep aktif untuk bahasa "${lang}".` });
+      continue;
+    }
     targets.push({ studentId: row.student_id, name: s.name, phone: s.whatsapp, lang });
   }
 
   const dispatches: Dispatch[] = [];
   const failed: { student_id: string; error: string }[] = [];
 
-  for (const t of targets) {
-    try {
-      const open = await findOpenSession(admin, t.studentId, now);
-      if (open) {
-        // Sesi kemarin belum dikerjakan → jangan bikin yang baru. Kalau belum
-        // sempat terkirim, biarkan tetap masuk antrean dispatch.
-        if (!open.dispatched_at) {
+  // Diproses berkelompok, bukan satu-satu. Tiap siswa butuh beberapa perjalanan
+  // bolak-balik ke Supabase (±1,4 detik dari region Vercel); berurutan, 200 siswa
+  // saja sudah menembus batas 300 detik fungsi. Delapan sekaligus cukup cepat
+  // tanpa membanjiri connection pool.
+  const CONCURRENCY = 8;
+  for (let start = 0; start < targets.length; start += CONCURRENCY) {
+    const batch = targets.slice(start, start + CONCURRENCY);
+    await Promise.all(
+      batch.map(async (t) => {
+        try {
+          const open = await findOpenSession(admin, t.studentId, now);
+          if (open) {
+            // Sesi kemarin belum dikerjakan → jangan bikin yang baru. Kalau belum
+            // sempat terkirim, biarkan tetap masuk antrean dispatch.
+            if (!open.dispatched_at) {
+              dispatches.push({
+                student_id: t.studentId,
+                name: t.name,
+                phone: t.phone,
+                url: sessionUrl(open.token),
+                language_code: open.language_code,
+                session_id: open.id,
+                reused: true,
+              });
+            } else {
+              skipped.push({ student_id: t.studentId, reason: "sesi sebelumnya masih terbuka" });
+            }
+            return;
+          }
+
+          const built = await createQuizSession(admin, t.studentId, t.lang, now);
           dispatches.push({
             student_id: t.studentId,
             name: t.name,
             phone: t.phone,
-            url: sessionUrl(open.token),
-            language_code: open.language_code,
-            session_id: open.id,
-            reused: true,
+            url: built.url,
+            language_code: t.lang,
+            session_id: built.session.id,
+            reused: false,
           });
-        } else {
-          skipped.push({ student_id: t.studentId, reason: "sesi sebelumnya masih terbuka" });
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err);
+          // Bahasa yang belum punya bank soal adalah keadaan NORMAL selama katalog
+          // konsep belum lengkap — catat sebagai dilewati, bukan sebagai kegagalan.
+          if (/Belum ada konsep aktif|Tidak ada materi jatuh tempo|Bank soal kosong/.test(msg)) {
+            skipped.push({ student_id: t.studentId, reason: msg });
+          } else {
+            failed.push({ student_id: t.studentId, error: msg });
+            console.error("[kuis] cron gagal untuk siswa", t.studentId, msg);
+          }
         }
-        continue;
-      }
-
-      const built = await createQuizSession(admin, t.studentId, t.lang, now);
-      dispatches.push({
-        student_id: t.studentId,
-        name: t.name,
-        phone: t.phone,
-        url: built.url,
-        language_code: t.lang,
-        session_id: built.session.id,
-        reused: false,
-      });
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      // Bahasa yang belum punya bank soal adalah keadaan NORMAL selama katalog
-      // konsep belum lengkap — catat sebagai dilewati, bukan sebagai kegagalan.
-      if (/Belum ada konsep aktif|Tidak ada materi jatuh tempo|Bank soal kosong/.test(msg)) {
-        skipped.push({ student_id: t.studentId, reason: msg });
-      } else {
-        failed.push({ student_id: t.studentId, error: msg });
-        console.error("[kuis] cron gagal untuk siswa", t.studentId, msg);
-      }
-    }
+      })
+    );
   }
 
   // Sekalian bersih-bersih: sesi yang lewat 48 jam ditandai hangus supaya tidak

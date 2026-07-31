@@ -30,7 +30,7 @@ export const initialAuthError: { code: string; description: string } | null = ((
 // Flow OAuth otomatis jadi PKCE (default @supabase/ssr): code_verifier ikut
 // disimpan di cookie, jadi pertukaran ?code→session tetap jalan walau Safari.
 // Semua komponen tetap `import { supabase } from "@/lib/supabase-client"` — tak berubah.
-export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey, { auth: { debug: true } });
 
 /**
  * [perf:session-cookie-peek-v1] Identitas sesi dibaca LANGSUNG dari cookie, sinkron.
