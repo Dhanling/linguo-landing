@@ -8,7 +8,9 @@ import { supabase } from "@/lib/supabase-client";
 import { canAccessMateri as canAccessMateriGate } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
+// [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
+import BugReportDialog from "@/components/akun/BugReportDialog";
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
 
@@ -208,6 +210,11 @@ export default function StudentShell({
   // dan bottom nav cuma punya 5 slot → Lingbook, Simulasi Tes, Kosakata, Perpustakaan
   // & Sertifikat SAMA SEKALI ga bisa dibuka di HP/tablet.
   const [drawerOpen, setDrawerOpen] = useState(false);
+  /* [bug-report-pengajar-siswa-v1] Form lapor bug hidup di SHELL supaya tombolnya ikut
+     ke semua halaman LMS. Di mode pratinjau (POV staf) disembunyikan: yang login di
+     sana bukan siswanya, laporan atas namanya cuma bikin salah alamat. */
+  const [bugOpen, setBugOpen] = useState(false);
+  const canReportBug = !previewStudentId;
   useEffect(() => {
     if (!drawerOpen) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setDrawerOpen(false); };
@@ -292,6 +299,16 @@ export default function StudentShell({
       <span className="truncate">{isDark ? "Mode terang" : "Mode gelap"}</span>
     </button>
   );
+
+  const bugBtn = canReportBug ? (
+    <button
+      onClick={() => setBugOpen(true)}
+      className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
+    >
+      <Bug className={NAV_ICON} />
+      <span className="truncate">Lapor Bug</span>
+    </button>
+  ) : null;
 
   const logoutBtn = (
     <button onClick={signOut} className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}>
@@ -381,6 +398,7 @@ export default function StudentShell({
 
           {/* bottom group: dark toggle + logout */}
           <div className="mt-auto flex flex-col gap-1.5 pt-6">
+            {bugBtn}
             {themeBtn}
             {logoutBtn}
           </div>
@@ -403,6 +421,16 @@ export default function StudentShell({
             <img src="/images/logo-linguo-icon.png" alt="" className="h-7 w-7 shrink-0 object-contain" />
             <span className="truncate text-[15px] font-bold text-[#12172B]">Linguo</span>
           </span>
+          {canReportBug && (
+            <button
+              onClick={() => setBugOpen(true)}
+              aria-label="Lapor Bug"
+              title="Lapor Bug"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#12172B] transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]"
+            >
+              <Bug className="h-5 w-5" strokeWidth={2.2} />
+            </button>
+          )}
           {studentId && <NotificationBell userId={studentId} userType="student" />}
         </header>
 
@@ -455,6 +483,7 @@ export default function StudentShell({
               </nav>
 
               <div className="mt-auto flex flex-col gap-1.5 pt-6">
+                {bugBtn}
                 {themeBtn}
                 {logoutBtn}
               </div>
@@ -472,6 +501,8 @@ export default function StudentShell({
 
       {/* ── BOTTOM NAV MOBILE ── dipindah ke shell (dulu cuma dirender di /akun,
           jadi halaman lain nol navigasi di HP: cuma bisa keluar via back browser). */}
+      {canReportBug && <BugReportDialog open={bugOpen} onClose={() => setBugOpen(false)} />}
+
       {!immersive && (
         <MobileBottomNav
           activeTab={BOTTOM_TAB[active] || "beranda"}
