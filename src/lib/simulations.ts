@@ -4,6 +4,9 @@
 // edge function grade-simulation (transcribe speaking + AI scoring).
 import { supabase } from "@/lib/supabase-client";
 import { PROMO_SOURCE_PREFIX, FREE_PROMOS } from "@/lib/simulasiPakets";
+// Hanya tipe (dihapus saat kompilasi) — simScore mengimpor tipe dari file ini,
+// jadi impor nilai akan jadi lingkaran.
+import type { SkillRaw } from "@/lib/simScore";
 
 export type TestType = "toefl" | "ielts" | "jlpt" | "hsk" | "topik" | "goethe";
 // Varian/level: IELTS Academic/General · TOEFL ITP/iBT · JLPT N5–N1 · HSK 1–6 ·
@@ -467,6 +470,176 @@ export async function saveAnswers(attemptId: string, answers: AnswerPayload[]): 
     .from("simulation_answers")
     .insert(answers.map((a) => ({ attempt_id: attemptId, ...a })));
   return !error;
+}
+
+// ── [sim-riwayat-v1] Riwayat pengerjaan & hasil lama ─────────────────────────
+// Siswa sering menutup halaman hasil lalu tak bisa menemukan skornya lagi.
+// Riwayat dibaca dari simulation_attempts (RLS "Own attempts" → baris sendiri),
+// rincian per subtes dari simulation_answers (RLS "Own answers").
+
+export interface AttemptSummary {
+  id: string;
+  simulation_id: string;
+  title: string;
+  test_type: TestType;
+  test_variant: TestVariant | null;
+  status: string;
+  score: number | null;
+  max_score: number | null;
+  started_at: string;
+  submitted_at: string | null;
+  skills: SkillRaw[]; // rincian per subtes → konversi skala resmi (lib/simScore)
+}
+
+export interface AttemptAnswerRow {
+  question_id: string;
+  section_skill: Skill | null;
+  response_text: string | null;
+  audio_url: string | null;
+  selected_index: number | null;
+  is_correct: boolean | null;
+  points_earned: number | null;
+  ai_score: number | null;
+  ai_feedback: string | null;
+}
+
+const SKILL_ORDER: Skill[] = ["listening", "structure", "reading", "writing", "speaking"];
+
+// Kumpulkan jawaban jadi rincian per subtes (benar/objektif/nilai AI/poin).
+export function aggregateSkills(
+  rows: Array<Pick<AttemptAnswerRow, "section_skill" | "is_correct" | "points_earned" | "ai_score">>,
+  maxPointsOf?: (row: any) => number,
+): SkillRaw[] {
+  const map = new Map<Skill, SkillRaw>();
+  rows.forEach((r) => {
+    const skill = (r.section_skill ?? "reading") as Skill;
+    if (!map.has(skill)) map.set(skill, { skill, correct: 0, objective: 0, aiScores: [], earned: 0, max: 0 });
+    const s = map.get(skill)!;
+    if (r.is_correct != null) { s.objective += 1; if (r.is_correct) s.correct += 1; }
+    if (r.ai_score != null) s.aiScores.push(Number(r.ai_score));
+    s.earned += Number(r.points_earned ?? 0);
+    if (maxPointsOf) s.max += maxPointsOf(r);
+  });
+  return Array.from(map.values()).sort(
+    (a, b) => SKILL_ORDER.indexOf(a.skill) - SKILL_ORDER.indexOf(b.skill),
+  );
+}
+
+// Riwayat attempt yang sudah dikumpulkan, terbaru dulu.
+export async function fetchMyAttempts(limit = 30): Promise<AttemptSummary[]> {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session?.user) return [];
+
+  // Sengaja TANPA join ke test_simulations: kalau entitlement/publikasi simulasi
+  // berubah, inner join akan menelan seluruh baris riwayat. Judul diambil terpisah
+  // dan tetap tampil apa adanya bila simulasinya sudah tak terbaca.
+  const { data: rows } = await supabase
+    .from("simulation_attempts")
+    .select("id, simulation_id, status, score, max_score, started_at, submitted_at")
+    .eq("user_id", session.user.id)
+    .not("submitted_at", "is", null)
+    .order("submitted_at", { ascending: false })
+    .limit(limit);
+  if (!rows || rows.length === 0) return [];
+
+  const simIds = Array.from(new Set(rows.map((r: any) => r.simulation_id)));
+  const attemptIds = rows.map((r: any) => r.id);
+  const [{ data: sims }, { data: answers }] = await Promise.all([
+    supabase.from("test_simulations").select("id, title, test_type, test_variant").in("id", simIds),
+    supabase
+      .from("simulation_answers")
+      .select("attempt_id, section_skill, is_correct, points_earned, ai_score")
+      .in("attempt_id", attemptIds),
+  ]);
+
+  const simOf = new Map<string, any>();
+  (sims || []).forEach((s: any) => simOf.set(s.id, s));
+  const ansOf = new Map<string, any[]>();
+  (answers || []).forEach((a: any) => {
+    const list = ansOf.get(a.attempt_id) ?? [];
+    list.push(a);
+    ansOf.set(a.attempt_id, list);
+  });
+
+  return rows.map((r: any) => {
+    const sim = simOf.get(r.simulation_id);
+    return {
+      id: r.id,
+      simulation_id: r.simulation_id,
+      title: sim?.title ?? "Simulasi",
+      test_type: (sim?.test_type ?? "toefl") as TestType,
+      test_variant: (sim?.test_variant ?? null) as TestVariant | null,
+      status: r.status,
+      score: r.score == null ? null : Number(r.score),
+      max_score: r.max_score == null ? null : Number(r.max_score),
+      started_at: r.started_at,
+      submitted_at: r.submitted_at,
+      skills: aggregateSkills(ansOf.get(r.id) ?? []),
+    };
+  });
+}
+
+// Satu attempt lama beserta soal & jawabannya → untuk halaman "lihat hasil lagi".
+export async function fetchAttemptReview(attemptId: string): Promise<{
+  attempt: AttemptSummary;
+  simulation: Simulation | null;
+  sections: Section[];
+  questions: Question[];
+  answers: AttemptAnswerRow[];
+} | null> {
+  const { data: att } = await supabase
+    .from("simulation_attempts")
+    .select("id, simulation_id, status, score, max_score, started_at, submitted_at")
+    .eq("id", attemptId)
+    .maybeSingle();
+  if (!att) return null;
+
+  // Simulasi diambil TANPA filter is_published — attempt-nya sudah selesai, jadi
+  // hasilnya harus tetap bisa dibuka walau simulasinya dikembalikan ke draft.
+  const [{ data: sim }, { data: secs }, { data: ansRows }] = await Promise.all([
+    supabase.from("test_simulations").select("*").eq("id", att.simulation_id).maybeSingle(),
+    supabase
+      .from("test_simulation_sections").select("*").eq("simulation_id", att.simulation_id)
+      .order("sort_order", { ascending: true }),
+    supabase
+      .from("simulation_answers")
+      .select("question_id, section_skill, response_text, audio_url, selected_index, is_correct, points_earned, ai_score, ai_feedback")
+      .eq("attempt_id", attemptId),
+  ]);
+
+  const sections = orderSectionsGrouped((secs as Section[]) || []);
+  let questions: Question[] = [];
+  if (sections.length) {
+    const { data: qData } = await supabase
+      .from("test_simulation_questions").select("*")
+      .in("section_id", sections.map((s) => s.id))
+      .order("sort_order", { ascending: true });
+    questions = stripPromptNumbers(orderQuestions(sections, (qData as Question[]) || []));
+  }
+
+  const answers = (ansRows as AttemptAnswerRow[]) || [];
+  const pointsOf = new Map<string, number>();
+  questions.forEach((q) => pointsOf.set(q.id, q.points));
+
+  return {
+    attempt: {
+      id: att.id,
+      simulation_id: att.simulation_id,
+      title: (sim as any)?.title ?? "Simulasi",
+      test_type: ((sim as any)?.test_type ?? "toefl") as TestType,
+      test_variant: ((sim as any)?.test_variant ?? null) as TestVariant | null,
+      status: att.status,
+      score: att.score == null ? null : Number(att.score),
+      max_score: att.max_score == null ? null : Number(att.max_score),
+      started_at: att.started_at,
+      submitted_at: att.submitted_at,
+      skills: aggregateSkills(answers, (r: AttemptAnswerRow) => pointsOf.get(r.question_id) ?? 0),
+    },
+    simulation: (sim as Simulation) ?? null,
+    sections,
+    questions,
+    answers,
+  };
 }
 
 export async function finalizeAttempt(attemptId: string, totals: {

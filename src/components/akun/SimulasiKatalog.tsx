@@ -12,6 +12,8 @@ import {
   ClipboardCheck, ArrowRight, Layers, ListChecks, Clock, Globe, Loader2, Lock, Sparkles, PlayCircle,
 } from "lucide-react";
 import SimulasiBeliModal from "./SimulasiBeliModal";
+// [sim-riwayat-v1] daftar skor pengerjaan sebelumnya (tak tampil di mode pratinjau)
+import RiwayatSkor from "./simulasi/RiwayatSkor";
 import { testTypeHasAvailable } from "@/lib/simulasiPakets";
 import { readProgress, readAnyProgress, answeredCount } from "@/lib/simProgress";
 
@@ -193,6 +195,11 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
           <p className="text-sm text-slate-600">Kamu perlu masuk dulu untuk mengerjakan simulasi.</p>
         </div>
       ) : (
+        <>
+        {/* Riwayat skor duluan: pertanyaan paling sering siswa = "skor tes saya
+            sebelumnya di mana?". Pratinjau staf tak punya sesi → dilewati. */}
+        {!preview && <RiwayatSkor />}
+
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {/* Paket terkunci (belum dibeli) → CTA ke halaman checkout */}
           {lockedTypes.map((t) => {
@@ -329,6 +336,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
             </div>
           )}
         </div>
+        </>
       )}
 
       <SimulasiBeliModal
