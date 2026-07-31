@@ -379,6 +379,21 @@ export default function StudentShell({
         .lms-dark .hover\\:bg-gray-50:hover,.lms-dark .hover\\:bg-slate-50:hover,.lms-dark .hover\\:bg-white:hover{background-color:#242424 !important;}
         .lms-dark .hover\\:bg-gray-100:hover,.lms-dark .hover\\:bg-slate-100:hover,.lms-dark .hover\\:bg-gray-200:hover,.lms-dark .hover\\:bg-slate-200:hover{background-color:#303030 !important;}
         .lms-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#242424 !important;}
+        /* ── [shell-dark-no-outline-v1] kartu / tab / tabel TANPA garis luar ──
+           Di atas latar hitam, ring & border netral kebaca sebagai kotak abu terang yang
+           bikin dashboard rame. Pemisahan sekarang murni dari TANGGA ELEVASI (#0d0d0d well
+           < #141414 panel < #1c1c1c kartu). Cuma outline PENUH yang dimatiin: utility lebar
+           border (semua sisi) + semua ring-* netral. Garis pemisah BERARAH
+           (border-t/-b/-l/-r, divide-*) sengaja dibiarkan hidup — itu pemisah baris tabel /
+           footer kartu, bukan outline. Aksen berwarna (teal/amber/blue/rose) juga dibiarkan
+           karena itu penanda status & seleksi. */
+        .lms-dark .ring-slate-100,.lms-dark .ring-slate-200,.lms-dark .ring-slate-200\\/70,.lms-dark .ring-slate-200\\/80,.lms-dark .ring-slate-300,.lms-dark .ring-slate-900\\/5,.lms-dark .ring-gray-100,.lms-dark .ring-gray-200,.lms-dark .ring-gray-300,.lms-dark .ring-black\\/5{--tw-ring-color:transparent !important;}
+        .lms-dark .border.border-slate-100,.lms-dark .border.border-slate-200,.lms-dark .border.border-slate-200\\/70,.lms-dark .border.border-slate-200\\/80,.lms-dark .border.border-slate-300,.lms-dark .border.border-gray-100,.lms-dark .border.border-gray-200,.lms-dark .border.border-gray-300{border-color:transparent !important;}
+        /* KECUALI kolom isian: input/textarea/select wajib tetap punya outline, kalau nggak
+           kolomnya lenyap (bg-white kartu = #1c1c1c, sama persis sama latar kartunya). */
+        .lms-dark input.border.border-slate-100,.lms-dark input.border.border-slate-200,.lms-dark input.border.border-slate-300,.lms-dark input.border.border-gray-100,.lms-dark input.border.border-gray-200,.lms-dark input.border.border-gray-300,
+        .lms-dark textarea.border.border-slate-100,.lms-dark textarea.border.border-slate-200,.lms-dark textarea.border.border-slate-300,.lms-dark textarea.border.border-gray-100,.lms-dark textarea.border.border-gray-200,.lms-dark textarea.border.border-gray-300,
+        .lms-dark select.border.border-slate-100,.lms-dark select.border.border-slate-200,.lms-dark select.border.border-slate-300,.lms-dark select.border.border-gray-100,.lms-dark select.border.border-gray-200,.lms-dark select.border.border-gray-300{border-color:#3a3a3a !important;}
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
