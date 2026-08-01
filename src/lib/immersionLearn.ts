@@ -1920,6 +1920,9 @@ export interface WordMeaning {
   /** Bentuk dasar/kamus (infinitive) untuk verba yang terkonjugasi — mis. "produjo"
    *  → "producir". Kosong/undefined untuk non-verba atau kata yang sudah bentuk dasar. */
   base?: string;
+  /** Bacaan Latin bentuk dasar untuk bahasa non-Latin — mis. "する" → "suru".
+   *  Hanya terisi kalau `base` ada & bahasanya beraksara non-Latin. */
+  baseTranslit?: string;
 }
 
 export async function getWordMeaning(params: {
@@ -1937,12 +1940,21 @@ export async function getWordMeaning(params: {
     meaning?: unknown;
     type?: unknown;
     base?: unknown;
+    baseTranslit?: unknown;
   };
   const meaning = typeof parsed.meaning === "string" ? parsed.meaning.trim() : "";
   const type = typeof parsed.type === "string" ? parsed.type.trim() : "";
   const base = typeof parsed.base === "string" ? parsed.base.trim() : "";
+  const baseTranslit =
+    typeof parsed.baseTranslit === "string" ? parsed.baseTranslit.trim() : "";
   if (!meaning && !type) throw new Error("Arti kosong.");
-  return { meaning, type, base: base || undefined };
+  return {
+    meaning,
+    type,
+    base: base || undefined,
+    // Bacaan bentuk dasar tak ada artinya tanpa bentuk dasarnya.
+    baseTranslit: (base && baseTranslit) || undefined,
+  };
 }
 
 /** Penjelasan tata bahasa singkat (teks bebas) untuk kata yang di-tap. */

@@ -192,6 +192,12 @@ export function WordTooltip({
   // "meaning" tak mengembalikannya, jadi kita ambil terpisah via /api/translit.
   const [translit, setTranslit] = useState("");
 
+  // [watch-base-translit-v1] Bacaan Latin BENTUK DASAR (mis. する → "suru"): buat
+  // aksara non-Latin, bentuk dasar saja tak terbaca pelajar pemula. Biasanya ikut
+  // dikirim word-info (`baseTranslit`); jalur cache analisa kalimat tak punya field
+  // itu, jadi dilengkapi lewat /api/translit di background.
+  const [baseTranslit, setBaseTranslit] = useState("");
+
   // Mode belajar mendalami kata (layar penuh) — dibuka dari tombol Analisa, atau
   // langsung terbuka saat dipanggil dari riwayat (autoStudy).
   const [studyOpen, setStudyOpen] = useState(autoStudy);
@@ -309,6 +315,29 @@ export function WordTooltip({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [word, sentence, langCode, baseLang]);
+
+  // [watch-base-translit-v1] Lengkapi bacaan Latin bentuk dasar. Pakai yang dari
+  // word-info kalau ada; kalau tidak (arti dari cache analisa kalimat, atau model
+  // mengosongkan field-nya) romanisasi bentuk dasarnya sendiri.
+  useEffect(() => {
+    const base = meaning?.base?.trim();
+    if (!base || !isNonLatin(langCode)) {
+      setBaseTranslit("");
+      return;
+    }
+    if (meaning?.baseTranslit) {
+      setBaseTranslit(meaning.baseTranslit);
+      return;
+    }
+    let cancelled = false;
+    setBaseTranslit("");
+    transliterateLines([base], langCode)
+      .then((r) => !cancelled && r[0] && setBaseTranslit(r[0]))
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [meaning?.base, meaning?.baseTranslit, langCode]);
 
   // Arti tunggal kosong = kata fungsi tanpa makna mandiri → rambatkan ke kata
   // kanan (skip artikel via seleksi) sampai dapat arti, maksimum beberapa kata.
@@ -448,10 +477,16 @@ export function WordTooltip({
           )}
         </div>
 
-        {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin */}
-        {translit && (
+        {/* Bacaan Latin (romaji/pinyin/dll) — hanya bahasa non-Latin.
+            [watch-base-translit-v1] Bentuk dasar ikut dibacakan dengan pola yang
+            SAMA dengan judul di atasnya — し (する) → "shi (suru)" — biar pelajar
+            tahu cara melafalkan bentuk kamusnya, bukan cuma melihat aksaranya. */}
+        {(translit || baseTranslit) && (
           <p className="mt-0.5 text-[12.5px] font-medium italic" style={{ color: "#7FE0E0" }}>
             {translit}
+            {baseTranslit && baseTranslit.toLowerCase() !== translit.trim().toLowerCase() && (
+              <span style={{ color: SUB }}>{translit ? ` (${baseTranslit})` : baseTranslit}</span>
+            )}
           </p>
         )}
 

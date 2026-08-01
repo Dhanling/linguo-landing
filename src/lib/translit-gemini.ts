@@ -181,6 +181,16 @@ export async function transliterateBatch(lines: string[], langCode: string): Pro
     `e.g. {"1":"…","2":"…"}. Include EVERY number from 1 to ${items.length}; ` +
     `never merge, split, reorder, or omit lines. ` +
     `Use ONLY ordinary Latin letters (plus the scheme's standard diacritics). ` +
+    // [watch-translit-mirror-spacing-v1] Bacaan Latin dicetak DI ATAS tiap kata di
+    // player, jadi batas kata harus sepadan. Kalau baris sumber sudah punya spasi
+    // (mis. subtitle Jepang "学校 へ 行き ます。"), keluarannya WAJIB punya jumlah
+    // kelompok yang sama & urutan sama → "gakkō e iki masu." Tanpa aturan ini model
+    // menyatukannya jadi "ikimasu" dan penjajaran per kata gagal (bacaan jatuh ke
+    // baris utuh, atau partikel di sebelahnya tak kebagian bacaan).
+    `Mirror the source line's word boundaries: if a line contains spaces, output ` +
+    `EXACTLY the same number of space-separated groups, in the same order, each group ` +
+    `being the reading of the matching source group — never join or re-split them. ` +
+    `Keep attached particles/suffixes separate when the source separates them. ` +
     `NEVER use IPA or phonetic-notation symbols such as ɛ ɔ ɪ ʲ ʋ ə ʃ or tie bars. ` +
     // Penting utk Arab dsb: teks bisa MSA/fushah ATAU dialek (Levantine, Mesir,
     // Teluk, Maroko…). Romanisasikan bunyi yang BENAR-BENAR diucapkan/ditulis —
