@@ -2101,6 +2101,22 @@ export default function VideoLearnPlayer({
     return out;
   }, [cues, breakdowns, alignMaps, langCode]);
 
+  // [watch-translit-ruby-v2] Peta bacaan Latin per-kata untuk SETIAP baris panel
+  // transkrip (bukan cuma baris aktif) — panel dulu mencetaknya sebagai satu baris
+  // miring terpisah, sekarang menumpuk di atas kata yang bersangkutan seperti
+  // subtitle di atas video. Di-memo per `cues` supaya penjajaran (yang memindai
+  // suku kata tiap baris) tak dihitung ulang tiap tick karaoke.
+  const cueRuby = useMemo(() => {
+    const out: Record<number, Map<number, string> | null> = {};
+    cues.forEach((c, i) => {
+      out[i] =
+        c.translit && !cueIsExplanation(c, langCode)
+          ? buildRubyByK(c.target, c.translit, langCode)
+          : null;
+    });
+    return out;
+  }, [cues, langCode]);
+
   // Auto-scroll baris aktif ke tengah panel transkrip.
   // Kita hitung scrollTop container sendiri (bukan scrollIntoView) supaya HANYA
   // panel transkrip yang bergerak — scrollIntoView merambat ke semua leluhur yang
@@ -3561,19 +3577,24 @@ export default function VideoLearnPlayer({
                         Analisa
                       </span>
                     </button>
-                    {/* [watch-translit-ruby-v1] Bacaan Latin dibaca DULUAN (di atas
-                        aksara aslinya) — sejajar dengan subtitle di atas video.
-                        Posisinya sama untuk baris aktif & non-aktif supaya daftar
-                        tak "loncat" saat baris berganti. */}
-                    {c.translit && !cueIsExplanation(c, langCode) && (
+                    {/* [watch-translit-ruby-v2] Bacaan Latin menumpuk di atas KATA-nya
+                        (lihat rubyStack) — baris terpisah hanya dipakai kalau bacaannya
+                        tak bisa dipetakan per kata. Posisinya sama untuk baris aktif &
+                        non-aktif supaya daftar tak "loncat" saat baris berganti. */}
+                    {c.translit && !cueIsExplanation(c, langCode) && !cueRuby[i] && (
                       <TranslitLine
                         target={c.target}
                         translit={c.translit}
                         langCode={langCode}
                         hoveredK={hoverWord?.i === i ? hoverWord.k : null}
                         onHover={(k) => setHoverWord(k == null ? null : { i, k })}
-                        className="wl-cue-line mb-0.5 italic"
-                        style={{ color: "#fff", textShadow: "none", fontSize: 12 * fscale }}
+                        className="wl-cue-line mb-0.5"
+                        style={{
+                          color: "#fff",
+                          textShadow: "none",
+                          fontSize: 14 * fscale,
+                          fontWeight: RUBY_FONT_WEIGHT,
+                        }}
                       />
                     )}
                     {on ? (
@@ -3592,6 +3613,7 @@ export default function VideoLearnPlayer({
                           }
                         }}
                         chunks={ck}
+                        rubyByK={cueRuby[i]}
                         // [watch-panel-plain-v1] Di panel transkrip teksnya putih polos
                         // — outline hitam tebal cuma perlu saat menumpang di atas video.
                         plain
@@ -3616,20 +3638,27 @@ export default function VideoLearnPlayer({
                           const toks = splitWords(c.target, langCode);
                           const wordOrd: number[] = [];
                           { let k = -1; toks.forEach((w) => wordOrd.push(w.isWord ? ++k : -1)); }
+                          // [watch-translit-ruby-v2] Baris non-aktif ikut menumpuk bacaan
+                          // Latin di atas katanya — kalau cuma baris aktif yang begitu,
+                          // daftar melompat tiap kali baris berganti.
+                          const ruby = cueRuby[i];
                           const wordSpan = (j: number, inPhrase: boolean) => {
                             const w = toks[j];
                             const wk = wordOrd[j];
                             const hot = hs.t.has(wk);
+                            const rb = ruby?.get(wk);
                             return (
                               <span
                                 key={j}
                                 onClick={inPhrase ? undefined : (e) => onWordTap(e, w.text, c.target, j)}
                                 onMouseEnter={inPhrase ? undefined : () => { setHoverWord({ i, k: wk }); ensureAlign(i); }}
                                 onMouseLeave={inPhrase ? undefined : () => setHoverWord(null)}
-                                className={inPhrase ? "transition-colors" : "cursor-pointer transition-colors"}
+                                className={`${inPhrase ? "" : "cursor-pointer "}transition-colors${
+                                  rb ? " mx-[1px] inline-block align-baseline" : ""
+                                }`}
                                 style={hot && !inPhrase ? SYNC_UNDERLINE : undefined}
                               >
-                                {w.text}
+                                {rb ? rubyStack(rb, w.text, true) : w.text}
                               </span>
                             );
                           };
@@ -4017,11 +4046,15 @@ function FocusLine({
                     </span>
                   )}
                   {/* [watch-translit-ruby-v1] Bacaan Latin DI ATAS kata (ala
-                      furigana) — sama seperti subtitle & panel transkrip. */}
+                      furigana) — sama seperti subtitle & panel transkrip.
+                      [watch-translit-ruby-v2] Tak dimiringkan lagi. Ukurannya tetap
+                      menyamai baris ARTI di atasnya (bukan kata di bawahnya): di mode
+                      Analisa tiap kata sudah punya 4 baris, kalau bacaannya ikut
+                      sebesar kata, kolomnya melebar dan hierarkinya kacau. */}
                   {t.translit && (
                     <span
-                      className="block italic leading-tight"
-                      style={{ color: "#fff", fontSize: 11 * scale }}
+                      className="block leading-tight"
+                      style={{ color: "#fff", fontSize: 11 * scale, fontWeight: RUBY_FONT_WEIGHT }}
                     >
                       {t.translit}
                     </span>
@@ -4085,8 +4118,12 @@ function FocusLine({
               time={time}
               langCode={langCode}
               tapped={tapped}
-              className="mb-1 italic"
-              style={{ fontSize: 13 * scale }}
+              className="mb-1"
+              // [watch-translit-ruby-v2] Tak dimiringkan lagi (samakan dgn jalur
+              // ruby). Ukurannya SENGAJA di bawah kalimat target: ini baris UTUH,
+              // bukan per kata — kalau disamakan 22*scale, kalimat panjang membungkus
+              // 2-3 baris dan menutupi video.
+              style={{ fontSize: 18 * scale, fontWeight: RUBY_FONT_WEIGHT }}
             />
           )}
           <KaraokeText
@@ -4253,6 +4290,42 @@ function alignTranslitTokens(
   });
   let wi = -1;
   return pieces.map((p) => (p.trim().length ? { text: p, k: pieceK[++wi] } : { text: p, k: -1 }));
+}
+
+// [watch-translit-ruby-v2] Bacaan Latin dicetak dengan FONT & UKURAN yang sama
+// persis dengan kata di bawahnya (permintaan user) — bukan lagi versi mini yang
+// dimiringkan. `1em` = mewarisi ukuran induknya, jadi satu angka ini berlaku di
+// subtitle atas video (22*scale) maupun panel transkrip (14*fscale) tanpa perlu
+// disetel dua kali. Yang TIDAK disamakan cuma tebal huruf: subtitle target
+// extrabold, kalau bacaannya ikut tebal keduanya saling berebut perhatian.
+const RUBY_FONT_SIZE = "1em";
+const RUBY_FONT_WEIGHT = 500;
+
+// Dua baris dalam SATU kotak inline-block: bacaan Latin di atas, aksara aslinya
+// di bawah, dua-duanya rata tengah supaya sejajar per kata seperti referensi.
+// Karena inline-block mengambil baseline dari baris TERAKHIR-nya, kata tetap
+// sejajar dengan token pemisah (spasi/tanda baca) di sekitarnya. Warna diwarisi
+// dari kata → sorotan karaoke otomatis sinkron di kedua baris.
+function rubyStack(ruby: string, text: string, plain?: boolean) {
+  return (
+    <>
+      <span
+        aria-hidden
+        className="block whitespace-nowrap text-center"
+        style={{
+          fontSize: RUBY_FONT_SIZE,
+          fontWeight: RUBY_FONT_WEIGHT,
+          lineHeight: 1.2,
+          marginBottom: "0.06em",
+          // Outline tipis: stroke setebal subtitle bikin bacaan Latin tampak kotor.
+          textShadow: plain ? "none" : TRANSLIT_OUTLINE,
+        }}
+      >
+        {ruby}
+      </span>
+      <span className="block text-center">{text}</span>
+    </>
+  );
 }
 
 // [watch-translit-ruby-v1] Ubah satu baris transliterasi jadi peta per-kata:
@@ -4495,31 +4568,7 @@ function KaraokeWord({
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
-      {/* [watch-translit-ruby-v1] Susun 2 baris DALAM SATU kotak inline-block:
-          bacaan Latin di atas, aksara aslinya di bawah. Karena inline-block
-          mengambil baseline dari baris TERAKHIR-nya, kata tetap sejajar dengan
-          token pemisah (spasi/tanda baca) di sekitarnya. Warnanya diwarisi dari
-          kata → sorotan karaoke otomatis SINKRON di kedua baris. */}
-      {ruby ? (
-        <>
-          <span
-            aria-hidden
-            className="block whitespace-nowrap text-center italic"
-            style={{
-              fontSize: "0.58em",
-              lineHeight: 1.15,
-              marginBottom: "0.12em",
-              // Outline tipis: font kecil + stroke tebal bikin huruf dempet.
-              textShadow: plain ? "none" : TRANSLIT_OUTLINE,
-            }}
-          >
-            {ruby}
-          </span>
-          <span className="block text-center">{text}</span>
-        </>
-      ) : (
-        text
-      )}
+      {ruby ? rubyStack(ruby, text, plain) : text}
     </span>
   );
 }
