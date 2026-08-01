@@ -37,6 +37,17 @@ const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-
 // Lingbook), akun terpisah, jadi tak ikut tumbang. Pola sama dgn lib/translit-gemini.
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
 const CLAUDE_MODEL = "claude-haiku-4-5";
+
+// [word-deep-groq-tier-v1] Lapis TENGAH: model open-weight lewat Groq. Alasannya
+// biaya — Claude dipakai sebagai satu-satunya cadangan bikin ongkos melonjak saat
+// Gemini habis (~Rp77rb per 1000 analisa vs ~Rp10rb di sini), padahal kerjanya
+// cuma mengarang JSON terstruktur. `openai/gpt-oss-120b` sudah dipakai produksi di
+// linguo-app (transcript-worker), jadi model & kuncinya terbukti. Akun Groq
+// TERPISAH dari Gemini, jadi tak ikut tumbang saat kuota Gemini mentok.
+// ⚠️ Groq pernah men-deprecate model diam-diam (llama-3.3-70b) → makanya Claude
+// TETAP dipertahankan sebagai jaring terakhir di bawah ini.
+const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
+const GROQ_MODEL = "openai/gpt-oss-120b";
 // Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
 // thinkingConfig; model 2.0 akan 400 kalau dikirim.
 function supportsThinking(model: string): boolean {
@@ -173,6 +184,44 @@ async function callGemini(prompt: string, json: boolean): Promise<string> {
   return "";
 }
 
+// [word-deep-groq-tier-v1] Lapis tengah: Groq (API ala OpenAI). Sama seperti jalur
+// lain, balikin teks mentah — parser di bawah tak peduli asalnya. Mode JSON dipakai
+// saat json=true; prompt kita sudah menyebut "Return ONLY a JSON object" (syarat
+// json_object di API ala OpenAI).
+async function callGroq(prompt: string, json: boolean): Promise<string> {
+  if (!GROQ_API_KEY) return "";
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${GROQ_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        temperature: 0.4,
+        max_completion_tokens: 4000,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a language tutor API. Reply with ONLY the JSON object requested — " +
+              "no prose, no explanation, no markdown fences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        ...(json ? { response_format: { type: "json_object" } } : {}),
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text : "";
+  } catch {
+    return "";
+  }
+}
+
 // [word-deep-claude-fallback-v1] Jaring terakhir: Claude (Messages API). Kontraknya
 // SAMA dengan jalur Gemini — balas teks (JSON mentah saat json=true) — jadi semua
 // parser di bawah tak perlu tahu jawabannya datang dari provider yang mana.
@@ -213,10 +262,16 @@ async function callClaude(prompt: string, json: boolean): Promise<string> {
   }
 }
 
-// Satu pintu untuk semua pemanggil: Gemini dulu (murah & cepat), Claude kalau
-// SELURUH rantai Gemini kosong — bukan menyerah dengan diam.
+// Satu pintu untuk semua pemanggil, tiga lapis lintas-akun: Gemini (utama) →
+// Groq/open-weight (murah, akun terpisah) → Claude (jaring terakhir). Tiap lapis
+// baru dicoba kalau lapis di atasnya balik kosong, jadi saat semuanya sehat
+// perilakunya persis seperti sebelumnya.
 async function generate(prompt: string, json: boolean): Promise<string> {
-  return (await callGemini(prompt, json)) || (await callClaude(prompt, json));
+  return (
+    (await callGemini(prompt, json)) ||
+    (await callGroq(prompt, json)) ||
+    (await callClaude(prompt, json))
+  );
 }
 
 // Prompt tanya-jawab lanjutan bebas — dipakai baik untuk KATA maupun KALIMAT.
@@ -320,9 +375,9 @@ function parseAsk(raw: string): { answer: string; followups: { q: string; tl?: s
 export async function POST(req: NextRequest) {
   try {
     // [word-deep-claude-fallback-v1] Cukup SALAH SATU provider terpasang — dulu
-    // gerbang ini cuma cek kunci Gemini, jadi cadangan Claude tak akan pernah
-    // kebagian giliran kalau kunci Gemini hilang/dicabut.
-    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) {
+    // gerbang ini cuma cek kunci Gemini, jadi cadangan tak akan pernah kebagian
+    // giliran kalau kunci Gemini hilang/dicabut.
+    if (!GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "not_configured" }, { status: 200 });
     }
 

@@ -27,6 +27,11 @@ const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-
 // terakhir dengan kunci & akun terpisah.
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
 const CLAUDE_MODEL = "claude-haiku-4-5";
+
+// [word-deep-groq-tier-v1] Lapis TENGAH open-weight — samakan dengan /api/word-deep.
+// Jauh lebih murah dari Claude untuk kerja mengarang JSON, akun terpisah dari Gemini.
+const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
+const GROQ_MODEL = "openai/gpt-oss-120b";
 // Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
 // thinkingConfig; model lain akan 400 kalau dikirim.
 function supportsThinking(model: string): boolean {
@@ -108,6 +113,42 @@ async function callGemini(prompt: string): Promise<string> {
   return "";
 }
 
+// [word-deep-groq-tier-v1] Lapis tengah: Groq (API ala OpenAI), kontrak balasan sama.
+async function callGroq(prompt: string): Promise<string> {
+  if (!GROQ_API_KEY) return "";
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${GROQ_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        temperature: 0.5,
+        // Deck bisa sampai puluhan kartu (kata + arti + contoh + translit).
+        max_completion_tokens: 8000,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a language tutor API. Reply with ONLY the JSON requested — " +
+              "no prose, no markdown fences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        response_format: { type: "json_object" },
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    const text = data?.choices?.[0]?.message?.content;
+    return typeof text === "string" ? text : "";
+  } catch {
+    return "";
+  }
+}
+
 // [word-deep-claude-fallback-v1] Jaring terakhir: Claude (Messages API), kontrak
 // balasan sama (JSON mentah) jadi parser di bawah tak peduli asal jawabannya.
 async function callClaude(prompt: string): Promise<string> {
@@ -143,9 +184,9 @@ async function callClaude(prompt: string): Promise<string> {
   }
 }
 
-// Satu pintu: Gemini dulu, Claude kalau seluruh rantai Gemini kosong.
+// Satu pintu, tiga lapis lintas-akun: Gemini → Groq/open-weight → Claude.
 async function generate(prompt: string): Promise<string> {
-  return (await callGemini(prompt)) || (await callClaude(prompt));
+  return (await callGemini(prompt)) || (await callGroq(prompt)) || (await callClaude(prompt));
 }
 
 export interface GeneratedCard {
@@ -158,8 +199,8 @@ export interface GeneratedCard {
 
 export async function POST(req: NextRequest) {
   try {
-    // Cukup salah satu provider terpasang (Gemini utama / Claude cadangan).
-    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) {
+    // Cukup salah satu provider terpasang (Gemini utama / Groq / Claude cadangan).
+    if (!GEMINI_API_KEY && !GROQ_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "Kunci AI belum diset." }, { status: 500 });
     }
     const body = (await req.json()) as {
