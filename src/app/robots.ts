@@ -26,6 +26,7 @@ export default function robots(): MetadataRoute.Robots {
           "/auth/",         // callback & reset password
           "/payment/",      // halaman hasil pembayaran
           "/onboarding/",   // ber-token, unik per orang
+          "/kuis/",         // lembar kerja ber-token, satu siswa satu link
           "/laporan-b2b/",  // laporan klien, tidak untuk publik
           "/riset",         // sudah noindex, sekalian jangan dirayapi
           "/riset/",
