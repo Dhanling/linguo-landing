@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase-client"; // [dev-gate-lingbook-v1]
+import { resolveSessionForGate } from "@/lib/supabase-client"; // [dev-gate-lingbook-v1] [auth-gate-resilient-v1]
 import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import { loadChapter } from "@/data/lingbook/remote";
 import type { Book, Chapter } from "@/data/lingbook";
@@ -27,9 +27,11 @@ export default function LingbookReaderPage() {
 
   useEffect(() => {
     let alive = true;
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
+    // getSession() menjawab null sesaat (lihat resolveSessionForGate).
+    resolveSessionForGate().then((v) => {
       if (!alive) return;
-      if (!session?.user?.id || !canAccessLingbook(session.user.email)) router.replace("/akun");
+      if (!v.user?.id || !canAccessLingbook(v.user.email)) router.replace("/akun");
       else setAllowed(true);
     });
     return () => { alive = false; };

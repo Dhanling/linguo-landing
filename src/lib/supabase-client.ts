@@ -101,6 +101,29 @@ export async function adoptImplicitSessionFromUrl(): Promise<boolean> {
  * `base64-<json>` dan dipecah jadi `.0`, `.1`, … kalau kepanjangan.
  */
 export function peekSessionUser(): { id: string; email: string | null } | null {
+  const snap = peekSessionCookie();
+  if (!snap) return null;
+  // Token kadaluarsa → jangan optimistis; biarkan alur normal yang memutuskan.
+  if (snap.expired) return null;
+  return snap.user;
+}
+
+/**
+ * [auth-gate-resilient-v1] Isi mentah cookie sesi — TERMASUK saat access token
+ * sudah kedaluwarsa.
+ *
+ * `peekSessionUser()` sengaja pelit: dia cuma dipakai untuk optimisme render,
+ * jadi token mati dianggap "tak ada". Tapi untuk memutuskan apakah user benar-
+ * benar keluar akun, justru kondisi "access token mati TAPI refresh token masih
+ * ada" yang paling penting dikenali: itu keadaan normal tiap refresh halaman
+ * setelah sejam, dan sama sekali BUKAN tanda user logout.
+ */
+export function peekSessionCookie(): {
+  user: { id: string; email: string | null } | null;
+  access_token: string | null;
+  refresh_token: string | null;
+  expired: boolean;
+} | null {
   if (typeof document === "undefined") return null;
   try {
     const jar: Record<string, string> = {};
@@ -120,10 +143,89 @@ export function peekSessionUser(): { id: string; email: string | null } | null {
     const s = JSON.parse(raw);
     const id = s?.user?.id;
     if (!id) return null;
-    // Token kadaluarsa → jangan optimistis; biarkan alur normal yang memutuskan.
-    if (typeof s.expires_at === "number" && s.expires_at * 1000 <= Date.now()) return null;
-    return { id, email: s.user.email ?? null };
+    return {
+      user: { id, email: s.user.email ?? null },
+      access_token: typeof s.access_token === "string" ? s.access_token : null,
+      refresh_token: typeof s.refresh_token === "string" ? s.refresh_token : null,
+      expired:
+        typeof s.expires_at === "number" ? s.expires_at * 1000 <= Date.now() : false,
+    };
   } catch {
     return null;
   }
+}
+
+/**
+ * [auth-gate-resilient-v1] Jawaban sesi untuk GATE halaman ("boleh masuk atau
+ * dilempar ke layar masuk?").
+ *
+ * Kenapa tidak `getSession()` polos: melempar user ke /akun itu vonis berat —
+ * di layar dia terbaca "tiba-tiba keluar akun" (keluhan nyata: buka Watch &
+ * Learn dari dashboard, di-refresh, mendarat di layar masuk). Padahal
+ * `session: null` dari SDK sering cuma keadaan sesaat:
+ *
+ *   • Refresh halaman setelah >1 jam → access token di cookie sudah mati, dan
+ *     SDK masih di tengah tukar refresh token. Sejenak jawabannya null.
+ *   • Refresh token barusan dirotasi middleware di request yang sama; percobaan
+ *     tukar dari klien bisa ditolak sekali ("Already Used") sebelum cookie baru
+ *     terbaca.
+ *   • getSession() antre di Web Locks lintas-tab dan bisa melempar/timeout.
+ *
+ * Jadi urutannya: tanya SDK → kalau null tapi cookie masih pegang refresh token,
+ * tunggu sebentar & tanya lagi → terakhir tebus ulang sesi dari cookie lewat
+ * setSession(). Baru kalau server yang bilang tokennya memang tak sah (4xx),
+ * gate login dijatuhkan. Kegagalan jaringan → `uncertain: true`, artinya
+ * "JANGAN lempar ke login, biarkan halaman terbuka".
+ */
+export type GateVerdict = {
+  session: import("@supabase/supabase-js").Session | null;
+  /** Identitas terbaik yang kita punya (dari sesi, atau dari cookie saat SDK ragu). */
+  user: { id: string; email: string | null } | null;
+  /** SDK bilang tak ada sesi, tapi buktinya lemah → perlakukan sebagai masih login. */
+  uncertain: boolean;
+};
+
+export async function resolveSessionForGate(): Promise<GateVerdict> {
+  const ask = async () => {
+    try {
+      const { data } = await supabase.auth.getSession();
+      return data.session ?? null;
+    } catch {
+      return null; // lock timeout / SDK error — bukan bukti user keluar
+    }
+  };
+
+  let session = await ask();
+  if (session) return { session, user: sessionUser(session), uncertain: false };
+
+  const snap = peekSessionCookie();
+  // Tak ada cookie sesi sama sekali → memang tamu.
+  if (!snap?.refresh_token) return { session: null, user: null, uncertain: false };
+
+  await new Promise((r) => setTimeout(r, 900));
+  session = await ask();
+  if (session) return { session, user: sessionUser(session), uncertain: false };
+
+  // Percobaan terakhir: tebus sesi langsung dari cookie. Kalau access token-nya
+  // kedaluwarsa, setSession() sendiri yang menukar refresh token-nya.
+  try {
+    const { data, error } = await supabase.auth.setSession({
+      access_token: snap.access_token ?? "",
+      refresh_token: snap.refresh_token,
+    });
+    if (data.session) {
+      return { session: data.session, user: sessionUser(data.session), uncertain: false };
+    }
+    const status = (error as { status?: number } | null)?.status;
+    // 4xx = Auth server memvonis token tak sah → gate login memang pantas.
+    // Selain itu (jaringan mati, 5xx) → ragu, jangan usir user.
+    const rejected = typeof status === "number" && status >= 400 && status < 500;
+    return { session: null, user: rejected ? null : snap.user, uncertain: !rejected };
+  } catch {
+    return { session: null, user: snap.user, uncertain: true };
+  }
+}
+
+function sessionUser(s: { user?: { id?: string; email?: string | null } | null }) {
+  return s.user?.id ? { id: s.user.id, email: s.user.email ?? null } : null;
 }

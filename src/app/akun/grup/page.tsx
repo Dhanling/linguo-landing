@@ -16,7 +16,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import StudentGroupChat from "@/components/akun/StudentGroupChat";
 
@@ -52,9 +52,11 @@ export default function GrupKelasPage() {
       return () => { alive = false; };
     }
 
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
+    // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
+    // getSession() menjawab null sesaat (lihat resolveSessionForGate).
+    resolveSessionForGate().then(async (v) => {
       if (!alive) return;
-      if (!session?.user?.id) {
+      if (!v.user?.id) {
         // belum login → arahkan ke dashboard (yang nampung UI login)
         router.replace("/akun");
         return;

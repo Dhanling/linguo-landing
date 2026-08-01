@@ -6,7 +6,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LibraryView from "@/components/akun/LibraryView";
 
@@ -21,9 +21,13 @@ function PerpustakaanInner() {
   useEffect(() => {
     if (previewId) { setReady(true); return; }
     let alive = true;
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // [auth-gate-resilient-v1] getSession() polos bisa menjawab null sesaat (hard
+    // refresh + token tukar, antrean Web Locks lintas-tab) → dulu itu langsung jadi
+    // pantulan ke layar masuk alias "keluar akun sendiri". resolveSessionForGate()
+    // baru menyerah kalau Auth server memang menolak tokennya.
+    resolveSessionForGate().then((v) => {
       if (!alive) return;
-      const uid = session?.user?.id ?? null;
+      const uid = v.user?.id ?? null;
       if (!uid) {
         // belum login → arahkan ke dashboard (yang nampung UI login)
         router.replace("/akun");

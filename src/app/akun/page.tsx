@@ -8,7 +8,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
-import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1]
+import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
@@ -2575,13 +2575,24 @@ export default function AkunPage() {
       // pasti null dan gate login nongol padahal linknya barusan sah.
       await adoptImplicitSessionFromUrl();
       if (!alive) return;
-      let { data: { session } } = await supabase.auth.getSession();
-      if (!session && peekSessionUser()) {
-        await new Promise((r) => setTimeout(r, 900));
-        if (!alive) return;
-        ({ data: { session } } = await supabase.auth.getSession());
+      // [auth-gate-resilient-v1] logika "coba lagi sebelum menjatuhkan gate" pindah
+      // ke helper bersama supaya Watch & Learn dan menu LMS lain memakai aturan yang
+      // sama persis. Bonus: helper ini juga menangani kasus access token di cookie
+      // sudah kedaluwarsa (refresh halaman setelah sejam) — dulu peekSessionUser()
+      // menjawab null di situ, jadi percobaan ulangnya malah tak pernah jalan.
+      const verdict = await resolveSessionForGate();
+      if (!alive) return;
+      if (verdict.session) { settle(verdict.session); return; }
+      // SDK tak memberi sesi TAPI juga tak ada vonis "token tak sah" → perlakukan
+      // sebagai masih login (identitas dari cookie); onAuthStateChange yang
+      // membetulkan begitu SDK pulih.
+      if (verdict.uncertain && verdict.user) {
+        if (nextPath) { window.location.replace(nextPath); return; }
+        setUser(verdict.user);
+        setAuthLoading(false);
+        return;
       }
-      settle(session);
+      settle(null);
     })();
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) { settle(session); return; }

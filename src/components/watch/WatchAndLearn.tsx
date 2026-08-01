@@ -69,7 +69,7 @@ import {
   setWatchStaff,
   isWatchCompedEmail,
 } from "@/lib/immersionLearn";
-import { supabase, peekSessionUser } from "@/lib/supabase-client"; // [perf:session-cookie-peek-v1]
+import { supabase, peekSessionUser, resolveSessionForGate } from "@/lib/supabase-client"; // [perf:session-cookie-peek-v1] [auth-gate-resilient-v1]
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
 import VideoLearnPlayer from "./VideoLearnPlayer";
@@ -635,7 +635,8 @@ export default function WatchAndLearn() {
   }, []);
 
   // Gate login: cek sesi di mount; tamu langsung dialihkan ke /akun (layar login).
-  // onAuthStateChange menjaga kalau sesi berakhir saat halaman terbuka.
+  // Hanya SIGNED_OUT (atau vonis tegas dari Auth server) yang boleh melempar user
+  // keluar — lihat resolveSessionForGate() di supabase-client.
   //
   // Pengecualian staf: kalau user login adalah owner/admin Linguo (profiles.role),
   // buka akses penuh (setWatchStaff) supaya tim internal bebas gate langganan —
@@ -685,19 +686,22 @@ export default function WatchAndLearn() {
         if (alive) setWatchStaff(false);
       }
     };
-    const gate = (
-      session: { user?: { id?: string; email?: string | null } } | null,
-    ) => {
+    // Tamu → layar login /akun, bawa ?next=<halaman ini> supaya balik ke tempat
+    // yang sama (termasuk ?v=<video> kalau sedang nonton) setelah login.
+    const toLogin = () => {
+      const here = window.location.pathname + window.location.search;
+      window.location.replace(`/akun?next=${encodeURIComponent(here || "/watch")}`);
+    };
+    const admit = (user: { id: string; email: string | null } | null) => {
       if (!alive) return;
-      const hasSession = !!session;
-      setLoggedIn(hasSession);
-      // Tamu → layar login /akun, bawa ?next=/watch supaya balik ke sini setelah login.
-      if (!hasSession) {
-        setWatchStaff(false);
-        window.location.replace("/akun?next=%2Fwatch");
-        return;
-      }
-      syncStaff(session?.user?.id, session?.user?.email);
+      setLoggedIn(true);
+      syncStaff(user?.id, user?.email);
+    };
+    const evict = () => {
+      if (!alive) return;
+      setLoggedIn(false);
+      setWatchStaff(false);
+      toLogin();
     };
     // [preview-session-v1] POV siswa dari dashboard admin (/watch?preview=<id>)
     // tidak punya sesi login sama sekali — tanpa jalan keluar ini gate-nya melempar
@@ -734,13 +738,30 @@ export default function WatchAndLearn() {
         return;
       }
       if (!alive) return;
-      supabase.auth
-        .getSession()
-        .then(({ data }) => gate(data.session))
-        .catch(() => gate(null));
-      subscription = supabase.auth.onAuthStateChange(
-        (_event, session) => gate(session)
-      ).data.subscription;
+      // [auth-gate-resilient-v1] "Buka Watch & Learn dari dashboard, di-refresh,
+      // malah mendarat di layar masuk." Akarnya: gate ini dulu menerima
+      // `session: null` mentah-mentah — padahal pas hard refresh (beda dengan
+      // pindah halaman biasa yang memakai klien yang sama di memori) SDK harus
+      // membaca cookie & menukar refresh token dulu, dan jawaban sesaatnya null.
+      // resolveSessionForGate() yang memutuskan: dia coba ulang + tebus sesi dari
+      // cookie, dan cuma menyerah kalau Auth server memang menolak tokennya.
+      const verdict = await resolveSessionForGate();
+      if (!alive) return;
+      if (verdict.session || verdict.uncertain) admit(verdict.user);
+      else evict();
+      subscription = supabase.auth.onAuthStateChange((event, session) => {
+        if (session) {
+          return admit(
+            session.user?.id
+              ? { id: session.user.id, email: session.user.email ?? null }
+              : null,
+          );
+        }
+        // Cuma SIGNED_OUT yang benar-benar berarti user keluar. INITIAL_SESSION
+        // yang balapan / TOKEN_REFRESHED gagal sesaat juga datang tanpa sesi —
+        // dulu keduanya ikut melempar user ke layar masuk.
+        if (event === "SIGNED_OUT") evict();
+      }).data.subscription;
     })();
     return () => {
       alive = false;

@@ -13,7 +13,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Loader2, RefreshCw, Video, ArrowLeft } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 
 interface RecordingItem {
@@ -38,8 +38,17 @@ export default function RekamanKelasPage() {
     let alive = true;
     (async () => {
       setError("");
-      const { data: { session } } = await supabase.auth.getSession();
+      // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
+      // getSession() menjawab null sesaat (lihat resolveSessionForGate).
+      const v = await resolveSessionForGate();
+      const session = v.session;
       if (!session?.access_token) {
+        // Ragu (jaringan/Auth server ngadat, bukan sesi mati) → biarkan user di
+        // halaman ini dengan pesan; melemparnya ke login itu vonis yang salah.
+        if (v.uncertain) {
+          if (alive) setError("Sesi belum siap. Coba muat ulang halaman.");
+          return;
+        }
         router.replace("/akun");
         return;
       }

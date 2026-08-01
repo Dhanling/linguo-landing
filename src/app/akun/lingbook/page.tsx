@@ -6,7 +6,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import BookLibrary from "@/components/lingbook/BookLibrary";
@@ -17,14 +17,16 @@ export default function LingbookLibraryPage() {
 
   useEffect(() => {
     let alive = true;
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
+    // getSession() menjawab null sesaat (lihat resolveSessionForGate).
+    resolveSessionForGate().then((v) => {
       if (!alive) return;
-      if (!session?.user?.id) {
+      if (!v.user?.id) {
         router.replace("/akun");
         return;
       }
       // [dev-gate-lingbook-v1] Lingbook masih development → non-allowlist dilempar balik
-      if (!canAccessLingbook(session.user.email)) {
+      if (!canAccessLingbook(v.user.email)) {
         router.replace("/akun");
         return;
       }

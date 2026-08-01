@@ -16,7 +16,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Loader2, RefreshCw } from "lucide-react";
-import { supabase } from "@/lib/supabase-client";
+import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import ClassDetailView from "@/components/akun/ClassDetailView";
 
@@ -75,8 +75,9 @@ function KelasDetailInner() {
       } catch {}
       if (handoff && handoff.id === params.id && alive) setReg(handoff);
 
-      const { data: { session } } = await supabase.auth.getSession();
-      const email = session?.user?.email;
+      // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
+      // getSession() menjawab null sesaat (lihat resolveSessionForGate).
+      const email = (await resolveSessionForGate()).user?.email;
       if (!email) {
         // belum login → dashboard (yang nampung UI login). Kalau ada handoff
         // (baru saja klik dari beranda, sesi kemungkinan cuma telat pulih) biarkan
