@@ -8,6 +8,16 @@
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 
+// [watch-translit-claude-fallback-v1] Cadangan LINTAS-PROVIDER. Kuota harian
+// Gemini free-tier (10rb/model) HABIS diam-diam → SEMUA model di MODELS balas 429
+// dan transliterasi hilang total dari Watch & Learn (pinyin/romaji tak muncul
+// sama sekali, bukan cuma telat). Rantai cadangan sesama Gemini tak menolong
+// karena kuotanya seakun. Claude Haiku dipakai sebagai jaring terakhir: kunci
+// ANTHROPIC_API_KEY sudah ada di Vercel (dipakai chat Ling & Lingbook) dan
+// romanisasi itu tugas mekanis — Haiku (model termurah) sudah lebih dari cukup.
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+const CLAUDE_MODEL = "claude-haiku-4-5";
+
 // Rantai model fallback. Kuota free-tier Gemini dihitung PER-MODEL per hari
 // (limit ~10k/model). Saat model utama kena 429 RESOURCE_EXHAUSTED (mentok
 // harian) — gejalanya transliterasi (romaji/pinyin/dll) HILANG total di
@@ -72,18 +82,66 @@ async function callModel(model: string, prompt: string): Promise<string> {
   );
 }
 
+// [watch-translit-claude-fallback-v1] Saat kuota harian Gemini habis, SEMUA model
+// di MODELS ikut 429 — dan itu bertahan berjam-jam (reset harian). Tanpa penanda,
+// tiap permintaan tetap mengetuk 3 model dulu (3 round-trip sia-sia) sebelum jatuh
+// ke Claude, jadi pinyin terasa lelet padahal cadangannya sehat. Begitu satu
+// putaran Gemini gagal total, lewati Gemini untuk sementara di instance ini.
+const GEMINI_COOLDOWN_MS = 10 * 60 * 1000;
+let geminiCooldownUntil = 0;
+
 // Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
 // Balikin "" hanya bila semua model habis kuotanya.
 async function callGemini(prompt: string): Promise<string> {
+  if (!GEMINI_API_KEY || Date.now() < geminiCooldownUntil) return "";
   for (const model of MODELS) {
     try {
       const text = await callModel(model, prompt);
-      if (text.trim()) return text;
+      if (text.trim()) {
+        geminiCooldownUntil = 0;
+        return text;
+      }
     } catch {
       /* coba model berikutnya */
     }
   }
+  geminiCooldownUntil = Date.now() + GEMINI_COOLDOWN_MS;
   return "";
+}
+
+// [watch-translit-claude-fallback-v1] Jaring terakhir: Claude (Messages API).
+// Kontraknya SAMA persis dengan jalur Gemini — balas objek berkunci-nomor — jadi
+// parser di bawah tak perlu tahu hasilnya datang dari provider yang mana.
+async function callClaude(prompt: string, lines: number): Promise<string> {
+  if (!ANTHROPIC_API_KEY) return "";
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: CLAUDE_MODEL,
+        // ~60 baris romanisasi; longgar biar tak kepotong di kalimat panjang.
+        max_tokens: Math.min(8000, 400 + lines * 120),
+        system:
+          "You transliterate text into Latin script. Reply with ONLY the JSON object — no prose, no markdown fences.",
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    return Array.isArray(data?.content)
+      ? data.content
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .map((b: any) => (b?.type === "text" && typeof b.text === "string" ? b.text : ""))
+          .join("")
+      : "";
+  } catch {
+    return "";
+  }
 }
 
 /** Batas baris per panggilan Gemini (rem biaya + jaga akurasi penomoran). */
@@ -96,7 +154,10 @@ export const TRANSLIT_MAX_LINES = 60;
  */
 export async function transliterateBatch(lines: string[], langCode: string): Promise<string[]> {
   const out = new Array<string>(lines.length).fill("");
-  if (!GEMINI_API_KEY || !lines.length) return out;
+  // [watch-translit-claude-fallback-v1] Cukup SALAH SATU provider yang terpasang —
+  // dulu gerbang ini cuma cek kunci Gemini, jadi cadangan Claude tak akan pernah
+  // kebagian giliran kalau kunci Gemini hilang/dicabut.
+  if ((!GEMINI_API_KEY && !ANTHROPIC_API_KEY) || !lines.length) return out;
 
   // Hanya baris non-kosong yang dikirim ke Gemini; simpan indeks aslinya supaya
   // hasil bisa dikembalikan ke posisi yang benar. Batasi jumlah yang diromanisasi
@@ -131,7 +192,9 @@ export async function transliterateBatch(lines: string[], langCode: string): Pro
 
   // Coba tiap model berurutan sampai ada yang membalas teks non-kosong. Model
   // utama yang mentok kuota harian (429 → "") jadi sinyal untuk coba cadangan.
-  const text = await callGemini(prompt);
+  // [watch-translit-claude-fallback-v1] …dan kalau SELURUH rantai Gemini kosong
+  // (kuota seakun habis), lanjut ke Claude — bukan menyerah dengan diam.
+  const text = (await callGemini(prompt)) || (await callClaude(prompt, items.length));
 
   // Petakan hasil kembali ke posisi asli. Utamakan objek {nomor: translit}
   // (tahan baris hilang). Fallback array polos HANYA bila panjangnya PERSIS sama
