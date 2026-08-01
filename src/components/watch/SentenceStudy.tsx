@@ -250,10 +250,11 @@ export default function SentenceStudy({
       className={`fixed z-[97] flex flex-col overflow-hidden shadow-2xl transition-transform duration-[220ms] ease-out inset-x-0 bottom-0 h-[86%] rounded-t-2xl lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[var(--drawer-w,440px)] lg:max-w-[92vw] lg:rounded-none ${
         entered ? "translate-y-0 lg:translate-x-0" : "translate-y-full lg:translate-x-full lg:translate-y-0"
       }`}
-      style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}
+      // [watch-drawer-no-outline-v1] Tanpa garis tepi abu-abu — sama dengan drawer kata.
+      style={{ backgroundColor: BG }}
     >
       {/* Header */}
-      <div className="flex items-start justify-between gap-3 px-4 py-4 sm:px-6" style={{ borderBottom: `1px solid ${BORDER}` }}>
+      <div className="flex items-start justify-between gap-3 px-4 py-4 sm:px-6">
         <div className="min-w-0">
           <div className="mb-1.5 flex items-center gap-2">
             {lang && <RectFlag code={lang.country} h={14} />}
@@ -298,12 +299,9 @@ export default function SentenceStudy({
         </div>
       </div>
 
-      {/* Tab bar — diberi jarak & garis pemisah di bawahnya supaya isi yang
-          digulir tak kelihatan nempel/nabrak tombol tab. */}
-      <div
-        className="flex shrink-0 gap-1 px-4 pb-2.5 pt-3 sm:px-6"
-        style={{ borderBottom: `1px solid ${BORDER}` }}
-      >
+      {/* Tab bar — diberi jarak di bawahnya supaya isi yang digulir tak kelihatan
+          nempel/nabrak tombol tab (dulu pakai garis pemisah abu-abu). */}
+      <div className="flex shrink-0 gap-1 px-4 pb-2.5 pt-3 sm:px-6">
         <TabBtn active={tab === "study"} onClick={() => setTab("study")}>
           Pelajari
         </TabBtn>
@@ -343,7 +341,7 @@ export default function SentenceStudy({
           tak melonjak tinggi lalu mengempis begitu data datang. */}
       <div
         className="px-4 pb-3 pt-2.5 sm:px-6"
-        style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: BG, paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+        style={{ backgroundColor: BG, paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         <div className="mx-auto max-w-2xl">
           {/* [watch-sentence-chip-stack-v1] Chip usulan ditumpuk ke bawah, satu chip

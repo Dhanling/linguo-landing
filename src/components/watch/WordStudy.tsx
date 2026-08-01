@@ -50,9 +50,9 @@ const BG = "#06090A";
 const CARD = "rgba(255,255,255,0.05)";
 // Baris tabel selang-seling (zebra) menggantikan garis pemisah antar-baris.
 const ROW_ALT = "rgba(255,255,255,0.028)";
-// BORDER hanya untuk rangka struktural drawer (tepi panel, garis pemisah header &
-// footer input) — hairline lebar-penuh, bukan kotak ber-outline.
-const BORDER = "rgba(255,255,255,0.09)";
+// [watch-drawer-no-outline-v1] Tak ada lagi konstanta BORDER di sini: drawer sudah
+// sepenuhnya tanpa garis abu-abu (tepi panel, bawah header, atas kolom ketik).
+// Pemisahan antar bagian murni lewat fill (CARD/ROW_ALT) & jarak.
 const SUB = "rgba(255,255,255,0.5)";
 
 // Warna + label ramah untuk tiap tingkat kesopanan (register).
@@ -261,10 +261,13 @@ export default function WordStudy({
       className={`fixed z-[97] flex flex-col overflow-hidden shadow-2xl transition-transform duration-[220ms] ease-out inset-x-0 bottom-0 h-[86%] rounded-t-2xl lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:w-[var(--drawer-w,440px)] lg:max-w-[92vw] lg:rounded-none ${
         entered ? "translate-y-0 lg:translate-x-0" : "translate-y-full lg:translate-x-full lg:translate-y-0"
       }`}
-      style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}`, borderLeft: `1px solid ${BORDER}` }}
+      // [watch-drawer-no-outline-v1] TANPA garis tepi abu-abu: drawer dipisahkan dari
+      // video oleh latar gelap + bayangannya sendiri (shadow-2xl). Hairline di tepi
+      // panel & bawah header dulu terbaca sebagai "kotak ber-outline" yang kasar.
+      style={{ backgroundColor: BG }}
     >
       {/* Header */}
-      <div className="flex items-start justify-between gap-3 px-4 py-4 sm:px-6" style={{ borderBottom: `1px solid ${BORDER}` }}>
+      <div className="flex items-start justify-between gap-3 px-4 py-4 sm:px-6">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
             {lang && <RectFlag code={lang.country} h={16} />}
@@ -340,7 +343,7 @@ export default function WordStudy({
 
       {/* Input tanya (selalu tampak di tab Tanya) */}
       {tab === "ask" && (
-        <div className="px-4 py-3 sm:px-6" style={{ borderTop: `1px solid ${BORDER}` }}>
+        <div className="px-4 py-3 sm:px-6">
           <div className="mx-auto flex max-w-2xl items-center gap-2">
             <input
               value={input}
