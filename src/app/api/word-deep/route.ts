@@ -546,9 +546,10 @@ export async function POST(req: NextRequest) {
       `in ${explanationLanguage}, with this exact shape:\n` +
       `{\n` +
       `  "register": one of "netral" | "formal" | "casual" | "vulgar" | "sopan",\n` +
-      `  "registerNote": one short sentence on the word's politeness/formality level and social context,\n` +
-      `  "usage": 1-2 sentences on WHEN and HOW this word is typically used,\n` +
-      `  "nuance": 1 sentence on connotation/nuance/feeling the word carries (empty string if none),\n` +
+      // [watch-word-drawer-slim-v1] "registerNote" & "nuance" tak lagi punya kartu
+      // sendiri di drawer (tingkat kesopanan sudah jadi chip di header). Isinya
+      // dilebur ke "usage" — satu kartu prosa, bukan tiga kartu yang saling mirip.
+      `  "usage": 2-3 sentences on WHEN and HOW this word is typically used, ending with the feeling/connotation it carries if it has a notable one,\n` +
       `  "similar": array (0-3) of { "word": a similar/confusable ${language} word,${nonLatin ? ' "tl": its Latin reading,' : ""} "diff": one short sentence on how it differs from "${word}" },\n` +
       `  "examples": array (exactly 2) of { "target": a natural ${language} example sentence using "${word}",${nonLatin ? ' "tl": its Latin reading,' : ""} "gloss": its ${explanationLanguage} translation },\n` +
       `  "conjugation": include ONLY if "${word}" is a VERB, otherwise null. Object:\n` +
@@ -631,9 +632,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       register: str(parsed.register).toLowerCase(),
-      registerNote: str(parsed.registerNote),
       usage: str(parsed.usage),
-      nuance: str(parsed.nuance),
       similar,
       examples,
       conjugation,

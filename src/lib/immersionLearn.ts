@@ -2014,9 +2014,10 @@ export interface WordConjugation {
 
 export interface WordDeepDive {
   register: string; // "netral" | "formal" | "casual" | "sopan" | "vulgar" | ""
-  registerNote: string;
+  // [watch-word-drawer-slim-v1] Dulu ada `registerNote` & `nuance` (kartu sendiri di
+  // drawer). Kartunya dihapus — tingkat kesopanan cukup lewat chip `register` di
+  // header, dan nuansa dilebur ke `usage` oleh /api/word-deep.
   usage: string;
-  nuance: string;
   similar: WordSimilar[];
   examples: WordExample[];
   // Tabel konjugasi (verb saja; null untuk kelas kata lain).
@@ -2045,9 +2046,7 @@ export async function getWordDeepDive(params: {
   const conj = data.conjugation;
   return {
     register: data.register ?? "",
-    registerNote: data.registerNote ?? "",
     usage: data.usage ?? "",
-    nuance: data.nuance ?? "",
     similar: Array.isArray(data.similar) ? data.similar : [],
     examples: Array.isArray(data.examples) ? data.examples : [],
     conjugation:

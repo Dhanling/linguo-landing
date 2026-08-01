@@ -1,9 +1,9 @@
 "use client";
 
 // Mode "Belajar Mendalami Kata" — layar penuh yang dibuka dari tombol perbesar di
-// tooltip kata. Menyajikan kata secara mendalam: arti, tingkat kesopanan
-// (register: netral/formal/casual/dll), kapan & bagaimana dipakai, nuansa, kata
-// mirip yang gampang ketuker, dan contoh kalimat. Plus tab "Tanya AI" untuk
+// tooltip kata. Menyajikan kata secara mendalam: arti + tingkat kesopanan (chip di
+// header), kapan & bagaimana dipakai, konjugasi (kata kerja), kata mirip yang
+// gampang ketuker, dan contoh kalimat. Plus tab "Tanya AI" untuk
 // pertanyaan lanjutan bebas (kapan pakai, bedanya dengan kata lain, dll).
 // Semua konten AI ditarik dari /api/word-deep (Gemini) — sekali per buka.
 
@@ -83,6 +83,9 @@ const SUGGESTED = [
   "Beri contoh dalam situasi formal",
   "Beri contoh dalam situasi santai",
 ];
+// [watch-word-followup-3-v1] Chip pertanyaan lanjutan dibatasi 3 (sama dengan drawer
+// Analisa Kalimat): lebih dari itu jadi dinding chip yang justru tak terbaca.
+const MAX_FOLLOWUPS = 3;
 
 type ChatMsg = { role: "user" | "ai"; text: string; followups?: FollowupQ[] };
 
@@ -328,14 +331,7 @@ export default function WordStudy({
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 sm:px-6">
         <div className="mx-auto max-w-2xl">
           {tab === "study" ? (
-            <StudyTab
-              loading={loading}
-              errored={errored}
-              deep={deep}
-              reg={reg}
-              langCode={langCode}
-              onAsk={ask}
-            />
+            <StudyTab loading={loading} errored={errored} deep={deep} langCode={langCode} onAsk={ask} />
           ) : (
             <AskTab chat={chat} asking={asking} onAsk={ask} chatEndRef={chatEndRef} onWordTap={onExplainWordTap} langCode={langCode} />
           )}
@@ -438,14 +434,15 @@ function SkelSection({ lines = 3, chip = false }: { lines?: number; chip?: boole
 // (kesopanan, penggunaan, contoh) + baris chip pertanyaan.
 function StudySkeleton() {
   return (
-    <div className="space-y-3.5" aria-busy="true" aria-label="Menyiapkan materi belajar">
-      <SkelSection lines={2} chip />
+    <div className="space-y-2.5" aria-busy="true" aria-label="Menyiapkan materi belajar">
+      {/* Ikut susunan tab Pelajari yang sekarang: penggunaan → kata mirip → contoh. */}
+      <SkelSection lines={3} />
       <SkelSection lines={3} />
       <SkelSection lines={2} />
       <div className="pt-1">
         <Skel w={132} h={10} className="mb-2.5" />
         <div className="flex flex-wrap gap-2">
-          {[112, 150, 96, 128].map((w, i) => (
+          {[112, 150, 96].map((w, i) => (
             <Skel key={i} w={w} h={30} r={9999} />
           ))}
         </div>
@@ -476,14 +473,12 @@ function StudyTab({
   loading,
   errored,
   deep,
-  reg,
   langCode,
   onAsk,
 }: {
   loading: boolean;
   errored: boolean;
   deep: WordDeepDive | null;
-  reg: { label: string; color: string; bg: string } | null;
   langCode: string;
   onAsk: (q: string) => void;
 }) {
@@ -496,6 +491,13 @@ function StudyTab({
   const termQuestions = (deep?.terms ?? []).map((t) =>
     langName ? `Apa itu ${t} dalam bahasa ${langName}?` : `Apa itu ${t}?`
   );
+  // [watch-word-followup-3-v1] Maksimal 3 chip — sama dengan drawer Analisa Kalimat.
+  // Istilah dari penjelasan didahulukan (paling nyambung dgn yang barusan dibaca),
+  // sisanya diisi pertanyaan siap-pakai.
+  const chipQs = [...termQuestions, ...SUGGESTED].slice(0, MAX_FOLLOWUPS);
+  // Bacaan Latin untuk kata bahasa target yang dikutip di chip (Jepang/Mandarin/…).
+  // Hook WAJIB dipanggil sebelum early-return di bawah.
+  const chipReadings = useFollowupReadings(chipQs, langCode);
 
   if (loading) {
     return <StudySkeleton />;
@@ -512,37 +514,18 @@ function StudyTab({
   }
 
   return (
-    <div className="space-y-3.5">
-      {/* Tingkat kesopanan */}
-      {(deep.registerNote || reg) && (
-        <Section title="Tingkat Kesopanan">
-          <div className="flex items-center gap-2">
-            {reg && (
-              <span
-                className="rounded-full px-2.5 py-1 text-[12px] font-bold"
-                style={{ backgroundColor: reg.bg, color: reg.color }}
-              >
-                {reg.label}
-              </span>
-            )}
-          </div>
-          {deep.registerNote && (
-            <p className="mt-2 text-[13.5px] leading-relaxed text-white/85">{deep.registerNote}</p>
-          )}
-        </Section>
-      )}
+    <div className="space-y-2.5">
+      {/* [watch-word-drawer-slim-v1] Kartu "Tingkat Kesopanan" & "Nuansa" DIHAPUS
+          (permintaan 1 Agu 2026): tingkat kesopanan sudah diwakili chip di header
+          drawer, dan nuansa terlalu mirip dengan "Kapan & Bagaimana Dipakai" — tiga
+          kartu prosa berturut-turut bikin bagian yang benar-benar dipakai belajar
+          (kata mirip & contoh kalimat) terdorong jauh ke bawah. Isi nuansa kini
+          dilebur ke `usage` di /api/word-deep, jadi tak ada yang hilang. */}
 
       {/* Penggunaan */}
       {deep.usage && (
         <Section title="Kapan & Bagaimana Dipakai">
           <p className="text-[13.5px] leading-relaxed text-white/85">{deep.usage}</p>
-        </Section>
-      )}
-
-      {/* Nuansa */}
-      {deep.nuance && (
-        <Section title="Nuansa">
-          <p className="text-[13.5px] leading-relaxed text-white/85">{deep.nuance}</p>
         </Section>
       )}
 
@@ -556,27 +539,29 @@ function StudyTab({
         </Section>
       )}
 
-      {/* Kata mirip */}
+      {/* Kata mirip — tiap kata satu baris kecil: kata + bacaannya di baris atas,
+          bedanya di bawah. Dulu bacaan Latin nyempil di atas kalimat penjelasan
+          sehingga tak jelas dia milik kata yang mana. */}
       {deep.similar.length > 0 && (
         <Section title="Kata Mirip yang Gampang Ketuker">
-          <div className="space-y-2.5">
+          <div className="space-y-1.5">
             {deep.similar.map((s, i) => (
-              <div key={i} className="flex items-start gap-2.5">
-                <button
-                  onClick={() => speakText(s.word, langCode)}
-                  className="mt-0.5 shrink-0 rounded-lg px-2 py-1 text-[13px] font-bold transition-colors hover:bg-white/10"
-                  style={{ color: "#7FE0E0", backgroundColor: CARD }}
-                >
-                  {s.word}
-                </button>
-                <div className="min-w-0">
+              <div key={i} className="rounded-xl px-2.5 py-2" style={{ backgroundColor: ROW_ALT }}>
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                  <button
+                    onClick={() => speakText(s.word, langCode)}
+                    className="text-[13.5px] font-bold transition-opacity hover:opacity-80"
+                    style={{ color: "#7FE0E0" }}
+                  >
+                    {s.word}
+                  </button>
                   {s.tl && (
-                    <p className="text-[11.5px] italic" style={{ color: SUB }}>
+                    <span className="text-[11.5px] italic" style={{ color: SUB }}>
                       {s.tl}
-                    </p>
+                    </span>
                   )}
-                  <p className="text-[13px] leading-relaxed text-white/80">{s.diff}</p>
                 </div>
+                <p className="mt-0.5 text-[13px] leading-relaxed text-white/80">{s.diff}</p>
               </div>
             ))}
           </div>
@@ -586,29 +571,31 @@ function StudyTab({
       {/* Contoh kalimat */}
       {deep.examples.length > 0 && (
         <Section title="Contoh Kalimat">
-          <div className="space-y-3">
+          <div className="space-y-1.5">
             {deep.examples.map((ex, i) => (
-              <div key={i}>
-                <div className="flex items-start gap-2">
-                  <button
-                    onClick={() => speakText(ex.target, langCode)}
-                    aria-label="Dengar contoh"
-                    className="mt-0.5 shrink-0 opacity-70 transition-opacity hover:opacity-100"
-                    style={{ color: TEAL }}
-                  >
-                    <Volume2 className="h-4 w-4" />
-                  </button>
-                  <div className="min-w-0">
-                    <p className="text-[14.5px] font-semibold leading-snug text-white">{ex.target}</p>
-                    {ex.tl && (
-                      <p className="text-[12px] italic" style={{ color: "#7FE0E0" }}>
-                        {ex.tl}
-                      </p>
-                    )}
-                    <p className="mt-0.5 text-[13px] leading-snug" style={{ color: GOLD }}>
-                      {ex.gloss}
+              <div
+                key={i}
+                className="flex items-start gap-2 rounded-xl px-2.5 py-2"
+                style={{ backgroundColor: ROW_ALT }}
+              >
+                <button
+                  onClick={() => speakText(ex.target, langCode)}
+                  aria-label="Dengar contoh"
+                  className="mt-0.5 shrink-0 opacity-70 transition-opacity hover:opacity-100"
+                  style={{ color: TEAL }}
+                >
+                  <Volume2 className="h-4 w-4" />
+                </button>
+                <div className="min-w-0">
+                  <p className="text-[14.5px] font-semibold leading-snug text-white">{ex.target}</p>
+                  {ex.tl && (
+                    <p className="text-[12px] italic" style={{ color: "#7FE0E0" }}>
+                      {ex.tl}
                     </p>
-                  </div>
+                  )}
+                  <p className="mt-0.5 text-[13px] leading-snug" style={{ color: GOLD }}>
+                    {ex.gloss}
+                  </p>
                 </div>
               </div>
             ))}
@@ -617,30 +604,26 @@ function StudyTab({
       )}
 
       {/* Ajakan bertanya — chip istilah tata bahasa baru muncul lebih dulu, mis.
-          "Apa itu vokatif dalam bahasa Georgia?" dari deep.terms. */}
+          "Apa itu vokatif dalam bahasa Georgia?" dari deep.terms. Kata bahasa target
+          yang dikutip di chip dapat bacaan Latin-nya (Jepang/Mandarin/Korea/Arab…),
+          biar chip-nya tak jadi tebak-tebakan buat pemula. */}
       <div className="pt-1">
         <p className="mb-2 text-[12px] font-semibold" style={{ color: SUB }}>
           Masih penasaran? Tanya AI:
         </p>
         <div className="flex flex-wrap gap-2">
-          {termQuestions.map((q) => (
+          {chipQs.map((q, i) => (
             <button
               key={q}
               onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/10"
-              style={{ backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }}
+              className="rounded-full px-3 py-1.5 text-left text-[12.5px] font-semibold transition-colors hover:bg-white/10"
+              style={
+                i < termQuestions.length
+                  ? { backgroundColor: "rgba(26,158,158,0.16)", color: "#7FE0E0" }
+                  : { backgroundColor: CARD, color: "rgba(255,255,255,0.85)" }
+              }
             >
-              {q}
-            </button>
-          ))}
-          {SUGGESTED.map((q) => (
-            <button
-              key={q}
-              onClick={() => onAsk(q)}
-              className="rounded-full px-3 py-1.5 text-[12.5px] font-semibold text-white/85 transition-colors hover:bg-white/10"
-              style={{ backgroundColor: CARD }}
-            >
-              {q}
+              <FollowupText text={q} readings={chipReadings} />
             </button>
           ))}
         </div>
@@ -700,8 +683,9 @@ function AskTab({
   // Hook harus dipanggil sebelum early-return layar pembuka di bawah (aturan hooks);
   // daftar pertanyaan dihitung dari pesan AI terakhir, kosong = tak ada fetch.
   const last = chat[chat.length - 1];
-  const chipQs =
-    last?.role === "ai" ? (last.followups ?? []).map((f) => stripGuillemets(f.q)) : [];
+  const lastFollowups =
+    last?.role === "ai" ? (last.followups ?? []).slice(0, MAX_FOLLOWUPS) : [];
+  const chipQs = lastFollowups.map((f) => stripGuillemets(f.q));
   const chipReadings = useFollowupReadings(chipQs, langCode);
   if (chat.length === 0 && !asking) {
     return (
@@ -718,7 +702,7 @@ function AskTab({
           pilih salah satu:
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {SUGGESTED.map((q) => (
+          {SUGGESTED.slice(0, MAX_FOLLOWUPS).map((q) => (
             <button
               key={q}
               onClick={() => onAsk(q)}
@@ -732,10 +716,6 @@ function AskTab({
       </div>
     );
   }
-
-  // Usulan lanjutan diambil dari pesan AI terakhir (tiap jawaban bawa usulan baru).
-  const lastMsg = chat[chat.length - 1];
-  const lastFollowups = lastMsg?.role === "ai" ? lastMsg.followups ?? [] : [];
 
   return (
     <div className="space-y-3">
