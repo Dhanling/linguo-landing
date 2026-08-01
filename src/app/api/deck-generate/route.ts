@@ -20,6 +20,13 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // (gejalanya "AI tidak mengembalikan JSON." karena callGemini balikin ""), kita
 // jatuh ke model berikutnya yang punya jatah harian sendiri agar fitur tetap hidup.
 const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
+
+// [word-deep-claude-fallback-v1] Cadangan LINTAS-PROVIDER — samakan dengan
+// /api/word-deep. Rantai MODELS di atas tak menolong saat kuota Gemini habis
+// SEAKUN (saldo prepaid dipakai bareng semua model), jadi Claude jadi jaring
+// terakhir dengan kunci & akun terpisah.
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+const CLAUDE_MODEL = "claude-haiku-4-5";
 // Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
 // thinkingConfig; model lain akan 400 kalau dikirim.
 function supportsThinking(model: string): boolean {
@@ -77,14 +84,68 @@ async function callModel(model: string, prompt: string): Promise<string> {
   );
 }
 
+// Lewati Gemini sementara setelah satu putaran gagal total (kuota habis bertahan
+// berjam-jam) supaya tak buang 3 round-trip sia-sia tiap permintaan.
+const GEMINI_COOLDOWN_MS = 10 * 60 * 1000;
+let geminiCooldownUntil = 0;
+
 // Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
 // Balikin "" hanya bila semua model habis kuota/gagal.
 async function callGemini(prompt: string): Promise<string> {
+  if (!GEMINI_API_KEY || Date.now() < geminiCooldownUntil) return "";
   for (const model of MODELS) {
-    const text = await callModel(model, prompt);
-    if (text.trim()) return text;
+    try {
+      const text = await callModel(model, prompt);
+      if (text.trim()) {
+        geminiCooldownUntil = 0;
+        return text;
+      }
+    } catch {
+      /* coba model berikutnya */
+    }
   }
+  geminiCooldownUntil = Date.now() + GEMINI_COOLDOWN_MS;
   return "";
+}
+
+// [word-deep-claude-fallback-v1] Jaring terakhir: Claude (Messages API), kontrak
+// balasan sama (JSON mentah) jadi parser di bawah tak peduli asal jawabannya.
+async function callClaude(prompt: string): Promise<string> {
+  if (!ANTHROPIC_API_KEY) return "";
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: CLAUDE_MODEL,
+        // Deck bisa sampai puluhan kartu (kata + arti + contoh + translit).
+        max_tokens: 8000,
+        system:
+          "You are a language tutor API. Reply with ONLY the JSON requested — " +
+          "no prose, no markdown fences.",
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    return Array.isArray(data?.content)
+      ? data.content
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .map((b: any) => (b?.type === "text" && typeof b.text === "string" ? b.text : ""))
+          .join("")
+      : "";
+  } catch {
+    return "";
+  }
+}
+
+// Satu pintu: Gemini dulu, Claude kalau seluruh rantai Gemini kosong.
+async function generate(prompt: string): Promise<string> {
+  return (await callGemini(prompt)) || (await callClaude(prompt));
 }
 
 export interface GeneratedCard {
@@ -97,8 +158,9 @@ export interface GeneratedCard {
 
 export async function POST(req: NextRequest) {
   try {
-    if (!GEMINI_API_KEY) {
-      return NextResponse.json({ error: "GEMINI_API_KEY belum diset." }, { status: 500 });
+    // Cukup salah satu provider terpasang (Gemini utama / Claude cadangan).
+    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) {
+      return NextResponse.json({ error: "Kunci AI belum diset." }, { status: 500 });
     }
     const body = (await req.json()) as {
       theme?: string;
@@ -128,7 +190,7 @@ export async function POST(req: NextRequest) {
       `Rules: single words or short common phrases (max 3 words each), no duplicates, order from most common to least, pick words a learner would actually use for this theme.`,
     ].join("\n");
 
-    const raw = await callGemini(prompt);
+    const raw = await generate(prompt);
     const start = raw.indexOf("{");
     const end = raw.lastIndexOf("}");
     if (start === -1 || end === -1 || end < start) {

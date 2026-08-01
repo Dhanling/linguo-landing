@@ -4,7 +4,8 @@
 // (lewat Edge Function word-info yang dipakai bareng app mobile). Untuk mode layar
 // penuh kita butuh yang lebih kaya — tingkat kesopanan (register), kapan dipakai,
 // nuansa, dan perbandingan dengan kata mirip — plus tanya-jawab lanjutan bebas.
-// Semua digenerate Gemini di sini biar tak perlu ubah Edge Function bersama.
+// Semua digenerate di sini (Gemini, cadangan Claude) biar tak perlu ubah Edge
+// Function bersama.
 //
 // Dua mode:
 //   overview → JSON terstruktur (register + usage + nuance + similar + examples)
@@ -26,6 +27,16 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 // (gemini-2.0-flash & 2.0-flash-lite kini "no longer available" → 404, jadi tak
 // dipakai sebagai cadangan; gemini-flash-lite-latest auto-ikut model lite terbaru.)
 const MODELS = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"];
+
+// [word-deep-claude-fallback-v1] Cadangan LINTAS-PROVIDER. Rantai MODELS di atas
+// TIDAK menolong saat kuota Gemini habis seakun: kuota harian per-model boleh beda,
+// tapi saldo/prepaid-credit dipakai bareng — insiden 1 Agu 2026 semua model balas
+// 429 sekaligus ("quota exceeded" + "prepayment credits are depleted"), jadi drawer
+// analisa kata & kalimat mati total ("Gagal memuat materi"). Claude jadi jaring
+// terakhir: kunci ANTHROPIC_API_KEY sudah ada di Vercel (dipakai chat Ling &
+// Lingbook), akun terpisah, jadi tak ikut tumbang. Pola sama dgn lib/translit-gemini.
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+const CLAUDE_MODEL = "claude-haiku-4-5";
 // Hanya seri 2.5+/3 (dan alias *-latest yang menunjuk ke sana) yang menerima
 // thinkingConfig; model 2.0 akan 400 kalau dikirim.
 function supportsThinking(model: string): boolean {
@@ -134,15 +145,78 @@ async function callModel(model: string, prompt: string, json: boolean): Promise<
   );
 }
 
+// [word-deep-claude-fallback-v1] Saat kuota Gemini habis, KETIGA model balas 429 dan
+// itu bertahan berjam-jam (reset harian / isi ulang saldo). Tanpa penanda, tiap
+// permintaan tetap mengetuk 3 model dulu (3 round-trip sia-sia) sebelum jatuh ke
+// Claude — drawer terasa lelet padahal cadangannya sehat. Begitu satu putaran Gemini
+// gagal total, lewati Gemini sementara di instance ini.
+const GEMINI_COOLDOWN_MS = 10 * 60 * 1000;
+let geminiCooldownUntil = 0;
+
 // Coba tiap model di MODELS berurutan sampai ada yang membalas teks non-kosong.
 // Jadi saat model utama mentok kuota harian (429 → ""), fitur tetap jalan lewat
 // model cadangan yang punya jatah harian sendiri. Balikin "" hanya bila semua habis.
 async function callGemini(prompt: string, json: boolean): Promise<string> {
+  if (!GEMINI_API_KEY || Date.now() < geminiCooldownUntil) return "";
   for (const model of MODELS) {
-    const text = await callModel(model, prompt, json);
-    if (text.trim()) return text;
+    try {
+      const text = await callModel(model, prompt, json);
+      if (text.trim()) {
+        geminiCooldownUntil = 0;
+        return text;
+      }
+    } catch {
+      /* coba model berikutnya */
+    }
   }
+  geminiCooldownUntil = Date.now() + GEMINI_COOLDOWN_MS;
   return "";
+}
+
+// [word-deep-claude-fallback-v1] Jaring terakhir: Claude (Messages API). Kontraknya
+// SAMA dengan jalur Gemini — balas teks (JSON mentah saat json=true) — jadi semua
+// parser di bawah tak perlu tahu jawabannya datang dari provider yang mana.
+async function callClaude(prompt: string, json: boolean): Promise<string> {
+  if (!ANTHROPIC_API_KEY) return "";
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: CLAUDE_MODEL,
+        // Kartu analisa kata bisa panjang (tabel konjugasi 6-8 baris + contoh).
+        max_tokens: 4000,
+        ...(json
+          ? {
+              system:
+                "You are a language tutor API. Reply with ONLY the JSON object requested — " +
+                "no prose, no explanation, no markdown fences.",
+            }
+          : {}),
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    if (!res.ok) return "";
+    const data = await res.json();
+    return Array.isArray(data?.content)
+      ? data.content
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .map((b: any) => (b?.type === "text" && typeof b.text === "string" ? b.text : ""))
+          .join("")
+      : "";
+  } catch {
+    return "";
+  }
+}
+
+// Satu pintu untuk semua pemanggil: Gemini dulu (murah & cepat), Claude kalau
+// SELURUH rantai Gemini kosong — bukan menyerah dengan diam.
+async function generate(prompt: string, json: boolean): Promise<string> {
+  return (await callGemini(prompt, json)) || (await callClaude(prompt, json));
 }
 
 // Prompt tanya-jawab lanjutan bebas — dipakai baik untuk KATA maupun KALIMAT.
@@ -245,7 +319,10 @@ function parseAsk(raw: string): { answer: string; followups: { q: string; tl?: s
 
 export async function POST(req: NextRequest) {
   try {
-    if (!GEMINI_API_KEY) {
+    // [word-deep-claude-fallback-v1] Cukup SALAH SATU provider terpasang — dulu
+    // gerbang ini cuma cek kunci Gemini, jadi cadangan Claude tak akan pernah
+    // kebagian giliran kalau kunci Gemini hilang/dicabut.
+    if (!GEMINI_API_KEY && !ANTHROPIC_API_KEY) {
       return NextResponse.json({ error: "not_configured" }, { status: 200 });
     }
 
@@ -287,7 +364,7 @@ export async function POST(req: NextRequest) {
           subject: `The learner is studying this ${language} sentence: "${sentence}".`,
           question,
         });
-        const raw = await callGemini(prompt, true);
+        const raw = await generate(prompt, true);
         return NextResponse.json(parseAsk(raw));
       }
 
@@ -320,7 +397,7 @@ export async function POST(req: NextRequest) {
         // atau "Gimana cara bilang 'sebelum' dan 'setelah'?". Maksimal 3 biar ringkas.
         `  "followups": array of EXACTLY 3 short follow-up questions in ${explanationLanguage} that a learner would tap next. Each MUST target a concrete grammar point that actually occurs in THIS sentence — the specific construction/pattern (quote the ${language} words in it), the tense/aspect used, the particle/preposition used, or how to express that same function in general. Phrase them as a learner talking to a tutor (e.g. "Ajarin cara pakai «...»", "Gimana cara bilang ... dalam bahasa ${language}?", "Kapan pakai ...?"). NEVER generic questions like "jelaskan tata bahasanya lebih dalam" or "buat contoh kalimat mirip"\n` +
         `}` + translitHint + idAddress + ` No markdown, no commentary outside the JSON.`;
-      const raw = await callGemini(prompt, true);
+      const raw = await generate(prompt, true);
       const s = raw.indexOf("{");
       const e = raw.lastIndexOf("}");
       if (s === -1 || e === -1 || e < s) {
@@ -403,7 +480,7 @@ export async function POST(req: NextRequest) {
         subject: `The learner is studying the ${language} word "${word}".${ctx}`,
         question,
       });
-      const raw = await callGemini(prompt, true);
+      const raw = await generate(prompt, true);
       return NextResponse.json(parseAsk(raw));
     }
 
@@ -429,7 +506,7 @@ export async function POST(req: NextRequest) {
       `  "terms": array (0-4) of grammatical terms in ${explanationLanguage} that you used above and that a beginner may not know (e.g. "vokatif", "nominatif", "aspek", "gender gramatikal"); empty array if none\n` +
       `}` + translitHint + idAddress + ` No markdown, no commentary outside the JSON.`;
 
-    const raw = await callGemini(prompt, true);
+    const raw = await generate(prompt, true);
     const s = raw.indexOf("{");
     const e = raw.lastIndexOf("}");
     if (s === -1 || e === -1 || e < s) {
