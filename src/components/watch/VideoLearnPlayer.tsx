@@ -191,13 +191,15 @@ function IconTooltip({
 }
 
 // [watch-word-align-v1] Penanda hover-sync antar baris (kata target ↔ arti ↔
-// transliterasi). Dulu sorot LATAR teal — sekarang GARIS BAWAH: tak menutup teks,
-// lebih halus, dan tetap rapi saat frasa multi-kata menyala menembus wrap baris.
+// transliterasi).
+// [watch-sync-highlight-v1] Kembali ke SOROTAN LATAR (permintaan user): garis bawah
+// tabrakan dengan bacaan Latin yang kini menumpuk di atas kata — barisnya jadi ramai
+// dan tak rapi. Latar teal transparan + `box-shadow` sebagai "padding" (bukan padding
+// asli) supaya kata TIDAK bergeser saat di-hover, jadi baris tak goyang.
 const SYNC_UNDERLINE: React.CSSProperties = {
-  textDecorationLine: "underline",
-  textDecorationColor: TEAL,
-  textDecorationThickness: 2,
-  textUnderlineOffset: 3,
+  backgroundColor: "rgba(26,158,158,0.32)",
+  borderRadius: 4,
+  boxShadow: "0 0 0 2px rgba(26,158,158,0.32)",
 };
 const SUB = "rgba(255,255,255,0.5)";
 
@@ -4251,14 +4253,31 @@ function alignTranslitTokens(
   langCode?: string
 ): { text: string; k: number }[] | null {
   const words = splitWords(target, langCode);
-  const wordCount = words.filter((w) => w.isWord).length;
+  const targetWords = words.filter((w) => w.isWord);
+  const wordCount = targetWords.length;
   // Pertahankan pemisah (spasi) sebagai token sendiri biar spasi asli translit utuh.
   const pieces = translit.split(/(\s+)/).filter((p) => p.length);
   const wordPieces = pieces.filter((p) => p.trim().length);
   if (!wordCount) return null;
 
+  // [watch-translit-ruby-v5] Penjaga penjajaran 1:1: jumlah token yang kebetulan sama
+  // TIDAK menjamin urutannya sepadan. Penanda paling jelas adalah ANGKA — angka
+  // ditulis sama persis di kedua baris, jadi kalau kata target ke-k angka sedangkan
+  // token translit ke-k bukan (atau sebaliknya), penjajarannya pasti bergeser dan
+  // bacaan Latin akan nangkring di atas kata yang salah. Lebih baik batal → baris
+  // translit utuh. Kasus nyata: subtitle Jepang "…ニュースを3つ紹介します" bikin
+  // seluruh bacaan geser satu kata.
+  const digits = (s: string) => s.replace(/\D+/gu, "");
+  const misaligned = (list: string[]) =>
+    list.some((p, i) => {
+      const w = targetWords[i]?.text ?? "";
+      const a = digits(w);
+      const b = digits(p);
+      return (a || b) && a !== b;
+    });
+
   // Jalur CEPAT: token translit 1:1 dengan kata target.
-  if (wordCount === wordPieces.length) {
+  if (wordCount === wordPieces.length && !misaligned(wordPieces)) {
     let k = -1;
     return pieces.map((p) => (p.trim().length ? { text: p, k: ++k } : { text: p, k: -1 }));
   }
@@ -4269,10 +4288,19 @@ function alignTranslitTokens(
   // "50/50", "ya-ya" — dihitung 1 potongan saat dipisah spasi, padahal di teks
   // target segmenter memecahnya jadi 2 kata → jumlah tak pernah cocok dan bacaan
   // Latin bahasa Rusia dkk selalu jatuh ke baris utuh (tak menumpuk per kata).
-  const seg = splitWords(translit, "en");
-  if (seg.filter((s) => s.isWord).length === wordCount) {
+  // Aksara silabis (Han/kana/Hangul) SENGAJA tak lewat sini: kata hasil segmentasi
+  // Jepang/Mandarin tak berkorespondensi satu-satu dengan token romaji/pinyin, jadi
+  // jumlah yang kebetulan sama justru menghasilkan bacaan yang meleset. Mereka
+  // ditangani jalur SUKU-KATA di bawah.
+  const segWords = splitWords(translit, "en");
+  const segList = segWords.filter((s) => s.isWord).map((s) => s.text);
+  if (
+    !targetWords.some((w) => SYLLABIC_CHAR_RE.test(w.text)) &&
+    segList.length === wordCount &&
+    !misaligned(segList)
+  ) {
     let k = -1;
-    return seg.map((s) => (s.isWord ? { text: s.text, k: ++k } : { text: s.text, k: -1 }));
+    return segWords.map((s) => (s.isWord ? { text: s.text, k: ++k } : { text: s.text, k: -1 }));
   }
 
   // Jalur SUKU-KATA: hanya untuk aksara silabis (tiap karakter kata = 1 suku kata).
@@ -4319,9 +4347,14 @@ const RUBY_FONT_WEIGHT = 600;
 
 // Dua baris dalam SATU kotak inline-block: bacaan Latin di atas, aksara aslinya
 // di bawah, dua-duanya rata tengah supaya sejajar per kata seperti referensi.
-// Karena inline-block mengambil baseline dari baris TERAKHIR-nya, kata tetap
-// sejajar dengan token pemisah (spasi/tanda baca) di sekitarnya. Warna diwarisi
-// dari kata → sorotan karaoke otomatis sinkron di kedua baris.
+// Warna diwarisi dari kata → sorotan karaoke otomatis sinkron di kedua baris.
+// [watch-ruby-baseline-fix-v1] `ruby` boleh string KOSONG: barisnya tetap dicetak
+// (spasi keras) sebagai penahan tinggi. Ini WAJIB untuk token yang tak punya bacaan
+// (angka, tanda baca, spasi) di baris yang sebagian katanya beruby — baris subtitle
+// memakai flexbox `align-items: baseline`, dan flexbox mengambil baseline PERTAMA
+// sebuah item; token satu baris jadi ikut naik sejajar baris bacaan Latin (itulah
+// "。" & angka yang melayang di baris pinyin/romaji). Dengan baris penahan ini semua
+// token punya struktur dua baris → sejajar rapi.
 function rubyStack(ruby: string, text: string, plain?: boolean) {
   return (
     <>
@@ -4340,7 +4373,7 @@ function rubyStack(ruby: string, text: string, plain?: boolean) {
           textShadow: plain ? "none" : TRANSLIT_OUTLINE,
         }}
       >
-        {ruby}
+        {ruby || " "}
       </span>
       <span className="block text-center">{text}</span>
     </>
@@ -4567,9 +4600,11 @@ function KaraokeWord({
   //    (putih) walau kebetulan jadi kata karaoke aktif → hanya yang diklik yang menyala;
   //  • selain itu → ikut karaoke (aktif = teal).
   const colored = tapped ? true : lineTapped ? false : active;
+  // [watch-sync-highlight-v1] Hover = SOROTAN LATAR (bukan garis bawah lagi):
+  // `hover:bg-*` + ring lewat box-shadow, jadi kata tak bergeser sedikit pun.
   const cls = inPhrase
     ? "relative mx-[1px] inline-block align-baseline transition-all duration-200 ease-out"
-    : "relative mx-[1px] inline-block cursor-pointer align-baseline transition-all duration-200 ease-out hover:[text-decoration-line:underline] hover:[text-decoration-color:#1A9E9E] hover:[text-decoration-thickness:2px] hover:[text-underline-offset:3px]";
+    : "relative mx-[1px] inline-block cursor-pointer rounded align-baseline transition-all duration-200 ease-out hover:[background-color:rgba(26,158,158,0.32)] hover:[box-shadow:0_0_0_2px_rgba(26,158,158,0.32)]";
   return (
     <span
       onClick={inPhrase ? undefined : onClick}
@@ -4587,7 +4622,10 @@ function KaraokeWord({
         ...(hovered && !inPhrase ? SYNC_UNDERLINE : null),
       }}
     >
-      {ruby ? rubyStack(ruby, text, plain) : text}
+      {/* [watch-ruby-baseline-fix-v1] String kosong ≠ tanpa ruby: kata yang tak
+          punya bacaan tetap dicetak dua baris (baris atas kosong) selama baris
+          ini memang beruby, supaya tak melayang ke baris bacaan Latin. */}
+      {ruby != null ? rubyStack(ruby, text, plain) : text}
     </span>
   );
 }
@@ -4679,6 +4717,11 @@ function KaraokeText({
     return toks.map((t) => (t.isWord ? ++k : -1));
   }, [toks]);
 
+  // [watch-ruby-baseline-fix-v1] Baris ini punya bacaan Latin di atas kata? Kalau ya,
+  // SEMUA token (termasuk angka, tanda baca & spasi yang tak punya bacaan) dicetak
+  // dua baris supaya baseline-nya sejajar — lihat rubyStack.
+  const hasRuby = !!rubyByK?.size;
+
   // Satu token kata → elemen KaraokeWord. `inPhrase` mematikan klik/hover per-kata
   // (pembungkus frasa yang urus); `phraseActive` mewarnai kata teal saat frasanya
   // sedang diucapkan (semua kata frasa nyala bareng).
@@ -4705,7 +4748,7 @@ function KaraokeText({
         hovered={(hotKeys?.has(wordK[j]) ?? false) || (hoveredK != null && hoveredK === wordK[j])}
         onHover={(h) => onHoverWord?.(h ? wordK[j] : null)}
         plain={plain}
-        ruby={rubyByK?.get(wordK[j])}
+        ruby={rubyByK?.get(wordK[j]) ?? (hasRuby ? "" : undefined)}
       />
     );
   };
@@ -4717,8 +4760,12 @@ function KaraokeText({
     // baca) tetap putih. Padam saat ada kata lain di baris ini yang dibuka artinya.
     const colored = isDigitToken(t.text) && t.state === "active" && !anyTapped;
     return (
-      <span key={j} className="whitespace-pre" style={{ color: colored ? TEAL : "#fff", textShadow: plain ? "none" : KARAOKE_SHADOW }}>
-        {t.text}
+      <span
+        key={j}
+        className={hasRuby ? "inline-block whitespace-pre align-baseline" : "whitespace-pre"}
+        style={{ color: colored ? TEAL : "#fff", textShadow: plain ? "none" : KARAOKE_SHADOW }}
+      >
+        {hasRuby ? rubyStack("", t.text, plain) : t.text}
       </span>
     );
   };
