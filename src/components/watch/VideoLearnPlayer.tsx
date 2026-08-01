@@ -4263,6 +4263,18 @@ function alignTranslitTokens(
     return pieces.map((p) => (p.trim().length ? { text: p, k: ++k } : { text: p, k: -1 }));
   }
 
+  // [watch-translit-ruby-v4] Jalur CEPAT-2 (aksara alfabet: Rusia, Yunani, Georgia,
+  // Arab, Ibrani…): pisah translit pakai segmenter KATA yang sama dengan target,
+  // bukan cuma spasi. Perlu karena token yang menempel tanda baca — "25–28",
+  // "50/50", "ya-ya" — dihitung 1 potongan saat dipisah spasi, padahal di teks
+  // target segmenter memecahnya jadi 2 kata → jumlah tak pernah cocok dan bacaan
+  // Latin bahasa Rusia dkk selalu jatuh ke baris utuh (tak menumpuk per kata).
+  const seg = splitWords(translit, "en");
+  if (seg.filter((s) => s.isWord).length === wordCount) {
+    let k = -1;
+    return seg.map((s) => (s.isWord ? { text: s.text, k: ++k } : { text: s.text, k: -1 }));
+  }
+
   // Jalur SUKU-KATA: hanya untuk aksara silabis (tiap karakter kata = 1 suku kata).
   const charK: number[] = [];
   let k = -1;
