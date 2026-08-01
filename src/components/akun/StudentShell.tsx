@@ -369,8 +369,52 @@ export default function StudentShell({
         .lms-dark .text-red-700{color:#fca5a5 !important;}
         .lms-dark .text-red-600{color:#f87171 !important;}
         .lms-dark .bg-emerald-50{background-color:rgba(16,185,129,0.12) !important;}
+        .lms-dark .bg-emerald-100{background-color:rgba(16,185,129,0.20) !important;}
         .lms-dark .text-emerald-700{color:#6ee7b7 !important;}
         .lms-dark .text-emerald-600{color:#34d399 !important;}
+        .lms-dark .border-emerald-100,.lms-dark .border-emerald-200{border-color:rgba(16,185,129,0.32) !important;}
+        /* [shell-dark-tint-coverage-v1] Palet yang dulu KELEWAT: rose/indigo/violet/purple/green/
+           sky/cyan/orange/yellow. Tanpa aturan ini, tint -50/-100 (mis. lingkaran ikon
+           "Sesi minggu ini" = bg-indigo-50) tetap kepakai warna aslinya yang nyaris PUTIH,
+           jadi bulatan menyala di atas kartu hitam. Pola sama persis dgn teal/amber/blue:
+           latar jadi tint transparan, teks & border dicerahin. */
+        .lms-dark .bg-rose-50{background-color:rgba(244,63,94,0.12) !important;}
+        .lms-dark .bg-rose-100{background-color:rgba(244,63,94,0.20) !important;}
+        .lms-dark .text-rose-800,.lms-dark .text-rose-700{color:#fda4af !important;}
+        .lms-dark .text-rose-600,.lms-dark .text-rose-500{color:#fb7185 !important;}
+        .lms-dark .border-rose-100,.lms-dark .border-rose-200{border-color:rgba(244,63,94,0.32) !important;}
+        .lms-dark .bg-indigo-50{background-color:rgba(99,102,241,0.16) !important;}
+        .lms-dark .bg-indigo-100{background-color:rgba(99,102,241,0.24) !important;}
+        .lms-dark .text-indigo-700,.lms-dark .text-indigo-600,.lms-dark .text-indigo-500{color:#a5b4fc !important;}
+        .lms-dark .border-indigo-100,.lms-dark .border-indigo-200{border-color:rgba(99,102,241,0.32) !important;}
+        .lms-dark .bg-violet-50{background-color:rgba(139,92,246,0.14) !important;}
+        .lms-dark .bg-violet-100{background-color:rgba(139,92,246,0.22) !important;}
+        .lms-dark .text-violet-800,.lms-dark .text-violet-700,.lms-dark .text-violet-600,.lms-dark .text-violet-500{color:#c4b5fd !important;}
+        .lms-dark .border-violet-100,.lms-dark .border-violet-200{border-color:rgba(139,92,246,0.32) !important;}
+        .lms-dark .bg-purple-50{background-color:rgba(168,85,247,0.14) !important;}
+        .lms-dark .bg-purple-100{background-color:rgba(168,85,247,0.22) !important;}
+        .lms-dark .text-purple-800,.lms-dark .text-purple-700,.lms-dark .text-purple-600{color:#d8b4fe !important;}
+        .lms-dark .border-purple-100,.lms-dark .border-purple-200{border-color:rgba(168,85,247,0.32) !important;}
+        .lms-dark .bg-green-50{background-color:rgba(34,197,94,0.12) !important;}
+        .lms-dark .bg-green-100{background-color:rgba(34,197,94,0.20) !important;}
+        .lms-dark .text-green-800,.lms-dark .text-green-700{color:#86efac !important;}
+        .lms-dark .text-green-600{color:#4ade80 !important;}
+        .lms-dark .border-green-100,.lms-dark .border-green-200{border-color:rgba(34,197,94,0.32) !important;}
+        .lms-dark .bg-sky-50{background-color:rgba(14,165,233,0.14) !important;}
+        .lms-dark .bg-sky-100{background-color:rgba(14,165,233,0.22) !important;}
+        .lms-dark .text-sky-700,.lms-dark .text-sky-600{color:#7dd3fc !important;}
+        .lms-dark .border-sky-100,.lms-dark .border-sky-200{border-color:rgba(14,165,233,0.32) !important;}
+        .lms-dark .bg-cyan-50{background-color:rgba(6,182,212,0.14) !important;}
+        .lms-dark .text-cyan-700,.lms-dark .text-cyan-600{color:#67e8f9 !important;}
+        .lms-dark .bg-orange-50{background-color:rgba(249,115,22,0.14) !important;}
+        .lms-dark .text-orange-700,.lms-dark .text-orange-600{color:#fdba74 !important;}
+        .lms-dark .bg-yellow-50{background-color:rgba(234,179,8,0.14) !important;}
+        .lms-dark .bg-yellow-100{background-color:rgba(234,179,8,0.22) !important;}
+        .lms-dark .text-yellow-800,.lms-dark .text-yellow-700{color:#fde047 !important;}
+        .lms-dark .border-yellow-200,.lms-dark .border-yellow-300{border-color:rgba(234,179,8,0.35) !important;}
+        /* [shell-dark-no-white-ring-v1] cincin putih (avatar profil dll) = outline menyala di
+           latar hitam. Dimatikan cuma di dark mode; light mode tetap punya cincinnya. */
+        .lms-dark .ring-white{--tw-ring-color:transparent !important;}
         /* ── Border & pemisah: cukup kelihatan buat misahin kartu dari latar hitam ── */
         .lms-dark .border-slate-100,.lms-dark .border-slate-200,.lms-dark .border-gray-100,.lms-dark .border-gray-200{border-color:#2a2a2a !important;}
         .lms-dark .border-slate-300,.lms-dark .border-gray-300{border-color:#3f3f46 !important;}

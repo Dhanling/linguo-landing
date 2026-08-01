@@ -4116,10 +4116,12 @@ export default function AkunPage() {
                                       <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
                                     </div>
-                                    {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas */}
+                                    {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
+                                        [beranda-teacher-avatar-v2] tanpa ring putih — di dark mode
+                                        cincinnya kebaca sebagai outline putih yang nabrak kartu hitam */}
                                     <div className="mt-1.5 flex items-center gap-2">
                                       {tAva ? (
-                                        <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover ring-2 ring-white shadow-sm" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                        <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
                                       ) : null}
                                       <span className={`${tAva ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
                                       <p className="truncate text-[13px] font-medium text-gray-500">{tName || badge.label}</p>
