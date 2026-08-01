@@ -3592,7 +3592,9 @@ export default function VideoLearnPlayer({
                         style={{
                           color: "#fff",
                           textShadow: "none",
-                          fontSize: 14 * fscale,
+                          // [watch-translit-ruby-v3] Compact, sekelas ruby per-kata
+                          // (baris target 14*fscale) — bukan seukuran kalimatnya.
+                          fontSize: 9.5 * fscale,
                           fontWeight: RUBY_FONT_WEIGHT,
                         }}
                       />
@@ -4119,11 +4121,11 @@ function FocusLine({
               langCode={langCode}
               tapped={tapped}
               className="mb-1"
-              // [watch-translit-ruby-v2] Tak dimiringkan lagi (samakan dgn jalur
-              // ruby). Ukurannya SENGAJA di bawah kalimat target: ini baris UTUH,
-              // bukan per kata — kalau disamakan 22*scale, kalimat panjang membungkus
-              // 2-3 baris dan menutupi video.
-              style={{ fontSize: 18 * scale, fontWeight: RUBY_FONT_WEIGHT }}
+              // [watch-translit-ruby-v3] Tak dimiringkan, dan ukurannya compact
+              // (±0,6× kalimat target) supaya se-rasa dengan jalur ruby per-kata:
+              // ini baris UTUH, kalau sebesar kalimat target ia membungkus 2-3
+              // baris dan menutupi video.
+              style={{ fontSize: 13 * scale, fontWeight: RUBY_FONT_WEIGHT }}
             />
           )}
           <KaraokeText
@@ -4292,14 +4294,16 @@ function alignTranslitTokens(
   return pieces.map((p) => (p.trim().length ? { text: p, k: pieceK[++wi] } : { text: p, k: -1 }));
 }
 
-// [watch-translit-ruby-v2] Bacaan Latin dicetak dengan FONT & UKURAN yang sama
-// persis dengan kata di bawahnya (permintaan user) — bukan lagi versi mini yang
-// dimiringkan. `1em` = mewarisi ukuran induknya, jadi satu angka ini berlaku di
-// subtitle atas video (22*scale) maupun panel transkrip (14*fscale) tanpa perlu
-// disetel dua kali. Yang TIDAK disamakan cuma tebal huruf: subtitle target
-// extrabold, kalau bacaannya ikut tebal keduanya saling berebut perhatian.
-const RUBY_FONT_SIZE = "1em";
-const RUBY_FONT_WEIGHT = 500;
+// [watch-translit-ruby-v3] Bacaan Latin COMPACT — sekitar 0,58× ukuran kata di
+// bawahnya (referensi user). Dulu 1em (seukuran kata): karena pinyin/romaji jauh
+// lebih lebar dari 1-2 aksara Han, tiap kolom kata ikut melebar dan kalimatnya
+// tampak diberi spasi lebar & tidak natural. Ukuran kecil bikin lebar kolom
+// kembali ditentukan aksaranya, jadi jarak antar kata normal lagi.
+// Satuan relatif (em) supaya satu angka berlaku di subtitle atas video (22*scale)
+// maupun panel transkrip (14*fscale); `max(...)` jadi lantai biar di panel/scale
+// kecil bacaannya tak mengecil sampai tak terbaca.
+const RUBY_FONT_SIZE = "max(9.5px, 0.58em)";
+const RUBY_FONT_WEIGHT = 600;
 
 // Dua baris dalam SATU kotak inline-block: bacaan Latin di atas, aksara aslinya
 // di bawah, dua-duanya rata tengah supaya sejajar per kata seperti referensi.
@@ -4315,8 +4319,11 @@ function rubyStack(ruby: string, text: string, plain?: boolean) {
         style={{
           fontSize: RUBY_FONT_SIZE,
           fontWeight: RUBY_FONT_WEIGHT,
-          lineHeight: 1.2,
-          marginBottom: "0.06em",
+          lineHeight: 1.15,
+          marginBottom: "0.04em",
+          // Rapatkan sedikit: bacaan panjang (mis. "jiànmiàn") tak lagi memaksa
+          // kolom katanya melebar melebihi aksaranya.
+          letterSpacing: "-0.01em",
           // Outline tipis: stroke setebal subtitle bikin bacaan Latin tampak kotor.
           textShadow: plain ? "none" : TRANSLIT_OUTLINE,
         }}
