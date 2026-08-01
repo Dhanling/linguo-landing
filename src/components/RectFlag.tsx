@@ -1,7 +1,9 @@
+"use client";
+
 // linguo-patch:placement-picker-rectflag-v1 — bendera rounded rectangle (bukan emoji),
 // dipakai bareng di PlacementPicker & PlacementTest. Map slug -> kode negara ISO-2.
+import { useEffect, useState } from "react";
 import { resolveFlag } from "@blade-flags/core";
-import { defaultFlags } from "@blade-flags/core/flags/default";
 import { Globe, Scroll, Sun } from "lucide-react";
 
 export const FLAG_CODE_BY_SLUG: Record<string, string> = {
@@ -21,11 +23,78 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   armenian: "am",
 };
 
+// [perf:flags-lazy-v1] Kumpulan bendera blade-flags itu SATU modul berisi SVG
+// inline SELURUH negara — 1,2 MB JS, dan karena resolveFlag mencarinya saat
+// runtime, tak ada yang bisa di-tree-shake. Sebagai impor biasa dia jadi bagian
+// bundel yang WAJIB diunduh & di-parse sebelum halaman boleh tampil; di Watch &
+// Learn dia sendirian menyumbang lebih dari separuh JS halaman.
+//
+// Sekarang datanya diunduh terpisah begitu bendera pertama dirender. Sampai tiba,
+// yang tampil ubin kosong seukuran benderanya (bukan Globe — itu penanda "bahasa
+// tak dikenal", bukan "sedang dimuat"), jadi tak ada layout shift dan tak ada
+// salah baca. Sekali dimuat, seluruh bendera di halaman tergambar bersamaan.
+type FlagSet = Parameters<typeof resolveFlag>[0];
+let FLAGS: FlagSet | null = null;
+let flagsPromise: Promise<void> | null = null;
+const flagWaiters = new Set<() => void>();
+
+function loadFlags() {
+  if (!flagsPromise) {
+    flagsPromise = import("@blade-flags/core/flags/default")
+      .then((m) => {
+        FLAGS = m.defaultFlags as FlagSet;
+        flagWaiters.forEach((fn) => fn());
+        flagWaiters.clear();
+      })
+      .catch(() => {
+        // Gagal unduh (jaringan) → biarkan fallback Globe; jangan mengunci retry.
+        flagsPromise = null;
+      });
+  }
+  return flagsPromise;
+}
+
+/** Mengembalikan set bendera begitu siap; memicu render ulang saat baru tiba. */
+function useFlagSet(): FlagSet | null {
+  const [set, setSet] = useState<FlagSet | null>(FLAGS);
+  useEffect(() => {
+    if (FLAGS) {
+      if (!set) setSet(FLAGS);
+      return;
+    }
+    let alive = true;
+    const notify = () => { if (alive) setSet(FLAGS); };
+    flagWaiters.add(notify);
+    void loadFlags();
+    return () => {
+      alive = false;
+      flagWaiters.delete(notify);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return set;
+}
+
 // Bendera SVG rounded rectangle. Dimensi dihitung dari viewBox agar aspect ratio asli terjaga.
 export function RectFlag({ code, h = 28, className = "" }: { code?: string; h?: number; className?: string }) {
+  const flags = useFlagSet();
   // resolveFlag case-sensitive & mengharap ISO-2 huruf kecil. Sebagian pemanggil
   // (mis. BASE_LANGS) menyimpan kode HURUF BESAR → normalkan biar bendera tetap muncul.
-  const svg = code ? resolveFlag(defaultFlags, code.toLowerCase(), "country") : null;
+  const svg = flags && code ? resolveFlag(flags, code.toLowerCase(), "country") : null;
+  // Data bendera belum tiba (dan kodenya sah) → ubin kosong seukuran bendera.
+  if (!svg && !flags && code) {
+    return (
+      <span
+        aria-hidden
+        style={{
+          height: h,
+          width: Math.round((h * 36) / 26),
+          backgroundColor: "rgba(128,128,128,0.18)",
+        }}
+        className={`inline-flex shrink-0 rounded-[5px] ring-1 ring-black/5 ${className}`}
+      />
+    );
+  }
   if (!svg) return <Globe aria-hidden style={{ height: h, width: h }} className={`text-gray-300 shrink-0 ${className}`} />;
   const m = svg.match(/viewBox="([\d.\s-]+)"/);
   let w = Math.round((h * 36) / 26);

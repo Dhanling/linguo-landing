@@ -69,13 +69,35 @@ import {
   setWatchStaff,
   isWatchCompedEmail,
 } from "@/lib/immersionLearn";
-import { supabase, peekSessionUser, resolveSessionForGate } from "@/lib/supabase-client"; // [perf:session-cookie-peek-v1] [auth-gate-resilient-v1]
+import { supabase, peekSessionCookie, resolveSessionForGate } from "@/lib/supabase-client"; // [perf:session-cookie-peek-v1] [auth-gate-resilient-v1]
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import { RectFlag } from "@/components/RectFlag";
-import VideoLearnPlayer from "./VideoLearnPlayer";
-import FlashcardDeck from "./FlashcardDeck";
 import { LangPickerPanel } from "./LangPickerPanel";
 import { useWlPanel, useWlHeartbeat } from "@/lib/wlAnalytics";
+import dynamic from "next/dynamic";
+
+// [perf:watch-split-player-v1] Player belajar (transkrip dwibahasa, analisa,
+// tap-kata) + dashboard flashcard adalah dua komponen TERBESAR di fitur ini,
+// tapi keduanya baru terpakai SESUDAH user mengklik sesuatu. Sebagai impor biasa
+// mereka ikut terunduh & di-parse sebelum katalog boleh tampil — itu bagian
+// terbesar dari "kok loadingnya lama" saat buka/refresh halaman. Dipisah jadi
+// chunk sendiri, lalu diam-diam di-prefetch saat browser menganggur (lihat
+// preload di bawah), jadi klik pertama tetap terasa instan.
+const VideoLearnPlayer = dynamic(() => import("./VideoLearnPlayer"), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="fixed inset-0 z-[120] flex items-center justify-center"
+      style={{ backgroundColor: BG }}
+    >
+      <div
+        className="h-8 w-8 animate-spin rounded-full border-2"
+        style={{ borderColor: TEAL, borderTopColor: "transparent" }}
+      />
+    </div>
+  ),
+});
+const FlashcardDeck = dynamic(() => import("./FlashcardDeck"), { ssr: false });
 
 // Dimensi bahasa yang ikut di tiap event analitik WL. `lang_country` dikirim apa
 // adanya supaya dashboard bisa menggambar bendera tanpa menyalin daftar bahasa.
@@ -185,7 +207,47 @@ type LevelFilter = (typeof LEVEL_FILTERS)[number];
 // dengan RASIO ASPEK ASLI (portrait → tinggi>lebar), beda dari hqdefault yang selalu
 // 480×360 (letterboxed). Keyless, tanpa kuota API. Rasio tak pernah berubah → cache
 // permanen (module-level, lintas ganti bahasa/kategori). true = portrait (Shorts).
-const orientCache = new Map<string, boolean>();
+// [perf:watch-orient-persist-v1] Orientasi asli tiap video dideteksi dengan
+// MENGUNDUH frame0.jpg-nya — satu request per kartu, jadi ±40 request tiap grid
+// terisi. Dulu hasilnya cuma di memori: refresh halaman = deteksi 40 video itu
+// diulang dari nol, berebut bandwidth dengan thumbnail yang justru mau dilihat
+// user. Sekarang dicerminkan ke localStorage (orientasi video tak pernah
+// berubah), jadi kunjungan berikutnya nyaris tanpa request frame0.
+const ORIENT_STORE_KEY = "linguo:watch:orient:v1";
+const ORIENT_STORE_MAX = 600;
+const orientCache = (() => {
+  const map = new Map<string, boolean>();
+  if (typeof window !== "undefined") {
+    try {
+      const raw = window.localStorage.getItem(ORIENT_STORE_KEY);
+      const rows = raw ? (JSON.parse(raw) as [string, boolean][]) : [];
+      for (const [k, v] of rows) if (typeof v === "boolean") map.set(k, v);
+    } catch {
+      /* storage diblokir → deteksi jalan seperti biasa, cuma tak awet */
+    }
+  }
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const flush = () => {
+    timer = undefined;
+    try {
+      // Sisakan yang terbaru saja (Map menjaga urutan sisip).
+      const rows = [...map.entries()].slice(-ORIENT_STORE_MAX);
+      window.localStorage.setItem(ORIENT_STORE_KEY, JSON.stringify(rows));
+    } catch {
+      try { window.localStorage.removeItem(ORIENT_STORE_KEY); } catch {}
+    }
+  };
+  return {
+    has: (k: string) => map.has(k),
+    get: (k: string) => map.get(k),
+    set: (k: string, v: boolean) => {
+      map.set(k, v);
+      if (typeof window === "undefined") return;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(flush, 600);
+    },
+  };
+})();
 const frame0Url = (id: string) => `https://i.ytimg.com/vi/${id}/frame0.jpg`;
 
 // Tombol top-bar (Kosakata / bahasa) tampil ikon saja; label "keluar" ke kiri saat
@@ -269,14 +331,92 @@ function stripWatchParams() {
 // [perf:watch-catalog-cache-v1] Cache katalog module-level: pindah menu lalu balik
 // ke Watch & Learn → grid tampil instan tanpa nembak yt-search lagi. Kunci per
 // (bahasa, query); TTL 10 menit — lewat itu tampilkan cache dulu, refresh diam-diam.
-const catalogCache = new Map<
-  string,
-  { videos: ImmersionVideo[]; nextToken?: string; order?: CatalogOrder; at: number }
->();
+//
+// [perf:watch-catalog-persist-v1] …TAPI cache module-level mati begitu halaman
+// di-REFRESH (modulnya dievaluasi ulang dari nol), dan justru itu keluhannya:
+// "buka dari menu / refresh, loadingnya lama". Loading itu bukan render, tapi
+// menunggu yt-search (beberapa halaman × jaringan). Jadi isinya dicerminkan ke
+// localStorage: mount berikutnya — refresh, tab baru, besok pagi — grid langsung
+// terlukis dari cermin itu, lalu disegarkan diam-diam kalau sudah lewat TTL.
+type CatalogEntry = {
+  videos: ImmersionVideo[];
+  nextToken?: string;
+  order?: CatalogOrder;
+  at: number;
+};
 const CATALOG_TTL_MS = 10 * 60 * 1000;
+const CATALOG_STORE_KEY = "linguo:watch:catalog:v1";
+/** Entri terbaru yang ikut disimpan (± satu bahasa penuh + beberapa tab). */
+const CATALOG_STORE_MAX = 8;
+/** Video per entri yang disimpan — cukup untuk 2 layar pertama grid. */
+const CATALOG_STORE_MAX_VIDEOS = 40;
+/** Lewat ini, cache tersimpan tak dipakai lagi (judul/thumbnail bisa basi). */
+const CATALOG_STORE_MAX_AGE_MS = 12 * 60 * 60 * 1000;
+
+const catalogCache = (() => {
+  const map = new Map<string, CatalogEntry>();
+
+  if (typeof window !== "undefined") {
+    try {
+      const raw = window.localStorage.getItem(CATALOG_STORE_KEY);
+      const rows = raw ? (JSON.parse(raw) as [string, CatalogEntry][]) : [];
+      const now = Date.now();
+      for (const [k, v] of rows) {
+        if (v && Array.isArray(v.videos) && now - v.at < CATALOG_STORE_MAX_AGE_MS) {
+          map.set(k, v);
+        }
+      }
+    } catch {
+      /* storage penuh/diblokir → jalan tanpa cermin, cuma lebih lambat */
+    }
+  }
+
+  // Tulis balik ditunda: satu batch fetch bisa memanggil set() beberapa kali
+  // (mis. enrich views tab "Siap"), dan JSON.stringify di jalur itu tak perlu
+  // ikut menahan interaksi.
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const flush = () => {
+    timer = undefined;
+    if (typeof window === "undefined") return;
+    try {
+      const rows = [...map.entries()]
+        .sort((a, b) => b[1].at - a[1].at)
+        .slice(0, CATALOG_STORE_MAX)
+        .map(([k, v]) => [
+          k,
+          { ...v, videos: v.videos.slice(0, CATALOG_STORE_MAX_VIDEOS) },
+        ]);
+      window.localStorage.setItem(CATALOG_STORE_KEY, JSON.stringify(rows));
+    } catch {
+      // Kuota localStorage habis → buang cermin, jangan biarkan gagal terus.
+      try { window.localStorage.removeItem(CATALOG_STORE_KEY); } catch {}
+    }
+  };
+
+  return {
+    get: (k: string) => map.get(k),
+    set: (k: string, v: CatalogEntry) => {
+      map.set(k, v);
+      if (typeof window === "undefined") return;
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(flush, 400);
+    },
+  };
+})();
 // Kunci cache memuat filter durasi: tiap tab ("< 5", "5–10", "10–20") kini fetch
 // bucket YouTube berbeda (short/medium), jadi hasilnya tak boleh saling menimpa.
 const catalogKeyOf = (langCode: string, q: string, dur = "all") => `${langCode}|${dur}|${q}`;
+
+/** Bahasa target yang terakhir dipilih — dibaca sinkron biar tak ada fetch mubazir. */
+function readStoredLang(): string {
+  if (typeof window === "undefined") return "en";
+  try {
+    const saved = window.localStorage.getItem(LANG_KEY);
+    return saved && getImmersionLang(saved) ? saved : "en";
+  } catch {
+    return "en";
+  }
+}
 
 // Rentang durasi (detik) yang dikirim ke yt-search untuk sebuah tab filter.
 // "Semua" tetap dibatasi ke katalog ≤20 mnt; sisanya kirim min & max eksplisit
@@ -368,8 +508,27 @@ async function fetchCatalogBatch(opts: {
 }
 
 export default function WatchAndLearn() {
+  // [perf:watch-boot-v1] Bahasa tersimpan dibaca SINKRON di render pertama, bukan
+  // lewat useEffect. Dulu state mulai dari "en" lalu effect menggantinya dengan
+  // bahasa simpanan → efek katalog jalan DUA kali: satu fetch penuh untuk katalog
+  // Inggris yang hasilnya langsung dibuang, baru fetch bahasa yang benar. Itu
+  // menggandakan waktu tunggu di layar (dan kuota yt-search) tiap buka halaman.
+  //
+  // Aman dari hydration mismatch: render pertama di klien tetap keluar di cabang
+  // gate (`loggedIn === null` → spinner), sama persis dengan HTML dari server —
+  // nilai bahasa belum ikut menentukan apa pun yang dirender di titik itu.
+  const [boot] = useState(() => {
+    const code = readStoredLang();
+    return {
+      code,
+      // Grid dari kunjungan sebelumnya (cermin localStorage) dipasang sebagai
+      // nilai AWAL state, bukan lewat effect → tak ada satu frame pun spinner
+      // sebelum kartu muncul.
+      hit: typeof window === "undefined" ? undefined : catalogCache.get(catalogKeyOf(code, SIAP_ID)),
+    };
+  });
   // Bahasa target — disimpan di localStorage biar konsisten antar kunjungan.
-  const [langCode, setLangCode] = useState("en");
+  const [langCode, setLangCode] = useState(boot.code);
   const [category, setCategory] = useState(SIAP_ID);
   const [freeText, setFreeText] = useState("");
   const [committedText, setCommittedText] = useState("");
@@ -387,14 +546,14 @@ export default function WatchAndLearn() {
   // Berapa kartu yang ditampilkan sekarang (paginasi client-side). Mulai 2 baris.
   const [visible, setVisible] = useState(INITIAL_VISIBLE);
 
-  const [videos, setVideos] = useState<ImmersionVideo[]>([]);
-  const [nextToken, setNextToken] = useState<string | undefined>();
+  const [videos, setVideos] = useState<ImmersionVideo[]>(boot.hit?.videos ?? []);
+  const [nextToken, setNextToken] = useState<string | undefined>(boot.hit?.nextToken);
   // [watch-shuffle-v1] Sort order yang dipakai batch aktif. `nextToken` cuma sah
   // buat order yang melahirkannya, jadi "Muat lainnya" harus meneruskan yang ini —
   // bukan mengundi ulang.
-  const [order, setOrder] = useState<CatalogOrder>("relevance");
+  const [order, setOrder] = useState<CatalogOrder>(boot.hit?.order ?? "relevance");
   const [state, setState] = useState<"idle" | "loading" | "more" | "done" | "empty" | "error">(
-    "idle"
+    boot.hit?.videos.length ? "done" : "idle"
   );
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   // Dropdown pemilih bahasa GABUNGAN (bahasa saya + bahasa yang dipelajari) di
@@ -465,11 +624,21 @@ export default function WatchAndLearn() {
   // asli tiap video via frame0.jpg (sekali per videoId, hasilnya di-cache) supaya klip
   // portrait/Shorts bisa disaring keluar dari grid.
   useEffect(() => {
-    const pending = videos.filter((v) => !orientCache.has(v.videoId));
+    // [perf:watch-orient-persist-v1] Cukup periksa kartu yang memang sedang
+    // ditampilkan. Satu batch katalog berisi ~2× isi grid (cadangan "Muat
+    // lainnya"), dan dulu SEMUANYA diperiksa di muka — puluhan request untuk
+    // kartu yang belum kelihatan, tepat saat halaman sedang sibuk melukis.
+    // Diberi kelebihan satu-dua baris: kartu yang lolos filter durasi/level bisa
+    // menggeser posisi, jadi batas persis `visible` bisa meleset sedikit.
+    const pending = videos
+      .slice(0, visible + GRID_COLS * 2)
+      .filter((v) => !orientCache.has(v.videoId));
     if (!pending.length) return;
     let cancelled = false;
     pending.forEach((v) => {
       const img = new Image();
+      // Thumbnail yang dilihat user duluan; deteksi orientasi boleh mengalah.
+      (img as HTMLImageElement & { fetchPriority?: string }).fetchPriority = "low";
       img.onload = () => {
         orientCache.set(v.videoId, img.naturalHeight > img.naturalWidth);
         if (!cancelled) setOrientTick((n) => n + 1);
@@ -483,7 +652,7 @@ export default function WatchAndLearn() {
     return () => {
       cancelled = true;
     };
-  }, [videos]);
+  }, [videos, visible]);
 
   // [linguo-patch:watch-orient-frame0-v1] Terapkan filter jenis konten ke grid.
   // Prioritas orientasi asli (frame0); selama deteksi belum selesai / frame0 gagal,
@@ -524,12 +693,10 @@ export default function WatchAndLearn() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videos, orientTick, durationFilter, levelFilter, category, committedText]);
 
-  // Hidrasi bahasa tersimpan + riwayat tonton saat mount.
+  // Hidrasi riwayat (bahasa target sudah dibaca sinkron di `boot`) saat mount.
   useEffect(() => {
-    let saved: string | null = null;
+    const saved: string | null = boot.code;
     try {
-      saved = window.localStorage.getItem(LANG_KEY);
-      if (saved && getImmersionLang(saved)) setLangCode(saved);
       const rawRecent = window.localStorage.getItem(RECENT_LANGS_KEY);
       if (rawRecent) {
         const parsed = JSON.parse(rawRecent);
@@ -593,7 +760,7 @@ export default function WatchAndLearn() {
     } catch {
       /* abaikan — URL aneh, tampilkan katalog seperti biasa */
     }
-  }, []);
+  }, [boot.code]);
 
   // Sinkronkan status buka dashboard Kosakata ke URL (?kosakata=1) — pakai
   // replaceState (bukan push) supaya buka/tutup tak menumpuk history; efeknya
@@ -622,6 +789,26 @@ export default function WatchAndLearn() {
   // Badge juga ikut event perubahan kosakata (impor deck, tab lain, simpan kata dari
   // player) supaya angkanya tak pernah basi.
   useEffect(() => onSavedWordsChanged(refreshVocab), [refreshVocab]);
+
+  // [perf:watch-split-player-v1] Begitu browser menganggur (katalog sudah tampil
+  // & thumbnail sudah jalan), tarik diam-diam chunk player + flashcard. Jadi
+  // pemisahan chunk cuma memindahkan unduhannya ke waktu yang tak dilihat user,
+  // bukan menambah jeda saat kartu pertama diklik.
+  useEffect(() => {
+    const idle: (cb: () => void) => number =
+      (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
+        .requestIdleCallback ?? ((cb) => window.setTimeout(cb, 1500));
+    const id = idle(() => {
+      void import("./VideoLearnPlayer");
+      void import("./FlashcardDeck");
+    });
+    return () => {
+      const cancel = (window as unknown as { cancelIdleCallback?: (h: number) => void })
+        .cancelIdleCallback;
+      if (cancel) cancel(id);
+      else window.clearTimeout(id);
+    };
+  }, []);
 
   // Muat jumlah video "Siap" per bahasa sekali di mount → badge di pemilih bahasa.
   useEffect(() => {
@@ -724,10 +911,17 @@ export default function WatchAndLearn() {
     // getSession() antre di Web Locks / bisa refresh token ke jaringan dulu, dan
     // selama itu SELURUH katalog ketutup spinner — itu yang bikin klik "Watch &
     // Learn" dari dashboard terasa lambat. Jawaban getSession() tetap yang final.
-    const peeked = peekSessionUser();
-    if (peeked) {
+    //
+    // [perf:watch-boot-v1] Dibaca dari peekSessionCookie(), bukan peekSessionUser():
+    // yang terakhir sengaja menolak cookie ber-access-token kedaluwarsa — padahal
+    // itu keadaan NORMAL tiap refresh setelah sejam, dan justru di situ tukar token
+    // paling lama. Hasilnya dulu: layar spinner penuh selama SDK menukar token.
+    // Kehadiran refresh token di cookie sudah cukup untuk membuka katalog; kalau
+    // ternyata tokennya ditolak, resolveSessionForGate() di bawah yang menutupnya.
+    const peeked = peekSessionCookie();
+    if (peeked?.refresh_token && peeked.user) {
       setLoggedIn(true);
-      syncStaff(peeked.id, peeked.email);
+      syncStaff(peeked.user.id, peeked.user.email);
     }
     (async () => {
       if (await verifyPreview()) {
@@ -852,6 +1046,10 @@ export default function WatchAndLearn() {
           tok = fb.nextToken;
         }
       }
+      // [perf:watch-catalog-persist-v1] Refresh diam-diam yang pulang kosong
+      // (jaringan/kuota) TIDAK boleh menghapus grid yang sudah tampil dari cache —
+      // user akan melihat katalog penuh mendadak jadi "tak ada video".
+      if (silent && !results.length) return;
       catalogCache.set(catalogKeyOf(l.code, buildQuery(c, l, text), durId), {
         videos: results, nextToken: tok, order: ord, at: Date.now(),
       });
@@ -875,6 +1073,9 @@ export default function WatchAndLearn() {
       setNextToken(undefined);
     }
     const ready = await fetchReadyVideos(l.code);
+    // [perf:watch-catalog-persist-v1] Penyegaran diam-diam yang pulang kosong
+    // (endpoint timeout) jangan menimpa grid dari cache dengan layar "kosong".
+    if (silent && !ready.length) return;
     catalogCache.set(catalogKeyOf(l.code, SIAP_ID), { videos: ready, at: Date.now() });
     if (id !== reqId.current) return;
     setVideos(ready);
