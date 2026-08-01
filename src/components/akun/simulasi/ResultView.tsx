@@ -233,6 +233,7 @@ export default function ResultView({
       skill: string; label: string;
       items: Array<{ r: ResultItem; no: number }>;
       earned: number; max: number; correct: number; objective: number; aiScores: number[];
+      answered: number;
     }>();
     // urutan skill mengikuti urutan section pada simulasi
     sections.forEach((s) => { if (!order.includes(s.skill)) order.push(s.skill); });
@@ -242,7 +243,7 @@ export default function ResultView({
         if (!order.includes(key)) order.push(key);
         map.set(key, {
           skill: key, label: SKILL_LABEL[key as keyof typeof SKILL_LABEL] ?? key,
-          items: [], earned: 0, max: 0, correct: 0, objective: 0, aiScores: [],
+          items: [], earned: 0, max: 0, correct: 0, objective: 0, aiScores: [], answered: 0,
         });
       }
       const g = map.get(key)!;
@@ -251,6 +252,7 @@ export default function ResultView({
       g.max += r.question.points;
       if (r.correct != null) { g.objective += 1; if (r.correct) g.correct += 1; }
       if (r.ai_score != null) g.aiScores.push(r.ai_score);
+      if (r.answer_index != null || r.answer_text.trim() !== "" || r.answer_audio_url) g.answered += 1;
     });
     return order.map((k) => map.get(k)).filter(Boolean) as Array<NonNullable<ReturnType<typeof map.get>>>;
   }, [results, resultNo, sections]);
@@ -261,7 +263,7 @@ export default function ResultView({
     const skills: SkillRaw[] = groups.map((g) => ({
       skill: g.skill as SkillRaw["skill"],
       correct: g.correct, objective: g.objective, aiScores: g.aiScores,
-      earned: g.earned, max: g.max,
+      earned: g.earned, max: g.max, answered: g.answered,
     }));
     return officialScore({
       testType: sim.test_type, variant: sim.test_variant, title: sim.title,
@@ -275,6 +277,9 @@ export default function ResultView({
   const activeTab = tab || groups[0]?.skill || "";
   const active = groups.find((g) => g.skill === activeTab) ?? groups[0];
 
+  // Lembar kosong (auto-submit waktu habis / keluar tanpa mengisi) — tak ada
+  // yang bisa dikonversi ke skala resmi; ditandai supaya tak terbaca "gagal".
+  const totalAnswered = groups.reduce((n, g) => n + g.answered, 0);
   const totalCorrect = results.filter((r) => r.correct === true).length;
   const totalObjective = results.filter((r) => r.correct != null).length;
   const wrongCount = active ? active.items.filter((it) => it.r.correct === false).length : 0;
@@ -340,6 +345,15 @@ export default function ResultView({
                 <div className="mx-auto mt-4 h-2 max-w-xs overflow-hidden rounded-full bg-slate-100">
                   <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: TEAL }} />
                 </div>
+                {totals.score <= 0 && (
+                  <p className="mx-auto mt-4 max-w-md rounded-xl bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-700">
+                    {totalAnswered === 0
+                      ? "Tidak ada satu pun soal yang terjawab pada pengerjaan ini, "
+                      : "Belum ada jawaban yang benar pada pengerjaan ini, "}
+                    jadi hasilnya <b>tidak dikonversi</b> ke skala resmi (skala {testTypeLabel(sim.test_type, sim.test_variant)}
+                    {" "}punya batas bawah yang bukan nol). Kerjakan ulang simulasinya untuk mendapat perkiraan skor.
+                  </p>
+                )}
               </>
             )}
           </div>

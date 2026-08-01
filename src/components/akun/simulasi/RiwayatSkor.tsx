@@ -21,6 +21,7 @@ interface Row {
   attempt: AttemptSummary;
   official: OfficialScore | null;
   delta: number | null; // selisih skor resmi vs percobaan sebelumnya (jenis+varian sama)
+  blank: boolean; // dikumpulkan tanpa satu pun jawaban → tak bisa dikonversi
 }
 
 const fmtTanggal = (iso: string | null) =>
@@ -39,6 +40,7 @@ function buildRows(attempts: AttemptSummary[]): Row[] {
       aggregate: { score: attempt.score, max: attempt.max_score },
     }),
     delta: null,
+    blank: attempt.skills.length > 0 && attempt.skills.every((s) => (s.answered ?? 0) === 0),
   }));
   // Selisih dibanding percobaan SEBELUMNYA pada skala yang sama (attempt terbaru
   // di indeks 0, jadi pembandingnya ada di indeks yang lebih besar).
@@ -99,7 +101,7 @@ export default function RiwayatSkor() {
       </div>
 
       <ul className="divide-y divide-slate-100">
-        {shown.map(({ attempt, official, delta }) => (
+        {shown.map(({ attempt, official, delta, blank }) => (
           <li key={attempt.id}>
             <Link
               href={`/akun/simulasi/hasil/${attempt.id}`}
@@ -150,7 +152,9 @@ export default function RiwayatSkor() {
                     )}
                   </>
                 ) : (
-                  <p className="text-sm font-bold text-slate-400">Belum dinilai</p>
+                  <p className="text-sm font-bold text-slate-400">
+                    {blank ? "Tidak dijawab" : attempt.score === 0 ? "Belum ada jawaban benar" : "Belum dinilai"}
+                  </p>
                 )}
               </div>
 

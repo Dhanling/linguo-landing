@@ -505,18 +505,35 @@ export interface AttemptAnswerRow {
 
 const SKILL_ORDER: Skill[] = ["listening", "structure", "reading", "writing", "speaking"];
 
+// Satu baris jawaban dianggap DIISI bila ada pilihan/teks/rekaman. Soal yang
+// dilewati tetap ditulis sebagai baris (is_correct=false), jadi pengecekan ini
+// yang membedakan "salah semua" dari "tidak dikerjakan sama sekali".
+export function isAnsweredRow(
+  r: Partial<Pick<AttemptAnswerRow, "selected_index" | "response_text" | "audio_url">>,
+): boolean {
+  return (
+    r.selected_index != null ||
+    (typeof r.response_text === "string" && r.response_text.trim() !== "") ||
+    !!r.audio_url
+  );
+}
+
 // Kumpulkan jawaban jadi rincian per subtes (benar/objektif/nilai AI/poin).
 export function aggregateSkills(
-  rows: Array<Pick<AttemptAnswerRow, "section_skill" | "is_correct" | "points_earned" | "ai_score">>,
+  rows: Array<
+    Pick<AttemptAnswerRow, "section_skill" | "is_correct" | "points_earned" | "ai_score"> &
+      Partial<Pick<AttemptAnswerRow, "selected_index" | "response_text" | "audio_url">>
+  >,
   maxPointsOf?: (row: any) => number,
 ): SkillRaw[] {
   const map = new Map<Skill, SkillRaw>();
   rows.forEach((r) => {
     const skill = (r.section_skill ?? "reading") as Skill;
-    if (!map.has(skill)) map.set(skill, { skill, correct: 0, objective: 0, aiScores: [], earned: 0, max: 0 });
+    if (!map.has(skill)) map.set(skill, { skill, correct: 0, objective: 0, aiScores: [], earned: 0, max: 0, answered: 0 });
     const s = map.get(skill)!;
     if (r.is_correct != null) { s.objective += 1; if (r.is_correct) s.correct += 1; }
     if (r.ai_score != null) s.aiScores.push(Number(r.ai_score));
+    if (isAnsweredRow(r)) s.answered = (s.answered ?? 0) + 1;
     s.earned += Number(r.points_earned ?? 0);
     if (maxPointsOf) s.max += maxPointsOf(r);
   });
@@ -548,7 +565,9 @@ export async function fetchMyAttempts(limit = 30): Promise<AttemptSummary[]> {
     supabase.from("test_simulations").select("id, title, test_type, test_variant").in("id", simIds),
     supabase
       .from("simulation_answers")
-      .select("attempt_id, section_skill, is_correct, points_earned, ai_score")
+      // selected_index/response_text/audio_url ikut dibaca supaya attempt yang
+      // dikumpulkan kosong bisa dikenali (lihat isAnsweredRow).
+      .select("attempt_id, section_skill, is_correct, points_earned, ai_score, selected_index, response_text, audio_url")
       .in("attempt_id", attemptIds),
   ]);
 

@@ -42,6 +42,12 @@ const SECTION_LOCK_MINUTES = 30;
 // [sim-proctor-v1] Proctoring anti-curang: pindah tab / keluar layar penuh
 // tercatat sebagai pelanggaran; mencapai batas ini → jawaban auto-submit.
 const MAX_VIOLATIONS = 3;
+// [sim-idle-expire-v1] Sesi yang ditinggal lebih dari sehari dianggap kedaluwarsa:
+// begitu siswa membukanya lagi, jawaban yang sempat tersimpan langsung dikumpulkan
+// (auto-submit) — bukan dilanjutkan seolah waktunya masih berjalan. Angka yang sama
+// dipakai cron `expire-stale-simulation-attempts` di server untuk peserta yang tak
+// pernah kembali (lihat sql/20260731_simulasi_auto_expire.sql).
+const IDLE_EXPIRE_MS = 24 * 60 * 60 * 1000;
 // Keluar simulasi lewat tombol tutup (disengaja) tak boleh dihitung pelanggaran —
 // flag modul karena leave() (Shell) & listener proctoring hidup di komponen beda.
 let leavingSim = false;
@@ -382,6 +388,9 @@ export default function SimulasiRunnerPage() {
   const [guestTitle, setGuestTitle] = useState<string>(""); // judul sim di form identitas tamu
   const [guestBusy, setGuestBusy] = useState(false);
   const submittingRef = useRef(false);
+  // Sesi lama (>24 jam) yang baru dibuka lagi → kumpulkan otomatis, lihat efek
+  // di bawah definisi submit().
+  const [staleResume, setStaleResume] = useState(false);
 
   // Ambil paket soal + siapkan state jawaban, lalu tampilkan layar intro.
   async function loadExam(studentInfo: StudentInfo) {
@@ -427,6 +436,9 @@ export default function SimulasiRunnerPage() {
       finishedRef.current = new Set(saved.groupDone ?? []);
       violationsRef.current = saved.violations ?? 0;
       setViolations(saved.violations ?? 0);
+      // [sim-idle-expire-v1] Ditinggal lebih dari sehari → sesinya sudah lewat;
+      // jawaban yang tersimpan dikumpulkan otomatis begitu state siap.
+      if (saved.savedAt && Date.now() - saved.savedAt > IDLE_EXPIRE_MS) setStaleResume(true);
       setView("hub");
       setPhase("running");
       return;
@@ -646,6 +658,17 @@ export default function SimulasiRunnerPage() {
   // klik kanan + copy/paste diblokir diam-diam. MAX_VIOLATIONS → auto-submit.
   const submitRef = useRef<(force?: boolean) => Promise<void>>(submit);
   submitRef.current = submit;
+
+  // [sim-idle-expire-v1] Sesi kedaluwarsa (>24 jam) yang baru dibuka lagi:
+  // langsung dikumpulkan apa adanya, tak boleh dilanjutkan.
+  useEffect(() => {
+    if (!staleResume || preview || phase !== "running" || !attemptId) return;
+    setStaleResume(false);
+    alert("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai.");
+    submitRef.current(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [staleResume, preview, phase, attemptId]);
+
   useEffect(() => {
     if (preview || phase !== "running" || view !== "work") return;
     const violate = (msg: string) => {

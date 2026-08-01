@@ -26,6 +26,11 @@ export interface SkillRaw {
   aiScores: number[]; // skor AI 0–100 (writing/speaking)
   earned: number; // poin diperoleh
   max: number; // poin maksimum
+  // [sim-blank-attempt-v1] jumlah soal yang BENAR-BENAR diisi (pilihan dipilih /
+  // teks terisi / rekaman terunggah). Soal kosong tetap tercatat sebagai baris
+  // jawaban dengan is_correct=false, jadi tanpa angka ini attempt yang tak
+  // dikerjakan sama sekali tak bisa dibedakan dari yang salah semua.
+  answered?: number;
 }
 
 export interface OfficialSkill {
@@ -348,6 +353,9 @@ function mergeSkills(rows: SkillRaw[]): { fraction: number; detail: string } | n
  * `aggregate` (total poin attempt) sebagai estimasi kasar: persen totalnya
  * diterapkan ke semua seksi resmi — hasilnya tetap berada di rentang skala yang
  * benar, cuma tak bisa membedakan kekuatan antar-subtes.
+ *
+ * Kembalikan null bila tak ada apa pun untuk dikonversi: belum dinilai, atau
+ * skornya nol (lihat [sim-blank-attempt-v1] di bawah).
  */
 export function officialScore(input: {
   testType: TestType;
@@ -360,6 +368,17 @@ export function officialScore(input: {
   const spec = scaleSpec(scale, input.variant);
   const rows = input.skills ?? [];
   const hasRows = rows.some((r) => r.objective > 0 || r.aiScores.length > 0 || r.max > 0);
+
+  // [sim-blank-attempt-v1] Hasil NOL tidak dikonversi.
+  // Skala resmi punya batas bawah yang bukan nol (TOEFL ITP mulai 310, IELTS band
+  // 0 pun tetap "band"), jadi attempt yang tak menghasilkan poin sama sekali —
+  // ditinggal lalu auto-submit saat waktu habis — akan tampil "0/110 → 310 ITP"
+  // seolah itu hasil ujian sungguhan. Tanpa satu pun jawaban benar / nilai AI,
+  // tidak ada yang bisa dipetakan ke tabel konversi: kembalikan null → UI "—".
+  const evidence = hasRows
+    ? rows.reduce((n, r) => n + r.correct + r.aiScores.reduce((x, y) => x + y, 0) + Math.max(0, r.earned), 0)
+    : (input.aggregate?.score ?? 0);
+  if (evidence <= 0) return null;
 
   // Fallback: tanpa rincian subtes → pakai persen total poin untuk semua seksi.
   let flatFraction: number | null = null;
