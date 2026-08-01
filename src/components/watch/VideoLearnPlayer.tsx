@@ -80,6 +80,7 @@ import {
   fetchReadyVideos,
   fetchReadyCounts,
 } from "@/lib/immersionLearn";
+import { alignJapaneseTranslit, hasKana } from "@/lib/kanaRomaji";
 import { CEFR_STYLE, type CefrLevel } from "@/lib/cefr";
 import {
   filterVideosByLanguage,
@@ -4275,6 +4276,17 @@ function alignTranslitTokens(
       const b = digits(p);
       return (a || b) && a !== b;
     });
+
+  // [watch-ruby-jepang-v1] JEPANG lebih dulu: kana bisa dibaca deterministik, jadi
+  // romaji dijajarkan lewat jangkar kana (lihat lib/kanaRomaji) — bukan lewat hitung
+  // token/suku kata yang selalu gagal di Jepang (1 kanji ≠ 1 suku kata, 「ー」bukan
+  // suku kata, 「っ」cuma menggandakan konsonan, dan Intl.Segmenter memecah 食べます
+  // jadi 食|べ|ます). Tanpa ini bacaan Latin Jepang selalu jatuh ke baris utuh, tak
+  // menumpuk rapi di atas tiap kata seperti pinyin. Gagal → null → jalur lama.
+  if ((langCode || "").split("-")[0] === "ja" || hasKana(target)) {
+    const jp = alignJapaneseTranslit(words, translit);
+    if (jp) return jp;
+  }
 
   // Jalur CEPAT: token translit 1:1 dengan kata target.
   if (wordCount === wordPieces.length && !misaligned(wordPieces)) {
