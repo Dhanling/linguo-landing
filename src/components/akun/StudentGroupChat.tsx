@@ -41,6 +41,12 @@ interface GroupRow {
   subject: string | null;
   participants: number | null;
   last_seen_at: string | null;
+  /**
+   * [wa-group-avatar-v1] Foto profil grup WhatsApp (wa_groups.avatar_url, ikut
+   * dipulangkan RPC student_group_list). URL pps.whatsapp.net bisa kedaluwarsa
+   * → selalu lewat <GroupAvatar> yang jatuh ke ikon anggota.
+   */
+  avatar_url: string | null;
 }
 
 interface Msg {
@@ -207,6 +213,38 @@ function phoneKey(raw: string | null | undefined): string {
 /** Nama grup untuk judul; JID mentah tak layak dibaca siswa. */
 function groupName(g: GroupRow): string {
   return (g.subject || "").trim() || `Grup kelas ${g.jid.split("@")[0].slice(-4)}`;
+}
+
+/**
+ * [wa-group-avatar-v1] Foto profil grup WhatsApp — sama dengan yang siswa lihat
+ * di aplikasi WhatsApp-nya, jadi grupnya langsung dikenali.
+ *
+ * URL pps.whatsapp.net bisa kedaluwarsa (bot menyegarkannya berkala) dan tak
+ * semua grup berfoto → `onError`/URL kosong jatuh ke ikon anggota, bukan kotak
+ * gambar rusak.
+ */
+function GroupAvatar({ url, name }: { url: string | null | undefined; name: string }) {
+  const [broken, setBroken] = useState(false);
+  useEffect(() => setBroken(false), [url]); // URL baru dari bot = layak dicoba lagi
+
+  if (url && !broken) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- host WhatsApp di luar konfigurasi next/image
+      <img
+        src={url}
+        alt={`Foto grup ${name}`}
+        loading="lazy"
+        referrerPolicy="no-referrer"
+        onError={() => setBroken(true)}
+        className="h-9 w-9 shrink-0 rounded-full object-cover"
+      />
+    );
+  }
+  return (
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-700">
+      <Users className="h-4 w-4" />
+    </span>
+  );
 }
 
 /** Pisahkan penanda penulis dari isi pesan: ["Ara", "halo"] atau [null, body]. */
@@ -924,9 +962,7 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
                       on ? "bg-teal-50" : "hover:bg-gray-50"
                     }`}
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-700">
-                      <Users className="h-4 w-4" />
-                    </span>
+                    <GroupAvatar url={g.avatar_url} name={groupName(g)} />
                     <span className="min-w-0 flex-1">
                       <span className="flex items-baseline gap-2">
                         <span
@@ -987,9 +1023,7 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-700">
-                  <Users className="h-4 w-4" />
-                </span>
+                <GroupAvatar url={active.avatar_url} name={groupName(active)} />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-bold text-gray-900">{groupName(active)}</p>
                   <p className="truncate text-[11px] text-gray-500">
