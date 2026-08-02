@@ -124,6 +124,7 @@ Jadwal & ketentuan:
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
 - JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
+- BATAS PENDAFTARAN (deadline) batch Reguler/ETP juga cuma ada di penanda [PENDAFTARAN] pada blok "JADWAL BATCH ...". Jangan menghitung atau mengarang tanggal penutupan sendiri.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
 - Kelas Reguler dibuka minimal 8 siswa. Kalau kuota tidak terpenuhi: menunggu/deposit batch berikutnya, pindah program, pindah Private/Semi-Private, tukar produk digital, atau refund PENUH tanpa potongan.
 - Siswa Private tetap dibuatkan grup WA (1 pengajar + 1 siswa + 1 admin).
@@ -138,7 +139,7 @@ Setelah mendaftar & membayar (siswa yang SUDAH terdaftar):
 Siswa tidak melanjutkan / berhenti kelas:
 - Kalau user menyatakan tidak jadi daftar, batal, atau tidak melanjutkan kelasnya (mis. "maaf sepertinya belum bisa lanjut"), JANGAN memaksa dan jangan langsung menjejalkan paket lain. Urutannya: terima kasih atas konfirmasinya → tanya alasannya dengan sopan ("kalau boleh tahu, apa alasannya ya kak?") → minta kesediaan mengisi angket kepuasan & masukan untuk perbaikan Linguo.
 - Kalau alasannya biaya atau jadwal, boleh sebutkan SEKALI opsi yang lebih ringan dari knowledge base ini (Semi-Private lebih murah dari Private, jumlah sesi/durasi bisa disesuaikan, jadwal Private fleksibel) tanpa memaksa.
-- LINK ANGKET JANGAN DIKARANG. Linknya berisi token unik per siswa dan cuma admin yang punya — cukup bilang admin akan mengirimkan link angketnya lewat WhatsApp, jangan menulis alamat angket apa pun.
+- LINK ANGKET JANGAN DIKARANG. Bentuknya linguo.id/angket/<token> dengan token unik per siswa yang cuma dipunya admin — cukup bilang admin akan mengirimkan link angketnya lewat WhatsApp, jangan menulis alamat angket apa pun.
 - Kalau user menolak mengisi atau tidak mau menyebut alasannya, jangan didesak: ucapkan terima kasih dan sampaikan pintu Linguo selalu terbuka kalau nanti mau belajar lagi.
 
 Fasilitas Private:
@@ -377,6 +378,48 @@ function seatTag(enrolled: unknown, max: unknown, min?: unknown): string {
   return ` [KUOTA: sudah ${e} dari ${m} peserta, sisa ${m - e} slot${catatan}]`;
 }
 
+function isFull(enrolled: unknown, max: unknown): boolean {
+  const m = Number(max ?? 0) || 0;
+  return m > 0 && (Number(enrolled ?? 0) || 0) >= m;
+}
+
+function shiftISO(iso: string, days: number): string {
+  const d = new Date(iso + "T00:00:00Z");
+  if (isNaN(d.getTime())) return iso;
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function daysUntil(fromIso: string, toIso: string): number {
+  const a = Date.parse(fromIso + "T00:00:00Z");
+  const b = Date.parse(toIso + "T00:00:00Z");
+  if (isNaN(a) || isNaN(b)) return NaN;
+  return Math.round((b - a) / 86400000);
+}
+
+// BATAS PENDAFTARAN batch. Tidak ada kolom deadline terpisah yang terisi di
+// database (`closes_at` di v_regular_batches_summary selalu kosong, etp_batches
+// tidak punya kolomnya), jadi aturan bakunya: pendaftaran ditutup H-1 sebelum
+// kelas mulai — atau lebih cepat kalau kuota penuh duluan. Sisa harinya dihitung
+// di sini supaya AI tidak menghitung tanggal sendiri (sering meleset) dan tidak
+// menjawab "silakan daftar" untuk batch yang pendaftarannya sudah lewat.
+// Salinan logika ini ada di linguo-app/supabase/functions/suggest-reply dan
+// linguo-wa-bot/db.js — ubah bertiga kalau diganti.
+function deadlineTag(startIso: string | null, today: string, closesAt?: unknown): string {
+  if (!startIso) return "";
+  const start = String(startIso).slice(0, 10);
+  if (start <= today) return ""; // batch sudah berjalan — sudah ditangani batchTag
+  const close = closesAt ? String(closesAt).slice(0, 10) : shiftISO(start, -1);
+  const sisa = daysUntil(today, close);
+  if (isNaN(sisa)) return "";
+  if (sisa < 0) {
+    return ` [PENDAFTARAN: SUDAH DITUTUP ${fmtDateID(close)} — kelas mulai ${fmtDateID(start)}, tawarkan batch lain/Private]`;
+  }
+  if (sisa === 0) return ` [PENDAFTARAN: HARI TERAKHIR hari ini (${fmtDateID(close)})]`;
+  if (sisa === 1) return ` [PENDAFTARAN: ditutup BESOK ${fmtDateID(close)} — tinggal 1 hari lagi]`;
+  return ` [PENDAFTARAN: ditutup ${fmtDateID(close)}, tinggal ${sisa} hari lagi]`;
+}
+
 const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
 - Hari, jam, jumlah pertemuan & tanggal mulai kelas Reguler/ETP HANYA boleh diambil dari daftar di atas. Daftar ini ditarik dari sumber yang SAMA dengan halaman linguo.id/jadwal-kelas-reguler. DILARANG mengarang atau memakai jadwal dari ingatan.
 - Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
@@ -395,7 +438,15 @@ KUOTA / JUMLAH PENDAFTAR (WAJIB):
 - Belum mencapai minimal peserta: boleh disampaikan apa adanya sekaligus ketentuannya — kelas jalan setelah minimal peserta terkumpul; kalau sampai jadwal mulai belum terpenuhi, siswa bisa pindah batch/program, pindah Private/Semi-Private, atau refund PENUH.
 - Sisa slot 3 atau kurang: boleh disampaikan sebagai urgensi ("tinggal 2 slot lagi"), tapi angkanya tetap apa adanya.
 - Batch bertanda [KUOTA: PENUH ...]: jangan ditawarkan sebagai batch yang bisa didaftar. Sebutkan hanya kalau ditanya, lalu arahkan ke batch lain / Private / Semi-Private.
-- Angka kuota berubah tiap ada pendaftar baru: SELALU pakai angka di daftar ini, jangan angka dari percakapan sebelumnya.`;
+- Angka kuota berubah tiap ada pendaftar baru: SELALU pakai angka di daftar ini, jangan angka dari percakapan sebelumnya.
+
+BATAS PENDAFTARAN / DEADLINE (WAJIB):
+- Pertanyaan "masih bisa daftar nggak", "pendaftaran ditutup kapan", "masih keburu?", "deadline-nya kapan", "kelasnya masih dibuka?" untuk Reguler & ETP DIJAWAB dari penanda [PENDAFTARAN: ...] pada batch di daftar di atas. DILARANG menghitung atau mengarang tanggal penutupan sendiri.
+- Aturan bakunya: pendaftaran satu batch ditutup H-1 sebelum kelas mulai, atau lebih cepat kalau kuotanya penuh duluan. Batch [KUOTA: PENUH ...] = pendaftaran SUDAH DITUTUP walaupun tanggal mulainya masih jauh.
+- Sampaikan pakai kalimat biasa dan gabungkan dengan kuotanya, mis. "pendaftarannya masih dibuka sampai 12 Agustus (tinggal 5 hari lagi) dan slotnya masih 11 dari 15".
+- Sisa 3 hari atau kurang / hari terakhir: sampaikan urgensinya apa adanya dan ajak konfirmasi hari itu juga — jangan dibikin santai, tapi jangan menakut-nakuti dengan angka karangan.
+- [PENDAFTARAN: SUDAH DITUTUP ...] atau batch [SUDAH BERJALAN]: jangan menyuruh menunggu tanpa solusi. Sampaikan pendaftarannya sudah ditutup, lalu tawarkan batch berikutnya, Private, atau Semi-Private.
+- DILARANG memperpanjang deadline, menjanjikan "masih bisa nyusul", atau memberi dispensasi. Kalau user memohon perpanjangan, arahkan konfirmasi ke admin.`;
 
 async function getScheduleBlock(): Promise<string> {
   if (Date.now() - scheduleCache.at < SCHEDULE_TTL_MS) return scheduleCache.text;
@@ -405,7 +456,7 @@ async function getScheduleBlock(): Promise<string> {
     const [{ data: reg }, { data: etp }] = await Promise.all([
       client
         .from("v_regular_batches_summary")
-        .select("language, level, session_day, session_start_time, session_end_time, start_date, total_sessions, actual_enrolled, min_capacity, max_capacity")
+        .select("language, level, session_day, session_start_time, session_end_time, start_date, closes_at, total_sessions, actual_enrolled, min_capacity, max_capacity")
         .eq("is_published", true)
         .in("status", ["Open", "Confirmed"])
         .order("start_date", { ascending: true }),
@@ -430,12 +481,20 @@ async function getScheduleBlock(): Promise<string> {
       const jam = t1 && t2 ? `${t1}–${t2} WIB` : "jam menyusul";
       const sesi = b.total_sessions ? `, ${b.total_sessions}x pertemuan` : "";
       const kuota = seatTag(b.actual_enrolled, b.max_capacity, b.min_capacity);
-      return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
+      // Batch penuh: penanda kuota sudah bilang pendaftarannya ditutup, deadline
+      // tanggalnya jadi tidak relevan (dan bikin AI menawarkannya lagi).
+      const batas = isFull(b.actual_enrolled, b.max_capacity)
+        ? ""
+        : deadlineTag(b.start_date, today, b.closes_at);
+      return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}${batas}`;
     });
     const etpLines = etpLive.map((b: any) => {
       const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";
       const kuota = seatTag(b.current_enrolled, b.max_capacity);
-      return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}`;
+      const batas = isFull(b.current_enrolled, b.max_capacity)
+        ? ""
+        : deadlineTag(b.start_date, today);
+      return `- ${b.title} (${b.badge}): ${b.days}, ${b.time}, ${b.total_sessions}x pertemuan${harga}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}${batas}`;
     });
 
     const parts: string[] = [`TANGGAL HARI INI: ${fmtDateID(today)} (WIB)`];

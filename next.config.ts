@@ -24,6 +24,18 @@ const nextConfig: NextConfig = {
         destination: '/toko/paket-elearning',
         permanent: true,
       },
+      {
+        // Angket kepuasan siswa: link yang dikirim admin lewat WA pakai domain
+        // utama (linguo.id/angket/<token>) supaya terlihat resmi & tidak seperti
+        // halaman internal, tapi halaman angketnya sendiri tetap tinggal di app
+        // dashboard (/survey/:token). Sengaja BUKAN permanent — kalau nanti
+        // angketnya dipindah ke landing, browser tidak keburu meng-cache
+        // tujuannya. Link tanpa token (/angket) tidak diarahkan: tokennya unik
+        // per siswa dan tidak boleh ditebak.
+        source: '/angket/:token',
+        destination: 'https://dashboard.linguo.id/survey/:token',
+        permanent: false,
+      },
     ];
   },
   async headers() {
