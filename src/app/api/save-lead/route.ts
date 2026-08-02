@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { recordAdAttribution } from "@/lib/adAttributionServer";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -23,6 +24,9 @@ export async function POST(req: NextRequest) {
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
+
+    // ads-conversion-sync — ikat identitas ke click ID iklan (non-fatal).
+    recordAdAttribution(req, { email, phone: wa }, body?.attribution);
 
     const cleanLang = language || "English";
     const cleanProgram = program || "Kelas Private";

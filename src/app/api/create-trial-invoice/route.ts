@@ -15,6 +15,7 @@ import {
   TRIAL_LEVEL_IDS,
   isNativeAvailable,
 } from "@/lib/trial-pricing";
+import { recordAdAttribution } from "@/lib/adAttributionServer";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -29,6 +30,14 @@ const PROGRAM_LABEL: Record<string, string> = {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // ads-conversion-sync — ikat identitas ke click ID iklan (non-fatal).
+    recordAdAttribution(
+      req,
+      { email: body?.email, phone: body?.wa_number },
+      body?.attribution,
+    );
+
     const {
       name,
       email,

@@ -8,6 +8,7 @@
  * itu nggak ngizinin anon nulis.
  */
 import { NextRequest, NextResponse } from "next/server";
+import { recordAdAttribution } from "@/lib/adAttributionServer";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -80,6 +81,11 @@ export async function POST(req: NextRequest) {
     const cleanLang = String(language).trim();
     const cleanProgram = String(program).trim();
     const cleanExp = String(experience).trim();
+
+    // ads-conversion-sync — ikat identitas ke click ID iklan (non-fatal).
+    // Sengaja setelah normalizeWa: `phone` di sini sudah format 62… persis
+    // seperti yang dipakai norm_phone_key() di DB.
+    recordAdAttribution(req, { email: cleanEmail, phone }, body?.attribution);
 
     // ── 1. Lead ──────────────────────────────────────────────────────────────
     const leadRes = await supaFetch("leads", {

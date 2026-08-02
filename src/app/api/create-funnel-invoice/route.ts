@@ -29,6 +29,7 @@ import {
   quoteTestPrep,
   type TestPrepFormat,
 } from "@/lib/testPrep";
+import { recordAdAttribution } from "@/lib/adAttributionServer";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -147,6 +148,14 @@ function computeFunnelAmount(input: {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // ads-conversion-sync — ikat identitas ke click ID iklan (non-fatal).
+    recordAdAttribution(
+      req,
+      { email: body?.email, phone: body?.wa_number },
+      body?.attribution,
+    );
+
     const {
       name,
       email,

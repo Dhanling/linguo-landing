@@ -22,6 +22,7 @@ import TrialWizardModal from "@/components/TrialWizardModal"; // linguo-patch:tr
 import ChatWidgetLazy from "@/components/ChatWidgetLazy"; // linguo-patch:chat-widget-ai-wa-v1 — code-split out of initial bundle
 import ChunkReloader from "@/components/ChunkReloader"; // [chunk-reload-v1] auto-reload saat bundle basi sehabis deploy
 import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analytics-v1 — catat page view + durasi ke Supabase
+import AdAttributionCapture from "@/components/AdAttributionCapture"; // ads-conversion-sync — tangkap fbclid/gclid/_fbp buat konversi offline
 
 // [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
 // yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
@@ -190,6 +191,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <TrialWizardModal />{/* linguo-patch:trial-wizard-v1 */}
         <ChatWidgetLazy />{/* linguo-patch:chat-widget-ai-wa-v1 */}
         <AnalyticsTracker />{/* landing-analytics-v1 */}
+        <AdAttributionCapture />{/* ads-conversion-sync */}
 
       </body>
     </html>

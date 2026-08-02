@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
+import { recordAdAttribution } from "@/lib/adAttributionServer";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -177,6 +178,17 @@ async function handleLmsSubscription(body: Record<string, unknown>): Promise<Nex
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+
+    // ── ads-conversion-sync ──────────────────────────────────────────────
+    // Ikat identitas ini ke click ID iklan (fbclid/gclid/_fbp) yang tersimpan
+    // di cookie `linguo_attr`, supaya konversi offline-nya nanti bisa dikirim
+    // balik ke Meta/Google. Non-blocking & non-fatal; sengaja SEBELUM branch
+    // LMS supaya semua bentuk checkout ikut terekam.
+    recordAdAttribution(
+      req,
+      { email: body?.email, phone: body?.wa_number ?? body?.whatsapp },
+      body?.attribution,
+    );
 
     // ── lms-subscription-v1: branch checkout akses LMS (sebelum PRODUCT_PRICES) ──
     if (body?.kind === "lms_subscription") {
