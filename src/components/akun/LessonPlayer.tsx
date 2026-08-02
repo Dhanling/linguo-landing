@@ -25,6 +25,9 @@ import {
   RotateCcw,
   Volume2,
   VolumeX,
+  ImageIcon,
+  MessagesSquare,
+  Table2,
   Maximize2,
   Minimize2,
   Moon,
@@ -278,7 +281,9 @@ type Block = {
   lms_quiz_questions?: Quiz[];
 };
 type Step =
-  | { kind: "audio" | "logic" | "vocab"; block: Block; label: string }
+  // [lms-doc-blocks-v1] image/dialogue/table = jenis blok baru dari Penyusun Materi.
+  // Semuanya masuk grup rail "Materi" (railGroupKey: apa pun selain quiz/done).
+  | { kind: "audio" | "logic" | "vocab" | "image" | "dialogue" | "table"; block: Block; label: string }
   | { kind: "quiz"; block: Block; q: Quiz; qIdx: number; qTotal: number; label: string }
   | { kind: "done"; label: string };
 
@@ -348,6 +353,9 @@ function buildSteps(blocks: Block[]): Step[] {
     } else if (b.type === "audio") st.push({ kind: "audio", block: b, label: "Audio" });
     else if (b.type === "logic") st.push({ kind: "logic", block: b, label: "Materi" });
     else if (b.type === "vocab") st.push({ kind: "vocab", block: b, label: "Kosakata" });
+    else if (b.type === "image") st.push({ kind: "image", block: b, label: "Gambar" });
+    else if (b.type === "dialogue") st.push({ kind: "dialogue", block: b, label: "Dialog" });
+    else if (b.type === "table") st.push({ kind: "table", block: b, label: "Tabel" });
     else st.push({ kind: "logic", block: b, label: "Materi" });
   });
   // [linguo-patch:lms-lesson-frame-v2] sesi tanpa konten = jangan auto-selesai
@@ -1434,6 +1442,151 @@ function StepView({
     );
   }
 
+  // [lms-doc-blocks-v1] Gambar — media_url + content.{caption,alt}
+  if (step.kind === "image") {
+    const b = step.block;
+    return (
+      <div className="lp-fade mx-auto max-w-[860px]">
+        <Pill icon={ImageIcon} text="Materi · Gambar" />
+        {b.content?.caption ? (
+          <h2 className="mt-3 text-[24px] font-extrabold leading-tight text-slate-900">
+            {b.content.caption}
+          </h2>
+        ) : null}
+        <div className="mt-5 overflow-hidden rounded-3xl bg-white p-3 shadow-[0_18px_40px_-34px_rgba(18,23,43,.5)]">
+          {b.media_url ? (
+            <img
+              src={b.media_url}
+              alt={b.content?.alt || b.content?.caption || "Gambar materi"}
+              className="mx-auto max-h-[62vh] w-auto rounded-2xl object-contain"
+            />
+          ) : (
+            <p className="py-10 text-center text-sm text-slate-400">Gambar belum diunggah untuk blok ini.</p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // [lms-doc-blocks-v1] Dialog — gelembung kiri/kanan. Sisi ditentukan penutur
+  // PERTAMA (bukan ganjil-genap), jadi dua baris beruntun dari orang yang sama
+  // tetap sejajar seperti chat betulan.
+  if (step.kind === "dialogue") {
+    const b = step.block;
+    const lines: any[] = b.content?.lines || [];
+    const firstSpeaker = lines.find((l: any) => (l?.speaker || "").trim())?.speaker?.trim() || "";
+    return (
+      <div className="lp-fade mx-auto max-w-[760px]">
+        <Pill icon={MessagesSquare} text="Materi · Dialog" />
+        <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
+          {b.content?.title || "Percakapan"}
+        </h2>
+        <p className="mt-2 max-w-[640px] text-[14px] font-medium leading-relaxed text-slate-500">
+          Ketuk gelembung untuk mendengar pelafalannya.
+        </p>
+        <div className="mt-6 flex flex-col gap-3">
+          {lines.map((l: any, i: number) => {
+            const mine = (l?.speaker || "").trim() === firstSpeaker;
+            const speakable = shouldSpeakTTS(l?.text, lang);
+            return (
+              <div key={i} className={"flex " + (mine ? "justify-start" : "justify-end")}>
+                <div className="max-w-[85%]">
+                  {l?.speaker ? (
+                    <div
+                      className={
+                        "mb-1 text-[11px] font-extrabold uppercase tracking-wide text-slate-400 " +
+                        (mine ? "text-left" : "text-right")
+                      }
+                    >
+                      {l.speaker}
+                    </div>
+                  ) : null}
+                  <div
+                    onClick={speakable ? () => void playTTS(l.text) : undefined}
+                    role={speakable ? "button" : undefined}
+                    title={speakable ? "Putar pelafalan" : undefined}
+                    className={
+                      "rounded-2xl px-4 py-3 " +
+                      (speakable ? "cursor-pointer " : "") +
+                      (mine ? "bg-white" : "text-white")
+                    }
+                    style={mine ? undefined : { background: TEAL }}
+                  >
+                    <div className={"text-[16px] font-extrabold leading-snug " + (mine ? "text-slate-900" : "text-white")}>
+                      {l?.text}
+                    </div>
+                    {l?.translit ? (
+                      <div className={"mt-0.5 text-[12.5px] font-semibold " + (mine ? "text-slate-400" : "text-white/70")}>
+                        {l.translit}
+                      </div>
+                    ) : null}
+                    {l?.id ? (
+                      <div className={"mt-1 text-[13px] font-medium " + (mine ? "text-slate-500" : "text-white/85")}>
+                        {l.id}
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  // [lms-doc-blocks-v1] Tabel — content.{title, headers, rows}. Di layar sempit
+  // tabel digulir sendiri, JANGAN biarkan halaman ikut geser ke samping.
+  if (step.kind === "table") {
+    const b = step.block;
+    const headers: string[] = b.content?.headers || [];
+    const rows: any[][] = b.content?.rows || [];
+    return (
+      <div className="lp-fade mx-auto max-w-[900px]">
+        <Pill icon={Table2} text="Materi · Tabel" />
+        <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
+          {b.content?.title || lesson.title}
+        </h2>
+        <div className="mt-6 overflow-x-auto rounded-3xl bg-white p-1.5 shadow-[0_18px_40px_-34px_rgba(18,23,43,.5)]">
+          <table className="w-full border-collapse text-left">
+            {headers.some((h) => (h || "").trim()) ? (
+              <thead>
+                <tr>
+                  {headers.map((h, i) => (
+                    <th
+                      key={i}
+                      className="whitespace-nowrap px-4 py-3 text-[12px] font-extrabold uppercase tracking-wide"
+                      style={{ color: TEAL, background: hexA(TEAL, 0.08) }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            ) : null}
+            <tbody>
+              {rows.map((r: any[], i: number) => (
+                <tr key={i} className="border-t border-slate-100">
+                  {(r || []).map((cell: any, j: number) => (
+                    <td
+                      key={j}
+                      className={
+                        "px-4 py-3 text-[14.5px] leading-snug " +
+                        (j === 0 ? "font-extrabold text-slate-900" : "font-medium text-slate-600")
+                      }
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+
   if (step.kind === "quiz") {
     const q = step.q;
     const ans = answers[q.id];
@@ -2059,6 +2212,12 @@ function SessionIndex({
                                   ? ListChecks
                                   : st.kind === "quiz"
                                   ? HelpCircle
+                                  : st.kind === "image"
+                                  ? ImageIcon
+                                  : st.kind === "dialogue"
+                                  ? MessagesSquare
+                                  : st.kind === "table"
+                                  ? Table2
                                   : BookOpen;
                               return (
                                 <button
