@@ -16,8 +16,8 @@
 //   - view Hari & Minggu sekarang pakai time-grid yang sama persis polanya dengan
 //     pengajar: gutter jam, garis jam, kolom bergaris, penanda "sekarang" merah.
 
-import { useEffect, useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import {
@@ -41,6 +41,8 @@ type ViewMode = "day" | "week" | "month";
 
 /** Tinggi 1 jam di time-grid (px) — sama dengan kalender dashboard pengajar. */
 const HOUR_PX = 56;
+/** Tinggi maksimal wadah scroll grid di mode biasa (px) — sisanya digulir di dalam. */
+const GRID_MAX_H = 560;
 /** Lebar gutter label jam — sama dengan pengajar (GUTTER_PX). */
 const GUTTER_PX = 48;
 
@@ -98,6 +100,40 @@ export default function JadwalCalendar({
   const [cursor, setCursor] = useState<Date>(() => new Date());
   const [selected, setSelected] = useState<string | null>(null);
 
+  // ── jadwal-fullscreen-v1 (ikut pola dashboard pengajar) ────────────────────
+  // Grid jam itu tinggi; sebelumnya dia manjangin halaman /akun sehingga kepala
+  // hari (SEN 3, SEL 4, …) hilang begitu digulir ke jam siang. Sekarang grid
+  // digulir DI DALAM wadahnya sendiri dengan kepala hari sticky, dan ada tombol
+  // layar penuh (pintasan F, keluar Esc) buat lihat seharian sekali pandang.
+  const [fullscreen, setFullscreen] = useState(false);
+  const [viewportH, setViewportH] = useState(900);
+  useEffect(() => {
+    const onResize = () => setViewportH(window.innerHeight);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  // Layar penuh: kunci scroll halaman di belakang biar cuma kalender yang gerak.
+  useEffect(() => {
+    if (!fullscreen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [fullscreen]);
+
+  // Pintasan: Esc keluar, F masuk/keluar. Diabaikan saat siswa lagi mengetik.
+  useEffect(() => {
+    const onKey = (ev: KeyboardEvent) => {
+      const el = ev.target as HTMLElement | null;
+      if (el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+      if (ev.key === "Escape" && fullscreen) { ev.preventDefault(); setFullscreen(false); }
+      else if (ev.key === "f" || ev.key === "F") { ev.preventDefault(); setFullscreen((v) => !v); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [fullscreen]);
+
   const eventsOn = (iso: string) => items.filter((i) => i._iso === iso).sort((a, b) => a._d.getTime() - b._d.getTime());
 
   const legend = useMemo(() => {
@@ -144,6 +180,39 @@ export default function JadwalCalendar({
     });
     return { start: Math.max(0, start), end: Math.min(24, Math.max(end, start + 4)) };
   }, [items, gridDays]);
+
+  /**
+   * Tinggi 1 jam. Di layar penuh grid dimuaikan supaya seluruh rentang jam muat
+   * sekali layar (dibatasi 56–110px biar teksnya tetap kebaca) — rumus sama
+   * dengan kalender pengajar.
+   */
+  const hourPx = useMemo(() => {
+    if (!fullscreen) return HOUR_PX;
+    const span = Math.max(1, gridHours.end - gridHours.start);
+    return Math.min(110, Math.max(HOUR_PX, Math.floor((viewportH - 280) / span)));
+  }, [fullscreen, viewportH, gridHours]);
+
+  /** Tinggi wadah scroll grid — di layar penuh sisa tinggi viewport. */
+  const gridMaxH = fullscreen ? Math.max(320, viewportH - 230) : GRID_MAX_H;
+
+  /** Jam paling pagi yang berisi di rentang yang lagi dilihat — patokan auto-scroll. */
+  const gridFocusHour = useMemo(() => {
+    const isos = new Set(gridDays.map(ymd));
+    let h = 24;
+    items.filter((i) => isos.has(i._iso)).forEach((e) => { h = Math.min(h, e._d.getHours()); });
+    return h === 24 ? gridHours.start : h;
+  }, [items, gridDays, gridHours]);
+
+  // Mendarat di jam yang berisi, bukan di jam paling pagi yang kosong.
+  // Dependensinya sengaja nilai PRIMITIF (bukan objek gridHours): `items` dihitung
+  // ulang tiap menit karena patokan "sekarang" bergeser, dan objek baru tiap menit
+  // bakal melempar balik posisi scroll siswa ke atas.
+  const gridScrollRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = gridScrollRef.current;
+    if (!el) return;
+    el.scrollTop = Math.max(0, (gridFocusHour - gridHours.start - 0.5) * hourPx);
+  }, [gridFocusHour, gridHours.start, hourPx, mode, fullscreen]);
 
   /** Total menit sesi terjadwal di minggu yang lagi dilihat. */
   const weekMinutes = useMemo(() => {
@@ -245,8 +314,12 @@ export default function JadwalCalendar({
         </div>
       )}
 
-      {/* Kalender — satu panel selebar layar (jadwal-gcal-v1) */}
-      <div className="rounded-[26px] bg-white ring-1 ring-slate-200 overflow-hidden">
+      {/* Kalender — satu panel selebar layar (jadwal-gcal-v1).
+          jadwal-fullscreen-v1: saat layar penuh panel jadi lapisan fixed setinggi
+          viewport; halaman di belakangnya dikunci. */}
+      <div className={fullscreen
+        ? "fixed inset-0 z-50 overflow-y-auto bg-white p-3 sm:p-4"
+        : "rounded-[26px] bg-white ring-1 ring-slate-200 overflow-hidden"}>
         {/* Kepala: judul + hitungan + tombol Hari ini */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-4 pt-5 pb-4 sm:px-6">
           <div>
@@ -290,6 +363,15 @@ export default function JadwalCalendar({
             </div>
             <button onClick={goPrev} aria-label="Sebelumnya" className={navBtn}><ChevronLeft className="w-5 h-5" /></button>
             <button onClick={goNext} aria-label="Berikutnya" className={navBtn}><ChevronRight className="w-5 h-5" /></button>
+            {/* jadwal-fullscreen-v1: sejajar tombol layar penuh di dashboard pengajar */}
+            <button
+              onClick={() => setFullscreen((v) => !v)}
+              aria-label={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
+              title={fullscreen ? "Keluar layar penuh (Esc)" : "Layar penuh (F)"}
+              className={navBtn}
+            >
+              {fullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+            </button>
           </div>
         </div>
 
@@ -372,16 +454,26 @@ export default function JadwalCalendar({
             ) : (() => {
               const { start: h0, end: h1 } = gridHours;
               const hours = Array.from({ length: h1 - h0 }, (_, i) => h0 + i);
-              const totalH = (h1 - h0) * HOUR_PX;
+              const totalH = (h1 - h0) * hourPx;
               const nowD = new Date(now);
               const nowMin = nowD.getHours() * 60 + nowD.getMinutes();
               return (
                 <div className="rounded-2xl border border-slate-100 p-2 sm:p-3">
-                  {/* Di HP 7 kolom jam mustahil kebaca — biarkan digulir menyamping. */}
-                  <div className="overflow-x-auto">
+                  {/* Di HP 7 kolom jam mustahil kebaca — biarkan digulir menyamping.
+                      jadwal-scroll-sticky-v1: grid juga digulir TEGAK di dalam wadah
+                      ini (bukan manjangin halaman). Kepala hari ikut di dalam wadah
+                      yang sama supaya saat digeser menyamping dia tetap sejajar
+                      kolomnya — kalau ditaruh di luar, lebarnya harus dikompensasi
+                      selebar scrollbar dan gampang meleset. */}
+                  <div
+                    ref={gridScrollRef}
+                    className="overflow-auto overscroll-contain"
+                    style={{ maxHeight: gridMaxH }}
+                  >
                     <div className={mode === "week" ? "min-w-[680px]" : "min-w-[320px]"}>
-                      {/* Kepala hari — kolomnya harus segaris dengan grid di bawahnya */}
-                      <div className="grid" style={gridCols}>
+                      {/* Kepala hari — mengambang di atas saat digulir; kolomnya harus
+                          segaris dengan grid di bawahnya. */}
+                      <div className="sticky top-0 z-30 grid border-b border-slate-100 bg-white" style={gridCols}>
                         <div />
                         {gridDays.map((d) => {
                           const iso = ymd(d);
@@ -403,15 +495,17 @@ export default function JadwalCalendar({
                         })}
                       </div>
 
-                      {/* Badan: gutter jam + kolom hari */}
-                      <div className="relative grid border-t border-slate-100" style={gridCols}>
+                      {/* Badan: gutter jam + kolom hari. Garis pemisahnya dipegang
+                          kepala hari (border-b) — kalau di sini juga, saat digulir
+                          garisnya jadi dobel. */}
+                      <div className="relative grid" style={gridCols}>
                         {/* label jam — ditaruh di garis jamnya, bukan di tengah blok */}
                         <div className="relative" style={{ height: totalH }}>
                           {hours.slice(1).map((h, i) => (
                             <span
                               key={h}
                               className="absolute inset-x-0 -translate-y-1/2 pr-1.5 text-right text-[10px] font-bold tabular-nums text-[#9AA1AE]"
-                              style={{ top: (i + 1) * HOUR_PX }}
+                              style={{ top: (i + 1) * hourPx }}
                             >
                               {pad(h)}.00
                             </span>
@@ -431,11 +525,11 @@ export default function JadwalCalendar({
                             >
                               {/* garis jam */}
                               {hours.map((h, i) => (
-                                <span key={h} className="pointer-events-none absolute inset-x-0 border-t border-slate-100" style={{ top: i * HOUR_PX }} />
+                                <span key={h} className="pointer-events-none absolute inset-x-0 border-t border-slate-100" style={{ top: i * hourPx }} />
                               ))}
                               {/* garis "sekarang" di hari ini — sama seperti kalender pengajar */}
                               {isToday && nowMin >= h0 * 60 && nowMin <= h1 * 60 && (
-                                <div className="pointer-events-none absolute inset-x-0 z-20" style={{ top: ((nowMin - h0 * 60) / 60) * HOUR_PX }}>
+                                <div className="pointer-events-none absolute inset-x-0 z-20" style={{ top: ((nowMin - h0 * 60) / 60) * hourPx }}>
                                   <div className="border-t-2 border-red-500" />
                                   <div className="absolute -left-1 -top-[5px] h-2.5 w-2.5 rounded-full bg-red-500" />
                                 </div>
@@ -443,7 +537,7 @@ export default function JadwalCalendar({
                               {placed.map(({ e, lane }) => {
                                 const c = langColor(e.language);
                                 const mins = e.durationMinutes || 60;
-                                const hPx = Math.max(((mins / 60) * HOUR_PX) - 2, 22);
+                                const hPx = Math.max(((mins / 60) * hourPx) - 2, 22);
                                 const w = 100 / lanes;
                                 const st = statusMeta(e); // jadwal-riwayat-v1
                                 return (
@@ -453,7 +547,7 @@ export default function JadwalCalendar({
                                     title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${st ? ` · ${st.label}` : ""}`}
                                     className="absolute z-10 overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.02]"
                                     style={{
-                                      top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * HOUR_PX + 1,
+                                      top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * hourPx + 1,
                                       height: hPx,
                                       left: `calc(${lane * w}% + 2px)`,
                                       width: `calc(${w}% - 4px)`,
