@@ -3592,7 +3592,6 @@ export default function AkunPage() {
                 const liveRegs = liveRegsAll.filter((r: any) => !isKelasSelesai(r));
                 const riwayatRegs = liveRegsAll.filter((r: any) => isKelasSelesai(r));
                 const CARD_BG = ["bg-[#16796E]", "bg-rose-500", "bg-indigo-500", "bg-amber-500", "bg-cyan-600", "bg-violet-500"];
-                const ICON_TINT = ["bg-[#16796E]/10 text-[#16796E]", "bg-rose-50 text-rose-500", "bg-indigo-50 text-indigo-500", "bg-amber-50 text-amber-600", "bg-cyan-50 text-cyan-600", "bg-violet-50 text-violet-500"];
                 const activeLangCount = new Set(activeRegs.map((r: any) => r.language)).size;
                 const teacherMap = new Map<string, { name: string; count: number; langs: Set<string>; avatar_url: string | null }>();
                 activeRegs.forEach((r: any) => {
@@ -4112,25 +4111,37 @@ export default function AkunPage() {
                           minggu ini, dan peringkat kelas grup. Semuanya dulu terkubur di
                           detail kelas (2–3 klik); sekarang naik ke layar pertama.
                           Komponennya menyembunyikan diri sendiri kalau datanya kosong. */}
-                      {liveRegsAll.length > 0 && (
+                      {/* [beranda-kosakata-v1] Berapa kata yang sudah dikuasai, kata
+                          apa saja, dan targetnya berapa — dulu tak ada jawabannya di
+                          dashboard: kata simpanan cuma kelihatan di dalam flashcard,
+                          kosakata materi tak pernah dihitung sama sekali.
+                          [beranda-kosakata-aside-v1] kartunya sekarang menempati KOLOM
+                          KANAN di sebelah kartu progres (dulu satu baris sendiri
+                          selebar layar, sementara kolom kanan ringkasan menganggur). */}
+                      {liveRegsAll.length > 0 ? (
                         <BerandaInsights
                           regs={liveRegsAll}
                           studentName={student?.name || firstName || "Siswa"}
                           displayLanguage={displayLanguage}
                           previewStudentId={previewId}
+                          aside={
+                            <KosakataCard
+                              userId={user?.id}
+                              levels={liveRegsAll.map((r: any) => r.level)}
+                              previewMode={previewMode}
+                            />
+                          }
                         />
-                      )}
-
-                      {/* [beranda-kosakata-v1] Berapa kata yang sudah dikuasai, kata
-                          apa saja, dan targetnya berapa — dulu tak ada jawabannya di
-                          dashboard: kata simpanan cuma kelihatan di dalam flashcard,
-                          kosakata materi tak pernah dihitung sama sekali. */}
-                      {!belumPunyaApaPun && (
-                        <KosakataCard
-                          userId={user?.id}
-                          levels={liveRegsAll.map((r: any) => r.level)}
-                          previewMode={previewMode}
-                        />
+                      ) : (
+                        // Belum ada kelas aktif → ringkasan belajar tak dirender sama
+                        // sekali, kartu kosakata berdiri sendiri seperti sebelumnya.
+                        !belumPunyaApaPun && (
+                          <KosakataCard
+                            userId={user?.id}
+                            levels={liveRegsAll.map((r: any) => r.level)}
+                            previewMode={previewMode}
+                          />
+                        )
                       )}
 
                       {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
@@ -4225,42 +4236,11 @@ export default function AkunPage() {
                         </div>
                       )}
 
-                      {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
-                      {teacherList.length > 0 && (
-                        <div>
-                          <h2 className="text-[18px] font-extrabold text-[#12172B]">Pengajar Kamu</h2>
-                          <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-                            {teacherList.map((t, i) => (
-                              <div key={t.name} className="flex items-center gap-4 rounded-3xl bg-white p-4">
-                                {/* [teacher-avatar-sync-v1] foto pengajar (fallback inisial) */}
-                                {t.avatar_url ? (
-                                  <img src={t.avatar_url} alt={t.name} className="h-14 w-14 shrink-0 rounded-2xl bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
-                                ) : null}
-                                <span className={`${t.avatar_url ? "hidden" : ""} flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${ICON_TINT[i % ICON_TINT.length]}`}>{initials(t.name)}</span>
-                                <span className="min-w-0 flex-1">
-                                  <span className="block truncate text-[16px] font-extrabold text-[#12172B]">{t.name}</span>
-                                  <span className="block truncate text-[13px] font-medium text-gray-500">{t.count} Kelas · {Array.from(t.langs).join(", ")}</span>
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* [beranda-onboarding-cta-v1] promo banner turun ke bawah & cuma buat
-                          siswa yang UDAH punya kelas (upsell naik level). Buat siswa baru,
-                          layar pertama sekarang dipimpin kartu "Mulai dari sini". */}
-                      {!belumPunyaApaPun && (
-                        <div className="relative overflow-hidden rounded-[1.5rem] bg-[#16796E] px-7 py-5 text-white sm:px-9 sm:py-6">
-                          <div className="relative z-10 max-w-[60%]">
-                            <h2 className="text-[19px] font-extrabold leading-snug sm:text-[22px]">Pilihan Tepat untuk Naik Level</h2>
-                            <p className="mt-1.5 max-w-[420px] text-[13px] font-medium leading-relaxed text-white/85">Lanjut ke level berikutnya atau tambah bahasa baru lewat paket E-Learning 12+ bahasa.</p>
-                            <button onClick={openEnrollWizard} className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl bg-white px-5 text-[13px] font-extrabold text-[#16796E] transition hover:bg-[#F2CB05] hover:text-[#12172B]">
-                              Lihat Kelas <ArrowRight className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </div>
-                      )}
+                      {/* [beranda-ringkas-v1] Kartu "Pengajar Kamu" & banner "Pilihan Tepat
+                          untuk Naik Level" DIHAPUS atas permintaan: nama pengajar sudah
+                          nempel di kartu kelas & jadwal, dan banner upsell bikin beranda
+                          panjang tanpa menjawab pertanyaan siswa. Pendaftaran kelas baru
+                          tetap bisa lewat "Jelajahi Bahasa" di bawah. */}
 
                       {/* [linguo-patch:beranda-jelajahi-v1] Jelajahi Bahasa — dipindah dari tab Materi ke Beranda */}
                       {(() => {

@@ -15,7 +15,7 @@
 // Semua bagian menghilang sendiri kalau datanya kosong — beranda siswa baru
 // tidak boleh penuh kotak kosong.
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
   Clock, CalendarDays, ClipboardList, TrendingUp, Share2, Printer, Check,
@@ -97,6 +97,7 @@ export default function BerandaInsights({
   studentName,
   displayLanguage = (l: string) => l,
   previewStudentId = null,
+  aside = null,
 }: {
   regs: RegLite[];
   studentName: string;
@@ -104,6 +105,12 @@ export default function BerandaInsights({
   // [preview-keep-param-v1] POV staf: tautan ke detail kelas wajib membawa
   // ?preview=, kalau tidak halaman tujuan kehilangan identitas pratinjau.
   previewStudentId?: string | null;
+  // [beranda-kosakata-aside-v1] kartu tambahan buat KOLOM KANAN (dipakai
+  // "Kosakata Saya"). Dulu kartu itu berdiri sendiri selebar layar di bawah blok
+  // ini, padahal kolom kanan sering kosong (tak ada PR & materi) → banyak ruang
+  // menganggur. Dioper sebagai slot, bukan di-import di sini, biar komponen ini
+  // tetap tak tahu-menahu soal data kosakata.
+  aside?: ReactNode;
 }) {
   const previewQs = previewStudentId ? `&preview=${encodeURIComponent(previewStudentId)}` : "";
   const [fetched, setFetched] = useState<{ key: string; data: StudentInsights } | null>(null);
@@ -150,7 +157,9 @@ export default function BerandaInsights({
     return [...ratedProgress].sort((a, b) => (b.periodEnd || '').localeCompare(a.periodEnd || ''))[0];
   }, [ratedProgress, selReg]);
 
-  if (regs.length === 0 || !data) return null;
+  // Blok ringkasan boleh menyembunyikan diri, tapi kartu titipan (Kosakata) tidak
+  // boleh ikut hilang — dia punya isi sendiri yang tak bergantung rapor pengajar.
+  if (regs.length === 0 || !data) return <>{aside}</>;
 
   const { week, pendingHomework, materials, leaderboard } = data;
   const sesiTotal = week.doneCount + week.upcomingCount;
@@ -160,7 +169,7 @@ export default function BerandaInsights({
   const adaIsi =
     active !== null || pendingHomework.length > 0 || materials.length > 0 ||
     sesiTotal > 0 || leaderboard !== null;
-  if (!adaIsi) return null;
+  if (!adaIsi) return <>{aside}</>;
 
   const activeReg = active ? regById.get(active.registrationId) : null;
   const shareData = active && activeReg ? {
@@ -320,8 +329,11 @@ export default function BerandaInsights({
           </div>
         )}
 
-        {/* ── Kolom kanan: PR + materi ── */}
-        <div className="flex flex-col gap-4">
+        {/* ── Kolom kanan: PR + materi + kartu titipan (Kosakata) ──
+            Kalau kartu progres tidak ada (belum dinilai pengajar), kolom ini
+            melebar penuh — kalau tidak, isinya terjepit di separuh kanan grid
+            dengan separuh kiri kosong melompong. */}
+        <div className={`flex flex-col gap-4 ${active && activeReg && shareData ? '' : 'lg:col-span-2'}`}>
           {pendingHomework.length > 0 && (
             <div className="rounded-3xl bg-white p-4 ring-1 ring-rose-200">
               <div className="flex items-center gap-2">
@@ -401,6 +413,8 @@ export default function BerandaInsights({
               </div>
             </div>
           )}
+
+          {aside}
         </div>
       </div>
 
