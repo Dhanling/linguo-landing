@@ -80,17 +80,38 @@ export type Cert = {
   writing?: number | null;
 };
 
+// ── Dark mode dashboard ────────────────────────────────────────────────────
+// [sertifikat-dark-v1] Shell menyalakan tema lewat class `lms-dark` di <html> dan
+// menimpanya via CSS berbasis NAMA CLASS Tailwind. Semua warna di file ini yang
+// ditulis inline (`style={{ background: ... }}`) otomatis lolos dari aturan itu —
+// dulu bikin kartu aktif tetap putih sementara teksnya dipaksa putih (tak kebaca).
+// Jadi komponen ini baca sendiri temanya lalu memilih paletnya.
+function useIsDark() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => {
+    const el = document.documentElement;
+    const read = () => setDark(el.classList.contains("lms-dark"));
+    read();
+    const mo = new MutationObserver(read);
+    mo.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => mo.disconnect();
+  }, []);
+  return dark;
+}
+
 // ── Palet per-bahasa ──────────────────────────────────────────────────────
-type Col = { accent: string; bg: string; text: string };
+// accentDark/textDark = versi terang dari aksen yang sama, dipakai HANYA di
+// kanvas gelap. Aksen light (#16796E dkk.) kontrasnya < 2:1 di atas #1c1c1c.
+type Col = { accent: string; bg: string; text: string; accentDark: string; bgDark: string; textDark: string };
 const PALETTE: Col[] = [
-  { accent: "#16796E", bg: "#16796E1A", text: "#0F5A52" },
-  { accent: "#E11D48", bg: "#FFF1F2", text: "#BE123C" },
-  { accent: "#4F46E5", bg: "#EEF2FF", text: "#4338CA" },
-  { accent: "#D97706", bg: "#FFFBEB", text: "#B45309" },
-  { accent: "#0EA5E9", bg: "#F0F9FF", text: "#0369A1" },
-  { accent: "#7C3AED", bg: "#F5F3FF", text: "#6D28D9" },
-  { accent: "#059669", bg: "#ECFDF5", text: "#047857" },
-  { accent: "#EA580C", bg: "#FFF7ED", text: "#C2410C" },
+  { accent: "#16796E", bg: "#16796E1A", text: "#0F5A52", accentDark: "#2DD4BF", bgDark: "#2DD4BF26", textDark: "#5EEAD4" },
+  { accent: "#E11D48", bg: "#FFF1F2", text: "#BE123C", accentDark: "#FB7185", bgDark: "#FB718526", textDark: "#FDA4AF" },
+  { accent: "#4F46E5", bg: "#EEF2FF", text: "#4338CA", accentDark: "#818CF8", bgDark: "#818CF826", textDark: "#A5B4FC" },
+  { accent: "#D97706", bg: "#FFFBEB", text: "#B45309", accentDark: "#FBBF24", bgDark: "#FBBF2426", textDark: "#FCD34D" },
+  { accent: "#0EA5E9", bg: "#F0F9FF", text: "#0369A1", accentDark: "#38BDF8", bgDark: "#38BDF826", textDark: "#7DD3FC" },
+  { accent: "#7C3AED", bg: "#F5F3FF", text: "#6D28D9", accentDark: "#A78BFA", bgDark: "#A78BFA26", textDark: "#C4B5FD" },
+  { accent: "#059669", bg: "#ECFDF5", text: "#047857", accentDark: "#34D399", bgDark: "#34D39926", textDark: "#6EE7B7" },
+  { accent: "#EA580C", bg: "#FFF7ED", text: "#C2410C", accentDark: "#FB923C", bgDark: "#FB923C26", textDark: "#FDBA74" },
 ];
 const OVERRIDE: Record<string, number> = { Inggris: 0, English: 0, Jepang: 1, Japanese: 1, Korea: 2, Korean: 2 };
 function colorOf(lang: string): Col {
@@ -160,7 +181,9 @@ function useFlagDataUrl(lang: string): string | null {
   return url;
 }
 
-function FlagBadge({ lang, variant }: { lang: string; variant: "list" | "hero" | "chip" }) {
+// `dark` sengaja PROP, bukan hook: varian "chip" hidup di dalam kertas sertifikat
+// yang selalu terang, jadi cuma pemanggil yang tahu latarnya gelap atau tidak.
+function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "list" | "hero" | "chip"; dark?: boolean }) {
   const url = useFlagDataUrl(lang);
   const col = colorOf(lang);
   if (variant === "chip") {
@@ -185,10 +208,10 @@ function FlagBadge({ lang, variant }: { lang: string; variant: "list" | "hero" |
   }
   // list (12x12)
   return (
-    <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl" style={{ background: col.bg }}>
+    <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl" style={{ background: dark ? col.bgDark : col.bg }}>
       {url
         ? <img src={url} alt={lang} className="h-7 w-10 rounded-[4px] object-cover shadow-sm" />
-        : <span className="text-xl font-extrabold" style={{ color: col.text }}>{glyphOf(lang)}</span>}
+        : <span className="text-xl font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>}
     </span>
   );
 }
@@ -300,6 +323,7 @@ export default function SertifikatTab({
   onSchedule?: () => void;
 }) {
   useEffect(() => { ensureInter(); }, []);
+  const isDark = useIsDark();
 
   const DUMMY: Cert[] = useMemo(() => [
     { id: "d-eng-a2", product: "Kelas Private", language: "English", level: "A2", title: "Elementary", teacher: "Sarah Wijaya", status: "issued", date: "14 Feb 2026", score: 88, hours: 32, idNo: "LING-EN-A2-204815", speaking: 4, listening: 5, reading: 4, writing: 3 },
@@ -345,6 +369,24 @@ export default function SertifikatTab({
 
   return (
     <div className="w-full">
+      {/* [sertifikat-dark-v1] Dua hal yang cuma bisa dibereskan lewat CSS:
+          1) KERTAS SERTIFIKAT wajib tetap terang di mode gelap. Itu dokumen —
+             sekaligus yang difoto html2canvas buat PDF; kalau ikut menghitam,
+             PDF-nya ikut hitam. Selector sengaja 3 class (.lms-dark .cert-paper .x)
+             biar menang atas aturan shell yang cuma 2 class + !important.
+          2) Tombol sekunder `bg-white` di mode gelap jadi #1c1c1c — sewarna persis
+             dengan kartunya, jadi tombolnya lenyap. Dinaikkan + dikasih garis. */}
+      <style>{`
+        .lms-dark .cert-paper.bg-white,.lms-dark .cert-paper .bg-white{background-color:#ffffff !important;}
+        .lms-dark .cert-paper .bg-white\\/70{background-color:rgba(255,255,255,.72) !important;}
+        .lms-dark .cert-paper .bg-\\[\\#EEF1F4\\]{background-color:#EEF1F4 !important;}
+        .lms-dark .cert-paper .bg-slate-300{background-color:#CBD5E1 !important;}
+        .lms-dark .cert-paper .text-\\[\\#12172B\\]{color:#12172B !important;}
+        .lms-dark .cert-paper .text-\\[\\#6B7280\\]{color:#6B7280 !important;}
+        .lms-dark .cert-btn-ghost.bg-white{background-color:#262626 !important;border:1px solid #3A3A3A !important;}
+        .lms-dark .cert-btn-ghost.bg-white:hover{background-color:#333333 !important;}
+        .lms-dark .cert-tint{background-color:rgba(45,212,191,.10) !important;}
+      `}</style>
       <div className="flex min-w-0 flex-col-reverse overflow-hidden rounded-[26px] bg-white shadow-[0_24px_60px_-40px_rgba(18,23,43,0.45)] lg:flex-row">
         {/* LEFT: list */}
         <section className="flex w-full shrink-0 flex-col border-t border-slate-100 bg-white lg:w-[320px] lg:border-r lg:border-t-0">
@@ -385,9 +427,17 @@ export default function SertifikatTab({
                   key={ct.id}
                   onClick={() => setSelectedId(ct.id)}
                   className="flex w-full items-center gap-3 rounded-2xl p-3 text-left transition hover:bg-[#F5F6F8]"
-                  style={active ? { background: "#fff", outline: "2px solid #16796E", boxShadow: "0 16px 36px -22px rgba(18,23,43,.55)" } : undefined}
+                  style={
+                    active
+                      ? isDark
+                        // Dulu di sini hardcoded `background:"#fff"` — di mode gelap teksnya
+                        // dipaksa putih oleh shell, hasilnya putih di atas putih alias hilang.
+                        ? { background: "#2E2E2E", outline: "2px solid #2DD4BF", boxShadow: "0 16px 36px -22px rgba(0,0,0,.8)" }
+                        : { background: "#fff", outline: "2px solid #16796E", boxShadow: "0 16px 36px -22px rgba(18,23,43,.55)" }
+                      : undefined
+                  }
                 >
-                  <FlagBadge lang={ct.language} variant="list" />
+                  <FlagBadge lang={ct.language} variant="list" dark={isDark} />
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{ct.language} — {ct.level}</span>
                     <span className="block truncate text-[12px] font-medium text-[#6B7280]">CEFR · {ct.title}</span>
@@ -402,7 +452,7 @@ export default function SertifikatTab({
             })}
           </div>
           <div className="border-t border-slate-100 px-6 py-4">
-            <div className="rounded-2xl bg-[#16796E0D] p-4">
+            <div className="cert-tint rounded-2xl bg-[#16796E0D] p-4">
               <p className="flex items-center gap-2 text-[13px] font-extrabold text-[#12172B]"><Info className="h-4 w-4 text-[#16796E]" />Tentang CEFR</p>
               <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-[#6B7280]">Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).</p>
             </div>
@@ -501,7 +551,8 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
     <>
       <div
         ref={cardRef}
-        className="relative overflow-hidden rounded-2xl bg-white"
+        // `cert-paper` = penanda "ini kertas, jangan ikut menghitam". Lihat blok <style> di atas.
+        className="cert-paper relative overflow-hidden rounded-2xl bg-white"
         style={{
           fontFamily: CERT_FONT,
           border: "1px solid #ECECEC",
@@ -587,8 +638,8 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
           {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
           {pdfLoading ? "Membuat PDF…" : "Unduh PDF"}
         </button>
-        <button onClick={handleShare} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
-        <button onClick={handleLinkedIn} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
+        <button onClick={handleShare} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
+        <button onClick={handleLinkedIn} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
         <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
       </div>
 
@@ -609,7 +660,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
                 {ct.date && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">Tanggal terbit</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.date}</dd></div>}
                 {ct.idNo && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">No. Sertifikat</dt><dd className="text-right font-mono text-[12px] font-bold text-[#12172B]">{ct.idNo}</dd></div>}
               </dl>
-              <p className="mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">
+              <p className="cert-tint mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">
                 <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" />
                 Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.
               </p>
@@ -623,13 +674,20 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
 
 function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?: () => void; onSchedule?: () => void }) {
   const col = colorOf(ct.language);
+  const isDark = useIsDark();
   const total = ct.total ?? 16;
   const used = ct.used ?? 0;
   const pct = ct.pct ?? (total > 0 ? Math.round((used / total) * 100) : 0);
   const remain = Math.max(0, total - used);
   return (
     <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
-      <div className="relative flex items-center gap-5 px-6 py-7 text-white sm:px-8" style={{ background: col.accent }}>
+      {/* Aksen bahasa penuh (mis. oranye Rusia) menyilaukan di kanvas hitam —
+          di mode gelap dilapisi hitam transparan biar turun sekitar 30% luminansi,
+          teks putih tetap kontras. */}
+      <div
+        className="relative flex items-center gap-5 px-6 py-7 text-white sm:px-8"
+        style={{ background: isDark ? `linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,.34)), ${col.accent}` : col.accent }}
+      >
         <FlagBadge lang={ct.language} variant="hero" />
         <div className="min-w-0 flex-1">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold"><Lock className="h-3 w-3" />Belum Terbit</span>
@@ -643,7 +701,7 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
       </div>
       <div className="px-6 py-7 sm:px-8">
         <div className="flex items-center justify-between text-[13px] font-bold text-[#12172B]"><span>Progress menuju sertifikat</span><span>{pct}%</span></div>
-        <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#E8EAEE]"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
+        <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#E8EAEE]"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: isDark ? "#2DD4BF" : "#16796E" }} /></div>
         <p className="mt-3 flex items-center gap-1.5 text-[13px] font-medium text-[#6B7280]"><Flag className="h-4 w-4 text-[#16796E]" />Tinggal <b className="text-[#12172B]">{remain} sesi</b> lagi ({used}/{total}) untuk membuka sertifikat ini.</p>
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
           <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Selesai</p></div>
@@ -652,7 +710,7 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />Lanjut Belajar</button>
-          <button onClick={onSchedule} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
+          <button onClick={onSchedule} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
         </div>
       </div>
     </div>
