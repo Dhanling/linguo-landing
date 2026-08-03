@@ -6,6 +6,9 @@
 // berarti menyeret seluruh kalender (grid + agenda) ke bundel Beranda.
 
 import { useState } from "react";
+import { RectFlag } from "@/components/RectFlag";
+import { LANG_FLAGS } from "@/lib/lang-visuals";
+import { baseLanguage } from "@/lib/classLanguage";
 
 // + jadwal-recurring-materi-v1: pertemuan ke berapa + materi yang bakal dibahas
 //   (topik, rincian, berkas/link rujukan) — diisi pengajar waktu bikin jadwal.
@@ -72,6 +75,33 @@ export function langColor(language: string): LangColor {
   let h = 0;
   for (let i = 0; i < language.length; i++) h = (h * 31 + language.charCodeAt(i)) >>> 0;
   return PALETTE[3 + (h % (PALETTE.length - 3))];
+}
+
+// ── jadwal-flag-avatar-v1: bendera bahasa di kartu jadwal ────────────────────
+// Blok di kalender cuma punya warna bahasa (titik/garis kiri) yang artinya harus
+// dihafal dari legenda. Bendera rounded-rectangle bikin "kelas apa" kebaca dalam
+// sepersekian detik. Sumber kode negara = LANG_FLAGS (satu peta dengan kartu
+// kelas Beranda), dinormalkan dulu lewat baseLanguage() supaya nama kelas reguler
+// ("English - Conversation A1.1") tetap ketemu benderanya.
+const LANG_FLAGS_LC: Record<string, string> = Object.fromEntries(
+  Object.entries(LANG_FLAGS).map(([k, v]) => [k.toLowerCase(), v])
+);
+
+/** Kode negara ISO-2 untuk sebuah nama bahasa/kelas — undefined kalau tak dikenal. */
+export function langFlagCode(language?: string | null): string | undefined {
+  const base = baseLanguage(language).toLowerCase();
+  return base ? LANG_FLAGS_LC[base] : undefined;
+}
+
+/**
+ * Bendera bahasa untuk kartu jadwal. Bahasa yang tak punya bendera (mis. Latin)
+ * TIDAK dikasih Globe abu-abu — di blok sekecil ini ikon fallback cuma jadi
+ * noise; kartunya tetap punya warna bahasa sebagai identitas.
+ */
+export function LangFlag({ language, h = 10, className = "" }: { language?: string | null; h?: number; className?: string }) {
+  const code = langFlagCode(language);
+  if (!code) return null;
+  return <RectFlag code={code} h={h} className={className} />;
 }
 
 // ── jadwal-teacher-avatar-v1: foto pengajar ──────────────────────────────────

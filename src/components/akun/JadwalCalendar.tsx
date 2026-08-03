@@ -21,8 +21,8 @@ import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileTe
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import {
-  ATT_META, DOWS, DOWS_FULL, MONTHS, MONTHS_SHORT, TeacherAvatar, addDays, countdownLabel,
-  fmtTime, isDead, isoOf, langColor, pad, startOfWeek, statusMeta, ymd,
+  ATT_META, DOWS, DOWS_FULL, LangFlag, MONTHS, MONTHS_SHORT, TeacherAvatar, addDays, countdownLabel,
+  fmtTime, isDead, isoOf, langColor, langFlagCode, pad, startOfWeek, statusMeta, ymd,
   type JadwalSession, type LangColor, type NormSession,
 } from "./jadwalShared";
 
@@ -336,10 +336,13 @@ export default function JadwalCalendar({
                           return (
                             <span
                               key={e.id}
-                              title={`${e._time} · ${e.language}${e.level ? ` ${e.level}` : ""}${st ? ` · ${st.label}` : ""}`}
+                              title={`${e._time} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${st ? ` · ${st.label}` : ""}`}
                               className="flex items-center gap-1 truncate rounded-md px-1.5 py-0.5 text-[10px] font-bold leading-tight"
                               style={{ background: c.bg, color: c.text, opacity: e._past || isDead(e.status) ? 0.55 : 1 }}
                             >
+                              {/* jadwal-flag-avatar-v1: bendera dulu, titik status tetap dipertahankan —
+                                  bendera menjawab "kelas apa", titik menjawab "hasilnya apa". */}
+                              <LangFlag language={e.language} h={8} className="hidden sm:inline-flex" />
                               <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: st ? st.color : c.dot }} />
                               <span className={`truncate ${isDead(e.status) ? "line-through" : ""}`}>{e._time} {e.language}</span>
                             </span>
@@ -447,7 +450,7 @@ export default function JadwalCalendar({
                                   <button
                                     key={e.id}
                                     onClick={() => setSelected(iso)}
-                                    title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${st ? ` · ${st.label}` : ""}`}
+                                    title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${st ? ` · ${st.label}` : ""}`}
                                     className="absolute z-10 overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.02]"
                                     style={{
                                       top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * HOUR_PX + 1,
@@ -461,8 +464,12 @@ export default function JadwalCalendar({
                                     }}
                                   >
                                     {/* Susunan ala Google Calendar: judul kelas dulu, jam di bawahnya.
-                                        Blok pendek (< 32px) tak muat dua baris → jam digabung sebaris. */}
+                                        Blok pendek (< 32px) tak muat dua baris → jam digabung sebaris.
+                                        jadwal-flag-avatar-v1: bendera bahasa memimpin baris judul, foto
+                                        pengajar nempel di baris jam — dua pertanyaan pertama siswa
+                                        ("kelas apa" & "sama siapa") kejawab tanpa buka agenda. */}
                                     <p className="flex items-center gap-1 truncate text-[10px] font-extrabold leading-tight">
+                                      <LangFlag language={e.language} h={9} />
                                       <span className={`truncate ${isDead(e.status) ? "line-through" : ""}`}>{e.language}{e.level ? ` ${e.level}` : ""}</span>
                                       {hPx < 32 && <span className="shrink-0 font-bold opacity-70">{e._time}</span>}
                                       {e.sessionNumber ? (
@@ -470,8 +477,13 @@ export default function JadwalCalendar({
                                       ) : null}
                                     </p>
                                     {hPx >= 32 && (
-                                      <p className="truncate text-[10px] font-semibold leading-tight opacity-80">
-                                        {e._time}{e._end ? `–${e._end}` : ""}
+                                      <p className="flex items-center gap-1 text-[10px] font-semibold leading-tight opacity-80">
+                                        <span className="truncate">{e._time}{e._end ? `–${e._end}` : ""}</span>
+                                        {e.teacher && (
+                                          <span className="ml-auto flex shrink-0 items-center">
+                                            <TeacherAvatar name={e.teacher} src={e.teacherAvatarUrl} size={14} />
+                                          </span>
+                                        )}
                                       </p>
                                     )}
                                     {hPx >= 52 && e.materialTitle && (
@@ -560,7 +572,11 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
         </span>
         <span className="flex min-w-0 flex-1 flex-col justify-center">
           <span className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: c.dot }} />
+            {/* jadwal-flag-avatar-v1: bendera menggantikan titik warna kalau bahasanya
+                punya bendera — titik cuma dipakai sebagai cadangan. */}
+            {langFlagCode(e.language)
+              ? <LangFlag language={e.language} h={14} />
+              : <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: c.dot }} />}
             <span className={`truncate text-[15px] font-extrabold text-[#12172B] ${isDead(e.status) ? "line-through" : ""}`}>
               {e.language}{e.level ? ` — ${e.level}` : ""}
             </span>
