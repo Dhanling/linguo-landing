@@ -785,6 +785,25 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
     el.style.height = `${Math.min(el.scrollHeight, COMPOSER_MAX_H)}px`;
   }, [draft, activeJid, replyTo]);
 
+  /* [student-group-autofocus-v1] Buka grup → kursor langsung berkedip di kotak
+     tulis, jadi tak perlu klik dua kali cuma untuk mulai mengetik. Caret ditaruh
+     di UJUNG teks yang sudah ada. Sengaja hanya di perangkat berpenunjuk halus:
+     di HP, fokus otomatis memunculkan keyboard yang menutup separuh transkrip
+     begitu grup dibuka. */
+  useEffect(() => {
+    if (!activeJid || preview) return;
+    if (typeof window === "undefined") return;
+    if (!window.matchMedia?.("(hover: hover) and (pointer: fine)").matches) return;
+    const id = requestAnimationFrame(() => {
+      const el = textareaRef.current;
+      if (!el || el.disabled) return;
+      el.focus();
+      const end = el.value.length;
+      el.setSelectionRange(end, end);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [activeJid, preview]);
+
   // Esc: tutup lightbox dulu, lalu batal membalas.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
