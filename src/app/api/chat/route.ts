@@ -387,7 +387,8 @@ function seatTag(enrolled: unknown, max: unknown, min?: unknown): string {
 // ("Japanese", "Dutch", "Sign Language") — sama dengan yang tampil di halaman
 // jadwal. Di chat berbahasa Indonesia itu terasa asing dan bikin AI menjawab
 // "Japanese A1.1" untuk user yang nanya "jepang". Nama Indonesia ditulis di
-// depan, nama aslinya tetap dibawa dalam kurung supaya pencocokan tetap tepat.
+// depan. Nama Inggrisnya sengaja TIDAK ikut ditulis: percobaan pertama membawa
+// "(Japanese)" dalam kurung dan AI menyalinnya bulat-bulat ke balasan.
 // Salinan peta ini ada di linguo-app/supabase/functions/suggest-reply dan
 // linguo-wa-bot/db.js — ubah bertiga kalau diganti.
 const LANG_ID: Record<string, string> = {
@@ -423,8 +424,7 @@ const LANG_ID: Record<string, string> = {
 
 function langLabel(raw: unknown): string {
   const v = String(raw || "").trim();
-  const id = LANG_ID[v];
-  return id ? `${id} (${v})` : v;
+  return LANG_ID[v] || v;
 }
 
 function isFull(enrolled: unknown, max: unknown): boolean {
