@@ -28,8 +28,8 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import {
-  Check, ChevronDown, ChevronLeft, FileText, Loader2, MessagesSquare, Reply,
-  RotateCw, Search, Send, Smile, Users, X,
+  Check, ChevronDown, ChevronLeft, FileText, Loader2, Maximize2, MessagesSquare,
+  Minimize2, Reply, RotateCw, Search, Send, Smile, Users, X,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 
@@ -343,6 +343,20 @@ function getBaseline(): string {
 
 /* ── Komponen utama ──────────────────────────────────────────────────────── */
 
+/** [group-fullscreen-v1] Tombol layar penuh — dipakai di header daftar grup & header chat. */
+function FullscreenToggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+  return (
+    <button
+      onClick={onToggle}
+      className="shrink-0 rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700"
+      aria-label={on ? "Keluar dari layar penuh" : "Layar penuh"}
+      title={on ? "Keluar dari layar penuh (Esc)" : "Layar penuh"}
+    >
+      {on ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+    </button>
+  );
+}
+
 export default function StudentGroupChat({ previewStudentId = null }: { previewStudentId?: string | null } = {}) {
   /* [preview-session-v1] Mode pratinjau POV siswa (dibuka staf dari avatar
      dashboard admin): tak ada sesi login, jadi semua data lewat /api/preview-group
@@ -367,6 +381,9 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [lightbox, setLightbox] = useState<{ url: string; type: string | null } | null>(null);
   const [showScrollDown, setShowScrollDown] = useState(false);
+  // [group-fullscreen-v1] Layar penuh: panel chat jadi overlay setinggi viewport
+  // supaya percakapan panjang tak terhimpit rail + judul halaman.
+  const [fullscreen, setFullscreen] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -804,16 +821,27 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
     return () => cancelAnimationFrame(id);
   }, [activeJid, preview]);
 
-  // Esc: tutup lightbox dulu, lalu batal membalas.
+  // Esc: tutup lightbox dulu, lalu batal membalas, terakhir keluar layar penuh.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
       if (lightbox) setLightbox(null);
       else if (replyTo) setReplyTo(null);
+      else if (fullscreen) setFullscreen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, replyTo]);
+  }, [lightbox, replyTo, fullscreen]);
+
+  // [group-fullscreen-v1] Kunci scroll halaman di belakang overlay.
+  useEffect(() => {
+    if (!fullscreen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [fullscreen]);
 
   const send = useCallback(async () => {
     const text = draft.trim();
@@ -909,8 +937,20 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
   }
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-gray-200 bg-white">
-      <div className="flex min-h-[34rem] flex-col lg:h-[calc(100vh-11rem)] lg:flex-row">
+    <div
+      className={
+        fullscreen
+          // z di bawah drawer nav StudentShell (z-70), di atas header sticky &
+          // banner pratinjau (z-40/z-60).
+          ? "fixed inset-0 z-[65] overflow-hidden bg-white"
+          : "overflow-hidden rounded-3xl border border-gray-200 bg-white"
+      }
+    >
+      <div
+        className={`flex flex-col lg:flex-row ${
+          fullscreen ? "h-[100dvh] lg:h-[100dvh]" : "min-h-[34rem] lg:h-[calc(100vh-11rem)]"
+        }`}
+      >
         {/* ── Daftar grup ── */}
         <aside
           className={`flex w-full shrink-0 flex-col border-gray-200 lg:w-[19rem] lg:border-r ${
@@ -918,9 +958,12 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
           }`}
         >
           <div className="border-b border-gray-200 px-4 py-3.5">
-            <h2 className="flex items-center gap-2 text-sm font-bold text-gray-900">
-              <MessagesSquare className="h-4 w-4 text-teal-700" /> Grup Kelas
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="flex flex-1 items-center gap-2 text-sm font-bold text-gray-900">
+                <MessagesSquare className="h-4 w-4 text-teal-700" /> Grup Kelas
+              </h2>
+              <FullscreenToggle on={fullscreen} onToggle={() => setFullscreen((v) => !v)} />
+            </div>
             <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
               Percakapan ini grup WhatsApp kelasmu. Pesanmu tetap masuk ke grupnya, jadi pengajar
               & teman kelas tetap bisa membacanya dari WhatsApp.
@@ -1056,6 +1099,7 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
                 >
                   <RotateCw className={`h-4 w-4 ${loadingMsgs ? "animate-spin" : ""}`} />
                 </button>
+                <FullscreenToggle on={fullscreen} onToggle={() => setFullscreen((v) => !v)} />
               </header>
 
               <div
