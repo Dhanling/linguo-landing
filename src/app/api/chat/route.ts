@@ -548,7 +548,7 @@ const OFFLINE_NOTE = `CATATAN KELAS OFFLINE (WAJIB DIPATUHI):
 - Daftar di atas ditarik REALTIME dari database pengajar: kota domisili tiap pengajar aktif. Kelas offline = pengajar datang ke tempat siswa, jadi jangkauannya hanya kota-kota itu + area sekitarnya yang masih bisa ditempuh pengajar.
 - Offline ITU ADA tapi TERBATAS. DILARANG bilang Linguo "full online / hanya online", dan dilarang juga menjanjikan offline pasti bisa.
 - User berminat offline tapi belum menyebut lokasi → TANYAKAN kota/area-nya dulu sebelum menjawab apa pun soal ketersediaan.
-- Kota user ADA di daftar (atau kota tetangganya) → sampaikan offline kemungkinan bisa untuk area itu, lalu bilang ketersediaan pengajar untuk bahasa yang diminati dicek dulu oleh admin. Jangan memastikan.
+- Kota user ADA di daftar (atau kota tetangganya) → sampaikan offline kemungkinan bisa untuk area itu, lalu bilang ketersediaan pengajar untuk bahasa yang diminati dicek dulu oleh admin. JANGAN memastikan. Contoh nada: "Untuk area Bandung kemungkinan bisa kak, nanti admin cek dulu ketersediaan pengajarnya ya 😊" — BUKAN "offline bisa kami layani di Bandung".
 - Kota user TIDAK ada di daftar → sampaikan apa adanya bahwa untuk area itu belum ada pengajar yang bisa datang, jadi kelasnya online (materi & pengajarnya sama). Jangan menjanjikan akan dicarikan pengajar offline.
 - Isi daftar ini DATA INTERNAL: jangan dikutip mentah ke user ("ada 61 pengajar di Bandung"), jangan menyebut nama/jumlah pengajar. Pakai hanya untuk menentukan jawaban.
 - Penanda dalam kurung siku juga catatan internal — jangan pernah disalin ke balasan.
