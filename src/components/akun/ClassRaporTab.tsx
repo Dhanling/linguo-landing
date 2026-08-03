@@ -142,7 +142,10 @@ function printCertificate(opts: { studentName: string; reg: any; teacherName?: s
   w.document.close();
 }
 
-export default function ClassRaporTab({ reg, teacherName }: { reg: any; teacherName?: string }) {
+// [teacher-sapaan-v1] `teacherName` = sapaan buat layar ("Kak Dhani"),
+// `teacherFullName` = nama lengkap buat dokumen cetak (rapor & sertifikat) —
+// tanda tangan di sertifikat tetap harus nama resmi, bukan panggilan.
+export default function ClassRaporTab({ reg, teacherName, teacherFullName }: { reg: any; teacherName?: string; teacherFullName?: string }) {
   const [reports, setReports] = useState<any[] | null>(null); // null = loading
   const [studentName, setStudentName] = useState<string>('');
 
@@ -202,7 +205,7 @@ export default function ClassRaporTab({ reg, teacherName }: { reg: any; teacherN
             <div className="text-xs text-gray-500">Selamat! 🎉 Program {reg.language} {reg.level || ''} sudah selesai — sertifikatmu siap diunduh.</div>
           </div>
           <button
-            onClick={() => printCertificate({ studentName: studentName || 'Siswa', reg, teacherName, finalReport })}
+            onClick={() => printCertificate({ studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName, finalReport })}
             className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-4 py-2.5 text-sm font-bold text-white hover:bg-amber-600"
           >
             <Award className="h-4 w-4" strokeWidth={2.5} /> Unduh Sertifikat
@@ -227,7 +230,7 @@ export default function ClassRaporTab({ reg, teacherName }: { reg: any; teacherN
                 </div>
               </div>
               <button
-                onClick={() => printReport({ report: r, studentName: studentName || 'Siswa', reg, teacherName })}
+                onClick={() => printReport({ report: r, studentName: studentName || 'Siswa', reg, teacherName: teacherFullName || teacherName })}
                 className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-200"
               >
                 <Printer className="h-3.5 w-3.5" strokeWidth={2.5} /> Cetak

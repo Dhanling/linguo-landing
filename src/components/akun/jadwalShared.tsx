@@ -9,6 +9,7 @@ import { useState } from "react";
 import { RectFlag } from "@/components/RectFlag";
 import { LANG_FLAGS } from "@/lib/lang-visuals";
 import { baseLanguage } from "@/lib/classLanguage";
+import { initial } from "@/lib/teacherName";
 
 // + jadwal-recurring-materi-v1: pertemuan ke berapa + materi yang bakal dibahas
 //   (topik, rincian, berkas/link rujukan) — diisi pengajar waktu bikin jadwal.
@@ -110,7 +111,9 @@ export function LangFlag({ language, h = 10, className = "" }: { language?: stri
 // `teachers.avatar_url` (sama dengan dashboard admin & pengajar); kalau kosong /
 // gagal dimuat, jatuh ke inisial berwarna — jangan tampilkan kotak abu kosong.
 function teacherInitials(name: string) {
-  return name.trim().split(/\s+/).map((w) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
+  // [teacher-sapaan-v1] nama yang masuk sudah berbentuk sapaan ("Kak Dhani") —
+  // ambil inisial panggilannya saja, jangan sampai jadi "KD".
+  return initial(name);
 }
 function teacherTint(name: string): { bg: string; text: string } {
   let h = 0;

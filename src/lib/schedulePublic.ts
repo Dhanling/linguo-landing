@@ -82,48 +82,10 @@ export async function actSchedule(
 }
 
 /* ── Nama sapaan ────────────────────────────────────────────────────────────
-   Kolom `name` di database berisi nama lengkap apa adanya, kadang lengkap
-   dengan gelar ("Ayu Shinta Yuliani, S.Pd.,Gr"). Yang dipakai di halaman ini
-   nama panggilan + sapaan: "Kak Ayu". Sebagian data pengajar menuliskan nama
-   panggilannya di dalam kurung ("Ataya Syakira Azmi (aya)") — itu yang paling
-   benar kalau ada, karena panggilan tidak selalu berasal dari kata pertama. */
-const GELAR = /^(mr|mrs|ms|miss|dr|drs|ir|prof|kak|bu|pak|mba|mbak|mas)\.?$/i;
-
-/* Nama depan yang di Indonesia hampir selalu berfungsi sebagai awalan, bukan
-   nama panggilan: "Muhamad Lutfi Ramadhani" dipanggil Lutfi, bukan Muhamad.
-   Daftarnya sengaja pendek dan hanya berisi varian ejaan Muhammad — nama seperti
-   Ahmad atau Siti memang sering dipakai sebagai panggilan, jadi tidak dilewati. */
-const AWALAN = /^(m|moh|mohd|muh|mochamad|mochammad|mohamad|mohammad|muhamad|muhammad)\.?$/i;
-
-export function callName(fullName?: string | null): string {
-  const raw = (fullName ?? "").trim();
-  if (!raw) return "";
-
-  // Nama panggilan yang ditulis di dalam kurung ("Ataya Syakira Azmi (aya)")
-  // selalu menang: itu yang orangnya sendiri pilih.
-  const dalamKurung = raw.match(/\(([^)]{2,})\)/)?.[1]?.trim();
-  const dasar = dalamKurung || raw.split(",")[0];
-
-  const kata = dasar.replace(/\(.*?\)/g, " ").split(/\s+/).filter(Boolean);
-  const bersih = kata.filter((k) => !GELAR.test(k));
-  // Awalan cuma dilewati kalau masih ada kata sesudahnya — orang yang namanya
-  // memang cuma "Muhammad" tetap dipanggil Muhammad.
-  const pilihan = bersih.length > 1 && AWALAN.test(bersih[0]) ? bersih.slice(1) : bersih;
-  const pertama = pilihan[0] || kata[0] || "";
-  return pertama.charAt(0).toUpperCase() + pertama.slice(1);
-}
-
-/** "Kak Ayu". `title` diambil dari data pengajar (nyaris selalu "Kak"). */
-export function sapaan(fullName?: string | null, title = "Kak"): string {
-  const nama = callName(fullName);
-  if (!nama) return "";
-  return `${(title || "Kak").trim()} ${nama}`;
-}
-
-/** Inisial untuk avatar tanpa foto — satu huruf, dari nama panggilan. */
-export function initial(fullName?: string | null): string {
-  return callName(fullName).charAt(0).toUpperCase() || "?";
-}
+   [teacher-sapaan-v1] Logikanya pindah ke `lib/teacherName` — dashboard siswa
+   butuh sapaan yang sama persis. Di-ekspor ulang dari sini supaya pemakai lama
+   di halaman konfirmasi jadwal tak ikut berubah. */
+export { callName, sapaan, initial } from "./teacherName";
 
 /** URL feed langganan kalender. Kosong kalau siswa belum punya token. */
 export function subscribeUrl(icsToken?: string | null): string {

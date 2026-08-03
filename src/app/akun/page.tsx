@@ -7,6 +7,7 @@ import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
@@ -3599,14 +3600,19 @@ export default function AkunPage() {
                   const d = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
                   const tn = d?.name || r?.teachers?.name;
                   if (!tn) return;
-                  if (!teacherMap.has(tn)) teacherMap.set(tn, { name: tn, count: 0, langs: new Set(), avatar_url: null });
+                  // [teacher-sapaan-v1] kunci map tetap nama lengkap (biar tak ada
+                  // dua pengajar beda yang lebur cuma karena panggilannya sama),
+                  // yang ditampilkan sapaannya: "Kak Dhani".
+                  if (!teacherMap.has(tn)) teacherMap.set(tn, { name: sapaan(tn, d?.title), count: 0, langs: new Set(), avatar_url: null });
                   const t = teacherMap.get(tn)!;
                   t.count += 1;
                   t.langs.add(r.language);
                   if (!t.avatar_url) t.avatar_url = d?.avatar_url || r?.teachers?.avatar_url || null;
                 });
                 const teacherList = Array.from(teacherMap.values());
-                const initials = (n: string) => n.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
+                // Inisial avatar diambil dari nama panggilan, bukan sapaannya —
+                // "Kak Dhani" jangan jadi "KD".
+                const initials = (n: string) => callInitial(n);
 
                 // [beranda-search-live-v1] hasil pencarian header. Cakupannya sengaja
                 // dibatasi ke hal yang bisa langsung ditindak dari dashboard: kelas
@@ -3677,7 +3683,7 @@ export default function AkunPage() {
                     language: reg?.language ? displayLanguage(reg.language) : "—",
                     level: reg?.level || "",
                     product: reg?.product || "",
-                    teacher: tDir?.name || (reg as any)?.teachers?.name || "",
+                    teacher: sapaan(tDir?.name || (reg as any)?.teachers?.name, tDir?.title || (reg as any)?.teachers?.title),
                     teacherAvatarUrl: tDir?.avatar_url || (reg as any)?.teachers?.avatar_url || null,
                     sessionNumber: s.session_number ?? null,
                     materialTitle: s.session_title || "",
@@ -3940,7 +3946,8 @@ export default function AkunPage() {
                                 // (embed bisa berasal dari snapshot lama tanpa avatar_url)
                                 const tDir = reg.teacher_id ? teacherDir[reg.teacher_id] : undefined;
                                 const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
-                                const tName = tDir?.name || reg?.teachers?.name || null;
+                                // [teacher-sapaan-v1] kartu kelas sempit — sapaan + panggilan saja
+                                const tName = sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || reg?.teachers?.title) || null;
                                 return (
                                   <Link
                                     key={reg.id}
@@ -4368,7 +4375,7 @@ export default function AkunPage() {
                     language: reg?.language || "—",
                     level: reg?.level || "",
                     product: reg?.product || "",
-                    teacher: tDir?.name || reg?.teachers?.name || "",
+                    teacher: sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || (reg?.teachers as any)?.title),
                     teacherAvatarUrl: tDir?.avatar_url || reg?.teachers?.avatar_url || null,
                     // jadwal-recurring-materi-v1
                     sessionNumber: s.session_number ?? null,

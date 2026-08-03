@@ -11,6 +11,8 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
 import { displayLanguage } from '@/lib/classLanguage';
+// [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
+import { sapaan } from '@/lib/teacherName';
 import { publicNotes } from '@/components/akun/class-notes';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
 import ClassMateriTab from '@/components/akun/ClassMateriTab';
@@ -225,7 +227,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   }
 
   const teacher = (reg.teachers || teacherFix) ? { ...(reg.teachers || {}), ...(teacherFix || {}) } : null;
-  const teacherName = teacher?.name ? `${teacher.title || 'Kak'} ${teacher.name}` : '';
+  const teacherName = sapaan(teacher?.name, teacher?.title);
   // [blok-sync-v2] sessions_used bisa tertinggal dari presensi yang tercatat di `schedules`
   // (sesi ditandai selesai lewat menu Jadwal / konfirmasi siswa cuma menyentuh baris
   // schedule). Dashboard pengajar & tab Progress memakai yang terbesar — samakan di sini
@@ -399,7 +401,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         {!loading && activeTab === 'tugas' && <ClassTugasTab reg={reg} schedules={schedules} />}
 
         {/* [kelas-tab-v1] Rapor = class_reports yang published + sertifikat (rapor akhir) */}
-        {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} />}
+        {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} teacherFullName={teacher?.name || undefined} />}
       </div>
 
       {/* Toast */}
