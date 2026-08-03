@@ -53,7 +53,7 @@ Program:
 - Kelas online interaktif via Zoom. Materi & recording via Google Classroom. Silabus: https://linguo.id/silabus
 - ONLINE & OFFLINE — jangan bilang "full online / hanya online". Kelas offline = PENGAJAR DATANG KE TEMPAT SISWA. ADA, tapi TERBATAS: cuma untuk area yang terjangkau dari kota domisili pengajar. Kota mana saja yang terjangkau ada di blok "JANGKAUAN KELAS OFFLINE" (ditarik realtime dari database pengajar) — pakai daftar itu, JANGAN mengarang kota. Kalau blok itu tidak ada, tanyakan lokasi siswa dulu lalu bilang admin akan cek ketersediaan pengajar di area itu. Jangan menjanjikan offline pasti bisa.
 - Biaya offline = harga online + selisih PER SESI: Jabodetabek +Rp50.000/sesi, luar Jabodetabek +Rp30.000/sesi. SEMUA harga di sini adalah tarif ONLINE — untuk offline tambahkan selisih itu ke tarif per sesi (jangan mengarang angka lain).
-- Bahasa kelas Reguler ada 11, SAMA PERSIS dengan pilihan bahasa di form pendaftaran halaman ini: Inggris, Mandarin, Jepang, Korea, Arab, Prancis, Jerman, Italia, Belanda, Spanyol, Tagalog. Kelas Private: 60+ bahasa.
+- Bahasa kelas Reguler yang tetap ada di form pendaftaran halaman ini: Inggris, Mandarin, Jepang, Korea, Arab, Prancis, Jerman, Italia, Belanda, Spanyol, Tagalog. Kadang ada batch tambahan di luar daftar itu (mis. Bahasa Isyarat) — patokan bahasa yang batchnya SEDANG dibuka adalah blok "JADWAL BATCH REGULER" di bawah, bukan daftar ini. Kelas Private: 60+ bahasa.
 - Kalau user tanya "bahasa apa saja yang ada/tersedia" (Reguler atau kelas grup), SEBUTKAN ke-11 bahasa di atas satu per satu — jangan balik bertanya "bahasa apa yang kamu mau?" dan jangan menyuruh user cek daftar lain.
 - Kelas Reguler HANYA dibuka untuk level Basic (A1.1). Level lanjutan (A1.2 ke atas / A2 / B1 / B2) tersedia lewat Private atau Semi-Private. Tidak pernah ada batch Reguler A1.2 ke atas — JANGAN bilang "batchnya belum dibuka / tunggu batch berikutnya" untuk level lanjutan, langsung arahkan ke Private/Semi-Private.
 - Layanan lain: Kelas Anak (Kids), Test Prep (IELTS/TOEFL + JLPT/TOPIK/HSK/Goethe), E-Learning, E-Book, Penerjemah Tersumpah, Interpreter, Corporate/B2B.
@@ -383,6 +383,50 @@ function seatTag(enrolled: unknown, max: unknown, min?: unknown): string {
   return ` [KUOTA: sudah ${e} dari ${m} peserta, sisa ${m - e} slot${catatan}]`;
 }
 
+// Nama bahasa di `regular_batches.language` tersimpan dalam bahasa Inggris
+// ("Japanese", "Dutch", "Sign Language") — sama dengan yang tampil di halaman
+// jadwal. Di chat berbahasa Indonesia itu terasa asing dan bikin AI menjawab
+// "Japanese A1.1" untuk user yang nanya "jepang". Nama Indonesia ditulis di
+// depan, nama aslinya tetap dibawa dalam kurung supaya pencocokan tetap tepat.
+// Salinan peta ini ada di linguo-app/supabase/functions/suggest-reply dan
+// linguo-wa-bot/db.js — ubah bertiga kalau diganti.
+const LANG_ID: Record<string, string> = {
+  English: "Inggris",
+  "English - Conversation": "Inggris (Conversation)",
+  Japanese: "Jepang",
+  Korean: "Korea",
+  Mandarin: "Mandarin",
+  Cantonese: "Kanton",
+  Arabic: "Arab",
+  French: "Prancis",
+  German: "Jerman",
+  Italian: "Italia",
+  Dutch: "Belanda",
+  Spanish: "Spanyol",
+  Portuguese: "Portugis",
+  Russian: "Rusia",
+  Thai: "Thai",
+  Vietnamese: "Vietnam",
+  Turkish: "Turki",
+  Polish: "Polandia",
+  Swedish: "Swedia",
+  Greek: "Yunani",
+  Hebrew: "Ibrani",
+  Persian: "Persia",
+  Malay: "Melayu",
+  Javanese: "Jawa",
+  Sundanese: "Sunda",
+  Tagalog: "Tagalog",
+  Hindi: "Hindi",
+  "Sign Language": "Bahasa Isyarat",
+};
+
+function langLabel(raw: unknown): string {
+  const v = String(raw || "").trim();
+  const id = LANG_ID[v];
+  return id ? `${id} (${v})` : v;
+}
+
 function isFull(enrolled: unknown, max: unknown): boolean {
   const m = Number(max ?? 0) || 0;
   return m > 0 && (Number(enrolled ?? 0) || 0) >= m;
@@ -425,12 +469,21 @@ function deadlineTag(startIso: string | null, today: string, closesAt?: unknown)
   return ` [PENDAFTARAN: ditutup ${fmtDateID(close)}, tinggal ${sisa} hari lagi]`;
 }
 
-const SCHEDULE_NOTE = `CATATAN JADWAL (WAJIB DIPATUHI):
+const SCHEDULE_NOTE = `JAWAB JADWAL LANGSUNG & LUGAS (PALING PENTING):
+- Begitu user menyinggung jadwal Reguler/ETP — "jadwalnya hari apa", "per minggu hari apa", "jam berapa", "mulai kapan", "mau coba basic Jepang", "kelas TOEFL kapan mulai" — LANGSUNG sebutkan hari, jam WIB, jumlah pertemuan & tanggal mulai batch-nya dari daftar di atas. JANGAN balik bertanya dulu, jangan cuma melempar link, jangan bilang "nanti diinfokan admin".
+- User menyebut LEBIH DARI SATU bahasa: sebutkan SEMUA bahasa yang disebut, satu baris per bahasa. Contoh format: "Jepang (Basic A1.1): Kamis, 18.30–20.00 WIB, 8x pertemuan, mulai 13 Agustus 2026".
+- User tanya jadwal TANPA menyebut bahasa: tampilkan SELURUH batch yang ada di daftar (satu baris per bahasa), jangan balik bertanya "bahasa apa dulu kak".
+- Nama bahasa ditulis dalam BAHASA INDONESIA — nama Indonesia sudah ada di depan tiap baris daftar. Jangan menulis "Japanese / Korean / Dutch / Sign Language" di balasan.
+- Berapa kali seminggu: Reguler = 1 pertemuan per minggu di hari yang tercantum (90 menit). ETP TOEFL/IELTS = 2 pertemuan per minggu (dua hari yang tercantum). Jangan mengarang frekuensi lain.
+- Link linguo.id/jadwal-kelas-reguler ditaruh SETELAH jadwalnya disebutkan sebagai pelengkap, bukan pengganti jawaban.
+- Jumlah batch/bahasa yang dibuka: HITUNG dari daftar di atas, jangan pakai angka hafalan (jumlahnya berubah tiap batch baru dibuka).
+
+CATATAN JADWAL (WAJIB DIPATUHI):
 - Hari, jam, jumlah pertemuan & tanggal mulai kelas Reguler/ETP HANYA boleh diambil dari daftar di atas. Daftar ini ditarik dari sumber yang SAMA dengan halaman linguo.id/jadwal-kelas-reguler. DILARANG mengarang atau memakai jadwal dari ingatan.
 - Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
 - Status batch: pakai penanda [BELUM MULAI] / [SUDAH BERJALAN] apa adanya. DILARANG menebak sendiri apakah suatu batch sudah jalan atau belum — bandingkan tanggal mulai dengan TANGGAL HARI INI di atas.
 - Penanda dalam kurung siku itu CATATAN INTERNAL. JANGAN pernah menyalinnya ke balasan. Sampaikan maksudnya dengan kalimat biasa ("pendaftaran masih dibuka", "kelasnya sedang berjalan").
-- Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung. Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
+- Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung dan JANGAN menawarkan "menyusul materi yang sudah lewat" (itu keputusan admin, bukan janji Ling). Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
 - Batch [BELUM MULAI]: sebutkan tanggal mulainya, pendaftaran masih dibuka.
 - Jadwal sudah fix dari Linguo & tidak bisa request hari/jam.
 - Bahasa/track yang TIDAK ada di daftar = batchnya belum dibuka → arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya.
@@ -491,7 +544,7 @@ async function getScheduleBlock(): Promise<string> {
       const batas = isFull(b.actual_enrolled, b.max_capacity)
         ? ""
         : deadlineTag(b.start_date, today, b.closes_at);
-      return `- ${b.language} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}${batas}`;
+      return `- ${langLabel(b.language)} ${b.level}: ${b.session_day || "hari menyusul"}, ${jam}${sesi}, 1x per minggu, mulai ${fmtDateID(b.start_date)} ${batchTag(b.start_date, today)}${kuota}${batas}`;
     });
     const etpLines = etpLive.map((b: any) => {
       const harga = b.price ? `, Rp${Number(b.price).toLocaleString("id-ID")}` : "";
