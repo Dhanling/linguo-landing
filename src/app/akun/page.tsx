@@ -169,11 +169,54 @@ type StudentReg = {
 };
 
 // ── Product Badges ──────────────────────────────────────────────────
+// [beranda-kelas-seksi-v1] KUNCI HARUS PERSIS nilai `registrations.product` di DB.
+// Dua yang lama meleset: "English Test Preparation" (di DB pakai akhiran
+// "(IELTS/TOEFL)") dan Semi Private yang belum terdaftar sama sekali — dua-duanya
+// jatuh ke badge Private. Nilai yang benar-benar ada di DB per Agustus 2026:
+// Kelas Private, Kelas Reguler, Kelas Semi Private, Kelas Kids,
+// English Test Preparation (IELTS/TOEFL), E-Learning, E-Book.
 const PRODUCT_BADGE: Record<string, { label: string; icon: LucideIcon; color: string; bg: string; border: string }> = {
-  "Kelas Private":              { label: "Private",      icon: User,          color: "text-teal-700",  bg: "bg-teal-50",   border: "border-teal-200" },
-  "Kelas Reguler":              { label: "Reguler",      icon: Users,         color: "text-blue-700",  bg: "bg-blue-50",   border: "border-blue-200" },
-  "Kelas Kids":                 { label: "Kids",         icon: Baby,          color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
-  "English Test Preparation":   { label: "Test Prep",    icon: ClipboardList, color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
+  "Kelas Private":                            { label: "Private",      icon: User,          color: "text-teal-700",  bg: "bg-teal-50",   border: "border-teal-200" },
+  "Kelas Reguler":                            { label: "Reguler",      icon: Users,         color: "text-blue-700",  bg: "bg-blue-50",   border: "border-blue-200" },
+  "Kelas Semi Private":                       { label: "Semi-Private", icon: Users,         color: "text-cyan-700",  bg: "bg-cyan-50",   border: "border-cyan-200" },
+  "Kelas Kids":                               { label: "Kids",         icon: Baby,          color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
+  "Kelas Semi Private Kids":                  { label: "Semi-Private Kids", icon: Baby,     color: "text-purple-700",bg: "bg-purple-50", border: "border-purple-200" },
+  "English Test Preparation (IELTS/TOEFL)":   { label: "Test Prep",    icon: ClipboardList, color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
+  // Alias ejaan lama — beberapa baris lawas & funnel masih memakai ini.
+  "English Test Preparation":                 { label: "Test Prep",    icon: ClipboardList, color: "text-amber-700", bg: "bg-amber-50",  border: "border-amber-200" },
+  "E-Learning":                               { label: "E-Learning",   icon: GraduationCap, color: "text-indigo-700",bg: "bg-indigo-50", border: "border-indigo-200" },
+  "E-Book":                                   { label: "E-Book",       icon: BookMarked,    color: "text-rose-700",  bg: "bg-rose-50",   border: "border-rose-200" },
+};
+
+// [beranda-kelas-seksi-v1] Urutan seksi di tab "Kelas Live". Produk di luar daftar
+// ini tetap tampil — dikelompokkan pakai namanya sendiri di paling bawah, jadi tak
+// ada kelas yang hilang cuma karena enum-nya baru.
+const LIVE_SECTION_ORDER = [
+  "Kelas Private",
+  "Kelas Semi Private",
+  "Kelas Reguler",
+  "Kelas Kids",
+  "Kelas Semi Private Kids",
+  "English Test Preparation (IELTS/TOEFL)",
+];
+
+/** Samakan ejaan lama ke enum yang dipakai DB — kalau tidak, Test Prep pecah jadi dua seksi. */
+const normalizeProduct = (p?: string | null): string => {
+  const v = (p || "").trim();
+  if (!v) return "Kelas Private";
+  if (v === "English Test Preparation") return "English Test Preparation (IELTS/TOEFL)";
+  return v;
+};
+
+/** Penjelasan singkat tiap seksi — siswa yang punya dua format kelas sekaligus
+ *  sering tak sadar bedanya (kenapa yang satu ada teman sekelas, yang lain tidak). */
+const LIVE_SECTION_NOTE: Record<string, string> = {
+  "Kelas Private": "Satu pengajar khusus buat kamu, jadwal fleksibel.",
+  "Kelas Semi Private": "Grup kecil, jadwal disepakati bareng anggota grup.",
+  "Kelas Reguler": "Kelas berkelompok per batch dengan jadwal tetap.",
+  "Kelas Kids": "Kelas anak dengan materi & pendekatan khusus.",
+  "Kelas Semi Private Kids": "Grup kecil khusus anak.",
+  "English Test Preparation (IELTS/TOEFL)": "Persiapan tes IELTS/TOEFL bareng pengajar spesialis.",
 };
 
 type StudentData = {
@@ -3922,12 +3965,36 @@ export default function AkunPage() {
                             )}
                           </div>
 
-                          {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
+                          {/* ── Tab: Kelas Live — dikelompokkan per JENIS KELAS ──
+                              [beranda-kelas-seksi-v1] Dulu semua kelas dilempar ke satu
+                              grid rata: siswa yang ambil Private + Reguler + Test Prep
+                              sekaligus tak bisa membedakan mana yang mana kecuali menebak
+                              dari nama pengajar. Sekarang tiap format kelas punya seksi
+                              sendiri (judul + jumlah + satu baris penjelasan). Produk yang
+                              belum terdaftar di LIVE_SECTION_ORDER tetap tampil — masuk
+                              seksi bernama produknya sendiri, di paling bawah. */}
                           {berandaTab === "live" && (
                           (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
-                            <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
-                              {(liveView === "riwayat" ? riwayatRegs : liveRegs).map((reg: any, idx: number) => {
-                                const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                            (() => {
+                              const list = (liveView === "riwayat" ? riwayatRegs : liveRegs) as any[];
+                              const groups = new Map<string, any[]>();
+                              list.forEach((reg: any) => {
+                                const k = normalizeProduct(reg.product);
+                                if (!groups.has(k)) groups.set(k, []);
+                                groups.get(k)!.push(reg);
+                              });
+                              const rank = (k: string) => {
+                                const i = LIVE_SECTION_ORDER.indexOf(k);
+                                return i < 0 ? LIVE_SECTION_ORDER.length : i;
+                              };
+                              const keys = Array.from(groups.keys()).sort(
+                                (a, b) => rank(a) - rank(b) || a.localeCompare(b)
+                              );
+                              // Warna sampul berputar LINTAS seksi biar dua kartu bersebelahan
+                              // (beda seksi) tak kebetulan kembar warnanya.
+                              let cardIdx = 0;
+                              const renderKelasCard = (reg: any, idx: number) => {
+                                const badge = PRODUCT_BADGE[normalizeProduct(reg.product)] || PRODUCT_BADGE["Kelas Private"];
                                 const total = reg.sessions_total || 0;
                                 const used = reg.sessions_used || 0;
                                 const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
@@ -4002,18 +4069,48 @@ export default function AkunPage() {
                                     </div>
                                   </Link>
                                 );
-                              })}
-                              {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di view Aktif */}
-                              {liveView === "aktif" && (
-                              <button
-                                onClick={openEnrollWizard}
-                                className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
-                              >
-                                <Plus className="h-7 w-7" strokeWidth={2} />
-                                <span className="text-[13px] font-semibold">Tambah Kelas</span>
-                              </button>
-                              )}
-                            </div>
+                              };
+                              return (
+                                <div className="mt-3 flex flex-col gap-6">
+                                  {keys.map((key, si) => {
+                                    const badge = PRODUCT_BADGE[key];
+                                    const SectionIcon = badge?.icon || BookOpen;
+                                    const items = groups.get(key)!;
+                                    const note = LIVE_SECTION_NOTE[key];
+                                    const isLast = si === keys.length - 1;
+                                    return (
+                                      <section key={key}>
+                                        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                                          <span className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${badge?.bg || "bg-slate-100"} ${badge?.color || "text-gray-500"}`}>
+                                            <SectionIcon className="h-4 w-4" strokeWidth={2.4} />
+                                          </span>
+                                          <h3 className="text-[15px] font-extrabold text-[#12172B]">{badge?.label || key}</h3>
+                                          <span className="rounded-full bg-[#F5F6F8] px-2 py-0.5 text-[11.5px] font-bold text-gray-500">
+                                            {items.length} kelas
+                                          </span>
+                                          {note && <p className="text-[12px] font-medium text-gray-500">{note}</p>}
+                                        </div>
+                                        <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                                          {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
+                                          {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di
+                                              view Aktif — ditaruh di seksi terakhir supaya cuma muncul
+                                              sekali, bukan berulang di tiap jenis kelas. */}
+                                          {liveView === "aktif" && isLast && (
+                                            <button
+                                              onClick={openEnrollWizard}
+                                              className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
+                                            >
+                                              <Plus className="h-7 w-7" strokeWidth={2} />
+                                              <span className="text-[13px] font-semibold">Tambah Kelas</span>
+                                            </button>
+                                          )}
+                                        </div>
+                                      </section>
+                                    );
+                                  })}
+                                </div>
+                              );
+                            })()
                           ) : liveView === "riwayat" ? (
                             <div className="mt-3 rounded-3xl bg-white p-8 text-center">
                               <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
