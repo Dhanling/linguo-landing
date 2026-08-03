@@ -388,7 +388,6 @@ export default function JadwalCalendar({
                   const evs = eventsOn(cell.iso);
                   const isToday = cell.iso === todayIso;
                   const isSel = agendaIso === cell.iso;
-                  const dow = (new Date(cursor.getFullYear(), cursor.getMonth(), cell.d).getDay() + 6) % 7;
                   return (
                     <button
                       key={cell.iso}
@@ -398,7 +397,11 @@ export default function JadwalCalendar({
                       className={[
                         "flex min-h-[44px] flex-col gap-1 rounded-xl border border-slate-100 p-1.5 text-left transition sm:min-h-[78px] sm:p-2",
                         evs.length ? "cursor-pointer hover:bg-slate-50" : "cursor-default",
-                        dow >= 5 ? "bg-[#F5F6F8]/60" : "bg-white",
+                        // jadwal-weekend-netral-v1: Sabtu/Minggu tidak lagi diberi tint abu.
+                        // Tint `#F5F6F8/60` tak tertangkap aturan dark mode di StudentShell
+                        // (alias -/60 beda kelas), jadi di mode gelap kolom akhir pekan
+                        // menyala putih. Sekarang seragam dengan hari kerja.
+                        "bg-white",
                       ].join(" ")}
                       style={isSel ? { background: "#fff", outline: "2px solid #16796E" } : undefined}
                     >
@@ -515,12 +518,12 @@ export default function JadwalCalendar({
                         {gridDays.map((d) => {
                           const iso = ymd(d);
                           const { placed, lanes } = layoutDay(eventsOn(iso));
-                          const dow = (d.getDay() + 6) % 7;
                           const isToday = iso === todayIso;
                           return (
                             <div
                               key={iso}
-                              className={`relative border-l border-slate-100 ${dow >= 5 ? "bg-[#F5F6F8]/60" : ""}`}
+                              // jadwal-weekend-netral-v1: kolom Sabtu/Minggu ikut latar hari kerja.
+                              className="relative border-l border-slate-100"
                               style={{ height: totalH }}
                             >
                               {/* garis jam */}

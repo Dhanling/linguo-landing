@@ -34,7 +34,21 @@ const DEV_ONLY_KEYS = new Set(["materi", "lingbook"]);
 // "Beranda" sengaja di luar grup (pintu masuk, bukan salah satu kategori).
 const NAV_HOME: NavItem = { key: "beranda", label: "Beranda", icon: LayoutGrid };
 
+// [shell-nav-aktivitas-first-v1] "Aktivitas" naik ke urutan pertama (persis di bawah
+// Beranda): jadwal & grup kelas yang paling sering dibuka siswa harian, sementara
+// menu "Belajar" sifatnya jelajah dan boleh turun.
 const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
+  {
+    title: "Aktivitas",
+    items: [
+      { key: "jadwal", label: "Jadwal", icon: CalendarDays },
+      // [student-group-chat-v1] grup WhatsApp kelas, dibaca & dibalas dari LMS
+      { key: "grup", label: "Grup Kelas", icon: MessagesSquare, href: "/akun/grup" },
+      // [perf:sidebar-nav-v1] link langsung ke route-nya (dulu tab → redirect full reload)
+      { key: "pustaka", label: "Perpustakaan", icon: Library, href: "/akun/perpustakaan" },
+      { key: "sertifikat", label: "Sertifikat", icon: Star },
+    ],
+  },
   {
     title: "Belajar",
     items: [
@@ -46,17 +60,6 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
       { key: "watch", label: "Watch & Learn", icon: Clapperboard, href: "/watch" },
       // Entry point global ke flashcard kata tersimpan (halaman /kosakata).
       { key: "kosakata", label: "Kosakata Saya", icon: Layers, href: "/kosakata" },
-    ],
-  },
-  {
-    title: "Aktivitas",
-    items: [
-      { key: "jadwal", label: "Jadwal", icon: CalendarDays },
-      // [student-group-chat-v1] grup WhatsApp kelas, dibaca & dibalas dari LMS
-      { key: "grup", label: "Grup Kelas", icon: MessagesSquare, href: "/akun/grup" },
-      // [perf:sidebar-nav-v1] link langsung ke route-nya (dulu tab → redirect full reload)
-      { key: "pustaka", label: "Perpustakaan", icon: Library, href: "/akun/perpustakaan" },
-      { key: "sertifikat", label: "Sertifikat", icon: Star },
     ],
   },
   {
