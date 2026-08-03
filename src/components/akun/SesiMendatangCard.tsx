@@ -18,12 +18,15 @@ export default function SesiMendatangCard({
   studentName,
   onOpenJadwal,
   limit = 4,
+  layout = "wide",
 }: {
   sessions: JadwalSession[];
   studentName?: string;
   /** Buka tab Jadwal — kalender penuh (riwayat, bulan, minggu). */
   onOpenJadwal: () => void;
   limit?: number;
+  /** "column" = kartu dipasang di kolom sempit (mis. sebelah kanan Kelas Kamu) → item 1 lajur. */
+  layout?: "wide" | "column";
 }) {
   // Satu patokan "sekarang" per render, disegarkan tiap menit buat hitung mundur
   // dan jendela tombol Masuk Kelas.
@@ -82,8 +85,9 @@ export default function SesiMendatangCard({
       </div>
 
       {/* Kolom utama Beranda itu lebar — satu lajur bikin kartunya melar & boros
-          tinggi, jadi dua lajur begitu ada ruang. */}
-      <div className="grid gap-2.5 sm:grid-cols-2">
+          tinggi, jadi dua lajur begitu ada ruang. Kecuali dipasang sebagai kolom
+          samping (layout="column"): di lebar ~360px dua lajur bikin isinya remuk. */}
+      <div className={layout === "column" ? "grid gap-2.5" : "grid gap-2.5 sm:grid-cols-2"}>
         {visible.map((s) => (
           <SesiItem key={s.id} s={s} now={now} studentName={studentName} onClick={onOpenJadwal} />
         ))}

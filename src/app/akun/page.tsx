@@ -3662,7 +3662,28 @@ export default function AkunPage() {
                 // banner promo + kotak kosong + 3 tombol yang semuanya "daftar". Sekarang
                 // satu langkah berikutnya yang jelas; banner promo turun ke bawah.
                 const belumPunyaApaPun = liveRegsAll.length === 0 && !mandiri && pendingRegs.length === 0;
-                const sesiBerikutnya = upcomingSchedules[0];
+
+                // [beranda-layout-v3] Kartu "Sesi berikutnya" dihapus — isinya sudah
+                // ada persis di baris pertama "Sesi Mendatang" (jam, pengajar, tombol
+                // Masuk Kelas), jadi dulu satu sesi tampil dua kali di layar pertama.
+                const sesiMendatangCards = upcomingSchedules.map((s) => {
+                  const reg = student?.registrations?.find((r) => r.id === s.registration_id);
+                  const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                  return {
+                    id: s.id,
+                    registrationId: s.registration_id,
+                    scheduledAt: s.scheduled_at,
+                    durationMinutes: s.duration_minutes,
+                    language: reg?.language ? displayLanguage(reg.language) : "—",
+                    level: reg?.level || "",
+                    product: reg?.product || "",
+                    teacher: tDir?.name || (reg as any)?.teachers?.name || "",
+                    teacherAvatarUrl: tDir?.avatar_url || (reg as any)?.teachers?.avatar_url || null,
+                    sessionNumber: s.session_number ?? null,
+                    materialTitle: s.session_title || "",
+                    status: s.status,
+                  };
+                });
 
                 return (
                   <div className={`flex min-h-[calc(100vh-2rem)] flex-col bg-white ${profileOpen ? "lg:grid lg:grid-cols-[330px_minmax(0,1fr)]" : "lg:block"}`}>
@@ -3859,94 +3880,225 @@ export default function AkunPage() {
                         </div>
                       </div>
 
-                      {/* [beranda-sesi-berikutnya-v1] SESI BERIKUTNYA — hal paling penting
-                          buat siswa harian (kapan kelas + tombol masuk). Dulu ini cuma ada di
-                          panel profil yang default TERTUTUP di balik tombol avatar, jadi
-                          praktis ga pernah kelihatan. */}
-                      {sesiBerikutnya && (() => {
-                        const d = new Date(sesiBerikutnya.scheduled_at);
-                        const reg = student?.registrations?.find((r) => r.id === sesiBerikutnya.registration_id);
-                        const lang = reg?.language ? displayLanguage(reg.language) : "";
-                        const joinable = isJoinable(sesiBerikutnya.scheduled_at);
-                        const today = new Date();
-                        const sameDay = d.toDateString() === today.toDateString();
-                        const besok = new Date(today.getTime() + 86400000).toDateString() === d.toDateString();
-                        const hariLabel = sameDay ? "Hari ini" : besok ? "Besok" : d.toLocaleDateString("id-ID", { weekday: "long", day: "numeric", month: "short" });
-                        const guru = reg?.teacher_id ? teacherDir[reg.teacher_id]?.name : (reg as any)?.teachers?.name;
-                        return (
-                          <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
-                            <div className="flex flex-wrap items-center gap-3">
-                              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-lg font-extrabold text-[#16796E]">{langGlyph(reg?.language || "")}</span>
-                              <div className="min-w-0 flex-1">
-                                <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-[#16796E]">
-                                  <Clock className="h-3.5 w-3.5" strokeWidth={2.6} /> Sesi berikutnya
-                                </p>
-                                <h2 className="mt-0.5 truncate text-[17px] font-extrabold leading-tight text-[#12172B]">
-                                  {lang || "Sesi kelas"}{reg?.level ? ` — ${reg.level}` : ""}
-                                </h2>
-                                <p className="mt-0.5 text-[12.5px] font-medium text-gray-500">
-                                  {hariLabel} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}
-                                  {guru ? ` · ${guru}` : ""}
-                                </p>
-                              </div>
-                              <div className="flex shrink-0 items-center gap-2">
-                                <button onClick={() => setActiveTab("jadwal")} className="inline-flex h-10 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3.5 text-[12.5px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]">
-                                  <Calendar className="h-4 w-4" strokeWidth={2.2} /> Jadwal
+
+                      {/* [beranda-layout-v3] Baris pertama beranda: "Kelas Kamu" (kiri)
+                          + "Sesi Mendatang" (kanan). Sebelumnya kartu kelas berdiri
+                          sendiri selebar kolom — punya 1 kelas bikin sisa gridnya kosong
+                          melompong, sementara daftar sesi terdorong jauh ke bawah lipatan. */}
+                      <div className={`grid gap-5 xl:items-start ${sesiMendatangCards.length ? "xl:grid-cols-[minmax(0,1fr)_360px]" : ""}`}>
+                        <div className="min-w-0">
+                        {/* [beranda-kelas-tabs-v1] Kelas Kamu jadi tab: Kelas Live vs Belajar Mandiri biar rapi */}
+                        <div>
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="inline-flex items-center gap-1 rounded-2xl bg-white p-1">
+                              {([["live", "Kelas Live", Video], ["mandiri", "Belajar Mandiri", GraduationCap]] as const).map(([k, label, Icon]) => (
+                                <button
+                                  key={k}
+                                  onClick={() => setBerandaTab(k)}
+                                  className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-[13.5px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                >
+                                  <Icon className="h-4 w-4" strokeWidth={2.4} /> {label}
                                 </button>
-                                {joinable ? (
-                                  <a
-                                    href={classRoomUrl(sesiBerikutnya.id, { title: lang ? `Kelas ${lang}` : "Kelas Linguo", name: student?.name || undefined })}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="inline-flex h-10 items-center gap-2 rounded-2xl bg-[#16796E] px-4 text-[12.5px] font-extrabold text-white transition hover:bg-[#0F5A52]"
-                                  >
-                                    <Video className="h-4 w-4" strokeWidth={2.4} /> Masuk Kelas
-                                  </a>
-                                ) : (
-                                  <span className="inline-flex h-10 items-center rounded-2xl bg-slate-50 px-3.5 text-[12px] font-bold text-gray-500">
-                                    Link aktif 15 menit sebelum mulai
-                                  </span>
+                              ))}
+                            </div>
+                            {berandaTab === "live" && (
+                              <div className="flex items-center gap-3">
+                                {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
+                                {riwayatRegs.length > 0 && (
+                                  <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
+                                    {([["aktif", "Aktif"], ["riwayat", `Riwayat (${riwayatRegs.length})`]] as const).map(([k, label]) => (
+                                      <button
+                                        key={k}
+                                        onClick={() => setLiveView(k)}
+                                        className={`rounded-lg px-3 py-1.5 text-[12px] font-bold transition ${liveView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
+                                      >
+                                        {label}
+                                      </button>
+                                    ))}
+                                  </div>
+                                )}
+                                {liveView === "aktif" && liveRegs.length > 0 && (
+                                  <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
                                 )}
                               </div>
-                            </div>
+                            )}
                           </div>
-                        );
-                      })()}
 
-                      {/* jadwal-gcal-v1: SESI MENDATANG — pindahan dari kolom kiri kalender
-                          di tab Jadwal. Di sana daftar ini memaksa kalender berbagi lebar;
-                          di sini dia jadi ringkasan harian, dan kalendernya dapat layar penuh.
-                          Sesi pertama sengaja dilewati — dia sudah jadi kartu "Sesi berikutnya"
-                          persis di atas, jangan ditampilkan dua kali. */}
-                      {(() => {
-                        const sisa = upcomingSchedules.slice(sesiBerikutnya ? 1 : 0);
-                        if (!sisa.length) return null;
-                        const sesiCards = sisa.map((s) => {
-                          const reg = student?.registrations?.find((r) => r.id === s.registration_id);
-                          const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
-                          return {
-                            id: s.id,
-                            registrationId: s.registration_id,
-                            scheduledAt: s.scheduled_at,
-                            durationMinutes: s.duration_minutes,
-                            language: reg?.language ? displayLanguage(reg.language) : "—",
-                            level: reg?.level || "",
-                            product: reg?.product || "",
-                            teacher: tDir?.name || (reg as any)?.teachers?.name || "",
-                            teacherAvatarUrl: tDir?.avatar_url || (reg as any)?.teachers?.avatar_url || null,
-                            sessionNumber: s.session_number ?? null,
-                            materialTitle: s.session_title || "",
-                            status: s.status,
-                          };
-                        });
-                        return (
+                          {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
+                          {berandaTab === "live" && (
+                          (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
+                            <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                              {(liveView === "riwayat" ? riwayatRegs : liveRegs).map((reg: any, idx: number) => {
+                                const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
+                                const total = reg.sessions_total || 0;
+                                const used = reg.sessions_used || 0;
+                                const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
+                                const bg = CARD_BG[idx % CARD_BG.length];
+                                const photo = getLangPhoto(reg.language);
+                                const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
+                                // [teacher-avatar-sync-v1] direktori teachers menang atas embed
+                                // (embed bisa berasal dari snapshot lama tanpa avatar_url)
+                                const tDir = reg.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                                const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
+                                const tName = tDir?.name || reg?.teachers?.name || null;
+                                return (
+                                  <Link
+                                    key={reg.id}
+                                    // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
+                                    // ikut. Tanpa itu halaman detail kehilangan identitas
+                                    // pratinjau → tombol menu di sana balik ke /akun polos
+                                    // dan mendarat di gate login (terasa "keluar akun").
+                                    href={previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`}
+                                    prefetch
+                                    // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
+                                    // render instan tanpa nunggu query (anti mental balik ke beranda)
+                                    onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
+                                    className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
+                                  >
+                                    <div className={`relative flex h-32 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
+                                      {photo ? (
+                                        <>
+                                          <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                        </>
+                                      ) : (
+                                        <>
+                                          <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                          <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                        </>
+                                      )}
+                                      {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
+                                      {selesai ? (
+                                        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-gray-500">
+                                          <Check className="h-3 w-3" strokeWidth={3} /> Selesai
+                                        </span>
+                                      ) : (
+                                        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
+                                          <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="px-2 pb-1.5 pt-3">
+                                      <div className="flex items-center gap-2">
+                                        <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                        <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                      </div>
+                                      {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
+                                          [beranda-teacher-avatar-v2] tanpa ring putih — di dark mode
+                                          cincinnya kebaca sebagai outline putih yang nabrak kartu hitam */}
+                                      <div className="mt-1.5 flex items-center gap-2">
+                                        {tAva ? (
+                                          <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                        ) : null}
+                                        <span className={`${tAva ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
+                                        <p className="truncate text-[13px] font-medium text-gray-500">{tName || badge.label}</p>
+                                      </div>
+                                      <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                        <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
+                                      </div>
+                                      <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+                                        <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{pct}%</span></span>
+                                        <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
+                                      </div>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                              {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di view Aktif */}
+                              {liveView === "aktif" && (
+                              <button
+                                onClick={openEnrollWizard}
+                                className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
+                              >
+                                <Plus className="h-7 w-7" strokeWidth={2} />
+                                <span className="text-[13px] font-semibold">Tambah Kelas</span>
+                              </button>
+                              )}
+                            </div>
+                          ) : liveView === "riwayat" ? (
+                            <div className="mt-3 rounded-3xl bg-white p-8 text-center">
+                              <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
+                              <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
+                            </div>
+                          ) : (
+                            <div className="mt-3 rounded-3xl bg-white p-8 text-center">
+                              <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
+                              <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
+                              {/* [beranda-onboarding-cta-v1] kalau kartu "Mulai dari sini" udah tampil di
+                                  atas, tombol di sini diturunkan jadi sekunder — biar ga 2 CTA primer
+                                  dgn tujuan sama saling rebutan di satu layar. */}
+                              <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
+                            </div>
+                          )
+                          )}
+
+                          {/* ── Tab: Belajar Mandiri (e-learning / LMS) ── [beranda-kelas-tabs-v1] */}
+                          {berandaTab === "mandiri" && (
+                          mandiri ? (
+                            <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                              {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
+                              <button
+                                key="mandiri-resume"
+                                onClick={() => {
+                                  setLmsSesi(mandiri.resumeId);
+                                  setMateriView("mandiri");
+                                  if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
+                                }}
+                                className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
+                              >
+                                <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
+                                  {mandiri.photo ? (
+                                    <>
+                                      <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
+                                    </>
+                                  ) : (
+                                    <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
+                                  )}
+                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
+                                    <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
+                                  </span>
+                                </div>
+                                <div className="px-2 pb-1.5 pt-3">
+                                  <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
+                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
+                                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                    <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
+                                  </div>
+                                  <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+                                    <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
+                                    <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="mt-3 rounded-3xl bg-white p-8 text-center">
+                              <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
+                              <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
+                              <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
+                              <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Lihat Paket</button>
+                            </div>
+                          )
+                          )}
+                        </div>
+                        </div>
+
+                        {/* jadwal-gcal-v1: SESI MENDATANG — pindahan dari kolom kiri kalender
+                            di tab Jadwal. Di sana daftar ini memaksa kalender berbagi lebar;
+                            di sini dia jadi ringkasan harian, dan kalendernya dapat layar penuh. */}
+                        {sesiMendatangCards.length > 0 && (
                           <SesiMendatangCard
-                            sessions={sesiCards}
+                            sessions={sesiMendatangCards}
                             studentName={student?.name || undefined}
                             onOpenJadwal={() => setActiveTab("jadwal")}
+                            layout="column"
+                            limit={5}
                           />
-                        );
-                      })()}
+                        )}
+                      </div>
 
                       {/* [beranda-insights-v1] Ringkasan belajar — progres 4 skill + selisih
                           dari rapor terakhir, PR yang belum disetor, materi terbaru, beban
@@ -4065,204 +4217,6 @@ export default function AkunPage() {
                           </div>
                         </div>
                       )}
-
-                      {/* [beranda-kelas-tabs-v1] Kelas Kamu jadi tab: Kelas Live vs Belajar Mandiri biar rapi */}
-                      <div>
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                          <div className="inline-flex items-center gap-1 rounded-2xl bg-white p-1">
-                            {([["live", "Kelas Live", Video], ["mandiri", "Belajar Mandiri", GraduationCap]] as const).map(([k, label, Icon]) => (
-                              <button
-                                key={k}
-                                onClick={() => setBerandaTab(k)}
-                                className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-[13.5px] font-bold transition ${berandaTab === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
-                              >
-                                <Icon className="h-4 w-4" strokeWidth={2.4} /> {label}
-                              </button>
-                            ))}
-                          </div>
-                          {berandaTab === "live" && (
-                            <div className="flex items-center gap-3">
-                              {/* [beranda-riwayat-kelas-v1] toggle Aktif / Riwayat — hanya muncul kalau ada kelas selesai */}
-                              {riwayatRegs.length > 0 && (
-                                <div className="inline-flex items-center gap-1 rounded-xl bg-white p-1">
-                                  {([["aktif", "Aktif"], ["riwayat", `Riwayat (${riwayatRegs.length})`]] as const).map(([k, label]) => (
-                                    <button
-                                      key={k}
-                                      onClick={() => setLiveView(k)}
-                                      className={`rounded-lg px-3 py-1.5 text-[12px] font-bold transition ${liveView === k ? "bg-[#16796E] text-white" : "text-gray-500 hover:text-[#16796E]"}`}
-                                    >
-                                      {label}
-                                    </button>
-                                  ))}
-                                </div>
-                              )}
-                              {liveView === "aktif" && liveRegs.length > 0 && (
-                                <button onClick={openEnrollWizard} className="text-[13px] font-bold text-[#16796E] hover:text-[#0F5A52]">+ Tambah</button>
-                              )}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* ── Tab: Kelas Live (Private / Reguler / Semi-Private / Kids) ── */}
-                        {berandaTab === "live" && (
-                        (liveView === "riwayat" ? riwayatRegs.length > 0 : liveRegs.length > 0) ? (
-                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                            {(liveView === "riwayat" ? riwayatRegs : liveRegs).map((reg: any, idx: number) => {
-                              const badge = PRODUCT_BADGE[reg.product] || PRODUCT_BADGE["Kelas Private"];
-                              const total = reg.sessions_total || 0;
-                              const used = reg.sessions_used || 0;
-                              const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
-                              const bg = CARD_BG[idx % CARD_BG.length];
-                              const photo = getLangPhoto(reg.language);
-                              const selesai = isKelasSelesai(reg); // [beranda-status-badge-v1]
-                              // [teacher-avatar-sync-v1] direktori teachers menang atas embed
-                              // (embed bisa berasal dari snapshot lama tanpa avatar_url)
-                              const tDir = reg.teacher_id ? teacherDir[reg.teacher_id] : undefined;
-                              const tAva = tDir?.avatar_url || reg?.teachers?.avatar_url || null;
-                              const tName = tDir?.name || reg?.teachers?.name || null;
-                              return (
-                                <Link
-                                  key={reg.id}
-                                  // [preview-keep-param-v1] mode POV staf: `?preview=` WAJIB
-                                  // ikut. Tanpa itu halaman detail kehilangan identitas
-                                  // pratinjau → tombol menu di sana balik ke /akun polos
-                                  // dan mendarat di gate login (terasa "keluar akun").
-                                  href={previewId ? `/akun/kelas/${reg.id}?preview=${encodeURIComponent(previewId)}` : `/akun/kelas/${reg.id}`}
-                                  prefetch
-                                  // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
-                                  // render instan tanpa nunggu query (anti mental balik ke beranda)
-                                  onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
-                                  className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
-                                >
-                                  <div className={`relative flex h-32 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
-                                    {photo ? (
-                                      <>
-                                        <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                                      </>
-                                    ) : (
-                                      <>
-                                        <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
-                                        <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
-                                      </>
-                                    )}
-                                    {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
-                                    {selesai ? (
-                                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-gray-500">
-                                        <Check className="h-3 w-3" strokeWidth={3} /> Selesai
-                                      </span>
-                                    ) : (
-                                      <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
-                                      </span>
-                                    )}
-                                  </div>
-                                  <div className="px-2 pb-1.5 pt-3">
-                                    <div className="flex items-center gap-2">
-                                      <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                      <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
-                                    </div>
-                                    {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
-                                        [beranda-teacher-avatar-v2] tanpa ring putih — di dark mode
-                                        cincinnya kebaca sebagai outline putih yang nabrak kartu hitam */}
-                                    <div className="mt-1.5 flex items-center gap-2">
-                                      {tAva ? (
-                                        <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
-                                      ) : null}
-                                      <span className={`${tAva ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
-                                      <p className="truncate text-[13px] font-medium text-gray-500">{tName || badge.label}</p>
-                                    </div>
-                                    <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
-                                      <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
-                                    </div>
-                                    <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
-                                      <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{pct}%</span></span>
-                                      <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
-                                    </div>
-                                  </div>
-                                </Link>
-                              );
-                            })}
-                            {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di view Aktif */}
-                            {liveView === "aktif" && (
-                            <button
-                              onClick={openEnrollWizard}
-                              className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
-                            >
-                              <Plus className="h-7 w-7" strokeWidth={2} />
-                              <span className="text-[13px] font-semibold">Tambah Kelas</span>
-                            </button>
-                            )}
-                          </div>
-                        ) : liveView === "riwayat" ? (
-                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
-                            <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada riwayat kelas</h3>
-                            <p className="text-sm text-gray-500">Kelas yang sudah selesai akan muncul di sini.</p>
-                          </div>
-                        ) : (
-                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
-                            <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada kelas live aktif</h3>
-                            <p className="mb-4 text-sm text-gray-500">Mulai belajar bahasa baru sekarang!</p>
-                            {/* [beranda-onboarding-cta-v1] kalau kartu "Mulai dari sini" udah tampil di
-                                atas, tombol di sini diturunkan jadi sekunder — biar ga 2 CTA primer
-                                dgn tujuan sama saling rebutan di satu layar. */}
-                            <button onClick={openEnrollWizard} className={`inline-flex h-11 items-center gap-2 rounded-2xl px-6 text-sm font-bold transition-colors ${belumPunyaApaPun ? "border border-slate-200 bg-white text-[#12172B] hover:border-[#16796E] hover:text-[#16796E]" : "bg-[#16796E] text-white hover:bg-[#0F5A52]"}`}><Plus className="h-4 w-4" strokeWidth={2.5} /> Daftar Kelas</button>
-                          </div>
-                        )
-                        )}
-
-                        {/* ── Tab: Belajar Mandiri (e-learning / LMS) ── [beranda-kelas-tabs-v1] */}
-                        {berandaTab === "mandiri" && (
-                        mandiri ? (
-                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                            {/* [linguo-patch:beranda-mandiri-resume-v2] kartu self-study — klik buka sesi via OVERLAY (instan) */}
-                            <button
-                              key="mandiri-resume"
-                              onClick={() => {
-                                setLmsSesi(mandiri.resumeId);
-                                setMateriView("mandiri");
-                                if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${mandiri.resumeId}`);
-                              }}
-                              className="group rounded-3xl bg-white p-3 text-left ring-1 ring-slate-200 transition-transform hover:-translate-y-1"
-                            >
-                              <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-[#16796E]">
-                                {mandiri.photo ? (
-                                  <>
-                                    <img src={mandiri.photo} alt={mandiri.label} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                                  </>
-                                ) : (
-                                  <span className="text-[56px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{mandiri.native.slice(0, 2)}</span>
-                                )}
-                                <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
-                                  <GraduationCap className="h-3 w-3" strokeWidth={2.5} /> Belajar Mandiri
-                                </span>
-                              </div>
-                              <div className="px-2 pb-1.5 pt-3">
-                                <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{mandiri.native} <span className="font-bold text-gray-500">· {mandiri.label}</span></h3>
-                                <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{mandiri.fresh ? "Lanjut" : "Ulangi"}: {mandiri.resumeTitle}</p>
-                                <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
-                                  <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${mandiri.pct}%` }} />
-                                </div>
-                                <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
-                                  <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{mandiri.pct}%</span></span>
-                                  <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{mandiri.done}/{mandiri.total}</span></span>
-                                </div>
-                              </div>
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="mt-3 rounded-3xl bg-white p-8 text-center">
-                            <GraduationCap className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
-                            <h3 className="mb-1 font-bold text-[#12172B]">Belum ada paket belajar mandiri</h3>
-                            <p className="mb-4 text-sm text-gray-500">Belajar sendiri kapan saja lewat paket E-Learning.</p>
-                            <button onClick={openEnrollWizard} className="inline-flex h-11 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-sm font-bold text-white transition-colors hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} /> Lihat Paket</button>
-                          </div>
-                        )
-                        )}
-                      </div>
 
                       {/* Pengajar Kamu (distinct teacher dari activeRegs) */}
                       {teacherList.length > 0 && (
