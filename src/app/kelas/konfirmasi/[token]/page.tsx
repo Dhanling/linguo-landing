@@ -42,9 +42,12 @@ function tanggalPanjang(iso: string): string {
 }
 
 function jamWib(iso: string): string {
+  // Locale id-ID memisahkan jam dengan TITIK ("16.30"). Jadwal kelas di seluruh
+  // Linguo — pesan grup, kalender, dashboard — ditulis dengan titik dua, dan
+  // "16.30" di antara semua itu terbaca seperti angka lain.
   return new Intl.DateTimeFormat("id-ID", {
-    hour: "2-digit", minute: "2-digit", hour12: false, timeZone: WIB,
-  }).format(new Date(iso));
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: WIB,
+  }).format(new Date(iso)).replace(".", ":");
 }
 
 /* ── Kalender ────────────────────────────────────────────────────────────────

@@ -89,15 +89,27 @@ export async function actSchedule(
    benar kalau ada, karena panggilan tidak selalu berasal dari kata pertama. */
 const GELAR = /^(mr|mrs|ms|miss|dr|drs|ir|prof|kak|bu|pak|mba|mbak|mas)\.?$/i;
 
+/* Nama depan yang di Indonesia hampir selalu berfungsi sebagai awalan, bukan
+   nama panggilan: "Muhamad Lutfi Ramadhani" dipanggil Lutfi, bukan Muhamad.
+   Daftarnya sengaja pendek dan hanya berisi varian ejaan Muhammad — nama seperti
+   Ahmad atau Siti memang sering dipakai sebagai panggilan, jadi tidak dilewati. */
+const AWALAN = /^(m|moh|mohd|muh|mochamad|mochammad|mohamad|mohammad|muhamad|muhammad)\.?$/i;
+
 export function callName(fullName?: string | null): string {
   const raw = (fullName ?? "").trim();
   if (!raw) return "";
 
+  // Nama panggilan yang ditulis di dalam kurung ("Ataya Syakira Azmi (aya)")
+  // selalu menang: itu yang orangnya sendiri pilih.
   const dalamKurung = raw.match(/\(([^)]{2,})\)/)?.[1]?.trim();
   const dasar = dalamKurung || raw.split(",")[0];
 
   const kata = dasar.replace(/\(.*?\)/g, " ").split(/\s+/).filter(Boolean);
-  const pertama = kata.find((k) => !GELAR.test(k)) || kata[0] || "";
+  const bersih = kata.filter((k) => !GELAR.test(k));
+  // Awalan cuma dilewati kalau masih ada kata sesudahnya — orang yang namanya
+  // memang cuma "Muhammad" tetap dipanggil Muhammad.
+  const pilihan = bersih.length > 1 && AWALAN.test(bersih[0]) ? bersih.slice(1) : bersih;
+  const pertama = pilihan[0] || kata[0] || "";
   return pertama.charAt(0).toUpperCase() + pertama.slice(1);
 }
 
