@@ -523,22 +523,33 @@ export default function LessonPlayer({
 
         // [linguo-patch:lms-switch-level-v1] ambil semua modul dalam course (buat ganti level di header sidebar)
         if (m?.course_id) {
-          const { data: mods } = await supabase
+          // [lms-entitlement-per-language-v1] cuma modul BAHASA YANG SAMA — satu paket
+          // bisa memuat banyak bahasa, dan pemilih level tidak boleh mencampurnya.
+          let q = supabase
             .from("lms_modules")
             .select("id,cefr_label,title")
-            .eq("course_id", m.course_id)
-            .order("cefr_label");
+            .eq("course_id", m.course_id);
+          if (m.language) q = q.eq("language", m.language);
+          const { data: mods } = await q.order("cefr_label");
           if (cancelled) return;
           setModules(((mods as any[] | null) || []) as { id: string; cefr_label: string; title: string }[]);
         }
 
         let ent = false;
         if (m?.course_id) {
+          // [lms-entitlement-per-language-v1] gerbangnya per bahasa, bukan per paket:
+          // satu paket bisa memuat banyak bahasa, dan pelanggan single-language cuma
+          // berhak atas bahasanya sendiri.
           try {
-            const { data: e } = await supabase.rpc("lms_is_entitled", {
+            const { data: e, error } = await supabase.rpc("lms_is_entitled_lang", {
               p_course_id: m.course_id,
+              p_language: m.language,
             });
-            ent = !!e;
+            if (!error) ent = !!e;
+            else {
+              const { data: legacy } = await supabase.rpc("lms_is_entitled", { p_course_id: m.course_id });
+              ent = !!legacy;
+            }
           } catch {}
         }
         if (cancelled) return;

@@ -70,7 +70,7 @@ function buildCourses(
   modList: { id: string; language: string; sort_order: number; course_id: string | null; cefr_label: string | null }[],
   lessons: { id: string; module_id: string; title: string; sort_order: number; is_preview: boolean }[],
   done: Set<string>,
-  ownedCourses: Set<string>, // [linguo-patch:lms-katalog-entitlement-v1] course_id yg sudah dientitle
+  ownedPairs: Set<string>, // [lms-entitlement-per-language-v1] kunci `course_id|language` yg sudah dientitle
   stats: Map<string, LessonStat> | null // [lms-content-readiness-v1] null = statistik ga tersedia → jangan saring
 ): Course[] {
   const langByModule: Record<string, string> = {};
@@ -80,10 +80,13 @@ function buildCourses(
   // [linguo-patch:lms-katalog-upgrade-cta-v1] cefr per modul → tahu lesson mana yg A2+ (terkunci kalau belum dibeli)
   const cefrByModule: Record<string, string | null> = {};
   modList.forEach((m) => { cefrByModule[m.id] = m.cefr_label; });
-  // [linguo-patch:lms-katalog-entitlement-v1] bahasa = owned kalau salah satu course_id-nya dientitle
+  // [lms-entitlement-per-language-v1] owned dinilai per PASANGAN course+bahasa. Dulu
+  // cukup course_id: begitu satu paket berisi lebih dari satu bahasa (mis. "Paket
+  // E-Learning 12+ Bahasa"), pelanggan single-language ikut melihat bahasa lain di
+  // paket itu sebagai miliknya — padahal RLS tetap menolak isi materinya.
   const ownedByLang: Record<string, boolean> = {};
   modList.forEach((m) => {
-    if (m.course_id && ownedCourses.has(m.course_id)) ownedByLang[m.language] = true;
+    if (m.course_id && ownedPairs.has(`${m.course_id}|${m.language}`)) ownedByLang[m.language] = true;
   });
   const byLang: Record<string, { id: string; module_id: string; sort_order: number; title: string; is_preview: boolean }[]> = {};
   lessons.forEach((l) => {
@@ -175,26 +178,35 @@ export default function LmsKatalog({
         ((progRes.data as any[]) || []).filter((p: any) => p.status === "completed").map((p: any) => p.lesson_id)
       );
 
-      // [linguo-patch:lms-katalog-entitlement-v1] cek kepemilikan per course (paralel), sama RPC yg dipakai LessonPlayer
-      const courseIds = Array.from(new Set(modList.map((m) => m.course_id).filter((c): c is string => !!c)));
-      const ownedCourses = new Set<string>();
-      if (uid && courseIds.length) {
+      // [lms-entitlement-per-language-v1] cek kepemilikan per PASANGAN course+bahasa
+      // (paralel), sama RPC yg dipakai LessonPlayer. Satu paket bisa memuat banyak
+      // bahasa, jadi entitlement level course saja tidak cukup lagi.
+      const pairs = Array.from(new Set(
+        modList.filter((m) => m.course_id).map((m) => `${m.course_id}|${m.language}`)
+      ));
+      const ownedPairs = new Set<string>();
+      if (uid && pairs.length) {
         const ents = await Promise.all(
-          courseIds.map(async (cid): Promise<{ cid: string; ok: boolean }> => {
+          pairs.map(async (key): Promise<{ key: string; ok: boolean }> => {
+            const [cid, lang] = key.split("|");
             try {
-              const { data } = await supabase.rpc("lms_is_entitled", { p_course_id: cid });
-              return { cid, ok: !!data };
+              const { data, error } = await supabase.rpc("lms_is_entitled_lang", { p_course_id: cid, p_language: lang });
+              if (!error) return { key, ok: !!data };
+              // Fungsi belum ada di DB ini → jatuh ke gerbang lama biar katalog
+              // siswa tidak mendadak kosong.
+              const { data: legacy } = await supabase.rpc("lms_is_entitled", { p_course_id: cid });
+              return { key, ok: !!legacy };
             } catch {
-              return { cid, ok: false };
+              return { key, ok: false };
             }
           })
         );
-        ents.forEach(({ cid, ok }) => { if (ok) ownedCourses.add(cid); });
+        ents.forEach(({ key, ok }) => { if (ok) ownedPairs.add(key); });
       }
 
       // [linguo-patch:lms-katalog-owned-only-v1] cuma tampilin bahasa yang SUDAH dibeli/dientitle.
       // Siswa yang ga daftar bahasa tsb ga lihat sama sekali (mis. Vietnam) — baru muncul setelah beli.
-      const built = buildCourses(modList, lessons, done, ownedCourses, stats).filter((c) => c.owned);
+      const built = buildCourses(modList, lessons, done, ownedPairs, stats).filter((c) => c.owned);
       _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);

@@ -2231,19 +2231,28 @@ export default function AkunPage() {
 
         // [linguo-patch:beranda-mandiri-owned-only-v1] cuma bahasa yang SUDAH dibeli/dientitle yang boleh
         // munculin kartu resume — konsisten sama katalog Belajar Mandiri (siswa ga daftar = ga akses).
-        const courseIds = Array.from(new Set(modList.map((m) => m.course_id).filter((c): c is string => !!c)));
-        const ownedCourses = new Set<string>();
-        if (courseIds.length) {
+        // [lms-entitlement-per-language-v1] dinilai per pasangan course+bahasa — satu
+        // paket bisa memuat banyak bahasa, jadi entitlement level course tidak cukup.
+        const pairs = Array.from(new Set(
+          modList.filter((m) => m.course_id).map((m) => `${m.course_id}|${m.language}`)
+        ));
+        const ownedPairs = new Set<string>();
+        if (pairs.length) {
           const ents = await Promise.all(
-            courseIds.map(async (cid): Promise<{ cid: string; ok: boolean }> => {
-              try { const { data } = await supabase.rpc("lms_is_entitled", { p_course_id: cid }); return { cid, ok: !!data }; }
-              catch { return { cid, ok: false }; }
+            pairs.map(async (key): Promise<{ key: string; ok: boolean }> => {
+              const [cid, lang] = key.split("|");
+              try {
+                const { data, error } = await supabase.rpc("lms_is_entitled_lang", { p_course_id: cid, p_language: lang });
+                if (!error) return { key, ok: !!data };
+                const { data: legacy } = await supabase.rpc("lms_is_entitled", { p_course_id: cid });
+                return { key, ok: !!legacy };
+              } catch { return { key, ok: false }; }
             })
           );
-          ents.forEach(({ cid, ok }) => { if (ok) ownedCourses.add(cid); });
+          ents.forEach(({ key, ok }) => { if (ok) ownedPairs.add(key); });
         }
         const ownedByLang: Record<string, boolean> = {};
-        modList.forEach((m) => { if (m.course_id && ownedCourses.has(m.course_id)) ownedByLang[m.language] = true; });
+        modList.forEach((m) => { if (m.course_id && ownedPairs.has(`${m.course_id}|${m.language}`)) ownedByLang[m.language] = true; });
 
         const langByModule: Record<string, string> = {};
         const cefrByModule: Record<string, string> = {}; // [linguo-patch:beranda-mandiri-resume-v3] urut modul by CEFR (A1.1<A1.2<...), bukan sort_order (yg di DB A1.1 malah paling akhir)
