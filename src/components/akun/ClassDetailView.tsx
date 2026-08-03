@@ -6,7 +6,7 @@
 // deep-linkable (?tab=jadwal), tombol back browser jalan, lega di mobile.
 // Reschedule & cancel TETAP modal — di situ modal memang tepat (keputusan singkat).
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
@@ -19,7 +19,7 @@ import ClassMateriTab from '@/components/akun/ClassMateriTab';
 import ClassRaporTab from '@/components/akun/ClassRaporTab';
 // [teacher-workspace-v1] PR punya siklus penuh: diberi pengajar → disetor di sini → dinilai
 import ClassTugasTab from '@/components/akun/ClassTugasTab';
-import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, PenLine, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, PenLine, RotateCcw, X, CalendarClock, HelpCircle, ChevronRight, ChevronDown, AlertTriangle, type LucideIcon } from 'lucide-react';
 
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
@@ -44,8 +44,24 @@ const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
   { id: 'rapor', label: 'Rapor', icon: BarChart2 },
 ];
 
+// [riwayat-lipat-v1] Jumlah kartu riwayat yang tampil sebelum dilipat.
+const HISTORY_PREVIEW = 6;
+
 const isValidTab = (t: string | null | undefined): t is ClassTab =>
   !!t && TABS.some((x) => x.id === t);
+
+// [sesi-berikutnya-v1] Label hitung mundur ringkas. `now` sengaja dioper (bukan
+// Date.now() di dalam) supaya nilainya ikut state `tick` — kalau tidak, React
+// tak punya alasan me-render ulang dan labelnya membeku.
+function hitungMundur(dt: Date, now: number): string {
+  const menit = Math.round((dt.getTime() - now) / 60_000);
+  if (menit <= 0) return 'sedang berlangsung';
+  if (menit < 60) return `${menit} menit lagi`;
+  const jam = Math.round(menit / 60);
+  if (jam < 24) return `${jam} jam lagi`;
+  const hari = Math.round(jam / 24);
+  return hari === 1 ? 'besok' : `${hari} hari lagi`;
+}
 
 export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null }: Props) {
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(initialTab) ? initialTab : 'overview');
@@ -62,9 +78,30 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   const [cancelSched, setCancelSched] = useState<any>(null);
   const [cancelStep, setCancelStep] = useState<CancelStep>('confirm');
   const [cancelReason, setCancelReason] = useState('');
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ msg: string; err?: boolean } | null>(null);
+  // [sesi-berikutnya-v1] Detak menit buat label hitung mundur — tanpa ini halaman
+  // yang dibiarkan terbuka akan terus menampilkan "3 jam lagi" sampai di-refresh.
+  const [tick, setTick] = useState(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setTick(Date.now()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+
+  // [modal-esc-v1] Esc menutup modal. Refleks standar yang selama ini absen —
+  // di desktop satu-satunya jalan keluar cuma tombol ✕ yang kecil.
+  useEffect(() => {
+    if (!rescheduleSched && !cancelSched) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || isProcessing) return;
+      if (rescheduleSched) { setRescheduleSched(null); setSelectedSlot(null); }
+      else { setCancelSched(null); setCancelReason(''); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [rescheduleSched, cancelSched, isProcessing]);
 
   // Sinkron tab ke URL (?tab=) tanpa re-render route — biar bisa di-share/refresh.
   function setActiveTab(t: ClassTab) {
@@ -106,9 +143,44 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     return () => { alive = false; };
   }, [reg?.teacher_id, reg?.teachers?.avatar_url]);
 
-  function flashToast(msg: string) {
-    setToast(msg);
-    setTimeout(() => setToast(null), 3000);
+  // [kelas-tab-badge-v1] Jumlah isi tiap tab, dipakai buat badge di tab bar.
+  // Tanpa ini siswa harus mengklik 6 tab satu-satu cuma buat tahu mana yang ada
+  // isinya — Materi/Rapor/Tugas jadi jarang dibuka padahal isinya penting.
+  // SEMUA query di sini boleh gagal (tabel belum dimigrasi, RLS, mode pratinjau):
+  // kalau gagal badge-nya cuma tidak muncul, halaman TIDAK boleh ikut error.
+  const [counts, setCounts] = useState<{ materi: number; rapor: number; tugasBaru: number }>({ materi: 0, rapor: 0, tugasBaru: 0 });
+  useEffect(() => {
+    if (!reg?.id || previewStudentId) return;
+    let alive = true;
+    (async () => {
+      const [mat, rap, sub] = await Promise.all([
+        supabase.from('class_materials').select('id', { count: 'exact', head: true }).eq('registration_id', reg.id),
+        supabase.from('class_reports').select('id', { count: 'exact', head: true }).eq('registration_id', reg.id).not('published_at', 'is', null),
+        supabase.from('homework_submissions').select('schedule_id').eq('registration_id', reg.id),
+      ]);
+      if (!alive) return;
+      const setoran = new Set((sub.data || []).map((s: any) => s.schedule_id));
+      setCounts({
+        materi: mat.count || 0,
+        rapor: rap.count || 0,
+        // "Baru" = PR yang diberi pengajar tapi belum disetor siswa — itu yang
+        // butuh perhatian, bukan total PR (yang sudah dinilai tak perlu diungkit).
+        tugasBaru: schedules.filter((s: any) => (s.homework || '').trim() && !setoran.has(s.id)).length,
+      });
+    })();
+    return () => { alive = false; };
+  }, [reg?.id, previewStudentId, schedules]);
+
+  // [toast-satu-jalur-v1] Dulu sukses tampil sebagai toast rapi tapi kegagalan
+  // memunculkan alert() bawaan browser — dua bahasa visual untuk kejadian yang sama.
+  // Semua umpan balik sekarang lewat sini. Timer disimpan supaya toast beruntun
+  // tidak saling memotong dan tidak menyisakan timer saat komponen dilepas.
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
+  function flashToast(msg: string, err = false) {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    setToast({ msg, err });
+    toastTimer.current = setTimeout(() => setToast(null), err ? 5000 : 3000);
   }
 
   async function fetchData() {
@@ -149,14 +221,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       })
       .eq('id', rescheduleSched.id);
     setIsProcessing(false);
-    if (error) { alert('Gagal reschedule: ' + error.message); return; }
+    if (error) { flashToast('Gagal mengubah jadwal: ' + error.message, true); return; }
     setRescheduleSched(null);
     setSelectedSlot(null);
-    flashToast('✓ Sesi berhasil di-reschedule. Menunggu konfirmasi pengajar.');
+    flashToast('Jadwal berhasil diubah. Menunggu konfirmasi pengajar.');
     await fetchData();
   }
 
-  // Dipanggil saat user klik ❌ Batalkan di kartu jadwal
+  // Dipanggil saat user klik tombol Batalkan di kartu jadwal
   function requestCancel(sched: any) {
     const hoursUntil = (new Date(sched.scheduled_at).getTime() - Date.now()) / 3600_000;
     setCancelSched(sched);
@@ -167,7 +239,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
 
   async function submitCancel() {
     if (!cancelSched) return;
-    if (!cancelReason.trim()) { alert('Mohon isi alasan pembatalan'); return; }
+    if (!cancelReason.trim()) { flashToast('Mohon isi alasan pembatalan dulu ya.', true); return; }
     const hoursUntil = (new Date(cancelSched.scheduled_at).getTime() - Date.now()) / 3600_000;
     const willBeHangus = hoursUntil <= 24;
 
@@ -190,11 +262,11 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     }
 
     setIsProcessing(false);
-    if (error) { alert('Gagal cancel: ' + error.message); return; }
+    if (error) { flashToast('Gagal membatalkan sesi: ' + error.message, true); return; }
     const savedHangus = willBeHangus;
     setCancelSched(null);
     setCancelReason('');
-    flashToast(savedHangus ? '✓ Sesi di-hangusin. Pengajar diberitahu.' : '✓ Sesi dibatalkan. Pengajar diberitahu.');
+    flashToast(savedHangus ? 'Sesi dibatalkan & terhitung terpakai. Pengajar diberitahu.' : 'Sesi dibatalkan. Pengajar diberitahu.');
     await fetchData();
   }
 
@@ -237,10 +309,21 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     Math.max(reg.sessions_used || 0, schedules.filter((s: any) => s.status === 'completed').length),
   );
   const progress = reg.sessions_total ? Math.round((sesiTerpakai / reg.sessions_total) * 100) : 0;
+  const sisaSesi = Math.max(0, (reg.sessions_total || 0) - sesiTerpakai);
   const selesai = (reg.sessions_total > 0 && sesiTerpakai >= reg.sessions_total) || !!reg.archived_at;
   const photo = getLangPhoto(reg.language);
   const upcoming = schedules.filter((s: any) => ['pending', 'scheduled'].includes(s.status) && new Date(s.scheduled_at).getTime() > Date.now() - 3600_000);
-  const history = schedules.filter((s: any) => !upcoming.includes(s));
+  // Riwayat: terbaru dulu — sesi kemarin jauh lebih sering dicari daripada sesi pertama.
+  const history = schedules
+    .filter((s: any) => !upcoming.includes(s))
+    .slice()
+    .sort((a: any, b: any) => +new Date(b.scheduled_at) - +new Date(a.scheduled_at));
+  const nextSched = upcoming[0] || null;
+  // [wa-prefill-v1] Bawa konteks kelasnya ke chat — admin tak perlu tanya balik
+  // "ini kelas yang mana ya kak".
+  const waAdminUrl = `https://wa.me/6282116859493?text=${encodeURIComponent(
+    `Halo Admin Linguo, saya mau tanya soal kelas ${displayLanguage(reg.language)} ${reg.level || ''}`.trim(),
+  )}`;
 
   return (
     <main className="mx-auto w-full max-w-[1000px] px-4 pb-16 pt-5 sm:px-6">
@@ -317,21 +400,43 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           <div className="h-2.5 overflow-hidden rounded-full bg-gray-200">
             <div className="h-full rounded-full bg-gradient-to-r from-[#16796E] to-emerald-500 transition-all" style={{ width: `${progress}%` }} />
           </div>
+          {/* [kelas-progress-konteks-v1] "14 / 16" saja tidak memberi tahu apa-apa.
+              Sisa sesi yang bikin siswa sadar kapan harus ambil paket berikutnya. */}
+          {sisaSesi > 0 && (
+            <div className="mt-2 text-xs text-gray-500">
+              Sisa <b className="text-gray-700">{sisaSesi} sesi</b> lagi di level ini
+            </div>
+          )}
+          {selesai && (
+            <div className="mt-2 text-xs text-gray-500">Semua sesi di level ini sudah selesai</div>
+          )}
         </div>
       </div>
 
       {/* ── Tab bar (sticky di dalam panel scroll shell) ── */}
       <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-gray-200 bg-white/95 px-4 backdrop-blur sm:-mx-6 sm:px-6">
-        <div className="flex min-w-max overflow-x-auto">
+        <div className="flex min-w-max overflow-x-auto" role="tablist">
           {TABS.map((t) => {
             const Icon = t.icon;
+            const aktif = activeTab === t.id;
+            // Badge: Tugas dihitung yang BELUM disetor (perlu aksi → amber),
+            // Materi & Rapor cuma penanda "ada isinya" (netral).
+            const badge = t.id === 'tugas' ? counts.tugasBaru : t.id === 'materi' ? counts.materi : t.id === 'rapor' ? counts.rapor : 0;
+            const perluAksi = t.id === 'tugas';
             return (
               <button
                 key={t.id}
+                role="tab"
+                aria-selected={aktif}
                 onClick={() => setActiveTab(t.id)}
-                className={`inline-flex items-center gap-1.5 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${activeTab === t.id ? 'border-transparent text-[#16796E]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
+                className={`inline-flex items-center gap-1.5 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${aktif ? 'border-[#16796E] text-[#16796E]' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
               >
                 <Icon className="h-4 w-4" strokeWidth={2} />{t.label}
+                {badge > 0 && (
+                  <span className={`ml-0.5 inline-flex h-[18px] min-w-[18px] items-center justify-center rounded-full px-1 text-[10px] font-bold ${perluAksi ? 'bg-amber-100 text-amber-700' : aktif ? 'bg-[#16796E]/12 text-[#16796E]' : 'bg-gray-100 text-gray-600'}`}>
+                    {badge}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -343,26 +448,83 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         {loading && <div className="py-10 text-center text-gray-400">Memuat…</div>}
 
         {!loading && activeTab === 'overview' && (
-          <div className="space-y-5">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-white p-4">
-                <div className="flex items-center gap-1.5 text-xs text-gray-500"><Clock className="h-3.5 w-3.5" strokeWidth={2} />Durasi/Sesi</div>
-                <div className="mt-1 text-base font-bold text-gray-900">{reg.duration || '-'} menit</div>
+          <div className="space-y-4">
+            {/* [sesi-berikutnya-v1] Yang paling dicari siswa saat membuka kelas adalah
+                "kapan sesi saya berikutnya" — dulu itu tersembunyi satu klik di tab
+                Jadwal, sementara Overview cuma memajang angka statis. Sekarang naik ke
+                paling atas, lengkap dengan aksinya (ubah jadwal / batalkan). */}
+            {nextSched ? (
+              <div className="rounded-2xl border border-[#16796E]/25 bg-[#F0FAF8] p-4 sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-[#16796E]">
+                      <CalendarClock className="h-3.5 w-3.5" strokeWidth={2.4} /> Sesi Berikutnya
+                    </div>
+                    <div className="mt-1.5 text-[18px] font-extrabold leading-tight text-[#12172B] sm:text-[20px]">
+                      {new Date(nextSched.scheduled_at).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}
+                    </div>
+                    <div className="mt-0.5 text-sm text-gray-600">
+                      {new Date(nextSched.scheduled_at).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
+                      {' · '}{nextSched.duration_minutes || reg.duration || 60} menit
+                      {nextSched.status === 'pending' ? ' · menunggu konfirmasi pengajar' : ''}
+                    </div>
+                  </div>
+                  <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
+                    {hitungMundur(new Date(nextSched.scheduled_at), tick)}
+                  </span>
+                </div>
+                <div className="mt-3.5 flex flex-wrap gap-2 border-t border-[#16796E]/20 pt-3">
+                  <button
+                    onClick={() => openReschedule(nextSched)}
+                    disabled={(new Date(nextSched.scheduled_at).getTime() - Date.now()) / 3600_000 <= 24}
+                    title={(new Date(nextSched.scheduled_at).getTime() - Date.now()) / 3600_000 <= 24 ? 'Ubah jadwal hanya bisa lebih dari 24 jam sebelum sesi' : ''}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-[#16796E] hover:bg-white/70 disabled:cursor-not-allowed disabled:text-gray-400"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5" strokeWidth={2.4} /> Ubah Jadwal
+                  </button>
+                  <button
+                    onClick={() => requestCancel(nextSched)}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-red-600 hover:bg-white/70"
+                  >
+                    <X className="h-3.5 w-3.5" strokeWidth={2.6} /> Batalkan
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('jadwal')}
+                    className="ml-auto inline-flex items-center gap-0.5 rounded-xl px-2 py-2 text-xs font-bold text-gray-600 hover:text-[#16796E]"
+                  >
+                    Semua jadwal <ChevronRight className="h-3.5 w-3.5" strokeWidth={2.4} />
+                  </button>
+                </div>
               </div>
-              <div className="rounded-2xl bg-white p-4">
-                <div className="flex items-center gap-1.5 text-xs text-gray-500"><CreditCard className="h-3.5 w-3.5" strokeWidth={2} />Total Pembayaran</div>
-                <div className="mt-1 text-base font-bold text-gray-900">Rp{(reg.total_amount || 0).toLocaleString('id-ID')}</div>
+            ) : (
+              <div className="rounded-2xl bg-gray-50 p-5 text-center">
+                <Calendar className="mx-auto h-6 w-6 text-gray-400" strokeWidth={1.8} />
+                <div className="mt-2 text-sm font-semibold text-gray-700">
+                  {selesai ? 'Kelas di level ini sudah selesai' : 'Belum ada sesi terjadwal'}
+                </div>
+                <div className="mt-1 text-xs text-gray-500">
+                  {selesai ? 'Mau lanjut ke level berikutnya? Hubungi admin.' : 'Hubungi admin untuk menjadwalkan sesi berikutnya.'}
+                </div>
+                <a href={waAdminUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0F5A52]">
+                  <MessageCircle className="h-4 w-4" strokeWidth={2.4} /> Chat Admin
+                </a>
               </div>
+            )}
+
+            {/* [overview-detail-strip-v1] Durasi & total pembayaran dulu memakan dua
+                kartu besar padahal cuma dilihat sekali seumur kelas. Diturunkan jadi
+                satu baris ringkas — informasinya tetap ada, tak lagi merebut perhatian. */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-2xl bg-white px-4 py-3 text-xs text-gray-500">
+              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" strokeWidth={2} />{reg.duration || '-'} menit/sesi</span>
+              <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-3.5 w-3.5" strokeWidth={2} />Paket {reg.sessions_total || 0} sesi</span>
+              <span className="inline-flex items-center gap-1.5"><CreditCard className="h-3.5 w-3.5" strokeWidth={2} />Rp{(reg.total_amount || 0).toLocaleString('id-ID')}</span>
             </div>
 
-            <div className="flex gap-2 pt-1">
-              <button onClick={() => setActiveTab('jadwal')} className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#16796E] py-3 font-semibold text-white hover:bg-[#0F5A52]">
-                <Calendar className="h-4 w-4" strokeWidth={2.5} /> Lihat Jadwal
-              </button>
-              <a href="https://wa.me/6282116859493" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-gray-900 py-3 text-center font-semibold text-white hover:bg-gray-800">
+            {nextSched && (
+              <a href={waAdminUrl} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-gray-900 py-3 text-center font-semibold text-white hover:bg-gray-800">
                 <MessageCircle className="h-4 w-4" strokeWidth={2.5} /> Chat Admin
               </a>
-            </div>
+            )}
           </div>
         )}
 
@@ -383,9 +545,21 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
             {history.length > 0 && (
               <div>
                 <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Riwayat ({history.length})</div>
+                {/* [riwayat-lipat-v1] Paket 16 sesi berarti 16 kartu sekaligus dan sesi
+                    terbaru justru terdorong jauh ke bawah. Ditampilkan terbaru dulu,
+                    sisanya dilipat. */}
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-                  {history.map((s: any) => <ScheduleCard key={s.id} sched={s} />)}
+                  {(historyOpen ? history : history.slice(0, HISTORY_PREVIEW)).map((s: any) => <ScheduleCard key={s.id} sched={s} />)}
                 </div>
+                {history.length > HISTORY_PREVIEW && (
+                  <button
+                    onClick={() => setHistoryOpen((v) => !v)}
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#16796E] hover:underline"
+                  >
+                    <ChevronDown className={`h-3.5 w-3.5 transition-transform ${historyOpen ? 'rotate-180' : ''}`} strokeWidth={2.4} />
+                    {historyOpen ? 'Sembunyikan' : `Lihat ${history.length - HISTORY_PREVIEW} sesi lainnya`}
+                  </button>
+                )}
               </div>
             )}
           </div>
@@ -406,8 +580,13 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
 
       {/* Toast */}
       {toast && (
-        <div className="fixed left-1/2 top-4 z-[130] -translate-x-1/2 rounded-full bg-gray-900 px-4 py-2.5 text-sm font-medium text-white shadow-lg animate-[fadeIn_0.2s_ease-out]">
-          {toast}
+        <div
+          role="status"
+          aria-live="polite"
+          className={`fixed left-1/2 top-4 z-[130] flex max-w-[92vw] -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-lg animate-[fadeIn_0.2s_ease-out] ${toast.err ? 'bg-red-600' : 'bg-gray-900'}`}
+        >
+          {toast.err ? <AlertTriangle className="h-4 w-4 shrink-0" strokeWidth={2.4} /> : <Check className="h-4 w-4 shrink-0" strokeWidth={3} />}
+          {toast.msg}
         </div>
       )}
 
@@ -417,10 +596,16 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           <div className="flex max-h-[85vh] w-full flex-col rounded-t-3xl bg-white md:max-w-md md:rounded-3xl">
             <div className="sticky top-0 flex items-center justify-between rounded-t-3xl border-b bg-white px-5 py-4">
               <div>
-                <div className="text-xs text-gray-500">Reschedule Sesi</div>
+                <div className="text-xs text-gray-500">Ubah Jadwal Sesi</div>
                 <div className="font-bold text-gray-900">Pilih waktu baru</div>
               </div>
-              <button onClick={() => { setRescheduleSched(null); setSelectedSlot(null); }} className="h-9 w-9 rounded-full bg-gray-100 hover:bg-gray-200">✕</button>
+              <button
+                onClick={() => { setRescheduleSched(null); setSelectedSlot(null); }}
+                aria-label="Tutup"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
+              >
+                <X className="h-4 w-4" strokeWidth={2.4} />
+              </button>
             </div>
             <div className="flex-1 overflow-y-auto p-4">
               <div className="mb-3 text-xs text-gray-500">
@@ -480,7 +665,9 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
               {cancelStep === 'confirm' && (
                 <>
                   <div className="border-b px-5 py-5 text-center">
-                    <div className="mb-2 text-3xl">🤔</div>
+                    <div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                      <HelpCircle className="h-6 w-6" strokeWidth={2} />
+                    </div>
                     <div className="text-lg font-bold text-gray-900">Mau diapain sesi ini?</div>
                     <div className="mt-1 text-sm text-gray-600">{schedDateStr}</div>
                   </div>
@@ -493,9 +680,9 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                       }}
                       className="flex w-full items-center gap-3 rounded-xl border border-blue-100 bg-blue-50 p-4 text-left transition-colors hover:bg-blue-100"
                     >
-                      <div className="text-2xl">🔄</div>
+                      <div className="text-blue-600"><RotateCcw className="h-6 w-6" strokeWidth={2.2} /></div>
                       <div className="flex-1">
-                        <div className="font-semibold text-blue-900">Reschedule aja</div>
+                        <div className="font-semibold text-blue-900">Ubah jadwalnya saja</div>
                         <div className="mt-0.5 text-xs text-blue-700">Pindahin ke waktu lain yang kamu bisa</div>
                       </div>
                       <div className="text-blue-600">→</div>
@@ -504,7 +691,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                       onClick={() => setCancelStep('form')}
                       className="flex w-full items-center gap-3 rounded-xl border border-red-100 bg-red-50 p-4 text-left transition-colors hover:bg-red-100"
                     >
-                      <div className="text-2xl">❌</div>
+                      <div className="text-red-600"><X className="h-6 w-6" strokeWidth={2.4} /></div>
                       <div className="flex-1">
                         <div className="font-semibold text-red-900">Ya, batalkan sesi</div>
                         <div className="mt-0.5 text-xs text-red-700">Sesi dibatalkan & dibalikin ke kuota</div>
@@ -533,11 +720,13 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                   <div className="space-y-4 p-5">
                     {willBeHangus ? (
                       <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">
-                        ⚠️ Sesi ini &lt;24 jam lagi. Kalau dibatalkan, <b>sesi tetap terhitung (sessions_used +1)</b> — tidak bisa dikembalikan.
+                        <AlertTriangle className="mr-1 inline h-4 w-4 align-[-3px]" strokeWidth={2.2} />
+                        Sesi ini kurang dari 24 jam lagi. Kalau dibatalkan, <b>sesi tetap dihitung terpakai</b> — kuotanya tidak bisa dikembalikan.
                       </div>
                     ) : (
                       <div className="rounded-xl bg-teal-50 p-3 text-sm text-teal-800">
-                        ✓ Sesi ini &gt;24 jam lagi, bisa dibatalkan tanpa di-charge.
+                        <Check className="mr-1 inline h-4 w-4 align-[-3px]" strokeWidth={2.6} />
+                        Sesi ini masih lebih dari 24 jam lagi, bisa dibatalkan tanpa memotong kuota.
                       </div>
                     )}
                     <div>
@@ -596,7 +785,13 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
     cancelled: { label: 'Dibatalkan', color: 'bg-gray-200 text-gray-700' },
     hangus: { label: 'Hangus', color: 'bg-red-100 text-red-700' },
   };
-  const st = statusMap[sched.status] || { label: sched.status, color: 'bg-gray-100 text-gray-600' };
+  let st = statusMap[sched.status] || { label: sched.status, color: 'bg-gray-100 text-gray-600' };
+  // [status-lampau-v1] Sesi yang waktunya sudah lewat tapi belum ditandai selesai
+  // pengajar masih berlabel "Terjadwal" berwarna biru di Riwayat — terbaca seolah
+  // masih akan datang. Diberi label apa adanya: menunggu laporan pengajar.
+  if (isPast && ['pending', 'scheduled'].includes(sched.status)) {
+    st = { label: 'Menunggu laporan pengajar', color: 'bg-gray-100 text-gray-600' };
+  }
 
   const cancelledByLabel: Record<string, string> = {
     student: 'Siswa',
@@ -646,10 +841,10 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
             <button
               onClick={onReschedule}
               disabled={!canReschedule}
-              title={!canReschedule ? 'Reschedule hanya bisa >24 jam sebelum sesi' : ''}
+              title={!canReschedule ? 'Ubah jadwal hanya bisa lebih dari 24 jam sebelum sesi' : ''}
               className="flex-1 rounded-lg bg-blue-50 py-2 text-xs font-semibold text-blue-700 hover:bg-blue-100 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-400"
             >
-              🔄 Reschedule
+              <RotateCcw className="mr-1 inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.4} /> Ubah Jadwal
             </button>
           )}
           {onCancel && (
@@ -657,7 +852,7 @@ function ScheduleCard({ sched, onReschedule, onCancel }: { sched: any; onResched
               onClick={onCancel}
               className="flex-1 rounded-lg bg-red-50 py-2 text-xs font-semibold text-red-700 hover:bg-red-100"
             >
-              ❌ Batalkan
+              <X className="mr-1 inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.6} /> Batalkan
             </button>
           )}
         </div>
