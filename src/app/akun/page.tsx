@@ -8,7 +8,6 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
-import { RectFlag } from "@/components/RectFlag"; // [linguo-patch:jelajahi-rectflag-v1] bendera rounded rectangle
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
@@ -2339,13 +2338,9 @@ export default function AkunPage() {
   const [materiTab, setMateriTab] = useState<"sesi" | "materi">("sesi");
   const [materiFilter, setMateriFilter] = useState<"all" | "run" | "done">("all");
   const [materiView, setMateriView] = useState<"live" | "mandiri">("live");
-  const [materiLang, setMateriLang] = useState<string | null>(null);
   const [materiSearch, setMateriSearch] = useState("");
-  // [linguo-patch:beranda-jelajahi-v1] state seksi "Jelajahi Bahasa" di Beranda (pindahan dari tab Materi)
-  const [jelajahiQ, setJelajahiQ] = useState("");
-  // [beranda-jelajahi-collapse-v1] katalog 60+ bahasa itu konten akuisisi — di dashboard
-  // siswa cukup 8 dulu, sisanya on-demand, biar workspace-nya ga ketutupan katalog.
-  const [jelajahiAll, setJelajahiAll] = useState(false);
+  // [beranda-ringkas-v2] state seksi "Jelajahi Bahasa" (jelajahiQ, jelajahiAll,
+  // materiLang) ikut dibuang bersama blok katalognya.
   // [beranda-search-live-v1] kolom cari di header Beranda DULU cuma hiasan: input tanpa
   // state/handler, diketik ga terjadi apa-apa. Sekarang nyata — nyari kelas, pengajar,
   // bahasa, & menu, lalu langsung navigasi.
@@ -3639,12 +3634,10 @@ export default function AkunPage() {
                   JELAJAHI_LANGS.filter((l) => l.name.toLowerCase().includes(hq)).slice(0, 4).forEach((l) => {
                     homeHits.push({
                       id: `bahasa-${l.slug}`, kind: "Bahasa", label: l.name, sub: "Lihat silabus & daftar kelas",
-                      run: () => {
-                        setMateriLang(l.slug);
-                        setJelajahiQ("");
-                        setJelajahiAll(true);
-                        document.getElementById("jelajahi-bahasa")?.scrollIntoView({ behavior: "smooth", block: "start" });
-                      },
+                      // [beranda-ringkas-v2] blok "Jelajahi Bahasa" sudah tak ada di
+                      // beranda → hasil pencarian bahasa langsung buka halaman silabusnya,
+                      // bukan menggulir ke elemen yang tidak pernah ke-render.
+                      run: () => router.push(`/silabus/${l.slug}`),
                     });
                   });
                   ([
@@ -4153,7 +4146,8 @@ export default function AkunPage() {
                           <ol className="mt-5 grid gap-3 sm:grid-cols-3">
                             {([
                               { n: 1, t: "Tes penempatan gratis", d: "Biar level kamu pas, ga ketinggian atau kerendahan.", cta: "Mulai tes", run: () => setShowPlacementPicker(true) },
-                              { n: 2, t: "Pilih bahasa & lihat silabus", d: "60+ bahasa, CEFR A1–B2, materi per sublevel.", cta: "Jelajahi bahasa", run: () => document.getElementById("jelajahi-bahasa")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
+                              // [beranda-ringkas-v2] katalog bahasa pindah sepenuhnya ke /silabus.
+                              { n: 2, t: "Pilih bahasa & lihat silabus", d: "60+ bahasa, CEFR A1–B2, materi per sublevel.", cta: "Jelajahi bahasa", run: () => router.push("/silabus") },
                               { n: 3, t: "Daftar kelas", d: "Private, Semi-Private, Reguler, atau belajar mandiri.", cta: "Daftar sekarang", run: openEnrollWizard },
                             ] as const).map((s) => (
                               <li key={s.n} className="flex flex-col rounded-2xl bg-slate-50 p-4">
@@ -4242,92 +4236,14 @@ export default function AkunPage() {
                           panjang tanpa menjawab pertanyaan siswa. Pendaftaran kelas baru
                           tetap bisa lewat "Jelajahi Bahasa" di bawah. */}
 
-                      {/* [linguo-patch:beranda-jelajahi-v1] Jelajahi Bahasa — dipindah dari tab Materi ke Beranda */}
-                      {(() => {
-                        const q = jelajahiQ.trim().toLowerCase();
-                        const filtered = q ? JELAJAHI_LANGS.filter((l) => l.name.toLowerCase().includes(q)) : JELAJAHI_LANGS;
-                        // [beranda-jelajahi-collapse-v1] default 8 kartu; katalog penuh on-demand.
-                        const visible = q || jelajahiAll ? filtered : filtered.slice(0, 8);
-                        const sisa = filtered.length - visible.length;
-                        const selLang = JELAJAHI_LANGS.find((l) => l.slug === materiLang) || JELAJAHI_LANGS[0];
-                        const CEFR = ["A1.1", "A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B2.1", "B2.2"];
-                        return (
-                          <div id="jelajahi-bahasa" className="scroll-mt-6">
-                            <div className="flex flex-wrap items-end justify-between gap-3">
-                              <div>
-                                <h2 className="flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]"><Globe className="h-5 w-5 text-[#16796E]" strokeWidth={2.4} />Jelajahi Bahasa</h2>
-                                <p className="mt-0.5 text-[13px] font-medium text-gray-500">60+ bahasa · CEFR A1–B2 · pilih, lihat silabus, langsung daftar</p>
-                              </div>
-                              <div className="relative w-full sm:w-[280px]">
-                                <Search className="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-400" strokeWidth={2} />
-                                <input value={jelajahiQ} onChange={(e) => setJelajahiQ(e.target.value)} placeholder="Cari bahasa…" className="h-11 w-full rounded-2xl border border-slate-200 bg-white pl-11 pr-4 text-[14px] font-medium text-[#12172B] outline-none transition focus:border-slate-300" />
-                              </div>
-                            </div>
+                      {/* [beranda-ringkas-v2] Blok "Jelajahi Bahasa" (grid katalog +
+                          kartu detail sublevel CEFR) DIHAPUS dari beranda atas permintaan.
+                          Katalog lengkapnya tetap hidup di /silabus — tautannya di bawah. */}
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-[13px] font-medium text-gray-500">
+                        <a href="/silabus" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Globe className="h-4 w-4" strokeWidth={2} />Semua Silabus (60+ Bahasa)</a>
+                        <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />Blog &amp; Tips Belajar</a>
+                      </div>
 
-                            <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 xl:grid-cols-4">
-                              {visible.map((l) => {
-                                const isSel = l.slug === selLang.slug;
-                                // [linguo-patch:jelajahi-no-color-outline-v1] kartu kepilih ga pake ring/outline warna — cukup border & bg netral
-                                // [linguo-patch:jelajahi-flag-no-tile-v1] bendera tanpa kotak latar, cukup ikon bendera
-                                return (
-                                  <button key={l.slug} onClick={() => setMateriLang(l.slug)} className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-slate-100" : "bg-white hover:bg-slate-50"}`}>
-                                    <span className="flex h-11 w-11 shrink-0 items-center justify-center"><RectFlag code={l.flag} h={26} /></span>
-                                    <span className="min-w-0 flex-1">
-                                      <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{l.name}</span>
-                                      <span className="block text-[12px] font-medium text-gray-500">CEFR A1–B2</span>
-                                    </span>
-                                    <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition group-hover:text-[#16796E]" />
-                                  </button>
-                                );
-                              })}
-                              {filtered.length === 0 && (
-                                <p className="col-span-full rounded-2xl border border-dashed border-slate-200 px-4 py-8 text-center text-[13px] font-medium text-gray-500">Bahasa &ldquo;{jelajahiQ}&rdquo; ga ketemu · cek Semua Silabus di bawah</p>
-                              )}
-                            </div>
-
-                            {/* [beranda-jelajahi-collapse-v1] buka katalog penuh cuma kalau diminta */}
-                            {!q && (sisa > 0 || jelajahiAll) && (
-                              <button
-                                onClick={() => setJelajahiAll((v) => !v)}
-                                className="mt-3 inline-flex h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"
-                              >
-                                {jelajahiAll ? "Tampilkan lebih sedikit" : `Tampilkan semua bahasa (+${sisa})`}
-                              </button>
-                            )}
-
-                            {/* detail bahasa kepilih */}
-                            <div className="mt-4 rounded-3xl bg-white p-5">
-                              <div className="flex items-center gap-3">
-                                <span className="flex h-12 w-12 shrink-0 items-center justify-center"><RectFlag code={selLang.flag} h={28} /></span>
-                                <div className="min-w-0">
-                                  <p className="text-[15px] font-extrabold text-[#12172B]">{selLang.name} — CEFR A1–B2</p>
-                                  <p className="text-[12px] font-medium text-gray-500">8 sublevel · A1.1 sampai B2.2</p>
-                                </div>
-                              </div>
-                              <div className="mt-4 flex flex-wrap gap-1.5">
-                                {CEFR.map((c) => (
-                                  <span key={c} className="rounded-lg bg-[#F5F6F8] px-2.5 py-1 text-[12px] font-bold text-gray-500">{c}</span>
-                                ))}
-                              </div>
-                              <div className="mt-4 flex flex-wrap gap-2">
-                                {/* [beranda-silabus-btn-border-v1] dua tombol ini dulu `bg-white` di
-                                    atas kartu `bg-white` dan cuma punya `hover:border-*` TANPA utility
-                                    `border` — lebar border-nya 0, jadi affordance-nya invisible
-                                    selamanya (kelihatan cuma teks polos). */}
-                                <a href={`/silabus/${selLang.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"><BookOpen className="h-4 w-4" strokeWidth={2} />Lihat Silabus</a>
-                                <a href={`/silabus/${selLang.slug}/coba`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 text-[13px] font-bold text-[#12172B] transition hover:border-[#16796E] hover:text-[#16796E]"><Target className="h-4 w-4" strokeWidth={2} />Placement Test</a>
-                                <button onClick={openEnrollWizard} className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#16796E] px-4 text-[13px] font-bold text-white transition hover:bg-[#0F5A52]"><Plus className="h-4 w-4" strokeWidth={2.5} />Daftar Kelas</button>
-                              </div>
-                            </div>
-
-                            {/* footer resources */}
-                            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 px-1 text-[13px] font-medium text-gray-500">
-                              <a href="/silabus" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Globe className="h-4 w-4" strokeWidth={2} />Semua Silabus (60+ Bahasa)</a>
-                              <a href="/blog" className="inline-flex items-center gap-1.5 transition-colors hover:text-[#16796E]"><Newspaper className="h-4 w-4" strokeWidth={2} />Blog &amp; Tips Belajar</a>
-                            </div>
-                          </div>
-                        );
-                      })()}
 
                     </section>
                   </div>
