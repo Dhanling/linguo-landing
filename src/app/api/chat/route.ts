@@ -51,7 +51,7 @@ Program:
 - Level CEFR — strukturnya PERSIS sama dengan silabus di linguo.id/silabus/{slug}, jangan mengarang jumlah lain: A1 = 3 sublevel (A1.1, A1.2, A1.3), A2 = 4 sublevel (A2.1-A2.4), B1 = 5 sublevel (B1.1-B1.5), B2 = 7 sublevel (B2.1-B2.7, B2.7 = test prep). Tiap sublevel 16 sesi @60 atau @90 menit, jadi A1 penuh = 48 sesi, A2 = 64 sesi, B1 = 80 sesi, B2 = 112 sesi (total 304 sesi dari nol sampai near-native). "A1.1" = sublevel pertama saja (16 sesi), "A1 penuh/full" = 3 sublevel (48 sesi). Bisa skip sublevel kalau lolos evaluasi pengajar.
 - KENAIKAN SUBLEVEL TIAP 16 SESI — jangan salah hitung: sesi ke-1 s.d. 16 = A1.1, sesi 17-32 = A1.2, sesi 33-48 = A1.3, sesi 49-64 = A2.1, dst. Begitu 16 sesi A1.1 selesai, siswa LANGSUNG lanjut A1.2 — TIDAK perlu 32 sesi dulu. Angka 32 sesi itu total kumulatif SETELAH A1.2 selesai, bukan syarat masuk A1.2. Contoh: siswa yang baru menempuh 9 sesi masih di A1.1 (9 dari 16 sesi), belum A1.2. Kalau siswa menyebut syarat sesi lain ("A1.2 kan minimal 32 lesson dulu ya?"), luruskan dengan sopan — jangan diiyakan.
 - Kelas online interaktif via Zoom. Materi & recording via Google Classroom. Silabus: https://linguo.id/silabus
-- ONLINE & OFFLINE — jangan bilang "full online / hanya online". Kelas offline = PENGAJAR DATANG KE TEMPAT SISWA, dan TIDAK selalu tersedia: tergantung ada/tidaknya pengajar yang siap ke area siswa. Jangan menjanjikan offline pasti bisa — tanyakan lokasi siswa dulu, lalu bilang admin akan cek ketersediaan pengajar di area itu.
+- ONLINE & OFFLINE — jangan bilang "full online / hanya online". Kelas offline = PENGAJAR DATANG KE TEMPAT SISWA. ADA, tapi TERBATAS: cuma untuk area yang terjangkau dari kota domisili pengajar. Kota mana saja yang terjangkau ada di blok "JANGKAUAN KELAS OFFLINE" (ditarik realtime dari database pengajar) — pakai daftar itu, JANGAN mengarang kota. Kalau blok itu tidak ada, tanyakan lokasi siswa dulu lalu bilang admin akan cek ketersediaan pengajar di area itu. Jangan menjanjikan offline pasti bisa.
 - Biaya offline = harga online + selisih PER SESI: Jabodetabek +Rp50.000/sesi, luar Jabodetabek +Rp30.000/sesi. SEMUA harga di sini adalah tarif ONLINE — untuk offline tambahkan selisih itu ke tarif per sesi (jangan mengarang angka lain).
 - Bahasa kelas Reguler ada 11, SAMA PERSIS dengan pilihan bahasa di form pendaftaran halaman ini: Inggris, Mandarin, Jepang, Korea, Arab, Prancis, Jerman, Italia, Belanda, Spanyol, Tagalog. Kelas Private: 60+ bahasa.
 - Kalau user tanya "bahasa apa saja yang ada/tersedia" (Reguler atau kelas grup), SEBUTKAN ke-11 bahasa di atas satu per satu — jangan balik bertanya "bahasa apa yang kamu mau?" dan jangan menyuruh user cek daftar lain.
@@ -517,6 +517,96 @@ async function getScheduleBlock(): Promise<string> {
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// JANGKAUAN KELAS OFFLINE (linguo-patch:ai-offline-jangkauan-realtime-v1)
+//
+// Kelas offline = pengajar datang ke tempat siswa, jadi jangkauannya = kota
+// tempat pengajar berdomisili. Tanpa blok ini Ling cuma punya kalimat statis
+// "offline tergantung ketersediaan pengajar" dan jawabannya menggantung. Kota
+// domisili pengajar AKTIF ditarik realtime dari tabel `teachers` supaya Ling
+// bisa membedakan "kemungkinan bisa, dicek dulu" dari "belum ada pengajar di
+// area itu".
+//
+// Kolom `type` = kesediaan mengajar (Online/Offline/Both). Per Agustus 2026
+// belum ada baris yang diisi Offline/Both, jadi kota dipakai sebagai jangkauan
+// dan kesediaan per pengajar TETAP wajib dicek admin; begitu kolom itu mulai
+// diisi, penanda [SIAP OFFLINE] otomatis muncul.
+//
+// Salinan logika ini ada di linguo-app/supabase/functions/suggest-reply dan
+// linguo-wa-bot/db.js — ubah bertiga kalau diganti.
+// ─────────────────────────────────────────────────────────────────────────────
+let offlineCache: { text: string; at: number } = { text: "", at: 0 };
+const OFFLINE_TTL_MS = 30 * 60 * 1000; // domisili pengajar jarang berubah
+
+/** "english|B1" / " Japanese " → "English" / "Japanese" (buang level & rapikan). */
+function normLang(raw: unknown): string {
+  const base = String(raw || "").split("|")[0].trim();
+  return base ? base.charAt(0).toUpperCase() + base.slice(1) : "";
+}
+
+const OFFLINE_NOTE = `CATATAN KELAS OFFLINE (WAJIB DIPATUHI):
+- Daftar di atas ditarik REALTIME dari database pengajar: kota domisili tiap pengajar aktif. Kelas offline = pengajar datang ke tempat siswa, jadi jangkauannya hanya kota-kota itu + area sekitarnya yang masih bisa ditempuh pengajar.
+- Offline ITU ADA tapi TERBATAS. DILARANG bilang Linguo "full online / hanya online", dan dilarang juga menjanjikan offline pasti bisa.
+- User berminat offline tapi belum menyebut lokasi → TANYAKAN kota/area-nya dulu sebelum menjawab apa pun soal ketersediaan.
+- Kota user ADA di daftar (atau kota tetangganya) → sampaikan offline kemungkinan bisa untuk area itu, lalu bilang ketersediaan pengajar untuk bahasa yang diminati dicek dulu oleh admin. Jangan memastikan.
+- Kota user TIDAK ada di daftar → sampaikan apa adanya bahwa untuk area itu belum ada pengajar yang bisa datang, jadi kelasnya online (materi & pengajarnya sama). Jangan menjanjikan akan dicarikan pengajar offline.
+- Isi daftar ini DATA INTERNAL: jangan dikutip mentah ke user ("ada 61 pengajar di Bandung"), jangan menyebut nama/jumlah pengajar. Pakai hanya untuk menentukan jawaban.
+- Penanda dalam kurung siku juga catatan internal — jangan pernah disalin ke balasan.
+- Biaya offline = tarif online + selisih PER SESI: Jabodetabek +Rp50.000/sesi, luar Jabodetabek +Rp30.000/sesi.`;
+
+/** Rangkum baris `teachers` jadi daftar kota + bahasa yang bisa dijangkau offline. */
+function buildOfflineBlock(rows: unknown[]): string {
+  const byCity = new Map<string, { n: number; siap: number; prov: string; langs: Set<string> }>();
+  for (const row of rows || []) {
+    const t = row as { city?: unknown; province?: unknown; languages?: unknown; type?: unknown };
+    const city = String(t?.city || "").trim();
+    if (!city) continue;
+    const e = byCity.get(city) || { n: 0, siap: 0, prov: "", langs: new Set<string>() };
+    e.n++;
+    if (t?.type === "Offline" || t?.type === "Both") e.siap++;
+    if (!e.prov) e.prov = String(t?.province || "").trim();
+    for (const l of Array.isArray(t?.languages) ? t.languages : []) {
+      const x = normLang(l);
+      if (x) e.langs.add(x);
+    }
+    byCity.set(city, e);
+  }
+  if (!byCity.size) return "";
+
+  const lines = [...byCity.entries()]
+    .sort((a, b) => b[1].n - a[1].n || a[0].localeCompare(b[0]))
+    .map(([city, e]) => {
+      const langs = [...e.langs].sort().slice(0, 8).join(", ");
+      const siap = e.siap ? ` [${e.siap} TERCATAT SIAP OFFLINE]` : "";
+      return `- ${city}${e.prov ? ` (${e.prov})` : ""}: ${e.n} pengajar${siap}${langs ? ` — ${langs}` : ""}`;
+    });
+
+  return (
+    "JANGKAUAN KELAS OFFLINE — kota domisili pengajar aktif (realtime dari database pengajar):\n" +
+    lines.join("\n") +
+    "\n\n" +
+    OFFLINE_NOTE
+  );
+}
+
+async function getOfflineBlock(): Promise<string> {
+  if (Date.now() - offlineCache.at < OFFLINE_TTL_MS) return offlineCache.text;
+  const client = sb();
+  if (!client) return offlineCache.text;
+  try {
+    const { data } = await client
+      .from("teachers")
+      .select("city, province, languages, type")
+      .eq("status", "Aktif")
+      .limit(1000);
+    const text = buildOfflineBlock((data as unknown[]) || []);
+    offlineCache = { text, at: Date.now() };
+    return text;
+  } catch {
+    return offlineCache.text;
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -606,8 +696,8 @@ export async function POST(req: Request) {
         model: MODEL,
         max_tokens: 1024,
         system: await (async () => {
-          const sched = await getScheduleBlock();
-          return sched ? `${SYSTEM}\n\n${sched}` : SYSTEM;
+          const [sched, offline] = await Promise.all([getScheduleBlock(), getOfflineBlock()]);
+          return [SYSTEM, sched, offline].filter(Boolean).join("\n\n");
         })(),
         messages: msgs,
       }),
