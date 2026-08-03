@@ -95,6 +95,8 @@ const TabLoading = () => (
 const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), { ssr: false, loading: TabLoading });
 const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'), { ssr: false });
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
+// jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
+const SesiMendatangCard = dynamic(() => import('@/components/akun/SesiMendatangCard'), { ssr: false });
 const LmsKatalog = dynamic(() => import('@/components/lms/LmsKatalog'), { ssr: false, loading: TabLoading });
 const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { ssr: false, loading: TabLoading }); // [linguo-patch:akun-inplace-lessonplayer-v1] immersive player tunggal
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
@@ -3911,6 +3913,41 @@ export default function AkunPage() {
                         );
                       })()}
 
+                      {/* jadwal-gcal-v1: SESI MENDATANG — pindahan dari kolom kiri kalender
+                          di tab Jadwal. Di sana daftar ini memaksa kalender berbagi lebar;
+                          di sini dia jadi ringkasan harian, dan kalendernya dapat layar penuh.
+                          Sesi pertama sengaja dilewati — dia sudah jadi kartu "Sesi berikutnya"
+                          persis di atas, jangan ditampilkan dua kali. */}
+                      {(() => {
+                        const sisa = upcomingSchedules.slice(sesiBerikutnya ? 1 : 0);
+                        if (!sisa.length) return null;
+                        const sesiCards = sisa.map((s) => {
+                          const reg = student?.registrations?.find((r) => r.id === s.registration_id);
+                          const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                          return {
+                            id: s.id,
+                            registrationId: s.registration_id,
+                            scheduledAt: s.scheduled_at,
+                            durationMinutes: s.duration_minutes,
+                            language: reg?.language ? displayLanguage(reg.language) : "—",
+                            level: reg?.level || "",
+                            product: reg?.product || "",
+                            teacher: tDir?.name || (reg as any)?.teachers?.name || "",
+                            teacherAvatarUrl: tDir?.avatar_url || (reg as any)?.teachers?.avatar_url || null,
+                            sessionNumber: s.session_number ?? null,
+                            materialTitle: s.session_title || "",
+                            status: s.status,
+                          };
+                        });
+                        return (
+                          <SesiMendatangCard
+                            sessions={sesiCards}
+                            studentName={student?.name || undefined}
+                            onOpenJadwal={() => setActiveTab("jadwal")}
+                          />
+                        );
+                      })()}
+
                       {/* [beranda-insights-v1] Ringkasan belajar — progres 4 skill + selisih
                           dari rapor terakhir, PR yang belum disetor, materi terbaru, beban
                           minggu ini, dan peringkat kelas grup. Semuanya dulu terkubur di
@@ -4390,19 +4427,9 @@ export default function AkunPage() {
                     recordingUrl: s.recording_url ?? null,
                   };
                 });
-                // jadwal-riwayat-v1: dasar ringkasan "Sesi 5 dari 16" per kelas
-                const jadwalClasses = activeRegs.map((r: any) => {
-                  const tDir = r.teacher_id ? teacherDir[r.teacher_id] : undefined; // [jadwal-teacher-avatar-v1]
-                  return {
-                    id: r.id,
-                    language: r.language,
-                    level: r.level || "",
-                    sessionsTotal: r.sessions_total ?? null,
-                    sessionsUsed: r.sessions_used ?? null,
-                    teacher: tDir?.name || r?.teachers?.name || "",
-                    teacherAvatarUrl: tDir?.avatar_url || r?.teachers?.avatar_url || null,
-                  };
-                });
+                // jadwal-gcal-v1: kartu rekap per kelas ("Sesi 5 dari 16" + progress bar)
+                // DIBUANG dari tab Jadwal — angkanya sudah ada di kartu kelas Beranda,
+                // di sini cuma mendorong kalender ke bawah lipatan.
                 const jadwalRegulerBatches = activeRegs
                   .filter((r: any) => r.product === "Kelas Reguler" && r.batch)
                   .map((r: any) => ({
@@ -4413,7 +4440,7 @@ export default function AkunPage() {
                     scheduleTime: r.batch.schedule_time,
                     zoomLink: r.batch.zoom_link || null,
                   }));
-                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} classes={jadwalClasses} />;
+                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
               })()}
             </motion.div>
           )}
