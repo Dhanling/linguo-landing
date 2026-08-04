@@ -20,6 +20,7 @@ import {
   NATIVE_AVAILABLE_LANGS,
   type TeacherType,
 } from "@/lib/trial-pricing";
+import { matchesLangQuery } from "@/lib/langAlias";
 import {
   COUNTRIES,
   DEFAULT_COUNTRY,
@@ -287,7 +288,9 @@ export default function TrialWizard({
   const filteredLangs = useMemo(() => {
     const q = langQuery.trim().toLowerCase();
     return TRIAL_LANGUAGES.filter((l) => {
-      if (q) return l.toLowerCase().includes(q); // pas search, abaikan kategori
+      // Pas search, abaikan kategori. Cocokkan juga lewat nama Indonesia —
+      // orang mengetik "mesir kuno", bukan "Ancient Egyptian" (lib/langAlias).
+      if (q) return matchesLangQuery(l, q);
       if (langCat === "all") return true;
       if (langCat === "populer") return LANG_FEATURED.has(l);
       return langRegion(l) === langCat;

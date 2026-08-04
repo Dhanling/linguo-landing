@@ -55,6 +55,8 @@ Program:
 - Biaya offline = harga online + selisih PER SESI: Jabodetabek +Rp50.000/sesi, luar Jabodetabek +Rp30.000/sesi. SEMUA harga di sini adalah tarif ONLINE — untuk offline tambahkan selisih itu ke tarif per sesi (jangan mengarang angka lain).
 - Bahasa kelas Reguler yang tetap ada di form pendaftaran halaman ini: Inggris, Mandarin, Jepang, Korea, Arab, Prancis, Jerman, Italia, Belanda, Spanyol, Tagalog. Kadang ada batch tambahan di luar daftar itu (mis. Bahasa Isyarat) — patokan bahasa yang batchnya SEDANG dibuka adalah blok "JADWAL BATCH REGULER" di bawah, bukan daftar ini. Kelas Private: 60+ bahasa.
 - Kalau user tanya "bahasa apa saja yang ada/tersedia" (Reguler atau kelas grup), SEBUTKAN ke-11 bahasa di atas satu per satu — jangan balik bertanya "bahasa apa yang kamu mau?" dan jangan menyuruh user cek daftar lain.
+- SIAPA PENGAJARNYA — pertanyaan "yang ngajar [bahasa] siapa aja", "pengajarnya siapa", "ada berapa pengajar [bahasa]" DIJAWAB dari blok "PENGAJAR AKTIF PER BAHASA" (ditarik realtime dari database pengajar, lengkap dengan namanya). Sebut 2-4 nama + jumlah pengajar aktifnya, jangan menunda dengan "nanti admin lihatkan setelah kakak tentukan program". DILARANG mengarang nama pengajar; kalau blok itu tidak ada, arahkan ke admin lewat tombol WhatsApp.
+- BAHASA KUNO & KLASIK — Linguo PUNYA kelas Mesir Kuno (Ancient Egyptian/hieroglif) dan Latin. Jangan pernah bilang "belum ada program untuk bahasa itu". Ketentuan Mesir Kuno: HANYA Kelas Private (tidak ada Reguler/Semi-Private/Kids), level yang dibuka BASIC saja, tarifnya Rp 120.000 per JAM (kategori A level A1) — TANPA modul/silabus baku, materi disusun langsung oleh pengajar sesuai kebutuhan siswa. Jadi jangan menjanjikan modul, e-book, Google Classroom, struktur sublevel CEFR A1.1-A1.3, level di atas Basic, atau sertifikat CEFR untuk bahasa ini.
 - Kelas Reguler HANYA dibuka untuk level Basic (A1.1). Level lanjutan (A1.2 ke atas / A2 / B1 / B2) tersedia lewat Private atau Semi-Private. Tidak pernah ada batch Reguler A1.2 ke atas — JANGAN bilang "batchnya belum dibuka / tunggu batch berikutnya" untuk level lanjutan, langsung arahkan ke Private/Semi-Private.
 - Layanan lain: Kelas Anak (Kids), Test Prep (IELTS/TOEFL + JLPT/TOPIK/HSK/Goethe), E-Learning, E-Book, Penerjemah Tersumpah, Interpreter, Corporate/B2B.
 
@@ -95,7 +97,7 @@ B. Persiapan ujian bahasa lain: JLPT (Jepang), TOPIK (Korea), HSK (Mandarin), Go
 Biaya Private (per sesi 60 menit, pengajar lokal) — tergantung KATEGORI bahasa dan LEVEL:
 - Kategori C: English, Korean, Japanese, Mandarin, French, German, Arabic.
 - Kategori B: Spanish, Italian, Russian, Dutch, Thai, Sign Language.
-- Kategori A: Portuguese, Vietnamese, Hindi, Turkish, Polish, Swedish, Greek, Norwegian, Danish, Hebrew, Tagalog, Farsi/Persia, English British, Czech, Finnish, Romanian, Hungarian, Malay, Urdu, Khmer, Uzbek, Serbian, Estonian, Swahili, Traditional Chinese, Cantonese, Georgian, Irish, Latin, dan bahasa langka/Eropa lain.
+- Kategori A: Portuguese, Vietnamese, Hindi, Turkish, Polish, Swedish, Greek, Norwegian, Danish, Hebrew, Tagalog, Farsi/Persia, English British, Czech, Finnish, Romanian, Hungarian, Malay, Urdu, Khmer, Uzbek, Serbian, Estonian, Swahili, Traditional Chinese, Cantonese, Georgian, Irish, Latin, Esperanto, Mesir Kuno (Ancient Egyptian), dan bahasa langka/Eropa/klasik lain.
 - Kategori D (bahasa daerah Nusantara): Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura. (Melayu TIDAK termasuk D — Melayu bahasa asing Malaysia/Brunei/Singapura, masuk kategori A.)
 - Kategori E: BIPA (Indonesian for Foreigners).
 Tarif per sesi 60 menit (urutan A1 | A2 | B1/B2 | C1/C2):
@@ -431,6 +433,36 @@ const LANG_ID: Record<string, string> = {
   Tagalog: "Tagalog",
   Hindi: "Hindi",
   "Sign Language": "Bahasa Isyarat",
+  // linguo-patch:ai-pengajar-per-bahasa-v1 — nama bahasa lain yang muncul di
+  // kolom `teachers.languages` (blok PENGAJAR AKTIF PER BAHASA memakai tabel
+  // yang sama dengan blok jadwal supaya penamaannya tidak berbeda).
+  Norwegian: "Norwegia",
+  Danish: "Denmark",
+  Finnish: "Finlandia",
+  Bulgarian: "Bulgaria",
+  Ukrainian: "Ukraina",
+  Hungarian: "Hungaria",
+  Georgian: "Georgia",
+  Uzbek: "Uzbek",
+  Basque: "Basque",
+  Czech: "Ceko",
+  Romanian: "Rumania",
+  Estonian: "Estonia",
+  Serbian: "Serbia",
+  Irish: "Irlandia",
+  Latin: "Latin",
+  Esperanto: "Esperanto",
+  "Ancient Egyptian": "Mesir Kuno",
+  "Traditional Chinese": "Mandarin Tradisional",
+  Batak: "Batak",
+  Banjar: "Banjar",
+  Bugis: "Bugis",
+  Balinese: "Bali",
+  Madurese: "Madura",
+  Betawi: "Betawi",
+  BIPA: "BIPA",
+  IELTS: "IELTS Prep",
+  TOEFL: "TOEFL Prep",
 };
 
 function langLabel(raw: unknown): string {
@@ -653,6 +685,166 @@ function buildOfflineBlock(rows: unknown[]): string {
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PENGAJAR AKTIF PER BAHASA (linguo-patch:ai-pengajar-per-bahasa-v1)
+//
+// "yang ngajar Korea siapa aja?" — sebelum ini Ling menjawab "nanti admin
+// lihatkan setelah kakak tentukan program", padahal nama pengajarnya ada di
+// database. Blok ini menarik pengajar berstatus Aktif realtime lalu
+// mengelompokkannya per bahasa; nama tampil = sapaan + nama panggilan
+// ("Kak Dhani"), sama seperti yang dilihat siswa di dashboard.
+//
+// Nilai `teachers.languages` kotor ("english|C1", "English - Conversation",
+// "🇹🇭Thailand", "Ukraine") — tiap entri dinormalkan dulu sebelum dikelompokkan.
+//
+// Salinan logika ini ada di linguo-app/supabase/functions/suggest-reply dan
+// linguo-wa-bot/db.js — ubah bertiga kalau diganti.
+// ─────────────────────────────────────────────────────────────────────────────
+let teacherCache: { text: string; at: number } = { text: "", at: 0 };
+const TEACHER_TTL_MS = 30 * 60 * 1000; // daftar pengajar jarang berubah
+const TEACHER_NAMES_SHOWN = 6; // sisanya cukup dihitung, biar prompt tak bengkak
+
+// Baris pengajar yang mengaku mengajar LEBIH dari sekian bahasa dianggap akun
+// internal/uji coba, bukan roster asli — dan dibuang dari blok ini. Per Agustus
+// 2026 cuma ada satu baris seperti itu (akun owner, 28 bahasa), tapi kalau ikut
+// masuk dia jadi SATU-SATUNYA nama untuk Basque/Yunani/Uzbek/Bulgaria dst, dan
+// AI akan menyebutkannya ke user sebagai pengajar bahasa itu. Lebih aman
+// bahasanya jatuh ke jawaban "belum ada pengajar aktif, nanti dicarikan".
+const MAX_LANG_PER_TEACHER = 10;
+
+/** Alias nilai `teachers.languages` yang tidak seragam → nama kanonik LANG_ID. */
+const LANG_ALIAS: Record<string, string> = {
+  "english - conversation": "English",
+  "english - british": "English",
+  "english conversation": "English",
+  "test prep - ielts": "IELTS",
+  "test prep - toefl": "TOEFL",
+  "toefl prep": "TOEFL",
+  "toefl-itp": "TOEFL",
+  "toefl itp": "TOEFL",
+  ielts: "IELTS",
+  toefl: "TOEFL",
+  thailand: "Thai",
+  ukraine: "Ukrainian",
+  georgia: "Georgian",
+  bisindo: "Sign Language",
+  bipa: "BIPA",
+  filipino: "Tagalog",
+  farsi: "Persian",
+  chinese: "Mandarin",
+};
+
+/** "🇹🇭Thailand" / "english|C1" → "Thai" / "English" (buang emoji, level & alias). */
+function canonLang(raw: unknown): string {
+  const bare = String(raw || "")
+    .split("|")[0]
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu, "")
+    .trim();
+  if (!bare) return "";
+  const alias = LANG_ALIAS[bare.toLowerCase()];
+  if (alias) return alias;
+  return bare.charAt(0).toUpperCase() + bare.slice(1);
+}
+
+// Nama panggilan pengajar — kembaran `callName` di src/lib/teacherName.ts. Sengaja
+// tidak di-import: blok ini harus identik dengan salinannya di edge function &
+// bot WA yang tidak punya akses ke modul landing.
+const GELAR_RE = /^(mr|mrs|ms|miss|dr|drs|ir|prof|kak|bu|pak|mba|mbak|mas)\.?$/i;
+const AWALAN_RE = /^(m|moh|mohd|muh|mochamad|mochammad|mohamad|mohammad|muhamad|muhammad)\.?$/i;
+const PANGGILAN_KHUSUS: Record<string, string> = { "muhamad lutfi ramadhani": "Dhani" };
+
+/** "Ayu Shinta Yuliani, S.Pd.,Gr" + title "Kak" → "Kak Ayu". */
+function teacherSapaan(fullName: unknown, title: unknown): string {
+  const raw = String(fullName || "").trim();
+  if (!raw) return "";
+  const khusus = PANGGILAN_KHUSUS[raw.toLowerCase().replace(/\s+/g, " ")];
+  let panggilan = khusus || "";
+  if (!panggilan) {
+    const dalamKurung = raw.match(/\(([^)]{2,})\)/)?.[1]?.trim();
+    const dasar = dalamKurung || raw.split(",")[0];
+    const kata = dasar.replace(/\(.*?\)/g, " ").split(/\s+/).filter(Boolean);
+    const bersih = kata.filter((k) => !GELAR_RE.test(k));
+    const pilihan = bersih.length > 1 && AWALAN_RE.test(bersih[0]) ? bersih.slice(1) : bersih;
+    const pertama = pilihan[0] || kata[0] || "";
+    // Sebagian nama diketik KAPITAL SEMUA di database ("MUIZ", "GRACIA") —
+    // dirapikan di sini supaya balasan tidak terbaca seperti berteriak.
+    const dasarNama = pertama === pertama.toUpperCase() ? pertama.toLowerCase() : pertama;
+    panggilan = dasarNama.charAt(0).toUpperCase() + dasarNama.slice(1);
+  }
+  if (!panggilan) return "";
+  return `${String(title || "Kak").trim()} ${panggilan}`;
+}
+
+const TEACHER_NOTE = `CATATAN PENGAJAR (WAJIB DIPATUHI):
+- Daftar di atas ditarik REALTIME dari database pengajar berstatus Aktif. Ini SATU-SATUNYA sumber nama pengajar — DILARANG KERAS mengarang nama, gelar, asal kampus, atau pengalaman pengajar.
+- Pertanyaan "yang ngajar [bahasa] siapa aja", "pengajarnya siapa kak", "ada berapa pengajar [bahasa]" DIJAWAB LANGSUNG dari daftar ini: sebut 2-4 nama + jumlah totalnya. DILARANG menjawab "nanti admin lihatkan setelah kakak tentukan program" atau "dicek dulu ya" — datanya sudah ada di sini.
+- Tulis namanya persis seperti di daftar (sapaan + nama panggilan, mis. "Kak Ayu"). Jangan menambah gelar, jangan menebak jenis kelamin pengajar, jangan menyingkat jadi inisial.
+- SATU NAMA HANYA BOLEH DIPAKAI UNTUK BAHASA DI BARISNYA SENDIRI. Sebelum menulis sebuah nama, cek bahwa nama itu benar-benar tercantum di baris bahasa YANG DITANYAKAN. DILARANG meminjam nama dari baris bahasa lain karena kelihatan mirip atau supaya jawabannya terisi.
+- Bahasa yang ditanyakan TIDAK PUNYA BARIS di daftar → itu artinya memang BELUM ADA pengajar aktif untuk bahasa itu. Jawab apa adanya ("untuk bahasa itu belum ada pengajar aktif saat ini kak, nanti dibantu carikan & dikabari"), lalu tawarkan bahasa lain. JANGAN menyebut satu nama pun. Bahasanya tetap bisa didaftarkan — yang belum ada cuma pengajarnya.
+- Boleh menyebut jumlah pengajar, TAPI jangan pernah menyalin penanda dalam kurung siku ("[+12 lainnya]", "[1 NATIVE]") ke balasan — itu catatan internal.
+- Nama yang muncul BUKAN janji penempatan. Selalu tambahkan bahwa pengajar final dicocokkan dengan jadwal & level siswa. Contoh nada: "Untuk Korea sekarang ada 13 pengajar aktif kak, di antaranya Kak Ebi, Kak Risma, dan Kak Anisa — nanti dicocokkan dengan jadwal kakak ya 😊".
+- DILARANG membagikan nomor WhatsApp, email, alamat, atau data pribadi pengajar. Pertanyaan detail CV/pengalaman/sertifikat: boleh sebut namanya, tapi rinciannya dicek admin dulu.`;
+
+/** Rangkum baris `teachers` jadi daftar bahasa → nama pengajar aktif. */
+function buildTeacherBlock(rows: unknown[]): string {
+  const byLang = new Map<string, { nama: Set<string>; native: number }>();
+  let total = 0;
+  for (const row of rows || []) {
+    const t = row as { name?: unknown; title?: unknown; languages?: unknown; origin?: unknown };
+    const nama = teacherSapaan(t?.name, t?.title);
+    if (!nama) continue;
+    const langs = Array.isArray(t?.languages) ? t.languages : [];
+    if (langs.length > MAX_LANG_PER_TEACHER) continue;
+    total++;
+    // Set per bahasa: pengajar yang menulis "English" DAN "english|C1" hanya dihitung sekali.
+    for (const l of langs) {
+      const canon = canonLang(l);
+      if (!canon) continue;
+      const label = LANG_ID[canon] || canon;
+      const e = byLang.get(label) || { nama: new Set<string>(), native: 0 };
+      if (!e.nama.has(nama) && t?.origin === "Native") e.native++;
+      e.nama.add(nama);
+      byLang.set(label, e);
+    }
+  }
+  if (!byLang.size) return "";
+
+  const lines = [...byLang.entries()]
+    .sort((a, b) => b[1].nama.size - a[1].nama.size || a[0].localeCompare(b[0]))
+    .map(([label, e]) => {
+      const nama = [...e.nama];
+      const tampil = nama.slice(0, TEACHER_NAMES_SHOWN).join(", ");
+      const sisa = nama.length - TEACHER_NAMES_SHOWN;
+      const native = e.native ? ` [${e.native} NATIVE]` : "";
+      return `- ${label}: ${nama.length} pengajar${native} — ${tampil}${sisa > 0 ? ` [+${sisa} lainnya]` : ""}`;
+    });
+
+  return (
+    `PENGAJAR AKTIF PER BAHASA (realtime dari database pengajar — ${total} pengajar aktif):\n` +
+    lines.join("\n") +
+    "\n\n" +
+    TEACHER_NOTE
+  );
+}
+
+async function getTeacherBlock(): Promise<string> {
+  if (Date.now() - teacherCache.at < TEACHER_TTL_MS) return teacherCache.text;
+  const client = sb();
+  if (!client) return teacherCache.text;
+  try {
+    const { data } = await client
+      .from("teachers")
+      .select("name, title, languages, origin")
+      .eq("status", "Aktif")
+      .limit(1000);
+    const text = buildTeacherBlock((data as unknown[]) || []);
+    teacherCache = { text, at: Date.now() };
+    return text;
+  } catch {
+    return teacherCache.text;
+  }
+}
+
 async function getOfflineBlock(): Promise<string> {
   if (Date.now() - offlineCache.at < OFFLINE_TTL_MS) return offlineCache.text;
   const client = sb();
@@ -760,8 +952,12 @@ export async function POST(req: Request) {
         model: MODEL,
         max_tokens: 1024,
         system: await (async () => {
-          const [sched, offline] = await Promise.all([getScheduleBlock(), getOfflineBlock()]);
-          return [SYSTEM, sched, offline].filter(Boolean).join("\n\n");
+          const [sched, offline, teacher] = await Promise.all([
+            getScheduleBlock(),
+            getOfflineBlock(),
+            getTeacherBlock(),
+          ]);
+          return [SYSTEM, sched, offline, teacher].filter(Boolean).join("\n\n");
         })(),
         messages: msgs,
       }),

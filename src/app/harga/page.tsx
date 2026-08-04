@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Hand, Scroll, Globe, Landmark } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
+import { matchesLangQuery } from "@/lib/langAlias";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -153,8 +154,9 @@ export default function HargaPage() {
   const filtered = useMemo(() => {
     setShowAll(false);
     if (!search.trim()) return LANGUAGES;
-    const q = search.toLowerCase();
-    return LANGUAGES.filter(l => l.name.toLowerCase().includes(q));
+    // Cari juga lewat nama Indonesia: yang diketik orang "mesir kuno", bukan
+    // "Ancient Egyptian" (lihat lib/langAlias).
+    return LANGUAGES.filter(l => matchesLangQuery(l.name, search));
   }, [search]);
 
   const currentLevel = LEVELS[levelIdx];
