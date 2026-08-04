@@ -10,6 +10,8 @@ type Props = {
   onChange: (tab: TabKey) => void;
   // [materi-gate-v1] sembunyikan tab "Materi" kalau email tidak masuk allowlist.
   canAccessMateri?: boolean;
+  // [preview-session-v1] mode POV siswa (staf) — tautan wajib bawa ?preview=<id>.
+  previewStudentId?: string | null;
 };
 
 // Tab biasa memicu onChange; item ber-`href` (Watch & Learn) menavigasi ke route
@@ -26,8 +28,12 @@ const TABS: NavItem[] = [
   { key: "akun",    label: "Akun",    icon: User },
 ];
 
-export default function MobileBottomNav({ activeTab, onChange, canAccessMateri = true }: Props) {
+export default function MobileBottomNav({ activeTab, onChange, canAccessMateri = true, previewStudentId = null }: Props) {
   const tabs = TABS.filter((item) => canAccessMateri || item.key !== "materi");
+  const withPreview = (href: string) =>
+    previewStudentId
+      ? `${href}${href.includes("?") ? "&" : "?"}preview=${encodeURIComponent(previewStudentId)}`
+      : href;
   return (
     <nav
       className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
@@ -57,20 +63,28 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
           }`;
           if ("href" in item) {
             return (
-              <Link key={key} href={item.href} prefetch className={cls}>
+              <Link key={key} href={withPreview(item.href)} prefetch className={cls}>
                 {inner}
               </Link>
             );
           }
+          // [nav-newtab-v1] tab juga tautan asli (/akun?menu=<key>) supaya bisa
+          // ditekan-lama → "buka di tab baru". Klik biasa tetap pindah tab in-place.
           return (
-            <button
+            <Link
               key={key}
-              onClick={() => onChange(item.key)}
+              href={withPreview(`/akun?menu=${key}`)}
+              prefetch={false}
+              onClick={(e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                e.preventDefault();
+                onChange(item.key);
+              }}
               className={cls}
               aria-current={isActive ? "page" : undefined}
             >
               {inner}
-            </button>
+            </Link>
           );
         })}
       </div>

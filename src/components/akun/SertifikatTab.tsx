@@ -228,12 +228,39 @@ function productKindOf(p?: string): Kind {
 }
 const showsSkills = (k: Kind) => k === "private" || k === "reguler";
 
-// ── Kategori sertifikat: Kelas Live (Private/Reguler/Kids/Test Prep) vs Belajar Mandiri (LMS/e-learning) ──
+// ── Kategori sertifikat ─────────────────────────────────────────────────────
+// Dua sumbu kategori dipakai bareng di satu baris chip:
+//   1) cara belajar  — Kelas Live vs Belajar Mandiri (LMS/e-learning)
+//   2) jenis program — Kelas Reguler / Kelas Private / IELTS & TOEFL Prep / Kids,
+//      diturunkan dari Cert.product lewat productKindOf().
 type CertCat = "live" | "mandiri";
 function certCategory(c: Cert): CertCat {
   const p = (c.product || "").toLowerCase();
   if (/e-?learning|mandiri|lms|self[\s-]?paced/.test(p)) return "mandiri";
   return "live"; // private / reguler / kids / testprep = kelas dengan pengajar
+}
+
+// [sertifikat-kategori-program-v1] chip jenis program.
+type ProdKey = Exclude<Kind, "default">;
+type FilterKey = "all" | CertCat | ProdKey;
+const PRODUCT_FILTERS: { key: ProdKey; label: string; hint?: string }[] = [
+  { key: "reguler", label: "Kelas Reguler" },
+  { key: "private", label: "Kelas Private", hint: "Program Private tersedia sampai level tertinggi B1." },
+  { key: "testprep", label: "IELTS & TOEFL Prep" },
+  { key: "kids", label: "Kelas Kids" },
+];
+/** Label pendek jenis program buat kartu daftar (kolomnya cuma 320px). */
+const PROD_SHORT: Record<Kind, string> = {
+  reguler: "Reguler",
+  private: "Private",
+  testprep: "IELTS & TOEFL",
+  kids: "Kids",
+  default: "",
+};
+function matchesFilter(c: Cert, key: FilterKey): boolean {
+  if (key === "all") return true;
+  if (key === "live" || key === "mandiri") return certCategory(c) === key;
+  return productKindOf(c.product) === key;
 }
 const COPY: Record<Kind, { eyebrow: string; body: (lang: string) => string }> = {
   private: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program privat Bahasa ${l}` },
@@ -337,19 +364,30 @@ export default function SertifikatTab({
   const issuedCount = list.filter((c) => c.status === "issued").length;
   const lockedCount = list.filter((c) => c.status === "progress").length;
 
-  // ── Filter kategori (Semua / Kelas Live / Belajar Mandiri) ──
-  const [filter, setFilter] = useState<"all" | CertCat>("all");
-  const liveCount = useMemo(() => list.filter((c) => certCategory(c) === "live").length, [list]);
-  const mandiriCount = useMemo(() => list.filter((c) => certCategory(c) === "mandiri").length, [list]);
-  const filtered = useMemo(
-    () => (filter === "all" ? list : list.filter((c) => certCategory(c) === filter)),
-    [list, filter]
-  );
-  const FILTERS: { key: "all" | CertCat; label: string; count: number }[] = [
-    { key: "all", label: "Semua", count: list.length },
-    { key: "live", label: "Kelas Live", count: liveCount },
-    { key: "mandiri", label: "Belajar Mandiri", count: mandiriCount },
-  ];
+  // ── Filter kategori (cara belajar + jenis program) ──
+  const [filter, setFilter] = useState<FilterKey>("all");
+  const FILTERS = useMemo(() => {
+    const countOf = (k: FilterKey) => list.filter((c) => matchesFilter(c, k)).length;
+    const rows: { key: FilterKey; label: string; count: number; hint?: string }[] = [
+      { key: "all", label: "Semua", count: list.length },
+      { key: "live", label: "Kelas Live", count: countOf("live") },
+      { key: "mandiri", label: "Belajar Mandiri", count: countOf("mandiri") },
+    ];
+    // Chip jenis program cuma muncul kalau siswa memang punya sertifikat jenisnya —
+    // kalau keempatnya selalu dipasang, kolom 320px penuh chip berangka 0.
+    for (const p of PRODUCT_FILTERS) {
+      const n = countOf(p.key);
+      if (n) rows.push({ key: p.key, label: p.label, count: n, hint: p.hint });
+    }
+    return rows;
+  }, [list]);
+  // Sertifikat baru terbit bisa bikin chip yang lagi aktif hilang → balik ke "Semua"
+  // supaya daftarnya tidak kosong tanpa sebab yang kelihatan.
+  useEffect(() => {
+    if (!FILTERS.some((f) => f.key === filter)) setFilter("all");
+  }, [FILTERS, filter]);
+  const filtered = useMemo(() => list.filter((c) => matchesFilter(c, filter)), [list, filter]);
+  const activeHint = FILTERS.find((f) => f.key === filter)?.hint;
 
   const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
   // detail mengikuti list yang sedang difilter; fallback ke item pertama kategori aktif
@@ -412,6 +450,9 @@ export default function SertifikatTab({
               );
             })}
           </div>
+          {activeHint && (
+            <p className="-mt-1 px-4 pb-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">{activeHint}</p>
+          )}
           <div className="flex max-h-[360px] flex-1 flex-col gap-2.5 overflow-y-auto px-4 pb-4 lg:max-h-none">
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center gap-1 px-4 py-10 text-center">
@@ -440,7 +481,12 @@ export default function SertifikatTab({
                   <FlagBadge lang={ct.language} variant="list" dark={isDark} />
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{ct.language} — {ct.level}</span>
-                    <span className="block truncate text-[12px] font-medium text-[#6B7280]">CEFR · {ct.title}</span>
+                    {/* [sertifikat-kategori-program-v1] jenis program ikut tampil di kartu,
+                        biar kategorinya kebaca tanpa harus main filter dulu. */}
+                    <span className="block truncate text-[12px] font-medium text-[#6B7280]">
+                      CEFR · {ct.title}
+                      {PROD_SHORT[productKindOf(ct.product)] ? ` · ${PROD_SHORT[productKindOf(ct.product)]}` : ""}
+                    </span>
                   </span>
                   {ct.status === "issued" ? (
                     <span className="flex shrink-0 items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-600"><BadgeCheck className="h-3.5 w-3.5" />Terbit</span>

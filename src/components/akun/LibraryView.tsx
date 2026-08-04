@@ -881,7 +881,9 @@ function RenewModal({
           ) : tiers.length === 0 ? (
             <div className="py-10 text-center">
               <p className="text-[14px] font-semibold text-slate-500">Paket perpanjang belum tersedia.</p>
-              <a href="/toko" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#12A37E] hover:underline">
+              {/* [nav-newtab-v1] toko dibuka di tab baru: belanja modul tidak menendang
+                  siswa keluar dari dashboard yang lagi dibuka. */}
+              <a href="/toko" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-[#12A37E] hover:underline">
                 Lihat di Toko <ChevronRight className="h-4 w-4" />
               </a>
             </div>
@@ -948,6 +950,8 @@ function EmptyState() {
       </p>
       <a
         href="/toko"
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#12A37E] px-6 py-3 text-[14px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98]"
       >
         <ShoppingBag className="h-4 w-4" /> Jelajahi Toko Digital

@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase-client";
 import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, ExternalLink, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 
@@ -235,29 +235,52 @@ export default function StudentShell({
     };
   }, [drawerOpen]);
 
+  // [preview-session-v1] tiap tautan wajib bawa ?preview=<id> supaya sesi pratinjau
+  // staf tidak jatuh saat pindah halaman.
+  const withPreview = (href: string) =>
+    previewStudentId
+      ? `${href}${href.includes("?") ? "&" : "?"}preview=${encodeURIComponent(previewStudentId)}`
+      : href;
+
+  // [nav-newtab-v1] Bungkus item nav + tombol kecil "buka di tab baru" (desktop;
+  // di HP pakai tekan-lama pada menunya, tombolnya sengaja disembunyikan).
+  const navRow = (item: NavItem, href: string, node: ReactNode) => (
+    <div key={item.key} className="group/nav relative">
+      {node}
+      <button
+        type="button"
+        title="Buka di tab baru"
+        aria-label={`Buka ${item.label} di tab baru`}
+        onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
+        className="absolute right-1.5 top-1/2 hidden -translate-y-1/2 rounded-lg p-1.5 text-white/55 opacity-0 transition hover:bg-white/15 hover:text-white focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 group-hover/nav:opacity-100 lg:block"
+      >
+        <ExternalLink className="h-3.5 w-3.5" strokeWidth={2.2} />
+      </button>
+    </div>
+  );
+
   // Satu renderer dipakai sidebar desktop & drawer mobile → menunya mustahil beda.
   const renderItem = (item: NavItem, onNavigated?: () => void) => {
     const Icon = item.icon;
+    // pr-9 di desktop: menyisakan ruang buat tombol "buka di tab baru" di kanan.
+    const NAV_ITEM_LINK = `${NAV_ITEM_BASE} lg:pr-9`;
     if ("href" in item) {
       // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
       // (dulu <a> biasa = full page reload tiap pindah menu)
       const isActiveLink = item.key === active;
-      const href = previewStudentId
-        ? `${item.href}${item.href.includes("?") ? "&" : "?"}preview=${encodeURIComponent(previewStudentId)}`
-        : item.href;
-      return (
+      const href = withPreview(item.href);
+      return navRow(item, href, (
         <Link
-          key={item.key}
           href={href}
           prefetch
           onClick={onNavigated}
-          className={`${NAV_ITEM_BASE} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+          className={`${NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
           aria-current={isActiveLink ? "page" : undefined}
         >
           <Icon className={NAV_ICON} />
           <span className="truncate">{item.label}</span>
         </Link>
-      );
+      ));
     }
     if (item.soon) {
       return (
@@ -267,18 +290,31 @@ export default function StudentShell({
         </div>
       );
     }
+    // [nav-newtab-v1] Menu tab dulu <button> murni → klik-tengah / Ctrl+klik / menu
+    // kanan "buka di tab baru" mustahil, jadi siswa harus balik ke menu awal tiap
+    // mau lihat halaman lain. Sekarang tiap tab punya URL asli /akun?menu=<key>
+    // (dibaca deep-link parser di app/akun/page.tsx). Klik biasa TETAP pindah tab
+    // in-place lewat onTabChange (tanpa reload); klik dengan modifier dilepas ke
+    // browser supaya membuka tab baru seperti tautan normal.
     const isActive = item.key === active;
-    return (
-      <button
-        key={item.key}
-        onClick={() => { onTabChange(item.key as AkunTab); onNavigated?.(); }}
-        className={`${NAV_ITEM_BASE} ${isActive ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+    const href = withPreview(`/akun?menu=${item.key}`);
+    return navRow(item, href, (
+      <Link
+        href={href}
+        prefetch={false}
+        onClick={(e) => {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          onTabChange(item.key as AkunTab);
+          onNavigated?.();
+        }}
+        className={`${NAV_ITEM_LINK} ${isActive ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
         aria-current={isActive ? "page" : undefined}
       >
         <Icon className={NAV_ICON} />
         <span className="truncate">{item.label}</span>
-      </button>
-    );
+      </Link>
+    ));
   };
 
   const renderNav = (onNavigated?: () => void) => (
@@ -598,6 +634,7 @@ export default function StudentShell({
           activeTab={BOTTOM_TAB[active] || "beranda"}
           onChange={onTabChange}
           canAccessMateri={canAccessMateri}
+          previewStudentId={previewStudentId}
         />
       )}
     </div>
