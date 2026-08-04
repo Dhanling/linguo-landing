@@ -5,7 +5,7 @@ import Link from "next/link";
 // [kelas-detail-resilient-v1] pakai klien BERSAMA — instance GoTrue ganda bikin
 // race refresh token (query bisa 401 sesaat padahal user masih login).
 import { supabase } from "@/lib/supabase-client";
-import { canAccessMateri as canAccessMateriGate } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
+import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
@@ -27,7 +27,9 @@ type NavItem =
 // [dev-gate-lingbook-v1] menu yang masih development → cuma tampil buat email allowlist
 // (lib/materiGate). Digate DI SINI biar semua halaman yang pakai StudentShell ikut aman,
 // bukan cuma /akun.
-const DEV_ONLY_KEYS = new Set(["materi", "lingbook"]);
+// [materi-bahasa-siswa-v1] "Kelas & Materi" KELUAR dari daftar ini — sudah dibuka untuk
+// semua siswa (isinya dibatasi ke bahasa yang dia ambil, bukan ke email tertentu).
+const DEV_ONLY_KEYS = new Set(["lingbook"]);
 
 // [shell-nav-groups-v1] menu dikelompokkan + dikasih label seksi. Dulu 10 item rata
 // tanpa pengelompokan → semua bobotnya sama, siswa mesti coba-coba satu-satu.
@@ -139,13 +141,13 @@ export default function StudentShell({
     window.location.href = "/";
   };
 
-  // [dev-gate-lingbook-v1] cek email sesi → menu development (Kelas & Materi, Lingbook)
-  // default SEMBUNYI sampai terbukti masuk allowlist, biar ga sempat kelihatan sekilas.
+  // [dev-gate-lingbook-v1] cek email sesi → menu development (Lingbook) default
+  // SEMBUNYI sampai terbukti masuk allowlist, biar ga sempat kelihatan sekilas.
   const [devOk, setDevOk] = useState(false);
   useEffect(() => {
     let alive = true;
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (alive) setDevOk(canAccessMateriGate(session?.user?.email));
+      if (alive) setDevOk(canAccessLingbook(session?.user?.email));
     });
     return () => { alive = false; };
   }, []);
@@ -182,7 +184,10 @@ export default function StudentShell({
 
   const showNav = (key: string) => {
     if (key === "grup") return hasGroup;
-    return !DEV_ONLY_KEYS.has(key) || (devOk && (key !== "materi" || canAccessMateri));
+    // [materi-bahasa-siswa-v1] "Kelas & Materi" tampil untuk semua siswa; prop tetap
+    // dihormati kalau halaman pemanggil mau menyembunyikannya.
+    if (key === "materi") return canAccessMateri;
+    return !DEV_ONLY_KEYS.has(key) || devOk;
   };
 
   // [ling-lms-dark-v1] dark mode dashboard — state sync dgn LessonPlayer via localStorage "lms-dark-mode"
@@ -569,7 +574,7 @@ export default function StudentShell({
         <MobileBottomNav
           activeTab={BOTTOM_TAB[active] || "beranda"}
           onChange={onTabChange}
-          canAccessMateri={devOk && canAccessMateri}
+          canAccessMateri={canAccessMateri}
         />
       )}
     </div>

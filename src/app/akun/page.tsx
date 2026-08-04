@@ -7,6 +7,7 @@ import Link from "next/link"; // [kelas-detail-page-v1] card kelas → halaman /
 import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-siswa-v1]
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
@@ -2453,13 +2454,11 @@ export default function AkunPage() {
     // previewMode ikut dep: mode pratinjau baru ketahuan setelah efek auth jalan,
     // dan pemanasan data (butuh sesi login) tak boleh ikut jalan di mode itu.
   }, [previewMode]);
-  // [materi-gate-v1] menu "Kelas & Materi" masih under development → hanya boleh
-  // diakses email di allowlist. Kalau bukan, lempar balik ke Beranda (menutup
-  // deep-link ?menu=materi maupun tab tersimpan di localStorage).
+  // [materi-bahasa-siswa-v1] menu "Kelas & Materi" sudah dibuka untuk semua siswa —
+  // gate per-email (materi-gate-v1) dicabut, termasuk lemparan balik ke Beranda buat
+  // deep-link ?menu=materi. Pembatasannya sekarang di DATA: kelas live = registrasi
+  // milik siswa, Belajar Mandiri = bahasa yang dia ambil/beli.
   const canSeeMateri = canAccessMateriGate(user?.email);
-  useEffect(() => {
-    if (!canSeeMateri && activeTab === "materi") setActiveTab("beranda");
-  }, [canSeeMateri, activeTab]);
   // [linguo-patch:pustaka-page-v1] menu "Perpustakaan" sekarang punya halaman sendiri → redirect ke /akun/perpustakaan
   // [perf:sidebar-nav-v1] router.replace (client-side, instan) — dulu window.location.replace = full reload
   useEffect(() => {
@@ -3097,6 +3096,14 @@ export default function AkunPage() {
     r.pipeline_status !== "Batal" && !r.archived_at &&
     (r.payment_status === "Lunas" || r.payment_status === "Cicilan")
   ) || [], [student]);
+
+  // [materi-bahasa-siswa-v1] Bahasa yang BENAR-BENAR diambil siswa (slug kanonik) —
+  // dipakai menyaring isi menu "Kelas & Materi" biar tak ada bahasa lain yang nongol.
+  // Nilai yang bukan bahasa tunggal ("All Languages", "TBD") jatuh ke null & dibuang.
+  const myLanguageSlugs = useMemo(
+    () => Array.from(new Set(activeRegs.map((r: any) => languageSlug(r.language)).filter(Boolean) as string[])),
+    [activeRegs]
+  );
 
   // Sertifikat diturunkan dari registrasi aktif: 'progress' (used/total) atau 'issued' (used>=total).
   const certs = useMemo<Cert[]>(() => {
@@ -4419,7 +4426,23 @@ export default function AkunPage() {
                   { color: "#0891B2", tintBg: "bg-cyan-50", tintText: "text-cyan-600" },
                   { color: "#7C3AED", tintBg: "bg-violet-50", tintText: "text-violet-500" },
                 ];
-                const liveClasses = activeRegs.filter((r: any) => r.status === "Aktif");
+                /* [materi-bahasa-siswa-v1] Daftar kelas di menu materi = SEMUA kelas
+                   berbayar milik siswa.
+                   - Baris placeholder ("All Languages", "TBD", bahasa kosong) dibuang —
+                     itu paket, bukan bahasa. Nama bahasa yang belum punya silabus
+                     (mis. "Sign Language") TETAP tampil: itu kelas miliknya, cuma
+                     panel silabusnya yang bilang "belum tersedia".
+                   - Kelas yang paketnya habis (status "Non Aktif") ikut ditampilkan,
+                     diurutkan setelah yang masih berjalan. Materinya tetap punya siswa,
+                     dan tanpa ini chip filter "Selesai" mustahil punya isi. */
+                const isPlaceholderLang = (lang?: string | null) => {
+                  const v = (lang || "").trim().toLowerCase();
+                  return v === "" || v === "all languages" || v === "tbd";
+                };
+                const liveClasses = activeRegs
+                  .filter((r: any) => !isPlaceholderLang(r.language))
+                  .slice()
+                  .sort((a: any, b: any) => (a.status === "Aktif" ? 0 : 1) - (b.status === "Aktif" ? 0 : 1));
                 const pctOf = (r: any) => {
                   const t = r.sessions_total || 0; const u = r.sessions_used || 0;
                   return t > 0 ? Math.min(100, Math.max(0, Math.round((u / t) * 100))) : 0;
@@ -4509,7 +4532,15 @@ export default function AkunPage() {
                         <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
                           <div className="shrink-0 px-6 pb-4 pt-7">
                             <h2 className="text-[18px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
-                            <p className="mt-0.5 text-[12px] font-medium text-gray-500">{liveClasses.length} kelas aktif</p>
+                            {/* [materi-bahasa-siswa-v1] daftar ini kini memuat kelas selesai juga,
+                                jadi jangan lagi menyebut semuanya "aktif". */}
+                            <p className="mt-0.5 text-[12px] font-medium text-gray-500">
+                              {liveClasses.length} kelas
+                              {(() => {
+                                const jalan = liveClasses.filter((r: any) => r.status === "Aktif").length;
+                                return jalan < liveClasses.length ? ` · ${jalan} berjalan` : "";
+                              })()}
+                            </p>
                             <div className="mt-4 flex gap-2">
                               {([["all", "Semua"], ["run", "Berjalan"], ["done", "Selesai"]] as const).map(([k, label]) => (
                                 <button key={k} onClick={() => setMateriFilter(k)} className={`h-8 rounded-full px-3 text-[12px] font-bold transition ${materiFilter === k ? "bg-[#16796E] text-white" : "bg-[#F5F6F8] text-gray-500 hover:text-[#12172B]"}`}>{label}</button>
@@ -4619,8 +4650,12 @@ export default function AkunPage() {
                             ) : (
                               <SilabusOutline
                                 /* [reguler-english-conversation-v1] slug HARUS dari bahasa dasar —
-                                   "English - Conversation A1.1 (ENG-A11-AUG26)" dulu jadi slug ngawur. */
-                                slug={baseLanguage(selected.language).toLowerCase().replace(/\s+/g, "-") || "english"}
+                                   "English - Conversation A1.1 (ENG-A11-AUG26)" dulu jadi slug ngawur.
+                                   [materi-bahasa-siswa-v1] pakai peta kanonik (nama Indonesia "Rusia"
+                                   pun ketemu) & TANPA fallback "english": kalau bahasanya tak dikenal,
+                                   lebih baik "silabus belum tersedia" daripada memutar materi bahasa
+                                   yang bukan diambil siswa. */
+                                slug={languageSlug(selected.language) || baseLanguage(selected.language).toLowerCase().replace(/\s+/g, "-")}
                                 languageLabel={displayLanguage(selected.language) || ""}
                                 currentLevel={selected.level}
                                 showPlacementTest={selected.product !== "English Test Preparation"}
@@ -4650,6 +4685,9 @@ export default function AkunPage() {
                       <LmsKatalog
                         topBar={MateriTopBar}
                         query={materiSearch}
+                        /* [materi-bahasa-siswa-v1] daftar bahasa dibatasi ke bahasa yang
+                           diambil siswa (kelas live) + yang sudah dibeli e-learning-nya. */
+                        languages={myLanguageSlugs}
                         onOpen={(id) => {
                           setLmsSesi(id);
                           if (typeof window !== "undefined") window.history.replaceState(null, "", `/akun?menu=materi&sesi=${id}`);

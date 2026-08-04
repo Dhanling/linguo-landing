@@ -137,7 +137,16 @@ export default function LmsKatalog({
   topBar,
   // [materi-search-live-v1] teks dari kotak cari di top bar Kelas & Materi
   query = "",
-}: { onOpen?: (lessonId: string) => void; topBar?: ReactNode; query?: string }) {
+  // [materi-bahasa-siswa-v1] slug bahasa yang diambil siswa lewat KELAS LIVE.
+  // Digabung dengan bahasa yang sudah dibeli e-learning-nya (owned) — di luar dua
+  // itu tidak ditampilkan sama sekali.
+  languages = [],
+}: {
+  onOpen?: (lessonId: string) => void;
+  topBar?: ReactNode;
+  query?: string;
+  languages?: string[];
+}) {
   const [loading, setLoading] = useState(() => !_lmsCache);
   const [courses, setCourses] = useState<Course[]>(() => _lmsCache?.courses || []);
   const [sel, setSel] = useState<string>(() => _lmsCache?.courses[0]?.slug || ""); // selected slug
@@ -206,7 +215,10 @@ export default function LmsKatalog({
 
       // [linguo-patch:lms-katalog-owned-only-v1] cuma tampilin bahasa yang SUDAH dibeli/dientitle.
       // Siswa yang ga daftar bahasa tsb ga lihat sama sekali (mis. Vietnam) — baru muncul setelah beli.
-      const built = buildCourses(modList, lessons, done, ownedPairs, stats).filter((c) => c.owned);
+      // [materi-bahasa-siswa-v1] penyaringannya PINDAH ke render (lihat `inScope` di bawah):
+      // bahasa kelas live siswa juga boleh tampil, dan cache-nya jadi tak bergantung
+      // pada daftar bahasa milik pemanggil.
+      const built = buildCourses(modList, lessons, done, ownedPairs, stats);
       _lmsCache = { courses: built }; // simpen buat re-entry instan
       if (!alive) return;
       setCourses(built);
@@ -215,6 +227,13 @@ export default function LmsKatalog({
     })();
     return () => { alive = false; };
   }, []);
+
+  /* [materi-bahasa-siswa-v1] CAKUPAN BAHASA — satu-satunya gerbang "boleh tampil".
+     Bahasa masuk kalau: (a) e-learning-nya sudah dibeli/dientitle, atau (b) siswa
+     mengambil kelas live bahasa itu. Selain itu tidak ditampilkan sama sekali —
+     siswa Rusia tidak perlu melihat katalog Vietnam/Inggris di menu materinya. */
+  const langScope = new Set(languages.map((s) => s.trim().toLowerCase()).filter(Boolean));
+  const visible = courses.filter((c) => c.owned || langScope.has(c.slug));
 
   // [linguo-patch:lms-katalog-frame-fallback-v1] loading & empty state WAJIB tetep pakai frame
   // master-detail (sidebar + topBar). Kalau ngga, klik "Belajar Mandiri" pas belum ada paket
@@ -244,7 +263,7 @@ export default function LmsKatalog({
     );
   }
 
-  if (courses.length === 0) {
+  if (visible.length === 0) {
     return (
       <Frame sidebar={(
         <div className="shrink-0 px-6 pb-4 pt-7">
@@ -262,7 +281,7 @@ export default function LmsKatalog({
   }
 
   const q = query.trim().toLowerCase();
-  const shown = courses.filter((c) => {
+  const shown = visible.filter((c) => {
     // [materi-search-live-v1] kotak cari di top bar ikut menyaring daftar bahasa
     if (q && ![c.native, c.idLabel, c.language].some((v) => v.toLowerCase().includes(q))) return false;
     if (filter === "owned") return c.owned;
@@ -270,7 +289,7 @@ export default function LmsKatalog({
     if (filter === "done") return c.pct >= 100;
     return true;
   });
-  const selected = shown.find((c) => c.slug === sel) || shown[0] || courses[0];
+  const selected = shown.find((c) => c.slug === sel) || shown[0] || visible[0];
 
   const CourseItem = ({ c, mobile }: { c: Course; mobile?: boolean }) => {
     const isSel = selected && c.slug === selected.slug;
@@ -374,7 +393,7 @@ export default function LmsKatalog({
             <div className="flex items-start justify-between gap-2">
               <div>
                 <h2 className="text-[18px] font-extrabold text-[#12172B]">Bahasa Kamu</h2>
-                <p className="mt-0.5 text-[12px] font-medium text-gray-500">{courses.length} bahasa · belajar mandiri</p>
+                <p className="mt-0.5 text-[12px] font-medium text-gray-500">{visible.length} bahasa · belajar mandiri</p>
               </div>
               <button
                 onClick={() => setSidebarOpen(false)}
