@@ -18,9 +18,9 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
-import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, type LucideIcon } from 'lucide-react';
+import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, ChevronRight, Clock, CalendarDays, PenLine, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref } from '@/lib/classRoom';
-import { publicNotes } from '@/components/akun/class-notes';
+import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
 export function detectKind(url: string): string {
@@ -115,13 +115,146 @@ function statusMilestone(sched: any | null, sudahJalan = false) {
   return { label: 'Terjadwal', badge: 'bg-blue-50 text-blue-700', dot: 'bg-blue-50 text-blue-600', done: false };
 }
 
+// [kelas-materi-drawer-v1] Detail satu sesi: laporan pengajar + semua materinya.
+// Sisi tulisnya sudah ada di dashboard pengajar (sheet "Lengkapi sesi" → topik,
+// PR, catatan, link rekaman, dan lampiran `class_materials`); di sini cuma dibaca.
+// WAJIB lewat parseSessionNotes/publicNotes — `schedules.notes` menyimpan catatan
+// PRIBADI pengajar setelah separator ---PRIVATE---.
+function SesiDetailDrawer({
+  no, sched, st, items, teacherName, durasi, onClose,
+}: {
+  no: number;
+  sched: any;
+  st: ReturnType<typeof statusMilestone>;
+  items: any[];
+  teacherName?: string;
+  durasi: number | null;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [onClose]);
+
+  const dt = new Date(sched.scheduled_at);
+  const catatan = parseSessionNotes(sched.notes);
+  const presensi = ATTENDANCE_BADGE[sched.attendance_status as string];
+  const pesan = [catatan.message, ...catatan.extras].filter(Boolean).join('\n');
+  const pr = (sched.homework || catatan.homework || '').trim();
+  const adaLaporan = !!(catatan.topic || pesan || pr || sched.material_notes);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 backdrop-blur-sm md:items-stretch md:justify-end"
+      onClick={onClose}
+    >
+      <div
+        className="flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl md:max-h-none md:w-[27rem] md:rounded-none md:rounded-l-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gray-200 bg-white px-5 py-4">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="text-base font-extrabold text-[#12172B]">Sesi {no}</h3>
+              {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
+              {presensi && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${presensi.cls}`}>{presensi.label}</span>}
+            </div>
+            <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-gray-500">
+              <span className="inline-flex items-center gap-1">
+                <CalendarDays className="h-3.5 w-3.5" strokeWidth={2.2} />
+                {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <Clock className="h-3.5 w-3.5" strokeWidth={2.2} />
+                {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB{durasi ? ` · ${durasi} menit` : ''}
+              </span>
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Tutup"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
+          >
+            <X className="h-4 w-4" strokeWidth={2.4} />
+          </button>
+        </div>
+
+        <div className="flex-1 space-y-5 overflow-y-auto px-5 py-5">
+          {catatan.topic && (
+            <section>
+              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Topik</h4>
+              <p className="text-sm font-semibold text-[#12172B]">{catatan.topic}</p>
+            </section>
+          )}
+
+          {sched.material_notes && (
+            <section>
+              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Catatan Materi</h4>
+              <p className="whitespace-pre-line rounded-2xl bg-gray-50 px-3.5 py-3 text-sm text-gray-600">{sched.material_notes}</p>
+            </section>
+          )}
+
+          {pesan && (
+            <section>
+              <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">
+                Catatan {teacherName || 'Pengajar'}
+              </h4>
+              <p className="whitespace-pre-line rounded-2xl bg-gray-50 px-3.5 py-3 text-sm text-gray-600">{pesan}</p>
+            </section>
+          )}
+
+          {pr && (
+            <section>
+              <h4 className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">
+                <PenLine className="h-3.5 w-3.5" strokeWidth={2.4} /> PR
+              </h4>
+              <p className="whitespace-pre-line rounded-2xl bg-amber-50 px-3.5 py-3 text-sm font-medium text-amber-700">{pr}</p>
+              <p className="mt-1 text-[11px] text-gray-400">Pengumpulan &amp; penilaiannya ada di tab Tugas.</p>
+            </section>
+          )}
+
+          <section>
+            <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">
+              Materi Sesi {items.length > 0 ? `(${items.length})` : ''}
+            </h4>
+            {items.length > 0 ? (
+              <div className="grid grid-cols-1 gap-2">
+                {items.map((m) => <MaterialCard key={m.id} m={m} teacherName={teacherName} />)}
+              </div>
+            ) : (
+              <div className="rounded-2xl bg-gray-50 px-4 py-6 text-center">
+                <BookOpen className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.6} />
+                <p className="text-sm font-semibold text-gray-500">Belum ada materi untuk sesi ini</p>
+                <p className="mt-1 text-xs text-gray-400">
+                  {adaLaporan
+                    ? 'Pengajar belum melampirkan berkas atau tautan di sesi ini.'
+                    : 'Materi & catatan akan muncul di sini setelah pengajar mengisinya.'}
+                </p>
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Kepala baris sesi — jadi tombol kalau sesinya punya jadwal (bisa dibuka). */
+function HeaderSesi({ as, onClick, children }: { as: 'button' | 'div'; onClick?: () => void; children: React.ReactNode }) {
+  const cls = 'group/head block w-full text-left';
+  if (as === 'div') return <div className={cls}>{children}</div>;
+  return <button type="button" onClick={onClick} className={cls}>{children}</button>;
+}
+
 function MilestoneRow({
   no,
   sched,
   sudahJalan,
   items,
-  teacherName,
+  durasi,
   isLast,
+  onOpen,
   onReschedule,
   onCancel,
 }: {
@@ -130,8 +263,10 @@ function MilestoneRow({
   /** Sesi ini sudah berjalan menurut hitungan sesi terpakai, walau tak ada baris jadwal. */
   sudahJalan?: boolean;
   items: any[];
-  teacherName?: string;
+  /** Durasi per sesi menurut paket (registrations.duration), bukan durasi baris jadwal. */
+  durasi: number | null;
   isLast: boolean;
+  onOpen?: () => void;
   onReschedule?: (s: any) => void;
   onCancel?: (s: any) => void;
 }) {
@@ -140,44 +275,67 @@ function MilestoneRow({
   const jamKeSesi = dt ? (dt.getTime() - Date.now()) / 3600_000 : 0;
   const akanDatang = !!sched && ['pending', 'scheduled'].includes(sched.status) && jamKeSesi > 0;
   const catatan = sched ? publicNotes(sched.notes) : '';
+  const bisaDibuka = !!sched && !!onOpen;
+
+  // Isi lingkaran milestone. [kelas-milestone-flip-v1] Sesi yang sudah selesai
+  // menukar centang dengan NOMOR sesinya saat disentuh kursor — nomornya tetap
+  // terbaca tanpa mengorbankan centang hijau yang bikin progres kelihatan sekilas.
+  const isiBulatan = (
+    <span
+      className={`relative block h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${st.done ? 'group-hover/dot:[transform:rotateY(180deg)]' : ''}`}
+    >
+      <span className={`absolute inset-0 flex items-center justify-center rounded-full text-[12px] font-extrabold [backface-visibility:hidden] ${st.dot}`}>
+        {st.done ? <Check className="h-4 w-4" strokeWidth={3} /> : no}
+      </span>
+      {st.done && (
+        <span className="absolute inset-0 flex items-center justify-center rounded-full bg-[#16796E] text-[12px] font-extrabold text-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          {no}
+        </span>
+      )}
+    </span>
+  );
+  const kelasBulatan = 'group/dot absolute left-0 top-0.5 h-8 w-8 [perspective:600px]';
 
   return (
     <li className="relative pl-11">
       {/* Rail milestone — garis penyambung antar sesi */}
       {!isLast && <span aria-hidden className="absolute bottom-0 left-[15px] top-9 w-px bg-gray-200" />}
-      <span className={`absolute left-0 top-0.5 flex h-8 w-8 items-center justify-center rounded-full text-[12px] font-extrabold ${st.dot}`}>
-        {st.done ? <Check className="h-4 w-4" strokeWidth={3} /> : no}
-      </span>
+      {bisaDibuka ? (
+        <button type="button" onClick={onOpen} aria-label={`Buka materi sesi ${no}`} className={kelasBulatan}>
+          {isiBulatan}
+        </button>
+      ) : (
+        <span className={kelasBulatan}>{isiBulatan}</span>
+      )}
 
       <div className={sched ? 'pb-6' : 'pb-3.5'}>
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'}`}>Sesi {no}</span>
-          {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
-        </div>
-
-        {dt && (
-          <div className="mt-0.5 text-xs text-gray-500">
-            {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
-            {' · '}
-            {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
-            {sched?.duration_minutes ? ` · ${sched.duration_minutes} menit` : ''}
+        {/* [kelas-materi-drawer-v1] Judul + tanggal jadi satu tombol pembuka
+            drawer materi. Tombol Ubah/Batalkan sengaja DI LUAR tombol ini —
+            kalau bersarang, klik "Batalkan" ikut membuka drawer. */}
+        <HeaderSesi as={bisaDibuka ? 'button' : 'div'} onClick={onOpen}>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>Sesi {no}</span>
+            {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
+            {items.length > 0 && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">
+                <Paperclip className="h-3 w-3" strokeWidth={2.4} />{items.length} materi
+              </span>
+            )}
+            {bisaDibuka && <ChevronRight className="h-3.5 w-3.5 text-gray-300 group-hover/head:text-[#16796E]" strokeWidth={2.4} />}
           </div>
-        )}
+
+          {dt && (
+            <div className="mt-0.5 text-xs text-gray-500">
+              {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+              {' · '}
+              {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
+              {durasi ? ` · ${durasi} menit` : ''}
+            </div>
+          )}
+        </HeaderSesi>
 
         {/* [kelas-tab-v1] WAJIB publicNotes(): notes bisa bawa catatan PRIBADI pengajar */}
-        {catatan && <div className="mt-1.5 whitespace-pre-line text-xs text-gray-500">{catatan}</div>}
-
-        {items.length > 0 && (
-          <div className="mt-2.5 grid grid-cols-1 gap-2 md:grid-cols-2">
-            {items.map((m) => <MaterialCard key={m.id} m={m} teacherName={teacherName} />)}
-          </div>
-        )}
-
-        {/* Sesi sudah jalan tapi pengajar belum melampirkan apa pun — dikatakan apa
-            adanya, biar siswa tidak mengira materinya gagal dimuat. */}
-        {items.length === 0 && sched?.status === 'completed' && (
-          <div className="mt-1.5 text-xs text-gray-400">Belum ada materi untuk sesi ini</div>
-        )}
+        {catatan && <div className="mt-1.5 line-clamp-2 whitespace-pre-line text-xs text-gray-500">{catatan}</div>}
 
         {akanDatang && (onReschedule || onCancel) && (
           <div className="mt-2.5 flex flex-wrap gap-2">
@@ -225,6 +383,7 @@ export default function ClassMateriTab({
 }) {
   const [materials, setMaterials] = useState<any[] | null>(null); // null = loading
   const [kosongTerbuka, setKosongTerbuka] = useState(false);
+  const [sesiTerbuka, setSesiTerbuka] = useState<number | null>(null); // nomor sesi di drawer
 
   useEffect(() => {
     let alive = true;
@@ -287,6 +446,43 @@ export default function ClassMateriTab({
   while (kosongDepan < ordered.length && !ordered[kosongDepan].sched && !ordered[kosongDepan].sudahJalan) kosongDepan++;
   const lipatKosong = !kosongTerbuka && kosongDepan > 2 && kosongDepan < ordered.length;
 
+  // [durasi-paket-v1] Durasi sesi diambil dari PAKET (registrations.duration),
+  // bukan dari schedules.duration_minutes: baris jadwal lama/hasil pemecahan blok
+  // bisa menyimpan 45 menit padahal siswa membeli kelas 60 menit per sesi.
+  const durasiSesi = Number(reg.duration) || null;
+
+  /** Semua materi satu sesi: rekaman + lampiran class_materials + material_links. */
+  const itemsFor = (sched: any | null) => {
+    if (!sched) return [];
+    const out = [...(bySchedule.get(sched.id) || [])];
+    // Tautan/berkas yang dipasang pengajar langsung di baris jadwal — sebelumnya
+    // cuma terlihat di linimasa beranda, tidak pernah muncul di tab Materi.
+    (Array.isArray(sched.material_links) ? sched.material_links : []).forEach((l: any, i: number) => {
+      if (!l?.url) return;
+      out.push({
+        id: `ml-${sched.id}-${i}`,
+        title: l.name || 'Lampiran',
+        kind: l.kind === 'file' ? 'file' : detectKind(l.url),
+        url: l.url,
+        created_at: sched.scheduled_at,
+      });
+    });
+    if (sched.status === 'completed' && sched.recording_url) {
+      out.unshift({
+        id: `rec-${sched.id}`,
+        title: 'Recording Sesi',
+        kind: 'recording',
+        // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard khusus tim →
+        // alihkan ke pemutar siswa (lihat lib/classRoom).
+        url: studentRecordingHref(sched.recording_url),
+        created_at: sched.scheduled_at,
+      });
+    }
+    return out;
+  };
+
+  const msTerbuka = sesiTerbuka === null ? null : milestones.find((m) => m.no === sesiTerbuka) || null;
+
   // Sesi yang dibatalkan tidak ikut penomoran, tapi jangan dihilangkan — siswa
   // masih perlu bisa melihat sesi mana yang batal dan alasannya.
   const dibatalkan = schedules
@@ -335,33 +531,20 @@ export default function ClassMateriTab({
                 </button>
               </li>
             )}
-            {(lipatKosong ? ordered.slice(kosongDepan) : ordered).map((ms, i, arr) => {
-              const items = ms.sched ? [...(bySchedule.get(ms.sched.id) || [])] : [];
-              if (ms.sched?.status === 'completed' && ms.sched.recording_url) {
-                items.unshift({
-                  id: `rec-${ms.sched.id}`,
-                  title: 'Recording Sesi',
-                  kind: 'recording',
-                  // [kelas-video-rekaman-siswa-v1] Deep link Riwayat dashboard khusus tim →
-                  // alihkan ke pemutar siswa (lihat lib/classRoom).
-                  url: studentRecordingHref(ms.sched.recording_url),
-                  created_at: ms.sched.scheduled_at,
-                });
-              }
-              return (
-                <MilestoneRow
-                  key={ms.sched?.id || `slot-${ms.no}`}
-                  no={ms.no}
-                  sched={ms.sched}
-                  sudahJalan={ms.sudahJalan}
-                  items={items}
-                  teacherName={teacherName}
-                  isLast={i === arr.length - 1}
-                  onReschedule={onReschedule}
-                  onCancel={onCancel}
-                />
-              );
-            })}
+            {(lipatKosong ? ordered.slice(kosongDepan) : ordered).map((ms, i, arr) => (
+              <MilestoneRow
+                key={ms.sched?.id || `slot-${ms.no}`}
+                no={ms.no}
+                sched={ms.sched}
+                sudahJalan={ms.sudahJalan}
+                items={itemsFor(ms.sched)}
+                durasi={durasiSesi || ms.sched?.duration_minutes || null}
+                isLast={i === arr.length - 1}
+                onOpen={() => setSesiTerbuka(ms.no)}
+                onReschedule={onReschedule}
+                onCancel={onCancel}
+              />
+            ))}
           </ol>
         )}
       </section>
@@ -384,6 +567,18 @@ export default function ClassMateriTab({
             ))}
           </div>
         </section>
+      )}
+
+      {msTerbuka?.sched && (
+        <SesiDetailDrawer
+          no={msTerbuka.no}
+          sched={msTerbuka.sched}
+          st={statusMilestone(msTerbuka.sched, msTerbuka.sudahJalan)}
+          items={itemsFor(msTerbuka.sched)}
+          teacherName={teacherName}
+          durasi={durasiSesi || msTerbuka.sched.duration_minutes || null}
+          onClose={() => setSesiTerbuka(null)}
+        />
       )}
     </div>
   );

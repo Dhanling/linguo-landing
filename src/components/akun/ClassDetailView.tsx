@@ -435,7 +435,9 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                   </div>
                   <div className="mt-0.5 text-sm text-gray-600">
                     {new Date(nextSched.scheduled_at).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB
-                    {' · '}{nextSched.duration_minutes || reg.duration || 60} menit
+                    {/* [durasi-paket-v1] Durasi paket menang atas duration_minutes baris
+                        jadwal — baris lama bisa menyimpan 45 menit di kelas 60 menit. */}
+                    {' · '}{Number(reg.duration) || nextSched.duration_minutes || 60} menit
                     {nextSched.status === 'pending' ? ' · menunggu konfirmasi pengajar' : ''}
                   </div>
                 </div>

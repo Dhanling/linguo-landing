@@ -3720,7 +3720,8 @@ export default function AkunPage() {
                     id: s.id,
                     registrationId: s.registration_id,
                     scheduledAt: s.scheduled_at,
-                    durationMinutes: s.duration_minutes,
+                    // [durasi-paket-v1] durasi paket menang atas baris jadwal (bisa 45 di kelas 60)
+                    durationMinutes: Number(reg?.duration) || s.duration_minutes,
                     language: reg?.language ? displayLanguage(reg.language) : "—",
                     level: reg?.level || "",
                     product: reg?.product || "",
@@ -4373,7 +4374,8 @@ export default function AkunPage() {
                     id: s.id,
                     registrationId: s.registration_id,
                     scheduledAt: s.scheduled_at,
-                    durationMinutes: s.duration_minutes,
+                    // [durasi-paket-v1] durasi paket menang atas baris jadwal (bisa 45 di kelas 60)
+                    durationMinutes: Number(reg?.duration) || s.duration_minutes,
                     language: reg?.language || "—",
                     level: reg?.level || "",
                     product: reg?.product || "",

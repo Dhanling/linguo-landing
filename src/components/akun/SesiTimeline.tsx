@@ -271,7 +271,9 @@ export default function SesiTimeline({
                       {d ? (
                         <>
                           <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)} · {fmtJam(d)}</span>
-                          {s?.duration_minutes ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{s.duration_minutes} menit</span> : null}
+                          {/* [durasi-paket-v1] Durasi paket menang atas duration_minutes
+                              baris jadwal (baris lama bisa menyimpan 45 di kelas 60). */}
+                          {(Number(reg?.duration) || s?.duration_minutes) ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{Number(reg?.duration) || s?.duration_minutes} menit</span> : null}
                         </>
                       ) : (
                         /* Tanggalnya memang tak ada di data — jangan dikarang. */
