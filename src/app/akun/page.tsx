@@ -4432,7 +4432,7 @@ export default function AkunPage() {
                   return (
                     <span className="relative inline-flex shrink-0 items-center justify-center" style={{ height: size, width: size }}>
                       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
-                        <circle cx={size / 2} cy={size / 2} r={rr} fill="none" stroke="#DDE1E7" strokeWidth={stroke} />
+                        <circle className="materi-pie-track" cx={size / 2} cy={size / 2} r={rr} fill="none" stroke="#DDE1E7" strokeWidth={stroke} />
                         <circle
                           cx={size / 2} cy={size / 2} r={rr} fill="none" stroke="#16796E" strokeWidth={stroke} strokeLinecap="round"
                           strokeDasharray={keliling} strokeDashoffset={keliling * (1 - Math.min(100, Math.max(0, pct)) / 100)}
@@ -4492,7 +4492,7 @@ export default function AkunPage() {
                   return (
                     <button
                       onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
-                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-[#E8EAEE]" : "bg-white hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 bg-white" : "w-full"}`}
+                      className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "materi-item-sel bg-[#E8EAEE]" : "materi-item bg-white hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 bg-white" : "w-full"}`}
                     >
                       <LangSlugFlag slug={langFlagSlug(r.language)} h={30} />
                       <span className="min-w-0 flex-1">
@@ -4520,7 +4520,7 @@ export default function AkunPage() {
                       {/* [materi-search-live-v1] kotak cari ini dulu nol fungsi: nilainya disimpan
                           ke state tapi tidak dipakai menyaring apa pun. Sekarang benar-benar
                           menyaring daftar kelas (view Live) / daftar bahasa (view Mandiri). */}
-                      <label className="flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition">
+                      <label className="materi-panel flex h-11 w-[240px] max-w-[40vw] items-center gap-2.5 rounded-2xl bg-white px-4 transition">
                         <Search className="h-[18px] w-[18px] shrink-0 text-gray-400" strokeWidth={2} />
                         <input
                           value={materiSearch}
@@ -4547,10 +4547,10 @@ export default function AkunPage() {
                     {/* ════ SUB-TAB ════ */}
                     {/* ════ VIEW: KELAS LIVE ════ */}
                     {materiView === "live" && (liveClasses.length > 0 && selected ? (
-                      <div className="overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
+                      <div className="materi-flat overflow-hidden rounded-3xl bg-white lg:grid lg:grid-rows-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:min-h-0 lg:flex-1 lg:rounded-none lg:border-0 lg:shadow-none">
 
                         {/* LEFT list — desktop */}
-                        <aside className="hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
+                        <aside className="materi-flat hidden min-h-0 flex-col border-r border-slate-100 bg-white lg:flex">
                           <div className="shrink-0 px-6 pb-4 pt-7">
                             <h2 className="text-[18px] font-extrabold text-[#12172B]">Kelas Kamu</h2>
                             {/* [materi-bahasa-siswa-v1] daftar ini kini memuat kelas selesai juga,
@@ -4576,7 +4576,7 @@ export default function AkunPage() {
                         </aside>
 
                         {/* RIGHT detail (+ mobile pills) */}
-                        <main className="flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
+                        <main className="materi-flat flex min-w-0 flex-col bg-[#F5F6F8] lg:min-h-0 lg:overflow-y-auto">
                           {MateriTopBar}
                           <div className="flex gap-2.5 overflow-x-auto px-5 pt-3 lg:hidden">
                             {shown.map((r: any) => <ClassItem key={r.id} r={r} mobile />)}
@@ -4593,7 +4593,7 @@ export default function AkunPage() {
                                 ? new Date(nextSched.scheduled_at).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" }) + " · " + new Date(nextSched.scheduled_at).toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })
                                 : "Belum terjadwal";
                               return (
-                                <div className="overflow-hidden rounded-3xl bg-white">
+                                <div className="materi-panel overflow-hidden rounded-3xl bg-white">
                                   <div className="relative flex items-center gap-5 overflow-hidden px-6 py-6 sm:px-7" style={{ background: pal.color }}>
                                     {langPhoto && (
                                       <>
@@ -4635,8 +4635,8 @@ export default function AkunPage() {
 
                             {/* tabs */}
                             <div className="flex items-center gap-2">
-                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />Sesi &amp; Rekaman</button>
-                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />Materi</button>
+                              <button onClick={() => setMateriTab("sesi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "sesi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><Video className="h-4 w-4" strokeWidth={2.5} />Sesi &amp; Rekaman</button>
+                              <button onClick={() => setMateriTab("materi")} className={`flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold transition ${materiTab === "materi" ? "bg-[#16796E] text-white" : "materi-panel bg-white text-gray-500 hover:text-[#12172B]"}`}><BookOpen className="h-4 w-4" strokeWidth={2.5} />Materi</button>
                             </div>
 
                             {/* body */}
@@ -4644,7 +4644,7 @@ export default function AkunPage() {
                               (() => {
                                 const sessions = upcomingSchedules.filter((s) => s.registration_id === selected.id);
                                 if (sessions.length === 0) return (
-                                  <div className="rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
+                                  <div className="materi-flat rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
                                     <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
                                     <p className="text-[13px] font-semibold text-gray-500">Belum ada sesi mendatang terjadwal</p>
                                     <p className="mt-1 text-[12px] font-medium text-gray-400">Riwayat sesi &amp; rekaman akan tampil di sini</p>
@@ -4656,7 +4656,7 @@ export default function AkunPage() {
                                       const d = new Date(s.scheduled_at);
                                       const n = (selected.sessions_used || 0) + i + 1;
                                       return (
-                                        <div key={s.id} className="flex items-center gap-4 rounded-2xl bg-white p-4 transition hover:bg-[#F5F6F8]">
+                                        <div key={s.id} className="materi-panel flex items-center gap-4 rounded-2xl bg-white p-4 transition hover:bg-[#F5F6F8]">
                                           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-[13px] font-extrabold text-[#12172B]">{String(n).padStart(2, "0")}</span>
                                           <div className="min-w-0 flex-1">
                                             <div className="flex flex-wrap items-center gap-2">
@@ -4694,7 +4694,7 @@ export default function AkunPage() {
                       <div className="flex flex-col lg:min-h-0 lg:flex-1">
                         {MateriTopBar}
                         <div className="flex flex-1 flex-col items-center justify-center px-4 pb-10 pt-8 lg:pt-0">
-                          <div className="w-full max-w-md rounded-3xl bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
+                          <div className="materi-flat w-full max-w-md rounded-3xl bg-white p-10 text-center lg:border-0 lg:bg-transparent lg:shadow-none">
                             <BookOpen className="mx-auto mb-2 h-12 w-12 text-slate-300" strokeWidth={1.5} />
                             <p className="text-[14px] font-semibold text-gray-600">Belum ada kelas live aktif</p>
                             <p className="mt-1 text-[12px] font-medium text-gray-400">Punya paket e-learning? Buka tab <strong>Belajar Mandiri</strong> di atas. Atau daftar kelas live di bawah.</p>

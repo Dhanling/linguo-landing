@@ -453,6 +453,22 @@ export default function StudentShell({
         .lms-dark input.border.border-slate-100,.lms-dark input.border.border-slate-200,.lms-dark input.border.border-slate-300,.lms-dark input.border.border-gray-100,.lms-dark input.border.border-gray-200,.lms-dark input.border.border-gray-300,
         .lms-dark textarea.border.border-slate-100,.lms-dark textarea.border.border-slate-200,.lms-dark textarea.border.border-slate-300,.lms-dark textarea.border.border-gray-100,.lms-dark textarea.border.border-gray-200,.lms-dark textarea.border.border-gray-300,
         .lms-dark select.border.border-slate-100,.lms-dark select.border.border-slate-200,.lms-dark select.border.border-slate-300,.lms-dark select.border.border-gray-100,.lms-dark select.border.border-gray-200,.lms-dark select.border.border-gray-300{border-color:#3a3a3a !important;}
+        /* ── [materi-dark-flat-v1] Kelas & Materi: seksi & tab HITAM ──
+           Halaman ini isinya daftar kelas + satu panel detail, tapi di mode gelap
+           tiap bagiannya jadi kotak abu sendiri-sendiri (well #0d0d0d di bawah kartu
+           #1c1c1c) — layar penuh kotak bertumpuk. Sekarang semuanya hitam menyatu
+           dengan halaman; yang memisahkan cuma garis rambut, dan kelas yang sedang
+           dibuka ditandai cincin teal (bukan kotak abu terang yang gampang ketuker
+           sama kartu biasa). Aturannya ditaruh paling bawah supaya menang atas
+           aturan hover umum di atas — spesifisitasnya sama, jadi urutan yang nentuin. */
+        .lms-dark .materi-flat{background-color:#000000 !important;}
+        .lms-dark .materi-panel{background-color:#000000 !important;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09) !important;}
+        .lms-dark .materi-panel:hover{background-color:#0f0f0f !important;}
+        .lms-dark .materi-item{background-color:transparent !important;}
+        .lms-dark .materi-item:hover{background-color:#101010 !important;}
+        .lms-dark .materi-item-sel{background-color:#101010 !important;box-shadow:inset 0 0 0 1px rgba(45,212,191,0.38) !important;}
+        /* Lingkar donat progres: warnanya atribut SVG, jadi tak kena aturan bg-* di atas. */
+        .lms-dark .materi-pie-track{stroke:#2f2f2f !important;}
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
