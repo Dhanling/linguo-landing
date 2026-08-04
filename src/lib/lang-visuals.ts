@@ -21,6 +21,7 @@ export const LANG_FLAGS: Record<string, string> = {
   Hungarian:"hu",Romanian:"ro",Bulgarian:"bg",Ukrainian:"ua",Icelandic:"is",
   Cantonese:"hk",Filipino:"ph",Khmer:"kh",Lao:"la",Burmese:"mm",Urdu:"pk",
   Balinese:"id",Batak:"id",Bugis:"id",Madurese:"id",
+  Uzbek:"uz",
 };
 export const getFlagUrl = (lang: string) => `https://flagcdn.com/w40/${LANG_FLAGS[baseLanguage(lang)] || "un"}.png`;
 
@@ -46,6 +47,13 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   sunda: "sundanese", sundanese: "sundanese", "bahasa sunda": "sundanese",
   ibrani: "hebrew", hebrew: "hebrew",
   "mesir kuno": "ancient-egypt", "ancient egypt": "ancient-egypt", hieroglif: "ancient-egypt",
+  // [kelas-card-foto-v2] Bahasa yang tadinya jatuh ke glyph "Aa" di kartu beranda
+  // (kasus nyata: kelas Private Wendy/Michael — Bulgarian, Polish, Georgian).
+  bulgaria: "bulgarian", bulgarian: "bulgarian",
+  polandia: "polish", polish: "polish",
+  georgia: "georgian", georgian: "georgian",
+  kanton: "cantonese", kantonis: "cantonese", cantonese: "cantonese", "hong kong": "cantonese",
+  uzbekistan: "uzbek", uzbek: "uzbek",
 };
 export const getLangPhoto = (lang?: string | null): string | null => {
   if (!lang) return null;
