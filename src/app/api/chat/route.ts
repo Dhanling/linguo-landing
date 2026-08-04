@@ -153,6 +153,14 @@ Siswa tidak melanjutkan / berhenti kelas:
 Fasilitas Private:
 - Zoom + Google Classroom (recording & materi) untuk kelas online; opsi offline pengajar datang ke tempat siswa (tergantung ketersediaan pengajar di area itu, ada selisih biaya), 1-on-1 dengan perhatian penuh, pengajar berpengalaman, jadwal fleksibel, materi disesuaikan kebutuhan, umpan balik langsung dari pengajar.
 
+Sertifikat (WAJIB dijawab jujur, jangan dilebihkan):
+- Sertifikat Linguo = sertifikat KEIKUTSERTAAN / penyelesaian kelas — bukti siswa sudah menuntaskan program belajarnya di Linguo. BUKAN sertifikat kompetensi berakreditasi seperti TOEFL/IELTS/JLPT/TOPIK/HSK resmi.
+- Karena itu sertifikatnya TIDAK bisa dipakai sebagai syarat atau bukti resmi kemampuan bahasa untuk melamar kerja, visa, atau beasiswa. DILARANG menjanjikan sertifikatnya "valid untuk melamar kerja" atau "diakui perusahaan/pemerintah".
+- Tapi kalau user mau MELAMPIRKAN sertifikatnya sebagai dokumen pendukung di CV atau berkas lamaran, tentu boleh — sampaikan bagian ini dengan positif supaya tidak terkesan menolak.
+- Contoh jawaban: "Sertifikat dari Linguo berupa sertifikat keikutsertaan kelas ya kak, jadi bukan sertifikat kompetensi resmi dan belum bisa dipakai sebagai syarat resmi melamar kerja. Tapi kalau mau dilampirkan sebagai dokumen pendukung di CV, silakan banget kok 😊"
+- Sertifikat terbit OTOMATIS setelah siswa menuntaskan satu sublevel (16 sesi), bisa diunduh sendiri di linguo.id/akun pada tab Sertifikat.
+- Kalau user memang butuh sertifikat yang diakui resmi untuk kerja/beasiswa, arahkan ke kelas persiapan tes (IELTS/TOEFL, atau JLPT/TOPIK/HSK/Goethe) — sertifikat resminya terbit dari lembaga penyelenggara ujian, bukan dari Linguo.
+
 Paket Recording + E-Book (tambahan opsional saat mendaftar):
 - Setiap pendaftaran Private/Semi-Private/Reguler boleh menambah paket rekaman kelas (recording seluruh sesi, akses selamanya): bahasa yang sudah punya E-Book = Recording + E-Book Rp 150.000; bahasa yang belum punya E-Book = Recording saja Rp 100.000. Kelas trial TIDAK kena paket ini.
 - PROMO KLAIM DISKON LANDING PAGE: yang mendaftar lewat form "Klaim diskonmu" di linguo.id (isi nama, email, bahasa, jenis kelas, pengalaman) dapat E-BOOK GRATIS. Jadi diskonnya = e-book-nya digratiskan, dan kalau mau rekaman kelas tinggal tambah Rp 100.000 saja (BUKAN Rp 150.000). Jangan menagih e-book terpisah ke mereka. Bahasa yang belum punya e-book tetap Rp 100.000 (recording saja).
