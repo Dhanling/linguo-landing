@@ -247,13 +247,6 @@ type Schedule = {
   recording_url?: string | null;
 };
 
-/** jadwal-riwayat-v1: batas riwayat sesi yang ditarik ke kalender siswa (12 bulan). */
-const HISTORY_SINCE = () => {
-  const d = new Date();
-  d.setMonth(d.getMonth() - 12);
-  return d.toISOString();
-};
-
 // ── Constants ────────────────────────────────────────────────────────────
 // [kelas-detail-page-v1] LANG_FLAGS/getFlagUrl/getLangPhoto/langGlyph pindah ke
 // @/lib/lang-visuals — dipakai juga oleh halaman detail kelas /akun/kelas/[id].
@@ -2955,11 +2948,14 @@ export default function AkunPage() {
               .from("schedules")
               // jadwal-recurring-materi-v1: nomor pertemuan + materi ikut ditarik
               // jadwal-riwayat-v1: + presensi & rekaman, dan TANPA saringan
-              //   status/`gt(now)` — kalender butuh sesi lampau juga. Dibatasi 12 bulan
-              //   ke belakang biar payload siswa lama tetap wajar.
+              //   status/`gt(now)` — kalender butuh sesi lampau juga.
+              // [materi-sesi-semua-kelas-v1] batas riwayat 12 bulan DICABUT: linimasa
+              //   sesi di "Kelas & Materi" berlaku buat semua kelas termasuk level
+              //   terdahulu, dan potongan 12 bulan diam-diam mengosongkan level lama
+              //   siswa yang sudah les >1 tahun. Payloadnya tetap kecil — jumlah baris
+              //   dibatasi jumlah sesi paket yang pernah dibeli siswa itu sendiri.
               .select("id, registration_id, scheduled_at, duration_minutes, status, session_number, session_title, material_notes, material_links, attendance_status, recording_url")
               .in("registration_id", regIds)
-              .gte("scheduled_at", HISTORY_SINCE())
               .order("scheduled_at", { ascending: true })
           : Promise.resolve({ data: null } as any),
         supabase

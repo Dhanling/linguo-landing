@@ -111,15 +111,37 @@ export default function SesiTimeline({
     return () => { alive = false; };
   }, [reg.id, variant]);
 
-  // Nomor sesi: pakai session_number cuma kalau SEMUA baris punya — campur
-  // session_number & urutan kronologis gampang bikin nomor kembar.
+  // [materi-sesi-semua-kelas-v1] Kelas terdahulu (paket habis sebelum penjadwalan
+  // masuk aplikasi) sering TAK punya satu pun baris `schedules` — sesinya cuma
+  // tercatat sebagai angka di `sessions_used`. Kalau linimasa hanya menggambar
+  // baris `schedules`, kelas-kelas itu tampil kosong total padahal 16 sesinya
+  // benar-benar sudah jalan. Jadi slot paket yang tak punya baris jadwal tetap
+  // digambar sebagai sesi "tanpa catatan jadwal": nomornya nyata (dari paket),
+  // tanggalnya TIDAK dikarang.
+  //   • slot terpakai (sessions_used) ditaruh SEBELUM baris jadwal nyata — sesi
+  //     tak tercatat itu yang lebih dulu jalan, jadwal aplikasi menyusul;
+  //   • sisa slot paket ditaruh sesudahnya sebagai "belum terjadwal".
   const rows = useMemo(() => {
     const asc = schedules.slice().sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
-    const semuaBernomor = asc.length > 0 && asc.every((s) => Number.isFinite(Number(s.session_number)));
-    return asc
-      .map((s, i) => ({ s, no: semuaBernomor ? Number(s.session_number) : i + 1 }))
-      .reverse(); // terbaru di paling atas
-  }, [schedules]);
+    const totalPaket = Number(reg?.sessions_total) || 0;
+    const dipakai = Number(reg?.sessions_used) || 0;
+    const selesaiNyata = asc.filter((s) => s.status === 'completed').length;
+    const kurang = Math.max(0, totalPaket - asc.length);
+    const semuSelesai = Math.max(0, Math.min(dipakai - selesaiNyata, kurang));
+    const semuBelum = kurang - semuSelesai;
+
+    // Nomor sesi: pakai session_number cuma kalau SEMUA baris punya & tak ada slot
+    // semu — campur session_number & urutan kronologis gampang bikin nomor kembar.
+    const semuaBernomor = asc.length > 0 && kurang === 0 && asc.every((s) => Number.isFinite(Number(s.session_number)));
+
+    type Row = { key: string; no: number; s: TimelineSchedule | null; jenis: 'nyata' | 'selesai-semu' | 'belum-semu' };
+    const urut: Row[] = [
+      ...Array.from({ length: semuSelesai }, (_, i) => ({ key: `semu-done-${i}`, no: 0, s: null, jenis: 'selesai-semu' as const })),
+      ...asc.map((s, i) => ({ key: s.id, no: semuaBernomor ? Number(s.session_number) : 0, s, jenis: 'nyata' as const })),
+      ...Array.from({ length: semuBelum }, (_, i) => ({ key: `semu-todo-${i}`, no: 0, s: null, jenis: 'belum-semu' as const })),
+    ];
+    return urut.map((r, i) => ({ ...r, no: r.no || i + 1 })).reverse(); // terbaru di paling atas
+  }, [schedules, reg?.sessions_total, reg?.sessions_used]);
 
   const now = Date.now();
   const total = reg?.sessions_total || rows.length || 0;
@@ -127,7 +149,7 @@ export default function SesiTimeline({
   // dan presensi yang benar-benar tercatat, biar tak pernah mundur dari kenyataan.
   const selesai = Math.min(
     total || rows.length,
-    Math.max(reg?.sessions_used || 0, rows.filter(({ s }) => s.status === 'completed').length),
+    Math.max(reg?.sessions_used || 0, rows.filter(({ s }) => s?.status === 'completed').length),
   );
   const pct = total > 0 ? Math.min(100, Math.round((selesai / total) * 100)) : 0;
   const durasiMenit = String(reg?.duration ?? '').match(/\d+/)?.[0] || '';
@@ -159,8 +181,8 @@ export default function SesiTimeline({
     return out;
   };
 
-  const totalRekaman = rows.filter(({ s }) => !!s.recording_url).length;
-  const totalLampiran = rows.reduce((n, { s }) => n + (bySchedule.get(s.id)?.length || 0) + (Array.isArray(s.material_links) ? s.material_links.length : 0), 0);
+  const totalRekaman = rows.filter(({ s }) => !!s?.recording_url).length;
+  const totalLampiran = rows.reduce((n, { s }) => n + (s ? (bySchedule.get(s.id)?.length || 0) + (Array.isArray(s.material_links) ? s.material_links.length : 0) : 0), 0);
 
   return (
     <div className="flex flex-col gap-4">
@@ -203,16 +225,22 @@ export default function SesiTimeline({
         <p className="py-8 text-center text-[13px] font-medium text-gray-400">Memuat materi…</p>
       ) : (
         <ol className="flex flex-col">
-          {rows.map(({ s, no }, i) => {
-            const d = new Date(s.scheduled_at);
-            const past = d.getTime() < now;
-            const chip = statusChip(s, past);
-            const done = s.status === 'completed' || (past && s.status !== 'cancelled' && s.status !== 'hangus');
-            const items = variant === 'materi' ? itemsOf(s) : [];
+          {rows.map(({ s, no, key, jenis }, i) => {
+            const d = s ? new Date(s.scheduled_at) : null;
+            const past = !!d && d.getTime() < now;
+            const chip = s
+              ? statusChip(s, past)
+              : jenis === 'selesai-semu'
+                ? { label: 'Selesai', cls: 'bg-emerald-50 text-emerald-700' }
+                : { label: 'Belum terjadwal', cls: 'bg-gray-100 text-gray-500' };
+            const done = s
+              ? s.status === 'completed' || (past && s.status !== 'cancelled' && s.status !== 'hangus')
+              : jenis === 'selesai-semu';
+            const items = variant === 'materi' && s ? itemsOf(s) : [];
             // di tab Sesi rekaman sudah punya tombol sendiri — chip ini cuma buat lampiran
-            const jumlahMateri = Array.isArray(s.material_links) ? s.material_links.length : 0;
+            const jumlahMateri = Array.isArray(s?.material_links) ? s!.material_links!.length : 0;
             return (
-              <li key={s.id} className="flex gap-3">
+              <li key={key} className="flex gap-3">
                 {/* rel bernomor */}
                 <div className="flex w-9 shrink-0 flex-col items-center">
                   <span
@@ -236,15 +264,25 @@ export default function SesiTimeline({
                         </span>
                       )}
                     </div>
-                    {s.session_title && (
+                    {s?.session_title && (
                       <p className="mt-1 truncate text-[13px] font-bold text-[#12172B]">{s.session_title}</p>
                     )}
                     <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] font-medium text-gray-500">
-                      <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)} · {fmtJam(d)}</span>
-                      {s.duration_minutes ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{s.duration_minutes} menit</span> : null}
+                      {d ? (
+                        <>
+                          <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" />{fmtTanggal(d)} · {fmtJam(d)}</span>
+                          {s?.duration_minutes ? <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{s.duration_minutes} menit</span> : null}
+                        </>
+                      ) : (
+                        /* Tanggalnya memang tak ada di data — jangan dikarang. */
+                        <span className="inline-flex items-center gap-1.5 text-gray-400">
+                          <Calendar className="h-3.5 w-3.5" />
+                          {jenis === 'selesai-semu' ? 'Tanggal sesi tak tercatat di aplikasi' : 'Jadwal belum ditentukan'}
+                        </span>
+                      )}
                     </p>
 
-                    {variant === 'materi' && s.material_notes && (
+                    {variant === 'materi' && s?.material_notes && (
                       <p className="mt-2 whitespace-pre-line rounded-xl bg-[#F5F6F8] px-3 py-2 text-[12px] font-medium text-gray-600">{s.material_notes}</p>
                     )}
 
@@ -258,7 +296,7 @@ export default function SesiTimeline({
                       )
                     )}
 
-                    {variant === 'sesi' && s.recording_url && (() => {
+                    {variant === 'sesi' && s?.recording_url && (() => {
                       const href = studentRecordingHref(s.recording_url!);
                       const internal = isInternalRecordingHref(href);
                       return (

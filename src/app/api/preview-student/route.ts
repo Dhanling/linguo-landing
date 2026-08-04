@@ -73,18 +73,17 @@ export async function GET(req: NextRequest) {
     batch: r.batch_id ? batchMap[r.batch_id] || null : null,
   }));
 
-  // Jadwal — jadwal-riwayat-v1: riwayat 12 bulan + sesi mendatang (dulu cuma
-  // mendatang, jadi kalender di POV pratinjau selalu tampak kosong). Kolomnya
+  // Jadwal — jadwal-riwayat-v1: riwayat + sesi mendatang (dulu cuma mendatang,
+  // jadi kalender di POV pratinjau selalu tampak kosong). Kolom & saringannya
   // WAJIB sama dengan query klien di akun/page.tsx.
+  // [materi-sesi-semua-kelas-v1] batas riwayat 12 bulan dicabut — linimasa sesi
+  // berlaku buat semua kelas termasuk level terdahulu.
   const regIds = registrations.map((r: any) => r.id);
   let schedules: any[] = [];
   if (regIds.length > 0) {
-    const since = new Date();
-    since.setMonth(since.getMonth() - 12);
     schedules =
       (await rest(
         `schedules?registration_id=in.(${regIds.join(",")})` +
-          `&scheduled_at=gte.${encodeURIComponent(since.toISOString())}` +
           `&select=id,registration_id,scheduled_at,duration_minutes,status,session_number,` +
           `session_title,material_notes,material_links,attendance_status,recording_url` +
           `&order=scheduled_at.asc`
