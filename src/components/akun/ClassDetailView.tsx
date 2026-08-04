@@ -530,6 +530,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
             reg={reg}
             schedules={schedules}
             teacherName={teacherName}
+            sesiTerpakai={sesiTerpakai}
             onReschedule={openReschedule}
             onCancel={requestCancel}
           />

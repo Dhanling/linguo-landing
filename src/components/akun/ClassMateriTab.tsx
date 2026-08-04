@@ -79,18 +79,23 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
   );
 }
 
-// Status satu milestone. `sched` null = slot sesi yang belum dijadwalkan sama sekali.
+// Status satu milestone. `sched` null = slot sesi yang belum punya baris jadwal.
 // [lms-dark-inline-style-gotcha] Warna DIBATASI ke kombinasi yang sudah ditangani
 // override .lms-dark di StudentShell (tint -50 + teks -600/-700). Pakai -100/-800
 // bikin chip menyala putih di mode gelap karena tidak ada aturannya di sana.
-function statusMilestone(sched: any | null) {
+//
+// [kelas-milestone-tanpa-badge-v1] Slot tanpa jadwal tidak diberi chip apa pun:
+// paket 16 sesi yang baru jalan 4 dulu memunculkan 12+ chip "Belum dijadwalkan"
+// beruntun — bising, dan tidak menambah informasi apa-apa di atas nomor sesi
+// yang sudah berwarna redup. Yang sudah jalan justru dinaikkan: kelas lawas
+// kerap tidak punya baris `schedules` sama sekali (sesinya cuma tercatat di
+// registrations.sessions_used), jadi `sudahJalan` datang dari hitungan sesi
+// terpakai dan slotnya tetap dicentang hijau seperti sesi selesai lainnya.
+function statusMilestone(sched: any | null, sudahJalan = false) {
   if (!sched) {
-    return {
-      label: 'Belum dijadwalkan',
-      badge: 'bg-gray-100 text-gray-500',
-      dot: 'bg-gray-100 text-gray-400',
-      done: false,
-    };
+    return sudahJalan
+      ? { label: '', badge: '', dot: 'bg-[#16796E] text-white', done: true }
+      : { label: '', badge: '', dot: 'bg-gray-100 text-gray-400', done: false };
   }
   const past = new Date(sched.scheduled_at).getTime() < Date.now();
   if (sched.status === 'completed') {
@@ -113,6 +118,7 @@ function statusMilestone(sched: any | null) {
 function MilestoneRow({
   no,
   sched,
+  sudahJalan,
   items,
   teacherName,
   isLast,
@@ -121,13 +127,15 @@ function MilestoneRow({
 }: {
   no: number;
   sched: any | null;
+  /** Sesi ini sudah berjalan menurut hitungan sesi terpakai, walau tak ada baris jadwal. */
+  sudahJalan?: boolean;
   items: any[];
   teacherName?: string;
   isLast: boolean;
   onReschedule?: (s: any) => void;
   onCancel?: (s: any) => void;
 }) {
-  const st = statusMilestone(sched);
+  const st = statusMilestone(sched, sudahJalan);
   const dt = sched ? new Date(sched.scheduled_at) : null;
   const jamKeSesi = dt ? (dt.getTime() - Date.now()) / 3600_000 : 0;
   const akanDatang = !!sched && ['pending', 'scheduled'].includes(sched.status) && jamKeSesi > 0;
@@ -143,8 +151,8 @@ function MilestoneRow({
 
       <div className={sched ? 'pb-6' : 'pb-3.5'}>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className={`text-sm font-extrabold ${sched ? 'text-[#12172B]' : 'text-gray-400'}`}>Sesi {no}</span>
-          <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>
+          <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'}`}>Sesi {no}</span>
+          {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
         </div>
 
         {dt && (
@@ -202,12 +210,16 @@ export default function ClassMateriTab({
   reg,
   schedules,
   teacherName,
+  sesiTerpakai,
   onReschedule,
   onCancel,
 }: {
   reg: any;
   schedules: any[];
   teacherName?: string;
+  /** Angka "Progress Sesi" dari halaman induk — linimasa wajib memakai angka yang
+   *  sama, jangan menghitung ulang sendiri (bisa beda dari yang dibaca siswa). */
+  sesiTerpakai?: number;
   onReschedule?: (s: any) => void;
   onCancel?: (s: any) => void;
 }) {
@@ -256,13 +268,23 @@ export default function ClassMateriTab({
     .slice()
     .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
   const totalSlot = Math.max(reg.sessions_total || 0, slotSched.length);
-  const milestones = Array.from({ length: totalSlot }, (_, i) => ({ no: i + 1, sched: slotSched[i] || null }));
+  // [kelas-milestone-tanpa-badge-v1] Slot terdepan sebanyak sesi terpakai dianggap
+  // sudah berjalan. Slot terurut menaik menurut tanggal, jadi yang paling awal
+  // memang yang paling mungkin sudah lewat — ini penyelamat kelas lawas yang
+  // sesinya tidak pernah dicetak ke `schedules`.
+  const terpakai = Math.max(0, Number(sesiTerpakai ?? reg.sessions_used) || 0);
+  const milestones = Array.from({ length: totalSlot }, (_, i) => ({
+    no: i + 1,
+    sched: slotSched[i] || null,
+    sudahJalan: i < terpakai,
+  }));
   // Paling atas = sesi terakhir, paling bawah = sesi 1.
   const ordered = milestones.slice().reverse();
   // Berapa slot kosong beruntun di paling atas (sesi jauh di depan yang memang
   // belum dijadwalkan) — dilipat kalau lebih dari 2 biar tidak makan satu layar.
+  // Sesi yang sudah berjalan tidak pernah ikut terlipat walau tanpa baris jadwal.
   let kosongDepan = 0;
-  while (kosongDepan < ordered.length && !ordered[kosongDepan].sched) kosongDepan++;
+  while (kosongDepan < ordered.length && !ordered[kosongDepan].sched && !ordered[kosongDepan].sudahJalan) kosongDepan++;
   const lipatKosong = !kosongTerbuka && kosongDepan > 2 && kosongDepan < ordered.length;
 
   // Sesi yang dibatalkan tidak ikut penomoran, tapi jangan dihilangkan — siswa
@@ -331,6 +353,7 @@ export default function ClassMateriTab({
                   key={ms.sched?.id || `slot-${ms.no}`}
                   no={ms.no}
                   sched={ms.sched}
+                  sudahJalan={ms.sudahJalan}
                   items={items}
                   teacherName={teacherName}
                   isLast={i === arr.length - 1}
