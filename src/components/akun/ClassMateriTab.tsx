@@ -29,7 +29,7 @@ function youtubeId(url: string): string | null {
   return m ? m[1] : null;
 }
 
-const KIND_META: Record<string, { label: string; Icon: LucideIcon; cls: string }> = {
+export const KIND_META: Record<string, { label: string; Icon: LucideIcon; cls: string }> = {
   youtube: { label: 'YouTube', Icon: Play, cls: 'bg-red-50 text-red-600' },
   doc: { label: 'Dokumen', Icon: FileText, cls: 'bg-blue-50 text-blue-600' },
   slide: { label: 'Slide', Icon: Presentation, cls: 'bg-orange-50 text-orange-600' },

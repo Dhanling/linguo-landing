@@ -96,6 +96,8 @@ const TabLoading = () => (
 );
 const SertifikatTab = dynamic(() => import('@/components/akun/SertifikatTab'), { ssr: false, loading: TabLoading });
 const SilabusOutline = dynamic(() => import('@/components/akun/SilabusOutline'), { ssr: false });
+// [materi-sesi-timeline-v1] linimasa sesi (jadwal, rekaman & materi per sesi) di tab Kelas & Materi
+const SesiTimeline = dynamic(() => import('@/components/akun/SesiTimeline'), { ssr: false });
 const JadwalCalendar = dynamic(() => import('@/components/akun/JadwalCalendar'), { ssr: false, loading: TabLoading }); // linguo-patch:akun-jadwal-tab-v1
 // jadwal-gcal-v1: daftar "Sesi Mendatang" — pindahan dari kolom kiri kalender ke Beranda.
 const SesiMendatangCard = dynamic(() => import('@/components/akun/SesiMendatangCard'), { ssr: false });
@@ -4489,6 +4491,16 @@ export default function AkunPage() {
 
                 const ClassItem = ({ r, mobile }: { r: any; mobile?: boolean }) => {
                   const pct = pctOf(r); const isSel = selected && r.id === selected.id;
+                  /* [materi-paket-detail-v1] Kartu kelas dulu tak menyebut ISI paket sama
+                     sekali — donat 88% tak memberi tahu 88% dari berapa sesi, dan durasi
+                     per sesi (60/90/120 menit) cuma ada di tab Tagihan. Dua angka itu yang
+                     paling sering ditanya siswa, jadi ditaruh langsung di kartunya. */
+                  const durasiMenit = String(r.duration ?? "").match(/\d+/)?.[0] || "";
+                  const dipakai = r.sessions_used || 0; const totalSesi = r.sessions_total || 0;
+                  const detailPaket = [
+                    totalSesi > 0 ? `${dipakai}/${totalSesi} sesi` : null,
+                    durasiMenit ? `${durasiMenit} menit/sesi` : null,
+                  ].filter(Boolean).join(" · ");
                   return (
                     <button
                       onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
@@ -4498,6 +4510,9 @@ export default function AkunPage() {
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{displayLanguage(r.language)} — {r.level || "TBD"}</span>
                         <span className="block truncate text-[12px] font-medium text-gray-500">{teacherLabel(r) || PRODUCT_BADGE[r.product]?.label || r.product}</span>
+                        {detailPaket ? (
+                          <span className="mt-0.5 block truncate text-[11px] font-semibold text-gray-400">{detailPaket}</span>
+                        ) : null}
                       </span>
                       <ProgressPie pct={pct} />
                     </button>
@@ -4623,6 +4638,11 @@ export default function AkunPage() {
                                     <div className="border-l border-slate-100 pl-4">
                                       <p className="text-[12px] font-semibold text-gray-500">Sesi Selesai</p>
                                       <p className="mt-1 text-[18px] font-extrabold text-[#12172B]">{selected.sessions_used || 0}<span className="text-[14px] font-bold text-gray-400">/{selected.sessions_total || 0}</span></p>
+                                      {/* [materi-paket-detail-v1] durasi per sesi tadinya cuma ada di tab Tagihan */}
+                                      {(() => {
+                                        const m = String(selected.duration ?? "").match(/\d+/)?.[0];
+                                        return m ? <p className="mt-0.5 text-[11px] font-semibold text-gray-400">{m} menit/sesi</p> : null;
+                                      })()}
                                     </div>
                                     <div className="border-l border-slate-100 pl-4">
                                       <p className="text-[12px] font-semibold text-gray-500">Sesi Berikutnya</p>
@@ -4640,39 +4660,19 @@ export default function AkunPage() {
                             </div>
 
                             {/* body */}
+                            {/* [materi-sesi-timeline-v1] Dua tab ini dulu buta riwayat: "Sesi & Rekaman"
+                                cuma memuat sesi MENDATANG (kelas 16/16 tampil kosong padahal semua
+                                rekamannya ada), dan "Materi" cuma silabus level tanpa jalan ke materi
+                                sesi tertentu. Sekarang dua-duanya linimasa sesi bernomor, terbaru di atas. */}
                             {materiTab === "sesi" ? (
-                              (() => {
-                                const sessions = upcomingSchedules.filter((s) => s.registration_id === selected.id);
-                                if (sessions.length === 0) return (
-                                  <div className="materi-flat rounded-2xl border border-dashed border-slate-200 bg-white/60 p-8 text-center">
-                                    <Calendar className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
-                                    <p className="text-[13px] font-semibold text-gray-500">Belum ada sesi mendatang terjadwal</p>
-                                    <p className="mt-1 text-[12px] font-medium text-gray-400">Riwayat sesi &amp; rekaman akan tampil di sini</p>
-                                  </div>
-                                );
-                                return (
-                                  <div className="flex flex-col gap-3">
-                                    {sessions.map((s, i) => {
-                                      const d = new Date(s.scheduled_at);
-                                      const n = (selected.sessions_used || 0) + i + 1;
-                                      return (
-                                        <div key={s.id} className="materi-panel flex items-center gap-4 rounded-2xl bg-white p-4 transition hover:bg-[#F5F6F8]">
-                                          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F5F6F8] text-[13px] font-extrabold text-[#12172B]">{String(n).padStart(2, "0")}</span>
-                                          <div className="min-w-0 flex-1">
-                                            <div className="flex flex-wrap items-center gap-2">
-                                              <p className="truncate text-[14px] font-extrabold text-[#12172B]">Sesi {n}</p>
-                                              <span className="rounded-full bg-[#16796E]/10 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">Mendatang</span>
-                                            </div>
-                                            <p className="mt-0.5 flex items-center gap-1.5 text-[12px] font-medium text-gray-500"><Calendar className="h-3.5 w-3.5" />{d.toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })} · {d.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" })}</p>
-                                          </div>
-                                          <span className="inline-flex h-9 shrink-0 items-center gap-1.5 px-3 text-[12px] font-bold text-gray-500"><Clock className="h-3.5 w-3.5" />Belum mulai</span>
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                );
-                              })()
+                              <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="sesi" />
                             ) : (
+                              <div className="flex flex-col gap-6">
+                              <SesiTimeline reg={selected} schedules={allSchedules.filter((s) => s.registration_id === selected.id)} variant="materi" />
+                              {/* silabus level tetap ada di bawah linimasa — itu peta levelnya,
+                                  bukan materi sesi yang sudah/akan dibahas pengajar */}
+                              <div>
+                              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">Silabus Level</p>
                               <SilabusOutline
                                 /* [reguler-english-conversation-v1] slug HARUS dari bahasa dasar —
                                    "English - Conversation A1.1 (ENG-A11-AUG26)" dulu jadi slug ngawur.
@@ -4685,6 +4685,8 @@ export default function AkunPage() {
                                 currentLevel={selected.level}
                                 showPlacementTest={selected.product !== "English Test Preparation"}
                               />
+                              </div>
+                              </div>
                             )}
                           </div>
                         </main>
