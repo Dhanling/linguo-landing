@@ -8,6 +8,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
+import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
 import { toast } from "sonner";
@@ -4409,14 +4410,37 @@ export default function AkunPage() {
           {activeTab === "materi" && canSeeMateri && (
             <motion.div key="materi" initial={false} animate={{ opacity: 1 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
               {(() => {
-                const mlangGlyph = (lang: string): string => {
-                  const g: Record<string, string> = {
-                    Jepang: "あ", Japanese: "あ", Korea: "한", Korean: "한",
-                    Mandarin: "中", Chinese: "中", Arab: "ع", Arabic: "ع",
-                    Rusia: "Я", Russian: "Я", Thai: "ก", Ibrani: "א", Hebrew: "א",
-                    Yunani: "Ω", Greek: "Ω", Hindi: "ह", Persia: "ف", Persian: "ف",
-                  };
-                  return g[baseLanguage(lang)] || "Aa";
+                /* [materi-flag-pie-v1] Ubin huruf ("Я", "あ", "Aa") diganti bendera
+                   rounded-rectangle: satu siluet dengan bendera di silabus & placement,
+                   dan huruf "Aa" untuk bahasa Latin sama sekali tak menandakan bahasa apa. */
+                const langFlagSlug = (lang: string) =>
+                  languageSlug(lang) || baseLanguage(lang).toLowerCase().replace(/\s+/g, "-");
+                /* [materi-sapaan-v1] di layar siswa pengajar dipanggil "Kak Dhani",
+                   bukan nama lengkap seperti di database. Gelar/nama panjang bikin
+                   baris kartu kepotong. */
+                const teacherLabel = (r: any) => {
+                  const d = r?.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  const nm = d?.name || r?.teachers?.name;
+                  return nm ? sapaan(nm, d?.title) : "";
+                };
+                /* [materi-flag-pie-v1] Progress jadi donat ber-angka di tengah supaya
+                   kartu kelas cukup 2 baris (nama + pengajar) — bilah progres dulu
+                   memaksa baris ketiga di tiap kartu. */
+                const ProgressPie = ({ pct, size = 42, stroke = 5 }: { pct: number; size?: number; stroke?: number }) => {
+                  const rr = (size - stroke) / 2;
+                  const keliling = 2 * Math.PI * rr;
+                  return (
+                    <span className="relative inline-flex shrink-0 items-center justify-center" style={{ height: size, width: size }}>
+                      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
+                        <circle cx={size / 2} cy={size / 2} r={rr} fill="none" stroke="#DDE1E7" strokeWidth={stroke} />
+                        <circle
+                          cx={size / 2} cy={size / 2} r={rr} fill="none" stroke="#16796E" strokeWidth={stroke} strokeLinecap="round"
+                          strokeDasharray={keliling} strokeDashoffset={keliling * (1 - Math.min(100, Math.max(0, pct)) / 100)}
+                        />
+                      </svg>
+                      <span className="absolute text-[10px] font-extrabold tabular-nums text-[#12172B]">{pct}%</span>
+                    </span>
+                  );
                 };
                 const PAL = [
                   { color: "#16796E", tintBg: "bg-[#16796E]/10", tintText: "text-[#16796E]" },
@@ -4464,21 +4488,18 @@ export default function AkunPage() {
                 const palOf = (r: any) => PAL[Math.max(0, liveClasses.findIndex((x: any) => x.id === r.id)) % PAL.length];
 
                 const ClassItem = ({ r, mobile }: { r: any; mobile?: boolean }) => {
-                  const pal = palOf(r); const pct = pctOf(r); const isSel = selected && r.id === selected.id;
+                  const pct = pctOf(r); const isSel = selected && r.id === selected.id;
                   return (
                     <button
                       onClick={() => { setMateriSel(r.id); setMateriTab("sesi"); }}
                       className={`group flex items-center gap-3 rounded-2xl p-3 text-left transition ${isSel ? "bg-[#E8EAEE]" : "bg-white hover:bg-[#F5F6F8]"} ${mobile ? "w-[240px] shrink-0 bg-white" : "w-full"}`}
                     >
-                      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-xl font-extrabold ${pal.tintBg} ${pal.tintText}`}>{mlangGlyph(r.language)}</span>
+                      <LangSlugFlag slug={langFlagSlug(r.language)} h={30} />
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-[14px] font-extrabold text-[#12172B]">{displayLanguage(r.language)} — {r.level || "TBD"}</span>
-                        <span className="block truncate text-[12px] font-medium text-gray-500">{r?.teachers?.name || (PRODUCT_BADGE[r.product]?.label || r.product)}</span>
-                        <span className="mt-2 flex items-center gap-2">
-                          <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} /></span>
-                          <span className="text-[11px] font-bold text-gray-500">{pct}%</span>
-                        </span>
+                        <span className="block truncate text-[12px] font-medium text-gray-500">{teacherLabel(r) || PRODUCT_BADGE[r.product]?.label || r.product}</span>
                       </span>
+                      <ProgressPie pct={pct} />
                     </button>
                   );
                 };
@@ -4580,19 +4601,23 @@ export default function AkunPage() {
                                         <div className="pointer-events-none absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(15,71,65,0.88) 0%, rgba(22,121,110,0.66) 46%, rgba(22,121,110,0.28) 100%)" }} />
                                       </>
                                     )}
-                                    <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-[44px] font-extrabold leading-none text-white">{mlangGlyph(selected.language)}</span>
+                                    {/* [materi-flag-pie-v1] ubin huruf diganti bendera, sama seperti daftar kelas di kiri */}
+                                    <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/15">
+                                      <LangSlugFlag slug={langFlagSlug(selected.language)} h={40} />
+                                    </span>
                                     <div className="relative z-10 min-w-0 flex-1 text-white">
                                       <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{badge.label}</span>
                                       <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{displayLanguage(selected.language)} — {selected.level || "TBD"}</h2>
-                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {selected?.teachers?.name || "Belum ditentukan"}</p>
+                                      <p className="mt-1 flex items-center gap-1.5 text-[13px] font-medium text-white/85"><User className="h-4 w-4" strokeWidth={2.5} />Pengajar: {teacherLabel(selected) || "Belum ditentukan"}</p>
                                     </div>
                                   </div>
                                   <div className="grid grid-cols-3 gap-4 px-6 py-5 sm:px-7">
                                     <div>
                                       <p className="text-[12px] font-semibold text-gray-500">Progress</p>
-                                      <div className="mt-2 flex items-center gap-2">
-                                        <span className="h-2 flex-1 overflow-hidden rounded-full bg-[#E8EAEE]"><span className="block h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} /></span>
-                                        <span className="text-[13px] font-extrabold text-[#12172B]">{pct}%</span>
+                                      {/* [materi-flag-pie-v1] bilah progres → donat, sebentuk dengan kartu kelas */}
+                                      <div className="mt-1.5 flex items-center gap-2.5">
+                                        <ProgressPie pct={pct} size={44} stroke={6} />
+                                        <span className="text-[12px] font-medium text-gray-500">{pct >= 100 ? "Kelas selesai" : "Sedang berjalan"}</span>
                                       </div>
                                     </div>
                                     <div className="border-l border-slate-100 pl-4">

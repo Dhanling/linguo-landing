@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Bell } from 'lucide-react';
+import { Bell, BellOff } from 'lucide-react';
 import { supabase } from '@/lib/supabase-client';
 
 interface Notification {
@@ -115,7 +115,9 @@ export default function NotificationBell({ userId, userType, variant = 'bell' }:
           className="relative w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
           aria-label="Notifikasi"
         >
-          <span className="text-xl">🔔</span>
+          {/* [no-emoji-lucide-v1] dulu emoji 🔔 — bentuk & tingginya beda-beda per OS
+              dan tak sewarna ikon lain di layar. Ganti ikon lucide seperti varian topbar. */}
+          <Bell className="h-5 w-5 text-[#12172B]" strokeWidth={2.2} />
           {unreadCount > 0 && (
             <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-[16px] px-1 flex items-center justify-center ring-2 ring-white">
               {unreadCount > 9 ? '9+' : unreadCount}
@@ -141,7 +143,7 @@ export default function NotificationBell({ userId, userType, variant = 'bell' }:
           <div className="max-h-80 overflow-y-auto">
             {notifs.length === 0 ? (
               <div className="text-center py-8 text-gray-400">
-                <div className="text-3xl mb-2">🔔</div>
+                <BellOff className="mx-auto mb-2 h-8 w-8 text-slate-300" strokeWidth={1.6} />
                 <div className="text-sm">Belum ada notifikasi</div>
               </div>
             ) : (
