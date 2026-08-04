@@ -198,23 +198,30 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
     );
   }
   if (variant === "hero") {
+    // [sertifikat-list-bendera-v2] kotaknya ikut diturunkan (64→48) biar sebanding
+    // dengan bendera kecil di daftar kiri.
     return (
-      <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white/15">
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/15">
         {url
-          ? <img src={url} alt={lang} className="h-9 w-14 rounded-md object-cover shadow" />
-          : <span className="text-[34px] font-extrabold">{glyphOf(lang)}</span>}
+          ? <img src={url} alt={lang} className="h-7 w-10 rounded-md object-cover shadow" />
+          : <span className="text-[26px] font-extrabold">{glyphOf(lang)}</span>}
       </span>
     );
   }
-  // [sertifikat-list-bendera-v1] list (12x12) — benderanya diambil LANGSUNG dari CDN,
+  // [sertifikat-list-bendera-v1] list — benderanya diambil LANGSUNG dari CDN,
   // bukan lewat prefetch data-URI. Baris ini tidak pernah ikut capture html2canvas
   // (cuma kertas sertifikat yang butuh same-origin), sementara nunggu data-URI bikin
   // barisnya jatuh ke inisial huruf ("Bu", "Po") tiap prefetch telat/gagal.
   // Inisialnya tetap ada di belakang sebagai jaring pengaman kalau gambar gagal muat.
+  // [sertifikat-list-bendera-v2] ukurannya bendera biasa (28x40, sudut tumpul) —
+  // dulu kotak 48x48 yang bikin gambarnya dipotong & barisnya terasa berat.
   const code = flagCodeOf(lang);
   return (
-    <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl" style={{ background: dark ? col.bgDark : col.bg }}>
-      <span className="text-xl font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>
+    <span
+      className="relative flex h-7 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md"
+      style={{ background: dark ? col.bgDark : col.bg, boxShadow: "0 0 0 1px rgba(0,0,0,.08)" }}
+    >
+      <span className="text-[11px] font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>
       {code ? (
         <img
           src={`https://flagcdn.com/w80/${code}.png`}
