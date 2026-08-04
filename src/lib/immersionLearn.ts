@@ -3,6 +3,8 @@
 // kalimat (kelas kata). Semua jalan lewat Edge Function di project Supabase yang
 // sama dengan app mobile (yt-transcript & word-info) — anon key aman di client.
 
+import { findWatchAccessCode, isWatchAccessCodeRedeemable } from "@/lib/watchAccessCodes";
+
 const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
@@ -2877,6 +2879,10 @@ export const FREE_SAVE_LIMIT = 20;
 export const FREE_LOOKUP_LIMIT = 3;
 
 const PREMIUM_KEY = "linguo:watch:premium:v1";
+// Batas akhir premium (ISO). KOSONG = tanpa batas — itu keadaan pembeli lama yang
+// sudah terlanjur punya PREMIUM_KEY tanpa tanggal, jadi jangan pernah anggap
+// "tidak ada tanggal" sebagai kedaluwarsa. Diisi oleh penukaran kode akses.
+const PREMIUM_UNTIL_KEY = "linguo:watch:premium:until:v1";
 const LOOKUP_KEY = "linguo:watch:lookups:v1";
 // Flag staf (owner/admin Linguo): akses penuh Watch & Learn tanpa langganan —
 // biar tim internal bisa nonton & pakai semua fitur belajar tanpa kena gate.
@@ -2910,15 +2916,34 @@ export function setWatchStaff(on: boolean): void {
   }
 }
 
+/** Kapan premium berakhir. Null = tanpa batas (atau memang belum premium). */
+export function watchPremiumUntil(): Date | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(PREMIUM_UNTIL_KEY);
+    if (!raw) return null;
+    const t = Date.parse(raw);
+    return Number.isFinite(t) ? new Date(t) : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Akses premium Watch & Learn (buka arti/Analisa tanpa batas). Titik sambung tunggal. */
 export function isWatchPremium(): boolean {
   if (typeof window === "undefined") return false;
   try {
     // Staf internal (owner/admin) dianggap premium — pengecualian gate.
-    return (
-      window.localStorage.getItem(STAFF_KEY) === "1" ||
-      window.localStorage.getItem(PREMIUM_KEY) === "1"
-    );
+    if (window.localStorage.getItem(STAFF_KEY) === "1") return true;
+    if (window.localStorage.getItem(PREMIUM_KEY) !== "1") return false;
+    // Premium bermasa berlaku (dari kode akses): habis waktunya → bersihkan
+    // flagnya sekalian, biar tak ada sisa yang menipu di pengecekan berikutnya.
+    const until = watchPremiumUntil();
+    if (until && Date.now() > until.getTime()) {
+      setWatchPremium(false);
+      return false;
+    }
+    return true;
   } catch {
     return false;
   }
@@ -2928,15 +2953,85 @@ export function isWatchPremium(): boolean {
  * Sambungan tunggal untuk MENGAKTIFKAN premium. Sekarang menulis flag lokal
  * (per-perangkat) — dipanggil setelah pembayaran berhasil (halaman redirect) atau
  * saat entitlement langganan asli disambung. TODO: verifikasi entitlement server.
+ *
+ * `untilISO` opsional: diisi kalau aksesnya bermasa berlaku (kode akses). Tanpa
+ * argumen itu = premium tanpa batas (jalur pembayaran), dan tanggal lama dihapus.
  */
-export function setWatchPremium(on: boolean): void {
+export function setWatchPremium(on: boolean, untilISO?: string | null): void {
   if (typeof window === "undefined") return;
   try {
-    if (on) window.localStorage.setItem(PREMIUM_KEY, "1");
-    else window.localStorage.removeItem(PREMIUM_KEY);
+    if (!on) {
+      window.localStorage.removeItem(PREMIUM_KEY);
+      window.localStorage.removeItem(PREMIUM_UNTIL_KEY);
+      return;
+    }
+    window.localStorage.setItem(PREMIUM_KEY, "1");
+    if (untilISO) window.localStorage.setItem(PREMIUM_UNTIL_KEY, untilISO);
+    else window.localStorage.removeItem(PREMIUM_UNTIL_KEY);
   } catch {
     /* diblokir — abaikan */
   }
+}
+
+// ── Kode akses (comp / uji coba) ─────────────────────────────────────────────
+// Menukar kode = menyalakan premium bermasa berlaku di perangkat ini. Daftar
+// kodenya di lib/watchAccessCodes.ts.
+
+/** Tambah n bulan ke sebuah tanggal, tanggal akhir bulan di-clamp (31 Jan +1 bln = 28/29 Feb). */
+function addMonths(base: Date, n: number): Date {
+  const d = new Date(base.getTime());
+  const day = d.getDate();
+  d.setDate(1);
+  d.setMonth(d.getMonth() + n);
+  const lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+  d.setDate(Math.min(day, lastDay));
+  return d;
+}
+
+export type RedeemResult =
+  | { ok: true; code: string; label: string; until: string | null; months: number }
+  | { ok: false; reason: string };
+
+/**
+ * Tukar kode akses di perangkat ini. Tidak pernah MEMPERPENDEK akses yang sudah
+ * ada: premium tanpa batas (hasil bayar) tetap tanpa batas, dan tanggal yang lebih
+ * jauh menang atas tanggal baru.
+ */
+export function redeemWatchAccessCode(rawCode: string): RedeemResult {
+  const entry = findWatchAccessCode(rawCode);
+  if (!entry) return { ok: false, reason: "Kode tidak ditemukan." };
+  if (!entry.enabled) return { ok: false, reason: "Kode sudah tidak aktif." };
+  if (!isWatchAccessCodeRedeemable(entry)) {
+    return { ok: false, reason: "Kode sudah kedaluwarsa." };
+  }
+  if (typeof window === "undefined") {
+    return { ok: false, reason: "Kode hanya bisa ditukar dari browser." };
+  }
+
+  const alreadyPremium =
+    (() => {
+      try {
+        return window.localStorage.getItem(PREMIUM_KEY) === "1";
+      } catch {
+        return false;
+      }
+    })();
+  const current = watchPremiumUntil();
+  // Sudah premium tanpa batas → biarkan apa adanya, jangan dikasih tanggal.
+  if (alreadyPremium && !current) {
+    return { ok: true, code: entry.code, label: entry.label, until: null, months: entry.months };
+  }
+
+  const fresh = addMonths(new Date(), entry.months);
+  const until = current && current.getTime() > fresh.getTime() ? current : fresh;
+  setWatchPremium(true, until.toISOString());
+  return {
+    ok: true,
+    code: entry.code,
+    label: entry.label,
+    until: until.toISOString(),
+    months: entry.months,
+  };
 }
 
 // ── Kuota cicip: buka arti kata (dipakai bersama Analisa) ────────────────────

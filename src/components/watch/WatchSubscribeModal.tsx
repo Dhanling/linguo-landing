@@ -10,8 +10,13 @@
 // immersionLearn). Untuk sekarang unlock per-perangkat setelah bayar (redirect).
 
 import { useEffect, useState } from "react";
-import { X, Sparkles, Check, ArrowRight, Tag, Loader2, BadgePercent } from "lucide-react";
-import { WATCH_PLANS, type WatchPlan } from "@/lib/immersionLearn";
+import { X, Sparkles, Check, ArrowRight, Tag, Loader2, BadgePercent, KeyRound } from "lucide-react";
+import {
+  WATCH_PLANS,
+  redeemWatchAccessCode,
+  type WatchPlan,
+} from "@/lib/immersionLearn";
+import { findWatchAccessCode } from "@/lib/watchAccessCodes";
 
 interface PromoApplied {
   code: string;
@@ -38,6 +43,9 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
   const [applied, setApplied] = useState<PromoApplied | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Kode AKSES berhasil ditukar (mis. LINGUOHEMAT) → modal berubah jadi layar
+  // "sudah aktif", tak ada checkout sama sekali.
+  const [unlocked, setUnlocked] = useState<null | { label: string; until: string | null }>(null);
 
   const plan = WATCH_PLANS.find((p) => p.id === planId)!;
   const effectiveAmount = applied ? applied.discountedAmount : plan.price;
@@ -48,6 +56,21 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
     if (!c) {
       setApplied(null);
       setPromoError(null);
+      return;
+    }
+    // Kode AKSES dicek duluan (lokal, tanpa server): ini bukan diskon — langsung
+    // membuka premium bermasa berlaku di perangkat ini. Kalau kodenya memang kode
+    // akses tapi ditolak (nonaktif/kedaluwarsa), alasannya yang ditampilkan —
+    // jangan diteruskan ke server promo yang cuma akan bilang "tidak ditemukan".
+    if (findWatchAccessCode(c)) {
+      const redeemed = redeemWatchAccessCode(c);
+      setApplied(null);
+      if (redeemed.ok) {
+        setPromoError(null);
+        setUnlocked({ label: redeemed.label, until: redeemed.until });
+      } else {
+        setPromoError(redeemed.reason);
+      }
       return;
     }
     setPromoBusy(true);
@@ -122,6 +145,56 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
       setBusy(false);
     }
   };
+
+  // Layar sesudah kode akses ditukar. Muat ulang halaman saat ditutup: gate-gate
+  // di player membaca kuota/premium ke state saat render, jadi tanpa reload masih
+  // ada sisa layar terkunci walau flag-nya sudah menyala.
+  if (unlocked) {
+    const untilLabel = unlocked.until
+      ? new Date(unlocked.until).toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : null;
+    return (
+      <div
+        className="fixed inset-0 z-[130] flex items-end justify-center sm:items-center"
+        style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="w-full max-w-[440px] rounded-t-3xl p-6 text-center shadow-2xl sm:rounded-3xl"
+          style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
+        >
+          <div
+            className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl"
+            style={{ backgroundColor: "rgba(26,158,158,0.16)" }}
+          >
+            <KeyRound className="h-6 w-6" style={{ color: "#7FE0E0" }} />
+          </div>
+          <h2 className="mt-4 text-[20px] font-extrabold leading-tight text-white">
+            Kode aktif — selamat belajar! 🎉
+          </h2>
+          <p className="mt-2 text-[13.5px] leading-relaxed" style={{ color: SUB }}>
+            {unlocked.label}
+            {untilLabel ? ` — berlaku sampai ${untilLabel}.` : "."} Arti kata & Analisa
+            grammar sekarang terbuka penuh di perangkat ini.
+          </p>
+          <button
+            onClick={() => {
+              onClose();
+              window.location.reload();
+            }}
+            className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-[15px] font-bold text-white transition hover:brightness-110"
+            style={{ backgroundColor: TEAL }}
+          >
+            Mulai belajar <ArrowRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

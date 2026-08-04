@@ -4,16 +4,53 @@
 // Membaca ?wl=<external_id>, verifikasi LUNAS ke server (Xendit source of truth),
 // baru menyalakan flag premium lokal. ?wl=gagal → toast gagal. Tidak menyalakan
 // apa pun hanya dari URL tanpa invoice lunas.
+//
+// Jalur kedua: ?kode=<KODE AKSES> (mis. /watch?kode=LINGUOHEMAT) — kode comp/uji
+// coba yang membuka premium bermasa berlaku tanpa invoice, biar tim cukup dikirimi
+// satu tautan. Daftar kodenya di lib/watchAccessCodes.ts. Param langsung dibuang
+// dari URL setelah ditukar (param lain seperti ?v= dipertahankan).
 
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { CheckCircle2, XCircle } from "lucide-react";
-import { setWatchPremium } from "@/lib/immersionLearn";
+import { setWatchPremium, redeemWatchAccessCode } from "@/lib/immersionLearn";
 
 export default function WatchActivate() {
   const params = useSearchParams();
   const router = useRouter();
   const [toast, setToast] = useState<null | { ok: boolean; msg: string }>(null);
+
+  // Tukar kode akses dari URL (?kode= / ?code=). Jalan sekali di mount, sebelum
+  // urusan invoice — dua jalur ini tak pernah dipakai bersamaan.
+  useEffect(() => {
+    const kode = params.get("kode") || params.get("code");
+    if (!kode) return;
+    const res = redeemWatchAccessCode(kode);
+    setToast(
+      res.ok
+        ? {
+            ok: true,
+            msg: res.until
+              ? `${res.label} aktif sampai ${new Date(res.until).toLocaleDateString("id-ID", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })} 🎉`
+              : `${res.label} aktif 🎉`,
+          }
+        : { ok: false, msg: res.reason }
+    );
+    // Buang param kodenya saja, sisanya (mis. ?v=<video>) dipertahankan.
+    try {
+      const u = new URL(window.location.href);
+      u.searchParams.delete("kode");
+      u.searchParams.delete("code");
+      router.replace(u.pathname + u.search + u.hash);
+    } catch {
+      router.replace("/watch");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const wl = params.get("wl");

@@ -11,6 +11,7 @@
 // diimpor oleh route API — jangan impor dari komponen client.
 
 import { WATCH_PLANS, type WatchPlan } from "@/lib/immersionLearn";
+import { findWatchAccessCode } from "@/lib/watchAccessCodes";
 
 export interface WatchPromo {
   code: string; // huruf besar, tanpa spasi
@@ -117,6 +118,17 @@ export async function resolveWatchCode(rawCode: string, planId: string): Promise
   // 1) Kode terdaftar sebagai promo → hormati hasilnya (termasuk gagal: expired/
   //    nonaktif/paket) tanpa jatuh ke jalur afiliator.
   if (PROMO_CODES[code]) return evaluatePromo(code, planId);
+
+  // 1b) Kode AKSES (comp/uji coba, lihat watchAccessCodes) bukan diskon: dia
+  //     ditukar di klien tanpa invoice. Kalau sampai nyasar ke jalur checkout,
+  //     jangan bilang "tidak ditemukan" — arahkan ke cara pakainya, sekalian
+  //     mencegah invoice Rp0 dibuat dari kode itu.
+  if (findWatchAccessCode(code)) {
+    return {
+      ok: false,
+      reason: "Ini kode akses gratis, bukan diskon. Buka /watch?kode=" + code + " untuk mengaktifkannya.",
+    };
+  }
 
   // 2) Coba sebagai kode afiliator.
   const aff = await lookupAffiliate(code);
