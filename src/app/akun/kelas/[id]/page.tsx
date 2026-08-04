@@ -1,7 +1,7 @@
 "use client";
 
-// [kelas-detail-page-v1] Route detail kelas → /akun/kelas/[id]?tab=<overview|jadwal|...>.
-// Pengganti ClassDetailModal (popup di beranda): konten 5 tab + flow reschedule/cancel
+// [kelas-detail-page-v1] Route detail kelas → /akun/kelas/[id]?tab=<materi|progress|...>.
+// Pengganti ClassDetailModal (popup di beranda): konten tab + flow reschedule/cancel
 // kelewat berat buat modal. Reuse StudentShell (rail + panel) yang sama dengan /akun,
 // pola persis /akun/perpustakaan. Rail nav → balik ke /akun?menu=<tab>.
 //
