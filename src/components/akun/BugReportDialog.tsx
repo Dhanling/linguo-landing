@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { supabase } from "@/lib/supabase-client";
 import { toast } from "sonner";
-import { Bug, Upload, X } from "lucide-react";
+import { Bug, Film, Upload, X } from "lucide-react";
 
 type Severity = "critical" | "high" | "medium" | "low";
 
@@ -23,7 +23,14 @@ const SEVERITY_OPTIONS: { value: Severity; label: string }[] = [
   { value: "low", label: "Ringan — tampilan / typo" },
 ];
 
+// [bug-attachments-v1] Satu laporan boleh bawa beberapa lampiran: foto DAN video
+// rekaman layar, biar kronologi bug-nya kebaca utuh.
 const MAX_MB = 5;
+const MAX_VIDEO_MB = 50;
+const MAX_FILES = 5;
+
+// Preview pakai objectURL, bukan data-URL: video 50MB di-base64 bikin HP-nya ngos-ngosan.
+type Picked = { file: File; url: string; isVideo: boolean };
 
 export default function BugReportDialog({
   open,
@@ -35,13 +42,23 @@ export default function BugReportDialog({
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [severity, setSeverity] = useState<Severity>("medium");
-  const [file, setFile] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
+  const [picked, setPicked] = useState<Picked[]>([]);
   const [sending, setSending] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
+
+  // objectURL wajib di-revoke manual waktu komponennya dibongkar.
+  useEffect(
+    () => () => {
+      setPicked((prev) => {
+        prev.forEach((p) => URL.revokeObjectURL(p.url));
+        return [];
+      });
+    },
+    []
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -57,21 +74,43 @@ export default function BugReportDialog({
 
   if (!open || !mounted) return null;
 
-  const pickFile = (f: File | null) => {
-    if (f && f.size > MAX_MB * 1024 * 1024) {
-      toast.error(`Ukuran gambar maksimal ${MAX_MB}MB`);
+  const addFiles = (list: FileList | null) => {
+    if (!list || list.length === 0) return;
+    const room = MAX_FILES - picked.length;
+    if (room <= 0) {
+      toast.error(`Maksimal ${MAX_FILES} lampiran per laporan`);
       return;
     }
-    setFile(f);
-    if (!f) { setPreview(null); return; }
-    const reader = new FileReader();
-    reader.onload = (e) => setPreview(e.target?.result as string);
-    reader.readAsDataURL(f);
+    const accepted: Picked[] = [];
+    let overflow = 0;
+    for (const f of Array.from(list)) {
+      if (accepted.length >= room) { overflow++; continue; }
+      const isVideo = f.type.startsWith("video/");
+      const maxMb = isVideo ? MAX_VIDEO_MB : MAX_MB;
+      if (f.size > maxMb * 1024 * 1024) {
+        toast.error(`"${f.name}" kegedean — maksimal ${maxMb}MB buat ${isVideo ? "video" : "gambar"}`);
+        continue;
+      }
+      accepted.push({ file: f, url: URL.createObjectURL(f), isVideo });
+    }
+    if (overflow > 0) toast.error(`Cuma ${MAX_FILES} lampiran yang muat — sisanya dilewat`);
+    if (accepted.length > 0) setPicked((prev) => [...prev, ...accepted]);
+  };
+
+  const removeAt = (idx: number) => {
+    setPicked((prev) => {
+      const target = prev[idx];
+      if (target) URL.revokeObjectURL(target.url);
+      return prev.filter((_, i) => i !== idx);
+    });
   };
 
   const reset = () => {
     setTitle(""); setDescription(""); setSeverity("medium");
-    setFile(null); setPreview(null);
+    setPicked((prev) => {
+      prev.forEach((p) => URL.revokeObjectURL(p.url));
+      return [];
+    });
   };
 
   const submit = async () => {
@@ -81,20 +120,27 @@ export default function BugReportDialog({
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error("Sesi kamu habis — coba login ulang dulu ya");
 
-      let screenshotUrl: string | null = null;
-      if (file) {
-        const ext = (file.name.split(".").pop() || "png").toLowerCase();
-        const path = `${user.id}/${Date.now()}.${ext}`;
+      // Lampiran gagal naik JANGAN membatalkan laporan — teks keluhannya yang paling
+      // berharga; foto/video cuma pelengkap. Yang gagal dilewat, sisanya tetap ikut.
+      const attachments: { url: string; kind: "image" | "video"; name: string; size: number }[] = [];
+      let failed = 0;
+      for (let i = 0; i < picked.length; i++) {
+        const f = picked[i].file;
+        const ext = (f.name.split(".").pop() || "png").toLowerCase();
+        const path = `${user.id}/${Date.now()}-${i}.${ext}`;
         const { error: upErr } = await supabase.storage
           .from("bug-screenshots")
-          .upload(path, file, { upsert: false });
-        // Gambar gagal naik JANGAN membatalkan laporan — teks keluhannya yang paling
-        // berharga; screenshot cuma pelengkap.
-        if (upErr) {
-          toast.warning("Gambarnya gagal diunggah, laporan tetap dikirim tanpa gambar.");
-        } else {
-          screenshotUrl = supabase.storage.from("bug-screenshots").getPublicUrl(path).data.publicUrl;
-        }
+          .upload(path, f, { upsert: false, contentType: f.type || undefined });
+        if (upErr) { failed++; continue; }
+        attachments.push({
+          url: supabase.storage.from("bug-screenshots").getPublicUrl(path).data.publicUrl,
+          kind: picked[i].isVideo ? "video" : "image",
+          name: f.name,
+          size: f.size,
+        });
+      }
+      if (failed > 0) {
+        toast.warning(`${failed} lampiran gagal diunggah, laporan tetap dikirim tanpa itu.`);
       }
 
       const { error } = await supabase.rpc("submit_bug_report", {
@@ -108,7 +154,9 @@ export default function BugReportDialog({
           viewport: `${window.innerWidth}x${window.innerHeight}`,
           timestamp: new Date().toISOString(),
         },
-        p_screenshot_url: screenshotUrl,
+        // Diisi server dari gambar pertama; dikirim null biar sumbernya cuma satu.
+        p_screenshot_url: null,
+        p_attachments: attachments,
       });
       if (error) throw error;
 
@@ -199,35 +247,61 @@ export default function BugReportDialog({
 
           <div>
             <label className="mb-1.5 block text-[12.5px] font-bold text-slate-700">
-              Screenshot <span className="font-medium text-slate-400">(opsional, tapi sangat membantu)</span>
+              Foto / Video{" "}
+              <span className="font-medium text-slate-400">
+                (opsional, tapi sangat membantu — {picked.length}/{MAX_FILES})
+              </span>
             </label>
-            {preview ? (
-              <div className="relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={preview} alt="Pratinjau" className="max-h-56 w-full rounded-xl border border-slate-200 bg-gray-50 object-contain" />
-                <button
-                  onClick={() => pickFile(null)}
-                  aria-label="Hapus gambar"
-                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-white text-slate-600 shadow transition hover:bg-gray-100"
-                >
-                  <X className="h-3.5 w-3.5" />
-                </button>
+            {picked.length > 0 && (
+              <div className="mb-2.5 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                {picked.map((p, i) => (
+                  <div key={p.url} className="relative overflow-hidden rounded-xl border border-slate-200 bg-gray-50">
+                    {p.isVideo ? (
+                      <video src={p.url} controls preload="metadata" playsInline className="h-28 w-full bg-black object-contain" />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={p.url} alt={p.file.name} className="h-28 w-full object-contain" />
+                    )}
+                    <button
+                      onClick={() => removeAt(i)}
+                      aria-label={`Hapus ${p.file.name}`}
+                      className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white text-slate-600 shadow transition hover:bg-gray-100"
+                    >
+                      <X className="h-3 w-3" />
+                    </button>
+                    <div className="flex items-center gap-1 px-2 py-1 text-[10.5px] text-slate-500">
+                      {p.isVideo && <Film className="h-3 w-3 shrink-0" />}
+                      <span className="truncate">{p.file.name}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ) : (
+            )}
+            {picked.length < MAX_FILES && (
               <button
                 onClick={() => inputRef.current?.click()}
                 className="flex w-full flex-col items-center gap-1.5 rounded-xl border-2 border-dashed border-slate-200 px-4 py-5 text-slate-500 transition hover:border-[#16796E] hover:bg-gray-50"
               >
                 <Upload className="h-5 w-5" />
-                <span className="text-[12.5px] font-semibold">Pilih gambar — PNG/JPG, maks {MAX_MB}MB</span>
+                <span className="text-[12.5px] font-semibold">
+                  Pilih foto atau video — boleh beberapa sekaligus
+                </span>
+                <span className="text-[11px]">
+                  Gambar maks {MAX_MB}MB · video maks {MAX_VIDEO_MB}MB
+                </span>
               </button>
             )}
             <input
               ref={inputRef}
               type="file"
-              accept="image/*"
+              accept="image/*,video/*"
+              multiple
               className="hidden"
-              onChange={(e) => pickFile(e.target.files?.[0] ?? null)}
+              onChange={(e) => {
+                addFiles(e.target.files);
+                // Reset biar file yang sama bisa dipilih lagi setelah dihapus.
+                e.target.value = "";
+              }}
             />
           </div>
         </div>
