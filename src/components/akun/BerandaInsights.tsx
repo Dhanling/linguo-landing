@@ -19,7 +19,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import {
   Clock, CalendarDays, ClipboardList, TrendingUp, Share2, Printer, Check,
-  ChevronRight, FileText, Presentation, Link2, Video, Paperclip, Trophy,
+  ChevronRight, ChevronDown, FileText, Presentation, Link2, Video, Paperclip, Trophy,
   Mic, Headphones, BookOpen, PenLine, type LucideIcon,
 } from 'lucide-react';
 import {
@@ -92,6 +92,9 @@ function StatTile({ Icon, value, label, sub, tone = 'teal', alert = false }: {
 // Sekarang render langsung dari cache, fetch-nya jalan diam-diam di belakang.
 const insightsCache = new Map<string, StudentInsights>();
 
+// Ingatan buka/tutup blok Ringkasan Belajar (per perangkat).
+const RINGKASAN_OPEN_KEY = 'linguo_beranda_ringkasan_open';
+
 export default function BerandaInsights({
   regs,
   studentName,
@@ -116,6 +119,25 @@ export default function BerandaInsights({
   const [fetched, setFetched] = useState<{ key: string; data: StudentInsights } | null>(null);
   const [selReg, setSelReg] = useState<string>('');
   const [shareState, setShareState] = useState('');
+
+  // [beranda-ringkasan-collapse-v1] Blok ini panjang (4 kotak statistik + kartu
+  // progres + kosakata) dan mendorong jadwal & daftar kelas jauh ke bawah, padahal
+  // isinya jarang berubah harian. Jadi default-nya TERTUTUP — cuma judulnya yang
+  // kelihatan, diketuk baru mengembang. Pilihannya diingat per perangkat.
+  // Awal render selalu `false` biar HTML server == HTML klien (tak ada hydration
+  // mismatch); localStorage baru dibaca setelah mount.
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem(RINGKASAN_OPEN_KEY) === '1') setOpen(true);
+    } catch {}
+  }, []);
+  const toggleOpen = () => {
+    setOpen((v) => {
+      try { localStorage.setItem(RINGKASAN_OPEN_KEY, v ? '0' : '1'); } catch {}
+      return !v;
+    });
+  };
 
   // Kunci stabil supaya effect tidak jalan ulang tiap render (regs objek baru terus).
   const regKey = useMemo(() => regs.map((r) => r.id).sort().join(','), [regs]);
@@ -196,19 +218,37 @@ export default function BerandaInsights({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      {/* Judul = sakelar buka/tutup. Lencana PR sengaja tetap tampil walau blok
+          tertutup — itu satu-satunya sinyal tunggakan di layar pertama. */}
+      <button
+        type="button"
+        onClick={toggleOpen}
+        aria-expanded={open}
+        className="flex w-full flex-wrap items-center justify-between gap-3 text-left"
+      >
         <h2 className="inline-flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]">
           <TrendingUp className="h-5 w-5 text-[#16796E]" strokeWidth={2.5} />
           Ringkasan Belajar
         </h2>
-        {pendingHomework.length > 0 && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-3 py-1 text-[12px] font-bold text-rose-600">
-            <span className="h-2 w-2 rounded-full bg-rose-500" />
-            {pendingHomework.length} PR menunggu
+        <span className="inline-flex items-center gap-2">
+          {pendingHomework.length > 0 && (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-50 px-3 py-1 text-[12px] font-bold text-rose-600">
+              <span className="h-2 w-2 rounded-full bg-rose-500" />
+              {pendingHomework.length} PR menunggu
+            </span>
+          )}
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-[12px] font-bold text-gray-500">
+            {open ? 'Tutup' : 'Lihat'}
+            <ChevronDown
+              className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`}
+              strokeWidth={2.6}
+            />
           </span>
-        )}
-      </div>
+        </span>
+      </button>
 
+      {!open ? null : (
+      <>
       {/* ── Baris statistik ── */}
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         <StatTile
@@ -458,6 +498,8 @@ export default function BerandaInsights({
             ))}
           </div>
         </div>
+      )}
+      </>
       )}
     </div>
   );
