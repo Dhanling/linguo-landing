@@ -18,7 +18,7 @@ import ClassMateriTab from '@/components/akun/ClassMateriTab';
 import ClassRaporTab from '@/components/akun/ClassRaporTab';
 // [teacher-workspace-v1] PR punya siklus penuh: diberi pengajar → disetor di sini → dinilai
 import ClassTugasTab from '@/components/akun/ClassTugasTab';
-import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, CreditCard, MessageCircle, ClipboardList, Check, PenLine, RotateCcw, X, CalendarClock, HelpCircle, AlertTriangle, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, PenLine, RotateCcw, X, CalendarClock, HelpCircle, AlertTriangle, type LucideIcon } from 'lucide-react';
 
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
@@ -362,6 +362,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                 {displayLanguage(reg.language)} · {reg.level || 'TBD'}
               </h1>
             </div>
+            {/* [kelas-header-paket-v1] Durasi & jumlah sesi nempel di header —
+                itu identitas paketnya, sebaris dgn bahasa & levelnya. Total
+                pembayaran sengaja TIDAK ditampilkan di sini (sudah ada di
+                halaman Pembayaran). */}
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-3.5 gap-y-1 text-[12px] font-semibold text-white/85">
+              <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" strokeWidth={2.2} />{reg.duration || '-'} menit/sesi</span>
+              <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-3.5 w-3.5" strokeWidth={2.2} />Paket {reg.sessions_total || 0} sesi</span>
+            </div>
           </div>
         </div>
       </div>
@@ -414,7 +422,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           Overview; setelah tab itu dihapus kartunya naik jadi blok tetap di atas
           tab bar — tetap lengkap dengan aksinya (ubah jadwal / batalkan). */}
       {!loading && (
-        <div className="mt-5 space-y-4">
+        <div className="mt-5">
           {nextSched ? (
             <div className="rounded-2xl border border-[#16796E]/25 bg-[#F0FAF8] p-4 sm:p-5">
               <div className="flex items-start justify-between gap-3">
@@ -474,14 +482,6 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
               </a>
             </div>
           )}
-
-          {/* [overview-detail-strip-v1] Durasi & total pembayaran cukup satu baris
-              ringkas — informasinya tetap ada, tak merebut perhatian. */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 rounded-2xl bg-white px-4 py-3 text-xs text-gray-500">
-            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" strokeWidth={2} />{reg.duration || '-'} menit/sesi</span>
-            <span className="inline-flex items-center gap-1.5"><ClipboardList className="h-3.5 w-3.5" strokeWidth={2} />Paket {reg.sessions_total || 0} sesi</span>
-            <span className="inline-flex items-center gap-1.5"><CreditCard className="h-3.5 w-3.5" strokeWidth={2} />Rp{(reg.total_amount || 0).toLocaleString('id-ID')}</span>
-          </div>
         </div>
       )}
 
