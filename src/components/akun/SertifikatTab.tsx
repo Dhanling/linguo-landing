@@ -206,12 +206,23 @@ function FlagBadge({ lang, variant, dark = false }: { lang: string; variant: "li
       </span>
     );
   }
-  // list (12x12)
+  // [sertifikat-list-bendera-v1] list (12x12) — benderanya diambil LANGSUNG dari CDN,
+  // bukan lewat prefetch data-URI. Baris ini tidak pernah ikut capture html2canvas
+  // (cuma kertas sertifikat yang butuh same-origin), sementara nunggu data-URI bikin
+  // barisnya jatuh ke inisial huruf ("Bu", "Po") tiap prefetch telat/gagal.
+  // Inisialnya tetap ada di belakang sebagai jaring pengaman kalau gambar gagal muat.
+  const code = flagCodeOf(lang);
   return (
-    <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl" style={{ background: dark ? col.bgDark : col.bg }}>
-      {url
-        ? <img src={url} alt={lang} className="h-7 w-10 rounded-[4px] object-cover shadow-sm" />
-        : <span className="text-xl font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>}
+    <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl" style={{ background: dark ? col.bgDark : col.bg }}>
+      <span className="text-xl font-extrabold" style={{ color: dark ? col.textDark : col.text }}>{glyphOf(lang)}</span>
+      {code ? (
+        <img
+          src={`https://flagcdn.com/w80/${code}.png`}
+          alt={lang}
+          className="absolute inset-0 h-full w-full object-cover"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        />
+      ) : null}
     </span>
   );
 }
@@ -488,11 +499,9 @@ export default function SertifikatTab({
                       {PROD_SHORT[productKindOf(ct.product)] ? ` · ${PROD_SHORT[productKindOf(ct.product)]}` : ""}
                     </span>
                   </span>
-                  {ct.status === "issued" ? (
-                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-[11px] font-bold text-emerald-600"><BadgeCheck className="h-3.5 w-3.5" />Terbit</span>
-                  ) : (
-                    <span className="flex shrink-0 items-center gap-1 rounded-full bg-slate-100 px-2 py-1 text-[11px] font-bold text-[#6B7280]"><Lock className="h-3 w-3" />{ct.pct ?? 0}%</span>
-                  )}
+                  {/* [sertifikat-list-bendera-v1] chip status/persen di kanan nama bahasa
+                      dibuang — barisnya jadi sesak & informasinya sudah lengkap di panel
+                      detail (plus hitungan "x terbit · y dalam proses" di kepala tab). */}
                 </button>
               );
             })}

@@ -4025,9 +4025,9 @@ export default function AkunPage() {
                                     // [kelas-detail-resilient-v1] titipkan data reg → halaman detail
                                     // render instan tanpa nunggu query (anti mental balik ke beranda)
                                     onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
-                                    className={`group block rounded-3xl bg-white p-3 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
+                                    className={`group block rounded-[20px] bg-white p-2.5 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                   >
-                                    <div className={`relative flex h-32 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
+                                    <div className={`relative flex h-24 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
                                       {photo ? (
                                         <>
                                           <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
@@ -4035,40 +4035,40 @@ export default function AkunPage() {
                                         </>
                                       ) : (
                                         <>
-                                          <span className="text-[64px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
-                                          <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                          <span className="text-[44px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                          <div className="absolute -bottom-5 -right-3 h-20 w-20 rounded-full bg-white/10" />
                                         </>
                                       )}
                                       {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
                                       {selesai ? (
-                                        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-gray-500">
-                                          <Check className="h-3 w-3" strokeWidth={3} /> Selesai
+                                        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-gray-500">
+                                          <Check className="h-2.5 w-2.5" strokeWidth={3} /> Selesai
                                         </span>
                                       ) : (
-                                        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-[#16796E]">
+                                        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-[#16796E]">
                                           <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
                                         </span>
                                       )}
                                     </div>
-                                    <div className="px-2 pb-1.5 pt-3">
-                                      <div className="flex items-center gap-2">
-                                        <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                        <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                    <div className="px-1.5 pb-1 pt-2.5">
+                                      <div className="flex items-center gap-1.5">
+                                        <img src={getFlagUrl(reg.language)} alt="" className="h-3.5 w-3.5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                        <h3 className="truncate text-[14px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
                                       </div>
                                       {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
                                           [beranda-teacher-avatar-v2] tanpa ring putih — di dark mode
                                           cincinnya kebaca sebagai outline putih yang nabrak kartu hitam */}
-                                      <div className="mt-1.5 flex items-center gap-2">
+                                      <div className="mt-1.5 flex items-center gap-1.5">
                                         {tAva ? (
-                                          <img src={tAva} alt={tName || ""} className="h-7 w-7 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                          <img src={tAva} alt={tName || ""} className="h-6 w-6 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
                                         ) : null}
-                                        <span className={`${tAva ? "hidden" : ""} flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[11px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
-                                        <p className="truncate text-[13px] font-medium text-gray-500">{tName || badge.label}</p>
+                                        <span className={`${tAva ? "hidden" : ""} flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[10px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
+                                        <p className="truncate text-[12px] font-medium text-gray-500">{tName || badge.label}</p>
                                       </div>
-                                      <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                      <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
                                         <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
                                       </div>
-                                      <div className="mt-3 flex items-center justify-between text-[12px] font-semibold">
+                                      <div className="mt-2 flex items-center justify-between text-[11.5px] font-semibold">
                                         <span className="text-gray-500">Selesai: <span className="text-[#12172B]">{pct}%</span></span>
                                         <span className="text-gray-500">Sesi: <span className="text-[#12172B]">{used}/{total}</span></span>
                                       </div>
@@ -4096,7 +4096,10 @@ export default function AkunPage() {
                                           </span>
                                           {note && <p className="text-[12px] font-medium text-gray-500">{note}</p>}
                                         </div>
-                                        <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                                        {/* [beranda-kartu-kompak-v1] 3 kartu per baris mulai lg —
+                                            dulu baru 3 kolom di 2xl, jadi di layar laptop kartunya
+                                            melebar & tinggi banget (cuma 4 kelas keliatan sekali layar). */}
+                                        <div className="mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
                                           {items.map((reg: any) => renderKelasCard(reg, cardIdx++))}
                                           {/* [beranda-riwayat-kelas-v1] kartu "Tambah Kelas" cuma di
                                               view Aktif — ditaruh di seksi terakhir supaya cuma muncul
@@ -4104,10 +4107,10 @@ export default function AkunPage() {
                                           {liveView === "aktif" && isLast && (
                                             <button
                                               onClick={openEnrollWizard}
-                                              className="flex min-h-[168px] flex-col items-center justify-center gap-2 rounded-3xl bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
+                                              className="flex min-h-[140px] flex-col items-center justify-center gap-2 rounded-[20px] bg-gray-50 p-4 text-gray-400 transition-colors hover:bg-gray-100 hover:text-[#16796E]"
                                             >
-                                              <Plus className="h-7 w-7" strokeWidth={2} />
-                                              <span className="text-[13px] font-semibold">Tambah Kelas</span>
+                                              <Plus className="h-6 w-6" strokeWidth={2} />
+                                              <span className="text-[12.5px] font-semibold">Tambah Kelas</span>
                                             </button>
                                           )}
                                         </div>
