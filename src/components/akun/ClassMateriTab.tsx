@@ -280,26 +280,31 @@ function MilestoneRow({
   // Isi lingkaran milestone. [kelas-milestone-flip-v1] Sesi yang sudah selesai
   // menukar centang dengan NOMOR sesinya saat disentuh kursor — nomornya tetap
   // terbaca tanpa mengorbankan centang hijau yang bikin progres kelihatan sekilas.
+  // Bulatan 24px: cukup kecil untuk linimasa 18 baris, masih muat centang/nomor.
+  const kelasBulatan = 'group/dot absolute left-0 top-0 h-6 w-6 [perspective:600px]';
   const isiBulatan = (
     <span
       className={`relative block h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${st.done ? 'group-hover/dot:[transform:rotateY(180deg)]' : ''}`}
     >
-      <span className={`absolute inset-0 flex items-center justify-center rounded-full text-[12px] font-extrabold [backface-visibility:hidden] ${st.dot}`}>
-        {st.done ? <Check className="h-4 w-4" strokeWidth={3} /> : no}
+      <span className={`absolute inset-0 flex items-center justify-center rounded-full text-[11px] font-extrabold [backface-visibility:hidden] ${st.dot}`}>
+        {st.done ? <Check className="h-3.5 w-3.5" strokeWidth={3} /> : no}
       </span>
       {st.done && (
-        <span className="absolute inset-0 flex items-center justify-center rounded-full bg-[#16796E] text-[12px] font-extrabold text-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <span className="absolute inset-0 flex items-center justify-center rounded-full bg-[#16796E] text-[11px] font-extrabold text-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
           {no}
         </span>
       )}
     </span>
   );
-  const kelasBulatan = 'group/dot absolute left-0 top-0.5 h-8 w-8 [perspective:600px]';
 
   return (
-    <li className="relative pl-11">
-      {/* Rail milestone — garis penyambung antar sesi */}
-      {!isLast && <span aria-hidden className="absolute bottom-0 left-[15px] top-9 w-px bg-gray-200" />}
+    <li className="relative pl-9">
+      {/* [kelas-milestone-rail-v1] Rail milestone. Ditarik dari TITIK TENGAH bulatan
+          (top-3 = separuh dari h-6) sampai dasar baris, dan digambar SEBELUM bulatan
+          supaya bagian yang bertumpuk tertutup bulatan yang solid. Versi lama mulai
+          dari bawah bulatan (`top-9`) sehingga baris pendek — sesi yang belum
+          dijadwalkan — punya tinggi rail negatif alias garisnya hilang. */}
+      {!isLast && <span aria-hidden className="absolute bottom-0 left-[11px] top-3 w-0.5 bg-gray-200" />}
       {bisaDibuka ? (
         <button type="button" onClick={onOpen} aria-label={`Buka materi sesi ${no}`} className={kelasBulatan}>
           {isiBulatan}
@@ -308,12 +313,14 @@ function MilestoneRow({
         <span className={kelasBulatan}>{isiBulatan}</span>
       )}
 
-      <div className={sched ? 'pb-6' : 'pb-3.5'}>
+      <div className={sched ? 'pb-5' : 'pb-3'}>
         {/* [kelas-materi-drawer-v1] Judul + tanggal jadi satu tombol pembuka
             drawer materi. Tombol Ubah/Batalkan sengaja DI LUAR tombol ini —
             kalau bersarang, klik "Batalkan" ikut membuka drawer. */}
         <HeaderSesi as={bisaDibuka ? 'button' : 'div'} onClick={onOpen}>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          {/* min-h-6 = setinggi bulatan, jadi tulisan "Sesi N" persis sejajar
+              dengan titik milestone-nya di semua baris (ada tanggal atau tidak). */}
+          <div className="flex min-h-6 flex-wrap items-center gap-x-2 gap-y-1">
             <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>Sesi {no}</span>
             {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
             {items.length > 0 && (
@@ -517,14 +524,14 @@ export default function ClassMateriTab({
                 (paket 16 sesi tetap 16 baris), cuma tidak sampai mendorong sesi
                 yang benar-benar berisi jauh ke bawah layar. */}
             {lipatKosong && (
-              <li className="relative pl-11 pb-4">
-                <span aria-hidden className="absolute bottom-0 left-[15px] top-9 w-px bg-gray-200" />
-                <span className="absolute left-0 top-0.5 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-[12px] font-extrabold text-gray-400">
+              <li className="relative pb-3 pl-9">
+                <span aria-hidden className="absolute bottom-0 left-[11px] top-3 w-0.5 bg-gray-200" />
+                <span className="absolute left-0 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-gray-100 text-[11px] font-extrabold text-gray-400">
                   {kosongDepan}
                 </span>
                 <button
                   onClick={() => setKosongTerbuka(true)}
-                  className="text-left text-sm font-bold text-gray-400 hover:text-[#16796E]"
+                  className="flex min-h-6 items-center text-left text-sm font-bold text-gray-400 hover:text-[#16796E]"
                 >
                   Sesi {ordered[0].no}–{ordered[kosongDepan - 1].no} belum dijadwalkan
                   <span className="ml-1.5 text-xs font-semibold text-[#16796E]">Tampilkan</span>
