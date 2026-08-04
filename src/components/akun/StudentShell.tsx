@@ -351,6 +351,13 @@ export default function StudentShell({
         .lms-dark .bg-white\\/90,.lms-dark .bg-white\\/95{background-color:rgba(28,28,28,0.94) !important;}
         .lms-dark .bg-white\\/60,.lms-dark .bg-white\\/70,.lms-dark .bg-white\\/80{background-color:rgba(28,28,28,0.78) !important;}
         .lms-dark .bg-\\[\\#F0FAF8\\]{background-color:rgba(45,212,191,0.10) !important;}
+        /* [sesi-mendatang-flat-dark-v1] Kartu "Sesi Mendatang" jangan ikut jadi kotak abu
+           (#1c1c1c) — isinya sudah daftar baris berbingkai sendiri, jadi panelnya cuma
+           bikin dua lapis kotak bertumpuk. Panelnya dibikin hitam (menyatu dgn halaman),
+           barisnya yang naik selapis biar tetap kebaca sebagai daftar. */
+        .lms-dark .sesi-mendatang-panel{background-color:#000000 !important;}
+        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item{background-color:#141414 !important;}
+        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item:hover{background-color:#1c1c1c !important;}
         /* ── Teks: putih & abu terang (kontras tinggi) ── */
         .lms-dark .text-slate-900,.lms-dark .text-slate-800,.lms-dark .text-slate-700,.lms-dark .text-gray-900,.lms-dark .text-gray-800,.lms-dark .text-gray-700,.lms-dark .text-\\[\\#12172B\\]{color:#ffffff !important;}
         .lms-dark .text-slate-600,.lms-dark .text-gray-600{color:#e5e5e5 !important;}

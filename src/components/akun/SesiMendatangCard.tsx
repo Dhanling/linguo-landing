@@ -74,8 +74,10 @@ export default function SesiMendatangCard({
 
   if (!upcoming.length) return null;
 
+  // `sesi-mendatang-panel` / `sesi-mendatang-item` = penanda buat aturan dark mode
+  // di StudentShell (panel hitam polos di mode gelap; mode terang tetap kartu putih).
   return (
-    <div className="rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
+    <div className="sesi-mendatang-panel rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
         <div className="min-w-0">
           <h3 className="inline-flex items-center gap-1.5 text-[16px] font-extrabold text-[#12172B]">
@@ -130,7 +132,7 @@ function SesiItem({ s, studentName, onClick }: {
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
-      className="cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
+      className="sesi-mendatang-item cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
     >
       <div className="flex w-full items-center gap-3">
         <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white leading-none shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
