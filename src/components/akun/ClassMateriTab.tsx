@@ -14,6 +14,13 @@
 // Urutan sengaja DIBALIK: sesi terakhir di paling atas, sesi 1 di paling bawah.
 // Kalau tabel class_materials belum dimigrasi, jatuh ke daftar milestone tanpa
 // lampiran (jangan crash).
+//
+// [kelas-materi-silabus-sesi-v1] Tiap milestone SELALU bisa diklik dan selalu ada
+// isinya: judul sesi + poin/kosakata yang dipelajari dibaca dari silabus level
+// (src/data/curriculum/data/<slug>.ts lewat lib/silabusSesi), terpisah dari
+// laporan pengajar. Sebelum ini cuma baris yang punya `schedules` yang hidup —
+// di kelas lawas (sesi cuma tercatat di sessions_used) hampir semua baris mati
+// walau sudah dicentang hijau.
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
@@ -21,6 +28,8 @@ import { supabase } from '@/lib/supabase-client';
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, ChevronRight, Clock, CalendarDays, PenLine, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref } from '@/lib/classRoom';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
+// [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
+import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
 export function detectKind(url: string): string {
@@ -120,15 +129,22 @@ function statusMilestone(sched: any | null, sudahJalan = false) {
 // PR, catatan, link rekaman, dan lampiran `class_materials`); di sini cuma dibaca.
 // WAJIB lewat parseSessionNotes/publicNotes — `schedules.notes` menyimpan catatan
 // PRIBADI pengajar setelah separator ---PRIVATE---.
+//
+// [kelas-materi-silabus-sesi-v1] `sched` sekarang BOLEH null. Kelas lawas tidak
+// punya baris `schedules` sama sekali (sesinya cuma tercatat di sessions_used),
+// jadi dulu 15 dari 16 milestone-nya mati total waktu diklik. Drawer tetap ada
+// isinya karena silabus level (judul sesi + poin/kosakata yang dipelajari) datang
+// dari data kurikulum, bukan dari laporan pengajar.
 function SesiDetailDrawer({
-  no, sched, st, items, teacherName, durasi, onClose,
+  no, sched, st, items, teacherName, durasi, silabus, onClose,
 }: {
   no: number;
-  sched: any;
+  sched: any | null;
   st: ReturnType<typeof statusMilestone>;
   items: any[];
   teacherName?: string;
   durasi: number | null;
+  silabus?: SilabusSesi | null;
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -137,12 +153,12 @@ function SesiDetailDrawer({
     return () => window.removeEventListener('keydown', esc);
   }, [onClose]);
 
-  const dt = new Date(sched.scheduled_at);
-  const catatan = parseSessionNotes(sched.notes);
-  const presensi = ATTENDANCE_BADGE[sched.attendance_status as string];
+  const dt = sched ? new Date(sched.scheduled_at) : null;
+  const catatan = parseSessionNotes(sched?.notes);
+  const presensi = ATTENDANCE_BADGE[sched?.attendance_status as string];
   const pesan = [catatan.message, ...catatan.extras].filter(Boolean).join('\n');
-  const pr = (sched.homework || catatan.homework || '').trim();
-  const adaLaporan = !!(catatan.topic || pesan || pr || sched.material_notes);
+  const pr = (sched?.homework || catatan.homework || '').trim();
+  const adaLaporan = !!(catatan.topic || pesan || pr || sched?.material_notes);
 
   return (
     <div
@@ -160,16 +176,26 @@ function SesiDetailDrawer({
               {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
               {presensi && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${presensi.cls}`}>{presensi.label}</span>}
             </div>
-            <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-gray-500">
-              <span className="inline-flex items-center gap-1">
-                <CalendarDays className="h-3.5 w-3.5" strokeWidth={2.2} />
-                {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <Clock className="h-3.5 w-3.5" strokeWidth={2.2} />
-                {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB{durasi ? ` · ${durasi} menit` : ''}
-              </span>
-            </p>
+            {silabus?.title && (
+              <p className="mt-0.5 text-sm font-bold text-[#16796E]">{silabus.title}</p>
+            )}
+            {dt ? (
+              <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs font-medium text-gray-500">
+                <span className="inline-flex items-center gap-1">
+                  <CalendarDays className="h-3.5 w-3.5" strokeWidth={2.2} />
+                  {dt.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="h-3.5 w-3.5" strokeWidth={2.2} />
+                  {dt.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })} WIB{durasi ? ` · ${durasi} menit` : ''}
+                </span>
+              </p>
+            ) : (
+              <p className="mt-1 text-xs font-medium text-gray-500">
+                {st.done ? 'Sesi ini sudah berjalan' : 'Belum dijadwalkan'}
+                {durasi ? ` · ${durasi} menit` : ''}
+              </p>
+            )}
           </div>
           <button
             onClick={onClose}
@@ -181,6 +207,21 @@ function SesiDetailDrawer({
         </div>
 
         <div className="flex-1 space-y-5 overflow-y-auto px-5 py-5">
+          {/* [kelas-materi-silabus-sesi-v1] Isi silabus sesi ini — kosakata & poin
+              yang dipelajari menurut kurikulum levelnya. Ditaruh paling atas karena
+              ini satu-satunya bagian yang selalu ada, termasuk untuk sesi yang
+              belum berjalan atau kelas lawas tanpa baris jadwal. */}
+          {silabus?.topics && silabus.topics.length > 0 && (
+            <section>
+              <h4 className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-500">Yang dipelajari</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {silabus.topics.map((t, i) => (
+                  <span key={i} className="rounded-full bg-teal-50 px-2.5 py-1 text-xs font-semibold text-[#16796E]">{t}</span>
+                ))}
+              </div>
+            </section>
+          )}
+
           {catatan.topic && (
             <section>
               <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Topik</h4>
@@ -188,7 +229,7 @@ function SesiDetailDrawer({
             </section>
           )}
 
-          {sched.material_notes && (
+          {sched?.material_notes && (
             <section>
               <h4 className="mb-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">Catatan Materi</h4>
               <p className="whitespace-pre-line rounded-2xl bg-gray-50 px-3.5 py-3 text-sm text-gray-600">{sched.material_notes}</p>
@@ -227,7 +268,9 @@ function SesiDetailDrawer({
                 <BookOpen className="mx-auto mb-2 h-7 w-7 text-gray-300" strokeWidth={1.6} />
                 <p className="text-sm font-semibold text-gray-500">Belum ada materi untuk sesi ini</p>
                 <p className="mt-1 text-xs text-gray-400">
-                  {adaLaporan
+                  {!sched
+                    ? 'Rekaman, berkas, & catatan sesi ini akan muncul di sini setelah sesinya dijalankan pengajar.'
+                    : adaLaporan
                     ? 'Pengajar belum melampirkan berkas atau tautan di sesi ini.'
                     : 'Materi & catatan akan muncul di sini setelah pengajar mengisinya.'}
                 </p>
@@ -240,7 +283,7 @@ function SesiDetailDrawer({
   );
 }
 
-/** Kepala baris sesi — jadi tombol kalau sesinya punya jadwal (bisa dibuka). */
+/** Kepala baris sesi — jadi tombol kalau sesinya bisa dibuka. */
 function HeaderSesi({ as, onClick, children }: { as: 'button' | 'div'; onClick?: () => void; children: React.ReactNode }) {
   const cls = 'group/head block w-full text-left';
   if (as === 'div') return <div className={cls}>{children}</div>;
@@ -253,6 +296,7 @@ function MilestoneRow({
   sudahJalan,
   items,
   durasi,
+  silabus,
   isLast,
   onOpen,
   onReschedule,
@@ -265,6 +309,8 @@ function MilestoneRow({
   items: any[];
   /** Durasi per sesi menurut paket (registrations.duration), bukan durasi baris jadwal. */
   durasi: number | null;
+  /** Sesi ke-`no` di silabus level ini (judul + poin yang dipelajari), kalau ada. */
+  silabus?: SilabusSesi | null;
   isLast: boolean;
   onOpen?: () => void;
   onReschedule?: (s: any) => void;
@@ -275,7 +321,10 @@ function MilestoneRow({
   const jamKeSesi = dt ? (dt.getTime() - Date.now()) / 3600_000 : 0;
   const akanDatang = !!sched && ['pending', 'scheduled'].includes(sched.status) && jamKeSesi > 0;
   const catatan = sched ? publicNotes(sched.notes) : '';
-  const bisaDibuka = !!sched && !!onOpen;
+  // [kelas-materi-silabus-sesi-v1] SEMUA sesi bisa dibuka, bukan cuma yang punya
+  // baris jadwal: isi drawer-nya sekarang datang dari silabus level juga, jadi sesi
+  // yang belum jalan (atau kelas lawas tanpa `schedules`) tetap ada yang dibaca.
+  const bisaDibuka = !!onOpen;
 
   // Isi lingkaran milestone. [kelas-milestone-flip-v1] Sesi yang sudah selesai
   // menukar centang dengan NOMOR sesinya saat disentuh kursor — nomornya tetap
@@ -322,6 +371,11 @@ function MilestoneRow({
               dengan titik milestone-nya di semua baris (ada tanggal atau tidak). */}
           <div className="flex min-h-6 flex-wrap items-center gap-x-2 gap-y-1">
             <span className={`text-sm font-extrabold ${sched || st.done ? 'text-[#12172B]' : 'text-gray-400'} ${bisaDibuka ? 'group-hover/head:text-[#16796E]' : ''}`}>Sesi {no}</span>
+            {/* Judul sesi dari silabus level — bikin linimasa terbaca sebagai peta
+                materi, bukan cuma deretan nomor. */}
+            {silabus?.title && (
+              <span className={`text-sm font-semibold ${sched || st.done ? 'text-gray-600' : 'text-gray-400'}`}>{silabus.title}</span>
+            )}
             {st.label && <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${st.badge}`}>{st.label}</span>}
             {items.length > 0 && (
               <span className="inline-flex items-center gap-1 rounded-full bg-teal-50 px-2 py-0.5 text-[11px] font-bold text-[#16796E]">
@@ -391,6 +445,9 @@ export default function ClassMateriTab({
   const [materials, setMaterials] = useState<any[] | null>(null); // null = loading
   const [kosongTerbuka, setKosongTerbuka] = useState(false);
   const [sesiTerbuka, setSesiTerbuka] = useState<number | null>(null); // nomor sesi di drawer
+  // [kelas-materi-silabus-sesi-v1] Silabus level kelas ini (16 sesi). null = tidak
+  // ketemu (bahasa/level tak terjawab kurikulum) — linimasa tetap jalan tanpa judul.
+  const [silabus, setSilabus] = useState<SilabusLevel | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -411,6 +468,14 @@ export default function ClassMateriTab({
     })();
     return () => { alive = false; };
   }, [reg.id]);
+
+  useEffect(() => {
+    let alive = true;
+    loadSilabusLevel(reg.language, reg.level)
+      .then((s) => { if (alive) setSilabus(s); })
+      .catch(() => { if (alive) setSilabus(null); });
+    return () => { alive = false; };
+  }, [reg.language, reg.level]);
 
   if (materials === null) {
     return <div className="py-10 text-center text-gray-400">Memuat…</div>;
@@ -490,6 +555,10 @@ export default function ClassMateriTab({
 
   const msTerbuka = sesiTerbuka === null ? null : milestones.find((m) => m.no === sesiTerbuka) || null;
 
+  /** Sesi ke-`no` di silabus level ini. Paket 16 sesi = 1 sublevel = 16 entri,
+   *  jadi nomornya sejajar. Sesi tambahan di luar paket tidak punya pasangan. */
+  const silabusSesi = (no: number): SilabusSesi | null => silabus?.sessions?.[no - 1] || null;
+
   // Sesi yang dibatalkan tidak ikut penomoran, tapi jangan dihilangkan — siswa
   // masih perlu bisa melihat sesi mana yang batal dan alasannya.
   const dibatalkan = schedules
@@ -546,6 +615,7 @@ export default function ClassMateriTab({
                 sudahJalan={ms.sudahJalan}
                 items={itemsFor(ms.sched)}
                 durasi={durasiSesi || ms.sched?.duration_minutes || null}
+                silabus={silabusSesi(ms.no)}
                 isLast={i === arr.length - 1}
                 onOpen={() => setSesiTerbuka(ms.no)}
                 onReschedule={onReschedule}
@@ -576,14 +646,15 @@ export default function ClassMateriTab({
         </section>
       )}
 
-      {msTerbuka?.sched && (
+      {msTerbuka && (
         <SesiDetailDrawer
           no={msTerbuka.no}
           sched={msTerbuka.sched}
           st={statusMilestone(msTerbuka.sched, msTerbuka.sudahJalan)}
           items={itemsFor(msTerbuka.sched)}
           teacherName={teacherName}
-          durasi={durasiSesi || msTerbuka.sched.duration_minutes || null}
+          durasi={durasiSesi || msTerbuka.sched?.duration_minutes || null}
+          silabus={silabusSesi(msTerbuka.no)}
           onClose={() => setSesiTerbuka(null)}
         />
       )}
