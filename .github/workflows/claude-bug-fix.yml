@@ -1,0 +1,112 @@
+# Claude Bug Fix — dipanggil dari Bug Tracker Linguo
+# ===================================================
+# Dibangunkan oleh label `ai-fix` yang dipasang edge function `bug-ai-dispatch`
+# waktu staf menekan "Kerjakan dengan AI" di dashboard.
+#
+# Hasil akhirnya SELALU pull request. Tidak pernah merge, tidak pernah push ke
+# `main` — push ke `main` di repo ini berarti auto-deploy ke produksi, jadi
+# gerbang terakhir tetap mata manusia.
+#
+# Prasyarat sekali pasang di repo ini:
+#   Settings → Secrets and variables → Actions → New repository secret
+#     ANTHROPIC_API_KEY = <API key Anthropic>
+#   Settings → Actions → General → Workflow permissions
+#     centang "Allow GitHub Actions to create and approve pull requests"
+
+name: Claude Bug Fix
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+
+# Dua issue yang diberi label berbarengan tidak boleh saling menimpa branch.
+concurrency:
+  group: claude-bug-fix-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  # ── Jalur utama: label `ai-fix` → perbaiki → buka PR
+  fix:
+    if: github.event_name == 'issues' && github.event.label.name == 'ai-fix'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          base_branch: main
+          branch_prefix: ai-fix/
+          prompt: |
+            REPO: ${{ github.repository }}
+            ISSUE: #${{ github.event.issue.number }} — ${{ github.event.issue.title }}
+
+            Issue ini datang dari Bug Tracker internal Linguo. Isinya laporan dari
+            staf/pengajar/siswa, ditambah analisa awal AI yang MASIH TEBAKAN —
+            perlakukan bagian "File tersangka" sebagai petunjuk, bukan kebenaran.
+
+            Yang harus kamu lakukan:
+            1. Baca issue-nya lewat `gh issue view ${{ github.event.issue.number }}`.
+            2. Telusuri kode sampai kamu benar-benar menemukan penyebabnya. Kalau
+               setelah menelusuri kamu tidak yakin, JANGAN menambal asal — tulis
+               komentar di issue berisi apa yang sudah kamu cek dan apa yang masih
+               gelap, lalu berhenti tanpa membuat PR.
+            3. Kalau penyebabnya ketemu: buat perbaikan sekecil mungkin yang
+               menyelesaikan masalah itu saja.
+            4. Buka pull request ke `main`.
+
+            Batasan yang tidak boleh dilanggar:
+            - JANGAN push ke `main`. Selalu branch baru + pull request.
+            - JANGAN sentuh file `.env`, `.env.local`, atau apa pun yang berisi
+              kredensial.
+            - JANGAN ubah schema database, migration Supabase, atau file SQL.
+              Kalau perbaikannya butuh itu, laporkan di komentar dan berhenti.
+            - JANGAN rapikan kode di sekitarnya, jangan tambah abstraksi, jangan
+              tambah penanganan error untuk skenario yang tidak mungkin terjadi.
+            - Ikuti gaya kode di sekitarnya. Komentar dan pesan commit pakai bahasa
+              Indonesia, format `fix: deskripsi singkat`.
+            - Kalau repo punya build (`npm run build`) atau test, jalankan sebelum
+              membuka PR. Kalau gagal, perbaiki dulu; kalau tetap gagal karena hal
+              yang tidak berhubungan, sebutkan apa adanya di deskripsi PR.
+
+            Deskripsi PR: satu paragraf berisi penyebabnya, apa yang diubah, dan
+            cara mengetesnya secara manual. Sertakan `Closes #${{ github.event.issue.number }}`.
+            Jangan mengklaim sudah dites kalau kamu tidak menjalankan tesnya.
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 40
+
+  # ── Jalur susulan: balas "@claude ..." di komentar issue/PR yang sama
+  mention:
+    if: github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          base_branch: main
+          branch_prefix: ai-fix/
+          trigger_phrase: "@claude"
+          claude_args: |
+            --model claude-opus-5
+            --max-turns 25
