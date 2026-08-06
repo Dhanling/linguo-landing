@@ -395,12 +395,10 @@ const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 // EDIT tiap buka batch baru:
 const BATCH_LABEL = "Intern Batch Juli 2026";
 // EDIT divisi yang dibuka batch ini:
+// Batch ini HANYA membuka KOL Specialist — divisi lain sengaja ditutup supaya
+// pelamar tidak iseng pilih posisi yang tidak dibuka.
 const POSITIONS = [
   "KOL Specialist",
-  "Content Creator / Desain",
-  "Kurikulum & Akademik",
-  "Admin & Operasional",
-  "Business Development / Partnership",
 ];
 // ────────────────────────────────────────────────────────
 
@@ -413,6 +411,13 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
     const o = document.createElement("option");
     o.value = p; o.textContent = p; sel.appendChild(o);
   });
+  // Kalau cuma 1 divisi yang dibuka: buang placeholder & langsung terpilih,
+  // biar tidak ada peluang kirim form dengan posisi kosong.
+  if (POSITIONS.length === 1) {
+    const placeholder = sel.querySelector('option[value=""]');
+    if (placeholder) placeholder.remove();
+    sel.value = POSITIONS[0];
+  }
 })();
 
 function validEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
