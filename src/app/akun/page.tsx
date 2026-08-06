@@ -4028,18 +4028,22 @@ export default function AkunPage() {
                                     onClick={() => { try { sessionStorage.setItem(`linguo_reg_${reg.id}`, JSON.stringify({ ...reg, teachers: { ...(reg.teachers || {}), ...(tDir || {}) } })); } catch {} }}
                                     className={`group block rounded-[20px] bg-white p-2.5 text-left transition-transform hover:-translate-y-1 ${selesai ? "opacity-80" : ""}`}
                                   >
-                                    <div className={`relative flex h-24 items-center justify-center overflow-hidden rounded-2xl ${bg} ${selesai ? "grayscale" : ""}`}>
+                                    {/* [beranda-kartu-foto-poster-v1] Foto dipanjangkan ke bawah dan
+                                        identitas kelas (bendera + bahasa/level + pengajar) pindah KE DALAM
+                                        foto. Dulu foto cuma strip 96px lalu judul & pengajar numpuk di
+                                        bawahnya — kartunya jadi tinggi tapi fotonya nyaris tak kelihatan.
+                                        Gradient hitam di bawah wajib: tanpa itu teks putih hilang di atas
+                                        sampul yang terang (mis. langit siang). */}
+                                    <div className={`relative flex h-44 items-end overflow-hidden rounded-2xl sm:h-48 ${bg} ${selesai ? "grayscale" : ""}`}>
                                       {photo ? (
-                                        <>
-                                          <img src={photo} alt={reg.language} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                                        </>
+                                        <img src={photo} alt={reg.language} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                       ) : (
                                         <>
-                                          <span className="text-[44px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
+                                          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] text-[52px] font-extrabold tracking-tight text-white/95 transition-transform duration-300 group-hover:scale-105">{langGlyph(reg.language)}</span>
                                           <div className="absolute -bottom-5 -right-3 h-20 w-20 rounded-full bg-white/10" />
                                         </>
                                       )}
+                                      <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
                                       {/* [beranda-status-badge-v1] badge status di pojok kanan atas */}
                                       {selesai ? (
                                         <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-gray-500">
@@ -4050,23 +4054,24 @@ export default function AkunPage() {
                                           <span className="h-1.5 w-1.5 rounded-full bg-[#16796E]" /> Aktif
                                         </span>
                                       )}
+                                      <div className="relative w-full p-3">
+                                        <div className="flex items-center gap-1.5">
+                                          <img src={getFlagUrl(reg.language)} alt="" className="h-3.5 w-3.5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                          <h3 className="truncate text-[15px] font-extrabold leading-tight text-white drop-shadow">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                        </div>
+                                        {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
+                                            [beranda-teacher-avatar-v3] ikut pindah ke dalam foto */}
+                                        <div className="mt-1.5 flex items-center gap-1.5">
+                                          {tAva ? (
+                                            <img src={tAva} alt={tName || ""} className="h-6 w-6 shrink-0 rounded-full bg-white object-cover ring-1 ring-white/50" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
+                                          ) : null}
+                                          <span className={`${tAva ? "hidden" : ""} flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20 text-[10px] font-extrabold text-white`}>{tName ? initials(tName) : "L"}</span>
+                                          <p className="truncate text-[12px] font-medium text-white/90 drop-shadow">{tName || badge.label}</p>
+                                        </div>
+                                      </div>
                                     </div>
                                     <div className="px-1.5 pb-1 pt-2.5">
-                                      <div className="flex items-center gap-1.5">
-                                        <img src={getFlagUrl(reg.language)} alt="" className="h-3.5 w-3.5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                        <h3 className="truncate text-[14px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
-                                      </div>
-                                      {/* [beranda-teacher-avatar-v1] avatar pengajar di card kelas.
-                                          [beranda-teacher-avatar-v2] tanpa ring putih — di dark mode
-                                          cincinnya kebaca sebagai outline putih yang nabrak kartu hitam */}
-                                      <div className="mt-1.5 flex items-center gap-1.5">
-                                        {tAva ? (
-                                          <img src={tAva} alt={tName || ""} className="h-6 w-6 shrink-0 rounded-full bg-white object-cover" onError={(e) => { const el = e.currentTarget as HTMLImageElement; el.style.display = "none"; el.nextElementSibling?.classList.remove("hidden"); }} />
-                                        ) : null}
-                                        <span className={`${tAva ? "hidden" : ""} flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#16796E]/10 text-[10px] font-extrabold text-[#16796E]`}>{tName ? initials(tName) : "L"}</span>
-                                        <p className="truncate text-[12px] font-medium text-gray-500">{tName || badge.label}</p>
-                                      </div>
-                                      <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
+                                      <div className="h-1.5 overflow-hidden rounded-full bg-[#E8EAEE]">
                                         <div className="h-full rounded-full bg-[#16796E]" style={{ width: `${pct}%` }} />
                                       </div>
                                       <div className="mt-2 flex items-center justify-between text-[11.5px] font-semibold">
