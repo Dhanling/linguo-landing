@@ -10,8 +10,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
-  AlertCircle, CalendarDays, Check, CheckCircle2, Clock, GraduationCap,
-  Loader2, Mail, MessageCircle, Phone, School, SearchX, Target, User,
+  AlertCircle, CalendarDays, Check, CheckCircle2, Clock, GraduationCap, Heart,
+  History, Loader2, Mail, MessageCircle, Phone, School, SearchX, Target, User,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -34,6 +34,8 @@ type IntakeForm = {
   birth_date: string | null;
   institution: string | null;
   learning_goal: string | null;
+  hobby: string | null;
+  prior_experience: string | null;
 };
 
 const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
@@ -52,6 +54,17 @@ const GOALS = [
   "Keluarga / pasangan",
   "Hobi & minat pribadi",
   "Kebutuhan kantor / bisnis",
+];
+
+// [pendataan-siswa-private-v2] Pengalaman belajar sebelumnya. Pilihannya
+// menentukan sesi pertama: yang benar-benar nol mulai dari huruf & sapaan,
+// yang pernah kursus langsung dites penempatan supaya tidak mengulang.
+const EXPERIENCES = [
+  "Belum pernah sama sekali",
+  "Otodidak (aplikasi / YouTube)",
+  "Pernah les / kursus",
+  "Pelajaran sekolah / kampus",
+  "Pernah tinggal / kerja di negaranya",
 ];
 
 const MONTHS = [
@@ -112,6 +125,9 @@ export default function PendataanPage() {
   const [birthMonth, setBirthMonth] = useState("");
   const [birthYear, setBirthYear] = useState("");
   const [institution, setInstitution] = useState("");
+  const [hobby, setHobby] = useState("");
+  const [experience, setExperience] = useState("");
+  const [experienceNote, setExperienceNote] = useState("");
   const [schedules, setSchedules] = useState<string[]>([]);
   const [goal, setGoal] = useState("");
 
@@ -129,6 +145,14 @@ export default function PendataanPage() {
         setEmail(d.email || d.contact_email || "");
         setInstitution(d.institution || "");
         setGoal(d.learning_goal || "");
+        setHobby(d.hobby || "");
+        if (d.prior_experience) {
+          // Disimpan sebagai "<pilihan> — <detail>"; dipecah balik supaya chip
+          // yang dulu dipilih tetap tersorot waktu form dibuka ulang.
+          const pick = EXPERIENCES.find((e) => d.prior_experience!.startsWith(e));
+          setExperience(pick || "");
+          setExperienceNote(pick ? d.prior_experience!.slice(pick.length).replace(/^\s*—\s*/, "") : d.prior_experience);
+        }
         setSchedules(d.preferred_schedule ? d.preferred_schedule.split(", ").filter(Boolean) : []);
         if (d.birth_date) {
           const [y, m, dd] = d.birth_date.split("-");
@@ -163,6 +187,7 @@ export default function PendataanPage() {
     if (!fullName.trim()) { setError("Nama lengkap wajib diisi"); return; }
     if (!whatsapp.trim()) { setError("Nomor WhatsApp wajib diisi"); return; }
     if (!birthdate) { setError("Lengkapi tanggal lahir"); return; }
+    if (!experience) { setError("Pilih pengalaman belajarmu sebelumnya"); return; }
     if (schedules.length === 0) { setError("Pilih minimal 1 jadwal yang kamu inginkan"); return; }
     if (!goal.trim()) { setError("Ceritakan sedikit tujuan belajarmu"); return; }
 
@@ -179,6 +204,8 @@ export default function PendataanPage() {
           email,
           birth_date: birthdate,
           institution,
+          hobby,
+          prior_experience: experienceNote.trim() ? `${experience} — ${experienceNote.trim()}` : experience,
           preferred_schedule: schedules.join(", "),
           learning_goal: goal,
         }),
@@ -306,6 +333,40 @@ export default function PendataanPage() {
               <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)}
                 placeholder="contoh: SMAN 3 Bandung / PT Linguo Nusantara" className={inputClass} />
             </Field>
+
+            <Field label="Hobi & minat" icon={Heart}
+              hint="Pengajar memakainya sebagai bahan obrolan dan contoh materi di kelas.">
+              <input type="text" value={hobby} onChange={(e) => setHobby(e.target.value)}
+                placeholder="contoh: masak, sepak bola, nonton drama Korea" className={inputClass} />
+            </Field>
+          </section>
+
+          {/* ── Pengalaman belajar ── */}
+          <section className="space-y-3">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400">Pengalaman Belajar</h2>
+            <p className="flex items-start gap-1.5 text-xs text-slate-500">
+              <History className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+              Pernah belajar bahasa ini sebelumnya? Jawaban jujur membantu kami menaruhmu di
+              level yang pas — bukan mengulang yang sudah kamu bisa.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {EXPERIENCES.map((e) => (
+                <button key={e} type="button" onClick={() => setExperience(e)}
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition ${experience === e ? "border-transparent text-white" : "border-slate-200 text-slate-600 hover:border-slate-300"}`}
+                  style={experience === e ? { background: TEAL } : undefined}>
+                  {experience === e && <Check className="h-3 w-3" />}
+                  {e}
+                </button>
+              ))}
+            </div>
+            {experience && experience !== EXPERIENCES[0] && (
+              <Field label="Ceritakan sedikit" icon={History}
+                hint="Berapa lama, sampai level berapa, atau apa yang masih terasa sulit.">
+                <input type="text" value={experienceNote} onChange={(e) => setExperienceNote(e.target.value)}
+                  placeholder="contoh: 6 bulan les sampai level A1, masih susah bicara"
+                  className={inputClass} />
+              </Field>
+            )}
           </section>
 
           {/* ── Kontak ── */}

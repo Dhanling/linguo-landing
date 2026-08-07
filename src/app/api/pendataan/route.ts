@@ -21,6 +21,8 @@ const SELECT_COLS = [
   "language", "program", "level",
   "full_name", "nickname", "whatsapp", "email", "preferred_schedule",
   "age", "birth_date", "institution", "learning_goal", "submitted_at",
+  // [pendataan-siswa-private-v2] migrasi 20260807090000
+  "hobby", "prior_experience",
 ].join(",");
 
 function sb(path: string, init: RequestInit = {}) {
@@ -104,6 +106,8 @@ export async function POST(req: NextRequest) {
       birth_date: birthDate,
       age: ageFromBirthDate(birthDate),
       institution: clean(body.institution, 160),
+      hobby: clean(body.hobby, 300),
+      prior_experience: clean(body.prior_experience, 300),
       learning_goal: clean(body.learning_goal, 1000),
       status: "submitted",
       submitted_at: new Date().toISOString(),
