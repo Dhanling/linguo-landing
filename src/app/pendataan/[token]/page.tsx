@@ -11,7 +11,7 @@ import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   AlertCircle, CalendarDays, Check, CheckCircle2, Clock, GraduationCap, Heart,
-  History, Loader2, Mail, MessageCircle, Phone, School, SearchX, Target, User,
+  History, Loader2, Mail, MessageCircle, Phone, Plus, School, SearchX, Target, User, X,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -46,6 +46,38 @@ const SLOTS = [
 ];
 const slotValue = (day: string, s: (typeof SLOTS)[number]) =>
   `${day} ${s.label.toLowerCase()} (${s.time})`;
+
+// [pendataan-jam-spesifik-v1] Rentang Pagi/Siang/Malam saja tidak cukup: banyak
+// siswa sudah punya jam pasti ("Selasa 13.00", "Kamis 19.30") dan dulu terpaksa
+// menitipkannya lewat chat CS. Jam spesifik disimpan di kolom yang sama,
+// digabung koma, dengan bentuk "<Hari> pukul <HH.MM>" — dashboard cukup
+// membacanya apa adanya.
+const SPECIFIC_RE = /^(.+?) pukul (\d{1,2})[.:](\d{2})$/;
+const specificValue = (day: string, hhmm: string) => `${day} pukul ${hhmm.replace(":", ".")}`;
+const MIN_TIME = "06:00";
+const MAX_TIME = "21:00";
+const toMinutes = (hhmm: string) => {
+  const [h, m] = hhmm.split(":").map(Number);
+  return h * 60 + m;
+};
+
+/** Urutkan sesuai hari lalu jam supaya string yang dibaca admin runut, bukan
+ *  mengikuti urutan klik siswa. */
+const sortSchedules = (list: string[]) => {
+  const rank = (v: string) => {
+    const specific = v.match(SPECIFIC_RE);
+    const day = specific ? specific[1] : DAYS.find((d) => v.startsWith(`${d} `)) || "";
+    const dayIdx = DAYS.indexOf(day);
+    const minute = specific
+      ? Number(specific[2]) * 60 + Number(specific[3])
+      : SLOTS.findIndex((s) => v.includes(`(${s.time})`)) * 60;
+    return [dayIdx < 0 ? DAYS.length : dayIdx, specific ? 1 : 0, minute] as const;
+  };
+  return [...list].sort((a, b) => {
+    const ra = rank(a), rb = rank(b);
+    return ra[0] - rb[0] || ra[1] - rb[1] || ra[2] - rb[2];
+  });
+};
 
 const GOALS = [
   "Persiapan kerja / karier",
@@ -129,6 +161,9 @@ export default function PendataanPage() {
   const [experience, setExperience] = useState("");
   const [experienceNote, setExperienceNote] = useState("");
   const [schedules, setSchedules] = useState<string[]>([]);
+  const [timeDraft, setTimeDraft] = useState<Record<string, string>>({});
+  const [timeOpen, setTimeOpen] = useState<Record<string, boolean>>({});
+  const [timeError, setTimeError] = useState<Record<string, string>>({});
   const [goal, setGoal] = useState("");
 
   useEffect(() => {
@@ -183,6 +218,32 @@ export default function PendataanPage() {
   const toggleSchedule = (v: string) =>
     setSchedules((prev) => (prev.includes(v) ? prev.filter((x) => x !== v) : [...prev, v]));
 
+  // Jam spesifik tidak disimpan di state terpisah — dibaca balik dari
+  // `schedules` supaya form yang dibuka ulang menampilkan persis yang tersimpan.
+  const specificByDay = useMemo(() => {
+    const map: Record<string, string[]> = {};
+    for (const v of schedules) {
+      const m = v.match(SPECIFIC_RE);
+      if (!m || !DAYS.includes(m[1])) continue;
+      (map[m[1]] ||= []).push(`${m[2].padStart(2, "0")}.${m[3]}`);
+    }
+    for (const day of Object.keys(map)) map[day].sort();
+    return map;
+  }, [schedules]);
+
+  const addSpecific = (day: string) => {
+    const raw = (timeDraft[day] || "").trim();
+    const fail = (msg: string) => setTimeError((prev) => ({ ...prev, [day]: msg }));
+    if (!/^\d{2}:\d{2}$/.test(raw)) return fail("Isi jamnya dulu, contoh 13.00");
+    if (toMinutes(raw) < toMinutes(MIN_TIME) || toMinutes(raw) > toMinutes(MAX_TIME))
+      return fail("Kelas tersedia antara 06.00-21.00 WIB");
+    const v = specificValue(day, raw);
+    if (schedules.includes(v)) return fail("Jam itu sudah kamu pilih");
+    setSchedules((prev) => [...prev, v]);
+    setTimeDraft((prev) => ({ ...prev, [day]: "" }));
+    setTimeError((prev) => ({ ...prev, [day]: "" }));
+  };
+
   const handleSubmit = async () => {
     if (!fullName.trim()) { setError("Nama lengkap wajib diisi"); return; }
     if (!whatsapp.trim()) { setError("Nomor WhatsApp wajib diisi"); return; }
@@ -206,7 +267,7 @@ export default function PendataanPage() {
           institution,
           hobby,
           prior_experience: experienceNote.trim() ? `${experience} — ${experienceNote.trim()}` : experience,
-          preferred_schedule: schedules.join(", "),
+          preferred_schedule: sortSchedules(schedules).join(", "),
           learning_goal: goal,
         }),
       });
@@ -390,9 +451,13 @@ export default function PendataanPage() {
             <p className="flex items-start gap-1.5 text-xs text-slate-500">
               <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
               Pilih semua waktu yang memungkinkan buat kamu (boleh lebih dari satu). Jam mengikuti WIB.
+              Sudah punya jam pasti? Pakai <span className="font-medium text-slate-600">Tambah jam spesifik</span> di bawah harinya.
             </p>
             <div className="space-y-1">
-              {DAYS.map((day) => (
+              {DAYS.map((day) => {
+                const times = specificByDay[day] || [];
+                const open = timeOpen[day] || times.length > 0;
+                return (
                 <div key={day}>
                   <p className="mb-1.5 mt-3 text-xs font-bold uppercase tracking-wider text-slate-400">{day}</p>
                   <div className="flex gap-2">
@@ -410,8 +475,53 @@ export default function PendataanPage() {
                       );
                     })}
                   </div>
+
+                  {times.length > 0 && (
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                      {times.map((t) => (
+                        <span key={t} className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-semibold"
+                          style={{ borderColor: TEAL, color: TEAL }}>
+                          {t}
+                          <button type="button" onClick={() => toggleSchedule(specificValue(day, t))}
+                            aria-label={`Hapus ${day} pukul ${t}`} className="opacity-60 transition hover:opacity-100">
+                            <X className="h-3 w-3" />
+                          </button>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {open ? (
+                    <div className="mt-1.5">
+                      <div className="flex gap-2">
+                        <input type="time" step={300} min={MIN_TIME} max={MAX_TIME}
+                          value={timeDraft[day] || ""}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            setTimeDraft((prev) => ({ ...prev, [day]: val }));
+                            setTimeError((prev) => ({ ...prev, [day]: "" }));
+                          }}
+                          aria-label={`Jam spesifik hari ${day}`}
+                          className="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-[#1A9E9E] focus:outline-none focus:ring-2 focus:ring-[#1A9E9E]/20" />
+                        <button type="button" onClick={() => addSpecific(day)}
+                          className="rounded-lg border px-3 py-2 text-[11px] font-semibold transition hover:bg-[#1A9E9E]/5"
+                          style={{ borderColor: TEAL, color: TEAL }}>
+                          Tambah
+                        </button>
+                      </div>
+                      {timeError[day] && (
+                        <p className="mt-1 text-[11px] text-red-500">{timeError[day]}</p>
+                      )}
+                    </div>
+                  ) : (
+                    <button type="button" onClick={() => setTimeOpen((prev) => ({ ...prev, [day]: true }))}
+                      className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-medium text-slate-400 transition hover:text-slate-600">
+                      <Plus className="h-3 w-3" /> Tambah jam spesifik
+                    </button>
+                  )}
                 </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
