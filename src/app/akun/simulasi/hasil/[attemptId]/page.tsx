@@ -120,6 +120,7 @@ export default function HasilSimulasiPage() {
   return (
     <ResultView
       past
+      attemptId={attemptId}
       sim={data.sim}
       sections={data.sections}
       totals={data.totals}

@@ -15,7 +15,7 @@ import { officialScore, type SkillRaw } from "@/lib/simScore";
 import {
   ArrowLeft, BookOpen, Headphones, PenLine, Mic, Type, Trophy, Sparkles,
   CheckCircle2, XCircle, Lightbulb, MessageCircle, Target, MinusCircle,
-  GraduationCap, ArrowRight, Info, History,
+  GraduationCap, ArrowRight, Info, History, Award, Download,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -202,7 +202,7 @@ const fmtTanggal = (iso: string) =>
   new Date(iso).toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
 
 export default function ResultView({
-  sim, sections, totals, results, preview, studentName, submittedAt, past,
+  sim, sections, totals, results, preview, studentName, submittedAt, past, attemptId,
 }: {
   sim: ResultSim;
   sections: Pick<Section, "skill">[];
@@ -212,6 +212,7 @@ export default function ResultView({
   studentName?: string | null;
   submittedAt?: string | null; // hasil lama → tampilkan kapan dikumpulkan
   past?: boolean; // dibuka dari Riwayat Skor (bukan barusan selesai)
+  attemptId?: string | null; // [sim-certificate-v1] ada → tombol unduh sertifikat
 }) {
   const pct = totals.max_score > 0 ? Math.round((totals.score / totals.max_score) * 100) : 0;
 
@@ -436,6 +437,21 @@ export default function ResultView({
                 })}
               </div>
             </div>
+          )}
+
+          {/* [sim-certificate-v1] Sertifikat — hanya bila skornya bisa dikonversi
+              ke skala resmi (lembar kosong tak diterbitkan sertifikatnya). */}
+          {!preview && attemptId && official && (
+            <Link
+              href={`/akun/simulasi/sertifikat/${attemptId}`}
+              className="flex items-center justify-between gap-3 border-t border-slate-100 bg-teal-50/60 px-5 py-3.5 transition hover:bg-teal-50"
+            >
+              <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
+                <Award className="h-4 w-4" style={{ color: TEAL_DEEP }} />
+                Unduh Sertifikat hasil simulasi (PDF)
+              </span>
+              <Download className="h-4 w-4 shrink-0 text-teal-600" />
+            </Link>
           )}
 
           {/* Riwayat: skor lama tak pernah hilang — kasih tahu di mana carinya. */}

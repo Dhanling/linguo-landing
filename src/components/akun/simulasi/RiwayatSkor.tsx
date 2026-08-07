@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetchMyAttempts, testTypeLabel, type AttemptSummary } from "@/lib/simulations";
 import { officialScore, type OfficialScore } from "@/lib/simScore";
-import { History, ArrowRight, Loader2, TrendingUp, TrendingDown, Minus, ClipboardCheck } from "lucide-react";
+import { History, ArrowRight, Loader2, TrendingUp, TrendingDown, Minus, ClipboardCheck, Award } from "lucide-react";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -102,10 +102,12 @@ export default function RiwayatSkor() {
 
       <ul className="divide-y divide-slate-100">
         {shown.map(({ attempt, official, delta, blank }) => (
-          <li key={attempt.id}>
+          // [sim-certificate-v1] tombol sertifikat berdiri SENDIRI di samping baris —
+          // menaruhnya di dalam <Link> baris akan jadi tautan bersarang (HTML tak sah).
+          <li key={attempt.id} className="flex items-center">
             <Link
               href={`/akun/simulasi/hasil/${attempt.id}`}
-              className="flex items-center gap-3 px-5 py-3.5 transition hover:bg-slate-50"
+              className="flex min-w-0 flex-1 items-center gap-3 px-5 py-3.5 transition hover:bg-slate-50"
             >
               <span
                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
@@ -160,6 +162,17 @@ export default function RiwayatSkor() {
 
               <ArrowRight className="h-4 w-4 shrink-0 text-slate-300" />
             </Link>
+
+            {official && (
+              <Link
+                href={`/akun/simulasi/sertifikat/${attempt.id}`}
+                title="Unduh sertifikat"
+                className="mr-4 flex h-9 shrink-0 items-center gap-1.5 rounded-xl border border-teal-100 bg-teal-50 px-3 text-[12px] font-bold text-teal-700 transition hover:bg-teal-100"
+              >
+                <Award className="h-4 w-4" />
+                <span className="hidden sm:inline">Sertifikat</span>
+              </Link>
+            )}
           </li>
         ))}
       </ul>

@@ -488,6 +488,9 @@ export interface AttemptSummary {
   max_score: number | null;
   started_at: string;
   submitted_at: string | null;
+  // [sim-certificate-v1] nama yang dipakai saat mengerjakan — dicetak di sertifikat
+  // (peserta tamu B2B tak punya profil, namanya cuma ada di baris attempt ini).
+  student_name?: string | null;
   skills: SkillRaw[]; // rincian per subtes → konversi skala resmi (lib/simScore)
 }
 
@@ -608,7 +611,7 @@ export async function fetchAttemptReview(attemptId: string): Promise<{
 } | null> {
   const { data: att } = await supabase
     .from("simulation_attempts")
-    .select("id, simulation_id, status, score, max_score, started_at, submitted_at")
+    .select("id, simulation_id, status, score, max_score, started_at, submitted_at, student_name")
     .eq("id", attemptId)
     .maybeSingle();
   if (!att) return null;
@@ -652,6 +655,7 @@ export async function fetchAttemptReview(attemptId: string): Promise<{
       max_score: att.max_score == null ? null : Number(att.max_score),
       started_at: att.started_at,
       submitted_at: att.submitted_at,
+      student_name: (att as any).student_name ?? null,
       skills: aggregateSkills(answers, (r: AttemptAnswerRow) => pointsOf.get(r.question_id) ?? 0),
     },
     simulation: (sim as Simulation) ?? null,

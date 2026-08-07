@@ -870,7 +870,7 @@ export default function SimulasiRunnerPage() {
   );
 
   if (phase === "result") return (
-    <ResultView sim={sim} sections={sections} totals={totals} results={results} preview={preview} studentName={info?.name} />
+    <ResultView sim={sim} sections={sections} totals={totals} results={results} preview={preview} studentName={info?.name} attemptId={attemptId} />
   );
 
   // intro — onboarding wizard 3 langkah sebelum mulai mengerjakan
