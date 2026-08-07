@@ -1,12 +1,18 @@
 "use client";
 
-// [sim-certificate-v1] LEMBAR sertifikat hasil simulasi — murni tampilan.
+// [sim-certificate-v2] LEMBAR sertifikat hasil simulasi — murni tampilan.
 // Dipisah dari halamannya supaya bisa dirender dengan data sintetis saat
 // mengecek tata letaknya (lihat [[verifikasi-ui-akun-harness-tmp]]).
 //
 // Ukurannya piksel-pasti: 1123×794 px CSS = 297×210 mm @96dpi = A4 landscape,
 // jadi dialog cetak browser menghasilkan PDF satu halaman penuh tanpa pustaka
 // PDF apa pun. Skala layar dipakai HANYA untuk pratinjau dan dimatikan saat cetak.
+//
+// v2 — tampilan dirombak jadi modern-clean: bingkai ganda diganti pita aksen
+// kiri + garis rambut, rincian subtes jadi daftar bertumpuk (bukan kotak 2 kolom),
+// dan seksi resmi yang TIDAK diujikan ikut dicetak sebagai baris "Tidak diujikan"
+// — dulu baris itu dibuang diam-diam sehingga sertifikat TOEFL ITP tampil hanya
+// "Section 1" dan "Section 3" tanpa penjelasan ke mana Section 2 pergi.
 import type { OfficialScore } from "@/lib/simScore";
 import { officialBody } from "@/lib/simCertificate";
 
@@ -37,13 +43,21 @@ export const fmtTanggalPanjang = (iso: string | null) =>
 export default function CertificateSheet({ data, scale = 1 }: { data: CertificateData; scale?: number }) {
   const o = data.official;
   const unitInline = o.unit.startsWith("/") ? o.unit : ` ${o.unit}`;
-  // Subtes yang dicetak: yang punya nilai + subtes informasional. Seksi resmi yang
-  // tak ada di simulasi ini ("—") dilewati supaya tak jadi baris kosong di lembar.
-  const rows = o.skills.filter((s) => s.value != null || s.informational);
+  // SEMUA seksi resmi dicetak, termasuk yang tak ada di simulasi ini — kalau
+  // dibuang, pembaca cuma melihat "Section 1" & "Section 3" dan mengira lembarnya
+  // salah. Baris yang absen ditandai jelas dan barnya kosong.
+  const rows = o.skills;
+  const isAbsent = (s: OfficialScore["skills"][number]) => s.value == null && !s.informational;
 
   return (
-    <div className="sert-scale" style={{ transform: `scale(${scale})`, height: SHEET_H * scale }}>
+    <div
+      className="sert-scale"
+      style={{ transform: `scale(${scale})`, width: SHEET_W * scale, height: SHEET_H * scale }}
+    >
       <div className="sert-sheet">
+        {/* Pita aksen kiri — pengganti bingkai ganda yang lama. */}
+        <div className="sert-edge" />
+
         <div className="sert-frame">
           {/* Kop */}
           <div className="sert-head">
@@ -57,18 +71,17 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
 
           {/* Judul */}
           <div className="sert-title-wrap">
+            <p className="sert-eyebrow">Hasil Simulasi Tes · {o.scaleLabel}</p>
             <h1 className="sert-title">SERTIFIKAT</h1>
-            <p className="sert-subtitle">HASIL SIMULASI TES · {o.scaleLabel.toUpperCase()}</p>
+            <div className="sert-title-rule" />
           </div>
 
           {/* Penerima */}
           <p className="sert-given">Dengan bangga diberikan kepada</p>
-          {/* Nama panjang dikecilkan supaya tetap satu baris & tak menabrak bingkai. */}
-          <p className="sert-name" style={data.name.length > 30 ? { fontSize: 34 } : undefined}>{data.name}</p>
-          <div className="sert-rule" />
+          {/* Nama panjang dikecilkan supaya tetap satu baris & tak menabrak tepi. */}
+          <p className="sert-name" style={data.name.length > 30 ? { fontSize: 36 } : undefined}>{data.name}</p>
           <p className="sert-desc">
-            atas selesainya <b>{data.title}</b> — {data.testLabel} pada {fmtTanggalPanjang(data.submittedAt)},
-            dengan perolehan skor sebagai berikut:
+            atas selesainya <b>{data.title}</b> — {data.testLabel} pada {fmtTanggalPanjang(data.submittedAt)}
           </p>
 
           {/* Skor */}
@@ -83,30 +96,53 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
             </div>
 
             <div className="sert-skills">
-              <p className="sert-skills-title">NILAI PER SUBTES</p>
-              <div className="sert-skill-grid">
-                {rows.map((s) => (
-                  <div key={s.key} className="sert-skill">
-                    <div className="sert-skill-top">
-                      <span className="sert-skill-label">{s.label}</span>
-                      <span className="sert-skill-value">
-                        {s.display}
-                        {s.value != null && !s.informational && <i> / {s.max}</i>}
-                      </span>
-                    </div>
-                    <div className="sert-skill-bar">
-                      <div style={{ width: `${Math.round(s.fraction * 100)}%` }} />
-                    </div>
-                    <p className="sert-skill-detail">
-                      {s.detail}{s.informational && " · di luar skala resmi"}
-                    </p>
-                  </div>
-                ))}
+              <div className="sert-skills-head">
+                <p className="sert-skills-title">NILAI PER SUBTES</p>
+                <p className="sert-skills-meta">
+                  {data.objective > 0
+                    ? `${data.correct} dari ${data.objective} soal objektif benar`
+                    : `Skor mentah ${Math.round(data.rawScore)}/${Math.round(data.rawMax)} poin`}
+                </p>
               </div>
-              <p className="sert-raw">
-                Skor mentah {Math.round(data.rawScore)}/{Math.round(data.rawMax)} poin
-                {data.objective > 0 && <> · {data.correct} dari {data.objective} soal objektif benar</>}
-              </p>
+
+              {/* >4 baris tak muat bertumpuk di sisa tinggi lembar → dua kolom. */}
+              <div className={`sert-skill-list${rows.length > 4 ? " is-two" : ""}`}>
+                {rows.map((s) => {
+                  const absent = isAbsent(s);
+                  return (
+                    <div key={s.key} className={`sert-skill${absent ? " is-absent" : ""}`}>
+                      <div className="sert-skill-top">
+                        <span className="sert-skill-label">{s.label}</span>
+                        <span className="sert-skill-value">
+                          {absent ? (
+                            "Tidak diujikan"
+                          ) : (
+                            <>
+                              {s.display}
+                              {s.value != null && !s.informational && <i> / {s.max}</i>}
+                            </>
+                          )}
+                        </span>
+                      </div>
+                      <div className="sert-skill-bar">
+                        <div style={{ width: absent ? 0 : `${Math.round(s.fraction * 100)}%` }} />
+                      </div>
+                      <p className="sert-skill-detail">
+                        {absent
+                          ? "seksi ini tidak termasuk dalam paket simulasi yang dikerjakan"
+                          : s.detail}
+                        {s.informational && " · di luar skala resmi"}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {o.partial && (
+                <p className="sert-partial">
+                  Skor total diperkirakan proporsional dari seksi yang diujikan saja.
+                </p>
+              )}
             </div>
           </div>
 
@@ -119,9 +155,10 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
             <div className="sert-sign">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo-icon.png" alt="" className="sert-stamp" />
-              <div className="sert-sign-line" />
-              <p className="sert-sign-name">Linguo Language School</p>
-              <p className="sert-sign-sub">linguo.id</p>
+              <div>
+                <p className="sert-sign-name">Linguo Language School</p>
+                <p className="sert-sign-sub">linguo.id · Online Language School</p>
+              </div>
             </div>
           </div>
 
@@ -139,82 +176,101 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
 // ukurannya harus piksel-pasti agar cocok A4, dan agar @media print-nya duduk
 // berdampingan dengan gayanya.
 export const CERT_CSS = `
-.sert-scale { width: ${SHEET_W}px; margin: 0 auto; transform-origin: top left; }
-@media (max-width: 1212px) { .sert-scale { margin: 0; } }
+/* Lebar/tinggi kotak layoutnya diisi inline = ukuran SETELAH diskalakan, supaya
+   pembungkusnya tak pernah lebih lebar dari lembar yang terlihat (dulu tetap
+   1123px → pratinjau di dalam dialog kepotong di kanan). */
+.sert-scale { margin: 0 auto; transform-origin: top left; }
 .sert-sheet {
-  width: ${SHEET_W}px; height: ${SHEET_H}px; background: #fff; position: relative;
-  box-shadow: 0 18px 45px rgba(15,23,42,.18); overflow: hidden;
+  box-sizing: border-box; width: ${SHEET_W}px; height: ${SHEET_H}px; background: #fff;
+  position: relative; overflow: hidden; border: 1px solid #e4edec;
+  box-shadow: 0 20px 50px rgba(15,23,42,.14);
   font-family: var(--font-sans), system-ui, sans-serif; color: #0f172a;
+  -webkit-font-smoothing: antialiased;
 }
-/* Ornamen sudut — lembut, tetap terbaca saat dicetak hitam-putih. */
+/* Wash lembut dua sudut — tetap terbaca saat dicetak hitam-putih. */
 .sert-sheet::before, .sert-sheet::after {
-  content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,158,158,.12) 0%, rgba(26,158,158,0) 72%);
+  content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%;
 }
-.sert-sheet::before { top: -150px; left: -130px; }
-.sert-sheet::after { bottom: -170px; right: -150px; }
-
-.sert-frame {
-  position: absolute; inset: 16px; border: 2px solid ${TEAL}; border-radius: 6px;
-  padding: 24px 46px 20px; display: flex; flex-direction: column;
+.sert-sheet::before {
+  top: -230px; right: -150px;
+  background: radial-gradient(circle, rgba(26,158,158,.11) 0%, rgba(26,158,158,0) 70%);
 }
-.sert-frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(26,158,158,.35); border-radius: 3px; pointer-events: none; }
+.sert-sheet::after {
+  bottom: -270px; left: -140px;
+  background: radial-gradient(circle, rgba(15,110,86,.08) 0%, rgba(15,110,86,0) 70%);
+}
+.sert-edge {
+  position: absolute; top: 0; left: 0; width: 10px; height: 100%;
+  background: linear-gradient(180deg, ${TEAL} 0%, ${TEAL_DEEP} 100%);
+}
 
-.sert-head { display: flex; align-items: flex-start; justify-content: space-between; }
-.sert-logo { height: 38px; width: auto; object-fit: contain; }
+.sert-frame { position: absolute; inset: 0; padding: 38px 54px 28px 64px; display: flex; flex-direction: column; }
+
+.sert-head { display: flex; align-items: center; justify-content: space-between; }
+.sert-logo { height: 34px; width: auto; object-fit: contain; }
 .sert-no { text-align: right; line-height: 1.5; }
-.sert-no span { display: block; font-size: 8.5px; letter-spacing: 1.4px; color: #94a3b8; font-weight: 700; }
-.sert-no b { font-size: 12px; letter-spacing: .6px; color: ${TEAL_DEEP}; }
+.sert-no span { display: block; font-size: 8px; letter-spacing: 1.6px; color: #9aa8b8; font-weight: 700; }
+.sert-no b { font-size: 12px; letter-spacing: .8px; color: ${TEAL_DEEP}; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-.sert-title-wrap { text-align: center; margin-top: 10px; }
-.sert-title { font-family: Georgia, 'Times New Roman', serif; font-size: 40px; font-weight: 700; letter-spacing: 14px; color: ${TEAL_DEEP}; margin: 0; padding-left: 14px; }
-.sert-subtitle { margin: 6px 0 0; font-size: 11px; font-weight: 700; letter-spacing: 4.2px; color: #94a3b8; }
+.sert-title-wrap { text-align: center; margin-top: 24px; }
+.sert-eyebrow { margin: 0; font-size: 10px; font-weight: 700; letter-spacing: 4px; color: ${TEAL}; text-transform: uppercase; }
+.sert-title { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; font-weight: 700; letter-spacing: 13px; color: #0f172a; margin: 8px 0 0; padding-left: 13px; }
+.sert-title-rule { width: 54px; height: 3px; border-radius: 999px; margin: 12px auto 0; background: ${TEAL}; }
 
-.sert-given { margin: 20px 0 0; text-align: center; font-size: 13px; font-style: italic; color: #64748b; }
-.sert-name { margin: 6px 0 0; text-align: center; font-family: Georgia, 'Times New Roman', serif; font-size: 46px; font-weight: 700; line-height: 1.15; color: ${TEAL_DEEP}; }
-.sert-rule { width: 600px; height: 1px; margin: 11px auto 0; background: linear-gradient(90deg, rgba(26,158,158,0), ${TEAL}, rgba(26,158,158,0)); }
-.sert-desc { margin: 13px auto 0; max-width: 800px; text-align: center; font-size: 13px; line-height: 1.65; color: #475569; }
-.sert-desc b { color: #0f172a; }
+.sert-given { margin: 24px 0 0; text-align: center; font-size: 12px; color: #8494a6; }
+.sert-name { margin: 8px 0 0; text-align: center; font-family: Georgia, 'Times New Roman', serif; font-size: 48px; font-weight: 700; line-height: 1.12; color: ${TEAL_DEEP}; }
+.sert-desc { margin: 12px auto 0; max-width: 760px; text-align: center; font-size: 12.5px; line-height: 1.7; color: #64748b; }
+.sert-desc b { color: #0f172a; font-weight: 700; }
 
 /* margin auto atas-bawah: blok skor mengambang di TENGAH sisa ruang antara
    penerima dan kaki — tanpa ini lembar dengan 2 subtes menyisakan lubang besar. */
-.sert-body { display: flex; gap: 24px; margin: auto 0; align-items: stretch; }
+/* align-items: center — kartu skor sebesar isinya lalu ditengahkan terhadap
+   daftar subtes; kalau ikut meregang, kartunya jadi kotak besar berisi angka
+   mengambang di tengah lautan teal. */
+.sert-body { display: flex; gap: 26px; margin: auto 0; align-items: center; }
 .sert-score {
-  width: 290px; flex-shrink: 0; border-radius: 18px; padding: 24px 18px; text-align: center; color: #fff;
-  background: linear-gradient(135deg, ${TEAL} 0%, ${TEAL_DEEP} 100%);
+  width: 276px; flex-shrink: 0; border-radius: 22px; padding: 30px 18px; text-align: center; color: #fff;
+  background: linear-gradient(150deg, #21B2AE 0%, ${TEAL} 42%, ${TEAL_DEEP} 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
-.sert-score-label { margin: 0; font-size: 9.5px; font-weight: 700; letter-spacing: 2.6px; color: rgba(255,255,255,.75); }
-.sert-score-value { margin: 6px 0 0; font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -1px; }
-.sert-score-unit { font-size: 22px; font-weight: 700; margin-left: 4px; opacity: .85; }
-.sert-score-scale { margin: 9px 0 0; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,.9); }
-.sert-verdict { margin-top: 11px; display: inline-block; border-radius: 999px; background: rgba(255,255,255,.18); padding: 5px 15px; font-size: 11.5px; font-weight: 700; }
+.sert-score-label { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: 2.8px; color: rgba(255,255,255,.72); }
+.sert-score-value { margin: 8px 0 0; font-size: 62px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; }
+.sert-score-unit { font-size: 20px; font-weight: 700; margin-left: 5px; opacity: .8; letter-spacing: 0; }
+.sert-score-scale { margin: 10px 0 0; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.88); }
+.sert-verdict { margin-top: 12px; display: inline-block; border-radius: 999px; background: rgba(255,255,255,.2); padding: 5px 14px; font-size: 11px; font-weight: 700; }
 
-.sert-skills { flex: 1; min-width: 0; border: 1px solid #e2e8f0; border-radius: 18px; padding: 16px 18px 14px; display: flex; flex-direction: column; }
-.sert-skills-title { margin: 0 0 10px; font-size: 9.5px; font-weight: 700; letter-spacing: 2.4px; color: #94a3b8; }
-/* align-content: center → 2 subtes tetap duduk di tengah kartu, bukan menumpuk di atas. */
-.sert-skill-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; align-content: center; }
-.sert-skill-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.sert-skill-label { font-size: 12.5px; font-weight: 700; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sert-skills { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.sert-skills-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 9px; border-bottom: 2px solid #eef2f6; }
+.sert-skills-title { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: 2.6px; color: #8494a6; }
+.sert-skills-meta { margin: 0; font-size: 10px; color: #a0aec0; white-space: nowrap; }
+.sert-skill-list { display: grid; grid-template-columns: 1fr; }
+.sert-skill-list.is-two { grid-template-columns: 1fr 1fr; column-gap: 26px; }
+.sert-skill { padding: 10px 0 9px; border-bottom: 1px solid #eef2f6; }
+.sert-skill:last-child { border-bottom: 0; }
+.sert-skill-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.sert-skill-label { font-size: 12px; font-weight: 700; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sert-skill-value { font-size: 13px; font-weight: 800; color: ${TEAL_DEEP}; white-space: nowrap; }
-.sert-skill-value i { font-style: normal; font-weight: 600; color: #94a3b8; }
-.sert-skill-bar { margin-top: 5px; height: 4px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
-.sert-skill-bar div { height: 100%; border-radius: 999px; background: ${TEAL}; }
-.sert-skill-detail { margin: 4px 0 0; font-size: 10px; color: #94a3b8; }
-.sert-raw { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed #e2e8f0; font-size: 11px; color: #64748b; }
+.sert-skill-value i { font-style: normal; font-weight: 600; color: #a8b5c4; }
+.sert-skill-bar { margin-top: 6px; height: 3px; border-radius: 999px; background: #eef2f6; overflow: hidden; }
+.sert-skill-bar div { height: 100%; border-radius: 999px; background: linear-gradient(90deg, ${TEAL}, ${TEAL_DEEP}); }
+.sert-skill-detail { margin: 5px 0 0; font-size: 9.5px; color: #a0aec0; }
+/* Seksi resmi yang tak diujikan — sengaja tetap dicetak, tapi jelas berbeda. */
+.sert-skill.is-absent .sert-skill-label { color: #94a3b8; font-weight: 600; }
+.sert-skill.is-absent .sert-skill-value { font-size: 10px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: #b0bcc9; }
+.sert-skill.is-absent .sert-skill-bar { background: #f3f6f9; }
+.sert-partial { margin: 10px 0 0; font-size: 9.5px; color: #a0aec0; }
 
-.sert-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-.sert-foot-left { max-width: 420px; font-size: 10px; line-height: 1.7; color: #64748b; }
+.sert-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-top: 14px; border-top: 1px solid #eef2f6; }
+.sert-foot-left { max-width: 440px; font-size: 9.5px; line-height: 1.75; color: #94a3b8; }
 .sert-foot-left p { margin: 0; }
-.sert-foot-left b { color: #334155; }
-.sert-sign { text-align: center; width: 230px; }
-.sert-stamp { height: 32px; width: auto; margin: 0 auto 4px; display: block; opacity: .9; }
-.sert-sign-line { height: 1px; background: #cbd5e1; margin-bottom: 5px; }
-.sert-sign-name { margin: 0; font-size: 12px; font-weight: 700; color: ${TEAL_DEEP}; }
-.sert-sign-sub { margin: 1px 0 0; font-size: 9.5px; color: #94a3b8; }
+.sert-foot-left b { color: #334155; font-weight: 700; }
+.sert-sign { display: flex; align-items: center; gap: 11px; }
+.sert-stamp { height: 34px; width: auto; display: block; }
+.sert-sign-name { margin: 0; font-size: 12.5px; font-weight: 700; color: ${TEAL_DEEP}; }
+.sert-sign-sub { margin: 2px 0 0; font-size: 9.5px; color: #94a3b8; }
 
-.sert-disclaimer { margin: 9px 0 0; text-align: center; font-size: 9px; line-height: 1.6; color: #94a3b8; }
-.sert-disclaimer b { color: #64748b; }
+.sert-disclaimer { margin: 12px 0 0; text-align: center; font-size: 8.5px; line-height: 1.65; color: #a8b5c4; }
+.sert-disclaimer b { color: #7d8b9c; }
 
 @media print {
   @page { size: A4 landscape; margin: 0; }
@@ -227,7 +283,7 @@ export const CERT_CSS = `
   .sert-page { padding: 0 !important; background: #fff !important; }
   /* Kembalikan lembar ke ukuran A4 asli — skala layar cuma untuk pratinjau. */
   .sert-scale { transform: none !important; height: auto !important; width: ${SHEET_W}px !important; margin: 0 !important; }
-  .sert-sheet { box-shadow: none !important; }
+  .sert-sheet { box-shadow: none !important; border: 0 !important; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 }
 `;
