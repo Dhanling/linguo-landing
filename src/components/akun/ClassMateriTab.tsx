@@ -25,7 +25,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
-import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, ChevronRight, Clock, CalendarDays, PenLine, type LucideIcon } from 'lucide-react';
+import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref } from '@/lib/classRoom';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
@@ -47,6 +47,10 @@ function youtubeId(url: string): string | null {
 }
 
 export const KIND_META: Record<string, { label: string; Icon: LucideIcon; cls: string }> = {
+  // [reg-materi-ai-v1] Materi berupa TEKS (disusun admin/kurikulum lewat AI di
+  // dashboard). Tidak punya url — isinya di kolom `content` dan dibaca langsung
+  // di halaman ini, bukan diunduh.
+  ai: { label: 'Materi Belajar', Icon: Sparkles, cls: 'bg-violet-50 text-violet-600' },
   youtube: { label: 'YouTube', Icon: Play, cls: 'bg-red-50 text-red-600' },
   doc: { label: 'Dokumen', Icon: FileText, cls: 'bg-blue-50 text-blue-600' },
   slide: { label: 'Slide', Icon: Presentation, cls: 'bg-orange-50 text-orange-600' },
@@ -56,10 +60,100 @@ export const KIND_META: Record<string, { label: string; Icon: LucideIcon; cls: s
   recording: { label: 'Recording', Icon: Video, cls: 'bg-purple-50 text-purple-600' },
 };
 
+// [reg-materi-ai-v1] Materi teks dirender apa adanya dengan format seadanya:
+// '## Judul', '- poin', dan **tebal**. Repo ini TIDAK punya react-markdown dan
+// materi ini datang dari staf sendiri (bukan input publik), jadi cukup pemformat
+// kecil ini — tetap tanpa dangerouslySetInnerHTML.
+function TeksMateri({ isi }: { isi: string }) {
+  const tebal = (s: string) =>
+    s.split(/(\*\*[^*]+\*\*)/g).map((p, i) =>
+      p.startsWith('**') && p.endsWith('**') ? <strong key={i} className="font-bold text-[#12172B]">{p.slice(2, -2)}</strong> : <span key={i}>{p}</span>
+    );
+  return (
+    <div className="space-y-2">
+      {isi.split('\n').map((baris, i) => {
+        const t = baris.trim();
+        if (!t) return <div key={i} className="h-1" />;
+        const h = t.match(/^(#{1,4})\s*(.+)$/);
+        if (h) return <h4 key={i} className="pt-1 text-sm font-extrabold text-[#16796E]">{h[2]}</h4>;
+        if (/^[-*]\s+/.test(t)) {
+          return (
+            <div key={i} className="flex gap-2 text-sm text-gray-700">
+              <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#16796E]" />
+              <span>{tebal(t.replace(/^[-*]\s+/, ''))}</span>
+            </div>
+          );
+        }
+        return <p key={i} className="text-sm leading-relaxed text-gray-700">{tebal(t)}</p>;
+      })}
+    </div>
+  );
+}
+
+function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void }) {
+  useEffect(() => {
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [onClose]);
+  return (
+    <div className="fixed inset-0 z-[110] flex items-end justify-center bg-black/60 p-0 backdrop-blur-sm md:items-center md:p-6" onClick={onClose}>
+      <div
+        className="flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl md:max-w-2xl md:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-3 border-b border-gray-200 px-5 py-4">
+          <div className="min-w-0">
+            <h3 className="text-base font-extrabold text-[#12172B]">{m.title}</h3>
+            <p className="mt-0.5 text-xs font-medium text-gray-500">
+              Materi belajar{m.note ? ` · ${m.note}` : ''}
+            </p>
+          </div>
+          <button onClick={onClose} aria-label="Tutup" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200">
+            <X className="h-4 w-4" strokeWidth={2.4} />
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto px-5 py-5">
+          <TeksMateri isi={m.content || ''} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
   const kind = m.kind && KIND_META[m.kind] ? m.kind : detectKind(m.url || '');
   const meta = KIND_META[kind] || KIND_META.link;
   const yt = kind === 'youtube' || kind === 'recording' ? youtubeId(m.url || '') : null;
+  const [baca, setBaca] = useState(false);
+
+  // Materi teks: dibaca di tempat, bukan dibuka ke tab baru (tidak ada url-nya).
+  if (kind === 'ai' || (!m.url && m.content)) {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={() => setBaca(true)}
+          className="group flex w-full items-center gap-3 rounded-2xl bg-white p-3.5 text-left transition hover:shadow-sm"
+        >
+          <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${KIND_META.ai.cls}`}>
+            <Sparkles className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
+            {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
+            <div className="mt-0.5 text-[11px] text-gray-400">
+              Materi Belajar
+              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}` : ''}
+            </div>
+          </div>
+          <ChevronRight className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
+        </button>
+        {baca && <TeksMateriOverlay m={m} onClose={() => setBaca(false)} />}
+      </>
+    );
+  }
+
   return (
     <a
       href={m.url || '#'}
@@ -454,7 +548,10 @@ export default function ClassMateriTab({
     (async () => {
       const { data, error } = await supabase
         .from('class_materials')
-        .select('id, schedule_id, title, kind, url, note, created_at')
+        // [reg-materi-tab-v1] session_number: materi yang ditempel ke NOMOR sesi
+        // dari dashboard admin (kelas lawas tak punya baris schedules sama sekali).
+        // content: materi berupa teks (disusun lewat AI), dibaca langsung di sini.
+        .select('id, schedule_id, session_number, title, kind, url, note, content, created_at')
         .eq('registration_id', reg.id)
         .order('created_at', { ascending: false });
       if (!alive) return;
@@ -481,12 +578,21 @@ export default function ClassMateriTab({
     return <div className="py-10 text-center text-gray-400">Memuat…</div>;
   }
 
-  const general = materials.filter((m) => !m.schedule_id);
+  // Materi umum = tidak terikat baris jadwal MAUPUN nomor sesi.
+  const general = materials.filter((m) => !m.schedule_id && !m.session_number);
   const bySchedule = new Map<string, any[]>();
   materials.filter((m) => m.schedule_id).forEach((m) => {
     const arr = bySchedule.get(m.schedule_id) || [];
     arr.push(m);
     bySchedule.set(m.schedule_id, arr);
+  });
+  // [reg-materi-tab-v1] Materi yang ditempel ke nomor sesi (dari dashboard admin).
+  const byNomorSesi = new Map<number, any[]>();
+  materials.filter((m) => m.session_number).forEach((m) => {
+    const no = Number(m.session_number);
+    const arr = byNomorSesi.get(no) || [];
+    arr.push(m);
+    byNomorSesi.set(no, arr);
   });
 
   // [kelas-materi-milestone-v1] Slot milestone = sebanyak sesi yang DIBELI.
@@ -523,10 +629,15 @@ export default function ClassMateriTab({
   // bisa menyimpan 45 menit padahal siswa membeli kelas 60 menit per sesi.
   const durasiSesi = Number(reg.duration) || null;
 
-  /** Semua materi satu sesi: rekaman + lampiran class_materials + material_links. */
-  const itemsFor = (sched: any | null) => {
-    if (!sched) return [];
-    const out = [...(bySchedule.get(sched.id) || [])];
+  /** Semua materi satu sesi: rekaman + lampiran class_materials + material_links.
+   *  `no` = nomor milestone — materi dari dashboard admin nempel ke nomor ini,
+   *  jadi sesi tanpa baris jadwal (kelas lawas) tetap bisa punya materi. */
+  const itemsFor = (sched: any | null, no?: number) => {
+    const byNo = no ? byNomorSesi.get(no) || [] : [];
+    if (!sched) return [...byNo];
+    // Materi yang punya schedule_id DAN session_number sekaligus (dipasang admin
+    // saat baris jadwalnya ada) jangan dihitung dua kali.
+    const out = [...byNo, ...(bySchedule.get(sched.id) || []).filter((m) => !m.session_number)];
     // Tautan/berkas yang dipasang pengajar langsung di baris jadwal — sebelumnya
     // cuma terlihat di linimasa beranda, tidak pernah muncul di tab Materi.
     (Array.isArray(sched.material_links) ? sched.material_links : []).forEach((l: any, i: number) => {
@@ -613,7 +724,7 @@ export default function ClassMateriTab({
                 no={ms.no}
                 sched={ms.sched}
                 sudahJalan={ms.sudahJalan}
-                items={itemsFor(ms.sched)}
+                items={itemsFor(ms.sched, ms.no)}
                 durasi={durasiSesi || ms.sched?.duration_minutes || null}
                 silabus={silabusSesi(ms.no)}
                 isLast={i === arr.length - 1}
@@ -651,7 +762,7 @@ export default function ClassMateriTab({
           no={msTerbuka.no}
           sched={msTerbuka.sched}
           st={statusMilestone(msTerbuka.sched, msTerbuka.sudahJalan)}
-          items={itemsFor(msTerbuka.sched)}
+          items={itemsFor(msTerbuka.sched, msTerbuka.no)}
           teacherName={teacherName}
           durasi={durasiSesi || msTerbuka.sched?.duration_minutes || null}
           silabus={silabusSesi(msTerbuka.no)}
