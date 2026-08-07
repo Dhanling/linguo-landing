@@ -34,7 +34,7 @@ PRINSIP UTAMA — JAWAB DULU dari KNOWLEDGE BASE di bawah, jangan buru-buru lemp
   (1) KATEGORI BAHASA (A/B/C/D/E) itu ALAT HITUNG INTERNAL — DILARANG menyebutnya ke user ("kategori B", "masuk kategori A") atau menjelaskan sistemnya. Pakai tabelnya diam-diam.
   (2) Sebutkan tarif per jam KEEMPAT levelnya dengan nama level ke user: Basic (A1), Upper Basic (A2), Intermediate (B1/B2), Advance (C1/C2).
   (3) Lalu contoh total paket minimal 16 sesi memakai tarif level Basic (atau level user kalau sudah jelas): tarif/jam × 8 = 30 menit, × 12 = 45 menit, × 16 = 60 menit, × 24 = 90 menit. Hitung teliti.
-  (4) Tambahkan catatan native (2× tarif lokal; native baru ada untuk Inggris, Tagalog, Spanyol, Arab — bahasa daerah & BIPA jangan dibahas native/non-native) dan catatan paket Recording (+E-book) yang belum termasuk.
+  (4) Tambahkan catatan native (2× tarif lokal, hanya untuk bahasa di blok KETERSEDIAAN PENGAJAR NATIVE; bahasa lain cukup "pengajarnya lokal, orang Indonesia yang menguasai bahasa itu" tanpa "coming soon" & tanpa bahas sertifikasi; bahasa daerah & BIPA jangan dibahas native/non-native) dan catatan paket Recording (+E-book) yang belum termasuk.
   (5) Tutup dengan link https://linguo.id/harga sebagai kalkulator — BUKAN pengganti rincian di atas.
   Contoh bentuk yang benar: "untuk private Bahasa Norwegia level Basic Rp 120.000/jam, Upper Basic Rp 130.000/jam, Intermediate Rp 140.000/jam, Advance Rp 150.000/jam" — bukan "Norwegia masuk kategori B".
 
@@ -116,11 +116,11 @@ Tarif per sesi 60 menit (= tarif "per jam" yang dikutip ke user) — kolom: Basi
 - Kategori D: Rp 90.000 | 95.000 | 100.000 | 110.000
 - Kategori E: Rp 150.000 | 160.000 | 170.000 | 180.000
 Cara hitung total: tarif per sesi × jumlah sesi; paket standar 16 sesi per sublevel. Contoh yang boleh ditulis ke user: Spanyol level Basic = Rp 110.000 × 16 = Rp 1.760.000 (tanpa menyebut kategori). Tersedia durasi 30/45/90 menit (harga proporsional): tarif/jam × 8 = 16 sesi @30 menit, × 12 = @45 menit, × 16 = @60 menit, × 24 = @90 menit. Bisa dicicil 2x (50% awal, 50% di tengah sesi).
-Pengajar NATIVE speaker = 2× tarif lokal. Native saat ini: English, Tagalog, Spanish, Arabic; bahasa lain coming soon (sementara pengajar lokal).
+Pengajar NATIVE speaker = 2× tarif lokal. Bahasa mana yang PUNYA native ikut blok "KETERSEDIAAN PENGAJAR NATIVE" (realtime dari dashboard pengajar) — jangan pakai daftar hafalan; kalau blok itu tidak muncul, anggap native cuma untuk Inggris. Bahasa yang belum ada native-nya: pengajarnya lokal orang Indonesia yang menguasai bahasa itu, tarifnya tarif lokal apa adanya (jangan dikali 2), dan jangan disebut "coming soon".
 PENGECUALIAN bahasa daerah Nusantara (Jawa, Sunda, Madura, Bali, Batak, Banjar, Bugis — kategori D) & BIPA (kategori E): opsi "lokal vs native" TIDAK berlaku karena pengajarnya memang penutur asli bahasa itu. DILARANG bilang "native Bahasa Batak belum tersedia"/"coming soon" — user membacanya sebagai "Linguo tidak punya pengajar Batak". Cukup bilang pengajarnya penutur asli bahasa daerah tersebut, tanpa membahas native/non-native, dan jangan kalikan 2.
 CARA HITUNG NATIVE (jangan mengarang angka): ambil tarif LOKAL per sesi yang sudah sesuai kategori + level + durasi, BARU dikali 2. Contoh English (kategori C): A1 60 menit lokal Rp 100.000 → native Rp 200.000; A1 45 menit lokal Rp 75.000 → native Rp 150.000; A2 45 menit lokal Rp 82.500 → native Rp 165.000.
 Markup 2× berlaku untuk Kelas Private DAN Kelas Kids. Semi-Private & Reguler itu kelas grup — TIDAK ada opsi native, jangan pernah dikalikan 2.
-Kids native = 2× tarif Kids LOKAL bahasa itu (bukan angka hafalan). Contoh Inggris: Little Learner Rp 75.000 → Rp 150.000; Young Explorer Rp 85.000 → Rp 170.000. Contoh Spanyol (kategori B): Young Explorer Rp 95.000 → Rp 190.000. Native Kids hanya untuk English, Tagalog, Spanish, Arabic.
+Kids native = 2× tarif Kids LOKAL bahasa itu (bukan angka hafalan), dan cuma untuk bahasa yang tercantum di blok KETERSEDIAAN PENGAJAR NATIVE. Contoh Inggris: Little Learner Rp 75.000 → Rp 150.000; Young Explorer Rp 85.000 → Rp 170.000.
 JANGAN campur label: "Little Learner"/"Young Explorer" itu tier USIA Kelas Kids (5-8 / 9-12 tahun), BUKAN level kelas dewasa. Level dewasa = Basic/Upper Basic/Intermediate/Advance (A1/A2/B1-B2/C1-C2). Frasa seperti "Young Explorer level Upper Basic" SALAH.
 
 Biaya Semi-Private (kelas grup kecil yang dibikin siswa sendiri) — PER SISWA per sesi, level Basic, 60 menit. Makin besar grupnya makin murah per siswanya. Kolom: grup 2 orang | 3 orang | 4 orang (kategorinya sama dengan tabel Private di atas & sama-sama tidak boleh disebut ke user):
@@ -136,7 +136,7 @@ Trial Class (BERBAYAR, bukan gratis):
 - Harga trial Private = SAMA dengan tarif per sesi kelas Private biasa: ikut bahasa DAN LEVEL siswa, proporsional durasi (30/45/60/75/90 menit). Contoh 60 menit bahasa Inggris: Basic Rp 100.000, Upper Basic Rp 110.000, Intermediate Rp 120.000, Advance Rp 130.000 (angka dari tabel Biaya Private — jangan mengarang kolom kelima). Durasi 30 menit = setengahnya. JANGAN quote tarif Basic untuk semua level, dan jangan sebut huruf kategorinya.
 - Belum tahu levelnya? Pilih perkiraan terdekat dulu, nanti dipastikan lewat placement test gratis.
 - Trial Kids = 1 sesi dengan tarif Kids bahasa itu (lihat tabel Tarif Kids per kategori bahasa di atas). Contoh: trial Young Explorer Inggris Rp 85.000, trial Young Explorer Belanda Rp 95.000. JANGAN quote Rp 85.000 untuk semua bahasa.
-- Trial dengan pengajar NATIVE juga bisa = 2× tarif lokal. Contoh trial Private English A1 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native = 2× tarif Kids lokal bahasa itu.
+- Trial dengan pengajar NATIVE bisa untuk bahasa yang memang punya native (lihat blok KETERSEDIAAN PENGAJAR NATIVE) = 2× tarif lokal. Contoh trial Private English A1 45 menit: lokal Rp 75.000, native Rp 150.000. Trial Kids native = 2× tarif Kids lokal bahasa itu. Bahasa tanpa native: trial-nya dengan pengajar lokal orang Indonesia, tarif lokal apa adanya.
 - Daftar trial: https://linguo.id/kelas-trial (pilih bahasa, level, durasi, jadwal → bayar)
 
 Jadwal & ketentuan:
@@ -836,12 +836,35 @@ function buildTeacherBlock(rows: unknown[]): string {
       return `- ${label}: ${nama.length} pengajar${native} — ${tampil}${sisa > 0 ? ` [+${sisa} lainnya]` : ""}`;
     });
 
+  // [native-realtime-v1] Ketersediaan native ikut kolom `origin` di dashboard
+  // pengajar, bukan daftar hafalan — begitu admin menandai pengajar Native,
+  // jawaban AI ikut berubah di refresh cache berikutnya.
+  const nativeLangs = [...byLang.entries()]
+    .filter(([, e]) => e.native > 0)
+    .map(([label]) => label)
+    .sort((a, b) => a.localeCompare(b));
+
   return (
     `PENGAJAR AKTIF PER BAHASA (realtime dari database pengajar — ${total} pengajar aktif):\n` +
     lines.join("\n") +
     "\n\n" +
-    TEACHER_NOTE
+    TEACHER_NOTE +
+    "\n\n" +
+    nativeAvailabilityNote(nativeLangs)
   );
+}
+
+/** Blok ketersediaan native — realtime dari kolom `origin` dashboard pengajar. */
+function nativeAvailabilityNote(langs: string[]): string {
+  const daftar = langs.length
+    ? `Pengajar NATIVE speaker aktif saat ini HANYA untuk: ${langs.join(", ")}.`
+    : "Saat ini TIDAK ADA pengajar native aktif untuk bahasa mana pun.";
+  return `KETERSEDIAAN PENGAJAR NATIVE (realtime, ikut data dashboard pengajar):
+${daftar}
+- Baris di atas SATU-SATUNYA acuan. DILARANG menambah bahasa dari hafalan lama ("native ada untuk Tagalog/Spanyol/Arab") — bahasa yang tidak tercantum berarti memang belum ada native-nya.
+- Bahasa di luar daftar itu: pengajarnya pengajar LOKAL orang Indonesia yang menguasai bahasa tersebut. Jawab apa adanya dan singkat, mis. "Untuk Bahasa [X] pengajarnya lokal ya kak, orang Indonesia yang menguasai bahasa itu 😊". JANGAN bilang "coming soon" atau menjanjikan native menyusul, dan JANGAN menambahi soal sertifikasi/kualifikasi/pengalaman pengajar — cukup "pengajar lokal orang Indonesia".
+- Bahasa tanpa native = tidak ada opsi native: pakai tarif lokal apa adanya, jangan dikali 2, dan jangan tulis baris native di rincian harga.
+- Bahasa daerah Nusantara (Jawa, Sunda, Bali, Batak, Bugis, Banjar, Madura) & BIPA: JANGAN bahas native/lokal sama sekali — pengajarnya memang penutur asli bahasa itu.`;
 }
 
 async function getTeacherBlock(): Promise<string> {
