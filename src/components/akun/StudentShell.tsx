@@ -269,18 +269,39 @@ export default function StudentShell({
       // (dulu <a> biasa = full page reload tiap pindah menu)
       const isActiveLink = item.key === active;
       const href = withPreview(item.href);
-      return navRow(item, href, (
+      // [nav-newtab-default-v1] Menu yang pindah ke HALAMAN LAIN (Watch & Learn,
+      // Kosakata Saya, Perpustakaan, Lingbook, Grup Kelas) dibuka langsung di TAB
+      // BARU. Dulu halaman yang sedang dibuka ikut tergantikan, jadi siswa yang
+      // cuma mau menengok kosakata kehilangan dashboard/kelas yang lagi jalan dan
+      // harus menunggu muat ulang saat menekan back. Menu yang cuma ganti TAB di
+      // dalam /akun tetap in-place — di sana tak ada halaman yang hilang.
+      // Menu yang sedang aktif dikecualikan: membuka salinan halaman yang sama
+      // di tab baru cuma bikin tab kembar.
+      const newTab = !isActiveLink;
+      const node = (
         <Link
           href={href}
           prefetch
           onClick={onNavigated}
-          className={`${NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
+          target={newTab ? "_blank" : undefined}
+          rel={newTab ? "noopener noreferrer" : undefined}
+          title={newTab ? `Buka ${item.label} di tab baru` : undefined}
+          className={`${newTab ? NAV_ITEM_BASE : NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
           aria-current={isActiveLink ? "page" : undefined}
         >
           <Icon className={NAV_ICON} />
           <span className="truncate">{item.label}</span>
+          {newTab && (
+            <ExternalLink
+              className="ml-auto h-3.5 w-3.5 shrink-0 text-white/40 transition group-hover:text-white/75"
+              strokeWidth={2.2}
+              aria-hidden
+            />
+          )}
         </Link>
-      ));
+      );
+      // Sudah membuka tab baru → tombol "buka di tab baru" milik navRow tak perlu.
+      return newTab ? <div key={item.key}>{node}</div> : navRow(item, href, node);
     }
     if (item.soon) {
       return (
