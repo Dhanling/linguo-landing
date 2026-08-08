@@ -17,9 +17,13 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
-import { Calendar, Clock, Video, BookOpen, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
 import { studentRecordingHref, isInternalRecordingHref } from '@/lib/classRoom';
-import { detectKind, KIND_META } from './ClassMateriTab';
+import { detectKind, KIND_META, TeksMateriOverlay } from './ClassMateriTab';
+// [materi-slide-v1] Materi tanpa url (dek slide / teks AI) dibuka di tempat,
+// bukan sebagai tautan — lihat ItemRow.
+import { parseDeck } from '@/lib/materiSlides';
+import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
 
 export type TimelineSchedule = {
   id: string;
@@ -35,7 +39,7 @@ export type TimelineSchedule = {
   recording_url?: string | null;
 };
 
-type Item = { id: string; title: string; kind?: string; url: string; note?: string | null };
+type Item = { id: string; title: string; kind?: string; url: string; note?: string | null; content?: string | null };
 
 /** Chip status sesi. Sengaja pakai class Tailwind (bukan hex inline) — warna inline
  *  lolos dari override mode gelap dan berakhir putih di atas putih. */
@@ -59,20 +63,47 @@ function ItemRow({ it }: { it: Item }) {
   const kind = it.kind && KIND_META[it.kind] ? it.kind : detectKind(it.url || '');
   const meta = KIND_META[kind] || KIND_META.link;
   const internal = isInternalRecordingHref(it.url || '');
+  const [buka, setBuka] = useState(false);
+
+  const isi = (
+    <>
+      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${meta.cls}`}>
+        <meta.Icon className="h-4 w-4" strokeWidth={2} />
+      </span>
+      <span className="min-w-0 flex-1 text-left">
+        <span className="block truncate text-[13px] font-bold text-[#12172B]">{it.title}</span>
+        <span className="block truncate text-[11px] font-medium text-gray-500">{it.note || meta.label}</span>
+      </span>
+    </>
+  );
+  const kelas = 'group flex w-full items-center gap-2.5 rounded-xl bg-[#F5F6F8] px-3 py-2.5 transition hover:bg-[#E8EAEE]';
+
+  /* [materi-slide-v1] Materi tanpa url dibuka DI TEMPAT. Dek slide jadi
+     slideshow, materi teks jadi overlay baca. Sebelum ini keduanya dirender
+     sebagai tautan href="#" — terlihat bisa diklik, tapi tidak ke mana-mana. */
+  const dek = parseDeck(it.content);
+  if (dek || (!it.url && it.content)) {
+    return (
+      <>
+        <button type="button" onClick={() => setBuka(true)} className={kelas}>
+          {isi}
+          <Play className="h-3.5 w-3.5 shrink-0 text-gray-400 group-hover:text-[#16796E]" strokeWidth={2.2} />
+        </button>
+        {buka && (dek
+          ? <SlideDeckViewer slides={dek.slides} title={it.title} onClose={() => setBuka(false)} />
+          : <TeksMateriOverlay m={it} onClose={() => setBuka(false)} />)}
+      </>
+    );
+  }
+
   return (
     <a
       href={it.url || '#'}
       target={internal ? undefined : '_blank'}
       rel={internal ? undefined : 'noreferrer'}
-      className="group flex items-center gap-2.5 rounded-xl bg-[#F5F6F8] px-3 py-2.5 transition hover:bg-[#E8EAEE]"
+      className={kelas}
     >
-      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${meta.cls}`}>
-        <meta.Icon className="h-4 w-4" strokeWidth={2} />
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block truncate text-[13px] font-bold text-[#12172B]">{it.title}</span>
-        <span className="block truncate text-[11px] font-medium text-gray-500">{it.note || meta.label}</span>
-      </span>
+      {isi}
       <ExternalLink className="h-3.5 w-3.5 shrink-0 text-gray-400 group-hover:text-[#16796E]" strokeWidth={2.2} />
     </a>
   );
@@ -96,7 +127,7 @@ export default function SesiTimeline({
     (async () => {
       const { data, error } = await supabase
         .from('class_materials')
-        .select('id, schedule_id, title, kind, url, note, created_at')
+        .select('id, schedule_id, title, kind, url, note, content, created_at')
         .eq('registration_id', reg.id)
         .order('created_at', { ascending: false });
       if (!alive) return;
@@ -174,7 +205,7 @@ export default function SesiTimeline({
         note: 'Recording',
       });
     }
-    (bySchedule.get(s.id) || []).forEach((m) => out.push({ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note }));
+    (bySchedule.get(s.id) || []).forEach((m) => out.push({ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note, content: m.content }));
     (Array.isArray(s.material_links) ? s.material_links : []).forEach((l, i) =>
       out.push({ id: `ml-${s.id}-${i}`, title: l?.name || 'Lampiran', kind: l?.kind === 'file' ? 'file' : undefined, url: l?.url || '#' }),
     );
@@ -207,7 +238,7 @@ export default function SesiTimeline({
         <div className="materi-panel rounded-2xl bg-white p-4">
           <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-gray-500">Materi Umum</p>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {general.map((m) => <ItemRow key={m.id} it={{ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note }} />)}
+            {general.map((m) => <ItemRow key={m.id} it={{ id: m.id, title: m.title, kind: m.kind, url: m.url, note: m.note, content: m.content }} />)}
           </div>
         </div>
       )}

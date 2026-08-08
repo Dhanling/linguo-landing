@@ -30,6 +30,9 @@ import { studentRecordingHref } from '@/lib/classRoom';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
 import { loadSilabusLevel, type SilabusSesi, type SilabusLevel } from '@/lib/silabusSesi';
+// [materi-slide-v1] Materi berbentuk dek slide — ditonton di tempat, lihat lib/materiSlides.
+import { parseDeck } from '@/lib/materiSlides';
+import { SlideDeckViewer } from '@/components/akun/SlideDeckViewer';
 
 // Deteksi jenis dari URL — fallback kalau kolom kind kosong / materi lama.
 export function detectKind(url: string): string {
@@ -51,6 +54,9 @@ export const KIND_META: Record<string, { label: string; Icon: LucideIcon; cls: s
   // dashboard). Tidak punya url — isinya di kolom `content` dan dibaca langsung
   // di halaman ini, bukan diunduh.
   ai: { label: 'Materi Belajar', Icon: Sparkles, cls: 'bg-violet-50 text-violet-600' },
+  // [materi-slide-v1] Dek slide dari pengajar — isinya JSON di kolom `content`,
+  // ditonton sebagai slideshow di halaman ini (bukan diunduh, bukan ke tab baru).
+  ai_slides: { label: 'Slide Materi', Icon: Presentation, cls: 'bg-violet-50 text-violet-600' },
   youtube: { label: 'YouTube', Icon: Play, cls: 'bg-red-50 text-red-600' },
   doc: { label: 'Dokumen', Icon: FileText, cls: 'bg-blue-50 text-blue-600' },
   slide: { label: 'Slide', Icon: Presentation, cls: 'bg-orange-50 text-orange-600' },
@@ -90,7 +96,7 @@ function TeksMateri({ isi }: { isi: string }) {
   );
 }
 
-function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void }) {
+export function TeksMateriOverlay({ m, onClose }: { m: any; onClose: () => void }) {
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', esc);
@@ -126,6 +132,44 @@ function MaterialCard({ m, teacherName }: { m: any; teacherName?: string }) {
   const meta = KIND_META[kind] || KIND_META.link;
   const yt = kind === 'youtube' || kind === 'recording' ? youtubeId(m.url || '') : null;
   const [baca, setBaca] = useState(false);
+
+  /* [materi-slide-v1] Dek slide. Dicek SEBELUM cabang materi teks karena
+     penyimpanannya menumpang kolom `content` yang sama — kalau urutannya
+     terbalik, siswa akan melihat JSON mentah sebagai "materi teks". */
+  const dek = parseDeck(m.content);
+  if (dek) {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={() => setBaca(true)}
+          className="group flex w-full items-center gap-3 rounded-2xl bg-white p-3.5 text-left transition hover:shadow-sm"
+        >
+          <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${KIND_META.ai_slides.cls}`}>
+            <Presentation className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-sm font-semibold text-gray-900 group-hover:text-[#16796E]">{m.title}</div>
+            {m.note && <div className="mt-0.5 truncate text-xs text-gray-500">{m.note}</div>}
+            <div className="mt-0.5 text-[11px] text-gray-400">
+              {dek.slides.length} slide
+              {teacherName ? ` · ${teacherName}` : ''}
+              {m.created_at ? ` · ${new Date(m.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}` : ''}
+            </div>
+          </div>
+          <Play className="h-4 w-4 shrink-0 text-gray-300 group-hover:text-[#16796E]" strokeWidth={2} />
+        </button>
+        {baca && (
+          <SlideDeckViewer
+            slides={dek.slides}
+            title={m.title}
+            subtitle={m.session_number ? `Sesi ${m.session_number}` : undefined}
+            onClose={() => setBaca(false)}
+          />
+        )}
+      </>
+    );
+  }
 
   // Materi teks: dibaca di tempat, bukan dibuka ke tab baru (tidak ada url-nya).
   if (kind === 'ai' || (!m.url && m.content)) {
