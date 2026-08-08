@@ -66,3 +66,19 @@ export function certificateFileTitle(name: string, scaleLabel: string): string {
   const clean = name.replace(/[^\p{L}\p{N} ]/gu, "").trim() || "Peserta";
   return `Sertifikat Simulasi ${scaleLabel} - ${clean}`;
 }
+
+/** [sim-score-report-v1] Nama berkas PDF laporan skor (lembar A4 potret). */
+export function scoreReportFileTitle(name: string, scaleLabel: string): string {
+  const clean = name.replace(/[^\p{L}\p{N} ]/gu, "").trim() || "Peserta";
+  return `Laporan Skor ${scaleLabel} - ${clean}`;
+}
+
+/**
+ * [sim-score-report-v1] Kode peserta yang DISAMARKAN untuk dicetak di laporan.
+ * Cukup untuk mencocokkan lembar dengan akunnya, tapi tak membocorkan UUID
+ * penuh ke siapa pun yang memegang PDF-nya.
+ */
+export function maskedParticipantId(userId: string | null | undefined): string {
+  const tail = (userId ?? "").replace(/-/g, "").slice(-4).toUpperCase();
+  return tail ? `xxxxxxxxxxxxxxxx${tail}` : "—";
+}

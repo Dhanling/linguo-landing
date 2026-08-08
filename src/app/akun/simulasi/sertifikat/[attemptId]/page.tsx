@@ -22,7 +22,7 @@ import {
 import CertificateSheet, {
   CERT_CSS, SHEET_W, type CertificateData,
 } from "@/components/akun/simulasi/CertificateSheet";
-import { ArrowLeft, Download, Loader2, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Download, FileText, Loader2, ShieldCheck } from "lucide-react";
 
 const TEAL = "#1A9E9E";
 
@@ -133,6 +133,11 @@ export default function SertifikatSimulasiPage() {
         </Link>
         <div className="sert-actions">
           <span className="sert-hint">Pilih tujuan <b>&ldquo;Simpan sebagai PDF&rdquo;</b> di dialog cetak</span>
+          {/* [sim-score-report-v1] lembar potret berisi rincian angka — untuk
+              keperluan yang butuh data, bukan lembar apresiasi. */}
+          <Link href={`/akun/simulasi/laporan/${attemptId}`} className="sert-alt">
+            <FileText className="h-4 w-4" />Versi laporan skor
+          </Link>
           <button type="button" onClick={() => window.print()} className="sert-btn">
             <Download className="h-4 w-4" />Unduh PDF
           </button>
@@ -154,7 +159,8 @@ export default function SertifikatSimulasiPage() {
         .sert-page { min-height: 100vh; background: #eef2f5; padding: 20px 16px 40px; }
         .sert-bar { max-width: 1180px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
         .sert-back { display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid #e2e8f0; background: #fff; padding: 9px 16px; font-size: 13px; font-weight: 600; color: #475569; }
-        .sert-actions { display: flex; align-items: center; gap: 12px; }
+        .sert-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .sert-alt { display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid #cfe6e4; background: #fff; padding: 9px 15px; font-size: 13px; font-weight: 700; color: #0F6E56; }
         .sert-hint { font-size: 12px; color: #64748b; }
         .sert-btn { display: inline-flex; align-items: center; gap: 7px; border-radius: 12px; background: ${TEAL}; padding: 10px 20px; font-size: 13px; font-weight: 700; color: #fff; }
         .sert-btn:active { transform: scale(.97); }

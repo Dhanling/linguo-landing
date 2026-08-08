@@ -467,3 +467,77 @@ export function officialScore(input: {
 export function officialScoreShort(s: OfficialScore): string {
   return s.unit.startsWith("/") ? `${s.headline}${s.unit}` : `${s.headline} ${s.unit}`;
 }
+
+// ── Skor terbaik lintas pengerjaan ───────────────────────────────────────────
+// [sim-score-report-v1] Meniru cara laporan skor resmi menampilkan nilai TERTINGGI
+// tiap seksi dari semua tanggal tes yang masih berlaku (di TOEFL iBT namanya
+// MyBest Scores). Berguna di laporan Linguo karena siswa biasanya mengulang
+// simulasi beberapa kali dan puncak tiap seksi jatuh di tanggal yang berbeda.
+export interface BestSectionScore {
+  key: string;
+  label: string;
+  value: number | null; // null = seksi ini belum pernah diujikan
+  max: number;
+  display: string;
+  testDate: string | null; // tanggal pengerjaan yang menghasilkan nilai ini
+}
+
+export interface BestScores {
+  headline: string; // total dari gabungan nilai tertinggi tiap seksi
+  unit: string;
+  sections: BestSectionScore[];
+  attempts: number; // banyak pengerjaan yang ikut dihitung
+  asOf: string | null; // pengerjaan terbaru yang ikut dihitung
+  partial: boolean; // masih ada seksi resmi yang belum pernah diujikan
+}
+
+/**
+ * Gabungkan beberapa hasil pada SKALA YANG SAMA jadi satu ringkasan "nilai
+ * tertinggi tiap seksi". Total dihitung dengan rumus resmi ujiannya (bukan
+ * dijumlah mentah), jadi ITP tetap rata-rata seksi × 10 dan IELTS tetap
+ * pembulatan band resmi.
+ */
+export function bestScores(
+  scale: ScoreScale,
+  variant: TestVariant | null | undefined,
+  entries: Array<{ official: OfficialScore; submittedAt: string | null }>,
+): BestScores | null {
+  const rows = entries.filter((e) => e.official.scale === scale);
+  if (!rows.length) return null;
+
+  const spec = scaleSpec(scale, variant);
+  const sections: BestSectionScore[] = [];
+  const present: { spec: SectionSpec; value: number }[] = [];
+
+  for (const sec of spec.sections) {
+    let best: { value: number; display: string; date: string | null } | null = null;
+    for (const r of rows) {
+      const s = r.official.skills.find((k) => k.key === sec.key);
+      if (!s || s.value == null || s.informational) continue;
+      if (!best || s.value > best.value) best = { value: s.value, display: s.display, date: r.submittedAt };
+    }
+    if (!best) {
+      sections.push({ key: sec.key, label: sec.label, value: null, max: sec.max, display: "—", testDate: null });
+      continue;
+    }
+    present.push({ spec: sec, value: best.value });
+    sections.push({ key: sec.key, label: sec.label, value: best.value, max: sec.max, display: best.display, testDate: best.date });
+  }
+  if (!present.length) return null;
+
+  // Sama persis dengan officialScore(): seksi yang tak ada diperkirakan
+  // proporsional supaya totalnya tetap berada di rentang skala yang benar.
+  const presentMax = present.reduce((n, p) => n + p.spec.max, 0);
+  const sum = present.reduce((n, p) => n + p.value, 0);
+  const scaled = presentMax > 0 ? (sum / presentMax) * spec.totalMax : 0;
+  const dates = rows.map((r) => r.submittedAt).filter(Boolean).sort() as string[];
+
+  return {
+    headline: spec.format(spec.total(present, scaled)),
+    unit: spec.unit,
+    sections,
+    attempts: rows.length,
+    asOf: dates.length ? dates[dates.length - 1] : null,
+    partial: present.length < spec.sections.length,
+  };
+}

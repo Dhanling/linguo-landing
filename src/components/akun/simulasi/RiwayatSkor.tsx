@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetchMyAttempts, testTypeLabel, type AttemptSummary } from "@/lib/simulations";
 import { officialScore, type OfficialScore } from "@/lib/simScore";
-import { History, ArrowRight, Loader2, TrendingUp, TrendingDown, Minus, ClipboardCheck, Award } from "lucide-react";
+import { History, ArrowRight, Loader2, TrendingUp, TrendingDown, Minus, ClipboardCheck, Award, FileText } from "lucide-react";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -164,14 +164,26 @@ export default function RiwayatSkor() {
             </Link>
 
             {official && (
-              <Link
-                href={`/akun/simulasi/sertifikat/${attempt.id}`}
-                title="Unduh sertifikat"
-                className="mr-4 flex h-9 shrink-0 items-center gap-1.5 rounded-xl border border-teal-100 bg-teal-50 px-3 text-[12px] font-bold text-teal-700 transition hover:bg-teal-100"
-              >
-                <Award className="h-4 w-4" />
-                <span className="hidden sm:inline">Sertifikat</span>
-              </Link>
+              // [sim-score-report-v1] dua lembar berbeda peruntukan: Laporan Skor
+              // (potret, rincian angka) & Sertifikat (landscape, apresiasi).
+              <div className="mr-4 flex shrink-0 items-center gap-1.5">
+                <Link
+                  href={`/akun/simulasi/laporan/${attempt.id}`}
+                  title="Unduh laporan skor"
+                  className="flex h-9 items-center gap-1.5 rounded-xl border border-teal-100 bg-teal-50 px-3 text-[12px] font-bold text-teal-700 transition hover:bg-teal-100"
+                >
+                  <FileText className="h-4 w-4" />
+                  <span className="hidden sm:inline">Laporan Skor</span>
+                </Link>
+                <Link
+                  href={`/akun/simulasi/sertifikat/${attempt.id}`}
+                  title="Unduh sertifikat"
+                  className="flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 text-[12px] font-bold text-slate-500 transition hover:bg-slate-50"
+                >
+                  <Award className="h-4 w-4" />
+                  <span className="hidden lg:inline">Sertifikat</span>
+                </Link>
+              </div>
             )}
           </li>
         ))}

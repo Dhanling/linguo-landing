@@ -15,7 +15,7 @@ import { officialScore, type SkillRaw } from "@/lib/simScore";
 import {
   ArrowLeft, BookOpen, Headphones, PenLine, Mic, Type, Trophy, Sparkles,
   CheckCircle2, XCircle, Lightbulb, MessageCircle, Target, MinusCircle,
-  GraduationCap, ArrowRight, Info, History, Award, Download,
+  GraduationCap, ArrowRight, Info, History, Award, Download, FileText,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -440,18 +440,33 @@ export default function ResultView({
           )}
 
           {/* [sim-certificate-v1] Sertifikat — hanya bila skornya bisa dikonversi
-              ke skala resmi (lembar kosong tak diterbitkan sertifikatnya). */}
+              ke skala resmi (lembar kosong tak diterbitkan sertifikatnya).
+              [sim-score-report-v1] + Laporan Skor: lembar potret berisi rincian
+              angka (untuk orang tua/kampus/sponsor), beda peruntukan dari
+              sertifikat yang sifatnya apresiasi. */}
           {!preview && attemptId && official && (
-            <Link
-              href={`/akun/simulasi/sertifikat/${attemptId}`}
-              className="flex items-center justify-between gap-3 border-t border-slate-100 bg-teal-50/60 px-5 py-3.5 transition hover:bg-teal-50"
-            >
-              <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
-                <Award className="h-4 w-4" style={{ color: TEAL_DEEP }} />
-                Unduh Sertifikat hasil simulasi (PDF)
-              </span>
-              <Download className="h-4 w-4 shrink-0 text-teal-600" />
-            </Link>
+            <>
+              <Link
+                href={`/akun/simulasi/laporan/${attemptId}`}
+                className="flex items-center justify-between gap-3 border-t border-slate-100 bg-teal-50/60 px-5 py-3.5 transition hover:bg-teal-50"
+              >
+                <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
+                  <FileText className="h-4 w-4" style={{ color: TEAL_DEEP }} />
+                  Unduh Laporan Skor {official.scaleLabel} (PDF)
+                </span>
+                <Download className="h-4 w-4 shrink-0 text-teal-600" />
+              </Link>
+              <Link
+                href={`/akun/simulasi/sertifikat/${attemptId}`}
+                className="flex items-center justify-between gap-3 border-t border-slate-100 bg-teal-50/60 px-5 py-3.5 transition hover:bg-teal-50"
+              >
+                <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
+                  <Award className="h-4 w-4" style={{ color: TEAL_DEEP }} />
+                  Unduh Sertifikat hasil simulasi (PDF)
+                </span>
+                <Download className="h-4 w-4 shrink-0 text-teal-600" />
+              </Link>
+            </>
           )}
 
           {/* Riwayat: skor lama tak pernah hilang — kasih tahu di mana carinya. */}
