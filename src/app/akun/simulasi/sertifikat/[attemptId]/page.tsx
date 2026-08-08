@@ -77,7 +77,7 @@ export default function SertifikatSimulasiPage() {
   // supaya ukurannya kembali persis A4.
   useEffect(() => {
     const fit = () => {
-      const avail = Math.min(window.innerWidth - 32, 1180);
+      const avail = Math.min(window.innerWidth - 32, SHEET_W);
       setScale(Math.min(1, avail / SHEET_W));
     };
     fit();
@@ -157,14 +157,14 @@ export default function SertifikatSimulasiPage() {
       {/* Gaya bilah aksi & catatan (di luar lembar, tak ikut tercetak). */}
       <style>{`
         .sert-page { min-height: 100vh; background: #eef2f5; padding: 20px 16px 40px; }
-        .sert-bar { max-width: 1180px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+        .sert-bar { max-width: ${SHEET_W}px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
         .sert-back { display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid #e2e8f0; background: #fff; padding: 9px 16px; font-size: 13px; font-weight: 600; color: #475569; }
         .sert-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
         .sert-alt { display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; border: 1px solid #cfe6e4; background: #fff; padding: 9px 15px; font-size: 13px; font-weight: 700; color: #0F6E56; }
         .sert-hint { font-size: 12px; color: #64748b; }
         .sert-btn { display: inline-flex; align-items: center; gap: 7px; border-radius: 12px; background: ${TEAL}; padding: 10px 20px; font-size: 13px; font-weight: 700; color: #fff; }
         .sert-btn:active { transform: scale(.97); }
-        .sert-tips { max-width: 1180px; margin: 16px auto 0; display: flex; gap: 8px; border-radius: 14px; border: 1px solid #e2e8f0; background: #fff; padding: 12px 14px; font-size: 12px; line-height: 1.6; color: #64748b; }
+        .sert-tips { max-width: ${SHEET_W}px; margin: 16px auto 0; display: flex; gap: 8px; border-radius: 14px; border: 1px solid #e2e8f0; background: #fff; padding: 12px 14px; font-size: 12px; line-height: 1.6; color: #64748b; }
       `}</style>
     </div>
   );
