@@ -182,19 +182,13 @@ export default function CertificateSheet({ data, scale = 1 }: { data: Certificat
             </div>
           </div>
 
-          {/* Kaki */}
+          {/* Kaki — hanya keterangan penerbitan. Blok tanda tangan kanan bawah
+              (ikon + "Linguo Language School") dibuang: logo kop sudah membawa
+              identitas penerbitnya, dua logo di satu lembar cuma bikin ramai. */}
           <div className="sert-foot">
             <div className="sert-foot-left">
               <p><b>Diterbitkan</b> {fmtTanggalPanjang(data.submittedAt)}</p>
               <p>Keaslian sertifikat dapat dicek pada akun linguo.id pemiliknya dengan nomor di atas.</p>
-            </div>
-            <div className="sert-sign">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-icon.png" alt="" className="sert-stamp" />
-              <div>
-                <p className="sert-sign-name">Linguo Language School</p>
-                <p className="sert-sign-sub">linguo.id · Online Language School</p>
-              </div>
             </div>
           </div>
 
@@ -243,7 +237,7 @@ export const CERT_CSS = `
 .sert-frame { position: absolute; inset: 0; padding: 46px 56px 30px 66px; display: flex; flex-direction: column; }
 
 .sert-head { display: flex; align-items: center; justify-content: space-between; }
-.sert-logo { height: 32px; width: auto; object-fit: contain; }
+.sert-logo { height: 52px; width: auto; object-fit: contain; }
 .sert-no { text-align: right; line-height: 1.5; }
 .sert-no span { display: block; font-size: 8px; letter-spacing: 1.6px; color: #9aa8b8; font-weight: 700; }
 .sert-no b { font-size: 11.5px; letter-spacing: .8px; color: ${TEAL_DEEP}; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -298,14 +292,11 @@ export const CERT_CSS = `
 .sert-skill.is-absent .sert-skill-bar { background: #f3f6f9; }
 .sert-partial { margin: 12px 0 0; font-size: 10px; color: #a0aec0; }
 
-.sert-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-top: 14px; border-top: 1px solid #eef2f6; }
-.sert-foot-left { max-width: 330px; font-size: 9.5px; line-height: 1.75; color: #94a3b8; }
-.sert-foot-left p { margin: 0; }
+.sert-foot { padding-top: 14px; border-top: 1px solid #eef2f6; }
+.sert-foot-left { font-size: 9.5px; line-height: 1.75; color: #94a3b8; }
+.sert-foot-left p { margin: 0; display: inline; }
+.sert-foot-left p + p::before { content: " · "; }
 .sert-foot-left b { color: #334155; font-weight: 700; }
-.sert-sign { display: flex; align-items: center; gap: 11px; }
-.sert-stamp { height: 32px; width: auto; display: block; }
-.sert-sign-name { margin: 0; font-size: 12px; font-weight: 700; color: ${TEAL_DEEP}; }
-.sert-sign-sub { margin: 2px 0 0; font-size: 9.5px; color: #94a3b8; }
 
 .sert-disclaimer { margin: 12px 0 0; text-align: center; font-size: 8.5px; line-height: 1.65; color: #a8b5c4; }
 .sert-disclaimer b { color: #7d8b9c; }
