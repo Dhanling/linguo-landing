@@ -263,9 +263,14 @@ export const CERT_CSS = `
   display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 .sert-score-label { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: 2.8px; color: rgba(255,255,255,.72); }
-.sert-score-value { margin: 10px 0 0; font-size: 70px; font-weight: 800; line-height: 1; letter-spacing: -1.5px; }
+/* Kembar dengan lembar admin (src/components/simulasi/CertificateSheet.tsx) —
+   ubah di sini, ubah di sana. Ruang kosong di kotak baris angka TIDAK simetris:
+   Plus Jakarta Sans ascent 1.038em sedangkan tinggi angka cuma 0.745em, jadi
+   angkanya duduk jauh dari tepi atas kotak dan mepet ke tepi bawah. Margin atas
+   negatif memakan ruang mati itu, jarak ke baris skala digandakan. */
+.sert-score-value { margin: -4px 0 0; font-size: 70px; font-weight: 800; line-height: 1.06; letter-spacing: -1.5px; }
 .sert-score-unit { font-size: 22px; font-weight: 700; margin-left: 5px; opacity: .8; letter-spacing: 0; }
-.sert-score-scale { margin: 12px 0 0; font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,.88); }
+.sert-score-scale { margin: 26px 0 0; font-size: 11.5px; line-height: 1.5; font-weight: 600; color: rgba(255,255,255,.88); }
 .sert-verdict { margin-top: 12px; display: inline-block; border-radius: 999px; background: rgba(255,255,255,.2); padding: 5px 14px; font-size: 11px; font-weight: 700; }
 
 .sert-skills { margin-top: 36px; min-width: 0; display: flex; flex-direction: column; }
