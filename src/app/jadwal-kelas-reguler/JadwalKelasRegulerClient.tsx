@@ -528,18 +528,24 @@ export default function JadwalKelasRegulerClient({
               ) : (
                 <>
                   {/* DESKTOP */}
+                  {/* jadwal-tabel-sticky-v1 — tabel punya scroller sendiri (maks 70vh)
+                      dan baris judul kolomnya mengambang (sticky) biar pas daftar
+                      batch panjang, pembaca tetap tahu kolom mana yang dilihat.
+                      Garis bawah header pakai box-shadow: border pada <th> sticky
+                      ikut tergulung di Safari, shadow tidak. */}
                   <div className="hidden md:block bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div className="max-h-[70vh] overflow-y-auto overflow-x-auto overscroll-contain">
                     <table className="w-full text-sm">
-                      <thead className="bg-slate-50 border-b border-slate-200">
+                      <thead className="sticky top-0 z-10 bg-slate-50">
                         <tr>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700">Bahasa</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700">Level</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700">Jadwal</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700">Mulai</th>
-                          <th className="text-left py-3 px-4 font-semibold text-slate-700">Total Sesi</th>
-                          <th className="text-right py-3 px-4 font-semibold text-slate-700">Harga</th>
-                          <th className="text-center py-3 px-4 font-semibold text-slate-700">Slot</th>
-                          <th className="text-right py-3 px-4 font-semibold text-slate-700">Aksi</th>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Bahasa</th>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Level</th>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Jadwal</th>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Mulai</th>
+                          <th className="text-left py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Total Sesi</th>
+                          <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Harga</th>
+                          <th className="text-center py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Slot</th>
+                          <th className="text-right py-3 px-4 font-semibold text-slate-700 shadow-[inset_0_-1px_0_#e2e8f0]">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -607,6 +613,7 @@ export default function JadwalKelasRegulerClient({
                         })}
                       </tbody>
                     </table>
+                    </div>
                   </div>
 
                   {/* MOBILE */}
