@@ -23,6 +23,9 @@ import {
   applyNativeMultiplier,
   isNativeAvailable,
   getSemiPrivatePrice,
+  applyOfflineSurcharge,
+  normalizeClassMode,
+  supportsOffline,
 } from "@/lib/trial-pricing";
 import {
   getTestPrepProduct,
@@ -56,8 +59,18 @@ function computeFunnelAmount(input: {
   classSize: number;
   testPrepId: string;
   testPrepFormat: string;
+  classMode: string;
+  classCity: string;
 }): PriceResult | null {
   const { program, language, level, duration, teacherType, sessions, classSize, testPrepId, testPrepFormat } = input;
+  // offline-private-class-v1 — offline (pengajar datang) cuma untuk Private &
+  // Semi Private; program lain dipaksa online biar tak ada tagihan +50rb yang
+  // tak pernah bisa dijalankan.
+  const classMode = supportsOffline(program) ? normalizeClassMode(input.classMode) : "online";
+  const isOffline = classMode === "offline";
+  const offlineSuffix = isOffline
+    ? ` [OFFLINE — pengajar datang${input.classCity ? `, ${input.classCity}` : ""}]`
+    : "";
 
   // ── test-prep-v1: Persiapan Ujian (HSK/JLPT/TOPIK/Goethe) ────────────────
   // Semi-private = paket tetap 12 sesi (harga/orang). Private = harga/sesi ×
@@ -77,10 +90,13 @@ function computeFunnelAmount(input: {
     if (!(classSize >= 2 && classSize <= 10)) return null;
     const sp = getSemiPrivatePrice(language, level || "A1", classSize, duration);
     if (!sp.perStudent) return null;
+    const perSession = applyOfflineSurcharge(sp.perStudent, classMode);
     return {
-      amount: sp.perStudent * sessions,
-      perSession: sp.perStudent,
-      description: `Semi Private ${language} — ${sessions} sesi @${duration} menit (grup ${classSize} orang, harga/orang)`,
+      amount: perSession * sessions,
+      perSession,
+      description:
+        `Semi Private ${language} — ${sessions} sesi @${duration} menit (grup ${classSize} orang, harga/orang)` +
+        offlineSuffix,
     };
   }
 
@@ -89,16 +105,19 @@ function computeFunnelAmount(input: {
     if (!SESSION_OPTS.includes(sessions)) return null;
     // funnel-private-level-price-v1 — harga/sesi mengikuti level tier (bukan flat A1).
     const base60 = getPrivateBase60(language, level || "A1");
-    const perSession = applyNativeMultiplier(
-      Math.round((base60 * duration) / 60),
-      teacherType
+    // offline-private-class-v1 — selisih offline ditambahkan SETELAH markup native,
+    // sama persis dengan urutan hitung di funnel (client cuma display).
+    const perSession = applyOfflineSurcharge(
+      applyNativeMultiplier(Math.round((base60 * duration) / 60), teacherType),
+      classMode
     );
     return {
       amount: perSession * sessions,
       perSession,
       description:
         `Kelas Private ${language} — Level ${level || "A1"} — ${sessions} sesi @${duration} menit` +
-        (teacherType === "native" ? " (Pengajar Native)" : ""),
+        (teacherType === "native" ? " (Pengajar Native)" : "") +
+        offlineSuffix,
     };
   }
 
@@ -170,12 +189,29 @@ export async function POST(req: NextRequest) {
       ref_code,
       test_prep_id,
       test_prep_format,
+      class_mode,
+      class_city,
     } = body || {};
 
     // ── 1. Validasi minimal ────────────────────────────────────────────────
     if (!name || !email || !wa_number || !program || !language) {
       return NextResponse.json(
         { error: "Data belum lengkap. Mohon isi semua kolom wajib." },
+        { status: 400 }
+      );
+    }
+
+    // offline-private-class-v1 — mode kelas. Offline hanya sah untuk Private &
+    // Semi Private, dan WAJIB bawa kota/area: itu dasar admin mengecek ada
+    // tidaknya pengajar yang bisa datang ke sana.
+    const classMode = supportsOffline(program)
+      ? normalizeClassMode(class_mode)
+      : "online";
+    const classCity =
+      typeof class_city === "string" ? class_city.trim().slice(0, 200) : "";
+    if (classMode === "offline" && classCity.length < 3) {
+      return NextResponse.json(
+        { error: "Isi kota/area kelas dulu untuk kelas offline ya." },
         { status: 400 }
       );
     }
@@ -195,6 +231,8 @@ export async function POST(req: NextRequest) {
       classSize: Number(class_size) || 0,
       testPrepId: typeof test_prep_id === "string" ? test_prep_id : "",
       testPrepFormat: typeof test_prep_format === "string" ? test_prep_format : "",
+      classMode,
+      classCity,
     });
     if (!priced || priced.amount <= 0) {
       return NextResponse.json(
@@ -256,6 +294,10 @@ export async function POST(req: NextRequest) {
         // registrations.sessions_total/duration/price_per_session otomatis (bukan null lagi).
         sessions: Number(sessions) || null,
         teacher_type: teacher_type === "native" ? "native" : teacher_type === "lokal" ? "lokal" : null,
+        // offline-private-class-v1 — dibawa webhook ke registrations biar admin
+        // langsung lihat mana kelas offline & di kota mana.
+        class_mode: classMode,
+        class_city: classMode === "offline" ? classCity : null,
         source: "landing-page",
         payment_status: "PENDING",
         xendit_external_id: externalId,

@@ -8,7 +8,7 @@ import PlacementPicker from "@/components/PlacementPicker";
 import { resolveFlag } from "@blade-flags/core";
 import { defaultFlags } from "@blade-flags/core/flags/default";
 // linguo-patch:private-pricing-v1 — harga Private mengikuti kategori bahasa
-import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1
+import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePrice, KIDS_PRICE, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier, applyOfflineSurcharge, supportsOffline, OFFLINE_SURCHARGE_PER_SESSION } from "@/lib/trial-pricing"; // linguo-patch:funnel-semi-private-calc-v1 · funnel-session-duration-v1 · funnel-private-level-price-v1 · native-pricing-v1 · kids-lang-pricing-v1 · offline-private-class-v1
 
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
@@ -1096,7 +1096,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       if (initialEmail) setFormEmail(initialEmail);
       if (initialWa) setFormWa(initialWa);
     }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); }
+    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); setClassMode("online"); setOfflineCity(""); }
   }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialEmail, initialWa]);
   const [selLevel, setSelLevel] = useState("");
   const [formName, setFormName] = useState("");
@@ -1117,6 +1117,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const [selSessions, setSelSessions] = useState(12); // funnel-xendit-v1 — jumlah sesi (paket); total = harga/sesi × jumlah sesi
   const [addAddon, setAddAddon] = useState(false); // addon-ebook-recording-v1 — toggle E-Book + Recording bundle (Reguler only)
   const [agreeTerms, setAgreeTerms] = useState(false); // terms-agreement-v1 — gating "Bayar Sekarang" (Reguler only)
+  // offline-private-class-v1 — mode kelas (online / offline: pengajar datang ke tempat siswa)
+  const [classMode, setClassMode] = useState<"online"|"offline">("online");
+  const [offlineCity, setOfflineCity] = useState("");
 
   // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
   const isRegulerFlow = selProgram==="Kelas Reguler";
@@ -1174,10 +1177,18 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
   const SESSION_OPTS = [4, 8, 12, 16, 24];
   const IELTS_PRICE = 300000;
   const isSessionProg = selProgram==="Kelas Private" || selProgram==="Semi Private" || selProgram==="Kelas Kids";
-  const perSession = selProgram==="Kelas Private" ? privatePerSession
+  // offline-private-class-v1 — Private & Semi Private bisa offline (pengajar
+  // datang ke tempat siswa): tarif online + selisih tetap per sesi. Kids &
+  // kelas grup lain tetap online, jadi modenya dipaksa "online".
+  const canOffline = supportsOffline(selProgram);
+  const isOffline = canOffline && classMode==="offline";
+  const perSessionOnline = selProgram==="Kelas Private" ? privatePerSession
     : selProgram==="Kelas Kids" ? kidsPerSession
     : selProgram==="Semi Private" ? (semiPrice?.perStudent || 0)
     : 0;
+  const perSession = canOffline ? applyOfflineSurcharge(perSessionOnline, classMode) : perSessionOnline;
+  // Offline wajib tahu kota/area siswa — itu yang menentukan ada/tidaknya pengajar.
+  const offlineReady = !isOffline || offlineCity.trim().length >= 3;
   const totalAmount =
     isSessionProg ? perSession * selSessions
     : selProgram==="IELTS/TOEFL Prep" ? IELTS_PRICE
@@ -1200,6 +1211,42 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
        {id:"A2",label:"A2 — Elementary",desc:"Percakapan sederhana"},
        {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
        {id:"B2",label:"B2 — Upper Intermediate",desc:"Lancar & kompleks"}];
+
+  // offline-private-class-v1 — pemilih mode kelas dipakai di dua tempat (step
+  // level Private & step Semi Private), jadi ditulis sekali sebagai fungsi
+  // (bukan komponen) supaya input kota tidak kehilangan fokus tiap ketikan.
+  const renderModePicker = () => !canOffline ? null : (
+    <div className="mb-6">
+      <h3 className="text-base font-bold text-slate-900 mb-1">Mode kelas</h3>
+      <p className="text-sm text-slate-500 mb-3">Belajar online, atau pengajar yang datang ke tempatmu?</p>
+      <div className="grid grid-cols-2 gap-2">
+        <button onClick={()=>setClassMode("online")}
+          className={`p-3 rounded-xl border-2 text-left transition-all ${classMode==="online"?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
+          <p className="font-bold text-sm text-slate-900">Online</p>
+          <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">Live via Zoom, dari mana saja</p>
+          <p className="text-[11px] font-bold text-[#1A9E9E] mt-1.5">Tarif normal</p>
+        </button>
+        <button onClick={()=>setClassMode("offline")}
+          className={`p-3 rounded-xl border-2 text-left transition-all ${classMode==="offline"?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
+          <p className="font-bold text-sm text-slate-900">Offline</p>
+          <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">Pengajar datang ke tempatmu</p>
+          <p className="text-[11px] font-bold text-[#1A9E9E] mt-1.5">+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}/sesi</p>
+        </button>
+      </div>
+      {isOffline && (
+        <motion.div initial={{opacity:0,y:6}} animate={{opacity:1,y:0}} className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5">
+          <p className="text-[11px] leading-relaxed text-amber-900">
+            <b>Menyesuaikan ketersediaan pengajar.</b> Kelas offline hanya jalan kalau ada pengajar yang bisa menjangkau daerahmu, jadi ketersediaannya tergantung lokasi. Setelah pembayaran, tim kami cek dulu pengajar di area itu — kalau belum ada, kamu bisa pindah ke kelas online (selisih biaya offline dikembalikan) atau dana direfund penuh.
+          </p>
+          <label className="block text-xs font-semibold text-slate-700 mt-3 mb-1">Kota / area kelas <span className="text-red-500">*</span></label>
+          <input type="text" value={offlineCity} onChange={(e)=>setOfflineCity(e.target.value)}
+            placeholder="Contoh: Bekasi Timur, Kota Bekasi"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-amber-200 bg-white text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
+          <p className="text-[10px] text-amber-800/80 mt-1.5">Sebutkan kecamatan & kota biar tim gampang cari pengajar terdekat.</p>
+        </motion.div>
+      )}
+    </div>
+  );
 
   const validateForm = () => {
     if(!formName.trim()) { setFormError("Masukkan nama lengkap"); return false; }
@@ -1263,6 +1310,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
           teacher_type: hasTeacherPick(selProgram) ? selTeacherType : null,
           sessions: isSessionProg ? selSessions : null,
           class_size: selProgram==="Semi Private" ? classSize : null,
+          // offline-private-class-v1 — mode kelas + kota/area (server hitung ulang selisihnya)
+          class_mode: canOffline ? classMode : "online",
+          class_city: isOffline ? offlineCity.trim() : null,
           ref_code: refFinal || undefined,
         }),
       });
@@ -1286,7 +1336,7 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
       options: { redirectTo: window.location.origin + "/akun" },
     });
   };
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); };
+  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); setClassMode("online"); setOfflineCity(""); };
 
   return (
     <AnimatePresence>{open&&(
@@ -1460,6 +1510,8 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               {/* linguo-patch:funnel-session-duration-v1 — durasi + jumlah sesi + total (Private & Kids) */}
               {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
                 <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="mt-6">
+                  {/* offline-private-class-v1 — online / offline (pengajar datang) */}
+                  {renderModePicker()}
                   <h3 className="text-base font-bold text-slate-900 mb-1">Durasi per sesi</h3>
                   <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
                   <div className="grid grid-cols-3 gap-2 mb-5">
@@ -1486,8 +1538,15 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
                     <div className="flex items-center justify-between text-slate-500 text-xs">
                       <span>Harga / sesi ({selDuration} menit)</span>
-                      <span>{fmtRp(perSession)}</span>
+                      <span>{fmtRp(perSessionOnline)}</span>
                     </div>
+                    {/* offline-private-class-v1 — selisih biaya kelas offline */}
+                    {isOffline && (
+                      <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
+                        <span>Biaya kelas offline / sesi</span>
+                        <span>+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}</span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
                       <span>Jumlah sesi</span>
                       <span>× {selSessions}</span>
@@ -1521,9 +1580,10 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
               {/* funnel-sticky-cta-v1 — tombol lanjut dipin di footer biar tak terpotong scroll */}
               {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
                 <div className="px-6 py-4 border-t border-slate-100 bg-white">
-                  <button onClick={()=>setStep(4)}
-                    className="w-full bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                    Lanjut ke Data Diri →
+                  {/* offline-private-class-v1 — kota wajib diisi kalau pilih offline */}
+                  <button onClick={()=>{if(offlineReady)setStep(4)}} disabled={!offlineReady}
+                    className="w-full bg-[#1A9E9E] hover:bg-[#178888] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
+                    {offlineReady ? "Lanjut ke Data Diri →" : "Isi kota/area kelas dulu"}
                   </button>
                 </div>
               )}
@@ -1564,6 +1624,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 ))}
               </div>
 
+              {/* offline-private-class-v1 — online / offline (pengajar datang ke tempat grup) */}
+              {renderModePicker()}
+
               {/* linguo-patch:funnel-session-duration-v1 — durasi sesi (harga ikut proporsional) */}
               <h3 className="text-base font-bold text-slate-900 mb-1">Durasi per sesi</h3>
               <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
@@ -1594,6 +1657,13 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                     <span>Per orang / sesi ({classSize} peserta)</span>
                     <span>{fmtRp(semiPrice.perStudent)}</span>
                   </div>
+                  {/* offline-private-class-v1 — selisih biaya kelas offline (per orang, per sesi) */}
+                  {isOffline && (
+                    <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
+                      <span>Biaya kelas offline / sesi</span>
+                      <span>+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}</span>
+                    </div>
+                  )}
                   <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
                     <span>Jumlah sesi</span>
                     <span>× {selSessions}</span>
@@ -1606,9 +1676,9 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                 </motion.div>
               )}
 
-              <button disabled={!selLevel} onClick={()=>{if(selLevel)setStep(4)}}
+              <button disabled={!selLevel || !offlineReady} onClick={()=>{if(selLevel && offlineReady)setStep(4)}}
                 className="w-full bg-[#1A9E9E] hover:bg-[#178888] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                {selLevel ? "Lanjut ke Data Diri →" : "Pilih level dulu"}
+                {!selLevel ? "Pilih level dulu" : !offlineReady ? "Isi kota/area kelas dulu" : "Lanjut ke Data Diri →"}
               </button>
             </motion.div>
           )}
@@ -1711,6 +1781,19 @@ function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-slate-500">Pengajar</span>
                     <span className="text-sm font-medium">{selTeacherType==="native"?"Native Speaker":"Lokal"}</span>
+                  </div>
+                )}
+                {/* offline-private-class-v1 — mode kelas + lokasi (kalau offline) */}
+                {canOffline && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-slate-500">Mode kelas</span>
+                    <span className="text-sm font-medium">{isOffline ? "Offline (pengajar datang)" : "Online (Zoom)"}</span>
+                  </div>
+                )}
+                {isOffline && offlineCity.trim() && (
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-xs text-slate-500 shrink-0">Lokasi kelas</span>
+                    <span className="text-sm font-medium text-right">{offlineCity.trim()}</span>
                   </div>
                 )}
                 {selProgram==="Semi Private" && (

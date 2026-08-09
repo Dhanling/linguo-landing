@@ -172,7 +172,7 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
 
     // 1. Ambil lead lengkap by external_id.
     const leadRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${externalId}&select=id,name,email,wa_number,language,program,level,amount,paid_amount,paid_at,birthdate,learning_goal,schedule_preference,sessions,converted_registration_id,archived_at&limit=1`,
+      `${SUPABASE_URL}/rest/v1/leads?xendit_external_id=eq.${externalId}&select=id,name,email,wa_number,language,program,level,amount,paid_amount,paid_at,birthdate,learning_goal,schedule_preference,sessions,class_mode,class_city,converted_registration_id,archived_at&limit=1`,
       { headers: supaHeaders }
     );
     if (!leadRes.ok) {
@@ -296,7 +296,14 @@ async function autoConvertPaidLeadToRegistration(externalId: string): Promise<vo
       payment_date: paidDate,
       sessions_total: isDigital || isReguler ? null : Number(lead.sessions) || 16,
       preferred_schedule: isDigital ? null : lead.schedule_preference || null,
+      // offline-private-class-v1 — mode kelas ikut dari funnel (offline = pengajar
+      // datang ke tempat siswa, ketersediaannya tergantung kota siswa).
+      class_mode: lead.class_mode || null,
+      class_city: lead.class_mode === "offline" ? lead.class_city || null : null,
     };
+    if (lead.class_mode === "offline") {
+      regPayload.notes = `Kelas OFFLINE — pengajar datang ke tempat siswa${lead.class_city ? ` (${lead.class_city})` : ""}. Cek ketersediaan pengajar di area ini.`;
+    }
     if (isReguler) regPayload.product_type = "Reguler";
 
     const insReg = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {

@@ -349,6 +349,40 @@ export function getSemiPrivatePrice(
   return { totalGroup, perStudent };
 }
 
+// =============================================================================
+// linguo-patch:offline-private-class-v1
+// Kelas OFFLINE = pengajar datang ke tempat siswa. Tersedia untuk Kelas Private
+// & Semi Private, tarifnya = tarif online + selisih tetap PER SESI. Angka ini
+// SUMBER TUNGGAL: dipakai funnel inline (page.tsx), komponen FunnelModal, dan
+// /api/create-funnel-invoice yang menghitung ulang total server-side.
+// Ketersediaan pengajar TIDAK dijamin di checkout — tergantung daerah siswa,
+// makanya kota/area siswa ikut disimpan (leads.class_city) buat dicek admin.
+// =============================================================================
+export const OFFLINE_SURCHARGE_PER_SESSION = 50000;
+
+/** Mode kelas yang sah dikirim client. */
+export type ClassMode = "online" | "offline";
+
+export function normalizeClassMode(mode: unknown): ClassMode {
+  return mode === "offline" ? "offline" : "online";
+}
+
+/** Tarif per sesi setelah selisih offline. Online → tarif apa adanya. */
+export function applyOfflineSurcharge(
+  perSession: number,
+  mode?: string | null
+): number {
+  return normalizeClassMode(mode) === "offline"
+    ? perSession + OFFLINE_SURCHARGE_PER_SESSION
+    : perSession;
+}
+
+/** Program yang boleh dipesan offline (Kids & kelas grup tetap online). */
+export const OFFLINE_PROGRAMS = ["Kelas Private", "Semi Private"];
+export function supportsOffline(program: string): boolean {
+  return OFFLINE_PROGRAMS.includes(program);
+}
+
 /** Format angka -> "Rp 100.000" */
 export function formatRupiah(n: number): string {
   return "Rp " + Math.round(n).toLocaleString("id-ID");
