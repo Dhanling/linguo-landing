@@ -449,7 +449,10 @@ export default function ChatWidget() {
   // SELURUH app student (/akun/*: dashboard + player lesson) DAN Watch & Learn (/watch:
   // home + player) supaya FAB CS ga numpuk sama tombol shortcut Analisa. Tetap render
   // global di layout, cuma di-suppress di sini; FAB tetap tampil di halaman marketing publik.
-  if (pathname?.startsWith("/akun") || pathname?.startsWith("/watch")) return null;
+  // [pendataan-wizard-v3] Form pendataan juga: wizard-nya punya bilah tombol
+  // Lanjut/Kirim yang menempel di bawah, dan FAB ini persis menimpanya. Bantuan
+  // tetap sejangkauan — ada tautan chat CS di kaki formnya.
+  if (pathname?.startsWith("/akun") || pathname?.startsWith("/watch") || pathname?.startsWith("/pendataan")) return null;
 
   return (
     <div className="lingw">

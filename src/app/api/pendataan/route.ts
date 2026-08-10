@@ -102,10 +102,11 @@ export async function POST(req: NextRequest) {
       nickname: clean(body.nickname, 60),
       whatsapp,
       email: clean(body.email, 160),
-      // [pendataan-jam-spesifik-v1] 21 rentang saja sudah ~460 karakter; sejak
-      // siswa boleh menambah jam spesifik per hari, batas 500 memotong pilihan
-      // terakhir tanpa siswa sadar.
-      preferred_schedule: clean(body.preferred_schedule, 2000),
+      // [pendataan-wizard-v3] Kisi 30 menit: kotak berurutan digabung jadi satu
+      // rentang, jadi normalnya pendek — tapi pilihan yang berselang-seling bisa
+      // jadi puluhan rentang. Kolomnya `text`, batas di sini cuma pagar sanitasi;
+      // dibuat longgar supaya pilihan terakhir tidak terpotong diam-diam.
+      preferred_schedule: clean(body.preferred_schedule, 4000),
       birth_date: birthDate,
       age: ageFromBirthDate(birthDate),
       institution: clean(body.institution, 160),
