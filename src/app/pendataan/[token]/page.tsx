@@ -16,7 +16,7 @@ import { useParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
-  ChevronLeft, ChevronRight, Clock, GraduationCap, Heart, History, Loader2, Mail,
+  ChevronDown, ChevronLeft, ChevronRight, Clock, GraduationCap, Heart, History, Loader2, Mail,
   MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
 } from "lucide-react";
 
@@ -195,6 +195,150 @@ function Shell({ children }: { children: React.ReactNode }) {
 const WEEKDAYS = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
 const THIS_YEAR = new Date().getFullYear();
 
+// Daftar bulan & tahun dibuat sekali di luar komponen — acuannya tetap, jadi
+// saringan pencariannya tidak dihitung ulang tiap kalender di-render.
+const OPSI_BULAN = MONTHS.map((m, i) => ({ nilai: i + 1, label: m }));
+const OPSI_TAHUN = Array.from({ length: 90 }, (_, i) => ({
+  nilai: THIS_YEAR - i,
+  label: String(THIS_YEAR - i),
+}));
+
+/** [pendataan-kalender-cari-v1] Dropdown bulan & tahun di kepala kalender,
+ *  dengan kolom pencarian.
+ *
+ *  `<select>` bawaan membuka penggulung sistem: daftar 90 tahun harus digulir
+ *  jauh dari 2026 ke 1998, tampilannya (abu gelap, font sistem) asing dibanding
+ *  sisa formulir, dan tidak ada yang bisa diketik. Di sini "98" langsung
+ *  menyisakan 1998, "ags" menyisakan Agustus.
+ *
+ *  Panelnya tetap di dalam kotak kalender — bukan portal — supaya klik di
+ *  dalamnya tidak dianggap "di luar" oleh penutup otomatis kalendernya. */
+function PilihCari({
+  nilai, opsi, onPilih, label, kelasTombol = "", rata = "kiri",
+}: {
+  nilai: number;
+  opsi: { nilai: number; label: string }[];
+  onPilih: (n: number) => void;
+  label: string;
+  kelasTombol?: string;
+  /** Panel tahun dirapatkan ke kanan supaya tidak menjorok keluar kalender. */
+  rata?: "kiri" | "kanan";
+}) {
+  const [open, setOpen] = useState(false);
+  const [cari, setCari] = useState("");
+  const [sorot, setSorot] = useState(0);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const cariRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  const cocok = useMemo(() => {
+    const q = cari.trim().toLowerCase();
+    return q ? opsi.filter((o) => o.label.toLowerCase().includes(q)) : opsi;
+  }, [opsi, cari]);
+
+  useEffect(() => {
+    if (!open) return;
+    // Di perangkat berpenunjuk fokusnya langsung ke kolom cari; di HP tidak —
+    // papan ketik virtual akan naik menutupi daftarnya, padahal menggulir saja
+    // sudah cukup buat kebanyakan orang.
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) cariRef.current?.focus();
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [open]);
+
+  // Daftar dibuka tepat di pilihan yang berlaku, bukan di baris pertama.
+  useEffect(() => {
+    if (!open) return;
+    listRef.current?.querySelector('[data-sorot="ya"]')?.scrollIntoView({ block: "nearest" });
+  }, [open, sorot, cari]);
+
+  const buka = () => {
+    setCari("");
+    setSorot(Math.max(0, opsi.findIndex((o) => o.nilai === nilai)));
+    setOpen(true);
+  };
+
+  const pilih = (n: number) => { onPilih(n); setOpen(false); };
+
+  const tombolPapanKetik = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      // Escape hanya menutup dropdown ini — kalendernya (yang menyimak Escape
+      // di document) harus tetap terbuka.
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(false);
+      return;
+    }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!open) return buka();
+      if (!cocok.length) return;
+      const arah = e.key === "ArrowDown" ? 1 : -1;
+      setSorot((s) => (s + arah + cocok.length) % cocok.length);
+      return;
+    }
+    if (e.key === "Enter") {
+      if (!open) { e.preventDefault(); return buka(); }
+      if (cocok[sorot]) { e.preventDefault(); pilih(cocok[sorot].nilai); }
+    }
+  };
+
+  const terpilih = opsi.find((o) => o.nilai === nilai);
+
+  return (
+    <div className={`relative ${kelasTombol}`} ref={wrapRef}>
+      <button type="button" role="combobox" aria-expanded={open} aria-haspopup="listbox"
+        aria-label={label}
+        onClick={() => (open ? setOpen(false) : buka())}
+        onKeyDown={tombolPapanKetik}
+        className="flex w-full items-center justify-between gap-1 rounded-lg border border-slate-200 px-2 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-[#1A9E9E]/50 focus:border-[#1A9E9E] focus:outline-none aria-expanded:border-[#1A9E9E]">
+        <span className="truncate">{terpilih?.label ?? "—"}</span>
+        <ChevronDown className={`h-3 w-3 shrink-0 text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div className={`absolute top-full z-40 mt-1 w-full min-w-[104px] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl ${
+          rata === "kanan" ? "right-0" : "left-0"
+        }`}>
+          <div className="border-b border-slate-100 p-1.5">
+            <input ref={cariRef} type="text" value={cari}
+              onChange={(e) => { setCari(e.target.value); setSorot(0); }}
+              onKeyDown={tombolPapanKetik}
+              placeholder="Cari…" aria-label={`Cari ${label.toLowerCase()}`}
+              className="w-full rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs text-slate-700 outline-none placeholder:text-slate-400" />
+          </div>
+          <div ref={listRef} role="listbox" aria-label={label}
+            className="max-h-44 overflow-y-auto overscroll-contain py-1">
+            {cocok.length === 0 ? (
+              <p className="px-3 py-2 text-[11px] text-slate-400">Tidak ada yang cocok.</p>
+            ) : (
+              cocok.map((o, i) => {
+                const aktif = o.nilai === nilai;
+                return (
+                  <button key={o.nilai} type="button" role="option" aria-selected={aktif}
+                    data-sorot={i === sorot ? "ya" : undefined}
+                    onPointerEnter={() => setSorot(i)}
+                    onClick={() => pilih(o.nilai)}
+                    className={`flex w-full items-center justify-between gap-1 px-3 py-1.5 text-left text-xs transition ${
+                      i === sorot ? "bg-slate-100" : ""
+                    } ${aktif ? "font-bold" : "text-slate-600"}`}
+                    style={aktif ? { color: TEAL } : undefined}>
+                    <span className="truncate">{o.label}</span>
+                    {aktif && <Check className="h-3 w-3 shrink-0" />}
+                  </button>
+                );
+              })
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** Pemilih tanggal lahir dalam satu kolom. Tiga dropdown terpisah (tgl/bulan/
  *  tahun) memaksa tiga keputusan untuk satu jawaban, dan di HP tiap dropdown
  *  membuka penggulung sistem yang panjang. Di sini: satu tombol → kalender,
@@ -266,16 +410,10 @@ function BirthDatePicker({
               className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700">
               <ChevronLeft className="h-4 w-4" />
             </button>
-            <select value={viewMonth} onChange={(e) => setViewMonth(Number(e.target.value))}
-              aria-label="Bulan"
-              className="flex-1 rounded-lg border border-slate-200 px-2 py-1.5 text-xs font-semibold text-slate-700 focus:border-[#1A9E9E] focus:outline-none">
-              {MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}
-            </select>
-            <select value={viewYear} onChange={(e) => setViewYear(Number(e.target.value))}
-              aria-label="Tahun"
-              className="rounded-lg border border-slate-200 px-2 py-1.5 text-xs font-semibold text-slate-700 focus:border-[#1A9E9E] focus:outline-none">
-              {Array.from({ length: 90 }, (_, i) => THIS_YEAR - i).map((y) => <option key={y} value={y}>{y}</option>)}
-            </select>
+            <PilihCari label="Bulan" nilai={viewMonth} opsi={OPSI_BULAN}
+              onPilih={setViewMonth} kelasTombol="flex-1" />
+            <PilihCari label="Tahun" nilai={viewYear} opsi={OPSI_TAHUN}
+              onPilih={setViewYear} kelasTombol="w-[78px] shrink-0" rata="kanan" />
             <button type="button" onClick={() => shift(1)} aria-label="Bulan berikutnya"
               className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700">
               <ChevronRight className="h-4 w-4" />
