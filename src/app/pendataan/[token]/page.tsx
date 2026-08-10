@@ -15,9 +15,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2, Clock,
-  GraduationCap, Heart, History, Loader2, Mail, MessageCircle, Phone, School,
-  SearchX, Sparkles, Target, User, X,
+  AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
+  ChevronLeft, ChevronRight, Clock, GraduationCap, Heart, History, Loader2, Mail,
+  MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
 } from "lucide-react";
 
 const TEAL = "#1A9E9E";
@@ -192,8 +192,127 @@ function Shell({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Kisi hari × jam. Sengaja tanpa scroll di dalamnya: kisi bersarang di area
- *  yang bisa di-scroll bikin jari kejebak waktu memilih di HP. */
+const WEEKDAYS = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+const THIS_YEAR = new Date().getFullYear();
+
+/** Pemilih tanggal lahir dalam satu kolom. Tiga dropdown terpisah (tgl/bulan/
+ *  tahun) memaksa tiga keputusan untuk satu jawaban, dan di HP tiap dropdown
+ *  membuka penggulung sistem yang panjang. Di sini: satu tombol → kalender,
+ *  dengan bulan & tahun yang bisa dilompati langsung. */
+function BirthDatePicker({
+  day, month, year, onPick,
+}: {
+  day: string; month: string; year: string;
+  onPick: (d: string, m: string, y: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [viewMonth, setViewMonth] = useState(() => (month ? Number(month) : 1));
+  const [viewYear, setViewYear] = useState(() => (year ? Number(year) : THIS_YEAR - 20));
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    // Di layar HP kalendernya lebih tinggi dari sisa halaman; tanpa ini
+    // separuhnya tertutup bilah tombol dan siswa mengira tanggalnya cuma sedikit.
+    boxRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+    const onDown = (e: MouseEvent) => {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onEsc = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [open]);
+
+  const openPicker = () => {
+    if (month) setViewMonth(Number(month));
+    if (year) setViewYear(Number(year));
+    setOpen(true);
+  };
+
+  const shift = (delta: number) => {
+    const m = viewMonth + delta;
+    if (m < 1) { setViewMonth(12); setViewYear(viewYear - 1); }
+    else if (m > 12) { setViewMonth(1); setViewYear(viewYear + 1); }
+    else setViewMonth(m);
+  };
+
+  const daysInMonth = new Date(viewYear, viewMonth, 0).getDate();
+  // getDay() menghitung Minggu sebagai 0; kalender di sini mulai Senin.
+  const lead = (new Date(viewYear, viewMonth - 1, 1).getDay() + 6) % 7;
+  const today = new Date();
+  const isFuture = (d: number) => new Date(viewYear, viewMonth - 1, d) > today;
+
+  const label = day && month && year
+    ? `${day} ${MONTHS[Number(month) - 1]} ${year}`
+    : "Pilih tanggal lahir";
+
+  return (
+    <div className="relative" ref={boxRef}>
+      <button type="button" onClick={() => (open ? setOpen(false) : openPicker())}
+        className={`${inputClass} flex items-center justify-between text-left`}>
+        <span className={day && month && year ? "text-slate-900" : "text-slate-400"}>{label}</span>
+        <CalendarDays className="h-4 w-4 shrink-0 text-slate-400" />
+      </button>
+
+      {open && (
+        <motion.div initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }}
+          className="absolute left-0 right-0 z-30 mt-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+          <div className="mb-2 flex items-center gap-2">
+            <button type="button" onClick={() => shift(-1)} aria-label="Bulan sebelumnya"
+              className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <select value={viewMonth} onChange={(e) => setViewMonth(Number(e.target.value))}
+              aria-label="Bulan"
+              className="flex-1 rounded-lg border border-slate-200 px-2 py-1.5 text-xs font-semibold text-slate-700 focus:border-[#1A9E9E] focus:outline-none">
+              {MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}
+            </select>
+            <select value={viewYear} onChange={(e) => setViewYear(Number(e.target.value))}
+              aria-label="Tahun"
+              className="rounded-lg border border-slate-200 px-2 py-1.5 text-xs font-semibold text-slate-700 focus:border-[#1A9E9E] focus:outline-none">
+              {Array.from({ length: 90 }, (_, i) => THIS_YEAR - i).map((y) => <option key={y} value={y}>{y}</option>)}
+            </select>
+            <button type="button" onClick={() => shift(1)} aria-label="Bulan berikutnya"
+              className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-7 gap-0.5">
+            {WEEKDAYS.map((w) => (
+              <div key={w} className="py-1 text-center text-[10px] font-bold uppercase text-slate-400">{w}</div>
+            ))}
+            {Array.from({ length: lead }, (_, i) => <div key={`lead-${i}`} />)}
+            {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((d) => {
+              const picked = Number(day) === d && Number(month) === viewMonth && Number(year) === viewYear;
+              const future = isFuture(d);
+              return (
+                <button key={d} type="button" disabled={future}
+                  onClick={() => { onPick(String(d), String(viewMonth), String(viewYear)); setOpen(false); }}
+                  className={`aspect-square rounded-lg text-xs font-medium transition ${
+                    picked ? "text-white" : future ? "text-slate-200" : "text-slate-600 hover:bg-[#1A9E9E]/10"
+                  }`}
+                  style={picked ? { background: TEAL } : undefined}>
+                  {d}
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+/** Kisi hari × jam. Punya penggulung sendiri (bukan ikut halaman) supaya ringkasan
+ *  pilihan & tombol Kirim tetap terlihat sambil memilih; baris hari mengambang di
+ *  puncaknya biar kolom tidak perlu dihafal waktu menggulung ke jam malam.
+ *  Di HP kotaknya sengaja ketuk-saja (bukan geser) — kalau kotak menahan gerakan
+ *  jari, penggulungnya jadi rebutan. */
 function ScheduleGrid({
   blocks, setBlocks, showEarly, onShowEarly,
 }: {
@@ -246,11 +365,13 @@ function ScheduleGrid({
         </button>
       )}
 
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div className="grid" style={{ gridTemplateColumns: `44px repeat(${DAYS.length}, minmax(0, 1fr))` }}>
-          <div className="border-b border-slate-100 bg-slate-50/80" />
+      <div className="max-h-[62vh] overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="grid" style={{ gridTemplateColumns: `48px repeat(${DAYS.length}, minmax(0, 1fr))` }}>
+          {/* Latar wajib pekat, bukan transparan: baris ini melayang di atas
+              kotak-kotak yang lewat di bawahnya waktu digulung. */}
+          <div className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50" />
           {DAYS_SHORT.map((d) => (
-            <div key={d} className="border-b border-l border-slate-100 bg-slate-50/80 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            <div key={d} className="sticky top-0 z-10 border-b border-l border-slate-200 bg-slate-50 py-2.5 text-center text-[11px] font-bold uppercase tracking-wider text-slate-500">
               {d}
             </div>
           ))}
@@ -290,7 +411,7 @@ function ScheduleGrid({
                         if (skipClick.current) { skipClick.current = false; return; }
                         apply(key, on ? "remove" : "add");
                       }}
-                      className={`h-7 border-l border-t transition-colors ${
+                      className={`h-8 border-l border-t transition-colors ${
                         onHour ? "border-t-slate-200" : "border-t-slate-100"
                       } ${on ? "border-l-white/40" : "border-l-slate-100 hover:bg-[#1A9E9E]/10"}`}
                       // Garis putus-putus menandai batas 30 menit; `border-dashed`
@@ -443,6 +564,20 @@ export default function PendataanPage() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const last = step === STEPS.length - 1;
+
+  /** Enter = tombol utama langkah ini. Kolom isian di sini bukan <form>, jadi
+   *  tanpa ini Enter tidak melakukan apa-apa dan siswa harus meraih tombolnya. */
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Enter" || e.shiftKey) return;
+    const el = e.target as HTMLElement;
+    // Textarea butuh Enter untuk ganti baris; tombol & kotak pilihan sudah punya
+    // arti sendiri untuk Enter (menekan dirinya).
+    if (el.tagName === "TEXTAREA" || el.tagName === "BUTTON" || el.tagName === "SELECT") return;
+    e.preventDefault();
+    if (last) handleSubmit(); else go(step + 1);
+  };
+
   const handleSubmit = async () => {
     for (let s = 0; s < STEPS.length; s++) {
       const msg = stepError(s);
@@ -525,14 +660,16 @@ export default function PendataanPage() {
   }
 
   const greetName = (form?.contact_name || "").split(" ")[0];
-  const last = step === STEPS.length - 1;
+  // Langkah jadwal butuh ruang: kolom hari yang sempit bikin kotak 30 menit
+  // susah dikenai. Lebar kartunya melar hanya di langkah itu.
+  const shellWidth = last ? "max-w-3xl" : "max-w-lg";
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-teal-50/40">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-teal-50/40" onKeyDown={onKeyDown}>
       {/* Kop tetap menempel: bilah langkah harus selalu kelihatan supaya siswa
           tahu formnya pendek dan sisa berapa lagi. */}
       <div className="sticky top-0 z-20 border-b border-slate-100 bg-white/85 backdrop-blur-md">
-        <div className="mx-auto max-w-lg px-5 pb-3 pt-4">
+        <div className={`mx-auto ${shellWidth} px-5 pb-3 pt-4 transition-[max-width] duration-300`}>
           <div className="mb-3 flex items-center justify-between">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
@@ -560,7 +697,7 @@ export default function PendataanPage() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-lg px-5 pb-40 pt-6">
+      <div className={`mx-auto ${shellWidth} px-5 pb-40 pt-6 transition-[max-width] duration-300`}>
         {step === 0 && (
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
             <h1 className="text-[26px] font-bold leading-tight tracking-tight text-slate-900">
@@ -595,31 +732,25 @@ export default function PendataanPage() {
                 <div className="space-y-5">
                   <StepHead icon={User} title="Data Diri" desc="Buat catatan kelas dan sertifikatmu nanti." />
 
-                  <Field label="Nama lengkap" icon={User} required>
-                    <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Sesuai KTP / akta" className={inputClass} />
-                  </Field>
-
-                  <Field label="Nama panggilan" icon={User} hint="Nama yang dipakai pengajar saat kelas berlangsung.">
-                    <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)}
-                      placeholder="contoh: Dina" className={inputClass} />
-                  </Field>
+                  {/* Nama lengkap & panggilan satu baris: keduanya pendek dan
+                      dijawab berbarengan, tidak perlu dua baris penuh. */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <Field label="Nama lengkap" icon={User} required>
+                      <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
+                        placeholder="Sesuai KTP" className={inputClass} />
+                    </Field>
+                    <Field label="Nama panggilan" icon={User}>
+                      <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)}
+                        placeholder="contoh: Dina" className={inputClass} />
+                    </Field>
+                  </div>
+                  <p className="-mt-2 text-[11px] leading-relaxed text-slate-400">
+                    Nama panggilan dipakai pengajar saat kelas berlangsung.
+                  </p>
 
                   <Field label="Tanggal lahir" icon={CalendarDays} required>
-                    <div className="flex gap-2">
-                      <select value={birthDay} onChange={(e) => setBirthDay(e.target.value)} className={`${inputClass} flex-1 px-2.5`}>
-                        <option value="">Tgl</option>
-                        {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => <option key={d} value={String(d)}>{d}</option>)}
-                      </select>
-                      <select value={birthMonth} onChange={(e) => setBirthMonth(e.target.value)} className={`${inputClass} flex-[2] px-2.5`}>
-                        <option value="">Bulan</option>
-                        {MONTHS.map((m, i) => <option key={m} value={String(i + 1)}>{m}</option>)}
-                      </select>
-                      <select value={birthYear} onChange={(e) => setBirthYear(e.target.value)} className={`${inputClass} flex-1 px-2.5`}>
-                        <option value="">Tahun</option>
-                        {Array.from({ length: 90 }, (_, i) => new Date().getFullYear() - i).map((y) => <option key={y} value={String(y)}>{y}</option>)}
-                      </select>
-                    </div>
+                    <BirthDatePicker day={birthDay} month={birthMonth} year={birthYear}
+                      onPick={(d, m, y) => { setBirthDay(d); setBirthMonth(m); setBirthYear(y); }} />
                     {age !== null && (
                       <p className="mt-2 text-[11px] font-semibold" style={{ color: TEAL }}>Usia kamu {age} tahun</p>
                     )}
@@ -784,7 +915,7 @@ export default function PendataanPage() {
       {/* Navigasi menempel di bawah — jempol tidak perlu mencari tombol di ujung
           halaman yang panjang (kisi jadwal bisa 26 baris). */}
       <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-100 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-lg items-center gap-3 px-5 py-3.5">
+        <div className={`mx-auto flex ${shellWidth} items-center gap-3 px-5 py-3.5 transition-[max-width] duration-300`}>
           {step > 0 && (
             <button type="button" onClick={() => go(step - 1)}
               className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-5 py-3.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 active:scale-95">
