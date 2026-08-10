@@ -673,18 +673,31 @@ export default function PendataanPage() {
   };
 
   /** Galat langkah berjalan. Dikembalikan sebagai teks supaya tombol "Lanjut"
-   *  tetap bisa ditekan — siswa dapat penjelasan, bukan tombol mati tanpa sebab. */
+   *  tetap bisa ditekan — siswa dapat penjelasan, bukan tombol mati tanpa sebab.
+   *
+   *  [pendataan-semua-wajib-v1] Semua isian wajib, tak ada lagi yang opsional:
+   *  data yang setengah terisi selalu berujung admin mengejar siswa satu per
+   *  satu lewat WhatsApp. Email termasuk — akun belajar & kiriman materinya
+   *  bergantung ke sana. */
   const stepError = (s: number): string => {
     if (s === 0) {
       if (!fullName.trim()) return "Nama lengkap wajib diisi";
+      if (!nickname.trim()) return "Nama panggilan wajib diisi";
       if (!birthdate) return "Lengkapi tanggal lahir";
+      if (!institution.trim()) return "Sekolah / instansi / perusahaan wajib diisi";
+      if (!hobby.trim()) return "Hobi & minat wajib diisi";
     }
     if (s === 1) {
       if (!whatsapp.trim()) return "Nomor WhatsApp wajib diisi";
-      if (email.trim() && !/^\S+@\S+\.\S+$/.test(email.trim())) return "Format email belum benar";
+      if (!email.trim()) return "Email wajib diisi";
+      if (!/^\S+@\S+\.\S+$/.test(email.trim())) return "Format email belum benar";
     }
     if (s === 2) {
       if (!experience) return "Pilih pengalaman belajarmu sebelumnya";
+      // Kolom ceritanya cuma muncul kalau siswa pernah belajar — yang benar-benar
+      // nol tidak punya apa-apa untuk diceritakan.
+      if (experience !== EXPERIENCES[0] && !experienceNote.trim())
+        return "Ceritakan sedikit pengalaman belajarmu sebelumnya";
       if (!goal.trim()) return "Ceritakan sedikit tujuan belajarmu";
     }
     if (s === 3 && blocks.size === 0) return "Pilih minimal 1 blok waktu yang kamu bisa";
@@ -877,7 +890,7 @@ export default function PendataanPage() {
                       <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                         placeholder="Sesuai KTP" className={inputClass} />
                     </Field>
-                    <Field label="Nama panggilan" icon={User}>
+                    <Field label="Nama panggilan" icon={User} required>
                       <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)}
                         placeholder="contoh: Dina" className={inputClass} />
                     </Field>
@@ -894,12 +907,15 @@ export default function PendataanPage() {
                     )}
                   </Field>
 
-                  <Field label="Sekolah / instansi / perusahaan" icon={School} hint="Kosongkan kalau saat ini tidak sedang sekolah atau bekerja.">
+                  {/* Wajib juga, tapi yang sedang tidak sekolah/bekerja tetap
+                      punya jalan keluar — kolomnya tidak boleh jadi jalan buntu. */}
+                  <Field label="Sekolah / instansi / perusahaan" icon={School}
+                    required hint="Kalau saat ini tidak sekolah dan tidak bekerja, tulis “Tidak ada”.">
                     <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)}
                       placeholder="contoh: SMAN 3 Bandung / PT Linguo Nusantara" className={inputClass} />
                   </Field>
 
-                  <Field label="Hobi & minat" icon={Heart}
+                  <Field label="Hobi & minat" icon={Heart} required
                     hint="Pengajar memakainya sebagai bahan obrolan dan contoh materi di kelas.">
                     <input type="text" value={hobby} onChange={(e) => setHobby(e.target.value)}
                       placeholder="contoh: masak, sepak bola, nonton drama Korea" className={inputClass} />
@@ -917,7 +933,7 @@ export default function PendataanPage() {
                       placeholder="contoh: 08123456789" className={inputClass} />
                   </Field>
 
-                  <Field label="Email" icon={Mail} hint="Dipakai untuk kirim materi & akun belajar.">
+                  <Field label="Email" icon={Mail} required hint="Dipakai untuk kirim materi & akun belajar.">
                     <input type="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)}
                       placeholder="nama@email.com" className={inputClass} />
                   </Field>
@@ -946,7 +962,7 @@ export default function PendataanPage() {
                       ))}
                     </div>
                     {experience && experience !== EXPERIENCES[0] && (
-                      <Field label="Ceritakan sedikit" icon={History}
+                      <Field label="Ceritakan sedikit" icon={History} required
                         hint="Berapa lama, sampai level berapa, atau apa yang masih terasa sulit.">
                         <input type="text" value={experienceNote} onChange={(e) => setExperienceNote(e.target.value)}
                           placeholder="contoh: 6 bulan les sampai level A1, masih susah bicara"

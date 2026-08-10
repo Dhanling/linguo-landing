@@ -93,26 +93,46 @@ export async function POST(req: NextRequest) {
 
     const fullName = clean(body.full_name, 120);
     const whatsapp = clean(body.whatsapp, 30);
-    if (!fullName) return NextResponse.json({ error: "Nama lengkap wajib diisi" }, { status: 400 });
-    if (!whatsapp) return NextResponse.json({ error: "Nomor WhatsApp wajib diisi" }, { status: 400 });
-
+    const nickname = clean(body.nickname, 60);
+    const email = clean(body.email, 160);
     const birthDate = clean(body.birth_date, 10);
+    const institution = clean(body.institution, 160);
+    const hobby = clean(body.hobby, 300);
+    const priorExperience = clean(body.prior_experience, 300);
+    const learningGoal = clean(body.learning_goal, 1000);
+    const schedule = clean(body.preferred_schedule, 4000);
+
+    // [pendataan-semua-wajib-v1] Semua isian wajib — pagarnya ada di sini juga,
+    // bukan cuma di formulirnya: yang menembak endpoint ini langsung tetap tidak
+    // boleh menitipkan data setengah jadi yang nanti dikejar admin satu per satu.
+    if (!fullName) return NextResponse.json({ error: "Nama lengkap wajib diisi" }, { status: 400 });
+    if (!nickname) return NextResponse.json({ error: "Nama panggilan wajib diisi" }, { status: 400 });
+    if (!birthDate) return NextResponse.json({ error: "Tanggal lahir wajib diisi" }, { status: 400 });
+    if (!institution) return NextResponse.json({ error: "Sekolah / instansi / perusahaan wajib diisi" }, { status: 400 });
+    if (!hobby) return NextResponse.json({ error: "Hobi & minat wajib diisi" }, { status: 400 });
+    if (!whatsapp) return NextResponse.json({ error: "Nomor WhatsApp wajib diisi" }, { status: 400 });
+    if (!email) return NextResponse.json({ error: "Email wajib diisi" }, { status: 400 });
+    if (!/^\S+@\S+\.\S+$/.test(email)) return NextResponse.json({ error: "Format email belum benar" }, { status: 400 });
+    if (!priorExperience) return NextResponse.json({ error: "Pengalaman belajar wajib diisi" }, { status: 400 });
+    if (!learningGoal) return NextResponse.json({ error: "Tujuan belajar wajib diisi" }, { status: 400 });
+    if (!schedule) return NextResponse.json({ error: "Pilih minimal 1 blok waktu yang kamu bisa" }, { status: 400 });
+
     const payload = {
       full_name: fullName,
-      nickname: clean(body.nickname, 60),
+      nickname,
       whatsapp,
-      email: clean(body.email, 160),
+      email,
       // [pendataan-wizard-v3] Kisi 30 menit: kotak berurutan digabung jadi satu
       // rentang, jadi normalnya pendek — tapi pilihan yang berselang-seling bisa
       // jadi puluhan rentang. Kolomnya `text`, batas di sini cuma pagar sanitasi;
       // dibuat longgar supaya pilihan terakhir tidak terpotong diam-diam.
-      preferred_schedule: clean(body.preferred_schedule, 4000),
+      preferred_schedule: schedule,
       birth_date: birthDate,
       age: ageFromBirthDate(birthDate),
-      institution: clean(body.institution, 160),
-      hobby: clean(body.hobby, 300),
-      prior_experience: clean(body.prior_experience, 300),
-      learning_goal: clean(body.learning_goal, 1000),
+      institution,
+      hobby,
+      prior_experience: priorExperience,
+      learning_goal: learningGoal,
       status: "submitted",
       submitted_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
