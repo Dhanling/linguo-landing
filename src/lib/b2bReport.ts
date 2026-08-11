@@ -14,7 +14,9 @@ export type CohortConfig = {
   leadId: string | null;
   companyName: string;
   language: string;
-  flag: "vn" | "cn" | "kr" | "jp" | null;
+  /** Bendera bahasa di kepala form. Nambah kode = tambah SVG-nya di CohortFlag
+   *  (src/app/laporan-b2b/[cohort]/page.tsx), kalau tidak ikonnya jadi inisial perusahaan. */
+  flag: "vn" | "us" | null;
   level: string;
   sessionsTotal: number;
   defaultTeacherName: string;
@@ -75,7 +77,7 @@ const ALFAMART_VIETNAM: CohortConfig = {
 const GROUNDPROBE_BASE = {
   companyName: "PT. GroundProbe Indonesia",
   language: "English (Conversation)",
-  flag: null,
+  flag: "us",
   level: "Intermediate (B1.1)",
   sessionsTotal: 40,
   suggestGroups: false,

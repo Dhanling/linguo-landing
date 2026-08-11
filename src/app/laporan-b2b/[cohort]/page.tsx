@@ -290,7 +290,7 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
           {step === -1 && (
             <div className="b2b-fade">
               <div className="mb-4 h-14 w-14 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
-                <VietnamFlag />
+                <CohortFlag flag={cohort.flag} companyName={cohort.companyName} />
               </div>
               <h1 className="text-[24px] font-extrabold leading-tight text-slate-900">
                 Laporan Progress Kelas
@@ -1035,11 +1035,56 @@ function NavRow({ onBack, onNext, nextLabel }: { onBack: () => void; onNext: () 
   );
 }
 
+/** Bendera bahasa cohort. Cohort tanpa bendera (atau kode yang belum punya SVG)
+ *  jatuh ke inisial perusahaan, jangan pernah bendera bahasa cohort lain. */
+function CohortFlag({ flag, companyName }: { flag: CohortConfig["flag"]; companyName: string }) {
+  if (flag === "vn") return <VietnamFlag />;
+  if (flag === "us") return <USFlag />;
+  return (
+    <div
+      className="grid h-full w-full place-items-center text-[15px] font-extrabold text-white"
+      style={{ background: TEAL }}
+    >
+      {initials(companyName.replace(/^PT\.?\s+/i, ""))}
+    </div>
+  );
+}
+
 function VietnamFlag() {
   return (
     <svg viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" className="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bendera Vietnam">
       <rect width="60" height="40" fill="#DA251D" />
       <polygon points="30,9 32.59,16.44 40.46,16.6 34.18,21.36 36.47,28.9 30,24.4 23.53,28.9 25.82,21.36 19.54,16.6 27.41,16.44" fill="#FFFF00" />
+    </svg>
+  );
+}
+
+// 13 lajur + kanton 9 baris (6-5-6…) = 50 bintang. Di kotak 56px bintang digambar
+// bulat kecil — polygon bintang di ukuran ini cuma jadi noda putih.
+const US_STRIPE_H = 40 / 13;
+const US_CANTON_W = 24;
+const US_CANTON_H = US_STRIPE_H * 7;
+const US_STAR_ROWS = Array.from({ length: 9 }, (_, row) => {
+  const long = row % 2 === 0;                       // baris ganjil isi 6 bintang
+  const count = long ? 6 : 5;
+  const step = US_CANTON_W / 6;                     // 4 → jarak antar bintang
+  return Array.from({ length: count }, (_, i) => ({
+    cx: step * (long ? i + 0.5 : i + 1),
+    cy: (US_CANTON_H / 9) * (row + 0.5),
+  }));
+}).flat();
+
+function USFlag() {
+  return (
+    <svg viewBox="0 0 60 40" preserveAspectRatio="xMidYMid slice" className="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bendera Amerika Serikat">
+      <rect width="60" height="40" fill="#FFFFFF" />
+      {Array.from({ length: 7 }, (_, i) => (
+        <rect key={i} y={i * 2 * US_STRIPE_H} width="60" height={US_STRIPE_H} fill="#B22234" />
+      ))}
+      <rect width={US_CANTON_W} height={US_CANTON_H} fill="#3C3B6E" />
+      {US_STAR_ROWS.map((s, i) => (
+        <circle key={i} cx={s.cx} cy={s.cy} r="0.72" fill="#FFFFFF" />
+      ))}
     </svg>
   );
 }
