@@ -82,7 +82,10 @@ export default function JadwalCalendar({
             _end: end ? fmtTime(end) : null,
             _weekday: d.toLocaleDateString("id-ID", { weekday: "long" }),
             _past: d.getTime() + (s.durationMinutes || 60) * 60000 < now,
-            _joinable: !isDead(s.status) && isJoinable(d),
+            // [jadwal-batch-kalender-v1] pertemuan kelas grup tak punya ruang kelas
+            // sendiri — tombol Masuk Kelas cuma muncul kalau batch-nya menyertakan
+            // tautan rapat, dan tautan itu yang dipakai (bukan classRoomUrl).
+            _joinable: !isDead(s.status) && isJoinable(d) && (!s.isBatch || !!s.joinUrl),
           };
         }),
     [sessions, now]
@@ -280,11 +283,13 @@ export default function JadwalCalendar({
 
   return (
     <div className="w-full space-y-4">
-      {/* Jadwal Tetap (Kelas Reguler) — recurring batch + Zoom */}
+      {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
+          [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
+          kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
       {regularBatches.length > 0 && (
         <div className="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
           <h3 className="text-[13px] font-bold text-[#12172B] mb-2.5 inline-flex items-center gap-1.5">
-            <CalendarDays className="w-4 h-4 text-[#16796E]" strokeWidth={2.5} /> Jadwal Tetap (Kelas Reguler)
+            <CalendarDays className="w-4 h-4 text-[#16796E]" strokeWidth={2.5} /> Jadwal Tetap (Kelas Grup)
           </h3>
           <div className="space-y-2">
             {regularBatches.map((b) => {
@@ -679,8 +684,14 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             </span>
             {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
             {e.sessionNumber ? (
-              <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>Sesi {e.sessionNumber}</span>
+              <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: c.bg, color: c.text }}>
+                {e.isBatch ? "Pertemuan" : "Sesi"} {e.sessionNumber}
+              </span>
             ) : null}
+            {/* [jadwal-batch-kalender-v1] penanda kelas grup berjadwal tetap */}
+            {e.isBatch && (
+              <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-extrabold text-[#6B7280]">Jadwal tetap</span>
+            )}
             {/* jadwal-riwayat-v1: hasil sesi (presensi / dibatalkan) */}
             {st && (
               <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>
@@ -707,7 +718,7 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
         <span className="flex shrink-0 flex-col justify-center gap-1.5">
           {e._joinable && (
             <a
-              href={classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
+              href={e.joinUrl || classRoomUrl(e.id, { title: `Kelas ${e.language}`, name: studentName })}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-3.5 py-2 text-[12.5px] font-extrabold text-white hover:bg-[#0F5A52]"

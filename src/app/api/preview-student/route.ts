@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
     (await rest(
       `registrations?student_id=eq.${id}` +
         `&select=id,product,language,level,status,sessions_total,sessions_used,` +
-        `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,` +
+        `duration,total_amount,payment_status,registration_date,teacher_id,batch_id,test_prep_batch_id,` +
         // [akun-tagihan-real-v1] kolom billing buat tab Tagihan & Paket di preview
         `installment_paid,payment_due_date,payment_date,created_at,` +
         // [teacher-avatar-sync-v1] ikutkan avatar_url biar foto pengajar tampil di preview
@@ -58,19 +58,32 @@ export async function GET(req: NextRequest) {
         `&order=registration_date.desc`
     )) || [];
 
-  // Batch data buat kelas reguler
+  // Batch kelas grup — Reguler & English Test Preparation.
+  // [jadwal-batch-kalender-v1] tabelnya `regular_batches` (yang lama, `regular_class_batches`,
+  // tidak pernah ada di DB) dan `test_prep_batches`. Kolomnya WAJIB sama dengan query klien
+  // di akun/page.tsx, kalau tidak kalender POV pratinjau beda isi dengan yang siswa lihat.
   const batchIds = regs.filter((r: any) => r.batch_id).map((r: any) => r.batch_id);
-  let batchMap: Record<string, any> = {};
+  const tpBatchIds = regs.filter((r: any) => r.test_prep_batch_id).map((r: any) => r.test_prep_batch_id);
+  const batchMap: Record<string, any> = {};
+  const tpBatchMap: Record<string, any> = {};
   if (batchIds.length > 0) {
     const batches = await rest(
-      `regular_class_batches?id=in.(${batchIds.join(",")})` +
-        `&select=id,batch_code,schedule_day,schedule_time,start_date,end_date,zoom_link,sessions_total`
+      `regular_batches?id=in.(${batchIds.join(",")})` +
+        `&select=id,batch_code,language,level,session_day,session_start_time,session_duration_min,start_date,end_date,total_sessions,status,zoom_link`
     );
     (batches || []).forEach((b: any) => { batchMap[b.id] = b; });
+  }
+  if (tpBatchIds.length > 0) {
+    const batches = await rest(
+      `test_prep_batches?id=in.(${tpBatchIds.join(",")})` +
+        `&select=id,name,test_type,level,schedule_days,schedule_time,duration_minutes,start_date,end_date,sessions_total,cancelled_at`
+    );
+    (batches || []).forEach((b: any) => { tpBatchMap[b.id] = b; });
   }
   const registrations = regs.map((r: any) => ({
     ...r,
     batch: r.batch_id ? batchMap[r.batch_id] || null : null,
+    testPrepBatch: r.test_prep_batch_id ? tpBatchMap[r.test_prep_batch_id] || null : null,
   }));
 
   // Jadwal — jadwal-riwayat-v1: riwayat + sesi mendatang (dulu cuma mendatang,

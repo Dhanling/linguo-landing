@@ -37,6 +37,12 @@ export type JadwalSession = {
   attendanceStatus?: string | null;
   /** schedules.recording_url — mentah; ditautkan lewat studentRecordingHref */
   recordingUrl?: string | null;
+  /* [jadwal-batch-kalender-v1] Pertemuan kelas grup (Reguler/ETP) yang DIHITUNG dari
+     pola batch — tak ada baris `schedules`-nya. Karena itu tak punya ruang kelas,
+     materi, presensi, maupun rekaman; kalender merendernya sebagai jadwal tetap.
+     `joinUrl` = tautan rapat batch (mis. regular_batches.zoom_link) kalau ada. */
+  isBatch?: boolean;
+  joinUrl?: string | null;
 };
 
 /** Sesi yang sudah dinormalkan — dipakai kalender & kartu Beranda. */

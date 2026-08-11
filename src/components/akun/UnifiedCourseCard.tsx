@@ -39,15 +39,16 @@ export type CourseReg = {
   payment_verified_at?: string | null;
   payment_rejection_reason?: string | null;
   batch_id?: string | null;
+  // [jadwal-batch-kalender-v1] nama kolom = tabel `regular_batches` yang asli
   batch?: {
     id: string;
     batch_code: string;
-    schedule_day: string;
-    schedule_time: string;
+    session_day: string;
+    session_start_time: string;
     start_date: string;
     end_date: string;
     zoom_link?: string;
-    sessions_total: number;
+    total_sessions?: number | null;
   } | null;
 };
 
@@ -212,7 +213,7 @@ export default function UnifiedCourseCard({
           </div>
           <div className="flex items-center gap-1.5 text-xs text-blue-800">
             <Calendar className="w-3.5 h-3.5" strokeWidth={2.5} />
-            <span className="font-semibold">{reg.batch.schedule_day}, {reg.batch.schedule_time} WIB</span>
+            <span className="font-semibold">{reg.batch.session_day}, {String(reg.batch.session_start_time || "").slice(0, 5)} WIB</span>
           </div>
           {reg.batch.start_date && reg.batch.end_date && (
             <p className="text-[10px] text-blue-500">

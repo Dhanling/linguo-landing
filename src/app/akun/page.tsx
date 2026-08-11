@@ -8,6 +8,7 @@ import { classRoomUrl, isJoinable } from "@/lib/classRoom"; // [kelas-video-sisw
 import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visuals"; // [kelas-detail-page-v1]
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
+import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
@@ -156,16 +157,37 @@ type StudentReg = {
   pipeline_status?: string | null;
   archived_at?: string | null;
   // Batch data for Kelas Reguler
+  // [jadwal-batch-kalender-v1] nama kolom mengikuti tabel `regular_batches` yang asli
+  // (dulu memakai nama karangan schedule_day/schedule_time dari tabel yang tak ada).
   batch_id?: string | null;
   batch?: {
     id: string;
     batch_code: string;
-    schedule_day: string;
-    schedule_time: string;
+    language?: string | null;
+    level?: string | null;
+    session_day: string;
+    session_start_time: string;
+    session_duration_min?: number | null;
     start_date: string;
     end_date: string;
+    status?: string | null;
     zoom_link?: string;
-    sessions_total: number;
+    total_sessions?: number | null;
+  } | null;
+  // [jadwal-batch-kalender-v1] batch English Test Preparation (`test_prep_batches`)
+  test_prep_batch_id?: string | null;
+  testPrepBatch?: {
+    id: string;
+    name: string;
+    test_type: string;
+    level?: string | null;
+    schedule_days: string[] | null;
+    schedule_time: string | null;
+    duration_minutes?: number | null;
+    start_date: string | null;
+    end_date: string | null;
+    sessions_total?: number | null;
+    cancelled_at?: string | null;
   } | null;
 };
 
@@ -2892,7 +2914,7 @@ export default function AkunPage() {
           sessions_total, sessions_used,
           duration, total_amount, payment_status,
           installment_paid, payment_due_date, payment_date, created_at,
-          registration_date, teacher_id, batch_id,
+          registration_date, teacher_id, batch_id, test_prep_batch_id,
           payment_proof_url, payment_proof_uploaded_at,
           payment_verified_at, payment_rejection_reason,
           pipeline_status, archived_at,
@@ -2901,24 +2923,41 @@ export default function AkunPage() {
         .eq("student_id", studentData.id)
         .order("registration_date", { ascending: false });
 
-      // Fetch batch data for reguler classes
+      /* Batch kelas grup — Reguler (`regular_batches`) & English Test Preparation
+         (`test_prep_batches`).
+
+         [jadwal-batch-kalender-v1] Dulu di sini query ke `regular_class_batches`, tabel
+         yang TIDAK ADA di DB (gotcha yang sama sudah dicatat di modal enroll di atas),
+         dan errornya ditelan `try/catch` — jadi `reg.batch` selalu null dan jadwal tetap
+         kelas grup tak pernah muncul di /akun. Sumber yang benar: `regular_batches`
+         dengan kolom session_day / session_start_time. */
       const regsWithBatch = (regsData as any) || [];
       const batchIds = regsWithBatch.filter((r: any) => r.batch_id).map((r: any) => r.batch_id);
-      let batchMap: Record<string, any> = {};
-      if (batchIds.length > 0) {
-        try {
-          const { data: batches } = await supabase
-            .from("regular_class_batches")
-            .select("id, batch_code, schedule_day, schedule_time, start_date, end_date, zoom_link, sessions_total")
-            .in("id", batchIds);
-          if (batches) {
-            batches.forEach((b: any) => { batchMap[b.id] = b; });
-          }
-        } catch (e) { /* batch table might not exist yet */ }
-      }
+      const tpBatchIds = regsWithBatch.filter((r: any) => r.test_prep_batch_id).map((r: any) => r.test_prep_batch_id);
+      const batchMap: Record<string, any> = {};
+      const tpBatchMap: Record<string, any> = {};
+      const [regBatchRes, tpBatchRes] = await Promise.all([
+        batchIds.length > 0
+          ? supabase
+              .from("regular_batches")
+              .select("id, batch_code, language, level, session_day, session_start_time, session_duration_min, start_date, end_date, total_sessions, status, zoom_link")
+              .in("id", batchIds)
+              .then((r: any) => r, () => ({ data: null } as any))
+          : Promise.resolve({ data: null } as any),
+        tpBatchIds.length > 0
+          ? supabase
+              .from("test_prep_batches")
+              .select("id, name, test_type, level, schedule_days, schedule_time, duration_minutes, start_date, end_date, sessions_total, cancelled_at")
+              .in("id", tpBatchIds)
+              .then((r: any) => r, () => ({ data: null } as any))
+          : Promise.resolve({ data: null } as any),
+      ]);
+      (regBatchRes.data || []).forEach((b: any) => { batchMap[b.id] = b; });
+      (tpBatchRes.data || []).forEach((b: any) => { tpBatchMap[b.id] = b; });
       const enrichedRegs = regsWithBatch.map((r: any) => ({
         ...r,
         batch: r.batch_id ? batchMap[r.batch_id] || null : null,
+        testPrepBatch: r.test_prep_batch_id ? tpBatchMap[r.test_prep_batch_id] || null : null,
       }));
 
       // Student is now active — clear wizard cache
@@ -4376,17 +4415,78 @@ export default function AkunPage() {
                 // jadwal-gcal-v1: kartu rekap per kelas ("Sesi 5 dari 16" + progress bar)
                 // DIBUANG dari tab Jadwal — angkanya sudah ada di kartu kelas Beranda,
                 // di sini cuma mendorong kalender ke bawah lipatan.
-                const jadwalRegulerBatches = activeRegs
-                  .filter((r: any) => r.product === "Kelas Reguler" && r.batch)
-                  .map((r: any) => ({
-                    id: r.id,
-                    language: r.language,
-                    batchCode: r.batch.batch_code,
-                    scheduleDay: r.batch.schedule_day,
-                    scheduleTime: r.batch.schedule_time,
-                    zoomLink: r.batch.zoom_link || null,
+                /* [jadwal-batch-kalender-v1] Kelas grup (Reguler & English Test Preparation)
+                   tak punya baris `schedules`, jadi kalender siswa selalu kosong di jam
+                   kelasnya. Pola batch-nya dijabarkan jadi pertemuan semu — hanya untuk
+                   kelas yang siswa ini memang terdaftar di dalamnya. */
+                const jadwalBatchSessions = activeRegs.flatMap((r: any) => {
+                  const b = r.batch, tp = r.testPrepBatch;
+                  const src = b
+                    ? {
+                        kind: "reguler" as const,
+                        id: b.id,
+                        label: [b.batch_code || "Kelas Reguler", b.level].filter(Boolean).join(" · "),
+                        days: b.session_day, time: b.session_start_time,
+                        startDate: b.start_date, endDate: b.end_date,
+                        totalSessions: b.total_sessions, duration: b.session_duration_min,
+                        language: b.language || r.language, level: b.level || r.level,
+                        ended: ["Ended", "Cancelled"].includes(String(b.status || "")),
+                      }
+                    : tp
+                    ? {
+                        kind: "etp" as const,
+                        id: tp.id,
+                        label: tp.name || `Kelas ${tp.test_type || "ETP"}`,
+                        days: tp.schedule_days, time: tp.schedule_time,
+                        startDate: tp.start_date, endDate: tp.end_date,
+                        totalSessions: tp.sessions_total, duration: tp.duration_minutes,
+                        language: `Test Prep - ${tp.test_type || "IELTS"}`, level: tp.level || r.level,
+                        ended: !!tp.cancelled_at,
+                      }
+                    : null;
+                  if (!src || src.ended) return [];
+                  const tDir = r.teacher_id ? teacherDir[r.teacher_id] : undefined;
+                  return batchOccurrences({
+                    days: src.days, time: src.time,
+                    startDate: src.startDate, endDate: src.endDate, totalSessions: src.totalSessions,
+                  }).map((d, i) => ({
+                    id: `batch:${src.kind}:${src.id}:${i}`,
+                    scheduledAt: d.toISOString(),
+                    durationMinutes: Number(src.duration) || 90,
+                    language: src.language || "—",
+                    level: src.level || "",
+                    product: r.product || "",
+                    teacher: sapaan(tDir?.name || r?.teachers?.name, tDir?.title || (r?.teachers as any)?.title),
+                    teacherAvatarUrl: tDir?.avatar_url || r?.teachers?.avatar_url || null,
+                    sessionNumber: i + 1,
+                    status: "scheduled",
+                    // [jadwal-batch-kalender-v1] penanda: pertemuan turunan pola batch,
+                    // bukan baris `schedules` — tombol Masuk Kelas dimatikan (room-nya
+                    // dibuat per baris sesi, id semu ini tak punya ruang).
+                    isBatch: true,
+                    joinUrl: (b?.zoom_link as string | undefined) || null,
                   }));
-                return <JadwalCalendar sessions={jadwalSessions} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
+                });
+                const jadwalRegulerBatches = activeRegs
+                  .filter((r: any) => r.batch || r.testPrepBatch)
+                  .map((r: any) => (r.batch
+                    ? {
+                        id: r.id,
+                        language: r.batch.language || r.language,
+                        batchCode: r.batch.batch_code,
+                        scheduleDay: r.batch.session_day,
+                        scheduleTime: String(r.batch.session_start_time || "").slice(0, 5),
+                        zoomLink: r.batch.zoom_link || null,
+                      }
+                    : {
+                        id: r.id,
+                        language: `Test Prep - ${r.testPrepBatch.test_type || "IELTS"}`,
+                        batchCode: r.testPrepBatch.name,
+                        scheduleDay: (r.testPrepBatch.schedule_days || []).join(" & "),
+                        scheduleTime: String(r.testPrepBatch.schedule_time || "").slice(0, 5),
+                        zoomLink: null,
+                      }));
+                return <JadwalCalendar sessions={[...jadwalSessions, ...jadwalBatchSessions]} regularBatches={jadwalRegulerBatches} studentName={student?.name || undefined} />;
               })()}
             </motion.div>
           )}
