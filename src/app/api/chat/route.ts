@@ -143,6 +143,7 @@ Jadwal & ketentuan:
 - Jadwal & pendaftaran Reguler: https://linguo.id/jadwal-kelas-reguler
 - HARI/JAM/TANGGAL MULAI batch Reguler & ETP (TOEFL/IELTS Prep) TIDAK ADA di daftar fakta ini — jangan pernah menyebutnya dari ingatan. Sumbernya HANYA blok "JADWAL BATCH ..." di bawah (ditarik live dari sumber yang sama dengan halaman linguo.id/jadwal-kelas-reguler). Kalau blok itu tidak ada / batchnya tidak tercantum, bilang batchnya belum dibuka & arahkan cek linguo.id/jadwal-kelas-reguler — JANGAN mengarang hari & jam.
 - Jangan menyimpulkan sendiri sebuah batch "sudah berjalan" atau "sebentar lagi mulai". Ikuti penanda [BELUM MULAI] / [SUDAH BERJALAN] di blok jadwal.
+- Batch [SUDAH BERJALAN]: bilang apa adanya bahwa kelasnya sudah mulai (sebutkan tanggalnya), tapi pendaftarannya TIDAK ditutup — masih bisa gabung menyusul dan sesi yang sudah lewat ditonton lewat rekaman kelas.
 - JUMLAH PENDAFTAR & SISA KUOTA batch Reguler/ETP juga TIDAK ADA di daftar fakta ini. Angkanya cuma ada di penanda [KUOTA] pada blok "JADWAL BATCH ..." (ditarik realtime dari database pendaftaran, sama dengan yang dipakai halaman linguo.id/jadwal-kelas-reguler). Jangan mengarang jumlah peserta.
 - BATAS PENDAFTARAN (deadline) batch Reguler/ETP juga cuma ada di penanda [PENDAFTARAN] pada blok "JADWAL BATCH ...". Jangan menghitung atau mengarang tanggal penutupan sendiri.
 - Private 16x pertemuan: maksimal selesai 5 bulan, sisa sesi hangus setelahnya.
@@ -389,7 +390,7 @@ function batchTag(startIso: string | null, today: string): string {
   if (!startIso) return "[TANGGAL MULAI BELUM DITENTUKAN]";
   return String(startIso) > today
     ? "[BELUM MULAI — pendaftaran masih dibuka]"
-    : "[SUDAH BERJALAN — kelas sedang jalan, bukan batch baru]";
+    : "[SUDAH BERJALAN — kelas sudah mulai sejak tanggal itu, WAJIB diberitahu ke calon siswa; pendaftaran TIDAK ditutup, masih boleh gabung menyusul & sesi yang terlewat ditonton lewat rekaman]";
 }
 
 // Kuota REALTIME batch: jumlah pendaftar vs kapasitas, langsung dari database
@@ -543,7 +544,9 @@ CATATAN JADWAL (WAJIB DIPATUHI):
 - Kalau batch yang ditanya ADA di daftar, SEBUTKAN hari & jamnya (jangan jawab "nanti diinfokan").
 - Status batch: pakai penanda [BELUM MULAI] / [SUDAH BERJALAN] apa adanya. DILARANG menebak sendiri apakah suatu batch sudah jalan atau belum — bandingkan tanggal mulai dengan TANGGAL HARI INI di atas.
 - Penanda dalam kurung siku itu CATATAN INTERNAL. JANGAN pernah menyalinnya ke balasan. Sampaikan maksudnya dengan kalimat biasa ("pendaftaran masih dibuka", "kelasnya sedang berjalan").
-- Batch [SUDAH BERJALAN]: bilang kelasnya sedang berjalan, JANGAN janjikan user bisa langsung gabung dan JANGAN menawarkan "menyusul materi yang sudah lewat" (itu keputusan admin, bukan janji Ling). Arahkan konsultasi dengan admin untuk opsi menyusul / batch berikutnya / Private.
+- Batch [SUDAH BERJALAN]: WAJIB diberitahu ke user bahwa kelasnya SUDAH MULAI (sebutkan tanggal mulainya) — jangan menyebut jadwalnya seolah-olah batch baru yang belum jalan. Baru setelah itu sampaikan kabar baiknya.
+- Gabung di batch yang sudah berjalan BOLEH: pendaftarannya tidak ditutup, user masuk sebagai penyusul dan sesi yang sudah lewat bisa ditonton lewat REKAMAN kelasnya, jadi materinya tidak ketinggalan. Ajak konfirmasi ke admin secepatnya supaya sesi yang terlewat tidak makin banyak. Kalau user keberatan menyusul, baru tawarkan batch berikutnya / Private / Semi-Private.
+- Rekaman untuk penyusul = rekaman sesi yang SUDAH lewat di batch itu, disediakan supaya bisa mengejar — BUKAN paket Recording berbayar Rp100.000/Rp150.000. Jangan menagih biaya tambahan untuk rekaman susulan ini, dan jangan menjanjikan rekaman untuk sesi ke depan.
 - Batch [BELUM MULAI]: sebutkan tanggal mulainya, pendaftaran masih dibuka.
 - Jadwal sudah fix dari Linguo & tidak bisa request hari/jam.
 - Bahasa/track yang TIDAK ada di daftar = batchnya belum dibuka → arahkan cek linguo.id/jadwal-kelas-reguler atau tunggu batch berikutnya.
@@ -563,8 +566,9 @@ BATAS PENDAFTARAN / DEADLINE (WAJIB):
 - Aturan bakunya: pendaftaran satu batch ditutup H-1 sebelum kelas mulai, atau lebih cepat kalau kuotanya penuh duluan. Batch [KUOTA: PENUH ...] = pendaftaran SUDAH DITUTUP walaupun tanggal mulainya masih jauh.
 - Sampaikan pakai kalimat biasa dan gabungkan dengan kuotanya, mis. "pendaftarannya masih dibuka sampai 12 Agustus (tinggal 5 hari lagi) dan slotnya masih 11 dari 15".
 - Sisa 3 hari atau kurang / hari terakhir: sampaikan urgensinya apa adanya dan ajak konfirmasi hari itu juga — jangan dibikin santai, tapi jangan menakut-nakuti dengan angka karangan.
-- [PENDAFTARAN: SUDAH DITUTUP ...] atau batch [SUDAH BERJALAN]: jangan menyuruh menunggu tanpa solusi. Sampaikan pendaftarannya sudah ditutup, lalu tawarkan batch berikutnya, Private, atau Semi-Private.
-- DILARANG memperpanjang deadline, menjanjikan "masih bisa nyusul", atau memberi dispensasi. Kalau user memohon perpanjangan, arahkan konfirmasi ke admin.`;
+- [PENDAFTARAN: SUDAH DITUTUP ...]: jangan menyuruh menunggu tanpa solusi. Sampaikan pendaftarannya sudah ditutup, lalu tawarkan batch berikutnya, Private, atau Semi-Private.
+- Batch [SUDAH BERJALAN] BUKAN berarti pendaftaran ditutup — user masih boleh masuk sebagai penyusul dengan rekaman sesi yang terlewat (lihat CATATAN JADWAL). Yang benar-benar tertutup hanya batch [KUOTA: PENUH ...].
+- DILARANG memperpanjang deadline atau memberi diskon/dispensasi. (Menyusul di batch yang sudah berjalan BUKAN dispensasi — itu ketentuan resmi, boleh langsung ditawarkan.) Kalau user minta keringanan lain, arahkan konfirmasi ke admin.`;
 
 async function getScheduleBlock(): Promise<string> {
   if (Date.now() - scheduleCache.at < SCHEDULE_TTL_MS) return scheduleCache.text;
