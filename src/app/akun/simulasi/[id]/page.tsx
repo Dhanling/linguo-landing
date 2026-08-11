@@ -59,9 +59,10 @@ const IDLE_EXPIRE_MS = 24 * 60 * 60 * 1000;
 let leavingSim = false;
 // Aturan tambahan (ikut tampil di wizard intro, bagian Petunjuk Pengerjaan).
 const EXTRA_RULES = [
-  { text: `Ujian terbagi per subtes (mis. Listening, Reading) — tiap subtes punya batas waktu sendiri dan yang sudah diselesaikan tidak bisa dibuka lagi.` },
-  { text: `Subtes yang sedang berjalan dikunci minimal ${SECTION_LOCK_MINUTES} menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).` },
-  { text: `Sistem anti-curang aktif: berpindah tab atau keluar dari layar penuh tercatat sebagai pelanggaran. ${MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan.` },
+  { text: `Subtes dikerjakan BERURUTAN seperti ujian aslinya (mis. Listening → Structure → Reading, atau Listening → Reading → Writing → Speaking). Subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan, dan yang sudah selesai tidak bisa dibuka lagi.` },
+  { text: `Tiap subtes punya batas waktu sendiri dan dikunci minimal ${SECTION_LOCK_MINUTES} menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).` },
+  { text: `Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh tercatat sebagai pelanggaran. ${MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan.` },
+  { text: `Selama mengerjakan, klik kanan, blok-salin teks soal, tempel jawaban dari luar, cetak/simpan halaman, dan pintasan devtools diblokir. Yang bisa dipakai hanya tombol di layar ujian (navigasi soal, Selesaikan Subtes, dan tombol keluar).` },
 ];
 
 // Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
@@ -696,21 +697,97 @@ export default function SimulasiRunnerPage() {
     };
     const onVis = () => { if (document.visibilityState === "hidden") violate("Kamu terdeteksi berpindah tab / meninggalkan layar ujian."); };
     const onFs = () => { if (!fsElement()) violate("Kamu terdeteksi keluar dari mode layar penuh."); };
+
+    // [sim-proctor-v2] Pindah APLIKASI/jendela lain (Alt+Tab, Cmd+Tab, klik
+    // jendela lain, minimize) sering TIDAK memicu visibilitychange → pakai
+    // window blur. Dua penjaga anti false-positive:
+    //  1. fokus pindah ke <iframe> (player YouTube listening) — bukan curang;
+    //  2. cek ulang setelah jeda: kalau fokus balik lagi, abaikan.
+    let blurTimer: ReturnType<typeof setTimeout> | null = null;
+    const onBlur = () => {
+      if (document.activeElement?.tagName === "IFRAME") return;
+      if (blurTimer) clearTimeout(blurTimer);
+      blurTimer = setTimeout(() => {
+        if (document.hasFocus() || document.activeElement?.tagName === "IFRAME") return;
+        violate("Kamu terdeteksi berpindah ke aplikasi/jendela lain.");
+      }, 600);
+    };
+    const onFocus = () => { if (blurTimer) { clearTimeout(blurTimer); blurTimer = null; } };
+
     const block = (e: Event) => e.preventDefault();
+
+    // [sim-proctor-v2] Pintasan keyboard yang dipakai untuk mencari jawaban /
+    // menyalin soal diblokir. Yang di luar kuasa halaman (Alt+Tab, Cmd+Tab,
+    // Ctrl+T/N/W, tombol Home OS) tetap tertangkap sebagai pelanggaran lewat
+    // blur / visibilitychange di atas.
+    const onKey = (e: KeyboardEvent) => {
+      const k = e.key.toLowerCase();
+      const mod = e.ctrlKey || e.metaKey;
+      const editable = (e.target as HTMLElement | null)?.closest?.("input, textarea, [contenteditable='true']");
+      // DevTools / lihat kode sumber / print / simpan halaman → pelanggaran.
+      const devtools =
+        k === "f12" ||
+        (mod && e.shiftKey && ["i", "j", "c"].includes(k)) ||
+        (mod && ["u", "p", "s"].includes(k));
+      if (devtools) {
+        e.preventDefault();
+        violate("Pintasan terlarang (devtools/print/simpan halaman) terdeteksi.");
+        return;
+      }
+      // Tab baru / jendela baru / cari di halaman → diblokir diam-diam.
+      if (mod && ["t", "n", "f", "g", "o"].includes(k) && !e.altKey) { e.preventDefault(); return; }
+      // Salin / potong / tempel: dilarang di area soal. Di kotak jawaban esai,
+      // salin & pilih-semua tulisan sendiri tetap boleh; TEMPEL tetap dilarang
+      // (mencegah menempel jawaban dari luar).
+      if (mod && ["c", "x", "a"].includes(k) && !editable) { e.preventDefault(); return; }
+      if (mod && k === "v") { e.preventDefault(); return; }
+    };
+
+    const onPrint = () => violate("Mencetak / menyimpan halaman soal tidak diizinkan.");
+
     document.addEventListener("visibilitychange", onVis);
     document.addEventListener("fullscreenchange", onFs);
     document.addEventListener("webkitfullscreenchange", onFs); // Safari
     document.addEventListener("contextmenu", block);
     document.addEventListener("copy", block);
+    document.addEventListener("cut", block);
     document.addEventListener("paste", block);
+    document.addEventListener("dragstart", block); // seret teks soal keluar
+    document.addEventListener("drop", block);
+    document.addEventListener("keydown", onKey, true);
+    window.addEventListener("blur", onBlur);
+    window.addEventListener("focus", onFocus);
+    window.addEventListener("beforeprint", onPrint);
     return () => {
+      if (blurTimer) clearTimeout(blurTimer);
       document.removeEventListener("visibilitychange", onVis);
       document.removeEventListener("fullscreenchange", onFs);
       document.removeEventListener("webkitfullscreenchange", onFs);
       document.removeEventListener("contextmenu", block);
       document.removeEventListener("copy", block);
+      document.removeEventListener("cut", block);
       document.removeEventListener("paste", block);
+      document.removeEventListener("dragstart", block);
+      document.removeEventListener("drop", block);
+      document.removeEventListener("keydown", onKey, true);
+      window.removeEventListener("blur", onBlur);
+      window.removeEventListener("focus", onFocus);
+      window.removeEventListener("beforeprint", onPrint);
     };
+  }, [preview, phase, view]);
+
+  // [sim-proctor-v2] Tutup/segarkan tab saat mengerjakan → konfirmasi bawaan
+  // browser, supaya siswa tak "kabur" dari sesi tanpa sadar (Ctrl+W/F5 tak bisa
+  // diblokir dari halaman).
+  useEffect(() => {
+    if (preview || phase !== "running" || view !== "work") return;
+    const onUnload = (e: BeforeUnloadEvent) => {
+      if (leavingSim || submittingRef.current) return;
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", onUnload);
+    return () => window.removeEventListener("beforeunload", onUnload);
   }, [preview, phase, view]);
 
   async function submit(force = false) {
@@ -974,10 +1051,13 @@ export default function SimulasiRunnerPage() {
 
         <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-slate-500">
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
-          Subtes dikerjakan <b>berurutan</b> seperti ujian aslinya{skillGroups.length > 1 && <> ({skillGroups.map((g) => SKILL_LABEL[g.skill]).join(" → ")})</>} —
-          subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan. Tiap subtes punya batas waktu sendiri dan
-          dikunci minimal {SECTION_LOCK_MINUTES} menit setelah dimulai, dan subtes yang sudah diselesaikan tidak bisa dibuka lagi.
-          Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.
+          <span>
+            Subtes dikerjakan <b className="font-bold">berurutan</b> seperti ujian aslinya
+            {skillGroups.length > 1 && <> ({skillGroups.map((g) => SKILL_LABEL[g.skill]).join(" → ")})</>} — subtes berikutnya
+            baru terbuka setelah subtes sebelumnya diselesaikan. Tiap subtes punya batas waktu sendiri dan dikunci minimal{" "}
+            {SECTION_LOCK_MINUTES} menit setelah dimulai, dan subtes yang sudah diselesaikan tidak bisa dibuka lagi.
+            Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.
+          </span>
         </p>
       </Shell>
     );
@@ -1646,7 +1726,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
   };
 
   return (
-    <div className={`sim-shell min-h-screen bg-slate-50${dark ? " sim-dark" : ""}`}>
+    <div className={`sim-shell min-h-screen bg-slate-50${dark ? " sim-dark" : ""}${proctored ? " sim-lock" : ""}`}>
       {/* Tampilan bersih & modern: buang outline/ring fokus bawaan browser pada
           semua elemen interaktif (tombol, tab, link) di layar siswa & preview. */}
       <style>{`
@@ -1710,6 +1790,13 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
         .sim-navstrip::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
         .sim-dark .sim-navstrip { scrollbar-color: #3b4a5a transparent; }
         .sim-dark .sim-navstrip::-webkit-scrollbar-thumb { background: #3b4a5a; }
+        /* [sim-proctor-v2] Mode ujian: teks soal/bacaan tak bisa diblok-salin atau
+           diseret ke tab lain; kotak jawaban esai tetap bisa diseleksi normal. */
+        .sim-lock, .sim-lock * { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+        .sim-lock :is(input, textarea, [contenteditable="true"]) { -webkit-user-select: text; user-select: text; }
+        .sim-lock img, .sim-lock a { -webkit-user-drag: none; }
+        /* Cetak / "simpan sebagai PDF" halaman soal → halaman kosong. */
+        @media print { .sim-lock { display: none !important; } }
       `}</style>
       {preview && (
         <div className="bg-amber-400 px-4 py-1.5 text-center text-xs font-semibold text-amber-950">
@@ -2127,6 +2214,11 @@ function QuestionBlock({ index, q, state, onChange }: {
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
           placeholder="Ketik jawabanmu…"
+          // [sim-proctor-v2] koreksi ejaan/isi otomatis browser = bantuan jawaban → dimatikan.
+          spellCheck={false}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
           className="mt-3 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-400"
         />
       )}
@@ -2136,6 +2228,10 @@ function QuestionBlock({ index, q, state, onChange }: {
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
           placeholder="Tulis esai kamu di sini…"
+          // [sim-proctor-v2] tanpa saran ejaan/tata bahasa browser — esai dinilai apa adanya.
+          spellCheck={false}
+          autoComplete="off"
+          autoCorrect="off"
           className="mt-3 min-h-[160px] w-full resize-y rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-400"
         />
       )}
