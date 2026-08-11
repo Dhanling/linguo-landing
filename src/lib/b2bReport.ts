@@ -62,8 +62,76 @@ const ALFAMART_VIETNAM: CohortConfig = {
   ],
 };
 
+// PT. GroundProbe Indonesia × English Conversation (B1.1)
+//
+// Satu kontrak GroundProbe pecah jadi TIGA kelas dengan pengajar berbeda, jadi
+// tiga cohort/form terpisah — bukan satu form dengan pembagian grup. Alasannya
+// satu form = satu pengajar yang mengisi, dan penilaian kelas 1 tak boleh
+// dititipkan ke pengajar kelas 2.
+//   • Kelas 1 & Kelas 2 → lead 9b2e0a56 (6 peserta, dipecah 3 + 3 berurutan
+//     `created_at` sesuai classes_json — urutan yang sama dipakai B2BCorporateTab)
+//   • Private → lead 5c270c10 (1 peserta)
+// Karena tiap cohort sudah = satu kelas, `suggestGroups` false & groupOptions kosong.
+const GROUNDPROBE_BASE = {
+  companyName: "PT. GroundProbe Indonesia",
+  language: "English (Conversation)",
+  flag: null,
+  level: "Intermediate (B1.1)",
+  sessionsTotal: 40,
+  suggestGroups: false,
+  groupOptions: [] as string[],
+} satisfies Partial<CohortConfig>;
+
+const TEACHER_LUTFI = {
+  defaultTeacherName: "Muhamad Lutfi Ramadhani",
+  defaultTeacherEmail: "mlutfiramadhani1@gmail.com",
+  teacherId: "3dcea1bb-8f95-4719-9899-3a0a74c9fd68",
+};
+
+const GROUNDPROBE_KELAS_1: CohortConfig = {
+  ...GROUNDPROBE_BASE,
+  ...TEACHER_LUTFI,
+  slug: "groundprobe-kelas-1",
+  label: "GroundProbe × English Conversation · Kelas 1 (B1.1)",
+  leadId: "9b2e0a56-8665-44b8-9872-911fb152466a",
+  roster: [
+    { id: "0565e48a-4b63-4a81-8e90-c4d003fa8eb3", name: "Arafah P" },
+    { id: "d04b2647-d180-43d4-bf77-27f3326042d1", name: "Hendry Gumilar" },
+    { id: "cb5bc926-fde5-4fa1-b809-bcd3f388dae1", name: "Gusti Redha Kurniawan" },
+  ],
+};
+
+const GROUNDPROBE_KELAS_2: CohortConfig = {
+  ...GROUNDPROBE_BASE,
+  slug: "groundprobe-kelas-2",
+  label: "GroundProbe × English Conversation · Kelas 2 (B1.1)",
+  leadId: "9b2e0a56-8665-44b8-9872-911fb152466a",
+  defaultTeacherName: "Sri Wahyuni",
+  defaultTeacherEmail: "sriwahyuniuny33@gmail.com",
+  teacherId: "ee442194-2db3-43b9-9981-0eafe4f39fac",
+  roster: [
+    { id: "23fedf2c-684c-47d8-96f5-db9951dcd806", name: "I Made Mudiarta" },
+    { id: "f42dfd10-9f01-4500-a8b8-b4ad2ae72cab", name: "Annisa Camelia Amarawilis" },
+    { id: "4f054b95-8e26-467b-b854-69c8825ea025", name: "Mitra Zein Languju" },
+  ],
+};
+
+const GROUNDPROBE_PRIVATE: CohortConfig = {
+  ...GROUNDPROBE_BASE,
+  ...TEACHER_LUTFI,
+  slug: "groundprobe-private",
+  label: "GroundProbe × English Conversation · Private (B1.1)",
+  leadId: "5c270c10-23cd-4a22-ac68-9719ce27aae2",
+  roster: [
+    { id: "49cc6d51-5dae-40e4-83ab-5bbe10058726", name: "Nur Islamiyah Angraeni", department: "Support Desk Officer" },
+  ],
+};
+
 export const COHORTS: Record<string, CohortConfig> = {
   [ALFAMART_VIETNAM.slug]: ALFAMART_VIETNAM,
+  [GROUNDPROBE_KELAS_1.slug]: GROUNDPROBE_KELAS_1,
+  [GROUNDPROBE_KELAS_2.slug]: GROUNDPROBE_KELAS_2,
+  [GROUNDPROBE_PRIVATE.slug]: GROUNDPROBE_PRIVATE,
 };
 
 export function getCohort(slug: string): CohortConfig | null {
