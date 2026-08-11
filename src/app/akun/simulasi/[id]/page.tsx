@@ -159,11 +159,22 @@ function sanitizeCmsHtml(html: string): string {
 }
 // Render aman: HTML dari CMS dibersihkan lalu ditampilkan (sumber tepercaya = admin
 // dashboard internal), teks lama / markdown tetap lewat <RichText> spy kompatibel.
+// Gaya tabel WAJIB ada di sini: soal Listening/Reading berbentuk table & form
+// completion menyimpan tabelnya sebagai HTML di instruksi section, sementara
+// sanitizer di atas sengaja membuang class & style. Tanpa aturan ini tabel tampil
+// sebagai deretan teks tanpa garis dan siswa tak bisa membaca kolomnya. Kembarannya
+// ada di admin (TestSimulations.tsx → CMS_HTML_CLASS) — ubah dua-duanya.
+const CMS_HTML_CLASS =
+  "[&_img]:my-2 [&_img]:max-w-full [&_img]:rounded-md [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5 " +
+  "[&_table]:my-3 [&_table]:w-full [&_table]:border-collapse [&_table]:text-left [&_table]:text-[13px] " +
+  "[&_th]:border [&_th]:border-slate-300 [&_th]:bg-slate-100 [&_th]:px-2.5 [&_th]:py-2 [&_th]:font-semibold [&_th]:text-slate-700 [&_th]:align-top " +
+  "[&_td]:border [&_td]:border-slate-300 [&_td]:px-2.5 [&_td]:py-2 [&_td]:align-top";
 function SmartText({ text, className }: { text: string; className?: string }) {
   if (isHtml(text)) {
     return (
+      // Tabel lebar tidak boleh mendorong lebar halaman di HP → digulir sendiri.
       <div
-        className={`${className ?? ""} [&_img]:my-2 [&_img]:max-w-full [&_img]:rounded-md [&_p]:mb-2 [&_ul]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mb-2 [&_ol]:list-decimal [&_ol]:pl-5`.trim()}
+        className={`${className ?? ""} ${CMS_HTML_CLASS} overflow-x-auto`.trim()}
         dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(text) }}
       />
     );

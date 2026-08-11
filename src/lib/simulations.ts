@@ -422,8 +422,13 @@ export function gradeObjective(q: Question, selectedIndex: number | null, text: 
     return { correct, points: correct ? q.points : 0 };
   }
   if (q.type === "fill_blank" || q.type === "short_answer") {
-    const key = (typeof q.answer === "string" ? q.answer : (q.answer?.text ?? "")).trim().toLowerCase();
-    const correct = key !== "" && text.trim().toLowerCase() === key;
+    // Kunci boleh memuat beberapa bentuk yang sama-sama benar, dipisah "|" —
+    // konvensi kunci IELTS ("8|eight", "£22|22 pounds"). Impor soal dari video
+    // mengisi ini otomatis. Tanpa "|" perilakunya persis seperti dulu (satu kunci).
+    const raw = (typeof q.answer === "string" ? q.answer : (q.answer?.text ?? "")).trim().toLowerCase();
+    const keys = raw.split("|").map((k: string) => k.trim()).filter(Boolean);
+    const given = text.trim().toLowerCase();
+    const correct = keys.length > 0 && keys.includes(given);
     return { correct, points: correct ? q.points : 0 };
   }
   return { correct: false, points: 0 };
