@@ -9,7 +9,7 @@
 // Cohort didefinisikan di src/lib/b2bReport.ts.
 // Draft disimpan otomatis di localStorage — 17 peserta gak realistis diisi sekali duduk.
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 // [fix:gotrue-client-tunggal-v1] pakai client kanonik, jangan bikin instance GoTrue baru
 import { supabase } from "@/lib/supabase-client";
@@ -19,9 +19,12 @@ import {
   type ParticipantRow, type CohortConfig,
 } from "@/lib/b2bReport";
 import {
+  fetchAttendanceSync, applyAttendanceSync, matchPerson, type AttendanceSync,
+} from "@/lib/b2bAttendanceSync";
+import {
   ArrowLeft, ArrowRight, Check, CircleCheck, ClipboardList, Loader2, Users,
   UserRound, CalendarRange, Star, FileText, Send, AlertTriangle, Info, PartyPopper,
-  ChevronDown, ChevronUp, Save,
+  ChevronDown, ChevronUp, Save, RefreshCw, CloudDownload,
 } from "lucide-react";
 
 const TEAL = "#16796E";
@@ -96,6 +99,12 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
   const [draftLoaded, setDraftLoaded] = useState(false);
   const [savedAt, setSavedAt] = useState<string | null>(null);
 
+  // ── [linguo-patch:b2b-report-presensi-sync-v1] presensi dari dashboard ──
+  const [sync, setSync] = useState<AttendanceSync | null>(null);
+  const [syncState, setSyncState] = useState<"idle" | "loading" | "ready" | "empty" | "error">("idle");
+  const [syncedAt, setSyncedAt] = useState<string | null>(null);
+  const autoApplied = useRef(false);
+
   // ── muat draft ──
   useEffect(() => {
     try {
@@ -152,6 +161,38 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
 
   const patch = (idx: number, p: Partial<ParticipantRow>) =>
     setRows((prev) => prev.map((r, i) => (i === idx ? { ...r, ...p } : r)));
+
+  // ── tarik presensi dari dashboard ──
+  // Pertama kali: isi otomatis kolom yang masih kosong (draft pengajar menang).
+  // "Tarik ulang": timpa hadir/izin dengan angka dashboard.
+  const pullAttendance = useCallback(
+    async (force: boolean) => {
+      if (!cohort.leadId) { setSyncState("empty"); return; }
+      setSyncState("loading");
+      const data = await fetchAttendanceSync(cohort.leadId);
+      if (!data) { setSyncState("error"); return; }
+      setSync(data);
+      if (!data.participants.length || !data.sessions_recorded) { setSyncState("empty"); return; }
+      setRows((prev) => applyAttendanceSync(prev, data, force).rows);
+      setSessionsDone((prev) => (force || prev == null ? (data.sessions_completed || data.sessions_recorded) : prev));
+      setSyncState("ready");
+      setSyncedAt(new Date().toISOString());
+    },
+    [cohort.leadId]
+  );
+
+  // Tarik sekali setelah draft dibaca — biar isian yang sudah ada tidak ketiban.
+  useEffect(() => {
+    if (!draftLoaded || autoApplied.current) return;
+    autoApplied.current = true;
+    void pullAttendance(false);
+  }, [draftLoaded, pullAttendance]);
+
+  /** Peserta yang tidak ketemu di dashboard — presensinya tetap manual. */
+  const unmatched = useMemo(
+    () => (sync ? activeRows.filter((r) => !matchPerson(sync, r.name)).map((r) => titleCase(r.name)) : []),
+    [sync, activeRows]
+  );
 
   // ── kelengkapan ──
   const presensiDone = (r: ParticipantRow) =>
@@ -229,62 +270,94 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
 
   const pct = step < 0 ? 0 : Math.round(((step + 1) / STEPS.length) * 100);
 
+  // Header menempel di atas, jadi tiap pindah langkah wajib balik ke puncak —
+  // kalau tidak, langkah baru terbuka di tengah-tengah scroll langkah sebelumnya.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step]);
+
+  const compact = useStickyCompact();
+
   return (
-    <div className="min-h-screen w-full bg-slate-50 px-4 py-6 antialiased">
+    <div className="min-h-screen w-full bg-slate-50 antialiased">
       <style>{`
         @keyframes b2b-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
         @keyframes b2b-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
         .b2b-fade{animation:b2b-fade .3s ease both}
         .b2b-pop{animation:b2b-pop .5s cubic-bezier(.2,.8,.2,1) both}
         button{-webkit-tap-highlight-color:transparent}
+        .b2b-noscroll::-webkit-scrollbar{display:none}
       `}</style>
 
-      <div className="mx-auto max-w-[720px]">
-        {/* header */}
-        <div className="mb-4 flex items-center gap-3">
-          <img src="/FULL_LOGO_LINGUO_HIJAU.png" alt="Linguo" className="h-7 w-auto" />
-          <span
-            className="ml-1 rounded-md px-2 py-0.5 text-[10px] font-bold"
-            style={{ background: "rgba(242,203,5,0.18)", color: "#9a7a06" }}
-          >
-            LAPORAN PROGRESS
-          </span>
-          <span className="ml-auto truncate text-[11px] font-bold text-slate-400">{cohort.label}</span>
-        </div>
-
-        {step >= 0 && step <= 4 && (
-          <div className="mb-4">
-            <div className="mb-2 flex items-center gap-3">
-              <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
-                <div className="h-full rounded-full transition-all duration-300" style={{ width: `${pct}%`, background: TEAL }} />
-              </div>
-              <span className="text-[11px] font-bold text-slate-400">{pct}%</span>
-            </div>
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
-              {STEPS.map((s, i) => {
-                const Icon = s.icon;
-                const on = i === step;
-                const past = i < step;
-                return (
-                  <button
-                    key={s.label}
-                    onClick={() => setStep(i)}
-                    className="flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold transition"
-                    style={{
-                      background: on ? TEAL : past ? "rgba(22,121,110,.10)" : "#fff",
-                      color: on ? "#fff" : past ? TEAL : "#94a3b8",
-                      border: `1px solid ${on ? TEAL : "rgba(148,163,184,.35)"}`,
-                    }}
-                  >
-                    {past ? <Check className="h-3 w-3" /> : <Icon className="h-3 w-3" />}
-                    {s.label}
-                  </button>
-                );
-              })}
-            </div>
+      {/* header floating — tetap kelihatan waktu pengajar scroll daftar peserta yang panjang */}
+      <header
+        className="sticky top-0 z-30 w-full border-b transition-[padding,box-shadow,background-color] duration-200"
+        style={{
+          background: compact ? "rgba(248,250,252,.88)" : "#f8fafc",
+          backdropFilter: compact ? "saturate(180%) blur(10px)" : undefined,
+          WebkitBackdropFilter: compact ? "saturate(180%) blur(10px)" : undefined,
+          borderColor: compact ? "rgba(148,163,184,.28)" : "transparent",
+          boxShadow: compact ? "0 10px 24px -22px rgba(15,23,42,.6)" : "none",
+        }}
+      >
+        <div className={`mx-auto max-w-[720px] px-4 ${compact ? "pb-2 pt-2" : "pb-3 pt-5"} transition-all duration-200`}>
+          <div className="flex items-center gap-3">
+            <img
+              src="/FULL_LOGO_LINGUO_HIJAU.png"
+              alt="Linguo"
+              className={`${compact ? "h-5" : "h-7"} w-auto transition-all duration-200`}
+            />
+            {!compact && (
+              <span
+                className="ml-1 rounded-md px-2 py-0.5 text-[10px] font-bold"
+                style={{ background: "rgba(242,203,5,0.18)", color: "#9a7a06" }}
+              >
+                LAPORAN PROGRESS
+              </span>
+            )}
+            <span className="ml-auto truncate text-[11px] font-bold text-slate-400">
+              {compact && step >= 0 && step <= 4 ? `Langkah ${step + 1}/${STEPS.length} · ${STEPS[step].label}` : cohort.label}
+            </span>
           </div>
-        )}
 
+          {step >= 0 && step <= 4 && (
+            <div className={compact ? "mt-2" : "mt-3"}>
+              <div className="flex items-center gap-3">
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
+                  <div className="h-full rounded-full transition-all duration-300" style={{ width: `${pct}%`, background: TEAL }} />
+                </div>
+                <span className="text-[11px] font-bold text-slate-400">{pct}%</span>
+              </div>
+              {!compact && (
+                <div className="b2b-noscroll mt-2 flex items-center gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: "none" }}>
+                  {STEPS.map((s, i) => {
+                    const Icon = s.icon;
+                    const on = i === step;
+                    const past = i < step;
+                    return (
+                      <button
+                        key={s.label}
+                        onClick={() => setStep(i)}
+                        className="flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold transition"
+                        style={{
+                          background: on ? TEAL : past ? "rgba(22,121,110,.10)" : "#fff",
+                          color: on ? "#fff" : past ? TEAL : "#94a3b8",
+                          border: `1px solid ${on ? TEAL : "rgba(148,163,184,.35)"}`,
+                        }}
+                      >
+                        {past ? <Check className="h-3 w-3" /> : <Icon className="h-3 w-3" />}
+                        {s.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-[720px] px-4 pb-8 pt-4">
         <div className="rounded-3xl border border-slate-100 bg-white p-5 shadow-[0_18px_50px_-24px_rgba(15,23,42,0.25)] sm:p-6">
           {/* ── intro ── */}
           {step === -1 && (
@@ -306,7 +379,8 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
 
               <div className="mt-4 space-y-2">
                 <IntroPoint icon={Save} text="Jawaban tersimpan otomatis di perangkat ini. Boleh ditinggal dulu, lanjut kapan saja." />
-                <IntroPoint icon={ClipboardList} text="Siapkan catatan kehadiran (hadir / izin kerja / sakit) tiap peserta." />
+                <IntroPoint icon={CloudDownload} text="Presensi (hadir & izin) ditarik otomatis dari klik presensimu di dashboard — tinggal dicek." />
+                <IntroPoint icon={ClipboardList} text="Yang perlu kamu tulis: skor tiap peserta, catatan observasi, dan evaluasi umum." />
                 <IntroPoint icon={Star} text="Skor pakai skala 1–5 (boleh setengah, mis. 4.5). Panduannya ada di dalam form." />
               </div>
 
@@ -390,7 +464,11 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
               <Field
                 label="Sesi yang sudah terlaksana"
                 required
-                hint={`Dari total ${cohort.sessionsTotal} sesi kontrak. Angka ini jadi acuan default presensi.`}
+                hint={
+                  syncState === "ready"
+                    ? `Terisi otomatis dari dashboard. Dari total ${cohort.sessionsTotal} sesi kontrak.`
+                    : `Dari total ${cohort.sessionsTotal} sesi kontrak. Angka ini jadi acuan default presensi.`
+                }
               >
                 <div className="flex items-center gap-2">
                   <input
@@ -475,9 +553,17 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
             <div className="b2b-fade space-y-4">
               <StepTitle n={2} title="Presensi peserta" />
               <p className="text-[13px] leading-relaxed text-slate-500">
-                Isi jumlah <b>hadir</b>, <b>izin kerja/meeting</b>, dan <b>sakit</b> tiap peserta.
-                Persentase kehadiran dihitung otomatis.
+                Angka <b>hadir</b> & <b>izin</b> ditarik otomatis dari presensi yang kamu klik di
+                dashboard. Tinggal cek, pindahkan yang izin karena <b>sakit</b> ke kolomnya, lalu lanjut.
               </p>
+
+              <SyncPanel
+                state={syncState}
+                sync={sync}
+                syncedAt={syncedAt}
+                unmatched={unmatched}
+                onPull={() => pullAttendance(true)}
+              />
 
               {sessionsDone ? (
                 <button
@@ -532,6 +618,7 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
                           Kehadiran: <span style={{ color: pctv >= 75 ? "#15803d" : pctv >= 50 ? "#b45309" : "#dc2626" }}>{pctv}%</span>
                         </p>
                       )}
+                      <PersonSyncNote person={matchPerson(sync, r.name)} />
                       {grouped && (
                         <div className="mt-2.5">
                           <GroupSelect value={r.group_label} options={cohort.groupOptions} onChange={(v) => patch(i, { group_label: v })} />
@@ -972,6 +1059,110 @@ function PersonCard({
       </button>
       {open && <div className="border-t border-slate-100 px-3.5 py-3">{children}</div>}
     </div>
+  );
+}
+
+/** Header nyusut begitu halaman di-scroll: chip langkah disembunyikan, tinggal
+ *  bar progres + "Langkah 2/5 · Presensi" biar tidak makan layar HP. */
+function useStickyCompact(threshold = 24) {
+  const [compact, setCompact] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setCompact(window.scrollY > threshold);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+  return compact;
+}
+
+/** [linguo-patch:b2b-report-presensi-sync-v1] status tarik presensi dari dashboard */
+function SyncPanel({
+  state, sync, syncedAt, unmatched, onPull,
+}: {
+  state: "idle" | "loading" | "ready" | "empty" | "error";
+  sync: AttendanceSync | null;
+  syncedAt: string | null;
+  unmatched: string[];
+  onPull: () => void;
+}) {
+  if (state === "idle" || state === "loading") {
+    return (
+      <div className="flex items-center gap-2.5 rounded-2xl border border-slate-200 bg-slate-50 p-3 text-[12px] font-bold text-slate-500">
+        <Loader2 className="h-4 w-4 animate-spin" style={{ color: TEAL }} />
+        Menarik presensi dari dashboard…
+      </div>
+    );
+  }
+
+  if (state === "empty" || state === "error") {
+    return (
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-3.5">
+        <div className="flex items-start gap-2.5">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+          <p className="text-[12px] font-bold leading-relaxed text-amber-800">
+            {state === "empty"
+              ? "Belum ada presensi tercatat di dashboard untuk kelas ini — isi manual di bawah. Kalau kamu sudah mengeklik presensinya di dashboard, coba tarik ulang."
+              : "Gagal menarik presensi dari dashboard. Isi manual dulu, atau coba tarik ulang."}
+          </p>
+        </div>
+        <button
+          onClick={onPull}
+          className="mt-2.5 flex items-center gap-1.5 rounded-xl border border-amber-300 bg-white px-3 py-1.5 text-[11.5px] font-extrabold text-amber-700"
+        >
+          <RefreshCw className="h-3.5 w-3.5" /> Tarik ulang
+        </button>
+      </div>
+    );
+  }
+
+  const gap = sync ? sync.sessions_completed - sync.sessions_recorded : 0;
+  return (
+    <div className="rounded-2xl border p-3.5" style={{ borderColor: "rgba(22,121,110,.35)", background: "rgba(22,121,110,.06)" }}>
+      <div className="flex items-start gap-2.5">
+        <CloudDownload className="mt-0.5 h-4.5 w-4.5 shrink-0" style={{ color: TEAL }} />
+        <div className="min-w-0 flex-1">
+          <p className="text-[12.5px] font-extrabold" style={{ color: "#0F5A52" }}>
+            Presensi ditarik dari dashboard · {sync?.sessions_recorded ?? 0} sesi tercatat
+          </p>
+          <p className="mt-1 text-[11.5px] font-semibold leading-relaxed" style={{ color: "#0F5A52", opacity: 0.85 }}>
+            Kolom <b>Hadir</b> & <b>Izin kerja</b> sudah terisi dari klik presensimu di dashboard.
+            Dashboard cuma punya status Hadir/Izin/Alfa — kalau ada yang izin karena <b>sakit</b>,
+            geser angkanya ke kolom Sakit.
+          </p>
+          {gap > 0 && (
+            <p className="mt-1.5 text-[11.5px] font-bold text-amber-700">
+              Sesi berjalan di dashboard {sync?.sessions_completed} sesi, tapi baru {sync?.sessions_recorded} sesi
+              yang dipresensi — {gap} sesi sisanya belum diklik. Lengkapi di dashboard lalu tarik ulang, atau
+              betulkan angkanya manual di bawah.
+            </p>
+          )}
+          {unmatched.length > 0 && (
+            <p className="mt-1.5 text-[11.5px] font-bold text-amber-700">
+              Tidak ketemu di presensi dashboard: {unmatched.join(", ")} — isi manual.
+            </p>
+          )}
+        </div>
+      </div>
+      <div className="mt-2.5 flex items-center gap-2">
+        <button
+          onClick={onPull}
+          className="flex items-center gap-1.5 rounded-xl border bg-white px-3 py-1.5 text-[11.5px] font-extrabold"
+          style={{ borderColor: "rgba(22,121,110,.35)", color: TEAL }}
+        >
+          <RefreshCw className="h-3.5 w-3.5" /> Tarik ulang (timpa angka)
+        </button>
+        {syncedAt && <span className="text-[10.5px] font-bold text-slate-400">Terakhir: {fmtWhen(syncedAt)}</span>}
+      </div>
+    </div>
+  );
+}
+
+function PersonSyncNote({ person }: { person: { sessions_recorded: number; hadir: number; izin: number; alfa: number } | null }) {
+  if (!person) return null;
+  return (
+    <p className="mt-1.5 text-[10.5px] font-bold text-slate-400">
+      Dashboard: {person.hadir} hadir · {person.izin} izin · {person.alfa} alfa dari {person.sessions_recorded} sesi tercatat
+    </p>
   );
 }
 
