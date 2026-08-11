@@ -278,6 +278,14 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
 
   const compact = useStickyCompact();
 
+  // Di HP kelima chip tidak muat sekaligus — chip langkah aktif digeser ke tengah
+  // sendiri, kalau tidak "Kirim" tak pernah kelihatan tanpa menggeser bar-nya manual.
+  const chipsRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = chipsRef.current?.querySelector<HTMLElement>('[data-on="1"]');
+    el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }, [step]);
+
   return (
     <div className="min-h-screen w-full bg-slate-50 antialiased">
       <style>{`
@@ -315,43 +323,49 @@ function ReportForm({ cohort }: { cohort: CohortConfig }) {
                 LAPORAN PROGRESS
               </span>
             )}
-            <span className="ml-auto truncate text-[11px] font-bold text-slate-400">
-              {compact && step >= 0 && step <= 4 ? `Langkah ${step + 1}/${STEPS.length} · ${STEPS[step].label}` : cohort.label}
-            </span>
+            <span className="ml-auto truncate text-[11px] font-bold text-slate-400">{cohort.label}</span>
           </div>
 
           {step >= 0 && step <= 4 && (
-            <div className={compact ? "mt-2" : "mt-3"}>
+            <div className={compact ? "mt-1.5" : "mt-3"}>
               <div className="flex items-center gap-3">
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
+                <div className={`${compact ? "h-1.5" : "h-2"} flex-1 overflow-hidden rounded-full bg-slate-200 transition-all duration-200`}>
                   <div className="h-full rounded-full transition-all duration-300" style={{ width: `${pct}%`, background: TEAL }} />
                 </div>
                 <span className="text-[11px] font-bold text-slate-400">{pct}%</span>
               </div>
-              {!compact && (
-                <div className="b2b-noscroll mt-2 flex items-center gap-1.5 overflow-x-auto pb-0.5" style={{ scrollbarWidth: "none" }}>
-                  {STEPS.map((s, i) => {
-                    const Icon = s.icon;
-                    const on = i === step;
-                    const past = i < step;
-                    return (
-                      <button
-                        key={s.label}
-                        onClick={() => setStep(i)}
-                        className="flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold transition"
-                        style={{
-                          background: on ? TEAL : past ? "rgba(22,121,110,.10)" : "#fff",
-                          color: on ? "#fff" : past ? TEAL : "#94a3b8",
-                          border: `1px solid ${on ? TEAL : "rgba(148,163,184,.35)"}`,
-                        }}
-                      >
-                        {past ? <Check className="h-3 w-3" /> : <Icon className="h-3 w-3" />}
-                        {s.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+              {/* Chip langkah ikut menempel — dipakai buat lompat balik ke langkah sebelumnya
+                  di tengah pengisian, jadi tidak boleh hilang begitu halaman di-scroll.
+                  Waktu compact cuma dikecilkan. */}
+              <div
+                ref={chipsRef}
+                className={`b2b-noscroll flex items-center overflow-x-auto ${compact ? "mt-1.5 gap-1" : "mt-2 gap-1.5"} pb-0.5 transition-all duration-200`}
+                style={{ scrollbarWidth: "none" }}
+              >
+                {STEPS.map((s, i) => {
+                  const Icon = s.icon;
+                  const on = i === step;
+                  const past = i < step;
+                  return (
+                    <button
+                      key={s.label}
+                      data-on={on ? "1" : undefined}
+                      onClick={() => setStep(i)}
+                      className={`flex shrink-0 items-center rounded-full font-bold transition ${
+                        compact ? "gap-1 px-2 py-0.5 text-[10.5px]" : "gap-1.5 px-2.5 py-1 text-[11px]"
+                      }`}
+                      style={{
+                        background: on ? TEAL : past ? "rgba(22,121,110,.10)" : "#fff",
+                        color: on ? "#fff" : past ? TEAL : "#94a3b8",
+                        border: `1px solid ${on ? TEAL : "rgba(148,163,184,.35)"}`,
+                      }}
+                    >
+                      {past ? <Check className="h-3 w-3" /> : <Icon className="h-3 w-3" />}
+                      {s.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
