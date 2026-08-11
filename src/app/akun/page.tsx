@@ -106,9 +106,6 @@ const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { s
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
 const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
-// [beranda-kosakata-v1] kartu penguasaan kosakata (materi + kuis selesai & kata
-// simpanan Watch & Learn). ssr:false — sebagian datanya dari localStorage.
-const KosakataCard = dynamic(() => import('@/components/akun/KosakataCard'), { ssr: false });
 const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
@@ -4216,37 +4213,16 @@ export default function AkunPage() {
                           minggu ini, dan peringkat kelas grup. Semuanya dulu terkubur di
                           detail kelas (2–3 klik); sekarang naik ke layar pertama.
                           Komponennya menyembunyikan diri sendiri kalau datanya kosong. */}
-                      {/* [beranda-kosakata-v1] Berapa kata yang sudah dikuasai, kata
-                          apa saja, dan targetnya berapa — dulu tak ada jawabannya di
-                          dashboard: kata simpanan cuma kelihatan di dalam flashcard,
-                          kosakata materi tak pernah dihitung sama sekali.
-                          [beranda-kosakata-aside-v1] kartunya sekarang menempati KOLOM
-                          KANAN di sebelah kartu progres (dulu satu baris sendiri
-                          selebar layar, sementara kolom kanan ringkasan menganggur). */}
-                      {liveRegsAll.length > 0 ? (
+                      {/* [beranda-kosakata-dihapus-v1] Kartu "Kosakata Saya" dicabut dari
+                          Beranda (dulu aside kolom kanan + versi berdiri sendiri saat
+                          belum ada kelas). Halaman /kosakata & menu sidebarnya tetap. */}
+                      {liveRegsAll.length > 0 && (
                         <BerandaInsights
                           regs={liveRegsAll}
                           studentName={student?.name || firstName || "Siswa"}
                           displayLanguage={displayLanguage}
                           previewStudentId={previewId}
-                          aside={
-                            <KosakataCard
-                              userId={user?.id}
-                              levels={liveRegsAll.map((r: any) => r.level)}
-                              previewMode={previewMode}
-                            />
-                          }
                         />
-                      ) : (
-                        // Belum ada kelas aktif → ringkasan belajar tak dirender sama
-                        // sekali, kartu kosakata berdiri sendiri seperti sebelumnya.
-                        !belumPunyaApaPun && (
-                          <KosakataCard
-                            userId={user?.id}
-                            levels={liveRegsAll.map((r: any) => r.level)}
-                            previewMode={previewMode}
-                          />
-                        )
                       )}
 
                       {/* [beranda-onboarding-cta-v1] satu langkah berikutnya buat siswa baru,
