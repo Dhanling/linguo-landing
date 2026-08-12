@@ -290,14 +290,10 @@ export default function StudentShell({
           aria-current={isActiveLink ? "page" : undefined}
         >
           <Icon className={NAV_ICON} />
+          {/* [nav-newtab-noicon-v1] ikon ExternalLink inline dicabut — bikin sidebar
+              ramai; perilaku buka tab baru TETAP (target dipertahankan di atas),
+              title tetap menjelaskan buat yang hover. */}
           <span className="truncate">{item.label}</span>
-          {newTab && (
-            <ExternalLink
-              className="ml-auto h-3.5 w-3.5 shrink-0 text-white/40 transition group-hover:text-white/75"
-              strokeWidth={2.2}
-              aria-hidden
-            />
-          )}
         </Link>
       );
       // Sudah membuka tab baru → tombol "buka di tab baru" milik navRow tak perlu.

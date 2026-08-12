@@ -3663,9 +3663,17 @@ export default function AkunPage() {
                 // filter/countdown pending di sini — cukup buang bahasa yang invalid/placeholder.
                 // [beranda-status-badge-v1] kelas selesai/tidak aktif tetap tampil tapi grayscale +
                 // badge "Selesai"; yang jalan badge "Aktif". Aktif ditaruh duluan.
+                // [beranda-kelas-masih-jalan-v1] `sessions_used` bisa mentok di plafon paket
+                // (trigger clamp `sessions_used <= sessions_total`) padahal kelasnya MASIH
+                // jalan — akibatnya kartu kelas yang masih punya jadwal ikut terlempar ke
+                // Riwayat dan tab "Kelas Live" tampak kosong. Jadwal mendatang = bukti kelas
+                // belum selesai, jadi itu yang menang atas hitungan sesi.
+                const regPunyaSesiMendatang = new Set(upcomingSchedules.map((s) => s.registration_id));
                 const isKelasSelesai = (r: any) => {
+                  if (r.archived_at) return true;
+                  if (regPunyaSesiMendatang.has(r.id)) return false;
                   const total = r.sessions_total || 0;
-                  return (total > 0 && (r.sessions_used || 0) >= total) || !!r.archived_at;
+                  return total > 0 && (r.sessions_used || 0) >= total;
                 };
                 // [beranda-riwayat-kelas-v1] pisah kelas aktif vs selesai (riwayat)
                 const liveRegsAll = activeRegs.filter((r: any) => isValidLiveLang(r.language));
