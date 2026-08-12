@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
-import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
+import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
 
 interface PurchaseItem {
   id: string;
@@ -70,6 +70,12 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
 
     // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
     const link = externalLinkFor(product);
+    // [bug-fix:placeholder-link-guard-v1] Aturan sama dengan LibraryView — jangan
+    // pernah membuang siswa ke beranda YouTube gara-gara link contekan.
+    if (link && isPlaceholderLink(link)) {
+      alert(`Materi "${product.title}" belum dipasang linknya oleh admin. Hubungi CS Linguo ya.`);
+      return;
+    }
     if (link) {
       if (product.type === "ebook") {
         supabase

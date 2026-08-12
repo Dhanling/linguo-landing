@@ -12,7 +12,7 @@ import {
   Infinity as InfinityIcon, CalendarClock, Clock, Download, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
-import { externalLinkFor, isStoragePath, accessVerb } from "@/lib/digitalAccess";
+import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
 // [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
 
@@ -330,6 +330,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
 
     // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
     const link = externalLinkFor(prod);
+    // [bug-fix:placeholder-link-guard-v1] Lebih baik jujur "belum siap" daripada
+    // membuka tab yang mendarat di beranda YouTube — itu terbaca sebagai produk
+    // rusak, dan siswanya tidak tahu harus menghubungi siapa.
+    if (link && isPlaceholderLink(link)) {
+      toast.error(`Materi "${prod.title}" belum dipasang linknya oleh admin. Hubungi CS Linguo ya.`);
+      return;
+    }
     if (link) {
       if (prod.type === "ebook") {
         // catat akses (best-effort, tak memblokir buka link)
