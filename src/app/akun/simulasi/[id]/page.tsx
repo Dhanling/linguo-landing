@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
@@ -182,6 +183,76 @@ function SmartText({ text, className }: { text: string; className?: string }) {
   return <RichText text={text} className={className} />;
 }
 
+// ── [sim-table-fill-v1] Isian LANGSUNG di tabel/form soal ────────────────────
+// Soal IELTS "Complete the table/notes/form" menyimpan tabelnya sebagai HTML di
+// `section.instructions`, dgn penanda blank `(1) ______` di selnya. Sebelumnya
+// tabel cuma dipajang dan siswa mengisi daftar soal terpisah di kolom kanan —
+// beda jauh dari tes aslinya. Sekarang tiap penanda ditukar jadi kotak isian yang
+// terikat ke soalnya, jadi siswa mengetik persis di dalam tabel.
+//
+// Pemetaan penanda → soal sengaja pakai URUTAN (penanda ke-n = soal isian ke-n),
+// bukan angka di dalam kurung: penomoran soal di player di-reset per part,
+// sementara video sumber menomori 31–40. Kalau jumlah penanda > jumlah soal
+// isian, fitur dimatikan (fallback ke daftar soal biasa) supaya data jelek tak
+// pernah bikin soal jadi tak bisa dijawab.
+const BLANK_MARK_RE = /\((\d{1,3})\)\s*(?:_{2,}|\.{3,}|…+|…+)/g;
+const TEXT_ANSWER_TYPES = new Set(["fill_blank", "short_answer"]);
+
+function buildTableBlanks(instructions: string | null | undefined, qs: Question[]): { html: string; qs: Question[] } | null {
+  const raw = (instructions ?? "").trim();
+  if (!raw || !isHtml(raw)) return null;
+  const marks = raw.match(BLANK_MARK_RE);
+  if (!marks || marks.length < 2) return null;
+  const fillQs = qs.filter((q) => TEXT_ANSWER_TYPES.has(q.type));
+  if (marks.length > fillQs.length) return null;
+  let i = 0;
+  const html = sanitizeCmsHtml(raw).replace(BLANK_MARK_RE, () => `<span data-sim-blank="${i++}"></span>`);
+  if (i !== marks.length) return null;
+  return { html, qs: fillQs.slice(0, marks.length) };
+}
+
+// Render HTML tabel lalu tanam <input> React ke tiap penanda lewat portal —
+// cara paling aman menyisipkan komponen ke tengah HTML tanpa memecah <table>.
+function TableFillHtml({ html, qs, answers, onChange, qNumber, className }: {
+  html: string;
+  qs: Question[];
+  answers: Record<string, AnswerState>;
+  onChange: (qid: string, patch: Partial<AnswerState>) => void;
+  qNumber: Record<string, number>;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [hosts, setHosts] = useState<HTMLElement[]>([]);
+  useEffect(() => {
+    setHosts(Array.from(ref.current?.querySelectorAll<HTMLElement>("[data-sim-blank]") ?? []));
+  }, [html]);
+  return (
+    <div className="relative">
+      <div ref={ref} className={`${className ?? ""} ${CMS_HTML_CLASS} overflow-x-auto`.trim()} dangerouslySetInnerHTML={{ __html: html }} />
+      {hosts.map((el, i) => {
+        const q = qs[i];
+        if (!q) return null;
+        return createPortal(
+          <span id={`q-${q.id}`} className="inline-flex scroll-mt-32 items-center gap-1 rounded align-middle">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-600 text-[10px] font-bold text-white">{qNumber[q.id]}</span>
+            <input
+              value={answers[q.id]?.text ?? ""}
+              onChange={(e) => onChange(q.id, { text: e.target.value })}
+              placeholder="jawaban…"
+              spellCheck={false}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              className="w-32 rounded-md border-b-2 border-teal-300 bg-teal-50/70 px-1.5 py-0.5 text-[13px] font-medium text-slate-900 outline-none placeholder:font-normal placeholder:text-slate-400 focus:border-teal-500 focus:bg-white"
+            />
+          </span>,
+          el,
+        );
+      })}
+    </div>
+  );
+}
+
 // Petunjuk default per bagian (template) — dipakai bila admin tidak menulis
 // instruksi sendiri. Tampil di layar "intro bagian" sebelum soal dikerjakan.
 const SECTION_INTRO: Record<string, { title: string; points: string[] }> = {
@@ -233,19 +304,130 @@ function youtubeEmbedId(url: string): string | null {
   return m ? m[1] : null;
 }
 
-// Admin bisa memotong intro/akhir video → tersimpan sbg &start= / &end= (detik).
-// Bentuk src embed yang menghormati trim supaya siswa langsung mulai setelah intro.
-function youtubeEmbedSrc(url: string): string | null {
-  const id = youtubeEmbedId(url);
-  if (!id) return null;
+// ── [sim-audio-only-v1] Listening YouTube diputar sebagai AUDIO saja ──────────
+// Soal listening yang diimpor dari video latihan tes memutar videonya — dan video
+// itu MENAMPILKAN tabel soal beserta kunci jawabannya. Siswa cukup mendengar,
+// jadi iframe-nya disembunyikan (1px, tak bisa diklik) dan dikendalikan lewat
+// YouTube IFrame API dengan kontrol yang bentuknya sama persis dgn <RangedAudio>.
+// (Jalan terbaik tetap admin meng-convert videonya jadi MP3 di CMS; ini jaring
+// pengaman untuk section lama yang audio_url-nya masih link YouTube.)
+let ytApiPromise: Promise<any> | null = null;
+function loadYouTubeApi(): Promise<any> {
+  const w = window as any;
+  if (w.YT?.Player) return Promise.resolve(w.YT);
+  if (!ytApiPromise) {
+    ytApiPromise = new Promise((resolve) => {
+      const prev = w.onYouTubeIframeAPIReady;
+      w.onYouTubeIframeAPIReady = () => { try { prev?.(); } catch { /* ignore */ } resolve(w.YT); };
+      const s = document.createElement("script");
+      s.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(s);
+    });
+  }
+  return ytApiPromise;
+}
+
+function YouTubeAudio({ url, className }: { url: string; className?: string }) {
+  const id = youtubeEmbedId(url) ?? "";
   const num = (re: RegExp) => { const m = (url || "").match(re); return m ? Math.max(0, parseInt(m[1], 10) || 0) : 0; };
   const start = num(/[?&](?:start|t)=(\d+)/);
   const end = num(/[?&]end=(\d+)/);
-  const p = new URLSearchParams();
-  if (start > 0) p.set("start", String(start));
-  if (end > 0) p.set("end", String(end));
-  const qs = p.toString();
-  return `https://www.youtube.com/embed/${id}${qs ? `?${qs}` : ""}`;
+
+  const hostRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+  const [ready, setReady] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [cur, setCur] = useState(start);
+  const [dur, setDur] = useState(0);
+
+  const rEnd = end > 0 ? end : dur;
+  const relCur = Math.max(0, cur - start);
+  const relDur = Math.max(0, (rEnd || dur) - start);
+
+  useEffect(() => {
+    let alive = true;
+    let iv: ReturnType<typeof setInterval> | null = null;
+    loadYouTubeApi().then((YT) => {
+      if (!alive || !hostRef.current) return;
+      hostRef.current.innerHTML = "<div></div>";
+      playerRef.current = new YT.Player(hostRef.current.firstChild, {
+        videoId: id,
+        playerVars: { autoplay: 0, controls: 0, disablekb: 1, rel: 0, modestbranding: 1, playsinline: 1, start: start || undefined },
+        events: {
+          onReady: () => {
+            if (!alive) return;
+            setReady(true);
+            try { setDur(playerRef.current.getDuration() || 0); } catch { /* ignore */ }
+            iv = setInterval(() => {
+              const p = playerRef.current;
+              if (!p) return;
+              try {
+                const t = p.getCurrentTime() || 0;
+                setCur(t);
+                if (!dur) setDur(p.getDuration() || 0);
+                if (end > 0 && t >= end) p.pauseVideo();
+              } catch { /* ignore */ }
+            }, 300);
+          },
+          onStateChange: (e: any) => {
+            const YTS = (window as any).YT?.PlayerState;
+            if (!YTS) return;
+            setPlaying(e.data === YTS.PLAYING);
+          },
+        },
+      });
+    });
+    return () => {
+      alive = false;
+      if (iv) clearInterval(iv);
+      try { playerRef.current?.destroy?.(); } catch { /* ignore */ }
+      playerRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, start, end]);
+
+  const seekTo = (abs: number) => {
+    const p = playerRef.current; if (!p) return;
+    const hi = rEnd > 0 ? rEnd : (dur || abs);
+    const t = Math.min(hi, Math.max(start, abs));
+    try { p.seekTo(t, true); } catch { /* ignore */ }
+    setCur(t);
+  };
+  const skip = (d: number) => seekTo(cur + d);
+  const toggle = () => {
+    const p = playerRef.current; if (!p) return;
+    try {
+      if (playing) p.pauseVideo();
+      else {
+        if (cur < start || (rEnd > 0 && cur >= rEnd)) seekTo(start);
+        p.playVideo();
+      }
+    } catch { /* ignore */ }
+  };
+
+  return (
+    <div className={`relative flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 py-2 ${className ?? ""}`}>
+      {/* Iframe wajib tetap ada di DOM & tidak display:none supaya audionya jalan. */}
+      <div ref={hostRef} aria-hidden className="pointer-events-none absolute bottom-0 left-0 h-px w-px overflow-hidden opacity-0" />
+      <button type="button" onClick={() => skip(-10)} title="Mundur 10 detik" className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100">
+        <RotateCcw className="h-4 w-4" /><span className="absolute text-[7px] font-bold">10</span>
+      </button>
+      <button type="button" onClick={toggle} disabled={!ready} title={playing ? "Jeda" : "Putar"} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white disabled:opacity-50" style={{ background: TEAL }}>
+        {!ready ? <Loader2 className="h-4 w-4 animate-spin" /> : playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-[1px]" />}
+      </button>
+      <button type="button" onClick={() => skip(10)} title="Maju 10 detik" className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100">
+        <RotateCw className="h-4 w-4" /><span className="absolute text-[7px] font-bold">10</span>
+      </button>
+      <span className="w-9 shrink-0 text-right text-[11px] font-medium tabular-nums text-slate-500">{clock(relCur)}</span>
+      <input
+        type="range" min={0} max={relDur || 0} step={1} value={Math.min(relCur, relDur || 0)}
+        onChange={(e) => seekTo(start + Number(e.target.value))}
+        className="h-1.5 flex-1 cursor-pointer accent-teal-600"
+        aria-label="Geser posisi audio"
+      />
+      <span className="w-9 shrink-0 text-[11px] font-medium tabular-nums text-slate-400">{clock(relDur)}</span>
+    </div>
+  );
 }
 
 // Audio mp3 bisa dipotong admin → tersimpan sbg media fragment `#t=start,end`.
@@ -1093,11 +1275,17 @@ export default function SimulasiRunnerPage() {
   const lockMin = Math.min(SECTION_LOCK_MINUTES, groupDurationMin(activeGroup));
   const lockLeft = preview ? 0 : Math.max(0, Math.ceil(((groupStartedAt[activeGroup.skill] ?? 0) + lockMin * 60_000 - Date.now()) / 1000));
 
+  // [sim-table-fill-v1] Soal "lengkapi tabel": isian ditanam di dalam tabelnya,
+  // jadi soal-soal itu TIDAK diulang lagi sebagai daftar di kolom kanan.
+  const tableFill = buildTableBlanks(section.instructions, secQs);
+  const inlineIds = new Set((tableFill?.qs ?? []).map((q) => q.id));
+  const listQs = tableFill ? secQs.filter((q) => !inlineIds.has(q.id)) : secQs;
+
   // Paginasi soal: maksimal PAGE_SIZE soal per halaman (kurangi scroll panjang).
-  const pageCount = Math.max(1, Math.ceil(secQs.length / PAGE_SIZE));
+  const pageCount = Math.max(1, Math.ceil(listQs.length / PAGE_SIZE));
   const safePage = Math.min(qPage, pageCount - 1);
   const pageStart = safePage * PAGE_SIZE;
-  const pageQs = secQs.slice(pageStart, pageStart + PAGE_SIZE);
+  const pageQs = listQs.slice(pageStart, pageStart + PAGE_SIZE);
   const isLastPage = safePage >= pageCount - 1;
   const isFirstPage = safePage === 0 && gPos <= 0;
   const scrollToTop = () => { try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch { /* ignore */ } };
@@ -1124,13 +1312,27 @@ export default function SimulasiRunnerPage() {
         <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
       </div>
       <h2 className="text-lg font-bold text-slate-900">{section.title}</h2>
-      {section.instructions && (
+      {/* Tabel isian (tableFill) sengaja tidak di sini — dirender SETELAH pemutar
+          audio, supaya urutannya: judul → petunjuk singkat → audio → tabel. */}
+      {section.instructions && !tableFill && (
         isHtml(section.instructions)
           ? <SmartText text={section.instructions} className="mt-1 rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600" />
           : <p className="mt-1 whitespace-pre-line rounded-lg bg-slate-50 px-3 py-2 text-sm text-slate-600">{section.instructions}</p>
       )}
     </>
   );
+
+  // Tabel/form soal dgn kotak isian menempel di selnya (lihat buildTableBlanks).
+  const tableBlock = tableFill ? (
+    <TableFillHtml
+      html={tableFill.html}
+      qs={tableFill.qs}
+      answers={answers}
+      onChange={setAns}
+      qNumber={qNumber}
+      className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700 lg:min-h-0 lg:flex-1 lg:overflow-y-auto"
+    />
+  ) : null;
 
   // Layar intro/petunjuk bagian — tampil sebelum soal tiap bagian (template default
   // per skill, atau instruksi kustom admin). Alur: intro → soal → intro → soal, dst.
@@ -1186,7 +1388,7 @@ export default function SimulasiRunnerPage() {
       answers={answers}
       currentSecIdx={secIdx}
       maxVisitedSecIdx={maxSecIdx}
-      currentQids={new Set(pageQs.map((q) => q.id))}
+      currentQids={new Set([...pageQs, ...(tableFill?.qs ?? [])].map((q) => q.id))}
       qNumber={qNumber}
       onJump={goToQuestion}
       lockLeft={lockLeft}
@@ -1214,6 +1416,26 @@ export default function SimulasiRunnerPage() {
     </button>
   );
 
+  // Navigasi bawah (kembar dengan yang di atas) — praktis setelah menjawab
+  // halaman ini tanpa harus menggulir balik ke atas.
+  const bottomNav = (
+    <div className="mt-6 flex items-center justify-between gap-3">
+      <button
+        type="button"
+        disabled={isFirstPage}
+        onClick={goPrevPage}
+        className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
+      >
+        <ArrowLeft className="h-4 w-4" />Sebelumnya
+      </button>
+      {isLastInGroup && isLastPage ? finishGroupBtn : (
+        <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
+          Lanjut <ArrowRight className="h-4 w-4" />
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <Shell sim={sim} preview={preview} wide confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
       <ViolationModal count={violations} msg={violationMsg} onResume={() => { setViolationMsg(null); enterFullscreen(); }} />
@@ -1227,7 +1449,10 @@ export default function SimulasiRunnerPage() {
           Maks PAGE_SIZE soal/halaman → tak perlu menggulir jauh untuk lanjut. */}
       <div className="mb-4 flex items-center justify-between gap-3">
         <span className="text-xs font-medium text-slate-500 tabular-nums">
-          {SKILL_LABEL[activeGroup.skill]} · Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, secQs.length)} dari {secQs.length}
+          {SKILL_LABEL[activeGroup.skill]} ·{" "}
+          {listQs.length === 0
+            ? `${secQs.length} soal — isi langsung di tabel`
+            : <>Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, listQs.length)} dari {listQs.length}</>}
           {pageCount > 1 && <span className="text-slate-400"> · Hal {safePage + 1}/{pageCount}</span>}
         </span>
         <div className="flex items-center gap-2">
@@ -1251,38 +1476,37 @@ export default function SimulasiRunnerPage() {
           soal discroll di kanan. Pembatas bisa digeser (drag) untuk mengatur
           lebar. Bagian tanpa materi tetap satu kolom. */}
       {(() => {
+        // Semua soal bagian ini sudah jadi isian di dalam tabel → tak ada kolom
+        // soal terpisah, kartu materi dipakai satu kolom penuh (tanpa batas tinggi).
+        const soloTable = !!tableFill && listQs.length === 0;
         const mediaCard = (
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 lg:flex lg:max-h-[calc(100vh-11rem)] lg:min-h-0 lg:flex-col">
+          <div className={soloTable
+            ? "rounded-2xl border border-slate-200 bg-white p-5 sm:p-6"
+            : "rounded-2xl border border-slate-200 bg-white p-5 lg:flex lg:max-h-[calc(100vh-11rem)] lg:min-h-0 lg:flex-col"}>
             {sectionHeader}
             {section.audio_url && (
-              youtubeEmbedId(section.audio_url) ? (
-                <div className="mt-3 aspect-video w-full shrink-0 overflow-hidden rounded-lg border border-slate-200">
-                  <iframe
-                    className="h-full w-full"
-                    src={youtubeEmbedSrc(section.audio_url)!}
-                    title="Audio listening"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
-                <div className="sticky top-[150px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
-                  <RangedAudio url={section.audio_url} className="w-full" />
-                </div>
-              )
+              // Mobile: player nempel di bawah header saat scroll soal; desktop udah sticky di pane kiri.
+              // Video YouTube pun diputar sebagai AUDIO saja — layarnya berisi soal & kunci.
+              <div className="sticky top-[150px] z-20 mt-3 shrink-0 rounded-xl bg-white/95 py-1 backdrop-blur lg:static lg:py-0">
+                {youtubeEmbedId(section.audio_url)
+                  ? <YouTubeAudio url={section.audio_url} className="w-full" />
+                  : <RangedAudio url={section.audio_url} className="w-full" />}
+              </div>
             )}
+            {tableBlock}
             {section.passage && (
               isHtml(section.passage)
                 ? <SmartText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 [&_p]:text-justify [&_p]:hyphens-auto lg:max-h-none lg:min-h-0 lg:flex-1" />
                 : <PassageText text={section.passage} className="mt-3 max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700 lg:max-h-none lg:min-h-0 lg:flex-1" />
             )}
+            {soloTable && bottomNav}
           </div>
         );
 
         const questionsCard = (
           <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
             {!hasMedia && sectionHeader}
+            {!hasMedia && tableBlock}
 
             <div className="mt-5 space-y-5 first:mt-0">
               {pageQs.map((q) => (
@@ -1291,26 +1515,11 @@ export default function SimulasiRunnerPage() {
               {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
             </div>
 
-            {/* Navigasi bawah (kembar dengan yang di atas) — praktis setelah menjawab
-                halaman ini tanpa harus menggulir balik ke atas. */}
-            <div className="mt-6 flex items-center justify-between gap-3">
-              <button
-                type="button"
-                disabled={isFirstPage}
-                onClick={goPrevPage}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
-              >
-                <ArrowLeft className="h-4 w-4" />Sebelumnya
-              </button>
-              {isLastInGroup && isLastPage ? finishGroupBtn : (
-                <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-                  Lanjut <ArrowRight className="h-4 w-4" />
-                </button>
-              )}
-            </div>
+            {bottomNav}
           </div>
         );
 
+        if (soloTable) return hasMedia ? mediaCard : questionsCard;
         return hasMedia ? <SplitPane left={mediaCard} right={questionsCard} /> : questionsCard;
       })()}
       </div>
