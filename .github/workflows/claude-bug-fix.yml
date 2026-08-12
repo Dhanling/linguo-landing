@@ -88,7 +88,7 @@ jobs:
             cara mengetesnya secara manual. Sertakan `Closes #${{ github.event.issue.number }}`.
             Jangan mengklaim sudah dites kalau kamu tidak menjalankan tesnya.
           claude_args: |
-            --model claude-opus-5
+            --model claude-haiku-4-5-20251001
             --max-turns 40
 
   # ── Jalur susulan: balas "@claude ..." di komentar issue/PR yang sama
@@ -118,5 +118,5 @@ jobs:
           branch_prefix: ai-fix/
           trigger_phrase: "@claude"
           claude_args: |
-            --model claude-opus-5
+            --model claude-haiku-4-5-20251001
             --max-turns 25
