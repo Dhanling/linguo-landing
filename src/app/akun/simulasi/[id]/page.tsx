@@ -595,7 +595,14 @@ export default function SimulasiRunnerPage() {
   // Ambil paket soal + siapkan state jawaban, lalu tampilkan layar intro.
   async function loadExam(studentInfo: StudentInfo) {
     setInfo(studentInfo);
-    const { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
+    let { simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview);
+    // [sim-fetch-retry-v1] Kosong bisa berarti token sesi belum siap (barusan
+    // login / tab lama dibangunkan), bukan tak punya akses. Satu percobaan ulang
+    // setelah jeda singkat menyelamatkan siswa berbayar dari layar "Beli Paket".
+    if (!simulation && !preview) {
+      await new Promise((r) => setTimeout(r, 1500));
+      ({ simulation, sections: secs, questions: qs } = await fetchSimulation(id, preview));
+    }
     if (!simulation) { setPhase("notfound"); return; }
     // Section tanpa soal (mis. divider "Reading Comprehension" hasil impor yang
     // cuma berisi petunjuk) tak ada yang bisa dikerjakan → sembunyikan dari siswa
@@ -1105,8 +1112,14 @@ export default function SimulasiRunnerPage() {
       <div className="text-center">
         <AlertCircle className="mx-auto h-8 w-8 text-slate-400" />
         <p className="mt-2 text-sm text-slate-600">Simulasi tidak tersedia. Mungkin belum dipublikasikan, atau kamu belum punya akses paketnya.</p>
+        {/* [sim-fetch-retry-v1] Sudah bayar tapi mendarat di sini? Paling sering
+            cuma sesi yang belum siap — muat ulang biasanya menyelesaikan. */}
+        <p className="mt-1 text-xs text-slate-400">Sudah beli paketnya? Coba muat ulang halaman ini, dan pastikan login memakai email yang sama dengan saat pembelian.</p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
+          <button onClick={() => window.location.reload()} className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
+            Muat Ulang
+          </button>
+          <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700">
             Beli Paket <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">

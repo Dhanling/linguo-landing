@@ -6,9 +6,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Sparkles, Check, Loader2, Tag } from "lucide-react";
+import { ArrowLeft, Sparkles, Check, Loader2, Tag, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
 import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, getFreePromo } from "@/lib/simulasiPakets";
+import { fetchMyEntitlements, type TestType } from "@/lib/simulations";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -24,6 +25,9 @@ export default function SimulasiPaketPage() {
   const [error, setError] = useState("");
 
   const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
+  // Paket yang SUDAH dimiliki user login — tombolnya diganti "Kerjakan di Dashboard".
+  // Tanpa ini siswa yang habis bayar balik ke halaman ini dan mengira harus beli lagi.
+  const [owned, setOwned] = useState<TestType[]>([]);
 
   // Prefill dari user yang sudah login → kurangi salah email (entitlement match by email).
   useEffect(() => {
@@ -32,6 +36,7 @@ export default function SimulasiPaketPage() {
       if (user?.email) setEmail(user.email);
       const fn = (user?.user_metadata?.full_name as string) || "";
       if (fn) setName(fn);
+      try { setOwned(await fetchMyEntitlements()); } catch { /* gagal cek ≠ belum punya — biarkan tombol Beli */ }
     })();
   }, []);
 
@@ -155,6 +160,12 @@ export default function SimulasiPaketPage() {
                   className="mt-4 w-full cursor-not-allowed rounded-2xl bg-slate-200 py-3.5 text-sm font-bold text-slate-500">
                   Segera Hadir
                 </button>
+              ) : owned.includes(p.testType as TestType) ? (
+                <Link href="/akun?menu=simulasi"
+                  className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white transition active:scale-95"
+                  style={{ background: "#059669" }}>
+                  <CheckCircle2 className="h-4 w-4" /> Sudah Dimiliki — Kerjakan
+                </Link>
               ) : (
                 <button
                   onClick={() => openCheckout(p)}

@@ -4,6 +4,7 @@
 // Sebelumnya cuma ada di route terpisah /akun/simulasi yang nutup sidebar.
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase-client";
 import {
   fetchPublishedSimulations, fetchMyEntitlements, getStudentInfo, fetchSimulationCovers,
   TEST_TYPE_LABEL, testTypeLabel, type Simulation, type TestType,
@@ -88,6 +89,9 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
   const [beliType, setBeliType] = useState<TestType | null>(null);
   // Progres berjalan yang tersimpan lokal (per simulasi): utk progress bar "Lanjut".
   const [uid, setUid] = useState<string | null>(null);
+  // Email akun yang sedang login — ditampilkan di kartu terkunci supaya siswa
+  // (dan admin yang membantu) langsung sadar bila login-nya beda dari email checkout.
+  const [email, setEmail] = useState<string | null>(null);
   const [progressMap, setProgressMap] = useState<Record<string, { answered: number; total: number }>>({});
 
   const refresh = async () => {
@@ -116,18 +120,28 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
     // [perf:simulasi-parallel-v1] dulu getStudentInfo() ditunggu SENDIRIAN dulu
     // (auth + query profiles) baru sisanya jalan → satu round-trip ekstra yang
     // menahan seluruh katalog. Sekarang keempatnya berangkat bareng.
-    const [info, data, ents, cov] = await Promise.all([
-      getStudentInfo(),
-      fetchPublishedSimulations(),
-      fetchMyEntitlements(),
-      fetchSimulationCovers(),
-    ]);
-    simCache = { sims: data, owned: ents, authed: !!info, covers: cov };
-    setAuthed(!!info);
-    setUid(info?.user_id ?? null);
-    setSims(data);
-    setOwned(ents);
-    setCovers(cov);
+    // [sim-fetch-retry-v1] Fetcher kini MELEMPAR bila query tetap gagal setelah
+    // retry. Kegagalan JANGAN ditulis ke simCache — dulu hasil kosong palsu
+    // (token sedang dirotasi) tersimpan di cache modul, lalu tiap buka tab siswa
+    // berbayar terus disuguhi kartu terkunci "Beli Paket".
+    try {
+      const [info, data, ents, cov] = await Promise.all([
+        getStudentInfo(),
+        fetchPublishedSimulations(),
+        fetchMyEntitlements(),
+        fetchSimulationCovers(),
+      ]);
+      simCache = { sims: data, owned: ents, authed: !!info, covers: cov };
+      setAuthed(!!info);
+      setUid(info?.user_id ?? null);
+      setEmail(info?.email ?? null);
+      setSims(data);
+      setOwned(ents);
+      setCovers(cov);
+    } catch {
+      // Pertahankan tampilan/cache yang ada; listener onAuthStateChange di bawah
+      // akan me-refresh lagi begitu sesi/token pulih.
+    }
     setLoading(false);
   };
 
@@ -169,6 +183,18 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
     return () => { alive = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // [sim-fetch-retry-v1] Muat ulang begitu sesi siap/pulih. Refresh pertama bisa
+  // berangkat saat token masih dirotasi (balik dari OAuth, tab lama dibuka lagi)
+  // → hasilnya kosong. Tanpa ini katalog diam di kartu terkunci sampai reload manual.
+  useEffect(() => {
+    if (preview) return;
+    const { data: sub } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") void refresh();
+    });
+    return () => sub.subscription.unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preview]);
 
   // Jenis tes yang belum dimiliki → tampilkan kartu teaser terkunci.
   const lockedTypes = ALL_TYPES.filter((t) => !owned.includes(t));
@@ -255,6 +281,14 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                     >
                       <Sparkles className="h-4 w-4" /> Beli Paket
                     </button>
+                    {/* Akses dicocokkan by email — kalau siswa checkout pakai email lain,
+                        baris ini yang bikin dia (dan admin) langsung tahu penyebabnya. */}
+                    {email && (
+                      <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">
+                        Sudah beli? Akses terhubung ke email pembelian — kamu login sebagai{" "}
+                        <span className="font-semibold text-slate-500">{email}</span>.
+                      </p>
+                    )}
                   </>
                 )}
               </div>

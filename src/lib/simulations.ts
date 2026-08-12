@@ -156,14 +156,39 @@ export const GENERAL_RULES: { text: string; timed?: boolean }[] = [
   { text: "Jawaban otomatis dikumpulkan ketika waktu habis, jadi pantau terus sisa waktu di pojok atas.", timed: true },
 ];
 
+// [sim-fetch-retry-v1] Ulangi query yang GAGAL (bukan yang kosong). Kenapa:
+// saat halaman dibuka setelah lama ditinggal, access token di klien bisa sedang
+// kedaluwarsa/di-tengah-rotasi → PostgREST menolak request pertama. Dulu error
+// itu ditelan dan dibaca sebagai "tidak punya apa-apa", jadi siswa yang SUDAH
+// BAYAR melihat kartu terkunci "Beli Paket" lagi. Kosong beneran (non-pembeli)
+// tetap balik cepat tanpa retry — yang diulang hanya bila `error` terisi.
+async function retryQuery<T>(
+  run: () => PromiseLike<{ data: T | null; error: unknown }>,
+  tries = 3,
+  delayMs = 1200,
+): Promise<T | null> {
+  let lastError: unknown = null;
+  for (let i = 0; i < tries; i++) {
+    if (i > 0) await new Promise((r) => setTimeout(r, delayMs));
+    const { data, error } = await run();
+    if (!error) return data;
+    lastError = error;
+  }
+  throw lastError;
+}
+
 // ── Fetch katalog simulasi published (+ jumlah section & soal) ────────────────
+// Melempar error bila query tetap gagal setelah retry — pemanggil (katalog) yang
+// memutuskan mempertahankan cache lama, JANGAN menimpa dengan daftar kosong.
 export async function fetchPublishedSimulations(): Promise<Simulation[]> {
-  const { data, error } = await supabase
-    .from("test_simulations")
-    .select("*")
-    .eq("is_published", true)
-    .order("created_at", { ascending: false });
-  if (error || !data) return [];
+  const data = await retryQuery<Simulation[]>(() =>
+    supabase
+      .from("test_simulations")
+      .select("*")
+      .eq("is_published", true)
+      .order("created_at", { ascending: false }),
+  );
+  if (!data) return [];
 
   const [{ data: secs }, { data: qs }] = await Promise.all([
     supabase.from("test_simulation_sections").select("id, simulation_id"),
@@ -219,8 +244,16 @@ export async function fetchSimulation(id: string, preview = false): Promise<{
     };
   }
 
-  const { data: sim } = await supabase
-    .from("test_simulations").select("*").eq("id", id).eq("is_published", true).maybeSingle();
+  // [sim-fetch-retry-v1] Gagal query ≠ tidak punya akses — tanpa retry, siswa
+  // berbayar yang kena error sesaat langsung dilempar ke layar "Beli Paket".
+  let sim: Simulation | null = null;
+  try {
+    sim = await retryQuery<Simulation>(() =>
+      supabase.from("test_simulations").select("*").eq("id", id).eq("is_published", true).maybeSingle(),
+    );
+  } catch {
+    sim = null;
+  }
   if (!sim) return { simulation: null, sections: [], questions: [] };
 
   const { data: secs } = await supabase
@@ -331,15 +364,19 @@ export async function getStudentInfo(): Promise<StudentInfo | null> {
 // ── Entitlement (simulasi-paywall-v1) ────────────────────────────────────────
 // Jenis tes yang sudah dibeli user saat ini. RLS "Self read entitlement" sudah
 // memfilter ke baris milik user (by uid/email), jadi tak perlu filter manual.
+// [sim-fetch-retry-v1] Query gagal → retry lalu LEMPAR, jangan pura-pura kosong:
+// kosong palsu = siswa yang sudah bayar disuruh beli lagi.
 export async function fetchMyEntitlements(): Promise<TestType[]> {
   // [perf:auth-getsession-v1] cukup sesi lokal — barisnya tetap disaring RLS.
   const { data: { session } } = await supabase.auth.getSession();
   if (!session?.user) return [];
-  const { data } = await supabase
-    .from("simulation_entitlements")
-    .select("test_type")
-    .eq("status", "active");
-  return Array.from(new Set((data || []).map((r: any) => r.test_type))) as TestType[];
+  const data = await retryQuery<{ test_type: string }[]>(() =>
+    supabase
+      .from("simulation_entitlements")
+      .select("test_type")
+      .eq("status", "active"),
+  );
+  return Array.from(new Set((data || []).map((r) => r.test_type))) as TestType[];
 }
 
 // ── promo-code-v1: cap attempt utk entitlement gratis (mis. LINGUOHEMAT) ──────
