@@ -4,6 +4,7 @@ import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
 import { employmentTypeLabel } from "@/lib/employmentType";
 
 export const metadata = {
+  alternates: { canonical: "https://linguo.id/karir" },
   title: "Karir di Linguo.id — Bergabunglah dengan Tim Kami",
   description:
     "Temukan kesempatan karir di Linguo.id, online language school terdepan di Indonesia dengan 60+ bahasa.",

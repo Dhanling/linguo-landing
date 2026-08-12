@@ -13,6 +13,7 @@ import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, getSemiPrivatePr
 import TokoCTA from "@/components/TokoCTA";
 import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import { useOverlayLock } from "@/lib/overlayStore";
+import { TESTIMONIALS } from "@/data/testimonials";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
@@ -936,20 +937,8 @@ function WhyCarousel() {
   );
 }
 
-const TESTIMONIALS = [
-  {name:"Suci Damaeyanti",lang:"Inggris",photo:"/images/testimoni/suci-damaeyanti.jpg",color:"from-pink-300 to-rose-400",initials:"SD",
-    text:"Belajar di Linguo sangat membantu meningkatkan kemampuan bahasa Inggris saya, terutama dalam speaking dan grammar yang awalnya benar-benar tidak saya ketahui. Sekarang, saya sudah mulai paham perlahan. Pengajarnya sabar, materinya mudah dipahami, suasana belajarnya oke, dan waktu les fleksibel."},
-  {name:"Arivania Shafa N",lang:"Turki",photo:"/images/testimoni/arivania-shafa-n.jpg",color:"from-blue-300 to-indigo-400",initials:"AS",
-    text:"Saya baru pertama kali ikut Kelas Bahasa Turki, awalnya kirain bakal boring dan susah, tapi ternyata gampang banget setelah diajarin tutor Linguo dan seru juga kelasnya, bisa bikin good mood."},
-  {name:"Astrid Setyowati",lang:"Korea",photo:"/images/testimoni/astrid-setyowati.jpg",color:"from-purple-300 to-violet-400",initials:"AS",
-    text:"Belajar di Linguo sangat membantu saya dalam belajar bahasa Korea. Cara mengajarnya mudah dipahami. Meskipun kelasnya online lewat Zoom, tapi kelasnya tetap terasa menyenangkan."},
-  {name:"Tasya Jehan",lang:"Jepang",photo:"/images/testimoni/tasya-jehan.jpg",color:"from-amber-300 to-orange-400",initials:"TJ",
-    text:"Kursus bahasa di Linguo ID sangat menyenangkan. Gurunya mengajar dengan baik serta menjelaskan materi secara lengkap dan detail. Saya mengambil kelas bahasa Jepang dan saat ini sudah melanjutkan hingga tahap ke-3."},
-  {name:"Cicie Prilianti",lang:"Rusia",photo:"/images/testimoni/cicie-prilianti.jpg",color:"from-emerald-300 to-teal-400",initials:"CP",
-    text:"Jadi, aku mengikuti dua kelas di Linguo: kelas Bahasa Jepang dan kelas Bahasa Rusia. Pengajarnya sangat semangat dan asyik saat mengajar."},
-  {name:"Grace Cynthia",lang:"Prancis",photo:"/images/testimoni/grace-cynthia.jpg",color:"from-cyan-300 to-sky-400",initials:"GC",
-    text:"ini pertama kalinya saya ikut kelas di Linguo ID. Saya ambil kelas Bahasa Prancis. Keren banget ternyata kelasnya karena bisa langsung praktik jadi proses belajarnya terasa nggak terlalu rumit."},
-];
+// [seo-review-schema-v1] TESTIMONIALS pindah ke src/data/testimonials.ts —
+// dipakai bersama halaman /kelas/bahasa-* buat Review + AggregateRating schema.
 
 function TestimonialCarousel() {
   const [active, setActive] = useState(0);
@@ -994,7 +983,7 @@ function TestimonialCarousel() {
                         // Foto asli — full cover, tanpa overlay apapun
                         <Image
                           src={t.photo}
-                          alt={`Testimoni ${t.name} - Siswa Kelas ${t.lang} Linguo`}
+                          alt={`Testimoni ${t.name} - Siswa Kelas ${t.langLabel} Linguo`}
                           fill
                           loading="lazy"
                           sizes="(min-width: 400px) 200px, 90px"
@@ -1010,8 +999,8 @@ function TestimonialCarousel() {
                         <div className="min-w-0">
                           <p className="font-bold text-xs sm:text-sm truncate">{t.name}</p>
                           <div className="flex items-center gap-1.5 mt-0.5">
-                            <img src={`https://flagcdn.com/w40/${getFlagCode(t.lang)}.png`} alt={`Bendera ${t.lang}`} loading="lazy" decoding="async" className="h-3.5 w-3.5 rounded-full object-cover"/>
-                            <p className="text-xs text-[#1A9E9E]">{t.lang}</p>
+                            <img src={`https://flagcdn.com/w40/${getFlagCode(t.langLabel)}.png`} alt={`Bendera ${t.langLabel}`} loading="lazy" decoding="async" className="h-3.5 w-3.5 rounded-full object-cover"/>
+                            <p className="text-xs text-[#1A9E9E]">{t.langLabel}</p>
                           </div>
                         </div>
                         <div className="flex gap-0.5 shrink-0">{[1,2,3,4,5].map(s=><Star key={s} className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-amber-400 text-amber-400"/>)}</div>

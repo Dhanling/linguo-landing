@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props) {
     description:
       job.description?.slice(0, 160) ||
       `Lowongan ${job.title} di Linguo.id. Lamar sekarang.`,
+    alternates: { canonical: `https://linguo.id/karir/${slug}` },
   };
 }
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "https://linguo.id/syarat-ketentuan" },
   title: "Syarat & Ketentuan | Linguo",
   description:
     "Syarat dan ketentuan layanan kursus bahasa dan produk digital Linguo.",

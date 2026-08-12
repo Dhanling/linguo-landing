@@ -14,7 +14,6 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { ArrowRight, Check } from "lucide-react";
 
 import { RectFlag, FLAG_CODE_BY_SLUG } from "@/components/RectFlag";
@@ -99,9 +98,12 @@ export default function KelasIndexPage() {
 
   return (
     <>
-      <Script id="kelas-itemlist-schema" type="application/ld+json"
+      {/* [seo-review-schema-v1] <script> biasa, bukan <Script> next/script —
+          next/script baru menyuntikkan tag-nya sesudah hidrasi, jadi schema
+          ini tidak pernah muncul di HTML mentah yang dibaca crawler. */}
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
-      <Script id="kelas-breadcrumb-schema" type="application/ld+json"
+      <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* HERO */}

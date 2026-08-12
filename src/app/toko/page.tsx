@@ -6,6 +6,7 @@ import TokoClient from './TokoClient';
 export const revalidate = 3600;
 
 export const metadata = {
+  alternates: { canonical: "https://linguo.id/toko" },
   title: 'Toko Digital — Linguo.id',
   description:
     'E-Book & E-Learning untuk belajar bahasa di waktu luangmu. Akses kapan saja, dari mana saja.',

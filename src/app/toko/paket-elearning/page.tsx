@@ -9,6 +9,7 @@ import PaketElearningClient from './PaketElearningClient';
 export const revalidate = 3600;
 
 export const metadata = {
+  alternates: { canonical: "https://linguo.id/toko/paket-elearning" },
   title: 'Paket E-Learning Linguo — Akses 10+ Bahasa Mulai Rp 29.000',
   description:
     'Belajar bahasa di waktu luangmu dengan video materi, komunitas belajar, dan e-sertifikat. Pilih durasi 1, 6, atau 12 bulan.',

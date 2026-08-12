@@ -2,6 +2,7 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Clock, ArrowLeft, MessageCircle, Share2, Send, Copy, Check, ChevronUp, Volume2, Target, GraduationCap, Globe, Star, Rocket, CalendarDays, BookOpen, Hand } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // ========== SCROLL TO TOP ==========
 function ScrollToTop() {
@@ -85,9 +86,16 @@ function CategoryBadge({ category }: { category?: string }) {
 function RelatedCard({ post }: { post: BlogPost }) {
   return (
     <Link href={"/blog/" + post.slug} className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl hover:border-[#1A9E9E]/20 transition-all duration-300">
-      <div className="aspect-[16/10] overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
         {post.cover_image ? (
-          <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <Image
+            src={post.cover_image}
+            alt={post.title}
+            fill
+            loading="lazy"
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-[#1A9E9E]/10 via-[#2ABFBF]/10 to-[#1A9E9E]/20 flex items-center justify-center">
             <span className="text-[#1A9E9E]/20 text-5xl font-black">{post.title?.[0] || "L"}</span>
@@ -1119,7 +1127,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       <nav className="bg-white border-b border-slate-100 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
-            <img src="/images/logo-color.png" alt="Linguo" className="h-8 sm:h-10 object-contain" onError={(e) => { (e.target as HTMLImageElement).src = "/images/logo-white.png"; (e.target as HTMLImageElement).className = "h-8 sm:h-10 object-contain brightness-0"; }} />
+            <img src="/images/logo-color.png" alt="Linguo" width={644} height={228} className="h-8 sm:h-10 object-contain" onError={(e) => { (e.target as HTMLImageElement).src = "/images/logo-white.png"; (e.target as HTMLImageElement).className = "h-8 sm:h-10 object-contain brightness-0"; }} />
           </a>
           <div className="flex items-center gap-6">
             <a href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors hidden sm:block font-medium">Home</a>
@@ -1135,7 +1143,17 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       <div className={`relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-gradient-to-br ${grad} overflow-hidden`}>
         {post.cover_image ? (
           <>
-            <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
+            {/* [seo-cwv-image-v1] Ini elemen LCP halaman artikel. Dulu <img>
+                mentah: file asli seukuran unggahan admin dikirim apa adanya ke
+                HP. `priority` menggantikan loading="eager" + fetchPriority. */}
+            <Image
+              src={post.cover_image}
+              alt={post.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
           </>
@@ -1170,7 +1188,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
             <div className="flex items-center gap-2.5">
-              <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-10 h-10 rounded-full object-cover shadow-sm" />
+              <Image src="/ling-ling-avatar.png" alt="Linguo Team" width={40} height={40} className="w-10 h-10 rounded-full object-cover shadow-sm" />
               <div>
                 <div className="author-block-name font-semibold text-slate-900 text-sm">Linguo Team</div>
                 <div className="text-xs text-slate-400">{formatDate(post.published_at)}</div>
@@ -1351,7 +1369,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
               </div>
             </div>
             <div className="flex flex-col items-start lg:items-end">
-              <a href="/"><img src="/images/logo-white.png" alt="Linguo" className="h-12 mb-4" /></a>
+              <a href="/"><Image src="/images/logo-white.png" alt="Linguo" width={136} height={48} className="h-12 w-auto mb-4" /></a>
               <p className="text-sm text-white/60 mb-4">&copy; {new Date().getFullYear()} PT. Linguo Edu Indonesia</p>
               <div className="flex gap-3">
                 {[{href:"https://facebook.com/linguo.id",l:"fb"},{href:"https://instagram.com/linguo.id",l:"ig"},{href:"https://threads.net/@linguo.id",l:"th"},{href:"https://linkedin.com/company/linguo-id",l:"in"},{href:"https://youtube.com/@linguoid",l:"yt"}].map(s => (

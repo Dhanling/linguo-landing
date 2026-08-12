@@ -43,7 +43,10 @@ const STATIC_ROUTES: Array<{
   // Konten & alat gratis — mesin akuisisi organik
   { path: "/blog", priority: 0.9, changeFrequency: "daily" },
   { path: "/silabus", priority: 0.8, changeFrequency: "weekly" },
-  { path: "/kosakata", priority: 0.75, changeFrequency: "weekly" },
+  // [seo-metadata-halaman-v1] /kosakata DIKELUARKAN. Isinya flashcard kata
+  // tersimpan milik siswa (dibaca dari localStorage, tombol tutupnya jatuh ke
+  // /akun) — bukan konten yang bisa dirayapi, dan buat crawler selalu tampak
+  // kosong. Sekarang noindex + disallow di robots.ts.
   { path: "/watch-learn", priority: 0.75, changeFrequency: "weekly" },
   { path: "/watch", priority: 0.6, changeFrequency: "weekly" },
 

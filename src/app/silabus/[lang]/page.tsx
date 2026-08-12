@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Silabus ${title} — A1 sampai B2 | Linguo.id`,
     description: `Kurikulum lengkap ${title} di Linguo.id: 192 sesi, 4 level CEFR. ${c.overview}`,
+    alternates: { canonical: `https://linguo.id/silabus/${lang}` },
     openGraph: {
       title: `Silabus ${title} — Linguo.id`,
       description: c.overview,

@@ -3,6 +3,7 @@ import SilabusHub from "./SilabusHub";
 import { languages } from "@/data/curriculum";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://linguo.id/silabus" },
   title: "Silabus Kursus Bahasa | Linguo.id",
   description: "Pelajari kurikulum lengkap untuk 60+ bahasa di Linguo.id. 192 sesi per bahasa, dari A1 sampai B2. CEFR-aligned, IELTS/TOEFL ready.",
   openGraph: {

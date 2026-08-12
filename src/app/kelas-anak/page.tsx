@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const WA = "https://wa.me/6282116859493";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -101,7 +102,7 @@ export default function KelasAnakPage() {
       <nav className="bg-[#1A9E9E] sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-8 sm:h-12 object-contain" />
+            <Image src="/images/logo-white.png" alt="Linguo" width={136} height={48} priority className="h-8 sm:h-12 w-auto object-contain" />
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/" className="text-white/80 hover:text-white text-sm font-medium hidden sm:block">← Beranda</Link>
@@ -360,7 +361,7 @@ export default function KelasAnakPage() {
       {/* Footer mini */}
       <footer className="py-8 bg-slate-900 text-center">
         <Link href="/">
-          <img src="/images/logo-white.png" alt="Linguo" className="h-8 mx-auto mb-3 opacity-60" />
+          <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} className="h-8 w-auto mx-auto mb-3 opacity-60" />
         </Link>
         <p className="text-slate-500 text-xs">© {new Date().getFullYear()} Linguo.id — All rights reserved.</p>
       </footer>

@@ -16,6 +16,18 @@ const nextConfig: NextConfig = {
     // optimized variants aggressively.
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
+    // [seo-cwv-image-v1] Cover artikel blog di-upload admin ke Supabase Storage
+    // dan sebelumnya dirender lewat <img> mentah — ukuran aslinya apa adanya,
+    // tanpa resize per breakpoint. Padahal cover itu elemen LCP di 322 halaman
+    // /blog/*, yaitu mayoritas isi sitemap. Diizinkan di sini supaya
+    // next/image boleh mengoptimasinya.
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'jbtgciepdmqxxcjflrxz.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
   },
   async redirects() {
     return [

@@ -10,6 +10,7 @@ import Link from "next/link";
 import TrialWizard from "@/components/TrialWizard";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://linguo.id/kelas-trial" },
   title: "Coba Kelas Trial — Linguo.id",
   description:
     "Daftar Trial Class Linguo: satu sesi Kelas Private atau Kids sebelum lanjut ke paket penuh. Pilih bahasa, durasi, dan jadwal kamu.",

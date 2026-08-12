@@ -27,6 +27,7 @@ export default function robots(): MetadataRoute.Robots {
           "/payment/",      // halaman hasil pembayaran
           "/onboarding/",   // ber-token, unik per orang
           "/pendataan/",    // form pendataan siswa, ber-token per registrasi
+          "/kosakata",      // flashcard kata tersimpan siswa (localStorage, butuh akun)
           "/kuis/",         // lembar kerja ber-token, satu siswa satu link
           "/kelas/konfirmasi/", // konfirmasi jadwal, ber-token per sesi
           "/laporan-b2b/",  // laporan klien, tidak untuk publik

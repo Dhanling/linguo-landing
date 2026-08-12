@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const WA = "https://wa.me/6282116859493";
 const waMsg = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
@@ -95,7 +96,7 @@ export default function CorporatePage() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-slate-800 hover:text-teal-600 transition-colors">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
+            <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} priority className="h-8 w-auto brightness-0" />
           </Link>
           <a href={waMsg("Halo, saya tertarik Corporate Linguo")} target="_blank"
             className="bg-[#1A9E9E] hover:bg-[#178888] text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all active:scale-95">
@@ -411,7 +412,7 @@ export default function CorporatePage() {
       <footer className="bg-[#14726E] text-white py-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <Link href="/" className="inline-block mb-4">
-            <img src="/images/logo-white.png" alt="Linguo" className="h-10 mx-auto" />
+            <Image src="/images/logo-white.png" alt="Linguo" width={113} height={40} className="h-10 w-auto mx-auto" />
           </Link>
           <p className="text-white/60 text-sm mb-2">PT. Linguo Edu Indonesia</p>
           <p className="text-white/40 text-xs">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p>

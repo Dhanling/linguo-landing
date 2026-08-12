@@ -1,7 +1,6 @@
 // src/app/kelas/[lang]/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 
 import {
@@ -10,6 +9,11 @@ import {
   getLanguageMetaForDetail,
   type LanguageDetail,
 } from "../../../data/languages-detail";
+import {
+  aggregateRatingFor,
+  testimonialsForLang,
+  type Testimonial,
+} from "../../../data/testimonials";
 
 // ============================================================================
 // PARAM PARSING
@@ -114,19 +118,26 @@ export default async function BahasaLandingPage({ params }: PageProps) {
   const meta = getLanguageMetaForDetail(detail);
   if (!meta) notFound();
 
-  const courseSchema = buildCourseSchema(detail, meta.name);
+  // [seo-review-schema-v1] Hanya testimoni bahasa INI, dan hanya kalau ada.
+  // Yang dirender di halaman = persis yang di-markup di Course schema.
+  const testimonials = testimonialsForLang(detail.urlSlug);
+  const courseSchema = buildCourseSchema(detail, meta.name, testimonials);
   const faqSchema = buildFAQSchema(detail);
 
   return (
     <>
-      <Script
-        id={`course-schema-${detail.urlSlug}`}
+      {/* [seo-review-schema-v1] Dulu <Script> dari next/script. Dengan strategy
+          bawaan (afterInteractive) tag-nya baru disuntikkan SESUDAH hidrasi,
+          jadi Course & FAQ schema tidak pernah ada di HTML mentah — yang
+          terkirim ke crawler cuma payload RSC ber-escape. Diganti <script>
+          biasa, sama seperti Organization/WebSite di src/app/layout.tsx yang
+          memang muncul di HTML. */}
+      <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
-      <Script
-        id={`faq-schema-${detail.urlSlug}`}
+      <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -140,6 +151,7 @@ export default async function BahasaLandingPage({ params }: PageProps) {
         <Curriculum detail={detail} langName={meta.name} />
         <Pricing detail={detail} langName={meta.name} />
         <Teachers langName={meta.name} />
+        <Testimonials items={testimonials} langName={meta.name} />
         <FAQSection detail={detail} langName={meta.name} />
         <FinalCTA langName={meta.name} />
       </main>
@@ -474,6 +486,64 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
   );
 }
 
+// [seo-review-schema-v1] Bagian ini WAJIB ada supaya markup Review di Course
+// schema sah: Google mensyaratkan review yang di-markup benar-benar terlihat
+// pengunjung di halaman yang sama. Kalau bahasa ini belum punya testimoni,
+// bagiannya tidak dirender — dan schema-nya juga tidak memuat rating.
+function Testimonials({ items, langName }: { items: Testimonial[]; langName: string }) {
+  if (items.length === 0) return null;
+
+  return (
+    <section className="border-y border-slate-100 bg-slate-50/60">
+      <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-[#1A9E9E]">
+          Kata Siswa
+        </p>
+        <h2 className="mb-10 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-4xl">
+          Cerita siswa Kelas Bahasa {langName} di Linguo.
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {items.map((t) => (
+            <figure
+              key={t.name}
+              className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6"
+            >
+              <div className="mb-3 flex gap-0.5" aria-label={`Rating ${t.rating} dari 5`}>
+                {Array.from({ length: 5 }, (_, i) => (
+                  <span
+                    key={i}
+                    aria-hidden
+                    className={i < t.rating ? "text-amber-400" : "text-slate-200"}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+              <blockquote className="flex-1 leading-relaxed text-slate-600">
+                &ldquo;{t.text}&rdquo;
+              </blockquote>
+              <figcaption className="mt-4 flex items-center gap-3 border-t border-slate-100 pt-4">
+                <span
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${t.color} text-sm font-bold text-white`}
+                >
+                  {t.initials}
+                </span>
+                <span>
+                  <span className="block text-sm font-bold text-slate-900">{t.name}</span>
+                  <span className="block text-xs text-[#1A9E9E]">
+                    Siswa Kelas Bahasa {t.langLabel}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Teachers({ langName }: { langName: string }) {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 md:py-24">
@@ -598,12 +668,39 @@ function FinalCTA({ langName }: { langName: string }) {
 // JSON-LD STRUCTURED DATA
 // ============================================================================
 
-function buildCourseSchema(detail: LanguageDetail, langName: string) {
+function buildCourseSchema(
+  detail: LanguageDetail,
+  langName: string,
+  testimonials: Testimonial[] = [],
+) {
+  // [seo-review-schema-v1] aggregateRating & review hanya disertakan kalau
+  // halaman ini benar-benar menampilkan testimoninya. Bahasa tanpa testimoni
+  // tidak dapat rating sama sekali — schema tanpa bintang jauh lebih baik
+  // daripada bintang yang tidak bisa dibuktikan di halaman.
+  const rating = aggregateRatingFor(testimonials);
+
   return {
     "@context": "https://schema.org",
     "@type": "Course",
     name: `Kursus Bahasa ${langName}`,
     description: detail.metaDescription,
+    ...(rating
+      ? {
+          aggregateRating: rating,
+          review: testimonials.map((t) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: t.name },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: t.rating,
+              bestRating: 5,
+              worstRating: 1,
+            },
+            reviewBody: t.text,
+            itemReviewed: { "@type": "Course", name: `Kursus Bahasa ${langName}` },
+          })),
+        }
+      : {}),
     provider: {
       "@type": "Organization",
       name: "Linguo.id",

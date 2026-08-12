@@ -2,6 +2,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { Search, Clock, ChevronRight, ChevronLeft, ArrowRight, LayoutGrid, List, MoreHorizontal, Bookmark, MessageCircle, X, Moon, Sun } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface BlogPost {
   id: string; slug: string; title: string; content: string; excerpt?: string;
@@ -43,8 +44,21 @@ function Badge({cat,dm}:{cat?:string;dm:boolean}){
   return <span className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${dm?c.darkBg+" "+c.darkText:c.bg+" "+c.text}`}>{cat||"Artikel"}</span>
 }
 
+// [seo-cwv-image-v1] Dulu <img> mentah: tiap kartu di daftar blog menarik file
+// cover ukuran penuh dari Supabase Storage. Satu halaman /blog memuat belasan
+// kartu sekaligus, jadi ini penyumbang berat halaman terbesar di situs.
+// Dibungkus div `relative` sendiri karena tidak semua pemanggil Cover punya
+// parent ber-`position` — syarat wajib buat <Image fill>.
+const COVER_SIZES: Record<string,string> = {
+  sm: "144px",
+  lg: "100vw",
+  md: "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw",
+};
+
 function Cover({post,cls="",sz="md"}:{post:BlogPost;cls?:string;sz?:string}){
-  if(post.cover_image)return <img src={post.cover_image} alt={post.title} className={`w-full h-full object-cover ${cls}`}/>;
+  if(post.cover_image)return <div className="relative w-full h-full">
+    <Image src={post.cover_image} alt={post.title} fill loading="lazy" sizes={COVER_SIZES[sz]??COVER_SIZES.md} className={`object-cover ${cls}`}/>
+  </div>;
   const g=getGrad(post.slug),i=getInit(post.title);
   const ts=sz==="lg"?"text-[80px]":sz==="sm"?"text-2xl":"text-4xl";
   return <div className={`w-full h-full bg-gradient-to-br ${g} flex items-center justify-center relative overflow-hidden ${cls}`}>
@@ -105,7 +119,7 @@ function FeedItem({post,onHide,dm}:{post:BlogPost;onHide:()=>void;dm:boolean}){
   return(
     <article className={`py-7 border-b last:border-0 ${dm?"border-slate-800":"border-slate-100"}`}>
       <div className="flex items-center gap-2 mb-3">
-        <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-6 h-6 rounded-full object-cover shrink-0" />
+        <Image src="/ling-ling-avatar.png" alt="Linguo Team" width={24} height={24} className="w-6 h-6 rounded-full object-cover shrink-0" />
         <span className={`text-[13px] ${dm?"text-slate-400":"text-slate-500"}`}>
           <span className={`font-semibold ${dm?"text-slate-200":"text-[#0f172a]"}`}>Linguo Team</span>
           {post.category&&<> in <span className={`font-semibold ${dm?"text-slate-200":"text-[#0f172a]"}`}>{post.category}</span></>}
@@ -147,7 +161,7 @@ function StaffPicks({posts,dm}:{posts:BlogPost[];dm:boolean}){return(
       {posts.slice(0,3).map(p=>(
         <Link key={p.id} href={"/blog/"+p.slug} className="group block">
           <div className="flex items-center gap-2 mb-1.5">
-            <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-5 h-5 rounded-full object-cover shrink-0" />
+            <Image src="/ling-ling-avatar.png" alt="Linguo Team" width={20} height={20} className="w-5 h-5 rounded-full object-cover shrink-0" />
             <span className={`text-[11px] font-medium ${dm?"text-slate-400":"text-slate-500"}`}>Linguo Team</span>
           </div>
           <h4 className={`text-[14px] font-bold leading-snug line-clamp-2 group-hover:text-[#1A9E9E] transition-colors ${dm?"text-slate-200":"text-slate-900"}`}>{p.title}</h4>
@@ -190,7 +204,7 @@ function GridCard({post,dm}:{post:BlogPost;dm:boolean}){
         <p className={`text-[13px] leading-relaxed line-clamp-2 mb-4 flex-1 ${dm?"text-slate-400":"text-slate-600"}`}>{post.excerpt||strip(post.content).slice(0,100)}</p>
         <div className={`flex items-center justify-between pt-3 border-t ${dm?"border-slate-700":"border-slate-50"}`}>
           <div className="flex items-center gap-2">
-            <img src="/ling-ling-avatar.png" alt="Linguo Team" className="w-6 h-6 rounded-full object-cover" />
+            <Image src="/ling-ling-avatar.png" alt="Linguo Team" width={24} height={24} className="w-6 h-6 rounded-full object-cover" />
             <div>
               <div className={`text-[10px] font-medium ${dm?"text-slate-300":"text-slate-600"}`}>Linguo Team</div>
               <div className={`text-[9px] ${dm?"text-slate-500":"text-slate-400"}`}>{fmtD(post.published_at)}</div>
@@ -255,7 +269,7 @@ function Footer(){return(
         <div><h4 className="font-bold text-lg mb-4">Learn a Language</h4><div className="space-y-1.5 text-sm text-white/80">{LANGS.map(l=><a key={l} href={"/?lang="+l.toLowerCase()} className="block hover:text-white transition-colors">Learn {l}</a>)}</div></div>
         <div><h4 className="font-bold text-lg mb-4">Level</h4><div className="space-y-1.5 text-sm text-white/80 mb-5">{["Basic","Upper Basic","Intermediate","Advance"].map(l=><span key={l} className="block">{l}</span>)}</div><h4 className="font-bold text-lg mb-4">Program</h4><div className="space-y-1.5 text-sm text-white/80">{["Regular","Private","IELTS","TOEFL"].map(p=><span key={p} className="block">{p} Class</span>)}</div></div>
         <div><h4 className="font-bold text-lg mb-4">Teaching</h4><a href="/jadi-pengajar" className="text-sm text-white/80 hover:text-white block mb-5">Become a Teacher</a><p className="text-sm text-white/80 leading-relaxed mb-5">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p><h4 className="font-bold text-lg mb-4">Customer Service</h4><div className="space-y-1 text-sm text-white/80"><p>WA: <a href="https://wa.me/6282116859493" className="hover:text-white">6282116859493</a></p><p>Tel: (022)85942550</p><p>Email: <a href="mailto:info@linguo.id" className="hover:text-white">info@linguo.id</a></p></div></div>
-        <div className="flex flex-col items-start lg:items-end"><a href="/"><img src="/images/logo-white.png" alt="Linguo" className="h-12 mb-4"/></a><p className="text-sm text-white/60 mb-4">&copy; {new Date().getFullYear()} PT. Linguo Edu Indonesia</p><div className="flex gap-2.5">{[{h:"https://instagram.com/linguo.id",l:"ig"},{h:"https://youtube.com/@linguoid",l:"yt"},{h:"https://linkedin.com/company/linguo-id",l:"in"},{h:"https://facebook.com/linguo.id",l:"fb"}].map(s=><a key={s.l} href={s.h} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-xs font-bold transition-colors">{s.l}</a>)}</div></div>
+        <div className="flex flex-col items-start lg:items-end"><a href="/"><Image src="/images/logo-white.png" alt="Linguo" width={136} height={48} className="h-12 w-auto mb-4"/></a><p className="text-sm text-white/60 mb-4">&copy; {new Date().getFullYear()} PT. Linguo Edu Indonesia</p><div className="flex gap-2.5">{[{h:"https://instagram.com/linguo.id",l:"ig"},{h:"https://youtube.com/@linguoid",l:"yt"},{h:"https://linkedin.com/company/linguo-id",l:"in"},{h:"https://facebook.com/linguo.id",l:"fb"}].map(s=><a key={s.l} href={s.h} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-xs font-bold transition-colors">{s.l}</a>)}</div></div>
       </div>
     </div>
     <div className="border-t border-white/10"><div className="max-w-7xl mx-auto px-6 py-3.5 text-center text-xs text-white/40">Linguo.id — Everyone Can Be a Polyglot</div></div>
@@ -320,7 +334,7 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="/" className="flex items-center shrink-0">
-              <img src="/images/logo-color.png" alt="Linguo" className="h-7 sm:h-9 object-contain" onError={(e)=>{(e.target as HTMLImageElement).src="/images/logo-white.png";(e.target as HTMLImageElement).className="h-7 sm:h-9 object-contain brightness-0"}}/>
+              <img src="/images/logo-color.png" alt="Linguo" width={644} height={228} className="h-7 sm:h-9 object-contain" onError={(e)=>{(e.target as HTMLImageElement).src="/images/logo-white.png";(e.target as HTMLImageElement).className="h-7 sm:h-9 object-contain brightness-0"}}/>
             </a>
             <div className="relative hidden md:block">
               <Search className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 ${dm?"text-slate-600":"text-slate-300"}`}/>

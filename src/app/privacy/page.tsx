@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "https://linguo.id/privacy" },
   title: "Privacy Policy — Linguo.id",
 };
 
