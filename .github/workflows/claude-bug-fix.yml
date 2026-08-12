@@ -89,6 +89,7 @@ jobs:
             Jangan mengklaim sudah dites kalau kamu tidak menjalankan tesnya.
           claude_args: |
             --model claude-haiku-4-5-20251001
+            --permission-mode bypassPermissions
             --max-turns 40
 
   # ── Jalur susulan: balas "@claude ..." di komentar issue/PR yang sama
@@ -119,4 +120,5 @@ jobs:
           trigger_phrase: "@claude"
           claude_args: |
             --model claude-haiku-4-5-20251001
+            --permission-mode bypassPermissions
             --max-turns 25
