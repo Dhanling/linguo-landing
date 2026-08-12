@@ -48,6 +48,7 @@ jobs:
           # OIDC token ke GitHub App "Claude" — yang belum (dan tak perlu)
           # dipasang di repo ini — lalu mati dengan 401 "not installed".
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           base_branch: main
           branch_prefix: ai-fix/
@@ -111,6 +112,7 @@ jobs:
           # OIDC token ke GitHub App "Claude" — yang belum (dan tak perlu)
           # dipasang di repo ini — lalu mati dengan 401 "not installed".
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           base_branch: main
           branch_prefix: ai-fix/
