@@ -90,7 +90,7 @@ jobs:
           claude_args: |
             --model claude-haiku-4-5-20251001
             --permission-mode bypassPermissions
-            --max-turns 40
+            --max-turns 100
 
   # ── Jalur susulan: balas "@claude ..." di komentar issue/PR yang sama
   mention:
@@ -121,4 +121,4 @@ jobs:
           claude_args: |
             --model claude-haiku-4-5-20251001
             --permission-mode bypassPermissions
-            --max-turns 25
+            --max-turns 50
