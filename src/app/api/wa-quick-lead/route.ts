@@ -120,31 +120,38 @@ export async function POST(req: NextRequest) {
       `Pengalaman: ${cleanExp}`,
     ].join(" · ");
 
-    let inboxOk = false;
-    try {
+    /* wa-inbox-one-row-per-phone-v1 — SATU nomor = SATU baris. Isi baris yang
+       sudah ada, jangan pernah bikin baris kedua: kalau tidak, calon siswa yang
+       isi form lalu langsung kirim chat (bot bikin barisnya sendiri detik
+       berikutnya) muncul dobel di WA Inbox. Insert kini bisa kalah balapan
+       lawan bot dan kena 23505 (unique index whatsapp_inbox_logs_phone_uniq) →
+       ulangi sebagai isi-yang-kosong. */
+    const fillBlanks = async (): Promise<boolean> => {
       const existRes = await supaFetch(
         `whatsapp_inbox_logs?phone=eq.${encodeURIComponent(phone)}&select=id,language,product,contact_name&limit=1`
       );
-      const existing = existRes.ok ? await existRes.json() : [];
+      if (!existRes.ok) return false;
+      const existing = await existRes.json();
+      if (!Array.isArray(existing) || existing.length === 0) return false;
+      // Isi HANYA kolom yang masih kosong biar data yang udah disetel admin/bot
+      // nggak ketimpa.
+      const row = existing[0];
+      const patch: Record<string, string> = {};
+      if (!row.contact_name) patch.contact_name = cleanName;
+      if (!row.language && cleanLang) { patch.language = cleanLang; patch.language_source = "admin"; }
+      if (!row.product && product) { patch.product = product; patch.product_source = "admin"; }
+      if (Object.keys(patch).length === 0) return true;
+      const patchRes = await supaFetch(`whatsapp_inbox_logs?id=eq.${row.id}`, {
+        method: "PATCH",
+        body: JSON.stringify(patch),
+      });
+      return patchRes.ok;
+    };
 
-      if (Array.isArray(existing) && existing.length > 0) {
-        // Row udah ada (mis. pernah chat) → isi HANYA kolom yang masih kosong
-        // biar data yang udah disetel admin/bot nggak ketimpa.
-        const row = existing[0];
-        const patch: Record<string, string> = {};
-        if (!row.contact_name) patch.contact_name = cleanName;
-        if (!row.language && cleanLang) { patch.language = cleanLang; patch.language_source = "admin"; }
-        if (!row.product && product) { patch.product = product; patch.product_source = "admin"; }
-        if (Object.keys(patch).length > 0) {
-          const patchRes = await supaFetch(`whatsapp_inbox_logs?id=eq.${row.id}`, {
-            method: "PATCH",
-            body: JSON.stringify(patch),
-          });
-          inboxOk = patchRes.ok;
-        } else {
-          inboxOk = true;
-        }
-      } else {
+    let inboxOk = false;
+    try {
+      inboxOk = await fillBlanks();
+      if (!inboxOk) {
         const insRes = await supaFetch("whatsapp_inbox_logs", {
           method: "POST",
           body: JSON.stringify({
@@ -161,8 +168,14 @@ export async function POST(req: NextRequest) {
             product_source: product ? "admin" : null,
           }),
         });
-        inboxOk = insRes.ok;
-        if (!insRes.ok) console.error("WA inbox log gagal:", await insRes.text());
+        if (insRes.ok) {
+          inboxOk = true;
+        } else if (insRes.status === 409) {
+          // Kalah balapan — barisnya barusan dibuat pihak lain (bot).
+          inboxOk = await fillBlanks();
+        } else {
+          console.error("WA inbox log gagal:", await insRes.text());
+        }
       }
     } catch (e) {
       console.error("WA inbox log error:", e);
