@@ -20,6 +20,9 @@ async function getProduct(slug: string) {
       total_duration_min, modules_count, video_provider, is_active,
       digital_product_pricing (
         id, price, duration_days, display_label, sort_order, is_active
+      ),
+      digital_product_langs (
+        id, language, video_playlist_url, sort_order
       )
     `)
     .eq("slug", slug)
@@ -38,6 +41,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const pricingTiers = ((product as any).digital_product_pricing ?? [])
     .filter((p: any) => p.is_active)
     .sort((a: any, b: any) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+
+  // [produk-digital-per-bahasa-v1] Produk paket isinya banyak bahasa (satu
+  // playlist per bahasa). Ditampilkan sebagai daftar bendera biar pembeli tahu
+  // persis apa yang dia dapat.
+  const productLangs = (((product as any).digital_product_langs ?? []) as any[])
+    .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
 
   // linguo-patch:toko-rectflag-lucide-v1 — cover tanpa gambar: bendera SVG
   // rounded-rectangle kalau bahasanya kita kenal, selain itu ikon Lucide.
@@ -80,6 +89,28 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
               <h1 className="text-3xl font-bold text-gray-900 mb-3">{product.title}</h1>
               <p className="text-gray-600 leading-relaxed mb-6">{product.description}</p>
+
+              {productLangs.length > 0 && (
+                <div className="mb-6">
+                  <span className="mb-2 block text-xs font-semibold uppercase tracking-wide text-gray-400">
+                    {productLangs.length} bahasa termasuk
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {productLangs.map((l: any) => {
+                      const code = FLAG_CODE_BY_SLUG[String(l.language).trim().toLowerCase()];
+                      return (
+                        <span
+                          key={l.id}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-700"
+                        >
+                          {code ? <RectFlag code={code} h={14} /> : null}
+                          {l.language}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
               {/* Meta info */}
               <div className="grid grid-cols-2 gap-3 mb-6 text-sm">

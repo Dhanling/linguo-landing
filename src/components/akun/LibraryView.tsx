@@ -12,10 +12,15 @@ import {
   Infinity as InfinityIcon, CalendarClock, Clock, Download, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
-import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
+import {
+  externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
+  fetchProductLangs, usableLangs, type ProductLang,
+} from "@/lib/digitalAccess";
 /* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
 import { parseYouTube } from "@/lib/youtube";
 import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlayerModal";
+/* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
+import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 // [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
 
@@ -227,6 +232,9 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [renewFor, setRenewFor] = useState<Purchase | null>(null);
   /* linguo-patch:produk-digital-link-v1 */
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
+  /* produk-digital-per-bahasa-v1 — link materi per bahasa (paket 12+ bahasa) */
+  const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>({});
+  const [picking, setPicking] = useState<LangPickerTarget | null>(null);
 
   /* bookmarks (localStorage — tanpa ubah skema DB) */
   useEffect(() => {
@@ -259,6 +267,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
         const j = res.ok ? await res.json() : null;
         const next = ((j?.purchases ?? []) as unknown) as Purchase[];
         setPurchases(next);
+        // baris bahasa boleh dibaca anon (policy dpl_public_read) → pratinjau ikut dapat
+        setProdLangs(await fetchProductLangs(supabase, next.map((p) => p.digital_products?.id)));
         if (j) libPreviewCache = { student: previewStudentId, purchases: next };
       } catch {
         setPurchases([]);
@@ -304,6 +314,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     } else {
       nextPurchases = (pRes.data ?? []) as unknown as Purchase[];
       setPurchases(nextPurchases);
+      // [produk-digital-per-bahasa-v1] link materi per bahasa untuk produk yang dibeli
+      fetchProductLangs(supabase, nextPurchases.map((p) => p.digital_products?.id)).then(setProdLangs);
     }
 
     let nextByLang: LangProgress | null = null;
@@ -325,6 +337,16 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     setLoading(false);
   }
 
+  /* [produk-digital-per-bahasa-v1] buka satu bahasa dari paket */
+  function openLang(productTitle: string, l: ProductLang) {
+    setPicking(null);
+    const url = (l.video_playlist_url ?? "").trim();
+    const yt = parseYouTube(url);
+    if (yt) { setPlaying({ title: `${productTitle} — ${l.language}`, ref: yt }); return; }
+    toast.success(`Membuka materi ${l.language}…`);
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
   /* open / download */
   async function openProduct(p: Purchase) {
     // [preview-session-v1] pratinjau staf: tampilan saja — membuka produk butuh
@@ -332,6 +354,22 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     if (preview) { toast("Mode pratinjau — hanya tampilan."); return; }
     const prod = p.digital_products;
     if (accessInfo(p).kind === "expired") { toast.error("Akses produk ini sudah berakhir."); return; }
+
+    // [produk-digital-per-bahasa-v1] Paket multi-bahasa: materinya bukan satu
+    // playlist, jadi tanya bahasanya dulu. Kalau barisnya ada tapi belum ada
+    // satu pun yang dipasang admin, bilang apa adanya — jangan buka link paket
+    // yang sudah tak dipakai lagi.
+    const kids = prodLangs[prod.id];
+    if (kids && kids.length > 0) {
+      const ready = usableLangs(kids);
+      if (ready.length === 0) {
+        toast.error(`Materi "${prod.title}" belum dipasang linknya oleh admin. Hubungi CS Linguo ya.`);
+        return;
+      }
+      if (ready.length === 1) { openLang(prod.title, ready[0]); return; }
+      setPicking({ title: prod.title, langs: ready });
+      return;
+    }
 
     // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
     const link = externalLinkFor(prod);
@@ -578,6 +616,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               key={p.id}
               p={p}
               prog={progFor(p, byLang)}
+              langCount={usableLangs(prodLangs[p.digital_products.id]).length}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
@@ -593,6 +632,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               key={p.id}
               p={p}
               prog={progFor(p, byLang)}
+              langCount={usableLangs(prodLangs[p.digital_products.id]).length}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
@@ -607,6 +647,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       {renewFor && (
         <RenewModal purchase={renewFor} supabase={supabase} onClose={() => setRenewFor(null)} />
       )}
+
+      {/* [produk-digital-per-bahasa-v1] paket multi-bahasa: pilih bahasa dulu */}
+      <LangMateriPicker
+        target={picking}
+        onPick={(l) => openLang(picking?.title ?? "", l)}
+        onClose={() => setPicking(null)}
+      />
 
       {/* [produk-digital-link-v1] pemutar YouTube in-place */}
       <YouTubePlayerModal target={playing} onClose={() => setPlaying(null)} />
@@ -657,9 +704,9 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
 }
 
 function ProductCard({
-  p, prog, busy, bookmarked, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, onToggleBookmark, onOpen, onRenew,
 }: {
-  p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean;
+  p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;
@@ -697,7 +744,9 @@ function ProductCard({
         <p className="text-[12px] font-medium text-slate-500">
           {prod.type === "ebook"
             ? `${prod.pages ? `${prod.pages} halaman` : "PDF"}`
-            : `${prog ? `${prog.total} pelajaran` : prod.modules_count ? `${prod.modules_count} modul` : "Materi video"}`}
+            : langCount > 1
+              ? `${langCount} bahasa · materi video`
+              : `${prog ? `${prog.total} pelajaran` : prod.modules_count ? `${prod.modules_count} modul` : "Materi video"}`}
         </p>
 
         {prog && (
@@ -730,9 +779,9 @@ function ProductCard({
 }
 
 function ProductRow({
-  p, prog, busy, bookmarked, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, onToggleBookmark, onOpen, onRenew,
 }: {
-  p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean;
+  p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;

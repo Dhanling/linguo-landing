@@ -51,9 +51,13 @@ export default async function PaketElearningPage() {
       )
     `
     )
+    // [produk-digital-per-bahasa-v1] Dulu ini `.eq('type','elearning').limit(1)` —
+    // aman selama produk e-learning cuma satu. Begitu paketnya dipecah jadi
+    // jualan per bahasa, baris mana yang kepilih jadi undian. Dikunci ke slug
+    // paketnya.
     .eq('type', 'elearning')
+    .eq('slug', 'paket-elearning-10-bahasa')
     .eq('is_active', true)
-    .limit(1)
     .single();
 
   if (error || !product) {

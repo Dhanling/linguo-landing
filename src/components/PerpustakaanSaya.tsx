@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
-import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
+import {
+  externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
+  fetchProductLangs, usableLangs, type ProductLang,
+} from "@/lib/digitalAccess";
 /* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
 import { parseYouTube } from "@/lib/youtube";
 import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlayerModal";
+/* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
+import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 
 interface PurchaseItem {
   id: string;
@@ -38,6 +43,9 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState<string | null>(null);
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
+  /* produk-digital-per-bahasa-v1 */
+  const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>({});
+  const [picking, setPicking] = useState<LangPickerTarget | null>(null);
 
   useEffect(() => {
     fetchPurchases();
@@ -64,13 +72,39 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
     if (error) {
       console.error("Failed to fetch purchases:", error);
     } else {
-      setPurchases((data ?? []) as any[]);
+      const rows = (data ?? []) as any[];
+      setPurchases(rows);
+      // [produk-digital-per-bahasa-v1] link materi per bahasa untuk produk yang dibeli
+      fetchProductLangs(supabase, rows.map((r) => r.digital_products?.id)).then(setProdLangs);
     }
     setLoading(false);
   }
 
+  /* [produk-digital-per-bahasa-v1] buka satu bahasa dari paket */
+  function openLang(productTitle: string, l: ProductLang) {
+    setPicking(null);
+    const url = (l.video_playlist_url ?? "").trim();
+    const yt = parseYouTube(url);
+    if (yt) { setPlaying({ title: `${productTitle} — ${l.language}`, ref: yt }); return; }
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
   async function handleAccess(purchase: PurchaseItem) {
     const product = purchase.digital_products;
+
+    // [produk-digital-per-bahasa-v1] Paket multi-bahasa: materinya banyak playlist,
+    // jadi tanya bahasanya dulu. Aturan sama dengan LibraryView.
+    const kids = prodLangs[product.id];
+    if (kids && kids.length > 0) {
+      const ready = usableLangs(kids);
+      if (ready.length === 0) {
+        alert(`Materi "${product.title}" belum dipasang linknya oleh admin. Hubungi CS Linguo ya.`);
+        return;
+      }
+      if (ready.length === 1) { openLang(product.title, ready[0]); return; }
+      setPicking({ title: product.title, langs: ready });
+      return;
+    }
 
     // Produk dikirim sebagai LINK (YouTube / Google Drive / dll) → buka langsung.
     const link = externalLinkFor(product);
@@ -247,6 +281,12 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           </div>
         );
       })}
+      {/* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu */}
+      <LangMateriPicker
+        target={picking}
+        onPick={(l) => openLang(picking?.title ?? "", l)}
+        onClose={() => setPicking(null)}
+      />
       {/* linguo-patch:produk-digital-link-v1 */}
       <YouTubePlayerModal target={playing} onClose={() => setPlaying(null)} />
     </div>

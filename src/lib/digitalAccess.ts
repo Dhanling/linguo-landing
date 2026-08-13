@@ -57,6 +57,51 @@ export function isStoragePath(s: string | null | undefined): boolean {
   return v.length > 0 && !isHttpUrl(v);
 }
 
+// ── [produk-digital-per-bahasa-v1] Materi per bahasa ──────────────────────
+// "Paket E-Learning 12+ Bahasa" itu satu produk dengan 12 playlist berbeda,
+// sedangkan digital_products cuma punya satu kolom link. Link per bahasanya
+// tinggal di tabel `digital_product_langs` (diisi admin di /produk-digital),
+// dan pembeli paket memilih bahasa dulu sebelum playlist-nya dibuka.
+// Produk satu bahasa tak punya baris di sini → perilakunya persis seperti dulu.
+
+export type ProductLang = {
+  id: string;
+  product_id: string;
+  language: string;
+  video_playlist_url: string | null;
+  sort_order: number;
+};
+
+export const PRODUCT_LANG_SELECT = "id,product_id,language,video_playlist_url,sort_order";
+
+/** Bahasa yang benar-benar bisa dibuka siswa (link ada & bukan placeholder). */
+export function usableLangs(rows: ProductLang[] | undefined | null): ProductLang[] {
+  return (rows ?? [])
+    .filter((l) => isHttpUrl(l.video_playlist_url) && !isPlaceholderLink(l.video_playlist_url))
+    .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0) || a.language.localeCompare(b.language));
+}
+
+/** Ambil baris bahasa untuk sekumpulan produk → dikelompokkan per product_id. */
+export async function fetchProductLangs(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  supabase: any,
+  productIds: string[],
+): Promise<Record<string, ProductLang[]>> {
+  const ids = Array.from(new Set(productIds.filter(Boolean)));
+  if (ids.length === 0) return {};
+  const { data, error } = await supabase
+    .from("digital_product_langs")
+    .select(PRODUCT_LANG_SELECT)
+    .in("product_id", ids)
+    .eq("is_active", true)
+    .order("sort_order");
+  // Tabelnya baru: kalau belum ada / tak terbaca, jangan bikin Perpustakaan gagal.
+  if (error || !data) return {};
+  const out: Record<string, ProductLang[]> = {};
+  for (const row of data as ProductLang[]) (out[row.product_id] ||= []).push(row);
+  return out;
+}
+
 /** YouTube → "Tonton", link lain / drive → "Buka", file storage → "Download". */
 export function accessVerb(p: ProductLink): "Tonton" | "Buka" | "Download" {
   const link = externalLinkFor(p);
