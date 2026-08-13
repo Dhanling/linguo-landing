@@ -9,6 +9,9 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
+// wa-quick-program-lang-sync-v1 — aturan bahasa × program (sumber tunggal)
+import { isProgramLangAllowed } from "@/lib/programLanguages";
+import { baseLanguage } from "@/lib/classLanguage";
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -69,6 +72,15 @@ export async function POST(req: NextRequest) {
     }
     if (!EMAIL_REGEX.test(email.trim())) {
       return NextResponse.json({ error: "Format email belum benar" }, { status: 400 });
+    }
+    /* wa-quick-program-lang-sync-v1 — tolak kombinasi yang produknya nggak ada
+       (mis. Russian + Kelas Reguler). Bandingkan pakai nama bahasa polos, karena
+       alur Reguler ngirim "English - Conversation". */
+    if (!isProgramLangAllowed(String(program).trim(), baseLanguage(String(language)))) {
+      return NextResponse.json(
+        { error: `${String(language).trim()} belum tersedia untuk ${String(program).trim()}. Pilih jenis kelas atau bahasa lain ya.` },
+        { status: 400 },
+      );
     }
 
     const phone = normalizeWa(countryCode, waNumber);

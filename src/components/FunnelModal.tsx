@@ -9,6 +9,7 @@ import { ChevronRight, X, Search } from "lucide-react";
 import { getLanguageCategory, PRICE_A1_60MIN, getPrivateBase60, KIDS_LEVEL_KEY, computeKidsPerSession, getKidsBasePerSession, NATIVE_MULTIPLIER, isNativeAvailable, applyNativeMultiplier, applyOfflineSurcharge, supportsOffline, OFFLINE_SURCHARGE_PER_SESSION } from "@/lib/trial-pricing"; // funnel-session-duration-v1 · native-pricing-v1 · kids-lang-pricing-v1 · offline-private-class-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+import { REGULER_LANGS } from "@/lib/programLanguages"; // wa-quick-program-lang-sync-v1
 
 const LANG_CATEGORIES = [
   { label: "Populer", langs: ["English","Japanese","Korean","Mandarin","Arabic","French","German","Spanish"] },
@@ -20,7 +21,8 @@ const LANG_CATEGORIES = [
 
 // linguo-patch:reguler-lang-gate-v1 — Kelas Reguler cuma dibuka utk bahasa yg ada di jadwal reguler
 // (samain dgn tabel regular_batches). Bahasa Isyarat ga masuk picker funnel ini → daftarnya lewat /jadwal-kelas-reguler.
-const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
+// wa-quick-program-lang-sync-v1 — daftarnya pindah ke @/lib/programLanguages biar satu sumber
+// (di-import di atas bareng helper lain).
 
 const FLAG_CODES: Record<string,string> = {
   English:"gb",Japanese:"jp",Korean:"kr",Mandarin:"cn",Cantonese:"hk",Arabic:"sa",French:"fr",German:"de",Spanish:"es",Italian:"it",Dutch:"nl",Portuguese:"br",Russian:"ru",Thai:"th",Vietnamese:"vn",Hindi:"in",Turkish:"tr",Polish:"pl",Swedish:"se",Norwegian:"no",Danish:"dk",Finnish:"fi",Greek:"gr",Czech:"cz",Hungarian:"hu",Hebrew:"il",Persian:"ir",Swahili:"ke",Tagalog:"ph",Malay:"my",Georgian:"ge",Javanese:"id",Sundanese:"id",Betawi:"id",BIPA:"id",Urdu:"pk",Bengali:"bd",Romanian:"ro",

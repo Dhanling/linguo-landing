@@ -15,6 +15,8 @@ import Reveal from "@/components/Reveal"; // linguo-patch:scroll-reveal-v1
 import { useOverlayLock } from "@/lib/overlayStore";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
+// wa-quick-program-lang-sync-v1 — aturan bahasa × program (sumber tunggal)
+import { REGULER_LANGS, isProgramLangAllowed, langsForProgram, programsForLang } from "@/lib/programLanguages";
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
@@ -40,8 +42,8 @@ const LANG_CATEGORIES = [
   { label: "Afrika", langs: ["Swahili"] },
 ];
 
-// linguo-patch:reguler-lang-gate — bahasa yg punya jadwal Kelas Reguler (regular_batches). Kalau nambah bahasa reguler baru, update list ini + /jadwal-kelas-reguler.
-const REGULER_LANGS = ["English","Mandarin","Japanese","Korean","Arabic","French","German","Italian","Dutch","Spanish","Tagalog"];
+// linguo-patch:reguler-lang-gate — bahasa yg punya jadwal Kelas Reguler (regular_batches)
+// sekarang tinggal di @/lib/programLanguages (dipakai bareng FunnelModal + /api/wa-quick-lead).
 
 /* wa-quick-detail-form-v1 — pilihan buat form diskon di hero. Nama bahasa pakai
    ejaan kanonik yang sama dgn funnel/dashboard (biar kolom Bahasa di WA Inbox
@@ -1959,6 +1961,32 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
   const [quickOpen, setQuickOpen] = useState(false);
   useOverlayLock(quickOpen);
 
+  /* wa-quick-program-lang-sync-v1 — bahasa & jenis kelas saling mengunci, biar
+     nggak ada lagi lead "Bahasa: Russian · Kelas: Kelas Reguler" (Rusia nggak
+     punya batch reguler). Dua arah: pilih program dulu → daftar bahasa nyusut;
+     pilih bahasa dulu → program yang mustahil hilang dari daftar. */
+  const quickLangOpts = React.useMemo(() => langsForProgram(QUICK_LANGS, qProgram), [qProgram]);
+  const quickProgramOpts = React.useMemo(() => programsForLang(QUICK_PROGRAMS, qLang), [qLang]);
+  // Nama bahasa yang DIKIRIM ke lead/WA: di Reguler, English = "English - Conversation".
+  const qLangLabel = qProgram === "Kelas Reguler" ? regulerLangName(qLang) : qLang;
+  const quickHint = qProgram === "Kelas Reguler"
+    ? (lang==="id" ? "Kelas Reguler hanya dibuka untuk bahasa yang punya jadwal batch." : "Group classes only run for languages with a scheduled batch.")
+    : qProgram === "IELTS/TOEFL Prep"
+    ? (lang==="id" ? "Persiapan IELTS/TOEFL khusus bahasa Inggris." : "IELTS/TOEFL prep is English only.")
+    : "";
+  // Ganti program → bahasa yang jadi nggak nyambung dibuang (dan sebaliknya),
+  // supaya select nggak pernah nyimpen kombinasi yang nggak ada produknya.
+  const pickQuickProgram = (p: string) => {
+    setQProgram(p);
+    if (!isProgramLangAllowed(p, qLang)) setQLang("");
+    setError("");
+  };
+  const pickQuickLang = (l: string) => {
+    setQLang(l);
+    if (!isProgramLangAllowed(qProgram, l)) setQProgram("");
+    setError("");
+  };
+
   const quickSavingRef = React.useRef(false);
   // Tahap 1: nomor divalidasi di hero, lalu popup detail dibuka.
   const handleQuickStart = () => {
@@ -1978,6 +2006,11 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
     if(!qLang) { setError(lang==="id"?"Pilih bahasa yang mau dipelajari":"Choose a language"); return; }
     if(!qExp) { setError(lang==="id"?"Pilih dulu: pernah belajar atau belum":"Tell us your experience"); return; }
     if(!qProgram) { setError(lang==="id"?"Pilih jenis kelasnya":"Choose a class type"); return; }
+    // wa-quick-program-lang-sync-v1 — pagar terakhir kalau state sempat nyangkut.
+    if(!isProgramLangAllowed(qProgram, qLang)) {
+      setError(lang==="id"?`${qLang} belum tersedia untuk ${qProgram}. Pilih jenis kelas atau bahasa lain ya.`:`${qLang} isn't available for ${qProgram}. Pick another class type or language.`);
+      return;
+    }
     setError("");
     const fullNum = countryCode.replace("+","") + waNumber;
     quickSavingRef.current = true; // wa-quick-guard-v1
@@ -1987,7 +2020,7 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
       const res = await fetch("/api/wa-quick-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: qName, email: qEmail, language: qLang, program: qProgram, experience: qExp, countryCode, waNumber, referral_source: ref }),
+        body: JSON.stringify({ name: qName, email: qEmail, language: qLangLabel, program: qProgram, experience: qExp, countryCode, waNumber, referral_source: ref }),
       });
       if (!res.ok) {
         const j = await res.json().catch(()=>({} as {error?:string}));
@@ -1998,12 +2031,12 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
     } catch {
       // Jaringan/route bermasalah → minimal lead-nya tetap kesimpan lewat anon,
       // jangan sampai calon siswa yang udah ngisi malah hilang datanya.
-      await saveLead({wa_number: fullNum, name: qName, email: qEmail, language: qLang, program: qProgram, source: "wa-quick"});
+      await saveLead({wa_number: fullNum, name: qName, email: qEmail, language: qLangLabel, program: qProgram, source: "wa-quick"});
     }
-    if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","wa_quick_submitted",{language:qLang,program:qProgram});
+    if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","wa_quick_submitted",{language:qLangLabel,program:qProgram});
     const msg = lang==="id"
-      ? `Halo Linguo, saya mau klaim diskonnya.\n\nNama: ${qName}\nEmail: ${qEmail}\nBahasa: ${qLang}\nKelas: ${qProgram}\nPengalaman: ${qExp}`
-      : `Hi Linguo, I'd like to claim the discount.\n\nName: ${qName}\nEmail: ${qEmail}\nLanguage: ${qLang}\nClass: ${qProgram}\nExperience: ${qExp}`;
+      ? `Halo Linguo, saya mau klaim diskonnya.\n\nNama: ${qName}\nEmail: ${qEmail}\nBahasa: ${qLangLabel}\nKelas: ${qProgram}\nPengalaman: ${qExp}`
+      : `Hi Linguo, I'd like to claim the discount.\n\nName: ${qName}\nEmail: ${qEmail}\nLanguage: ${qLangLabel}\nClass: ${qProgram}\nExperience: ${qExp}`;
     window.location.href = `https://wa.me/6282116859493?text=${encodeURIComponent(msg)}`;
   };
 
@@ -2066,16 +2099,23 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
                 onChange={(e)=>{setQName(e.target.value);setError("")}} className={QUICK_FIELD_CLS} autoFocus required />
               <input type="email" placeholder="email@kamu.com" value={qEmail}
                 onChange={(e)=>{setQEmail(e.target.value);setError("")}} className={QUICK_FIELD_CLS} required />
-              <select value={qLang} onChange={(e)=>{setQLang(e.target.value);setError("")}}
-                className={`${QUICK_FIELD_CLS} cursor-pointer ${qLang?"":"text-slate-400"}`}>
-                <option value="">{lang==="id"?"Bahasa yang mau dipelajari":"Language you want to learn"}</option>
-                {QUICK_LANGS.map(l=><option key={l} value={l} className="text-slate-900">{l}</option>)}
-              </select>
-              <select value={qProgram} onChange={(e)=>{setQProgram(e.target.value);setError("")}}
+              {/* wa-quick-program-lang-sync-v1 — jenis kelas duluan, karena dia yang
+                  nentuin bahasa mana yang beneran dibuka. */}
+              <select value={qProgram} onChange={(e)=>pickQuickProgram(e.target.value)}
                 className={`${QUICK_FIELD_CLS} cursor-pointer ${qProgram?"":"text-slate-400"}`}>
                 <option value="">{lang==="id"?"Jenis kelas yang diminati":"Class type you prefer"}</option>
-                {QUICK_PROGRAMS.map(p=><option key={p} value={p} className="text-slate-900">{p}</option>)}
+                {quickProgramOpts.map(p=><option key={p} value={p} className="text-slate-900">{p}</option>)}
               </select>
+              <select value={qLang} onChange={(e)=>pickQuickLang(e.target.value)}
+                className={`${QUICK_FIELD_CLS} cursor-pointer ${qLang?"":"text-slate-400"}`}>
+                <option value="">{lang==="id"?"Bahasa yang mau dipelajari":"Language you want to learn"}</option>
+                {quickLangOpts.map(l=>(
+                  <option key={l} value={l} className="text-slate-900">
+                    {qProgram==="Kelas Reguler" ? regulerLangName(l) : l}
+                  </option>
+                ))}
+              </select>
+              {quickHint && <p className="text-[11px] text-slate-400 -mt-0.5">{quickHint}</p>}
               <div>
                 <p className="text-[11px] text-slate-500 mb-1.5">{lang==="id"?"Pernah belajar bahasa ini sebelumnya?":"Studied this language before?"}</p>
                 <div className="grid grid-cols-2 gap-2">
