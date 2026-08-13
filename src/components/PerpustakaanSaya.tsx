@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
+/* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
+import { parseYouTube } from "@/lib/youtube";
+import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlayerModal";
 
 interface PurchaseItem {
   id: string;
@@ -34,6 +37,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
   const [purchases, setPurchases] = useState<PurchaseItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState<string | null>(null);
+  const [playing, setPlaying] = useState<PlayerTarget | null>(null);
 
   useEffect(() => {
     fetchPurchases();
@@ -86,6 +90,12 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           })
           .eq("id", purchase.id)
           .then(() => setTimeout(() => fetchPurchases(), 1000));
+      }
+      // [produk-digital-link-v1] YouTube → putar di sini; sisanya tetap tab baru.
+      const yt = parseYouTube(link);
+      if (yt) {
+        setPlaying({ title: product.title, ref: yt });
+        return;
       }
       window.open(link, "_blank", "noopener,noreferrer");
       return;
@@ -237,6 +247,8 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           </div>
         );
       })}
+      {/* linguo-patch:produk-digital-link-v1 */}
+      <YouTubePlayerModal target={playing} onClose={() => setPlaying(null)} />
     </div>
   );
 }

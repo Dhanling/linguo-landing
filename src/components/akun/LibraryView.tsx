@@ -13,6 +13,9 @@ import {
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
 import { externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink } from "@/lib/digitalAccess";
+/* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
+import { parseYouTube } from "@/lib/youtube";
+import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlayerModal";
 // [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
 
@@ -222,6 +225,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
   // [perpanjang-inplace-v1] popup perpanjang akses — checkout langsung tanpa pindah page
   const [renewFor, setRenewFor] = useState<Purchase | null>(null);
+  /* linguo-patch:produk-digital-link-v1 */
+  const [playing, setPlaying] = useState<PlayerTarget | null>(null);
 
   /* bookmarks (localStorage — tanpa ubah skema DB) */
   useEffect(() => {
@@ -345,6 +350,13 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
           .update({ download_count: (p.download_count || 0) + 1, last_downloaded_at: new Date().toISOString() })
           .eq("id", p.id)
           .then(() => setTimeout(fetchAll, 800));
+      }
+      // [produk-digital-link-v1] YouTube diputar di dalam dashboard; link lain
+      // (Drive dsb) tetap dibuka di tab baru seperti sebelumnya.
+      const yt = parseYouTube(link);
+      if (yt) {
+        setPlaying({ title: prod.title, ref: yt });
+        return;
       }
       toast.success(`Membuka ${prod.title}…`);
       window.open(link, "_blank", "noopener,noreferrer");
@@ -595,6 +607,9 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       {renewFor && (
         <RenewModal purchase={renewFor} supabase={supabase} onClose={() => setRenewFor(null)} />
       )}
+
+      {/* [produk-digital-link-v1] pemutar YouTube in-place */}
+      <YouTubePlayerModal target={playing} onClose={() => setPlaying(null)} />
     </div>
   );
 }
