@@ -950,7 +950,11 @@ export default function PendataanPage() {
   const greetName = (form?.contact_name || "").split(" ")[0];
   // Langkah jadwal butuh ruang: kolom hari yang sempit bikin kotak 30 menit
   // susah dikenai. Lebar kartunya melar hanya di langkah itu.
-  const shellWidth = last ? "max-w-3xl" : "max-w-lg";
+  // [pendataan-lega-desktop-v1] Dulu semua langkah dikurung `max-w-lg` (512px):
+  // di layar HP pas, di layar 27 inci jadi lajur kurus di tengah lautan kosong,
+  // sementara kolomnya sendiri berdesakan. Sekarang kartunya ikut melebar dan
+  // isinya pecah jadi dua kolom mulai `sm` — di HP tetap satu kolom.
+  const shellWidth = last ? "max-w-5xl" : "max-w-3xl";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-teal-50/40" onKeyDown={onKeyDown}>
@@ -1006,7 +1010,7 @@ export default function PendataanPage() {
           </motion.div>
         )}
 
-        <div className="rounded-3xl border border-slate-100 bg-white/80 p-5 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-6">
+        <div className="rounded-3xl border border-slate-100 bg-white/80 p-5 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.12)] backdrop-blur-sm sm:p-7 lg:p-8">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={step}
@@ -1022,7 +1026,7 @@ export default function PendataanPage() {
 
                   {/* Nama lengkap & panggilan satu baris: keduanya pendek dan
                       dijawab berbarengan, tidak perlu dua baris penuh. */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <Field label="Nama lengkap" icon={User} required>
                       <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                         placeholder="Sesuai KTP" className={inputClass} />
@@ -1036,19 +1040,33 @@ export default function PendataanPage() {
                     Nama panggilan dipakai pengajar saat kelas berlangsung.
                   </p>
 
-                  <Field label="Tanggal lahir" icon={CalendarDays} required>
-                    <BirthDatePicker day={birthDay} month={birthMonth} year={birthYear}
-                      onPick={(d, m, y) => { setBirthDay(d); setBirthMonth(m); setBirthYear(y); }} />
-                    {age !== null && (
-                      <p className="mt-2 text-sm font-bold" style={{ color: TEAL }}>Usia kamu {age} tahun</p>
-                    )}
-                  </Field>
+                  {/* Tanggal lahir & instansi dipasangkan sebaris di layar lebar:
+                      dua-duanya isian pendek, dan menumpuknya bikin formulir
+                      memanjang tanpa alasan. Kalender tetap muat — panelnya
+                      selebar kolomnya sendiri. */}
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <Field label="Tanggal lahir" icon={CalendarDays} required>
+                      <BirthDatePicker day={birthDay} month={birthMonth} year={birthYear}
+                        onPick={(d, m, y) => { setBirthDay(d); setBirthMonth(m); setBirthYear(y); }} />
+                      {age !== null && (
+                        <p className="mt-2 text-sm font-bold" style={{ color: TEAL }}>Usia kamu {age} tahun</p>
+                      )}
+                    </Field>
+
+                    {/* Wajib juga, tapi yang sedang tidak sekolah/bekerja tetap
+                        punya jalan keluar — kolomnya tidak boleh jadi jalan buntu. */}
+                    <Field label="Sekolah / instansi / perusahaan" icon={School}
+                      required hint="Kalau saat ini tidak sekolah dan tidak bekerja, tulis “Tidak ada”.">
+                      <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)}
+                        placeholder="contoh: SMAN 3 Bandung / PT Linguo Nusantara" className={inputClass} />
+                    </Field>
+                  </div>
 
                   {/* [pendataan-domisili-referral-v1] Domisili: dipakai buat
                       mencocokkan pengajar offline & membaca sebaran siswa.
                       Kota baru bisa dipilih setelah provinsi — daftarnya
                       ~480 kab/kota, tanpa penyaring provinsi itu tidak manusiawi. */}
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <Field label="Provinsi" icon={MapPin} required>
                       <PilihWilayah nilai={province} opsi={PROVINCE_NAMES}
                         placeholder="Pilih provinsi"
@@ -1065,14 +1083,6 @@ export default function PendataanPage() {
                     pengajar offline kalau kamu butuh.
                   </p>
 
-                  {/* Wajib juga, tapi yang sedang tidak sekolah/bekerja tetap
-                      punya jalan keluar — kolomnya tidak boleh jadi jalan buntu. */}
-                  <Field label="Sekolah / instansi / perusahaan" icon={School}
-                    required hint="Kalau saat ini tidak sekolah dan tidak bekerja, tulis “Tidak ada”.">
-                    <input type="text" value={institution} onChange={(e) => setInstitution(e.target.value)}
-                      placeholder="contoh: SMAN 3 Bandung / PT Linguo Nusantara" className={inputClass} />
-                  </Field>
-
                   <Field label="Hobi & minat" icon={Heart} required
                     hint="Pengajar memakainya sebagai bahan obrolan dan contoh materi di kelas.">
                     <input type="text" value={hobby} onChange={(e) => setHobby(e.target.value)}
@@ -1086,15 +1096,17 @@ export default function PendataanPage() {
                 <div className="space-y-5">
                   <StepHead icon={Phone} title="Kontak" desc="Ke sini kami kirim undangan grup kelas dan materi." />
 
-                  <Field label="Nomor WhatsApp" icon={Phone} required hint="Nomor ini yang akan dimasukkan ke grup kelas.">
-                    <input type="tel" inputMode="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)}
-                      placeholder="contoh: 08123456789" className={inputClass} />
-                  </Field>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <Field label="Nomor WhatsApp" icon={Phone} required hint="Nomor ini yang akan dimasukkan ke grup kelas.">
+                      <input type="tel" inputMode="tel" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)}
+                        placeholder="contoh: 08123456789" className={inputClass} />
+                    </Field>
 
-                  <Field label="Email" icon={Mail} required hint="Dipakai untuk kirim materi & akun belajar.">
-                    <input type="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                      placeholder="nama@email.com" className={inputClass} />
-                  </Field>
+                    <Field label="Email" icon={Mail} required hint="Dipakai untuk kirim materi & akun belajar.">
+                      <input type="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                        placeholder="nama@email.com" className={inputClass} />
+                    </Field>
+                  </div>
 
                   {/* [pendataan-domisili-referral-v1] Ditaruh di sini, bukan di
                       langkah tujuan: langkah ini isinya cuma dua kolom, dan
