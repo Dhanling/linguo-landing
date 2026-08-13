@@ -54,6 +54,8 @@ export const LANG_PHOTO_SLUG: Record<string, string> = {
   georgia: "georgian", georgian: "georgian",
   kanton: "cantonese", kantonis: "cantonese", cantonese: "cantonese", "hong kong": "cantonese",
   uzbekistan: "uzbek", uzbek: "uzbek",
+  // [kelas-card-foto-v3] Islandia — kartu beranda siswa masih jatuh ke glyph "Aa"
+  islandia: "icelandic", icelandic: "icelandic", "bahasa islandia": "icelandic",
 };
 export const getLangPhoto = (lang?: string | null): string | null => {
   if (!lang) return null;
