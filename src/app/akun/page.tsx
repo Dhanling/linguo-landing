@@ -9,6 +9,7 @@ import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visu
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
 import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
+import { petaNomorSesi } from "@/lib/nomorSesi"; // [sesi-nomor-sinkron-v1] nomor sesi nyambung dengan sessions_used
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
 import { supabase, initialAuthError, peekSessionUser, adoptImplicitSessionFromUrl, resolveSessionForGate } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [perf:session-cookie-peek-v1] [auth-implicit-hash-adopt-v1] [auth-gate-resilient-v1]
@@ -2382,6 +2383,13 @@ export default function AkunPage() {
       .filter((s) => (s.status === "scheduled" || s.status === "pending") && new Date(s.scheduled_at).getTime() > now)
       .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
   }, [allSchedules]);
+  // [sesi-nomor-sinkron-v1] Nomor sesi dihitung sekali untuk SEMUA baris jadwal
+  // (bukan dibaca mentah dari `schedules.session_number`) supaya kartu kelas
+  // "Sesi 14/16" dan label "#15/#16" di jadwal berikutnya bercerita hal yang sama.
+  const nomorSesiMap = useMemo(
+    () => petaNomorSesi(allSchedules as any, (student?.registrations || []) as any),
+    [allSchedules, student?.registrations]
+  );
   const [streak, setStreak] = useState(0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
@@ -3760,11 +3768,11 @@ export default function AkunPage() {
                 const sesiMendatangCards = upcomingSchedules.map((s) => {
                   const reg = student?.registrations?.find((r) => r.id === s.registration_id);
                   const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
-                  // [sesi-nomor-plafon-v1] nomor sesi > total paket = sisa data presensi
-                  // kotor (baris sintetis dobel bikin penomoran lompat, mis. #24 di paket
-                  // 16 sesi) — badge-nya disembunyikan daripada menyesatkan siswa.
-                  const totalPaket = Number(reg?.sessions_total) || 0;
-                  const nomorSesi = s.session_number && (totalPaket <= 0 || s.session_number <= totalPaket) ? s.session_number : null;
+                  // [sesi-nomor-sinkron-v1] nomor sesi dari peta terpusat: melanjutkan
+                  // hitungan `sessions_used` (kelas lawas sering tak punya baris jadwal
+                  // untuk sesi awalnya), dan nomor > plafon paket tetap disembunyikan —
+                  // itu sisa presensi kotor (baris sintetis dobel bikin nomor lompat).
+                  const nomorSesi = nomorSesiMap.get(s.id) ?? null;
                   return {
                     id: s.id,
                     registrationId: s.registration_id,
@@ -3847,9 +3855,10 @@ export default function AkunPage() {
                                     <span className="min-w-0 flex-1">
                                       <span className="flex items-center gap-1.5">
                                         <span className="min-w-0 flex-1 truncate text-[14px] font-bold text-[#12172B]">{lang || "Sesi"}{reg?.level ? ` — ${reg.level}` : ""}</span>
-                                        {/* jadwal-recurring-materi-v1: pertemuan ke berapa */}
-                                        {s.session_number ? (
-                                          <span className="shrink-0 rounded-full bg-[#16796E]/10 px-1.5 py-0.5 text-[10px] font-extrabold text-[#16796E]">#{s.session_number}</span>
+                                        {/* jadwal-recurring-materi-v1: pertemuan ke berapa
+                                            [sesi-nomor-sinkron-v1] nomor dari peta terpusat */}
+                                        {nomorSesiMap.get(s.id) ? (
+                                          <span className="shrink-0 rounded-full bg-[#16796E]/10 px-1.5 py-0.5 text-[10px] font-extrabold text-[#16796E]">#{nomorSesiMap.get(s.id)}</span>
                                         ) : null}
                                       </span>
                                       <span className="block text-[12px] font-medium text-gray-500">
@@ -4418,8 +4427,9 @@ export default function AkunPage() {
                     teacher: sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || (reg?.teachers as any)?.title),
                     teacherAvatarUrl: tDir?.avatar_url || reg?.teachers?.avatar_url || null,
                     // jadwal-recurring-materi-v1
-                    // [sesi-nomor-plafon-v1] nomor > total paket = penomoran kotor, sembunyikan
-                    sessionNumber: s.session_number && (!(Number(reg?.sessions_total) > 0) || s.session_number <= Number(reg?.sessions_total)) ? s.session_number : null,
+                    // [sesi-nomor-sinkron-v1] satu sumber nomor dengan kartu Beranda &
+                    // linimasa detail kelas; nomor > plafon paket tetap disembunyikan.
+                    sessionNumber: nomorSesiMap.get(s.id) ?? null,
                     materialTitle: s.session_title || "",
                     materialNotes: s.material_notes || "",
                     materialLinks: Array.isArray(s.material_links) ? s.material_links : [],
