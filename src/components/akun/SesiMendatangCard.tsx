@@ -9,8 +9,8 @@ import { useEffect, useMemo, useState } from "react";
 import { CalendarDays, ChevronRight, Video } from "lucide-react";
 import { classRoomUrl, isJoinable } from "@/lib/classRoom";
 import {
-  LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, fmtTime, isDead, isLiveNow, langColor,
-  langFlagCode, TeacherAvatar,
+  LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, countdownLabel, fmtTime, isDead, isLiveNow,
+  langColor, langFlagCode, TeacherAvatar,
   type JadwalSession, type NormSession,
 } from "./jadwalShared";
 
@@ -75,11 +75,30 @@ export default function SesiMendatangCard({
   // di kartu ini — dinaikkan ke subjudul, bukan cuma nempel di salah satu baris.
   const liveCount = upcoming.filter((s) => s._live).length;
 
+  // [sesi-hari-ini-v1] Sesi hari ini dipisah dari sesi hari-hari berikutnya.
+  // Sebelumnya semuanya satu tumpuk berurutan tanggal, jadi kelas yang tinggal
+  // beberapa jam lagi (atau lagi jalan) kelihatan setara dengan kelas minggu
+  // depan — padahal cuma baris pertama itu yang menentukan hari siswa.
+  const { hariIni, berikutnya } = useMemo(() => {
+    const t = new Date(now);
+    const sameDay = (d: Date) =>
+      d.getFullYear() === t.getFullYear() && d.getMonth() === t.getMonth() && d.getDate() === t.getDate();
+    return {
+      hariIni: upcoming.filter((s) => sameDay(s._d)),
+      berikutnya: upcoming.filter((s) => !sameDay(s._d)),
+    };
+  }, [upcoming, now]);
+
   const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? upcoming : upcoming.slice(0, limit);
-  const hidden = Math.max(0, upcoming.length - visible.length);
+  // Sesi hari ini TIDAK pernah kena potong `limit` — batasnya berlaku buat
+  // hari-hari berikutnya saja.
+  const visibleNanti = expanded ? berikutnya : berikutnya.slice(0, Math.max(1, limit - hariIni.length));
+  const hidden = Math.max(0, berikutnya.length - visibleNanti.length);
 
   if (!upcoming.length) return null;
+
+  const gridCls = layout === "column" ? "grid gap-2.5" : "grid gap-2.5 sm:grid-cols-2";
+  const groupLabel = "mb-1.5 mt-3 text-[11px] font-extrabold uppercase tracking-wide text-[#6B7280] first:mt-0";
 
   // `sesi-mendatang-panel` / `sesi-mendatang-item` = penanda buat aturan dark mode
   // di StudentShell (panel hitam polos di mode gelap; mode terang tetap kartu putih).
@@ -92,7 +111,11 @@ export default function SesiMendatangCard({
             {liveCount > 0 && <LiveBadge />}
           </h3>
           <p className="mt-0.5 text-[12px] font-medium text-gray-500">
-            {upcoming.length} sesi terjadwal · semua kelas aktif
+            {/* [sesi-hari-ini-v1] "hari ini" itu angka yang dicari duluan; total
+                terjadwal jadi keterangan kedua. */}
+            {hariIni.length > 0
+              ? `${hariIni.length} sesi hari ini · ${upcoming.length} terjadwal`
+              : `${upcoming.length} sesi terjadwal · semua kelas aktif`}
           </p>
         </div>
         <button
@@ -105,12 +128,30 @@ export default function SesiMendatangCard({
 
       {/* Kolom utama Beranda itu lebar — satu lajur bikin kartunya melar & boros
           tinggi, jadi dua lajur begitu ada ruang. Kecuali dipasang sebagai kolom
-          samping (layout="column"): di lebar ~360px dua lajur bikin isinya remuk. */}
-      <div className={layout === "column" ? "grid gap-2.5" : "grid gap-2.5 sm:grid-cols-2"}>
-        {visible.map((s) => (
-          <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} />
-        ))}
-      </div>
+          samping (layout="column"): di lebar ~360px dua lajur bikin isinya remuk.
+          [sesi-hari-ini-v1] dua kelompok: "Hari Ini" lalu "Berikutnya". Judul
+          kelompok cuma muncul kalau memang ada sesi hari ini — kalau tidak, kartu
+          ini tetap satu daftar polos seperti sebelumnya. */}
+      {hariIni.length > 0 && (
+        <>
+          <p className={groupLabel}>Hari Ini</p>
+          <div className={gridCls}>
+            {hariIni.map((s) => (
+              <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} today now={now} />
+            ))}
+          </div>
+        </>
+      )}
+      {visibleNanti.length > 0 && (
+        <>
+          {hariIni.length > 0 && <p className={groupLabel}>Berikutnya</p>}
+          <div className={gridCls}>
+            {visibleNanti.map((s) => (
+              <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} now={now} />
+            ))}
+          </div>
+        </>
+      )}
 
       {(hidden > 0 || expanded) && (
         <button
@@ -129,8 +170,11 @@ export default function SesiMendatangCard({
 // keduanya sudah ada di tab Jadwal, dan di kartu ringkasan mereka cuma bikin tiap
 // baris tinggi berbeda-beda sehingga daftarnya susah dipindai sekilas.
 // Titik warna bahasa diganti bendera — "kelas apa" kebaca tanpa menghafal legenda.
-function SesiItem({ s, studentName, onClick }: {
+function SesiItem({ s, studentName, onClick, today = false, now }: {
   s: NormSession; studentName?: string; onClick: () => void;
+  /** [sesi-hari-ini-v1] item di kelompok "Hari Ini" — nama hari diganti hitung mundur. */
+  today?: boolean;
+  now: number;
 }) {
   const c = langColor(s.language);
   const hasFlag = !!langFlagCode(s.language);
@@ -169,6 +213,14 @@ function SesiItem({ s, studentName, onClick }: {
               <span className="font-bold" style={{ color: LIVE_COLOR }}>
                 Sedang berlangsung{s._end ? ` · selesai ${s._end}` : ""}
               </span>
+            ) : today ? (
+              // Nama harinya sudah dijawab judul kelompok — ruangnya dipakai buat
+              // hitung mundur, yang justru dicari siswa di kelas hari ini.
+              <>
+                {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}
+                {" · "}
+                <span className="font-bold text-[#16796E]">{countdownLabel(s._d, now)}</span>
+              </>
             ) : (
               <>{s._weekday} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}</>
             )}
