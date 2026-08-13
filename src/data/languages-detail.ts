@@ -263,7 +263,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Korea Online | Linguo.id — A1 sampai TOPIK",
     metaDescription:
-      "Belajar Bahasa Korea online bersama pengajar bersertifikat. Kelas privat, semi privat & grup. Hangul, K-drama, persiapan TOPIK. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Korea online bersama pengajar bersertifikat. Kelas privat, semi privat & grup. Hangul, K-drama, persiapan TOPIK. Semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa korea",
       "les bahasa korea online",
@@ -422,7 +422,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Jepang Online | Linguo.id — JLPT N5 sampai N1",
     metaDescription:
-      "Belajar Bahasa Jepang online dari nol. Hiragana, Katakana, Kanji, persiapan JLPT N5–N1, business Japanese. Pengajar bersertifikat, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Jepang online dari nol. Hiragana, Katakana, Kanji, persiapan JLPT N5–N1, business Japanese. Pengajar bersertifikat, semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa jepang",
       "les bahasa jepang online",
@@ -579,7 +579,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Mandarin Online | Linguo.id — HSK 1 sampai HSK 6",
     metaDescription:
-      "Belajar Bahasa Mandarin online dari Pinyin sampai mahir. Persiapan HSK 1–6, business Mandarin, Hanzi simplified. Pengajar bersertifikat, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Mandarin online dari Pinyin sampai mahir. Persiapan HSK 1–6, business Mandarin, Hanzi simplified. Pengajar bersertifikat, semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa mandarin",
       "les bahasa mandarin online",
@@ -737,7 +737,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Inggris Online | Linguo.id — IELTS, TOEFL, Conversation",
     metaDescription:
-      "Kursus Bahasa Inggris online untuk semua level. Conversation, IELTS, TOEFL, business English. Pengajar bersertifikat TESOL/CELTA, mulai Rp 50.000/sesi.",
+      "Kursus Bahasa Inggris online untuk semua level. Conversation, IELTS, TOEFL, business English. Pengajar bersertifikat TESOL/CELTA, semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa inggris",
       "les bahasa inggris online",
@@ -895,7 +895,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Jerman Online | Linguo.id — A1 sampai Goethe B2",
     metaDescription:
-      "Belajar Bahasa Jerman online dari nol. Persiapan Goethe-Zertifikat, Ausbildung, au pair, studi di Jerman. Pengajar bersertifikat, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Jerman online dari nol. Persiapan Goethe-Zertifikat, Ausbildung, au pair, studi di Jerman. Pengajar bersertifikat, semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa jerman",
       "les bahasa jerman online",
@@ -1054,7 +1054,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Prancis Online | Linguo.id — A1 sampai DELF B2",
     metaDescription:
-      "Belajar Bahasa Prancis online dari nol. Persiapan DELF/DALF, Campus France, French for hospitality. Pengajar bersertifikat, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Prancis online dari nol. Persiapan DELF/DALF, Campus France, French for hospitality. Pengajar bersertifikat, semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa prancis",
       "les bahasa prancis online",
@@ -1213,7 +1213,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Spanyol Online | Linguo.id — A1 sampai DELE B2",
     metaDescription:
-      "Belajar Bahasa Spanyol online dari nol. Persiapan DELE/SIELE, percakapan cepat lancar, Spanyol Eropa & Amerika Latin. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Spanyol online dari nol. Persiapan DELE/SIELE, percakapan cepat lancar, Spanyol Eropa & Amerika Latin. Semi privat mulai Rp 95.000/sesi.",
     metaKeywords: [
       "kursus bahasa spanyol",
       "les bahasa spanyol online",
@@ -1372,7 +1372,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Italia Online | Linguo.id — A1 sampai CILS B2",
     metaDescription:
-      "Belajar Bahasa Italia online dari nol. Persiapan CILS/CELI, studi seni & desain di Italia, beasiswa MAECI. Pengajar bersertifikat, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Italia online dari nol. Persiapan CILS/CELI, studi seni & desain di Italia, beasiswa MAECI. Pengajar bersertifikat, semi privat mulai Rp 95.000/sesi.",
     metaKeywords: [
       "kursus bahasa italia",
       "les bahasa italia online",
@@ -1531,7 +1531,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Belanda Online | Linguo.id — A1 sampai NT2",
     metaDescription:
-      "Belajar Bahasa Belanda online dari nol. Persiapan Basisexamen Inburgering (MVV), ujian NT2, baca arsip & dokumen hukum. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Belanda online dari nol. Persiapan Basisexamen Inburgering (MVV), ujian NT2, baca arsip & dokumen hukum. Semi privat mulai Rp 95.000/sesi.",
     metaKeywords: [
       "kursus bahasa belanda",
       "les bahasa belanda online",
@@ -1689,7 +1689,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Arab Online | Linguo.id — dari Hijaiyah sampai Kitab",
     metaDescription:
-      "Belajar Bahasa Arab online dari nol. Nahwu-sharaf runtut, memahami Al-Qur'an, Amiyah percakapan, persiapan studi Timur Tengah. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Arab online dari nol. Nahwu-sharaf runtut, memahami Al-Qur'an, Amiyah percakapan, persiapan studi Timur Tengah. Semi privat mulai Rp 80.000/sesi.",
     metaKeywords: [
       "kursus bahasa arab",
       "les bahasa arab online",
@@ -1848,7 +1848,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Rusia Online | Linguo.id — Sirilik sampai TORFL",
     metaDescription:
-      "Belajar Bahasa Rusia online dari nol. Alfabet Sirilik, persiapan TORFL, beasiswa Open Doors, business Russian. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Rusia online dari nol. Alfabet Sirilik, persiapan TORFL, beasiswa Open Doors, business Russian. Semi privat mulai Rp 95.000/sesi.",
     metaKeywords: [
       "kursus bahasa rusia",
       "les bahasa rusia online",
@@ -2007,7 +2007,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Turki Online | Linguo.id — A1 sampai TÖMER/TYS",
     metaDescription:
-      "Belajar Bahasa Turki online dari nol. Persiapan Türkiye Bursları, TÖMER, nonton dizi tanpa subtitle. Pengajar alumni Turki, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Turki online dari nol. Persiapan Türkiye Bursları, TÖMER, nonton dizi tanpa subtitle. Pengajar alumni Turki, semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa turki",
       "les bahasa turki online",
@@ -2166,7 +2166,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Yunani Online | Linguo.id — Modern Greek A1–B2",
     metaDescription:
-      "Belajar Bahasa Yunani online dari nol. Alfabet Yunani, percakapan Mediterania, track pelaut & teologi, persiapan Ελληνομάθεια. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Yunani online dari nol. Alfabet Yunani, percakapan Mediterania, track pelaut & teologi, persiapan Ελληνομάθεια. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa yunani",
       "les bahasa yunani online",
@@ -2325,7 +2325,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Portugis Online | Linguo.id — Brasil & Timor Leste",
     metaDescription:
-      "Belajar Bahasa Portugis online dari nol. Portugis Brasil & Eropa, persiapan Celpe-Bras, karier Timor Leste, bisnis Brasil. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Portugis online dari nol. Portugis Brasil & Eropa, persiapan Celpe-Bras, karier Timor Leste, bisnis Brasil. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa portugis",
       "les bahasa portugis online",
@@ -2483,7 +2483,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Thailand Online | Linguo.id — Nada, Aksara, Percakapan",
     metaDescription:
-      "Belajar Bahasa Thailand online dari nol. 5 nada, aksara Thai, percakapan Bangkok, bisnis ASEAN. Pengajar berpengalaman, mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Thailand online dari nol. 5 nada, aksara Thai, percakapan Bangkok, bisnis ASEAN. Pengajar berpengalaman, semi privat mulai Rp 95.000/sesi.",
     metaKeywords: [
       "kursus bahasa thailand",
       "les bahasa thailand online",
@@ -2642,7 +2642,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Vietnam Online | Linguo.id — Percakapan & Bisnis",
     metaDescription:
-      "Belajar Bahasa Vietnam online dari nol. 6 nada, huruf Latin, percakapan Hanoi & Saigon, bahasa untuk manufaktur & bisnis. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Vietnam online dari nol. 6 nada, huruf Latin, percakapan Hanoi & Saigon, bahasa untuk manufaktur & bisnis. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa vietnam",
       "les bahasa vietnam online",
@@ -2801,7 +2801,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Hindi Online | Linguo.id — Devanagari & Bollywood",
     metaDescription:
-      "Belajar Bahasa Hindi online dari nol. Aksara Devanagari, percakapan sehari-hari, bahasa Bollywood, business Hindi. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Hindi online dari nol. Aksara Devanagari, percakapan sehari-hari, bahasa Bollywood, business Hindi. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa hindi",
       "les bahasa hindi online",
@@ -2960,7 +2960,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Jawa Online | Linguo.id — Ngoko, Krama, Aksara Jawa",
     metaDescription:
-      "Belajar Bahasa Jawa online: ngoko, krama, krama inggil, aksara Jawa, tembang. Untuk pendatang, menantu, & generasi diaspora. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Jawa online: ngoko, krama, krama inggil, aksara Jawa, tembang. Untuk pendatang, menantu, & generasi diaspora. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa jawa",
       "les bahasa jawa online",
@@ -3119,7 +3119,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Sunda Online | Linguo.id — Loma, Lemes, Budaya",
     metaDescription:
-      "Belajar Bahasa Sunda online: undak usuk basa, percakapan Bandung, paribasa, aksara Sunda. Untuk pendatang & generasi muda. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Sunda online: undak usuk basa, percakapan Bandung, paribasa, aksara Sunda. Untuk pendatang & generasi muda. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa sunda",
       "les bahasa sunda online",
@@ -3277,7 +3277,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Swedia Online | Linguo.id — A1 sampai Tisus",
     metaDescription:
-      "Belajar Bahasa Swedia online dari nol. Persiapan SFI, Swedex, Tisus — kerja tech, beasiswa SI, atau menyusul pasangan. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Swedia online dari nol. Persiapan SFI, Swedex, Tisus — kerja tech, beasiswa SI, atau menyusul pasangan. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa swedia",
       "les bahasa swedia online",
@@ -3436,7 +3436,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Norwegia Online | Linguo.id — Norskprøven A1–B2",
     metaDescription:
-      "Belajar Bahasa Norwegia online dari nol. Persiapan Norskprøven & Bergenstest — jalur perawat, maritim, studi. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Norwegia online dari nol. Persiapan Norskprøven & Bergenstest — jalur perawat, maritim, studi. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa norwegia",
       "les bahasa norwegia online",
@@ -3595,7 +3595,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Denmark Online | Linguo.id — Prøve i Dansk 1–3",
     metaDescription:
-      "Belajar Bahasa Denmark online dari nol. Pelafalan & stød, persiapan Prøve i Dansk, kerja & residence di Denmark. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Denmark online dari nol. Pelafalan & stød, persiapan Prøve i Dansk, kerja & residence di Denmark. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa denmark",
       "les bahasa denmark online",
@@ -3754,7 +3754,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Finlandia Online | Linguo.id — YKI 1 sampai 5",
     metaDescription:
-      "Belajar Bahasa Finlandia online dari nol. Persiapan YKI, jalur perawat & caregiver, studi pendidikan. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Finlandia online dari nol. Persiapan YKI, jalur perawat & caregiver, studi pendidikan. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa finlandia",
       "les bahasa finlandia online",
@@ -3913,7 +3913,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Islandia Online | Linguo.id — dari Nol sampai Saga",
     metaDescription:
-      "Belajar Bahasa Islandia online dari nol. Þ dan ð, kasus & saga, kerja pariwisata-perikanan, ujian residence. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Islandia online dari nol. Þ dan ð, kasus & saga, kerja pariwisata-perikanan, ujian residence. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa islandia",
       "les bahasa islandia online",
@@ -4071,7 +4071,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Polandia Online | Linguo.id — Bekal Kerja & B1",
     metaDescription:
-      "Belajar Bahasa Polandia online dari nol. Bekal kerja di Polandia, certyfikat B1, kuliah & residence. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Polandia online dari nol. Bekal kerja di Polandia, certyfikat B1, kuliah & residence. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa polandia",
       "les bahasa polandia online",
@@ -4230,7 +4230,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Ceko Online | Linguo.id — CCE & Kuliah Gratis di Praha",
     metaDescription:
-      "Belajar Bahasa Ceko online dari nol. Target CCE B2 — kuliah gratis di universitas negeri Ceko. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Ceko online dari nol. Target CCE B2 — kuliah gratis di universitas negeri Ceko. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa ceko",
       "les bahasa ceko online",
@@ -4389,7 +4389,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Hungaria Online | Linguo.id — Bekal Stipendium Hungaricum",
     metaDescription:
-      "Belajar Bahasa Hungaria online dari nol. Bekal Stipendium Hungaricum, hidup di Budapest, ECL B2. Pengajar alumni Hungaria. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Hungaria online dari nol. Bekal Stipendium Hungaricum, hidup di Budapest, ECL B2. Pengajar alumni Hungaria. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa hungaria",
       "les bahasa hungaria online",
@@ -4548,7 +4548,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Rumania Online | Linguo.id — A1 sampai B2",
     metaDescription:
-      "Belajar Bahasa Rumania online dari nol. Serumpun Italia-Spanyol, beasiswa pemerintah Rumania, kerja di Bukares. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Rumania online dari nol. Serumpun Italia-Spanyol, beasiswa pemerintah Rumania, kerja di Bukares. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa rumania",
       "les bahasa rumania online",
@@ -4707,7 +4707,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Bulgaria Online | Linguo.id — Slavia Tanpa Kasus",
     metaDescription:
-      "Belajar Bahasa Bulgaria online dari nol. Sirilik, bahasa Slavia termudah, bekal kerja & kuliah di Bulgaria. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Bulgaria online dari nol. Sirilik, bahasa Slavia termudah, bekal kerja & kuliah di Bulgaria. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa bulgaria",
       "les bahasa bulgaria online",
@@ -4866,7 +4866,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Ukraina Online | Linguo.id — A1 sampai B2",
     metaDescription:
-      "Belajar Bahasa Ukraina online dari nol. Untuk NGO & kemanusiaan, rekonstruksi, riset kawasan. Track khusus penutur Rusia. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Ukraina online dari nol. Untuk NGO & kemanusiaan, rekonstruksi, riset kawasan. Track khusus penutur Rusia. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa ukraina",
       "les bahasa ukraina online",
@@ -5024,7 +5024,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Ibrani Online | Linguo.id — Modern & Biblical Hebrew",
     metaDescription:
-      "Belajar Bahasa Ibrani online dari alef-bet. Ibrani Modern gaya Ulpan + jembatan ke Biblical Hebrew untuk teologi. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Ibrani online dari alef-bet. Ibrani Modern gaya Ulpan + jembatan ke Biblical Hebrew untuk teologi. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa ibrani",
       "les bahasa ibrani online",
@@ -5183,7 +5183,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Persia Online | Linguo.id — Farsi, dari Nol sampai Rumi",
     metaDescription:
-      "Belajar Bahasa Persia (Farsi) online dari nol. Aksara, percakapan, sampai membaca Rumi & Hafez. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Persia (Farsi) online dari nol. Aksara, percakapan, sampai membaca Rumi & Hafez. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa persia",
       "les bahasa persia online",
@@ -5342,7 +5342,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Georgia Online | Linguo.id — Mkhedruli sampai B2",
     metaDescription:
-      "Belajar Bahasa Georgia online dari nol. Aksara mkhedruli, percakapan Tbilisi, track mahasiswa kedokteran & nomad. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Georgia online dari nol. Aksara mkhedruli, percakapan Tbilisi, track mahasiswa kedokteran & nomad. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa georgia",
       "les bahasa georgia online",
@@ -5500,7 +5500,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Kanton Online | Linguo.id — Bahasa Hong Kong",
     metaDescription:
-      "Belajar Bahasa Kanton online dari nol. 6 nada, Jyutping, percakapan Hong Kong, karakter tradisional. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Kanton online dari nol. 6 nada, Jyutping, percakapan Hong Kong, karakter tradisional. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa kanton",
       "les bahasa kanton online",
@@ -5659,7 +5659,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Filipina Online | Linguo.id — Tagalog untuk Orang Indonesia",
     metaDescription:
-      "Belajar Bahasa Filipina (Tagalog) online — bahasa serumpun tercepat untuk orang Indonesia. Percakapan, Taglish, bisnis Manila. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Filipina (Tagalog) online — bahasa serumpun tercepat untuk orang Indonesia. Percakapan, Taglish, bisnis Manila. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa filipina",
       "les bahasa filipina online",
@@ -5818,7 +5818,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Khmer Online | Linguo.id — Bahasa Kamboja A1–B2",
     metaDescription:
-      "Belajar Bahasa Khmer (Kamboja) online dari nol. Tanpa nada, aksara Angkor, percakapan Phnom Penh, bahasa NGO & bisnis. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Khmer (Kamboja) online dari nol. Tanpa nada, aksara Angkor, percakapan Phnom Penh, bahasa NGO & bisnis. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa khmer",
       "les bahasa khmer online",
@@ -5977,7 +5977,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Laos Online | Linguo.id — Lao A1–B2, Bonus Thai",
     metaDescription:
-      "Belajar Bahasa Laos online dari nol. Aksara Lao, percakapan Vientiane, bahasa proyek & NGO — bonus paham Thai lisan. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Laos online dari nol. Aksara Lao, percakapan Vientiane, bahasa proyek & NGO — bonus paham Thai lisan. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa laos",
       "les bahasa laos online",
@@ -6136,7 +6136,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Myanmar Online | Linguo.id — Burma A1–B2",
     metaDescription:
-      "Belajar Bahasa Myanmar (Burma) online dari nol. Aksara bundar, percakapan Yangon, bahasa kemanusiaan & riset. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Myanmar (Burma) online dari nol. Aksara bundar, percakapan Yangon, bahasa kemanusiaan & riset. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa myanmar",
       "les bahasa myanmar online",
@@ -6295,7 +6295,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Urdu Online | Linguo.id — Nastaliq sampai Ghazal",
     metaDescription:
-      "Belajar Bahasa Urdu online dari nol. Aksara Nastaliq, kembaran Hindi lisan, ghazal & bisnis Pakistan. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Urdu online dari nol. Aksara Nastaliq, kembaran Hindi lisan, ghazal & bisnis Pakistan. Semi privat mulai Rp 105.000/sesi.",
     metaKeywords: [
       "kursus bahasa urdu",
       "les bahasa urdu online",
@@ -6453,7 +6453,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Betawi Online | Linguo.id — Logat, Pantun, Budaya",
     metaDescription:
-      "Belajar Bahasa Betawi online dari penutur asli. Logat & kosakata dalam, pantun palang pintu, budaya Jakarta. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Betawi online dari penutur asli. Logat & kosakata dalam, pantun palang pintu, budaya Jakarta. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa betawi",
       "les bahasa betawi",
@@ -6612,7 +6612,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Bali Online | Linguo.id — Sor Singgih & Aksara",
     metaDescription:
-      "Belajar Bahasa Bali online: basa andap & alus, sor singgih, aksara Bali, bahasa upacara. Untuk pendatang & generasi muda. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Bali online: basa andap & alus, sor singgih, aksara Bali, bahasa upacara. Untuk pendatang & generasi muda. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa bali",
       "les bahasa bali online",
@@ -6771,7 +6771,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Batak Online | Linguo.id — Toba, Umpasa, Adat",
     metaDescription:
-      "Belajar Bahasa Batak Toba online: percakapan, partuturan, umpasa & bahasa pesta adat. Untuk generasi perantauan & menantu. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Batak Toba online: percakapan, partuturan, umpasa & bahasa pesta adat. Untuk generasi perantauan & menantu. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa batak",
       "les bahasa batak online",
@@ -6930,7 +6930,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Bugis Online | Linguo.id — Percakapan & Lontara",
     metaDescription:
-      "Belajar Bahasa Bugis online: percakapan, adab tabe', aksara Lontara, élong & La Galigo. Untuk perantauan & menantu. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Bugis online: percakapan, adab tabe', aksara Lontara, élong & La Galigo. Untuk perantauan & menantu. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa bugis",
       "les bahasa bugis online",
@@ -7089,7 +7089,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus Bahasa Madura Online | Linguo.id — Tingkat Tutur Lengkap",
     metaDescription:
-      "Belajar Bahasa Madura online: enjâ'-iyâ sampai èngghi-bhunten, bahasa profesi untuk guru & nakes, budaya. Mulai Rp 50.000/sesi.",
+      "Belajar Bahasa Madura online: enjâ'-iyâ sampai èngghi-bhunten, bahasa profesi untuk guru & nakes, budaya. Semi privat mulai Rp 75.000/sesi.",
     metaKeywords: [
       "kursus bahasa madura",
       "les bahasa madura online",
@@ -7248,7 +7248,7 @@ export const languageDetails: Record<string, LanguageDetail> = {
 
     metaTitle: "Kursus BIPA Online | Linguo.id — Indonesian for Foreigners, UKBI Ready",
     metaDescription:
-      "Kursus Bahasa Indonesia untuk Penutur Asing (BIPA) online. Learn Indonesian with certified teachers — survival to UKBI. Mulai Rp 50.000/sesi.",
+      "Kursus Bahasa Indonesia untuk Penutur Asing (BIPA) online. Learn Indonesian with certified teachers — survival to UKBI. Semi privat mulai Rp 135.000/sesi.",
     metaKeywords: [
       "kursus BIPA",
       "BIPA online",

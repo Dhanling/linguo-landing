@@ -16,6 +16,12 @@ import {
 } from "../../../data/testimonials";
 import { LangSlugFlag } from "../../../components/RectFlag";
 import { ArrowRight, Check, DetailIcon } from "./DetailIcon";
+import {
+  getLanguageCategory,
+  PRICE_PRIVATE_60MIN,
+  SEMI_PRIVATE_PRICE_BASIC,
+} from "../../../lib/trial-pricing";
+import { REGULER_LANGS } from "../../../lib/programLanguages";
 
 // ============================================================================
 // PARAM PARSING
@@ -118,12 +124,96 @@ const FUNNEL_LANG_OVERRIDE: Record<string, string> = {
   bipa: "BIPA",
 };
 
-const buildFunnelHref = (languageSlug: string, urlSlug: string) => {
-  const langEn =
-    FUNNEL_LANG_OVERRIDE[languageSlug] ||
-    languageSlug.charAt(0).toUpperCase() + languageSlug.slice(1);
-  return `/?openFunnel=1&lang=${encodeURIComponent(langEn)}&from=${encodeURIComponent(`kelas-bahasa-${urlSlug}`)}`;
+const funnelLangName = (languageSlug: string) =>
+  FUNNEL_LANG_OVERRIDE[languageSlug] ||
+  languageSlug.charAt(0).toUpperCase() + languageSlug.slice(1);
+
+const buildFunnelHref = (languageSlug: string, urlSlug: string) =>
+  `/?openFunnel=1&lang=${encodeURIComponent(funnelLangName(languageSlug))}&from=${encodeURIComponent(`kelas-bahasa-${urlSlug}`)}`;
+
+// ============================================================================
+// linguo-patch:kelas-pricelist-sync-v1
+// Harga kartu TIDAK lagi pakai defaultPricing hardcode (100/75/50rb rata semua
+// bahasa) — dihitung dari pricelist resmi src/lib/trial-pricing.ts per KATEGORI
+// bahasa (A–E), sama seperti funnel & /harga. detail.pricing di
+// languages-detail.ts sengaja diabaikan.
+// - Privat: PRICE_PRIVATE_60MIN[cat][0] (level A1, 60 menit)
+// - Semi Privat: SEMI_PRIVATE_PRICE_BASIC[cat][1] / 2 (2 siswa, per siswa)
+// - Reguler: paket flat Rp 150.000/2 bulan (mirror REGULER_PRICE di
+//   FunnelModal.tsx & api/create-funnel-invoice) — HANYA bahasa REGULER_LANGS
+// ============================================================================
+
+const REGULER_PACKAGE_PRICE = 150000;
+
+type ComputedTier = {
+  name: string;
+  price: number;
+  priceUnit: string;
+  sub: string;
+  features: string[];
+  highlighted?: boolean;
+  ctaLabel: string;
+  note?: string;
 };
+
+function buildPricingTiers(languageSlug: string): ComputedTier[] {
+  const langEn = funnelLangName(languageSlug);
+  // Fallback "C" mirror getPrivateBase60 — jangan sampai halaman tanpa harga.
+  const cat = getLanguageCategory(langEn) || "C";
+  const privA1 = PRICE_PRIVATE_60MIN[cat][0];
+  const semi2PerStudent = Math.round(SEMI_PRIVATE_PRICE_BASIC[cat][1] / 2);
+
+  const tiers: ComputedTier[] = [
+    {
+      name: "Privat 1:1",
+      price: privA1,
+      priceUnit: "per sesi",
+      sub: "1 siswa • 60 menit",
+      features: [
+        "Jadwal fleksibel sesuai kesibukan",
+        "Materi disesuaikan target kamu",
+        "Pengajar bersertifikat",
+        "Akses LMS Linguo & rekaman sesi",
+      ],
+      highlighted: true,
+      ctaLabel: "Daftar Privat",
+      note: "Harga level A1 — level lanjut menyesuaikan pricelist.",
+    },
+    {
+      name: "Semi Privat",
+      price: semi2PerStudent,
+      priceUnit: "per siswa / sesi",
+      sub: "2–10 siswa • 60 menit",
+      features: [
+        "Belajar bareng teman / pasangan",
+        "Tetap personal, lebih hemat",
+        "Makin ramai makin hemat per siswa",
+        "Pengajar bersertifikat + akses LMS",
+      ],
+      ctaLabel: "Daftar Semi Privat",
+      note: "Harga grup 2 siswa, level A1.",
+    },
+  ];
+
+  if (REGULER_LANGS.includes(langEn)) {
+    tiers.push({
+      name: "Reguler (Grup)",
+      price: REGULER_PACKAGE_PRICE,
+      priceUnit: "per 2 bulan",
+      sub: "8–15 siswa • 90 menit",
+      features: [
+        "Belajar bareng komunitas",
+        "Jadwal fix mingguan",
+        "Materi terstruktur per batch",
+        "Harga paling terjangkau",
+      ],
+      ctaLabel: "Daftar Reguler",
+      note: "*Level A1 — kelas dibuka minimal 8 peserta.",
+    });
+  }
+
+  return tiers;
+}
 
 // Placement test per bahasa hidup di /silabus/<slug>/coba (route /placement-test
 // tidak pernah ada — tombol lama 404).
@@ -418,6 +508,8 @@ function Curriculum({ detail, langName }: { detail: LanguageDetail; langName: st
 }
 
 function Pricing({ detail, langName }: { detail: LanguageDetail; langName: string }) {
+  const tiers = buildPricingTiers(detail.languageSlug);
+
   return (
     <section className="bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
@@ -429,13 +521,18 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
             Mulai sesuai gaya belajar kamu.
           </h2>
           <p className="mt-3 text-slate-600">
-            Tiga jenis kelas Bahasa {langName} dengan harga transparan. Bayar per sesi — tanpa
-            kontrak panjang, tanpa biaya tersembunyi.
+            {tiers.length === 3 ? "Tiga" : "Dua"} jenis kelas Bahasa {langName} dengan harga
+            transparan, sama persis dengan pricelist resmi — tanpa kontrak panjang, tanpa biaya
+            tersembunyi.
           </p>
         </header>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {detail.pricing.map((tier) => (
+        <div
+          className={`grid gap-6 ${
+            tiers.length === 3 ? "md:grid-cols-3" : "mx-auto max-w-3xl md:grid-cols-2"
+          }`}
+        >
+          {tiers.map((tier) => (
             <article
               key={tier.name}
               className={`relative flex flex-col rounded-2xl p-7 ${
@@ -452,13 +549,13 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
 
               <h3 className="text-xl font-bold">{tier.name}</h3>
               <p className={`mt-1 text-sm ${tier.highlighted ? "text-white/80" : "text-slate-500"}`}>
-                {tier.classSize} • {tier.sessionDuration}
+                {tier.sub}
               </p>
 
               <div className="my-5">
-                <div className="text-3xl font-bold">{formatRupiah(tier.pricePerSession)}</div>
+                <div className="text-3xl font-bold">{formatRupiah(tier.price)}</div>
                 <div className={`text-sm ${tier.highlighted ? "text-white/80" : "text-slate-500"}`}>
-                  per sesi
+                  {tier.priceUnit}
                 </div>
               </div>
 
@@ -484,8 +581,18 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
                     : "border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white"
                 }`}
               >
-                {tier.ctaLabel ?? `Daftar ${tier.name}`}
+                {tier.ctaLabel}
               </Link>
+
+              {tier.note && (
+                <p
+                  className={`mt-3 text-center text-xs ${
+                    tier.highlighted ? "text-white/70" : "text-slate-400"
+                  }`}
+                >
+                  {tier.note}
+                </p>
+              )}
             </article>
           ))}
         </div>
@@ -744,12 +851,14 @@ function buildCourseSchema(
       courseMode: "online",
       courseWorkload: `PT${level.sessionCount}H`,
     })),
-    offers: detail.pricing.map((tier) => ({
+    // [kelas-pricelist-sync-v1] offers = tiers yang benar-benar tampil di
+    // halaman (harga pricelist per kategori), bukan detail.pricing hardcode.
+    offers: buildPricingTiers(detail.languageSlug).map((tier) => ({
       "@type": "Offer",
       name: tier.name,
-      price: tier.pricePerSession,
+      price: tier.price,
       priceCurrency: "IDR",
-      category: tier.classSize,
+      category: tier.sub,
       availability: "https://schema.org/InStock",
     })),
   };
