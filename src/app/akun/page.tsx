@@ -2377,10 +2377,17 @@ export default function AkunPage() {
   // Sekarang yang disimpan SELURUH sesi (12 bulan ke belakang s/d mendatang);
   // `upcomingSchedules` jadi turunan supaya semua pemakai lama tak ikut berubah.
   const [allSchedules, setAllSchedules] = useState<Schedule[]>([]);
+  // [jadwal-live-now-v1] Patokannya jam SELESAI, bukan jam mulai. Dulu `> now`
+  // dipakai ke `scheduled_at`, jadi kelas yang lagi berlangsung langsung raib dari
+  // Beranda begitu menit pertama lewat — persis menit siswa paling butuh tombol
+  // "Masuk Kelas"-nya. Sesi hitung sebagai lewat hanya setelah durasinya habis.
   const upcomingSchedules = useMemo(() => {
     const now = Date.now();
     return allSchedules
-      .filter((s) => (s.status === "scheduled" || s.status === "pending") && new Date(s.scheduled_at).getTime() > now)
+      .filter((s) =>
+        (s.status === "scheduled" || s.status === "pending") &&
+        new Date(s.scheduled_at).getTime() + (Number(s.duration_minutes) || 60) * 60000 > now
+      )
       .sort((a, b) => new Date(a.scheduled_at).getTime() - new Date(b.scheduled_at).getTime());
   }, [allSchedules]);
   // [sesi-nomor-sinkron-v1] Nomor sesi dihitung sekali untuk SEMUA baris jadwal
