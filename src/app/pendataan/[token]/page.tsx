@@ -17,8 +17,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   AlertCircle, ArrowLeft, ArrowRight, CalendarDays, Check, CheckCircle2,
   ChevronDown, ChevronLeft, ChevronRight, Clock, GraduationCap, Heart, History, Loader2, Mail,
-  MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
+  MapPin, Megaphone, MessageCircle, Phone, School, SearchX, Sparkles, Target, User, X,
 } from "lucide-react";
+import { WILAYAH_ID, getCitiesByProvince } from "@/lib/wilayah-id";
 
 const TEAL = "#1A9E9E";
 const WA_CS = "6282116859493";
@@ -42,6 +43,10 @@ type IntakeForm = {
   learning_goal: string | null;
   hobby: string | null;
   prior_experience: string | null;
+  // [pendataan-domisili-referral-v1]
+  province: string | null;
+  city: string | null;
+  referral_source: string | null;
 };
 
 const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
@@ -142,6 +147,34 @@ const EXPERIENCES = [
   "Pernah tinggal / kerja di negaranya",
 ];
 
+// [pendataan-domisili-referral-v1] "Tahu Linguo dari mana?" — ditanyakan ke
+// siswa yang SUDAH bayar, jadi jawabannya lebih dipercaya daripada tebakan
+// sumber lead di dashboard. Mendarat di `students.source`, kolom yang selama ini
+// hampir selalu kosong.
+const REFERRALS = [
+  "Instagram",
+  "TikTok",
+  "Teman",
+  "Keluarga",
+  "Google / pencarian",
+  "YouTube",
+  "Facebook",
+  "Grup WhatsApp / komunitas",
+  "Sekolah / kampus / kantor",
+  "Iklan",
+  "Lainnya",
+];
+
+/** Yang butuh keterangan tambahan supaya jawabannya berguna: "Teman" tanpa nama
+ *  tidak bisa dipakai untuk apa pun, "Lainnya" apalagi. */
+const REFERRAL_NEEDS_NOTE: Record<string, string> = {
+  "Teman": "Boleh sebut namanya? Kami ingin berterima kasih ke dia.",
+  "Keluarga": "Boleh sebut siapa? Kami ingin berterima kasih ke dia.",
+  "Lainnya": "Tulis dari mana kamu tahu Linguo.",
+};
+
+const PROVINCE_NAMES = WILAYAH_ID.map((p) => p.name);
+
 const MONTHS = [
   "Januari", "Februari", "Maret", "April", "Mei", "Juni",
   "Juli", "Agustus", "September", "Oktober", "November", "Desember",
@@ -154,12 +187,18 @@ const STEPS = [
   { title: "Jadwal", icon: CalendarDays },
 ];
 
+// [pendataan-teks-kontras-v1] Semua teks di formulir ini dulu abu-abu muda
+// (slate-400/500) dengan ukuran 11-12px. Di layar HP di bawah matahari, dan
+// buat siswa yang matanya tidak setajam desainer, pertanyaannya praktis tak
+// terbaca — dan pertanyaan yang tak terbaca dijawab asal. Sekarang: teks isi
+// minimal `text-sm`, label & pertanyaan `text-base` hitam (slate-900), abu-abu
+// dipakai hanya untuk yang benar-benar sekunder dan tetap di slate-600.
 const inputClass =
-  "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm transition focus:border-[#1A9E9E] focus:outline-none focus:ring-4 focus:ring-[#1A9E9E]/10";
+  "w-full rounded-2xl border border-slate-300 bg-white px-4 py-3.5 text-base text-slate-900 placeholder:text-slate-500 shadow-sm transition focus:border-[#1A9E9E] focus:outline-none focus:ring-4 focus:ring-[#1A9E9E]/10";
 
 const chipClass = (on: boolean) =>
-  `inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-xs font-medium transition active:scale-95 ${
-    on ? "border-transparent text-white shadow-sm" : "border-slate-200 bg-white text-slate-600 hover:border-[#1A9E9E]/40 hover:text-slate-900"
+  `inline-flex items-center gap-1.5 rounded-full border px-4 py-2.5 text-sm font-semibold transition active:scale-95 ${
+    on ? "border-transparent text-white shadow-sm" : "border-slate-300 bg-white text-slate-800 hover:border-[#1A9E9E]/60 hover:text-slate-900"
   }`;
 
 function Field({
@@ -173,13 +212,91 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-slate-600">
-        <Icon className="h-3.5 w-3.5 text-slate-400" />
+      <label className="mb-2 flex items-center gap-1.5 text-base font-bold text-slate-900">
+        <Icon className="h-4 w-4 text-[#1A9E9E]" />
         {label}
         {required && <span className="text-red-500">*</span>}
       </label>
       {children}
-      {hint && <p className="mt-1.5 text-[11px] leading-relaxed text-slate-400">{hint}</p>}
+      {hint && <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{hint}</p>}
+    </div>
+  );
+}
+
+/** Dropdown teks dengan kolom cari — dipakai provinsi & kota/kabupaten.
+ *  Daftarnya 38 provinsi & ~480 kab/kota: `<select>` bawaan berarti menggulir
+ *  jauh tanpa bisa mengetik, dan di HP tampilannya lepas dari sisa formulir. */
+function PilihWilayah({
+  nilai, opsi, onPilih, placeholder, disabled,
+}: {
+  nilai: string;
+  opsi: string[];
+  onPilih: (v: string) => void;
+  placeholder: string;
+  disabled?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const [cari, setCari] = useState("");
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const cariRef = useRef<HTMLInputElement>(null);
+
+  const cocok = useMemo(() => {
+    const q = cari.trim().toLowerCase();
+    return q ? opsi.filter((o) => o.toLowerCase().includes(q)) : opsi;
+  }, [opsi, cari]);
+
+  useEffect(() => {
+    if (!open) return;
+    // Sama seperti kalender: papan ketik virtual di HP akan menutupi daftarnya,
+    // jadi fokus otomatis hanya di perangkat berpenunjuk.
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) cariRef.current?.focus();
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onEsc = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [open]);
+
+  return (
+    <div className="relative" ref={wrapRef}>
+      <button type="button" disabled={disabled}
+        onClick={() => { setCari(""); setOpen((o) => !o); }}
+        className={`${inputClass} flex items-center justify-between gap-2 text-left disabled:cursor-not-allowed disabled:bg-slate-50`}>
+        <span className={nilai ? "truncate text-slate-900" : "truncate text-slate-500"}>{nilai || placeholder}</span>
+        <ChevronDown className={`h-4 w-4 shrink-0 text-slate-500 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 z-40 mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+          <div className="border-b border-slate-100 p-2">
+            <input ref={cariRef} type="text" value={cari} onChange={(e) => setCari(e.target.value)}
+              placeholder="Ketik untuk mencari…" aria-label={placeholder}
+              className="w-full rounded-xl bg-slate-100 px-3 py-2.5 text-sm text-slate-900 outline-none placeholder:text-slate-500" />
+          </div>
+          <div role="listbox" className="max-h-60 overflow-y-auto overscroll-contain py-1">
+            {cocok.length === 0 ? (
+              <p className="px-4 py-3 text-sm text-slate-600">Tidak ada yang cocok.</p>
+            ) : (
+              cocok.map((o) => (
+                <button key={o} type="button" role="option" aria-selected={o === nilai}
+                  onClick={() => { onPilih(o); setOpen(false); }}
+                  className={`flex w-full items-center justify-between gap-2 px-4 py-2.5 text-left text-sm transition hover:bg-slate-100 ${
+                    o === nilai ? "font-bold" : "text-slate-800"
+                  }`}
+                  style={o === nilai ? { color: TEAL } : undefined}>
+                  <span className="truncate">{o}</span>
+                  {o === nilai && <Check className="h-4 w-4 shrink-0" />}
+                </button>
+              ))
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -313,7 +430,7 @@ function PilihCari({
           <div ref={listRef} role="listbox" aria-label={label}
             className="max-h-44 overflow-y-auto overscroll-contain py-1">
             {cocok.length === 0 ? (
-              <p className="px-3 py-2 text-[11px] text-slate-400">Tidak ada yang cocok.</p>
+              <p className="px-3 py-2 text-xs text-slate-600">Tidak ada yang cocok.</p>
             ) : (
               cocok.map((o, i) => {
                 const aktif = o.nilai === nilai;
@@ -398,7 +515,7 @@ function BirthDatePicker({
     <div className="relative" ref={boxRef}>
       <button type="button" onClick={() => (open ? setOpen(false) : openPicker())}
         className={`${inputClass} flex items-center justify-between text-left`}>
-        <span className={day && month && year ? "text-slate-900" : "text-slate-400"}>{label}</span>
+        <span className={day && month && year ? "text-slate-900" : "text-slate-500"}>{label}</span>
         <CalendarDays className="h-4 w-4 shrink-0 text-slate-400" />
       </button>
 
@@ -422,7 +539,7 @@ function BirthDatePicker({
 
           <div className="grid grid-cols-7 gap-0.5">
             {WEEKDAYS.map((w) => (
-              <div key={w} className="py-1 text-center text-[10px] font-bold uppercase text-slate-400">{w}</div>
+              <div key={w} className="py-1 text-center text-[11px] font-bold uppercase text-slate-600">{w}</div>
             ))}
             {Array.from({ length: lead }, (_, i) => <div key={`lead-${i}`} />)}
             {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((d) => {
@@ -431,8 +548,8 @@ function BirthDatePicker({
               return (
                 <button key={d} type="button" disabled={future}
                   onClick={() => { onPick(String(d), String(viewMonth), String(viewYear)); setOpen(false); }}
-                  className={`aspect-square rounded-lg text-xs font-medium transition ${
-                    picked ? "text-white" : future ? "text-slate-200" : "text-slate-600 hover:bg-[#1A9E9E]/10"
+                  className={`aspect-square rounded-lg text-sm font-semibold transition ${
+                    picked ? "text-white" : future ? "text-slate-300" : "text-slate-800 hover:bg-[#1A9E9E]/10"
                   }`}
                   style={picked ? { background: TEAL } : undefined}>
                   {d}
@@ -498,7 +615,7 @@ function ScheduleGrid({
     <div className="select-none">
       {!showEarly && (
         <button type="button" onClick={onShowEarly}
-          className="mb-2 text-[11px] font-medium text-slate-400 transition hover:text-slate-600">
+          className="mb-2 text-sm font-bold text-slate-700 transition hover:text-[#1A9E9E]">
           + Tampilkan jam pagi (06.00-08.00)
         </button>
       )}
@@ -509,7 +626,7 @@ function ScheduleGrid({
               kotak-kotak yang lewat di bawahnya waktu digulung. */}
           <div className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50" />
           {DAYS_SHORT.map((d) => (
-            <div key={d} className="sticky top-0 z-10 border-b border-l border-slate-200 bg-slate-50 py-2.5 text-center text-[11px] font-bold uppercase tracking-wider text-slate-500">
+            <div key={d} className="sticky top-0 z-10 border-b border-l border-slate-200 bg-slate-50 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-slate-800">
               {d}
             </div>
           ))}
@@ -520,8 +637,8 @@ function ScheduleGrid({
               <div key={minute} className="contents">
                 <button type="button" onClick={() => toggleRow(minute)}
                   title="Pilih jam ini di semua hari"
-                  className={`border-t bg-slate-50/80 pr-1.5 text-right text-[10px] font-medium tabular-nums transition hover:text-[#1A9E9E] ${
-                    onHour ? "border-slate-200 text-slate-500" : "border-dashed border-slate-100 text-slate-300"
+                  className={`border-t bg-slate-50/80 pr-1.5 text-right text-[11px] font-bold tabular-nums transition hover:text-[#1A9E9E] ${
+                    onHour ? "border-slate-200 text-slate-700" : "border-dashed border-slate-100 text-slate-400"
                   }`}>
                   {onHour ? fmtTime(minute) : ".30"}
                 </button>
@@ -590,6 +707,10 @@ export default function PendataanPage() {
   const [birthMonth, setBirthMonth] = useState("");
   const [birthYear, setBirthYear] = useState("");
   const [institution, setInstitution] = useState("");
+  const [province, setProvince] = useState("");
+  const [city, setCity] = useState("");
+  const [referral, setReferral] = useState("");
+  const [referralNote, setReferralNote] = useState("");
   const [hobby, setHobby] = useState("");
   const [experience, setExperience] = useState("");
   const [experienceNote, setExperienceNote] = useState("");
@@ -612,6 +733,14 @@ export default function PendataanPage() {
         setInstitution(d.institution || "");
         setGoal(d.learning_goal || "");
         setHobby(d.hobby || "");
+        setProvince(d.province || "");
+        setCity(d.city || "");
+        if (d.referral_source) {
+          // Disimpan "<pilihan> — <detail>", sama seperti pengalaman belajar.
+          const pick = REFERRALS.find((r) => d.referral_source!.startsWith(r));
+          setReferral(pick || "");
+          setReferralNote(pick ? d.referral_source!.slice(pick.length).replace(/^\s*—\s*/, "") : d.referral_source);
+        }
         if (d.prior_experience) {
           // Disimpan sebagai "<pilihan> — <detail>"; dipecah balik supaya chip
           // yang dulu dipilih tetap tersorot waktu form dibuka ulang.
@@ -684,6 +813,8 @@ export default function PendataanPage() {
       if (!fullName.trim()) return "Nama lengkap wajib diisi";
       if (!nickname.trim()) return "Nama panggilan wajib diisi";
       if (!birthdate) return "Lengkapi tanggal lahir";
+      if (!province) return "Pilih provinsi domisilimu";
+      if (!city) return "Pilih kota / kabupaten domisilimu";
       if (!institution.trim()) return "Sekolah / instansi / perusahaan wajib diisi";
       if (!hobby.trim()) return "Hobi & minat wajib diisi";
     }
@@ -691,6 +822,9 @@ export default function PendataanPage() {
       if (!whatsapp.trim()) return "Nomor WhatsApp wajib diisi";
       if (!email.trim()) return "Email wajib diisi";
       if (!/^\S+@\S+\.\S+$/.test(email.trim())) return "Format email belum benar";
+      if (!referral) return "Pilih dari mana kamu tahu Linguo";
+      if (REFERRAL_NEEDS_NOTE[referral] && !referralNote.trim())
+        return referral === "Lainnya" ? "Tulis dari mana kamu tahu Linguo" : "Sebutkan nama orang yang merekomendasikan Linguo";
     }
     if (s === 2) {
       if (!experience) return "Pilih pengalaman belajarmu sebelumnya";
@@ -747,6 +881,9 @@ export default function PendataanPage() {
           whatsapp,
           email,
           birth_date: birthdate,
+          province,
+          city,
+          referral_source: referralNote.trim() ? `${referral} — ${referralNote.trim()}` : referral,
           institution,
           hobby,
           prior_experience: experienceNote.trim() ? `${experience} — ${experienceNote.trim()}` : experience,
@@ -769,7 +906,7 @@ export default function PendataanPage() {
     return (
       <Shell>
         <Loader2 className="mx-auto mb-4 h-9 w-9 animate-spin" style={{ color: TEAL }} />
-        <p className="text-sm text-slate-500">Memuat form...</p>
+        <p className="text-base text-slate-700">Memuat form...</p>
       </Shell>
     );
   }
@@ -779,7 +916,7 @@ export default function PendataanPage() {
       <Shell>
         <SearchX className="mx-auto mb-4 h-12 w-12 text-red-400" />
         <h1 className="mb-2 text-2xl font-bold text-slate-900">Link tidak valid</h1>
-        <p className="mb-6 text-slate-500">Link pendataan ini tidak ditemukan. Pastikan link yang kamu buka utuh (tidak terpotong saat disalin dari WhatsApp).</p>
+        <p className="mb-6 text-base text-slate-700">Link pendataan ini tidak ditemukan. Pastikan link yang kamu buka utuh (tidak terpotong saat disalin dari WhatsApp).</p>
         <a href={`https://wa.me/${WA_CS}`} target="_blank" rel="noreferrer" className="font-semibold hover:underline" style={{ color: TEAL }}>
           Hubungi kami via WhatsApp
         </a>
@@ -796,7 +933,7 @@ export default function PendataanPage() {
         <h1 className="mb-2 text-2xl font-bold text-slate-900">
           {done ? "Data berhasil dikirim!" : "Data kamu sudah lengkap"}
         </h1>
-        <p className="mb-6 text-slate-500">
+        <p className="mb-6 text-base text-slate-700">
           Tim Linguo akan menghubungi kamu via WhatsApp untuk konfirmasi jadwal dan pembuatan grup kelas.
         </p>
         <div className="flex flex-col items-center gap-3">
@@ -824,7 +961,7 @@ export default function PendataanPage() {
           <div className="mb-3 flex items-center justify-between">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-white.png" alt="Linguo" className="h-8 brightness-0" />
-            <span className="text-[11px] font-medium text-slate-400">
+            <span className="text-xs font-bold text-slate-600">
               Langkah {step + 1} dari {STEPS.length}
             </span>
           </div>
@@ -839,7 +976,7 @@ export default function PendataanPage() {
                     transition={{ duration: 0.35, ease: "easeOut" }}
                     style={{ background: i === step ? TEAL : `${TEAL}80` }} />
                 </div>
-                <span className={`mt-1.5 block truncate text-[10px] font-semibold transition ${i === step ? "text-slate-700" : "text-slate-300"}`}>
+                <span className={`mt-1.5 block truncate text-[11px] font-bold transition ${i === step ? "text-slate-900" : "text-slate-500"}`}>
                   {s.title}
                 </span>
               </button>
@@ -854,11 +991,11 @@ export default function PendataanPage() {
             <h1 className="text-[26px] font-bold leading-tight tracking-tight text-slate-900">
               Hai{greetName ? ` ${greetName}` : ""}, selamat bergabung!
             </h1>
-            <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+            <p className="mt-2 text-base leading-relaxed text-slate-700">
               Isi 4 langkah singkat ini supaya kami bisa menyiapkan pengajar, jadwal, dan grup kelasmu.
             </p>
             {(form?.language || form?.program) && (
-              <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-[#1A9E9E]/15 bg-[#1A9E9E]/5 px-4 py-3 text-xs">
+              <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-[#1A9E9E]/20 bg-[#1A9E9E]/5 px-4 py-3 text-sm font-medium">
                 <Sparkles className="h-3.5 w-3.5" style={{ color: TEAL }} />
                 {form?.language && <span className="font-semibold" style={{ color: TEAL }}>{form.language}</span>}
                 {form?.language && form?.program && <span className="text-slate-300">•</span>}
@@ -895,7 +1032,7 @@ export default function PendataanPage() {
                         placeholder="contoh: Dina" className={inputClass} />
                     </Field>
                   </div>
-                  <p className="-mt-2 text-[11px] leading-relaxed text-slate-400">
+                  <p className="-mt-2 text-sm leading-relaxed text-slate-600">
                     Nama panggilan dipakai pengajar saat kelas berlangsung.
                   </p>
 
@@ -903,9 +1040,30 @@ export default function PendataanPage() {
                     <BirthDatePicker day={birthDay} month={birthMonth} year={birthYear}
                       onPick={(d, m, y) => { setBirthDay(d); setBirthMonth(m); setBirthYear(y); }} />
                     {age !== null && (
-                      <p className="mt-2 text-[11px] font-semibold" style={{ color: TEAL }}>Usia kamu {age} tahun</p>
+                      <p className="mt-2 text-sm font-bold" style={{ color: TEAL }}>Usia kamu {age} tahun</p>
                     )}
                   </Field>
+
+                  {/* [pendataan-domisili-referral-v1] Domisili: dipakai buat
+                      mencocokkan pengajar offline & membaca sebaran siswa.
+                      Kota baru bisa dipilih setelah provinsi — daftarnya
+                      ~480 kab/kota, tanpa penyaring provinsi itu tidak manusiawi. */}
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <Field label="Provinsi" icon={MapPin} required>
+                      <PilihWilayah nilai={province} opsi={PROVINCE_NAMES}
+                        placeholder="Pilih provinsi"
+                        onPilih={(v) => { setProvince(v); setCity(""); }} />
+                    </Field>
+                    <Field label="Kota / Kabupaten" icon={MapPin} required>
+                      <PilihWilayah nilai={city} opsi={getCitiesByProvince(province)}
+                        placeholder={province ? "Pilih kota / kabupaten" : "Pilih provinsi dulu"}
+                        disabled={!province} onPilih={setCity} />
+                    </Field>
+                  </div>
+                  <p className="-mt-2 text-sm leading-relaxed text-slate-600">
+                    Domisili dipakai untuk menyesuaikan zona waktu kelas dan mencarikan
+                    pengajar offline kalau kamu butuh.
+                  </p>
 
                   {/* Wajib juga, tapi yang sedang tidak sekolah/bekerja tetap
                       punya jalan keluar — kolomnya tidak boleh jadi jalan buntu. */}
@@ -937,6 +1095,35 @@ export default function PendataanPage() {
                     <input type="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)}
                       placeholder="nama@email.com" className={inputClass} />
                   </Field>
+
+                  {/* [pendataan-domisili-referral-v1] Ditaruh di sini, bukan di
+                      langkah tujuan: langkah ini isinya cuma dua kolom, dan
+                      pertanyaannya ringan — cocok jadi penutup. */}
+                  <div className="space-y-3 border-t border-slate-200 pt-5">
+                    <p className="flex items-center gap-1.5 text-base font-bold text-slate-900">
+                      <Megaphone className="h-4 w-4" style={{ color: TEAL }} />
+                      Tahu Linguo dari mana? <span className="text-red-500">*</span>
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {REFERRALS.map((r) => (
+                        <button key={r} type="button"
+                          onClick={() => { setReferral(r); setReferralNote(""); }}
+                          className={chipClass(referral === r)}
+                          style={referral === r ? { background: TEAL } : undefined}>
+                          {referral === r && <Check className="h-3.5 w-3.5" />}
+                          {r}
+                        </button>
+                      ))}
+                    </div>
+                    {REFERRAL_NEEDS_NOTE[referral] && (
+                      <Field label={referral === "Lainnya" ? "Dari mana tepatnya?" : "Siapa namanya?"}
+                        icon={Megaphone} required hint={REFERRAL_NEEDS_NOTE[referral]}>
+                        <input type="text" value={referralNote} onChange={(e) => setReferralNote(e.target.value)}
+                          placeholder={referral === "Lainnya" ? "contoh: pameran kampus, brosur" : "contoh: Dina Salsabila"}
+                          className={inputClass} />
+                      </Field>
+                    )}
+                  </div>
                 </div>
               )}
 
@@ -946,8 +1133,8 @@ export default function PendataanPage() {
                   <StepHead icon={Target} title="Tujuan Belajar" desc="Penentu level awal dan materi sesi pertamamu." />
 
                   <div className="space-y-3">
-                    <p className="flex items-start gap-1.5 text-xs leading-relaxed text-slate-500">
-                      <History className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+                    <p className="flex items-start gap-2 text-base leading-relaxed text-slate-800">
+                      <History className="mt-0.5 h-4 w-4 shrink-0" style={{ color: TEAL }} />
                       Pernah belajar bahasa ini sebelumnya? Jawaban jujur membantu kami menaruhmu di
                       level yang pas — bukan mengulang yang sudah kamu bisa.
                     </p>
@@ -971,14 +1158,14 @@ export default function PendataanPage() {
                     )}
                   </div>
 
-                  <div className="space-y-3 border-t border-slate-100 pt-5">
-                    <p className="text-xs font-semibold text-slate-600">Kenapa kamu belajar bahasa ini?</p>
+                  <div className="space-y-3 border-t border-slate-200 pt-5">
+                    <p className="text-base font-bold text-slate-900">Kenapa kamu belajar bahasa ini?</p>
                     <div className="flex flex-wrap gap-2">
                       {GOALS.map((g) => (
                         <button key={g} type="button" onClick={() => setGoal(g)}
                           className={chipClass(goal === g)}
                           style={goal === g ? { background: TEAL } : undefined}>
-                          {goal === g ? <Check className="h-3 w-3" /> : <Target className="h-3 w-3 text-slate-400" />}
+                          {goal === g ? <Check className="h-3.5 w-3.5" /> : <Target className="h-3.5 w-3.5 text-slate-500" />}
                           {g}
                         </button>
                       ))}
@@ -1001,10 +1188,10 @@ export default function PendataanPage() {
 
                   {/* Ikon + teks dibungkus span sendiri: kalau teksnya jadi anak
                       langsung flex, tiap potongan kalimat pecah jadi kolom. */}
-                  <div className="flex items-start gap-1.5 rounded-2xl bg-slate-50 px-3.5 py-3 text-[11px] leading-relaxed text-slate-500">
-                    <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" />
+                  <div className="flex items-start gap-1.5 rounded-2xl bg-slate-50 px-3.5 py-3 text-sm leading-relaxed text-slate-700">
+                    <Clock className="mt-0.5 h-4 w-4 shrink-0" style={{ color: TEAL }} />
                     <span>
-                      Jam mengikuti WIB. Di komputer bisa <span className="font-semibold text-slate-600">klik-tahan lalu geser</span> untuk
+                      Jam mengikuti WIB. Di komputer bisa <span className="font-bold text-slate-900">klik-tahan lalu geser</span> untuk
                       memilih banyak kotak sekaligus; ketuk jam di kiri untuk memilih jam itu di semua hari.
                     </span>
                   </div>
@@ -1012,14 +1199,14 @@ export default function PendataanPage() {
                   <ScheduleGrid blocks={blocks} setBlocks={setBlocks} showEarly={showEarly} onShowEarly={() => setShowEarly(true)} />
 
                   <div className="flex items-center justify-between">
-                    <p className="text-[11px] font-medium text-slate-400">
+                    <p className="text-sm font-semibold text-slate-700">
                       {blocks.size > 0
                         ? `${blocks.size} blok terpilih · ${(blocks.size * 30) / 60} jam`
                         : "Belum ada waktu terpilih"}
                     </p>
                     {blocks.size > 0 && (
                       <button type="button" onClick={() => setBlocks(() => new Set())}
-                        className="text-[11px] font-semibold text-slate-400 transition hover:text-red-500">
+                        className="text-sm font-bold text-slate-600 transition hover:text-red-500">
                         Bersihkan
                       </button>
                     )}
@@ -1028,7 +1215,7 @@ export default function PendataanPage() {
                   {scheduleChips.length > 0 && (
                     <div className="flex flex-wrap gap-1.5">
                       {scheduleChips.map((c) => (
-                        <span key={c} className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-semibold"
+                        <span key={c} className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-bold"
                           style={{ borderColor: `${TEAL}55`, color: TEAL, background: `${TEAL}0d` }}>
                           {c}
                           <button type="button" onClick={() => removeChip(c)} aria-label={`Hapus ${c}`}
@@ -1048,20 +1235,20 @@ export default function PendataanPage() {
         <AnimatePresence>
           {error && (
             <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-              className="mt-4 flex items-center justify-center gap-1.5 rounded-xl bg-red-50 px-4 py-2.5 text-center text-xs font-medium text-red-600">
+              className="mt-4 flex items-center justify-center gap-1.5 rounded-xl bg-red-50 px-4 py-2.5 text-center text-sm font-semibold text-red-700">
               <AlertCircle className="h-3.5 w-3.5 shrink-0" /> {error}
             </motion.p>
           )}
         </AnimatePresence>
 
-        <p className="mt-5 text-center text-[11px] text-slate-400">
+        <p className="mt-5 text-center text-sm text-slate-600">
           Data kamu hanya dipakai untuk keperluan kelas di Linguo.
         </p>
         <div className="mt-2 text-center">
           <a href={`https://wa.me/${WA_CS}?text=Halo%20Linguo%2C%20saya%20ada%20kendala%20mengisi%20form%20pendataan`}
             target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-400 transition hover:text-[#1A9E9E]">
-            <MessageCircle className="h-3 w-3" /> Ada kendala? Chat CS
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 transition hover:text-[#1A9E9E]">
+            <MessageCircle className="h-4 w-4" /> Ada kendala? Chat CS
           </a>
         </div>
       </div>
@@ -1072,18 +1259,18 @@ export default function PendataanPage() {
         <div className={`mx-auto flex ${shellWidth} items-center gap-3 px-5 py-3.5 transition-[max-width] duration-300`}>
           {step > 0 && (
             <button type="button" onClick={() => go(step - 1)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-5 py-3.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 active:scale-95">
+              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-5 py-3.5 text-base font-bold text-slate-800 transition hover:bg-slate-50 active:scale-95">
               <ArrowLeft className="h-4 w-4" /> Kembali
             </button>
           )}
           {last ? (
             <button type="button" onClick={handleSubmit} disabled={saving}
-              className="flex-1 rounded-full bg-[#fbbf24] py-3.5 text-sm font-bold text-slate-900 shadow-lg shadow-amber-200/60 transition-all hover:bg-[#f59e0b] active:scale-95 disabled:opacity-50">
+              className="flex-1 rounded-full bg-[#fbbf24] py-3.5 text-base font-bold text-slate-900 shadow-lg shadow-amber-200/60 transition-all hover:bg-[#f59e0b] active:scale-95 disabled:opacity-50">
               {saving ? "Menyimpan..." : "Kirim Data"}
             </button>
           ) : (
             <button type="button" onClick={() => go(step + 1)}
-              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-200/60 transition-all hover:brightness-110 active:scale-95"
+              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full py-3.5 text-base font-bold text-white shadow-lg shadow-teal-200/60 transition-all hover:brightness-110 active:scale-95"
               style={{ background: TEAL }}>
               Lanjut <ArrowRight className="h-4 w-4" />
             </button>
@@ -1107,8 +1294,8 @@ function StepHead({
         <Icon className="h-5 w-5" />
       </div>
       <div>
-        <h2 className="text-base font-bold text-slate-900">{title}</h2>
-        <p className="mt-0.5 text-xs leading-relaxed text-slate-500">{desc}</p>
+        <h2 className="text-lg font-bold text-slate-900">{title}</h2>
+        <p className="mt-0.5 text-sm leading-relaxed text-slate-700">{desc}</p>
       </div>
     </div>
   );

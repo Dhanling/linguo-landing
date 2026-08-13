@@ -23,6 +23,8 @@ const SELECT_COLS = [
   "age", "birth_date", "institution", "learning_goal", "submitted_at",
   // [pendataan-siswa-private-v2] migrasi 20260807090000
   "hobby", "prior_experience",
+  // [pendataan-domisili-referral-v1] migrasi pendataan_domisili_referral_20260813
+  "province", "city", "referral_source",
 ].join(",");
 
 function sb(path: string, init: RequestInit = {}) {
@@ -97,6 +99,9 @@ export async function POST(req: NextRequest) {
     const email = clean(body.email, 160);
     const birthDate = clean(body.birth_date, 10);
     const institution = clean(body.institution, 160);
+    const province = clean(body.province, 80);
+    const city = clean(body.city, 120);
+    const referralSource = clean(body.referral_source, 200);
     const hobby = clean(body.hobby, 300);
     const priorExperience = clean(body.prior_experience, 300);
     const learningGoal = clean(body.learning_goal, 1000);
@@ -108,6 +113,9 @@ export async function POST(req: NextRequest) {
     if (!fullName) return NextResponse.json({ error: "Nama lengkap wajib diisi" }, { status: 400 });
     if (!nickname) return NextResponse.json({ error: "Nama panggilan wajib diisi" }, { status: 400 });
     if (!birthDate) return NextResponse.json({ error: "Tanggal lahir wajib diisi" }, { status: 400 });
+    if (!province) return NextResponse.json({ error: "Provinsi domisili wajib diisi" }, { status: 400 });
+    if (!city) return NextResponse.json({ error: "Kota / kabupaten domisili wajib diisi" }, { status: 400 });
+    if (!referralSource) return NextResponse.json({ error: "Pilih dari mana kamu tahu Linguo" }, { status: 400 });
     if (!institution) return NextResponse.json({ error: "Sekolah / instansi / perusahaan wajib diisi" }, { status: 400 });
     if (!hobby) return NextResponse.json({ error: "Hobi & minat wajib diisi" }, { status: 400 });
     if (!whatsapp) return NextResponse.json({ error: "Nomor WhatsApp wajib diisi" }, { status: 400 });
@@ -130,6 +138,11 @@ export async function POST(req: NextRequest) {
       birth_date: birthDate,
       age: ageFromBirthDate(birthDate),
       institution,
+      // [pendataan-domisili-referral-v1] Domisili & sumber tahu Linguo. Trigger
+      // tg_intake_form_sync menyalinnya ke students.province/city/source.
+      province,
+      city,
+      referral_source: referralSource,
       hobby,
       prior_experience: priorExperience,
       learning_goal: learningGoal,
