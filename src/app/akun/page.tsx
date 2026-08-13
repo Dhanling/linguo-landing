@@ -3760,6 +3760,11 @@ export default function AkunPage() {
                 const sesiMendatangCards = upcomingSchedules.map((s) => {
                   const reg = student?.registrations?.find((r) => r.id === s.registration_id);
                   const tDir = reg?.teacher_id ? teacherDir[reg.teacher_id] : undefined;
+                  // [sesi-nomor-plafon-v1] nomor sesi > total paket = sisa data presensi
+                  // kotor (baris sintetis dobel bikin penomoran lompat, mis. #24 di paket
+                  // 16 sesi) — badge-nya disembunyikan daripada menyesatkan siswa.
+                  const totalPaket = Number(reg?.sessions_total) || 0;
+                  const nomorSesi = s.session_number && (totalPaket <= 0 || s.session_number <= totalPaket) ? s.session_number : null;
                   return {
                     id: s.id,
                     registrationId: s.registration_id,
@@ -3771,7 +3776,7 @@ export default function AkunPage() {
                     product: reg?.product || "",
                     teacher: sapaan(tDir?.name || (reg as any)?.teachers?.name, tDir?.title || (reg as any)?.teachers?.title),
                     teacherAvatarUrl: tDir?.avatar_url || (reg as any)?.teachers?.avatar_url || null,
-                    sessionNumber: s.session_number ?? null,
+                    sessionNumber: nomorSesi,
                     materialTitle: s.session_title || "",
                     status: s.status,
                   };
@@ -4047,7 +4052,10 @@ export default function AkunPage() {
                               const renderKelasCard = (reg: any, idx: number) => {
                                 const badge = PRODUCT_BADGE[normalizeProduct(reg.product)] || PRODUCT_BADGE["Kelas Private"];
                                 const total = reg.sessions_total || 0;
-                                const used = reg.sessions_used || 0;
+                                // [sesi-nomor-plafon-v1] tampilan sesi di-clamp ke plafon paket —
+                                // presensi kotor (baris completed melebihi jatah) jangan bikin
+                                // kartu tampil "18/16".
+                                const used = total > 0 ? Math.min(reg.sessions_used || 0, total) : (reg.sessions_used || 0);
                                 const pct = total > 0 ? Math.min(100, Math.max(0, Math.round((used / total) * 100))) : 0;
                                 const bg = CARD_BG[idx % CARD_BG.length];
                                 const photo = getLangPhoto(reg.language);
@@ -4410,7 +4418,8 @@ export default function AkunPage() {
                     teacher: sapaan(tDir?.name || reg?.teachers?.name, tDir?.title || (reg?.teachers as any)?.title),
                     teacherAvatarUrl: tDir?.avatar_url || reg?.teachers?.avatar_url || null,
                     // jadwal-recurring-materi-v1
-                    sessionNumber: s.session_number ?? null,
+                    // [sesi-nomor-plafon-v1] nomor > total paket = penomoran kotor, sembunyikan
+                    sessionNumber: s.session_number && (!(Number(reg?.sessions_total) > 0) || s.session_number <= Number(reg?.sessions_total)) ? s.session_number : null,
                     materialTitle: s.session_title || "",
                     materialNotes: s.material_notes || "",
                     materialLinks: Array.isArray(s.material_links) ? s.material_links : [],
