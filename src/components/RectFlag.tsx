@@ -16,6 +16,10 @@ export const FLAG_CODE_BY_SLUG: Record<string, string> = {
   danish: "dk", finnish: "fi", polish: "pl", czech: "cz", hungarian: "hu",
   romanian: "ro", turkish: "tr", bulgarian: "bg", ukrainian: "ua", icelandic: "is",
   cantonese: "hk", vietnamese: "vn", thai: "th", filipino: "ph", khmer: "kh",
+  // Dipakai produk Toko Digital (kolom digital_products.language).
+  estonian: "ee", serbian: "rs", portuguese: "pt", tagalog: "ph", latvian: "lv",
+  lithuanian: "lt", slovak: "sk", slovenian: "si", croatian: "hr", albanian: "al",
+  malay: "my",
   lao: "la", burmese: "mm", hindi: "in", urdu: "pk", bengali: "bd",
   tamil: "in", punjabi: "in", nepali: "np", mongolian: "mn", balinese: "id",
   minangkabau: "id", batak: "id", bugis: "id", acehnese: "id", banjar: "id",

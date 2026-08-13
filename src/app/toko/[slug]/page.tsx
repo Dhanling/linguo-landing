@@ -1,5 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { BookOpen, Clapperboard } from "lucide-react";
+import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 import CheckoutSection from "./CheckoutSection";
 
 const supabase = createClient(
@@ -37,24 +39,37 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     .filter((p: any) => p.is_active)
     .sort((a: any, b: any) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
 
+  // linguo-patch:toko-rectflag-lucide-v1 — cover tanpa gambar: bendera SVG
+  // rounded-rectangle kalau bahasanya kita kenal, selain itu ikon Lucide.
+  const isEbook = product.type === "ebook";
+  const TypeIcon = isEbook ? BookOpen : Clapperboard;
+  const flagCode = product.language
+    ? FLAG_CODE_BY_SLUG[String(product.language).trim().toLowerCase()]
+    : undefined;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="bg-white rounded-3xl shadow-sm overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             {/* Cover */}
-            <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white text-9xl">
+            <div className="aspect-square md:aspect-auto bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-white">
               {product.cover_url ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={product.cover_url} alt={product.title} className="w-full h-full object-cover" />
-              ) : product.type === "ebook" ? "📚" : "🎬"}
+              ) : flagCode ? (
+                <RectFlag code={flagCode} h={112} className="shadow-xl" />
+              ) : (
+                <TypeIcon className="h-24 w-24" strokeWidth={1.5} aria-hidden />
+              )}
             </div>
 
             {/* Info */}
             <div className="p-8">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-medium px-2 py-1 rounded bg-teal-50 text-teal-700">
-                  {product.type === "ebook" ? "📚 E-Book" : "🎬 E-Learning"}
+                <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-1 rounded bg-teal-50 text-teal-700">
+                  <TypeIcon className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+                  {isEbook ? "E-Book" : "E-Learning"}
                 </span>
                 {product.level && (
                   <span className="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-600">

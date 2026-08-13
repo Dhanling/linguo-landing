@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail } from "lucide-react";
 // toko-success-lottie-v1 — ceklis sukses pakai Lottie (lihat ./SuccessCheck).
 import SuccessCheck from "./SuccessCheck";
 
@@ -23,7 +24,10 @@ export default async function SuccessPage({
         </p>
 
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-sm text-amber-800 text-left">
-          <p className="font-semibold mb-1">📧 Belum dapet email?</p>
+          <p className="font-semibold mb-1 inline-flex items-center gap-1.5">
+            <Mail className="h-4 w-4" strokeWidth={2} aria-hidden />
+            Belum dapet email?
+          </p>
           <ul className="list-disc list-inside space-y-1 text-amber-700">
             <li>Tunggu sampai 5 menit (kadang delay)</li>
             <li>Cek folder Spam/Promosi</li>

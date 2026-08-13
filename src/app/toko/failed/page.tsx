@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { XCircle } from "lucide-react";
 
 export const metadata = { title: "Pembayaran Gagal — Linguo.id" };
 
@@ -12,8 +13,8 @@ export default async function FailedPage({
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-sm max-w-lg w-full p-8 text-center">
-        <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-5xl">
-          😔
+        <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <XCircle className="h-10 w-10 text-red-500" strokeWidth={1.8} aria-hidden />
         </div>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">
           Pembayaran Belum Berhasil

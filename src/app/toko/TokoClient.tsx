@@ -2,25 +2,47 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import {
+  ArrowRight,
+  BookOpen,
+  Clapperboard,
+  Globe,
+  Search,
+  SearchX,
+  ShoppingBag,
+  Sparkles,
+  Star,
+} from 'lucide-react';
+import { FLAG_CODE_BY_SLUG, RectFlag } from '@/components/RectFlag';
 import type { Product } from './page';
 
-const FLAG_MAP: Record<string, string> = {
-  english: '🇬🇧',
-  korean: '🇰🇷',
-  japanese: '🇯🇵',
-  mandarin: '🇨🇳',
-  italian: '🇮🇹',
-  turkish: '🇹🇷',
-  spanish: '🇪🇸',
-  french: '🇫🇷',
-  german: '🇩🇪',
-  arabic: '🇸🇦',
-  multilingual: '🌐',
-};
+// linguo-patch:toko-rectflag-lucide-v1 — kartu toko dulu pakai emoji bendera
+// (render-nya beda-beda per OS, di Windows malah cuma kode negara). Sekarang
+// bendera SVG rounded-rectangle + ikon Lucide, sesuai ikon halaman lain.
+function flagCodeFor(language: string | null): string | undefined {
+  if (!language) return undefined;
+  return FLAG_CODE_BY_SLUG[language.trim().toLowerCase()];
+}
 
-function flagFor(language: string | null): string {
-  if (!language) return '📖';
-  return FLAG_MAP[language.toLowerCase()] ?? '📖';
+/** Ubin bendera di kepala kartu; tanpa bendera → ikon Lucide sesuai jenis produk. */
+function ProductFlag({
+  language,
+  isEbook,
+}: {
+  language: string | null;
+  isEbook: boolean;
+}) {
+  const code = flagCodeFor(language);
+  if (code) return <RectFlag code={code} h={64} className="shadow-lg" />;
+  const Icon = language ? Globe : isEbook ? BookOpen : Clapperboard;
+  return (
+    <span
+      aria-hidden
+      className="inline-flex h-16 w-[89px] items-center justify-center rounded-[10px] bg-white/20 ring-1 ring-white/40 shadow-lg backdrop-blur"
+    >
+      <Icon className="h-8 w-8 text-white" strokeWidth={1.8} />
+    </span>
+  );
 }
 
 function formatRupiah(price: number): string {
@@ -73,10 +95,10 @@ export default function TokoClient({ products }: { products: Product[] }) {
     [products]
   );
 
-  const tabs: { key: FilterKey; label: string; emoji: string }[] = [
-    { key: 'all', label: 'Semua', emoji: '✨' },
-    { key: 'ebook', label: 'E-Book', emoji: '📚' },
-    { key: 'elearning', label: 'E-Learning', emoji: '🎬' },
+  const tabs: { key: FilterKey; label: string; Icon: typeof Sparkles }[] = [
+    { key: 'all', label: 'Semua', Icon: Sparkles },
+    { key: 'ebook', label: 'E-Book', Icon: BookOpen },
+    { key: 'elearning', label: 'E-Learning', Icon: Clapperboard },
   ];
 
   return (
@@ -91,7 +113,8 @@ export default function TokoClient({ products }: { products: Product[] }) {
 
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-teal-200">
-            🛍️ Toko Linguo
+            <ShoppingBag className="h-4 w-4" strokeWidth={2} aria-hidden />
+            Toko Linguo
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">
             Belajar bahasa{' '}
@@ -114,13 +137,13 @@ export default function TokoClient({ products }: { products: Product[] }) {
                   key={tab.key}
                   type="button"
                   onClick={() => setFilter(tab.key)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     active
                       ? 'bg-teal-600 text-white shadow-md shadow-teal-600/30'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                 >
-                  <span className="mr-1.5">{tab.emoji}</span>
+                  <tab.Icon className="h-4 w-4" strokeWidth={2} aria-hidden />
                   {tab.label}
                   <span
                     className={`ml-2 text-xs ${
@@ -142,20 +165,11 @@ export default function TokoClient({ products }: { products: Product[] }) {
               placeholder="Cari bahasa…"
               className="w-full pl-9 pr-3 py-2 rounded-full border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
             />
-            <svg
+            <Search
               className="absolute left-3 top-2.5 h-4 w-4 text-slate-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
-              />
-            </svg>
+              strokeWidth={2}
+              aria-hidden
+            />
           </div>
         </div>
       </div>
@@ -164,7 +178,11 @@ export default function TokoClient({ products }: { products: Product[] }) {
       <section className="mx-auto max-w-7xl px-4 py-10">
         {filtered.length === 0 ? (
           <div className="py-20 text-center">
-            <div className="text-5xl mb-4">🔍</div>
+            <SearchX
+              className="mx-auto mb-4 h-12 w-12 text-slate-300"
+              strokeWidth={1.5}
+              aria-hidden
+            />
             <p className="text-slate-600 text-lg">
               Tidak ada produk yang cocok.
             </p>
@@ -208,7 +226,8 @@ export default function TokoClient({ products }: { products: Product[] }) {
                   >
                     {product.is_featured && (
                       <div className="absolute top-3 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-yellow-400 px-2.5 py-1 text-xs font-bold text-slate-900 shadow">
-                        ⭐ Featured
+                        <Star className="h-3 w-3 fill-current" strokeWidth={2} aria-hidden />
+                        Featured
                       </div>
                     )}
 
@@ -216,15 +235,16 @@ export default function TokoClient({ products }: { products: Product[] }) {
                       className={`relative h-40 bg-gradient-to-br ${headerGradient} flex items-center justify-center overflow-hidden`}
                     >
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.25),_transparent_60%)]" />
-                      <span
-                        className="relative text-7xl drop-shadow-lg"
-                        role="img"
-                        aria-label={product.language ?? ''}
-                      >
-                        {flagFor(product.language)}
+                      <span className="relative" aria-label={product.language ?? undefined}>
+                        <ProductFlag language={product.language} isEbook={isEbook} />
                       </span>
                       <div className="absolute bottom-2 left-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
-                        {isEbook ? '📚 E-Book' : '🎬 E-Learning'}
+                        {isEbook ? (
+                          <BookOpen className="h-3 w-3" strokeWidth={2} aria-hidden />
+                        ) : (
+                          <Clapperboard className="h-3 w-3" strokeWidth={2} aria-hidden />
+                        )}
+                        {isEbook ? 'E-Book' : 'E-Learning'}
                       </div>
                     </div>
 
@@ -246,8 +266,9 @@ export default function TokoClient({ products }: { products: Product[] }) {
                             {formatRupiah(price)}
                           </div>
                         </div>
-                        <span className="text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                          Lihat →
+                        <span className="inline-flex items-center gap-1 text-teal-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                          Lihat
+                          <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
                         </span>
                       </div>
                     </div>

@@ -3,6 +3,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { CountryCode } from 'libphonenumber-js';
+import {
+  ArrowLeft,
+  Check,
+  Clapperboard,
+  MessageCircle,
+  ShieldCheck,
+  Star,
+  Zap,
+} from 'lucide-react';
 import type { ElearningProduct, PricingTier } from './page';
 import {
   COUNTRIES,
@@ -226,13 +235,14 @@ export default function PaketElearningClient({
             href="/toko"
             className="inline-flex items-center gap-1.5 text-sm text-slate-600 hover:text-teal-700 transition-colors"
           >
-            <span aria-hidden>←</span>
+            <ArrowLeft className="h-4 w-4" strokeWidth={2} aria-hidden />
             <span>Kembali ke Toko</span>
           </Link>
 
           <div className="mt-8 text-center">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-sm font-medium text-teal-700 ring-1 ring-teal-200">
-              🎬 Paket E-Learning
+              <Clapperboard className="h-4 w-4" strokeWidth={2} aria-hidden />
+              Paket E-Learning
             </div>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
               {product.title}
@@ -270,8 +280,9 @@ export default function PaketElearningClient({
               <div key={tier.id} className={`relative ${isMid ? 'md:-mt-4' : ''}`}>
                 {isMid && (
                   <div className="absolute left-1/2 -translate-x-1/2 -top-3.5 z-10">
-                    <div className="rounded-full bg-yellow-400 px-4 py-1.5 text-sm font-bold text-slate-900 shadow-md">
-                      ⭐ Paling Populer
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-yellow-400 px-4 py-1.5 text-sm font-bold text-slate-900 shadow-md">
+                      <Star className="h-3.5 w-3.5 fill-current" strokeWidth={2} aria-hidden />
+                      Paling Populer
                     </div>
                   </div>
                 )}
@@ -344,14 +355,13 @@ export default function PaketElearningClient({
                           isMid ? 'text-white' : 'text-slate-700'
                         }`}
                       >
-                        <span
-                          className={`mt-0.5 flex-shrink-0 font-bold ${
+                        <Check
+                          className={`mt-0.5 h-4 w-4 flex-shrink-0 ${
                             isMid ? 'text-yellow-300' : 'text-teal-600'
                           }`}
+                          strokeWidth={3}
                           aria-hidden
-                        >
-                          ✓
-                        </span>
+                        />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -381,21 +391,21 @@ export default function PaketElearningClient({
         {/* TRUST STRIP */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           <div className="rounded-xl bg-white border border-slate-200 p-5 text-center">
-            <div className="text-3xl mb-2">🛡️</div>
+            <ShieldCheck className="mx-auto mb-2 h-7 w-7 text-teal-600" strokeWidth={1.8} aria-hidden />
             <div className="font-semibold text-slate-900">Pembayaran Aman</div>
             <p className="mt-1 text-sm text-slate-600">
               QRIS, e-wallet, transfer bank via Xendit.
             </p>
           </div>
           <div className="rounded-xl bg-white border border-slate-200 p-5 text-center">
-            <div className="text-3xl mb-2">⚡</div>
+            <Zap className="mx-auto mb-2 h-7 w-7 text-teal-600" strokeWidth={1.8} aria-hidden />
             <div className="font-semibold text-slate-900">Akses Instan</div>
             <p className="mt-1 text-sm text-slate-600">
               Begitu pembayaran terkonfirmasi, langsung bisa belajar.
             </p>
           </div>
           <div className="rounded-xl bg-white border border-slate-200 p-5 text-center">
-            <div className="text-3xl mb-2">💬</div>
+            <MessageCircle className="mx-auto mb-2 h-7 w-7 text-teal-600" strokeWidth={1.8} aria-hidden />
             <div className="font-semibold text-slate-900">Butuh Bantuan?</div>
             <p className="mt-1 text-sm text-slate-600">
               <a

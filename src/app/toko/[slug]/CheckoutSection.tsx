@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CreditCard, Mail, X } from "lucide-react";
 
 interface PricingTier {
   id: string;
@@ -131,9 +132,10 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
 
       <button
         onClick={() => setShowCheckoutModal(true)}
-        className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 rounded-2xl transition-colors text-lg"
+        className="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 rounded-2xl transition-colors text-lg"
       >
-        💳 Beli Sekarang
+        <CreditCard className="h-5 w-5" strokeWidth={2} aria-hidden />
+        Beli Sekarang
       </button>
 
       {/* Checkout modal */}
@@ -152,8 +154,9 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
                 onClick={() => !submitting && setShowCheckoutModal(false)}
                 className="text-gray-500 hover:text-gray-700"
                 disabled={submitting}
+                aria-label="Tutup"
               >
-                ✕
+                <X className="h-5 w-5" strokeWidth={2} aria-hidden />
               </button>
             </div>
 
@@ -191,8 +194,9 @@ export default function CheckoutSection({ product, pricingTiers }: Props) {
                   placeholder="email@kamu.com"
                   disabled={submitting}
                 />
-                <p className="text-xs text-gray-500 mt-1">
-                  📧 Link akses dikirim ke email ini
+                <p className="text-xs text-gray-500 mt-1 inline-flex items-center gap-1">
+                  <Mail className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+                  Link akses dikirim ke email ini
                 </p>
               </div>
 
