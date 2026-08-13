@@ -14,6 +14,8 @@ import {
   testimonialsForLang,
   type Testimonial,
 } from "../../../data/testimonials";
+import { LangSlugFlag } from "../../../components/RectFlag";
+import { ArrowRight, Check, DetailIcon } from "./DetailIcon";
 
 // ============================================================================
 // PARAM PARSING
@@ -104,6 +106,29 @@ const buildWaLink = (langName: string) => {
   return `https://wa.me/${number}?text=${text}`;
 };
 
+// linguo-patch:kelas-funnel-cta-v1 — tombol Daftar TIDAK lagi ke WA, tapi ke
+// funnel pendaftaran (FunnelModal) yang cuma di-mount di homepage: redirect
+// "/?openFunnel=1&lang=<Inggris>". Nama bahasa WAJIB nama Inggris ("Swedish"),
+// bukan meta.name Indonesia — lookup bendera & kategori harga (trial-pricing)
+// pakai nama Inggris. Mirror FUNNEL_LANG_OVERRIDE di PlacementTest.tsx.
+const FUNNEL_LANG_OVERRIDE: Record<string, string> = {
+  filipino: "Tagalog",
+  "portuguese-br": "Portuguese",
+  "portuguese-pt": "Portuguese",
+  bipa: "BIPA",
+};
+
+const buildFunnelHref = (languageSlug: string, urlSlug: string) => {
+  const langEn =
+    FUNNEL_LANG_OVERRIDE[languageSlug] ||
+    languageSlug.charAt(0).toUpperCase() + languageSlug.slice(1);
+  return `/?openFunnel=1&lang=${encodeURIComponent(langEn)}&from=${encodeURIComponent(`kelas-bahasa-${urlSlug}`)}`;
+};
+
+// Placement test per bahasa hidup di /silabus/<slug>/coba (route /placement-test
+// tidak pernah ada — tombol lama 404).
+const buildPlacementHref = (languageSlug: string) => `/silabus/${languageSlug}/coba`;
+
 // ============================================================================
 // PAGE
 // ============================================================================
@@ -145,7 +170,7 @@ export default async function BahasaLandingPage({ params }: PageProps) {
 
       <main className="min-h-screen bg-white text-slate-900">
         <Breadcrumb langName={meta.name} />
-        <Hero detail={detail} flag={meta.flag} nativeName={meta.nativeName ?? meta.name} langName={meta.name} />
+        <Hero detail={detail} nativeName={meta.nativeName ?? meta.name} langName={meta.name} />
         <WhyLearn detail={detail} langName={meta.name} />
         <TargetAudience detail={detail} langName={meta.name} />
         <Curriculum detail={detail} langName={meta.name} />
@@ -153,7 +178,7 @@ export default async function BahasaLandingPage({ params }: PageProps) {
         <Teachers langName={meta.name} />
         <Testimonials items={testimonials} langName={meta.name} />
         <FAQSection detail={detail} langName={meta.name} />
-        <FinalCTA langName={meta.name} />
+        <FinalCTA detail={detail} langName={meta.name} />
       </main>
     </>
   );
@@ -196,12 +221,10 @@ function Breadcrumb({ langName }: { langName: string }) {
 
 function Hero({
   detail,
-  flag,
   nativeName,
   langName,
 }: {
   detail: LanguageDetail;
-  flag: string;
   nativeName: string;
   langName: string;
 }) {
@@ -221,7 +244,7 @@ function Hero({
       <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
         <div className="flex flex-col items-start gap-6 md:max-w-3xl">
           <div className="flex items-center gap-3 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-            <span className="text-2xl leading-none">{flag}</span>
+            <LangSlugFlag slug={detail.languageSlug} h={18} />
             <span className="text-white/90">{nativeName}</span>
           </div>
 
@@ -236,17 +259,15 @@ function Hero({
           </p>
 
           <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={buildWaLink(langName)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
             >
               Daftar Bahasa {langName} Sekarang
-              <span aria-hidden>→</span>
-            </a>
+              <ArrowRight aria-hidden className="h-5 w-5" />
+            </Link>
             <Link
-              href="/placement-test"
+              href={buildPlacementHref(detail.languageSlug)}
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
             >
               Tes Penempatan Gratis
@@ -254,18 +275,13 @@ function Hero({
           </div>
 
           <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
-            <span className="flex items-center gap-2">
-              <span aria-hidden>✓</span> Pengajar bersertifikat
-            </span>
-            <span className="flex items-center gap-2">
-              <span aria-hidden>✓</span> Kurikulum CEFR A1–B2
-            </span>
-            <span className="flex items-center gap-2">
-              <span aria-hidden>✓</span> Jadwal fleksibel
-            </span>
-            <span className="flex items-center gap-2">
-              <span aria-hidden>✓</span> 100% online
-            </span>
+            {["Pengajar bersertifikat", "Kurikulum CEFR A1–B2", "Jadwal fleksibel", "100% online"].map(
+              (item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <Check aria-hidden className="h-4 w-4" /> {item}
+                </span>
+              ),
+            )}
           </div>
         </div>
       </div>
@@ -291,8 +307,8 @@ function WhyLearn({ detail, langName }: { detail: LanguageDetail; langName: stri
             key={point.title}
             className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:border-[#1A9E9E]/40 hover:shadow-lg"
           >
-            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#1A9E9E]/10 text-3xl">
-              {point.icon}
+            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#1A9E9E]/10 text-[#1A9E9E]">
+              <DetailIcon emoji={point.icon} className="h-7 w-7" />
             </div>
             <h3 className="mb-3 text-xl font-semibold text-slate-900">{point.title}</h3>
             <p className="leading-relaxed text-slate-600">{point.description}</p>
@@ -322,8 +338,8 @@ function TargetAudience({ detail, langName }: { detail: LanguageDetail; langName
               key={item.persona}
               className="flex gap-4 rounded-xl border border-slate-200 bg-white p-6"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#1A9E9E]/10 text-2xl">
-                {item.emoji}
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#1A9E9E]/10 text-[#1A9E9E]">
+                <DetailIcon emoji={item.emoji} className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="mb-1 font-semibold text-slate-900">{item.persona}</h3>
@@ -449,9 +465,10 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
               <ul className="mb-6 flex-1 space-y-2.5 text-sm">
                 {tier.features.map((feat) => (
                   <li key={feat} className="flex gap-2">
-                    <span aria-hidden className={tier.highlighted ? "text-white" : "text-[#1A9E9E]"}>
-                      ✓
-                    </span>
+                    <Check
+                      aria-hidden
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${tier.highlighted ? "text-white" : "text-[#1A9E9E]"}`}
+                    />
                     <span className={tier.highlighted ? "text-white/95" : "text-slate-700"}>
                       {feat}
                     </span>
@@ -459,10 +476,8 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
                 ))}
               </ul>
 
-              <a
-                href={buildWaLink(langName)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
                 className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition ${
                   tier.highlighted
                     ? "bg-white text-[#1A9E9E] hover:bg-slate-50"
@@ -470,14 +485,17 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
                 }`}
               >
                 {tier.ctaLabel ?? `Daftar ${tier.name}`}
-              </a>
+              </Link>
             </article>
           ))}
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500">
           Belum yakin level kamu di mana?{" "}
-          <Link href="/placement-test" className="font-semibold text-[#1A9E9E] hover:underline">
+          <Link
+            href={buildPlacementHref(detail.languageSlug)}
+            className="font-semibold text-[#1A9E9E] hover:underline"
+          >
             Ambil tes penempatan gratis →
           </Link>
         </p>
@@ -630,7 +648,7 @@ function FAQSection({ detail, langName }: { detail: LanguageDetail; langName: st
   );
 }
 
-function FinalCTA({ langName }: { langName: string }) {
+function FinalCTA({ detail, langName }: { detail: LanguageDetail; langName: string }) {
   return (
     <section className="bg-gradient-to-br from-[#1A9E9E] to-[#0e6e6e] text-white">
       <div className="mx-auto max-w-4xl px-4 py-16 text-center md:py-20">
@@ -638,27 +656,37 @@ function FinalCTA({ langName }: { langName: string }) {
           Siap mulai belajar Bahasa {langName}?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-          Hubungi tim kami via WhatsApp untuk konsultasi gratis dan info promo terbaru. Atau
-          langsung ambil tes penempatan untuk tahu level kamu di mana.
+          Daftar langsung dan pilih program yang pas — atau ambil tes penempatan gratis dulu
+          untuk tahu level kamu di mana. Butuh konsultasi? Tim kami siap di WhatsApp.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <a
-            href={buildWaLink(langName)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
           >
-            Chat WhatsApp Sekarang
-            <span aria-hidden>→</span>
-          </a>
+            Daftar Sekarang
+            <ArrowRight aria-hidden className="h-5 w-5" />
+          </Link>
           <Link
-            href="/placement-test"
+            href={buildPlacementHref(detail.languageSlug)}
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-8 py-4 font-semibold text-white transition hover:bg-white/10"
           >
             Tes Penempatan Gratis
           </Link>
         </div>
+
+        <p className="mt-6 text-sm text-white/80">
+          Mau tanya-tanya dulu?{" "}
+          <a
+            href={buildWaLink(langName)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white underline underline-offset-4 hover:text-white/90"
+          >
+            Chat WhatsApp tim Linguo →
+          </a>
+        </p>
       </div>
     </section>
   );
