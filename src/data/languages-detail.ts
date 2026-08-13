@@ -3133,6 +3133,4135 @@ export const languageDetails: Record<string, LanguageDetail> = {
       "bahasa sunda pemula",
     ],
   },
+  // ==========================================================================
+  // SWEDIA
+  // ==========================================================================
+  swedia: {
+    urlSlug: "swedia",
+    languageSlug: "swedish",
+    tagline: "Dari hej sampai SFI — bahasa negeri Spotify, IKEA, dan work-life balance.",
+    heroDescription:
+      "Kursus Bahasa Swedia online dengan kurikulum CEFR A1–B2 selaras SFI/Swedex/Tisus. Untuk kerja IT & engineering di Swedia, studi dengan beasiswa SI, atau menyusul pasangan.",
+
+    whyLearn: [
+      {
+        icon: "💻",
+        title: "Karier Tech & Engineering",
+        description:
+          "Spotify, Ericsson, Volvo, Klarna, IKEA — Swedia surga engineer dengan work-life balance terbaik dunia. Kantor berbahasa Inggris, tapi karier jangka panjang & kehidupan sosial butuh svenska.",
+      },
+      {
+        icon: "🎓",
+        title: "Beasiswa SI & Kampus Kelas Dunia",
+        description:
+          "SI Scholarship (Swedish Institute) full-funded untuk S2 di KTH, Lund, Uppsala. Kuliahnya berbahasa Inggris, tapi bahasa Swedia mempercepat kerja part-time, magang, dan pintu karier setelah lulus.",
+      },
+      {
+        icon: "🏡",
+        title: "Menetap: SFI & Permanent Residence",
+        description:
+          "Pindah karena kerja atau pasangan? Bahasa Swedia kunci integrasi — dan pemerintah menyediakan jalur SFI (A–D). Datang dengan bekal bahasa membuat tahun pertamamu jauh lebih ringan.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💻",
+        persona: "IT Engineer Incaran Perusahaan Swedia",
+        benefit: "Svenska untuk fika & tim — pembeda kandidat di relokasi tech.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Pemburu Beasiswa SI",
+        benefit: "Bekal hidup di Swedia + nilai plus esai motivasi aplikasi.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Swedia (Sambo)",
+        benefit: "Percakapan keluarga & persiapan hidup sehari-hari sebelum pindah.",
+      },
+      {
+        emoji: "🌲",
+        persona: "Penikmat Budaya Nordik",
+        benefit: "Nordic noir, lagom, ABBA — pahami budayanya dari bahasanya.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Nybörjare",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Å ä ö, pitch accent, kalimat dasar, percakapan sehari-hari.",
+        topics: [
+          "Pelafalan: å ä ö, sj-sound, pitch accent dasar",
+          "Gender en/ett & bentuk tentu (huset, bilen)",
+          "Verba present — tanpa konjugasi per orang!",
+          "Angka, jam, belanja, fika & makanan",
+          "Perkenalan & small talk ala Swedia",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Grundläggande",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar. Setara SFI kurs C–D.",
+        topics: [
+          "Preteritum & perfekt (har gjort)",
+          "Urutan kata: V2 & inversi",
+          "Adjektiva: kesesuaian en/ett/plural",
+          "Verba partikel (tycker om, håller på)",
+          "Topik: kerja, cuaca, rumah, kesehatan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Mellannivå (Swedex B1)",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, baca berita ringan, percakapan kantor. Persiapan Swedex B1.",
+        topics: [
+          "Bisats (anak kalimat) & urutan kata BIFF",
+          "Supinum & bentuk pasif (-s)",
+          "Membaca 8 Sidor & SVT Nyheter ringan",
+          "Svenska kantor: meeting, email, fika culture",
+          "Simulasi Swedex B1",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Avancerad (Tisus Ready)",
+        sessionCount: 112,
+        description:
+          "Mahir untuk kuliah berbahasa Swedia & kerja profesional. Persiapan Tisus/Swedex B2.",
+        topics: [
+          "Partisip & struktur formal tulis",
+          "Bahasa akademik & rapport-skrivning",
+          "Membaca Dagens Nyheter & teks akademik",
+          "Presentasi & diskusi profesional penuh",
+          "Simulasi Tisus: läs, skriv, tala",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Orang Swedia kan jago bahasa Inggris. Ngapain belajar Swedia?",
+        answer:
+          "Untuk bertahan — cukup Inggris. Untuk berkembang — tidak. Rapat internal, notulen, lelucon kantor, komunitas, dan banyak lowongan (terutama sektor publik & healthcare) berbahasa Swedia. Imigran yang bisa svenska juga jauh lebih cepat dapat permanent residence secara praktik.",
+      },
+      {
+        question: "Bahasa Swedia susah nggak?",
+        answer:
+          "Termasuk paling mudah di Eropa untuk pemula: verba tidak berubah per orang (jag är, du är, vi är — sama!), tanpa kasus, kosakata banyak mirip Inggris. Tantangannya cuma pelafalan (sj-sound, pitch accent) — dan itu soal latihan terarah.",
+      },
+      {
+        question: "SFI, Swedex, Tisus — apa bedanya?",
+        answer:
+          "SFI kursus gratis pemerintah untuk imigran (levelnya A–D ≈ A1–B1). Swedex ujian sertifikasi internasional (A2/B1/B2) yang bisa diambil di luar Swedia. Tisus khusus syarat masuk kuliah berbahasa Swedia. Kurikulum Linguo selaras ketiganya.",
+      },
+      {
+        question: "Belajar Swedia atau Norwegia dulu? Katanya mirip.",
+        answer:
+          "Sangat mirip — bisa saling paham. Pilih berdasar negara tujuanmu. Bonusnya: setelah satu bahasa Skandinavia, bahasa kedua bisa dipangkas separuh waktu, dan membaca Denmark-Norwegia jadi gratis.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih (alumni Swedia & diaspora) plus opsi native. Materi bisa diarahkan ke tujuanmu: interview kerja tech, kehidupan kampus, atau keluarga.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Swedia Online | Linguo.id — A1 sampai Tisus",
+    metaDescription:
+      "Belajar Bahasa Swedia online dari nol. Persiapan SFI, Swedex, Tisus — kerja tech, beasiswa SI, atau menyusul pasangan. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa swedia",
+      "les bahasa swedia online",
+      "belajar bahasa swedia",
+      "kursus swedia jakarta",
+      "beasiswa SI swedia",
+      "swedex prep",
+      "kerja di swedia",
+      "les swedia murah",
+      "bahasa swedia pemula",
+      "kursus swedia online",
+    ],
+  },
+
+  // ==========================================================================
+  // NORWEGIA
+  // ==========================================================================
+  norwegia: {
+    urlSlug: "norwegia",
+    languageSlug: "norwegian",
+    tagline: "Dari hei sampai Norskprøven — jalur perawat, engineer & gaji tertinggi Eropa.",
+    heroDescription:
+      "Kursus Bahasa Norwegia (Bokmål) online dengan kurikulum CEFR A1–B2 selaras Norskprøven. Jalur favorit perawat & tenaga kesehatan Indonesia, plus engineer migas-maritim dan pemburu beasiswa.",
+
+    whyLearn: [
+      {
+        icon: "🧑‍⚕️",
+        title: "Norwegia Butuh Perawat — Serius",
+        description:
+          "Norwegia kekurangan puluhan ribu tenaga kesehatan, dan perawat Indonesia mulai direkrut lewat jalur resmi. Syarat utamanya satu: bahasa Norwegia level B1–B2 (Norskprøven) — gajinya di antara tertinggi Eropa.",
+      },
+      {
+        icon: "🛢️",
+        title: "Migas, Maritim & Salmon",
+        description:
+          "Equinor, armada pelayaran raksasa, dan industri akuakultur terbesar dunia. Insinyur & pelaut Indonesia dengan bahasa Norwegia adalah kombinasi langka yang dicari.",
+      },
+      {
+        icon: "🏔️",
+        title: "Bonus 3-in-1 Skandinavia",
+        description:
+          "Norwegia posisi tengah rumpun Skandinavia — menguasainya membuat kamu membaca Denmark dan memahami Swedia hampir gratis. Satu bahasa, tiga negara.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🧑‍⚕️",
+        persona: "Perawat & Nakes Tujuan Norwegia",
+        benefit: "Target Norskprøven B1–B2 + kosakata helsefag (kesehatan).",
+      },
+      {
+        emoji: "⚓",
+        persona: "Pelaut & Engineer Maritim/Migas",
+        benefit: "Kosakata teknis kapal & rig, komunikasi kru Norwegia.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Calon Mahasiswa di Norwegia",
+        benefit: "Bekal hidup & syarat bahasa program berbahasa Norwegia.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Calon Penduduk",
+        benefit: "Syarat bahasa izin tinggal permanen & kewarganegaraan.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Nybegynner",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan Bokmål standar. Pelafalan, tone 1/2, kalimat dasar sehari-hari.",
+        topics: [
+          "Pelafalan: æ ø å, tone/pitch accent dasar",
+          "Gender en/ei/et & bentuk tentu",
+          "Verba present — satu bentuk untuk semua subjek",
+          "Angka (termasuk sistem baru vs lama), jam, belanja",
+          "Perkenalan & percakapan dasar",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Grunnleggende (Norskprøven A2)",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar. Setara Norskprøven A1–A2 (syarat beberapa jalur visa).",
+        topics: [
+          "Preteritum & perfektum",
+          "Urutan kata V2 & inversi",
+          "Adjektiva & pembanding",
+          "Preposisi tempat-waktu yang sering ketukar",
+          "Topik: kerja, kesehatan, rumah, cuaca",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Mellomnivå (Syarat Kerja Nakes)",
+        sessionCount: 80,
+        description:
+          "Level kunci Norskprøven B1 — syarat otorisasi banyak profesi kesehatan & permanent residence.",
+        topics: [
+          "Leddsetninger (anak kalimat) & urutan kata",
+          "Pasif & s-verb",
+          "Norsk kesehatan: pasien, dokumentasi, shift",
+          "Membaca NRK & Klar Tale",
+          "Simulasi Norskprøven B1: 4 keterampilan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Høyere nivå (Bergenstest)",
+        sessionCount: 112,
+        description:
+          "Mahir profesional — Norskprøven B2/Bergenstest, syarat otorisasi penuh perawat & kuliah.",
+        topics: [
+          "Struktur kompleks & bahasa formal tulis",
+          "Fagspråk: laporan medis / teknis",
+          "Membaca Aftenposten & teks akademik",
+          "Presentasi & diskusi profesional penuh",
+          "Simulasi Norskprøven B2 / Bergenstest",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Saya perawat, mau kerja di Norwegia. Level berapa yang dibutuhkan?",
+        answer:
+          "Otorisasi perawat (autorisasjon) umumnya mensyaratkan Norskprøven B2 — beberapa jalur helsefagarbeider menerima B1. Realistis dari nol: 18–24 bulan dengan ritme serius. Kurikulum kami memasukkan kosakata klinis sejak B1 supaya kamu tak belajar dua kali.",
+      },
+      {
+        question: "Bokmål atau Nynorsk?",
+        answer:
+          "Bokmål — dipakai ~90% penduduk, semua media besar, dan itu yang diuji Norskprøven. Nynorsk cukup dikenali pasif nanti setelah tinggal di sana.",
+      },
+      {
+        question: "Norwegia, Swedia, Denmark — mana yang harus dipilih?",
+        answer:
+          "Ikuti negara tujuanmu — ketiganya saling terkait. Kalau tujuannya karier kesehatan, Norwegia jalurnya paling terbuka untuk orang Indonesia saat ini. Bonus: dari Norwegia, membaca Denmark & memahami Swedia nyaris gratis.",
+      },
+      {
+        question: "Norskprøven itu apa?",
+        answer:
+          "Ujian resmi pemerintah Norwegia (Kompetanse Norge/HK-dir), level A1–A2, A2–B1, dan B1–B2, diadakan beberapa kali setahun. Dipakai untuk visa, permanent residence, kewarganegaraan, dan otorisasi profesi. Kurikulum Linguo selaras formatnya.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Norwegia (diaspora & alumni) plus opsi native. Untuk track nakes, tersedia pengajar yang paham proses autorisasi.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Norwegia Online | Linguo.id — Norskprøven A1–B2",
+    metaDescription:
+      "Belajar Bahasa Norwegia online dari nol. Persiapan Norskprøven & Bergenstest — jalur perawat, maritim, studi. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa norwegia",
+      "les bahasa norwegia online",
+      "belajar bahasa norwegia",
+      "norskproven persiapan",
+      "perawat ke norwegia",
+      "kerja di norwegia",
+      "kursus norwegia jakarta",
+      "les norwegia murah",
+      "bahasa norwegia pemula",
+      "bergenstest prep",
+    ],
+  },
+
+  // ==========================================================================
+  // DENMARK
+  // ==========================================================================
+  denmark: {
+    urlSlug: "denmark",
+    languageSlug: "danish",
+    tagline: "Dari hej sampai Prøve i Dansk — bahasa negeri hygge, Lego & Maersk.",
+    heroDescription:
+      "Kursus Bahasa Denmark online dengan kurikulum CEFR A1–B2 selaras Prøve i Dansk 1–3. Untuk kerja & studi di Denmark, menyusul pasangan, dan menaklukkan pelafalan paling tricky di Skandinavia.",
+
+    whyLearn: [
+      {
+        icon: "🚢",
+        title: "Maersk, Novo Nordisk, Vestas, Lego",
+        description:
+          "Denmark rumah raksasa pelayaran, farmasi, energi angin, dan mainan dunia. Pelaut Indonesia di kapal Maersk dan profesional farmasi-engineering mendapat nilai lebih besar dengan bahasa Denmark.",
+      },
+      {
+        icon: "🏡",
+        title: "Menetap: Syarat Bahasa yang Nyata",
+        description:
+          "Permanent residence & kewarganegaraan Denmark mensyaratkan Prøve i Dansk (PD2/PD3). Pasangan yang datang dengan bekal bahasa menghemat bertahun-tahun proses integrasi.",
+      },
+      {
+        icon: "🎓",
+        title: "Studi di Negeri Paling Bahagia",
+        description:
+          "DTU, Aarhus, Copenhagen Business School — pendidikan kelas dunia dengan budaya kampus egaliter. Kuliah berbahasa Inggris tersedia, tapi kerja part-time & karier lokal berbahasa Denmark.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Denmark",
+        benefit: "Persiapan hidup & ujian Prøve i Dansk untuk residence.",
+      },
+      {
+        emoji: "⚓",
+        persona: "Pelaut & Profesional Maritim",
+        benefit: "Kosakata maritim + percakapan kru — Maersk & armada Denmark.",
+      },
+      {
+        emoji: "💊",
+        persona: "Profesional Farmasi & Engineering",
+        benefit: "Novo Nordisk, Vestas — dansk kantor & kehidupan sosial.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Calon Mahasiswa di Denmark",
+        benefit: "Bekal hidup, kerja part-time, dan integrasi kampus.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Begynder",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan fokus ekstra pelafalan — jarak tulisan-ucapan Denmark yang terkenal itu kami jinakkan sejak awal.",
+        topics: [
+          "Pelafalan: æ ø å, stød, vokal 'menghilang'",
+          "Gender en/et & bentuk tentu",
+          "Verba present satu bentuk + ordstilling dasar",
+          "Angka (halvtreds! sistem 20-an), jam, belanja",
+          "Perkenalan & percakapan dasar",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Grundlæggende (PD1)",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar. Setara Prøve i Dansk 1.",
+        topics: [
+          "Datid & førnutid (har lavet)",
+          "Urutan kata V2 & inversi",
+          "Adjektiva & pembanding",
+          "Listening intensif — kunci bahasa Denmark",
+          "Topik: kerja, rumah, kesehatan, cuaca",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Mellemniveau (PD2)",
+        sessionCount: 80,
+        description:
+          "Level Prøve i Dansk 2 — syarat permanent residence. Diskusi topik luas dengan nyaman.",
+        topics: [
+          "Ledsætninger & urutan kata kompleks",
+          "Pasif (-s & blive) & refleksif",
+          "Membaca DR Nyheder ringan",
+          "Dansk kantor: meeting, email, sosial",
+          "Simulasi Prøve i Dansk 2",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Højere niveau (PD3)",
+        sessionCount: 112,
+        description:
+          "Mahir profesional — Prøve i Dansk 3, syarat kewarganegaraan & kuliah berbahasa Denmark.",
+        topics: [
+          "Struktur formal & bahasa tulis akademik",
+          "Fagsprog: maritim / farmasi / teknik",
+          "Membaca Politiken & Berlingske",
+          "Presentasi & argumentasi penuh",
+          "Simulasi Prøve i Dansk 3",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Katanya tulisan dan ucapan bahasa Denmark beda jauh. Separah apa?",
+        answer:
+          "Memang paling menantang di Skandinavia — banyak konsonan melunak dan ada stød (hentakan glotal). Justru karena itu metode kami listening-first: telinga dilatih sejak sesi pertama dengan audio native, bukan mengeja dari tulisan. Grammarnya sendiri sangat sederhana.",
+      },
+      {
+        question: "Prøve i Dansk itu apa?",
+        answer:
+          "Ujian resmi pemerintah Denmark tiga jenjang: PD1 (≈A2), PD2 (≈B1, syarat permanent residence), PD3 (≈B2, syarat kewarganegaraan & kuliah). Diadakan Mei & November. Kurikulum Linguo dipetakan langsung ke jenjang ini.",
+      },
+      {
+        question: "Denmark vs Norwegia vs Swedia — tulisannya kok mirip?",
+        answer:
+          "Denmark & Norwegia (Bokmål) tulisannya 90% mirip — bedanya di pengucapan. Kalau kamu sudah belajar salah satunya, membaca yang lain hampir gratis. Pilih berdasarkan negara tempat kamu akan tinggal.",
+      },
+      {
+        question: "Berapa lama sampai PD2 (permanent residence)?",
+        answer:
+          "Dari nol rata-rata 14–18 bulan dengan 2–3 sesi seminggu. Banyak siswa mulai dari Indonesia sebelum pindah, lalu lanjut modul language school gratis di Denmark — bekal awal membuat penempatan level di sana jauh lebih tinggi.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih (diaspora Denmark) plus opsi native. Audio & materi listening memakai sumber native asli sejak level pertama.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Denmark Online | Linguo.id — Prøve i Dansk 1–3",
+    metaDescription:
+      "Belajar Bahasa Denmark online dari nol. Pelafalan & stød, persiapan Prøve i Dansk, kerja & residence di Denmark. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa denmark",
+      "les bahasa denmark online",
+      "belajar bahasa denmark",
+      "prove i dansk persiapan",
+      "kerja di denmark",
+      "kursus denmark jakarta",
+      "les denmark murah",
+      "bahasa denmark pemula",
+      "bahasa dansk",
+      "kursus dansk online",
+    ],
+  },
+
+  // ==========================================================================
+  // FINLANDIA
+  // ==========================================================================
+  finlandia: {
+    urlSlug: "finlandia",
+    languageSlug: "finnish",
+    tagline: "Dari moi sampai YKI — bahasa negeri pendidikan terbaik dunia.",
+    heroDescription:
+      "Kursus Bahasa Finlandia online dengan kurikulum selaras YKI level 1–6. Untuk perawat & pekerja kesehatan jalur Finlandia, pengagum sistem pendidikannya, engineer tech Helsinki, dan pemburu residence.",
+
+    whyLearn: [
+      {
+        icon: "🧑‍⚕️",
+        title: "Finlandia Rekrut Nakes Indonesia",
+        description:
+          "Finlandia menua cepat dan aktif merekrut perawat & caregiver Indonesia lewat jalur resmi. Kontrak menanti setelah bahasamu sampai — umumnya YKI 3 (B1) untuk otorisasi praktik.",
+      },
+      {
+        icon: "🏫",
+        title: "Kiblat Pendidikan Dunia",
+        description:
+          "Guru-guru Indonesia berbondong mempelajari sistem Finlandia. Membaca materinya langsung — bukan lewat buku terjemahan — memberi kedalaman yang berbeda; plus S2 pendidikan di Helsinki atau Jyväskylä.",
+      },
+      {
+        icon: "📡",
+        title: "Tech Helsinki & Residence",
+        description:
+          "Nokia, Supercell, Wolt — startup scene Helsinki kuat dan kekurangan talenta. Kewarganegaraan Finlandia mensyaratkan YKI 3; datang dengan bekal bahasa memangkas semuanya.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🧑‍⚕️",
+        persona: "Perawat & Caregiver Jalur Finlandia",
+        benefit: "Target YKI 3 + suomen kieli untuk keperawatan (hoitoala).",
+      },
+      {
+        emoji: "🏫",
+        persona: "Guru & Praktisi Pendidikan",
+        benefit: "Akses materi pedagogi Finlandia asli + persiapan S2 pendidikan.",
+      },
+      {
+        emoji: "💻",
+        persona: "Engineer Tech Tujuan Helsinki",
+        benefit: "Suomi untuk kehidupan & karier jangka panjang di startup scene.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Calon Penduduk",
+        benefit: "YKI 3 — syarat kewarganegaraan — dengan jalur belajar realistis.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Taso 1 — Pemula (YKI 1)",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Pelafalan super konsisten (baca = tulis!), vokal harmoni, kalimat dasar.",
+        topics: [
+          "Pelafalan: dobel huruf, ä/ö, vokal harmoni",
+          "Verbityypit 1–5 & konjugasi present",
+          "Kasus dasar: partitif, genetif, lokal (-ssa/-lla)",
+          "Angka, jam, belanja, sauna & kahvi",
+          "Perkenalan — puhekieli vs kirjakieli dikenalkan",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Taso 2 — Dasar (YKI 2)",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari dengan sistem kasus yang mulai otomatis.",
+        topics: [
+          "Imperfekti & perfekti",
+          "Objek: akkusatif vs partitif (kunci Finlandia!)",
+          "Kasus lokal lengkap 6 arah",
+          "KPT-vaihtelu (pergantian konsonan)",
+          "Topik: kerja, kesehatan, rumah, cuaca",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Taso 3 — Menengah (YKI 3 — Kewarganegaraan)",
+        sessionCount: 80,
+        description:
+          "Level YKI 3 — syarat kewarganegaraan & mayoritas otorisasi nakes. Diskusi topik luas.",
+        topics: [
+          "Konditionaali & pengandaian",
+          "Pasif — wajib di bahasa kerja & pengumuman",
+          "Suomi kesehatan: pasien, dokumentasi, shift",
+          "Membaca Selkouutiset & Yle ringan",
+          "Simulasi YKI keskitaso: 4 keterampilan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Taso 4 — Atas (YKI 4–5)",
+        sessionCount: 112,
+        description:
+          "Mahir profesional & akademik. Partisip, struktur formal, bahasa kerja penuh.",
+        topics: [
+          "Partisiippi & lauseenvastike (struktur ringkas formal)",
+          "Rektio verba yang sering salah",
+          "Bahasa akademik & laporan kerja",
+          "Membaca Helsingin Sanomat",
+          "Simulasi YKI ylin taso",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Katanya bahasa Finlandia paling susah di Eropa. Benar?",
+        answer:
+          "Beda, bukan sekadar susah — dia bukan rumpun Indo-Eropa. 15 kasus terdengar seram, tapi kabar baiknya: pelafalan 100% konsisten, tanpa gender, tanpa artikel, dan tanpa future tense. Untuk orang Indonesia yang terbiasa imbuhan (me-, -kan, -nya), logika aglutinatif Finlandia justru familiar.",
+      },
+      {
+        question: "YKI itu apa dan level berapa yang saya butuhkan?",
+        answer:
+          "YKI (Yleiset kielitutkinnot) ujian bahasa resmi Finlandia, skala 1–6. YKI 3 (B1) adalah angka kunci: syarat kewarganegaraan dan mayoritas otorisasi tenaga kesehatan. Kurikulum kami dipetakan langsung ke sana.",
+      },
+      {
+        question: "Saya perawat. Realistis nggak belajar sampai level kerja?",
+        answer:
+          "Realistis dengan komitmen: rata-rata 18–24 bulan ke YKI 3 dari nol. Program rekrutmen resmi biasanya juga memberi pelatihan bahasa — bekal dari Indonesia membuatmu masuk gelombang berangkat lebih awal. Kosakata hoitoala kami masukkan sejak Taso 3.",
+      },
+      {
+        question: "Puhekieli (bahasa gaul) beda banget sama bahasa buku?",
+        answer:
+          "Cukup beda (minä→mä, kirjakieli vs puhekieli), dan banyak kursus mengabaikannya — lalu siswanya kaget di Helsinki. Kami kenalkan puhekieli sejak awal secara bertahap supaya telingamu siap dua-duanya.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih suomi (diaspora & alumni Finlandia) plus opsi native. Untuk track nakes, materi klinisnya disusun bersama perawat yang sudah bekerja di sana.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Finlandia Online | Linguo.id — YKI 1 sampai 5",
+    metaDescription:
+      "Belajar Bahasa Finlandia online dari nol. Persiapan YKI, jalur perawat & caregiver, studi pendidikan. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa finlandia",
+      "les bahasa finlandia online",
+      "belajar bahasa finlandia",
+      "YKI test persiapan",
+      "perawat ke finlandia",
+      "kerja di finlandia",
+      "kursus finlandia jakarta",
+      "les finlandia murah",
+      "bahasa suomi",
+      "bahasa finlandia pemula",
+    ],
+  },
+
+  // ==========================================================================
+  // ISLANDIA
+  // ==========================================================================
+  islandia: {
+    urlSlug: "islandia",
+    languageSlug: "icelandic",
+    tagline: "Dari halló sampai membaca Saga — bahasa Viking yang masih hidup.",
+    heroDescription:
+      "Kursus Bahasa Islandia online dengan kurikulum A1–B2. Bahasa Skandinavia paling murni — penuturnya masih bisa membaca Saga abad ke-13. Untuk pekerja pariwisata-perikanan, pasangan, dan pencinta bahasa.",
+
+    whyLearn: [
+      {
+        icon: "⚔️",
+        title: "Old Norse yang Masih Bernafas",
+        description:
+          "Islandia nyaris tak berubah sejak era Viking — orang Islandia modern membaca Saga abad ke-13 seperti kita membaca koran. Belajar bahasanya = memegang kunci sastra Norse asli.",
+      },
+      {
+        icon: "🌋",
+        title: "Pariwisata & Perikanan Butuh Orang",
+        description:
+          "Turisme Islandia meledak dan industri perikanannya legendaris — negeri 400 ribu penduduk ini bergantung pada pekerja asing. Bahasa Islandia langsung membedakanmu dari pelamar lain.",
+      },
+      {
+        icon: "🏔️",
+        title: "Syarat Menetap & Kewarganegaraan",
+        description:
+          "Izin tinggal permanen dan kewarganegaraan Islandia mensyaratkan ujian bahasa. Komunitasnya kecil dan erat — bahasa adalah satu-satunya pintu masuk yang sesungguhnya.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏨",
+        persona: "Pekerja Pariwisata & Hospitality",
+        benefit: "Percakapan tamu & tim — musim turis Islandia haus tenaga kerja.",
+      },
+      {
+        emoji: "🎣",
+        persona: "Pekerja Perikanan & Pengolahan",
+        benefit: "Kosakata industri ikan + percakapan pabrik & pelabuhan.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Islandia",
+        benefit: "Persiapan ujian residence & integrasi komunitas kecil yang erat.",
+      },
+      {
+        emoji: "📜",
+        persona: "Pencinta Bahasa & Sastra Norse",
+        benefit: "Jembatan langsung ke Saga, Edda, dan Old Norse.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Byrjandi",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Þ dan ð, pelafalan, kalimat dasar — dengan ekspektasi realistis terhadap morfologinya.",
+        topics: [
+          "Alfabet 32 huruf: þ (thorn), ð (eth), æ, ö",
+          "Pelafalan: pre-aspiration, ll → tl",
+          "Gender 3 & artikel tersufiks (húsið)",
+          "Verba dasar & sagnorð umum",
+          "Perkenalan, angka, belanja, cuaca (topik nasional!)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Grunnstig",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari dengan 4 kasus dasar yang mulai otomatis.",
+        topics: [
+          "4 kasus: nf. þf. þgf. ef. dengan pola frekuensi",
+          "Verba lampau lemah vs kuat",
+          "Adjektiva: deklinasi kuat-lemah praktis",
+          "Angka yang ikut kasus (tveir/tvær/tvö)",
+          "Topik: kerja, rumah, perjalanan, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Miðstig",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & membaca berita ringan. Persiapan ujian bahasa untuk residence.",
+        topics: [
+          "Subjunktif (viðtengingarháttur) fungsional",
+          "Middle voice (-st) & pasif",
+          "Membaca RÚV & Vísir ringan",
+          "Bahasa kerja: hospitality & perikanan",
+          "Simulasi ujian Íslenskupróf residence",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Efra stig",
+        sessionCount: 112,
+        description:
+          "Mahir — termasuk pintu ke sastra: membaca Saga berpanduan dengan jembatan dari Islandia modern.",
+        topics: [
+          "Morfologi penuh & gaya formal",
+          "Neologisme Islandia (tölva, sími) & purisme bahasa",
+          "Membaca Njáls saga berpanduan",
+          "Bahasa akademik & media penuh",
+          "Percakapan native-speed dengan idiom",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Sesusah apa bahasa Islandia sebenarnya?",
+        answer:
+          "Morfologinya paling kaya di Skandinavia — 4 kasus, 3 gender, deklinasi kuat-lemah. Tapi penuturnya cuma 400 ribu dan SANGAT menghargai orang asing yang mencoba; kesalahan dimaafkan, usaha dirayakan. Kami mengajarkannya dengan pola frekuensi: bentuk yang paling sering dipakai dulu, tabel lengkap belakangan.",
+      },
+      {
+        question: "Semua orang Islandia bisa Inggris. Buat apa?",
+        answer:
+          "Untuk turis — benar. Untuk yang tinggal & bekerja — percakapan komunitas, rapat kerja, dan pertemanan sejati berbahasa Islandia. Izin tinggal permanen juga mensyaratkan ujian bahasa. Di negeri sekecil itu, bahasa adalah keanggotaan.",
+      },
+      {
+        question: "Beneran bisa sampai baca Saga Viking?",
+        answer:
+          "Bisa — itu keistimewaan Islandia. Bahasa modernnya begitu konservatif sehingga dari B2, Saga bisa dibaca berpanduan (ejaan dinormalisasi). Track sastra kami mengarah ke sana lewat Njáls saga.",
+      },
+      {
+        question: "Berapa lama sampai level percakapan?",
+        answer:
+          "Lebih lambat dari bahasa Skandinavia lain karena morfologinya: A2 nyaman sekitar 10–14 bulan, B1 (level ujian residence) 18–24 bulan dengan ritme 2–3 sesi seminggu.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih íslenska (langka — dan kami punya) plus opsi native & penutur yang menempuh Icelandic as a Second Language di Háskóli Íslands.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Islandia Online | Linguo.id — dari Nol sampai Saga",
+    metaDescription:
+      "Belajar Bahasa Islandia online dari nol. Þ dan ð, kasus & saga, kerja pariwisata-perikanan, ujian residence. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa islandia",
+      "les bahasa islandia online",
+      "belajar bahasa islandia",
+      "bahasa iceland",
+      "belajar bahasa iceland",
+      "kerja di islandia",
+      "kursus islandia jakarta",
+      "les islandia murah",
+      "bahasa islandia pemula",
+      "old norse saga",
+    ],
+  },
+  // ==========================================================================
+  // POLANDIA
+  // ==========================================================================
+  polandia: {
+    urlSlug: "polandia",
+    languageSlug: "polish",
+    tagline: "Dari cześć sampai kontrak kerja — bahasa gerbang kerja Eropa untuk orang Indonesia.",
+    heroDescription:
+      "Kursus Bahasa Polandia online dengan kurikulum CEFR A1–B2. Polandia kini tujuan kerja Eropa paling terbuka bagi pekerja Indonesia — bahasanya bekal bertahan, naik posisi, dan menetap.",
+
+    whyLearn: [
+      {
+        icon: "🏭",
+        title: "Gerbang Kerja Eropa Paling Terbuka",
+        description:
+          "Ribuan pekerja Indonesia kini di Polandia — pabrik, logistik, konstruksi, hospitality. Yang bisa bahasa Polandia naik jadi koordinator, lolos wawancara langsung, dan tak bergantung agen.",
+      },
+      {
+        icon: "🎓",
+        title: "Kuliah Murah di Jantung Eropa",
+        description:
+          "Universitas negeri Polandia nyaris gratis untuk program berbahasa Polandia, dan ada beasiswa NAWA. Kraków & Warsawa kota pelajar dengan biaya hidup separuh Eropa Barat.",
+      },
+      {
+        icon: "🇪🇺",
+        title: "Ekonomi Terbesar Eropa Tengah",
+        description:
+          "Polandia ekonomi paling cepat tumbuh di UE — pusat manufaktur, game (CD Projekt), dan IT outsourcing. Karta pobytu (izin tinggal) jangka panjang lebih mudah dengan bahasa.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏭",
+        persona: "Pekerja Indonesia di Polandia",
+        benefit: "Percakapan pabrik & kehidupan: shift, kontrak, dokumen, belanja.",
+      },
+      {
+        emoji: "📋",
+        persona: "Calon Pekerja yang Sedang Proses Visa",
+        benefit: "Bekal sebelum berangkat — wawancara & adaptasi minggu pertama.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Calon Mahasiswa & Pemburu NAWA",
+        benefit: "Persiapan certyfikat B1 untuk program berbahasa Polandia.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Calon Penduduk Tetap",
+        benefit: "B1 — syarat status penduduk jangka panjang UE di Polandia.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Początkujący",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Konsonan berdesis Polandia dijinakkan sejak awal, kalimat dasar untuk hidup sehari-hari.",
+        topics: [
+          "Pelafalan: sz/cz/rz/ż, ś/ć/ź, ą/ę",
+          "Gender & verba być, mieć + present",
+          "Kasus pertama yang paling kepakai: biernik & narzędnik",
+          "Angka, jam, belanja, transportasi",
+          "Perkenalan formal (Pan/Pani) vs santai",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Podstawowy",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari & kebutuhan kerja dasar.",
+        topics: [
+          "Aspek verba: dokonany vs niedokonany",
+          "Lampau & masa depan dua aspek",
+          "Dopełniacz (genitif) — kasus paling sering",
+          "Bahasa kerja: shift, gaji, cuti, BHP (K3)",
+          "Topik: kesehatan, dokumen, urząd (kantor pemerintah)",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Średni (Certyfikat B1)",
+        sessionCount: 80,
+        description:
+          "Level ujian certyfikatowy B1 — syarat kewarganegaraan & kuliah. Diskusi topik luas.",
+        topics: [
+          "Sistem 7 kasus lengkap dengan pola frekuensi",
+          "Verba gerak & prefiks",
+          "Kondisional & kalimat kompleks",
+          "Membaca berita Onet/TVN24 ringan",
+          "Simulasi egzamin certyfikatowy B1",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Wyższy",
+        sessionCount: 112,
+        description:
+          "Mahir profesional — rapat kerja penuh, dokumen resmi, kuliah berbahasa Polandia.",
+        topics: [
+          "Imiesłowy (participle) & gaya formal",
+          "Bahasa dokumen: umowa (kontrak), urząd, ZUS",
+          "Polski biznesowy: rapat, email, negosiasi",
+          "Membaca Gazeta Wyborcza & teks akademik",
+          "Simulasi egzamin certyfikatowy B2",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Saya mau kerja di Polandia lewat agen. Perlu bahasa dulu?",
+        answer:
+          "Tidak wajib untuk berangkat — tapi sangat menentukan nasib di sana. Pekerja yang bisa dasar Polandia dapat posisi lebih baik, paham kontraknya sendiri (banyak kasus gaji dipotong karena tak paham umowa), dan bisa pindah kerja tanpa tergantung agen. Track kami yang paling laku justru 'bekal 3 bulan sebelum berangkat'.",
+      },
+      {
+        question: "Konsonannya seram — szcz, prz... bisa dilafalkan orang Indonesia?",
+        answer:
+          "Bisa, dan lebih cepat dari yang kamu kira — sz=sy, cz=cy sudah setengah jalan dari bunyi Indonesia. Kami drill kluster konsonan sejak sesi pertama. Bonus: tekanan kata SELALU di suku kedua dari akhir, jadi tak pernah menebak.",
+      },
+      {
+        question: "7 kasus?! Gimana ngajarinnya?",
+        answer:
+          "Dengan frekuensi, bukan tabel. Tiga kasus menutupi mayoritas percakapan sehari-hari, jadi itu yang diajarkan dulu sampai otomatis. Sisanya menyusul bertahap. Siswa kami sudah bisa hidup di Polandia jauh sebelum 'selesai' semua kasus.",
+      },
+      {
+        question: "Berapa lama sampai level yang berguna di tempat kerja?",
+        answer:
+          "Percakapan kerja & hidup dasar (A2): 8–12 bulan reguler, atau 4–5 bulan intensif untuk yang dikejar jadwal keberangkatan. B1 — syarat kewarganegaraan — sekitar 18 bulan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Polandia (diaspora & alumni NAWA) plus opsi native. Materinya membumi: kontrak kerja, urząd, kehidupan nyata pekerja — bukan cuma buku teks.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Polandia Online | Linguo.id — Bekal Kerja & B1",
+    metaDescription:
+      "Belajar Bahasa Polandia online dari nol. Bekal kerja di Polandia, certyfikat B1, kuliah & residence. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa polandia",
+      "les bahasa polandia online",
+      "belajar bahasa polandia",
+      "kerja di polandia",
+      "bahasa polandia untuk pekerja",
+      "kursus polandia jakarta",
+      "les polandia murah",
+      "bahasa polski",
+      "bahasa polandia pemula",
+      "beasiswa NAWA polandia",
+    ],
+  },
+
+  // ==========================================================================
+  // CEKO
+  // ==========================================================================
+  ceko: {
+    urlSlug: "ceko",
+    languageSlug: "czech",
+    tagline: "Dari ahoj sampai CCE — kuliah GRATIS di Praha kalau bahasamu Ceko.",
+    heroDescription:
+      "Kursus Bahasa Ceko online dengan kurikulum CEFR A1–B2 selaras ujian CCE. Kuncinya satu: universitas negeri Ceko gratis untuk program berbahasa Ceko — termasuk Charles University.",
+
+    whyLearn: [
+      {
+        icon: "🎓",
+        title: "Kuliah GRATIS — Syaratnya Cuma Bahasa",
+        description:
+          "Universitas negeri Ceko (Charles University, CTU, Masaryk) menggratiskan kuliah untuk SIAPA PUN yang belajar dalam bahasa Ceko — termasuk mahasiswa asing. B2 adalah tiket masuknya. Ini salah satu deal pendidikan terbaik di Eropa.",
+      },
+      {
+        icon: "🚗",
+        title: "Škoda, Manufaktur & Engineering",
+        description:
+          "Ceko jantung manufaktur Eropa Tengah — otomotif, mesin, kaca. Pekerja teknik & operator Indonesia mulai melirik Ceko; bahasa lokal membuka posisi di atas lini produksi.",
+      },
+      {
+        icon: "🏰",
+        title: "Praha: Hidup Eropa dengan Biaya Masuk Akal",
+        description:
+          "Kota tercantik Eropa dengan biaya hidup jauh di bawah Barat. Izin tinggal permanen mensyaratkan ujian bahasa — datang dengan bekal berarti selangkah di depan.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🎓",
+        persona: "Calon Mahasiswa Jalur Gratis",
+        benefit: "Target CCE B2 untuk masuk program berbahasa Ceko tanpa biaya kuliah.",
+      },
+      {
+        emoji: "🏭",
+        persona: "Pekerja Teknik & Manufaktur",
+        benefit: "Percakapan pabrik, kontrak, K3 — plus naik posisi.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Calon Penduduk",
+        benefit: "A2–B1 untuk izin tinggal permanen & kewarganegaraan.",
+      },
+      {
+        emoji: "🍺",
+        persona: "Penikmat Budaya Eropa Tengah",
+        benefit: "Kafka, Kundera, film Ceko, dan hospoda — dari bahasanya langsung.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Začátečník",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Háček (č š ž), ř yang legendaris, kalimat dasar sehari-hari.",
+        topics: [
+          "Pelafalan: č š ž, ř, ě, dlouhé samohlásky",
+          "Gender & verba být, mít + present",
+          "Akuzativ & lokál — kasus paling kepakai dulu",
+          "Angka, jam, belanja, restaurace",
+          "Perkenalan formal (vykání) vs akrab (tykání)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Základní",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar. Setara CCE-A2 (syarat permanent residence).",
+        topics: [
+          "Aspek verba: dokonavý vs nedokonavý",
+          "Lampau & masa depan",
+          "Genitiv & dativ fungsional",
+          "Bahasa kantor imigrasi & dokumen",
+          "Topik: kerja, kesehatan, rumah, transportasi",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Střední (CCE-B1)",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, baca berita ringan. CCE-B1 — syarat kewarganegaraan.",
+        topics: [
+          "7 kasus lengkap dengan pola frekuensi",
+          "Verba gerak & prefiks",
+          "Kondicionál & kalimat kompleks",
+          "Membaca iDNES & ČT24 ringan",
+          "Simulasi CCE-B1",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Vyšší (CCE-B2 — Tiket Kuliah Gratis)",
+        sessionCount: 112,
+        description:
+          "Level syarat masuk universitas berbahasa Ceko. Akademik & profesional penuh.",
+        topics: [
+          "Přechodníky & gaya formal tulis",
+          "Bahasa akademik: přednáška, seminář, zkouška",
+          "Čeština kantor: email, rapat, presentasi",
+          "Membaca Respekt & teks akademik",
+          "Simulasi CCE-B2 lengkap",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Beneran kuliah di Ceko bisa gratis?",
+        answer:
+          "Ya — undang-undang Ceko menggratiskan pendidikan tinggi negeri dalam bahasa Ceko untuk semua kewarganegaraan. Yang berbayar adalah program berbahasa Inggris. Jadi B2 bahasa Ceko (dibuktikan ujian CCE atau ujian kampus) secara harfiah bernilai ratusan juta rupiah biaya kuliah.",
+      },
+      {
+        question: "Berapa lama dari nol sampai B2 buat kuliah?",
+        answer:
+          "Rata-rata 18–24 bulan dengan 2–3 sesi seminggu. Banyak calon mahasiswa memakai pola: 12–15 bulan di Indonesia sampai B1, lalu program persiapan 1 semester di Ceko. Lebih murah daripada bayar kuliah program Inggris.",
+      },
+      {
+        question: "Bunyi ř itu apa dan bisa dipelajari?",
+        answer:
+          "Bunyi khas Ceko (seperti r dan ž diucapkan bersamaan) — bahkan anak Ceko mempelajarinya paling akhir. Bisa dilatih dengan teknik bertahap, dan orang Ceko sangat memaklumi. Jangan biarkan satu huruf menghalangi kuliah gratis.",
+      },
+      {
+        question: "CCE itu apa?",
+        answer:
+          "Ujian sertifikasi resmi dari Charles University (Institut Studi Bahasa & Persiapan), berjenjang A1–C1. CCE-A2 untuk permanent residence, B1 untuk kewarganegaraan, B2 untuk masuk kuliah. Kurikulum kami dipetakan ke formatnya.",
+      },
+      {
+        question: "Ceko sama Slovakia bahasanya sama?",
+        answer:
+          "Beda tapi saling paham tinggi — orang Ceko dan Slovakia saling bicara bahasanya masing-masing. Belajar Ceko praktis memberi bonus Slovakia pasif.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Ceko Online | Linguo.id — CCE & Kuliah Gratis di Praha",
+    metaDescription:
+      "Belajar Bahasa Ceko online dari nol. Target CCE B2 — kuliah gratis di universitas negeri Ceko. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa ceko",
+      "les bahasa ceko online",
+      "belajar bahasa ceko",
+      "kuliah gratis di ceko",
+      "kuliah di praha",
+      "CCE exam persiapan",
+      "kursus ceko jakarta",
+      "les ceko murah",
+      "bahasa ceko pemula",
+      "beasiswa ceko",
+    ],
+  },
+
+  // ==========================================================================
+  // HUNGARIA
+  // ==========================================================================
+  hungaria: {
+    urlSlug: "hungaria",
+    languageSlug: "hungarian",
+    tagline: "Dari szia sampai Budapest — bekal beasiswa Stipendium Hungaricum.",
+    heroDescription:
+      "Kursus Bahasa Hungaria online dengan kurikulum A1–B2. Ratusan pelajar Indonesia berangkat tiap tahun lewat Stipendium Hungaricum — bahasa Hungaria membuat hidupmu di sana benar-benar jalan.",
+
+    whyLearn: [
+      {
+        icon: "🎓",
+        title: "Stipendium Hungaricum — Kuota Indonesia Besar",
+        description:
+          "Beasiswa penuh pemerintah Hungaria memberi Indonesia ratusan kuota per tahun (S1–S3): kuliah, asrama, uang saku. Semua penerima wajib kuliah bahasa Hungaria di tahun pertama — mencicil dari sekarang membuatmu unggul.",
+      },
+      {
+        icon: "🏭",
+        title: "Manufaktur & Servis Eropa Tengah",
+        description:
+          "Audi, Mercedes, Bosch, dan SSC (shared service center) memenuhi Hungaria. Pekerja & profesional Indonesia mulai masuk — bahasa lokal kunci naik dari lini ke koordinasi.",
+      },
+      {
+        icon: "🛁",
+        title: "Budapest: Kota Pelajar Terbaik Eropa Tengah",
+        description:
+          "Biaya hidup ramah, kota indah, komunitas pelajar Indonesia besar. Tapi Hungaria bukan negara yang ramah-Inggris di luar kampus — bahasanya benar-benar dibutuhkan.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🎓",
+        persona: "Awardee & Pemburu Stipendium Hungaricum",
+        benefit: "Curi start kuliah bahasa wajib tahun pertama + hidup sehari-hari.",
+      },
+      {
+        emoji: "🏭",
+        persona: "Pekerja Manufaktur & SSC",
+        benefit: "Percakapan kerja, kontrak, kehidupan di kota industri.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Hungaria",
+        benefit: "Percakapan keluarga & integrasi — Hungaria minim ber-Inggris.",
+      },
+      {
+        emoji: "🧩",
+        persona: "Pencinta Bahasa Unik",
+        benefit: "Bahasa Uralik dengan logika aglutinatif yang memuaskan otak.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Kezdő",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Vokal harmoni, konjugasi dasar, kalimat sehari-hari — logika imbuhannya ternyata akrab bagi lidah Indonesia.",
+        topics: [
+          "Pelafalan: gy, ny, sz vs s, ö/ő ü/ű",
+          "Vokal harmoni — kunci semua akhiran",
+          "Konjugasi tentu vs tak tentu (alanyi/tárgyas)",
+          "Angka, jam, belanja, kávézó",
+          "Perkenalan & sapaan (szia vs jó napot)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Alapfok",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar dengan sistem akhiran dasar.",
+        topics: [
+          "Kasus lokal 9 arah (ban/ba/ból dst) — dipetakan visual",
+          "Lampau & masa depan",
+          "Kepemilikan (házam, házad) & birtokos",
+          "Prefiks verba (meg-, el-, ki-, be-)",
+          "Topik: kampus, kerja, kesehatan, transportasi",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Középfok alsó",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & kebutuhan akademik dasar — level nyaman untuk hidup mandiri di Hungaria.",
+        topics: [
+          "Kondisional & imperatif-subjungtif",
+          "Klausa relatif & kata sambung",
+          "Bahasa kampus: ügyintézés, dokumen, email dosen",
+          "Membaca Telex/Index ringan",
+          "Percakapan telepon & layanan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Középfok (ECL/Origó B2)",
+        sessionCount: 112,
+        description:
+          "Mahir — setara ujian ECL/Origó B2 yang diakui untuk kuliah & kewarganegaraan.",
+        topics: [
+          "Igenevek (participle) & struktur formal",
+          "Bahasa akademik & presentasi",
+          "Magyar kantor: rapat, laporan, negosiasi",
+          "Membaca HVG & teks akademik",
+          "Simulasi ECL B2",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Katanya bahasa Hungaria salah satu tersulit di dunia. Benar?",
+        answer:
+          "Reputasi itu dari kacamata penutur Inggris. Untuk orang Indonesia ada bonus tak terduga: logika aglutinatif (akhiran ditumpuk seperti imbuhan kita), tanpa gender, tanpa banyak tenses, dan pelafalan konsisten. Yang baru cuma vokal harmoni & konjugasi tentu/tak tentu — dua-duanya sistematis.",
+      },
+      {
+        question: "Saya sudah keterima Stipendium Hungaricum. Masih perlu les?",
+        answer:
+          "Program memang memberi kuliah bahasa tahun pertama, tapi realitasnya: kelas besar, progres lambat, dan kamu langsung harus hidup — belanja, asrama, birokrasi imigrasi — dalam bahasa Hungaria sejak minggu pertama. Awardee yang datang dengan A1–A2 hidupnya jauh lebih mulus.",
+      },
+      {
+        question: "Orang Hungaria bisa bahasa Inggris nggak?",
+        answer:
+          "Generasi muda di Budapest — lumayan. Di luar itu (kantor imigrasi, dokter, penjual pasar, kota kecil) — sering tidak. Di antara negara tujuan pelajar Eropa, Hungaria termasuk yang paling membutuhkan bahasa lokalnya.",
+      },
+      {
+        question: "Berapa lama sampai level hidup nyaman di Budapest?",
+        answer:
+          "A2 (urusan harian mandiri) sekitar 8–12 bulan dengan 2–3 sesi seminggu. Pola favorit calon awardee: mulai saat pengumuman seleksi (~6 bulan sebelum berangkat) supaya tiba dengan A1–A2.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia alumni Hungaria (mayoritas eks-awardee Stipendium Hungaricum) plus opsi native. Mereka juga paham seluk-beluk beasiswanya — bonus mentoring aplikasi.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Hungaria Online | Linguo.id — Bekal Stipendium Hungaricum",
+    metaDescription:
+      "Belajar Bahasa Hungaria online dari nol. Bekal Stipendium Hungaricum, hidup di Budapest, ECL B2. Pengajar alumni Hungaria. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa hungaria",
+      "les bahasa hungaria online",
+      "belajar bahasa hungaria",
+      "stipendium hungaricum",
+      "beasiswa hungaria",
+      "kuliah di hungaria",
+      "kursus hungaria jakarta",
+      "les hungaria murah",
+      "bahasa hungaria pemula",
+      "bahasa magyar",
+    ],
+  },
+
+  // ==========================================================================
+  // RUMANIA
+  // ==========================================================================
+  rumania: {
+    urlSlug: "rumania",
+    languageSlug: "romanian",
+    tagline: "Bahasa Latin yang tersembunyi di Timur — dari salut sampai beasiswa Bukares.",
+    heroDescription:
+      "Kursus Bahasa Rumania online dengan kurikulum CEFR A1–B2. Bahasa Roman (serumpun Italia-Spanyol!) di Eropa Timur — untuk beasiswa pemerintah Rumania, kerja IT & manufaktur, dan pasangan.",
+
+    whyLearn: [
+      {
+        icon: "🎓",
+        title: "Beasiswa Pemerintah Rumania",
+        description:
+          "Beasiswa penuh tahunan untuk pelajar Indonesia (S1–S3) dengan tahun persiapan bahasa. Kampus tua seperti Universitas Bukares & Babeș-Bolyai, biaya hidup di antara termurah di UE.",
+      },
+      {
+        icon: "🗣️",
+        title: "Diam-diam Serumpun Italia & Spanyol",
+        description:
+          "Rumania bahasa Roman — kosakatanya beririsan besar dengan Italia, Spanyol, Prancis. Kalau kamu pernah belajar salah satunya, Rumania terasa setengah kenal. Kalau belum: satu batu loncatan ke seluruh rumpun.",
+      },
+      {
+        icon: "💻",
+        title: "IT Hub & Manufaktur yang Naik Daun",
+        description:
+          "Bukares & Cluj pusat IT outsourcing Eropa; Dacia-Renault & pabrik komponen menyebar. Pekerja asing bertambah — bahasa lokal tetap mata uang utama di luar kantor tech.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🎓",
+        persona: "Pemburu Beasiswa Rumania",
+        benefit: "Curi start tahun persiapan bahasa + nilai plus aplikasi.",
+      },
+      {
+        emoji: "💻",
+        persona: "Profesional IT & Manufaktur",
+        benefit: "Percakapan kantor & kehidupan di Bukares/Cluj.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Rumania",
+        benefit: "Percakapan keluarga & syarat bahasa kewarganegaraan.",
+      },
+      {
+        emoji: "🧛",
+        persona: "Penikmat Budaya & Traveler",
+        benefit: "Transylvania, Carpathia, sastra — melampaui klise Dracula.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Începător",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Pelafalan hampir se-konsisten Spanyol, kalimat dasar sehari-hari.",
+        topics: [
+          "Pelafalan: ă, â/î, ș, ț — sisanya nyaris fonetik",
+          "Artikel tersufiks (omul, casa) — ciri khas Rumania",
+          "A fi, a avea + konjugasi present",
+          "Angka, jam, belanja, restoran",
+          "Perkenalan & sapaan formal-informal",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Elementar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar dengan struktur dasar lengkap.",
+        topics: [
+          "Perfect compus & imperfect",
+          "Masa depan (o să / voi)",
+          "Pronomina objek & datif",
+          "Kasus genitif-datif praktis",
+          "Topik: kerja, kesehatan, perjalanan, rumah",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Intermediar",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, baca berita ringan — level nyaman hidup mandiri di Rumania.",
+        topics: [
+          "Conjunctiv (să + verba) — jantung kalimat Rumania",
+          "Condițional & pengandaian",
+          "Klausa relatif (care) & kalimat kompleks",
+          "Membaca Digi24/HotNews ringan",
+          "Bahasa kampus & birokrasi",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Avansat",
+        sessionCount: 112,
+        description:
+          "Mahir akademik & profesional — level ujian atestat untuk kuliah & kewarganegaraan.",
+        topics: [
+          "Gaya formal & bahasa akademik",
+          "Română de afaceri: email, rapat, prezentare",
+          "Membaca pers & teks akademik",
+          "Sastra ringan: Eliade, Cărtărescu berpanduan",
+          "Simulasi ujian bahasa tingkat B2",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bahasa Rumania mirip bahasa apa?",
+        answer:
+          "Italia adalah kerabat terdekatnya yang terasa — sekitar 77% leksikal sama. Orang yang pernah belajar Italia/Spanyol/Prancis akan sering 'menebak benar'. Lapisan Slavia-nya menambah rasa khas, tapi tulang punggungnya tetap Latin.",
+      },
+      {
+        question: "Beasiswa pemerintah Rumania itu gimana skemanya?",
+        answer:
+          "Dibuka tiap tahun via Kementerian Luar Negeri Rumania: bebas biaya kuliah, asrama, dan tunjangan, untuk S1–S3. Kuliahnya berbahasa Rumania — penerima tanpa bahasa menjalani 1 tahun persiapan. Mencicil dari Indonesia bisa memangkas atau meringankan tahun itu.",
+      },
+      {
+        question: "Susah nggak dibanding bahasa Latin lain?",
+        answer:
+          "Sedikit lebih 'bertekstur': ada sisa kasus (genitif-datif) dan artikel yang menempel di belakang kata. Tapi pelafalannya konsisten dan strukturnya tetap Roman yang ramah. Di antara bahasa Eropa Timur, ini pintu masuk paling landai.",
+      },
+      {
+        question: "Berapa lama sampai level percakapan?",
+        answer:
+          "A2 rata-rata 7–10 bulan dengan 2–3 sesi seminggu (lebih cepat kalau punya dasar Roman lain). B1 — hidup mandiri & kuliah persiapan — sekitar 14–18 bulan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia alumni Rumania (eks-penerima beasiswa) plus opsi native. Bonus: mereka paham alur aplikasi beasiswanya.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Rumania Online | Linguo.id — A1 sampai B2",
+    metaDescription:
+      "Belajar Bahasa Rumania online dari nol. Serumpun Italia-Spanyol, beasiswa pemerintah Rumania, kerja di Bukares. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa rumania",
+      "les bahasa rumania online",
+      "belajar bahasa rumania",
+      "beasiswa rumania",
+      "kuliah di rumania",
+      "kursus rumania jakarta",
+      "les rumania murah",
+      "bahasa rumania pemula",
+      "bahasa romania",
+      "kerja di rumania",
+    ],
+  },
+
+  // ==========================================================================
+  // BULGARIA
+  // ==========================================================================
+  bulgaria: {
+    urlSlug: "bulgaria",
+    languageSlug: "bulgarian",
+    tagline: "Dari zdravei sampai Sofia — tanah kelahiran aksara Sirilik.",
+    heroDescription:
+      "Kursus Bahasa Bulgaria online dengan kurikulum CEFR A1–B2. Bahasa Slavia paling ramah pemula — tanpa kasus! — untuk kerja & pabrik di Bulgaria, studi murah, dan pasangan.",
+
+    whyLearn: [
+      {
+        icon: "🏭",
+        title: "Tujuan Kerja Baru Pekerja Indonesia",
+        description:
+          "Bulgaria mulai merekrut pekerja Indonesia — manufaktur, tekstil, hospitality resort Laut Hitam. Upah UE dengan persaingan pelamar lebih longgar; bahasa lokal langsung membedakan.",
+      },
+      {
+        icon: "⭐",
+        title: "Bahasa Slavia Termudah",
+        description:
+          "Satu-satunya bahasa Slavia besar TANPA sistem kasus — kata bendanya tak berubah-ubah seperti Rusia atau Polandia. Kalau mau masuk dunia Slavia lewat pintu paling landai, ini dia.",
+      },
+      {
+        icon: "📜",
+        title: "Rumah Asli Aksara Sirilik",
+        description:
+          "Sirilik lahir di Bulgaria abad ke-9 (St. Kliment Ohridski) — dan Bulgaria merayakannya tiap 24 Mei. Belajar di sini berarti membaca Sirilik dari sumbernya, bonus modal ke Rusia & Ukraina.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏭",
+        persona: "Pekerja Indonesia Tujuan Bulgaria",
+        benefit: "Percakapan pabrik & resort, kontrak, kehidupan sehari-hari.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Calon Mahasiswa (Kedokteran!)",
+        benefit: "Sofia & Plovdiv tujuan kuliah kedokteran berbiaya ringan.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Bulgaria",
+        benefit: "Percakapan keluarga & syarat bahasa naturalisasi.",
+      },
+      {
+        emoji: "🌹",
+        persona: "Pebisnis & Penikmat Balkan",
+        benefit: "Rose oil, tekstil, properti Laut Hitam — pasar yang belum ramai.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Начинаещ",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Sirilik Bulgaria tuntas cepat, kalimat dasar tanpa beban kasus.",
+        topics: [
+          "Sirilik 30 huruf versi Bulgaria",
+          "Artikel tersufiks (столът, книгата)",
+          "Съм (to be) & konjugasi present",
+          "Angka, jam, belanja — dan anggukan yang terbalik!",
+          "Perkenalan & sapaan",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Основен",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar dengan aspek verba dasar.",
+        topics: [
+          "Aspek verba: свършен vs несвършен",
+          "Lampau аорист & имперфект praktis",
+          "Masa depan (ще) — paling simpel se-Slavia",
+          "Pronomina klitik (го, я, му)",
+          "Topik: kerja, kesehatan, rumah, transportasi",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Среден",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & baca berita ringan — level hidup mandiri di Bulgaria.",
+        topics: [
+          "Преизказно наклонение (evidential — khas Bulgaria)",
+          "Kondisional & kalimat kompleks",
+          "Bahasa kerja: kontrak, shift, dokumen",
+          "Membaca Dnevnik/БНТ ringan",
+          "Percakapan birokrasi & layanan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Напреднал",
+        sessionCount: 112,
+        description:
+          "Mahir profesional & akademik — level ujian bahasa untuk kuliah & kewarganegaraan.",
+        topics: [
+          "Gaya formal & bahasa dokumen",
+          "Бизнес български: rapat, email, negosiasi",
+          "Membaca Capital & teks akademik",
+          "Presentasi & diskusi penuh",
+          "Simulasi ujian standar B2 (СУ/ДЕО)",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Benarkah bahasa Bulgaria paling gampang di antara bahasa Slavia?",
+        answer:
+          "Untuk pemula — ya. Bulgaria (bersama Makedonia) membuang sistem kasus yang jadi momok Rusia/Polandia/Ceko: kata benda tak berubah bentuk. Verba-nya memang kaya, tapi dipakai berulang jadi cepat otomatis. Plus Sirilik cuma butuh 3–4 sesi.",
+      },
+      {
+        question: "Anggukan kepala di Bulgaria terbalik — serius?",
+        answer:
+          "Serius: geleng = ya, angguk = tidak. Kami bahas di sesi pertama supaya kamu tak salah beli barang di Sofia. Budaya seperti ini melekat di kurikulum, bukan cuma bahasa.",
+      },
+      {
+        question: "Kerja di Bulgaria lewat agen, perlu bahasa nggak?",
+        answer:
+          "Sama seperti Polandia: tidak wajib berangkat, sangat menentukan nasib di sana. Yang bisa dasar Bulgaria paham kontraknya, bisa ke dokter sendiri, dan naik posisi. Track 'bekal pra-keberangkatan' 3–4 bulan kami dirancang persis untuk ini.",
+      },
+      {
+        question: "Kalau sudah bisa Rusia, Bulgaria gampang?",
+        answer:
+          "Sangat — Sirilik sama, kosakata beririsan besar. Tinggal membiasakan artikel tersufiks dan melupakan kasus (enak, kan). Berlaku juga sebaliknya: Bulgaria jadi batu loncatan ringan ke Rusia.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Bulgaria (diaspora & alumni) plus opsi native. Materi kerja & birokrasi diambil dari pengalaman nyata komunitas Indonesia di sana.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Bulgaria Online | Linguo.id — Slavia Tanpa Kasus",
+    metaDescription:
+      "Belajar Bahasa Bulgaria online dari nol. Sirilik, bahasa Slavia termudah, bekal kerja & kuliah di Bulgaria. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa bulgaria",
+      "les bahasa bulgaria online",
+      "belajar bahasa bulgaria",
+      "kerja di bulgaria",
+      "kuliah di bulgaria",
+      "kursus bulgaria jakarta",
+      "les bulgaria murah",
+      "bahasa bulgaria pemula",
+      "belajar sirilik bulgaria",
+      "kerja pabrik eropa",
+    ],
+  },
+
+  // ==========================================================================
+  // UKRAINA
+  // ==========================================================================
+  ukraina: {
+    urlSlug: "ukraina",
+    languageSlug: "ukrainian",
+    tagline: "Dari pryvit sampai Kyiv — bahasa 40 juta penutur yang dunia sedang pelajari.",
+    heroDescription:
+      "Kursus Bahasa Ukraina online dengan kurikulum CEFR A1–B2. Untuk pekerja kemanusiaan & NGO, profesional rekonstruksi, akademisi studi Eropa Timur, dan penutur Rusia yang ingin beralih.",
+
+    whyLearn: [
+      {
+        icon: "🕊️",
+        title: "Kemanusiaan & Rekonstruksi",
+        description:
+          "Organisasi internasional, NGO, dan program rekonstruksi Ukraina membutuhkan staf berbahasa Ukraina — dan akan bertahun-tahun ke depan. Kombinasi profesional Indonesia + bahasa Ukraina nyaris tak ada saingan.",
+      },
+      {
+        icon: "🌻",
+        title: "Bahasa yang Sedang Bangkit",
+        description:
+          "40 juta penutur, dan pemakaiannya justru menguat — media, tech (Grammarly, GitLab lahir di sini), dan diaspora global. Belajar sekarang berarti ikut momen sejarah bahasanya.",
+      },
+      {
+        icon: "🎓",
+        title: "Studi Eropa Timur & Jurnalisme",
+        description:
+          "Peneliti, jurnalis, dan analis kawasan tak lagi bisa mengandalkan bahasa Rusia saja untuk memahami Ukraina. Sumber primer, wawancara, dan arsip berbahasa Ukraina.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🕊️",
+        persona: "Pekerja NGO & Kemanusiaan",
+        benefit: "Percakapan lapangan, wawancara, koordinasi program.",
+      },
+      {
+        emoji: "🏗️",
+        persona: "Profesional Rekonstruksi & Bisnis",
+        benefit: "Bahasa proyek: konstruksi, logistik, tender internasional.",
+      },
+      {
+        emoji: "📰",
+        persona: "Jurnalis & Peneliti Kawasan",
+        benefit: "Sumber primer, media lokal, wawancara tanpa penerjemah.",
+      },
+      {
+        emoji: "🔄",
+        persona: "Penutur Rusia yang Beralih",
+        benefit: "Jalur cepat khusus: fokus perbedaan, bukan mulai dari nol.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Початківець",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Sirilik versi Ukraina (і, ї, є, ґ), pelafalan merdu, kalimat dasar.",
+        topics: [
+          "Sirilik Ukraina 33 huruf — beda dari Rusia",
+          "Pelafalan: г vs ґ, vokal jernih tanpa reduksi",
+          "Gender & verba бути, мати + present",
+          "Angka, jam, belanja, transportasi",
+          "Perkenalan & sapaan",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Базовий",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari dengan kasus dasar.",
+        topics: [
+          "Kasus inti dengan pola frekuensi",
+          "Aspek verba: доконаний vs недоконаний",
+          "Lampau & masa depan (termasuk sintetis -му)",
+          "Verba gerak dasar",
+          "Topik: keluarga, kerja, kota, kesehatan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Середній",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & membaca media — level kerja lapangan fungsional.",
+        topics: [
+          "7 kasus lengkap termasuk vokatif (khas Ukraina!)",
+          "Verba gerak berprefiks",
+          "Bahasa kerja NGO: koordinasi, laporan, wawancara",
+          "Membaca Ukrainska Pravda ringan",
+          "Kondisional & kalimat kompleks",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Вищий",
+        sessionCount: 112,
+        description:
+          "Mahir profesional — media, dokumen resmi, dan konteks budaya penuh.",
+        topics: [
+          "Participle & gaya formal tulis",
+          "Bahasa dokumen & birokrasi",
+          "Media penuh: Suspilne, hromadske",
+          "Sastra modern: Zhadan, Andrukhovych berpanduan",
+          "Simulasi ujian derzhavnyi (УМІ) B2",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Ukraina dan Rusia bahasanya sama nggak sih?",
+        answer:
+          "Beda bahasa — serumpun tapi tidak identik (leksikal ~62% sama; Ukraina justru lebih dekat ke Polandia & Belarusia dalam banyak hal). Alfabetnya pun beda beberapa huruf. Menganggapnya 'dialek Rusia' keliru secara linguistik.",
+      },
+      {
+        question: "Saya sudah bisa bahasa Rusia. Ada jalur cepatnya?",
+        answer:
+          "Ada — track konversi khusus: fokus ke perbedaan sistematis (fonetik і/и, kosakata palsu-kembar, vokatif, masa depan sintetis) tanpa mengulang dari nol. Biasanya B1 tercapai dalam sepertiga waktu normal.",
+      },
+      {
+        question: "Relevan nggak belajar sekarang?",
+        answer:
+          "Justru sangat: kebutuhan penutur Ukraina di organisasi internasional, program rekonstruksi, dan media naik tajam dan akan panjang. Sisi lain: penuturnya sendiri makin memilih Ukraina dibanding Rusia — arah bahasanya sedang naik.",
+      },
+      {
+        question: "Berapa lama sampai level kerja lapangan?",
+        answer:
+          "B1 fungsional dari nol sekitar 16–20 bulan reguler; dengan dasar bahasa Slavia lain, jauh lebih cepat. Untuk penugasan mendesak tersedia jalur intensif berfokus percakapan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Ukraina plus penutur native (termasuk diaspora). Materi memakai media Ukraina asli sejak level menengah.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Ukraina Online | Linguo.id — A1 sampai B2",
+    metaDescription:
+      "Belajar Bahasa Ukraina online dari nol. Untuk NGO & kemanusiaan, rekonstruksi, riset kawasan. Track khusus penutur Rusia. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa ukraina",
+      "les bahasa ukraina online",
+      "belajar bahasa ukraina",
+      "kursus ukraina jakarta",
+      "les ukraina murah",
+      "bahasa ukraina pemula",
+      "bahasa ukraina vs rusia",
+      "kerja NGO ukraina",
+      "belajar sirilik ukraina",
+      "bahasa ukrainska",
+    ],
+  },
+  // ==========================================================================
+  // IBRANI
+  // ==========================================================================
+  ibrani: {
+    urlSlug: "ibrani",
+    languageSlug: "hebrew",
+    tagline: "Dari alef sampai shalom — bahasa Alkitab yang dihidupkan kembali.",
+    heroDescription:
+      "Kursus Bahasa Ibrani (Modern) online dengan kurikulum A1–B2 gaya Ulpan. Untuk mahasiswa teologi & pembaca Perjanjian Lama, akademisi, dan pembelajar bahasa dengan kisah kebangkitan paling unik di dunia.",
+
+    whyLearn: [
+      {
+        icon: "📖",
+        title: "Membaca Perjanjian Lama dari Sumbernya",
+        description:
+          "Kejadian, Mazmur, Yesaya — dalam bahasa aslinya, nuansa yang hilang di terjemahan hidup kembali. Mahasiswa teologi & pendeta di Indonesia menjadikan Ibrani bekal eksegesis yang sesungguhnya.",
+      },
+      {
+        icon: "🕎",
+        title: "Bahasa yang Bangkit dari 'Mati'",
+        description:
+          "Satu-satunya bahasa di dunia yang berhasil dihidupkan kembali dari bahasa liturgi menjadi bahasa ibu jutaan orang. Belajar Ibrani Modern = menyentuh eksperimen linguistik paling berhasil dalam sejarah.",
+      },
+      {
+        icon: "🎓",
+        title: "Studi Timur Tengah & Arkeologi",
+        description:
+          "Riset arkeologi Levant, naskah Laut Mati, dan studi Timur Tengah membutuhkan Ibrani — kuno maupun modern. Jembatan dari Modern ke Biblical kami sediakan di level atas.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "✝️",
+        persona: "Mahasiswa Teologi & Pendeta",
+        benefit: "Jalur Modern → Biblical Hebrew untuk eksegesis Perjanjian Lama.",
+      },
+      {
+        emoji: "📜",
+        persona: "Akademisi & Peminat Naskah Kuno",
+        benefit: "Fondasi membaca teks — dari koran Tel Aviv sampai Gulungan Laut Mati.",
+      },
+      {
+        emoji: "🧠",
+        persona: "Pembelajar Bahasa Serius",
+        benefit: "Sistem akar 3 konsonan (shoresh) — logika bahasa Semit yang elegan.",
+      },
+      {
+        emoji: "💼",
+        persona: "Profesional & Peneliti Tech",
+        benefit: "Ekosistem riset & startup — banyak paper dan komunitas berbahasa Ibrani.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Alef — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol gaya Ulpan. Alef-bet, membaca dengan & tanpa niqqud, kalimat dasar.",
+        topics: [
+          "Alef-bet 22 huruf + huruf akhir, baca kanan-ke-kiri",
+          "Niqqud (harakat) & transisi membaca tanpanya",
+          "Kalimat nominal (tanpa 'to be' di present)",
+          "Gender & bilangan — maskulin/feminin",
+          "Perkenalan, angka, belanja, sapaan (shalom, mah nishma)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Bet — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari dengan sistem binyanim dasar.",
+        topics: [
+          "Shoresh (akar 3 konsonan) — kunci seluruh bahasa",
+          "Binyan Pa'al & Pi'el: present, past",
+          "Smichut (rantai kata benda) dasar",
+          "Preposisi menyatu (ba-, la-, mi-)",
+          "Topik: keluarga, kerja, makanan, perjalanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Gimel — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, membaca teks tanpa niqqud dengan nyaman, dan pintu ke teks Alkitab dibuka.",
+        topics: [
+          "7 binyanim lengkap: aktif, pasif, refleksif",
+          "Masa depan & imperatif",
+          "Membaca berita ringan (Ynet) tanpa niqqud",
+          "Pengantar Biblical Hebrew: perbedaan inti & vav-consecutive",
+          "Membaca Kejadian 1 & Mazmur pilihan berpanduan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Dalet — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir modern & fondasi kuat teks klasik — track terbagi sesuai tujuan: akademik modern atau Biblical.",
+        topics: [
+          "Sintaks kompleks & gaya formal",
+          "Track Biblical: puisi Ibrani, Yesaya, narasi Samuel",
+          "Track Modern: akademik, media, presentasi",
+          "Kamus & tools riset (BDB, konkordansi, Even-Shoshan)",
+          "Membaca Haaretz / teks Masoret sesuai track",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Saya mau baca Alkitab Ibrani. Kenapa mulai dari Ibrani Modern?",
+        answer:
+          "Bisa langsung Biblical, tapi pengalaman kami: yang lewat Modern dulu lebih cepat DAN lebih tahan lama — karena bahasanya hidup, bisa dipakai ngobrol, dan 80% kosakata inti Alkitab sama. Grammar Biblical (vav-consecutive dll) kami masukkan sebagai jembatan mulai B1. Yang tetap mau langsung Biblical, tersedia track khusus.",
+      },
+      {
+        question: "Baca tanpa harakat (niqqud) itu gimana caranya?",
+        answer:
+          "Sama seperti Arab gundul: pola. Ibrani ditulis dewasa tanpa niqqud, dan pembaca mengenali kata dari akar & konteks. Kami melatihnya bertahap — mulai dengan niqqud penuh, lalu dilepas sedikit demi sedikit sampai koran Tel Aviv terbaca.",
+      },
+      {
+        question: "Ibrani sama Arab mirip?",
+        answer:
+          "Serumpun Semit — logika akar 3 konsonan, kalimat nominal, dan banyak kosakata sepupu (shalom–salam, melekh–malik). Kalau kamu pernah belajar Arab, Ibrani terasa setengah kenal; kalau belum, Ibrani jadi pintu masuk rumpun Semit yang lebih landai (grammar-nya lebih ramping).",
+      },
+      {
+        question: "Berapa lama sampai bisa baca Perjanjian Lama?",
+        answer:
+          "Narasi prosa (Kejadian, Rut, Yunus) mulai terbaca berpanduan di B1 — sekitar 12–16 bulan. Puisi (Mazmur, Ayub) dan nabi-nabi butuh level Dalet. Lebih cepat dari kelas seminari tradisional karena bahasanya kamu pakai aktif, bukan cuma diparsing.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia berlatar studi teologi/linguistik Semit yang fasih Ibrani Modern, plus opsi native. Untuk track Biblical, pengajarnya memegang keduanya — Modern dan klasik.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Ibrani Online | Linguo.id — Modern & Biblical Hebrew",
+    metaDescription:
+      "Belajar Bahasa Ibrani online dari alef-bet. Ibrani Modern gaya Ulpan + jembatan ke Biblical Hebrew untuk teologi. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa ibrani",
+      "les bahasa ibrani online",
+      "belajar bahasa ibrani",
+      "biblical hebrew indonesia",
+      "bahasa ibrani alkitab",
+      "belajar alef bet",
+      "kursus ibrani jakarta",
+      "les ibrani murah",
+      "bahasa ibrani modern",
+      "bahasa ibrani untuk teologi",
+    ],
+  },
+
+  // ==========================================================================
+  // PERSIA
+  // ==========================================================================
+  persia: {
+    urlSlug: "persia",
+    languageSlug: "persian",
+    tagline: "Dari salām sampai Rumi — bahasa puisi terindah di dunia.",
+    heroDescription:
+      "Kursus Bahasa Persia (Farsi) online dengan kurikulum A1–B2. Untuk pembaca Rumi, Hafez & sastra tasawuf, akademisi studi Islam & Timur Tengah, dan penjelajah peradaban Iran raya.",
+
+    whyLearn: [
+      {
+        icon: "🌹",
+        title: "Rumi & Hafez Tanpa Perantara",
+        description:
+          "Matsnawi Rumi, Divan Hafez, Shahnameh Ferdowsi — puisi yang terjemahannya saja mengubah hidup orang. Dalam bahasa aslinya, dimensinya berlipat. Sastra tasawuf dunia berbahasa Persia.",
+      },
+      {
+        icon: "🕌",
+        title: "Studi Islam & Filologi Nusantara",
+        description:
+          "Khazanah tasawuf yang mengalir ke Nusantara banyak berbahasa Persia, dan naskah-naskah kuno kita menyimpan jejaknya. Peneliti studi Islam, filolog, dan santri kajian tasawuf sangat diuntungkan.",
+      },
+      {
+        icon: "🗺️",
+        title: "Satu Bahasa, Tiga Negara",
+        description:
+          "Farsi (Iran), Dari (Afganistan), Tajik (Tajikistan) — intinya satu bahasa. Grammar-nya termasuk paling ramah di kawasan: tanpa gender, tanpa kasus, konjugasi teratur.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🌹",
+        persona: "Pembaca Sastra & Tasawuf",
+        benefit: "Jalur menuju Rumi, Hafez, Attar dalam teks asli berpanduan.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Akademisi Studi Islam & Sejarah",
+        benefit: "Sumber primer Persia + beasiswa universitas Iran (Al-Mustafa dll).",
+      },
+      {
+        emoji: "📜",
+        persona: "Filolog & Peneliti Naskah",
+        benefit: "Membaca naskah & pengaruh Persia di khazanah Nusantara.",
+      },
+      {
+        emoji: "🎬",
+        persona: "Penikmat Budaya Iran",
+        benefit: "Sinema Iran (Kiarostami, Farhadi), musik, dan percakapan.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Aksara Persia (Arab + 4 huruf ekstra), pelafalan, kalimat dasar.",
+        topics: [
+          "Aksara: 32 huruf termasuk پ چ ژ گ, bentuk sambung",
+          "Pelafalan Persia — lebih lembut dari Arab",
+          "Kalimat SOV & ezāfe (-e penghubung)",
+          "Budan/dāshtan + konjugasi present",
+          "Perkenalan, angka, belanja, ta'ārof dikenalkan",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar — grammar Persia yang ramah mulai terasa.",
+        topics: [
+          "Lampau sederhana & imperfek (mi-)",
+          "Masa depan & subjunktif (be-)",
+          "Objek tentu rā & pronomina enklitik",
+          "Perbedaan tulisan vs lisan (ketābi vs goftāri)",
+          "Topik: keluarga, perjalanan, makanan, seni",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, membaca prosa modern, dan bait-bait pertama sastra klasik.",
+        topics: [
+          "Verba majemuk (kardan-compounds) — jantung Farsi",
+          "Kalimat kompleks & ke-clauses",
+          "Ta'ārof (etiket kesopanan) dalam praktik",
+          "Membaca BBC Persian ringan & prosa pendek",
+          "Rubā'i pertama: Khayyām berpanduan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas (Gerbang Sastra)",
+        sessionCount: 112,
+        description:
+          "Mahir modern & masuk ke klasik: Hafez, Rumi, dan bahasa akademik.",
+        topics: [
+          "Gaya formal & bahasa akademik-jurnalistik",
+          "Aruz (metrum) dasar untuk membaca puisi",
+          "Hafez & Rumi: ghazal dan matsnawi berpanduan",
+          "Perbedaan Farsi-Dari-Tajik",
+          "Membaca esai & sumber akademik Iran",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bahasa Persia sama bahasa Arab itu beda?",
+        answer:
+          "Sangat beda — beda rumpun sekalian. Persia itu Indo-Eropa (sepupu jauh Inggris & Hindi), cuma meminjam aksara Arab dan sebagian kosakata. Grammar-nya jauh lebih ramah: tanpa gender, tanpa i'rab, konjugasi teratur. Yang sudah bisa baca hijaiyah dapat diskon besar di aksara.",
+      },
+      {
+        question: "Berapa lama sampai bisa membaca Rumi?",
+        answer:
+          "Prosa modern terbaca nyaman di B1 (12–16 bulan). Puisi klasik (Rumi, Hafez) mulai dibuka berpanduan di B2 — bahasanya berumur 700 tahun tapi orang Iran modern masih membacanya, seperti kita membaca sastra Melayu klasik. Jalur penuh sekitar 2 tahun — sepadan dengan tujuannya.",
+      },
+      {
+        question: "Ta'ārof itu apa dan kenapa penting?",
+        answer:
+          "Sistem etiket kesopanan Persia — menawarkan, menolak halus, merendah — yang mengatur hampir semua interaksi. Tanpa memahaminya, kalimat yang benar pun bisa salah makna. Kami mengajarkannya melekat di percakapan sejak A1.",
+      },
+      {
+        question: "Farsi, Dari, Tajik — belajar yang mana?",
+        answer:
+          "Kurikulum kami Farsi Iran standar (Tehran) — paling banyak materi & media. Dari (Afganistan) praktis sama dengan beda aksen & sebagian kosakata; Tajik memakai Sirilik. Dari Farsi standar, keduanya tinggal penyesuaian.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia berlatar studi Persia/Timur Tengah (beberapa alumni Iran) plus opsi native. Untuk track sastra, pengajarnya memang pembaca sastra klasik.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Persia Online | Linguo.id — Farsi, dari Nol sampai Rumi",
+    metaDescription:
+      "Belajar Bahasa Persia (Farsi) online dari nol. Aksara, percakapan, sampai membaca Rumi & Hafez. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa persia",
+      "les bahasa persia online",
+      "belajar bahasa persia",
+      "belajar bahasa farsi",
+      "kursus farsi",
+      "bahasa iran",
+      "belajar bahasa iran",
+      "sastra rumi hafez",
+      "les persia murah",
+      "bahasa persia pemula",
+    ],
+  },
+
+  // ==========================================================================
+  // GEORGIA
+  // ==========================================================================
+  georgia: {
+    urlSlug: "georgia",
+    languageSlug: "georgian",
+    tagline: "Dari gamarjoba sampai aksara terindah dunia — bahasa Kaukasus yang tak mirip apa pun.",
+    heroDescription:
+      "Kursus Bahasa Georgia online dengan kurikulum A1–B2. Untuk mahasiswa kedokteran di Tbilisi, digital nomad & pemilik bisnis di Georgia, dan kolektor bahasa yang mencari tantangan sejati.",
+
+    whyLearn: [
+      {
+        icon: "🩺",
+        title: "Kuliah Kedokteran yang Ramah Kantong",
+        description:
+          "Tbilisi State Medical University & kampus lain jadi tujuan mahasiswa kedokteran internasional — biaya jauh di bawah Eropa Barat, diakui WFME. Kuliahnya berbahasa Inggris, tapi pasien di rumah sakit berbahasa Georgia.",
+      },
+      {
+        icon: "💻",
+        title: "Surga Digital Nomad & Bisnis Kecil",
+        description:
+          "Visa bebas setahun, pajak ramah, biaya hidup rendah — Tbilisi & Batumi penuh nomad dan pemilik usaha asing. Yang bisa bahasa Georgia keluar dari gelembung ekspat dan masuk komunitas (dan supra!) sungguhan.",
+      },
+      {
+        icon: "🍷",
+        title: "Peradaban Anggur & Aksara Sendiri",
+        description:
+          "8000 tahun tradisi wine (tertua di dunia), polifoni UNESCO, dan mkhedruli — aksara yang sering disebut terindah di dunia. Bahasa Kartvelian tak berkerabat dengan bahasa mana pun.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🩺",
+        persona: "Mahasiswa Kedokteran di Georgia",
+        benefit: "Bahasa pasien untuk rotasi klinik + kehidupan Tbilisi.",
+      },
+      {
+        emoji: "💻",
+        persona: "Digital Nomad & Pemilik Bisnis",
+        benefit: "Keluar dari gelembung ekspat: pasar, birokrasi, komunitas.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Calon Penduduk",
+        benefit: "Integrasi keluarga & syarat bahasa naturalisasi.",
+      },
+      {
+        emoji: "🧗",
+        persona: "Kolektor Bahasa & Petualang",
+        benefit: "Rumpun Kartvelian — pengalaman linguistik yang tak ada duanya.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Mkhedruli 33 huruf, konsonan ejektif, kalimat dasar sehari-hari.",
+        topics: [
+          "Mkhedruli — tanpa huruf besar, tanpa ejaan aneh",
+          "Konsonan ejektif (პ ტ კ ყ) dengan drill audio",
+          "Kalimat dasar & verba ser umum",
+          "Angka (sistem 20-an!), belanja, bazar",
+          "Perkenalan & keramahan Georgia (gamarjoba, madloba)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari — dengan sistem verba yang dijinakkan bertahap.",
+        topics: [
+          "Kasus dasar: nominatif, datif, ergatif dikenalkan",
+          "Verba present & future series",
+          "Postposisi & kepemilikan",
+          "Topik: transportasi, marshrutka, kafe, pasar",
+          "Percakapan supra (jamuan) & toast dasar",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & percakapan klinik/bisnis dasar — level fungsional Tbilisi.",
+        topics: [
+          "Aorist & ergatif dalam praktik",
+          "Verba polipersonal — bertahap dengan pola frekuensi",
+          "Bahasa klinik: keluhan pasien, anamnesis dasar",
+          "Bahasa bisnis kecil: sewa, bank, birokrasi",
+          "Membaca berita ringan & tanda-tanda kota",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — percakapan penuh, media, dan budaya dari dalam.",
+        topics: [
+          "Screeve system lengkap & perfect series",
+          "Bahasa formal & dokumen",
+          "Membaca media Georgia (Netgazeti) & sastra ringan",
+          "Polifoni, supra & budaya dari sumber asli",
+          "Persiapan ujian bahasa naturalisasi",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Sesulit apa bahasa Georgia sebenarnya?",
+        answer:
+          "Jujur: verbanya kompleks (polipersonal, ergatif) — ini bahasa tantangan, bukan bahasa cepat saji. Tapi aksaranya justru mudah (33 huruf fonetis, 2–3 sesi tuntas), dan kami menjinakkan verba dengan pola frekuensi: bentuk yang dipakai sehari-hari dulu. Ribuan nomad membuktikan level fungsional itu realistis.",
+      },
+      {
+        question: "Saya kuliah kedokteran di Tbilisi, kuliahnya bahasa Inggris. Perlu Georgia?",
+        answer:
+          "Sangat — begitu rotasi klinik dimulai, pasienmu berbahasa Georgia (atau Rusia). Mahasiswa internasional yang bisa anamnesis dasar dalam Georgia mendapat pengalaman klinik jauh lebih kaya. Track medis kami fokus ke percakapan pasien sejak B1.",
+      },
+      {
+        question: "Di Georgia bisa pakai bahasa Rusia atau Inggris aja nggak?",
+        answer:
+          "Generasi tua paham Rusia, anak muda Tbilisi bisa Inggris — untuk turis cukup. Tapi untuk tinggal: birokrasi, pasar, pak sopir marshrutka, dan hati orang Georgia berbahasa Georgia. Usaha kecilmu di sana juga butuh itu.",
+      },
+      {
+        question: "Aksara mkhedruli susah?",
+        answer:
+          "Justru bagian termudahnya — 33 huruf, satu huruf satu bunyi, tanpa huruf kapital, dan indah ditulis. Mayoritas siswa lancar baca dalam 2–3 sesi.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Georgia (langka, dan kami sediakan) plus opsi native dari Tbilisi. Materi hidup: bazar, marshrutka, supra — bukan cuma buku.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Georgia Online | Linguo.id — Mkhedruli sampai B2",
+    metaDescription:
+      "Belajar Bahasa Georgia online dari nol. Aksara mkhedruli, percakapan Tbilisi, track mahasiswa kedokteran & nomad. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa georgia",
+      "les bahasa georgia online",
+      "belajar bahasa georgia",
+      "bahasa kartuli",
+      "kuliah kedokteran georgia",
+      "kuliah di tbilisi",
+      "kursus georgia jakarta",
+      "les georgia murah",
+      "bahasa georgia pemula",
+      "digital nomad georgia",
+    ],
+  },
+  // ==========================================================================
+  // KANTON
+  // ==========================================================================
+  kanton: {
+    urlSlug: "kanton",
+    languageSlug: "cantonese",
+    tagline: "Dari nei hou sampai yum cha — bahasa Hong Kong, Makau & Guangdong.",
+    heroDescription:
+      "Kursus Bahasa Kanton online dengan kurikulum A1–B2. Bahasa 85 juta penutur di Hong Kong, Makau, Guangdong & diaspora — untuk pekerja Indonesia di Hong Kong, profesional finance, dan pencinta film HK.",
+
+    whyLearn: [
+      {
+        icon: "🏙️",
+        title: "Ratusan Ribu Orang Indonesia di Hong Kong",
+        description:
+          "Komunitas pekerja Indonesia di Hong Kong salah satu yang terbesar di dunia. Kanton yang baik menentukan hubungan dengan majikan, gaji, perpanjangan kontrak — dan membuka jalur karier di luar domestik.",
+      },
+      {
+        icon: "💹",
+        title: "Finance & Trade Hub Asia",
+        description:
+          "Hong Kong tetap pusat keuangan Asia, dan Guangdong provinsi pabrik dunia (Guangzhou, Shenzhen, Dongguan). Mandarin membuka pintu resminya; Kanton membuka meja makannya — tempat deal sebenarnya terjadi.",
+      },
+      {
+        icon: "🎬",
+        title: "Sinema & Musik Legendaris",
+        description:
+          "Bruce Lee, Wong Kar-wai, Stephen Chow, Cantopop — budaya pop Kanton membentuk Asia. Nikmati In the Mood for Love dan lawakan mo lei tau tanpa kehilangan nuansanya.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🧳",
+        persona: "Pekerja Indonesia di Hong Kong",
+        benefit: "Percakapan majikan & agensi, pasar, MTR — plus naik level karier.",
+      },
+      {
+        emoji: "💼",
+        persona: "Profesional Finance & Trade",
+        benefit: "Relasi bisnis HK-Guangdong di level personal, bukan cuma formal.",
+      },
+      {
+        emoji: "🎬",
+        persona: "Penikmat Film HK & Cantopop",
+        benefit: "Nonton tanpa subtitle, paham wordplay Kanton yang legendaris.",
+      },
+      {
+        emoji: "🀄",
+        persona: "Keturunan Tionghoa Berakar Kanton",
+        benefit: "Nyambung lagi dengan bahasa kakek-nenek & keluarga di Guangdong.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula (Nada & Survival)",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan romanisasi Jyutping. Enam nada, percakapan survival Hong Kong.",
+        topics: [
+          "6 nada Kanton dengan drill pasangan kata",
+          "Jyutping — romanisasi standar",
+          "Partikel akhir (aa3, laa3, gaa3) — jiwa bahasa Kanton",
+          "Angka, uang, belanja, MTR & transportasi",
+          "Perkenalan & sapaan (nei hou, jou san)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar + mulai mengenal karakter tradisional.",
+        topics: [
+          "Aspek verba: zo2, gan2, gwo3",
+          "Classifier umum (go3, zek3, tiu4)",
+          "Karakter tradisional: 300 paling frekuentif",
+          "Perbandingan & preferensi",
+          "Topik: kerja rumah tangga, masak, kesehatan, cuaca",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, nonton drama TVB dengan subtitle, baca pesan & menu.",
+        topics: [
+          "Struktur kompleks & kata sambung",
+          "Bahasa lisan vs tulisan (perbedaan besar di Kanton!)",
+          "Slang Hong Kong & ekspresi mo lei tau",
+          "~800 karakter tradisional kumulatif",
+          "Percakapan telepon, bank, klinik",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — percakapan penuh kecepatan native, media HK, dan bahasa kerja profesional.",
+        topics: [
+          "Idiom & sik6 zi6 (chengyu versi Kanton)",
+          "Business Cantonese: meeting, negosiasi, yum cha etiquette",
+          "Berita TVB/RTHK & koran HK",
+          "Film klasik & Cantopop sebagai teks",
+          "Code-switching Kanton-Inggris khas Hong Kong",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Kanton sama Mandarin bedanya apa? Saling ngerti nggak?",
+        answer:
+          "Tidak saling paham secara lisan — beda nada (6 vs 4), beda kosakata inti, beda partikel. Yang sama tulisannya (Kanton memakai karakter tradisional plus karakter khusus). Orang Hong Kong menonton TV Mandarin pakai subtitle. Jadi untuk Hong Kong, belajar Kanton — bukan Mandarin.",
+      },
+      {
+        question: "Saya kerja di Hong Kong. Sudah bisa sehari-hari, mau naik level. Bisa?",
+        answer:
+          "Bisa — profil ini justru banyak. Lewat placement kami petakan lubangnya (biasanya: baca-tulis karakter dan register sopan) lalu fokus ke sana. Kanton yang rapi + literasi dasar membuka pekerjaan di luar sektor domestik: retail, F&B, perawat lansia terlatih.",
+      },
+      {
+        question: "6 nada?! Lebih susah dari Mandarin dong?",
+        answer:
+          "Nadanya lebih banyak tapi lebih 'datar' (level tones), banyak siswa justru merasa lebih stabil dari nada Mandarin yang meliuk. Dan grammar-nya sama ramahnya: tanpa konjugasi, tanpa tenses. Drill nada kami mulai dari pasangan kata yang kamu pakai tiap hari.",
+      },
+      {
+        question: "Belajar karakternya tradisional atau simplified?",
+        answer:
+          "Tradisional — standar Hong Kong & Makau. Kalau kamu sudah kenal simplified dari Mandarin, konversinya cepat (kami sediakan peta). Fokus utama tetap lisan dulu; karakter menyusul bertahap sesuai kebutuhan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Kanton — termasuk eks-pekerja Hong Kong yang paham dunia kerjanya — plus opsi native Hong Kong. Materi bisa diarahkan ke situasi kerjamu langsung.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Kanton Online | Linguo.id — Bahasa Hong Kong",
+    metaDescription:
+      "Belajar Bahasa Kanton online dari nol. 6 nada, Jyutping, percakapan Hong Kong, karakter tradisional. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa kanton",
+      "les bahasa kanton online",
+      "belajar bahasa kanton",
+      "bahasa kantonis",
+      "bahasa hongkong",
+      "belajar bahasa hongkong",
+      "kursus kanton jakarta",
+      "les kanton murah",
+      "bahasa kanton pemula",
+      "kerja di hongkong",
+    ],
+  },
+
+  // ==========================================================================
+  // FILIPINA
+  // ==========================================================================
+  filipina: {
+    urlSlug: "filipina",
+    languageSlug: "filipino",
+    tagline: "Dari kumusta sampai salamat — bahasa serumpun yang paling cepat kamu kuasai.",
+    heroDescription:
+      "Kursus Bahasa Filipina (Tagalog) online dengan kurikulum A1–B2. Bahasa saudara serumpun Austronesia — kosakatanya banyak yang sama dengan Indonesia — untuk bisnis Manila, BPO, dan komunitas ASEAN.",
+
+    whyLearn: [
+      {
+        icon: "🌏",
+        title: "Bahasa Saudara Serumpun",
+        description:
+          "Tagalog dan Indonesia satu keluarga Austronesia: mata=mata, langit=langit, anak=anak, mahal=mahal (bedanya di sana artinya 'sayang'!). Tak ada bahasa asing yang lebih cepat 'nyambung' untuk lidah Indonesia.",
+      },
+      {
+        icon: "💼",
+        title: "Manila: Hub BPO & Bisnis ASEAN",
+        description:
+          "Filipina raksasa BPO dunia dan pasar 115 juta orang. Profesional Indonesia di perusahaan regional, maritim, dan F&B yang bisa Tagalog membangun kedekatan yang tak bisa dibeli bahasa Inggris.",
+      },
+      {
+        icon: "🎤",
+        title: "Budaya Pop & Komunitas",
+        description:
+          "OPM (Original Pilipino Music), teleserye, vlog Filipina — plus jutaan interaksi pelaut, perawat & pekerja Indonesia-Filipina di kapal dan rumah sakit seluruh dunia. Kumusta membuka semuanya.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💼",
+        persona: "Profesional Regional ASEAN",
+        benefit: "Relasi bisnis Manila di level personal — bukan cuma Inggris formal.",
+      },
+      {
+        emoji: "⚓",
+        persona: "Pelaut & Nakes Sesama Kru Filipina",
+        benefit: "Filipina mendominasi kru kapal & perawat dunia — bahasanya perekat.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan WN Filipina",
+        benefit: "Percakapan keluarga & mertua — plus paham Taglish sehari-hari.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Peneliti & Peminat Austronesia",
+        benefit: "Perbandingan serumpun yang memperkaya pemahaman bahasa sendiri.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Baguhan",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol — tapi setengah kosakatanya terasa kenal. Fokus ke sistem fokus verba yang jadi pembeda utama.",
+        topics: [
+          "Pelafalan — nyaris identik Indonesia, plus stress kata",
+          "Kosakata kerabat: ribuan kata seasal dipetakan",
+          "Ang/ng/sa — sistem penanda khas Tagalog",
+          "Angka (kadalasan pakai Spanyol!), belanja, jeepney",
+          "Perkenalan & po/opo (kesopanan)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Batayan",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar dengan fokus verba dasar.",
+        topics: [
+          "Fokus aktor (um-/mag-) vs fokus objek (-in/i-)",
+          "Aspek: selesai, sedang, akan (bukan tenses!)",
+          "Pronomina lengkap & enclitic order",
+          "Taglish — kenyataan sehari-hari Manila",
+          "Topik: keluarga, kerja, makanan, perjalanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Panggitna",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, nonton teleserye, baca berita ringan.",
+        topics: [
+          "Fokus lokatif & benefaktif (-an, ipag-)",
+          "Kata sambung & kalimat kompleks",
+          "Idiom & bugtong (teka-teki), salawikain (peribahasa)",
+          "Membaca berita ABS-CBN/GMA ringan",
+          "Percakapan bisnis santai & small talk Filipina",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Mataas",
+        sessionCount: 112,
+        description:
+          "Mahir — Tagalog formal, media, dan sastra ringan.",
+        topics: [
+          "Tagalog formal vs kolokial vs Taglish — kapan yang mana",
+          "Bahasa media & pidato",
+          "Sastra: Rizal (terjemahan Tagalog) & cerpen modern",
+          "Presentasi & negosiasi",
+          "Pengantar ragam daerah (Cebuano, Ilocano) — peta saja",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Sebenarnya berapa mirip Tagalog dengan bahasa Indonesia?",
+        answer:
+          "Serumpun dekat — ribuan kata seasal (balik, bili/beli, takot/takut, itim/hitam) dan bunyi yang nyaris sama. Tapi grammar-nya beda arah: Tagalog pakai sistem fokus verba yang tak ada di Indonesia. Jadi: kosakata diskon besar, grammar tetap perlu belajar — total tetap bahasa asing tercepat untuk orang Indonesia.",
+      },
+      {
+        question: "Orang Filipina kan jago Inggris. Ngapain belajar Tagalog?",
+        answer:
+          "Karena Inggris itu bahasa kerja mereka, Tagalog bahasa hatinya. Lelucon, gosip pantry, negosiasi santai, keluarga pasangan — semuanya Tagalog/Taglish. Orang Indonesia yang menyapa 'kumusta ka na?' langsung diperlakukan sebagai kapatid (saudara), bukan orang luar.",
+      },
+      {
+        question: "Taglish itu apa?",
+        answer:
+          "Campuran Tagalog-Inggris yang jadi bahasa sehari-hari Manila ('Na-traffic ako kanina, sorry ha'). Buku teks murni Tagalog sering bikin kaget begitu mendarat. Kami mengajarkan Tagalog baku sebagai fondasi plus Taglish sebagai kenyataan — dua-duanya.",
+      },
+      {
+        question: "Berapa lama sampai bisa ngobrol?",
+        answer:
+          "Tercepat di katalog kami untuk orang Indonesia: percakapan dasar 3–5 bulan, nyaman ngobrol luas (B1) 10–14 bulan dengan 2–3 sesi seminggu.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Tagalog dan native Filipina yang paham bahasa Indonesia — kombinasi yang membuat perbandingan serumpun jadi alat belajar, bukan sekadar trivia.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Filipina Online | Linguo.id — Tagalog untuk Orang Indonesia",
+    metaDescription:
+      "Belajar Bahasa Filipina (Tagalog) online — bahasa serumpun tercepat untuk orang Indonesia. Percakapan, Taglish, bisnis Manila. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa filipina",
+      "les bahasa filipina online",
+      "belajar bahasa filipina",
+      "kursus bahasa tagalog",
+      "belajar bahasa tagalog",
+      "les tagalog online",
+      "bahasa tagalog pemula",
+      "kursus tagalog jakarta",
+      "les filipina murah",
+      "bahasa filipino",
+    ],
+  },
+
+  // ==========================================================================
+  // KHMER
+  // ==========================================================================
+  khmer: {
+    urlSlug: "khmer",
+    languageSlug: "khmer",
+    tagline: "Dari suosdey sampai aksara Angkor — bahasa Kamboja yang sedang tumbuh.",
+    heroDescription:
+      "Kursus Bahasa Khmer online dengan kurikulum A1–B2. Tanpa nada (!), aksara warisan Angkor, percakapan Phnom Penh — untuk profesional, NGO, dan pebisnis di Kamboja.",
+
+    whyLearn: [
+      {
+        icon: "📈",
+        title: "Ekonomi Muda yang Lapar Talenta",
+        description:
+          "Kamboja tumbuh cepat — garmen, konstruksi, fintech (bakong!), agrikultur — dan perusahaan Indonesia mulai masuk. Pasar yang belum ramai pesaing, dan bahasa lokal langsung membuka pintunya.",
+      },
+      {
+        icon: "🕊️",
+        title: "NGO & Pembangunan",
+        description:
+          "Phnom Penh salah satu hub NGO terbesar Asia Tenggara. Staf program yang bisa Khmer turun ke lapangan tanpa penerjemah — nilai yang membedakan di CV kemanusiaan.",
+      },
+      {
+        icon: "🛕",
+        title: "Tanpa Nada & Warisan Angkor",
+        description:
+          "Kejutan: Khmer TIDAK bertonal — satu-satunya bahasa besar daratan Asia Tenggara tanpa nada. Dan aksaranya, induk aksara Thai & Lao, adalah warisan langsung peradaban Angkor.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💼",
+        persona: "Profesional & Pebisnis di Kamboja",
+        benefit: "Garmen, konstruksi, F&B — negosiasi & operasional harian.",
+      },
+      {
+        emoji: "🕊️",
+        persona: "Pekerja NGO & Pembangunan",
+        benefit: "Bahasa lapangan: wawancara, koordinasi desa, laporan.",
+      },
+      {
+        emoji: "✈️",
+        persona: "Ekspatriat & Keluarga di Phnom Penh",
+        benefit: "Pasar, tuk-tuk, sekolah anak — hidup mandiri tanpa penerjemah.",
+      },
+      {
+        emoji: "🏛️",
+        persona: "Peminat Sejarah & Arkeologi",
+        benefit: "Angkor, prasasti, dan akar budaya Indosfer Asia Tenggara.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan romanisasi, aksara menyusul bertahap. Tanpa nada — fokus ke vokal yang kaya.",
+        topics: [
+          "Pelafalan: vokal kaya & konsonan aspirasi (tanpa nada!)",
+          "Struktur SVO sederhana — tanpa konjugasi",
+          "Angka, uang riel/dolar, pasar & tawar-menawar",
+          "Sapaan & sampeah (salam hormat)",
+          "Aksara Khmer tahap 1: konsonan seri A",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar & melek aksara dasar.",
+        topics: [
+          "Aksara lengkap: 2 seri konsonan, vokal dependen",
+          "Classifier & partikel umum",
+          "Aspek & waktu (ban, kampung, nung)",
+          "Register sopan vs santai",
+          "Topik: kerja, kesehatan, transportasi, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & bahasa kerja lapangan — level fungsional NGO/bisnis.",
+        topics: [
+          "Kalimat kompleks & kata sambung",
+          "Bahasa lapangan: wawancara, survei, koordinasi",
+          "Bahasa bisnis: kontrak sederhana, negosiasi",
+          "Membaca koran ringan & pengumuman resmi",
+          "Register kerajaan/keagamaan — pengenalan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — media, dokumen resmi, dan konteks budaya penuh.",
+        topics: [
+          "Kosakata Pali-Sanskerta formal",
+          "Bahasa dokumen & birokrasi",
+          "Media Khmer: berita TV & koran penuh",
+          "Presentasi & rapat penuh",
+          "Sastra & sejarah: teks Angkor dikenalkan",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Beneran bahasa Khmer nggak ada nadanya?",
+        answer:
+          "Benar — beda dari Thai, Vietnam, Lao, dan Mandarin. Untuk orang Indonesia ini kabar besar: dua momok bahasa Asia (nada & konjugasi) dua-duanya absen. Tantangannya pindah ke vokal yang kaya dan aksara — keduanya bisa di-drill.",
+      },
+      {
+        question: "Aksara Khmer kelihatan rumit banget. Berapa lama?",
+        answer:
+          "Paling banyak hurufnya di dunia (33 konsonan × 2 seri + vokal), tapi sistematis. Dengan metode bertahap kami, membaca fungsional tercapai dalam 2–3 bulan sambil percakapan tetap jalan pakai romanisasi. Aksara ini juga induk aksara Thai & Lao — sekali paham, dua tetangganya ikut terbaca polanya.",
+      },
+      {
+        question: "Cukup pakai bahasa Inggris di Phnom Penh nggak?",
+        answer:
+          "Di kafe ekspat — cukup. Di pabrik, desa program NGO, kantor pemerintah, dan pasar — tidak. Kamboja negara muda yang bahasa Inggrisnya terkonsentrasi di segelintir kota; kerja yang sesungguhnya berbahasa Khmer.",
+      },
+      {
+        question: "Berapa lama sampai level kerja lapangan?",
+        answer:
+          "Percakapan fungsional (A2) 8–10 bulan; bahasa lapangan NGO/bisnis (B1) sekitar 14–18 bulan dengan 2–3 sesi seminggu. Tanpa nada & konjugasi, progresnya terasa stabil.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Khmer (eks-staf NGO & profesional Kamboja) plus opsi native. Materi lapangan diambil dari pengalaman kerja nyata di sana.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Khmer Online | Linguo.id — Bahasa Kamboja A1–B2",
+    metaDescription:
+      "Belajar Bahasa Khmer (Kamboja) online dari nol. Tanpa nada, aksara Angkor, percakapan Phnom Penh, bahasa NGO & bisnis. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa khmer",
+      "les bahasa khmer online",
+      "belajar bahasa khmer",
+      "kursus bahasa kamboja",
+      "belajar bahasa kamboja",
+      "kerja di kamboja",
+      "les khmer murah",
+      "bahasa khmer pemula",
+      "aksara khmer",
+      "NGO kamboja",
+    ],
+  },
+
+  // ==========================================================================
+  // LAOS
+  // ==========================================================================
+  laos: {
+    urlSlug: "laos",
+    languageSlug: "lao",
+    tagline: "Dari sabaidee sampai Mekong — bahasa Laos, bonus paham Thai gratis.",
+    heroDescription:
+      "Kursus Bahasa Laos online dengan kurikulum A1–B2. Bahasa negeri jalur kereta China–ASEAN — dan kembaran dekat bahasa Thai — untuk profesional proyek, NGO, dan penjelajah Mekong.",
+
+    whyLearn: [
+      {
+        icon: "🚄",
+        title: "Persimpangan Baru ASEAN–China",
+        description:
+          "Kereta cepat Laos–China mengubah Vientiane jadi simpul logistik baru; proyek energi & infrastruktur menyusul. Profesional yang bisa bahasa Lao masih segelintir — pasar sepi pesaing.",
+      },
+      {
+        icon: "🔁",
+        title: "Beli Satu Dapat Dua: Lao ≈ Thai",
+        description:
+          "Lao dan Thai (khususnya dialek Isan) saling paham tinggi — orang Laos menonton TV Thai tiap hari. Menguasai Lao berarti memahami Thai lisan sebagai bonus, dan sebaliknya.",
+      },
+      {
+        icon: "🕊️",
+        title: "NGO & Pembangunan Mekong",
+        description:
+          "Laos salah satu fokus program pembangunan Asia Tenggara — pendidikan, kesehatan, UXO clearance. Bahasa lokal syarat turun lapangan yang sesungguhnya.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏗️",
+        persona: "Profesional Proyek & Logistik",
+        benefit: "Bahasa lapangan proyek: koordinasi, vendor, birokrasi Vientiane.",
+      },
+      {
+        emoji: "🕊️",
+        persona: "Pekerja NGO & Pembangunan",
+        benefit: "Wawancara desa, koordinasi program, laporan lapangan.",
+      },
+      {
+        emoji: "🌏",
+        persona: "Pebisnis Kawasan Mekong",
+        benefit: "Satu bahasa untuk Laos + bonus Thai/Isan lisan.",
+      },
+      {
+        emoji: "🛶",
+        persona: "Traveler Jalur Sungai Mekong",
+        benefit: "Luang Prabang sampai Si Phan Don — lepas dari jalur turis.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Nada Lao (lebih santai dari Thai), kalimat dasar, percakapan pasar.",
+        topics: [
+          "Nada Lao dengan drill pasangan kata",
+          "Struktur SVO tanpa konjugasi",
+          "Angka, kip, pasar & tawar-menawar",
+          "Sapaan & nop (salam hormat)",
+          "Aksara Lao tahap 1 — lebih ramping dari Thai",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar & melek aksara dasar.",
+        topics: [
+          "Aksara lengkap: 27 konsonan + vokal",
+          "Classifier & partikel akhir",
+          "Aspek & waktu (laew, kamlang, si)",
+          "Peta Lao ↔ Thai: pola korespondensi bunyi",
+          "Topik: kerja, kesehatan, transportasi, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & bahasa kerja lapangan — level fungsional proyek/NGO.",
+        topics: [
+          "Kalimat kompleks & kata sambung",
+          "Bahasa lapangan: survei, wawancara, koordinasi",
+          "Bahasa proyek: logistik, vendor, laporan",
+          "Membaca pengumuman & berita ringan",
+          "Mendengar Thai lisan — latihan jembatan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — media, dokumen resmi, dan register formal.",
+        topics: [
+          "Kosakata Pali formal & register resmi",
+          "Bahasa dokumen & birokrasi",
+          "Media Lao penuh + TV Thai sebagai bonus",
+          "Presentasi & rapat penuh",
+          "Budaya: baci, festival, etiket Buddhis",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Lao sama Thai itu beda bahasa atau beda dialek?",
+        answer:
+          "Resminya dua bahasa, praktiknya kembaran dekat — orang Vientiane dan orang Isan (Thailand timur laut) ngobrol tanpa hambatan. Aksaranya beda tapi seasal. Belajar Lao memberi Thai lisan pasif sebagai bonus; kami bahkan melatih 'jembatan Thai' secara eksplisit di level menengah.",
+      },
+      {
+        question: "Kalau gitu mending belajar Thai aja dong, penuturnya lebih banyak?",
+        answer:
+          "Tergantung tujuan. Kalau kerjamu/proyekmu di Laos — belajar Lao: dokumen, birokrasi, dan hati orang Laos berbahasa Lao, dan mereka sangat menghargai orang asing yang memilih bahasanya (bukan bahasa tetangga besarnya). Bonus Thai tetap kamu dapat.",
+      },
+      {
+        question: "Susah nggak dibanding Thai?",
+        answer:
+          "Sedikit lebih ramah: aksaranya lebih ramping (ejaan Lao direformasi, lebih fonetis), nadanya lebih longgar antar-dialek, grammar sama santainya — tanpa konjugasi, tanpa gender. Bahasa daratan ASEAN yang paling underrated.",
+      },
+      {
+        question: "Berapa lama sampai level kerja lapangan?",
+        answer:
+          "Percakapan fungsional (A2) 7–10 bulan; bahasa lapangan (B1) 13–16 bulan dengan 2–3 sesi seminggu.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Lao (eks-staf proyek & NGO Mekong) plus opsi native Vientiane.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Laos Online | Linguo.id — Lao A1–B2, Bonus Thai",
+    metaDescription:
+      "Belajar Bahasa Laos online dari nol. Aksara Lao, percakapan Vientiane, bahasa proyek & NGO — bonus paham Thai lisan. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa laos",
+      "les bahasa laos online",
+      "belajar bahasa laos",
+      "bahasa lao",
+      "kerja di laos",
+      "les laos murah",
+      "bahasa laos pemula",
+      "aksara lao",
+      "NGO laos",
+      "proyek di laos",
+    ],
+  },
+
+  // ==========================================================================
+  // MYANMAR
+  // ==========================================================================
+  myanmar: {
+    urlSlug: "myanmar",
+    languageSlug: "burmese",
+    tagline: "Dari mingalaba sampai aksara bundar — bahasa 55 juta penutur di tanah seribu pagoda.",
+    heroDescription:
+      "Kursus Bahasa Myanmar (Burma) online dengan kurikulum A1–B2. Aksara bundar yang ikonik, nada yang ramah, percakapan Yangon — untuk pekerja kemanusiaan, peneliti, dan pebisnis kawasan.",
+
+    whyLearn: [
+      {
+        icon: "🕊️",
+        title: "Kemanusiaan yang Paling Membutuhkan",
+        description:
+          "Program kemanusiaan & pengungsi terkait Myanmar adalah salah satu operasi terbesar di Asia — termasuk yang berbasis di Indonesia dan perbatasan Thailand. Staf berbahasa Burma sangat langka dan sangat dicari.",
+      },
+      {
+        icon: "🔬",
+        title: "Riset & Diplomasi ASEAN",
+        description:
+          "Myanmar isu sentral ASEAN — dan Indonesia pemain kuncinya. Peneliti, diplomat, dan jurnalis yang membaca sumber Burma langsung punya kedalaman yang tak dimiliki pembaca terjemahan.",
+      },
+      {
+        icon: "🛕",
+        title: "Budaya Buddhis & Pasar Masa Depan",
+        description:
+          "Tanah Bagan & Shwedagon, tradisi Theravada yang dalam, dan — apa pun politiknya — pasar 55 juta orang yang suatu saat terbuka kembali. Yang siap bahasanya akan masuk pertama.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🕊️",
+        persona: "Pekerja Kemanusiaan & Pengungsi",
+        benefit: "Bahasa lapangan: wawancara, pendampingan, koordinasi.",
+      },
+      {
+        emoji: "📰",
+        persona: "Peneliti, Jurnalis & Diplomat",
+        benefit: "Sumber primer Burma: media, dokumen, wawancara.",
+      },
+      {
+        emoji: "💼",
+        persona: "Pebisnis Kawasan Jangka Panjang",
+        benefit: "Jaringan komunitas Myanmar di Thailand, Singapura & diaspora.",
+      },
+      {
+        emoji: "🧘",
+        persona: "Praktisi & Peminat Buddhisme Theravada",
+        benefit: "Tradisi meditasi Mahasi & Pa-Auk dari sumber aslinya.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Tiga nada + creaky voice, romanisasi dulu, aksara bundar menyusul.",
+        topics: [
+          "Nada Burma: 3 nada + glottal, drill audio",
+          "Struktur SOV & partikel dasar",
+          "Angka, kyat, pasar & tawar-menawar",
+          "Sapaan (mingalaba) & etiket dasar",
+          "Aksara Myanmar tahap 1: konsonan dasar",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar & melek aksara bundar.",
+        topics: [
+          "Aksara lengkap: 33 konsonan + vokal & stacking",
+          "Partikel kalimat (te, me, pi) — jantung grammar",
+          "Classifier & bilangan",
+          "Register sopan (pa) & kata ganti berlapis",
+          "Topik: kerja, kesehatan, transportasi, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas & bahasa kerja lapangan.",
+        topics: [
+          "Kalimat kompleks & nominalisasi",
+          "Bahasa lapangan: wawancara & pendampingan",
+          "Perbedaan lisan vs tulisan (diglosia Burma!)",
+          "Membaca berita ringan (BBC Burmese)",
+          "Kosakata Buddhis & budaya sehari-hari",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas",
+        sessionCount: 112,
+        description:
+          "Mahir — register tulisan formal, media, dan dokumen.",
+        topics: [
+          "Burma tulisan (literary register) penuh",
+          "Kosakata Pali formal",
+          "Media & dokumen: berita, laporan, arsip",
+          "Presentasi & diskusi penuh",
+          "Pengantar bahasa etnis utama (Shan, Karen) — peta saja",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Aksara Myanmar yang bundar-bundar itu susah nggak?",
+        answer:
+          "Terlihat asing tapi sangat sistematis — semua huruf dibangun dari lingkaran (konon karena dulu ditulis di daun lontar yang sobek kalau ditarik garis lurus). 33 konsonan + vokal, biasanya tuntas dibaca dalam 6–8 sesi bertahap.",
+      },
+      {
+        question: "Bahasa lisan dan tulisannya beda — maksudnya gimana?",
+        answer:
+          "Burma punya diglosia: bahasa percakapan dan bahasa tulisan (koran, dokumen) memakai partikel & kosakata berbeda. Banyak kursus hanya mengajarkan satu dan siswanya pincang. Kami mulai dari lisan (kebutuhan nyata), lalu bangun register tulisan mulai B1.",
+      },
+      {
+        question: "Aman & etis nggak belajar bahasa Myanmar sekarang?",
+        answer:
+          "Bahasanya milik rakyatnya, bukan rezim mana pun — dan justru pekerjaan kemanusiaan, jurnalisme, dan pendampingan pengungsi yang paling membutuhkan penuturnya sekarang. Kebutuhan itu nyata dan mendesak.",
+      },
+      {
+        question: "Berapa lama sampai level kerja lapangan?",
+        answer:
+          "Percakapan fungsional (A2) 8–12 bulan; bahasa lapangan (B1) 15–18 bulan dengan 2–3 sesi seminggu. Nada Burma lebih ramah dari Thai/Vietnam — biasanya bukan hambatan utama.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Burma (eks-pekerja kemanusiaan & peneliti) plus penutur native dari komunitas diaspora.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Myanmar Online | Linguo.id — Burma A1–B2",
+    metaDescription:
+      "Belajar Bahasa Myanmar (Burma) online dari nol. Aksara bundar, percakapan Yangon, bahasa kemanusiaan & riset. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa myanmar",
+      "les bahasa myanmar online",
+      "belajar bahasa myanmar",
+      "bahasa burma",
+      "belajar bahasa burma",
+      "kursus burma jakarta",
+      "les myanmar murah",
+      "bahasa myanmar pemula",
+      "aksara myanmar",
+      "kemanusiaan myanmar",
+    ],
+  },
+
+  // ==========================================================================
+  // URDU
+  // ==========================================================================
+  urdu: {
+    urlSlug: "urdu",
+    languageSlug: "urdu",
+    tagline: "Dari assalamualaikum sampai ghazal — bahasa puisi Asia Selatan.",
+    heroDescription:
+      "Kursus Bahasa Urdu online dengan kurikulum A1–B2. Aksara Nastaliq yang anggun, kembaran lisan bahasa Hindi, bahasa ghazal & qawwali — untuk bisnis Pakistan, sastra, dan komunitas.",
+
+    whyLearn: [
+      {
+        icon: "🎶",
+        title: "Ghazal, Qawwali & Sastra Sufi",
+        description:
+          "Ghalib, Iqbal, Faiz — dan qawwali Nusrat Fateh Ali Khan yang menggetarkan dunia. Urdu adalah bahasa puisi Asia Selatan; keindahannya sering disebut tak tertandingi di kawasan.",
+      },
+      {
+        icon: "🤝",
+        title: "Pakistan: Pasar 240 Juta yang Terlewat",
+        description:
+          "Tekstil, beras basmati, olahraga (bola & kriket), farmasi — perdagangan Indonesia-Pakistan terus tumbuh dan pesaing berbahasa Urdu nyaris nol. Hubungan dua negara Muslim terbesar ini penuh peluang.",
+      },
+      {
+        icon: "🎬",
+        title: "Bonus Dua Arah dengan Hindi",
+        description:
+          "Urdu & Hindi lisan praktis satu bahasa (Hindustani) — belajar Urdu berarti memahami Bollywood, plus membaca aksara Nastaliq yang tak dikuasai penonton biasa. Dua pintu, satu kunci.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💼",
+        persona: "Pebisnis Rute Pakistan",
+        benefit: "Tekstil Karachi, dagang Lahore — pasar besar minim pesaing.",
+      },
+      {
+        emoji: "📿",
+        persona: "Peminat Sastra Sufi & Qawwali",
+        benefit: "Ghalib, Iqbal, Rumi terjemahan Urdu — dari teks aslinya.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Mahasiswa & Alumni Pakistan",
+        benefit: "IIUI Islamabad & kampus Pakistan — bahasa kampus & kehidupan.",
+      },
+      {
+        emoji: "🎬",
+        persona: "Penggemar Drama Pakistan & Bollywood",
+        benefit: "Drama Hum TV yang mendunia + lirik lagu dengan kedalaman Urdu.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "A1 — Pemula",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Aksara Nastaliq bertahap, pelafalan, kalimat dasar sehari-hari.",
+        topics: [
+          "Nastaliq: huruf & bentuk sambung — pesona & polanya",
+          "Bunyi khas: retrofleks vs dental, aspirasi",
+          "Struktur SOV & postposisi (mein, par, se, ko)",
+          "Gender & kesesuaian dasar",
+          "Perkenalan, angka, belanja, adab sapaan",
+        ],
+      },
+      {
+        level: "A2",
+        title: "A2 — Dasar",
+        sessionCount: 64,
+        description: "Percakapan sehari-hari lancar — paralel penuh dengan Hindi lisan.",
+        topics: [
+          "Waktu lampau-kini-depan + kesesuaian gender",
+          "Ergatif ne — kunci kalimat lampau",
+          "Kata kerja majemuk umum",
+          "Tingkat kesopanan: tu/tum/aap & aadaab",
+          "Topik: keluarga, dagang, perjalanan, makanan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "B1 — Menengah",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, nonton drama Pakistan, membaca teks Nastaliq dengan nyaman.",
+        topics: [
+          "Subjunktif & pengandaian",
+          "Kosakata Persia-Arab yang membedakan Urdu dari Hindi",
+          "Membaca berita BBC Urdu ringan",
+          "Drama Pakistan sebagai teks (Humsafar dkk)",
+          "Percakapan bisnis & adab formal",
+        ],
+      },
+      {
+        level: "B2",
+        title: "B2 — Atas (Gerbang Sastra)",
+        sessionCount: 112,
+        description:
+          "Mahir — Urdu formal, media, dan pintu masuk ghazal.",
+        topics: [
+          "Urdu formal & jurnalistik (Dawn, Jang)",
+          "Aruz dasar untuk membaca ghazal",
+          "Ghalib & Iqbal berpanduan",
+          "Business Urdu: negosiasi, surat, presentasi",
+          "Qawwali sebagai teks: Nusrat & Sabri Brothers",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Urdu sama Hindi bedanya apa? Katanya sama?",
+        answer:
+          "Lisannya praktis satu bahasa — kamu otomatis paham Bollywood. Bedanya aksara (Nastaliq vs Devanagari) dan kosakata tinggi (Urdu menyerap Persia-Arab, Hindi menyerap Sanskerta). Untuk orang Indonesia yang akrab huruf Arab & kosakata serapan Arab, Urdu sering jadi pintu yang lebih landai.",
+      },
+      {
+        question: "Saya bisa baca huruf Arab (Al-Qur'an). Kepakai nggak?",
+        answer:
+          "Sangat — aksara Urdu berbasis Arab-Persia, jadi kamu mulai dari setengah jalan. Tinggal membiasakan gaya Nastaliq (miring & bertumpuk), 4 huruf tambahan, dan bunyi retrofleks. Banyak kosakata juga langsung kenal: kitab, dunya, waqt, khabar.",
+      },
+      {
+        question: "Nastaliq itu apa sih?",
+        answer:
+          "Gaya kaligrafi aksara Arab-Persia yang dipakai Urdu — miring, mengalir, sering disebut aksara terindah di dunia. Sedikit lebih menantang dibaca daripada naskh (gaya Al-Qur'an), tapi polanya konsisten dan kami latih bertahap.",
+      },
+      {
+        question: "Berapa lama sampai bisa ngobrol & nonton drama Pakistan?",
+        answer:
+          "Percakapan dasar 5–8 bulan (lebih cepat kalau sudah biasa nonton Bollywood — telingamu sudah setengah terlatih). Drama tanpa subtitle nyaman di B1, sekitar 12–16 bulan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Pengajar Indonesia yang fasih Urdu (alumni Pakistan — IIUI dkk) plus opsi native. Untuk track sastra, pengajarnya pembaca ghazal sungguhan.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Urdu Online | Linguo.id — Nastaliq sampai Ghazal",
+    metaDescription:
+      "Belajar Bahasa Urdu online dari nol. Aksara Nastaliq, kembaran Hindi lisan, ghazal & bisnis Pakistan. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa urdu",
+      "les bahasa urdu online",
+      "belajar bahasa urdu",
+      "bahasa pakistan",
+      "belajar bahasa pakistan",
+      "kursus urdu jakarta",
+      "les urdu murah",
+      "bahasa urdu pemula",
+      "aksara nastaliq",
+      "sastra urdu ghazal",
+    ],
+  },
+  // ==========================================================================
+  // BETAWI
+  // ==========================================================================
+  betawi: {
+    urlSlug: "betawi",
+    languageSlug: "betawi",
+    tagline: "Dari nyok sampai kagak — bahasa asli Jakarta yang membentuk bahasa gaul kita.",
+    heroDescription:
+      "Kursus Bahasa Betawi online. Logat, kosakata & budaya dialek asli Jakarta — akar bahasa gaul Indonesia — untuk kreator konten, seniman, peneliti budaya urban, dan generasi muda Betawi.",
+
+    whyLearn: [
+      {
+        icon: "🎙️",
+        title: "Akar Bahasa Gaul Indonesia",
+        description:
+          "Gue-lu, banget, kagak, ngapain — bahasa gaul nasional lahir dari Betawi. Kreator konten, penulis skenario & copywriter yang paham akarnya memakai register Jakarta dengan presisi, bukan asal tebak.",
+      },
+      {
+        icon: "🎭",
+        title: "Lenong, Gambang Kromong & Si Doel",
+        description:
+          "Seni pertunjukan Betawi hidup — lenong, palang pintu, ondel-ondel — dan terus dipanggil di acara resmi Jakarta. Pemain, MC & budayawan bergaji dari kefasihan Betawi yang otentik.",
+      },
+      {
+        icon: "🏙️",
+        title: "Identitas yang Terancam Hilang",
+        description:
+          "Di kotanya sendiri, penutur muda Betawi menyusut. Generasi Betawi yang ingin fasih bahasa engkong-neneknya — dan peneliti budaya urban — memburu yang tersisa sebelum terlambat.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🎬",
+        persona: "Kreator Konten & Penulis",
+        benefit: "Register Jakarta yang presisi: dari Betawi pasar sampai gaul kekinian.",
+      },
+      {
+        emoji: "🌆",
+        persona: "Generasi Muda Betawi",
+        benefit: "Fasih bahasa keluarga — bukan cuma logatnya, tapi kosakata dalamnya.",
+      },
+      {
+        emoji: "🎭",
+        persona: "Seniman & MC Palang Pintu",
+        benefit: "Pantun Betawi, buka palang pintu, lenong — perangkat lengkap.",
+      },
+      {
+        emoji: "📚",
+        persona: "Peneliti Budaya & Linguistik Urban",
+        benefit: "Dialek Melayu Betawi: sejarah, variasi ora-orang, kontak bahasa.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Tingkat 1 — Logat & Kosakata Inti",
+        sessionCount: 48,
+        description:
+          "Dari bahasa Indonesia ke Betawi: pergeseran bunyi, kosakata inti, kalimat sehari-hari.",
+        topics: [
+          "Bunyi khas: a→e (ape, kenape), -h hilang (udeh, dah)",
+          "Kosakata inti: kagak, kudu, doang, ampe, bae",
+          "Kata ganti: gue-lu & sopannya (aye, ente)",
+          "Partikel rasa: dah, deh, dong, sih ala Betawi",
+          "Percakapan warung, pasar & tetangga",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Tingkat 2 — Percakapan & Rasa",
+        sessionCount: 64,
+        description: "Ngobrol lepas dengan rasa Betawi yang benar — bukan sekadar logat-logatan.",
+        topics: [
+          "Imbuhan khas: ke- pasif (ketabrak), -in (bawain)",
+          "Ungkapan & seruan: busyet, astagenaga, sialan dah",
+          "Betawi Tengah vs Betawi Ora (pinggiran)",
+          "Humor Betawi: ledek-ledekan yang sopan",
+          "Situasi keluarga: kondangan, lebaran, arisan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Tingkat 3 — Pantun & Panggung",
+        sessionCount: 80,
+        description:
+          "Bahasa panggung: pantun, palang pintu, dan seni bertutur Betawi.",
+        topics: [
+          "Pantun Betawi: struktur & improvisasi",
+          "Buka palang pintu: adegan & teks klasik",
+          "Sohibul hikayat & tradisi bertutur",
+          "Kosakata Arab-Tionghoa-Belanda dalam Betawi",
+          "MC acara Betawi: nikahan & sunatan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Tingkat 4 — Budaya & Kajian",
+        sessionCount: 112,
+        description:
+          "Masuk khazanah: lenong, gambang kromong, sejarah & kajian dialek.",
+        topics: [
+          "Naskah lenong & improvisasi panggung",
+          "Lagu-lagu gambang kromong & keroncong Tugu",
+          "Sejarah bahasa: Melayu pasar, kontak Tionghoa-Bali-Arab",
+          "Firman Muntaco & sastra Betawi modern",
+          "Dokumentasi: wawancara penutur sepuh",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bahasa Betawi kan cuma bahasa Indonesia yang dilogat-logatin?",
+        answer:
+          "Itu mitosnya. Betawi dialek Melayu tersendiri dengan kosakata dalam (kudu, doang, sohor, begah), imbuhan khas, dan lapisan serapan Hokkien-Arab-Belanda-Portugis yang merekam sejarah Batavia. Yang kamu dengar di sinetron cuma kulitnya.",
+      },
+      {
+        question: "Buat kreator konten, ngapain belajar formal? Kan tinggal niru?",
+        answer:
+          "Niru tanpa paham menghasilkan 'Betawi KW' yang langsung ketahuan penonton Jakarta. Paham sistemnya — kapan gue vs aye, Betawi Tengah vs Ora, mana yang kasar mana yang akrab — membuat kontenmu presisi dan tidak menyinggung.",
+      },
+      {
+        question: "Saya orang Betawi tapi cuma bisa dikit-dikit. Kelasnya cocok?",
+        answer:
+          "Justru profil siswa terbanyak: generasi yang engkongnya fasih tapi di rumah pakai Indonesia. Placement kami mulai dari yang kamu punya, dan materi keluarga (kondangan, palang pintu) bisa disesuaikan tradisi keluargamu.",
+      },
+      {
+        question: "Ada sertifikat atau ujian resminya?",
+        answer:
+          "Tidak ada ujian standar nasional untuk Betawi — fokus kami kefasihan nyata & kemampuan panggung. Untuk kebutuhan formal (MC palang pintu, riset), kami terbitkan sertifikat penyelesaian Linguo per tingkat.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Penutur asli Betawi — termasuk pelaku seni palang pintu & lenong — dengan pengalaman mengajar. Bukan sekadar orang Jakarta, tapi orang Betawi.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Betawi Online | Linguo.id — Logat, Pantun, Budaya",
+    metaDescription:
+      "Belajar Bahasa Betawi online dari penutur asli. Logat & kosakata dalam, pantun palang pintu, budaya Jakarta. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa betawi",
+      "les bahasa betawi",
+      "belajar bahasa betawi",
+      "bahasa betawi asli",
+      "kosakata betawi",
+      "pantun betawi",
+      "palang pintu betawi",
+      "budaya betawi",
+      "dialek jakarta",
+      "bahasa jakarta",
+    ],
+  },
+
+  // ==========================================================================
+  // BALI
+  // ==========================================================================
+  bali: {
+    urlSlug: "bali",
+    languageSlug: "balinese",
+    tagline: "Om Swastiastu — bahasa pulau yang kamu tinggali, bukan cuma kunjungi.",
+    heroDescription:
+      "Kursus Bahasa Bali online dengan tingkatan sor singgih. Untuk pendatang & pekerja di Bali, pasangan orang Bali, pelaku pariwisata, dan generasi muda Bali — dari basa andap sampai aksara.",
+
+    whyLearn: [
+      {
+        icon: "🏝️",
+        title: "Jutaan Pendatang, Sedikit yang Nyambung",
+        description:
+          "Bali dibanjiri pekerja & pemilik usaha dari seluruh Indonesia — tapi rapat banjar, upacara, dan hati orang Bali berbahasa Bali. Pendatang yang bisa basa Bali diterima sebagai nyama (saudara), bukan tamu.",
+      },
+      {
+        icon: "🛕",
+        title: "Sor Singgih: Bahasa Adalah Etika",
+        description:
+          "Basa andap untuk sesama, basa alus untuk yang dihormati & konteks upacara — salah tingkat di pura atau ke pemangku itu fatal secara sosial. Sistemnya harus dipelajari, bukan ditebak.",
+      },
+      {
+        icon: "💼",
+        title: "Nilai Jual di Industri Hospitality",
+        description:
+          "GM, wedding planner & staf hospitality yang bisa basa Bali membangun relasi beda level dengan tim & vendor lokal — dan tamu domestik pun terkesan. Keterampilan langka di industri terbesar pulau ini.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏢",
+        persona: "Pendatang yang Kerja & Usaha di Bali",
+        benefit: "Percakapan banjar, vendor, tim lokal — jadi nyama, bukan tamu.",
+      },
+      {
+        emoji: "💍",
+        persona: "Pasangan & Menantu Orang Bali",
+        benefit: "Basa alus untuk mertua & upacara keluarga — kesan yang menentukan.",
+      },
+      {
+        emoji: "🌺",
+        persona: "Generasi Muda Bali",
+        benefit: "Dari paham pasif jadi fasih — termasuk alus untuk odalan.",
+      },
+      {
+        emoji: "🏨",
+        persona: "Profesional Hospitality & Wedding",
+        benefit: "Relasi vendor & tim, istilah upacara, etiket pura untuk tamu.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Tingkat 1 — Basa Andap Dasar",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan basa andap (ragam sehari-hari) — fondasi sebelum naik ke alus.",
+        topics: [
+          "Pelafalan & kosakata inti andap",
+          "Kalimat dasar & kata ganti (tiang, ragane)",
+          "Angka, hari pasaran & kalender Bali dasar",
+          "Percakapan warung, pasar, banjar",
+          "Om Swastiastu & sapaan sehari-hari",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Tingkat 2 — Sor Singgih & Sopan Santun",
+        sessionCount: 64,
+        description: "Naik tingkat: basa alus untuk yang dihormati, dan peta kapan memakainya.",
+        topics: [
+          "Kosakata paralel andap→alus (medaar→ngajengang)",
+          "Alus singgih vs alus sor — meninggikan lawan, merendahkan diri",
+          "Percakapan dengan penglingsir & pemangku",
+          "Situasi upacara: odalan, ngaben, nganten",
+          "Struktur banjar & istilah adat",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Tingkat 3 — Percakapan Mahir & Upacara",
+        sessionCount: 80,
+        description:
+          "Fasih di dua tingkat, paham konteks upacara, mulai membaca aksara Bali.",
+        topics: [
+          "Peralihan andap↔alus yang luwes dalam satu percakapan",
+          "Kosakata upacara & banten (sesajen)",
+          "Aksara Bali: wianjana, pangangge, baca-tulis dasar",
+          "Sesenggakan (peribahasa) & wewangsalan",
+          "Dialek: Bali dataran vs Bali aga (peta)",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Tingkat 4 — Sastra & Budaya",
+        sessionCount: 112,
+        description:
+          "Masuk khazanah: kidung, geguritan, dan bahasa upacara tinggi.",
+        topics: [
+          "Geguritan & pupuh Bali (Sinom, Ginada)",
+          "Kidung & kekawin — pengenalan basa Kawi",
+          "Membaca lontar sederhana berpanduan",
+          "Dharma wacana & bahasa pidato adat",
+          "Satua Bali (dongeng) sebagai teks",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Saya pindah kerja ke Bali. Orang Bali kan bisa bahasa Indonesia — perlu banget?",
+        answer:
+          "Untuk transaksi — tidak. Untuk kehidupan — sangat. Rapat banjar, upacara, obrolan warung sesungguhnya berbahasa Bali, dan pendatang yang mencoba selalu dicatat hangat. Di pulau yang makin padat pendatang, itu pembeda sosial (dan bisnis) yang nyata.",
+      },
+      {
+        question: "Sor singgih itu seberapa wajib? Takut salah malah menyinggung.",
+        answer:
+          "Justru karena itu dipelajari terstruktur: salah memakai andap ke pemangku itu fatal, tapi orang Bali sangat menghargai pendatang yang berusaha — asal arahnya benar. Kami ajarkan berpasangan (andap+alus sekaligus) plus peta situasi sejak awal.",
+      },
+      {
+        question: "Saya orang Bali tapi alusnya berantakan. Bisa fokus situ aja?",
+        answer:
+          "Bisa — profil umum: fasih andap dari pergaulan, gagap alus saat odalan atau ketemu penglingsir. Placement kami langsung ke tingkat 2–3, fokus kosakata alus & konteks upacara.",
+      },
+      {
+        question: "Aksara Bali diajarkan juga?",
+        answer:
+          "Ya, mulai tingkat 3 — aksara Bali kini wajib di papan nama jalan & kantor se-Bali, jadi makin terlihat sehari-hari. Sistemnya sepupu aksara Jawa; baca-tulis dasar biasanya tuntas 8–10 sesi.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Penutur asli Bali dengan latar pendidikan bahasa/sastra Bali — termasuk yang berpengalaman jadi juru bahasa upacara. Materi disesuaikan kabupaten asal keluarga/lingkunganmu.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Bali Online | Linguo.id — Sor Singgih & Aksara",
+    metaDescription:
+      "Belajar Bahasa Bali online: basa andap & alus, sor singgih, aksara Bali, bahasa upacara. Untuk pendatang & generasi muda. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa bali",
+      "les bahasa bali online",
+      "belajar bahasa bali",
+      "bahasa bali halus",
+      "basa bali alus",
+      "sor singgih basa bali",
+      "belajar aksara bali",
+      "kursus bali denpasar",
+      "les bahasa bali",
+      "bahasa bali pemula",
+    ],
+  },
+
+  // ==========================================================================
+  // BATAK
+  // ==========================================================================
+  batak: {
+    urlSlug: "batak",
+    languageSlug: "batak",
+    tagline: "Horas! — bahasa, marga & adat yang mengikat halak Batak di mana pun.",
+    heroDescription:
+      "Kursus Bahasa Batak (Toba) online. Dari percakapan sehari-hari sampai bahasa adat — martarombo, umpasa, ulos — untuk generasi muda Batak perantauan, menantu, dan peminat budaya.",
+
+    whyLearn: [
+      {
+        icon: "🌏",
+        title: "Diaspora Besar, Bahasa Menipis",
+        description:
+          "Halak Batak merantau ke seluruh dunia dan sukses di hukum, musik, bisnis — tapi generasi ketiganya banyak yang hanya bisa 'horas'. Bahasa adalah simpul marga; tanpa itu, martarombo (menelusuri kekerabatan) macet.",
+      },
+      {
+        icon: "💍",
+        title: "Menantu & Pesta Adat",
+        description:
+          "Pesta unjuk (pernikahan), mangulosi, tortor — adat Batak hidup dan padat bahasa. Menantu (parumaen/hela) yang paham bahasa & perannya dalam dalihan na tolu dihormati seketika oleh hula-hula.",
+      },
+      {
+        icon: "🎵",
+        title: "Musik & Umpasa yang Mendunia",
+        description:
+          "Dari trio lagu Batak sampai gondang sabangunan — dan umpasa (pantun adat) yang mengalir di tiap pesta. Memahaminya berarti ikut, bukan menonton.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🌆",
+        persona: "Generasi Muda Batak Perantauan",
+        benefit: "Dari 'horas' doang jadi bisa martarombo & ikut pesta adat.",
+      },
+      {
+        emoji: "💍",
+        persona: "Menantu & Pasangan Halak Batak",
+        benefit: "Bahasa & peranmu dalam dalihan na tolu — bekal pesta unjuk.",
+      },
+      {
+        emoji: "⚖️",
+        persona: "Tokoh Muda yang Disiapkan Jadi Parhata",
+        benefit: "Umpasa, urutan acara adat, bahasa raja parhata.",
+      },
+      {
+        emoji: "🎵",
+        persona: "Musisi & Peminat Budaya Batak",
+        benefit: "Lirik lagu Batak, gondang, dan makna di baliknya.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Tingkat 1 — Percakapan Dasar",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan Batak Toba sehari-hari — kosakata inti & kalimat dasar.",
+        topics: [
+          "Pelafalan & kosakata inti Toba",
+          "Kata ganti (ahu, ho, hamu) & sopannya",
+          "Angka, waktu, pasar (onan)",
+          "Percakapan keluarga & sapaan kekerabatan dasar",
+          "Horas, mauliate & ungkapan sehari-hari",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Tingkat 2 — Kekerabatan & Marga",
+        sessionCount: 64,
+        description: "Bahasa untuk martarombo — sistem sapaan kekerabatan yang jadi jantung sosial Batak.",
+        topics: [
+          "Partuturan: amang, inang, tulang, namboru, lae, ito",
+          "Martarombo: menelusuri marga & sapaan yang tepat",
+          "Dalihan na tolu dalam bahasa: hula-hula, boru, dongan tubu",
+          "Imbuhan Toba: mar-, ma-, di-, -hon",
+          "Percakapan kunjungan keluarga & punguan marga",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Tingkat 3 — Bahasa Adat & Umpasa",
+        sessionCount: 80,
+        description:
+          "Bahasa pesta adat: umpasa, urutan acara, dan peran bicara.",
+        topics: [
+          "Umpasa: struktur, hafalan inti, kapan dipakai",
+          "Bahasa pesta unjuk: mangulosi, tuhor, ulaon",
+          "Aksara Batak (surat Batak) dasar",
+          "Membaca lirik lagu & teks sederhana",
+          "Peta dialek: Toba vs Karo vs Simalungun vs Mandailing",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Tingkat 4 — Parhata & Khazanah",
+        sessionCount: 112,
+        description:
+          "Bahasa tingkat parhata (juru bicara adat) & sastra lisan.",
+        topics: [
+          "Marhata sinamot: negosiasi adat pernikahan",
+          "Umpasa lanjutan & improvisasi",
+          "Turi-turian (sastra lisan) & andung",
+          "Pustaha & tradisi tulis — pengenalan",
+          "Praktik: simulasi peran di ulaon adat",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Batak kan banyak — Toba, Karo, Mandailing. Yang diajarkan yang mana?",
+        answer:
+          "Track utama kami Batak Toba (penutur terbanyak & bahasa mayoritas pesta adat di perantauan). Karo dan Mandailing-Angkola cukup berbeda — kalau kebutuhanmu spesifik ke sana, sampaikan di awal; ketersediaan pengajarnya kami carikan.",
+      },
+      {
+        question: "Saya menantu orang Batak, pesta unjuk 8 bulan lagi. Sempat?",
+        answer:
+          "Sempat untuk yang penting: percakapan dasar + partuturan (sapaan kekerabatan) + peranmu di acara. Salah menyapa tulang itu lebih fatal daripada grammar meleset — makanya kekerabatan kami taruh di depan. Banyak siswa kami persis profil ini.",
+      },
+      {
+        question: "Umpasa itu apa dan kenapa penting banget?",
+        answer:
+          "Pantun adat yang mengikat tiap tahap upacara — memberi ulos, menyambut hula-hula, mendoakan pengantin. Orang yang bisa melempar umpasa yang pas pada momen yang pas langsung naik statusnya di mata keluarga. Kami ajarkan berjenjang: pahami dulu, hafal inti, lalu improvisasi.",
+      },
+      {
+        question: "Aksara Batak masih dipakai?",
+        answer:
+          "Sehari-hari tidak, tapi hidup di pustaha (naskah kuno), gorga, dan kini bangkit di komunitas & desain. Kami ajarkan dasarnya di tingkat 3 sebagai warisan — fokus utama tetap bahasa lisan & adat.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Penutur asli Toba — beberapa aktif sebagai parhata muda — yang paham dunia perantauan. Materi disesuaikan: punguan margamu, jenis pesta yang kamu hadapi, lagu yang kamu suka.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Batak Online | Linguo.id — Toba, Umpasa, Adat",
+    metaDescription:
+      "Belajar Bahasa Batak Toba online: percakapan, partuturan, umpasa & bahasa pesta adat. Untuk generasi perantauan & menantu. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa batak",
+      "les bahasa batak online",
+      "belajar bahasa batak",
+      "bahasa batak toba",
+      "belajar umpasa batak",
+      "partuturan batak",
+      "martarombo",
+      "les batak murah",
+      "bahasa batak pemula",
+      "adat batak pernikahan",
+    ],
+  },
+
+  // ==========================================================================
+  // BUGIS
+  // ==========================================================================
+  bugis: {
+    urlSlug: "bugis",
+    languageSlug: "bugis",
+    tagline: "Dari tabe' sampai aksara Lontara — bahasa pelaut ulung Nusantara.",
+    heroDescription:
+      "Kursus Bahasa Bugis online. Percakapan sehari-hari, adab tabe', aksara Lontara & warisan La Galigo — untuk generasi muda Bugis perantauan, menantu, dan peminat budaya maritim.",
+
+    whyLearn: [
+      {
+        icon: "⛵",
+        title: "Diaspora Pelaut Terbesar Nusantara",
+        description:
+          "Orang Bugis-Makassar merantau berabad-abad — dari Kalimantan sampai Johor & Sabah. Komunitasnya besar dan solid; bahasanya paspor masuk jaringan dagang & kekerabatan yang legendaris itu.",
+      },
+      {
+        icon: "📜",
+        title: "La Galigo: Epik Terpanjang Dunia",
+        description:
+          "Sureq Galigo lebih panjang dari Mahabharata — ditulis dalam aksara Lontara yang khas. Warisan sastra kelas dunia yang pembaca aslinya kian langka; mempelajarinya adalah konservasi hidup.",
+      },
+      {
+        icon: "🤝",
+        title: "Siri' na Pacce: Bahasa Adalah Martabat",
+        description:
+          "Adab tabe', panggilan puang/daeng, falsafah siri' (harga diri) — kesantunan Bugis padat aturan. Menantu & mitra bisnis yang memahaminya dihormati seketika.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🌆",
+        persona: "Generasi Muda Bugis Perantauan",
+        benefit: "Nyambung lagi dengan keluarga & jaringan perantauan Bugis.",
+      },
+      {
+        emoji: "💍",
+        persona: "Menantu & Pasangan Orang Bugis",
+        benefit: "Adab tabe', panggilan yang tepat, bekal acara mappacci & pernikahan.",
+      },
+      {
+        emoji: "💼",
+        persona: "Perantau & Pebisnis di Sulsel",
+        benefit: "Percakapan pasar, pelabuhan & relasi dagang Makassar-Parepare.",
+      },
+      {
+        emoji: "📜",
+        persona: "Peneliti & Pecinta La Galigo",
+        benefit: "Aksara Lontara & pintu masuk ke naskah sureq.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Tingkat 1 — Percakapan Dasar",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol. Pelafalan khas (glottal & geminasi), kosakata inti, kalimat sehari-hari.",
+        topics: [
+          "Pelafalan: hamzah akhir, konsonan ganda (lompo', bella)",
+          "Kata ganti & klitik (-ka', -ko, -ki') — kunci Bugis!",
+          "Angka, pasar, warung kopi (warkop!)",
+          "Tabe' & adab dasar",
+          "Perkenalan & sapaan (puang, daeng, andi)",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Tingkat 2 — Percakapan & Adab",
+        sessionCount: 64,
+        description: "Ngobrol lepas dengan tingkat kesantunan yang tepat.",
+        topics: [
+          "Klitik lengkap: fokus & kepemilikan",
+          "Registrasi santun: -ki' vs -ko, kapan yang mana",
+          "Sistem kekerabatan & panggilan keluarga",
+          "Percakapan keluarga: kunjungan, hajatan",
+          "Bugis vs Makassar: peta perbedaan",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Tingkat 3 — Lontara & Ungkapan",
+        sessionCount: 80,
+        description:
+          "Aksara Lontara & kekayaan ungkapan — élong (pantun) dan paseng (petuah).",
+        topics: [
+          "Aksara Lontara: 23 huruf induk + diakritik",
+          "Membaca & menulis teks Lontara sederhana",
+          "Élong ugi (pantun Bugis) & paseng to riolo",
+          "Kosakata adat: mappacci, mabbarazanji, sompa",
+          "Falsafah siri' na pacce dalam bahasa",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Tingkat 4 — Sastra & Naskah",
+        sessionCount: 112,
+        description:
+          "Masuk khazanah: sureq, bahasa upacara, dan La Galigo berpanduan.",
+        topics: [
+          "Bahasa sureq vs bahasa lisan",
+          "Petikan La Galigo berpanduan",
+          "Bahasa upacara pernikahan & madduppa",
+          "Naskah lontara' attoriolong (silsilah) — pengenalan",
+          "Dokumentasi: wawancara penutur sepuh",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bugis sama Makassar itu satu bahasa?",
+        answer:
+          "Dua bahasa berbeda (basa Ugi vs basa Mangkasara') meski serumpun dan sama-sama memakai Lontara. Track kami Bugis; kalau kebutuhanmu Makassar (daeng!), sampaikan di awal — pengajarnya berbeda.",
+      },
+      {
+        question: "Klitik -ka', -ko, -ki' itu apa dan kenapa penting?",
+        answer:
+          "Partikel kecil yang menempel di kata dan menandai siapa-melakukan-apa plus tingkat hormat — jantung tata bahasa Bugis sekaligus sopan santunnya (-ki' santun, -ko akrab/kasar). Salah pakai langsung terasa. Kami latih dari kalimat pertama.",
+      },
+      {
+        question: "Aksara Lontara masih kepakai?",
+        answer:
+          "Masih diajarkan di sekolah Sulsel, hidup di naskah & simbol budaya, dan bangkit lagi di desain & media sosial. Di kelas, Lontara masuk tingkat 3 — setelah bahasanya jalan.",
+      },
+      {
+        question: "Saya cuma mau bisa ngobrol sama keluarga pasangan di Bone. Berapa lama?",
+        answer:
+          "Percakapan keluarga dasar dengan adab yang benar: 4–6 bulan (2 sesi/minggu). Fokusnya langsung ke situasi nyata — kunjungan, makan bersama, panggilan kekerabatan yang tepat.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Penutur asli Bugis (Bone, Wajo, Soppeng, Sidrap) berlatar pendidikan bahasa — beberapa terlibat komunitas pelestarian Lontara.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Bugis Online | Linguo.id — Percakapan & Lontara",
+    metaDescription:
+      "Belajar Bahasa Bugis online: percakapan, adab tabe', aksara Lontara, élong & La Galigo. Untuk perantauan & menantu. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa bugis",
+      "les bahasa bugis online",
+      "belajar bahasa bugis",
+      "bahasa bugis sehari hari",
+      "belajar aksara lontara",
+      "bahasa ugi",
+      "les bugis murah",
+      "bahasa bugis pemula",
+      "budaya bugis",
+      "la galigo",
+    ],
+  },
+
+  // ==========================================================================
+  // MADURA
+  // ==========================================================================
+  madura: {
+    urlSlug: "madura",
+    languageSlug: "madurese",
+    tagline: "Dari dhâ' remma sampai èngghi bhunten — bahasa 13 juta orang pulau garam.",
+    heroDescription:
+      "Kursus Bahasa Madura online dengan tingkat tutur lengkap. Untuk guru & tenaga kesehatan yang bertugas di Madura, pebisnis, menantu, dan generasi muda Madura perantauan.",
+
+    whyLearn: [
+      {
+        icon: "🏥",
+        title: "Bertugas di Madura? Bahasa Dulu",
+        description:
+          "Guru, bidan, dokter & penyuluh yang ditempatkan di Madura menghadapi pasien dan wali murid yang kesehariannya berbahasa Madura. Layanan yang menyentuh dimulai dari bahasa — dan kepercayaan mengikutinya.",
+      },
+      {
+        icon: "🤝",
+        title: "Jaringan Dagang yang Legendaris",
+        description:
+          "Perantau Madura menggerakkan besi tua, sate, pangkalan, dan logistik di seluruh Indonesia. Jaringannya erat dan setia — bahasa Madura adalah kunci masuknya, dan mitra yang bisa berbahasa dihormati beda.",
+      },
+      {
+        icon: "🕌",
+        title: "Tingkat Tutur & Tradisi Pesantren",
+        description:
+          "Enjâ'-iyâ (akrab), èngghi-enten, èngghi-bhunten (paling halus) — kesantunan Madura berlapis, dan hidup kental di budaya pesantren & keluarga. Salah tingkat ke kiai atau mertua bukan pilihan.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "🏥",
+        persona: "Guru, Nakes & ASN Bertugas di Madura",
+        benefit: "Percakapan pasien/wali murid + tingkat tutur yang aman.",
+      },
+      {
+        emoji: "💼",
+        persona: "Pebisnis & Mitra Jaringan Madura",
+        benefit: "Relasi dagang: pasar, pangkalan, komunitas perantau.",
+      },
+      {
+        emoji: "💍",
+        persona: "Menantu & Pasangan Orang Madura",
+        benefit: "Èngghi-bhunten untuk mertua & acara keluarga.",
+      },
+      {
+        emoji: "🌆",
+        persona: "Generasi Muda Madura Perantauan",
+        benefit: "Dari paham pasif jadi aktif — termasuk ke keluarga di pulau.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "Tingkat 1 — Enjâ'-Iyâ Dasar",
+        sessionCount: 48,
+        description:
+          "Mulai dari nol dengan ragam akrab — pelafalan khas Madura yang tebal dijinakkan dulu.",
+        topics: [
+          "Pelafalan: konsonan beraspirasi (bh, dh, jh), â",
+          "Kosakata inti & kalimat dasar",
+          "Angka, pasar, warung",
+          "Sapaan & kata ganti dasar",
+          "Percakapan tetangga & sehari-hari",
+        ],
+      },
+      {
+        level: "A2",
+        title: "Tingkat 2 — Tingkat Tutur",
+        sessionCount: 64,
+        description: "Naik ke èngghi-enten & èngghi-bhunten — peta kapan memakai apa.",
+        topics: [
+          "Kosakata paralel 3 tingkat (ngakan→neddhâ→adhâ'ar)",
+          "Berbahasa ke orang tua, guru & kiai",
+          "Imbuhan Madura produktif",
+          "Situasi keluarga: kunjungan, hajatan, lebaran",
+          "Dialek: Bangkalan vs Pamekasan vs Sumenep",
+        ],
+      },
+      {
+        level: "B1",
+        title: "Tingkat 3 — Bahasa Profesi & Ungkapan",
+        sessionCount: 80,
+        description:
+          "Bahasa kerja nyata: kelas, puskesmas, pasar — plus kekayaan ungkapan.",
+        topics: [
+          "Bahasa kelas & sekolah untuk guru",
+          "Bahasa kesehatan: anamnesis & edukasi pasien",
+          "Parèbhâsan (peribahasa) & ungkapan",
+          "Percakapan dagang & negosiasi",
+          "Carakan Madhurâ (aksara) — pengenalan",
+        ],
+      },
+      {
+        level: "B2",
+        title: "Tingkat 4 — Budaya & Sastra",
+        sessionCount: 112,
+        description:
+          "Masuk khazanah: syi'ir, mamaca, dan bahasa adat.",
+        topics: [
+          "Syi'ir Madura & tradisi pesantren",
+          "Mamaca & sastra lisan",
+          "Bahasa upacara: pernikahan, rokat, petik laut",
+          "Kèjhung & lagu Madura sebagai teks",
+          "Dokumentasi penutur sepuh",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Bahasa Madura mirip bahasa Jawa nggak?",
+        answer:
+          "Serumpun tapi bukan saling paham — kosakatanya berbeda jauh, dan Madura punya bunyi khas (konsonan beraspirasi bh/dh/jh) yang tak ada di Jawa. Yang mirip konsepnya: sama-sama bertingkat tutur. Dari bahasa Indonesia, keduanya sama-sama bisa dipelajari cepat.",
+      },
+      {
+        question: "Saya bidan, baru ditempatkan di Pamekasan. Berapa lama sampai bisa melayani pasien?",
+        answer:
+          "Percakapan klinis dasar (keluhan, instruksi obat, edukasi) dengan tingkat tutur yang aman: 4–6 bulan fokus. Track profesi kami memang menaruh bahasa puskesmas/kelas di depan — kasus nyata siswa jadi materi.",
+      },
+      {
+        question: "Tiga tingkat tutur — wajib semua?",
+        answer:
+          "Bertahap. Enjâ'-iyâ dulu sebagai fondasi, lalu èngghi-bhunten untuk orang tua/kiai/mertua — dua ujung itu yang paling kepakai. Yang tengah (èngghi-enten) menyusul alami. Prinsip amannya kami ajarkan: kalau ragu, pakai yang halus.",
+      },
+      {
+        question: "Dialeknya beda-beda ya di tiap kabupaten?",
+        answer:
+          "Ya — Bangkalan, Pamekasan, Sumenep punya rasa masing-masing (Sumenep dianggap paling halus). Standar pengajaran kami Pamekasan-Sumenep, dengan peta perbedaan sejak awal. Sebut lokasi penempatan/keluargamu, pengajar menyesuaikan.",
+      },
+      {
+        question: "Pengajarnya siapa?",
+        answer:
+          "Penutur asli Madura berlatar pendidikan bahasa — termasuk yang berpengalaman melatih guru & nakes program penempatan.",
+      },
+    ],
+
+    metaTitle: "Kursus Bahasa Madura Online | Linguo.id — Tingkat Tutur Lengkap",
+    metaDescription:
+      "Belajar Bahasa Madura online: enjâ'-iyâ sampai èngghi-bhunten, bahasa profesi untuk guru & nakes, budaya. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus bahasa madura",
+      "les bahasa madura online",
+      "belajar bahasa madura",
+      "bahasa madura halus",
+      "bahasa madura sehari hari",
+      "les madura murah",
+      "bahasa madura pemula",
+      "tingkat tutur madura",
+      "kamus madura",
+      "guru di madura",
+    ],
+  },
+
+  // ==========================================================================
+  // BIPA — BAHASA INDONESIA UNTUK PENUTUR ASING
+  // ==========================================================================
+  indonesia: {
+    urlSlug: "indonesia",
+    languageSlug: "bipa",
+    tagline: "BIPA — Bahasa Indonesia untuk Penutur Asing, dari survival sampai UKBI.",
+    heroDescription:
+      "Kursus BIPA (Bahasa Indonesia untuk Penutur Asing) online — Indonesian course for expats, spouses & professionals. Kurikulum selaras SKL BIPA & UKBI, pengajar berpengalaman, jadwal fleksibel.",
+
+    whyLearn: [
+      {
+        icon: "🌏",
+        title: "270 Juta Orang, Satu Bahasa Pemersatu",
+        description:
+          "Bahasa Indonesia membuka negara terbesar keempat dunia — dan salah satu bahasa besar yang paling cepat dipelajari: alfabet Latin, ejaan konsisten, tanpa tenses, tanpa gender. Progress terasa dalam hitungan minggu.",
+      },
+      {
+        icon: "💼",
+        title: "Ekspatriat & Profesional di Indonesia",
+        description:
+          "Rapat berbahasa Inggris, tapi pabrik, klien daerah, dan tim lapangan berbahasa Indonesia. Ekspatriat yang fasih membangun kepercayaan yang tak bisa dicapai lewat penerjemah — plus KITAS hidupnya lebih mudah.",
+      },
+      {
+        icon: "❤️",
+        title: "Pasangan, Keluarga & UKBI",
+        description:
+          "Menikah dengan orang Indonesia, punya mertua di sini, atau menyiapkan naturalisasi? UKBI (Uji Kemahiran Berbahasa Indonesia) adalah ujian resminya — dan keluarga besarmu menanti obrolan pertama.",
+      },
+    ],
+
+    targetAudience: [
+      {
+        emoji: "💼",
+        persona: "Ekspatriat & Profesional (Expats)",
+        benefit: "Bahasa kantor & lapangan — practical Indonesian for work.",
+      },
+      {
+        emoji: "❤️",
+        persona: "Pasangan WNA / Foreign Spouses",
+        benefit: "Percakapan keluarga, mertua, dan persiapan UKBI naturalisasi.",
+      },
+      {
+        emoji: "🎓",
+        persona: "Mahasiswa Asing & Peneliti (Darmasiswa/KNB)",
+        benefit: "Bahasa akademik & kehidupan kampus Indonesia.",
+      },
+      {
+        emoji: "🏝️",
+        persona: "Digital Nomad di Bali & Jakarta",
+        benefit: "Keluar dari bubble ekspat — pasar, ojek, komunitas lokal.",
+      },
+    ],
+
+    curriculum: [
+      {
+        level: "A1",
+        title: "BIPA 1 — Survival Indonesian",
+        sessionCount: 48,
+        description:
+          "From zero: pronunciation, daily phrases, and the joy of a grammar with no tenses.",
+        topics: [
+          "Pelafalan & ejaan — konsisten, langsung bisa baca",
+          "Kalimat dasar: SVO tanpa konjugasi",
+          "Angka, harga, tawar-menawar, ojek & warung",
+          "Perkenalan & sapaan (Pak/Bu/Mas/Mbak)",
+          "Survival: arah jalan, restoran, belanja",
+        ],
+      },
+      {
+        level: "A2",
+        title: "BIPA 2 — Percakapan Sehari-hari",
+        sessionCount: 64,
+        description: "Percakapan harian lancar + imbuhan pertama (ber-, me-).",
+        topics: [
+          "Imbuhan ber- & me- — pintu masuk morfologi",
+          "Kata bantu waktu: sudah, sedang, akan, pernah",
+          "Bahasa formal vs percakapan (nggak, banget, dong)",
+          "Topik: keluarga, kerja, perjalanan, kesehatan",
+          "Small talk Indonesia & basa-basi yang penting",
+        ],
+      },
+      {
+        level: "B1",
+        title: "BIPA 3–4 — Menengah (UKBI Madya)",
+        sessionCount: 80,
+        description:
+          "Diskusi topik luas, membaca berita, bahasa kantor — target UKBI peringkat Madya.",
+        topics: [
+          "Imbuhan lengkap: me-kan, me-i, pe-an, ke-an",
+          "Kalimat pasif di- — kunci bahasa tulis & sopan",
+          "Membaca Kompas/Detik ringan",
+          "Bahasa rapat & email kantor",
+          "Ragam daerah & bahasa gaul Jakarta — peta",
+        ],
+      },
+      {
+        level: "B2",
+        title: "BIPA 5–6 — Mahir (UKBI Unggul)",
+        sessionCount: 112,
+        description:
+          "Bahasa akademik, media & profesional penuh — target UKBI Unggul untuk kerja & naturalisasi.",
+        topics: [
+          "Bahasa formal akademik & laporan",
+          "Presentasi, negosiasi & pidato",
+          "Media penuh: berita TV, opini koran",
+          "Budaya tinggi konteks: kritik halus, penolakan sopan",
+          "Simulasi UKBI: 5 seksi lengkap",
+        ],
+      },
+    ],
+
+    pricing: defaultPricing,
+
+    faq: [
+      {
+        question: "Is this course taught in English?",
+        answer:
+          "Yes — BIPA 1–2 are taught bilingually (English–Indonesian) by teachers experienced with foreign learners, shifting to full Indonesian immersion from BIPA 3. Materials and session recaps are bilingual at beginner levels.",
+      },
+      {
+        question: "Seberapa cepat bahasa Indonesia bisa dikuasai?",
+        answer:
+          "Salah satu bahasa besar tercepat di dunia: alfabet Latin, ejaan fonetis, tanpa tenses-gender-kasus. Percakapan survival dalam 2–3 bulan, percakapan nyaman (A2) 6–8 bulan. Tantangan sesungguhnya justru imbuhan & ragam informal — dan di situ pengajar sungguhan mengalahkan aplikasi.",
+      },
+      {
+        question: "UKBI itu apa dan siapa yang butuh?",
+        answer:
+          "Uji Kemahiran Berbahasa Indonesia — ujian resmi Badan Bahasa, diperlukan untuk naturalisasi (kewarganegaraan), beberapa izin kerja profesi, dan studi. Peringkatnya dari Terbatas sampai Istimewa; kurikulum kami dipetakan ke target Madya & Unggul.",
+      },
+      {
+        question: "Bahasa formal yang saya pelajari kok beda sama yang dipakai orang di jalan?",
+        answer:
+          "Fenomena klasik pembelajar BIPA: buku mengajarkan 'tidak', jalanan bilang 'nggak'. Kami mengajarkan keduanya sejajar sejak BIPA 2 — bahasa baku sebagai fondasi, ragam percakapan sebagai kenyataan — supaya kamu tak kaget di warung.",
+      },
+      {
+        question: "Bisa untuk pasangan saya yang sama sekali nol?",
+        answer:
+          "Bisa — justru profil siswa BIPA terbanyak kami: pasangan WNA yang ingin bisa ngobrol dengan mertua & keluarga besar. Kelas privat 1-on-1 dengan materi dari kehidupan nyata kalian (keluarga, kota tempat tinggal, rencana acara).",
+      },
+    ],
+
+    metaTitle: "Kursus BIPA Online | Linguo.id — Indonesian for Foreigners, UKBI Ready",
+    metaDescription:
+      "Kursus Bahasa Indonesia untuk Penutur Asing (BIPA) online. Learn Indonesian with certified teachers — survival to UKBI. Mulai Rp 50.000/sesi.",
+    metaKeywords: [
+      "kursus BIPA",
+      "BIPA online",
+      "bahasa indonesia untuk penutur asing",
+      "learn indonesian online",
+      "indonesian course for foreigners",
+      "indonesian language course",
+      "kursus bahasa indonesia untuk orang asing",
+      "UKBI persiapan",
+      "belajar bahasa indonesia expat",
+      "indonesian for expats",
+    ],
+  },
 };
 
 // ============================================================================
