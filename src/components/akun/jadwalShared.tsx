@@ -49,6 +49,8 @@ export type JadwalSession = {
 export type NormSession = JadwalSession & {
   _d: Date; _iso: string; _time: string; _end: string | null; _weekday: string;
   _past: boolean; _joinable: boolean;
+  /** jadwal-live-now-v1: jam sesinya sedang berjalan detik ini. */
+  _live: boolean;
 };
 
 export const MONTHS = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
@@ -183,6 +185,47 @@ export function statusMeta(s: { status?: string; attendanceStatus?: string | nul
   if (s.attendanceStatus && ATT_META[s.attendanceStatus]) return ATT_META[s.attendanceStatus];
   if (s._past) return { label: s.status === "completed" ? "Selesai" : "Sudah lewat", color: "#9CA3AF" };
   return null;
+}
+
+// ── jadwal-live-now-v1: sesi yang SEDANG berlangsung ─────────────────────────
+// Sebelumnya kalender cuma punya dua keadaan: "mendatang" (hitung mundur) dan
+// "sudah lewat" (redup). Persis waktu kelasnya jalan, kartunya kelihatan sama
+// saja dengan sesi besok — padahal itulah menit paling penting buat siswa.
+// Warna penanda = merah, satu bahasa dengan garis "sekarang" di time-grid.
+export const LIVE_COLOR = "#DC2626";
+
+/**
+ * Jam sesinya sedang berjalan (mulai ≤ sekarang < selesai). Sesi batal/hangus
+ * jelas tidak, dan sesi yang sudah ditandai `completed` pengajar juga tidak —
+ * kelasnya sudah ditutup lebih awal, jangan diklaim masih jalan.
+ */
+export function isLiveNow(
+  start: Date,
+  durationMinutes: number | null | undefined,
+  now: number,
+  status?: string
+) {
+  if (isDead(status) || status === "completed") return false;
+  const s = start.getTime();
+  return now >= s && now < s + (durationMinutes || 60) * 60000;
+}
+
+/** Lencana "Sedang berlangsung" — titik berdenyut + label. */
+export function LiveBadge({ compact = false }: { compact?: boolean }) {
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center gap-1 rounded-full font-extrabold leading-none ${
+        compact ? "px-1.5 py-0.5 text-[9px]" : "px-2 py-0.5 text-[11px]"
+      }`}
+      style={{ background: `${LIVE_COLOR}1A`, color: LIVE_COLOR }}
+    >
+      <span className="relative flex h-1.5 w-1.5 shrink-0">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ background: LIVE_COLOR }} />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background: LIVE_COLOR }} />
+      </span>
+      {compact ? "Live" : "Sedang berlangsung"}
+    </span>
+  );
 }
 
 /** "2 jam lagi" / "45 menit lagi" — hitung mundur ringkas ke jam mulai. */

@@ -9,7 +9,8 @@ import { useEffect, useMemo, useState } from "react";
 import { CalendarDays, ChevronRight, Video } from "lucide-react";
 import { classRoomUrl, isJoinable } from "@/lib/classRoom";
 import {
-  LangFlag, MONTHS_SHORT, fmtTime, isDead, langColor, langFlagCode, TeacherAvatar,
+  LIVE_COLOR, LangFlag, LiveBadge, MONTHS_SHORT, fmtTime, isDead, isLiveNow, langColor,
+  langFlagCode, TeacherAvatar,
   type JadwalSession, type NormSession,
 } from "./jadwalShared";
 
@@ -51,6 +52,8 @@ export default function SesiMendatangCard({
             _end: end ? fmtTime(end) : null,
             _weekday: d.toLocaleDateString("id-ID", { weekday: "long" }),
             _past: d.getTime() + (s.durationMinutes || 60) * 60000 < now,
+            // jadwal-live-now-v1: sesi yang jamnya lagi jalan detik ini.
+            _live: isLiveNow(d, s.durationMinutes, now, s.status),
             _joinable: isJoinable(d),
           };
         })
@@ -68,6 +71,10 @@ export default function SesiMendatangCard({
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // jadwal-live-now-v1: kalau ada kelas yang lagi jalan, itu kabar paling penting
+  // di kartu ini — dinaikkan ke subjudul, bukan cuma nempel di salah satu baris.
+  const liveCount = upcoming.filter((s) => s._live).length;
+
   const [expanded, setExpanded] = useState(false);
   const visible = expanded ? upcoming : upcoming.slice(0, limit);
   const hidden = Math.max(0, upcoming.length - visible.length);
@@ -80,8 +87,9 @@ export default function SesiMendatangCard({
     <div className="sesi-mendatang-panel rounded-3xl bg-white p-4 ring-1 ring-slate-200 sm:p-5">
       <div className="mb-3 flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <h3 className="inline-flex items-center gap-1.5 text-[16px] font-extrabold text-[#12172B]">
+          <h3 className="inline-flex flex-wrap items-center gap-1.5 text-[16px] font-extrabold text-[#12172B]">
             <CalendarDays className="h-4 w-4 text-[#16796E]" strokeWidth={2.5} /> Sesi Mendatang
+            {liveCount > 0 && <LiveBadge />}
           </h3>
           <p className="mt-0.5 text-[12px] font-medium text-gray-500">
             {upcoming.length} sesi terjadwal · semua kelas aktif
@@ -133,6 +141,8 @@ function SesiItem({ s, studentName, onClick }: {
       onClick={onClick}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
       className="sesi-mendatang-item cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
+      // jadwal-live-now-v1: cincin merah — sama dengan blok di kalender.
+      style={s._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : undefined}
     >
       <div className="flex w-full items-center gap-3">
         <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white leading-none shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
@@ -155,7 +165,13 @@ function SesiItem({ s, studentName, onClick }: {
             ) : null}
           </span>
           <span className="mt-0.5 block truncate text-[12px] font-medium text-[#6B7280]">
-            {s._weekday} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}
+            {s._live ? (
+              <span className="font-bold" style={{ color: LIVE_COLOR }}>
+                Sedang berlangsung{s._end ? ` · selesai ${s._end}` : ""}
+              </span>
+            ) : (
+              <>{s._weekday} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} mnt` : ""}</>
+            )}
           </span>
           {s.teacher && (
             <span className="mt-1 flex items-center gap-1.5 text-[11px] font-medium text-[#6B7280]">

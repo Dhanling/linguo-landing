@@ -21,8 +21,9 @@ import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileTe
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
 import {
-  ATT_META, DOWS, DOWS_FULL, LangFlag, MONTHS, MONTHS_SHORT, TeacherAvatar, addDays, countdownLabel,
-  fmtTime, isDead, isoOf, langColor, langFlagCode, pad, startOfWeek, statusMeta, ymd,
+  ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
+  addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
+  startOfWeek, statusMeta, ymd,
   type JadwalSession, type LangColor, type NormSession,
 } from "./jadwalShared";
 
@@ -82,6 +83,8 @@ export default function JadwalCalendar({
             _end: end ? fmtTime(end) : null,
             _weekday: d.toLocaleDateString("id-ID", { weekday: "long" }),
             _past: d.getTime() + (s.durationMinutes || 60) * 60000 < now,
+            // jadwal-live-now-v1: sesi yang jamnya lagi jalan detik ini.
+            _live: isLiveNow(d, s.durationMinutes, now, s.status),
             // [jadwal-batch-kalender-v1] pertemuan kelas grup tak punya ruang kelas
             // sendiri — tombol Masuk Kelas cuma muncul kalau batch-nya menyertakan
             // tautan rapat, dan tautan itu yang dipakai (bukan classRoomUrl).
@@ -426,14 +429,18 @@ export default function JadwalCalendar({
                           return (
                             <span
                               key={e.id}
-                              title={`${e._time} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${st ? ` · ${st.label}` : ""}`}
+                              title={`${e._time} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${e._live ? " · Sedang berlangsung" : st ? ` · ${st.label}` : ""}`}
                               className="flex items-center gap-1 truncate rounded-md px-1.5 py-0.5 text-[10px] font-bold leading-tight"
                               style={{ background: c.bg, color: c.text, opacity: e._past || isDead(e.status) ? 0.55 : 1 }}
                             >
                               {/* jadwal-flag-avatar-v1: bendera dulu, titik status tetap dipertahankan —
                                   bendera menjawab "kelas apa", titik menjawab "hasilnya apa". */}
                               <LangFlag language={e.language} h={8} className="hidden sm:inline-flex" />
-                              <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: st ? st.color : c.dot }} />
+                              {/* jadwal-live-now-v1: titiknya berdenyut merah saat sesinya jalan. */}
+                              <span
+                                className={`h-1.5 w-1.5 shrink-0 rounded-full ${e._live ? "animate-pulse" : ""}`}
+                                style={{ background: e._live ? LIVE_COLOR : st ? st.color : c.dot }}
+                              />
                               <span className={`truncate ${isDead(e.status) ? "line-through" : ""}`}>{e._time} {e.language}</span>
                             </span>
                           );
@@ -552,8 +559,8 @@ export default function JadwalCalendar({
                                   <button
                                     key={e.id}
                                     onClick={() => setSelected(iso)}
-                                    title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${st ? ` · ${st.label}` : ""}`}
-                                    className="absolute z-10 overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.02]"
+                                    title={`${e._time}${e._end ? `–${e._end}` : ""} · ${e.language}${e.level ? ` ${e.level}` : ""}${e.teacher ? ` · ${e.teacher}` : ""}${e._live ? " · Sedang berlangsung" : st ? ` · ${st.label}` : ""}`}
+                                    className={`absolute overflow-hidden rounded-md px-1.5 py-0.5 text-left shadow-sm transition-transform hover:z-20 hover:scale-[1.02] ${e._live ? "z-20" : "z-10"}`}
                                     style={{
                                       top: ((e._d.getHours() * 60 + e._d.getMinutes() - h0 * 60) / 60) * hourPx + 1,
                                       height: hPx,
@@ -561,7 +568,10 @@ export default function JadwalCalendar({
                                       width: `calc(${w}% - 4px)`,
                                       background: c.bg,
                                       color: c.text,
-                                      borderLeft: `3px solid ${st ? st.color : c.dot}`,
+                                      // jadwal-live-now-v1: sesi berjalan dikelilingi cincin merah
+                                      // (sewarna garis "sekarang") biar kelihatan dari seberang layar.
+                                      borderLeft: `3px solid ${e._live ? LIVE_COLOR : st ? st.color : c.dot}`,
+                                      boxShadow: e._live ? `0 0 0 2px ${LIVE_COLOR}` : undefined,
                                       opacity: e._past || isDead(e.status) ? 0.6 : 1,
                                     }}
                                   >
@@ -571,7 +581,16 @@ export default function JadwalCalendar({
                                         pengajar nempel di baris jam — dua pertanyaan pertama siswa
                                         ("kelas apa" & "sama siapa") kejawab tanpa buka agenda. */}
                                     <p className="flex items-center gap-1 truncate text-[10px] font-extrabold leading-tight">
-                                      <LangFlag language={e.language} h={9} />
+                                      {/* jadwal-live-now-v1: titik denyut menggantikan bendera saat
+                                          sesinya jalan — di blok sesempit ini cuma muat satu penanda. */}
+                                      {e._live ? (
+                                        <span className="relative flex h-2 w-2 shrink-0">
+                                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ background: LIVE_COLOR }} />
+                                          <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: LIVE_COLOR }} />
+                                        </span>
+                                      ) : (
+                                        <LangFlag language={e.language} h={9} />
+                                      )}
                                       <span className={`truncate ${isDead(e.status) ? "line-through" : ""}`}>{e.language}{e.level ? ` ${e.level}` : ""}</span>
                                       {hPx < 32 && <span className="shrink-0 font-bold opacity-70">{e._time}</span>}
                                       {e.sessionNumber ? (
@@ -580,7 +599,11 @@ export default function JadwalCalendar({
                                     </p>
                                     {hPx >= 32 && (
                                       <p className="flex items-center gap-1 text-[10px] font-semibold leading-tight opacity-80">
-                                        <span className="truncate">{e._time}{e._end ? `–${e._end}` : ""}</span>
+                                        {e._live ? (
+                                          <span className="truncate font-extrabold" style={{ color: LIVE_COLOR }}>Sedang berlangsung</span>
+                                        ) : (
+                                          <span className="truncate">{e._time}{e._end ? `–${e._end}` : ""}</span>
+                                        )}
                                         {e.teacher && (
                                           <span className="ml-auto flex shrink-0 items-center">
                                             <TeacherAvatar name={e.teacher} src={e.teacherAvatarUrl} size={14} />
@@ -665,10 +688,17 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
   return (
     <div
       className="rounded-2xl bg-slate-50 p-3"
-      style={isDead(e.status) ? { opacity: 0.65 } : undefined}
+      style={{
+        ...(isDead(e.status) ? { opacity: 0.65 } : null),
+        // jadwal-live-now-v1: kartu sesi yang lagi jalan dikelilingi garis merah.
+        ...(e._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : null),
+      }}
     >
       <div className="flex items-stretch gap-3">
-        <span className="flex w-20 shrink-0 flex-col items-center justify-center rounded-xl py-2" style={{ background: c.bg }}>
+        <span
+          className="flex w-20 shrink-0 flex-col items-center justify-center rounded-xl py-2"
+          style={{ background: e._live ? `${LIVE_COLOR}14` : c.bg }}
+        >
           <span className="text-[16px] font-extrabold" style={{ color: c.text }}>{e._time}</span>
           {e._end && <span className="mt-0.5 text-[11px] font-semibold" style={{ color: c.text }}>{e._end}</span>}
         </span>
@@ -692,6 +722,8 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             {e.isBatch && (
               <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-extrabold text-[#6B7280]">Jadwal tetap</span>
             )}
+            {/* jadwal-live-now-v1: sesi yang jamnya lagi jalan */}
+            {e._live && <LiveBadge />}
             {/* jadwal-riwayat-v1: hasil sesi (presensi / dibatalkan) */}
             {st && (
               <span className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-extrabold" style={{ background: `${st.color}1A`, color: st.color }}>
@@ -709,9 +741,14 @@ function SessionCard({ e, now, studentName }: { e: NormSession; now: number; stu
             )}
             {e.durationMinutes ? <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" strokeWidth={2} /> {e.durationMinutes} menit</span> : null}
             {e.product && <span className="text-[#9CA3AF]">{e.product}</span>}
-            {/* jadwal-riwayat-v1: hitung mundur sesi mendatang */}
-            {!e._past && !isDead(e.status) && (
+            {/* jadwal-riwayat-v1: hitung mundur sesi mendatang. Sesi yang lagi jalan
+                sudah dijawab lencana di atas — "sedang berlangsung" dua kali sebaris
+                cuma bikin barisnya panjang. */}
+            {!e._past && !e._live && !isDead(e.status) && (
               <span className="font-bold text-[#16796E]">{countdownLabel(e._d, now)}</span>
+            )}
+            {e._live && e._end && (
+              <span className="font-bold" style={{ color: LIVE_COLOR }}>selesai {e._end}</span>
             )}
           </span>
         </span>
