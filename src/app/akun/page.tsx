@@ -17,7 +17,9 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, type LucideIcon } from "lucide-react";
+// [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
+import { RectFlag } from "@/components/RectFlag";
 
 import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
@@ -361,9 +363,11 @@ const LANGS_BY_PROGRAM: Record<string, string[]> = {
   "Kelas Kids": ["English","Japanese","Korean","Mandarin","French","Spanish"],
   "English Test Preparation": [],
 };
-const TEST_TYPES = [
-  { key: "IELTS", label: "IELTS", desc: "International English Language Testing System", icon: "🎓" },
-  { key: "TOEFL", label: "TOEFL", desc: "Test of English as a Foreign Language", icon: "📋" },
+// [no-emoji-lucide-v1] ikon emoji diganti bendera negara penyelenggara tes
+// (IELTS = British Council/IDP → GB, TOEFL = ETS → US), selaras FLAG_CODE_BY_SLUG.
+const TEST_TYPES: { key: string; label: string; desc: string; flag: string }[] = [
+  { key: "IELTS", label: "IELTS", desc: "International English Language Testing System", flag: "gb" },
+  { key: "TOEFL", label: "TOEFL", desc: "Test of English as a Foreign Language", flag: "us" },
 ];
 
 // [linguo-patch:onboarding-level-placement-v1] Bahasa yang PUNYA placement test (/silabus/{slug}/coba).
@@ -564,7 +568,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const waMsg = encodeURIComponent(
     `Halo admin Linguo! Saya ${firstName}, mau daftar ${isTestPrep ? (testType ? testType + " Prep" : "IELTS/TOEFL Prep") : program + (lang ? " bahasa " + lang : "")}` +
     (exp === "beginner" ? " (pemula)" : exp === "some" ? " (sudah ada dasar)" : "") +
-    `. Mohon info jadwal dan biayanya ya. Terima kasih! 🙏`
+    `. Mohon info jadwal dan biayanya ya. Terima kasih!`
   );
 
   return (
@@ -581,10 +585,10 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {/* Step 0: Welcome */}
           {step === 0 && (
             <div className="text-center">
-              <div className="text-6xl mb-4">🎉</div>
+              <div className="mb-4 flex justify-center"><span className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-teal-50 text-teal-600"><PartyPopper className="h-8 w-8" /></span></div>
               <h1 className="text-2xl font-extrabold text-gray-900 mb-2">Halo, {firstName}!</h1>
               <p className="text-gray-500 mb-2">Selamat datang di <strong>Linguo.id</strong> — platform belajar 60+ bahasa asing.</p>
-              <p className="text-gray-400 text-sm mb-8">Yuk setup akun kamu dalam 1 menit. Kami bantu temukan kelas yang paling cocok! 🚀</p>
+              <p className="text-gray-400 text-sm mb-8">Yuk setup akun kamu dalam 1 menit. Kami bantu temukan kelas yang paling cocok!</p>
               <div className="grid grid-cols-3 gap-3 mb-8 text-center">
                 {[["60+","Bahasa"],["200+","Siswa Aktif"],["1-on-1","Kelas Private"]].map(([v,l]) => (
                   <div key={l} className="bg-white rounded-2xl p-3 shadow-sm">
@@ -634,19 +638,19 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 2 && isTestPrep && (
             <div>
               <div className="text-center mb-6">
-                <div className="text-4xl mb-2">📝</div>
+                <div className="mb-3 flex justify-center"><span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-teal-600"><FileText className="h-6 w-6" /></span></div>
                 <h2 className="text-xl font-extrabold text-gray-900">Mau persiapan tes apa?</h2>
               </div>
               <div className="space-y-3 mb-5">
                 {TEST_TYPES.map(t => (
                   <button key={t.key} onClick={() => { setTestType(t.key); go(3); }}
                     className={`w-full flex items-center gap-4 p-5 rounded-2xl transition-all text-left active:scale-[0.98] ${testType === t.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
-                    <span className="text-3xl">{t.icon}</span>
+                    <RectFlag code={t.flag} h={26} />
                     <div>
                       <div className="font-bold text-gray-800">{t.label}</div>
                       <div className="text-xs text-gray-400 mt-0.5">{t.desc}</div>
                     </div>
-                    {testType === t.key && <span className="ml-auto text-teal-500 font-bold">✓</span>}
+                    {testType === t.key && <Check className="ml-auto h-4 w-4 shrink-0 text-teal-500" />}
                   </button>
                 ))}
               </div>
@@ -658,14 +662,14 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 2 && !isTestPrep && (
             <div>
               <div className="text-center mb-4">
-                <div className="text-4xl mb-2">🌍</div>
+                <div className="mb-3 flex justify-center"><span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-teal-600"><Globe className="h-6 w-6" /></span></div>
                 <h2 className="text-xl font-extrabold text-gray-900">Bahasa apa yang ingin kamu pelajari?</h2>
                 <p className="text-gray-400 text-sm mt-1">Klik → langsung lanjut</p>
               </div>
               <div className="relative mb-3">
                 <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari bahasa..."
                   className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-gray-300 pl-9" />
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
               </div>
               {/* [linguo-patch:onboarding-lang-catalog-v1] grid bahasa dikelompokkan per region */}
               <div className="max-h-72 overflow-y-auto pb-1 space-y-3">
@@ -676,14 +680,14 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       {g.langs.map(l => (
                         <button key={l} onClick={() => { setLang(l); go(3, 200); }}
                           className={`flex flex-col items-center gap-1 py-3 px-2 rounded-xl text-xs font-semibold transition-all active:scale-95 ${lang === l ? "bg-gray-100 text-teal-700" : "bg-gray-50 hover:bg-gray-100 text-gray-600"}`}>
-                          {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <span className="text-xl">🌐</span>}
+                          {LANG_FLAGS[l] ? <img src={`https://flagcdn.com/w40/${LANG_FLAGS[l]}.png`} alt={l} className="w-7 h-5 object-cover rounded-sm" /> : <Globe className="h-5 w-5 text-gray-400" />}
                           {l}
                         </button>
                       ))}
                     </div>
                   </div>
                 ))}
-                {langNoResults && <div className="text-center text-sm text-gray-400 py-6">Nggak ada bahasa yang cocok 😶</div>}
+                {langNoResults && <div className="text-center text-sm text-gray-400 py-6">Nggak ada bahasa yang cocok</div>}
               </div>
               <button onClick={() => setStep(1)} className="mt-4 text-sm text-gray-400 hover:text-gray-600">← Ganti program</button>
             </div>
@@ -693,26 +697,28 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 3 && (
             <div>
               <div className="text-center mb-6">
-                <div className="text-4xl mb-2">{!isTestPrep && lang && LANG_FLAGS[lang] ? <img src={`https://flagcdn.com/w80/${LANG_FLAGS[lang]}.png`} alt={lang} className="w-14 h-10 object-cover rounded-md mx-auto" /> : "📚"}</div>
+                <div className="mb-3 flex justify-center">{!isTestPrep && lang && LANG_FLAGS[lang]
+                  ? <img src={`https://flagcdn.com/w80/${LANG_FLAGS[lang]}.png`} alt={lang} className="w-14 h-10 object-cover rounded-md" />
+                  : <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-teal-600"><BookOpen className="h-6 w-6" /></span>}</div>
                 <h2 className="text-xl font-extrabold text-gray-900">{isTestPrep ? `Seberapa siap kamu untuk ${testType}?` : `Pengalaman kamu dengan ${lang}?`}</h2>
                 <p className="text-gray-400 text-sm mt-1">Ini bantu kami rekomendasikan level yang tepat</p>
               </div>
               <div className="space-y-3">
                 {[
-                  { key: "beginner", emoji: "🌱", title: isTestPrep ? "Baru mau mulai persiapan" : "Pemula total", desc: isTestPrep ? "Belum tahu harus mulai dari mana" : "Belum pernah belajar sama sekali" },
-                  { key: "some", emoji: "📚", title: isTestPrep ? "Sudah pernah belajar" : "Sudah ada dasar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
+                  { key: "beginner", Icon: Sprout, tint: "bg-emerald-50 text-emerald-600", title: isTestPrep ? "Baru mau mulai persiapan" : "Pemula total", desc: isTestPrep ? "Belum tahu harus mulai dari mana" : "Belum pernah belajar sama sekali" },
+                  { key: "some", Icon: BookOpen, tint: "bg-indigo-50 text-indigo-600", title: isTestPrep ? "Sudah pernah belajar" : "Sudah ada dasar", desc: isTestPrep ? "Pernah ikut kelas atau belajar mandiri" : "Pernah belajar sedikit, mau lanjutkan" },
                 ].map(opt => (
                   <button key={opt.key} onClick={() => {
                       if (opt.key === "beginner") { setExp("beginner"); setLevel(isTestPrep ? "" : "A1.1"); go(4); }
                       else { setExp("some"); if (isTestPrep) { go(4); } else { setLevel(""); } }
                     }}
                     className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all text-left active:scale-[0.98] ${exp === opt.key ? "bg-gray-100" : "bg-gray-50 hover:bg-gray-100"}`}>
-                    <span className="text-3xl">{opt.emoji}</span>
+                    <span className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${opt.tint}`}><opt.Icon className="h-5 w-5" /></span>
                     <div>
                       <div className={`font-bold text-sm ${exp === opt.key ? "text-teal-700" : "text-gray-800"}`}>{opt.title}</div>
                       <div className="text-xs text-gray-400 mt-0.5">{opt.desc}</div>
                     </div>
-                    {exp === opt.key && <span className="ml-auto text-teal-500 font-bold">✓</span>}
+                    {exp === opt.key && <Check className="ml-auto h-4 w-4 shrink-0 text-teal-500" />}
                   </button>
                 ))}
               </div>
@@ -732,7 +738,9 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   </div>
                   <button onClick={() => { setLevel("TBD"); go(4); }}
                     className="w-full flex items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-200 bg-white py-2.5 text-sm font-semibold text-teal-700 hover:bg-teal-50 transition-all">
-                    {placementSlug(lang) ? "🎯 Belum yakin — ikut Placement Test" : "🤔 Belum yakin (pengajar bantu cek)"}
+                    {placementSlug(lang)
+                      ? <><Target className="h-4 w-4" /> Belum yakin — ikut Placement Test</>
+                      : <><HelpCircle className="h-4 w-4" /> Belum yakin (pengajar bantu cek)</>}
                   </button>
                 </div>
               )}
@@ -770,7 +778,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                       </span>
                     )}
                     <span className="absolute inset-0 flex flex-col items-center justify-center gap-0.5 bg-black/45 text-white opacity-0 transition-opacity group-hover:opacity-100">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      <Camera className="h-5 w-5" />
                       <span className="text-[10px] font-semibold">Ganti</span>
                     </span>
                   </button>
@@ -784,7 +792,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                 <div>
                   <label className="text-xs text-gray-500 mb-1 block">Email</label>
                   <div className="flex items-center gap-2 rounded-xl bg-gray-50 px-4 py-2.5">
-                    <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                    <Mail className="h-4 w-4 shrink-0 text-gray-400" />
                     <span className="truncate text-sm text-gray-500">{user?.email || "—"}</span>
                     <span className="ml-auto shrink-0 rounded-full bg-gray-200 px-2 py-0.5 text-[10px] font-semibold text-gray-500">Google</span>
                   </div>
@@ -806,7 +814,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                   <label className="text-xs text-gray-500 mb-1 block">Nomor WhatsApp aktif</label>
                   <div className={`flex items-stretch overflow-hidden rounded-xl border bg-white focus-within:border-gray-300 ${triedNext && !waValid ? "border-red-300" : "border-gray-200"}`}>
                     <span className="flex shrink-0 items-center gap-1.5 whitespace-nowrap border-r border-gray-200 bg-gray-50 px-3 text-sm font-semibold text-gray-600">
-                      <span className="text-base leading-none">🇮🇩</span> +62
+                      <RectFlag code="id" h={14} /> +62
                     </span>
                     <input
                       value={wa}
@@ -832,7 +840,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
                     }}
                     className={`flex w-full items-center gap-2 rounded-xl border px-4 py-2.5 text-left text-sm outline-none focus:border-gray-300 ${triedNext && !birthdate ? "border-red-300" : "border-gray-200"} ${birthdate ? "text-gray-800" : "text-gray-400"}`}
                   >
-                    <svg className="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    <Calendar className="h-4 w-4 shrink-0 text-gray-400" />
                     {birthdate
                       ? (() => { const d = new Date(birthdate); const mm = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"]; return `${d.getDate()} ${mm[d.getMonth()]} ${d.getFullYear()}`; })()
                       : "Pilih tanggal lahir"}
@@ -929,7 +937,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               {/* Indikasi field yang masih kurang — muncul setelah klik Lanjut (#6) */}
               {triedNext && !profileValid && missing.length > 0 && (
                 <div className="mb-3 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-[12px] text-amber-700">
-                  <svg className="mt-0.5 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>Masih perlu diisi: <strong>{missing.join(", ")}</strong></span>
                 </div>
               )}
@@ -949,18 +957,20 @@ function OnboardingWizard({ user, studentId, onDone }: {
           {step === 5 && (
             <div>
               <div className="text-center mb-5">
-                <div className="text-5xl mb-3">🚀</div>
+                <div className="mb-3 flex justify-center"><span className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-teal-50 text-teal-600"><Rocket className="h-7 w-7" /></span></div>
                 <h2 className="text-xl font-extrabold text-gray-900">Siap mulai belajar!</h2>
                 <p className="text-gray-400 text-sm mt-1">Ini rangkuman pilihanmu</p>
               </div>
               <div className="bg-white rounded-2xl p-4 mb-5 space-y-3">
-                {[
-                  ["🎯 Program", WIZARD_PROGRAMS.find(p => p.key === program)?.label || program],
-                  ...(isTestPrep ? [["📝 Tes", testType]] : [["🌍 Bahasa", lang]]),
-                  ["📚 Level", level === "A1.1" ? "Pemula (A1.1)" : level === "TBD" ? "Akan dites dulu" : level ? `Level ${level}` : "Akan dites dulu"],
-                ].map(([label, value]) => (
+                {([
+                  { Icon: Target, label: "Program", value: WIZARD_PROGRAMS.find(p => p.key === program)?.label || program },
+                  ...(isTestPrep
+                    ? [{ Icon: FileText, label: "Tes", value: testType }]
+                    : [{ Icon: Globe, label: "Bahasa", value: lang }]),
+                  { Icon: Layers, label: "Level", value: level === "A1.1" ? "Pemula (A1.1)" : level === "TBD" ? "Akan dites dulu" : level ? `Level ${level}` : "Akan dites dulu" },
+                ]).map(({ Icon, label, value }) => (
                   <div key={label} className="flex items-center justify-between text-sm">
-                    <span className="text-gray-400">{label}</span>
+                    <span className="flex items-center gap-2 text-gray-400"><Icon className="h-4 w-4" /> {label}</span>
                     <span className="font-semibold text-gray-800">{value}</span>
                   </div>
                 ))}
@@ -976,7 +986,7 @@ function OnboardingWizard({ user, studentId, onDone }: {
               </a>
               {level === "TBD" && !isTestPrep && placementSlug(lang) && (
                 <a href={`/silabus/${placementSlug(lang)}/coba`} onClick={finish} className="w-full flex items-center justify-center gap-2 border-2 border-slate-200 text-teal-600 font-bold py-3.5 rounded-2xl text-sm hover:bg-teal-50 transition-all mb-3">
-                  🎯 Ambil Placement Test dulu
+                  <Target className="h-4 w-4" /> Ambil Placement Test dulu
                 </a>
               )}
               <button onClick={finish} className="w-full text-sm text-gray-400 hover:text-gray-600 py-2 transition-colors">
@@ -3416,56 +3426,57 @@ export default function AkunPage() {
           user={user}
           studentId={undefined}
           onDone={async (data) => {
+            const isTestPrep = data.program === "English Test Preparation";
+            const onbLevel = data.level || (data.exp === "beginner" ? "A1.1" : "TBD");
+            const onbName = data.name || user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa";
+            const onbAvatar = user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null;
             try {
-              // 1. Find-or-create student record (manual because email is not UNIQUE)
-              //    Legit use case: 1 parent email can have multiple children.
-              //    For /akun self-service: first match wins.
-              const studentPayload = {
-                name: data.name || user?.user_metadata?.full_name || user?.email?.split("@")[0] || "Siswa",
+              // 1. [onboarding-server-insert-v1] Simpan siswa + registrasi lewat
+              //    /api/enroll (service role). SEBELUMNYA di-insert langsung dari
+              //    browser dan SELALU ditolak RLS tabel `registrations` ("new row
+              //    violates row-level security policy"). Efeknya wizard mentok di
+              //    langkah 5 — termasuk tombol "Lihat dashboard dulu", karena dia
+              //    memakai handler yang sama.
+              const res = await fetch("/api/enroll", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  email: user?.email,
+                  name: onbName,
+                  wa_number: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
+                  avatar_url: onbAvatar,
+                  product: data.program,
+                  language: data.testType || data.lang || null,
+                  level: onbLevel,
+                  duration: isTestPrep ? "90" : "60",
+                  amount: 0,
+                  ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
+                  birth_date: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
+                  domicile: data.domicile || null,     // [linguo-patch:onboarding-profile-fields-v1]
+                  experience: data.exp || null,
+                  lead_source: "Onboarding Wizard", // lead CRM dibikin server-side juga
+                  pipeline_status: "Aktif",
+                }),
+              });
+              const json = await res.json().catch(() => ({} as any));
+              if (!res.ok || !json?.registration?.id) {
+                throw new Error(json?.error || `Gagal menyimpan pendaftaran (HTTP ${res.status})`);
+              }
+              const regRow = { ...json.registration, teachers: null };
+
+              // Baris siswa buat state dashboard — baca ulang (SELECT lolos RLS);
+              // kalau gagal, pakai bentuk minimal dari respons API.
+              const { data: freshStudent } = await supabase
+                .from("students").select("*").eq("id", regRow.student_id).maybeSingle();
+              let studentRow: any = freshStudent || {
+                id: regRow.student_id,
+                name: onbName,
                 email: user?.email,
-                whatsapp: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
-                birth_date: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
-                domicile: data.domicile || null,     // [linguo-patch:onboarding-profile-fields-v1]
-                avatar_url: user?.user_metadata?.avatar_url ?? user?.user_metadata?.picture ?? null,
+                whatsapp: data.wa || null,
+                birth_date: data.birthdate || null,
+                domicile: data.domicile || null,
+                avatar_url: onbAvatar,
               };
-              let studentRow: any = null;
-              const { data: existing, error: lookupError } = await supabase
-                .from("students")
-                .select("*")
-                .eq("email", user?.email || "")
-                .limit(1)
-                .maybeSingle();
-              if (lookupError) {
-                throw new Error(lookupError.message || "Gagal mencari data siswa");
-              }
-              if (existing) {
-                // [linguo-patch:onboarding-profile-fields-v1] isi field profil yg masih kosong
-                const { data: updated } = await supabase
-                  .from("students")
-                  .update({
-                    name: !isPlaceholderName(existing.name) ? existing.name : studentPayload.name,
-                    whatsapp: existing.whatsapp || studentPayload.whatsapp,
-                    birth_date: existing.birth_date || studentPayload.birth_date,
-                    domicile: existing.domicile || studentPayload.domicile,
-                  })
-                  .eq("id", existing.id)
-                  .select()
-                  .single();
-                studentRow = updated || existing;
-              } else {
-                const { data: inserted, error: insertError } = await supabase
-                  .from("students")
-                  .insert(studentPayload)
-                  .select()
-                  .single();
-                if (insertError || !inserted) {
-                  throw new Error(insertError?.message || "Gagal menyimpan data siswa");
-                }
-                studentRow = inserted;
-              }
-              if (!studentRow) {
-                throw new Error("Gagal menyimpan data siswa");
-              }
 
               // [linguo-patch:onboarding-avatar-upload-v1] upload foto custom kalau ada (butuh student.id)
               if (data.avatarFile && studentRow?.id) {
@@ -3486,59 +3497,7 @@ export default function AkunPage() {
                 } catch (e) { console.warn("Avatar upload non-fatal:", e); }
               }
 
-              // 2. Insert registration with safe defaults (admin will fill in price/sessions later)
-              const isTestPrep = data.program === "English Test Preparation";
-              const { data: regRow, error: regError } = await supabase
-                .from("registrations")
-                .insert({
-                  student_id: studentRow.id,
-                  affiliate_ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
-                  product: data.program,
-                  language: data.testType || data.lang || null,
-                  level: data.level || (data.exp === "beginner" ? "A1.1" : "TBD"),
-                  status: "Menunggu Pembayaran",
-                  payment_status: "Belum Bayar",
-                  pipeline_status: "Aktif",
-                  sessions_total: 0,
-                  sessions_used: 0,
-                  duration: isTestPrep ? "90" : "60",
-                  total_amount: 0,
-                  registration_date: new Date().toISOString(),
-                })
-                .select(`
-                  id, product, language, level, status,
-                  sessions_total, sessions_used,
-                  duration, total_amount, payment_status,
-                  registration_date, teacher_id,
-                  payment_proof_url, payment_proof_uploaded_at,
-                  payment_verified_at, payment_rejection_reason,
-                  teachers(name, whatsapp, avatar_url)
-                `)
-                .single();
-              if (regError || !regRow) {
-                throw new Error(regError?.message || "Gagal membuat registrasi");
-              }
-
-              // 3. Auto-save to leads table for CRM tracking (non-blocking)
-              try {
-                const subject = data.testType || data.lang || "";
-                // [linguo-patch:lead-insert-fix-v1] insert (bukan upsert) — leads.email ga unique
-                await supabase.from("leads").insert({
-                  name: studentPayload.name,
-                  email: user?.email || "",
-                  wa_number: data.wa || null, // [linguo-patch:onboarding-wa-step-v1]
-                  program: data.program,
-                  language: subject || null,
-                  source: "Onboarding Wizard",
-                  experience: data.exp || null,
-                  birthdate: data.birthdate || null, // [linguo-patch:onboarding-profile-fields-v1]
-                  domicile: data.domicile || null,   // [linguo-patch:onboarding-profile-fields-v1]
-                });
-              } catch (e) {
-                console.warn("Lead save non-fatal:", e);
-              }
-
-              // 4. Clear wizard cache, set real student state (skip mock card path)
+              // 2. Bersihkan cache wizard, pasang state siswa asli (lewati jalur kartu mock)
               try {
                 localStorage.setItem(`linguo_onboarded_${user?.id || user?.email}`, "1");
                 localStorage.removeItem(`linguo_wizard_${user?.id || user?.email}`);
@@ -3549,11 +3508,17 @@ export default function AkunPage() {
               setWizardCompleted(false);
               setShowSuccessAnim(true); // [linguo-patch:onboarding-success-lottie-v1]
             } catch (err: any) {
+              // [onboarding-fallback-dashboard-v1] Gagal simpan JANGAN mengunci user di
+              // wizard: dulu cuma `alert()` lalu balik ke langkah 5 tanpa jalan keluar,
+              // jadi "Lihat dashboard dulu" pun tak pernah membuka dashboard. Sekarang
+              // pilihannya tetap dibuka lewat kartu pending (mock) + toast penjelasan.
               console.error("Onboarding save failed:", err);
-              alert(
-                "Gagal menyimpan registrasi: " + (err?.message || "unknown") +
-                "\n\nSilakan coba lagi atau hubungi tim Linguo via WhatsApp."
-              );
+              toast.error("Registrasi belum tersimpan — tim Linguo akan bantu lewat WhatsApp.", {
+                description: String(err?.message || "Kesalahan tidak diketahui"),
+              });
+              setWizardData({ program: data.program, lang: data.lang, testType: data.testType, exp: data.exp });
+              setWizardCompleted(true);
+              setShowOnboarding(false);
             }
           }}
         />
@@ -3595,12 +3560,12 @@ export default function AkunPage() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white flex flex-col items-center justify-center px-4">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm text-center">
-          <div className="text-5xl mb-4">👋</div>
+          <div className="mb-4 flex justify-center"><span className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-teal-50 text-teal-600"><Hand className="h-7 w-7" /></span></div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">Halo, {firstName}!</h2>
           <p className="text-gray-500 mb-6 text-sm leading-relaxed">Akunmu sudah siap. Yuk temukan kelas yang paling cocok untukmu!</p>
           <button onClick={() => setShowOnboarding(true)}
             className="inline-flex h-12 items-center gap-2 rounded-xl bg-teal-600 px-6 text-sm font-semibold text-white hover:bg-teal-700 transition-colors shadow-lg shadow-teal-200 w-full justify-center">
-            ✨ Mulai Onboarding
+            <Sparkles className="h-4 w-4" /> Mulai Onboarding
           </button>
           <button onClick={signOut} className="block mx-auto mt-4 text-sm text-gray-400 hover:text-gray-600 transition-colors">Keluar</button>
         </motion.div>

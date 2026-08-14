@@ -33,6 +33,8 @@ const sbHeaders = {
 async function captureLead(p: {
   email: string; name?: string; wa_number?: string | null;
   product: string; language?: string | null; level?: string | null; amount?: number;
+  source?: string | null; experience?: string | null;
+  birthdate?: string | null; domicile?: string | null;
 }): Promise<void> {
   try {
     await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
@@ -45,8 +47,11 @@ async function captureLead(p: {
         program: p.product,
         language: p.language || null,
         level: p.level || null,
-        source: "self-register",
+        source: p.source || "self-register",
         amount: p.amount || 0,
+        ...(p.experience ? { experience: p.experience } : {}),
+        ...(p.birthdate ? { birthdate: p.birthdate } : {}),
+        ...(p.domicile ? { domicile: p.domicile } : {}),
       }),
     });
   } catch (e) {
@@ -126,6 +131,12 @@ export async function POST(req: NextRequest) {
       amount,            // total_amount (rupiah)
       ref_code,
       with_invoice,      // true → langsung buat invoice Xendit & balikin invoice_url
+      // [onboarding-server-insert-v1] dipakai wizard onboarding /akun:
+      birth_date,        // ISO "YYYY-MM-DD"
+      domicile,          // "Kota, Provinsi" / "Negara (LN)"
+      experience,        // "beginner" | "some"
+      lead_source,       // override kolom leads.source (mis. "Onboarding Wizard")
+      pipeline_status,   // opsional — biarin default DB kalau tak dikirim
     } = body || {};
 
     if (!email || !product) {
@@ -160,6 +171,8 @@ export async function POST(req: NextRequest) {
             name: name || email,
             ...(wa_number ? { whatsapp: wa_number } : {}),
             ...(avatar_url ? { avatar_url } : {}),
+            ...(birth_date ? { birth_date } : {}),
+            ...(domicile ? { domicile } : {}),
           }),
         });
       } catch (e) {
@@ -175,6 +188,8 @@ export async function POST(req: NextRequest) {
           name: name || email,
           ...(wa_number ? { whatsapp: wa_number } : {}),
           ...(avatar_url ? { avatar_url } : {}),
+          ...(birth_date ? { birth_date } : {}),
+          ...(domicile ? { domicile } : {}),
         }),
       });
       if (!insRes.ok) {
@@ -206,6 +221,7 @@ export async function POST(req: NextRequest) {
         total_amount: amount || 0,
         payment_status: "Belum Bayar",
         enrollment_source: "self_service",
+        ...(pipeline_status ? { pipeline_status } : {}),
         registration_date: new Date().toISOString(),
       }),
     });
@@ -222,7 +238,10 @@ export async function POST(req: NextRequest) {
     //    jadi client dapat balasan seketika (tanpa nunggu Xendit ±1-3 dtk).
     after(async () => {
       // Lead CRM (non-fatal). Tabel leads ga punya kolom notes → note di `source`.
-      await captureLead({ email, name, wa_number, product, language, level, amount });
+      await captureLead({
+        email, name, wa_number, product, language, level, amount,
+        source: lead_source, experience, birthdate: birth_date, domicile,
+      });
       // Invoice Xendit hanya kalau diminta (jalur "Bayar Otomatis"). Url di-PATCH
       // ke baris registrations begitu jadi; PaymentCard yang redirect-in.
       if (with_invoice) {
