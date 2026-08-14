@@ -19,6 +19,12 @@
                            tangannya. Fotonya dibaca AI waktu koreksi.
    Ditambah tombol tampil/sembunyi transliterasi untuk kuis beraksara non-Latin.
 
+   [kuis-durasi-pengerjaan-v1] Halaman ini juga yang memegang jamnya. Dua hal yang
+   berbeda: BATAS waktu (opsional, dari pengajar — hitung mundur & kirim otomatis
+   saat habis) dan LAMA pengerjaan (selalu direkam, ikut terkirim waktu submit).
+   Yang kedua itu yang dibaca pengajar: dua siswa sama-sama 100% tapi 5 menit vs
+   40 menit bukan dua siswa dengan penguasaan yang sama.
+
    [kuis-per-soal-v1] Soalnya ditampilkan SATU PER LAYAR, bukan sebagai satu gulungan
    panjang. Kuis ini dikerjakan dari HP di 15 menit awal kelas: daftar 20 soal
    sekaligus membuat siswa menggulir mencari nomor yang belum diisi, dan soal
@@ -31,7 +37,7 @@ import { useParams } from "next/navigation";
 import {
   Loader2, CheckCircle2, Send, ClipboardList, PartyPopper,
   Languages, Camera, Keyboard, X, ImageIcon,
-  ArrowLeft, ArrowRight, ListChecks, Play,
+  ArrowLeft, ArrowRight, ListChecks, Play, Timer,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
@@ -51,6 +57,19 @@ function partOf(q: PublicQuizQuestion): 1 | 2 {
 /** Sudah terisi? Jawaban bagian 2 bisa berupa objek {text} atau {image_url}, jadi
  *  "ada isinya" tidak bisa lagi dinilai dari String(v) — objek kosong pun jadi
  *  "[object Object]" dan akan terhitung terisi. */
+/** 754 -> "12:34". Dipakai untuk hitung mundur & lama pengerjaan. */
+function jam(sec: number): string {
+  const s = Math.max(0, Math.round(sec));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+/** "12 menit 30 detik" — bentuk panjang untuk kartu hasil. */
+function lamaPanjang(sec: number): string {
+  const s = Math.max(0, Math.round(sec));
+  const m = Math.floor(s / 60);
+  return m > 0 ? `${m} menit ${s % 60} detik` : `${s} detik`;
+}
+
 function isAnswered(v: any): boolean {
   if (v === undefined || v === null) return false;
   if (typeof v === "object") {
@@ -75,7 +94,7 @@ export default function QuizTakePage() {
   const [studentId, setStudentId] = useState("");
   const [responses, setResponses] = useState<Record<number, any>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<{ total: number; max: number; results: any[]; analysis?: any } | null>(null);
+  const [result, setResult] = useState<{ total: number; max: number; results: any[]; analysis?: any; duration_sec?: number | null } | null>(null);
   // Transliterasi menyala default: kuis ini memang dibuat dengan alih aksara justru
   // karena siswanya belum lancar membaca aksara aslinya. Yang sudah lancar bisa
   // mematikannya untuk melatih diri.
@@ -85,6 +104,17 @@ export default function QuizTakePage() {
      dan "sedang memeriksa" tidak mungkin terjadi bersamaan. */
   const [step, setStep] = useState(-1);
   const advanceRef = useRef<number | null>(null);
+
+  /* [kuis-durasi-pengerjaan-v1] Jam pengerjaan. `startedAt` = epoch ms saat tombol
+     "Mulai Kerjakan" ditekan; `elapsed` cuma turunannya yang berdetak tiap detik.
+     Waktu mulainya dititipkan ke localStorage supaya halaman yang ter-reload (HP
+     kehabisan memori, tab ketutup) tidak memberi hadiah waktu baru. Ini pagar
+     terhadap KECELAKAAN, bukan pengawas ujian: kuis awal kelas memang tidak
+     diproktor, dan jam yang dipakai tetap jam HP siswa. */
+  const [startedAt, setStartedAt] = useState<number | null>(null);
+  const [elapsed, setElapsed] = useState(0);
+  const autoSentRef = useRef(false);
+  const startKey = `linguo-kuis-mulai-${token}`;
 
   useEffect(() => {
     (async () => {
@@ -116,6 +146,33 @@ export default function QuizTakePage() {
 
   const questions = quiz?.questions ?? [];
   const total = questions.length;
+  // Batas waktu dalam detik; 0 = tanpa hitung mundur (durasinya tetap direkam).
+  const limitSec = Math.max(0, Math.round(Number(quiz?.time_limit_min) || 0) * 60);
+  const sisaSec = startedAt && limitSec ? Math.max(0, limitSec - elapsed) : 0;
+
+  /* Sambung lagi jam yang sedang berjalan sesudah reload. Kalau catatannya sudah
+     lewat batas (atau lewat 12 jam untuk kuis tanpa batas), catatan itu dibuang:
+     siswa yang membuka link lama besok paginya harus dapat kuis yang utuh, bukan
+     kuis yang waktunya sudah habis sebelum ia menekan apa pun. */
+  useEffect(() => {
+    if (!quiz || startedAt) return;
+    const saved = Number(window.localStorage.getItem(startKey) || 0);
+    if (!saved) return;
+    const lewat = (Date.now() - saved) / 1000;
+    const basi = limitSec ? lewat >= limitSec : lewat >= 12 * 3600;
+    if (basi) { window.localStorage.removeItem(startKey); return; }
+    setStartedAt(saved);
+    setElapsed(Math.round(lewat));
+  }, [quiz, startedAt, startKey, limitSec]);
+
+  // Satu detak per detik, cuma selama kuisnya benar-benar sedang dikerjakan.
+  useEffect(() => {
+    if (!startedAt || result) return;
+    const tick = () => setElapsed(Math.round((Date.now() - startedAt) / 1000));
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, [startedAt, result]);
   // Soal pertama bagian 2 — di situlah spanduk "Bagian 2" muncul, sekali saja.
   const firstOfPart2 = useMemo(() => questions.findIndex((q) => partOf(q) === 2), [questions]);
 
@@ -148,23 +205,56 @@ export default function QuizTakePage() {
     if (!total) { window.alert("Kuis ini belum berisi soal. Hubungi pengajarmu ya."); return; }
     if (roster.length > 0 && !studentId) { window.alert("Pilih nama kamu dulu ya."); return; }
     if (roster.length === 0 && !name.trim()) { window.alert("Isi nama kamu dulu ya."); return; }
+    // Jam mulai dicatat di sini, bukan saat halaman terbuka: siswa sering membuka
+    // link duluan lalu menunggu aba-aba pengajar, dan waktu tunggu itu bukan waktu
+    // mengerjakan. Kalau ada catatan lama yang masih hidup, itu yang dipakai.
+    if (!startedAt) {
+      const now = Date.now();
+      setStartedAt(now);
+      setElapsed(0);
+      try { window.localStorage.setItem(startKey, String(now)); } catch { /* mode privat */ }
+    }
     goto(0);
   }
 
-  async function handleSubmit() {
-    if (!quiz) return;
+  /** @param auto true = waktunya habis, bukan siswa yang menekan Kirim. */
+  async function handleSubmit(auto = false) {
+    if (!quiz || submitting) return;
     if (roster.length > 0 && !studentId) { window.alert("Pilih nama kamu dulu ya."); return; }
     if (roster.length === 0 && !name.trim()) { window.alert("Isi nama kamu dulu ya."); return; }
-    if (answeredCount < quiz.questions.length) {
+    // Waktu habis TIDAK bertanya apa-apa: dialog konfirmasi yang menunggu jawaban
+    // justru menahan jawaban yang sudah diisi di layar siswa.
+    if (!auto && answeredCount < quiz.questions.length) {
       if (!window.confirm(`Baru ${answeredCount}/${quiz.questions.length} soal terisi. Kirim sekarang?`)) return;
     }
     setSubmitting(true);
-    const r = await submitPublicQuiz(token, name.trim(), responses, studentId || null);
+    const dipakai = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
+    const r = await submitPublicQuiz(token, name.trim(), responses, studentId || null, dipakai);
     setSubmitting(false);
-    if ("error" in r) { window.alert("Gagal mengirim: " + r.error); return; }
-    setResult(r);
+    if ("error" in r) {
+      window.alert("Gagal mengirim: " + r.error);
+      /* Penjaga `autoSentRef` sengaja TIDAK dibuka lagi: waktunya sudah lewat, jadi
+         syarat kirim-otomatis selalu terpenuhi — membukanya berarti mencoba ulang
+         tiap detik, lengkap dengan alert-nya. Siswa dilempar ke halaman periksa
+         supaya tombol "Kirim Jawaban" ada di depan matanya. */
+      if (auto) goto(total);
+      return;
+    }
+    try { window.localStorage.removeItem(startKey); } catch { /* mode privat */ }
+    setResult({ ...r, duration_sec: r.duration_sec ?? dipakai ?? null });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  /* [kuis-durasi-pengerjaan-v1] Waktu habis → kirim apa adanya, sekali saja.
+     Diletakkan sebagai efek terpisah dari detaknya supaya pengiriman tidak ikut
+     terpanggil tiap detik kalau submit-nya gagal. */
+  useEffect(() => {
+    if (!limitSec || !startedAt || result || submitting || autoSentRef.current) return;
+    if (elapsed < limitSec) return;
+    autoSentRef.current = true;
+    handleSubmit(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [elapsed, limitSec, startedAt, result, submitting]);
 
   // ── States ────────────────────────────────────────────────────────────────
   if (loading) {
@@ -203,6 +293,13 @@ export default function QuizTakePage() {
             <p className="mt-1 text-sm text-slate-500">Jawaban kamu sudah dikoreksi otomatis.</p>
             <div className="mt-4 text-4xl font-extrabold" style={{ color }}>{pct}%</div>
             <p className="text-sm font-medium text-slate-600">Skor {result.total} / {result.max}</p>
+            {/* Lama pengerjaan ditampilkan ke siswa juga, bukan cuma dikirim ke
+                pengajar — angka yang diam-diam direkam terasa seperti diawasi. */}
+            {!!result.duration_sec && (
+              <p className="mt-1 flex items-center justify-center gap-1.5 text-[12px] text-slate-400">
+                <Timer className="h-3.5 w-3.5" /> Dikerjakan dalam {lamaPanjang(result.duration_sec)}
+              </p>
+            )}
           </div>
 
           {/* [kuis-sesi-analisis-v1] Rapor langsung sesudah kirim. Halaman ini
@@ -301,14 +398,14 @@ export default function QuizTakePage() {
                 {count1 > 0 && (
                   <li className="flex gap-2">
                     <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
-                    <span><b>Bagian 1 · {count1} soal</b> — pilih satu jawaban yang paling tepat.</span>
+                    <span><b>Bagian 1 · {count1} soal</b> — pilihan ganda, pilih satu jawaban yang paling tepat.</span>
                   </li>
                 )}
                 {count2 > 0 && (
                   <li className="flex gap-2">
                     <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                     <span>
-                      <b>Bagian 2 · {count2} soal</b> — uraian.{" "}
+                      <b>Bagian 2 · {count2} soal</b> — jawabannya ditulis sendiri.{" "}
                       {quiz?.part2_allow_upload !== false
                         ? "Boleh diketik langsung, atau ditulis tangan di kertas lalu difoto & diunggah."
                         : "Ditulis dengan kalimat lengkap."}
@@ -318,6 +415,17 @@ export default function QuizTakePage() {
                 <li className="flex gap-2">
                   <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                   <span>Soalnya muncul satu per satu. Bisa mundur & mengubah jawaban sebelum dikirim.</span>
+                </li>
+                {/* Batas waktu harus terbaca SEBELUM tombol Mulai — begitu ditekan,
+                    hitung mundurnya jalan dan tidak bisa dijeda. */}
+                <li className="flex gap-2">
+                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
+                  <span>
+                    {limitSec > 0
+                      ? <><b>Waktu {Math.round(limitSec / 60)} menit</b> — mulai berjalan begitu kamu tekan
+                        tombol di bawah, dan jawabanmu terkirim otomatis saat waktunya habis.</>
+                      : <>Tanpa batas waktu, tapi lama pengerjaanmu tercatat untuk pengajar.</>}
+                  </span>
                 </li>
               </ul>
             </div>
@@ -345,6 +453,22 @@ export default function QuizTakePage() {
                   </span>
                 )}
                 <span className="ml-auto text-[11px] text-slate-500">{answeredCount} terisi</span>
+                {/* Sisa waktu (atau lama pengerjaan kalau tanpa batas). Menyala merah
+                    di 2 menit terakhir — peringatan yang datang saat masih bisa
+                    ditindaklanjuti, bukan saat sudah lewat. */}
+                {startedAt !== null && (
+                  <span className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold tabular-nums"
+                    style={
+                      limitSec > 0
+                        ? (sisaSec <= 120
+                            ? { background: "#fee2e2", color: "#b91c1c" }
+                            : { background: "#e7f6f5", color: "#0f766e" })
+                        : { background: "#f1f5f9", color: "#64748b" }
+                    }>
+                    <Timer className="h-3 w-3" />
+                    {limitSec > 0 ? jam(sisaSec) : jam(elapsed)}
+                  </span>
+                )}
                 {hasTranslit && (
                   <button onClick={() => setShowTranslit((v) => !v)}
                     title={showTranslit ? "Sembunyikan cara baca" : "Tampilkan cara baca"}
@@ -370,7 +494,7 @@ export default function QuizTakePage() {
             {parts.multi && (step === 0 || step === firstOfPart2) && (
               <div className="mb-3 rounded-xl px-4 py-3" style={{ background: "#e7f6f5", borderLeft: `4px solid ${BRAND}` }}>
                 <p className="text-sm font-bold" style={{ color: "#0f766e" }}>
-                  {partOf(cur) === 1 ? "Bagian 1 — Objektif" : "Bagian 2 — Uraian & Menulis"}
+                  {partOf(cur) === 1 ? "Bagian 1 — Pilihan Ganda" : "Bagian 2 — Menulis Jawaban"}
                 </p>
                 <p className="text-[11.5px] text-slate-500">
                   {partOf(cur) === 1
@@ -458,6 +582,21 @@ export default function QuizTakePage() {
           </>
         )}
 
+        {/* Waktu habis bisa mengirim dari layar soal mana pun — tanpa tirai ini
+            layarnya diam saja padahal jawaban sedang dikoreksi, dan siswa menekan
+            tombol lain sambil mengira aplikasinya menggantung. */}
+        {submitting && step < total && (
+          <div className="fixed inset-0 z-50 grid place-items-center bg-slate-900/60 px-6 backdrop-blur-sm">
+            <div className="w-full max-w-xs rounded-2xl bg-white p-5 text-center shadow-xl">
+              <Loader2 className="mx-auto h-7 w-7 animate-spin" style={{ color: BRAND }} />
+              <p className="mt-2 text-sm font-bold text-slate-800">Waktu habis</p>
+              <p className="mt-0.5 text-[12.5px] text-slate-500">
+                Jawabanmu sedang dikirim & dikoreksi. Jangan tutup halaman ini ya.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* ── Halaman periksa ────────────────────────────────────────────── */}
         {step === total && total > 0 && (
           <div className="space-y-3">
@@ -499,7 +638,7 @@ export default function QuizTakePage() {
                 className="flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-600">
                 <ArrowLeft className="h-4 w-4" /> Soal terakhir
               </button>
-              <button onClick={handleSubmit} disabled={submitting}
+              <button onClick={() => handleSubmit()} disabled={submitting}
                 className="flex flex-1 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold text-white disabled:opacity-60"
                 style={{ background: BRAND }}>
                 {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}

@@ -35,6 +35,8 @@ export interface PublicQuiz {
   questions: PublicQuizQuestion[];
   translit?: boolean;
   part2_allow_upload?: boolean;
+  /** [kuis-durasi-pengerjaan-v1] Batas waktu (menit). null/0 = tanpa hitung mundur. */
+  time_limit_min?: number | null;
   roster?: { id: string; name: string }[];
   session_label?: string | null;
 }
@@ -109,12 +111,17 @@ export async function submitPublicQuiz(
   studentName: string,
   responses: Record<number, any>,
   studentId?: string | null,
+  /** [kuis-durasi-pengerjaan-v1] Lama pengerjaan (detik) sejak tombol "Mulai" ditekan. */
+  durationSec?: number | null,
 ): Promise<
-  | { total: number; max: number; results: GradeResult[]; analysis: QuizAnalysis | null }
+  | { total: number; max: number; results: GradeResult[]; analysis: QuizAnalysis | null; duration_sec: number | null }
   | { error: string }
 > {
   const { data, error } = await callQuizPublic(
-    { action: "submit", token, student_name: studentName, student_id: studentId ?? null, responses },
+    {
+      action: "submit", token, student_name: studentName, student_id: studentId ?? null, responses,
+      duration_sec: durationSec ?? null,
+    },
     180000,
   );
   if (error) return { error };
@@ -124,6 +131,7 @@ export async function submitPublicQuiz(
     max: Number(data.max) || 0,
     results: data.results ?? [],
     analysis: data.analysis && typeof data.analysis === "object" ? (data.analysis as QuizAnalysis) : null,
+    duration_sec: Number(data.duration_sec) > 0 ? Number(data.duration_sec) : null,
   };
 }
 
