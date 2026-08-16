@@ -20,7 +20,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
-import { liburOn, liburSingkat } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
+import { liburOn, liburLabel, liburTooltip } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
   addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
@@ -415,8 +415,8 @@ export default function JadwalCalendar({
                       key={cell.iso}
                       onClick={() => evs.length && setSelected(cell.iso)}
                       tabIndex={evs.length ? 0 : -1}
-                      title={libur ? `${libur.name}${libur.cutiBersama ? " (cuti bersama)" : " (libur nasional)"}` : undefined}
-                      aria-label={`${cell.d} ${MONTHS[cursor.getMonth()]}${libur ? `, ${libur.name}` : ""}${evs.length ? `, ${evs.length} sesi` : ""}`}
+                      title={libur ? liburTooltip(libur) : undefined}
+                      aria-label={`${cell.d} ${MONTHS[cursor.getMonth()]}${libur ? `, ${liburTooltip(libur)}` : ""}${evs.length ? `, ${evs.length} sesi` : ""}`}
                       className={[
                         "flex min-h-[44px] flex-col gap-1 rounded-xl border border-slate-100 p-1.5 text-left transition sm:min-h-[78px] sm:p-2",
                         evs.length ? "cursor-pointer hover:bg-slate-50" : "cursor-default",
@@ -438,7 +438,7 @@ export default function JadwalCalendar({
                           <span className={`text-[12px] font-extrabold sm:text-[13px] ${libur ? "libur-teks" : "text-[#12172B]"}`}>{cell.d}</span>
                         )}
                         {/* [kalender-hari-libur-v1] nama libur — dipotong, lengkapnya di tooltip sel */}
-                        {libur && <span className="libur-teks min-w-0 flex-1 truncate text-right text-[9px] font-bold leading-tight">{liburSingkat(libur)}</span>}
+                        {libur && <span className="libur-teks min-w-0 flex-1 truncate text-right text-[9px] font-bold leading-tight">{liburLabel(libur)}</span>}
                       </span>
                       <span className="flex flex-col gap-1 overflow-hidden">
                         {evs.slice(0, 2).map((e) => {
@@ -520,7 +520,7 @@ export default function JadwalCalendar({
                               key={iso}
                               type="button"
                               onClick={() => setSelected(iso)}
-                              title={libur ? `${libur.name}${libur.cutiBersama ? " (cuti bersama)" : " (libur nasional)"}` : undefined}
+                              title={libur ? liburTooltip(libur) : undefined}
                               className={`flex flex-col items-center gap-0.5 rounded-t-lg py-1.5 transition ${agendaIso === iso ? "bg-[#16796E]/5" : "hover:bg-slate-50"}`}
                             >
                               <span className={`text-[10px] font-bold uppercase tracking-wide ${libur ? "libur-teks" : dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
@@ -531,7 +531,7 @@ export default function JadwalCalendar({
                                   menebak-nebak "kenapa tanggal ini merah?" */}
                               {libur && (
                                 <span className="libur-teks w-full truncate px-0.5 text-center text-[8px] font-bold leading-tight">
-                                  {liburSingkat(libur)}
+                                  {liburLabel(libur)}
                                 </span>
                               )}
                             </button>
@@ -572,7 +572,7 @@ export default function JadwalCalendar({
                                   jadi nama liburnya ditempel di kolomnya sendiri. */}
                               {libur && mode === "day" && (
                                 <span className="libur-teks libur-sel pointer-events-none absolute left-1.5 top-1.5 z-20 rounded-md px-1.5 py-0.5 text-[10px] font-bold">
-                                  {libur.name}{libur.cutiBersama ? " · cuti bersama" : ""}
+                                  {liburTooltip(libur)}
                                 </span>
                               )}
                               {/* garis jam */}
