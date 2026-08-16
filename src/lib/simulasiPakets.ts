@@ -46,6 +46,17 @@ export const testTypeHasAvailable = (testType: string) =>
 
 export const PRICE = 79000;
 
+// ── promo-merdeka-v1 ────────────────────────────────────────────────────────
+// Harga promo Kemerdekaan. Jendela waktu & daftar produknya di lib/promoMerdeka
+// (file tanpa dependensi supaya aman diimpor server). Selama promo buka, PRICE
+// jadi harga CORET dan promoPriceFor() yang dipakai.
+export { PROMO, isPromoActive, promoAmountFor } from "./promoMerdeka";
+import { promoAmountFor } from "./promoMerdeka";
+
+/** Harga yang benar-benar dibayar untuk satu paket, sudah memperhitungkan promo. */
+export const promoPriceFor = (productKey: string, now: number = Date.now()): number =>
+  promoAmountFor(productKey, now) ?? PRICE;
+
 export const FEATURES = [
   "Sesuai format tes asli TOEFL & IELTS",
   "Skor & pembahasan langsung keluar",

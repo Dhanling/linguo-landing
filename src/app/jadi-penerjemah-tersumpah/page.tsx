@@ -398,7 +398,7 @@ export default function JadiPenerjemahTersumpahPage() {
         style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
       >
         {/* HEADER */}
-        <header className="bg-white border-b border-slate-100 sticky top-0 z-40 backdrop-blur-md bg-white/90">
+        <header className="bg-white border-b border-slate-100 sticky top-[var(--promo-bar-h,0px)] z-40 backdrop-blur-md bg-white/90">
           <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
               <img

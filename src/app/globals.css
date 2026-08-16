@@ -27,6 +27,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* [promo-merdeka-v1] PromoTopBar itu `fixed`, jadi tidak memakan ruang sendiri.
+   Variabel --promo-bar-h diisi komponen itu (0px saat promo tutup / halaman
+   dikecualikan), lalu dipakai di sini untuk mendorong seluruh konten turun.
+   Nav & header yang menempel di atas memakai variabel yang sama lewat
+   `top-[var(--promo-bar-h,0px)]`. */
+body {
+  padding-top: var(--promo-bar-h, 0px);
+}
+
+/* [promo-merdeka-v1] Ayunan halus sticker melayang. Sengaja memakai properti
+   `translate` (bukan `transform`) supaya tidak menimpa `scale` dari
+   hover:scale-105 — di Tailwind v4 keduanya properti terpisah. */
+@keyframes promoFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+
 ::selection { background-color: #1A9E9E44; }
 
 /* Hide scrollbar utility */

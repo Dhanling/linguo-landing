@@ -583,9 +583,11 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
     setProgOpen(false);
   };
 
+  // promo-merdeka-v1: nav ini `fixed`, jadi tanpa offset --promo-bar-h ia
+  // menindih PromoTopBar. Variabelnya 0px saat promo tutup → posisi normal lagi.
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 z-50"
+      className="fixed top-[var(--promo-bar-h,0px)] left-0 right-0 z-50"
       animate={{ y: hidden && !open ? "-100%" : 0 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
     >

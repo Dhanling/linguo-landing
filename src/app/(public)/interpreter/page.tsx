@@ -229,7 +229,7 @@ export default function InterpreterPage() {
   return (
     <main className="min-h-screen bg-white" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* HEADER (sticky) */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 text-slate-800 hover:text-[#1A9E9E] transition-colors">
             <Image src="/images/logo-white.png" alt="Linguo" width={90} height={32} priority className="h-8 w-auto brightness-0" />

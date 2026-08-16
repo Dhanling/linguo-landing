@@ -127,7 +127,7 @@ export default function TokoClient({ products }: { products: Product[] }) {
       </section>
 
       {/* STICKY FILTER */}
-      <div className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
+      <div className="sticky top-[var(--promo-bar-h,0px)] z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 py-3 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
           <div className="flex flex-wrap gap-2">
             {tabs.map((tab) => {

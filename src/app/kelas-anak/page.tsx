@@ -99,7 +99,7 @@ export default function KelasAnakPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar simple */}
-      <nav className="bg-[#1A9E9E] sticky top-0 z-50">
+      <nav className="bg-[#1A9E9E] sticky top-[var(--promo-bar-h,0px)] z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image src="/images/logo-white.png" alt="Linguo" width={136} height={48} priority className="h-8 sm:h-12 w-auto object-contain" />

@@ -330,7 +330,7 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
       {/* Font self-hosted via next/font in root layout — no render-blocking @import. */}
 
       {/* NAV */}
-      <nav className={`border-b sticky top-0 z-50 transition-colors duration-300 ${dm?"bg-[#111827] border-slate-800":"bg-white border-slate-100"}`}>
+      <nav className={`border-b sticky top-[var(--promo-bar-h,0px)] z-50 transition-colors duration-300 ${dm?"bg-[#111827] border-slate-800":"bg-white border-slate-100"}`}>
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a href="/" className="flex items-center shrink-0">

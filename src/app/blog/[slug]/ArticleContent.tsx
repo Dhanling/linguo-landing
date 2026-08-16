@@ -1124,7 +1124,7 @@ export default function ArticleContent({ post, relatedPosts }: { post: BlogPost;
       <style dangerouslySetInnerHTML={{ __html: ARTICLE_CSS }} />
 
       {/* Navbar */}
-      <nav className="bg-white border-b border-slate-100 sticky top-0 z-50 backdrop-blur-xl bg-white/95">
+      <nav className="bg-white border-b border-slate-100 sticky top-[var(--promo-bar-h,0px)] z-50 backdrop-blur-xl bg-white/95">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center">
             <img src="/images/logo-color.png" alt="Linguo" width={644} height={228} className="h-8 sm:h-10 object-contain" onError={(e) => { (e.target as HTMLImageElement).src = "/images/logo-white.png"; (e.target as HTMLImageElement).className = "h-8 sm:h-10 object-contain brightness-0"; }} />

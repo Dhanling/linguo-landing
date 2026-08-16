@@ -8,7 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Check, Loader2, Mail, Tag, Sparkles } from "lucide-react";
 import { getStudentInfo } from "@/lib/simulations";
 import { supabase } from "@/lib/supabase-client";
-import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, getFreePromo, type Paket } from "@/lib/simulasiPakets";
+import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, formatRp, getFreePromo, type Paket } from "@/lib/simulasiPakets";
+import { usePromoMerdeka } from "@/components/PromoMerdeka";
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -36,6 +37,11 @@ export default function SimulasiBeliModal({
   const [error, setError] = useState("");
 
   const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
+
+  // promo-merdeka-v1 — harga harus sama persis dgn /simulasi/paket & server.
+  const { active: promoOn } = usePromoMerdeka();
+  const onPromo = (p: Paket) => promoOn && PROMO.productKeys.includes(p.productKey);
+  const priceOf = (p: Paket) => (onPromo(p) ? PROMO.price : PRICE);
 
   // Prefill dari user yang login → email harus cocok saat grant entitlement.
   // Kalau sudah login, data (nama/email/WA) diambil dari profil → tak perlu
@@ -125,7 +131,14 @@ export default function SimulasiBeliModal({
                 </div>
                 <button onClick={() => !loading && onClose()} className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">✕</button>
               </div>
-              {paket && <p className="mt-2 text-2xl font-extrabold">{formatRp(PRICE)}</p>}
+              {paket && (
+                <p className="mt-2 flex items-baseline gap-2 text-2xl font-extrabold">
+                  {onPromo(paket) && (
+                    <span className="text-base font-semibold text-white/60 line-through">{formatRp(PRICE)}</span>
+                  )}
+                  {formatRp(priceOf(paket))}
+                </p>
+              )}
             </div>
 
             {/* Body */}
@@ -148,7 +161,12 @@ export default function SimulasiBeliModal({
                           <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-700">Segera</span>
                         )}
                       </div>
-                      <span className="text-lg font-extrabold text-slate-900">{p.soon ? "" : formatRp(PRICE)}</span>
+                      <span className="flex items-baseline gap-1.5 text-lg font-extrabold text-slate-900">
+                        {onPromo(p) && (
+                          <span className="text-sm font-semibold text-slate-400 line-through">{formatRp(PRICE)}</span>
+                        )}
+                        {p.soon ? "" : formatRp(priceOf(p))}
+                      </span>
                     </div>
                     <h4 className="mt-2 font-bold text-slate-900">{p.title}</h4>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -238,7 +256,7 @@ export default function SimulasiBeliModal({
                   <button onClick={checkout} disabled={loading}
                     className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                     style={{ background: TEAL }}>
-                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(priceOf(paket))}`}
                   </button>
                 )}
                 <p className="text-center text-[11px] text-slate-400">

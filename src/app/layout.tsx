@@ -23,6 +23,8 @@ import ChatWidgetLazy from "@/components/ChatWidgetLazy"; // linguo-patch:chat-w
 import ChunkReloader from "@/components/ChunkReloader"; // [chunk-reload-v1] auto-reload saat bundle basi sehabis deploy
 import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analytics-v1 — catat page view + durasi ke Supabase
 import AdAttributionCapture from "@/components/AdAttributionCapture"; // ads-conversion-sync — tangkap fbclid/gclid/_fbp buat konversi offline
+import PromoTopBar from "@/components/PromoTopBar"; // promo-merdeka-v1 — banner promo paling atas, hilang sendiri setelah periode
+import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-merdeka-v1 — sticker melayang → WA CS
 
 // [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
 // yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
@@ -185,6 +187,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body className="bg-white text-slate-900 antialiased">
+        <PromoTopBar />{/* promo-merdeka-v1 */}
         {children}
         <Toaster richColors position="top-center" closeButton />
         <ChunkReloader />{/* [chunk-reload-v1] */}
@@ -192,6 +195,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ChatWidgetLazy />{/* linguo-patch:chat-widget-ai-wa-v1 */}
         <AnalyticsTracker />{/* landing-analytics-v1 */}
         <AdAttributionCapture />{/* ads-conversion-sync */}
+        <PromoFloatingButton />{/* promo-merdeka-v1 */}
 
       </body>
     </html>

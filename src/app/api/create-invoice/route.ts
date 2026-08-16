@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPlan, hargaFinal, type LmsPlanId } from "../../../data/lms-pricing";
 import { recordAdAttribution } from "@/lib/adAttributionServer";
+import { promoAmountFor } from "@/lib/promoMerdeka";
 
 const XENDIT_SECRET_KEY = process.env.XENDIT_SECRET_KEY!;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -209,9 +210,21 @@ export async function POST(req: NextRequest) {
       itp: "TOEFL ITP", ibt: "TOEFL iBT", academic: "IELTS Academic", general: "IELTS General",
     };
     const variantLabel = typeof variant === "string" ? SIM_VARIANT_LABEL[variant] : undefined;
-    const productDescription = variantLabel
+    const baseDescription = variantLabel
       ? `Simulasi ${variantLabel} — akses lifetime`
       : product.description;
+
+    // ── promo-merdeka-v1: harga promo Kemerdekaan ditegakkan DI SERVER ────────
+    // Klien tidak pernah mengirim nominal (anti-tamper), jadi baris ini satu-
+    // satunya otoritas harga. Jendela waktunya menutup sendiri (lihat
+    // lib/promoMerdeka) — promo berakhir tanpa perlu deploy ulang.
+    const promoAmount = promoAmountFor(productKey);
+    const unitAmount = promoAmount ?? product.amount;
+    // Tandai di deskripsi invoice supaya rekonsiliasi tahu kenapa nominalnya
+    // beda dari harga normal — tanpa ini 45.000 terlihat seperti salah bayar.
+    const productDescription = promoAmount
+      ? `${baseDescription} — Promo Kemerdekaan`
+      : baseDescription;
 
     // simulasi-paywall-v1: external_id khusus simulasi (LINGUO-SIM-<test_type>-<ts>)
     // supaya xendit-webhook bisa deteksi & grant simulation_entitlements saat PAID.
@@ -232,7 +245,7 @@ export async function POST(req: NextRequest) {
     const ADDON_PRICE = 150000;
     const ADDON_DESC = "Bundle E-Book + Recording Kelas (akses selamanya)";
     const wantsAddon = addon === true;
-    const totalAmount = product.amount + (wantsAddon ? ADDON_PRICE : 0);
+    const totalAmount = unitAmount + (wantsAddon ? ADDON_PRICE : 0);
 
     // ── affiliate-attribution-v1 ─────────────────────────────────────────
     // Last-touch referral: middleware drops a `linguo_ref` cookie when a
@@ -334,7 +347,7 @@ export async function POST(req: NextRequest) {
         success_redirect_url: `${BASE_URL}/payment/success?id=${externalId}`,
         failure_redirect_url: `${BASE_URL}/payment/failed?id=${externalId}`,
         items: [
-          { name: productDescription, quantity: 1, price: product.amount },
+          { name: productDescription, quantity: 1, price: unitAmount },
           ...(wantsAddon ? [{ name: ADDON_DESC, quantity: 1, price: ADDON_PRICE }] : []),
         ],
       }),

@@ -165,7 +165,7 @@ export default function HargaPage() {
   return (
     <div className="min-h-screen bg-[#f8fafa] font-sans">
       {/* ── Navbar ── */}
-      <nav className="bg-white/95 backdrop-blur-xl border-b border-slate-100 sticky top-0 z-50">
+      <nav className="bg-white/95 backdrop-blur-xl border-b border-slate-100 sticky top-[var(--promo-bar-h,0px)] z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <img src="/images/logo-color.png" alt="Linguo" className="h-8 sm:h-9 object-contain" />

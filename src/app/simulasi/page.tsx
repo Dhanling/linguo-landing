@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Headphones, PenLine, Mic, type LucideIcon } from "lucide-react";
+import { promoAmountFor } from "@/lib/promoMerdeka";
+import { PRICE, formatRp } from "@/lib/simulasiPakets";
+import { PromoMerdekaRibbon } from "@/components/PromoMerdeka";
 
-export const metadata: Metadata = {
-  title: "Simulasi TOEFL & IELTS | Linguo.id",
-  description:
-    "Latihan simulasi tes TOEFL & IELTS lengkap: Reading, Listening, Writing, dan Speaking. Mulai Rp 79.000 di Linguo.id.",
-  alternates: { canonical: "https://linguo.id/simulasi" },
-};
+// promo-merdeka-v1 — halaman ini statis, jadi tanpa revalidate harga promo baru
+// muncul/hilang saat deploy berikutnya. 5 menit cukup rapat untuk promo 3 hari.
+export const revalidate = 300;
+
+/** Harga termurah yang sedang berlaku (TOEFL = satu-satunya paket yang aktif). */
+const currentPrice = () => promoAmountFor("simulasi-toefl") ?? PRICE;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const price = formatRp(currentPrice());
+  return {
+    title: "Simulasi TOEFL & IELTS | Linguo.id",
+    description:
+      `Latihan simulasi tes TOEFL & IELTS lengkap: Reading, Listening, Writing, dan Speaking. Mulai ${price} di Linguo.id.`,
+    alternates: { canonical: "https://linguo.id/simulasi" },
+  };
+}
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -19,14 +32,16 @@ const SKILLS: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Mic, title: "Speaking", desc: "Rekam jawaban via mikrofon. AI mentranskrip & menilai fluency, grammar, dan kosakata." },
 ];
 
-const STEPS = [
-  { n: "1", title: "Pilih paket & bayar", desc: "Pilih simulasi TOEFL atau IELTS (Rp 79.000), bayar via Xendit." },
+const steps = (price: string) => [
+  { n: "1", title: "Pilih paket & bayar", desc: `Pilih simulasi TOEFL atau IELTS (${price}), bayar via Xendit.` },
   { n: "2", title: "Login ke akun", desc: "Masuk dengan email yang sama — akses langsung terbuka." },
   { n: "3", title: "Kerjakan & rekam", desc: "Jawab soal Reading/Listening, tulis Writing, rekam Speaking." },
   { n: "4", title: "Dapat skor & feedback AI", desc: "Lihat skor lengkap plus saran perbaikan dari AI." },
 ];
 
 export default function SimulasiLandingPage() {
+  const price = formatRp(currentPrice());
+  const STEPS = steps(price);
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
@@ -36,8 +51,11 @@ export default function SimulasiLandingPage() {
             Simulasi TOEFL &amp; IELTS
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base text-white/85 sm:text-lg">
-            Latihan tes lengkap — Reading, Listening, Writing, dan Speaking — persis seperti tes asli. Mulai Rp 79.000.
+            Latihan tes lengkap — Reading, Listening, Writing, dan Speaking — persis seperti tes asli. Mulai {price}.
           </p>
+          <div className="mt-6">
+            <PromoMerdekaRibbon tone="dark" />
+          </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href="/simulasi/paket" className="rounded-full bg-[#FFC93C] px-7 py-3 text-sm font-bold text-slate-900 transition hover:bg-[#f5bb1f]">
               Mulai Simulasi
@@ -91,7 +109,10 @@ export default function SimulasiLandingPage() {
       <section className="py-16 text-center">
         <div className="mx-auto max-w-2xl px-5">
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Siap menaklukkan tesmu?</h2>
-          <p className="mt-2 text-slate-500">Mulai latihan dari Rp 79.000. Butuh bimbingan intensif? Cek kelas persiapan kami.</p>
+          <p className="mt-2 text-slate-500">Mulai latihan dari {price}. Butuh bimbingan intensif? Cek kelas persiapan kami.</p>
+          <div className="mt-5">
+            <PromoMerdekaRibbon />
+          </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link href="/simulasi/paket" className="rounded-full px-7 py-3 text-sm font-bold text-white" style={{ background: TEAL }}>
               Mulai Simulasi

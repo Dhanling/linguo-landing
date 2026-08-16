@@ -8,7 +8,8 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Sparkles, Check, Loader2, Tag, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
-import { PAKET, PRICE, FEATURES, SKILL_META, formatRp, getFreePromo } from "@/lib/simulasiPakets";
+import { PAKET, PRICE, PROMO, FEATURES, SKILL_META, formatRp, getFreePromo } from "@/lib/simulasiPakets";
+import { PromoMerdekaRibbon, usePromoMerdeka } from "@/components/PromoMerdeka";
 import { fetchMyEntitlements, type TestType } from "@/lib/simulations";
 
 const TEAL = "#1A9E9E";
@@ -25,6 +26,15 @@ export default function SimulasiPaketPage() {
   const [error, setError] = useState("");
 
   const freePromo = getFreePromo(code); // kode gratis (mis. LINGUOHEMAT) → klaim tanpa bayar
+
+  // ── promo-merdeka-v1 ──────────────────────────────────────────────────────
+  // Tanpa kode promo: harga turun otomatis selama jendela waktunya buka. Nominal
+  // yang MENGIKAT tetap dihitung ulang di server (api/create-invoice) — angka di
+  // sini murni tampilan.
+  const { active: promoOn } = usePromoMerdeka();
+  const onPromo = (p: { productKey: string }) =>
+    promoOn && PROMO.productKeys.includes(p.productKey);
+  const priceOf = (p: { productKey: string }) => (onPromo(p) ? PROMO.price : PRICE);
   // Paket yang SUDAH dimiliki user login — tombolnya diganti "Kerjakan di Dashboard".
   // Tanpa ini siswa yang habis bayar balik ke halaman ini dan mengira harus beli lagi.
   const [owned, setOwned] = useState<TestType[]>([]);
@@ -89,7 +99,7 @@ export default function SimulasiPaketPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
+      <header className="sticky top-[var(--promo-bar-h,0px)] z-40 border-b border-slate-100 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 h-16">
           <Link href="/simulasi" className="flex items-center gap-2 font-bold text-slate-800 hover:text-teal-600">
             <ArrowLeft className="h-4 w-4" /> Simulasi
@@ -108,6 +118,9 @@ export default function SimulasiPaketPage() {
           <p className="mx-auto mt-3 max-w-xl text-white/85">
             Latihan tes lengkap 4 skill dengan penilaian instan + feedback. Pilih jenis tes yang ingin kamu kuasai.
           </p>
+          <div className="mt-5">
+            <PromoMerdekaRibbon tone="dark" />
+          </div>
         </div>
       </section>
 
@@ -150,8 +163,17 @@ export default function SimulasiPaketPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-3xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
+              {/* promo-merdeka-v1: harga normal jadi coret selama promo buka */}
+              {onPromo(p) && (
+                <span className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-600">
+                  🇮🇩 {PROMO.badge} · {PROMO.periodLabel}
+                </span>
+              )}
+              <div className={`flex items-baseline gap-2 ${onPromo(p) ? "mt-2" : "mt-6"}`}>
+                {onPromo(p) && (
+                  <span className="text-lg font-semibold text-slate-400 line-through">{formatRp(PRICE)}</span>
+                )}
+                <span className="text-3xl font-extrabold text-slate-900">{formatRp(priceOf(p))}</span>
                 <span className="text-sm text-slate-400">/ sekali bayar</span>
               </div>
               <p className="mt-1.5 text-xs font-medium" style={{ color: p.accent }}>{p.covers}</p>
@@ -201,7 +223,12 @@ export default function SimulasiPaketPage() {
                   </div>
                   <button onClick={() => !loading && setOpen(false)} className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">✕</button>
                 </div>
-                <p className="mt-2 text-2xl font-extrabold">{formatRp(PRICE)}</p>
+                <p className="mt-2 flex items-baseline gap-2 text-2xl font-extrabold">
+                  {onPromo(paket) && (
+                    <span className="text-base font-semibold text-white/60 line-through">{formatRp(PRICE)}</span>
+                  )}
+                  {formatRp(priceOf(paket))}
+                </p>
               </div>
               <div className="space-y-4 p-6">
                 <div>
@@ -246,7 +273,7 @@ export default function SimulasiPaketPage() {
                   <button onClick={checkout} disabled={loading}
                     className="flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                     style={{ background: TEAL }}>
-                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(PRICE)}`}
+                    {loading ? (<><Loader2 className="h-4 w-4 animate-spin" /> Memproses...</>) : `Bayar ${formatRp(priceOf(paket))}`}
                   </button>
                 )}
                 <p className="text-center text-[11px] text-slate-400">
