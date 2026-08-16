@@ -80,7 +80,12 @@ export function liburOn(d: Date | string): HariLibur | null {
   return BY_DATE[iso] ?? null;
 }
 
-/** Nama libur ringkas buat badge sempit (mis. "Cuti Bersama Idulfitri" → "Idulfitri"). */
+/**
+ * Nama libur ringkas buat kolom sempit (mis. "Cuti Bersama Idulfitri" → "Cuti
+ * Idulfitri"). Kata "Cuti" sengaja DIPERTAHANKAN: kalau dipotong habis, 20 Maret
+ * (cuti bersama) kebaca sama persis dengan 21 Maret (libur nasional) padahal
+ * bobotnya beda buat menjadwalkan kelas.
+ */
 export function liburSingkat(h: HariLibur): string {
-  return h.name.replace(/^Cuti Bersama /, "").replace(/ 14\d\d H$/, "");
+  return h.name.replace(/^Cuti Bersama /, "Cuti ").replace(/ 14\d\d H$/, "");
 }
