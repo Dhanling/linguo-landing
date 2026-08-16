@@ -20,6 +20,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Video, CalendarDays, Clock, BookOpen, FileText, ExternalLink, PlayCircle, Maximize2, Minimize2 } from "lucide-react";
 import { classRoomUrl, isJoinable, studentRecordingHref, isInternalRecordingHref } from "@/lib/classRoom"; // [kelas-video-siswa-v1] + jadwal-riwayat-v1
 import { fmtDuration } from "@/lib/studentInsights"; // jadwal-week-timeline-v1: label beban minggu
+import { liburOn, liburSingkat } from "@/lib/hariLibur"; // [kalender-hari-libur-v1]
 import {
   ATT_META, DOWS, DOWS_FULL, LIVE_COLOR, LangFlag, LiveBadge, MONTHS, MONTHS_SHORT, TeacherAvatar,
   addDays, countdownLabel, fmtTime, isDead, isLiveNow, isoOf, langColor, langFlagCode, pad,
@@ -286,6 +287,17 @@ export default function JadwalCalendar({
 
   return (
     <div className="w-full space-y-4">
+      {/* [kalender-hari-libur-v1] Warna hari libur ditaruh di CSS, bukan hex inline:
+          mode gelap /akun itu class-based (`.lms-dark` di <html>, lihat StudentShell),
+          dan warna inline lolos dari aturan itu → merah muda menyala di latar hitam. */}
+      <style>{`
+        .libur-teks{color:#E11D48;}
+        .lms-dark .libur-teks{color:#FB7185;}
+        .libur-sel{background-color:#FFF1F2;}
+        .lms-dark .libur-sel{background-color:rgba(244,63,94,0.16);}
+        .libur-kolom{background-color:rgba(244,63,94,0.05);}
+        .lms-dark .libur-kolom{background-color:rgba(244,63,94,0.10);}
+      `}</style>
       {/* Jadwal Tetap kelas grup (Reguler & English Test Preparation) — batch + Zoom.
           [jadwal-batch-kalender-v1] pertemuan batch-nya sekarang juga tergambar di
           kalender di bawah; blok ini tetap jadi ringkasan "setiap hari apa, jam berapa". */}
@@ -396,12 +408,15 @@ export default function JadwalCalendar({
                   const evs = eventsOn(cell.iso);
                   const isToday = cell.iso === todayIso;
                   const isSel = agendaIso === cell.iso;
+                  // [kalender-hari-libur-v1] libur nasional & cuti bersama (SKB 3 Menteri).
+                  const libur = liburOn(cell.iso);
                   return (
                     <button
                       key={cell.iso}
                       onClick={() => evs.length && setSelected(cell.iso)}
                       tabIndex={evs.length ? 0 : -1}
-                      aria-label={`${cell.d} ${MONTHS[cursor.getMonth()]}${evs.length ? `, ${evs.length} sesi` : ""}`}
+                      title={libur ? `${libur.name}${libur.cutiBersama ? " (cuti bersama)" : " (libur nasional)"}` : undefined}
+                      aria-label={`${cell.d} ${MONTHS[cursor.getMonth()]}${libur ? `, ${libur.name}` : ""}${evs.length ? `, ${evs.length} sesi` : ""}`}
                       className={[
                         "flex min-h-[44px] flex-col gap-1 rounded-xl border border-slate-100 p-1.5 text-left transition sm:min-h-[78px] sm:p-2",
                         evs.length ? "cursor-pointer hover:bg-slate-50" : "cursor-default",
@@ -409,16 +424,21 @@ export default function JadwalCalendar({
                         // Tint `#F5F6F8/60` tak tertangkap aturan dark mode di StudentShell
                         // (alias -/60 beda kelas), jadi di mode gelap kolom akhir pekan
                         // menyala putih. Sekarang seragam dengan hari kerja.
-                        "bg-white",
+                        // [kalender-hari-libur-v1] latar merah tipis pakai kelas `libur-sel`
+                        // yang punya pasangan aturan `.lms-dark` (lihat <style> di bawah) —
+                        // bukan hex inline, biar tidak jadi kotak merah muda di mode gelap.
+                        libur ? "libur-sel" : "bg-white",
                       ].join(" ")}
-                      style={isSel ? { background: "#fff", outline: "2px solid #16796E" } : undefined}
+                      style={isSel ? { outline: "2px solid #16796E" } : undefined}
                     >
-                      <span className="flex items-center justify-between">
+                      <span className="flex items-center justify-between gap-1">
                         {isToday ? (
                           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full text-[12px] font-extrabold sm:text-[13px]" style={{ background: "#16796E", color: "#fff" }}>{cell.d}</span>
                         ) : (
-                          <span className="text-[12px] font-extrabold text-[#12172B] sm:text-[13px]">{cell.d}</span>
+                          <span className={`text-[12px] font-extrabold sm:text-[13px] ${libur ? "libur-teks" : "text-[#12172B]"}`}>{cell.d}</span>
                         )}
+                        {/* [kalender-hari-libur-v1] nama libur — dipotong, lengkapnya di tooltip sel */}
+                        {libur && <span className="libur-teks min-w-0 flex-1 truncate text-right text-[9px] font-bold leading-tight">{liburSingkat(libur)}</span>}
                       </span>
                       <span className="flex flex-col gap-1 overflow-hidden">
                         {evs.slice(0, 2).map((e) => {
@@ -494,17 +514,26 @@ export default function JadwalCalendar({
                           const iso = ymd(d);
                           const isToday = iso === todayIso;
                           const dow = (d.getDay() + 6) % 7;
+                          const libur = liburOn(iso); // [kalender-hari-libur-v1]
                           return (
                             <button
                               key={iso}
                               type="button"
                               onClick={() => setSelected(iso)}
+                              title={libur ? `${libur.name}${libur.cutiBersama ? " (cuti bersama)" : " (libur nasional)"}` : undefined}
                               className={`flex flex-col items-center gap-0.5 rounded-t-lg py-1.5 transition ${agendaIso === iso ? "bg-[#16796E]/5" : "hover:bg-slate-50"}`}
                             >
-                              <span className={`text-[10px] font-bold uppercase tracking-wide ${dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
-                              <span className={`text-[14px] font-extrabold tabular-nums ${isToday ? "flex h-6 w-6 items-center justify-center rounded-full bg-[#16796E] text-white" : "text-[#12172B]"}`}>
+                              <span className={`text-[10px] font-bold uppercase tracking-wide ${libur ? "libur-teks" : dow >= 5 ? "text-slate-300" : "text-[#6B7280]"}`}>{DOWS[dow]}</span>
+                              <span className={`text-[14px] font-extrabold tabular-nums ${isToday ? "flex h-6 w-6 items-center justify-center rounded-full bg-[#16796E] text-white" : libur ? "libur-teks" : "text-[#12172B]"}`}>
                                 {d.getDate()}
                               </span>
+                              {/* nama liburnya ikut tergambar — warna merah saja bikin siswa
+                                  menebak-nebak "kenapa tanggal ini merah?" */}
+                              {libur && (
+                                <span className="libur-teks w-full truncate px-0.5 text-center text-[8px] font-bold leading-tight">
+                                  {liburSingkat(libur)}
+                                </span>
+                              )}
                             </button>
                           );
                         })}
@@ -531,13 +560,21 @@ export default function JadwalCalendar({
                           const iso = ymd(d);
                           const { placed, lanes } = layoutDay(eventsOn(iso));
                           const isToday = iso === todayIso;
+                          const libur = liburOn(iso); // [kalender-hari-libur-v1]
                           return (
                             <div
                               key={iso}
                               // jadwal-weekend-netral-v1: kolom Sabtu/Minggu ikut latar hari kerja.
-                              className="relative border-l border-slate-100"
+                              className={`relative border-l border-slate-100 ${libur ? "libur-kolom" : ""}`}
                               style={{ height: totalH }}
                             >
+                              {/* [kalender-hari-libur-v1] view Hari tak menggambar kepala hari,
+                                  jadi nama liburnya ditempel di kolomnya sendiri. */}
+                              {libur && mode === "day" && (
+                                <span className="libur-teks libur-sel pointer-events-none absolute left-1.5 top-1.5 z-20 rounded-md px-1.5 py-0.5 text-[10px] font-bold">
+                                  {libur.name}{libur.cutiBersama ? " · cuti bersama" : ""}
+                                </span>
+                              )}
                               {/* garis jam */}
                               {hours.map((h, i) => (
                                 <span key={h} className="pointer-events-none absolute inset-x-0 border-t border-slate-100" style={{ top: i * hourPx }} />
@@ -669,6 +706,11 @@ export default function JadwalCalendar({
                   ))}
                 </>
               )}
+              {/* [kalender-hari-libur-v1] keterangan tanggal merah — nama liburnya sering
+                  terpotong di sel sempit, jadi maknanya dijelaskan sekali di sini. */}
+              <span className="libur-teks flex items-center gap-1.5">
+                <span className="libur-teks h-2.5 w-2.5 rounded-full bg-current" />Libur nasional / cuti bersama
+              </span>
             </div>
           )}
         </div>
