@@ -15,8 +15,8 @@ import {
   testimonialsForLang,
   type Testimonial,
 } from "../../../data/testimonials";
-import { LangSlugFlag } from "../../../components/RectFlag";
 import { ArrowRight, Check, DetailIcon } from "./DetailIcon";
+import LanguageSwitcher, { type LangOption } from "./LanguageSwitcher";
 import {
   getLanguageCategory,
   PRICE_PRIVATE_60MIN,
@@ -224,6 +224,28 @@ const buildPlacementHref = (languageSlug: string) => `/silabus/${languageSlug}/c
 // PAGE
 // ============================================================================
 
+// [kursus-language-switcher-v1] Daftar bahasa untuk pemilih di hero. Dihitung di
+// server (halaman ini statis, jadi ikut ter-render sekali saat build) dan dioper
+// sebagai prop — supaya languages-detail.ts yang 7.000+ baris tidak ikut terbawa
+// ke bundle browser.
+function buildLangOptions(): LangOption[] {
+  return getAllLanguageDetailSlugs()
+    .map((slug): LangOption | null => {
+      const d = getLanguageDetailBySlug(slug);
+      if (!d) return null;
+      const m = getLanguageMetaForDetail(d);
+      if (!m) return null;
+      return {
+        urlSlug: d.urlSlug,
+        languageSlug: d.languageSlug,
+        name: m.name,
+        nativeName: m.nativeName ?? m.name,
+        region: m.region ?? "other",
+      };
+    })
+    .filter((x) => x !== null);
+}
+
 export default async function BahasaLandingPage({ params }: PageProps) {
   const { lang } = await params;
   const slug = parseBahasaSlug(lang);
@@ -261,7 +283,12 @@ export default async function BahasaLandingPage({ params }: PageProps) {
 
       <main className="min-h-screen bg-white text-slate-900">
         <Breadcrumb langName={meta.name} />
-        <Hero detail={detail} nativeName={meta.nativeName ?? meta.name} langName={meta.name} />
+        <Hero
+          detail={detail}
+          nativeName={meta.nativeName ?? meta.name}
+          langName={meta.name}
+          langOptions={buildLangOptions()}
+        />
         <WhyLearn detail={detail} langName={meta.name} />
         <TargetAudience detail={detail} langName={meta.name} />
         <Curriculum detail={detail} langName={meta.name} />
@@ -323,10 +350,12 @@ function Hero({
   detail,
   nativeName,
   langName,
+  langOptions,
 }: {
   detail: LanguageDetail;
   nativeName: string;
   langName: string;
+  langOptions: LangOption[];
 }) {
   const illustration = HERO_ILLUSTRATION[detail.languageSlug] ?? null;
 
@@ -377,10 +406,14 @@ function Hero({
           }
         >
         <div className={`flex flex-col items-start gap-6 ${illustration ? "" : "md:max-w-3xl"}`}>
-          <div className="flex items-center gap-3 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-            <LangSlugFlag slug={detail.languageSlug} h={18} />
-            <span className="text-white/90">{nativeName}</span>
-          </div>
+          {/* [kursus-language-switcher-v1] Pil bendera + nama asli bahasa ini
+              sekarang jadi tombol pemilih bahasa: satu klik pindah ke landing
+              bahasa lain, tanpa mampir ke hub /kursus dulu. */}
+          <LanguageSwitcher
+            options={langOptions}
+            currentSlug={detail.urlSlug}
+            currentNativeName={nativeName}
+          />
 
           {/* Dua baris, apa pun bahasanya: "Online" selalu turun sendiri, dan
               baris pertamanya diukur di `ukuranJudul` supaya tidak pernah patah. */}
