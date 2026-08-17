@@ -1,5 +1,6 @@
 // src/app/kelas/[lang]/page.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -309,6 +310,13 @@ function Breadcrumb({ langName }: { langName: string }) {
   );
 }
 
+// Ilustrasi hero per bahasa (PNG transparan, ditaruh di public/images/lang-hero/).
+// Key = detail.languageSlug. Bahasa tanpa entri di sini tetap pakai hero teks
+// satu kolom seperti sebelumnya.
+const HERO_ILLUSTRATION: Record<string, string> = {
+  korean: "/images/lang-hero/korean.png",
+};
+
 function Hero({
   detail,
   nativeName,
@@ -318,6 +326,8 @@ function Hero({
   nativeName: string;
   langName: string;
 }) {
+  const illustration = HERO_ILLUSTRATION[detail.languageSlug] ?? null;
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#1A9E9E] via-[#168585] to-[#0e6e6e] text-white">
       {/* Soft pattern overlay */}
@@ -332,19 +342,27 @@ function Hero({
       />
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <div className="flex flex-col items-start gap-6 md:max-w-3xl">
+        <div
+          className={
+            illustration
+              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-8"
+              : ""
+          }
+        >
+        <div className={`flex flex-col items-start gap-6 ${illustration ? "" : "md:max-w-3xl"}`}>
           <div className="flex items-center gap-3 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
             <LangSlugFlag slug={detail.languageSlug} h={18} />
             <span className="text-white/90">{nativeName}</span>
           </div>
 
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            Kursus Bahasa {langName} Online
+            <span className="block">Kursus Bahasa {langName}</span>
+            <span className="block">Online</span>
           </h1>
 
-          <p className="text-lg text-white/90 md:text-xl">{detail.tagline}</p>
+          <p className="text-base text-white/90 md:text-lg">{detail.tagline}</p>
 
-          <p className="text-base leading-relaxed text-white/80 md:text-lg">
+          <p className="text-sm leading-relaxed text-white/80 md:text-base">
             {detail.heroDescription}
           </p>
 
@@ -373,6 +391,21 @@ function Hero({
               ),
             )}
           </div>
+        </div>
+
+          {illustration && (
+            <div className="relative hidden lg:block">
+              <Image
+                src={illustration}
+                alt={`Belajar Bahasa ${langName} online bersama Linguo`}
+                width={1200}
+                height={800}
+                priority
+                sizes="(min-width: 1024px) 46vw, 0px"
+                className="h-auto w-full drop-shadow-2xl"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>
