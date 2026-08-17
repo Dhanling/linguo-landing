@@ -315,6 +315,7 @@ function Breadcrumb({ langName }: { langName: string }) {
 // satu kolom seperti sebelumnya.
 const HERO_ILLUSTRATION: Record<string, string> = {
   korean: "/images/lang-hero/korean.png",
+  mandarin: "/images/lang-hero/mandarin.png",
 };
 
 function Hero({
@@ -328,16 +329,21 @@ function Hero({
 }) {
   const illustration = HERO_ILLUSTRATION[detail.languageSlug] ?? null;
 
-  /* Nama bahasa panjangnya jauh berbeda — "Korea" 5 huruf, "Portugis (Brasil)"
-     17 — sedangkan lebar kolomnya sama. Satu ukuran font untuk semuanya berarti
-     memilih antara judul kekecilan di halaman Korea atau judul pecah tiga baris
-     di halaman Portugis. Jadi ukurannya turun bertahap mengikuti panjang baris
-     pertama; clamp di tiap tahap yang mengurus lebar layarnya. */
+  /* Ukuran judul turun bertahap mengikuti panjang baris pertama, supaya "Online"
+     selalu jatuh di baris kedua dan baris pertamanya tak pernah patah.
+
+     Ambang tahap pertama sengaja 24, bukan 21: nama bahasa terpanjang yang ada
+     cuma "Finlandia" (23 huruf sebaris dengan "Kursus Bahasa"), jadi ambang 21
+     bikin Mandarin/Thailand/Portugis dkk turun kelas ke 2.6rem — judulnya jadi
+     kelihatan lebih kecil daripada halaman Korea padahal kolomnya sama lebar.
+     Di 680px, lebar kolom teks tersempit di halaman berilustrasi, 24 huruf pada
+     3rem masih makan ~580px. Dua tahap sisanya jaring pengaman kalau nanti ada
+     nama panjang seperti "Portugis (Brasil)". */
   const barisJudul = `Kursus Bahasa ${langName}`;
   const ukuranJudul =
-    barisJudul.length > 26
+    barisJudul.length > 29
       ? "text-[clamp(1.2rem,3.9vw,2.15rem)]"
-      : barisJudul.length > 21
+      : barisJudul.length > 24
         ? "text-[clamp(1.45rem,4.6vw,2.6rem)]"
         : "text-[clamp(1.55rem,5.2vw,3rem)]";
 
