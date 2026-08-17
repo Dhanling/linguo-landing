@@ -52,12 +52,21 @@ export interface PublicQuiz {
  *  `grade-quiz` hanya membaca `text`/`image_url`, jadi nilainya tak terpengaruh. */
 export interface EssayResponse { text?: string; image_url?: string; tidak_tahu?: boolean; ime?: boolean }
 
+/** [kuis-rapor-grafik-v1] Label materi + penjelasan "kenapa", satu per soal. */
+export interface QuizPerQuestion {
+  n: number;
+  topic: string;
+  why: string;
+}
+
 export interface QuizAnalysis {
   summary: string;
   strengths: string[];
   weaknesses: string[];
   improvements: string[];
   topics: string[];
+  /** Absen di rapor lama & saat panggilan AI-nya gagal — halaman hasil wajib tahan. */
+  per_question?: QuizPerQuestion[];
 }
 
 export interface GradeResult {
@@ -67,6 +76,15 @@ export interface GradeResult {
   feedback: string;
   /** Hasil baca foto tulisan tangan — kosong untuk jawaban yang diketik. */
   transcript?: string;
+  /* [kuis-rapor-grafik-v1] Turun dari server HANYA di balasan submit — soal yang
+     belum dikumpulkan tidak pernah membawa kuncinya. Semuanya opsional: rapor
+     lama & submission yang rapornya gagal tetap harus bisa ditampilkan. */
+  correct_answer_text?: string;
+  correct_answer_translit?: string | null;
+  /** Nama materi yang diuji soal ini, dari rapor AI. */
+  topic?: string;
+  /** Kenapa jawaban benarnya benar (diisi juga untuk soal yang dijawab benar). */
+  why?: string;
 }
 
 async function callQuizPublic<T = any>(

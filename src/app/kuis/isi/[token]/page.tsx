@@ -35,15 +35,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import {
-  Loader2, CheckCircle2, Send, ClipboardList, PartyPopper,
+  Loader2, CheckCircle2, Send, ClipboardList,
   Languages, Camera, Keyboard, X, ImageIcon,
-  ArrowLeft, ArrowRight, ListChecks, Play, Timer, HelpCircle,
+  ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
   type PublicQuiz, type PublicQuizQuestion, type EssayResponse,
+  type GradeResult, type QuizAnalysis,
 } from "@/lib/quizPublic";
 import ImeTextarea from "@/components/kuis/ImeTextarea";
+import HasilKuis from "@/components/kuis/HasilKuis";
 
 const BRAND = "#1A9E9E";
 
@@ -58,13 +60,6 @@ function partOf(q: PublicQuizQuestion): 1 | 2 {
 /** Sudah terisi? Jawaban bagian 2 bisa berupa objek {text} atau {image_url}, jadi
  *  "ada isinya" tidak bisa lagi dinilai dari String(v) — objek kosong pun jadi
  *  "[object Object]" dan akan terhitung terisi. */
-/** "12 menit 30 detik" — bentuk panjang untuk kartu hasil. */
-function lamaPanjang(sec: number): string {
-  const s = Math.max(0, Math.round(sec));
-  const m = Math.floor(s / 60);
-  return m > 0 ? `${m} menit ${s % 60} detik` : `${s} detik`;
-}
-
 function isAnswered(v: any): boolean {
   if (v === undefined || v === null) return false;
   if (typeof v === "object") {
@@ -103,7 +98,10 @@ export default function QuizTakePage() {
   const [studentId, setStudentId] = useState("");
   const [responses, setResponses] = useState<Record<number, any>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [result, setResult] = useState<{ total: number; max: number; results: any[]; analysis?: any; duration_sec?: number | null } | null>(null);
+  const [result, setResult] = useState<{
+    total: number; max: number; results: GradeResult[];
+    analysis?: QuizAnalysis | null; duration_sec?: number | null;
+  } | null>(null);
   // Transliterasi menyala default: kuis ini memang dibuat dengan alih aksara justru
   // karena siswanya belum lancar membaca aksara aslinya. Yang sudah lancar bisa
   // mematikannya untuk melatih diri.
@@ -318,62 +316,25 @@ export default function QuizTakePage() {
     );
   }
 
-  if (result) {
-    const pct = result.max ? Math.round((result.total / result.max) * 100) : 0;
-    const color = pct >= 70 ? "#059669" : pct >= 50 ? "#d97706" : "#dc2626";
+  /* [kuis-rapor-grafik-v1] Seluruh layar hasil pindah ke <HasilKuis>: skor,
+     grafik penguasaan per materi, poin per soal, rapor AI, pembahasan tiap soal,
+     dan tombol simpan PDF. Dulu blok ini menampilkan prompt + satu kalimat
+     feedback per soal — tanpa kunci jawaban, tanpa pengelompokan materi, dan
+     tanpa apa pun yang bisa dibawa pulang siswa yang belum punya akun. */
+  if (result && quiz) {
     return (
-      <Shell title={quiz?.title}>
-        <div className="mx-auto max-w-2xl">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-            <PartyPopper className="mx-auto h-10 w-10" style={{ color: BRAND }} />
-            <h1 className="mt-3 text-xl font-bold text-slate-800">Terima kasih, {name}!</h1>
-            <p className="mt-1 text-sm text-slate-500">Jawaban kamu sudah dikoreksi otomatis.</p>
-            <div className="mt-4 text-4xl font-extrabold" style={{ color }}>{pct}%</div>
-            <p className="text-sm font-medium text-slate-600">Skor {result.total} / {result.max}</p>
-            {/* Lama pengerjaan ditampilkan ke siswa juga, bukan cuma dikirim ke
-                pengajar — angka yang diam-diam direkam terasa seperti diawasi. */}
-            {!!result.duration_sec && (
-              <p className="mt-1 flex items-center justify-center gap-1.5 text-[12px] text-slate-400">
-                <Timer className="h-3.5 w-3.5" /> Dikerjakan dalam {lamaPanjang(result.duration_sec)}
-              </p>
-            )}
-          </div>
-
-          {/* [kuis-sesi-analisis-v1] Rapor langsung sesudah kirim. Halaman ini
-              dibuka TANPA login (link publik), jadi ini satu-satunya momen siswa
-              yang belum punya akun /akun membaca kurangnya apa. Warnanya ditulis
-              eksplisit, ikut halaman ini yang memang selalu terang. */}
-          <QuizTakeAnalysis analysis={result.analysis} />
-
-          <div className="mt-4 space-y-3">
-            {quiz?.questions.map((q, i) => {
-              const r = result.results.find((x: any) => x.index === i);
-              const ok = r?.is_correct;
-              return (
-                <div key={i} className="rounded-xl border p-4"
-                  style={{ borderColor: ok ? "#a7f3d0" : "#fde68a", background: ok ? "#f0fdf4" : "#fffbeb" }}>
-                  <div className="mb-1 flex items-center gap-2">
-                    <span className="grid h-6 w-6 place-items-center rounded-full bg-slate-100 text-xs font-bold text-slate-600">{i + 1}</span>
-                    <span className="ml-auto text-xs font-semibold" style={{ color: ok ? "#059669" : "#d97706" }}>
-                      {r?.score ?? 0}/{q.points} poin
-                    </span>
-                  </div>
-                  <p className="text-sm font-medium text-slate-800">{q.prompt}</p>
-                  {/* Kalau jawabannya difoto, tunjukkan teks yang BENAR-BENAR dibaca.
-                      Tanpa ini, nilai jelek karena salah baca tidak bisa dibedakan
-                      dari nilai jelek karena jawabannya memang salah. */}
-                  {r?.transcript && (
-                    <p className="mt-2 rounded-lg border border-slate-200 bg-white/70 p-2 text-[12.5px] text-slate-600">
-                      <span className="font-semibold text-slate-500">Terbaca dari fotomu: </span>
-                      <span className="italic">{r.transcript}</span>
-                    </p>
-                  )}
-                  {r?.feedback && <p className="mt-2 rounded-lg bg-white/70 p-2 text-[13px] text-slate-600">{r.feedback}</p>}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      <Shell title={quiz.title}>
+        <HasilKuis
+          quiz={quiz}
+          name={name}
+          total={result.total}
+          max={result.max}
+          results={result.results}
+          analysis={result.analysis ?? null}
+          durationSec={result.duration_sec ?? null}
+          showTranslit={showTranslit}
+          responses={responses}
+        />
       </Shell>
     );
   }
@@ -964,61 +925,6 @@ function Shell({ title, subtitle, children }: { title?: string; subtitle?: strin
         </div>
       )}
       <div className="px-4 pb-16 pt-4">{children}</div>
-    </div>
-  );
-}
-
-// [kuis-sesi-analisis-v1] Rapor "kurangnya apa & perbaikannya apa" di halaman
-// publik. Isinya sama persis dengan yang tersimpan di quiz_submissions.analysis
-// dan nanti muncul lagi di dashboard siswa — ini cuma penayangan pertamanya.
-//
-// Tidak memakai QuizAnalysisCard: komponen itu memakai token tema (foreground/
-// muted) yang ikut gelap kalau staf membuka link ini dengan tema gelap, padahal
-// halaman publik ini sengaja selalu terang.
-function QuizTakeAnalysis({ analysis }: { analysis: any }) {
-  if (!analysis || typeof analysis !== "object") return null;
-  const list = (v: any): string[] =>
-    Array.isArray(v) ? v.map((x) => String(x ?? "").trim()).filter(Boolean) : [];
-
-  const summary = String(analysis.summary ?? "").trim();
-  const blocks: { title: string; items: string[]; border: string; bg: string; fg: string }[] = [
-    { title: "Sudah bagus", items: list(analysis.strengths), border: "#a7f3d0", bg: "#f0fdf4", fg: "#047857" },
-    { title: "Masih kurang", items: list(analysis.weaknesses), border: "#fde68a", bg: "#fffbeb", fg: "#b45309" },
-    { title: "Perbaikannya", items: list(analysis.improvements), border: "#99f6e4", bg: "#f0fdfa", fg: "#0f766e" },
-  ].filter((b) => b.items.length > 0);
-  const topics = list(analysis.topics);
-
-  if (!summary && !blocks.length) return null;
-
-  return (
-    <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <p className="mb-2 text-[11px] font-bold uppercase tracking-wider" style={{ color: BRAND }}>
-        Catatan buat kamu
-      </p>
-      {summary && <p className="mb-3 text-sm leading-relaxed text-slate-600">{summary}</p>}
-      <div className="space-y-2.5">
-        {blocks.map((b) => (
-          <div key={b.title} className="rounded-xl border p-3" style={{ borderColor: b.border, background: b.bg }}>
-            <p className="mb-1.5 text-[11px] font-bold uppercase tracking-wide" style={{ color: b.fg }}>{b.title}</p>
-            <ul className="space-y-1">
-              {b.items.map((t, i) => (
-                <li key={i} className="flex gap-2 text-[13px] leading-snug text-slate-700">
-                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: b.fg }} />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      {topics.length > 0 && (
-        <div className="mt-3 flex flex-wrap items-center gap-1.5">
-          <span className="text-[11px] font-semibold text-slate-500">Ulang lagi:</span>
-          {topics.map((t, i) => (
-            <span key={i} className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-600">{t}</span>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
