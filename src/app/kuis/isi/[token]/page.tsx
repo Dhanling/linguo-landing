@@ -37,7 +37,7 @@ import { useParams } from "next/navigation";
 import {
   Loader2, CheckCircle2, Send, ClipboardList, PartyPopper,
   Languages, Camera, Keyboard, X, ImageIcon,
-  ArrowLeft, ArrowRight, ListChecks, Play, Timer,
+  ArrowLeft, ArrowRight, ListChecks, Play, Timer, HelpCircle,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
@@ -57,12 +57,6 @@ function partOf(q: PublicQuizQuestion): 1 | 2 {
 /** Sudah terisi? Jawaban bagian 2 bisa berupa objek {text} atau {image_url}, jadi
  *  "ada isinya" tidak bisa lagi dinilai dari String(v) — objek kosong pun jadi
  *  "[object Object]" dan akan terhitung terisi. */
-/** 754 -> "12:34". Dipakai untuk hitung mundur & lama pengerjaan. */
-function jam(sec: number): string {
-  const s = Math.max(0, Math.round(sec));
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-}
-
 /** "12 menit 30 detik" — bentuk panjang untuk kartu hasil. */
 function lamaPanjang(sec: number): string {
   const s = Math.max(0, Math.round(sec));
@@ -74,9 +68,23 @@ function isAnswered(v: any): boolean {
   if (v === undefined || v === null) return false;
   if (typeof v === "object") {
     const e = v as EssayResponse;
-    return !!(e.image_url || String(e.text ?? "").trim());
+    return !!(e.tidak_tahu || e.image_url || String(e.text ?? "").trim());
   }
   return String(v).trim() !== "";
+}
+
+/* [kuis-tidak-tahu-v1] "Tidak tahu" sebagai jawaban yang bisa dipilih, di kedua
+   bagian. Tanpa tombol ini satu-satunya cara maju dari soal yang tidak dikuasai
+   adalah menebak — dan tebakan yang kebetulan benar membuat pengajar melihat
+   penguasaan yang tidak ada, sementara rapor AI-nya ikut salah menyimpulkan apa
+   yang perlu diulang. Jujur "belum tahu" nilainya sama-sama 0, tapi datanya benar.
+
+   Disimpan sebagai objek `{ tidak_tahu: true }` untuk KEDUA bagian supaya cuma
+   ada satu bentuk yang perlu diperiksa; baru saat dikirim ia jadi teks biasa. */
+const TIDAK_TAHU_TEKS = "TIDAK TAHU";
+
+function isTidakTahu(v: any): boolean {
+  return !!(v && typeof v === "object" && (v as EssayResponse).tidak_tahu);
 }
 
 export default function QuizTakePage() {
@@ -132,6 +140,16 @@ export default function QuizTakePage() {
   );
 
   const roster = quiz?.roster ?? [];
+  /* [kuis-siswa-terkunci-v1] Kuis yang memang cuma untuk satu siswa tidak lagi
+     menanyakan siapa yang mengerjakan. Kelas private = satu nama; menyodorkan
+     dropdown berisi satu pilihan (atau lebih buruk: berisi nama teman sekelas
+     yang kuisnya bukan ini) hanya menambah satu langkah yang bisa salah — dan
+     salah pilih nama berarti nilainya mendarat di pertemuan siswa lain. */
+  useEffect(() => {
+    if (roster.length !== 1 || studentId) return;
+    setStudentId(roster[0].id);
+    setName(roster[0].name);
+  }, [roster, studentId]);
   // Tombol transliterasi hanya berguna kalau memang ADA alih aksaranya. Model
   // sesekali mengembalikan null untuk semua soal (mis. teksnya ternyata sudah
   // Latin) — tombol yang tidak mengubah apa pun lebih buruk daripada tidak ada.
@@ -146,9 +164,13 @@ export default function QuizTakePage() {
 
   const questions = quiz?.questions ?? [];
   const total = questions.length;
-  // Batas waktu dalam detik; 0 = tanpa hitung mundur (durasinya tetap direkam).
+  /* Batas waktu dalam detik; 0 = tanpa hitung mundur (durasinya tetap direkam).
+     [kuis-tanpa-countdown-v1] Jamnya tetap BERJALAN — auto-kirim saat habis dan
+     lama pengerjaan tetap terekam — tapi angkanya TIDAK lagi ditampilkan selama
+     mengerjakan. Hitung mundur yang berdetak di sudut layar membuat siswa
+     mengerjakan sambil melihat jam, bukan sambil membaca soal; batas waktunya
+     sendiri sudah diberitahukan di kartu pembuka sebelum tombol Mulai ditekan. */
   const limitSec = Math.max(0, Math.round(Number(quiz?.time_limit_min) || 0) * 60);
-  const sisaSec = startedAt && limitSec ? Math.max(0, limitSec - elapsed) : 0;
 
   /* Sambung lagi jam yang sedang berjalan sesudah reload. Kalau catatannya sudah
      lewat batas (atau lewat 12 jam untuk kuis tanpa batas), catatan itu dibuang:
@@ -189,9 +211,9 @@ export default function QuizTakePage() {
      mengganti jawaban, memperbaiki satu huruf berarti terlempar dari soal yang
      sedang dipikirkan. Jedanya menahan sebentar supaya pilihan yang barusan
      ditekan sempat terlihat menyala. */
-  function pickOption(i: number, oi: number) {
+  function pickOption(i: number, nilai: any) {
     const firstTime = !isAnswered(responses[i]);
-    setResponses((s) => ({ ...s, [i]: oi }));
+    setResponses((s) => ({ ...s, [i]: nilai }));
     if (!firstTime || i >= total - 1) return;
     if (advanceRef.current) window.clearTimeout(advanceRef.current);
     advanceRef.current = window.setTimeout(() => {
@@ -199,6 +221,16 @@ export default function QuizTakePage() {
       setStep((s) => (s === i ? s + 1 : s));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 420);
+  }
+
+  /* "Tidak tahu" bisa DIBATALKAN dengan menekannya lagi — siswa sering memilihnya
+     lebih dulu supaya bisa maju, lalu teringat jawabannya di soal berikutnya. */
+  function toggleTidakTahu(i: number) {
+    if (isTidakTahu(responses[i])) {
+      setResponses((s) => { const n = { ...s }; delete n[i]; return n; });
+      return;
+    }
+    pickOption(i, { tidak_tahu: true });
   }
 
   function startQuiz() {
@@ -229,7 +261,11 @@ export default function QuizTakePage() {
     }
     setSubmitting(true);
     const dipakai = startedAt ? Math.round((Date.now() - startedAt) / 1000) : null;
-    const r = await submitPublicQuiz(token, name.trim(), responses, studentId || null, dipakai);
+    // [kuis-tidak-tahu-v1] Penanda internal → teks biasa, tepat sebelum berangkat.
+    const terkirim = Object.fromEntries(
+      Object.entries(responses).map(([k, v]) => [k, isTidakTahu(v) ? TIDAK_TAHU_TEKS : v]),
+    );
+    const r = await submitPublicQuiz(token, name.trim(), terkirim, studentId || null, dipakai);
     setSubmitting(false);
     if ("error" in r) {
       window.alert("Gagal mengirim: " + r.error);
@@ -364,7 +400,21 @@ export default function QuizTakePage() {
           <div className="space-y-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <label className="text-xs font-semibold uppercase tracking-wide text-slate-500">Nama kamu</label>
-              {roster.length > 0 ? (
+              {roster.length === 1 ? (
+                /* Satu peserta = tidak ada yang perlu dipilih. Namanya tetap
+                   DITAMPILKAN, bukan disembunyikan: siswa harus bisa langsung tahu
+                   kalau linknya ternyata punya orang lain. */
+                <>
+                  <div className="mt-1.5 flex items-center gap-2.5 rounded-xl px-3.5 py-3"
+                    style={{ background: "#f0fdfa", border: `2px solid ${BRAND}` }}>
+                    <CheckCircle2 className="h-5 w-5 shrink-0" style={{ color: BRAND }} />
+                    <span className="text-lg font-extrabold text-slate-800">{roster[0].name}</span>
+                  </div>
+                  <p className="mt-1.5 text-[11px] text-slate-500">
+                    Kuis ini memang untukmu — nilainya masuk ke {quiz?.session_label || "pertemuan ini"} di dashboard kamu.
+                  </p>
+                </>
+              ) : roster.length > 0 ? (
                 <>
                   <select value={studentId}
                     onChange={(e) => {
@@ -416,6 +466,16 @@ export default function QuizTakePage() {
                   <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                   <span>Soalnya muncul satu per satu. Bisa mundur & mengubah jawaban sebelum dikirim.</span>
                 </li>
+                {/* [kuis-tidak-tahu-v1] Diberitahukan di depan, bukan ditemukan
+                    sendiri di soal ke-7: siswa yang tidak tahu tombol ini ada akan
+                    menebak dari soal pertama. */}
+                <li className="flex gap-2">
+                  <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
+                  <span>
+                    Belum tahu jawabannya? Tekan <b>Tidak tahu</b> — lebih baik daripada menebak,
+                    supaya pengajar tahu persis bagian mana yang perlu diulang.
+                  </span>
+                </li>
                 {/* Batas waktu harus terbaca SEBELUM tombol Mulai — begitu ditekan,
                     hitung mundurnya jalan dan tidak bisa dijeda. */}
                 <li className="flex gap-2">
@@ -441,62 +501,30 @@ export default function QuizTakePage() {
         {/* ── Satu soal ──────────────────────────────────────────────────── */}
         {cur && (
           <>
-            <div className="sticky top-0 z-10 -mx-4 mb-3 border-b border-slate-200 bg-slate-100/95 px-4 py-2.5 backdrop-blur sm:mx-0 sm:rounded-xl sm:border">
-              <div className="flex items-center gap-2">
-                <span className="text-[13px] font-bold text-slate-700">
-                  Soal {step + 1}<span className="font-medium text-slate-400"> / {total}</span>
-                </span>
-                {parts.multi && (
-                  <span className="rounded-full px-2 py-0.5 text-[10px] font-bold"
-                    style={{ background: "#e7f6f5", color: "#0f766e" }}>
-                    Bagian {partOf(cur)}
-                  </span>
-                )}
-                <span className="ml-auto text-[11px] text-slate-500">{answeredCount} terisi</span>
-                {/* Sisa waktu (atau lama pengerjaan kalau tanpa batas). Menyala merah
-                    di 2 menit terakhir — peringatan yang datang saat masih bisa
-                    ditindaklanjuti, bukan saat sudah lewat. */}
-                {startedAt !== null && (
-                  <span className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold tabular-nums"
-                    style={
-                      limitSec > 0
-                        ? (sisaSec <= 120
-                            ? { background: "#fee2e2", color: "#b91c1c" }
-                            : { background: "#e7f6f5", color: "#0f766e" })
-                        : { background: "#f1f5f9", color: "#64748b" }
-                    }>
-                    <Timer className="h-3 w-3" />
-                    {limitSec > 0 ? jam(sisaSec) : jam(elapsed)}
-                  </span>
-                )}
-                {hasTranslit && (
-                  <button onClick={() => setShowTranslit((v) => !v)}
-                    title={showTranslit ? "Sembunyikan cara baca" : "Tampilkan cara baca"}
-                    className="grid h-7 w-7 place-items-center rounded-lg border"
-                    style={{
-                      borderColor: showTranslit ? BRAND : "#cbd5e1",
-                      background: showTranslit ? BRAND : "#fff",
-                      color: showTranslit ? "#fff" : "#64748b",
-                    }}>
-                    <Languages className="h-3.5 w-3.5" />
-                  </button>
-                )}
-              </div>
-              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
-                <div className="h-full rounded-full transition-all duration-300"
-                  style={{ width: `${((step + 1) / Math.max(total, 1)) * 100}%`, background: BRAND }} />
-              </div>
-            </div>
+            <KuisNavBar
+              total={total}
+              step={step}
+              answeredCount={answeredCount}
+              isFilled={(i) => isAnswered(responses[i])}
+              isTidakTahu={(i) => isTidakTahu(responses[i])}
+              partOfIndex={(i) => partOf(questions[i])}
+              multiPart={parts.multi}
+              onJump={goto}
+              onReview={() => goto(total)}
+              hasTranslit={hasTranslit}
+              showTranslit={showTranslit}
+              onToggleTranslit={() => setShowTranslit((v) => !v)}
+            />
 
             {/* Spanduk bagian muncul sekali, tepat di soal pertama bagian itu —
                 pergantian aturan main (dari memilih ke menulis) harus terbaca
                 sebagai batas, bukan sebagai soal yang tiba-tiba beda bentuk. */}
             {parts.multi && (step === 0 || step === firstOfPart2) && (
-              <div className="mb-3 rounded-xl px-4 py-3" style={{ background: "#e7f6f5", borderLeft: `4px solid ${BRAND}` }}>
-                <p className="text-sm font-bold" style={{ color: "#0f766e" }}>
+              <div className="mb-4 rounded-2xl px-5 py-4" style={{ background: "#e7f6f5", borderLeft: `6px solid ${BRAND}` }}>
+                <p className="text-lg font-extrabold" style={{ color: "#0f766e" }}>
                   {partOf(cur) === 1 ? "Bagian 1 — Pilihan Ganda" : "Bagian 2 — Menulis Jawaban"}
                 </p>
-                <p className="text-[11.5px] text-slate-500">
+                <p className="mt-0.5 text-sm font-medium text-slate-600">
                   {partOf(cur) === 1
                     ? "Pilih satu jawaban yang paling tepat."
                     : quiz?.part2_allow_upload !== false
@@ -506,28 +534,40 @@ export default function QuizTakePage() {
               </div>
             )}
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-              <div className="mb-2 flex items-center">
-                <span className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+            {/* [kuis-tampilan-besar-v1] Kartu soal ala Quizizz: satu soal memenuhi
+                layar, huruf besar & tebal. Kuis ini dikerjakan dari HP sambil kelas
+                berjalan — teks 15px yang muat rapi di monitor pengajar justru yang
+                paling sering bikin siswa salah baca soalnya sendiri. */}
+            <div className="rounded-3xl border-2 border-slate-200 bg-white p-5 shadow-lg sm:p-7">
+              <div className="mb-3 flex items-center gap-2">
+                <span className="grid h-9 w-9 place-items-center rounded-xl text-base font-extrabold text-white"
+                  style={{ background: BRAND }}>
+                  {step + 1}
+                </span>
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-500">
                   {cur.points} poin
                 </span>
               </div>
-              <p className="text-[15px] font-medium leading-relaxed text-slate-800">{cur.prompt}</p>
+              <p className="text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
               {showTranslit && cur.prompt_translit && (
-                <p className="mt-1 text-[13px] italic text-slate-500">{cur.prompt_translit}</p>
+                <p className="mt-1.5 text-base font-medium italic text-slate-500">{cur.prompt_translit}</p>
               )}
 
-              <div className="mt-4">
+              <div className="mt-5">
                 {isMC(cur) ? (
-                  <div className="grid gap-2">
+                  <div className="grid gap-3">
                     {cur.options.map((opt, oi) => {
                       const active = Number(responses[step]) === oi;
                       const tl = showTranslit ? cur.options_translit?.[oi] : "";
                       return (
                         <button key={oi} type="button" onClick={() => pickOption(step, oi)}
-                          className="flex items-start gap-2.5 rounded-xl border px-3 py-3 text-left text-sm transition"
-                          style={{ borderColor: active ? BRAND : "#e2e8f0", background: active ? "#f0fdfa" : "#fff" }}>
-                          <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full text-[11px] font-bold"
+                          className="flex items-center gap-3.5 rounded-2xl border-2 px-4 py-4 text-left transition active:scale-[0.99] sm:px-5"
+                          style={{
+                            borderColor: active ? BRAND : "#e2e8f0",
+                            background: active ? "#f0fdfa" : "#fff",
+                            boxShadow: active ? `0 0 0 3px ${BRAND}22` : "none",
+                          }}>
+                          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-base font-extrabold"
                             style={{
                               background: active ? BRAND : "#f1f5f9",
                               color: active ? "#fff" : "#64748b",
@@ -535,14 +575,21 @@ export default function QuizTakePage() {
                             {String.fromCharCode(65 + oi)}
                           </span>
                           <span className="min-w-0 flex-1">
-                            <span className="block text-slate-700">{opt}</span>
-                            {tl && <span className="block text-[12px] italic text-slate-400">{tl}</span>}
+                            <span className="block text-lg font-bold leading-snug text-slate-800">{opt}</span>
+                            {tl && <span className="block text-sm font-medium italic text-slate-400">{tl}</span>}
                           </span>
-                          {active && <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: BRAND }} />}
+                          {active && <CheckCircle2 className="h-6 w-6 shrink-0" style={{ color: BRAND }} />}
                         </button>
                       );
                     })}
                   </div>
+                ) : isTidakTahu(responses[step]) ? (
+                  /* Kotak jawaban disembunyikan selama "tidak tahu" aktif: dua isian
+                     yang sama-sama hidup (teks DAN pernyataan tidak tahu) hanya bikin
+                     bingung soal mana yang sebetulnya dikirim. */
+                  <p className="rounded-2xl border-2 border-dashed border-slate-300 px-4 py-6 text-center text-base font-semibold text-slate-500">
+                    Kamu menjawab <b className="text-slate-700">tidak tahu</b> untuk soal ini.
+                  </p>
                 ) : partOf(cur) === 2 && quiz?.part2_allow_upload !== false ? (
                   /* `key` per soal: pilihan ketik/foto disimpan di dalam komponen,
                      dan tanpa remount soal berikutnya mewarisi tab soal sebelumnya
@@ -558,24 +605,38 @@ export default function QuizTakePage() {
                     value={typeof responses[step] === "object" ? (responses[step]?.text ?? "") : (responses[step] ?? "")}
                     onChange={(e) => setResponses((s) => ({ ...s, [step]: e.target.value }))}
                     placeholder="Tulis jawaban kamu…"
-                    className="min-h-[96px] w-full resize-y rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[color:var(--brand)]"
+                    className="min-h-[140px] w-full resize-y rounded-2xl border-2 border-slate-300 px-4 py-3 text-lg font-semibold text-slate-800 outline-none focus:border-[color:var(--brand)]"
                     style={{ ["--brand" as any]: BRAND }} />
                 )}
+
+                {/* [kuis-tidak-tahu-v1] Sengaja dipisah garis dari pilihan/kotak
+                    jawaban di atasnya: ini bukan "opsi E", tapi jalan keluar yang
+                    jujur. Gayanya pun beda — abu/amber, bukan teal seperti jawaban. */}
+                <button type="button" onClick={() => toggleTidakTahu(step)}
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-dashed px-4 py-3.5 text-base font-bold transition"
+                  style={
+                    isTidakTahu(responses[step])
+                      ? { borderColor: "#f59e0b", background: "#fffbeb", color: "#b45309", borderStyle: "solid" }
+                      : { borderColor: "#cbd5e1", background: "#fff", color: "#64748b" }
+                  }>
+                  <HelpCircle className="h-5 w-5" />
+                  {isTidakTahu(responses[step]) ? "Tidak tahu — ketuk lagi buat menjawab" : "Tidak tahu"}
+                </button>
               </div>
             </div>
 
-            <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/90 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border">
-              <div className="flex items-center gap-2">
+            <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
+              <div className="flex items-center gap-2.5">
                 <button onClick={() => goto(step - 1)}
-                  className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-600">
-                  <ArrowLeft className="h-4 w-4" /> {step === 0 ? "Nama" : "Sebelumnya"}
+                  className="flex items-center gap-1.5 rounded-xl border-2 border-slate-300 px-4 py-3.5 text-base font-bold text-slate-600 sm:px-5">
+                  <ArrowLeft className="h-5 w-5" /> {step === 0 ? "Nama" : "Sebelumnya"}
                 </button>
                 <button onClick={() => goto(step + 1)}
-                  className="flex flex-1 items-center justify-center gap-1.5 rounded-lg px-5 py-2.5 text-sm font-bold text-white"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-extrabold text-white"
                   style={{ background: BRAND }}>
                   {step === total - 1
-                    ? <><ListChecks className="h-4 w-4" /> Periksa Jawaban</>
-                    : <>Lanjut <ArrowRight className="h-4 w-4" /></>}
+                    ? <><ListChecks className="h-5 w-5" /> Periksa Jawaban</>
+                    : <>Lanjut <ArrowRight className="h-5 w-5" /></>}
                 </button>
               </div>
             </div>
@@ -609,26 +670,31 @@ export default function QuizTakePage() {
               </p>
               <div className="mt-3 grid grid-cols-6 gap-2 sm:grid-cols-10">
                 {questions.map((_, i) => {
+                  const ragu = isTidakTahu(responses[i]);
                   const filled = isAnswered(responses[i]);
+                  const gaya = ragu
+                    ? { borderColor: "#fbbf24", background: "#fffbeb", color: "#b45309" }
+                    : filled
+                      ? { borderColor: BRAND, background: "#f0fdfa", color: "#0f766e" }
+                      : { borderColor: "#fca5a5", background: "#fef2f2", color: "#b91c1c" };
                   return (
                     <button key={i} onClick={() => goto(i)}
-                      className="grid h-9 place-items-center rounded-lg border text-[13px] font-bold transition"
-                      style={{
-                        borderColor: filled ? BRAND : "#fbbf24",
-                        background: filled ? "#f0fdfa" : "#fffbeb",
-                        color: filled ? "#0f766e" : "#b45309",
-                      }}>
+                      className="grid h-11 place-items-center rounded-xl border-2 text-base font-extrabold transition"
+                      style={gaya}>
                       {i + 1}
                     </button>
                   );
                 })}
               </div>
-              <div className="mt-3 flex items-center gap-4 text-[11px] text-slate-500">
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-slate-500">
                 <span className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded" style={{ background: "#ccfbf1", border: `1px solid ${BRAND}` }} /> terisi
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded" style={{ background: "#fef3c7", border: "1px solid #fbbf24" }} /> masih kosong
+                  <span className="h-2.5 w-2.5 rounded" style={{ background: "#fef3c7", border: "1px solid #fbbf24" }} /> tidak tahu
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded" style={{ background: "#fef2f2", border: "1px solid #fca5a5" }} /> masih kosong
                 </span>
               </div>
             </div>
@@ -652,6 +718,116 @@ export default function QuizTakePage() {
         )}
       </div>
     </Shell>
+  );
+}
+
+/* [kuis-navbar-soal-v1] Bilah nomor soal, sama pola dengan runner simulasi TOEFL
+   (`/akun/simulasi/[id]`): blok nomor disusun HORIZONTAL dan bisa digeser, jadi
+   kolom soalnya tetap dapat lebar penuh di HP.
+
+   Sebelumnya nomor-nomor ini cuma ada di halaman periksa — artinya siswa yang mau
+   balik ke soal 3 dari soal 17 harus menekan "Sebelumnya" 14 kali atau menjelajah
+   sampai ujung dulu. Statusnya dibedakan bertiga (sedang dibuka / terisi / kosong)
+   supaya "mana yang belum" terbaca tanpa membuka halaman lain. */
+function KuisNavBar({
+  total, step, answeredCount, isFilled, isTidakTahu: unknownAt, partOfIndex, multiPart,
+  onJump, onReview, hasTranslit, showTranslit, onToggleTranslit,
+}: {
+  total: number;
+  step: number;
+  answeredCount: number;
+  isFilled: (i: number) => boolean;
+  isTidakTahu: (i: number) => boolean;
+  partOfIndex: (i: number) => 1 | 2;
+  multiPart: boolean;
+  onJump: (i: number) => void;
+  onReview: () => void;
+  hasTranslit: boolean;
+  showTranslit: boolean;
+  onToggleTranslit: () => void;
+}) {
+  const stripRef = useRef<HTMLDivElement>(null);
+
+  // Geser strip ke nomor yang sedang dikerjakan tiap ganti soal. `block:"nearest"`
+  // supaya halaman soalnya sendiri tidak ikut melompat.
+  useEffect(() => {
+    const el = stripRef.current?.querySelector<HTMLElement>(`[data-soal="${step}"]`);
+    el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }, [step]);
+
+  return (
+    <div className="sticky top-0 z-20 -mx-4 mb-4 border-b border-slate-200 bg-slate-100/95 px-4 pb-2 pt-2.5 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
+      <div className="mb-2 flex items-center gap-2">
+        <span className="shrink-0 text-sm font-extrabold text-slate-700">
+          Soal {step + 1}<span className="font-semibold text-slate-400"> / {total}</span>
+        </span>
+        {/* Legenda ala CBT — cuma di layar lebar; di HP ruangnya dipakai nomor. */}
+        <div className="ml-auto hidden items-center gap-x-3 text-[11px] font-semibold text-slate-500 md:flex">
+          <span className="flex items-center gap-1">
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#0f766e" }} />Soal ini
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: BRAND }} />Terisi
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#f59e0b" }} />Tidak tahu
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="h-2.5 w-2.5 rounded-full border border-slate-300 bg-white" />Kosong
+          </span>
+        </div>
+        <span className="ml-auto shrink-0 text-xs font-bold tabular-nums text-slate-600 md:ml-0">
+          <span style={{ color: BRAND }}>{answeredCount}</span>/{total} terisi
+        </span>
+        {hasTranslit && (
+          <button onClick={onToggleTranslit}
+            title={showTranslit ? "Sembunyikan cara baca" : "Tampilkan cara baca"}
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border-2"
+            style={{
+              borderColor: showTranslit ? BRAND : "#cbd5e1",
+              background: showTranslit ? BRAND : "#fff",
+              color: showTranslit ? "#fff" : "#64748b",
+            }}>
+            <Languages className="h-4 w-4" />
+          </button>
+        )}
+        <button onClick={onReview}
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-extrabold text-white"
+          style={{ background: "#0f766e" }}>
+          <ListChecks className="h-4 w-4" /><span className="hidden sm:inline">Periksa</span>
+        </button>
+      </div>
+
+      <div ref={stripRef} className="flex items-center gap-1.5 overflow-x-auto pb-1">
+        {Array.from({ length: total }, (_, i) => {
+          const filled = isFilled(i);
+          const ragu = unknownAt(i);
+          const current = i === step;
+          // Sekat tipis di pergantian bagian — batas "memilih" vs "menulis" harus
+          // terbaca juga dari deretan nomornya, bukan cuma dari spanduk di soal.
+          const sekat = multiPart && i > 0 && partOfIndex(i) !== partOfIndex(i - 1);
+          return (
+            <span key={i} className="flex shrink-0 items-center gap-1.5">
+              {sekat && <span className="mx-1 h-7 w-px shrink-0 bg-slate-300" />}
+              <button type="button" data-soal={i} onClick={() => onJump(i)}
+                title={`Soal ${i + 1} · ${ragu ? "dijawab tidak tahu" : filled ? "terisi" : "kosong"}`}
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border-2 text-sm font-extrabold tabular-nums transition"
+                style={
+                  current
+                    ? { background: "#0f766e", borderColor: "#0f766e", color: "#fff" }
+                    : ragu
+                      ? { background: "#fffbeb", borderColor: "#f59e0b", color: "#b45309" }
+                      : filled
+                        ? { background: BRAND, borderColor: BRAND, color: "#fff" }
+                        : { background: "#fff", borderColor: "#cbd5e1", color: "#64748b" }
+                }>
+                {i + 1}
+              </button>
+            </span>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

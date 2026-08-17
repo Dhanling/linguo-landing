@@ -41,8 +41,12 @@ export interface PublicQuiz {
   session_label?: string | null;
 }
 
-/** Jawaban bagian 2: diketik langsung, atau foto tulisan tangan yang diunggah. */
-export interface EssayResponse { text?: string; image_url?: string }
+/** Jawaban bagian 2: diketik langsung, atau foto tulisan tangan yang diunggah.
+ *  `tidak_tahu` = siswa menyatakan tidak tahu (kuis-tidak-tahu-v1). Penanda ini
+ *  hanya hidup di browser — sebelum dikirim ia diubah jadi teks "TIDAK TAHU"
+ *  supaya pengoreksi (kunci jawaban untuk bagian 1, AI untuk bagian 2) tidak
+ *  perlu tahu bentuk internal apa pun. */
+export interface EssayResponse { text?: string; image_url?: string; tidak_tahu?: boolean }
 
 export interface QuizAnalysis {
   summary: string;

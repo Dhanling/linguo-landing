@@ -452,7 +452,13 @@ export default function ChatWidget() {
   // [pendataan-wizard-v3] Form pendataan juga: wizard-nya punya bilah tombol
   // Lanjut/Kirim yang menempel di bawah, dan FAB ini persis menimpanya. Bantuan
   // tetap sejangkauan — ada tautan chat CS di kaki formnya.
-  if (pathname?.startsWith("/akun") || pathname?.startsWith("/watch") || pathname?.startsWith("/pendataan")) return null;
+  // [kuis-layar-bersih-v1] Halaman kuis juga: siswa sedang mengerjakan soal berbatas
+  // waktu, dan FAB CS di kanan-bawah persis menimpa tombol "Lanjut" yang menempel di
+  // dasar layar HP. Bantuan bukan yang dia cari di menit-menit itu.
+  if (
+    pathname?.startsWith("/akun") || pathname?.startsWith("/watch") ||
+    pathname?.startsWith("/pendataan") || pathname?.startsWith("/kuis")
+  ) return null;
 
   return (
     <div className="lingw">
