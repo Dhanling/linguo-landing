@@ -43,6 +43,7 @@ import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
   type PublicQuiz, type PublicQuizQuestion, type EssayResponse,
 } from "@/lib/quizPublic";
+import ImeTextarea from "@/components/kuis/ImeTextarea";
 
 const BRAND = "#1A9E9E";
 
@@ -597,13 +598,20 @@ export default function QuizTakePage() {
                   <Part2Answer
                     key={step}
                     token={token}
+                    bahasa={quiz?.target_lang}
                     value={(responses[step] as EssayResponse) ?? {}}
                     onChange={(v) => setResponses((s) => ({ ...s, [step]: v }))}
                   />
                 ) : (
-                  <textarea
+                  /* Jalur tanpa unggah foto. Bentuk jawabannya string polos di
+                     sini — begitu konversi aksara dipakai, ia naik jadi objek
+                     supaya penandanya ikut tersimpan; grade-quiz sudah bisa
+                     membaca dua-duanya. */
+                  <ImeTextarea
                     value={typeof responses[step] === "object" ? (responses[step]?.text ?? "") : (responses[step] ?? "")}
-                    onChange={(e) => setResponses((s) => ({ ...s, [step]: e.target.value }))}
+                    bahasa={quiz?.target_lang}
+                    onChange={(teks, dibantu) =>
+                      setResponses((s) => ({ ...s, [step]: dibantu ? { text: teks, ime: true } : teks }))}
                     placeholder="Tulis jawaban kamu…"
                     className="min-h-[140px] w-full resize-y rounded-2xl border-2 border-slate-300 px-4 py-3 text-lg font-semibold text-slate-800 outline-none focus:border-[color:var(--brand)]"
                     style={{ ["--brand" as any]: BRAND }} />
@@ -855,11 +863,12 @@ function TranslitToggle({ on, onToggle }: { on: boolean; onToggle: () => void })
 // yang terlanjur terunggah tapi diabaikan terasa seperti pekerjaan yang hilang.
 // Berpindah mode karena itu ikut menghapus isi mode sebelumnya, terang-terangan.
 function Part2Answer({
-  token, value, onChange,
+  token, value, onChange, bahasa,
 }: {
   token: string;
   value: EssayResponse;
   onChange: (v: EssayResponse) => void;
+  bahasa?: string | null;
 }) {
   const [mode, setMode] = useState<"type" | "photo">(value.image_url ? "photo" : "type");
   const [uploading, setUploading] = useState(false);
@@ -899,7 +908,8 @@ function Part2Answer({
       </div>
 
       {mode === "type" ? (
-        <textarea value={value.text ?? ""} onChange={(e) => onChange({ text: e.target.value })}
+        <ImeTextarea value={value.text ?? ""} bahasa={bahasa}
+          onChange={(teks, dibantu) => onChange(dibantu ? { text: teks, ime: true } : { text: teks })}
           placeholder="Tulis jawaban kamu…"
           className="min-h-[96px] w-full resize-y rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[color:var(--brand)]"
           style={{ ["--brand" as any]: BRAND }} />

@@ -46,7 +46,11 @@ export interface PublicQuiz {
  *  hanya hidup di browser — sebelum dikirim ia diubah jadi teks "TIDAK TAHU"
  *  supaya pengoreksi (kunci jawaban untuk bagian 1, AI untuk bagian 2) tidak
  *  perlu tahu bentuk internal apa pun. */
-export interface EssayResponse { text?: string; image_url?: string; tidak_tahu?: boolean }
+/** `ime: true` = aksaranya lahir dari bantuan konversi Latin → aksara di kotak
+ *  jawaban, bukan diketik langsung. Ikut tersimpan ke `quiz_answers.response`
+ *  (jsonb, jadi tak perlu kolom baru) dan ditampilkan sebagai penanda di hasil;
+ *  `grade-quiz` hanya membaca `text`/`image_url`, jadi nilainya tak terpengaruh. */
+export interface EssayResponse { text?: string; image_url?: string; tidak_tahu?: boolean; ime?: boolean }
 
 export interface QuizAnalysis {
   summary: string;
