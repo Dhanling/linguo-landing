@@ -382,14 +382,26 @@ function Hero({
             <span className="block">Online</span>
           </h1>
 
-          {/* Jatah baris dipatok: 1 untuk tagline, 2 untuk penjelasan. Di layar
-              kecil jatahnya dilonggarkan — kalimat yang terpotong elipsis di
-              ponsel lebih merugikan daripada hero yang sedikit lebih tinggi. */}
-          <p className="line-clamp-2 text-[15px] text-white/90 md:line-clamp-1 md:text-base">
+          {/* Jatah baris dipatok: 1 untuk tagline, 2 untuk penjelasan — tapi
+              HANYA di halaman berilustrasi, yang tinggi kolomnya harus seimbang
+              dengan gambar di sebelahnya. Di 44 halaman bahasa lain kolomnya
+              selebar hero dan penjelasan terpanjang (Belanda, 204 huruf) makan
+              lebih dari dua baris: kalau ikut diklem, ekor kalimatnya hilang
+              jadi elipsis di halaman yang justru mengandalkan teks itu untuk
+              SEO. Di layar kecil jatahnya juga dilonggarkan. */}
+          <p
+            className={`text-[15px] text-white/90 md:text-base ${
+              illustration ? "line-clamp-2 md:line-clamp-1" : ""
+            }`}
+          >
             {detail.tagline}
           </p>
 
-          <p className="line-clamp-4 text-sm leading-relaxed text-white/80 md:line-clamp-2">
+          <p
+            className={`text-sm leading-relaxed text-white/80 ${
+              illustration ? "line-clamp-4 md:line-clamp-2" : ""
+            }`}
+          >
             {detail.heroDescription}
           </p>
 
