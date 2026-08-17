@@ -432,15 +432,22 @@ function Hero({
           </div>
         </div>
 
+          {/* Gambar melebar ke kanan MELEWATI container, tepat sebanyak sisa
+              ruang kosong di kanannya: (100vw − 72rem)/2, dipagari 8rem. Lebar
+              kolom teks tak boleh ikut menyusut — penjelasan kelas cuma pas dua
+              baris di lebar sekarang, sedikit saja dipersempit ekornya kena
+              elipsis. Di bawah 1152px sisa ruangnya nol, jadi rumusnya sendiri
+              yang mematikan pelebaran ini — gambar tak pernah kepotong tepi
+              layar. */}
           {illustration && (
-            <div className="relative hidden lg:block">
+            <div className="relative hidden lg:-mr-[min(8rem,max(0px,(100vw-72rem)/2))] lg:block">
               <Image
                 src={illustration}
                 alt={`Belajar Bahasa ${langName} online bersama Linguo`}
                 width={1200}
                 height={800}
                 priority
-                sizes="(min-width: 1024px) 46vw, 0px"
+                sizes="(min-width: 1024px) 55vw, 0px"
                 className="h-auto w-full drop-shadow-2xl"
               />
             </div>
