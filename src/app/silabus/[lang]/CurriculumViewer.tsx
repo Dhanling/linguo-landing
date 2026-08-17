@@ -251,7 +251,7 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
                   Mulai Belajar Sekarang
                   <Icons.ArrowRight className="w-4 h-4" />
                 </button>
-                <Link href="/produk" className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 text-white rounded-full font-semibold hover:bg-white/20 transition-colors">
+                <Link href="/toko/paket-elearning" className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 text-white rounded-full font-semibold hover:bg-white/20 transition-colors">
                   Lihat Harga Kelas
                 </Link>
               </div>

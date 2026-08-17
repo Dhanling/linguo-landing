@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { Search, Clock, ChevronRight, ChevronLeft, ArrowRight, LayoutGrid, List, MoreHorizontal, Bookmark, MessageCircle, X, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { JelajahiNav } from "./JelajahiNav";
 
 interface BlogPost {
   id: string; slug: string; title: string; content: string; excerpt?: string;
@@ -23,7 +24,18 @@ const GRADS = [
   "from-emerald-300 via-cyan-300 to-blue-400","from-amber-300 via-orange-300 to-red-300",
   "from-teal-300 via-cyan-400 to-blue-300","from-pink-300 via-rose-300 to-red-300",
 ];
-const LANGS = ["English","French","Spanish","Portuguese","German","Japanese","Korean","Arabic","Hindi","Italian","Russian","Mandarin"];
+// [seo-tautan-internal-v1] Dulu daftar ini cuma nama bahasa yang ditaut ke
+// "/?lang=<nama>" — bukan halaman sungguhan, cuma parameter di homepage. Jadi 12
+// tautan terbuang ke URL yang isinya sama persis dengan homepage. Sekarang
+// diarahkan ke landing /kursus/bahasa-* yang memang halaman targetnya.
+const LANGS: { label: string; slug: string }[] = [
+  { label:"Inggris", slug:"inggris" }, { label:"Prancis", slug:"prancis" },
+  { label:"Spanyol", slug:"spanyol" }, { label:"Portugis", slug:"portugis" },
+  { label:"Jerman", slug:"jerman" },   { label:"Jepang", slug:"jepang" },
+  { label:"Korea", slug:"korea" },     { label:"Arab", slug:"arab" },
+  { label:"Hindi", slug:"hindi" },     { label:"Italia", slug:"italia" },
+  { label:"Rusia", slug:"rusia" },     { label:"Mandarin", slug:"mandarin" },
+];
 const FEED_BATCH = 8;
 
 function getGrad(s:string){return GRADS[(s||"").split("").reduce((a,c)=>a+c.charCodeAt(0),0)%GRADS.length]}
@@ -266,7 +278,7 @@ function Footer(){return(
   <footer className="bg-[#1A9E9E] text-white mt-14">
     <div className="max-w-7xl mx-auto px-6 py-14">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div><h4 className="font-bold text-lg mb-4">Learn a Language</h4><div className="space-y-1.5 text-sm text-white/80">{LANGS.map(l=><a key={l} href={"/?lang="+l.toLowerCase()} className="block hover:text-white transition-colors">Learn {l}</a>)}</div></div>
+        <div><h4 className="font-bold text-lg mb-4">Kursus Bahasa</h4><div className="space-y-1.5 text-sm text-white/80">{LANGS.map(l=><a key={l.slug} href={"/kursus/bahasa-"+l.slug} className="block hover:text-white transition-colors">Kursus Bahasa {l.label}</a>)}<a href="/kursus" className="block font-semibold text-white hover:underline">Lihat Semua 60+ Bahasa</a></div></div>
         <div><h4 className="font-bold text-lg mb-4">Level</h4><div className="space-y-1.5 text-sm text-white/80 mb-5">{["Basic","Upper Basic","Intermediate","Advance"].map(l=><span key={l} className="block">{l}</span>)}</div><h4 className="font-bold text-lg mb-4">Program</h4><div className="space-y-1.5 text-sm text-white/80">{["Regular","Private","IELTS","TOEFL"].map(p=><span key={p} className="block">{p} Class</span>)}</div></div>
         <div><h4 className="font-bold text-lg mb-4">Teaching</h4><a href="/jadi-pengajar" className="text-sm text-white/80 hover:text-white block mb-5">Become a Teacher</a><p className="text-sm text-white/80 leading-relaxed mb-5">Happy Creative Hub, Jl. Cisitu Indah III No.2, Dago, Coblong, Bandung 40135</p><h4 className="font-bold text-lg mb-4">Customer Service</h4><div className="space-y-1 text-sm text-white/80"><p>WA: <a href="https://wa.me/6282116859493" className="hover:text-white">6282116859493</a></p><p>Tel: (022)85942550</p><p>Email: <a href="mailto:info@linguo.id" className="hover:text-white">info@linguo.id</a></p></div></div>
         <div className="flex flex-col items-start lg:items-end"><a href="/"><Image src="/images/logo-white.png" alt="Linguo" width={136} height={48} className="h-12 w-auto mb-4"/></a><p className="text-sm text-white/60 mb-4">&copy; {new Date().getFullYear()} PT. Linguo Edu Indonesia</p><div className="flex gap-2.5">{[{h:"https://instagram.com/linguo.id",l:"ig"},{h:"https://youtube.com/@linguoid",l:"yt"},{h:"https://linkedin.com/company/linguo-id",l:"in"},{h:"https://facebook.com/linguo.id",l:"fb"}].map(s=><a key={s.l} href={s.h} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-xs font-bold transition-colors">{s.l}</a>)}</div></div>
@@ -399,7 +411,7 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
                   <div className={`border-t pt-6 mb-6 ${dm?"border-slate-800":"border-slate-100"}`}><RecTopics active={activeCat} onSelect={c=>setActiveCat(c)} dm={dm}/></div>
                   <div className={`border-t pt-6 ${dm?"border-slate-800":"border-slate-100"}`}>
                     <h3 className={`text-[15px] font-extrabold mb-3 ${dm?"text-slate-100":"text-slate-900"}`}>Belajar Bahasa</h3>
-                    <div className="flex flex-wrap gap-1.5">{LANGS.slice(0,8).map(l=><a key={l} href={"/?lang="+l.toLowerCase()} className={`text-[11px] border px-2.5 py-1 rounded-full hover:text-[#1A9E9E] hover:border-[#1A9E9E]/20 transition-colors ${dm?"text-slate-500 bg-slate-800 border-slate-700 hover:bg-[#1A9E9E]/5":"text-slate-500 bg-slate-50 border-slate-100 hover:bg-[#1A9E9E]/5"}`}>{l}</a>)}</div>
+                    <div className="flex flex-wrap gap-1.5">{LANGS.slice(0,8).map(l=><a key={l.slug} href={"/kursus/bahasa-"+l.slug} className={`text-[11px] border px-2.5 py-1 rounded-full hover:text-[#1A9E9E] hover:border-[#1A9E9E]/20 transition-colors ${dm?"text-slate-500 bg-slate-800 border-slate-700 hover:bg-[#1A9E9E]/5":"text-slate-500 bg-slate-50 border-slate-100 hover:bg-[#1A9E9E]/5"}`}>{l.label}</a>)}</div>
                   </div>
                   <p className={`text-[11px] mt-8 leading-relaxed ${dm?"text-slate-700":"text-slate-300"}`}>See more recommendations · Help · Status · About · Careers · Privacy · Terms</p>
                 </div>
@@ -438,6 +450,7 @@ export default function BlogContent({initialPosts}:{initialPosts:BlogPost[]}){
           </div>
         )}
       </>)}
+      <JelajahiNav dm={dm}/>
       <Footer/>
     </div>
   )

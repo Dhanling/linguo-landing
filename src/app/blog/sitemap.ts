@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_KATEGORI } from "./arsipData";
 
 // [seo-sitemap-blog-v1] File ini dulunya hasil salin-tempel dari sitemap root:
 // isinya persis sama (termasuk /, /corporate, /jadi-pengajar), jadi
@@ -13,8 +14,18 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
+  // [seo-blog-bisa-dirayapi-v1] Arsip & kategori ikut didaftarkan. Keduanya
+  // halaman hub: selain jalur rayap ke tiap artikel, isinya berubah tiap ada
+  // post baru — jadi `now` di sini memang jujur, tidak seperti halaman statis.
   const entries: MetadataRoute.Sitemap = [
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
+    { url: `${BASE}/blog/arsip`, lastModified: now, changeFrequency: "daily", priority: 0.7 },
+    ...BLOG_KATEGORI.map((k) => ({
+      url: `${BASE}/blog/kategori/${k.slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.75,
+    })),
   ];
 
   try {

@@ -531,7 +531,7 @@ const NAV_MEGA: { group: string; items: NavMegaItem[] }[] = [
     { icon:Languages, title:"Persiapan Ujian Bahasa", desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private", href:"/persiapan-tes" },
   ]},
   { group: "Belajar Mandiri", items: [
-    { icon:MonitorPlay, title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/produk" },
+    { icon:MonitorPlay, title:"E-Learning", desc:"Materi interaktif, belajar sesuai tempo sendiri", href:"/toko/paket-elearning" },
     { icon:BookOpen, title:"E-Book", desc:"Buku digital lengkap untuk belajar di mana saja", href:"/produk/ebook" },
     { icon:Timer, title:"Simulasi TOEFL/IELTS", desc:"Latihan tes lengkap 4 skill + skor otomatis", href:"/simulasi" },
   ]},
@@ -688,7 +688,7 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
               <a href="/persiapan-tes" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Persiapan Ujian (HSK/JLPT/TOPIK/Goethe)</a>
               <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids</button>
               <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
-              <a href="/produk" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
+              <a href="/toko/paket-elearning" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
               <a href="/watch-learn" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Watch &amp; Learn</a>
               <a href="/harga" onClick={()=>setOpen(false)} className="text-base py-3">Harga</a>
@@ -2202,7 +2202,7 @@ const PRODUCTS = [
   {badgeIcon:<Languages className="w-2.5 h-2.5 inline-block mr-0.5"/>,badgeLabel:"Ujian Bahasa",badgeColor:"bg-teal-600 text-white",title:"Persiapan Ujian Bahasa",desc:"HSK, JLPT, TOPIK, Goethe — semi-private / private + mock test",priceOld:null,price:"Mulai Rp 1.000.000",per:"/paket",discount:null,tab:-1,href:"/persiapan-tes",bgColor:"#E0F7F7",imageEmoji:"",lucideIcon:Languages,img1:"/images/programs/private-2.jpg",img2:"/images/programs/private-1.jpg"},
   {badgeIcon:<Sparkles className="w-2.5 h-2.5 inline-block mr-0.5"/>,badgeLabel:"Lifetime",badgeColor:"bg-indigo-500 text-white",title:"Simulasi TOEFL/IELTS",desc:"Latihan tes lengkap 4 skill: Reading, Listening, Writing, Speaking",priceOld:null,price:"Rp 79.000",per:"",discount:null,tab:-1,href:"/simulasi",bgColor:"#EEF2FF",imageEmoji:"",img1:"/images/programs/ielts-1.jpg",img2:"/images/programs/ielts-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>,badgeLabel:"Anak 5-12 thn",badgeColor:"bg-pink-500 text-white",title:"Kelas Kids",desc:"Belajar bahasa 1-on-1 untuk anak, fun & interaktif",priceOld:null,price:"Rp 75.000",per:"/sesi",discount:null,tab:3,bgColor:"#FCE4EC",imageEmoji:"",img1:"/images/programs/kids-1.jpg",img2:"/images/programs/kids-2.jpg"},
-  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Mulai Rp 29.000",per:"/bulan",discount:null,tab:-1,href:"/produk",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
+  {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>,badgeLabel:"Belajar Mandiri",badgeColor:"bg-purple-500 text-white",title:"E-Learning",desc:"Akses materi interaktif kapan saja, belajar sesuai tempo sendiri",priceOld:null,price:"Mulai Rp 29.000",per:"/bulan",discount:null,tab:-1,href:"/toko/paket-elearning",bgColor:"#F3E8FD",imageEmoji:"",img1:"/images/programs/elearning-1.jpg",img2:"/images/programs/elearning-2.jpg"},
   {badgeIcon:<svg viewBox="0 0 24 24" fill="white" className="w-2.5 h-2.5 inline-block mr-0.5"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V6h10v2z"/></svg>,badgeLabel:"Digital",badgeColor:"bg-rose-500 text-white",title:"E-Book",desc:"Buku digital lengkap untuk belajar mandiri di mana saja",priceOld:null,price:"Mulai Rp 79.000",per:"",discount:null,tab:-1,href:"/produk/ebook",bgColor:"#FFEBEE",imageEmoji:"",img1:"/images/programs/ebook-1.jpg",img2:"/images/programs/ebook-2.jpg"},
 ];
 
@@ -2325,17 +2325,57 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 // bahasa yang punya landing sendiri → /kursus/bahasa-*, sisanya → silabusnya.
 // Label diubah ke bahasa Indonesia supaya cocok dengan kata yang benar-benar
 // dicari orang ("kursus bahasa jepang", bukan "learn Japanese").
+// [seo-tautan-internal-v1] Enam dari sepuluh baris ini dulu menunjuk
+// /silabus/<slug> padahal landing /kursus/bahasa-<slug>-nya SUDAH ada dan justru
+// halaman yang menyasar kueri komersial ("kursus bahasa prancis online").
+// Tautan dari homepage — halaman terkuat di situs ini — terbuang ke halaman
+// silabus yang nilai konversinya jauh lebih rendah. Sekarang semuanya menunjuk
+// landing /kursus.
 const FOOTER_LANGUAGES: { label: string; href: string }[] = [
   { label: "Inggris",  href: "/kursus/bahasa-inggris" },
   { label: "Jepang",   href: "/kursus/bahasa-jepang" },
   { label: "Korea",    href: "/kursus/bahasa-korea" },
   { label: "Mandarin", href: "/kursus/bahasa-mandarin" },
-  { label: "Prancis",  href: "/silabus/french" },
-  { label: "Jerman",   href: "/silabus/german" },
-  { label: "Spanyol",  href: "/silabus/spanish" },
-  { label: "Arab",     href: "/silabus/arabic" },
-  { label: "Italia",   href: "/silabus/italian" },
-  { label: "Belanda",  href: "/silabus/dutch" },
+  { label: "Prancis",  href: "/kursus/bahasa-prancis" },
+  { label: "Jerman",   href: "/kursus/bahasa-jerman" },
+  { label: "Spanyol",  href: "/kursus/bahasa-spanyol" },
+  { label: "Arab",     href: "/kursus/bahasa-arab" },
+  { label: "Italia",   href: "/kursus/bahasa-italia" },
+  { label: "Belanda",  href: "/kursus/bahasa-belanda" },
+];
+
+// [seo-tautan-internal-v1] Sebelum ini homepage cuma menaut 4 dari 45 landing
+// bahasa. Sisanya hanya dijangkau lewat hub /kursus — satu-satunya jalur, dan
+// hub itu sendiri baru lahir 17 Agustus 2026. Halaman paling bernilai di situs
+// justru yang paling dalam letaknya.
+//
+// Blok ini menaut SEMUA landing bahasa langsung dari homepage. Urutannya
+// sengaja dari bahasa paling dicari ke bahasa daerah, karena urutan tautan
+// ikut jadi petunjuk kepentingan.
+const SEMUA_BAHASA: { label: string; slug: string }[] = [
+  { label: "Inggris", slug: "inggris" }, { label: "Jepang", slug: "jepang" },
+  { label: "Korea", slug: "korea" }, { label: "Mandarin", slug: "mandarin" },
+  { label: "Jerman", slug: "jerman" }, { label: "Prancis", slug: "prancis" },
+  { label: "Spanyol", slug: "spanyol" }, { label: "Italia", slug: "italia" },
+  { label: "Belanda", slug: "belanda" }, { label: "Arab", slug: "arab" },
+  { label: "Rusia", slug: "rusia" }, { label: "Turki", slug: "turki" },
+  { label: "Yunani", slug: "yunani" }, { label: "Portugis", slug: "portugis" },
+  { label: "Thailand", slug: "thailand" }, { label: "Vietnam", slug: "vietnam" },
+  { label: "Hindi", slug: "hindi" }, { label: "Swedia", slug: "swedia" },
+  { label: "Norwegia", slug: "norwegia" }, { label: "Denmark", slug: "denmark" },
+  { label: "Finlandia", slug: "finlandia" }, { label: "Islandia", slug: "islandia" },
+  { label: "Polandia", slug: "polandia" }, { label: "Ceko", slug: "ceko" },
+  { label: "Hungaria", slug: "hungaria" }, { label: "Rumania", slug: "rumania" },
+  { label: "Bulgaria", slug: "bulgaria" }, { label: "Ukraina", slug: "ukraina" },
+  { label: "Ibrani", slug: "ibrani" }, { label: "Persia", slug: "persia" },
+  { label: "Georgia", slug: "georgia" }, { label: "Kanton", slug: "kanton" },
+  { label: "Filipina", slug: "filipina" }, { label: "Khmer", slug: "khmer" },
+  { label: "Laos", slug: "laos" }, { label: "Myanmar", slug: "myanmar" },
+  { label: "Urdu", slug: "urdu" }, { label: "Indonesia", slug: "indonesia" },
+  { label: "Jawa", slug: "jawa" }, { label: "Sunda", slug: "sunda" },
+  { label: "Betawi", slug: "betawi" }, { label: "Bali", slug: "bali" },
+  { label: "Batak", slug: "batak" }, { label: "Bugis", slug: "bugis" },
+  { label: "Madura", slug: "madura" },
 ];
 
 // Sama seperti di atas: program diarahkan ke halamannya sendiri, bukan ke WA.
@@ -2536,7 +2576,7 @@ function PricingSection({tab,setTab,onGetStarted}:{tab:number;setTab:(t:number)=
                   {d.price}
                   {(d as any).per && <span className="text-[10px] sm:text-xs font-medium text-slate-400">{(d as any).per}</span>}
                 </p>
-                <a href={(d as any).href || "/produk"}
+                <a href={(d as any).href || "/toko/paket-elearning"}
                   className="inline-block w-full border-2 border-[#1A9E9E] text-[#1A9E9E] hover:bg-[#1A9E9E] hover:text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95">
                   Beli Sekarang
                 </a>
@@ -2798,6 +2838,30 @@ export default function Home() {
     </section>
     </Reveal>
 
+    {/* [seo-video-object-v1] Search Console melaporkan 4 video terdeteksi, 0
+        terindeks. Penyebabnya: satu-satunya video di halaman ini duduk di dalam
+        akordeon FAQ yang tertutup (grid-rows-[0fr] + overflow-hidden), jadi
+        tingginya 0 dan Google tidak bisa menentukan video mana yang menonjol.
+        Markup di bawah menjawab persis itu — memberi tahu judul, tanggal unggah,
+        dan thumbnail videonya secara eksplisit tanpa mengubah tampilan.
+        Datanya diambil dari oEmbed YouTube, JANGAN diarang-arang: structured
+        data yang tidak cocok dengan video aslinya justru bikin halaman kena
+        abaikan. Kalau video FAQ diganti, perbarui blok ini juga. */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: "Jadi polyglot kaya Fikri Naki bareng Linguo ID yuk!",
+        description: "Perkenalan Linguo.id — platform kursus bahasa online dengan 60+ pilihan bahasa dan kelas live bersama pengajar.",
+        thumbnailUrl: ["https://i.ytimg.com/vi/3hDBE8o-jJU/maxresdefault.jpg"],
+        uploadDate: "2021-05-02",
+        embedUrl: "https://www.youtube.com/embed/3hDBE8o-jJU",
+        contentUrl: "https://www.youtube.com/watch?v=3hDBE8o-jJU",
+        publisher: { "@id": "https://linguo.id/#organization" },
+      }) }}
+    />
+
     {/* FAQ */}
     <Reveal>
     <section id="faq" className="py-16 lg:py-24 bg-white">
@@ -2832,7 +2896,15 @@ export default function Home() {
               <li><a href="/kursus" className="hover:text-white transition-colors">Semua Kelas Bahasa</a></li>
               <li><a href="/silabus" className="hover:text-white transition-colors">Silabus & Kurikulum</a></li>
               <li><a href="/kelas-trial" className="hover:text-white transition-colors">Kelas Trial</a></li>
-              <li><a href="/kosakata" className="hover:text-white transition-colors">Kosakata Gratis</a></li>
+              {/* [seo-tautan-internal-v1] Dulu di sini ada "Kosakata Gratis" →
+                  /kosakata. Halaman itu di-Disallow di robots.txt DAN noindex
+                  (isinya flashcard milik siswa, butuh akun), jadi tautan dari
+                  footer publik cuma membuang jatah rayap ke halaman terlarang —
+                  sekaligus menjanjikan sesuatu yang ternyata minta login.
+                  Diganti ke /blog/arsip: gratis, boleh diindeks, dan jadi pintu
+                  masuk ke 375 artikel yang sebelumnya tidak ditaut dari mana pun.
+                  (/silabus sudah punya barisnya sendiri di atas.) */}
+              <li><a href="/blog/arsip" className="hover:text-white transition-colors">Arsip Artikel</a></li>
               <li><a href="/watch-learn" className="hover:text-white transition-colors">Watch &amp; Learn</a></li>
               <li><a href="/simulasi" className="hover:text-white transition-colors">Simulasi TOEFL &amp; IELTS</a></li>
               <li><a href="/toko/paket-elearning" className="hover:text-white transition-colors">Paket E-Learning</a></li>
@@ -2870,6 +2942,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* [seo-tautan-internal-v1] Semua landing bahasa ditaut langsung dari
+            homepage — lihat catatan di atas definisi SEMUA_BAHASA. */}
+        <nav aria-label="Semua kursus bahasa" className="border-t border-white/20 pt-8 pb-8">
+          <h4 className="font-bold mb-3 text-sm">Semua Kursus Bahasa</h4>
+          <ul className="flex flex-wrap gap-x-4 gap-y-2 text-[13px] text-white/70">
+            {SEMUA_BAHASA.map(b=>(
+              <li key={b.slug}>
+                <a href={`/kursus/bahasa-${b.slug}`} className="hover:text-white hover:underline transition-colors">
+                  Kursus Bahasa {b.label}
+                </a>
+              </li>
+            ))}
+            <li><a href="/kursus" className="font-semibold text-white hover:underline">Lihat Semua &rarr;</a></li>
+          </ul>
+        </nav>
         <div className="border-t border-white/20 pt-6 text-center text-sm text-white/60">© {new Date().getFullYear()} PT. Linguo Edu Indonesia</div>
       </div>
     </footer>

@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { languages as curriculumLanguages } from "@/data/curriculum";
 import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
 
 // [seo-sitemap-lengkap-v1] Sebelumnya sitemap ini cuma memuat 4 URL statis
@@ -14,11 +13,32 @@ import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
 //   (lihat src/app/robots.ts).
 // - Prioritas mencerminkan nilai bisnis: halaman uang > halaman info.
 // - Jangan pakai URL yang kena redirect (mis. /produk → /toko/paket-elearning).
+//
+// [seo-sitemap-tanpa-tumpang-tindih-v1] File ini TIDAK LAGI memuat /blog/* dan
+// /silabus/*. Dulu ketiga sitemap saling menimpa: /sitemap.xml memuat 445 URL
+// yang sudah termasuk 325 post blog (juga diumumkan lewat /blog/sitemap.xml)
+// dan 48 silabus (juga lewat /silabus/sitemap.xml). Akibat praktisnya di
+// Search Console, laporan "halaman ditemukan vs terindeks" per sitemap jadi
+// tidak bisa dibaca — tidak ketahuan berapa persen artikel blog yang benar-
+// benar terindeks karena angkanya bercampur dengan halaman statis.
+//
+// Sekarang pembagiannya tegas, satu URL cuma diumumkan satu sitemap:
+//   /sitemap.xml         → halaman statis + 45 landing /kursus/bahasa-*
+//   /blog/sitemap.xml    → /blog, arsip, kategori, dan semua post
+//   /silabus/sitemap.xml → /silabus + silabus per bahasa
+// Ketiganya tetap didaftarkan di robots.ts dan tetap dikirim ke GSC.
 
 const BASE = "https://linguo.id";
 
-const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
+// [seo-lastmod-jujur-v1] Dulu SEMUA entri dicap `new Date()` alias "berubah
+// hari ini" tiap kali sitemap di-generate. Google membandingkan lastmod dengan
+// isi halaman yang sebenarnya; kalau selalu bergerak padahal isinya diam, sinyal
+// ini dinilai tidak dapat dipercaya lalu diabaikan seluruhnya untuk domain ini.
+// Jadi tanggalnya sekarang dipatok manual. NAIKKAN tanggal di bawah HANYA saat
+// isi halaman yang bersangkutan benar-benar diubah.
+const STATIC_UPDATED = new Date("2026-08-17");
+/** Landing /kursus/bahasa-* pindah URL dari /kelas pada 17 Agustus 2026. */
+const KURSUS_UPDATED = new Date("2026-08-17");
 
 /** Halaman statis publik. `priority` relatif terhadap homepage (1.0). */
 const STATIC_ROUTES: Array<{
@@ -37,6 +57,10 @@ const STATIC_ROUTES: Array<{
   { path: "/jadwal-kelas-reguler", priority: 0.85, changeFrequency: "weekly" },
   { path: "/toko", priority: 0.8, changeFrequency: "weekly" },
   { path: "/toko/paket-elearning", priority: 0.8, changeFrequency: "weekly" },
+  // [seo-ebook-canonical-v1] /produk/ebook halaman jualan sungguhan (ditaut dari
+  // homepage) yang dulu tidak pernah didaftarkan di sini DAN canonical-nya
+  // menunjuk homepage — praktis mustahil diindeks. Lihat produk/ebook/layout.tsx.
+  { path: "/produk/ebook", priority: 0.8, changeFrequency: "weekly" },
   { path: "/simulasi", priority: 0.8, changeFrequency: "weekly" },
   { path: "/simulasi/paket", priority: 0.7, changeFrequency: "monthly" },
 
@@ -69,12 +93,10 @@ const STATIC_ROUTES: Array<{
   { path: "/syarat-ketentuan", priority: 0.2, changeFrequency: "yearly" },
 ];
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
-
+export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = STATIC_ROUTES.map((r) => ({
     url: r.path === "/" ? BASE : `${BASE}${r.path}`,
-    lastModified: now,
+    lastModified: STATIC_UPDATED,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
@@ -84,43 +106,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const slug of getAllLanguageDetailSlugs()) {
     entries.push({
       url: `${BASE}/kursus/bahasa-${slug}`,
-      lastModified: now,
+      lastModified: KURSUS_UPDATED,
       changeFrequency: "weekly",
       priority: 0.95,
     });
   }
-
-  // Silabus per bahasa
-  for (const lang of curriculumLanguages) {
-    if (lang.available) {
-      entries.push({
-        url: `${BASE}/silabus/${lang.slug}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.7,
-      });
-    }
-  }
-
-  // Post blog. Time-gate: jangan bocorkan URL post terjadwal (published_at masa
-  // depan) ke Google sebelum tayang — selaras dgn /blog & /blog/[slug].
-  try {
-    const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/blog_posts?status=eq.published&published_at=lte.${now.toISOString()}&select=slug,published_at&order=published_at.desc`,
-      { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }, cache: "no-store" }
-    );
-    if (res.ok) {
-      const posts = await res.json();
-      for (const post of posts) {
-        entries.push({
-          url: `${BASE}/blog/${post.slug}`,
-          lastModified: new Date(post.published_at),
-          changeFrequency: "monthly",
-          priority: 0.6,
-        });
-      }
-    }
-  } catch {}
 
   return entries;
 }
