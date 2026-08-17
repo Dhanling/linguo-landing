@@ -328,6 +328,19 @@ function Hero({
 }) {
   const illustration = HERO_ILLUSTRATION[detail.languageSlug] ?? null;
 
+  /* Nama bahasa panjangnya jauh berbeda — "Korea" 5 huruf, "Portugis (Brasil)"
+     17 — sedangkan lebar kolomnya sama. Satu ukuran font untuk semuanya berarti
+     memilih antara judul kekecilan di halaman Korea atau judul pecah tiga baris
+     di halaman Portugis. Jadi ukurannya turun bertahap mengikuti panjang baris
+     pertama; clamp di tiap tahap yang mengurus lebar layarnya. */
+  const barisJudul = `Kursus Bahasa ${langName}`;
+  const ukuranJudul =
+    barisJudul.length > 26
+      ? "text-[clamp(1.2rem,3.9vw,2.15rem)]"
+      : barisJudul.length > 21
+        ? "text-[clamp(1.45rem,4.6vw,2.6rem)]"
+        : "text-[clamp(1.55rem,5.2vw,3rem)]";
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#1A9E9E] via-[#168585] to-[#0e6e6e] text-white">
       {/* Soft pattern overlay */}
@@ -342,10 +355,17 @@ function Hero({
       />
 
       <div className="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+        {/* Ilustrasi dulu memakan hampir separuh baris (0.95fr), dan kolom teks
+            yang tersisa terlalu sempit untuk judul sepanjang "Kursus Bahasa
+            Mandarin" — judulnya pecah tiga baris, tombolnya ikut turun. Teks
+            yang menjual, gambarnya pelengkap: porsinya dibalik jadi 1.25 : 0.75
+            — dan di rentang 1024–1279px, tempat kolomnya paling sempit, gambar
+            mengalah sekali lagi ke 0.6fr. Di situ penjelasan kelas mulai kena
+            potong elipsis kalau porsinya dipaksa sama dengan layar lebar. */}
         <div
           className={
             illustration
-              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-8"
+              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:gap-8 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]"
               : ""
           }
         >
@@ -355,28 +375,35 @@ function Hero({
             <span className="text-white/90">{nativeName}</span>
           </div>
 
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            <span className="block">Kursus Bahasa {langName}</span>
+          {/* Dua baris, apa pun bahasanya: "Online" selalu turun sendiri, dan
+              baris pertamanya diukur di `ukuranJudul` supaya tidak pernah patah. */}
+          <h1 className={`${ukuranJudul} font-bold leading-[1.12] tracking-tight`}>
+            <span className="block">{barisJudul}</span>
             <span className="block">Online</span>
           </h1>
 
-          <p className="text-base text-white/90 md:text-lg">{detail.tagline}</p>
+          {/* Jatah baris dipatok: 1 untuk tagline, 2 untuk penjelasan. Di layar
+              kecil jatahnya dilonggarkan — kalimat yang terpotong elipsis di
+              ponsel lebih merugikan daripada hero yang sedikit lebih tinggi. */}
+          <p className="line-clamp-2 text-[15px] text-white/90 md:line-clamp-1 md:text-base">
+            {detail.tagline}
+          </p>
 
-          <p className="text-sm leading-relaxed text-white/80 md:text-base">
+          <p className="line-clamp-4 text-sm leading-relaxed text-white/80 md:line-clamp-2">
             {detail.heroDescription}
           </p>
 
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-2 flex flex-wrap gap-3">
             <Link
               href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
             >
               Daftar Bahasa {langName} Sekarang
-              <ArrowRight aria-hidden className="h-5 w-5" />
+              <ArrowRight aria-hidden className="h-4 w-4" />
             </Link>
             <Link
               href={buildPlacementHref(detail.languageSlug)}
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-white/40 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
             >
               Tes Penempatan Gratis
             </Link>
