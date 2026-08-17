@@ -83,6 +83,42 @@ function isTidakTahu(v: any): boolean {
   return !!(v && typeof v === "object" && (v as EssayResponse).tidak_tahu);
 }
 
+/* [kuis-layar-penuh-v1] Kuis dikerjakan sambil kelas berjalan, sering di HP atau
+   laptop pinjaman: bilah tab & bookmark di atas layar itu godaan sekaligus jalan
+   pintas ke tab lain. Layar penuh menutupnya selama pengerjaan.
+
+   Semua dibungkus try/catch dan `.catch()`: Safari di iPhone tidak punya
+   Fullscreen API sama sekali, dan browser lain menolak permintaan yang tidak
+   berasal dari klik. Penolakan TIDAK boleh menghentikan kuisnya. */
+type FsElement = HTMLElement & { webkitRequestFullscreen?: () => Promise<void> | void };
+type FsDocument = Document & {
+  webkitExitFullscreen?: () => Promise<void> | void;
+  webkitFullscreenElement?: Element | null;
+};
+
+function masukLayarPenuh() {
+  if (typeof document === "undefined") return;
+  const el = document.documentElement as FsElement;
+  try {
+    const hasil = el.requestFullscreen ? el.requestFullscreen() : el.webkitRequestFullscreen?.();
+    if (hasil && typeof (hasil as Promise<void>).catch === "function") {
+      (hasil as Promise<void>).catch(() => { /* ditolak browser — abaikan */ });
+    }
+  } catch { /* API tidak ada */ }
+}
+
+function keluarLayarPenuh() {
+  if (typeof document === "undefined") return;
+  const d = document as FsDocument;
+  if (!d.fullscreenElement && !d.webkitFullscreenElement) return;
+  try {
+    const hasil = d.exitFullscreen ? d.exitFullscreen() : d.webkitExitFullscreen?.();
+    if (hasil && typeof (hasil as Promise<void>).catch === "function") {
+      (hasil as Promise<void>).catch(() => { /* abaikan */ });
+    }
+  } catch { /* API tidak ada */ }
+}
+
 export default function QuizTakePage() {
   // useParams Next mengembalikan string | string[]; token kita selalu satu segmen.
   const params = useParams<{ token: string | string[] }>();
@@ -194,6 +230,12 @@ export default function QuizTakePage() {
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, [startedAt, result]);
+  // [kuis-layar-penuh-v1] Layar penuh dilepas begitu hasil keluar atau halaman
+  // ditinggalkan: halaman hasil punya tombol unduh & tautan keluar yang wajar
+  // dibaca di browser normal, dan siswa tidak boleh terkunci di sana.
+  useEffect(() => { if (result) keluarLayarPenuh(); }, [result]);
+  useEffect(() => () => keluarLayarPenuh(), []);
+
   // Soal pertama bagian 2 — di situlah spanduk "Bagian 2" muncul, sekali saja.
   const firstOfPart2 = useMemo(() => questions.findIndex((q) => partOf(q) === 2), [questions]);
 
@@ -233,6 +275,12 @@ export default function QuizTakePage() {
   }
 
   function startQuiz() {
+    // [kuis-layar-penuh-v1] Layar penuh diminta DI SINI, di dalam penanganan klik:
+    // browser cuma mengabulkan Fullscreen API kalau dipicu gerakan pengguna, jadi
+    // memanggilnya dari useEffect setelah state berubah selalu ditolak. Kalau
+    // ditolak (Safari iPhone tidak punya API-nya sama sekali), kuisnya tetap jalan
+    // seperti biasa — ini penambah fokus, bukan syarat.
+    masukLayarPenuh();
     if (!total) { window.alert("Kuis ini belum berisi soal. Hubungi pengajarmu ya."); return; }
     if (roster.length > 0 && !studentId) { window.alert("Pilih nama kamu dulu ya."); return; }
     if (roster.length === 0 && !name.trim()) { window.alert("Isi nama kamu dulu ya."); return; }
@@ -472,7 +520,6 @@ export default function QuizTakePage() {
               partOfIndex={(i) => partOf(questions[i])}
               multiPart={parts.multi}
               onJump={goto}
-              onReview={() => goto(total)}
               hasTranslit={hasTranslit}
               showTranslit={showTranslit}
               onToggleTranslit={() => setShowTranslit((v) => !v)}
@@ -594,21 +641,43 @@ export default function QuizTakePage() {
               </div>
             </div>
 
-            <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
-              <div className="flex items-center gap-2.5">
-                <button onClick={() => goto(step - 1)}
-                  className="flex items-center gap-1.5 rounded-xl border-2 border-slate-300 px-4 py-3.5 text-base font-bold text-slate-600 sm:px-5">
-                  <ArrowLeft className="h-5 w-5" /> {step === 0 ? "Nama" : "Sebelumnya"}
-                </button>
-                <button onClick={() => goto(step + 1)}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-extrabold text-white"
-                  style={{ background: BRAND }}>
-                  {step === total - 1
-                    ? <><ListChecks className="h-5 w-5" /> Periksa Jawaban</>
-                    : <>Lanjut <ArrowRight className="h-5 w-5" /></>}
-                </button>
-              </div>
-            </div>
+            {/* [kuis-tanpa-lanjut-part1-v1] Di Bagian 1 tombol "Lanjut" dihapus:
+                memilih jawaban SUDAH melompat sendiri ke soal berikutnya, jadi
+                tombolnya cuma jalan kedua untuk hal yang sama — dan yang terjadi
+                di lapangan, siswa menekannya duluan lalu melewati soal tanpa
+                menjawab. Yang tetap ada:
+                - soal TERAKHIR keseluruhan, apa pun bagiannya → "Periksa
+                  Jawaban", satu-satunya jalan ke halaman kirim;
+                - seluruh Bagian 2, yang jawabannya diketik dan tidak punya
+                  pemicu lompat otomatis.
+                Untuk pindah soal setelah mengganti jawaban (lompatan otomatis
+                sengaja tidak diulang), nomor soal di bilah atas tetap bisa
+                diketuk. */}
+            {(() => {
+              const soalTerakhir = step === total - 1;
+              const sembunyikanLanjut = partOf(cur) === 1 && !soalTerakhir;
+              return (
+                <div className="sticky bottom-0 mt-4 -mx-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border">
+                  <div className="flex items-center gap-2.5">
+                    <button onClick={() => goto(step - 1)}
+                      className={`flex items-center gap-1.5 rounded-xl border-2 border-slate-300 px-4 py-3.5 text-base font-bold text-slate-600 sm:px-5 ${
+                        sembunyikanLanjut ? "flex-1 justify-center" : ""
+                      }`}>
+                      <ArrowLeft className="h-5 w-5" /> {step === 0 ? "Nama" : "Sebelumnya"}
+                    </button>
+                    {!sembunyikanLanjut && (
+                      <button onClick={() => goto(step + 1)}
+                        className="flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-extrabold text-white"
+                        style={{ background: BRAND }}>
+                        {soalTerakhir
+                          ? <><ListChecks className="h-5 w-5" /> Periksa Jawaban</>
+                          : <>Lanjut <ArrowRight className="h-5 w-5" /></>}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
           </>
         )}
 
@@ -700,7 +769,7 @@ export default function QuizTakePage() {
    supaya "mana yang belum" terbaca tanpa membuka halaman lain. */
 function KuisNavBar({
   total, step, answeredCount, isFilled, isTidakTahu: unknownAt, partOfIndex, multiPart,
-  onJump, onReview, hasTranslit, showTranslit, onToggleTranslit,
+  onJump, hasTranslit, showTranslit, onToggleTranslit,
 }: {
   total: number;
   step: number;
@@ -710,7 +779,6 @@ function KuisNavBar({
   partOfIndex: (i: number) => 1 | 2;
   multiPart: boolean;
   onJump: (i: number) => void;
-  onReview: () => void;
   hasTranslit: boolean;
   showTranslit: boolean;
   onToggleTranslit: () => void;
@@ -760,11 +828,11 @@ function KuisNavBar({
             <Languages className="h-4 w-4" />
           </button>
         )}
-        <button onClick={onReview}
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-extrabold text-white"
-          style={{ background: "#0f766e" }}>
-          <ListChecks className="h-4 w-4" /><span className="hidden sm:inline">Periksa</span>
-        </button>
+        {/* [kuis-tanpa-lanjut-part1-v1] Tombol "Periksa" dicabut dari bilah ini.
+            Dari soal ke-2 ia melompat ke halaman kirim, dan tempatnya persis di
+            atas deretan nomor — terlalu gampang tertekan waktu siswa sebenarnya
+            mau pindah soal. Jalan ke halaman kirim tinggal satu dan jelas:
+            tombol "Periksa Jawaban" di soal terakhir. */}
       </div>
 
       <div ref={stripRef} className="flex items-center gap-1.5 overflow-x-auto pb-1">
