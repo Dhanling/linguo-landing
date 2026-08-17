@@ -89,7 +89,7 @@ export default function StudentLoginPage() {
           <p className="text-xs text-slate-400 text-center mt-6">
             Belum punya akun?{" "}
             <button
-              onClick={() => (window as any).__openFunnel?.("") || window.location.assign("/")}
+              onClick={() => window.location.assign("/daftar")}
               className="text-[#1A9E9E] font-semibold hover:underline"
             >
               Daftar Sekarang

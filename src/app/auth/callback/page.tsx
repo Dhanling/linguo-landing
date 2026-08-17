@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase, initialAuthError, adoptImplicitSessionFromUrl } from "@/lib/supabase-client"; // [akun-oauth-error-surface-v2] [auth-implicit-hash-adopt-v1]
 import Link from "next/link";
 import { Spinner } from "@/components/Spinner";
+import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 
 function getCookie(name: string): string {
   if (typeof document === "undefined") return "";
@@ -80,13 +81,18 @@ export default function AuthCallbackPage() {
           setStatus("success");
 
           // Cek apakah ada placement intent → redirect ke wizard, bukan /akun
+          // [daftar-page-funnel-v1] Dulu diarahkan ke homepage "?openFunnel=1"
+          // supaya modal funnel kebuka. Sekarang funnel punya halaman sendiri —
+          // langsung ke /daftar/<bahasa> dengan saran level dari hasil tes
+          // (level induk, bukan sublevel "A2.1").
           const placementIntent = parsePlacementIntent();
-          const redirectTarget = placementIntent
-            ? "/?lang=" + encodeURIComponent(placementIntent.langFull)
-              + "&level=" + encodeURIComponent(placementIntent.level)
-              + "&from=" + encodeURIComponent(placementIntent.source)
-              + "&openFunnel=1"
-            : "/akun";
+          const daftarSlug = placementIntent ? daftarSlugFromLanguageSlug(placementIntent.lang) : null;
+          const levelHint = (placementIntent?.level || "").slice(0, 2).toUpperCase();
+          const redirectTarget = daftarSlug
+            ? `/daftar/${daftarSlug}${levelHint ? `?level=${encodeURIComponent(levelHint)}` : ""}`
+            : placementIntent
+              ? "/daftar"
+              : "/akun";
 
           setTimeout(() => {
             window.location.href = redirectTarget;

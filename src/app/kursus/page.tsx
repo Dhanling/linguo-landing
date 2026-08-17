@@ -205,7 +205,13 @@ export default function KelasIndexPage() {
               Tim kami juga siap bantu menentukan level lewat WhatsApp.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/kelas-trial" className="rounded-xl bg-white text-[#1A9E9E] font-semibold px-5 py-3 hover:bg-white/90 transition-colors">
+              {/* [daftar-page-funnel-v1] Hub kursus sebelumnya tidak punya jalan
+                  masuk ke pendaftaran sama sekali — pengunjung harus mundur ke
+                  halaman bahasa dulu. */}
+              <Link href="/daftar" className="rounded-xl bg-white text-[#1A9E9E] font-semibold px-5 py-3 hover:bg-white/90 transition-colors">
+                Daftar Sekarang
+              </Link>
+              <Link href="/kelas-trial" className="rounded-xl bg-white/15 font-semibold px-5 py-3 hover:bg-white/25 transition-colors">
                 Ikut Kelas Trial
               </Link>
               <Link href="/jadwal-kelas-reguler" className="rounded-xl bg-white/15 font-semibold px-5 py-3 hover:bg-white/25 transition-colors">

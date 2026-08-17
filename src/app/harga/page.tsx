@@ -173,13 +173,16 @@ export default function HargaPage() {
           <div className="flex items-center gap-5">
             <Link href="/" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium hidden sm:block">Home</Link>
             <Link href="/blog" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium hidden sm:block">Blog</Link>
-            <a
-              href="https://wa.me/6282116859493?text=Halo%20Min%20Ling!%20Saya%20mau%20tanya%20soal%20Kelas%20Private"
-              target="_blank" rel="noopener noreferrer"
+            {/* [daftar-page-funnel-v1] "Daftar Sekarang" tidak lagi lempar ke
+                WhatsApp — sekarang ada halaman pendaftarannya sendiri. Tombol
+                "Daftar via WhatsApp" per kartu di bawah sengaja DIBIARKAN: itu
+                jalur konsultasi, bukan checkout. */}
+            <Link
+              href="/daftar"
               className="bg-[#1A9E9E] text-white text-sm font-bold px-5 py-2 rounded-full hover:bg-[#178585] transition-colors"
             >
               Daftar Sekarang
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

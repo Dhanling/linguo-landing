@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as Icons from "lucide-react";
 import type { LanguageCurriculum, Level, Sublevel } from "@/data/curriculum";
 import { getIconForSession } from "@/data/curriculum/sessionIcons";
-import FunnelModal from "@/components/FunnelModal";
+import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 import { LangSlugFlag } from "@/components/RectFlag";
 import { displayLangTitle } from "@/data/curriculum";
 
@@ -34,8 +34,9 @@ const LEVEL_THEMES: Record<string, LevelTheme> = {
 };
 
 // ============================================================
-// FunnelModal sekarang di-render in-place di halaman silabus.
-// Klik tombol CTA → buka modal langsung tanpa pindah page.
+// [daftar-page-funnel-v1] CTA "Mulai Belajar" dulu membuka FunnelModal in-place.
+// Sekarang menuju halaman pendaftaran /daftar/<bahasa> — satu alur untuk semua
+// pintu masuk, dan URL-nya bisa diindeks & dilacak.
 // ============================================================
 
 export default function CurriculumViewer({ curriculum }: { curriculum: LanguageCurriculum }) {
@@ -45,14 +46,15 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
   const [activeLevelIdx, setActiveLevelIdx] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showStickyCta, setShowStickyCta] = useState(false);
-  // In-place funnel modal — buka langsung di halaman silabus tanpa redirect
-  const [funnelOpen, setFunnelOpen] = useState(false);
-  const [funnelSource, setFunnelSource] = useState("");
-
-  // Wrapper: panggil dari onClick. langName otomatis dari meta, source bedakan posisi tombol.
-  const openFunnel = (_langName: string, source: string) => {
-    setFunnelSource(source);
-    setFunnelOpen(true);
+  // Silabus IELTS/TOEFL bukan "bahasa" di funnel — pendaftarannya lewat program
+  // IELTS/TOEFL Prep pada Bahasa Inggris.
+  const openFunnel = (_langName: string, _source: string) => {
+    if (meta.slug === "ielts" || meta.slug === "toefl-itp") {
+      window.location.href = "/daftar/inggris/ielts-toefl";
+      return;
+    }
+    const slug = daftarSlugFromLanguageSlug(meta.slug);
+    window.location.href = slug ? `/daftar/${slug}` : "/daftar";
   };
 
   const activeLevel = levels[activeLevelIdx];
@@ -281,14 +283,6 @@ export default function CurriculumViewer({ curriculum }: { curriculum: LanguageC
         )}
       </AnimatePresence>
 
-      {/* In-place FunnelModal — kebuka langsung di halaman silabus, gak perlu pindah ke homepage */}
-      <FunnelModal
-        open={funnelOpen}
-        onClose={() => setFunnelOpen(false)}
-        initialLang={meta.slug.charAt(0).toUpperCase() + meta.slug.slice(1)}
-        initialPreferredProg="Kelas Private"
-        initialSource={funnelSource}
-      />
     </main>
   );
 }
