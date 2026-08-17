@@ -316,6 +316,7 @@ function Breadcrumb({ langName }: { langName: string }) {
 const HERO_ILLUSTRATION: Record<string, string> = {
   korean: "/images/lang-hero/korean.png",
   mandarin: "/images/lang-hero/mandarin.png",
+  english: "/images/lang-hero/english.png",
 };
 
 function Hero({
