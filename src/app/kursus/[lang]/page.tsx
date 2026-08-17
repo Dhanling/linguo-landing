@@ -344,6 +344,7 @@ const HERO_ILLUSTRATION: Record<string, string> = {
   korean: "/images/lang-hero/korean.png",
   mandarin: "/images/lang-hero/mandarin.png",
   english: "/images/lang-hero/english.png",
+  french: "/images/lang-hero/french.png",
 };
 
 function Hero({
