@@ -33,6 +33,7 @@ interface Props {
 }
 
 import { trackEvent } from "@/lib/tracking";
+import { daftarSlugFromLanguageSlug } from "@/lib/funnelRouting";
 
 type Screen = "intro" | "quiz" | "result";
 
@@ -446,38 +447,23 @@ function ResultScreen({ score, questions, log, meta, timeElapsedSec, onRetake }:
     } catch {}
   };
 
-  // Buka wizard dengan bahasa + level pre-filled
+  // Lanjut ke pendaftaran dengan bahasa + level hasil tes.
+  // [daftar-page-funnel-v1] Funnel bukan modal homepage lagi → langsung ke
+  // halaman pendaftaran bahasa ini. Level dikirim sebagai saran (A1/A2/B1/B2,
+  // BUKAN sublevel "A2.1" — kartu level funnel cuma mengenal level induk).
+  // Nama/email/WA sengaja tidak ikut URL: halaman /daftar membacanya dari
+  // localStorage `linguo_prefill` yang sudah diisi gate sebelum tes.
   const openWizardPrefilled = () => {
-    const w = window as any;
-    // Funnel & pricelist pakai nama Inggris ("Italian"), bukan "Bahasa Italia".
-    const funnelLang = funnelLangName(meta.slug);
-    const sourceTag = "placement-test-" + meta.slug;
-    let prefillName = "";
-    let prefillWa = "";
-    let prefillEmail = "";
-    try {
-      const stored = localStorage.getItem("linguo_prefill");
-      if (stored) {
-        const data = JSON.parse(stored);
-        prefillName = data.name || "";
-        prefillWa = data.whatsapp || "";
-        prefillEmail = data.email || "";
-      }
-    } catch {}
-    if (typeof w.__openFunnel === "function") {
-      try {
-        w.__openFunnel({
-          language: funnelLang, level: result.sublevel,
-          source: sourceTag,
-          prefillName, prefillWa, prefillEmail,
-        });
-      } catch { w.__openFunnel(funnelLang); }
-    } else {
-      // Halaman placement ≠ homepage → __openFunnel belum ada. Redirect ke homepage
-      // dgn openFunnel=1 (WAJIB, tanpa ini funnel tak kebuka) + bahasa/level. Prefill
-      // nama/email/WA diambil homepage dari localStorage linguo_prefill.
-      window.location.href = "/?openFunnel=1&lang=" + encodeURIComponent(funnelLang) + "&level=" + encodeURIComponent(result.sublevel) + "&from=" + encodeURIComponent(sourceTag);
+    const levelHint = (result.level || "").toUpperCase();
+    const levelQuery = levelHint ? `?level=${encodeURIComponent(levelHint)}` : "";
+    // Silabus IELTS/TOEFL bukan "bahasa" di funnel → daftarnya lewat program
+    // IELTS/TOEFL Prep pada Bahasa Inggris.
+    if (meta.slug === "ielts" || meta.slug === "toefl-itp") {
+      window.location.href = "/daftar/inggris/ielts-toefl";
+      return;
     }
+    const daftarSlug = daftarSlugFromLanguageSlug(meta.slug);
+    window.location.href = daftarSlug ? `/daftar/${daftarSlug}${levelQuery}` : "/daftar";
   };
 
   const handleStartLearning = async () => {

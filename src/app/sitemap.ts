@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
+import { ALL_LANG_SLUGS } from "@/lib/funnelRouting";
 
 // [seo-sitemap-lengkap-v1] Sebelumnya sitemap ini cuma memuat 4 URL statis
 // (/, /blog, /corporate, /jadi-pengajar) + daftar post blog. Belasan halaman
@@ -39,6 +40,8 @@ const BASE = "https://linguo.id";
 const STATIC_UPDATED = new Date("2026-08-17");
 /** Landing /kursus/bahasa-* pindah URL dari /kelas pada 17 Agustus 2026. */
 const KURSUS_UPDATED = new Date("2026-08-17");
+/** Funnel pendaftaran /daftar lahir sebagai halaman pada 17 Agustus 2026. */
+const DAFTAR_UPDATED = new Date("2026-08-17");
 
 /** Halaman statis publik. `priority` relatif terhadap homepage (1.0). */
 const STATIC_ROUTES: Array<{
@@ -49,6 +52,9 @@ const STATIC_ROUTES: Array<{
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
 
   // Halaman uang — konversi langsung
+  // [daftar-page-funnel-v1] /daftar = hub pendaftaran (dulu modal di homepage).
+  // Langkah dalamnya (/daftar/<bahasa>/<program>/...) noindex — JANGAN didaftarkan.
+  { path: "/daftar", priority: 0.9, changeFrequency: "weekly" },
   { path: "/harga", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kursus", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-trial", priority: 0.9, changeFrequency: "weekly" },
@@ -109,6 +115,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: KURSUS_UPDATED,
       changeFrequency: "weekly",
       priority: 0.95,
+    });
+  }
+
+  // [daftar-page-funnel-v1] Halaman pendaftaran per bahasa. Pasangan transaksional
+  // dari /kursus/bahasa-*: yang satu menjelaskan, yang satu menerima pendaftaran.
+  // Prioritasnya di bawah landing supaya landing tetap yang dimenangkan Google
+  // untuk kueri informasional.
+  for (const slug of ALL_LANG_SLUGS) {
+    entries.push({
+      url: `${BASE}/daftar/${slug}`,
+      lastModified: DAFTAR_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 

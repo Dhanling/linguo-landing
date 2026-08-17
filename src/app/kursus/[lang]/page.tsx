@@ -114,10 +114,9 @@ const buildWaLink = (langName: string) => {
 };
 
 // linguo-patch:kelas-funnel-cta-v1 — tombol Daftar TIDAK lagi ke WA, tapi ke
-// funnel pendaftaran (FunnelModal) yang cuma di-mount di homepage: redirect
-// "/?openFunnel=1&lang=<Inggris>". Nama bahasa WAJIB nama Inggris ("Swedish"),
-// bukan meta.name Indonesia — lookup bendera & kategori harga (trial-pricing)
-// pakai nama Inggris. Mirror FUNNEL_LANG_OVERRIDE di PlacementTest.tsx.
+// funnel pendaftaran. Nama bahasa WAJIB nama Inggris ("Swedish"), bukan meta.name
+// Indonesia — lookup bendera & kategori harga (trial-pricing) pakai nama Inggris.
+// Mirror FUNNEL_LANG_OVERRIDE di PlacementTest.tsx.
 const FUNNEL_LANG_OVERRIDE: Record<string, string> = {
   filipino: "Tagalog",
   "portuguese-br": "Portuguese",
@@ -129,8 +128,21 @@ const funnelLangName = (languageSlug: string) =>
   FUNNEL_LANG_OVERRIDE[languageSlug] ||
   languageSlug.charAt(0).toUpperCase() + languageSlug.slice(1);
 
-const buildFunnelHref = (languageSlug: string, urlSlug: string) =>
-  `/?openFunnel=1&lang=${encodeURIComponent(funnelLangName(languageSlug))}&from=${encodeURIComponent(`kelas-bahasa-${urlSlug}`)}`;
+// [daftar-page-funnel-v1] Dulu CTA ini menunjuk ke "/?openFunnel=1&lang=Korean":
+// 45 landing bahasa mengirim seluruh tekanan link CTA-nya ke homepage
+// berparameter, dan tidak ada URL yang bisa diindeks untuk niat "daftar kursus
+// bahasa X". Sekarang ke halaman pendaftarannya sendiri, /daftar/<urlSlug>,
+// yang slug-nya sengaja sama dengan /kursus/bahasa-<urlSlug>.
+const buildFunnelHref = (urlSlug: string, program?: "private" | "semi-private" | "reguler") =>
+  program ? `/daftar/${urlSlug}/${program}` : `/daftar/${urlSlug}`;
+
+// Kartu harga → langsung ke langkah paket program yang diklik, bukan balik ke
+// pemilihan program.
+const TIER_PROGRAM: Record<string, "private" | "semi-private" | "reguler"> = {
+  "Privat 1:1": "private",
+  "Semi Privat": "semi-private",
+  "Reguler (Grup)": "reguler",
+};
 
 // ============================================================================
 // linguo-patch:kelas-pricelist-sync-v1
@@ -451,7 +463,7 @@ function Hero({
 
           <div className="mt-2 flex flex-wrap gap-3">
             <Link
-              href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
+              href={buildFunnelHref(detail.urlSlug)}
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
             >
               Daftar Bahasa {langName} Sekarang
@@ -697,7 +709,7 @@ function Pricing({ detail, langName }: { detail: LanguageDetail; langName: strin
               </ul>
 
               <Link
-                href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
+                href={buildFunnelHref(detail.urlSlug, TIER_PROGRAM[tier.name])}
                 className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-semibold transition ${
                   tier.highlighted
                     ? "bg-white text-[#1A9E9E] hover:bg-slate-50"
@@ -892,7 +904,7 @@ function FinalCTA({ detail, langName }: { detail: LanguageDetail; langName: stri
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
-            href={buildFunnelHref(detail.languageSlug, detail.urlSlug)}
+            href={buildFunnelHref(detail.urlSlug)}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#1A9E9E] shadow-lg transition hover:scale-[1.02] hover:shadow-xl"
           >
             Daftar Sekarang

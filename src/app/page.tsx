@@ -17,6 +17,21 @@ import { TESTIMONIALS } from "@/data/testimonials";
 import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 // wa-quick-program-lang-sync-v1 — aturan bahasa × program (sumber tunggal)
 import { REGULER_LANGS, isProgramLangAllowed, langsForProgram, programsForLang } from "@/lib/programLanguages";
+// [daftar-page-funnel-v1] funnel pendaftaran sekarang HALAMAN (/daftar/...), bukan modal.
+import { programSlugOf, langSlugOf, langFromSlug } from "@/lib/funnelRouting";
+
+/**
+ * Tautan ke funnel pendaftaran.
+ * Tanpa bahasa → /daftar?program=<slug> (bahasa dipilih di langkah 1, lalu
+ * langsung lompat ke paket). Dengan bahasa → langsung ke langkah paketnya.
+ * JANGAN kirim kombinasi bahasa × program yang tidak dibuka (mis. Reguler untuk
+ * bahasa tanpa batch): /daftar sengaja membalas 404 supaya URL sampah tidak lahir.
+ */
+const daftarHref = (programLabel?: string, langEn?: string) => {
+  const prog = programLabel ? programSlugOf(programLabel) : null;
+  if (langEn) return `/daftar/${langSlugOf(langEn)}${prog ? `/${prog}` : ""}`;
+  return prog ? `/daftar?program=${prog}` : "/daftar";
+};
 const SUPABASE_URL = "https://jbtgciepdmqxxcjflrxz.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpidGdjaWVwZG1xeHhjamZscnh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMzE1MjMsImV4cCI6MjA5MDYwNzUyM30.29Md_mApQjnCoCzYAKcvLU2CB7Y3KZzyepSMcvV_7hs";
 
@@ -618,8 +633,8 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
                         <div className="grid grid-cols-3 gap-1">
                           {g.items.map((it)=>(
                             <div key={it.title} role="button" tabIndex={0}
-                              onClick={()=>{ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } }}
-                              onKeyDown={(e)=>{ if(e.key==="Enter"){ setProgOpen(false); if(it.href){ window.location.href = it.href; } else if(it.prog){ (window as any).__openFunnel?.(it.prog); } } }}
+                              onClick={()=>{ setProgOpen(false); window.location.href = it.href || daftarHref(it.prog); }}
+                              onKeyDown={(e)=>{ if(e.key==="Enter"){ setProgOpen(false); window.location.href = it.href || daftarHref(it.prog); } }}
                               className="cursor-pointer flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#1A9E9E]/5 transition-colors group/item">
                               <span className="w-9 h-9 rounded-lg bg-[#1A9E9E]/10 text-[#1A9E9E] flex items-center justify-center shrink-0"><it.icon className="w-[18px] h-[18px]"/></span>
                               <span className="min-w-0">
@@ -679,14 +694,14 @@ function Navbar({lang,setLang,onPricingTab,onLoginOpen}:{lang:string;setLang:(l:
             {/* Scrollable nav items */}
             <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-1">
               <a href="/silabus/english/coba" onClick={()=>setOpen(false)} className="block py-3 text-base text-[#1A9E9E] font-semibold border-b border-gray-100 mb-2 pb-4">Placement Test Gratis</a>
-              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Private");setOpen(false)}} className="text-base py-3 text-left">Kelas Private 1-on-1</button>{/* linguo-patch:nav-semi-private-v1 */}
-              <button onClick={()=>{(window as any).__openFunnel?.("Semi Private");setOpen(false)}} className="text-base py-3 text-left">Semi Private</button>{/* linguo-patch:nav-semi-private-v1 */}
-              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Reguler");setOpen(false)}} className="text-base py-3 text-left">Kelas Reguler</button>
+              <a href={daftarHref("Kelas Private")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Kelas Private 1-on-1</a>{/* linguo-patch:nav-semi-private-v1 */}
+              <a href={daftarHref("Semi Private")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Semi Private</a>{/* linguo-patch:nav-semi-private-v1 */}
+              <a href={daftarHref("Kelas Reguler")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Kelas Reguler</a>
               <a href="/jadwal-kelas-reguler" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Jadwal Batch Terbaru</a>
-              <button onClick={()=>{(window as any).__openFunnel?.("IELTS/TOEFL Prep");setOpen(false)}} className="text-base py-3 text-left">IELTS / TOEFL</button>
+              <a href={daftarHref("IELTS/TOEFL Prep")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">IELTS / TOEFL</a>
               <a href="/jadwal-kelas-reguler?tab=etp" onClick={()=>setOpen(false)} className="text-sm py-2.5 text-left text-[#1A9E9E] pl-4 border-l-2 border-[#1A9E9E]/30">└ Cek Jadwal ETP</a>
               <a href="/persiapan-tes" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Persiapan Ujian (HSK/JLPT/TOPIK/Goethe)</a>
-              <button onClick={()=>{(window as any).__openFunnel?.("Kelas Kids");setOpen(false)}} className="text-base py-3 text-left">Kelas Kids</button>
+              <a href={daftarHref("Kelas Kids")} onClick={()=>setOpen(false)} className="text-base py-3 text-left">Kelas Kids</a>
               <a href="/simulasi" onClick={()=>setOpen(false)} className="text-base py-3 text-left">Simulasi Tes TOEFL/IELTS</a>
               <a href="/toko/paket-elearning" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Learning</a>
               <a href="/produk/ebook" onClick={()=>setOpen(false)} className="text-base py-3 text-left">E-Book</a>
@@ -1049,904 +1064,20 @@ const TEACHER_DATA = [
     lessons:740,rating:4.9,price:"Rp 90K"},
 ];
 
-function FunnelModal({open,onClose,initialProgram="",initialLang="",initialLevel="",initialPreferredProg="",initialSource="",initialName="",initialEmail="",initialWa=""}:{open:boolean;onClose:()=>void;initialProgram?:string;initialLang?:string;initialLevel?:string;initialPreferredProg?:string;initialSource?:string;initialName?:string;initialEmail?:string;initialWa?:string}) {
-  /* linguo-patch:funnel-native-v1 */
-  // Detect initial step dari props biar gak flash step 1 dulu pas open
-  const initialStep = (() => {
-    if (initialLang && initialLevel && initialPreferredProg) return 5;
-    if (initialLang && initialProgram) return 3;
-    if (initialLang) return 2;
-    return 1;
-  })();
-  const [step, setStep] = useState(initialStep);
-  const [selLang, setSelLang] = useState(initialLang || "");
-  const [selProgram, setSelProgram] = useState(initialProgram || initialPreferredProg || "");
-  // [ling-hide-fab-overlay-v1] daftarin overlay global → sembunyiin FAB WhatsApp
-  useOverlayLock(open);
-  useEffect(() => {
-    if (open) {
-      // Priority logic:
-      // 1. Placement test flow: language + level + preferredProgram → step 2 (pilih program, pre-highlight preferredProgram)
-      // 2. language + program → step 3 (pilih level)
-      // 3. language only → step 2 (pilih program)
-      // 4. program only → step 1 (pilih bahasa)
-      if (initialLang && initialLevel && initialPreferredProg) {
-        setSelLang(initialLang);
-        setSelLevel(initialLevel);
-        setSelProgram(initialPreferredProg);
-        setStep(5); // Skip straight to data diri form (nama/email/WA already partially known)
-      } else if (initialLang && initialProgram) {
-        setSelLang(initialLang); setSelProgram(initialProgram); setStep(3);
-      } else if (initialLang) {
-        // Placement flow: bahasa + level diketahui → mendarat di pilih program (step 2),
-        // level dibawa supaya pre-terpilih saat masuk step 3.
-        setSelLang(initialLang); if (initialLevel) setSelLevel(initialLevel); setStep(2);
-      } else if (initialProgram) {
-        setSelProgram(initialProgram); setStep(1);
-      }
-      // Auto-fill form fields dari prefill (placement test flow)
-      if (initialName) setFormName(initialName);
-      if (initialEmail) setFormEmail(initialEmail);
-      if (initialWa) setFormWa(initialWa);
-    }
-    if (!open) { setStep(1); setSelProgram(""); setSelLang(""); setSelLevel(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); setClassMode("online"); setOfflineCity(""); }
-  }, [open, initialProgram, initialLang, initialLevel, initialPreferredProg, initialName, initialEmail, initialWa]);
-  const [selLevel, setSelLevel] = useState("");
-  const [formName, setFormName] = useState("");
-  const [formEmail, setFormEmail] = useState("");
-  const [formWa, setFormWa] = useState("");
-  const [countryCode, setCountryCode] = useState("+62");
-  // referral-code-field-v1 — optional kode referral; default KOSONG (input manual).
-  // Affiliate tetap ke-track di background lewat ?ref= / linguo_ref saat submit.
-  const [refCode, setRefCode] = useState("");
-  const [formError, setFormError] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [search, setSearch] = useState("");
-  const [activeTab, setActiveTab] = useState("Populer");
-  const [selTeacherType, setSelTeacherType] = useState<"lokal"|"native">("lokal");
-  const [teacherPick, setTeacherPick] = useState(false);
-  const [classSize, setClassSize] = useState(2); // linguo-patch:funnel-semi-private-calc-v1
-  const [selDuration, setSelDuration] = useState(60); // linguo-patch:funnel-session-duration-v1 — menit per sesi (Private/Semi/Kids)
-  const [selSessions, setSelSessions] = useState(12); // funnel-xendit-v1 — jumlah sesi (paket); total = harga/sesi × jumlah sesi
-  const [addAddon, setAddAddon] = useState(false); // addon-ebook-recording-v1 — toggle E-Book + Recording bundle (Reguler only)
-  const [agreeTerms, setAgreeTerms] = useState(false); // terms-agreement-v1 — gating "Bayar Sekarang" (Reguler only)
-  // offline-private-class-v1 — mode kelas (online / offline: pengajar datang ke tempat siswa)
-  const [classMode, setClassMode] = useState<"online"|"offline">("online");
-  const [offlineCity, setOfflineCity] = useState("");
-
-  // linguo-patch:reguler-lang-gate-v3 — di flow Kelas Reguler, step-1 cuma munculin bahasa berjadwal (kayak /jadwal-kelas-reguler)
-  const isRegulerFlow = selProgram==="Kelas Reguler";
-  // [reguler-english-conversation-v1] label bahasa yg dipakai di ringkasan & yg DISIMPAN
-  // ke lead/registrasi. Di alur Reguler, English = "English - Conversation".
-  const selLangLabel = isRegulerFlow ? regulerLangName(selLang) : selLang;
-  const pool = isRegulerFlow
-    ? REGULER_LANGS
-    : (search.trim()
-        ? LANG_CATEGORIES.flatMap(c=>c.langs).filter((v,i,a)=>a.indexOf(v)===i)
-        : (LANG_CATEGORIES.find(c=>c.label===activeTab)?.langs || []));
-  const filtered = search.trim()
-    ? pool.filter(l=>l.toLowerCase().includes(search.toLowerCase()))
-    : pool;
-
-  const isEnglish = selLang==="English";
-  const isReguler = REGULER_LANGS.includes(selLang);
-
-  // Pengajar native: terbatas ke bahasa yang sudah punya native teacher.
-  // Native = NATIVE_MULTIPLIER x tarif lokal (sumber tunggal: lib/trial-pricing).
-  // linguo-patch:private-pricing-v1 — harga per sesi 60 menit, level A1, sesuai
-  // kategori bahasa. Level dipilih SETELAH langkah ini → angka ini "Mulai dari".
-  // Fallback "C" (Rp100rb) bila bahasa belum dikenal, JANGAN D (Rp90rb).
-  const PRIVATE_BASE_PRICE = PRICE_A1_60MIN[getLanguageCategory(selLang) || "C"] ?? 100000;
-  // funnel-private-level-price-v1 — harga/sesi ikut level yang dipilih (A2 ≠ A1).
-  // PRIVATE_BASE_PRICE (A1) hanya utk label "Mulai dari" di kartu program.
-  const privateBase60 = getPrivateBase60(selLang, selLevel || "A1");
-  const nativeAvailable = isNativeAvailable(selLang);
-  // native-pricing-v1 — program yang punya pilihan tipe pengajar (Private & Kids).
-  // Semi Private & Reguler = grup, pengajar lokal saja.
-  const NATIVE_PROGRAMS = ["Kelas Private", "Kelas Kids"];
-  const hasTeacherPick = (prog: string) => NATIVE_PROGRAMS.includes(prog);
-  const fmtRp = (n:number) => "Rp " + n.toLocaleString("id-ID");
-  // linguo-patch:funnel-semi-private-calc-v1 — harga semi private live (ikut durasi sesi terpilih)
-  const semiPrice = selProgram==="Semi Private" ? getSemiPrivatePrice(selLang, selLevel, classSize, selDuration) : null;
-
-  // linguo-patch:funnel-session-duration-v1 — pilihan durasi (menit) per sesi.
-  // Private & Semi Private: harga proporsional terhadap durasi. Kids: durasi
-  // dibatasi utk rentang usia anak, harga di-scale dari tarif dasar per tipe.
-  const DURATION_OPTS = selProgram==="Kelas Kids" ? [30,45,60] : [30,45,60,75,90];
-  // Harga Private/sesi utk durasi & tipe pengajar terpilih (proporsional dari base 60mnt).
-  const privatePerSession = applyNativeMultiplier(Math.round((privateBase60 * selDuration) / 60), selTeacherType);
-  // Harga Kids/sesi: scale dari tarif dasar (per tipe) proporsional durasi, dibulatkan
-  // ke 5rb, lalu ×2 kalau native (native-pricing-v1 — aturan sama dengan dewasa).
-  // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa (Belanda ≠ Inggris).
-  const kidsKey = KIDS_LEVEL_KEY[selLevel];
-  const kidsPerSession = kidsKey ? computeKidsPerSession(kidsKey, selDuration, selTeacherType, selLang) : 0;
-  // Harga "Mulai dari" pada kartu pilihan tipe pengajar — ikut program & bahasa.
-  const teacherPickBase = selProgram==="Kelas Kids"
-    ? getKidsBasePerSession("little-learner", selLang)
-    : PRIVATE_BASE_PRICE;
-
-  // funnel-xendit-v1 — paket jumlah sesi (Private/Semi/Kids) + total tagihan.
-  // Formula WAJIB identik dgn /api/create-funnel-invoice (server hitung ulang).
-  const SESSION_OPTS = [4, 8, 12, 16, 24];
-  const IELTS_PRICE = 300000;
-  const isSessionProg = selProgram==="Kelas Private" || selProgram==="Semi Private" || selProgram==="Kelas Kids";
-  // offline-private-class-v1 — Private & Semi Private bisa offline (pengajar
-  // datang ke tempat siswa): tarif online + selisih tetap per sesi. Kids &
-  // kelas grup lain tetap online, jadi modenya dipaksa "online".
-  const canOffline = supportsOffline(selProgram);
-  const isOffline = canOffline && classMode==="offline";
-  const perSessionOnline = selProgram==="Kelas Private" ? privatePerSession
-    : selProgram==="Kelas Kids" ? kidsPerSession
-    : selProgram==="Semi Private" ? (semiPrice?.perStudent || 0)
-    : 0;
-  const perSession = canOffline ? applyOfflineSurcharge(perSessionOnline, classMode) : perSessionOnline;
-  // Offline wajib tahu kota/area siswa — itu yang menentukan ada/tidaknya pengajar.
-  const offlineReady = !isOffline || offlineCity.trim().length >= 3;
-  const totalAmount =
-    isSessionProg ? perSession * selSessions
-    : selProgram==="IELTS/TOEFL Prep" ? IELTS_PRICE
-    : 0;
-
-  const programs = [
-    {id:"Kelas Private",title:"Kelas Private",desc:"1-on-1 via Zoom, jadwal fleksibel",price:"Mulai "+fmtRp(PRIVATE_BASE_PRICE)+"/sesi",highlight:true},
-    {id:"Semi Private",title:"Semi Private",desc:"Grup kecil 2–10 orang, lebih hemat per orang",price: selLang && getSemiPrivatePrice(selLang,"A1",10,60).perStudent>0 ? ("Mulai "+fmtRp(getSemiPrivatePrice(selLang,"A1",10,60).perStudent)+"/orang") : "Patungan grup — hemat per orang",highlight:false}, // linguo-patch:funnel-semi-private-calc-v1
-    ...(isReguler?[{id:"Kelas Reguler",title:"Kelas Reguler",desc:"Grup class, jadwal tetap, lebih terjangkau",price:"Rp 150.000/2 bulan",highlight:false,note:"*Kelas dibuka minimal 8 peserta"}]:[]),
-    {id:"Kelas Kids",title:"Kelas Kids",desc:"1-on-1 untuk anak 5-12 tahun, fun & interaktif",price:"Mulai "+fmtRp(getKidsBasePerSession("little-learner", selLang))+"/sesi",highlight:false}, // kids-lang-pricing-v1 — tarif Kids ikut kategori bahasa
-    ...(isEnglish?[{id:"IELTS/TOEFL Prep",title:"IELTS / TOEFL Prep",desc:"16 sesi @90 menit, persiapan intensif",price:"Rp 300.000/2 bulan",highlight:false}]:[]),
-  ];
-
-  const levels = selProgram==="Kelas Reguler"
-    ? [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"}]
-    : selProgram==="Kelas Kids"
-    ? [{id:"Little Learner",label:"Little Learner",desc:"Usia 5–8 tahun • fun & interaktif"},
-       {id:"Young Explorer",label:"Young Explorer",desc:"Usia 9–12 tahun • fun & interaktif"}]
-    : [{id:"A1",label:"A1 — Basic",desc:"Pemula, mulai dari nol"},
-       {id:"A2",label:"A2 — Elementary",desc:"Percakapan sederhana"},
-       {id:"B1",label:"B1 — Intermediate",desc:"Percakapan sehari-hari"},
-       {id:"B2",label:"B2 — Upper Intermediate",desc:"Lancar & kompleks"}];
-
-  // offline-private-class-v1 — pemilih mode kelas dipakai di dua tempat (step
-  // level Private & step Semi Private), jadi ditulis sekali sebagai fungsi
-  // (bukan komponen) supaya input kota tidak kehilangan fokus tiap ketikan.
-  const renderModePicker = () => !canOffline ? null : (
-    <div className="mb-6">
-      <h3 className="text-base font-bold text-slate-900 mb-1">Mode kelas</h3>
-      <p className="text-sm text-slate-500 mb-3">Belajar online, atau pengajar yang datang ke tempatmu?</p>
-      <div className="grid grid-cols-2 gap-2">
-        <button onClick={()=>setClassMode("online")}
-          className={`p-3 rounded-xl border-2 text-left transition-all ${classMode==="online"?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
-          <p className="font-bold text-sm text-slate-900">Online</p>
-          <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">Live via Zoom, dari mana saja</p>
-          <p className="text-[11px] font-bold text-[#1A9E9E] mt-1.5">Tarif normal</p>
-        </button>
-        <button onClick={()=>setClassMode("offline")}
-          className={`p-3 rounded-xl border-2 text-left transition-all ${classMode==="offline"?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
-          <p className="font-bold text-sm text-slate-900">Offline</p>
-          <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">Pengajar datang ke tempatmu</p>
-          <p className="text-[11px] font-bold text-[#1A9E9E] mt-1.5">+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}/sesi</p>
-        </button>
-      </div>
-      {isOffline && (
-        <motion.div initial={{opacity:0,y:6}} animate={{opacity:1,y:0}} className="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-3.5">
-          <p className="text-[11px] leading-relaxed text-amber-900">
-            <b>Menyesuaikan ketersediaan pengajar.</b> Kelas offline hanya jalan kalau ada pengajar yang bisa menjangkau daerahmu, jadi ketersediaannya tergantung lokasi. Setelah pembayaran, tim kami cek dulu pengajar di area itu — kalau belum ada, kamu bisa pindah ke kelas online (selisih biaya offline dikembalikan) atau dana direfund penuh.
-          </p>
-          <label className="block text-xs font-semibold text-slate-700 mt-3 mb-1">Kota / area kelas <span className="text-red-500">*</span></label>
-          <input type="text" value={offlineCity} onChange={(e)=>setOfflineCity(e.target.value)}
-            placeholder="Contoh: Bekasi Timur, Kota Bekasi"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-amber-200 bg-white text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-          <p className="text-[10px] text-amber-800/80 mt-1.5">Sebutkan kecamatan & kota biar tim gampang cari pengajar terdekat.</p>
-        </motion.div>
-      )}
-    </div>
-  );
-
-  const validateForm = () => {
-    if(!formName.trim()) { setFormError("Masukkan nama lengkap"); return false; }
-    if(!formEmail.trim() || !formEmail.includes("@")) { setFormError("Masukkan email yang valid"); return false; }
-    if(!formWa || formWa.length < 9) { setFormError("Masukkan nomor WhatsApp yang valid"); return false; }
-    if(countryCode==="+62" && formWa[0]!=="8") { setFormError("Nomor Indonesia harus diawali 8"); return false; }
-    setFormError("");
-    return true;
-  };
-
-  const handleFinal = async () => {
-    setSaving(true);
-    try {
-      const fullNum = countryCode.replace("+","") + formWa;
-
-      // ── reguler-xendit-v1: Kelas Reguler checks out directly via Xendit. ──
-      // Other programs keep the WhatsApp redirect below (unchanged). The
-      // /api/create-invoice route inserts its own lead row (payment status +
-      // affiliate attribution from the linguo_ref cookie), so we skip saveLead
-      // here for Reguler to avoid a duplicate lead.
-      if (selProgram === "Kelas Reguler") {
-        const productKey = "reguler-" + selLevel.toLowerCase();
-        try {
-          const res = await fetch("/api/create-invoice", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            // [reguler-english-conversation-v1] language DISIMPAN dgn nama kelas resmi
-            // ("English - Conversation"), sinkron dgn regular_batches.language.
-            body: JSON.stringify({ name: formName, email: formEmail, wa_number: fullNum, language: selLangLabel, program: "reguler", level: selLevel, productKey, addon: addAddon, referral_source: localStorage.getItem("linguo_ref") || undefined, ref_code: refCode.trim() || undefined }),
-          });
-          const data = await res.json();
-          if (data.invoice_url) { window.location.href = data.invoice_url; return; }
-          alert("Gagal membuat invoice: " + (data.error || "Silakan coba lagi"));
-          setSaving(false);
-        } catch (xErr) {
-          console.error("Xendit invoice error:", xErr);
-          alert("Terjadi kesalahan saat membuat pembayaran. Silakan coba lagi.");
-          setSaving(false);
-        }
-        return;
-      }
-
-      // ── funnel-xendit-v1: Private / Semi Private / Kids / IELTS checkout ──
-      // langsung ke Xendit. Harga dihitung ULANG di server (anti-tamper);
-      // endpoint menyimpan lead + attribusi referral sendiri.
-      const refFinal = refCode.trim()
-        || (typeof window !== "undefined"
-          ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("linguo_ref") || "")
-          : "");
-      const res = await fetch("/api/create-funnel-invoice", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formName,
-          email: formEmail,
-          wa_number: fullNum,
-          program: selProgram,
-          language: selLang,
-          level: selLevel,
-          duration: selDuration,
-          teacher_type: hasTeacherPick(selProgram) ? selTeacherType : null,
-          sessions: isSessionProg ? selSessions : null,
-          class_size: selProgram==="Semi Private" ? classSize : null,
-          // offline-private-class-v1 — mode kelas + kota/area (server hitung ulang selisihnya)
-          class_mode: canOffline ? classMode : "online",
-          class_city: isOffline ? offlineCity.trim() : null,
-          ref_code: refFinal || undefined,
-        }),
-      });
-      const data = await res.json();
-      if (res.ok && data?.invoice_url) { window.location.href = data.invoice_url; return; }
-      setFormError(data?.error || "Gagal memproses pembayaran. Coba lagi ya.");
-      setSaving(false);
-    } catch(e) {
-      console.error("Submit error:", e);
-      setFormError("Koneksi bermasalah. Silakan coba lagi.");
-      setSaving(false);
-    }
-  };
-
-  const handleGoogleSignIn = async () => {
-    // Save funnel data in cookie (survives OAuth redirect, unlike localStorage/URL params)
-    document.cookie = "linguo_funnel=" + encodeURIComponent(JSON.stringify({ program: selProgram, language: selLang, level: selLevel, wa: formWa, name: formName })) + ";path=/;max-age=600;SameSite=Lax";
-    if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_form_submitted",{program:selProgram,language:selLang,level:selLevel});
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin + "/akun" },
-    });
-  };
-  const handleClose = () => { onClose(); setStep(1); setSearch(""); setSelLang(""); setSelProgram(""); setSelLevel(""); setFormName(""); setFormEmail(""); setFormWa(""); setFormError(""); setSelTeacherType("lokal"); setTeacherPick(false); setClassSize(2); setSelDuration(60); setSelSessions(12); setAddAddon(false); setAgreeTerms(false); setClassMode("online"); setOfflineCity(""); };
-
-  return (
-    <AnimatePresence>{open&&(
-      <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center px-4"
-        onClick={handleClose}>
-        <motion.div initial={{scale:0.9,opacity:0}} animate={{scale:1,opacity:1}} exit={{scale:0.9,opacity:0}}
-          className="bg-white rounded-3xl max-w-lg w-full shadow-2xl relative overflow-hidden max-h-[85vh] flex flex-col"
-          onClick={(e)=>e.stopPropagation()}>
-
-          <div className="flex gap-1.5 px-6 pt-5">
-            {[1,2,3,4,5].map(s=>(
-              <div key={s} className={`h-1 flex-1 rounded-full transition-all duration-500 ${s<=step?"bg-[#1A9E9E]":"bg-slate-200"}`}/>
-            ))}
-          </div>
-
-          <button onClick={handleClose} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 z-10"><X className="h-5 w-5"/></button>
-
-          {/* STEP 1 — Pilih Bahasa */}
-          {step===1 && (
-            <motion.div key="s1" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
-              <div className="p-6 pb-4">
-                <h3 className="text-xl font-bold text-slate-900 mb-1">Mau belajar bahasa apa?</h3>
-                <p className="text-sm text-slate-500 mb-4">{isRegulerFlow ? "Bahasa yang punya jadwal Kelas Reguler" : "Pilih bahasa yang kamu minati"}</p>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"/>
-                  <input type="text" placeholder="Cari bahasa..." value={search} onChange={(e)=>setSearch(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-                </div>
-              </div>
-              {!search.trim() && !isRegulerFlow && (
-                <div className="px-6 flex gap-2 mb-3 overflow-x-auto pb-1">
-                  {LANG_CATEGORIES.map(c=>(
-                    <button key={c.label} onClick={()=>setActiveTab(c.label)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${activeTab===c.label?"bg-[#1A9E9E] text-white":"bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>
-                      {c.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-              <div className="px-6 pb-6 overflow-y-auto flex-1">
-                <div className="grid grid-cols-2 gap-2">
-                  {filtered.map(l=>(
-                    <button key={l} onClick={()=>{const lReg=REGULER_LANGS.includes(l);setSelLang(l);setSearch("");if(selProgram==="Kelas Reguler"&&!lReg){setSelProgram("");setStep(2);}else if(hasTeacherPick(selProgram)){setTeacherPick(true);setStep(2)}else{setStep(selProgram?3:2)}}}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all text-left border border-slate-100 text-slate-700 hover:bg-[#1A9E9E]/5 hover:text-[#1A9E9E] hover:border-[#1A9E9E]/30">
-                      <RectFlag code={getFlagCode(l)} h={24}/>
-                      {/* [reguler-english-conversation-v1] di alur Kelas Reguler, English cuma dibuka
-                          sebagai kelas Conversation — tampilkan nama kelasnya, bukan "English" polos. */}
-                      {isRegulerFlow ? regulerLangName(l) : l}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 2 — Pilih Program */}
-          {step===2 && !teacherPick && (
-            <motion.div key="s2" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1">
-              <button onClick={()=>setStep(1)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti bahasa</button>
-              <div className="flex items-center gap-2 mb-4">
-                <RectFlag code={getFlagCode(selLang)} h={24}/>
-                <span className="font-bold">{selLangLabel}</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih jenis kelas</h3>
-              <p className="text-sm text-slate-500 mb-6">Mau belajar dengan cara apa?</p>
-              <div className="flex flex-col gap-3">
-                {programs.map(p=>(
-                  <button key={p.id} onClick={()=>{ const preLvl=(p.id==="Kelas Private"||p.id==="Semi Private")?(initialLevel||""):""; setSelLevel(preLvl); setSelDuration(60); setSelSessions(12); if(hasTeacherPick(p.id)){ setSelProgram(p.id); setTeacherPick(true); } else { setSelProgram(p.id); setSelTeacherType("lokal"); setStep(3); } }}
-                    className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${p.highlight?"border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.02]":"border-slate-100"}`}>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <p className="font-bold text-sm">{p.title}</p>
-                        {p.highlight && <span className="text-[10px] font-bold bg-[#1A9E9E] text-white px-2 py-0.5 rounded-full">POPULER</span>}
-                      </div>
-                      <p className="text-xs text-slate-500 mt-0.5">{p.desc}</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">{p.price}</p>
-                      {"note" in p && p.note && <p className="text-[10px] text-slate-400 mt-1">{p.note}</p>}
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 2b — Pilih Tipe Pengajar (Kelas Private & Kelas Kids) */}
-          {step===2 && teacherPick && (
-            <motion.div key="s2b" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
-              <button onClick={()=>setTeacherPick(false)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLangLabel}</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Pilih tipe pengajar</h3>
-              <p className="text-sm text-slate-500 mb-5">{selProgram==="Kelas Kids" ? "Mau anak diajar pengajar lokal atau native speaker?" : "Mau belajar dengan pengajar lokal atau native speaker?"}</p>
-              <div className="flex flex-col gap-3">
-                {/* Lokal */}
-                <button onClick={()=>{setSelTeacherType("lokal");setTeacherPick(false);setStep(3)}}
-                  className="flex items-start gap-4 p-4 rounded-2xl border-2 border-slate-100 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md">
-                  <div className="flex-1">
-                    <p className="font-bold text-sm">Pengajar Lokal</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Pengajar Indonesia berpengalaman & bersertifikat</p>
-                    <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase)}/sesi</p>
-                  </div>
-                  <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
-                </button>
-                {/* Native */}
-                {nativeAvailable ? (
-                  <button onClick={()=>{setSelTeacherType("native");setTeacherPick(false);setStep(3)}}
-                    className="flex items-start gap-4 p-4 rounded-2xl border-2 border-[#fbbf24]/50 bg-[#fbbf24]/[0.04] text-left transition-all hover:border-[#fbbf24] hover:shadow-md">
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="font-bold text-sm">Pengajar Native</p>
-                        <span className="text-[10px] font-bold bg-[#fbbf24] text-slate-900 px-2 py-0.5 rounded-full shrink-0">FULL IMMERSION</span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-0.5">Diajar langsung oleh penutur asli bersertifikat</p>
-                      <p className="text-[11px] text-slate-400 italic leading-relaxed mt-1.5">Native speaker classes are conducted fully in your target language by a certified native teacher — full immersion for authentic pronunciation and fluency.</p>
-                      <p className="text-sm font-bold text-[#1A9E9E] mt-2">Mulai {fmtRp(teacherPickBase*NATIVE_MULTIPLIER)}/sesi</p>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-slate-400 mt-1 shrink-0"/>
-                  </button>
-                ) : (
-                  <div className="flex items-start gap-4 p-4 rounded-2xl border-2 border-slate-100 bg-slate-50 text-left opacity-70 cursor-not-allowed">
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="font-bold text-sm text-slate-500">Pengajar Native</p>
-                        <span className="text-[10px] font-bold bg-slate-200 text-slate-500 px-2 py-0.5 rounded-full shrink-0">COMING SOON</span>
-                      </div>
-                      <p className="text-xs text-slate-400 mt-0.5">Pengajar native untuk {selLang} belum tersedia. Saat ini hanya English, Tagalog, Spanish & Arabic.</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 3 — Pilih Level */}
-          {step===3 && selProgram!=="Semi Private" && (
-            <motion.div key="s3" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="flex flex-col flex-1 overflow-hidden">
-              <div className="p-6 overflow-y-auto flex-1">
-              <button onClick={()=>{ if(hasTeacherPick(selProgram)){ setTeacherPick(true); } setStep(2); }} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti program</button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLangLabel}</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">{selProgram}</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">{selProgram==="Kelas Kids"?"Pilih jenis kelas":"Pilih level"}</h3>
-              <p className="text-sm text-slate-500 mb-6">{selProgram==="Kelas Kids"?"Sesuaikan dengan usia anak":"Mulai dari mana?"}</p>
-              <div className="flex flex-col gap-3">
-                {levels.map(lv=>{
-                  const durationProg = selProgram==="Kelas Private" || selProgram==="Kelas Kids"; // linguo-patch:funnel-session-duration-v1
-                  const active = durationProg && selLevel===lv.id;
-                  return (
-                  <button key={lv.id} onClick={()=>{ setSelLevel(lv.id); if(!durationProg) setStep(4); }}
-                    className={`flex items-center gap-4 p-4 rounded-2xl border-2 text-left transition-all hover:border-[#1A9E9E]/40 hover:shadow-md ${active?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100"}`}>
-                    <div className="h-10 w-10 rounded-full bg-[#1A9E9E]/10 flex items-center justify-center text-sm font-bold text-[#1A9E9E]">{selProgram==="Kelas Kids"?(lv.id==="Little Learner"?"LL":"YE"):lv.id}</div>
-                    <div className="flex-1">
-                      <p className="font-bold text-sm">{lv.label}</p>
-                      <p className="text-xs text-slate-500 mt-0.5">{lv.desc}</p>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-slate-400 shrink-0"/>
-                  </button>
-                  );
-                })}
-              </div>
-
-              {/* linguo-patch:funnel-session-duration-v1 — durasi + jumlah sesi + total (Private & Kids) */}
-              {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
-                <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="mt-6">
-                  {/* offline-private-class-v1 — online / offline (pengajar datang) */}
-                  {renderModePicker()}
-                  <h3 className="text-base font-bold text-slate-900 mb-1">Durasi per sesi</h3>
-                  <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
-                  <div className="grid grid-cols-3 gap-2 mb-5">
-                    {DURATION_OPTS.map(d=>(
-                      <button key={d} onClick={()=>setSelDuration(d)}
-                        className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selDuration===d?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                        {d} menit
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* funnel-xendit-v1 — pilih jumlah sesi (paket) */}
-                  <h3 className="text-base font-bold text-slate-900 mb-1">Jumlah sesi</h3>
-                  <p className="text-sm text-slate-500 mb-3">Pilih paket jumlah pertemuan</p>
-                  <div className="grid grid-cols-5 gap-2 mb-5">
-                    {SESSION_OPTS.map(s=>(
-                      <button key={s} onClick={()=>setSelSessions(s)}
-                        className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selSessions===s?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                        {s}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4">
-                    <div className="flex items-center justify-between text-slate-500 text-xs">
-                      <span>Harga / sesi ({selDuration} menit)</span>
-                      <span>{fmtRp(perSessionOnline)}</span>
-                    </div>
-                    {/* offline-private-class-v1 — selisih biaya kelas offline */}
-                    {isOffline && (
-                      <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
-                        <span>Biaya kelas offline / sesi</span>
-                        <span>+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
-                      <span>Jumlah sesi</span>
-                      <span>× {selSessions}</span>
-                    </div>
-                    <div className="flex items-center justify-between border-t border-[#1A9E9E]/15 mt-2.5 pt-2.5">
-                      <span className="text-sm font-semibold text-slate-700">Total tagihan</span>
-                      <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Bayar aman via Xendit. Jadwal diatur Admin setelah pembayaran.</p>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* reguler-xendit-v1: harga flat ditampilkan di step level */}
-              {selProgram==="Kelas Reguler" && (
-                <div className="mt-4 rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/5 p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-600">Biaya kelas</span>
-                    <div className="text-right">
-                      <span className="text-xs text-slate-400 line-through mr-1.5">Rp 200.000</span>
-                      <span className="text-lg font-extrabold text-[#1A9E9E]">Rp 150.000</span>
-                      <span className="text-xs font-medium text-slate-400">/2 bulan</span>
-                    </div>
-                  </div>
-                  <p className="text-[11px] text-slate-400 mt-1.5">8 sesi grup class • 90 menit/sesi • dibuka minimal 8 peserta</p>
-                </div>
-              )}
-              {selProgram==="Kelas Reguler" && <p className="text-xs text-slate-400 mt-4 text-center">*Kelas Reguler saat ini tersedia untuk level A1</p>}
-              </div>
-
-              {/* funnel-sticky-cta-v1 — tombol lanjut dipin di footer biar tak terpotong scroll */}
-              {(selProgram==="Kelas Private" || selProgram==="Kelas Kids") && selLevel && (
-                <div className="px-6 py-4 border-t border-slate-100 bg-white">
-                  {/* offline-private-class-v1 — kota wajib diisi kalau pilih offline */}
-                  <button onClick={()=>{if(offlineReady)setStep(4)}} disabled={!offlineReady}
-                    className="w-full bg-[#1A9E9E] hover:bg-[#178888] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                    {offlineReady ? "Lanjut ke Data Diri →" : "Isi kota/area kelas dulu"}
-                  </button>
-                </div>
-              )}
-            </motion.div>
-          )}
-
-          {/* STEP 3 (Semi Private) — Jumlah Orang + Level + Harga — linguo-patch:funnel-semi-private-calc-v1 */}
-          {step===3 && selProgram==="Semi Private" && (
-            <motion.div key="s3sp" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
-              <button onClick={()=>setStep(initialProgram ? 1 : 2)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← {initialProgram ? "Ganti bahasa" : "Ganti program"}</button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 mb-5">
-                <RectFlag code={getFlagCode(selLang)} h={20}/>
-                <span className="text-sm font-medium">{selLangLabel}</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-sm text-[#1A9E9E] font-medium">Semi Private</span>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Berapa orang dalam grup?</h3>
-              <p className="text-sm text-slate-500 mb-4">Makin banyak peserta, makin hemat per orang</p>
-              <div className="grid grid-cols-5 gap-2 mb-6">
-                {[2,3,4,5,6,7,8,9,10].map(n=>(
-                  <button key={n} onClick={()=>setClassSize(n)}
-                    className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${classSize===n?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                    {n}
-                  </button>
-                ))}
-              </div>
-
-              <h3 className="text-base font-bold text-slate-900 mb-1">Pilih level</h3>
-              <p className="text-sm text-slate-500 mb-3">Mulai dari mana?</p>
-              <div className="grid grid-cols-2 gap-2 mb-5">
-                {levels.map(lv=>(
-                  <button key={lv.id} onClick={()=>setSelLevel(lv.id)}
-                    className={`flex items-center gap-2.5 p-3 rounded-xl border-2 text-left transition-all ${selLevel===lv.id?"border-[#1A9E9E] bg-[#1A9E9E]/[0.04]":"border-slate-100 hover:border-[#1A9E9E]/40"}`}>
-                    <div className={`h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${selLevel===lv.id?"bg-[#1A9E9E] text-white":"bg-[#1A9E9E]/10 text-[#1A9E9E]"}`}>{lv.id}</div>
-                    <span className="text-xs font-bold leading-tight">{lv.label}</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* offline-private-class-v1 — online / offline (pengajar datang ke tempat grup) */}
-              {renderModePicker()}
-
-              {/* linguo-patch:funnel-session-duration-v1 — durasi sesi (harga ikut proporsional) */}
-              <h3 className="text-base font-bold text-slate-900 mb-1">Durasi per sesi</h3>
-              <p className="text-sm text-slate-500 mb-3">Pilih lama belajar tiap sesi</p>
-              <div className="grid grid-cols-5 gap-2 mb-5">
-                {DURATION_OPTS.map(d=>(
-                  <button key={d} onClick={()=>setSelDuration(d)}
-                    className={`py-2.5 rounded-xl text-xs font-bold border-2 transition-all ${selDuration===d?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                    {d}m
-                  </button>
-                ))}
-              </div>
-
-              {/* funnel-xendit-v1 — pilih jumlah sesi (paket) */}
-              <h3 className="text-base font-bold text-slate-900 mb-1">Jumlah sesi</h3>
-              <p className="text-sm text-slate-500 mb-3">Pilih paket jumlah pertemuan</p>
-              <div className="grid grid-cols-5 gap-2 mb-5">
-                {SESSION_OPTS.map(s=>(
-                  <button key={s} onClick={()=>setSelSessions(s)}
-                    className={`py-2.5 rounded-xl text-sm font-bold border-2 transition-all ${selSessions===s?"border-[#1A9E9E] bg-[#1A9E9E] text-white shadow-md":"border-slate-100 text-slate-600 hover:border-[#1A9E9E]/40"}`}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-
-              {selLevel && semiPrice && semiPrice.totalGroup>0 && (
-                <motion.div initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="rounded-2xl border-2 border-[#1A9E9E]/20 bg-[#1A9E9E]/[0.03] p-4 mb-5">
-                  <div className="flex items-center justify-between text-slate-500 text-xs">
-                    <span>Per orang / sesi ({classSize} peserta)</span>
-                    <span>{fmtRp(semiPrice.perStudent)}</span>
-                  </div>
-                  {/* offline-private-class-v1 — selisih biaya kelas offline (per orang, per sesi) */}
-                  {isOffline && (
-                    <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
-                      <span>Biaya kelas offline / sesi</span>
-                      <span>+{fmtRp(OFFLINE_SURCHARGE_PER_SESSION)}</span>
-                    </div>
-                  )}
-                  <div className="flex items-center justify-between text-slate-500 text-xs mt-1">
-                    <span>Jumlah sesi</span>
-                    <span>× {selSessions}</span>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-[#1A9E9E]/15 mt-2.5 pt-2.5">
-                    <span className="text-sm font-semibold text-slate-700">Total tagihan (kamu)</span>
-                    <span className="text-xl font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
-                  </div>
-                  <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">Harga per orang untuk grup {classSize} peserta. Tiap peserta daftar & bayar sendiri. Bayar aman via Xendit.</p>
-                </motion.div>
-              )}
-
-              <button disabled={!selLevel || !offlineReady} onClick={()=>{if(selLevel && offlineReady)setStep(4)}}
-                className="w-full bg-[#1A9E9E] hover:bg-[#178888] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                {!selLevel ? "Pilih level dulu" : !offlineReady ? "Isi kota/area kelas dulu" : "Lanjut ke Data Diri →"}
-              </button>
-            </motion.div>
-          )}
-
-          {/* STEP 4 — Form Data Diri */}
-          {step===4 && (
-            <motion.div key="s4" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 overflow-y-auto">
-              <button onClick={()=>setStep(3)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Ganti level</button>
-              <div className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-2.5 mb-5 text-xs">
-                <RectFlag code={getFlagCode(selLang)} h={16}/>
-                <span className="font-medium">{selLangLabel}</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-[#1A9E9E] font-medium">{selProgram}</span>
-                <span className="text-slate-300">•</span>
-                <span>{selLevel}</span>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Lengkapi data diri</h3>
-              <p className="text-sm text-slate-500 mb-5">Isi data di bawah agar tim kami bisa menghubungimu</p>
-              <div className="space-y-3">
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">Nama Lengkap</label>
-                  <button onClick={handleGoogleSignIn} type="button"
-                  className="w-full flex items-center justify-center gap-3 bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-all active:scale-[0.98] mb-3">
-                  <svg className="h-5 w-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                  Daftar dengan Google
-                </button>
-                <div className="flex items-center gap-3 mb-3"><div className="flex-1 h-px bg-slate-200"></div><span className="text-xs text-slate-400">atau isi manual</span><div className="flex-1 h-px bg-slate-200"></div></div>
-                <input type="text" placeholder="John Doe" value={formName} onChange={(e)=>{setFormName(e.target.value);setFormError("")}}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">Email</label>
-                  <input type="email" placeholder="john@email.com" value={formEmail} onChange={(e)=>{setFormEmail(e.target.value);setFormError("")}}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">Nomor WhatsApp</label>
-                  <div className="flex gap-0">
-                    <select value={countryCode} onChange={(e)=>setCountryCode(e.target.value)}
-                      className="bg-slate-100 rounded-l-xl px-3 text-sm font-medium text-slate-600 border border-r-0 border-slate-200 focus:outline-none cursor-pointer appearance-none w-[68px] text-center">
-                      {["+62","+60","+65","+66","+81","+82","+86","+91","+1","+44","+61","+49","+33","+971","+966","+7","+55","+234"].map(c=>(
-                        <option key={c} value={c}>{c}</option>
-                      ))}
-                    </select>
-                    <input type="tel" placeholder="812-3456-7890" value={formWa}
-                      onChange={(e)=>{setFormWa(e.target.value.replace(/[^0-9]/g,"").replace(/^0/,""));setFormError("")}}
-                      className="flex-1 px-4 py-3 rounded-r-xl border border-slate-200 text-sm focus:outline-none focus:border-[#1A9E9E] focus:ring-2 focus:ring-[#1A9E9E]/20"/>
-                  </div>
-                </div>
-                {/* referral-code-field-v1 — optional, muncul di semua program (step data diri shared) */}
-                <div>
-                  <label className="text-xs font-medium text-slate-600 mb-1 block">Kode Referral (opsional)</label>
-                  <input type="text" placeholder="Masukkan kode referral jika ada" value={refCode}
-                    onChange={(e)=>setRefCode(e.target.value)}
-                    className="w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#1A9E9E]"/>
-                  <p className="text-xs text-slate-400 mt-1">Dapatkan dari teman atau afiliator Linguo</p>
-                </div>
-              </div>
-              {formError && <p className="text-red-500 text-xs mt-2">{formError}</p>}
-              <button onClick={()=>{if(validateForm()) setStep(5)}}
-                className="w-full mt-5 bg-[#1A9E9E] hover:bg-[#178888] text-white font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg shadow-[#1A9E9E]/25">
-                Lanjut ke Konfirmasi →
-              </button>
-            </motion.div>
-          )}
-
-          {/* STEP 5 — Konfirmasi & Daftar */}
-          {step===5 && (
-            <motion.div key="s5" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} className="p-6 flex-1 min-h-0 overflow-y-auto">
-              <button onClick={()=>setStep(4)} className="text-sm text-[#1A9E9E] font-medium mb-3 flex items-center gap-1 hover:underline">← Edit data</button>
-              <div className="text-center mb-5">
-                <h3 className="text-xl font-bold text-slate-900">Konfirmasi Pendaftaran</h3>
-                <p className="text-sm text-slate-500 mt-1">Pastikan data di bawah sudah benar</p>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-5 mb-5 space-y-2.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Nama</span>
-                  <span className="text-sm font-medium">{formName}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Email</span>
-                  <span className="text-sm font-medium">{formEmail}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">WhatsApp</span>
-                  <span className="text-sm font-medium">{countryCode}{formWa}</span>
-                </div>
-                <div className="border-t border-slate-200 pt-2.5 mt-2.5"/>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Bahasa</span>
-                  <span className="text-sm font-medium flex items-center gap-2">
-                    <RectFlag code={getFlagCode(selLang)} h={16}/>{selLangLabel}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Program</span>
-                  <span className="text-sm font-medium text-[#1A9E9E]">{selProgram}</span>
-                </div>
-                {hasTeacherPick(selProgram) && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Pengajar</span>
-                    <span className="text-sm font-medium">{selTeacherType==="native"?"Native Speaker":"Lokal"}</span>
-                  </div>
-                )}
-                {/* offline-private-class-v1 — mode kelas + lokasi (kalau offline) */}
-                {canOffline && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Mode kelas</span>
-                    <span className="text-sm font-medium">{isOffline ? "Offline (pengajar datang)" : "Online (Zoom)"}</span>
-                  </div>
-                )}
-                {isOffline && offlineCity.trim() && (
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="text-xs text-slate-500 shrink-0">Lokasi kelas</span>
-                    <span className="text-sm font-medium text-right">{offlineCity.trim()}</span>
-                  </div>
-                )}
-                {selProgram==="Semi Private" && (
-                  <>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-500">Jumlah peserta</span>
-                      <span className="text-sm font-medium">{classSize} orang</span>
-                    </div>
-                    {semiPrice && semiPrice.totalGroup>0 && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-slate-500">Estimasi / orang</span>
-                        <span className="text-sm font-bold text-[#1A9E9E]">{fmtRp(semiPrice.perStudent)}/sesi</span>
-                      </div>
-                    )}
-                  </>
-                )}
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500">Level</span>
-                  <span className="text-sm font-medium">{selLevel}</span>
-                </div>
-                {/* linguo-patch:funnel-session-duration-v1 — tampilkan durasi sesi terpilih */}
-                {isSessionProg && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Durasi / sesi</span>
-                    <span className="text-sm font-medium">{selDuration} menit</span>
-                  </div>
-                )}
-                {/* funnel-xendit-v1 — jumlah sesi (paket) */}
-                {isSessionProg && (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-500">Jumlah sesi</span>
-                    <span className="text-sm font-medium">{selSessions} sesi</span>
-                  </div>
-                )}
-                {/* funnel-xendit-v1 — total tagihan (Private/Semi/Kids/IELTS; Reguler punya blok sendiri) */}
-                {selProgram!=="Kelas Reguler" && (
-                  <div className="flex items-center justify-between border-t-2 border-slate-200 pt-2.5 mt-2.5">
-                    <span className="text-sm font-bold text-slate-800">Total tagihan{selProgram==="Semi Private" ? " (kamu)" : ""}</span>
-                    <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(totalAmount)}</span>
-                  </div>
-                )}
-                {/* reguler-xendit-v1: durasi + harga · addon-ebook-recording-v1: toggle add-on + total live */}
-                {selProgram==="Kelas Reguler" && (
-                  <>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-500">Durasi</span>
-                      <span className="text-sm font-medium">8 sesi @ 90 menit</span>
-                    </div>
-                    <div className="flex items-center justify-between border-t border-slate-200 pt-2.5 mt-2.5">
-                      <span className="text-xs text-slate-500">Biaya kelas</span>
-                      <span className="text-sm font-medium">Rp 150.000 <span className="font-normal text-slate-400">/2 bulan</span></span>
-                    </div>
-                    {/* addon-ebook-recording-v1: cross-sell toggle (Reguler only) */}
-                    <button type="button" onClick={()=>setAddAddon(v=>!v)}
-                      className="w-full flex items-center justify-between gap-3 border-t border-slate-200 pt-3 mt-1 text-left group">
-                      <span className="flex items-start gap-2.5">
-                        <span className={"mt-0.5 h-[18px] w-[18px] shrink-0 rounded-md border-2 flex items-center justify-center transition-all " + (addAddon ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50")}>
-                          {addAddon && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
-                        </span>
-                        <span>
-                          <span className="block text-sm font-medium text-slate-700">Tambah E-Book + Recording Kelas</span>
-                          <span className="block text-[11px] text-slate-400 leading-snug mt-0.5">Materi lengkap + rekaman semua sesi · akses selamanya</span>
-                        </span>
-                      </span>
-                      <span className={"text-sm font-semibold whitespace-nowrap transition-colors " + (addAddon ? "text-[#1A9E9E]" : "text-slate-400")}>+Rp150.000</span>
-                    </button>
-                    <div className="flex items-center justify-between border-t-2 border-slate-200 pt-3 mt-1">
-                      <span className="text-sm font-bold text-slate-800">Total</span>
-                      <span className="text-base font-extrabold text-[#1A9E9E]">{fmtRp(150000 + (addAddon ? 150000 : 0))}</span>
-                    </div>
-                    {/* reguler-policy-v1: min-peserta + kebijakan refund bersyarat */}
-                    <div className="mt-3 rounded-xl bg-amber-50 border border-amber-100 p-3 space-y-1.5">
-                      <p className="text-[11px] leading-relaxed text-amber-900">
-                        <b>Syarat pembukaan kelas:</b> Kelas Reguler dibuka jika minimal <b>8 peserta</b> terkumpul. Jika kuota belum tercapai, kamu akan ditawari batch berikutnya atau <b>refund penuh</b>.
-                      </p>
-                      <p className="text-[11px] leading-relaxed text-amber-900">
-                        <b>Kebijakan pembayaran:</b> Setelah kelas berjalan, pembayaran tidak dapat di-refund. Namun saldo bisa dialihkan ke Kelas Private atau produk lain.
-                      </p>
-                    </div>
-                  </>
-                )}
-              </div>
-              {/* terms-agreement-v1: checkbox persetujuan sebelum Bayar (Reguler only) */}
-              {selProgram==="Kelas Reguler" && (
-                <button type="button" onClick={()=>setAgreeTerms(v=>!v)} className="w-full flex items-start gap-2.5 mb-3 text-left group">
-                  <span className={"mt-0.5 h-[18px] w-[18px] shrink-0 rounded-md border-2 flex items-center justify-center transition-all " + (agreeTerms ? "border-[#1A9E9E] bg-[#1A9E9E]" : "border-slate-300 group-hover:border-[#1A9E9E]/50")}>
-                    {agreeTerms && <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd"/></svg>}
-                  </span>
-                  <span className="text-[12px] leading-snug text-slate-500">Dengan ini saya menyetujui <b className="text-slate-700">syarat pembukaan kelas & kebijakan pembayaran</b> Linguo yang tertera di atas.</span>
-                </button>
-              )}
-              {formError && <p className="text-red-500 text-xs mb-2 text-center">{formError}</p>}
-              {/* funnel-xendit-v1: semua program checkout ke Xendit */}
-              <button onClick={handleFinal} disabled={saving || (selProgram==="Kelas Reguler" && !agreeTerms)}
-                className="w-full bg-[#fbbf24] hover:bg-[#f59e0b] disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold py-3.5 rounded-full text-sm transition-all active:scale-95 shadow-lg">
-                {saving ? "Memproses..." : (selProgram==="Kelas Reguler" ? `Bayar ${fmtRp(150000 + (addAddon ? 150000 : 0))} →` : `Bayar ${fmtRp(totalAmount)} →`)}
-              </button>
-              <p className="text-[11px] text-slate-400 text-center mt-3">Kamu akan diarahkan ke halaman pembayaran Xendit yang aman</p>
-            </motion.div>
-          )}
-        </motion.div>
-      </motion.div>
-    )}</AnimatePresence>
-  );
-}
-
 function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
-  const [funnelOpen, setFunnelOpen] = useState(false);
-  const [funnelProg, setFunnelProg] = useState("");
-  const [funnelLang, setFunnelLang] = useState("");
-  const [funnelLevel, setFunnelLevel] = useState("");
-  const [funnelPreferredProg, setFunnelPreferredProg] = useState("");
-  const [funnelPrefillName, setFunnelPrefillName] = useState("");
-  const [funnelPrefillEmail, setFunnelPrefillEmail] = useState("");
-  const [funnelPrefillWa, setFunnelPrefillWa] = useState("");
-  const [funnelSource, setFunnelSource] = useState("");
+  // [daftar-page-funnel-v1] Funnel pendaftaran sekarang halaman tersendiri
+  // (/daftar/...). Tautan lama "/?openFunnel=1&lang=Korean" masih beredar di
+  // iklan, hasil tes penempatan, dan callback login Google — jangan dibiarkan
+  // mendarat di homepage tanpa terjadi apa-apa; alihkan ke halaman barunya.
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
-    if (params.get("openFunnel") === "1") {
-      const lang = params.get("lang") || "";
-      const level = params.get("level") || "";
-      const from = params.get("from") || "";
-      window.history.replaceState({}, "", window.location.pathname);
-      if (lang) {
-        // Prefill data diri dari placement test (disimpan di localStorage saat gate)
-        try {
-          const stored = localStorage.getItem("linguo_prefill");
-          if (stored) {
-            const d = JSON.parse(stored);
-            if (d.name) setFunnelPrefillName(d.name);
-            if (d.email) setFunnelPrefillEmail(d.email);
-            if (d.whatsapp) setFunnelPrefillWa(d.whatsapp);
-          }
-        } catch {}
-        setFunnelLang(lang); setFunnelLevel(level);
-        // Kosongkan preferredProg → funnel mendarat di pilih program (Private / Semi Private)
-        setFunnelPreferredProg("");
-        setFunnelSource(from); setFunnelProg("");
-        setFunnelOpen(true);
-      }
-    }
+    if (params.get("openFunnel") !== "1") return;
+    const langEn = params.get("lang") || "";
+    const slug = langEn ? langSlugOf(langEn) : "";
+    window.location.replace(slug && langFromSlug(slug) ? `/daftar/${slug}` : "/daftar");
   }, []);
 
-  if(typeof window!=="undefined")(window as any).__openFunnel=(input:string|{language?:string;program?:string;preferredProgram?:string;level?:string;source?:string;prefillName?:string;prefillEmail?:string;prefillWa?:string})=>{
-      if(typeof input==="string"){setFunnelProg(input);setFunnelLang("");setFunnelLevel("");setFunnelPreferredProg("");setFunnelSource("");setFunnelPrefillName("");setFunnelPrefillEmail("");setFunnelPrefillWa("");
-        if(typeof window!=="undefined"&&(window as any).gtag)(window as any).gtag("event","funnel_opened",{program:input});
-      }
-      else{
-        setFunnelProg(input.program||"");
-        setFunnelLang(input.language||"");
-        setFunnelLevel(input.level||"");
-        setFunnelPreferredProg(input.preferredProgram||"");
-        setFunnelSource(input.source||"");
-        setFunnelPrefillName(input.prefillName||"");
-        setFunnelPrefillEmail(input.prefillEmail||"");
-        setFunnelPrefillWa(input.prefillWa||"");
-      }
-      setFunnelOpen(true);
-    };
   const [waNumber, setWaNumber] = useState("");
   const [countryCode, setCountryCode] = useState("+62");
   const [error, setError] = useState("");
@@ -2047,11 +1178,11 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
       <div className="max-w-lg">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
           <span className="text-white text-sm sm:text-lg font-semibold">{lang==="id"?"Aku mau belajar bahasa":"I want to learn"}</span>
-          <button onClick={()=>setFunnelOpen(true)}
+          <a href="/daftar"
             className="group h-9 sm:h-11 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center gap-0 hover:gap-2 px-3 hover:px-5 hover:bg-white/30 transition-all duration-300 active:scale-95 overflow-hidden">
             <Globe className="h-5 w-5 text-white shrink-0"/>
             <span className="text-white text-sm font-medium max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap transition-all duration-300 opacity-0 group-hover:opacity-100">Pilih Bahasa</span>
-          </button>
+          </a>
         </div>
         {/* Inline WA input — compact */}
         <p className="text-white/70 text-xs mb-1.5">{lang==="id"?"Diskon spesial, masukkan nomor HP sekarang":"Special discount, enter your number now"}</p>
@@ -2143,7 +1274,6 @@ function HeroFunnel({lang, onLoginOpen}:{lang:string; onLoginOpen?:()=>void}) {
           </motion.div>
         </motion.div>
       )}</AnimatePresence>
-      <FunnelModal open={funnelOpen} onClose={()=>setFunnelOpen(false)} initialProgram={funnelProg} initialLang={funnelLang} initialLevel={funnelLevel} initialPreferredProg={funnelPreferredProg} initialSource={funnelSource} initialName={funnelPrefillName} initialEmail={funnelPrefillEmail} initialWa={funnelPrefillWa}/>
     </>
   );
 }
@@ -2244,7 +1374,7 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
   const objPos = "object-center";
 
   const handleClick = () => {
-    if(p.tab>=0){(window as any).__openFunnel?.(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
+    if(p.tab>=0){window.location.href = daftarHref(["Kelas Private","Kelas Reguler","IELTS/TOEFL Prep","Kelas Kids"][p.tab]||"")}
     else if((p).href){window.location.href=(p).href}
     else{window.open(`https://wa.me/6282116859493?text=Halo, saya tertarik ${p.title} Linguo`,'_blank')}
   };
@@ -2451,7 +1581,7 @@ function LanguageStrip({className=""}:{className?:string}) {
         className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
         {LANGUAGES.map((lang, i) => (
           <div key={i}
-            onClick={() => (window as any).__openFunnel?.({ program: "Kelas Private", language: lang })}
+            onClick={() => { window.location.href = daftarHref("Kelas Private", lang); }}
             className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
             <RectFlag code={getFlagCode(lang)} h={28} className="shadow-sm" />
             <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
@@ -2675,7 +1805,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-1">Semua kebutuhan belajar bahasa ada di Linguo</h2>
         <p className="text-slate-500 text-sm text-center mb-10">Pilih program yang sesuai dengan kebutuhanmu</p>
-        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
+        <ProductDock setPricingTab={setPricingTab} onSelectProgram={(prog:string)=>{window.location.href = daftarHref(prog)}}/>
       </div>
     </section>
     </Reveal>
@@ -2824,7 +1954,7 @@ export default function Home() {
 
     {/* PRICING */}
     <Reveal>
-    <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{(window as any).__openFunnel?.(prog)}}/>
+    <PricingSection tab={pricingTab} setTab={setPricingTab} onGetStarted={(prog:string)=>{window.location.href = daftarHref(prog)}}/>
     </Reveal>
 
     {/* CTA */}
