@@ -1,4 +1,4 @@
-// linguo-patch:kelas-lucide-icons-v1 — ikon whyLearn & persona di /kelas/bahasa-*
+// linguo-patch:kelas-lucide-icons-v1 — ikon whyLearn & persona di /kursus/bahasa-*
 // dirender pakai Lucide (bukan emoji). Data languages-detail.ts tetap menyimpan
 // emoji sebagai KUNCI — komponen ini yang menerjemahkannya ke ikon. Emoji yang
 // belum terpetakan jatuh ke Sparkles, jadi nambah entri data baru tidak pernah

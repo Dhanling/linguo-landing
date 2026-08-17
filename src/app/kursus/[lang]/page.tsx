@@ -1,4 +1,4 @@
-// src/app/kelas/[lang]/page.tsx
+// src/app/kursus/[lang]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,7 @@ import { REGULER_LANGS } from "../../../lib/programLanguages";
 
 // ============================================================================
 // PARAM PARSING
-// URL pattern is /kelas/bahasa-{slug} which matches [lang] folder.
+// URL pattern is /kursus/bahasa-{slug} which matches [lang] folder.
 // params.lang will contain the FULL segment (e.g. "bahasa-korea"),
 // so we strip the "bahasa-" prefix before looking up detail data.
 // ============================================================================
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const url = `https://linguo.id/kelas/${lang}`;
+  const url = `https://linguo.id/kursus/${lang}`;
 
   return {
     title: detail.metaTitle,
@@ -295,8 +295,8 @@ function Breadcrumb({ langName }: { langName: string }) {
           /
         </li>
         <li>
-          <Link href="/kelas" className="hover:text-[#1A9E9E]">
-            Kelas
+          <Link href="/kursus" className="hover:text-[#1A9E9E]">
+            Kursus
           </Link>
         </li>
         <li aria-hidden className="text-slate-400">

@@ -942,7 +942,7 @@ function WhyCarousel() {
 }
 
 // [seo-review-schema-v1] TESTIMONIALS pindah ke src/data/testimonials.ts —
-// dipakai bersama halaman /kelas/bahasa-* buat Review + AggregateRating schema.
+// dipakai bersama halaman /kursus/bahasa-* buat Review + AggregateRating schema.
 
 function TestimonialCarousel() {
   const [active, setActive] = useState(0);
@@ -2322,14 +2322,14 @@ function DockCard({product:p,mobile,setPricingTab,onSelectProgram}:{product:type
 // mengarah ke wa.me — jadi otoritas dari halaman terkuat di situs (homepage)
 // mengalir keluar ke WhatsApp, sementara landing page bahasa sendiri tidak
 // pernah ditaut dari mana pun. Sekarang semuanya menunjuk ke dalam:
-// bahasa yang punya landing sendiri → /kelas/bahasa-*, sisanya → silabusnya.
+// bahasa yang punya landing sendiri → /kursus/bahasa-*, sisanya → silabusnya.
 // Label diubah ke bahasa Indonesia supaya cocok dengan kata yang benar-benar
 // dicari orang ("kursus bahasa jepang", bukan "learn Japanese").
 const FOOTER_LANGUAGES: { label: string; href: string }[] = [
-  { label: "Inggris",  href: "/kelas/bahasa-inggris" },
-  { label: "Jepang",   href: "/kelas/bahasa-jepang" },
-  { label: "Korea",    href: "/kelas/bahasa-korea" },
-  { label: "Mandarin", href: "/kelas/bahasa-mandarin" },
+  { label: "Inggris",  href: "/kursus/bahasa-inggris" },
+  { label: "Jepang",   href: "/kursus/bahasa-jepang" },
+  { label: "Korea",    href: "/kursus/bahasa-korea" },
+  { label: "Mandarin", href: "/kursus/bahasa-mandarin" },
   { label: "Prancis",  href: "/silabus/french" },
   { label: "Jerman",   href: "/silabus/german" },
   { label: "Spanyol",  href: "/silabus/spanish" },
@@ -2343,7 +2343,7 @@ const FOOTER_LANGUAGES: { label: string; href: string }[] = [
 // otoritas link, bukan jalur konversinya.
 const FOOTER_PROGRAMS: { label: string; href: string }[] = [
   { label: "Kelas Reguler",   href: "/jadwal-kelas-reguler" },
-  { label: "Kelas Private",   href: "/kelas" },
+  { label: "Kelas Private",   href: "/kursus" },
   { label: "Persiapan IELTS", href: "/persiapan-tes" },
   { label: "Persiapan TOEFL", href: "/persiapan-tes" },
   { label: "Kelas Anak",      href: "/kelas-anak" },
@@ -2817,7 +2817,7 @@ export default function Home() {
           <div><h4 className="font-bold mb-4">Kursus Bahasa</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
               {FOOTER_LANGUAGES.map(l=>(<li key={l.href}><a href={l.href} className="hover:text-white transition-colors">Kursus Bahasa {l.label}</a></li>))}
-              <li><a href="/kelas" className="font-semibold text-white hover:underline">Lihat Semua 60+ Bahasa</a></li>
+              <li><a href="/kursus" className="font-semibold text-white hover:underline">Lihat Semua 60+ Bahasa</a></li>
             </ul>
           </div>
           <div><h4 className="font-bold mb-4">Level Option</h4>
@@ -2829,7 +2829,7 @@ export default function Home() {
             <h4 className="font-bold mb-4">Info</h4>
             <ul className="flex flex-col gap-1.5 text-sm text-white/80">
               <li><a href="/harga" className="hover:text-white transition-colors">Harga Kelas</a></li>
-              <li><a href="/kelas" className="hover:text-white transition-colors">Semua Kelas Bahasa</a></li>
+              <li><a href="/kursus" className="hover:text-white transition-colors">Semua Kelas Bahasa</a></li>
               <li><a href="/silabus" className="hover:text-white transition-colors">Silabus & Kurikulum</a></li>
               <li><a href="/kelas-trial" className="hover:text-white transition-colors">Kelas Trial</a></li>
               <li><a href="/kosakata" className="hover:text-white transition-colors">Kosakata Gratis</a></li>

@@ -1,10 +1,10 @@
-// src/app/kelas/page.tsx
+// src/app/kursus/page.tsx
 //
 // [seo-kelas-hub-v1] Dua masalah sekaligus diselesaikan halaman ini:
 //
-// 1. Breadcrumb di /kelas/bahasa-* menaut ke "/kelas" — padahal rute itu tidak
-//    pernah ada (hanya folder [lang]). Jadi tautan induk di setiap landing page
-//    bahasa mendarat di 404.
+// 1. Breadcrumb di /kursus/bahasa-* menaut ke induknya — padahal dulu rute itu
+//    tidak pernah ada (hanya folder [lang]). Jadi tautan induk di setiap landing
+//    page bahasa mendarat di 404.
 // 2. Landing page bahasa jadi halaman yatim: tidak ada satu pun tautan internal
 //    menuju ke sana dari mana pun di situs, jadi crawler tidak punya jalan masuk
 //    meski schema & metadata-nya sudah rapi.
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     "belajar bahasa asing",
     "kelas bahasa private online",
   ],
-  alternates: { canonical: `${BASE}/kelas` },
+  alternates: { canonical: `${BASE}/kursus` },
   openGraph: {
     title: "Kursus Bahasa Asing Online — 60+ Bahasa | Linguo.id",
     description:
       "Kelas live via Zoom bersama pengajar berpengalaman. 60+ bahasa, mulai Rp90.000/sesi.",
-    url: `${BASE}/kelas`,
+    url: `${BASE}/kursus`,
     siteName: "Linguo.id",
     locale: "id_ID",
     type: "website",
@@ -83,7 +83,7 @@ export default function KelasIndexPage() {
       "@type": "ListItem",
       position: i + 1,
       name: `Kursus Bahasa ${f.meta.name}`,
-      url: `${BASE}/kelas/bahasa-${f.detail.urlSlug}`,
+      url: `${BASE}/kursus/bahasa-${f.detail.urlSlug}`,
     })),
   };
 
@@ -92,7 +92,7 @@ export default function KelasIndexPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Beranda", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Kelas Bahasa", item: `${BASE}/kelas` },
+      { "@type": "ListItem", position: 2, name: "Kursus Bahasa", item: `${BASE}/kursus` },
     ],
   };
 
@@ -145,7 +145,7 @@ export default function KelasIndexPage() {
             {featured.map(({ detail, meta }) => (
               <Link
                 key={detail.urlSlug}
-                href={`/kelas/bahasa-${detail.urlSlug}`}
+                href={`/kursus/bahasa-${detail.urlSlug}`}
                 className="group block rounded-2xl border border-slate-200 p-6 hover:border-[#1A9E9E] hover:shadow-lg transition-all"
               >
                 <div className="flex items-center gap-3 mb-3">

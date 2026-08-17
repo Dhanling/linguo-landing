@@ -1,5 +1,5 @@
 // src/data/languages-detail.ts
-// Konten landing page per bahasa untuk /kelas/bahasa-[lang]
+// Konten landing page per bahasa untuk /kursus/bahasa-[lang]
 // Keyed by URL slug (lowercase Indonesian name) — match existing blog CTA convention.
 
 import { languages } from "./curriculum/languages";
@@ -44,7 +44,7 @@ export type FAQ = {
 };
 
 export type LanguageDetail = {
-  /** URL slug, lowercase Indonesian name. Used in /kelas/bahasa-{urlSlug} */
+  /** URL slug, lowercase Indonesian name. Used in /kursus/bahasa-{urlSlug} */
   urlSlug: string;
   /** Cross-reference to `languages.ts` slug (e.g. "korean", "japanese") */
   languageSlug: string;

@@ -31,7 +31,7 @@ export const PRICE_CATEGORIES: Record<string, string[]> = {
     // Melayu = bahasa asing (Malaysia/Brunei/Singapura), bukan bahasa daerah
     // Nusantara → kategori A, bukan D.
     "Malay",
-    // linguo-patch:kelas-funnel-cta-v1 — 5 bahasa /kelas/bahasa-* yang belum
+    // linguo-patch:kelas-funnel-cta-v1 — 5 bahasa /kursus/bahasa-* yang belum
     // terdaftar kategorinya; tanpa ini funnel jatuh ke fallback kategori C
     // (setara Inggris/Jepang — kemahalan). Setara peer-nya di kategori A
     // (Norwegia/Swedia/Ceko dkk).

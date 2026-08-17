@@ -1,4 +1,4 @@
-// src/app/kelas/bahasa-[lang]/not-found.tsx
+// src/app/kursus/bahasa-[lang]/not-found.tsx
 import Link from "next/link";
 
 import { languageDetails, getLanguageMetaForDetail } from "../../../data/languages-detail";
@@ -34,7 +34,7 @@ export default function BahasaNotFound() {
               return (
                 <Link
                   key={detail.urlSlug}
-                  href={`/kelas/bahasa-${detail.urlSlug}`}
+                  href={`/kursus/bahasa-${detail.urlSlug}`}
                   className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#1A9E9E]/40 hover:shadow-md"
                 >
                   <span className="text-3xl">{meta.flag}</span>
@@ -50,7 +50,7 @@ export default function BahasaNotFound() {
 
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
-            href="/kelas"
+            href="/kursus"
             className="inline-flex items-center justify-center rounded-full border-2 border-[#1A9E9E] px-6 py-3 font-semibold text-[#1A9E9E] transition hover:bg-[#1A9E9E] hover:text-white"
           >
             Lihat Semua Kelas

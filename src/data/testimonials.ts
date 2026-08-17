@@ -1,7 +1,7 @@
 // [seo-review-schema-v1]
 // Testimoni siswa sebelumnya hidup sebagai konstanta lokal di src/app/page.tsx
 // dan hanya tampil di homepage. Dipindah ke sini karena sekarang dipakai dua
-// tempat: carousel homepage DAN halaman /kelas/bahasa-*, yang memakainya untuk
+// tempat: carousel homepage DAN halaman /kursus/bahasa-*, yang memakainya untuk
 // schema.org Review + AggregateRating.
 //
 // ATURAN YANG TIDAK BOLEH DILANGGAR:
@@ -9,7 +9,7 @@
 //     structured data itu pelanggaran kebijakan Google dan berujung manual
 //     action — hukumannya jauh lebih mahal daripada bintang yang didapat.
 //  2. Review hanya boleh di-markup di halaman yang MENAMPILKAN review itu.
-//     Karena itu /kelas/bahasa-* merender testimoninya, bukan sekadar
+//     Karena itu /kursus/bahasa-* merender testimoninya, bukan sekadar
 //     menyisipkan JSON-LD diam-diam.
 //  3. Bahasa yang belum punya testimoni TIDAK mendapat aggregateRating sama
 //     sekali — bukan diberi nilai default. Lihat testimonialsForLang().

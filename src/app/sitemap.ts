@@ -4,7 +4,7 @@ import { getAllLanguageDetailSlugs } from "@/data/languages-detail";
 
 // [seo-sitemap-lengkap-v1] Sebelumnya sitemap ini cuma memuat 4 URL statis
 // (/, /blog, /corporate, /jadi-pengajar) + daftar post blog. Belasan halaman
-// publik lain tidak pernah didaftarkan — termasuk /kelas/bahasa-* yang justru
+// publik lain tidak pernah didaftarkan — termasuk /kursus/bahasa-* yang justru
 // halaman paling bernilai untuk pencarian ("kursus bahasa jepang online" dsb)
 // dan sudah punya Course + FAQ schema. Halaman itu juga tidak ditaut dari mana
 // pun, jadi praktis tidak terlihat oleh Google.
@@ -30,7 +30,7 @@ const STATIC_ROUTES: Array<{
 
   // Halaman uang — konversi langsung
   { path: "/harga", priority: 0.9, changeFrequency: "weekly" },
-  { path: "/kelas", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/kursus", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-trial", priority: 0.9, changeFrequency: "weekly" },
   { path: "/persiapan-tes", priority: 0.9, changeFrequency: "weekly" },
   { path: "/kelas-anak", priority: 0.85, changeFrequency: "monthly" },
@@ -83,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // inilah halaman yang menyasar kueri paling bernilai.
   for (const slug of getAllLanguageDetailSlugs()) {
     entries.push({
-      url: `${BASE}/kelas/bahasa-${slug}`,
+      url: `${BASE}/kursus/bahasa-${slug}`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,

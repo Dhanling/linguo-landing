@@ -37,7 +37,7 @@ import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-mer
 // diresolusi jadi URL absolut. Canonical juga belum pernah dipasang di homepage.
 //
 // CATATAN: sengaja TIDAK memakai title.template. Beberapa halaman anak (mis.
-// /kelas/bahasa-*) sudah menuliskan "| Linguo.id" di metaTitle-nya sendiri —
+// /kursus/bahasa-*) sudah menuliskan "| Linguo.id" di metaTitle-nya sendiri —
 // template akan membuatnya dobel.
 export const metadata: Metadata = {
   metadataBase: new URL("https://linguo.id"),

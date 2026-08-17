@@ -36,6 +36,29 @@ const nextConfig: NextConfig = {
         destination: '/toko/paket-elearning',
         permanent: true,
       },
+      // [seo-url-kursus-v1] Hub kelas & 46 landing bahasa pindah dari /kelas ke
+      // /kursus. Dasarnya data GSC 3 bulan: kueri mengandung "kursus" = 140
+      // tayangan, "kelas" = 1. Kata "kelas" praktis tidak dipakai orang saat
+      // mencari, jadi URL-nya disamakan dengan judul & H1 yang memang sudah
+      // "Kursus Bahasa X Online".
+      //
+      // permanent: true (308) — Google harus meneruskan sinyal peringkat URL
+      // lama ke URL baru. JANGAN diubah jadi sementara.
+      //
+      // Sengaja per-pola, BUKAN '/kelas/:path*'. Pola menyeluruh akan ikut
+      // menyeret /kelas/konfirmasi/<token> yang TIDAK dipindah: link itu
+      // dikirim ke siswa lewat WhatsApp dan dibuat di repo lain (edge function
+      // schedule-public), jadi rutenya harus tetap hidup apa adanya.
+      {
+        source: '/kelas',
+        destination: '/kursus',
+        permanent: true,
+      },
+      {
+        source: '/kelas/bahasa-:slug',
+        destination: '/kursus/bahasa-:slug',
+        permanent: true,
+      },
       {
         // Angket kepuasan siswa: link yang dikirim admin lewat WA pakai domain
         // utama (linguo.id/angket/<token>) supaya terlihat resmi & tidak seperti
