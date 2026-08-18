@@ -585,12 +585,21 @@ export default function QuizTakePage() {
                       const active = Number(responses[step]) === oi;
                       const tl = showTranslit ? cur.options_translit?.[oi] : "";
                       return (
+                        /* [kuis-hover-animasi-v1] Kartu terangkat sedikit saat disentuh
+                           kursor dan mengecil saat ditekan. Di kuis ini pilihan jawaban
+                           adalah satu-satunya hal yang benar-benar diklik siswa, dan
+                           kartu putih besar tanpa reaksi apa pun sering dikira teks
+                           biasa — terutama di laptop, di mana tidak ada umpan balik
+                           sentuhan sama sekali. Semua di balik `motion-safe:`: siswa
+                           yang mematikan animasi di sistemnya tidak ikut kena. */
                         <button key={oi} type="button" onClick={() => pickOption(step, oi)}
-                          className="flex items-center gap-3.5 rounded-2xl border-2 px-4 py-4 text-left transition active:scale-[0.99] sm:px-5"
+                          className="flex items-center gap-3.5 rounded-2xl border-2 px-4 py-4 text-left transition-all duration-200 ease-out active:scale-[0.98] motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-[1.015] motion-safe:hover:shadow-lg sm:px-5"
                           style={{
                             borderColor: active ? BRAND : "#e2e8f0",
                             background: active ? "#f0fdfa" : "#fff",
-                            boxShadow: active ? `0 0 0 3px ${BRAND}22` : "none",
+                            // Non-aktif sengaja `undefined`, bukan "none": bayangan hover
+                            // datang dari kelas Tailwind, dan style inline mengalahkannya.
+                            boxShadow: active ? `0 0 0 3px ${BRAND}22` : undefined,
                           }}>
                           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-base font-extrabold"
                             style={{
@@ -864,9 +873,13 @@ function KuisNavBar({
           return (
             <span key={i} className="flex shrink-0 items-center gap-1.5">
               {sekat && <span className="mx-1 h-7 w-px shrink-0 bg-slate-300" />}
+              {/* [kuis-hover-animasi-v1] Nomor membesar saat disentuh kursor —
+                  petak 36px yang berjejer rapat perlu menunjukkan mana yang
+                  sedang dibidik sebelum diklik, kalau tidak siswa mendarat di
+                  soal sebelahnya. */}
               <button type="button" data-soal={i} onClick={() => onJump(i)}
                 title={`Soal ${i + 1} · ${ragu ? "dijawab tidak tahu" : filled ? "terisi" : "kosong"}`}
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border-2 text-sm font-extrabold tabular-nums transition"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border-2 text-sm font-extrabold tabular-nums transition-all duration-150 ease-out active:scale-95 motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-110 motion-safe:hover:shadow-md"
                 style={
                   current
                     ? { background: "#0f766e", borderColor: "#0f766e", color: "#fff" }
@@ -923,7 +936,7 @@ function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: strin
         setSibuk(true);
         ucapkan(teks, lang).finally(() => setSibuk(false));
       }}
-      className={`grid ${ukuran} shrink-0 cursor-pointer place-items-center rounded-xl border-2 transition active:scale-95`}
+      className={`grid ${ukuran} shrink-0 cursor-pointer place-items-center rounded-xl border-2 transition-all duration-150 active:scale-90 motion-safe:hover:scale-110`}
       style={{ borderColor: "#cbd5e1", background: "#f8fafc", color: BRAND }}
     >
       {sibuk ? <Loader2 className="h-5 w-5 animate-spin" /> : <Volume2 className="h-5 w-5" />}
