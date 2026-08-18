@@ -74,7 +74,8 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
             <Link
               key={key}
               href={withPreview(`/akun?menu=${key}`)}
-              prefetch={false}
+              /* [perf:tab-link-prefetch-v1] dari halaman LMS lain tombol ini benar-benar
+                 menavigasi ke /akun — biar chunk dashboard sudah siap sebelum diklik. */
               onClick={(e) => {
                 if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                 e.preventDefault();

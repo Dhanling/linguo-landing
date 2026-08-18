@@ -2258,9 +2258,20 @@ const MANDIRI_NATIVE: Record<string, { native: string; label: string }> = {
   mandarin: { native: "中文", label: "Bahasa Mandarin" },
 };
 
+/* [perf:akun-snapshot-mount-v1] Snapshot dashboard di level MODUL (hidup selama tab
+   browser belum di-reload). Balik ke /akun dari halaman LMS lain dulu SELALU mulai
+   dari nol: `authLoading` true → spinner layar penuh → baru cache localStorage
+   dipasang di effect. Hasilnya kedipan putih-spinner-konten tiap klik menu. Dengan
+   snapshot ini render PERTAMA sudah membawa user + data siswa, jadi pindah menu
+   terasa seperti ganti tab, bukan buka halaman baru.
+   Sengaja variabel modul (bukan localStorage) supaya tak ada beda hidrasi: waktu
+   halaman dimuat keras (server render) nilainya pasti kosong di dua sisi. */
+type AkunSnapshot = { user: any; student: any; schedules: any[]; badges: any[]; streak: number };
+let akunSnapshot: AkunSnapshot | null = null;
+
 export default function AkunPage() {
 
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<any>(() => akunSnapshot?.user ?? null);
 
   // [linguo-patch:beranda-mandiri-resume-v2] Resume self-study (Belajar Mandiri) buat kartu di "Kelas Kamu".
   // Dihitung pakai `user` STATE yang reliable (bukan getSession lokal di child) + keyed ke user?.id →
@@ -2368,7 +2379,9 @@ export default function AkunPage() {
 
   const [showPlacementPicker, setShowPlacementPicker] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(false);
-  const [authLoading, setAuthLoading] = useState(true);
+  // [perf:akun-snapshot-mount-v1] sudah pegang identitas dari kunjungan sebelumnya
+  // di tab ini → tak perlu spinner layar penuh lagi.
+  const [authLoading, setAuthLoading] = useState(() => !akunSnapshot?.user);
   const [isSigningIn, setIsSigningIn] = useState(false);
   // [akun-oauth-error-surface-v1] Simpan pesan error yang dikirim balik provider OAuth
   // (mis. `#error=server_error&error_description=…`). Tanpa ini, kegagalan login Google
@@ -2380,13 +2393,13 @@ export default function AkunPage() {
   const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
-  const [student, setStudent] = useState<StudentData | null>(null);
-  const [badges, setBadges] = useState<Badge[]>([]);
+  const [student, setStudent] = useState<StudentData | null>(() => (akunSnapshot?.student as StudentData | null) ?? null);
+  const [badges, setBadges] = useState<Badge[]>(() => (akunSnapshot?.badges as Badge[]) ?? []);
   // jadwal-riwayat-v1: dulu state ini cuma diisi sesi MENDATANG, jadi kalender di
   // tab Jadwal selalu tampak kosong buat siswa yang sudah les berbulan-bulan.
   // Sekarang yang disimpan SELURUH sesi (12 bulan ke belakang s/d mendatang);
   // `upcomingSchedules` jadi turunan supaya semua pemakai lama tak ikut berubah.
-  const [allSchedules, setAllSchedules] = useState<Schedule[]>([]);
+  const [allSchedules, setAllSchedules] = useState<Schedule[]>(() => (akunSnapshot?.schedules as Schedule[]) ?? []);
   // [jadwal-live-now-v1] Patokannya jam SELESAI, bukan jam mulai. Dulu `> now`
   // dipakai ke `scheduled_at`, jadi kelas yang lagi berlangsung langsung raib dari
   // Beranda begitu menit pertama lewat — persis menit siswa paling butuh tombol
@@ -2407,9 +2420,26 @@ export default function AkunPage() {
     () => petaNomorSesi(allSchedules as any, (student?.registrations || []) as any),
     [allSchedules, student?.registrations]
   );
-  const [streak, setStreak] = useState(0);
+  const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
+  // [perf:akun-snapshot-mount-v1] simpan keadaan terakhir ke snapshot modul. Mode
+  // pratinjau dilewati: datanya punya cache sendiri per siswa & bukan milik yang login.
+  useEffect(() => {
+    if (previewId || !user) return;
+    akunSnapshot = { user, student, schedules: allSchedules, badges, streak };
+  }, [previewId, user, student, allSchedules, badges, streak]);
+
+  /* [perf:akun-tab-keepalive-v1] Tab yang SUDAH pernah dibuka tidak di-unmount lagi —
+     cuma disembunyikan (display:none). Dulu tiap klik menu seluruh isi tab dibongkar
+     dan dipasang ulang: komponennya mengambil datanya lagi dari nol (spinner), state
+     lokal (pilihan kelas di "Kelas & Materi", posisi kalender, filter) hilang, dan
+     panelnya sempat kosong → itu kedipan yang terasa tiap pindah menu. Sekarang
+     kunjungan KEDUA ke sebuah menu tampil seketika dari yang sudah tergambar. */
+  const [mountedTabs, setMountedTabs] = useState<Set<string>>(() => new Set<string>(["beranda"]));
+  const tabShown = (k: string) => mountedTabs.has(k);
+  const tabHidden = (k: string) => (activeTab === k ? undefined : ({ display: "none" } as const));
+
   // [profil-sidebar-collapse-v1] sidebar profil default collapsed; dibuka via avatar di topbar
   const [profileOpen, setProfileOpen] = useState(false);
   // [beranda-kelas-tabs-v1] tab "Kelas Live" vs "Belajar Mandiri" di beranda biar rapi
@@ -2462,6 +2492,13 @@ export default function AkunPage() {
       } catch {}
     }
   }, []);
+  // [perf:akun-tab-keepalive-v1] catat tab yang pernah dibuka + mulai dari atas tiap
+  // ganti menu (isi tab lama tetap hidup di belakang, jadi posisi gulirnya tak ikut).
+  useEffect(() => {
+    setMountedTabs((prev) => (prev.has(activeTab) ? prev : new Set(prev).add(activeTab)));
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, [activeTab]);
+
   // persist tab aktif -> refresh (tab browser yang sama) balik ke menu terakhir
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -2688,7 +2725,7 @@ export default function AkunPage() {
       // Event tanpa sesi: cuma SIGNED_OUT yang benar-benar berarti user keluar.
       // Event lain (INITIAL_SESSION yang balapan, TOKEN_REFRESHED gagal sesaat)
       // dulu ikut mengosongkan `user` → gate login nongol padahal masih login.
-      if (event === "SIGNED_OUT") { setUser(null); setAuthLoading(false); }
+      if (event === "SIGNED_OUT") { akunSnapshot = null; setUser(null); setAuthLoading(false); }
     });
     return () => { alive = false; subscription.unsubscribe(); };
   }, []);
@@ -2749,6 +2786,7 @@ export default function AkunPage() {
   };
 
   const signOut = async () => {
+    akunSnapshot = null; // [perf:akun-snapshot-mount-v1] jangan wariskan data ke pemilik sesi berikutnya
     try { if (user?.email) localStorage.removeItem(`linguo_akun_cache_${user.email}`); } catch {}
     await supabase.auth.signOut();
     setUser(null);
@@ -2812,7 +2850,10 @@ export default function AkunPage() {
         }
       }
     } catch {}
-    loadStudentData(user.email, hadCache);
+    // [perf:akun-snapshot-mount-v1] snapshot modul juga dihitung sebagai "sudah ada
+    // isinya" → revalidasinya diam-diam, tanpa spinner layar penuh yang menimpa
+    // dashboard yang sudah tergambar.
+    loadStudentData(user.email, hadCache || !!akunSnapshot?.student);
   }, [user?.email]);
 
   // [teacher-avatar-sync-v1] Direktori foto pengajar — fetch langsung dari tabel
@@ -3628,8 +3669,8 @@ export default function AkunPage() {
             Sekarang swap-nya instan (tanpa exit, tanpa initial), jadi menu terasa
             langsung ganti isi. */}
         <AnimatePresence>
-          {activeTab === "beranda" && (
-            <motion.div key="beranda" initial={false} animate={{ opacity: 1 }}>
+          {tabShown("beranda") && (
+            <motion.div key="beranda" initial={false} animate={{ opacity: 1 }} style={tabHidden("beranda")}>
               {(() => {
                 // ── derived khusus port frame ── (langGlyph dari @/lib/lang-visuals)
                 // [linguo-patch:beranda-live-hide-empty-lang-v1] sembunyiin kartu live yang language-nya null/kosong/placeholder
@@ -4376,8 +4417,8 @@ export default function AkunPage() {
             </motion.div>
           )}
 
-          {activeTab === "jadwal" && (
-            <motion.div key="jadwal" initial={false} animate={{ opacity: 1 }} className="w-full">
+          {tabShown("jadwal") && (
+            <motion.div key="jadwal" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("jadwal")}>
               {/* linguo-patch:akun-jadwal-tab-v1 — kalender LMS, data real dari upcomingSchedules */}
               {(() => {
                 // jadwal-riwayat-v1: kalender pakai `allSchedules` (riwayat + mendatang),
@@ -4490,8 +4531,8 @@ export default function AkunPage() {
             </motion.div>
           )}
 
-          {activeTab === "materi" && canSeeMateri && (
-            <motion.div key="materi" initial={false} animate={{ opacity: 1 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col">
+          {tabShown("materi") && canSeeMateri && (
+            <motion.div key="materi" initial={false} animate={{ opacity: 1 }} className="w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" style={tabHidden("materi")}>
               {(() => {
                 /* [materi-flag-pie-v1] Ubin huruf ("Я", "あ", "Aa") diganti bendera
                    rounded-rectangle: satu siluet dengan bendera di silabus & placement,
@@ -4810,8 +4851,8 @@ export default function AkunPage() {
             </motion.div>
           )}
 
-          {activeTab === "sertifikat" && (
-            <motion.div key="sertifikat" initial={false} animate={{ opacity: 1 }} className="w-full">
+          {tabShown("sertifikat") && (
+            <motion.div key="sertifikat" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("sertifikat")}>
               <SertifikatTab
                 studentName={displayName}
                 certs={certs}
@@ -4822,14 +4863,14 @@ export default function AkunPage() {
           )}
 
           {/* [simulasi-inshell-v1] Simulasi Tes sebagai tab in-shell (sidebar tetap tampil) */}
-          {activeTab === "simulasi" && (
-            <motion.div key="simulasi" initial={false} animate={{ opacity: 1 }} className="w-full pb-6">
+          {tabShown("simulasi") && (
+            <motion.div key="simulasi" initial={false} animate={{ opacity: 1 }} className="w-full pb-6" style={tabHidden("simulasi")}>
               <SimulasiKatalog previewStudentId={previewId} />
             </motion.div>
           )}
 
-          {activeTab === "akun" && (
-            <motion.div key="akun" initial={false} animate={{ opacity: 1 }} className="mx-auto w-full max-w-5xl pb-4">
+          {tabShown("akun") && (
+            <motion.div key="akun" initial={false} animate={{ opacity: 1 }} className="mx-auto w-full max-w-5xl pb-4" style={tabHidden("akun")}>
               <AkunTab
                 user={user}
                 student={student}
