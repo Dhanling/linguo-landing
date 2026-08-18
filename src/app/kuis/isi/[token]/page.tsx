@@ -37,13 +37,15 @@ import { useParams } from "next/navigation";
 import {
   Loader2, CheckCircle2, Send, ClipboardList,
   Languages, Camera, Keyboard, X, ImageIcon,
-  ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle,
+  ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle, Volume2,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
   type PublicQuiz, type PublicQuizQuestion, type EssayResponse,
   type GradeResult, type QuizAnalysis,
 } from "@/lib/quizPublic";
+import { toLangCode } from "@/lib/quiz/language";
+import { bisaTts, teksUntukTts, ucapkan, hentikanTts } from "@/lib/quizTts";
 import ImeTextarea from "@/components/kuis/ImeTextarea";
 import HasilKuis from "@/components/kuis/HasilKuis";
 
@@ -196,6 +198,13 @@ export default function QuizTakePage() {
     const set = new Set((quiz?.questions ?? []).map(partOf));
     return { multi: set.size > 1 };
   }, [quiz]);
+  /* [kuis-tts-chirp-v1] Kode bahasa target untuk tombol dengar. `target_lang`
+     turun sebagai NAMA ("Spanish"), jadi harus lewat toLangCode dulu; bahasa yang
+     tak punya suara Chirp menghasilkan null → tombolnya tidak pernah dirender. */
+  const ttsLang = useMemo(() => {
+    const kode = toLangCode(quiz?.target_lang);
+    return bisaTts(kode) ? kode : null;
+  }, [quiz]);
 
   const questions = quiz?.questions ?? [];
   const total = questions.length;
@@ -241,6 +250,10 @@ export default function QuizTakePage() {
 
   const goto = useCallback((next: number) => {
     if (advanceRef.current) { window.clearTimeout(advanceRef.current); advanceRef.current = null; }
+    // [kuis-tts-chirp-v1] Suara soal lama dibungkam saat pindah soal — kalimat
+    // bahasa asing yang masih berbunyi di atas soal berikutnya bikin salah kira
+    // itu bunyi soal yang sekarang.
+    hentikanTts();
     setStep(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -557,7 +570,10 @@ export default function QuizTakePage() {
                   {cur.points} poin
                 </span>
               </div>
-              <p className="text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
+              <div className="flex items-start gap-2">
+                <p className="min-w-0 flex-1 text-xl font-extrabold leading-snug text-slate-900 sm:text-2xl">{cur.prompt}</p>
+                <TombolDengar teks={cur.prompt} lang={ttsLang} besar />
+              </div>
               {showTranslit && cur.prompt_translit && (
                 <p className="mt-1.5 text-base font-medium italic text-slate-500">{cur.prompt_translit}</p>
               )}
@@ -587,6 +603,7 @@ export default function QuizTakePage() {
                             <span className="block text-lg font-bold leading-snug text-slate-800">{opt}</span>
                             {tl && <span className="block text-sm font-medium italic text-slate-400">{tl}</span>}
                           </span>
+                          <TombolDengar teks={opt} lang={ttsLang} />
                           {active && <CheckCircle2 className="h-6 w-6 shrink-0" style={{ color: BRAND }} />}
                         </button>
                       );
@@ -870,6 +887,49 @@ function KuisNavBar({
 
 /** Saklar cara baca di kartu pembuka. Bentuk panjangnya sengaja beda dari tombol
  *  ikon di header soal: di sini siswa belum tahu fitur ini ada. */
+/* [kuis-tts-chirp-v1] Tombol dengar. Ditaruh di dalam kartu soal DAN di tiap
+   pilihan karena yang ingin didengar siswa justru bunyi opsi yang sedang ia timbang.
+   Elemennya <span role="button">, bukan <button>: baris pilihan itu sendiri sudah
+   sebuah <button>, dan tombol bersarang di dalam tombol tidak sah — di Safari ia
+   membuat seluruh baris berhenti bisa diklik. Klik ditahan (stopPropagation)
+   supaya menekan ikon suara tidak sekaligus memilih jawaban itu.
+
+   Tidak dirender sama sekali kalau bahasanya tak punya suara Chirp atau kalau
+   teksnya ternyata kalimat pengantar berbahasa Indonesia (lihat teksUntukTts) —
+   ikon suara yang membacakan soal dengan logat asing lebih membingungkan
+   daripada tidak ada tombolnya. */
+function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: string | null; besar?: boolean }) {
+  const [sibuk, setSibuk] = useState(false);
+  const bisa = !!lang && !!teksUntukTts(teks);
+  if (!bisa) return null;
+  const ukuran = besar ? "h-10 w-10" : "h-9 w-9";
+  return (
+    <span
+      role="button"
+      tabIndex={0}
+      aria-label="Dengarkan pelafalan"
+      title="Dengarkan pelafalan"
+      onClick={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setSibuk(true);
+        ucapkan(teks, lang).finally(() => setSibuk(false));
+      }}
+      onKeyDown={(e) => {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        e.stopPropagation();
+        e.preventDefault();
+        setSibuk(true);
+        ucapkan(teks, lang).finally(() => setSibuk(false));
+      }}
+      className={`grid ${ukuran} shrink-0 cursor-pointer place-items-center rounded-xl border-2 transition active:scale-95`}
+      style={{ borderColor: "#cbd5e1", background: "#f8fafc", color: BRAND }}
+    >
+      {sibuk ? <Loader2 className="h-5 w-5 animate-spin" /> : <Volume2 className="h-5 w-5" />}
+    </span>
+  );
+}
+
 function TranslitToggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
   return (
     <button onClick={onToggle}
