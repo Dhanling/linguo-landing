@@ -467,6 +467,7 @@ export default function QuizTakePage() {
           durationSec={result.duration_sec ?? null}
           showTranslit={showTranslit}
           responses={responses}
+          token={token}
         />
       </Shell>
     );

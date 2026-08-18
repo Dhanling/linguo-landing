@@ -202,3 +202,74 @@ export async function uploadHandwriting(
   if (!data?.ok) return { error: data?.error || "Gagal mengunggah foto" };
   return { url: String(data.url) };
 }
+
+/* [kuis-hasil-email-v1] Kirim salinan hasil ke email.
+ *
+ * Halaman hasil tidak bisa dibuka ulang setelah ditutup, dan PDF di folder
+ * Unduhan HP adalah arsip yang paling gampang hilang. Email masuk ke kotak yang
+ * bisa dicari lagi bertahun-tahun kemudian.
+ *
+ * Lewat edge function `send-quiz-result` (bukan route Next): PDF-nya bisa
+ * beberapa MB dalam base64, sedangkan badan permintaan serverless Vercel
+ * dipotong di ~4,5 MB — alasan yang sama dengan unggahan foto di atas.
+ * Lampirannya OPSIONAL: kalau PDF gagal dibuat di browser, ringkasan skor &
+ * rapornya tetap dikirim. */
+export async function emailQuizResult(input: {
+  token: string;
+  to: string;
+  name: string;
+  quizTitle: string;
+  sessionLabel?: string | null;
+  total: number;
+  max: number;
+  durationSec?: number | null;
+  pdfBase64?: string | null;
+  filename?: string;
+  summary?: string;
+  strengths?: string[];
+  improvements?: string[];
+}): Promise<{ ok?: true; attached?: boolean; error?: string }> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 60000);
+  try {
+    const resp = await fetch(`${SUPABASE_URL}/functions/v1/send-quiz-result`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: ANON_KEY,
+        Authorization: `Bearer ${ANON_KEY}`,
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        token: input.token,
+        to: input.to,
+        name: input.name,
+        quiz_title: input.quizTitle,
+        session_label: input.sessionLabel ?? null,
+        total: input.total,
+        max: input.max,
+        duration_sec: input.durationSec ?? null,
+        pdf_base64: input.pdfBase64 ?? "",
+        filename: input.filename ?? "",
+        summary: input.summary ?? "",
+        strengths: input.strengths ?? [],
+        improvements: input.improvements ?? [],
+      }),
+    });
+    const text = await resp.text();
+    let parsed: any = null;
+    try { parsed = text ? JSON.parse(text) : null; } catch { /* non-JSON */ }
+    if (!resp.ok || !parsed?.ok) {
+      return { error: parsed?.error || text?.slice(0, 200) || `Error ${resp.status}` };
+    }
+    return { ok: true, attached: !!parsed.attached };
+  } catch (err: any) {
+    return {
+      error: err?.name === "AbortError"
+        ? "Pengiriman email kelamaan — coba lagi ya."
+        : (err?.message || "Gagal menghubungi server."),
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}

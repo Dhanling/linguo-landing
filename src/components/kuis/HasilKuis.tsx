@@ -29,10 +29,12 @@ import { useMemo, useRef, useState } from "react";
 import {
   CheckCircle2, XCircle, Download, Loader2, ChevronDown,
   Target, Lightbulb, RotateCcw, ThumbsUp, ImageIcon, Sparkles,
+  Mail, Send,
 } from "lucide-react";
 import type {
   PublicQuiz, PublicQuizQuestion, GradeResult, QuizAnalysis, EssayResponse,
 } from "@/lib/quizPublic";
+import { emailQuizResult } from "@/lib/quizPublic";
 
 const BRAND = "#1A9E9E";
 const BRAND_DEEP = "#0F766E";
@@ -71,6 +73,8 @@ type JsPdfDoc = {
   addImage: (data: string, fmt: string, x: number, y: number, w: number, h: number) => void;
   addPage: () => void;
   save: (name: string) => void;
+  /** `output("datauristring")` — dipakai untuk melampirkan PDF yang sama ke email. */
+  output: (type: string) => string;
   internal: { pageSize: { getWidth: () => number; getHeight: () => number } };
 };
 type JsPdfCtor = new (o?: Record<string, unknown>) => JsPdfDoc;
@@ -158,14 +162,24 @@ export interface HasilKuisProps {
   showTranslit: boolean;
   /** Jawaban siswa apa adanya dari state halaman (indeks soal → nilai). */
   responses: Record<number, unknown>;
+  /** [kuis-hasil-email-v1] Token kuis — gerbang endpoint kirim-salinan-ke-email. */
+  token: string;
 }
 
 export default function HasilKuis({
-  quiz, name, total, max, results, analysis, durationSec, showTranslit, responses,
+  quiz, name, total, max, results, analysis, durationSec, showTranslit, responses, token,
 }: HasilKuisProps) {
   const paperRef = useRef<HTMLDivElement>(null);
   const [pdfState, setPdfState] = useState<"idle" | "kerja">("idle");
   const [pdfErr, setPdfErr] = useState("");
+
+  /* [kuis-hasil-email-v1] Kirim salinan hasil ke email. Kotak emailnya baru
+     muncul setelah tombolnya ditekan: mayoritas siswa cukup dengan PDF, dan
+     satu kolom isian permanen di bawah rapor cuma menambah kerjaan. */
+  const [emailBuka, setEmailBuka] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailState, setEmailState] = useState<"idle" | "kerja" | "beres">("idle");
+  const [emailErr, setEmailErr] = useState("");
 
   const byIndex = useMemo(() => {
     const m = new Map<number, GradeResult>();
@@ -236,78 +250,96 @@ export default function HasilKuis({
      tinggi A4: potongan buta itu membelah kartu soal persis di tengah kalimat
      penjelasannya. Di sini tiap blok diukur dulu, dan blok yang tidak muat di
      sisa halaman pindah ke halaman berikutnya utuh-utuh. */
-  const simpanPdf = async () => {
+  const namaBerkas = () => {
+    const aman = (name || "Siswa").replace(/[^\p{L}\p{N} _-]/gu, "").trim().replace(/\s+/g, "-") || "Siswa";
+    return `Hasil-Kuis-Linguo-${aman}.pdf`;
+  };
+
+  /** Membangun PDF-nya saja — tanpa menyimpan & tanpa menyentuh state, supaya
+   *  dokumen yang sama bisa dipakai dua tujuan: diunduh, atau dilampirkan ke
+   *  email. Melempar galat kalau gagal; pemanggilnya yang memutuskan artinya. */
+  const buatPdf = async (): Promise<JsPdfDoc> => {
     const root = paperRef.current;
-    if (!root || pdfState === "kerja") return;
+    if (!root) throw new Error("tidak ada yang bisa dicetak");
+    await loadScript(H2C_URL);
+    await loadScript(JSPDF_URL);
+    try {
+      await (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts?.ready;
+    } catch { /* font tidak wajib siap */ }
+    // Beri React satu putaran untuk benar-benar membuka kartunya.
+    await new Promise((r) => setTimeout(r, 120));
+
+    const w = window as typeof window & { html2canvas?: Html2Canvas; jspdf?: { jsPDF: JsPdfCtor } };
+    const h2c = w.html2canvas;
+    const JsPDF = w.jspdf?.jsPDF;
+    if (!h2c || !JsPDF) throw new Error("pustaka PDF belum siap");
+
+    /* Yang dipotret SALINAN selebar 720px di luar layar, bukan kartu yang
+       sedang dilihat siswa. Halaman ini hampir selalu dibuka dari HP: kartu
+       selebar 390px itu tinggi-kurus, dan waktu dilebarkan ke A4 satu kartu
+       saja memakan hampir satu halaman penuh — hasil kuis 10 soal keluar jadi
+       13 halaman. Dilebarkan dulu, tata letaknya mengalir seperti di desktop.
+       Pakai salinan supaya layar yang sedang dilihat tidak ikut melar. */
+    const holder = document.createElement("div");
+    holder.style.cssText =
+      "position:fixed;left:-10000px;top:0;width:720px;background:#ffffff;padding:8px;z-index:-1";
+    const clone = root.cloneNode(true) as HTMLElement;
+    clone.style.width = "720px";
+    clone.style.maxWidth = "none";
+    // Ajakan menyentuh layar & panah lipat kartu tidak punya arti di atas kertas.
+    clone.querySelectorAll("[data-pdf-hide]").forEach((el) => el.remove());
+    holder.appendChild(clone);
+    document.body.appendChild(holder);
+
+    const blocks = Array.from(clone.querySelectorAll<HTMLElement>("[data-pdf-block]"));
+    if (!blocks.length) {
+      holder.remove();
+      throw new Error("tidak ada yang bisa dicetak");
+    }
+
+    const pdf = new JsPDF({ orientation: "portrait", unit: "pt", format: "a4" });
+    const pw = pdf.internal.pageSize.getWidth();
+    const ph = pdf.internal.pageSize.getHeight();
+    const margin = 28;
+    const lebar = pw - margin * 2;
+    let y = margin;
+
+    try {
+      for (const el of blocks) {
+        const canvas = await h2c(el, { scale: 2, backgroundColor: "#ffffff", useCORS: true, logging: false });
+        if (!canvas.width || !canvas.height) continue;
+        let h = (canvas.height * lebar) / canvas.width;
+        // Blok yang sendirian saja lebih tinggi dari satu halaman (kartu soal
+        // uraian yang panjang) dikecilkan supaya tetap utuh — dipotong dua akan
+        // membelah penjelasan yang justru inti halamannya.
+        const maxH = ph - margin * 2;
+        let lebarPakai = lebar;
+        if (h > maxH) { lebarPakai = (lebar * maxH) / h; h = maxH; }
+        if (y + h > ph - margin) { pdf.addPage(); y = margin; }
+        pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", margin, y, lebarPakai, h);
+        y += h + 10;
+      }
+    } finally {
+      holder.remove();
+    }
+
+    return pdf;
+  };
+
+  /* ── Simpan PDF ────────────────────────────────────────────────────────────
+     Ditangkap PER BLOK, bukan satu gambar panjang yang lalu dipotong sepanjang
+     tinggi A4: potongan buta itu membelah kartu soal persis di tengah kalimat
+     penjelasannya. Di sini tiap blok diukur dulu, dan blok yang tidak muat di
+     sisa halaman pindah ke halaman berikutnya utuh-utuh. */
+  const simpanPdf = async () => {
+    if (pdfState === "kerja" || emailState === "kerja") return;
     setPdfState("kerja");
     setPdfErr("");
     // Semua kartu dibuka dulu — PDF yang isinya kartu terlipat tidak ada gunanya.
     setPaksaBuka(true);
     try {
-      await loadScript(H2C_URL);
-      await loadScript(JSPDF_URL);
-      try {
-        await (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts?.ready;
-      } catch { /* font tidak wajib siap */ }
-      // Beri React satu putaran untuk benar-benar membuka kartunya.
-      await new Promise((r) => setTimeout(r, 120));
-
-      const w = window as typeof window & { html2canvas?: Html2Canvas; jspdf?: { jsPDF: JsPdfCtor } };
-      const h2c = w.html2canvas;
-      const JsPDF = w.jspdf?.jsPDF;
-      if (!h2c || !JsPDF) throw new Error("pustaka PDF belum siap");
-
-      /* Yang dipotret SALINAN selebar 720px di luar layar, bukan kartu yang
-         sedang dilihat siswa. Halaman ini hampir selalu dibuka dari HP: kartu
-         selebar 390px itu tinggi-kurus, dan waktu dilebarkan ke A4 satu kartu
-         saja memakan hampir satu halaman penuh — hasil kuis 10 soal keluar jadi
-         13 halaman. Dilebarkan dulu, tata letaknya mengalir seperti di desktop.
-         Pakai salinan supaya layar yang sedang dilihat tidak ikut melar. */
-      const holder = document.createElement("div");
-      holder.style.cssText =
-        "position:fixed;left:-10000px;top:0;width:720px;background:#ffffff;padding:8px;z-index:-1";
-      const clone = root.cloneNode(true) as HTMLElement;
-      clone.style.width = "720px";
-      clone.style.maxWidth = "none";
-      // Ajakan menyentuh layar & panah lipat kartu tidak punya arti di atas kertas.
-      clone.querySelectorAll("[data-pdf-hide]").forEach((el) => el.remove());
-      holder.appendChild(clone);
-      document.body.appendChild(holder);
-
-      const blocks = Array.from(clone.querySelectorAll<HTMLElement>("[data-pdf-block]"));
-      if (!blocks.length) {
-        holder.remove();
-        throw new Error("tidak ada yang bisa dicetak");
-      }
-
-      const pdf = new JsPDF({ orientation: "portrait", unit: "pt", format: "a4" });
-      const pw = pdf.internal.pageSize.getWidth();
-      const ph = pdf.internal.pageSize.getHeight();
-      const margin = 28;
-      const lebar = pw - margin * 2;
-      let y = margin;
-
-      try {
-        for (const el of blocks) {
-          const canvas = await h2c(el, { scale: 2, backgroundColor: "#ffffff", useCORS: true, logging: false });
-          if (!canvas.width || !canvas.height) continue;
-          let h = (canvas.height * lebar) / canvas.width;
-          // Blok yang sendirian saja lebih tinggi dari satu halaman (kartu soal
-          // uraian yang panjang) dikecilkan supaya tetap utuh — dipotong dua akan
-          // membelah penjelasan yang justru inti halamannya.
-          const maxH = ph - margin * 2;
-          let lebarPakai = lebar;
-          if (h > maxH) { lebarPakai = (lebar * maxH) / h; h = maxH; }
-          if (y + h > ph - margin) { pdf.addPage(); y = margin; }
-          pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", margin, y, lebarPakai, h);
-          y += h + 10;
-        }
-      } finally {
-        holder.remove();
-      }
-
-      const aman = (name || "Siswa").replace(/[^\p{L}\p{N} _-]/gu, "").trim().replace(/\s+/g, "-") || "Siswa";
-      pdf.save(`Hasil-Kuis-Linguo-${aman}.pdf`);
+      const pdf = await buatPdf();
+      pdf.save(namaBerkas());
     } catch (e) {
       console.error("[HasilKuis] gagal membuat PDF:", e);
       setPdfErr("PDF gagal dibuat. Cek koneksi lalu coba lagi ya.");
@@ -315,6 +347,56 @@ export default function HasilKuis({
       setPaksaBuka(false);
       setPdfState("idle");
     }
+  };
+
+  /* [kuis-hasil-email-v1] Kirim salinan hasil ke email.
+     Lampiran PDF-nya OPSIONAL dengan sengaja: html2canvas gagal di sebagian
+     browser HP lama, dan hasil yang gagal terkirim seluruhnya jauh lebih buruk
+     daripada email berisi skor & rapor tanpa lampiran. */
+  const kirimEmail = async () => {
+    const tujuan = email.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(tujuan)) {
+      setEmailErr("Alamat emailnya belum benar — cek lagi ya.");
+      return;
+    }
+    if (emailState === "kerja" || pdfState === "kerja") return;
+    setEmailState("kerja");
+    setEmailErr("");
+    setPaksaBuka(true);
+
+    let pdfBase64 = "";
+    try {
+      const pdf = await buatPdf();
+      const uri = pdf.output("datauristring");
+      pdfBase64 = uri.slice(uri.indexOf(",") + 1);
+    } catch (e) {
+      console.error("[HasilKuis] lampiran PDF dilewati:", e);
+    } finally {
+      setPaksaBuka(false);
+    }
+
+    const res = await emailQuizResult({
+      token,
+      to: tujuan,
+      name,
+      quizTitle: quiz.title,
+      sessionLabel: quiz.session_label ?? null,
+      total,
+      max,
+      durationSec,
+      pdfBase64,
+      filename: namaBerkas(),
+      summary: analysis?.summary ?? "",
+      strengths: analysis?.strengths ?? [],
+      improvements: analysis?.improvements ?? [],
+    });
+
+    if (res.error) {
+      setEmailErr(res.error);
+      setEmailState("idle");
+      return;
+    }
+    setEmailState("beres");
   };
 
   const tanggal = new Date().toLocaleDateString("id-ID", {
@@ -492,8 +574,61 @@ export default function HasilKuis({
             : <><Download className="h-4 w-4" /> Simpan hasil ini jadi PDF</>}
         </button>
         {pdfErr && <p className="mt-2 text-center text-[12px] font-medium" style={{ color: WARN }}>{pdfErr}</p>}
+
+        {/* [kuis-hasil-email-v1] Salinan ke email — arsip yang tidak ikut hilang
+            bersama folder Unduhan HP, dan bisa dicari lagi kapan pun. */}
+        {emailState === "beres" ? (
+          <div className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-[12.5px] font-semibold"
+            style={{ color: OK }}>
+            <CheckCircle2 className="h-4 w-4" />
+            Salinan hasil sudah dikirim ke {email.trim()}
+          </div>
+        ) : emailBuka ? (
+          <div className="mt-2 rounded-xl border border-slate-200 bg-white p-3">
+            <label className="block text-[11.5px] font-semibold text-slate-600">
+              Kirim salinan hasil ini ke email
+            </label>
+            <div className="mt-1.5 flex gap-2">
+              <input
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => { setEmail(e.target.value); if (emailErr) setEmailErr(""); }}
+                placeholder="email@contoh.com"
+                disabled={emailState === "kerja"}
+                className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2 text-[13px] text-slate-800 outline-none focus:border-teal-500 disabled:bg-slate-50"
+              />
+              <button
+                type="button"
+                onClick={kirimEmail}
+                disabled={emailState === "kerja"}
+                className="flex shrink-0 items-center gap-1.5 rounded-lg px-3.5 py-2 text-[12.5px] font-bold text-white disabled:opacity-60"
+                style={{ background: BRAND }}
+              >
+                {emailState === "kerja"
+                  ? <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Mengirim…</>
+                  : <><Send className="h-3.5 w-3.5" /> Kirim</>}
+              </button>
+            </div>
+            {emailErr
+              ? <p className="mt-1.5 text-[11.5px] font-medium" style={{ color: WARN }}>{emailErr}</p>
+              : <p className="mt-1.5 text-[11px] text-slate-400">
+                  PDF rapornya ikut dilampirkan. Boleh juga diisi email pengajar atau orang tua.
+                </p>}
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setEmailBuka(true)}
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700"
+          >
+            <Mail className="h-4 w-4" /> Kirim salinan ke email
+          </button>
+        )}
+
         <p className="mt-2 text-center text-[11px] text-slate-400">
-          Halaman ini tidak bisa dibuka ulang setelah ditutup — simpan dulu kalau mau dibaca lagi nanti.
+          Halaman ini tidak bisa dibuka ulang setelah ditutup — simpan atau kirim ke email dulu kalau mau dibaca lagi nanti.
         </p>
       </div>
     </div>
