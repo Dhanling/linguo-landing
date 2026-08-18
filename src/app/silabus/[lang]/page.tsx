@@ -5,6 +5,9 @@ import CurriculumViewer from "./CurriculumViewer";
 
 type Props = { params: Promise<{ lang: string }> };
 
+const totalSessions = (c: { levels: { sublevels: { sessions: unknown[] }[] }[] }) =>
+  c.levels.reduce((n, l) => n + l.sublevels.reduce((m, s) => m + s.sessions.length, 0), 0);
+
 export async function generateStaticParams() {
   return languages.filter((l) => l.available).map((l) => ({ lang: l.slug }));
 }
@@ -16,7 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = displayLangTitle(c.meta);
   return {
     title: `Silabus ${title} — A1 sampai B2 | Linguo.id`,
-    description: `Kurikulum lengkap ${title} di Linguo.id: 192 sesi, 4 level CEFR. ${c.overview}`,
+    // linguo-patch:silabus-jumlah-sesi-v1 — dulu "192 sesi" ditulis tetap, padahal
+    // tiap bahasa beda jumlah sublevelnya (ada yang 192, ada yang 304). Hitung saja.
+    description: `Kurikulum lengkap ${title} di Linguo.id: ${totalSessions(c)} sesi, 4 level CEFR. ${c.overview}`,
     alternates: { canonical: `https://linguo.id/silabus/${lang}` },
     openGraph: {
       title: `Silabus ${title} — Linguo.id`,

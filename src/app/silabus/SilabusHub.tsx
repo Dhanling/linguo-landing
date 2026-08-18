@@ -34,7 +34,9 @@ export default function SilabusHub({ languages }: { languages: LanguageMeta[] })
         !q ||
         l.name.toLowerCase().includes(q) ||
         l.nativeName.toLowerCase().includes(q) ||
-        l.slug.includes(q);
+        l.slug.includes(q) ||
+        // linguo-patch:silabus-search-alias-v1 — orang mencari "malaysia", bukan "melayu".
+        (l.aliases?.some((a) => a.includes(q)) ?? false);
       const matchRegion = activeRegion === "all" || l.region === activeRegion;
       return matchQuery && matchRegion;
     });

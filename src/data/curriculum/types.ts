@@ -29,6 +29,10 @@ export interface LanguageMeta {
   featured?: boolean;
   available: boolean;   // has full curriculum data
   description?: string;
+  /** linguo-patch:silabus-search-alias-v1 — kata lain yang orang ketik di kotak cari
+   *  ("malaysia" untuk Melayu, "hongkong" untuk Kanton). Cuma dipakai pencarian,
+   *  tidak pernah ditampilkan. */
+  aliases?: string[];
 }
 
 export interface LanguageCurriculum {

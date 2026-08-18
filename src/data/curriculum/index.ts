@@ -46,6 +46,10 @@ import balinese from './data/balinese';
 import batak from './data/batak';
 import bugis from './data/bugis';
 import madurese from './data/madurese'; // __PATCH_NORWEGIAN_BUNDLE__
+import malay from './data/malay';
+import betawi from './data/betawi';
+import swahili from './data/swahili';
+import bengali from './data/bengali';
 
 const registry: Record<string, LanguageCurriculum> = {
   english,
@@ -95,6 +99,10 @@ const registry: Record<string, LanguageCurriculum> = {
   cantonese,
   hindi,
   urdu,
+  malay,
+  betawi,
+  swahili,
+  bengali,
 };
 
 export function getCurriculum(slug: string): LanguageCurriculum | null {
