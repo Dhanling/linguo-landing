@@ -4,11 +4,17 @@
 // "Soft 404" — dua-duanya menekan penilaian kualitas situs secara keseluruhan.
 // Dipasangkan dengan Disallow di src/app/robots.ts (itu urusan crawl, ini index).
 import type { Metadata } from "next";
+import AkunThemeScope from "@/components/AkunThemeScope"; // [akun-dark-mode-v1] tema gelap khusus dashboard siswa
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 };
 
 export default function NoIndexLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <AkunThemeScope />
+      {children}
+    </>
+  );
 }

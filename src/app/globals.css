@@ -332,3 +332,424 @@ body { animation: pageEnter 0.5s ease-out both; }
 @media (prefers-reduced-motion: reduce) {
   .silabus-rise { animation: none !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   [akun-dark-mode-v1] Tema gelap dashboard siswa (/akun)
+   ───────────────────────────────────────────────────────────────────────────
+   Dashboard ditulis penuh dengan utilitas terang (bg-white, text-gray-500,
+   bg-teal-50, …). Di perangkat bertema gelap, Chrome menyalakan "force dark"
+   dan membalik warnanya sendiri secara algoritmik — hasilnya kartu jadi abu-abu
+   lumpur dan teks sekunder nyaris tak terbaca (kontras di bawah 2:1).
+
+   Alih-alih menambah ribuan varian `dark:` satu per satu, palet Tailwind
+   DIPETAKAN ULANG di dalam cakupan `html.akun-dark`:
+
+     • Ramp netral (gray/slate/zinc) DIBALIK lewat variabel tema. Karena
+       utilitas v4 membaca `var(--color-…)`, satu penggantian langsung kena ke
+       semua bentuknya sekaligus: bg/text/border/ring, varian `hover:`/`focus:`,
+       sampai versi beropasitas (`bg-gray-100/60`).
+     • Tint aksen -50 … -300 ikut diganti lewat variabel dengan alasan yang
+       sama — `bg-teal-50/50` & `hover:bg-teal-50` tidak akan tertangkap kalau
+       ditimpa per-kelas. Shade -400 ke atas SENGAJA dibiarkan: itu warna solid
+       tombol (`bg-teal-600`, `bg-green-500`) yang memang harus tetap pekat.
+     • Yang tersisa ditimpa per-kelas: `bg-white` (jadi permukaan kartu; variabel
+       --color-white tidak diubah supaya `text-white` di atas tombol teal tetap
+       putih, begitu juga `bg-white/10` di kartu hero berwarna) dan `text-*-600`
+       ke atas (di terang itu "ink" gelap, di gelap harus jadi terang).
+
+   Selektornya dibungkus `:where()` supaya bobotnya 0 — utilitas dengan bobot
+   sama tetap kalah karena aturan ini berada lebih belakang di layer utilities,
+   sementara utilitas bervarian yang lebih spesifik tetap menang.
+
+   Halaman sertifikat & laporan simulasi tidak diberi kelas `akun-dark` (lihat
+   src/components/AkunThemeScope.tsx) karena dicetak jadi PDF berlatar putih.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Menyatakan dukungan dua tema → Chrome berhenti membalik warna sendiri. */
+html.akun-dark { color-scheme: light dark; }
+
+@media (prefers-color-scheme: dark) {
+  html.akun-dark {
+    color-scheme: dark;
+
+    /* Permukaan */
+    --ak-page: #0d1116;      /* latar halaman */
+    --ak-surface: #1a1f26;   /* kartu — pengganti bg-white */
+
+    /* ── Ramp netral dibalik: terang jadi gelap, gelap jadi terang ── */
+    --color-gray-50:  #141920;
+    --color-gray-100: #212832;
+    --color-gray-200: #2c3441;
+    --color-gray-300: #4d5765;
+    --color-gray-400: #939eac;
+    --color-gray-500: #aab4c1;
+    --color-gray-600: #c5ccd6;
+    --color-gray-700: #d9dfe6;
+    --color-gray-800: #eaeef2;
+    --color-gray-900: #f6f8fa;
+    --color-gray-950: #ffffff;
+
+    --color-slate-50:  #131820;
+    --color-slate-100: #1e242e;
+    --color-slate-200: #2c3440;
+    --color-slate-300: #6b7687;
+    --color-slate-400: #96a1b0;
+    --color-slate-500: #adb7c4;
+    --color-slate-600: #c7ced8;
+    --color-slate-700: #dae0e7;
+    --color-slate-800: #eaeef2;
+    --color-slate-900: #f6f8fa;
+    --color-slate-950: #ffffff;
+
+    --color-zinc-50:  #141920;
+    --color-zinc-100: #212832;
+    --color-zinc-200: #2c3441;
+    --color-zinc-300: #4d5765;
+    --color-zinc-400: #939eac;
+    --color-zinc-500: #aab4c1;
+    --color-zinc-600: #c5ccd6;
+    --color-zinc-700: #d9dfe6;
+    --color-zinc-800: #eaeef2;
+    --color-zinc-900: #f6f8fa;
+
+    /* ── Tint aksen: latar/garis lembut jadi gelap bernuansa ── */
+    --color-teal-50:  #0f2b2b;
+    --color-teal-100: #13393a;
+    --color-teal-200: #1d5453;
+    --color-teal-300: #246663;
+    --color-emerald-50:  #0e2a1e;
+    --color-emerald-100: #123424;
+    --color-emerald-200: #1c5136;
+    --color-emerald-300: #236343;
+    --color-green-50:  #0e2a1e;
+    --color-green-100: #123424;
+    --color-green-200: #1c5136;
+    --color-green-300: #236343;
+    --color-cyan-50:  #082a33;
+    --color-cyan-100: #0b3541;
+    --color-cyan-200: #145a6b;
+    --color-cyan-300: #196f84;
+    --color-sky-50:  #0e1f33;
+    --color-sky-100: #132842;
+    --color-sky-200: #1b3d63;
+    --color-sky-300: #214b79;
+    --color-blue-50:  #0e1f33;
+    --color-blue-100: #132842;
+    --color-blue-200: #1b3d63;
+    --color-blue-300: #214b79;
+    --color-indigo-50:  #171e3a;
+    --color-indigo-100: #1d2649;
+    --color-indigo-200: #2b3570;
+    --color-indigo-300: #354289;
+    --color-violet-50:  #221833;
+    --color-violet-100: #2b1f42;
+    --color-violet-200: #432a63;
+    --color-violet-300: #523279;
+    --color-purple-50:  #221833;
+    --color-purple-100: #2b1f42;
+    --color-purple-200: #432a63;
+    --color-purple-300: #523279;
+    --color-fuchsia-50:  #2a1630;
+    --color-fuchsia-100: #341c3c;
+    --color-fuchsia-200: #56265f;
+    --color-fuchsia-300: #682f73;
+    --color-pink-50:  #2e141c;
+    --color-pink-100: #3a1a24;
+    --color-pink-200: #6b2438;
+    --color-pink-300: #822c44;
+    --color-rose-50:  #2e141c;
+    --color-rose-100: #3a1a24;
+    --color-rose-200: #6b2438;
+    --color-rose-300: #822c44;
+    --color-red-50:  #2e1517;
+    --color-red-100: #3a1a1d;
+    --color-red-200: #6b2429;
+    --color-red-300: #822c32;
+    --color-orange-50:  #2e1d10;
+    --color-orange-100: #3a2514;
+    --color-orange-200: #63401c;
+    --color-orange-300: #794e22;
+    --color-amber-50:  #2b2110;
+    --color-amber-100: #382a13;
+    --color-amber-200: #5c4318;
+    --color-amber-300: #70521d;
+    --color-yellow-50:  #2b2110;
+    --color-yellow-100: #382a13;
+    --color-yellow-200: #5c4318;
+    --color-yellow-300: #70521d;
+    --color-lime-50:  #1b2a10;
+    --color-lime-100: #223413;
+    --color-lime-200: #385118;
+    --color-lime-300: #44631d;
+  }
+
+  html.akun-dark,
+  html.akun-dark body { background-color: var(--ak-page); }
+
+  /* Kontrol form ikut gelap & tetap terbaca. */
+  html.akun-dark input,
+  html.akun-dark textarea,
+  html.akun-dark select { color: var(--color-gray-900); }
+  html.akun-dark ::placeholder { color: var(--color-gray-400); }
+
+  @layer utilities {
+    /* ── Putih solid → permukaan kartu. Varian beropasitas (bg-white/10,
+       text-white/80) sengaja TIDAK disentuh: itu dipakai di atas kartu
+       gradien berwarna dan memang harus tetap putih. ── */
+    :where(.akun-dark) .bg-white { background-color: var(--ak-surface); }
+    :where(.akun-dark) .from-white { --tw-gradient-from: var(--ak-surface); }
+    :where(.akun-dark) .via-white { --tw-gradient-via: var(--ak-surface); }
+    :where(.akun-dark) .to-white { --tw-gradient-to: var(--ak-surface); }
+    :where(.akun-dark) .border-white { border-color: var(--ak-surface); }
+    :where(.akun-dark) .ring-white { --tw-ring-color: var(--ak-surface); }
+
+    /* ── "Ink" aksen: shade -600 ke atas dipakai sebagai warna TEKS di tema
+       terang. Di gelap dinaikkan ke shade -300 supaya terbaca. Hanya utilitas
+       `text-*` yang disentuh — `bg-teal-600` dkk. tetap pekat. ── */
+    /* teal */
+    :where(.akun-dark) .text-teal-600,
+    :where(.akun-dark) .hover\:text-teal-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-teal-600,
+    :where(.akun-dark) .text-teal-700,
+    :where(.akun-dark) .hover\:text-teal-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-teal-700,
+    :where(.akun-dark) .text-teal-800,
+    :where(.akun-dark) .hover\:text-teal-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-teal-800,
+    :where(.akun-dark) .text-teal-900,
+    :where(.akun-dark) .hover\:text-teal-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-teal-900 { color: #5eead4; }
+
+    /* emerald */
+    :where(.akun-dark) .text-emerald-600,
+    :where(.akun-dark) .hover\:text-emerald-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-emerald-600,
+    :where(.akun-dark) .text-emerald-700,
+    :where(.akun-dark) .hover\:text-emerald-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-emerald-700,
+    :where(.akun-dark) .text-emerald-800,
+    :where(.akun-dark) .hover\:text-emerald-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-emerald-800,
+    :where(.akun-dark) .text-emerald-900,
+    :where(.akun-dark) .hover\:text-emerald-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-emerald-900 { color: #6ee7b7; }
+
+    /* green */
+    :where(.akun-dark) .text-green-600,
+    :where(.akun-dark) .hover\:text-green-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-green-600,
+    :where(.akun-dark) .text-green-700,
+    :where(.akun-dark) .hover\:text-green-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-green-700,
+    :where(.akun-dark) .text-green-800,
+    :where(.akun-dark) .hover\:text-green-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-green-800,
+    :where(.akun-dark) .text-green-900,
+    :where(.akun-dark) .hover\:text-green-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-green-900 { color: #6ee7b7; }
+
+    /* cyan */
+    :where(.akun-dark) .text-cyan-600,
+    :where(.akun-dark) .hover\:text-cyan-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-cyan-600,
+    :where(.akun-dark) .text-cyan-700,
+    :where(.akun-dark) .hover\:text-cyan-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-cyan-700,
+    :where(.akun-dark) .text-cyan-800,
+    :where(.akun-dark) .hover\:text-cyan-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-cyan-800,
+    :where(.akun-dark) .text-cyan-900,
+    :where(.akun-dark) .hover\:text-cyan-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-cyan-900 { color: #67e8f9; }
+
+    /* sky */
+    :where(.akun-dark) .text-sky-600,
+    :where(.akun-dark) .hover\:text-sky-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-sky-600,
+    :where(.akun-dark) .text-sky-700,
+    :where(.akun-dark) .hover\:text-sky-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-sky-700,
+    :where(.akun-dark) .text-sky-800,
+    :where(.akun-dark) .hover\:text-sky-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-sky-800,
+    :where(.akun-dark) .text-sky-900,
+    :where(.akun-dark) .hover\:text-sky-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-sky-900 { color: #93c5fd; }
+
+    /* blue */
+    :where(.akun-dark) .text-blue-600,
+    :where(.akun-dark) .hover\:text-blue-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-blue-600,
+    :where(.akun-dark) .text-blue-700,
+    :where(.akun-dark) .hover\:text-blue-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-blue-700,
+    :where(.akun-dark) .text-blue-800,
+    :where(.akun-dark) .hover\:text-blue-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-blue-800,
+    :where(.akun-dark) .text-blue-900,
+    :where(.akun-dark) .hover\:text-blue-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-blue-900 { color: #93c5fd; }
+
+    /* indigo */
+    :where(.akun-dark) .text-indigo-600,
+    :where(.akun-dark) .hover\:text-indigo-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-indigo-600,
+    :where(.akun-dark) .text-indigo-700,
+    :where(.akun-dark) .hover\:text-indigo-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-indigo-700,
+    :where(.akun-dark) .text-indigo-800,
+    :where(.akun-dark) .hover\:text-indigo-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-indigo-800,
+    :where(.akun-dark) .text-indigo-900,
+    :where(.akun-dark) .hover\:text-indigo-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-indigo-900 { color: #a5b4fc; }
+
+    /* violet */
+    :where(.akun-dark) .text-violet-600,
+    :where(.akun-dark) .hover\:text-violet-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-violet-600,
+    :where(.akun-dark) .text-violet-700,
+    :where(.akun-dark) .hover\:text-violet-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-violet-700,
+    :where(.akun-dark) .text-violet-800,
+    :where(.akun-dark) .hover\:text-violet-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-violet-800,
+    :where(.akun-dark) .text-violet-900,
+    :where(.akun-dark) .hover\:text-violet-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-violet-900 { color: #d8b4fe; }
+
+    /* purple */
+    :where(.akun-dark) .text-purple-600,
+    :where(.akun-dark) .hover\:text-purple-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-purple-600,
+    :where(.akun-dark) .text-purple-700,
+    :where(.akun-dark) .hover\:text-purple-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-purple-700,
+    :where(.akun-dark) .text-purple-800,
+    :where(.akun-dark) .hover\:text-purple-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-purple-800,
+    :where(.akun-dark) .text-purple-900,
+    :where(.akun-dark) .hover\:text-purple-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-purple-900 { color: #d8b4fe; }
+
+    /* fuchsia */
+    :where(.akun-dark) .text-fuchsia-600,
+    :where(.akun-dark) .hover\:text-fuchsia-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-fuchsia-600,
+    :where(.akun-dark) .text-fuchsia-700,
+    :where(.akun-dark) .hover\:text-fuchsia-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-fuchsia-700,
+    :where(.akun-dark) .text-fuchsia-800,
+    :where(.akun-dark) .hover\:text-fuchsia-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-fuchsia-800,
+    :where(.akun-dark) .text-fuchsia-900,
+    :where(.akun-dark) .hover\:text-fuchsia-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-fuchsia-900 { color: #f0abfc; }
+
+    /* pink */
+    :where(.akun-dark) .text-pink-600,
+    :where(.akun-dark) .hover\:text-pink-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-pink-600,
+    :where(.akun-dark) .text-pink-700,
+    :where(.akun-dark) .hover\:text-pink-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-pink-700,
+    :where(.akun-dark) .text-pink-800,
+    :where(.akun-dark) .hover\:text-pink-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-pink-800,
+    :where(.akun-dark) .text-pink-900,
+    :where(.akun-dark) .hover\:text-pink-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-pink-900 { color: #fda4af; }
+
+    /* rose */
+    :where(.akun-dark) .text-rose-600,
+    :where(.akun-dark) .hover\:text-rose-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-rose-600,
+    :where(.akun-dark) .text-rose-700,
+    :where(.akun-dark) .hover\:text-rose-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-rose-700,
+    :where(.akun-dark) .text-rose-800,
+    :where(.akun-dark) .hover\:text-rose-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-rose-800,
+    :where(.akun-dark) .text-rose-900,
+    :where(.akun-dark) .hover\:text-rose-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-rose-900 { color: #fda4af; }
+
+    /* red */
+    :where(.akun-dark) .text-red-600,
+    :where(.akun-dark) .hover\:text-red-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-red-600,
+    :where(.akun-dark) .text-red-700,
+    :where(.akun-dark) .hover\:text-red-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-red-700,
+    :where(.akun-dark) .text-red-800,
+    :where(.akun-dark) .hover\:text-red-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-red-800,
+    :where(.akun-dark) .text-red-900,
+    :where(.akun-dark) .hover\:text-red-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-red-900 { color: #fca5a5; }
+
+    /* orange */
+    :where(.akun-dark) .text-orange-600,
+    :where(.akun-dark) .hover\:text-orange-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-orange-600,
+    :where(.akun-dark) .text-orange-700,
+    :where(.akun-dark) .hover\:text-orange-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-orange-700,
+    :where(.akun-dark) .text-orange-800,
+    :where(.akun-dark) .hover\:text-orange-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-orange-800,
+    :where(.akun-dark) .text-orange-900,
+    :where(.akun-dark) .hover\:text-orange-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-orange-900 { color: #fdba74; }
+
+    /* amber */
+    :where(.akun-dark) .text-amber-600,
+    :where(.akun-dark) .hover\:text-amber-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-amber-600,
+    :where(.akun-dark) .text-amber-700,
+    :where(.akun-dark) .hover\:text-amber-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-amber-700,
+    :where(.akun-dark) .text-amber-800,
+    :where(.akun-dark) .hover\:text-amber-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-amber-800,
+    :where(.akun-dark) .text-amber-900,
+    :where(.akun-dark) .hover\:text-amber-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-amber-900 { color: #fcd34d; }
+
+    /* yellow */
+    :where(.akun-dark) .text-yellow-600,
+    :where(.akun-dark) .hover\:text-yellow-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-yellow-600,
+    :where(.akun-dark) .text-yellow-700,
+    :where(.akun-dark) .hover\:text-yellow-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-yellow-700,
+    :where(.akun-dark) .text-yellow-800,
+    :where(.akun-dark) .hover\:text-yellow-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-yellow-800,
+    :where(.akun-dark) .text-yellow-900,
+    :where(.akun-dark) .hover\:text-yellow-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-yellow-900 { color: #fcd34d; }
+
+    /* lime */
+    :where(.akun-dark) .text-lime-600,
+    :where(.akun-dark) .hover\:text-lime-600:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-lime-600,
+    :where(.akun-dark) .text-lime-700,
+    :where(.akun-dark) .hover\:text-lime-700:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-lime-700,
+    :where(.akun-dark) .text-lime-800,
+    :where(.akun-dark) .hover\:text-lime-800:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-lime-800,
+    :where(.akun-dark) .text-lime-900,
+    :where(.akun-dark) .hover\:text-lime-900:hover,
+    :where(.akun-dark) .group:hover .group-hover\:text-lime-900 { color: #bef264; }
+
+    /* Garis tanpa warna eksplisit (`border-b`, `border-t`) memakai currentColor
+       di Tailwind v4 — di atas gelap hasilnya garis putih menyilaukan. Diberi
+       warna netral lembut; bobot :where() = 0 jadi `border-gray-200` dsb.
+       tetap menang. */
+    :where(.akun-dark) :where(.border, .border-t, .border-b, .border-l, .border-r, .border-x, .border-y, .border-2) {
+      border-color: var(--color-gray-200);
+    }
+  }
+}

@@ -128,6 +128,7 @@ export async function POST(req: NextRequest) {
       language,          // mis. "Spanish" / "IELTS/TOEFL"
       level,
       duration,          // string menit/sesi
+      sessions,          // [enroll-jumlah-sesi-v1] kuota sesi yang dibeli (16 = 1 sub-level)
       amount,            // total_amount (rupiah)
       ref_code,
       with_invoice,      // true → langsung buat invoice Xendit & balikin invoice_url
@@ -215,7 +216,9 @@ export async function POST(req: NextRequest) {
         language: language || null,
         level: level || "A1.1",
         status: "Menunggu Pembayaran",
-        sessions_total: 0,
+        // [enroll-jumlah-sesi-v1] dulu dipatok 0 → kelas baru lahir tanpa kuota
+        // sesi dan admin harus menambalnya manual. Sekarang ikut pilihan siswa.
+        sessions_total: Number.isFinite(Number(sessions)) ? Math.max(0, Math.trunc(Number(sessions))) : 0,
         sessions_used: 0,
         duration: duration || null,
         total_amount: amount || 0,

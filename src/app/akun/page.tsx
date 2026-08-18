@@ -17,7 +17,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import successAnim from "../payment/success/success-anim.json";
-import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, type LucideIcon } from "lucide-react";
+import { Zap, Target, MessageCircle, Globe, Plus, LogOut, Clock, Calendar, Award, Pencil, Star, Trophy, BookOpen, Newspaper, BookMarked, User, Users, Baby, ClipboardList, GraduationCap, Video, Camera, Mail, Languages, ChevronRight, Search, ArrowRight, Shield, Bell, SlidersHorizontal, Wallet, Upload, BadgeCheck, CreditCard, Check, XCircle, Hand, X, Eye, EyeOff, MessagesSquare, PartyPopper, Rocket, Sprout, HelpCircle, AlertCircle, Sparkles, FileText, Layers, Lightbulb, Loader2, AlertTriangle, Minus, type LucideIcon } from "lucide-react";
 // [no-emoji-lucide-v1] bendera rounded-rect buat prefix nomor WA & pilihan tes (bukan emoji 🇮🇩)
 import { RectFlag } from "@/components/RectFlag";
 
@@ -82,7 +82,10 @@ function OnboardingSuccess({ onClose }: { onClose: () => void }) {
       <div className="h-40 w-40">
         <OnbSuccessLottie animationData={successAnim} loop={false} />
       </div>
-      <h1 className="mt-2 text-2xl font-extrabold text-gray-900">Selamat datang di Linguo! 🎉</h1>
+      <h1 className="mt-2 flex items-center justify-center gap-2 text-2xl font-extrabold text-gray-900">
+        Selamat datang di Linguo!
+        <PartyPopper className="h-6 w-6 shrink-0 text-teal-600" strokeWidth={2} />
+      </h1>
       <p className="mt-1 text-sm text-gray-500">Akun kamu udah siap — lagi nyiapin dashboard kamu…</p>
     </div>
   );
@@ -283,11 +286,11 @@ function getLevelProgress(level: string) {
 
 function calculateXP(sessions: number, streak: number, badges: number) {
   const xp = sessions * 100 + streak * 50 + badges * 200;
-  if (xp >= 5000) return { xp, rank: "Master", emoji: "👑", next: "", nextXP: 0 };
-  if (xp >= 3000) return { xp, rank: "Expert", emoji: "💎", next: "Master", nextXP: 5000 };
-  if (xp >= 1500) return { xp, rank: "Jagoan", emoji: "⚔️", next: "Expert", nextXP: 3000 };
-  if (xp >= 500) return { xp, rank: "Pejuang", emoji: "🛡️", next: "Jagoan", nextXP: 1500 };
-  return { xp, rank: "Pemula", emoji: "🌱", next: "Pejuang", nextXP: 500 };
+  if (xp >= 5000) return { xp, rank: "Master", next: "", nextXP: 0 };
+  if (xp >= 3000) return { xp, rank: "Expert", next: "Master", nextXP: 5000 };
+  if (xp >= 1500) return { xp, rank: "Jagoan", next: "Expert", nextXP: 3000 };
+  if (xp >= 500) return { xp, rank: "Pejuang", next: "Jagoan", nextXP: 1500 };
+  return { xp, rank: "Pemula", next: "Pejuang", nextXP: 500 };
 }
 
 function getGreeting() {
@@ -461,7 +464,7 @@ function OnbMilestoneBar({ step }: { step: number }) {
         {ONB_MILESTONES.map((label, i) => (
           <div key={label} className={`flex items-center gap-1.5 ${i < total - 1 ? "flex-1" : "flex-none"}`}>
             <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold transition-all ${i < active ? "bg-teal-500 text-white" : i === active ? "bg-teal-600 text-white ring-4 ring-gray-100" : "bg-gray-100 text-gray-400"}`}>
-              {i < active ? "✓" : i + 1}
+              {i < active ? <Check className="h-3.5 w-3.5" strokeWidth={3.5} /> : i + 1}
             </div>
             {i < total - 1 && <div className={`h-1 flex-1 rounded-full transition-all ${i < active ? "bg-teal-400" : "bg-gray-100"}`} />}
           </div>
@@ -475,7 +478,10 @@ function OnbMilestoneBar({ step }: { step: number }) {
 function RegulerTermsBox({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
   return (
     <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-left">
-      <p className="text-sm font-bold text-amber-800 mb-2">📋 Ketentuan Kelas Reguler</p>
+      <p className="flex items-center gap-1.5 text-sm font-bold text-amber-800 mb-2">
+        <ClipboardList className="h-4 w-4 shrink-0" strokeWidth={2} />
+        Ketentuan Kelas Reguler
+      </p>
       <ul className="space-y-2 text-[12px] leading-relaxed text-amber-900/90">
         <li>1. Kelas Reguler dibuka jika peserta memenuhi <b>minimal 8 siswa</b>.</li>
         <li>2. Jika kuota minimum belum terpenuhi, kelas <b>tidak dibuka</b> pada periode tersebut. Kamu bisa memilih: menunggu periode berikutnya, memindahkan pembayaran ke program/bahasa lain, atau beralih ke kelas <b>Private / Semi-Private</b> (dengan penyesuaian biaya).</li>
@@ -1060,7 +1066,10 @@ function WaGate({ user, student, supabase, onSaved }: {
           {googleAvatar
             ? <img src={googleAvatar} alt={firstName} referrerPolicy="no-referrer" className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-white shadow-md" />
             : <div className="w-20 h-20 rounded-full mx-auto bg-teal-100 flex items-center justify-center text-2xl font-extrabold text-teal-600 border-4 border-white shadow-md">{firstName.charAt(0).toUpperCase()}</div>}
-          <h2 className="text-xl font-extrabold text-gray-900 mt-4">Hai, {firstName}! 👋</h2>
+          <h2 className="mt-4 flex items-center justify-center gap-2 text-xl font-extrabold text-gray-900">
+            Hai, {firstName}!
+            <Hand className="h-5 w-5 shrink-0 text-amber-500" strokeWidth={2} />
+          </h2>
           <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">Sebelum lanjut, lengkapi data profil kamu dulu ya. Tim Linguo butuh ini buat menghubungimu soal jadwal &amp; kelas.</p>
         </div>
         <div className="bg-white rounded-2xl p-4 shadow-sm space-y-3">
@@ -1664,6 +1673,18 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 // ═══════════════════════════════════════════════════════════════════
 // ENROLLMENT WIZARD — Top-level component (prevents flash on state change)
 // ═══════════════════════════════════════════════════════════════════
+
+// [enroll-jumlah-sesi-v1] Satu sub-level (A1.1, A1.2, …) = 16 sesi. Ini paket
+// standar Kelas Private & Kids, jadi jadi nilai awal. Pilihan cepat di bawahnya
+// menutup kasus lain: 1 sesi trial, 8 sesi setengah sub-level, 32 sesi dua level.
+const DEFAULT_SESSIONS = 16;
+const MAX_SESSIONS = 96;
+const SESSION_PRESETS = [
+  { val: 1, label: "1", note: "Trial" },
+  { val: 8, label: "8", note: "½ level" },
+  { val: 16, label: "16", note: "1 sub-level" },
+  { val: 32, label: "32", note: "2 sub-level" },
+];
 function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, enrollProgram, setEnrollProgram, enrollLang, setEnrollLang, langSearch, setLangSearch, enrollDuration, setEnrollDuration, enrollSchedule, setEnrollSchedule, student, displayName, user, supabase, setStudent, openEnrollWizard }: {
   showEnroll: boolean; setShowEnroll: (v: boolean) => void;
   enrollStep: number; setEnrollStep: (fn: any) => void;
@@ -1682,6 +1703,11 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   const [agreeReguler, setAgreeReguler] = useState(false);
   // [enroll-exit-confirm-v1] konfirmasi sebelum keluar (click backdrop / tombol ✕)
   const [showExitConfirm, setShowExitConfirm] = useState(false);
+  // [enroll-jumlah-sesi-v1] Jumlah sesi yang dibeli. Default 16 = satu sub-level
+  // (A1.1, A1.2, …) untuk Kelas Private & Kids — itu paket standarnya. Siswa
+  // tetap bisa menurunkannya, misal 1 sesi buat trial. Dulu nilainya dipatok
+  // 8 di kode ("Estimasi/bulan") dan `sessions_total` selalu masuk 0 ke DB.
+  const [enrollSessions, setEnrollSessions] = useState(DEFAULT_SESSIONS);
 
   // Fetch open batches when Reguler program + language selected
   useEffect(() => {
@@ -1720,6 +1746,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
   useEffect(() => { setAgreeReguler(false); }, [enrollProgram, enrollLang, showEnroll]);
   // [enroll-exit-confirm-v1] reset dialog konfirmasi tiap buka-tutup modal
   useEffect(() => { setShowExitConfirm(false); }, [showEnroll]);
+  // [enroll-jumlah-sesi-v1] balik ke paket standar tiap ganti program / buka modal
+  useEffect(() => { setEnrollSessions(DEFAULT_SESSIONS); }, [enrollProgram, showEnroll]);
 
   if (!showEnroll) return null;
 
@@ -1812,6 +1840,7 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     `• Program: ${PROGRAMS.find(p => p.key === enrollProgram)?.label}\n` +
     (isTestPrep ? "" : `• Bahasa: ${isRegulerEnroll ? regulerLangName(enrollLang) : enrollLang}\n`) +
     `• Durasi: ${enrollDuration} menit/sesi\n` +
+    (isFixedPrice ? "" : `• Jumlah sesi: ${enrollSessions} sesi\n`) +
     `• Preferensi hari: ${Object.keys(enrollSchedule).join(", ") || "-"}\n` +
     `• Preferensi jam: ${Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + ts.join(", ")).join(" | ") || "-"}\n` +
     `Mohon info jadwal dan pembayarannya. Terima kasih!`
@@ -1830,7 +1859,10 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
     language: isTestPrep ? "IELTS/TOEFL" : (isRegulerEnroll ? regulerLangName(enrollLang) : enrollLang),
     level: "A1.1",
     duration: enrollDuration,
-    amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8,
+    amount: isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * enrollSessions,
+    // [enroll-jumlah-sesi-v1] dulu `sessions_total` di /api/enroll dipatok 0 —
+    // kelas baru selalu lahir tanpa kuota sesi & harus ditambal manual admin.
+    sessions: isFixedPrice ? 0 : enrollSessions,
     ref_code: getRefCodeFromCookie(), // [linguo-patch:akun-affiliate-capture-v1]
     with_invoice: withInvoice,
   });
@@ -1920,7 +1952,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
             <h2 className="text-lg font-bold text-gray-900">Daftar Kelas Baru</h2>
             <p className="text-xs text-gray-400">Step {enrollStep + 1} dari {TOTAL_STEPS}</p>
           </div>
-          <button onClick={() => setShowExitConfirm(true)} className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200">✕</button>
+          <button onClick={() => setShowExitConfirm(true)} aria-label="Tutup" className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200">
+            <X className="h-4 w-4" strokeWidth={2.5} />
+          </button>
         </div>
 
         {/* Progress */}
@@ -2058,8 +2092,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                     );
                   })}
                 </div>
-                <p className="text-xs text-gray-400 bg-amber-50 rounded-xl px-3 py-2">
-                  💡 Admin akan mencocokkan preferensimu dengan jadwal pengajar yang tersedia. Jadwal final dikonfirmasi via WhatsApp.
+                <p className="flex items-start gap-2 text-xs text-amber-700 bg-amber-50 rounded-xl px-3 py-2">
+                  <Lightbulb className="mt-px h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+                  <span>Admin akan mencocokkan preferensimu dengan jadwal pengajar yang tersedia. Jadwal final dikonfirmasi via WhatsApp.</span>
                 </p>
                 <button onClick={() => setEnrollStep(4)} disabled={Object.keys(enrollSchedule).length === 0}
                   className="w-full h-11 rounded-xl bg-teal-600 text-white font-semibold text-sm disabled:opacity-40 hover:bg-teal-700 transition-colors">
@@ -2100,7 +2135,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                       {[
                         ["Jadwal", Object.entries(enrollSchedule).map(([d,ts]) => d + ": " + (ts.join(", ") || "-")).join(" | ") || "Belum dipilih"],
                         ["Harga/sesi", `Rp${price.toLocaleString("id-ID")}`],
-                        ["Estimasi/bulan", `Rp${(price * 8).toLocaleString("id-ID")} (8 sesi)`],
+                        ["Jumlah sesi", `${enrollSessions} sesi`],
+                        ["Total", `Rp${(price * enrollSessions).toLocaleString("id-ID")}`],
                       ].map(([k, v]) => (
                         <div key={k} className="flex justify-between text-sm">
                           <span className="text-gray-500">{k}</span>
@@ -2111,14 +2147,81 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   )}
                 </div>
 
+                {/* [enroll-jumlah-sesi-v1] Pemilih jumlah sesi — hanya untuk program
+                    yang ditagih per sesi (Private & Kids). Reguler/Test Prep harganya
+                    flat per periode, jadi tidak punya kuota sesi yang bisa dipilih. */}
+                {!isFixedPrice && (
+                  <div className="rounded-2xl border border-slate-200 p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <p className="text-sm font-semibold text-gray-700">Jumlah sesi</p>
+                        <p className="text-xs text-gray-400">1 sub-level = 16 sesi</p>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          aria-label="Kurangi sesi"
+                          onClick={() => setEnrollSessions((n: number) => Math.max(1, n - 1))}
+                          disabled={enrollSessions <= 1}
+                          className="flex h-9 w-9 items-center justify-center rounded-xl bg-gray-100 text-gray-600 hover:bg-gray-200 disabled:opacity-40 disabled:pointer-events-none"
+                        >
+                          <Minus className="h-4 w-4" strokeWidth={2.5} />
+                        </button>
+                        <input
+                          type="number"
+                          inputMode="numeric"
+                          min={1}
+                          max={MAX_SESSIONS}
+                          value={enrollSessions}
+                          onChange={(e) => {
+                            // Kosong dibiarkan lewat sebagai 1 supaya harga tak pernah NaN.
+                            const n = parseInt(e.target.value, 10);
+                            setEnrollSessions(Number.isNaN(n) ? 1 : Math.min(MAX_SESSIONS, Math.max(1, n)));
+                          }}
+                          onClick={(e) => e.stopPropagation()}
+                          className="h-9 w-14 rounded-xl border border-gray-200 bg-transparent text-center text-sm font-bold text-gray-900 focus:outline-none focus:border-teal-500"
+                        />
+                        <button
+                          type="button"
+                          aria-label="Tambah sesi"
+                          onClick={() => setEnrollSessions((n: number) => Math.min(MAX_SESSIONS, n + 1))}
+                          disabled={enrollSessions >= MAX_SESSIONS}
+                          className="flex h-9 w-9 items-center justify-center rounded-xl bg-gray-100 text-gray-600 hover:bg-gray-200 disabled:opacity-40 disabled:pointer-events-none"
+                        >
+                          <Plus className="h-4 w-4" strokeWidth={2.5} />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="mt-3 grid grid-cols-4 gap-1.5">
+                      {SESSION_PRESETS.map((o) => (
+                        <button
+                          key={o.val}
+                          type="button"
+                          onClick={() => setEnrollSessions(o.val)}
+                          className={`rounded-xl py-1.5 text-center transition-colors ${enrollSessions === o.val ? "bg-teal-600 text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100"}`}
+                        >
+                          <span className="block text-sm font-bold leading-none">{o.label}</span>
+                          <span className={`block text-[10px] leading-tight ${enrollSessions === o.val ? "text-white/80" : "text-gray-400"}`}>{o.note}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Info batch for Reguler — show available batches from DB */}
                 {isRegulerEnroll && (
                   <div className="rounded-xl bg-blue-50 border border-blue-100 p-3">
                     {loadingBatches ? (
-                      <p className="text-xs text-blue-600">⏳ Memuat batch yang tersedia...</p>
+                      <p className="flex items-center gap-2 text-xs text-blue-600">
+                        <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin" strokeWidth={2} />
+                        Memuat batch yang tersedia...
+                      </p>
                     ) : availBatches.length > 0 ? (
                       <>
-                        <p className="text-xs font-semibold text-blue-700 mb-2">📅 Batch {regulerLangName(enrollLang)} yang tersedia:</p>
+                        <p className="flex items-center gap-1.5 text-xs font-semibold text-blue-700 mb-2">
+                          <Calendar className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+                          Batch {regulerLangName(enrollLang)} yang tersedia:
+                        </p>
                         <div className="space-y-1.5">
                           {availBatches.slice(0, 3).map((b: any) => {
                             const seatsLeft = (b.max_capacity || 15) - (b.current_enrolled || 0);
@@ -2143,12 +2246,16 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                             + {availBatches.length - 3} batch lainnya — lihat semua →
                           </a>
                         )}
-                        <p className="text-[10px] text-blue-600 mt-2">💡 Admin akan mencocokkan kamu ke batch yang paling cocok via WhatsApp.</p>
+                        <p className="mt-2 flex items-start gap-1.5 text-[10px] text-blue-600">
+                          <Lightbulb className="mt-px h-3 w-3 shrink-0" strokeWidth={2} />
+                          <span>Admin akan mencocokkan kamu ke batch yang paling cocok via WhatsApp.</span>
+                        </p>
                       </>
                     ) : (
-                      <p className="text-xs text-blue-700">
-                        📋 Belum ada batch {regulerLangName(enrollLang)} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
-                        <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">cek jadwal lengkap</a>.
+                      <p className="flex items-start gap-1.5 text-xs text-blue-700">
+                        <ClipboardList className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={2} />
+                        <span>Belum ada batch {regulerLangName(enrollLang)} yang dibuka. Admin akan menghubungi kamu via WhatsApp begitu batch baru tersedia, atau kamu bisa{" "}
+                        <a href="/jadwal-kelas-reguler" target="_blank" className="underline font-semibold">cek jadwal lengkap</a>.</span>
                       </p>
                     )}
                   </div>
@@ -2157,14 +2264,17 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                 {/* Tagihan total (termasuk kelas lain yang belum bayar) */}
                 {unpaidTotal > 0 && (
                   <div className="rounded-xl bg-amber-50 border border-amber-100 p-3 text-sm">
-                    <p className="font-semibold text-amber-700 mb-1">⚠️ Tagihan belum lunas</p>
+                    <p className="flex items-center gap-1.5 font-semibold text-amber-700 mb-1">
+                      <AlertTriangle className="h-4 w-4 shrink-0" strokeWidth={2} />
+                      Tagihan belum lunas
+                    </p>
                     <div className="flex justify-between text-amber-600">
                       <span>Kelas sebelumnya</span>
                       <span className="font-bold">Rp{unpaidTotal.toLocaleString("id-ID")}</span>
                     </div>
                     <div className="border-t border-amber-200 mt-2 pt-2 flex justify-between font-bold text-amber-800">
                       <span>Total yang perlu dibayar</span>
-                      <span>Rp{(unpaidTotal + (isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * 8)).toLocaleString("id-ID")}</span>
+                      <span>Rp{(unpaidTotal + (isFixedPrice ? (flatPrice[enrollProgram] || 0) : price * enrollSessions)).toLocaleString("id-ID")}</span>
                     </div>
                   </div>
                 )}
@@ -2178,7 +2288,8 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   disabled={isRegulerEnroll && !agreeReguler}
                   className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm transition-colors shadow-lg shadow-teal-100 mb-2 disabled:opacity-40 disabled:pointer-events-none"
                 >
-                  💳 Bayar Otomatis (Xendit)
+                  <CreditCard className="h-4 w-4 shrink-0" strokeWidth={2} />
+                  Bayar Otomatis (Xendit)
                 </button>
                 <p className="text-[10px] text-center text-gray-500 -mt-1 mb-3">
                   VA, QRIS, e-wallet · Konfirmasi otomatis &lt;1 menit
@@ -2191,8 +2302,9 @@ function EnrollWizard({ showEnroll, setShowEnroll, enrollStep, setEnrollStep, en
                   Bayar via Transfer (Hubungi Admin WA)
                 </a>
                 <button onClick={() => { handleConfirm(); setTimeout(openEnrollWizard, 300); }}
-                  className="w-full h-10 rounded-xl border-2 border-slate-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
-                  ➕ Selesai & Tambah Kelas Lain
+                  className="flex w-full items-center justify-center gap-2 h-10 rounded-xl border-2 border-slate-200 text-teal-600 font-semibold text-sm hover:bg-teal-50 transition-colors">
+                  <Plus className="h-4 w-4 shrink-0" strokeWidth={2.5} />
+                  Selesai &amp; Tambah Kelas Lain
                 </button>
               </motion.div>
             )}
@@ -3180,7 +3292,7 @@ export default function AkunPage() {
       } catch (e) { console.error("[notif-v2] gagal kirim notif booking ke pengajar:", e); }
       setBookingReg(null);
       setSelectedSlots(new Set());
-      alert(`✅ ${rows.length} sesi berhasil di-booking! Menunggu konfirmasi pengajar.`);
+      alert(`${rows.length} sesi berhasil di-booking! Menunggu konfirmasi pengajar.`);
     } catch (e: any) {
       alert("Gagal: " + e.message);
     }
