@@ -201,6 +201,14 @@ export default function QuizTakePage() {
   /* [kuis-tts-chirp-v1] Kode bahasa target untuk tombol dengar. `target_lang`
      turun sebagai NAMA ("Spanish"), jadi harus lewat toLangCode dulu; bahasa yang
      tak punya suara Chirp menghasilkan null → tombolnya tidak pernah dirender. */
+  /* [kuis-remidi-3-percobaan-v1] Jatah pengerjaan siswa yang sedang memegang
+     halaman ini. Angkanya datang dari server (action "load") dan cuma dipakai
+     untuk memberi tahu di muka — penjaga yang sebenarnya ada di edge function,
+     karena halaman ini bisa dilewati begitu saja. */
+  const maxPercobaan = quiz?.max_attempts ?? 0;
+  const percobaanTerpakai = studentId ? (quiz?.attempts?.[studentId] ?? 0) : 0;
+  const jatahHabis = maxPercobaan > 0 && percobaanTerpakai >= maxPercobaan;
+
   const ttsLang = useMemo(() => {
     const kode = toLangCode(quiz?.target_lang);
     return bisaTts(kode) ? kode : null;
@@ -297,6 +305,13 @@ export default function QuizTakePage() {
     if (!total) { window.alert("Kuis ini belum berisi soal. Hubungi pengajarmu ya."); return; }
     if (roster.length > 0 && !studentId) { window.alert("Pilih nama kamu dulu ya."); return; }
     if (roster.length === 0 && !name.trim()) { window.alert("Isi nama kamu dulu ya."); return; }
+    // Ditahan di sini juga, bukan cuma di tombol yang dinonaktifkan: nama bisa
+    // diganti sesudah halaman terbuka, dan jatah yang sudah habis tidak boleh
+    // ketahuan baru setelah 20 soal dikerjakan.
+    if (jatahHabis) {
+      window.alert(`Kuis ini sudah kamu kerjakan ${percobaanTerpakai} kali (batasnya ${maxPercobaan}). Hubungi pengajarmu kalau masih perlu mengulang.`);
+      return;
+    }
     // Jam mulai dicatat di sini, bukan saat halaman terbuka: siswa sering membuka
     // link duluan lalu menunggu aba-aba pengajar, dan waktu tunggu itu bukan waktu
     // mengerjakan. Kalau ada catatan lama yang masih hidup, itu yang dipakai.
@@ -328,7 +343,10 @@ export default function QuizTakePage() {
     const r = await submitPublicQuiz(token, name.trim(), terkirim, studentId || null, dipakai);
     setSubmitting(false);
     if ("error" in r) {
-      window.alert("Gagal mengirim: " + r.error);
+      // Jatah percobaan habis itu penolakan yang WAJAR, bukan kegagalan teknis —
+      // "Gagal mengirim: …" di depannya membuat siswa mengira jawabannya hilang
+      // karena koneksi dan mencoba ulang berkali-kali.
+      window.alert(r.limitReached ? r.error : "Gagal mengirim: " + r.error);
       /* Penjaga `autoSentRef` sengaja TIDAK dibuka lagi: waktunya sudah lewat, jadi
          syarat kirim-otomatis selalu terpenuhi — membukanya berarti mencoba ulang
          tiap detik, lengkap dengan alert-nya. Siswa dilempar ke halaman periksa
@@ -460,6 +478,28 @@ export default function QuizTakePage() {
               )}
             </div>
 
+            {/* [kuis-remidi-3-percobaan-v1] Sisa jatah dipasang tepat di bawah kartu
+                nama — di situlah siswa baru saja memilih siapa dirinya, dan itu
+                satu-satunya titik di mana angka ini masih bisa mengubah keputusan
+                (mengulang sekarang, atau menyimpan jatahnya). */}
+            {maxPercobaan > 0 && percobaanTerpakai > 0 && (
+              <div className="rounded-2xl border-2 px-4 py-3"
+                style={jatahHabis
+                  ? { borderColor: "#fca5a5", background: "#fef2f2" }
+                  : { borderColor: "#fcd34d", background: "#fffbeb" }}>
+                <p className="text-sm font-bold" style={{ color: jatahHabis ? "#b91c1c" : "#b45309" }}>
+                  {jatahHabis
+                    ? `Jatah ${maxPercobaan} kali sudah terpakai`
+                    : `Percobaan ke-${percobaanTerpakai + 1} dari ${maxPercobaan}`}
+                </p>
+                <p className="mt-0.5 text-[12px] font-medium text-slate-600">
+                  {jatahHabis
+                    ? "Kuis ini tidak bisa dikerjakan lagi. Hubungi pengajarmu kalau masih perlu mengulang."
+                    : "Nilai yang dipakai adalah percobaan TERAKHIR — kalau hasilnya lebih rendah, itu yang tercatat."}
+                </p>
+              </div>
+            )}
+
             {hasTranslit && <TranslitToggle on={showTranslit} onToggle={() => setShowTranslit((v) => !v)} />}
 
             {/* Apa yang akan dihadapi — siswa perlu tahu ada bagian menulis SEBELUM
@@ -489,6 +529,15 @@ export default function QuizTakePage() {
                   <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
                   <span>Soalnya muncul satu per satu. Bisa mundur & mengubah jawaban sebelum dikirim.</span>
                 </li>
+                {maxPercobaan > 0 && (
+                  <li className="flex gap-2">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: BRAND }} />
+                    <span>
+                      Boleh dikerjakan <b>maksimal {maxPercobaan} kali</b> (untuk remidi).
+                      Yang dipakai nilainya adalah percobaan terakhir.
+                    </span>
+                  </li>
+                )}
                 {/* [kuis-tidak-tahu-v1] Diberitahukan di depan, bukan ditemukan
                     sendiri di soal ke-7: siswa yang tidak tahu tombol ini ada akan
                     menebak dari soal pertama. */}
@@ -513,10 +562,10 @@ export default function QuizTakePage() {
               </ul>
             </div>
 
-            <button onClick={startQuiz}
-              className="flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold text-white"
-              style={{ background: BRAND }}>
-              <Play className="h-4 w-4" /> Mulai Kerjakan
+            <button onClick={startQuiz} disabled={jatahHabis}
+              className="flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold text-white transition disabled:cursor-not-allowed disabled:opacity-50"
+              style={{ background: jatahHabis ? "#94a3b8" : BRAND }}>
+              <Play className="h-4 w-4" /> {jatahHabis ? "Jatah percobaan habis" : "Mulai Kerjakan"}
             </button>
           </div>
         )}

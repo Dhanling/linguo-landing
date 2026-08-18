@@ -39,6 +39,10 @@ export interface PublicQuiz {
   time_limit_min?: number | null;
   roster?: { id: string; name: string }[];
   session_label?: string | null;
+  /** [kuis-remidi-3-percobaan-v1] Batas pengerjaan per siswa (default server: 3). */
+  max_attempts?: number;
+  /** Percobaan yang SUDAH terpakai, per id siswa di roster. Absen = belum pernah. */
+  attempts?: Record<string, number>;
 }
 
 /** Jawaban bagian 2: diketik langsung, atau foto tulisan tangan yang diunggah.
@@ -107,7 +111,10 @@ async function callQuizPublic<T = any>(
     const text = await resp.text();
     let parsed: any = null;
     try { parsed = text ? JSON.parse(text) : null; } catch { /* non-JSON */ }
-    if (!resp.ok) return { data: null, error: parsed?.error || text?.slice(0, 300) || `Error ${resp.status}` };
+    // Badan balasan ikut dikembalikan walau statusnya bukan 2xx: penolakan yang
+    // "wajar" (mis. jatah percobaan habis) membawa penanda yang perlu dibaca
+    // pemanggil, bukan cuma kalimat galat.
+    if (!resp.ok) return { data: (parsed as T) ?? null, error: parsed?.error || text?.slice(0, 300) || `Error ${resp.status}` };
     return { data: parsed as T, error: null };
   } catch (err: any) {
     // Koreksi AI bisa 60 detik lebih; pesan "timeout" yang jujur lebih berguna
@@ -141,7 +148,7 @@ export async function submitPublicQuiz(
   durationSec?: number | null,
 ): Promise<
   | { total: number; max: number; results: GradeResult[]; analysis: QuizAnalysis | null; duration_sec: number | null }
-  | { error: string }
+  | { error: string; limitReached?: boolean }
 > {
   const { data, error } = await callQuizPublic(
     {
@@ -150,8 +157,9 @@ export async function submitPublicQuiz(
     },
     180000,
   );
-  if (error) return { error };
-  if (!data?.ok) return { error: data?.error || "Gagal mengirim jawaban" };
+  const limitReached = (data as any)?.limit_reached === true;
+  if (error) return { error, limitReached };
+  if (!data?.ok) return { error: data?.error || "Gagal mengirim jawaban", limitReached };
   return {
     total: Number(data.total) || 0,
     max: Number(data.max) || 0,
