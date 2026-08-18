@@ -37,7 +37,7 @@ import { useParams } from "next/navigation";
 import {
   Loader2, CheckCircle2, Send, ClipboardList,
   Languages, Camera, Keyboard, X, ImageIcon,
-  ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle, Volume2,
+  ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle, Volume2, Minimize2, Maximize2,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
@@ -845,6 +845,7 @@ function KuisNavBar({
             <Languages className="h-4 w-4" />
           </button>
         )}
+        <TombolLayarPenuh />
         {/* [kuis-tanpa-lanjut-part1-v1] Tombol "Periksa" dicabut dari bilah ini.
             Dari soal ke-2 ia melompat ke halaman kirim, dan tempatnya persis di
             atas deretan nomor — terlalu gampang tertekan waktu siswa sebenarnya
@@ -927,6 +928,48 @@ function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: strin
     >
       {sibuk ? <Loader2 className="h-5 w-5 animate-spin" /> : <Volume2 className="h-5 w-5" />}
     </span>
+  );
+}
+
+/* [kuis-layar-penuh-keluar-v1] Jalan keluar dari layar penuh yang kelihatan.
+   Sebelumnya satu-satunya cara keluar adalah menekan Esc — di HP tidak ada
+   tombolnya sama sekali, dan siswa yang perlu membuka kamus atau sekadar melihat
+   jam merasa terkunci di dalam kuis. Layar penuh di sini penahan gangguan, bukan
+   pengawas ujian: tidak ada nilai yang berubah karena siswa keluar.
+
+   Tombolnya sekaligus jalan MASUK kembali — sekali keluar (atau kalau permintaan
+   layar penuh di awal ditolak browser), tanpa ini tidak ada cara balik lagi.
+   Statusnya dibaca dari event `fullscreenchange`, bukan dari klik terakhir:
+   keluar lewat Esc harus ikut mengubah ikonnya. */
+function TombolLayarPenuh() {
+  const [penuh, setPenuh] = useState(false);
+  const [didukung, setDidukung] = useState(false);
+
+  useEffect(() => {
+    const d = document as FsDocument;
+    const el = document.documentElement as FsElement;
+    // Safari iPhone tidak punya Fullscreen API — tombol yang tak melakukan apa pun
+    // lebih buruk daripada tidak ada tombolnya.
+    setDidukung(!!(el.requestFullscreen || el.webkitRequestFullscreen));
+    const sync = () => setPenuh(!!(d.fullscreenElement || d.webkitFullscreenElement));
+    sync();
+    document.addEventListener("fullscreenchange", sync);
+    document.addEventListener("webkitfullscreenchange", sync);
+    return () => {
+      document.removeEventListener("fullscreenchange", sync);
+      document.removeEventListener("webkitfullscreenchange", sync);
+    };
+  }, []);
+
+  if (!didukung) return null;
+  const Ikon = penuh ? Minimize2 : Maximize2;
+  return (
+    <button type="button" onClick={() => (penuh ? keluarLayarPenuh() : masukLayarPenuh())}
+      title={penuh ? "Keluar dari layar penuh" : "Layar penuh"}
+      aria-label={penuh ? "Keluar dari layar penuh" : "Layar penuh"}
+      className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border-2 border-slate-300 bg-white text-slate-500">
+      <Ikon className="h-4 w-4" />
+    </button>
   );
 }
 
