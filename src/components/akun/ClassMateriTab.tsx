@@ -25,7 +25,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
-import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, RotateCcw, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
+import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref } from '@/lib/classRoom';
 import { publicNotes, parseSessionNotes, ATTENDANCE_BADGE } from '@/components/akun/class-notes';
 // [kelas-materi-silabus-sesi-v1] silabus per sesi (judul + poin yang dipelajari)
@@ -437,8 +437,6 @@ function MilestoneRow({
   silabus,
   isLast,
   onOpen,
-  onReschedule,
-  onCancel,
 }: {
   no: number;
   sched: any | null;
@@ -451,13 +449,9 @@ function MilestoneRow({
   silabus?: SilabusSesi | null;
   isLast: boolean;
   onOpen?: () => void;
-  onReschedule?: (s: any) => void;
-  onCancel?: (s: any) => void;
 }) {
   const st = statusMilestone(sched, sudahJalan);
   const dt = sched ? new Date(sched.scheduled_at) : null;
-  const jamKeSesi = dt ? (dt.getTime() - Date.now()) / 3600_000 : 0;
-  const akanDatang = !!sched && ['pending', 'scheduled'].includes(sched.status) && jamKeSesi > 0;
   const catatan = sched ? publicNotes(sched.notes) : '';
   // [kelas-materi-silabus-sesi-v1] SEMUA sesi bisa dibuka, bukan cuma yang punya
   // baris jadwal: isi drawer-nya sekarang datang dari silabus level juga, jadi sesi
@@ -535,29 +529,6 @@ function MilestoneRow({
 
         {/* [kelas-tab-v1] WAJIB publicNotes(): notes bisa bawa catatan PRIBADI pengajar */}
         {catatan && <div className="mt-1.5 line-clamp-2 whitespace-pre-line text-xs text-gray-500">{catatan}</div>}
-
-        {akanDatang && (onReschedule || onCancel) && (
-          <div className="mt-2.5 flex flex-wrap gap-2">
-            {onReschedule && (
-              <button
-                onClick={() => onReschedule(sched)}
-                disabled={jamKeSesi <= 24}
-                title={jamKeSesi <= 24 ? 'Ubah jadwal hanya bisa lebih dari 24 jam sebelum sesi' : ''}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 hover:bg-blue-100 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-400"
-              >
-                <RotateCcw className="h-3.5 w-3.5" strokeWidth={2.4} /> Ubah Jadwal
-              </button>
-            )}
-            {onCancel && (
-              <button
-                onClick={() => onCancel(sched)}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 hover:bg-red-100"
-              >
-                <X className="h-3.5 w-3.5" strokeWidth={2.6} /> Batalkan
-              </button>
-            )}
-          </div>
-        )}
       </div>
     </li>
   );
@@ -568,8 +539,6 @@ export default function ClassMateriTab({
   schedules,
   teacherName,
   sesiTerpakai,
-  onReschedule,
-  onCancel,
 }: {
   reg: any;
   schedules: any[];
@@ -577,8 +546,6 @@ export default function ClassMateriTab({
   /** Angka "Progress Sesi" dari halaman induk — linimasa wajib memakai angka yang
    *  sama, jangan menghitung ulang sendiri (bisa beda dari yang dibaca siswa). */
   sesiTerpakai?: number;
-  onReschedule?: (s: any) => void;
-  onCancel?: (s: any) => void;
 }) {
   const [materials, setMaterials] = useState<any[] | null>(null); // null = loading
   const [kosongTerbuka, setKosongTerbuka] = useState(false);
@@ -773,8 +740,6 @@ export default function ClassMateriTab({
                 silabus={silabusSesi(ms.no)}
                 isLast={i === arr.length - 1}
                 onOpen={() => setSesiTerbuka(ms.no)}
-                onReschedule={onReschedule}
-                onCancel={onCancel}
               />
             ))}
           </ol>

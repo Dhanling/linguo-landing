@@ -84,7 +84,10 @@ const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracki
 const DARK_KEY = "lms-dark-mode";
 
 /** Jawaban "punya grup kelas?" ditahan per tab — menunya ikut ke semua halaman LMS. */
-const GROUP_NAV_KEY = "linguo-has-group-v1";
+export const GROUP_NAV_KEY = "linguo-has-group-v1";
+
+/** Idem untuk gerbang menu development (Lingbook) — lihat [perf:shell-devnav-cache-v1]. */
+const DEV_NAV_KEY = "linguo-dev-nav-v1";
 
 // [shell-dark-fouc-v1] Skrip kecil yang ikut ke-render di HTML awal → kelas `lms-dark`
 // nempel ke <html> SEBELUM paint pertama. Dulu tema dibaca di useEffect, jadi user
@@ -143,11 +146,21 @@ export default function StudentShell({
 
   // [dev-gate-lingbook-v1] cek email sesi → menu development (Lingbook) default
   // SEMBUNYI sampai terbukti masuk allowlist, biar ga sempat kelihatan sekilas.
-  const [devOk, setDevOk] = useState(false);
+  /* [perf:shell-devnav-cache-v1] Jawabannya ditahan per tab (sessionStorage), sama
+     seperti gerbang "punya grup kelas?" di bawah. Dulu tiap pindah halaman LMS menu
+     Lingbook mulai dari SEMBUNYI lalu muncul lagi setelah getSession() balik —
+     sidebar-nya kelihatan "meloncat" tiap klik menu. */
+  const [devOk, setDevOk] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    try { return sessionStorage.getItem(DEV_NAV_KEY) === "1"; } catch { return false; }
+  });
   useEffect(() => {
     let alive = true;
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (alive) setDevOk(canAccessLingbook(session?.user?.email));
+      if (!alive) return;
+      const ok = canAccessLingbook(session?.user?.email);
+      setDevOk(ok);
+      try { sessionStorage.setItem(DEV_NAV_KEY, ok ? "1" : "0"); } catch {}
     });
     return () => { alive = false; };
   }, []);
@@ -318,7 +331,10 @@ export default function StudentShell({
     return navRow(item, href, (
       <Link
         href={href}
-        prefetch={false}
+        /* [perf:tab-link-prefetch-v1] Dari halaman LMS lain (Grup Kelas, Perpustakaan,
+           Lingbook) menu tab ini benar-benar menavigasi ke /akun. Dengan prefetch mati,
+           chunk dashboard baru diunduh SESUDAH diklik → menu terasa menggantung
+           beberapa detik. Di /akun sendiri prefetch-nya no-op (rutenya sudah dimuat). */
         onClick={(e) => {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();

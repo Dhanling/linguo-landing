@@ -247,7 +247,7 @@ interface AnswerRow {
   quiz_questions: any;
 }
 
-function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => void }) {
+export function QuizReviewModal({ row, onClose }: { row: QuizScoreRow; onClose: () => void }) {
   const [answers, setAnswers] = useState<AnswerRow[] | null>(null);
   const [analysis, setAnalysis] = useState<QuizAnalysis | null>(null);
 

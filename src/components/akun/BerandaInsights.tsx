@@ -391,7 +391,7 @@ export default function BerandaInsights({
                   return (
                     <Link
                       key={hw.scheduleId}
-                      href={`/akun/kelas/${hw.registrationId}?tab=tugas${previewQs}`}
+                      href={`/akun/kelas/${hw.registrationId}?tab=kuis${previewQs}`}
                       onClick={() => r && handoff(r)}
                       className="group flex items-start gap-2.5 rounded-2xl bg-slate-50 p-3 transition hover:bg-rose-50"
                     >

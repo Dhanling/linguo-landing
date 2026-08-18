@@ -4,9 +4,10 @@
 // Dulu ini ClassDetailModal (popup di beranda) — 5 tab + flow reschedule/cancel
 // kelewat berat buat modal (modal numpuk modal), jadi dinaikkan ke halaman penuh:
 // deep-linkable (?tab=progress), tombol back browser jalan, lega di mobile.
-// Reschedule & cancel TETAP modal — di situ modal memang tepat (keputusan singkat).
+// [jadwal-tanpa-aksi-siswa-v1] Aksi ubah/batalkan jadwal milik siswa DIHAPUS —
+// perubahan jadwal disepakati di grup kelas, pengajar yang memindahkan sesinya.
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
@@ -15,10 +16,11 @@ import { displayLanguage } from '@/lib/classLanguage';
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
 import ClassMateriTab from '@/components/akun/ClassMateriTab';
+import { quizScoreRows } from '@/components/akun/ClassQuizScores';
 import ClassRaporTab from '@/components/akun/ClassRaporTab';
-// [teacher-workspace-v1] PR punya siklus penuh: diberi pengajar → disetor di sini → dinilai
-import ClassTugasTab from '@/components/akun/ClassTugasTab';
-import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, PenLine, RotateCcw, X, CalendarClock, HelpCircle, AlertTriangle, type LucideIcon } from 'lucide-react';
+// [kelas-tab-kuis-v1] Kuis tiap pertemuan: grafik skor + rincian benar/salah + pembahasan
+import ClassKuisTab from '@/components/akun/ClassKuisTab';
+import { ArrowLeft, Calendar, TrendingUp, BookOpen, BarChart2, User, Clock, MessageCircle, ClipboardList, Check, ClipboardCheck, CalendarClock, type LucideIcon } from 'lucide-react';
 
 interface Props {
   reg: any; // registration + join teachers(name, title, avatar_url)
@@ -35,18 +37,23 @@ interface Props {
 // "Sesi Berikutnya" kini kartu tetap di atas tab bar (selalu kelihatan, tak perlu
 // diklik), dan seluruh daftar sesi pindah jadi linimasa milestone di tab Materi —
 // yang otomatis jadi tab pertama karena itu yang paling sering dibuka siswa.
-export type ClassTab = 'materi' | 'progress' | 'tugas' | 'rapor';
-type CancelStep = 'confirm' | 'form';
+export type ClassTab = 'materi' | 'progress' | 'kuis' | 'rapor';
 
 const TABS: { id: ClassTab; label: string; icon: LucideIcon }[] = [
   { id: 'materi', label: 'Materi', icon: BookOpen },
   { id: 'progress', label: 'Progress', icon: TrendingUp },
-  { id: 'tugas', label: 'Tugas', icon: PenLine },
+  { id: 'kuis', label: 'Kuis', icon: ClipboardCheck },
   { id: 'rapor', label: 'Rapor', icon: BarChart2 },
 ];
 
 const isValidTab = (t: string | null | undefined): t is ClassTab =>
   !!t && TABS.some((x) => x.id === t);
+
+// [kelas-tab-kuis-v1] Tab `tugas` berganti nama jadi `kuis`. Tautan lama
+// (?tab=tugas — masih dipakai kartu "PR belum disetor" di beranda & link yang
+// terlanjur dibagikan) tetap mendarat di tab yang benar, bukan balik ke Materi.
+const normalizeTab = (t: string | null | undefined): string | null | undefined =>
+  t === 'tugas' ? 'kuis' : t;
 
 // [sesi-berikutnya-v1] Label hitung mundur ringkas. `now` sengaja dioper (bukan
 // Date.now() di dalam) supaya nilainya ikut state `tick` — kalau tidak, React
@@ -62,23 +69,9 @@ function hitungMundur(dt: Date, now: number): string {
 }
 
 export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null }: Props) {
-  const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(initialTab) ? initialTab : 'materi');
+  const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
-  // Reschedule state
-  const [rescheduleSched, setRescheduleSched] = useState<any>(null);
-  const [availSlots, setAvailSlots] = useState<any[]>([]);
-  const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
-  const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set());
-
-  // Cancel state
-  const [cancelSched, setCancelSched] = useState<any>(null);
-  const [cancelStep, setCancelStep] = useState<CancelStep>('confirm');
-  const [cancelReason, setCancelReason] = useState('');
-
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [toast, setToast] = useState<{ msg: string; err?: boolean } | null>(null);
   // [sesi-berikutnya-v1] Detak menit buat label hitung mundur — tanpa ini halaman
   // yang dibiarkan terbuka akan terus menampilkan "3 jam lagi" sampai di-refresh.
   const [tick, setTick] = useState(() => Date.now());
@@ -86,19 +79,6 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     const id = setInterval(() => setTick(Date.now()), 60_000);
     return () => clearInterval(id);
   }, []);
-
-  // [modal-esc-v1] Esc menutup modal. Refleks standar yang selama ini absen —
-  // di desktop satu-satunya jalan keluar cuma tombol ✕ yang kecil.
-  useEffect(() => {
-    if (!rescheduleSched && !cancelSched) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape' || isProcessing) return;
-      if (rescheduleSched) { setRescheduleSched(null); setSelectedSlot(null); }
-      else { setCancelSched(null); setCancelReason(''); }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [rescheduleSched, cancelSched, isProcessing]);
 
   // Sinkron tab ke URL (?tab=) tanpa re-render route — biar bisa di-share/refresh.
   function setActiveTab(t: ClassTab) {
@@ -145,7 +125,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   // isinya — Materi/Rapor/Tugas jadi jarang dibuka padahal isinya penting.
   // SEMUA query di sini boleh gagal (tabel belum dimigrasi, RLS, mode pratinjau):
   // kalau gagal badge-nya cuma tidak muncul, halaman TIDAK boleh ikut error.
-  const [counts, setCounts] = useState<{ materi: number; rapor: number; tugasBaru: number }>({ materi: 0, rapor: 0, tugasBaru: 0 });
+  const [counts, setCounts] = useState<{ materi: number; rapor: number; kuis: number }>({ materi: 0, rapor: 0, kuis: 0 });
   useEffect(() => {
     if (!reg?.id || previewStudentId) return;
     let alive = true;
@@ -160,25 +140,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       setCounts({
         materi: mat.count || 0,
         rapor: rap.count || 0,
-        // "Baru" = PR yang diberi pengajar tapi belum disetor siswa — itu yang
-        // butuh perhatian, bukan total PR (yang sudah dinilai tak perlu diungkit).
-        tugasBaru: schedules.filter((s: any) => (s.homework || '').trim() && !setoran.has(s.id)).length,
+        // Badge Kuis = jumlah kuis yang sudah bernilai + PR yang belum disetor,
+        // dua-duanya isi tab itu dan sama-sama menunggu dibuka siswa.
+        kuis: quizScoreRows(schedules).length
+          + schedules.filter((s: any) => (s.homework || '').trim() && !setoran.has(s.id)).length,
       });
     })();
     return () => { alive = false; };
   }, [reg?.id, previewStudentId, schedules]);
-
-  // [toast-satu-jalur-v1] Dulu sukses tampil sebagai toast rapi tapi kegagalan
-  // memunculkan alert() bawaan browser — dua bahasa visual untuk kejadian yang sama.
-  // Semua umpan balik sekarang lewat sini. Timer disimpan supaya toast beruntun
-  // tidak saling memotong dan tidak menyisakan timer saat komponen dilepas.
-  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
-  function flashToast(msg: string, err = false) {
-    if (toastTimer.current) clearTimeout(toastTimer.current);
-    setToast({ msg, err });
-    toastTimer.current = setTimeout(() => setToast(null), err ? 5000 : 3000);
-  }
 
   async function fetchData() {
     setLoading(true);
@@ -191,109 +160,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     setLoading(false);
   }
 
-  async function openReschedule(sched: any) {
-    setSelectedSlot(null);
-    setRescheduleSched(sched);
-    const [{ data: avail }, { data: booked }] = await Promise.all([
-      supabase.from('teacher_availability').select('day_of_week, time_slot').eq('teacher_id', reg.teacher_id),
-      supabase.from('schedules').select('scheduled_at, id').eq('teacher_id', reg.teacher_id).in('status', ['pending', 'scheduled']),
-    ]);
-    setAvailSlots(avail || []);
-    const bSet = new Set<string>();
-    (booked || []).forEach((b: any) => { if (b.id !== sched.id) bSet.add(b.scheduled_at); });
-    setBookedSlots(bSet);
-  }
-
-  async function submitReschedule() {
-    if (!rescheduleSched || !selectedSlot) return;
-    setIsProcessing(true);
-    const { error } = await supabase
-      .from('schedules')
-      .update({
-        scheduled_at: selectedSlot,
-        status: 'pending',
-        student_confirmed: true,
-        student_confirmed_at: new Date().toISOString(),
-        notes: 'Sesi di-reschedule oleh siswa, menunggu konfirmasi pengajar',
-      })
-      .eq('id', rescheduleSched.id);
-    setIsProcessing(false);
-    if (error) { flashToast('Gagal mengubah jadwal: ' + error.message, true); return; }
-    setRescheduleSched(null);
-    setSelectedSlot(null);
-    flashToast('Jadwal berhasil diubah. Menunggu konfirmasi pengajar.');
-    await fetchData();
-  }
-
-  // Dipanggil saat user klik tombol Batalkan di kartu jadwal
-  function requestCancel(sched: any) {
-    const hoursUntil = (new Date(sched.scheduled_at).getTime() - Date.now()) / 3600_000;
-    setCancelSched(sched);
-    setCancelReason('');
-    // <24 jam: lewati step opsi reschedule (reschedule memang tak diizinkan)
-    setCancelStep(hoursUntil > 24 ? 'confirm' : 'form');
-  }
-
-  async function submitCancel() {
-    if (!cancelSched) return;
-    if (!cancelReason.trim()) { flashToast('Mohon isi alasan pembatalan dulu ya.', true); return; }
-    const hoursUntil = (new Date(cancelSched.scheduled_at).getTime() - Date.now()) / 3600_000;
-    const willBeHangus = hoursUntil <= 24;
-
-    setIsProcessing(true);
-    const { error } = await supabase
-      .from('schedules')
-      .update({
-        status: willBeHangus ? 'hangus' : 'cancelled',
-        cancelled_at: new Date().toISOString(),
-        cancel_reason: cancelReason,
-        cancelled_by: 'student',
-      })
-      .eq('id', cancelSched.id);
-
-    if (!error && willBeHangus) {
-      await supabase
-        .from('registrations')
-        .update({ sessions_used: (reg.sessions_used || 0) + 1 })
-        .eq('id', reg.id);
-    }
-
-    setIsProcessing(false);
-    if (error) { flashToast('Gagal membatalkan sesi: ' + error.message, true); return; }
-    const savedHangus = willBeHangus;
-    setCancelSched(null);
-    setCancelReason('');
-    flashToast(savedHangus ? 'Sesi dibatalkan & terhitung terpakai. Pengajar diberitahu.' : 'Sesi dibatalkan. Pengajar diberitahu.');
-    await fetchData();
-  }
-
   if (!reg) return null;
-
-  function buildSlotGrid() {
-    const slots: { iso: string; label: string; past: boolean; booked: boolean; isCurrent: boolean }[] = [];
-    const now = new Date();
-    const currentISO = rescheduleSched?.scheduled_at;
-    for (let d = 0; d < 14; d++) {
-      const day = new Date(now);
-      day.setDate(now.getDate() + d);
-      const dow = day.getDay();
-      const dayAvail = availSlots.filter((a: any) => a.day_of_week === dow);
-      for (const slot of dayAvail) {
-        const [hh, mm] = slot.time_slot.split(':').map(Number);
-        const dt = new Date(day);
-        dt.setHours(hh, mm, 0, 0);
-        const iso = dt.toISOString();
-        slots.push({
-          iso,
-          label: dt.toLocaleString('id-ID', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }),
-          past: dt.getTime() < Date.now(),
-          booked: bookedSlots.has(iso),
-          isCurrent: iso === currentISO,
-        });
-      }
-    }
-    return slots;
-  }
 
   const teacher = (reg.teachers || teacherFix) ? { ...(reg.teachers || {}), ...(teacherFix || {}) } : null;
   const teacherName = sapaan(teacher?.name, teacher?.title);
@@ -445,21 +312,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                   {hitungMundur(new Date(nextSched.scheduled_at), tick)}
                 </span>
               </div>
-              <div className="mt-3.5 flex flex-wrap gap-2 border-t border-[#16796E]/20 pt-3">
-                <button
-                  onClick={() => openReschedule(nextSched)}
-                  disabled={(new Date(nextSched.scheduled_at).getTime() - Date.now()) / 3600_000 <= 24}
-                  title={(new Date(nextSched.scheduled_at).getTime() - Date.now()) / 3600_000 <= 24 ? 'Ubah jadwal hanya bisa lebih dari 24 jam sebelum sesi' : ''}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-[#16796E] hover:bg-white/70 disabled:cursor-not-allowed disabled:text-gray-400"
-                >
-                  <RotateCcw className="h-3.5 w-3.5" strokeWidth={2.4} /> Ubah Jadwal
-                </button>
-                <button
-                  onClick={() => requestCancel(nextSched)}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-red-600 hover:bg-white/70"
-                >
-                  <X className="h-3.5 w-3.5" strokeWidth={2.6} /> Batalkan
-                </button>
+              {/* [jadwal-tanpa-aksi-siswa-v1] Siswa TIDAK bisa ubah/batalkan jadwal
+                  sendiri. Perubahan jadwal disepakati dulu di grup kelas, lalu pengajar
+                  yang memindahkan sesinya — supaya jadwal pengajar tidak bentrok dan
+                  kuota sesi tidak terpotong karena salah klik. */}
+              <div className="mt-3.5 flex flex-wrap items-center gap-2 border-t border-[#16796E]/20 pt-3">
+                <div className="text-xs text-gray-600">
+                  Mau ubah atau batalkan jadwal? Kabari pengajar di grup kelas ya.
+                </div>
                 <a
                   href={waAdminUrl}
                   target="_blank"
@@ -495,8 +355,8 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
             const aktif = activeTab === t.id;
             // Badge: Tugas dihitung yang BELUM disetor (perlu aksi → amber),
             // Materi & Rapor cuma penanda "ada isinya" (netral).
-            const badge = t.id === 'tugas' ? counts.tugasBaru : t.id === 'materi' ? counts.materi : t.id === 'rapor' ? counts.rapor : 0;
-            const perluAksi = t.id === 'tugas';
+            const badge = t.id === 'kuis' ? counts.kuis : t.id === 'materi' ? counts.materi : t.id === 'rapor' ? counts.rapor : 0;
+            const perluAksi = t.id === 'kuis';
             return (
               <button
                 key={t.id}
@@ -525,214 +385,25 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         {!loading && activeTab === 'progress' && <ClassProgressTab reg={reg} schedules={schedules} />}
 
         {/* [kelas-tab-v1] Materi = lampiran pengajar (class_materials) + recording sesi.
-            [kelas-materi-milestone-v1] Sekaligus linimasa milestone seluruh sesi —
-            makanya aksi ubah/batalkan jadwal ikut dioper ke sini. */}
+            [kelas-materi-milestone-v1] Sekaligus linimasa milestone seluruh sesi
+            (baca saja — siswa tak bisa ubah/batalkan jadwal sendiri). */}
         {!loading && activeTab === 'materi' && (
           <ClassMateriTab
             reg={reg}
             schedules={schedules}
             teacherName={teacherName}
             sesiTerpakai={sesiTerpakai}
-            onReschedule={openReschedule}
-            onCancel={requestCancel}
           />
         )}
 
-        {/* [teacher-workspace-v1] Tugas = PR per sesi + setoran siswa + penilaian pengajar */}
-        {!loading && activeTab === 'tugas' && <ClassTugasTab reg={reg} schedules={schedules} />}
+        {/* [kelas-tab-kuis-v1] Kuis = grafik nilai antar pertemuan + rincian benar/salah
+            + pembahasan per soal. PR (kalau ada) ikut di bawahnya. */}
+        {!loading && activeTab === 'kuis' && <ClassKuisTab reg={reg} schedules={schedules} />}
 
         {/* [kelas-tab-v1] Rapor = class_reports yang published + sertifikat (rapor akhir) */}
         {!loading && activeTab === 'rapor' && <ClassRaporTab reg={reg} teacherName={teacherName} teacherFullName={teacher?.name || undefined} />}
       </div>
 
-      {/* Toast */}
-      {toast && (
-        <div
-          role="status"
-          aria-live="polite"
-          className={`fixed left-1/2 top-4 z-[130] flex max-w-[92vw] -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-lg animate-[fadeIn_0.2s_ease-out] ${toast.err ? 'bg-red-600' : 'bg-gray-900'}`}
-        >
-          {toast.err ? <AlertTriangle className="h-4 w-4 shrink-0" strokeWidth={2.4} /> : <Check className="h-4 w-4 shrink-0" strokeWidth={3} />}
-          {toast.msg}
-        </div>
-      )}
-
-      {/* Modal Reschedule */}
-      {rescheduleSched && (
-        <div className="fixed inset-0 z-[110] flex items-end justify-center bg-black/70 p-0 md:items-center md:p-4">
-          <div className="flex max-h-[85vh] w-full flex-col rounded-t-3xl bg-white md:max-w-md md:rounded-3xl">
-            <div className="sticky top-0 flex items-center justify-between rounded-t-3xl border-b bg-white px-5 py-4">
-              <div>
-                <div className="text-xs text-gray-500">Ubah Jadwal Sesi</div>
-                <div className="font-bold text-gray-900">Pilih waktu baru</div>
-              </div>
-              <button
-                onClick={() => { setRescheduleSched(null); setSelectedSlot(null); }}
-                aria-label="Tutup"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200"
-              >
-                <X className="h-4 w-4" strokeWidth={2.4} />
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto p-4">
-              <div className="mb-3 text-xs text-gray-500">
-                Sesi lama: {new Date(rescheduleSched.scheduled_at).toLocaleString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })}
-              </div>
-              {buildSlotGrid().length === 0 ? (
-                <div className="py-6 text-center text-sm text-gray-500">
-                  Pengajar belum set jadwal ketersediaan
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 gap-2">
-                  {buildSlotGrid().map((s) => {
-                    const disabled = s.past || s.booked;
-                    return (
-                      <button
-                        key={s.iso}
-                        onClick={() => !disabled && setSelectedSlot(s.iso)}
-                        disabled={disabled}
-                        className={`rounded-lg border p-2 text-xs font-medium transition-all ${
-                          selectedSlot === s.iso ? 'border-[#16796E] bg-[#16796E] text-white'
-                          : disabled ? 'cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400 line-through'
-                          : s.isCurrent ? 'border-dashed border-yellow-300 bg-yellow-50 text-yellow-800'
-                          : 'border-transparent bg-teal-50 text-teal-700 hover:bg-teal-100'
-                        }`}
-                      >
-                        {s.label}
-                        {s.isCurrent && <div className="text-[10px] opacity-80">(sekarang)</div>}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-            <div className="sticky bottom-0 border-t bg-white p-4">
-              <button
-                disabled={!selectedSlot || isProcessing}
-                onClick={submitReschedule}
-                className="w-full rounded-xl bg-[#16796E] py-3 font-bold text-white hover:bg-[#0F5A52] disabled:bg-gray-300"
-              >
-                {isProcessing ? 'Memproses…' : 'Konfirmasi Reschedule'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal Cancel — flow 2 langkah */}
-      {cancelSched && (() => {
-        const hoursUntil = (new Date(cancelSched.scheduled_at).getTime() - Date.now()) / 3600_000;
-        const willBeHangus = hoursUntil <= 24;
-        const schedDateStr = new Date(cancelSched.scheduled_at).toLocaleString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
-
-        return (
-          <div className="fixed inset-0 z-[110] flex items-end justify-center bg-black/70 p-0 md:items-center md:p-4">
-            <div className="flex w-full flex-col rounded-t-3xl bg-white md:max-w-md md:rounded-3xl">
-              {/* Step 1 — konfirmasi + opsi reschedule (hanya >24 jam) */}
-              {cancelStep === 'confirm' && (
-                <>
-                  <div className="border-b px-5 py-5 text-center">
-                    <div className="mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-gray-500">
-                      <HelpCircle className="h-6 w-6" strokeWidth={2} />
-                    </div>
-                    <div className="text-lg font-bold text-gray-900">Mau diapain sesi ini?</div>
-                    <div className="mt-1 text-sm text-gray-600">{schedDateStr}</div>
-                  </div>
-                  <div className="space-y-2 p-4">
-                    <button
-                      onClick={() => {
-                        const schedCopy = cancelSched;
-                        setCancelSched(null);
-                        openReschedule(schedCopy);
-                      }}
-                      className="flex w-full items-center gap-3 rounded-xl border border-blue-100 bg-blue-50 p-4 text-left transition-colors hover:bg-blue-100"
-                    >
-                      <div className="text-blue-600"><RotateCcw className="h-6 w-6" strokeWidth={2.2} /></div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-blue-900">Ubah jadwalnya saja</div>
-                        <div className="mt-0.5 text-xs text-blue-700">Pindahin ke waktu lain yang kamu bisa</div>
-                      </div>
-                      <div className="text-blue-600">→</div>
-                    </button>
-                    <button
-                      onClick={() => setCancelStep('form')}
-                      className="flex w-full items-center gap-3 rounded-xl border border-red-100 bg-red-50 p-4 text-left transition-colors hover:bg-red-100"
-                    >
-                      <div className="text-red-600"><X className="h-6 w-6" strokeWidth={2.4} /></div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-red-900">Ya, batalkan sesi</div>
-                        <div className="mt-0.5 text-xs text-red-700">Sesi dibatalkan & dibalikin ke kuota</div>
-                      </div>
-                      <div className="text-red-600">→</div>
-                    </button>
-                  </div>
-                  <div className="p-4 pt-0">
-                    <button
-                      onClick={() => { setCancelSched(null); setCancelReason(''); }}
-                      className="w-full rounded-xl bg-gray-100 py-3 font-semibold text-gray-700 hover:bg-gray-200"
-                    >
-                      Kembali
-                    </button>
-                  </div>
-                </>
-              )}
-
-              {/* Step 2 — form alasan + peringatan hangus */}
-              {cancelStep === 'form' && (
-                <>
-                  <div className="border-b px-5 py-4">
-                    <div className="text-lg font-bold text-gray-900">Batalkan Sesi?</div>
-                    <div className="mt-1 text-sm text-gray-600">{schedDateStr}</div>
-                  </div>
-                  <div className="space-y-4 p-5">
-                    {willBeHangus ? (
-                      <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">
-                        <AlertTriangle className="mr-1 inline h-4 w-4 align-[-3px]" strokeWidth={2.2} />
-                        Sesi ini kurang dari 24 jam lagi. Kalau dibatalkan, <b>sesi tetap dihitung terpakai</b> — kuotanya tidak bisa dikembalikan.
-                      </div>
-                    ) : (
-                      <div className="rounded-xl bg-teal-50 p-3 text-sm text-teal-800">
-                        <Check className="mr-1 inline h-4 w-4 align-[-3px]" strokeWidth={2.6} />
-                        Sesi ini masih lebih dari 24 jam lagi, bisa dibatalkan tanpa memotong kuota.
-                      </div>
-                    )}
-                    <div>
-                      <label className="text-xs font-semibold text-gray-700">Alasan Pembatalan *</label>
-                      <textarea
-                        value={cancelReason}
-                        onChange={(e) => setCancelReason(e.target.value)}
-                        rows={3}
-                        placeholder="Contoh: ada keperluan mendadak di kantor"
-                        className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:border-slate-300"
-                      />
-                      <div className="mt-1 text-[11px] text-gray-500">Alasan akan dikirim ke pengajar sebagai notifikasi</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 border-t p-4">
-                    <button
-                      onClick={() => {
-                        // Balik ke step confirm kalau masih tersedia (>24 jam), selain itu tutup
-                        if (hoursUntil > 24) { setCancelStep('confirm'); }
-                        else { setCancelSched(null); setCancelReason(''); }
-                      }}
-                      className="flex-1 rounded-xl bg-gray-100 py-3 font-semibold text-gray-700 hover:bg-gray-200"
-                    >
-                      {hoursUntil > 24 ? '← Kembali' : 'Batal'}
-                    </button>
-                    <button
-                      onClick={submitCancel}
-                      disabled={isProcessing || !cancelReason.trim()}
-                      className={`flex-1 rounded-xl py-3 font-bold text-white ${willBeHangus ? 'bg-red-600 hover:bg-red-700' : 'bg-[#16796E] hover:bg-[#0F5A52]'} disabled:bg-gray-300`}
-                    >
-                      {isProcessing ? '…' : willBeHangus ? 'Batalkan (Hangus)' : 'Batalkan Sesi'}
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-        );
-      })()}
     </main>
   );
 }

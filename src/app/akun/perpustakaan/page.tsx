@@ -6,7 +6,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
+import { supabase, resolveSessionForGate, peekSessionUser } from "@/lib/supabase-client"; // [auth-gate-resilient-v1] [perf:pustaka-peek-gate-v1]
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import LibraryView from "@/components/akun/LibraryView";
 
@@ -21,6 +21,13 @@ function PerpustakaanInner() {
   useEffect(() => {
     if (previewId) { setReady(true); return; }
     let alive = true;
+    /* [perf:pustaka-peek-gate-v1] Identitas dari COOKIE sesi dibaca duluan (sinkron,
+       tanpa jaringan) → isi halaman langsung tampil. Dulu tiap buka Perpustakaan
+       selalu kena spinner dulu sepanjang resolveSessionForGate() menunggu jawaban
+       Auth, padahal 99% kasusnya sesi memang ada. Vonis sebenarnya tetap dihitung
+       di bawah: kalau ternyata tak ada sesi, halaman tetap memantul ke /akun. */
+    const peek = peekSessionUser();
+    if (peek?.id) { setUserId(peek.id); setReady(true); }
     // [auth-gate-resilient-v1] getSession() polos bisa menjawab null sesaat (hard
     // refresh + token tukar, antrean Web Locks lintas-tab) → dulu itu langsung jadi
     // pantulan ke layar masuk alias "keluar akun sendiri". resolveSessionForGate()
@@ -33,6 +40,7 @@ function PerpustakaanInner() {
         router.replace("/akun");
         return;
       }
+      if (uid === peek?.id) return; // vonis sama dgn tebakan cookie → jangan render ulang
       setUserId(uid);
       setReady(true);
     });

@@ -16,8 +16,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
-import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
+import { supabase, resolveSessionForGate, peekSessionUser } from "@/lib/supabase-client"; // [auth-gate-resilient-v1] [perf:grup-peek-gate-v1]
+import StudentShell, { GROUP_NAV_KEY, type AkunTab } from "@/components/akun/StudentShell";
 import StudentGroupChat from "@/components/akun/StudentGroupChat";
 
 export default function GrupKelasPage() {
@@ -52,6 +52,20 @@ export default function GrupKelasPage() {
       return () => { alive = false; };
     }
 
+    /* [perf:grup-peek-gate-v1] Kunjungan berikutnya di tab yang sama tak perlu
+       menunggu Auth + RPC student_group_list() dari nol: kalau cookie sesi masih
+       memegang identitas DAN sidebar sudah pernah memastikan siswa ini punya grup
+       kelas, chat-nya langsung dirender. Pemeriksaan sungguhannya tetap jalan di
+       bawah — kalau ternyata dia bukan (lagi) anggota grup, halaman tetap
+       memantul ke /akun. */
+    let optimistic = false;
+    try {
+      if (peekSessionUser()?.id && sessionStorage.getItem(GROUP_NAV_KEY) === "1") {
+        optimistic = true;
+        setReady(true);
+      }
+    } catch {}
+
     // [auth-gate-resilient-v1] jangan pantulkan user ke layar masuk hanya karena
     // getSession() menjawab null sesaat (lihat resolveSessionForGate).
     resolveSessionForGate().then(async (v) => {
@@ -65,10 +79,12 @@ export default function GrupKelasPage() {
       if (!alive) return;
       // Bukan siswa, atau siswa tanpa grup kelas → halaman ini bukan untuk dia.
       if (error || ((data as unknown[]) ?? []).length === 0) {
+        try { sessionStorage.setItem(GROUP_NAV_KEY, "0"); } catch {}
         router.replace("/akun");
         return;
       }
-      setReady(true);
+      try { sessionStorage.setItem(GROUP_NAV_KEY, "1"); } catch {}
+      if (!optimistic) setReady(true);
     });
     return () => {
       alive = false;

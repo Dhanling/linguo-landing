@@ -21,7 +21,7 @@ import { fetchSkillProgressFor, type SkillProgress } from '@/lib/studentInsights
 import { shareProgress, printProgressCard, periodLabel } from '@/lib/shareProgress';
 import { SkillRow } from '@/components/akun/SkillBar';
 // [nilai-per-pertemuan-v1] nilai kuis tiap pertemuan (schedules.quiz_*)
-import ClassQuizScores, { quizPct } from '@/components/akun/ClassQuizScores';
+import { quizPct } from '@/components/akun/ClassQuizScores';
 import { Mic, Headphones, BookOpen, PenLine, TrendingUp, Video, ClipboardList, MessageCircle, Share2, Printer, Check, type LucideIcon } from 'lucide-react';
 
 const SKILLS: { key: string; label: string; Icon: LucideIcon }[] = [
@@ -256,8 +256,8 @@ export default function ClassProgressTab({ reg, schedules }: { reg: any; schedul
         )}
       </section>
 
-      {/* ── Nilai kuis per pertemuan ── */}
-      <ClassQuizScores schedules={schedules} />
+      {/* [kelas-tab-kuis-v1] Nilai kuis pindah ke tabnya sendiri (tab Kuis) —
+          di sini dulu cuma sepotong grafik tanpa rincian benar/salah. */}
 
       {/* ── Timeline sesi ── */}
       <section>
