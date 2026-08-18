@@ -19,6 +19,12 @@
                            tangannya. Fotonya dibaca AI waktu koreksi.
    Ditambah tombol tampil/sembunyi transliterasi untuk kuis beraksara non-Latin.
 
+   [kuis-lembar-sekaligus-v1] Bagian 2 boleh dikerjakan di KERTAS lalu difoto
+   SEKALI untuk semua soalnya — bukan satu foto per soal. Siswa yang menulis di
+   kertas mengerjakan 10 nomor berturut-turut dalam satu tarikan; memaksanya
+   memotret & mengunggah sepuluh kali (sambil menahan kertas, di 15 menit awal
+   kelas, lewat sinyal HP) membuat sebagian besar jawaban tidak pernah sampai.
+
    [kuis-durasi-pengerjaan-v1] Halaman ini juga yang memegang jamnya. Dua hal yang
    berbeda: BATAS waktu (opsional, dari pengajar — hitung mundur & kirim otomatis
    saat habis) dan LAMA pengerjaan (selalu direkam, ikut terkirim waktu submit).
@@ -38,6 +44,7 @@ import {
   Loader2, CheckCircle2, Send, ClipboardList,
   Languages, Camera, Keyboard, X, ImageIcon,
   ArrowLeft, ArrowRight, ListChecks, Play, HelpCircle, Volume2, Minimize2, Maximize2,
+  FileImage, Trash2, Plus,
 } from "lucide-react";
 import {
   loadPublicQuiz, submitPublicQuiz, uploadHandwriting,
@@ -83,6 +90,15 @@ const TIDAK_TAHU_TEKS = "TIDAK TAHU";
 
 function isTidakTahu(v: any): boolean {
   return !!(v && typeof v === "object" && (v as EssayResponse).tidak_tahu);
+}
+
+/* [kuis-lembar-sekaligus-v1] Bentuk jawaban "ada di lembar bersama". `sheet_no`
+   memakai NOMOR SOAL yang dilihat siswa (i+1) — itu juga nomor yang ia tulis di
+   kertasnya, dan itulah yang dicari pembaca foto di server. `image_url` tetap
+   diisi halaman pertama supaya penyimpan jawaban & halaman hasil yang sudah ada
+   tidak perlu tahu soal lembar sama sekali. */
+function jawabanLembar(urls: string[], i: number): EssayResponse {
+  return { image_url: urls[0], image_urls: urls, sheet: true, sheet_no: i + 1 };
 }
 
 /* [kuis-layar-penuh-v1] Kuis dikerjakan sambil kelas berjalan, sering di HP atau
@@ -149,6 +165,11 @@ export default function QuizTakePage() {
      dan "sedang memeriksa" tidak mungkin terjadi bersamaan. */
   const [step, setStep] = useState(-1);
   const advanceRef = useRef<number | null>(null);
+  /* [kuis-lembar-sekaligus-v1] Halaman foto lembar jawaban bagian 2 (kosong = mode
+     per soal seperti biasa). Disimpan sekali di sini, bukan di tiap soal: satu
+     lembar itu memang milik SELURUH bagian 2, dan menyalinnya ke tiap jawaban
+     baru dilakukan saat dipasang. */
+  const [sheetUrls, setSheetUrls] = useState<string[]>([]);
 
   /* [kuis-durasi-pengerjaan-v1] Jam pengerjaan. `startedAt` = epoch ms saat tombol
      "Mulai Kerjakan" ditekan; `elapsed` cuma turunannya yang berdetak tiap detik.
@@ -289,10 +310,43 @@ export default function QuizTakePage() {
      lebih dulu supaya bisa maju, lalu teringat jawabannya di soal berikutnya. */
   function toggleTidakTahu(i: number) {
     if (isTidakTahu(responses[i])) {
-      setResponses((s) => { const n = { ...s }; delete n[i]; return n; });
+      // Batal "tidak tahu" saat lembar foto terpasang harus mengembalikan soal ini
+      // ke lembar itu — bukan mengosongkannya, karena jawabannya memang ada di sana.
+      const kembali = sheetUrls.length && questions[i] && partOf(questions[i]) === 2
+        ? jawabanLembar(sheetUrls, i)
+        : null;
+      setResponses((s) => {
+        const n = { ...s };
+        if (kembali) n[i] = kembali; else delete n[i];
+        return n;
+      });
       return;
     }
     pickOption(i, { tidak_tahu: true });
+  }
+
+  /* [kuis-lembar-sekaligus-v1] Pasang / lepas lembar foto. Satu foto mengisi
+     SEMUA soal bagian 2 sekaligus — tiap soal menyimpan nomor yang harus dicari
+     di lembar itu, dan pembacanya di server memisahkan per nomor.
+
+     Soal yang sudah dijawab "tidak tahu" TIDAK ditimpa: itu pernyataan sadar
+     siswa, bukan kekosongan yang perlu diisi. */
+  function pasangLembar(urls: string[]) {
+    const idx2 = questions.map((q, i) => [q, i] as const).filter(([q]) => partOf(q) === 2).map(([, i]) => i);
+    setSheetUrls(urls);
+    setResponses((s) => {
+      const n = { ...s };
+      for (const i of idx2) {
+        if (!urls.length) {
+          // Lepas lembar → yang dihapus HANYA jawaban yang memang berasal darinya.
+          if ((n[i] as EssayResponse)?.sheet) delete n[i];
+          continue;
+        }
+        if (isTidakTahu(n[i])) continue;
+        n[i] = jawabanLembar(urls, i);
+      }
+      return n;
+    });
   }
 
   function startQuiz() {
@@ -520,7 +574,7 @@ export default function QuizTakePage() {
                     <span>
                       <b>Bagian 2 · {count2} soal</b> — jawabannya ditulis sendiri.{" "}
                       {quiz?.part2_allow_upload !== false
-                        ? "Boleh diketik langsung, atau ditulis tangan di kertas lalu difoto & diunggah."
+                        ? "Boleh diketik langsung, atau dikerjakan di kertas lalu difoto — cukup SEKALI untuk semua soal bagian ini."
                         : "Ditulis dengan kalimat lengkap."}
                     </span>
                   </li>
@@ -599,7 +653,7 @@ export default function QuizTakePage() {
                   {partOf(cur) === 1
                     ? "Pilih satu jawaban yang paling tepat."
                     : quiz?.part2_allow_upload !== false
-                      ? "Tulis jawabanmu langsung di sini, atau potret tulisan tanganmu lalu unggah."
+                      ? "Tulis jawabanmu langsung di sini, atau kerjakan di kertas lalu foto satu lembar untuk semua soal."
                       : "Tulis jawabanmu dengan kalimat lengkap."}
                 </p>
               </div>
@@ -628,6 +682,20 @@ export default function QuizTakePage() {
               )}
 
               <div className="mt-5">
+                {/* [kuis-lembar-sekaligus-v1] Panel lembar bersama — cuma di bagian 2,
+                    dan cuma kalau pengajar mengizinkan unggahan. Ditaruh DI ATAS
+                    kotak jawaban supaya siswa yang memang menulis di kertas tidak
+                    terlanjur mengetik dulu. */}
+                {partOf(cur) === 2 && quiz?.part2_allow_upload !== false && (
+                  <LembarBersama
+                    token={token}
+                    urls={sheetUrls}
+                    jumlahSoal={count2}
+                    adaKetikan={questions.some((q, i) =>
+                      partOf(q) === 2 && !(responses[i] as EssayResponse)?.sheet && isAnswered(responses[i]))}
+                    onChange={pasangLembar}
+                  />
+                )}
                 {isMC(cur) ? (
                   <div className="grid gap-3">
                     {cur.options.map((opt, oi) => {
@@ -674,6 +742,20 @@ export default function QuizTakePage() {
                   <p className="rounded-2xl border-2 border-dashed border-slate-300 px-4 py-6 text-center text-base font-semibold text-slate-500">
                     Kamu menjawab <b className="text-slate-700">tidak tahu</b> untuk soal ini.
                   </p>
+                ) : sheetUrls.length > 0 && partOf(cur) === 2 ? (
+                  /* Lembar terpasang: kotak jawaban diganti penanda. Menampilkan
+                     kotak ketik di sini berarti dua jawaban hidup bersamaan untuk
+                     soal yang sama, dan yang dinilai server cuma satu. */
+                  <div className="rounded-2xl border-2 px-4 py-5 text-center"
+                    style={{ borderColor: BRAND, background: "#f0fdfa" }}>
+                    <FileImage className="mx-auto h-7 w-7" style={{ color: BRAND }} />
+                    <p className="mt-1.5 text-base font-bold text-slate-700">
+                      Jawaban nomor {step + 1} dibaca dari lembar fotomu
+                    </p>
+                    <p className="mt-0.5 text-[12.5px] text-slate-500">
+                      Pastikan di kertasmu jawaban ini ditandai <b>nomor {step + 1}</b>.
+                    </p>
+                  </div>
                 ) : partOf(cur) === 2 && quiz?.part2_allow_upload !== false ? (
                   /* `key` per soal: pilihan ketik/foto disimpan di dalam komponen,
                      dan tanpa remount soal berikutnya mewarisi tab soal sebelumnya
@@ -963,7 +1045,7 @@ function KuisNavBar({
    daripada tidak ada tombolnya. */
 function TombolDengar({ teks, lang, besar }: { teks?: string | null; lang: string | null; besar?: boolean }) {
   const [sibuk, setSibuk] = useState(false);
-  const bisa = !!lang && !!teksUntukTts(teks);
+  const bisa = !!lang && !!teksUntukTts(teks, lang);
   if (!bisa) return null;
   const ukuran = besar ? "h-10 w-10" : "h-9 w-9";
   return (
@@ -1047,6 +1129,125 @@ function TranslitToggle({ on, onToggle }: { on: boolean; onToggle: () => void })
         {on ? "TAMPIL" : "SEMBUNYI"}
       </span>
     </button>
+  );
+}
+
+/* [kuis-lembar-sekaligus-v1] Satu lembar foto untuk SELURUH bagian 2.
+ *
+ * Jalur foto per soal tetap ada (Part2Answer) — yang ini untuk cara kerja yang
+ * sebenarnya paling sering dipakai: siswa menulis nomor 11–20 di satu kertas,
+ * lalu memotretnya sekali. Sepuluh unggahan terpisah untuk satu kertas yang sama
+ * bukan cuma merepotkan; tiap unggahan adalah satu kesempatan gagal (sinyal HP,
+ * foto kepilih salah, waktu kuis keburu habis), dan yang hilang adalah jawaban
+ * yang sudah benar-benar dikerjakan siswa.
+ *
+ * Halaman boleh lebih dari satu (kertas bolak-balik / tulisan besar), dibatasi 4:
+ * di atas itu hampir pasti salah unggah, dan tiap halaman ikut masuk ke panggilan
+ * pembacaan di server.
+ */
+const MAKS_HALAMAN = 4;
+
+function LembarBersama({
+  token, urls, jumlahSoal, adaKetikan, onChange,
+}: {
+  token: string;
+  urls: string[];
+  jumlahSoal: number;
+  /** Ada jawaban bagian 2 yang sudah diketik siswa? Dipakai untuk memperingatkan. */
+  adaKetikan: boolean;
+  onChange: (urls: string[]) => void;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  function pilihFile() {
+    // Peringatan diberikan SEBELUM kamera terbuka: sesudah foto diambil, siswa
+    // sudah terlanjur merasa pekerjaannya selesai.
+    if (!urls.length && adaKetikan &&
+      !window.confirm("Jawaban bagian ini yang sudah kamu ketik akan diganti oleh lembar foto. Lanjut?")) return;
+    fileRef.current?.click();
+  }
+
+  async function handleFile(file?: File | null) {
+    if (!file) return;
+    setUploading(true);
+    const r = await uploadHandwriting(token, file);
+    setUploading(false);
+    if (r.error) window.alert("Gagal mengunggah: " + r.error);
+    else if (r.url) onChange([...urls, r.url].slice(0, MAKS_HALAMAN));
+    if (fileRef.current) fileRef.current.value = "";
+  }
+
+  const input = (
+    <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden"
+      onChange={(e) => handleFile(e.target.files?.[0])} />
+  );
+
+  if (!urls.length) {
+    return (
+      <div className="mb-3">
+        <button type="button" onClick={pilihFile} disabled={uploading}
+          className="flex w-full items-center gap-3 rounded-2xl border-2 border-dashed px-4 py-3 text-left transition disabled:opacity-60"
+          style={{ borderColor: "#cbd5e1", background: "#f8fafc" }}>
+          {uploading
+            ? <Loader2 className="h-5 w-5 shrink-0 animate-spin" style={{ color: BRAND }} />
+            : <FileImage className="h-5 w-5 shrink-0" style={{ color: BRAND }} />}
+          <span className="min-w-0 flex-1">
+            <span className="block text-[13.5px] font-bold text-slate-700">
+              {uploading ? "Mengunggah lembar…" : "Kerjakan di kertas? Foto sekali untuk semua soal"}
+            </span>
+            <span className="block text-[11.5px] text-slate-500">
+              Satu foto lembar jawaban menutup {jumlahSoal} soal bagian ini — tak perlu unggah per nomor.
+            </span>
+          </span>
+        </button>
+        {input}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mb-3 rounded-2xl border-2 p-3" style={{ borderColor: BRAND, background: "#f0fdfa" }}>
+      <div className="flex items-center gap-2">
+        <FileImage className="h-4 w-4 shrink-0" style={{ color: BRAND }} />
+        <p className="min-w-0 flex-1 text-[13px] font-bold text-slate-700">
+          Lembar jawabanmu · {urls.length} halaman
+        </p>
+        <button type="button"
+          onClick={() => {
+            if (window.confirm("Hapus lembar foto ini? Jawaban bagian 2 kembali diisi satu per satu.")) onChange([]);
+          }}
+          className="flex shrink-0 items-center gap-1 rounded-lg border border-slate-300 bg-white px-2 py-1 text-[11.5px] font-semibold text-slate-600">
+          <Trash2 className="h-3.5 w-3.5" /> Hapus
+        </button>
+      </div>
+
+      <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+        {urls.map((u, i) => (
+          <div key={u} className="relative shrink-0">
+            <img src={u} alt={`Lembar halaman ${i + 1}`}
+              className="h-28 w-24 rounded-lg border border-slate-200 bg-white object-cover" />
+            <span className="absolute bottom-1 left-1 rounded bg-slate-900/70 px-1.5 text-[10px] font-bold text-white">
+              hal {i + 1}
+            </span>
+          </div>
+        ))}
+        {urls.length < MAKS_HALAMAN && (
+          <button type="button" onClick={pilihFile} disabled={uploading}
+            className="grid h-28 w-24 shrink-0 place-items-center rounded-lg border-2 border-dashed border-slate-300 bg-white text-[11px] font-semibold text-slate-500 disabled:opacity-60">
+            {uploading
+              ? <Loader2 className="h-5 w-5 animate-spin" style={{ color: BRAND }} />
+              : <span className="flex flex-col items-center gap-1"><Plus className="h-5 w-5" /> Tambah<br />halaman</span>}
+          </button>
+        )}
+      </div>
+
+      <p className="mt-1 text-[11px] font-medium text-slate-600">
+        Semua {jumlahSoal} soal bagian 2 dibaca dari lembar ini. Beri <b>nomor soal</b> di tiap jawaban
+        &amp; pastikan tulisannya terbaca jelas.
+      </p>
+      {input}
+    </div>
   );
 }
 

@@ -54,7 +54,19 @@ export interface PublicQuiz {
  *  jawaban, bukan diketik langsung. Ikut tersimpan ke `quiz_answers.response`
  *  (jsonb, jadi tak perlu kolom baru) dan ditampilkan sebagai penanda di hasil;
  *  `grade-quiz` hanya membaca `text`/`image_url`, jadi nilainya tak terpengaruh. */
-export interface EssayResponse { text?: string; image_url?: string; tidak_tahu?: boolean; ime?: boolean }
+/** [kuis-lembar-sekaligus-v1] `sheet: true` = jawaban soal ini ada di SATU lembar
+ *  foto yang dipakai bersama seluruh soal bagian 2 (`image_urls` = halamannya,
+ *  `sheet_no` = nomor soal yang harus dicari di lembar itu). `image_url` tetap
+ *  diisi halaman pertama supaya penyimpan & halaman hasil yang lama tak berubah. */
+export interface EssayResponse {
+  text?: string;
+  image_url?: string;
+  image_urls?: string[];
+  sheet?: boolean;
+  sheet_no?: number;
+  tidak_tahu?: boolean;
+  ime?: boolean;
+}
 
 /** [kuis-rapor-grafik-v1] Label materi + penjelasan "kenapa", satu per soal. */
 export interface QuizPerQuestion {

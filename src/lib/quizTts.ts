@@ -44,28 +44,56 @@ function petikan(teks: string): string[] {
   return out.filter(Boolean);
 }
 
-/* Tanpa kutipan pun soalnya bisa berbahasa Indonesia seluruhnya ("Manakah kata
-   yang tepat?"). Kata-kata di bawah ini praktis mustahil muncul di kalimat bahasa
-   target mana pun yang punya suara Chirp, jadi kehadirannya dipakai sebagai bukti
-   "ini kalimat pengantar" — klausa itu tidak dibunyikan. Sengaja tidak memakai
-   deteksi bahasa: salah bunyi (Indonesia dibaca dengan fonem Spanyol) jauh lebih
-   merusak daripada tombol yang kadang tidak muncul. */
-const PENANDA_ID = /\b(manakah|apakah|bagaimana|mengapa|yang|berikut|kalimat|jawaban|terjemahkan|tuliskan|tulis|pilihlah|pilih|artinya|bahasa|paling|tepat|sesuai|adalah|dengan|untuk|tidak|saya|kamu|sebagai|dalam|atau|ini|itu)\b/i;
+/* [kuis-tts-bahasa-target-v1] Yang dibunyikan HANYA bahasa yang sedang dipelajari.
+   Sebelumnya penyaringnya cuma daftar kata tanya ("manakah", "yang", "tepat"…),
+   jadi pilihan jawaban yang isinya terjemahan Indonesia — "Dia selalu bepergian
+   di musim dingin." — lolos dan dibacakan dengan suara Spanyol. Bunyinya bukan
+   sekadar aneh: siswa A1 memakai tombol ini justru untuk MENIRU pelafalan, dan
+   yang ia tirukan jadi bahasa Indonesia berlogat asing.
 
-/** Bagian teks yang layak dibunyikan; string kosong = tak ada yang dibacakan. */
-export function teksUntukTts(teks?: string | null): string {
+   Caranya tetap daftar kata, bukan deteksi bahasa otomatis: salah bunyi jauh
+   lebih merusak daripada tombol yang sesekali tidak muncul. Isinya kata-kata
+   Indonesia yang praktis mustahil muncul di bahasa Chirp mana pun — kata yang
+   kembar dengan bahasa lain SENGAJA tidak dimasukkan ("di" & "para" milik
+   Italia/Spanyol, "kami"/"kita" milik Tagalog, "mau" milik Portugis), karena satu
+   kata kembar sudah cukup membungkam seluruh kalimat bahasa target. */
+const KATA_ID = /\b(manakah|apakah|bagaimana|mengapa|kenapa|berapa|siapa|kapan|yang|berikut|berdasarkan|kalimat|jawaban|jawablah|terjemahkan|terjemahan|tuliskan|tulislah|tulis|isilah|lengkapi|pilihlah|pilih|artinya|berarti|maksud|ungkapan|bahasa|kata|soal|teks|gambar|paling|tepat|sesuai|benar|salah|adalah|akan|sudah|belum|dengan|untuk|dari|pada|dalam|tidak|bukan|jangan|saya|aku|kamu|anda|mereka|ini|itu|apa|karena|kalau|jika|ketika|selalu|sering|jarang|kadang|pernah|sedang|masih|juga|hanya|sangat|lebih|bisa|dapat|harus|ingin|suka|tahu|ada|orang|hari|malam|pagi|siang|musim|dingin|panas|hujan|makan|minum|pergi|bepergian|datang|pulang|rumah|sekolah|kerja|bekerja|jalan|besar|kecil|baik|buruk|banyak|sedikit|semua|setiap|antara|tentang|sebagai|seperti|namun|tetapi|tapi|supaya|agar|sehingga|oleh|kepada|terhadap|atau)\b/i;
+
+/* Soal juga sering memakai bahasa Inggris sebagai pengantar ("Terjemahkan ke
+   dalam bahasa Spanyol: 'I never speak Spanish.'") — kalimat yang dikutip itu
+   bahasa SUMBER, bukan bahasa target, jadi ia pun tak boleh dibunyikan dengan
+   suara Spanyol. Penyaring ini mati sendiri kalau bahasa yang dipelajari memang
+   Inggris. Kata yang kembar dengan bahasa Eropa lain dibuang juga: "is"/"was"
+   (Belanda/Jerman), "am" (Jerman), "can" (Turki), "has" (Spanyol), "will"
+   (Jerman), "do" (Portugis). */
+const KATA_EN = /\b(the|are|were|what|which|when|where|why|who|whom|whose|never|always|often|sometimes|usually|speak|speaks|spoke|say|says|said|go|goes|went|going|come|comes|make|makes|take|takes|give|gives|you|she|they|we|it|my|your|his|her|their|our|this|that|these|those|there|here|and|but|because|if|with|without|from|about|into|would|could|should|shall|have|had|not|don't|doesn't|didn't|isn't|aren't|please|thank|thanks|hello|very|more|most|some|any|every|people|day|night|morning|winter|summer|travel|water|food)\b/i;
+
+/** Potongan teks ini kelihatan BUKAN bahasa yang sedang dipelajari? */
+function bukanBahasaTarget(potongan: string, kode: string): boolean {
+  if (KATA_ID.test(potongan)) return true;
+  return kode !== "en" && KATA_EN.test(potongan);
+}
+
+/** Bagian teks yang layak dibunyikan; string kosong = tak ada yang dibacakan.
+ *  @param kode kode bahasa target — menentukan penyaring mana yang berlaku. */
+export function teksUntukTts(teks?: string | null, kode?: string | null): string {
   const t = String(teks ?? "").trim();
   if (!t) return "";
+  const k = (kode || "").trim().toLowerCase();
   if (KUTIP.test(t)) {
-    const p = petikan(t);
+    // Ada kutipan → isi kutipan itulah kandidatnya. Kalau ternyata kutipannya pun
+    // bahasa pengantar, hasilnya kosong — TIDAK jatuh kembali ke seluruh kalimat,
+    // karena kalimat di luar kutipan sudah pasti bahasa pengantar.
+    const p = petikan(t).filter((x) => !bukanBahasaTarget(x, k));
     if (p.length) return p.join(". ");
+    if (petikan(t).length) return "";
   }
   // Perintah dan kalimat targetnya sering dipisah titik dua ("Terjemahkan: …"),
   // jadi disaring per klausa, bukan seluruh teks sekaligus.
   const sisa = t
     .split(/[:\n]+/)
-    .map((k) => k.trim())
-    .filter((k) => k && !PENANDA_ID.test(k));
+    .map((k2) => k2.trim())
+    .filter((k2) => k2 && !bukanBahasaTarget(k2, k));
   return sisa.join(". ");
 }
 
@@ -92,8 +120,8 @@ export function hentikanTts() {
  */
 export async function ucapkan(teksMentah?: string | null, kode?: string | null): Promise<boolean> {
   if (typeof window === "undefined") return false;
-  const teks = teksUntukTts(teksMentah);
   const lang = (kode || "").trim().toLowerCase();
+  const teks = teksUntukTts(teksMentah, lang);
   if (!teks || !bisaTts(lang)) return false;
 
   const kunci = `${lang}|${teks}`;

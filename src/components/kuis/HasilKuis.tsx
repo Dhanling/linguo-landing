@@ -122,6 +122,9 @@ function jawabanSiswa(q: PublicQuizQuestion, v: unknown): string {
     if (e.tidak_tahu) return "Tidak tahu";
     const t = String(e.text ?? "").trim();
     if (t) return t;
+    // [kuis-lembar-sekaligus-v1] Lembar bersama dibedakan dari foto per soal: yang
+    // dilihat pengajar/siswa di sini bukan satu foto berisi jawaban ini saja.
+    if (e.sheet) return "(dijawab di lembar foto bersama)";
     if (e.image_url) return "(dijawab lewat foto tulisan tangan)";
     return "";
   }
