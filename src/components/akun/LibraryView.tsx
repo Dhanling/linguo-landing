@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
-  fetchProductLangs, usableLangs, type ProductLang,
+  fetchProductLangs, usableLangs, materialReady, type ProductLang,
 } from "@/lib/digitalAccess";
 /* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
 import { parseYouTube } from "@/lib/youtube";
@@ -617,6 +617,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               p={p}
               prog={progFor(p, byLang)}
               langCount={usableLangs(prodLangs[p.digital_products.id]).length}
+              /* [materi-belum-siap-v1] katakan di muka, jangan tunggu diklik */
+              ready={materialReady(p.digital_products, prodLangs[p.digital_products.id])}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
@@ -633,6 +635,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               p={p}
               prog={progFor(p, byLang)}
               langCount={usableLangs(prodLangs[p.digital_products.id]).length}
+              /* [materi-belum-siap-v1] katakan di muka, jangan tunggu diklik */
+              ready={materialReady(p.digital_products, prodLangs[p.digital_products.id])}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
@@ -704,9 +708,11 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
 }
 
 function ProductCard({
-  p, prog, busy, bookmarked, langCount = 0, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
+  /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
+  ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;
@@ -749,6 +755,15 @@ function ProductCard({
               : `${prog ? `${prog.total} pelajaran` : prod.modules_count ? `${prod.modules_count} modul` : "Materi video"}`}
         </p>
 
+        {/* [materi-belum-siap-v1] Akses sudah dibeli, materinya belum dipasang.
+            Dikatakan di kartu supaya tidak terbaca sebagai produk rusak waktu
+            tombolnya ditekan dan cuma keluar pesan error. */}
+        {!ready && !expired && (
+          <p className="rounded-lg bg-amber-50 px-2.5 py-1.5 text-[11px] font-semibold text-amber-700">
+            Materi sedang disiapkan tim Linguo — akses kamu tetap aman.
+          </p>
+        )}
+
         {prog && (
           <div className="flex items-center gap-2">
             <div className="flex-1"><ProgressBar pct={prog.pct} /></div>
@@ -766,10 +781,12 @@ function ProductCard({
             <button
               onClick={onOpen}
               disabled={busy}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98] disabled:opacity-50"
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition active:scale-[0.98] disabled:opacity-50 ${
+                ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"
+              }`}
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
-              {label}
+              {ready ? label : "Belum siap"}
             </button>
           )}
         </div>
@@ -779,9 +796,11 @@ function ProductCard({
 }
 
 function ProductRow({
-  p, prog, busy, bookmarked, langCount = 0, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
+  /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
+  ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
 }) {
   const prod = p.digital_products;
@@ -807,6 +826,10 @@ function ProductRow({
         </div>
         <h3 className="truncate text-[15px] font-extrabold text-[#12172B]">{prod.title}</h3>
         <p className="text-[12px] font-medium text-slate-400">Dibeli {fmtDate(p.created_at)}</p>
+        {/* [materi-belum-siap-v1] */}
+        {!ready && !expired && (
+          <p className="mt-1 text-[11px] font-semibold text-amber-600">Materi sedang disiapkan tim Linguo</p>
+        )}
       </div>
       <div className="hidden sm:block"><AccessChip a={a} /></div>
       <button
@@ -818,9 +841,9 @@ function ProductRow({
       {expired ? (
         <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]"><Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang</button>
       ) : (
-        <button onClick={onOpen} disabled={busy} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] disabled:opacity-50">
+        <button onClick={onOpen} disabled={busy} className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition disabled:opacity-50 ${ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"}`}>
           {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
-          {verb}
+          {ready ? verb : "Belum siap"}
         </button>
       )}
     </div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
-  fetchProductLangs, usableLangs, type ProductLang,
+  fetchProductLangs, usableLangs, materialReady, type ProductLang,
 } from "@/lib/digitalAccess";
 /* linguo-patch:produk-digital-link-v1 — playlist YouTube diputar di dashboard, bukan tab baru */
 import { parseYouTube } from "@/lib/youtube";
@@ -244,6 +244,13 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
                       ❌ Akses Berakhir
                     </span>
                   )}
+                  {/* [materi-belum-siap-v1] linknya belum dipasang admin — bilang di
+                      muka, jangan biarkan siswa mengetuk tombol lalu ketemu error. */}
+                  {!expired && !materialReady(product, prodLangs[product.id]) && (
+                    <span className="text-xs font-medium px-2 py-0.5 rounded bg-amber-50 text-amber-700">
+                      Materi sedang disiapkan
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1 truncate">{product.title}</h3>
                 <p className="text-xs text-gray-500">
@@ -266,14 +273,20 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
                   <button
                     onClick={() => handleAccess(p)}
                     disabled={downloading === p.id || !p.access_granted}
-                    className="bg-teal-600 hover:bg-teal-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors"
+                    className={`disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 rounded-xl transition-colors ${
+                      materialReady(product, prodLangs[product.id])
+                        ? "bg-teal-600 hover:bg-teal-700"
+                        : "bg-slate-400 hover:bg-slate-500"
+                    }`}
                   >
                     {downloading === p.id
                       ? "..."
-                      : (() => {
-                          const v = accessVerb(product);
-                          return v === "Tonton" ? "▶️ Tonton" : v === "Buka" ? "🔗 Buka" : "📥 Download";
-                        })()}
+                      : !materialReady(product, prodLangs[product.id])
+                        ? "Belum siap"
+                        : (() => {
+                            const v = accessVerb(product);
+                            return v === "Tonton" ? "▶️ Tonton" : v === "Buka" ? "🔗 Buka" : "📥 Download";
+                          })()}
                   </button>
                 )}
               </div>

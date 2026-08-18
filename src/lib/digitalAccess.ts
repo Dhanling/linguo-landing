@@ -102,6 +102,27 @@ export async function fetchProductLangs(
   return out;
 }
 
+/**
+ * [materi-belum-siap-v1] Materinya benar-benar bisa dibuka sekarang?
+ *
+ * Guard lama sudah menghentikan siswa mendarat di beranda YouTube, tapi baru
+ * SETELAH tombolnya ditekan — jadi produk yang linknya belum dipasang tetap
+ * tampil normal, dan yang membeli baru tahu setelah diklik. Dipakai kartu &
+ * baris Perpustakaan untuk mengatakannya di muka.
+ *
+ * `langs` = baris digital_product_langs milik produk itu (paket multi-bahasa);
+ * kosong/undefined berarti produk satu materi.
+ */
+export function materialReady(p: ProductLink, langs?: ProductLang[] | null): boolean {
+  if (langs && langs.length > 0) return usableLangs(langs).length > 0;
+  const link = externalLinkFor(p);
+  if (link) return !isPlaceholderLink(link);
+  // Tanpa link eksternal: e-learning jatuh ke modul LMS internal, e-book ke
+  // berkas storage. Dua-duanya punya isi selama kolomnya tidak kosong.
+  if (p.type === "elearning") return true;
+  return isStoragePath(p.file_url);
+}
+
 /** YouTube → "Tonton", link lain / drive → "Buka", file storage → "Download". */
 export function accessVerb(p: ProductLink): "Tonton" | "Buka" | "Download" {
   const link = externalLinkFor(p);
