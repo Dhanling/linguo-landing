@@ -18,7 +18,7 @@ import { regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conve
 // wa-quick-program-lang-sync-v1 — aturan bahasa × program (sumber tunggal)
 import { REGULER_LANGS, isProgramLangAllowed, langsForProgram, programsForLang } from "@/lib/programLanguages";
 // [daftar-page-funnel-v1] funnel pendaftaran sekarang HALAMAN (/daftar/...), bukan modal.
-import { programSlugOf, langSlugOf, langFromSlug } from "@/lib/funnelRouting";
+import { programSlugOf, langSlugOf, langFromSlug, kursusSlugOf } from "@/lib/funnelRouting";
 
 /**
  * Tautan ke funnel pendaftaran.
@@ -1579,14 +1579,24 @@ function LanguageStrip({className=""}:{className?:string}) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         className="overflow-x-hidden flex items-center gap-6 lg:gap-10 py-4 px-2">
-        {LANGUAGES.map((lang, i) => (
-          <div key={i}
-            onClick={() => { window.location.href = daftarHref("Kelas Private", lang); }}
-            className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
-            <RectFlag code={getFlagCode(lang)} h={28} className="shadow-sm" />
-            <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
-          </div>
-        ))}
+        {LANGUAGES.map((lang, i) => {
+          // Strip ini dulu melempar ke funnel pendaftaran. Yang dicari orang saat
+          // mengklik bendera adalah halaman bahasanya — /kursus/bahasa-<slug> —
+          // jadi ke situ, dan di TAB BARU supaya beranda yang sedang dibaca tidak
+          // hilang. Tiga bahasa di daftar ini (Malay, Swahili, Bengali) belum
+          // punya landing sendiri: kursusSlugOf() mengembalikan null, dan
+          // mereka tetap ke funnel /daftar di tab yang sama seperti sebelumnya.
+          const kursusSlug = kursusSlugOf(lang);
+          const href = kursusSlug ? `/kursus/bahasa-${kursusSlug}` : daftarHref("Kelas Private", lang);
+          return (
+            <a key={i} href={href}
+              {...(kursusSlug ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="flex items-center gap-2.5 shrink-0 transition-transform duration-150 ease-out hover:-translate-y-2 cursor-pointer">
+              <RectFlag code={getFlagCode(lang)} h={28} className="shadow-sm" />
+              <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">{lang}</p>
+            </a>
+          );
+        })}
       </div>
 
       {/* Next button */}
@@ -1792,7 +1802,12 @@ export default function Home() {
     {/* LANGUAGE FLAG STRIP — flat white, seamless */}
     <Reveal>
     <section className="bg-white pt-8 pb-2">
-      <h2 className="font-heading text-xl sm:text-2xl font-bold text-center mb-4">Tersedia <span className="text-[#1A9E9E]">60+ Bahasa</span></h2>
+      <div className="flex items-center justify-center gap-3 mb-4 px-6">
+        <h2 className="font-heading text-xl sm:text-2xl font-bold text-center">Tersedia <span className="text-[#1A9E9E]">60+ Bahasa</span></h2>
+        <a href="/kursus" className="inline-flex items-center gap-1 shrink-0 rounded-full border border-[#1A9E9E]/30 px-3 py-1 text-xs sm:text-sm font-semibold text-[#1A9E9E] hover:bg-[#1A9E9E]/5 transition-colors">
+          Lihat semua <ArrowRight className="w-3.5 h-3.5" />
+        </a>
+      </div>
       <div className="bg-white mx-6 lg:mx-12 overflow-hidden"><LanguageStrip /></div>
     </section>
     </Reveal>
