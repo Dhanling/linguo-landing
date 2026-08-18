@@ -141,6 +141,16 @@ function EtpIcon({ program, className = "" }: { program: EtpProgram; className?:
 
 const WA_NUMBER = "6282116859493";
 
+// Info batch berikutnya. Ditulis manual karena baris batch-nya belum dibuat di
+// database — begitu batch September masuk `regular_batches`, banner ini otomatis
+// hilang (cuma tampil kalau tak ada satu pun batch yang belum mulai).
+const NEXT_BATCH = {
+  label: "Batch September",
+  regOpen: "19 Agustus",
+  regClose: "30 Agustus 2026",
+  startNote: "Kelas mulai September 2026",
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers
 // ─────────────────────────────────────────────────────────────────────────────
@@ -167,6 +177,25 @@ function getCountdown(dateStr: string): { label: string; color: string } {
   if (diff <= 3)  return { label: `${diff} hari lagi`, color: "text-red-500 font-semibold" };
   if (diff <= 7)  return { label: `${diff} hari lagi`, color: "text-amber-500 font-medium" };
   return { label: `${diff} hari lagi`, color: "text-slate-400" };
+}
+
+// Batch yang tanggal mulainya sudah lewat = pendaftaran ditutup. Dibandingkan
+// per hari (bukan per jam) supaya batch yang mulai hari ini masih bisa didaftar.
+function isBatchClosed(dateStr: string): boolean {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const target = new Date(dateStr);
+  target.setHours(0, 0, 0, 0);
+  return target.getTime() < now.getTime();
+}
+
+function buildNextBatchWALink(): string {
+  const text = [
+    `Halo Linguo! Saya mau ikut ${NEXT_BATCH.label} Kelas Reguler.`,
+    ``,
+    `Tolong info bahasa & jadwal yang dibuka, plus cara daftarnya. Terima kasih!`,
+  ].join("\n");
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
 function buildWAMessage(batch: Batch): string {
@@ -350,6 +379,10 @@ export default function JadwalKelasRegulerClient({
         return matchesSearch && matchesLang;
       })
       .sort((a, b) => {
+        // Batch yang pendaftarannya ditutup selalu turun ke bawah daftar
+        const closedA = isBatchClosed(a.start_date) ? 1 : 0;
+        const closedB = isBatchClosed(b.start_date) ? 1 : 0;
+        if (closedA !== closedB) return closedA - closedB;
         const slotsA = a.max_capacity - a.actual_enrolled;
         const slotsB = b.max_capacity - b.actual_enrolled;
         if (slotsB !== slotsA) return slotsB - slotsA; // slot terbanyak dulu
@@ -418,6 +451,57 @@ export default function JadwalKelasRegulerClient({
                 <MessageCircle className="h-4 w-4" />
                 Daftar
               </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── BANNER PENDAFTARAN DITUTUP + BATCH BERIKUTNYA ── */}
+      {activeTab === "reguler" && !nearestBatch && batches.length > 0 && (
+        <section className="px-4 pb-4 max-w-6xl mx-auto">
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 md:p-6">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-6 w-6 shrink-0 text-amber-600" />
+              <div>
+                <div className="text-base md:text-lg font-bold text-amber-900">
+                  Pendaftaran batch berjalan sudah ditutup
+                </div>
+                <p className="text-sm text-amber-800 mt-1">
+                  Semua kelas di daftar bawah sudah mulai, jadi pendaftarannya ditutup.
+                  Kamu bisa ikut batch berikutnya.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-teal-200 bg-white p-4 md:p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 text-[11px] font-bold uppercase tracking-wide">
+                  <CalendarCheck className="h-3.5 w-3.5" />
+                  Batch berikutnya
+                </span>
+                <div className="text-lg md:text-xl font-bold text-slate-900 mt-2">
+                  {NEXT_BATCH.label}
+                </div>
+                <div className="text-sm text-slate-700 mt-1">
+                  Pendaftaran dibuka{" "}
+                  <span className="font-bold text-teal-700">
+                    {NEXT_BATCH.regOpen} &ndash; {NEXT_BATCH.regClose}
+                  </span>
+                </div>
+                <div className="text-xs text-slate-500 mt-0.5 inline-flex items-center gap-1.5">
+                  <CalendarDays className="h-3.5 w-3.5" />
+                  {NEXT_BATCH.startNote}
+                </div>
+              </div>
+              <a
+                href={buildNextBatchWALink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl bg-teal-600 text-white text-sm font-bold hover:bg-teal-700 transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Amankan Slot {NEXT_BATCH.label}
+              </a>
             </div>
           </div>
         </section>
@@ -551,6 +635,7 @@ export default function JadwalKelasRegulerClient({
                       <tbody>
                         {filteredBatches.map((batch) => {
                           const slotsLeft = batch.max_capacity - batch.actual_enrolled;
+                          const closed = isBatchClosed(batch.start_date);
                           const slotBgClass =
                             slotsLeft <= 3
                               ? "bg-red-100 text-red-700"
@@ -562,7 +647,9 @@ export default function JadwalKelasRegulerClient({
                             <tr
                               key={batch.id}
                               id={batch.batch_code}
-                              className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors scroll-mt-20"
+                              className={`border-b border-slate-100 transition-colors scroll-mt-20 ${
+                                closed ? "bg-slate-50/70 opacity-70" : "hover:bg-slate-50/50"
+                              }`}
                             >
                               <td className="py-4 px-4">
                                 <div className="flex items-center gap-2">
@@ -594,19 +681,31 @@ export default function JadwalKelasRegulerClient({
                                 <div className="text-[10px] text-slate-500">/siswa/batch</div>
                               </td>
                               <td className="py-4 px-4 text-center">
-                                <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold ${slotBgClass}`}>
-                                  {slotsLeft} slot
-                                </span>
+                                {closed ? (
+                                  <span className="inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-200 text-slate-600">
+                                    Ditutup
+                                  </span>
+                                ) : (
+                                  <span className={`inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold ${slotBgClass}`}>
+                                    {slotsLeft} slot
+                                  </span>
+                                )}
                               </td>
                               <td className="py-4 px-4 text-right">
-                                <button
-                                  type="button"
-                                  onClick={() => setRegisterBatch(batch)}
-                                  className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition-colors"
-                                >
-                                  <MessageCircle className="h-3.5 w-3.5" />
-                                  Daftar
-                                </button>
+                                {closed ? (
+                                  <span className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-slate-100 text-slate-400 text-xs font-semibold cursor-not-allowed">
+                                    Pendaftaran ditutup
+                                  </span>
+                                ) : (
+                                  <button
+                                    type="button"
+                                    onClick={() => setRegisterBatch(batch)}
+                                    className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition-colors"
+                                  >
+                                    <MessageCircle className="h-3.5 w-3.5" />
+                                    Daftar
+                                  </button>
+                                )}
                               </td>
                             </tr>
                           );
@@ -620,12 +719,17 @@ export default function JadwalKelasRegulerClient({
                   <div className="md:hidden space-y-3">
                     {filteredBatches.map((batch) => {
                       const slotsLeft = batch.max_capacity - batch.actual_enrolled;
+                      const closed = isBatchClosed(batch.start_date);
                       const waLink = `https://wa.me/${WA_NUMBER}?text=${buildWAMessage(batch)}`;
                       return (
                         <div
                           key={batch.id}
                           id={batch.batch_code}
-                          className="bg-white rounded-2xl border border-slate-200 p-4 scroll-mt-20"
+                          className={`rounded-2xl border p-4 scroll-mt-20 ${
+                            closed
+                              ? "bg-slate-50 border-slate-200 opacity-75"
+                              : "bg-white border-slate-200"
+                          }`}
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-2">
@@ -637,14 +741,16 @@ export default function JadwalKelasRegulerClient({
                             </div>
                             <span
                               className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
-                                slotsLeft <= 3
+                                closed
+                                  ? "bg-slate-200 text-slate-600"
+                                  : slotsLeft <= 3
                                   ? "bg-red-100 text-red-700"
                                   : slotsLeft <= 5
                                   ? "bg-amber-100 text-amber-700"
                                   : "bg-emerald-100 text-emerald-700"
                               }`}
                             >
-                              {slotsLeft} slot tersisa
+                              {closed ? "Pendaftaran ditutup" : `${slotsLeft} slot tersisa`}
                             </span>
                           </div>
                           <div className="grid grid-cols-2 gap-2 text-xs mb-3">
@@ -677,14 +783,20 @@ export default function JadwalKelasRegulerClient({
                               </div>
                               <div className="text-[10px] text-slate-500">/siswa/batch</div>
                             </div>
-                            <button
-                              type="button"
-                              onClick={() => setRegisterBatch(batch)}
-                              className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors"
-                            >
-                              <MessageCircle className="h-4 w-4" />
-                              Daftar
-                            </button>
+                            {closed ? (
+                              <span className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-slate-100 text-slate-400 text-sm font-semibold cursor-not-allowed">
+                                Ditutup
+                              </span>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => setRegisterBatch(batch)}
+                                className="inline-flex items-center gap-1.5 h-10 px-4 rounded-xl bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition-colors"
+                              >
+                                <MessageCircle className="h-4 w-4" />
+                                Daftar
+                              </button>
+                            )}
                           </div>
                         </div>
                       );
