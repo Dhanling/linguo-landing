@@ -25,6 +25,7 @@ import AnalyticsTracker from "@/components/AnalyticsTracker"; // landing-analyti
 import AdAttributionCapture from "@/components/AdAttributionCapture"; // ads-conversion-sync — tangkap fbclid/gclid/_fbp buat konversi offline
 import PromoTopBar from "@/components/PromoTopBar"; // promo-merdeka-v1 — banner promo paling atas, hilang sendiri setelah periode
 import PromoFloatingButton from "@/components/PromoFloatingButton"; // promo-merdeka-v1 — sticker melayang → WA CS
+import PromoLeadModal from "@/components/PromoLeadModal"; // promo-lead-form-v1 — form nama/WA/email sebelum ke WhatsApp
 
 // [seo-metadata-v1] Judul lama bertumpu pada kata "Polyglot" — hampir tidak ada
 // yang mencarinya dalam bahasa Indonesia, jadi homepage kehilangan sinyal
@@ -196,6 +197,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AnalyticsTracker />{/* landing-analytics-v1 */}
         <AdAttributionCapture />{/* ads-conversion-sync */}
         <PromoFloatingButton />{/* promo-merdeka-v1 */}
+        <PromoLeadModal />{/* promo-lead-form-v1 — dipicu banner & sticker */}
 
       </body>
     </html>

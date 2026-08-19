@@ -41,11 +41,26 @@ export const PROMO_END_MS = Date.parse(PROMO.endsAt);
 // ada yang jaga WA selama 16–19 Agustus, termasuk tanggal merahnya.
 export const PROMO_WA_NUMBER = "6282116859493";
 
-/** Pesan yang sudah terisi di WA supaya CS langsung tahu konteksnya. */
-export const promoWaUrl = (): string =>
-  `https://wa.me/${PROMO_WA_NUMBER}?text=${encodeURIComponent(
-    `Halo Linguo, saya mau klaim ${PROMO.badge} — Simulasi TOEFL Rp ${PROMO.price.toLocaleString("id-ID")} 🇮🇩`,
+/**
+ * Pesan yang sudah terisi di WA supaya CS langsung tahu konteksnya.
+ *
+ * [promo-lead-form-v1] Nama & email ikut ditulis di pesan — datanya sudah
+ * tersimpan lewat /api/promo-lead, tapi CS tetap butuh melihatnya di chat tanpa
+ * harus membuka WA Inbox dulu.
+ *
+ * Emoji bendera sengaja TIDAK dipakai di sini: rangkaian regional-indicator
+ * sering tampil jadi kotak "?" di pratinjau tautan wa.me sebagian perangkat.
+ */
+export const promoWaUrl = (lead?: { name?: string; email?: string }): string => {
+  const lines = [
+    `Halo Linguo, saya mau klaim ${PROMO.badge} — Simulasi TOEFL Rp ${PROMO.price.toLocaleString("id-ID")}`,
+  ];
+  if (lead?.name?.trim()) lines.push(`Nama: ${lead.name.trim()}`);
+  if (lead?.email?.trim()) lines.push(`Email: ${lead.email.trim()}`);
+  return `https://wa.me/${PROMO_WA_NUMBER}?text=${encodeURIComponent(
+    lines.length > 1 ? `${lines[0]}\n\n${lines.slice(1).join("\n")}` : lines[0],
   )}`;
+};
 
 /** Jendela promo sedang buka? */
 export const isPromoActive = (now: number = Date.now()): boolean =>

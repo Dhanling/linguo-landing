@@ -13,7 +13,8 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { PROMO, promoWaUrl } from "@/lib/promoMerdeka";
+import { PROMO } from "@/lib/promoMerdeka";
+import { openPromoLead } from "@/components/PromoLeadModal";
 import { PRICE, formatRp } from "@/lib/simulasiPakets";
 import { formatCountdown, usePromoMerdeka } from "@/components/PromoMerdeka";
 
@@ -72,12 +73,14 @@ export default function PromoTopBar() {
       ref={ref}
       className="fixed inset-x-0 top-0 z-[70] bg-gradient-to-r from-[#B3121F] via-[#E0353D] to-[#B3121F] text-white shadow-md"
     >
-      {/* Tujuan klik = inbox WA CS (sama dengan sticker melayang), bukan checkout. */}
-      <a
-        href={promoWaUrl()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-[13px] font-semibold sm:text-sm"
+      {/* [promo-lead-form-v1] Klik TIDAK lagi langsung ke wa.me: buka dulu modal
+          data diri (nama, nomor WA, email) — sama seperti sticker melayang.
+          Tanpa itu CS menerima chat tanpa identitas & tanpa email, padahal akses
+          simulasi dikirim lewat email. */}
+      <button
+        type="button"
+        onClick={openPromoLead}
+        className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 py-2 text-center text-[13px] font-semibold sm:text-sm"
       >
         <span className="inline-flex items-center gap-1.5">
           <span aria-hidden>🇮🇩</span>
@@ -100,7 +103,7 @@ export default function PromoTopBar() {
         <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#FFD43B] px-3.5 py-1 text-[12px] font-extrabold text-slate-900 sm:text-[13px]">
           Klaim Sekarang <ArrowRight className="h-3.5 w-3.5" />
         </span>
-      </a>
+      </button>
     </div>
   );
 }

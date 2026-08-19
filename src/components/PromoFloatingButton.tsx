@@ -1,6 +1,7 @@
 "use client";
 
 // [promo-merdeka-v1] Sticker promo melayang (ala Ruangguru) → inbox WA CS.
+// [promo-lead-form-v1] Lewat modal data diri dulu (PromoLeadModal), tidak langsung wa.me.
 //
 // Posisinya KIRI-bawah, bukan kanan-bawah: ChatWidget sudah memakai kanan-bawah
 // (launcher 64px di right/bottom 20px + gelembung teaser selebar 270px sampai
@@ -15,7 +16,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { PROMO, promoWaUrl } from "@/lib/promoMerdeka";
+import { PROMO } from "@/lib/promoMerdeka";
+import { openPromoLead } from "@/components/PromoLeadModal";
 import { usePromoMerdeka } from "@/components/PromoMerdeka";
 
 // Samakan dengan daftar di PromoTopBar — halaman ber-chrome sendiri dilewati.
@@ -36,7 +38,7 @@ export default function PromoFloatingButton() {
   const [pos, setPos] = useState<Pos | null>(null); // null = posisi bawaan (kiri-bawah)
   const [dragging, setDragging] = useState(false);
 
-  const ref = useRef<HTMLAnchorElement | null>(null);
+  const ref = useRef<HTMLButtonElement | null>(null);
   const posRef = useRef<Pos | null>(null); // cermin `pos` — dibaca handler tanpa kena closure basi
   const draggingRef = useRef(false);
   const movedRef = useRef(false);
@@ -96,7 +98,7 @@ export default function PromoFloatingButton() {
   // elemen yang sama. setPointerCapture bikin Chromium me-retarget event `click`
   // ke elemen peng-capture — kalau onClick dipasang di anak (mis. <img>), klik
   // tak pernah terpanggil dan tak ada error apa pun yang muncul.
-  const onPointerDown = (e: React.PointerEvent<HTMLAnchorElement>) => {
+  const onPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
     const el = ref.current;
     if (!el || e.button !== 0) return;
     const r = el.getBoundingClientRect();
@@ -112,7 +114,7 @@ export default function PromoFloatingButton() {
     el.setPointerCapture(e.pointerId);
   };
 
-  const onPointerMove = (e: React.PointerEvent<HTMLAnchorElement>) => {
+  const onPointerMove = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (!draggingRef.current) return;
     const dx = e.clientX - startRef.current.px;
     const dy = e.clientY - startRef.current.py;
@@ -128,7 +130,7 @@ export default function PromoFloatingButton() {
     );
   };
 
-  const endDrag = (e: React.PointerEvent<HTMLAnchorElement>) => {
+  const endDrag = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (!draggingRef.current) return;
     draggingRef.current = false;
     setDragging(false);
@@ -146,25 +148,27 @@ export default function PromoFloatingButton() {
     }
   };
 
-  const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Habis digeser → jangan buka WA. Tanpa guard ini, setiap selesai menggeser
-    // WhatsApp ikut terbuka.
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // Habis digeser → jangan buka apa-apa. Tanpa guard ini, setiap selesai
+    // menggeser modalnya ikut terbuka.
     if (movedRef.current) {
       e.preventDefault();
       e.stopPropagation();
+      return;
     }
+    // [promo-lead-form-v1] Bukan lagi tautan wa.me langsung: isi nama, nomor WA,
+    // dan email dulu di modal, baru tersambung ke CS.
+    openPromoLead();
   };
 
   const label = `${PROMO.badge} — Simulasi TOEFL Rp ${PROMO.price.toLocaleString("id-ID")}`;
 
   return (
-    <a
+    <button
       ref={ref}
-      href={promoWaUrl()}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${label}, tanya lewat WhatsApp. Bisa digeser.`}
-      title="Klik untuk tanya via WhatsApp · tahan lalu geser untuk memindahkan"
+      type="button"
+      aria-label={`${label}, klaim lewat WhatsApp. Bisa digeser.`}
+      title="Klik untuk klaim via WhatsApp · tahan lalu geser untuk memindahkan"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
@@ -191,6 +195,6 @@ export default function PromoFloatingButton() {
         priority={false}
         className="pointer-events-none h-auto w-[132px] select-none sm:w-[168px]"
       />
-    </a>
+    </button>
   );
 }
