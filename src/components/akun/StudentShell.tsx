@@ -413,6 +413,17 @@ export default function StudentShell({
           → #0a0a0a) lebih GELAP dari latar seksinya (#F5F6F8 → #121212), jadi kartu & segmented
           control lenyap ditelan latar. Sekarang mirror light mode: panel < well < kartu. */}
       <style>{`
+        /* ── [shell-dark-hairline-v1] Garis polos tanpa warna ──
+           Di Tailwind v4 'border-b' (tanpa 'border-<warna>') memakai currentColor,
+           jadi di atas hitam ia menjiplak warna TEKS dan muncul sebagai garis putih
+           menyala — kelihatan jelas di bawah judul modal "Daftar Kelas Baru".
+           Ditaruh di '@layer base' dengan sengaja: layer itu diurut SEBELUM
+           'utilities', jadi elemen yang memang menyebut warnanya sendiri
+           ('border-amber-200', 'border-transparent', …) tetap menang mutlak.
+           Bobot '.lms-dark *' juga masih di atas preflight ('*'). */
+        @layer base{
+          .lms-dark *,.lms-dark ::before,.lms-dark ::after{border-color:#2a2a2a;}
+        }
         /* ── Latar: hitam dominan ── */
         .lms-dark{background:#000000;}
         .lms-dark .bg-\\[\\#EEF1F4\\]{background-color:#000000 !important;}
@@ -546,6 +557,40 @@ export default function StudentShell({
         .lms-dark .materi-item-sel{background-color:#101010 !important;box-shadow:inset 0 0 0 1px rgba(45,212,191,0.38) !important;}
         /* Lingkar donat progres: warnanya atribut SVG, jadi tak kena aturan bg-* di atas. */
         .lms-dark .materi-pie-track{stroke:#2f2f2f !important;}
+        /* ── [shell-dark-tint-opacity-v1] Tint BEROPASITAS ──
+           'bg-teal-50/50' itu NAMA KELAS yang berbeda dari 'bg-teal-50', jadi
+           semua aturan tint di atas tidak menangkapnya dan warnanya tetap versi
+           terang. Paling kentara di modal "Daftar Kelas Baru": kartu ringkasan
+           ('bg-teal-50/50') muncul sebagai balok abu pucat, dan label di atasnya
+           ('text-gray-500') ikut tenggelam. */
+        .lms-dark .bg-teal-50\\/40,.lms-dark .bg-teal-50\\/50,.lms-dark .bg-teal-50\\/60,.lms-dark .bg-teal-50\\/70,.lms-dark .bg-teal-50\\/80{background-color:rgba(45,212,191,0.10) !important;}
+        .lms-dark .bg-amber-50\\/50,.lms-dark .bg-amber-50\\/60,.lms-dark .bg-amber-50\\/70,.lms-dark .bg-amber-50\\/80{background-color:rgba(245,158,11,0.12) !important;}
+        .lms-dark .bg-blue-50\\/50,.lms-dark .bg-blue-50\\/70,.lms-dark .bg-blue-50\\/80{background-color:rgba(59,130,246,0.12) !important;}
+        .lms-dark .bg-rose-50\\/50,.lms-dark .bg-rose-50\\/70,.lms-dark .bg-rose-50\\/80{background-color:rgba(244,63,94,0.12) !important;}
+        .lms-dark .bg-emerald-50\\/50,.lms-dark .bg-emerald-50\\/70,.lms-dark .bg-emerald-50\\/80{background-color:rgba(16,185,129,0.12) !important;}
+        .lms-dark .bg-green-50\\/50,.lms-dark .bg-green-50\\/70,.lms-dark .bg-green-50\\/80{background-color:rgba(34,197,94,0.12) !important;}
+        .lms-dark .bg-indigo-50\\/50,.lms-dark .bg-indigo-50\\/70,.lms-dark .bg-purple-50\\/50,.lms-dark .bg-purple-50\\/70,.lms-dark .bg-violet-50\\/50,.lms-dark .bg-violet-50\\/70{background-color:rgba(139,92,246,0.14) !important;}
+        .lms-dark .bg-gray-50\\/50,.lms-dark .bg-gray-50\\/60,.lms-dark .bg-gray-50\\/70,.lms-dark .bg-gray-50\\/80,.lms-dark .bg-slate-50\\/50,.lms-dark .bg-slate-50\\/70,.lms-dark .bg-slate-50\\/80{background-color:rgba(13,13,13,0.9) !important;}
+        .lms-dark .bg-gray-100\\/50,.lms-dark .bg-gray-100\\/60,.lms-dark .bg-gray-100\\/70,.lms-dark .bg-gray-100\\/80,.lms-dark .bg-slate-100\\/70,.lms-dark .bg-slate-100\\/80{background-color:rgba(38,38,38,0.9) !important;}
+        /* ── Sisa "ink" aksen yang belum tertutup di kelompok atas ── */
+        .lms-dark .text-teal-900,.lms-dark .text-teal-800{color:#5eead4 !important;}
+        .lms-dark .text-amber-900{color:#fcd34d !important;}
+        .lms-dark .text-blue-800{color:#93c5fd !important;}
+        .lms-dark .text-red-800{color:#fca5a5 !important;}
+        .lms-dark .text-red-500{color:#f87171 !important;}
+        .lms-dark .text-amber-500{color:#fbbf24 !important;}
+        .lms-dark .border-amber-100,.lms-dark .border-amber-300,.lms-dark .border-amber-400{border-color:rgba(245,158,11,0.35) !important;}
+        .lms-dark .border-red-100,.lms-dark .border-red-200,.lms-dark .border-red-300{border-color:rgba(239,68,68,0.32) !important;}
+        .lms-dark .border-cyan-100,.lms-dark .border-cyan-200{border-color:rgba(6,182,212,0.32) !important;}
+        /* 'text-gray-200' dipakai buat slot jam yang TIDAK bisa dipilih. Tanpa
+           aturan ini warnanya nyaris putih — malah terbaca sebagai aktif. */
+        .lms-dark .text-gray-200,.lms-dark .text-slate-200{color:#4a4a4a !important;}
+        /* ── [shell-dark-glow-v1] Halo putih di sekeliling tombol ──
+           'shadow-teal-100' / 'shadow-green-100' itu bayangan berwarna TERANG.
+           Di atas hitam hasilnya lingkaran cahaya putih tebal mengelilingi tombol
+           "Bayar Otomatis" & "Bayar via Transfer". Bayangan warna terang dimatikan;
+           shade pekat (-500 ke atas) dibiarkan karena memang jadi kedalaman. */
+        .lms-dark .shadow-teal-100,.lms-dark .shadow-teal-200,.lms-dark .shadow-green-100,.lms-dark .shadow-green-200,.lms-dark .shadow-amber-100,.lms-dark .shadow-amber-200,.lms-dark .shadow-blue-100,.lms-dark .shadow-blue-200,.lms-dark .shadow-rose-100,.lms-dark .shadow-rose-200{--tw-shadow-color:transparent !important;}
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
