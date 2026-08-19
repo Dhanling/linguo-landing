@@ -416,6 +416,14 @@ export default function StudentGroupChat({
 
   const activeJid = active?.jid ?? null;
 
+  /* [grup-typing-v1] Siaran "sedang mengetik" ke dashboard pengajar. Kanalnya
+     broadcast (bukan tabel): status mengetik itu fana, tak perlu disimpan dan
+     tak boleh menambah tulisan ke database tiap ketukan tombol. Nama kanal
+     harus SAMA persis dengan yang didengar TeacherGroupChat. */
+  const typingChanRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
+  const typingAtRef = useRef(0);
+  const typingNameRef = useRef("Siswa");
+
   // ── Identitas siswa ───────────────────────────────────────────────────────
   useEffect(() => {
     let alive = true;
@@ -439,6 +447,53 @@ export default function StudentGroupChat({
       alive = false;
     };
   }, [preview]);
+
+  // ── Siaran "sedang mengetik" ─────────────────────────────────────────────
+  useEffect(() => {
+    typingNameRef.current =
+      (identity?.name_prefix || identity?.display_name || "").trim() || "Siswa";
+  }, [identity]);
+
+  useEffect(() => {
+    // Pratinjau tak punya sesi Supabase — kanal realtime-nya pasti gagal.
+    if (preview || !activeJid) return;
+    const ch = supabase.channel(`group-typing-${activeJid}`, {
+      config: { broadcast: { self: false } },
+    });
+    ch.subscribe();
+    typingChanRef.current = ch;
+    return () => {
+      typingChanRef.current = null;
+      void supabase.removeChannel(ch);
+    };
+  }, [activeJid, preview]);
+
+  /* Dikirim paling cepat tiap 2 detik: pengajar cuma butuh tahu "masih ngetik",
+     bukan tiap huruf. Umur siarannya di sisi pengajar 5 detik, jadi jeda 2 detik
+     aman — titik-titiknya tak berkedip di tengah kalimat panjang. */
+  const pingTyping = useCallback(() => {
+    const ch = typingChanRef.current;
+    if (!ch) return;
+    const now = Date.now();
+    if (now - typingAtRef.current < 2000) return;
+    typingAtRef.current = now;
+    void ch.send({
+      type: "broadcast",
+      event: "typing",
+      payload: { name: typingNameRef.current },
+    });
+  }, []);
+
+  const stopTyping = useCallback(() => {
+    const ch = typingChanRef.current;
+    if (!ch) return;
+    typingAtRef.current = 0;
+    void ch.send({
+      type: "broadcast",
+      event: "typing_stop",
+      payload: { name: typingNameRef.current },
+    });
+  }, []);
 
   // ── Daftar grup ───────────────────────────────────────────────────────────
   /* [student-group-gate-v1] Daftarnya dari RPC student_group_list(), BUKAN
@@ -934,9 +989,10 @@ export default function StudentGroupChat({
     }
     setDraft("");
     setReplyTo(null);
+    stopTyping();
     stickToBottom.current = true;
     void loadMsgs(active.jid, active.sender, { silent: true });
-  }, [draft, active, sending, replyTo, loadMsgs, preview]);
+  }, [draft, active, sending, replyTo, loadMsgs, preview, stopTyping]);
 
   /** Pasang/lepas reaksi. Emoji yang sama = lepas (persis WhatsApp). */
   const toggleReaction = useCallback(
@@ -1323,7 +1379,11 @@ export default function StudentGroupChat({
                   <textarea
                     ref={textareaRef}
                     value={draft}
-                    onChange={(e) => setDraft(e.target.value)}
+                    onChange={(e) => {
+                      setDraft(e.target.value);
+                      if (e.target.value.trim()) pingTyping();
+                      else stopTyping();
+                    }}
                     onKeyDown={(e) => {
                       // Enter kirim, Shift+Enter baris baru (kebiasaan WhatsApp Web).
                       if (e.key === "Enter" && !e.shiftKey) {
