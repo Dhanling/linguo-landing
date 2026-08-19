@@ -40,6 +40,10 @@ interface Props {
   // query `registrations` biasa selalu kosong di mode pratinjau (RLS memblok anon),
   // jadi strip pindah level ikut nebeng endpoint yang sama.
   previewRegs?: any[] | null;
+  // [kelas-sesi-mati-jujur-v1] true = sesi login sudah tak sah. Semua query siswa
+  // dijawab RLS dengan daftar KOSONG (bukan error), jadi tanpa penanda ini halaman
+  // tampak seperti "kelasnya memang tak punya jadwal & tak punya level lain".
+  sesiMati?: boolean;
 }
 
 // [kelas-tab-ramping-v1] Tab Overview & Jadwal dihapus. Isinya dulu tumpang tindih:
@@ -77,7 +81,7 @@ function hitungMundur(dt: Date, now: number): string {
   return hari === 1 ? 'besok' : `${hari} hari lagi`;
 }
 
-export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null }: Props) {
+export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null, sesiMati = false }: Props) {
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -327,6 +331,33 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         <ArrowLeft className="h-4 w-4" strokeWidth={2.5} /> Kembali ke Beranda
       </Link>
 
+      {/* [kelas-sesi-mati-jujur-v1] Sesi habis → akui, jangan diam. Tanpa banner ini
+          siswa membaca "Belum ada sesi terjadwal" & strip level yang lenyap sebagai
+          kenyataan, padahal datanya cuma tak terjangkau. */}
+      {sesiMati && (
+        <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="text-sm font-bold text-amber-800">Sesi kamu sudah berakhir</div>
+          <div className="mt-1 text-[13px] text-amber-700">
+            Jadwal, materi, dan daftar level di bahasa ini tidak bisa dimuat sampai kamu masuk lagi.
+            Yang tampil di halaman ini data terakhir yang sempat tersimpan.
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              onClick={() => window.location.reload()}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2 text-[13px] font-bold text-white hover:bg-[#0F5A52]"
+            >
+              Muat Ulang
+            </button>
+            <Link
+              href="/akun"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-[13px] font-bold text-amber-800 hover:bg-amber-100"
+            >
+              Masuk Lagi
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* ── Pindah level (bahasa sama) ──
           [kelas-level-switcher-v1] Sengaja DI ATAS banner: posisinya sejajar breadcrumb,
           kelihatan sebelum siswa scroll, dan tak mengganggu urutan hero → progress → tab. */}
@@ -473,7 +504,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                 </a>
               </div>
             </div>
-          ) : selesai ? null : (
+          ) : selesai || sesiMati ? null : (
             /* [kelas-selesai-tanpa-cta-v1] Level yang sudah beres TIDAK lagi menampilkan
                kartu "sudah selesai / hubungi admin": isinya cuma mengulang badge Selesai
                di banner + "Semua sesi di level ini sudah selesai" di Progress Sesi, dan

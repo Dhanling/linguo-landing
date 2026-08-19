@@ -43,6 +43,12 @@ function KelasDetailInner() {
   // [kelas-level-switcher-v1] Daftar registrasi siswa buat strip pindah level —
   // di pratinjau harus ikut endpoint service role (anon kena RLS).
   const [previewRegs, setPreviewRegs] = useState<any[] | null>(null);
+  // [kelas-sesi-mati-jujur-v1] Halaman ini sengaja tahan banting: kalau sesi login
+  // sudah tak sah, isi hero tetap tampil dari handoff sessionStorage. Efek sampingnya
+  // BOHONG — query `schedules`/`registrations` yang ditolak RLS balik KOSONG (bukan
+  // error), jadi halaman memasang wajah "belum ada sesi terjadwal" & strip level
+  // hilang, seolah datanya memang tak ada. Flag ini dipakai buat mengaku terus terang.
+  const [sesiMati, setSesiMati] = useState(false);
 
   // [kelas-switch-instan-v1] Handoff dibaca SEBELUM paint. Dulu pembacaannya
   // menumpang useEffect di bawah (jalan sesudah paint), jadi tiap pindah level
@@ -99,10 +105,13 @@ function KelasDetailInner() {
       if (!email) {
         // belum login → dashboard (yang nampung UI login). Kalau ada handoff
         // (baru saja klik dari beranda, sesi kemungkinan cuma telat pulih) biarkan
-        // konten tampil — data lanjutan toh tetap dijaga RLS.
+        // konten tampil — data lanjutan toh tetap dijaga RLS — TAPI beri tahu
+        // siswanya, jangan biarkan dia membaca halaman setengah data sebagai fakta.
         if (!handoff) router.replace("/akun");
+        else if (alive) setSesiMati(true);
         return;
       }
+      if (alive) setSesiMati(false);
 
       // Verifikasi kepemilikan: registration harus milik student dgn email login ini.
       const load = () =>
@@ -174,7 +183,7 @@ function KelasDetailInner() {
   return (
     <StudentShell active="beranda" onTabChange={goTab} previewStudentId={previewId}>
       {reg ? (
-        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} previewRegs={previewRegs} />
+        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} previewRegs={previewRegs} sesiMati={sesiMati} />
       ) : loadError ? (
         <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
           <div className="text-[15px] font-semibold text-slate-700">Gagal memuat detail kelas</div>
