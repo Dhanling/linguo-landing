@@ -357,16 +357,25 @@ function FullscreenToggle({ on, onToggle }: { on: boolean; onToggle: () => void 
   );
 }
 
+/* [perf:grup-cache-modul-v1] Daftar grup + identitas siswa ditahan di level MODUL
+   (hidup selama tab browser belum di-reload). Sejak menu "Grup Kelas" dibuka
+   in-place ([nav-inplace-grup-pustaka-v1]), modul ini tetap hidup saat siswa
+   bolak-balik ke dashboard — jadi kunjungan kedua langsung menampilkan daftar
+   grupnya, bukan spinner sambil menunggu RPC. Datanya tetap disegarkan di belakang.
+   Mode pratinjau sengaja tak ikut: itu data siswa lain. */
+let sgIdentityCache: Identity | null = null;
+let sgGroupsCache: GroupRow[] | null = null;
+
 export default function StudentGroupChat({ previewStudentId = null }: { previewStudentId?: string | null } = {}) {
   /* [preview-session-v1] Mode pratinjau POV siswa (dibuka staf dari avatar
      dashboard admin): tak ada sesi login, jadi semua data lewat /api/preview-group
      (service role, dikunci cookie pratinjau ke satu siswa) dan seluruh jalur
      tulis — kirim, reaksi, batal antre — dimatikan. */
   const preview = !!previewStudentId;
-  const [identity, setIdentity] = useState<Identity | null>(null);
-  const [identityReady, setIdentityReady] = useState(false);
-  const [groups, setGroups] = useState<GroupRow[]>([]);
-  const [loadingGroups, setLoadingGroups] = useState(true);
+  const [identity, setIdentity] = useState<Identity | null>(() => (previewStudentId ? null : sgIdentityCache));
+  const [identityReady, setIdentityReady] = useState(() => !previewStudentId && !!sgIdentityCache);
+  const [groups, setGroups] = useState<GroupRow[]>(() => (previewStudentId ? [] : sgGroupsCache ?? []));
+  const [loadingGroups, setLoadingGroups] = useState(() => (previewStudentId ? true : !sgGroupsCache));
   const [active, setActive] = useState<GroupRow | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   const [lastMsgs, setLastMsgs] = useState<Record<string, LastMsg>>({});
@@ -404,7 +413,11 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
     }
     void supabase.rpc("student_group_identity").then(({ data, error }) => {
       if (!alive) return;
-      if (!error) setIdentity(((data as Identity[]) ?? [])[0] ?? null);
+      if (!error) {
+        const row = ((data as Identity[]) ?? [])[0] ?? null;
+        sgIdentityCache = row; // [perf:grup-cache-modul-v1]
+        setIdentity(row);
+      }
       setIdentityReady(true);
     });
     return () => {
@@ -451,6 +464,7 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
         }
         rows = (data as GroupRow[]) ?? [];
       }
+      if (!preview) sgGroupsCache = rows; // [perf:grup-cache-modul-v1]
       setGroups(rows);
       setLoadingGroups(false);
       if (rows.length === 0) {

@@ -89,6 +89,14 @@ export const GROUP_NAV_KEY = "linguo-has-group-v1";
 /** Idem untuk gerbang menu development (Lingbook) — lihat [perf:shell-devnav-cache-v1]. */
 const DEV_NAV_KEY = "linguo-dev-nav-v1";
 
+/* [nav-inplace-grup-pustaka-v1] Grup Kelas & Perpustakaan dibuka DI HALAMAN INI, tak
+   lagi di tab baru — permintaan 19 Agustus 2026: dua menu itu paling sering diklik
+   dan tab baru berarti aplikasi dimuat dari nol tiap kali (selalu terasa lama).
+   Rutenya sudah di-prefetch + gerbangnya optimistis, jadi in-place = nyaris instan.
+   Watch & Learn, Kosakata Saya, dan Lingbook TETAP tab baru ([[akun-sidebar-menu-tab-baru]]):
+   itu bahan jelajah, bukan tempat siswa balik-balik. */
+const IN_PLACE_KEYS = new Set(["grup", "pustaka"]);
+
 // [shell-dark-fouc-v1] Skrip kecil yang ikut ke-render di HTML awal → kelas `lms-dark`
 // nempel ke <html> SEBELUM paint pertama. Dulu tema dibaca di useEffect, jadi user
 // mode gelap selalu kena kilat putih dulu tiap buka halaman.
@@ -282,15 +290,15 @@ export default function StudentShell({
       // (dulu <a> biasa = full page reload tiap pindah menu)
       const isActiveLink = item.key === active;
       const href = withPreview(item.href);
-      // [nav-newtab-default-v1] Menu yang pindah ke HALAMAN LAIN (Watch & Learn,
-      // Kosakata Saya, Perpustakaan, Lingbook, Grup Kelas) dibuka langsung di TAB
-      // BARU. Dulu halaman yang sedang dibuka ikut tergantikan, jadi siswa yang
+      // [nav-newtab-default-v1] Menu jelajah yang pindah ke HALAMAN LAIN (Watch &
+      // Learn, Kosakata Saya, Lingbook) dibuka langsung di TAB BARU — Grup Kelas &
+      // Perpustakaan dikecualikan, lihat [nav-inplace-grup-pustaka-v1]. Dulu halaman yang sedang dibuka ikut tergantikan, jadi siswa yang
       // cuma mau menengok kosakata kehilangan dashboard/kelas yang lagi jalan dan
       // harus menunggu muat ulang saat menekan back. Menu yang cuma ganti TAB di
       // dalam /akun tetap in-place — di sana tak ada halaman yang hilang.
       // Menu yang sedang aktif dikecualikan: membuka salinan halaman yang sama
       // di tab baru cuma bikin tab kembar.
-      const newTab = !isActiveLink;
+      const newTab = !isActiveLink && !IN_PLACE_KEYS.has(item.key);
       const node = (
         <Link
           href={href}
