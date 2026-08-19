@@ -26,6 +26,11 @@ const PREFIXES = ['linguo_sched_', 'linguo_materi_', 'linguo_levelregs_'];
 export const regKey = (id: string) => `linguo_reg_${id}`;
 export const schedKey = (id: string) => `linguo_sched_${id}`;
 export const materiKey = (id: string) => `linguo_materi_${id}`;
+// Id siswa yang sedang login — dipakai kalau baris reg dari handoff beranda tak
+// membawa `student_id` (select kartu beranda memang tak memilih kolom itu).
+// Aman dari salah-tampil antar akun: query yang memakainya tetap dijaga RLS, jadi
+// id yang basi paling banter menghasilkan daftar kosong, bukan data siswa lain.
+export const STUDENT_ID_KEY = 'linguo_student_id';
 export const levelRegsKey = (studentId: string, language?: string | null) =>
   `linguo_levelregs_${studentId}_${languageSlug(language) || String(language || '').toLowerCase()}`;
 

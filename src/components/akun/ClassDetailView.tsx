@@ -9,14 +9,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase-client';
+import { supabase, resolveSessionForGate } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
 import { displayLanguage } from '@/lib/classLanguage';
 // [kelas-level-switcher-v1] strip pindah level (A1.1 → A2.2) di bahasa yang sama
 import { sameLanguage } from '@/lib/languageSlug';
 import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
 // [kelas-switch-instan-v1] cache sesi + pasang-sebelum-paint biar pindah level tak kedip
-import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey } from '@/lib/kelasCache';
+import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey, STUDENT_ID_KEY } from '@/lib/kelasCache';
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -146,23 +146,49 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   // ("Russian" vs "Rusia"), eq() bakal melewatkan level lama yang namanya beda.
   // Gagal query = strip tak muncul; halaman TIDAK boleh ikut error.
   const [levelRegs, setLevelRegs] = useState<any[]>([]);
-  // Strip level ikut dipasang dari cache sebelum paint — kalau tidak, strip-nya
-  // hilang lalu muncul lagi tiap pindah level (kedipan paling kelihatan, karena
-  // dia yang barusan diklik).
+
+  // [kelas-level-switcher-v2] Id siswa TIDAK boleh diandalkan dari `reg`: baris
+  // handoff kartu beranda tak memuat `student_id` (select-nya memang tak memilih
+  // kolom itu), jadi strip level cuma muncul kalau/ketika query verifikasi halaman
+  // sempat menimpa reg — itu yang bikin strip-nya kadang tak nongol sama sekali.
+  // Sekarang id-nya dicari sendiri (sekali, lalu di-cache per tab).
+  const [studentId, setStudentId] = useState<string | null>(null);
   useIsoLayoutEffect(() => {
-    const c = readCache<any[]>(reg?.student_id && reg?.language ? levelRegsKey(reg.student_id, reg.language) : null);
-    setLevelRegs(c || []);
-  }, [reg?.student_id, reg?.language]);
+    setStudentId(reg?.student_id || readCache<string>(STUDENT_ID_KEY) || null);
+  }, [reg?.student_id]);
   useEffect(() => {
-    if (!reg?.language) { setLevelRegs([]); return; }
+    if (studentId || previewStudentId) return;
+    let alive = true;
+    (async () => {
+      const email = (await resolveSessionForGate()).user?.email;
+      if (!email || !alive) return;
+      const { data } = await supabase.from('students').select('id').eq('email', email).maybeSingle();
+      if (!alive || !data?.id) return;
+      setStudentId(data.id);
+      writeCache(STUDENT_ID_KEY, data.id);
+    })();
+    return () => { alive = false; };
+  }, [studentId, previewStudentId]);
+
+  // Strip level dipasang dari cache sebelum paint — kalau tidak, strip-nya hilang
+  // lalu muncul lagi tiap pindah level (kedipan paling kelihatan, karena dia yang
+  // barusan diklik). Cache kosong TIDAK mengosongkan daftar yang sudah tampil:
+  // bahasanya toh sama saat pindah level, dan strip yang berkedip hilang-muncul
+  // lebih buruk daripada strip yang telat satu detik menyegarkan diri.
+  useIsoLayoutEffect(() => {
+    const c = readCache<any[]>(studentId && reg?.language ? levelRegsKey(studentId, reg.language) : null);
+    if (c && c.length) setLevelRegs(c);
+  }, [studentId, reg?.language]);
+  useEffect(() => {
+    if (!reg?.language) return;
     if (previewStudentId) {
       setLevelRegs((previewRegs || []).filter((r: any) => sameLanguage(r.language, reg.language)));
       return;
     }
-    if (!reg?.student_id) { setLevelRegs([]); return; }
+    if (!studentId) return;
     let alive = true;
     (async () => {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('registrations')
         .select(`
           id, student_id, product, language, level, status,
@@ -171,8 +197,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           teacher_id, archived_at, registration_date, created_at,
           teachers(name, title, avatar_url)
         `)
-        .eq('student_id', reg.student_id);
+        .eq('student_id', studentId);
       if (!alive) return;
+      if (error) {
+        // Strip cuma pemanis navigasi — gagal ambil daftar level TIDAK boleh
+        // mengosongkan yang sudah tampil, apalagi bikin halaman error.
+        console.warn('[kelas-level-switcher] gagal ambil daftar level:', error.message);
+        return;
+      }
       const sekelas = (data || []).filter(
         (r: any) =>
           sameLanguage(r.language, reg.language) &&
@@ -180,13 +212,13 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           (r.id === reg.id || r.payment_status === 'Lunas' || r.payment_status === 'Cicilan'),
       );
       setLevelRegs(sekelas);
-      writeCache(levelRegsKey(reg.student_id, reg.language), sekelas);
+      writeCache(levelRegsKey(studentId, reg.language), sekelas);
       // Baris tiap level ikut dititipkan: klik chip → halaman tujuan render instan
       // (handoff-nya sudah ada, tak perlu nunggu query verifikasi).
       sekelas.forEach((r: any) => writeCache(regKey(r.id), r));
     })();
     return () => { alive = false; };
-  }, [reg?.student_id, reg?.language, reg?.id, previewStudentId, previewRegs]);
+  }, [studentId, reg?.language, reg?.id, previewStudentId, previewRegs]);
 
   // [kelas-switch-instan-v1] Prefetch diam-diam isi level tetangga (jadwal + materi)
   // sesudah halaman ini tenang. Dua query IN() untuk SEMUA level sekaligus — jauh
