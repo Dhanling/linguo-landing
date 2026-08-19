@@ -17,6 +17,8 @@ import { Suspense, useEffect, useState } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Loader2, RefreshCw } from "lucide-react";
 import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
+// [kelas-switch-instan-v1] pasang data handoff sebelum paint → pindah level tanpa kedip
+import { useIsoLayoutEffect } from "@/lib/kelasCache";
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import ClassDetailView from "@/components/akun/ClassDetailView";
 
@@ -41,6 +43,18 @@ function KelasDetailInner() {
   // [kelas-level-switcher-v1] Daftar registrasi siswa buat strip pindah level —
   // di pratinjau harus ikut endpoint service role (anon kena RLS).
   const [previewRegs, setPreviewRegs] = useState<any[] | null>(null);
+
+  // [kelas-switch-instan-v1] Handoff dibaca SEBELUM paint. Dulu pembacaannya
+  // menumpang useEffect di bawah (jalan sesudah paint), jadi tiap pindah level
+  // spinner sempat tergambar satu frame walaupun datanya sudah ada di tangan —
+  // persis "kedip" yang terlihat saat mengklik chip level.
+  useIsoLayoutEffect(() => {
+    try {
+      const h = JSON.parse(sessionStorage.getItem(regHandoffKey(params.id)) || "null");
+      if (h && h.id === params.id) setReg(h);
+      else setReg(null); // level lain yang belum pernah dibuka → biar spinner-nya jujur
+    } catch {}
+  }, [params.id]);
 
   useEffect(() => {
     let alive = true;

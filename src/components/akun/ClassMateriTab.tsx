@@ -24,6 +24,8 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase-client';
+// [kelas-switch-instan-v1] materi level yang pernah dibuka/di-prefetch → tampil tanpa "Memuat…"
+import { readCache, writeCache, useIsoLayoutEffect, materiKey } from '@/lib/kelasCache';
 // (Play, bukan Youtube — versi lucide-react di repo ini tidak meng-export ikon brand)
 import { BookOpen, FileText, Presentation, Link2, Paperclip, Video, ExternalLink, Play, Check, X, ChevronRight, Clock, CalendarDays, PenLine, Sparkles, type LucideIcon } from 'lucide-react';
 import { studentRecordingHref } from '@/lib/classRoom';
@@ -548,6 +550,11 @@ export default function ClassMateriTab({
   sesiTerpakai?: number;
 }) {
   const [materials, setMaterials] = useState<any[] | null>(null); // null = loading
+  // Pasang dari cache SEBELUM paint. Tanpa ini, tiap pindah level tab Materi
+  // selalu melewati layar "Memuat…" walau isinya sudah di-prefetch.
+  useIsoLayoutEffect(() => {
+    setMaterials(readCache<any[]>(materiKey(reg.id)));
+  }, [reg.id]);
   const [kosongTerbuka, setKosongTerbuka] = useState(false);
   const [sesiTerbuka, setSesiTerbuka] = useState<number | null>(null); // nomor sesi di drawer
   // [kelas-materi-silabus-sesi-v1] Silabus level kelas ini (16 sesi). null = tidak
@@ -569,10 +576,11 @@ export default function ClassMateriTab({
       if (error) {
         // Tabel belum dimigrasi / policy belum ada → tampil kosong, jangan crash.
         console.warn('[kelas-materi] gagal load class_materials:', error.message);
-        setMaterials([]);
+        setMaterials((prev) => prev ?? []); // sudah ada isi dari cache? jangan dikosongkan
         return;
       }
       setMaterials(data || []);
+      writeCache(materiKey(reg.id), data || []);
     })();
     return () => { alive = false; };
   }, [reg.id]);

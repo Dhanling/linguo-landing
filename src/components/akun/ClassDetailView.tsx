@@ -15,6 +15,8 @@ import { displayLanguage } from '@/lib/classLanguage';
 // [kelas-level-switcher-v1] strip pindah level (A1.1 → A2.2) di bahasa yang sama
 import { sameLanguage } from '@/lib/languageSlug';
 import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
+// [kelas-switch-instan-v1] cache sesi + pasang-sebelum-paint biar pindah level tak kedip
+import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey } from '@/lib/kelasCache';
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -79,6 +81,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  // [kelas-switch-instan-v1] Jadwal level yang pernah dibuka dipasang dari cache
+  // sebelum paint: linimasa & kartu "Sesi Berikutnya" langsung terisi, query di
+  // bawah tinggal menyegarkan diam-diam.
+  useIsoLayoutEffect(() => {
+    const c = readCache<any[]>(reg?.id ? schedKey(reg.id) : null);
+    setSchedules(c || []);
+    setLoading(!c);
+  }, [reg?.id]);
   // [sesi-berikutnya-v1] Detak menit buat label hitung mundur — tanpa ini halaman
   // yang dibiarkan terbuka akan terus menampilkan "3 jam lagi" sampai di-refresh.
   const [tick, setTick] = useState(() => Date.now());
@@ -105,7 +115,8 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       setLoading(false);
       return;
     }
-    fetchData();
+    // Sudah ada isi dari cache → segarkan TANPA balik ke layar "Memuat…".
+    fetchData(!!readCache<any[]>(schedKey(reg.id)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reg?.id, previewStudentId, previewSchedules]);
 
@@ -135,6 +146,13 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   // ("Russian" vs "Rusia"), eq() bakal melewatkan level lama yang namanya beda.
   // Gagal query = strip tak muncul; halaman TIDAK boleh ikut error.
   const [levelRegs, setLevelRegs] = useState<any[]>([]);
+  // Strip level ikut dipasang dari cache sebelum paint — kalau tidak, strip-nya
+  // hilang lalu muncul lagi tiap pindah level (kedipan paling kelihatan, karena
+  // dia yang barusan diklik).
+  useIsoLayoutEffect(() => {
+    const c = readCache<any[]>(reg?.student_id && reg?.language ? levelRegsKey(reg.student_id, reg.language) : null);
+    setLevelRegs(c || []);
+  }, [reg?.student_id, reg?.language]);
   useEffect(() => {
     if (!reg?.language) { setLevelRegs([]); return; }
     if (previewStudentId) {
@@ -155,17 +173,52 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
         `)
         .eq('student_id', reg.student_id);
       if (!alive) return;
-      setLevelRegs(
-        (data || []).filter(
-          (r: any) =>
-            sameLanguage(r.language, reg.language) &&
-            r.pipeline_status !== 'Batal' &&
-            (r.id === reg.id || r.payment_status === 'Lunas' || r.payment_status === 'Cicilan'),
-        ),
+      const sekelas = (data || []).filter(
+        (r: any) =>
+          sameLanguage(r.language, reg.language) &&
+          r.pipeline_status !== 'Batal' &&
+          (r.id === reg.id || r.payment_status === 'Lunas' || r.payment_status === 'Cicilan'),
       );
+      setLevelRegs(sekelas);
+      writeCache(levelRegsKey(reg.student_id, reg.language), sekelas);
+      // Baris tiap level ikut dititipkan: klik chip → halaman tujuan render instan
+      // (handoff-nya sudah ada, tak perlu nunggu query verifikasi).
+      sekelas.forEach((r: any) => writeCache(regKey(r.id), r));
     })();
     return () => { alive = false; };
   }, [reg?.student_id, reg?.language, reg?.id, previewStudentId, previewRegs]);
+
+  // [kelas-switch-instan-v1] Prefetch diam-diam isi level tetangga (jadwal + materi)
+  // sesudah halaman ini tenang. Dua query IN() untuk SEMUA level sekaligus — jauh
+  // lebih murah daripada 2 query per level saat diklik, dan hasilnya: chip level
+  // yang belum pernah dibuka pun langsung terisi, tanpa layar "Memuat…".
+  useEffect(() => {
+    if (previewStudentId || levelRegs.length < 2) return;
+    const lain = levelRegs.map((r: any) => r.id).filter((id: string) => id !== reg?.id);
+    if (!lain.length) return;
+    let alive = true;
+    const t = setTimeout(async () => {
+      const [sch, mat] = await Promise.all([
+        supabase.from('schedules').select('*').in('registration_id', lain).order('scheduled_at', { ascending: true }),
+        supabase
+          .from('class_materials')
+          .select('id, registration_id, schedule_id, session_number, title, kind, url, note, content, created_at')
+          .in('registration_id', lain)
+          .order('created_at', { ascending: false }),
+      ]);
+      if (!alive) return;
+      const grup = (rows: any[] | null) => {
+        const m = new Map<string, any[]>();
+        lain.forEach((id: string) => m.set(id, []));
+        (rows || []).forEach((row: any) => m.get(row.registration_id)?.push(row));
+        return m;
+      };
+      if (!sch.error) grup(sch.data).forEach((rows, id) => writeCache(schedKey(id), rows));
+      if (!mat.error) grup(mat.data).forEach((rows, id) => writeCache(materiKey(id), rows));
+    }, 700);
+    return () => { alive = false; clearTimeout(t); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [levelRegs, reg?.id, previewStudentId]);
 
   // [kelas-tab-badge-v1] Jumlah isi tiap tab, dipakai buat badge di tab bar.
   // Tanpa ini siswa harus mengklik 6 tab satu-satu cuma buat tahu mana yang ada
@@ -196,14 +249,15 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     return () => { alive = false; };
   }, [reg?.id, previewStudentId, schedules]);
 
-  async function fetchData() {
-    setLoading(true);
+  async function fetchData(senyap = false) {
+    if (!senyap) setLoading(true);
     const { data: s } = await supabase
       .from('schedules')
       .select('*')
       .eq('registration_id', reg.id)
       .order('scheduled_at', { ascending: true });
     setSchedules(s || []);
+    writeCache(schedKey(reg.id), s || []);
     setLoading(false);
   }
 
@@ -387,15 +441,17 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
                 </a>
               </div>
             </div>
-          ) : (
+          ) : selesai ? null : (
+            /* [kelas-selesai-tanpa-cta-v1] Level yang sudah beres TIDAK lagi menampilkan
+               kartu "sudah selesai / hubungi admin": isinya cuma mengulang badge Selesai
+               di banner + "Semua sesi di level ini sudah selesai" di Progress Sesi, dan
+               siswa yang lagi menengok materi lama malah disodori ajakan jualan. Kartu
+               ini kini khusus keadaan yang memang butuh aksi: kelas jalan tapi kosong
+               jadwal. */
             <div className="rounded-2xl bg-gray-50 p-5 text-center">
               <Calendar className="mx-auto h-6 w-6 text-gray-400" strokeWidth={1.8} />
-              <div className="mt-2 text-sm font-semibold text-gray-700">
-                {selesai ? 'Kelas di level ini sudah selesai' : 'Belum ada sesi terjadwal'}
-              </div>
-              <div className="mt-1 text-xs text-gray-500">
-                {selesai ? 'Mau lanjut ke level berikutnya? Hubungi admin.' : 'Hubungi admin untuk menjadwalkan sesi berikutnya.'}
-              </div>
+              <div className="mt-2 text-sm font-semibold text-gray-700">Belum ada sesi terjadwal</div>
+              <div className="mt-1 text-xs text-gray-500">Hubungi admin untuk menjadwalkan sesi berikutnya.</div>
               <a href={waAdminUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1.5 rounded-xl bg-[#16796E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0F5A52]">
                 <MessageCircle className="h-4 w-4" strokeWidth={2.4} /> Chat Admin
               </a>
