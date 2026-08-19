@@ -24,6 +24,9 @@ import { RectFlag } from "@/components/RectFlag";
 
 import PaymentCard from '@/components/PaymentCard';
 import NotificationBell from '@/components/NotificationBell';
+// [ui-lang-switcher-v1] pemilih bahasa antarmuka dashboard (ID ⇄ EN)
+import UiLangSwitcher from '@/components/akun/UiLangSwitcher';
+import { useT, useUiLang, setUiLang } from '@/lib/uiLang';
 // [perf:akun-lazy-tabs-v1] modal & provider non-kritis → lazy (baru dimuat saat dibutuhkan)
 const PlacementPicker = dynamic(() => import('@/components/PlacementPicker'), { ssr: false });
 // [remove-onesignal-prompt] provider dimatikan — hilangkan popup auto-prompt notifikasi
@@ -1200,7 +1203,11 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
   // Notif & Preferensi — lokal/visual (belum ada tabel)
   const [notif, setNotif] = useState({ email_jadwal: true, email_materi: true, wa_pengingat: true, wa_promo: false, push_sesi: true, push_promo: false });
   const [pref, setPref] = useState({ reminder: true, autoplay: false, subtitle: true, weekly_report: true, twofa: false });
-  const [uiLang, setUiLang] = useState<"id" | "en">("id");
+  /* [ui-lang-switcher-v1] Bahasa antarmuka pakai store global — satu sumber dengan
+     pemilih di top bar. Dulu state lokal: tombolnya menyala, tapi tak satu pun teks
+     di dashboard ikut berganti dan pilihannya hilang begitu halaman ditutup. */
+  const uiLang = useUiLang();
+  const ts = useT(); // [ui-lang-switcher-v1]
 
   // ── [linguo-patch:akun-tagihan-real-v1] Tagihan & Paket — DATA REAL ──────
   const fmtRp = (n: number) => "Rp " + Math.max(0, Math.round(n || 0)).toLocaleString("id-ID");
@@ -1343,7 +1350,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
     } catch (e: any) { alert("Gagal memperbarui sandi: " + (e?.message || "")); }
   };
 
-  const title = SETTINGS_NAV.find((n) => n.id === pane)?.label || "Pengaturan";
+  const title = ts(SETTINGS_NAV.find((n) => n.id === pane)?.label || "Pengaturan");
 
   return (
     <div className="overflow-hidden rounded-[26px] bg-white lg:flex">
@@ -1352,8 +1359,8 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
       {/* LEFT: settings sub-nav */}
       <aside className="shrink-0 border-b border-slate-100 lg:flex lg:w-[260px] lg:flex-col lg:border-b-0 lg:border-r">
         <div className="px-6 pb-3 pt-6">
-          <h2 className="text-[18px] font-extrabold text-[#12172B]">Pengaturan</h2>
-          <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Kelola akun & preferensimu</p>
+          <h2 className="text-[18px] font-extrabold text-[#12172B]">{ts("Pengaturan")}</h2>
+          <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{ts("Kelola akun & preferensimu")}</p>
         </div>
         <nav className="flex gap-1.5 overflow-x-auto px-4 pb-4 lg:flex-1 lg:flex-col lg:overflow-visible">
           {SETTINGS_NAV.map((n) => {
@@ -1367,8 +1374,8 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   <Icon className="h-[18px] w-[18px]" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[14px] font-bold leading-tight" style={{ color: on ? "#16796E" : "#12172B" }}>{n.label}</span>
-                  <span className="hidden truncate text-[12px] font-medium text-[#6B7280] lg:block">{n.sub}</span>
+                  <span className="block text-[14px] font-bold leading-tight" style={{ color: on ? "#16796E" : "#12172B" }}>{ts(n.label)}</span>
+                  <span className="hidden truncate text-[12px] font-medium text-[#6B7280] lg:block">{ts(n.sub)}</span>
                 </span>
               </button>
             );
@@ -1381,7 +1388,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
         <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
           <div>
             <p className="flex items-center gap-1.5 text-[12px] font-bold text-[#6B7280]">
-              Dashboard <ChevronRight className="h-3.5 w-3.5" /> <span className="text-[#16796E]">Pengaturan</span>
+              {ts("Dashboard")} <ChevronRight className="h-3.5 w-3.5" /> <span className="text-[#16796E]">{ts("Pengaturan")}</span>
             </p>
             <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">{title}</h1>
           </div>
@@ -1524,13 +1531,15 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
           {pane === "preferensi" && (
             <>
-              <SetCard title="Bahasa Antarmuka">
+              <SetCard title={ts("Bahasa Antarmuka")}>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {([["id", "🇮🇩", "Indonesia"], ["en", "🇬🇧", "English"]] as Array<[("id" | "en"), string, string]>).map(([code, flag, label]) => (
+                  {/* [no-emoji-lucide-v1] bendera emoji diganti RectFlag — di Windows
+                      emoji bendera tidak punya glif dan cuma tampil sebagai "ID"/"GB". */}
+                  {([["id", "id", "Indonesia"], ["en", "gb", "English"]] as Array<[("id" | "en"), string, string]>).map(([code, flag, label]) => (
                     <button key={code} onClick={() => setUiLang(code)}
                       className="flex items-center gap-2.5 rounded-xl border-2 px-4 py-3 text-left transition"
                       style={uiLang === code ? { borderColor: "#16796E", background: "rgba(22,121,110,0.06)" } : { borderColor: "#E2E8F0" }}>
-                      <span className="text-xl">{flag}</span><span className="text-[14px] font-bold text-[#12172B]">{label}</span>
+                      <RectFlag code={flag} h={18} /><span className="text-[14px] font-bold text-[#12172B]">{label}</span>
                     </button>
                   ))}
                 </div>
@@ -2553,6 +2562,7 @@ export default function AkunPage() {
      lokal (pilihan kelas di "Kelas & Materi", posisi kalender, filter) hilang, dan
      panelnya sempat kosong → itu kedipan yang terasa tiap pindah menu. Sekarang
      kunjungan KEDUA ke sebuah menu tampil seketika dari yang sudah tergambar. */
+  const tt = useT(); // [ui-lang-switcher-v1] penerjemah teks antarmuka dashboard
   const [mountedTabs, setMountedTabs] = useState<Set<string>>(() => new Set<string>(["beranda"]));
   const tabShown = (k: string) => mountedTabs.has(k);
   const tabHidden = (k: string) => (activeTab === k ? undefined : ({ display: "none" } as const));
@@ -2629,6 +2639,7 @@ export default function AkunPage() {
   // baru diunduh SAAT menu diklik → tiap pindah menu selalu kena spinner beberapa
   // detik, padahal datanya sudah ada di memori. Di sini chunk-nya ditarik duluan
   // saat browser senggang, jadi pindah menu berikutnya langsung render.
+  const warmUid = user?.id ?? "";
   useEffect(() => {
     if (typeof window === "undefined") return;
     const warm = () => {
@@ -2639,9 +2650,16 @@ export default function AkunPage() {
       });
       import("@/components/akun/JadwalCalendar");
       import("@/components/akun/SertifikatTab");
-      // [nav-tab-grup-pustaka-v1] dua menu yang paling sering diklik siswa
-      import("@/components/akun/StudentGroupChat");
-      import("@/components/akun/LibraryView");
+      /* [nav-tab-grup-pustaka-v1] dua menu yang paling sering diklik siswa.
+         [perf:grup-prewarm-v1] [perf:pustaka-prewarm-v1] chunk-nya ditarik SEKALIGUS
+         datanya dipanaskan — dulu chunk-nya saja yang duluan, jadi klik menunya tetap
+         berujung spinner sambil menunggu RPC/query berangkat dari nol. */
+      import("@/components/akun/StudentGroupChat").then((m) => {
+        if (!previewMode) void m.prewarmStudentGroups?.();
+      });
+      import("@/components/akun/LibraryView").then((m) => {
+        if (!previewMode && warmUid) m.prewarmLibrary?.(supabase, warmUid);
+      });
       import("@/components/lms/LmsKatalog");
     };
     const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, o?: any) => number);
@@ -2650,7 +2668,9 @@ export default function AkunPage() {
     return () => clearTimeout(t);
     // previewMode ikut dep: mode pratinjau baru ketahuan setelah efek auth jalan,
     // dan pemanasan data (butuh sesi login) tak boleh ikut jalan di mode itu.
-  }, [previewMode]);
+    // warmUid ikut dep: pustaka dikunci per user, jadi pemanasannya baru bisa
+    // berangkat setelah sesi ketahuan (cache modulnya yang jaga agar tak dobel).
+  }, [previewMode, warmUid]);
   // [materi-bahasa-siswa-v1] menu "Kelas & Materi" sudah dibuka untuk semua siswa —
   // gate per-email (materi-gate-v1) dicabut, termasuk lemparan balik ke Beranda buat
   // deep-link ?menu=materi. Pembatasannya sekarang di DATA: kelas live = registrasi
@@ -4068,12 +4088,12 @@ export default function AkunPage() {
                                   if (e.key === "Escape") { setHomeQOpen(false); (e.target as HTMLInputElement).blur(); }
                                   if (e.key === "Enter" && homeHitsTop[0]) runHit(homeHitsTop[0]);
                                 }}
-                                placeholder="Cari kelas, pengajar, atau bahasa…"
-                                aria-label="Cari di dashboard"
+                                placeholder={tt("Cari kelas, pengajar, atau bahasa…")}
+                                aria-label={tt("Cari di dashboard")}
                                 className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400"
                               />
                               {homeQ && (
-                                <button type="button" onClick={() => { setHomeQ(""); setHomeQOpen(false); }} aria-label="Kosongkan pencarian" className="shrink-0 text-gray-400 transition hover:text-gray-600">
+                                <button type="button" onClick={() => { setHomeQ(""); setHomeQOpen(false); }} aria-label={tt("Kosongkan pencarian")} className="shrink-0 text-gray-400 transition hover:text-gray-600">
                                   <X className="h-4 w-4" strokeWidth={2.4} />
                                 </button>
                               )}
@@ -4100,6 +4120,9 @@ export default function AkunPage() {
                               </div>
                             )}
                           </div>
+                          {/* [ui-lang-switcher-v1] pemilih bahasa antarmuka — kanan atas,
+                              persis di kiri lonceng & avatar. */}
+                          <UiLangSwitcher />
                           {student?.id && (
                             <div className="hidden lg:block">
                               <NotificationBell variant="topbar" userId={student.id} userType="student" />
@@ -4108,7 +4131,7 @@ export default function AkunPage() {
                           {/* [profil-sidebar-collapse-v1] avatar → buka/tutup sidebar profil — rounded rectangle biar seragam sama lonceng notif */}
                           <button
                             onClick={() => setProfileOpen((v) => !v)}
-                            aria-label={profileOpen ? "Tutup panel profil" : "Buka panel profil"}
+                            aria-label={profileOpen ? tt("Tutup panel profil") : tt("Buka panel profil")}
                             aria-expanded={profileOpen}
                             className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-22px_rgba(18,23,43,0.6)] transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]/40"
                           >
@@ -5017,9 +5040,9 @@ export default function AkunPage() {
           {tabShown("grup") && (
             <motion.div key="grup" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("grup")}>
               <div className="mb-5">
-                <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">Grup Kelas</h1>
+                <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">{tt("Grup Kelas")}</h1>
                 <p className="mt-1 text-sm text-gray-500">
-                  Ngobrol dengan pengajarmu di grup WhatsApp kelas — tanpa keluar dari dashboard.
+                  {tt("Ngobrol dengan pengajarmu di grup WhatsApp kelas — tanpa keluar dari dashboard.")}
                 </p>
               </div>
               <StudentGroupChat previewStudentId={previewId} paused={activeTab !== "grup"} />

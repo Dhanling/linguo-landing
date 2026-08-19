@@ -11,6 +11,9 @@ import MobileBottomNav from "@/components/akun/MobileBottomNav";
 import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
+// [ui-lang-switcher-v1] label menu ikut bahasa antarmuka yang dipilih siswa
+import { useT } from "@/lib/uiLang";
+import UiLangSwitcher from "@/components/akun/UiLangSwitcher";
 
 export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi" | "grup"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1] [nav-tab-grup-pustaka-v1]
 
@@ -78,11 +81,16 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
 // supaya menu langsung terbaca tanpa harus hover satu-satu.
 // [shell-a11y-focus-v1] + ring fokus keyboard (dulu ga ada sama sekali) dan ikonnya
 // ga lagi muter 360° tiap hover (12 elemen berputar = bising, ga nambah informasi).
+/* [nav-hover-zoom-v1] Hover = zoom-in halus. Titik tumpunya `origin-left` supaya
+   baris membesar ke arah teks (bukan melebar ke dua sisi dan menabrak tepi rail),
+   dan `transform-gpu` biar tak ada teks yang berkedip saat diskalakan. Ikonnya
+   naik sedikit lebih tinggi dari barisnya — itu yang bikin gerakannya terbaca
+   sebagai "maju ke depan", bukan sekadar kotak yang melar. */
 const NAV_ITEM_BASE =
-  "group relative flex w-full items-center gap-3 rounded-2xl px-3.5 py-2.5 text-left text-[13px] font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
+  "group relative flex w-full items-center gap-3 rounded-2xl px-3.5 py-2.5 text-left text-[13px] font-semibold origin-left transform-gpu transition-[transform,background-color,color] duration-200 ease-out hover:scale-[1.045] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70";
 const NAV_ITEM_ACTIVE = "bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]";
 const NAV_ITEM_IDLE = "text-white/70 hover:bg-white/10 hover:text-white";
-const NAV_ICON = "h-[20px] w-[20px] shrink-0";
+const NAV_ICON = "h-[20px] w-[20px] shrink-0 transform-gpu transition-transform duration-200 ease-out group-hover:scale-110";
 const GROUP_LABEL = "px-3.5 pb-1.5 pt-4 text-[10.5px] font-bold uppercase tracking-[0.09em] text-white/40";
 
 const DARK_KEY = "lms-dark-mode";
@@ -144,6 +152,7 @@ export default function StudentShell({
   canAccessMateri?: boolean;
   children: ReactNode;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const signOut = async () => {
     await supabase.auth.signOut();
     window.location.href = "/";
@@ -294,7 +303,7 @@ export default function StudentShell({
           onClick={onNavigated}
           target={newTab ? "_blank" : undefined}
           rel={newTab ? "noopener noreferrer" : undefined}
-          title={newTab ? `Buka ${item.label} di tab baru` : undefined}
+          title={newTab ? `${t("Buka")} ${t(item.label)} ${t("di tab baru")}` : undefined}
           className={`${newTab ? NAV_ITEM_BASE : NAV_ITEM_LINK} ${isActiveLink ? NAV_ITEM_ACTIVE : NAV_ITEM_IDLE}`}
           aria-current={isActiveLink ? "page" : undefined}
         >
@@ -302,7 +311,7 @@ export default function StudentShell({
           {/* [nav-newtab-noicon-v1] ikon ExternalLink inline dicabut — bikin sidebar
               ramai; perilaku buka tab baru TETAP (target dipertahankan di atas),
               title tetap menjelaskan buat yang hover. */}
-          <span className="truncate">{item.label}</span>
+          <span className="truncate">{t(item.label)}</span>
         </Link>
       );
       // Sudah membuka tab baru → tombol "buka di tab baru" milik navRow tak perlu.
@@ -312,7 +321,7 @@ export default function StudentShell({
       return (
         <div key={item.key} className={`${NAV_ITEM_BASE} cursor-default text-white/35`}>
           <Icon className={NAV_ICON} />
-          <span className="truncate">{item.label}</span>
+          <span className="truncate">{t(item.label)}</span>
         </div>
       );
     }
@@ -341,7 +350,7 @@ export default function StudentShell({
         aria-current={isActive ? "page" : undefined}
       >
         <Icon className={NAV_ICON} />
-        <span className="truncate">{item.label}</span>
+        <span className="truncate">{t(item.label)}</span>
       </Link>
     ));
   };
@@ -354,7 +363,7 @@ export default function StudentShell({
         if (items.length === 0) return null;
         return (
           <div key={g.title} className="flex flex-col gap-1.5">
-            <p className={GROUP_LABEL}>{g.title}</p>
+            <p className={GROUP_LABEL}>{t(g.title)}</p>
             {items.map((it) => renderItem(it, onNavigated))}
           </div>
         );
@@ -366,10 +375,10 @@ export default function StudentShell({
     <button
       onClick={toggleDark}
       className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
-      aria-label={isDark ? "Mode terang" : "Mode gelap"}
+      aria-label={isDark ? t("Mode terang") : t("Mode gelap")}
     >
       {isDark ? <Sun className={`${NAV_ICON} text-amber-300`} /> : <Moon className={NAV_ICON} />}
-      <span className="truncate">{isDark ? "Mode terang" : "Mode gelap"}</span>
+      <span className="truncate">{isDark ? t("Mode terang") : t("Mode gelap")}</span>
     </button>
   );
 
@@ -379,14 +388,14 @@ export default function StudentShell({
       className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}
     >
       <Bug className={NAV_ICON} />
-      <span className="truncate">Lapor Bug</span>
+      <span className="truncate">{t("Lapor Bug")}</span>
     </button>
   ) : null;
 
   const logoutBtn = (
     <button onClick={signOut} className={`${NAV_ITEM_BASE} text-white/80 hover:bg-[#0F5A52] hover:text-white`}>
       <LogOut className={NAV_ICON} />
-      <span className="truncate">Keluar</span>
+      <span className="truncate">{t("Keluar")}</span>
     </button>
   );
 
@@ -669,7 +678,7 @@ export default function StudentShell({
         <header className={`sticky top-0 z-40 h-14 shrink-0 items-center gap-2 border-b border-gray-100 bg-white/90 px-3 backdrop-blur-lg lg:hidden ${immersive ? "hidden" : "flex"}`}>
           <button
             onClick={() => setDrawerOpen(true)}
-            aria-label="Buka menu"
+            aria-label={t("Buka menu")}
             aria-expanded={drawerOpen}
             className="flex h-10 w-10 items-center justify-center rounded-xl text-[#12172B] transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]"
           >
@@ -683,13 +692,15 @@ export default function StudentShell({
           {canReportBug && (
             <button
               onClick={() => setBugOpen(true)}
-              aria-label="Lapor Bug"
-              title="Lapor Bug"
+              aria-label={t("Lapor Bug")}
+              title={t("Lapor Bug")}
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#12172B] transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16796E]"
             >
               <Bug className="h-5 w-5" strokeWidth={2.2} />
             </button>
           )}
+          {/* [ui-lang-switcher-v1] kanan atas juga di HP — di kiri lonceng notifikasi */}
+          <UiLangSwitcher />
           {studentId && <NotificationBell userId={studentId} userType="student" />}
         </header>
 
@@ -697,14 +708,14 @@ export default function StudentShell({
         {drawerOpen && (
           <div className="fixed inset-0 z-[70] lg:hidden">
             <button
-              aria-label="Tutup menu"
+              aria-label={t("Tutup menu")}
               onClick={() => setDrawerOpen(false)}
               className="absolute inset-0 h-full w-full bg-black/50"
             />
             <div
               role="dialog"
               aria-modal="true"
-              aria-label="Menu utama"
+              aria-label={t("Menu utama")}
               className="absolute inset-y-0 left-0 flex w-[280px] max-w-[85vw] flex-col overflow-y-auto bg-[#16796E] px-4 pb-6 pt-5"
             >
               <div className="flex items-center gap-2.5 px-2">
@@ -713,7 +724,7 @@ export default function StudentShell({
                 <span className="flex-1 text-[17px] font-bold text-white">Linguo</span>
                 <button
                   onClick={() => setDrawerOpen(false)}
-                  aria-label="Tutup menu"
+                  aria-label={t("Tutup menu")}
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25"
                 >
                   <X className="h-4 w-4" strokeWidth={2.4} />
@@ -731,13 +742,13 @@ export default function StudentShell({
                     </span>
                   )}
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-[14px] font-bold text-white">{firstName || "Siswa"}</span>
-                    <span className="block text-[12px] font-medium text-white/60">Siswa Linguo</span>
+                    <span className="block truncate text-[14px] font-bold text-white">{firstName || t("Siswa")}</span>
+                    <span className="block text-[12px] font-medium text-white/60">{t("Siswa Linguo")}</span>
                   </span>
                 </div>
               )}
 
-              <nav className="mt-4 flex flex-col gap-1.5" aria-label="Menu utama mobile">
+              <nav className="mt-4 flex flex-col gap-1.5" aria-label={t("Menu utama mobile")}>
                 {renderNav(() => setDrawerOpen(false))}
               </nav>
 

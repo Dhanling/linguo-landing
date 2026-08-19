@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Home, Calendar, BookOpen, User, Clapperboard, type LucideIcon } from "lucide-react";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 type TabKey = "beranda" | "jadwal" | "materi" | "akun";
 
@@ -29,6 +30,7 @@ const TABS: NavItem[] = [
 ];
 
 export default function MobileBottomNav({ activeTab, onChange, canAccessMateri = true, previewStudentId = null }: Props) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const tabs = TABS.filter((item) => canAccessMateri || item.key !== "materi");
   const withPreview = (href: string) =>
     previewStudentId
@@ -38,7 +40,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
     <nav
       className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-100 lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
-      aria-label="Navigasi utama"
+      aria-label={t("Navigasi utama")}
     >
       <div className={`mx-auto max-w-lg grid h-14 ${tabs.length === 5 ? "grid-cols-5" : "grid-cols-4"}`}>
         {tabs.map((item) => {
@@ -53,7 +55,7 @@ export default function MobileBottomNav({ activeTab, onChange, canAccessMateri =
                 className={`w-5 h-5 transition-transform ${isActive ? "scale-110" : ""}`}
                 strokeWidth={isActive ? 2.5 : 2}
               />
-              <span className="text-[10px] font-medium">{label}</span>
+              <span className="text-[10px] font-medium">{t(label)}</span>
             </>
           );
           // [shell-a11y-focus-v1] ring fokus keyboard + label non-aktif dinaikkan ke

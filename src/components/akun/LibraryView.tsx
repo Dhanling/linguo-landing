@@ -5,6 +5,8 @@
 // Progress e-learning: best-effort dari lms_progress, dipetakan via digital_products.language → lms_modules.
 
 import { useEffect, useMemo, useState } from "react";
+// [ui-lang-switcher-v1] judul & label ikut bahasa antarmuka
+import { useT } from "@/lib/uiLang";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import {
@@ -206,7 +208,98 @@ const BM_KEY = "linguo_pustaka_bookmarks";
 // [perf:pustaka-cache-v1] cache module-level per user: buka lagi Perpustakaan →
 // render instan dari kunjungan sebelumnya, data di-refresh di belakang layar.
 type LangProgress = Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>;
-let libCache: { userId: string; purchases: Purchase[]; byLang: LangProgress } | null = null;
+type LibData = { purchases: Purchase[]; byLang: LangProgress; prodLangs: Record<string, ProductLang[]> };
+let libCache: ({ userId: string } & LibData) | null = null;
+
+/* [perf:pustaka-prewarm-v1] Pemuatan pustaka dipindah ke level MODUL supaya bisa
+   dipanaskan dari /akun sebelum menunya diklik (lihat warm() di app/akun/page.tsx).
+   Dulu 5 query-nya baru berangkat SAAT komponen mount — klik "Perpustakaan" berarti
+   menunggu jaringan dari nol dengan spinner. `libInflight` bikin pemanasan dan
+   pemuatan komponen berbagi SATU rangkaian query, bukan dua yang balapan. */
+let libInflight: { userId: string; p: Promise<LibData | null> } | null = null;
+
+async function runLoadLibrary(
+  supabase: SupabaseClient,
+  userId: string,
+  onEarly?: (d: { purchases: Purchase[]; byLang: LangProgress }) => void,
+): Promise<LibData | null> {
+  const purchasesReq = supabase
+    .from("digital_purchases")
+    .select(`
+      id, payment_status, access_granted, expires_at, download_count, created_at,
+      digital_products (
+        id, type, title, slug, cover_url, file_url, video_playlist_url,
+        language, level, pages, modules_count, total_duration_min
+      ),
+      digital_product_pricing ( display_label, duration_days )
+    `)
+    .eq("auth_user_id", userId)
+    .eq("payment_status", "Lunas")
+    .order("created_at", { ascending: false });
+
+  // best-effort progress (kalau tabel/akses gak ada → diabaikan, progress=0)
+  const modReq = supabase.from("lms_modules").select("id,language,sort_order").order("sort_order");
+  const lessReq = supabase.from("lms_lessons").select("id,module_id,title,sort_order").order("sort_order");
+  const progReq = supabase.from("lms_progress").select("lesson_id,status").eq("user_id", userId);
+
+  const [pRes, mRes, lRes, prRes, lessonStats] = await Promise.all([
+    purchasesReq,
+    modReq,
+    lessReq,
+    progReq,
+    fetchLessonStats(), // [lms-content-readiness-v1]
+  ]);
+
+  if (pRes.error) {
+    console.error("Gagal memuat perpustakaan:", pRes.error);
+    return null;
+  }
+  const purchases = (pRes.data ?? []) as unknown as Purchase[];
+
+  let byLang: LangProgress = libCache?.userId === userId ? libCache.byLang : {};
+  if (!mRes.error && !lRes.error) {
+    const doneSet = new Set<string>(
+      (((prRes.data as { lesson_id: string; status: string }[]) || []) || [])
+        .filter((x) => x.status === "completed")
+        .map((x) => x.lesson_id)
+    );
+    // [lms-content-readiness-v1] sesi yang materinya belum ditulis jangan jadi penyebut
+    const allLessons = ((lRes.data as any) || []) as {
+      id: string; module_id: string; title: string; sort_order: number | null;
+    }[];
+    byLang = buildProgressByLang((mRes.data as any) || [], keepReady(allLessons, lessonStats), doneSet);
+  }
+  // Daftar produk sudah bisa digambar duluan; link per bahasa menyusul.
+  onEarly?.({ purchases, byLang });
+  libCache = { userId, purchases, byLang, prodLangs: libCache?.userId === userId ? libCache.prodLangs : {} };
+
+  // [produk-digital-per-bahasa-v1] link materi per bahasa untuk produk yang dibeli
+  const prodLangs = await fetchProductLangs(supabase, purchases.map((p) => p.digital_products?.id));
+  libCache = { userId, purchases, byLang, prodLangs };
+  return { purchases, byLang, prodLangs };
+}
+
+/** Satu pemuatan bersama per user — pemanggil kedua ikut menumpang yang sedang jalan. */
+function loadLibraryShared(
+  supabase: SupabaseClient,
+  userId: string,
+  onEarly?: (d: { purchases: Purchase[]; byLang: LangProgress }) => void,
+): Promise<LibData | null> {
+  if (libInflight && libInflight.userId === userId) return libInflight.p;
+  const p = runLoadLibrary(supabase, userId, onEarly).finally(() => {
+    if (libInflight?.p === p) libInflight = null;
+  });
+  libInflight = { userId, p };
+  return p;
+}
+
+/** [perf:pustaka-prewarm-v1] Dipanggil dari /akun saat browser senggang. */
+export function prewarmLibrary(supabase: SupabaseClient, userId: string) {
+  if (!userId || (libCache && libCache.userId === userId)) return;
+  void loadLibraryShared(supabase, userId).catch(() => {
+    /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
+  });
+}
 // [perf:preview-cache-v1] cache terpisah untuk mode pratinjau (per siswa) — jangan
 // menumpang libCache biar pustaka siswa yang dipratinjau tak bocor ke sesi staf.
 let libPreviewCache: { student: string; purchases: Purchase[] } | null = null;
@@ -218,6 +311,7 @@ let libPreviewCache: { student: string; purchases: Purchase[] } | null = null;
 export default function LibraryView({ userId, supabase, previewStudentId = null }: {
   userId: string; supabase: SupabaseClient; previewStudentId?: string | null;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const preview = !!previewStudentId;
   const pvCached = preview && libPreviewCache?.student === previewStudentId ? libPreviewCache : null;
   const cached = !preview && libCache && libCache.userId === userId ? libCache : null;
@@ -235,7 +329,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   /* linguo-patch:produk-digital-link-v1 */
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
   /* produk-digital-per-bahasa-v1 — link materi per bahasa (paket 12+ bahasa) */
-  const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>({});
+  const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>(cached?.prodLangs ?? {});
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
   /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
   const [reading, setReading] = useState<
@@ -263,6 +357,9 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   useEffect(() => { fetchAll(); /* eslint-disable-next-line */ }, [userId, previewStudentId]);
 
   async function fetchAll() {
+    // Sesi belum ketahuan → jangan query pakai userId kosong (hasilnya pasti nol
+    // dan malah tersimpan di cache modul atas nama user "").
+    if (!previewStudentId && !userId) return;
     // [preview-session-v1] pratinjau: satu panggilan server, cache modul sengaja
     // TIDAK disentuh supaya pustaka siswa lain tak bocor ke sesi staf di tab yang sama.
     if (previewStudentId) {
@@ -285,61 +382,22 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     }
     // [perf:pustaka-cache-v1] spinner cuma pas belum ada cache; refresh berikutnya diam-diam
     if (!(libCache && libCache.userId === userId)) setLoading(true);
-    const purchasesReq = supabase
-      .from("digital_purchases")
-      .select(`
-        id, payment_status, access_granted, expires_at, download_count, created_at,
-        digital_products (
-          id, type, title, slug, cover_url, file_url, video_playlist_url,
-          language, level, pages, modules_count, total_duration_min
-        ),
-        digital_product_pricing ( display_label, duration_days )
-      `)
-      .eq("auth_user_id", userId)
-      .eq("payment_status", "Lunas")
-      .order("created_at", { ascending: false });
-
-    // best-effort progress (kalau tabel/akses gak ada → diabaikan, progress=0)
-    const modReq = supabase.from("lms_modules").select("id,language,sort_order").order("sort_order");
-    const lessReq = supabase.from("lms_lessons").select("id,module_id,title,sort_order").order("sort_order");
-    const progReq = supabase.from("lms_progress").select("lesson_id,status").eq("user_id", userId);
-
-    const [pRes, mRes, lRes, prRes, lessonStats] = await Promise.all([
-      purchasesReq,
-      modReq,
-      lessReq,
-      progReq,
-      fetchLessonStats(), // [lms-content-readiness-v1]
-    ]);
-
-    let nextPurchases: Purchase[] = [];
-    if (pRes.error) {
-      console.error("Gagal memuat perpustakaan:", pRes.error);
+    // [perf:pustaka-prewarm-v1] query-nya milik modul: kalau pemanasan dari /akun
+    // sudah jalan/selesai, di sini tinggal menumpang hasilnya — bukan mulai dari nol.
+    const data = await loadLibraryShared(supabase, userId, (early) => {
+      setPurchases(early.purchases);
+      setByLang(early.byLang);
+      setLoading(false);
+    });
+    if (!data) {
       toast.error("Gagal memuat perpustakaan.");
-      setPurchases([]);
-    } else {
-      nextPurchases = (pRes.data ?? []) as unknown as Purchase[];
-      setPurchases(nextPurchases);
-      // [produk-digital-per-bahasa-v1] link materi per bahasa untuk produk yang dibeli
-      fetchProductLangs(supabase, nextPurchases.map((p) => p.digital_products?.id)).then(setProdLangs);
+      if (!libCache || libCache.userId !== userId) setPurchases([]);
+      setLoading(false);
+      return;
     }
-
-    let nextByLang: LangProgress | null = null;
-    if (!mRes.error && !lRes.error) {
-      const doneSet = new Set<string>(
-        (((prRes.data as { lesson_id: string; status: string }[]) || []) || [])
-          .filter((x) => x.status === "completed")
-          .map((x) => x.lesson_id)
-      );
-      // [lms-content-readiness-v1] sesi yang materinya belum ditulis jangan jadi penyebut
-      const allLessons = ((lRes.data as any) || []) as {
-        id: string; module_id: string; title: string; sort_order: number | null;
-      }[];
-      nextByLang = buildProgressByLang((mRes.data as any) || [], keepReady(allLessons, lessonStats), doneSet);
-      setByLang(nextByLang);
-    }
-    // [perf:pustaka-cache-v1] simpan buat kunjungan berikutnya (jangan cache hasil error)
-    if (!pRes.error) libCache = { userId, purchases: nextPurchases, byLang: nextByLang ?? libCache?.byLang ?? {} };
+    setPurchases(data.purchases);
+    setByLang(data.byLang);
+    setProdLangs(data.prodLangs);
     setLoading(false);
   }
 
@@ -491,22 +549,22 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       <header className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="flex items-center gap-1.5 text-[12px] font-bold text-slate-400">
-            <span>Dashboard</span>
+            <span>{t("Dashboard")}</span>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-[#12A37E]">Perpustakaan Saya</span>
+            <span className="text-[#12A37E]">{t("Perpustakaan Saya")}</span>
           </p>
           <h1 className="mt-1 text-[28px] font-extrabold leading-tight text-[#12172B] sm:text-[32px]">
-            Perpustakaan Saya
+            {t("Perpustakaan Saya")}
           </h1>
           <p className="mt-1 text-[14px] font-medium text-slate-500">
-            E-Book &amp; E-Learning yang sudah kamu beli · buka kapan saja
+            {t("E-Book & E-Learning yang sudah kamu beli · buka kapan saja")}
           </p>
 
           {/* stats chips */}
           <div className="mt-4 flex flex-wrap gap-2.5">
-            <StatChip icon={<BookOpen className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.total} produk`} />
-            <StatChip icon={<Flame className="h-4 w-4 text-[#12A37E]" strokeWidth={2.2} />} label={`${stats.running} sedang berjalan`} />
-            <StatChip icon={<GraduationCap className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.certs} sertifikat`} />
+            <StatChip icon={<BookOpen className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.total} ${t("produk")}`} />
+            <StatChip icon={<Flame className="h-4 w-4 text-[#12A37E]" strokeWidth={2.2} />} label={`${stats.running} ${t("sedang berjalan")}`} />
+            <StatChip icon={<GraduationCap className="h-4 w-4" strokeWidth={2.2} />} label={`${stats.certs} ${t("sertifikat")}`} />
           </div>
         </div>
 
@@ -588,7 +646,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
                 tab === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
               }`}
             >
-              {label}
+              {t(label)}
               <span className={`rounded-full px-1.5 py-0.5 text-[11px] ${tab === k ? "bg-[#12A37E]/10 text-[#0C8163]" : "bg-slate-200 text-slate-500"}`}>
                 {counts[k]}
               </span>
@@ -602,7 +660,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Cari produk…"
+              placeholder={t("Cari produk…")}
               className="w-full rounded-2xl border border-slate-200 bg-white py-2.5 pl-10 pr-3 text-[14px] font-medium text-[#12172B] outline-none transition placeholder:text-slate-400 focus:border-slate-300"
             />
           </div>
@@ -1063,12 +1121,13 @@ function RenewModal({
 }
 
 function EmptyState() {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="rounded-3xl bg-white px-6 py-16 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
       <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-[#12A37E]"><BookOpen className="h-9 w-9" strokeWidth={2} /></div>
-      <h3 className="text-[20px] font-extrabold text-[#12172B]">Perpustakaan masih kosong</h3>
+      <h3 className="text-[20px] font-extrabold text-[#12172B]">{t("Perpustakaan masih kosong")}</h3>
       <p className="mx-auto mt-1 max-w-sm text-[14px] font-medium text-slate-500">
-        Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.
+        {t("Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.")}
       </p>
       <a
         href="/toko"
@@ -1076,7 +1135,7 @@ function EmptyState() {
         rel="noopener noreferrer"
         className="mt-5 inline-flex items-center gap-2 rounded-2xl bg-[#12A37E] px-6 py-3 text-[14px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98]"
       >
-        <ShoppingBag className="h-4 w-4" /> Jelajahi Toko Digital
+        <ShoppingBag className="h-4 w-4" /> {t("Jelajahi Toko Digital")}
       </a>
     </div>
   );

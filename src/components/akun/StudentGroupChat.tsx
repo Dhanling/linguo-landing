@@ -32,6 +32,8 @@ import {
   Minimize2, Reply, RotateCw, Search, Send, Smile, Users, X,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
+// [ui-lang-switcher-v1] label ikut bahasa antarmuka yang dipilih siswa
+import { useT } from "@/lib/uiLang";
 
 /* ── Bentuk data ─────────────────────────────────────────────────────────── */
 
@@ -365,6 +367,74 @@ function FullscreenToggle({ on, onToggle }: { on: boolean; onToggle: () => void 
    Mode pratinjau sengaja tak ikut: itu data siswa lain. */
 let sgIdentityCache: Identity | null = null;
 let sgGroupsCache: GroupRow[] | null = null;
+/* [perf:grup-prewarm-v1] Pratayang & badge per grup ikut ditahan — dulu kunjungan
+   kedua menampilkan daftar grup dari cache tapi baris pratayangnya kosong dulu
+   sampai query wa_messages balik, jadi daftarnya sempat "meloncat" urutannya. */
+let sgLastCache: Record<string, LastMsg> | null = null;
+let sgUnreadCache: Record<string, number> | null = null;
+/* [perf:grup-msg-cache-v1] Transkrip per JID. Buka grup yang sama untuk kedua
+   kalinya (atau grup yang sudah dipanaskan) langsung tergambar; penyegarannya
+   jalan diam-diam tanpa spinner. Hidup selama tab browser belum di-reload. */
+const sgMsgCache: Record<string, Msg[]> = {};
+let sgPrewarming = false;
+
+/** [perf:grup-prewarm-v1] Dipanggil dari /akun saat browser senggang: identitas,
+    daftar grup, pratayang, dan — kalau grupnya cuma satu (mayoritas siswa) —
+    transkripnya sekalian. Klik menu "Grup Kelas" jadi tinggal menggambar. */
+export async function prewarmStudentGroups() {
+  if (sgPrewarming || sgGroupsCache) return;
+  sgPrewarming = true;
+  try {
+    const [idRes, listRes] = await Promise.all([
+      supabase.rpc("student_group_identity"),
+      supabase.rpc("student_group_list"),
+    ]);
+    if (!idRes.error) sgIdentityCache = ((idRes.data as Identity[]) ?? [])[0] ?? null;
+    if (listRes.error) return;
+    const rows = ((listRes.data as GroupRow[]) ?? []);
+    sgGroupsCache = rows;
+    if (!rows.length) return;
+    const { data: recent } = await supabase
+      .from("wa_messages")
+      .select("phone, created_at, body, media_type, direction, contact_name")
+      .in("phone", rows.map((g) => g.jid))
+      .order("created_at", { ascending: false })
+      .limit(400);
+    if (recent) {
+      const readMap = loadReadMap();
+      const baseline = getBaseline();
+      const nextLast: Record<string, LastMsg> = {};
+      const nextUnread: Record<string, number> = {};
+      for (const r of recent as RecentRow[]) {
+        if (!nextLast[r.phone]) {
+          nextLast[r.phone] = {
+            at: r.created_at, body: r.body, media_type: r.media_type,
+            direction: r.direction, contact_name: r.contact_name,
+          };
+        }
+        if (r.direction === "in" && r.created_at > (readMap[r.phone] || baseline)) {
+          nextUnread[r.phone] = (nextUnread[r.phone] ?? 0) + 1;
+        }
+      }
+      sgLastCache = nextLast;
+      sgUnreadCache = nextUnread;
+    }
+    // Satu grup = pasti itu yang dibuka (lihat auto-open di bawah) → panaskan juga.
+    if (rows.length === 1) {
+      const { data, error } = await supabase
+        .from("wa_messages")
+        .select(MSG_COLS)
+        .eq("phone", rows[0].jid)
+        .order("created_at", { ascending: false })
+        .limit(300);
+      if (!error) sgMsgCache[rows[0].jid] = ((data as unknown as Msg[]) ?? []).slice().reverse();
+    }
+  } catch {
+    /* pemanasan gagal → tab tetap memuat sendiri saat dibuka */
+  } finally {
+    sgPrewarming = false;
+  }
+}
 
 export default function StudentGroupChat({
   previewStudentId = null,
@@ -379,6 +449,7 @@ export default function StudentGroupChat({
      dashboard admin): tak ada sesi login, jadi semua data lewat /api/preview-group
      (service role, dikunci cookie pratinjau ke satu siswa) dan seluruh jalur
      tulis — kirim, reaksi, batal antre — dimatikan. */
+  const t = useT(); // [ui-lang-switcher-v1]
   const preview = !!previewStudentId;
   const [identity, setIdentity] = useState<Identity | null>(() => (previewStudentId ? null : sgIdentityCache));
   const [identityReady, setIdentityReady] = useState(() => !previewStudentId && !!sgIdentityCache);
@@ -386,8 +457,9 @@ export default function StudentGroupChat({
   const [loadingGroups, setLoadingGroups] = useState(() => (previewStudentId ? true : !sgGroupsCache));
   const [active, setActive] = useState<GroupRow | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
-  const [lastMsgs, setLastMsgs] = useState<Record<string, LastMsg>>({});
-  const [unread, setUnread] = useState<Record<string, number>>({});
+  // [perf:grup-prewarm-v1] pratayang & badge ikut dari cache modul (bukan pratinjau)
+  const [lastMsgs, setLastMsgs] = useState<Record<string, LastMsg>>(() => (previewStudentId ? {} : sgLastCache ?? {}));
+  const [unread, setUnread] = useState<Record<string, number>>(() => (previewStudentId ? {} : sgUnreadCache ?? {}));
   const [pending, setPending] = useState<Pending[]>([]);
   const [loadingMsgs, setLoadingMsgs] = useState(false);
   const [mediaUrls, setMediaUrls] = useState<Record<string, string>>({});
@@ -576,6 +648,8 @@ export default function StudentGroupChat({
           nextUnread[r.phone] = (nextUnread[r.phone] ?? 0) + 1;
         }
       }
+      sgLastCache = nextLast; // [perf:grup-prewarm-v1]
+      sgUnreadCache = nextUnread;
       setLastMsgs(nextLast);
       setUnread(nextUnread);
     };
@@ -714,6 +788,7 @@ export default function StudentGroupChat({
         } else {
           // Query mengambil 300 TERBARU (descending), tampilnya kronologis.
           const rows = ((msgRes.data as unknown as Msg[]) ?? []).slice().reverse();
+          sgMsgCache[jid] = rows; // [perf:grup-msg-cache-v1]
           setMsgs(rows);
           const newest = rows[rows.length - 1];
           if (newest) {
@@ -760,7 +835,16 @@ export default function StudentGroupChat({
     const { jid, sender } = active;
     let alive = true;
     msgKey.current = `${jid}|${sender}`;
-    void loadMsgs(jid, sender);
+    /* [perf:grup-msg-cache-v1] Transkrip yang sudah pernah dimuat (atau dipanaskan
+       dari /akun) digambar SEKARANG, lalu disegarkan tanpa spinner. Dulu tiap buka
+       grup selalu layar kosong + spinner walau isinya sama persis dengan tadi. */
+    const warm = preview ? null : sgMsgCache[jid];
+    if (warm && warm.length) {
+      setMsgs(warm);
+      void loadMsgs(jid, sender, { silent: true });
+    } else {
+      void loadMsgs(jid, sender);
+    }
     const timer = setInterval(() => {
       if (alive && !document.hidden && !pausedRef.current) void loadMsgs(jid, sender, { silent: true });
     }, 8000);
@@ -1092,7 +1176,7 @@ export default function StudentGroupChat({
           <div className="border-b border-gray-200 px-4 py-3.5">
             <div className="flex items-center gap-2">
               <h2 className="flex flex-1 items-center gap-2 text-sm font-bold text-gray-900">
-                <MessagesSquare className="h-4 w-4 text-teal-700" /> Grup Kelas
+                <MessagesSquare className="h-4 w-4 text-teal-700" /> {t("Grup Kelas")}
               </h2>
               <FullscreenToggle on={fullscreen} onToggle={() => setFullscreen((v) => !v)} />
             </div>
@@ -1106,7 +1190,7 @@ export default function StudentGroupChat({
                 <input
                   value={groupQuery}
                   onChange={(e) => setGroupQuery(e.target.value)}
-                  placeholder="Cari grup kelas…"
+                  placeholder={t("Cari grup kelas…")}
                   className="h-9 w-full rounded-xl border border-gray-200 bg-gray-50 pl-8 pr-8 text-xs text-gray-900 outline-none focus:border-teal-300"
                 />
                 {groupQuery && (
@@ -1205,7 +1289,7 @@ export default function StudentGroupChat({
         <section className={`flex min-h-0 flex-1 flex-col ${active ? "flex" : "hidden lg:flex"}`}>
           {!active ? (
             <div className="flex flex-1 items-center justify-center px-6 py-16 text-center text-sm text-gray-500">
-              Pilih grup kelas di sebelah kiri untuk membuka percakapan.
+              {t("Pilih grup kelas di sebelah kiri untuk membuka percakapan.")}
             </div>
           ) : (
             <>
@@ -1392,7 +1476,7 @@ export default function StudentGroupChat({
                       }
                     }}
                     rows={1}
-                    placeholder="Tulis pesan ke grup kelas…"
+                    placeholder={t("Tulis pesan ke grup kelas…")}
                     className="max-h-[240px] min-h-[42px] flex-1 resize-none rounded-2xl border border-gray-200 bg-gray-50 px-3.5 py-2.5 text-sm text-gray-900 outline-none focus:border-teal-300"
                   />
                   <button
