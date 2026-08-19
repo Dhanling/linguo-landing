@@ -496,8 +496,8 @@ function MilestoneRow({
 
       <div className={sched ? 'pb-5' : 'pb-3'}>
         {/* [kelas-materi-drawer-v1] Judul + tanggal jadi satu tombol pembuka
-            drawer materi. Tombol Ubah/Batalkan sengaja DI LUAR tombol ini —
-            kalau bersarang, klik "Batalkan" ikut membuka drawer. */}
+            drawer materi — satu-satunya aksi di baris ini, karena siswa memang
+            tidak boleh mengubah/membatalkan jadwalnya sendiri. */}
         <HeaderSesi as={bisaDibuka ? 'button' : 'div'} onClick={onOpen}>
           {/* min-h-6 = setinggi bulatan, jadi tulisan "Sesi N" persis sejajar
               dengan titik milestone-nya di semua baris (ada tanggal atau tidak). */}
