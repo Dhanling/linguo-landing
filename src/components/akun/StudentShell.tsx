@@ -8,15 +8,15 @@ import { supabase } from "@/lib/supabase-client";
 import { canAccessLingbook } from "@/lib/materiGate"; // [dev-gate-lingbook-v1]
 import NotificationBell from "@/components/NotificationBell";
 import MobileBottomNav from "@/components/akun/MobileBottomNav";
-import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, ExternalLink, type LucideIcon } from "lucide-react";
+import { LayoutGrid, BookOpen, Library, CalendarDays, Star, Settings, LogOut, Moon, Sun, ClipboardCheck, Clapperboard, Layers, BookText, MessagesSquare, Menu, X, Bug, type LucideIcon } from "lucide-react";
 // [bug-report-pengajar-siswa-v1] siswa lapor bug dari LMS → masuk Bug Tracker admin
 import BugReportDialog from "@/components/akun/BugReportDialog";
 
-export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1]
+export type AkunTab = "beranda" | "jadwal" | "materi" | "sertifikat" | "akun" | "pustaka" | "simulasi" | "grup"; // [linguo-patch:shell-pustaka-nav-v1] [simulasi-inshell-v1] [nav-tab-grup-pustaka-v1]
 
 // [shell-nav-groups-v1] key menu yang bukan tab (route terpisah) ikut dipakai sbg
 // penanda "active" — dulu di-cast paksa ke AkunTab, jadi highlight-nya ga pernah nyala.
-export type NavKey = AkunTab | "watch" | "kosakata" | "lingbook" | "grup";
+export type NavKey = AkunTab | "watch" | "kosakata" | "lingbook";
 
 type NavItem =
   | { key: AkunTab; label: string; icon: LucideIcon; soon?: false }
@@ -44,10 +44,14 @@ const NAV_GROUPS: { title: string; items: NavItem[] }[] = [
     title: "Aktivitas",
     items: [
       { key: "jadwal", label: "Jadwal", icon: CalendarDays },
-      // [student-group-chat-v1] grup WhatsApp kelas, dibaca & dibalas dari LMS
-      { key: "grup", label: "Grup Kelas", icon: MessagesSquare, href: "/akun/grup" },
-      // [perf:sidebar-nav-v1] link langsung ke route-nya (dulu tab → redirect full reload)
-      { key: "pustaka", label: "Perpustakaan", icon: Library, href: "/akun/perpustakaan" },
+      /* [nav-tab-grup-pustaka-v1] Grup Kelas & Perpustakaan jadi TAB di dalam /akun,
+         bukan route sendiri. Sebagai route, tiap klik menu = ganti halaman: shell
+         dibongkar-pasang dan panelnya sempat kosong — itu kedipan yang terasa waktu
+         balik ke Beranda. Sebagai tab, pindahnya cuma ganti isi panel (dan tab yang
+         sudah dibuka tetap hidup, lihat [perf:akun-tab-keepalive-v1]).
+         Route /akun/grup & /akun/perpustakaan TETAP ada buat tautan langsung. */
+      { key: "grup", label: "Grup Kelas", icon: MessagesSquare },
+      { key: "pustaka", label: "Perpustakaan", icon: Library },
       { key: "sertifikat", label: "Sertifikat", icon: Star },
     ],
   },
@@ -89,13 +93,6 @@ export const GROUP_NAV_KEY = "linguo-has-group-v1";
 /** Idem untuk gerbang menu development (Lingbook) — lihat [perf:shell-devnav-cache-v1]. */
 const DEV_NAV_KEY = "linguo-dev-nav-v1";
 
-/* [nav-inplace-grup-pustaka-v1] Grup Kelas & Perpustakaan dibuka DI HALAMAN INI, tak
-   lagi di tab baru — permintaan 19 Agustus 2026: dua menu itu paling sering diklik
-   dan tab baru berarti aplikasi dimuat dari nol tiap kali (selalu terasa lama).
-   Rutenya sudah di-prefetch + gerbangnya optimistis, jadi in-place = nyaris instan.
-   Watch & Learn, Kosakata Saya, dan Lingbook TETAP tab baru ([[akun-sidebar-menu-tab-baru]]):
-   itu bahan jelajah, bukan tempat siswa balik-balik. */
-const IN_PLACE_KEYS = new Set(["grup", "pustaka"]);
 
 // [shell-dark-fouc-v1] Skrip kecil yang ikut ke-render di HTML awal → kelas `lms-dark`
 // nempel ke <html> SEBELUM paint pertama. Dulu tema dibaca di useEffect, jadi user
@@ -263,42 +260,33 @@ export default function StudentShell({
       ? `${href}${href.includes("?") ? "&" : "?"}preview=${encodeURIComponent(previewStudentId)}`
       : href;
 
-  // [nav-newtab-v1] Bungkus item nav + tombol kecil "buka di tab baru" (desktop;
-  // di HP pakai tekan-lama pada menunya, tombolnya sengaja disembunyikan).
-  const navRow = (item: NavItem, href: string, node: ReactNode) => (
-    <div key={item.key} className="group/nav relative">
-      {node}
-      <button
-        type="button"
-        title="Buka di tab baru"
-        aria-label={`Buka ${item.label} di tab baru`}
-        onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
-        className="absolute right-1.5 top-1/2 hidden -translate-y-1/2 rounded-lg p-1.5 text-white/55 opacity-0 transition hover:bg-white/15 hover:text-white focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 group-hover/nav:opacity-100 lg:block"
-      >
-        <ExternalLink className="h-3.5 w-3.5" strokeWidth={2.2} />
-      </button>
-    </div>
+  /* [nav-newtab-icon-off-v1] Tombol hover "buka di tab baru" DICABUT (permintaan
+     19 Agu 2026): ikon panah yang muncul tiap kursor lewat bikin sidebar berkedip
+     dan menu terasa punya dua tombol. Kemampuannya tak hilang — tiap menu tetap
+     tautan asli (`/akun?menu=<key>`), jadi klik-tengah / Cmd+klik / menu kanan
+     "buka di tab baru" tetap jalan seperti tautan biasa. */
+  const navRow = (item: NavItem, _href: string, node: ReactNode) => (
+    <div key={item.key}>{node}</div>
   );
 
   // Satu renderer dipakai sidebar desktop & drawer mobile → menunya mustahil beda.
   const renderItem = (item: NavItem, onNavigated?: () => void) => {
     const Icon = item.icon;
-    // pr-9 di desktop: menyisakan ruang buat tombol "buka di tab baru" di kanan.
-    const NAV_ITEM_LINK = `${NAV_ITEM_BASE} lg:pr-9`;
+    // [nav-newtab-icon-off-v1] tak ada lagi tombol di kanan → tak perlu sisa ruang.
+    const NAV_ITEM_LINK = NAV_ITEM_BASE;
     if ("href" in item) {
       // [perf:sidebar-nav-v1] next/link → navigasi client-side + prefetch otomatis
       // (dulu <a> biasa = full page reload tiap pindah menu)
       const isActiveLink = item.key === active;
       const href = withPreview(item.href);
-      // [nav-newtab-default-v1] Menu jelajah yang pindah ke HALAMAN LAIN (Watch &
-      // Learn, Kosakata Saya, Lingbook) dibuka langsung di TAB BARU — Grup Kelas &
-      // Perpustakaan dikecualikan, lihat [nav-inplace-grup-pustaka-v1]. Dulu halaman yang sedang dibuka ikut tergantikan, jadi siswa yang
-      // cuma mau menengok kosakata kehilangan dashboard/kelas yang lagi jalan dan
-      // harus menunggu muat ulang saat menekan back. Menu yang cuma ganti TAB di
-      // dalam /akun tetap in-place — di sana tak ada halaman yang hilang.
+      // [nav-newtab-default-v1] Sisa menu ber-href (Watch & Learn, Kosakata Saya,
+      // Lingbook) = bahan JELAJAH → dibuka di TAB BARU: dashboard/kelas yang sedang
+      // jalan tak boleh tergantikan cuma karena siswa menengok kosakata.
+      // Grup Kelas & Perpustakaan bukan lagi bagian dari sini — keduanya sudah jadi
+      // tab di dalam /akun ([nav-tab-grup-pustaka-v1]).
       // Menu yang sedang aktif dikecualikan: membuka salinan halaman yang sama
       // di tab baru cuma bikin tab kembar.
-      const newTab = !isActiveLink && !IN_PLACE_KEYS.has(item.key);
+      const newTab = !isActiveLink;
       const node = (
         <Link
           href={href}

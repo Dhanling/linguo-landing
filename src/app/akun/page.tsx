@@ -113,7 +113,11 @@ const LessonPlayer = dynamic(() => import('@/components/akun/LessonPlayer'), { s
 // [beranda-insights-v1] kartu ringkasan belajar (skill+delta, PR, materi, beban minggu, peringkat).
 // ssr:false — semua isinya butuh sesi Supabase klien, tak ada gunanya dirender di server.
 const BerandaInsights = dynamic(() => import('@/components/akun/BerandaInsights'), { ssr: false });
-const PerpustakaanSaya = dynamic(() => import('@/components/PerpustakaanSaya'), { ssr: false, loading: TabLoading });
+/* [nav-tab-grup-pustaka-v1] Grup Kelas & Perpustakaan Saya sekarang tab di halaman ini.
+   Komponennya sama persis dengan yang dipakai route /akun/grup & /akun/perpustakaan,
+   jadi tak ada dua versi tampilan yang harus dijaga sinkron. */
+const StudentGroupChat = dynamic(() => import('@/components/akun/StudentGroupChat'), { ssr: false, loading: TabLoading });
+const LibraryView = dynamic(() => import('@/components/akun/LibraryView'), { ssr: false, loading: TabLoading });
 import AttentionAlert from '@/components/akun/AttentionAlert';
 import { Spinner } from "@/components/Spinner";
 // ── Supabase Client ──────────────────────────────────────────────────────
@@ -2534,7 +2538,7 @@ export default function AkunPage() {
   );
   const [streak, setStreak] = useState(() => akunSnapshot?.streak ?? 0);
   const [dataLoading, setDataLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
+  const [activeTab, setActiveTab] = useState<"beranda"|"jadwal"|"materi"|"akun"|"sertifikat"|"pustaka"|"simulasi"|"grup">("beranda"); // [linguo-patch:akun-pustaka-tab-v1] [simulasi-inshell-v1]
   // [perf:akun-snapshot-mount-v1] simpan keadaan terakhir ke snapshot modul. Mode
   // pratinjau dilewati: datanya punya cache sendiri per siswa & bukan milik yang login.
   useEffect(() => {
@@ -2578,11 +2582,11 @@ export default function AkunPage() {
     const menu = sp.get("menu");
     const sesi = sp.get("sesi");
     const view = sp.get("view");
-    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | null = null;
+    let resolved: "beranda" | "jadwal" | "materi" | "akun" | "sertifikat" | "pustaka" | "simulasi" | "grup" | null = null;
     if (sesi) { setLmsSesi(sesi); setMateriView("mandiri"); resolved = "materi"; } // [linguo-patch:akun-inplace-lessonplayer-v1] deep-link sesi → balik ke sub-tab mandiri pas player ditutup
     if (view === "live" || view === "mandiri") { setMateriView(view); resolved = "materi"; }
     if (view === "jelajahi") { resolved = "beranda"; } // [linguo-patch:beranda-jelajahi-v1] tab lama dipindah ke Beranda
-    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi")) resolved = menu;
+    if (!resolved && (menu === "beranda" || menu === "jadwal" || menu === "materi" || menu === "akun" || menu === "sertifikat" || menu === "pustaka" || menu === "simulasi" || menu === "grup")) resolved = menu;
     // [akun-open-beranda-v1] Buka dashboard = SELALU mendarat di Beranda. Dulu tab
     // terakhir disimpan di localStorage, jadi buka /akun besok-besoknya bisa nyangkut
     // di Simulasi Tes / Sertifikat. Sekarang cuma sessionStorage: refresh di tab
@@ -2591,7 +2595,7 @@ export default function AkunPage() {
     if (!resolved) {
       try {
         const saved = sessionStorage.getItem("linguo_akun_tab");
-        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi") resolved = saved;
+        if (saved === "beranda" || saved === "jadwal" || saved === "materi" || saved === "akun" || saved === "sertifikat" || saved === "pustaka" || saved === "simulasi" || saved === "grup") resolved = saved;
       } catch {}
     }
     if (resolved) setActiveTab(resolved);
@@ -2634,6 +2638,9 @@ export default function AkunPage() {
       });
       import("@/components/akun/JadwalCalendar");
       import("@/components/akun/SertifikatTab");
+      // [nav-tab-grup-pustaka-v1] dua menu yang paling sering diklik siswa
+      import("@/components/akun/StudentGroupChat");
+      import("@/components/akun/LibraryView");
       import("@/components/lms/LmsKatalog");
     };
     const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, o?: any) => number);
@@ -2648,11 +2655,10 @@ export default function AkunPage() {
   // deep-link ?menu=materi. Pembatasannya sekarang di DATA: kelas live = registrasi
   // milik siswa, Belajar Mandiri = bahasa yang dia ambil/beli.
   const canSeeMateri = canAccessMateriGate(user?.email);
-  // [linguo-patch:pustaka-page-v1] menu "Perpustakaan" sekarang punya halaman sendiri → redirect ke /akun/perpustakaan
-  // [perf:sidebar-nav-v1] router.replace (client-side, instan) — dulu window.location.replace = full reload
-  useEffect(() => {
-    if (activeTab === "pustaka") router.replace("/akun/perpustakaan");
-  }, [activeTab, router]);
+  /* [nav-tab-grup-pustaka-v1] Redirect "pustaka" → /akun/perpustakaan DICABUT: menu
+     itu kembali jadi tab di halaman ini (isinya komponen LibraryView yang sama),
+     jadi klik menu tak lagi berarti ganti halaman. Route-nya tetap hidup buat
+     tautan langsung / bookmark lama. */
   // [linguo-patch:beranda-mandiri-refresh-v1] tiap masuk Beranda → recompute kartu resume (progress fresh setelah selesai sesi)
   useEffect(() => {
     if (activeTab === "beranda") setResumeNonce((n) => n + 1);
@@ -3774,7 +3780,7 @@ export default function AkunPage() {
           halaman ini yang punya, sisanya nol navigasi di HP. */}
 
       {/* ── Content ─────────────────────────────────────────────── */}
-      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
+      <main className={activeTab === "materi" ? "w-full lg:flex lg:min-h-0 lg:flex-1 lg:flex-col" : activeTab === "beranda" ? "w-full" : activeTab === "sertifikat" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "akun" ? "w-full px-3 pt-4 sm:px-5" : activeTab === "simulasi" ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5" : (activeTab === "jadwal" || activeTab === "pustaka" || activeTab === "grup") ? "mx-auto w-full max-w-[1320px] px-4 sm:px-6 pt-5 space-y-6" : "mx-auto max-w-6xl px-4 sm:px-6 pt-5 space-y-6"}>
         {/* [akun-tab-swap-nofade-v1] Pindah menu dulu pakai mode="wait": tab lama
             fade-out DULU sampai habis, baru tab baru fade-in dari opacity 0 →
             ada jeda panel kosong ±0.6 detik = kedipan tiap balik ke Beranda.
@@ -4999,22 +5005,29 @@ export default function AkunPage() {
             </motion.div>
           )}
 
-          {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning (digital_purchases) */}
-          {activeTab === "pustaka" && (
-            <motion.div key="pustaka" initial={false} animate={{ opacity: 1 }}>
-              <div className="overflow-hidden rounded-3xl bg-white">
-                <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-6 lg:px-8">
-                  <div>
-                    <p className="flex items-center gap-1.5 text-[12px] font-bold text-gray-500"><span>Dashboard</span><ChevronRight className="h-3.5 w-3.5" /><span className="text-[#16796E]">Perpustakaan Saya</span></p>
-                    <h1 className="mt-1 text-[24px] font-extrabold leading-tight text-[#12172B]">Perpustakaan Saya</h1>
-                    <p className="mt-1 text-[13px] font-medium text-gray-500">E-Book &amp; E-Learning yang udah kamu beli · akses selamanya</p>
-                  </div>
-                  <span className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#16796E]/10 text-[#16796E] sm:flex"><BookMarked className="h-6 w-6" strokeWidth={2} /></span>
-                </div>
-                <div className="px-6 pb-6 pt-5 lg:px-8 lg:pb-8">
-                  {user?.id && <PerpustakaanSaya userId={user.id} supabase={supabase} />}
-                </div>
+          {/* [nav-tab-grup-pustaka-v1] TAB GRUP KELAS — chat grup WhatsApp kelas,
+              komponen yang sama dengan route /akun/grup */}
+          {tabShown("grup") && (
+            <motion.div key="grup" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("grup")}>
+              <div className="mb-5">
+                <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">Grup Kelas</h1>
+                <p className="mt-1 text-sm text-gray-500">
+                  Ngobrol dengan pengajarmu di grup WhatsApp kelas — tanpa keluar dari dashboard.
+                </p>
               </div>
+              <StudentGroupChat previewStudentId={previewId} paused={activeTab !== "grup"} />
+            </motion.div>
+          )}
+
+          {/* [linguo-patch:akun-pustaka-tab-v1] TAB PERPUSTAKAAN — E-Book & E-Learning
+              [nav-tab-grup-pustaka-v1] isinya LibraryView (sama dgn /akun/perpustakaan),
+              bukan lagi PerpustakaanSaya: dua tampilan berbeda utk menu yang sama cuma
+              bikin siswa lihat isi yang tak sama tergantung pintu masuknya. */}
+          {tabShown("pustaka") && (
+            <motion.div key="pustaka" initial={false} animate={{ opacity: 1 }} className="w-full" style={tabHidden("pustaka")}>
+              {(user?.id || previewId) && (
+                <LibraryView userId={user?.id ?? ""} supabase={supabase} previewStudentId={previewId} />
+              )}
             </motion.div>
           )}
         </AnimatePresence>

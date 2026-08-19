@@ -366,7 +366,15 @@ function FullscreenToggle({ on, onToggle }: { on: boolean; onToggle: () => void 
 let sgIdentityCache: Identity | null = null;
 let sgGroupsCache: GroupRow[] | null = null;
 
-export default function StudentGroupChat({ previewStudentId = null }: { previewStudentId?: string | null } = {}) {
+export default function StudentGroupChat({
+  previewStudentId = null,
+  paused = false,
+}: { previewStudentId?: string | null;
+     /* [nav-tab-grup-pustaka-v1] Tab Grup Kelas tetap hidup (keep-alive) walau siswa
+        pindah ke menu lain — supaya balik ke sini tak perlu memuat ulang. Tapi selama
+        tersembunyi, polling 8 dtk/20 dtk-nya tak ada gunanya: `document.hidden` masih
+        false (tab BROWSER-nya tetap terlihat), jadi jedanya harus diberi tahu dari luar. */
+     paused?: boolean } = {}) {
   /* [preview-session-v1] Mode pratinjau POV siswa (dibuka staf dari avatar
      dashboard admin): tak ada sesi login, jadi semua data lewat /api/preview-group
      (service role, dikunci cookie pratinjau ke satu siswa) dan seluruh jalur
@@ -393,6 +401,13 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
   // [group-fullscreen-v1] Layar penuh: panel chat jadi overlay setinggi viewport
   // supaya percakapan panjang tak terhimpit rail + judul halaman.
   const [fullscreen, setFullscreen] = useState(false);
+
+  /* [nav-tab-grup-pustaka-v1] `paused` dipegang lewat ref, BUKAN dep effect: kalau
+     ikut dep, tiap ganti menu efeknya dibongkar-pasang → langganan realtime dibuat
+     ulang dan pesan dimuat ulang dengan spinner, persis kedipan yang mau dihapus.
+     Ref bikin interval-nya cuma "diam" selagi tab tersembunyi. */
+  const pausedRef = useRef(paused);
+  useEffect(() => { pausedRef.current = paused; }, [paused]);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -513,7 +528,7 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
     // Tab tersembunyi tidak di-poll: request yang menggantung selagi perangkat
     // tidur cuma jadi tumpukan abort begitu tab dibuka lagi.
     const timer = setInterval(() => {
-      if (!document.hidden) void load();
+      if (!document.hidden && !pausedRef.current) void load();
     }, 20_000);
     return () => {
       alive = false;
@@ -692,10 +707,10 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
     msgKey.current = `${jid}|${sender}`;
     void loadMsgs(jid, sender);
     const timer = setInterval(() => {
-      if (alive && !document.hidden) void loadMsgs(jid, sender, { silent: true });
+      if (alive && !document.hidden && !pausedRef.current) void loadMsgs(jid, sender, { silent: true });
     }, 8000);
     const onVisible = () => {
-      if (alive && !document.hidden) void loadMsgs(jid, sender, { silent: true });
+      if (alive && !document.hidden && !pausedRef.current) void loadMsgs(jid, sender, { silent: true });
     };
     document.addEventListener("visibilitychange", onVisible);
     // Ledakan event realtime (bot menulis beberapa pesan sekaligus) dilebur dulu
@@ -737,6 +752,14 @@ export default function StudentGroupChat({ previewStudentId = null }: { previewS
       if (channel) void supabase.removeChannel(channel);
     };
   }, [active, loadMsgs, preview]);
+
+  /* [nav-tab-grup-pustaka-v1] Balik ke tab Grup Kelas → satu penyegaran diam-diam
+     (tanpa spinner), supaya pesan yang masuk selagi tab tersembunyi langsung muncul
+     tanpa harus menunggu putaran poll berikutnya. */
+  useEffect(() => {
+    if (paused || !active) return;
+    void loadMsgs(active.jid, active.sender, { silent: true });
+  }, [paused, active, loadMsgs]);
 
   // Ganti grup → buang state composer supaya draf/kutipan tak nyasar.
   useEffect(() => {
