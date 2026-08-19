@@ -9,7 +9,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { toast } from "sonner";
 import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
-  Infinity as InfinityIcon, CalendarClock, Clock, Download, ChevronRight,
+  Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
 } from "lucide-react";
 import {
@@ -23,6 +23,8 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 // [lms-content-readiness-v1] progres e-learning cuma dihitung dari sesi yang sudah ada materinya
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
+// [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
+import EbookReader from "@/components/akun/EbookReader";
 
 /* ---------------- types ---------------- */
 type ProductType = "elearning" | "ebook";
@@ -235,6 +237,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   /* produk-digital-per-bahasa-v1 — link materi per bahasa (paket 12+ bahasa) */
   const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>({});
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
+  /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
+  const [reading, setReading] = useState<
+    { purchaseId: string; title: string; accessToken: string; watermark: string } | null
+  >(null);
 
   /* bookmarks (localStorage — tanpa ubah skema DB) */
   useEffect(() => {
@@ -407,19 +413,28 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       return;
     }
 
-    // ebook tanpa link eksternal → file di storage (signed PDF url, perilaku lama)
+    // [ebook-reader-v1] e-book berkas → dibaca di dalam dashboard.
+    // Dulu di sini dibuatkan signed URL 7 hari lalu dibuka di tab baru; URL itu
+    // sampai ke browser apa adanya dan berlaku untuk siapa saja yang memegangnya.
+    // Sekarang byte PDF-nya diambil route /api/ebook yang memverifikasi ulang
+    // kepemilikan tiap kali, dan halamannya diberi cap nama pembeli.
     if (!isStoragePath(prod.file_url)) { toast.error("File e-book belum tersedia."); return; }
     setBusy(p.id);
     try {
-      const { data, error } = await supabase.storage.from("ebook-files").createSignedUrl(prod.file_url!, 7 * 24 * 60 * 60);
-      if (error || !data) { toast.error("Gagal membuat link unduhan."); return; }
-      await supabase
-        .from("digital_purchases")
-        .update({ download_count: (p.download_count || 0) + 1, last_downloaded_at: new Date().toISOString() })
-        .eq("id", p.id);
-      toast.success("Membuka e-book…");
-      window.open(data.signedUrl, "_blank");
-      setTimeout(fetchAll, 800);
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.access_token) { toast.error("Sesi kamu sudah habis. Masuk ulang ya."); return; }
+      const u = session.user;
+      const nama = (u.user_metadata?.full_name as string)
+        || (u.user_metadata?.name as string)
+        || (u.email?.split("@")[0] ?? "Siswa Linguo");
+      setReading({
+        purchaseId: p.id,
+        title: prod.title,
+        accessToken: session.access_token,
+        watermark: `${nama} · ${u.email ?? ""}`.trim(),
+      });
+      // Hitungan akses dicatat route-nya; segarkan sebentar lagi biar angkanya ikut.
+      setTimeout(fetchAll, 1500);
     } catch {
       toast.error("Terjadi kesalahan saat membuka e-book.");
     } finally {
@@ -661,6 +676,17 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
 
       {/* [produk-digital-link-v1] pemutar YouTube in-place */}
       <YouTubePlayerModal target={playing} onClose={() => setPlaying(null)} />
+
+      {/* [ebook-reader-v1] pembaca modul */}
+      {reading && (
+        <EbookReader
+          purchaseId={reading.purchaseId}
+          title={reading.title}
+          accessToken={reading.accessToken}
+          watermark={reading.watermark}
+          onClose={() => setReading(null)}
+        />
+      )}
     </div>
   );
 }
@@ -721,7 +747,8 @@ function ProductCard({
   const isExternal = !!externalLinkFor(prod);
   const verb = accessVerb(prod);
   const label = prod.type === "elearning" && prog && prog.pct > 0 ? "Lanjut" : verb;
-  const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
+  // [ebook-reader-v1] berkas e-book dibaca di dashboard → ikon buku, bukan panah unduh
+  const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
 
   return (
     <div className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}>
@@ -808,7 +835,8 @@ function ProductRow({
   const expired = a.kind === "expired";
   const isExternal = !!externalLinkFor(prod);
   const verb = accessVerb(prod);
-  const BtnIcon = prod.type === "ebook" && !isExternal ? Download : verb === "Buka" ? ExternalLink : Play;
+  // [ebook-reader-v1] berkas e-book dibaca di dashboard → ikon buku, bukan panah unduh
+  const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
   return (
     <div className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>

@@ -123,9 +123,16 @@ export function materialReady(p: ProductLink, langs?: ProductLang[] | null): boo
   return isStoragePath(p.file_url);
 }
 
-/** YouTube → "Tonton", link lain / drive → "Buka", file storage → "Download". */
-export function accessVerb(p: ProductLink): "Tonton" | "Buka" | "Download" {
+/**
+ * YouTube → "Tonton", link lain / drive → "Buka", berkas storage → "Baca".
+ *
+ * [ebook-reader-v1] Dulu berkas e-book berlabel "Download" karena memang cuma
+ * itu yang bisa dilakukan. Sekarang modulnya dibuka di reader dalam dashboard,
+ * jadi kata kerjanya ikut berubah — labelnya harus menjanjikan hal yang sama
+ * dengan yang terjadi waktu tombolnya ditekan.
+ */
+export function accessVerb(p: ProductLink): "Tonton" | "Buka" | "Baca" {
   const link = externalLinkFor(p);
   if (link) return /youtu\.?be/i.test(link) ? "Tonton" : "Buka";
-  return p.type === "ebook" ? "Download" : "Tonton";
+  return p.type === "ebook" ? "Baca" : "Tonton";
 }

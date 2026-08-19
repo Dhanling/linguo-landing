@@ -11,6 +11,8 @@ import { parseYouTube } from "@/lib/youtube";
 import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlayerModal";
 /* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
+/* [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh */
+import EbookReader from "@/components/akun/EbookReader";
 
 interface PurchaseItem {
   id: string;
@@ -46,6 +48,10 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
   /* produk-digital-per-bahasa-v1 */
   const [prodLangs, setProdLangs] = useState<Record<string, ProductLang[]>>({});
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
+  /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
+  const [reading, setReading] = useState<
+    { purchaseId: string; title: string; accessToken: string; watermark: string } | null
+  >(null);
 
   useEffect(() => {
     fetchPurchases();
@@ -135,35 +141,32 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
       return;
     }
 
-    // e-book tanpa link eksternal → file di storage (signed URL, perilaku lama)
+    // [ebook-reader-v1] e-book berkas → dibuka di reader dalam dashboard.
+    // Aturan sama dengan LibraryView: signed URL tidak lagi dikirim ke browser,
+    // byte PDF-nya diambil /api/ebook yang memverifikasi kepemilikan tiap kali.
     if (product.type === "ebook" && isStoragePath(product.file_url)) {
       setDownloading(purchase.id);
       try {
-        const { data, error } = await supabase
-          .storage
-          .from("ebook-files")
-          .createSignedUrl(product.file_url!, 7 * 24 * 60 * 60);
-
-        if (error || !data) {
-          alert("Gagal generate link download. Coba lagi atau hubungi admin.");
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session?.access_token) {
+          alert("Sesi kamu sudah habis. Masuk ulang ya.");
           return;
         }
-
-        // Update download count
-        await supabase
-          .from("digital_purchases")
-          .update({
-            download_count: purchase.download_count + 1,
-            last_downloaded_at: new Date().toISOString(),
-          })
-          .eq("id", purchase.id);
-
-        window.open(data.signedUrl, "_blank");
-        // Refresh untuk update counter di UI
-        setTimeout(() => fetchPurchases(), 1000);
+        const u = session.user;
+        const nama = (u.user_metadata?.full_name as string)
+          || (u.user_metadata?.name as string)
+          || (u.email?.split("@")[0] ?? "Siswa Linguo");
+        setReading({
+          purchaseId: purchase.id,
+          title: product.title,
+          accessToken: session.access_token,
+          watermark: `${nama} · ${u.email ?? ""}`.trim(),
+        });
+        // Hitungan akses dicatat route-nya; segarkan sebentar lagi biar ikut.
+        setTimeout(() => fetchPurchases(), 1500);
       } catch (e) {
         console.error(e);
-        alert("Error generate link download.");
+        alert("Gagal membuka modul.");
       } finally {
         setDownloading(null);
       }
@@ -285,7 +288,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
                         ? "Belum siap"
                         : (() => {
                             const v = accessVerb(product);
-                            return v === "Tonton" ? "▶️ Tonton" : v === "Buka" ? "🔗 Buka" : "📥 Download";
+                            return v === "Tonton" ? "Tonton" : v === "Buka" ? "Buka" : "Baca";
                           })()}
                   </button>
                 )}
@@ -294,6 +297,16 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           </div>
         );
       })}
+      {/* [ebook-reader-v1] pembaca modul */}
+      {reading && (
+        <EbookReader
+          purchaseId={reading.purchaseId}
+          title={reading.title}
+          accessToken={reading.accessToken}
+          watermark={reading.watermark}
+          onClose={() => setReading(null)}
+        />
+      )}
       {/* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu */}
       <LangMateriPicker
         target={picking}

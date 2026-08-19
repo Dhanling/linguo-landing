@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "ime:pinyin": "node scripts/build-ime-pinyin.mjs"
+    "ime:pinyin": "node scripts/build-ime-pinyin.mjs",
+    "postinstall": "node scripts/copy-pdf-worker.mjs"
   },
   "dependencies": {
     "@blade-flags/core": "^0.1.3",
@@ -20,6 +21,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^1.14.0",
     "next": "16.2.2",
+    "pdfjs-dist": "^5.7.284",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.12.4",
