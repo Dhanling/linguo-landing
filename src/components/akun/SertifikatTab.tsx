@@ -12,7 +12,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Award, BadgeCheck, Lock, Download, Share2, ExternalLink, ShieldCheck,
   Flag, Play, CalendarDays, Info, X, Loader2, Mic, Headphones, BookOpen, PenLine,
-  Sparkles, Star,
+  Sparkles, Star, ChevronRight, GraduationCap,
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
@@ -410,6 +410,8 @@ export default function SertifikatTab({
   const activeHint = FILTERS.find((f) => f.key === filter)?.hint;
 
   const [selectedId, setSelectedId] = useState<string>(list[0]?.id);
+  // [sertifikat-cefr-modal-v1] popup penjelasan CEFR + peta levelisasi
+  const [cefrOpen, setCefrOpen] = useState(false);
   // detail mengikuti list yang sedang difilter; fallback ke item pertama kategori aktif
   const selected = filtered.find((c) => c.id === selectedId) || filtered[0] || null;
 
@@ -516,10 +518,20 @@ export default function SertifikatTab({
             })}
           </div>
           <div className="border-t border-slate-100 px-6 py-4">
-            <div className="cert-tint rounded-2xl bg-[#16796E0D] p-4">
-              <p className="flex items-center gap-2 text-[13px] font-extrabold text-[#12172B]"><Info className="h-4 w-4 text-[#16796E]" />Tentang CEFR</p>
+            {/* [sertifikat-cefr-modal-v1] kotaknya sekarang tombol — buka penjelasan
+                CEFR + grafik levelisasi (A1.1 s.d. B2.7). */}
+            <button
+              type="button"
+              onClick={() => setCefrOpen(true)}
+              className="cert-tint w-full rounded-2xl bg-[#16796E0D] p-4 text-left transition hover:brightness-[.97] active:scale-[.99]"
+            >
+              <p className="flex items-center gap-2 text-[13px] font-extrabold text-[#12172B]">
+                <Info className="h-4 w-4 text-[#16796E]" />Tentang CEFR
+                <ChevronRight className="ml-auto h-4 w-4 text-[#16796E]" />
+              </p>
               <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-[#6B7280]">Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).</p>
-            </div>
+              <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-[#16796E]">Lihat peta level A1–B2</span>
+            </button>
           </div>
         </section>
 
@@ -540,6 +552,8 @@ export default function SertifikatTab({
           </div>
         </main>
       </div>
+
+      {cefrOpen && <CefrModal onClose={() => setCefrOpen(false)} currentLevel={selected?.level} isDark={isDark} />}
     </div>
   );
 }
@@ -792,6 +806,178 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />Lanjut Belajar</button>
           <button onClick={onSchedule} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── [sertifikat-cefr-modal-v1] Popup "Tentang CEFR" ─────────────────────────
+// Isinya: apa itu CEFR + peta levelisasi Linguo lewat grafik tangga (tiap batang
+// = 1 sublevel, tingginya naik ikut level). ANGKA SUBLEVEL WAJIB SAMA dengan
+// silabus & prompt AI: A1=3, A2=4, B1=5, B2=7 (B2.7 = test prep) — 19 sublevel,
+// 16 sesi masing-masing = 304 sesi. Jangan dikarang ulang di sini.
+type CefrLevel = {
+  code: string; name: string; subs: number; blurb: string;
+  c: string; cDark: string;
+};
+const CEFR_LEVELS: CefrLevel[] = [
+  { code: "A1", name: "Pemula",    subs: 3, blurb: "Perkenalan diri, angka, dan kalimat sehari-hari yang sangat dasar.", c: "#9FDCD6", cDark: "#1F6B63" },
+  { code: "A2", name: "Dasar",     subs: 4, blurb: "Ngobrol topik rutin: keluarga, belanja, pekerjaan, arah jalan.",     c: "#5FC2B8", cDark: "#2E9488" },
+  { code: "B1", name: "Menengah",  subs: 5, blurb: "Cerita pengalaman & rencana, cukup mandiri saat traveling.",         c: "#2A9187", cDark: "#3FC5B4" },
+  { code: "B2", name: "Mahir",     subs: 7, blurb: "Diskusi topik abstrak, debat, presentasi. B2.7 = persiapan tes.",    c: "#16796E", cDark: "#5EEAD4" },
+];
+const SESI_PER_SUB = 16;
+
+function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; currentLevel?: string; isDark: boolean }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  // Daftar 19 sublevel berurutan — dipakai buat batang grafik sekaligus penanda
+  // "kamu di sini" (dicocokkan ke level sertifikat yang lagi dibuka).
+  const bars = useMemo(() => {
+    const out: { code: string; lvl: CefrLevel; inGroup: number }[] = [];
+    for (const lvl of CEFR_LEVELS) {
+      for (let i = 1; i <= lvl.subs; i++) out.push({ code: `${lvl.code}.${i}`, lvl, inGroup: i - 1 });
+    }
+    return out;
+  }, []);
+  const here = currentLevel ? bars.findIndex((b) => b.code === currentLevel.trim().toUpperCase()) : -1;
+  const totalSubs = bars.length;
+  const totalSesi = totalSubs * SESI_PER_SUB;
+
+  // Geometri SVG (viewBox tetap, lebarnya diserahkan ke container biar responsif).
+  const PAD_L = 16, COL_W = 22, STEP = 31, BASE_Y = 196;
+  const H0: Record<string, number> = { A1: 44, A2: 72, B1: 104, B2: 140 };
+  const heightOf = (b: { lvl: CefrLevel; inGroup: number }) => H0[b.lvl.code] + b.inGroup * 6;
+  const VB_W = PAD_L * 2 + (totalSubs - 1) * STEP + COL_W;
+  const ink = isDark ? "#E7E9EE" : "#12172B";
+  const sub = isDark ? "#9BA3AF" : "#6B7280";
+  const card = isDark ? "#1F1F1F" : "#ffffff";
+  const soft = isDark ? "#2A2A2A" : "#F5F6F8";
+  const line = isDark ? "#333333" : "#E8EAEE";
+  const teal = isDark ? "#2DD4BF" : "#16796E";
+
+  return (
+    <div
+      className="fixed inset-0 z-[130] flex items-end justify-center bg-black/55 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Tentang CEFR"
+    >
+      <div
+        className="max-h-[92vh] w-full max-w-[720px] overflow-y-auto rounded-t-[26px] shadow-[0_40px_90px_-30px_rgba(0,0,0,.6)] sm:rounded-[26px]"
+        style={{ background: card }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* header */}
+        <div className="relative px-6 py-7 text-white sm:px-8" style={{ background: isDark ? "linear-gradient(135deg,#0F5A52,#16796E)" : "linear-gradient(135deg,#16796E,#0F5A52)" }}>
+          <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30" aria-label="Tutup"><X className="h-4 w-4" /></button>
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20"><GraduationCap className="h-6 w-6" /></span>
+          <p className="mt-3 text-[18px] font-extrabold">Tentang CEFR</p>
+          <p className="mt-1 max-w-[46ch] text-[12.5px] font-medium leading-relaxed text-white/90">
+            CEFR (Common European Framework of Reference) adalah standar internasional untuk mengukur kemampuan berbahasa — dari A1 (pemula) sampai C2 (setara penutur asli). Linguo memakai standar yang sama, lalu memecah tiap level jadi sublevel 16 sesi.
+          </p>
+        </div>
+
+        <div className="px-5 py-6 sm:px-8">
+          {/* ringkasan angka */}
+          <div className="grid grid-cols-3 gap-2.5">
+            {[
+              { n: "A1–B2", l: "Level tersedia" },
+              { n: `${totalSubs}`, l: "Sublevel" },
+              { n: `${totalSesi}`, l: "Total sesi" },
+            ].map((k) => (
+              <div key={k.l} className="rounded-2xl p-3 text-center" style={{ background: soft }}>
+                <p className="text-[17px] font-extrabold" style={{ color: ink }}>{k.n}</p>
+                <p className="mt-0.5 text-[11px] font-medium" style={{ color: sub }}>{k.l}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* grafik tangga level */}
+          <p className="mt-6 text-[13px] font-extrabold" style={{ color: ink }}>Peta level di Linguo</p>
+          <p className="mt-0.5 text-[12px] font-medium leading-relaxed" style={{ color: sub }}>
+            Tiap balok = 1 sublevel = 16 sesi. Semakin tinggi baloknya, semakin dalam materinya.
+          </p>
+          <div className="mt-3 overflow-x-auto">
+            <svg viewBox={`0 0 ${VB_W} 246`} className="h-[246px] w-full min-w-[560px]" role="img" aria-label="Grafik level CEFR A1 sampai B2 beserta sublevelnya">
+              {/* garis dasar */}
+              <line x1="0" y1={BASE_Y + 0.5} x2={VB_W} y2={BASE_Y + 0.5} stroke={line} strokeWidth="1" />
+              {bars.map((b, i) => {
+                const h = heightOf(b);
+                const x = PAD_L + i * STEP;
+                const y = BASE_Y - h;
+                const passed = here < 0 || i <= here;
+                const isHere = i === here;
+                const fill = isDark ? b.lvl.cDark : b.lvl.c;
+                return (
+                  <g key={b.code}>
+                    <rect x={x} y={y} width={COL_W} height={h} rx="6" fill={fill} opacity={passed ? 1 : 0.32} />
+                    {isHere && <rect x={x - 2.5} y={y - 2.5} width={COL_W + 5} height={h + 5} rx="8" fill="none" stroke={teal} strokeWidth="2.5" />}
+                    <text x={x + COL_W / 2} y={y - 7} textAnchor="middle" fontSize="9.5" fontWeight="700" fill={isHere ? teal : sub}>{b.code}</text>
+                  </g>
+                );
+              })}
+              {/* penanda "kamu di sini" */}
+              {here >= 0 && (() => {
+                const b = bars[here];
+                const x = PAD_L + here * STEP + COL_W / 2;
+                const y = Math.max(16, BASE_Y - heightOf(b) - 22);
+                return (
+                  <g>
+                    <rect x={x - 42} y={y - 12} width="84" height="18" rx="9" fill={teal} />
+                    <text x={x} y={y + 1} textAnchor="middle" fontSize="10" fontWeight="800" fill={isDark ? "#0B0B0B" : "#ffffff"}>Kamu di sini</text>
+                  </g>
+                );
+              })()}
+              {/* label kelompok level */}
+              {CEFR_LEVELS.map((lvl) => {
+                const start = bars.findIndex((b) => b.lvl.code === lvl.code);
+                const cx = PAD_L + start * STEP + ((lvl.subs - 1) * STEP + COL_W) / 2;
+                const x1 = PAD_L + start * STEP;
+                const x2 = x1 + (lvl.subs - 1) * STEP + COL_W;
+                return (
+                  <g key={lvl.code}>
+                    <line x1={x1} y1={BASE_Y + 8} x2={x2} y2={BASE_Y + 8} stroke={isDark ? lvl.cDark : lvl.c} strokeWidth="3" strokeLinecap="round" />
+                    <text x={cx} y={BASE_Y + 26} textAnchor="middle" fontSize="13" fontWeight="800" fill={ink}>{lvl.code} · {lvl.name}</text>
+                    <text x={cx} y={BASE_Y + 41} textAnchor="middle" fontSize="10.5" fontWeight="600" fill={sub}>{lvl.subs} sublevel · {lvl.subs * SESI_PER_SUB} sesi</text>
+                  </g>
+                );
+              })}
+            </svg>
+          </div>
+
+          {/* rincian per level */}
+          <div className="mt-5 flex flex-col gap-2">
+            {CEFR_LEVELS.map((lvl) => (
+              <div key={lvl.code} className="flex items-start gap-3 rounded-2xl p-3" style={{ background: soft }}>
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-[12px] font-extrabold" style={{ background: isDark ? lvl.cDark : lvl.c, color: isDark ? "#0B0B0B" : "#0B2B28" }}>{lvl.code}</span>
+                <span className="min-w-0">
+                  <span className="block text-[13px] font-extrabold" style={{ color: ink }}>
+                    {lvl.name} <span className="font-semibold" style={{ color: sub }}>· {lvl.code}.1–{lvl.code}.{lvl.subs}</span>
+                  </span>
+                  <span className="mt-0.5 block text-[12px] font-medium leading-relaxed" style={{ color: sub }}>{lvl.blurb}</span>
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* catatan sertifikat */}
+          <div className="cert-tint mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-4">
+            <Award className="mt-0.5 h-4 w-4 shrink-0" style={{ color: teal }} />
+            <p className="text-[12px] font-medium leading-relaxed" style={{ color: sub }}>
+              <b style={{ color: ink }}>Satu sublevel = satu sertifikat.</b> Begitu 16 sesi di satu sublevel tuntas, sertifikatnya terbit otomatis di tab ini — misal selesai A1.1 langsung lanjut A1.2. Kalau evaluasi pengajar menyatakan kamu sudah mampu, sublevel boleh dilompati.
+            </p>
+          </div>
+
+          <button onClick={onClose} className="mt-5 h-12 w-full rounded-2xl text-[14px] font-extrabold text-white transition hover:brightness-110" style={{ background: teal, color: isDark ? "#0B0B0B" : "#ffffff" }}>
+            Mengerti
+          </button>
         </div>
       </div>
     </div>
