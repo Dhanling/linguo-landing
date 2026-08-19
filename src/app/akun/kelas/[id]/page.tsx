@@ -38,6 +38,9 @@ function KelasDetailInner() {
   // persis seperti "klik Beranda malah keluar akun", padahal memang tak pernah login.
   const previewId = searchParams.get("preview");
   const [previewSchedules, setPreviewSchedules] = useState<any[] | null>(null);
+  // [kelas-level-switcher-v1] Daftar registrasi siswa buat strip pindah level —
+  // di pratinjau harus ikut endpoint service role (anon kena RLS).
+  const [previewRegs, setPreviewRegs] = useState<any[] | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -57,6 +60,7 @@ function KelasDetailInner() {
           const found = (json.student?.registrations || []).find((r: any) => r.id === params.id);
           if (!alive) return;
           if (found) setReg(found);
+          setPreviewRegs(json.student?.registrations || []);
           // Jadwal ikut dari endpoint yang sama — query `schedules` langsung
           // pasti kosong di pratinjau (RLS memblok anon), dan tab Jadwal kosong
           // itu menyesatkan: kelihatan seperti siswanya belum punya jadwal.
@@ -156,7 +160,7 @@ function KelasDetailInner() {
   return (
     <StudentShell active="beranda" onTabChange={goTab} previewStudentId={previewId}>
       {reg ? (
-        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} />
+        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} previewRegs={previewRegs} />
       ) : loadError ? (
         <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
           <div className="text-[15px] font-semibold text-slate-700">Gagal memuat detail kelas</div>

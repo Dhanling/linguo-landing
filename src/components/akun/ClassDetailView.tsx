@@ -12,6 +12,9 @@ import Link from 'next/link';
 import { supabase } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
 import { displayLanguage } from '@/lib/classLanguage';
+// [kelas-level-switcher-v1] strip pindah level (A1.1 → A2.2) di bahasa yang sama
+import { sameLanguage } from '@/lib/languageSlug';
+import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -31,6 +34,10 @@ interface Props {
   // Jadwal hasil endpoint pratinjau (service role). Di mode pratinjau query
   // `schedules` biasa selalu kosong karena RLS memblok anon.
   previewSchedules?: any[] | null;
+  // [kelas-level-switcher-v1] Registrasi siswa versi pratinjau (service role) —
+  // query `registrations` biasa selalu kosong di mode pratinjau (RLS memblok anon),
+  // jadi strip pindah level ikut nebeng endpoint yang sama.
+  previewRegs?: any[] | null;
 }
 
 // [kelas-tab-ramping-v1] Tab Overview & Jadwal dihapus. Isinya dulu tumpang tindih:
@@ -68,7 +75,7 @@ function hitungMundur(dt: Date, now: number): string {
   return hari === 1 ? 'besok' : `${hari} hari lagi`;
 }
 
-export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null }: Props) {
+export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null }: Props) {
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -119,6 +126,46 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     })();
     return () => { alive = false; };
   }, [reg?.teacher_id, reg?.teachers?.avatar_url]);
+
+  // [kelas-level-switcher-v1] Semua kelas siswa di BAHASA yang sama — bahan strip
+  // pindah level di atas banner. Level lama biasanya sudah `archived_at` (hilang dari
+  // kartu beranda), justru itu yang mau dijangkau: cek materi/kuis sesi lampau tanpa
+  // balik ke beranda. Yang dibuang: dibatalkan admin & yang tak pernah dibayar.
+  // Bahasa dicocokkan lewat sameLanguage — `registrations.language` isinya campur
+  // ("Russian" vs "Rusia"), eq() bakal melewatkan level lama yang namanya beda.
+  // Gagal query = strip tak muncul; halaman TIDAK boleh ikut error.
+  const [levelRegs, setLevelRegs] = useState<any[]>([]);
+  useEffect(() => {
+    if (!reg?.language) { setLevelRegs([]); return; }
+    if (previewStudentId) {
+      setLevelRegs((previewRegs || []).filter((r: any) => sameLanguage(r.language, reg.language)));
+      return;
+    }
+    if (!reg?.student_id) { setLevelRegs([]); return; }
+    let alive = true;
+    (async () => {
+      const { data } = await supabase
+        .from('registrations')
+        .select(`
+          id, student_id, product, language, level, status,
+          sessions_total, sessions_used,
+          duration, total_amount, payment_status, pipeline_status,
+          teacher_id, archived_at, registration_date, created_at,
+          teachers(name, title, avatar_url)
+        `)
+        .eq('student_id', reg.student_id);
+      if (!alive) return;
+      setLevelRegs(
+        (data || []).filter(
+          (r: any) =>
+            sameLanguage(r.language, reg.language) &&
+            r.pipeline_status !== 'Batal' &&
+            (r.id === reg.id || r.payment_status === 'Lunas' || r.payment_status === 'Cicilan'),
+        ),
+      );
+    })();
+    return () => { alive = false; };
+  }, [reg?.student_id, reg?.language, reg?.id, previewStudentId, previewRegs]);
 
   // [kelas-tab-badge-v1] Jumlah isi tiap tab, dipakai buat badge di tab bar.
   // Tanpa ini siswa harus mengklik 6 tab satu-satu cuma buat tahu mana yang ada
@@ -193,6 +240,16 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       <Link href={previewStudentId ? `/akun?preview=${encodeURIComponent(previewStudentId)}` : "/akun"} prefetch className="inline-flex items-center gap-1.5 text-[13px] font-bold text-gray-500 transition hover:text-[#16796E]">
         <ArrowLeft className="h-4 w-4" strokeWidth={2.5} /> Kembali ke Beranda
       </Link>
+
+      {/* ── Pindah level (bahasa sama) ──
+          [kelas-level-switcher-v1] Sengaja DI ATAS banner: posisinya sejajar breadcrumb,
+          kelihatan sebelum siswa scroll, dan tak mengganggu urutan hero → progress → tab. */}
+      <ClassLevelSwitcher
+        regs={levelRegs}
+        currentId={reg.id}
+        activeTab={activeTab}
+        previewStudentId={previewStudentId}
+      />
 
       {/* ── Hero ── */}
       <div className="relative mt-4 overflow-hidden rounded-3xl bg-[#16796E]">
