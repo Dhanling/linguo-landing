@@ -1,0 +1,81 @@
+{
+  "title": "Halo, siapa namamu?",
+  "title_target": "¡Hola! ¿Cómo te llamas?",
+  "goal": "Menyapa, memperkenalkan diri, dan menanyakan nama orang lain.",
+  "dialog": {
+    "title": "Diálogo — En la escuela de idiomas",
+    "lines": [
+      { "speaker": "Ana:", "text": "¡Hola! Buenos días.", "id": "Halo! Selamat pagi.", "literal": "halo! baik-baik hari-hari." },
+      { "speaker": "Luis:", "text": "Buenos días. ¿Cómo te llamas?", "id": "Selamat pagi. Siapa namamu?", "literal": "baik hari. bagaimana kamu-menamai-diri?" },
+      { "speaker": "Ana:", "text": "Me llamo Ana. ¿Y tú?", "id": "Nama saya Ana. Dan kamu?", "literal": "saya-menamai-diri Ana. dan kamu?" },
+      { "speaker": "Luis:", "text": "Yo soy Luis. Mucho gusto.", "id": "Saya Luis. Senang berkenalan.", "literal": "saya adalah Luis. banyak kesenangan." },
+      { "speaker": "Ana:", "text": "Encantada. ¿Eres estudiante?", "id": "Senang berkenalan juga. Kamu pelajar?", "literal": "terpesona. kamu-adalah pelajar?" },
+      { "speaker": "Luis:", "text": "Sí, soy estudiante. Y tú, ¿eres profesora?", "id": "Ya, saya pelajar. Dan kamu, kamu guru?", "literal": "ya, adalah pelajar. dan kamu, kamu-adalah guru?" },
+      { "speaker": "Ana:", "text": "No, no soy profesora. Soy estudiante también.", "id": "Bukan, saya bukan guru. Saya pelajar juga.", "literal": "tidak, tidak adalah guru. adalah pelajar juga." },
+      { "speaker": "Luis:", "text": "¡Ah, muy bien! Hasta luego, Ana.", "id": "Ah, bagus sekali! Sampai jumpa, Ana.", "literal": "ah, sangat baik! sampai nanti, Ana." }
+    ]
+  },
+  "notes": [
+    "**Kata ganti orang boleh dibuang.** *Soy estudiante* sudah berarti \"saya pelajar\" tanpa *yo*, karena bentuk kata kerjanya sendiri sudah menunjuk pelakunya. *Yo* dipakai kalau kamu mau menekankan: *Yo soy Luis* = \"kalau **saya**, Luis\".",
+    "**Tanda tanya dan seru dobel.** Bahasa Spanyol membuka kalimat tanya dengan ¿ dan kalimat seru dengan ¡. Gunanya praktis: pembaca tahu nada kalimatnya sejak awal, bukan setelah sampai ujung.",
+    "**Encantado / encantada.** Artinya \"senang berkenalan\", tapi bentuknya ikut jenis kelamin **penuturnya**: laki-laki bilang *encantado*, perempuan *encantada*. *Mucho gusto* aman dipakai siapa saja.",
+    "**Menyangkal itu mudah.** Cukup taruh *no* di depan kata kerja: *soy* → *no soy*. Kalau menjawab pertanyaan, *no*-nya muncul dua kali: *No, no soy profesora* — yang pertama \"bukan\", yang kedua bagian dari kalimatnya.",
+    "**Buenos días** dipakai sampai sekitar tengah hari, lalu *buenas tardes* sampai matahari terbenam, dan *buenas noches* sesudahnya. Perhatikan: *días* jamak, jadi sifatnya pun jamak — *buenos*."
+  ],
+  "grammar": {
+    "title": "Kata kerja ser (adalah) — tiga bentuk pertama",
+    "body": [
+      "*Ser* dipakai untuk menyatakan **identitas** — siapa kamu, apa pekerjaanmu, dari mana asalmu. Bentuknya berubah mengikuti pelakunya, dan tiga bentuk ini saja sudah cukup untuk seluruh unit ini:"
+    ],
+    "table": {
+      "head": ["Spanyol", "Cara baca", "Arti"],
+      "rows": [
+        ["yo **soy**", "yo SOY", "saya adalah"],
+        ["tú **eres**", "tu E-res", "kamu adalah"],
+        ["él / ella **es**", "el / E-ya ES", "dia adalah"]
+      ]
+    }
+  },
+  "vocab": [
+    { "es": "hola", "baca": "O-la", "id": "halo" },
+    { "es": "buenos días", "baca": "BUE-nos DI-as", "id": "selamat pagi" },
+    { "es": "¿cómo?", "baca": "KO-mo", "id": "bagaimana / apa" },
+    { "es": "llamarse", "baca": "ya-MAR-se", "id": "bernama" },
+    { "es": "me llamo…", "baca": "me YA-mo", "id": "nama saya…" },
+    { "es": "y", "baca": "i", "id": "dan" },
+    { "es": "tú", "baca": "tu", "id": "kamu" },
+    { "es": "mucho gusto", "baca": "MU-cho GUS-to", "id": "senang berkenalan" },
+    { "es": "encantado / encantada", "baca": "en-kan-TA-do", "id": "senang berkenalan" },
+    { "es": "estudiante", "baca": "es-tu-DIAN-te", "id": "pelajar" },
+    { "es": "profesor / profesora", "baca": "pro-fe-SOR", "id": "guru" },
+    { "es": "sí / no", "baca": "si / no", "id": "ya / tidak" },
+    { "es": "también", "baca": "tam-BIEN", "id": "juga" },
+    { "es": "muy bien", "baca": "mui BIEN", "id": "bagus sekali" },
+    { "es": "hasta luego", "baca": "AS-ta LUE-go", "id": "sampai jumpa" }
+  ],
+  "exercises": [
+    { "prompt": "Terjemahkan ke bahasa Indonesia.", "items": [
+      "Me llamo Carlos.",
+      "¿Eres profesora?",
+      "No soy estudiante.",
+      "Ella es profesora también.",
+      "¡Hasta luego!"
+    ] },
+    { "prompt": "Isi dengan bentuk *ser* yang tepat (*soy*, *eres*, *es*).", "items": [
+      "Yo ____ estudiante.",
+      "¿Tú ____ Ana?",
+      "Él ____ profesor.",
+      "No, yo no ____ profesora."
+    ] },
+    { "prompt": "Susun jadi kalimat Spanyol yang benar.", "items": [
+      "llamas / ¿ / te / cómo / ?",
+      "Luis / soy / yo",
+      "estudiante / también / soy"
+    ] }
+  ],
+  "answers": [
+    "Nama saya Carlos. — Kamu guru? — Saya bukan pelajar. — Dia guru juga. — Sampai jumpa!",
+    "soy — eres — es — soy",
+    "¿Cómo te llamas? — Yo soy Luis. — Soy estudiante también."
+  ]
+}

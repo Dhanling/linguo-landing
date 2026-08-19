@@ -1,0 +1,80 @@
+{
+  "title": "Dari mana asalmu?",
+  "title_target": "¿De dónde eres?",
+  "goal": "Menyebut asal, kebangsaan, dan tempat tinggal; mengenal perbedaan laki-laki dan perempuan pada kata sifat.",
+  "dialog": {
+    "title": "Diálogo — En una fiesta",
+    "lines": [
+      { "speaker": "Marta:", "text": "Hola, ¿de dónde eres?", "id": "Halo, dari mana asalmu?", "literal": "halo, dari mana kamu-adalah?" },
+      { "speaker": "Budi:", "text": "Soy de Indonesia. Soy indonesio.", "id": "Saya dari Indonesia. Saya orang Indonesia.", "literal": "adalah dari Indonesia. adalah indonesia(laki-laki)." },
+      { "speaker": "Marta:", "text": "¡Qué bien! Yo soy española, de Madrid.", "id": "Bagus sekali! Saya orang Spanyol, dari Madrid.", "literal": "betapa baik! saya adalah spanyol(perempuan), dari Madrid." },
+      { "speaker": "Budi:", "text": "¿Vives en Madrid ahora?", "id": "Kamu tinggal di Madrid sekarang?", "literal": "kamu-tinggal di Madrid sekarang?" },
+      { "speaker": "Marta:", "text": "No, vivo en Barcelona. Trabajo allí.", "id": "Tidak, saya tinggal di Barcelona. Saya bekerja di sana.", "literal": "tidak, saya-tinggal di Barcelona. saya-bekerja di-sana." },
+      { "speaker": "Budi:", "text": "Yo vivo en Yakarta, pero estudio español.", "id": "Saya tinggal di Jakarta, tapi saya belajar bahasa Spanyol.", "literal": "saya saya-tinggal di Jakarta, tetapi saya-belajar spanyol." },
+      { "speaker": "Marta:", "text": "¿Y hablas español muy bien?", "id": "Dan kamu bicara bahasa Spanyol dengan baik?", "literal": "dan kamu-bicara spanyol sangat baik?" },
+      { "speaker": "Budi:", "text": "Un poco. Hablo poco, pero entiendo mucho.", "id": "Sedikit. Saya bicara sedikit, tapi saya mengerti banyak.", "literal": "se-sedikit. saya-bicara sedikit, tetapi saya-mengerti banyak." }
+    ]
+  },
+  "notes": [
+    "**Kebangsaan ikut jenis kelamin, dan huruf kecil.** *indonesio* (laki-laki) / *indonesia* (perempuan), *español* / *española*. Tidak seperti bahasa Inggris, nama kebangsaan **tidak** diawali huruf besar — tapi nama negaranya tetap: *España*, *Indonesia*.",
+    "**Pola gantinya sederhana.** Kata sifat berakhiran **-o** untuk laki-laki berubah jadi **-a** untuk perempuan: *mexicano / mexicana*. Yang berakhiran konsonan tinggal ditambah **-a**: *español / española*.",
+    "**Kata kerja -ar, -er, -ir.** Semua kata kerja Spanyol berakhiran salah satu dari tiga ini. Untuk \"saya\", ketiganya sama-sama berakhir **-o**: *hablar* → *hablo*, *comer* → *como*, *vivir* → *vivo*. Untuk \"kamu\", -ar jadi **-as** dan dua sisanya **-es**.",
+    "**De = dari.** *Soy de Indonesia* = \"saya dari Indonesia\". Kalau diikuti *el*, keduanya melebur jadi *del*: *del norte* (dari utara), bukan *de el norte*.",
+    "**Pero vs sino.** *Pero* = \"tapi\" dalam arti biasa. Kamu akan bertemu *sino* nanti; itu dipakai khusus setelah kalimat yang menyangkal."
+  ],
+  "grammar": {
+    "title": "Kata kerja beraturan — bentuk \"saya\" dan \"kamu\"",
+    "body": [
+      "Buang akhiran *-ar / -er / -ir* dari kata dasarnya, lalu tempelkan akhiran di bawah. Sekali pola ini melekat, ribuan kata kerja terbuka sekaligus:"
+    ],
+    "table": {
+      "head": ["", "hablar (bicara)", "comer (makan)", "vivir (tinggal)"],
+      "rows": [
+        ["yo", "habl**o**", "com**o**", "viv**o**"],
+        ["tú", "habl**as**", "com**es**", "viv**es**"],
+        ["él / ella", "habl**a**", "com**e**", "viv**e**"]
+      ]
+    }
+  },
+  "vocab": [
+    { "es": "¿de dónde?", "baca": "de DON-de", "id": "dari mana" },
+    { "es": "vivir", "baca": "bi-BIR", "id": "tinggal, hidup" },
+    { "es": "trabajar", "baca": "tra-ba-KHAR", "id": "bekerja" },
+    { "es": "estudiar", "baca": "es-tu-DIAR", "id": "belajar" },
+    { "es": "hablar", "baca": "a-BLAR", "id": "berbicara" },
+    { "es": "entender", "baca": "en-ten-DER", "id": "mengerti" },
+    { "es": "ahora", "baca": "a-O-ra", "id": "sekarang" },
+    { "es": "allí", "baca": "a-YI", "id": "di sana" },
+    { "es": "pero", "baca": "PE-ro", "id": "tetapi" },
+    { "es": "un poco", "baca": "un PO-ko", "id": "sedikit" },
+    { "es": "mucho", "baca": "MU-cho", "id": "banyak" },
+    { "es": "español / española", "baca": "es-pa-NYOL", "id": "orang Spanyol" },
+    { "es": "indonesio / indonesia", "baca": "in-do-NE-sio", "id": "orang Indonesia" },
+    { "es": "¡qué bien!", "baca": "ke BIEN", "id": "bagus sekali!" }
+  ],
+  "exercises": [
+    { "prompt": "Terjemahkan ke bahasa Spanyol.", "items": [
+      "Saya dari Indonesia.",
+      "Kamu tinggal di Madrid?",
+      "Dia bekerja di Barcelona.",
+      "Saya belajar bahasa Spanyol sedikit."
+    ] },
+    { "prompt": "Ubah bentuk kata kerja dalam kurung.", "items": [
+      "Yo (vivir) ____ en Yakarta.",
+      "¿Tú (hablar) ____ español?",
+      "Ella (trabajar) ____ mucho.",
+      "Yo (comer) ____ en casa."
+    ] },
+    { "prompt": "Pilih bentuk yang benar sesuai penuturnya.", "items": [
+      "Marta: Soy (español / española).",
+      "Budi: Soy (indonesio / indonesia).",
+      "Ana y Marta: Somos (española / españolas)."
+    ] }
+  ],
+  "answers": [
+    "Soy de Indonesia. — ¿Vives en Madrid? — Ella trabaja en Barcelona. — Estudio español un poco.",
+    "vivo — hablas — trabaja — como",
+    "española — indonesio — españolas"
+  ],
+  "wave": "Belum ada — ulangan berjenjang dimulai di unit 8."
+}
