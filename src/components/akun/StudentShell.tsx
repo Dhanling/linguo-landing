@@ -591,6 +591,57 @@ export default function StudentShell({
            "Bayar Otomatis" & "Bayar via Transfer". Bayangan warna terang dimatikan;
            shade pekat (-500 ke atas) dibiarkan karena memang jadi kedalaman. */
         .lms-dark .shadow-teal-100,.lms-dark .shadow-teal-200,.lms-dark .shadow-green-100,.lms-dark .shadow-green-200,.lms-dark .shadow-amber-100,.lms-dark .shadow-amber-200,.lms-dark .shadow-blue-100,.lms-dark .shadow-blue-200,.lms-dark .shadow-rose-100,.lms-dark .shadow-rose-200{--tw-shadow-color:transparent !important;}
+        /* ── [shell-dark-hover-tint-v1] Tint pada state HOVER ──
+           'hover:bg-teal-50' itu kelas tersendiri (.hover\\:bg-teal-50:hover), jadi
+           aturan .bg-teal-50 di atas tidak menangkapnya. Akibatnya begitu kursor
+           mampir, tombol berubah jadi BALOK PUTIH dengan tulisan teal — persis yang
+           kejadian di 'Selesai & Tambah Kelas Lain'. Aturan hover netral (gray/slate)
+           sudah ada di atas; ini melengkapi yang berwarna. */
+        .lms-dark .hover\\:bg-teal-50:hover{background-color:rgba(45,212,191,0.14) !important;}
+        .lms-dark .hover\\:bg-teal-100:hover{background-color:rgba(45,212,191,0.22) !important;}
+        .lms-dark .hover\\:bg-amber-50:hover{background-color:rgba(245,158,11,0.14) !important;}
+        .lms-dark .hover\\:bg-amber-100:hover{background-color:rgba(245,158,11,0.22) !important;}
+        .lms-dark .hover\\:bg-red-50:hover{background-color:rgba(239,68,68,0.16) !important;}
+        .lms-dark .hover\\:bg-red-100:hover{background-color:rgba(239,68,68,0.24) !important;}
+        .lms-dark .hover\\:bg-rose-50:hover{background-color:rgba(244,63,94,0.16) !important;}
+        .lms-dark .hover\\:bg-rose-100:hover{background-color:rgba(244,63,94,0.24) !important;}
+        .lms-dark .hover\\:bg-green-50:hover{background-color:rgba(34,197,94,0.14) !important;}
+        .lms-dark .hover\\:bg-green-100:hover{background-color:rgba(34,197,94,0.22) !important;}
+        .lms-dark .hover\\:bg-emerald-50:hover{background-color:rgba(16,185,129,0.14) !important;}
+        .lms-dark .hover\\:bg-emerald-100:hover{background-color:rgba(16,185,129,0.22) !important;}
+        .lms-dark .hover\\:bg-blue-50:hover{background-color:rgba(59,130,246,0.14) !important;}
+        .lms-dark .hover\\:bg-indigo-50:hover{background-color:rgba(99,102,241,0.16) !important;}
+        .lms-dark .hover\\:bg-violet-50:hover,.lms-dark .hover\\:bg-purple-50:hover{background-color:rgba(139,92,246,0.16) !important;}
+        .lms-dark .hover\\:bg-sky-50:hover{background-color:rgba(14,165,233,0.16) !important;}
+        .lms-dark .hover\\:bg-cyan-50:hover{background-color:rgba(6,182,212,0.16) !important;}
+        .lms-dark .hover\\:bg-orange-50:hover{background-color:rgba(249,115,22,0.16) !important;}
+        .lms-dark .hover\\:bg-yellow-50:hover{background-color:rgba(234,179,8,0.16) !important;}
+        /* Garis & teks aksen versi hover/focus. */
+        .lms-dark .hover\\:border-teal-200:hover,.lms-dark .hover\\:border-teal-300:hover,.lms-dark .hover\\:border-teal-400:hover,.lms-dark .focus\\:border-teal-300:focus,.lms-dark .focus\\:border-teal-400:focus,.lms-dark .focus\\:border-teal-500:focus{border-color:rgba(45,212,191,0.55) !important;}
+        .lms-dark .hover\\:border-red-300:hover,.lms-dark .hover\\:border-red-400:hover{border-color:rgba(239,68,68,0.55) !important;}
+        .lms-dark .hover\\:text-teal-600:hover,.lms-dark .hover\\:text-teal-700:hover,.lms-dark .group:hover .group-hover\\:text-teal-600,.lms-dark .group:hover .group-hover\\:text-teal-700{color:#5eead4 !important;}
+        .lms-dark .hover\\:text-blue-600:hover,.lms-dark .hover\\:text-blue-700:hover{color:#93c5fd !important;}
+        .lms-dark .hover\\:text-rose-500:hover,.lms-dark .hover\\:text-rose-600:hover,.lms-dark .group:hover .group-hover\\:text-rose-500{color:#fda4af !important;}
+        .lms-dark .hover\\:text-red-500:hover,.lms-dark .hover\\:text-red-600:hover{color:#fca5a5 !important;}
+        .lms-dark .hover\\:text-amber-600:hover,.lms-dark .hover\\:text-amber-700:hover{color:#fcd34d !important;}
+        /* ── [shell-dark-cta-contrast-v1] Tombol SOLID vs tulisan putih ──
+           Warna aksen level -400/-500/-600 itu terang: putih di atasnya cuma
+           2,3-3,7:1, di bawah ambang AA (4,5:1) dan paling terasa di tombol WA
+           (bg-green-500 = 2,3:1). Di mode gelap saja shade-nya diturunkan satu-dua
+           tingkat sampai lolos 4,5:1, hover-nya lebih pekat lagi biar tetap terasa.
+           Sengaja pakai selektor gabungan '.bg-x.text-white' supaya HANYA kena
+           elemen yang benar-benar bertulisan putih — bilah progres & titik status
+           yang memakai warna sama tidak ikut berubah. */
+        .lms-dark .bg-teal-500.text-white,.lms-dark .bg-teal-600.text-white{background-color:#0f766e !important;}
+        .lms-dark .hover\\:bg-teal-600.text-white:hover,.lms-dark .hover\\:bg-teal-700.text-white:hover{background-color:#115e59 !important;}
+        .lms-dark .bg-green-500.text-white,.lms-dark .bg-green-600.text-white{background-color:#15803d !important;}
+        .lms-dark .hover\\:bg-green-600.text-white:hover,.lms-dark .hover\\:bg-green-700.text-white:hover{background-color:#166534 !important;}
+        .lms-dark .bg-red-500.text-white,.lms-dark .bg-red-600.text-white{background-color:#b91c1c !important;}
+        .lms-dark .hover\\:bg-red-600.text-white:hover,.lms-dark .hover\\:bg-red-700.text-white:hover{background-color:#991b1b !important;}
+        .lms-dark .bg-amber-400.text-white,.lms-dark .bg-amber-500.text-white{background-color:#b45309 !important;}
+        .lms-dark .bg-rose-500.text-white{background-color:#be123c !important;}
+        .lms-dark .bg-violet-500.text-white,.lms-dark .bg-indigo-500.text-white{background-color:#4338ca !important;}
+        .lms-dark .bg-cyan-600.text-white{background-color:#0e7490 !important;}
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
