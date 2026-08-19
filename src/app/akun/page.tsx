@@ -9,6 +9,7 @@ import { LANG_FLAGS, getFlagUrl, getLangPhoto, langGlyph } from "@/lib/lang-visu
 import { baseLanguage, displayLanguage, regulerLangName } from "@/lib/classLanguage"; // [reguler-english-conversation-v1]
 import { languageSlug } from "@/lib/languageSlug"; // [materi-bahasa-siswa-v1] nama bahasa (EN/ID/nama kelas) → slug kanonik
 import { batchOccurrences } from "@/lib/batchCalendar"; // [jadwal-batch-kalender-v1] pola batch kelas grup → pertemuan
+import { simpanDaftarLevel } from "@/lib/kelasCache"; // [kelas-level-switcher-v3] titip daftar level buat strip di halaman detail
 import { petaNomorSesi } from "@/lib/nomorSesi"; // [sesi-nomor-sinkron-v1] nomor sesi nyambung dengan sessions_used
 import { LangSlugFlag } from "@/components/RectFlag"; // [materi-flag-pie-v1] bendera rounded-rect (data bendera-nya lazy)
 import { sapaan, initial as callInitial } from "@/lib/teacherName"; // [teacher-sapaan-v1] "Kak Dhani", bukan nama lengkap
@@ -2863,6 +2864,7 @@ export default function AkunPage() {
         if (c?.student) {
           setStudent(c.student);
           setAllSchedules(c.schedules || []);
+          simpanDaftarLevel(previewId, c.student?.registrations); // [kelas-level-switcher-v3]
           hadCache = true;
         }
       }
@@ -2880,6 +2882,7 @@ export default function AkunPage() {
           }));
         } catch {}
         setStudent(json.student);
+        simpanDaftarLevel(previewId, json.student?.registrations); // [kelas-level-switcher-v3]
         // jadwal-riwayat-v1: endpoint sekarang mengirim `schedules` (riwayat + mendatang).
         // `upcomingSchedules` dipertahankan sebagai fallback buat respons lama.
         setAllSchedules(json.schedules || json.upcomingSchedules || []);
@@ -3147,6 +3150,10 @@ export default function AkunPage() {
       // Student is now active — clear wizard cache
       try { localStorage.removeItem(`linguo_wizard_${user?.id || email}`); } catch {}
       setStudent({ ...studentData, registrations: enrichedRegs });
+      // [kelas-level-switcher-v3] Daftar ini sudah lengkap (termasuk level lama yang
+      // diarsipkan) — titipkan buat strip pindah level, biar halaman detail tak
+      // bergantung pada rantai query-nya sendiri yang gampang putus.
+      simpanDaftarLevel(studentData.id, enrichedRegs);
 
       // ── Onboarding: show for new users with no registrations ──
       const regs = enrichedRegs;

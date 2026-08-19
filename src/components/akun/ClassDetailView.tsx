@@ -7,7 +7,7 @@
 // [jadwal-tanpa-aksi-siswa-v1] Aksi ubah/batalkan jadwal milik siswa DIHAPUS —
 // perubahan jadwal disepakati di grup kelas, pengajar yang memindahkan sesinya.
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { supabase, resolveSessionForGate } from '@/lib/supabase-client';
 import { getFlagUrl, getLangPhoto, langGlyph } from '@/lib/lang-visuals';
@@ -16,7 +16,7 @@ import { displayLanguage } from '@/lib/classLanguage';
 import { sameLanguage } from '@/lib/languageSlug';
 import ClassLevelSwitcher from '@/components/akun/ClassLevelSwitcher';
 // [kelas-switch-instan-v1] cache sesi + pasang-sebelum-paint biar pindah level tak kedip
-import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey, STUDENT_ID_KEY } from '@/lib/kelasCache';
+import { readCache, writeCache, useIsoLayoutEffect, regKey, schedKey, materiKey, levelRegsKey, STUDENT_ID_KEY, simpanDaftarLevel } from '@/lib/kelasCache';
 // [teacher-sapaan-v1] siswa manggil pengajarnya "Kak Dhani", bukan nama lengkap
 import { sapaan } from '@/lib/teacherName';
 import ClassProgressTab from '@/components/akun/ClassProgressTab';
@@ -44,6 +44,9 @@ interface Props {
   // dijawab RLS dengan daftar KOSONG (bukan error), jadi tanpa penanda ini halaman
   // tampak seperti "kelasnya memang tak punya jadwal & tak punya level lain".
   sesiMati?: boolean;
+  // [kelas-level-switcher-v3] true = sesi pratinjau staf sudah kedaluwarsa. Sama
+  // bohongnya dengan sesiMati: endpoint pratinjau menolak, halaman tetap tampak utuh.
+  pratinjauMati?: boolean;
 }
 
 // [kelas-tab-ramping-v1] Tab Overview & Jadwal dihapus. Isinya dulu tumpang tindih:
@@ -81,7 +84,7 @@ function hitungMundur(dt: Date, now: number): string {
   return hari === 1 ? 'besok' : `${hari} hari lagi`;
 }
 
-export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null, sesiMati = false }: Props) {
+export default function ClassDetailView({ reg, initialTab, previewStudentId = null, previewSchedules = null, previewRegs = null, sesiMati = false, pratinjauMati = false }: Props) {
   const [activeTab, setActiveTabState] = useState<ClassTab>(isValidTab(normalizeTab(initialTab)) ? (normalizeTab(initialTab) as ClassTab) : 'materi');
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -179,14 +182,23 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
   // barusan diklik). Cache kosong TIDAK mengosongkan daftar yang sudah tampil:
   // bahasanya toh sama saat pindah level, dan strip yang berkedip hilang-muncul
   // lebih buruk daripada strip yang telat satu detik menyegarkan diri.
+  // Di mode pratinjau id siswa datang dari `?preview=`, bukan dari sesi login —
+  // titipan beranda tersimpan dengan id itu, jadi kuncinya harus ikut.
+  const cacheOwnerId = previewStudentId || studentId;
   useIsoLayoutEffect(() => {
-    const c = readCache<any[]>(studentId && reg?.language ? levelRegsKey(studentId, reg.language) : null);
+    const c = readCache<any[]>(cacheOwnerId && reg?.language ? levelRegsKey(cacheOwnerId, reg.language) : null);
     if (c && c.length) setLevelRegs(c);
-  }, [studentId, reg?.language]);
+  }, [cacheOwnerId, reg?.language]);
   useEffect(() => {
     if (!reg?.language) return;
     if (previewStudentId) {
-      setLevelRegs((previewRegs || []).filter((r: any) => sameLanguage(r.language, reg.language)));
+      // `previewRegs` null = endpoint pratinjau belum menjawab / menolak (kode
+      // kedaluwarsa). Daftar yang sudah tampil (dari titipan beranda) JANGAN
+      // dikosongkan — itu persis yang dulu bikin strip level raib diam-diam.
+      if (!previewRegs) return;
+      const sekelas = previewRegs.filter((r: any) => sameLanguage(r.language, reg.language));
+      if (sekelas.length) setLevelRegs(sekelas);
+      simpanDaftarLevel(previewStudentId, previewRegs);
       return;
     }
     if (!studentId) return;
@@ -223,6 +235,14 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
     })();
     return () => { alive = false; };
   }, [studentId, reg?.language, reg?.id, previewStudentId, previewRegs]);
+
+  // Level yang SEDANG dibuka wajib ada di strip walau tak lolos saringan daftar
+  // (mis. baris titipan beranda yang belum lunas, atau daftar yang datang dari
+  // cache lama): chip aktifnya yang jadi penunjuk "kamu di sini".
+  const levelChips = useMemo(() => {
+    if (!reg?.id || !levelRegs.length) return levelRegs;
+    return levelRegs.some((r: any) => r.id === reg.id) ? levelRegs : [...levelRegs, reg];
+  }, [levelRegs, reg]);
 
   // [kelas-switch-instan-v1] Prefetch diam-diam isi level tetangga (jadwal + materi)
   // sesudah halaman ini tenang. Dua query IN() untuk SEMUA level sekaligus — jauh
@@ -334,6 +354,18 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
       {/* [kelas-sesi-mati-jujur-v1] Sesi habis → akui, jangan diam. Tanpa banner ini
           siswa membaca "Belum ada sesi terjadwal" & strip level yang lenyap sebagai
           kenyataan, padahal datanya cuma tak terjangkau. */}
+      {/* [kelas-level-switcher-v3] Pratinjau staf kedaluwarsa → akui juga. Tanpa ini
+          strip level & jadwal kosong terbaca sebagai fakta tentang siswanya. */}
+      {!sesiMati && pratinjauMati && (
+        <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="text-sm font-bold text-amber-800">Sesi pratinjau sudah kedaluwarsa</div>
+          <div className="mt-1 text-[13px] text-amber-700">
+            Jadwal &amp; daftar level di bahasa ini tak bisa disegarkan. Yang tampil data terakhir
+            yang sempat tersimpan — terbitkan kode &quot;Lihat sebagai Siswa&quot; yang baru dari dasbor.
+          </div>
+        </div>
+      )}
+
       {sesiMati && (
         <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
           <div className="text-sm font-bold text-amber-800">Sesi kamu sudah berakhir</div>
@@ -362,7 +394,7 @@ export default function ClassDetailView({ reg, initialTab, previewStudentId = nu
           [kelas-level-switcher-v1] Sengaja DI ATAS banner: posisinya sejajar breadcrumb,
           kelihatan sebelum siswa scroll, dan tak mengganggu urutan hero → progress → tab. */}
       <ClassLevelSwitcher
-        regs={levelRegs}
+        regs={levelChips}
         currentId={reg.id}
         activeTab={activeTab}
         previewStudentId={previewStudentId}

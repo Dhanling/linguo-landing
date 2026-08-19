@@ -18,7 +18,7 @@ import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Loader2, RefreshCw } from "lucide-react";
 import { supabase, resolveSessionForGate } from "@/lib/supabase-client"; // [auth-gate-resilient-v1]
 // [kelas-switch-instan-v1] pasang data handoff sebelum paint → pindah level tanpa kedip
-import { useIsoLayoutEffect } from "@/lib/kelasCache";
+import { useIsoLayoutEffect, simpanDaftarLevel } from "@/lib/kelasCache";
 import StudentShell, { type AkunTab } from "@/components/akun/StudentShell";
 import ClassDetailView from "@/components/akun/ClassDetailView";
 
@@ -49,6 +49,11 @@ function KelasDetailInner() {
   // error), jadi halaman memasang wajah "belum ada sesi terjadwal" & strip level
   // hilang, seolah datanya memang tak ada. Flag ini dipakai buat mengaku terus terang.
   const [sesiMati, setSesiMati] = useState(false);
+  // [kelas-level-switcher-v3] Sesi pratinjau ("Lihat sebagai Siswa") punya masa
+  // berlaku. Begitu kodenya kedaluwarsa, /api/preview-student menjawab 403 — halaman
+  // tetap tampak normal (isinya nyangkut dari handoff kartu) tapi daftar level &
+  // jadwal diam-diam kosong. Flag ini yang bikin halaman mengaku.
+  const [pratinjauMati, setPratinjauMati] = useState(false);
 
   // [kelas-switch-instan-v1] Handoff dibaca SEBELUM paint. Dulu pembacaannya
   // menumpang useEffect di bawah (jalan sesudah paint), jadi tiap pindah level
@@ -79,15 +84,21 @@ function KelasDetailInner() {
           const json = await res.json();
           const found = (json.student?.registrations || []).find((r: any) => r.id === params.id);
           if (!alive) return;
+          setPratinjauMati(false);
           if (found) setReg(found);
           setPreviewRegs(json.student?.registrations || []);
+          simpanDaftarLevel(previewId, json.student?.registrations); // [kelas-level-switcher-v3]
           // Jadwal ikut dari endpoint yang sama — query `schedules` langsung
           // pasti kosong di pratinjau (RLS memblok anon), dan tab Jadwal kosong
           // itu menyesatkan: kelihatan seperti siswanya belum punya jadwal.
           setPreviewSchedules((json.schedules || []).filter((s: any) => s.registration_id === params.id));
           if (!found && !shown) setLoadError(true);
         } catch {
-          if (alive && !shown) setLoadError(true);
+          if (!alive) return;
+          // Handoff menyelamatkan tampilan, TAPI jangan biarkan halaman berlagak
+          // lengkap: strip level & jadwal pratinjau memang tak terambil.
+          if (shown) setPratinjauMati(true);
+          else setLoadError(true);
         }
         return;
       }
@@ -183,7 +194,7 @@ function KelasDetailInner() {
   return (
     <StudentShell active="beranda" onTabChange={goTab} previewStudentId={previewId}>
       {reg ? (
-        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} previewRegs={previewRegs} sesiMati={sesiMati} />
+        <ClassDetailView reg={reg} initialTab={searchParams.get("tab")} previewStudentId={previewId} previewSchedules={previewSchedules} previewRegs={previewRegs} sesiMati={sesiMati} pratinjauMati={pratinjauMati} />
       ) : loadError ? (
         <div className="flex flex-col items-center justify-center gap-4 py-24 text-center">
           <div className="text-[15px] font-semibold text-slate-700">Gagal memuat detail kelas</div>

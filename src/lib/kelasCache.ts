@@ -74,3 +74,30 @@ function prune() {
 // Pasang data cache SEBELUM browser menggambar (useEffect kelewat telat: satu frame
 // spinner sempat terlihat = kedip). Di server jatuh ke useEffect biar tak ada warning.
 export const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+/* [kelas-level-switcher-v3] Titipan daftar level dari BERANDA.
+   Strip pindah level di /akun/kelas/[id] dulu berdiri di atas satu rantai query
+   sendiri (students by email → registrations by student_id). Tiap kali rantai itu
+   putus — sesi pratinjau kedaluwarsa, RLS menjawab kosong, jaringan kedip — strip-nya
+   lenyap tanpa suara, padahal beranda BARUSAN memuat daftar yang sama persis.
+   Jadi beranda menitipkannya: satu tulis sessionStorage, halaman detail tinggal pakai. */
+export function simpanDaftarLevel(
+  studentId: string | null | undefined,
+  regs: any[] | null | undefined,
+): void {
+  if (!studentId || !Array.isArray(regs) || regs.length === 0) return;
+  writeCache(STUDENT_ID_KEY, studentId);
+  const perBahasa = new Map<string, any[]>();
+  for (const r of regs) {
+    if (!r?.id || !r?.language) continue;
+    // Aturan yang sama dengan query strip: kelas batal & yang tak pernah dibayar
+    // bukan level yang mau ditengok. Level lama yang `archived_at` justru wajib ikut.
+    if (r.pipeline_status === 'Batal') continue;
+    if (r.payment_status !== 'Lunas' && r.payment_status !== 'Cicilan') continue;
+    const k = levelRegsKey(studentId, r.language);
+    const arr = perBahasa.get(k);
+    if (arr) arr.push(r);
+    else perBahasa.set(k, [r]);
+  }
+  perBahasa.forEach((v, k) => writeCache(k, v));
+}
