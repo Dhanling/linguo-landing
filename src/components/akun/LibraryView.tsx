@@ -480,7 +480,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             <ChevronRight className="h-3.5 w-3.5" />
             <span className="text-[#12A37E]">Perpustakaan Saya</span>
           </p>
-          <h1 className="font-heading mt-1 text-[28px] font-extrabold leading-tight text-[#12172B] sm:text-[32px]">
+          <h1 className="mt-1 text-[28px] font-extrabold leading-tight text-[#12172B] sm:text-[32px]">
             Perpustakaan Saya
           </h1>
           <p className="mt-1 text-[14px] font-medium text-slate-500">
@@ -533,7 +533,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               <p className="flex items-center gap-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#0C8163]">
                 <Flame className="h-4 w-4" strokeWidth={2.4} /> Lanjutkan belajar
               </p>
-              <h2 className="font-heading mt-1 truncate text-[22px] font-extrabold text-[#12172B] sm:text-[26px]">
+              <h2 className="mt-1 truncate text-[22px] font-extrabold text-[#12172B] sm:text-[26px]">
                 {hero.p.digital_products.title}
               </h2>
               <p className="mt-0.5 text-[14px] font-medium text-slate-500">
@@ -1038,7 +1038,7 @@ function EmptyState() {
   return (
     <div className="rounded-3xl bg-white px-6 py-16 text-center shadow-[0_24px_50px_-34px_rgba(18,23,43,0.5)]">
       <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#12A37E]/10 text-[#12A37E]"><BookOpen className="h-9 w-9" strokeWidth={2} /></div>
-      <h3 className="font-heading text-[20px] font-extrabold text-[#12172B]">Perpustakaan masih kosong</h3>
+      <h3 className="text-[20px] font-extrabold text-[#12172B]">Perpustakaan masih kosong</h3>
       <p className="mx-auto mt-1 max-w-sm text-[14px] font-medium text-slate-500">
         Kamu belum punya E-Book atau E-Learning. Jelajahi toko untuk mulai belajar mandiri kapan saja.
       </p>

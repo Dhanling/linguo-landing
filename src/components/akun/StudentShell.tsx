@@ -416,24 +416,28 @@ export default function StudentShell({
         .lms-dark{background:#000000;}
         .lms-dark .bg-\\[\\#EEF1F4\\]{background-color:#000000 !important;}
         .lms-dark .lg\\:bg-\\[\\#16796E\\]{background-color:#000000 !important;}
-        /* panel utama (kanvas putih) — level elevasi TENGAH */
-        .lms-dark .bg-\\[\\#FFFFFF\\]{background-color:#141414 !important;}
-        /* kartu — level PALING TERANG, naik di atas panel & well */
-        .lms-dark .bg-white{background-color:#1c1c1c !important;}
-        /* well / latar seksi — level PALING GELAP (recessed), sama peran spt #F5F6F8 di light mode */
-        .lms-dark .bg-gray-50,.lms-dark .bg-slate-50,.lms-dark .bg-\\[\\#F5F6F8\\],.lms-dark .bg-\\[\\#F5F7F8\\],.lms-dark .bg-\\[\\#EAEDF0\\]{background-color:#0d0d0d !important;}
-        .lms-dark .bg-gray-100,.lms-dark .bg-slate-100,.lms-dark .bg-\\[\\#E8EAEE\\],.lms-dark .bg-\\[\\#F1F3F5\\]{background-color:#262626 !important;}
-        .lms-dark .bg-gray-200,.lms-dark .bg-slate-200,.lms-dark .bg-gray-300,.lms-dark .bg-slate-300{background-color:#303030 !important;}
-        .lms-dark .bg-white\\/90,.lms-dark .bg-white\\/95{background-color:rgba(28,28,28,0.94) !important;}
-        .lms-dark .bg-white\\/60,.lms-dark .bg-white\\/70,.lms-dark .bg-white\\/80{background-color:rgba(28,28,28,0.78) !important;}
+        /* [shell-dark-pure-black-v1] Palet dibikin HITAM PEKAT (samain rasa dgn dashboard
+           pengajar). Sebelumnya panel #141414 + kartu #1c1c1c: bidang abu selebar layar
+           bikin dashboard kelihatan abu kebiruan, bukan hitam. Sekarang panel & well
+           MENYATU sama halaman (#000) dan cuma kartu yang naik setipis mungkin (#101010)
+           supaya batasnya masih kebaca tanpa jadi kotak abu. */
+        .lms-dark .bg-\\[\\#FFFFFF\\]{background-color:#000000 !important;}
+        /* kartu — satu-satunya level yang naik di atas hitam */
+        .lms-dark .bg-white{background-color:#101010 !important;}
+        /* well / latar seksi — menyatu dgn halaman (recessed), peran sama spt #F5F6F8 di light mode */
+        .lms-dark .bg-gray-50,.lms-dark .bg-slate-50,.lms-dark .bg-\\[\\#F5F6F8\\],.lms-dark .bg-\\[\\#F5F7F8\\],.lms-dark .bg-\\[\\#EAEDF0\\]{background-color:#080808 !important;}
+        .lms-dark .bg-gray-100,.lms-dark .bg-slate-100,.lms-dark .bg-\\[\\#E8EAEE\\],.lms-dark .bg-\\[\\#F1F3F5\\]{background-color:#1c1c1c !important;}
+        .lms-dark .bg-gray-200,.lms-dark .bg-slate-200,.lms-dark .bg-gray-300,.lms-dark .bg-slate-300{background-color:#262626 !important;}
+        .lms-dark .bg-white\\/90,.lms-dark .bg-white\\/95{background-color:rgba(16,16,16,0.94) !important;}
+        .lms-dark .bg-white\\/60,.lms-dark .bg-white\\/70,.lms-dark .bg-white\\/80{background-color:rgba(16,16,16,0.80) !important;}
         .lms-dark .bg-\\[\\#F0FAF8\\]{background-color:rgba(45,212,191,0.10) !important;}
         /* [sesi-mendatang-flat-dark-v1] Kartu "Sesi Mendatang" jangan ikut jadi kotak abu
            (#1c1c1c) — isinya sudah daftar baris berbingkai sendiri, jadi panelnya cuma
            bikin dua lapis kotak bertumpuk. Panelnya dibikin hitam (menyatu dgn halaman),
            barisnya yang naik selapis biar tetap kebaca sebagai daftar. */
         .lms-dark .sesi-mendatang-panel{background-color:#000000 !important;}
-        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item{background-color:#141414 !important;}
-        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item:hover{background-color:#1c1c1c !important;}
+        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item{background-color:#101010 !important;}
+        .lms-dark .sesi-mendatang-panel .sesi-mendatang-item:hover{background-color:#1a1a1a !important;}
         /* ── Teks: putih & abu terang (kontras tinggi) ── */
         .lms-dark .text-slate-900,.lms-dark .text-slate-800,.lms-dark .text-slate-700,.lms-dark .text-gray-900,.lms-dark .text-gray-800,.lms-dark .text-gray-700,.lms-dark .text-\\[\\#12172B\\]{color:#ffffff !important;}
         .lms-dark .text-slate-600,.lms-dark .text-gray-600{color:#e5e5e5 !important;}
@@ -511,9 +515,9 @@ export default function StudentShell({
         .lms-dark .border-slate-300,.lms-dark .border-gray-300{border-color:#3f3f46 !important;}
         .lms-dark .divide-gray-50 > *,.lms-dark .divide-slate-100 > *{border-color:#242424 !important;}
         /* ── Hover state ── */
-        .lms-dark .hover\\:bg-gray-50:hover,.lms-dark .hover\\:bg-slate-50:hover,.lms-dark .hover\\:bg-white:hover{background-color:#242424 !important;}
-        .lms-dark .hover\\:bg-gray-100:hover,.lms-dark .hover\\:bg-slate-100:hover,.lms-dark .hover\\:bg-gray-200:hover,.lms-dark .hover\\:bg-slate-200:hover{background-color:#303030 !important;}
-        .lms-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#242424 !important;}
+        .lms-dark .hover\\:bg-gray-50:hover,.lms-dark .hover\\:bg-slate-50:hover,.lms-dark .hover\\:bg-white:hover{background-color:#1a1a1a !important;}
+        .lms-dark .hover\\:bg-gray-100:hover,.lms-dark .hover\\:bg-slate-100:hover,.lms-dark .hover\\:bg-gray-200:hover,.lms-dark .hover\\:bg-slate-200:hover{background-color:#262626 !important;}
+        .lms-dark .hover\\:bg-\\[\\#F5F6F8\\]:hover{background-color:#1a1a1a !important;}
         /* ── [shell-dark-no-outline-v1] kartu / tab / tabel TANPA garis luar ──
            Di atas latar hitam, ring & border netral kebaca sebagai kotak abu terang yang
            bikin dashboard rame. Pemisahan sekarang murni dari TANGGA ELEVASI (#0d0d0d well
@@ -522,8 +526,12 @@ export default function StudentShell({
            (border-t/-b/-l/-r, divide-*) sengaja dibiarkan hidup — itu pemisah baris tabel /
            footer kartu, bukan outline. Aksen berwarna (teal/amber/blue/rose) juga dibiarkan
            karena itu penanda status & seleksi. */
-        .lms-dark .ring-slate-100,.lms-dark .ring-slate-200,.lms-dark .ring-slate-200\\/70,.lms-dark .ring-slate-200\\/80,.lms-dark .ring-slate-300,.lms-dark .ring-slate-900\\/5,.lms-dark .ring-gray-100,.lms-dark .ring-gray-200,.lms-dark .ring-gray-300,.lms-dark .ring-black\\/5{--tw-ring-color:transparent !important;}
-        .lms-dark .border.border-slate-100,.lms-dark .border.border-slate-200,.lms-dark .border.border-slate-200\\/70,.lms-dark .border.border-slate-200\\/80,.lms-dark .border.border-slate-300,.lms-dark .border.border-gray-100,.lms-dark .border.border-gray-200,.lms-dark .border.border-gray-300{border-color:transparent !important;}
+        /* [shell-dark-pure-black-v1] Sejak panel & well ikut hitam, beda tinggi kartu
+           (#101010 di atas #000) tinggal setipis rambut — outline yang dulu DIMATIKAN
+           total sekarang dihidupkan lagi setipis mungkin (garis rambut, bukan kotak abu)
+           supaya kartu tetap punya batas yang kebaca. */
+        .lms-dark .ring-slate-100,.lms-dark .ring-slate-200,.lms-dark .ring-slate-200\\/70,.lms-dark .ring-slate-200\\/80,.lms-dark .ring-slate-300,.lms-dark .ring-slate-900\\/5,.lms-dark .ring-gray-100,.lms-dark .ring-gray-200,.lms-dark .ring-gray-300,.lms-dark .ring-black\\/5{--tw-ring-color:rgba(255,255,255,0.07) !important;}
+        .lms-dark .border.border-slate-100,.lms-dark .border.border-slate-200,.lms-dark .border.border-slate-200\\/70,.lms-dark .border.border-slate-200\\/80,.lms-dark .border.border-slate-300,.lms-dark .border.border-gray-100,.lms-dark .border.border-gray-200,.lms-dark .border.border-gray-300{border-color:#1f1f1f !important;}
         /* KECUALI kolom isian: input/textarea/select wajib tetap punya outline, kalau nggak
            kolomnya lenyap (bg-white kartu = #1c1c1c, sama persis sama latar kartunya). */
         .lms-dark input.border.border-slate-100,.lms-dark input.border.border-slate-200,.lms-dark input.border.border-slate-300,.lms-dark input.border.border-gray-100,.lms-dark input.border.border-gray-200,.lms-dark input.border.border-gray-300,
@@ -558,8 +566,8 @@ export default function StudentShell({
         .lms-dark .bg-emerald-50\\/50,.lms-dark .bg-emerald-50\\/70,.lms-dark .bg-emerald-50\\/80{background-color:rgba(16,185,129,0.12) !important;}
         .lms-dark .bg-green-50\\/50,.lms-dark .bg-green-50\\/70,.lms-dark .bg-green-50\\/80{background-color:rgba(34,197,94,0.12) !important;}
         .lms-dark .bg-indigo-50\\/50,.lms-dark .bg-indigo-50\\/70,.lms-dark .bg-purple-50\\/50,.lms-dark .bg-purple-50\\/70,.lms-dark .bg-violet-50\\/50,.lms-dark .bg-violet-50\\/70{background-color:rgba(139,92,246,0.14) !important;}
-        .lms-dark .bg-gray-50\\/50,.lms-dark .bg-gray-50\\/60,.lms-dark .bg-gray-50\\/70,.lms-dark .bg-gray-50\\/80,.lms-dark .bg-slate-50\\/50,.lms-dark .bg-slate-50\\/70,.lms-dark .bg-slate-50\\/80{background-color:rgba(13,13,13,0.9) !important;}
-        .lms-dark .bg-gray-100\\/50,.lms-dark .bg-gray-100\\/60,.lms-dark .bg-gray-100\\/70,.lms-dark .bg-gray-100\\/80,.lms-dark .bg-slate-100\\/70,.lms-dark .bg-slate-100\\/80{background-color:rgba(38,38,38,0.9) !important;}
+        .lms-dark .bg-gray-50\\/50,.lms-dark .bg-gray-50\\/60,.lms-dark .bg-gray-50\\/70,.lms-dark .bg-gray-50\\/80,.lms-dark .bg-slate-50\\/50,.lms-dark .bg-slate-50\\/70,.lms-dark .bg-slate-50\\/80{background-color:rgba(8,8,8,0.9) !important;}
+        .lms-dark .bg-gray-100\\/50,.lms-dark .bg-gray-100\\/60,.lms-dark .bg-gray-100\\/70,.lms-dark .bg-gray-100\\/80,.lms-dark .bg-slate-100\\/70,.lms-dark .bg-slate-100\\/80{background-color:rgba(28,28,28,0.9) !important;}
         /* ── Sisa "ink" aksen yang belum tertutup di kelompok atas ── */
         .lms-dark .text-teal-900,.lms-dark .text-teal-800{color:#5eead4 !important;}
         .lms-dark .text-amber-900{color:#fcd34d !important;}

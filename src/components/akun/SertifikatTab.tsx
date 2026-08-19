@@ -14,6 +14,8 @@ import {
   Flag, Play, CalendarDays, Info, X, Loader2, Mic, Headphones, BookOpen, PenLine,
   Sparkles, Star,
 } from "lucide-react";
+// [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
+import { getLangPhoto } from "@/lib/lang-visuals";
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
 function loadScript(src: string): Promise<void> {
@@ -737,26 +739,43 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
 function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?: () => void; onSchedule?: () => void }) {
   const col = colorOf(ct.language);
   const isDark = useIsDark();
+  const photo = getLangPhoto(ct.language); // [sertifikat-banner-foto-v1]
   const total = ct.total ?? 16;
   const used = ct.used ?? 0;
   const pct = ct.pct ?? (total > 0 ? Math.round((used / total) * 100) : 0);
   const remain = Math.max(0, total - used);
   return (
     <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_50px_-34px_rgba(18,23,43,.5)]">
-      {/* Aksen bahasa penuh (mis. oranye Rusia) menyilaukan di kanvas hitam —
-          di mode gelap dilapisi hitam transparan biar turun sekitar 30% luminansi,
-          teks putih tetap kontras. */}
+      {/* [sertifikat-banner-foto-v1] Banner pakai FOTO bahasa, persis kartu kelas di
+          Beranda (sumber: getLangPhoto). Dulu cuma blok warna aksen — di kanvas hitam
+          bidang oranye/merah sepenuh lebar itu menyilaukan. Kalau bahasanya belum punya
+          foto stok, jatuh balik ke warna aksen (di mode gelap tetap diredam ~30%).
+          Gradient hitam WAJIB: tanpa itu teks putih hilang di atas foto yang terang. */}
       <div
-        className="relative flex items-center gap-5 px-6 py-7 text-white sm:px-8"
+        className="relative flex items-center gap-5 overflow-hidden px-6 py-7 text-white sm:px-8"
         style={{ background: isDark ? `linear-gradient(0deg, rgba(0,0,0,.34), rgba(0,0,0,.34)), ${col.accent}` : col.accent }}
       >
-        <FlagBadge lang={ct.language} variant="hero" />
-        <div className="min-w-0 flex-1">
+        {photo && (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={photo}
+              alt={ct.language}
+              className="absolute inset-0 h-full w-full object-cover"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
+          </>
+        )}
+        <div className="relative shrink-0"><FlagBadge lang={ct.language} variant="hero" /></div>
+        <div className="relative min-w-0 flex-1">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold"><Lock className="h-3 w-3" />Belum Terbit</span>
           <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{ct.language} — CEFR {ct.level}</h2>
           <p className="mt-1 text-[13px] font-medium text-white/85">{ct.title} · {ct.teacher}</p>
         </div>
-        <div className="pointer-events-none ml-2 hidden shrink-0 opacity-90 md:flex">
+        {/* Hiasan heksagon cuma dipakai kalau banner TIDAK punya foto — di atas foto
+            dua bercak putih itu cuma bikin kotor. */}
+        <div className={`pointer-events-none relative ml-2 hidden shrink-0 opacity-90 ${photo ? "" : "md:flex"}`}>
           <div className="h-14 w-14 rotate-6 bg-white/25" style={{ clipPath: "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)", borderRadius: 8 }} />
           <div className="-ml-5 mt-4 h-16 w-16 bg-white/15" style={{ clipPath: "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)", borderRadius: 8 }} />
         </div>
