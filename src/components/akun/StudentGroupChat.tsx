@@ -28,7 +28,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import {
-  Check, ChevronDown, ChevronLeft, FileText, Loader2, Maximize2, MessagesSquare,
+  Check, ChevronDown, ChevronLeft, ChevronRight, FileText, Loader2, Maximize2, MessagesSquare,
   Minimize2, Reply, RotateCw, Search, Send, Smile, Users, X,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
@@ -858,9 +858,48 @@ export default function StudentGroupChat({
     return () => cancelAnimationFrame(id);
   }, [activeJid, preview]);
 
+  /* [lightbox-galeri-v1] Foto/video di transkrip dianggap satu album — panah
+     kiri/kanan (dan tombol di layar) pindah antar media tanpa menutup lightbox,
+     persis kebiasaan WhatsApp. Daftarnya ikut urutan pesan (lama → baru) dan
+     cuma memuat media yang URL bertanda tangannya sudah siap; yang belum siap
+     dilewati supaya panah tidak pernah mendarat di layar kosong. */
+  const gallery = useMemo(() => {
+    const out: { url: string; type: string | null }[] = [];
+    for (const m of msgs) {
+      const kind = m.media_type || "";
+      if (!m.media_path || m.deleted_at) continue;
+      if (kind !== "image" && kind !== "sticker" && kind !== "video" && kind !== "gif") continue;
+      const url = mediaUrls[m.media_path];
+      if (url) out.push({ url, type: m.media_type });
+    }
+    return out;
+  }, [msgs, mediaUrls]);
+
+  const lbIndex = useMemo(
+    () => (lightbox ? gallery.findIndex((g) => g.url === lightbox.url) : -1),
+    [gallery, lightbox],
+  );
+
+  const stepLightbox = useCallback(
+    (dir: 1 | -1) => {
+      if (lbIndex < 0) return;
+      const next = lbIndex + dir;
+      if (next < 0 || next >= gallery.length) return;
+      setLightbox(gallery[next]);
+    },
+    [gallery, lbIndex],
+  );
+
   // Esc: tutup lightbox dulu, lalu batal membalas, terakhir keluar layar penuh.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // Panah kiri/kanan cuma berlaku saat lightbox terbuka — di luar itu
+      // tombolnya masih milik kolom ketik & isi halaman.
+      if (lightbox && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+        e.preventDefault();
+        stepLightbox(e.key === "ArrowRight" ? 1 : -1);
+        return;
+      }
       if (e.key !== "Escape") return;
       if (lightbox) setLightbox(null);
       else if (replyTo) setReplyTo(null);
@@ -868,7 +907,7 @@ export default function StudentGroupChat({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, replyTo, fullscreen]);
+  }, [lightbox, replyTo, fullscreen, stepLightbox]);
 
   // [group-fullscreen-v1] Kunci scroll halaman di belakang overlay.
   useEffect(() => {
@@ -1320,7 +1359,15 @@ export default function StudentGroupChat({
         </section>
       </div>
 
-      {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
+      {lightbox && (
+        <Lightbox
+          {...lightbox}
+          index={lbIndex}
+          total={gallery.length}
+          onStep={stepLightbox}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </div>
   );
 }
@@ -1567,10 +1614,16 @@ function MediaView({
 function Lightbox({
   url,
   type,
+  index,
+  total,
+  onStep,
   onClose,
 }: {
   url: string;
   type: string | null;
+  index: number;
+  total: number;
+  onStep: (dir: 1 | -1) => void;
   onClose: () => void;
 }) {
   return (
@@ -1585,8 +1638,41 @@ function Lightbox({
       >
         <X className="h-5 w-5" />
       </button>
+      {/* [lightbox-galeri-v1] Panah maju/mundur — kembar dengan tombol
+          keyboard ←/→. Disembunyikan kalau cuma ada satu media, dan dimatikan
+          di ujung album supaya tidak ada klik hampa. */}
+      {total > 1 && index >= 0 && (
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onStep(-1);
+            }}
+            disabled={index <= 0}
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-white/10"
+            aria-label="Foto sebelumnya"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onStep(1);
+            }}
+            disabled={index >= total - 1}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 disabled:opacity-30 disabled:hover:bg-white/10"
+            aria-label="Foto berikutnya"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+          <span className="absolute left-1/2 top-4 -translate-x-1/2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white">
+            {index + 1} / {total}
+          </span>
+        </>
+      )}
       {type === "video" || type === "gif" ? (
         <video
+          key={url}
           src={url}
           controls
           autoPlay
@@ -1596,6 +1682,7 @@ function Lightbox({
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          key={url}
           src={url}
           alt=""
           onClick={(e) => e.stopPropagation()}
