@@ -1029,6 +1029,9 @@ function ProductCard({
   const verb = accessVerb(prod);
   const label = prod.type === "elearning" && prog && prog.pct > 0 ? "Lanjut" : verb;
   // [ebook-reader-v1] berkas e-book dibaca di dashboard → ikon buku, bukan panah unduh
+  // [ikon-fill-none-v1] `fill` WAJIB "none", jangan undefined: undefined MENGHAPUS atribut
+  // fill bawaan lucide, dan SVG tanpa fill jatuh ke hitam — ikonnya jadi kotak hitam pekat
+  // di tengah tombol teal.
   const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
 
   return (
@@ -1094,7 +1097,7 @@ function ProductCard({
                 ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"
               }`}
             >
-              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
+              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : "none"} />}
               {ready ? label : "Belum siap"}
             </button>
           )}
@@ -1118,6 +1121,9 @@ function ProductRow({
   const isExternal = !!externalLinkFor(prod);
   const verb = accessVerb(prod);
   // [ebook-reader-v1] berkas e-book dibaca di dashboard → ikon buku, bukan panah unduh
+  // [ikon-fill-none-v1] `fill` WAJIB "none", jangan undefined: undefined MENGHAPUS atribut
+  // fill bawaan lucide, dan SVG tanpa fill jatuh ke hitam — ikonnya jadi kotak hitam pekat
+  // di tengah tombol teal.
   const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
   return (
     <div className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
@@ -1157,7 +1163,7 @@ function ProductRow({
         <button onClick={onRenew} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-amber-500 px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-amber-600 active:scale-[0.98]"><Sparkles className="h-4 w-4" strokeWidth={2.4} /> Perpanjang</button>
       ) : (
         <button onClick={onOpen} disabled={busy} className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold text-white transition disabled:opacity-50 ${ready ? "bg-[#12A37E] hover:bg-[#0C8163]" : "bg-slate-400 hover:bg-slate-500"}`}>
-          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : undefined} />}
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <BtnIcon className="h-4 w-4" fill={BtnIcon === Play ? "currentColor" : "none"} />}
           {ready ? verb : "Belum siap"}
         </button>
       )}
