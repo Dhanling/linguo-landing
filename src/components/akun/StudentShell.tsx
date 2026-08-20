@@ -652,6 +652,18 @@ export default function StudentShell({
         .lms-dark .bg-rose-500.text-white{background-color:#be123c !important;}
         .lms-dark .bg-violet-500.text-white,.lms-dark .bg-indigo-500.text-white{background-color:#4338ca !important;}
         .lms-dark .bg-cyan-600.text-white{background-color:#0e7490 !important;}
+        /* [pustaka-dark-cta-v1] Tombol brand teal versi ARBITRARY (bg-[#12A37E]) —
+           dulu kelewat karena aturan di atas cuma nyebut skala Tailwind (teal-500/600).
+           Akibatnya tombol "Buka"/"Beli" di Perpustakaan tetap teal terang & terasa
+           nempel di atas kartu hitam. Di mode gelap dipekatkan ke shade yang sama
+           dengan CTA teal lain biar satu keluarga, hover-nya lebih pekat lagi.
+           Selektor gabungan '.text-white' → cuma kena elemen bertulisan putih. */
+        .lms-dark .bg-\\[\\#12A37E\\].text-white{background-color:#0f766e !important;}
+        .lms-dark .hover\\:bg-\\[\\#0C8163\\].text-white:hover{background-color:#115e59 !important;}
+        /* Tombol netral "Belum siap": slate-400 nyaris seterang kartu putih → di
+           gelap jadi abu pekat, tulisan putihnya tetap kebaca. */
+        .lms-dark .bg-slate-400.text-white,.lms-dark .bg-gray-400.text-white{background-color:#2f3338 !important;}
+        .lms-dark .hover\\:bg-slate-500.text-white:hover,.lms-dark .hover\\:bg-gray-500.text-white:hover{background-color:#3a3f45 !important;}
       `}</style>
       <div className="w-full lg:flex lg:bg-[#16796E] lg:p-3 lg:h-screen lg:min-h-[600px]">
 
