@@ -903,8 +903,8 @@ const EN: Record<string, string> = {
   "Progres baca": "Reading progress",
   "Buka halaman": "Open page",
   "Geser ke halaman": "Slide to page",
-  "Modul ini tak punya judul yang bisa dibaca otomatis — pakai nomor halaman di bawah.":
-    "This module has no headings we can read automatically — use the page numbers below.",
+  "Modul ini tak punya judul yang bisa dibaca otomatis — pakai penggeser halaman di bilah bawah.":
+    "This module has no headings we can read automatically — use the page slider in the bottom bar.",
   "Arti belum bisa dimuat": "Meaning unavailable",
   "bentuk dasar": "base form",
   "Putar kalimat": "Play sentence",

@@ -1837,7 +1837,7 @@ export default function EbookReader({
 
               {!memindai && bab && bab.length === 0 && (
                 <p className="px-2 py-3 text-[12.5px] font-semibold leading-relaxed text-white/45">
-                  {t("Modul ini tak punya judul yang bisa dibaca otomatis — pakai nomor halaman di bawah.")}
+                  {t("Modul ini tak punya judul yang bisa dibaca otomatis — pakai penggeser halaman di bilah bawah.")}
                 </p>
               )}
 
@@ -1852,7 +1852,7 @@ export default function EbookReader({
                   <button
                     key={`${b.hal}-${b.judul}`}
                     ref={aktif ? babAktifRef : undefined}
-                    onClick={() => { ke(b.hal); setDaftarBuka(false); }}
+                    onClick={() => ke(b.hal)}
                     className={`flex w-full gap-2.5 rounded-lg pr-2 text-left transition ${
                       aktif ? "bg-[#3ED9C0]/10" : "hover:bg-white/5"
                     }`}
@@ -1928,31 +1928,6 @@ export default function EbookReader({
               })}
             </div>
 
-            {/* Kisi nomor halaman: penyelamat waktu judul otomatisnya meleset —
-                dan satu-satunya jalan buat modul hasil pindaian. */}
-            {!!total && (
-              <div className="shrink-0 border-t border-white/10 px-3 py-3">
-                <p className="mb-2 text-[10.5px] font-extrabold uppercase tracking-wider text-white/35">
-                  {t("Lompat ke halaman")}
-                </p>
-                <div className="grid max-h-[124px] grid-cols-8 gap-1 overflow-y-auto">
-                  {Array.from({ length: total }, (_, i) => i + 1).map((n) => {
-                    const aktif = n === tampil.kiri || n === tampil.kanan;
-                    return (
-                      <button
-                        key={n}
-                        onClick={() => { ke(n); setDaftarBuka(false); }}
-                        className={`rounded-md py-1 text-[11px] font-bold tabular-nums transition ${
-                          aktif ? "bg-[#3ED9C0] text-black" : "bg-white/5 text-white/60 hover:bg-white/15 hover:text-white"
-                        }`}
-                      >
-                        {n}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
           </aside>
         </div>
       )}
