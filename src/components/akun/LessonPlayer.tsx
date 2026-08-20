@@ -44,6 +44,7 @@ import {
 } from "lucide-react";
 import UnlockFullAccess from "./UnlockFullAccess";
 import { isFreeLevel, majorOf } from "@/lib/lmsAccess";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 
 // [linguo-patch:lms-lesson-frame-v1] immersive step-flow player (inner frame, no yellow outer)
@@ -372,6 +373,7 @@ export default function LessonPlayer({
   onBack: () => void;
   onOpenLesson: (id: string) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [lesson, setLesson] = useState<any>(null);
@@ -760,13 +762,13 @@ export default function LessonPlayer({
   if (!user) {
     return (
       <Centered>
-        <p className="text-slate-700">Kamu perlu masuk dulu untuk belajar.</p>
+        <p className="text-slate-700">{t("Kamu perlu masuk dulu untuk belajar.")}</p>
         <a
           href="/akun"
           className="mt-4 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
           style={{ background: TEAL }}
         >
-          Masuk ke akun
+          {t("Masuk ke akun")}
         </a>
       </Centered>
     );
@@ -774,9 +776,9 @@ export default function LessonPlayer({
   if (!lesson) {
     return (
       <Centered>
-        <p className="text-slate-500">Sesi tidak ditemukan.</p>
+        <p className="text-slate-500">{t("Sesi tidak ditemukan.")}</p>
         <button onClick={onBack} className="mt-4 text-sm font-semibold" style={{ color: TEAL }}>
-          ← Kembali
+          ← {t("Kembali")}
         </button>
       </Centered>
     );
@@ -847,7 +849,7 @@ export default function LessonPlayer({
           </a>
           <span className="group relative flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0F5A52] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]">
             <BookOpen className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Kelas &amp; Materi</span>
+            <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">{t("Kelas & Materi")}</span>
           </span>
           <a
             href="/akun?menu=pustaka"
@@ -889,7 +891,7 @@ export default function LessonPlayer({
           className="group relative mt-auto flex h-12 w-12 items-center justify-center rounded-2xl text-white/80 transition hover:bg-[#0F5A52] hover:text-white"
         >
           <LogOut className="h-[22px] w-[22px] transition-transform duration-500 group-hover:rotate-[360deg]" />
-          <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Keluar</span>
+          <span className="pointer-events-none absolute left-[calc(100%+12px)] top-1/2 z-50 -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#0A463F] px-2.5 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">{t("Keluar")}</span>
         </button>
       </aside>
 
@@ -927,15 +929,15 @@ export default function LessonPlayer({
         <button
           onClick={toggleNav}
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
-          title="Daftar sesi"
-          aria-label="Tampilkan daftar sesi"
+          title={t("Daftar sesi")}
+          aria-label={t("Tampilkan daftar sesi")}
         >
           <ListChecks className="h-5 w-5 text-slate-700" />
         </button>
         <button
           onClick={requestExit}
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
-          title="Kembali"
+          title={t("Kembali")}
         >
           <ArrowLeft className="h-5 w-5 text-slate-700" />
         </button>
@@ -956,8 +958,8 @@ export default function LessonPlayer({
         <button
           onClick={toggleFullscreen}
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#F5F6F8] transition hover:bg-slate-100"
-          title={isFullscreen ? "Keluar layar penuh" : "Layar penuh"}
-          aria-label={isFullscreen ? "Keluar layar penuh" : "Layar penuh"}
+          title={isFullscreen ? t("Keluar layar penuh") : t("Layar penuh")}
+          aria-label={isFullscreen ? t("Keluar layar penuh") : t("Layar penuh")}
         >
           {isFullscreen ? (
             <Minimize2 className="h-5 w-5 text-slate-700" />
@@ -990,7 +992,7 @@ export default function LessonPlayer({
               {mod?.title || "Materi"}
             </span>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-slate-700">Sesi belajar</span>
+            <span className="text-slate-700">{t("Sesi belajar")}</span>
           </p>
           <h1 className="mt-0.5 truncate text-[19px] font-extrabold leading-tight text-slate-900">
             {curTitle}
@@ -1002,7 +1004,7 @@ export default function LessonPlayer({
           <button
             onClick={requestExit}
             className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F5F6F8] hover:text-slate-700"
-            title="Tutup"
+            title={t("Tutup")}
           >
             <X className="h-5 w-5" />
           </button>
@@ -1017,8 +1019,8 @@ export default function LessonPlayer({
           <button
             onClick={toggleFullscreen}
             className="fixed right-4 top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 shadow-lg ring-1 ring-slate-200 backdrop-blur transition hover:bg-white"
-            title="Keluar layar penuh"
-            aria-label="Keluar layar penuh"
+            title={t("Keluar layar penuh")}
+            aria-label={t("Keluar layar penuh")}
           >
             <Minimize2 className="h-5 w-5 text-slate-700" />
           </button>
@@ -1030,9 +1032,9 @@ export default function LessonPlayer({
       <div className="border-b border-slate-100 bg-white px-5 py-3.5 lg:px-8">
         <div className="mx-auto flex max-w-[760px] items-center gap-2">
           {([
-            { key: "materi", label: "Materi", Icon: BookOpen, color: TEAL },
+            { key: "materi", label: t("Materi"), Icon: BookOpen, color: TEAL },
             { key: "kuis", label: "Kuis", Icon: HelpCircle, color: KUIS },
-            { key: "selesai", label: "Selesai", Icon: PartyPopper, color: "#0F5A52" },
+            { key: "selesai", label: t("Selesai"), Icon: PartyPopper, color: "#0F5A52" },
           ] as const).map((p, idx, defs) => {
             const items = steps
               .map((s, gi) => ({ s, gi }))
@@ -1132,11 +1134,11 @@ export default function LessonPlayer({
                 if (res.ok && data?.invoice_url) {
                   window.location.href = data.invoice_url;
                 } else {
-                  alert(data?.error || "Gagal membuat invoice. Coba lagi ya.");
+                  alert(data?.error || t("Gagal membuat invoice. Coba lagi ya."));
                 }
               } catch (e) {
                 console.error("LMS checkout error:", e);
-                alert("Terjadi kesalahan saat membuat invoice. Coba lagi ya.");
+                alert(t("Terjadi kesalahan saat membuat invoice. Coba lagi ya."));
               }
             }}
           />
@@ -1146,7 +1148,7 @@ export default function LessonPlayer({
             <BookOpen className="h-8 w-8 text-slate-300" />
             <h1 className="mt-3 text-lg font-bold text-slate-900">{curTitle}</h1>
             <p className="mt-2 max-w-sm text-sm text-slate-500">
-              Materi sesi ini belum tersedia — lagi disiapkan ya.
+              {t("Materi sesi ini belum tersedia — lagi disiapkan ya.")}
             </p>
             {nextLesson && (
               <button
@@ -1154,7 +1156,7 @@ export default function LessonPlayer({
                 className="mt-4 inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-bold text-white"
                 style={{ background: TEAL }}
               >
-                Sesi berikutnya <ArrowRight className="h-4 w-4" />
+                {t("Sesi berikutnya")} <ArrowRight className="h-4 w-4" />
               </button>
             )}
           </Centered>
@@ -1194,9 +1196,9 @@ export default function LessonPlayer({
           <div className="hidden text-[12px] font-semibold text-slate-400 sm:block">
             {quizNeedsCheck
               ? quizHasSelection
-                ? "Tekan Periksa untuk cek jawaban"
-                : "Pilih satu jawaban dulu"
-              : `Langkah ${stepIdx + 1} dari ${steps.length}`}
+                ? t("Tekan Periksa untuk cek jawaban")
+                : t("Pilih satu jawaban dulu")
+              : `${t("Langkah")} ${stepIdx + 1} ${t("dari")} ${steps.length}`}
           </div>
           <button
             onClick={
@@ -1209,10 +1211,10 @@ export default function LessonPlayer({
             style={{ background: TEAL, boxShadow: "0 14px 30px -14px rgba(22,121,110,.9)" }}
           >
             {quizNeedsCheck
-              ? "Periksa"
+              ? t("Periksa")
               : stepIdx === steps.length - 2
-              ? "Selesaikan"
-              : "Lanjut"}
+              ? t("Selesaikan")
+              : t("Lanjut")}
             {quizNeedsCheck ? <Check className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
           </button>
         </footer>
@@ -1270,10 +1272,9 @@ export default function LessonPlayer({
             >
               <ArrowLeft className="h-6 w-6" />
             </div>
-            <h3 className="mt-4 text-[18px] font-extrabold text-slate-900">Keluar dari sesi ini?</h3>
+            <h3 className="mt-4 text-[18px] font-extrabold text-slate-900">{t("Keluar dari sesi ini?")}</h3>
             <p className="mt-1.5 text-[13.5px] font-medium leading-relaxed text-slate-500">
-              Tenang, progres yang udah kamu kerjain tetap kesimpan. Kamu bisa lanjut lagi kapan aja
-              dari daftar sesi.
+              {t("Tenang, progres yang udah kamu kerjain tetap kesimpan. Kamu bisa lanjut lagi kapan aja dari daftar sesi.")}
             </p>
             <div className="mt-5 flex flex-col gap-2.5 sm:flex-row-reverse">
               <button
@@ -1284,13 +1285,13 @@ export default function LessonPlayer({
                 className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-2xl px-5 text-[14px] font-extrabold text-white"
                 style={{ background: TEAL }}
               >
-                Ya, keluar
+                {t("Ya, keluar")}
               </button>
               <button
                 onClick={() => setConfirmExit(false)}
                 className="inline-flex h-11 flex-1 items-center justify-center rounded-2xl px-5 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8]"
               >
-                Lanjut belajar
+                {t("Lanjut belajar")}
               </button>
             </div>
           </div>
@@ -1332,13 +1333,14 @@ function StepView({
   nextLesson?: { id: string; title: string };
   onOpenLesson: (id: string) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   if (!step) return null;
 
   if (step.kind === "audio") {
     const b = step.block;
     return (
       <div className="lp-fade mx-auto max-w-[860px]">
-        <Pill icon={Headphones} text="Materi · Dengarkan" />
+        <Pill icon={Headphones} text={t("Materi · Dengarkan")} />
         <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
           {lesson.title}
         </h2>
@@ -1358,7 +1360,7 @@ function StepView({
             {b.media_url ? (
               <audio controls src={b.media_url} className="w-full" />
             ) : (
-              <p className="text-sm text-slate-400">Audio belum tersedia untuk sesi ini.</p>
+              <p className="text-sm text-slate-400">{t("Audio belum tersedia untuk sesi ini.")}</p>
             )}
           </div>
           {!showText[b.id] ? (
@@ -1392,7 +1394,7 @@ function StepView({
     const b = step.block;
     return (
       <div className="lp-fade mx-auto max-w-[760px]">
-        <Pill icon={BookOpen} text="Materi" />
+        <Pill icon={BookOpen} text={t("Materi")} />
         <div className="mt-3">{renderMarkdown(b.content?.markdown || "")}</div>
       </div>
     );
@@ -1403,12 +1405,12 @@ function StepView({
     const items: any[] = b.content?.items || [];
     return (
       <div className="lp-fade mx-auto max-w-[860px]">
-        <Pill icon={ListChecks} text="Materi · Kosakata" />
+        <Pill icon={ListChecks} text={t("Materi · Kosakata")} />
         <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
-          Kosakata baru
+          {t("Kosakata baru")}
         </h2>
         <p className="mt-2 max-w-[640px] text-[14px] font-medium leading-relaxed text-slate-500">
-          Ketuk tombol putar untuk mendengar pelafalannya, lalu ulangi dengan suara.
+          {t("Ketuk tombol putar untuk mendengar pelafalannya, lalu ulangi dengan suara.")}
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it: any, i: number) => (
@@ -1458,7 +1460,7 @@ function StepView({
     const b = step.block;
     return (
       <div className="lp-fade mx-auto max-w-[860px]">
-        <Pill icon={ImageIcon} text="Materi · Gambar" />
+        <Pill icon={ImageIcon} text={t("Materi · Gambar")} />
         {b.content?.caption ? (
           <h2 className="mt-3 text-[24px] font-extrabold leading-tight text-slate-900">
             {b.content.caption}
@@ -1472,7 +1474,7 @@ function StepView({
               className="mx-auto max-h-[62vh] w-auto rounded-2xl object-contain"
             />
           ) : (
-            <p className="py-10 text-center text-sm text-slate-400">Gambar belum diunggah untuk blok ini.</p>
+            <p className="py-10 text-center text-sm text-slate-400">{t("Gambar belum diunggah untuk blok ini.")}</p>
           )}
         </div>
       </div>
@@ -1488,12 +1490,12 @@ function StepView({
     const firstSpeaker = lines.find((l: any) => (l?.speaker || "").trim())?.speaker?.trim() || "";
     return (
       <div className="lp-fade mx-auto max-w-[760px]">
-        <Pill icon={MessagesSquare} text="Materi · Dialog" />
+        <Pill icon={MessagesSquare} text={t("Materi · Dialog")} />
         <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
           {b.content?.title || "Percakapan"}
         </h2>
         <p className="mt-2 max-w-[640px] text-[14px] font-medium leading-relaxed text-slate-500">
-          Ketuk gelembung untuk mendengar pelafalannya.
+          {t("Ketuk gelembung untuk mendengar pelafalannya.")}
         </p>
         <div className="mt-6 flex flex-col gap-3">
           {lines.map((l: any, i: number) => {
@@ -1554,7 +1556,7 @@ function StepView({
     const rows: any[][] = b.content?.rows || [];
     return (
       <div className="lp-fade mx-auto max-w-[900px]">
-        <Pill icon={Table2} text="Materi · Tabel" />
+        <Pill icon={Table2} text={t("Materi · Tabel")} />
         <h2 className="mt-3 text-[26px] font-extrabold leading-tight text-slate-900">
           {b.content?.title || lesson.title}
         </h2>
@@ -1605,7 +1607,7 @@ function StepView({
     const correct = ans === q.answer;
     return (
       <div className="lp-fade mx-auto max-w-[720px]">
-        <Pill icon={HelpCircle} text={`Kuis · Soal ${step.qIdx + 1} dari ${step.qTotal}`} color={KUIS} />
+        <Pill icon={HelpCircle} text={`${t("Kuis")} · ${t("Soal")} ${step.qIdx + 1} ${t("dari")} ${step.qTotal}`} color={KUIS} />
         <h2 className="mt-3 text-[22px] font-extrabold leading-tight text-slate-900">{q.prompt}</h2>
         {step.block.content?.instruction ? (
           <p className="mt-1.5 text-[13px] font-medium text-slate-500">
@@ -1682,8 +1684,8 @@ function StepView({
                     if (shouldSpeakTTS(opt, lang)) playTTS(opt); // [ling-lms-tts-skip-id-v1]
                   }}
                   className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-[#F0FAF8] hover:text-[#16796E] active:scale-95"
-                  title="Dengar pelafalan"
-                  aria-label={`Dengar pelafalan ${opt}`}
+                  title={t("Dengar pelafalan")}
+                  aria-label={`${t("Dengar pelafalan")} ${opt}`}
                 >
                   <Volume2 className="h-4 w-4" />
                 </button>
@@ -1723,10 +1725,10 @@ function StepView({
                     : isDark ? "text-rose-300" : "text-rose-600"
                 }`}
               >
-                {correct ? "Benar!" : "Hampir!"}
+                {correct ? t("Benar!") : t("Hampir!")}
               </p>
               <p className="mt-0.5 text-[13px] font-semibold leading-relaxed text-slate-600">
-                {correct ? "Mantap, jawaban kamu tepat." : `Jawaban yang benar: ${q.answer}.`}
+                {correct ? t("Mantap, jawaban kamu tepat.") : `${t("Jawaban yang benar")}: ${q.answer}.`}
               </p>
             </div>
           </div>
@@ -1766,10 +1768,10 @@ function StepView({
         <PartyPopper className="h-12 w-12" />
       </div>
       <h2 className="mt-6 text-[28px] font-extrabold leading-tight text-slate-900">
-        Sesi selesai! 🎉
+        {t("Sesi selesai!")} 🎉
       </h2>
       <p className="mx-auto mt-2 max-w-[440px] text-[14px] font-medium leading-relaxed text-slate-500">
-        {lesson.title} kelar. Progress kamu udah kesimpan — lanjut ke sesi berikutnya kapan aja.
+        {lesson.title} {t("kelar. Progress kamu udah kesimpan — lanjut ke sesi berikutnya kapan aja.")}
       </p>
 
       {/* [linguo-patch:lms-stage-redesign-v1] kartu statistik (data asli, no XP palsu) */}
@@ -1817,7 +1819,7 @@ function StepView({
           </span>
           <div className="min-w-0 flex-1">
             <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-              Sesi berikutnya
+              {t("Sesi berikutnya")}
             </p>
             <p className="truncate text-[15px] font-extrabold text-slate-900">{nextLesson.title}</p>
           </div>
@@ -1832,7 +1834,7 @@ function StepView({
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-extrabold text-white sm:w-auto"
             style={{ background: TEAL, boxShadow: "0 14px 30px -14px rgba(22,121,110,.9)" }}
           >
-            Lanjut sesi berikutnya <ArrowRight className="h-4 w-4" />
+            {t("Lanjut sesi berikutnya")} <ArrowRight className="h-4 w-4" />
           </button>
         ) : null}
         <button
@@ -1844,13 +1846,13 @@ function StepView({
           }
           style={nextLesson ? undefined : { background: TEAL }}
         >
-          <ListChecks className="h-4 w-4" /> Kembali ke daftar sesi
+          <ListChecks className="h-4 w-4" /> {t("Kembali ke daftar sesi")}
         </button>
         <button
           onClick={onRestart}
           className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl px-6 text-[14px] font-bold text-slate-600 transition hover:bg-[#F5F6F8] sm:w-auto"
         >
-          <RotateCcw className="h-4 w-4" /> Ulangi sesi
+          <RotateCcw className="h-4 w-4" /> {t("Ulangi sesi")}
         </button>
       </div>
     </div>
@@ -1893,6 +1895,7 @@ function SessionIndex({
   onCollapse: () => void;
   isDrawer?: boolean;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // [linguo-patch:lms-switch-level-v1] dropdown ganti level (modul lain dalam course yang sama)
   const [levelOpen, setLevelOpen] = useState(false);
   const [switchingMod, setSwitchingMod] = useState(false);
@@ -1958,13 +1961,13 @@ function SessionIndex({
       <div className="relative border-b border-slate-100 px-4 pb-4 pt-4">
         <div className="flex items-center justify-between">
           <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
-            {cefr} · Daftar sesi
+            {cefr} · {t("Daftar sesi")}
           </p>
           <button
             onClick={onCollapse}
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
-            title={isDrawer ? "Tutup" : "Sembunyikan"}
-            aria-label={isDrawer ? "Tutup daftar sesi" : "Sembunyikan daftar sesi"}
+            title={isDrawer ? t("Tutup") : t("Sembunyikan")}
+            aria-label={isDrawer ? t("Tutup daftar sesi") : t("Sembunyikan daftar sesi")}
           >
             {isDrawer ? <X className="h-5 w-5" /> : <ArrowLeft className="h-4 w-4" />}
           </button>
@@ -1976,7 +1979,7 @@ function SessionIndex({
           className={`mt-2.5 flex w-full items-center gap-2.5 rounded-2xl bg-[#F5F6F8] px-3 py-2.5 text-left transition ${
             canSwitch ? "hover:bg-slate-100" : "cursor-default"
           }`}
-          aria-label="Ganti level"
+          aria-label={t("Ganti level")}
         >
           <span
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[14px] font-extrabold"
@@ -1989,7 +1992,7 @@ function SessionIndex({
               {modTitle}
             </span>
             <span className="block truncate text-[11px] font-semibold text-slate-400">
-              Level {cefr}
+              {t("Level")} {cefr}
             </span>
           </span>
           {canSwitch && (
@@ -2010,7 +2013,7 @@ function SessionIndex({
         {levelOpen && canSwitch && (
           <div className="absolute left-3 right-3 top-full z-30 mt-1 overflow-hidden rounded-2xl bg-white shadow-[0_24px_50px_-18px_rgba(18,23,43,0.45)]">
             <p className="px-3 pb-1 pt-3 text-[10px] font-bold uppercase tracking-wide text-slate-400">
-              Pilih level
+              {t("Pilih level")}
             </p>
             <div className="max-h-[50vh] overflow-y-auto pb-1">
               {majors.map((maj) => {
@@ -2039,7 +2042,7 @@ function SessionIndex({
                           majLocked ? "text-slate-400" : "text-slate-700"
                         }`}
                       >
-                        {subs.length} sub-level
+                        {subs.length} {t("sub-level")}
                       </span>
                       {majLocked && <Lock className="h-3.5 w-3.5 shrink-0 text-slate-400" />}
                       <ChevronDown
@@ -2104,7 +2107,7 @@ function SessionIndex({
       </div>
       <div className="flex-1 overflow-y-auto px-2 py-3">
         {siblings.length === 0 ? (
-          <p className="px-3 py-4 text-[12px] font-medium text-slate-400">Belum ada sesi.</p>
+          <p className="px-3 py-4 text-[12px] font-medium text-slate-400">{t("Belum ada sesi.")}</p>
         ) : (
           siblings.map((s, i) => {
             const isCurrent = s.id === currentId;
@@ -2177,7 +2180,7 @@ function SessionIndex({
                               className="text-[12.5px] font-extrabold"
                               style={{ color: ac ? "#fff" : isDark ? "#f8fafc" : "#12172B" }}
                             >
-                              Selesai &amp; Rangkuman
+                              {t("Selesai & Rangkuman")}
                             </span>
                           </button>
                         );

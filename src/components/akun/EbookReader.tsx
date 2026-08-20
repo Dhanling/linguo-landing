@@ -15,6 +15,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
 } from "lucide-react";
@@ -87,7 +88,7 @@ export default function EbookReader({
         const simpanan = Number(localStorage.getItem(halamanKey(purchaseId)) || "1");
         setPage(Number.isFinite(simpanan) ? Math.min(Math.max(1, simpanan), d.numPages) : 1);
       } catch (e: any) {
-        if (hidup) setGalat(e?.message || "Gagal memuat modul");
+        if (hidup) setGalat(e?.message || tr("Gagal memuat modul"));
       } finally {
         if (hidup) setMemuat(false);
       }
@@ -132,7 +133,7 @@ export default function EbookReader({
       await tugas.promise;
     } catch (e: any) {
       // Pembatalan itu normal (pindah halaman cepat) — bukan kegagalan.
-      if (e?.name !== "RenderingCancelledException") setGalat("Halaman gagal digambar");
+      if (e?.name !== "RenderingCancelledException") setGalat(tr("Halaman gagal digambar"));
     }
   }, [page, zoom]);
 
@@ -188,6 +189,7 @@ export default function EbookReader({
     sentuh.current = null;
   };
 
+  const t = useT(); // [ui-lang-switcher-v1]
   const isi = (
     <div className="fixed inset-0 z-[100] flex flex-col bg-slate-900/95 backdrop-blur-sm">
       {/* bilah atas */}
@@ -198,7 +200,7 @@ export default function EbookReader({
           <button
             onClick={() => setZoom((z) => Math.max(ZOOM_MIN, +(z - ZOOM_STEP).toFixed(2)))}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
-            aria-label="Perkecil"
+            aria-label={t("Perkecil")}
           >
             <Minus className="h-4 w-4" />
           </button>
@@ -206,7 +208,7 @@ export default function EbookReader({
           <button
             onClick={() => setZoom((z) => Math.min(ZOOM_MAX, +(z + ZOOM_STEP).toFixed(2)))}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
-            aria-label="Perbesar"
+            aria-label={t("Perbesar")}
           >
             <Plus className="h-4 w-4" />
           </button>
@@ -214,7 +216,7 @@ export default function EbookReader({
         <button
           onClick={onClose}
           className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
-          aria-label="Tutup"
+          aria-label={t("Tutup")}
         >
           <X className="h-5 w-5" />
         </button>
@@ -231,7 +233,7 @@ export default function EbookReader({
           <div className="flex h-full items-center justify-center">
             <div className="text-center">
               <Loader2 className="mx-auto mb-3 h-7 w-7 animate-spin text-[#3ED9C0]" />
-              <p className="text-[13px] font-semibold text-white/60">Menyiapkan modul…</p>
+              <p className="text-[13px] font-semibold text-white/60">{t("Menyiapkan modul…")}</p>
             </div>
           </div>
         )}
@@ -245,7 +247,7 @@ export default function EbookReader({
                 onClick={onClose}
                 className="mt-4 rounded-xl bg-white/10 px-4 py-2 text-[13px] font-bold text-white transition hover:bg-white/20"
               >
-                Tutup
+                {t("Tutup")}
               </button>
             </div>
           </div>
@@ -288,7 +290,7 @@ export default function EbookReader({
             onClick={() => ke(page - 1)}
             disabled={page <= 1}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
-            aria-label="Halaman sebelumnya"
+            aria-label={t("Halaman sebelumnya")}
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -299,7 +301,7 @@ export default function EbookReader({
             onClick={() => ke(page + 1)}
             disabled={!total || page >= total}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30"
-            aria-label="Halaman berikutnya"
+            aria-label={t("Halaman berikutnya")}
           >
             <ChevronRight className="h-5 w-5" />
           </button>
