@@ -245,3 +245,103 @@ if (PNG) {
   ], { stdio: "ignore" });
   console.log(`PNG   → ${OUT}/${slug}.png`);
 }
+
+/* ── berkas latihan interaktif ───────────────────────────────────────────────
+   [ebook-latihan-interaktif-v1] Latihan di dalam PDF cuma bisa dikerjakan di
+   kepala atau di kertas. Reader dashboard menyulapnya jadi soal yang bisa
+   diketik/disusun, dan bahannya diambil dari berkas unit yang SAMA — bukan dari
+   hasil pembacaan PDF, yang selalu lebih rapuh.
+
+   Yang tak diketahui berkas unit: latihan unit ke-berapa jatuh di halaman
+   berapa. Chromium yang menentukan paginasinya, jadi nomor halamannya dibaca
+   balik dari PDF yang barusan dicetak — sekali di sini, bukan tiap kali modulnya
+   dibuka siswa. */
+
+const LABEL_UNIT = /^unit\.?(\d+)$/i;
+
+/** Baris teks satu halaman PDF (potongan digabung per ketinggian). */
+async function barisHalaman(pdfjs, doc, n) {
+  const page = await doc.getPage(n);
+  const vp = page.getViewport({ scale: 1 });
+  const isi = await page.getTextContent();
+  const potongan = [];
+  for (const it of isi.items) {
+    if (!it.str?.trim() || !it.transform) continue;
+    const tx = pdfjs.Util.transform(vp.transform, it.transform);
+    const h = Math.hypot(tx[2], tx[3]);
+    if (h) potongan.push({ str: it.str, y: tx[5] - h, h });
+  }
+  potongan.sort((a, b) => a.y - b.y);
+  const baris = [];
+  let kump = [];
+  const tutup = () => {
+    if (kump.length) baris.push({ teks: kump.map((i) => i.str).join("").replace(/\s{2,}/g, " ").trim(), h: Math.max(...kump.map((i) => i.h)) });
+    kump = [];
+  };
+  for (const it of potongan) {
+    const a = kump[0];
+    if (a && Math.abs(it.y - a.y) > Math.max(a.h, it.h) * 0.6) tutup();
+    kump.push(it);
+  }
+  tutup();
+  return baris.filter((b) => b.teks);
+}
+
+/** Buang penanda *miring* / **tebal** — antarmuka reader menampilkannya polos. */
+const polos = (s) => String(s ?? "").replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(.+?)\*/g, "$1").trim();
+
+async function tulisLatihan() {
+  const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
+  const doc = await pdfjs.getDocument({ data: new Uint8Array(readFileSync(pdfPath)) }).promise;
+
+  // halaman awal tiap unit + halaman tempat bagian LATIHAN-nya mulai
+  const mulai = new Map();   // nomor unit → halaman
+  const latihanHal = new Map();
+  for (let n = 1; n <= doc.numPages; n++) {
+    const baris = await barisHalaman(pdfjs, doc, n);
+    for (const b of baris) {
+      const m = b.teks.replace(/\s+/g, "").match(LABEL_UNIT);
+      if (m && !mulai.has(Number(m[1]))) mulai.set(Number(m[1]), n);
+      if (/^latihan$/i.test(b.teks.replace(/\s+/g, ""))) {
+        // Unit yang halamannya sedang berjalan = unit terakhir yang sudah mulai.
+        const no = [...mulai.entries()].filter(([, h]) => h <= n).map(([u]) => u).pop();
+        if (no && !latihanHal.has(no)) latihanHal.set(no, n);
+      }
+    }
+  }
+
+  const daftar = units.map((u, i) => {
+    const no = i + 1;
+    const hal = mulai.get(no) ?? null;
+    const berikut = mulai.get(no + 1);
+    const latihan = (u.exercises ?? []).map((e, k) => {
+      const kunci = String((u.answers ?? [])[k] ?? "").split(/\s+—\s+/).map((x) => x.trim()).filter(Boolean);
+      const soal = e.items.map((it, j) => ({ teks: polos(it), kunci: polos(kunci[j] ?? "") }));
+      // Jenis soal ditentukan dari BENTUK soalnya, bukan dari perintahnya:
+      // perintah ditulis bebas oleh penulis modul, bentuk soalnya tidak.
+      const tipe = soal.some((s) => / \/ /.test(s.teks)) ? "susun"
+        : soal.some((s) => /_{2,}/.test(s.teks)) ? "isian"
+        : "terjemah";
+      // Bank kata cuma masuk akal kalau seluruh kuncinya satu kata — di soal
+      // "07.00 — ____" kuncinya kalimat penuh, chip-nya jadi konyol.
+      const satuKata = soal.length > 1 && soal.every((s) => s.kunci && !/\s/.test(s.kunci));
+      const pilihan = tipe === "isian" && satuKata ? [...new Set(soal.map((s) => s.kunci))].sort() : undefined;
+      return { perintah: polos(e.prompt), tipe, soal: soal.filter((s) => s.kunci), ...(pilihan ? { pilihan } : {}) };
+    }).filter((l) => l.soal.length);
+    return {
+      no,
+      judul: u.title,
+      hal,
+      sampai: hal ? (berikut ?? doc.numPages + 1) - 1 : null,
+      halLatihan: latihanHal.get(no) ?? null,
+      latihan,
+    };
+  }).filter((u) => u.hal && u.latihan.length);
+
+  const keluar = `${OUT}/${slug}.latihan.json`;
+  writeFileSync(keluar, JSON.stringify({ slug, produk: meta.product?.slug ?? slug, halaman: doc.numPages, unit: daftar }, null, 1));
+  const soal = daftar.reduce((a, u) => a + u.latihan.reduce((b, l) => b + l.soal.length, 0), 0);
+  console.log(`SOAL  → ${keluar} (${daftar.length} unit · ${soal} soal)`);
+}
+
+await tulisLatihan();

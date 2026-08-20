@@ -47,12 +47,17 @@ if (!perintah || !slug) {
 
 const DIR = `content/ebook/${slug}`;
 const PDF = `dist/ebook/${slug}.pdf`;
+const SOAL = `dist/ebook/${slug}.latihan.json`;
 const meta = existsSync(`${DIR}/meta.json`) ? JSON.parse(readFileSync(`${DIR}/meta.json`, "utf8")) : null;
 if (!meta && perintah !== "cari") { console.error(`${DIR}/meta.json tidak ada`); process.exit(1); }
 
 // Nama berkas & slug produk diturunkan dari meta.product, bukan dari judul —
 // judul modul buatan sendiri tidak mengikuti pola "Bahasa X Linguo".
 const berkas = meta?.product?.file ?? `${slug}.pdf`;
+/* [ebook-latihan-interaktif-v1] Berkas soal berdampingan dengan PDF-nya di
+   bucket yang sama dan namanya diturunkan dari nama PDF — reader menebak
+   namanya persis dengan cara ini, tanpa kolom baru di `digital_products`. */
+const berkasSoal = `${berkas.replace(/\.pdf$/i, "")}.latihan.json`;
 const slugProduk = meta?.product?.slug ?? slug;
 
 async function status() {
@@ -61,6 +66,8 @@ async function status() {
   const ada = files?.find((f) => f.name === berkas);
   console.log(`Berkas   ${berkas}: ${ada ? `ADA (${Math.round((ada.metadata?.size ?? 0) / 1024)} KB)` : "belum diunggah"}`);
   console.log(`Rakitan  ${PDF}: ${existsSync(PDF) ? `ada (${Math.round(statSync(PDF).size / 1024)} KB)` : "belum dirakit"}`);
+  const adaSoal = files?.find((f) => f.name === berkasSoal);
+  console.log(`Soal     ${berkasSoal}: ${adaSoal ? `ADA (${Math.round((adaSoal.metadata?.size ?? 0) / 1024)} KB)` : "belum diunggah"}`);
 
   const { data: prod } = await sb.from("digital_products")
     .select("id,title,slug,type,language,level,file_url,is_active,pages,file_size_mb")
@@ -95,6 +102,21 @@ async function terbit() {
     file_url: berkas,
     is_active: true,
   };
+  /* Latihan interaktif itu pelengkap: modul tanpa berkas soal tetap terbit.
+     ⚠️ Bucket `ebook-files` memagari MIME yang boleh masuk; `application/json`
+     ditambahkan ke daftarnya 20 Agu 2026 (Storage API: PUT /bucket/ebook-files).
+     Kalau unggahannya ditolak "mime type ... is not supported", itu pagarnya —
+     bukan berkasnya. */
+  if (existsSync(SOAL)) {
+    const soal = readFileSync(SOAL);
+    const { error: eSoal } = await sb.storage.from(BUCKET)
+      .upload(berkasSoal, soal, { contentType: "application/json", upsert: true });
+    if (eSoal) throw new Error(`unggah soal gagal: ${eSoal.message}`);
+    console.log(`✓ unggah ${berkasSoal} (${Math.round(soal.length / 1024)} KB)`);
+  } else {
+    console.log(`· ${SOAL} tidak ada — modul terbit tanpa latihan interaktif`);
+  }
+
   const { data: lama } = await sb.from("digital_products").select("id").eq("slug", slugProduk).maybeSingle();
   const { data, error } = lama
     ? await sb.from("digital_products").update(baris).eq("id", lama.id).select("id,title,file_url").single()

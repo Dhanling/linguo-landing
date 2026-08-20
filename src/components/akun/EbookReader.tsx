@@ -5,13 +5,14 @@
 // Sebelumnya modul cuma bisa DIUNDUH: siswa keluar dashboard, berkasnya
 // mendarat di folder unduhan dan bebas diteruskan ke siapa pun, dan kita tidak
 // pernah tahu ada yang membacanya atau tidak. Reader ini membalik semua itu —
-// halaman dirender di sini, berkasnya tidak pernah jadi URL yang bisa disalin
-// (lihat src/app/api/ebook/route.ts), dan tiap halaman diberi cap nama pembeli.
+// halaman dirender di sini dan berkasnya tidak pernah jadi URL yang bisa
+// disalin (lihat src/app/api/ebook/route.ts).
 //
-// Soal proteksi, jujur saja: ini friksi, bukan DRM. Tangkapan layar tetap bisa,
-// dan byte PDF-nya ada di memori browser. Yang benar-benar menahan orang
-// menyebarkan modul adalah CAP NAMA + EMAILNYA di tiap halaman, bukan tombol
-// unduh yang disembunyikan.
+// Soal proteksi, jujur saja: ini friksi, bukan DRM. Tangkapan layar tetap bisa
+// dan byte PDF-nya ada di memori browser. Cap nama+email yang dulu dibakar ke
+// tiap halaman DICABUT 20 Agu 2026: yang paling terganggu justru pembeli
+// sahnya — capnya melintang persis di atas kalimat yang sedang dibaca —
+// sementara yang berniat menyebarkan modul toh tinggal memotretnya.
 //
 // [ebook-zoom-cubit-v1] Zoom mengikuti gerakan: cubit trackpad Mac / dua jari
 // di layar sentuh, Ctrl/⌘ + gulir, dan ⌘ +/-/0. Halaman diskalakan lewat CSS
@@ -35,8 +36,9 @@ import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
   Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
-  ChevronDown,
+  ChevronDown, Eye, EyeOff, PenLine,
 } from "lucide-react";
+import EbookLatihan, { type BerkasLatihan, type UnitLatihan } from "./EbookLatihan";
 // [ebook-tts-ketuk-kata-v1]
 import {
   bisaDibunyikan, kodeBahasaEbook, kataIndonesia, kalimatTarget, ucapkanEbook,
@@ -63,7 +65,7 @@ const DPR_MAX = 2;
 const PADDING_X = 36;
 const PADDING_Y = 36;
 /** Jarak antar dua halaman (punggung buku). */
-const GAP = 2;
+const GAP = 0; // bentangan menempel — celah apa pun tampak sebagai garis hitam di tengah buku
 /** Lebar minimum wadah sebelum tampilan dua halaman masuk akal. */
 const LEBAR_DUA_HALAMAN = 760;
 /** Lama animasi balik halaman. Lebih dari ini terasa lambat, kurang jadi kedip. */
@@ -210,6 +212,30 @@ function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuff
   return janji;
 }
 
+/* [ebook-latihan-interaktif-v1] Berkas soal pendamping modul. Kecil (puluhan
+   KB) dan tak berubah selama modulnya tak dirakit ulang, jadi cukup diambil
+   sekali per sesi. Gagal = diam: modul pihak ketiga memang tak punya soal. */
+const soalCache = new Map<string, BerkasLatihan>();
+
+async function ambilSoal(purchaseId: string, accessToken: string): Promise<BerkasLatihan | null> {
+  const ada = soalCache.get(purchaseId);
+  if (ada) return ada;
+  try {
+    const res = await fetch("/api/ebook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ purchaseId, accessToken, bagian: "latihan" }),
+    });
+    if (!res.ok) return null;
+    const j = (await res.json()) as BerkasLatihan;
+    if (!Array.isArray(j?.unit)) return null;
+    soalCache.set(purchaseId, j);
+    return j;
+  } catch {
+    return null;
+  }
+}
+
 /* [ebook-buka-instan-v1] Dokumen pdf.js yang terakhir dibuka ditahan hidup.
    Mengurai ulang 40 halaman PDF makan ratusan milidetik — itu yang dulu
    membuat layar "Menyiapkan modul…" tetap muncul walau bytenya sudah ada di
@@ -252,6 +278,9 @@ type HalTeks = { items: ItemTeks[]; baris: Baris[] };
    pertanyaannya beda: bab menjawab "unit ini di halaman berapa", sub-bagian
    menjawab "kosakata unit 6 ada di sebelah mana". */
 type SubBab = { hal: number; judul: string };
+
+/** Kotak di halaman PDF, satuan halaman (skala 1). */
+type Kotak = { x: number; y: number; w: number; h: number };
 
 /** Satu entri daftar isi. */
 type Bab = { hal: number; judul: string; label?: string; utama: boolean; anak: SubBab[] };
@@ -302,8 +331,12 @@ export interface EbookReaderProps {
   title: string;
   /** Token sesi Supabase — dipakai route untuk memastikan modul ini memang miliknya. */
   accessToken: string;
-  /** Teks cap air, mis. "Rina Dewi · rina@email.com". */
-  watermark: string;
+  /* Dulu dibakar ke tiap halaman sebagai cap air. Dicabut 20 Agu 2026: yang
+     paling terganggu justru pembeli sahnya — capnya melintang persis di atas
+     kalimat yang sedang dibaca. Propnya dibiarkan hidup supaya pemanggilnya tak
+     perlu diubah kalau suatu saat capnya dipasang lagi (mis. cuma di kaki
+     halaman). */
+  watermark?: string;
   /** [ebook-tts-ketuk-kata-v1] Bahasa modul (`digital_products.language`).
    *  Kosong pun tak apa — bahasanya ditebak dari judul. Kalau tetap tak
    *  terbaca, ketuk-untuk-mendengar tidak diaktifkan sama sekali. */
@@ -312,7 +345,7 @@ export interface EbookReaderProps {
 }
 
 export default function EbookReader({
-  purchaseId, title, accessToken, watermark, language, onClose,
+  purchaseId, title, accessToken, language, onClose,
 }: EbookReaderProps) {
   /* [ebook-buka-instan-v1] Modul yang barusan dibaca masih hidup di memori →
      dipasang sebagai nilai AWAL, jadi rendernya yang pertama pun sudah berisi
@@ -387,8 +420,6 @@ export default function EbookReader({
   const pdfjsRef = useRef<any>(null);
   /** Isi teks per halaman (satuan halaman, skala 1) — dibaca sekali per halaman. */
   const teksRef = useRef<Map<number, HalTeks>>(new Map());
-  const capRef = useRef(watermark);
-  capRef.current = watermark;
 
   /** Bitmap halaman siap pakai + tugas render yang sedang jalan, per generasi skala. */
   const bitmapRef = useRef<Map<number, Bitmap>>(new Map());
@@ -410,6 +441,15 @@ export default function EbookReader({
   const ucapKunciRef = useRef("");
   /** Ada popup kata terbuka? — dibaca dari penangan tombol tanpa ikut basi. */
   const ucapRef = useRef(false);
+
+  /* [ebook-latihan-interaktif-v1] Soal modul + unit yang latihannya sedang
+     dikerjakan. Keduanya pelengkap: modul tanpa berkas soal jalan seperti biasa. */
+  const [soal, setSoal] = useState<BerkasLatihan | null>(null);
+  const [kerjakan, setKerjakan] = useState<UnitLatihan | null>(null);
+  /* [ebook-kunci-tertutup-v1] Halaman yang kunci jawabannya sudah dibuka siswa. */
+  const [kunciBuka, setKunciBuka] = useState<Set<number>>(new Set());
+  /** Letak kotak "Kunci jawaban" per halaman (satuan halaman PDF, skala 1). */
+  const [kunciKotak, setKunciKotak] = useState<Map<number, { x: number; y: number; w: number; h: number }>>(new Map());
 
   const dua = muatDua && (duaManual ?? true);
   const tampil = useMemo(() => bentangan(page, total, dua), [page, total, dua]);
@@ -476,6 +516,14 @@ export default function EbookReader({
       teksRef.current.clear();
       hentikanEbookTts();
     };
+  }, [purchaseId, accessToken]);
+
+  /* Berkas soal diminta terpisah dari PDF-nya dan TIDAK ditunggu: modulnya
+     harus sudah bisa dibaca walau soalnya belum sampai (atau tak ada). */
+  useEffect(() => {
+    let hidup = true;
+    void ambilSoal(purchaseId, accessToken).then((j) => { if (hidup) setSoal(j); });
+    return () => { hidup = false; };
   }, [purchaseId, accessToken]);
 
   /* ── skala: satu bentangan penuh harus MUAT di layar ───────────────────── */
@@ -653,22 +701,6 @@ export default function EbookReader({
   }, [aturZoom]);
 
   /* ── render halaman ke bitmap (dengan cache) ───────────────────────────── */
-  const gambarCap = useCallback((ctx: CanvasRenderingContext2D, w: number, h: number) => {
-    // Cap air dibakar ke dalam bitmap halaman, bukan ditempel sebagai lapisan
-    // HTML: begitu halaman dibalik/di-flip, capnya ikut apa adanya — dan
-    // "Simpan gambar" pun tetap membawa nama pembelinya.
-    const teks = `${capRef.current}   ·   ${capRef.current}   ·   ${capRef.current}`;
-    ctx.save();
-    ctx.globalAlpha = 0.07;
-    ctx.fillStyle = "#0f172a";
-    ctx.font = `bold ${Math.max(11, Math.round(h * 0.016))}px system-ui, sans-serif`;
-    ctx.translate(w / 2, h / 2);
-    ctx.rotate((-28 * Math.PI) / 180);
-    const langkah = Math.max(28, Math.round(h * 0.11));
-    for (let i = -4; i <= 4; i++) ctx.fillText(teks, -w * 0.7, i * langkah);
-    ctx.restore();
-  }, []);
-
   /* [ebook-nomor-halaman-v1] Nomor halaman dicetak di kaki kertas.
      PDF-nya dicetak Chromium dengan --no-pdf-header-footer, jadi halamannya
      memang polos tanpa nomor: siswa yang diberi tahu "buka halaman 12" tak
@@ -716,7 +748,6 @@ export default function EbookReader({
         // same canvas during multiple render operations" seperti versi lama —
         // itu dulu memaksa semua render antre di satu rantai promise.
         await p.render({ canvasContext: ctx, viewport }).promise;
-        gambarCap(ctx, viewport.width, viewport.height);
         gambarNomor(ctx, viewport.width, viewport.height, n);
         const bm: Bitmap = { canvas, w: Math.floor(viewport.width), h: Math.floor(viewport.height) };
         // Hasil generasi lama (skala sudah berubah) dibuang, bukan disimpan —
@@ -737,7 +768,7 @@ export default function EbookReader({
     })();
     antreRef.current.set(n, tugas);
     return tugas;
-  }, [generasi, gambarCap, gambarNomor]);
+  }, [generasi, gambarNomor]);
 
   /** Salin bitmap ke canvas yang tampak. drawImage = blit, jauh lebih murah dari render ulang. */
   const pasang = useCallback((target: HTMLCanvasElement | null, bm: Bitmap | null) => {
@@ -1184,6 +1215,74 @@ export default function EbookReader({
     return { kata: huruf.slice(a, b + 1).join(""), x: it.x + batas[a], w: batas[b + 1] - batas[a] };
   }, []);
 
+  /* ── kunci jawaban tertutup ────────────────────────────────────────────
+     [ebook-kunci-tertutup-v1] Kunci jawaban tercetak dua sentimeter di bawah
+     soalnya, jadi mata sudah menangkap jawabannya sebelum sempat mencoba —
+     latihannya jadi bacaan, bukan latihan. Kotaknya ditutup tirai sampai siswa
+     sendiri yang mengetuk mata.
+
+     Yang ditutup itu LAPISAN HTML di atas kanvas, bukan bitmapnya: jawabannya
+     tetap ada di piksel halaman. Ini pagar niat, bukan pagar keamanan — sama
+     seperti kunci jawaban buku betulan yang tinggal dibalik. */
+  /* Cocok PERSIS satu baris, bukan awalan: halaman "Cara memakai modul ini"
+     memuat butir "Kunci jawaban — baru dibuka setelah kamu benar-benar
+     mencoba", dan pencocokan awalan menutupinya dengan tirai. */
+  const KUNCI_JUDUL = useMemo(() => /^(kunci\s*jawaban|jawaban|answer\s*key)$/i, []);
+  const kunciRef = useRef<Map<number, Kotak | null>>(new Map());
+
+  useEffect(() => {
+    const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
+    let hidup = true;
+    (async () => {
+      let berubah = false;
+      for (const n of halaman) {
+        if (kunciRef.current.has(n)) continue;
+        const { baris } = await ambilTeks(n);
+        if (!hidup) return;
+        berubah = true;
+        const i = baris.findIndex((b) => KUNCI_JUDUL.test(b.teks.replace(/\s+/g, " ").trim()));
+        if (i < 0) { kunciRef.current.set(n, null); continue; }
+        // Kotak berakhir waktu jaraknya menganga: di dalam kotak jarak antar
+        // baris rapat, sedangkan blok sesudahnya dipisah marjin beberapa
+        // milimeter. Tanpa penjaga ini, tirainya ikut menutup paragraf
+        // "Ulangan berjenjang" yang duduk persis di bawah kotak.
+        const isi = [baris[i]];
+        for (let k = i + 1; k < baris.length; k++) {
+          const sblm = isi[isi.length - 1];
+          if (baris[k].y - (sblm.y + sblm.h) > Math.max(sblm.h, baris[k].h) * 1.6) break;
+          isi.push(baris[k]);
+        }
+        // Judul tanpa isi apa pun di bawahnya = bukan kotak kunci jawaban.
+        if (isi.length < 2) { kunciRef.current.set(n, null); continue; }
+        const x0 = Math.min(...isi.flatMap((b) => b.segmen.map((g) => g.x0)));
+        const x1 = Math.max(...isi.flatMap((b) => b.segmen.map((g) => g.x1)));
+        const y0 = isi[0].y;
+        const y1 = Math.max(...isi.map((b) => b.y + b.h));
+        kunciRef.current.set(n, { x: x0 - 12, y: y0 - 12, w: x1 - x0 + 24, h: y1 - y0 + 24 });
+      }
+      if (hidup && berubah) {
+        const rapi = new Map<number, Kotak>();
+        kunciRef.current.forEach((v, k) => { if (v) rapi.set(k, v); });
+        setKunciKotak(rapi);
+      }
+    })();
+    return () => { hidup = false; };
+  }, [tampil.kiri, tampil.kanan, doc, ambilTeks, KUNCI_JUDUL]);
+
+  /* [ebook-latihan-interaktif-v1] Unit yang halamannya sedang terbuka — dasar
+     tombol "Kerjakan latihan". Rentang halamannya dihitung waktu modul dirakit,
+     bukan di sini: paginasi PDF ditentukan mesin cetak, dan menebaknya dari
+     teks halaman tiap kali reader dibuka cuma menambah kerja. */
+  const unitKini = useMemo<UnitLatihan | null>(() => {
+    if (!soal?.unit?.length) return null;
+    const halaman = [tampil.kiri, tampil.kanan].filter((n): n is number => !!n);
+    return (
+      soal.unit.find(
+        (u) => u.latihan.length && u.hal && u.sampai && halaman.some((n) => n >= u.hal! && n <= u.sampai!)
+      ) ?? null
+    );
+  }, [soal, tampil.kiri, tampil.kanan]);
+
   /* ── daftar isi ────────────────────────────────────────────────────────
      [ebook-daftar-isi-v1] Modul 40 halaman tanpa daftar isi cuma bisa disusuri
      dengan membalik satu-satu — dan pengajar yang menulis "kerjakan Unit 5" di
@@ -1604,16 +1703,18 @@ export default function EbookReader({
                 style={{ left: pw + GAP, width: pw, height: ph, borderRadius: "2px 8px 8px 2px" }}
               />
             )}
-            {/* punggung buku */}
+            {/* Lipatan tengah — bayangannya sengaja tipis dan TANPA celah:
+                versi lama menggelapkan 20px di tengah bentangan dan di layar
+                terang terbaca sebagai garis hitam yang membelah halaman. */}
             {dua && (
               <div
                 aria-hidden
                 className="pointer-events-none absolute top-0 h-full"
                 style={{
-                  left: pw - 10,
-                  width: 20 + GAP,
+                  left: pw - 8,
+                  width: 16,
                   background:
-                    "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.16) 45%, rgba(0,0,0,0.22) 50%, rgba(0,0,0,0.16) 55%, rgba(0,0,0,0) 100%)",
+                    "linear-gradient(90deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.05) 45%, rgba(15,23,42,0.07) 50%, rgba(15,23,42,0.05) 55%, rgba(15,23,42,0) 100%)",
                 }}
               />
             )}
@@ -1641,6 +1742,55 @@ export default function EbookReader({
                 </div>
               </div>
             )}
+
+            {/* [ebook-kunci-tertutup-v1] tirai kunci jawaban */}
+            {!balik &&
+              [tampil.kiri, tampil.kanan].map((n) => {
+                if (!n) return null;
+                const kotak = kunciKotak.get(n);
+                if (!kotak) return null;
+                const kiriSlot = dua && n === tampil.kanan ? pw + GAP : 0;
+                const gaya = {
+                  left: kiriSlot + kotak.x * skalaTampil,
+                  top: kotak.y * skalaTampil,
+                  width: kotak.w * skalaTampil,
+                  height: kotak.h * skalaTampil,
+                };
+                const terbuka = kunciBuka.has(n);
+                if (terbuka) {
+                  return (
+                    <button
+                      key={`kunci-${n}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setKunciBuka((s) => { const x = new Set(s); x.delete(n); return x; });
+                      }}
+                      title={t("Sembunyikan kunci jawaban")}
+                      className="absolute z-10 flex items-center gap-1 rounded-lg bg-[#0F172A]/80 px-2 py-1 text-[10.5px] font-bold text-white/80 backdrop-blur-sm transition hover:bg-[#0F172A]"
+                      style={{ left: gaya.left + gaya.width - 92, top: gaya.top - 6 }}
+                    >
+                      <EyeOff className="h-3.5 w-3.5" />
+                      {t("Tutup lagi")}
+                    </button>
+                  );
+                }
+                return (
+                  <button
+                    key={`kunci-${n}`}
+                    onClick={(e) => { e.stopPropagation(); setKunciBuka((s) => new Set(s).add(n)); }}
+                    className="ebook-kunci absolute z-10 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-[#1A9E9E]/25 text-[#12776F] transition hover:border-[#1A9E9E]/50"
+                    style={gaya}
+                  >
+                    <Eye className="h-5 w-5" />
+                    <span className="px-3 text-center text-[12px] font-extrabold leading-tight">
+                      {t("Lihat kunci jawaban")}
+                    </span>
+                    <span className="px-4 text-center text-[10.5px] font-semibold leading-snug text-[#12776F]/70">
+                      {t("Coba dulu, baru cocokkan")}
+                    </span>
+                  </button>
+                );
+              })}
 
             {/* [ebook-tts-ketuk-kata-v1] sorotan kata yang diketuk + gelembung
                 pelafalan. Wadahnya pointer-events-none supaya ketukan berikutnya
@@ -1842,6 +1992,21 @@ export default function EbookReader({
           >
             <ChevronRight className="h-5 w-5" />
           </button>
+
+          {/* [ebook-latihan-interaktif-v1] Muncul cuma waktu halaman yang
+              terbuka masih di dalam unit yang punya latihan — tombol yang
+              selalu ada akan menanyakan "latihan yang mana?". */}
+          {unitKini && (
+            <button
+              onClick={() => setKerjakan(unitKini)}
+              className="ml-1 flex shrink-0 items-center gap-1.5 rounded-lg bg-[#3ED9C0] px-2.5 py-1.5 text-[12px] font-extrabold text-black transition hover:brightness-95"
+              title={t("Kerjakan latihan unit ini")}
+            >
+              <PenLine className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">{t("Kerjakan latihan")}</span>
+              <span className="sm:hidden">Unit {unitKini.no}</span>
+            </button>
+          )}
 
           {ttsAktif && (
             <span className="hidden shrink-0 items-center gap-1.5 pl-1 text-[12px] font-semibold text-white/45 xl:flex">
@@ -2077,6 +2242,14 @@ export default function EbookReader({
           perspective: 2400px;
           perspective-origin: center center;
         }
+        /* Tirai kunci jawaban: buram DAN berlatar kertas. backdrop-filter saja
+           tak cukup — di Safari lama filternya diabaikan diam-diam dan
+           jawabannya terbaca utuh. */
+        .ebook-kunci {
+          background: rgba(251, 247, 238, 0.985);
+          backdrop-filter: blur(7px);
+          -webkit-backdrop-filter: blur(7px);
+        }
         .ebook-hal {
           display: block;
           box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.55);
@@ -2165,6 +2338,11 @@ export default function EbookReader({
           .ebook-flipper, .ebook-bayang { animation: none !important; }
         }
       `}</style>
+
+      {/* [ebook-latihan-interaktif-v1] Soalnya menutupi reader, bukan membuka
+          tab baru: siswa sering bolak-balik melihat catatan unitnya, dan
+          menutup latihan mengembalikannya ke halaman yang sama. */}
+      {kerjakan && <EbookLatihan unit={kerjakan} onClose={() => setKerjakan(null)} />}
     </div>
   );
 

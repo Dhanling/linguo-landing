@@ -33,11 +33,15 @@ function tolak(pesan: string, status: number) {
 }
 
 export async function POST(req: NextRequest) {
-  let purchaseId: string, accessToken: string;
+  let purchaseId: string, accessToken: string, bagian: string;
   try {
     const body = await req.json();
     purchaseId = String(body.purchaseId ?? "");
     accessToken = String(body.accessToken ?? "");
+    // [ebook-latihan-interaktif-v1] "latihan" → berkas soal pendamping, bukan
+    // PDF-nya. Pemeriksaan haknya SAMA PERSIS: soal & kuncinya isi produk
+    // berbayar juga, jadi tak boleh punya jalur yang lebih longgar.
+    bagian = String(body.bagian ?? "pdf");
   } catch {
     return tolak("Permintaan tidak terbaca", 400);
   }
@@ -91,6 +95,20 @@ export async function POST(req: NextRequest) {
   if (!prod || prod.type !== "ebook") return tolak("Produk ini bukan e-book", 400);
   // Link eksternal (Drive dsb) tidak lewat sini — reader hanya untuk berkas milik kita.
   if (!isStoragePath(prod.file_url)) return tolak("E-book ini tidak disimpan sebagai berkas", 400);
+
+  if (bagian === "latihan") {
+    const namaSoal = prod.file_url!.replace(/\.pdf$/i, "") + ".latihan.json";
+    const jalurSoal = namaSoal.split("/").map(encodeURIComponent).join("/");
+    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET}/${jalurSoal}`, {
+      headers: { apikey: SUPABASE_SERVICE_KEY, Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` },
+      cache: "no-store",
+    }).catch(() => null);
+    // Modul pihak ketiga tak punya berkas soal — itu keadaan normal, bukan
+    // galat: readernya cuma tidak menampilkan tombol latihan.
+    if (!res?.ok) return NextResponse.json({ unit: [] }, { headers: NO_STORE });
+    const isi = await res.text();
+    return new NextResponse(isi, { headers: { ...NO_STORE, "Content-Type": "application/json" } });
+  }
 
   // ── 4. Ambil berkasnya ────────────────────────────────────────────────────
   // [ebook-reader-cepat-v2] Diambil lewat REST storage lalu badan responsnya
