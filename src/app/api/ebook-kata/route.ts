@@ -38,16 +38,28 @@ const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
 const GROQ_MODEL = "llama-3.1-8b-instant";
 const GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 
-type Penyedia = "deepseek" | "gemini" | "groq";
-const URUTAN_BAWAAN: Penyedia[] = ["deepseek", "gemini", "groq"];
+/* [ebook-kata-lewat-supabase-v1] "supabase" = edge function `ebook-kata` di
+   project Supabase (sumbernya di repo linguo-app). Dia ada di rantai ini karena
+   KUNCINYA ADA DI SANA: `DEEPSEEK_API_KEY` terpasang sebagai secret Supabase
+   sejak 16 Agu 2026 dengan saldo utuh, sementara project Vercel ini tak punya
+   kunci itu sama sekali. Ditaruh paling belakang — begitu DEEPSEEK_API_KEY
+   dipasang di Vercel, jalur langsung di atas yang menang (satu lompatan lebih
+   sedikit) dan mata rantai ini kembali jadi cadangan. */
+type Penyedia = "deepseek" | "gemini" | "groq" | "supabase";
+const URUTAN_BAWAAN: Penyedia[] = ["deepseek", "gemini", "groq", "supabase"];
+const SAH = new Set<string>(URUTAN_BAWAAN);
 
 function urutan(): Penyedia[] {
   const dari = (process.env.EBOOK_KATA_ORDER || "")
     .split(",")
     .map((s) => s.trim().toLowerCase())
-    .filter((s): s is Penyedia => s === "deepseek" || s === "gemini" || s === "groq");
+    .filter((s): s is Penyedia => SAH.has(s));
   return dari.length ? dari : URUTAN_BAWAAN;
 }
+
+const SUPABASE_URL =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://jbtgciepdmqxxcjflrxz.supabase.co";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const SISTEM =
   "You are a bilingual dictionary for Indonesian learners. " +
@@ -115,6 +127,24 @@ async function lewatGemini(kata: string, kalimat: string, bahasa: string): Promi
   return teks;
 }
 
+/* Edge function membalas JSON yang bentuknya SUDAH sama dengan keluaran rute
+   ini, jadi badan balasannya diteruskan apa adanya — pengurai di bawah tinggal
+   membacanya seperti jawaban model mana pun. */
+async function lewatSupabase(kata: string, kalimat: string, bahasa: string): Promise<string> {
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/ebook-kata`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+    },
+    body: JSON.stringify({ word: kata, sentence: kalimat, language: bahasa }),
+  });
+  const teks = await res.text();
+  if (!res.ok) throw new Error(`supabase ${res.status}: ${teks.slice(0, 200)}`);
+  return teks;
+}
+
 async function tanyaAI(kata: string, kalimat: string, bahasa: string) {
   const galat: string[] = [];
   for (const p of urutan()) {
@@ -130,11 +160,15 @@ async function tanyaAI(kata: string, kalimat: string, bahasa: string) {
         if (!GEMINI_API_KEY) { galat.push("gemini: tanpa kunci"); continue; }
         return { teks: await lewatGemini(kata, kalimat, bahasa), oleh: "gemini" };
       }
-      if (!GROQ_API_KEY) { galat.push("groq: tanpa kunci"); continue; }
-      return {
-        teks: await lewatOpenAICompat(GROQ_ENDPOINT, GROQ_API_KEY, GROQ_MODEL, kata, kalimat, bahasa),
-        oleh: "groq",
-      };
+      if (p === "groq") {
+        if (!GROQ_API_KEY) { galat.push("groq: tanpa kunci"); continue; }
+        return {
+          teks: await lewatOpenAICompat(GROQ_ENDPOINT, GROQ_API_KEY, GROQ_MODEL, kata, kalimat, bahasa),
+          oleh: "groq",
+        };
+      }
+      if (!SUPABASE_ANON_KEY) { galat.push("supabase: tanpa anon key"); continue; }
+      return { teks: await lewatSupabase(kata, kalimat, bahasa), oleh: "supabase" };
     } catch (e) {
       galat.push(String((e as Error)?.message || e).slice(0, 160));
     }
