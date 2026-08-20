@@ -23,7 +23,7 @@ import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
-  Columns2, Square,
+  Columns2, Square, Maximize2, Minimize2,
 } from "lucide-react";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -67,6 +67,44 @@ function muatPdfjs(): Promise<any> {
       .catch((e) => { pdfjsPromise = null; throw e; });
   }
   return pdfjsPromise;
+}
+
+/* ── layar penuh ───────────────────────────────────────────────────────────
+   Reader ini menutupi halaman, tapi bilah tab & alamat browser tetap terlihat —
+   di laptop 13" itu memakan tinggi yang justru dipakai menghitung skala "muat
+   satu bentangan", jadi halamannya mengecil percuma.
+
+   ⚠️ requestFullscreen HANYA boleh dipanggil dari gerakan pengguna. Effect
+   mount reader masih di dalam jendela aktivasi di Chrome, tapi Safari lebih
+   ketat — karena itu fungsinya diekspor: Perpustakaan memanggilnya langsung di
+   handler klik "Baca", SEBELUM `await getSession()` yang bisa memutus aktivasi.
+   Panggilan kedua dari reader jadi tak berefek kalau yang pertama sudah jalan.
+
+   iOS Safari (iPhone) tidak punya Element.requestFullscreen sama sekali —
+   di sana reader tetap seperti sebelumnya: menutup halaman, bukan browsernya. */
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+type ElPenuh = Element & { webkitRequestFullscreen?: () => Promise<void> | void };
+
+export function mintaLayarPenuh(): Promise<boolean> {
+  if (typeof document === "undefined") return Promise.resolve(false);
+  if (document.fullscreenElement) return Promise.resolve(true);
+  const el = document.documentElement as ElPenuh;
+  const minta = el.requestFullscreen?.bind(el) ?? el.webkitRequestFullscreen?.bind(el);
+  if (!minta) return Promise.resolve(false);
+  try {
+    return Promise.resolve(minta()).then(() => true).catch(() => false);
+  } catch {
+    return Promise.resolve(false);
+  }
+}
+
+function keluarLayarPenuh(): void {
+  if (typeof document === "undefined" || !document.fullscreenElement) return;
+  try {
+    void (document.exitFullscreen?.() as Promise<void> | undefined)?.catch(() => {});
+  } catch {
+    /* browser lama — biarkan */
+  }
 }
 
 /** Dipanggil dari Perpustakaan saat browser senggang. Gagal = diam saja. */
@@ -146,6 +184,11 @@ export default function EbookReader({
   const [ukuran, setUkuran] = useState<{ w: number; h: number } | null>(null);
   /** Animasi balik halaman yang sedang jalan (null = tidak ada). */
   const [balik, setBalik] = useState<{ arah: 1 | -1; tujuan: Bentangan } | null>(null);
+
+  const [layarPenuh, setLayarPenuh] = useState(false);
+  /** Kita yang menyalakan layar penuh? Kalau siswa sudah fullscreen dari sebelumnya,
+      jangan dimatikan waktu reader ditutup — itu bukan milik kita. */
+  const penuhOlehKitaRef = useRef(false);
 
   const wadahRef = useRef<HTMLDivElement | null>(null);
   const kiriRef = useRef<HTMLCanvasElement | null>(null);
@@ -509,6 +552,26 @@ export default function EbookReader({
     return () => window.removeEventListener("keydown", onKey);
   }, [balikKe, ke, total, onClose]);
 
+  // Layar penuh: dicoba begitu reader terbuka, dilepas lagi saat ditutup.
+  useEffect(() => {
+    const sudah = !!document.fullscreenElement;
+    if (!sudah) {
+      void mintaLayarPenuh().then((ok) => { penuhOlehKitaRef.current = ok; });
+    }
+    const onUbah = () => setLayarPenuh(!!document.fullscreenElement);
+    onUbah();
+    document.addEventListener("fullscreenchange", onUbah);
+    return () => {
+      document.removeEventListener("fullscreenchange", onUbah);
+      if (penuhOlehKitaRef.current) keluarLayarPenuh();
+    };
+  }, []);
+
+  const alihLayarPenuh = useCallback(() => {
+    if (document.fullscreenElement) { keluarLayarPenuh(); penuhOlehKitaRef.current = false; return; }
+    void mintaLayarPenuh().then((ok) => { penuhOlehKitaRef.current = ok; });
+  }, []);
+
   // Kunci gulir latar selama reader terbuka (di HP, halaman di belakang ikut
   // bergeser waktu siswa menggeser halaman modul).
   useEffect(() => {
@@ -584,6 +647,14 @@ export default function EbookReader({
             <Plus className="h-4 w-4" />
           </button>
         </div>
+        <button
+          onClick={alihLayarPenuh}
+          className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
+          aria-label={layarPenuh ? t("Keluar layar penuh") : t("Layar penuh")}
+          title={layarPenuh ? t("Keluar layar penuh") : t("Layar penuh")}
+        >
+          {layarPenuh ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+        </button>
         <button
           onClick={onClose}
           className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"

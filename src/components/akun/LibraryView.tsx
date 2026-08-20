@@ -34,7 +34,7 @@ import { getLangPhoto } from "@/lib/lang-visuals";
 // [pustaka-judul-bendera-v1] bendera rounded-rectangle di kiri judul kartu
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
-import EbookReader, { prewarmEbookReader } from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
 
 /* ---------------- types ---------------- */
@@ -618,6 +618,10 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     // Sekarang byte PDF-nya diambil route /api/ebook yang memverifikasi ulang
     // kepemilikan tiap kali, dan halamannya diberi cap nama pembeli.
     if (!isStoragePath(prod.file_url)) { toast.error("File e-book belum tersedia."); return; }
+    // [ebook-reader-layar-penuh-v1] Diminta DI SINI, bukan di dalam reader:
+    // izin layar penuh menempel pada klik ini, dan `await getSession()` di bawah
+    // bisa memutus aktivasinya di browser yang ketat (Safari).
+    void mintaLayarPenuh();
     setBusy(p.id);
     try {
       const { data: { session } } = await supabase.auth.getSession();

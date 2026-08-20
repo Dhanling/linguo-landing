@@ -12,7 +12,7 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 /* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 /* [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh */
-import EbookReader, { prewarmEbookReader } from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader, mintaLayarPenuh } from "@/components/akun/EbookReader";
 /* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
 import { orMilikSaya } from "@/lib/digitalOwnership";
 
@@ -156,6 +156,9 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
     // Aturan sama dengan LibraryView: signed URL tidak lagi dikirim ke browser,
     // byte PDF-nya diambil /api/ebook yang memverifikasi kepemilikan tiap kali.
     if (product.type === "ebook" && isStoragePath(product.file_url)) {
+      // [ebook-reader-layar-penuh-v1] lihat catatan yang sama di LibraryView:
+      // izin layar penuh menempel pada klik ini, bukan pada effect reader.
+      void mintaLayarPenuh();
       setDownloading(purchase.id);
       try {
         const { data: { session } } = await supabase.auth.getSession();
