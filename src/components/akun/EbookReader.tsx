@@ -249,6 +249,11 @@ type HalTeks = { items: ItemTeks[]; baris: Baris[] };
 /** Satu entri daftar isi. */
 type Bab = { hal: number; judul: string; label?: string; utama: boolean };
 
+/* [ebook-daftar-isi-timeline-v1] Entri daftar isi + rentang halamannya. `sampai`
+   dihitung dari awal bab BERIKUTNYA, bukan dibaca dari PDF: modulnya tak
+   menuliskan "unit ini 3 halaman" di mana pun. */
+type BabRentang = Bab & { sampai: number };
+
 /** Huruf penyusun kata — dipakai memuaikan ketukan jadi satu kata utuh. */
 const HURUF = /[\p{L}\p{M}\p{N}'\u2019\u02BC-]/u;
 
@@ -350,6 +355,8 @@ export default function EbookReader({
   const [daftarBuka, setDaftarBuka] = useState(false);
   const [bab, setBab] = useState<Bab[] | null>(null);
   const [memindai, setMemindai] = useState(false);
+  /** Halaman terakhir yang sedang dipindai — dipakai bilah progres "Menyusun daftar isi". */
+  const [pindaiHal, setPindaiHal] = useState(0);
   /** Nomor halaman yang sedang ditarik di penggeser (belum dilepas). */
   const [tarik, setTarik] = useState<number | null>(null);
   /** Kotak "lompat ke halaman" di bilah bawah sedang terbuka? */
@@ -1177,10 +1184,12 @@ export default function EbookReader({
   const pindaiDaftar = useCallback(async () => {
     const d = docRef.current;
     if (!d || memindai) return;
+    setPindaiHal(0);
     setMemindai(true);
     try {
       const hasil: Bab[] = [];
       for (let n = 1; n <= d.numPages; n++) {
+        setPindaiHal(n);
         const { baris } = await ambilTeks(n);
         if (!baris.length) continue;
         const tinggi = baris.map((b) => b.h).sort((a, b) => a - b);
@@ -1217,6 +1226,50 @@ export default function EbookReader({
     setDaftarBuka(true);
     if (!bab) void pindaiDaftar();
   }, [bab, pindaiDaftar]);
+
+  /* ── garis waktu daftar isi ───────────────────────────────────────────
+     [ebook-daftar-isi-timeline-v1] Daftar isi datar cuma menjawab "unit ini
+     ada di halaman berapa". Yang ditanya siswa saat membuka panelnya biasanya
+     lebih dari itu: "aku sekarang di mana, dan sisa berapa lagi?" — jadi tiap
+     entri dipasangi rentang halaman dan rel progres, dan bab yang sedang
+     dibaca menunjukkan posisi di DALAM babnya sendiri. */
+  const garisWaktu = useMemo<BabRentang[]>(() => {
+    if (!bab?.length || !total) return [];
+    return bab.map((b, i) => ({ ...b, sampai: Math.max(b.hal, (bab[i + 1]?.hal ?? total + 1) - 1) }));
+  }, [bab, total]);
+
+  /** Halaman paling kiri yang sedang tampil — acuan "kamu di sini". */
+  const halKini = tampil.kiri ?? tampil.kanan ?? 1;
+  /** Halaman terakhir yang tampak: bentangan dua halaman berarti 2 sudah terbaca. */
+  const halTerbaca = tampil.kanan ?? tampil.kiri ?? 1;
+
+  /** Bab keberapa yang sedang dibaca (-1 = masih di depan bab pertama). */
+  const idxAktif = useMemo(() => {
+    let k = -1;
+    garisWaktu.forEach((b, i) => { if (b.hal <= halKini) k = i; });
+    return k;
+  }, [garisWaktu, halKini]);
+
+  const persenBaca = total ? Math.min(100, Math.round((halTerbaca / total) * 100)) : 0;
+
+  /** Progres di dalam bab yang sedang dibaca (%). */
+  const persenBab = useMemo(() => {
+    const b = garisWaktu[idxAktif];
+    if (!b) return 0;
+    const isi = b.sampai - b.hal + 1;
+    return Math.min(100, Math.round(((halTerbaca - b.hal + 1) / isi) * 100));
+  }, [garisWaktu, idxAktif, halTerbaca]);
+
+  /* Panel dibuka di unit 7 tapi daftarnya mulai dari unit 1 — barisnya digulung
+     sendiri supaya "kamu di sini" tak perlu dicari. */
+  const babAktifRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (!daftarBuka || memindai || idxAktif < 0) return;
+    const el = babAktifRef.current;
+    if (!el) return;
+    const id = window.setTimeout(() => el.scrollIntoView({ block: "center" }), 40);
+    return () => window.clearTimeout(id);
+  }, [daftarBuka, memindai, idxAktif, garisWaktu.length]);
 
   const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
     if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
@@ -1713,7 +1766,9 @@ export default function EbookReader({
         </div>
       )}
 
-      {/* [ebook-daftar-isi-v1] Panel daftar isi + lompat halaman. */}
+      {/* [ebook-daftar-isi-v1] Panel daftar isi + lompat halaman.
+          [ebook-daftar-isi-timeline-v1] Bentuknya garis waktu: rel menyala dari
+          bab pertama sampai bab yang sedang dibaca. */}
       {daftarBuka && (
         <div className="absolute inset-0 z-[60] flex">
           <div
@@ -1721,25 +1776,63 @@ export default function EbookReader({
             onClick={() => setDaftarBuka(false)}
             aria-hidden
           />
-          <aside className="relative flex h-full w-[86vw] max-w-[340px] flex-col border-r border-white/10 bg-[#0D0D0D] shadow-2xl">
-            <div className="flex shrink-0 items-center gap-2 border-b border-white/10 px-4 py-3">
-              <List className="h-4 w-4 text-[#3ED9C0]" />
-              <span className="flex-1 text-[13.5px] font-extrabold text-white">{t("Daftar isi")}</span>
-              <button
-                onClick={() => setDaftarBuka(false)}
-                className="rounded-lg p-1.5 text-white/60 transition hover:bg-white/10 hover:text-white"
-                aria-label={t("Tutup")}
-              >
-                <X className="h-4 w-4" />
-              </button>
+          <aside className="relative flex h-full w-[88vw] max-w-[360px] flex-col border-r border-white/10 bg-[#0D0D0D] shadow-2xl">
+            <div className="shrink-0 border-b border-white/10 px-4 py-3">
+              <div className="flex items-center gap-2">
+                <List className="h-4 w-4 text-[#3ED9C0]" />
+                <span className="flex-1 text-[13.5px] font-extrabold text-white">{t("Daftar isi")}</span>
+                <button
+                  onClick={() => setDaftarBuka(false)}
+                  className="rounded-lg p-1.5 text-white/60 transition hover:bg-white/10 hover:text-white"
+                  aria-label={t("Tutup")}
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Progres seluruh modul — angka yang sama dengan bilah bawah,
+                  tapi di sini yang dijawab "sisa berapa lagi". */}
+              {!!total && (
+                <div className="mt-3">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-[10.5px] font-extrabold uppercase tracking-wider text-white/35">
+                      {t("Progres baca")}
+                    </span>
+                    <span className="text-[11.5px] font-bold tabular-nums text-white/60">
+                      {halTerbaca} / {total} · {persenBaca}%
+                    </span>
+                  </div>
+                  <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/10">
+                    <div
+                      className="h-full rounded-full bg-[#3ED9C0] transition-[width] duration-300"
+                      style={{ width: `${persenBaca}%` }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto px-2 py-2">
               {memindai && (
-                <p className="flex items-center gap-2 px-2 py-3 text-[12.5px] font-semibold text-white/50">
-                  <Loader2 className="h-4 w-4 animate-spin text-[#3ED9C0]" />
-                  {t("Menyusun daftar isi…")}
-                </p>
+                <div className="px-2 py-3">
+                  <p className="flex items-center gap-2 text-[12.5px] font-semibold text-white/50">
+                    <Loader2 className="h-4 w-4 animate-spin text-[#3ED9C0]" />
+                    <span className="flex-1">{t("Menyusun daftar isi…")}</span>
+                    {!!total && (
+                      <span className="text-[11.5px] font-bold tabular-nums text-white/30">
+                        {pindaiHal}/{total}
+                      </span>
+                    )}
+                  </p>
+                  {!!total && (
+                    <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/10">
+                      <div
+                        className="h-full rounded-full bg-[#3ED9C0]/70 transition-[width] duration-200"
+                        style={{ width: `${Math.round((pindaiHal / total) * 100)}%` }}
+                      />
+                    </div>
+                  )}
+                </div>
               )}
 
               {!memindai && bab && bab.length === 0 && (
@@ -1748,32 +1841,87 @@ export default function EbookReader({
                 </p>
               )}
 
-              {!memindai && bab?.map((b) => {
-                const aktif = b.hal === tampil.kiri || b.hal === tampil.kanan;
+              {!memindai && garisWaktu.map((b, i) => {
+                const aktif = i === idxAktif;
+                const lewat = i < idxAktif;
+                // Rel di ATAS titik menyala kalau babnya sudah dilewati ATAU
+                // sedang dibaca; rel di BAWAH cuma kalau sudah dilewati — itu
+                // yang membuat ujung nyalanya berhenti tepat di posisi siswa.
+                const relAtas = lewat || aktif;
                 return (
                   <button
                     key={`${b.hal}-${b.judul}`}
+                    ref={aktif ? babAktifRef : undefined}
                     onClick={() => { ke(b.hal); setDaftarBuka(false); }}
-                    className={`flex w-full items-start gap-2 rounded-lg px-2 py-2 text-left transition ${
-                      aktif ? "bg-[#3ED9C0]/15" : "hover:bg-white/5"
+                    className={`flex w-full gap-2.5 rounded-lg pr-2 text-left transition ${
+                      aktif ? "bg-[#3ED9C0]/10" : "hover:bg-white/5"
                     }`}
                   >
-                    <div className="min-w-0 flex-1">
-                      {b.label && (
-                        <span className="block text-[10px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
-                          {b.label}
+                    {/* rel garis waktu */}
+                    <span className="flex w-5 shrink-0 flex-col items-center">
+                      <span
+                        className={`w-px flex-1 ${i === 0 ? "bg-transparent" : relAtas ? "bg-[#3ED9C0]/60" : "bg-white/10"}`}
+                      />
+                      <span
+                        className={`my-1 h-2.5 w-2.5 shrink-0 rounded-full border-2 transition ${
+                          aktif
+                            ? "border-[#3ED9C0] bg-[#3ED9C0] shadow-[0_0_0_4px_rgba(62,217,192,0.18)]"
+                            : lewat
+                              ? "border-[#3ED9C0]/70 bg-[#3ED9C0]/70"
+                              : "border-white/25 bg-[#0D0D0D]"
+                        }`}
+                      />
+                      <span
+                        className={`w-px flex-1 ${
+                          i === garisWaktu.length - 1 ? "bg-transparent" : lewat ? "bg-[#3ED9C0]/60" : "bg-white/10"
+                        }`}
+                      />
+                    </span>
+
+                    <span className="min-w-0 flex-1 py-2">
+                      <span className="flex items-start gap-2">
+                        <span className="min-w-0 flex-1">
+                          {b.label && (
+                            <span className="block text-[10px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
+                              {b.label}
+                            </span>
+                          )}
+                          <span
+                            className={`block text-[13px] leading-snug ${
+                              aktif
+                                ? "font-bold text-white"
+                                : b.utama
+                                  ? `font-bold ${lewat ? "text-white/70" : "text-white/85"}`
+                                  : "font-semibold text-white/60"
+                            }`}
+                          >
+                            {b.judul}
+                          </span>
+                        </span>
+                        {/* Nomor halamannya: rentang, bukan satu angka — "Unit 6
+                            itu 3 halaman" jawaban yang lebih berguna. */}
+                        <span
+                          className={`shrink-0 rounded-md px-1.5 py-0.5 text-[10.5px] font-bold tabular-nums ${
+                            aktif ? "bg-[#3ED9C0] text-black" : "bg-white/[0.06] text-white/40"
+                          }`}
+                        >
+                          {b.hal === b.sampai ? b.hal : `${b.hal}–${b.sampai}`}
+                        </span>
+                      </span>
+
+                      {aktif && (
+                        <span className="mt-1.5 flex items-center gap-2">
+                          <span className="h-1 flex-1 overflow-hidden rounded-full bg-white/10">
+                            <span
+                              className="block h-full rounded-full bg-[#3ED9C0] transition-[width] duration-300"
+                              style={{ width: `${persenBab}%` }}
+                            />
+                          </span>
+                          <span className="shrink-0 text-[10px] font-extrabold uppercase tracking-wider text-[#3ED9C0]">
+                            {t("Kamu di sini")}
+                          </span>
                         </span>
                       )}
-                      <span
-                        className={`block text-[13px] leading-snug ${
-                          b.utama ? "font-bold text-white" : "font-semibold text-white/75"
-                        }`}
-                      >
-                        {b.judul}
-                      </span>
-                    </div>
-                    <span className="shrink-0 pt-0.5 text-[11.5px] font-bold tabular-nums text-white/35">
-                      {b.hal}
                     </span>
                   </button>
                 );

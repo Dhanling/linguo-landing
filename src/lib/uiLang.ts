@@ -899,6 +899,8 @@ const EN: Record<string, string> = {
   "Menyusun daftar isi…": "Building the table of contents…",
   "Daftar isi": "Contents",
   "Lompat ke halaman": "Jump to page",
+  /* [ebook-daftar-isi-timeline-v1] */
+  "Progres baca": "Reading progress",
   "Buka halaman": "Open page",
   "Geser ke halaman": "Slide to page",
   "Modul ini tak punya judul yang bisa dibaca otomatis — pakai nomor halaman di bawah.":
