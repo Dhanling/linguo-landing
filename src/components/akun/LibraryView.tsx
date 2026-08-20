@@ -1019,12 +1019,10 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
           {glyphFor(p)}
         </span>
       )}
-      {/* play / book center */}
-      <span className="absolute inset-0 flex items-center justify-center">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/60 text-white">
-          {p.type === "ebook" ? <BookOpen className="h-5 w-5" /> : <Play className="ml-0.5 h-5 w-5" fill="currentColor" />}
-        </span>
-      </span>
+      {/* [pustaka-sampul-bersih-v1] Dulu ada lingkaran ikon buku/play di tengah
+          sampul. Jenis produknya SUDAH dikatakan lencana "E-Book"/"E-Learning"
+          di pojok kiri atas dan tombol aksinya di badan kartu, jadi ikon itu
+          cuma menutupi foto sampul — apalagi sesudah kartu punya foto kota. */}
       {/* lang label bottom-left */}
       {p.language && (
         <span className="absolute bottom-2.5 left-3 text-[13px] font-bold text-white/90">{p.language}</span>

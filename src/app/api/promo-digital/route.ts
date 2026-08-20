@@ -35,6 +35,10 @@ const KODE_PROMO: Record<string, {
   label: string;
 }> = {
   FREEEBOOK: { hari: 30, tipe: "ebook", maksPerAkun: 1, label: "Akses gratis 1 bulan" },
+  // [elearning-per-bahasa-v1] Pasangan FREEEBOOK untuk e-learning per bahasa.
+  // Jatahnya dihitung TERPISAH per tipe produk (lihat bawah), jadi satu akun
+  // boleh mencicipi satu e-book DAN satu bahasa e-learning.
+  FREEELEARNING: { hari: 30, tipe: "elearning", maksPerAkun: 1, label: "Akses gratis 1 bulan" },
 };
 
 function tolak(pesan: string, status: number) {
@@ -93,17 +97,29 @@ export async function POST(req: NextRequest) {
   // Kepemilikan dicocokkan sama seperti Perpustakaan: auth_user_id ATAU email.
   const { data: milik } = await admin
     .from("digital_purchases")
-    .select("id, product_id, source, expires_at")
+    .select("id, product_id, source, expires_at, digital_products(type)")
     .eq("payment_status", "Lunas")
     .or(`auth_user_id.eq.${user.id},buyer_email.ilike.${email}`);
-  const rows = milik ?? [];
+  const rows = (milik ?? []) as Array<{
+    id: string; product_id: string; source: string | null; expires_at: string | null;
+    digital_products: { type: string } | { type: string }[] | null;
+  }>;
+  const tipeBaris = (r: (typeof rows)[number]) => {
+    const dp = Array.isArray(r.digital_products) ? r.digital_products[0] : r.digital_products;
+    return dp?.type ?? null;
+  };
   if (rows.some((r) => r.product_id === productId)) {
     return NextResponse.json(
       { ok: false, sudahPunya: true, error: "Produk ini sudah ada di Perpustakaan kamu." },
       { status: 409, headers: NO_STORE },
     );
   }
-  const klaimPromo = rows.filter((r) => r.source === "promo").length;
+  // Jatah dihitung PER TIPE PRODUK, bukan atas semua baris promo. Dulu satu
+  // penghitung dipakai bersama, jadi begitu FREEEBOOK terpakai, FREEELEARNING
+  // ikut tertutup padahal itu promo yang lain sama sekali.
+  const klaimPromo = rows.filter(
+    (r) => r.source === "promo" && (!promo.tipe || tipeBaris(r) === promo.tipe),
+  ).length;
   if (klaimPromo >= promo.maksPerAkun) {
     return tolak(
       `Kode ${kode} cuma bisa dipakai untuk ${promo.maksPerAkun} produk per akun, dan jatah kamu sudah terpakai.`,
