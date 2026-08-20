@@ -31,6 +31,8 @@ import { orMilikSaya } from "@/lib/digitalOwnership";
 /* [pustaka-kartu-foto-v1] sampul kartu pakai foto stok bahasa yang sama dengan
    kartu kelas di dashboard siswa, jadi Perpustakaan tidak lagi terasa "kartu warna polos". */
 import { getLangPhoto } from "@/lib/lang-visuals";
+// [pustaka-judul-bendera-v1] bendera rounded-rectangle di kiri judul kartu
+import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader from "@/components/akun/EbookReader";
 
@@ -117,6 +119,17 @@ function judulRingkas(raw: string): string {
   const sisa = penggal.filter((x) => !PENGGAL_BOILERPLATE.test(x));
   const judul = (sisa[0] || penggal[0] || raw || "").replace(/\s*\bLinguo\b\s*/gi, " ").trim();
   return judul || raw;
+}
+
+// [pustaka-judul-bendera-v1] Bendera negara di kiri judul kartu. Semua kartu
+// katalog berjudul "<Bahasa> 101 (…)", jadi bahasanya cuma bisa dikenali dengan
+// membaca judulnya satu per satu; benderanya kelihatan sekali lirik. Bahasa tanpa
+// padanan negara (mis. Latin/Esperanto) sengaja tidak digambar apa-apa — Globe
+// abu-abu cuma jadi noise dan bikin judulnya tidak rata.
+function TitleFlag({ language, h = 15 }: { language: string | null; h?: number }) {
+  const code = language ? FLAG_CODE_BY_SLUG[language.trim().toLowerCase()] : undefined;
+  if (!code) return null;
+  return <RectFlag code={code} h={h} className="shadow-sm" />;
 }
 
 // [pustaka-filter-edisi-v1] Katalog e-book terbit dalam dua edisi bahasa pengantar:
@@ -852,7 +865,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
           </div>
         ) : null
       ) : view === "grid" ? (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {shown.map((p) => (
             <ProductCard
               key={p.id}
@@ -907,7 +920,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {terkunci.map((k) => (
               <LockedCard
                 key={k.id}
@@ -1057,7 +1070,10 @@ function ProductCard({
           <span className="text-[11px] font-semibold text-slate-400">Dibeli {fmtDate(p.created_at)}</span>
         </div>
         {/* [pustaka-judul-ringkas-v1] satu baris — judul panjang dipotong, bukan dilipat */}
-        <h3 title={prod.title} className="truncate text-[16px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(prod.title)}</h3>
+        <div className="flex min-w-0 items-center gap-2">
+          <TitleFlag language={prod.language} h={16} />
+          <h3 title={prod.title} className="truncate text-[16px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(prod.title)}</h3>
+        </div>
 
         <p className="text-[12px] font-medium text-slate-500">
           {prod.type === "ebook"
@@ -1145,7 +1161,10 @@ function ProductRow({
           <TypeBadge type={prod.type} />
           {prog && <span className="text-[11px] font-bold text-slate-400">{prog.pct}%</span>}
         </div>
-        <h3 title={prod.title} className="truncate text-[15px] font-extrabold text-[#12172B]">{judulRingkas(prod.title)}</h3>
+        <div className="flex min-w-0 items-center gap-2">
+          <TitleFlag language={prod.language} />
+          <h3 title={prod.title} className="truncate text-[15px] font-extrabold text-[#12172B]">{judulRingkas(prod.title)}</h3>
+        </div>
         <p className="text-[12px] font-medium text-slate-400">Dibeli {fmtDate(p.created_at)}</p>
         {/* [materi-belum-siap-v1] */}
         {!ready && !expired && (
@@ -1404,7 +1423,10 @@ function LockedCard({
       {/* body */}
       <div className="flex flex-1 flex-col p-4">
         {/* [pustaka-judul-ringkas-v1] satu baris, tanpa penggal "Modul Belajar Bahasa … Linguo" */}
-        <h3 title={item.title} className="truncate text-[15px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(item.title)}</h3>
+        <div className="flex min-w-0 items-center gap-2">
+          <TitleFlag language={item.language} />
+          <h3 title={item.title} className="truncate text-[15px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(item.title)}</h3>
+        </div>
         <p className="mt-1 text-[12.5px] font-medium text-slate-500">
           {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "E-Book" : "E-Learning")}
         </p>
