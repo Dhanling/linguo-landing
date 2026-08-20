@@ -16,6 +16,25 @@ import type { NextRequest } from "next/server";
 
 export const PREVIEW_COOKIE = "linguo_preview";
 
+/* [preview-idle-session-v1] Umur sesi pratinjau dulu MATI KERAS 30 menit sejak
+   kodenya diterbitkan: staf yang sedang menelusuri dashboard siswa kehilangan
+   sesinya di tengah jalan. Layarnya tidak ikut berubah (data siswa sudah
+   ter-cache di sessionStorage), yang hilang cuma hal-hal yang selalu minta
+   server — paling kentara menu "Grup Kelas" ikut lenyap dari sidebar, seolah
+   siswanya memang tak punya grup.
+
+   Sekarang batasnya IDLE, bukan umur mutlak: tiap permintaan pratinjau yang sah
+   memperpanjang masa berlaku 30 menit ke depan, jadi sesi baru mati kalau
+   memang ditinggalkan. Wewenangnya tetap di baris `staff_preview_codes`
+   (hapus barisnya → sesi mati saat itu juga), cookie-nya cuma pembawa kode. */
+const IDLE_MS = 30 * 60 * 1000;
+
+/** Baru menulis ke DB kalau sisa umurnya sudah di bawah ini (hemat PATCH). */
+const RENEW_BELOW_MS = 20 * 60 * 1000;
+
+/** Cookie sengaja hidup lebih lama dari sesinya — yang menentukan tetap DB. */
+export const PREVIEW_COOKIE_MAX_AGE = 12 * 60 * 60;
+
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
@@ -51,7 +70,18 @@ export async function lookupPreviewCode(code: string | undefined | null): Promis
   );
   const row = rows?.[0] as PreviewCode | undefined;
   if (!row) return null;
-  if (new Date(row.expires_at).getTime() <= Date.now()) return null;
+  const sisa = new Date(row.expires_at).getTime() - Date.now();
+  if (sisa <= 0) return null;
+  // [preview-idle-session-v1] perpanjang selagi dipakai
+  if (sisa < RENEW_BELOW_MS) {
+    const next = new Date(Date.now() + IDLE_MS).toISOString();
+    await serviceRest(`staff_preview_codes?code=eq.${encodeURIComponent(row.code)}`, {
+      method: "PATCH",
+      headers: { Prefer: "return=minimal" },
+      body: JSON.stringify({ expires_at: next }),
+    });
+    row.expires_at = next;
+  }
   return row;
 }
 

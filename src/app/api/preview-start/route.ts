@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PREVIEW_COOKIE, lookupPreviewCode, serviceRest } from "@/lib/previewSession";
+import { PREVIEW_COOKIE, PREVIEW_COOKIE_MAX_AGE, lookupPreviewCode, serviceRest } from "@/lib/previewSession";
 
 // ── preview-session-v1 ───────────────────────────────────────────────────
 // Pintu masuk "lihat sebagai siswa" dari avatar dashboard admin.
@@ -50,7 +50,12 @@ export async function GET(req: NextRequest) {
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
     path: "/",
-    maxAge: Math.max(60, Math.floor((new Date(row.expires_at).getTime() - Date.now()) / 1000)),
+    // [preview-idle-session-v1] cookie tak lagi ikut kedaluwarsa kodenya. Dulu
+    // umurnya dipatok ke `expires_at` yang tetap (30 menit sejak diterbitkan),
+    // jadi sesi staf mati di tengah penelusuran. Sekarang cookie sekadar
+    // pembawa kode; yang menentukan sah/tidaknya tetap baris `staff_preview_codes`
+    // yang diperpanjang tiap dipakai (lihat lookupPreviewCode).
+    maxAge: PREVIEW_COOKIE_MAX_AGE,
   });
   return res;
 }

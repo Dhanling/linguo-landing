@@ -197,9 +197,14 @@ export default function StudentShell({
       try { sessionStorage.setItem(GROUP_NAV_KEY, v ? "1" : "0"); } catch {}
     };
     if (previewStudentId) {
+      /* [preview-idle-session-v1] "gagal menjawab" ≠ "tidak punya grup". Dulu
+         respons 403 (sesi pratinjau habis) ikut dicatat sebagai `false`, jadi
+         menu Grup Kelas lenyap dari sidebar dan terbaca seolah siswanya memang
+         tak punya grup kelas. Sekarang cuma jawaban yang benar-benar sampai
+         yang boleh mengubah keadaan menu. */
       fetch(`/api/preview-group?student=${encodeURIComponent(previewStudentId)}`, { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
-        .then((j) => remember(!!j?.groups?.length))
+        .then((j) => { if (j) remember(!!j.groups?.length); })
         .catch(() => {});
       return () => { alive = false; };
     }

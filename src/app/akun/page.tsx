@@ -2527,6 +2527,12 @@ export default function AkunPage() {
   const router = useRouter(); // [perf:sidebar-nav-v1] navigasi client-side antar route
   const [previewId, setPreviewId] = useState<string | null>(null);
   const previewMode = !!previewId;
+  /* [preview-idle-session-v1] Sesi pratinjau yang sudah habis dulu TIDAK kelihatan:
+     data siswa tetap terpampang dari cache sessionStorage, sementara semua hal yang
+     minta server diam-diam mati (menu "Grup Kelas" hilang dari sidebar, chat grup
+     kosong). Sekarang keadaannya diumumkan lewat banner supaya staf tahu yang
+     dilihatnya salinan lama, bukan tampilan siswa yang sebenarnya. */
+  const [previewExpired, setPreviewExpired] = useState(false);
   const [student, setStudent] = useState<StudentData | null>(() => (akunSnapshot?.student as StudentData | null) ?? null);
   const [badges, setBadges] = useState<Badge[]>(() => (akunSnapshot?.badges as Badge[]) ?? []);
   // jadwal-riwayat-v1: dulu state ini cuma diisi sesi MENDATANG, jadi kalender di
@@ -2901,7 +2907,10 @@ export default function AkunPage() {
     (async () => {
       try {
         const res = await fetch(`/api/preview-student?id=${encodeURIComponent(previewId)}`, { cache: "no-store" });
+        // 403 = cookie pratinjau habis/dicabut, bukan gangguan jaringan sesaat.
+        if (res.status === 403) setPreviewExpired(true);
         if (!res.ok) throw new Error("preview fetch failed");
+        setPreviewExpired(false);
         const json = await res.json();
         try {
           sessionStorage.setItem(`linguo_preview_cache_${previewId}`, JSON.stringify({
@@ -3787,9 +3796,17 @@ export default function AkunPage() {
 
       {/* [preview-student-v1] banner mode preview POV siswa (read-only) */}
       {previewMode && (
-        <div className="sticky top-0 z-[60] flex items-center justify-center gap-2 bg-[#12172B] px-4 py-2 text-center text-[12px] font-semibold text-white">
-          <span className="inline-flex h-2 w-2 rounded-full bg-[#F2CB05]" />
-          Preview POV Siswa · {displayName} — data real, read-only (tanpa login)
+        <div
+          className={`sticky top-0 z-[60] flex items-center justify-center gap-2 px-4 py-2 text-center text-[12px] font-semibold text-white ${
+            previewExpired ? "bg-[#7F1D1D]" : "bg-[#12172B]"
+          }`}
+        >
+          <span
+            className={`inline-flex h-2 w-2 rounded-full ${previewExpired ? "bg-white" : "bg-[#F2CB05]"}`}
+          />
+          {previewExpired
+            ? "Sesi pratinjau sudah habis — layar ini salinan lama & sebagian menu (mis. Grup Kelas) tak muncul. Buka ulang \u201cLihat sebagai siswa\u201d dari dashboard admin."
+            : `Preview POV Siswa \u00b7 ${displayName} \u2014 data real, read-only (tanpa login)`}
         </div>
       )}
 
