@@ -17,6 +17,7 @@ import {
   type WatchPlan,
 } from "@/lib/immersionLearn";
 import { findWatchAccessCode } from "@/lib/watchAccessCodes";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 interface PromoApplied {
   code: string;
@@ -34,6 +35,8 @@ const SUB = "rgba(255,255,255,0.55)";
 const fmt = (n: number) => "Rp" + n.toLocaleString("id-ID");
 
 export default function WatchSubscribeModal({ onClose }: { onClose: () => void }) {
+  // [ui-lang-switcher-v1] `tl` — `t` sudah dipakai jadi nama item di map manfaat.
+  const tl = useT();
   const [planId, setPlanId] = useState<WatchPlan["id"]>("annual");
   const [email, setEmail] = useState("");
   const [promoOpen, setPromoOpen] = useState(false);
@@ -90,11 +93,11 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
         setPromoError(null);
       } else {
         setApplied(null);
-        setPromoError(data.reason || "Kode promo tidak berlaku.");
+        setPromoError(data.reason || tl("Kode promo tidak berlaku."));
       }
     } catch {
       setApplied(null);
-      setPromoError("Gagal memeriksa kode. Coba lagi.");
+      setPromoError(tl("Gagal memeriksa kode. Coba lagi."));
     } finally {
       setPromoBusy(false);
     }
@@ -123,7 +126,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
         );
         return;
       }
-      setError("Masukkan email yang valid untuk kirim invoice & aktivasi.");
+      setError(tl("Masukkan email yang valid untuk kirim invoice & aktivasi."));
       return;
     }
     setBusy(true);
@@ -134,14 +137,14 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
         body: JSON.stringify({ plan: planId, email: trimmed, promo: promo.trim() || undefined }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Gagal membuat invoice.");
+      if (!res.ok) throw new Error(data?.error || tl("Gagal membuat invoice."));
       if (data.invoice_url) {
         window.location.href = data.invoice_url as string;
         return;
       }
-      throw new Error("Invoice tidak tersedia. Coba lagi.");
+      throw new Error(tl("Invoice tidak tersedia. Coba lagi."));
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Terjadi kesalahan. Coba lagi.");
+      setError(e instanceof Error ? e.message : tl("Terjadi kesalahan. Coba lagi."));
       setBusy(false);
     }
   };
@@ -215,17 +218,16 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
           >
             <Sparkles className="h-5 w-5" style={{ color: "#7FE0E0" }} />
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="shrink-0 opacity-60 hover:opacity-100">
+          <button onClick={onClose} aria-label={tl("Tutup")} className="shrink-0 opacity-60 hover:opacity-100">
             <X className="h-5 w-5 text-white" />
           </button>
         </div>
 
         <h2 className="mt-3 text-[20px] font-extrabold leading-tight text-white">
-          Buka semua fitur belajar
+          {tl("Buka semua fitur belajar")}
         </h2>
         <p className="mt-1.5 text-[13.5px] leading-relaxed" style={{ color: SUB }}>
-          Arti kata & Analisa grammar tanpa batas di semua video. Nonton + subtitle +
-          terjemahan tetap gratis.
+          {tl("Arti kata & Analisa grammar tanpa batas di semua video. Nonton + subtitle + terjemahan tetap gratis.")}
         </p>
 
         {/* Manfaat singkat */}
@@ -237,7 +239,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
           ].map((t) => (
             <li key={t} className="flex items-start gap-2 text-[13px] text-white/85">
               <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: TEAL }} />
-              {t}
+              {tl(t)}
             </li>
           ))}
         </ul>
@@ -276,8 +278,8 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
                     )}
                   </div>
                   <p className="text-[12px]" style={{ color: SUB }}>
-                    {p.months > 1 ? `≈ ${fmt(p.perMonth)}/bln` : "Tagih bulanan"}
-                    {p.savePct ? ` · hemat ${p.savePct}%` : ""}
+                    {p.months > 1 ? `≈ ${fmt(p.perMonth)}/${tl("bln")}` : tl("Tagih bulanan")}
+                    {p.savePct ? ` · ${tl("hemat")} ${p.savePct}%` : ""}
                   </p>
                 </div>
                 <div className="shrink-0 text-right">
@@ -296,7 +298,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
               className="inline-flex items-center gap-1.5 text-[13px] font-semibold"
               style={{ color: TEAL }}
             >
-              <Tag className="h-4 w-4" /> Punya kode promo / afiliator?
+              <Tag className="h-4 w-4" /> {tl("Punya kode promo / afiliator?")}
             </button>
           ) : (
             <div>
@@ -314,7 +316,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
                       if (promoError) setPromoError(null);
                     }}
                     onKeyDown={(e) => e.key === "Enter" && applyPromo()}
-                    placeholder="Kode promo / afiliator"
+                    placeholder={tl("Kode promo / afiliator")}
                     autoFocus
                     autoCapitalize="characters"
                     className="w-full rounded-xl bg-white/5 py-2.5 pl-9 pr-3 text-[14px] font-semibold uppercase tracking-wide text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-white/40 focus:outline-none"
@@ -327,13 +329,13 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
                   className="shrink-0 rounded-xl px-4 py-2.5 text-[13px] font-bold text-white transition hover:brightness-110 disabled:opacity-40"
                   style={{ backgroundColor: "rgba(255,255,255,0.08)", border: `1px solid ${BORDER}` }}
                 >
-                  {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Terapkan"}
+                  {promoBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : tl("Terapkan")}
                 </button>
               </div>
               {applied && (
                 <p className="mt-1.5 flex items-center gap-1.5 text-[12.5px] font-semibold" style={{ color: TEAL }}>
                   <BadgePercent className="h-4 w-4" />
-                  {applied.label ?? `Kode ${applied.code}`} — hemat {applied.discountPct}%
+                  {applied.label ?? `${tl("Kode")} ${applied.code}`} — {tl("hemat")} {applied.discountPct}%
                 </p>
               )}
               {promoError && (
@@ -351,7 +353,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
             className="mb-1 block text-[12px] font-semibold"
             style={{ color: SUB }}
           >
-            Email (untuk invoice & aktivasi)
+            {tl("Email (untuk invoice & aktivasi)")}
           </label>
           <input
             id="wl-subscribe-email"
@@ -377,11 +379,11 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
         >
           {busy ? (
             <>
-              <Loader2 className="h-5 w-5 animate-spin" /> Menyiapkan pembayaran…
+              <Loader2 className="h-5 w-5 animate-spin" /> {tl("Menyiapkan pembayaran…")}
             </>
           ) : (
             <>
-              Langganan {plan.label} —{" "}
+              {tl("Langganan")} {plan.label} —{" "}
               {applied && (
                 <span className="text-white/60 line-through">{fmt(plan.price)}</span>
               )}{" "}
@@ -396,7 +398,7 @@ export default function WatchSubscribeModal({ onClose }: { onClose: () => void }
           className="mt-3 w-full text-center text-[13px] font-semibold"
           style={{ color: SUB }}
         >
-          Nanti aja, lanjut nonton
+          {tl("Nanti aja, lanjut nonton")}
         </button>
       </div>
     </div>

@@ -32,6 +32,7 @@ import {
   WordMeaning,
 } from "@/lib/immersionLearn";
 import WatchUpsellModal from "./WatchUpsellModal";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -106,6 +107,7 @@ export function WordTooltip({
   // auto-sembunyikan transkrip (drawer kini panel kanan yang menimpa kolom transkrip).
   onStudyOpenChange?: (open: boolean) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // Token kalimat + posisi kata — dipakai untuk memperluas pilihan ke frasa
   // (mis. tap "compañía" lalu gabungkan "la" jadi "la compañía").
   const tokens = useMemo(() => splitWords(sentence, langCode), [sentence, langCode]);
@@ -494,11 +496,11 @@ export function WordTooltip({
         {loading ? (
           <div className="mt-2 flex items-center gap-2" style={{ color: SUB }}>
             <Loader2 className="h-4 w-4 animate-spin" />
-            <span className="text-[12px] font-medium">Mencari arti…</span>
+            <span className="text-[12px] font-medium">{t("Mencari arti…")}</span>
           </div>
         ) : errored || !meaning?.meaning ? (
           <p className="mt-1.5 text-[12.5px] leading-snug" style={{ color: SUB }}>
-            Tidak ada arti mandiri — mungkin kata fungsi tata bahasa.
+            {t("Tidak ada arti mandiri — mungkin kata fungsi tata bahasa.")}
           </p>
         ) : (
           <p className="mt-1 text-[14px] font-bold leading-snug" style={{ color: GOLD }}>
@@ -524,7 +526,7 @@ export function WordTooltip({
                   : { backgroundColor: "rgba(255,255,255,0.06)", color: "#7FE0E0" }
               }
             >
-              Frasa
+              {t("Frasa")}
             </button>
             {phraseWords.map((p) => {
               const on = sel.lo === p && sel.hi === p;
@@ -551,18 +553,17 @@ export function WordTooltip({
 
         {saveError && (
           <p className="mt-2 text-[11px] font-medium leading-snug" style={{ color: "#FCA5A5" }}>
-            Gagal menyimpan — penyimpanan browser penuh. Coba tutup tab lain atau
-            bersihkan data situs, lalu simpan lagi.
+            {t("Gagal menyimpan — penyimpanan browser penuh. Coba tutup tab lain atau bersihkan data situs, lalu simpan lagi.")}
           </p>
         )}
 
         {/* [watch-tip-actions-bottom-v1] Deret aksi (Simpan · Analisa) di pojok
             KANAN BAWAH balon (permintaan user) — tiap ikon zoom-in saat hover. */}
         <div className="mt-2.5 flex items-center justify-end gap-0.5">
-          <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
+          <TipAction active={saved} onClick={toggleSave} label={saved ? t("Tersimpan") : t("Simpan")}>
             {saved ? <BookmarkCheck className="h-[17px] w-[17px]" /> : <BookmarkPlus className="h-[17px] w-[17px]" />}
           </TipAction>
-          <TipAction onClick={() => setStudyOpen(true)} label="Analisa">
+          <TipAction onClick={() => setStudyOpen(true)} label={t("Analisa")}>
             <Sparkles className="h-[17px] w-[17px]" />
           </TipAction>
         </div>

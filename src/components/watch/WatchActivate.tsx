@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { CheckCircle2, XCircle } from "lucide-react";
 import { setWatchPremium, redeemWatchAccessCode } from "@/lib/immersionLearn";
+import { tr } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 export default function WatchActivate() {
   const params = useSearchParams();
@@ -57,7 +58,7 @@ export default function WatchActivate() {
     if (!wl) return;
 
     if (wl === "gagal") {
-      setToast({ ok: false, msg: "Pembayaran dibatalkan. Coba lagi kapan saja." });
+      setToast({ ok: false, msg: tr("Pembayaran dibatalkan. Coba lagi kapan saja.") });
       router.replace("/watch");
       return;
     }
@@ -71,12 +72,12 @@ export default function WatchActivate() {
         if (cancelled) return;
         if (data.paid) {
           setWatchPremium(true);
-          setToast({ ok: true, msg: "Langganan aktif! Arti kata & Analisa terbuka penuh 🎉" });
+          setToast({ ok: true, msg: tr("Langganan aktif! Arti kata & Analisa terbuka penuh 🎉") });
         } else {
-          setToast({ ok: false, msg: "Pembayaran belum terkonfirmasi. Cek email invoice-mu." });
+          setToast({ ok: false, msg: tr("Pembayaran belum terkonfirmasi. Cek email invoice-mu.") });
         }
       } catch {
-        if (!cancelled) setToast({ ok: false, msg: "Gagal cek status pembayaran." });
+        if (!cancelled) setToast({ ok: false, msg: tr("Gagal cek status pembayaran.") });
       } finally {
         if (!cancelled) router.replace("/watch");
       }

@@ -22,6 +22,7 @@ import {
   WordMeaning,
 } from "@/lib/immersionLearn";
 import WatchUpsellModal from "./WatchUpsellModal";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -62,6 +63,7 @@ export default function ExplanationWordTip({
   onAnalyze: (word: string) => void;
   onSavedChange?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [meaning, setMeaning] = useState<WordMeaning | null>(null);
   const [loading, setLoading] = useState(true);
   const [errored, setErrored] = useState(false);
@@ -204,10 +206,10 @@ export default function ExplanationWordTip({
             )}
           </div>
           <div className="flex shrink-0 items-center gap-0.5">
-            <TipAction active={saved} onClick={toggleSave} label={saved ? "Tersimpan" : "Simpan"}>
+            <TipAction active={saved} onClick={toggleSave} label={saved ? t("Tersimpan") : t("Simpan")}>
               {saved ? <BookmarkCheck className="h-[17px] w-[17px]" /> : <BookmarkPlus className="h-[17px] w-[17px]" />}
             </TipAction>
-            <TipAction onClick={() => onAnalyze(word)} label="Analisa">
+            <TipAction onClick={() => onAnalyze(word)} label={t("Analisa")}>
               <Sparkles className="h-[17px] w-[17px]" />
             </TipAction>
           </div>

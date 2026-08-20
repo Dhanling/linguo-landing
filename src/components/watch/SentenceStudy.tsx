@@ -29,6 +29,7 @@ import WordStudy, { AnswerSkeleton, IconBtn, RichText, Section, stripGuillemets,
 import ExplanationWordTip from "./ExplanationWordTip";
 // [watch-followup-translit-v1] Bacaan Latin kata bahasa target yang dikutip di chip.
 import { FollowupText, hasInlineReading, useFollowupReadings } from "./followupTranslit";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#0A6060";
@@ -73,6 +74,7 @@ export default function SentenceStudy({
   baseCode?: string;
   onClose: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const lang = getImmersionLang(langCode);
   const [tab, setTab] = useState<"study" | "ask">("study");
 
@@ -183,7 +185,7 @@ export default function SentenceStudy({
             ...c,
             {
               role: "ai",
-              text: a.answer || "Maaf, tidak ada jawaban. Coba lagi.",
+              text: a.answer || t("Maaf, tidak ada jawaban. Coba lagi."),
               followups: a.followups,
             },
           ])
@@ -259,7 +261,7 @@ export default function SentenceStudy({
           <div className="mb-1.5 flex items-center gap-2">
             {lang && <RectFlag code={lang.country} h={14} />}
             <span className="text-[11px] font-bold uppercase tracking-wide" style={{ color: SUB }}>
-              Analisa Kalimat
+              {t("Analisa Kalimat")}
             </span>
           </div>
           <p
@@ -290,10 +292,10 @@ export default function SentenceStudy({
           </div>
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
-          <IconBtn label="Dengar" onClick={() => speakText(sentence, langCode)}>
+          <IconBtn label={t("Dengar")} onClick={() => speakText(sentence, langCode)}>
             <Volume2 className="h-5 w-5" />
           </IconBtn>
-          <IconBtn label="Tutup" onClick={close}>
+          <IconBtn label={t("Tutup")} onClick={close}>
             <X className="h-5 w-5" />
           </IconBtn>
         </div>
@@ -303,10 +305,10 @@ export default function SentenceStudy({
           nempel/nabrak tombol tab (dulu pakai garis pemisah abu-abu). */}
       <div className="flex shrink-0 gap-1 px-4 pb-2.5 pt-3 sm:px-6">
         <TabBtn active={tab === "study"} onClick={() => setTab("study")}>
-          Pelajari
+          {t("Pelajari")}
         </TabBtn>
         <TabBtn active={tab === "ask"} onClick={() => setTab("ask")}>
-          <Sparkles className="h-3.5 w-3.5" /> Tanya AI
+          <Sparkles className="h-3.5 w-3.5" /> {t("Tanya AI")}
         </TabBtn>
       </div>
 
@@ -382,14 +384,14 @@ export default function SentenceStudy({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && ask(input)}
-              placeholder="Tanya apa saja tentang kalimat ini…"
+              placeholder={t("Tanya apa saja tentang kalimat ini…")}
               className="flex-1 rounded-full px-4 py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
               style={{ backgroundColor: CARD }}
             />
             <button
               onClick={() => ask(input)}
               disabled={!input.trim() || asking}
-              aria-label="Kirim"
+              aria-label={t("Kirim")}
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
               style={{ backgroundColor: TEAL_DARK }}
             >
@@ -497,6 +499,7 @@ function ToneRow({ text }: { text: string }) {
 // dicetak di bawah TIAP kata. Hanya kelas yang muncul di kalimat ini, satu baris,
 // dan bisa disembunyikan (pilihannya diingat) buat yang sudah hafal warnanya.
 function PosLegend({ cats }: { cats: PosCategory[] }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [open, setOpen] = useState(true);
   useEffect(() => {
     try {
@@ -529,13 +532,13 @@ function PosLegend({ cats }: { cats: PosCategory[] }) {
         <ChevronDown
           className={`h-3 w-3 shrink-0 transition-transform duration-200 ${open ? "" : "-rotate-90"}`}
         />
-        Warna = kelas kata
+        {t("Warna = kelas kata")}
       </button>
       {open && (
         <div className="mt-1.5 flex flex-wrap gap-x-2.5 gap-y-1">
           {cats.map((c) => (
             <span key={c} className="text-[10.5px] font-bold" style={{ color: POS_COLOR[c] }}>
-              {POS_LABEL_ID[c]}
+              {tr(POS_LABEL_ID[c])}
             </span>
           ))}
         </div>
@@ -567,15 +570,16 @@ function StudyTab({
   headTranslation: string;
   onWordTap: WordTapHandler;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   if (loading) {
     return <StudySkeleton />;
   }
   if (errored || !deep) {
     return (
       <div className="py-16 text-center">
-        <p className="text-[14px] font-bold text-white">Gagal memuat analisa</p>
+        <p className="text-[14px] font-bold text-white">{t("Gagal memuat analisa")}</p>
         <p className="mt-1 text-[13px]" style={{ color: SUB }}>
-          Coba tutup lalu buka lagi kalimat ini.
+          {t("Coba tutup lalu buka lagi kalimat ini.")}
         </p>
       </div>
     );
@@ -602,7 +606,7 @@ function StudyTab({
           kata TIDAK lagi dicetak di tiap kata — warna + legenda + balon (yang sudah
           menampilkan badge kelas kata saat diketuk) sudah mewakili. */}
       {bd && bd.tokens.length > 0 ? (
-        <Section title="Pecahan Kalimat">
+        <Section title={t("Pecahan Kalimat")}>
           <div
             className="flex flex-wrap items-end gap-x-3 gap-y-2.5"
             dir={isRtl(langCode) ? "rtl" : undefined}
@@ -611,7 +615,7 @@ function StudyTab({
               <span
                 key={i}
                 onClick={(e) => onWordTap(t.word, e)}
-                title={POS_LABEL_ID[t.cat]}
+                title={tr(POS_LABEL_ID[t.cat])}
                 className="flex cursor-pointer flex-col items-center text-center transition-opacity hover:opacity-80"
               >
                 {t.gloss && (
@@ -639,7 +643,7 @@ function StudyTab({
           <PosLegend cats={legendCats} />
         </Section>
       ) : bdLoading ? (
-        <Section title="Pecahan Kalimat">
+        <Section title={t("Pecahan Kalimat")}>
           <div className="flex flex-wrap items-end gap-x-3 gap-y-3">
             {[52, 38, 64, 46, 58].map((w, i) => (
               <div key={i} className="flex flex-col items-center gap-1">
@@ -653,7 +657,7 @@ function StudyTab({
       ) : deep.chunks.length > 0 ? (
         /* Fallback: breakdown per-kata tak tersedia (offline/AI gagal) → pecahan
            frasa dari deep-dive, gaya lama. */
-        <Section title="Pecahan Kalimat">
+        <Section title={t("Pecahan Kalimat")}>
           <div className="space-y-2.5">
             {deep.chunks.map((c, i) => (
               <div key={i} className="flex items-start gap-2.5">
@@ -695,23 +699,23 @@ function StudyTab({
           PERBANDINGAN (bunyi apa adanya vs bunyi kalau diucapkan sehari-hari) —
           bukan sebagai versi arti ketiga yang mengulang header. */}
       {(contextual || deep.literal) && (
-        <Section title="Arti">
+        <Section title={t("Arti")}>
           {contextual && (
             <p className="text-[14.5px] font-bold leading-snug" style={{ color: GOLD }}>
-              <span className="text-[12px] font-bold" style={{ color: "#7FE0E0" }}>Sehari-hari: </span>
+              <span className="text-[12px] font-bold" style={{ color: "#7FE0E0" }}>{t("Sehari-hari")}: </span>
               {contextual}
             </p>
           )}
           {deep.literal && (
             <p className={`text-[13px] leading-relaxed ${contextual ? "mt-1.5" : ""}`} style={{ color: SUB }}>
-              <span className="font-bold" style={{ color: "#7FE0E0" }}>Harfiah: </span>
+              <span className="font-bold" style={{ color: "#7FE0E0" }}>{t("Harfiah")}: </span>
               {deep.literal}
             </p>
           )}
           {/* Alasan bedanya cuma relevan kalau versi sehari-harinya memang tampil. */}
           {contextual && deep.contextNote && (
             <p className="mt-1.5 text-[13px] leading-relaxed" style={{ color: SUB }}>
-              <span className="font-bold" style={{ color: "#7FE0E0" }}>Kenapa begitu: </span>
+              <span className="font-bold" style={{ color: "#7FE0E0" }}>{t("Kenapa begitu")}: </span>
               {deep.contextNote}
             </p>
           )}
@@ -723,7 +727,7 @@ function StudyTab({
           Keseluruhan" tetap tak ada: artinya sudah tercetak emas di header. */}
       {deep.grammar && (
         <Section
-          title="Struktur & Tata Bahasa"
+          title={t("Struktur & Tata Bahasa")}
           collapsible
           defaultOpen={false}
           storageKey="grammar"
@@ -737,7 +741,7 @@ function StudyTab({
           Kosong kalau kalimatnya lurus (AI dilarang mengarang idiom). */}
       {deep.idioms.length > 0 && (
         <Section
-          title={deep.idioms.length > 1 ? "Idiom & Ungkapan" : "Idiom"}
+          title={deep.idioms.length > 1 ? t("Idiom & Ungkapan") : t("Idiom")}
           collapsible
           defaultOpen={false}
           storageKey="idiom"

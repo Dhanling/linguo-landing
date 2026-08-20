@@ -9,6 +9,7 @@
 
 import { GraduationCap, Sparkles, X, ArrowRight, Bookmark } from "lucide-react";
 import { FREE_SAVE_LIMIT } from "@/lib/immersionLearn";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const GOLD = "#F4B740";
@@ -23,6 +24,7 @@ export default function WatchUpsellModal({
   savedCount: number;
   onClose: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div
       className="fixed inset-0 z-[120] flex items-end justify-center sm:items-center"
@@ -44,7 +46,7 @@ export default function WatchUpsellModal({
           </div>
           <button
             onClick={onClose}
-            aria-label="Tutup"
+            aria-label={t("Tutup")}
             className="shrink-0 opacity-60 hover:opacity-100"
           >
             <X className="h-5 w-5 text-white" />
@@ -53,11 +55,10 @@ export default function WatchUpsellModal({
 
         {/* Judul */}
         <h2 className="mt-3 text-[20px] font-extrabold leading-tight text-white">
-          Keren — {savedCount} kata tersimpan! 🎉
+          {t("Keren —")} {savedCount} {t("kata tersimpan!")} 🎉
         </h2>
         <p className="mt-1.5 text-[13.5px] leading-relaxed" style={{ color: SUB }}>
-          Kamu sudah pakai {FREE_SAVE_LIMIT} kata gratis. Kamu jelas serius belajar —
-          ini langkah paling ampuh biar cepat bisa:
+          {t("Kamu sudah pakai")} {FREE_SAVE_LIMIT} {t("kata gratis. Kamu jelas serius belajar — ini langkah paling ampuh biar cepat bisa:")}
         </p>
 
         {/* CTA 1 — Kelas (LTV tertinggi, mulai dari trial gratis) */}
@@ -70,9 +71,9 @@ export default function WatchUpsellModal({
             <GraduationCap className="h-5 w-5 text-white" />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-[15px] font-bold text-white">Belajar bareng guru</p>
+            <p className="text-[15px] font-bold text-white">{t("Belajar bareng guru")}</p>
             <p className="text-[12px] leading-snug text-white/80">
-              Coba kelas trial gratis — ngobrol langsung sama pengajar.
+              {t("Coba kelas trial gratis — ngobrol langsung sama pengajar.")}
             </p>
           </div>
           <ArrowRight className="h-5 w-5 shrink-0 text-white" />
@@ -91,9 +92,9 @@ export default function WatchUpsellModal({
             <Sparkles className="h-5 w-5" style={{ color: "#7FE0E0" }} />
           </div>
           <div className="min-w-0 flex-1">
-            <p className="text-[15px] font-bold text-white">Ukur levelmu</p>
+            <p className="text-[15px] font-bold text-white">{t("Ukur levelmu")}</p>
             <p className="text-[12px] leading-snug" style={{ color: SUB }}>
-              Simulasi TOEFL/IELTS — tahu posisimu sekarang.
+              {t("Simulasi TOEFL/IELTS — tahu posisimu sekarang.")}
             </p>
           </div>
           <ArrowRight className="h-5 w-5 shrink-0" style={{ color: SUB }} />
@@ -104,7 +105,7 @@ export default function WatchUpsellModal({
           className="mt-4 w-full text-center text-[13px] font-semibold"
           style={{ color: SUB }}
         >
-          Nanti aja, lanjut nonton
+          {t("Nanti aja, lanjut nonton")}
         </button>
       </div>
     </div>

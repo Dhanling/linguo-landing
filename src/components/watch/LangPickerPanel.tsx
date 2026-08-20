@@ -12,6 +12,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, Search } from "lucide-react";
 import { RectFlag } from "@/components/RectFlag";
 import { IMMERSION_LANGS, getImmersionLang } from "@/lib/immersion";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const CARD = "#12171A"; // solid supaya terbaca jelas menimpa video
@@ -49,6 +50,7 @@ export function LangPickerPanel({
   baseLangCode?: string;
   onPickBase?: (code: string) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [q, setQ] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -98,7 +100,7 @@ export function LangPickerPanel({
             className="px-3 pt-2.5 pb-1 text-[11px] font-bold uppercase tracking-wide"
             style={{ color: SUB }}
           >
-            Bahasa saya
+            {t("Bahasa saya")}
           </div>
           <div className="px-2 pb-2">
             <div className="flex flex-wrap gap-1.5">
@@ -130,7 +132,7 @@ export function LangPickerPanel({
           className="px-3 pt-2.5 pb-0.5 text-[11px] font-bold uppercase tracking-wide"
           style={{ color: SUB }}
         >
-          {title}
+          {t(title)}
         </div>
       )}
       <div className="p-2">
@@ -143,7 +145,7 @@ export function LangPickerPanel({
             ref={inputRef}
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Cari bahasa…"
+            placeholder={t("Cari bahasa…")}
             className="flex-1 bg-transparent py-2.5 text-[13px] text-white outline-none placeholder:text-white/35"
           />
         </div>
@@ -213,9 +215,9 @@ function ReadyBadge({ n }: { n?: number }) {
     <span
       className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-bold leading-none tabular-nums"
       style={{ backgroundColor: "rgba(26,158,158,0.16)", color: TEAL }}
-      title={`${n} video siap tonton`}
+      title={`${n} ${tr("video siap tonton")}`}
     >
-      {n} siap
+      {n} {tr("siap")}
     </span>
   );
 }

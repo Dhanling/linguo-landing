@@ -16,6 +16,7 @@ import { speakText } from "@/lib/immersionLearn";
 import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
 import { createQuizAudio } from "@/lib/quizSound";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#127d7d";
@@ -85,6 +86,7 @@ export default function VocabQuiz({
   words: SavedWord[];
   onExit: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const eligibleCount = useMemo(
     () => words.filter((w) => w.word.trim() && w.meaning.trim()).length,
     [words]
@@ -220,23 +222,21 @@ export default function VocabQuiz({
   // ── Gerbang: butuh minimal 4 kata berarti ─────────────────────────────────
   if (eligibleCount < OPTIONS) {
     return (
-      <QuizShell onExit={onExit} title="Kuis Arti Kata">
+      <QuizShell onExit={onExit} title={t("Kuis Arti Kata")}>
         <div className="flex flex-1 flex-col items-center justify-center px-8 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: `${TEAL}22` }}>
             <Zap className="h-7 w-7" style={{ color: TEAL }} />
           </div>
-          <p className="mt-5 text-[20px] font-extrabold text-white">Belum bisa main</p>
+          <p className="mt-5 text-[20px] font-extrabold text-white">{t("Belum bisa main")}</p>
           <p className="mt-2 max-w-xs text-[13.5px] leading-relaxed" style={{ color: SUB }}>
-            Kuis butuh minimal <b className="text-white">{OPTIONS} kata</b> yang punya arti.
-            Kamu punya <b className="text-white">{eligibleCount}</b>. Simpan lebih banyak
-            kata saat menonton Watch &amp; Learn, lalu balik ke sini.
+            {t("Kuis butuh minimal")} <b className="text-white">{OPTIONS} {t("kata")}</b> {t("yang punya arti. Kamu punya")} <b className="text-white">{eligibleCount}</b>. {t("Simpan lebih banyak kata saat menonton Watch & Learn, lalu balik ke sini.")}
           </p>
           <button
             onClick={onExit}
             className="mt-6 rounded-2xl px-6 py-3 text-[14px] font-bold text-white"
             style={{ backgroundColor: TEAL }}
           >
-            Mengerti
+            {t("Mengerti")}
           </button>
         </div>
       </QuizShell>
@@ -247,7 +247,7 @@ export default function VocabQuiz({
   if (phase === "intro") {
     const n = Math.min(QUESTIONS_PER_ROUND, eligibleCount);
     return (
-      <QuizShell onExit={onExit} title="Kuis Arti Kata">
+      <QuizShell onExit={onExit} title={t("Kuis Arti Kata")}>
         <div className="flex flex-1 flex-col items-center justify-center px-8 text-center">
           <div
             className="flex h-20 w-20 items-center justify-center rounded-3xl"
@@ -255,22 +255,21 @@ export default function VocabQuiz({
           >
             <Zap className="h-9 w-9 text-white" />
           </div>
-          <p className="mt-6 text-[26px] font-extrabold text-white">Kuis Arti Kata</p>
+          <p className="mt-6 text-[26px] font-extrabold text-white">{t("Kuis Arti Kata")}</p>
           <p className="mt-2 max-w-sm text-[14px] leading-relaxed" style={{ color: SUB }}>
-            Tebak arti tiap kata sebelum waktu habis. Makin cepat &amp; makin beruntun,
-            makin besar poinmu.
+            {t("Tebak arti tiap kata sebelum waktu habis. Makin cepat & makin beruntun, makin besar poinmu.")}
           </p>
           <div className="mt-6 flex gap-3">
-            <IntroPill icon={<Zap className="h-4 w-4" />} label={`${n} soal`} />
-            <IntroPill icon={<Clock className="h-4 w-4" />} label="20 dtk/soal" />
-            <IntroPill icon={<Flame className="h-4 w-4" />} label="Bonus streak" />
+            <IntroPill icon={<Zap className="h-4 w-4" />} label={`${n} ${t("soal")}`} />
+            <IntroPill icon={<Clock className="h-4 w-4" />} label={t("20 dtk/soal")} />
+            <IntroPill icon={<Flame className="h-4 w-4" />} label={t("Bonus streak")} />
           </div>
           <button
             onClick={start}
             className="mt-8 flex items-center gap-2 rounded-2xl px-10 py-4 text-[16px] font-extrabold text-white transition-transform hover:scale-[1.03]"
             style={{ background: `linear-gradient(135deg,${TEAL},${TEAL_DARK})` }}
           >
-            Mulai <ArrowRight className="h-5 w-5" />
+            {t("Mulai")} <ArrowRight className="h-5 w-5" />
           </button>
         </div>
       </QuizShell>
@@ -283,14 +282,14 @@ export default function VocabQuiz({
     const wrong = answers.filter((a) => !a.correct);
     const accuracy = answers.length ? Math.round((correct.length / answers.length) * 100) : 0;
     return (
-      <QuizShell onExit={onExit} title="Hasil Kuis">
+      <QuizShell onExit={onExit} title={t("Hasil Kuis")}>
         <div className="mx-auto flex w-full max-w-lg flex-1 flex-col overflow-y-auto px-6 py-6">
           <div className="text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: GOLD }}>
               <Check className="h-8 w-8 text-white" strokeWidth={3} />
             </div>
             <p className="mt-4 text-[13px] font-semibold uppercase tracking-wide" style={{ color: SUB }}>
-              Skor kamu
+              {t("Skor kamu")}
             </p>
             <p className="text-[44px] font-extrabold leading-none" style={{ color: GOLD }}>
               {score}
@@ -301,18 +300,18 @@ export default function VocabQuiz({
             className="mt-6 flex items-center justify-around rounded-3xl px-4 py-4"
             style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
           >
-            <ResultStat value={`${accuracy}%`} label="Akurasi" color="#7FE0E0" />
+            <ResultStat value={`${accuracy}%`} label={t("Akurasi")} color="#7FE0E0" />
             <div className="h-8 w-px" style={{ backgroundColor: BORDER }} />
-            <ResultStat value={`${correct.length}/${answers.length}`} label="Benar" color={GREEN} />
+            <ResultStat value={`${correct.length}/${answers.length}`} label={t("Benar")} color={GREEN} />
             <div className="h-8 w-px" style={{ backgroundColor: BORDER }} />
-            <ResultStat value={`${bestStreak}🔥`} label="Streak" color={GOLD} />
+            <ResultStat value={`${bestStreak}🔥`} label={t("Streak")} color={GOLD} />
           </div>
 
           {correct.length > 0 && (
-            <ResultList title={`Kamu kuasai (${correct.length})`} color={GREEN} items={correct} />
+            <ResultList title={`${t("Kamu kuasai")} (${correct.length})`} color={GREEN} items={correct} />
           )}
           {wrong.length > 0 && (
-            <ResultList title={`Perlu diulang (${wrong.length})`} color={RED} items={wrong} />
+            <ResultList title={`${t("Perlu diulang")} (${wrong.length})`} color={RED} items={wrong} />
           )}
 
           <div className="mt-6 flex gap-3">
@@ -321,14 +320,14 @@ export default function VocabQuiz({
               className="flex flex-1 items-center justify-center gap-2 rounded-2xl py-3.5 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: TEAL }}
             >
-              <RotateCcw className="h-4 w-4" /> Main lagi
+              <RotateCcw className="h-4 w-4" /> {t("Main lagi")}
             </button>
             <button
               onClick={onExit}
               className="flex-1 rounded-2xl py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-white/10"
               style={{ border: `1px solid ${BORDER}` }}
             >
-              Selesai
+              {t("Selesai")}
             </button>
           </div>
         </div>
@@ -337,14 +336,14 @@ export default function VocabQuiz({
   }
 
   // ── Bermain ───────────────────────────────────────────────────────────────
-  if (!q) return <QuizShell onExit={onExit} title="Kuis Arti Kata" />;
+  if (!q) return <QuizShell onExit={onExit} title={t("Kuis Arti Kata")} />;
   const lang = getImmersionLang(q.word.langCode);
   const timePct = Math.max(0, (timeLeft / PER_Q_MS) * 100);
   const timeSec = Math.ceil(timeLeft / 1000);
   const urgent = timeSec <= 5;
 
   return (
-    <QuizShell onExit={onExit} title="Kuis Arti Kata">
+    <QuizShell onExit={onExit} title={t("Kuis Arti Kata")}>
       {/* Bar atas: progres soal + skor + streak */}
       <div className="flex items-center gap-3 px-4 pt-1 sm:px-6">
         <span className="text-[13px] font-bold" style={{ color: SUB }}>
@@ -382,11 +381,11 @@ export default function VocabQuiz({
         <div className="flex items-center gap-2">
           <RectFlag code={lang?.country} h={13} />
           <span className="text-[12px] font-semibold uppercase tracking-wide" style={{ color: SUB }}>
-            Apa artinya?
+            {t("Apa artinya?")}
           </span>
           <button
             onClick={() => void speakText(q.word.word, q.word.langCode)}
-            aria-label="Dengar kata"
+            aria-label={t("Dengar kata")}
             className="rounded-full p-1.5 transition-colors hover:bg-white/10"
           >
             <Volume2 className="h-4 w-4" style={{ color: SUB }} />
@@ -449,13 +448,14 @@ function QuizShell({
   onExit: () => void;
   title: string;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="flex min-h-0 flex-1 flex-col" style={{ backgroundColor: "#0B0F11" }}>
       <div className="flex items-center gap-3 px-4 py-3 sm:px-6">
         <button
           onClick={onExit}
           className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-          aria-label="Keluar kuis"
+          aria-label={t("Keluar kuis")}
         >
           <X className="h-5 w-5 text-white" />
         </button>
@@ -492,6 +492,7 @@ function ResultStat({ value, label, color }: { value: string; label: string; col
 }
 
 function ResultList({ title, color, items }: { title: string; color: string; items: Answered[] }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="mt-5">
       <div className="mb-2 flex items-center gap-2">
@@ -513,7 +514,7 @@ function ResultList({ title, color, items }: { title: string; color: string; ite
             </div>
             <button
               onClick={() => void speakText(a.word.word, a.word.langCode)}
-              aria-label="Dengar"
+              aria-label={t("Dengar")}
               className="shrink-0 rounded-full p-1.5 transition-colors hover:bg-white/10"
             >
               <Volume2 className="h-3.5 w-3.5" style={{ color: SUB }} />

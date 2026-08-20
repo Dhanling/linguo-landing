@@ -37,6 +37,7 @@ import WatchUpsellModal from "./WatchUpsellModal";
 import ExplanationWordTip from "./ExplanationWordTip";
 // [watch-followup-translit-v1] Bacaan Latin kata bahasa target yang dikutip di chip.
 import { FollowupText, hasInlineReading, useFollowupReadings } from "./followupTranslit";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 // Teal lebih gelap khusus permukaan yang membawa teks putih (tab aktif, gelembung
@@ -117,6 +118,7 @@ export default function WordStudy({
   onClose: () => void;
   onSavedChange?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const lang = getImmersionLang(langCode);
   const [tab, setTab] = useState<"study" | "ask">("study");
   const [saved, setSaved] = useState(false);
@@ -227,12 +229,12 @@ export default function WordStudy({
             ...c,
             {
               role: "ai",
-              text: a.answer || "Maaf, tidak ada jawaban. Coba lagi.",
+              text: a.answer || t("Maaf, tidak ada jawaban. Coba lagi."),
               followups: a.followups,
             },
           ])
         )
-        .catch(() => setChat((c) => [...c, { role: "ai", text: "Gagal memuat jawaban. Coba lagi." }]))
+        .catch(() => setChat((c) => [...c, { role: "ai", text: t("Gagal memuat jawaban. Coba lagi.") }]))
         .finally(() => setAsking(false));
     },
     [asking, word, sentence, langCode, baseCode]
@@ -303,18 +305,18 @@ export default function WordStudy({
           )}
           {saveError && (
             <p className="mt-1.5 text-[12px] font-medium leading-snug" style={{ color: "#FCA5A5" }}>
-              Gagal menyimpan — penyimpanan browser penuh. Bersihkan data situs lalu coba lagi.
+              {t("Gagal menyimpan — penyimpanan browser penuh. Bersihkan data situs lalu coba lagi.")}
             </p>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
-          <IconBtn label="Dengar" onClick={() => speakText(word, langCode)}>
+          <IconBtn label={t("Dengar")} onClick={() => speakText(word, langCode)}>
             <Volume2 className="h-5 w-5" />
           </IconBtn>
-          <IconBtn label={saved ? "Tersimpan" : "Simpan"} active={saved} onClick={toggleSave}>
+          <IconBtn label={saved ? t("Tersimpan") : t("Simpan")} active={saved} onClick={toggleSave}>
             {saved ? <BookmarkCheck className="h-5 w-5" /> : <BookmarkPlus className="h-5 w-5" />}
           </IconBtn>
-          <IconBtn label="Tutup" onClick={close}>
+          <IconBtn label={t("Tutup")} onClick={close}>
             <X className="h-5 w-5" />
           </IconBtn>
         </div>
@@ -323,10 +325,10 @@ export default function WordStudy({
       {/* Tab bar */}
       <div className="flex gap-1 px-4 pt-3 sm:px-6">
         <TabBtn active={tab === "study"} onClick={() => setTab("study")}>
-          Pelajari
+          {t("Pelajari")}
         </TabBtn>
         <TabBtn active={tab === "ask"} onClick={() => setTab("ask")}>
-          <Sparkles className="h-3.5 w-3.5" /> Tanya AI
+          <Sparkles className="h-3.5 w-3.5" /> {t("Tanya AI")}
         </TabBtn>
       </div>
 
@@ -349,14 +351,14 @@ export default function WordStudy({
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && ask(input)}
-              placeholder={`Tanya apa saja tentang "${word}"…`}
+              placeholder={`${t("Tanya apa saja tentang")} "${word}"…`}
               className="flex-1 rounded-full px-4 py-2.5 text-[14px] text-white outline-none placeholder:text-white/35"
               style={{ backgroundColor: CARD }}
             />
             <button
               onClick={() => ask(input)}
               disabled={!input.trim() || asking}
-              aria-label="Kirim"
+              aria-label={t("Kirim")}
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
               style={{ backgroundColor: TEAL_DARK }}
             >
@@ -485,6 +487,7 @@ function StudyTab({
   langCode: string;
   onAsk: (q: string) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // Pertanyaan lanjutan yang diketik langsung dari tab Pelajari.
   const [ownQ, setOwnQ] = useState("");
 
@@ -508,9 +511,9 @@ function StudyTab({
   if (errored || !deep) {
     return (
       <div className="py-16 text-center">
-        <p className="text-[14px] font-bold text-white">Gagal memuat materi</p>
+        <p className="text-[14px] font-bold text-white">{t("Gagal memuat materi")}</p>
         <p className="mt-1 text-[13px]" style={{ color: SUB }}>
-          Coba tutup lalu buka lagi kata ini.
+          {t("Coba tutup lalu buka lagi kata ini.")}
         </p>
       </div>
     );
@@ -527,14 +530,14 @@ function StudyTab({
 
       {/* Penggunaan */}
       {deep.usage && (
-        <Section title="Kapan & Bagaimana Dipakai">
+        <Section title={t("Kapan & Bagaimana Dipakai")}>
           <p className="text-[13.5px] leading-relaxed text-white/85">{deep.usage}</p>
         </Section>
       )}
 
       {/* Konjugasi (kata kerja) — bagian yang berubah diberi warna */}
       {deep.conjugation && deep.conjugation.rows.length > 0 && (
-        <Section title={deep.conjugation.caption ? `Konjugasi — ${deep.conjugation.caption}` : "Konjugasi"}>
+        <Section title={deep.conjugation.caption ? `${t("Konjugasi")} — ${deep.conjugation.caption}` : t("Konjugasi")}>
           {deep.conjugation.note && (
             <p className="mb-2.5 text-[13px] leading-relaxed text-white/75">{deep.conjugation.note}</p>
           )}
@@ -546,7 +549,7 @@ function StudyTab({
           bedanya di bawah. Dulu bacaan Latin nyempil di atas kalimat penjelasan
           sehingga tak jelas dia milik kata yang mana. */}
       {deep.similar.length > 0 && (
-        <Section title="Kata Mirip yang Gampang Ketuker">
+        <Section title={t("Kata Mirip yang Gampang Ketuker")}>
           <div className="space-y-1.5">
             {deep.similar.map((s, i) => (
               <div key={i} className="rounded-xl px-2.5 py-2" style={{ backgroundColor: ROW_ALT }}>
@@ -573,7 +576,7 @@ function StudyTab({
 
       {/* Contoh kalimat */}
       {deep.examples.length > 0 && (
-        <Section title="Contoh Kalimat">
+        <Section title={t("Contoh Kalimat")}>
           <div className="space-y-1.5">
             {deep.examples.map((ex, i) => (
               <div
@@ -583,7 +586,7 @@ function StudyTab({
               >
                 <button
                   onClick={() => speakText(ex.target, langCode)}
-                  aria-label="Dengar contoh"
+                  aria-label={t("Dengar contoh")}
                   className="mt-0.5 shrink-0 opacity-70 transition-opacity hover:opacity-100"
                   style={{ color: TEAL }}
                 >
@@ -642,7 +645,7 @@ function StudyTab({
                 setOwnQ("");
               }
             }}
-            placeholder="Atau tulis pertanyaanmu sendiri…"
+            placeholder={t("Atau tulis pertanyaanmu sendiri…")}
             className="flex-1 rounded-full px-4 py-2.5 text-[13.5px] text-white outline-none placeholder:text-white/35"
             style={{ backgroundColor: CARD }}
           />
@@ -654,7 +657,7 @@ function StudyTab({
               }
             }}
             disabled={!ownQ.trim()}
-            aria-label="Kirim pertanyaan"
+            aria-label={t("Kirim pertanyaan")}
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-transform active:scale-95 disabled:opacity-40"
             style={{ backgroundColor: TEAL_DARK }}
           >
@@ -683,6 +686,7 @@ function AskTab({
   // [watch-followup-translit-v1] Bahasa target — pemicu bacaan Latin di chip lanjutan.
   langCode: string;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // Hook harus dipanggil sebelum early-return layar pembuka di bawah (aturan hooks);
   // daftar pertanyaan dihitung dari pesan AI terakhir, kosong = tak ada fetch.
   const last = chat[chat.length - 1];
@@ -1032,15 +1036,16 @@ function spaceConjParts(parts: { t: string; c: boolean }[]): { t: string; c: boo
 // Bagian yang berubah antar-baris (part.c) diwarnai emas di dalam kata utuh, dan
 // kolom Suffix menyorotnya lagi biar pola perubahannya kelihatan sekilas.
 function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode: string }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="-mx-1 overflow-x-auto">
       <table className="w-full border-collapse text-left">
         <thead>
           <tr style={{ color: SUB }}>
-            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Bentuk</th>
-            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Kata</th>
-            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Suffix</th>
-            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">Arti</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">{t("Bentuk")}</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">{t("Kata")}</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">{t("Suffix")}</th>
+            <th className="px-1.5 py-1 text-[10.5px] font-bold uppercase tracking-wide">{t("Arti")}</th>
           </tr>
         </thead>
         <tbody>
@@ -1056,7 +1061,7 @@ function ConjugationTable({ conj, langCode }: { conj: WordConjugation; langCode:
                   <button
                     onClick={() => speakText(full, langCode)}
                     className="inline-flex items-center gap-1 text-left"
-                    aria-label="Dengar"
+                    aria-label={t("Dengar")}
                   >
                     <span className="text-[14.5px] font-bold leading-snug" dir="auto">
                       {parts.map((p, j) => (

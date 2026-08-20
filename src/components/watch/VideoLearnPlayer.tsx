@@ -99,6 +99,7 @@ import { RectFlag } from "@/components/RectFlag";
 import { useWlPanel } from "@/lib/wlAnalytics";
 import { LangPickerPanel } from "./LangPickerPanel";
 import { useOverlayLock } from "@/lib/overlayStore";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 // [watch-karaoke-number-sync-v1] Token yang isinya HANYA angka (mis. "1", "2024",
@@ -368,6 +369,7 @@ function SubtitleMenuButton({
   baseLabel: string;
   baseFlag?: string;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const cancelClose = () => {
@@ -394,7 +396,7 @@ function SubtitleMenuButton({
     >
       <button
         type="button"
-        aria-label="Opsi subtitle & terjemahan"
+        aria-label={t("Opsi subtitle & terjemahan")}
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
@@ -412,7 +414,7 @@ function SubtitleMenuButton({
           style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}
         >
           <p className="px-3.5 pb-1.5 pt-3 text-[11px] font-bold uppercase tracking-wide text-white/45">
-            Subtitle
+            {t("Subtitle")}
           </p>
           {(
             [
@@ -420,7 +422,7 @@ function SubtitleMenuButton({
                 key: "target",
                 label: targetLabel,
                 flag: targetFlag,
-                hint: "Bahasa yang dipelajari",
+                hint: t("Bahasa yang dipelajari"),
                 on: showTargetSub,
                 toggle: onToggleTargetSub,
               },
@@ -428,7 +430,7 @@ function SubtitleMenuButton({
                 key: "base",
                 label: baseLabel,
                 flag: baseFlag,
-                hint: "Terjemahan",
+                hint: t("Terjemahan"),
                 on: showSentenceTr,
                 toggle: onToggleSentenceTr,
               },
@@ -555,6 +557,7 @@ export default function VideoLearnPlayer({
   recommendations?: ImmersionVideo[];
   onSelectVideo?: (v: ImmersionVideo) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const rootRef = useRef<HTMLDivElement>(null);
   const hostRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -2415,7 +2418,7 @@ export default function VideoLearnPlayer({
             }%`,
           } as React.CSSProperties
         }
-        aria-label="Geser posisi video"
+        aria-label={t("Geser posisi video")}
       />
       <span className="shrink-0 text-[11px] font-semibold tabular-nums text-white/70">
         {fmtClock(duration)}
@@ -2463,13 +2466,13 @@ export default function VideoLearnPlayer({
           <button
             onClick={backToMini}
             className="group relative mr-auto inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
-            aria-label="Kembali (kecilkan video)"
+            aria-label={t("Kembali (kecilkan video)")}
           >
             <TabBg />
             <span className="relative inline-flex">
               <ArrowLeft className="h-5 w-5 text-white" />
             </span>
-            <IconTooltip side="bottom">Kembali</IconTooltip>
+            <IconTooltip side="bottom">{t("Kembali")}</IconTooltip>
           </button>
         ) : (
           <div className="mr-auto" />
@@ -2481,7 +2484,7 @@ export default function VideoLearnPlayer({
           <button
             onClick={onOpenVocab}
             className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
-            aria-label="Kosakata tersimpan dari video ini"
+            aria-label={t("Kosakata tersimpan dari video ini")}
           >
             <TabBg />
             <span className="relative inline-flex items-center">
@@ -2495,7 +2498,7 @@ export default function VideoLearnPlayer({
                 </span>
               )}
             </span>
-            <IconTooltip side="bottom">Kosakata</IconTooltip>
+            <IconTooltip side="bottom">{t("Kosakata")}</IconTooltip>
           </button>
         )}
 
@@ -2552,7 +2555,7 @@ export default function VideoLearnPlayer({
                     onPick={pick}
                     recentCodes={recentLangCodes}
                     readyCounts={readyCounts}
-                    title="Bahasa target (yang mau dipelajari)"
+                    title={t("Bahasa target (yang mau dipelajari)")}
                     baseLangs={onChangeBaseLang ? BASE_LANGS.filter((b) => b.code !== langCode) : undefined}
                     baseLangCode={baseLang}
                     onPickBase={
@@ -2570,13 +2573,13 @@ export default function VideoLearnPlayer({
         <button
           onClick={onClose}
           className="group relative inline-flex shrink-0 items-center justify-center rounded-full p-2 text-white"
-          aria-label="Tutup player"
+          aria-label={t("Tutup player")}
         >
           <TabBg />
           <span className="relative inline-flex">
             <X className="h-5 w-5 text-white" />
           </span>
-          <IconTooltip side="bottom">Tutup</IconTooltip>
+          <IconTooltip side="bottom">{t("Tutup")}</IconTooltip>
         </button>
         </div>
       </div>
@@ -2654,7 +2657,7 @@ export default function VideoLearnPlayer({
                   <button
                     type="button"
                     onClick={togglePlay}
-                    aria-label={playing ? "Jeda" : "Putar"}
+                    aria-label={playing ? t("Jeda") : t("Putar")}
                     className="absolute inset-0 z-[4] cursor-pointer bg-transparent"
                   />
                   {/* [watch-yt-title-v1] Judul + channel di sudut KIRI-ATAS ala YouTube —
@@ -2689,7 +2692,7 @@ export default function VideoLearnPlayer({
                     <button
                       type="button"
                       onClick={togglePlay}
-                      aria-label="Lanjut menonton"
+                      aria-label={t("Lanjut menonton")}
                       className="group/idle wl-idle-in absolute inset-0 z-[6] cursor-pointer overflow-hidden text-left"
                     >
                       {/* [watch-idle-thumb-hires-v1] Layar besar → pakai maxresdefault
@@ -2728,7 +2731,7 @@ export default function VideoLearnPlayer({
                       <span className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-5 sm:p-8">
                         <span className="flex flex-col gap-1">
                           <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/60">
-                            Dijeda
+                            {t("Dijeda")}
                           </span>
                           <span className="line-clamp-2 max-w-[70%] text-[20px] font-extrabold leading-tight text-white drop-shadow sm:text-[26px]">
                             {video.title}
@@ -2758,7 +2761,7 @@ export default function VideoLearnPlayer({
                       <button
                         type="button"
                         onClick={togglePlay}
-                        aria-label="Putar"
+                        aria-label={t("Putar")}
                         className="absolute inset-0 z-[6] flex items-center justify-center bg-black/20 transition-colors"
                       >
                         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/45 backdrop-blur-sm transition-transform hover:scale-105">
@@ -2786,7 +2789,7 @@ export default function VideoLearnPlayer({
                         <button
                           type="button"
                           onClick={enterMini}
-                          title="Video lainnya — tetap di Watch & Learn"
+                          title={t("Video lainnya — tetap di Watch & Learn")}
                           className="ml-1 inline-flex shrink-0 items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white transition-colors hover:bg-black/85"
                         >
                           <ListVideo className="h-3.5 w-3.5" /> Video lainnya
@@ -2807,12 +2810,12 @@ export default function VideoLearnPlayer({
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-                          Selesai ditonton
+                          {t("Selesai ditonton")}
                         </p>
                         <h3 className="mt-1 text-[18px] font-extrabold leading-tight text-white sm:text-[22px]">
                           {video.level ? (
                             <>
-                              Lanjut belajar{" "}
+                              {t("Lanjut belajar")}{" "}
                               <span
                                 className="inline-flex items-center rounded-md px-1.5 py-0.5 align-middle text-[13px] font-black sm:text-[15px]"
                                 style={{
@@ -2824,7 +2827,7 @@ export default function VideoLearnPlayer({
                               </span>
                             </>
                           ) : (
-                            "Tonton berikutnya"
+                            t("Tonton berikutnya")
                           )}
                         </h3>
                       </div>
@@ -2834,7 +2837,7 @@ export default function VideoLearnPlayer({
                           cancelAutoplay();
                           setEnded(false);
                         }}
-                        title="Tutup"
+                        title={t("Tutup")}
                         className="shrink-0 rounded-full bg-white/10 p-2 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
                       >
                         <X className="h-4 w-4" />
@@ -2874,7 +2877,7 @@ export default function VideoLearnPlayer({
                           <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 p-4 sm:p-5">
                             <div className="flex items-center gap-2">
                               <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/45">
-                                Berikutnya
+                                {t("Berikutnya")}
                               </span>
                               {primaryRec.level && (
                                 <span
@@ -2900,7 +2903,7 @@ export default function VideoLearnPlayer({
                               className="mt-1 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2 text-[14px] font-bold text-black transition-transform group-hover/next:scale-[1.03]"
                             >
                               <Play className="h-4 w-4" fill="currentColor" />
-                              {autoCount !== null ? `Putar dalam ${autoCount}s` : "Putar"}
+                              {autoCount !== null ? `${t("Putar dalam")} ${autoCount}s` : t("Putar")}
                             </span>
                           </div>
                         </button>
@@ -2912,7 +2915,7 @@ export default function VideoLearnPlayer({
                               onClick={cancelAutoplay}
                               className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white/85 transition-colors hover:bg-white/20"
                             >
-                              <X className="h-3.5 w-3.5" /> Batal auto-play
+                              <X className="h-3.5 w-3.5" /> {t("Batal auto-play")}
                             </button>
                           )}
                           <button
@@ -2920,7 +2923,7 @@ export default function VideoLearnPlayer({
                             onClick={replayVideo}
                             className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-2 text-[13px] font-bold text-white/85 transition-colors hover:bg-white/20"
                           >
-                            <RotateCcw className="h-3.5 w-3.5" /> Tonton lagi
+                            <RotateCcw className="h-3.5 w-3.5" /> {t("Tonton lagi")}
                           </button>
                         </div>
 
@@ -2928,7 +2931,7 @@ export default function VideoLearnPlayer({
                         {endRecs.length > 1 && (
                           <div className="mt-1">
                             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-white/40">
-                              Lainnya untukmu
+                              {t("Lainnya untukmu")}
                             </p>
                             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                               {endRecs.slice(1).map((v) => (
@@ -3022,8 +3025,8 @@ export default function VideoLearnPlayer({
                   onPointerDown={(e) => e.stopPropagation()}
                   onClick={togglePlay}
                   className="mr-auto rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
-                  aria-label={playing ? "Jeda" : "Putar"}
-                  title={playing ? "Jeda" : "Putar"}
+                  aria-label={playing ? t("Jeda") : t("Putar")}
+                  title={playing ? t("Jeda") : t("Putar")}
                 >
                   {playing ? (
                     <Pause className="h-4 w-4 text-white" />
@@ -3035,8 +3038,8 @@ export default function VideoLearnPlayer({
                   onPointerDown={(e) => e.stopPropagation()}
                   onClick={() => setMini(false)}
                   className="rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
-                  aria-label="Kembalikan ukuran video"
-                  title="Kembalikan"
+                  aria-label={t("Kembalikan ukuran video")}
+                  title={t("Kembalikan")}
                 >
                   <Maximize2 className="h-4 w-4 text-white" />
                 </button>
@@ -3044,8 +3047,8 @@ export default function VideoLearnPlayer({
                   onPointerDown={(e) => e.stopPropagation()}
                   onClick={onClose}
                   className="rounded-full bg-black/60 p-2 transition-colors hover:bg-black/85"
-                  aria-label="Tutup player"
-                  title="Tutup"
+                  aria-label={t("Tutup player")}
+                  title={t("Tutup")}
                 >
                   <X className="h-4 w-4 text-white" />
                 </button>
@@ -3121,8 +3124,8 @@ export default function VideoLearnPlayer({
                 <div
                   role="button"
                   tabIndex={0}
-                  aria-label="Geser posisi subtitle (klik-ganda untuk reset)"
-                  title="Seret untuk memindahkan subtitle • klik-ganda untuk reset"
+                  aria-label={t("Geser posisi subtitle (klik-ganda untuk reset)")}
+                  title={t("Seret untuk memindahkan subtitle • klik-ganda untuk reset")}
                   onPointerDown={onSubDragStart}
                   onPointerMove={onSubDragMove}
                   onPointerUp={onSubDragEnd}
@@ -3227,10 +3230,10 @@ export default function VideoLearnPlayer({
             {/* Analisa */}
             <ToolButton
               glyph={<Palette className="h-4 w-4" />}
-              label="Analisa"
+              label={t("Analisa")}
               active={analyze}
               disabled={txState !== "ready"}
-              title={analyze ? "Matikan analisa grammar" : "Analisa grammar kalimat"}
+              title={analyze ? t("Matikan analisa grammar") : t("Analisa grammar kalimat")}
               onClick={() => {
                 // Gate: Analisa grammar ikut paywall belajar (cicip bersama arti kata).
                 // Mematikan mode selalu boleh; menyalakan butuh premium/cicip tersisa.
@@ -3250,7 +3253,7 @@ export default function VideoLearnPlayer({
             {/* Kecepatan — nilai jadi glyph, label "Kecepatan" muncul saat hover */}
             <ToolButton
               glyph={`${SPEEDS[speedIdx]}x`}
-              label="Kecepatan"
+              label={t("Kecepatan")}
               onClick={() => applySpeed((speedIdx + 1) % SPEEDS.length)}
             />
 
@@ -3260,7 +3263,7 @@ export default function VideoLearnPlayer({
               <ToolButton
                 glyph={<Gauge className="h-4 w-4" />}
                 label={`Kualitas: ${qualityLabel(quality)}`}
-                title="Kualitas video (hemat paket data)"
+                title={t("Kualitas video (hemat paket data)")}
                 active={qualityMenuOpen || quality !== "auto"}
                 onClick={() => {
                   refreshQualityLevels();
@@ -3298,7 +3301,7 @@ export default function VideoLearnPlayer({
             {txState === "none" && (
               <ToolButton
                 glyph="CC"
-                label={showCC ? "Sembunyikan CC" : "Tampilkan CC"}
+                label={showCC ? t("Sembunyikan CC") : t("Tampilkan CC")}
                 active={showCC}
                 onClick={() => setShowCC((v) => !v)}
               />
@@ -3308,7 +3311,7 @@ export default function VideoLearnPlayer({
             <ToolButton
               glyph={<Type className="h-4 w-4" />}
               label={`Teks: ${FONT_LEVELS[fontIdx].label}`}
-              title="Ukuran teks subtitle"
+              title={t("Ukuran teks subtitle")}
               onClick={cycleFont}
             />
 
@@ -3330,9 +3333,9 @@ export default function VideoLearnPlayer({
                 buat memberi video ruang lebih atau memunculkan transkrip per-baris. */}
             <ToolButton
               glyph={showPanel ? <PanelRightClose className="h-4 w-4" /> : <PanelRightOpen className="h-4 w-4" />}
-              label="Transkrip"
+              label={t("Transkrip")}
               active={showPanel}
-              title={showPanel ? "Sembunyikan transkrip" : "Tampilkan transkrip"}
+              title={showPanel ? t("Sembunyikan transkrip") : t("Tampilkan transkrip")}
               onClick={() => setShowPanel((v) => !v)}
             />
 
@@ -3340,8 +3343,8 @@ export default function VideoLearnPlayer({
                 daftar rekomendasi muncul mengisi kolom kiri & bisa discroll. */}
             <ToolButton
               glyph={<ListVideo className="h-4 w-4" />}
-              label="Rekomendasi"
-              title="Kecilkan video & tampilkan rekomendasi"
+              label={t("Rekomendasi")}
+              title={t("Kecilkan video & tampilkan rekomendasi")}
               onClick={enterMini}
             />
 
@@ -3351,9 +3354,9 @@ export default function VideoLearnPlayer({
                 panel riwayat kalau tak ada kalimat tayang. */}
             <ToolButton
               glyph={<Sparkles className="h-4 w-4" />}
-              label="Analisa kalimat"
+              label={t("Analisa kalimat")}
               active={historyOpen}
-              title={historyOpen ? "Tutup riwayat" : "Analisa kalimat tayang (AI)"}
+              title={historyOpen ? t("Tutup riwayat") : t("Analisa kalimat tayang (AI)")}
               onClick={() => {
                 if (historyOpen) return setHistoryOpen(false);
                 const cue = visibleCue ?? activeCue;
@@ -3367,9 +3370,9 @@ export default function VideoLearnPlayer({
             {/* Fullscreen player kita (bukan iframe) — subtitle & transkrip tetap ada. */}
             <ToolButton
               glyph={fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
-              label={fullscreen ? "Keluar" : "Layar penuh"}
+              label={fullscreen ? t("Keluar") : t("Layar penuh")}
               active={fullscreen}
-              title={fullscreen ? "Keluar layar penuh" : "Layar penuh"}
+              title={fullscreen ? t("Keluar layar penuh") : t("Layar penuh")}
               onClick={toggleFullscreen}
             />
           </div>
@@ -3384,7 +3387,7 @@ export default function VideoLearnPlayer({
           <div
             role="separator"
             aria-orientation="vertical"
-            aria-label="Atur lebar transkrip"
+            aria-label={t("Atur lebar transkrip")}
             onPointerDown={onSplitDragStart}
             onDoubleClick={() => {
               setSplitPct(62);
@@ -3395,7 +3398,7 @@ export default function VideoLearnPlayer({
               }
             }}
             className="group hidden shrink-0 cursor-col-resize touch-none items-center justify-center lg:flex lg:w-2"
-            title="Seret untuk atur lebar · klik ganda untuk reset"
+            title={t("Seret untuk atur lebar · klik ganda untuk reset")}
           >
             <div
               className="h-10 w-1 rounded-full bg-white/15 transition-colors group-hover:bg-white/40"
@@ -3434,7 +3437,7 @@ export default function VideoLearnPlayer({
             {translitLoading && (
               <span className="ml-auto inline-flex items-center gap-1.5 text-[11.5px]" style={{ color: SUB }}>
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                Menyiapkan bacaan Latin…
+                {t("Menyiapkan bacaan Latin…")}
               </span>
             )}
             {/* [watch-panel-hide-tr-v1] Tutup/buka baris terjemahan di transkrip —
@@ -3443,14 +3446,14 @@ export default function VideoLearnPlayer({
               <button
                 type="button"
                 onClick={togglePanelTr}
-                aria-label={showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+                aria-label={showPanelTr ? t("Sembunyikan terjemahan") : t("Tampilkan terjemahan")}
                 aria-pressed={showPanelTr}
                 className="group relative ml-auto inline-flex shrink-0 items-center justify-center rounded-full p-1 transition-colors hover:text-white"
                 style={{ color: showPanelTr ? GOLD : SUB }}
               >
                 {showPanelTr ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
                 <IconTooltip side="bottom" align="right">
-                  {showPanelTr ? "Sembunyikan terjemahan" : "Tampilkan terjemahan"}
+                  {showPanelTr ? t("Sembunyikan terjemahan") : t("Tampilkan terjemahan")}
                 </IconTooltip>
               </button>
             )}
@@ -3468,8 +3471,8 @@ export default function VideoLearnPlayer({
                 <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin" />
                 <span className="text-[13px] leading-relaxed">
                   {asrRunning
-                    ? "Membuat subtitle dengan AI… ini bisa memakan waktu sekitar 1 menit. Kamu bisa tetap menonton dulu."
-                    : "Memuat transkrip…"}
+                    ? t("Membuat subtitle dengan AI… ini bisa memakan waktu sekitar 1 menit. Kamu bisa tetap menonton dulu.")
+                    : t("Memuat transkrip…")}
                 </span>
               </div>
             )}
@@ -3479,10 +3482,10 @@ export default function VideoLearnPlayer({
                   <>
                     <span>
                       {genFail === "cap"
-                        ? "Kuota pembuatan subtitle AI hari ini sudah penuh — coba lagi besok ya. Sementara itu subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar."
+                        ? t("Kuota pembuatan subtitle AI hari ini sudah penuh — coba lagi besok ya. Sementara itu subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar.")
                         : genFail === "timeout"
-                          ? "Subtitle AI-nya masih diproses lebih lama dari biasanya. Subtitle bawaan YouTube (CC) sudah dinyalakan — coba muat ulang sebentar lagi."
-                          : "Gagal memulai pembuatan subtitle AI (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — coba lagi ya."}
+                          ? t("Subtitle AI-nya masih diproses lebih lama dari biasanya. Subtitle bawaan YouTube (CC) sudah dinyalakan — coba muat ulang sebentar lagi.")
+                          : t("Gagal memulai pembuatan subtitle AI (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — coba lagi ya.")}
                     </span>
                     {genFail !== "cap" && (
                       <button
@@ -3492,7 +3495,7 @@ export default function VideoLearnPlayer({
                         style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
                       >
                         <RotateCcw className="h-3.5 w-3.5" />
-                        Coba lagi
+                        {t("Coba lagi")}
                       </button>
                     )}
                   </>
@@ -3500,8 +3503,8 @@ export default function VideoLearnPlayer({
                   <>
                     <span>
                       {txReason === "no_captions"
-                        ? "Transkrip interaktif belum bisa disiapkan untuk video ini. Subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton."
-                        : "Pembuatan transkrip sempat gagal (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — kamu bisa coba siapkan transkrip interaktif lagi."}
+                        ? t("Transkrip interaktif belum bisa disiapkan untuk video ini. Subtitle bawaan YouTube (CC) sudah dinyalakan supaya kamu tetap bisa belajar sambil menonton.")
+                        : t("Pembuatan transkrip sempat gagal (bisa jadi sesaat). Subtitle bawaan YouTube (CC) sudah dinyalakan — kamu bisa coba siapkan transkrip interaktif lagi.")}
                     </span>
                     <button
                       type="button"
@@ -3510,7 +3513,7 @@ export default function VideoLearnPlayer({
                       style={{ backgroundColor: "rgba(26,158,158,0.14)", color: TEAL, border: "1px solid rgba(26,158,158,0.4)" }}
                     >
                       <RotateCcw className="h-3.5 w-3.5" />
-                      Coba lagi
+                      {t("Coba lagi")}
                     </button>
                   </>
                 )}
@@ -3564,7 +3567,7 @@ export default function VideoLearnPlayer({
                         e.stopPropagation();
                         openSentenceStudy(c);
                       }}
-                      aria-label="Analisa kalimat ini dengan AI"
+                      aria-label={t("Analisa kalimat ini dengan AI")}
                       className={`group/ex absolute right-2 z-10 inline-flex h-7 w-7 items-center justify-center rounded-full transition-all hover:bg-white/10 ${
                         showPanelTr ? "top-1.5" : "top-2.5"
                       } ${on ? "opacity-100" : "opacity-0 group-hover:opacity-100 focus-visible:opacity-100"}`}
@@ -3577,7 +3580,7 @@ export default function VideoLearnPlayer({
                         className="pointer-events-none absolute right-full top-1/2 mr-1.5 -translate-y-1/2 whitespace-nowrap rounded-md px-2 py-1 text-[10.5px] font-bold text-white opacity-0 transition-opacity group-hover/ex:opacity-100 group-focus-visible/ex:opacity-100"
                         style={{ backgroundColor: "rgba(0,0,0,0.85)", border: `1px solid ${BORDER}` }}
                       >
-                        Analisa
+                        {t("Analisa")}
                       </span>
                     </button>
                     {/* [watch-translit-ruby-v2] Bacaan Latin menumpuk di atas KATA-nya
@@ -3762,7 +3765,7 @@ export default function VideoLearnPlayer({
         <div
           role="separator"
           aria-orientation="vertical"
-          aria-label="Atur lebar panel analisa"
+          aria-label={t("Atur lebar panel analisa")}
           onPointerDown={onDrawerDragStart}
           onDoubleClick={() => {
             setDrawerWidth(440);
@@ -3807,7 +3810,7 @@ export default function VideoLearnPlayer({
                     }}
                     className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold transition-colors hover:bg-white/10"
                     style={{ color: SUB }}
-                    title="Kosongkan riwayat"
+                    title={t("Kosongkan riwayat")}
                   >
                     <Trash2 className="h-3.5 w-3.5" /> Hapus
                   </button>
@@ -3832,7 +3835,7 @@ export default function VideoLearnPlayer({
                         key={`${h.langCode}::${h.word}::${h.ts}`}
                         onClick={() => openFromHistory(h)}
                         className="flex w-full flex-col gap-0.5 px-4 py-2 text-left transition-colors hover:bg-white/5"
-                        title="Buka analisa kata ini"
+                        title={t("Buka analisa kata ini")}
                       >
                         <span className="text-[14px] font-bold text-white" dir={isRtl(h.langCode) ? "rtl" : undefined}>
                           {h.word}
@@ -3960,6 +3963,7 @@ function FocusLine({
   onHoverPause?: () => void;
   onHoverResume?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   // [watch-phrase-chunk-v1] Frasa ("the king" → 1 unit) untuk bar subtitle fokus —
   // dari kelas kata (breakdown) + penjajaran AI (alignMap) baris aktif.
   const chunks = useMemo(
@@ -3991,9 +3995,9 @@ function FocusLine({
         <p className="text-[13px]" style={{ color: SUB }}>
           {txState === "loading"
             ? asrRunning
-              ? "Membuat subtitle dengan AI… (~1 menit)"
-              : "Menyiapkan subtitle…"
-            : "Menonton dengan subtitle bawaan YouTube."}
+              ? t("Membuat subtitle dengan AI… (~1 menit)")
+              : t("Menyiapkan subtitle…")
+            : t("Menonton dengan subtitle bawaan YouTube.")}
         </p>
       </div>
     );
@@ -4022,7 +4026,7 @@ function FocusLine({
           </div>
         ) : breakdown === "error" ? (
           <button onClick={onRetryAnalyze} className="text-[13px] font-bold" style={{ color: TEAL }}>
-            Gagal menganalisa — ketuk untuk coba lagi
+            {t("Gagal menganalisa — ketuk untuk coba lagi")}
           </button>
         ) : (
           <div
@@ -4071,7 +4075,7 @@ function FocusLine({
                     {t.word}
                   </span>
                   <span className="block text-[10px] font-semibold" style={{ color: SUB }}>
-                    {POS_LABEL_ID[t.cat]}
+                    {tr(POS_LABEL_ID[t.cat])}
                   </span>
                 </span>
               ))}
@@ -4092,7 +4096,7 @@ function FocusLine({
                 className="mt-2 font-semibold italic opacity-70"
                 style={{ color: GOLD, fontSize: 13 * scale, textShadow: TRANSLATION_SHADOW }}
               >
-                Menerjemahkan…
+                {t("Menerjemahkan…")}
               </p>
             ) : null}
           </div>
@@ -4200,7 +4204,7 @@ function FocusLine({
           className="mt-1.5 font-semibold italic opacity-70"
           style={{ color: GOLD, fontSize: 13 * scale, textShadow: TRANSLATION_SHADOW }}
         >
-          Menerjemahkan…
+          {t("Menerjemahkan…")}
         </p>
       ) : null}
       </div>
