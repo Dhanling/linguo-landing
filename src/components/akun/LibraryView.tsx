@@ -28,6 +28,9 @@ import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateri
 import { fetchLessonStats, keepReady } from "@/lib/lmsContent";
 /* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
 import { orMilikSaya } from "@/lib/digitalOwnership";
+/* [pustaka-kartu-foto-v1] sampul kartu pakai foto stok bahasa yang sama dengan
+   kartu kelas di dashboard siswa, jadi Perpustakaan tidak lagi terasa "kartu warna polos". */
+import { getLangPhoto } from "@/lib/lang-visuals";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
 import EbookReader from "@/components/akun/EbookReader";
 
@@ -90,6 +93,30 @@ function glyphFor(p: DProduct) {
   if (p.level) return p.level.slice(0, 3).toUpperCase();
   if (lang) return lang.slice(0, 2).toUpperCase();
   return p.type === "ebook" ? "PDF" : "EN";
+}
+
+// [pustaka-kartu-foto-v1] Sampul kartu: cover_url produk kalau ada, kalau tidak
+// jatuh ke foto stok bahasa (public/lang/<slug>.jpg) — sumber yang sama dipakai
+// kartu kelas. Balikin null → kartu tetap pakai gradien + glyph seperti dulu.
+function fotoSampul(p: DProduct): string | null {
+  if (p.cover_url) return p.cover_url;
+  return getLangPhoto(p.language);
+}
+
+// [pustaka-judul-ringkas-v1] Judul katalog dari admin panjangnya bisa dua baris penuh
+// ("Modul Belajar Bahasa Arab Linguo — Arabic 101 (Edisi Bahasa Indonesia)"). Di kartu
+// yang dibaca sekilas, potongan boilerplate itu cuma bikin semua kartu kelihatan sama.
+// Kita buang penggal yang isinya "Modul Belajar/Mandiri ..." atau cuma merek "Linguo",
+// lalu sisakan penggal pertama yang benar-benar menamai produknya.
+const PENGGAL_BOILERPLATE = /(modul\s+(belajar|mandiri)|^linguo$|^bahasa\s+\w+$)/i;
+function judulRingkas(raw: string): string {
+  const penggal = (raw || "")
+    .split(/\s+[—–|]\s+|\s+-\s+/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+  const sisa = penggal.filter((x) => !PENGGAL_BOILERPLATE.test(x));
+  const judul = (sisa[0] || penggal[0] || raw || "").replace(/\s*\bLinguo\b\s*/gi, " ").trim();
+  return judul || raw;
 }
 
 function fmtDate(iso: string) {
@@ -584,11 +611,22 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     return { total: purchases.length, running, certs };
   }, [purchases, byLang]);
 
-  const counts = useMemo(() => ({
-    all: purchases.length,
-    elearning: purchases.filter((p) => p.digital_products.type === "elearning").length,
-    ebook: purchases.filter((p) => p.digital_products.type === "ebook").length,
-  }), [purchases]);
+  // [pustaka-tab-hitung-katalog-v1] Angka di tab dulu cuma menghitung produk yang
+  // SUDAH dibeli, jadi selalu "0" padahal daftar di bawahnya berisi 47 produk
+  // tergembok. Sekarang angkanya = jumlah kartu yang benar-benar muncul di tab itu
+  // (milik siswa + katalog yang belum dimiliki).
+  const counts = useMemo(() => {
+    const punya = new Set(purchases.map((p) => p.digital_products?.id).filter(Boolean));
+    const belum = katalog.filter((k) => !punya.has(k.id));
+    const hitung = (tipe: ProductType) =>
+      purchases.filter((p) => p.digital_products.type === tipe).length +
+      belum.filter((k) => k.type === tipe).length;
+    return {
+      all: purchases.length + belum.length,
+      elearning: hitung("elearning"),
+      ebook: hitung("ebook"),
+    };
+  }, [purchases, katalog]);
 
   const hero = useMemo(() => {
     for (const p of purchases) {
@@ -888,11 +926,21 @@ function StatChip({ icon, label }: { icon: React.ReactNode; label: string }) {
 
 function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean }) {
   const resuming = prog && prog.pct > 0 && prog.pct < 100;
+  const foto = fotoSampul(p); // [pustaka-kartu-foto-v1]
   return (
     <div className="relative aspect-[16/10] w-full overflow-hidden" style={{ background: gradFor(p.id) }}>
-      {p.cover_url ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={p.cover_url} alt={p.title} className="absolute inset-0 h-full w-full object-cover" />
+      {foto ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={foto}
+            alt={p.title}
+            className="absolute inset-0 h-full w-full object-cover"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          />
+          {/* scrim: label bahasa & ikon putih di atas foto wajib tetap kebaca */}
+          <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-black/10" />
+        </>
       ) : (
         <span className={`absolute -bottom-4 right-3 font-black leading-none text-white/15 ${big ? "text-[120px]" : "text-[96px]"}`}>
           {glyphFor(p)}
@@ -957,7 +1005,8 @@ function ProductCard({
         <div className="flex items-center justify-between gap-2">
           <span className="text-[11px] font-semibold text-slate-400">Dibeli {fmtDate(p.created_at)}</span>
         </div>
-        <h3 className="line-clamp-2 min-h-[44px] text-[16px] font-extrabold leading-snug text-[#12172B]">{prod.title}</h3>
+        {/* [pustaka-judul-ringkas-v1] satu baris — judul panjang dipotong, bukan dilipat */}
+        <h3 title={prod.title} className="truncate text-[16px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(prod.title)}</h3>
 
         <p className="text-[12px] font-medium text-slate-500">
           {prod.type === "ebook"
@@ -1025,9 +1074,14 @@ function ProductRow({
   return (
     <div className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>
-        {prod.cover_url ? (
+        {fotoSampul(prod) ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={prod.cover_url} alt={prod.title} className="absolute inset-0 h-full w-full object-cover" />
+          <img
+            src={fotoSampul(prod) as string}
+            alt={prod.title}
+            className="absolute inset-0 h-full w-full object-cover"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          />
         ) : (
           <span className="absolute inset-0 flex items-center justify-center text-2xl font-black text-white/25">{glyphFor(prod)}</span>
         )}
@@ -1037,7 +1091,7 @@ function ProductRow({
           <TypeBadge type={prod.type} />
           {prog && <span className="text-[11px] font-bold text-slate-400">{prog.pct}%</span>}
         </div>
-        <h3 className="truncate text-[15px] font-extrabold text-[#12172B]">{prod.title}</h3>
+        <h3 title={prod.title} className="truncate text-[15px] font-extrabold text-[#12172B]">{judulRingkas(prod.title)}</h3>
         <p className="text-[12px] font-medium text-slate-400">Dibeli {fmtDate(p.created_at)}</p>
         {/* [materi-belum-siap-v1] */}
         {!ready && !expired && (
@@ -1258,6 +1312,7 @@ function LockedCard({
 }) {
   const mulai = hargaMulai(item);
   const bisaBeli = ready && mulai !== null;
+  const foto = fotoSampul(item); // [pustaka-kartu-foto-v1]
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:border-slate-300">
@@ -1268,9 +1323,21 @@ function LockedCard({
         className="relative h-[132px] w-full shrink-0 overflow-hidden disabled:cursor-default"
         style={{ background: gradFor(item.id) }}
       >
-        <span className="absolute -bottom-3 right-3 text-[74px] font-black leading-none text-white/15">
-          {glyphFor(item)}
-        </span>
+        {foto ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={foto}
+              alt={item.title}
+              className="absolute inset-0 h-full w-full object-cover"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+          </>
+        ) : (
+          <span className="absolute -bottom-3 right-3 text-[74px] font-black leading-none text-white/15">
+            {glyphFor(item)}
+          </span>
+        )}
         <span className="absolute inset-0 bg-slate-900/45 backdrop-blur-[1.5px]" />
         <span className="absolute left-3 top-3"><TypeBadge type={item.type} /></span>
         <span className="absolute inset-0 flex items-center justify-center">
@@ -1282,7 +1349,8 @@ function LockedCard({
 
       {/* body */}
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="line-clamp-2 text-[15px] font-extrabold leading-snug text-[#12172B]">{item.title}</h3>
+        {/* [pustaka-judul-ringkas-v1] satu baris, tanpa penggal "Modul Belajar Bahasa … Linguo" */}
+        <h3 title={item.title} className="truncate text-[15px] font-extrabold leading-snug text-[#12172B]">{judulRingkas(item.title)}</h3>
         <p className="mt-1 text-[12.5px] font-medium text-slate-500">
           {[item.language, item.level].filter(Boolean).join(" · ") || (item.type === "ebook" ? "E-Book" : "E-Learning")}
         </p>
@@ -1298,12 +1366,21 @@ function LockedCard({
               <p className="text-[13px] font-bold text-slate-400">Harga menyusul</p>
             )}
           </div>
+          {/* [pustaka-segera-hadir-kontras-v1] Dulu tombol nonaktif memakai varian
+              `disabled:bg-slate-300` + teks putih: kelas varian itu tidak kena aturan
+              mode gelap dashboard, jadi tulisannya putih di atas abu terang — nyaris
+              tak terbaca. Sekarang warnanya kelas biasa (ikut aturan gelap) dan
+              teksnya gelap/tebal supaya kontras di terang maupun gelap. */}
           <button
             onClick={onBuy}
             disabled={!bisaBeli}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12A37E] px-3.5 py-2 text-[13px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.98] disabled:bg-slate-300 disabled:active:scale-100"
+            className={`inline-flex shrink-0 items-center gap-1.5 rounded-xl px-3.5 py-2 text-[13px] font-bold transition active:scale-[0.98] ${
+              bisaBeli
+                ? "bg-[#12A37E] text-white hover:bg-[#0C8163]"
+                : "cursor-default bg-slate-200 text-slate-700 ring-1 ring-slate-300 active:scale-100"
+            }`}
           >
-            {bisaBeli ? <><ShoppingBag className="h-4 w-4" strokeWidth={2.4} /> Beli</> : "Segera hadir"}
+            {bisaBeli ? <><ShoppingBag className="h-4 w-4" strokeWidth={2.4} /> Beli</> : <><Clock className="h-4 w-4" strokeWidth={2.4} /> Segera hadir</>}
           </button>
         </div>
       </div>
