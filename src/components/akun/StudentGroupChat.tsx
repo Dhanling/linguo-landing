@@ -28,7 +28,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import {
-  Check, ChevronDown, ChevronLeft, ChevronRight, FileText, Loader2, Maximize2, MessagesSquare,
+  AlertTriangle, Check, ChevronDown, ChevronLeft, ChevronRight, FileText, Loader2, Maximize2, MessagesSquare,
   Minimize2, Reply, RotateCw, Search, Send, Smile, Users, X,
 } from "lucide-react";
 import { supabase } from "@/lib/supabase-client";
@@ -455,6 +455,13 @@ export default function StudentGroupChat({
   const [identityReady, setIdentityReady] = useState(() => !previewStudentId && !!sgIdentityCache);
   const [groups, setGroups] = useState<GroupRow[]>(() => (previewStudentId ? [] : sgGroupsCache ?? []));
   const [loadingGroups, setLoadingGroups] = useState(() => (previewStudentId ? true : !sgGroupsCache));
+  /* [grup-gagal-bukan-kosong-v1] Daftar grup GAGAL dimuat ≠ siswanya tak punya grup.
+     Dulu dua-duanya berakhir di layar "Grup kelasmu belum tersambung" — paling sering
+     kejadian di mode pratinjau POV staf yang sesinya habis (403): layarnya terbaca
+     seolah fiturnya tak tersambung padahal grupnya ada. Sekarang kegagalan punya
+     layarnya sendiri; hanya jawaban yang benar-benar sampai boleh bilang "kosong". */
+  const [loadError, setLoadError] = useState<"expired" | "gagal" | null>(null);
+  const [reloadTick, setReloadTick] = useState(0);
   const [active, setActive] = useState<GroupRow | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([]);
   // [perf:grup-prewarm-v1] pratayang & badge ikut dari cache modul (bukan pratinjau)
@@ -480,6 +487,11 @@ export default function StudentGroupChat({
      Ref bikin interval-nya cuma "diam" selagi tab tersembunyi. */
   const pausedRef = useRef(paused);
   useEffect(() => { pausedRef.current = paused; }, [paused]);
+
+  /* Dibaca di dalam poll daftar grup (efek jalan sekali) untuk tahu apakah layar
+     sedang kosong — dep `groups` di efek itu akan memicu muat ulang tiap 20 detik. */
+  const groupsRef = useRef<GroupRow[]>(groups);
+  useEffect(() => { groupsRef.current = groups; }, [groups]);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bottomRef = useRef<HTMLDivElement | null>(null);
@@ -589,8 +601,10 @@ export default function StudentGroupChat({
           if (!alive) return;
           setIdentity(json.identity ?? null);
           rows = (json.groups as GroupRow[]) ?? [];
-        } catch {
+        } catch (e) {
           if (!alive) return;
+          // 403 = cookie pratinjau habis/dicabut; sisanya jaringan/server.
+          setLoadError(String((e as Error)?.message) === "403" ? "expired" : "gagal");
           setLoadingGroups(false);
           return;
         }
@@ -601,12 +615,16 @@ export default function StudentGroupChat({
           // Timeout/pembatalan cukup ditunggu poll berikutnya — daftar lama tetap
           // terpampang, jauh lebih berguna daripada toast merah.
           if (!isAbortError(error)) toast.error(`Gagal memuat grup: ${error.message}`);
+          // Daftar lama (kalau ada) tetap dipakai; yang kosong dapat layar galat,
+          // bukan layar "belum tersambung".
+          if (groupsRef.current.length === 0) setLoadError("gagal");
           setLoadingGroups(false);
           return;
         }
         rows = (data as GroupRow[]) ?? [];
       }
       if (!preview) sgGroupsCache = rows; // [perf:grup-cache-modul-v1]
+      setLoadError(null);
       setGroups(rows);
       setLoadingGroups(false);
       if (rows.length === 0) {
@@ -663,7 +681,7 @@ export default function StudentGroupChat({
       alive = false;
       clearInterval(timer);
     };
-  }, [preview, previewStudentId]);
+  }, [preview, previewStudentId, reloadTick]);
 
   const filteredGroups = useMemo(() => {
     const q = groupQuery.trim().toLowerCase();
@@ -1132,6 +1150,40 @@ export default function StudentGroupChat({
     return (
       <div className="flex items-center justify-center py-24">
         <Loader2 className="h-7 w-7 animate-spin text-gray-300" />
+      </div>
+    );
+  }
+
+  /* [grup-gagal-bukan-kosong-v1] Gagal memuat → katakan gagal. Sesi pratinjau POV
+     yang habis (403) paling sering tersamar jadi "belum tersambung"; di layar ini
+     staf langsung tahu yang perlu dibuka ulang adalah sesinya, bukan grup siswanya. */
+  if (loadError && groups.length === 0) {
+    const expired = loadError === "expired";
+    return (
+      <div className="px-6 py-16 text-center">
+        <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-600">
+          <AlertTriangle className="h-6 w-6" />
+        </span>
+        <h2 className="mt-4 text-base font-bold text-gray-900">
+          {expired ? "Sesi pratinjau sudah habis" : "Grup kelas gagal dimuat"}
+        </h2>
+        <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-gray-500">
+          {expired
+            ? "Layar ini tidak bisa membaca grup kelas siswa lagi. Buka ulang “Lihat sebagai siswa” dari dashboard admin — bukan berarti siswanya tak punya grup kelas."
+            : "Sambungan ke server terputus sebentar. Coba muat ulang; percakapan grupmu tidak ke mana-mana."}
+        </p>
+        {!expired && (
+          <button
+            type="button"
+            onClick={() => {
+              setLoadingGroups(true);
+              setReloadTick((t) => t + 1);
+            }}
+            className="mt-4 rounded-lg bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-700"
+          >
+            Muat ulang
+          </button>
+        )}
       </div>
     );
   }

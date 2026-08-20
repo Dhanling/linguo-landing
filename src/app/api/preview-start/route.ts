@@ -19,6 +19,23 @@ const DEST: Record<string, string> = {
   grup: "/akun/grup",
 };
 
+/* [preview-reopen-v1] "Sekali pakai" dulu diartikan harfiah: tukar pertama
+   membakar kodenya, tukar kedua ditolak — padahal tukar kedua nyaris selalu
+   BROWSER YANG SAMA, bukan orang lain: tab yang gagal muat lalu di-reload,
+   tombol Back, "Buka lagi"/"Salin tautan" di dialog, atau Safari yang membuka
+   ulang tab pratinjau saat dipulihkan. Gejalanya: staf klik "Lihat sebagai
+   Siswa" dan yang muncul "Kode ini sudah dipakai".
+
+   Sekarang yang dijaga tetap sama — link yang tersalin ke chat orang lain tak
+   membuka apa-apa — lewat dua pagar yang lebih tepat sasaran:
+     1. browser yang cookie sesinya SUDAH memegang kode itu boleh menukar lagi
+        (dia memang sudah punya sesinya; menolaknya tidak menutup apa pun);
+     2. selebihnya masih boleh dalam GRACE_MS setelah pemakaian pertama, untuk
+        kasus cookie-nya belum sempat nyangkut (tab gagal muat).
+   Di luar itu kodenya mati, dan `expires_at` (30 menit, sliding) tetap batas
+   atasnya. */
+const GRACE_MS = 10 * 60 * 1000;
+
 function fail(reason: string) {
   return new NextResponse(
     `<!doctype html><meta charset="utf-8"><title>Pratinjau tidak berlaku</title>` +
@@ -31,15 +48,23 @@ function fail(reason: string) {
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code");
+  const cookieCode = req.cookies.get(PREVIEW_COOKIE)?.value || null;
   const row = await lookupPreviewCode(code);
   if (!row) return fail("Kodenya sudah kedaluwarsa. Buka lagi dari menu avatar di dashboard admin.");
-  if (row.used_at) return fail("Kode ini sudah dipakai. Terbitkan link pratinjau baru.");
 
-  await serviceRest(`staff_preview_codes?code=eq.${encodeURIComponent(row.code)}`, {
-    method: "PATCH",
-    headers: { Prefer: "return=minimal" },
-    body: JSON.stringify({ used_at: new Date().toISOString() }),
-  });
+  if (row.used_at) {
+    const sameBrowser = cookieCode === row.code;
+    const sinceUsed = Date.now() - new Date(row.used_at).getTime();
+    if (!sameBrowser && !(sinceUsed >= 0 && sinceUsed < GRACE_MS)) {
+      return fail("Kode ini sudah dipakai. Terbitkan link pratinjau baru dari dashboard admin.");
+    }
+  } else {
+    await serviceRest(`staff_preview_codes?code=eq.${encodeURIComponent(row.code)}`, {
+      method: "PATCH",
+      headers: { Prefer: "return=minimal" },
+      body: JSON.stringify({ used_at: new Date().toISOString() }),
+    });
+  }
 
   const to = DEST[req.nextUrl.searchParams.get("to") || "akun"] || DEST.akun;
   const res = NextResponse.redirect(

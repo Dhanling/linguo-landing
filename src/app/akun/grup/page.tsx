@@ -36,19 +36,22 @@ export default function GrupKelasPage() {
     if (pid) {
       setPreviewId(pid);
       fetch(`/api/preview-group?student=${encodeURIComponent(pid)}`, { cache: "no-store" })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((j) => {
+        .then(async (r) => ({ status: r.status, json: r.ok ? await r.json() : null }))
+        .then(({ status, json }) => {
           if (!alive) return;
-          if (!j) {
-            // Cookie pratinjau tak ada/kedaluwarsa → jangan biarkan halaman kosong
-            // menggantung; kembalikan ke dashboard yang menjelaskan keadaannya.
+          if (status === 401 || status === 403) {
+            // Cookie pratinjau tak ada/kedaluwarsa → kembalikan ke dashboard yang
+            // memasang banner "Sesi pratinjau sudah habis".
             router.replace("/akun");
             return;
           }
-          setPreviewName(j.identity?.display_name ?? null);
+          /* [grup-gagal-bukan-kosong-v1] Galat lain (jaringan/5xx) TIDAK memantulkan
+             staf keluar halaman — StudentGroupChat menampilkan layar galatnya sendiri
+             lengkap dengan tombol muat ulang. */
+          setPreviewName(json?.identity?.display_name ?? null);
           setReady(true);
         })
-        .catch(() => { if (alive) router.replace("/akun"); });
+        .catch(() => { if (alive) setReady(true); });
       return () => { alive = false; };
     }
 
