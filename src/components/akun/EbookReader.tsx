@@ -832,11 +832,14 @@ export default function EbookReader({
     if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return;
     bukaKunciAudio(); // masih di dalam gerakan pengguna — lihat catatan di ebookTts
     const box = e.currentTarget.getBoundingClientRect();
-    if (!box.width || !box.height) return;
+    if (!box.height || !ph) return;
     // Kotak buku bisa sedang diskalakan CSS (cubitan belum diraster ulang), jadi
-    // ketukan dinormalkan lewat ukuran kotak yang benar-benar tampil.
-    const fx = ((e.clientX - box.left) / box.width) * lebarBuku;
-    const fy = ((e.clientY - box.top) / box.height) * ph;
+    // ketukan dinormalkan dulu ke ukuran halaman yang sebenarnya. Pembaginya
+    // TINGGI, bukan lebar: tinggi tak pernah ikut digencet flex, jadi angkanya
+    // sahih walau tata letaknya berubah.
+    const tampak = box.height / ph;
+    const fx = (e.clientX - box.left) / tampak;
+    const fy = (e.clientY - box.top) / tampak;
 
     let hal = tampil.kiri ?? tampil.kanan;
     let xh = fx;
@@ -970,7 +973,12 @@ export default function EbookReader({
             bisa digulir, sementara justify-center memotongnya. */}
         {!galat && !memuat && ukuran && (
           <div
-            className="ebook-buku relative m-auto"
+            /* shrink-0 itu WAJIB: kotak buku ini anak flex, dan waktu zoom > 100%
+               lebarnya (mis. 2310px) digencet flex jadi selebar wadah (1408px).
+               Dua akibatnya: halaman kanan yang menjulur TIDAK bisa digulir untuk
+               dilihat, dan koordinat ketukan meleset sampai 1,6x — kata yang
+               diketuk tak pernah ketemu, jadi pelafalannya terlihat "mati". */
+            className="ebook-buku relative m-auto shrink-0"
             style={{
               width: lebarBuku,
               height: ph,
