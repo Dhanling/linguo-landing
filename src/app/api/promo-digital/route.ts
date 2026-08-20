@@ -41,6 +41,73 @@ const KODE_PROMO: Record<string, {
   FREEELEARNING: { hari: 30, tipe: "elearning", maksPerAkun: 1, label: "Akses gratis 1 bulan" },
 };
 
+// ── Email ucapan (bukan tagihan) ──────────────────────────────────────────
+// Klaim promo tidak melahirkan invoice, jadi satu-satunya kabar yang sampai ke
+// pembeli dulu cuma toast di layar — sementara yang menekan "Beli" justru dapat
+// email tagihan Xendit. Yang gratis harus tetap dapat kabar, isinya ucapan
+// terima kasih + masa aktif + pintu masuk materinya.
+//
+// Best-effort: klaimnya sudah terbit di DB, email yang gagal tak boleh
+// membatalkannya (pola yang sama dipakai _shared/email.ts di edge function).
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+const EMAIL_FROM = process.env.EMAIL_FROM || "Linguo <noreply@linguo.id>";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://linguo.id";
+
+function tglIndo(iso: string) {
+  return new Date(iso).toLocaleDateString("id-ID", {
+    day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta",
+  });
+}
+
+async function kirimEmailUcapan(opts: {
+  to: string; nama: string; judul: string; kode: string; hari: number; sampai: string;
+}) {
+  if (!RESEND_API_KEY) return;
+  const html = `
+  <div style="margin:0;padding:24px;background:#F5F6F8;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+    <div style="max-width:520px;margin:0 auto;background:#fff;border-radius:20px;overflow:hidden">
+      <div style="background:#1A9E9E;padding:22px 26px;color:#fff">
+        <div style="font-size:19px;font-weight:800">Selamat belajar, ${opts.nama}! 🎉</div>
+      </div>
+      <div style="padding:24px 26px;color:#12172B">
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.6">
+          Terima kasih sudah memakai kode <b>${opts.kode}</b>. Aksesnya sudah aktif —
+          <b>tidak ada tagihan apa pun</b> untuk klaim ini.
+        </p>
+        <div style="border:1px solid #E6E8EC;border-radius:14px;padding:14px 16px;margin:0 0 18px">
+          <div style="font-size:15px;font-weight:800">${opts.judul}</div>
+          <div style="margin-top:6px;font-size:13px;color:#5B6478">
+            Gratis ${opts.hari} hari · aktif sampai ${tglIndo(opts.sampai)}
+          </div>
+        </div>
+        <a href="${BASE_URL}/akun?menu=pustaka"
+           style="display:inline-block;background:#1A9E9E;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:12px 20px;border-radius:12px">
+          Buka Perpustakaan
+        </a>
+        <p style="margin:18px 0 0;font-size:12.5px;line-height:1.6;color:#7A8496">
+          Materinya ada di menu <b>Perpustakaan</b> dashboard Linguo. Ada kendala?
+          Balas email ini atau hubungi CS Linguo ya.
+        </p>
+      </div>
+    </div>
+  </div>`;
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: EMAIL_FROM,
+        to: [opts.to],
+        subject: `Akses ${opts.judul} sudah aktif — selamat belajar!`,
+        html,
+      }),
+    });
+    if (!res.ok) console.error("[promo-digital] email gagal:", res.status, await res.text());
+  } catch (err) {
+    console.error("[promo-digital] email error (tidak fatal):", err);
+  }
+}
+
 function tolak(pesan: string, status: number) {
   return NextResponse.json({ ok: false, error: pesan }, { status, headers: NO_STORE });
 }
@@ -186,6 +253,13 @@ export async function POST(req: NextRequest) {
     await admin.from("digital_purchases").delete().eq("id", baris.id);
     return tolak("Gagal mengaktifkan akses. Coba lagi sebentar.", 500);
   }
+
+  // Kabar baiknya dikirim SESUDAH aksesnya benar-benar terbit, dan kegagalannya
+  // tidak mengubah jawaban ke klien.
+  await kirimEmailUcapan({
+    to: user.email, nama: nama.split(" ")[0] || nama, judul: prod.title,
+    kode, hari: promo.hari, sampai,
+  });
 
   return NextResponse.json(
     { ok: true, code: kode, purchase_id: baris.id, expires_at: sampai, hari: promo.hari, label: promo.label },
