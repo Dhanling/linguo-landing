@@ -570,7 +570,16 @@ function OnboardingWizard({ user, studentId, onDone }: {
   const langNoResults = langGroups.every(g => g.langs.length === 0);
   const stepCount = 6;
 
+  // [onboarding-sekali-kirim-v1] Tiga tombol di langkah terakhir ("Daftar", "Coba
+  // placement", "Lihat dashboard dulu") memanggil finish() yang sama, dan onDone
+  // menembak /api/enroll. Tanpa palang ini, klik dobel (atau pindah tombol sebelum
+  // request kelar) melahirkan DUA baris students untuk satu email — persis asal
+  // usul kembaran yang bikin dashboard mental ke onboarding — dan panggilan kedua
+  // ditolak trigger `tolak_registrasi_kembar` (23505) dengan toast merah.
+  const sudahKirim = useRef(false);
   const finish = () => {
+    if (sudahKirim.current) return;
+    sudahKirim.current = true;
     const key = `linguo_onboarded_${studentId || user?.id || user?.email}`;
     try { localStorage.setItem(key, "1"); } catch {}
     onDone({ program, lang, testType, exp, wa: waNorm, name: name.trim(), birthdate, domicile: domicileStr, level, avatarFile });
@@ -3040,11 +3049,35 @@ export default function AkunPage() {
   async function loadStudentData(email: string, silent = false) {
     if (!silent) setDataLoading(true);
     try {
-      let { data: studentData } = await supabase
+      // [akun-student-kembar-v1] JANGAN pakai .maybeSingle() di sini. Tabel
+      // `students` tidak punya unique constraint di `email`, dan kenyataannya ada
+      // 24 email yang punya dua baris (lahir dari dua insert yang balapan). Untuk
+      // email seperti itu maybeSingle() balik `data: null` (PGRST116 "multiple rows
+      // returned") — dashboard menyimpulkan "siswa belum ada" lalu melempar orang
+      // yang registrasinya sudah tersimpan balik ke onboarding, tiap kali refresh.
+      //
+      // Barisnya diambil semua, lalu dipilih yang benar-benar memegang data:
+      // kembaran yang kosong sering justru yang paling tua, jadi "ambil yang
+      // pertama" saja tidak cukup. Aturan pilih ini SAMA dengan /api/enroll biar
+      // pendaftaran baru nempel di baris yang sama dengan yang dibaca dashboard.
+      const { data: studentRows } = await supabase
         .from("students")
-        .select("id, name, email, whatsapp, avatar_url")
+        .select("id, name, email, whatsapp, avatar_url, created_at")
         .eq("email", email)
-        .maybeSingle();
+        .order("created_at", { ascending: true });
+      let studentData: any = null;
+      const kandidat = (studentRows as any[]) || [];
+      if (kandidat.length === 1) {
+        studentData = kandidat[0];
+      } else if (kandidat.length > 1) {
+        const { data: regOwners } = await supabase
+          .from("registrations")
+          .select("student_id")
+          .in("student_id", kandidat.map((r) => r.id))
+          .is("archived_at", null);
+        const punyaKelas = new Set(((regOwners as any[]) || []).map((r) => r.student_id));
+        studentData = kandidat.find((r) => punyaKelas.has(r.id)) || kandidat[0];
+      }
 
       // ─────────────────────────────────────────────────────────────────
       // SKIP-ONBOARDING FOR DIGITAL CUSTOMERS
@@ -3195,8 +3228,15 @@ export default function AkunPage() {
 
       // ── Onboarding: show for new users with no registrations ──
       const regs = enrichedRegs;
-      const onboardKey = `linguo_onboarded_${studentData.id}`;
-      if (regs.length === 0 && !localStorage.getItem(onboardKey)) {
+      // [onboarding-sekali-kirim-v1] Wizard menandai "sudah onboarding" dengan kunci
+      // ber-id AUTH (baris students-nya belum tentu ada waktu itu), sementara di sini
+      // dulu cuma kunci ber-id student yang dicek. Beda kunci = siswa yang wizard-nya
+      // sudah kelar tapi registrasinya belum jadi (mis. lagi nunggu verifikasi)
+      // dilempar balik ke onboarding. Sekarang dua-duanya dianggap sah.
+      const sudahOnboarding =
+        !!localStorage.getItem(`linguo_onboarded_${studentData.id}`) ||
+        !!localStorage.getItem(`linguo_onboarded_${user?.id || email}`);
+      if (regs.length === 0 && !sudahOnboarding) {
         setShowOnboarding(true);
       }
 

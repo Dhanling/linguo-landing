@@ -149,9 +149,16 @@ export async function POST(req: NextRequest) {
     //    upsert ON CONFLICT=email gagal dgn 42P10. Pakai SELECT dulu, baru
     //    INSERT kalau belum ada. Update data (nama/wa/avatar) saat sudah ada
     //    biar tetap fresh tanpa butuh constraint.
+    //    [akun-student-kembar-v1] Ambil SEMUA baris seemail, jangan `limit=1`.
+    //    Ada email yang terlanjur punya dua baris students (dua insert balapan),
+    //    dan tanpa `order` PostgREST bebas memilih yang mana saja — pendaftaran
+    //    baru bisa nempel di kembaran kosong sementara dashboard membaca kembaran
+    //    yang satunya (gejala: kelas baru "hilang"). Aturan pilihnya disamakan
+    //    dengan /akun: baris yang sudah memegang registrasi menang, kalau tak ada
+    //    yang punya, ambil yang paling tua.
     let studentId: string | undefined;
     const findRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/students?email=eq.${encodeURIComponent(email)}&select=id&limit=1`,
+      `${SUPABASE_URL}/rest/v1/students?email=eq.${encodeURIComponent(email)}&select=id&order=created_at.asc`,
       { headers: sbHeaders }
     );
     if (!findRes.ok) {
@@ -160,7 +167,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: `Gagal mencari data siswa: ${err}` }, { status: 500 });
     }
     const foundRows = await findRes.json();
-    studentId = Array.isArray(foundRows) ? foundRows[0]?.id : undefined;
+    const kandidat: string[] = Array.isArray(foundRows) ? foundRows.map((r: any) => r.id).filter(Boolean) : [];
+    studentId = kandidat[0];
+    if (kandidat.length > 1) {
+      try {
+        const ownerRes = await fetch(
+          `${SUPABASE_URL}/rest/v1/registrations?select=student_id&archived_at=is.null&student_id=in.(${kandidat.join(",")})`,
+          { headers: sbHeaders }
+        );
+        if (ownerRes.ok) {
+          const owners: any[] = await ownerRes.json();
+          const punyaKelas = new Set(owners.map((r) => r.student_id));
+          studentId = kandidat.find((id) => punyaKelas.has(id)) || kandidat[0];
+        }
+      } catch (e) {
+        console.warn("enroll: pilih student kembar gagal (pakai yang tertua):", e);
+      }
+    }
 
     if (studentId) {
       // Sudah ada — refresh nama/wa/avatar (non-fatal kalau gagal).
@@ -228,13 +251,52 @@ export async function POST(req: NextRequest) {
         registration_date: new Date().toISOString(),
       }),
     });
+    let registration: any = null;
     if (!regRes.ok) {
       const err = await regRes.text();
       console.error("enroll: registration insert error:", err);
-      return NextResponse.json({ error: `Gagal menyimpan pendaftaran: ${err}` }, { status: 500 });
+
+      // [enroll-idempoten-v1] 23505 di sini datang dari trigger
+      // `tolak_registrasi_kembar`: baris yang persis sama (siswa, produk, bahasa,
+      // level, tanggal, nominal, durasi) SUDAH ada. Artinya pendaftarannya
+      // sebenarnya tersimpan — biasanya ini request kedua dari klik dobel atau
+      // retry jaringan. Melemparkan error ke klien di situasi ini menakut-nakuti
+      // siswa dengan "Registrasi belum tersimpan" padahal kelasnya sudah terdaftar,
+      // jadi barisnya diambil lalu dijawab seolah insert-nya barusan berhasil.
+      let kembar = false;
+      try { kembar = JSON.parse(err)?.code === "23505"; } catch { kembar = err.includes("23505"); }
+      if (kembar) {
+        const q = new URLSearchParams({
+          select: "*",
+          student_id: `eq.${studentId}`,
+          product: `eq.${product}`,
+          archived_at: "is.null",
+          order: "created_at.desc",
+          limit: "1",
+        });
+        if (language) q.set("language", `eq.${language}`);
+        const ulangRes = await fetch(`${SUPABASE_URL}/rest/v1/registrations?${q}`, { headers: sbHeaders });
+        if (ulangRes.ok) {
+          const rows = await ulangRes.json();
+          registration = Array.isArray(rows) ? rows[0] : rows;
+        }
+      }
+      if (!registration) {
+        return NextResponse.json({ error: `Gagal menyimpan pendaftaran: ${err}` }, { status: 500 });
+      }
+      console.log(`enroll: registrasi kembar → pakai baris yang sudah ada ${registration.id}`);
+      // Baris lama dipakai ulang → jangan bikin lead/invoice kedua.
+      return NextResponse.json({
+        success: true,
+        reused: true,
+        registration,
+        registrationId: registration.id,
+        invoice_url: registration.xendit_invoice_url || null,
+        invoice_pending: !!with_invoice && !registration.xendit_invoice_url,
+      });
     }
     const regRows = await regRes.json();
-    const registration = Array.isArray(regRows) ? regRows[0] : regRows;
+    registration = Array.isArray(regRows) ? regRows[0] : regRows;
 
     // 3. [enroll-async-invoice-v1] Kerjaan lambat (lead CRM + invoice Xendit)
     //    dipindah ke background lewat `after()` — jalan SETELAH response terkirim,

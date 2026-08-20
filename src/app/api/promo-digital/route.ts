@@ -144,7 +144,14 @@ export async function POST(req: NextRequest) {
     .single();
   if (insErr || !baris) {
     console.error("[promo-digital] insert gagal:", insErr);
-    return tolak("Gagal menerbitkan akses. Coba lagi sebentar.", 500);
+    // Kode DB ikut ditampilkan: waktu constraint `digital_purchases_source_check`
+    // belum mengenal source 'promo', pesan polos "coba lagi sebentar" menyuruh
+    // orang mengulang sesuatu yang tak akan pernah berhasil — dan tim support
+    // tak punya petunjuk apa pun tanpa membuka log Vercel.
+    return tolak(
+      `Gagal menerbitkan akses${insErr?.code ? ` (kode ${insErr.code})` : ""}. Coba lagi sebentar atau hubungi admin.`,
+      500,
+    );
   }
 
   const { error: updErr } = await admin
