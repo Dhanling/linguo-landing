@@ -4,7 +4,7 @@
 // Data: digital_purchases JOIN digital_products + digital_product_pricing (skema existing, TIDAK diubah).
 // Progress e-learning: best-effort dari lms_progress, dipetakan via digital_products.language → lms_modules.
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 // [ui-lang-switcher-v1] judul & label ikut bahasa antarmuka
 import { useT } from "@/lib/uiLang";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -34,7 +34,7 @@ import { getLangPhoto } from "@/lib/lang-visuals";
 // [pustaka-judul-bendera-v1] bendera rounded-rectangle di kiri judul kartu
 import { FLAG_CODE_BY_SLUG, RectFlag } from "@/components/RectFlag";
 // [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh
-import EbookReader, { prewarmEbookReader, mintaLayarPenuh } from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 import { ELEARNING_BUNDLE_SLUG } from "@/lib/elearningBundle";
 
 /* ---------------- types ---------------- */
@@ -675,6 +675,42 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     }
   }
 
+  /* [ebook-buka-instan-v1] Byte modul mulai diunduh begitu kursor/jari
+     menyentuh kartunya. Waktu tombol Baca benar-benar ditekan, isinya biasanya
+     sudah utuh di memori — readernya terbuka tanpa layar "Menyiapkan modul…".
+     Tokennya diambil sekali lalu ditahan: getSession() dipanggil tiap kartu
+     yang dilewati kursor itu boros. */
+  const tokenRef = useRef<string | null>(null);
+  const panaskanEbook = useCallback((p: Purchase) => {
+    const prod = p.digital_products;
+    if (preview || prod?.type !== "ebook") return;
+    if (externalLinkFor(prod) || !isStoragePath(prod.file_url)) return;
+    void (async () => {
+      if (!tokenRef.current) {
+        const { data: { session } } = await supabase.auth.getSession();
+        tokenRef.current = session?.access_token ?? null;
+      }
+      if (tokenRef.current) prewarmEbookModul(p.id, tokenRef.current);
+    })();
+  }, [preview, supabase]);
+
+  /* Modul yang paling baru dibeli dipanaskan sendiri waktu browser senggang —
+     di HP tak ada "kursor lewat" yang bisa dijadikan aba-aba, dan satu ketukan
+     terlalu pendek untuk mengunduh 1 MB. Cukup SATU modul. */
+  useEffect(() => {
+    const ebook = purchases.find((p) => p.digital_products?.type === "ebook"
+      && !externalLinkFor(p.digital_products) && isStoragePath(p.digital_products.file_url));
+    if (!ebook) return;
+    const w = window as any;
+    const jalan = () => panaskanEbook(ebook);
+    if (typeof w.requestIdleCallback === "function") {
+      const id = w.requestIdleCallback(jalan, { timeout: 6000 });
+      return () => w.cancelIdleCallback?.(id);
+    }
+    const id = window.setTimeout(jalan, 2500);
+    return () => window.clearTimeout(id);
+  }, [purchases, panaskanEbook]);
+
   /* derived */
   const stats = useMemo(() => {
     let running = 0, certs = 0;
@@ -924,6 +960,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
+              onPrefetch={() => panaskanEbook(p)}
               onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
             />
           ))}
@@ -942,6 +979,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
               onOpen={() => openProduct(p)}
+              onPrefetch={() => panaskanEbook(p)}
               onRenew={() => (preview ? toast("Mode pratinjau — hanya tampilan.") : setRenewFor(p))}
             />
           ))}
@@ -1073,12 +1111,14 @@ function Cover({ p, prog, big }: { p: DProduct; prog: Prog | null; big?: boolean
 }
 
 function ProductCard({
-  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onPrefetch,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
   ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
+  /* [ebook-buka-instan-v1] kursor/jari menyentuh kartu → modulnya mulai diunduh */
+  onPrefetch?: () => void;
 }) {
   const prod = p.digital_products;
   const a = accessInfo(p);
@@ -1093,7 +1133,11 @@ function ProductCard({
   const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
 
   return (
-    <div className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}>
+    <div
+      onPointerEnter={onPrefetch}
+      onTouchStart={onPrefetch}
+      className={`group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-30px_rgba(18,23,43,0.5)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-30px_rgba(18,23,43,0.55)] ${expired ? "opacity-70" : ""}`}
+    >
       {/* cover (clickable) */}
       <button onClick={onOpen} disabled={expired} className="relative block text-left disabled:cursor-not-allowed">
         <Cover p={prod} prog={prog} />
@@ -1169,12 +1213,14 @@ function ProductCard({
 }
 
 function ProductRow({
-  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew,
+  p, prog, busy, bookmarked, langCount = 0, ready = true, onToggleBookmark, onOpen, onRenew, onPrefetch,
 }: {
   p: Purchase; prog: Prog | null; busy: boolean; bookmarked: boolean; langCount?: number;
   /** [materi-belum-siap-v1] false = link materinya belum dipasang admin. */
   ready?: boolean;
   onToggleBookmark: () => void; onOpen: () => void; onRenew: () => void;
+  /* [ebook-buka-instan-v1] kursor/jari menyentuh kartu → modulnya mulai diunduh */
+  onPrefetch?: () => void;
 }) {
   const prod = p.digital_products;
   const a = accessInfo(p);
@@ -1187,7 +1233,11 @@ function ProductRow({
   // di tengah tombol teal.
   const BtnIcon = prod.type === "ebook" && !isExternal ? BookOpen : verb === "Buka" ? ExternalLink : Play;
   return (
-    <div className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}>
+    <div
+      onPointerEnter={onPrefetch}
+      onTouchStart={onPrefetch}
+      className={`flex items-center gap-4 rounded-2xl bg-white p-3 transition hover:border-slate-200 ${expired ? "opacity-70" : ""}`}
+    >
       <button onClick={onOpen} disabled={expired} className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl disabled:cursor-not-allowed" style={{ background: gradFor(prod.id) }}>
         {fotoSampul(prod) ? (
           // eslint-disable-next-line @next/next/no-img-element

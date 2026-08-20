@@ -34,7 +34,7 @@ import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
-  Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft,
+  Columns2, Square, Maximize2, Minimize2, Volume2, List, Play, CornerDownLeft, Scan,
 } from "lucide-react";
 // [ebook-tts-ketuk-kata-v1]
 import {
@@ -69,6 +69,16 @@ const LEBAR_DUA_HALAMAN = 760;
 const DURASI_BALIK = 620;
 /** Halaman yang bitmap-nya disimpan. 40 halaman sekaligus terlalu boros memori. */
 const CACHE_MAX = 10;
+
+/* [ebook-swipe-halaman-v1] Seberapa jauh geseran mendatar dianggap perintah
+   pindah halaman. Roda/trackpad memakai jumlah deltaX satu ayunan; seretan
+   tetikus memakai jarak kursor. */
+const SWIPE_RODA = 90;
+const SWIPE_SERET = 70;
+/** Jeda tanpa gerakan yang menandai satu ayunan trackpad sudah selesai —
+    momentum trackpad Mac masih menembakkan puluhan `wheel` setelah jarinya
+    diangkat, dan tanpa kunci ini satu ayunan bisa melompat 5 halaman. */
+const SWIPE_RESET = 320;
 
 const halamanKey = (purchaseId: string) => `ebook-hal:${purchaseId}`;
 
@@ -159,24 +169,60 @@ export function prewarmEbookReader() {
 }
 
 /* Byte modul yang terakhir dibaca ditahan di memori: buka–tutup–buka reader
-   dalam satu sesi tidak perlu menunggu jaringan lagi. Cuma SATU entri — modul
-   itu ~1 MB dan tak ada gunanya menimbun banyak. */
-let bufCache: { id: string; buf: ArrayBuffer } | null = null;
+   dalam satu sesi tidak perlu menunggu jaringan lagi. Cuma DUA entri — satu
+   modul ~1 MB dan tak ada gunanya menimbun banyak. */
+const bufCache = new Map<string, ArrayBuffer>();
+/* [ebook-buka-instan-v1] Permintaan yang SEDANG jalan, supaya prefetch (waktu
+   kursor menyentuh kartu) dan pembukaan reader beberapa ratus milidetik
+   kemudian memakai satu unduhan yang sama, bukan dua. */
+const bufAntre = new Map<string, Promise<ArrayBuffer>>();
 
-async function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuffer> {
-  if (bufCache?.id === purchaseId) return bufCache.buf;
-  const res = await fetch("/api/ebook", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ purchaseId, accessToken }),
-  });
-  if (!res.ok) {
-    const j = await res.json().catch(() => ({}));
-    throw new Error(j.error || tr("Gagal memuat modul"));
+const simpanBuf = (id: string, buf: ArrayBuffer) => {
+  bufCache.set(id, buf);
+  while (bufCache.size > 2) {
+    const tertua = bufCache.keys().next().value as string | undefined;
+    if (tertua === undefined) break;
+    bufCache.delete(tertua);
   }
-  const buf = await res.arrayBuffer();
-  bufCache = { id: purchaseId, buf };
-  return buf;
+};
+
+function ambilBerkas(purchaseId: string, accessToken: string): Promise<ArrayBuffer> {
+  const ada = bufCache.get(purchaseId);
+  if (ada) return Promise.resolve(ada);
+  const jalan = bufAntre.get(purchaseId);
+  if (jalan) return jalan;
+  const janji = (async () => {
+    const res = await fetch("/api/ebook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ purchaseId, accessToken }),
+    });
+    if (!res.ok) {
+      const j = await res.json().catch(() => ({}));
+      throw new Error(j.error || tr("Gagal memuat modul"));
+    }
+    const buf = await res.arrayBuffer();
+    simpanBuf(purchaseId, buf);
+    return buf;
+  })().finally(() => { bufAntre.delete(purchaseId); });
+  bufAntre.set(purchaseId, janji);
+  return janji;
+}
+
+/* [ebook-buka-instan-v1] Dokumen pdf.js yang terakhir dibuka ditahan hidup.
+   Mengurai ulang 40 halaman PDF makan ratusan milidetik — itu yang dulu
+   membuat layar "Menyiapkan modul…" tetap muncul walau bytenya sudah ada di
+   memori. Dengan simpanan ini, membuka modul yang sama = langsung terbaca. */
+let docCache: { id: string; doc: PdfDoc } | null = null;
+
+/** Dipanggil Perpustakaan saat kursor/jari menyentuh kartu e-book — begitu
+ *  tombolnya benar-benar ditekan, byte modulnya biasanya sudah utuh di memori
+ *  sehingga readernya terbuka tanpa layar tunggu. Gagal = diam saja. */
+export function prewarmEbookModul(purchaseId: string, accessToken: string) {
+  if (typeof window === "undefined" || !purchaseId || !accessToken) return;
+  if (docCache?.id === purchaseId || bufCache.has(purchaseId)) return;
+  void muatPdfjs().catch(() => {});
+  void ambilBerkas(purchaseId, accessToken).catch(() => {});
 }
 
 /* [ebook-tts-ketuk-kata-v1] Satu potong teks dari getTextContent(), koordinatnya
@@ -256,8 +302,12 @@ export interface EbookReaderProps {
 export default function EbookReader({
   purchaseId, title, accessToken, watermark, language, onClose,
 }: EbookReaderProps) {
-  const [doc, setDoc] = useState<PdfDoc | null>(null);
-  const [total, setTotal] = useState(0);
+  /* [ebook-buka-instan-v1] Modul yang barusan dibaca masih hidup di memori →
+     dipasang sebagai nilai AWAL, jadi rendernya yang pertama pun sudah berisi
+     halaman; tak ada "Menyiapkan modul…" yang berkelip. */
+  const awalDoc = docCache?.id === purchaseId ? docCache.doc : null;
+  const [doc, setDoc] = useState<PdfDoc | null>(awalDoc);
+  const [total, setTotal] = useState(awalDoc?.numPages ?? 0);
   const [page, setPage] = useState(1);
   const [zoom, setZoom] = useState(1);
   /* [ebook-zoom-cubit-v1] `zoom` di atas adalah zoom yang SUDAH diraster;
@@ -270,7 +320,11 @@ export default function EbookReader({
   /** Skala render yang sedang berlaku (px per satuan halaman) — dipakai
       menaruh sorotan kata di tempat yang benar. */
   const [skalaTampil, setSkalaTampil] = useState(0);
-  const [memuat, setMemuat] = useState(true);
+  const [memuat, setMemuat] = useState(!awalDoc);
+  /* Layar tunggu baru DIGAMBAR kalau pemuatannya benar-benar lama. Kalau
+     bytenya sudah dipanaskan, urusannya kelar dalam ~150 ms dan spinner yang
+     berkelip sekejap justru terasa lebih lambat daripada tanpa spinner. */
+  const [tundaMemuat, setTundaMemuat] = useState(false);
   const [galat, setGalat] = useState<string | null>(null);
   /** null = ikut lebar layar; true/false = pilihan siswa dari bilah atas. */
   const [duaManual, setDuaManual] = useState<boolean | null>(null);
@@ -300,6 +354,9 @@ export default function EbookReader({
   const [tarik, setTarik] = useState<number | null>(null);
   /** Kotak "lompat ke halaman" di bilah bawah sedang terbuka? */
   const [lompat, setLompat] = useState<string | null>(null);
+  /* [ebook-zoom-kotak-v1] Angka persen di bilah atas bisa diketik: null =
+     sedang menampilkan angka, string = sedang diisi siswa. */
+  const [ketikZoom, setKetikZoom] = useState<string | null>(null);
 
   const [layarPenuh, setLayarPenuh] = useState(false);
 
@@ -342,23 +399,37 @@ export default function EbookReader({
   /* ── muat dokumen ──────────────────────────────────────────────────────── */
   useEffect(() => {
     let hidup = true;
+    // [ebook-buka-instan-v1] Dokumen yang sama masih hidup dari pembukaan
+    // sebelumnya → tak ada yang perlu diunduh maupun diurai lagi.
+    const simpananDoc = docCache?.id === purchaseId ? docCache.doc : null;
+    // Layar tunggu baru muncul kalau pemuatannya lewat dari sekejap.
+    const jedaTunggu = simpananDoc
+      ? null
+      : window.setTimeout(() => { if (hidup) setTundaMemuat(true); }, 220);
     (async () => {
       try {
         // [ebook-reader-paralel-v1] Bundel pdf.js dan berkas modulnya diminta
         // BARENGAN — dua penantian itu tidak saling bergantung, jadi waktu
         // tunggunya tinggal yang paling lama, bukan jumlah keduanya.
-        const [pdfjs, buf] = await Promise.all([
-          muatPdfjs(),
-          ambilBerkas(purchaseId, accessToken),
-        ]);
+        const bufJanji = simpananDoc ? null : ambilBerkas(purchaseId, accessToken);
+        const pdfjs = await muatPdfjs();
         if (!hidup) return;
         pdfjsRef.current = pdfjs; // dipakai Util.transform waktu menghitung letak teks
 
-        // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
-        // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
-        // buka-ulang reader malah gagal.
-        const d = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
-        if (!hidup) { d.destroy?.(); return; }
+        let d = simpananDoc;
+        if (!d) {
+          const buf = await bufJanji!;
+          if (!hidup) return;
+          // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
+          // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
+          // buka-ulang reader malah gagal.
+          d = await pdfjs.getDocument({ data: new Uint8Array(buf.slice(0)) }).promise;
+          if (!hidup) { d.destroy?.(); return; }
+          // Modul lain yang tersimpan dilepas — dua dokumen pdf.js hidup
+          // barengan artinya dua worker penuh isi halaman di memori.
+          if (docCache && docCache.id !== purchaseId) docCache.doc.destroy?.();
+          docCache = { id: purchaseId, doc: d };
+        }
 
         docRef.current = d;
         setDoc(d);
@@ -370,12 +441,17 @@ export default function EbookReader({
       } catch (e: any) {
         if (hidup) setGalat(e?.message || tr("Gagal memuat modul"));
       } finally {
-        if (hidup) setMemuat(false);
+        if (jedaTunggu) window.clearTimeout(jedaTunggu);
+        if (hidup) { setMemuat(false); setTundaMemuat(false); }
       }
     })();
     return () => {
       hidup = false;
-      docRef.current?.destroy?.();
+      if (jedaTunggu) window.clearTimeout(jedaTunggu);
+      // ⚠️ Dokumen TIDAK dimusnahkan kalau ia yang sedang disimpan: itulah
+      // yang membuat buka-ulang modul yang sama terbuka seketika. Yang lama
+      // dimusnahkan waktu modul LAIN menggantikannya di simpanan.
+      if (docRef.current && docCache?.doc !== docRef.current) docRef.current.destroy?.();
       docRef.current = null;
       bitmapRef.current.clear();
       antreRef.current.clear();
@@ -471,8 +547,30 @@ export default function EbookReader({
     // preventDefault, yang mengecil adalah seluruh halaman. Listener dipasang
     // manual — onWheel milik React terdaftar sebagai passive, dan di listener
     // passive preventDefault diabaikan diam-diam.
+    /* [ebook-swipe-halaman-v1] Satu ayunan mendatar di trackpad = satu
+       halaman. `akum` dikumpulkan sampai melewati ambang, lalu dikunci sampai
+       rodanya benar-benar diam supaya momentumnya tak jadi lompatan beruntun. */
+    let akum = 0;
+    let kunci = false;
+    let jedaRoda: number | null = null;
+
     const onWheel = (e: WheelEvent) => {
-      if (!e.ctrlKey && !e.metaKey) return;
+      if (!e.ctrlKey && !e.metaKey) {
+        // Halaman yang di-zoom memang bisa digulir mendatar — di situ geseran
+        // mendatar adalah gulir, bukan pindah halaman.
+        const bisaGulirX = el.scrollWidth - el.clientWidth > 4;
+        if (bisaGulirX || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        e.preventDefault();
+        if (jedaRoda) window.clearTimeout(jedaRoda);
+        jedaRoda = window.setTimeout(() => { akum = 0; kunci = false; jedaRoda = null; }, SWIPE_RESET);
+        if (kunci) return;
+        akum += e.deltaX;
+        if (Math.abs(akum) < SWIPE_RODA) return;
+        kunci = true;
+        balikKeRef.current(akum > 0 ? 1 : -1);
+        akum = 0;
+        return;
+      }
       e.preventDefault();
       // Eksponensial, bukan penjumlahan: satu takaran cubitan terasa sama besar
       // di zoom 60% maupun di 300%.
@@ -493,13 +591,42 @@ export default function EbookReader({
     };
     const onEnd = (e: TouchEvent) => { if (e.touches.length < 2) cubit = null; };
 
+    /* Seret tetikus kiri/kanan juga membalik halaman — di desktop tanpa
+       trackpad itu gerakan paling dekat dengan "menggeser kertas". */
+    let seret: { x: number; y: number; id: number } | null = null;
+    const onDown = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse" || e.button !== 0) return;
+      if (el.scrollWidth - el.clientWidth > 4) return; // sedang di-zoom: itu gulir
+      seret = { x: e.clientX, y: e.clientY, id: e.pointerId };
+    };
+    const onUp = (e: PointerEvent) => {
+      const a = seret;
+      seret = null;
+      if (!a || e.pointerId !== a.id) return;
+      const dx = e.clientX - a.x;
+      const dy = e.clientY - a.y;
+      if (Math.abs(dx) < SWIPE_SERET || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      // Seretan tetap berakhir sebagai klik; tanpa penanda ini kata di bawah
+      // kursor ikut dibunyikan tiap kali halaman digeser.
+      abaikanKlikRef.current = true;
+      balikKeRef.current(dx < 0 ? 1 : -1);
+    };
+
     el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("pointerdown", onDown, { passive: true });
+    el.addEventListener("pointerup", onUp, { passive: true });
+    const onBatalSeret = () => { seret = null; };
+    el.addEventListener("pointercancel", onBatalSeret, { passive: true });
     el.addEventListener("touchstart", onStart, { passive: true });
     el.addEventListener("touchmove", onMove, { passive: false });
     el.addEventListener("touchend", onEnd, { passive: true });
     el.addEventListener("touchcancel", onEnd, { passive: true });
     return () => {
+      if (jedaRoda) window.clearTimeout(jedaRoda);
       el.removeEventListener("wheel", onWheel);
+      el.removeEventListener("pointerdown", onDown);
+      el.removeEventListener("pointerup", onUp);
+      el.removeEventListener("pointercancel", onBatalSeret);
       el.removeEventListener("touchstart", onStart);
       el.removeEventListener("touchmove", onMove);
       el.removeEventListener("touchend", onEnd);
@@ -857,6 +984,13 @@ export default function EbookReader({
     setTarik((v) => { if (v != null) ke(v); return null; });
   }, [ke]);
 
+  /** [ebook-zoom-kotak-v1] Isi kotak persen → pakai zoom itu. */
+  const terapkanKetikZoom = useCallback(() => {
+    const n = parseInt(ketikZoom || "", 10);
+    if (Number.isFinite(n) && n > 0) aturZoom(n / 100, true);
+    setKetikZoom(null);
+  }, [ketikZoom, aturZoom]);
+
   /** Isi kotak "lompat ke halaman" → buka halamannya. */
   const lompatKe = useCallback(() => {
     const n = parseInt(lompat || "", 10);
@@ -1139,7 +1273,7 @@ export default function EbookReader({
   }, [ucap]);
 
   const isi = (
-    <div className="fixed inset-0 z-[100] flex flex-col bg-slate-900/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[100] flex flex-col bg-black/95 backdrop-blur-sm">
       {/* bilah atas */}
       <div className="flex shrink-0 items-center gap-3 border-b border-white/10 px-3 py-2.5 sm:px-5">
         <button
@@ -1171,13 +1305,48 @@ export default function EbookReader({
           >
             <Minus className="h-4 w-4" />
           </button>
-          <span className="w-12 text-center text-[12px] font-bold text-white/70">{Math.round(zoomLive * 100)}%</span>
+          {/* [ebook-zoom-kotak-v1] Dulu angka persen cuma pajangan: dari 100%
+              ke 250% harus menekan + tujuh kali. Sekarang angkanya bisa
+              diketik langsung. */}
+          {ketikZoom !== null ? (
+            <form onSubmit={(e) => { e.preventDefault(); terapkanKetikZoom(); }}>
+              <input
+                autoFocus
+                value={ketikZoom}
+                inputMode="numeric"
+                onChange={(e) => setKetikZoom(e.target.value.replace(/[^0-9]/g, "").slice(0, 3))}
+                onBlur={terapkanKetikZoom}
+                onKeyDown={(e) => { if (e.key === "Escape") setKetikZoom(null); }}
+                className="w-14 rounded-md bg-white/10 px-1 py-1 text-center text-[12px] font-bold text-white outline-none ring-1 ring-white/20 focus:ring-[#3ED9C0]"
+                aria-label={t("Ukuran tampilan (persen)")}
+              />
+            </form>
+          ) : (
+            <button
+              onClick={() => setKetikZoom(String(Math.round(zoomLive * 100)))}
+              className="w-14 rounded-md py-1 text-center text-[12px] font-bold text-white/70 transition hover:bg-white/10 hover:text-white"
+              title={t("Ketik ukuran tampilan")}
+            >
+              {Math.round(zoomLive * 100)}%
+            </button>
+          )}
           <button
             onClick={() => aturZoom(zoomLiveRef.current + ZOOM_STEP, true)}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
             aria-label={t("Perbesar")}
           >
             <Plus className="h-4 w-4" />
+          </button>
+          {/* Paskan = kembali ke 100%, yaitu satu bentangan utuh yang muat
+              di layar (lihat [ebook-reader-fit-v1]). */}
+          <button
+            onClick={() => aturZoom(1, true)}
+            disabled={Math.round(zoomLive * 100) === 100}
+            className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white disabled:opacity-30 disabled:hover:bg-transparent"
+            aria-label={t("Paskan ke layar")}
+            title={t("Paskan ke layar")}
+          >
+            <Scan className="h-4 w-4" />
           </button>
         </div>
         <button
@@ -1204,7 +1373,7 @@ export default function EbookReader({
         onTouchEnd={onTouchEnd}
         className="relative flex flex-1 overflow-auto p-4"
       >
-        {memuat && (
+        {memuat && tundaMemuat && (
           <div className="m-auto text-center">
             <Loader2 className="mx-auto mb-3 h-7 w-7 animate-spin text-[#3ED9C0]" />
             <p className="text-[13px] font-semibold text-white/60">{t("Menyiapkan modul…")}</p>
@@ -1275,7 +1444,7 @@ export default function EbookReader({
                   left: pw - 10,
                   width: 20 + GAP,
                   background:
-                    "linear-gradient(90deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.16) 45%, rgba(15,23,42,0.22) 50%, rgba(15,23,42,0.16) 55%, rgba(15,23,42,0) 100%)",
+                    "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.16) 45%, rgba(0,0,0,0.22) 50%, rgba(0,0,0,0.16) 55%, rgba(0,0,0,0) 100%)",
                 }}
               />
             )}
@@ -1518,11 +1687,11 @@ export default function EbookReader({
       {daftarBuka && (
         <div className="absolute inset-0 z-[60] flex">
           <div
-            className="absolute inset-0 bg-slate-950/60"
+            className="absolute inset-0 bg-black/70"
             onClick={() => setDaftarBuka(false)}
             aria-hidden
           />
-          <aside className="relative flex h-full w-[86vw] max-w-[340px] flex-col border-r border-white/10 bg-[#0B1220] shadow-2xl">
+          <aside className="relative flex h-full w-[86vw] max-w-[340px] flex-col border-r border-white/10 bg-[#0D0D0D] shadow-2xl">
             <div className="flex shrink-0 items-center gap-2 border-b border-white/10 px-4 py-3">
               <List className="h-4 w-4 text-[#3ED9C0]" />
               <span className="flex-1 text-[13.5px] font-extrabold text-white">{t("Daftar isi")}</span>
@@ -1596,7 +1765,7 @@ export default function EbookReader({
                         key={n}
                         onClick={() => { ke(n); setDaftarBuka(false); }}
                         className={`rounded-md py-1 text-[11px] font-bold tabular-nums transition ${
-                          aktif ? "bg-[#3ED9C0] text-slate-900" : "bg-white/5 text-white/60 hover:bg-white/15 hover:text-white"
+                          aktif ? "bg-[#3ED9C0] text-black" : "bg-white/5 text-white/60 hover:bg-white/15 hover:text-white"
                         }`}
                       >
                         {n}
@@ -1646,12 +1815,12 @@ export default function EbookReader({
           position: absolute;
           inset: 0;
           pointer-events: none;
-          background: linear-gradient(90deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0) 42%);
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 42%);
           opacity: 0;
           animation: ebook-bayang-sapu var(--ebook-durasi, 620ms) cubic-bezier(0.42, 0.02, 0.32, 1) forwards;
         }
         .ebook-bayang.balik {
-          background: linear-gradient(270deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0) 42%);
+          background: linear-gradient(270deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 42%);
         }
         @keyframes ebook-maju {
           from { transform: rotateY(0deg); }

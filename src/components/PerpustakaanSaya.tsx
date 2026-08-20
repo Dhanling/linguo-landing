@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -12,7 +12,7 @@ import YouTubePlayerModal, { type PlayerTarget } from "@/components/YouTubePlaye
 /* produk-digital-per-bahasa-v1 — paket multi-bahasa: pilih bahasa dulu, baru playlist-nya dibuka */
 import LangMateriPicker, { type LangPickerTarget } from "@/components/LangMateriPicker";
 /* [ebook-reader-v1] e-book berkas dibaca di dalam dashboard, bukan diunduh */
-import EbookReader, { prewarmEbookReader, mintaLayarPenuh } from "@/components/akun/EbookReader";
+import EbookReader, { prewarmEbookReader, prewarmEbookModul, mintaLayarPenuh } from "@/components/akun/EbookReader";
 /* [perpustakaan-akses-email-v1] kepemilikan = auth_user_id ATAU email sesi */
 import { orMilikSaya } from "@/lib/digitalOwnership";
 
@@ -52,6 +52,36 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
   useEffect(() => {
     if (purchases.some((p) => p.digital_products?.type === "ebook")) prewarmEbookReader();
   }, [purchases]);
+
+  /* [ebook-buka-instan-v1] Byte modul diunduh duluan — waktu kursor/jari
+     menyentuh kartunya, dan sekali otomatis waktu browser senggang. Lihat
+     catatan yang sama di LibraryView. */
+  const tokenRef = useRef<string | null>(null);
+  const panaskanEbook = useCallback((p: PurchaseItem) => {
+    const prod = p.digital_products;
+    if (prod?.type !== "ebook" || externalLinkFor(prod) || !isStoragePath(prod.file_url)) return;
+    void (async () => {
+      if (!tokenRef.current) {
+        const { data: { session } } = await supabase.auth.getSession();
+        tokenRef.current = session?.access_token ?? null;
+      }
+      if (tokenRef.current) prewarmEbookModul(p.id, tokenRef.current);
+    })();
+  }, [supabase]);
+
+  useEffect(() => {
+    const ebook = purchases.find((p) => p.digital_products?.type === "ebook"
+      && !externalLinkFor(p.digital_products) && isStoragePath(p.digital_products.file_url));
+    if (!ebook) return;
+    const w = window as any;
+    const jalan = () => panaskanEbook(ebook);
+    if (typeof w.requestIdleCallback === "function") {
+      const id = w.requestIdleCallback(jalan, { timeout: 6000 });
+      return () => w.cancelIdleCallback?.(id);
+    }
+    const id = window.setTimeout(jalan, 2500);
+    return () => window.clearTimeout(id);
+  }, [purchases, panaskanEbook]);
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState<string | null>(null);
   const [playing, setPlaying] = useState<PlayerTarget | null>(null);
@@ -238,6 +268,8 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
         return (
           <div
             key={p.id}
+            onPointerEnter={() => panaskanEbook(p)}
+            onTouchStart={() => panaskanEbook(p)}
             className={`bg-white rounded-2xl p-4 border border-gray-100 ${expired ? "opacity-60" : ""}`}
           >
             <div className="flex gap-4">

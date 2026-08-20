@@ -147,12 +147,37 @@ export function barisTerjemahan(teks: string, kode: string): boolean {
 }
 
 /* ── pemutaran ─────────────────────────────────────────────────────────────
+   [ebook-tts-data-url-v2] Audionya dipasang sebagai **data: URL**, bukan
+   objectURL dari Blob — dan itulah sebabnya versi pertama diam total di Safari
+   walau /api/tts membalas 200 dan cache-nya terisi rapi.
+
+   Dua jebakan Safari yang kena sekaligus:
+     1. `blob:` di elemen <audio>. Safari memuat media lewat permintaan yang
+        mendukung byte-range; sumber blob tak melayani itu, jadi elemennya
+        menggantung di readyState 0 — tanpa galat, tanpa bunyi.
+     2. `audio.currentTime = 0` tepat setelah `src` diganti. Di WebKit itu
+        melempar InvalidStateError selama readyState masih HAVE_NOTHING, dan
+        lemparan itu terjadi SEBELUM play() sempat dipanggil.
+
+   Jalur yang dipakai sekarang persis jalur `speakText` Watch and Learn (yang
+   memang berbunyi di Safari yang sama): base64 → data: URL → play(). Cache pun
+   menyimpan base64, bukan Blob, supaya tak ada objectURL sama sekali.
+
    SATU elemen Audio dipakai berulang, dan sengaja "dibuka kuncinya" lewat
    ketukan pertama siswa: iOS Safari cuma mengizinkan play() yang lahir dari
    gerakan pengguna, sementara ketukan kata kita selalu melewati setidaknya satu
    await (cache/jaringan). Elemen yang SUDAH pernah bunyi di dalam gesture tetap
    boleh diputar sesudahnya — itulah celah yang dipakai di sini. */
 const SENYAP = "data:audio/wav;base64,UklGRmQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
+/** Tag BCP-47 untuk suara bawaan browser — jaring terakhir kalau Chirp gagal. */
+const SUARA_BROWSER: Record<string, string> = {
+  es: "es-ES", fr: "fr-FR", de: "de-DE", it: "it-IT", pt: "pt-PT", nl: "nl-NL",
+  ja: "ja-JP", ko: "ko-KR", zh: "zh-CN", ru: "ru-RU", ar: "ar-SA", hi: "hi-IN",
+  th: "th-TH", vi: "vi-VN", tr: "tr-TR", en: "en-US", id: "id-ID", ms: "ms-MY",
+  da: "da-DK", sv: "sv-SE", no: "nb-NO", fi: "fi-FI", pl: "pl-PL", cs: "cs-CZ",
+  el: "el-GR", he: "he-IL", uk: "uk-UA", ro: "ro-RO", hu: "hu-HU",
+};
 
 let audio: HTMLAudioElement | null = null;
 let seq = 0;
@@ -169,39 +194,72 @@ export function bukaKunciAudio() {
 
 export function hentikanEbookTts() {
   seq++;
-  if (audio) { try { audio.pause(); audio.currentTime = 0; } catch { /* diam */ } }
+  if (audio) { try { audio.pause(); } catch { /* diam */ } }
+  if (typeof window !== "undefined") {
+    try { window.speechSynthesis?.cancel(); } catch { /* diam */ }
+  }
 }
 
-function mainkan(url: string) {
+/* Suara bawaan browser. Mutunya jauh di bawah Chirp — ini bukan pengganti,
+   melainkan supaya ketukan tetap MENGELUARKAN bunyi waktu jalur utamanya
+   bermasalah. Diam total tak terbedakan dari tombol rusak. */
+function ucapkanBrowser(teks: string, kode: string) {
+  if (typeof window === "undefined" || !window.speechSynthesis) return;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(teks);
+    u.lang = SUARA_BROWSER[kode] ?? SUARA_BROWSER[kode.split("-")[0]] ?? "en-US";
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  } catch {
+    /* sudah sejauh ini — biarkan diam */
+  }
+}
+
+async function mainkan(base64: string): Promise<boolean> {
   if (!audio) audio = new Audio();
   try { audio.pause(); } catch { /* diam */ }
+  try { window.speechSynthesis?.cancel(); } catch { /* diam */ }
   audio.volume = 1;
-  audio.src = url;
-  audio.currentTime = 0;
-  void audio.play().catch(() => {});
+  // ⚠️ JANGAN menyetel currentTime di sini — lihat jebakan (2) di atas.
+  audio.src = `data:audio/mp3;base64,${base64}`;
+  try {
+    await audio.play();
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /* ── cache ─────────────────────────────────────────────────────────────────── */
-const memori = new Map<string, string>(); // `${kode}|${teks}` → objectURL
+const memori = new Map<string, string>(); // `${kode}|${teks}` → base64 mp3
 const NAMA_CACHE = "linguo-tts-v1";
 const alamat = (kode: string, teks: string) => `/__tts/${kode}/${encodeURIComponent(teks)}`;
 
-async function dariCacheTetap(kode: string, teks: string): Promise<Blob | null> {
+async function dariCacheTetap(kode: string, teks: string): Promise<string | null> {
   try {
     if (typeof caches === "undefined") return null;
     const c = await caches.open(NAMA_CACHE);
     const r = await c.match(alamat(kode, teks));
-    return r ? await r.blob() : null;
+    if (!r) return null;
+    const isi = (await r.text()).trim();
+    // Entri versi lama menyimpan Blob mp3, bukan base64 — kenali dari isinya
+    // (base64 tak pernah memuat karakter di luar abjad base64) lalu buang.
+    if (!isi || !/^[A-Za-z0-9+/=\s]+$/.test(isi.slice(0, 64))) {
+      await c.delete(alamat(kode, teks)).catch(() => {});
+      return null;
+    }
+    return isi;
   } catch {
     return null; // penyimpanan penuh / mode privat — bukan alasan gagal bunyi
   }
 }
 
-async function keCacheTetap(kode: string, teks: string, blob: Blob) {
+async function keCacheTetap(kode: string, teks: string, base64: string) {
   try {
     if (typeof caches === "undefined") return;
     const c = await caches.open(NAMA_CACHE);
-    await c.put(alamat(kode, teks), new Response(blob, { headers: { "Content-Type": "audio/mpeg" } }));
+    await c.put(alamat(kode, teks), new Response(base64, { headers: { "Content-Type": "text/plain" } }));
   } catch {
     /* diam */
   }
@@ -218,18 +276,20 @@ export async function ucapkanEbook(teksMentah: string, kode: string): Promise<Ha
   if (!teks || !bisaDibunyikan(kode)) return "dilewati";
 
   const kunci = `${kode}|${teks}`;
-  const ada = memori.get(kunci);
-  if (ada) { seq++; mainkan(ada); return "ok"; }
-
   const saya = ++seq;
-  const pasang = (blob: Blob) => {
-    const url = URL.createObjectURL(blob);
-    memori.set(kunci, url);
-    if (saya === seq) mainkan(url);
+  const putar = async (b64: string) => {
+    // Siswa sudah mengetuk kata lain sementara ini menunggu jaringan.
+    if (saya !== seq) return "ok" as const;
+    if (await mainkan(b64)) return "ok" as const;
+    ucapkanBrowser(teks, kode);
+    return "gagal" as const;
   };
 
+  const ada = memori.get(kunci);
+  if (ada) return putar(ada);
+
   const tersimpan = await dariCacheTetap(kode, teks);
-  if (tersimpan) { pasang(tersimpan); return "ok"; }
+  if (tersimpan) { memori.set(kunci, tersimpan); return putar(tersimpan); }
 
   try {
     const res = await fetch("/api/tts", {
@@ -237,15 +297,14 @@ export async function ucapkanEbook(teksMentah: string, kode: string): Promise<Ha
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: teks, lang: kode }),
     });
-    if (!res.ok) return "gagal";
+    if (!res.ok) { ucapkanBrowser(teks, kode); return "gagal"; }
     const { audioContent } = await res.json();
-    if (!audioContent) return "gagal";
-    const bytes = Uint8Array.from(atob(audioContent), (c) => c.charCodeAt(0));
-    const blob = new Blob([bytes], { type: "audio/mpeg" });
-    void keCacheTetap(kode, teks, blob);
-    pasang(blob);
-    return "ok";
+    if (!audioContent) { ucapkanBrowser(teks, kode); return "gagal"; }
+    memori.set(kunci, audioContent);
+    void keCacheTetap(kode, teks, audioContent);
+    return putar(audioContent);
   } catch {
+    ucapkanBrowser(teks, kode);
     return "gagal";
   }
 }
