@@ -14,6 +14,7 @@ import {
   type Simulation, type Section, type Question, type AnswerPayload, type StudentInfo, type Skill, type PromoAttemptStatus,
 } from "@/lib/simulations";
 import { readProgress, readAnyProgress, saveProgress, clearProgress, type SavedProgress } from "@/lib/simProgress";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 // [sim-official-score-v1] Layar hasil dipindah ke komponen bersama — dipakai juga
 // oleh /akun/simulasi/hasil/[attemptId] (buka hasil lama dari Riwayat Skor).
 import ResultView, {
@@ -59,11 +60,13 @@ const IDLE_EXPIRE_MS = 24 * 60 * 60 * 1000;
 // flag modul karena leave() (Shell) & listener proctoring hidup di komponen beda.
 let leavingSim = false;
 // Aturan tambahan (ikut tampil di wizard intro, bagian Petunjuk Pengerjaan).
-const EXTRA_RULES = [
-  { text: `Subtes dikerjakan BERURUTAN seperti ujian aslinya (mis. Listening → Structure → Reading, atau Listening → Reading → Writing → Speaking). Subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan, dan yang sudah selesai tidak bisa dibuka lagi.` },
-  { text: `Tiap subtes punya batas waktu sendiri dan dikunci minimal ${SECTION_LOCK_MINUTES} menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).` },
-  { text: `Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh tercatat sebagai pelanggaran. ${MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan.` },
-  { text: `Selama mengerjakan, klik kanan, blok-salin teks soal, tempel jawaban dari luar, cetak/simpan halaman, dan pintasan devtools diblokir. Yang bisa dipakai hanya tombol di layar ujian (navigasi soal, Selesaikan Subtes, dan tombol keluar).` },
+// [ui-lang-switcher-v1] Dibuat FUNGSI, bukan konstanta modul: teksnya harus
+// diterjemahkan saat render (kamus dibaca dari store bahasa, bukan saat impor).
+const extraRules = () => [
+  { text: tr("Subtes dikerjakan BERURUTAN seperti ujian aslinya (mis. Listening → Structure → Reading, atau Listening → Reading → Writing → Speaking). Subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan, dan yang sudah selesai tidak bisa dibuka lagi.") },
+  { text: `${tr("Tiap subtes punya batas waktu sendiri dan dikunci minimal")} ${SECTION_LOCK_MINUTES} ${tr("menit — kamu tidak bisa pindah subtes sebelum itu (kecuali waktunya habis).")}` },
+  { text: `${tr("Ujian dikerjakan dalam mode LAYAR PENUH. Berpindah tab, berpindah aplikasi/jendela lain, minimize, atau keluar dari layar penuh tercatat sebagai pelanggaran.")} ${MAX_VIOLATIONS}× ${tr("pelanggaran → jawaban otomatis dikumpulkan.")}` },
+  { text: tr("Selama mengerjakan, klik kanan, blok-salin teks soal, tempel jawaban dari luar, cetak/simpan halaman, dan pintasan devtools diblokir. Yang bisa dipakai hanya tombol di layar ujian (navigasi soal, Selesaikan Subtes, dan tombol keluar).") },
 ];
 
 // Render deskripsi/intro dengan format ringan (aman, tanpa HTML mentah):
@@ -255,48 +258,48 @@ function TableFillHtml({ html, qs, answers, onChange, qNumber, className }: {
 
 // Petunjuk default per bagian (template) — dipakai bila admin tidak menulis
 // instruksi sendiri. Tampil di layar "intro bagian" sebelum soal dikerjakan.
-const SECTION_INTRO: Record<string, { title: string; points: string[] }> = {
+const sectionIntro = (): Record<string, { title: string; points: string[] }> => ({
   reading: {
-    title: "Petunjuk Bagian Reading",
+    title: tr("Petunjuk Bagian Reading"),
     points: [
-      "Baca teks (passage) dengan teliti — teks ada di panel kiri dan bisa digulir.",
-      "Jawab tiap soal sesuai informasi pada teks, bukan pengetahuan umum.",
-      "Boleh kembali membaca teks kapan saja selama waktu masih ada.",
+      tr("Baca teks (passage) dengan teliti — teks ada di panel kiri dan bisa digulir."),
+      tr("Jawab tiap soal sesuai informasi pada teks, bukan pengetahuan umum."),
+      tr("Boleh kembali membaca teks kapan saja selama waktu masih ada."),
     ],
   },
   listening: {
-    title: "Petunjuk Bagian Listening",
+    title: tr("Petunjuk Bagian Listening"),
     points: [
-      "Putar audio dan simak baik-baik — gunakan tombol ±10 detik untuk mengulang bagian penting.",
-      "Kamu boleh menjeda dan mengulang audio selama waktu masih tersedia.",
-      "Tulis/pilih jawaban sesuai yang kamu dengar.",
+      tr("Putar audio dan simak baik-baik — gunakan tombol ±10 detik untuk mengulang bagian penting."),
+      tr("Kamu boleh menjeda dan mengulang audio selama waktu masih tersedia."),
+      tr("Tulis/pilih jawaban sesuai yang kamu dengar."),
     ],
   },
   writing: {
-    title: "Petunjuk Bagian Writing",
+    title: tr("Petunjuk Bagian Writing"),
     points: [
-      "Tulis esai sesuai instruksi dan perhatikan jumlah kata minimal.",
-      "Susun jawaban dengan struktur yang jelas: pembuka, isi, penutup.",
-      "Periksa kembali tata bahasa dan ejaan sebelum lanjut.",
+      tr("Tulis esai sesuai instruksi dan perhatikan jumlah kata minimal."),
+      tr("Susun jawaban dengan struktur yang jelas: pembuka, isi, penutup."),
+      tr("Periksa kembali tata bahasa dan ejaan sebelum lanjut."),
     ],
   },
   speaking: {
-    title: "Petunjuk Bagian Speaking",
+    title: tr("Petunjuk Bagian Speaking"),
     points: [
-      "Izinkan akses mikrofon saat diminta browser.",
-      "Rekam jawabanmu — bicara dengan jelas dan sesuai instruksi.",
-      "Kamu bisa merekam ulang bila belum puas dengan jawabanmu.",
+      tr("Izinkan akses mikrofon saat diminta browser."),
+      tr("Rekam jawabanmu — bicara dengan jelas dan sesuai instruksi."),
+      tr("Kamu bisa merekam ulang bila belum puas dengan jawabanmu."),
     ],
   },
   structure: {
-    title: "Petunjuk Bagian Structure",
+    title: tr("Petunjuk Bagian Structure"),
     points: [
-      "Baca tiap kalimat dengan teliti — ini menguji tata bahasa (grammar).",
-      "Pilih jawaban yang melengkapi kalimat dengan benar, atau tandai bagian yang salah.",
-      "Andalkan aturan tata bahasa, bukan sekadar bunyi kalimat yang terdengar wajar.",
+      tr("Baca tiap kalimat dengan teliti — ini menguji tata bahasa (grammar)."),
+      tr("Pilih jawaban yang melengkapi kalimat dengan benar, atau tandai bagian yang salah."),
+      tr("Andalkan aturan tata bahasa, bukan sekadar bunyi kalimat yang terdengar wajar."),
     ],
   },
-};
+});
 
 // audio_url bisa berupa file mp3 (storage) atau link YouTube (disematkan admin).
 function youtubeEmbedId(url: string): string | null {
@@ -543,6 +546,7 @@ function exitFs() {
 }
 
 export default function SimulasiRunnerPage() {
+  const t = useT(); // [ui-lang-switcher-v1]
   const params = useParams<{ id: string }>();
   const id = params?.id as string;
   const searchParams = useSearchParams();
@@ -801,7 +805,7 @@ export default function SimulasiRunnerPage() {
     if (!g || finishedRef.current.has(g.skill)) return;
     if (!auto && !preview) {
       const un = groupQuestions(g).filter((q) => !isAnswered(q, answers[q.id])).length;
-      if (un > 0 && !window.confirm(`Masih ada ${un} soal belum dijawab di subtes ini. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi. Yakin selesai?`)) return;
+      if (un > 0 && !window.confirm(`${t("Masih ada")} ${un} ${t("soal belum dijawab di subtes ini. Subtes yang sudah diselesaikan TIDAK bisa dibuka lagi. Yakin selesai?")}`)) return;
     }
     finishedRef.current.add(g.skill);
     setGroupDone(new Set(finishedRef.current));
@@ -877,7 +881,7 @@ export default function SimulasiRunnerPage() {
   useEffect(() => {
     if (!staleResume || preview || phase !== "running" || !attemptId) return;
     setStaleResume(false);
-    alert("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai.");
+    alert(t("Sesi simulasi ini sudah lewat dari 24 jam, jadi otomatis dikumpulkan. Jawaban yang sempat tersimpan tetap dinilai."));
     submitRef.current(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [staleResume, preview, phase, attemptId]);
@@ -895,8 +899,8 @@ export default function SimulasiRunnerPage() {
         setViolationMsg(msg);
       }
     };
-    const onVis = () => { if (document.visibilityState === "hidden") violate("Kamu terdeteksi berpindah tab / meninggalkan layar ujian."); };
-    const onFs = () => { if (!fsElement()) violate("Kamu terdeteksi keluar dari mode layar penuh."); };
+    const onVis = () => { if (document.visibilityState === "hidden") violate(t("Kamu terdeteksi berpindah tab / meninggalkan layar ujian.")); };
+    const onFs = () => { if (!fsElement()) violate(t("Kamu terdeteksi keluar dari mode layar penuh.")); };
 
     // [sim-proctor-v2] Pindah APLIKASI/jendela lain (Alt+Tab, Cmd+Tab, klik
     // jendela lain, minimize) sering TIDAK memicu visibilitychange → pakai
@@ -909,7 +913,7 @@ export default function SimulasiRunnerPage() {
       if (blurTimer) clearTimeout(blurTimer);
       blurTimer = setTimeout(() => {
         if (document.hasFocus() || document.activeElement?.tagName === "IFRAME") return;
-        violate("Kamu terdeteksi berpindah ke aplikasi/jendela lain.");
+        violate(t("Kamu terdeteksi berpindah ke aplikasi/jendela lain."));
       }, 600);
     };
     const onFocus = () => { if (blurTimer) { clearTimeout(blurTimer); blurTimer = null; } };
@@ -943,7 +947,7 @@ export default function SimulasiRunnerPage() {
       if (mod && k === "v") { e.preventDefault(); return; }
     };
 
-    const onPrint = () => violate("Mencetak / menyimpan halaman soal tidak diizinkan.");
+    const onPrint = () => violate(t("Mencetak / menyimpan halaman soal tidak diizinkan."));
 
     document.addEventListener("visibilitychange", onVis);
     document.addEventListener("fullscreenchange", onFs);
@@ -998,7 +1002,7 @@ export default function SimulasiRunnerPage() {
     if (!force) {
       const unanswered = questions.filter((q) => !isAnswered(q, answers[q.id]));
       if (unanswered.length > 0) {
-        alert(`Masih ada ${unanswered.length} soal yang belum dijawab. Lengkapi semua soal dulu sebelum mengirim — cek panel Navigasi Soal (tanda merah = terlewati).`);
+        alert(`${t("Masih ada")} ${unanswered.length} ${t("soal yang belum dijawab. Lengkapi semua soal dulu sebelum mengirim — cek panel Navigasi Soal (tanda merah = terlewati).")}`);
         return;
       }
     }
@@ -1046,7 +1050,7 @@ export default function SimulasiRunnerPage() {
       } else {
         // Writing / Speaking → AI
         aiDone++;
-        setGradingMsg(`Menilai jawaban ${q.type === "speaking_task" ? "speaking" : "writing"} (${aiDone}/${aiCount}) secara otomatis…`);
+        setGradingMsg(`${t("Menilai jawaban")} ${q.type === "speaking_task" ? "speaking" : "writing"} (${aiDone}/${aiCount}) ${t("secara otomatis…")}`);
         let audioUrl: string | null = a.audioUrl;
         if (q.type === "speaking_task" && a.audioBlob && !audioUrl) {
           audioUrl = await uploadRecording(attemptId, q.id, a.audioBlob);
@@ -1078,13 +1082,15 @@ export default function SimulasiRunnerPage() {
     }
 
     const score = autoScore + aiScore;
-    const t = { score, max_score: maxScore, auto_score: autoScore, ai_score: aiScore };
+    // [ui-lang-switcher-v1] dinamai `tot`, bukan `t` — `t` sudah dipakai penerjemah
+    // di komponen ini; nama lama menaunginya dan bikin TDZ di seluruh fungsi.
+    const tot = { score, max_score: maxScore, auto_score: autoScore, ai_score: aiScore };
     if (!preview) { // mode preview tidak menyimpan attempt/jawaban ke database
       await saveAnswers(attemptId, payloads);
-      await finalizeAttempt(attemptId, t);
+      await finalizeAttempt(attemptId, tot);
       clearProgress(id, info?.user_id); // tes selesai → buang progres tersimpan
     }
-    setTotals(t);
+    setTotals(tot);
     setResults(resultItems);
     setPhase("result");
   }
@@ -1099,9 +1105,9 @@ export default function SimulasiRunnerPage() {
   if (phase === "noauth") return (
     <Centered>
       <div className="text-center">
-        <p className="text-sm text-slate-600">Masuk dulu untuk mengerjakan simulasi.</p>
+        <p className="text-sm text-slate-600">{t("Masuk dulu untuk mengerjakan simulasi.")}</p>
         <Link href="/akun" className="mt-4 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
-          Masuk / Daftar <ArrowRight className="h-4 w-4" />
+          {t("Masuk / Daftar")} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </Centered>
@@ -1111,19 +1117,19 @@ export default function SimulasiRunnerPage() {
     <Centered>
       <div className="text-center">
         <AlertCircle className="mx-auto h-8 w-8 text-slate-400" />
-        <p className="mt-2 text-sm text-slate-600">Simulasi tidak tersedia. Mungkin belum dipublikasikan, atau kamu belum punya akses paketnya.</p>
+        <p className="mt-2 text-sm text-slate-600">{t("Simulasi tidak tersedia. Mungkin belum dipublikasikan, atau kamu belum punya akses paketnya.")}</p>
         {/* [sim-fetch-retry-v1] Sudah bayar tapi mendarat di sini? Paling sering
             cuma sesi yang belum siap — muat ulang biasanya menyelesaikan. */}
-        <p className="mt-1 text-xs text-slate-400">Sudah beli paketnya? Coba muat ulang halaman ini, dan pastikan login memakai email yang sama dengan saat pembelian.</p>
+        <p className="mt-1 text-xs text-slate-400">{t("Sudah beli paketnya? Coba muat ulang halaman ini, dan pastikan login memakai email yang sama dengan saat pembelian.")}</p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <button onClick={() => window.location.reload()} className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
-            Muat Ulang
+            {t("Muat Ulang")}
           </button>
           <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700">
-            Beli Paket <ArrowRight className="h-4 w-4" />
+            {t("Beli Paket")} <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
-            <ArrowLeft className="h-4 w-4" />Kembali ke daftar
+            <ArrowLeft className="h-4 w-4" />{t("Kembali ke daftar")}
           </Link>
         </div>
       </div>
@@ -1135,17 +1141,16 @@ export default function SimulasiRunnerPage() {
     <Centered>
       <div className="text-center">
         <Sparkles className="mx-auto h-8 w-8 text-slate-400" />
-        <p className="mt-2 font-semibold text-slate-800">Kesempatan gratis sudah habis</p>
+        <p className="mt-2 font-semibold text-slate-800">{t("Kesempatan gratis sudah habis")}</p>
         <p className="mt-1 text-sm text-slate-500">
-          Kamu sudah memakai {promo?.limit ?? 3}× kesempatan coba gratis untuk tes ini.
-          Beli paket untuk akses penuh tanpa batas.
+          {t("Kamu sudah memakai")} {promo?.limit ?? 3}× {t("kesempatan coba gratis untuk tes ini. Beli paket untuk akses penuh tanpa batas.")}
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <Link href="/simulasi/paket" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white" style={{ background: TEAL }}>
-            Beli Paket <ArrowRight className="h-4 w-4" />
+            {t("Beli Paket")} <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700">
-            <ArrowLeft className="h-4 w-4" />Kembali ke daftar
+            <ArrowLeft className="h-4 w-4" />{t("Kembali ke daftar")}
           </Link>
         </div>
       </div>
@@ -1158,8 +1163,8 @@ export default function SimulasiRunnerPage() {
     <Centered>
       <div className="text-center">
         <Loader2 className="mx-auto h-8 w-8 animate-spin" style={{ color: TEAL }} />
-        <p className="mt-3 font-semibold text-slate-800">Menilai jawaban kamu…</p>
-        <p className="mt-1 text-sm text-slate-500">{gradingMsg || "Mohon tunggu sebentar."}</p>
+        <p className="mt-3 font-semibold text-slate-800">{t("Menilai jawaban kamu…")}</p>
+        <p className="mt-1 text-sm text-slate-500">{gradingMsg || t("Mohon tunggu sebentar.")}</p>
       </div>
     </Centered>
   );
@@ -1187,23 +1192,23 @@ export default function SimulasiRunnerPage() {
     return (
       <Shell sim={sim} preview={preview} confirmExit>
         <div className="rounded-2xl p-6 text-white sm:p-8" style={{ background: `linear-gradient(135deg, ${TEAL} 0%, ${TEAL_DEEP} 100%)` }}>
-          <p className="text-xs font-semibold uppercase tracking-wide text-white/80">Detail Tryout · {testTypeLabel(sim.test_type, sim.test_variant)}</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-white/80">{t("Detail Tryout")} · {testTypeLabel(sim.test_type, sim.test_variant)}</p>
           <h1 className="mt-1 text-xl font-bold sm:text-2xl">{sim.title}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-medium text-white/90">
-            <span className="inline-flex items-center gap-1.5"><ListChecks className="h-4 w-4" />{questions.length} soal · {skillGroups.length} subtes</span>
-            <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" />± {totalDur} menit total</span>
-            {!preview && <span className="inline-flex items-center gap-1.5"><ShieldAlert className="h-4 w-4" />Proctoring aktif</span>}
+            <span className="inline-flex items-center gap-1.5"><ListChecks className="h-4 w-4" />{questions.length} {t("soal")} · {skillGroups.length} {t("subtes")}</span>
+            <span className="inline-flex items-center gap-1.5"><Clock className="h-4 w-4" />± {totalDur} {t("menit total")}</span>
+            {!preview && <span className="inline-flex items-center gap-1.5"><ShieldAlert className="h-4 w-4" />{t("Proctoring aktif")}</span>}
           </div>
         </div>
 
         {violations > 0 && (
           <p className="mt-4 flex items-center gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm font-semibold text-red-600">
             <ShieldAlert className="h-4 w-4 shrink-0" />
-            Pelanggaran tercatat: {violations}/{MAX_VIOLATIONS}. Mencapai {MAX_VIOLATIONS}× → jawaban otomatis dikumpulkan.
+            {t("Pelanggaran tercatat")}: {violations}/{MAX_VIOLATIONS}. {t("Mencapai")} {MAX_VIOLATIONS}× → {t("jawaban otomatis dikumpulkan.")}
           </p>
         )}
 
-        <h2 className="mt-6 mb-3 text-sm font-bold text-slate-800">Subtes yang diujikan</h2>
+        <h2 className="mt-6 mb-3 text-sm font-bold text-slate-800">{t("Subtes yang diujikan")}</h2>
         <div className="space-y-3">
           {skillGroups.map((g) => {
             const Icon = SKILL_ICON[g.skill];
@@ -1225,20 +1230,20 @@ export default function SimulasiRunnerPage() {
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-bold text-slate-900">{SKILL_LABEL[g.skill]}</p>
                   <p className="mt-0.5 text-xs font-medium text-slate-500 tabular-nums">
-                    {ans}/{gQs.length} Soal · {dur} Menit{g.secIdxs.length > 1 ? ` · ${g.secIdxs.length} part` : ""}
+                    {ans}/{gQs.length} {t("Soal")} · {dur} {t("Menit")}{g.secIdxs.length > 1 ? ` · ${g.secIdxs.length} part` : ""}
                   </p>
                   <span className={`mt-1.5 inline-block rounded-full px-2 py-0.5 text-[11px] font-semibold ${
                     done ? "bg-emerald-50 text-emerald-600" : started ? "bg-amber-50 text-amber-700" : blocked ? "bg-slate-100 text-slate-400" : "bg-slate-100 text-slate-500"
                   }`}>
-                    {done ? "Selesai" : started ? "Sedang dikerjakan" : blocked ? "Terkunci" : "Belum Dikerjakan"}
+                    {done ? t("Selesai") : started ? t("Sedang dikerjakan") : blocked ? t("Terkunci") : t("Belum Dikerjakan")}
                   </span>
                 </div>
                 {!done && (blocked ? (
                   <span
-                    title={waitFor ? `Selesaikan subtes ${SKILL_LABEL[waitFor.skill]} dulu` : undefined}
+                    title={waitFor ? `${t("Selesaikan subtes")} ${SKILL_LABEL[waitFor.skill]} ${t("dulu")}` : undefined}
                     className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-slate-100 px-4 py-2.5 text-sm font-bold text-slate-400"
                   >
-                    <Lock className="h-4 w-4" />Terkunci
+                    <Lock className="h-4 w-4" />{t("Terkunci")}
                   </span>
                 ) : (
                   <button
@@ -1247,7 +1252,7 @@ export default function SimulasiRunnerPage() {
                     className="inline-flex shrink-0 items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-bold text-white"
                     style={{ background: started ? TEAL_DEEP : TEAL }}
                   >
-                    {started ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4" />
+                    {started ? t("Lanjutkan") : t("Mulai")} <ArrowRight className="h-4 w-4" />
                   </button>
                 ))}
               </div>
@@ -1258,11 +1263,9 @@ export default function SimulasiRunnerPage() {
         <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-slate-500">
           <Info className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
           <span>
-            Subtes dikerjakan <b className="font-bold">berurutan</b> seperti ujian aslinya
-            {skillGroups.length > 1 && <> ({skillGroups.map((g) => SKILL_LABEL[g.skill]).join(" → ")})</>} — subtes berikutnya
-            baru terbuka setelah subtes sebelumnya diselesaikan. Tiap subtes punya batas waktu sendiri dan dikunci minimal{" "}
-            {SECTION_LOCK_MINUTES} menit setelah dimulai, dan subtes yang sudah diselesaikan tidak bisa dibuka lagi.
-            Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.
+            {t("Subtes dikerjakan")} <b className="font-bold">{t("berurutan")}</b> {t("seperti ujian aslinya")}
+            {skillGroups.length > 1 && <> ({skillGroups.map((g) => SKILL_LABEL[g.skill]).join(" → ")})</>} — {t("subtes berikutnya baru terbuka setelah subtes sebelumnya diselesaikan. Tiap subtes punya batas waktu sendiri dan dikunci minimal")}{" "}
+            {SECTION_LOCK_MINUTES} {t("menit setelah dimulai, dan subtes yang sudah diselesaikan tidak bisa dibuka lagi. Saat subtes terakhir selesai, seluruh jawaban otomatis dikumpulkan.")}
           </span>
         </p>
       </Shell>
@@ -1322,7 +1325,7 @@ export default function SimulasiRunnerPage() {
   const sectionHeader = (
     <>
       <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-700">
-        <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · Bagian {secIdx + 1}/{sections.length}
+        <SkillIcon className="h-4 w-4" />{SKILL_LABEL[section.skill]} · {t("Bagian")} {secIdx + 1}/{sections.length}
       </div>
       <h2 className="text-lg font-bold text-slate-900">{section.title}</h2>
       {/* Tabel isian (tableFill) sengaja tidak di sini — dirender SETELAH pemutar
@@ -1350,7 +1353,7 @@ export default function SimulasiRunnerPage() {
   // Layar intro/petunjuk bagian — tampil sebelum soal tiap bagian (template default
   // per skill, atau instruksi kustom admin). Alur: intro → soal → intro → soal, dst.
   if (!introDone.has(secIdx)) {
-    const tpl = SECTION_INTRO[section.skill] ?? { title: "Petunjuk Bagian", points: [] };
+    const tpl = sectionIntro()[section.skill] ?? { title: t("Petunjuk Bagian"), points: [] };
     const customInstr = section.instructions?.trim();
     return (
       <Shell sim={sim} preview={preview} confirmExit proctored={!preview} headerRight={remaining != null ? <TimerPill seconds={remaining} /> : undefined}>
@@ -1361,10 +1364,10 @@ export default function SimulasiRunnerPage() {
           </div>
           <h2 className="text-xl font-bold text-slate-900">{section.title}</h2>
           <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
-            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><ListChecks className="h-3.5 w-3.5" />{secQs.length} soal</span>
-            {section.duration_minutes > 0 && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Clock className="h-3.5 w-3.5" />{section.duration_minutes} menit</span>}
-            {section.audio_url && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Headphones className="h-3.5 w-3.5" />Ada audio</span>}
-            {section.passage && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><BookOpen className="h-3.5 w-3.5" />Ada teks bacaan</span>}
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><ListChecks className="h-3.5 w-3.5" />{secQs.length} {t("soal")}</span>
+            {section.duration_minutes > 0 && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Clock className="h-3.5 w-3.5" />{section.duration_minutes} {t("menit")}</span>}
+            {section.audio_url && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><Headphones className="h-3.5 w-3.5" />{t("Ada audio")}</span>}
+            {section.passage && <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5"><BookOpen className="h-3.5 w-3.5" />{t("Ada teks bacaan")}</span>}
           </div>
 
           <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50 p-4">
@@ -1384,7 +1387,7 @@ export default function SimulasiRunnerPage() {
 
           <div className="mt-6 flex items-center justify-end gap-3">
             <button onClick={() => { setQPage(0); enterFullscreen(); dismissIntro(secIdx); }} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-              <PlayCircle className="h-4 w-4" />Mulai bagian ini
+              <PlayCircle className="h-4 w-4" />{t("Mulai bagian ini")}
             </button>
           </div>
         </div>
@@ -1421,11 +1424,11 @@ export default function SimulasiRunnerPage() {
       type="button"
       disabled={lockLeft > 0}
       onClick={() => finishGroup()}
-      title={lockLeft > 0 ? `Subtes terkunci minimal ${lockMin} menit — sisa ${clock(lockLeft)}` : undefined}
+      title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}` : undefined}
       className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white disabled:opacity-50"
       style={{ background: TEAL_DEEP }}
     >
-      {lockLeft > 0 ? <><Lock className="h-4 w-4" />Terkunci {clock(lockLeft)}</> : <><CheckCircle2 className="h-4 w-4" />Selesaikan Subtes</>}
+      {lockLeft > 0 ? <><Lock className="h-4 w-4" />{t("Terkunci")} {clock(lockLeft)}</> : <><CheckCircle2 className="h-4 w-4" />{t("Selesaikan Subtes")}</>}
     </button>
   );
 
@@ -1439,11 +1442,11 @@ export default function SimulasiRunnerPage() {
         onClick={goPrevPage}
         className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
       >
-        <ArrowLeft className="h-4 w-4" />Sebelumnya
+        <ArrowLeft className="h-4 w-4" />{t("Sebelumnya")}
       </button>
       {isLastInGroup && isLastPage ? finishGroupBtn : (
         <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-          Lanjut <ArrowRight className="h-4 w-4" />
+          {t("Lanjut")} <ArrowRight className="h-4 w-4" />
         </button>
       )}
     </div>
@@ -1464,9 +1467,9 @@ export default function SimulasiRunnerPage() {
         <span className="text-xs font-medium text-slate-500 tabular-nums">
           {SKILL_LABEL[activeGroup.skill]} ·{" "}
           {listQs.length === 0
-            ? `${secQs.length} soal — isi langsung di tabel`
-            : <>Soal {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, listQs.length)} dari {listQs.length}</>}
-          {pageCount > 1 && <span className="text-slate-400"> · Hal {safePage + 1}/{pageCount}</span>}
+            ? `${secQs.length} ${t("soal — isi langsung di tabel")}`
+            : <>{t("Soal")} {pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, listQs.length)} {t("dari")} {listQs.length}</>}
+          {pageCount > 1 && <span className="text-slate-400"> · {t("Hal")} {safePage + 1}/{pageCount}</span>}
         </span>
         <div className="flex items-center gap-2">
           <button
@@ -1475,11 +1478,11 @@ export default function SimulasiRunnerPage() {
             onClick={goPrevPage}
             className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-semibold text-slate-600 disabled:opacity-40"
           >
-            <ArrowLeft className="h-4 w-4" />Sebelumnya
+            <ArrowLeft className="h-4 w-4" />{t("Sebelumnya")}
           </button>
           {isLastInGroup && isLastPage ? finishGroupBtn : (
             <button type="button" onClick={goNextPage} className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2 text-sm font-bold text-white" style={{ background: TEAL }}>
-              Lanjut <ArrowRight className="h-4 w-4" />
+              {t("Lanjut")} <ArrowRight className="h-4 w-4" />
             </button>
           )}
         </div>
@@ -1525,7 +1528,7 @@ export default function SimulasiRunnerPage() {
               {pageQs.map((q) => (
                 <QuestionBlock key={q.id} index={qNumber[q.id]} q={q} state={answers[q.id]} onChange={(p) => setAns(q.id, p)} />
               ))}
-              {secQs.length === 0 && <p className="text-sm text-slate-400">Tidak ada soal di bagian ini.</p>}
+              {secQs.length === 0 && <p className="text-sm text-slate-400">{t("Tidak ada soal di bagian ini.")}</p>}
             </div>
 
             {bottomNav}
@@ -1561,6 +1564,7 @@ function Centered({ children }: { children: React.ReactNode }) {
 function GuestIdentityForm({ title, busy, onSubmit }: {
   title: string; busy: boolean; onSubmit: (name: string, email: string, whatsapp: string) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -1576,23 +1580,23 @@ function GuestIdentityForm({ title, busy, onSubmit }: {
         <div className="flex h-11 w-11 items-center justify-center rounded-xl text-white" style={{ background: TEAL }}>
           <ClipboardCheck className="h-6 w-6" />
         </div>
-        <h1 className="mt-4 text-lg font-bold text-slate-900">Isi identitas dulu</h1>
+        <h1 className="mt-4 text-lg font-bold text-slate-900">{t("Isi identitas dulu")}</h1>
         <p className="mt-1 text-sm text-slate-500">
-          Sebelum mengerjakan{title ? ` "${title}"` : " simulasi"}, isi data berikut. Nama akan tampil di hasil pengerjaanmu.
+          {t("Sebelum mengerjakan")}{title ? ` "${title}"` : ` ${t("simulasi")}`}, {t("isi data berikut. Nama akan tampil di hasil pengerjaanmu.")}
         </p>
 
         <div className="mt-5 space-y-3">
           <div className="relative">
             <User className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input className={fieldCls} placeholder="Nama lengkap *" value={name} onChange={(e) => setName(e.target.value)} autoFocus />
+            <input className={fieldCls} placeholder={t("Nama lengkap *")} value={name} onChange={(e) => setName(e.target.value)} autoFocus />
           </div>
           <div className="relative">
             <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input className={fieldCls} type="email" placeholder="Email (opsional)" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className={fieldCls} type="email" placeholder={t("Email (opsional)")} value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="relative">
             <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input className={fieldCls} inputMode="tel" placeholder="No. WhatsApp (opsional)" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
+            <input className={fieldCls} inputMode="tel" placeholder={t("No. WhatsApp (opsional)")} value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
           </div>
         </div>
 
@@ -1602,7 +1606,7 @@ function GuestIdentityForm({ title, busy, onSubmit }: {
           className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white disabled:opacity-40"
           style={{ background: TEAL }}
         >
-          {busy ? <><Loader2 className="h-4 w-4 animate-spin" />Menyiapkan…</> : <>Mulai Simulasi <ArrowRight className="h-4 w-4" /></>}
+          {busy ? <><Loader2 className="h-4 w-4 animate-spin" />{t("Menyiapkan…")}</> : <>{t("Mulai Simulasi")} <ArrowRight className="h-4 w-4" /></>}
         </button>
       </form>
     </Centered>
@@ -1615,11 +1619,12 @@ const INTRO_STEPS = ["Ikhtisar", "Petunjuk", "Rincian"] as const;
 function IntroWizard({ sim, sections, questions, onStart, promo }: {
   sim: Simulation; sections: Section[]; questions: Question[]; onStart: () => void; promo: PromoAttemptStatus | null;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [step, setStep] = useState(0);
   const hasSpeaking = useMemo(() => sections.some((s) => s.skill === "speaking"), [sections]);
   const effDuration = useMemo(() => effectiveDurationMinutes(sim, sections), [sim, sections]);
   // + aturan mode subtes & proctoring (EXTRA_RULES) supaya siswa tahu sebelum mulai.
-  const rules = [...GENERAL_RULES.filter((r) => !r.timed || effDuration > 0), ...EXTRA_RULES];
+  const rules = [...GENERAL_RULES.filter((r) => !r.timed || effDuration > 0).map((r) => ({ text: t(r.text) })), ...extraRules()];
 
   // Kelompokkan bagian per skill → accordion biar daftar yang panjang (mis. 13
   // bagian) tidak membanjiri layar. Default skill pertama yang terbuka.
@@ -1644,8 +1649,8 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
         <div className="mb-4 flex items-center gap-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-800">
           <Sparkles className="h-4 w-4 shrink-0" />
           <span>
-            Akses gratis (kode promo) — sisa <b>{promo.remaining}</b> dari {promo.limit}× kesempatan.
-            {promo.remaining <= 0 && " Jatah habis, beli paket untuk lanjut."}
+            {t("Akses gratis (kode promo) — sisa")} <b>{promo.remaining}</b> {t("dari")} {promo.limit}× {t("kesempatan.")}
+            {promo.remaining <= 0 && ` ${t("Jatah habis, beli paket untuk lanjut.")}`}
           </span>
         </div>
       )}
@@ -1660,7 +1665,7 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
               >
                 {i < step ? <Check className="h-4 w-4" /> : i + 1}
               </span>
-              <span className={`hidden text-xs font-semibold sm:inline ${i === step ? "text-slate-900" : "text-slate-400"}`}>{label}</span>
+              <span className={`hidden text-xs font-semibold sm:inline ${i === step ? "text-slate-900" : "text-slate-400"}`}>{t(label)}</span>
             </div>
             {i < INTRO_STEPS.length - 1 && (
               <div className="sim-track mx-2 h-0.5 flex-1 rounded" style={{ background: i < step ? TEAL : undefined }} />
@@ -1675,12 +1680,12 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
           <h2 className="text-lg font-bold text-slate-900">{sim.title}</h2>
           {sim.description
             ? <RichText text={sim.description} className="mt-2 space-y-2.5 text-sm leading-relaxed text-slate-600" />
-            : <p className="mt-1 text-sm text-slate-600">{TEST_OVERVIEW[sim.test_type]}</p>}
+            : <p className="mt-1 text-sm text-slate-600">{t(TEST_OVERVIEW[sim.test_type])}</p>}
 
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <Stat icon={ListChecks} label="Total Soal" value={`${questions.length} soal`} />
-            <Stat icon={BookOpen} label="Jumlah Bagian" value={`${sections.length} bagian`} />
-            <Stat icon={Clock} label="Durasi" value={effDuration > 0 ? `${effDuration} menit` : "Tanpa batas"} />
+            <Stat icon={ListChecks} label={t("Total Soal")} value={`${questions.length} ${t("soal")}`} />
+            <Stat icon={BookOpen} label={t("Jumlah Bagian")} value={`${sections.length} ${t("bagian")}`} />
+            <Stat icon={Clock} label={t("Durasi")} value={effDuration > 0 ? `${effDuration} ${t("menit")}` : t("Tanpa batas")} />
           </div>
 
         </div>
@@ -1690,7 +1695,7 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
       {step === 1 && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
           <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
-            <Info className="h-4 w-4 text-teal-600" />Petunjuk Pengerjaan
+            <Info className="h-4 w-4 text-teal-600" />{t("Petunjuk Pengerjaan")}
           </h3>
           <ul className="mt-3 space-y-2">
             {rules.map((r, i) => (
@@ -1703,9 +1708,9 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
           {hasSpeaking && (
             <div className="mt-5 border-t border-slate-100 pt-5">
               <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900">
-                <Mic className="h-4 w-4 text-teal-600" />Cek Mikrofon
+                <Mic className="h-4 w-4 text-teal-600" />{t("Cek Mikrofon")}
               </h3>
-              <p className="mt-1 text-xs text-slate-500">Tes ini ada bagian Speaking. Pastikan mikrofon berfungsi sebelum mulai.</p>
+              <p className="mt-1 text-xs text-slate-500">{t("Tes ini ada bagian Speaking. Pastikan mikrofon berfungsi sebelum mulai.")}</p>
               <MicCheck />
             </div>
           )}
@@ -1715,8 +1720,8 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
       {/* Step 2 — Rincian bagian (accordion per skill) */}
       {step === 2 && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-sm font-bold text-slate-900">Rincian Bagian</h3>
-          <p className="mt-1 text-xs text-slate-500">Kerjakan tiap bagian secara berurutan.</p>
+          <h3 className="text-sm font-bold text-slate-900">{t("Rincian Bagian")}</h3>
+          <p className="mt-1 text-xs text-slate-500">{t("Kerjakan tiap bagian secara berurutan.")}</p>
           <div className="mt-3 space-y-2">
             {groups.map((g) => {
               const Icon = SKILL_ICON[g.skill];
@@ -1733,7 +1738,7 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
                       <Icon className="h-4 w-4" />
                     </span>
                     <span className="flex-1 text-sm font-semibold text-slate-900">{SKILL_LABEL[g.skill]}</span>
-                    <span className="text-xs font-medium text-slate-400 tabular-nums">{g.parts.length} bagian · {totalQ} soal</span>
+                    <span className="text-xs font-medium text-slate-400 tabular-nums">{g.parts.length} {t("bagian")} · {totalQ} {t("soal")}</span>
                     <ChevronDown className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                   </button>
 
@@ -1742,12 +1747,12 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
                       {g.parts.map((p) => (
                         <li key={p.section.id} className="text-sm">
                           <p className="font-semibold text-slate-900">
-                            <span className="mr-1 text-slate-400">Bagian {p.idx + 1}.</span>{p.section.title}
+                            <span className="mr-1 text-slate-400">{t("Bagian")} {p.idx + 1}.</span>{p.section.title}
                           </p>
                           <p className="mt-0.5 text-xs font-medium text-teal-700">
-                            {p.count} soal{p.section.duration_minutes > 0 ? ` · ${p.section.duration_minutes} menit` : ""}
+                            {p.count} {t("soal")}{p.section.duration_minutes > 0 ? ` · ${p.section.duration_minutes} ${t("menit")}` : ""}
                           </p>
-                          <p className="mt-1 text-xs leading-relaxed text-slate-500">{(p.section.instructions ? p.section.instructions.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "") || SKILL_HOWTO[g.skill]}</p>
+                          <p className="mt-1 text-xs leading-relaxed text-slate-500">{(p.section.instructions ? p.section.instructions.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "") || t(SKILL_HOWTO[g.skill])}</p>
                         </li>
                       ))}
                     </ol>
@@ -1766,15 +1771,15 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
           onClick={() => setStep((s) => Math.max(0, s - 1))}
           className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 disabled:opacity-40"
         >
-          <ArrowLeft className="h-4 w-4" />Kembali
+          <ArrowLeft className="h-4 w-4" />{t("Kembali")}
         </button>
         {isLast ? (
           <button onClick={onStart} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL_DEEP }}>
-            <CheckCircle2 className="h-4 w-4" />Saya Mengerti, Mulai Simulasi
+            <CheckCircle2 className="h-4 w-4" />{t("Saya Mengerti, Mulai Simulasi")}
           </button>
         ) : (
           <button onClick={() => setStep((s) => s + 1)} className="inline-flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-            Lanjut <ArrowRight className="h-4 w-4" />
+            {t("Lanjut")} <ArrowRight className="h-4 w-4" />
           </button>
         )}
       </div>
@@ -1784,6 +1789,7 @@ function IntroWizard({ sim, sections, questions, onStart, promo }: {
 
 // Cek mikrofon — minta izin lalu tampilkan level meter sebagai bukti mic aktif.
 function MicCheck() {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [status, setStatus] = useState<"idle" | "checking" | "ok" | "error">("idle");
   const [level, setLevel] = useState(0);
   const streamRef = useRef<MediaStream | null>(null);
@@ -1828,15 +1834,15 @@ function MicCheck() {
     <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
       {status === "idle" && (
         <button onClick={check} className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: TEAL }}>
-          <Mic className="h-4 w-4" />Tes mikrofon
+          <Mic className="h-4 w-4" />{t("Tes mikrofon")}
         </button>
       )}
       {status === "checking" && (
-        <p className="flex items-center gap-2 text-sm text-slate-500"><Loader2 className="h-4 w-4 animate-spin" />Meminta izin mikrofon…</p>
+        <p className="flex items-center gap-2 text-sm text-slate-500"><Loader2 className="h-4 w-4 animate-spin" />{t("Meminta izin mikrofon…")}</p>
       )}
       {status === "ok" && (
         <div>
-          <p className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600"><CheckCircle2 className="h-4 w-4" />Mikrofon aktif — coba bicara, bar akan bergerak.</p>
+          <p className="flex items-center gap-1.5 text-sm font-semibold text-emerald-600"><CheckCircle2 className="h-4 w-4" />{t("Mikrofon aktif — coba bicara, bar akan bergerak.")}</p>
           <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
             <div className="h-full rounded-full transition-[width] duration-75" style={{ width: `${level}%`, background: TEAL }} />
           </div>
@@ -1844,9 +1850,9 @@ function MicCheck() {
       )}
       {status === "error" && (
         <div>
-          <p className="flex items-center gap-1.5 text-sm font-medium text-red-500"><AlertCircle className="h-4 w-4" />Tidak bisa mengakses mikrofon. Izinkan akses di browser lalu coba lagi.</p>
+          <p className="flex items-center gap-1.5 text-sm font-medium text-red-500"><AlertCircle className="h-4 w-4" />{t("Tidak bisa mengakses mikrofon. Izinkan akses di browser lalu coba lagi.")}</p>
           <button onClick={check} className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600">
-            <Mic className="h-4 w-4" />Coba lagi
+            <Mic className="h-4 w-4" />{t("Coba lagi")}
           </button>
         </div>
       )}
@@ -1861,6 +1867,7 @@ function MicCheck() {
 const splitClamp = (n: number) => Math.min(72, Math.max(38, n));
 
 function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [pct, setPct] = useState(62);
   const wrapRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
@@ -1897,7 +1904,7 @@ function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
       <aside className="mb-4 lg:sticky lg:top-[152px] lg:mb-0 lg:w-[var(--sim-left)] lg:shrink-0">{left}</aside>
       <div
         onPointerDown={onDown}
-        title="Geser untuk mengatur lebar bacaan & soal"
+        title={t("Geser untuk mengatur lebar bacaan & soal")}
         className="group relative hidden shrink-0 cursor-col-resize touch-none select-none lg:sticky lg:top-[152px] lg:flex lg:h-[calc(100vh-11rem)] lg:w-5 lg:items-center lg:justify-center"
       >
         <div className="h-16 w-1.5 rounded-full bg-slate-200 transition-colors group-hover:bg-teal-400 group-active:bg-teal-500" />
@@ -1910,6 +1917,7 @@ function SplitPane({ left, right }: { left: ReactNode; right: ReactNode }) {
 function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctored }: { sim: Simulation; children: React.ReactNode; headerRight?: React.ReactNode; preview?: boolean; wide?: boolean; confirmExit?: boolean; proctored?: boolean }) {
   // Konfirmasi sebelum keluar saat tes sedang berjalan (cegah keluar tak sengaja
   // yang bikin kehilangan progres/waktu). Hanya aktif saat confirmExit=true.
+  const t = useT(); // [ui-lang-switcher-v1]
   const [askExit, setAskExit] = useState(false);
   // wide = layout split materi|soal (butuh ruang 2 kolom di desktop). Kartu
   // dibuat lebih lebar (memanjang ke kiri & kanan) supaya bacaan & soal lega.
@@ -2061,7 +2069,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
           {headerRight}
           <button
             onClick={toggleDark}
-            title={dark ? "Mode terang" : "Mode gelap"}
+            title={dark ? t("Mode terang") : t("Mode gelap")}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
           >
             {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -2072,7 +2080,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
           {(!proctored || !fs) && (
             <button
               onClick={toggleFs}
-              title={fs ? "Keluar layar penuh" : "Layar penuh"}
+              title={fs ? t("Keluar layar penuh") : t("Layar penuh")}
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100"
             >
               {fs ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
@@ -2092,11 +2100,11 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
                 <X className="h-5 w-5" />
               </span>
               <div className="min-w-0">
-                <p className="text-base font-bold text-slate-900">Tutup simulasi?</p>
+                <p className="text-base font-bold text-slate-900">{t("Tutup simulasi?")}</p>
                 <p className="mt-1 text-sm text-slate-500">
                   {preview
-                    ? "Kamu akan keluar dari mode preview."
-                    : "Jawaban & sisa waktu tersimpan otomatis. Kamu bisa membuka simulasi ini lagi dan melanjutkan dari titik ini."}
+                    ? t("Kamu akan keluar dari mode preview.")
+                    : t("Jawaban & sisa waktu tersimpan otomatis. Kamu bisa membuka simulasi ini lagi dan melanjutkan dari titik ini.")}
                 </p>
               </div>
             </div>
@@ -2106,7 +2114,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
                 onClick={() => setAskExit(false)}
                 className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50"
               >
-                Batal
+                {t("Batal")}
               </button>
               <button
                 type="button"
@@ -2114,7 +2122,7 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
                 className="rounded-xl px-4 py-2 text-sm font-bold text-white"
                 style={{ background: TEAL }}
               >
-                {preview ? "Ya, keluar" : "Ya, tutup & simpan"}
+                {preview ? t("Ya, keluar") : t("Ya, tutup & simpan")}
               </button>
             </div>
           </div>
@@ -2126,13 +2134,14 @@ function Shell({ sim, children, headerRight, preview, wide, confirmExit, proctor
 
 // Timer pill — merah saat <= 60 detik tersisa.
 function TimerPill({ seconds }: { seconds: number }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
   const danger = seconds <= 60;
   return (
     <span
       className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold tabular-nums ${danger ? "animate-pulse bg-red-50 text-red-600" : "bg-slate-100 text-slate-700"}`}
-      title="Sisa waktu — otomatis dikumpulkan saat habis"
+      title={t("Sisa waktu — otomatis dikumpulkan saat habis")}
     >
       <Clock className="h-4 w-4" />{mm}:{ss}
     </span>
@@ -2171,6 +2180,7 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
   partCount: number;
   skillLabel: string;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const stripRef = useRef<HTMLDivElement>(null);
   const firstCurrent = parts.find((p) => p.si === currentSecIdx)?.qs.find((q) => currentQids.has(q.id))?.id;
 
@@ -2195,9 +2205,9 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
         </span>
         {/* Legenda status — ala CBT: saat ini / kosong / terisi */}
         <div className="ml-auto hidden items-center gap-x-3 text-[11px] font-medium text-slate-500 md:flex">
-          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full" style={{ background: TEAL_DEEP }} />Nomor saat ini</span>
-          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full border border-slate-300 bg-white" />Kosong</span>
-          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full" style={{ background: TEAL }} />Terisi</span>
+          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full" style={{ background: TEAL_DEEP }} />{t("Nomor saat ini")}</span>
+          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full border border-slate-300 bg-white" />{t("Kosong")}</span>
+          <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full" style={{ background: TEAL }} />{t("Terisi")}</span>
         </div>
         <span className="ml-auto shrink-0 text-[11px] font-semibold text-slate-600 tabular-nums md:ml-0">
           <span className="font-bold text-teal-600">{answered}</span>/{total} terisi
@@ -2206,13 +2216,13 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
           type="button"
           disabled={lockLeft > 0}
           onClick={onFinish}
-          title={lockLeft > 0 ? `Subtes terkunci minimal ${lockMin} menit — sisa ${clock(lockLeft)}` : undefined}
+          title={lockLeft > 0 ? `${t("Subtes terkunci minimal")} ${lockMin} ${t("menit — sisa")} ${clock(lockLeft)}` : undefined}
           className="inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold text-white disabled:opacity-50"
           style={{ background: TEAL_DEEP }}
         >
           {lockLeft > 0
             ? <><Lock className="h-3.5 w-3.5" /><span className="tabular-nums">{clock(lockLeft)}</span></>
-            : <><CheckCircle2 className="h-3.5 w-3.5" />Selesaikan<span className="hidden sm:inline"> Subtes</span></>}
+            : <><CheckCircle2 className="h-3.5 w-3.5" />{t("Selesaikan")}<span className="hidden sm:inline"> {t("Subtes")}</span></>}
         </button>
       </div>
 
@@ -2234,14 +2244,14 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
                 : st === "skipped" ? "border border-red-300 bg-red-50 text-red-600 hover:border-red-400"
                 : "border border-slate-300 bg-white text-slate-600 hover:border-teal-400 hover:text-teal-700";
               const bg = isCurrent ? TEAL_DEEP : st === "answered" ? TEAL : undefined;
-              const label = st === "answered" ? "terisi" : st === "skipped" ? "terlewati — belum dijawab" : "kosong";
+              const label = st === "answered" ? t("terisi") : st === "skipped" ? t("terlewati — belum dijawab") : t("kosong");
               return (
                 <button
                   key={q.id}
                   type="button"
                   data-qid={q.id}
                   onClick={() => onJump(p.si, q.id)}
-                  title={`Soal ${qNumber[q.id]} · ${label}`}
+                  title={`${t("Soal")} ${qNumber[q.id]} · ${label}`}
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-xs font-semibold tabular-nums transition ${cls}`}
                   style={bg ? { background: bg } : undefined}
                 >
@@ -2258,6 +2268,7 @@ function ExamNavBar({ parts, answers, currentSecIdx, maxVisitedSecIdx, currentQi
 
 // ── [sim-proctor-v1] Modal peringatan pelanggaran proctoring ─────────────────
 function ViolationModal({ count, msg, onResume }: { count: number; msg: string | null; onResume: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   if (!msg) return null;
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
@@ -2266,10 +2277,10 @@ function ViolationModal({ count, msg, onResume }: { count: number; msg: string |
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-500">
           <ShieldAlert className="h-6 w-6" />
         </span>
-        <p className="mt-3 text-base font-bold text-slate-900">Pelanggaran terdeteksi ({count}/{MAX_VIOLATIONS})</p>
+        <p className="mt-3 text-base font-bold text-slate-900">{t("Pelanggaran terdeteksi")} ({count}/{MAX_VIOLATIONS})</p>
         <p className="mt-1 text-sm leading-relaxed text-slate-600">{msg}</p>
         <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-xs font-medium text-red-600">
-          {MAX_VIOLATIONS}× pelanggaran → jawaban otomatis dikumpulkan dan ujian berakhir.
+          {MAX_VIOLATIONS}× {t("pelanggaran → jawaban otomatis dikumpulkan dan ujian berakhir.")}
         </p>
         <button
           type="button"
@@ -2277,7 +2288,7 @@ function ViolationModal({ count, msg, onResume }: { count: number; msg: string |
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white"
           style={{ background: TEAL }}
         >
-          <PlayCircle className="h-4 w-4" />Lanjutkan Ujian (layar penuh)
+          <PlayCircle className="h-4 w-4" />{t("Lanjutkan Ujian (layar penuh)")}
         </button>
       </div>
     </div>
@@ -2395,6 +2406,7 @@ function IdentifyErrorInline({ tokens, state, onChange }: {
 function QuestionBlock({ index, q, state, onChange }: {
   index: number; q: Question; state: AnswerState; onChange: (p: Partial<AnswerState>) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const opts = q.type === "true_false_ng" ? TFNG : (q.options ?? []);
   const isFillBlank = q.type === "multiple_choice" && BLANK_RE.test(q.prompt) && (q.options?.length ?? 0) > 0;
   // Written Expression: coba rakit versi inline yg bisa diklik; kalau data tak
@@ -2404,8 +2416,8 @@ function QuestionBlock({ index, q, state, onChange }: {
     ? buildErrorInline(q.prompt, q.options!) : null;
   const hideRawPrompt = isFillBlank || !!errorTokens;
   const promptHeading = isFillBlank
-    ? "Lengkapi kalimat dengan kata yang tepat:"
-    : "Pilih bagian yang salah secara tata bahasa:";
+    ? t("Lengkapi kalimat dengan kata yang tepat:")
+    : t("Pilih bagian yang salah secara tata bahasa:");
   return (
     <div id={`q-${q.id}`} className="scroll-mt-24 rounded-xl border border-slate-100 p-4 transition">
       {/* pre-line: prompt listening multi-speaker pakai \n per giliran bicara */}
@@ -2415,7 +2427,7 @@ function QuestionBlock({ index, q, state, onChange }: {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={q.image_url}
-          alt="Visual soal"
+alt={t("Visual soal")}
           className="mt-3 max-h-96 w-full rounded-lg border border-slate-200 object-contain bg-slate-50"
         />
       )}
@@ -2446,7 +2458,7 @@ function QuestionBlock({ index, q, state, onChange }: {
         <input
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
-          placeholder="Ketik jawabanmu…"
+          placeholder={t("Ketik jawabanmu…")}
           // [sim-proctor-v2] koreksi ejaan/isi otomatis browser = bantuan jawaban → dimatikan.
           spellCheck={false}
           autoComplete="off"
@@ -2460,7 +2472,7 @@ function QuestionBlock({ index, q, state, onChange }: {
         <textarea
           value={state.text}
           onChange={(e) => onChange({ text: e.target.value })}
-          placeholder="Tulis esai kamu di sini…"
+          placeholder={t("Tulis esai kamu di sini…")}
           // [sim-proctor-v2] tanpa saran ejaan/tata bahasa browser — esai dinilai apa adanya.
           spellCheck={false}
           autoComplete="off"
@@ -2478,6 +2490,7 @@ function QuestionBlock({ index, q, state, onChange }: {
 
 // ── Mic recorder (MediaRecorder) ────────────────────────────────────────────
 function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (p: Partial<AnswerState>) => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [recording, setRecording] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [err, setErr] = useState("");
@@ -2508,7 +2521,7 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
       setSeconds(0);
       timerRef.current = setInterval(() => setSeconds((s) => s + 1), 1000);
     } catch {
-      setErr("Tidak bisa mengakses mikrofon. Izinkan akses mikrofon di browser.");
+      setErr(t("Tidak bisa mengakses mikrofon. Izinkan akses mikrofon di browser."));
     }
   }
 
@@ -2523,7 +2536,7 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
 
   return (
     <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
-      <p className="mb-3 text-xs text-slate-500">🎤 Rekam jawabanmu.</p>
+      <p className="mb-3 text-xs text-slate-500">🎤 {t("Rekam jawabanmu.")}</p>
       <div className="flex items-center gap-3">
         {recording ? (
           <button onClick={stopRec} className="inline-flex items-center gap-2 rounded-full bg-red-500 px-4 py-2 text-sm font-semibold text-white">
@@ -2531,13 +2544,13 @@ function SpeakingRecorder({ state, onChange }: { state: AnswerState; onChange: (
           </button>
         ) : (
           <button onClick={startRec} className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: TEAL }}>
-            <Mic className="h-4 w-4" />{state.audioBlob ? "Rekam ulang" : "Mulai rekam"}
+            <Mic className="h-4 w-4" />{state.audioBlob ? t("Rekam ulang") : t("Mulai rekam")}
           </button>
         )}
         {recording && <span className="flex items-center gap-1.5 text-sm font-medium text-red-500"><span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />{mm}:{ss}</span>}
       </div>
       {previewUrl && !recording && <audio controls src={previewUrl} className="mt-3 w-full" />}
-      {state.audioBlob && !recording && <p className="mt-2 flex items-center gap-1 text-xs text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />Rekaman tersimpan</p>}
+      {state.audioBlob && !recording && <p className="mt-2 flex items-center gap-1 text-xs text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />{t("Rekaman tersimpan")}</p>}
       {err && <p className="mt-2 text-xs text-red-500">{err}</p>}
     </div>
   );

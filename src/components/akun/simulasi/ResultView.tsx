@@ -12,6 +12,7 @@ import {
   type Simulation, type Section, type Question,
 } from "@/lib/simulations";
 import { officialScore, type SkillRaw } from "@/lib/simScore";
+import { getUiLang, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ArrowLeft, BookOpen, Headphones, PenLine, Mic, Type, Trophy, Sparkles,
   CheckCircle2, XCircle, Lightbulb, MessageCircle, Target, MinusCircle,
@@ -97,6 +98,7 @@ function AnswerRow({ label, tone, letter, text, icon: Icon }: {
 // Kartu pembahasan satu soal: soal → jawaban siswa vs kunci → alasan.
 export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
   const q = r.question;
+  const t = useT(); // [ui-lang-switcher-v1]
   const kIdx = keyIndexOf(q);
   const kText = keyTextOf(q);
   const myOpt = optionTextOf(q, r.answer_index);
@@ -121,31 +123,31 @@ export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
       <div className="space-y-3 px-4 py-3">
         {q.image_url && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={q.image_url} alt="Visual soal" className="max-h-72 w-full rounded-lg border border-slate-200 bg-slate-50 object-contain" />
+          <img src={q.image_url} alt={t("Visual soal")} className="max-h-72 w-full rounded-lg border border-slate-200 bg-slate-50 object-contain" />
         )}
 
         <div className="flex flex-wrap items-center gap-2 text-xs">
           {r.correct === true && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-bold text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />Benar</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-bold text-emerald-600"><CheckCircle2 className="h-3.5 w-3.5" />{t("Benar")}</span>
           )}
           {r.correct === false && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2 py-0.5 font-bold text-rose-500"><XCircle className="h-3.5 w-3.5" />Kurang tepat</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2 py-0.5 font-bold text-rose-500"><XCircle className="h-3.5 w-3.5" />{t("Kurang tepat")}</span>
           )}
           {r.ai_score != null && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-0.5 font-bold text-violet-600"><Sparkles className="h-3.5 w-3.5" />Skor AI {r.ai_score}/100</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-0.5 font-bold text-violet-600"><Sparkles className="h-3.5 w-3.5" />{t("Skor AI")} {r.ai_score}/100</span>
           )}
           {!answered && r.correct !== true && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500"><MinusCircle className="h-3.5 w-3.5" />Tidak dijawab</span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-500"><MinusCircle className="h-3.5 w-3.5" />{t("Tidak dijawab")}</span>
           )}
         </div>
 
         {/* Jawaban siswa — pilihan ganda / isian singkat */}
         {objective && (
           <AnswerRow
-            label="Jawabanmu"
+            label={t("Jawabanmu")}
             tone={r.correct === true ? "ok" : answered ? "bad" : "empty"}
             letter={choice && r.answer_index != null ? optLetter(r.answer_index) : null}
-            text={(choice ? myOpt : r.answer_text.trim()) || "Kamu tidak menjawab soal ini."}
+            text={(choice ? myOpt : r.answer_text.trim()) || t("Kamu tidak menjawab soal ini.")}
             icon={r.correct === true ? CheckCircle2 : answered ? XCircle : MinusCircle}
           />
         )}
@@ -153,20 +155,20 @@ export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
         {/* Jawaban esai / rekaman speaking */}
         {!objective && (answered ? (
           <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5">
-            <p className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-slate-400"><PenLine className="h-3 w-3" />Jawabanmu</p>
+            <p className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-slate-400"><PenLine className="h-3 w-3" />{t("Jawabanmu")}</p>
             {r.answer_text.trim() !== "" && (
               <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-slate-700">{r.answer_text}</p>
             )}
             {r.answer_audio_url && <audio controls src={r.answer_audio_url} className="mt-2 w-full" />}
           </div>
         ) : (
-          <AnswerRow label="Jawabanmu" tone="empty" text="Kamu tidak menjawab soal ini." icon={MinusCircle} />
+          <AnswerRow label={t("Jawabanmu")} tone="empty" text={t("Kamu tidak menjawab soal ini.")} icon={MinusCircle} />
         ))}
 
         {/* Kunci jawaban — hanya saat jawaban belum tepat, biar tidak berulang */}
         {showKey && (
           <AnswerRow
-            label="Kunci jawaban"
+            label={t("Kunci jawaban")}
             tone="key"
             letter={kIdx != null ? optLetter(kIdx) : null}
             text={keyOpt ?? kText ?? ""}
@@ -178,7 +180,7 @@ export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
         {q.explanation && (
           <div className="rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2.5">
             <p className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-amber-600">
-              <Lightbulb className="h-3 w-3" />{objective ? "Pembahasan" : "Kriteria penilaian"}
+              <Lightbulb className="h-3 w-3" />{objective ? t("Pembahasan") : t("Kriteria penilaian")}
             </p>
             <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-amber-900">{q.explanation}</p>
           </div>
@@ -187,7 +189,7 @@ export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
         {/* Catatan penilai AI (writing/speaking) */}
         {r.ai_feedback && (
           <div className="rounded-xl border border-violet-100 bg-violet-50 px-3 py-2.5">
-            <p className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-violet-500"><Sparkles className="h-3 w-3" />Catatan penilai</p>
+            <p className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-violet-500"><Sparkles className="h-3 w-3" />{t("Catatan penilai")}</p>
             <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-violet-800">{r.ai_feedback}</p>
           </div>
         )}
@@ -199,7 +201,7 @@ export function ReviewCard({ r, no }: { r: ResultItem; no: number }) {
 export type ResultSim = Pick<Simulation, "title" | "test_type" | "test_variant">;
 
 const fmtTanggal = (iso: string) =>
-  new Date(iso).toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  new Date(iso).toLocaleString(getUiLang() === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
 
 export default function ResultView({
   sim, sections, totals, results, preview, studentName, submittedAt, past, attemptId,
@@ -214,6 +216,7 @@ export default function ResultView({
   past?: boolean; // dibuka dari Riwayat Skor (bukan barusan selesai)
   attemptId?: string | null; // [sim-certificate-v1] ada → tombol unduh sertifikat
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const pct = totals.max_score > 0 ? Math.round((totals.score / totals.max_score) * 100) : 0;
 
   // Nomor soal RESET ke 1 tiap bagian (part) — samakan dgn tampilan saat mengerjakan.
@@ -304,9 +307,9 @@ export default function ResultView({
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl text-white" style={{ background: TEAL_DEEP }}>
               <Trophy className="h-7 w-7" />
             </span>
-            <h1 className="mt-3 text-xl font-bold text-slate-900">{past ? "Hasil simulasi" : "Simulasi selesai!"}</h1>
+            <h1 className="mt-3 text-xl font-bold text-slate-900">{past ? t("Hasil simulasi") : t("Simulasi selesai!")}</h1>
             <p className="text-sm text-slate-500">{sim.title} · {testTypeLabel(sim.test_type, sim.test_variant)}</p>
-            {submittedAt && <p className="mt-0.5 text-xs text-slate-400">Dikumpulkan {fmtTanggal(submittedAt)}</p>}
+            {submittedAt && <p className="mt-0.5 text-xs text-slate-400">{t("Dikumpulkan")} {fmtTanggal(submittedAt)}</p>}
 
             {official ? (
               <>
@@ -316,7 +319,7 @@ export default function ResultView({
                   <span className="text-lg font-bold text-slate-400">{official.unit}</span>
                 </div>
                 <p className="mt-1 text-sm font-semibold text-slate-600">
-                  Perkiraan skor {official.scaleLabel} · {official.rangeLabel}
+                  {t("Perkiraan skor")} {official.scaleLabel} · {official.rangeLabel}
                 </p>
                 {official.verdict && (
                   <p className="mt-2">
@@ -330,8 +333,8 @@ export default function ResultView({
                   <div className="h-full rounded-full transition-all" style={{ width: `${Math.round(official.fraction * 100)}%`, background: TEAL }} />
                 </div>
                 <p className="mt-3 text-xs text-slate-500">
-                  Skor mentah {Math.round(totals.score)}/{Math.round(totals.max_score)} poin · {pct}%
-                  {totalObjective > 0 && <> · {totalCorrect} dari {totalObjective} soal objektif benar</>}
+                  {t("Skor mentah")} {Math.round(totals.score)}/{Math.round(totals.max_score)} {t("poin")} · {pct}%
+                  {totalObjective > 0 && <> · {totalCorrect} {t("dari")} {totalObjective} {t("soal objektif benar")}</>}
                 </p>
               </>
             ) : (
@@ -341,7 +344,7 @@ export default function ResultView({
                   <span className="text-lg font-semibold text-slate-400">/ {Math.round(totals.max_score)}</span>
                 </div>
                 <p className="text-sm font-medium text-slate-600">
-                  {pct}%{totalObjective > 0 && <> · {totalCorrect} dari {totalObjective} soal objektif benar</>}
+                  {pct}%{totalObjective > 0 && <> · {totalCorrect} {t("dari")} {totalObjective} {t("soal objektif benar")}</>}
                 </p>
                 <div className="mx-auto mt-4 h-2 max-w-xs overflow-hidden rounded-full bg-slate-100">
                   <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, background: TEAL }} />
@@ -349,10 +352,10 @@ export default function ResultView({
                 {totals.score <= 0 && (
                   <p className="mx-auto mt-4 max-w-md rounded-xl bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-700">
                     {totalAnswered === 0
-                      ? "Tidak ada satu pun soal yang terjawab pada pengerjaan ini, "
-                      : "Belum ada jawaban yang benar pada pengerjaan ini, "}
-                    jadi hasilnya <b>tidak dikonversi</b> ke skala resmi (skala {testTypeLabel(sim.test_type, sim.test_variant)}
-                    {" "}punya batas bawah yang bukan nol). Kerjakan ulang simulasinya untuk mendapat perkiraan skor.
+                      ? t("Tidak ada satu pun soal yang terjawab pada pengerjaan ini,")
+                      : t("Belum ada jawaban yang benar pada pengerjaan ini,")}{" "}
+                    {t("jadi hasilnya")} <b>{t("tidak dikonversi")}</b> {t("ke skala resmi (skala")} {testTypeLabel(sim.test_type, sim.test_variant)}
+                    {" "}{t("punya batas bawah yang bukan nol). Kerjakan ulang simulasinya untuk mendapat perkiraan skor.")}
                   </p>
                 )}
               </>
@@ -362,7 +365,7 @@ export default function ResultView({
           {/* Rincian per subtes — pada skala resmi bila konversinya ada */}
           {official ? (
             <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-4">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-wide text-slate-400">Nilai per subtes ({official.scaleLabel})</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-wide text-slate-400">{t("Nilai per subtes")} ({official.scaleLabel})</p>
               <div className="space-y-3">
                 {official.skills.map((s) => {
                   const Icon = SKILL_ICON[s.skills[0]] ?? BookOpen;
@@ -386,8 +389,8 @@ export default function ResultView({
                         </div>
                         <p className="mt-1 text-[11px] text-slate-400">
                           {s.detail}
-                          {s.informational && " · tidak dihitung di skala resmi ujian ini"}
-                          {s.belowMin && " · di bawah nilai minimum seksi"}
+                          {s.informational && ` · ${t("tidak dihitung di skala resmi ujian ini")}`}
+                          {s.belowMin && ` · ${t("di bawah nilai minimum seksi")}`}
                         </p>
                       </div>
                     </div>
@@ -401,17 +404,17 @@ export default function ResultView({
                 <p className="text-[11px] leading-relaxed text-slate-500">
                   {official.note}{" "}
                   {official.estimateOnly
-                    ? "Rincian per subtes tak tersimpan pada pengerjaan ini, jadi angkanya diperkirakan dari total poin."
+                    ? t("Rincian per subtes tak tersimpan pada pengerjaan ini, jadi angkanya diperkirakan dari total poin.")
                     : official.partial
-                      ? "Simulasi ini tidak memuat seluruh subtes ujian aslinya, jadi skor total diperkirakan proporsional."
+                      ? t("Simulasi ini tidak memuat seluruh subtes ujian aslinya, jadi skor total diperkirakan proporsional.")
                       : ""}{" "}
-                  Angka ini <b>perkiraan</b> untuk mengukur posisimu — bukan skor resmi lembaga tes.
+                  {t("Angka ini")} <b>{t("perkiraan")}</b> {t("untuk mengukur posisimu — bukan skor resmi lembaga tes.")}
                 </p>
               </div>
             </div>
           ) : groups.length > 0 && (
             <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-4">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-wide text-slate-400">Skor per subtes</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-wide text-slate-400">{t("Skor per subtes")}</p>
               <div className="space-y-3">
                 {groups.map((g) => {
                   const gp = g.max > 0 ? Math.round((g.earned / g.max) * 100) : 0;
@@ -452,7 +455,7 @@ export default function ResultView({
               >
                 <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
                   <FileText className="h-4 w-4" style={{ color: TEAL_DEEP }} />
-                  Unduh Laporan Skor {official.scaleLabel} (PDF)
+                  {t("Unduh Laporan Skor")} {official.scaleLabel} (PDF)
                 </span>
                 <Download className="h-4 w-4 shrink-0 text-teal-600" />
               </Link>
@@ -462,7 +465,7 @@ export default function ResultView({
               >
                 <span className="flex items-center gap-2 text-[13px] font-bold text-teal-800">
                   <Award className="h-4 w-4" style={{ color: TEAL_DEEP }} />
-                  Unduh Sertifikat hasil simulasi (PDF)
+                  {t("Unduh Sertifikat hasil simulasi (PDF)")}
                 </span>
                 <Download className="h-4 w-4 shrink-0 text-teal-600" />
               </Link>
@@ -477,7 +480,7 @@ export default function ResultView({
             >
               <span className="flex items-center gap-2 text-[13px] font-semibold text-slate-600">
                 <History className="h-4 w-4 text-slate-400" />
-                Semua skormu tersimpan di <b>Riwayat Skor</b> (tab Simulasi Tes)
+                {t("Semua skormu tersimpan di")} <b>{t("Riwayat Skor")}</b> ({t("tab Simulasi Tes")})
               </span>
               <ArrowRight className="h-4 w-4 shrink-0 text-slate-400" />
             </Link>
@@ -493,11 +496,10 @@ export default function ResultView({
               </span>
               <div className="min-w-0">
                 <h3 className="text-base font-bold sm:text-lg">
-                  {pct >= 70 ? "Skormu bagus — kunci biar makin stabil" : "Mau skormu naik lebih cepat?"}
+                  {pct >= 70 ? t("Skormu bagus — kunci biar makin stabil") : t("Mau skormu naik lebih cepat?")}
                 </h3>
                 <p className="mt-1 text-sm leading-relaxed text-white/85">
-                  Belajar privat 1-on-1 bareng pengajar {testTypeLabel(sim.test_type, sim.test_variant)}: materi disusun dari kelemahanmu di simulasi ini,
-                  jadwal fleksibel, plus latihan &amp; pembahasan tiap sesi. Konsultasi gratis dulu, tanpa komitmen.
+                  {t("Belajar privat 1-on-1 bareng pengajar")} {testTypeLabel(sim.test_type, sim.test_variant)}: {t("materi disusun dari kelemahanmu di simulasi ini, jadwal fleksibel, plus latihan & pembahasan tiap sesi. Konsultasi gratis dulu, tanpa komitmen.")}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <a
@@ -505,13 +507,13 @@ export default function ResultView({
                     className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition active:scale-95"
                     style={{ color: TEAL_DEEP }}
                   >
-                    <MessageCircle className="h-4 w-4" />Konsultasi via WhatsApp
+                    <MessageCircle className="h-4 w-4" />{t("Konsultasi via WhatsApp")}
                   </a>
                   <Link
                     href="/persiapan-tes"
                     className="inline-flex items-center gap-1.5 rounded-xl border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
                   >
-                    Lihat program persiapan tes <ArrowRight className="h-4 w-4" />
+                    {t("Lihat program persiapan tes")} <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -521,7 +523,7 @@ export default function ResultView({
 
         {/* ── Pembahasan per subtes ──────────────────────────────────────── */}
         <div className="mt-7 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-sm font-bold text-slate-700">Pembahasan jawaban</h2>
+          <h2 className="text-sm font-bold text-slate-700">{t("Pembahasan jawaban")}</h2>
           {active && wrongCount > 0 && (
             <button
               type="button"
@@ -529,7 +531,7 @@ export default function ResultView({
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${
                 onlyWrong ? "border-rose-200 bg-rose-50 text-rose-600" : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50"}`}
             >
-              <XCircle className="h-3.5 w-3.5" />Hanya yang salah ({wrongCount})
+              <XCircle className="h-3.5 w-3.5" />{t("Hanya yang salah")} ({wrongCount})
             </button>
           )}
         </div>
@@ -564,7 +566,7 @@ export default function ResultView({
 
         {shown.length === 0 ? (
           <p className="mt-4 rounded-2xl border border-dashed border-slate-200 bg-white px-4 py-8 text-center text-sm text-slate-500">
-            {onlyWrong ? "Tidak ada jawaban yang salah di subtes ini." : "Belum ada soal di subtes ini."}
+            {onlyWrong ? t("Tidak ada jawaban yang salah di subtes ini.") : t("Belum ada soal di subtes ini.")}
           </p>
         ) : (
           <ol className="mt-4 space-y-3">
@@ -577,18 +579,18 @@ export default function ResultView({
         <div className="mt-6 flex flex-wrap gap-3">
           {preview ? (
             <Link href="/simulasi" className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-600">
-              <ArrowLeft className="h-4 w-4" />Tutup preview
+              <ArrowLeft className="h-4 w-4" />{t("Tutup preview")}
             </Link>
           ) : (
             <>
               <Link href="/akun?menu=simulasi" className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600">
-                <ArrowLeft className="h-4 w-4" />{past ? "Kembali ke Riwayat Skor" : "Simulasi lain"}
+                <ArrowLeft className="h-4 w-4" />{past ? t("Kembali ke Riwayat Skor") : t("Simulasi lain")}
               </Link>
               <Link href="/akun" className="inline-flex items-center gap-1.5 rounded-xl px-5 py-2.5 text-sm font-bold text-white" style={{ background: TEAL }}>
-                Ke Dashboard
+                {t("Ke Dashboard")}
               </Link>
               <a href={waHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-xl border border-teal-200 bg-teal-50 px-5 py-2.5 text-sm font-bold text-teal-700">
-                <MessageCircle className="h-4 w-4" />Tanya admin
+                <MessageCircle className="h-4 w-4" />{t("Tanya admin")}
               </a>
             </>
           )}
