@@ -107,20 +107,38 @@ function muatPdfjs(): Promise<any> {
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 type ElPenuh = Element & { webkitRequestFullscreen?: () => Promise<void> | void };
 
+/* [ebook-layar-penuh-milik-kita-v1] Penanda tingkat MODUL, bukan state reader:
+   layar penuh yang menyala itu KITA yang minta?
+
+   Kenapa tidak cukup ref di dalam reader: permintaannya lahir di handler klik
+   "Baca" (izin fullscreen menempel pada gerakan pengguna), lalu reader baru
+   dipasang beberapa ratus milidetik kemudian. Waktu effect mount-nya jalan,
+   layar SUDAH penuh — reader lama menyimpulkan "berarti ini punya siswa, jangan
+   diutak-atik", jadi menutup reader tidak melepas layar penuh dan siswa
+   mendarat di dashboard tanpa bilah tab & alamat browser. Penanda modul ini
+   dipegang bersama oleh keduanya, jadi urutan siapa duluan tak lagi penting.
+
+   Tetap false kalau siswa yang menyalakan sendiri lewat F11 — itu di luar
+   Fullscreen API dan memang bukan milik kita. */
+let layarPenuhMilikKita = false;
+
 export function mintaLayarPenuh(): Promise<boolean> {
   if (typeof document === "undefined") return Promise.resolve(false);
-  if (document.fullscreenElement) return Promise.resolve(true);
+  if (document.fullscreenElement) return Promise.resolve(layarPenuhMilikKita);
   const el = document.documentElement as ElPenuh;
   const minta = el.requestFullscreen?.bind(el) ?? el.webkitRequestFullscreen?.bind(el);
   if (!minta) return Promise.resolve(false);
   try {
-    return Promise.resolve(minta()).then(() => true).catch(() => false);
+    return Promise.resolve(minta())
+      .then(() => { layarPenuhMilikKita = true; return true; })
+      .catch(() => false);
   } catch {
     return Promise.resolve(false);
   }
 }
 
 function keluarLayarPenuh(): void {
+  layarPenuhMilikKita = false;
   if (typeof document === "undefined" || !document.fullscreenElement) return;
   try {
     void (document.exitFullscreen?.() as Promise<void> | undefined)?.catch(() => {});
@@ -250,9 +268,6 @@ export default function EbookReader({
   const [bunyi, setBunyi] = useState<"kata" | "kalimat" | null>(null);
 
   const [layarPenuh, setLayarPenuh] = useState(false);
-  /** Kita yang menyalakan layar penuh? Kalau siswa sudah fullscreen dari sebelumnya,
-      jangan dimatikan waktu reader ditutup — itu bukan milik kita. */
-  const penuhOlehKitaRef = useRef(false);
 
   const wadahRef = useRef<HTMLDivElement | null>(null);
   const kiriRef = useRef<HTMLCanvasElement | null>(null);
@@ -697,22 +712,26 @@ export default function EbookReader({
 
   // Layar penuh: dicoba begitu reader terbuka, dilepas lagi saat ditutup.
   useEffect(() => {
-    const sudah = !!document.fullscreenElement;
-    if (!sudah) {
-      void mintaLayarPenuh().then((ok) => { penuhOlehKitaRef.current = ok; });
-    }
-    const onUbah = () => setLayarPenuh(!!document.fullscreenElement);
+    // Kalau klik "Baca" di Perpustakaan sudah menyalakannya, panggilan ini
+    // langsung balik tanpa efek — penandanya yang menentukan kepemilikan.
+    void mintaLayarPenuh();
+    const onUbah = () => {
+      const penuh = !!document.fullscreenElement;
+      setLayarPenuh(penuh);
+      // Siswa keluar sendiri (Esc / tombol browser) → sejak itu bukan milik kita.
+      if (!penuh) layarPenuhMilikKita = false;
+    };
     onUbah();
     document.addEventListener("fullscreenchange", onUbah);
     return () => {
       document.removeEventListener("fullscreenchange", onUbah);
-      if (penuhOlehKitaRef.current) keluarLayarPenuh();
+      if (layarPenuhMilikKita) keluarLayarPenuh();
     };
   }, []);
 
   const alihLayarPenuh = useCallback(() => {
-    if (document.fullscreenElement) { keluarLayarPenuh(); penuhOlehKitaRef.current = false; return; }
-    void mintaLayarPenuh().then((ok) => { penuhOlehKitaRef.current = ok; });
+    if (document.fullscreenElement) { keluarLayarPenuh(); return; }
+    void mintaLayarPenuh();
   }, []);
 
   // Kunci gulir latar selama reader terbuka (di HP, halaman di belakang ikut
