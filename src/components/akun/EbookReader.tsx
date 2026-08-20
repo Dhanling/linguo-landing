@@ -1011,6 +1011,36 @@ export default function EbookReader({
 
   const KOSONG: HalTeks = useMemo(() => ({ items: [], baris: [] }), []);
 
+  /* [ebook-teks-safari-v1] Ini yang membuat ketuk-kata DIAM TOTAL di Safari —
+     bukan audionya.
+
+     `page.getTextContent()` milik pdf.js 5 mengurai isi halaman dengan
+     `for await (const value of readableStream)`, dan WebKit sampai hari ini
+     belum memasang `Symbol.asyncIterator` di ReadableStream. Jadi di Safari
+     panggilan itu melempar "undefined is not a function (near '...value of
+     readableStream...')" — bukan galat jaringan, bukan galat audio: halamannya
+     tergambar sempurna, teksnya saja yang tak pernah terbaca. Karena
+     pengambilan teks dibungkus try/catch (modul hasil pindaian memang tak punya
+     lapisan teks), kegagalannya lolos tanpa suara: ketukan tak menemukan kata
+     apa pun, popup tak muncul, dan daftar isi ikut keluar kosong.
+
+     Aliran yang sama dibaca manual lewat getReader() — API yang ada di semua
+     browser. ⚠️ Jangan kembalikan ke getTextContent() "supaya ringkas". */
+  const potonganTeks = useCallback(async (hal: any): Promise<any[]> => {
+    if (typeof hal?.streamTextContent === "function") {
+      const pembaca = hal.streamTextContent().getReader();
+      const kumpul: any[] = [];
+      for (;;) {
+        const { value, done } = await pembaca.read();
+        if (done) break;
+        if (value?.items?.length) kumpul.push(...value.items);
+      }
+      return kumpul;
+    }
+    // pdf.js versi lama tanpa streamTextContent — jalur lama masih benar di sana.
+    return (await hal.getTextContent()).items ?? [];
+  }, []);
+
   const ambilTeks = useCallback(async (n: number): Promise<HalTeks> => {
     const ada = teksRef.current.get(n);
     if (ada) return ada;
@@ -1022,14 +1052,14 @@ export default function EbookReader({
       // Skala 1: koordinatnya jadi satuan halaman, jadi tetap sahih waktu siswa
       // mencubit — tinggal dikalikan skala yang sedang berlaku.
       const vp = hal.getViewport({ scale: 1 });
-      const tc = await hal.getTextContent();
+      const potongan = await potonganTeks(hal);
       // Potongan yang isinya HANYA spasi ikut dikumpulkan (kosong: true). Bukan
       // sampah: di PDF cetakan Chromium, jarak antar kolom tabel justru muncul
       // sebagai satu potongan spasi lebar, dan spasi antar kata di ujung
       // pergantian font juga hidup di potongan tersendiri. Dulu semuanya
       // dibuang, jadi "casa (KA-sa)" terbaca "casa(KA-sa)".
       const semua: (ItemTeks & { kosong: boolean })[] = [];
-      for (const it of tc.items as any[]) {
+      for (const it of potongan) {
         const str = typeof it.str === "string" ? it.str : "";
         if (!str || !it.transform) continue;
         const tx = pdfjs.Util.transform(vp.transform, it.transform);
@@ -1097,7 +1127,7 @@ export default function EbookReader({
     } catch {
       return KOSONG; // modul hasil pindaian (tanpa lapisan teks) — ketukan diabaikan
     }
-  }, [KOSONG]);
+  }, [KOSONG, potonganTeks]);
 
   /** Kata pada posisi x (satuan halaman) di dalam satu potongan teks. */
   const kataDi = useCallback((it: ItemTeks, x: number) => {
