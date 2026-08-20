@@ -15,6 +15,82 @@ import {
   type JadwalSession, type NormSession,
 } from "./jadwalShared";
 
+// [sesi-beruntun-gabung-v1] Dua sesi berturut-turut di hari & kelas yang sama
+// (mis. 08.00–09.00 lalu 09.00–10.00) itu SATU kali datang buat siswa — dia masuk
+// satu room, duduk dua jam. Dulu kartunya dua biji lengkap dengan dua tombol
+// "Masuk Kelas", dan tombol kedua itu jebakan: room-nya beda dari yang lagi
+// dipakai pengajar. Sekarang mereka dilebur jadi satu blok: nomor sesi ditulis
+// rentang (#6–7), jamnya jam blok (08.00–10.00), tombolnya satu.
+type SesiBlok = {
+  key: string;
+  items: NormSession[];
+  /** Sesi pertama blok — dipakai buat tanggal, bahasa, level, pengajar. */
+  head: NormSession;
+  _d: Date;
+  _time: string;
+  /** Jam selesai sesi TERAKHIR di blok. */
+  _end: string | null;
+  _weekday: string;
+  _live: boolean;
+  totalMinutes: number;
+  /** Sesi yang tombol "Masuk Kelas"-nya dipakai — yang sedang/paling dekat jalan. */
+  join: NormSession | null;
+};
+
+/** Jeda maksimum antar-sesi yang masih dianggap satu blok (mis. istirahat 10 menit). */
+const GAP_TOLERANCE_MS = 20 * 60_000;
+
+function sameClass(a: NormSession, b: NormSession) {
+  return (
+    a.language === b.language &&
+    (a.level || "") === (b.level || "") &&
+    (a.teacher || "") === (b.teacher || "")
+  );
+}
+
+function buildBlocks(list: NormSession[], now: number): SesiBlok[] {
+  const out: SesiBlok[] = [];
+  for (const s of list) {
+    const last = out[out.length - 1];
+    const prev = last?.items[last.items.length - 1];
+    const prevEnd = prev ? prev._d.getTime() + (prev.durationMinutes || 60) * 60000 : 0;
+    const nyambung =
+      !!prev &&
+      sameClass(prev, s) &&
+      prev._d.toDateString() === s._d.toDateString() &&
+      s._d.getTime() - prevEnd <= GAP_TOLERANCE_MS &&
+      s._d.getTime() >= prevEnd - 60_000;
+    if (nyambung) last.items.push(s);
+    else out.push({ key: s.id, items: [s], head: s, _d: s._d, _time: s._time, _end: s._end, _weekday: s._weekday, _live: false, totalMinutes: 0, join: null });
+  }
+  return out.map((b) => {
+    const tail = b.items[b.items.length - 1];
+    const endMs = tail._d.getTime() + (tail.durationMinutes || 60) * 60000;
+    return {
+      ...b,
+      _end: fmtTime(new Date(endMs)),
+      _live: b.items.some((s) => s._live),
+      totalMinutes: b.items.reduce((n, s) => n + (s.durationMinutes || 60), 0),
+      // Room id itu per sesi (`sched-<id>`), jadi tombolnya harus menunjuk sesi
+      // yang jamnya sedang jalan — kalau blok ini dipatok ke sesi pertama terus,
+      // pukul 09.10 siswa masuk room kosong sementara pengajar ada di sesi kedua.
+      join:
+        b.items.find((s) => s._joinable && s._d.getTime() + (s.durationMinutes || 60) * 60000 > now) ||
+        b.items.find((s) => s._joinable) ||
+        null,
+    };
+  });
+}
+
+/** "#6–7" untuk nomor beruntun, "#6, #9" kalau lompat, "" kalau nomornya kosong. */
+function nomorLabel(items: NormSession[]): string {
+  const nums = items.map((s) => s.sessionNumber).filter((n): n is number => !!n);
+  if (!nums.length) return "";
+  if (nums.length === 1) return `#${nums[0]}`;
+  const runut = nums.every((n, i) => i === 0 || n === nums[i - 1] + 1);
+  return runut ? `#${nums[0]}–${nums[nums.length - 1]}` : nums.map((n) => `#${n}`).join(", ");
+}
+
 export default function SesiMendatangCard({
   sessions,
   studentName,
@@ -80,15 +156,21 @@ export default function SesiMendatangCard({
   // Sebelumnya semuanya satu tumpuk berurutan tanggal, jadi kelas yang tinggal
   // beberapa jam lagi (atau lagi jalan) kelihatan setara dengan kelas minggu
   // depan — padahal cuma baris pertama itu yang menentukan hari siswa.
+  // [sesi-beruntun-gabung-v1] Daftarnya dipakai dalam bentuk BLOK, bukan sesi
+  // satuan — 2×60 menit beruntun tampil sebagai satu kartu 08.00–10.00.
   const { hariIni, berikutnya } = useMemo(() => {
     const t = new Date(now);
     const sameDay = (d: Date) =>
       d.getFullYear() === t.getFullYear() && d.getMonth() === t.getMonth() && d.getDate() === t.getDate();
     return {
-      hariIni: upcoming.filter((s) => sameDay(s._d)),
-      berikutnya: upcoming.filter((s) => !sameDay(s._d)),
+      hariIni: buildBlocks(upcoming.filter((s) => sameDay(s._d)), now),
+      berikutnya: buildBlocks(upcoming.filter((s) => !sameDay(s._d)), now),
     };
   }, [upcoming, now]);
+
+  // Subjudul tetap menghitung SESI (bukan blok) — "2 sesi hari ini" itu yang
+  // dibayar & dicatat siswa, sementara blok cuma cara menampilkannya.
+  const sesiHariIni = hariIni.reduce((n, b) => n + b.items.length, 0);
 
   const [expanded, setExpanded] = useState(false);
   // Sesi hari ini TIDAK pernah kena potong `limit` — batasnya berlaku buat
@@ -121,8 +203,8 @@ export default function SesiMendatangCard({
           <p className="mt-0.5 text-[12px] font-medium text-gray-500">
             {/* [sesi-hari-ini-v1] "hari ini" itu angka yang dicari duluan; total
                 terjadwal jadi keterangan kedua. */}
-            {hariIni.length > 0
-              ? `${hariIni.length} ${t("sesi hari ini")} · ${upcoming.length} ${t("terjadwal")}`
+            {sesiHariIni > 0
+              ? `${sesiHariIni} ${t("sesi hari ini")} · ${upcoming.length} ${t("terjadwal")}`
               : `${upcoming.length} ${t("sesi terjadwal")} · ${t("semua kelas aktif")}`}
           </p>
         </div>
@@ -144,8 +226,8 @@ export default function SesiMendatangCard({
         <>
           <p className={groupLabel}>{t("Hari Ini")}</p>
           <div className={gridCls}>
-            {hariIni.map((s) => (
-              <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} today now={now} />
+            {hariIni.map((b) => (
+              <SesiItem key={b.key} b={b} studentName={studentName} onClick={goJadwal} today now={now} />
             ))}
           </div>
         </>
@@ -154,8 +236,8 @@ export default function SesiMendatangCard({
         <>
           {hariIni.length > 0 && <p className={groupLabel}>{t("Berikutnya")}</p>}
           <div className={gridCls}>
-            {visibleNanti.map((s) => (
-              <SesiItem key={s.id} s={s} studentName={studentName} onClick={goJadwal} now={now} />
+            {visibleNanti.map((b) => (
+              <SesiItem key={b.key} b={b} studentName={studentName} onClick={goJadwal} now={now} />
             ))}
           </div>
         </>
@@ -178,15 +260,18 @@ export default function SesiMendatangCard({
 // keduanya sudah ada di tab Jadwal, dan di kartu ringkasan mereka cuma bikin tiap
 // baris tinggi berbeda-beda sehingga daftarnya susah dipindai sekilas.
 // Titik warna bahasa diganti bendera — "kelas apa" kebaca tanpa menghafal legenda.
-function SesiItem({ s, studentName, onClick, today = false, now }: {
-  s: NormSession; studentName?: string; onClick: () => void;
+function SesiItem({ b, studentName, onClick, today = false, now }: {
+  b: SesiBlok; studentName?: string; onClick: () => void;
   /** [sesi-hari-ini-v1] item di kelompok "Hari Ini" — nama hari diganti hitung mundur. */
   today?: boolean;
   now: number;
 }) {
   const t = useT(); // [ui-lang-switcher-v1]
+  const s = b.head;
   const c = langColor(s.language);
   const hasFlag = !!langFlagCode(s.language);
+  const nomor = nomorLabel(b.items);
+  const jumlah = b.items.length;
   return (
     <div
       role="button"
@@ -195,12 +280,12 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick(); } }}
       className="sesi-mendatang-item cursor-pointer rounded-2xl bg-slate-50 p-3 text-left transition hover:bg-slate-100/70"
       // jadwal-live-now-v1: cincin merah — sama dengan blok di kalender.
-      style={s._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : undefined}
+      style={b._live ? { boxShadow: `0 0 0 2px ${LIVE_COLOR}` } : undefined}
     >
       <div className="flex w-full items-center gap-3">
         <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-white leading-none shadow-[0_10px_30px_-24px_rgba(18,23,43,.5)]">
-          <span className="text-[15px] font-extrabold text-[#12172B]">{s._d.getDate()}</span>
-          <span className="mt-0.5 text-[10px] font-bold text-[#6B7280]">{t(MONTHS_SHORT[s._d.getMonth()])}</span>
+          <span className="text-[15px] font-extrabold text-[#12172B]">{b._d.getDate()}</span>
+          <span className="mt-0.5 text-[10px] font-bold text-[#6B7280]">{t(MONTHS_SHORT[b._d.getMonth()])}</span>
         </span>
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-1.5">
@@ -213,25 +298,29 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
             <span className="truncate text-[14px] font-extrabold text-[#12172B]">
               {s.language}{s.level ? ` — ${s.level}` : ""}
             </span>
-            {s.sessionNumber ? (
-              <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>#{s.sessionNumber}</span>
+            {nomor ? (
+              <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-extrabold" style={{ background: c.bg, color: c.text }}>{nomor}</span>
             ) : null}
           </span>
           <span className="mt-0.5 block truncate text-[12px] font-medium text-[#6B7280]">
-            {s._live ? (
+            {b._live ? (
               <span className="font-bold" style={{ color: LIVE_COLOR }}>
-                {t("Sedang berlangsung")}{s._end ? ` · ${t("selesai")} ${s._end}` : ""}
+                {t("Sedang berlangsung")}{b._end ? ` · ${t("selesai")} ${b._end}` : ""}
               </span>
             ) : today ? (
               // Nama harinya sudah dijawab judul kelompok — ruangnya dipakai buat
               // hitung mundur, yang justru dicari siswa di kelas hari ini.
               <>
-                {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} ${t("mnt")}` : ""}
+                {b._time}{b._end ? `–${b._end}` : ""} · {b.totalMinutes} {t("mnt")}
+                {jumlah > 1 ? ` · ${jumlah} ${t("sesi")}` : ""}
                 {" · "}
-                <span className="font-bold text-[#16796E]">{countdownLabel(s._d, now)}</span>
+                <span className="font-bold text-[#16796E]">{countdownLabel(b._d, now)}</span>
               </>
             ) : (
-              <>{t(s._weekday)} · {s._time}{s._end ? `–${s._end}` : ""}{s.durationMinutes ? ` · ${s.durationMinutes} ${t("mnt")}` : ""}</>
+              <>
+                {t(b._weekday)} · {b._time}{b._end ? `–${b._end}` : ""} · {b.totalMinutes} {t("mnt")}
+                {jumlah > 1 ? ` · ${jumlah} ${t("sesi")}` : ""}
+              </>
             )}
           </span>
           {s.teacher && (
@@ -243,9 +332,11 @@ function SesiItem({ s, studentName, onClick, today = false, now }: {
         </span>
       </div>
 
-      {s._joinable && (
+      {/* [sesi-beruntun-gabung-v1] SATU tombol per blok — menunjuk sesi yang
+          room-nya sedang dipakai, bukan selalu sesi pertama. */}
+      {b.join && (
         <a
-          href={classRoomUrl(s.id, { title: `Kelas ${s.language}`, name: studentName })}
+          href={classRoomUrl(b.join.id, { title: `Kelas ${s.language}`, name: studentName })}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
