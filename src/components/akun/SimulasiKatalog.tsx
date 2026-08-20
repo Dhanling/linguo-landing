@@ -17,6 +17,7 @@ import SimulasiBeliModal from "./SimulasiBeliModal";
 import RiwayatSkor from "./simulasi/RiwayatSkor";
 import { testTypeHasAvailable } from "@/lib/simulasiPakets";
 import { readProgress, readAnyProgress, answeredCount } from "@/lib/simProgress";
+import { useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -197,6 +198,8 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
   }, [preview]);
 
   // Jenis tes yang belum dimiliki → tampilkan kartu teaser terkunci.
+  // [ui-lang-switcher-v1] `tl` — `t` sudah dipakai jadi nama jenis tes di map.
+  const tl = useT();
   const lockedTypes = ALL_TYPES.filter((t) => !owned.includes(t));
 
   return (
@@ -207,8 +210,8 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
           <ClipboardCheck className="h-5 w-5" />
         </span>
         <div>
-          <h1 className="text-[20px] font-extrabold leading-tight text-[#12172B]">Simulasi Tes</h1>
-          <p className="text-[13px] text-gray-500">TOEFL &amp; IELTS — latihan dengan penilaian AI</p>
+          <h1 className="text-[20px] font-extrabold leading-tight text-[#12172B]">{tl("Simulasi Tes")}</h1>
+          <p className="text-[13px] text-gray-500">{tl("TOEFL & IELTS — latihan dengan penilaian AI")}</p>
         </div>
       </div>
 
@@ -218,7 +221,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
         </div>
       ) : authed === false ? (
         <div className="rounded-2xl bg-white p-8 text-center">
-          <p className="text-sm text-slate-600">Kamu perlu masuk dulu untuk mengerjakan simulasi.</p>
+          <p className="text-sm text-slate-600">{tl("Kamu perlu masuk dulu untuk mengerjakan simulasi.")}</p>
         </div>
       ) : (
         <>
@@ -251,27 +254,27 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                     <Lock className="h-3 w-3" />{TEST_TYPE_LABEL[t]}
                   </span>
                   {comingSoon && (
-                    <span className="inline-flex items-center rounded-full bg-amber-400/95 px-2.5 py-1 text-[11px] font-bold text-amber-950 shadow-sm">Segera</span>
+                    <span className="inline-flex items-center rounded-full bg-amber-400/95 px-2.5 py-1 text-[11px] font-bold text-amber-950 shadow-sm">{tl("Segera")}</span>
                   )}
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-4">
-                <h2 className="font-bold text-slate-900">Simulasi {TEST_TYPE_LABEL[t]}</h2>
-                <p className="text-[13px] text-slate-500">4 skill lengkap · penilaian AI</p>
+                <h2 className="font-bold text-slate-900">{tl("Simulasi")} {TEST_TYPE_LABEL[t]}</h2>
+                <p className="text-[13px] text-slate-500">{tl("4 skill lengkap · penilaian AI")}</p>
                 {comingSoon ? (
                   <>
-                    <p className="mt-3 text-sm text-slate-500">Masih dalam pengembangan. Segera hadir!</p>
+                    <p className="mt-3 text-sm text-slate-500">{tl("Masih dalam pengembangan. Segera hadir!")}</p>
                     <button disabled
                       className="mt-4 inline-flex cursor-not-allowed items-center justify-center gap-1.5 rounded-xl bg-slate-200 py-2.5 text-sm font-bold text-slate-500">
-                      Segera Hadir
+                      {tl("Segera Hadir")}
                     </button>
                   </>
                 ) : (
                   <>
-                    <p className="mt-3 text-sm text-slate-500">Beli sekali, akses selamanya.</p>
+                    <p className="mt-3 text-sm text-slate-500">{tl("Beli sekali, akses selamanya.")}</p>
                     <div className="mt-3 flex items-baseline gap-1.5">
                       <span className="text-xl font-extrabold text-slate-900">{formatRp(PRICE)}</span>
-                      <span className="text-xs text-slate-400">/ sekali bayar</span>
+                      <span className="text-xs text-slate-400">/ {tl("sekali bayar")}</span>
                     </div>
                     <button
                       onClick={() => setBeliType(t)}
@@ -279,13 +282,13 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                       className={`mt-4 inline-flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-bold text-white transition ${preview ? "cursor-not-allowed opacity-60" : "active:scale-95"}`}
                       style={{ background: TEAL }}
                     >
-                      <Sparkles className="h-4 w-4" /> Beli Paket
+                      <Sparkles className="h-4 w-4" /> {tl("Beli Paket")}
                     </button>
                     {/* Akses dicocokkan by email — kalau siswa checkout pakai email lain,
                         baris ini yang bikin dia (dan admin) langsung tahu penyebabnya. */}
                     {email && (
                       <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">
-                        Sudah beli? Akses terhubung ke email pembelian — kamu login sebagai{" "}
+                        {tl("Sudah beli? Akses terhubung ke email pembelian — kamu login sebagai")}{" "}
                         <span className="font-semibold text-slate-500">{email}</span>.
                       </p>
                     )}
@@ -320,7 +323,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
                 )}
                 {prog && (
                   <span className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full bg-teal-600/95 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm backdrop-blur">
-                    <PlayCircle className="h-3 w-3" />Sedang dikerjakan
+                    <PlayCircle className="h-3 w-3" />{tl("Sedang dikerjakan")}
                   </span>
                 )}
               </div>
@@ -338,8 +341,8 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
               <h2 className="font-bold text-slate-900 group-hover:text-teal-700">{s.title}</h2>
               {s.description && <p className="mt-1 line-clamp-2 text-sm text-slate-500">{s.description}</p>}
               <div className="mt-3 flex items-center gap-4 text-xs text-slate-500">
-                <span className="flex items-center gap-1"><Layers className="h-3.5 w-3.5" />{s.section_count} bagian</span>
-                <span className="flex items-center gap-1"><ListChecks className="h-3.5 w-3.5" />{s.question_count} soal</span>
+                <span className="flex items-center gap-1"><Layers className="h-3.5 w-3.5" />{s.section_count} {tl("bagian")}</span>
+                <span className="flex items-center gap-1"><ListChecks className="h-3.5 w-3.5" />{s.question_count} {tl("soal")}</span>
                 {s.duration_minutes > 0 && <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{s.duration_minutes}m</span>}
               </div>
 
@@ -347,8 +350,8 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
               {prog && (
                 <div className="mt-3">
                   <div className="mb-1 flex items-center justify-between text-[11px] font-medium">
-                    <span className="text-teal-700">Progres tersimpan</span>
-                    <span className="tabular-nums text-slate-500">{prog.answered}/{prog.total} soal · {pct}%</span>
+                    <span className="text-teal-700">{tl("Progres tersimpan")}</span>
+                    <span className="tabular-nums text-slate-500">{prog.answered}/{prog.total} {tl("soal")} · {pct}%</span>
                   </div>
                   <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
                     <div className="h-full rounded-full transition-[width]" style={{ width: `${pct}%`, background: TEAL }} />
@@ -357,7 +360,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
               )}
 
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
-                {prog ? "Lanjutkan" : "Mulai"} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                {prog ? tl("Lanjutkan") : tl("Mulai")} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>
               </div>
             </SimCard>
@@ -366,7 +369,7 @@ export default function SimulasiKatalog({ previewStudentId = null }: { previewSt
           {sims.length === 0 && lockedTypes.length === 0 && (
             <div className="sm:col-span-2 xl:col-span-3 rounded-2xl bg-white p-10 text-center text-slate-500">
               <ClipboardCheck className="mx-auto mb-3 h-8 w-8 opacity-50" />
-              <p className="text-sm">Belum ada simulasi yang tersedia. Cek lagi nanti ya!</p>
+              <p className="text-sm">{tl("Belum ada simulasi yang tersedia. Cek lagi nanti ya!")}</p>
             </div>
           )}
         </div>

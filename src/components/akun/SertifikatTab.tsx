@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 // [sertifikat-banner-foto-v1] foto stok bahasa — sumber sama dgn kartu kelas di Beranda
 import { getLangPhoto } from "@/lib/lang-visuals";
+import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 // ── lazy-load CDN sekali doang -> nol npm dep, workflow "cp 1 file" tetep aman. ──
 function loadScript(src: string): Promise<void> {
@@ -282,12 +283,15 @@ function matchesFilter(c: Cert, key: FilterKey): boolean {
   if (key === "live" || key === "mandiri") return certCategory(c) === key;
   return productKindOf(c.product) === key;
 }
-const COPY: Record<Kind, { eyebrow: string; body: (lang: string) => string }> = {
-  private: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program privat Bahasa ${l}` },
-  reguler: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program reguler Bahasa ${l}` },
-  kids: { eyebrow: "Sertifikat Petualang Cilik", body: (l) => `telah menyelesaikan petualangan belajar Bahasa ${l} dengan penuh semangat` },
-  testprep: { eyebrow: "Sertifikat Persiapan Tes", body: (l) => `atas penyelesaian program persiapan tes Bahasa ${l}` },
-  default: { eyebrow: "Sertifikat Penyelesaian", body: (l) => `atas keberhasilan menuntaskan program Bahasa ${l}` },
+// [ui-lang-switcher-v1] `body` dipecah jadi awalan + akhiran, nama bahasanya
+// disisipkan di tengah saat render — kalimat utuh ber-`${lang}` tak akan pernah
+// ketemu kuncinya di kamus EN.
+const COPY: Record<Kind, { eyebrow: string; bodyPre: string; bodyPost: string }> = {
+  private: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program privat Bahasa", bodyPost: "" },
+  reguler: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program reguler Bahasa", bodyPost: "" },
+  kids: { eyebrow: "Sertifikat Petualang Cilik", bodyPre: "telah menyelesaikan petualangan belajar Bahasa", bodyPost: "dengan penuh semangat" },
+  testprep: { eyebrow: "Sertifikat Persiapan Tes", bodyPre: "atas penyelesaian program persiapan tes Bahasa", bodyPost: "" },
+  default: { eyebrow: "Sertifikat Penyelesaian", bodyPre: "atas keberhasilan menuntaskan program Bahasa", bodyPost: "" },
 };
 
 // ── Skill radar (inline SVG, capture-safe) ──────────────────────────────────
@@ -324,6 +328,7 @@ function SkillRadar({ s, l, r, w, accent }: { s: number; l: number; r: number; w
   );
 }
 function SkillBlock({ ct, accent }: { ct: Cert; accent: string }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const s = ct.speaking, l = ct.listening, r = ct.reading, w = ct.writing;
   const has = [s, l, r, w].every((v) => typeof v === "number");
   if (!has) return null;
@@ -335,7 +340,7 @@ function SkillBlock({ ct, accent }: { ct: Cert; accent: string }) {
   ];
   return (
     <div className="mx-auto mt-8 w-full max-w-[480px] rounded-2xl bg-white/70 p-5">
-      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#6B7280]">Penilaian Kemampuan</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#6B7280]">{t("Penilaian Kemampuan")}</p>
       <div className="mt-3 flex flex-col items-center gap-5 sm:flex-row sm:items-center">
         <SkillRadar s={Number(s)} l={Number(l)} r={Number(r)} w={Number(w)} accent={accent} />
         <div className="w-full flex-1 space-y-2.5">
@@ -344,11 +349,11 @@ function SkillBlock({ ct, accent }: { ct: Cert; accent: string }) {
             return (
               <div key={row.label} className="flex items-center gap-2.5">
                 <Icon className="h-4 w-4 shrink-0" style={{ color: accent }} strokeWidth={2.4} />
-                <span className="w-[68px] shrink-0 text-left text-[12px] font-bold text-[#12172B]">{row.label}</span>
+                <span className="w-[68px] shrink-0 text-left text-[12px] font-bold text-[#12172B]">{t(row.label)}</span>
                 <span className="h-2 flex-1 overflow-hidden rounded-full bg-[#EEF1F4]">
                   <span className="block h-full rounded-full" style={{ width: `${(row.v / 5) * 100}%`, background: accent }} />
                 </span>
-                <span className="w-[44px] shrink-0 text-right text-[11px] font-extrabold" style={{ color: accent }}>{skillWord(row.v)}</span>
+                <span className="w-[44px] shrink-0 text-right text-[11px] font-extrabold" style={{ color: accent }}>{t(skillWord(row.v))}</span>
               </div>
             );
           })}
@@ -379,6 +384,7 @@ export default function SertifikatTab({
     { id: "d-eng-b1", product: "Kelas Reguler", language: "English", level: "B1", title: "Conversational", teacher: "Sarah Wijaya", status: "progress", pct: 75, used: 12, total: 16 },
     { id: "d-kor-a2", product: "Kelas Private", language: "Korean", level: "A2.1", title: "Pra-Menengah", teacher: "Min-ji Park", status: "progress", pct: 31, used: 5, total: 16 },
   ], []);
+  const t = useT(); // [ui-lang-switcher-v1]
   const list = certs.length ? certs : DUMMY;
 
   const issuedCount = list.filter((c) => c.status === "issued").length;
@@ -389,15 +395,15 @@ export default function SertifikatTab({
   const FILTERS = useMemo(() => {
     const countOf = (k: FilterKey) => list.filter((c) => matchesFilter(c, k)).length;
     const rows: { key: FilterKey; label: string; count: number; hint?: string }[] = [
-      { key: "all", label: "Semua", count: list.length },
-      { key: "live", label: "Kelas Live", count: countOf("live") },
-      { key: "mandiri", label: "Belajar Mandiri", count: countOf("mandiri") },
+      { key: "all", label: tr("Semua"), count: list.length },
+      { key: "live", label: tr("Kelas Live"), count: countOf("live") },
+      { key: "mandiri", label: tr("Belajar Mandiri"), count: countOf("mandiri") },
     ];
     // Chip jenis program cuma muncul kalau siswa memang punya sertifikat jenisnya —
     // kalau keempatnya selalu dipasang, kolom 320px penuh chip berangka 0.
     for (const p of PRODUCT_FILTERS) {
       const n = countOf(p.key);
-      if (n) rows.push({ key: p.key, label: p.label, count: n, hint: p.hint });
+      if (n) rows.push({ key: p.key, label: tr(p.label), count: n, hint: p.hint ? tr(p.hint) : undefined });
     }
     return rows;
   }, [list]);
@@ -420,8 +426,8 @@ export default function SertifikatTab({
       <div className="w-full">
         <div className="rounded-[26px] bg-white p-12 text-center shadow-[0_24px_60px_-40px_rgba(18,23,43,.45)]">
           <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
-          <p className="text-[15px] font-extrabold text-[#12172B]">Belum ada sertifikat</p>
-          <p className="mt-1 text-[13px] text-[#6B7280]">Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).</p>
+          <p className="text-[15px] font-extrabold text-[#12172B]">{t("Belum ada sertifikat")}</p>
+          <p className="mt-1 text-[13px] text-[#6B7280]">{t("Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).")}</p>
         </div>
       </div>
     );
@@ -451,8 +457,8 @@ export default function SertifikatTab({
         {/* LEFT: list */}
         <section className="flex w-full shrink-0 flex-col border-t border-slate-100 bg-white lg:w-[320px] lg:border-r lg:border-t-0">
           <div className="px-6 pb-3 pt-7">
-            <h2 className="text-[18px] font-extrabold text-[#12172B]">Sertifikat</h2>
-            <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{issuedCount} terbit · {lockedCount} dalam proses</p>
+            <h2 className="text-[18px] font-extrabold text-[#12172B]">{t("Sertifikat")}</h2>
+            <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{issuedCount} {t("terbit")} · {lockedCount} {t("dalam proses")}</p>
           </div>
           {/* filter kategori */}
           <div className="flex flex-wrap gap-1.5 px-4 pb-3">
@@ -479,8 +485,8 @@ export default function SertifikatTab({
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center gap-1 px-4 py-10 text-center">
                 <Award className="h-8 w-8 text-slate-300" strokeWidth={1.6} />
-                <p className="text-[13px] font-bold text-[#12172B]">Belum ada di kategori ini</p>
-                <p className="text-[12px] font-medium text-[#6B7280]">Coba pilih kategori lain di atas.</p>
+                <p className="text-[13px] font-bold text-[#12172B]">{t("Belum ada di kategori ini")}</p>
+                <p className="text-[12px] font-medium text-[#6B7280]">{t("Coba pilih kategori lain di atas.")}</p>
               </div>
             )}
             {filtered.map((ct) => {
@@ -506,7 +512,7 @@ export default function SertifikatTab({
                     {/* [sertifikat-kategori-program-v1] jenis program ikut tampil di kartu,
                         biar kategorinya kebaca tanpa harus main filter dulu. */}
                     <span className="block truncate text-[12px] font-medium text-[#6B7280]">
-                      CEFR · {ct.title}
+                      CEFR · {t(ct.title || "")}
                       {PROD_SHORT[productKindOf(ct.product)] ? ` · ${PROD_SHORT[productKindOf(ct.product)]}` : ""}
                     </span>
                   </span>
@@ -526,11 +532,11 @@ export default function SertifikatTab({
               className="cert-tint w-full rounded-2xl bg-[#16796E0D] p-4 text-left transition hover:brightness-[.97] active:scale-[.99]"
             >
               <p className="flex items-center gap-2 text-[13px] font-extrabold text-[#12172B]">
-                <Info className="h-4 w-4 text-[#16796E]" />Tentang CEFR
+                <Info className="h-4 w-4 text-[#16796E]" />{t("Tentang CEFR")}
                 <ChevronRight className="ml-auto h-4 w-4 text-[#16796E]" />
               </p>
-              <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-[#6B7280]">Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).</p>
-              <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-[#16796E]">Lihat peta level A1–B2</span>
+              <p className="mt-1.5 text-[12px] font-medium leading-relaxed text-[#6B7280]">{t("Sertifikat terbit otomatis setelah kamu menuntaskan satu sublevel (16 sesi).")}</p>
+              <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-[#16796E]">{t("Lihat peta level A1–B2")}</span>
             </button>
           </div>
         </section>
@@ -545,8 +551,8 @@ export default function SertifikatTab({
             ) : (
               <div className="rounded-2xl bg-white p-12 text-center">
                 <Award className="mx-auto mb-3 h-10 w-10 text-slate-300" strokeWidth={1.6} />
-                <p className="text-[15px] font-extrabold text-[#12172B]">Pilih sertifikat</p>
-                <p className="mt-1 text-[13px] text-[#6B7280]">Belum ada sertifikat di kategori ini.</p>
+                <p className="text-[15px] font-extrabold text-[#12172B]">{t("Pilih sertifikat")}</p>
+                <p className="mt-1 text-[13px] text-[#6B7280]">{t("Belum ada sertifikat di kategori ini.")}</p>
               </div>
             )}
           </div>
@@ -559,6 +565,7 @@ export default function SertifikatTab({
 }
 
 function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const col = colorOf(ct.language);
   const kind = productKindOf(ct.product);
   const copy = COPY[kind];
@@ -592,7 +599,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
       pdf.save(`Sertifikat-Linguo-${ct.language}-${ct.level}${ct.idNo ? "-" + ct.idNo : ""}.pdf`);
     } catch (e) {
       console.error("[Sertifikat] gagal membuat PDF:", e);
-      alert("Gagal membuat PDF. Coba lagi sebentar ya.");
+      alert(t("Gagal membuat PDF. Coba lagi sebentar ya."));
     } finally {
       setPdfLoading(false);
     }
@@ -604,7 +611,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
     const url = "https://linguo.id";
     try {
       if (navigator.share) await navigator.share({ title: "Sertifikat Linguo", text, url });
-      else { await navigator.clipboard.writeText(`${text} ${url}`); alert("Teks sertifikat disalin ke clipboard ✓"); }
+      else { await navigator.clipboard.writeText(`${text} ${url}`); alert(t("Teks sertifikat disalin ke clipboard ✓")); }
     } catch { /* user batal share -> abaikan */ }
   };
 
@@ -620,9 +627,9 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
   };
 
   const stats = [
-    !isKids && ct.score != null ? { k: "Nilai Akhir", v: `${ct.score}/100` } : null,
-    ct.hours != null ? { k: "Jam Belajar", v: `${ct.hours} jam` } : null,
-    ct.date ? { k: "Tanggal", v: ct.date } : null,
+    !isKids && ct.score != null ? { k: t("Nilai Akhir"), v: `${ct.score}/100` } : null,
+    ct.hours != null ? { k: t("Jam Belajar"), v: `${ct.hours} ${t("jam")}` } : null,
+    ct.date ? { k: t("Tanggal"), v: ct.date } : null,
   ].filter(Boolean) as { k: string; v: string }[];
 
   return (
@@ -657,14 +664,14 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
           </div>
 
           <p className="mt-6 inline-flex items-center gap-1.5 text-[12px] font-bold uppercase tracking-[0.25em] text-[#6B7280]">
-            {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{copy.eyebrow}
+            {isKids && <Sparkles className="h-3.5 w-3.5" style={{ color: col.accent }} />}{t(copy.eyebrow)}
           </p>
-          <p className="mt-5 text-[13px] font-medium text-[#6B7280]">Diberikan kepada</p>
+          <p className="mt-5 text-[13px] font-medium text-[#6B7280]">{t("Diberikan kepada")}</p>
           <h2 className="mt-1 text-[26px] font-extrabold leading-tight text-[#12172B] sm:text-[30px]">{studentName}</h2>
           <div className="mx-auto mt-3 h-1 w-16 rounded-full" style={{ background: col.accent }} />
 
           <p className="mx-auto mt-5 max-w-[440px] text-[13px] font-medium leading-relaxed text-[#6B7280]">
-            {copy.body(ct.language)}{showCefr ? <> — <b className="text-[#12172B]">Level CEFR {ct.level}</b></> : ""}{ct.title && !isKids ? ` (${ct.title})` : ""} di Linguo.
+            {t(copy.bodyPre)} {ct.language}{copy.bodyPost ? ` ${t(copy.bodyPost)}` : ""}{showCefr ? <> — <b className="text-[#12172B]">{t("Level CEFR")} {ct.level}</b></> : ""}{ct.title && !isKids ? ` (${t(ct.title)})` : ""} {t("di Linguo.")}
           </p>
 
           {/* CEFR level chip (non-kids) atau bintang (kids) */}
@@ -697,13 +704,13 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
             <div className="text-left">
               <p className="text-[20px] font-bold italic text-[#12172B]">{ct.teacher}</p>
               <div className="mt-1 h-px w-36 bg-slate-300" />
-              <p className="mt-1 text-[11px] font-semibold text-[#6B7280]">Pengajar</p>
+              <p className="mt-1 text-[11px] font-semibold text-[#6B7280]">{t("Pengajar")}</p>
             </div>
             <div className="flex h-14 w-14 items-center justify-center rounded-full" style={{ border: `2px solid ${col.accent}` }}>
               <Award className="h-7 w-7" style={{ color: col.accent }} />
             </div>
           </div>
-          {ct.idNo && <p className="mt-7 text-[11px] font-medium text-[#6B7280]">No. Sertifikat: {ct.idNo}</p>}
+          {ct.idNo && <p className="mt-7 text-[11px] font-medium text-[#6B7280]">{t("No. Sertifikat")}: {ct.idNo}</p>}
         </div>
       </div>
 
@@ -714,11 +721,11 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
           className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {pdfLoading ? <Loader2 className="h-[18px] w-[18px] animate-spin" /> : <Download className="h-[18px] w-[18px]" />}
-          {pdfLoading ? "Membuat PDF…" : "Unduh PDF"}
+          {pdfLoading ? t("Membuat PDF…") : t("Unduh PDF")}
         </button>
-        <button onClick={handleShare} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />Bagikan</button>
-        <button onClick={handleLinkedIn} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />Tambah ke LinkedIn</button>
-        <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />Verifikasi keaslian</button>
+        <button onClick={handleShare} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><Share2 className="h-[18px] w-[18px]" />{t("Bagikan")}</button>
+        <button onClick={handleLinkedIn} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><ExternalLink className="h-[18px] w-[18px]" />{t("Tambah ke LinkedIn")}</button>
+        <button onClick={() => setVerifyOpen(true)} className="ml-auto inline-flex h-12 items-center gap-2 px-3 text-[13px] font-bold text-[#16796E] hover:underline"><ShieldCheck className="h-[18px] w-[18px]" />{t("Verifikasi keaslian")}</button>
       </div>
 
       {verifyOpen && (
@@ -727,20 +734,20 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
             <div className="relative flex flex-col items-center px-7 py-8 text-center text-white" style={{ background: col.accent }}>
               <button onClick={() => setVerifyOpen(false)} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30" aria-label="Tutup"><X className="h-4 w-4" /></button>
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20"><ShieldCheck className="h-7 w-7" /></span>
-              <p className="mt-3 text-[16px] font-extrabold">Sertifikat Terverifikasi</p>
-              <p className="mt-1 inline-flex items-center gap-1 text-[12px] font-semibold text-white/90"><BadgeCheck className="h-4 w-4" />Asli &amp; diterbitkan oleh Linguo</p>
+              <p className="mt-3 text-[16px] font-extrabold">{t("Sertifikat Terverifikasi")}</p>
+              <p className="mt-1 inline-flex items-center gap-1 text-[12px] font-semibold text-white/90"><BadgeCheck className="h-4 w-4" />{t("Asli & diterbitkan oleh Linguo")}</p>
             </div>
             <div className="px-7 py-6">
               <dl className="space-y-3 text-[13px]">
-                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">Diberikan kepada</dt><dd className="text-right font-extrabold text-[#12172B]">{studentName}</dd></div>
-                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">Program</dt><dd className="text-right font-extrabold text-[#12172B]">Bahasa {ct.language}{showCefr ? ` — CEFR ${ct.level}` : ""}</dd></div>
-                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">Pengajar</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.teacher}</dd></div>
-                {ct.date && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">Tanggal terbit</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.date}</dd></div>}
-                {ct.idNo && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">No. Sertifikat</dt><dd className="text-right font-mono text-[12px] font-bold text-[#12172B]">{ct.idNo}</dd></div>}
+                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">{t("Diberikan kepada")}</dt><dd className="text-right font-extrabold text-[#12172B]">{studentName}</dd></div>
+                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">{t("Program")}</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.language}{showCefr ? ` — CEFR ${ct.level}` : ""}</dd></div>
+                <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">{t("Pengajar")}</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.teacher}</dd></div>
+                {ct.date && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">{t("Tanggal terbit")}</dt><dd className="text-right font-extrabold text-[#12172B]">{ct.date}</dd></div>}
+                {ct.idNo && <div className="flex items-start justify-between gap-4"><dt className="font-medium text-[#6B7280]">{t("No. Sertifikat")}</dt><dd className="text-right font-mono text-[12px] font-bold text-[#12172B]">{ct.idNo}</dd></div>}
               </dl>
               <p className="cert-tint mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-3 text-[11px] font-medium leading-relaxed text-[#6B7280]">
                 <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#16796E]" />
-                Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.
+                {t("Halaman verifikasi publik dengan QR code sedang disiapkan. Untuk konfirmasi keaslian, hubungi tim Linguo dengan menyebutkan No. Sertifikat di atas.")}
               </p>
             </div>
           </div>
@@ -751,6 +758,7 @@ function IssuedDetail({ ct, studentName }: { ct: Cert; studentName: string }) {
 }
 
 function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?: () => void; onSchedule?: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const col = colorOf(ct.language);
   const isDark = useIsDark();
   const photo = getLangPhoto(ct.language); // [sertifikat-banner-foto-v1]
@@ -783,9 +791,9 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         )}
         <div className="relative shrink-0"><FlagBadge lang={ct.language} variant="hero" /></div>
         <div className="relative min-w-0 flex-1">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold"><Lock className="h-3 w-3" />Belum Terbit</span>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold"><Lock className="h-3 w-3" />{t("Belum Terbit")}</span>
           <h2 className="mt-2 text-[22px] font-extrabold leading-tight">{ct.language} — CEFR {ct.level}</h2>
-          <p className="mt-1 text-[13px] font-medium text-white/85">{ct.title} · {ct.teacher}</p>
+          <p className="mt-1 text-[13px] font-medium text-white/85">{t(ct.title || "")} · {ct.teacher}</p>
         </div>
         {/* Hiasan heksagon cuma dipakai kalau banner TIDAK punya foto — di atas foto
             dua bercak putih itu cuma bikin kotor. */}
@@ -795,17 +803,17 @@ function ProgressDetail({ ct, onContinue, onSchedule }: { ct: Cert; onContinue?:
         </div>
       </div>
       <div className="px-6 py-7 sm:px-8">
-        <div className="flex items-center justify-between text-[13px] font-bold text-[#12172B]"><span>Progress menuju sertifikat</span><span>{pct}%</span></div>
+        <div className="flex items-center justify-between text-[13px] font-bold text-[#12172B]"><span>{t("Progress menuju sertifikat")}</span><span>{pct}%</span></div>
         <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#E8EAEE]"><div className="h-full rounded-full" style={{ width: `${pct}%`, background: isDark ? "#2DD4BF" : "#16796E" }} /></div>
-        <p className="mt-3 flex items-center gap-1.5 text-[13px] font-medium text-[#6B7280]"><Flag className="h-4 w-4 text-[#16796E]" />Tinggal <b className="text-[#12172B]">{remain} sesi</b> lagi ({used}/{total}) untuk membuka sertifikat ini.</p>
+        <p className="mt-3 flex items-center gap-1.5 text-[13px] font-medium text-[#6B7280]"><Flag className="h-4 w-4 text-[#16796E]" />{t("Tinggal")} <b className="text-[#12172B]">{remain} {t("sesi")}</b> {t("lagi")} ({used}/{total}) {t("untuk membuka sertifikat ini.")}</p>
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Selesai</p></div>
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Sesi Tersisa</p></div>
-          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">Target Level</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{used}/{total}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Selesai")}</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">{remain}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Sesi Tersisa")}</p></div>
+          <div className="rounded-2xl bg-slate-50 p-4 text-center"><p className="text-[22px] font-extrabold text-[#12172B]">CEFR {ct.level}</p><p className="mt-1 text-[12px] font-medium text-[#6B7280]">{t("Target Level")}</p></div>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />Lanjut Belajar</button>
-          <button onClick={onSchedule} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />Lihat Jadwal</button>
+          <button onClick={onContinue} className="inline-flex h-12 items-center gap-2 rounded-2xl bg-[#16796E] px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]"><Play className="h-[18px] w-[18px]" />{t("Lanjut Belajar")}</button>
+          <button onClick={onSchedule} className="cert-btn-ghost inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50"><CalendarDays className="h-[18px] w-[18px]" />{t("Lihat Jadwal")}</button>
         </div>
       </div>
     </div>
@@ -853,6 +861,7 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
   const PAD_L = 16, COL_W = 22, STEP = 31, BASE_Y = 196;
   const H0: Record<string, number> = { A1: 44, A2: 72, B1: 104, B2: 140 };
   const heightOf = (b: { lvl: CefrLevel; inGroup: number }) => H0[b.lvl.code] + b.inGroup * 6;
+  const t = useT(); // [ui-lang-switcher-v1]
   const VB_W = PAD_L * 2 + (totalSubs - 1) * STEP + COL_W;
   const ink = isDark ? "#E7E9EE" : "#12172B";
   const sub = isDark ? "#9BA3AF" : "#6B7280";
@@ -867,7 +876,7 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Tentang CEFR"
+      aria-label={t("Tentang CEFR")}
     >
       <div
         className="max-h-[92vh] w-full max-w-[720px] overflow-y-auto rounded-t-[26px] shadow-[0_40px_90px_-30px_rgba(0,0,0,.6)] sm:rounded-[26px]"
@@ -876,11 +885,11 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
       >
         {/* header */}
         <div className="relative px-6 py-7 text-white sm:px-8" style={{ background: isDark ? "linear-gradient(135deg,#0F5A52,#16796E)" : "linear-gradient(135deg,#16796E,#0F5A52)" }}>
-          <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30" aria-label="Tutup"><X className="h-4 w-4" /></button>
+          <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition hover:bg-white/30" aria-label={t("Tutup")}><X className="h-4 w-4" /></button>
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20"><GraduationCap className="h-6 w-6" /></span>
-          <p className="mt-3 text-[18px] font-extrabold">Tentang CEFR</p>
+          <p className="mt-3 text-[18px] font-extrabold">{t("Tentang CEFR")}</p>
           <p className="mt-1 max-w-[46ch] text-[12.5px] font-medium leading-relaxed text-white/90">
-            CEFR (Common European Framework of Reference) adalah standar internasional untuk mengukur kemampuan berbahasa — dari A1 (pemula) sampai C2 (setara penutur asli). Linguo memakai standar yang sama, lalu memecah tiap level jadi sublevel 16 sesi.
+            {t("CEFR (Common European Framework of Reference) adalah standar internasional untuk mengukur kemampuan berbahasa — dari A1 (pemula) sampai C2 (setara penutur asli). Linguo memakai standar yang sama, lalu memecah tiap level jadi sublevel 16 sesi.")}
           </p>
         </div>
 
@@ -888,9 +897,9 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
           {/* ringkasan angka */}
           <div className="grid grid-cols-3 gap-2.5">
             {[
-              { n: "A1–B2", l: "Level tersedia" },
-              { n: `${totalSubs}`, l: "Sublevel" },
-              { n: `${totalSesi}`, l: "Total sesi" },
+              { n: "A1–B2", l: t("Level tersedia") },
+              { n: `${totalSubs}`, l: t("Sublevel") },
+              { n: `${totalSesi}`, l: t("Total sesi") },
             ].map((k) => (
               <div key={k.l} className="rounded-2xl p-3 text-center" style={{ background: soft }}>
                 <p className="text-[17px] font-extrabold" style={{ color: ink }}>{k.n}</p>
@@ -900,12 +909,12 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
           </div>
 
           {/* grafik tangga level */}
-          <p className="mt-6 text-[13px] font-extrabold" style={{ color: ink }}>Peta level di Linguo</p>
+          <p className="mt-6 text-[13px] font-extrabold" style={{ color: ink }}>{t("Peta level di Linguo")}</p>
           <p className="mt-0.5 text-[12px] font-medium leading-relaxed" style={{ color: sub }}>
-            Tiap balok = 1 sublevel = 16 sesi. Semakin tinggi baloknya, semakin dalam materinya.
+            {t("Tiap balok = 1 sublevel = 16 sesi. Semakin tinggi baloknya, semakin dalam materinya.")}
           </p>
           <div className="mt-3 overflow-x-auto">
-            <svg viewBox={`0 0 ${VB_W} 246`} className="h-[246px] w-full min-w-[560px]" role="img" aria-label="Grafik level CEFR A1 sampai B2 beserta sublevelnya">
+            <svg viewBox={`0 0 ${VB_W} 246`} className="h-[246px] w-full min-w-[560px]" role="img" aria-label={t("Grafik level CEFR A1 sampai B2 beserta sublevelnya")}>
               {/* garis dasar */}
               <line x1="0" y1={BASE_Y + 0.5} x2={VB_W} y2={BASE_Y + 0.5} stroke={line} strokeWidth="1" />
               {bars.map((b, i) => {
@@ -931,7 +940,7 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
                 return (
                   <g>
                     <rect x={x - 42} y={y - 12} width="84" height="18" rx="9" fill={teal} />
-                    <text x={x} y={y + 1} textAnchor="middle" fontSize="10" fontWeight="800" fill={isDark ? "#0B0B0B" : "#ffffff"}>Kamu di sini</text>
+                    <text x={x} y={y + 1} textAnchor="middle" fontSize="10" fontWeight="800" fill={isDark ? "#0B0B0B" : "#ffffff"}>{t("Kamu di sini")}</text>
                   </g>
                 );
               })()}
@@ -944,8 +953,8 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
                 return (
                   <g key={lvl.code}>
                     <line x1={x1} y1={BASE_Y + 8} x2={x2} y2={BASE_Y + 8} stroke={isDark ? lvl.cDark : lvl.c} strokeWidth="3" strokeLinecap="round" />
-                    <text x={cx} y={BASE_Y + 26} textAnchor="middle" fontSize="13" fontWeight="800" fill={ink}>{lvl.code} · {lvl.name}</text>
-                    <text x={cx} y={BASE_Y + 41} textAnchor="middle" fontSize="10.5" fontWeight="600" fill={sub}>{lvl.subs} sublevel · {lvl.subs * SESI_PER_SUB} sesi</text>
+                    <text x={cx} y={BASE_Y + 26} textAnchor="middle" fontSize="13" fontWeight="800" fill={ink}>{lvl.code} · {t(lvl.name)}</text>
+                    <text x={cx} y={BASE_Y + 41} textAnchor="middle" fontSize="10.5" fontWeight="600" fill={sub}>{lvl.subs} {t("sublevel")} · {lvl.subs * SESI_PER_SUB} {t("sesi")}</text>
                   </g>
                 );
               })}
@@ -959,9 +968,9 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
                 <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-[12px] font-extrabold" style={{ background: isDark ? lvl.cDark : lvl.c, color: isDark ? "#0B0B0B" : "#0B2B28" }}>{lvl.code}</span>
                 <span className="min-w-0">
                   <span className="block text-[13px] font-extrabold" style={{ color: ink }}>
-                    {lvl.name} <span className="font-semibold" style={{ color: sub }}>· {lvl.code}.1–{lvl.code}.{lvl.subs}</span>
+                    {t(lvl.name)} <span className="font-semibold" style={{ color: sub }}>· {lvl.code}.1–{lvl.code}.{lvl.subs}</span>
                   </span>
-                  <span className="mt-0.5 block text-[12px] font-medium leading-relaxed" style={{ color: sub }}>{lvl.blurb}</span>
+                  <span className="mt-0.5 block text-[12px] font-medium leading-relaxed" style={{ color: sub }}>{t(lvl.blurb)}</span>
                 </span>
               </div>
             ))}
@@ -971,12 +980,12 @@ function CefrModal({ onClose, currentLevel, isDark }: { onClose: () => void; cur
           <div className="cert-tint mt-5 flex items-start gap-2 rounded-2xl bg-[#16796E0D] p-4">
             <Award className="mt-0.5 h-4 w-4 shrink-0" style={{ color: teal }} />
             <p className="text-[12px] font-medium leading-relaxed" style={{ color: sub }}>
-              <b style={{ color: ink }}>Satu sublevel = satu sertifikat.</b> Begitu 16 sesi di satu sublevel tuntas, sertifikatnya terbit otomatis di tab ini — misal selesai A1.1 langsung lanjut A1.2. Kalau evaluasi pengajar menyatakan kamu sudah mampu, sublevel boleh dilompati.
+              <b style={{ color: ink }}>{t("Satu sublevel = satu sertifikat.")}</b> {t("Begitu 16 sesi di satu sublevel tuntas, sertifikatnya terbit otomatis di tab ini — misal selesai A1.1 langsung lanjut A1.2. Kalau evaluasi pengajar menyatakan kamu sudah mampu, sublevel boleh dilompati.")}
             </p>
           </div>
 
           <button onClick={onClose} className="mt-5 h-12 w-full rounded-2xl text-[14px] font-extrabold text-white transition hover:brightness-110" style={{ background: teal, color: isDark ? "#0B0B0B" : "#ffffff" }}>
-            Mengerti
+            {t("Mengerti")}
           </button>
         </div>
       </div>

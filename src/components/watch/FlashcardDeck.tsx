@@ -61,6 +61,19 @@ import {
 } from "@/lib/srs";
 import { getImmersionLang } from "@/lib/immersion";
 import { RectFlag } from "@/components/RectFlag";
+import { useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+
+/** [ui-lang-switcher-v1] Label jadwal SRS ("3 hari", "<1 mnt") lahir di lib/srs —
+ *  bukan komponen, jadi tak bisa pakai hook. Satuannya ditukar di sini. */
+function durEn(s: string): string {
+  return s
+    .replace("segera", "soon")
+    .replace("<1 mnt", "<1 min")
+    .replace(/^1 hari$/, "1 day")
+    .replace(" hari", " days")
+    .replace(" bln", " mo")
+    .replace(" thn", " yr");
+}
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#127d7d";
@@ -267,6 +280,7 @@ export default function FlashcardDeck({
   onClose: () => void;
   onChange?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [all, setAll] = useState<SavedWord[]>([]);
   const [filter, setFilter] = useState<string>("all"); // "all" atau kode bahasa
   const [tab, setTab] = useState<Tab>("belajar");
@@ -482,7 +496,7 @@ export default function FlashcardDeck({
           <button
             onClick={() => setView("home")}
             className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-            aria-label="Tutup review"
+            aria-label={t("Tutup review")}
           >
             <X className="h-5 w-5 text-white" />
           </button>
@@ -547,24 +561,24 @@ export default function FlashcardDeck({
               <Layers className="h-5 w-5" color="#fff" />
             </span>
             <div>
-              <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
+              <p className="text-[15px] font-extrabold text-white">{t("Kosakata Saya")}</p>
               <p className="text-[11.5px]" style={{ color: SUB }}>
                 {isWatchPremium()
-                  ? `${totalWords} kata tersimpan`
-                  : `${totalWords}/${FREE_SAVE_LIMIT} kata gratis`}
+                  ? `${totalWords} ${t("kata tersimpan")}`
+                  : `${totalWords}/${FREE_SAVE_LIMIT} ${t("kata gratis")}`}
               </p>
             </div>
           </div>
 
           <nav className="space-y-1 px-3">
             <SideNavBtn active={tab === "belajar"} onClick={() => setTab("belajar")} icon={<Layers className="h-4 w-4" />}>
-              Belajar
+              {t("Belajar")}
             </SideNavBtn>
             <SideNavBtn active={tab === "deck"} onClick={() => setTab("deck")} icon={<Sparkles className="h-4 w-4" />}>
-              Deck
+              {t("Deck")}
             </SideNavBtn>
             <SideNavBtn active={tab === "analisa"} onClick={() => setTab("analisa")} icon={<BarChart3 className="h-4 w-4" />}>
-              Analisa
+              {t("Analisa")}
             </SideNavBtn>
           </nav>
 
@@ -574,7 +588,7 @@ export default function FlashcardDeck({
             <div className="rounded-2xl p-4" style={{ backgroundColor: CARD }}>
               <div className="flex items-center justify-between">
                 <span className="text-[12px]" style={{ color: SUB }}>
-                  Dikuasai
+                  {t("Dikuasai")}
                 </span>
                 <span className="text-[12px] font-bold" style={{ color: "#7FE0E0" }}>
                   {stats.masteredCount}/{stats.total} · {masteredPctAll}%
@@ -600,16 +614,16 @@ export default function FlashcardDeck({
                   <Layers className="h-4 w-4" color="#fff" />
                 </span>
                 <div>
-                  <p className="text-[15px] font-extrabold text-white">Kosakata Saya</p>
+                  <p className="text-[15px] font-extrabold text-white">{t("Kosakata Saya")}</p>
                   <p className="text-[11.5px]" style={{ color: SUB }}>
-                    {totalWords} kata • hafalan dengan pengulangan berjarak
+                    {totalWords} {t("kata • hafalan dengan pengulangan berjarak")}
                   </p>
                 </div>
               </div>
               <button
                 onClick={onClose}
                 className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-                aria-label="Tutup"
+                aria-label={t("Tutup")}
               >
                 <X className="h-5 w-5 text-white" />
               </button>
@@ -617,20 +631,20 @@ export default function FlashcardDeck({
 
             <div className="flex gap-1 px-4 sm:px-6">
               <TabBtn active={tab === "belajar"} onClick={() => setTab("belajar")}>
-                <Layers className="h-4 w-4" /> Belajar
+                <Layers className="h-4 w-4" /> {t("Belajar")}
               </TabBtn>
               <TabBtn active={tab === "deck"} onClick={() => setTab("deck")}>
-                <Sparkles className="h-4 w-4" /> Deck
+                <Sparkles className="h-4 w-4" /> {t("Deck")}
               </TabBtn>
               <TabBtn active={tab === "analisa"} onClick={() => setTab("analisa")}>
-                <BarChart3 className="h-4 w-4" /> Analisa
+                <BarChart3 className="h-4 w-4" /> {t("Analisa")}
               </TabBtn>
             </div>
 
             {langCodes.length > 1 && (
               <div className="mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 <FilterChip active={filter === "all"} onClick={() => setFilter("all")}>
-                  Semua
+                  {t("Semua")}
                 </FilterChip>
                 {langCodes.map((code) => {
                   const l = getImmersionLang(code);
@@ -652,14 +666,14 @@ export default function FlashcardDeck({
           >
             <div>
               <p className="text-[18px] font-extrabold leading-tight text-white">
-                {tab === "belajar" ? "Belajar" : tab === "deck" ? "Deck" : "Analisa"}
+                {tab === "belajar" ? t("Belajar") : tab === "deck" ? t("Deck") : t("Analisa")}
               </p>
               <p className="text-[12px]" style={{ color: SUB }}>
                 {tab === "belajar"
-                  ? `${words.length} kata • hafalan dengan pengulangan berjarak`
+                  ? `${words.length} ${t("kata • hafalan dengan pengulangan berjarak")}`
                   : tab === "deck"
-                  ? "Deck tematik AI, dari video, buatan sendiri & komunitas"
-                  : "Statistik & progres belajarmu"}
+                  ? t("Deck tematik AI, dari video, buatan sendiri & komunitas")
+                  : t("Statistik & progres belajarmu")}
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -675,7 +689,7 @@ export default function FlashcardDeck({
               <button
                 onClick={onClose}
                 className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
-                aria-label="Tutup"
+                aria-label={t("Tutup")}
               >
                 <X className="h-5 w-5 text-white" />
               </button>
@@ -736,6 +750,7 @@ function BelajarTab({
   onStart: (reviewAhead: boolean) => void;
   onQuiz: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const due = stats.dueCount;
   const todayTarget = due + reviewedToday;
   const todayPct = todayTarget > 0 ? Math.round((reviewedToday / todayTarget) * 100) : 0;
@@ -753,14 +768,14 @@ function BelajarTab({
         className="rounded-3xl p-5"
         style={{ background: `linear-gradient(135deg,${TEAL},${TEAL_DARK})` }}
       >
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-white/80">Review Harian</p>
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-white/80">{t("Review Harian")}</p>
         <p className="mt-1 text-[24px] font-extrabold leading-tight text-white">
-          {due > 0 ? `${due} kartu jatuh tempo` : "Semua kartu sudah diulang"}
+          {due > 0 ? `${due} ${t("kartu jatuh tempo")}` : t("Semua kartu sudah diulang")}
         </p>
         {due > 0 ? (
           <>
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-[13px] text-white/80">Progres hari ini</span>
+              <span className="text-[13px] text-white/80">{t("Progres hari ini")}</span>
               <span className="text-[13px] font-bold text-white">
                 {reviewedToday} / {todayTarget}
               </span>
@@ -770,14 +785,14 @@ function BelajarTab({
             </div>
           </>
         ) : (
-          <p className="mt-1.5 text-[13px] text-white/80">Kamu bisa mengulang lebih awal kapan saja.</p>
+          <p className="mt-1.5 text-[13px] text-white/80">{t("Kamu bisa mengulang lebih awal kapan saja.")}</p>
         )}
         <button
           onClick={() => onStart(due === 0)}
           className="mt-5 flex w-full items-center justify-center gap-1.5 rounded-2xl bg-white py-3.5 text-[15px] font-bold transition-opacity hover:opacity-90"
           style={{ color: TEAL_DARK }}
         >
-          {due > 0 ? "Mulai review" : "Ulang lebih awal"}
+          {due > 0 ? t("Mulai review") : t("Ulang lebih awal")}
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>
@@ -787,7 +802,7 @@ function BelajarTab({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <span className="text-[13px]" style={{ color: SUB }}>
-              {stats.masteredCount} dari {stats.total} sudah dikuasai
+              {stats.masteredCount} {t("dari")} {stats.total} {t("sudah dikuasai")}
             </span>
             <MasteryInfo />
           </div>
@@ -802,9 +817,9 @@ function BelajarTab({
 
       {/* Statistik tahap */}
       <div className="flex gap-2.5">
-        <StageTile value={stats.newCount} label="Baru" color={PURPLE} />
-        <StageTile value={stats.learningCount} label="Belajar" color={ORANGE} />
-        <StageTile value={stats.masteredCount} label="Dikuasai" color={TEAL} />
+        <StageTile value={stats.newCount} label={t("Baru")} color={PURPLE} />
+        <StageTile value={stats.learningCount} label={t("Belajar")} color={ORANGE} />
+        <StageTile value={stats.masteredCount} label={t("Dikuasai")} color={TEAL} />
       </div>
 
       {/* Main Kuis — gamifikasi hafalan arti kata */}
@@ -817,8 +832,8 @@ function BelajarTab({
           <Zap className="h-5 w-5 text-white" />
         </span>
         <div className="min-w-0 flex-1">
-          <p className="text-[15px] font-extrabold text-white">Main Kuis Arti Kata</p>
-          <p className="text-[12px] text-white/80">Tebak arti lawan waktu — poin, streak &amp; efek suara</p>
+          <p className="text-[15px] font-extrabold text-white">{t("Main Kuis Arti Kata")}</p>
+          <p className="text-[12px] text-white/80">{t("Tebak arti lawan waktu — poin, streak & efek suara")}</p>
         </div>
         <ArrowRight className="h-5 w-5 shrink-0 text-white/90" />
       </button>
@@ -827,16 +842,16 @@ function BelajarTab({
       {/* Daftar kata */}
       <div>
         <div className="mb-3 mt-2 flex items-center justify-between gap-2 lg:mt-0">
-          <p className="text-[14px] font-bold text-white">Kata ({stats.total})</p>
+          <p className="text-[14px] font-bold text-white">{t("Kata")} ({stats.total})</p>
           {words.length > 0 && (
             <button
               onClick={() => exportVocabPdf(words, exportTitle(words))}
               className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-white/10"
               style={{ border: `1px solid ${BORDER}`, color: "#7FE0E0" }}
-              aria-label="Unduh kosakata sebagai PDF"
-              title="Unduh sebagai PDF (kolom kata & arti)"
+              aria-label={t("Unduh kosakata sebagai PDF")}
+              title={t("Unduh sebagai PDF (kolom kata & arti)")}
             >
-              <Download className="h-3.5 w-3.5" /> Unduh PDF
+              <Download className="h-3.5 w-3.5" /> {t("Unduh PDF")}
             </button>
           )}
         </div>
@@ -858,6 +873,7 @@ function BelajarTab({
 // useTranslit supaya bacaan Latin (romaji/pinyin/dll) tampil walau kata belum
 // sempat di-backfill — berlaku untuk semua bahasa non-Latin.
 function WordListCard({ word, onOpen }: { word: SavedWord; onOpen: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const accent = STAGE[cardStage(word.srs)];
   const lang = getImmersionLang(word.langCode);
   const translit = useTranslit(word.word, word.langCode, word.translit);
@@ -894,7 +910,7 @@ function WordListCard({ word, onOpen }: { word: SavedWord; onOpen: () => void })
           e.stopPropagation();
           speakText(word.word, word.langCode);
         }}
-        aria-label="Dengar"
+        aria-label={t("Dengar")}
         className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10"
       >
         <Volume2 className="h-4 w-4" style={{ color: SUB }} />
@@ -903,7 +919,7 @@ function WordListCard({ word, onOpen }: { word: SavedWord; onOpen: () => void })
         className="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold"
         style={{ backgroundColor: `${accent.color}22`, color: accent.color }}
       >
-        {accent.label}
+        {t(accent.label)}
       </span>
       <RectFlag code={lang?.country} h={13} />
     </div>
@@ -915,6 +931,8 @@ function WordListCard({ word, onOpen }: { word: SavedWord; onOpen: () => void })
 // transliterasi (romaji/pinyin/dll — diambil lazily kalau belum ada), tombol dengar,
 // arti (terjemahan Indonesia), contoh kalimat, dan ringkasan progres SRS.
 function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
   const lang = getImmersionLang(word.langCode);
   const translit = useTranslit(word.word, word.langCode, word.translit);
   const stage = STAGE[cardStage(word.srs)];
@@ -945,7 +963,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
         <button
           onClick={onClose}
           className="absolute right-3 top-3 rounded-full p-2 transition-colors hover:bg-white/10"
-          aria-label="Tutup"
+          aria-label={t("Tutup")}
         >
           <X className="h-5 w-5 text-white" />
         </button>
@@ -958,7 +976,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
               className="rounded-full px-2 py-0.5 text-[11px] font-bold"
               style={{ backgroundColor: `${stage.color}22`, color: stage.color }}
             >
-              {stage.label}
+              {t(stage.label)}
             </span>
           </div>
           <p className="mt-3 text-[38px] font-extrabold leading-tight text-white">{word.word}</p>
@@ -971,7 +989,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
             onClick={() => speakText(word.word, word.langCode)}
             className="mt-3 flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-white/10"
             style={{ backgroundColor: SURFACE_ALT }}
-            aria-label="Dengar"
+            aria-label={t("Dengar")}
           >
             <Volume2 className="h-5 w-5" style={{ color: TEAL }} />
           </button>
@@ -980,7 +998,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
         <div className="mt-5 h-px w-full" style={{ backgroundColor: BORDER }} />
 
         <p className="mt-4 text-[11px] font-bold uppercase tracking-wider" style={{ color: TEAL }}>
-          Arti
+          {t("Arti")}
         </p>
         <p className="mt-1 text-[20px] font-extrabold" style={{ color: GOLD }}>
           {word.meaning || "—"}
@@ -989,7 +1007,7 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
         {word.example && (
           <>
             <p className="mt-4 text-[11px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-              Contoh
+              {t("Contoh")}
             </p>
             <p className="mt-1 text-[14px] italic" style={{ color: "rgba(255,255,255,0.85)" }}>
               “{word.example}”
@@ -999,13 +1017,13 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
 
         {srs && srs.reviewCount > 0 && (
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px]" style={{ color: SUB }}>
-            <span>Diulang {srs.reviewCount}×</span>
+            <span>{t("Diulang")} {srs.reviewCount}×</span>
             {srs.dueAt && (
               <span>
-                Jatuh tempo{" "}
+                {t("Jatuh tempo")}{" "}
                 {isDue(srs)
-                  ? "sekarang"
-                  : new Date(srs.dueAt).toLocaleDateString("id-ID", { day: "numeric", month: "short" })}
+                  ? t("sekarang")
+                  : new Date(srs.dueAt).toLocaleDateString(uiLang === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "short" })}
               </span>
             )}
           </div>
@@ -1017,6 +1035,8 @@ function WordDetailModal({ word, onClose }: { word: SavedWord; onClose: () => vo
 
 // ── Kartu review (tap untuk lihat arti → nilai) ───────────────────────────────
 function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade) => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
   const [revealed, setRevealed] = useState(false);
   const lang = getImmersionLang(card.langCode);
   const srs = srsOf(card);
@@ -1037,7 +1057,7 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
           onClick={() => setRevealed((v) => !v)}
           className="relative w-full max-w-lg rounded-3xl p-6 text-left"
           style={{ backgroundColor: CARD, minHeight: 280 }}
-          aria-label="Balik kartu"
+          aria-label={t("Balik kartu")}
         >
           {/* Depan */}
           <div className="flex flex-col items-center">
@@ -1060,7 +1080,7 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
               }}
               className="mt-4 flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-white/10"
               style={{ backgroundColor: SURFACE_ALT }}
-              aria-label="Dengar"
+              aria-label={t("Dengar")}
             >
               <Volume2 className="h-5 w-5" style={{ color: TEAL }} />
             </button>
@@ -1071,7 +1091,7 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
             <div className="mt-6 flex flex-col items-center">
               <div className="h-px w-full" style={{ backgroundColor: BORDER }} />
               <p className="mt-5 text-[11px] font-bold uppercase tracking-wider" style={{ color: TEAL }}>
-                Bahasa Indonesia
+                {t("Arti")}
               </p>
               <p className="mt-2 text-center text-[24px] font-extrabold leading-tight" style={{ color: GOLD }}>
                 {card.meaning || "—"}
@@ -1087,7 +1107,7 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
             </div>
           ) : (
             <p className="mt-6 text-center text-[13px]" style={{ color: SUB }}>
-              Ketuk kartu untuk lihat arti
+              {t("Ketuk kartu untuk lihat arti")}
             </p>
           )}
         </button>
@@ -1101,12 +1121,12 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
             className="w-full rounded-2xl py-4 text-[15px] font-bold transition-opacity hover:opacity-90"
             style={{ border: `1px solid ${TEAL}`, color: "#7FE0E0", backgroundColor: CARD }}
           >
-            Tampilkan jawaban
+            {t("Tampilkan jawaban")}
           </button>
         ) : (
           <>
             <p className="mb-2.5 text-center text-[13px]" style={{ color: SUB }}>
-              Seberapa baik kamu mengingatnya?
+              {t("Seberapa baik kamu mengingatnya?")}
             </p>
             <div className="flex gap-2">
               {GRADES.map(({ grade, label, color }) => (
@@ -1116,9 +1136,9 @@ function ReviewCard({ card, onGrade }: { card: SavedWord; onGrade: (g: SrsGrade)
                   className="flex-1 rounded-2xl py-3 text-center transition-opacity hover:opacity-90"
                   style={{ backgroundColor: color }}
                 >
-                  <span className="block text-[14px] font-bold text-white">{label}</span>
+                  <span className="block text-[14px] font-bold text-white">{t(label)}</span>
                   <span className="mt-0.5 block text-[10px] font-medium text-white/85">
-                    {gradePreviewLabel(srs, grade)}
+                    {uiLang === "en" ? durEn(gradePreviewLabel(srs, grade)) : gradePreviewLabel(srs, grade)}
                   </span>
                 </button>
               ))}
@@ -1144,14 +1164,15 @@ function DoneScreen({
   onDone: () => void;
   onReplay: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-8 text-center">
       <div className="flex h-20 w-20 items-center justify-center rounded-full" style={{ backgroundColor: TEAL }}>
         <Check className="h-9 w-9 text-white" strokeWidth={3} />
       </div>
-      <p className="mt-6 text-[26px] font-extrabold text-white">Sesi selesai!</p>
+      <p className="mt-6 text-[26px] font-extrabold text-white">{t("Sesi selesai!")}</p>
       <p className="mt-2 text-[15px]" style={{ color: SUB }}>
-        Kerja bagus — kamu mereview {cards} kartu.
+        {t("Kerja bagus — kamu mereview")} {cards} {t("kartu.")}
       </p>
 
       {/* Feedback penguasaan — jawaban langsung atas "kapan kata jadi Dikuasai?". */}
@@ -1162,17 +1183,15 @@ function DoneScreen({
         >
           <PartyPopper className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "#7FE0E0" }} />
           <p className="text-[13px] leading-snug text-white">
-            <span className="font-bold">{masteredWords.length} kata naik jadi “Dikuasai”</span>
+            <span className="font-bold">{masteredWords.length} {t("kata naik jadi “Dikuasai”")}</span>
             {": "}
             <span style={{ color: "#7FE0E0" }}>{masteredWords.slice(0, 6).join(", ")}</span>
-            {masteredWords.length > 6 ? ` +${masteredWords.length - 6} lagi` : ""}.
+            {masteredWords.length > 6 ? ` +${masteredWords.length - 6} ${t("lagi")}` : ""}.
           </p>
         </div>
       ) : (
         <p className="mt-4 max-w-sm text-[12.5px] leading-snug" style={{ color: SUB }}>
-          Belum ada kata baru dikuasai sesi ini. Kata jadi “Dikuasai” setelah beberapa
-          kali kamu nilai “Bagus”/“Mudah” di hari yang berbeda — tiap ulangan benar
-          menjadwalkannya makin jauh sampai jaraknya mencapai {MASTERED_INTERVAL_DAYS} hari.
+          {t("Belum ada kata baru dikuasai sesi ini. Kata jadi “Dikuasai” setelah beberapa kali kamu nilai “Bagus”/“Mudah” di hari yang berbeda — tiap ulangan benar menjadwalkannya makin jauh sampai jaraknya mencapai")} {MASTERED_INTERVAL_DAYS} {t("hari.")}
         </p>
       )}
 
@@ -1185,7 +1204,7 @@ function DoneScreen({
             {cards}
           </p>
           <p className="mt-0.5 text-[12px]" style={{ color: SUB }}>
-            Kartu
+            {t("Kartu")}
           </p>
         </div>
         <div className="h-8 w-px" style={{ backgroundColor: BORDER }} />
@@ -1194,7 +1213,7 @@ function DoneScreen({
             {accuracy}%
           </p>
           <p className="mt-0.5 text-[12px]" style={{ color: SUB }}>
-            Akurasi
+            {t("Akurasi")}
           </p>
         </div>
       </div>
@@ -1205,14 +1224,14 @@ function DoneScreen({
           className="w-full rounded-2xl py-4 text-[15px] font-bold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: TEAL }}
         >
-          Selesai
+          {t("Selesai")}
         </button>
         <button
           onClick={onReplay}
           className="w-full rounded-2xl py-3.5 text-[14px] font-bold text-white transition-colors hover:bg-white/10"
           style={{ border: `1px solid ${BORDER}` }}
         >
-          Review lagi
+          {t("Review lagi")}
         </button>
       </div>
     </div>
@@ -1276,6 +1295,7 @@ function buildBuckets(range: Range, now: Date): Bucket[] {
 }
 
 function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [range, setRange] = useState<Range>("day");
   const now = useMemo(() => new Date(), []);
 
@@ -1296,18 +1316,18 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
   const notReviewed = stats.newCount; // belum pernah direview (reps 0)
 
   const periodLabel =
-    range === "day" ? "7 hari terakhir" : range === "week" ? "8 minggu terakhir" : range === "month" ? "12 bulan terakhir" : "5 tahun terakhir";
+    range === "day" ? t("7 hari terakhir") : range === "week" ? t("8 minggu terakhir") : range === "month" ? t("12 bulan terakhir") : t("5 tahun terakhir");
 
   return (
     <div className="space-y-4">
       {/* Kartu ringkasan SRS */}
       <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-3 xl:grid-cols-6">
-        <StatCard icon={<BookOpen className="h-[18px] w-[18px]" style={{ color: TEAL }} />} value={stats.total} label="Total kata" />
-        <StatCard icon={<Clock className="h-[18px] w-[18px]" style={{ color: ORANGE }} />} value={stats.dueCount} label="Jatuh tempo" />
-        <StatCard icon={<Award className="h-[18px] w-[18px]" style={{ color: GREEN }} />} value={stats.masteredCount} label="Dikuasai" />
-        <StatCard icon={<RotateCcw className="h-[18px] w-[18px]" style={{ color: PURPLE }} />} value={notReviewed} label="Belum direview" />
-        <StatCard icon={<Repeat2 className="h-[18px] w-[18px]" style={{ color: "#7FE0E0" }} />} value={reviews} label="Total ulangan" />
-        <StatCard icon={<Layers className="h-[18px] w-[18px]" style={{ color: ORANGE }} />} value={stats.learningCount} label="Sedang belajar" />
+        <StatCard icon={<BookOpen className="h-[18px] w-[18px]" style={{ color: TEAL }} />} value={stats.total} label={t("Total kata")} />
+        <StatCard icon={<Clock className="h-[18px] w-[18px]" style={{ color: ORANGE }} />} value={stats.dueCount} label={t("Jatuh tempo")} />
+        <StatCard icon={<Award className="h-[18px] w-[18px]" style={{ color: GREEN }} />} value={stats.masteredCount} label={t("Dikuasai")} />
+        <StatCard icon={<RotateCcw className="h-[18px] w-[18px]" style={{ color: PURPLE }} />} value={notReviewed} label={t("Belum direview")} />
+        <StatCard icon={<Repeat2 className="h-[18px] w-[18px]" style={{ color: "#7FE0E0" }} />} value={reviews} label={t("Total ulangan")} />
+        <StatCard icon={<Layers className="h-[18px] w-[18px]" style={{ color: ORANGE }} />} value={stats.learningCount} label={t("Sedang belajar")} />
       </div>
 
       {/* Filter rentang */}
@@ -1321,7 +1341,7 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
               className="flex-1 rounded-xl py-2.5 text-[13px] font-bold transition-colors"
               style={{ backgroundColor: active ? CARD : "transparent", color: active ? "#7FE0E0" : SUB }}
             >
-              {r.label}
+              {t(r.label)}
             </button>
           );
         })}
@@ -1331,7 +1351,7 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
       <div className="text-center">
         <p className="text-[36px] font-extrabold leading-none text-white">{periodTotal}</p>
         <p className="mt-1.5 text-[13px]" style={{ color: SUB }}>
-          kata dipelajari · {periodLabel}
+          {t("kata dipelajari")} · {periodLabel}
         </p>
       </div>
 
@@ -1375,7 +1395,7 @@ function AnalisaTab({ words, stats }: { words: SavedWord[]; stats: DeckStats }) 
 
       {words.length === 0 && (
         <p className="text-center text-[13px]" style={{ color: SUB }}>
-          Belum ada data. Simpan kosakata saat menonton untuk melihat progresmu.
+          {t("Belum ada data. Simpan kosakata saat menonton untuk melihat progresmu.")}
         </p>
       )}
     </div>
@@ -1400,6 +1420,7 @@ function EmptyState({
   otherCount?: number;
   onShowAll?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="mx-auto max-w-sm pt-10 text-center">
       <div
@@ -1408,11 +1429,10 @@ function EmptyState({
       >
         <Layers className="h-6 w-6" color={SUB} />
       </div>
-      <p className="text-[16px] font-bold text-white">Belum ada kata tersimpan</p>
+      <p className="text-[16px] font-bold text-white">{t("Belum ada kata tersimpan")}</p>
       <p className="mx-auto mt-1.5 text-[13px] leading-relaxed" style={{ color: SUB }}>
-        Saat menonton, ketuk kata mana pun di transkrip lalu tekan{" "}
-        <span style={{ color: TEAL }}>Simpan</span>. Kata itu akan muncul di sini sebagai flashcard
-        untuk dihafal.
+        {t("Saat menonton, ketuk kata mana pun di transkrip lalu tekan")}{" "}
+        <span style={{ color: TEAL }}>{t("Simpan")}</span>. {t("Kata itu akan muncul di sini sebagai flashcard untuk dihafal.")}
       </p>
       {otherCount > 0 && onShowAll && (
         <button
@@ -1420,7 +1440,7 @@ function EmptyState({
           className="mt-4 rounded-full px-4 py-2 text-[13px] font-bold transition-colors"
           style={{ backgroundColor: "rgba(26,158,158,0.18)", color: "#7FE0E0" }}
         >
-          Lihat {otherCount} kata di bahasa lain
+          {t("Lihat")} {otherCount} {t("kata di bahasa lain")}
         </button>
       )}
     </div>
@@ -1527,9 +1547,10 @@ function LangSelect({
   langCounts: Record<string, number>;
   allCount: number;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [open, setOpen] = useState(false);
   const current = filter === "all" ? null : getImmersionLang(filter);
-  const label = filter === "all" ? "Semua bahasa" : current?.name ?? filter;
+  const label = filter === "all" ? t("Semua bahasa") : current?.name ?? filter;
   const count = filter === "all" ? allCount : langCounts[filter] ?? 0;
 
   const pick = (code: string) => {
@@ -1543,7 +1564,7 @@ function LangSelect({
         onClick={() => setOpen((v) => !v)}
         className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] font-bold text-white transition-colors hover:bg-white/5"
         style={{ border: `1px solid ${BORDER}`, backgroundColor: CARD }}
-        aria-label="Pilih bahasa"
+        aria-label={t("Pilih bahasa")}
       >
         {filter === "all" ? (
           <Layers className="h-4 w-4" style={{ color: SUB }} />
@@ -1563,7 +1584,7 @@ function LangSelect({
             className="absolute right-0 z-[96] mt-2 w-64 space-y-1 overflow-y-auto rounded-2xl p-1.5 shadow-2xl"
             style={{ backgroundColor: CARD, maxHeight: "60vh" }}
           >
-            <SideLangBtn active={filter === "all"} onClick={() => pick("all")} label="Semua bahasa" count={allCount} />
+            <SideLangBtn active={filter === "all"} onClick={() => pick("all")} label={t("Semua bahasa")} count={allCount} />
             {langCodes.map((code) => {
               const l = getImmersionLang(code);
               return (
@@ -1589,6 +1610,7 @@ function LangSelect({
 // tetap 0". Kuncinya interval SRS dihitung dalam HARI, jadi review berkali-kali di
 // hari yang sama tak mempercepat (kartu belum jatuh tempo lagi).
 function MasteryInfo() {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [open, setOpen] = useState(false);
   return (
     <span className="relative inline-flex">
@@ -1596,7 +1618,7 @@ function MasteryInfo() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         onBlur={() => setOpen(false)}
-        aria-label="Cara kerja indikator Dikuasai"
+        aria-label={t("Cara kerja indikator Dikuasai")}
         className="rounded-full p-0.5 transition-colors hover:bg-white/10"
       >
         <Info className="h-3.5 w-3.5" style={{ color: SUB }} />
@@ -1606,20 +1628,16 @@ function MasteryInfo() {
           className="absolute left-0 top-6 z-20 w-72 rounded-2xl p-3.5 text-left shadow-xl"
           style={{ backgroundColor: CARD }}
         >
-          <p className="text-[12.5px] font-bold text-white">Cara sebuah kata jadi “Dikuasai”</p>
+          <p className="text-[12.5px] font-bold text-white">{t("Cara sebuah kata jadi “Dikuasai”")}</p>
           <p className="mt-1.5 text-[12px] leading-relaxed" style={{ color: SUB }}>
-            Tiap kali kamu menilai kartu <b className="text-white">“Bagus”</b> atau{" "}
-            <b className="text-white">“Mudah”</b> saat review, jadwal munculnya kembali
-            makin jauh (1 hari → beberapa hari → berminggu-minggu). Begitu jaraknya
-            mencapai <b style={{ color: "#7FE0E0" }}>{MASTERED_INTERVAL_DAYS} hari</b>, kata
-            itu dihitung <b style={{ color: "#7FE0E0" }}>Dikuasai</b>.
+            {t("Tiap kali kamu menilai kartu")} <b className="text-white">{t("“Bagus”")}</b> {t("atau")}{" "}
+            <b className="text-white">{t("“Mudah”")}</b> {t("saat review, jadwal munculnya kembali makin jauh (1 hari → beberapa hari → berminggu-minggu). Begitu jaraknya mencapai")}{" "}
+            <b style={{ color: "#7FE0E0" }}>{MASTERED_INTERVAL_DAYS} {t("hari")}</b>, {t("kata itu dihitung")}{" "}
+            <b style={{ color: "#7FE0E0" }}>{t("Dikuasai")}</b>.
           </p>
           <p className="mt-2 text-[12px] leading-relaxed" style={{ color: SUB }}>
-            Jaraknya dihitung dalam <b className="text-white">hari</b>, jadi mengulang kata
-            yang sama berkali-kali <b className="text-white">di hari yang sama tak
-            mempercepat</b> — kartu baru jatuh tempo lagi setelah jaraknya lewat.
-            Butuh beberapa hari review benar yang konsisten. Nilai{" "}
-            <b style={{ color: RED }}>“Lagi”</b> mengembalikannya ke awal.
+            {t("Jaraknya dihitung dalam hari, jadi mengulang kata yang sama berkali-kali di hari yang sama tak mempercepat — kartu baru jatuh tempo lagi setelah jaraknya lewat. Butuh beberapa hari review benar yang konsisten. Nilai")}{" "}
+            <b style={{ color: RED }}>{t("“Lagi”")}</b> {t("mengembalikannya ke awal.")}
           </p>
         </div>
       )}

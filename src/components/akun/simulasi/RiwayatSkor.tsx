@@ -10,6 +10,7 @@ import Link from "next/link";
 import { fetchMyAttempts, testTypeLabel, type AttemptSummary } from "@/lib/simulations";
 import { officialScore, type OfficialScore } from "@/lib/simScore";
 import { History, ArrowRight, Loader2, TrendingUp, TrendingDown, Minus, ClipboardCheck, Award, FileText } from "lucide-react";
+import { getUiLang, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 
 const TEAL = "#1A9E9E";
 const TEAL_DEEP = "#0F6E56";
@@ -26,7 +27,7 @@ interface Row {
 
 const fmtTanggal = (iso: string | null) =>
   iso
-    ? new Date(iso).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })
+    ? new Date(iso).toLocaleDateString(getUiLang() === "en" ? "en-GB" : "id-ID", { day: "numeric", month: "short", year: "numeric" })
     : "—";
 
 function buildRows(attempts: AttemptSummary[]): Row[] {
@@ -58,6 +59,7 @@ function buildRows(attempts: AttemptSummary[]): Row[] {
 }
 
 export default function RiwayatSkor() {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [rows, setRows] = useState<Row[]>(riwayatCache ?? []);
   const [loading, setLoading] = useState(!riwayatCache);
   const [showAll, setShowAll] = useState(false);
@@ -78,7 +80,7 @@ export default function RiwayatSkor() {
   if (loading) {
     return (
       <div className="mb-6 flex items-center gap-2 rounded-2xl bg-white px-5 py-4 text-sm text-slate-400">
-        <Loader2 className="h-4 w-4 animate-spin" />Memuat riwayat skor…
+        <Loader2 className="h-4 w-4 animate-spin" />{t("Memuat riwayat skor…")}
       </div>
     );
   }
@@ -95,8 +97,8 @@ export default function RiwayatSkor() {
           <History className="h-4 w-4" />
         </span>
         <div className="min-w-0 flex-1">
-          <h2 className="text-[15px] font-bold text-[#12172B]">Riwayat Skor</h2>
-          <p className="text-[12px] text-gray-500">{rows.length} pengerjaan tersimpan — klik untuk lihat skor &amp; pembahasannya lagi</p>
+          <h2 className="text-[15px] font-bold text-[#12172B]">{t("Riwayat Skor")}</h2>
+          <p className="text-[12px] text-gray-500">{rows.length} {t("pengerjaan tersimpan — klik untuk lihat skor & pembahasannya lagi")}</p>
         </div>
       </div>
 
@@ -125,7 +127,7 @@ export default function RiwayatSkor() {
                   {attempt.max_score != null && attempt.score != null && (
                     <>
                       <span className="text-slate-300">·</span>
-                      <span>{Math.round(attempt.score)}/{Math.round(attempt.max_score)} poin</span>
+                      <span>{Math.round(attempt.score)}/{Math.round(attempt.max_score)} {t("poin")}</span>
                     </>
                   )}
                 </p>
@@ -145,7 +147,7 @@ export default function RiwayatSkor() {
                       </p>
                     ) : delta === 0 ? (
                       <p className="mt-1 flex items-center justify-end gap-0.5 text-[11px] font-semibold text-slate-400">
-                        <Minus className="h-3 w-3" />sama
+                        <Minus className="h-3 w-3" />{t("sama")}
                       </p>
                     ) : (
                       official.verdict && (
@@ -155,7 +157,7 @@ export default function RiwayatSkor() {
                   </>
                 ) : (
                   <p className="text-sm font-bold text-slate-400">
-                    {blank ? "Tidak dijawab" : attempt.score === 0 ? "Belum ada jawaban benar" : "Belum dinilai"}
+                    {blank ? t("Tidak dijawab") : attempt.score === 0 ? t("Belum ada jawaban benar") : t("Belum dinilai")}
                   </p>
                 )}
               </div>
@@ -169,19 +171,19 @@ export default function RiwayatSkor() {
               <div className="mr-4 flex shrink-0 items-center gap-1.5">
                 <Link
                   href={`/akun/simulasi/laporan/${attempt.id}`}
-                  title="Unduh laporan skor"
+                  title={t("Unduh laporan skor")}
                   className="flex h-9 items-center gap-1.5 rounded-xl border border-teal-100 bg-teal-50 px-3 text-[12px] font-bold text-teal-700 transition hover:bg-teal-100"
                 >
                   <FileText className="h-4 w-4" />
-                  <span className="hidden sm:inline">Laporan Skor</span>
+                  <span className="hidden sm:inline">{t("Laporan Skor")}</span>
                 </Link>
                 <Link
                   href={`/akun/simulasi/sertifikat/${attempt.id}`}
-                  title="Unduh sertifikat"
+                  title={t("Unduh sertifikat")}
                   className="flex h-9 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 text-[12px] font-bold text-slate-500 transition hover:bg-slate-50"
                 >
                   <Award className="h-4 w-4" />
-                  <span className="hidden lg:inline">Sertifikat</span>
+                  <span className="hidden lg:inline">{t("Sertifikat")}</span>
                 </Link>
               </div>
             )}
@@ -196,7 +198,7 @@ export default function RiwayatSkor() {
           className="w-full border-t border-slate-100 py-2.5 text-[13px] font-semibold transition hover:bg-slate-50"
           style={{ color: TEAL }}
         >
-          {showAll ? "Tampilkan lebih sedikit" : `Lihat semua ${rows.length} pengerjaan`}
+          {showAll ? t("Tampilkan lebih sedikit") : `${t("Lihat semua")} ${rows.length} ${t("pengerjaan")}`}
         </button>
       )}
     </section>

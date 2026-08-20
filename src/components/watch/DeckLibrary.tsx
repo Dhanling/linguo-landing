@@ -50,6 +50,18 @@ import {
 import { getSavedWords, speakText, type SavedWord } from "@/lib/immersionLearn";
 import { gradePreviewLabel, newSrsState, type SrsGrade, type SrsState } from "@/lib/srs";
 import { getImmersionLang } from "@/lib/immersion";
+import { tr, useT, useUiLang } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
+
+/** [ui-lang-switcher-v1] Satuan jadwal SRS ("3 hari") lahir di lib/srs — ditukar di sini. */
+function durEnDeck(s: string): string {
+  return s
+    .replace("segera", "soon")
+    .replace("<1 mnt", "<1 min")
+    .replace(/^1 hari$/, "1 day")
+    .replace(" hari", " days")
+    .replace(" bln", " mo")
+    .replace(" thn", " yr");
+}
 
 const TEAL = "#1A9E9E";
 const TEAL_DARK = "#127d7d";
@@ -104,6 +116,7 @@ export default function DeckLibrary({
   lang: string;
   onVocabChange?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [mode, setMode] = useState<Mode>("home");
   const [loggedIn, setLoggedIn] = useState<boolean | null>(null);
   const [myDecks, setMyDecks] = useState<Deck[]>([]);
@@ -155,7 +168,7 @@ export default function DeckLibrary({
   }, []);
 
   const removeDeck = useCallback(async (deck: Deck) => {
-    if (!window.confirm(`Hapus deck "${deck.title}"?`)) return;
+    if (!window.confirm(`${tr("Hapus deck")} "${deck.title}"?`)) return;
     const ok = await deleteDeck(deck.id);
     if (ok) setMyDecks((ds) => ds.filter((d) => d.id !== deck.id));
   }, []);
@@ -171,7 +184,7 @@ export default function DeckLibrary({
   if (loggedIn === false) {
     return (
       <p className="py-10 text-center text-[13px]" style={{ color: SUB }}>
-        Masuk dulu untuk membuat & membagikan deck.
+        {t("Masuk dulu untuk membuat & membagikan deck.")}
       </p>
     );
   }
@@ -193,32 +206,32 @@ export default function DeckLibrary({
         <CreateTile
           icon={<Sparkles className="h-5 w-5" color="#fff" />}
           bg={`linear-gradient(135deg,${PURPLE},#5A4BC7)`}
-          title="Generate AI"
-          desc="Deck tematik dibuatkan AI"
+          title={t("Generate AI")}
+          desc={t("Deck tematik dibuatkan AI")}
           onClick={() => setMode("create-ai")}
         />
         <CreateTile
           icon={<Video className="h-5 w-5" color="#fff" />}
           bg={`linear-gradient(135deg,${GOLD},#D89A22)`}
-          title="Dari Video"
-          desc="Dari kata yang kamu simpan"
+          title={t("Dari Video")}
+          desc={t("Dari kata yang kamu simpan")}
           onClick={() => setMode("create-video")}
         />
         <CreateTile
           icon={<PencilLine className="h-5 w-5" color="#fff" />}
           bg={`linear-gradient(135deg,${TEAL},${TEAL_DARK})`}
-          title="Buat Manual"
-          desc="Susun kartu sendiri"
+          title={t("Buat Manual")}
+          desc={t("Susun kartu sendiri")}
           onClick={() => setMode("create-manual")}
         />
       </div>
 
       {/* Deck Saya */}
       <section>
-        <p className="mb-3 text-[14px] font-bold text-white">Deck Saya ({myDecks.length})</p>
+        <p className="mb-3 text-[14px] font-bold text-white">{t("Deck Saya")} ({myDecks.length})</p>
         {myDecks.length === 0 ? (
           <p className="rounded-2xl px-4 py-6 text-center text-[13px]" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: SUB }}>
-            Belum ada deck {langName}. Buat lewat salah satu tombol di atas.
+            {t("Belum ada deck")} {langName}. {t("Buat lewat salah satu tombol di atas.")}
           </p>
         ) : (
           <div className="space-y-2.5 lg:grid lg:grid-cols-2 lg:gap-2.5 lg:space-y-0 xl:grid-cols-3">
@@ -238,13 +251,13 @@ export default function DeckLibrary({
 
       {/* Deck Komunitas */}
       <section>
-        <p className="mb-1 text-[14px] font-bold text-white">Deck Komunitas</p>
+        <p className="mb-1 text-[14px] font-bold text-white">{t("Deck Komunitas")}</p>
         <p className="mb-3 text-[12px]" style={{ color: SUB }}>
-          Deck {langName} yang dibagikan siswa lain — nama kontributor tercantum di tiap deck.
+          {t("Deck")} {langName} {t("yang dibagikan siswa lain — nama kontributor tercantum di tiap deck.")}
         </p>
         {community.length === 0 ? (
           <p className="rounded-2xl px-4 py-6 text-center text-[13px]" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: SUB }}>
-            Belum ada deck komunitas untuk bahasa ini. Jadilah kontributor pertama — aktifkan{" "}
+            {t("Belum ada deck komunitas untuk bahasa ini. Jadilah kontributor pertama — aktifkan")}{" "}
             <Globe2 className="inline h-3.5 w-3.5" style={{ color: TEAL }} /> di deck-mu!
           </p>
         ) : (
@@ -283,6 +296,7 @@ function DeckRow({
   onTogglePublic?: () => void;
   onDelete?: () => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const src = SOURCE_META[deck.source];
   // Jumlah kartu yang jatuh tempo (SRS) — tampil sebagai lencana ajakan review.
   const due = deckDueCount(deck.id, deck.cardCount);
@@ -292,11 +306,11 @@ function DeckRow({
         <div className="min-w-0">
           <p className="truncate text-[15px] font-bold text-white">{deck.title}</p>
           <p className="mt-0.5 text-[12px]" style={{ color: SUB }}>
-            {deck.cardCount} kartu
+            {deck.cardCount} {t("kartu")}
             {due > 0 && (
               <>
                 {" · "}
-                <span style={{ color: "#7FE0E0" }}>{due} jatuh tempo</span>
+                <span style={{ color: "#7FE0E0" }}>{due} {t("jatuh tempo")}</span>
               </>
             )}
             {mine ? null : (
@@ -312,7 +326,7 @@ function DeckRow({
           style={{ backgroundColor: `${src.color}22`, color: src.color }}
         >
           {src.icon}
-          {src.label}
+          {t(src.label)}
         </span>
       </div>
 
@@ -322,7 +336,7 @@ function DeckRow({
           className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl py-2 text-[13px] font-bold text-white transition-opacity hover:opacity-90"
           style={{ backgroundColor: TEAL }}
         >
-          <Play className="h-3.5 w-3.5" /> {due > 0 ? "Review" : "Pelajari"}
+          <Play className="h-3.5 w-3.5" /> {due > 0 ? t("Review") : t("Pelajari")}
         </button>
         {mine && onTogglePublic && (
           <button
@@ -332,17 +346,17 @@ function DeckRow({
               border: `1px solid ${deck.isPublic ? TEAL : BORDER}`,
               color: deck.isPublic ? "#7FE0E0" : SUB,
             }}
-            title={deck.isPublic ? "Dibagikan ke komunitas — klik untuk jadikan privat" : "Privat — klik untuk bagikan ke komunitas"}
+            title={deck.isPublic ? t("Dibagikan ke komunitas — klik untuk jadikan privat") : t("Privat — klik untuk bagikan ke komunitas")}
           >
             {deck.isPublic ? <Globe2 className="h-3.5 w-3.5" /> : <Lock className="h-3.5 w-3.5" />}
-            {deck.isPublic ? "Publik" : "Privat"}
+            {deck.isPublic ? t("Publik") : t("Privat")}
           </button>
         )}
         {mine && onDelete && (
           <button
             onClick={onDelete}
             className="rounded-xl p-2 transition-colors hover:bg-white/10"
-            aria-label="Hapus deck"
+            aria-label={t("Hapus deck")}
           >
             <Trash2 className="h-4 w-4" style={{ color: RED }} />
           </button>
@@ -397,6 +411,7 @@ function FormShell({
   onBack: () => void;
   children: React.ReactNode;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <div className="mx-auto w-full max-w-2xl">
       <button
@@ -404,7 +419,7 @@ function FormShell({
         className="mb-4 inline-flex items-center gap-1 text-[13px] font-bold transition-colors hover:text-white"
         style={{ color: SUB }}
       >
-        <ChevronLeft className="h-4 w-4" /> Kembali
+        <ChevronLeft className="h-4 w-4" /> {t("Kembali")}
       </button>
       <p className="text-[18px] font-extrabold text-white">{title}</p>
       <p className="mt-1 text-[13px]" style={{ color: SUB }}>
@@ -420,6 +435,7 @@ const inputCls =
 const inputStyle = { backgroundColor: SURFACE_ALT, border: `1px solid ${BORDER}` } as const;
 
 function PublicToggle({ value, onChange }: { value: boolean; onChange: (v: boolean) => void }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   return (
     <button
       onClick={() => onChange(!value)}
@@ -433,12 +449,12 @@ function PublicToggle({ value, onChange }: { value: boolean; onChange: (v: boole
       )}
       <span className="min-w-0 flex-1">
         <span className="block text-[13.5px] font-bold text-white">
-          {value ? "Dibagikan ke komunitas" : "Privat"}
+          {value ? t("Dibagikan ke komunitas") : t("Privat")}
         </span>
         <span className="block text-[12px]" style={{ color: SUB }}>
           {value
-            ? "Siswa lain bisa melihat & mempelajari deck ini — namamu tampil sebagai kontributor."
-            : "Hanya kamu yang bisa melihat deck ini."}
+            ? t("Siswa lain bisa melihat & mempelajari deck ini — namamu tampil sebagai kontributor.")
+            : t("Hanya kamu yang bisa melihat deck ini.")}
         </span>
       </span>
       <span
@@ -490,6 +506,8 @@ function CreateAiForm({
   onBack: () => void;
   onCreated: (deck: Deck | null) => void;
 }) {
+  // [ui-lang-switcher-v1] `tl` — `t` dipakai jadi nama item di map saran tema.
+  const tl = useT();
   const [theme, setTheme] = useState("");
   const [level, setLevel] = useState("Semua");
   const [count, setCount] = useState(12);
@@ -515,7 +533,7 @@ function CreateAiForm({
       setPreview(deck);
       setTitle(deck.title);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Gagal membuat deck.");
+      setError(e instanceof Error ? e.message : tl("Gagal membuat deck."));
     } finally {
       setGenerating(false);
     }
@@ -542,18 +560,18 @@ function CreateAiForm({
 
   return (
     <FormShell
-      title="Generate deck by AI"
-      subtitle={`Pilih atau ketik tema — AI membuatkan deck kosakata ${langName} lengkap dengan arti & contoh kalimat.`}
+      title={tl("Generate deck by AI")}
+      subtitle={`${tl("Pilih atau ketik tema — AI membuatkan deck kosakata")} ${langName} ${tl("lengkap dengan arti & contoh kalimat.")}`}
       onBack={onBack}
     >
       <div>
         <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-          Tema
+          {tl("Tema")}
         </p>
         <input
           value={theme}
           onChange={(e) => setTheme(e.target.value)}
-          placeholder='Mis. "makanan & restoran", "wawancara kerja"…'
+          placeholder={tl('Mis. "makanan & restoran", "wawancara kerja"…')}
           className={inputCls}
           style={inputStyle}
         />
@@ -578,7 +596,7 @@ function CreateAiForm({
       <div className="grid grid-cols-2 gap-4">
         <div>
           <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-            Level
+            {tl("Level")}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {LEVELS.map((l) => (
@@ -592,14 +610,14 @@ function CreateAiForm({
                   color: level === l ? "#fff" : SUB,
                 }}
               >
-                {l}
+                {tl(l)}
               </button>
             ))}
           </div>
         </div>
         <div>
           <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-            Jumlah kartu
+            {tl("Jumlah kartu")}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {COUNTS.map((c) => (
@@ -628,7 +646,7 @@ function CreateAiForm({
           style={{ background: `linear-gradient(135deg,${PURPLE},#5A4BC7)` }}
         >
           {generating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-          {generating ? "AI sedang menyusun deck…" : "Generate deck"}
+          {generating ? tl("AI sedang menyusun deck…") : tl("Generate deck")}
         </button>
       )}
 
@@ -642,14 +660,14 @@ function CreateAiForm({
         <>
           <div>
             <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-              Judul deck
+              {tl("Judul deck")}
             </p>
             <input value={title} onChange={(e) => setTitle(e.target.value)} className={inputCls} style={inputStyle} />
           </div>
 
           <div className="space-y-2">
             <p className="text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-              Preview ({preview.cards.length} kartu)
+              {tl("Pratinjau")} ({preview.cards.length} {tl("kartu")})
             </p>
             <div className="max-h-72 space-y-2 overflow-y-auto pr-1">
               {preview.cards.map((c, i) => (
@@ -660,7 +678,7 @@ function CreateAiForm({
 
           <PublicToggle value={isPublic} onChange={setIsPublic} />
           <SaveButton onClick={() => void save()} saving={saving}>
-            Simpan deck
+            {tl("Simpan deck")}
           </SaveButton>
           <button
             onClick={() => void generate()}
@@ -668,7 +686,7 @@ function CreateAiForm({
             className="w-full rounded-2xl py-3 text-[13.5px] font-bold text-white transition-colors hover:bg-white/10 disabled:opacity-40"
             style={{ border: `1px solid ${BORDER}` }}
           >
-            {generating ? "Menyusun ulang…" : "Generate ulang"}
+            {generating ? tl("Menyusun ulang…") : tl("Generate ulang")}
           </button>
         </>
       )}
@@ -723,6 +741,7 @@ function CreateVideoForm({
   onBack: () => void;
   onCreated: (deck: Deck | null) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [words, setWords] = useState<SavedWord[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [title, setTitle] = useState("");
@@ -752,13 +771,13 @@ function CreateVideoForm({
       .filter((w) => selected.has(w.word))
       .map((w) => ({ word: w.word, meaning: w.meaning, example: w.example, exampleTranslation: "", translit: "" }));
     if (!cards.length) {
-      setError("Pilih minimal satu kata.");
+      setError(t("Pilih minimal satu kata."));
       return;
     }
     setSaving(true);
     const deck = await createDeck({
       langCode: lang,
-      title: title.trim() || "Kosakata dari video",
+      title: title.trim() || tr("Kosakata dari video"),
       source: "video",
       isPublic,
       cards,
@@ -773,24 +792,24 @@ function CreateVideoForm({
 
   return (
     <FormShell
-      title="Deck dari video"
-      subtitle="Susun deck dari kata yang kamu simpan saat menonton — centang kata yang mau dimasukkan."
+      title={t("Deck dari video")}
+      subtitle={t("Susun deck dari kata yang kamu simpan saat menonton — centang kata yang mau dimasukkan.")}
       onBack={onBack}
     >
       {words.length === 0 ? (
         <p className="rounded-2xl px-4 py-6 text-center text-[13px]" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, color: SUB }}>
-          Belum ada kata tersimpan untuk bahasa ini. Simpan kata saat menonton dulu, lalu kembali ke sini.
+          {t("Belum ada kata tersimpan untuk bahasa ini. Simpan kata saat menonton dulu, lalu kembali ke sini.")}
         </p>
       ) : (
         <>
           <div>
             <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-              Judul deck
+              {t("Judul deck")}
             </p>
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder='Mis. "Kosakata vlog masak"'
+              placeholder={t('Mis. "Kosakata vlog masak"')}
               className={inputCls}
               style={inputStyle}
             />
@@ -798,7 +817,7 @@ function CreateVideoForm({
 
           <div className="flex items-center justify-between">
             <p className="text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-              Kata ({selected.size}/{words.length} dipilih)
+              {t("Kata")} ({selected.size}/{words.length} {t("dipilih")})
             </p>
             <button
               onClick={() =>
@@ -807,7 +826,7 @@ function CreateVideoForm({
               className="text-[12px] font-bold"
               style={{ color: "#7FE0E0" }}
             >
-              {selected.size === words.length ? "Kosongkan" : "Pilih semua"}
+              {selected.size === words.length ? t("Kosongkan") : t("Pilih semua")}
             </button>
           </div>
           <div className="max-h-72 space-y-2 overflow-y-auto pr-1">
@@ -846,7 +865,7 @@ function CreateVideoForm({
           )}
           <PublicToggle value={isPublic} onChange={setIsPublic} />
           <SaveButton onClick={() => void save()} saving={saving} disabled={selected.size === 0}>
-            Simpan deck ({selected.size} kartu)
+            {t("Simpan deck")} ({selected.size} {t("kartu")})
           </SaveButton>
         </>
       )}
@@ -871,6 +890,7 @@ function CreateManualForm({
   onBack: () => void;
   onCreated: (deck: Deck | null) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
   const [title, setTitle] = useState("");
   const [rows, setRows] = useState<ManualRow[]>([
     { word: "", meaning: "", example: "", exampleTranslation: "" },
@@ -892,7 +912,7 @@ function CreateManualForm({
     setSaving(true);
     const deck = await createDeck({
       langCode: lang,
-      title: title.trim() || "Deck saya",
+      title: title.trim() || tr("Deck saya"),
       source: "custom",
       isPublic,
       cards: filled.map((r) => ({
@@ -913,18 +933,18 @@ function CreateManualForm({
 
   return (
     <FormShell
-      title="Buat deck manual"
-      subtitle={`Isi kata ${langName} + artinya sendiri. Baris tanpa kata/arti dilewati.`}
+      title={t("Buat deck manual")}
+      subtitle={`${t("Isi kata")} ${langName} ${t("+ artinya sendiri. Baris tanpa kata/arti dilewati.")}`}
       onBack={onBack}
     >
       <div>
         <p className="mb-2 text-[12px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-          Judul deck
+          {t("Judul deck")}
         </p>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder='Mis. "Frasa favoritku"'
+          placeholder={t('Mis. "Frasa favoritku"')}
           className={inputCls}
           style={inputStyle}
         />
@@ -935,13 +955,13 @@ function CreateManualForm({
           <div key={i} className="space-y-2 rounded-2xl p-3.5" style={{ backgroundColor: CARD, border: `1px solid ${BORDER}` }}>
             <div className="flex items-center justify-between">
               <p className="text-[11px] font-bold uppercase tracking-wider" style={{ color: SUB }}>
-                Kartu {i + 1}
+                {t("Kartu")} {i + 1}
               </p>
               {rows.length > 1 && (
                 <button
                   onClick={() => setRows((rs) => rs.filter((_, j) => j !== i))}
                   className="rounded-full p-1 transition-colors hover:bg-white/10"
-                  aria-label="Hapus kartu"
+                  aria-label={t("Hapus kartu")}
                 >
                   <X className="h-3.5 w-3.5" style={{ color: SUB }} />
                 </button>
@@ -950,28 +970,28 @@ function CreateManualForm({
             <input
               value={r.word}
               onChange={(e) => setRow(i, { word: e.target.value })}
-              placeholder={`Kata (${langName})`}
+              placeholder={`${t("Kata")} (${langName})`}
               className={inputCls}
               style={inputStyle}
             />
             <input
               value={r.meaning}
               onChange={(e) => setRow(i, { meaning: e.target.value })}
-              placeholder="Arti (Bahasa Indonesia)"
+              placeholder={t("Arti (Bahasa Indonesia)")}
               className={inputCls}
               style={inputStyle}
             />
             <input
               value={r.example}
               onChange={(e) => setRow(i, { example: e.target.value })}
-              placeholder="Contoh kalimat (opsional)"
+              placeholder={t("Contoh kalimat (opsional)")}
               className={inputCls}
               style={inputStyle}
             />
             <input
               value={r.exampleTranslation}
               onChange={(e) => setRow(i, { exampleTranslation: e.target.value })}
-              placeholder="Terjemahan contoh (opsional)"
+              placeholder={t("Terjemahan contoh (opsional)")}
               className={inputCls}
               style={inputStyle}
             />
@@ -982,7 +1002,7 @@ function CreateManualForm({
           className="inline-flex w-full items-center justify-center gap-1.5 rounded-2xl py-3 text-[13.5px] font-bold text-white transition-colors hover:bg-white/10"
           style={{ border: `1px dashed ${BORDER}` }}
         >
-          <Plus className="h-4 w-4" /> Tambah kartu
+          <Plus className="h-4 w-4" /> {t("Tambah kartu")}
         </button>
       </div>
 
@@ -1050,6 +1070,9 @@ function StudyOverlay({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
+
   const doImport = useCallback(() => {
     if (!cards || imported) return;
     importCardsToVocab(cards, deck.langCode || lang);
@@ -1084,7 +1107,7 @@ function StudyOverlay({
     <div className="fixed inset-0 z-[93] flex flex-col" style={{ backgroundColor: "rgba(6,9,10,0.98)" }}>
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-3 sm:px-6">
-        <button onClick={onClose} className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10" aria-label="Tutup">
+        <button onClick={onClose} className="shrink-0 rounded-full p-2 transition-colors hover:bg-white/10" aria-label={t("Tutup")}>
           <X className="h-5 w-5 text-white" />
         </button>
         <div className="min-w-0 flex-1">
@@ -1113,7 +1136,7 @@ function StudyOverlay({
       ) : cards.length === 0 ? (
         <div className="flex flex-1 items-center justify-center px-8 text-center">
           <p className="text-[14px]" style={{ color: SUB }}>
-            Deck ini kosong.
+            {t("Deck ini kosong.")}
           </p>
         </div>
       ) : done ? (
@@ -1121,10 +1144,9 @@ function StudyOverlay({
           <div className="flex h-20 w-20 items-center justify-center rounded-full" style={{ backgroundColor: TEAL }}>
             <Check className="h-9 w-9 text-white" strokeWidth={3} />
           </div>
-          <p className="mt-6 text-[26px] font-extrabold text-white">Sesi selesai!</p>
+          <p className="mt-6 text-[26px] font-extrabold text-white">{t("Sesi selesai!")}</p>
           <p className="mt-2 text-[15px]" style={{ color: SUB }}>
-            Kamu mereview {total} kartu — {knew} kamu ingat. Kartu yang sudah dijadwal
-            ulang muncul lagi saat jatuh tempo.
+            {t("Kamu mereview")} {total} {t("kartu")} — {knew} {t("kamu ingat. Kartu yang sudah dijadwal ulang muncul lagi saat jatuh tempo.")}
           </p>
           <div className="mt-8 w-full max-w-sm space-y-3">
             <button
@@ -1134,17 +1156,17 @@ function StudyOverlay({
               style={{ backgroundColor: TEAL }}
             >
               {imported ? <Check className="h-4 w-4" /> : <Layers className="h-4 w-4" />}
-              {imported ? "Sudah masuk Kosakata Saya" : "Tambahkan ke Kosakata Saya"}
+              {imported ? t("Sudah masuk Kosakata Saya") : t("Tambahkan ke Kosakata Saya")}
             </button>
             <button
               onClick={replay}
               className="w-full rounded-2xl py-3.5 text-[14px] font-bold text-white transition-colors hover:bg-white/10"
               style={{ border: `1px solid ${BORDER}` }}
             >
-              Ulang lebih awal
+              {t("Ulang lebih awal")}
             </button>
             <button onClick={onClose} className="w-full py-2 text-[13.5px] font-bold" style={{ color: SUB }}>
-              Tutup
+              {t("Tutup")}
             </button>
           </div>
         </div>
@@ -1172,6 +1194,8 @@ function StudyCard({
   srs: SrsState;
   onGrade: (grade: SrsGrade) => void;
 }) {
+  const t = useT(); // [ui-lang-switcher-v1]
+  const uiLang = useUiLang();
   const [revealed, setRevealed] = useState(false);
   const langDef = getImmersionLang(lang);
 
@@ -1188,7 +1212,7 @@ function StudyCard({
           onClick={() => setRevealed((v) => !v)}
           className="relative w-full max-w-lg rounded-3xl p-6 text-left"
           style={{ backgroundColor: CARD, border: `1px solid ${BORDER}`, minHeight: 280 }}
-          aria-label="Balik kartu"
+          aria-label={t("Balik kartu")}
         >
           <div className="flex flex-col items-center">
             <span className="text-[12px] font-semibold" style={{ color: SUB }}>
@@ -1209,7 +1233,7 @@ function StudyCard({
               }}
               className="mt-4 flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-white/10"
               style={{ backgroundColor: SURFACE_ALT }}
-              aria-label="Dengar"
+              aria-label={t("Dengar")}
             >
               <Volume2 className="h-5 w-5" style={{ color: TEAL }} />
             </button>
@@ -1219,7 +1243,7 @@ function StudyCard({
             <div className="mt-6 flex flex-col items-center">
               <div className="h-px w-full" style={{ backgroundColor: BORDER }} />
               <p className="mt-5 text-[11px] font-bold uppercase tracking-wider" style={{ color: TEAL }}>
-                Arti
+                {t("Arti")}
               </p>
               <p className="mt-2 text-center text-[24px] font-extrabold leading-tight" style={{ color: GOLD }}>
                 {card.meaning || "—"}
@@ -1242,7 +1266,7 @@ function StudyCard({
             </div>
           ) : (
             <p className="mt-6 text-center text-[13px]" style={{ color: SUB }}>
-              Ketuk kartu untuk lihat arti
+              {t("Ketuk kartu untuk lihat arti")}
             </p>
           )}
         </button>
@@ -1255,12 +1279,12 @@ function StudyCard({
             className="w-full rounded-2xl py-4 text-[15px] font-bold transition-opacity hover:opacity-90"
             style={{ border: `1px solid ${TEAL}`, color: "#7FE0E0", backgroundColor: CARD }}
           >
-            Tampilkan jawaban
+            {t("Tampilkan jawaban")}
           </button>
         ) : (
           <>
             <p className="mb-2.5 text-center text-[13px]" style={{ color: SUB }}>
-              Seberapa baik kamu mengingatnya?
+              {t("Seberapa baik kamu mengingatnya?")}
             </p>
             <div className="flex gap-2">
               {GRADES.map(({ grade, label, color }) => (
@@ -1270,9 +1294,9 @@ function StudyCard({
                   className="flex-1 rounded-2xl py-3 text-center transition-opacity hover:opacity-90"
                   style={{ backgroundColor: color }}
                 >
-                  <span className="block text-[14px] font-bold text-white">{label}</span>
+                  <span className="block text-[14px] font-bold text-white">{t(label)}</span>
                   <span className="mt-0.5 block text-[10px] font-medium text-white/85">
-                    {gradePreviewLabel(srs, grade)}
+                    {uiLang === "en" ? durEnDeck(gradePreviewLabel(srs, grade)) : gradePreviewLabel(srs, grade)}
                   </span>
                 </button>
               ))}

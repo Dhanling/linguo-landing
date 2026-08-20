@@ -1411,7 +1411,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
         <div className="space-y-5 p-6 pt-6 lg:p-8">
           {pane === "profil" && (
             <>
-              <SetCard title="Foto Profil">
+              <SetCard title={ts("Foto Profil")}>
                 <div className="flex items-center gap-5">
                   {avatarUrl
                     ? <img src={avatarUrl} alt="" referrerPolicy="no-referrer" className="h-24 w-24 rounded-2xl object-cover shadow ring-4 ring-white" />
@@ -1422,46 +1422,46 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                         className="flex h-10 items-center gap-2 rounded-xl px-4 text-[13px] font-bold text-[#16796E] transition hover:brightness-95 disabled:opacity-50"
                         style={{ background: "rgba(22,121,110,0.1)" }}>
                         {uploadingAvatar ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#16796E] border-t-transparent" /> : <Upload className="h-4 w-4" />}
-                        Ganti foto
+                        {ts("Ganti foto")}
                       </button>
-                      <button onClick={handleRemoveAvatar} className="h-10 rounded-xl px-4 text-[13px] font-bold text-[#6B7280] transition hover:text-rose-500">Hapus</button>
+                      <button onClick={handleRemoveAvatar} className="h-10 rounded-xl px-4 text-[13px] font-bold text-[#6B7280] transition hover:text-rose-500">{ts("Hapus")}</button>
                     </div>
-                    <span className="text-[12px] font-medium text-[#6B7280]">JPG atau PNG, maksimal 2MB.</span>
+                    <span className="text-[12px] font-medium text-[#6B7280]">{ts("JPG atau PNG, maksimal 2MB.")}</span>
                   </div>
                 </div>
               </SetCard>
 
-              <SetCard title="Informasi Pribadi" footer={
+              <SetCard title={ts("Informasi Pribadi")} footer={
                 <>
-                  <button onClick={() => { setEditName(student?.name || displayName); setEditWa(student?.whatsapp || ""); }} className="h-11 rounded-xl px-5 text-[14px] font-bold text-[#6B7280] transition hover:text-[#12172B]">Batal</button>
-                  <button onClick={handleSaveProfil} disabled={saving} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:opacity-50" style={{ background: "#16796E" }}>{saving ? "Menyimpan..." : "Simpan Perubahan"}</button>
+                  <button onClick={() => { setEditName(student?.name || displayName); setEditWa(student?.whatsapp || ""); }} className="h-11 rounded-xl px-5 text-[14px] font-bold text-[#6B7280] transition hover:text-[#12172B]">{ts("Batal")}</button>
+                  <button onClick={handleSaveProfil} disabled={saving} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52] disabled:opacity-50" style={{ background: "#16796E" }}>{saving ? ts("Menyimpan...") : ts("Simpan Perubahan")}</button>
                 </>
               }>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="text-[13px] font-bold text-[#12172B]">Nama Lengkap</label>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Nama Lengkap")}</label>
                     <SetFieldBox><input value={editName} onChange={(e) => setEditName(e.target.value)} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                   <div>
-                    <label className="text-[13px] font-bold text-[#12172B]">Nomor WhatsApp</label>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Nomor WhatsApp")}</label>
                     <SetFieldBox><input value={editWa} onChange={(e) => setEditWa(e.target.value)} placeholder="628xxx" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                   <div>
-                    <label className="text-[13px] font-bold text-[#12172B]">Nama Panggilan</label>
-                    <SetFieldBox><input value={nick} onChange={(e) => setNick(e.target.value)} placeholder="Panggilan" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Nama Panggilan")}</label>
+                    <SetFieldBox><input value={nick} onChange={(e) => setNick(e.target.value)} placeholder={ts("Panggilan")} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                   <div>
-                    <label className="text-[13px] font-bold text-[#12172B]">Kota</label>
-                    <SetFieldBox><input value={kota} onChange={(e) => setKota(e.target.value)} placeholder="Kota" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Kota")}</label>
+                    <SetFieldBox><input value={kota} onChange={(e) => setKota(e.target.value)} placeholder={ts("Kota")} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                   <div>
-                    <label className="text-[13px] font-bold text-[#12172B]">Zona Waktu</label>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Zona Waktu")}</label>
                     <SetFieldBox><select value={tz} onChange={(e) => setTz(e.target.value)} className="w-full bg-transparent text-[14px] font-medium outline-none"><option>WIB (GMT+7)</option><option>WITA (GMT+8)</option><option>WIT (GMT+9)</option></select></SetFieldBox>
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="text-[13px] font-bold text-[#12172B]">Bio singkat</label>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Bio singkat")}</label>
                     <div className="mt-1.5 rounded-xl border border-slate-200 px-4 py-3 transition focus-within:border-slate-300">
-                      <textarea rows={3} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Ceritakan sedikit tentang dirimu & tujuan belajarmu..." className="w-full resize-none bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
+                      <textarea rows={3} value={bio} onChange={(e) => setBio(e.target.value)} placeholder={ts("Ceritakan sedikit tentang dirimu & tujuan belajarmu...")} className="w-full resize-none bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" />
                     </div>
                   </div>
                 </div>
@@ -1471,48 +1471,48 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
           {pane === "akun" && (
             <>
-              <SetCard title="Email & Login">
+              <SetCard title={ts("Email & Login")}>
                 <div className="flex items-center justify-between gap-4 py-2">
-                  <div><p className="text-[14px] font-bold text-[#12172B]">Email</p><p className="mt-0.5 text-[13px] font-medium text-[#6B7280]">{user?.email || "-"}</p></div>
+                  <div><p className="text-[14px] font-bold text-[#12172B]">{ts("Email")}</p><p className="mt-0.5 text-[13px] font-medium text-[#6B7280]">{user?.email || "-"}</p></div>
                   {emailVerified
-                    ? <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold text-emerald-600"><BadgeCheck className="h-3.5 w-3.5" />Terverifikasi</span>
-                    : <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-600">Belum verifikasi</span>}
+                    ? <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold text-emerald-600"><BadgeCheck className="h-3.5 w-3.5" />{ts("Terverifikasi")}</span>
+                    : <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-600">{ts("Belum verifikasi")}</span>}
                 </div>
                 {isGoogle && (
                   <div className="mt-1 flex items-center gap-3 border-t border-slate-100 py-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-[15px] font-extrabold" style={{ color: "#4285F4" }}>G</span>
-                    <div><p className="text-[14px] font-bold text-[#12172B]">Google</p><p className="text-[12px] font-medium text-[#6B7280]">Terhubung{user?.email ? " · " + user.email : ""}</p></div>
+                    <div><p className="text-[14px] font-bold text-[#12172B]">Google</p><p className="text-[12px] font-medium text-[#6B7280]">{ts("Terhubung")}{user?.email ? " · " + user.email : ""}</p></div>
                   </div>
                 )}
               </SetCard>
 
-              <SetCard title="Ubah Kata Sandi" footer={
-                <button onClick={handleUpdatePassword} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Perbarui Sandi</button>
+              <SetCard title={ts("Ubah Kata Sandi")} footer={
+                <button onClick={handleUpdatePassword} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{ts("Perbarui Sandi")}</button>
               }>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="sm:col-span-2">
-                    <label className="text-[13px] font-bold text-[#12172B]">Kata sandi baru</label>
-                    <SetFieldBox><input type="password" value={newPass} onChange={(e) => setNewPass(e.target.value)} placeholder="Minimal 8 karakter" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Kata sandi baru")}</label>
+                    <SetFieldBox><input type="password" value={newPass} onChange={(e) => setNewPass(e.target.value)} placeholder={ts("Minimal 8 karakter")} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="text-[13px] font-bold text-[#12172B]">Konfirmasi sandi baru</label>
-                    <SetFieldBox><input type="password" value={confPass} onChange={(e) => setConfPass(e.target.value)} placeholder="Ulangi sandi baru" className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
+                    <label className="text-[13px] font-bold text-[#12172B]">{ts("Konfirmasi sandi baru")}</label>
+                    <SetFieldBox><input type="password" value={confPass} onChange={(e) => setConfPass(e.target.value)} placeholder={ts("Ulangi sandi baru")} className="w-full bg-transparent text-[14px] font-medium outline-none placeholder:text-slate-400" /></SetFieldBox>
                   </div>
                 </div>
               </SetCard>
 
-              <SetCard title="Keamanan">
-                <SetToggleRow label="Verifikasi 2 langkah (2FA)" desc="Tambahkan lapisan keamanan ekstra saat login." on={pref.twofa} onClick={() => setPref((p) => ({ ...p, twofa: !p.twofa }))} />
+              <SetCard title={ts("Keamanan")}>
+                <SetToggleRow label={ts("Verifikasi 2 langkah (2FA)")} desc={ts("Tambahkan lapisan keamanan ekstra saat login.")} on={pref.twofa} onClick={() => setPref((p) => ({ ...p, twofa: !p.twofa }))} />
                 <div className="flex items-center justify-between gap-4 py-3.5">
-                  <div><p className="text-[14px] font-bold text-[#12172B]">Perangkat aktif</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Sesi login kamu saat ini.</p></div>
-                  <span className="text-[13px] font-bold text-[#16796E]">Aktif sekarang</span>
+                  <div><p className="text-[14px] font-bold text-[#12172B]">{ts("Perangkat aktif")}</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{ts("Sesi login kamu saat ini.")}</p></div>
+                  <span className="text-[13px] font-bold text-[#16796E]">{ts("Aktif sekarang")}</span>
                 </div>
               </SetCard>
 
               <SetCard>
                 <div className="flex items-center justify-between gap-4">
-                  <div><p className="text-[14px] font-extrabold text-rose-500">Hapus Akun</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Tindakan permanen. Hubungi admin untuk memproses penghapusan.</p></div>
-                  <a href="https://wa.me/6282116859493?text=Halo%20admin%2C%20saya%20ingin%20menghapus%20akun%20Linguo%20saya." target="_blank" rel="noopener noreferrer" className="h-10 whitespace-nowrap rounded-xl border border-rose-200 px-4 text-[13px] font-bold leading-10 text-rose-500 transition hover:bg-rose-50">Hubungi Admin</a>
+                  <div><p className="text-[14px] font-extrabold text-rose-500">{ts("Hapus Akun")}</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{ts("Tindakan permanen. Hubungi admin untuk memproses penghapusan.")}</p></div>
+                  <a href="https://wa.me/6282116859493?text=Halo%20admin%2C%20saya%20ingin%20menghapus%20akun%20Linguo%20saya." target="_blank" rel="noopener noreferrer" className="h-10 whitespace-nowrap rounded-xl border border-rose-200 px-4 text-[13px] font-bold leading-10 text-rose-500 transition hover:bg-rose-50">{ts("Hubungi Admin")}</a>
                 </div>
               </SetCard>
             </>
@@ -1520,19 +1520,19 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
 
           {pane === "notif" && (
             <>
-              <SetCard title="Email">
-                <SetToggleRow label="Pengingat jadwal sesi" desc="Email H-1 sebelum sesi live dimulai." on={notif.email_jadwal} onClick={() => setNotif((s) => ({ ...s, email_jadwal: !s.email_jadwal }))} />
-                <SetToggleRow label="Materi & rekaman baru" desc="Saat pengajar mengunggah materi atau rekaman." on={notif.email_materi} onClick={() => setNotif((s) => ({ ...s, email_materi: !s.email_materi }))} />
+              <SetCard title={ts("Email")}>
+                <SetToggleRow label={ts("Pengingat jadwal sesi")} desc={ts("Email H-1 sebelum sesi live dimulai.")} on={notif.email_jadwal} onClick={() => setNotif((s) => ({ ...s, email_jadwal: !s.email_jadwal }))} />
+                <SetToggleRow label={ts("Materi & rekaman baru")} desc={ts("Saat pengajar mengunggah materi atau rekaman.")} on={notif.email_materi} onClick={() => setNotif((s) => ({ ...s, email_materi: !s.email_materi }))} />
               </SetCard>
-              <SetCard title="WhatsApp">
-                <SetToggleRow label="Pengingat sesi via WA" desc="Notifikasi ke nomor WhatsApp kamu." on={notif.wa_pengingat} onClick={() => setNotif((s) => ({ ...s, wa_pengingat: !s.wa_pengingat }))} />
-                <SetToggleRow label="Promo & info kelas baru" desc="Penawaran paket dan bahasa baru." on={notif.wa_promo} onClick={() => setNotif((s) => ({ ...s, wa_promo: !s.wa_promo }))} />
+              <SetCard title={ts("WhatsApp")}>
+                <SetToggleRow label={ts("Pengingat sesi via WA")} desc={ts("Notifikasi ke nomor WhatsApp kamu.")} on={notif.wa_pengingat} onClick={() => setNotif((s) => ({ ...s, wa_pengingat: !s.wa_pengingat }))} />
+                <SetToggleRow label={ts("Promo & info kelas baru")} desc={ts("Penawaran paket dan bahasa baru.")} on={notif.wa_promo} onClick={() => setNotif((s) => ({ ...s, wa_promo: !s.wa_promo }))} />
               </SetCard>
-              <SetCard title="Push (Aplikasi)" footer={
-                <button onClick={() => flash("Preferensi notifikasi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Simpan Perubahan</button>
+              <SetCard title={ts("Push (Aplikasi)")} footer={
+                <button onClick={() => flash("Preferensi notifikasi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{ts("Simpan Perubahan")}</button>
               }>
-                <SetToggleRow label="Sesi akan dimulai" desc="Push 15 menit sebelum sesi." on={notif.push_sesi} onClick={() => setNotif((s) => ({ ...s, push_sesi: !s.push_sesi }))} />
-                <SetToggleRow label="Tips & tantangan harian" desc="Dorongan belajar setiap hari." on={notif.push_promo} onClick={() => setNotif((s) => ({ ...s, push_promo: !s.push_promo }))} />
+                <SetToggleRow label={ts("Sesi akan dimulai")} desc={ts("Push 15 menit sebelum sesi.")} on={notif.push_sesi} onClick={() => setNotif((s) => ({ ...s, push_sesi: !s.push_sesi }))} />
+                <SetToggleRow label={ts("Tips & tantangan harian")} desc={ts("Dorongan belajar setiap hari.")} on={notif.push_promo} onClick={() => setNotif((s) => ({ ...s, push_promo: !s.push_promo }))} />
               </SetCard>
             </>
           )}
@@ -1552,19 +1552,19 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                   ))}
                 </div>
               </SetCard>
-              <SetCard title="Pengingat Belajar">
-                <SetToggleRow label="Pengingat harian" desc="Ingatkan aku untuk belajar setiap hari." on={pref.reminder} onClick={() => setPref((p) => ({ ...p, reminder: !p.reminder }))} />
+              <SetCard title={ts("Pengingat Belajar")}>
+                <SetToggleRow label={ts("Pengingat harian")} desc={ts("Ingatkan aku untuk belajar setiap hari.")} on={pref.reminder} onClick={() => setPref((p) => ({ ...p, reminder: !p.reminder }))} />
                 <div className="flex items-center justify-between gap-4 border-b border-slate-100 py-3.5">
-                  <div><p className="text-[14px] font-bold text-[#12172B]">Waktu pengingat sesi</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">Seberapa awal sebelum sesi live.</p></div>
-                  <div className="flex h-11 items-center rounded-xl border border-slate-200 px-3"><select className="bg-transparent text-[14px] font-semibold text-[#12172B] outline-none"><option>15 menit</option><option>1 jam</option><option>3 jam</option><option>1 hari</option></select></div>
+                  <div><p className="text-[14px] font-bold text-[#12172B]">{ts("Waktu pengingat sesi")}</p><p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{ts("Seberapa awal sebelum sesi live.")}</p></div>
+                  <div className="flex h-11 items-center rounded-xl border border-slate-200 px-3"><select className="bg-transparent text-[14px] font-semibold text-[#12172B] outline-none"><option>{ts("15 menit")}</option><option>{ts("1 jam")}</option><option>{ts("3 jam")}</option><option>{ts("1 hari")}</option></select></div>
                 </div>
-                <SetToggleRow label="Laporan mingguan" desc="Ringkasan progres belajar tiap Minggu." on={pref.weekly_report} onClick={() => setPref((p) => ({ ...p, weekly_report: !p.weekly_report }))} />
+                <SetToggleRow label={ts("Laporan mingguan")} desc={ts("Ringkasan progres belajar tiap Minggu.")} on={pref.weekly_report} onClick={() => setPref((p) => ({ ...p, weekly_report: !p.weekly_report }))} />
               </SetCard>
-              <SetCard title="Pemutaran Rekaman" footer={
-                <button onClick={() => flash("Preferensi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>Simpan Perubahan</button>
+              <SetCard title={ts("Pemutaran Rekaman")} footer={
+                <button onClick={() => flash("Preferensi disimpan.")} className="h-11 rounded-xl px-6 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{ts("Simpan Perubahan")}</button>
               }>
-                <SetToggleRow label="Putar otomatis" desc="Lanjut ke rekaman berikutnya secara otomatis." on={pref.autoplay} onClick={() => setPref((p) => ({ ...p, autoplay: !p.autoplay }))} />
-                <SetToggleRow label="Tampilkan subtitle" desc="Aktifkan subtitle bawaan saat memutar rekaman." on={pref.subtitle} onClick={() => setPref((p) => ({ ...p, subtitle: !p.subtitle }))} />
+                <SetToggleRow label={ts("Putar otomatis")} desc={ts("Lanjut ke rekaman berikutnya secara otomatis.")} on={pref.autoplay} onClick={() => setPref((p) => ({ ...p, autoplay: !p.autoplay }))} />
+                <SetToggleRow label={ts("Tampilkan subtitle")} desc={ts("Aktifkan subtitle bawaan saat memutar rekaman.")} on={pref.subtitle} onClick={() => setPref((p) => ({ ...p, subtitle: !p.subtitle }))} />
               </SetCard>
             </>
           )}
@@ -1578,43 +1578,43 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                     {paidRegs.map((r) => (
                       <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5 text-white" style={{ background: "#16796E" }}>
                         <div>
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{r.payment_status === "Cicilan" ? "Paket Aktif · Cicilan" : "Paket Aktif"}</span>
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-bold">{r.payment_status === "Cicilan" ? ts("Paket Aktif · Cicilan") : ts("Paket Aktif")}</span>
                           <p className="mt-2 text-[20px] font-extrabold">{progLabel(r)}</p>
                           <p className="mt-0.5 text-[13px] font-medium text-white/80">
-                            {r.level ? `Level ${r.level} · ` : ""}{r.sessions_used || 0}/{r.sessions_total || 0} sesi terpakai{r.duration ? ` · ${r.duration} menit/sesi` : ""}
+                            {r.level ? `${ts("Level")} ${r.level} · ` : ""}{r.sessions_used || 0}/{r.sessions_total || 0} {ts("sesi terpakai")}{r.duration ? ` · ${r.duration} ${ts("menit/sesi")}` : ""}
                           </p>
                         </div>
                         <div className="text-right">
                           <p className="text-[24px] font-extrabold leading-none">{fmtRp(r.total_amount || 0)}</p>
-                          <p className="mt-1.5 text-[12px] font-medium text-white/80">Terdaftar {fmtTgl(r.registration_date)}</p>
+                          <p className="mt-1.5 text-[12px] font-medium text-white/80">{ts("Terdaftar")} {fmtTgl(r.registration_date)}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                 ) : (
                   <div className="rounded-2xl border border-dashed border-slate-200 px-5 py-8 text-center">
-                    <p className="text-[14px] font-bold text-[#12172B]">Belum ada paket aktif</p>
-                    <p className="mt-1 text-[12px] font-medium text-[#6B7280]">Daftar kelas dulu yuk — paket yang sudah dibayar bakal muncul di sini.</p>
+                    <p className="text-[14px] font-bold text-[#12172B]">{ts("Belum ada paket aktif")}</p>
+                    <p className="mt-1 text-[12px] font-medium text-[#6B7280]">{ts("Daftar kelas dulu yuk — paket yang sudah dibayar bakal muncul di sini.")}</p>
                   </div>
                 )}
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <button onClick={openEnrollWizard} className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{paidRegs.length > 0 ? "Tambah Kelas Baru" : "Daftar Kelas"}</button>
+                  <button onClick={openEnrollWizard} className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-white transition hover:bg-[#0F5A52]" style={{ background: "#16796E" }}>{paidRegs.length > 0 ? ts("Tambah Kelas Baru") : ts("Daftar Kelas")}</button>
                   <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau tanya soal paket/tagihan saya.`)}`} target="_blank" rel="noopener noreferrer"
-                    className="flex h-11 items-center rounded-xl px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">Hubungi Admin</a>
+                    className="flex h-11 items-center rounded-xl px-5 text-[14px] font-bold text-[#12172B] transition hover:bg-slate-50">{ts("Hubungi Admin")}</a>
                 </div>
               </SetCard>
 
               {unpaidRegs.length > 0 && (
-                <SetCard title="Menunggu Pembayaran">
+                <SetCard title={ts("Menunggu Pembayaran")}>
                   {unpaidRegs.map((r) => (
                     <div key={r.id} className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 py-3.5 last:border-0">
                       <div>
                         <p className="text-[14px] font-bold text-[#12172B]">{progLabel(r)}</p>
-                        <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{fmtRp(r.total_amount || 0)} · didaftarkan {fmtTgl(r.created_at || r.registration_date)} · selesaikan dalam 24 jam</p>
+                        <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">{fmtRp(r.total_amount || 0)} · {ts("didaftarkan")} {fmtTgl(r.created_at || r.registration_date)} · {ts("selesaikan dalam 24 jam")}</p>
                       </div>
                       <button onClick={() => bayarSekarang(r)} disabled={payingId === r.id}
                         className="h-11 rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95 disabled:opacity-50" style={{ background: "#F2CB05" }}>
-                        {payingId === r.id ? "Membuat invoice…" : "Bayar Sekarang"}
+                        {payingId === r.id ? ts("Membuat invoice…") : ts("Bayar Sekarang")}
                       </button>
                     </div>
                   ))}
@@ -1622,7 +1622,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
               )}
 
               {cicilanRegs.length > 0 && (
-                <SetCard title="Cicilan Berjalan">
+                <SetCard title={ts("Cicilan Berjalan")}>
                   {cicilanRegs.map((r) => {
                     const total = r.total_amount || 0;
                     const paid = r.installment_paid || 0;
@@ -1633,32 +1633,32 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
                         <div>
                           <p className="text-[14px] font-bold text-[#12172B]">{progLabel(r)}</p>
                           <p className="mt-0.5 text-[12px] font-medium text-[#6B7280]">
-                            Terbayar {fmtRp(paid)} dari {fmtRp(total)} · sisa {fmtRp(sisa)}{r.payment_due_date ? ` · jatuh tempo ${fmtTgl(r.payment_due_date)}` : ""}
+                            {ts("Terbayar")} {fmtRp(paid)} {ts("dari")} {fmtRp(total)} · {ts("sisa")} {fmtRp(sisa)}{r.payment_due_date ? ` · ${ts("jatuh tempo")} ${fmtTgl(r.payment_due_date)}` : ""}
                           </p>
                           <div className="mt-2 h-2 w-48 overflow-hidden rounded-full" style={{ background: "#E8EAEE" }}><div className="h-full rounded-full" style={{ width: `${pct}%`, background: "#16796E" }} /></div>
                         </div>
                         <a href={`https://wa.me/6282116859493?text=${encodeURIComponent(`Halo admin Linguo, saya ${displayName}. Saya mau melanjutkan pembayaran cicilan ${progLabel(r)} (sisa ${fmtRp(sisa)}).`)}`}
                           target="_blank" rel="noopener noreferrer"
-                          className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>Bayar Sekarang</a>
+                          className="flex h-11 items-center rounded-xl px-5 text-[14px] font-extrabold text-[#12172B] transition hover:brightness-95" style={{ background: "#F2CB05" }}>{ts("Bayar Sekarang")}</a>
                       </div>
                     );
                   })}
                 </SetCard>
               )}
 
-              <SetCard title="Metode Pembayaran">
+              <SetCard title={ts("Metode Pembayaran")}>
                 <div className="flex items-center gap-3 py-2">
                   <span className="flex h-9 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-50" style={{ background: "#F5F6F8" }}><CreditCard className="h-5 w-5 text-[#16796E]" /></span>
                   <div>
-                    <p className="text-[14px] font-bold text-[#12172B]">Pembayaran online via Xendit</p>
-                    <p className="text-[12px] font-medium text-[#6B7280]">QRIS, transfer bank (VA), e-wallet, & kartu. Linguo tidak menyimpan data kartumu.</p>
+                    <p className="text-[14px] font-bold text-[#12172B]">{ts("Pembayaran online via Xendit")}</p>
+                    <p className="text-[12px] font-medium text-[#6B7280]">{ts("QRIS, transfer bank (VA), e-wallet, & kartu. Linguo tidak menyimpan data kartumu.")}</p>
                   </div>
                 </div>
               </SetCard>
 
-              <SetCard title="Riwayat Tagihan">
+              <SetCard title={ts("Riwayat Tagihan")}>
                 {riwayat.length === 0 ? (
-                  <p className="py-4 text-center text-[13px] font-medium text-[#6B7280]">Belum ada transaksi. Riwayat pembayaran kelas & produk digital kamu bakal muncul di sini.</p>
+                  <p className="py-4 text-center text-[13px] font-medium text-[#6B7280]">{ts("Belum ada transaksi. Riwayat pembayaran kelas & produk digital kamu bakal muncul di sini.")}</p>
                 ) : (
                   <div className="flex flex-col">
                     {riwayat.map((it) => (
@@ -1682,7 +1682,7 @@ function AkunTab({ user, student, avatarUrl, displayName, firstName, xp, badges,
         {/* mobile signout */}
         <div className="px-6 pb-6 lg:hidden">
           <button onClick={signOut} className="flex w-full items-center justify-center gap-2 rounded-2xl border border-rose-200 py-3 text-[14px] font-bold text-rose-500 transition hover:bg-rose-50">
-            <LogOut className="h-4 w-4" /> Keluar dari Akun
+            <LogOut className="h-4 w-4" /> {ts("Keluar dari Akun")}
           </button>
         </div>
       </main>
@@ -4508,19 +4508,20 @@ export default function AkunPage() {
                         </div>
                       )}
 
-                      {/* Perlu Perhatian — card kecil (glyph + status), klik -> PaymentDetailModal */}
+                      {/* Perlu Perhatian — kartu poster (foto bahasa penuh, sama dgn kartu
+                          kelas aktif), klik -> PaymentDetailModal */}
                       {pendingRegs.length > 0 && (
                         <div>
                           <div className="flex items-center gap-2">
                             <h2 className="inline-flex items-center gap-2 text-[18px] font-extrabold text-[#12172B]">
                               <Clock className="h-5 w-5 text-amber-500" strokeWidth={2.5} />
-                              Perlu Perhatian
+                              {tt("Perlu Perhatian")}
                             </h2>
                             <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-amber-100 px-1.5 text-[11px] font-bold text-amber-700">
                               {pendingRegs.length}
                             </span>
                           </div>
-                          <div className="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                          <div className="mt-3 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
                             {pendingRegs.map((reg: any) => {
                               const photo = getLangPhoto(reg.language);
                               return (
@@ -4530,42 +4531,47 @@ export default function AkunPage() {
                                 tabIndex={0}
                                 onClick={() => setPendingModalReg(reg)}
                                 onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setPendingModalReg(reg); } }}
-                                className="group cursor-pointer rounded-3xl bg-white p-3 text-left ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
+                                className="group cursor-pointer rounded-[20px] bg-white p-2.5 text-left ring-1 ring-amber-200 transition-transform hover:-translate-y-1"
                               >
-                                <div className="relative isolate flex h-32 items-center justify-center overflow-hidden rounded-2xl bg-amber-400 transform-gpu [backface-visibility:hidden]">
+                                {/* [beranda-kartu-pending-poster-v1] Sampul disamakan dgn kartu kelas
+                                    aktif: foto poster tinggi (h-44/48) + identitas kelas MASUK ke dalam
+                                    foto. Dulu strip 128px + judul di bawahnya bikin foto bahasanya
+                                    nyaris tak kelihatan, dan dua kartu di beranda kelihatan beda produk
+                                    padahal isinya sama-sama kelas. */}
+                                <div className={`relative isolate flex h-44 items-end overflow-hidden rounded-2xl transform-gpu [backface-visibility:hidden] sm:h-48 ${photo ? "bg-[#0E1526]" : "bg-amber-400"}`}>
                                   {photo ? (
-                                    <>
-                                      <img src={photo} alt={reg.language} className="h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" />
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                                    </>
+                                    <img src={photo} alt={reg.language} className="absolute inset-0 h-full w-full object-cover transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                                   ) : (
                                     <>
-                                      <span className="text-[52px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{langGlyph(reg.language)}</span>
-                                      <div className="absolute -bottom-6 -right-4 h-24 w-24 rounded-full bg-white/10" />
+                                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] text-[52px] font-extrabold tracking-tight text-white/95 transform-gpu scale-[1.02] transition-transform duration-300 ease-out [backface-visibility:hidden] group-hover:scale-[1.07]">{langGlyph(reg.language)}</span>
+                                      <div className="absolute -bottom-5 -right-3 h-20 w-20 rounded-full bg-white/10" />
                                     </>
                                   )}
-                                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-amber-700">
-                                    <Clock className="h-3 w-3" strokeWidth={2.5} /> Belum Bayar
+                                  <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+                                  <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/90 px-2 py-0.5 text-[10.5px] font-bold text-amber-700">
+                                    <Clock className="h-2.5 w-2.5" strokeWidth={3} /> {tt("Belum Bayar")}
                                   </span>
-                                </div>
-                                <div className="px-2 pb-1.5 pt-3">
-                                  <div className="flex items-center gap-2">
-                                    <img src={getFlagUrl(reg.language)} alt="" className="h-4 w-4 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
-                                    <h3 className="truncate text-[16px] font-extrabold leading-tight text-[#12172B]">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                  <div className="relative w-full p-3">
+                                    <div className="flex items-center gap-1.5">
+                                      <img src={getFlagUrl(reg.language)} alt="" className="h-3.5 w-3.5 shrink-0 rounded-sm object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                                      <h3 className="truncate text-[15px] font-extrabold leading-tight text-white drop-shadow">{displayLanguage(reg.language)} — {reg.level || "TBD"}</h3>
+                                    </div>
+                                    <p className="mt-1.5 truncate text-[12px] font-medium text-white/90 drop-shadow">{tt(PRODUCT_BADGE[normalizeProduct(reg.product)]?.label || reg.product)}</p>
                                   </div>
-                                  <p className="mt-0.5 truncate text-[13px] font-medium text-gray-500">{PRODUCT_BADGE[reg.product]?.label || reg.product}</p>
-                                  <div className="mt-4 flex items-center justify-between">
-                                    <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : "Lihat detail"}</span>
-                                    <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">Bayar <ChevronRight className="h-3.5 w-3.5" /></span>
+                                </div>
+                                <div className="px-1.5 pb-1 pt-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-[13px] font-extrabold text-amber-700">{reg.total_amount > 0 ? `Rp ${Number(reg.total_amount).toLocaleString("id-ID")}` : tt("Lihat detail")}</span>
+                                    <span className="inline-flex items-center gap-1 text-[12px] font-bold text-[#16796E]">{tt("Bayar")} <ChevronRight className="h-3.5 w-3.5" /></span>
                                   </div>
                                   {/* [akun-cancel-enrollment-v1] siswa batalin sendiri — CUMA yang belum bayar.
                                       Buka overlay konfirmasi → /api/cancel-enrollment (lead + delete via service role). */}
                                   <button
                                     type="button"
                                     onClick={(e) => { e.stopPropagation(); setCancelTarget(reg); }}
-                                    className="mt-3 w-full rounded-xl bg-slate-50 py-2 text-[12px] font-bold text-gray-500 transition-colors hover:bg-red-50 hover:text-red-600"
+                                    className="mt-2.5 w-full rounded-xl bg-slate-50 py-2 text-[12px] font-bold text-gray-500 transition-colors hover:bg-red-50 hover:text-red-600"
                                   >
-                                    Batalkan pendaftaran
+                                    {tt("Batalkan pendaftaran")}
                                   </button>
                                 </div>
                               </div>
