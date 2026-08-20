@@ -206,6 +206,24 @@ function buildProgressByLang(
   return out;
 }
 
+// [elearning-per-bahasa-v1] "Siap dibuka" untuk produk yang SUDAH dimiliki.
+// `materialReady` sengaja meloloskan e-learning tanpa link (dianggap jatuh ke
+// modul LMS internal), padahal per 20 Agu 2026 13 produk e-learning per bahasa
+// belum punya playlist DAN belum punya modul LMS berisi — kartunya tampil
+// normal, tombolnya ditekan, tidak ada yang terbuka. Di kartu milik sendiri
+// syaratnya dipertegas: harus ada link, atau bahasa paket, atau pelajaran LMS.
+function siapDibuka(
+  prod: Purchase["digital_products"],
+  langs: ProductLang[] | undefined,
+  byLang: Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>,
+): boolean {
+  if (!materialReady(prod, langs)) return false;
+  if (prod.type !== "elearning") return true;
+  if (externalLinkFor(prod) || (langs?.length ?? 0) > 0) return true;
+  const lang = prod.language?.toLowerCase().trim();
+  return !!(lang && (byLang[lang]?.total ?? 0) > 0);
+}
+
 function progFor(p: Purchase, byLang: Record<string, { total: number; done: number; resume: { id: string; title: string } | null }>): Prog | null {
   if (p.digital_products.type !== "elearning") return null;
   const lang = p.digital_products.language?.toLowerCase().trim();
@@ -606,9 +624,21 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
       return;
     }
 
+    // [elearning-per-bahasa-v1] E-learning per bahasa terbit tanpa
+    // `video_playlist_url` (admin mengisinya belakangan di /produk-digital).
+    // Dulu tombolnya selalu melempar ke "/akun?menu=materi" polos — mendaratnya
+    // di sub-tab Kelas Live, jadi dari sisi siswa tombolnya terbaca seolah tidak
+    // melakukan apa-apa ("e-learning-nya belum kebuka"). Sekarang: kalau modul
+    // LMS bahasa itu sudah berisi, buka pelajarannya langsung; kalau tidak ada
+    // apa pun yang bisa dibuka, katakan apa adanya alih-alih pindah halaman.
     if (prod.type === "elearning") {
-      toast("Membuka materi belajar…");
-      window.location.href = "/akun?menu=materi";
+      const pr = progFor(p, byLang);
+      if (pr?.resume) {
+        toast("Membuka materi belajar…");
+        window.location.href = `/akun?menu=materi&sesi=${pr.resume.id}`;
+        return;
+      }
+      toast.error(`Materi "${prod.title}" belum dipasang linknya oleh admin. Hubungi CS Linguo ya.`);
       return;
     }
 
@@ -889,7 +919,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               prog={progFor(p, byLang)}
               langCount={usableLangs(prodLangs[p.digital_products.id]).length}
               /* [materi-belum-siap-v1] katakan di muka, jangan tunggu diklik */
-              ready={materialReady(p.digital_products, prodLangs[p.digital_products.id])}
+              ready={siapDibuka(p.digital_products, prodLangs[p.digital_products.id], byLang)}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
@@ -907,7 +937,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               prog={progFor(p, byLang)}
               langCount={usableLangs(prodLangs[p.digital_products.id]).length}
               /* [materi-belum-siap-v1] katakan di muka, jangan tunggu diklik */
-              ready={materialReady(p.digital_products, prodLangs[p.digital_products.id])}
+              ready={siapDibuka(p.digital_products, prodLangs[p.digital_products.id], byLang)}
               busy={busy === p.id}
               bookmarked={bookmarks.has(p.digital_products.id)}
               onToggleBookmark={() => toggleBookmark(p.digital_products.id, p.digital_products.title)}
