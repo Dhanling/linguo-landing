@@ -13,7 +13,7 @@ import {
   Film, BookOpen, Bookmark, BookmarkCheck, Play, Search, LayoutGrid, List,
   Infinity as InfinityIcon, CalendarClock, Clock, ChevronRight,
   Flame, Loader2, ShoppingBag, GraduationCap, ExternalLink, X, Check, CreditCard, Sparkles,
-  Lock,
+  Lock, Ticket,
 } from "lucide-react";
 import {
   externalLinkFor, isStoragePath, accessVerb, isPlaceholderLink,
@@ -117,6 +117,20 @@ function judulRingkas(raw: string): string {
   const sisa = penggal.filter((x) => !PENGGAL_BOILERPLATE.test(x));
   const judul = (sisa[0] || penggal[0] || raw || "").replace(/\s*\bLinguo\b\s*/gi, " ").trim();
   return judul || raw;
+}
+
+// [pustaka-filter-edisi-v1] Katalog e-book terbit dalam dua edisi bahasa pengantar:
+// "(Edisi Bahasa Indonesia)" dan "(English Edition)" — jadi tiap judul muncul dua
+// kali di daftar dan siswa harus membaca ekor judulnya satu per satu. Edisi tidak
+// punya kolom sendiri di `digital_products`, jadi dibaca dari slug (`…-id` / `…-en`)
+// dengan judul sebagai cadangan. Per 20 Agu 2026: 27 EN, 20 ID, 1 tanpa edisi
+// (paket 12+ bahasa) — yang tanpa edisi cuma tampil di pilihan "Semua".
+type Edisi = "id" | "en";
+function edisiProduk(p: { title: string; slug?: string | null }): Edisi | null {
+  const s = `${p.slug ?? ""} ${p.title}`.toLowerCase();
+  if (/english edition|\(en\)|-en\b/.test(s)) return "en";
+  if (/edisi (bahasa )?indonesia|\(id\)|-id\b/.test(s)) return "id";
+  return null;
 }
 
 function fmtDate(iso: string) {
@@ -398,6 +412,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [busy, setBusy] = useState<string | null>(null);
 
   const [tab, setTab] = useState<"all" | "elearning" | "ebook">("all");
+  // [pustaka-filter-edisi-v1] "all" = kedua edisi (plus produk tanpa edisi)
+  const [edisi, setEdisi] = useState<"all" | Edisi>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
   const [q, setQ] = useState("");
   const [bookmarks, setBookmarks] = useState<Set<string>>(new Set());
@@ -617,16 +633,21 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   // (milik siswa + katalog yang belum dimiliki).
   const counts = useMemo(() => {
     const punya = new Set(purchases.map((p) => p.digital_products?.id).filter(Boolean));
-    const belum = katalog.filter((k) => !punya.has(k.id));
+    // [pustaka-filter-edisi-v1] angka ikut saringan edisi yang sedang aktif —
+    // kalau tidak, tabnya menjanjikan 47 produk padahal daftarnya cuma 20.
+    const cocokEdisi = (p: { title: string; slug?: string | null }) =>
+      edisi === "all" || edisiProduk(p) === edisi;
+    const milik = purchases.filter((p) => cocokEdisi(p.digital_products));
+    const belum = katalog.filter((k) => !punya.has(k.id) && cocokEdisi(k));
     const hitung = (tipe: ProductType) =>
-      purchases.filter((p) => p.digital_products.type === tipe).length +
+      milik.filter((p) => p.digital_products.type === tipe).length +
       belum.filter((k) => k.type === tipe).length;
     return {
-      all: purchases.length + belum.length,
+      all: milik.length + belum.length,
       elearning: hitung("elearning"),
       ebook: hitung("ebook"),
     };
-  }, [purchases, katalog]);
+  }, [purchases, katalog, edisi]);
 
   const hero = useMemo(() => {
     for (const p of purchases) {
@@ -640,10 +661,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     const needle = q.trim().toLowerCase();
     return purchases.filter((p) => {
       if (tab !== "all" && p.digital_products.type !== tab) return false;
+      if (edisi !== "all" && edisiProduk(p.digital_products) !== edisi) return false;
       if (needle && !p.digital_products.title.toLowerCase().includes(needle)) return false;
       return true;
     });
-  }, [purchases, tab, q]);
+  }, [purchases, tab, edisi, q]);
 
   // [pustaka-katalog-terkunci-v1] produk yang belum dimiliki → kartu tergembok.
   // Saring ikut tab & pencarian yang sama supaya terasa satu daftar.
@@ -653,10 +675,11 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
     return katalog.filter((k) => {
       if (punya.has(k.id)) return false;
       if (tab !== "all" && k.type !== tab) return false;
+      if (edisi !== "all" && edisiProduk(k) !== edisi) return false;
       if (needle && !k.title.toLowerCase().includes(needle)) return false;
       return true;
     });
-  }, [katalog, purchases, tab, q]);
+  }, [katalog, purchases, tab, edisi, q]);
 
   /* ---------------- render ---------------- */
   if (loading) {
@@ -761,6 +784,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
 
       {/* ===== CONTROLS ===== */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-wrap items-center gap-2">
         <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
           {([["all", "Semua"], ["elearning", "E-Learning"], ["ebook", "E-Book"]] as const).map(([k, label]) => (
             <button
@@ -776,6 +800,23 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
               </span>
             </button>
           ))}
+        </div>
+
+        {/* [pustaka-filter-edisi-v1] edisi bahasa pengantar — tiap modul terbit
+            dalam dua versi, tanpa saringan ini daftarnya terbaca dobel semua. */}
+        <div className="inline-flex items-center gap-1 rounded-2xl bg-slate-100 p-1">
+          {([["all", "Semua edisi"], ["id", "Indonesia"], ["en", "English"]] as const).map(([k, label]) => (
+            <button
+              key={k}
+              onClick={() => setEdisi(k)}
+              className={`rounded-xl px-3 py-2 text-[13px] font-bold transition ${
+                edisi === k ? "bg-white text-[#12172B] shadow-sm" : "text-slate-500 hover:text-slate-700"
+              }`}
+            >
+              {t(label)}
+            </button>
+          ))}
+        </div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -887,7 +928,14 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
 
       {/* [pustaka-katalog-terkunci-v1] popup beli produk katalog */}
       {buyFor && (
-        <BuyModal item={buyFor} supabase={supabase} onClose={() => setBuyFor(null)} />
+        <BuyModal
+          item={buyFor}
+          supabase={supabase}
+          onClose={() => setBuyFor(null)}
+          /* [pustaka-promo-kode-v1] cache modul dibuang dulu — tanpa itu kartu
+             hasil klaim baru muncul sesudah halaman dimuat ulang. */
+          onClaimed={() => { libCache = null; fetchAll(); }}
+        />
       )}
 
       {/* [produk-digital-per-bahasa-v1] paket multi-bahasa: pilih bahasa dulu */}
@@ -1392,9 +1440,11 @@ function LockedCard({
 // xendit-create-digital-invoice yang sama, invoice dibuka di tab baru), bedanya
 // tier harganya sudah ikut terbawa dari katalog jadi tak perlu query lagi.
 function BuyModal({
-  item, supabase, onClose,
+  item, supabase, onClose, onClaimed,
 }: {
   item: CatalogItem; supabase: SupabaseClient; onClose: () => void;
+  /** [pustaka-promo-kode-v1] dipanggil sesudah akses promo terbit → pustaka dimuat ulang */
+  onClaimed: () => void;
 }) {
   const tiers = item.pricing;
   const [selectedId, setSelectedId] = useState<string | null>(
@@ -1402,10 +1452,19 @@ function BuyModal({
   );
   const [submitting, setSubmitting] = useState(false);
   const [buyer, setBuyer] = useState<{ email: string; name: string; phone: string | null }>({ email: "", name: "", phone: null });
+  // [pustaka-promo-kode-v1] kode promo — divalidasi di server (/api/promo-digital),
+  // token sesi dibawa karena route-nya menerbitkan kepemilikan atas nama akun ini.
+  const [token, setToken] = useState("");
+  const [kode, setKode] = useState("");
+  const [promo, setPromo] = useState<{ code: string; label: string; hari: number } | null>(null);
+  const [cekBusy, setCekBusy] = useState(false);
+  const [promoErr, setPromoErr] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
     (async () => {
+      const { data: sesi } = await supabase.auth.getSession();
+      if (alive) setToken(sesi?.session?.access_token ?? "");
       const { data: userRes } = await supabase.auth.getUser();
       const u = userRes?.user;
       if (!alive || !u) return;
@@ -1417,6 +1476,44 @@ function BuyModal({
     })();
     return () => { alive = false; };
   }, [supabase]);
+
+  async function panggilPromo(mode: "cek" | "klaim") {
+    const code = kode.trim().toUpperCase();
+    if (!code) { setPromoErr("Masukkan kode promonya dulu."); return null; }
+    if (!token) { setPromoErr("Sesi tidak terbaca — coba muat ulang halaman."); return null; }
+    const res = await fetch("/api/promo-digital", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ accessToken: token, productId: item.id, pricingId: selectedId, code, mode }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data?.ok) {
+      setPromoErr(data?.error ?? "Kode promo tidak bisa dipakai.");
+      setPromo(null);
+      return null;
+    }
+    setPromoErr(null);
+    return data as { code: string; label: string; hari: number };
+  }
+
+  async function pakaiKode() {
+    setCekBusy(true);
+    const hasil = await panggilPromo("cek");
+    if (hasil) {
+      setPromo({ code: hasil.code, label: hasil.label, hari: hasil.hari });
+      toast.success(`Kode ${hasil.code} dipakai — ${hasil.label}.`);
+    }
+    setCekBusy(false);
+  }
+
+  async function klaimGratis() {
+    setSubmitting(true);
+    const hasil = await panggilPromo("klaim");
+    if (!hasil) { setSubmitting(false); return; }
+    toast.success(`Akses ${hasil.hari} hari terbuka. Produknya sudah ada di Perpustakaan kamu.`);
+    onClaimed();
+    onClose();
+  }
 
   const selected = tiers.find((t) => t.id === selectedId) || null;
 
@@ -1516,21 +1613,81 @@ function BuyModal({
               })}
             </div>
           )}
+
+          {/* [pustaka-promo-kode-v1] kode promo — divalidasi server, bukan di sini:
+              kalau syaratnya dinilai di browser, "gratis" tinggal dipanggil sendiri
+              dari console. Kode yang lolos mengganti tombol bayar jadi klaim. */}
+          {tiers.length > 0 && (
+            <div className="mt-4 rounded-2xl border border-dashed border-slate-200 p-3.5">
+              <p className="flex items-center gap-1.5 text-[12.5px] font-extrabold text-[#12172B]">
+                <Ticket className="h-4 w-4 text-[#12A37E]" strokeWidth={2.4} /> Punya kode promo?
+              </p>
+              <div className="mt-2 flex items-center gap-2">
+                <input
+                  value={kode}
+                  onChange={(e) => { setKode(e.target.value); setPromoErr(null); }}
+                  onKeyDown={(e) => { if (e.key === "Enter") pakaiKode(); }}
+                  placeholder="Masukkan kode"
+                  autoCapitalize="characters"
+                  spellCheck={false}
+                  disabled={!!promo}
+                  className="min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-[13px] font-bold uppercase tracking-wide text-[#12172B] outline-none transition placeholder:font-medium placeholder:normal-case placeholder:tracking-normal placeholder:text-slate-400 focus:border-[#12A37E] disabled:bg-slate-100"
+                />
+                {promo ? (
+                  <button
+                    onClick={() => { setPromo(null); setKode(""); setPromoErr(null); }}
+                    className="shrink-0 rounded-xl bg-slate-200 px-3.5 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-slate-300"
+                  >
+                    Ganti
+                  </button>
+                ) : (
+                  <button
+                    onClick={pakaiKode}
+                    disabled={cekBusy || !kode.trim()}
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#12172B] px-3.5 py-2.5 text-[13px] font-bold text-white transition hover:bg-[#12172B]/90 disabled:opacity-40"
+                  >
+                    {cekBusy ? <Loader2 className="h-4 w-4 animate-spin" /> : null} Pakai
+                  </button>
+                )}
+              </div>
+              {promo && (
+                <p className="mt-2 flex items-center gap-1.5 text-[12px] font-bold text-[#0C8163]">
+                  <Check className="h-4 w-4" strokeWidth={3} /> {promo.code} aktif — {promo.label} ({promo.hari} hari), tanpa bayar.
+                </p>
+              )}
+              {promoErr && (
+                <p className="mt-2 text-[12px] font-semibold text-rose-600">{promoErr}</p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* footer */}
         {tiers.length > 0 && (
           <div className="border-t border-slate-100 px-5 py-4">
-            <button
-              onClick={handlePay}
-              disabled={!selected || submitting}
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
-            >
-              {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
-              {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
-            </button>
+            {promo ? (
+              <button
+                onClick={klaimGratis}
+                disabled={submitting}
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+              >
+                {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <Sparkles className="h-5 w-5" strokeWidth={2.2} />}
+                {submitting ? "Membuka akses…" : `Klaim akses gratis ${promo.hari} hari`}
+              </button>
+            ) : (
+              <button
+                onClick={handlePay}
+                disabled={!selected || submitting}
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#12A37E] text-[15px] font-bold text-white transition hover:bg-[#0C8163] active:scale-[0.99] disabled:opacity-50"
+              >
+                {submitting ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" strokeWidth={2.2} />}
+                {submitting ? "Menyiapkan…" : selected ? `Bayar ${fmtRupiah(selected.price)}` : "Pilih paket"}
+              </button>
+            )}
             <p className="mt-2.5 text-center text-[11px] font-medium text-slate-400">
-              Pembayaran aman via Xendit · produk terbuka otomatis setelah lunas
+              {promo
+                ? "Akses promo terbit langsung — tanpa halaman pembayaran."
+                : "Pembayaran aman via Xendit · produk terbuka otomatis setelah lunas"}
             </p>
           </div>
         )}
