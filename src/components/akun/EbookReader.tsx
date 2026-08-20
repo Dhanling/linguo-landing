@@ -13,6 +13,17 @@
 // menyebarkan modul adalah CAP NAMA + EMAILNYA di tiap halaman, bukan tombol
 // unduh yang disembunyikan.
 //
+// [ebook-zoom-cubit-v1] Zoom mengikuti gerakan: cubit trackpad Mac / dua jari
+// di layar sentuh, Ctrl/⌘ + gulir, dan ⌘ +/-/0. Halaman diskalakan lewat CSS
+// selama jari masih bergerak, lalu diraster ulang begitu gerakannya berhenti.
+//
+// [ebook-tts-ketuk-kata-v1] Ketuk kata bahasa target → pelafalannya berbunyi
+// (Chirp 3 HD lewat /api/tts, bercache tiga lapis — lihat src/lib/ebookTts.ts).
+// Teksnya TIDAK dipasang sebagai lapisan HTML seperti pdf.js biasanya: lapisan
+// itu bisa diblok-salin, dan seluruh reader ini justru dibangun supaya isinya
+// tidak gampang dipanen. Jadi ketukan diadu langsung dengan koordinat teks dari
+// getTextContent(), sementara yang tampak tetap piksel canvas.
+//
 // [ebook-reader-spread-v2] Tampilannya sekarang seperti buku betulan: dua
 // halaman bersebelahan (kiri–kanan) dengan animasi balik halaman 3D ala reader
 // Issuu. Sampul (halaman 1) berdiri sendiri, sisanya berpasangan genap–ganjil.
@@ -23,15 +34,26 @@ import { createPortal } from "react-dom";
 import { tr, useT } from "@/lib/uiLang"; // [ui-lang-switcher-v1]
 import {
   ChevronLeft, ChevronRight, Loader2, Minus, Plus, X, BookOpen, AlertCircle,
-  Columns2, Square, Maximize2, Minimize2,
+  Columns2, Square, Maximize2, Minimize2, Volume2,
 } from "lucide-react";
+// [ebook-tts-ketuk-kata-v1]
+import {
+  bisaDibunyikan, kodeBahasaEbook, barisTerjemahan, ucapkanEbook,
+  hentikanEbookTts, bukaKunciAudio,
+} from "@/lib/ebookTts";
+import { langLabel } from "@/lib/quiz/language";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type PdfDoc = any;
 
-const ZOOM_MIN = 0.6;
-const ZOOM_MAX = 2.5;
+const ZOOM_MIN = 0.5;
+// Batas atas dinaikkan dari 2.5: dengan cubitan, siswa yang membaca catatan kaki
+// di HP wajar menarik halaman jauh lebih dekat daripada lewat tombol +.
+const ZOOM_MAX = 4;
 const ZOOM_STEP = 0.2;
+const jepitZoom = (z: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, +z.toFixed(3)));
+/** Jeda tanpa gerakan sebelum halaman diraster ulang di zoom yang baru. */
+const JEDA_KOMIT_ZOOM = 160;
 /** Batas kerapatan render — 3x di layar HP modern bikin canvas boros memori. */
 const DPR_MAX = 2;
 /** Sisa ruang di sekeliling halaman (px) — dipakai menghitung skala muat-penuh. */
@@ -137,6 +159,25 @@ async function ambilBerkas(purchaseId: string, accessToken: string): Promise<Arr
   return buf;
 }
 
+/* [ebook-tts-ketuk-kata-v1] Satu potong teks dari getTextContent(), koordinatnya
+   dalam SATUAN HALAMAN (viewport skala 1) supaya tetap sahih waktu di-zoom. */
+type ItemTeks = { str: string; x: number; y: number; w: number; h: number };
+
+/** Huruf penyusun kata — dipakai memuaikan ketukan jadi satu kata utuh. */
+const HURUF = /[\p{L}\p{M}\p{N}'\u2019\u02BC-]/u;
+
+/* Kanvas tak tampak untuk mengukur lebar huruf. pdf.js melaporkan lebar SELURUH
+   potongan teks, bukan per huruf, jadi batas antar kata dihitung dengan
+   measureText lalu dinormalkan ke lebar itu. Fontnya beda dari font PDF-nya,
+   tapi setelah dinormalkan selisihnya tinggal beberapa piksel — cukup untuk
+   menentukan kata mana yang diketuk. */
+let ukurCanvas: CanvasRenderingContext2D | null = null;
+function ukurCtx(): CanvasRenderingContext2D | null {
+  if (typeof document === "undefined") return null;
+  if (!ukurCanvas) ukurCanvas = document.createElement("canvas").getContext("2d");
+  return ukurCanvas;
+}
+
 type Bitmap = { canvas: HTMLCanvasElement; w: number; h: number };
 type Bentangan = { kiri: number | null; kanan: number | null };
 
@@ -165,16 +206,30 @@ export interface EbookReaderProps {
   accessToken: string;
   /** Teks cap air, mis. "Rina Dewi · rina@email.com". */
   watermark: string;
+  /** [ebook-tts-ketuk-kata-v1] Bahasa modul (`digital_products.language`).
+   *  Kosong pun tak apa — bahasanya ditebak dari judul. Kalau tetap tak
+   *  terbaca, ketuk-untuk-mendengar tidak diaktifkan sama sekali. */
+  language?: string | null;
   onClose: () => void;
 }
 
 export default function EbookReader({
-  purchaseId, title, accessToken, watermark, onClose,
+  purchaseId, title, accessToken, watermark, language, onClose,
 }: EbookReaderProps) {
   const [doc, setDoc] = useState<PdfDoc | null>(null);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [zoom, setZoom] = useState(1);
+  /* [ebook-zoom-cubit-v1] `zoom` di atas adalah zoom yang SUDAH diraster;
+     `zoomLive` yang berubah tiap frame cubitan. Selisih keduanya dipakai sebagai
+     skala CSS sementara — merender ulang PDF tiap frame terlalu berat dan malah
+     membuat cubitannya patah-patah. */
+  const [zoomLive, setZoomLive] = useState(1);
+  const zoomLiveRef = useRef(1);
+  const komitRef = useRef<number | null>(null);
+  /** Skala render yang sedang berlaku (px per satuan halaman) — dipakai
+      menaruh sorotan kata di tempat yang benar. */
+  const [skalaTampil, setSkalaTampil] = useState(0);
   const [memuat, setMemuat] = useState(true);
   const [galat, setGalat] = useState<string | null>(null);
   /** null = ikut lebar layar; true/false = pilihan siswa dari bilah atas. */
@@ -184,6 +239,15 @@ export default function EbookReader({
   const [ukuran, setUkuran] = useState<{ w: number; h: number } | null>(null);
   /** Animasi balik halaman yang sedang jalan (null = tidak ada). */
   const [balik, setBalik] = useState<{ arah: 1 | -1; tujuan: Bentangan } | null>(null);
+
+  /* [ebook-tts-ketuk-kata-v1] Kata yang barusan diketuk: dipakai menggambar
+     sorotan + gelembung kecil di atasnya. Koordinatnya sudah dalam px layar
+     relatif terhadap kotak buku. */
+  const [ucap, setUcap] = useState<
+    { hal: number; kata: string; kalimat: string; x: number; y: number; w: number; h: number; terjemahan: boolean }
+    | null
+  >(null);
+  const [bunyi, setBunyi] = useState<"kata" | "kalimat" | null>(null);
 
   const [layarPenuh, setLayarPenuh] = useState(false);
   /** Kita yang menyalakan layar penuh? Kalau siswa sudah fullscreen dari sebelumnya,
@@ -196,6 +260,9 @@ export default function EbookReader({
   const depanRef = useRef<HTMLCanvasElement | null>(null);
   const belakangRef = useRef<HTMLCanvasElement | null>(null);
   const docRef = useRef<PdfDoc | null>(null);
+  const pdfjsRef = useRef<any>(null);
+  /** Isi teks per halaman (satuan halaman, skala 1) — dibaca sekali per halaman. */
+  const teksRef = useRef<Map<number, ItemTeks[]>>(new Map());
   const capRef = useRef(watermark);
   capRef.current = watermark;
 
@@ -232,6 +299,7 @@ export default function EbookReader({
           ambilBerkas(purchaseId, accessToken),
         ]);
         if (!hidup) return;
+        pdfjsRef.current = pdfjs; // dipakai Util.transform waktu menghitung letak teks
 
         // Salinan byte: pdf.js "memindahkan" buffer yang diberikan ke worker,
         // jadi kalau aslinya dipakai langsung, entri bufCache jadi kosong dan
@@ -258,6 +326,8 @@ export default function EbookReader({
       docRef.current = null;
       bitmapRef.current.clear();
       antreRef.current.clear();
+      teksRef.current.clear();
+      hentikanEbookTts();
     };
   }, [purchaseId, accessToken]);
 
@@ -291,6 +361,7 @@ export default function EbookReader({
     bitmapRef.current.clear();
     antreRef.current.clear();
     setUkuran({ w, h });
+    setSkalaTampil(skala);
     setGenerasi((g) => g + 1);
   }, [page, zoom, dua]);
 
@@ -317,6 +388,71 @@ export default function EbookReader({
     setMuatDua(w.clientWidth >= LEBAR_DUA_HALAMAN && w.clientWidth > w.clientHeight);
     return () => ro.disconnect();
   }, [hitungSkala]);
+
+  /* ── zoom yang mengikuti gerakan ────────────────────────────────────────
+     [ebook-zoom-cubit-v1] Dulu zoom cuma bisa lewat dua tombol ± di bilah atas,
+     dan cubitan trackpad malah memperbesar SELURUH halaman browser (bilah alamat
+     ikut membesar, modulnya tidak). */
+  const aturZoom = useCallback((next: number, langsung = false) => {
+    const z = jepitZoom(next);
+    if (z === zoomLiveRef.current && !langsung) return;
+    zoomLiveRef.current = z;
+    setZoomLive(z);
+    // Sorotan kata memakai koordinat piksel — begitu skalanya berubah, letaknya
+    // tak lagi sahih.
+    setUcap(null);
+    if (komitRef.current) { window.clearTimeout(komitRef.current); komitRef.current = null; }
+    if (langsung) { setZoom(z); return; }
+    komitRef.current = window.setTimeout(() => {
+      komitRef.current = null;
+      setZoom(zoomLiveRef.current);
+    }, JEDA_KOMIT_ZOOM);
+  }, []);
+
+  useEffect(() => () => { if (komitRef.current) window.clearTimeout(komitRef.current); }, []);
+
+  useEffect(() => {
+    const el = wadahRef.current;
+    if (!el) return;
+    // Cubitan trackpad Mac sampai ke browser sebagai `wheel` ber-ctrlKey. Tanpa
+    // preventDefault, yang mengecil adalah seluruh halaman. Listener dipasang
+    // manual — onWheel milik React terdaftar sebagai passive, dan di listener
+    // passive preventDefault diabaikan diam-diam.
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      // Eksponensial, bukan penjumlahan: satu takaran cubitan terasa sama besar
+      // di zoom 60% maupun di 300%.
+      aturZoom(zoomLiveRef.current * Math.exp(-e.deltaY / 180));
+    };
+
+    let cubit: { jarak: number; zoom: number } | null = null;
+    const jarak2 = (t: TouchList) =>
+      Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+    const onStart = (e: TouchEvent) => {
+      cubit = e.touches.length === 2 ? { jarak: jarak2(e.touches), zoom: zoomLiveRef.current } : null;
+    };
+    const onMove = (e: TouchEvent) => {
+      if (!cubit || e.touches.length !== 2) return;
+      e.preventDefault(); // jangan sampai jadi gulir/zoom bawaan halaman
+      const j = jarak2(e.touches);
+      if (cubit.jarak > 0) aturZoom(cubit.zoom * (j / cubit.jarak));
+    };
+    const onEnd = (e: TouchEvent) => { if (e.touches.length < 2) cubit = null; };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("touchstart", onStart, { passive: true });
+    el.addEventListener("touchmove", onMove, { passive: false });
+    el.addEventListener("touchend", onEnd, { passive: true });
+    el.addEventListener("touchcancel", onEnd, { passive: true });
+    return () => {
+      el.removeEventListener("wheel", onWheel);
+      el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("touchmove", onMove);
+      el.removeEventListener("touchend", onEnd);
+      el.removeEventListener("touchcancel", onEnd);
+    };
+  }, [aturZoom]);
 
   /* ── render halaman ke bitmap (dengan cache) ───────────────────────────── */
   const gambarCap = useCallback((ctx: CanvasRenderingContext2D, w: number, h: number) => {
@@ -536,6 +672,13 @@ export default function EbookReader({
       const el = e.target as HTMLElement | null;
       if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
       if (e.key === "Escape") { onClose(); return; }
+      // ⌘/Ctrl + = − 0 — pintasan zoom yang sudah jadi refleks semua orang.
+      if ((e.ctrlKey || e.metaKey) && ["=", "+", "-", "_", "0"].includes(e.key)) {
+        e.preventDefault();
+        if (e.key === "0") aturZoom(1, true);
+        else aturZoom(zoomLiveRef.current + (e.key === "-" || e.key === "_" ? -ZOOM_STEP : ZOOM_STEP), true);
+        return;
+      }
       // preventDefault: tanpa ini panah & spasi JUGA menggulir wadah halaman,
       // jadi terasa "pindah halamannya nyangkut" padahal cuma ikut tergulir.
       if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " " || e.key === "Spacebar") {
@@ -550,7 +693,7 @@ export default function EbookReader({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [balikKe, ke, total, onClose]);
+  }, [balikKe, ke, total, onClose, aturZoom]);
 
   // Layar penuh: dicoba begitu reader terbuka, dilepas lagi saat ditutup.
   useEffect(() => {
@@ -581,21 +724,33 @@ export default function EbookReader({
   }, []);
 
   const sentuh = useRef<{ x: number; y: number } | null>(null);
+  /* Geser jari untuk pindah halaman TETAP berakhir sebagai klik di browser.
+     Tanpa penanda ini, tiap kali siswa membalik halaman dengan menggeser, kata
+     yang kebetulan ada di bawah jarinya ikut dibunyikan. */
+  const abaikanKlikRef = useRef(false);
   const onTouchStart = (e: React.TouchEvent) => {
+    // Dua jari = cubitan zoom, bukan geser halaman.
+    if (e.touches.length !== 1) { sentuh.current = null; return; }
     sentuh.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
   };
   const onTouchEnd = (e: React.TouchEvent) => {
     const a = sentuh.current;
     if (!a) return;
+    if (e.touches.length > 0) { sentuh.current = null; return; }
     const dx = e.changedTouches[0].clientX - a.x;
     const dy = e.changedTouches[0].clientY - a.y;
     // Geser mendatar yang tegas saja — kalau tidak, gulir vertikal ikut
     // terbaca sebagai pindah halaman waktu membaca halaman yang di-zoom.
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) void balikKe(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      abaikanKlikRef.current = true;
+      void balikKe(dx < 0 ? 1 : -1);
+    }
     sentuh.current = null;
   };
 
   const t = useT(); // [ui-lang-switcher-v1]
+  /** Selisih antara zoom yang dipegang jari dan zoom yang sudah diraster. */
+  const faktorZoom = zoom > 0 ? +(zoomLive / zoom).toFixed(4) : 1;
   const pw = ukuran?.w ?? 0;
   const ph = ukuran?.h ?? 0;
   const lebarBuku = dua ? pw * 2 + GAP : pw;
@@ -613,6 +768,125 @@ export default function EbookReader({
   const nomor = total
     ? (tampil.kiri && tampil.kanan ? `${tampil.kiri}–${tampil.kanan} / ${total}` : `${halPertama} / ${total}`)
     : "—";
+
+  /* ── ketuk kata → pelafalannya ─────────────────────────────────────────
+     [ebook-tts-ketuk-kata-v1] Bahasa modul: kolom `language` dulu, judul
+     belakangan. Tak terbaca = fitur ini diam sepenuhnya — kata Spanyol yang
+     dilafalkan dengan fonem bahasa lain lebih merusak daripada tak ada suara. */
+  const kodeBahasa = useMemo(() => kodeBahasaEbook(language, title), [language, title]);
+  const ttsAktif = bisaDibunyikan(kodeBahasa);
+
+  const ambilTeks = useCallback(async (n: number): Promise<ItemTeks[]> => {
+    const ada = teksRef.current.get(n);
+    if (ada) return ada;
+    const d = docRef.current;
+    const pdfjs = pdfjsRef.current;
+    if (!d || !pdfjs || n < 1 || n > d.numPages) return [];
+    try {
+      const hal = await d.getPage(n);
+      // Skala 1: koordinatnya jadi satuan halaman, jadi tetap sahih waktu siswa
+      // mencubit — tinggal dikalikan skala yang sedang berlaku.
+      const vp = hal.getViewport({ scale: 1 });
+      const tc = await hal.getTextContent();
+      const items: ItemTeks[] = [];
+      for (const it of tc.items as any[]) {
+        const str = typeof it.str === "string" ? it.str : "";
+        if (!str.trim() || !it.transform) continue;
+        const tx = pdfjs.Util.transform(vp.transform, it.transform);
+        const h = Math.hypot(tx[2], tx[3]);
+        if (!h) continue;
+        items.push({ str, x: tx[4], y: tx[5] - h, w: it.width || 0, h });
+      }
+      teksRef.current.set(n, items);
+      return items;
+    } catch {
+      return []; // modul hasil pindaian (tanpa lapisan teks) — ketukan diabaikan
+    }
+  }, []);
+
+  /** Kata pada posisi x (satuan halaman) di dalam satu potongan teks. */
+  const kataDi = useCallback((it: ItemTeks, x: number) => {
+    const ctx = ukurCtx();
+    if (!ctx) return null;
+    const huruf = Array.from(it.str);
+    ctx.font = `${Math.max(4, it.h)}px sans-serif`;
+    const lebarUkur = ctx.measureText(it.str).width;
+    if (!lebarUkur) return null;
+    const f = (it.w || lebarUkur) / lebarUkur;
+    const batas = [0];
+    let acc = 0;
+    for (const ch of huruf) { acc += ctx.measureText(ch).width; batas.push(acc * f); }
+    const lokal = x - it.x;
+    let i = huruf.findIndex((_, k) => lokal >= batas[k] && lokal < batas[k + 1]);
+    if (i < 0) i = lokal < 0 ? 0 : huruf.length - 1;
+    if (!HURUF.test(huruf[i])) return null; // yang diketuk spasi/tanda baca
+    let a = i;
+    let b = i;
+    while (a > 0 && HURUF.test(huruf[a - 1])) a--;
+    while (b < huruf.length - 1 && HURUF.test(huruf[b + 1])) b++;
+    return { kata: huruf.slice(a, b + 1).join(""), x: it.x + batas[a], w: batas[b + 1] - batas[a] };
+  }, []);
+
+  const onKlikTeks = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
+    if (abaikanKlikRef.current) { abaikanKlikRef.current = false; return; }
+    if (!ttsAktif || !kodeBahasa || balik || !ukuran || skalaTampil <= 0) return;
+    bukaKunciAudio(); // masih di dalam gerakan pengguna — lihat catatan di ebookTts
+    const box = e.currentTarget.getBoundingClientRect();
+    if (!box.width || !box.height) return;
+    // Kotak buku bisa sedang diskalakan CSS (cubitan belum diraster ulang), jadi
+    // ketukan dinormalkan lewat ukuran kotak yang benar-benar tampil.
+    const fx = ((e.clientX - box.left) / box.width) * lebarBuku;
+    const fy = ((e.clientY - box.top) / box.height) * ph;
+
+    let hal = tampil.kiri ?? tampil.kanan;
+    let xh = fx;
+    if (dua) {
+      if (fx > pw + GAP / 2) { hal = tampil.kanan; xh = fx - pw - GAP; }
+      else hal = tampil.kiri;
+    }
+    if (!hal) return;
+
+    const items = await ambilTeks(hal);
+    const xp = xh / skalaTampil;
+    const yp = fy / skalaTampil;
+    const kena = items.find(
+      (it) => xp >= it.x - 1 && xp <= it.x + it.w + 1 && yp >= it.y - 1 && yp <= it.y + it.h + 1
+    );
+    const kata = kena ? kataDi(kena, xp) : null;
+    if (!kena || !kata) { setUcap(null); return; }
+
+    const kalimat = kena.str.trim();
+    // Baris terjemahan Indonesia duduk persis di bawah kalimat bahasa targetnya;
+    // membunyikannya dengan suara Spanyol justru yang paling tidak boleh ditiru
+    // siswa A1. Ketukannya tetap ditandai supaya tak terasa seperti tombol rusak.
+    const terjemahan = barisTerjemahan(kalimat, kodeBahasa);
+    const kiriSlot = dua && hal === tampil.kanan ? pw + GAP : 0;
+    setUcap({
+      hal,
+      kata: kata.kata,
+      kalimat,
+      x: kiriSlot + kata.x * skalaTampil,
+      y: kena.y * skalaTampil,
+      w: Math.max(6, kata.w * skalaTampil),
+      h: kena.h * skalaTampil,
+      terjemahan,
+    });
+    if (terjemahan) return;
+    setBunyi("kata");
+    await ucapkanEbook(kata.kata, kodeBahasa);
+    setBunyi(null);
+  }, [ttsAktif, kodeBahasa, balik, ukuran, skalaTampil, lebarBuku, ph, pw, dua, tampil, ambilTeks, kataDi]);
+
+  const ucapkanLagi = useCallback(async (teks: string, jenis: "kata" | "kalimat") => {
+    if (!kodeBahasa) return;
+    bukaKunciAudio();
+    setBunyi(jenis);
+    await ucapkanEbook(teks, kodeBahasa);
+    setBunyi(null);
+  }, [kodeBahasa]);
+
+  // Pindah halaman / ganti tata letak → sorotan kata ikut hilang.
+  useEffect(() => { setUcap(null); hentikanEbookTts(); }, [page, dua]);
 
   const isi = (
     <div className="fixed inset-0 z-[100] flex flex-col bg-slate-900/95 backdrop-blur-sm">
@@ -632,15 +906,15 @@ export default function EbookReader({
             </button>
           )}
           <button
-            onClick={() => setZoom((z) => Math.max(ZOOM_MIN, +(z - ZOOM_STEP).toFixed(2)))}
+            onClick={() => aturZoom(zoomLiveRef.current - ZOOM_STEP, true)}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
             aria-label={t("Perkecil")}
           >
             <Minus className="h-4 w-4" />
           </button>
-          <span className="w-12 text-center text-[12px] font-bold text-white/70">{Math.round(zoom * 100)}%</span>
+          <span className="w-12 text-center text-[12px] font-bold text-white/70">{Math.round(zoomLive * 100)}%</span>
           <button
-            onClick={() => setZoom((z) => Math.min(ZOOM_MAX, +(z + ZOOM_STEP).toFixed(2)))}
+            onClick={() => aturZoom(zoomLiveRef.current + ZOOM_STEP, true)}
             className="rounded-lg p-2 text-white/70 transition hover:bg-white/10 hover:text-white"
             aria-label={t("Perbesar")}
           >
@@ -700,10 +974,19 @@ export default function EbookReader({
             style={{
               width: lebarBuku,
               height: ph,
-              transform: `translateX(${geser}px)`,
-              transition: `transform ${DURASI_BALIK}ms cubic-bezier(0.42, 0.02, 0.32, 1)`,
+              // [ebook-zoom-cubit-v1] Selama cubitan berjalan, bukunya diskalakan
+              // CSS dulu (faktor ≠ 1) supaya mengikuti jari; begitu gerakannya
+              // berhenti halaman diraster ulang dan faktornya kembali 1.
+              transform: `translateX(${geser}px) scale(${faktorZoom})`,
+              // Transisi dimatikan selama cubitan: dengan transisi, skalanya
+              // selalu tertinggal beberapa ratus milidetik di belakang jari.
+              transition: faktorZoom === 1
+                ? `transform ${DURASI_BALIK}ms cubic-bezier(0.42, 0.02, 0.32, 1)`
+                : "none",
+              cursor: ttsAktif ? "pointer" : undefined,
             }}
             onContextMenu={(e) => e.preventDefault()}
+            onClick={(e) => void onKlikTeks(e)}
           >
             {/* Menu klik-kanan dimatikan: "Simpan gambar" di atas canvas adalah
                 jalan pintas paling gampang untuk memanen halaman satu per satu. */}
@@ -756,13 +1039,71 @@ export default function EbookReader({
                 </div>
               </div>
             )}
+
+            {/* [ebook-tts-ketuk-kata-v1] sorotan kata yang diketuk + gelembung
+                pelafalan. Wadahnya pointer-events-none supaya ketukan berikutnya
+                tetap mendarat di halaman, bukan tertahan lapisan ini. */}
+            {ucap && !balik && (ucap.hal === tampil.kiri || ucap.hal === tampil.kanan) && (
+              <div className="pointer-events-none absolute inset-0 z-10">
+                <span
+                  className="absolute rounded-[3px]"
+                  style={{
+                    left: ucap.x - 2,
+                    top: ucap.y - 1,
+                    width: ucap.w + 4,
+                    height: ucap.h + 2,
+                    background: ucap.terjemahan ? "rgba(148,163,184,0.30)" : "rgba(62,217,192,0.34)",
+                    boxShadow: ucap.terjemahan ? "none" : "0 0 0 1px rgba(26,158,158,0.6)",
+                  }}
+                />
+                <div
+                  className="pointer-events-auto absolute flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-xl bg-slate-900/95 px-2 py-1.5 text-[12px] font-bold text-white shadow-xl ring-1 ring-white/15"
+                  style={{
+                    left: Math.min(Math.max(ucap.x + ucap.w / 2, 100), Math.max(100, lebarBuku - 100)),
+                    // Kalau kata itu ada di baris paling atas halaman, gelembungnya
+                    // ditaruh di BAWAH — di atas berarti keluar dari kertas.
+                    top: ucap.y - ucap.h - 18 > 0 ? ucap.y - ucap.h - 18 : ucap.y + ucap.h + 8,
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {ucap.terjemahan ? (
+                    <span className="font-semibold text-white/70">
+                      {t("Yang bisa dibunyikan hanya teks")} {langLabel(kodeBahasa)}
+                    </span>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => void ucapkanLagi(ucap.kata, "kata")}
+                        className="flex items-center gap-1.5 rounded-lg px-1.5 py-0.5 transition hover:bg-white/10"
+                      >
+                        {bunyi === "kata"
+                          ? <Loader2 className="h-3.5 w-3.5 animate-spin text-[#3ED9C0]" />
+                          : <Volume2 className="h-3.5 w-3.5 text-[#3ED9C0]" />}
+                        <span className="max-w-[180px] truncate">{ucap.kata}</span>
+                      </button>
+                      {ucap.kalimat && ucap.kalimat !== ucap.kata && (
+                        <button
+                          onClick={() => void ucapkanLagi(ucap.kalimat, "kalimat")}
+                          className="flex items-center gap-1.5 rounded-lg border-l border-white/15 pl-2 pr-1.5 py-0.5 text-white/75 transition hover:bg-white/10 hover:text-white"
+                        >
+                          {bunyi === "kalimat"
+                            ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                            : <Volume2 className="h-3.5 w-3.5" />}
+                          {t("Kalimat")}
+                        </button>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
 
       {/* bilah bawah */}
       {!galat && (
-        <div className="flex shrink-0 items-center justify-center gap-3 border-t border-white/10 px-4 py-2.5">
+        <div className="relative flex shrink-0 items-center justify-center gap-3 border-t border-white/10 px-4 py-2.5">
           <button
             onClick={() => void balikKe(-1)}
             disabled={halPertama <= 1}
@@ -772,6 +1113,14 @@ export default function EbookReader({
             <ChevronLeft className="h-5 w-5" />
           </button>
           <span className="text-[13px] font-bold text-white/80">{nomor}</span>
+          {/* Petunjuk ditaruh absolut, bukan ikut arus: kalau ikut, nomor halaman
+              & panahnya tergeser dari tengah. */}
+          {ttsAktif && (
+            <span className="absolute right-4 hidden items-center gap-1.5 text-[12px] font-semibold text-white/45 lg:flex">
+              <Volume2 className="h-3.5 w-3.5" />
+              {t("Ketuk kata untuk mendengar pelafalannya")}
+            </span>
+          )}
           <button
             onClick={() => void balikKe(1)}
             disabled={!total || (tampil.kanan ?? tampil.kiri ?? 1) >= total}

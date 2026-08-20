@@ -16,7 +16,7 @@
 /** Locale yang punya suara Chirp 3 HD di /api/tts. Cerminan CHIRP_LOCALES di
  *  src/app/api/tts/route.ts — kode di luar daftar ini dibalas 422 oleh rute itu,
  *  jadi disaring sejak di klien supaya tombolnya tak pernah muncul sia-sia. */
-const CHIRP_CODES = new Set([
+export const KODE_CHIRP = new Set([
   "es", "fr", "de", "it", "pt", "nl", "ja", "ko", "zh", "ru", "ar", "hi", "th",
   "vi", "tr", "en", "da", "sv", "no", "nb", "fi", "pl", "cs", "sk", "hu", "ro",
   "bg", "uk", "el", "he", "id", "hr", "sr", "sl", "lt", "lv", "et", "sw", "ur",
@@ -27,7 +27,7 @@ export function bisaTts(kode?: string | null): boolean {
   const k = (kode || "").trim().toLowerCase();
   // Bahasa Indonesia dilewat: di kuis ia bahasa PENGANTAR, bukan yang dipelajari.
   if (!k || k === "id") return false;
-  return CHIRP_CODES.has(k);
+  return KODE_CHIRP.has(k);
 }
 
 /* Soal kuis ditulis campur: kalimat perintah dalam bahasa Indonesia, potongan

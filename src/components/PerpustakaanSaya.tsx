@@ -27,6 +27,8 @@ interface PurchaseItem {
     id: string;
     type: "ebook" | "elearning";
     title: string;
+    /** [ebook-tts-ketuk-kata-v1] bahasa modul — menentukan suara pelafalan di reader */
+    language: string | null;
     cover_url: string | null;
     file_url: string | null;
     video_playlist_url: string | null;
@@ -58,7 +60,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
   /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
   const [reading, setReading] = useState<
-    { purchaseId: string; title: string; accessToken: string; watermark: string } | null
+    { purchaseId: string; title: string; accessToken: string; watermark: string; language: string | null } | null
   >(null);
 
   useEffect(() => {
@@ -76,7 +78,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
         id, payment_status, access_granted, expires_at,
         download_count, created_at,
         digital_products (
-          id, type, title, cover_url, file_url, video_playlist_url
+          id, type, title, language, cover_url, file_url, video_playlist_url
         ),
         digital_product_pricing (
           display_label, duration_days
@@ -175,6 +177,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           title: product.title,
           accessToken: session.access_token,
           watermark: `${nama} · ${u.email ?? ""}`.trim(),
+          language: product.language ?? null,
         });
         // Hitungan akses dicatat route-nya; segarkan sebentar lagi biar ikut.
         setTimeout(() => fetchPurchases(), 1500);
@@ -318,6 +321,7 @@ export default function PerpustakaanSaya({ userId, supabase }: Props) {
           title={reading.title}
           accessToken={reading.accessToken}
           watermark={reading.watermark}
+          language={reading.language}
           onClose={() => setReading(null)}
         />
       )}

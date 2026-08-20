@@ -470,7 +470,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
   const [picking, setPicking] = useState<LangPickerTarget | null>(null);
   /* [ebook-reader-v1] modul yang sedang dibaca (null = reader tertutup) */
   const [reading, setReading] = useState<
-    { purchaseId: string; title: string; accessToken: string; watermark: string } | null
+    { purchaseId: string; title: string; accessToken: string; watermark: string; language: string | null } | null
   >(null);
 
   /* bookmarks (localStorage — tanpa ubah skema DB) */
@@ -663,6 +663,8 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
         title: prod.title,
         accessToken: session.access_token,
         watermark: `${nama} · ${u.email ?? ""}`.trim(),
+        // [ebook-tts-ketuk-kata-v1] bahasa modul → suara Chirp yang dipakai
+        language: prod.language ?? null,
       });
       // Hitungan akses dicatat route-nya; segarkan sebentar lagi biar angkanya ikut.
       setTimeout(fetchAll, 1500);
@@ -1012,6 +1014,7 @@ export default function LibraryView({ userId, supabase, previewStudentId = null 
           title={reading.title}
           accessToken={reading.accessToken}
           watermark={reading.watermark}
+          language={reading.language}
           onClose={() => setReading(null)}
         />
       )}

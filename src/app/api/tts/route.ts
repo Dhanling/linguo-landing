@@ -7,6 +7,7 @@
 //   2. process.env.GOOGLE_APPLICATION_CREDENTIALS — path ke file JSON
 //   3. ~/linguo-audio-gen/linguo-tts-key.json     — fallback dev lokal
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
 import os from "node:os";
@@ -123,6 +124,63 @@ async function resolveVoice(token: string): Promise<string> {
   return name;
 }
 
+/* ── cache bersama (Supabase Storage) ──────────────────────────────────────
+   [tts-cache-bersama-v1] Chirp ditagih PER KARAKTER, dan permintaan yang masuk
+   ke rute ini sangat berulang: satu kata di modul e-book diketuk berkali-kali
+   oleh siswa yang sama, dan modul yang sama dibaca ratusan siswa. Klien punya
+   cache sendiri (memori + Cache API), tapi itu per PERANGKAT — siswa berikutnya
+   tetap memicu sintesis baru.
+
+   Simpanan di sini dipakai BERSAMA: satu frasa disintesis sekali, lalu semua
+   pemanggil berikutnya — kuis, Watch and Learn, reader e-book, siswa mana pun —
+   mengambil mp3 yang sama. Kuncinya ikut nama voice, jadi ganti suara tidak
+   menyajikan audio lama.
+
+   Best-effort total: bucket belum ada, kredensial kosong, atau storage error →
+   jalan terus ke Google seperti sebelumnya. Cache yang gagal tidak boleh
+   membuat suara ikut gagal. */
+const CACHE_BUCKET = "tts-cache";
+
+function admin() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
+}
+
+const jalurCache = (voice: string, text: string) =>
+  `${voice}/${crypto.createHash("sha256").update(`${voice}|${text}`).digest("hex").slice(0, 40)}.mp3`;
+
+async function dariCache(jalur: string): Promise<string | null> {
+  const sb = admin();
+  if (!sb) return null;
+  try {
+    const { data, error } = await sb.storage.from(CACHE_BUCKET).download(jalur);
+    if (error || !data) return null;
+    return Buffer.from(await data.arrayBuffer()).toString("base64");
+  } catch {
+    return null;
+  }
+}
+
+async function keCache(jalur: string, base64: string) {
+  const sb = admin();
+  if (!sb) return;
+  const isi = Buffer.from(base64, "base64");
+  const opsi = { contentType: "audio/mpeg", upsert: true, cacheControl: "31536000" };
+  try {
+    const { error } = await sb.storage.from(CACHE_BUCKET).upload(jalur, isi, opsi);
+    // Bucket-nya belum pernah dibuat (deploy baru / project lain): bikin sekali,
+    // privat, lalu coba sekali lagi. Kalau tetap gagal — biarkan, sekadar cache.
+    if (error && /bucket/i.test(error.message || "")) {
+      await sb.storage.createBucket(CACHE_BUCKET, { public: false }).catch(() => {});
+      await sb.storage.from(CACHE_BUCKET).upload(jalur, isi, opsi);
+    }
+  } catch {
+    /* diam */
+  }
+}
+
 // sama seperti cleanText di gen-vietnam-audio.mjs — buang anotasi "(...)" & "·"
 function cleanText(s: string) {
   return String(s || "").replace(/\s*\([^)]*\)/g, "").replace(/\s*·\s*/g, ", ").trim();
@@ -154,6 +212,16 @@ export async function POST(req: NextRequest) {
       ? (VOICE_OVERRIDE[chirpLocale] ?? `${chirpLocale}-Chirp3-HD-${CHIRP_SPEAKER}`)
       : await resolveVoice(token);
 
+    // Sudah pernah disintesis? Balas dari simpanan — nol karakter ditagih.
+    const jalur = jalurCache(voice, text);
+    const tersimpan = await dariCache(jalur);
+    if (tersimpan) {
+      return NextResponse.json(
+        { audioContent: tersimpan, cached: true },
+        { headers: { "Cache-Control": "public, max-age=86400" } }
+      );
+    }
+
     const res = await fetch("https://texttospeech.googleapis.com/v1/text:synthesize", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -168,6 +236,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "tts failed", detail: detail.slice(0, 300) }, { status: 502 });
     }
     const j = await res.json();
+    // Ditunggu, bukan dilepas: fungsi serverless bisa dimatikan begitu balasan
+    // terkirim, dan unggahan yang keburu terpotong = cache yang tak pernah isi.
+    if (j.audioContent) await keCache(jalur, j.audioContent);
     // [ling-lms-quiz-tts-v2] balikin base64 apa adanya dari Google → client decode (atob→Uint8Array→Blob).
     // Lebih robust dari body biner di Next route handler, dan match pola decode di client.
     return NextResponse.json(
